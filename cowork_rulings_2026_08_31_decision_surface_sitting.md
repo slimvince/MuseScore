@@ -4993,6 +4993,746 @@ decisions-register identity is allocated** — that register cannot accept one a
 **What it does NOT do.** It decides nothing about the L0/L1 split, which returns at ratification as
 Ruling 32 left it; it ratifies no amendment; it moves no outgoing text.
 
+## 3bs. Ruling 64 — THE L0/L1 SPLIT, THE FIRST DECISION OF THE RATIFICATION ACT: ONE DOCUMENT FOR BOTH CHARTERS, THE SPLIT BEING THE SECTION BOUNDARY OF THE DERIVED SPECIFICATION (§2 L0, §3 L1) AND NOT A FILE BOUNDARY (Position one)
+
+**Taken 2026-09-03 by the ninety-seventh session — the session that booted on
+`cowork_handoff_entry_ninety_six.md` — after the fifth comparison dispatch's close was verified at the
+objects: both ref files at `232d3dd8540f4589fad568843beef4c0c4891d23`, the six commits `c773543ca8…`,
+`34be0edcb9…`, `5ffa974100…`, `cd62b00168…`, `fce750f64c…`, `232d3dd854…` read at `git show --stat` by
+explicit hash, the derivation's banner one hunk at its head, the successor's changes against the
+derivation's blob `9b102c5756…` attributed at the object diff, the reading file's §13a, Row 4.3 and Row
+4.37 read at the rows.** **The user's words, verbatim: "I agree with your recommendation"**, given in
+the turn after the surface, the surface having been put whole in the turn before and a source-check
+offered and taken in between (Ruling 57's clause (ii) re-read at this record rather than at the
+successor's quotation of it).
+
+**The question.** Ruling 13's P4 (§3m) ruled one file for both charters and attached the condition that
+if the deriving session found the two charters separate cleanly it would say so and *"the split becomes
+the later act's business"*; the derivation's §1 said so; Ruling 32 (§3am) deliberately did not put the
+split and returned it to ratification; Ruling 63 (§3br) decided nothing about it. This is the first
+decision of the ratification act, put over `cowork_derived_specification_l0_l1_2026_09_03.md` as Ruling
+63 fixed that file as the text.
+
+**The facts, each checked at its object.** `FRAMEWORK.md` §5: *"L0 — The notated record. NOT A LAYER;
+the input contract"*, and the boundary-contract table with one row out of L0, to L1. Ruling 13 P4's
+ground and condition, as above. The successor's §1, carried unchanged from the derivation: *"L0 and L1
+separate cleanly … The one place they touch is the eligibility predicate of §3.1 … A later act may split
+this file at the §2/§3 boundary without rewriting a statement."* After Rulings 34–62 the touching
+places are more than one and each is written once and pointed at from the other side (#6): Ruling 35
+amends S-15 and S-3 in one clause; Ruling 39 is in two halves, beside S-3 and at S-29; Ruling 43's
+staleness clause stands beside S-3 to S-7 and names S-53; Ruling 44 adds stem direction at S-3, amends
+S-7 and keeps S-9 blind to it; Ruling 46's clause (vi) stands beside S-53 and concerns the record's own
+edges; Ruling 58's three spelling clauses stand beside S-3, S-6 and S-14 on S-24's ground. D-430 (LIVE):
+the contract-home criterion's unit is a SECTION of a document, not the document. The phase definition
+§3.4: *"every specification derived … and the set ratified by the user at the granularity the pilot's
+sizing decided"* — which Ruling 13 already read as not settling one text against two. Consumers of L0
+other than L1 as the rulings stand: the voice-leading axis (Ruling 44), a reader outside the analysis
+(Ruling 57 clause (ii), read at this record), and L2 through its consumption of L0 (Ruling 45). Ruling
+46's not-settled clause ties how D-262 and D-265 read under the derived shape to *"the ratification act
+where the L0/L1 split returns"*. **Scope of the negative claim, stated:** that nothing in the record
+requires one document per charter was checked in this record, the phase definition, `FRAMEWORK.md` §5,
+the `DECISIONS.md` index and the successor, and is not a sweep of the reading file, the brief or the
+earlier sitting records; the user was told so before ruling and did not ask for the sweep.
+
+**The two positions, weighed.** *Position one* — one document, the split being the section boundary,
+§2 the L0 contract and §3 L1, the ratification put over that one text. Towards the objective: the
+audit's measuring instrument is one complete document with every cross-charter clause written once
+where the reader meets it. Towards the principles: the text Ruling 63 fixed; Ruling 13's own ground
+(#6); D-430 gives each charter's decisions a home by section without a file; #12 loses nothing; #10 met,
+the document saying on its face which section is which. Cost: *specification* in §3.4 read as covering
+two charters in one document — the reading Ruling 13 already took. *Position two* — two documents,
+split at the §2/§3 boundary before ratification. Towards the objective: no gain, two files saying what
+one says. Towards the principles: possible without rewriting a statement (#12 survives), but a second
+ratification text created by the writing side against the one Ruling 63 fixed, a cross-file pointer at
+every once-written cross-charter clause, Ruling 13's ground still holding, and no text of the record
+requiring it. **The surface said in terms that on the facts the alternatives had nearly collapsed to
+position one; both axes pointed to it; no conflict, and Ruling 1's precedence clause was not
+exercised.**
+
+**What was decided.** The derived L0/L1 specification is ratified, when it is ratified, as ONE document
+covering the two charters; the L0/L1 split is the section boundary between its §2 (L0, the notated
+record) and §3 (L1), and is not a file boundary; no file is split and none is created by this ruling.
+Nothing is applied by this ruling; no file is written by it. **No decisions-register identity is
+allocated** — that register cannot accept one and `cowork_register_rule_c_suspension_2026_08_28.md` is
+the route.
+
+**What it does NOT do.** It ratifies no statement of the successor — S-1 to S-54 and OQ-1 to OQ-19 each
+stand unratified. It does not decide the granularity at which the set is ratified. It does not settle
+Ruling 46's D-262/D-265 question. It does not touch the item (d) family placements, Row 4.3, or the two
+findings the verifying session reported before the surface — Ruling 42's *"S-45 to S-49 follow the same
+naming"* against the successor's S-45–S-49 as written, and Ruling 62 item 1's completion of S-50's list
+against the sentence the successor placed beside S-50 — each of which is for the decision on those
+statements. It moves no file, edits no outgoing text, and allocates no register identity.
+
+## 3bt. Ruling 65 — THE GRANULARITY OF RATIFICATION: PER FACE OF THE DERIVED SPECIFICATION, ONE SURFACE PER FACE, EACH SURFACE NAMING WHICH OF ITS STATEMENTS A RULING OF 34–62 ALREADY FIXED (RATIFIED BY CONFIRMING THE WRITTEN TEXT AGAINST THE RULING'S WORDS) AND WHICH NO RULING NAMES (PUT WITH THEIR DERIVED DEFENSE) (Position three)
+
+**Taken 2026-09-03 by the same session, the turn after Ruling 64 was written to this record.** **The
+user's words, verbatim: "I agree with recommendation"**, given in the turn after the surface, the
+surface having been put whole in the turn before; the user had ruled the order of the act to be this
+side's ("you choose the order") and the granularity was taken first because it decides how many
+decisions the rest of the act takes.
+
+**The question.** The phase definition §3.4 (line 309–310) has the derived specifications *"ratified by
+the user at the granularity the pilot's sizing decided"*, and its §9 (lines 587–591) parks that
+granularity *"until that sizing exists"*. The sizing never produced a citable figure: the 2026-08-26
+sizing-tests sitting, Ruling 1 — *"The sizing record is recorded with its three defects and is never
+cited as a budget"*; the 2026-08-25 v1-sufficiency sitting — *"The pilot's remaining open half is
+sizing … the pilot's only unfinished business."* No later record read this session sets it; Ruling 64
+says in terms it did not. The pointer resolves to nothing and the granularity is the user's to set.
+
+**The facts, each checked at its object.** The successor's shape, counted by this side at the file and
+not a generated figure: 54 statements in ten faces — §2.1 (S-1, S-2), §2.2 (S-3 to S-9), §2.3 (S-10 to
+S-14), §3.1 (S-15 to S-22), §3.2 (S-23 to S-27), §3.3 (S-28 to S-33), §3.4 (S-34 to S-38), §3.5 (S-39 to
+S-43), §3.6 (S-44 to S-49), §3.7 (S-50 to S-54) — with §0 the terms (amended by Ruling 56) and §4 the
+nineteen open questions, six answered. Counted the same way: 37 statements are named by a ruling of 34
+to 62, amended in its words or ruled to stand as derived; 17 are named by no ruling and have never been
+put to the user — S-4, S-5, S-8, S-10, S-11, S-12, S-17, S-21, S-22, S-23, S-24, S-25, S-26, S-27, S-33,
+S-42, S-49. The user's standing rules on form: the whole surface before any choice question, the
+question in a later turn (D-249, Ruling 1, Ruling 21); one decision per turn (the user, 2026-08-21);
+every surface self-contained with identifiers re-explained (the user, 2026-08-15). Ruling 63 fixed the
+successor as one text and Ruling 64 kept it one document; neither set the units of ratification.
+
+**The three positions, weighed.** *Position one* — the whole set in one decision. Towards the
+objective: fastest to a ratified instrument. Towards the principles: one surface over 54 statements and
+19 open questions cannot be self-contained as the user has ruled surfaces must be; a defect in one
+statement holds the whole set; #19 strained, a ratification of 1,600 lines in one word not being a
+check at the objects. *Position two* — per statement. Towards the objective: the most exact instrument.
+Towards the principles: 54 or more turns, most re-putting statements a ruling already fixed by family —
+manufactured optionality the user has declined (2026-08-28) — and the width Ruling 10 chose L0+L1
+first to avoid. *Position three* — per face, two tiers named on each surface: one surface per face,
+eleven turns, each stating which of its statements a ruling already fixed (ratified by confirming the
+written text against the ruling's words, any mismatch put as the decision — the two findings the
+verifying session reported being of that kind) and which are unruled (put with their defense).
+Towards the objective: the instrument ratified in the units the comparison and the rulings worked in,
+a defect holding one face and not the set. Towards the principles: one decision per turn; surfaces of
+readable size; the 17 unruled statements each read; the 37 ruled ones checked and not re-argued (#6).
+Cost: eleven turns. **Both axes pointed to position three; no conflict, and Ruling 1's precedence
+clause was not exercised.**
+
+**What was decided.** The derived L0/L1 specification is ratified per face, one decision surface per
+face — §2.1, §2.2, §2.3, §3.1, §3.2, §3.3, §3.4, §3.5, §3.6, §3.7, and one for §0 with §4 — taken in the
+successor's order unless the user says otherwise, each surface naming which of its statements a ruling
+of 34 to 62 already fixed and which none names; a statement a ruling fixed is ratified by confirming
+the written text against the ruling's own words, with any mismatch put as the decision; a statement no
+ruling names is put with its derived defense. Nothing is applied by this ruling; no file is written by
+it. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**What it does NOT do.** It ratifies no statement. It does not touch the item (d) family placements,
+Row 4.3, or Ruling 46's D-262/D-265 question, which arises at the §3.7 face where S-53 sits. It moves no
+file, edits no outgoing text, and allocates no register identity.
+
+## 3bu. Ruling 66 — FACE §2.1 OF THE DERIVED SPECIFICATION, THE L0 ADMISSION CRITERION: S-1 AND S-2 RATIFIED AS WRITTEN, WITH ONE CORRECTION TO S-1's STATUS LINE (OQ-4 NO LONGER LISTED AS UNSETTLED, ANSWERED BY RULING 36), THE FORMER WORDING PRESERVED (Position two)
+
+**Taken 2026-09-03 by the same session, the turn after Ruling 65 — the first face under Ruling 65's
+granularity.** **The user's words, verbatim: "I agree on your recommendations"**, given in the turn
+after the surface, the surface having been put whole in the turn before.
+
+**The tier.** Both statements are ruled: Ruling 57 (§3bl) — S-1 and S-2 stand with three clarifications
+beside them; Ruling 44 (§3ay) — the reading permission stated beside S-1. Ratified by confirming the
+written text against the rulings' words, as Ruling 65 fixes.
+
+**The facts, each checked at its object.** The successor's clauses beside S-1 and S-2 were compared
+word for word with this record: Ruling 44's permission and reach at lines 3627–3631 (the ruling's
+facts, taken from `ARCHITECTURE.md` lines 1626–1636, the user's ruling of 2026-08-08) and its decision
+at 3662–3665; Ruling 57's clause (i) at lines 4584–4589, clause (ii) at 4589–4592, clause (iii) at
+4592–4597 — each carried verbatim. The statements' six fields are byte-unchanged from the derivation's
+blob `9b102c5756…` (no deletion in the region at the object diff between that blob and the successor's
+blob `8dc3b0cac1…`). Found at the file: S-1's *Status* line reads *"the cases it does not settle are
+OQ-4, OQ-5, OQ-13"*, while Ruling 36 (§3aq) closed OQ-4 and the successor's §4 marks it ANSWERED — the
+text contradicting itself (#10), a line no ruling reached. Noted once for the file: citations of the
+form *[FACT — §6]* resolve through the successor's §5 pointer paragraph to the derivation's §6 at its
+blob; read as resolvable, not as a defect.
+
+**The two positions, weighed.** *Position one* — ratify as written. Towards the objective: no change
+in substance. Towards the principles: S-1 left stating something false about its own status (#10).
+*Position two* — ratify with one correction to S-1's status line, OQ-4 removed from the unsettled list
+as answered by Ruling 36, the former wording preserved at the site (#12), the edit made by the next
+dispatch and never by the writing side into the tree. Towards the objective: the same substance, the
+text true of itself. Towards the principles: #10 and #12 met; the shape Ruling 38 ordered for Row 4.37.
+Cost: one line in the next dispatch. **On the substance there was no choice and the surface said so;
+the positions differed on that line only; both axes to position two; Ruling 1's precedence clause not
+exercised.**
+
+**What was decided.** S-1 and S-2 of `cowork_derived_specification_l0_l1_2026_09_03.md`, with the
+clauses beside them from Rulings 44 and 57, are RATIFIED as written, subject to one correction the next
+dispatch makes: S-1's *Status* line ceases to list OQ-4 among the cases S-1 does not settle, citing
+Ruling 36, the former wording preserved at the site. Nothing is applied by this ruling; no file is
+written by it. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**What it does NOT do.** It ratifies no other face. It does not decide the D-528/§8.6 conflict Ruling
+57 flagged to L2. It does not reopen any row Ruling 57 or Ruling 44 placed. It moves no file, edits no
+outgoing text, and allocates no register identity.
+
+## 3bv. Ruling 67 — FACE §2.2 OF THE DERIVED SPECIFICATION, THE L0 FACT LIST: S-3 TO S-9 RATIFIED, WITH THREE ITEMS — S-3's STATEMENT REWORDED TO LIST THE FACTS RULINGS 35, 44 AND 61 SAY IT GAINS; ONE CLAUSE BESIDE S-9 NAMING WHAT L1 DOES NOT READ; S-8 RATIFIED AND OQ-16 MARKED ANSWERED (All three as recommended)
+
+**Taken 2026-09-03 by the same session, the turn after Ruling 66 — the second face under Ruling 65.**
+**The user's words, verbatim: "I agree on your recommendation"**, given in the turn after the surface,
+the surface having been put whole in the turn before with the offer to hold any item out; none was held
+out.
+
+**The tiers.** Ruled: S-3 (Rulings 35, 38, 39, 43, 44, 45, 58, 61), S-6 (58), S-7 (44, 50 — reworded in
+place), S-9 (44 — *"S-9 and S-38 stand unchanged"*, L1 blind to stem direction). Unruled, put with
+their defense: S-4, S-5, S-8.
+
+**The facts, each checked at its object.** Every clause beside S-3, S-6, S-7 and S-14 in the successor
+compared word for word with this record: Ruling 35 at lines 3168–3172; Ruling 38 at 3296–3301; Ruling
+39 at 3352–3357; Ruling 43 at 3593–3596 and 3610–3612; Ruling 44 at 3662–3665; Ruling 45 at 3713–3716;
+Ruling 50 at 4124–4132 and 4154–4156; Ruling 58 at 4653–4665; Ruling 61 at 4813–4815 — all carried
+verbatim. S-4 and S-5: readings of the page, each consumed by a named L1 computation and present as an
+element in the staged files (the derivation's own FACT tags); nothing in the rulings or `FRAMEWORK.md`
+found bearing against either. S-8 against the record: the boundary contract *"Nothing derived"*
+(`FRAMEWORK.md` §5); §8.6, no *user-written* analytical content enters the analysis in any storage
+form (quoted at this record, line 4578–4580); D-501 (LIVE) — a written chord symbol read only as a
+comparison or ground-truth label, never as input; **neither names a composer's figures by name**, so
+the record settles the neighbouring cases and the principle and not the case itself. Found at the
+file, reading the face as one text: **(1)** S-3's statement — the list an auditor reads — is unchanged,
+while Ruling 35's hidden-staff fact, Ruling 44's stem direction and Ruling 61's structure statement
+stand only as clauses beneath it, and S-7's reworded statement says *"Stem direction is supplied at
+S-3"*, pointing at a list that does not contain it; the dispatch's form treated *gains* as a
+beside-clause and *reworded* / *replaced* / *becomes* as an in-place change (S-7, S-20, S-32, S-44).
+**(2)** S-9 reads *"L1 reads from L0 everything of S-3 to S-7 except the key signature"*; after
+Ruling 44 L1 is blind to stem direction and after Ruling 50 S-7's own falsifier reads *"falsified if
+any §3 computation reads one of those"* — a slur, an articulation sign or a dynamic — so S-9 as written
+says L1 reads what two rulings say it does not (#10). **(3)** S-8 answers OQ-16 (★, *"are a composer's
+own figured-bass figures input to the analysis or annotation beside it?"*), which §4 leaves open.
+
+**The positions, weighed, one per item.** *Item 1* — leave the clauses: the facts in the file, but the
+list the audit measures against incomplete on its face and S-7 pointing at what S-3 does not list
+(#10 weakened); or reword S-3's statement to include the hidden-staff fact and stem direction as
+engraved and open it with the structure fact (parts, the staves each part holds, the notated voices
+each staff holds), the derived wording preserved at the derivation as every rewording is, the rulings
+still cited beneath — the form S-7 and S-44 already have, #12 met. *Item 2* — leave S-9 as ruled, the
+file contradicting itself; or one clause beside S-9 in the form the others have — L1 does not read
+stem direction (Ruling 44) nor slurs, articulation signs or dynamics (Ruling 50), which L0 supplies
+for other consumers; S-9's statement otherwise standing — Ruling 44's *"stands unchanged"* kept
+literally, the contradiction removed. *Item 3* — ratify S-8 and mark OQ-16 ANSWERED at §4 on D-501 and
+the boundary contract as ground; or ratify S-8 and leave OQ-16 open, the file asking a question it has
+answered; the alternative of figures as input for continuo scores would move the boundary contract and
+needs a charter change this act cannot make. **On each item both axes pointed the same way; Ruling 1's
+precedence clause was not exercised.**
+
+**What was decided.** S-3 to S-9 of `cowork_derived_specification_l0_l1_2026_09_03.md`, with the
+clauses beside them, are RATIFIED, subject to three edits the next dispatch makes and the writing side
+never makes into the tree: **(1)** S-3's statement reworded to list *whether the note's staff is
+hidden* (Ruling 35) and *its stem direction, as engraved* (Ruling 44) among the per-note facts, and to
+open with the structure L0 states — parts, the staves each part holds, the notated voices each staff
+holds (Ruling 61) — the derived wording standing at the derivation and the three rulings cited beneath;
+**(2)** one clause beside S-9: L1 does not read stem direction (Ruling 44) nor slurs, articulation
+signs or dynamics (Ruling 50), which L0 supplies for other consumers, S-9's statement otherwise
+standing; **(3)** S-8 ratified as derived — a composer's figures are annotation of a named kind,
+*composer's figures*, usable by a measurement layer as a reference and never as analysis input — and
+OQ-16 marked ANSWERED at §4 citing this ruling, with D-501 and the L0 → L1 boundary contract as the
+ground and the derivation's stated cost for continuo parts carried with it. Nothing is applied by this
+ruling; no file is written by it. **No decisions-register identity is allocated** — that register
+cannot accept one and `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**What it does NOT do.** It ratifies no other face. It leaves OQ-6, OQ-18 and OQ-19 open at §4. It
+amends no charter and moves no boundary contract. It does not reopen any row Rulings 35 to 61 placed. It
+moves no file, edits no outgoing text, and allocates no register identity.
+
+## 3bw. Ruling 68 — FACE §2.3 OF THE DERIVED SPECIFICATION, WHAT MAY BE ASSUMED OF THE RECORD: S-10 TO S-14 RATIFIED, WITH ONE CORRECTION TO S-11's FALSIFIER NOTE, BROUGHT TO S-39's RULE THAT REST-BEGINS FIRES BY REST OR BY UNWRITTEN GAP, THE FORMER WORDING PRESERVED (Position two)
+
+**Taken 2026-09-03 by the same session, the turn after Ruling 67 — the third face under Ruling 65.**
+**The user's words, verbatim: "I agree with your recommendation"**, given in the turn after the
+surface, the surface having been put whole in the turn before.
+
+**The tiers.** Ruled: S-13 (Ruling 61 — S-13 stands, the trust in the notated voice as a line the
+consumer's measured question, the census's keyboard stance RELOCATED to the voice-leading axis; the
+clause read at lines 4819–4822, carried verbatim), S-14 (Ruling 58 clause (i) — the refusal of the
+absent case stands; lines 4653–4655, carried verbatim). Unruled, put with their defense: S-10, S-11,
+S-12.
+
+**The facts, each checked at its object.** S-10: the charter's assumption, #12 and #13 (a repair
+silently chooses a reading); its declared weakness, a corpus that overflows every bar, the ledger's
+C21/C22 shape, the remedy a corpus measurement marked UNESTABLISHED; nothing in the rulings against
+it. S-11: engraving practice and #6, both notations in the staged files. S-12: the charter's *"Meter is
+given"* and *decides nothing*; its asymmetry with S-14 — a missing time signature degrades to
+*unmetered*, a missing spelling refuses the score — defended at the derivation (bar lines remain to be
+read; nothing remains for spelling) and nothing in the rulings against it. Found at the file: S-11's
+falsifier reads *"Not falsified by: the visible rest producing a rest flag (§3.5) that the unwritten
+gap does not — that difference is on the page and is information (S-39)"*, while S-39 — ruled to stand
+by Ruling 48 — defines REST-BEGINS as firing when *"a notated voice's silence begins at this change
+point, by rest or by unwritten gap, naming the voice"*: the derivation contradicting itself about one
+flag, not a contradiction made by the amendments. S-39 defines the flag and is ruled; S-11's note is
+the one that yields; the written-rest fact is not lost, S-39 publishing every flag with its witnesses
+and a written rest being a witness the gap lacks.
+
+**The two positions, weighed.** *Position one* — ratify as written: S-11 and S-39 left contradicting
+each other (#10). *Position two* — ratify with one correction to S-11's falsifier note, the
+*not falsified by* clause brought to S-39's rule — the flag fires for a written rest and an unwritten
+gap alike, the written rest distinguished by its witness — the former wording preserved at the site
+(#12), the edit by the next dispatch: the same substance, the file consistent. **On the five
+statements' substance there was no choice and the surface said so; both axes to position two; Ruling
+1's precedence clause not exercised.**
+
+**What was decided.** S-10 to S-14 of `cowork_derived_specification_l0_l1_2026_09_03.md`, with the
+clauses beside S-13 and S-14, are RATIFIED, subject to one edit the next dispatch makes and the writing
+side never makes into the tree: S-11's falsifier's *not falsified by* clause brought to S-39's rule as
+stated above, citing this ruling, the former wording preserved at the site. Nothing is applied by this
+ruling; no file is written by it. **No decisions-register identity is allocated** — that register
+cannot accept one and `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**What it does NOT do.** It ratifies no other face. It does not settle the corpus measurement S-10
+names (UNESTABLISHED). It leaves OQ-7 and OQ-12 open. It does not reopen any row Rulings 58 or 61
+placed. One note carried to the §3.4 face and not decided here: S-12's class *unmetered* is not among
+the classes S-35 names. It moves no file, edits no outgoing text, and allocates no register identity.
+
+## 3bx. Ruling 69 — FACE §3.1 OF THE DERIVED SPECIFICATION, WHAT COUNTS AS A NOTE EVENT: S-15 TO S-22 RATIFIED, WITH S-15's STATEMENT REWORDED TO CARRY RULING 35's SIXTH CONDITION ON ITS FACE, THE COUNT REFERENCES MADE SIX, AND OQ-4 REMOVED FROM S-15's AND S-19's STATUS LINES AS ANSWERED BY RULING 36, FORMER WORDINGS PRESERVED (Position two)
+
+**Taken 2026-09-03 by the same session, the turn after Ruling 68 — the fourth face under Ruling 65 and
+the first of L1.** **The user's words, verbatim: "Agree with recommendations"**, given in the turn
+after the surface, the surface having been put whole in the turn before.
+
+**The tiers.** Ruled: S-15 (Rulings 34, 35), S-16 (34), S-18 (35 — the carrier stands), S-19 (36 — stands
+as derived, the cue fact beside it, OQ-4 closed), S-20 (37 — reworded in place, the derived wording
+preserved). Clauses checked at lines 3098, 3168–3172, 3221–3224 and 3257–3259, carried verbatim.
+Unruled, put with their defense: S-17, S-21, S-22.
+
+**The facts, each checked at its object.** S-17: the sign on the page, its realisation performance
+practice varying by period, L1 realising it would be deciding; the staged files carry the signs as
+articulations. S-21: the brief's instruction that a case no staged file supplies is written as an open
+question (OQ-2), the interim treatment adding no change point the notation does not show. S-22:
+follows from S-30. Nothing in the rulings against any of the three. Found at the file: **(1)** Ruling
+35 — *"S-15 is amended by one condition — its staff is not hidden"* — stands as a clause beneath S-15
+while S-15's statement lists five conditions, and the text counts five at S-15's status (*"Settled for
+the five conditions"*) and S-19's falsifier (*"a small note meeting S-15's five conditions"*); S-19's
+*not falsified by* clause (*"a ruling on OQ-4 adding a sixth condition"*) is a not-falsified-by clause
+and stays true of a seventh. **(2)** S-15's status names OQ-4 among *"the cases the conditions do not
+reach"* and S-19's status reads *"Open (OQ-4, OQ-5)"*, while Ruling 36 closed OQ-4 and §4 marks it
+ANSWERED; OQ-5 stays open. Both the shapes of Rulings 66 and 67.
+
+**The two positions, weighed.** *Position one* — ratify as written: the substance right, the file
+counting a ruled condition as absent and listing a closed question as open (#10). *Position two* —
+ratify with the corrections in the form Rulings 66 and 67 fixed: S-15's statement reworded to carry the
+sixth condition on its face citing Ruling 35, the derived wording standing at the derivation; the two
+*five conditions* references made six; OQ-4 removed from S-15's and S-19's status lines as answered by
+Ruling 36; every former wording preserved at its site; all by the next dispatch. Cost: four small
+edits. **On the substance there was no choice and the surface said so; both axes to position two;
+Ruling 1's precedence clause not exercised.**
+
+**What was decided.** S-15 to S-22 of `cowork_derived_specification_l0_l1_2026_09_03.md`, with the
+clauses beside them, are RATIFIED, subject to the edits above, made by the next dispatch and never by
+the writing side into the tree. Nothing is applied by this ruling; no file is written by it. **No
+decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**What it does NOT do.** It ratifies no other face. OQ-2, OQ-5 and OQ-13 stay open; a hidden staff's
+eligibility follows OQ-13 as Ruling 35 says. It does not reopen any row Rulings 34 to 37 placed. It
+moves no file, edits no outgoing text, and allocates no register identity.
+
+## 3by. Ruling 70 — FACE §3.2 OF THE DERIVED SPECIFICATION, WHAT A TIE DOES: S-23 TO S-27 RATIFIED AS DERIVED; OQ-1 MARKED ANSWERED FOR L1 ON RULINGS 40 AND 46 (L1 WORKS IN THE RECORD'S OWN POSITIONS AND PUBLISHES THE JUNCTION ADJACENCIES), ITS REMAINDER CARRIED TO L2's SURFACE (Position two)
+
+**Taken 2026-09-03 by the same session, the turn after Ruling 69 — the fifth face under Ruling 65.**
+**The user's words, verbatim: "Agree on your recommendation."**, given in the turn after the surface,
+the surface having been put whole in the turn before.
+
+**The tier.** None of S-23 to S-27 is named by a ruling of 34 to 62 (Ruling 38 points at S-23 as the
+handler of ties in D-570's list — a pointer, not a ruling on it); all five put with their defense, the
+first face made wholly of unruled statements.
+
+**The facts, each checked at its object.** S-23: the meaning of a tie, the MusicXML standard's *"The
+<tie> element indicates sound"*, the partition-point construction the charter adopts. S-24: the
+same-pitch test the only notated fact separating a tie from a slur across record formats; refusal to
+repair (*decides nothing*). S-25: the notated release the only position the file supplies; its
+span-edge mark the object Ruling 40 published. S-26: change points onsets and releases only (charter);
+the bar line's evidence placed where Ruling 51 has since put every mark — the complete marks list with
+the class of its position — S-26 and Ruling 51 agreeing. S-27: unfolding a performance reading. OQ-1
+(★): Ruling 46 clause (i) — *"the working span is given in the record's own positions, any conversion
+from the requester's unit being the requester's"* — and clause (v) — the decision to enlarge and the
+increment the requester's, never L0's or L1's — with Ruling 40's published domain, settle OQ-1's L1
+half: L1 works in the record's own positions, notated order, and publishes the junction adjacencies as
+S-27 says; they do not settle in which order the analysis as a whole decides, nor how the ground truth
+is aligned, which is a fact about the corpora not established by anything read (#19).
+
+**The positions, weighed.** *Position one* — ratify as derived, OQ-1 wholly open: no loss, but the
+file understating what two rulings settled. *Position two* — ratify as derived and mark OQ-1 at §4 as
+answered for L1 on Rulings 40 and 46 (i) and (v), the remainder carried to L2's surface where the
+working span's owner is derived, named as such: #10 and #6 met, nothing decided the record does not
+carry; cost one entry at §4 by the next dispatch. *Position three* — rule the remainder now: not
+available on facts (#19). **Both axes to position two; Ruling 1's precedence clause not exercised.**
+
+**What was decided.** S-23 to S-27 of `cowork_derived_specification_l0_l1_2026_09_03.md` are RATIFIED
+as derived. OQ-1 is marked at §4, by the next dispatch, as ANSWERED FOR L1 — L1 works in the record's
+own positions and publishes the junction adjacencies (S-27), on Ruling 40 and Ruling 46 clauses (i)
+and (v) — with its remainder, the order the analysis as a whole decides over and the ground truth's
+alignment, carried to L2's surface and named there. Nothing is applied by this ruling; no file is
+written by it. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**Recorded with the ruling, the user's own statement of fact, given with his agreement and verbatim:
+*"Also know that in Musescore Studio slurs and ties are not the same thing - ties are uniquely
+identifiable and separable from slurs. Ties are only a notation technical thing when note pass barlines
+or the rhythm plus length of a note forces you to tie two or more notes together. Tied notes really
+ARE in trtuh "one", while slurred notes are not."*** It is a checkable claim about the record format
+this project reads and is recorded as his (Ruling 1(a), #18), as Ruling 44 recorded his stem-direction
+expectation. What the derivation already holds beside it: the staged files carry every tie as
+`<Spanner type="Tie">` with `<next>` and `<prev>` locations (S-23's FACT tag), which agrees with the
+statement; S-24's same-pitch test is written as the format-independent rule for the record formats §0
+names (MusicXML, MEI, kern beside `.mscx`), and its *tie drawn as a slur* false-negative path is a
+statement about a file, not about MuseScore Studio's own tie element. Whether a clause recording the
+statement is written beside S-24 was left to the user in the following turn; nothing is amended by
+this paragraph.
+
+**What it does NOT do.** It ratifies no other face. OQ-7 stays open. It decides neither unfolded nor
+notated order for L2 or for measurement. It touches no row. It moves no file, edits no outgoing text,
+and allocates no register identity.
+
+*The user's answer on the tie statement, the following turn, verbatim: "no need to use my statement."*
+*No clause is written beside S-24; the statement stands in this record only.*
+
+## 3bz. Ruling 71 — FACE §3.3 OF THE DERIVED SPECIFICATION, THE CHANGE-POINT SET AND THE SLICES: S-28 TO S-33 RATIFIED, WITH ONE CORRECTION TO S-32's FALSIFIER, ITS OBSERVABLE AND DECISION RULE REWORDED TO THE SPAN'S TWO EDGES RATHER THAN "CHANGE POINTS", THE FORMER WORDING PRESERVED (Position two)
+
+**Taken 2026-09-03 by the same session, the turn after Ruling 70 — the sixth face under Ruling 65.**
+**The user's words, verbatim: "I agree w recommendation"**, given in the turn after the surface, the
+surface having been put whole in the turn before.
+
+**The tiers.** Ruled: S-28 (Rulings 52, 55, 62 item 5), S-29 (39, 62 item 3), S-30 (34), S-31 (62 items
+2, 7), S-32 (40 — reworded in place, the user's condition and its falsifier beside it). Clauses checked
+at lines 3352–3357, 4252–4256, 4282–4284, 4467–4470, 4488, 4864–4881, 4888–4892 — carried verbatim;
+Ruling 40's #12 principle and Ruling 52's principle on facts noted as carried to the register's route
+and not written, as those rulings say. Unruled: S-33, *given* — the charter's words, nothing added,
+the statement Ruling 38 relies on for multi-voice unisons.
+
+**The facts, each checked at its object.** Found at the file: Ruling 40 reworded S-32's statement so
+the span's start and end are span edges, *"not a change point (S-28)"*, *"the rest of S-32
+standing"*; S-32's falsifier, which stood, reads *"Observable: the first and last change points.
+Decision rule: falsified if they differ from the span's ends"* — the two halves of one statement using
+*change point* in opposite senses, the confusion Ruling 40 removed; the user's condition beside S-32
+already carries the edges' falsifier (*"falsified if any slice, cue witness or boundary flag reports
+an edge position as an event's onset or release"*); the derived falsifier is the stale one.
+
+**The two positions, weighed.** *Position one* — ratify as written: substance right, S-32
+contradicting itself in one word (#10). *Position two* — ratify with one correction to S-32's
+falsifier, its observable and decision rule reworded to the span's two edges — the first and last
+boundaries of the slice list — the former wording preserved at the site (#12), the edit by the next
+dispatch: the statement consistent with its own rewording. **On the six statements' substance there
+was no choice and the surface said so; both axes to position two; Ruling 1's precedence clause not
+exercised.**
+
+**What was decided.** S-28 to S-33 of `cowork_derived_specification_l0_l1_2026_09_03.md`, with the
+clauses beside them, are RATIFIED, subject to one edit the next dispatch makes and the writing side
+never makes into the tree: S-32's falsifier's observable and decision rule reworded to the span's two
+edges, citing this ruling and Ruling 40, the former wording preserved at the site. Nothing is applied
+by this ruling; no file is written by it. **No decisions-register identity is allocated** — that
+register cannot accept one and `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**What it does NOT do.** It ratifies no other face. It writes Ruling 40's #12 rule and Ruling 52's
+facts rule nowhere — both stay carried to the register's route. It does not decide any consumer's
+grouping window. It does not reopen any row Rulings 34, 39, 40, 52, 55 or 62 placed. It moves no file,
+edits no outgoing text, and allocates no register identity.
+
+## 3ca. Ruling 72 — FACE §3.4 OF THE DERIVED SPECIFICATION, METRIC STRENGTH: S-34 TO S-38 RATIFIED AS RULED BY RULING 47, WITH ONE CLAUSE BESIDE S-35 ADMITTING S-12's CLASS *UNMETERED* TO THE CLASS SET (Position two)
+
+**Taken 2026-09-03 by the same session, the turn after Ruling 71 — the seventh face under Ruling 65.**
+**The user's words, verbatim: "I agree with recommendation"**, given in the turn after the surface,
+the surface having been put whole in the turn before.
+
+**The tier.** All five ruled: Ruling 47 — S-34 to S-38 stand as derived, the outgoing on-demand clause
+and the `[0.5, 1.0]` number superseded, beside S-35 the rank-comparison computability of *metrically
+strong* and the ownership sentence (L0 metric position per note, L1 the class per change point, a
+weight a consumer's fitted derivative never published by L0 or L1); Ruling 44 — S-38 stands unchanged.
+The clause beside S-35 checked at lines 3890–3895, carried verbatim, Ruling 47's *not settled* item —
+whether the three-level gradient holds on this repertoire, a measurement for L2's calibration —
+carried as left. No unruled statement.
+
+**The facts, each checked at its object.** Carried from Ruling 68: S-12 has L1 publish the class *bar*
+at bar starts and *unmetered* elsewhere for a score with no time signature; S-35 defines the class set
+as the ordinal levels plus *off-grid* and does not name *unmetered*; the class set defined in one place
+and extended in another without the first knowing it (#6); neither statement wrong.
+
+**The two positions, weighed.** *Position one* — ratify as written, the class set split across two
+statements. *Position two* — ratify with one clause beside S-35: the class set includes *unmetered*,
+published by S-12 for a score without a time signature, ranked below every level as *off-grid* is,
+citing this ruling and Ruling 68, by the next dispatch: one home for the class vocabulary, nothing
+changed in substance. **On the substance there was no choice and the surface said so; both axes to
+position two; Ruling 1's precedence clause not exercised.**
+
+**What was decided.** S-34 to S-38 of `cowork_derived_specification_l0_l1_2026_09_03.md`, with the
+clause beside S-35, are RATIFIED, subject to one clause the next dispatch writes beside S-35 as stated
+above and the writing side never writes into the tree. Nothing is applied by this ruling; no file is
+written by it. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**What it does NOT do.** It ratifies no other face. It does not settle S-35's unestablished premise
+(L2's calibration), OQ-8 or OQ-11. It does not reopen any row Ruling 47 placed; Rows 4.11 and 12.12(ii)
+stay QUARANTINED as Ruling 47 left them. It moves no file, edits no outgoing text, and allocates no
+register identity.
+
+## 3cb. Ruling 73 — FACE §3.5 OF THE DERIVED SPECIFICATION, THE NOTATED BOUNDARY EVIDENCE: S-39 TO S-43 RATIFIED, WITH FOUR ITEMS — S-39's STATEMENT REWORDED TO THE TEN KINDS WITH SCOPE ON EVERY FLAG (RULINGS 48, 50); S-41's STATEMENT REWORDED AS RULING 51 WIDENED IT, STATUS SETTLED; S-43's STATEMENT REWORDED FROM PROPOSAL TO THE TWO ADMITTED KINDS, STATUS SETTLED (RULING 50); S-42's STATUS SETTLED FOR L1 (RULING 70) — FORMER WORDINGS PRESERVED (All four as recommended)
+
+**Taken 2026-09-03 by the same session, the turn after Ruling 72 — the eighth face under Ruling 65.**
+**The user's words, verbatim: "I agree with your recommendation"**, given in the turn after the
+surface, the surface having been put whole in the turn before with the offer to hold any item out;
+none was held out.
+
+**The tiers.** Ruled: S-39 (Rulings 48, 49, 50, 54, 61), S-40 (48), S-41 (51), S-43 (50). Clauses
+checked at lines 3994–4009, 4073–4078, 4129–4131, 4156–4158, 4216–4222, 4427–4429 and 4815–4819,
+carried verbatim; Ruling 48's relocation of the graded profile and its machinery to L3 and Ruling 54's
+relocation of the fermata displacement noted as those rulings wrote them. Unruled, put with its
+defense: S-42 — the C. P. E. Bach file's endings, *decides nothing* (choosing an ending is unfolding);
+nothing in the rulings against it; Ruling 70 answered OQ-1 for L1 in its favour.
+
+**The facts, each checked at its object.** Found at the file, the shape of Ruling 67's item 1 three
+times and two stale status lines: **(1)** S-39's statement lists five flag kinds and no scope, while
+Ruling 50 has it gain BREATH-MARK, CAESURA and TEMPO-CHANGE and admits S-43's two, and Ruling 48 has it
+gain on every flag the scope it was read at — ten kinds, scoped, against five unscoped on the
+statement's face. **(2)** S-41's statement holds marks *"at a position that is not a change point"*
+and its status reads *"Settled as a proposal; flagged for ruling because it adds an output"*, while
+Ruling 51 widened it — the list complete over every notated mark of face (e) at its written position
+with kind, attachment, scope, witnesses and the class of its position, the flag referencing the mark by
+identity — and answered OQ-14. **(3)** S-43's statement reads *"This derivation proposes two
+additions … for ruling"*, status *"Open (an addition to a ratified list is the user's)"*, while
+Ruling 50 admitted both (OQ-15: yes). **(4)** S-42's status reads *"Open with OQ-1"*, while Ruling 70
+answered OQ-1 for L1.
+
+**The positions, weighed, one per item.** In each, leaving the clause beneath and the statement as
+derived leaves the statement an auditor reads narrower or more tentative than what was ruled (#10);
+the rewording costs one edit with the derived wording preserved at the derivation (#12), in the form
+Rulings 67 and 69 fixed. **On the substance of the five statements there was no choice and the surface
+said so; on each item both axes pointed the same way; Ruling 1's precedence clause not exercised.**
+
+**What was decided.** S-39 to S-43 of `cowork_derived_specification_l0_l1_2026_09_03.md`, with the
+clauses beside them, are RATIFIED, subject to four edits the next dispatch makes and the writing side
+never makes into the tree: **(1)** S-39's statement reworded to list the ten kinds — the charter's five,
+S-43's TIME-SIGNATURE-CHANGE and KEY-SIGNATURE-CHANGE, BREATH-MARK, CAESURA and TEMPO-CHANGE — with
+Ruling 50's placement rules and Ruling 48's scope on every flag, citing both; **(2)** S-41's statement
+reworded as Ruling 51 widened it, its status Settled with OQ-14 answered; **(3)** S-43's statement
+reworded from a proposal to the two admitted kinds, its status Settled, citing Ruling 50; **(4)** S-42's
+status Settled for L1 on Ruling 70, OQ-1's remainder L2's. Every former wording preserved at its site.
+Nothing is applied by this ruling; no file is written by it. **No decisions-register identity is
+allocated** — that register cannot accept one and `cowork_register_rule_c_suspension_2026_08_28.md` is
+the route.
+
+**What it does NOT do.** It ratifies no other face. It admits no further kind — dynamics and slurs stay
+not admitted (Ruling 50), a further addition the user's when it comes. It does not touch the graded
+profile, the threshold or the picked set (Ruling 48, L3's), the fermata displacement (Ruling 54, the
+consumer's) or Row 21.5's flag to the L2 surface. It does not reopen any row those rulings placed. It
+moves no file, edits no outgoing text, and allocates no register identity.
+
+## 3cc. Ruling 74 — FACE §3.6 OF THE DERIVED SPECIFICATION, THE LOCAL CADENCE CUES: S-44 TO S-49 RATIFIED, WITH RULING 42's NAMING CARRIED THROUGH S-45 TO S-49 AS THAT RULING SAYS — THE ANCHOR NAMED *THE LOWEST SOUNDING PITCH* IN THEIR STATEMENTS AND DEFENSES, THE PUBLISHED FLAG RENAMED LOWEST-PITCH-FALLS-A-FIFTH — AND S-48's STATUS CORRECTED ON RULING 53, FORMER WORDINGS PRESERVED (Position two)
+
+**Taken 2026-09-03 by the same session, the turn after Ruling 73 — the ninth face under Ruling 65 and
+the first of the two findings the verifying session reported before the act.** **The user's words,
+verbatim: "I agree on your recommendations"**, given in the turn after the surface, the surface
+having been put whole in the turn before.
+
+**The tiers.** Ruled: S-44 (Ruling 42 — reworded in place; Ruling 53's two clauses beside it), S-45 (53
+— stands as L1's; 62 item 7), S-46 (53, 61, 62 item 7), S-47 (53), S-48 (53). Clauses checked at lines
+3562–3565, 4361–4365, 4374–4377, 4816–4819 and 4888–4892, carried verbatim. Unruled, put with its
+defense: S-49 — Sears et al.'s finding that a bass leap in isolation is less predictable than stepwise
+motion and only the interaction with the upper voices recovers the sign; nothing in the rulings against
+it.
+
+**The facts, each checked at its object.** Ruling 42's decision (line 3562–3565): S-44 *"is reworded so
+that its anchor is the lowest sounding pitch of the slice's sounding set, published under that name,
+the word bass reserved for the chord's bass note decided at L3, and S-45 to S-49 follow the same
+naming"*; its ground (3546–3554): *"a consumer cannot read its anchor as a decided bass"*, Ruling 40's
+#12 rule, D-113. At the object diff between the derivation's blob and the successor's blob, the only
+statement text deleted in the region is S-44's; S-45 still reads *"whose bass pitch class differs from
+Z's bass pitch class"* with its published flag named BASS-FALLS-A-FIFTH, S-46 *"Z's bass pitch
+class"*, S-47 *"whose tonic is Z's bass pitch class"*, S-49 *"the interval content above the bass"*;
+the fifth batch's attribution table lists no hunk at S-45 to S-49 under Ruling 42. Ruling 53's clause
+beside S-44 reads *"anchored on the bass"*, the ruling's own word, carried as a quotation. S-48's status
+reads *"Open (a measurement is owed; a ruling on the stand-in is the user's)"*, while Ruling 53
+answered the stand-in half (OQ-17: yes, provisional under S-52) and the measurement half (OQ-10) stays
+owed to L2's calibration.
+
+**The three positions, weighed.** *Position one* — leave S-45 to S-49 as written: the reserved word in
+four L1 statements and in a published field name, Ruling 42 applied to S-44 alone against its own
+words. *Position two* — reword S-45 to S-49 to the anchor's name in their statements and defenses and
+rename the published flag, the new name authored on the surface and overrulable before the dispatch —
+LOWEST-PITCH-FALLS-A-FIFTH, S-47's I-anchored and V-anchored flags keeping their names — the derived
+wordings preserved at the derivation, Ruling 53's *"anchored on the bass"* carried with the
+quotation marker the successor uses for a ruling's own use of *bar*. Towards the objective: the cue
+computes what it computed; no L1 field readable as a decided bass. Towards the principles: Ruling 42
+applied as written; D-113; S-50's naming rule whole. Cost: five rewordings and one flag name.
+*Position three* — reword the prose, keep the flag name: the one place a consumer reads carrying the
+reserved word; not admissible on Ruling 42's own ground. **Both axes to position two; Ruling 1's
+precedence clause not exercised.**
+
+**What was decided.** S-44 to S-49 of `cowork_derived_specification_l0_l1_2026_09_03.md`, with the
+clauses beside them, are RATIFIED, subject to the edits the next dispatch makes and the writing side
+never makes into the tree: **(1)** S-45, S-46, S-47 and S-49 reworded so that every reference to the
+anchor is *the lowest sounding pitch* (or *pitch class*) *of the slice's sounding set* and never
+*bass*, in their statements and defenses, citing Ruling 42 and this ruling, the derived wordings
+standing at the derivation; **(2)** S-45's published flag renamed LOWEST-PITCH-FALLS-A-FIFTH wherever
+it is named (S-45, S-50, S-51's example), the former name preserved at the site; S-47's *I-anchored*
+and *V-anchored* flags unchanged; **(3)** Ruling 53's *"anchored on the bass"* beside S-44 carried with
+the marker *(the ruling's own word; the anchor is S-44's)*; **(4)** S-48's status brought to *Open on
+the measurement (OQ-10, L2's calibration); the stand-ins provisional under S-52 (Ruling 53, OQ-17)*,
+the former wording preserved. Nothing is applied by this ruling; no file is written by it. **No
+decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**What it does NOT do.** It ratifies no other face. It sets no window value (OQ-10) and puts nothing
+resting on the stand-ins under load. OQ-12 stays open; Row 16.2's keyboard-voice question stays on the
+voice-leading axis (Ruling 61). No soprano cue is admitted (Ruling 53). It does not reopen any row
+Rulings 42, 53, 61 or 62 placed. It moves no file, edits no outgoing text, and allocates no register
+identity.
+
+## 3cd. Ruling 75 — FACE §3.7 OF THE DERIVED SPECIFICATION, THE FORM OF WHAT IS PUBLISHED: S-50 TO S-54 RATIFIED, WITH S-50's LIST COMPLETED AS RULING 62 ITEM 1 ORDERS (THE ADDITIONS COMPOSED HERE FROM THE SOURCES THAT RULING NAMES, PLUS S-54's PEDAL-HELD); S-54's FALSIFIER BROUGHT TO THE RULED FORM; AND THE READING OF D-262 AND D-265 UNDER THE DERIVED SHAPE RECORDED, AS RULING 46 LEFT IT TO THIS ACT (All three as recommended)
+
+**Taken 2026-09-03 by the same session, the turn after Ruling 74 — the tenth face under Ruling 65 and
+the second of the two findings the verifying session reported before the act.** **The user's words,
+verbatim: "I agree with recommendation"**, given in the turn after the surface, the surface having
+been put whole in the turn before.
+
+**The tier.** All five ruled: S-50 (Rulings 41, 60, 62 items 1 and 9), S-51 (55), S-52 (48, 62 item 7),
+S-53 (46, 62 item 8), S-54 (59). Clauses checked at lines 3514–3516, 3793–3804, 4009–4010, 4488,
+4732–4734, 4780–4781, 4857–4863 and 4888–4900, carried verbatim. No unruled statement.
+
+**The facts, each checked at its object.** **(1)** Ruling 62 item 1 (line 4860–4862): *"S-50's list
+gains every published item that S-25, S-32 and S-52 and Rulings 40, 46, 48, 49, 51 and 61 name, so
+that exactly is true, as Ruling 60 requires of an exhaustive surface."* The successor placed that
+sentence beside S-50 and, in its report's words, *"composes no list of its own"*; S-50's statement
+still opens *"L1 publishes exactly:"* with the derived list — the file's one exhaustive contract not
+exhaustive on its face (#10). The additions, composed on the surface from the named sources: the span
+edges published as such, with *entered sounding* and *cut by the span* on events (S-32, Ruling 40); the
+span-edge tie mark (S-25); a record-edge mark where a span edge is the record's own start or end
+(Ruling 46 (vi)); the scope on every boundary flag (Ruling 48); the three per-voice relations at every
+onset change point — silence before the onset, time since the preceding attack, spelled melodic
+interval — with witnesses (Ruling 49); the marks list as the complete one, flags referencing marks by
+identity (Ruling 51); the per-voice chordal count at every onset change point (Ruling 61); the
+establishment status on every item (S-52); the named reason on every declined or empty item and the
+provenance on every item (Ruling 62 items 7 and 9); and, beyond the ruling's named sources but required
+by the same *so that exactly is true*, the PEDAL-HELD attribute (S-54). **(2)** S-54's falsifier reads
+*"RESIDUAL until ruled; thereafter CODE: releases inside a pedal span equal the notated releases (or the
+lift, if ruled so)"*, while Ruling 59 ruled the notated release stands. **(3)** Ruling 46's *not
+settled* clause (line 3813–3815): how D-262's and D-265's wording reads under the derived shape,
+*"for the ratification act where the L0/L1 split returns"*. D-262 (LIVE): the extension increment is
+chosen by the requesting layer, not by the layer that supplies the notes. D-265 (LIVE): asking a lower
+layer for more notes is a data-supply call, not a backward inference edge. Under the derived shape —
+L0 with no operation, enlargement a re-request of L1 over a larger span, the increment and stop test
+the requester's (46 (v)), the finest effective step the next change point (46 (iv)), the result
+path-independent (46 (ii)) — D-262's *requesting layer* is 46 (v)'s requester and D-265's *lower
+layer* is L1 re-requested, a data-supply call by 46 (ii)'s purity; Ruling 46 itself: *"none of D-260
+to D-266 is contradicted in substance, D-264 being clause (ii)."*
+
+**The positions, weighed.** *Item 1* — leave S-50's derived list with the sentence beside it, the
+contract false of itself against Ruling 60's own requirement; or complete the list as composed, each
+addition citing its source, the derived list preserved at the derivation, one edit by the next
+dispatch. *Item 2* — leave, or bring the falsifier to the CODE form with the notated release, the
+former wording preserved. *Item 3* — record the reading, no edit; or leave Ruling 46's assignment to
+this act undone. **On the substance of the five statements there was no choice and the surface said
+so; on each item both axes pointed the same way; Ruling 1's precedence clause not exercised.**
+
+**What was decided.** S-50 to S-54 of `cowork_derived_specification_l0_l1_2026_09_03.md`, with the
+clauses beside them, are RATIFIED, subject to two edits the next dispatch makes and the writing side
+never makes into the tree: **(1)** S-50's statement completed with the additions listed above, each
+citing its source and this ruling, the derived list standing at the derivation and the flag named as
+Ruling 74 renamed it; **(2)** S-54's falsifier brought to *CODE: releases inside a pedal span equal the
+notated releases*, citing Ruling 59, the former wording preserved at the site. **(3)** Recorded here
+and written nowhere else: D-262 and D-265 stand under the derived shape, *lower layer* meaning L1
+re-requested over a larger span and *increment* the requester's, exactly as S-53 and Ruling 46's six
+clauses already state; Ruling 46's *not settled* clause on that point is resolved to this ruling. The
+decisions register is not written (the route stands). Nothing is applied by this ruling; no file is
+written by it. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**What it does NOT do.** It ratifies no other face. It does not settle the D-030 cost reconciliation,
+reserved by Ruling 39 to the measurement side. It writes neither principle-level ruling anywhere. It
+does not reopen any row Rulings 41, 46, 55, 59, 60 or 62 placed; Row 22.16's no-cap principle stays
+with L2 as Ruling 60 sent it. It moves no file, edits no outgoing text, and allocates no register
+identity.
+
+## 3ce. Ruling 76 — THE LAST FACE OF THE DERIVED SPECIFICATION, §0 THE TERMS AND §4 THE OPEN QUESTIONS: RATIFIED, WITH THREE CORRECTIONS TO §0 — THE ENTRY *BASS* REPLACED BY *THE LOWEST SOUNDING PITCH* WITH *BASS* RESERVED FOR L3 (RULING 42), *CANDIDATE TONALITY* RE-ANCHORED, *NOTATED BOUNDARY EVIDENCE* MADE THE TEN KINDS (RULING 73) — FORMER WORDINGS PRESERVED; §4 CARRIED WITH THE MARKINGS RULINGS 67 AND 70 ORDERED (Position two)
+
+**Taken 2026-09-03 by the same session, the turn after Ruling 75 — the eleventh and last face under
+Ruling 65.** **The user's words, verbatim: "I agree with recommendation"**, given in the turn after
+the surface, the surface having been put whole in the turn before.
+
+**The tiers.** §0 ruled in part: Ruling 56's two naming clauses, checked at lines 4522–4531 and carried
+verbatim; the rest of §0 the derivation's, never put to the user. §4 the derivation's entries, six
+marked ANSWERED by Rulings 36, 50, 51, 53 and 59, OQ-18 and OQ-19 added by Rulings 38 and 44, OQ-16
+answered by Ruling 67 and OQ-1 answered for L1 by Ruling 70.
+
+**The facts, each checked at its object.** Found at the file, each made stale by a ruling of this act
+and not by a defect of the derivation: **(1)** the entry *Bass* — *"at a slice, the lowest sounding
+pitch of its sounding set. Not a notated voice."* — defines as L1's anchor the word Ruling 42 reserved
+for the chord's bass note L3 decides and Ruling 74 carried through the cues; the entry *Candidate
+tonality* anchors on *"the bass pitch class at an onset change point"*. **(2)** The entry *Notated
+boundary evidence* — *"the charter's five kinds: bar line, fermata, rest, repeat sign, double bar"* —
+against the ten kinds Ruling 73 has S-39 list. **(3)** The entry *Slice* (*"the stretch between two
+consecutive change points"*) and Ruling 56's clause beneath it (*"the half-open stretch"*) are
+consistent; no change. §4 after this act: answered OQ-3, 4, 9, 14, 15, 16, 17 and OQ-1 for L1; open
+OQ-2, 5, 6, 7, 8, 10, 11, 12, 13 (★), 18, 19 — OQ-13 the one starred question no ruling has reached,
+on which Ruling 35 made a hidden staff's eligibility depend, reserved by the surface to its own turn.
+
+**The two positions, weighed.** *Position one* — ratify §0 and §4 as written: two glossary entries
+and one kind-count contradicting the rulings of this act (#10). *Position two* — ratify with three
+corrections to §0, §4 carried as it stands with the markings Rulings 67 and 70 ordered and the open
+questions open, former wordings preserved (#12), all by the next dispatch: the glossary true of the
+text it introduces. **On the substance there was no choice and the surface said so; both axes to
+position two; Ruling 1's precedence clause not exercised.**
+
+**What was decided.** §0 and §4 of `cowork_derived_specification_l0_l1_2026_09_03.md` are RATIFIED,
+subject to three edits to §0 the next dispatch makes and the writing side never makes into the tree:
+**(1)** the entry *Bass* replaced by an entry *The lowest sounding pitch* — of a slice's sounding set;
+L1's anchor for the cues; not a notated voice — with the line that *bass* is reserved for the chord's
+bass note L3 decides, citing Rulings 42 and 74; **(2)** *Candidate tonality* reworded to anchor on the
+lowest sounding pitch class; **(3)** *Notated boundary evidence* reworded to the ten kinds, citing
+Ruling 73; every former wording preserved at its site. §4 carries the ANSWERED markings of Rulings 67
+(OQ-16) and 70 (OQ-1 for L1) as those rulings order and nothing else changes in it. **With this ruling
+every face of the derived specification is ratified under Ruling 65, subject to the edits Rulings 66
+to 76 order, all of which the next dispatch makes.** Nothing is applied by this ruling; no file is
+written by it. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**What it does NOT do.** It answers OQ-13 or any other open question — OQ-13 is put next, on its own
+surface. It renames nothing outside the successor; Ruling 56's inherited collided uses stay with
+OI-229's per-word batch. It does not reopen Rows 9.13, 13.4, 14.16, 14.17, 10.8 or 13.1. It moves no
+file, edits no outgoing text, and allocates no register identity.
+
+## 3cf. Ruling 77 — OQ-13, A NOTE MARKED INVISIBLE BUT PLAYED: VISIBILITY GOVERNS; S-15 STANDS AS RATIFIED WITH BOTH FLAGS REQUIRED, S-18's STATUS MOVES FROM OPEN TO SETTLED, AND A HIDDEN STAFF's NOTES ARE INELIGIBLE AS RULING 35's DEFAULT ALREADY SAYS (Position one)
+
+**Taken 2026-09-03 by the same session, the turn after Ruling 76 — the one starred open question of
+the derivation no ruling had reached, on which Ruling 35 made a hidden staff's eligibility depend.**
+**The user's words, verbatim: "I agree with recommendation. Also, it is not difficult to makes this a
+user option if we chamge our minds."** The second sentence is recorded as his and orders nothing: no
+option, setting or preset is created by this ruling, and whether an eligibility choice could be a user
+setting at all is a question for the layer's design against D-003 (inference is preset-independent)
+and D-035, not taken here.
+
+**The facts, each checked at its object.** The derivation's own evidence (S-15, S-18, OQ-13, its §6
+FACT tags): the C. P. E. Bach file carries editorial ornament realisations as invisible small notes,
+one also marked not played, the others invisible and by the file sounding — the playback-realisation
+shape. S-18's declared weakness, the other shape: a note hidden for layout (a doubled unison written
+once, hidden in one voice), in the text, whose loss is a voice-membership fact — weightier after
+Rulings 49 and 61 than when derived. S-1 (Ruling 66): the copyist test; the charter: *"that it is what
+the notation says, and nothing more"*. Ruling 36: a cue is a visible note the file silences — the
+opposite disagreement, not this one. Ruling 57 clause (iii): visibility an L0 fact *"which a reader
+may act on and which no layer treats as evidence about the music"* — read on the surface as not
+reaching S-15's condition, eligibility being S-1's test applied per note and not a weighing of the
+music; the reading declared as this side's. No notated fact separates the two shapes; only the
+editor's intent, which L1 may not read.
+
+**The two positions, weighed.** *Position one* — visibility governs, S-15 as derived with both flags
+required. Towards the objective: the analysis reads the composer's text; a hidden playback
+realisation is not it, and admitting it opens change points the page does not show — S-15's own
+premise. Towards the principles: S-1 and the charter; #12 by S-18's carrier, the excluded notes
+travelling labelled; Ruling 35's default confirmed. Cost, declared: the hidden-for-layout note
+excluded, its voice looking silent at that moment to Ruling 49's per-voice relations — a
+voice-membership loss, visible through the carrier. *Position two* — the played flag governs,
+visibility dropped: recovers that voice membership, but admits every playback realisation as a
+sounding event against S-1 and the charter, the corpus case in hand going the wrong way, and L1's
+change-point set made to depend on playback editing. A third shape, the two cases treated
+differently: not available, no notated fact separating them. **Both axes to position one; Ruling 1's
+precedence clause not exercised.**
+
+**What was decided.** OQ-13 is ANSWERED: visibility governs; S-15 stands as ratified under Ruling 69
+with both flags required; S-18's status moves from *open* to *settled*, citing this ruling, and OQ-13
+is marked ANSWERED at §4, both by the next dispatch with former wordings preserved; a hidden staff's
+notes are ineligible, Ruling 35's default now its rule. The declared cost stands in S-18's premise as
+written. Nothing is applied by this ruling; no file is written by it. **No decisions-register identity
+is allocated** — that register cannot accept one and `cowork_register_rule_c_suspension_2026_08_28.md`
+is the route.
+
+**What it does NOT do.** It changes no statement's text. It does not decide OQ-5 (ossia — which of two
+visible alternatives sounds). It creates no user option and decides nothing about playback. It moves
+no file, edits no outgoing text, and allocates no register identity.
+
 ## 4. What this ruling does NOT do
 
 It authorizes no fix, no design, no inference change, no measurement, and no amendment to any
@@ -5143,3 +5883,92 @@ session read at the files: Rulings 34 to 62 (§3ao–§3bq) whole; the reading f
 dispatch and its report whole; the ninety-second, ninety-fourth and ninety-fifth entries whole. Same
 targeted-edit method on a container copy of the bridge-staged snapshot, committed under the change guard
 rather than forced. **Nothing else in this record was altered by this extension.***
+
+*★ AND WITH **Ruling 64** (§3bs) by the session that booted on `cowork_handoff_entry_ninety_six.md`,
+2026-09-03, after the fifth comparison dispatch's close was verified at the objects. For it that
+session read at the files: the ninety-sixth entry; `CLAUDE.md`, `DECISIONS.md` and `STATUS.md` whole
+and the gating answer's field; the full close of the fifth batch in `cowork_away_returns.md` and its
+report whole; the successor `cowork_derived_specification_l0_l1_2026_09_03.md` whole; the *What was
+decided* paragraphs of Rulings 34 to 63 in this record and Ruling 13 (§3m), Ruling 32 (§3am) and
+Ruling 57's clause (ii) at their lines; the reading file's §13a, Row 4.3, Row 4.37 and Row 14.21; the
+phase definition §3.4; `FRAMEWORK.md` §5's L0 section and boundary-contract table; the sizing-pilot
+sitting whole. Object queries by explicit hash: the six commits at `git show --stat`, the banner's and
+the sitting record's hunks at `git diff -U0` between explicit hashes, the successor's blob against the
+derivation's blob at `git diff --numstat` and `-U0`. Same targeted-edit method on a container copy of the
+bridge-staged snapshot, committed under the change guard rather than forced. **Nothing else in this
+record was altered by this extension.***
+
+*★ AND WITH **Ruling 65** (§3bt) by the same session, 2026-09-03, the turn after Ruling 64. For it that
+session read at the files, beyond the reads named for Ruling 64: the phase definition §9 (lines 581–591);
+`cowork_rulings_2026_08_26_sizing_tests_sitting.md` whole; `cowork_rulings_2026_08_25_v1_sufficiency_sitting.md`
+whole; the successor's statement headings and ruling clauses, from which the 37/17 count was taken by
+this side at the file. Same targeted-edit method, same change guard. **Nothing else in this record was
+altered by this extension.***
+
+*★ AND WITH **Ruling 66** (§3bu) by the same session, 2026-09-03, the turn after Ruling 65. For it that
+session read at the files, beyond the reads already named: this record at lines 3626–3632 and 4578–4599
+(Ruling 44's facts, Ruling 57's positions); the successor's S-1, S-2 and §4 OQ-4. Same targeted-edit
+method, same change guard. **Nothing else in this record was altered by this extension.***
+
+*★ AND WITH **Ruling 67** (§3bv) by the same session, 2026-09-03, the turn after Ruling 66. For it that
+session read at the files, beyond the reads already named: this record at lines 3590–3596, 4650–4669
+and 4810–4821 (Rulings 43, 58 and 61's positions) and the clause lines named in the ruling; the
+successor's S-3 to S-9, S-13, S-14 and §4 OQ-16; `DECISIONS.md`'s D-501 row; `FRAMEWORK.md` §5's
+boundary-contract table. Same targeted-edit method, same change guard. **Nothing else in this record
+was altered by this extension.***
+
+*★ AND WITH **Ruling 68** (§3bw) by the same session, 2026-09-03, the turn after Ruling 67. For it that
+session read at the files, beyond the reads already named: this record at lines 4819–4824; the
+successor's S-10 to S-14 and S-39. Same targeted-edit method, same change guard. **Nothing else in
+this record was altered by this extension.***
+
+*★ AND WITH **Ruling 69** (§3bx) by the same session, 2026-09-03, the turn after Ruling 68. For it that
+session read at the files, beyond the reads already named: the successor's S-15 to S-22 and §4 OQ-2,
+OQ-4, OQ-5, OQ-13. Same targeted-edit method, same change guard. **Nothing else in this record was
+altered by this extension.***
+
+*★ AND WITH **Ruling 70** (§3by) by the same session, 2026-09-03, the turn after Ruling 69. For it that
+session read at the files, beyond the reads already named: the successor's S-23 to S-27 and §4 OQ-1,
+OQ-7; this record's Ruling 46 (i) and (v) at lines 3793–3802 and Ruling 51 at 4216–4220. Same
+targeted-edit method, same change guard. **Nothing else in this record was altered by this
+extension.***
+
+*★ AND WITH **Ruling 71** (§3bz) by the same session, 2026-09-03, the turn after Ruling 70, and with
+the user's one-line answer on the tie statement appended to §3by's foot. For it that session read at
+the files, beyond the reads already named: the successor's S-28 to S-33; this record at lines
+4251–4256 and 4465–4472 (Rulings 52 and 55's positions). Same targeted-edit method, same change guard.
+**Nothing else in this record was altered by this extension.***
+
+*★ AND WITH **Ruling 72** (§3ca) by the same session, 2026-09-03, the turn after Ruling 71. For it that
+session read at the files, beyond the reads already named: the successor's S-34 to S-38 and S-12. Same
+targeted-edit method, same change guard. **Nothing else in this record was altered by this
+extension.***
+
+*★ AND WITH **Ruling 73** (§3cb) by the same session, 2026-09-03, the turn after Ruling 72. For it that
+session read at the files, beyond the reads already named: the successor's S-39 to S-43 and §4 OQ-9,
+OQ-14, OQ-15. Same targeted-edit method, same change guard. **Nothing else in this record was altered
+by this extension.***
+
+*★ AND WITH **Ruling 74** (§3cc) by the same session, 2026-09-03, the turn after Ruling 73. For it that
+session read at the files, beyond the reads already named: this record's Ruling 42 whole (lines
+3523–3569); the successor's S-44 to S-49 and §4 OQ-10, OQ-12, OQ-17; the object diff between blobs
+`9b102c5756…` and `8dc3b0cac1…` restricted to the S-44–S-49 region, by explicit hash. Same
+targeted-edit method, same change guard. **Nothing else in this record was altered by this
+extension.***
+
+*★ AND WITH **Ruling 75** (§3cd) by the same session, 2026-09-03, the turn after Ruling 74. For it that
+session read at the files, beyond the reads already named: the successor's S-50 to S-54; this record's
+Ruling 46 at lines 3793–3818 and Ruling 62 items 1, 7, 8 and 9; `DECISIONS.md`'s D-262 and D-265 rows.
+Same targeted-edit method, same change guard. **Nothing else in this record was altered by this
+extension.***
+
+*★ AND WITH **Ruling 76** (§3ce) by the same session, 2026-09-03, the turn after Ruling 75. For it that
+session read at the files, beyond the reads already named: the successor's §0 whole and §4 whole; this
+record's Ruling 56 at lines 4495–4553. Same targeted-edit method, same change guard. **Nothing else in
+this record was altered by this extension.***
+
+*★ AND WITH **Ruling 77** (§3cf) by the same session, 2026-09-03, the turn after Ruling 76. For it that
+session read at the files, beyond the reads already named: the successor's S-15, S-18, S-19 and §4
+OQ-5, OQ-13; this record's Ruling 36 (§3aq) and Ruling 57 clause (iii) at lines 4592–4597. Same
+targeted-edit method, same change guard. **Nothing else in this record was altered by this
+extension.***
