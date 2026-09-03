@@ -9,9 +9,18 @@
 > disposition discipline of `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §0
 > and §3.4.
 >
-> **EVERY DISPOSITION BELOW IS A PROPOSAL.** Nothing here is applied to any outgoing text, to the
-> derivation, to the brief, to the boot pack, or to any register. The user ratifies later, on a
-> decision surface the writing side puts over these rows.
+> **EVERY DISPOSITION BELOW IS A PROPOSAL, EXCEPT WHERE A ROW CARRIES A *RULED DISPOSITION* LINE.**
+> Nothing here is applied to any outgoing text, to the derivation, to the brief, to the boot pack, or
+> to any register. **A row carrying a `*RULED DISPOSITION` line is placed by the ruling that line names
+> — Rulings 34 to 62 of `cowork_rulings_2026_08_31_decision_surface_sitting.md`, re-marked into this
+> file on 2026-09-03 by `cc_instruction_comparison_l0_l1_fifth_2026_09_03.md` Task 3 — and every other
+> row remains a proposal**; §13a counts which are which. No proposed disposition was edited or deleted
+> (#12). The user ratifies the derived specification later, on a decision surface over
+> `cowork_derived_specification_l0_l1_2026_09_03.md`, not over this file.
+> *(This paragraph formerly read: "**EVERY DISPOSITION BELOW IS A PROPOSAL.** Nothing here is applied
+> to any outgoing text, to the derivation, to the brief, to the boot pack, or to any register. The user
+> ratifies later, on a decision surface the writing side puts over these rows." — true of every writing
+> before the application act, and preserved here rather than deleted, #12.)*
 >
 > **What the user is asked to rule in this file: NOTHING.** The closing section says so in terms.
 >
@@ -31,9 +40,13 @@
 >
 > **What completeness here does and does not mean.** It means every outgoing statement of the
 > population carries exactly one proposed disposition, every derived statement carries exactly one row,
-> and the two sides reconcile by arithmetic stated at §7c. **It does not mean anything is settled**:
-> every disposition is still a proposal, every verdict is still this session's authored reading of two
-> texts, and §15 still asks the user to rule nothing in this file.
+> and the two sides reconcile by arithmetic stated at §7c. **It does not mean anything is settled by
+> this file**: every verdict is this session's authored reading of two texts, and §15 still asks the
+> user to rule nothing here. **What IS settled is settled elsewhere and only re-marked here**: a row
+> carrying a `*RULED DISPOSITION` line is placed by the ruling that line names, and the rest remain
+> proposals (§13a). *(The clause after the colon formerly read "every disposition is still a proposal,
+> every verdict is still this session's authored reading of two texts, and §15 still asks the user to
+> rule nothing in this file" — preserved here rather than deleted, #12.)*
 
 ---
 
@@ -367,6 +380,11 @@ those five and carry instead `staffEligible`, which S-3 does not name.
 own list — do the five facts S-3 requires and this list does not carry reach any consumer, and does
 `staffEligible` belong to L0's supplied facts or to an eligibility decision above it?
 
+*RULED DISPOSITION (Ruling 62, §3bq, item 4).* **QUARANTINED** — unchanged. *"The per-note list is
+S-3's as written, plus Ruling 44's stem direction and Ruling 50's attached marks; the outgoing eleven-
+and twelve-field lists are descriptions of builds and targets, placed by S-3 — carried where they
+match, QUARANTINED where they describe code, as the reading file already has 1.3 and 4.3."*
+
 ---
 
 **Row 1.4 (i) — a tied group is one span with one onset.**
@@ -427,6 +445,12 @@ sounds at a moment is answered with **no backward horizon**, because a bounded b
 silently drops a note held longer than the bound — a rule the derivation's own S-29 sounding-set
 definition assumes and never writes down.
 
+*RULED DISPOSITION (Ruling 39, §3at).* **ADOPTED — proposed** — *"Rows 1.5(ii), 3.26, 3.53, 4.24 and
+4.31 — ADOPTED, proposed, the proposal split into the two halves above"*: at L0 beside S-3, that L0
+holds the whole notated record and the working span restricts what L1 publishes, never what L0
+supplies; and at S-29, that the sounding set is taken over every eligible event with no backward
+bound, with its defense and the falsifier the ruling adds.
+
 ---
 
 **Row 1.6 (i) — excluded notes are kept and flagged, never dropped.**
@@ -463,6 +487,10 @@ analysis-eligibility fact, since the derivation reaches percussion through S-20 
 track through S-2 but reaches a **hidden staff** through neither, so a note on a hidden staff is
 eligible under S-15 as it stands.
 
+*RULED DISPOSITION (Ruling 35, §3ap).* **ADOPTED — carried** — *"Row 1.6(ii) — ADOPTED, carried by the
+addition"*: S-15 gains the sixth condition *its staff is not hidden* and S-3 (or S-4's staff facts) the
+supplied fact *whether the note's staff is hidden*, defined from the notation.
+
 ---
 
 **Row 1.7 — the tie-unresolved atoms are republished, each with its own notated span.**
@@ -486,6 +514,15 @@ notated tie boundary carries an onset and a release there.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the event lattice built from
 `notatedNotes()` place a change point at a notated tie boundary, which S-23 says is not one — and if
 so, may a harmonic boundary be committed there?
+
+*RULED DISPOSITION (Ruling 45, §3az).* **QUARANTINED** — unchanged: *"Row 1.7 — QUARANTINED, audit
+question as written in the reading file."*
+
+*RULED DISPOSITION (Ruling 45, §3az), for the row's CONTENT.* **ADOPTED — carried in substance** —
+*"and ADOPTED, carried in substance for its content, by S-3 with L2's consumption of L0."* At the
+ratification act *"D-040 is noted as superseded in fact by the L0 contract, its content carried and
+the removal of the second surface recorded as closed (D-644); no statement is added to the
+derivation."*
 
 ---
 
@@ -666,6 +703,12 @@ caller may enlarge it.
 that the finest meaningful enlargement of the working span is one reaching the next change point,
 because within a slice the eligible sounding-note set is constant, so a smaller request loads no note.
 
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — *"Rows 5.11, 5.12, 5.13, 5.20, 5.32,
+5.39, 2.21, 2.26, 7.3, 7.4, 7.17, 7.18, 7.19, 7.22, 7.27, 7.28, 1.18, 1.20 and 6.44 — ADOPTED,
+proposed, the proposal being the clauses above"* — the six enlargement clauses (i)–(vi) written beside
+S-53; clause (iv) is this row's, *"the finest step that can change anything is the next change point, a
+consequence of the slice definition and not a settable value."*
+
 ---
 
 **Row 1.19 — the reason: a request ending inside a slice is provably a no-op.**
@@ -697,6 +740,9 @@ block (locator: line 1608).
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 1.18. *The proposal:* that the
 specification record the granularity bound as a consequence of the slice definition rather than as a
 settable value, so that no later fit can treat it as one.
+
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — *"Rows … 1.18, 1.20 and 6.44 —
+ADOPTED, proposed, the proposal being the clauses above"*, clause (iv) being this row's ground.
 
 ---
 
@@ -816,6 +862,11 @@ direction, by the route S-7 itself provides — *"a later layer that needs one a
 test"* — since S-1's criterion admits it (two copyists agree on a stem direction and it asserts no
 harmony). The voice-slot half is already carried by S-3 and S-13 and needs no addition.
 
+*RULED DISPOSITION (Ruling 44, §3ay).* **ADOPTED — proposed** — *"Row 1.25 — ADOPTED, proposed"*: at
+the ratification act *"S-3 gains its stem direction, as engraved, among the supplied per-note facts;
+S-7's exclusion list is amended accordingly; S-9 and S-38 stand unchanged; the consumer is named as the
+second axis, voice leading, so the dormancy is declared."*
+
 ---
 
 **Row 1.26 — they are the same category as the key signature, the time signature, a tie and a pedal
@@ -833,6 +884,9 @@ pedal marks supplied), S-3 (ties supplied per note).
 *PROPOSED DISPOSITION.* **ADOPTED — carried** (S-3, S-6 and S-7 together supply all four of the named
 comparators).
 
+*RULED DISPOSITION (Ruling 44, §3ay).* **ADOPTED — carried** — unchanged: *"Rows 1.26, 1.27(i) and
+1.28 stay carried."*
+
 ---
 
 **Row 1.27 (i) — they are not a claim about the harmony.**
@@ -846,6 +900,9 @@ comparators).
 what the music means"*, and neither field is one.
 
 *PROPOSED DISPOSITION.* **ADOPTED — carried** (S-1).
+
+*RULED DISPOSITION (Ruling 44, §3ay).* **ADOPTED — carried** — unchanged: *"Rows 1.26, 1.27(i) and
+1.28 stay carried."*
 
 ---
 
@@ -865,6 +922,8 @@ the key signature; the outgoing statement licenses consumption of a field that l
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 1.25.
 
+*RULED DISPOSITION (Ruling 44, §3ay).* **ADOPTED — proposed** — *"Row 1.27(ii) — ADOPTED, proposed."*
+
 ---
 
 **Row 1.28 — the line is the chord-symbol prohibition's, applied to a new pair of fields.**
@@ -880,6 +939,9 @@ of fields — the analysis may read what the score IS and may not read what a us
 line, S-2 for a written chord symbol and S-8 for a composer's own figures.
 
 *PROPOSED DISPOSITION.* **ADOPTED — carried** (S-1 with S-2 and S-8).
+
+*RULED DISPOSITION (Ruling 44, §3ay).* **ADOPTED — carried** — unchanged: *"Rows 1.26, 1.27(i) and
+1.28 stay carried."*
 
 ---
 
@@ -898,6 +960,10 @@ layer." — the 2026-08-08 block (locator: line 1634).
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 1.25 as its reach clause: that the
 reading permission be stated as binding on any consumer, independently of whether any particular
 consumer is built.
+
+*RULED DISPOSITION (Ruling 44, §3ay).* **ADOPTED — proposed** — *"Row 1.29 — ADOPTED, proposed (the
+reach clause)"*: *"the reading permission is stated beside S-1 as binding on any consumer, L1 excepted
+by S-9."*
 
 ---
 
@@ -1120,6 +1186,11 @@ stated once, in one place, over the union of the two lists — S-15's five condi
 staff-level fact Row 1.6(ii) already proposes — since the two texts currently test different
 predicates under the same word.
 
+*RULED DISPOSITION (Ruling 35, §3ap).* **ADOPTED — proposed** — *"Row 2.8 — ADOPTED, proposed (the
+predicate stated once at L1 in the amended form; the three-flag sentence superseded by it)."* The
+proposal is now the ruling's own stated clause, written into the derived specification beside S-15 and
+S-3.
+
 ---
 
 **Row 2.9 — the slicer reads the flags and does not re-decide them.**
@@ -1133,6 +1204,8 @@ predicates under the same word.
 re-derives none of them.
 
 *PROPOSED DISPOSITION.* **ADOPTED — carried.**
+
+*RULED DISPOSITION (Ruling 35, §3ap).* **ADOPTED — carried** — *"Row 2.9 — ADOPTED, carried."*
 
 ---
 
@@ -1161,6 +1234,11 @@ This session cannot defend calling it ADOPTED (the content is not carried: S-18'
 different structure), RELOCATED (it is L1's own output shape), or QUARANTINED (the sentence states a
 rule about the output, not a property of the code) in one sentence at the two texts. **The user
 places it.**
+
+*RULED DISPOSITION (Ruling 35, §3ap).* **ADOPTED — carried in substance** — *"Row 2.10 — ADOPTED,
+carried in substance (nothing dropped; identity the eligible set; the carrier is S-18's, beside the
+output, and the* inside each slice's set *shape is not adopted)."* The row's UNPLACED default is
+therefore placed by the ruling.
 
 ---
 
@@ -1215,6 +1293,10 @@ the two domains is published — the working span exactly, or its intersection w
 material — since the two differ precisely over leading and trailing silence, and Row 2.15 is the same
 question stated from the other side.
 
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — proposed** — *"Rows 2.13, 2.20, 6.35, 7.9, 7.11,
+7.14 and 7.29 — ADOPTED, proposed, the proposal being that the published domain be stated, and this
+ruling stating it: the working span exactly, with silent edge slices, events whole and marked."*
+
 ---
 
 **Row 2.14 — every tick in the domain lands in exactly one slice.**
@@ -1251,6 +1333,9 @@ publishes no such mark.
 by the span* marks S-32 requires be published beside the clipped slice list, so that a consumer can
 tell a real onset at the span's start from an artefact of where the span begins.
 
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — carried** — *"Row 2.15 — ADOPTED, carried by S-32's
+marks."*
+
 ---
 
 **Row 2.16 — no note kind is special-cased, and a grace note opens and closes a boundary by its span.**
@@ -1279,6 +1364,11 @@ answer decides both the change-point set and the no-zero-length-slice invariant.
 sharpest disagreement in the two documents tabulated so far, and it is put as a difference, not
 settled here.**
 
+*RULED DISPOSITION (Ruling 34, §3ao).* **QUARANTINED** — *"Row 2.16 — QUARANTINED, audit question:
+does the slicer open a boundary at a grace note, and with what span, against the rule that it opens
+none (the tuplet half of the same sentence is another family and is not placed here)."* S-15, S-16 and
+S-30 stand as derived, *settled*.
+
 ---
 
 **Row 2.17 — the slicer needs no grace or tuplet code.**
@@ -1293,6 +1383,9 @@ change-point set and published instead as an *ornamental attachment* of its host
 about graces that some code must implement.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.16 as its consequence.
+
+*RULED DISPOSITION (Ruling 34, §3ao).* **QUARANTINED** — *"Row 2.17 — QUARANTINED, the same
+question."*
 
 ---
 
@@ -1341,6 +1434,10 @@ slice leading or trailing silence at all.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.13 — it is the same question
 seen from the silence side, and the proposal is the same: state which domain is published.
 
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — proposed** — *"Rows 2.13, 2.20, 6.35, 7.9, 7.11,
+7.14 and 7.29 — ADOPTED, proposed"*: the working span tiled exactly, with silent edge slices, events
+whole and marked.
+
 ---
 
 **Row 2.21 — re-slicing on extend is a re-call of the same pure function.**
@@ -1360,6 +1457,11 @@ caller's and never contemplates enlarging one.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state the
 re-slice equivalence property — that slicing after an enlargement equals slicing a span built at the
 enlarged extent — since it is what makes an enlargement safe and the derivation states no equivalent.
+
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — *"Rows 5.11, 5.12, 5.13, 5.20, 5.32,
+5.39, 2.21, 2.26, 7.3, 7.4, 7.17, 7.18, 7.19, 7.22, 7.27, 7.28, 1.18, 1.20 and 6.44 — ADOPTED,
+proposed, the proposal being the clauses above"* — clause (ii) is this row's: *"L1 computed over a
+larger span is exactly what a fresh computation over that span yields."*
 
 ---
 
@@ -1429,6 +1531,10 @@ and does not name it**: S-32 admits a change point that S-28's definition does n
 span's edge is a change point or an artificial boundary marked as such, since a consumer weighing
 boundary evidence at that position needs to know which it is.
 
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — proposed** — *"Rows 2.25, 7.13, 7.15 and 7.16 —
+ADOPTED, proposed: the edge stated as a span edge and not a change point, Row 7.16's counterexample
+carried as the evidence."* S-32 is amended accordingly.
+
 ---
 
 **Row 2.26 — an "old slices stay byte-identical" assertion is false and must never be written as a
@@ -1444,6 +1550,10 @@ written as a test**." — the 2026-08-08 block (locator: line 1701).
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.21: the prohibition is the
 operational half of the re-slice equivalence property, and it is the half a later build is most
 likely to breach.
+
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — *"Rows … 2.21, 2.26 … — ADOPTED,
+proposed, the proposal being the clauses above"*: clause (iii) carries it *"with the falsifier in its
+negative form — a test asserting the old slice list byte-identical is wrong and is not written."*
 
 ---
 
@@ -1465,6 +1575,11 @@ and end and nothing else"* and leaves the notes to be fetched from the note mode
 the sounding set is **carried on** the slice or **fetched from** L0 by identity, since S-50 lists it
 as published and the outgoing text deliberately does not store it.
 
+*RULED DISPOSITION (Ruling 41, §3av).* **ADOPTED — proposed** — *"Rows 2.27, 6.21, 6.33, 7.2 and 7.25
+— ADOPTED, proposed, the proposal being that the specification state whether the set is carried or
+fetched, and this ruling stating it: carried, by event identity; the outgoing minimal-slice decision is
+superseded at the ratification act, its selection-tag half standing as carried at Row 2.28."*
+
 ---
 
 **Row 2.28 — this layer owns no selection semantics, so a selection tag would be another concern's.**
@@ -1479,6 +1594,9 @@ component's concern in this one's output." — the 2026-08-08 block (locator: li
 candidates and evidence and leaves every decision to its consumer.
 
 *PROPOSED DISPOSITION.* **ADOPTED — carried** (S-53).
+
+*RULED DISPOSITION (Ruling 41, §3av).* **ADOPTED — carried** — unchanged: the selection-tag half
+stands *"as carried at Row 2.28"*, and *"no selection tag is added."*
 
 ---
 
@@ -1595,6 +1713,8 @@ because a chord symbol is *annotation*, so neither reaches a hidden staff carryi
 notes.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 1.6(ii) and 2.8: that L0 supply
 a per-staff analysis-eligibility fact.
+*RULED DISPOSITION (Ruling 35, §3ap).* **ADOPTED — carried** — *"Row 3.2 — ADOPTED, carried by the
+addition, the hidden-staff definition to be written from the notation."*
 
 **Row 3.3 — the chord-symbol track is detected and its notes are kept and marked.**
 *Statement.* "Detected by the shared staff-eligibility predicate; its notes are kept and marked
@@ -1615,6 +1735,9 @@ publishing it and leaving the case to OQ-4; the outgoing text folds an imported 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that L0 state whether cue size
 survives as its own fact or is absorbed into the sounds flag, since S-19 publishes it and this text
 does not.
+*RULED DISPOSITION (Ruling 36, §3aq).* **ADOPTED — carried** — *"Row 3.4 — ADOPTED, carried (S-18 and
+the fact)."* The fact written into L0 beside S-19: *"a record file supplies no cue fact beyond the
+played flag; a cue in the interchange format is a silent note; L1 reads the played flag."*
 
 **Row 3.5 — voice-level eligibility is not this layer's to define.**
 *Statement.* "Voice-level 'eligibility' (the three-flag combination consumers use) is defined by the
@@ -1628,6 +1751,9 @@ consuming specification.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that eligibility have **one** home,
 since it is currently defined across at least three documents and the two texts disagree about which
 owns it.
+*RULED DISPOSITION (Ruling 35, §3ap).* **QUARANTINED** — *"Row 3.5 — QUARANTINED, audit question:
+which specifications and code currently define the eligibility combination, since after ratification
+only L1 does."*
 
 #### §1 — introduction and purpose
 
@@ -1705,6 +1831,10 @@ every note without exception.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
 losslessness admits an exception for unpitched notes, the two texts differing on exactly that one
 class.
+*RULED DISPOSITION (Ruling 37, §3ar).* **ADOPTED — carried** — *"Row 3.13 — ADOPTED, carried, with no
+exception, once the amendment is written."* S-20's last sentence is amended so the unpitched note is
+carried beside L1's output on S-18's carrier, labelled unpitched. *"Row 3.14(i), already ADOPTED —
+carried, is unchanged."*
 
 **Row 3.14 (i) — no note at all is lost, even one that will not feed tonal analysis.**
 *Statement.* "(a) any note at all — even a note that will not feed tonal analysis is kept, only
@@ -1736,6 +1866,8 @@ drum/percussion staves, the chord-symbol track …, and hidden staves." — §1 
 *Current-text axis.* S-15: **DIFFERS**. S-18: **AGREES**. S-20: **AGREES**. S-2: **AGREES**.
 *The difference.* As at Row 3.2 — the hidden-staff case is reached by no derived statement.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 3.2.
+*RULED DISPOSITION (Ruling 35, §3ap).* **ADOPTED — carried** — *"Row 3.15 — ADOPTED, carried, as Row
+3.2."*
 
 **Row 3.16 — they are kept and flagged, never dropped.**
 *Statement.* "Architectural Layer 1 **keeps all of these notes and sets a flag on each one saying
@@ -1826,6 +1958,9 @@ matter how much earlier they started." — §2 (locator: line 81).
 bounding the search that finds it.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, the same proposal as Row 1.5(ii): that L0 state the
 no-backward-horizon rule explicitly.
+*RULED DISPOSITION (Ruling 39, §3at).* **ADOPTED — proposed** — *"Rows 1.5(ii), 3.26, 3.53, 4.24 and
+4.31 — ADOPTED, proposed, the proposal split into the two halves above"*: the no-horizon rule written
+in at L0 beside S-3 and at S-29, with its defense and the falsifier the ruling adds.
 
 **Row 3.27 — it operates at any selection size and in any style, within a stated cost budget.**
 *Statement.* "**Operates on the user's selected part of the score, at any selection size and in any
@@ -1854,6 +1989,10 @@ out of date.** … Deciding that the note model must be rebuilt … is the calle
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that L0 state who owns staleness,
 since the derivation's contract is silent on what happens when the notated record changes under a
 built model.
+*RULED DISPOSITION (Ruling 43, §3ax).* **ADOPTED — proposed** — *"Row 3.29 — ADOPTED, proposed, the
+proposal being that L0 state who owns staleness, and this ruling stating it."* The clause is written
+beside S-3 to S-7 as part of the input contract, with a pointer to the bounded-context design for the
+dirty span and nothing of that design restated (#6).
 
 **Row 3.30 — once built, the results do not change.**
 *Statement.* "**Fixed for the architectural layers above it:** once the note model is built, its
@@ -1862,6 +2001,7 @@ results." — §2 (locator: line 102).
 *Derived.* S-28 (positions are exact), S-53.
 *Current-text axis.* S-28: **AGREES** in substance on determinism. S-53: **AGREES**.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.**
+*RULED DISPOSITION (Ruling 43, §3ax).* **ADOPTED — carried** — unchanged: *"Row 3.30 stays carried."*
 
 #### §3 — context and scope
 
@@ -1878,6 +2018,11 @@ information only.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the input list be stated at the
 width S-3 to S-7 require, since the two texts differ over what the layer is handed rather than over
 what it does with it.
+*RULED DISPOSITION (Ruling 62, §3bq, item 4).* **ADOPTED — carried** — *"The per-note list is S-3's as
+written, plus Ruling 44's stem direction and Ruling 50's attached marks; the outgoing eleven- and
+twelve-field lists are descriptions of builds and targets, placed by S-3 — carried where they match,
+QUARANTINED where they describe code."* This row's input list matches S-3 to S-7 in kind, so it is
+carried.
 
 **Row 3.32 — the operations: build, return every note in onset order.**
 *Statement.* "*Build the note model* from the selected music (reading it once). *Return every note in
@@ -1910,6 +2055,9 @@ request past the score edge clamps at the boundary and reports it." — §3 (loc
 the append-only property.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that L0 state the append-only and
 clamp-and-report properties of enlarging the span, which the derivation does not carry.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — *"Rows 5.15, 5.36 and 3.35 — ADOPTED,
+proposed, by clause (vi) and clause (ii)"*: a span edge coinciding with the record's own start or end
+is published as such, and L1 over a larger span is exactly a fresh computation over that span.
 
 **Row 3.36 — the consumers.**
 *Statement.* "the derived summary views …; the Architectural Layer 2 slicer; the Architectural Layer 3
@@ -1957,6 +2105,9 @@ listed in Section 7)." — §5 (locator: line 146).
 *Derived.* S-3.
 *Current-text axis.* S-3: **DIFFERS** (the same difference as Row 1.3, stated there).
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 3.42.
+*RULED DISPOSITION (Ruling 62, §3bq, item 4).* **QUARANTINED** — *"the outgoing eleven- and
+twelve-field lists are descriptions of builds and targets, placed by S-3 — carried where they match,
+QUARANTINED where they describe code."* This row states the as-built record's own eleven fields.
 
 **Row 3.42 — the eleven facts, enumerated.**
 *Statement.* "Each note record carries eleven facts: its **sounding pitch**; its **spelled pitch** …;
@@ -1973,6 +2124,9 @@ the bar, absolute position)"*; the outgoing eleven carry an absolute position on
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the per-note fact list be
 reconciled to one list — the five S-3 facts absent here decide S-15's eligibility test, S-17's
 ornament attribute and S-34's bar-relative metric hierarchy, so their absence is not cosmetic.
+*RULED DISPOSITION (Ruling 62, §3bq, item 4).* **QUARANTINED** — *"The per-note list is S-3's as
+written, plus Ruling 44's stem direction and Ruling 50's attached marks"*; this row enumerates the
+as-built eleven fields, so it *"describes code"* and is quarantined rather than carried.
 
 **Row 3.43 — the model owns an onset-ordered list, a borrowed score pointer and a look-up index.**
 *Statement.* "**The note model** — owns the list of note records ordered by start time, a borrowed
@@ -1993,6 +2147,8 @@ set"* and is published instead as an *ornamental attachment* of its host; the ou
 grace notes into the same record list as ordinary notes, carrying only an `isGrace` flag.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.16 and 2.17 — the same grace
 question, met here at the build rather than at the slicer.
+*RULED DISPOSITION (Ruling 34, §3ao).* **ADOPTED — carried** — *"Row 3.44 — ADOPTED, carried (L0
+supplies the grace fact, S-16 consumes it; D-569 requires the record keep it)."*
 
 **Row 3.45 — the look-up index answers span queries without scanning.**
 *Statement.* "**The numeric look-up index** — a structure that lets the two span-of-time questions …
@@ -2033,6 +2189,8 @@ position)"* — three things — because S-34's metrical hierarchy and S-36's an
 computed from the bar-relative offset; the outgoing text carries the absolute position alone.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 3.42: that the bar index and the
 within-bar offset be supplied, the metric-strength class depending on them.
+*RULED DISPOSITION (Ruling 62, §3bq, item 4).* **QUARANTINED** — travelling with Row 3.42: *"carried
+where they match, QUARANTINED where they describe code."* The per-note list is S-3's as written.
 
 **Row 3.49 — single source of truth.**
 *Statement.* "**Single source of truth** — … every architectural layer reads these notes; no
@@ -2080,6 +2238,10 @@ longer than the limit" — §9 (locator: line 198).
 *Current-text axis.* **THE DERIVATION IS SILENT.**
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 1.5(ii) and 3.26 — and this row
 is the one that carries the **defense** the proposal needs, which is why it is rowed separately.
+*RULED DISPOSITION (Ruling 39, §3at).* **ADOPTED — proposed** — *"Rows 1.5(ii), 3.26, 3.53, 4.24 and
+4.31 — ADOPTED, proposed."* The defense this row carries is the one the ruling writes in: *"a bound
+silently drops a note held longer than the bound"*, with *"the recorded four-whole-note case as the
+instance."*
 
 **Row 3.54 — keep and mark rather than filter while reading.**
 *Statement.* "**Keep every note and mark it, rather than filter notes out while reading.** …
@@ -2123,6 +2285,8 @@ special handling.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.16, 2.17 and 3.44. **This row
 is evidence that the grace question is open in the outgoing record and closed in the derivation**,
 which is worth the user's attention when the disagreement at Row 2.16 is ruled.
+*RULED DISPOSITION (Ruling 34, §3ao).* **HISTORICAL** — *"Row 3.57 — HISTORICAL (an open item of the
+outgoing plan, closed by this ruling)."*
 
 **Row 3.58 — the whole-score build is interim, and the target is build-over-selection plus extend.**
 *Statement.* "**The build currently reads the whole score even when only part of it is queried** — an
@@ -2157,6 +2321,9 @@ recording the unresolved cases as OQ-4 and OQ-5; the outgoing text records that 
 score carries no cue distinction — be stated in L0, because it bears directly on two of the
 derivation's open questions and the derivation did not have it. **This is the clearest case in this
 document of the outgoing text holding a fact the derivation lacked.**
+*RULED DISPOSITION (Ruling 36, §3aq).* **ADOPTED — proposed** — *"Row 3.60 — ADOPTED, proposed (the
+fact carried into L0)."* The proposal is now the ruling's own stated fact, written beside S-19; OQ-4
+is closed on it and OQ-5 stays open.
 
 **Row 3.61 — what the design is built on, from the field.**
 *Statement.* "**Built on:** the idea of a **lossless symbolic-music event list** … **Standard
@@ -2316,6 +2483,11 @@ bass is determined, since S-44 places it at L1 as a cue input and this text plac
 two are reconcilable — S-44's bass is read off the sounding set rather than selected by weighting —
 and the proposal is that the specification say so rather than leaving the two texts to be read
 together.)*
+*RULED DISPOSITION (Ruling 42, §3aw).* **ADOPTED — carried in substance** — *"Row 4.4 — ADOPTED,
+carried in substance (L1 selects no bass, which S-44 already obeys), with the wording amendment
+recorded as the proposal the reading file asks for: the specification states where the bass is decided
+and what L1 reads."* S-44 is reworded so its anchor is the lowest sounding pitch of the slice's
+sounding set, the word *bass* reserved for the chord's bass note decided at L3.
 
 **Row 4.5 — collection, filtering and weighting are three responsibilities.**
 *Statement.* "**Collection** (this layer): the facts …. **Filtering** (a distinct, explicit decision)
@@ -2394,6 +2566,8 @@ its level's period and refuses to fold it into a number, while this is a four-va
 folded straight into a weight.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the shipped arm still weight by this
 four-valued ladder, and is that the same quantity S-35's class is meant to publish?
+*RULED DISPOSITION (Ruling 47, §3bb).* **QUARANTINED** — unchanged: *"Rows 4.11 and 12.12(ii) —
+QUARANTINED, audit questions as written."*
 
 **Row 4.12 — aggregation by pitch class.**
 *Statement.* "**Aggregation by PITCH CLASS** into `accum[12]`: sums `totalWeight`,
@@ -2514,6 +2688,8 @@ genuinely silent), not a magic horizon." — §4.2 (locator: line 143).
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 1.5(ii), 3.26 and 3.53 — this is
 the fourth independent place in the outgoing record where the no-horizon rule is stated and the
 derivation does not carry it.
+*RULED DISPOSITION (Ruling 39, §3at).* **ADOPTED — proposed** — *"Rows 1.5(ii), 3.26, 3.53, 4.24 and
+4.31 — ADOPTED, proposed, the proposal split into the two halves above."*
 
 **Row 4.25 — there is no forward reach, and progression context lives elsewhere.**
 *Statement.* "The layer is region-bounded with no anticipation/cross-region forward read; 'what comes
@@ -2579,6 +2755,8 @@ true onset …. Any forward/context reach is an explicit named capability, not a
 *Derived.* S-29, S-53.
 *Current-text axis.* S-29: **THE DERIVATION IS SILENT**. S-53: **AGREES** on the named-capability half.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 4.24.
+*RULED DISPOSITION (Ruling 39, §3at).* **ADOPTED — proposed** — *"Rows 1.5(ii), 3.26, 3.53, 4.24 and
+4.31 — ADOPTED, proposed"*; and *"Row 4.31's named-capability half stays AGREES with S-53."*
 
 **Row 4.32 — filtering is separate, reversible and inspectable.**
 *Statement.* "**FILTERING (a separate, explicit decision).** A thin step that reads the collection's
@@ -2637,7 +2815,12 @@ cross-staff, multi-voice unisons, pedal, invisible/non-playing)." — §6 (locat
 *Derived.* S-15, S-16, S-18, S-23, S-54.
 *Current-text axis.* S-23: **AGREES** (ties). S-16: **AGREES** (grace). S-18: **AGREES**
 (invisible/non-playing). S-54: **AGREES** (pedal). S-15: **DIFFERS** — the derivation's eligibility
-list reaches neither **tuplets**, **cross-staff** notes nor **multi-voice unisons** as named cases.
+list reaches neither **tuplets** nor **cross-staff** notes as named cases; **S-33 reaches multi-voice
+unisons**, in its own words *"a unison or octave doubling beginning or ending is a change point"*.
+*(Corrected at the application act on Ruling 38, §3as, which states that "the reading file's Row 4.37
+statement that the derivation is silent on this case is wrong at the file and is corrected". This
+sentence formerly read: "the derivation's eligibility list reaches neither **tuplets**, **cross-staff**
+notes nor **multi-voice unisons** as named cases" — preserved here rather than deleted, #12.)*
 *The difference.* This enumeration names eight note cases a complete L0 must handle; S-15's five
 conditions and S-3's fact list between them name five of the eight and are silent on tuplets,
 cross-staff notes and multi-voice unisons — the last of which is exactly what S-33's slice identity
@@ -2646,6 +2829,13 @@ turns on.
 be carried into L0 as the check its own statements are tested against. **This row is the second place
 in this comparison where the outgoing text supplies something the derivation lacked**, the first being
 Row 3.60.
+*RULED DISPOSITION (Ruling 38, §3as).* **ADOPTED — proposed** — *"Row 4.37 — ADOPTED, proposed: at the
+ratification act the eight-case list is written into L0 as the completeness check its statements are
+tested against, each case pointed at the statement that handles it (S-23; S-16; S-18; S-54 with OQ-3;
+the no-horizon rule pending its own ruling; S-3 with OQ-11; S-33), and one new open question is added —
+OQ-18 (face (a); S-3, S-13): for a cross-staff note, which staff is the note's for L0's staff facts —
+the staff it is written in or the staff it is drawn on — with the Couperin case at line 3485 as its
+exemplar."* The no-horizon pointer resolves to Ruling 39 (§3at).
 
 **Row 4.38 — the per-event metric does not cover this layer.**
 *Statement.* "the per-event tiered metric does **not** cover this layer." — §6 (locator: line 203).
@@ -2846,6 +3036,10 @@ by the **requested amount, expressed in ticks**" — §2 (locator: line 39).
 changing it.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that L0 carry an enlargement operation
 at all, the derived contract having none.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — *"Rows 5.11, 5.12, 5.13, 5.20, 5.32,
+5.39, 2.21, 2.26, 7.3, 7.4, 7.17, 7.18, 7.19, 7.22, 7.27, 7.28, 1.18, 1.20 and 6.44 — ADOPTED,
+proposed, the proposal being the clauses above."* **L0 gains no operation:** *"enlarging the span is a
+re-request of L1 over a larger working span"*, and the six clauses stand beside S-53.
 
 **Row 5.12 — the layer is unit-blind: it knows ticks, not slices or bars.**
 *Statement.* "Architectural Layer 1 is **unit-blind** — it knows ticks, not slices or measures — so
@@ -2855,6 +3049,8 @@ the requester converts its own natural unit to a tick target before calling" —
 caller owns the choice.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 5.11: that the enlargement's unit be stated
 as the position, with conversion the requester's.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — clause (i): *"the working span is given
+in the record's own positions, any conversion from the requester's unit being the requester's."*
 
 **Row 5.13 — the finest meaningful step is the change point.**
 *Statement.* "The **finest meaningful step is the change-point/slice**: within a slice the sounding set
@@ -2864,6 +3060,9 @@ requesters never ask finer than that." — §2 (locator: line 42).
 *Current-text axis.* S-29: **AGREES** on the ground — the sounding set is constant across a slice.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 1.18 and 1.20; this is the third
 statement of the same rule in the outgoing record.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — clause (iv): *"the finest step that can
+change anything is the next change point, a consequence of the slice definition and not a settable
+value."*
 
 **Row 5.14 — loading is append-only.**
 *Statement.* "Loading is **append-only** (never drop a loaded note)." — §2 (locator: line 44).
@@ -2871,6 +3070,9 @@ statement of the same rule in the outgoing record.
 *Current-text axis.* S-18: **AGREES** in spirit — nothing is dropped — but S-18 is about excluded
 notes, not about enlargement, so the append-only property itself is not carried.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 3.35.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — carried in substance** — *"Rows 5.14, 5.16, 5.33 and
+5.35 — ADOPTED, carried in substance by clause (ii) with Ruling 39: append-only and idempotence have
+nothing to guarantee when nothing is ever unloaded."*
 
 **Row 5.15 — it returns the new span and a boundary flag.**
 *Statement.* "Returns the **new loaded span** and a **boundaryReached** flag (true when clamped at the
@@ -2879,12 +3081,17 @@ score start/end)." — §2 (locator: line 44).
 *Current-text axis.* S-32: **THE DERIVATION IS SILENT** — S-32 marks events at the span's edges and
 says nothing about reporting that the score's own edge was reached.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 3.35.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — *"Rows 5.15, 5.36 and 3.35 — ADOPTED,
+proposed, by clause (vi) and clause (ii)"*: *"a span edge that coincides with the record's own start or
+end is published as such, beside Ruling 40's edge mark."*
 
 **Row 5.16 — re-requesting a covered span is a no-op.**
 *Statement.* "Re-requesting an already-covered span is a **no-op** (idempotent)." — §2 (locator: line
 45).
 *Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — carried in substance** — *"Rows 5.14, 5.16, 5.33 and
+5.35 — ADOPTED, carried in substance by clause (ii) with Ruling 39."*
 
 **Row 5.17 — extend does exactly one step and never evaluates a stop condition.**
 *Statement.* "**`extend` does exactly one requested step** — it loads what it is asked for and returns;
@@ -2917,6 +3124,9 @@ parameter, not a fixed Architectural-Layer-1 constant." — §2 (locator: line 5
 *Current-text axis.* S-48: **AGREES** in discipline — a value not established is not asserted. S-52:
 **AGREES**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 5.11.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — clause (v): *"the decision to enlarge,
+the increment and the stop test belong to the requester, never to L0 or L1, which S-53 already carries
+and which is stated once."*
 
 #### §3 to §5 — the delivery split, the capture rule, and the index
 
@@ -3014,6 +3224,9 @@ a different result." — §6 (locator: line 104).
 *Current-text axis.* S-53: **THE DERIVATION IS SILENT.**
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.21 — the L0 half of the same
 equivalence the slicer states for itself, and the property that makes enlargement safe.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — clause (ii): *"L1 computed over a
+larger span is exactly what a fresh computation over that span yields, so the result never depends on
+how many steps reached the span or in what order."*
 
 **Row 5.33 — append-only, no drop.**
 *Statement.* "**Append-only / no-drop.** Extension never removes or alters an already-loaded note;
@@ -3021,6 +3234,8 @@ equivalence the slicer states for itself, and the property that makes enlargemen
 *Derived.* S-18.
 *Current-text axis.* S-18: **AGREES** in spirit, as at Row 5.14.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 5.14.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — carried in substance** — *"Rows 5.14, 5.16, 5.33 and
+5.35 — ADOPTED, carried in substance by clause (ii) with Ruling 39."*
 
 **Row 5.34 — the onset sort is preserved across front and back extension.**
 *Statement.* "**Onset-sort preserved** across front (earlier) and back (later) extension." — §6
@@ -3034,6 +3249,9 @@ directions?
 only the genuinely-new notes once." — §6 (locator: line 109).
 *Derived.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 5.16.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — carried in substance** — *"Rows 5.14, 5.16, 5.33 and
+5.35 — ADOPTED, carried in substance by clause (ii) with Ruling 39: append-only and idempotence have
+nothing to guarantee when nothing is ever unloaded."*
 
 **Row 5.36 — extension clamps at the score edge and reports it.**
 *Statement.* "**Boundary clamp + report.** Extension never passes the score start/end; it clamps and
@@ -3041,6 +3259,8 @@ sets `boundaryReached`." — §6 (locator: line 111).
 *Derived.* S-32.
 *Current-text axis.* S-32: **THE DERIVATION IS SILENT.**
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 5.15.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — *"Rows 5.15, 5.36 and 3.35 — ADOPTED,
+proposed, by clause (vi) and clause (ii)."*
 
 #### §8 and §9 — the risks and the delivery
 
@@ -3065,6 +3285,9 @@ or several small ones must give an identical model (a required test; falls out o
 DERIVATION IS SILENT** on enlargement.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 5.32 — it is the property a consumer most
 easily breaks, and the derivation carries nothing equivalent.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — clause (ii): the result *"never depends
+on how many steps reached the span or in what order"*, with clause (iii)'s falsifier in its negative
+form.
 
 **Row 5.40 — enlargement and incremental re-analysis are different operations and must not interfere.**
 *Statement.* "**Composition with re-analyse-a-sub-range** — extension (grow the loaded span) and the
@@ -3073,6 +3296,9 @@ must not interfere." — §8 (locator: line 128).
 *Derived.* S-53.
 *Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — carried in substance** — *"Row 5.40 — ADOPTED,
+carried in substance by Ruling 43 with clause (ii): L0 is fixed until rebuilt and L1 has no state to
+interfere with."*
 
 **Row 5.41 — the Layer-1 specification marks extend designed-but-unbuilt.**
 *Statement.* "The Architectural Layer 1 spec already marks *extend* designed-but-unbuilt and §11 as
@@ -3319,6 +3545,9 @@ Layer 1 note model" — §3 (locator: line 73).
 *Derived.* S-50. *Current-text axis.* S-50: **DIFFERS** — S-50 publishes the slice list *"with each
 slice's sounding set by event identity"*.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.27.
+*RULED DISPOSITION (Ruling 41, §3av).* **ADOPTED — proposed** — *"Rows 2.27, 6.21, 6.33, 7.2 and 7.25 —
+ADOPTED, proposed … carried, by event identity."* The slice carries its sounding set by event identity,
+*"references into L0, and no note fact is duplicated on the slice."*
 
 **Row 6.22 — the consumers.**
 *Statement.* "the Architectural Layer 3 key/mode code …; later, Architectural Layer 4 … and
@@ -3407,6 +3636,8 @@ the start moment and exclusive of the end moment)." — §7 (locator: line 114).
 note model." — §7 (locator: line 115).
 *Derived.* S-50. *Current-text axis.* S-50: **DIFFERS**, as at Row 6.21.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.27 and 6.21.
+*RULED DISPOSITION (Ruling 41, §3av).* **ADOPTED — proposed** — *"Rows 2.27, 6.21, 6.33, 7.2 and 7.25 —
+ADOPTED, proposed"*: carried, by event identity.
 
 **Row 6.34 — a slice's identity is the exact note set, not a folded summary.**
 *Statement.* "**A slice's identity is the exact set of sounding, tonal notes inside it — not a
@@ -3423,6 +3654,9 @@ boundary moment to its last." — §7 (locator: line 118).
 start"*, not the first boundary moment.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.13 and 2.20 — the same domain
 question, stated a third time.
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — proposed** — *"Rows 2.13, 2.20, 6.35, 7.9, 7.11,
+7.14 and 7.29 — ADOPTED, proposed, the proposal being that the published domain be stated, and this
+ruling stating it: the working span exactly, with silent edge slices, events whole and marked."*
 
 **Row 6.36 — zero interpretation.**
 *Statement.* "**Zero interpretation** — Architectural Layer 2 makes no musical judgement of any kind;
@@ -3466,6 +3700,8 @@ clock time." — §8 (locator: line 132).
 S-3: **AGREES** — S-3's positions are *"rational positions on the score's time axis, not clock
 times"*.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.**
+*RULED DISPOSITION (Ruling 47, §3bb).* **ADOPTED — carried** — unchanged: *"Rows 6.40, 11.3, 11.6,
+11.9, 11.17 and 12.12(i) — carried or relocated as the reading file placed them, unchanged."*
 
 **Row 6.41 — the slice is kept minimal and the metric facts are derived on demand.**
 *Statement.* "Architectural Layer 2 keeps the slice **minimal** (`[start, end)` only); the duration and
@@ -3479,6 +3715,9 @@ leaves each consuming layer to derive it.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
 the metric strength class is **published by L1** or **derived by each consumer**, since the two texts
 answer differently and the second answer is what the next row exists to repair.
+*RULED DISPOSITION (Ruling 47, §3bb).* **ADOPTED — proposed** — *"Rows 6.41, 6.42, 9.6, 9.17, 9.31 and
+19.12 — ADOPTED, proposed, the proposal being the form and the owner, and this ruling stating both."*
+The outgoing *derived on demand* clause is superseded; L1 publishes the class per change point.
 
 **Row 6.42 — the metric weight is the beat strength at the slice's start, in a bounded range.**
 *Statement.* "the **metric weight of a slice = the beat-strength at the slice's start tick**, computed
@@ -3493,6 +3732,9 @@ publishes a single number in `[0.5, 1.0]` on a four-step ladder, with no period 
 form the metric strength takes — an ordinal with its period, or a bounded number — because S-35's own
 defense is that a rank-1 class in 3/4 and in 4/4 are not the same thing and a consumer comparing
 scores needs the period, which the bounded number does not carry.
+*RULED DISPOSITION (Ruling 47, §3bb).* **ADOPTED — proposed** — *"Rows 6.41, 6.42, 9.6, 9.17, 9.31 and
+19.12 — ADOPTED, proposed."* The `[0.5, 1.0]` number is superseded; the outgoing form *"is EXCLUDED at
+the threshold on #12"* and is not weighed.
 
 **Row 6.43 — the metric-weight primitive has one owner and is not re-defined by a consumer.**
 *Statement.* "It is owned there (a **Layer-1.5** notation view …), **not** re-defined by any consuming
@@ -3507,6 +3749,8 @@ the enlarged span." — §8 (locator: line 149).
 *Derived.* S-32, S-33. *Current-text axis.* S-32: **THE DERIVATION IS SILENT** on enlargement. S-33:
 **AGREES** on identity.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.21 and 5.32.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — *"Rows … 1.18, 1.20 and 6.44 — ADOPTED,
+proposed, the proposal being the clauses above"*, clauses (ii) and (iii) carrying this row.
 
 **Row 6.45 — context slices are evidence, not output, and this layer draws no such distinction.**
 *Statement.* "Slices that fall in the **context span** … are usable as evidence by the layers above but
@@ -3607,6 +3851,8 @@ notes are kept in the boundary set; S-16 excludes them from it by rule.
 statement in the outgoing record of the grace decision and its reason**: excluding graces is recorded
 here as a *heuristic that was dropped*, where the derivation records excluding them as a *consequence
 of a grace having no metric duration*.
+*RULED DISPOSITION (Ruling 34, §3ao).* **HISTORICAL** — *"Row 6.55 — HISTORICAL (build history; the
+live question is Row 2.16's)."*
 
 **Row 6.56 — the old machinery still coexists during the transition.**
 *Statement.* "**Transitional coexistence:** … the **old segment-first machinery … still coexists**
@@ -3741,6 +3987,8 @@ computes in-selection/context from the model's selection span." — the banner (
 *Derived.* S-50. *Current-text axis.* S-50: **DIFFERS** — S-50 publishes the slice list with each
 slice's sounding set by event identity.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.27, 6.21 and 6.33.
+*RULED DISPOSITION (Ruling 41, §3av).* **ADOPTED — proposed** — *"Rows 2.27, 6.21, 6.33, 7.2 and 7.25 —
+ADOPTED, proposed … carried, by event identity."*
 
 **Row 7.3 — the layer slices whatever span the model holds and behaves correctly when it is enlarged.**
 *Statement.* "make Architectural Layer 2 produce slices for whatever span Architectural Layer 1
@@ -3748,6 +3996,8 @@ currently holds, and behave correctly when that span is **extended**" — the ba
 *Derived.* S-32, S-53. *Current-text axis.* S-32: **THE DERIVATION IS SILENT** on enlargement. S-53:
 **AGREES** that the span is the caller's.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.21, 5.32 and 6.44.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — *"Rows … 7.3, 7.4, 7.17, 7.18, 7.19,
+7.22, 7.27, 7.28 … — ADOPTED, proposed, the proposal being the clauses above."*
 
 **Row 7.4 — slicing is a pure, stateless function of the loaded notes and the loaded span.**
 *Statement.* "slicing is a **pure, stateless function** of (the loaded notes, the loaded span), so the
@@ -3757,6 +4007,9 @@ the only real design decision here." — the banner (locator: line 10).
 S-53: **AGREES** — L1 is computable in one forward pass over the working span.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the purity property be stated in
 the specification, since it is what makes every enlargement invariant hold without a separate proof.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — the contract is *"stated at L1 as a
+consequence of purity, L0 gaining no operation"*, and *"because L1 is a pure function of the record and
+the span every enlargement invariant of the outgoing text follows by construction."*
 
 #### §1 — what is there now, verified at source
 
@@ -3799,6 +4052,8 @@ outside the span — S-32 marks such an event *entered sounding* rather than sli
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification name this
 hazard — a sustained-in note dragging the slice list before the span's start — and state the remedy,
 since the derivation's S-32 avoids it without saying that it is avoiding anything.
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — proposed** — *"Row 7.8 — ADOPTED, proposed: the
+hazard named beside S-32 with the remedy S-32 applies."*
 
 **Row 7.9 — the rule: slice the intersection, clipping sustained-in and sustained-out notes.**
 *Statement.* "**The rule (the fix):** slice the **intersection of the loaded span and the
@@ -3811,6 +4066,9 @@ note's span** to the loaded boundary, publishing no mark.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.13 and 2.15 — this is the
 fullest statement of that difference in the outgoing record, and the row where the two remedies stand
 side by side.
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — proposed** — *"Rows 2.13, 2.20, 6.35, 7.9, 7.11,
+7.14 and 7.29 — ADOPTED, proposed."* The outgoing clip rule is superseded at the ratification act;
+*"the working span exactly, with silent edge slices, events whole and marked."*
 
 **Row 7.10 — on a whole score the clip collapses and nothing moves.**
 *Statement.* "**Degenerate case (whole score) stays byte-identical.** … the clip collapses to exactly
@@ -3823,6 +4081,8 @@ side by side.
 boundary instead of dragging the slicing outside the loaded span." — §2 (locator: line 39).
 *Derived.* S-32. *Current-text axis.* S-32: **DIFFERS**, as at Row 7.9.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 7.9.
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — proposed** — *"Rows 2.13, 2.20, 6.35, 7.9, 7.11,
+7.14 and 7.29 — ADOPTED, proposed."*
 
 **Row 7.12 — the function takes the span from the model and stops deriving it from the notes.**
 *Statement.* "The function therefore needs the loaded span from the model …; it stops deriving the
@@ -3832,6 +4092,8 @@ the notes. S-53: **AGREES**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state
 explicitly that the slicing domain is **given by the caller** and not derived from where the notes
 happen to start, which is the difference Rows 7.5 and 7.9 turn on.
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — proposed** — *"Row 7.12 — ADOPTED, proposed: the
+domain is given by the caller, never derived from where the notes start."*
 
 **Row 7.13 — the clip acts on the whole boundary multiset, not only on the two ends.**
 *Statement.* "the clip is on the **boundary multiset**, not just the two ends — **drop** every boundary
@@ -3839,6 +4101,9 @@ outside `[clipStart, clipEnd]` and **inject** the two clip endpoints" — §2 (l
 *Derived.* S-28. *Current-text axis.* S-28: **DIFFERS** — an injected endpoint is not the onset or
 release of an eligible event, which is the whole of S-28's definition.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.25 and 6.2.
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — proposed** — *"Rows 2.25, 7.13, 7.15 and 7.16 —
+ADOPTED, proposed: the edge stated as a span edge and not a change point, Row 7.16's counterexample
+carried as the evidence."*
 
 **Row 7.14 — selection-edge silence is deliberately not sliced.**
 *Statement.* "**Selection-edge silence is not sliced** — `max(loadedStart, firstEligibleOnset)` means
@@ -3854,6 +4119,10 @@ loaded span **no** empty slice, and says so deliberately.
 is where the difference is stated at its plainest**: the outgoing text names the semantic, calls it
 deliberate, and gives its reason, and the derivation takes the opposite one for a reason of its own.
 
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — proposed** — *"Rows 2.13, 2.20, 6.35, 7.9, 7.11,
+7.14 and 7.29 — ADOPTED, proposed."* The edge silence is a slice: *"Leading/trailing silence within
+the loaded span is not sliced"* is superseded at the ratification act.
+
 #### §3 — what holds under enlargement
 
 **Row 7.15 — the loaded-edge boundary is artificial and vanishes on enlargement.**
@@ -3863,6 +4132,8 @@ unloaded). Extend earlier and that artificial boundary **vanishes**, so the **ed
 outward**." — §3 (locator: line 55).
 *Derived.* S-28, S-32. *Current-text axis.* S-28: **DIFFERS**. S-32: **DIFFERS**, as at Row 2.25.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.25 and 7.13.
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — proposed** — *"Rows 2.25, 7.13, 7.15 and 7.16 —
+ADOPTED, proposed: the edge stated as a span edge and not a change point."*
 
 **Row 7.16 — the counterexample that refuted the earlier claim.**
 *Statement.* "(Counterexample: one eligible note A `[100,1000)`; old span `[500,1000)` → one slice
@@ -3871,6 +4142,8 @@ outward**." — §3 (locator: line 55).
 *Derived.* S-32. *Current-text axis.* S-32: **THE DERIVATION IS SILENT** on enlargement.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 7.15 — it is the evidence the rule rests on,
 and a proposal without its evidence is weaker than one with it.
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — proposed** — *"Rows 2.25, 7.13, 7.15 and 7.16 —
+ADOPTED, proposed … Row 7.16's counterexample carried as the evidence."*
 
 **Row 7.17 — what does hold: interior stability and an extending edge slice.**
 *Statement.* "**(a)** interior **real** change-points within the old region are **byte-stable** …;
@@ -3879,6 +4152,8 @@ the original span unchanged." — §3 (locator: line 61).
 *Derived.* S-28, S-32. *Current-text axis.* S-28: **AGREES** on the stability of real change points.
 S-32: **THE DERIVATION IS SILENT**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.21 and 7.15.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — clause (iii): *"across an enlargement
+every change point inside the old span is unchanged and only the edge slice extends."*
 
 **Row 7.18 — re-slice equivalence, the correctness-critical invariant.**
 *Statement.* "**Re-slice equivalence — the correctness-critical invariant.** Slicing the model after an
@@ -3887,6 +4162,9 @@ function of the same (notes, span)." — §3 (locator: line 66).
 *Derived.* S-53. *Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 2.21, 5.32 and 6.44 — the fourth
 statement of the same invariant, and the one that names it *correctness-critical*.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — clause (ii), which the ruling states is
+*"what a fresh computation over that span yields"*; Row 7.18's *"the one invariant that must hold"* is
+the clause the ruling declines to leave unstated.
 
 **Row 7.19 — the naive stability test is wrong and must not be written.**
 *Statement.* "A naïve 'old slices byte-identical' test would fail on any tie-across-the-clip case; the
@@ -3894,6 +4172,8 @@ statement of the same invariant, and the one that names it *correctness-critical
 *Derived.* S-23. *Current-text axis.* S-23: **AGREES** — a tie across the clip is exactly S-23's one
 event spanning the boundary, which is why the naive test fails.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 2.26.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — clause (iii)'s negative form: *"a test
+asserting the old slice list byte-identical is wrong and is not written."*
 
 #### §4 and §5 — the interim, the deferral, and the output-versus-context line
 
@@ -3918,6 +4198,8 @@ the seam + new region, leave interior boundaries reused." — §4 (locator: line
 *Derived.* S-28. *Current-text axis.* S-28: **AGREES** on what makes a boundary real — an onset or a
 release of an eligible event, which is exactly the test this rule applies.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 7.15 and 7.18.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — clause (iii): the interior change
+points are unchanged and only the edge slice extends.
 
 **Row 7.23 — the slices outside the selection are context and evidence, not output.**
 *Statement.* "L2 produces slices for the **loaded** span; the **output** is only the **selection**. The
@@ -3938,6 +4220,8 @@ owns no selection semantics." — §5 (locator: line 87).
 consumer derives it from the model's selection span.**" — §5 (locator: line 88).
 *Derived.* S-50. *Current-text axis.* S-50: **DIFFERS**, as at Row 7.2.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.27, 6.21, 6.33 and 7.2.
+*RULED DISPOSITION (Ruling 41, §3av).* **ADOPTED — proposed** — *"Rows 2.27, 6.21, 6.33, 7.2 and 7.25 —
+ADOPTED, proposed … carried, by event identity"*; *"no selection tag is added."*
 
 #### §6 and §8 — the invariants and the delivery
 
@@ -3954,12 +4238,15 @@ over the original span is unchanged**. A naïve 'all old slices byte-identical' 
 — do not write it." — §6 (locator: line 95).
 *Derived.* S-28. *Current-text axis.* S-28: **AGREES** on the identity of real change points.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.26, 7.17 and 7.19.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — clause (iii) with its negative-form
+falsifier.
 
 **Row 7.28 — re-slice equivalence stated as a testable invariant.**
 *Statement.* "**Re-slice equivalence:** re-slice after extend == `changePointSlices` over a model built
 on the enlarged span." — §6 (locator: line 99).
 *Derived.* S-53. *Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 7.18.
+*RULED DISPOSITION (Ruling 46, §3ba).* **ADOPTED — proposed** — clause (ii).
 
 **Row 7.29 — clip correctness: where a sustained-in and a sustained-out note land.**
 *Statement.* "**Clip correctness:** a sustained-in note appears in the first slice (from
@@ -3967,6 +4254,8 @@ on the enlarged span." — §6 (locator: line 99).
 (locator: line 100).
 *Derived.* S-32. *Current-text axis.* S-32: **DIFFERS**, as at Row 7.9 — S-32 marks rather than clips.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 2.15 and 7.9.
+*RULED DISPOSITION (Ruling 40, §3au).* **ADOPTED — proposed** — *"Rows 2.13, 2.20, 6.35, 7.9, 7.11,
+7.14 and 7.29 — ADOPTED, proposed"*: events are kept whole and marked, never clipped.
 
 **Row 7.30 — coverage, note-set identity and empty slices are preserved over enlarged spans.**
 *Statement.* "Complete coverage, no gaps/overlaps, exact-note-set identity, empty-slice-for-silence —
@@ -4158,6 +4447,10 @@ attention rather than because it changes the disposition: the outgoing text supp
 counter-cases** the derivation does not have — orchestral doubling in the top voice, and a lead
 sitting below the top — as evidence for a rule S-13 already states.)*
 
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — carried** — unchanged. *"Row 12.19 — placed with
+Rows 8.4, 9.1, 9.7 and 10.17, no soprano cue at L1"*: *"no soprano cue at L1, the highest sounding
+pitch recoverable from the published sounding set."*
+
 ---
 
 **Row 8.5 — cadences are looked for at phrase ends, read as a published notation-derived fact, and
@@ -4184,6 +4477,12 @@ the notated boundary evidence is published as **per-change-point flags with thei
 **graded profile**, since the two texts publish different objects and S-40's own defense is that a
 combined strength is a judgment L1 may not take.
 
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — carried** — *"Rows 8.5, 8.6, 9.8, 9.14, 9.16, 9.23,
+9.33, 12.21, 13.8, 19.13, 22.2 — placed as consumers reading the profile at its new home, their
+L1-facing content carried by S-39 and S-40."* *"The outgoing profile as an L1 output is EXCLUDED at the
+threshold on #12"*; D4 (D-478) continues to govern the pick at the consumer that decides the phrase
+boundary.
+
 **★ A NEW FAMILY, MET FOR THE FIRST TIME AT DOCUMENT 8: THE BOUNDARY-EVIDENCE FORM.** It is named as
 new, as §12 does for the metric strength class at document 6, and it is **the same shape as that
 family without being the same fact**: a per-change-point published fact that the derivation carries
@@ -4205,6 +4504,11 @@ strength is not merely published but consumed as a scalar weight.
 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 8.5 and carrying the same new
 family, **the boundary-evidence form**.
+
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — carried** — *"Rows 8.5, 8.6, 9.8, 9.14, 9.16, 9.23,
+9.33, 12.21, 13.8, 19.13, 22.2 — placed as consumers reading the profile at its new home, their
+L1-facing content carried by S-39 and S-40."* The graded profile and everything built on it are
+RELOCATED to the phrase read-off at L3, where D4 (D-478) remains the ruled rule.
 
 ---
 
@@ -4241,6 +4545,11 @@ the notated boundary evidence may be **empty or near-empty over a whole passage*
 property of what L1 publishes rather than of any consumer, and every consumer gated on it being
 unfed when it is. *(What the fallback should then be is the consuming layer's and is Row 8.6's
 subject, not this one's.)*
+
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — proposed** — *"Rows 8.8 and 10.2 — ADOPTED,
+proposed: beside S-39, that the notated boundary evidence may be empty or near-empty over a passage
+and is systematically incomplete as a phrase signal, so an absent flag is never read as an absent
+boundary."*
 
 ---
 
@@ -4405,6 +4714,9 @@ voice"*).
 the same rule met in the `ARCHITECTURE.md` Layer 5 section. *(The two named counter-cases — orchestral
 doubling and a close-harmony lead below the top — are the outgoing text's own evidence for a rule
 S-13 states without them.)*
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — carried** — unchanged, placed with Rows 8.4, 9.7,
+10.17 and 12.19: *"no soprano cue at L1, the highest sounding pitch recoverable from the published
+sounding set."*
 
 **Row 9.2 — the two gating prerequisites are the metric-weight contract and the phrase boundary.**
 *Statement.* "the gating prerequisites are now the metric-weight contract and the phrase boundary."
@@ -4473,6 +4785,9 @@ layers"* — and as a contract still owed.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with **Rows 6.41 and 6.42** and carrying
 the **metric strength class** family: that the specification state what form the metric strength takes
 and who publishes it.
+*RULED DISPOSITION (Ruling 47, §3bb).* **ADOPTED — proposed** — *"Rows 6.41, 6.42, 9.6, 9.17, 9.31 and
+19.12 — ADOPTED, proposed, the proposal being the form and the owner, and this ruling stating both."*
+The owner is L1, publishing the class per change point; a weight is a consumer's fitted derivative.
 
 **Row 9.7 — the top voice is an optional cue, not a build gate.**
 *Statement.* "**(Optional, NOT a prerequisite) The top voice — the highest sounding voice of a
@@ -4481,6 +4796,8 @@ rests on the bass-derived inversion criterion instead." — §3 (locator: line 8
 *Derived.* S-13, S-44.
 *Current-text axis.* S-13: **AGREES**. S-44: **AGREES**.
 *PROPOSED DISPOSITION.* **ADOPTED — carried**, travelling with Rows 9.1 and 8.4.
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — carried** — unchanged, placed with Rows 8.4, 9.1,
+10.17 and 12.19.
 
 **Row 9.8 — the phrase boundary and phrase segmentation are a prerequisite no earlier spec defines.**
 *Statement.* "**[earlier-layer prerequisite] The phrase boundary (the fermata-marked phrase end in
@@ -4501,6 +4818,9 @@ evidence with its witnesses or a phrase segmentation derived from it — and, if
 segmentation is decided. *(`FRAMEWORK.md` §5 answers the second half in its own words — *"Which of
 those are phrase ends, and how they group into sections, is decided here"*, at L3 — which is recorded
 and not adjudicated.)*
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — carried** — *"Rows 8.5, 8.6, 9.8, 9.14, 9.16, 9.23,
+9.33, 12.21, 13.8, 19.13, 22.2 — placed as consumers reading the profile at its new home, their
+L1-facing content carried by S-39 and S-40."* The phrase read-off is L3's under the L1 → L3 contract.
 
 **Row 9.9 — a section end is a phrase boundary coinciding with a double bar, a repeat mark or the end
 of the piece.**
@@ -4552,6 +4872,10 @@ arrival and the chord of arrival"* — which is a decided object no L1 computati
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state **what
 the cadence evidence is computed FROM** — the notation alone, or committed chords — since the answer
 decides whether the evidence can sit at L1 at all.
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — proposed** — *"Rows 9.12, 9.19, 9.20, 9.21 and 11.14
+— ADOPTED, proposed, by clauses (i) to (iii)."* Clause (i): *"L1's cues are computed from L0 facts and
+the slice list alone … anchored on the bass as S-47 does, never on a committed chord or a decode's
+candidate key"*; the outgoing detector over an event pair of chords is L2's cadence factor.
 
 **★ A NEW FAMILY, MET FOR THE FIRST TIME AT DOCUMENT 9: THE CADENCE EVIDENCE'S INPUTS.** It is named
 as new, as §12 does for the metric strength class at document 6 and the boundary-evidence form at
@@ -4575,6 +4899,10 @@ chord + one assigned local key"* — an object that exists only after both decis
 the word *slice***, since the two texts use it for two different objects — a stretch of unchanging
 sound in one, a decided chord-and-key unit in the other — and every rule quantified over "slices"
 reads differently under each.
+*RULED DISPOSITION (Ruling 56, §3bk).* **ADOPTED — proposed** — *"Rows 9.13, 13.4, 14.16, 14.17, 10.8
+and 13.1 — ADOPTED, proposed, the proposal being those clauses."* *Slice* is L1's object and nothing
+else; *"the decided chord-and-key unit is L2's harmonic span"*, the grouping unit the punctuation span.
+The outgoing collided uses go to OI-229's per-word batch under Ruling 30.
 
 **★ A SECOND NEW FAMILY AT DOCUMENT 9: THE WORD *SLICE*.** It is distinct from the *what a slice
 carries* family of Rows 2.27, 6.21, 6.33, 7.2 and 7.25, which asks what is stored on an object both
@@ -4593,6 +4921,9 @@ SILENT** on a look-ahead window of any kind.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family: that
 the specification state whether a boundary is a published notated fact or a **peak** picked from a
 graded profile, the two differing in exactly the way S-40 names.
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — carried** — *"placed as consumers reading the
+profile at its new home, their L1-facing content carried by S-39 and S-40."* The peak-picking is
+RELOCATED to the phrase read-off at L3.
 
 **Row 9.15 — a decision cut by the selection edge fires an extension request.**
 *Statement.* "A decision whose span is cut by the **selection edge** before any of (i)–(iii) holds
@@ -4616,6 +4947,8 @@ phrase-gate (§5.2)** … never as a key or analysis unit." — §5.0 (locator: 
 evidence. S-53: **AGREES** on the read-only, no-feedback consumption.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 9.8 and carrying the
 **boundary-evidence form** family.
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — carried** — *"placed as consumers reading the
+profile at its new home, their L1-facing content carried by S-39 and S-40."*
 
 **Row 9.17 — "metrically strong" is a parameter-free local maximum of the metric weight.**
 *Statement.* "(\"Metrically strong\" is realised **parameter-free** as a **local maximum of the metric
@@ -4629,6 +4962,9 @@ comparison between neighbouring scalars, which an ordinal-plus-period carries bu
 alone does not.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 9.6, 6.41 and 6.42 and carrying
 the **metric strength class** family.
+*RULED DISPOSITION (Ruling 47, §3bb).* **ADOPTED — proposed** — *"beside S-35 the derivation gains that
+Row 9.17's* metrically strong *is computable from the class as a rank comparison between neighbouring
+change points at a common period."*
 
 **Row 9.18 — a leading-tone resolution is the leading tone moving to the tonic in that same voice at
 the arrival.**
@@ -4658,6 +4994,10 @@ only a detected voice motion.
 **presence-based** cue is admissible beside a **motion-based** one, and if so how a consumer is told
 which it is reading — the charter's third cue being a presence test and this text naming presence
 testing as the trap its own rule exists against.
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — proposed** — *"Rows 9.12, 9.19, 9.20, 9.21 and 11.14
+— ADOPTED, proposed, by clauses (i) to (iii)."* Clause (ii): *"both kinds admissible as evidence —
+S-46 a motion, S-47 a presence — each carrying on its face what it detects and what it cannot
+separate"*; S-47 gains the statement that it is a presence test.
 
 **★ A THIRD NEW FAMILY AT DOCUMENT 9: PRESENCE VERSUS RESOLUTION.** Rows 9.19, 9.20 and 9.26 carry it.
 It is not a disagreement about key-agnosticism and not about the cue's inputs; it is about what
@@ -4683,6 +5023,9 @@ limit on its face — that it detects a semitone-to-bass resolution and not an a
 that a consumer weighing it is not misled by its name. **THIS IS A PLACE WHERE THE OUTGOING TEXT HOLDS
 A FACT THE DERIVATION DOES NOT**, and the third such place in the comparison, after Rows 3.60 and
 4.37.
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — proposed** — *"S-46 gains Row 9.20's fact, that it
+detects a semitone-to-bass resolution and fires identically on a plain V→I and a plain I→IV, its status
+moving from* settled *to* settled with its limit stated*."*
 
 **Row 9.21 — a cadence candidate is admitted only at a phrase boundary.**
 *Statement.* "**Chorale phrase gate.** A cadence candidate is admitted only at a **phrase boundary** —
@@ -4696,6 +5039,9 @@ evidence and never uses it to gate a cue.
 cue's firing is **gated** on notated boundary evidence or published unconditionally beside it, since
 the outgoing text's gate is what removes its own commonest false positive and the derivation publishes
 both facts without connecting them.
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — proposed** — clause (iii), *"No gate:"* — *"cues
+published unconditionally beside the boundary flags; admitting a cadence only at a phrase boundary is
+the consumer's rule over the two published facts."*
 
 **Row 9.22 — the detector casts soft evidence; the disambiguation is a later layer's judgement.**
 *Statement.* "The cadence detector casts soft evidence; the authentic-vs-passing disambiguation is a
@@ -4704,6 +5050,8 @@ both facts without connecting them.
 *Current-text axis.* S-51: **AGREES**. S-53: **AGREES** — S-53's whole content is that the want is met
 *"by publishing the candidates and the evidence and leaving the decision"*.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.**
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — carried** — unchanged: *"Rows 9.22, 9.26, 11.13,
+11.15 — carried, unchanged."*
 
 **Row 9.23 — the cadence vote weight is a monotone weighted sum of the evidence and salience cues.**
 *Statement.* "The weight is a **monotone-increasing combination — a weighted sum, its weights
@@ -4720,6 +5068,9 @@ final bar and the metric weight among them — into **one number**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family. *(The
 row is recorded without choosing: the outgoing combination happens in a later layer, where S-40's bar
 does not reach; what the two texts differ on is whether the parts are still available to it.)*
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — carried** — *"placed as consumers reading the
+profile at its new home, their L1-facing content carried by S-39 and S-40."* Every combination,
+normalisation, threshold and selection is the consumer's.
 
 **Row 9.24 — the salience cues are a strong metric position, a fermata, a section end and the final
 bar.**
@@ -4756,6 +5107,8 @@ rejection asks for. S-47: **DIFFERS**, as at Row 9.19.
 key-agnosticism, with the circular detector rejected — is carried, and the alternatives are weighed on
 the same grounds). *(The presence-versus-resolution half is stated at Row 9.19 and is not counted a
 second time here.)*
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — carried** — unchanged: *"Rows 9.22, 9.26, 11.13,
+11.15 — carried, unchanged."*
 
 **Row 9.27 — the phrase-boundary primitive's non-chorale markers are unvalidated.**
 *Statement.* "**The phrase-boundary primitive's non-chorale markers are unvalidated.** The graded
@@ -4784,6 +5137,10 @@ voice)"* — and publishes FERMATA, BAR-LINE and REPEAT without a scope; the out
 scope — global, per-staff or per-voice — and its provenance, which S-39 does for the rest flag and for
 no other. **THIS ROW RUNS TOWARDS THE DERIVATION**: the outgoing text names a distinction the
 derivation's own fermata rules would need and do not have.
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — proposed** — *"Rows 9.28, 10.32, 10.33, 10.53, 13.9,
+22.6 — ADOPTED, proposed, this clause being the proposal; these rows run towards the derivation."* The
+clause: *"S-39 gains, on every flag, the scope it was read at — the whole texture, or the staff or
+voice it is notated on — so that the partition of Row 10.53 is a published fact."*
 
 **Row 9.29 — two cadence detectors exist, one key-dependent and circular, one key-agnostic whose
 leading-tone test false-positives.**
@@ -4819,6 +5176,8 @@ Layer 4 — no code)" — §15-0 (locator: line 794).
 level's period against a beat-strength number.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with those rows and carrying the **metric
 strength class** family.
+*RULED DISPOSITION (Ruling 47, §3bb).* **ADOPTED — proposed** — *"Rows 6.41, 6.42, 9.6, 9.17, 9.31 and
+19.12 — ADOPTED, proposed, the proposal being the form and the owner."*
 
 **Row 9.32 — the phrase boundary must be defined generally and must exclude cadential closure as
 circular.**
@@ -4846,6 +5205,8 @@ evidence. S-40: **DIFFERS** — the scaling consumes a single boundary strength 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 8.5, 8.6 and 8.8 and carrying the
 **boundary-evidence form** family. *(This is the same amendment the `ARCHITECTURE.md` Layer 5 section
 carries at Rows 8.5 to 8.9, met here at its own source.)*
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — carried** — *"placed as consumers reading the
+profile at its new home, their L1-facing content carried by S-39 and S-40."*
 
 ---
 
@@ -5012,6 +5373,10 @@ which is one of the names S-50 excludes, while the reservation this row states i
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the naming bar and this
 document's own reservation be reconciled into one rule, since both reserve the word *phrase* and they
 reserve it for different things.
+*RULED DISPOSITION (Ruling 56, §3bk).* **ADOPTED — proposed** — *"Rows 9.13, 13.4, 14.16, 14.17, 10.8
+and 13.1 — ADOPTED, proposed, the proposal being those clauses."* Bare *phrase* is the musical phrase
+under D-113; *"the phrase-boundary primitive's code name is an inherited collision for OI-229, that
+primitive being L3's under Ruling 48."*
 
 **Row 10.9 — a phrase boundary is a tick where a phrase ends; the next phrase's start is not
 separately marked.**
@@ -5026,6 +5391,9 @@ and takes no view on whether a phrase ends; this text publishes a **phrase end**
 of that evidence.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family: that
 the specification state whether what is published is the notated evidence or a phrase end read from it.
+*RULED DISPOSITION (Ruling 48, §3bc).* **RELOCATED — to L3, *the read-off facts***, the phrase
+read-off: *"Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37, 10.41 — RELOCATED to
+L3"*, with *"D-476 to D-485 re-homed there and D4 (D-478) remaining that consumer's ruled rule."*
 
 **Row 10.10 — the primitive emits a graded strength, not only a yes/no, so a consumer can read a
 boundary's confidence.**
@@ -5037,6 +5405,10 @@ to a single 'boundary strength'"*, in those words.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family. **The
 two texts use the same phrase — *boundary strength* — for the thing one publishes and the other
 forbids**, which is why the family is worth ruling once rather than row by row.
+*RULED DISPOSITION (Ruling 48, §3bc).* **RELOCATED — to L3, *the read-off facts***, the phrase
+read-off: the graded strength is RELOCATED with *"the graded profile, its gap-dominant weights, the
+marker spikes, the max-normalisation, the adaptive threshold, the peak-picking, the picked set and the
+'ends a phrase' flag."*
 
 #### §2 — the constraints
 
@@ -5067,6 +5439,10 @@ derivation publishes the notated evidence and states no coverage claim for it, i
 the notated boundary evidence is **systematically incomplete as a phrase signal** — a real boundary
 can be marked harmonically and leave no notated trace — so that a consumer does not read an absent
 flag as an absent boundary.
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — proposed** — *"Rows 8.8 and 10.2 — ADOPTED,
+proposed: beside S-39, that the notated boundary evidence may be empty or near-empty over a passage
+and is systematically incomplete as a phrase signal, so an absent flag is never read as an absent
+boundary."*
 
 **Row 10.3 — the fermata is the reliable marker in chorales but is not universal.**
 *Statement.* "**General, not chorale-specific.** The tool analyses scores of any instrumentation. The
@@ -5095,6 +5471,9 @@ notation-only inference, not a pure deterministic fact"*.
 the specification state whether L1 publishes the deterministic marks alone or a computed strength
 beside them — and, if both, that the computed half carry S-52's *provisional* status while its
 constants are unestablished.
+*RULED DISPOSITION (Ruling 48, §3bc).* **RELOCATED — to L3, *the read-off facts*** for its computed
+half — *"Rows 10.4 and 10.21 — RELOCATED to L3 for their computed half, their deterministic half
+already S-39's."*
 
 **Row 10.5 — the primitive inherits the loaded span, requests no extension of its own, and recomputes
 over an enlarged span.**
@@ -5125,6 +5504,8 @@ items are predicates with witnesses, not a normalised scalar.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that a published L1 quantity state
 **the frame within which it is comparable**, which S-52's three statuses do not carry and which this
 text makes the load-bearing half of its own publication rule.
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — proposed** — *"Row 10.6 — ADOPTED, proposed: beside
+S-52, that a published quantity states the frame within which it is comparable."*
 
 #### §3 — what it is handed and what it publishes
 
@@ -5158,6 +5539,9 @@ be added to L0's supplied facts. **★ THIS ANSWERS OQ-9 IN THE AFFIRMATIVE.** T
 its own words, *"Are a caesura, a breath mark, a section break or a segno boundary evidence? The
 charter names five kinds; these pass S-1 and are not in the list. Not added here"* — and the outgoing
 text adds two of the four and uses them.
+*RULED DISPOSITION (Ruling 50, §3be).* **ADOPTED — proposed** — *"Rows 10.13, 10.14, 10.23, 10.52, 12.7
+and 14.18 — ADOPTED, proposed, the proposal being the L0 list and the L1 kinds, and this ruling stating
+both."* **OQ-9 is answered yes for the breath mark and the caesura.**
 
 **Row 10.14 — L0 supplies tempo markings: subito tempo changes and written ritardandos.**
 *Statement.* "the **tempo markings** (sudden/subito tempo changes and written ritardandos)" — §3
@@ -5169,6 +5553,9 @@ dynamics, slurs, beams, stem directions, or layout"* and defends the exclusion o
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, by the route S-7 itself provides — *"a later layer
 that needs one adds it by the same test"* — the outgoing text being a consumer that needs it. *(S-1's
 criterion admits a tempo marking: two copyists agree on it and it asserts no harmony.)*
+*RULED DISPOSITION (Ruling 50, §3be).* **ADOPTED — proposed** — *"Rows 10.13, 10.14, 10.23, 10.52, 12.7
+and 14.18 — ADOPTED, proposed."* S-7 now supplies *"tempo markings (a marking at its position; a
+written ritardando or rallentando with its span)"*, and S-39 gains TEMPO-CHANGE.
 
 **Row 10.15 — L0 supplies mid-score key-signature changes as the engraved signature event, not the
 inferred key.**
@@ -5182,6 +5569,8 @@ defense is that the flag *"does not read the signature's value, so S-9's bar is 
 *PROPOSED DISPOSITION.* **ADOPTED — carried** (S-6 with S-43). **★ THIS IS S-43's PROPOSED FLAG
 REACHED INDEPENDENTLY**, and the derivation marks that statement *open* because *"an addition to a
 ratified list is the user's"* (OQ-15). The outgoing text already treats it as settled and uses it.
+*RULED DISPOSITION (Ruling 50, §3be).* **ADOPTED — carried** — unchanged: *"Row 10.15 stays carried."*
+**OQ-15 is answered yes**, so S-43's KEY-SIGNATURE-CHANGE flag is admitted.
 
 **Row 10.16 — the empty slices, maximal spans where every eligible voice rests, are consumed from the
 slicing layer.**
@@ -5203,6 +5592,8 @@ not reliably the melody) and not used here" — §3 (locator: line 103).
 *Current-text axis.* S-13: **AGREES**. S-44: **AGREES**.
 *PROPOSED DISPOSITION.* **ADOPTED — carried**, travelling with Rows 8.4, 9.1 and 9.7. **This is the
 fourth independent statement of the same rule in the outgoing record.**
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — carried** — unchanged, placed with Rows 8.4, 9.1,
+9.7 and 12.19: *"no soprano cue at L1."*
 
 **Row 10.18 — the outputs are the per-voice profiles, the texture profile, the picked ticks and the
 "ends a phrase" flag, all notation facts.**
@@ -5221,6 +5612,9 @@ of them, and a per-region boolean.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family. **This
 is the fullest statement of that family's outgoing side**: not one difference of form but a different
 output surface.
+*RULED DISPOSITION (Ruling 48, §3bc).* **RELOCATED — to L3, *the read-off facts***, the phrase
+read-off: the four profiles, the picked set and the *"ends a phrase"* flag go there with D-476 to
+D-485; the L1 side is S-39 and S-40 as they stand.
 
 **Row 10.19 — it detects no cadence, weights no cadential salience, reads no resolved key, chord or
 function, and applies no grouping or reduction.**
@@ -5245,6 +5639,11 @@ and contains no cue derived from durations or intervals.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
 **derived surface cues** — a gap, an agogic lengthening, a melodic leap — are boundary evidence
 beside the five notated marks, the derivation carrying none of the three.
+*RULED DISPOSITION (Ruling 49, §3bd).* **ADOPTED — proposed** — *"Rows 10.20 and 10.21 — ADOPTED,
+proposed, this clause being the proposal"*: L1 publishes, per onset change point and per notated voice,
+*"the silence before the onset in that voice, the time since that voice's preceding attack, and the
+spelled melodic interval from that voice's preceding note — each with its two witnesses,
+unnormalised."*
 
 **Row 10.21 — each profile's strength is the local-change rule, rising with both the degree of change
 and the size of the value.**
@@ -5257,6 +5656,12 @@ large gap is a stronger boundary than a small one, even where both are local cha
 strength would be computed, S-40 forbidding one rather than specifying it.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 10.20: the mechanism the proposal
 at 10.20 would need if the answer there is that derived cues are admitted.
+*RULED DISPOSITION (Ruling 49, §3bd).* **ADOPTED — proposed** — *"Rows 10.20 and 10.21 — ADOPTED,
+proposed … Row 10.21's transform is the consumer's, as Ruling 48 placed the rest of §4."*
+
+*RULED DISPOSITION (Ruling 48, §3bc), for the row's COMPUTED half.* **RELOCATED — to L3, *the read-off
+facts*** — *"Rows 10.4 and 10.21 — RELOCATED to L3 for their computed half, their deterministic half
+already S-39's."*
 
 **Row 10.22 — the combined surface strength is a max-normalised, gap-dominant weighted sum of the
 three profiles.**
@@ -5268,6 +5673,9 @@ normalised profiles, with the **gap profile weighted highest** … The three wei
 on the ground that a joint weight *"would be a judgment of their joint weight"* and *"would lose the
 parts"*.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family.
+*RULED DISPOSITION (Ruling 48, §3bc).* **RELOCATED — to L3, *the read-off facts***: the
+max-normalisation and the gap-dominant weighted sum go to the consumer that decides the phrase
+boundary.
 
 **Row 10.23 — six kinds of deterministic notated marker are boundary signals.**
 *Statement.* the six bullets of §4.2 — "a **fermata** on an eligible voice"; "a **breath mark** … or a
@@ -5283,6 +5691,10 @@ mark, the caesura and the tempo change.
 kinds be settled once** — the charter names five, S-43 proposes two more and marks the addition the
 user's (OQ-15), and this text uses six of which three are in neither list. **★ IT ANSWERS OQ-9 AND
 OQ-15 TOGETHER, AND IN THE AFFIRMATIVE FOR BOTH.**
+*RULED DISPOSITION (Ruling 50, §3be).* **ADOPTED — proposed** — *"Rows 10.13, 10.14, 10.23, 10.52, 12.7
+and 14.18 — ADOPTED, proposed."* *"S-39 gains the flags BREATH-MARK, CAESURA and TEMPO-CHANGE with the
+placement rules above, and S-43's TIME-SIGNATURE-CHANGE and KEY-SIGNATURE-CHANGE are admitted
+(OQ-15: yes)"*; **OQ-9: yes** for the breath mark and the caesura.
 
 **Row 10.24 — each marker spikes the profile above the maximum possible surface-cue strength, so it
 dominates wherever it occurs.**
@@ -5294,6 +5706,9 @@ surface-cue peak** and dominates wherever it occurs" — §4.2 (locator: line 14
 the collapse S-40 excludes; S-40 publishes the marker as a flag with its witnesses and lets the
 consumer weigh it.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family.
+*RULED DISPOSITION (Ruling 48, §3bc).* **RELOCATED — to L3, *the read-off facts***: the marker spikes
+go to the consumer that decides the phrase boundary; at L1 *"a published quantity states the frame
+within which it is comparable"* and the marks stay separate flags with their scope.
 
 **Row 10.25 — the cues run per eligible voice, each voice getting its own three profiles.**
 *Statement.* "they are computed **per eligible voice** — each voice gets its own **gap, inter-onset,
@@ -5316,6 +5731,9 @@ this text expresses the same distinction as a **magnitude**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family. *(The
 two texts want the same distinction and encode it differently, which is worth the user's attention:
 this is not a case where one text lacks the information the other has.)*
+*RULED DISPOSITION (Ruling 48, §3bc).* **RELOCATED — to L3, *the read-off facts***: the aggregation
+across voices is the consumer's, and S-39 keeps REST-BEGINS naming the voice beside ALL-SILENT, each
+flag carrying its scope.
 
 **Row 10.27 — two voices' events are merged into the same onset when they fall within a coincidence
 window.**
@@ -5335,6 +5753,10 @@ one onset inside a window, and calls the window a precision-phase constant.
 needs one to aggregate across voices. **★ THIS IS A NEW FAMILY, MET FOR THE FIRST TIME AT DOCUMENT 10:
 THE COINCIDENCE TOLERANCE.** It is the first place in the whole comparison where the outgoing text
 asks for a tolerance that S-28's construction is expressly built to exclude.
+*RULED DISPOSITION (Ruling 52, §3bg).* **ADOPTED — proposed** — *"Row 10.27 — ADOPTED, proposed, that
+clause being the proposal"*: *"no tolerance exists anywhere in L1 and … a consumer's grouping window is
+its own, declared, and never published as a position."* A tolerance at L1 is *"EXCLUDED at the
+threshold on #12"*.
 
 **Row 10.28 — the picked set is the surface peaks union every notated marker, the markers emitted
 unconditionally.**
@@ -5348,6 +5770,9 @@ what S-39 does with all five kinds. S-40: **DIFFERS** on the union with a thresh
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 10.4: the deterministic half of
 this rule is S-39's own, and what is proposed is the specification's statement of how the two halves
 compose.
+*RULED DISPOSITION (Ruling 48, §3bc).* **RELOCATED — to L3, *the read-off facts***: the picked set and
+its union rule go to the phrase read-off; the unconditional emission of the notated marks is S-39's
+own and stays at L1.
 
 **Row 10.29 — a surface tick is picked when it is a local maximum above an adaptive threshold of the
 whole profile's mean plus k standard deviations.**
@@ -5361,6 +5786,9 @@ counts.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family: that
 the specification state whether L1 may **select** among boundary evidence, or must publish it all and
 leave the selection to a consumer, which is what S-53 does everywhere else.
+*RULED DISPOSITION (Ruling 48, §3bc).* **RELOCATED — to L3, *the read-off facts***: the adaptive
+threshold and the peak-picking go to the consumer that decides the phrase boundary; *"every
+combination, normalisation, threshold and selection is the consumer's."*
 
 **Row 10.30 — the boundary tick is the onset at which the phrase's sounding ends.**
 *Statement.* "The **boundary tick** of a picked peak is the onset at which the phrase's sounding ends:
@@ -5397,6 +5825,9 @@ notated voice's silence begins at this change point, by rest or by unwritten gap
 picked boundary to carry which cue fired and whether it fired globally or per voice.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 9.28. **THIS ROW RUNS TOWARDS THE
 DERIVATION**, and it is the second document to name the same gap.
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — proposed** — *"Rows 9.28, 10.32, 10.33, 10.53, 13.9,
+22.6 — ADOPTED, proposed, this clause being the proposal; these rows run towards the derivation"*:
+S-39 gains, on every flag, the scope it was read at.
 
 **Row 10.33 — a per-part marker should reach the texture profile through the same voice-coincidence
 aggregation as the graded cues, not by being spiked onto it.**
@@ -5406,6 +5837,9 @@ being spiked onto it." — §4.4 (locator: line 212).
 *Derived.* S-39, S-40.
 *Current-text axis.* S-39: **DIFFERS**, as at Row 10.32. S-40: **DIFFERS**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 10.32 and 10.53.
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — proposed** — *"Rows 9.28, 10.32, 10.33, 10.53, 13.9,
+22.6 — ADOPTED, proposed"*: every flag carries the scope it was read at, so the aggregation the row
+asks for is the consumer's over a published fact.
 
 **Row 10.34 — cadential closure, harmonic-rhythm change and any inferred key change are excluded as
 boundary signals.**
@@ -5444,6 +5878,8 @@ double bar). S-40: **DIFFERS** (the threshold and the graded strengths the other
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with the **boundary-evidence form** family.
 *(Counted as one statement, as at Rows 3.47 and 6.31: seven worked illustrations of rules already
 rowed, none stating a rule the rows above do not.)*
+*RULED DISPOSITION (Ruling 48, §3bc).* **RELOCATED — to L3, *the read-off facts***, the phrase
+read-off, with the rest of the graded model.
 
 #### §6 to §11 — the decisions, the testing, the risks and the open items
 
@@ -5498,6 +5934,11 @@ THIS IS THE FULLEST STATEMENT OF THAT FAMILY ANYWHERE, AND IT IS THE ROW THE USE
 WHEN RULING IT**: the outgoing choice is user-ratified, carries a research defense, and names the
 derivation's form as the alternative it rejected — while S-40's defense is that a combined strength is
 a judgment L1 may not take. **Two considered positions, each with its ground.**
+*RULED DISPOSITION (Ruling 48, §3bc).* **RELOCATED — to L3, *the read-off facts***, the phrase
+read-off — *"with D-476 to D-485 re-homed there and D4 (D-478) remaining that consumer's ruled rule."*
+The ruling states in terms that *"D4 and S-40 are not about the same act"*: D4 says how a boundary is
+*picked*, S-40 what L1 *publishes*, so *"D4 therefore stands entire as the picker's rule and S-40
+entire as the publisher's"* — no ratified decision is overturned, only re-homed.
 
 **Row 10.42 — per-voice cues aggregated to the texture, rejecting a top-voice-only pitch cue and a
 single arbitrary voice.**
@@ -5626,6 +6067,10 @@ evidence.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 10.13, 10.14 and 10.23: that the
 L0 supplied list be settled against the boundary evidence that consumes it, since three separate rows
 of this document name facts S-7 excludes.
+*RULED DISPOSITION (Ruling 50, §3be).* **ADOPTED — proposed** — *"Rows 10.13, 10.14, 10.23, 10.52, 12.7
+and 14.18 — ADOPTED, proposed."* Slurs, articulation and dynamics are supplied by L0 and read by no L1
+computation; *"whether a dynamic or a slur is ever boundary evidence at L1 — not admitted"*, that being
+*"a consumer's measurement and an addition to L1's kinds the user's when it comes."*
 
 **Row 10.53 — the markers partition into globally-scoped and per-part-scoped kinds, enumerated.**
 *Statement.* "**Globally-scoped (system-wide by notation):** the **structural barline**, the
@@ -5641,6 +6086,9 @@ an ensemble hold, but notated per staff"*.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 10.32, 10.33 and 9.28. **THIS ROW RUNS
 TOWARDS THE DERIVATION AND IS THE FULLEST STATEMENT OF THE SCOPE GAP**: it enumerates the partition,
 which neither Row 9.28 nor Row 10.32 does.
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — proposed** — *"Rows 9.28, 10.32, 10.33, 10.53, 13.9,
+22.6 — ADOPTED, proposed"*: S-39 gains the scope on every flag *"so that the partition of Row 10.53 is
+a published fact."*
 
 ---
 
@@ -5801,6 +6249,8 @@ witnesses).
 spans whose boundaries are a subset of L1's change points"*, and this is the term that scores it. **The
 two L1 facts it consumes are carried at S-35 and S-39 and travel with the relocation rather than being
 lost.**
+*RULED DISPOSITION (Ruling 47, §3bb).* **RELOCATED — to L2** — unchanged: *"Rows 6.40, 11.3, 11.6,
+11.9, 11.17 and 12.12(i) — carried or relocated as the reading file placed them, unchanged."*
 
 **Row 11.4 — the cadence evidence enters as one weighted factor voting for the segment's key.**
 *Statement.* "`+ Σ_j  w_cad   · (cadence evidence features at j → k_j)             [cadence factor]`"
@@ -5837,6 +6287,8 @@ own test, applied by the consumer to its own covariates.
 names are carried at S-35 and S-23 and travel with it.** *(Recorded because it is the clearest case in
 the outgoing record of L1's published facts being consumed exactly as covariates, which is the
 charter's own word for them: L1 *"hands the next layer its covariates"*.)*
+*RULED DISPOSITION (Ruling 47, §3bb).* **RELOCATED — to L2** — unchanged: *"Rows 6.40, 11.3, 11.6,
+11.9, 11.17 and 12.12(i) — carried or relocated as the reading file placed them, unchanged."*
 
 **Row 11.7 — the spelling emission reads the spelled degree and carries the collection question
 through the signature mask, with no tonic in the membership test.**
@@ -5864,6 +6316,9 @@ segments** as not in the structure at all, deferred to a possible later factor.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
 the bass motion between slices is **L1-published evidence** — S-45 publishes it — since a consumer
 that records it as unmodelled is not reading a fact L1 already supplies.
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — carried** — *"Row 11.8 — carried by S-45, its L2
+half to the L2 surface."* *"S-45 stands as L1's, Row 11.8's* not in the first structure *being L2's
+choice not to consume it."*
 
 **Row 11.9 — the boundary probability is conditioned on beat-strength class with the above-tactus ≫
 tactus ≫ sub-tactus shape.**
@@ -5877,6 +6332,8 @@ below [FACT — Temperley 2009 Table 1, p. 5, fetched]"*, which is this shape, i
 the derivation reached it by fetching the paper. *(The outgoing text additionally says the values are
 fit from this project's own corpus rather than taken from the paper, which is S-35's own
 UNESTABLISHED remedy and is recorded without adjudication.)*
+*RULED DISPOSITION (Ruling 47, §3bb).* **ADOPTED — carried** — unchanged: *"Rows 6.40, 11.3, 11.6,
+11.9, 11.17 and 12.12(i) — carried or relocated as the reading file placed them, unchanged."*
 
 **Row 11.10 — segment duration is otherwise implicit-geometric with a hard length cap.**
 *Statement.* "Segment duration is otherwise implicit-geometric with a hard length cap (the established
@@ -5914,6 +6371,11 @@ covariate rather than as a special case.
 with the metric strength of its own position, so a consumer can apply the displacement — the
 derivation publishes both facts and never relates them. **★ THIS IS A PUBLISHED FINDING THE DERIVATION
 DOES NOT HAVE**, the fourth such place in the comparison after Rows 3.60, 4.37 and 9.20.
+*RULED DISPOSITION (Ruling 54, §3bi).* **RELOCATED — to L2, *the tonal reading*** — *"Row 11.12 —
+RELOCATED to L2, the tonal reading, as the cadence factor's covariate … with the note that the L1 facts
+it needs — the mark's position and class (Ruling 51), the flag at the release (S-39), the class of
+every change point (Ruling 47) — are published already."* The row's proposal is therefore *"already met
+by Rulings 47 and 51 together"*; S-39's placement rule stands unchanged and nothing is added to L1.
 
 **Row 11.13 — the cadence factor's features are the leading-tone resolution, the fourth-and-seventh
 pair, and dominant-to-tonic bass motion.**
@@ -5929,6 +6391,8 @@ SAME ORDER OF EVIDENCE, FROM THE SAME PUBLISHED SOURCE** — the derivation cite
 three and quotes the fourth-and-seventh feature verbatim. **This is the closest whole-face agreement
 in the comparison**, and it is recorded because it bears on the independence question: that extract
 was a boot-pack member.
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — carried** — unchanged: *"Rows 9.22, 9.26, 11.13,
+11.15 — carried, unchanged."*
 
 **Row 11.14 — each cadence feature is evaluated in a candidate key and carries a fitted weight.**
 *Statement.* the same sentence: "in candidate key k … each a feature with a fitted weight" — §3.9
@@ -5944,6 +6408,9 @@ variable, and is weighted by a fitted constant.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state whether
 the cue is published **once per bass-anchored candidate** or **evaluated per decode candidate key** —
 the first is computable at L1 and the second is not, so the answer decides where the cue lives.
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — proposed** — *"Rows 9.12, 9.19, 9.20, 9.21 and 11.14
+— ADOPTED, proposed, by clauses (i) to (iii)."* The features evaluated in candidate key k with fitted
+weights are *"L2's cadence factor … a consumer reading L1's cues and its own state."*
 *(This is the **cadence evidence's inputs** family of Row 9.12, met a second time and from the other
 direction: there the extra input was a committed chord, here it is a candidate key.)*
 
@@ -5958,6 +6425,8 @@ flag as *weak* evidence precisely because *"the half cadence is weak on local cu
 and states that omitting it *"would decide"*.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Both texts reach the same conclusion from the same
 two measured figures: publish the weak cue, weight it low, and do not omit it.)*
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — carried** — unchanged: *"Rows 9.22, 9.26, 11.13,
+11.15 — carried, unchanged."*
 
 **Row 11.16 — the signature and declared-mode prior conditions the initial key state only, re-entering
 only at a notated mid-piece signature change.**
@@ -5985,6 +6454,8 @@ miss seen from the scoring side.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.** *(Worth the user's attention: the outgoing text labels
 this an **ASSUMPTION** with a named false-negative path, where the derivation states the same content
 as a rule; both texts declare the same exposure and neither hides it.)*
+*RULED DISPOSITION (Ruling 47, §3bb).* **ADOPTED — carried** — unchanged: *"Rows 6.40, 11.3, 11.6,
+11.9, 11.17 and 12.12(i) — carried or relocated as the reading file placed them, unchanged."*
 
 ---
 
@@ -6139,6 +6610,11 @@ the declared mode is an L0 fact or an annotation, since the derivation excludes 
 and the outgoing record treats it as input. **This is the sharpest disagreement about L0's ADMISSION
 CRITERION found anywhere in the comparison** — every other difference has been about the list, not
 about the test.
+*RULED DISPOSITION (Ruling 57, §3bl).* **ADOPTED — proposed** — *"Rows 12.3, 21.14, 20.2, 20.3 and 20.4
+— ADOPTED, proposed, the proposal being those clauses."* Clause (i): *"The declared-mode tag is
+annotation: it fails S-1(i) … L0 carries it labelled as read … and no layer of the analysis consumes it
+as evidence about the music."* **Flagged to L2's surface, not decided here:** *"D-528's and D-450's
+declared-mode prior against `FRAMEWORK.md` §8.6 and C-2."*
 
 **Row 12.4 — time signatures, bar lines including double and section bar lines, and repeats are input;
 a double bar line is a section-boundary hint.**
@@ -6172,6 +6648,10 @@ silence must exceed a **length threshold** to count as boundary evidence, S-39 p
 onset unconditionally and this text requiring the rest to be long enough. *(Related to but distinct
 from the **coincidence tolerance** family of Row 10.27: that is a tolerance on simultaneity, this is a
 threshold on duration.)*
+*RULED DISPOSITION (Ruling 62, §3bq, item 2).* **ADOPTED — proposed** — *"No threshold at L1: S-31
+publishes every silent slice with its length and S-39 every REST-BEGINS;* long enough *is a consumer's
+fitted threshold over the published length (Rulings 48, 52)."* A threshold at L1 is *"excluded at the
+threshold (#12, Ruling 52)."*
 
 **Row 12.7 — grace notes, slurs and articulation, lyrics, tempo and character markings, pedal lines,
 and instrument and part names are further input facts.**
@@ -6186,6 +6666,9 @@ articulation and tempo.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Rows 10.13, 10.14 and 10.52: that the
 L0 supplied list be settled, this being the **fifth** place in the outgoing record naming a fact S-7
 excludes.
+*RULED DISPOSITION (Ruling 50, §3be).* **ADOPTED — proposed** — *"Rows 10.13, 10.14, 10.23, 10.52, 12.7
+and 14.18 — ADOPTED, proposed, the proposal being the L0 list and the L1 kinds."* S-7 is amended to
+supply the marks, its exclusion narrowed to beams and layout.
 
 **Row 12.8 — a pedal line affects which pitches actually sound together.**
 *Statement.* "pedal lines (sustain — affects which pitches actually sound together; the known
@@ -6198,6 +6681,10 @@ together.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** **★ THIS BEARS DIRECTLY ON OQ-3**, which the
 derivation could not settle because no staged file carried a pedal mark: the outgoing record takes the
 position S-54 declined to take, and names it a known gap.
+*RULED DISPOSITION (Ruling 59, §3bn).* **ADOPTED — proposed** — *"Row 12.8 — ADOPTED, proposed, the
+proposal being that sentence"*: this row's fact is written beside S-54 as *"the reason the span is
+published, while L1 publishes no such union."* **OQ-3 is answered: the notated release stands**, and
+S-54's status moves from open to settled.
 
 **Row 12.9 — chord-symbol, Roman-numeral and Nashville annotations in the score are recognized as
 flags and never read.**
@@ -6252,6 +6739,8 @@ the octave-doubling fact, and S-3's spelled pitch is exactly the notated acciden
 (locator: line 65).
 *Derived.* S-35. *Current-text axis.* S-35: **AGREES**.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.**
+*RULED DISPOSITION (Ruling 47, §3bb).* **ADOPTED — carried** — unchanged: *"Rows 6.40, 11.3, 11.6,
+11.9, 11.17 and 12.12(i) — carried or relocated as the reading file placed them, unchanged."*
 
 **Row 12.12 (ii) — the per-note beat weight is decoder-private.**
 *Statement.* "region-level weights PUBLISHED; **per-note beat weight decoder-private** (OI-82)" — the
@@ -6261,6 +6750,8 @@ same bullet.
 **DIFFERS** — S-50 lists it among what L1 publishes.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the per-position metric weight still
 private to one decoder, and does any consumer that needs it re-derive it?
+*RULED DISPOSITION (Ruling 47, §3bb).* **QUARANTINED** — unchanged: *"Rows 4.11 and 12.12(ii) —
+QUARANTINED, audit questions as written."*
 
 **Row 12.13 — the weighted pitch-class collections per span, with repetition and cross-voice boosts.**
 *Statement.* "Weighted pitch-class collections per span (with repetition and cross-voice boosts —
@@ -6322,6 +6813,9 @@ as not reliably the structural melody.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with those four rows: **the outgoing record
 argues both sides of the top-voice question in different documents**, and the specification should
 state which it takes.
+*RULED DISPOSITION (Ruling 53, §3bh).* **ADOPTED — carried** — *"Row 12.19 — placed with Rows 8.4, 9.1,
+9.7 and 10.17, no soprano cue at L1"*: *"no soprano cue at L1, the highest sounding pitch recoverable
+from the published sounding set."*
 
 **Row 12.20 — the slicing layer publishes slices, slice durations and explicit empty slices.**
 *Statement.* "Slices (change-point boundaries), slice durations, explicit empty slices. PUBLISHED." —
@@ -6338,6 +6832,8 @@ segmentation-edge artifact class)" — §4 (locator: line 87).
 confidence instead of a binary cut"* is, in this text's own words, the collapse S-40 excludes.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family. **This
 is the third document to want a graded boundary confidence**, after documents 8 and 10.
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — carried** — *"placed as consumers reading the
+profile at its new home, their L1-facing content carried by S-39 and S-40."*
 
 **Row 12.22 — harmonic rhythm: accelerating harmonic rhythm approaching a phrase end is a
 cadence-approach signal, computable purely from slice durations.**
@@ -6352,6 +6848,9 @@ not publish, the **pattern of slice durations** — a fact computable from what 
 which this text names as classic cadence-approach evidence. *(`FRAMEWORK.md` §5 assigns *the harmonic
 rhythm* to L3, which is recorded and not adjudicated: the pattern of L1's slice durations and the
 harmonic rhythm over decided chords are different quantities.)*
+*RULED DISPOSITION (Ruling 62, §3bq, item 3).* **ADOPTED — proposed** — *"L1 publishes no statistic
+over slice lengths; the series is the slice list, already published; the harmonic rhythm is over decided
+harmonic spans, the charter's L3."*
 
 **Row 12.23 — anacrusis and pickup detection.**
 *Statement.* "anacrusis/pickup detection" — §4 (locator: line 92).
@@ -6547,6 +7046,9 @@ reserves it for a different object instead of barring it.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 10.8: that the naming bar and the two
 outgoing reservations of the word *phrase* be reconciled into one rule. **Three documents now reserve
 the word, and they reserve it three ways.**
+*RULED DISPOSITION (Ruling 56, §3bk).* **ADOPTED — proposed** — *"Rows 9.13, 13.4, 14.16, 14.17, 10.8
+and 13.1 — ADOPTED, proposed, the proposal being those clauses."* Bare *phrase* is the musical phrase
+under D-113; *"the grouping object is the punctuation span"*, as this row's own convention says.
 
 **Row 13.2 — the grouping span's boundaries are the score's notated punctuation, not a cadence, which
 would be circular.**
@@ -6589,6 +7091,9 @@ barring a chord from an L1 output; this text calls it *"one chord-rhythm segment
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **word *slice*** family of Row 9.13. **A
 third meaning appears here**: L1's stretch of unchanging sound, L5's committed chord plus key, and
 this document's chord-rhythm segment.
+*RULED DISPOSITION (Ruling 56, §3bk).* **ADOPTED — proposed** — *"Rows 9.13, 13.4, 14.16, 14.17, 10.8
+and 13.1 — ADOPTED, proposed."* *Slice* is L1's object and nothing else; the grouping layer's unit is
+the punctuation span, *"bounded by notated punctuation."*
 
 #### §1 to §3 — the principle, the model and the contract
 
@@ -6628,6 +7133,8 @@ boundaries; the primitive's max-normalisation and peak-picking)" — §3 (locato
 *Derived.* S-39, S-40. *Current-text axis.* S-39: **DIFFERS**. S-40: **DIFFERS**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **boundary-evidence form** family, with
 Rows 10.22 and 10.29. **A fourth document states the graded, max-normalised, peak-picked form.**
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — carried** — *"placed as consumers reading the
+profile at its new home, their L1-facing content carried by S-39 and S-40."*
 
 **Row 13.9 — each punctuation-span carries the provenance of the cue that opened and closed it and its
 scope, which keeps a local boundary from being presented as a global one.**
@@ -6643,6 +7150,8 @@ which cue fired and whether it fired globally or per part, and states what is lo
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 9.28, 10.32, 10.33 and 10.53. **★ THIS IS
 THE CONSUMER'S SIDE OF THE MARKER-SCOPE GAP, and it is the strongest form of it**: three documents
 name the gap, and this one is the layer that would be misled by it.
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — proposed** — *"Rows 9.28, 10.32, 10.33, 10.53, 13.9,
+22.6 — ADOPTED, proposed, this clause being the proposal; these rows run towards the derivation."*
 
 #### §5 and §7 — the rules and the crosscutting concepts
 
@@ -6709,6 +7218,10 @@ release and admits no offset between a mark and the moment it signals.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 11.12. **The same displacement met from a
 second direction**: Row 11.12 has the arrival before a metrically weak fermata, this has it before the
 notated span end for a suspended resolution — two documents, two mechanisms, the same shape.
+*RULED DISPOSITION (Ruling 54, §3bi).* **RELOCATED — to L3, *the read-off facts*** — *"Row 13.14 —
+RELOCATED to L3, the read-off facts, as the grouping's alignment window"*, with the note that the L1
+facts it needs are published already. *"S-39's placement rule stands unchanged; nothing is added to
+L1."*
 
 **Row 13.15 — the boundaries come from the one primitive; this layer adds no second boundary
 detector.**
@@ -6917,6 +7430,9 @@ notes. This removes segmentation-as-a-decision entirely — there is nothing to 
 slice placement." — §1 (locator: line 24).
 *Derived.* S-28, S-51. *Current-text axis.* S-28: **AGREES**. S-51: **AGREES**.
 *PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 2.1, 6.6 and 11.2.
+*RULED DISPOSITION (Ruling 55, §3bj).* **ADOPTED — carried** — unchanged: *"Row 14.3 — carried,
+unchanged."* At L1 no boundary depends on a chord; the harmonic boundary L2 decides is a different
+object, and *"the two texts use* boundary *for two different objects."*
 
 **Row 14.4 — the construction dissolves the largest measured error class, over-grab, by construction.**
 *Statement.* "This dissolves the largest measured error class (**over-grab, ~45%**) *by construction*:
@@ -6988,6 +7504,10 @@ those four.
 narrows those rows usefully: the TARGET list carries `ties`, which the as-built eleven fields do
 not.** One of the five facts S-3 requires and the implementation lacks was in the architecture all
 along.
+*RULED DISPOSITION (Ruling 62, §3bq, item 4).* **QUARANTINED** — *"The per-note list is S-3's as
+written, plus Ruling 44's stem direction and Ruling 50's attached marks; the outgoing eleven- and
+twelve-field lists are descriptions of builds and targets, placed by S-3 — carried where they match,
+QUARANTINED where they describe code."* This row states the target's twelve fields.
 
 **Row 14.10 — the slices come from the note model as the constant-sonority spans between the union of
 note onsets and offsets: deterministic, lossless, not a heuristic.**
@@ -7061,6 +7581,9 @@ family. S-50: **AGREES** on the naming discipline.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **word *slice*** family: that the
 specification say which span types L1 publishes and name each by its bounding event, since the
 outgoing record needs six names where the derivation needs one.
+*RULED DISPOSITION (Ruling 56, §3bk).* **ADOPTED — proposed** — *"Rows 9.13, 13.4, 14.16, 14.17, 10.8
+and 13.1 — ADOPTED, proposed."* *"Any further span is named by what bounds it and never by* slice *or
+bare* region*"* (D-028).
 
 **Row 14.17 — the atomic span is bounded by harmony change and is one committed chord plus one
 assigned local key.**
@@ -7077,6 +7600,9 @@ an assigned key.
 MEANING, AND THE ONE THAT MAKES THE FAMILY WORTH RULING**: this document says in terms that the
 function layer calls this object a *slice*, while §1 of the same document calls the constant-sonority
 span a slice too. **The collision is inside one document.**
+*RULED DISPOSITION (Ruling 56, §3bk).* **ADOPTED — proposed** — *"Rows 9.13, 13.4, 14.16, 14.17, 10.8
+and 13.1 — ADOPTED, proposed."* *"The unit* one committed chord plus one assigned local key *is L2's
+harmonic span, the charter's own name, bounded by harmony change."*
 
 **Row 14.18 — the punctuation span is bounded by phrase markers: fermata, breath, rest, structural bar
 line.**
@@ -7087,6 +7613,9 @@ Layer-1.5 primitive). The grouping/punctuation unit." — §2 (locator: line 237
 breath mark.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 10.13, 10.23 and 13.3 — **the fourth
 document to name the breath mark among the boundary kinds**, which OQ-9 leaves open.
+*RULED DISPOSITION (Ruling 50, §3be).* **ADOPTED — proposed** — *"Rows 10.13, 10.14, 10.23, 10.52, 12.7
+and 14.18 — ADOPTED, proposed, the proposal being the L0 list and the L1 kinds."* **OQ-9 is answered
+yes for the breath mark and the caesura.**
 
 #### §6.1 — the change-point set, and §6.2 to §6.5
 
@@ -7185,6 +7714,9 @@ labels **every beat**, which is that grid.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state what the
 per-event evidence is — a change point or a beat — since this document cites a beat-labelling system
 as the evidence for a change-point construction, and Row 6.58 rejects the grid the citation rests on.
+*RULED DISPOSITION (Ruling 62, §3bq, item 5).* **ADOPTED — proposed** — *"The per-event unit is the
+change point (S-28); a beat-labelling engine is cited for the per-event shape only, never for the
+unit."*
 
 ---
 
@@ -7428,6 +7960,8 @@ per-slice read still routed through the index on the arm that ships?
 without it, so a consumer that folds to pitch class discards a fact L0 requires.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the key path still spelling-blind on the
 arm that ships, and does anything downstream depend on that?
+*RULED DISPOSITION (Ruling 58, §3bm).* **QUARANTINED** — unchanged: *"Rows 15.15 and 29.7 —
+QUARANTINED, unchanged."*
 
 **Row 15.16 — the spelling of an accidental is a modulation-direction clue the pitch-class emission
 discards.**
@@ -7461,6 +7995,8 @@ anchoring a candidate tonality on a sounding fact.
 *PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
 Row 12.25 — the same claim met a second time, and the **cadence evidence's inputs** family's third
 instance.
+*RULED DISPOSITION (Ruling 53, §3bh).* **RELOCATED — to L2** — unchanged: *"15.18 — RELOCATED to L2,
+unchanged."*
 
 **Row 15.19 — the characteristic-pitch and leading-tone terms are hard-gated on a window weight, so a
 present-but-weak leading tone is treated as absent.**
@@ -7472,6 +8008,8 @@ present-but-weak leading tone is treated as absent.**
 weight gate at all; a presence gate on a weighted quantity is a third thing again.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the presence gate still in force on the
 arm that ships, and does any cue or key term still treat a present-but-weak tone as absent?
+*RULED DISPOSITION (Ruling 53, §3bh).* **QUARANTINED** — unchanged: *"15.19 — QUARANTINED,
+unchanged."*
 
 **Row 15.20 — a modal reading the major/minor-only ground truth cannot represent is not an error to
 optimise away.**
@@ -7654,6 +8192,12 @@ the case where the proxy is accepted**, on the ground that the field works with 
 the notated voice is a usable proxy **in keyboard music specifically**, since the two texts name that
 repertoire as the proxy's failure case and as its accepted case respectively — and S-46's cue, its
 relaxation, and Row 10.25's per-voice profiles all rest on the answer.
+
+*RULED DISPOSITION (Ruling 61, §3bp).* **RELOCATED — to *the second axis — voice leading*** — *"Row
+16.2 — RELOCATED to the second axis, voice leading, with S-13 confirmed as the L0 rule."* *"S-13 stands
+— the notated voice supplied as a fact, the analysis never inferring a line (D-389); whether it is
+close enough to a perceptual line for a consumer's purpose is that consumer's measured question, and
+the census's acceptance for keyboard music is the voice-leading axis's own recorded stance."*
 
 ---
 
@@ -7939,6 +8483,10 @@ ends and the next begins depends partly on what the chords are"*.
 a boundary may depend on a chord, since the two answers give the analysis different failure modes —
 the derivation's construction makes the cascade this constraint describes impossible, and the
 constraint exists because it was measured.
+*RULED DISPOSITION (Ruling 55, §3bj).* **QUARANTINED** — *"Row 17.13 — QUARANTINED, its audit question:
+does the arm that ships still place any harmonic boundary sequentially after a chord decision, or only
+inside the joint decode?"* The two-layer clause is written beside S-28 and S-51: at L1 never; at L2
+jointly with the tonality and the chord over L1's change points.
 
 **★ AND THE OUTGOING RECORD HOLDS BOTH ANSWERS AGAIN.** Row 14.3 states that *"\"Where the slices
 are\" is a deterministic FACT, not a judgment … there is nothing to get right or wrong about slice
@@ -8302,6 +8850,10 @@ other about whether the marks are published items.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the publication list carry the
 span-edge marks and the truncation provenance explicitly, since the rule they serve is stated in both
 texts and only one of them publishes them.
+*RULED DISPOSITION (Ruling 62, §3bq, item 1).* **ADOPTED — proposed** — *"S-50's list gains every
+published item that S-25, S-32 and S-52 and Rulings 40, 46, 48, 49, 51 and 61 name, so that* exactly
+*is true, as Ruling 60 requires of an exhaustive surface."* *"No alternative admissible: an exhaustive
+list omitting published items is false (#10)."*
 
 **Row 18.16 — the request to the supplier is in ticks, and the supplier is unit-blind.**
 *Statement.* "**Units.** The request to Architectural Layer 1 is in **ticks** — it is unit-blind (it
@@ -8838,6 +9390,10 @@ supplies each note's *"staff and notated voice"* and never says what a staff or 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state the
 staff, voice and part structure the record supplies, since the per-note pair alone does not say how
 many voices a staff may carry or that one part may span two staves.
+*RULED DISPOSITION (Ruling 61, §3bp).* **ADOPTED — proposed** — *"Rows 19.2 and 19.19 — ADOPTED,
+proposed, by those clauses."* Clause (i): *"L0 states the structure the record supplies — parts, the
+staves each part holds, the notated voices each staff holds — so the per-note pair is interpretable;
+for this record format, one to four voices per staff and a part spanning staves."*
 
 **Row 19.3 — a single notated line may project two or more perceptual lines, which is why stream
 separation exists as a task.**
@@ -8892,6 +9448,11 @@ between samples — the piecewise-constant hold is the half-open stretch, a voic
 last onset put there until the next.
 *PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading***. *(S-28's onsets-and-
 releases construction travels with it as the fact the sampling rule departs from.)*
+*RULED DISPOSITION (Ruling 62, §3bq, item 6).* **RELOCATED — to *the second axis — voice leading***, as
+the reading file placed it, *"with this noted for that axis's surface: under the spine–axis boundary
+contract the axis consumes L1's published facts and re-derives none, so a sampling by onsets only and a
+per-voice span kind are the axis's own derived views over L1's change points and never a second L1
+unit; Row 18.17's claim stands at L1."*
 
 **Row 19.7 — a per-voice span kind: spans of different voices may overlap and be out of phase by
 construction, and strict tiling within one voice is not asserted.**
@@ -8910,6 +9471,9 @@ working span exactly"*, which a family that may leave gaps and overlap does not.
 *PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading***. *(Recorded because the
 derived specification has exactly one span shape and this names a second with the opposite properties,
 declared rather than assumed.)*
+*RULED DISPOSITION (Ruling 62, §3bq, item 6).* **RELOCATED — to *the second axis — voice leading***, as
+the reading file placed it, with the ruling's note that *"a per-voice span kind [is] the axis's own
+derived view over L1's change points and never a second L1 unit."*
 
 #### §2 and §3 — the constraints, and what the axis is handed
 
@@ -8977,6 +9541,10 @@ not per note as a weight.
 owns a metric **weight** as against a metric **position** and a per-change-point **class**, since the
 outgoing record has a per-note weight here and this same document says at §7 that the weight is not
 stored on the event at all.
+*RULED DISPOSITION (Ruling 47, §3bb).* **ADOPTED — proposed** — *"Rows 6.41, 6.42, 9.6, 9.17, 9.31 and
+19.12 — ADOPTED, proposed, the proposal being the form and the owner, and this ruling stating both"*:
+*"L0 supplies metric position per note (S-3), L1 the metric strength class per change point (S-35), and
+a per-note or per-slice weight is a consumer's fitted derivative, never published by L0 or L1."*
 
 **Row 19.13 — the boundary primitive is consumed as evidence rather than re-detected, and it carries a
 graded profile with per-part cue and scope provenance.**
@@ -8994,6 +9562,9 @@ the publish-once discipline the derivation's list exists to serve.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say whether the
 boundary evidence is published as a flag set with witnesses or as a graded profile, and whether a flag
 carries the scope it was detected over — three outgoing documents now assume the second of each.
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — carried** — *"placed as consumers reading the
+profile at its new home, their L1-facing content carried by S-39 and S-40."* S-39 gains the scope on
+every flag; the graded profile is RELOCATED to the phrase read-off at L3.
 
 **Row 19.14 — the slices are not imported: the sampling is by voice-pair onsets and not by
 verticalities, and nothing is read from the chord, function or grouping layers.**
@@ -9008,6 +9579,9 @@ which is S-53's own rule applied across an axis boundary.
 *PROPOSED DISPOSITION.* **RELOCATED — to *the second axis — voice leading***. *★ Read beside Row 18.17,
 which states that the change-point slice is the finest granularity at which anything can change: the
 outgoing record carries both that claim and a second sampling unit declared against it.*
+*RULED DISPOSITION (Ruling 62, §3bq, item 6).* **RELOCATED — to *the second axis — voice leading***, as
+the reading file placed it, with the ruling's note that the axis's sampling is *"the axis's own derived
+view over L1's change points and never a second L1 unit; Row 18.17's claim stands at L1."*
 
 #### §4 and §5 — the strategy and the component rules
 
@@ -9073,6 +9647,10 @@ without publishing a mark for it**, where this text publishes one per event.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that L0 publish a per-event **chordal**
 mark on a notated voice, since S-13's declared false-negative path is exactly the case the mark
 identifies and no derived statement makes it findable.
+*RULED DISPOSITION (Ruling 61, §3bp).* **ADOPTED — proposed** — *"Rows 19.2 and 19.19 — ADOPTED,
+proposed, by those clauses."* Clause (ii): *"L1 publishes, per onset change point and per notated
+voice, how many pitches that voice sounds at that onset — the chordal mark, a count with its witnesses
+— beside Ruling 49's per-voice relations; S-46's relaxation then fires on a published condition."*
 
 **Row 19.20 — a reduction of a chordal voice is declared, uniform and per query, never silent and
 never per source, and the rule is carried in the output's provenance.**
@@ -9174,6 +9752,10 @@ than merging it away, and this publishes an undefined profile with its reason ra
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification carry a named
 reason on every declined output, since the derived statements decline in several places and none
 publishes why.
+*RULED DISPOSITION (Ruling 62, §3bq, item 7).* **ADOPTED — proposed** — *"Beside S-52, every L1 item
+that is not computed or is empty carries a named reason — S-45's* not computed when no such Y exists*,
+S-46's relaxation and S-31's empty set gain the form"* (#12: an absence with no reason is a fact
+hidden).
 
 **Row 19.27 — the fact layers are pure functions, and the inference component is deterministic given
 its fitted reference set, with no run-time randomness.**
@@ -9201,6 +9783,10 @@ is what makes case (a) safe, a fact being computable with no tonality, chord or 
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state the
 acyclicity test in the general form this text gives it, since the derived statement asserts the
 forward-only property for one pair of layers and does not say what makes a read admissible in general.
+*RULED DISPOSITION (Ruling 62, §3bq, item 8).* **ADOPTED — proposed** — *"Beside S-53, the general
+form: a fact may be consumed freely by any layer or axis because facts depend on no inference; a
+committed output may be consumed only where the combined dependency graph stays acyclic — the charter's
+spine–axis contract in one sentence."*
 
 **Row 19.29 — the open questions the outgoing record leaves: may one note belong to two spans of the
 same voice, and do rests between spans sit inside a span or between spans.**
@@ -9388,6 +9974,10 @@ file's own representation that decides the same cases without one.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification record this as a
 second, checkable form of the admission test for record files of this kind, beside the copyist test,
 since S-1's own falsifier is RESIDUAL and this one is not.
+*RULED DISPOSITION (Ruling 57, §3bl).* **ADOPTED — proposed** — *"Rows 12.3, 21.14, 20.2, 20.3 and 20.4
+— ADOPTED, proposed."* *"Row 20.2's property-system test is recorded as a checkable form of condition
+(i) for record files of this kind — a stored property intentional, a layout-regenerated one computed —
+with condition (ii) applied after it, a stored chord symbol passing (i) and failing (ii)."*
 
 **Row 20.3 — the enumerated intentional properties, chord symbols and lyrics among them.**
 *Statement.* "**Visible to LLM:** pitch, duration, voice, dynamics, articulation, note colors,
@@ -9406,6 +9996,10 @@ handed, unlabelled.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say whether
 S-2's bar binds a **downstream reasoner** as it binds a layer. S-2's words are *no layer*, and the
 consumer here is not a layer; the record does not say whether the bar reaches it.
+*RULED DISPOSITION (Ruling 57, §3bl).* **ADOPTED — proposed** — clause (ii): *"S-2's bar binds every
+layer of the analysis and any consumer whose output feeds the analysis; a reader outside the analysis —
+D-522's explaining or editing consumer — may be handed annotation labelled as annotation for a purpose
+other than deciding the music, and may never feed it back in."*
 
 **Row 20.4 — a visual property such as color is semantically meaningful and must be shown: a user who
 colors notes is communicating intent.**
@@ -9422,6 +10016,10 @@ evidence, where this text requires the reader to see it and act on it.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say where a
 **user's own mark on the score** falls — admitted as notated text, or carried as annotation — since
 S-1's two conditions admit it and S-2's list excludes it, and the outgoing record needs it consumed.
+*RULED DISPOSITION (Ruling 57, §3bl).* **ADOPTED — proposed** — clause (iii): *"A note's color,
+visibility or other visual property is on the page, reproducible by a copyist and no claim about the
+music: an L0 fact under Ruling 50's lossless list, which a reader may act on and which no layer treats
+as evidence about the music."*
 
 **Row 20.5 — the whole score is never handed over at once: sections are read on demand, and what has
 been read stays in the reader's own history.**
@@ -9465,6 +10063,10 @@ text at its own position, which is what being joinable rather than embedded mean
 the positioned marks list publishes each mark with the position it stands at, which is the same join
 from the other side.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.**
+*RULED DISPOSITION (Ruling 51, §3bf).* **ADOPTED — carried** — unchanged, agreeing: Rows 20.7–20.9 are
+*"the derivation's two lists reached from the other side, and carried."* *"A rehearsal letter or
+section label passes S-1 and is placed in the list at the ratification act under the same test, Rows
+20.7–20.9 having put it there, unless the user says otherwise."*
 
 **Row 20.8 — the address alone does not identify a note: several notes of one chord share it, so a
 note needs an identity of its own.**
@@ -9478,6 +10080,7 @@ unambiguously target a single note. `NoteId` must appear explicitly on the Note 
 set of pitches"*. One text reaches note identity from what a slice is; the other from what an address
 fails to distinguish.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.**
+*RULED DISPOSITION (Ruling 51, §3bf).* **ADOPTED — carried** — unchanged, agreeing.
 
 #### §6 — addressing a region by what the notation carries
 
@@ -9497,6 +10100,9 @@ KEY-SIGNATURE-CHANGE and TIME-SIGNATURE-CHANGE flags are this list's third membe
 *PROPOSED DISPOSITION.* **ADOPTED — carried.** *★ An independent enumeration of almost exactly the
 derivation's boundary-flag and marks lists, arrived at by asking how a musician names a place in a
 score rather than what a layer should publish.*
+*RULED DISPOSITION (Ruling 51, §3bf).* **ADOPTED — carried** — unchanged, agreeing; and it is the row
+on which *"a rehearsal letter or section label … is placed in the list at the ratification act under
+the same test."*
 
 **Row 20.10 — texture and instrumentation events are inferred rather than stored: where a group of
 staves goes from resting to playing, where a solo ends, where the full ensemble first plays together.**
@@ -9513,6 +10119,10 @@ the published flags, which is the same event from the other side.
 **entry** — a staff or a voice going from silent to sounding — is published as a flag of its own. It is
 recoverable from the published silent slices, and the outgoing record names it as something a consumer
 asks for by name.
+*RULED DISPOSITION (Ruling 62, §3bq, item 10).* **ADOPTED — carried** — *"No new flag: an entry is an
+onset preceded by silence in that voice, which Ruling 49's* silence before the onset *relation
+publishes per voice, and an ensemble entry is the end of an ALL-SILENT slice (S-31). ADOPTED, carried
+by Ruling 49 and S-31"* (#6).
 
 **Row 20.11 — the consumer resolves a reference against the supplied structural facts; no index of
 reference types is built in advance, because the space is open-ended.**
@@ -9545,6 +10155,9 @@ has a place in it and no place in this tree.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say how the
 published facts are **laid out for a reader** — the derived statements fix what is published and never
 its arrangement, and this text makes the arrangement a load-bearing design decision.
+*RULED DISPOSITION (Ruling 62, §3bq, item 11).* **RELOCATED — to the reader** — *"Not L0's or L1's: the
+specification fixes what is published, and its arrangement for a reader outside the analysis is that
+reader's (Ruling 57 (ii), D-522). RELOCATED to the reader."*
 
 **Row 20.13 — positions are expressed relative to the time signature rather than as raw tick
 fractions.**
@@ -9848,6 +10461,10 @@ this factor is named for; the fifth statement of that difference in the outgoing
 *PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
 Row 11.3. *(S-39's flags travel with it as the evidence the factor reads; S-40's refusal to collapse
 travels as the open question about the form it reads them in.)*
+*RULED DISPOSITION (Ruling 48, §3bc).* **FLAGGED to the L2 surface, disposition unchanged** — *"Row
+21.5 is FLAGGED for the L2 surface, its boundary-strength factor being an L2 read of an L3 product,
+which the L3 → L2 contract forbids."* Not relocated by this ruling and not decided; carried to §10's
+flag sub-list.
 
 **Row 21.6 — beat strength and metric position weight the emission and supply a
 chord-change-on-strong-beat prior.**
@@ -9971,6 +10588,10 @@ the music"*, where this text conditions the estimate on it.
 **declared-mode tag** is admitted, refused, or carried as annotation and consumable by a deciding layer
 — the second time the outgoing record puts this question, after Row 12.3, and the first time in a
 ratified architecture.
+*RULED DISPOSITION (Ruling 57, §3bl).* **ADOPTED — proposed** — *"Rows 12.3, 21.14, 20.2, 20.3 and 20.4
+— ADOPTED, proposed, the proposal being those clauses."* Clause (i) places the tag as annotation
+carried labelled and consumed by no layer of the analysis. **Flagged to L2's surface, not decided
+here:** *"D-528's and D-450's declared-mode prior against `FRAMEWORK.md` §8.6 and C-2."*
 
 **Row 21.15 — the declared-mode wall is formally retired.**
 *Statement.* "**The declared-mode wall (the −7 hard penalty) is formally retired.**" — §5a (locator:
@@ -10174,6 +10795,9 @@ difference in the outgoing record.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 19.13. *The proposal:* that the specification
 say whether the boundary evidence a consumer reads is the flag set with its witnesses or an aggregated
 strength — six outgoing documents now assume the second.
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — carried** — *"Rows 8.5, 8.6, 9.8, 9.14, 9.16, 9.23,
+9.33, 12.21, 13.8, 19.13, 22.2 — placed as consumers reading the profile at its new home, their
+L1-facing content carried by S-39 and S-40."*
 
 **Row 22.3 — the layer consumes the slice's pitches, their notated spelling, their metric weight and
 the neighbouring slices, and may use nothing already decided downstream.**
@@ -10205,6 +10829,10 @@ unreliable**, which the derived statements nowhere address.
 with spelling that is present but **arbitrary** — an imported record whose letters were assigned rather
 than notated. S-14 refuses a record with no spelling and admits one with any spelling, and the
 outgoing record says the second case is real and common.
+*RULED DISPOSITION (Ruling 58, §3bm).* **ADOPTED — proposed** — *"Rows 22.4, 25.13, 27.6 and 27.4 —
+ADOPTED, proposed, by those clauses."* Clause (i): *"L0 supplies the spelling as written and grades
+nothing; an import provenance the file carries is not on the page and is annotation under S-2, carried
+labelled, so a consumer weighing a spelling reads both; S-14's refusal of the absent case stands."*
 
 #### §2 — the boundaries the window may not read across
 
@@ -10244,6 +10872,9 @@ boundary flag carries the **scope** it was detected over — a whole texture aga
 this text makes a window-truncation decision turn on exactly that distinction and S-39's flags carry no
 scope. *(The same question as Row 13.9 and Row 19.13, here with a named consumer that needs the
 answer.)*
+*RULED DISPOSITION (Ruling 48, §3bc).* **ADOPTED — proposed** — *"Rows 9.28, 10.32, 10.33, 10.53, 13.9,
+22.6 — ADOPTED, proposed, this clause being the proposal; these rows run towards the derivation"*:
+S-39 gains, on every flag, the scope it was read at.
 
 **Row 22.7 — the analysis works on the user's selected music, at any size and in any style; its
 structure assumes no style.**
@@ -10325,6 +10956,12 @@ is present and self-contradictory.
 **internal-validity test on the notated spelling**, on S-24's own pattern — refuse, mark, and do not
 repair — since S-14 handles only the absent case and the outgoing record's test is the one the
 symmetric sonorities turn on.
+*RULED DISPOSITION (Ruling 58, §3bm).* **RELOCATED — to L2** — *"Row 22.12 — RELOCATED to L2, its
+L0/L1 halves noted at S-14 and beside S-3."* *"The three-part test pins a chord root, L2's decision …;
+its first part is S-14, its second — two spellings of one pitch class in one slice — is readable from
+the sounding set L1 publishes by event identity, and beside S-3 the specification says that a
+self-contradictory spelling within a slice is published as it stands, never repaired and never resolved
+by L1, on S-24's ground."*
 
 **Row 22.13 — the layer annotates and does not transform: the slices and the notes are unchanged.**
 *Statement.* "**It annotates, it does not transform** — the slices and notes are unchanged; the chord
@@ -10381,6 +11018,11 @@ rank.
 ranked list of ALL class fits, each carried with its weight** on the ground of zero information loss.
 **The outgoing record holds both rules**, in two documents, about the same kind of object: one caps the
 carry, the other refuses to. The proposal is that the specification say which.*
+*RULED DISPOSITION (Ruling 60, §3bo).* **RELOCATED — to L2, *the tonal reading, the one entangled
+decision*** — *"Row 22.16 — RELOCATED to L2, with the no-cap principle attached for the L2
+derivation."* The principle: *"a published list of computed readings carries every reading computed,
+with its mass, a cap being a consumer's own view and never the publication."* A cap at publication is
+*"EXCLUDED at the threshold on #12"*.
 
 **Row 22.17 — an extension the carry could not obtain is marked unknown rather than asserted absent,
 and is never synthesized.**
@@ -10859,6 +11501,8 @@ different answer is reached — has no counterpart in it.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* on the arm that ships, is the carried
 set still capped on voicings rather than on distinct roots; how often is the cap saturated before a
 second or third distinct root is reached; and does a committed slice still name no alternate root?
+*RULED DISPOSITION (Ruling 60, §3bo).* **QUARANTINED** — unchanged: *"Rows 29.9, 29.8, 24.2, 24.10 —
+QUARANTINED, unchanged."*
 
 **Row 24.3 — the owed guarantee is a distinct-root-first carry: capped on distinct roots, each root's
 variant depth bounded, the exclusion tail carried below the primary set.**
@@ -10899,6 +11543,8 @@ survive, not just its presence." — §2.1 (locator: lines 126–133).
 distribution over roots is a summary of readings over that set rather than the set itself. S-44:
 **AGREES** — each carried reading keeps its bass and inversion, which is the fact S-44 defines.
 *PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***.
+*RULED DISPOSITION (Ruling 60, §3bo).* **RELOCATED** — unchanged: *"Row 24.19 — RELOCATED,
+unchanged."*
 
 #### §3 and §4 — the evidence channels and the layer boundary
 
@@ -10990,6 +11636,8 @@ S-54 keeps expressly apart from a *pedal mark*.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* does a pass still replace the published
 readings wholesale on the arm that ships; is the different-root decision still computed in four places;
 and does a display-side mechanism still have to be disabled for a detection to compute correctly?
+*RULED DISPOSITION (Ruling 60, §3bo).* **QUARANTINED** — unchanged: *"Rows 29.9, 29.8, 24.2, 24.10 —
+QUARANTINED, unchanged."*
 
 **Row 24.11 — the decoder has no pedal detection at all, so engagement must give it a home rather than
 inherit one.**
@@ -11112,6 +11760,9 @@ is, and a value named for an act no longer performed would be consumed as that a
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say that a
 published item names **how it was arrived at**, and that a renamed or demoted mechanism's basis value
 is re-named with it — the naming bar applied to provenance rather than to content.
+*RULED DISPOSITION (Ruling 62, §3bq, item 9).* **ADOPTED — proposed** — *"Beside S-50's naming bar: a
+published item names how it was arrived at, and a value naming a mechanism is renamed when the
+mechanism is demoted or renamed"* (Ruling 40's #12 rule applied to provenance).
 
 ---
 
@@ -11356,6 +12007,9 @@ misrepresents its own standing.
 published confidence about a fact at a boundary means **when the boundary itself is uncertain**. S-40
 refuses to collapse the boundary evidence; nothing in the derived statements says what a downstream
 uncertainty owes that refusal.
+*RULED DISPOSITION (Ruling 48, §3bc).* **RELOCATED — to L2, *the tonal reading, the one entangled
+decision*** — *"Rows 25.5 and 27.10 — RELOCATED to L2, the decided segment boundary's marginal mass
+being L2's published uncertainty under the L2 → L3 contract."*
 
 **Row 25.6 — the narrower surface's fields are defined as views of the fuller one, so nothing is
 published twice.**
@@ -11439,6 +12093,12 @@ a record with no spelling; nothing in the derived statements contemplates comput
 decision.** *★★ Read beside Rows 22.4 and 22.12, where the notated spelling is weighed and tested for
 internal validity: three outgoing rows now turn on the standing of a spelling, and this is the only one
 where a spelling is manufactured.*
+*RULED DISPOSITION (Ruling 58, §3bm).* **ADOPTED — proposed** — *"Rows 22.4, 25.13, 27.6 and 27.4 —
+ADOPTED, proposed, by those clauses."* Clause (iii): *"a spelling derived from a decided key and
+degree, and a signature-shaped value derived from a decided key, are different objects from the notated
+spelling and the notated signature; the layer that derives one publishes it as derived and never in
+place of the fact; a consumer is told which it holds; the derived one is established against the
+notated one where the notation is unambiguous, divergences enumerated."*
 
 **Row 25.14 — the pedal point is the structural pedal of harmony theory, a tone held against changing
 harmony and not the sustain-pedal marking; it is defined voice-independently and derived after the
@@ -11779,6 +12439,8 @@ labelled as what it is** — here labelled *as READ*, an input echo rather than 
 consumed as evidence, which S-1 and S-2 refuse. **This row is the same record publishing it as an
 input echo, labelled** — which is what S-2 asks for. The two treatments coexist in the outgoing record
 and the user reads them together.*
+*RULED DISPOSITION (Ruling 57, §3bl).* **ADOPTED — carried** — unchanged: *"Row 27.3 — carried,
+unchanged."* The tag is carried labelled as read — *"Row 27.3's form"*.
 
 **Row 27.4 — the key's signature-fifths value is derived from the decided key by a deterministic
 mapping.**
@@ -11793,6 +12455,9 @@ opposite direction of travel.
 signature-shaped value derived from a decided key is a **different object** from the notated signature,
 and that the two are named apart on the surface. Row 27.3 publishes the notated one as an input echo
 and this publishes the derived one; **nothing in either text says a consumer is told which it holds**.
+*RULED DISPOSITION (Ruling 58, §3bm).* **ADOPTED — proposed** — *"Rows 22.4, 25.13, 27.6 and 27.4 —
+ADOPTED, proposed, by those clauses"*: clause (iii) states in terms that *"a consumer is told which it
+holds."*
 
 **Row 27.5 — the derived chord facts are computed once on this surface and consumers read them.**
 *Statement.* "Derived chord facts (the ratified derived-published-fact family, **computed once here,
@@ -11824,6 +12489,8 @@ unambiguous**, with divergences enumerated.
 relation explicitly — a derived spelling is established **against** the notated one, and a divergence
 is enumerated rather than absorbed. *★★★ This is Row 25.13's question answered inside the outgoing
 record: the derived spelling exists, and the notated spelling is what establishes it.*
+*RULED DISPOSITION (Ruling 58, §3bm).* **ADOPTED — proposed** — *"Rows 22.4, 25.13, 27.6 and 27.4 —
+ADOPTED, proposed"*: clause (iii) carries this row's condition *"in S-52's shape"*.
 
 **Row 27.7 — the augmented-sixth sub-type is derived from the sounding pitch classes rather than from
 the vocabulary class, because the fitted vocabulary collapsed the family.**
@@ -11890,6 +12557,9 @@ per change point, and this publishes a probability at the same granularity.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say what a
 published boundary carries about its own certainty. *★★★ **This is Row 25.5's question answered**: the
 outgoing record publishes the boundary's marginal mass per event and calls the limit closed.*
+*RULED DISPOSITION (Ruling 48, §3bc).* **RELOCATED — to L2, *the tonal reading, the one entangled
+decision*** — *"Rows 25.5 and 27.10 — RELOCATED to L2, the decided segment boundary's marginal mass
+being L2's published uncertainty under the L2 → L3 contract."*
 
 **Row 27.11 — the two uncertainty groups are separate named fields with separate semantics and neither
 ever silently replaces the other; both carry establishment status and both are model-internal
@@ -12277,6 +12947,10 @@ this catalog may not. **Two published surfaces in one record with opposite contr
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that a published surface state
 **whether it is exhaustive**, so a consumer knows whether an absence means *not there* or *not yet
 catalogued*. S-50 is exhaustive and does not say so as a contract; this one says so and is not.
+*RULED DISPOSITION (Ruling 60, §3bo).* **ADOPTED — proposed** — *"Row 28.12 — ADOPTED, proposed"*, by
+the exhaustiveness sentence and the general rule: *"S-50 gains one sentence, its list exhaustive as a
+contract, so an absence in an L1 publication means* not there*; the general rule is written beside S-50
+so that a surface which is not exhaustive says so in the same words, as Row 28.12 does for itself."*
 
 **Row 28.13 — a missing ground truth is a consumer limitation and not a property of the entries.**
 *Statement.* "**A missing ground truth is a consumer limitation, not an entry property.** … That bears
@@ -12502,6 +13176,8 @@ configuration this collapse destroys.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* does the same-pitch-class spelling
 collapse still exist on the arm that ships, does a second reader of the spelling still exist beside the
 one that reads it correctly, and which of the two does each consumer reach?
+*RULED DISPOSITION (Ruling 58, §3bm).* **QUARANTINED** — unchanged: *"Rows 15.15 and 29.7 —
+QUARANTINED, unchanged."*
 
 **Row 29.8 — as measured, one promotion path preserves the distinct enharmonic partner among the carried
 alternatives and the other overwrites it with a near-duplicate of the winner.**
@@ -12518,6 +13194,8 @@ readings, not one.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* do both promotion paths still exist on
 the arm that ships, does either still overwrite a distinct carried reading with a near-duplicate, and
 has the unification that would end it landed?
+*RULED DISPOSITION (Ruling 60, §3bo).* **QUARANTINED** — unchanged: *"Rows 29.9, 29.8, 24.2, 24.10 —
+QUARANTINED, unchanged."*
 
 **Row 29.9 — as measured, the carried set's cap discards an above-threshold reading on most slices, and
 a third distinct root clears threshold on about a quarter of them.**
@@ -12532,6 +13210,8 @@ class of loss this measures has no counterpart in it.
 arm that ships, and does the measured discard rate still hold? *★★ This is the measurement Rows 24.1 and
 27.8 rest on — the first ruling that the exclusion tail is load-bearing, and the second that no
 truncation constant exists anywhere in the publication.*
+*RULED DISPOSITION (Ruling 60, §3bo).* **QUARANTINED** — unchanged: *"Rows 29.9, 29.8, 24.2, 24.10 —
+QUARANTINED, unchanged."*
 
 **Row 29.10 — as measured, a weight fit can relocate a boundary failure but cannot remove it: the
 candidate reads the right chord and starts it late, across the bar line into the next annotated
@@ -14180,6 +14860,62 @@ to in `FRAMEWORK.md` §5's own words, and where a derived statement travels with
 - Row 29.14 — that an uncovered cell is unscored and never mis-bucketed, a parse failure is reported
   separately, and every reported rate names its denominator.
 
+### ★ ADDED BY THE APPLICATION ACT — the relocations Rulings 34 to 62 name that this list did not carry
+
+*Written 2026-09-03 under `cc_instruction_comparison_l0_l1_fifth_2026_09_03.md` Task 3(e). Additions
+only; no row above is edited. Each entry names the ruling that relocated it.*
+
+**To L2 — *the tonal reading, the one entangled decision*.**
+
+- Row 25.5 — the decided segment boundary's marginal mass, *"L2's published uncertainty under the
+  L2 → L3 contract"* (Ruling 48).
+- Row 27.10 — the same, met at the publishing side (Ruling 48).
+- Row 11.12 — the fermata displacement, *"as the cadence factor's covariate"*, with the note that the
+  L1 facts it needs are published already (Ruling 54).
+- Row 22.12 — the three-part root-pinning test, *"its L0/L1 halves noted at S-14 and beside S-3"*
+  (Ruling 58).
+- Row 22.16 — the capped carry, *"with the no-cap principle attached for the L2 derivation"*
+  (Ruling 60).
+- Row 11.8's L2 half — the row is *"carried by S-45, its L2 half to the L2 surface"* (Ruling 53).
+
+**To L3 — *the read-off facts*.**
+
+- Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37 and 10.41 — the graded profile,
+  its gap-dominant weights, the marker spikes, the max-normalisation, the adaptive threshold, the
+  peak-picking, the picked set and the *"ends a phrase"* flag, to the phrase read-off under the
+  L1 → L3 contract, *"with D-476 to D-485 re-homed there and D4 (D-478) remaining that consumer's ruled
+  rule"* (Ruling 48).
+- Rows 10.4 and 10.21 — *"RELOCATED to L3 for their computed half, their deterministic half already
+  S-39's"* (Ruling 48).
+- Row 13.14 — the grouping's alignment window (Ruling 54).
+
+**To *the second axis — voice leading*.**
+
+- Row 16.2 — the census's acceptance of the engraved voice for keyboard music, *"with S-13 confirmed as
+  the L0 rule"* (Ruling 61).
+- Rows 19.6, 19.7 and 19.14 — as the reading file already placed them, with Ruling 62 item 6's note
+  that *"a sampling by onsets only and a per-voice span kind are the axis's own derived views over L1's
+  change points and never a second L1 unit; Row 18.17's claim stands at L1."*
+
+**To the reader outside the analysis.**
+
+- Row 20.12 — the hierarchical layout: *"the specification fixes what is published, and its arrangement
+  for a reader outside the analysis is that reader's (Ruling 57 (ii), D-522)"* (Ruling 62 item 11).
+
+### ★ Flagged to the L2 surface, not relocated, not decided
+
+*Three items the rulings FLAG rather than place. Each stands here so the L2 surface meets it; none is
+a disposition, and none is decided by this act.*
+
+- **Ruling 48 (§3bc) — Row 21.5**, *"FLAGGED for the L2 surface, its boundary-strength factor being an
+  L2 read of an L3 product, which the L3 → L2 contract forbids."*
+- **Ruling 57 (§3bl) — the declared-mode prior.** *"Flagged to L2's surface, not decided here: D-528's
+  and D-450's declared-mode prior against `FRAMEWORK.md` §8.6 and C-2."*
+- **Ruling 60 (§3bo) — the no-cap principle, attached to Row 22.16.** *"A published list of computed
+  readings carries every reading computed, with its mass, a cap being a consumer's own view and never
+  the publication"* — carried to L2 with that row *"where the L2 derivation meets Row 27.8's ratified
+  contract and D-006."*
+
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
 **★ COMPLETE OVER THE POPULATION.** All 29 documents are tabulated, and the QUARANTINED rows of all of
@@ -15026,6 +15762,67 @@ absorb the population: the statements that might have looked discardable are ove
 implementation descriptions, which the discipline sends to the audit as QUARANTINED, and build states,
 which it records as HISTORICAL. Neither is a discard, and neither loses anything.
 
+**★ THE TWO TABLES ABOVE ARE THE PROPOSAL DISTRIBUTION, AND THEY ARE NOT EDITED BY THE APPLICATION
+ACT.** They count the dispositions and verdicts this file authored as proposals. Where a row now also
+carries a **RULED DISPOSITION** line, the ruled placement is counted separately at §13a below; neither
+table is changed, and no proposed disposition is deleted (#12).
+
+## 13a. The RULED distribution — derived at the RULED DISPOSITION lines
+
+*Written 2026-09-03 under `cc_instruction_comparison_l0_l1_fifth_2026_09_03.md` Task 3(f). Every
+figure below is a **sum taken at the rows of this file**, counted by this writing at the added
+`*RULED DISPOSITION` lines and at nothing else. No ratio, percentage or grade is derived from it, and
+no figure of §13 is restated or altered.*
+
+**Ruled lines by disposition word, over the whole file.**
+
+| Disposition, in §5's vocabulary | Ruled lines |
+|---|---|
+| ADOPTED — carried | 46 |
+| ADOPTED — carried in substance *(the qualifier Rulings 35, 42, 45 and 46 place on the ADOPTED — carried class, not a sixth class)* | 8 |
+| ADOPTED — proposed | 107 |
+| RELOCATED (to L2, to L3, to the second axis, or to the reader) | 27 |
+| QUARANTINED | 19 |
+| HISTORICAL | 2 |
+| FLAGGED to the L2 surface, disposition unchanged *(Ruling 48, Row 21.5 — not a disposition of §5's set, counted apart)* | 1 |
+| **Ruled lines in total** | **210** |
+
+46 + 8 + 107 + 27 + 19 + 2 + 1 = **210**.
+
+**Ruled lines by document.**
+
+| Document | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | Total |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| Ruled lines | 13 | 13 | 17 | 5 | 13 | 8 | 19 | 4 | 18 | 27 | 9 | 9 | 5 | 6 | 3 | 1 | 1 | 1 | 9 | 8 | 2 | 5 | 0 | 4 | 2 | 0 | 4 | 1 | 3 | **210** |
+
+13 + 13 + 17 + 5 + 13 + 8 + 19 + 4 + 18 + 27 + 9 + 9 + 5 + 6 + 3 + 1 + 1 + 1 + 9 + 8 + 2 + 5 + 0 + 4 + 2 + 0 + 4 + 1 + 3 = **210**.
+
+**How many ROWS carry a ruled line, and the arithmetic against 757.**
+
+**Two rows carry TWO ruled lines each**, both because a ruling places the row twice or two rulings
+place two halves of it: **Row 1.7** (Ruling 45 — QUARANTINED for its audit question, and ADOPTED —
+carried in substance for its content) and **Row 10.21** (Ruling 49 — ADOPTED, proposed for the three
+raw relations; Ruling 48 — RELOCATED to L3 for its computed half). Every other ruled row carries one.
+
+- Ruled lines: **210**. Rows carrying two: **2**. So rows carrying at least one ruled line:
+  210 − 2 = **208**.
+- §6 holds **757 statement-rows** (§13's own count, unchanged).
+- **757 − 208 = 549 rows carry no ruled line and remain PROPOSALS**, exactly as §5, §15 and §16 say.
+- **208 + 549 = 757.** The arithmetic closes.
+
+**WHAT THIS TABLE DOES NOT ESTABLISH.** It counts placements; it says nothing about whether any
+placement is right — each is the ruling's own words transcribed to the row — and it takes no position
+on the derivation, on the outgoing text, or on any row it does not reach.
+
+**★ THE FAMILY PLACEMENTS OF THE DISPATCH'S ITEM (d) ARE NOT IN THIS COUNT, AND THE STOP IS RECORDED
+RATHER THAN LEFT TO BE NOTICED (D-672).** Rulings 34, 35, 46, 47 and 48 also place *"rows of documents
+8 to 29 that name this family"* without listing them. **The mechanical search those rulings' own terms
+define WAS RUN over this file's rows of documents 8 to 29 and its hits are enumerated in
+`cc_report_comparison_l0_l1_fifth_2026_09_03.md`; the per-row family PLACEMENTS were NOT made.** No
+family row's disposition is altered, none is partly worked, and every one of them stands at its
+proposed disposition. The 210 lines above are exactly the rows the rulings name **by number**, and the
+count closes over those and nothing else.
+
 ## 14. The derivation's independence record, relayed
 
 **Relayed as facts, with no verdict word attached.** Judging the deriving session's independence is the
@@ -15127,12 +15924,19 @@ structure by this session, together with the distributions at §13, counted at t
 
 **NOTHING.** The ruling on these dispositions comes separately, framed by the writing side as a
 decision surface over these rows, one decision per turn. Nothing above is a recommendation about that
-ruling.
+ruling. **This stays true after the application act of 2026-09-03**: the rulings a `*RULED DISPOSITION`
+line names were taken on their own surfaces and are only re-marked here, the rows carrying no such line
+remain proposals, and **nothing in this file is put to the user for a ruling** — the ratification act
+is a separate surface over `cowork_derived_specification_l0_l1_2026_09_03.md`.
 
 ## 16. What this file does NOT do
 
-- **It applies no disposition.** Every one is a proposal. No outgoing text is edited, and the
-  derivation is untouched.
+- **It applies no disposition of its own.** Every disposition this file authored is a proposal; a row
+  carrying a `*RULED DISPOSITION` line is placed by the ruling that line names, taken elsewhere and
+  transcribed here. No outgoing text is edited, and the derivation's body is untouched. *(This bullet
+  formerly read "**It applies no disposition.** Every one is a proposal. No outgoing text is edited,
+  and the derivation is untouched." — true of every writing before the application act, and preserved
+  here rather than deleted, #12.)*
 - **It establishes nothing** (**#19**). Every verdict in it is this session's authored reading, and
   every one is re-placeable by the user at the two quoted texts.
 - **It states no verdict on the derivation, on the deriving session's independence, or on the L0/L1
