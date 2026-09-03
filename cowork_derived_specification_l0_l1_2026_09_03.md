@@ -1,16 +1,21 @@
-# The derived L0/L1 specification — the notated record, and change points, candidates and notated evidence — as amended by Rulings 34–62
+# The derived L0/L1 specification — the notated record, and change points, candidates and notated evidence — as amended by Rulings 34–62 and RATIFIED under Rulings 64–77
 
-> **STATUS: DERIVED SPECIFICATION — THE BLIND DERIVATION OF L0 AND L1 AS AMENDED BY RULINGS 34–62 OF
-> `cowork_rulings_2026_08_31_decision_surface_sitting.md`; NOT RATIFIED.** Written 2026-09-03 by Claude
-> Code under `cc_instruction_comparison_l0_l1_fifth_2026_09_03.md` Task 1, from the derivation
-> `cowork_blind_derivation_l0_l1_2026_08_31.md` at blob `9b102c575643d672e4747b4cfc23e377cd344c27`,
-> which stands untouched as the record of the blind act (D-674, Ruling 63). Every statement below keeps
-> its derived number and its six-field form; every amendment stands in place and names the ruling that
-> made it, with the derived wording preserved at the derivation (#12). **Eleven derived statements are
-> named by no outgoing statement of the comparison's population and no ruling amends them — S-10, S-11,
-> S-12, S-17, S-21, S-22, S-26, S-27, S-37, S-38, S-42 — and stand here exactly as derived** (the reading
-> file, §7c). **The L0/L1 split is not decided here and returns at ratification (Ruling 32).** Nothing
-> in this file is ratified; the ratification act is the user's, on a decision surface over this text.
+> **STATUS: RATIFIED — THE DERIVED L0/L1 SPECIFICATION, RATIFIED FACE BY FACE BY RULINGS 66–77 OF
+> `cowork_rulings_2026_08_31_decision_surface_sitting.md` UNDER RULINGS 64 AND 65, WITH THE EDITS THOSE
+> RULINGS ORDER APPLIED BY `cc_instruction_comparison_l0_l1_sixth_2026_09_03.md` TASK 1.** One document
+> for both charters: §2 is L0, the notated record, and §3 is L1; the split is that section boundary and
+> not a file boundary (Ruling 64). Written 2026-09-03 by Claude Code under the fifth comparison
+> dispatch from the derivation `cowork_blind_derivation_l0_l1_2026_08_31.md` at blob
+> `9b102c575643d672e4747b4cfc23e377cd344c27`, which stands untouched as the record of the blind act
+> (D-674, Ruling 63); amended by Rulings 34–62 and corrected under Rulings 66–77. Every statement keeps
+> its derived number and its six-field form; every amendment stands in place naming the ruling that
+> made it, the derived wording preserved at the derivation (#12), and every former wording of a Ruling
+> 66–77 correction preserved at its site. **Eleven derived statements are named by no outgoing
+> statement of the comparison's population — S-10, S-11, S-12, S-17, S-21, S-22, S-26, S-27, S-37,
+> S-38, S-42 — and were ratified as derived** (S-11's falsifier note corrected under Ruling 68). The
+> open questions of §4 marked ANSWERED are answered; those not so marked stay open and are named there.
+> **This is a live governing surface under D-674, branch two: a later correction is made in its body
+> with the former wording preserved, never by a new file.**
 
 ---
 
@@ -57,15 +62,21 @@ pitch event, bare *tie* is the notated tie, bare *rest* is the notated silence.
 - **Anacrusis** — an incomplete first bar (or an incomplete bar after a repeat) whose length is less
   than the time signature's bar. A record file usually marks it (MuseScore: `<Measure len="…">` with
   `<irregular>`).
-- **Notated boundary evidence** — the charter's five kinds: bar line, fermata, rest, repeat sign,
-  double bar. Published per change point as flags (§3.5).
+- **Notated boundary evidence** — the charter's five kinds — bar line, fermata, rest, repeat sign,
+  double bar — and the five admitted since: time-signature change, key-signature change, breath mark,
+  caesura, tempo change (S-39, S-43; Rulings 50, 73). Published per change point as scoped flags
+  (§3.5). *(Formerly "the charter's five kinds: bar line, fermata, rest, repeat sign, double bar.
+  Published per change point as flags (§3.5)." — Ruling 76, §3ce.)*
 - **Local cadence cue** — one of the charter's three: a falling-fifth or rising-fourth bass motion; a
   leading-tone resolution; the sounding together of the fourth and seventh degrees of a *candidate
   tonality* in the approach. Each is defined tonality-free at §3.6.
 - **Candidate tonality** — in the third cue only: the tonality whose tonic (or whose dominant) is the
-  bass pitch class at an onset change point. A hypothesis anchored on a note the score gives; never a
-  decided tonality (§3.6, S-47).
-- **Bass** — at a slice, the lowest sounding pitch of its sounding set. Not a notated voice.
+  lowest sounding pitch class at an onset change point. A hypothesis anchored on a note the score
+  gives; never a decided tonality (§3.6, S-47). *(formerly "the bass pitch class" — Ruling 76, §3ce)*
+- **The lowest sounding pitch** — at a slice, the lowest sounding pitch of its sounding set; L1's
+  anchor for the cadence cues (S-44); not a notated voice. The word *bass* is reserved for the chord's
+  bass note L3 decides and names no L1 object (Rulings 42, 74). *(Formerly the entry* Bass*, defined
+  as this anchor — Ruling 76, §3ce.)*
 - **Witness** — the notes (by identity in the record file) that make a published predicate true.
   Every cue and flag is published with its witnesses so that L2 can weigh it (§3.7).
 - **Notated order** — the order of bars as written, repeats not unfolded. **Unfolded order** — the
@@ -119,6 +130,8 @@ charter defines L1's change point over *eligible* notes and leaves eligibility t
 depends on §3, and nothing in §3 revises §2. **A later act may split this file at the §2/§3 boundary
 without rewriting a statement.** The split is left to that act, as the ruling requires.
 
+*Ruled (Ruling 64, §3bs): one document; the split is the boundary between §2 and §3 of this file and not a file boundary.*
+
 **Scope.** Common-practice tonal music as notated in a score. Deciding where a harmony actually gives
 way to the next is L2's and is out of scope; where a statement depends on that, the dependency is its
 own statement (S-53).
@@ -151,7 +164,9 @@ means: not a tonality, a chord, a function, a boundary, a phrase, or a degree.**
   a "declared mode" tag in a file fails (i) — no copyist reads it off the page. [CONJECTURE — the three
   worked cases are this session's.]
 - *Source class.* Derived.
-- *Status.* Settled as a criterion; the cases it does not settle are OQ-4, OQ-5, OQ-13.
+- *Status.* Settled as a criterion; the case it does not settle is OQ-5 *(formerly "the cases it does
+  not settle are OQ-4, OQ-5, OQ-13" — OQ-4 answered at Ruling 36, §3aq, removed under Ruling 66, §3bu;
+  OQ-13 answered at Ruling 77, §3cf, removed as a consequential correction of this dispatch)*.
 - *Premise and its false-negative path.* Premise: the analysis's subject is the notated score, not a
   performance or an edition's commentary. False-negative path: a fact that is on the page only in some
   editions (editorial accidentals, editorial ties in brackets) passes (i) for one source and not
@@ -206,13 +221,17 @@ it as evidence about the music.**
 
 ### 2.2 The list — the facts L0 supplies, each tested
 
-**S-3. L0 supplies, per note: its spelled pitch (letter, accidental, octave — equivalently a tonal
-pitch class and an octave), at concert (sounding) pitch; whether it is pitched; its notated duration
-as a rational fraction of a whole note, tuplet ratios applied; its metric position (bar index, offset
-within the bar, absolute position); its staff and notated voice; whether it is a grace note; whether it
-is tied to the preceding note and to the following note; whether it is marked as not to be played;
-whether it is visible; whether it is cue-sized; and the ornament and articulation signs attached to
-it.**
+**S-3. L0 states the structure the record supplies — the parts, the staves each part holds, and the
+notated voices each staff holds — so that every per-note staff-and-voice pair is interpretable (for
+this record format, one to four voices per staff and a part spanning staves; Ruling 61). L0 supplies,
+per note: its spelled pitch (letter, accidental, octave — equivalently a tonal pitch class and an
+octave), at concert (sounding) pitch; whether it is pitched; its notated duration as a rational
+fraction of a whole note, tuplet ratios applied; its metric position (bar index, offset within the
+bar, absolute position); its staff and notated voice; whether its staff is hidden — a staff not shown
+on the page (Ruling 35); its stem direction, as engraved (Ruling 44); whether it is a grace note;
+whether it is tied to the preceding note and to the following note; whether it is marked as not to be
+played; whether it is visible; whether it is cue-sized; and the ornament and articulation signs
+attached to it.**
 - *Defense.* Each passes S-1: every item is read from the page or is a mechanical property of the
   file's representation of the page (the tuplet ratio is printed; concert pitch is the printed pitch
   corrected by the printed transposition of the instrument). Spelling, duration, voice and metric
@@ -233,6 +252,9 @@ it.**
 - *Falsifier.* CODE. Observable: the per-note record L1 receives. Decision rule: falsified if an
   eligible-note decision in §3.1 or a tie decision in §3.2 needs a per-note fact not in this list.
   Not falsified by: a fact needed only for presentation.
+- *Reworded under Ruling 67 (§3bv): the structure sentence (Ruling 61), the hidden-staff fact
+  (Ruling 35) and the stem direction (Ruling 44) brought onto the statement's face; the derived
+  wording stands at the derivation, S-3.*
 - *Beside S-3 (Ruling 35, §3ap).* *"S-3 (or S-4's staff facts) [gains] one supplied fact, *whether the
   note's staff is hidden*, defined from the notation (a staff not shown on the page)."* The condition
   it feeds is written beside S-15.
@@ -403,6 +425,9 @@ even though they are on the page.**
 - *Falsifier.* CODE. Observable: L1's inputs. Decision rule: falsified if any L1 output changes when the
   key signature is replaced by a different one, all spelled pitches held fixed. Not falsified by: L2's
   outputs changing.
+- *Beside S-9 (Ruling 67, §3bv) — what L1 does not read.* L1 does not read stem direction (Ruling 44,
+  §3ay) nor slurs, articulation signs or dynamics (Ruling 50, §3be), which L0 supplies for other
+  consumers; S-9's statement otherwise stands as Ruling 44 left it.
 
 ### 2.3 What may be assumed, and what happens when a real score does not supply it
 
@@ -440,8 +465,10 @@ rest need be written for L0 to supply the silence; the absence of any event is t
   tablature or a shorthand where blank means "continue" is outside scope.
 - *Falsifier.* CODE. Observable: the sounding set of the slices over the gap. Decision rule: falsified
   if the two notations (unwritten gap; invisible rest) produce different slices or different flags.
-  Not falsified by: the visible rest producing a rest flag (§3.5) that the unwritten gap does not — that
-  difference is on the page and is information (S-39).
+  Not falsified by: the REST-BEGINS flag (S-39) firing for a written rest and for an unwritten gap
+  alike, the written rest distinguished by its witness *(formerly "the visible rest producing a rest
+  flag (§3.5) that the unwritten gap does not — that difference is on the page and is information
+  (S-39)" — brought to S-39's rule, Ruling 68, §3bw)*.
 
 **S-12. Where a score does not supply a time signature, L0 supplies each bar's actual length as its
 nominal length and marks the score "unmetered"; L1 then publishes the metric strength class "bar" at
@@ -517,8 +544,9 @@ is a real change though the pitch classes are unchanged"* — is given and is us
 
 **S-15. A notated note is *eligible* — it opens a change point at its onset and at its release, and it
 belongs to the sounding set of every slice between them — if and only if it is pitched, it is not
-marked as not to be played, it is visible, it is not a grace note, and its notated duration is
-greater than zero. A tied continuation note is eligible but opens no onset (S-23).**
+marked as not to be played, it is visible, its staff is not hidden (Ruling 35), it is not a grace
+note, and its notated duration is greater than zero. A tied continuation note is eligible but opens
+no onset (S-23).**
 - *Defense.* Each condition is one L0 fact of S-3, and each removes a class the charter's *eligible*
   must exclude for the change-point set to mean *moments at which the sounding set changes*. Pitched:
   an unpitched sound has no place in a harmony (S-20). Played: a note marked silent does not sound,
@@ -532,8 +560,10 @@ greater than zero. A tied continuation note is eligible but opens no onset (S-23
   no position at which a sounding set could change distinct from its host's (S-16). Positive
   duration: a zero-duration non-grace note is a file defect (S-22).
 - *Source class.* Derived.
-- *Status.* Settled for the five conditions; the cases the conditions do not reach are OQ-2 (tremolo),
-  OQ-4 (cue passages), OQ-5 (ossia), OQ-13 (invisible but played).
+- *Status.* Settled for the six conditions; the cases the conditions do not reach are OQ-2 (tremolo)
+  and OQ-5 (ossia) *(formerly "Settled for the five conditions; … OQ-2 (tremolo), OQ-4 (cue passages),
+  OQ-5 (ossia), OQ-13 (invisible but played)" — the count and OQ-4 under Ruling 69, §3bx; OQ-13
+  answered at Ruling 77, §3cf, removed as a consequential correction of this dispatch)*.
 - *Premise.* Premise: the five L0 flags are reliable in the record file. False-negative path: a file
   that marks an editorial realisation of an ornament as visible, small and played (the C. P. E. Bach
   file marks such notes invisible and small, one of them not played [FACT — §6]); such a note would be
@@ -543,6 +573,8 @@ greater than zero. A tied continuation note is eligible but opens no onset (S-23
   change point exists whose only witnesses are ineligible notes, or if an eligible note's onset or
   release is absent from the set. Not falsified by: a change point witnessed by both an eligible and
   an ineligible note at the same position.
+- *Reworded under Ruling 69 (§3bx): Ruling 35's sixth condition brought onto the statement's face; the
+  derived wording stands at the derivation, S-15.*
 - *Ruled (Ruling 34, §3ao) — grace notes.* *"S-15, S-16 and S-30 of the derivation stand as derived,
   settled."* The family's five outgoing rows are placed at that ruling; nothing in S-15 changes on its
   account.
@@ -611,8 +643,10 @@ consumes them as evidence.**
   shows the two flags used together on the same notes (`<visible>0</visible>`, `<small>1</small>`,
   and on the first of the group `<play>0</play>`) [FACT — §6]. Carrying rather than dropping: #12.
 - *Source class.* Derived.
-- *Status.* **Open** as to whether visibility governs when the played flag says the note sounds
-  (OQ-13). Settled that a not-played note is ineligible.
+- *Status.* Settled — visibility governs (OQ-13 answered at Ruling 77, §3cf); a not-played note and an
+  invisible note are both ineligible, and a hidden staff's notes with them (Ruling 35). *(Formerly
+  "**Open** as to whether visibility governs when the played flag says the note sounds (OQ-13).
+  Settled that a not-played note is ineligible." — Ruling 77, §3cf.)*
 - *Premise.* Premise: an invisible note is never part of the composer's text. False-negative path:
   a transcriber who hides a note for layout reasons (a doubled unison written once and hidden in one
   voice) — the note is in the text and would be lost. Its unison partner is visible, so the sounding
@@ -631,14 +665,15 @@ visible, played, pitched and of positive duration is eligible.**
   engraving convention]. L1 may not read context to decide (RULED); so size is published as an
   attribute and eligibility is left to the flags. The remainder is OQ-4 and OQ-5.
 - *Source class.* Derived.
-- *Status.* Open (OQ-4, OQ-5).
+- *Status.* Open (OQ-5) *(formerly "Open (OQ-4, OQ-5)"; OQ-4 answered at Ruling 36 — Ruling 69,
+  §3bx)*.
 - *Premise.* Premise: the record file's played flag is set correctly for cues. False-negative path:
   a cue passage exported with play on — then L1 would sound a duplicate of another part's music,
   which changes no pitch-class content but changes doubling and the bass where the cue is below the
   real bass. Declared.
 - *Falsifier.* CODE. Observable: eligibility of small notes. Decision rule: falsified if a small note
-  meeting S-15's five conditions is excluded. Not falsified by: a ruling on OQ-4 adding a sixth
-  condition.
+  meeting S-15's six conditions (Ruling 69) is excluded *(formerly "five" — Ruling 69, §3bx)*. Not
+  falsified by: a ruling on OQ-4 adding a sixth condition.
 - *Beside S-19 (Ruling 36, §3aq) — the cue fact, at L0.* *"The fact is written into L0 beside S-19 at
   the ratification act: a record file supplies no cue fact beyond the played flag; a cue in the
   interchange format is a silent note; L1 reads the played flag. S-19 stands as derived. **OQ-4 is
@@ -899,9 +934,12 @@ a silent slice or a slice whose sounding set consists of events that began befor
 - *Status.* Settled.
 - *Premise.* Premise: the span is a contiguous stretch in the working order. False-negative path: a
   span in unfolded order crossing a repeat junction (OQ-1).
-- *Falsifier.* CODE. Observable: the first and last change points. Decision rule: falsified if they
-  differ from the span's ends, or if an event sounding across the span's start lacks the *entered*
-  mark. Not falsified by: a span starting at a real onset, where the mark is simply absent.
+- *Falsifier.* CODE. Observable: the span's two edges — the first and last boundaries of the slice
+  list. Decision rule: falsified if they differ from the span's ends, or if an event sounding across
+  the span's start lacks the *entered* mark. Not falsified by: a span starting at a real onset, where
+  the mark is simply absent. *(Formerly "Observable: the first and last change points. Decision rule:
+  falsified if they differ from the span's ends, …" — brought to Ruling 40's rewording, Ruling 71,
+  §3bz.)*
 - *Amended by Ruling 40 (§3au):* *"At the ratification act S-32 is amended: 'Its first change point is
   the span's start; its last is the span's end' becomes 'Its first boundary is the span's start and
   its last is the span's end; each is a span edge, published as such, and not a change point (S-28)',
@@ -997,6 +1035,9 @@ subdivision that aligns with no halving) receives the class *off-grid*, ranked b
   derivative, never published by L0 or L1."* **Not settled by that ruling:** S-35's unestablished
   premise — whether the three-level gradient holds on this repertoire — *"which is a measurement for
   L2's calibration"*.
+- *Beside S-35 (Ruling 72, §3ca) — the class set includes *unmetered*.* For a score without a time
+  signature the class set gains *unmetered*, published by S-12 (ratified at Ruling 68) at every
+  position other than a bar start, ranked below every level as *off-grid* is.
 
 **S-36. In an anacrusis — a bar marked irregular whose actual length is shorter than the signature's
 bar — positions are assigned to levels by aligning the bar's *end* with the end of a nominal bar: the
@@ -1049,13 +1090,18 @@ nothing about it: the disagreement is a reading of the music and belongs to a la
 
 ### 3.5 Face (e) — the notated boundary evidence
 
-**S-39. Per change point, L1 publishes a set of boundary flags, each with its witnesses: BAR-LINE
-(the change point is a bar start; carrying the bar-line type — single, double, final); REPEAT (a
-start-repeat, an end-repeat with its count, an ending start, an ending end, at this position);
-FERMATA (an event bearing a fermata *releases* at this change point; or a fermata-bearing rest's
-silence *ends* here; or a fermata stands on the bar line at this position); REST-BEGINS (a notated
-voice's silence begins at this change point, by rest or by unwritten gap, naming the voice); and
-ALL-SILENT (the slice starting here is a silent slice).**
+**S-39. Per change point, L1 publishes a set of boundary flags, each with its witnesses and each
+carrying the scope it was read at — the whole texture, or the staff or voice it is notated on
+(Ruling 48): BAR-LINE (the change point is a bar start; carrying the bar-line type — single, double,
+final); REPEAT (a start-repeat, an end-repeat with its count, an ending start, an ending end, at this
+position); FERMATA (an event bearing a fermata *releases* at this change point; or a fermata-bearing
+rest's silence *ends* here; or a fermata stands on the bar line at this position); REST-BEGINS (a
+notated voice's silence begins at this change point, by rest or by unwritten gap, naming the voice);
+ALL-SILENT (the slice starting here is a silent slice); TIME-SIGNATURE-CHANGE and
+KEY-SIGNATURE-CHANGE (at the position of a change, the latter the fact that it changed and never its
+value — S-43, admitted at Ruling 50); BREATH-MARK and CAESURA (on the staff or voice they are written
+on — Ruling 50); and TEMPO-CHANGE (a sudden change at its position; a written ritardando at the end
+of its span, placed as FERMATA is at the release — Ruling 50).**
 - *Defense.* The five kinds are the charter's [RULED]. The placement rules are this derivation's,
   from what each sign means: a fermata prolongs the note it sits on, so the boundary it signals is
   where that note *ends* [THEORY]; a fermata over a rest prolongs the silence, so its boundary is
@@ -1074,6 +1120,8 @@ ALL-SILENT (the slice starting here is a silent slice).**
   fermata-bearing note's release change point lacks FERMATA, or if a fermata attaches to that note's
   onset. Not falsified by: an onset and a release coinciding at one change point, carrying both a
   FERMATA (from the releasing note) and no fermata from the starting one.
+- *Reworded under Ruling 73 (§3cb): the five kinds Ruling 50 admitted and the scope on every flag
+  (Ruling 48) brought onto the statement's face; the derived wording stands at the derivation, S-39.*
 - *Beside S-39 (Ruling 48, §3bc) — the boundary-evidence form: scope on every flag.* *"S-39 and S-40
   stand; **S-39 gains, on every flag, the scope it was read at** — the whole texture, or the staff or
   voice it is notated on — so that the partition of Row 10.53 is a published fact."* The graded
@@ -1126,11 +1174,13 @@ yields three flags.**
 - *Falsifier.* CODE. Observable: the flag set at that bar. Decision rule: falsified if fewer flags than
   marks are published. Not falsified by: a flag carrying two witnesses.
 
-**S-41. A boundary mark that stands at a position that is not a change point — a double bar mid-bar,
-a fermata over a bar line every voice ties across, a repeat sign at a bar line under a held chord —
-is published in a *positioned marks list*: each mark with its position, its kind and its witnesses,
-and with the metric strength class of its position. The marks list is a second L1 output beside the
-per-change-point flags, and the two never duplicate a mark.**
+**S-41. Every notated mark of this face — whether or not it stands at a change point — is published in
+a *positioned marks list*: each mark with its written position, its kind, its attachment and scope,
+its witnesses, and the metric strength class of its position. The marks list is a second L1 output
+beside the per-change-point flags; a flag references the mark it is read from by identity, S-39's
+placement rules deciding which change point a mark's boundary falls at, and the two never duplicate a
+mark, because the flag is a reference (Ruling 51). A rehearsal letter or section label passes S-1 and
+is placed in the list under the same test.**
 - *Defense.* #12: a notated mark is information, and attaching it to the nearest change point would
   misplace it (a decision), while dropping it would lose it. Metric class is published with it
   because the class of a bar start under a held chord (S-26) is otherwise unpublished, and the
@@ -1138,13 +1188,16 @@ per-change-point flags, and the two never duplicate a mark.**
   extends the charter's output shape; it is written as a derived statement for ruling. [CONJECTURE on
   the extension's acceptability.]
 - *Source class.* Derived.
-- *Status.* Settled as a proposal; flagged for ruling because it adds an output.
+- *Status.* Settled (OQ-14 answered at Ruling 51; Ruling 73) *(formerly "Settled as a proposal;
+  flagged for ruling because it adds an output")*.
 - *Premise.* Premise: consumers will read two structures. False-negative path: a consumer that reads
   only the per-change-point flags misses every mark under a held chord. Declared; the alternative
   (attaching to the next change point with a "displaced" mark) was considered and declined because it
   places a mark at a moment the page does not show it.
 - *Falsifier.* CODE. Observable: both outputs. Decision rule: falsified if a mark appears in both or in
   neither. Not falsified by: the list being empty on a score where every mark is at a change point.
+- *Reworded under Ruling 73 (§3cb) as Ruling 51 widened it; the derived wording stands at the
+  derivation, S-41.*
 - *Beside S-41 (Ruling 51, §3bf) — one home for every mark; the list is the complete one.* *"At the
   ratification act S-41 is widened as position one states: the positioned marks list is complete over
   every notated mark of face (e), including the marks Ruling 50 admitted; the per-change-point flag set
@@ -1164,29 +1217,33 @@ which pass.**
   bars before its end-repeat, and a second ending after [FACT — §6]. The notation gives both; choosing
   one is unfolding (OQ-1).
 - *Source class.* Derived.
-- *Status.* Open with OQ-1.
+- *Status.* Settled for L1 (OQ-1 answered for L1 at Ruling 70; Ruling 73), the remainder of OQ-1 L2's
+  *(formerly "Open with OQ-1")*.
 - *Premise.* Premise: ending numbers are in the record. False-negative path: a file with voltas drawn as
   text; then the ending is annotation (S-2) and the repeat structure is incomplete — a defect flag.
 - *Falsifier.* CODE. Observable: flags at the volta. Decision rule: falsified if either ending lacks its
   REPEAT flags with numbers. Not falsified by: OQ-1's ruling.
 
-**S-43. This derivation proposes two additions to the charter's five kinds, as evidence and not as
-decisions: a TIME-SIGNATURE-CHANGE flag and a KEY-SIGNATURE-CHANGE flag at the position of a change.
-Both are notated, both are commonly used by composers to mark a section, and the second is the one
-place a key signature enters L1 — as the *fact that it changed*, never as its value.**
+**S-43. Two kinds beyond the charter's five, admitted at Ruling 50 (OQ-15: yes): a
+TIME-SIGNATURE-CHANGE flag and a KEY-SIGNATURE-CHANGE flag at the position of a change. Both are
+notated, both are commonly used by composers to mark a section, and the second is the one place a key
+signature enters L1 — as the *fact that it changed*, never as its value.**
 - *Defense.* Both pass S-1 and both are section-level notation in common practice [THEORY]. The
   key-signature-change flag does not read the signature's value, so S-9's bar is respected: the flag
   is true when the signature-in-force changes and says nothing about the tonality before or after.
   The chorale file's two signature changes fall at phrase boundaries with fermatas [FACT — §6; a
   single file, not evidence of a rate].
 - *Source class.* Derived — an extension, for ruling.
-- *Status.* Open (an addition to a ratified list is the user's).
+- *Status.* Settled (admitted at Ruling 50; Ruling 73) *(formerly "Open (an addition to a ratified
+  list is the user's)")*.
 - *Premise.* Premise: the flag conveys no tonality. False-negative path: a consumer that reads "key
   signature changed" as "tonality changed" — it would be consuming a sign as a decision; the flag's
   name and its establishment status (S-52) say it is a sign.
 - *Falsifier.* CODE. Observable: L1 outputs under a key-signature change with all pitches respelled to
   keep the notes identical. Decision rule: falsified if any L1 output beyond this flag changes. Not
   falsified by: the flag itself.
+- *Reworded under Ruling 73 (§3cb) from a proposal to the two admitted kinds; the derived wording
+  stands at the derivation, S-43.*
 - *Beside S-43 (Ruling 50, §3be) — the two proposed flags are admitted.* *"S-43's TIME-SIGNATURE-CHANGE
   and KEY-SIGNATURE-CHANGE are admitted (OQ-15: yes)."* The addition the statement flags for ruling is
   therefore made; OQ-15 is marked ANSWERED at §4.
@@ -1216,50 +1273,57 @@ that name — not a notated voice. The word *bass* is reserved for the chord's b
   reserved for the chord's bass note decided at L3, and S-45 to S-49 follow the same naming; the
   premise and its false-negative path stand."* *The derived wording stands at the derivation, S-44.*
 - *Beside S-44 (Ruling 53, §3bh) — the cadence cues' inputs, and no gate.* *"Beside S-44, that the cues
-  are computed from L0 and the slice list alone and anchored on the bass, never on a chord or a
-  candidate key … [and] beside S-44, that no cue is gated on boundary evidence at L1."* The outgoing
+  are computed from L0 and the slice list alone and anchored on the bass *(the ruling's own word; the
+  anchor is S-44's — Ruling 74)*, never on a chord or a candidate key … [and] beside S-44, that no cue
+  is gated on boundary evidence at L1."* The outgoing
   detector over an event pair of chords, and the factorization's features evaluated in candidate key k
   with fitted weights, are *"L2's cadence factor … a consumer reading L1's cues and its own state"*.
   **Not settled by that ruling:** the window's value (OQ-10, a measurement), and *"the keyboard voice
   proxy on which S-46's same-voice condition rests"*.
 
-**S-45. BASS-FALLS-A-FIFTH (equivalently rises a fourth): at onset change point Z, let Y be the latest
-earlier slice whose bass pitch class differs from Z's bass pitch class, searched back no further than
-the cue window (S-48). The cue is true when Y's bass pitch class is seven semitones above Z's bass
-pitch class modulo twelve (Y = Z + 7). Published with witnesses: the two bass notes, the register of
-the motion (down a fifth, up a fourth, or across an octave), and the slices Y and Z. The cue is not
-computed when no such Y exists in the window.**
+**S-45. LOWEST-PITCH-FALLS-A-FIFTH (equivalently rises a fourth): at onset change point Z, let Y be
+the latest earlier slice whose lowest sounding pitch class differs from Z's, searched back no further
+than the cue window (S-48). The cue is true when Y's lowest sounding pitch class is seven semitones
+above Z's modulo twelve (Y = Z + 7). Published with witnesses: the two lowest sounding notes, the
+register of the motion (down a fifth, up a fourth, or across an octave), and the slices Y and Z. The
+cue is not computed when no such Y exists in the window.**
 - *Defense.* Falling fifth and rising fourth are the same pitch-class relation and differ only in
   register, which is why the charter names them together [THEORY]. Bigo et al.'s
-  `Y-Z-bass-moves-compatible-V-I` is this relation between the bass of Y and the bass of Z [FACT —
-  extract, §2.1–2.4]; the anchor Y by *differing bass* rather than *previous slice* is theirs too (X is
-  found by the same rule one step further back). Register is published rather than folded because a
-  bass leap down a fifth and up a fourth are the same harmonically but not the same in voice leading,
-  and Sears et al. found that cadential bass motion *in isolation* is less predictable than stepwise
-  motion [FACT — extract, §6.1.3], so a consumer may want the registral form.
+  `Y-Z-bass-moves-compatible-V-I` is this relation between the lowest sounding pitch of Y and the
+  lowest sounding pitch of Z [FACT — extract, §2.1–2.4]; the anchor Y by *differing lowest sounding
+  pitch* rather than *previous slice* is theirs too (X is found by the same rule one step further
+  back). Register is published rather than folded because a leap of the lowest sounding pitch down a
+  fifth and up a fourth are the same harmonically but not the same in voice leading, and Sears et al.
+  found that cadential bass motion *in isolation* is less predictable than stepwise motion [FACT —
+  extract, §6.1.3], so a consumer may want the registral form.
 - *Source class.* Derived.
 - *Status.* Settled.
-- *Premise.* Premise: the previous *differing* bass is the right Y. False-negative path: a cadence whose
-  dominant bass is decorated by a lower neighbour immediately before the arrival — Y is then the
+- *Premise.* Premise: the previous *differing* lowest sounding pitch is the right Y. False-negative
+  path: a cadence whose dominant's lowest sounding pitch is decorated by a lower neighbour
+  immediately before the arrival — Y is then the
   neighbour and the cue fails; the pack's C41 shape (evidence arrives after the moment). L2 can look
   two steps back with the published slices; the cue is one pattern, not the only evidence.
 - *Falsifier.* CODE. Observable: the cue on a plain V–I in root position. Decision rule: falsified if it
   is false there, or true on a I–IV. Not falsified by: it being true on a IV–♭VII in another tonality —
   the cue is tonality-free by design.
+- *Reworded under Ruling 74 (§3cc): the anchor named as Ruling 42 (§3aw) reserves the word *bass* for
+  L3; the derived wording stands at the derivation, S-45; the flag formerly BASS-FALLS-A-FIFTH.*
 - *Beside S-45 (Ruling 62, §3bq, item 7).* S-45's *"not computed when no such Y exists"* **gains the
   named-reason form** the ruling states beside S-52: *"every L1 item that is not computed or is empty
   carries a named reason."* S-45 itself *"stands as L1's"* (Ruling 53), Row 11.8's *"not in the first
   structure"* being L2's choice not to consume it.
 
 **S-46. LEADING-TONE-RESOLVES: at onset change point Z, the cue is true when some eligible event in the
-slice before Z, in a notated voice, is a semitone below Z's bass pitch class (modulo twelve), and an
-event in the same notated voice onsets at Z on Z's bass pitch class (in any octave). Published with
-witnesses: the two notes and the voice. Where the record carries no voice below the staff (S-13), the
-same-voice condition is relaxed to *any note* and the relaxation is published as part of the cue.**
+slice before Z, in a notated voice, is a semitone below Z's lowest sounding pitch class (modulo
+twelve), and an event in the same notated voice onsets at Z on Z's lowest sounding pitch class (in any
+octave). Published with witnesses: the two notes and the voice. Where the record carries no voice
+below the staff (S-13), the same-voice condition is relaxed to *any note* and the relaxation is
+published as part of the cue.**
 - *Defense.* A leading tone is the pitch a semitone below a tonic, resolving up to it [THEORY]. Without
   a tonality the only tonic available is a hypothesis, and the charter's own third cue supplies the
-  hypothesis: the bass of the arrival (S-47). Bigo et al.'s `Z-β-comes-from-α` features are voice-
-  leading features of the arrival — *"an immediate resolution of one degree to another"* — relative to
+  hypothesis: the lowest sounding pitch of the arrival (S-47). Bigo et al.'s `Z-β-comes-from-α`
+  features are voice-leading features of the arrival — *"an immediate resolution of one degree to
+  another"* — relative to
   the arrival chord [FACT — extract, §2.1–2.4]. Requiring the same notated voice makes it a
   *resolution* rather than a coincidence; the relaxation is declared because S-13 says notated voice
   is a proxy.
@@ -1271,8 +1335,10 @@ same-voice condition is relaxed to *any note* and the relaxation is published as
 - *Falsifier.* CODE. Observable: the cue on a V–I with the leading tone in the soprano resolving to the
   tonic. Decision rule: falsified if false there, or true when the semitone-below note resolves
   elsewhere in its voice. Not falsified by: it being true on a deceptive resolution's leading tone —
-  the bass at Z is then not the tonic and the cue is false; if it is true, the bass IS the pitch the
-  leading tone resolved to, which is what it detects.
+  the lowest sounding pitch at Z is then not the tonic and the cue is false; if it is true, the lowest
+  sounding pitch IS the pitch the leading tone resolved to, which is what it detects.
+- *Reworded under Ruling 74 (§3cc): the anchor named as Ruling 42 (§3aw) reserves the word *bass* for
+  L3; the derived wording stands at the derivation, S-46.*
 - *Beside S-46 (Ruling 53, §3bh) — the limit, stated on the cue's own face.* *"S-46 gains Row 9.20's
   fact, that it detects a semitone-to-bass resolution and fires identically on a plain V→I and a plain
   I→IV, its status moving from *settled* to *settled with its limit stated*."*
@@ -1283,12 +1349,12 @@ same-voice condition is relaxed to *any note* and the relaxation is published as
   states beside S-52.
 
 **S-47. FOURTH-AND-SEVENTH-IN-THE-APPROACH: at onset change point Z, for each of two candidate
-tonalities — T_I, whose tonic is Z's bass pitch class, and T_V, whose dominant is Z's bass pitch class
-(tonic = bass − 7 modulo twelve) — the cue is true when both the fourth degree and the seventh degree
-of that candidate (tonic + 5 and tonic + 11 modulo twelve) sound among the eligible events of the
-slices within the cue window before Z. Published as two flags, each named by its anchor (*I-anchored*,
-*V-anchored*), with witnesses. The candidate tonality is the anchor and nothing more: L1 publishes no
-tonality.**
+tonalities — T_I, whose tonic is Z's lowest sounding pitch class, and T_V, whose dominant is Z's
+lowest sounding pitch class (tonic = that pitch class − 7 modulo twelve) — the cue is true when both
+the fourth degree and the seventh degree of that candidate (tonic + 5 and tonic + 11 modulo twelve)
+sound among the eligible events of the slices within the cue window before Z. Published as two flags,
+each named by its anchor (*I-anchored*, *V-anchored*), with witnesses. The candidate tonality is the
+anchor and nothing more: L1 publishes no tonality.**
 - *Defense.* This is Bigo et al.'s `Z-bass-compatible-with-I` and `-with-V`: *"Both notes 4 and 7 of the
   tonality that would be implied by the bass of Z are present in the four beats before Z"* [FACT —
   extract, §2.1]; the pack's extract records that *"the phrase candidate tonality is therefore not
@@ -1309,6 +1375,8 @@ tonality.**
   falsified if false there (the fourth is in ii and the seventh in V), or true when neither degree has
   sounded in the window. Not falsified by: it being true at a non-cadential tonic arrival — the cue is
   evidence, and its false-positive rate is L2's to learn.
+- *Reworded under Ruling 74 (§3cc): the anchor named as Ruling 42 (§3aw) reserves the word *bass* for
+  L3; the derived wording stands at the derivation, S-47.*
 - *Beside S-47 (Ruling 53, §3bh) — it is a presence test.* *"S-47 gains the statement that it is a
   presence test"*, and carries *"its V-anchored flag's measured weakness"* on its face.
 
@@ -1325,7 +1393,9 @@ published values — four beats for the degrees, one bar for the bass anchor —
   #19 forbids trusting a copied value, and #17's desk-simulation rule marks a hand-declared stand-in as
   provisional.
 - *Source class.* Measured — UNESTABLISHED, no value asserted.
-- *Status.* Open (a measurement is owed; a ruling on the stand-in is the user's).
+- *Status.* Open on the measurement (OQ-10, L2's calibration); the stand-ins provisional under S-52
+  (Ruling 53, OQ-17) *(formerly "Open (a measurement is owed; a ruling on the stand-in is the user's)"
+  — Ruling 74, §3cc)*.
 - *Premise.* Premise: a fixed window in beats is the right shape. False-negative path: the window
   should perhaps be in slices or in bars; the measurement above would show it if recall depends on
   texture more than on beats. Declared.
@@ -1335,10 +1405,10 @@ published values — four beats for the degrees, one bar for the bass anchor —
   values accepted as declared *provisional* under S-52 and #17's rule — no item resting on them put
   under load, the measurement S-48 names owed to L2's calibration."* OQ-17 is marked ANSWERED at §4.
 
-**S-49. Every cue is published together with the interval content above the bass at Y and at Z — the
-set of pitch classes sounding in each slice, expressed as semitone distances above the slice's bass —
-so that a consumer can read the bass motion *in relation to what sounds above it*. L1 publishes the
-set; it names no chord.**
+**S-49. Every cue is published together with the interval content above the lowest sounding pitch at Y
+and at Z — the set of pitch classes sounding in each slice, expressed as semitone distances above the
+slice's lowest sounding pitch — so that a consumer can read the motion of the lowest sounding pitch
+*in relation to what sounds above it*. L1 publishes the set; it names no chord.**
 - *Defense.* Sears et al. found that the cadential bass leap considered in isolation is *less*
   predictable than stepwise motion, and that only viewpoints modelling *"the interaction between the
   bass and the upper voices"* recover the expected direction [FACT — extract, §6.1.3]; the pack's
@@ -1352,22 +1422,33 @@ set; it names no chord.**
   is a convenience, not new information; it is published once here so consumers do not re-derive it
   (D-100). False-negative path: none; if it were dropped, L2 would compute it from the sounding set.
 - *Falsifier.* CODE. Observable: the published set at a slice. Decision rule: falsified if it names a
-  quality or a root, or if it differs from the sounding set's pitch classes minus the bass. Not
-  falsified by: the same set being published for two slices with different event sets.
+  quality or a root, or if it differs from the sounding set's pitch classes minus the lowest sounding
+  pitch. Not falsified by: the same set being published for two slices with different event sets.
+- *Reworded under Ruling 74 (§3cc): the anchor named as Ruling 42 (§3aw) reserves the word *bass* for
+  L3; the derived wording stands at the derivation, S-49.*
 
 ### 3.7 Face (g) — the form of what is published, and the bar on deciding
 
 **S-50. L1 publishes exactly: the slice list (S-29–S-33) with each slice's sounding set by event
-identity; per change point, its metric strength class (S-35) and its boundary flag set (S-39); the
-positioned marks list (S-41); the junction adjacencies (S-27); per onset change point, the cue flags
-(S-45–S-47) with the interval content (S-49); the ornamental attachments and ornament attributes
-(S-16, S-17); the silent-notes and annotation carriers (S-2, S-18); and the defect flags (S-10, S-24,
-S-25). Every predicate is published with its witnesses. No published field is named *boundary*,
-*cadence*, *phrase*, *chord*, *key*, *tonality*, *degree* or *function*.**
+identity; the span's two edges published as such, with a record-edge mark where an edge is the
+record's own start or end (S-32, Ruling 40, Ruling 46 (vi)), events marked *entered sounding* and *cut
+by the span* (S-32), and a tie cut by the span so marked (S-25); per change point, its metric strength
+class (S-35) and its boundary flag set (S-39), every flag with its scope (Ruling 48); the positioned
+marks list, complete over every notated mark of face (e), the flags referencing it by identity (S-41,
+Ruling 51); the junction adjacencies (S-27); per onset change point and per notated voice, the three
+relations to that voice's preceding event with their witnesses (Ruling 49) and the chordal count with
+its witnesses (Ruling 61); per onset change point, the cue flags (S-45–S-47) with the interval content
+(S-49); the PEDAL-HELD attribute on every change point inside a pedal span (S-54); the ornamental
+attachments and ornament attributes (S-16, S-17); the silent-notes and annotation carriers (S-2,
+S-18); and the defect flags (S-10, S-24, S-25). Every predicate is published with its witnesses, its
+establishment status (S-52), its provenance — how it was arrived at (Ruling 62 item 9) — and, where it
+is not computed or is empty, a named reason (Ruling 62 item 7). No published field is named
+*boundary*, *cadence*, *phrase*, *chord*, *key*, *tonality*, *degree* or *function*.**
 - *Defense.* The charter's list, plus the additions each derived above [RULED for the list; derived
   for the additions, each flagged where it stands]. The naming bar operationalises *decides nothing*:
   a field's name is what a consumer will treat it as, and a flag named *cadence* would be consumed as
-  a decision however it was computed. The pattern names (BASS-FALLS-A-FIFTH) say what was detected and
+  a decision however it was computed. The pattern names (LOWEST-PITCH-FALLS-A-FIFTH *(formerly
+  BASS-FALLS-A-FIFTH — Ruling 74)*) say what was detected and
   nothing about what it means.
 - *Source class.* Derived.
 - *Status.* Settled.
@@ -1376,6 +1457,8 @@ S-25). Every predicate is published with its witnesses. No published field is na
 - *Falsifier.* CODE. Observable: L1's output schema. Decision rule: falsified if a field bears one of the
   barred names or if a predicate lacks witnesses. Not falsified by: documentation using the word
   *cadence* to explain what a cue is evidence for.
+- *Completed under Ruling 75 (§3cd) as Ruling 62 item 1 orders; the derived list stands at the
+  derivation, S-50.*
 - *Beside S-50 (Ruling 41, §3av) — what a slice carries.* *"S-50 stands as derived; at the ratification
   act one clarifying clause is written beside it — *by event identity* means references into L0, and no
   note fact is duplicated on the slice — and no selection tag is added."*
@@ -1494,8 +1577,10 @@ and this derivation does not fill it.**
   arpeggio whose bass leaves the sounding set at its notated release, so that the bass of later slices
   in the bar is an inner note — S-44's proxy hazard, sharpened. PEDAL-HELD on those change points lets
   L2 see it.
-- *Falsifier.* RESIDUAL until ruled; thereafter CODE: releases inside a pedal span equal the notated
-  releases (or the lift, if ruled so).
+- *Falsifier.* CODE. Observable: the releases of events inside a pedal span. Decision rule: falsified
+  if any differs from the notated release (Ruling 59). *(Formerly "RESIDUAL until ruled; thereafter
+  CODE: releases inside a pedal span equal the notated releases (or the lift, if ruled so)" —
+  Ruling 75, §3cd.)*
 - *Beside S-54 (Ruling 59, §3bn) — why the span is published, and what L1 does not publish.* *"Beside
   S-54 the specification states Row 12.8's fact — that with the damper pedal held, notes ring past
   their notated release, so the sounding set a listener hears inside the span is the union of what has
@@ -1516,6 +1601,10 @@ ruling, with the question it would ask.
   of notated bars, or a stretch of the performed sequence — and is the published ground truth this
   project measures against aligned to one or the other? Until ruled, L1 works in notated order and
   publishes junction adjacencies.
+  **ANSWERED FOR L1 (Ruling 70, §3by):** L1 works in the record's own positions — notated order — and
+  publishes the junction adjacencies (S-27), on Ruling 40 and Ruling 46 clauses (i) and (v); the
+  remainder — the order the analysis as a whole decides over, and the ground truth's alignment — is
+  carried to L2's surface.
 - **OQ-2 (face (a); S-21).** Eligibility and sounding set of tremolo-marked notes, measured and
   unmeasured. No staged file carries a tremolo (declared in the brief). Interim: one event per
   notated note.
@@ -1556,6 +1645,9 @@ ruling, with the question it would ask.
   invisible small notes, one of them also marked not played; the others are invisible and, by the
   file, sound. This derivation excludes them on visibility (the analysis reads the page). *Question:*
   does visibility or the played flag govern eligibility when they disagree?
+  **ANSWERED (Ruling 77, §3cf):** visibility governs; S-15 stands with both flags required; the
+  excluded notes travel on S-18's carrier, labelled, and the hidden-for-layout case's
+  voice-membership cost is declared at S-18's premise.
 - **OQ-14 ★ (face (e); S-41).** The positioned marks list is an output the charter does not name.
   *Question:* is a second output beside the per-change-point flags admitted, or must every mark be
   attached to a change point with a displacement?
@@ -1567,6 +1659,11 @@ ruling, with the question it would ask.
   KEY-SIGNATURE-CHANGE are admitted."*
 - **OQ-16 ★ (L0; S-8).** *Question:* are a composer's own figured-bass figures input to the analysis
   or annotation beside it? This derivation says annotation, and names the cost for continuo parts.
+  **ANSWERED (Ruling 67, §3bv):** S-8 ratified as derived — a composer's figures are annotation of a
+  named kind, *composer's figures*, usable by a measurement layer as a reference and never as analysis
+  input; the ground D-501 and the L0 → L1 boundary contract (*"Nothing derived"*), neither naming a
+  composer's figures and the ruling deciding the case on their principle; the derivation's stated cost
+  for continuo parts carried with it.
 - **OQ-17 ★ (face (f); S-48).** *Question:* is the stand-in window (four beats; one bar) acceptable as
   a declared provisional value until the measurement of OQ-10 runs?
   **ANSWERED (Ruling 53, §3bh):** yes, on the stated condition — *"S-48's stand-ins declared provisional
