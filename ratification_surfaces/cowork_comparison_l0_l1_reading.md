@@ -12829,9 +12829,87 @@ to the cue window's own stand-in.**
 
 ## 9. The derivation's §7 — the five places the decomposition seemed wrong or incomplete
 
-**NOT YET WRITTEN**, for the same reason as §8: each of the five points is to be answered against what
-the outgoing text says over the whole population, and the writing that owes it stopped at the
-population boundary.
+**★ COMPLETE OVER THE POPULATION, AND CARRYING NO VERDICT ON WHETHER §7 IS RIGHT.** The derivation's
+§7 says where the brief's own decomposition of the subject seemed wrong or incomplete; the brief
+invited it. Each of the five points is listed in the derivation's order with **one sentence on what the
+outgoing text says about it, located at a ROW of §6**, or the statement that the outgoing text says
+nothing. **Whether the decomposition was in fact wrong is not decided here, and no point below is
+graded.**
+
+**★ TWO OF THE FIVE ARE STRUCTURAL RATHER THAN COSMETIC, AND ARE NAMED AS SUCH.** §3al.4 of
+`cowork_rulings_2026_08_31_decision_surface_sitting.md` records them in those terms: **notated-versus-
+unfolded order is not a tie question but its own face**, governing the slice list and the repeat flags;
+and **face (e) has no home for marks falling where no change point is.** They are points 2 and 1 below
+and each carries that marking at its own entry. **Naming them as structural is the sitting record's
+act, relayed; it is not a verdict of this file.**
+
+---
+
+**Point 1 — ★ STRUCTURAL. Face (e) is stated per change point, but marks fall where no change point
+is.** *(The derivation: a bar line every voice ties across, a double bar mid-bar and a fermata over
+such a bar line have no change point to attach to; S-41 adds the positioned marks list for it and
+OQ-14 puts the addition to the user.)*
+**The outgoing text carries marks at their own positions, in one document, and agrees with S-41
+wherever it names it.** **Row 20.7** makes the musical address a **join key**, so *"Harmony, Annotation,
+and Note at the same MusicalAddress are co-located"* — a mark held at its own position rather than
+attached to a note; **Row 20.9** enumerates the notated landmarks a region may be addressed by —
+rehearsal marks, tempo marks, key changes, section labels, double barlines and repeat signs; and **Row
+20.3** admits dynamics, tempo marks and rehearsal marks among the intentional properties a reader is
+handed. **All three of S-41's attributions in the whole population are those rows, and all three
+AGREE.** Beside them, **Row 10.28** emits the notated markers **unconditionally**, *"not subjected to
+the threshold"*, which places a marker in the published set whether or not a peak sits there.
+
+**Point 2 — ★ STRUCTURAL. Face (b) folds an ordering question into ties.** *(The derivation: whether a
+tie crossing a repeat is honoured is not a tie question but the question whether the analysis reads
+notated or unfolded order — OQ-1 — which also governs face (c)'s slice list and face (e)'s repeat
+flags.)*
+**The outgoing text says nothing.** No row of §6 speaks to repeat unfolding or to which order the
+analysis works in; **no row names S-27 or S-42 at all**; and the repeat sign appears in the tabulation
+only as one boundary kind among several — **Rows 12.4, 20.9 and 13.3** — never as a question about
+which pass is being read. **This is the same absence §8 records at OQ-1**, met here from the
+decomposition's side rather than the open question's.
+
+**Point 3 — Face (f)'s three cues are under-specified without the upper voices.** *(The derivation:
+the pack's own extracts carry the finding that a bass-only cue can have the wrong sign, so S-49
+publishes the interval content above the bass beside every cue, which the charter's cue list does not
+name.)*
+**The outgoing text supplies the published research the point rests on, and publishes a different
+object.** **Row 24.5** carries the research directly — *"Vuvan et al. 2021 dissociate bass from
+pitch-class content; both independently drive expectation"* — while the three rows that DIFFER from
+S-49 (**1.9**, **12.13**, **14.12**) all publish a **weighted pitch-class view** in place of the raw
+interval content above the bass, and the four that agree with it (**3.19**, **3.46**, **4.5**, **4.33**)
+agree on the discipline that such a view is published *beside* the facts and never instead of them.
+
+**Point 4 — The L0 question "what happens when a real score does not supply it" is mostly a file-defect
+question, and the decomposition has no face for defects.** *(The derivation: S-10, S-22, S-24 and S-25
+answer it with a defect-flag discipline rather than repairs, and that discipline is a small contract of
+its own.)*
+**The outgoing text carries no defect-flag contract at all**, and the phrase occurs nowhere in the
+tabulation: **no row names S-10 or S-22**, and the six rows that name S-24 and S-25 reach the subject
+only at the span's edge — **Rows 18.9 and 22.5** requiring that a layer tell *"unavailable because not
+loaded"* from *"unavailable because the score starts/ends here"*, **Row 18.15** requiring a truncated
+output to carry its provenance, and **Rows 3.12, 22.12 and 29.7** testing the notated spelling rather
+than the record's internal consistency.
+
+**Point 5 — "Voice" is used in one sense by the charter and in two by the notation.** *(The derivation:
+the charter gives voice membership, a record file gives* notated *voices, which in keyboard music are
+not lines; S-13 and S-46 carry the distinction and its proxy hazard.)*
+**The outgoing text names the two senses explicitly and keeps them apart by rule.** **Row 19.1** states
+that *voice* is used *"ONLY for the **notated voice** — the (staff, voice) line the score writes (an L1
+fact)"* and that *"The *inferred* perceptual line is always called a **stream**, never a voice"*; **Row
+19.3** names the case that makes the distinction necessary, a single notated line projecting two
+perceptual lines; **Row 19.4** rules that a stream is *"Always marked inferred … never conflated with a
+notated voice"*; and **Row 16.2** takes the opposite reading of the same repertoire, that for keyboard
+music the engraved voice is close enough that the field works with it.
+
+**The closing observation of the derivation's §7, relayed.** It records one place the decomposition was
+right where the deriving session first doubted it — face (g)'s question *"is a metric strength class a
+claim?"*, which S-51's test had to be written to answer and which also settled S-47's candidate-tonality
+anchor. **The outgoing text meets that test repeatedly and agrees with it**: fifty-nine of S-51's
+sixty-nine attributions are AGREES, **Row 21.10** reaching the same circularity test in its own words —
+*"every covariate computable without knowing the chord, so no circularity"* — and **Rows 8.2, 9.25,
+10.1, 10.40 and 12.27** stating the key-agnosticism half five times over. *(Recorded as a fact about the
+rows; it is not a verdict on the observation.)*
 
 ## 10. The TRANSFER LIST — every RELOCATED row, by target charter
 
