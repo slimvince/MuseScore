@@ -1,5 +1,14 @@
 # Blind derivation — L0, the notated record, and L1, change points, candidates and notated evidence
 
+> **★ THIS IS THE RECORD OF THE BLIND ACT, AND ITS BODY IS NOT REWRITTEN (D-674, branch one; Ruling 63,
+> §3br of `cowork_rulings_2026_08_31_decision_surface_sitting.md`).** Written 2026-09-02 by an
+> implementation-blind session; compared over 29 outgoing documents in
+> `ratification_surfaces/cowork_comparison_l0_l1_reading.md`; its statements dispositioned by Rulings
+> 34–62 of that sitting record. **The derived L0/L1 specification as amended by those rulings is
+> `cowork_derived_specification_l0_l1_2026_09_03.md`, and that file, not this one, is the text the
+> ratification act is put over.** Everything below this banner stands as it was written at blob
+> `9b102c575643d672e4747b4cfc23e377cd344c27`.
+
 > **STATUS: DRAFT — BLIND DERIVATION, NOT COMPARED, NOT RATIFIED.**
 >
 > Written 2026-09-02 by a fresh Cowork session opened with nothing mounted, under
