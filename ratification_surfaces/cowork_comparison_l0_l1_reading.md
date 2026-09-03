@@ -22,13 +22,18 @@
 > and are the counts of record for this comparison; the deriving session relayed the same two counts
 > in its §5, and this session re-counted rather than carrying them.
 >
-> **★ THE PER-DOCUMENT TABULATION IS COMPLETE; THE WHOLE-POPULATION SECTIONS ARE NOT, AND THE FILE
-> SAYS SO AT ITS HEAD (D-672).** **All 29 documents of the population are tabulated**, each read whole.
-> **Three sections remain unwritten** — §7 (the derived side, one row per S-1…S-54), §8 (the seventeen
-> open questions) and §9 (the derivation's own §7) — and each says so where it belongs. **Nothing below
-> is partly worked**: a document is tabulated whole, and an unwritten section is unwritten whole. The
-> *Progress* section immediately below states where the writing stopped and what the next dispatch
-> resumes at — read it before reading anything else in this file.
+> **★★ THIS FILE IS NOW COMPLETE OVER THE WHOLE POPULATION.** **All 29 documents are tabulated**, each
+> read whole, and **every one of its sections is written**: the per-document tabulation at §6, the
+> derived side at §7 with its two-way arithmetic check, the seventeen open questions at §8, the
+> derivation's own §7 at §9, and the four gathers at §10 to §13. **No section is marked NOT YET
+> WRITTEN, and nothing in it is partly worked.** The *Progress* section immediately below records how
+> the file reached that state, and keeps the figures each earlier writing worked from.
+>
+> **What completeness here does and does not mean.** It means every outgoing statement of the
+> population carries exactly one proposed disposition, every derived statement carries exactly one row,
+> and the two sides reconcile by arithmetic stated at §7c. **It does not mean anything is settled**:
+> every disposition is still a proposal, every verdict is still this session's authored reading of two
+> texts, and §15 still asks the user to rule nothing in this file.
 
 ---
 
@@ -73,29 +78,35 @@ The population's order is the artifact's:
 its own arithmetic. The per-document gathers at §10, §11, §12 and §13 are complete over all 29
 documents and say so; §13's distribution is now over the whole population.
 
-**★ WHERE THIS WRITING STOPS, AND WHY — the stop is at the POPULATION BOUNDARY (D-672).** What remains
-unwritten is the whole-population half of this file: **§7** (one row per S-1…S-54 with the two-way
-arithmetic check), **§8** (the seventeen open questions) and **§9** (the derivation's own §7). Each is
-marked **NOT YET WRITTEN** where it belongs below, and none is partly written.
+**★ THE WRITING IS FINISHED, AND THE STOP THIS SECTION ONCE RECORDED IS DISCHARGED.** The third
+writing stopped at the population boundary with §7, §8 and §9 owed (D-672, and the stop was recorded
+here). **The fourth writing wrote all three**: §8 the seventeen open questions, §9 the derivation's own
+five points, and §7 the derived side with its per-row resolution table and its two-way check. **No
+section of this file is now unwritten.**
 
-**The reason, stated so the next writing does not repeat the attempt blind.** §7's check is that every
-AGREES and every DIFFERS recorded in §6 appears in §7 and the reverse. The mechanical facts of the
-population are known and are recorded here so the next writing starts from them rather than
-re-deriving them: **§6 carries 1,305 verdicts**, of which **885 AGREES, 240 DIFFERS and 180 THE
-DERIVATION IS SILENT**; **89 rows name no derived statement at all** (their axis reads *THE DERIVATION
-IS SILENT* with no S-number), so the verdicts attributable to a named derived statement are
-**1,216 — 885 + 240 + 91**. §7 must place those 1,216, and the two-way check closes against these
-figures.
+**★ THE MECHANICAL FIGURES THE THIRD WRITING RECORDED ARE KEPT, MARKED AS WHAT THEY WERE (#12).** They
+were the figures the fourth writing started from, and they are quoted at §7c beside the sums derived
+there. As recorded: *"§6 carries **1,305 verdicts**, of which **885 AGREES, 240 DIFFERS and 180 THE
+DERIVATION IS SILENT**; **89 rows name no derived statement at all**… so the verdicts attributable to a
+named derived statement are **1,216 — 885 + 240 + 91**."*
 
-**What the attempt found, and why it stopped rather than shipping an approximation.** The attribution
-is read off §6's own axis lines. Most read `S-<n>: **VERDICT**` and attribute mechanically. **A minority
-do not**: an axis line that continues past a line break can carry a second statement's verdict on the
-next line, and a few rows state **two verdict words for ONE named statement** (Row 3.27 —
-*"S-32: **AGREES** on the span half; **THE DERIVATION IS SILENT** on cost"*). Those cases have to be
-resolved at the row, one at a time. **They were not resolved, so no count is asserted**: putting an
-unverified arithmetic into a file whose whole claim is that its arithmetic closes would be the one
-defect this comparison cannot afford. **The next dispatch resumes at Task 1(j)** and owes those rows a
-per-row reading before §7's totals are written.
+**★ THE FIGURES OF RECORD ARE NOW §7c's DERIVED SUMS, AND THEY DIFFER FROM THE ABOVE BY ONE.** Summed
+at the rows: **1,304 verdicts — 884 AGREES, 240 DIFFERS, 180 SILENT — of which 89 sit on rows naming
+no derived statement, leaving 1,215 placed in §7.** The single difference is one AGREES, and its cause
+is found and named at §7c: **Row 12.26 names S-14 and S-3 and its axis line grades only S-14**, so a
+verdict document 12's own table counts for S-3 has no verdict word at the row to carry. **A per-row
+resolution moving a count is the expected cause of such a difference and is not a defect**; a
+difference with no cause found would have been, and there is none. No figure above is deleted — both
+stand, marked for what each is.
+
+**What the third writing named as the blocker, and what the fourth did with it.** The attribution is
+read off §6's own axis lines; most read `S-<n>: **VERDICT**` and attribute mechanically, while a
+minority do not — an axis line continuing past a line break onto a second statement's verdict, and a
+few rows stating **two verdict words for ONE named statement** (Row 3.27 — *"S-32: **AGREES** on the
+span half; **THE DERIVATION IS SILENT** on cost"*). **§7a enumerates that minority mechanically in five
+classes and resolves each at its row**, under a carrying rule fixed before it was applied: a verdict
+word is carried as itself with its qualifier attached, nothing merged and nothing dropped. **No row was
+recorded UNRESOLVED**, so §7c's arithmetic is stated over the whole population with nothing excluded.
 
 **★ THE POPULATION'S TWO RULED HALVES ARE BOTH COMPLETE.** Positions 1 to 11 are **Ruling 32's named
 population** — item 1 (the two `ARCHITECTURE.md` sections), item 2 (the five root design documents) and
@@ -103,10 +114,11 @@ item 3 (the four places the ruling established at the files). Positions 12 to 29
 files Ruling 33's cut admits**, which the term search found and which the ruled specification document
 set retained. **Both halves are tabulated in full.**
 
-**Every stop this file has taken was at a member boundary, as D-672 provides for.** The first fell after
-position 7 — exactly Ruling 32's items 1 and 2, the whole of the old Layer-1 and Layer-2 territory. The
-second fell after position 17. **This one falls at the population's own end**, which is the cleanest
-boundary the writing has: no document is partly worked, and what is owed is three named sections, whole.
+**Every stop this file took was at a member boundary, as D-672 provides for, and the last of them is
+now discharged.** The first fell after position 7 — exactly Ruling 32's items 1 and 2, the whole of the
+old Layer-1 and Layer-2 territory. The second fell after position 17. The third fell at the
+population's own end with three named sections owed, whole. **The fourth writing took no stop: it wrote
+§8, §9 and §7 and closed them, so nothing of this file is owed to a later one.**
 
 **★ THE READING RULE CHANGES AT POSITION 8, AND EACH DOCUMENT'S MANIFEST HEADER SAYS SO.** Documents 1
 to 7 are wholly about L0's and L1's subject, so their *not a statement* lists run sentence by
@@ -116,10 +128,10 @@ counted under *not a statement* by paragraph (positions 8 to 11) or by section (
 so that the arithmetic closes at the document and a reader can see how much of it the comparison
 reached.
 
-**Four of the whole-population sections ARE now written and say so: §10 the transfer list, §11 the
-audit questions, §12 the proposals and differences, and §13 the distribution** — each complete over all
-29 documents. **Three are not: §7, §8 and §9**, each marked **NOT YET WRITTEN** where it belongs, so
-that no reader mistakes a missing section for an empty one.
+**All seven whole-population sections are now written and each says so at its own head: §7 the derived
+side with its resolution table and its two-way check, §8 the seventeen open questions, §9 the
+derivation's own five points, §10 the transfer list, §11 the audit questions, §12 the proposals and
+differences, and §13 the distribution** — each complete over all 29 documents.
 
 ---
 
@@ -12687,15 +12699,1044 @@ properties, and neither text cites the other for them.**
 
 ## 7. The derived side — one row per S-1 to S-54
 
-**NOT YET WRITTEN — and the precondition it waited on is now MET, so the reason has changed and is
-stated rather than left as it was.** This section is the same matrix as §6 read from the other side: a
-derived statement's row must name **every** outgoing statement that speaks to it across the whole
-population, and the check is that every AGREES and every DIFFERS in §6 appears here and the reverse.
-**Every document of the population is now tabulated**, so the section is writable; **it is not written
-because its attribution is not yet resolved at the rows that need a per-row reading** — §0 records
-which cases those are, and records the population's mechanical figures (1,305 verdicts; 885 / 240 /
-180; 89 rows naming no derived statement; **1,216 verdicts to place**) so the next writing starts from
-them. **No count is asserted here**, because an unverified one would be worse than none.
+**★ COMPLETE OVER THE WHOLE POPULATION.** This section is the same matrix as §6 read from the other
+side: one row per derived statement, naming **every** outgoing statement of all 29 documents that
+speaks to it, with the verdict that row carries against it. **It decides nothing.** A verdict here is
+the verdict §6's row already carried; nothing is re-graded, no disposition is touched, and **not one
+row of §6 was altered to write this section.**
+
+**How every figure below was obtained.** The attributions were read off §6's own axis lines
+**mechanically**, from the file's committed object (blob `ef9c002f41cc294b4602c7bdf71b0fb91e9afc0f`),
+and every count in this section is a **sum taken at those rows by this writing**. §0's recorded
+figures are quoted beside the derived sums at the foot, as the figures the writing started from, and
+**any difference between the two is stated there with its cause.**
+
+---
+
+### 7a. The per-row resolution table — every axis line that is not one S-number with one verdict word
+
+**Written BEFORE any row of §7, because the attribution rule has to be fixed before it is applied.**
+Most of §6's axis lines read `S-<n>: **VERDICT**` and attribute mechanically. This table enumerates
+the ones that do not, states what was read at each, and states how each is carried into §7. **The
+carrying rule is the dispatch's and is not this file's to choose: a verdict word is carried as
+itself, with the row's own qualifier attached; nothing is merged, nothing is dropped, no qualifier is
+stripped (#12); and a line continuing onto a second statement's verdict is read as two
+attributions, one per statement.**
+
+**Class (1) — two verdict words for ONE named statement. Three rows.** Each places **two**
+attributions against that one statement, each carrying its own qualifier.
+
+| Row | The axis line, quoted | What was read | How it is carried into §7 |
+|---|---|---|---|
+| 3.27 | *"S-32: **AGREES** on the span half; **THE DERIVATION IS SILENT** on cost."* | one statement, S-32, graded twice on two halves of the same outgoing sentence | two attributions against S-32 — AGREES *on the span half*, THE DERIVATION IS SILENT *on cost* |
+| 3.35 | *"S-53: **AGREES** on who decides; **THE DERIVATION IS SILENT** on the clamp and the append-only property."* | one statement, S-53, graded twice | two attributions against S-53 — AGREES *on who decides*, THE DERIVATION IS SILENT *on the clamp and the append-only property* |
+| 3.59 | *"S-23: **AGREES** on the tie half; **THE DERIVATION IS SILENT** on the horizon half."* | one statement, S-23, graded twice | two attributions against S-23 — AGREES *on the tie half*, THE DERIVATION IS SILENT *on the horizon half* |
+
+**Class (2) — a derived statement NAMED in the row's *Derived* line that the axis line does NOT
+grade. Eight rows, ten such namings.** Each yields **no** attribution for the ungraded statement:
+there is no verdict word to carry, and inventing one would be a grading act this section may not
+take.
+
+| Row | Named | Graded by the axis | Carried into §7 |
+|---|---|---|---|
+| 1.6(ii) | S-15, S-20, S-2 | S-15 only | S-20 and S-2 receive nothing from this row |
+| 3.5 | S-15, S-13 | S-15 only | S-13 receives nothing from this row |
+| 3.31 | S-3, S-23 | S-3 only | S-23 receives nothing from this row |
+| 3.44 | S-15, S-16 | S-16 only | S-15 receives nothing from this row |
+| 3.48 | S-3, S-34, S-36 | S-3 only | S-34 and S-36 receive nothing from this row |
+| 3.57 | S-16, S-15 | S-16 only | S-15 receives nothing from this row |
+| 6.41 | S-35, S-50 | S-35 only *(the axis line names S-50 inside its own sentence, without a verdict word)* | S-50 receives nothing from this row |
+| 12.26 | S-14, S-3 | S-14 only | S-3 receives nothing from this row |
+
+**★ ROW 12.26 IS THE ONE THAT MOVES A COUNT, AND IT IS NAMED HERE BECAUSE THE FOOT'S ARITHMETIC TURNS
+ON IT.** Of the ten ungraded namings above, nine sit in documents whose own verdict tables agree
+exactly with the derived sums; **document 12's table counts one AGREES more than its rows carry**, and
+Row 12.26's ungraded S-3 is the only candidate for it. That single unit is the whole of the difference
+between §0's recorded figures and this section's, and §7c says so.
+
+**Class (3) — the axis line grades a statement the *Derived* line does not name. NONE.** The check was
+run in both directions and returned zero, so no attribution in §7 rests on a statement its own row did
+not name.
+
+**Class (4) — the row names NO derived statement at all. Eighty-nine rows.** Each carries the bare
+verdict `**THE DERIVATION IS SILENT**` with no S-number, which §6's own convention makes one verdict.
+**None is placed in §7**, because there is no derived statement to place it against; all eighty-nine
+are accounted for in §7c's arithmetic instead. They are, by document and row:
+1.2, 1.4(ii), 1.5(ii), 1.8, 1.10, 1.12, 1.13, 1.14, 1.15, 1.16, 1.17, 1.20, 1.22, 1.23(i), 1.23(ii),
+1.24(ii), 1.29; 2.2, 2.3, 2.7, 2.22, 2.24, 2.26; 3.9, 3.29, 3.43, 3.45, 3.53, 3.55, 3.56; 4.6, 4.13,
+4.16, 4.27, 4.29, 4.34, 4.35, 4.36, 4.38, 4.39, 4.40; 5.1, 5.3, 5.6, 5.8, 5.16, 5.21, 5.22, 5.23,
+5.25, 5.28, 5.29, 5.30, 5.31, 5.34, 5.35, 5.37, 5.38, 5.41, 5.42; 6.7(ii), 6.18, 6.39, 6.49, 6.50,
+6.53, 6.54(ii), 6.56; 7.1, 7.10, 7.20, 7.21, 7.26, 7.31, 7.32; 8.8; 10.36, 10.39, 10.44, 10.45,
+10.48, 10.50; 12.17; 13.17, 13.18; 14.24; 15.14, 15.20, 15.21.
+
+**Class (5) — the axis block continues past a line break. Twenty-nine rows.** These attribute
+mechanically **once the block is read whole** rather than line by line, which is the reading this
+section takes; a line-by-line reading would drop the verdicts that fall on a continuation line. All
+twenty-nine sit in the four documents written in the long form, where the axis line is its own
+paragraph: 1.2, 1.4(ii), 1.5(ii), 1.11, 1.18, 1.21, 1.24(i), 1.25, 1.27(i), 1.27(ii), 1.28; 2.6, 2.9,
+2.10, 2.11, 2.12, 2.17, 2.21, 2.23, 2.28; 8.1, 8.2, 8.3, 8.4, 8.6, 8.7, 8.8, 8.9; 16.1.
+
+**AT THE FOOT OF THIS TABLE, DERIVED AT THE ROWS.** The five classes hold **125 distinct rows** — four
+rows sit in two classes at once (1.2, 1.4(ii), 1.5(ii) and 8.8 are each both class (4) and class (5)),
+so the class counts 3 + 8 + 0 + 89 + 29 = 129 exceed the distinct total by exactly those four. Those
+125 rows carry **152 verdict attributions** between them — 6 from class (1), 8 from class (2), 89 from
+class (4) and 53 from class (5) — of which **63 are named attributions placed in §7** and 89 are the
+unnamed SILENT verdicts of class (4), which §7 does not place.
+
+**NO ROW IS RECORDED UNRESOLVED.** Every axis line of §6 could be read as a verdict, so the
+Findings clause's exclusion did not fire and **the arithmetic at §7c is stated over the whole
+population with nothing excluded.**
+
+---
+
+### 7b. The rows — one per derived statement, in the derivation's order
+
+**Each row gives the statement's own words (its first field, quoted from the derivation), its source
+class as the derivation records it, every outgoing statement that names it by document and row with
+that row's verdict — the qualifier attached where §7a attached one — and the row's own count of
+attributions by verdict word.** Where no outgoing statement of the population names the derived
+statement, the row reads **THE OUTGOING TEXT IS SILENT**.
+
+**S-1** — source class: *Derived*.
+
+> A fact is admitted to L0 if and only if (i) it is part of the notated text — two competent
+> copyists transcribing the same source would agree on it, and any disagreement between them
+> would be a copying error rather than an analytical disagreement — and (ii) it is not a claim
+> about what the music means: not a tonality, a chord, a function, a boundary, a phrase, or a
+> degree.
+
+*Named by:* 1/1.25 **AGREES**; 1/1.27(i) **AGREES**; 1/1.28 **AGREES**; 3/3.14(iii) **AGREES**;
+3/3.24 **AGREES**; 3/3.37 **AGREES**; 4/4.2 **AGREES**; 12/12.3 **DIFFERS**; 12/12.28 **AGREES**;
+14/14.5 **AGREES**; 15/15.10 **AGREES**; 17/17.7 **AGREES**; 18/18.28 **AGREES**; 19/19.9
+**AGREES**; 20/20.1 **AGREES**; 20/20.2 **AGREES**; 20/20.4 **AGREES**; 21/21.14 **DIFFERS**;
+21/21.15 **AGREES**; 22/22.7 **AGREES**; 25/25.8 **AGREES**; 28/28.6 **AGREES**.
+
+*This row's own count:* **20 AGREES, 2 DIFFERS, 0 THE DERIVATION IS SILENT — 22 attributions.**
+
+**S-2** — source class: *Derived*.
+
+> Applying S-1, a fact present in a record file but failing (i) or (ii) — a chord symbol
+> (`<Harmony>`), a staff text, a lyric, a declared mode or tonality tag, an editor's analytical
+> mark — is not part of L0. It may be carried beside L0 as *annotation*, so labelled, and no
+> layer may consume it as evidence about the music.
+
+*Named by:* 1/1.28 **AGREES**; 3/3.2 **AGREES**; 3/3.3 **AGREES**; 3/3.13 **AGREES**; 3/3.15
+**AGREES**; 4/4.7 **AGREES**; 10/10.7 **AGREES**; 12/12.3 **AGREES**; 12/12.7 **AGREES**; 12/12.9
+**AGREES**; 17/17.11 **AGREES**; 20/20.3 **DIFFERS**; 20/20.4 **DIFFERS**; 20/20.7 **AGREES**;
+21/21.14 **DIFFERS**; 25/25.3 **AGREES**; 27/27.3 **AGREES**; 27/27.14 **AGREES**.
+
+*This row's own count:* **15 AGREES, 3 DIFFERS, 0 THE DERIVATION IS SILENT — 18 attributions.**
+
+**S-3** — source class: *Derived (extends the charter's list; the charter's items are given)*.
+
+> L0 supplies, per note: its spelled pitch (letter, accidental, octave — equivalently a tonal
+> pitch class and an octave), at concert (sounding) pitch; whether it is pitched; its notated
+> duration as a rational fraction of a whole note, tuplet ratios applied; its metric position
+> (bar index, offset within the bar, absolute position); its staff and notated voice; whether
+> it is a grace note; whether it is tied to the preceding note and to the following note;
+> whether it is marked as not to be played; whether it is visible; whether it is cue-sized; and
+> the ornament and articulation signs attached to it.
+
+*Named by:* 1/1.1 **AGREES**; 1/1.3 **DIFFERS**; 1/1.25 **AGREES**; 1/1.26 **AGREES**; 3/3.4
+**AGREES**; 3/3.6 **AGREES**; 3/3.14(ii) **AGREES**; 3/3.18 **AGREES**; 3/3.31 **DIFFERS**;
+3/3.32 **AGREES**; 3/3.41 **DIFFERS**; 3/3.42 **DIFFERS**; 3/3.48 **DIFFERS**; 3/3.61 **AGREES**;
+4/4.1 **AGREES**; 4/4.3 **DIFFERS**; 4/4.23 **AGREES**; 4/4.30 **AGREES**; 5/5.5 **AGREES**;
+5/5.12 **AGREES**; 6/6.20 **DIFFERS**; 6/6.40 **AGREES**; 9/9.4 **AGREES**; 9/9.5(i) **AGREES**;
+10/10.11 **AGREES**; 10/10.20 **AGREES**; 11/11.7 **AGREES**; 12/12.1(i) **AGREES**; 12/12.1(ii)
+**THE DERIVATION IS SILENT**; 12/12.10(i) **AGREES**; 12/12.11 **AGREES**; 14/14.2 **AGREES**;
+14/14.5 **AGREES**; 14/14.8 **AGREES**; 14/14.9 **DIFFERS**; 15/15.2 **AGREES**; 15/15.4
+**AGREES**; 15/15.10 **AGREES**; 15/15.11 **AGREES**; 15/15.12 **AGREES**; 15/15.15 **DIFFERS**;
+15/15.16 **AGREES**; 15/15.17 **AGREES**; 17/17.6 **AGREES**; 17/17.7 **AGREES**; 18/18.39 **THE
+DERIVATION IS SILENT**; 19/19.2 **THE DERIVATION IS SILENT**; 19/19.5 **AGREES**; 19/19.12
+**DIFFERS**; 19/19.17 **AGREES**; 20/20.3 **AGREES**; 20/20.6 **AGREES**; 20/20.13 **AGREES**;
+20/20.15 **AGREES**; 20/20.16 **AGREES**; 20/20.17 **AGREES**; 20/20.18 **AGREES**; 21/21.3
+**AGREES**; 22/22.3 **AGREES**; 22/22.4 **AGREES**; 22/22.12 **AGREES**; 23/23.3 **AGREES**;
+23/23.4 **AGREES**; 24/24.6 **AGREES**; 25/25.9 **AGREES**; 25/25.13 **DIFFERS**; 26/26.1
+**AGREES**; 27/27.6 **DIFFERS**; 27/27.15 **AGREES**; 28/28.9 **AGREES**; 29/29.7 **DIFFERS**;
+29/29.11 **AGREES**.
+
+*This row's own count:* **56 AGREES, 13 DIFFERS, 3 THE DERIVATION IS SILENT — 72 attributions.**
+
+**S-4** — source class: *Derived*.
+
+> L0 supplies, per rest: its duration, metric position, staff and voice, visibility, and any
+> fermata on it.
+
+*Named by:* 4/4.10 **DIFFERS**; 10/10.12 **AGREES**.
+
+*This row's own count:* **1 AGREES, 1 DIFFERS, 0 THE DERIVATION IS SILENT — 2 attributions.**
+
+**S-5** — source class: *Derived (extends the charter's items)*.
+
+> L0 supplies, per bar: its nominal length from the time signature in force, its actual length,
+> whether it is marked irregular (anacrusis or other), the bar-line type at its start and end
+> (single, double, final, start-repeat, end-repeat with its play count), and any ending (volta)
+> it belongs to with the ending number(s).
+
+*Named by:* 10/10.12 **AGREES**; 12/12.4 **AGREES**.
+
+*This row's own count:* **2 AGREES, 0 DIFFERS, 0 THE DERIVATION IS SILENT — 2 attributions.**
+
+**S-6** — source class: *Given (charter), extended by the change positions*.
+
+> L0 supplies the time signature in force at every position, the key signature in force at
+> every position, and the position of every change of either.
+
+*Named by:* 1/1.26 **AGREES**; 10/10.15 **AGREES**; 10/10.35 **AGREES**; 11/11.7 **AGREES**;
+11/11.16 **AGREES**; 12/12.2(i) **AGREES**; 12/12.2(ii) **DIFFERS**; 12/12.4 **AGREES**; 15/15.6
+**AGREES**; 17/17.3 **AGREES**; 17/17.4 **AGREES**; 17/17.5 **DIFFERS**; 20/20.3 **AGREES**;
+21/21.9 **AGREES**; 21/21.12 **AGREES**; 21/21.13 **AGREES**; 21/21.18 **AGREES**; 23/23.3
+**AGREES**; 23/23.7 **AGREES**; 27/27.3 **AGREES**; 27/27.4 **DIFFERS**.
+
+*This row's own count:* **18 AGREES, 3 DIFFERS, 0 THE DERIVATION IS SILENT — 21 attributions.**
+
+**S-7** — source class: *Derived*.
+
+> L0 supplies the fermatas, the pedal marks with their spans, and the tremolo marks, each with
+> its position and the note, rest or bar line it is attached to. L0 does not supply tempo,
+> dynamics, slurs, beams, stem directions, or layout.
+
+*Named by:* 1/1.25 **DIFFERS**; 1/1.26 **AGREES**; 1/1.27(ii) **DIFFERS**; 3/3.12 **DIFFERS**;
+10/10.12 **AGREES**; 10/10.13 **DIFFERS**; 10/10.14 **DIFFERS**; 10/10.23 **DIFFERS**; 10/10.51
+**DIFFERS**; 10/10.52 **DIFFERS**; 12/12.5 **AGREES**; 12/12.7 **DIFFERS**; 13/13.3 **DIFFERS**;
+14/14.18 **DIFFERS**.
+
+*This row's own count:* **3 AGREES, 11 DIFFERS, 0 THE DERIVATION IS SILENT — 14 attributions.**
+
+**S-8** — source class: *Derived*.
+
+> Figured bass and chord symbols written by the composer are annotation under S-2, not L0, even
+> though they are on the page.
+
+*Named by:* 1/1.28 **AGREES**; 12/12.9 **AGREES**; 17/17.11 **AGREES**.
+
+*This row's own count:* **3 AGREES, 0 DIFFERS, 0 THE DERIVATION IS SILENT — 3 attributions.**
+
+**S-9** — source class: *Given (charter), sharpened*.
+
+> L1 reads from L0 everything of S-3 to S-7 except the key signature, which L1 does not read.
+
+*Named by:* 1/1.27(ii) **DIFFERS**; 2/2.9 **AGREES**; 3/3.7 **AGREES**; 3/3.10 **AGREES**; 3/3.20
+**AGREES**; 3/3.25 **AGREES**; 3/3.36 **AGREES**; 3/3.37 **AGREES**; 3/3.49 **AGREES**; 4/4.2
+**AGREES**; 6/6.5 **AGREES**; 6/6.13 **AGREES**; 6/6.16 **AGREES**; 6/6.17 **AGREES**; 6/6.23
+**AGREES**; 8/8.2 **AGREES**; 9/9.25 **AGREES**; 10/10.1 **AGREES**; 10/10.15 **AGREES**;
+10/10.34 **AGREES**; 10/10.35 **AGREES**; 11/11.7 **AGREES**; 11/11.16 **AGREES**; 15/15.3
+**AGREES**; 15/15.6 **AGREES**; 15/15.11 **AGREES**; 17/17.3 **AGREES**; 17/17.4 **AGREES**;
+17/17.5 **DIFFERS**; 21/21.12 **AGREES**; 21/21.18 **AGREES**; 28/28.10 **AGREES**.
+
+*This row's own count:* **30 AGREES, 2 DIFFERS, 0 THE DERIVATION IS SILENT — 32 attributions.**
+
+**S-10** — source class: *Derived*.
+
+> L0 assumes internal consistency of the record: durations in a voice do not overlap within the
+> voice; a bar's contents fit its actual length. Where a file violates this, L0 supplies what
+> the file says and attaches a defect flag to the offending bar and voice; L1 computes over the
+> positions as given and carries the flag on every change point inside the offending bar.
+
+*Named by:* **THE OUTGOING TEXT IS SILENT** — no outgoing statement of the population names this
+derived statement.
+
+*This row's own count:* **0 attributions.**
+
+**S-11** — source class: *Derived*.
+
+> A voice that is empty over a stretch, or that ends before its bar does, is silent there. No
+> rest need be written for L0 to supply the silence; the absence of any event is the silence.
+
+*Named by:* **THE OUTGOING TEXT IS SILENT** — no outgoing statement of the population names this
+derived statement.
+
+*This row's own count:* **0 attributions.**
+
+**S-12** — source class: *Derived*.
+
+> Where a score does not supply a time signature, L0 supplies each bar's actual length as its
+> nominal length and marks the score "unmetered"; L1 then publishes the metric strength class
+> "bar" at bar starts and "unmetered" elsewhere.
+
+*Named by:* **THE OUTGOING TEXT IS SILENT** — no outgoing statement of the population names this
+derived statement.
+
+*This row's own count:* **0 attributions.**
+
+**S-13** — source class: *Given (charter), sharpened*.
+
+> Where a score does not supply voice membership beyond "one voice per staff", L0 supplies the
+> staff as the voice. L0 supplies *notated* voices only; a contrapuntal voice that the notation
+> does not mark is derived, not given, and no L1 computation may need it.
+
+*Named by:* 1/1.25 **AGREES**; 4/4.23 **AGREES**; 8/8.4 **AGREES**; 9/9.1 **AGREES**; 9/9.5(i)
+**AGREES**; 9/9.7 **AGREES**; 10/10.11 **AGREES**; 10/10.17 **AGREES**; 10/10.25 **AGREES**;
+10/10.42 **AGREES**; 12/12.7 **AGREES**; 12/12.10(ii) **DIFFERS**; 12/12.19 **DIFFERS**; 13/13.7
+**AGREES**; 14/14.8 **AGREES**; 14/14.11 **AGREES**; 16/16.1 **AGREES**; 16/16.2 **DIFFERS**;
+19/19.1 **AGREES**; 19/19.2 **AGREES**; 19/19.3 **AGREES**; 19/19.4 **AGREES**; 19/19.16
+**AGREES**; 19/19.17 **AGREES**; 19/19.19 **AGREES**; 19/19.25 **AGREES**; 19/19.26 **AGREES**;
+26/26.2 **AGREES**; 28/28.7 **AGREES**.
+
+*This row's own count:* **26 AGREES, 3 DIFFERS, 0 THE DERIVATION IS SILENT — 29 attributions.**
+
+**S-14** — source class: *Given (charter)*.
+
+> Where a note's spelling is absent (a record with pitch numbers only), L0 refuses the score:
+> spelling is a required input and L0 does not infer it.
+
+*Named by:* 9/9.4 **AGREES**; 12/12.1(i) **AGREES**; 12/12.26 **AGREES**; 15/15.2 **AGREES**;
+15/15.16 **AGREES**; 19/19.5 **AGREES**; 21/21.3 **AGREES**; 22/22.4 **DIFFERS**; 22/22.12
+**DIFFERS**; 24/24.6 **AGREES**; 25/25.13 **DIFFERS**; 26/26.1 **AGREES**; 27/27.6 **DIFFERS**;
+28/28.9 **AGREES**.
+
+*This row's own count:* **10 AGREES, 4 DIFFERS, 0 THE DERIVATION IS SILENT — 14 attributions.**
+
+**S-15** — source class: *Derived*.
+
+> A notated note is *eligible* — it opens a change point at its onset and at its release, and
+> it belongs to the sounding set of every slice between them — if and only if it is pitched, it
+> is not marked as not to be played, it is visible, it is not a grace note, and its notated
+> duration is greater than zero. A tied continuation note is eligible but opens no onset
+> (S-23).
+
+*Named by:* 1/1.6(ii) **DIFFERS**; 2/2.6 **AGREES**; 2/2.8 **DIFFERS**; 2/2.9 **AGREES**; 2/2.10
+**DIFFERS**; 2/2.11 **AGREES**; 2/2.16 **DIFFERS**; 3/3.2 **DIFFERS**; 3/3.4 **AGREES**; 3/3.5
+**DIFFERS**; 3/3.15 **DIFFERS**; 3/3.17 **AGREES**; 3/3.54 **AGREES**; 4/4.5 **AGREES**; 4/4.7
+**DIFFERS**; 4/4.10 **AGREES**; 4/4.21 **AGREES**; 4/4.32 **AGREES**; 4/4.37 **DIFFERS**; 6/6.12
+**AGREES**; 6/6.17 **AGREES**; 6/6.20 **DIFFERS**; 6/6.24 **AGREES**; 6/6.25 **AGREES**; 6/6.57
+**AGREES**; 10/10.7 **DIFFERS**; 10/10.51 **DIFFERS**; 13/13.6 **AGREES**; 14/14.21 **AGREES**;
+19/19.22 **DIFFERS**; 20/20.17 **DIFFERS**.
+
+*This row's own count:* **17 AGREES, 14 DIFFERS, 0 THE DERIVATION IS SILENT — 31 attributions.**
+
+**S-16** — source class: *Derived*.
+
+> A grace note opens no change point and belongs to no sounding set. It is published as an
+> *ornamental attachment* of its host note — the following main note for a grace before the
+> beat or on the beat, the preceding main note for a grace written after it — carrying its
+> spelled pitch and its notated form (slashed or unslashed, appoggiatura or acciaccatura where
+> the file says).
+
+*Named by:* 1/1.6(i) **AGREES**; 2/2.16 **DIFFERS**; 2/2.17 **DIFFERS**; 3/3.44 **DIFFERS**;
+3/3.57 **DIFFERS**; 4/4.10 **AGREES**; 4/4.22 **AGREES**; 4/4.37 **AGREES**; 5/5.4 **DIFFERS**;
+6/6.26 **DIFFERS**; 6/6.30 **DIFFERS**; 6/6.55 **DIFFERS**; 12/12.7 **AGREES**; 14/14.21
+**AGREES**; 21/21.11 **AGREES**.
+
+*This row's own count:* **7 AGREES, 8 DIFFERS, 0 THE DERIVATION IS SILENT — 15 attributions.**
+
+**S-17** — source class: *Derived*.
+
+> An ornament sign on a note (trill, mordent, turn, and their variants) leaves the note the
+> event: the note's onset and release are the change points, and the sign is published as an
+> attribute of that event, by name, with no realisation.
+
+*Named by:* **THE OUTGOING TEXT IS SILENT** — no outgoing statement of the population names this
+derived statement.
+
+*This row's own count:* **0 attributions.**
+
+**S-18** — source class: *Derived*.
+
+> A note marked not to be played, and a note marked invisible, are ineligible (S-15). They are
+> carried beside L1's output as *silent notes*, labelled by which flag excluded them, and no
+> layer consumes them as evidence.
+
+*Named by:* 1/1.1 **AGREES**; 1/1.6(i) **AGREES**; 2/2.10 **AGREES**; 3/3.3 **AGREES**; 3/3.4
+**AGREES**; 3/3.6 **AGREES**; 3/3.13 **AGREES**; 3/3.14(i) **AGREES**; 3/3.15 **AGREES**; 3/3.16
+**AGREES**; 3/3.17 **AGREES**; 3/3.21 **AGREES**; 3/3.24 **AGREES**; 3/3.39 **AGREES**; 3/3.51
+**AGREES**; 3/3.54 **AGREES**; 4/4.1 **AGREES**; 4/4.4 **AGREES**; 4/4.5 **AGREES**; 4/4.10
+**DIFFERS**; 4/4.21 **AGREES**; 4/4.22 **AGREES**; 4/4.30 **AGREES**; 4/4.32 **AGREES**; 4/4.37
+**AGREES**; 5/5.5 **AGREES**; 5/5.14 **AGREES**; 5/5.33 **AGREES**; 6/6.16 **AGREES**; 14/14.2
+**AGREES**; 14/14.9 **AGREES**; 15/15.12 **AGREES**.
+
+*This row's own count:* **31 AGREES, 1 DIFFERS, 0 THE DERIVATION IS SILENT — 32 attributions.**
+
+**S-19** — source class: *Derived*.
+
+> Cue size (a note written small) does not by itself change eligibility. A small note that is
+> visible, played, pitched and of positive duration is eligible.
+
+*Named by:* 3/3.4 **DIFFERS**; 3/3.60 **DIFFERS**.
+
+*This row's own count:* **0 AGREES, 2 DIFFERS, 0 THE DERIVATION IS SILENT — 2 attributions.**
+
+**S-20** — source class: *Derived*.
+
+> An unpitched note (percussion, a rhythm-only staff) is ineligible and enters no sounding set.
+> It is not published by L1 at all.
+
+*Named by:* 2/2.10 **DIFFERS**; 3/3.2 **AGREES**; 3/3.13 **DIFFERS**; 3/3.15 **AGREES**; 3/3.21
+**DIFFERS**; 4/4.7 **AGREES**; 10/10.7 **AGREES**.
+
+*This row's own count:* **4 AGREES, 3 DIFFERS, 0 THE DERIVATION IS SILENT — 7 attributions.**
+
+**S-21** — source class: *Derived (the interim treatment)*.
+
+> Tremolo. This session does not derive the eligibility of tremolo-marked notes: no staged file
+> carries one (declared in the brief), and the two notational cases — a measured tremolo
+> abbreviating repeated notes, and an unmeasured tremolo sustaining a sonority — have different
+> sounding sets. Written as OQ-2 (face (a)); L1 publishes the mark (S-7) and treats the notated
+> note as one event until ruled.
+
+*Named by:* **THE OUTGOING TEXT IS SILENT** — no outgoing statement of the population names this
+derived statement.
+
+*This row's own count:* **0 attributions.**
+
+**S-22** — source class: *Derived*.
+
+> A non-grace note with zero notated duration is a record defect: it is ineligible, and the bar
+> carries a defect flag (S-10).
+
+*Named by:* **THE OUTGOING TEXT IS SILENT** — no outgoing statement of the population names this
+derived statement.
+
+*This row's own count:* **0 attributions.**
+
+**S-23** — source class: *Derived*.
+
+> A group of notes joined by ties is one event. Its onset is the first note's onset; its
+> release is the last note's release; its spelled pitch is the first note's; its voice is the
+> first note's. Only the first note opens an onset change point; only the last note opens a
+> release change point; the intermediate notes open nothing.
+
+*Named by:* 1/1.1 **AGREES**; 1/1.4(i) **AGREES**; 1/1.7 **DIFFERS**; 3/3.6 **AGREES**; 3/3.11
+**AGREES**; 3/3.18 **AGREES**; 3/3.38 **AGREES**; 3/3.40 **AGREES**; 3/3.47 **AGREES**; 3/3.52
+**AGREES**; 3/3.59 **AGREES** *on the tie half*; 3/3.59 **THE DERIVATION IS SILENT** *on the
+horizon half*; 3/3.61 **AGREES**; 4/4.23 **AGREES**; 4/4.37 **AGREES**; 6/6.31 **AGREES**; 7/7.19
+**AGREES**; 11/11.6 **AGREES**; 14/14.20 **AGREES**; 14/14.22 **THE DERIVATION IS SILENT**;
+19/19.18 **AGREES**; 20/20.16 **AGREES**; 21/21.10 **AGREES**; 23/23.4 **AGREES**.
+
+*This row's own count:* **21 AGREES, 1 DIFFERS, 2 THE DERIVATION IS SILENT — 24 attributions.**
+
+**S-24** — source class: *Derived*.
+
+> A tie link in the record counts as a tie only if the two notes have the same spelled pitch,
+> are in the same notated voice (or, across a staff change in one part, the same part), and are
+> adjacent in that voice with no event between them. A link failing any of these is not a tie:
+> the two notes are two events, and the bar carries a defect flag naming the link.
+
+*Named by:* 3/3.12 **AGREES**; 22/22.12 **AGREES**; 29/29.7 **AGREES**.
+
+*This row's own count:* **3 AGREES, 0 DIFFERS, 0 THE DERIVATION IS SILENT — 3 attributions.**
+
+**S-25** — source class: *Derived*.
+
+> A tie whose continuation is missing (the file marks a tie start with no tie end, or the
+> linked note does not exist) ends the event at the first note's notated release; the bar
+> carries a defect flag.
+
+*Named by:* 18/18.9 **DIFFERS**; 18/18.15 **AGREES**; 22/22.5 **DIFFERS**.
+
+*This row's own count:* **1 AGREES, 2 DIFFERS, 0 THE DERIVATION IS SILENT — 3 attributions.**
+
+**S-26** — source class: *Derived*.
+
+> A tie across a bar line creates no change point at the bar line. The bar line's boundary
+> evidence is then not attached to a change point but to the positioned marks list (S-41), and
+> the metric class of the bar's start is published there too.
+
+*Named by:* **THE OUTGOING TEXT IS SILENT** — no outgoing statement of the population names this
+derived statement.
+
+*This row's own count:* **0 attributions.**
+
+**S-27** — source class: *Derived*.
+
+> A tie whose continuation lies across a repeat sign or in a different ending is honoured as
+> the record links it: the event's release is the linked note's release, in notated order.
+> Whether the analysis works in notated or unfolded order is OQ-1; until ruled, L1 publishes
+> over notated order and additionally publishes the *junction adjacencies* the repeat structure
+> implies (for each end-repeat and each ending, which slice would follow which on which pass),
+> so that L2 can read across a repeat without L1 having decided the order.
+
+*Named by:* **THE OUTGOING TEXT IS SILENT** — no outgoing statement of the population names this
+derived statement.
+
+*This row's own count:* **0 attributions.**
+
+**S-28** — source class: *Derived (the charter fixes exhaustiveness; this fixes the equality test)*.
+
+> Two onsets or releases are the same change point if and only if their metric positions are
+> equal as rational numbers. There is no tolerance: two events a thirty-second apart are two
+> change points, and the slice between them is a slice.
+
+*Named by:* 1/1.18 **THE DERIVATION IS SILENT**; 2/2.4 **AGREES**; 2/2.6 **AGREES**; 2/2.18
+**AGREES**; 2/2.23 **AGREES**; 2/2.25 **DIFFERS**; 3/3.30 **AGREES**; 3/3.34 **AGREES**; 3/3.50
+**AGREES**; 4/4.9 **DIFFERS**; 5/5.39 **AGREES**; 6/6.2 **DIFFERS**; 6/6.6 **AGREES**; 6/6.7(i)
+**AGREES**; 6/6.8 **AGREES**; 6/6.12 **AGREES**; 6/6.14 **AGREES**; 6/6.24 **AGREES**; 6/6.25
+**AGREES**; 6/6.26 **AGREES**; 6/6.28 **AGREES**; 6/6.30 **AGREES**; 6/6.37 **AGREES**; 6/6.38
+**AGREES**; 6/6.46 **AGREES**; 6/6.48 **AGREES**; 6/6.51 **AGREES**; 6/6.52 **AGREES**; 6/6.54(i)
+**AGREES**; 6/6.55 **AGREES**; 6/6.57 **AGREES**; 6/6.58 **AGREES**; 7/7.4 **AGREES**; 7/7.5
+**AGREES**; 7/7.13 **DIFFERS**; 7/7.15 **DIFFERS**; 7/7.17 **AGREES**; 7/7.22 **AGREES**; 7/7.27
+**AGREES**; 10/10.27 **DIFFERS**; 10/10.29 **DIFFERS**; 11/11.1 **AGREES**; 12/12.6 **DIFFERS**;
+13/13.6 **AGREES**; 14/14.1 **AGREES**; 14/14.3 **AGREES**; 14/14.4 **AGREES**; 14/14.10
+**AGREES**; 14/14.19 **AGREES**; 14/14.23 **AGREES**; 14/14.25 **DIFFERS**; 17/17.1 **AGREES**;
+17/17.8 **AGREES**; 17/17.12 **AGREES**; 17/17.13 **DIFFERS**; 18/18.16 **AGREES**; 18/18.17
+**AGREES**; 18/18.22 **AGREES**; 18/18.23 **AGREES**; 19/19.6 **DIFFERS**; 19/19.14 **DIFFERS**;
+20/20.12 **DIFFERS**; 21/21.1 **AGREES**; 22/22.19 **AGREES**; 23/23.8 **AGREES**; 29/29.10
+**AGREES**; 29/29.11 **AGREES**.
+
+*This row's own count:* **53 AGREES, 13 DIFFERS, 1 THE DERIVATION IS SILENT — 67 attributions.**
+
+**S-29** — source class: *Derived*.
+
+> A slice is the half-open interval from its change point to the next: a change point belongs
+> to the slice it starts. The sounding set of the slice starting at t is the set of eligible
+> events whose onset is at or before t and whose release is after t.
+
+*Named by:* 1/1.5(i) **AGREES**; 1/1.11 **THE DERIVATION IS SILENT**; 1/1.18 **THE DERIVATION IS
+SILENT**; 1/1.19 **AGREES**; 2/2.4 **AGREES**; 2/2.5 **AGREES**; 2/2.14 **AGREES**; 3/3.18
+**AGREES**; 3/3.26 **THE DERIVATION IS SILENT**; 3/3.33 **AGREES**; 3/3.39 **AGREES**; 3/3.47
+**AGREES**; 4/4.3 **AGREES**; 4/4.8 **DIFFERS**; 4/4.9 **DIFFERS**; 4/4.20 **DIFFERS**; 4/4.24
+**THE DERIVATION IS SILENT**; 4/4.31 **THE DERIVATION IS SILENT**; 5/5.7 **AGREES**; 5/5.13
+**AGREES**; 5/5.18 **AGREES**; 5/5.24 **AGREES**; 5/5.26 **THE DERIVATION IS SILENT**; 6/6.1
+**AGREES**; 6/6.4 **AGREES**; 6/6.29 **AGREES**; 6/6.31 **AGREES**; 6/6.32 **AGREES**; 7/7.5
+**AGREES**; 7/7.7 **AGREES**; 7/7.30 **AGREES**; 9/9.13 **DIFFERS**; 10/10.31 **AGREES**; 11/11.1
+**AGREES**; 12/12.20 **AGREES**; 12/12.22 **THE DERIVATION IS SILENT**; 13/13.4 **DIFFERS**;
+13/13.10 **AGREES**; 14/14.1 **AGREES**; 14/14.10 **AGREES**; 14/14.16 **DIFFERS**; 14/14.17
+**DIFFERS**; 15/15.1 **AGREES**; 18/18.17 **AGREES**; 19/19.6 **AGREES**; 19/19.7 **DIFFERS**;
+19/19.29 **AGREES**; 22/22.1 **AGREES**; 29/29.12 **AGREES**.
+
+*This row's own count:* **34 AGREES, 8 DIFFERS, 7 THE DERIVATION IS SILENT — 49 attributions.**
+
+**S-30** — source class: *Derived*.
+
+> No slice has zero length. This holds by construction, since change points are distinct
+> positions (S-28) and grace notes have none (S-16); L1 asserts it as an invariant and treats a
+> violation as an internal error, never as a case to handle.
+
+*Named by:* 2/2.14 **AGREES**; 2/2.16 **DIFFERS**; 6/6.29 **AGREES**; 6/6.38 **AGREES**; 11/11.10
+**THE DERIVATION IS SILENT**; 14/14.21 **AGREES**; 17/17.13 **DIFFERS**.
+
+*This row's own count:* **4 AGREES, 2 DIFFERS, 1 THE DERIVATION IS SILENT — 7 attributions.**
+
+**S-31** — source class: *Given (the charter's covering, gapless) and derived (the non-merging)*.
+
+> A silent slice — one whose sounding set is empty — is published as a slice like any other,
+> with its empty set, and is not merged into a neighbour.
+
+*Named by:* 2/2.5 **AGREES**; 2/2.14 **AGREES**; 2/2.18 **AGREES**; 2/2.19 **AGREES**; 2/2.20
+**DIFFERS**; 3/3.51 **DIFFERS**; 6/6.1 **AGREES**; 6/6.11 **AGREES**; 6/6.15 **AGREES**; 6/6.27
+**AGREES**; 6/6.29 **AGREES**; 6/6.31 **AGREES**; 6/6.37 **AGREES**; 6/6.47 **AGREES**; 7/7.5
+**AGREES**; 7/7.14 **DIFFERS**; 7/7.30 **AGREES**; 8/8.7 **AGREES**; 9/9.11 **AGREES**; 10/10.16
+**AGREES**; 10/10.23 **AGREES**; 10/10.37 **AGREES**; 12/12.6 **AGREES**; 12/12.20 **AGREES**;
+13/13.10 **AGREES**; 19/19.26 **AGREES**; 19/19.29 **AGREES**; 20/20.10 **AGREES**; 28/28.2
+**AGREES**; 29/29.14 **AGREES**.
+
+*This row's own count:* **27 AGREES, 3 DIFFERS, 0 THE DERIVATION IS SILENT — 30 attributions.**
+
+**S-32** — source class: *Given (D-030/D-031 and the charter), derived in the marking*.
+
+> The published slice list covers the working span exactly. Its first change point is the
+> span's start; its last is the span's end. If no eligible event begins at the span's start,
+> the first slice is a silent slice or a slice whose sounding set consists of events that began
+> before the span (marked *entered sounding*); events that release after the span's end are
+> marked *cut by the span*.
+
+*Named by:* 2/2.5 **AGREES**; 2/2.13 **DIFFERS**; 2/2.15 **DIFFERS**; 2/2.20 **DIFFERS**; 2/2.25
+**DIFFERS**; 3/3.1 **AGREES**; 3/3.8 **AGREES**; 3/3.27 **AGREES** *on the span half*; 3/3.27
+**THE DERIVATION IS SILENT** *on cost*; 3/3.58 **AGREES**; 5/5.2 **AGREES**; 5/5.4 **DIFFERS**;
+5/5.9 **AGREES**; 5/5.15 **THE DERIVATION IS SILENT**; 5/5.24 **AGREES**; 5/5.27 **AGREES**;
+5/5.36 **THE DERIVATION IS SILENT**; 6/6.2 **AGREES**; 6/6.9 **AGREES**; 6/6.15 **AGREES**;
+6/6.19 **AGREES**; 6/6.35 **DIFFERS**; 6/6.44 **THE DERIVATION IS SILENT**; 6/6.45 **AGREES**;
+7/7.3 **THE DERIVATION IS SILENT**; 7/7.5 **DIFFERS**; 7/7.7 **AGREES**; 7/7.8 **AGREES**; 7/7.9
+**DIFFERS**; 7/7.11 **DIFFERS**; 7/7.12 **AGREES**; 7/7.14 **DIFFERS**; 7/7.15 **DIFFERS**;
+7/7.16 **THE DERIVATION IS SILENT**; 7/7.17 **THE DERIVATION IS SILENT**; 7/7.23 **AGREES**;
+7/7.29 **DIFFERS**; 9/9.15 **THE DERIVATION IS SILENT**; 10/10.5 **THE DERIVATION IS SILENT**;
+11/11.10 **THE DERIVATION IS SILENT**; 13/13.10 **AGREES**; 13/13.11 **AGREES**; 13/13.12
+**AGREES**; 14/14.6 **AGREES**; 14/14.7 **THE DERIVATION IS SILENT**; 14/14.13 **THE DERIVATION
+IS SILENT**; 14/14.14 **AGREES**; 15/15.7 **THE DERIVATION IS SILENT**; 15/15.8 **AGREES**;
+18/18.1 **AGREES**; 18/18.2 **AGREES**; 18/18.3(i) **AGREES**; 18/18.3(ii) **THE DERIVATION IS
+SILENT**; 18/18.4 **AGREES**; 18/18.5 **THE DERIVATION IS SILENT**; 18/18.6 **THE DERIVATION IS
+SILENT**; 18/18.7 **AGREES**; 18/18.8 **THE DERIVATION IS SILENT**; 18/18.9 **DIFFERS**; 18/18.15
+**AGREES**; 18/18.20 **THE DERIVATION IS SILENT**; 18/18.22 **DIFFERS**; 18/18.29 **AGREES**;
+18/18.30 **THE DERIVATION IS SILENT**; 18/18.32 **AGREES**; 18/18.33 **AGREES**; 18/18.35 **THE
+DERIVATION IS SILENT**; 18/18.41 **THE DERIVATION IS SILENT**; 18/18.42 **AGREES**; 18/18.43
+**AGREES**; 19/19.7 **DIFFERS**; 19/19.10 **AGREES**; 20/20.5 **AGREES**; 22/22.5 **DIFFERS**;
+22/22.10 **THE DERIVATION IS SILENT**; 29/29.10 **AGREES**; 29/29.12 **AGREES**.
+
+*This row's own count:* **39 AGREES, 16 DIFFERS, 22 THE DERIVATION IS SILENT — 77 attributions.**
+
+**S-33** — source class: *Given*.
+
+> Slice identity is the set of events (by note identity), not the set of pitch classes and not
+> the set of pitches: a unison or octave doubling beginning or ending is a change point, and
+> two slices with the same pitch-class content but different event sets are different slices.
+
+*Named by:* 1/1.9 **DIFFERS**; 2/2.11 **AGREES**; 2/2.12 **AGREES**; 3/3.14(ii) **AGREES**;
+3/3.19 **AGREES**; 3/3.24 **AGREES**; 3/3.46 **AGREES**; 3/3.62 **AGREES**; 4/4.1 **AGREES**;
+4/4.4 **AGREES**; 4/4.5 **AGREES**; 4/4.12 **DIFFERS**; 4/4.14 **DIFFERS**; 4/4.18 **DIFFERS**;
+4/4.21 **AGREES**; 4/4.23 **AGREES**; 4/4.30 **AGREES**; 4/4.33 **AGREES**; 6/6.1 **AGREES**;
+6/6.4 **AGREES**; 6/6.11 **AGREES**; 6/6.31 **AGREES**; 6/6.34 **AGREES**; 6/6.44 **AGREES**;
+6/6.46 **AGREES**; 6/6.59 **AGREES**; 7/7.30 **AGREES**; 9/9.11 **AGREES**; 9/9.13 **DIFFERS**;
+11/11.1 **AGREES**; 12/12.10(ii) **DIFFERS**; 12/12.11 **AGREES**; 12/12.13 **DIFFERS**; 12/12.20
+**AGREES**; 13/13.4 **DIFFERS**; 14/14.1 **AGREES**; 14/14.2 **AGREES**; 14/14.12 **DIFFERS**;
+14/14.17 **DIFFERS**; 14/14.19 **AGREES**; 15/15.1 **AGREES**; 15/15.12 **AGREES**; 17/17.1
+**DIFFERS**; 17/17.14 **DIFFERS**; 18/18.17 **AGREES**; 18/18.18(ii) **AGREES**; 18/18.19
+**AGREES**; 18/18.23 **AGREES**; 18/18.26 **AGREES**; 18/18.29 **AGREES**; 19/19.14 **DIFFERS**;
+20/20.8 **AGREES**; 21/21.8 **DIFFERS**; 22/22.1 **AGREES**; 22/22.3 **AGREES**; 22/22.11
+**AGREES**; 22/22.13 **AGREES**; 22/22.14 **AGREES**; 22/22.19 **AGREES**; 24/24.19 **DIFFERS**;
+26/26.4 **AGREES**; 27/27.7 **AGREES**; 27/27.13 **AGREES**; 28/28.8 **AGREES**; 29/29.4
+**AGREES**; 29/29.8 **AGREES**.
+
+*This row's own count:* **51 AGREES, 15 DIFFERS, 0 THE DERIVATION IS SILENT — 66 attributions.**
+
+**S-34** — source class: *Derived*.
+
+> L1 derives, from each time signature in force, a *notated metrical hierarchy*: an ordered
+> list of levels, each a period and a phase within the bar, from the bar downward. For a simple
+> meter with numerator 2 or 3: the bar; the beat (the denominator's value); then successive
+> halvings of the beat. For a simple meter with numerator 4: the bar; the half-bar; the beat;
+> then halvings. For a compound meter (numerator 6, 9, 12 over 8 or 16): the bar; for 12, the
+> half-bar; the dotted beat (three denominators); the denominator; then halvings. For other
+> numerators (5, 7, and additive signatures) L1 publishes only the bar and the denominator
+> levels. Halvings continue down to the finest notated division present in the score.
+
+*Named by:* 18/18.18(i) **AGREES**; 18/18.18(ii) **AGREES**; 20/20.12 **AGREES**.
+
+*This row's own count:* **3 AGREES, 0 DIFFERS, 0 THE DERIVATION IS SILENT — 3 attributions.**
+
+**S-35** — source class: *Derived (the charter gives that it is a class)*.
+
+> The metric strength class of a change point is the *highest* level of the hierarchy in force
+> at which the change point's position is a beat of that level; it is published as an ordinal
+> (0 for the bar, 1 for the next level down, and so on) together with the level's period, so
+> that classes from different signatures are comparable by period as well as by rank. A
+> position on no level (a tuplet subdivision that aligns with no halving) receives the class
+> *off-grid*, ranked below every level.
+
+*Named by:* 4/4.11 **DIFFERS**; 4/4.28 **DIFFERS**; 6/6.40 **AGREES**; 6/6.41 **DIFFERS**; 6/6.42
+**DIFFERS**; 9/9.2 **AGREES**; 9/9.6 **DIFFERS**; 9/9.17 **DIFFERS**; 9/9.24 **AGREES**; 9/9.31
+**DIFFERS**; 11/11.3 **AGREES**; 11/11.6 **AGREES**; 11/11.9 **AGREES**; 11/11.17 **AGREES**;
+12/12.12(i) **AGREES**; 12/12.12(ii) **DIFFERS**; 14/14.8 **AGREES**; 15/15.4 **AGREES**;
+17/17.12 **AGREES**; 19/19.12 **DIFFERS**; 19/19.24 **AGREES**; 20/20.13 **AGREES**; 21/21.6
+**AGREES**; 21/21.8 **AGREES**; 21/21.10 **AGREES**; 22/22.2 **AGREES**; 22/22.3 **AGREES**;
+23/23.1 **AGREES**; 24/24.8 **AGREES**.
+
+*This row's own count:* **20 AGREES, 9 DIFFERS, 0 THE DERIVATION IS SILENT — 29 attributions.**
+
+**S-36** — source class: *Derived*.
+
+> In an anacrusis — a bar marked irregular whose actual length is shorter than the signature's
+> bar — positions are assigned to levels by aligning the bar's *end* with the end of a nominal
+> bar: the offset used for the hierarchy is (nominal length − actual length + offset from the
+> bar's start). The bar's start is therefore not class 0 unless the alignment makes it so, and
+> the first full bar's start is class 0.
+
+*Named by:* 12/12.23 **AGREES**; 23/23.1 **AGREES**; 25/25.9 **AGREES**.
+
+*This row's own count:* **3 AGREES, 0 DIFFERS, 0 THE DERIVATION IS SILENT — 3 attributions.**
+
+**S-37** — source class: *Derived*.
+
+> At a time-signature change, the hierarchy in force changes at the change's position; a change
+> point at that position takes its class from the new hierarchy; the bar containing the change
+> is measured from the change's position.
+
+*Named by:* **THE OUTGOING TEXT IS SILENT** — no outgoing statement of the population names this
+derived statement.
+
+*This row's own count:* **0 attributions.**
+
+**S-38** — source class: *Given (charter), derived in the consequence*.
+
+> L1 publishes the *notated* metric strength class only. Where the sounding accent disagrees
+> with the notated meter (hemiola, syncopation, a written meter that differs from the felt
+> one), L1 publishes nothing about it: the disagreement is a reading of the music and belongs
+> to a later layer.
+
+*Named by:* **THE OUTGOING TEXT IS SILENT** — no outgoing statement of the population names this
+derived statement.
+
+*This row's own count:* **0 attributions.**
+
+**S-39** — source class: *Given (the five kinds), derived (placement and witnesses)*.
+
+> Per change point, L1 publishes a set of boundary flags, each with its witnesses: BAR-LINE
+> (the change point is a bar start; carrying the bar-line type — single, double, final); REPEAT
+> (a start-repeat, an end-repeat with its count, an ending start, an ending end, at this
+> position); FERMATA (an event bearing a fermata *releases* at this change point; or a
+> fermata-bearing rest's silence *ends* here; or a fermata stands on the bar line at this
+> position); REST-BEGINS (a notated voice's silence begins at this change point, by rest or by
+> unwritten gap, naming the voice); and ALL-SILENT (the slice starting here is a silent slice).
+
+*Named by:* 1/1.21 **THE DERIVATION IS SILENT**; 1/1.24(i) **AGREES**; 6/6.47 **AGREES**; 8/8.5
+**DIFFERS**; 8/8.6 **DIFFERS**; 8/8.7 **AGREES**; 9/9.2 **AGREES**; 9/9.8 **DIFFERS**; 9/9.9
+**AGREES**; 9/9.14 **DIFFERS**; 9/9.16 **DIFFERS**; 9/9.21 **THE DERIVATION IS SILENT**; 9/9.24
+**AGREES**; 9/9.27 **THE DERIVATION IS SILENT**; 9/9.28 **DIFFERS**; 9/9.32 **AGREES**; 9/9.33
+**THE DERIVATION IS SILENT**; 10/10.9 **DIFFERS**; 10/10.10 **DIFFERS**; 10/10.2 **THE DERIVATION
+IS SILENT**; 10/10.3 **AGREES**; 10/10.4 **DIFFERS**; 10/10.18 **DIFFERS**; 10/10.20 **THE
+DERIVATION IS SILENT**; 10/10.21 **THE DERIVATION IS SILENT**; 10/10.23 **AGREES**; 10/10.28
+**AGREES**; 10/10.30 **AGREES**; 10/10.32 **DIFFERS**; 10/10.33 **DIFFERS**; 10/10.37 **AGREES**;
+10/10.38 **AGREES**; 10/10.41 **DIFFERS**; 10/10.43 **AGREES**; 10/10.49 **THE DERIVATION IS
+SILENT**; 10/10.53 **DIFFERS**; 11/11.3 **AGREES**; 11/11.11 **AGREES**; 11/11.12 **DIFFERS**;
+11/11.17 **AGREES**; 12/12.4 **AGREES**; 12/12.5 **AGREES**; 12/12.6 **AGREES**; 12/12.15 **THE
+DERIVATION IS SILENT**; 12/12.21 **DIFFERS**; 13/13.2 **AGREES**; 13/13.3 **AGREES**; 13/13.8
+**DIFFERS**; 13/13.9 **DIFFERS**; 13/13.14 **DIFFERS**; 13/13.19 **AGREES**; 13/13.20 **AGREES**;
+14/14.18 **AGREES**; 19/19.13 **DIFFERS**; 20/20.9 **AGREES**; 20/20.10 **AGREES**; 21/21.5
+**AGREES**; 22/22.6 **AGREES**; 23/23.3 **AGREES**; 24/24.16 **AGREES**; 27/27.10 **AGREES**.
+
+*This row's own count:* **32 AGREES, 20 DIFFERS, 9 THE DERIVATION IS SILENT — 61 attributions.**
+
+**S-40** — source class: *Derived*.
+
+> Several marks at one change point are published as several flags in the set; nothing is
+> collapsed to a single "boundary strength". A repeat sign coinciding with a double bar and a
+> fermata yields three flags.
+
+*Named by:* 8/8.5 **DIFFERS**; 8/8.6 **DIFFERS**; 9/9.23 **DIFFERS**; 9/9.28 **DIFFERS**; 9/9.33
+**DIFFERS**; 10/10.10 **DIFFERS**; 10/10.21 **THE DERIVATION IS SILENT**; 10/10.22 **DIFFERS**;
+10/10.24 **DIFFERS**; 10/10.26 **DIFFERS**; 10/10.28 **DIFFERS**; 10/10.32 **DIFFERS**; 10/10.33
+**DIFFERS**; 10/10.37 **DIFFERS**; 10/10.41 **DIFFERS**; 10/10.53 **DIFFERS**; 12/12.21
+**DIFFERS**; 13/13.3 **DIFFERS**; 13/13.8 **DIFFERS**; 13/13.9 **DIFFERS**; 19/19.13 **DIFFERS**;
+19/19.21 **AGREES**; 21/21.5 **DIFFERS**; 22/22.2 **DIFFERS**; 22/22.6 **DIFFERS**; 25/25.5
+**AGREES**; 26/26.3 **AGREES**; 27/27.10 **AGREES**.
+
+*This row's own count:* **4 AGREES, 23 DIFFERS, 1 THE DERIVATION IS SILENT — 28 attributions.**
+
+**S-41** — source class: *Derived*.
+
+> A boundary mark that stands at a position that is not a change point — a double bar mid-bar,
+> a fermata over a bar line every voice ties across, a repeat sign at a bar line under a held
+> chord — is published in a *positioned marks list*: each mark with its position, its kind and
+> its witnesses, and with the metric strength class of its position. The marks list is a second
+> L1 output beside the per-change-point flags, and the two never duplicate a mark.
+
+*Named by:* 20/20.3 **AGREES**; 20/20.7 **AGREES**; 20/20.9 **AGREES**.
+
+*This row's own count:* **3 AGREES, 0 DIFFERS, 0 THE DERIVATION IS SILENT — 3 attributions.**
+
+**S-42** — source class: *Derived*.
+
+> A repeat whose ending differs on the second pass (voltas) is published as REPEAT flags at the
+> ending's start and end, with the ending numbers, and as junction adjacencies (S-27). L1 does
+> not publish which ending "follows" the repeated section; both do, on different passes, and
+> the flags say which pass.
+
+*Named by:* **THE OUTGOING TEXT IS SILENT** — no outgoing statement of the population names this
+derived statement.
+
+*This row's own count:* **0 attributions.**
+
+**S-43** — source class: *Derived — an extension, for ruling*.
+
+> This derivation proposes two additions to the charter's five kinds, as evidence and not as
+> decisions: a TIME-SIGNATURE-CHANGE flag and a KEY-SIGNATURE-CHANGE flag at the position of a
+> change. Both are notated, both are commonly used by composers to mark a section, and the
+> second is the one place a key signature enters L1 — as the *fact that it changed*, never as
+> its value.
+
+*Named by:* 10/10.15 **AGREES**; 10/10.23 **AGREES**; 10/10.35 **AGREES**; 11/11.16 **AGREES**;
+12/12.2(ii) **DIFFERS**; 13/13.2 **AGREES**; 13/13.3 **AGREES**; 17/17.3 **AGREES**; 20/20.9
+**AGREES**; 21/21.13 **AGREES**; 27/27.3 **AGREES**.
+
+*This row's own count:* **10 AGREES, 1 DIFFERS, 0 THE DERIVATION IS SILENT — 11 attributions.**
+
+**S-44** — source class: *Derived*.
+
+> Cues are computed at onset change points only (a release is never a cadential arrival), and
+> every cue is defined over the *bass*, which at a slice is the lowest sounding pitch of that
+> slice's sounding set — not a notated voice.
+
+*Named by:* 1/1.9 **DIFFERS**; 4/4.4 **DIFFERS**; 4/4.17 **DIFFERS**; 4/4.28 **DIFFERS**; 8/8.3
+**AGREES**; 8/8.4 **AGREES**; 9/9.1 **AGREES**; 9/9.5(ii) **AGREES**; 9/9.7 **AGREES**; 9/9.12
+**DIFFERS**; 9/9.21 **THE DERIVATION IS SILENT**; 10/10.17 **AGREES**; 11/11.5 **AGREES**;
+12/12.11 **AGREES**; 12/12.14 **AGREES**; 12/12.19 **DIFFERS**; 13/13.7 **AGREES**; 15/15.4
+**AGREES**; 17/17.1 **DIFFERS**; 17/17.2 **AGREES**; 17/17.8 **DIFFERS**; 17/17.9 **DIFFERS**;
+17/17.10 **AGREES**; 17/17.14 **DIFFERS**; 21/21.7 **AGREES**; 22/22.2 **AGREES**; 24/24.19
+**AGREES**; 24/24.5 **AGREES**; 29/29.11 **AGREES**.
+
+*This row's own count:* **18 AGREES, 10 DIFFERS, 1 THE DERIVATION IS SILENT — 29 attributions.**
+
+**S-45** — source class: *Derived*.
+
+> BASS-FALLS-A-FIFTH (equivalently rises a fourth): at onset change point Z, let Y be the
+> latest earlier slice whose bass pitch class differs from Z's bass pitch class, searched back
+> no further than the cue window (S-48). The cue is true when Y's bass pitch class is seven
+> semitones above Z's bass pitch class modulo twelve (Y = Z + 7). Published with witnesses: the
+> two bass notes, the register of the motion (down a fifth, up a fourth, or across an octave),
+> and the slices Y and Z. The cue is not computed when no such Y exists in the window.
+
+*Named by:* 9/9.30 **AGREES**; 11/11.8 **DIFFERS**; 11/11.13 **AGREES**; 12/12.18 **AGREES**;
+12/12.27 **AGREES**; 21/21.4 **AGREES**; 21/21.7 **AGREES**.
+
+*This row's own count:* **6 AGREES, 1 DIFFERS, 0 THE DERIVATION IS SILENT — 7 attributions.**
+
+**S-46** — source class: *Derived*.
+
+> LEADING-TONE-RESOLVES: at onset change point Z, the cue is true when some eligible event in
+> the slice before Z, in a notated voice, is a semitone below Z's bass pitch class (modulo
+> twelve), and an event in the same notated voice onsets at Z on Z's bass pitch class (in any
+> octave). Published with witnesses: the two notes and the voice. Where the record carries no
+> voice below the staff (S-13), the same-voice condition is relaxed to *any note* and the
+> relaxation is published as part of the cue.
+
+*Named by:* 9/9.18 **AGREES**; 9/9.19 **AGREES**; 9/9.20 **DIFFERS**; 9/9.26 **AGREES**; 9/9.29
+**AGREES**; 9/9.30 **AGREES**; 10/10.25 **AGREES**; 10/10.42 **AGREES**; 11/11.13 **AGREES**;
+12/12.16 **THE DERIVATION IS SILENT**; 12/12.24 **AGREES**; 12/12.27 **AGREES**; 13/13.20
+**DIFFERS**; 15/15.19 **DIFFERS**; 21/21.4 **AGREES**.
+
+*This row's own count:* **11 AGREES, 3 DIFFERS, 1 THE DERIVATION IS SILENT — 15 attributions.**
+
+**S-47** — source class: *Derived*.
+
+> FOURTH-AND-SEVENTH-IN-THE-APPROACH: at onset change point Z, for each of two candidate
+> tonalities — T_I, whose tonic is Z's bass pitch class, and T_V, whose dominant is Z's bass
+> pitch class (tonic = bass − 7 modulo twelve) — the cue is true when both the fourth degree
+> and the seventh degree of that candidate (tonic + 5 and tonic + 11 modulo twelve) sound among
+> the eligible events of the slices within the cue window before Z. Published as two flags,
+> each named by its anchor (*I-anchored*, *V-anchored*), with witnesses. The candidate tonality
+> is the anchor and nothing more: L1 publishes no tonality.
+
+*Named by:* 8/8.2 **AGREES**; 9/9.19 **DIFFERS**; 9/9.25 **AGREES**; 9/9.26 **DIFFERS**; 9/9.30
+**AGREES**; 11/11.4 **AGREES**; 11/11.13 **AGREES**; 11/11.14 **DIFFERS**; 11/11.15 **AGREES**;
+12/12.25 **AGREES**; 15/15.18 **AGREES**.
+
+*This row's own count:* **8 AGREES, 3 DIFFERS, 0 THE DERIVATION IS SILENT — 11 attributions.**
+
+**S-48** — source class: *Measured — UNESTABLISHED, no value asserted*.
+
+> The cue window — how far before Z the approach is searched, for S-45's Y and for S-47's
+> degrees — is a parameter L1 carries. Its value is UNESTABLISHED for this project's
+> repertoire. The measurement that would set it: over the ground-truth corpora, the
+> distribution of the distance in tactus beats from the last sounding of the fourth and seventh
+> degrees to the annotated cadential arrival, and the recall of S-45 as a function of the
+> look-back. Until measured, L1 carries the published values — four beats for the degrees, one
+> bar for the bass anchor — as declared stand-ins.
+
+*Named by:* 4/4.28 **AGREES**; 5/5.20 **AGREES**; 10/10.46 **AGREES**; 10/10.47 **AGREES**;
+24/24.4 **AGREES**; 24/24.13 **AGREES**; 25/25.4 **AGREES**; 27/27.8 **AGREES**; 27/27.16
+**AGREES**; 28/28.5 **AGREES**; 29/29.5 **AGREES**; 29/29.6 **AGREES**.
+
+*This row's own count:* **12 AGREES, 0 DIFFERS, 0 THE DERIVATION IS SILENT — 12 attributions.**
+
+**S-49** — source class: *Derived*.
+
+> Every cue is published together with the interval content above the bass at Y and at Z — the
+> set of pitch classes sounding in each slice, expressed as semitone distances above the
+> slice's bass — so that a consumer can read the bass motion *in relation to what sounds above
+> it*. L1 publishes the set; it names no chord.
+
+*Named by:* 1/1.9 **DIFFERS**; 3/3.19 **AGREES**; 3/3.46 **AGREES**; 4/4.5 **AGREES**; 4/4.33
+**AGREES**; 12/12.13 **DIFFERS**; 14/14.12 **DIFFERS**.
+
+*This row's own count:* **4 AGREES, 3 DIFFERS, 0 THE DERIVATION IS SILENT — 7 attributions.**
+
+**S-50** — source class: *Derived*.
+
+> L1 publishes exactly: the slice list (S-29–S-33) with each slice's sounding set by event
+> identity; per change point, its metric strength class (S-35) and its boundary flag set
+> (S-39); the positioned marks list (S-41); the junction adjacencies (S-27); per onset change
+> point, the cue flags (S-45–S-47) with the interval content (S-49); the ornamental attachments
+> and ornament attributes (S-16, S-17); the silent-notes and annotation carriers (S-2, S-18);
+> and the defect flags (S-10, S-24, S-25). Every predicate is published with its witnesses. No
+> published field is named *boundary*, *cadence*, *phrase*, *chord*, *key*, *tonality*,
+> *degree* or *function*.
+
+*Named by:* 1/1.21 **AGREES**; 2/2.1 **AGREES**; 2/2.18 **AGREES**; 2/2.23 **AGREES**; 2/2.27
+**DIFFERS**; 3/3.19 **AGREES**; 4/4.18 **DIFFERS**; 4/4.19 **DIFFERS**; 4/4.26 **AGREES**; 6/6.3
+**AGREES**; 6/6.9 **AGREES**; 6/6.21 **DIFFERS**; 6/6.33 **DIFFERS**; 6/6.43 **AGREES**; 7/7.2
+**DIFFERS**; 7/7.25 **DIFFERS**; 8/8.1 **AGREES**; 8/8.3 **THE DERIVATION IS SILENT**; 8/8.5
+**DIFFERS**; 9/9.3 **AGREES**; 9/9.6 **DIFFERS**; 9/9.8 **DIFFERS**; 9/9.10 **AGREES**; 9/9.23
+**DIFFERS**; 10/10.8 **DIFFERS**; 10/10.9 **DIFFERS**; 10/10.2 **THE DERIVATION IS SILENT**;
+10/10.6 **DIFFERS**; 10/10.18 **DIFFERS**; 10/10.38 **AGREES**; 12/12.12(ii) **DIFFERS**;
+12/12.22 **THE DERIVATION IS SILENT**; 13/13.1 **DIFFERS**; 13/13.5 **AGREES**; 13/13.13
+**AGREES**; 13/13.15 **AGREES**; 13/13.16 **AGREES**; 14/14.16 **AGREES**; 15/15.3 **AGREES**;
+15/15.17 **AGREES**; 18/18.4 **THE DERIVATION IS SILENT**; 18/18.15 **DIFFERS**; 18/18.30 **THE
+DERIVATION IS SILENT**; 18/18.38 **AGREES**; 19/19.13 **AGREES**; 19/19.15 **AGREES**; 19/19.20
+**AGREES**; 19/19.21 **AGREES**; 19/19.23 **AGREES**; 20/20.11 **AGREES**; 20/20.14 **AGREES**;
+20/20.19 **DIFFERS**; 21/21.2 **AGREES**; 21/21.17 **AGREES**; 22/22.14 **AGREES**; 22/22.15
+**AGREES**; 22/22.16 **DIFFERS**; 23/23.4 **DIFFERS**; 23/23.5 **AGREES**; 23/23.9 **AGREES**;
+24/24.1 **AGREES**; 24/24.2 **DIFFERS**; 24/24.3 **AGREES**; 24/24.9 **AGREES**; 24/24.10
+**DIFFERS**; 24/24.12 **AGREES**; 24/24.15 **AGREES**; 24/24.16 **AGREES**; 24/24.18 **AGREES**;
+25/25.1 **AGREES**; 25/25.2 **AGREES**; 25/25.3 **AGREES**; 25/25.8 **AGREES**; 25/25.10
+**AGREES**; 25/25.6 **AGREES**; 25/25.7 **AGREES**; 25/25.11 **AGREES**; 25/25.12 **THE
+DERIVATION IS SILENT**; 26/26.3 **AGREES**; 27/27.1 **AGREES**; 27/27.5 **AGREES**; 27/27.7
+**AGREES**; 27/27.8 **AGREES**; 27/27.9 **AGREES**; 27/27.11 **AGREES**; 27/27.12 **AGREES**;
+27/27.13 **AGREES**; 27/27.14 **AGREES**; 27/27.15 **AGREES**; 27/27.18 **AGREES**; 28/28.1
+**AGREES**; 28/28.4 **AGREES**; 28/28.11 **THE DERIVATION IS SILENT**; 28/28.12 **DIFFERS**;
+29/29.1 **AGREES**; 29/29.2 **AGREES**; 29/29.8 **DIFFERS**; 29/29.9 **DIFFERS**.
+
+*This row's own count:* **65 AGREES, 26 DIFFERS, 7 THE DERIVATION IS SILENT — 98 attributions.**
+
+**S-51** — source class: *Derived (from the charter's ground)*.
+
+> The test for whether an L1 output is a *claim* the charter forbids: an output is a candidate
+> or evidence, not a claim, if and only if it is computable from L0 facts with no tonality,
+> chord or boundary as input, and it is published under a name that states the pattern detected
+> rather than a musical conclusion. By this test a cue is not a claim, a metric strength class
+> is not a claim, an anchored candidate tonality is not a claim, and a decided boundary or a
+> tonality label would be.
+
+*Named by:* 2/2.1 **AGREES**; 3/3.20 **AGREES**; 3/3.37 **AGREES**; 4/4.4 **AGREES**; 5/5.17
+**AGREES**; 6/6.6 **AGREES**; 6/6.10 **AGREES**; 6/6.23 **AGREES**; 6/6.36 **AGREES**; 8/8.1
+**AGREES**; 8/8.2 **AGREES**; 9/9.3 **AGREES**; 9/9.12 **AGREES**; 9/9.13 **DIFFERS**; 9/9.22
+**AGREES**; 9/9.25 **AGREES**; 9/9.26 **AGREES**; 9/9.29 **AGREES**; 9/9.32 **AGREES**; 10/10.1
+**AGREES**; 10/10.4 **AGREES**; 10/10.18 **AGREES**; 10/10.19 **AGREES**; 10/10.29 **DIFFERS**;
+10/10.34 **AGREES**; 10/10.40 **AGREES**; 11/11.2 **AGREES**; 11/11.6 **AGREES**; 11/11.14
+**DIFFERS**; 11/11.17 **AGREES**; 12/12.18 **AGREES**; 12/12.25 **DIFFERS**; 12/12.27 **AGREES**;
+12/12.28 **AGREES**; 13/13.2 **AGREES**; 13/13.4 **DIFFERS**; 14/14.3 **AGREES**; 14/14.17
+**DIFFERS**; 15/15.5 **AGREES**; 15/15.18 **DIFFERS**; 17/17.10 **DIFFERS**; 17/17.13
+**DIFFERS**; 18/18.14(ii) **AGREES**; 18/18.28 **AGREES**; 18/18.36 **AGREES**; 18/18.38
+**AGREES**; 19/19.8 **AGREES**; 19/19.15 **AGREES**; 19/19.28 **AGREES**; 20/20.11 **AGREES**;
+20/20.19 **AGREES**; 20/20.20 **AGREES**; 21/21.4 **AGREES**; 21/21.10 **AGREES**; 21/21.11
+**AGREES**; 22/22.8 **THE DERIVATION IS SILENT**; 22/22.15 **AGREES**; 22/22.20 **AGREES**;
+23/23.2 **AGREES**; 23/23.8 **AGREES**; 24/24.7 **AGREES**; 25/25.16 **AGREES**; 26/26.2
+**AGREES**; 27/27.9 **AGREES**; 28/28.1 **AGREES**; 28/28.5 **AGREES**; 28/28.7 **AGREES**;
+28/28.10 **AGREES**; 29/29.5 **AGREES**.
+
+*This row's own count:* **59 AGREES, 9 DIFFERS, 1 THE DERIVATION IS SILENT — 69 attributions.**
+
+**S-52** — source class: *Given (D-100, #19)*.
+
+> Every published item carries an establishment status: *notated* for a fact read from L0,
+> *computed* for a predicate over notated facts, and *provisional* for anything resting on an
+> UNESTABLISHED parameter (the cue window, S-48). A consumer may not put a provisional item
+> under load until the parameter is established.
+
+*Named by:* 4/4.28 **AGREES**; 5/5.20 **AGREES**; 9/9.27 **AGREES**; 10/10.4 **AGREES**; 10/10.6
+**AGREES**; 10/10.46 **AGREES**; 10/10.47 **AGREES**; 16/16.1 **AGREES**; 18/18.12 **AGREES**;
+18/18.15 **AGREES**; 18/18.38 **AGREES**; 19/19.4 **AGREES**; 19/19.8 **AGREES**; 19/19.11
+**AGREES**; 19/19.20 **AGREES**; 19/19.25 **AGREES**; 21/21.16 **AGREES**; 21/21.17 **AGREES**;
+22/22.17 **AGREES**; 22/22.20 **AGREES**; 23/23.10 **AGREES**; 23/23.2 **AGREES**; 23/23.6
+**AGREES**; 24/24.1 **AGREES**; 24/24.4 **AGREES**; 24/24.20 **AGREES**; 24/24.13 **AGREES**;
+24/24.14 **AGREES**; 24/24.15 **AGREES**; 24/24.16 **AGREES**; 24/24.17 **AGREES**; 25/25.1
+**AGREES**; 25/25.2 **AGREES**; 25/25.4 **AGREES**; 25/25.5 **AGREES**; 25/25.7 **AGREES**;
+25/25.16 **AGREES**; 25/25.15 **AGREES**; 27/27.2 **AGREES**; 27/27.6 **AGREES**; 27/27.11
+**AGREES**; 27/27.12 **AGREES**; 27/27.13 **AGREES**; 27/27.17 **AGREES**; 27/27.16 **AGREES**;
+28/28.3 **AGREES**; 28/28.4 **AGREES**; 28/28.13 **AGREES**; 29/29.1 **AGREES**; 29/29.2
+**AGREES**; 29/29.3 **AGREES**; 29/29.4 **AGREES**; 29/29.6 **AGREES**; 29/29.13 **AGREES**;
+29/29.14 **AGREES**.
+
+*This row's own count:* **55 AGREES, 0 DIFFERS, 0 THE DERIVATION IS SILENT — 55 attributions.**
+
+**S-53** — source class: *Given (charter and D-030), derived in the enumeration*.
+
+> Nothing L1 publishes depends on anything L2 decides. Where a statement above would have
+> wanted L2's answer — which slice is the harmonic arrival (S-44), whether a lowest pitch is
+> the harmonic bass (S-44), whether a silence continues a harmony (S-31), which pass of a
+> repeat is being read (S-27) — the want is met by publishing the candidates and the evidence
+> and leaving the decision to L2. L1 is therefore computable in one forward pass over the
+> working span, and the working span is the only thing a caller supplies beyond L0.
+
+*Named by:* 1/1.18 **THE DERIVATION IS SILENT**; 2/2.1 **AGREES**; 2/2.21 **THE DERIVATION IS
+SILENT**; 2/2.23 **AGREES**; 2/2.28 **AGREES**; 3/3.1 **AGREES**; 3/3.8 **AGREES**; 3/3.14(iii)
+**AGREES**; 3/3.20 **AGREES**; 3/3.22 **AGREES**; 3/3.23 **AGREES**; 3/3.28 **AGREES**; 3/3.30
+**AGREES**; 3/3.35 **AGREES** *on who decides*; 3/3.35 **THE DERIVATION IS SILENT** *on the clamp
+and the append-only property*; 3/3.36 **AGREES**; 3/3.47 **AGREES**; 3/3.58 **AGREES**; 4/4.20
+**AGREES**; 4/4.25 **AGREES**; 4/4.31 **AGREES**; 5/5.2 **AGREES**; 5/5.9 **AGREES**; 5/5.10
+**AGREES**; 5/5.11 **THE DERIVATION IS SILENT**; 5/5.12 **AGREES**; 5/5.17 **AGREES**; 5/5.18
+**AGREES**; 5/5.19 **AGREES**; 5/5.27 **AGREES**; 5/5.32 **THE DERIVATION IS SILENT**; 5/5.39
+**THE DERIVATION IS SILENT**; 5/5.40 **THE DERIVATION IS SILENT**; 6/6.3 **AGREES**; 6/6.10
+**AGREES**; 6/6.19 **AGREES**; 6/6.22 **AGREES**; 6/6.27 **AGREES**; 6/6.45 **AGREES**; 6/6.51
+**AGREES**; 7/7.3 **AGREES**; 7/7.4 **AGREES**; 7/7.6 **AGREES**; 7/7.12 **AGREES**; 7/7.18 **THE
+DERIVATION IS SILENT**; 7/7.23 **AGREES**; 7/7.24 **AGREES**; 7/7.28 **THE DERIVATION IS
+SILENT**; 8/8.9 **AGREES**; 9/9.11 **AGREES**; 9/9.14 **THE DERIVATION IS SILENT**; 9/9.15 **THE
+DERIVATION IS SILENT**; 9/9.16 **AGREES**; 9/9.22 **AGREES**; 10/10.5 **THE DERIVATION IS
+SILENT**; 10/10.19 **AGREES**; 11/11.2 **AGREES**; 11/11.4 **AGREES**; 13/13.5 **AGREES**;
+13/13.12 **THE DERIVATION IS SILENT**; 13/13.13 **AGREES**; 13/13.15 **AGREES**; 13/13.16
+**AGREES**; 14/14.6 **AGREES**; 14/14.7 **THE DERIVATION IS SILENT**; 14/14.13 **THE DERIVATION
+IS SILENT**; 14/14.14 **THE DERIVATION IS SILENT**; 14/14.15 **AGREES**; 15/15.3 **AGREES**;
+15/15.5 **AGREES**; 15/15.7 **THE DERIVATION IS SILENT**; 15/15.8 **THE DERIVATION IS SILENT**;
+15/15.9 **AGREES**; 15/15.13 **THE DERIVATION IS SILENT**; 18/18.1 **AGREES**; 18/18.3(i) **THE
+DERIVATION IS SILENT**; 18/18.5 **THE DERIVATION IS SILENT**; 18/18.7 **AGREES**; 18/18.8 **THE
+DERIVATION IS SILENT**; 18/18.10 **THE DERIVATION IS SILENT**; 18/18.11 **THE DERIVATION IS
+SILENT**; 18/18.13 **THE DERIVATION IS SILENT**; 18/18.14(i) **THE DERIVATION IS SILENT**;
+18/18.14(ii) **AGREES**; 18/18.16 **THE DERIVATION IS SILENT**; 18/18.19 **AGREES**; 18/18.20
+**THE DERIVATION IS SILENT**; 18/18.21 **AGREES**; 18/18.24 **AGREES**; 18/18.25 **AGREES**;
+18/18.26 **AGREES**; 18/18.27 **THE DERIVATION IS SILENT**; 18/18.28 **AGREES**; 18/18.31 **THE
+DERIVATION IS SILENT**; 18/18.34 **THE DERIVATION IS SILENT**; 18/18.37 **AGREES**; 18/18.40
+**THE DERIVATION IS SILENT**; 18/18.41 **THE DERIVATION IS SILENT**; 19/19.10 **THE DERIVATION IS
+SILENT**; 19/19.14 **AGREES**; 19/19.23 **AGREES**; 19/19.27 **AGREES**; 19/19.28 **AGREES**;
+20/20.5 **AGREES**; 20/20.14 **AGREES**; 21/21.1 **AGREES**; 21/21.2 **AGREES**; 22/22.3
+**AGREES**; 22/22.9 **AGREES**; 22/22.10 **THE DERIVATION IS SILENT**; 22/22.13 **AGREES**;
+22/22.15 **AGREES**; 23/23.3 **AGREES**; 23/23.5 **AGREES**; 23/23.7 **AGREES**; 24/24.9
+**AGREES**; 24/24.12 **AGREES**; 25/25.1 **AGREES**; 25/25.8 **AGREES**; 27/27.1 **AGREES**;
+27/27.5 **AGREES**; 27/27.15 **AGREES**; 27/27.18 **AGREES**; 28/28.1 **AGREES**.
+
+*This row's own count:* **89 AGREES, 0 DIFFERS, 35 THE DERIVATION IS SILENT — 124 attributions.**
+
+**S-54** — source class: *Derived (interim); open*.
+
+> Pedal marks. A release is the notated release of the event, whatever pedal mark spans it; the
+> pedal mark is published in the marks list (S-41) with its span, and every change point inside
+> the span carries a PEDAL-HELD attribute. Whether a sustained-pedal span should instead extend
+> releases to the pedal lift is OQ-3 (faces (a) and (c)); no staged file carries a pedal mark
+> (declared in the brief), and this derivation does not fill it.
+
+*Named by:* 4/4.15 **DIFFERS**; 4/4.37 **AGREES**; 12/12.8 **DIFFERS**; 17/17.2 **AGREES**;
+22/22.18 **AGREES**; 24/24.10 **AGREES**; 24/24.11 **AGREES**; 25/25.14 **AGREES**.
+
+*This row's own count:* **6 AGREES, 2 DIFFERS, 0 THE DERIVATION IS SILENT — 8 attributions.**
+
+---
+
+### 7c. The two-way check, stated as arithmetic
+
+**Both directions were run mechanically over §6's own axis lines and over the 54 rows above.
+Every figure here is a SUM taken at those rows by this writing; none is carried from §0, from a
+per-document table, or from any earlier close.**
+
+**DIRECTION ONE — every verdict §6 carries is placed in §7, or accounted for as unplaceable.**
+
+- §6's rows carry, summed at the axis lines: **884 AGREES + 240 DIFFERS + 180 THE DERIVATION IS
+  SILENT = 1,304 verdicts.**
+- Of those, **89** sit on rows that name no derived statement at all — the class (4) rows of §7a,
+  each a bare SILENT — and **cannot be placed against any S-number**. They are listed by identity at
+  §7a and are the whole of what §7 does not carry.
+- **1,304 − 89 = 1,215 verdicts remain to be placed.**
+
+**DIRECTION TWO — every attribution in §7 is found at the §6 row it cites.**
+
+- The 54 rows above carry, summed at their own count lines: **884 AGREES + 240 DIFFERS + 91 THE
+  DERIVATION IS SILENT = 1,215 attributions.**
+- **1,215 = 1,215. The two directions close exactly**, per verdict word as well as in total: AGREES
+  884 = 884, DIFFERS 240 = 240, and SILENT 180 − 89 = 91 = 91.
+- Every attribution in §7 names the document and row it was read from, so any one of them is
+  re-checkable at that row's own axis line.
+
+**THE COUNT OF §6 ROWS NAMING NO DERIVED STATEMENT, DERIVED AGAIN AND STATED, so that a reader can
+see that every row of §6 is either attributed in §7 or listed as naming none.** §6 holds **757
+statement-rows** — the count §13 records over the whole population. Of those, **89 name no derived
+statement** and are listed by identity at §7a class (4); the remaining **668 rows** carry the 1,215
+attributions placed above. **89 + 668 = 757.**
+
+**§0's RECORDED MECHANICAL FIGURES, QUOTED AS WHAT THEY WERE, AND THE ONE DIFFERENCE STATED WITH ITS
+CAUSE.** §0 records, as the figures the next writing was to start from: *"§6 carries 1,305
+verdicts"*, of which *"885 AGREES, 240 DIFFERS and 180 THE DERIVATION IS SILENT"*; *"89 rows name no
+derived statement at all"*; and *"the verdicts attributable to a named derived statement are 1,216 —
+885 + 240 + 91"*.
+
+| | §0's recorded figure | This section's derived sum | Difference |
+|---|---|---|---|
+| verdicts in §6 | 1,305 | **1,304** | −1 |
+| AGREES | 885 | **884** | −1 |
+| DIFFERS | 240 | **240** | 0 |
+| THE DERIVATION IS SILENT | 180 | **180** | 0 |
+| rows naming no derived statement | 89 | **89** | 0 |
+| attributable to a named statement | 1,216 | **1,215** | −1 |
+
+**THE CAUSE, IN ONE SENTENCE, FOUND AT ITS ROW: Row 12.26 names two derived statements, S-14 and S-3,
+and its axis line grades only S-14** — so a verdict counted for S-3 in document 12's own table has no
+verdict word at the row to carry, and that single AGREES is the whole of the −1 in every affected line
+above. **This is the expected shape of such a difference** — a per-row resolution moving a count — and
+it is not a defect; what would be a defect is a difference with no cause found, and there is none. The
+check was run per document: **the derived sums equal each document's own verdict table exactly at
+twenty-eight of the twenty-nine**, and document 12 is the sole exception, by one AGREES.
+
+**WHAT THIS CHECK DOES NOT ESTABLISH.** It establishes that the two sides of one tabulation
+reconcile, and nothing else. **It does not establish that any verdict is right** — every one is this
+session's authored reading of two texts and is re-placeable by the user at those texts (§16) — and it
+takes no position on the derivation, on the outgoing text, or on any disposition.
+
+**★ ELEVEN DERIVED STATEMENTS ARE NAMED BY NO OUTGOING STATEMENT IN THE WHOLE POPULATION**, and they
+are gathered here because the fact is easier to lose in the rows than to state once: **S-10, S-11,
+S-12, S-17, S-21, S-22, S-26, S-27, S-37, S-38 and S-42.** Read against §3's reach caveat, that is a
+statement about this population — 29 documents admitted by a named-plus-term-search cut whose reach is
+declared UNMEASURED — and **not** a claim that the record nowhere addresses them. Their subjects are:
+the record's internal-consistency assumption and the zero-duration defect (S-10, S-22); unwritten
+silence in a voice (S-11); an unmetered score (S-12); the ornament sign as an attribute (S-17);
+tremolo (S-21); a tie across a bar line and a tie across a repeat (S-26, S-27); a mid-bar signature
+change and the notated-versus-felt meter (S-37, S-38); and voltas (S-42). **Five of the eleven are
+subjects the derivation itself marks open** — S-21 at OQ-2, and S-27, S-37 and S-26's neighbours
+through OQ-1 and OQ-8 — which §8 records at those questions.
 
 ## 8. The open questions OQ-1 to OQ-17
 
@@ -14101,5 +15142,8 @@ ruling.
   to the audit.
 - **It measures nothing about the analysis.** No measurement was built, designed, scoped or run for
   it; the comparison is textual throughout.
-- **It is not complete over its population**, and §0 says exactly which documents are done and which
-  are untouched.
+- **It is now complete over its population and over its own sections**, and §0 says so — which is a
+  statement about coverage and about arithmetic, never about anything being settled. *(This bullet
+  formerly read "**It is not complete over its population**, and §0 says exactly which documents are
+  done and which are untouched", which was true of every earlier writing and is preserved here rather
+  than deleted, #12.)*
