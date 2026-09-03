@@ -4917,6 +4917,82 @@ comparison is the application act's placement of the rows the rulings name, and 
 decisions-register identity is allocated** — that register cannot accept one and
 `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
 
+## 3br. Ruling 63 — WHERE THE AMENDMENTS OF RULINGS 34–62 ARE WRITTEN: A NEW FILE, THE DERIVED L0/L1 SPECIFICATION AS AMENDED, BESIDE THE DERIVATION; THE DERIVATION'S BODY IS NEVER REWRITTEN AND IT GAINS D-674's TOP BANNER ONLY (Position two)
+
+**Taken 2026-09-03 by the ninety-sixth session — the session that booted on
+`cowork_handoff_entry_ninety_five.md` — before the fifth comparison dispatch, the application act, was
+written; the sitting record and the reading file both landed and hash-identical to the tip
+`b00fb69455372396ff10696524f3d4683fc38614` at the time of the surface.** **The user's words, verbatim:
+"position two"**, given on the surface itself after his instruction *"ok, do so fact based/checked and
+visavi utlimate objective and guiding principles."*; the choice question had not yet been put in a
+separate turn, and the ruling records that reading of the words, as Ruling 39 recorded its *"I ratify
+it"*.
+
+**The question.** Every ruling of 34 to 62 says the amendment it orders is made "at the ratification
+act" — the derivation *gains*, *is amended*, a statement *is reworded* — and the ninety-fourth and
+ninety-fifth handover entries assign the writing of those amendments to the application act, which
+precedes ratification in the plan line. Neither says WHERE the amended text is written. The record
+does not settle it, and it was returned to the user on a surface carrying the facts, the three
+positions weighed on both axes, and a recommendation, at his instruction.
+
+**The facts, each checked at its object.** `cowork_blind_derivation_l0_l1_2026_08_31.md` (tip blob
+`9b102c575643d672e4747b4cfc23e377cd344c27`, unchanged on disk): its banner *"STATUS: DRAFT — BLIND
+DERIVATION, NOT COMPARED, NOT RATIFIED"*; its §6, the independence record of the blind act.
+`ratification_surfaces/cowork_comparison_l0_l1_reading.md`: the manifest pins the derivation at that
+blob (line 19–20); §14 relays the independence record *"with no verdict word attached"*, judging
+independence being *"the user's, at the record"*. `DECISIONS.md` D-679 (LIVE): a deriving session's
+independence is evidenced at the comparison reading. `decisions/group_K.md` D-674 (LIVE, ratified by
+the user 2026-08-11, home `cowork_design_doc_template.md`): *"a DATED REPORT: it is RE-BANNERED as a
+historical record, and its BODY IS NEVER REWRITTEN"* — *"evidence about an act — what was known, when,
+and what was concluded"*; *"a LIVE GOVERNING SURFACE: the BODY IS CORRECTED"* — *"a document a session
+is sent to in order to act"*; *"a document the two branches do not decide is not bannered by stretch
+and not rewritten by stretch — it is reported"*. The phase definition
+(`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §3.4): outputs *"the derived
+specifications; the disposition record per outgoing text"*; not allowed, *"a silent rewrite where a
+proposal per difference is owed"*. The fourth dispatch's A5 held the derivation byte-unchanged and no
+earlier application act exists in the tree to copy. Principles #6, #10, #12, #19.
+
+**The three positions, weighed.** *Position one* — the amendments written into the derivation file
+itself, its banner changed, every former wording preserved beside its amendment. Towards the
+objective: one document carries the whole specification the audit measures against. Towards the
+principles: the derivation is a dated record of a blind act with its independence record inside it,
+D-674's branch one, whose body is never rewritten; the blob in git keeps the loss recoverable (#12's
+recomputable clause), but the file at its path no longer separates derived from amended, and §14
+relays a record whose file has changed under it; contrary to the ruled convention unless the
+derivation is a live governing surface, which its own banner says it is not. *Position two* — a new
+file, the derived L0/L1 specification as amended, beside the derivation, which stays byte-untouched
+except for D-674's top banner naming the rulings and the successor; the successor carries S-1 to S-54
+and OQ-1 to OQ-19 whole in the six-field form, each amendment in place with the ruling that made it
+cited as its defense, bannered as the derived specification not yet ratified. Towards the objective:
+the audit's measuring instrument exists as one complete document with every ruling in it, and the
+evidence of the blind act stays intact for the independence judgment the user has not yet made.
+Towards the principles: D-674's two branches applied exactly (#12, #19); one home for the
+specification and one for the evidence, two documents answering two questions and not the
+duplication #6 forbids; #10 met; the ratification then ratifies a text. Cost: two files carrying
+largely the same statements, bounded by the banner that sends a reader to the successor — D-674's own
+by-construction fix. *Position three* — the act re-marks the rows only and the amendment text waits
+for the ratification act. Towards the objective: the ratification would have no amended text to
+ratify and would write it itself, the same act deferred, the specification unwritten for longer.
+Towards the principles: nothing lost; a literal reading of *"at the ratification act"*; but the
+phase's named output left unwritten and the writing placed inside the ruling turn rather than before
+it (D-249). **The objective axis preferred one and two over three and did not separate one from two;
+the principles axis separated them, one being contrary to D-674 as ruled and two applying it; no
+conflict, and Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** The fifth comparison dispatch — the application act — writes the amendments of
+Rulings 34 to 62 into a NEW file, the derived L0/L1 specification as amended by those rulings, carrying
+every statement and open question of the derivation whole in the six-field form with each amendment in
+place and its ruling cited as its defense, bannered as not yet ratified; the derivation's body is not
+rewritten, and it gains D-674's top banner only, naming the rulings and the successor file. The
+successor's file name and the banner's wording are authored in the dispatch and named on its face so
+the user can overrule either before Task 0. The reading file's rows are re-marked by the same act, as
+the rulings already order. Nothing is applied by this ruling; no file is written by it. **No
+decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**What it does NOT do.** It decides nothing about the L0/L1 split, which returns at ratification as
+Ruling 32 left it; it ratifies no amendment; it moves no outgoing text.
+
 ## 4. What this ruling does NOT do
 
 It authorizes no fix, no design, no inference change, no measurement, and no amendment to any
@@ -5057,3 +5133,13 @@ the reading file Row 4.37; the derivation S-3, S-15, S-16, S-18, S-23, S-33, S-3
 `cowork_layer1_tone_collection_design.md` §5 (line 182) and §6; `decisions/group_D.md` D-570; the Couperin
 score at lines 3440–3499 (one `<staffMove>` chord). Same targeted-edit method, same change guard. **Nothing
 else in this record was altered by this extension.***
+
+*★ AND WITH **Ruling 63** (§3br) by the session that booted on `cowork_handoff_entry_ninety_five.md`,
+2026-09-03, the first addition to this record since it was landed at commit `25b275e5fe…`. For it that
+session read at the files: Rulings 34 to 62 (§3ao–§3bq) whole; the reading file's §0, §7, §12 head, §13,
+§14, §15 and §16 and the shape of its §6 rows; the derivation's banner and §0–§2 head;
+`decisions/group_K.md` D-674 whole; `DECISIONS.md` whole; the phase definition §3.3–§3.5;
+`cowork_audit_protocol.md`'s dispatch-protocol section to its D-658 clause; the fourth comparison
+dispatch and its report whole; the ninety-second, ninety-fourth and ninety-fifth entries whole. Same
+targeted-edit method on a container copy of the bridge-staged snapshot, committed under the change guard
+rather than forced. **Nothing else in this record was altered by this extension.***
