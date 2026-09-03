@@ -4528,6 +4528,11 @@ publishes each with its witnesses. S-31: **AGREES**.
 *PROPOSED DISPOSITION.* **ADOPTED — carried** (S-39 with S-31; S-39 carries all three of the marks
 this sentence names, and two further kinds it does not).
 
+*RULED DISPOSITION (Ruling 48, §3bc — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried** — the proposed
+disposition stands: S-39 with S-31, and the three marks this row names are S-39's own kinds, each
+published with its witnesses and with the scope it was read at.
+
 ---
 
 **Row 8.8 — the notated boundary evidence can be absent over a whole passage.**
@@ -5360,6 +5365,11 @@ staff-level, and omits *pitched*, *not a grace note* and *positive duration*.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, carrying the **eligibility** family of §12 item 5 and
 travelling with Rows 2.8, 3.2, 3.5, 3.15 and 6.20. **This is the fourth document to state the same
 three-flag test, and the second to say in terms that eligibility has no single home.**
+*RULED DISPOSITION (Ruling 35, §3ap — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — proposed** — as Row 2.8,
+*"the predicate stated once at L1 in the amended form; the three-flag sentence superseded by it"*; the
+row's clause that the voice-level combination is stated here because the note layer does not state it
+is superseded by *"the predicate's home is L1's specification and a consumer may not redefine it."*
 
 **Row 10.8 — the picked boundary delimits the grouping span; the word *phrase* is reserved for the
 melodic object this primitive does not model.**
@@ -5489,6 +5499,14 @@ SILENT** — S-53 fixes the span and never contemplates changing it.
 item 25 — and adding the one part of it the earlier rows do not state: **who may NOT ask**. Its
 defense is its own: *"a derived view that reached for its own context would hold a second, independent
 extension policy beside its consumers', and its answer would then depend on which consumer asked."*
+*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE (under Ruling 46, §3ba;
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1; overrulable at the user's word).*
+**ADOPTED — carried in substance** by clauses (ii) and (v): the profile ending where the span ends is
+S-32's covering property, and a recompute over a larger span is clause (ii) — *"L1 computed over a
+larger span is exactly what a fresh computation over that span yields"*; the row's own addition, that
+a derived view requests no enlargement of its own, is requester-side protocol and *"stays at the
+bounded-context design by pointer (#6)"*. *(The primitive itself is RELOCATED to L3 by Ruling 48; this
+line places the row's enlargement half only.)*
 
 **Row 10.6 — the published boundary strength is a per-profile max-normalised confidence, comparable
 within one score only, participating in no override frame.**
@@ -5516,6 +5534,10 @@ note's **offset** = onset + duration), and the **eligible** voices that take par
 *Derived.* S-3, S-13.
 *Current-text axis.* S-3: **AGREES**. S-13: **AGREES**.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.**
+*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE (under Ruling 35, §3ap;
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1; overrulable at the user's word).*
+**ADOPTED — carried in substance** — voice, pitch, onset and duration are S-3's; *"the eligible
+voices"* are read at L1's predicate, whose home is L1's specification, and are not an L0 supply.
 
 **Row 10.12 — L0 supplies fermatas, rests and bar lines as read from the engraved notation.**
 *Statement.* "the score's **annotations** (fermatas), **rests**, and **barlines** as read from the
@@ -5583,6 +5605,10 @@ merged into a neighbour).
 outgoing record**: S-31's own defense is that *"Silence is a notated fact and strong boundary
 evidence"*, and here a named consumer reads exactly that.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.**
+*RULED DISPOSITION (Ruling 35, §3ap — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried** — the proposed
+disposition stands: S-31 is unchanged by the ruling, and *eligible voice* reads under L1's predicate,
+whose home is L1's specification and which a consumer may not redefine.
 
 **Row 10.17 — the top voice is not consumed; the highest voice is not reliably the melody.**
 *Statement.* "so this primitive does not consume any top-voice primitive. The top voice is at most an
@@ -5719,6 +5745,10 @@ with a declared relaxation where the record carries none).
 *Current-text axis.* S-13: **AGREES**. S-46: **AGREES** in discipline — both texts compute a per-voice
 predicate over notated voices and neither infers a line.
 *PROPOSED DISPOSITION.* **ADOPTED — carried** (S-13 with S-46).
+*RULED DISPOSITION (Ruling 35, §3ap — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried** — the proposed
+disposition stands: S-13 with S-46 is unchanged by the ruling, and *eligible voice* reads under L1's
+predicate, whose home is L1's specification and which a consumer may not redefine.
 
 **Row 10.26 — the texture strength is the sum of the per-voice strengths at an onset.**
 *Statement.* "the texture strength at an onset is the **sum of the per-voice strengths at that
@@ -5801,6 +5831,9 @@ marks *"the change point at the preceding event's release"*.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.** **★ S-39's PLACEMENT RULE IS REACHED HERE
 INDEPENDENTLY**, including the fermata's, which S-39 derives from what the sign means and this text
 states as where the sounding ends.
+*RULED DISPOSITION (Ruling 48, §3bc — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried** — the proposed
+disposition stands: S-39's placement rule, reached here independently.
 
 **Row 10.31 — a region ends a phrase when a picked boundary tick falls within its half-open tick span.**
 *Statement.* "A region **ends a phrase** when a picked boundary tick falls within its half-open tick
@@ -5809,6 +5842,11 @@ span." — §4.4 (locator: line 200).
 *Current-text axis.* S-29: **AGREES** — the half-open convention, which S-29 calls *"not a choice but
 a consequence of what onset and release mean"*.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.**
+*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE (under Ruling 48, §3bc;
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1; overrulable at the user's word).*
+**RELOCATED — to L3, *the read-off facts*** — the *"ends a phrase"* flag this row states is among the
+objects the ruling RELOCATES to *"the consumer that decides the phrase boundary — the phrase read-off
+at L3 under the L1 → L3 contract"*; the half-open convention it rests on is S-29's and stays.
 
 **Row 10.32 — every picked boundary should carry which cue or marker fired and at what scope; the
 picked set is scope-blind today.**
@@ -5974,6 +6012,9 @@ truth are the measurement layer's own design content and a later stage's busines
 substantive rule and the relocation does not set it aside** — it is the same self-annotation
 prohibition the record already carries as a standing grading convention, reached here for one
 primitive.
+*RULED DISPOSITION (Ruling 48, §3bc — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **RELOCATED — to *the measurement of
+the analysis*** — the proposed disposition stands; the ruling places nothing about grading.
 
 **Row 10.45 — the graded-model step is measured against the corpus gate, and the live consumers are
 enumerated before the change is treated as output-moving.**
@@ -6054,6 +6095,12 @@ not supply, and reads it at the wrong event.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the fermata and breath markers still
 fire on ineligible voices, and does the tempo marker still fire at the opening tempo rather than at a
 change?
+*RULED DISPOSITION (Ruling 35, §3ap — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **QUARANTINED** — the audit question
+stands as written: half (a) is an audit question under the amended predicate, as Row 3.5's is —
+*"which specifications and code currently define the eligibility combination, since after ratification
+only L1 does"* — and half (b), the tempo marker, is a marker-kind question Ruling 50's TEMPO-CHANGE
+flag reaches and not this family's.
 
 **Row 10.52 — articulation and dynamics cues are admissible as additional low-weight surface
 profiles if measured to help.**
@@ -7077,6 +7124,12 @@ picked peak.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 10.23 — **the same six-kind marker set,
 stated a second time and from the consumer's side**, which is evidence that the set is settled in the
 outgoing record whatever the charter's five kinds say.
+*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE (under Ruling 48, §3bc;
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1; overrulable at the user's word).*
+**ADOPTED — proposed** — the proposed disposition stands for its six-kind half, the marker kinds being
+Ruling 50's subject, which cites this row among the four documents naming the breath mark and places
+it not by number; its *picked peak* half is RELOCATED to L3 with Rows 10.28 and 10.29 under this
+ruling.
 
 **Row 13.4 — the slice is the atomic analysis unit, one chord-rhythm segment.**
 *Statement.* "**Slice [L6].** The atomic analysis unit — one chord-rhythm segment from Layer 2 (the
@@ -7206,6 +7259,10 @@ re-detect boundaries** (peak selection is the primitive's owned job)" — §5.1 
 *Derived.* S-53, S-50. *Current-text axis.* S-53: **AGREES**. S-50: **AGREES**.
 *PROPOSED DISPOSITION.* **ADOPTED — carried**, with Rows 2.9, 6.17 and 12.28 — the consume-do-not-
 re-derive discipline, stated a fourth time.
+*RULED DISPOSITION (Ruling 48, §3bc — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried** — the proposed
+disposition stands: the consume-do-not-re-derive discipline, the picked set it consumes being now
+L3's own product under this ruling.
 
 **Row 13.14 — a cadence's arrival may slightly precede the notated span end, so the alignment carries
 a window.**
@@ -7558,6 +7615,11 @@ selection; extended music is **evidence**." — §2 (locator: line 207).
 SILENT** on the prohibition.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 14.13 — and with Rows 2.28, 5.10, 6.45 and
 7.23, which are the same output-versus-context line seen at the slicing layer.
+*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE (under Ruling 46, §3ba;
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1; overrulable at the user's word).*
+**ADOPTED — carried in substance** by Ruling 39 with Ruling 41 and clause (v): L0 holds the whole
+notated record and L1 covers the working span exactly, reading nothing beyond it; which part of the
+span a consumer labels as output is the requester's, *"L1 owns no selection semantics"*.
 
 **Row 14.15 — requesting notes from a lower layer is a data-supply call down the stack, not an
 analysis back-edge.**
@@ -7658,6 +7720,10 @@ opens no change point and belongs to no sounding set"* and publishes it as *"an 
 of its host note"*. S-15: **AGREES** — *"it is not a grace note"* is one of its five eligibility
 conditions. S-30: **AGREES** — the no-zero-length-slice invariant rests on this answer.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.**
+*RULED DISPOSITION (Ruling 34, §3ao — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried** — *"S-15, S-16
+and S-30 of the derivation stand as derived, settled"*; the row agrees with all three, and the ruling
+settles them.
 
 **★★ THIS ROW CHANGES THE GRACE-NOTE FAMILY, AND IT IS THE MOST CONSEQUENTIAL FINDING OF THIS
 DOCUMENT.** Item 8 of §12 records the grace question as the sharpest flat contradiction in the
@@ -7902,6 +7968,11 @@ DERIVATION IS SILENT** on the loop.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Row 15.7. *(It is also the outgoing record's
 clearest statement that an enlargement **re-runs the slicing**, which is the re-slice equivalence
 property Rows 2.21, 5.32, 6.44, 7.18 and 7.28 all propose.)*
+*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE (under Ruling 46, §3ba;
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1; overrulable at the user's word).*
+**ADOPTED — carried in substance** by clause (ii) for its L1-facing half — a re-slice over an enlarged
+span is a fresh computation; the reach-back loop itself is the requester's under clause (v) and
+travels with Row 18.31 to L2.
 
 **Row 15.9 — it is not responsible for noticing that the score has been edited.**
 *Statement.* "**It is not responsible for noticing when the score has been edited.** Deciding that the
@@ -8674,6 +8745,11 @@ caller.
 the span's edge is handled by marking alone or may also be handled by enlarging the span — the two
 texts name the same problem and take different remedies, and the derivation's remedy does not exclude
 this one.
+*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE (under Ruling 46, §3ba;
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1; overrulable at the user's word).*
+**ADOPTED — carried in substance**: the edge is marked (Ruling 40) and the span may be enlarged by a
+re-request (clause (ii)); the derivation's remedy does not exclude the other, which is what the row
+asks the specification to state.
 
 **Row 18.3 (ii) — as built, the whole score is loaded regardless, so all context is incidentally
 present.**
@@ -8703,6 +8779,11 @@ output-versus-evidence distinction on any item.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say whether the
 working span of S-32 and S-53 is the span that is covered by slices or the span that carries the
 analysis output, since this text has two and the derivation has one.
+*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE (under Ruling 46, §3ba;
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1; overrulable at the user's word).*
+**ADOPTED — carried in substance** by Ruling 41 with Ruling 39: *"no selection tag is added"* and L1
+*"owns no selection semantics"*; the output-versus-evidence split is the consumer's, as Row 2.28 was
+carried.
 
 **Row 18.5 — the loaded span starts equal to the selection and grows by extension, and the selection
 is always inside it and it always inside the score.**
@@ -8713,6 +8794,11 @@ selection** and grows by extension. Always **selection ⊆ loaded ⊆ score**." 
 *Current-text axis.* S-32: **THE DERIVATION IS SILENT** — its span does not grow. S-53: **THE
 DERIVATION IS SILENT** — the span is what a caller supplies, once.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE (under Ruling 46, §3ba;
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1; overrulable at the user's word).*
+**ADOPTED — carried in substance** by Ruling 39 with clause (ii): L0 has no loaded span, holding the
+whole notated record; the growing span is the requester's working span, each step a re-request; and
+selection sits within working span within record.
 
 **Row 18.6 — the score is the hard outer bound, and an enlargement can never pass it.**
 *Statement.* "**Score** — the whole piece; the hard outer bound that extension can never pass." — §2
@@ -8721,6 +8807,10 @@ DERIVATION IS SILENT** — the span is what a caller supplies, once.
 *Current-text axis.* S-32: **THE DERIVATION IS SILENT** — it never distinguishes the span's edge from
 the score's edge.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — proposed** by clause (vi),
+as Rows 5.15, 5.36 and 3.35 — *"a span edge that coincides with the record's own start or end is
+published as such, beside Ruling 40's edge mark"*; the clamp is the requester's under clause (v).
 
 #### §3 — the contract every layer obeys
 
@@ -8733,6 +8823,10 @@ output or any value not in L0 plus the span."* S-32: **AGREES** — the covering
 the span.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.** *(The derived specification carries the rule for L1;
 this text binds every layer, which is the charter's other members' business and travels with them.)*
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried** — the proposed
+disposition stands on S-53's falsifier; the binding on every other layer travels with the charter's
+other members, as the row says.
 
 **Row 18.8 — a layer whose reasoning needs evidence beyond the loaded span either requests an
 enlargement or recognises it has reached the score boundary and proceeds with what it has.**
@@ -8744,6 +8838,10 @@ score boundary** (nothing more exists) and proceeds with what it has." — §3 i
 *Current-text axis.* S-32: **THE DERIVATION IS SILENT**. S-53: **THE DERIVATION IS SILENT** — it has no
 request at all.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — proposed** by clauses (v)
+and (vi), as Rows 5.11 to 5.13: the request is a re-request of L1 over a larger working span, and the
+record's edge is published as such so the requester can recognise it.
 
 **Row 18.9 — a layer must tell "unavailable because not loaded" apart from "unavailable because the
 score starts or ends here", and the supplier reports which.**
@@ -8759,6 +8857,11 @@ as 'cut by the span', not as defects"* — which separates a defect from a span 
 from the score's edge.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the span-edge marks say which of
 the two reasons applies, since the outgoing rule makes a layer's next act depend on the answer.
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — proposed** by clause (vi)
+— the row's two reasons are exactly the span edge and the record's own edge, and clause (vi) publishes
+which: *"a span edge that coincides with the record's own start or end is published as such, beside
+Ruling 40's edge mark."*
 
 **Row 18.10 — a layer never guesses how much more context it needs; the amount is discovered, not
 chosen.**
@@ -8769,6 +8872,10 @@ chosen**." — §3 item 5 (locator: lines 60–62).
 *Derived.* S-53.
 *Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried in substance** by
+clause (v) — *"the decision to enlarge, the increment and the stop test belong to the requester, never
+to L0 or L1"*; the discovery rule itself *"stays at the bounded-context design by pointer (#6)"*.
 
 **Row 18.11 — the principled stop is convergence, applied directly on the in-selection quantity the
 enlargement was requested for.**
@@ -8780,6 +8887,10 @@ that quantity step against step, and stops when it repeats." — §3 item 6 (loc
 *Derived.* S-53.
 *Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried in substance** by
+clause (v); convergence is requester-side protocol, which *"stays at the bounded-context design by
+pointer (#6)"*.
 
 **Row 18.12 — a cheaper domain proxy standing in for the convergence test was tried, measured false
 and struck; the headline rule is unchanged.**
@@ -8808,6 +8919,10 @@ only other way out of the loop, and a cap that fired is never the discovered amo
 *Derived.* S-53.
 *Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried in substance** by
+clause (v); the hard bound and the caps are requester-side protocol, which *"stays at the
+bounded-context design by pointer (#6)"*.
 
 **Row 18.14 (i) — the enlargement step size is the requesting layer's, and is an efficiency knob that
 never changes the answer.**
@@ -8818,6 +8933,9 @@ because convergence (item 6) fixes the result." — §3 item 8 (locator: lines 9
 *Derived.* S-53.
 *Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried in substance** by
+clause (v): *"the increment … belong[s] to the requester, never to L0 or L1"*.
 
 **Row 18.14 (ii) — the supplier executes exactly the one requested step and never evaluates
 convergence, that being inference, which it does not do.**
@@ -8831,6 +8949,9 @@ it is *"computable from L0 facts with no tonality, chord or boundary as input"*,
 evaluated convergence would be deciding. S-53: **AGREES** — forward only, and L1 reads nothing but L0
 plus the span.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.**
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried** — the proposed
+disposition stands on S-51 and S-53, with clause (v).
 
 **Row 18.15 — denial and truncation are honest, never silent: the affected output carries its
 truncation provenance, and a truncated result is never presented as a complete one.**
@@ -8864,6 +8985,10 @@ positions as exact fractions (MuseScore's `<Division>480` ticks and `<fractions>
 divisions)"*, which is the unit this request is made in. S-53: **THE DERIVATION IS SILENT** on the
 request's form.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — proposed** by clause (i) —
+*"the working span is given in the record's own positions, any conversion from the requester's unit
+being the requester's"*; unit-blindness follows.
 
 **Row 18.17 — the change-point slice is the fundamental quantum of meaning: nothing an analysis can
 see changes at a finer granularity, so no requester reaches finer than a change point.**
@@ -8910,6 +9035,10 @@ re-slicing is what produces them.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification state that the
 slice list over an enlarged span is produced by re-slicing and never by patching, which is the rule
 this sentence makes explicit and S-53 only implies.
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — proposed** by clause (ii)
+with (iii): the slice list over a larger span is a fresh computation and never a patch — *"L1 computed
+over a larger span is exactly what a fresh computation over that span yields"*.
 
 #### §4 — the protocol
 
@@ -8926,6 +9055,10 @@ restated at §5's first bullet (lines 151–154) and §10's first bullet (lines 
 covers, not how a span is supplied. S-53: **THE DERIVATION IS SILENT** — the span arrives once.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *(The same operations are specified at Document 5's
 rows; this is the second statement of them in the outgoing record, and the two are read together.)*
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried in substance** by
+clause (ii) with Ruling 39, as Rows 5.14, 5.16, 5.33 and 5.35 — *"append-only and idempotence have
+nothing to guarantee when nothing is ever unloaded"*; the boundary report is clause (vi).
 
 **Row 18.21 — a recompute after an enlargement is a fresh forward re-inference, never a local patch of
 the previous output.**
@@ -8936,6 +9069,10 @@ local patch of its previous output." — §4 (locator: lines 124–126).
 *Current-text axis.* S-53: **AGREES** — L1 is *"computable in one forward pass over the working
 span"*, which is what re-inferring from scratch over the enlarged span is.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — proposed** by clause (ii)
+— *"L1 computed over a larger span is exactly what a fresh computation over that span yields, so the
+result never depends on how many steps reached the span or in what order"*.
 
 **Row 18.22 — the interior change points are stable under enlargement, and the edge slice extends
 because the old clip boundary was artificial and not a real change point.**
@@ -8951,6 +9088,10 @@ change points are onsets and releases, and a clip boundary is neither.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say whether a
 span edge is a change point or a marked artificial boundary that is not one — S-28 and S-32 answer it
 differently inside the derivation, and this text answers it a third time.
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — proposed** by clause (iii)
+with Ruling 40 — *"the working span tiled exactly, the edge a span edge and not a change point"* —
+which also answers the row's own question between S-28 and S-32.
 
 **Row 18.23 — what guarantees correctness is re-slice equivalence: the result equals a fresh slicing
 over the enlarged span.**
@@ -8962,6 +9103,10 @@ the leading edge' convergence (§3.6) absorbs." — §4 (locator: lines 129–13
 span reproduces the interior slices exactly. S-28: **AGREES** — the change points are a function of
 the events and of nothing else.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — proposed** by clause (ii)
+with (iii), the falsifier in its negative form — *"a test asserting the old slice list byte-identical
+is wrong and is not written"*.
 
 **Row 18.24 — the requesting layer's changed inference propagates forward, and every inferring layer
 after it re-infers in turn.**
@@ -8972,6 +9117,10 @@ the chord there, which changes the function, and so on)." — §4 (locator: line
 *Current-text axis.* S-53: **AGREES** on the direction — nothing L1 publishes depends on anything L2
 decides, so a change re-enters the pipeline at the front and travels forward.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE (under Ruling 46, §3ba;
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1; overrulable at the user's word).*
+**ADOPTED — carried in substance** by clause (ii) for L1; the cascade across the inferring layers is
+those layers' own under the charter's forward-only contract.
 
 **Row 18.25 — the request is a data-supply call down the stack, control and not inference; inference
 never flows backward.**
@@ -9001,6 +9150,9 @@ computation, so a sequence of passes over growing spans ends where a single pass
 would. S-33: **AGREES** — the slices are determined by the events in the span, not by how the span was
 arrived at.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.**
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — proposed** by clause (ii)
+— *"D-264 being clause (ii)"*.
 
 **Row 18.27 — the forward cascade is bounded: a carried-in key affects the leading-edge slices and
 decays inward, so only the affected slices re-infer.**
@@ -9026,6 +9178,9 @@ lines 153–154); recorded again as §7's third decision (lines 208–210).
 chose when to stop would be deciding. S-53: **AGREES** — the span is the caller's, not L1's. S-1:
 **AGREES** — L0 supplies what the record carries and nothing it would have to judge.
 *PROPOSED DISPOSITION.* **ADOPTED — carried.**
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried** — the proposed
+disposition stands on S-51, S-53 and S-1, with clause (v).
 
 **Row 18.29 — on an enlargement the slicer produces the change-point slices for the newly loaded
 region, preserving complete coverage and slice identity over the larger span.**
@@ -9037,6 +9192,9 @@ identity over the larger span." — §5, second bullet (locator: lines 155–157
 **AGREES** — slice identity is the event set, which is what is preserved.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *(The two properties are carried; that they survive an
 enlargement is the addition.)*
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — proposed** by clauses (ii)
+and (iii).
 
 **Row 18.30 — slices falling in the context span are usable as evidence but are not output.**
 *Statement.* "Slices that fall in the context span are usable as evidence but are **not** output." —
@@ -9048,6 +9206,11 @@ S-50: **THE DERIVATION IS SILENT** — its publication list marks no slice as ev
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that a published slice say whether it
 is inside the output span or is context, since a consumer that labels a context slice breaks the
 invariant at Row 18.4 without any published field telling it so.
+*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE (under Ruling 46, §3ba;
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1; overrulable at the user's word).*
+**ADOPTED — carried in substance** by Ruling 41 with Ruling 39, as Row 18.4: no published slice
+carries a context tag — *"no selection tag is added"* — and which slices a consumer labels is the
+consumer's, L1 owning no selection semantics.
 
 **Row 18.31 — reach-back IS an enlargement request, with a direction, a stop condition and a bound.**
 *Statement.* "Reach-back **is** an extension request: direction = earlier, stop = *'the leading-edge
@@ -9056,6 +9219,9 @@ settled key repeats across iterations'*, bound = a maximum reach." — §5, thir
 *Derived.* S-53.
 *Current-text axis.* S-53: **THE DERIVATION IS SILENT**.
 *PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***.
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **RELOCATED — to L2** — the proposed
+disposition stands; its L1-facing content is clause (v).
 
 **Row 18.32 — the leading-edge evidence window requests an enlargement or truncates at the score
 start, and the context slices anchor the carried-in key while output is emitted only for the selection
@@ -9070,6 +9236,9 @@ self-sufficient, which is why S-32 marks its events *entered sounding*.
 *PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision*** —
 anchoring a carried-in key is the tonal reading's act. *(S-32's span-edge marks travel with it as what
 the tonal reading is told about the span's opening.)*
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **RELOCATED — to L2** — the proposed
+disposition stands; clause (vi) and Ruling 40's marks travel with it.
 
 **Row 18.33 — the chord window must, at a selection edge, request an enlargement or recognise the
 score boundary, and never assume the neighbour slice exists.**
@@ -9081,6 +9250,9 @@ until the chord is in view, stop at the first inconsistent slice'* rule) must, a
 *Current-text axis.* S-32: **AGREES** on what a span edge is — events releasing past it are marked
 *cut by the span*, which is the published form of "the neighbour may not be there".
 *PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***.
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **RELOCATED — to L2** — the proposed
+disposition stands; clause (vi).
 
 **Row 18.34 — the request fires only when the truncation is decision-relevant: a truncated window
 whose evidence sufficed requests nothing.**
@@ -9093,6 +9265,9 @@ whose evidence sufficed requests nothing.**
 *PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision*** — the
 criterion is stated in the decision's own vocabulary (a decision already at full margin), so it cannot
 be stated at the input contract without importing that vocabulary.
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **RELOCATED — to L2** — the proposed
+disposition stands; the discovery rule *"stays at the bounded-context design by pointer (#6)"*.
 
 **Row 18.35 — as built, the chord layer's request path is uncoded and the window silently truncates.**
 *Statement.* "*(As-built status: this request path is UNCODED — the window silently truncates;
@@ -9103,6 +9278,9 @@ any code does at one.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* does a window at a span edge still
 truncate silently on the arm that ships — that is, without the Row 18.15 provenance — and is the
 statement that the path is uncoded still true at the current commit?
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **QUARANTINED** — the ruling places
+nothing about code; the audit question stands as written.
 
 **Row 18.36 — a decision's forward context span runs to the first of a cadence-anchored function, a
 punctuation boundary, or a hard bound.**
@@ -9132,6 +9310,10 @@ what it saw (or its honest open mark) + the item-10 provenance." — §5, fifth 
 inference edge, which is the same distinction Row 18.25 turns on.
 *PROPOSED DISPOSITION.* **RELOCATED — to L3, *the read-off facts***. *(Its honesty half is Row 18.15's
 rule, cited here by that row's own number in the outgoing text.)*
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **RELOCATED — to L3** — the proposed
+disposition stands; the one-pass closure is requester-side protocol, which *"stays at the
+bounded-context design by pointer (#6)"*.
 
 **Row 18.38 — the consumer surfaces the truncation provenance and the enlargement cue, and never acts
 on them.**
@@ -9162,6 +9344,10 @@ specifies no look-up structure over them.
 *PROPOSED DISPOSITION.* **QUARANTINED.** *The audit question:* do the two named look-up structures
 still exist on the arm that ships, and does either extend consistently under an enlargement — or is
 the rebuild interim below what actually runs?
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **QUARANTINED** — the audit question
+stands as written; whether an index *under extension* has any subject once L0 holds the whole record
+(Ruling 39) is for the audit to meet and not this act.
 
 **Row 18.40 — interim: the supplier may rebuild over the enlarged span on each enlargement, and the
 interim is invisible to the layers above because the contract is what they are written against.**
@@ -9176,6 +9362,10 @@ how the span's content is assembled.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *(A declared, bounded migration state with its
 retirement named, which is the shape principle #23 requires; recorded as a proposal because the derived
 specification carries no such declaration.)*
+*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE (under Ruling 46, §3ba;
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1; overrulable at the user's word).*
+**ADOPTED — carried in substance** by clause (ii): recomputation over the span is the rule and not an
+interim, so the outgoing interim-behind-a-contract declaration has no successor to be interim to.
 
 **Row 18.41 — enlargement and incremental re-analysis must compose cleanly: an edit inside the
 selection and an enlargement outside it are different operations on the same model.**
@@ -9189,6 +9379,11 @@ derived specification has no notion of the score being edited at all.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed.** *The proposal:* that the specification say what an
 edit to the notated record does to a published slice list, which is the one thing in this document's
 subject the derivation nowhere considers.
+*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE (under Ruling 46, §3ba;
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1; overrulable at the user's word).*
+**ADOPTED — carried in substance** by Ruling 43 with clause (ii): an edit to the record is a rebuild
+of L0 the caller requests, and an enlargement is a re-request of L1; each is a fresh computation,
+which answers the row's proposal.
 
 **Row 18.42 — the degenerate case must stay byte-identical, or the corpus measurements move for the
 wrong reason; with the selection equal to the score no request fires, so it is byte-identical by
@@ -9223,6 +9418,9 @@ intent requires; the coding claims about particular seams are outside what the d
 surface, preserved with the ruling that deprecated it. *(Recorded rather than dropped because the same
 annotation says the GATE itself stands and transfers, so a reader who takes the list as dead must not
 also take the gate as dead.)*
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **HISTORICAL** — the proposed
+disposition stands.
 
 ---
 
@@ -9514,6 +9712,12 @@ provenance (`clipped-by-selection-edge` / `cue-denied` where applicable)"* (line
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, with Rows 18.8, 18.13 and 18.15. *(Recorded because
 this is the third outgoing document to carry the two named marks, and the second to name them in a
 published data shape.)*
+*RULED DISPOSITION (Ruling 46, §3ba — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **ADOPTED — carried in substance** by
+clauses (v) and (vi) with Ruling 40's marks: *"the decision to enlarge, the increment and the stop
+test belong to the requester, never to L0 or L1"*, *"a span edge that coincides with the record's own
+start or end is published as such"*, and the truncation-provenance marks are on S-50's completed list
+(Ruling 62 item 1, applied under Ruling 75).
 
 **Row 19.11 — what lacks ground truth is built with an alternative-confidence path and an
 empirically-unvalidated mark, never silently trusted.**
@@ -9695,6 +9899,12 @@ the outgoing record.
 three flags on the arm that ships, do the three S-15 conditions it omits — pitched, not a grace note,
 duration greater than zero — reach it by another route, and is `staffEligible` an L0-supplied fact or
 an eligibility decision above it?
+*RULED DISPOSITION (Ruling 35, §3ap — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **QUARANTINED** — with Row 3.5,
+*"which specifications and code currently define the eligibility combination, since after ratification
+only L1 does"*; the row's audit question is read under the amended predicate — `staffEligible`'s hidden
+half is now an L0 fact (*"whether the note's staff is hidden"*), its percussion and chord-symbol halves
+S-20's and S-2's, and the three omitted conditions are S-15's.
 
 **Row 19.23 — the output carries the committed class plus the full ranked list of all class fits with
 their weights; nothing below the top is discarded.**
@@ -10475,6 +10685,10 @@ prior" — §2 (locator: line 49).
 ordinal with its period, which is what a weighting and a change-on-strong-beat prior consume.
 *PROPOSED DISPOSITION.* **RELOCATED — to L2, *the tonal reading, the one entangled decision***, with
 Rows 11.3 and 11.6. *(S-35's class travels with it.)*
+*RULED DISPOSITION (Ruling 47, §3bb — FAMILY PLACEMENT,
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md Task 1).* **RELOCATED — to L2** — the proposed
+disposition stands, with Rows 11.3 and 11.6: S-35's class travels, and the weighting and the
+change-on-strong-beat prior are *"a consumer's fitted derivative, never published by L0 or L1."*
 
 **Row 21.7 — bass-motion skeletons are a bass and inversion emission.**
 *Statement.* "**bass-motion skeletons** → a bass/inversion emission" — §2 (locator: line 51).
@@ -14888,6 +15102,9 @@ only; no row above is edited. Each entry names the ruling that relocated it.*
 - Rows 10.4 and 10.21 — *"RELOCATED to L3 for their computed half, their deterministic half already
   S-39's"* (Ruling 48).
 - Row 13.14 — the grouping's alignment window (Ruling 54).
+- Row 10.31 — the *"ends a phrase"* region flag, with the objects Ruling 48 relocates to the phrase
+  read-off (a family placement, authored by the writing side under
+  `cc_instruction_comparison_l0_l1_seventh_2026_09_03.md` Task 1).
 
 **To *the second axis — voice leading*.**
 
@@ -15822,6 +16039,74 @@ define WAS RUN over this file's rows of documents 8 to 29 and its hits are enume
 family row's disposition is altered, none is partly worked, and every one of them stands at its
 proposed disposition. The 210 lines above are exactly the rows the rulings name **by number**, and the
 count closes over those and nothing else.
+
+*★ THE FAMILY PLACEMENTS WERE MADE on 2026-09-03 under
+`cc_instruction_comparison_l0_l1_seventh_2026_09_03.md` Task 1 and are counted APART, at §13b; the 210
+lines above and their arithmetic are unchanged.*
+
+## 13b. The FAMILY placements — derived at the placement lines
+
+*Written 2026-09-03 under `cc_instruction_comparison_l0_l1_seventh_2026_09_03.md` Task 1(d). Every
+figure below is a **sum taken at the placement lines this batch added to this file** and at nothing
+else; no ratio, percentage or grade is derived from it, and no figure of §13 or §13a is restated or
+altered.*
+
+**Placement lines by kind.** A kind (A) line is a placement the ruling's own words fix — the row's
+content is a case the ruling's paragraph names in terms. A kind (B) line is the writing side's reading
+of a ruling that reaches the row's family without naming the row's case in terms, and every one of
+them says so on its own face and is overrulable at the user's word.
+
+| Kind | Placement lines |
+|---|---|
+| (A) `*RULED DISPOSITION … — FAMILY PLACEMENT` | 38 |
+| (B) `*PLACED — FAMILY, AUTHORED BY THE WRITING SIDE` | 13 |
+| **Total** | **51** |
+
+38 + 13 = **51**.
+
+**Placement lines by disposition word**, in §5's vocabulary, with *carried in substance* counted as
+§13a counts it — the qualifier Rulings 35, 42, 45 and 46 place on the ADOPTED — carried class, not a
+sixth class.
+
+| Disposition, in §5's vocabulary | Placement lines |
+|---|---|
+| ADOPTED — carried | 9 |
+| ADOPTED — carried in substance *(the qualifier, not a sixth class)* | 17 |
+| ADOPTED — proposed | 12 |
+| RELOCATED (to L2, to L3, or to *the measurement of the analysis*) | 8 |
+| QUARANTINED | 4 |
+| HISTORICAL | 1 |
+| **Total** | **51** |
+
+9 + 17 + 12 + 8 + 4 + 1 = **51**.
+
+**Placement lines by ruling.**
+
+| Ruling | 34 (§3ao) | 35 (§3ap) | 46 (§3ba) | 47 (§3bb) | 48 (§3bc) | Total |
+|---|---|---|---|---|---|---|
+| Placement lines | 1 | 6 | 37 | 1 | 6 | **51** |
+
+1 + 6 + 37 + 1 + 6 = **51**.
+
+**The arithmetic against the rows.** Each of the 51 rows carries exactly one added line, so the rows
+placed are **51** and the lines are **51**. No row was skipped on the user's word.
+
+**Three hits take no line, and are recorded here rather than left to be noticed.** **Row 22.11** was
+found by one of Ruling 46's own terms — *"extends across contiguous neighbouring slices"* — on a
+chord-window rule, which is not the enlargement family's subject; **Rows 19.20 and 19.21** were found
+by the word *profile*, whose subject there is the voice-leading axis's motion profile and not the
+notated boundary evidence Ruling 48 governs. Each is a hit the ruling does not reach, recorded in the
+report on the fifth writing's own treatment of Row 28.12, and each keeps the disposition it already
+carried, untouched.
+
+**No line here places Row 4.3.** It stands at its proposed disposition — the fifth writing
+reported that Ruling 62 item 4's citation of it and the row's own content do not meet — and it goes to
+the user on its own surface.
+
+**WHAT THIS TABLE DOES NOT ESTABLISH.** It counts placements; it says nothing about whether any
+placement is right — a kind (A) line is the ruling's own words transcribed to the row, and a kind (B)
+line is the writing side's reading, marked as such at the row and overrulable — and it takes no
+position on the derivation, on the outgoing text, or on any row it does not reach.
 
 ## 14. The derivation's independence record, relayed
 
