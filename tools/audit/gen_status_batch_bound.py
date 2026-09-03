@@ -80,27 +80,36 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # name the defect here, re-aim all FOUR fields, and report it. The comment at `ACT_DATE` below is
 # corrected in the same act, its former reasoning having been written for a batch whose dispatch date
 # and run date agreed.
-BASE_COMMIT = "2acef005a99b829cb1c9ea173031fb6c3a4a1051"
+#
+# ★★★ RE-AIMED 2026-09-03 by `cc_instruction_comparison_l0_l1_fourth_2026_09_03.md` Task 2, and ALL
+# FIVE authored inputs moved together — the fifth being `PREVIOUS_AIMINGS`, which is appended to
+# rather than replaced (#12). **The aiming this replaces is the one the THIRD writing could not use.**
+# That batch re-aimed these fields as its own dispatch ordered, ran the tool, and it STOPped: the
+# then-previous batch's two `STATUS.md` entries name no dispatch at all, so `moved_entries()` cannot
+# identify them by the key it derives from. That batch then REVERTED the re-aiming and re-ran the tool
+# to prove it green, so no guard red was introduced and the constants below stood at the second
+# writing's aiming until this act. Both facts are rowed in `PREVIOUS_AIMINGS` below — the second
+# writing's aiming as superseded, and the third writing's non-move with the tool's own STOP message
+# quoted — so the record of aimings does not silently omit a batch (#10, #12).
+BASE_COMMIT = "b460ea2983818c4f8a077f29c901644b97bcf6e3"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_comparison_l0_l1_2026_09_02.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_comparison_l0_l1_third_2026_09_02.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
-# dispatch is dated 2026-09-02 and this batch ran on 2026-09-02, so the two agree; the field is kept
+# dispatch is dated 2026-09-03 and this batch ran on 2026-09-03, so the two agree; the field is kept
 # authored rather than inferred because the archive header states when the ACT happened, and a header
 # carrying a dispatch's date would say something false about the record (#10) on any batch where the
-# two differ. It is a fourth authored field beside the three aiming inputs above — and it is the one
-# field the previous re-aiming DID move, which is how a header that names the wrong dispatch still
-# carries the right date.
-ACT_DATE = "2026-09-02"
-DISPATCH = "cc_instruction_comparison_l0_l1_second_2026_09_02.md"
+# two differ.
+ACT_DATE = "2026-09-03"
+DISPATCH = "cc_instruction_comparison_l0_l1_fourth_2026_09_03.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. The executing dispatch orders the move and this
-# batch's own `STATUS.md` entries in the same numbered task — its Task 3, whose item 1 orders the
+# batch's own `STATUS.md` entries in the same numbered task — its Task 2, whose item 1 orders the
 # pointer entries and the forward bound together — so both halves of "the same act that writes its own
-# entries" sit inside Task 3, and Task 3 is what the archive header names. No sub-item is carried,
+# entries" sit inside Task 2, and Task 2 is what the archive header names. No sub-item is carried,
 # because the header names an act rather than a sub-step and every previous aiming names a whole task.
-TASK = "Task 3"
+TASK = "Task 2"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
 # Every aiming this tool has had, oldest first. Authored, and kept rather than replaced.
@@ -253,6 +262,34 @@ PREVIOUS_AIMINGS = [
          "fields; the already-written archive block was deliberately NOT edited — it is a previous "
          "batch's record, the executing dispatch bars rewriting an archived document, and recording "
          "the defect is what a later reader needs rather than a silently corrected header."},
+    {"executing_act": "cc_instruction_comparison_l0_l1_second_2026_09_02.md, Task 3",
+     "base_commit": "2acef005a99b829cb1c9ea173031fb6c3a4a1051",
+     "the_then_previous_batch": "cc_instruction_comparison_l0_l1_2026_09_02.md"},
+    # ★ RECORDED 2026-09-03 by `cc_instruction_comparison_l0_l1_fourth_2026_09_03.md` Task 2. This
+    # row is written in the shape the backfilled 2026-08-26 row above uses, and for the same reason:
+    # the three-field rows would otherwise imply falsely (#10) that every batch between two aimings
+    # performed a move. THE THIRD WRITING PERFORMED NO MOVE. It re-aimed the fields as its own
+    # dispatch ordered, ran the tool, measured the STOP, and then REVERTED the re-aiming and re-ran
+    # the tool to prove it green — so no guard red was introduced and this file was byte-unchanged by
+    # that batch. Rowed here so the record of aimings does not silently omit a batch (#12).
+    {"executing_act": "cc_instruction_comparison_l0_l1_third_2026_09_02.md, Task 2",
+     "base_commit": "e56e1153c0e08702e9e7ea51ff6ccf167aec0172",
+     "the_then_previous_batch": "cc_instruction_comparison_l0_l1_second_2026_09_02.md",
+     "★_no_move_was_performed":
+         "The re-aiming this dispatch ordered was made and the tool run; it STOPped, in its own "
+         "words, quoted from that batch's close in `cowork_away_returns.md`: `STOP: no dated entry "
+         "at e56e1153c0 names cc_instruction_comparison_l0_l1_second_2026_09_02.md — the "
+         "then-previous batch cannot be identified, and moving nothing silently would leave "
+         "Ruling 4's forward bound unmet without saying so.` The cause, established at this file's "
+         "source and at STATUS.md: membership is DERIVED from the dispatch name each entry carries, "
+         "and the second writing's two entries name no dispatch at all, so no aiming of this tool "
+         "can identify them. That batch reverted the re-aiming, re-ran the tool to prove it green, "
+         "and declined to move the entries by hand or to edit another batch's entry text — both of "
+         "which would have traded this tool's byte-proof for a hand copy or rewritten another act's "
+         "record. It wrote its OWN two entries naming its dispatch, which is what makes THIS "
+         "aiming's move possible. THE CONSEQUENCE, DECLARED AND STILL STANDING: the second "
+         "writing's two entries have no mechanism that can retire them, and they remain in "
+         "STATUS.md after this move as they did before it."},
 ]
 
 ARCHIVE_HEADER = (

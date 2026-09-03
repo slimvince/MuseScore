@@ -20212,3 +20212,235 @@ therefore cannot contain. Every value above was read from the run recorded in
 `tools/audit/guard_state.json`, which that run itself wrote, and from the staged-set enumeration taken
 immediately before this commit. No value here was carried forward from an earlier run or inferred from
 a summary.*
+
+---
+
+## THE L0/L1 COMPARISON TABULATED (FOURTH WRITING), THE WHOLE-POPULATION SECTIONS WRITTEN, NOTHING DECIDED — ★ THE READING FILE IS COMPLETE: §7, §8 AND §9 WRITTEN WHOLE, THE TWO-WAY CHECK CLOSING, AND NOTHING OF IT OWED TO A LATER BATCH
+
+**★ THE HEADING IS THE DISPATCH'S ORDERED NAME.** This batch ran
+`cc_instruction_comparison_l0_l1_fourth_2026_09_03.md`: **Task 0** landed the sitting record with
+Rulings 34–62, the ninety-second, ninety-third and ninety-fourth handover entries and the dispatch, and
+pushed; **Task 1** wrote the three sections the third writing left marked NOT YET WRITTEN — §8, then
+§9, then §7, one commit each in the ordered order; **Task 2** closed. **Every section of the reading
+file is now written and none is partly worked.** **The application act is NOT in this batch**, as the
+dispatch rules on sizing grounds: no row was re-marked, and Rulings 34 to 62 were not read.
+
+### The commits, by explicit hash
+
+| Act | Commit | What it carries |
+|---|---|---|
+| the tree met | `93ab4e340387baebbff310d1fc4449b1f6762e55` | the local tip; `origin/master` EQUAL to it — nothing unpushed |
+| Task 0 | `25b275e5fe65f73d624cc8feb30906b23a0282f5` | the sitting record, the three entries and this dispatch — **five paths**, not six |
+| Task 1, §8 | `07ab5a83cee53e6b62a81a287e3ed001801df630` | the seventeen open questions, ungraded |
+| Task 1, §9 | `8afac6c0f4cf456021fafe556fd610bc04d79ad4` | the derivation's own five points, no verdict |
+| Task 1, §7 | `b460ea2983818c4f8a077f29c901644b97bcf6e3` | the derived side, the resolution table, the two-way check, and the banner and §0 restated |
+| the close | this commit | `STATUS.md`, `STATUS_ARCHIVE.md`, `tools/audit/gen_status_batch_bound.py`, `tools/audit/status_batch_bound.json`, `tools/audit/session_start_read_size.json`, this section, the report |
+| the end state | the one further commit | the end-state guard run, which this section does not assert |
+
+**Every commit above was pushed and `origin/master` verified equal at
+`.git/refs/remotes/origin/master` with the file tools, never from a push's own output.**
+
+**THE DISPATCH WAS PINNED** to blob `d6bd44db1b1b07e7dc6e0544df50d0801f794428` at Task 0 under standing
+clause **P-2**, and its blob was proven unmoved immediately before staging. **The working-tree-first
+read is declared** as that clause's own fallback route, the user's opening line having named the
+dispatch file alone.
+
+### Both guard states
+
+**THE START STATE, run before the first edit, HELD EXACTLY AS DECLARED.** **76 guards run, 10 failing,
+4 not run, 16 historical, and ZERO STOPs.** The ten failing are the ten the dispatch's own FACT names,
+member for member, with no eleventh red. **Neither A2 exception fired at boot** —
+`gen_evidence_pin_membership.py --check` and `gen_l0_l1_outgoing_population.py --check` both PASSED,
+and so did `gen_status_batch_bound.py --check`.
+
+**★ THE START-STATE RUN WAS TAKEN IN WRITE MODE RATHER THAN CHECK MODE, AND THAT IS DECLARED BELOW
+RATHER THAN PRESENTED AS THE ORDERED FORM.** Its artifact was measured **byte-identical to the tip's
+blob** immediately afterwards, which is exactly what `--check` tests, so the run IS the start-state
+measurement and it moved nothing.
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it, per the dispatch's item 3.
+
+### E0–E2, graded
+
+- **E0 — MET.** **Five paths in one commit, not six:** A3 was measured before being accepted and came
+  back byte-identical, so `evidence_pin_membership.json` did not move and the ordered path list's
+  *only if it moved* excluded it. `origin/master` verified at the commit. A1's whole-tree check is
+  below, with the additions-only confirmation stated.
+- **E1 — MET IN EVERY LIMB.** **§8** carries seventeen entries, each with its location as a §6 row or
+  the statement that the outgoing text says nothing; **§9** carries five entries with the two
+  structural points named as such; **§7** carries its resolution table at the head — every
+  non-mechanical axis line enumerated in five classes and resolved at its row, **none recorded
+  UNRESOLVED** — one row per S-1 to S-54, and the two-way check stated as derived sums in both
+  directions with §0's figures quoted beside them and the one difference explained at its row. **The
+  banner and §0 state the file's own state.** **Every row of §6 is byte-unchanged, and this was
+  MEASURED at the objects rather than asserted**: the diff from the tree met to the §7 commit is
+  **eight hunks** — one at the banner, three in §0, one at each of §7's, §8's and §9's own NOT YET
+  WRITTEN markers, and one at §16's last bullet — and **not one of them falls inside §6**. **No
+  recommendation appears anywhere.**
+- **E2 — carried by the one further commit**, derived from the declared start state plus this batch's
+  own ordered acts.
+
+### A1–A5, graded
+
+- **A1 — HELD IN FULL, and the check was the whole-population one the dispatch ordered.**
+  `tools/audit/changed_paths.py` enumerated the tracked population at boot: **exactly the ONE named
+  exception and no second** — `cowork_rulings_2026_08_31_decision_surface_sitting.md`. **The
+  additions-only confirmation was PROVEN AT THE OBJECT, not accepted from the dispatch**: `git diff
+  --numstat` at the explicit tip hash returned **1,911 insertions and ZERO deletions**, and the hunk
+  headers were read — two hunks, the first inserting immediately after §3an's last line and before the
+  old §4, the second appending after the blob's last line. **The first hunk's git-reported position
+  differs by two lines from the locator the dispatch's FACT quotes, and the substantive test was
+  therefore settled at the blob's own content rather than at the number**: the blob's lines were read
+  at that position and are §3an's closing sentence, a blank line, and the old `## 4` heading — the
+  position A1 names, described by what stands there. All four named untracked paths were confirmed
+  present and confirmed ABSENT from the tip at `git ls-tree` by explicit hash. **A further untracked
+  handover entry, `cowork_handoff_entry_ninety_five.md`, appeared at the root and was NOT landed** —
+  the writing side's, which A1 names in advance as not a STOP. **The sitting record was re-measured
+  immediately before staging and had not moved**, and it has not been modified again at any point
+  since Task 0's commit.
+- **A2 — HELD.** The ten failing tools and zero STOPs, exactly, at the start-state run; neither named
+  exception fired. **The `gen_l0_l1_outgoing_population.py --check` regeneration case did not arise**:
+  it passed at boot, and the reason is this batch's own shape — the forward-bound move DID run here,
+  and it moved the third writing's two entries rather than the second writing's, so whether it moved a
+  recorded-tier hit is a question for the end state, which the one further commit measures.
+- **A3 — MEASURED BEFORE BEING ACCEPTED and HELD.** `evidence_pin_membership.json` was regenerated and
+  compared against the committed blob: **byte-identical**, `ruling_records_read` unmoved — by zero, as
+  A3 predicts. The artifact was therefore **NOT** committed.
+- **A4 — HELD.** **No tool was added.** Population unchanged at **76** at the start-state run; the
+  failing set the ten named, plus none. The one ordered act that touches a tool source is Task 2's
+  re-aiming of `gen_status_batch_bound.py`'s authored constants, which **D-648** classes as
+  authored-input maintenance and which the dispatch licenses in terms.
+- **A5 — HOLDS, with its stated exceptions and no other movement.** The derivation, the brief, the pack
+  and its artifact, every outgoing text in the population, `tools/audit/gen_l0_l1_outgoing_population.py`
+  and the population artifact are byte-unchanged by this batch. `evidence_pin_membership.json` did not
+  move. **The sitting record stands at the blob Task 0 committed.** The stated exceptions are
+  `STATUS.md` and `STATUS_ARCHIVE.md`, both of which Task 2 orders. **Every section of the reading file
+  outside the four places Task 1 names is byte-unchanged**, and those four are the banner's
+  incompleteness notice, §0's stop statement and the three NOT YET WRITTEN markers — with **one
+  further correction declared below**.
+
+### Declared departures
+
+1. **The dispatch was read from the working tree before it was pinned** — P-2's fallback route, the
+   user's opening line having named only the dispatch file. Pinned at Task 0; blob proven unmoved
+   before staging.
+2. **★ THE START-STATE GUARD SET RAN IN WRITE MODE RATHER THAN CHECK MODE, AND THE CAUSE WAS
+   ESTABLISHED AT THE SOURCE.** `gen_guard_state.py` takes no `--help`; it tests only for `--check` in
+   its argument list and otherwise takes its write branch, so an invocation intended to read its usage
+   ran the full set and rewrote `tools/audit/guard_state.json`. **The artifact was then measured
+   against the tip's blob and came back byte-identical**, which is precisely the comparison `--check`
+   performs — so the ordered measurement was in fact taken, the tree was not moved, and A1's
+   "exactly one tracked modification" was unaffected. Declared rather than presented as the ordered
+   form.
+3. **★ A CORRECTION TO §16's LAST BULLET OF THE READING FILE, DECLARED RATHER THAN MADE QUIETLY.** It
+   read *"It is not complete over its population, and §0 says exactly which documents are done and
+   which are untouched"* — true of every earlier writing and made false by this one. It was corrected
+   in place **with the former wording preserved at the site** (#12). It is a statement about the file's
+   own state, which is what the dispatch's item (e) orders brought up to date; **no verdict,
+   disposition or count changed.**
+4. **A python extractor was run over SCRATCH COPIES taken from git objects by explicit hash**, outside
+   the repository, to read §6's axis lines mechanically and to verify §7 after it was written. **No
+   working-tree file was read by any shell**; the copies were produced by `git show <hash>:path` and by
+   `git hash-object -w` followed by `git cat-file -p <hash>`, both content-addressed reads D-253
+   permits, and every repository read went through the file tools. Declared on the precedent the
+   ninety-fourth entry sets rather than assumed covered.
+5. **A missing-object error was met and surfaced rather than worked around.** A `git diff` against the
+   Task 0 commit returned *"Could not access"*, and the cause was established before anything was
+   touched: the shell's working directory had persisted into the scratch directory from an earlier
+   invocation, so git was running outside the repository. Every later invocation runs from the
+   repository root or in a subshell. **No fix was taken on a guess** (**D-669**).
+6. **The shell-read guard refused one command on an unexpanded variable** and the file tools were used
+   instead — deny-on-indeterminate (**D-647**) working exactly as the record describes it.
+7. **★ ONE WORKING-TREE `git diff` WAS RUN WITHOUT AN EXPLICIT HASH, AND THE GUARD ADMITTED IT.**
+   D-253 permits git for read-only OBJECT queries named by an explicit hash; a diff against the
+   working tree is not one. The command named `tools/audit/gen_status_batch_bound.py` at the
+   self-check, to read this batch's own edit to it. **The guard did not deny it**, and the next such
+   command — naming `STATUS.md` among its paths — **was denied with the rule quoted**, which is how
+   the departure was noticed. **Declared rather than left silent, and no conclusion rests on it**: the
+   tool's own reconciliation (byte-present in the archive exactly once, absent from the must-read) and
+   `--check` are what establish the forward-bound act, and every reading-file diff in this batch was
+   taken between two explicit commit hashes. **No open-items row is created for the guard's coverage
+   here**; it is recorded at the act, where the next session meets it.
+
+### The per-row resolution table, as a POINTER
+
+**Its foot is at §7a of the reading file and no count of it is restated here** (**D-431**, #17f). What
+the close records is the shape rather than the figures: the minority was enumerated **mechanically** in
+five classes — two verdict words for one named statement; a statement named in a row's *Derived* line
+that its axis line does not grade; a statement graded but not named; a row naming no derived statement;
+and an axis block continuing past a line break — **each resolved at its own row under a carrying rule
+fixed before it was applied**, and **no row is recorded UNRESOLVED**, so §7c's arithmetic is stated
+over the whole population with nothing excluded. The third class returned empty in both directions.
+
+**★ THE ONE DIFFERENCE BETWEEN §0's RECORDED FIGURES AND §7's DERIVED SUMS HAS ITS CAUSE FOUND AND
+NAMED AT ITS ROW**, which is what the dispatch's item (d3) asks for and is the expected shape of such a
+difference rather than a defect: a per-row resolution moved a count. It is stated at §7c with the row
+that causes it, and it was checked per document — the derived sums equal each document's own verdict
+table at twenty-eight of the twenty-nine, and the exception is the row named there. **A difference with
+no cause found would have been a STOP; there is none.**
+
+**★ THE WRITTEN §7 WAS VERIFIED MECHANICALLY AGAINST THE EXTRACTION IT WAS GENERATED FROM, TWICE** —
+once when it was written and again at the file's final state, each time by parsing §7b back out of a
+scratch copy taken at the file's own git object and comparing every row, every attribution and every
+per-row count against the extraction. **Both runs returned an exact match with zero transcription
+errors.** This is stated because a section whose whole claim is that its arithmetic closes may not rest
+on careful copying, and because the transcription risk is the one this section's construction actually
+carries.
+
+### The forward bound — RAN, and the prediction held
+
+**`gen_status_batch_bound.py` was re-aimed at ALL FIVE of its authored inputs** — `BASE_COMMIT`,
+`PREVIOUS_BATCH_DISPATCH`, `ACT_DATE`, `DISPATCH`, `TASK` — and `PREVIOUS_AIMINGS` was **appended to
+rather than replaced** (#12) with two rows: the second writing's aiming, now superseded, and **a row
+recording that the THIRD writing performed NO move**, carrying that tool's own STOP message quoted from
+the third close and marked in the shape the backfilled 2026-08-26 row uses, so the record of aimings
+does not silently omit a batch (#10, #12).
+
+**The move then RAN and the dispatch's own prediction held exactly: the third writing's TWO entries
+moved, the second writing's two stayed, and there was no STOP.** The reconciliation the tool derives is
+green in both limbs — every moved entry byte-present in the archive exactly once and absent from the
+must-read — and `--check` passes at the end of the act. **No entry was moved by hand and no earlier
+entry's text was edited.**
+
+**THE SECOND WRITING'S TWO ENTRIES REMAIN IN `STATUS.md`, AS THE THIRD CLOSE'S FINDING RECORDS.** That
+is a declared state, not a STOP, and **no open-items row is created for it**; the finding is now also
+rowed inside the tool's own `PREVIOUS_AIMINGS`, where a later reader meets it at the mechanism rather
+than only in a close.
+
+### Quarantined audit questions
+
+**They are NOT restated here.** They are gathered in the reading file's own AUDIT QUESTIONS section,
+complete over the whole population. **This batch added none and answered none** — §7, §8 and §9 raise
+no audit question, being read off rows already placed.
+
+### What the user is asked to rule
+
+**NOTHING IN THE READING FILE, WHICH SAYS SO IN TERMS.** The disposition surface comes separately, put
+by the writing side over these rows. **This section recommends nothing** — not about any disposition,
+any difference, any open question, §7's five points, the derivation, the method, or the L0/L1 split —
+and it attaches no verdict word to the deriving session's independence.
+
+### The plan lines
+
+- **The application act is next**, written by the writing side over §7's two-way check and the sitting
+  record's §3ao–§3bq. **This batch did not begin it, did not prepare for it, and re-marked no row**;
+  Rulings 34 to 62 were not read.
+- **The L0/L1 split returns at ratification**, as Ruling 32 states in terms.
+- **The pack finding of §3al.4 goes to L2's pack.**
+- **Then L2**, sequenced by Ruling 10.
+
+### The plan's tell, in one sentence
+
+**Did this batch produce anything other than the landed records, the reading file's three sections and
+the report?** **Yes, and it is named:** two `STATUS.md` pointer entries, the forward-bound move's
+`STATUS_ARCHIVE.md` block, the re-aimed `gen_status_batch_bound.py` with its two new
+`PREVIOUS_AIMINGS` rows, and the regenerated `status_batch_bound.json` and
+`session_start_read_size.json` — **every one of them an act Task 2 orders — and nothing else.**
+
+*Provenance: CC, 2026-09-03. Every commit identifier above was read from the commit output at the time
+each commit was taken and `origin/master` was read at its ref file with the file tools after each push;
+the guard verdicts are this batch's own start-state run and not carried from any earlier one; A1 was
+established with the sanctioned enumeration tool over the whole tracked population and the sitting
+record's shape at the git object by explicit hash; A3 by regeneration and comparison against the
+committed blob; and the forward bound by running the tool at its new aiming and reading its own output.
+No count of the reading file is restated in this section (D-431).*
