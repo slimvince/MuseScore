@@ -20777,3 +20777,241 @@ enumeration tool over the whole tracked population and the sitting record's shap
 explicit hash; A3 by regeneration and comparison against the committed blob; the forward bound by
 running the tool at its new aiming and reading its own output. No count of the reading file or of the
 successor is restated in this section (D-431).*
+
+---
+
+## THE L0/L1 RATIFICATION EDITS (SIXTH WRITING): RULINGS 64–77 LANDED, THE CORRECTIONS APPLIED, THE DERIVED SPECIFICATION BANNERED AS RATIFIED, THE FAMILY PLACEMENTS STILL OWED
+
+**★ THE HEADING IS THE DISPATCH'S ORDERED NAME.** This batch ran
+`cc_instruction_comparison_l0_l1_sixth_2026_09_03.md`: **Task 0** landed the sitting record carrying
+Rulings 64 to 77, the ninety-sixth entry and the dispatch, and pushed; **Task 1** applied to
+`cowork_derived_specification_l0_l1_2026_09_03.md` the corrections Rulings 66 to 77 order and replaced
+its title and banner so the file says of itself that it is RATIFIED; **Task 2** closed. **NO RULING WAS
+TAKEN, NO POSITION WAS WEIGHED, NO FAMILY ROW WAS PLACED AND NO RECOMMENDATION APPEARS ANYWHERE.**
+
+### The commits, by explicit hash
+
+| Act | Commit | What it carries |
+|---|---|---|
+| the tree met | `232d3dd8540f4589fad568843beef4c0c4891d23` | the local tip; `origin/master` EQUAL to it — nothing unpushed |
+| Task 0 | `ba6dc1dba812137a6bafb2f5317b68d4c88a9168` | the sitting record with Rulings 64–77, `cowork_handoff_entry_ninety_six.md`, this dispatch — **three paths**, not four |
+| Task 1 | `31a951bb2b206a89f150992fa4181e705115ef6c` | `cowork_derived_specification_l0_l1_2026_09_03.md`, corrected and re-bannered — one path |
+| the close | this commit | `STATUS.md`, `STATUS_ARCHIVE.md`, `tools/audit/gen_status_batch_bound.py`, `tools/audit/status_batch_bound.json`, `tools/audit/session_start_read_size.json`, this section, the report |
+| the end state | the one further commit | the end-state guard run, which this section does not assert |
+
+**Every commit above was pushed and `origin/master` verified equal at
+`.git/refs/remotes/origin/master` with the file tools, never from a push's own output.**
+
+**THE DISPATCH WAS PINNED** to blob `48d3c6125827f1a282bbc70c7c108460e13bcfed` at Task 0 under standing
+clause **P-2**, and its blob was proven unmoved immediately before staging. **The working-tree-first
+read is declared** as that clause's own fallback route, the user's opening line having named the
+dispatch file alone.
+
+### Both guard states
+
+**THE START STATE, run in CHECK mode before the first edit, HELD EXACTLY AS DECLARED.** **76 guards
+run, 10 failing, 4 not run, 16 historical, and ZERO STOPs.** The ten failing are the ten the dispatch's
+own FACT names, member for member, with no eleventh red — and **this run is the measurement of the
+TIP**, the artifact the dispatch declares from being the tip's own run. **Neither A2 exception fired at
+boot** — `gen_evidence_pin_membership.py --check`, `gen_l0_l1_outgoing_population.py --check`,
+`gen_status_batch_bound.py --check` and `gen_session_start_read_size.py --check` all PASSED.
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it, per the dispatch's item 3.
+
+### E0–E2, graded
+
+- **E0 — MET.** **Three paths in one commit, not four:** A3 was measured before being accepted and came
+  back byte-identical (`fb3a00be…` both sides), so `evidence_pin_membership.json` did not move and the
+  ordered path list's *only if it moved* excluded it. `origin/master` verified at the commit. A1's
+  whole-tree check is below, with the two-hunk confirmation stated **by content at each position**.
+- **E1 — MET.** **Every correction in the dispatch's item (c) was applied and none was unapplied**:
+  each anchor was found verbatim at the successor, so the *corrections the batch could not apply* list
+  is EMPTY. The title and the banner are the dispatch's own authored text, which the user did not
+  overrule. **The per-hunk attribution table is in the report**, and every hunk of the object-level
+  diff is attributed to exactly one of — a ruling of 64 to 77 by number and item, or the ordered title
+  and banner; a hunk none of those accounts for would have been a STOP and there was none. **No
+  statement was renumbered** (all 54 present exactly once; all 19 open questions present exactly once)
+  and **no clause of Rulings 34 to 62 was removed** — zero deleted `*Beside`, `*Amended by` or `*Ruled`
+  lines in the whole diff. **No recommendation appears anywhere.** The one check of item (d) that does
+  not hold as written — the word *bass* absent from every bold statement and every §0 entry — is
+  reported below with what was read, and **nothing was repaired for it**.
+- **E2 — carried by the one further commit**, derived from the declared start state plus this batch's
+  own ordered acts.
+
+### A1–A5, graded
+
+- **A1 — HELD IN FULL, and the check was the whole-population one the dispatch ordered.**
+  `tools/audit/changed_paths.py` enumerated the tracked population at boot: **exactly the ONE named
+  exception and no second** — `cowork_rulings_2026_08_31_decision_surface_sitting.md`. **Its
+  additions-only shape was PROVEN AT THE OBJECT**: `git diff --numstat` at the explicit tip hash
+  returned **829 insertions and ZERO deletions**, and `-U0` gave exactly **two hunks**. **Both
+  positions were confirmed by what stands there rather than by the header's number**: the first
+  insertion begins at the heading `## 3bs. Ruling 64 …` and ends immediately before `## 4. What this
+  ruling does NOT do`; the second begins after the tail paragraph opening *★ AND WITH **Ruling 63**
+  (§3br)* and runs to the file's last line, carrying one `*★ AND WITH **Ruling 6N/7N**` paragraph per
+  ruling of 64 to 77. Both named untracked paths were confirmed present. **`cowork_handoff_entry_ninety_seven.md`
+  stands at the root and was NOT landed** — the writing side's, which A1 names in advance as not a
+  STOP. **No other tracked path was modified at any point in the run.**
+- **A2 — HELD.** The ten failing tools and zero STOPs, exactly, at the start-state run; **no A2
+  exception fired at boot**, and the `gen_l0_l1_outgoing_population.py` regeneration case is a question
+  for the end state, which the one further commit measures.
+- **A3 — MEASURED BEFORE BEING ACCEPTED and HELD.** `evidence_pin_membership.json` was regenerated and
+  its blob hash compared against the committed one: **byte-identical**, movement by zero exactly as A3
+  predicts. The artifact was therefore **NOT** committed.
+- **A4 — HELD.** **No tool was added.** Population unchanged at **76** at the start-state run; the
+  failing set the ten named, plus none. The one ordered act that touches a tool source is Task 2's
+  re-aiming of `gen_status_batch_bound.py`'s five authored constants, its `PREVIOUS_AIMINGS` list and
+  the two head comments that describe the aiming, which **D-648** classes as authored-input maintenance
+  and which the dispatch licenses in terms.
+- **A5 — HOLDS, with its stated exceptions and no other movement.** The derivation is byte-unchanged,
+  banner and body; the reading file is byte-unchanged; the brief, the pack directory and
+  `derivation_boot_pack.json`, every outgoing text, `tools/audit/gen_l0_l1_outgoing_population.py` and
+  the population artifact are untouched; the sitting record stands at the blob Task 0 committed; the
+  suspension file and every register source are untouched; every governing document except `STATUS.md`
+  and `STATUS_ARCHIVE.md` is untouched. **In the successor, every line not named by a correction in
+  Task 1's list is byte-unchanged** — established at the object-level diff, whose every hunk is
+  attributed and whose deleted lines are exactly the statement and field lines the ordered corrections
+  replace.
+
+### The per-hunk attribution, and the corrections that could not be applied
+
+**The attribution table is in `cc_report_comparison_l0_l1_sixth_2026_09_03.md` §2**, hunk by hunk,
+each to a ruling by number and item or to the ordered title and banner. **NO CORRECTION WAS LEFT
+UNAPPLIED**: every anchor the dispatch quotes was found verbatim at the successor, so the report's
+*corrections the batch could not apply* list is empty.
+
+### ★ What the ordered check found and this batch did NOT repair
+
+**The item (d) check requires the word *bass* absent from every bold statement and from every §0 entry
+except the reserved-word sentence and quotations of research sources. It does not hold, in four places,
+and NONE of them is named by an ordered correction** — so each is reported and none is repaired (the
+dispatch: nothing is repaired or re-read into a different edit by this batch's own judgment).
+
+- **S-8's bold statement** opens *"Figured bass and chord symbols written by the composer…"*. Ruling 67
+  item 3 ratified S-8 as derived and ordered only the OQ-16 marking; no correction reaches its text.
+- **S-44's bold statement** carries the reserved-word sentence itself — *"The word* bass *is reserved
+  for the chord's bass note decided at L3."* — which Ruling 42 put there and which Ruling 76's §0 entry
+  now mirrors.
+- **S-48's bold statement** reads *"one bar for the bass anchor"*. Ruling 74 rewords S-45, S-46, S-47
+  and S-49 and corrects S-48's **status only**; its statement is not among the four.
+- **§0's *Local cadence cue* entry** reads *"a falling-fifth or rising-fourth bass motion"* — the
+  charter's own naming of its three cues, relayed. Ruling 76 corrects three §0 entries and this is not
+  one of them.
+
+**Read beside them, and NOT a defect:** the §0 *Candidate tonality* entry now ends
+*(formerly "the bass pitch class" — Ruling 76, §3ce)*, which is the ordered correction's own preserved
+wording (#12), and each of the four `*Reworded under Ruling 74*` lines names the reserved word in order
+to say what was renamed.
+
+**One further observation, reported and not repaired.** The banner's parenthesis — the dispatch's own
+authored text — names S-11's falsifier note as the correction touching the eleven statements no
+outgoing statement of the population names. **S-42's status line was also corrected**, under Ruling 73
+item 4 on Ruling 70's answer, and S-42 is one of those eleven. The banner was applied as ordered.
+
+### Declared departures
+
+1. **The dispatch was read from the working tree before it was pinned** — P-2's fallback route, the
+   user's opening line having named only the dispatch file. Pinned at Task 0; blob proven unmoved
+   before staging.
+2. **The armed shell-read guard refused two commands and the file tools were used instead.** An `ls`
+   over a repository glob was refused outright, and a `tail`/`grep` over a **scratch** path outside the
+   repository was refused because the path was carried in an unexpanded shell variable the guard could
+   not resolve — deny-on-indeterminate (**D-647**) working exactly as the record describes it. **No
+   conclusion rests on either refused command.**
+3. **Diff output was written to scratch paths outside the repository and read with the file tools.**
+   Every repository read went through the file tools; the only shell reads were git object queries by
+   explicit hash (`git show <hash>:path`, `git rev-parse <hash>:path`, `git hash-object -w`, and
+   `git diff` between two explicit hashes).
+4. **★ THE ORDERED CORRECTION TEXTS WERE WRAPPED TO THE FILE'S OWN LINE WIDTH.** The dispatch fixes
+   each correction's words; the successor wraps its prose at about a hundred columns, and each ordered
+   text was wrapped to it. **No word was added, dropped or altered**, and the wrapping is visible in
+   the diff as ordinary line breaks.
+5. **★ THE `*Reworded under …*` AND `*Completed under …*` LINES WERE WRITTEN AS LIST ITEMS.** The
+   dispatch gives each as *one line beneath the statement's six fields*; the six fields are a bullet
+   list and every comparable line the fifth writing placed (`- *Amended by Ruling N …*`) is a bullet,
+   which is what item (a)'s *"the successor's own"* form names. Each was therefore written with the
+   list marker and the ordered text unchanged. **Declared because the ordered text carries no marker.**
+6. **★ TWO INTERMEDIATE WRAPPING STATES INSIDE TASK 1 WERE CORRECTED IN THE SAME TASK BEFORE THE
+   COMMIT.** An edit inside S-45's *Defense* first left one line far over the file's width, and an edit
+   inside S-46's *Defense* first left a line broken mid-word at a hyphen; both were re-wrapped
+   immediately. **Declared because the committed state is right and the intermediate state was not.**
+
+### The forward bound — RAN, and the prediction held
+
+**`gen_status_batch_bound.py` was re-aimed at ALL FIVE of its authored inputs** — `BASE_COMMIT` (this
+batch's last task commit, `31a951bb2b…`), `PREVIOUS_BATCH_DISPATCH`, `ACT_DATE`, `DISPATCH`, `TASK` —
+and `PREVIOUS_AIMINGS` was **appended to rather than replaced** (#12) with the fifth writing's aiming,
+now superseded, marked as a move that **RAN**. The two head comments that describe the aiming were
+amended in the same act.
+
+**The move then RAN and the dispatch's own prediction held exactly: the FIFTH writing's FIVE entries
+moved, the second writing's two stayed, and there was no STOP.** The reconciliation the tool derives is
+green in both limbs — every moved entry byte-present in the archive exactly once and absent from the
+must-read — and `--check` passes at the end of the act. **No entry was moved by hand and no earlier
+entry's text was edited.**
+
+**THE SECOND WRITING'S TWO ENTRIES REMAIN IN `STATUS.md`.** That is a declared state, not a STOP, and
+**no open-items row is created for it**; the finding is rowed inside the tool's own `PREVIOUS_AIMINGS`,
+where a later reader meets it at the mechanism.
+
+### What the user is asked to rule
+
+**NOTHING.** The successor now records the user's own fourteen rulings; the reading file's §15 still
+reads NOTHING. **This section recommends nothing** — not about any correction, any open question, the
+derivation, the method, the L0/L1 split, or the deriving session's independence, to which no verdict
+word is attached.
+
+### The plan lines
+
+- **The item (d) family placements are next**, as a writing-side dispatch with the per-row placements
+  the writing side has not yet written. They are the one piece of the application act left undone.
+- **The pack finding of §3al.4 goes to L2's pack.**
+- **Then L2**, sequenced by Ruling 10.
+
+### The plan's tell, in one sentence
+
+**Did this batch produce anything other than the landed records, the corrected successor, the four
+Task-2 files and the report?** **Yes, and it is named in full:** three `STATUS.md` pointer entries, the
+forward-bound move's `STATUS_ARCHIVE.md` block, the re-aimed `gen_status_batch_bound.py` with its new
+`PREVIOUS_AIMINGS` row and two amended head comments, the regenerated `status_batch_bound.json` and
+`session_start_read_size.json`, this close section, and `tools/audit/guard_state.json` as the artifact
+of the end-state run — **every one of them an act this dispatch's Task 2 orders, and nothing else.**
+
+### The standing self-check (D-196) over this batch's own work
+
+1. *Principles touched.* **#12** — every former wording preserved at its site, in the successor's own
+   marker shape; every derived wording left standing at the derivation and pointed at; the derivation
+   and the reading file untouched; `PREVIOUS_AIMINGS` appended to, not replaced. **#6** — one home for
+   the specification, the corrections written into its body under D-674 branch two rather than into a
+   second file. **#10** — the successor made true of itself, face by face, and its banner made true of
+   what it now is. **#19** — nothing is established by this batch; the ratification is the user's
+   fourteen rulings and the file says so. **#13** — the four places where the ordered *bass* check does
+   not hold, and the banner's parenthesis, were surfaced rather than repaired by this side's reading.
+   **#17(f)/D-431** — no count of the reading file or of the successor is restated in this section.
+   **#24** — no comparison is asserted. Conforms.
+2. *Conventions.* American English; no self-invented label — every term used is the dispatch's own;
+   music-theory words in their musical sense, with *exclude* for the prohibiting sense in this side's
+   prose and the word *bass* used only as a word being reported on, never as a name for an L1 object;
+   no numeric grade anywhere.
+3. *Figures and premises.* The tip and `origin/master` at the two ref files with the file tools; every
+   commit at `git show --stat` by explicit hash; the guard verdicts from this batch's own start-state
+   run; A1 with the sanctioned enumeration tool and at the git object by explicit hash; A3 by
+   regeneration and blob comparison; the successor's diff between two explicit blob hashes; the
+   statement and open-question enumerations at the new blob's own headings; the forward bound by
+   running the tool and reading its own output.
+4. *File-tools rule.* Every repository read through the file tools; the shell used only for git object
+   queries by explicit hash and for the sanctioned tool invocations. No `git status`, no working-tree
+   `git diff` without an explicit hash, no `git log`. The two guard denials are declared above.
+5. *Uncertainty.* Which uses of the word *bass* inside the *Defense*, *Premise* and *Falsifier* prose
+   of S-45 to S-49 "name the anchor" — and are therefore reached by Ruling 74 item 1 — against which
+   report a research source's own finding and are carried as that source wrote them, is **this
+   batch's reading of the ruling's scope**; every use left standing is enumerated in the report §3 so
+   the reading is challengeable at the line.
+
+*Provenance: CC, 2026-09-03. Every commit identifier above was read from the commit output at the time
+each commit was taken and `origin/master` was read at its ref file with the file tools after each push;
+the guard verdicts are this batch's own start-state run; A1 was established with the sanctioned
+enumeration tool over the whole tracked population and the sitting record's shape at the git object by
+explicit hash; A3 by regeneration and comparison against the committed blob; the forward bound by
+running the tool at its new aiming and reading its own output. No count of the reading file or of the
+successor is restated in this section (D-431).*
