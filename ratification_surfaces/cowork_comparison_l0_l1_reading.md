@@ -12699,10 +12699,133 @@ them. **No count is asserted here**, because an unverified one would be worse th
 
 ## 8. The open questions OQ-1 to OQ-17
 
-**NOT YET WRITTEN.** Each of the seventeen is to be listed with one sentence on what the outgoing text
-says about it, **with location**, or that it says nothing. The precondition — the whole population
-tabulated — is met; this section is owed by the same writing that owes §7, and is not written because
-that writing stopped at the population boundary (§0).
+**★ COMPLETE OVER THE POPULATION, AND UNGRADED THROUGHOUT.** All seventeen are listed in the
+derivation's own order. Each carries **one sentence on what the outgoing text says about it, with its
+location as a ROW of §6** — the row carrying the outgoing passage's own quotation and its heading — or
+the statement that the outgoing text says nothing. **No answer to any open question is given or
+implied**, and no verdict is taken on whether an open question should be open.
+
+**Two facts relayed once, so that no entry below has to repeat them.** The derivation's §6.5 names
+**seven** of these as places where notation was wanted and an open question was written instead — OQ-2,
+OQ-3, OQ-4, OQ-5, OQ-7, OQ-8 and OQ-13 — and records that the two gaps the brief itself declared,
+tremolo and pedal marks, are OQ-2 and OQ-3. **And neither the derivation's own text nor §14 of this
+file records the deriving session having later answered any of the seventeen**; every one stands as its
+§4 leaves it.
+
+**Where an entry says the outgoing text SAYS NOTHING, that is a statement about this tabulation's own
+population** — the 29 documents of §3 — and not about the whole record. §3's reach caveat applies to it
+exactly as it applies to everything else here.
+
+---
+
+**OQ-1 ★ (faces (c), (e); S-27, S-42, S-32) — does the analysis work in notated or in unfolded
+(performed) order?**
+**The outgoing text says nothing.** No row of §6 speaks to repeat unfolding or to which order the
+analysis works in — the word does not appear anywhere in the tabulation — and the rows naming S-32
+(Rows 2.13, 2.20, 6.35, 7.9, 7.14 and 13.10 among them) are about where the working span's tiling
+begins and ends, never about which pass of a repeat it covers. **No row names S-27 or S-42 at all.**
+
+**OQ-2 (face (a); S-21) — the eligibility and sounding set of tremolo-marked notes.**
+**The outgoing text says nothing.** *Tremolo* appears at exactly two places in the tabulation, Rows
+3.31 and 10.13, and in both it stands inside a quotation of the derivation's own S-7 supplied list
+rather than in an outgoing statement about a tremolo-marked note.
+
+**OQ-3 ★ (faces (a), (c); S-54) — is an event's release its notated release or the pedal lift?**
+**Row 12.8** states as a fact that a pedal line *"affects which pitches actually sound together"* —
+which that row records as the position S-54 declined to take — and **Row 4.15** describes a live path
+adding a discounted tail-weight *"for the span from note-off to pedal release"*; the four other rows
+naming S-54 (17.2, 22.18, 24.10, 24.11) and **Row 25.14** all use *pedal point* in the other sense and
+do not reach the mark.
+
+**OQ-4 (face (a); S-19) — cue-sized passages in parts, and editorial realisations written small: which
+are eligible?**
+**Row 3.60** records that the distinction is not recoverable at all after import — *"once a MuseScore
+score is imported, a cue note can no longer be told apart from an ordinary muted note, and the existing
+'does it sound' flag already excludes both"* — which that row notes would close the question by
+removing its subject; **Row 3.4** records the same fact from the flag's side, an imported cue note
+folded into the *plays* flag.
+
+**OQ-5 (face (a); S-19) — *ossia* staves and alternative passages: which alternative sounds?**
+**The outgoing text says nothing.** *Ossia* appears nowhere in the tabulation, and the two rows naming
+S-19 — 3.4 and 3.60 — both reach the cue case and neither reaches an alternative staff.
+
+**OQ-6 (face (a); S-3) — a transposing part carried without its transposition: refuse or flag?**
+**The outgoing text says nothing about the missing case.** **Row 20.15** states that the published
+pitch is concert pitch *"unless user requests written"*, which is the fact this question assumes
+present; no row of §6 states what happens when the record does not carry the transposition.
+
+**OQ-7 (face (b); S-24) — should the tie test admit enharmonic equivalence?**
+**The outgoing text says nothing about a tie across a respelling.** The three rows naming S-24 reach a
+slur mistaken for a tie (**Row 3.12**), a three-part internal-validity test on the notated spelling
+(**Row 22.12**) and a measured collapse of two spellings of one pitch class by iteration order (**Row
+29.7**) — none of them a tie whose two notes are spelled differently.
+
+**OQ-8 (face (d); S-34, S-36, S-37) — a mid-bar signature change; additive and irregular signatures; a
+short bar that is neither tail nor head.**
+**The outgoing text says nothing about any of the three.** **No row names S-37**; the rows naming S-34
+(**18.18(i)**, **18.18(ii)**, **20.12**) are about the bar as a level nameable before the notes are
+loaded; and the rows naming S-36 (**12.23**, **23.1**, **25.9**) reach the anacrusis convention and the
+bookkeeping that reads it — **Row 23.1** recording that the ground truth's *own* anacrusis convention
+is an open establishment obligation.
+
+**OQ-9 (face (e); S-39) — are a caesura, a breath mark, a section break or a *segno* boundary
+evidence?**
+**Rows 10.13 and 10.23** answer in the affirmative for two of the four, the outgoing text consuming the
+breath mark and the caesura as notated boundary markers and both rows saying so in terms; **Rows 13.3
+and 14.18** name the breath mark among the boundary kinds a third and a fourth time. **The section
+break and the *segno* are named in no row.**
+
+**OQ-10 (face (f); S-48) — the cue window's value for this repertoire.**
+**The outgoing text supplies no value.** All twelve rows naming S-48 agree with it in *discipline*
+rather than in quantity: **Row 10.47** records the weights and the peak threshold left *"at stated
+defaults"*, and **Row 27.8** refuses a truncation constant on the ground that *"a breadth 'N' or a
+gap-window width would be a hand-set value with no basis"*.
+
+**OQ-11 (face (d); S-35) — should an off-grid tuplet position take the nearest level's class?**
+**Two rows speak to the boundary side of it and none to the class side.** **Row 2.16** records that
+*"tuplet ticks are the model's real, un-snapped ticks"* and **Row 6.55** that the old pipeline
+*"snapped mid-tuplet moments"*, naming that snapping among the heuristics the change-point construction
+dropped; **no row states what metric strength class such a position receives.**
+
+**OQ-12 (face (a); S-13, S-46) — which "voice" the leading-tone cue reads where a notated voice carries
+chords.**
+**Row 19.19** publishes a **chordal** mark per event on a notated voice, giving the case a published
+fact, and **Row 19.16** measures that the axis's first classification works on notated voices without
+stream separation, giving the recovery a named component whose output is marked *inferred*; **Row 16.2**
+states the opposite reading for keyboard music. **No row states which voice the cue itself reads.**
+
+**OQ-13 ★ (face (a); S-18) — does visibility or the played flag govern when they disagree?**
+**Row 20.17** publishes a hidden note precisely because *"Hidden notes affect LLM reasoning"* —
+visibility treated as information rather than as an exclusion — while **Rows 4.10 and 4.22** describe a
+live path that skipped invisible notes outright. **No row states which of the two flags governs when
+they disagree.**
+
+**OQ-14 ★ (face (e); S-41) — is a second output beside the per-change-point flags admitted?**
+**The outgoing text uses one.** All three rows naming S-41 agree with it — **Row 20.3** on dynamics,
+tempo marks and rehearsal marks as admitted intentional properties, **Row 20.7** on the address as a
+join key so a mark and a note at one position are co-located, and **Row 20.9** on the notated landmarks
+a region may be addressed by; that last is the positioned marks list's own content reached by asking
+how a musician names a place in a score.
+
+**OQ-15 ★ (face (e); S-43) — are TIME-SIGNATURE-CHANGE and KEY-SIGNATURE-CHANGE admitted to the
+boundary-evidence kinds?**
+**Row 10.23 answers in the affirmative** and **Row 10.15** reaches the flag independently, the outgoing
+text treating the mid-score key-signature change as a settled boundary marker and using it; of the
+eleven rows naming S-43, ten agree with it and the exception is **Row 12.2(ii)**'s record that a
+mid-piece change is *"never re-anchored"* — which **Row 21.13** then rules re-anchored at the design
+level.
+
+**OQ-16 ★ (L0; S-8) — are a composer's own figured-bass figures input, or annotation beside it?**
+**The outgoing text agrees with the derivation's rule and says nothing about figures themselves.** The
+three rows naming S-8 — **1.28**, **12.9** and **17.11** — all agree that a written harmonic claim is
+not read as input, **Row 17.11** as a standing prohibition binding *"any gate, any scoring term, or any
+future change to either"*; none of the three reaches a composer's own figures.
+
+**OQ-17 ★ (face (f); S-48) — is the stand-in window acceptable as a declared provisional value?**
+**The outgoing text accepts the same shape without reaching this parameter.** **Row 10.47** leaves its
+own precision-phase constants at stated defaults with the phase named, and **Row 27.16** registers
+presentation constants as declared values *"none pretending to be an inference value"*; **no row speaks
+to the cue window's own stand-in.**
 
 ## 9. The derivation's §7 — the five places the decomposition seemed wrong or incomplete
 
