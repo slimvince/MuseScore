@@ -91,11 +91,21 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # writing's aiming until this act. Both facts are rowed in `PREVIOUS_AIMINGS` below — the second
 # writing's aiming as superseded, and the third writing's non-move with the tool's own STOP message
 # quoted — so the record of aimings does not silently omit a batch (#10, #12).
-BASE_COMMIT = "b460ea2983818c4f8a077f29c901644b97bcf6e3"
+#
+# ★★★★ RE-AIMED AGAIN 2026-09-03 by `cc_instruction_comparison_l0_l1_fifth_2026_09_03.md` Task 4 — the
+# application act's close — and again ALL FIVE authored inputs moved together, `PREVIOUS_AIMINGS` being
+# appended to rather than replaced (#12). The aiming this replaces is the FOURTH writing's, which RAN
+# and moved the third writing's two entries exactly as its own dispatch predicted. `BASE_COMMIT` is
+# this batch's LAST TASK COMMIT — Task 3, the reading file's re-marking — per this tool's docstring;
+# the then-previous batch is the fourth comparison dispatch, whose close entry names it and whose
+# second entry says `Same dispatch`. **The second writing's two nameless entries remain in `STATUS.md`
+# and no aiming of this tool can identify them**, as the row for the third writing below records; that
+# is a declared state and not a STOP.
+BASE_COMMIT = "cd62b001686d0f2793ad1d85df84057eaec57e38"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_comparison_l0_l1_third_2026_09_02.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_comparison_l0_l1_fourth_2026_09_03.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-03 and this batch ran on 2026-09-03, so the two agree; the field is kept
@@ -103,13 +113,16 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_comparison_l0_l1_third_2026_09_02.md"
 # carrying a dispatch's date would say something false about the record (#10) on any batch where the
 # two differ.
 ACT_DATE = "2026-09-03"
-DISPATCH = "cc_instruction_comparison_l0_l1_fourth_2026_09_03.md"
+DISPATCH = "cc_instruction_comparison_l0_l1_fifth_2026_09_03.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. The executing dispatch orders the move and this
-# batch's own `STATUS.md` entries in the same numbered task — its Task 2, whose item 1 orders the
-# pointer entries and the forward bound together — so both halves of "the same act that writes its own
-# entries" sit inside Task 2, and Task 2 is what the archive header names. No sub-item is carried,
-# because the header names an act rather than a sub-step and every previous aiming names a whole task.
-TASK = "Task 2"
+# batch's own `STATUS.md` entries in the same numbered task — for the fifth comparison dispatch that is
+# its Task 4, whose item 1 orders the pointer entries and the forward bound together — so both halves of
+# "the same act that writes its own entries" sit inside Task 4, and Task 4 is what the archive header
+# names. No sub-item is carried, because the header names an act rather than a sub-step and every
+# previous aiming names a whole task. *(This comment named Task 2 while the fourth comparison dispatch
+# was the executing act, which was correct then; the numbered task differs per dispatch and is re-stated
+# with each re-aiming rather than left to be inferred.)*
+TASK = "Task 4"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
 # Every aiming this tool has had, oldest first. Authored, and kept rather than replaced.
@@ -290,6 +303,14 @@ PREVIOUS_AIMINGS = [
          "aiming's move possible. THE CONSEQUENCE, DECLARED AND STILL STANDING: the second "
          "writing's two entries have no mechanism that can retire them, and they remain in "
          "STATUS.md after this move as they did before it."},
+    # ★ RECORDED 2026-09-03 by `cc_instruction_comparison_l0_l1_fifth_2026_09_03.md` Task 4. This is
+    # the FOURTH writing's aiming, now superseded. Unlike the row immediately above it, that move RAN:
+    # the tool was re-aimed at all five authored inputs, `--apply` moved the THIRD writing's two
+    # entries to STATUS_ARCHIVE.md, and its own reconciliation came back green in both limbs — every
+    # moved entry byte-present in the archive exactly once and absent from the must-read.
+    {"executing_act": "cc_instruction_comparison_l0_l1_fourth_2026_09_03.md, Task 2",
+     "base_commit": "b460ea2983818c4f8a077f29c901644b97bcf6e3",
+     "the_then_previous_batch": "cc_instruction_comparison_l0_l1_third_2026_09_02.md"},
 ]
 
 ARCHIVE_HEADER = (

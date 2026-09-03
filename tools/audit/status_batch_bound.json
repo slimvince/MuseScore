@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_comparison_l0_l1_fourth_2026_09_03.md, Task 2",
+ "dispatch": "cc_instruction_comparison_l0_l1_fifth_2026_09_03.md, Task 4",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -220,29 +220,34 @@
    "base_commit": "e56e1153c0e08702e9e7ea51ff6ccf167aec0172",
    "the_then_previous_batch": "cc_instruction_comparison_l0_l1_second_2026_09_02.md",
    "★_no_move_was_performed": "The re-aiming this dispatch ordered was made and the tool run; it STOPped, in its own words, quoted from that batch's close in `cowork_away_returns.md`: `STOP: no dated entry at e56e1153c0 names cc_instruction_comparison_l0_l1_second_2026_09_02.md — the then-previous batch cannot be identified, and moving nothing silently would leave Ruling 4's forward bound unmet without saying so.` The cause, established at this file's source and at STATUS.md: membership is DERIVED from the dispatch name each entry carries, and the second writing's two entries name no dispatch at all, so no aiming of this tool can identify them. That batch reverted the re-aiming, re-ran the tool to prove it green, and declined to move the entries by hand or to edit another batch's entry text — both of which would have traded this tool's byte-proof for a hand copy or rewritten another act's record. It wrote its OWN two entries naming its dispatch, which is what makes THIS aiming's move possible. THE CONSEQUENCE, DECLARED AND STILL STANDING: the second writing's two entries have no mechanism that can retire them, and they remain in STATUS.md after this move as they did before it."
+  },
+  {
+   "executing_act": "cc_instruction_comparison_l0_l1_fourth_2026_09_03.md, Task 2",
+   "base_commit": "b460ea2983818c4f8a077f29c901644b97bcf6e3",
+   "the_then_previous_batch": "cc_instruction_comparison_l0_l1_third_2026_09_02.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "b460ea2983818c4f8a077f29c901644b97bcf6e3",
- "the_then_previous_batch": "cc_instruction_comparison_l0_l1_third_2026_09_02.md",
+ "base_commit": "cd62b001686d0f2793ad1d85df84057eaec57e38",
+ "the_then_previous_batch": "cc_instruction_comparison_l0_l1_fourth_2026_09_03.md",
  "entries_moved": 2,
- "characters_moved": 3820,
+ "characters_moved": 4081,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2709,
-   "sha256": "cb75b1f829e5509af02c22e67bfde206a4992201fee4348abee2c4639d4761bd",
+   "characters": 2355,
+   "sha256": "ca47a277d6615455da5e5d7b52ba92ba682959e9481e0ef2c9ee3d58ab1c017b",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-09-02 (CC — `cc_instruction_comparison_l0_l1_third_2026_09_02.md`, Tasks 1 and 2. **★★ THE L0/L1 COMPARISON'S POPULATION IS COMPLETE — ALL TWENT"
+   "opening": "*2026-09-03 (CC — `cc_instruction_comparison_l0_l1_fourth_2026_09_03.md`, Tasks 1 and 2. **★★ THE L0/L1 COMPARISON READING FILE IS COMPLETE — ALL SEVE"
   },
   {
    "line_at_base": 10,
-   "characters": 1111,
-   "sha256": "7823a366b4d4c6962300b4fd4512e15a85d376a719fef945b43ad86f36a3823a",
+   "characters": 1726,
+   "sha256": "b8dbb7d15455270a382882e8137a66a6e1ed3ba4e3eb7a9f7bae1ab0246d88fa",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-02 (CC — Same dispatch, Task 0. **★ THE DECLARED START STATE WAS MEASURED AT THE OBJECT AND HELD EXACTLY** — the guard population, the ten in"
+   "opening": "*2026-09-03 (CC — Same dispatch, Task 0. **★ THE SITTING RECORD WITH RULINGS 34–62 AND THE NINETY-SECOND, NINETY-THIRD AND NINETY-FOURTH ENTRIES ARE L"
   }
  ],
  "reconciliation": {

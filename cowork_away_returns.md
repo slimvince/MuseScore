@@ -20470,3 +20470,310 @@ established with the sanctioned enumeration tool over the whole tracked populati
 record's shape at the git object by explicit hash; A3 by regeneration and comparison against the
 committed blob; and the forward bound by running the tool at its new aiming and reading its own output.
 No count of the reading file is restated in this section (D-431).*
+
+---
+
+## THE L0/L1 APPLICATION ACT (FIFTH WRITING): THE DERIVED SPECIFICATION AS AMENDED WRITTEN, THE DERIVATION BANNERED, THE RULED ROWS RE-MARKED, NOTHING RATIFIED — ★ ONE RECORDED STOP: THE ITEM (d) FAMILY PLACEMENTS ENUMERATED AND NOT PLACED
+
+**★ THE HEADING IS THE DISPATCH'S ORDERED NAME, WITH THE STOP ADDED TO IT.** This batch ran
+`cc_instruction_comparison_l0_l1_fifth_2026_09_03.md`: **Task 0** landed Ruling 63, the ninety-fifth
+entry and the dispatch, and pushed; **Task 1** wrote the successor
+`cowork_derived_specification_l0_l1_2026_09_03.md`; **Task 2** gave the derivation its D-674 top
+banner; **Task 3** re-marked the reading file's ruled rows, corrected Row 4.37, wrote the transfer
+list's additions and the new §13a, and **stopped at the item (d) family placements**; **Task 4** closed.
+**NOTHING WAS RATIFIED, NO RULING WAS TAKEN, NO POSITION WAS WEIGHED AND NO RECOMMENDATION APPEARS
+ANYWHERE.**
+
+### The commits, by explicit hash
+
+| Act | Commit | What it carries |
+|---|---|---|
+| the tree met | `b00fb69455372396ff10696524f3d4683fc38614` | the local tip; `origin/master` EQUAL to it — nothing unpushed |
+| Task 0 | `c773543ca80e7127051f603a744ba612aa3c90a5` | the sitting record with Ruling 63, `cowork_handoff_entry_ninety_five.md`, this dispatch — **three paths**, not four |
+| Task 1 | `34be0edcb98d0bb848d11e4f803c8daa29ab1586` | `cowork_derived_specification_l0_l1_2026_09_03.md`, new, 1,600 lines |
+| Task 2 | `5ffa97410038e3c76699ea004a3b3ab795943a0b` | the derivation's top banner — one hunk, nine insertions, zero deletions |
+| Task 3 | `cd62b001686d0f2793ad1d85df84057eaec57e38` | the reading file: +814 / −10 |
+| the close | this commit | `STATUS.md`, `STATUS_ARCHIVE.md`, `tools/audit/gen_status_batch_bound.py`, `tools/audit/status_batch_bound.json`, `tools/audit/session_start_read_size.json`, this section, the report |
+| the end state | the one further commit | the end-state guard run, which this section does not assert |
+
+**Every commit above was pushed and `origin/master` verified equal at
+`.git/refs/remotes/origin/master` with the file tools, never from a push's own output.**
+
+**THE DISPATCH WAS PINNED** to blob `0632b23e01530971b7cce90a7c4584b62cd31cee` at Task 0 under standing
+clause **P-2**, and its blob was proven unmoved immediately before staging. **The working-tree-first
+read is declared** as that clause's own fallback route, the user's opening line having named the
+dispatch file alone.
+
+### Both guard states
+
+**THE START STATE, run in CHECK mode before the first edit, HELD EXACTLY AS DECLARED.** **76 guards
+run, 10 failing, 4 not run, 16 historical, and ZERO STOPs.** The ten failing are the ten the dispatch's
+own FACT names, member for member, with no eleventh red — **and this run is the measurement of the TIP**,
+one commit ahead of the artifact the dispatch declares its start state from, so the seventh commit
+(`b00fb694…`, `cowork_away_returns.md` only) caused no red. **Neither A2 exception fired at boot** —
+`gen_evidence_pin_membership.py --check`, `gen_l0_l1_outgoing_population.py --check`,
+`gen_status_batch_bound.py --check` and `gen_session_start_read_size.py --check` all PASSED.
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it, per the dispatch's item 3.
+
+### E0–E4, graded
+
+- **E0 — MET.** **Three paths in one commit, not four:** A3 was measured before being accepted and came
+  back byte-identical (`fb3a00be…` both sides), so `evidence_pin_membership.json` did not move and the
+  ordered path list's *only if it moved* excluded it. `origin/master` verified at the commit. A1's
+  whole-tree check is below, with the two-hunk confirmation stated **by content at each position**.
+- **E1 — MET.** The successor stands at the repository root; §0–§4 are carried whole and §5–§7 are
+  replaced by the one ordered pointer paragraph; every amendment is placed in the form the dispatch's
+  item (c) fixes and cites its ruling; **OQ-18 and OQ-19 are present exactly once and six open
+  questions are marked ANSWERED with their rulings** (OQ-3, OQ-4, OQ-9, OQ-14, OQ-15, OQ-17); the
+  banner is the dispatch's own authored text verbatim; **the per-hunk attribution table is in the
+  report** and every one of the diff's hunks is attributed to a ruling by number, to (a)'s §5–§7
+  replacement, or to (b)'s title and banner. **No recommendation appears anywhere.**
+- **E2 — MET.** Exactly **ONE hunk**, at the derivation's head, **insertions only, zero deletions**,
+  proven at the object by `git diff --numstat` and `-U0` hunk headers against the tip hash.
+- **E3 — MET IN PART, AND THE PART NOT MET IS THE RECORDED STOP.** Every row Rulings 34 to 62 name **by
+  number** carries its RULED line; **the item (d) family search was RUN and its hits enumerated, and the
+  family PLACEMENTS were not made** — see *The recorded stop* below. §10 is complete over the rulings'
+  relocations and carries the three flags as their own sub-list; §13a is derived at the rows and its
+  arithmetic closes; Row 4.37 is corrected with its former wording preserved; the diff is attributed
+  hunk by hunk; **no row's proposed paragraph was edited and no current-text axis was touched.**
+- **E4 — carried by the one further commit**, derived from the declared start state plus this batch's
+  own ordered acts.
+
+### A1–A5, graded
+
+- **A1 — HELD IN FULL, and the check was the whole-population one the dispatch ordered.**
+  `tools/audit/changed_paths.py` enumerated the tracked population at boot: **exactly the ONE named
+  exception and no second** — `cowork_rulings_2026_08_31_decision_surface_sitting.md`. **Its
+  additions-only shape was PROVEN AT THE OBJECT**: `git diff --numstat` at the explicit tip hash
+  returned **86 insertions and ZERO deletions**, and `-U0` gave exactly **two hunks**. **Both positions
+  were confirmed by what stands there rather than by the header's number** (the ninety-fifth entry's
+  Error 0): the first insertion begins at the heading `## 3br. Ruling 63 …` and ends immediately before
+  `## 4. What this ruling does NOT do`; the second begins after the tail paragraph opening *★ AND WITH
+  **Ruling 38** (§3as)* and runs to the file's last line. Both named untracked paths were confirmed
+  present. **A further untracked handover entry, `cowork_handoff_entry_ninety_six.md`, appeared at the
+  root and was NOT landed** — the writing side's, which A1 names in advance as not a STOP. **No other
+  tracked path was modified at any point in the run.**
+- **A2 — HELD.** The ten failing tools and zero STOPs, exactly, at the start-state run; **no A2
+  exception fired at boot**, and the `gen_l0_l1_outgoing_population.py` regeneration case is a question
+  for the end state, which the one further commit measures.
+- **A3 — MEASURED BEFORE BEING ACCEPTED and HELD.** `evidence_pin_membership.json` was regenerated and
+  its blob hash compared against the committed one: **byte-identical**, movement by zero exactly as A3
+  predicts. The artifact was therefore **NOT** committed.
+- **A4 — HELD.** **No tool was added.** Population unchanged at **76** at the start-state run; the
+  failing set the ten named, plus none. The one ordered act that touches a tool source is Task 4's
+  re-aiming of `gen_status_batch_bound.py`'s five authored constants, its `PREVIOUS_AIMINGS` list and
+  the two head comments that describe the aiming, which **D-648** classes as authored-input maintenance
+  and which the dispatch licenses in terms.
+- **A5 — HOLDS, with its stated exceptions and no other movement.** The derivation's **BODY** is
+  byte-unchanged — proven as the ONE head hunk above; the brief, the pack directory and
+  `derivation_boot_pack.json`, every outgoing text in the population,
+  `tools/audit/gen_l0_l1_outgoing_population.py` and the population artifact are untouched; the sitting
+  record stands at the blob Task 0 committed; the suspension file and every register source are
+  untouched; every governing document except `STATUS.md` and `STATUS_ARCHIVE.md` is untouched. **In the
+  reading file, the only differences are the added RULED lines, Row 4.37's corrected sentence with its
+  former wording preserved, the §10 additions, the new §13a with one sentence marking §13's tables as
+  the proposal distribution, and the four state sentences** — measured at the objects: ten deleted
+  lines in all, every one accounted for, and **no `**Row` heading and no `*PROPOSED DISPOSITION` line
+  added anywhere in the file.**
+
+### ★ The recorded stop (D-672) — what was done, what was not, and that the remainder is untouched
+
+**WHAT WAS DONE.** Every row that Rulings 34 to 62 name **by its number** carries its `*RULED
+DISPOSITION` line, in the ruling's own words, under the ruling's own placement, in the reading file's
+§5 closed vocabulary. The count and its arithmetic are at the reading file's new §13a and are not
+restated here (**D-431**).
+
+**WHAT WAS NOT DONE.** The dispatch's item **(d)** — the family placements. Rulings 34, 35, 46, 47 and
+48 also place *"rows of documents 8 to 29 that name this family"* without listing them. **The ordered
+mechanical search WAS RUN**, over the rows' heading, `Statement.` / `Outgoing statement.` and
+`Derived.` lines of documents 8 to 29, on each ruling's own terms as the dispatch states them; **its
+hits are enumerated by row identity and by the term that found each in
+`cc_report_comparison_l0_l1_fifth_2026_09_03.md`.** **The per-row PLACEMENTS were not made.**
+
+**THAT THE REMAINDER IS UNTOUCHED RATHER THAN PARTLY WORKED.** No family-hit row's disposition was
+altered, none was half-marked, and **every one stands at its proposed disposition**. The reading file's
+§13a says so in its own text, so a later reader meets the stop at the file rather than only in this
+close. **The search's reach is UNMEASURED and is published as a lower bound, never a census** — the
+recognizer clause of the dispatch protocol.
+
+**Why the stop fell here rather than earlier or later.** The by-number placements are whole for every
+one of the twenty-nine rulings, so the boundary is a ruling boundary in the sense D-672 requires; and
+§10, §13a and the four state sentences were completed **because without them the reading file would
+state something false about itself** — its banner claiming every disposition below is a proposal while
+two hundred and ten rows carry a ruled one (#10).
+
+### The one row the act could not place, and the one it read differently
+
+- **Row 4.3 — NOT PLACED, and it is the Findings clause working.** Ruling 62's item 4 cites this row,
+  with Row 1.3, as an instance of its own rule *"carried where they match, QUARANTINED where they
+  describe code, as the reading file already has 1.3 and 4.3."* Read at the row: **Row 1.3 is
+  QUARANTINED**, which matches; **Row 4.3 carries ADOPTED — proposed**, which is neither of the two
+  classes the rule names. The row is therefore **left at its proposed disposition and reported**, as
+  the dispatch's Findings clause orders, and the rest of Ruling 62 is applied.
+- **Ruling 38's correction, and which sentence it reached.** The ruling states that *"the reading
+  file's Row 4.37 statement that the derivation is silent on this case is wrong at the file and is
+  corrected."* Read at the row, the sentence that states it is the **current-text axis line** — *"the
+  derivation's eligibility list reaches neither tuplets, cross-staff notes nor multi-voice unisons as
+  named cases"* — because it says *the derivation's*. The row's *difference* paragraph is scoped to
+  S-15 and S-3 and **already names S-33**, so it is not the false statement and was not edited. **One
+  sentence was corrected, its former wording preserved at the site in the reading file's own
+  preserved-wording shape (#12), and no other existing sentence of any §6 row was touched.**
+
+### One difference between the dispatch's per-ruling table and a ruling's own paragraph, reported
+
+**Ruling 40 (§3au).** The dispatch's item (d) table says *"beside S-32 the user's condition as a rule
+with its falsifier, **and the #12 ruling in its general form**."* The ruling's own *What was decided*
+paragraph says the condition and its falsifier are written beside S-32 **and that the #12 ruling "is
+carried to the register's route as a principle-level ruling."* **The paragraph governs, and the
+difference is reported here as the ruling ledger requires.** The successor therefore carries the
+condition and its falsifier beside S-32, names the #12 ruling as their ground, and states that it is
+carried to the register's route and is not written into the specification by this act. **Nothing was
+written into any register or into the suspension file.**
+
+### The forward bound — RAN, and the prediction held
+
+**`gen_status_batch_bound.py` was re-aimed at ALL FIVE of its authored inputs** — `BASE_COMMIT` (this
+batch's last task commit, `cd62b00168…`), `PREVIOUS_BATCH_DISPATCH`, `ACT_DATE`, `DISPATCH`, `TASK` —
+and `PREVIOUS_AIMINGS` was **appended to rather than replaced** (#12) with the fourth writing's aiming,
+now superseded, marked as a move that **RAN**. The two head comments that describe the aiming were
+amended in the same act, one of them because it named the executing dispatch's numbered task and that
+number differs per dispatch.
+
+**The move then RAN and the dispatch's own prediction held exactly: the FOURTH writing's TWO entries
+moved, the second writing's two stayed, and there was no STOP.** The reconciliation the tool derives is
+green in both limbs — every moved entry byte-present in the archive exactly once and absent from the
+must-read — and `--check` passes at the end of the act. **No entry was moved by hand and no earlier
+entry's text was edited.**
+
+**THE SECOND WRITING'S TWO ENTRIES REMAIN IN `STATUS.md`, AS THE THIRD AND FOURTH CLOSES RECORD.** That
+is a declared state, not a STOP, and **no open-items row is created for it**; the finding is rowed
+inside the tool's own `PREVIOUS_AIMINGS`, where a later reader meets it at the mechanism.
+
+### The three questions the fourth close left open, restated as settled
+
+1. **The eleven derived statements no outgoing statement names** — S-10, S-11, S-12, S-17, S-21, S-22,
+   S-26, S-27, S-37, S-38, S-42. **This act did not reach them**: they carry no ruled row and no ruling
+   of 34 to 62 amends them. They are carried into the successor **exactly as derived** — verified as
+   unchanged context in the diff — and the successor's banner names all eleven.
+2. **The second writing's two `STATUS.md` entries that name no dispatch** — **nothing was done to
+   them**, and nothing by hand. They remain in `STATUS.md` after the move as before it.
+3. **The register's route for the two principle-level rulings** — Ruling 40's #12 rule and Ruling 52's
+   facts rule. **Nothing was written into `cowork_register_rule_c_suspension_2026_08_28.md` and nothing
+   into any register.** Both rulings are on disk in the sitting record, which is what that file's
+   derivation reads; the successor names each at its statement as carried to that route.
+
+### Quarantined audit questions
+
+**They are NOT restated here.** They are gathered in the reading file's own AUDIT QUESTIONS section,
+complete over the whole population. **This batch added none and answered none** — a RULED line that
+records a QUARANTINED placement carries the ruling's audit question in the ruling's words and raises no
+new one.
+
+### What the user is asked to rule
+
+**NOTHING IN EITHER FILE, AND BOTH SAY SO IN TERMS.** The reading file's §15 still reads NOTHING; the
+successor's banner states that nothing in it is ratified and that the ratification act is the user's,
+on a decision surface over that text. **This section recommends nothing** — not about any amendment,
+any disposition, any open question, the derivation, the method, the L0/L1 split, or the deriving
+session's independence, to which no verdict word is attached.
+
+### The plan lines
+
+- **The ratification act is next**, written by the writing side as a decision surface over
+  `cowork_derived_specification_l0_l1_2026_09_03.md`, **where the L0/L1 split returns** as Ruling 32
+  left it.
+- **The item (d) family placements are owed** and are the one piece of this act left undone.
+- **The pack finding of §3al.4 goes to L2's pack.**
+- **Then L2**, sequenced by Ruling 10.
+
+### The plan's tell, in one sentence
+
+**Did this batch produce anything other than the landed records, the successor, the derivation's
+banner, the reading file's re-marks and additions, the four Task-4 files and the report?** **Yes, and
+it is named in full:** five `STATUS.md` pointer entries, the forward-bound move's `STATUS_ARCHIVE.md`
+block, the re-aimed `gen_status_batch_bound.py` with its new `PREVIOUS_AIMINGS` row and two amended
+head comments, the regenerated `status_batch_bound.json` and `session_start_read_size.json`, this close
+section, and `tools/audit/guard_state.json` as the artifact of the end-state run — **every one of them
+an act this dispatch's Task 4 orders, and nothing else.**
+
+### Declared departures
+
+1. **The dispatch was read from the working tree before it was pinned** — P-2's fallback route, the
+   user's opening line having named only the dispatch file. Pinned at Task 0; blob proven unmoved
+   before staging.
+2. **★ THE ORDERED `git diff --no-index` OF ITEM (e) WAS DENIED BY THE ARMED SHELL-READ GUARD, AND THE
+   CHECK WAS TAKEN BY THE OBJECT ROUTE INSTEAD.** The dispatch orders the successor checked with
+   `git diff --no-index <scratch copy> <the successor>`; the guard refused it because the second
+   operand is a working-tree path, which **D-253** does not admit — deny-on-indeterminate (**D-647**)
+   working exactly as the record describes it. **The same check was then taken between two explicit
+   blob hashes** — the derivation's blob and the successor written into the object store with
+   `git hash-object -w` — which is the content-addressed form D-253 permits and the form the fourth
+   batch's departure 4 declares. **No conclusion rests on the denied command**, and the reading file's
+   own check was taken the same way.
+3. **The shell-read guard also refused a `grep` over a SCRATCH path outside the repository**, because
+   the path was carried in an unexpanded shell variable it could not resolve. The file tools were used
+   on that scratch file instead. Declared as the same mechanism working, not as a finding.
+4. **Diff output was written to scratch paths outside the repository and read with the file tools.**
+   Every repository read in this batch went through the file tools; the only shell reads were git object
+   queries by explicit hash (`git show <hash>:path`, `git rev-parse <hash>:path`,
+   `git hash-object -w`, `git cat-file -s`, and `git diff` between two explicit hashes).
+5. **★ FOUR RULED LINES WERE FIRST WRITTEN ABOVE A ROW'S PROPOSED DISPOSITION INSTEAD OF BENEATH IT,
+   AND ALL FOUR WERE CORRECTED IN THE SAME TASK BEFORE THE COMMIT.** The rows are 7.14, 14.9, 16.2 and
+   22.12. The form the dispatch fixes is *one line ADDED beneath a row's proposed disposition*; an
+   anchor taken at the paragraph's opening put the line above it. Each was moved beneath the whole
+   paragraph and the paragraph restored intact. **Declared because the committed state is right and the
+   intermediate state was not.**
+6. **★ ONE STRAY BLANK LINE WAS INSERTED INTO ROW 21.14's AXIS PARAGRAPH AND WAS REVERTED IMMEDIATELY.**
+   An edit whose anchor ended mid-sentence added a line break inside an existing row's text — a change
+   A5 does not admit. It was reverted in the next act and the committed file carries the row's original
+   text. **Declared rather than left silent.**
+7. **★ TWO RULED LINES WERE FIRST WRITTEN INSIDE A PROPOSED-DISPOSITION PARAGRAPH, SPLITTING IT, AND
+   BOTH WERE CORRECTED BEFORE THE COMMIT.** The rows are 25.13 and 27.6. Each split had introduced a
+   marker sentence of this batch's own — *(Continuing the proposal.)* — which is authored text inside a
+   row, and both markers were removed with the split. The committed rows carry their proposed
+   paragraph whole with the RULED line beneath it.
+
+### The standing self-check (D-196) over this batch's own work
+
+1. *Principles touched.* **#12** — every proposed disposition line kept and none edited; every derived
+   wording preserved at the derivation and pointed at from the successor; the derivation's body
+   untouched; §13's tables kept beside §13a; the four state sentences' former wordings preserved in
+   place; Row 4.37's former sentence preserved; `PREVIOUS_AIMINGS` appended to, not replaced. **#6** —
+   §5–§7 of the derivation not restated in the successor but pointed at; Ruling 57's and 58's clause
+   blocks written once and pointed at from their other targets; the requester-side protocol and the
+   bounded-context design by pointer. **#10** — the reading file's account of itself was brought up to
+   date because leaving it would have made it false; the stop is stated at the file and not only in
+   this close. **#19** — the successor establishes nothing and its banner says so; the independence
+   record stays at its blob for a judgment the user has not made. **#13** — the one row the act could
+   not place and the one table/paragraph difference were named as STOPs rather than resolved by this
+   side's reading. **#17(f)/D-431** — no count of the reading file or of the successor is restated in
+   this section. **#24** — no comparison is asserted. Conforms.
+2. *Conventions.* American English; no self-invented label — every term used is the dispatch's or the
+   reading file's own; music-theory words in their musical sense, with *exclude* for the prohibiting
+   sense in this side's own prose and a ruling's own use of *bar* in that sense carried as a quotation
+   and marked as one; no numeric grade anywhere; the disposition vocabulary is the reading file's §5
+   closed set, with *carried in substance* carried as the rulings' qualifier on the ADOPTED — carried
+   class and *FLAGGED* counted apart from the five as what Ruling 48 calls it.
+3. *Figures and premises.* The tip and `origin/master` re-read at both ref files with the file tools
+   before Task 0; every commit verified at `git show --stat` by explicit hash; the sitting record's
+   shape at `git diff --numstat` and `-U0` by explicit hash with both positions read at the blob's own
+   content; A3 by regeneration and blob-hash comparison; the successor's and the reading file's diffs
+   between two explicit blob hashes; the forward bound by running the tool and reading its own output;
+   §13a's every figure summed at this file's own rows by this writing.
+4. *File-tools rule.* Every repository read through the file tools; the shell used only for git object
+   queries by explicit hash and for the sanctioned tool invocations. No `git status`, no working-tree
+   `git diff`, no `git log`. The two guard denials are declared above.
+5. *Uncertainty.* The item (d) family search's reach is **UNMEASURED** and its output is published as a
+   lower bound. Whether Row 4.3's citation in Ruling 62 means QUARANTINED or endorses the row's own
+   ADOPTED — proposed **is not decided here**; the row is left and reported. Whether the four
+   corrected line placements and the reverted blank line left any residue was checked at the committed
+   diff and none remains.
+
+*Provenance: CC, 2026-09-03. Every commit identifier above was read from the commit output at the time
+each commit was taken and `origin/master` was read at its ref file with the file tools after each push;
+the guard verdicts are this batch's own start-state run; A1 was established with the sanctioned
+enumeration tool over the whole tracked population and the sitting record's shape at the git object by
+explicit hash; A3 by regeneration and comparison against the committed blob; the forward bound by
+running the tool at its new aiming and reading its own output. No count of the reading file or of the
+successor is restated in this section (D-431).*
