@@ -1385,7 +1385,8 @@ degrees — is a parameter L1 carries. Its value is UNESTABLISHED for this proje
 measurement that would set it: over the ground-truth corpora, the distribution of the distance in
 tactus beats from the last sounding of the fourth and seventh degrees to the annotated cadential
 arrival, and the recall of S-45 as a function of the look-back. Until measured, L1 carries the
-published values — four beats for the degrees, one bar for the bass anchor — as declared stand-ins.**
+published values — four beats for the degrees, one bar for the anchor, the lowest sounding pitch
+(S-44) — as declared stand-ins.**
 - *Defense.* Bigo et al. use four beats before Z for the degree features and one bar for the Y search,
   with a beat unit chosen per corpus — a quarter for Haydn, an eighth for Bach *"to cope with the faster
   harmonic rhythm"* [FACT — extract, §2.1, §2.3, Figure 3]. That per-corpus choice is itself evidence
@@ -1400,6 +1401,10 @@ published values — four beats for the degrees, one bar for the bass anchor —
   should perhaps be in slices or in bars; the measurement above would show it if recall depends on
   texture more than on beats. Declared.
 - *Falsifier.* RESIDUAL until measured; thereafter CODE: the window in use equals the ruled value.
+- *Reworded under Ruling 42 (§3aw) — "S-45 to S-49 follow the same naming" — as a consequential
+  correction of cc_instruction_comparison_l0_l1_seventh_2026_09_03.md, Ruling 74 (§3cc) item (1)
+  having listed S-45, S-46, S-47 and S-49 and not S-48; formerly "one bar for the bass anchor"; the
+  derived wording stands at the derivation, S-48.*
 - *Beside S-48 (Ruling 53, §3bh) — the stand-ins are accepted as provisional.* *"S-48's stand-ins
   declared provisional under S-52, OQ-17 answered yes on that condition"* — *"the two stand-in window
   values accepted as declared *provisional* under S-52 and #17's rule — no item resting on them put
