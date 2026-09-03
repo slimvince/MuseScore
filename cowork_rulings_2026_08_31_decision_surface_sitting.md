@@ -3039,6 +3039,1884 @@ named members stand. **No dispatch is written by this ruling (D-250)** — the d
 same session in the next act. **No decisions-register identity is allocated** — that register cannot
 accept one and `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
 
+## 3ao. Ruling 34 — THE FIRST DISPOSITION RULING OF THE L0/L1 COMPARISON: GRACE NOTES. THE DERIVATION'S S-15, S-16 AND S-30 STAND AS DERIVED, AND THE FIVE OUTGOING ROWS ARE PLACED (Position one)
+
+**Taken 2026-09-02 by the same session, over the rows of documents 1 to 7 of
+`ratification_surfaces/cowork_comparison_l0_l1_reading.md` (the second comparison writing, at commit
+`4cae08c0…`), while the third writing was on disk for the user to open. The first disposition surface
+of the phase; one family per turn, the question in a later turn (D-249).**
+
+**The user's words, verbatim: "position one."** Before it he restated the form a surface must take —
+*"decision surfaces should be fact based/checked, plain uncompressed language, weighed against ultimate
+objective and guiding principles"* — because the first writing of this surface had dismissed one of the
+three positions as not live instead of weighing it, leaned on identifiers (D-599, #1, #7, D-231) in
+place of plain language, and carried facts taken from the derivation rather than checked. **The
+surface was withdrawn, the facts checked at the objects, and it was put again with all three positions
+weighed on both axes. That first writing is a counted error of this session.**
+
+**The facts the ruling rests on, each checked at its object on 2026-09-02.** The MusicXML 4.0
+reference (W3C, the `grace` and `note` element pages, fetched): the `grace` element is *"always
+empty"*, *"grace notes do not have a `<duration>` element"*, and the attributes `steal-time-previous`,
+`steal-time-following` and `make-time` express where a grace sounds as a share of a neighbouring
+note's playback time. The staged Couperin score, read at the file (lines 659–677): an appoggiatura is a
+chord carrying `<durationType>eighth</durationType>` and `<appoggiatura/>` before its host quarter; the
+C. P. E. Bach score writes `<grace16/>` chords the same way; the chorale and the Brandenburg movement
+carry none. The outgoing text: `ARCHITECTURE.md` lines 1676–1680 (a grace *"genuinely opens/closes a
+boundary by its span"*, *"verified at source"*, *"the slicer needs no grace/tuplet code"*);
+`cowork_layer2_slicing_design.md` line 216 (skipping graces recorded as a heuristic the layer drops);
+`cowork_layer1_note_model_design.md` lines 191–192 and 227–228 (graces *"kept and marked, never
+dropped"*; grace timing *"should be confirmed when Architectural Layer 3 begins using grace notes"*);
+`ARCHITECTURE.md` line 4070, the older traversal pattern (*"Grace notes are ornamental, not harmonic —
+always exclude from analysis"*) — so the outgoing record holds both positions in different places and
+calls the question open. The decisions register (`DECISIONS.md` whole; `decisions/group_D.md`): no
+entry decides grace eligibility; **D-569** (ratified by the user 2026-06-21) rules that collection
+*"must NOT filter (drop grace/non-playing/invisible)"* and that eligibility is *"a distinct, explicit
+decision"*, without taking it. The derivation, S-15, S-16 and S-30 read at the file: a grace note is
+not eligible, opens no change point, belongs to no sounding set, and is published as an ornamental
+attachment of its host with its pitch and written form; grounds labelled FACT (MusicXML), THEORY
+(performance practice, traced in the standard's two steal-time attributes), RULED (the charter's
+*decides nothing*), with its weak case named (a long eighteenth-century appoggiatura written as a
+grace). Temperley 2009 p. 7 is cited by the derivation as fetched; this side did not re-fetch it.
+
+**The three positions and their weighing, as put.** *Position one*, the derivation as it stands —
+towards the objective: only moments the notation fixes enter the slice list, and the ornament's pitch
+reaches the tonal reading through the attachment; towards the principles: fact and theory (#1), no
+information lost (#12), no decision in a layer that decides nothing, and the code's contrary
+behaviour an audit question under the ruled sequence. *Position two*, the current implementation's
+rule (a grace opens a change point at its host's beat and closes one after its written value) —
+towards the objective: the appoggiatura appears directly as a sounding note at the beat, but the span
+is a display value the notation never wrote, so a fabricated moment enters the slice list; towards the
+principles: its only defense is what the code assigns, which the phase reserves for the audit, the
+outgoing record calls the question open, and its older path takes the opposite view. *Position
+three*, the derivation's rule marked open until the audit — towards the objective: L2's derivation
+inherits an open input where it needs a fixed one; towards the principles: the only ground for the
+open marking is that the implementation does otherwise, which establishes nothing about the
+notation. **The two axes agreed on position one and Ruling 1's precedence clause was not exercised.**
+The risk stated with it: if the attachment proves a worse carrier of appoggiatura evidence than a
+slice, that is found at the audit or in measurement design and returns as an amendment.
+
+**What was decided.** S-15, S-16 and S-30 of the derivation stand as derived, *settled*. The five
+outgoing rows of the family are placed: **Row 2.16 — QUARANTINED**, audit question: does the slicer
+open a boundary at a grace note, and with what span, against the rule that it opens none (the tuplet
+half of the same sentence is another family and is not placed here); **Row 2.17 — QUARANTINED**, the
+same question; **Row 3.44 — ADOPTED, carried** (L0 supplies the grace fact, S-16 consumes it; D-569
+requires the record keep it); **Row 3.57 — HISTORICAL** (an open item of the outgoing plan, closed by
+this ruling); **Row 6.55 — HISTORICAL** (build history; the live question is Row 2.16's).
+
+**Application.** Nothing is applied by this ruling. The reading file's rows are re-marked from
+*ADOPTED — proposed* to the placements above by a later act, and a row of documents 8 to 29 that the
+third writing names as this family is placed the same way by that act, so the ruling reaches the
+family and not five rows only.
+
+**One departure of this side's, declared.** To count the grace notes in the four staged scores this
+side ran a text search over the working-tree files through the shell on the user's computer, which
+D-253 forbids; the passage relied on was then re-read through the file tools. Counted as a breach, not
+as the lesser declared class.
+
+**What it does NOT do.** It amends no charter, no design point, no phase and no register. It decides
+nothing about tuplets, cross-staff notes or multi-voice unisons (the three note cases the derivation
+does not reach), nor about eligibility's other conditions, the clip, what a slice carries, the
+enlargement contract, the no-horizon rule or the metric strength class — each its own family and its
+own surface. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3ap. Ruling 35 — THE ELIGIBILITY PREDICATE: S-15's FIVE CONDITIONS PLUS A HIDDEN-STAFF CONDITION SUPPLIED BY L0, ONE HOME AT L1, EXCLUDED NOTES CARRIED BESIDE THE OUTPUT (Position one)
+
+**Taken 2026-09-02 by the same session, over the rows of documents 1 to 7 of the reading file at commit
+`4cae08c0…`; the third writing had not run (tip unchanged at the ref file). The second disposition
+ruling of the comparison. The family was split on the user's one-decision-per-turn rule: this ruling
+takes the predicate, its home and the carrier; cue notes, unpitched notes and the eight-case
+completeness list are held for their own surfaces.**
+
+**The user's words, verbatim: "position one".**
+
+**The facts the ruling rests on, each checked at its object.** `FRAMEWORK.md` L1 section lines
+325–327 (a change point is every onset and release *"of an eligible note"*, eligible undefined) and L0
+lines 295–297 (per note *"whether each note sounds and is visible"*; no staff fact). The derivation
+S-3, S-15, S-18, S-19, S-20 and S-1 read at the file: five per-note conditions, each an L0 fact; the
+excluded carried beside the output as *silent notes* labelled by the excluding flag; visibility
+against the played flag left open at OQ-13; percussion reached as unpitched (S-20), the chord-symbol
+track as annotation (S-2); a hidden staff reached by nothing. `ARCHITECTURE.md` lines 1650–1652
+(*"plays && visible && staffEligible"*; *"rides along in each slice's `overlapping()` set (passed
+through, not dropped)"*). `cowork_layer1_note_model_design.md` line 18 (ineligible staves *"hidden
+staves, percussion (drumset) staves, and the chord-symbol track"*, *"verified at the shared predicate
+the build uses"*, no other definition of a hidden staff) and line 20 (*"Voice-level 'eligibility' …
+is defined by the consuming spec"*). `decisions/group_D.md` D-569, ratified by the user 2026-06-21:
+collection must not drop; *"Filtering (a distinct, explicit decision): which annotated notes are
+eligible for harmonic analysis"*, its home and content not stated. Both texts agree that slice
+identity is the eligible sounding-note set and that nothing is dropped; they differ on where the
+excluded note is carried (Row 2.10, UNPLACED by the comparer).
+
+**The three positions, as put and weighed.** *Position one* — the derivation's five conditions plus
+a sixth, *its staff is not hidden*, with L0 supplying the staff's hidden state as a fact (admitted by
+the derivation's own S-1 test: a mechanical property of the file's representation of the page), a
+hidden staff's notes treated as an invisible note is and covered by the same open question OQ-13; the
+predicate with ONE home, L1, consumers reading it and never redefining it; excluded notes carried
+beside L1's output labelled by the excluding condition (S-18). Towards the objective: only what is on
+the page is analysed, and one rule covers the invisible note and the hidden staff alike; towards the
+principles: every condition a notation fact (#1), one concern one home (#6), D-569's explicit decision
+in one place, nothing dropped (#12), a slice's set equal to its identity. Its risk, stated: the
+specification must define *hidden staff* from the notation, the outgoing record defining it only by
+the code's predicate. *Position two* — the outgoing three-flag rule, split across L0 and a consuming
+specification: reaches the hidden staff and is what the code obeys, but excludes neither a grace note
+(Ruling 34) nor a zero-duration note, excludes a pitched timpani note for the wrong reason, rests on
+a code-verified predicate this phase reserves for the audit, and lives in three documents. *Position
+three* — the derivation unchanged: leaves a hidden staff's notes eligible, opening change points the
+page does not show, against the derivation's own criterion. **The two axes agreed on position one
+and Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** S-15 is amended by one condition — *its staff is not hidden* — and S-3 (or S-4's
+staff facts) by one supplied fact, *whether the note's staff is hidden*, defined from the notation
+(a staff not shown on the page); the eligibility of a hidden staff's notes follows whatever OQ-13
+decides for invisible notes, and until then is *ineligible*; the predicate's home is L1's
+specification and a consumer may not redefine it; S-18's carrier stands. The rows are placed: **Row
+2.8 — ADOPTED, proposed** (the predicate stated once at L1 in the amended form; the three-flag
+sentence superseded by it); **Row 2.9 — ADOPTED, carried**; **Row 2.10 — ADOPTED, carried in
+substance** (nothing dropped; identity the eligible set; the carrier is S-18's, beside the output, and
+the *inside each slice's set* shape is not adopted); **Row 1.6(ii) — ADOPTED, carried** by the
+addition; **Row 3.2 — ADOPTED, carried** by the addition, the hidden-staff definition to be written
+from the notation; **Row 3.5 — QUARANTINED**, audit question: which specifications and code currently
+define the eligibility combination, since after ratification only L1 does; **Row 3.15 — ADOPTED,
+carried**, as Row 3.2.
+
+**Application.** Nothing is applied by this ruling. The amendment to S-15 and S-3 is written into the
+derived specification at the ratification act, with the rows re-marked, and reaches every row of
+documents 8 to 29 the third writing names as this family.
+
+**What it does NOT do.** It decides nothing about cue size (S-19, OQ-4), unpitched notes' publication
+(S-20 against Row 3.13), the eight-case completeness list (Row 4.37), stem direction or voice slots
+(Rows 1.25, 1.27), or OQ-13 itself. It amends no charter and no design point. **No decisions-register
+identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3aq. Ruling 36 — CUE NOTES: THE RECORD FILE CARRIES NO CUE FACT BEYOND THE PLAYED FLAG; S-19 STANDS; OQ-4 IS CLOSED ON THAT FACT
+
+**Taken 2026-09-02 by the same session, the third disposition ruling, over Rows 3.4 and 3.60 of the
+reading file at commit `4cae08c0…`.** **The user's words, verbatim: "Agree".**
+
+**The facts, each checked at its object.** The derivation S-19 and S-3 and its OQ-4 (read at the file):
+cue size does not by itself change eligibility; size is published as an attribute; *"the notation
+distinguishes them only by context"*; OQ-4 asks which small notes are eligible. The MusicXML 4.0
+reference, the `cue` element page (fetched): *"In MusicXML, a cue note is a silent note with no
+playback"*; *"A cue note that is specified as full size using the `<type>` element will still remain
+silent"*; *"Normal notes that play can be specified as cue size."* The outgoing text,
+`cowork_layer1_note_model_design.md` lines 261–263: a planned cue flag was removed because *"once a
+MuseScore score is imported, a cue note can no longer be told apart from an ordinary muted note, and the
+existing 'does it sound' flag already excludes both"*; line 178: the sounds flag is *"false for muted
+notes and for imported cue notes"*. The derivation's own §6: the C. P. E. Bach score marks its editorial
+small notes `<small>1</small>`, `<visible>0</visible>`, one `<play>0</play>`; a MuseScore file carries
+no cue element.
+
+**What the facts settle, and why no menu was put.** A cue note's whole content, as a file can carry it,
+is that it does not sound; a MusicXML cue arrives as a not-played note, which S-18 already makes
+ineligible whatever its size; a small note the file says is played is, in the standard's own words, a
+normal note in cue size, which S-19 already makes eligible. So the derivation's rule was right and
+lacked only the fact that closes its open question. The one alternative — keeping OQ-4 open — has no
+ground once the standard's definition is read, and a cue fact in L0 is impossible for MuseScore files
+and would carry nothing the played flag does not. Towards the objective: a cue never sounds in the
+analysis, a played small note always does, and no context-reading is asked of L1. Towards the
+principles: the standard's definition and the outgoing record's finding, both checked (#1); size kept
+as published information (#12); a fact added by the derivation's own admission test.
+
+**What was decided.** The fact is written into L0 beside S-19 at the ratification act: a record file
+supplies no cue fact beyond the played flag; a cue in the interchange format is a silent note; L1 reads
+the played flag. S-19 stands as derived. **OQ-4 is CLOSED** on that fact; OQ-5 (ossia and alternative
+passages) stays open. **Row 3.4 — ADOPTED, carried** (S-18 and the fact); **Row 3.60 — ADOPTED,
+proposed** (the fact carried into L0). Nothing is applied by this ruling. **No decisions-register
+identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3ar. Ruling 37 — UNPITCHED NOTES: S-20 IS AMENDED SO THAT AN UNPITCHED NOTE IS CARRIED BESIDE L1's OUTPUT ON S-18's CARRIER, LABELLED, AND CONSUMED BY NO LAYER AS HARMONIC EVIDENCE (Position one)
+
+**Taken 2026-09-02 by the same session, the fourth disposition ruling, over Row 3.13 of the reading
+file at commit `4cae08c0…`.** **The user's words, verbatim: "position one".**
+
+**The facts, each checked at its object.** The derivation S-20 (read at the file): an unpitched note is
+ineligible, enters no sounding set, and *"is not published by L1 at all"*; its defense is theory (a
+harmony is a set of pitches) and its decline to publish is labelled *"[CONJECTURE — the decline is this
+session's]"*, with its own weak case named (*"a phrase-grouping consumer at L3 might"* want percussion
+onsets). S-18: not-played and invisible notes are *"carried beside L1's output as silent notes, labelled
+by which flag excluded them, and no layer consumes them as evidence"*. `FRAMEWORK.md` line 482: what
+crosses L1 → L2 is *"Slices; metric strength; notated boundary evidence; cadence cues"* — the record
+does not cross, so a note L1 does not carry reaches no later layer. `cowork_layer1_note_model_design.md`
+line 48 (Row 3.13): *"keeps every note, and every fact about each note that any later step might need,
+and never discards any of it"*; lines 191–192: excluded notes *"kept and marked, never dropped"*.
+`decisions/group_D.md` D-569 (ratified by the user 2026-06-21): collection *"must NOT filter"*.
+
+**The two positions, weighed.** *Position one* — S-20's last sentence amended: the unpitched note is
+carried beside L1's output on S-18's carrier, labelled *unpitched*, consumed by no layer as harmonic
+evidence. Towards the objective: no slice or cue changes; the derivation's own named consumer is served
+without a change to L1. Towards the principles: nothing lost (#12; D-569); one carrier for every
+excluded class rather than four carried and one dropped (#6); the one clause the derivation rests on
+its own conjecture removed. *Position two* — S-20 as derived. Towards the objective: no loss to
+harmony, which is true. Towards the principles: the outgoing record and D-569 say keep everything
+marked; the charter's silence on unpitched notes is a silence, not a prohibition, as it is for silent
+notes; the derivation itself calls the decline a conjecture. **The objective axis did not separate
+them; the principles axis did; Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** S-20 is amended at the ratification act: *"It is not published by L1 at all"* is
+replaced by *"It is carried beside L1's output on S-18's carrier, labelled unpitched; no layer consumes
+it as harmonic evidence."* **Row 3.13 — ADOPTED, carried**, with no exception, once the amendment is
+written. Row 3.14(i), already ADOPTED — carried, is unchanged. Nothing is applied by this ruling. **No
+decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3as. Ruling 38 — THE EIGHT-CASE COMPLETENESS LIST OF D-570 IS ADOPTED AS L0's COMPLETENESS CHECK; SEVEN CASES ARE REACHED; CROSS-STAFF NOTES BECOME OQ-18
+
+**Taken 2026-09-02 by the same session, the fifth disposition ruling, over Row 4.37 of the reading file
+at commit `4cae08c0…`.** **The user's words, verbatim: "write it as Ruling 38"**, after *"go on. fact
+based is good."*
+
+**The facts, each checked at its object.** `cowork_layer1_tone_collection_design.md` §6 lines 199–204:
+correctness *"is judged against the score, not DCML/music21"*; *"Completeness = all note cases handled
+(sustains past the cap, ties, tuplets, grace, cross-staff, multi-voice unisons, pedal,
+invisible/non-playing). The audit builds score-level test cases for each."* This is register entry
+**D-570**, LIVE, entry ratified by the user 2026-08-04 (`decisions/group_D.md` lines 66–80). The
+derivation, read at the file per case: ties — S-23; grace — S-16 (Ruling 34); invisible and non-playing
+— S-18 (Ruling 35's carrier); pedal — S-54 and OQ-3; sustains past a cap — the derivation has no cap
+(S-15, S-33: releases where the notation puts them), the explicit no-horizon rule being a separate
+family (Rows 3.26, 3.53, 4.24, 4.31), not ruled here; tuplets — S-3 (*"tuplet ratios applied"*) and
+S-35 with OQ-11 (the off-grid class); multi-voice unisons — S-33 (*"a unison or octave doubling
+beginning or ending is a change point"*), **so the reading file's Row 4.37 statement that the derivation
+is silent on this case is wrong at the file and is corrected**; cross-staff notes — named by nothing in
+the derivation. The MuseScore file records a cross-staff chord with `<staffMove>`; the staged Couperin
+score carries one at line 3485 (`<staffMove>-1</staffMove>`), in the region the deriving session did
+not open (its §6.1: lines 1–2000 only). S-3 supplies *"its staff and notated voice"* without saying
+which staff a cross-staff note's is, which bears on Ruling 35's hidden-staff condition and on S-13.
+
+**What the facts settle.** The list is ruled, score-checkable, and reached by the derivation in seven of
+eight cases; the one gap is treated as the derivation's own method treats a case it did not meet — an
+open question naming its face. Towards the objective: an L0 whose completeness is tested against an
+enumerated, score-checkable list has its gaps found before ratification rather than at the audit.
+Towards the principles: the list rests on a ratified entry and on what a musician reading the score
+would say sounds (D-570's words); no code-derived rule is added; the gap is recorded, not filled (#5,
+#19). No alternative had a ground, and none was manufactured: declining a ruled completeness check
+would be declining D-570.
+
+**What was decided.** **Row 4.37 — ADOPTED, proposed**: at the ratification act the eight-case list is
+written into L0 as the completeness check its statements are tested against, each case pointed at the
+statement that handles it (S-23; S-16; S-18; S-54 with OQ-3; the no-horizon rule pending its own
+ruling; S-3 with OQ-11; S-33), and one new open question is added — **OQ-18 (face (a); S-3, S-13): for
+a cross-staff note, which staff is the note's for L0's staff facts — the staff it is written in or the
+staff it is drawn on — with the Couperin case at line 3485 as its exemplar.** The reading file's Row
+4.37 is corrected at the application act to say S-33 reaches multi-voice unisons. Nothing is applied
+by this ruling. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3at. Ruling 39 — THE NO-HORIZON RULE IS WRITTEN INTO THE DERIVATION IN BOTH HALVES: L0 HOLDS THE WHOLE NOTATED RECORD, AND S-29's SOUNDING SET IS TAKEN WITH NO BACKWARD BOUND, WITH ITS DEFENSE AND A FALSIFIER THAT TESTS IT (Position one)
+
+**Taken 2026-09-02 by the ninety-third session, the sixth disposition ruling, over Rows 1.5(ii), 3.26,
+3.53, 4.24 and 4.31 of the reading file, read at the working tree as staged this session through the
+file tools (the third comparison dispatch was in flight and no object was asserted for it).** **The
+user's words, verbatim: "I ratify it"**, given on the surface whose two axes led to position one; the
+ruling records that reading of *it*, since the surface had named position one as where the record led
+and the choice question had not yet been put separately.
+
+**The facts, each checked at its object.** The outgoing text states the rule in five places:
+`ARCHITECTURE.md` line 1575 (*"answered by overlap with no horizon (the old 4-whole-note backward cap
+is gone)"*); `cowork_layer1_note_model_design.md` line 81 (*"No limit on how far backwards in time a
+query searches … no matter how much earlier they started"*) and line 198, the one place with a defense
+(*"a limit silently drops notes held longer than the limit; the speed was recovered instead by the
+numeric look-up index"*); `cowork_layer1_tone_collection_design.md` line 141, the recorded failure
+(*"Both collectors stop at startTick − 4 whole notes. A note (or pedal tone) sustaining longer than 4
+whole notes is silently dropped from the evidence"*, the header comment saying 4 quarter notes) and
+line 182, the remedy (*"walk back to each voice's true onset (until the voice is genuinely silent) …
+Any forward/context reach is an explicit named capability, not a magic horizon"*). The derivation (read
+at the file): S-29 defines the sounding set at t as every eligible event *"whose onset is at or before
+t and whose release is after t"*, unbounded by definition; S-32 requires the first slice to carry
+*"events that began before the span (marked entered sounding)"*; S-53 makes the working span the only
+thing a caller supplies beyond L0; S-3 says nothing about whether L0 holds the whole record or the
+span's part of it; no statement and no open question says the search is unbounded; and S-29's
+falsifier tests only the two boundary cases (release equal to t, onset equal to t), so a capped search
+would not be caught by it. D-030 (`ARCHITECTURE.md` line 1173): cost *"scales with the working span,
+not the whole score"*. Ruling 38 (§3as) pointed the completeness list's *sustains past a cap* case at
+this ruling.
+
+**The three positions, weighed.** *Position one* — the rule written in explicitly, in both halves.
+Towards the objective: a held pedal tone or a long tied bass note that a bound drops changes the
+sounding set, so the slice, so the chord and the tonality read from it, and the outgoing record shows
+this happened in the built system at a bound its own comment misdescribed by a factor of four. Towards
+the principles: nothing the notation carries is lost (#12); the specification states what the code is
+compared against and its falsifier tests the failure the record actually saw (#10, #15, #11); the rule
+rests on what a notated duration means and on a recorded failure, not on the code (#1); the defense
+sits where the rule lives. *Position two* — the derivation as written, the rows carried by S-29 and
+S-32. Same behaviour; adds nothing (#6); but a rule holding only by implication is what the built
+system had when the cap crept in, S-29's falsifier would not detect a cap (#10, #19), and whether L0
+holds the whole record is not implied by anything. *Position three* — the rule with its speed half,
+the look-up index and the logarithmic budget of line 86: excluded, because those are the built model's
+answer and a measured property of the code, reserved for the audit and already carried at Row 3.27
+(#7, the phase rule). **The objective axis and the principles axis separated one from two the same
+way — on whether the behaviour is protected — and did not conflict; Ruling 1's precedence clause was
+not exercised.**
+
+**What was decided.** At the ratification act the derivation gains: **at L0, beside S-3**, that L0
+holds the whole notated record and the working span restricts what L1 publishes, never what L0
+supplies; **at S-29**, one sentence that the sounding set is taken over every eligible event with no
+backward bound, with the defense that a bound silently drops a note held longer than the bound and the
+recorded four-whole-note case as the instance; and **S-29's falsifier** gains the case it lacks — an
+event whose onset lies arbitrarily far before t and whose release is after t must be in the set.
+**Rows 1.5(ii), 3.26, 3.53, 4.24 and 4.31 — ADOPTED, proposed**, the proposal split into the two halves
+above; Row 4.31's named-capability half stays AGREES with S-53. The D-030 reconciliation is not settled
+here and remains the measurement side's, as it is today. Ruling 38's pointer at *"the no-horizon rule
+pending its own ruling"* now resolves to this ruling. Nothing is applied by this ruling. **No
+decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3au. Ruling 40 — THE CLIP AND THE PUBLISHED DOMAIN: L1 TILES THE WORKING SPAN EXACTLY, EDGE SILENCE IS A SLICE, EVENTS ARE KEPT WHOLE AND THE EDGE IS MARKED, NEVER PUBLISHED AS AN ONSET; S-32 IS AMENDED SO THE EDGE IS A SPAN EDGE AND NOT A CHANGE POINT; AND A NOTE WHOSE ONSET IS AMENDED IS INFORMATION LOST (Position one, with the user's condition written in)
+
+**Taken 2026-09-02 by the ninety-third session, the seventh disposition ruling, over Rows 2.13, 2.15,
+2.20, 2.25, 6.35, 7.8, 7.9, 7.11, 7.12, 7.13, 7.14, 7.15, 7.16 and 7.29 of the reading file, read at the
+working tree as staged this session through the file tools (the third comparison dispatch in flight; no
+object asserted for the file).** **The user's words, verbatim, in the order given:** on the surface,
+*"Do I understand it correctly that in one (some?) cases slices results in believing notes start at
+start of 'selection' and not at where they actually start?"*; after the answer, *"As long as nobody ever
+will misunderstand when a note ACTUALLY starts."*; and, put to the question whether that was the
+ratification of position one with the condition written in, *"'Amending' notes so somebody could
+misunderstand them is also loss of information, not only inventing false information. Continue from
+where you left off."* The ruling records that the last is read as the ratification asked for, with the
+sentence before it a ruling on principle #12 in its own right.
+
+**The facts, each checked at its object.** The outgoing rule: `ARCHITECTURE.md` line 1658 (the tiled
+domain is *"the intersection of the eligible-notes span with the model's loaded span"*), line 1661
+(a sustained-in note *"is clipped to start at loadedStart"*, a sustained-out note *"to end at
+loadedEnd"*), line 1668 (*"Leading/trailing silence within the loaded span is not sliced"*).
+`cowork_layer2_reslice_design.md` §2 lines 25–51: the hazard (a retained sustained-in note would
+create slices before the loaded start, *"a scope leak under bounded context"*), the fix (the
+intersection with clipping), and its two stated reasons — the whole-score case *"stays byte-identical
+… (This is what preserves the corpus and the leading/trailing-rest behaviour)"* and consistency with
+*"today's 'don't invent silence outside the note domain'"*, the semantic being *"deliberate and …
+stated so on purpose"*; §3 line 55: the clip *"injects an artificial boundary at loadedStart — not a
+real change-point"*; §1 line 21: the note model *"retains every note overlapping the loaded span —
+including sustained-in notes whose onset is before loadedStart"*, so the clip is at the slicer and not
+in the record. `cowork_layer2_slicing_design.md` line 118: the output covers the span *"from its first
+boundary moment to its last"*. The derivation: S-32 (the list *"covers the working span exactly"*, a
+silent or entered-sounding first slice, the marks *entered sounding* and *cut by the span*, with the
+defense that the marks *"let L2 know that the first slice's onsets are not real onsets"*); S-31 (a
+silent slice published like any other, since merging it away *"would decide that the harmony before
+the silence continues through it, which is L2's question"*); S-28 (a change point is where onsets or
+releases of eligible events coincide — by which the span's edge is not one, though S-32 calls it one);
+S-44 and S-45 (cues at onset change points only; the bass-motion cue *"is not computed when no such Y
+exists"*, so none fires from a span's first slice). The ruled record: `FRAMEWORK.md` line 325 (L1
+publishes *"the ordered, covering, gapless and non-overlapping list of slices"*) and line 867, B8
+(*"Slices tile the working span exactly"*, decision rule *"covering, gapless, non-overlapping, over the
+whole loaded domain"*); line 391 (L2 consumes *"everything L0 and L1 publish"*); the decisions index
+rows D-260 and D-263 (a truncated extension *"is marked on the output, never silently absorbed"*); and
+the decision-neutrality corollary at `CLAUDE.md` (existing behaviour and byte-identity carry no
+weight in choosing a design).
+
+**The three positions, weighed.** *Position one* — the derivation's semantic, S-32 amended at one
+sentence. Towards the objective: a rest at a selection's start is notated boundary evidence and the
+silent edge slice carries it; whether a selection's analysis begins at its first note or at its start
+is a question about the music, which L1 does not decide; a note's onset in every published item is
+its notated onset, so no consumer can be misled about where it starts. Towards the principles: the
+charter's covering property and B8 in their own words (#1, RULED); nothing lost and the edge marked
+rather than silently absorbed, as D-263 already does for a truncated extension (#12); the edge
+published once at L1 rather than re-derived by each consumer (#6); the one internal contradiction
+repaired. Its cost — the whole-score slicer no longer byte-identical where a score begins or ends in
+rest — carries no weight under the decision-neutrality corollary. *Position two* — the outgoing clip
+adopted. Its two stated reasons are byte-identity, which the corollary excludes, and consistency with
+not inventing silence outside the note domain, which does not reach silence inside the working span;
+and dropping the edge silence is the merging-away S-31's defense names. On the mark, the note's real
+onset is recoverable from L0 — but **the user ruled that this does not save it: a published note whose
+onset has been amended to the edge is information lost, whatever a consumer could recover elsewhere,
+because the published item no longer says what the notation says and can be misunderstood.** *Position
+three* — the working span tiled exactly with the event clipped rather than marked: falls to the same
+ruling on the mark; the objective axis did not separate it from position one, the principles axis did
+(#6, #12 as ruled, the D-263 precedent). **The objective axis and the principles axis pointed the same
+way on the domain; on the mark the user's #12 ruling decided; Ruling 1's precedence clause was not
+exercised.**
+
+**The user's condition, written in as a rule and a falsifier.** *No published item of L1 presents a
+span edge as the onset or release of an event; an event's onset and release in any published sounding
+set, cue witness or flag are its notated ones.* Falsified if any slice, cue witness or boundary flag
+reports an edge position as an event's onset or release. **And the #12 ruling it rests on, general
+rather than for this case: amending a published fact so that it could be misunderstood is a loss of
+information under #12, not only the invention of a false one; the recoverable-collapse clause does not
+reach a published item that misdescribes what the notation says.**
+
+**What was decided.** At the ratification act S-32 is amended: *"Its first change point is the span's
+start; its last is the span's end"* becomes *"Its first boundary is the span's start and its last is
+the span's end; each is a span edge, published as such, and not a change point (S-28)"*, the rest of
+S-32 standing; the condition and its falsifier above are written beside S-32; and the #12 ruling is
+carried to the register's route as a principle-level ruling. **Rows 2.13, 2.20, 6.35, 7.9, 7.11, 7.14
+and 7.29 — ADOPTED, proposed**, the proposal being that the published domain be stated, and this ruling
+stating it: the working span exactly, with silent edge slices, events whole and marked. **Row 2.15 —
+ADOPTED, carried** by S-32's marks. **Rows 2.25, 7.13, 7.15 and 7.16 — ADOPTED, proposed**: the edge
+stated as a span edge and not a change point, Row 7.16's counterexample carried as the evidence.
+**Row 7.8 — ADOPTED, proposed**: the hazard named beside S-32 with the remedy S-32 applies. **Row 7.12
+— ADOPTED, proposed**: the domain is given by the caller, never derived from where the notes start.
+The outgoing clip rule is superseded at the ratification act when the L0/L1 split returns; no outgoing
+text is edited now. Left to their own surfaces by name: 7.17, 7.18, 7.19, 7.22, 7.27, 7.28 (the
+enlargement contract, with 2.21 and 2.26); 7.25 (what a slice carries, with 2.27 and 7.2); 7.5, 7.6,
+7.7, 7.10, 7.26 (quarantined, reserved to the audit); 7.20, 7.21 (historical); 7.23, 7.24 (carried).
+Nothing is applied by this ruling. **No decisions-register identity is allocated** — that register
+cannot accept one and `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3av. Ruling 41 — WHAT A SLICE CARRIES: S-50 STANDS, EACH PUBLISHED SLICE CARRIES ITS SOUNDING SET BY EVENT IDENTITY, THE NOTE FACTS STAY IN L0, AND NO SELECTION TAG IS PUBLISHED (Position one)
+
+**Taken 2026-09-02 by the ninety-third session, the eighth disposition ruling, over Rows 2.27, 6.21,
+6.33, 7.2 and 7.25 of the reading file, read at the working tree as staged this session through the
+file tools (the third comparison dispatch still in flight; no object asserted for the file).** **The
+user's words, verbatim: "ok, position one."**, after asking *"What is your recommendation; where does
+it best fit architecturally / separation of concerns or responsibilitites, and visavi ultimate
+objective?"* and receiving the recommendation recorded below.
+
+**The facts, each checked at its object.** `cowork_layer2_slicing_design.md` line 73 (*"the slice
+does not store its notes, because the notes for a slice can be fetched on demand by asking the
+Architectural Layer 1 note model"*) and line 115. `ARCHITECTURE.md` line 1718 (*"The slice stays
+MINIMAL — it carries start and end and nothing else"*), whose stated reason at line 1722 is about the
+selection tag (*"this layer owns no selection semantics"*), the alternative weighed there being the
+selection tag and not the notes; lines 1650–1654: the slicer reads L1's eligibility flags and does not
+re-filter, and an ineligible note *"still rides along in each slice's overlapping() set (passed
+through, not dropped)"*, so a fetch from the note model returns ineligible notes and the fetcher must
+apply eligibility again. `cowork_layer2_reslice_design.md` line 5: `struct Slice { int start; int end;
+}`. The derivation: S-50 (*"the slice list (S-29–S-33) with each slice's sounding set by event
+identity"*); S-33 (identity is the set of events by note identity); S-32 (the marks live on the
+sounding set); S-53 (the working span is the caller's; Row 2.28 already AGREES). The ruled record:
+D-100 and the fact-publication corollary (*published exactly once, on the producing layer's output
+surface; consumers read, never re-derive*); Ruling 35 (eligibility has one home, L1, and a consumer
+may not redefine it); Ruling 40 (events kept whole, the edge marked, never published as an onset);
+`FRAMEWORK.md` line 322 (L1's question: *"at which moments may a harmony begin, and what does the
+notation say at each?"*); the make-it-work-first rule at `CLAUDE.md` Conventions.
+
+**The three positions, weighed.** *Position one* — S-50 stands: the slice carries its sounding set by
+event identity, references into L0, no fact copied. Towards the objective: the set the chord and the
+tonality are inferred from is the set the slice was cut on, under one eligibility predicate, with
+Ruling 40's marks attached to a carrier; done-right is enforced rather than hoped. Towards the
+principles: the sounding set is L1's product and D-100 publishes a product once on its producer's
+surface (#6, D-100); Ruling 35's one home for eligibility is enforceable only if the eligible set is
+published, the note model's query returning passengers by design; S-33's identity becomes an
+inspectable object (#15, #19). Cost: a list of references rather than of pairs — after correctness
+under the make-it-work-first rule, and not shown by the record to be a problem; D-030 untouched.
+*Position two* — the outgoing minimal slice, the set fetched from L0 on demand. Same sounding set
+when every consumer applies the same predicate and overlap rule; the smallest object. Against it: the
+set is derived by L1 and re-derived by each consumer, which D-100 forbids in terms; each consumer
+re-applies the predicate Ruling 35 homed at L1; the outgoing reason for the notes is a possibility
+(*can be fetched*) and not a defense; Ruling 40's marks have no carrier on a bare pair. *Position three*
+— the set and a selection-versus-context tag: excluded, both texts and S-53 agreeing L1 owns no
+selection semantics, Row 2.28 already carried on that ground (#7). **The objective axis tilted to
+position one only through the divergence risk; the principles axis decided for it; no conflict, and
+Ruling 1's precedence clause was not exercised.**
+
+**The recommendation, as given and as the user asked for it.** On separation of concerns: L0's
+question is what the notated record is — facts per note, the whole score, nothing computed about the
+music; L1's is what sounds at each moment and where a harmony may begin, and *which notes sound during
+this stretch* is the first computed answer about the music and is L1's; the outgoing arrangement moves
+that answer down into L0, which becomes a query service answering a harmonic question, and up into
+every consumer, each re-applying eligibility — one concern in three places. On responsibility: an
+object identified by a set it does not carry is identified by something a consumer must reconstruct,
+and the reconstruction is where a second predicate, a second overlap rule or a forgotten edge mark
+creeps in. On the objective: what sounds is the same under both when everything is done right; position
+one makes done-right checkable at the object, and the outgoing record's own history — a note-level
+source lost to aggregation and a cap invisible from the consumer's side — is the evidence for why that
+matters.
+
+**What was decided.** S-50 stands as derived; at the ratification act one clarifying clause is written
+beside it — *by event identity* means references into L0, and no note fact is duplicated on the slice
+— and no selection tag is added. **Rows 2.27, 6.21, 6.33, 7.2 and 7.25 — ADOPTED, proposed**, the
+proposal being that the specification state whether the set is carried or fetched, and this ruling
+stating it: carried, by event identity; the outgoing minimal-slice decision is superseded at the
+ratification act, its selection-tag half standing as carried at Row 2.28. Nothing is applied by this
+ruling. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3aw. Ruling 42 — THE BASS LOCATION: L1 READS THE LOWEST SOUNDING PITCH AND SELECTS NO BASS; S-44 IS REWORDED TO NAME ITS ANCHOR SO, AND THE WORD *BASS* IS RESERVED FOR THE CHORD'S BASS NOTE L3 DECIDES (Position one)
+
+**Taken 2026-09-02 by the ninety-third session, the ninth disposition ruling, over Row 4.4 of the
+reading file, read at the working tree as staged this session through the file tools (the third
+comparison dispatch still in flight; no object asserted for the file).** **The user's words, verbatim:
+"Agree with your recommandation."**, after asking *"Your recommendation visavi ultimate objective and
+guiding principles?"* and receiving the recommendation recorded below.
+
+**The facts, each checked at its object.** `cowork_layer1_tone_collection_design.md` line 38: the
+collection layer *"must NOT filter …, NOT weight or aggregate into pitch-class evidence, NOT select a
+bass, and NOT make any harmonic/segmentation/key decision"* — the companions of the prohibition all
+decisions of weighting or judgment. The derivation S-44: *"every cue is defined over the bass, which at
+a slice is the lowest sounding pitch of that slice's sounding set — not a notated voice"*, with Bigo et
+al.'s *"lowest sounding note"* as its source, the premise *"the lowest sounding pitch is the harmonic
+bass"* declared with its false-negative path (an Alberti or arpeggiated texture; the pack's C32 and
+C38) and the weighing left to L2 — *"the pack's #17(d) proxy hazard, declared"*. S-51's test (evidence,
+not a claim, if computable from L0 facts without tonality, chord or boundary and named for the pattern)
+and S-50's naming rule (*"a field's name is what a consumer will treat it as"*). `FRAMEWORK.md` line 331
+puts the bass-motion cue at L1 (RULED); line 432 puts *"the chord symbol — root pitch class, quality and
+bass note"* at L3. The decisions index: D-383 (*"Bass, spelling and tonality-consistency DECIDE"*) and
+D-584 (the cadence call made on the bass-derived inversion) — both after L1, both about a decided bass.
+D-113: music-theory words carry one meaning.
+
+**The three positions, weighed.** *Position one* — S-44 reworded: the cue's anchor is *the lowest
+sounding pitch of the slice's sounding set*, published under that name; *bass* is reserved for the
+chord's bass note L3 decides; S-44's declared premise stands. Towards the objective: the cue is
+unchanged and computes what the research computes; a consumer cannot read its anchor as a decided
+bass, which S-44's own premise says may be wrong exactly where precision is hardest; the harmonic bass
+stays where the evidence to decide it exists. Towards the principles: #7 kept exact by the name; #12 as
+ruled at Ruling 40 (a published item that can be misunderstood is a loss); #17(d) kept declared rather
+than promoted by vocabulary; D-113 applied to the one word the texts collide on; nothing moves between
+layers; no cost on #1. *Position two* — S-44 as worded, the texts read together: no computation
+changes; but an anchor named *bass* beside an L3 field *bass note* is two meanings of one word across a
+layer boundary, and the reconciliation lives in the reader's head. *Position three* — the cue moved to
+the layer that decides the bass: excluded, the charter placing the cues at L1 in terms and the move
+making the cue consume a decided bass and vote back on it, the circularity S-51's defense names. **The
+objective axis preferred one on how the cue is consumed; the principles axis decided for it; no
+conflict, and Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** At the ratification act S-44 is reworded so that its anchor is *the lowest
+sounding pitch of the slice's sounding set*, published under that name, the word *bass* reserved for the
+chord's bass note decided at L3, and S-45 to S-49 follow the same naming; the premise and its
+false-negative path stand. **Row 4.4 — ADOPTED, carried in substance** (L1 selects no bass, which S-44
+already obeys), with the wording amendment recorded as the proposal the reading file asks for: the
+specification states where the bass is decided and what L1 reads. Nothing is applied by this ruling.
+**No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3ax. Ruling 43 — STALENESS OWNERSHIP: L0 IS FIXED UNTIL REBUILT AND OBSERVES NO EDIT; THE CALLER THAT OWNS THE RECORD DECIDES IT HAS CHANGED AND REQUESTS THE REBUILD WITH THE CHANGED SPAN (Position one)
+
+**Taken 2026-09-02 by the ninety-third session, the tenth disposition ruling, over Row 3.29 of the
+reading file, read at the working tree as staged this session through the file tools (the third
+comparison dispatch still in flight; no object asserted for the file).** **The user's words, verbatim:
+"Agree"**, on the surface whose recommendation was position one.
+
+**The facts, each checked at its object.** `cowork_layer1_note_model_design.md` lines 97–101:
+*"Architectural Layer 1 is not responsible for noticing when its note model has become out of date.
+… Deciding that the note model must be rebuilt, and requesting that rebuild, is the caller's
+responsibility (the score editor / integration code). Architectural Layer 1 only builds the note
+model, or widens it, when it is told to."*; lines 94–96, the same supplier/requester shape for
+enlargement; line 102 (fixed once built; Row 3.30 already carried). The derivation: no statement or
+open question mentions an edit, a rebuild or the record changing (searched at the file); S-53 (the
+working span the only thing a caller supplies beyond L0). `FRAMEWORK.md` reconciliation table item
+13: *"re-analysis is incremental; the working span is extensible — CARRIED FORWARD at stage two … a
+product requirement about very large scores and about editing, and no published research source
+states it."* `ARCHITECTURE.md` line 1174, R2: *"re-analysis is incremental over the dirty span plus a
+bounded margin"*. The charter's L0: *"NOT A LAYER; the input contract"*. The decisions index: D-037
+(reads the score once), D-011 (decodes the whole score once, no cache), D-072 (the analysis library
+knows nothing about the score format).
+
+**The three positions, weighed.** *Position one* — the outgoing rule written into L0 as a contract
+clause: L0 is built from the record on request and fixed until rebuilt; it observes no editor and
+detects no edit; deciding the record has changed and requesting the rebuild, with the changed span R2
+needs, belongs to the caller that owns the record. Towards the objective: an analysis over a stale
+model reports the harmony of music that no longer exists, and the rebuild is asked for by the one
+party that knows an edit happened and where. Towards the principles: L0 is the contract about the
+record and the edit event is the host's (#7); the supplier/requester shape the record already uses for
+enlargement (S-53, D-030); the counterpart of fixed-once-built, without which that guarantee is a hole
+(#10); R2's dirty span given an owner (#6); carried forward as item 13 says it must be, honestly
+bounded (#1). *Position two* — L0 observes the record and invalidates itself: prevents stale analysis
+without the host, but consumes the editor's events against #7 and D-072, contradicts D-037 and D-011,
+and invents a design with no research or measurement behind it (#1, #17); its benefit is reached by
+position one at the caller. *Position three* — silence: excluded, item 13's *carried forward* being an
+obligation to state and not a licence to omit, and a silent product requirement being discovered at
+the audit or by a user (#5, #13). **Both axes pointed to position one; no conflict, and Ruling 1's
+precedence clause was not exercised.**
+
+**What was decided.** At the ratification act L0 gains the clause above, beside S-3 to S-7 as part of
+the input contract, with a pointer to the bounded-context design for the dirty span and nothing of
+that design restated (#6). **Row 3.29 — ADOPTED, proposed**, the proposal being that L0 state who owns
+staleness, and this ruling stating it. Row 3.30 stays carried. Nothing is applied by this ruling.
+**No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3ay. Ruling 44 — STEM DIRECTION AND VOICE SLOTS: L0 SUPPLIES STEM DIRECTION BY S-7's OWN ROUTE, THE VOICE-LEADING AXIS IS ITS NAMED CONSUMER, L1 STAYS BLIND TO IT, AND THE PERMISSION TO CONSUME BINDS ANY CONSUMER; OQ-19 IS ADDED ON THE SOURCE (Position one)
+
+**Taken 2026-09-02 by the ninety-third session, the eleventh disposition ruling, over Rows 1.25,
+1.27(ii) and 1.29 of the reading file (Rows 1.26, 1.27(i) and 1.28 already carried), read at the
+working tree as staged this session through the file tools (the third comparison dispatch still in
+flight; no object asserted for the file).** **The user's words, verbatim: "Agree. And I would be very
+surprised if stem direction is not set on every note (that has a stem) in Musescore regardless of a
+user actively setting it or not."**
+
+**The facts, each checked at its object.** `ARCHITECTURE.md` lines 1626–1636, re-homed on the user's
+ruling of 2026-08-08: voice slot and stem direction *"belong to how the music was written down — the
+same category as the key signature, the time signature, a tie or a pedal marking"*; *"They are not
+somebody's claim about the harmony. The analysis may therefore consume them."*; the reach — *"The
+rule binds any voice-tracking work whether or not the non-chord-tone detector that raised the
+question is ever built"* — a permission with a named consumer class, not a requirement on any present
+layer. The derivation: S-1 (the admission test); S-3 and S-13 (staff and notated voice supplied — the
+voice-slot half, carried); S-7 (*"L0 does not supply … stem directions"*, defended as *"they pass S-1
+but nothing in §3 consumes them; they are excluded to keep the contract minimal, and a later layer that
+needs one adds it by the same test [CONJECTURE …]"*); S-9 (L1 reads S-3 to S-7 minus the key
+signature); S-38's falsifier (L1's outputs invariant to *"different beaming or stem direction"*). The
+ruled record: `CLAUDE.md`'s fact-publication corollary and its amendment (user, 2026-07-12) — publish
+evidence-class facts broadly even without a named consumer, so a future design can recognise them;
+a fact with no consumer is declared dormancy with its consumer named, or waste; the charter's *"second
+axis — voice leading"*; D-389 (a notated voice is a FACT, an inferred line a JUDGMENT); D-396 (the
+voice-leading dimension covers notated music only). **Unchecked and recorded as such:** whether the
+source L0 reads carries a stem direction for every stemmed note; the derivation's §6 names no stem
+element among those it read in the staged files.
+
+**The three positions, weighed.** *Position one* — S-3 gains stem direction as engraved; S-7's
+exclusion list loses the word; S-9 and S-38 stand, L1 blind to it; the voice-leading axis named as
+the consumer; the permission stated as binding on any consumer independently of whether one is built.
+Towards the objective: the voice-leading axis starts from how the composer wrote the voices down —
+slot and stem — and a contract withholding a notated fact from the axis the user's ruling named as
+its consumer would make that axis re-read the score (D-037). Towards the principles: passes S-1 by the
+derivation's own admission (#1); the user's 2026-08-08 ruling stands in the outgoing record and is not
+implementation-describing, so the ratified specification may not contradict it; the D-100 amendment
+in its own words; dormancy declared with its consumer, not waste (#6); L1 untouched (#7). Cost: one
+supplied field with no consumer built today, the cost the amendment was ruled to accept. *Position
+two* — S-7 stands, the consumer's specification admits the field later: nothing lost, minimal
+contract; but a user ruling left with no counterpart in the derived text, the D-100 amendment already
+deciding minimality the other way, and S-7's own defense a conjecture. *Position three* — L1 reads
+stems for voice assignment in its cues: excluded by S-9, S-38's falsifier and D-389 — L1 decides
+nothing (#7). **Both axes pointed to position one; no conflict, and Ruling 1's precedence clause was
+not exercised.**
+
+**What was decided.** At the ratification act S-3 gains *its stem direction, as engraved* among the
+supplied per-note facts; S-7's exclusion list is amended accordingly; S-9 and S-38 stand unchanged;
+the consumer is named as the second axis, voice leading, so the dormancy is declared; and the reading
+permission is stated beside S-1 as binding on any consumer, L1 excepted by S-9. **Row 1.25 — ADOPTED,
+proposed**; **Row 1.27(ii) — ADOPTED, proposed**; **Row 1.29 — ADOPTED, proposed** (the reach clause);
+Rows 1.26, 1.27(i) and 1.28 stay carried. One open question is added — **OQ-19 (face (a); S-3): whether
+the source L0 reads carries a stem direction for every note that has a stem, and from what it is
+supplied where a record file stores only the engraver's overrides.** The user's stated expectation —
+that it is set on every stemmed note in MuseScore whether or not a user set it — is recorded with the
+question as his, and is a checkable claim about our own system that is checked before it carries load
+(Ruling 1(a), #18); it is neither asserted nor doubted here. Nothing is applied by this ruling. **No
+decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3az. Ruling 45 — THE TIE REPUBLICATION: ROW 1.7 STAYS QUARANTINED WITH ITS AUDIT QUESTION, ITS CONTENT IS CARRIED AT L0 BY S-3 WITH L2's CONSUMPTION OF L0, NO SECOND SURFACE IS ADOPTED, AND D-040's MECHANISM IS NOTED AS SUPERSEDED IN FACT (Position one)
+
+**Taken 2026-09-02 by the ninety-third session, the twelfth disposition ruling, over Row 1.7 of the
+reading file, read at the working tree as staged this session through the file tools (the third
+comparison dispatch still in flight; no object asserted for the file).** **The user's words, verbatim:
+"Agree"**, on the surface whose recommendation was position one.
+
+**The facts, each checked at its object.** `ARCHITECTURE.md` line 1575: `notatedNotes()`
+*"republishes the tie-UNRESOLVED atoms — EVERY notated note incl. tie continuations, each with its
+OWN notated span, a tieContinuation flag, a hasFermata flag, and resolvedIndex … — the facts the
+tie-resolved surface discards that the joint module's event lattice + emission covariates need.
+Purely additive."*; the decisions index D-040, LIVE (*"republished additively for the joint
+estimator"*). The derivation: S-3 (per note, its own notated duration, metric position, and *"whether
+it is tied to the preceding note and to the following note"*); S-23 (a tied group is one event for
+L1; only the first note opens an onset change point and only the last a release; the falsifier: the
+boundary between tied notes is not a change point *"with no other witness"*); S-24 (which links count
+as ties). `FRAMEWORK.md` line 391: L2 consumes *"everything L0 and L1 publish"*. The decisions index
+D-527 (each tone emitted conditioned on melodic and metric covariates) and D-644 (a superseded
+removal: the owning specification states the current behaviour and records the removal as closed).
+
+**The three positions, weighed.** *Position one* — the reading file's disposition stands: Row 1.7
+QUARANTINED, its audit question (does the built event lattice place a boundary at a notated tie,
+which S-23 says is not a change point, and may a harmonic boundary be committed there) reserved to the
+audit; and the content the outgoing statement supplies recorded as carried at L0 by S-3, reached by L2
+through its consumption of L0, with no statement added and the second surface not adopted. Towards
+the objective: L2 keeps every notated fact about a tied note, including a continuation's own span and
+metric position, which the emission's covariates are stated to need; the candidate set stays L1's, so
+a harmony may begin only at a change point, and the audit question protects exactly that. Towards the
+principles: nothing lost (#12); one home for the atoms, L0, rather than a resolved and an unresolved
+surface side by side (#6); a claim about what the lattice does is checked at the audit, not assumed
+(#18, the phase rule); D-040's content survives as *the atoms are available to the inference layer*
+and its mechanism is recorded per D-644. *Position two* — a republication statement added beside L1's
+output: no objective difference; copies L0's facts onto a second surface for a consumer that already
+reads L0 (#6), and carries a built mechanism into the specification. *Position three* — UNPLACED:
+excluded, both halves being placeable at the texts, as the reading file already did. **Both axes
+pointed to position one; no conflict, and Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** **Row 1.7 — QUARANTINED**, audit question as written in the reading file; and
+**ADOPTED, carried in substance** for its content, by S-3 with L2's consumption of L0. At the
+ratification act D-040 is noted as superseded in fact by the L0 contract, its content carried and the
+removal of the second surface recorded as closed (D-644); no statement is added to the derivation.
+Nothing is applied by this ruling. **No decisions-register identity is allocated** — that register
+cannot accept one and `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3ba. Ruling 46 — THE ENLARGEMENT CONTRACT: L0 GAINS NO OPERATION; ENLARGING THE SPAN IS A RE-REQUEST OF L1 OVER A LARGER WORKING SPAN, AND EVERY ENLARGEMENT INVARIANT OF THE OUTGOING TEXT HOLDS BY L1's PURITY AND IS STATED ONCE BESIDE S-53, WITH A FALSIFIER; A SPAN EDGE THAT IS THE RECORD's OWN EDGE IS MARKED (Position one)
+
+**Taken 2026-09-02 by the ninety-fourth session, the thirteenth disposition ruling, over Rows 5.11,
+5.12, 5.13, 5.14, 5.15, 5.16, 5.20, 5.32, 5.33, 5.35, 5.36, 5.39, 5.40, 7.3, 7.17, 7.18, 7.19, 7.22,
+7.27, 7.28, 2.21 and 2.26 of the reading file — the family the ninety-third entry named — together with
+Rows 1.18, 1.20, 3.35, 6.44 and 7.4, which the reading file's own "travelling with" links attach to
+them; read at the working tree as staged this session through the file tools (the third comparison
+dispatch still in flight, its close not yet in `cowork_away_returns.md`; no object asserted for the
+file, and no row of documents 8 to 18 read).** **The user's words, verbatim: "Agree on
+recommendation"**, given in the turn after the surface, whose recommendation was position one and
+which put the choice question to the later turn.
+
+**The facts, each checked at its object.** The outgoing contract: `cowork_layer1_extend_design.md`
+§2 lines 34–54 (build over a selection recording a loaded span; `extend(direction, amount)` in ticks;
+unit-blind; append-only; the new span and a `boundaryReached` flag returned; a covered span a no-op;
+exactly one step per call and no stop condition evaluated; the decision, the increment and the stop
+test in the requester); §6 lines 101–111 (degenerate byte-identity, build-then-extend equivalence,
+append-only, onset sort preserved, idempotence, boundary clamp and report); §8 line 126 (the result
+must not depend on how finely the span was enlarged). `cowork_layer2_reslice_design.md` line 10
+(slicing is *"a pure, stateless function"* of the loaded notes and the loaded span, so the invariants
+*"hold by construction once one clipping rule is fixed"*); §3 lines 55–68 (interior real change points
+stable, the edge slice extends, re-slice equivalence *"the correctness-critical invariant"*); lines 68
+and 95 (a naïve "old slices byte-identical" test is wrong and is not to be written).
+`ARCHITECTURE.md` lines 1602–1610 (D-628: the finest meaningful extension step is the change point,
+*"a fact about the representation, not a tuning choice"*); lines 1171–1179 (bounded context, R1–R3,
+the one detailed cross-layer specification named). `cowork_layer1_note_model_design.md` lines 119–125
+(extend built, Phase 1a, the interim re-walking the whole score, *"byte-identical to a fresh build over
+that span"*). `cowork_bounded_context_design.md` §3 items 1–9 and §4 (the requester owns the decision,
+the increment and the convergence stop; the supplier executes one step; any sequence of extensions
+equals one fresh run over the final span; a data-supply call, never an inference back-edge); its §11
+annotation (D-266: the gate transfers, the acceptance list deprecated). The derivation: S-53 (the
+working span *"the only thing a caller supplies beyond L0"*, L1 *"computable in one forward pass over
+the working span"*); S-32 (covers the working span exactly, entered and cut events marked); §1 line
+101 (L0 *"a list of facts and a test for admitting a fact to it, with no computation"*); no statement
+or open question mentions enlarging a span (searched at the file; the reading file says the same at
+Document 5). The ruled record: `FRAMEWORK.md` line 290 (L0 *"NOT A LAYER; the input contract"*), C-8
+at line 176, the data design at line 552 (a slice carries its start and end and nothing else;
+selection-versus-context the consumer's), item 13 of the reconciliation table at line 1152 (the
+extensible span carried forward as a product requirement no research source states); the decisions
+index D-030, D-031, D-037, D-260 to D-266, D-624, D-628, D-635; and Rulings 39 (§3at: L0 holds the whole
+notated record, the working span restricts what L1 publishes and never what L0 supplies, the D-030
+cost reconciliation reserved to the measurement side), 40 (§3au: the working span tiled exactly, the
+edge a span edge and not a change point) and 43 (§3ax: L0 fixed until rebuilt, the caller requests the
+rebuild with the changed span).
+
+**The fact that reshapes the family.** The outgoing contract is written for a supplier holding only a
+loaded span and growing it. After Ruling 39 the derived L0 has no loaded span: it holds the whole
+record, and the span is a parameter the caller gives to L1. So *extend the loaded span* has nothing at
+L0 to act on; in the derived decomposition an enlargement is the requester asking L1 again over a
+larger working span, and because L1 is a pure function of the record and the span every enlargement
+invariant of the outgoing text follows by construction.
+
+**The three positions, weighed.** *Position one* — the contract stated at L1 as a consequence of
+purity, L0 gaining no operation. Towards the objective: the analysis is the same as under position two
+by the outgoing text's own equivalence invariant, so what separates them is exposure to losing a note,
+and the record locates the losses at a stateful supplier with a horizon (Ruling 39's four-whole-note
+case) and at a clip that amended onsets (Ruling 40); a pure function of the whole record and a span
+has no place for either. Towards the principles: L0 stays a contract with no computation as S-1 and
+the charter state it (#7); the equivalence is stated once by construction rather than four times as
+invariants of a mechanism (#6); nothing is dropped because nothing is ever unloaded (#12); the
+falsifier tests the failure the outgoing record actually saw, the tie across the clip (#10, #11, #15);
+the rule rests on the charter's ruled words and S-53 (#1). *Position two* — the outgoing contract
+adopted into L0 as written. No objective gain; it puts an operation that changes L0's contents into
+the input contract (#7), contradicts Ruling 39 unless the loaded span is re-read, gives L1 a second
+concern, and makes the invariants mechanism-guaranteed and tested one by one (#6); its one advantage,
+that it is what is built, carries no weight under the decision-neutrality corollary. The mirror cost of
+position one — the built Phase-1a `extend` and its tests re-described or retired at the audit and the
+fix plan — is named and excluded from the weighing by the same corollary. *Position three* — silence:
+excluded on Ruling 43's ground; C-8, D-030 and D-260 to D-266 are ruled, item 13 is an obligation to
+state, and Row 7.18's *"the one invariant that must hold"* would go unstated where a consumer most
+easily breaks it (#5, #10, #13). **Both axes pointed to position one; no conflict, and Ruling 1's
+precedence clause was not exercised.**
+
+**What was decided.** At the ratification act the derivation gains, beside S-53: (i) the working span
+is given in the record's own positions, any conversion from the requester's unit being the
+requester's; (ii) L1 computed over a larger span is exactly what a fresh computation over that span
+yields, so the result never depends on how many steps reached the span or in what order; (iii) across
+an enlargement every change point inside the old span is unchanged and only the edge slice extends,
+with the falsifier in its negative form — a test asserting the old slice list byte-identical is wrong
+and is not written; (iv) the finest step that can change anything is the next change point, a
+consequence of the slice definition and not a settable value; (v) the decision to enlarge, the
+increment and the stop test belong to the requester, never to L0 or L1, which S-53 already carries and
+which is stated once; (vi) a span edge that coincides with the record's own start or end is published
+as such, beside Ruling 40's edge mark. The requester-side protocol — convergence, hard bound, the
+discovery rules — stays at the bounded-context design by pointer (#6). **Rows 5.11, 5.12, 5.13, 5.20,
+5.32, 5.39, 2.21, 2.26, 7.3, 7.4, 7.17, 7.18, 7.19, 7.22, 7.27, 7.28, 1.18, 1.20 and 6.44 — ADOPTED,
+proposed**, the proposal being the clauses above. **Rows 5.15, 5.36 and 3.35 — ADOPTED, proposed**, by
+clause (vi) and clause (ii). **Rows 5.14, 5.16, 5.33 and 5.35 — ADOPTED, carried in substance** by
+clause (ii) with Ruling 39: append-only and idempotence have nothing to guarantee when nothing is ever
+unloaded. **Row 5.40 — ADOPTED, carried in substance** by Ruling 43 with clause (ii): L0 is fixed until
+rebuilt and L1 has no state to interfere with. Rows of documents 8 to 29 that name this family are
+placed by this ruling at the application act once the third dispatch's close is verified; Document 18
+is expected among them. **Not settled here:** the D-030 cost reconciliation, reserved by Ruling 39 to
+the measurement side, with D-635's *selection-based loading* belonging to the same question; and how
+D-262's and D-265's wording reads under the derived shape, which is for the ratification act where the
+L0/L1 split returns — none of D-260 to D-266 is contradicted in substance, D-264 being clause (ii).
+Nothing is applied by this ruling; no outgoing text is edited. **No decisions-register identity is
+allocated** — that register cannot accept one and `cowork_register_rule_c_suspension_2026_08_28.md`
+is the route.
+
+## 3bb. Ruling 47 — THE METRIC STRENGTH CLASS: L1 PUBLISHES, PER CHANGE POINT, THE NOTATED METRIC STRENGTH CLASS AS AN ORDINAL WITH ITS LEVEL's PERIOD AND AN OFF-GRID CLASS, AND PUBLISHES NO WEIGHT; A WEIGHT IS A CONSUMER's FITTED DERIVATIVE; THE OUTGOING NUMBER IS EXCLUDED AT THE THRESHOLD ON #12, NOT WEIGHED (Position one, the only admissible position)
+
+**Taken 2026-09-03 by the ninety-fourth session, the fourteenth disposition ruling, over Rows 6.41,
+6.42, 9.6, 9.17, 9.31 and 19.12 of the reading file, with Rows 4.11 and 12.12(ii) staying QUARANTINED,
+and with Rows 6.40, 11.3, 11.6, 11.9, 11.17 and 12.12(i) confirmed as carried; read at the working tree
+as staged this session through the file tools, after the third comparison dispatch's close was read in
+full in `cowork_away_returns.md` and its chain verified at the git objects by explicit hash from
+`4cae08c06a8b…` to `93ab4e340387…`, the local and remote master refs both reading the latter. This
+family was HELD by the ninety-third entry until position 11 was tabulated; it is.** **The user's words,
+verbatim, in order:** on the surface, *"Looks to me that position two should not even be an option due
+to gross information loss?"*; and, on the corrected surface's choice question, *"yes"*.
+
+**The correction the user made to the surface, recorded as part of the ruling.** The surface as first
+written weighed position two on both axes. The user's objection was upheld: position two drops the
+level's period, every level below its four steps and the off-grid case, none of which is recoverable
+from the number, so the recoverable-collapse clause of #12 does not reach it and it is a loss of
+notated information. **An outgoing form that loses notated information is EXCLUDED AT THE THRESHOLD,
+before any weighing, and its exclusion is recorded as evidence about the choice; it appears on the
+surface only because the outgoing text is a witness the phase definition requires to be shown.** This
+is stated as a general shape for later families, not for this row alone.
+
+**The facts, each checked at its object.** `cowork_layer2_slicing_design.md` lines 135–136 (the slice
+minimal; duration and metric weight *"derived on demand by the consuming layers … not stored here"*)
+and lines 140–146 (the 2026-06-26 contract: *"the metric weight of a slice = the beat-strength at the
+slice's start tick"*, the `scoreharvest/metricweights` primitive, *"a preference-free …, key-/chord-
+agnostic notation-derived value in [0.5, 1.0] (downbeat 1.0 → subbeat 0.5)"*, owned by a *"Layer-1.5
+notation view"*). `cowork_layer1_tone_collection_design.md` §3.2, as Row 4.11 quotes it: a second
+ladder, *"DOWNBEAT 1.0 · stressed 0.85 · unstressed 0.75 · sub-beat 0.5"*, folded into a note weight.
+`cowork_layer5_function_design.md` §3 (Row 9.6: the metric weight *"needs a defined owner and contract
+before this layer consumes it"*) and §5.0 (Row 9.17: *"metrically strong"* as *"a local maximum of the
+metric weight — no threshold"*). `cowork_joint_estimator_factorization.md` §3.7 (Row 11.9: the boundary
+probability conditioned on *"beat-strength class (the Temperley 2009 change-on-strong-beat shape:
+above-tactus ≫ tactus ≫ sub-tactus …)"*). `cowork_evidence_inventory.md` §3 (Row 12.12: *"per-note beat
+weight decoder-private"*). `cowork_voiceleading_axis_design.md` §3 (Row 19.12: the shared note model
+carries *"metric weight"* per note). The derivation, read at the file: S-34 (the notated metrical
+hierarchy per signature, levels with period and phase); S-35 (per change point, the highest level at
+which the position is a beat, *"published as an ordinal (0 for the bar, 1 for the next level down, and
+so on) together with the level's period"*, with *off-grid* ranked below every level; the defense from
+the metrical grid and Temperley 2009 Table 1, fetched; the stated reason for the period — *"a rank-1
+class in 3/4 (the beat) and in 4/4 (the half-bar) are not the same thing"*; the premise that the
+gradient holds on this repertoire UNESTABLISHED, *"L2's weighting is where the measurement bites"*);
+S-36 (the anacrusis); S-37 (signature changes); S-38 (the notated class only); S-3 (per note, metric
+position and no weight). The ruled record: `FRAMEWORK.md` line 328 (L1 publishes *"per change point,
+its metric strength class"*), line 482 (the L1 → L2 contract carries *"metric strength"*), line 314
+(*"Metrical strength remains a derived covariate"*), lines 352–373 (the corrected three-level
+evidence), §8.1 (publish once) and §8.3 (*"style lives only in calibration … never through the
+structure"*), line 552 (a slice carries its start and end and nothing else); the brief's *"a CLASS and
+not a judgment"* as quoted at Ruling 40; Ruling 41 (§3av); the decisions index D-100 and D-449; the
+decision-neutrality corollary at `CLAUDE.md`.
+
+**The positions.** *Position one* — the derivation's form stands. Towards the objective: the class
+carries strictly more than either outgoing number — the half-bar level (beat 3 of 4/4 against beat
+2), the period (the 3/4 beat against the 4/4 half-bar), every halving level the score's finest
+division supports, and an off-grid mark instead of a rounding onto a beat the notation does not
+write; the measured three-level gradient is the evidence that the class constrains where harmonies
+change, and a four-step number cannot carry a gradient across more levels than it has; and the
+outgoing record shows what *derived on demand* produces — two different ladders at two sites (Rows
+4.11 and 6.42), so two consumers weigh one notated fact differently, which reaches the inference.
+Towards the principles: the charter's ruled words (#1); one publication at L1 (#6, D-100, §8.1);
+nothing the notation carries lost (#12); no hand constant in a fact, the weighting fitted in L2's
+calibration (#17, #19, #20, §8.3); L1 to the notated meter, deciding nothing (#7, S-38). Its cost —
+the built primitive's number and its consumer become a fitted map over the class, or retire — is
+named and carries no weight under the decision-neutrality corollary. *Position two* — the outgoing
+number, derived on demand: **EXCLUDED at the threshold on #12**, as the user ruled above, with #6 (the
+two ladders) and the charter's publish list beside it as further grounds; not weighed. *Position
+three* — the class and a scalar weight published side by side at L1: excluded, the scalar being a
+fitted map over the class, so one fact in two forms (#6) and a calibrated quantity in the fact layer
+(§8.3). **Position one is the only admissible position; Ruling 1's precedence clause was not
+exercised.**
+
+**What was decided.** At the ratification act S-34 to S-38 stand as derived; the outgoing *derived on
+demand* clause and the `[0.5, 1.0]` number are superseded; beside S-35 the derivation gains that Row
+9.17's *metrically strong* is computable from the class as a rank comparison between neighbouring
+change points at a common period, and one ownership sentence — L0 supplies metric position per note
+(S-3), L1 the metric strength class per change point (S-35), and a per-note or per-slice weight is a
+consumer's fitted derivative, never published by L0 or L1. **Rows 6.41, 6.42, 9.6, 9.17, 9.31 and
+19.12 — ADOPTED, proposed**, the proposal being the form and the owner, and this ruling stating both.
+**Rows 4.11 and 12.12(ii) — QUARANTINED**, audit questions as written. **Rows 6.40, 11.3, 11.6, 11.9,
+11.17 and 12.12(i) — carried or relocated as the reading file placed them, unchanged.** Rows of
+documents 12 to 29 that name this family are placed by this ruling at the application act. **Not
+settled here:** S-35's unestablished premise — whether the three-level gradient holds on this
+repertoire — which is a measurement for L2's calibration; and Row 11.12's proposal (the fermata flag
+published with the metric strength of its own position), which belongs to the boundary-evidence family
+and gets its own surface. Nothing is applied by this ruling; no outgoing text is edited. **No
+decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3bc. Ruling 48 — THE BOUNDARY-EVIDENCE FORM: L1 PUBLISHES THE NOTATED BOUNDARY EVIDENCE AS S-39 AND S-40 STATE IT, EVERY FLAG CARRYING THE SCOPE IT WAS READ AT; EVERY COMBINATION, NORMALISATION, THRESHOLD AND SELECTION IS THE CONSUMER's, WHERE D4 (D-478) CONTINUES TO GOVERN THE PICK; THE OUTGOING PROFILE AS AN L1 OUTPUT IS EXCLUDED AT THE THRESHOLD ON #12 (Position one, the only admissible position)
+
+**Taken 2026-09-03 by the ninety-fourth session, the fifteenth disposition ruling, over Rows 8.5,
+8.6, 8.8, 9.8, 9.14, 9.16, 9.23, 9.28, 9.33, 10.2, 10.4, 10.6, 10.9, 10.10, 10.18, 10.20, 10.21,
+10.22, 10.24, 10.26, 10.28, 10.29, 10.32, 10.33, 10.37, 10.41, 10.53, 12.21, 13.8, 13.9, 19.13, 21.5,
+22.2, 22.6, 25.5 and 27.10 of the reading file — the family the reading file names *the
+boundary-evidence form* and its marker-scope half — read at the working tree as staged this session
+through the file tools, after the population was verified complete at the git objects (Ruling 47's
+head). Held out for their own surfaces: the marker kinds and the L0 supplied list (10.13, 10.14,
+10.23, 10.52, 12.7, 14.18), the coincidence window (10.27), the reservation of the word *phrase*
+(10.8), and Row 10.20's question whether the derived surface cues are admitted as L1 evidence at all.**
+**The user's words, verbatim: "position one, with the placements as stated - agree"**, given in the
+turn after the surface, which recommended position one and put the choice question to the later turn.
+
+**The facts, each checked at its object.** `cowork_phrase_boundary_design.md`: the banner (lines
+3–17), SIGNED by the user 2026-06-26, revision 2 replacing *"the rev.-1 binary-union model with a
+graded boundary-strength model"* on the research in `cowork_phrase_boundary_methods.md`; §1 (lines
+49–58): the primitive computes *"a graded boundary-strength profile … per-onset … and from it the
+picked boundary ticks and the derived per-region flag 'this region ends a phrase'"*; the
+bounded-context stance (lines 23–31): a derived view publishing *"a Class-M boundary confidence …
+comparable within one score's profile only"*; §6 D4 (lines 260–265), user-ratified 2026-06-26: *"The
+boundary is a peak in a continuous strength profile, not the OR of a few binary signals. Rejected: the
+binary union — a degenerate special case that cannot express 'a gap larger than its neighbours,'
+inflates recall, and wrecks precision … The cost — per-cue normalisation, the weight vector, the peak
+threshold — is modest and the constants are precision-phase"*; D5 (lines 266–272), per-voice cues
+aggregated by voice coincidence. Its mechanism as the rows quote it: three derived surface cues per
+voice — gap, inter-onset, pitch interval — under a local-change rule (Rows 10.20, 10.21); a
+max-normalised, gap-dominant weighted sum with precision-phase weights (10.22); the notated markers
+as fixed spikes above any surface peak (10.24); the picked set the surface peaks above an adaptive
+threshold, the profile's mean plus k standard deviations, union every marker (10.28, 10.29); and its
+own §4.4 (10.32): *"The picked set is SCOPE-BLIND today … a marker written on one voice — a breath
+mark — is spiked onto the texture profile and thereafter reads exactly like a marker that applies to
+the whole ensemble"*, with §11-5 (10.53) partitioning the marker kinds into globally-scoped and
+per-part-scoped and the fermata *"the borderline case: conventionally an ensemble hold, but notated
+per staff"*. `ARCHITECTURE.md`'s Layer 5 section (Rows 8.5, 8.6): cadences looked for at phrase ends
+read as *"the graded phrase-boundary profile"*, the fallback weighting votes *"by the graded
+strength"*. The decisions index: D-476, D-477, D-478, D-479, D-481, D-484, D-485, all LIVE, entries
+ratified 2026-08-04. The derivation, read at the file: S-39 (per change point, a set of boundary
+flags each with its witnesses — BAR-LINE with type, REPEAT with kind and count, FERMATA at the
+release, REST-BEGINS naming the voice, ALL-SILENT); S-40 (*"Several marks at one change point are
+published as several flags in the set; nothing is collapsed to a single 'boundary strength'"*,
+defended: *"Combining flags into one number would be a judgment of their joint weight [RULED — decides
+nothing], and would lose the parts (#12)"*); S-41 (the positioned marks list); S-51 (an L1 output is
+evidence only where computable from L0 with no tonality, chord or boundary as input, and *"a decided
+boundary … would be"* a claim); S-52 (*provisional* status on anything resting on an unestablished
+parameter); S-31 (a silent slice is *"strong boundary evidence"*). The ruled record: `FRAMEWORK.md`
+line 329 (L1 publishes *"per change point, the notated boundary evidence at it"*), line 334 (L1
+*"Decides nothing about the music … hands the next layer its covariates"*), line 482 (L1 → L2: *"No
+decided boundary — L1 decides none"*), line 485 (L1 → L3: *"Notated phrase evidence"*), line 484 (L3 →
+L2: *"Nothing"*), §8.3; Ruling 47 (§3bb): an outgoing form that loses notated information is excluded
+at the threshold, and a weight is a consumer's fitted derivative.
+
+**The fact that reshapes the family.** D4 and S-40 are not about the same act. D4 says how a phrase
+boundary is *picked* from evidence — as a peak in a graded profile, with research behind it. S-40 says
+what L1 *publishes* — the notated marks, each kept separate, so that no joint weight is taken at the
+layer that decides nothing. The outgoing design fused the two because its *Layer 1.5* was both the
+publisher of the evidence and the picker of the boundary; in the derived decomposition those are two
+layers — L1 publishes, and the layer that reads a phrase off it (L3 under the L1 → L3 contract, or L2
+where a segmentation boundary is at stake) picks. D4 therefore stands entire as the picker's rule and
+S-40 entire as the publisher's; what is decided is which side of the L1 line the weighted sum, the
+spikes, the threshold and the picked set fall on.
+
+**The positions.** *Position one* — L1 publishes the evidence as S-39 and S-40 state it, every flag
+carrying its scope; every combination, normalisation, threshold and selection lives at the consumer
+that decides the phrase boundary, where D4 continues to govern. Towards the objective: the picker
+keeps every part of the evidence it picks from — which mark, on which staff, and the sub-threshold
+evidence — so the research-backed combination D4 wants runs over the full flag set rather than over a
+scalar that has already lost what fired, the very defect the outgoing design names at its own §4.4;
+and a second consumer (the segmentation, the grouping, the voice-leading axis) can weigh the same
+evidence its own way instead of inheriting one consumer's weights. Towards the principles: the
+charter's ruled words for L1 (#1); one publication of the marks and no fitted constant in a fact layer
+(#6, D-100, §8.3, #19); the parts, the scope and the sub-threshold evidence kept (#12); L1 decides
+nothing, the threshold and the pick being decisions (#7, S-51); D4 kept as the rule of the layer that
+makes that judgment, so no ratified decision is overturned, only re-homed. Its cost — the built
+primitive's picked set stops being an L1 output — is named and carries no weight under the
+decision-neutrality corollary. *Position two* — the outgoing profile, spikes, threshold and picked set
+as L1's published boundary evidence: **EXCLUDED at the threshold on #12** under Ruling 47's shape —
+the weighted sum collapses distinct marks into one scalar, the spike erases which marker fired and its
+scope, the threshold discards evidence below it, and none is recoverable from the profile; beside it, a
+thresholded pick is a decided boundary the L1 → L2 contract forbids in terms, and the weights, k and
+the spike magnitude are constants in a fact layer (#19, §8.3). D4's ratification is not a ground for
+this position, D4 ruling how a boundary is picked and position one keeping that rule at the layer that
+picks. *Position three* — the flag set and the graded profile side by side at L1: excluded, the
+profile being a fitted map over the flags and cues (#6, §8.3), the exclusion Ruling 47 recorded for the
+metric weight. **Position one is the only admissible position; Ruling 1's precedence clause was not
+exercised.**
+
+**What was decided.** At the ratification act: S-39 and S-40 stand; **S-39 gains, on every flag, the
+scope it was read at** — the whole texture, or the staff or voice it is notated on — so that the
+partition of Row 10.53 is a published fact (**Rows 9.28, 10.32, 10.33, 10.53, 13.9, 22.6 — ADOPTED,
+proposed**, this clause being the proposal; these rows run towards the derivation). **The graded
+profile, its gap-dominant weights, the marker spikes, the max-normalisation, the adaptive threshold,
+the peak-picking, the picked set and the "ends a phrase" flag are RELOCATED to the consumer that
+decides the phrase boundary — the phrase read-off at L3 under the L1 → L3 contract — with D-476 to
+D-485 re-homed there and D4 (D-478) remaining that consumer's ruled rule** (**Rows 10.9, 10.10, 10.18,
+10.22, 10.24, 10.26, 10.28, 10.29, 10.37, 10.41 — RELOCATED to L3**, the phrase read-off; **Rows 10.4
+and 10.21 — RELOCATED to L3** for their computed half, their deterministic half already S-39's).
+**Rows 8.5, 8.6, 9.8, 9.14, 9.16, 9.23, 9.33, 12.21, 13.8, 19.13, 22.2 — placed as consumers reading
+the profile at its new home**, their L1-facing content carried by S-39 and S-40; **Row 21.5 is FLAGGED
+for the L2 surface**, its boundary-strength factor being an L2 read of an L3 product, which the L3 →
+L2 contract forbids. **Rows 8.8 and 10.2 — ADOPTED, proposed**: beside S-39, that the notated boundary
+evidence may be empty or near-empty over a passage and is systematically incomplete as a phrase
+signal, so an absent flag is never read as an absent boundary. **Row 10.6 — ADOPTED, proposed**:
+beside S-52, that a published quantity states the frame within which it is comparable. **Rows 25.5
+and 27.10 — RELOCATED to L2**, the decided segment boundary's marginal mass being L2's published
+uncertainty under the L2 → L3 contract. Rows of the population that name this family and are not
+listed here are placed by this ruling at the application act. **Not settled here:** whether the three
+derived surface cues — the gap, the inter-onset and the melodic interval, with Row 10.21's
+local-change strength — are admitted as L1 evidence at all (Row 10.20; they pass S-51's test, their raw
+values are largely in L1's output already, and the addition of an output to the charter's list is the
+user's, as S-43 states) — the next surface; the marker kinds (OQ-9, OQ-15); the coincidence window,
+which under this ruling is a question about the consumer's aggregation over exact change points and
+not about L1; and Row 21.5's L2-reads-L3 shape. Nothing is applied by this ruling; no outgoing text is
+edited. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3bd. Ruling 49 — THE DERIVED SURFACE CUES: L1 PUBLISHES, PER ONSET CHANGE POINT AND PER NOTATED VOICE, THE THREE RAW RELATIONS TO THAT VOICE's PRECEDING EVENT — THE SILENCE BEFORE THE ONSET, THE TIME SINCE THE PRECEDING ATTACK, AND THE SPELLED MELODIC INTERVAL — EACH WITH ITS TWO WITNESSES, UNNORMALISED; THE LOCAL-CHANGE TRANSFORM AND EVERYTHING AFTER IT ARE THE CONSUMER's (Position one)
+
+**Taken 2026-09-03 by the ninety-fourth session, the sixteenth disposition ruling, over Rows 10.20
+and 10.21 of the reading file, read at the working tree as staged this session through the file
+tools; the question Ruling 48 (§3bc) held out because it adds an output to the charter's list, which
+S-43 states is the user's to admit.** **The user's words, verbatim: "position one"**, given in the turn
+after the surface, which recommended position one and put the choice question to the later turn.
+
+**The facts, each checked at its object.** `cowork_phrase_boundary_design.md` §4.1 (lines 119–139):
+three cue profiles, each per voice — *"the gap profile — the offset-to-onset interval (the
+silence/separation) between successive events; the inter-onset profile — the time between successive
+attacks; the pitch-interval profile — the absolute interval (in semitones) between successive notes of
+a single voice's line"*; each transformed by *"the standard local-change rule — the boundary-strength
+formulation of Cambouropoulos's Local Boundary Detection Model (LBDM) family"*, strength `x · (left +
+right)` with two change-ratios and no constant; each then *"normalised by dividing by its own
+per-score maximum"*; the combination with precision-phase weights being what Ruling 48 relocated. The
+decisions index: D-477 (a phrase boundary is read from the written surface alone), D-479 (the cues run
+per eligible voice). The derivation, read at the file: S-3 (per note its onset, duration, spelled
+pitch, staff and notated voice); S-13 (notated voices only, the keyboard hazard declared); S-23 (a
+tied group is one event, the continuation not an attack); S-15 (eligibility); S-11 (an unwritten gap
+is silence); S-31 and S-39 (silent slices, and REST-BEGINS naming the voice); S-51 (an output is
+evidence where computable from L0 with no tonality, chord or boundary as input and named for the
+pattern); S-50 (no field named *boundary*); S-43 (an addition to the charter's list is the user's).
+The ruled record: `FRAMEWORK.md` line 334 (L1 *"hands the next layer its covariates"*); lines 324–333
+(the publish list, containing no such cue); §8.1 (publish once; a later layer re-deriving a published
+fact is forbidden); the fact-publication corollary at `CLAUDE.md` and the siloed-facts audit it rests
+on.
+
+**The positions.** *Position one* — L1 publishes, per onset change point and per notated voice, the
+three raw relations to that voice's preceding event, each with its two witnesses, in the record's own
+units and unnormalised; the local-change transform, the normalisation and everything after them are
+the consumer's. Towards the objective: these are the covariates the picker needs, and *the preceding
+event in a voice* is decided by rules that live at L1 — a tied continuation is not an attack (S-23),
+an ineligible note is not an event (S-15, Ruling 35), an unwritten gap is silence (S-11) — so every
+consumer reads one successor relation rather than walking L0 with its own; covariates that differ
+between consumers reach the inference (Ruling 47's ground). Towards the principles: publish once (#6,
+§8.1, the corollary and its audit); facts with witnesses and no constant, computable with no decision
+as input (S-51, #7); named for what they are (S-50); nothing lost, nothing added that L0 does not
+determine (#12); the transform stays out because it is one model family among those the methods
+catalog ranks, a research choice the picker owns (#7), and is one line from the raw values. *Position
+two* — nothing new published, each consumer computing the cues from L0: admissible, nothing being
+lost, but weaker on both axes — three consumers computing the preceding event in a voice is the shape
+#6 and the corollary exist against, and each must re-apply the tie and eligibility rules L1 already
+applied, so the covariates can diverge on exactly the cases those rules decide. *Position three* — the
+local-change strengths published at L1 as provisional evidence: admissible but dominated — the formula
+has no constant, so S-52's status does not attach; what it would fix in the fact layer is a model
+choice, not a fact; a consumer wanting another salience model recomputes from the raw values anyway
+(#7). **Both axes pointed to position one; no conflict, and Ruling 1's precedence clause was not
+exercised.**
+
+**What was decided.** At the ratification act the derivation gains, beside S-39, one published item
+per onset change point and per notated voice: the silence before the onset in that voice, the time
+since that voice's preceding attack, and the spelled melodic interval from that voice's preceding
+note — each with its two witnesses, unnormalised, in the record's own positions and the spelled
+interval (semitones derivable from it), named for the relation and not for a boundary; the
+preceding event determined by S-23, S-15 and S-11 as L1 already applies them. **Rows 10.20 and 10.21
+— ADOPTED, proposed**, this clause being the proposal; Row 10.21's transform is the consumer's, as
+Ruling 48 placed the rest of §4. **Not settled here:** whether the notated voice is a usable line in
+keyboard music (Row 16.2's family) — the successor relation rests on S-13 and inherits its declared
+hazard. Nothing is applied by this ruling; no outgoing text is edited. **No decisions-register
+identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3be. Ruling 50 — THE NOTATED BOUNDARY KINDS AND THE L0 SUPPLIED LIST: L0 SUPPLIES EVERY PERFORMANCE AND PHRASING MARK ON THE PAGE THAT PASSES S-1, WITH POSITION AND ATTACHMENT; L1's BOUNDARY KINDS GAIN S-43's TWO, BREATH-MARK, CAESURA AND TEMPO-CHANGE AS SCOPED FLAGS; OQ-9 AND OQ-15 ANSWERED (Position one)
+
+**Taken 2026-09-03 by the ninety-fourth session, the seventeenth disposition ruling, over Rows 10.13,
+10.14, 10.23, 10.52, 12.7 and 14.18 of the reading file, with Row 10.15 already carried by S-43; read
+at the working tree as staged this session through the file tools. It answers the derivation's OQ-9
+and OQ-15.** **The user's words, verbatim: "position one"**, given on the explicit choice question put
+in the turn after the surface; an earlier *"go on"* was NOT read as the ratification, on the lesson
+the ninety-third entry's error list records for Ruling 40.
+
+**The facts, each checked at its object.** The derivation, read at the file: S-7 (*"L0 supplies the
+fermatas, the pedal marks with their spans, and the tremolo marks … L0 does not supply tempo,
+dynamics, slurs, beams, stem directions, or layout"*, its exclusion defended as minimality and labelled
+*[CONJECTURE — the minimality is a choice]*, with the route *"a later layer that needs one adds it by
+the same test"* and its own false-negative path, a slur used in place of a tie); S-1 (on the page, and
+not a claim about the music); S-43 (the two signature-change flags proposed, *"an addition to a
+ratified list is the user's"*); OQ-9 (*"Are a caesura, a breath mark, a section break or a segno
+boundary evidence? … these pass S-1 and are not in the list"*); OQ-15 (the two signature flags). The
+outgoing text: `cowork_phrase_boundary_design.md` §4.2 (lines 148–164), six marker kinds — the
+fermata; *"a breath mark (the comma phrasing symbol) or a caesura … explicit composer-notated phrase /
+break signals, the same kind of high-precision channel as the fermata"*; the double, final or repeat
+bar line; the mid-score key-signature change *"read as the engraved signature event … NOT the inferred
+key"*; *"a sudden (subito) tempo change … or a written ritardando / rallentando — a notated slowing
+into an arrival (spiked at the arrival it leads to) … expressive mid-phrase rubato is not a
+boundary"*; the onset of a maximal all-voice rest; §11-4 (Row 10.52): slur ends and abrupt dynamic
+changes *"weak/auxiliary in the literature; admissible as additional low-weight surface profiles if
+measured to help, deferred from the first build"*; §11-5 (Row 10.53, ruled at 48), the breath mark and
+caesura per-part-scoped. Four outgoing documents name the breath mark among the boundary kinds (Rows
+10.13, 10.23, 13.3, 14.18); `cowork_evidence_inventory.md` §1 (Row 12.7) lists slurs, articulation,
+tempo and character markings as input facts. The ruled record: `FRAMEWORK.md` lines 295–297 (L0's
+*Given* list, carrying none of these), §8.3 (*"The layers that carry facts — L0 and L1 — are
+style-agnostic and lossless"*), the L1 publish list's five boundary kinds; `CLAUDE.md`'s
+fact-publication corollary with the user's amendment of 2026-07-12 (evidence-class facts *"publish
+broadly even without a named consumer"*, each with its establishment status — the visible
+smörgåsbord); Ruling 44 (§3ay), which lifted S-7's exclusion for stem direction by S-7's own route;
+Ruling 48 (§3bc), every flag carrying its scope; Row 23.4's ratified amendment naming *"a
+module-private raw score walk"* as *"the raw-source-outside-the-fact-layer defect class the
+certification audits condemned"*.
+
+**The positions.** *Position one* — L0 supplies every performance and phrasing mark on the page that
+passes S-1: the breath mark, the caesura, tempo markings (a marking at its position; a written
+ritardando or rallentando with its span), slurs with their spans, articulation signs, and dynamic
+markings and hairpins with their spans — each with its position and the note, rest, bar line or staff
+it is attached to, so its scope is a fact; beams and layout stay excluded. L1's boundary evidence
+gains, beside the charter's five, S-43's two, BREATH-MARK and CAESURA on the staff or voice they are
+written on, and TEMPO-CHANGE — a sudden change at its position, a written ritardando at the end of its
+span, placed as FERMATA is at the release — each a flag with witnesses and scope. Slurs, articulation
+and dynamics are supplied by L0 and read by no L1 computation; S-7's falsifier narrows to those.
+Towards the objective: the breath mark, the caesura and the sudden tempo change are, in the outgoing
+record's own words, high-precision notated phrase and section signals of the fermata's kind, consumed
+by four documents; a picker denied them reads a phrase end from weaker cues where the composer wrote
+it down; for slurs, articulation and dynamics the inference is unchanged today, and what is bought is
+that the consumers the record names for them (Row 10.52's measured test; the voice-leading axis; S-7's
+slur-as-tie case) find them in the fact layer rather than walking the raw score outside it, a recorded
+defect class. Towards the principles: L0 lossless in the charter's ruled words (§8.3, #1); the
+publish-broadly amendment; S-1 applied without a minimality exception S-7 itself labels a conjecture;
+#12; S-7's route used as Ruling 44 used it; scope on the page and published as such (Ruling 48). No
+annotation is admitted — a text expression that is not a tempo marking stays under S-2. *Position two*
+— the minimal list: L0 gains only what a named L1 computation consumes now (the breath mark, the
+caesura, tempo markings), slurs, articulation and dynamics staying excluded with the route open.
+Admissible, the same L1 evidence and the same inference today; its ground, #6 and D-100's waste
+clause, is carved out for evidence facts by the amendment, and the charter says L0 is lossless; its
+cost is a later consumer reaching for the raw score or re-opening L0, S-7's own false-negative path
+being the first such consumer. *Position three* — OQ-9 and OQ-15 left open: excluded, four outgoing
+documents consuming the breath mark and one using the key-signature event already; a consumed fact
+unsupplied is a hole in the contract the specification is compared against (#10, #13). **The objective
+axis did not separate one from two today and separates them forward; the principles axis pointed to
+one; no conflict, and Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** At the ratification act: S-7 is amended to supply the marks position one lists,
+each with position and attachment, its exclusion narrowed to beams and layout, and its falsifier
+narrowed to *no §3 computation reads a slur, an articulation sign or a dynamic*; S-39 gains the flags
+BREATH-MARK, CAESURA and TEMPO-CHANGE with the placement rules above, and S-43's TIME-SIGNATURE-CHANGE
+and KEY-SIGNATURE-CHANGE are admitted (**OQ-15: yes**); **OQ-9: yes for the breath mark and the
+caesura; a section break as a system or page break is layout and stays out; a segno or coda sign is
+repeat-structure notation placed with the junction adjacencies of S-27 and S-42 and not a boundary
+kind — that last placement is this side's reading, no staged score carrying one, and is open to
+challenge at the objects.** **Rows 10.13, 10.14, 10.23, 10.52, 12.7 and 14.18 — ADOPTED, proposed**,
+the proposal being the L0 list and the L1 kinds, and this ruling stating both; Row 10.15 stays
+carried. **Not settled here:** OQ-14, the positioned marks list; whether a dynamic or a slur is ever
+boundary evidence at L1 — not admitted, Row 10.52's *"if measured to help"* being a consumer's
+measurement and an addition to L1's kinds the user's when it comes; the tremolo (OQ-2) and the pedal
+mark's effect on what sounds (OQ-3, Row 12.8). Nothing is applied by this ruling; no outgoing text is
+edited. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3bf. Ruling 51 — OQ-14, THE POSITIONED MARKS LIST: ONE HOME FOR EVERY MARK — THE LIST CARRIES EVERY NOTATED MARK OF FACE (e) AT ITS WRITTEN POSITION WITH KIND, ATTACHMENT AND SCOPE, WITNESSES AND THE METRIC CLASS OF ITS POSITION; THE PER-CHANGE-POINT FLAG SET IS THE BOUNDARY EVIDENCE WITH THE PLACEMENT RULES APPLIED, REFERENCING THE MARK BY IDENTITY (Position one)
+
+**Taken 2026-09-03 by the ninety-fourth session, the eighteenth disposition ruling, over the
+derivation's OQ-14 and S-41, with Rows 20.7, 20.8 and 20.9 of the reading file (carried, agreeing);
+read at the working tree as staged this session through the file tools.** **The user's words,
+verbatim: "position one"**, given on the explicit choice question at the foot of the surface.
+
+**The facts, each checked at its object.** The derivation, read at the file: S-41 (*"A boundary mark
+that stands at a position that is not a change point … is published in a positioned marks list: each
+mark with its position, its kind and its witnesses, and with the metric strength class of its
+position. The marks list is a second L1 output beside the per-change-point flags, and the two never
+duplicate a mark"*; its defense, #12 — *"attaching it to the nearest change point would misplace it
+(a decision), while dropping it would lose it"*; the metric class carried because a bar start under a
+held chord is otherwise unpublished; its declared false-negative path, *"a consumer that reads only
+the per-change-point flags misses every mark under a held chord"*; its declined alternative,
+attachment with a *displaced* mark, declined *"because it places a mark at a moment the page does not
+show it"*; its status, *"flagged for ruling because it adds an output"*); S-39's placement rules, which
+put a mark's boundary at a change point that can differ from its written position (a fermata written
+on a note, its boundary at the release); OQ-14 as written. The charter's *"per change point"* wording
+(`FRAMEWORK.md` lines 328–330). Ruling 41 (§3av): published sets reference events by identity, no
+copy. Ruling 48 (§3bc): every flag carries scope and witnesses. Ruling 50 (§3be): the marks L0 now
+supplies. Rows 20.7–20.9 (`docs/llm_integration.md`): rehearsal marks, tempo marks, key changes,
+section labels, double bar lines and repeat signs enumerated as how a musician names a place — the
+derivation's two lists reached from the other side, and carried.
+
+**The positions.** *Position one* — one home for every mark: the positioned marks list carries every
+notated mark of face (e), whether or not it stands at a change point — its written position, kind,
+attachment and scope, witnesses, and the metric strength class of its position — and the
+per-change-point flag set of S-39 is the boundary evidence at that change point with the placement
+rules applied, referencing the mark by identity rather than copying it. Towards the objective: a
+consumer reading the list sees every mark once, including those under held chords — the miss S-41
+declares for its own split; a consumer reading the flags sees the boundary evidence at each candidate
+with the placement rule already applied; neither can lose a mark by reading the wrong structure.
+Towards the principles: one home per mark, the flag a reference in Ruling 41's shape (#6); nothing
+misplaced and nothing dropped (#12, S-41's own ground); the written position kept apart from the
+boundary position, so a mark is never reported as standing where it does not (Ruling 40's #12 rule
+applied to marks); the metric class of an otherwise unpublished position published once (Ruling 47).
+*Position two* — S-41 as written, the list holding only the marks at non-change-point positions:
+admissible, nothing lost; its cost the one S-41 declares — two structures to read, and which one a
+mark lands in an accident of the texture rather than a property of the mark. *Position three* — no
+second output, every mark attached to a change point with a displacement: **excluded at the threshold
+on #12**, as S-41 argued — a mark placed at a moment the page does not show it, and the metric class
+of its real position lost. **Both axes pointed to position one; no conflict, and Ruling 1's precedence
+clause was not exercised.**
+
+**What was decided.** At the ratification act S-41 is widened as position one states: the positioned
+marks list is complete over every notated mark of face (e), including the marks Ruling 50 admitted;
+the per-change-point flag set references the list by identity, with S-39's placement rules deciding
+which change point a mark's boundary falls at; the two never duplicate a mark, because the flag is a
+reference. **OQ-14 is answered: a second output is admitted, and it is the complete one.** A rehearsal
+letter or section label passes S-1 and is placed in the list at the ratification act under the same
+test, Rows 20.7–20.9 having put it there, unless the user says otherwise. Nothing is applied by this
+ruling; no outgoing text is edited. **No decisions-register identity is allocated** — that register
+cannot accept one and `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3bg. Ruling 52 — THE COINCIDENCE WINDOW: NO TOLERANCE ANYWHERE IN L1, S-28 STANDS ENTIRE; A CONSUMER MAY GROUP NEAR-COINCIDENT ONSETS FOR ITS OWN WEIGHING, ITS WINDOW ITS OWN AND DECLARED, AND WHATEVER IT PUBLISHES NAMES THE GROUPED ONSETS BY IDENTITY AND THE WINDOW, NEVER A MERGED POSITION AS A FACT; AND THE USER's GENERAL RULING ON FACTS — NEVER ALTERED, HIDDEN OR ADDED TO; THE WHOLE TRUTH PRESENTED, ITS USE THE CONSUMER's (Position one, with the clause written in)
+
+**Taken 2026-09-03 by the ninety-fourth session, the nineteenth disposition ruling, over Row 10.27 of
+the reading file, read at the working tree as staged this session through the file tools.** **The
+user's words, verbatim, in order:** on the surface, *"Merging sounds like information loss/tampering?"*;
+on the surface as amended with the publication clause, *"yes"*, followed by: *"'facts' should not be
+altered/hidden/added to - later consumers might add to it, but what 'is in score' is up to consumer
+to decide how it is to be used. We also have said that this is 'future-proofing' too - today we do not
+know what a consumer tomorrow might need so we present the entire 'truth'."* The ruling records the
+*yes* as the ratification of position one with the clause, and the sentences after it as a ruling on
+principle in their own right, carried to the register's route beside Ruling 40's #12 ruling.
+
+**The facts, each checked at its object.** `cowork_phrase_boundary_design.md` §4.3 (lines 172–180):
+the per-voice strengths *"aggregated, per onset, into a texture boundary-strength … the sum of the
+per-voice strengths at that onset"*; *"Because voice onsets do not always align exactly, two voices'
+events are merged into the same onset for the sum when they fall within a coincidence window `τ` (a
+precision-phase constant absorbing notational near-alignment …)"*; `τ` and an optional coincidence
+weight precision-phase constants. The derivation, read at the file: S-28 (*"There is no tolerance: two
+events a thirty-second apart are two change points, and the slice between them is a slice"*, defended:
+*"A tolerance would merge distinct moments and could delete a real candidate, which the charter's
+construction exists to make impossible"*); S-51. The ruled record: the charter's exhaustive
+change-point set, over-grab *"structurally impossible"* (`FRAMEWORK.md` lines 339–341); §8.3; Ruling
+40's #12 ruling (amending a published fact so it could be misunderstood is a loss of information);
+Ruling 48 (the aggregation across voices and everything after the raw cues the consumer's); Ruling 49
+(the per-voice relations published at exact onset change points).
+
+**The positions.** *Position one* — no tolerance anywhere in L1; S-28 stands entire; the grouping of
+near-aligned onsets across voices is the consumer's act over the exact change points L1 publishes,
+its window its own constant, declared provisional until fitted; **and the clause the user's question
+produced: a consumer may group near-coincident onsets for its own weighing, but whatever it publishes
+names the grouped onsets by identity and the window it used, and never a merged position as a fact.**
+Towards the objective: L1's candidate set stays exhaustive, so a harmony beginning a thirty-second
+after another voice's onset is a candidate and not a casualty of a window; the consumer that counts
+voices phrasing together does so over exact positions and cannot delete a change point, because it
+never touches the slice list; and no published item anywhere misdescribes where a note starts, the
+grouping being published with its members rather than as a position. Towards the principles: the
+charter's construction (#1); no constant in the fact layer (#19, §8.3); nothing merged and nothing
+lost at L1, and a consumer's sum derived from positions still carried — #12's recoverable-collapse
+clause on the one side, Ruling 40's #12 rule on the other, which is where the line between a
+consumer's judgment and tampering falls (#12); L1 decides nothing (#7, S-51). *Position two* — a
+tolerance at L1: **excluded at the threshold on #12** in S-28's own words, a merge deleting a real
+candidate not recoverable from the merged list; beside it a fitted constant in a fact layer (§8.3,
+#19). *Position three* — a *near-coincident onsets* relation published by L1 as evidence: admissible
+but dominated, needing at L1 the very constant position one keeps out, and computable by the consumer
+from the exact positions in one step. **Position one is the only admissible position; Ruling 1's
+precedence clause was not exercised.**
+
+**The user's ruling on principle, general rather than for this row.** *Facts — what L0 supplies and
+L1 publishes — are never altered, never hidden, and never added to. A later consumer may add to what it
+derives from them; what is in the score is presented whole, and how it is used is the consumer's to
+decide. This is also future-proofing: what a consumer may need tomorrow is not known today, so the
+entire truth is presented.* It is the ground of Rulings 39 (no horizon), 40 (events kept whole, the
+edge marked), 41 (the sounding set by identity), 47 (no weight in the fact layer), 48 (no collapse of
+the boundary evidence), 50 (L0 lossless over every mark on the page) and 51 (every mark in one list),
+stated once by the user in his own words, and it binds every later surface of this comparison.
+
+**What was decided.** At the ratification act the derivation gains, beside S-28, that no tolerance
+exists anywhere in L1 and that a consumer's grouping window is its own, declared, and never published
+as a position; **Row 10.27 — ADOPTED, proposed**, that clause being the proposal; the user's ruling on
+principle carried to the register's route. Nothing is applied by this ruling; no outgoing text is
+edited. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3bh. Ruling 53 — THE CADENCE CUES: COMPUTED FROM L0 AND THE SLICE LIST ALONE, ANCHORED ON THE BASS, NEVER ON A CHORD OR A CANDIDATE KEY; PRESENCE AND MOTION BOTH ADMISSIBLE, EACH NAMED AND CARRYING ITS LIMIT ON ITS FACE — S-46 STATES THAT IT FIRES IDENTICALLY ON V→I AND I→IV; NO GATE AT L1; S-45 STANDS; NO SOPRANO CUE; OQ-17's STAND-IN ACCEPTED AS PROVISIONAL (Position one)
+
+**Taken 2026-09-03 by the ninety-fourth session, the twentieth disposition ruling, over Rows 9.12,
+9.19, 9.20, 9.21, 11.8, 11.14 and 12.19 of the reading file, with Rows 9.22, 9.26, 11.13 and 11.15
+confirmed as carried, Row 15.18 staying RELOCATED to L2 and Row 15.19 QUARANTINED; and over the
+derivation's OQ-17; read at the working tree as staged this session through the file tools.** **The
+user's words, verbatim: "position one"**, given on the choice question at the foot of the surface,
+which offered OQ-17 held out and was answered without holding it out.
+
+**The facts, each checked at its object.** The charter, `FRAMEWORK.md` lines 331–333 (the three cues)
+and 375–384 (*"computable from the notation without knowing the tonality … Their weakness is equally
+measured … the half cadence reaches F .29 and .41 … a cadence detector which reads a resolved tonality
+and then votes on that tonality is circular"*). The derivation, read at the file: S-44 (cues at onset
+change points, over the bass, the lowest sounding pitch as Ruling 42 reworded it); S-45
+(BASS-FALLS-A-FIFTH with witnesses and register); S-46 (LEADING-TONE-RESOLVES, a motion in a notated
+voice, the relaxation published; its falsifier's clause *"Not falsified by: it being true on a
+deceptive resolution's leading tone … if it is true, the bass IS the pitch the leading tone resolved
+to, which is what it detects"*, status *settled*); S-47 (FOURTH-AND-SEVENTH-IN-THE-APPROACH, a
+presence test over two bass-anchored candidates, *"The candidate tonality is the anchor and nothing
+more: L1 publishes no tonality"*, the V-anchored flag weak evidence because *"omitting would decide"*);
+S-48 (the window UNESTABLISHED, stand-ins four beats and one bar declared, the measurement named);
+S-49 (the interval content above the bass). The outgoing text: `cowork_layer5_function_design.md` §4
+(Row 9.12, cadences detected *"on the event pair (the chord approaching a point of arrival and the
+chord of arrival)"*); §5.0 (Row 9.19, *"'Resolution' everywhere in §5 means such a detected
+voice-motion event — never the mere presence of the leading tone or tritone (the false-positive
+trap)"*); §5.2 (Row 9.20, the corrected premise from its own build: *"A plain triad V→I and a plain
+I→IV are exact transpositions … So the leading-tone-resolution event does NOT by itself discriminate
+authentic from tonic-to-subdominant — that needs the key, which this detector is informing"*); §5.2
+(Row 9.21, *"A cadence candidate is admitted only at a phrase boundary … This removes the mid-phrase
+passing motions that otherwise masquerade as cadences"*); §5.2 (Row 9.22, carried, *"The cadence
+detector casts soft evidence; the authentic-vs-passing disambiguation is a key-layer judgement"*).
+`cowork_joint_estimator_factorization.md` §3.9 (Rows 11.13, 11.14: the same three features, *"each a
+feature with a fitted weight"*, evaluated *"in candidate key k"*); §3.3 (Row 11.8, bass-motion
+continuity *"NOT in the first structure"*). `cowork_evidence_inventory.md` §3 (Row 12.19, a cue over
+the soprano scale degree); Rows 8.4, 9.1, 9.7, 10.17 (carried: the highest voice is not reliably the
+melody). Rulings 42, 48, 49; Ruling 52's principle on facts; `CLAUDE.md` #17's rule on provisional
+table values and S-52.
+
+**The positions.** *Position one* — the derivation's cues stand, with three things written onto them.
+(i) *Inputs:* L1's cues are computed from L0 facts and the slice list alone — the bass as the lowest
+sounding pitch, the eligible events, the notated voices — anchored on the bass as S-47 does, never on
+a committed chord or a decode's candidate key; the outgoing detector over an event pair of chords, and
+the factorization's features evaluated in candidate key k with fitted weights, are L2's cadence factor
+(Row 11.4, RELOCATED), a consumer reading L1's cues and its own state. (ii) *Presence and motion, each
+named and limited:* both kinds admissible as evidence — S-46 a motion, S-47 a presence — each carrying
+on its face what it detects and what it cannot separate; S-46 gains Row 9.20's fact, that it detects a
+semitone-to-bass resolution and fires identically on a plain V→I and a plain I→IV, its status moving
+from *settled* to *settled with its limit stated*; S-47 carries that it is a presence test and its
+V-anchored flag's measured weakness. (iii) *No gate:* cues published unconditionally beside the
+boundary flags; admitting a cadence only at a phrase boundary is the consumer's rule over the two
+published facts. (iv) S-45 stands as L1's, Row 11.8's *"not in the first structure"* being L2's choice
+not to consume it; no soprano cue at L1, the highest sounding pitch recoverable from the published
+sounding set. (v) OQ-17: the two stand-in window values accepted as declared *provisional* under S-52
+and #17's rule — no item resting on them put under load, the measurement S-48 names owed to L2's
+calibration. Towards the objective: the cues remain computable before any decision, so nothing about
+them is circular, and every consumer reads the same evidence; a consumer weighing S-46 is told it does
+not separate V→I from I→IV, so the outgoing build's measured false positive cannot recur silently at a
+consumer that trusted the name; a gate at L1 would publish no cue over a passage whose notated
+boundary evidence is empty (Row 8.8), exactly where a picker most needs it. Towards the principles:
+the charter's ruled words and ground (#1); computable with no decision as input (S-51, #7); a limit
+stated on the face rather than left in a falsifier's clause (#12 as Ruling 40 sharpened it; #18, a
+checkable claim now checked against the measured case); nothing hidden, the gate a consumer's judgment
+(Ruling 52's principle); publish once (#6, D-100). *Position two* — the outgoing detector's form at L1,
+an event pair of committed chords, motion only, gated on a phrase boundary: **excluded at the
+threshold** — it needs a chord as input, which S-51 and the charter's circularity argument forbid; it
+hides cues behind a gate (#12, Ruling 52's principle); and it drops the presence cue, which S-47 says
+*"would decide"*. *Position three* — no cadence cues at L1, everything computed at L2 in candidate
+key: admissible in form, but it contradicts the charter's ruled placement and its stated reason (#1)
+and loses the pre-decision evidence non-decoding consumers read (#12 by omission, #6 by re-derivation).
+**Both axes pointed to position one; no conflict, and Ruling 1's precedence clause was not
+exercised.**
+
+**What was decided.** At the ratification act: beside S-44, that the cues are computed from L0 and
+the slice list alone and anchored on the bass, never on a chord or a candidate key; S-46 gains the
+limit above and its status changes as stated; S-47 gains the statement that it is a presence test;
+beside S-44, that no cue is gated on boundary evidence at L1; S-48's stand-ins declared provisional
+under S-52, OQ-17 answered yes on that condition. **Rows 9.12, 9.19, 9.20, 9.21 and 11.14 — ADOPTED,
+proposed**, by clauses (i) to (iii). **Row 11.8 — carried by S-45**, its L2 half to the L2 surface.
+**Row 12.19 — placed with Rows 8.4, 9.1, 9.7 and 10.17**, no soprano cue at L1. Rows 9.22, 9.26, 11.13,
+11.15 — carried, unchanged; 15.18 — RELOCATED to L2, unchanged; 15.19 — QUARANTINED, unchanged. **Not
+settled here:** the window's value (OQ-10, a measurement); the keyboard voice proxy on which S-46's
+same-voice condition rests (Row 16.2's family). Nothing is applied by this ruling; no outgoing text is
+edited. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+*Added the same session, one turn later, additions only: the user confirmed clause (v) explicitly —
+verbatim, "sorry, on cadence cues - also 'with OQ-17's stand-in accepted as provisional' - as you
+recommended." — so OQ-17's acceptance as provisional rests on the user's own words and not only on the
+reading recorded above.*
+
+## 3bi. Ruling 54 — THE FERMATA DISPLACEMENT: L1 PUBLISHES THE FACTS IT IS READ FROM AND NOTHING MORE — THE MARK AT ITS WRITTEN POSITION WITH THAT POSITION's METRIC CLASS (RULING 51), THE FLAG AT THE RELEASE (S-39), THE CLASS OF EVERY CHANGE POINT (RULING 47); THE DISPLACEMENT ITSELF IS THE CONSUMER's, ROWS 11.12 AND 13.14 RELOCATED TO L2 AND L3 (Position one)
+
+**Taken 2026-09-03 by the ninety-fourth session, the twenty-first disposition ruling, over Rows 11.12
+and 13.14 of the reading file, read at the working tree as staged this session through the file
+tools.** **The user's words, verbatim: "I ratify position one"**, given on the choice question at the
+foot of the surface, re-put after an intervening turn.
+
+**The facts, each checked at its object.** `cowork_joint_estimator_factorization.md` §3.8 (Row
+11.12): the fermata *"enters P_bound as a boundary prior … and enters the cadence factor as a
+cadence-location prior … with de Clercq's weak-beat displacement (the cadential arrival may sit one
+strong beat before a metrically weak fermata) as a covariate, not an exception"*.
+`cowork_layer6_grouping_design.md` §5.3 (Row 13.14): *"A cadence closes the punctuation-span whose
+ending boundary lies at the cadence's arrival tick, or within the alignment window after it (a
+cadence's arrival may slightly precede the notated span end — for example a suspended resolution
+…)"*. The derivation, read at the file: S-39, the FERMATA flag at the release of the fermata-bearing
+event, defended from what the sign means — *"a fermata prolongs the note it sits on, so the boundary
+it signals is where that note ends"* — with its near-miss *"evidence, not a decision; the near-miss is
+L3's to weigh"*. Ruling 47 (§3bb): the metric strength class per change point. Ruling 51 (§3bf): every
+mark in the positioned marks list at its written position with the metric class of that position.
+Ruling 53 (§3bh): cues weighed by the consumer. The reading file's proposal at Row 11.12: *"that the
+fermata flag be published with the metric strength of its own position, so a consumer can apply the
+displacement"*.
+
+**The positions.** *Position one* — L1 publishes the facts the displacement is read from and the
+displacement is the consumer's. The proposal at Row 11.12 is already met by Rulings 47 and 51
+together: the fermata stands in the marks list at its written position with that position's class,
+its boundary flag at the release change point with its own class, and every earlier change point
+carries its class, so a consumer reads *a metrically weak fermata* beside the mark and *one strong beat
+earlier* from the preceding classes. Relating the two — deciding that the arrival is displaced — is a
+reading of the music: de Clercq's covariate at L2's cadence factor, the grouping layer's alignment
+window at L3. Towards the objective: L1 keeps publishing where the fermata is and what the sign means,
+so no consumer is told a boundary sits where the page does not put it, while every consumer has the
+class of every position and places the arrival where its own model says, weighting by its own fitted
+covariate; two consumers with two displacement models read one set of facts. Towards the principles:
+L1 decides nothing, a displacement being a decision about the music (#7, S-51); facts never altered,
+the whole truth presented and its use the consumer's (Ruling 52's principle, #12); the covariate
+fitted where fitting belongs (§8.3, #19); the class published once on the mark and once on the change
+point (#6). *Position two* — S-39 amended so the FERMATA flag, or a second flag, is placed one strong
+beat before a metrically weak fermata: **excluded at the threshold** — a boundary placed at a moment
+the sign does not mark, the amendment of a published fact Ruling 40 named a loss, and one published
+model's displacement baked into a fact. *Position three* — an explicit *displacement candidate* beside
+the flag, the nearest earlier change point of higher class: admissible, no constant, but one line from
+the published facts, so a derived pointer and no information (#6), under a name the naming bar excludes
+(S-50). **Both axes pointed to position one; no conflict, and Ruling 1's precedence clause was not
+exercised.**
+
+**What was decided.** **Row 11.12 — RELOCATED to L2**, *the tonal reading*, as the cadence factor's
+covariate; **Row 13.14 — RELOCATED to L3**, *the read-off facts*, as the grouping's alignment window;
+each with the note that the L1 facts it needs — the mark's position and class (Ruling 51), the flag at
+the release (S-39), the class of every change point (Ruling 47) — are published already. S-39's
+placement rule stands unchanged; nothing is added to L1. Nothing is applied by this ruling; no
+outgoing text is edited. **No decisions-register identity is allocated** — that register cannot accept
+one and `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3bj. Ruling 55 — A BOUNDARY DEPENDING ON A CHORD: AT L1 NEVER — S-28, S-30 AND S-51 STAND AND NO CHORD CAN MOVE A CHANGE POINT; AT L2 THE HARMONIC BOUNDARY IS DECIDED JOINTLY WITH THE TONALITY AND THE CHORD OVER L1's CHANGE POINTS, NEVER SEQUENTIALLY AFTER THE CHORD; ROW 17.13 QUARANTINED AS A MEASURED PROPERTY OF THE LEGACY ARM (Position one)
+
+**Taken 2026-09-03 by the ninety-fourth session, the twenty-second disposition ruling, over Rows 17.13
+and 14.3 of the reading file, read at the working tree as staged this session through the file
+tools.** **The user's words, verbatim: "Yes"**, given on the choice question at the foot of the
+surface.
+
+**The facts, each checked at its object.** `docs/scoring_model.md` §8 (Row 17.13): *"A chord-level
+change is NOT confined to the cases it fires on: chord identity drives boundary placement, so it
+produces downstream RE-SEGMENTATION artifacts in regions it never touched. Where one region ends and
+the next begins depends partly on what the chords are … this is structural rather than a condition
+that can be tightened away"* — a standing constraint about the scoring pipeline, the legacy arm (that
+document's register entries marked ⚠LEGACY). `cowork_target_architecture.md` §1 (Row 14.3): *"'Where
+the slices are' is a deterministic FACT, not a judgment. It is read off the notes. This removes
+segmentation-as-a-decision entirely"*; Rows 2.1, 6.6, 6.8 and 11.2 (carried): *"segment boundaries are
+decided, not given"* at the factorization. The derivation, read at the file: S-28 (change points from
+onsets and releases alone, exhaustive); S-30 (no zero-length slice by construction); S-51 (no chord or
+boundary as input to any L1 output). The ruled record: `FRAMEWORK.md` L2 (lines 386–404) — *"The
+tonal reading. The one entangled decision"*, answering in one sentence *"what is the tonality at each
+moment, where does each harmony give way to the next, … and what chord is read over each span"*,
+publishing *"the segmentation — a partition of the working span into harmonic spans whose boundaries
+are a subset of L1's change points"* and *"rivals … including rivals that differ in where the
+boundaries fall"*, with *"a decision taken at a moment on locally-optimal grounds is unsafe by
+construction"*; the L1 → L2 contract, *"No decided boundary — L1 decides none"*; D-001.
+
+**The fact that dissolves the contradiction.** The two texts use *boundary* for two different objects.
+Row 14.3's boundary is L1's change point — a fact, chord-free by construction. Row 17.13's boundary is
+where one harmonic region ends — L2's segmentation, which the charter makes part of the one entangled
+decision, so that it does depend on the chord, jointly and by design. What the constraint records is
+that dependency's *sequential* form in the legacy arm — chords decided, then regions re-merged on them
+— which produces re-segmentation elsewhere when one chord changes; in a joint decode over spans the
+boundary and the chord are scored together with rivals that differ in where the boundaries fall, and
+there is no later re-merge to cascade.
+
+**The positions.** *Position one* — both halves stated in one clause: at L1 no boundary depends on a
+chord, S-28, S-30 and S-51 standing and no chord able to move a change point; at L2 the harmonic
+boundary is decided jointly with the tonality and the chord over L1's change points, as the charter's
+one entangled decision, never sequentially after the chord. Towards the objective: the candidate set
+is complete and fixed before any decision, so no chord error can delete a candidate; the boundary
+decision then uses the chord, as it must — a harmony's extent is not decidable without knowing what
+the harmony is — but jointly, so a chord change is scored against every boundary it bears on rather
+than propagating afterwards into regions it never looked at, the failure the constraint measured.
+Towards the principles: the charter's words for both layers (#1); one meaning of *boundary* per layer,
+stated (D-113); a description of code reserved to the audit rather than adopted as a rule (D-231);
+nothing at L1 depends on a decision (#7, S-51); the entangled decision kept entangled (D-001, the
+charter's own unsafe-by-construction clause). *Position two* — the constraint adopted as a rule,
+boundaries depending on chords sequentially and the re-segmentation accepted as structural:
+**excluded at the threshold** — at L1 a decision moving a fact (S-51, Ruling 52's principle), at L2
+the charter's ruled shape contradicted and the decision it records as unsafe adopted. *Position
+three* — no boundary depending on a chord anywhere, L2's segmentation fixed from L1's evidence before
+the chord: admissible in form, contradicting the charter's entangled decision (#1) and the sequential
+shortcut with the order reversed, a boundary fixed without the chord deleting the chord's right reading
+— the failure the charter's cited study reports. **Both axes pointed to position one; no conflict, and
+Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** At the ratification act the derivation gains, beside S-28 and S-51, the
+two-layer clause above. **Row 17.13 — QUARANTINED**, its audit question: does the arm that ships still
+place any harmonic boundary sequentially after a chord decision, or only inside the joint decode?
+**Row 14.3 — carried, unchanged.** Nothing is applied by this ruling; no outgoing text is edited. **No
+decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3bk. Ruling 56 — THE WORDS *SLICE* AND *PHRASE*: *SLICE* IS L1's OBJECT AND NOTHING ELSE — THE HALF-OPEN STRETCH BETWEEN CONSECUTIVE CHANGE POINTS, IDENTITY BY EVENT SET; THE DECIDED CHORD-AND-KEY UNIT IS L2's HARMONIC SPAN, THE GROUPING UNIT THE PUNCTUATION SPAN, EVERY SPAN NAMED BY ITS BOUNDING EVENT (D-028); BARE *PHRASE* IS THE MUSICAL PHRASE (D-113), S-50's BAR STANDS; INHERITED USES TO OI-229 (Position one)
+
+**Taken 2026-09-03 by the ninety-fourth session, the twenty-third disposition ruling, over Rows 9.13,
+13.4, 14.16, 14.17, 10.8 and 13.1 of the reading file, read at the working tree as staged this session
+through the file tools.** **The user's words, verbatim: "yes"**, given on the choice question at the
+foot of the surface.
+
+**The facts, each checked at its object.** The register's terms table, `DECISIONS.md` line 186
+(*"slice — The smallest stretch of music analysed: a span during which exactly the same notes are
+sounding. It begins when any note starts or stops and ends at the next such moment."*). The
+derivation, read at the file: S-29, S-33, S-51, S-50. The ruled record: `FRAMEWORK.md` line 326 (L1
+publishes *"slices — the stretches between consecutive change points"*), line 393 (L2 publishes *"the
+segmentation — a partition of the working span into harmonic spans"*), line 552 (*"A slice carries its
+start and its end and nothing else"*); D-028 (LIVE: every layer names the span it operates on, bare
+*region* banned); D-113 (music-theory words reserved for their musical meaning, the bare word the
+musical sense); D-502; Ruling 30 (D-660: per-word batches, governing surfaces first, no tree-wide
+rename, inherited bare uses OI-229's). The outgoing uses: `cowork_layer5_function_design.md` §5.0
+(Row 9.13, *"the slice — the atomic chord-rhythm unit (one committed chord + one assigned local key
+…)"*); `cowork_layer6_grouping_design.md` §0 (Row 13.4, *"Slice [L6]. The atomic analysis unit — one
+chord-rhythm segment from Layer 2 (the … constant-sonority atom …)"*; Row 13.1, *"the word 'phrase'
+appears in this document only as 'phrase [MT]' … the harmonic-grouping object L6 produces is always
+the 'punctuation-span'"*); `cowork_target_architecture.md` §2 (Rows 14.16, 14.17: the span typology by
+bounding event, and *"Harmonic region — bounded by harmony change … one committed chord + one assigned
+local key. (The as-built `HarmonicRegion`; Layer 5 calls it a slice.)"* beside its own §1 calling the
+constant-sonority span a slice); `cowork_phrase_boundary_design.md` §0 (Row 10.8, the primitive
+*"keeps its 'phrase-boundary' code name"* while reserving *"phrase [MT]"* for the melodic object).
+
+**The positions.** *Position one* — one meaning each, fixed by the bounding event as D-028 already
+requires. *Slice* is L1's object and nothing else: the half-open stretch between consecutive change
+points, identity by event set, carrying no decision. The unit *one committed chord plus one assigned
+local key* is L2's harmonic span, the charter's own name, bounded by harmony change; the grouping
+layer's unit is the punctuation span, bounded by notated punctuation, as Row 13.1's own convention
+says; any further span is named by what bounds it and never by *slice* or bare *region*. For *phrase*:
+bare *phrase* is the musical phrase under D-113; S-50's bar on an L1 field named *phrase* stands and is
+consistent with it, L1 publishing notated punctuation evidence and not phrases; the grouping object is
+the punctuation span; the phrase-boundary primitive's code name is an inherited collision for OI-229,
+that primitive being L3's under Ruling 48. The outgoing uses of *slice* for a decided unit are
+inherited uses for OI-229's per-word batch, not renamed here. Towards the objective: every rule
+quantified over slices — no tolerance, the exhaustive candidate set, the covering property, the
+metric class per change point — reads one way under one meaning; under two, a rule about candidates
+can be read as a rule about decided chords, which is how a decision gets treated as a fact. Towards
+the principles: the charter's and the register's words (#1); D-028 applied rather than re-argued (#6);
+D-113's mechanical rule for *phrase*; one declared sense (D-193); the cleanup left to its ruled order
+(Ruling 30). *Position two* — each document declaring its own sense of *slice*: admissible under the
+template's older one-sense-per-document rule, but D-113 replaced that with the mechanical rule and
+D-028 forbids it directly — a unit bounded by harmony change cannot bear the name of a unit bounded by
+a change point — and it leaves the collision inside `cowork_target_architecture.md` standing.
+*Position three* — *slice* kept for the decided unit and L1's object renamed: excluded, renaming the
+term the charter, the register's table and the derivation all use, against the ruled words (#1), for
+nothing the harmonic-span name does not give. **Both axes pointed to position one; no conflict, and
+Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** At the ratification act the derivation's terms (§0) gain the two naming clauses
+above. **Rows 9.13, 13.4, 14.16, 14.17, 10.8 and 13.1 — ADOPTED, proposed**, the proposal being those
+clauses. The outgoing collided uses go to OI-229's per-word batch under Ruling 30; nothing is renamed
+by this ruling. Nothing is applied by this ruling; no outgoing text is edited. **No decisions-register
+identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3bl. Ruling 57 — THE L0 ADMISSION CRITERION: S-1 AND S-2 STAND; THE DECLARED-MODE TAG IS ANNOTATION, CARRIED LABELLED AS READ AND CONSUMED BY NO LAYER OF THE ANALYSIS (FRAMEWORK §8.6, C-2); S-2's BAR BINDS EVERY LAYER AND ANY CONSUMER FEEDING THE ANALYSIS, A READER OUTSIDE IT MAY BE HANDED ANNOTATION LABELLED; A USER's OWN VISUAL MARK IS AN L0 FACT AND NOT EVIDENCE ABOUT THE MUSIC; THE PROPERTY-SYSTEM TEST RECORDED AS A CHECKABLE FORM OF S-1(i); THE D-528/§8.6 CONFLICT FLAGGED TO L2 (Position one)
+
+**Taken 2026-09-03 by the ninety-fourth session, the twenty-fourth disposition ruling, over Rows 12.3,
+21.14, 20.2, 20.3 and 20.4 of the reading file, with Row 27.3 confirmed as carried; read at the working
+tree as staged this session through the file tools.** **The user's words, verbatim: "yes"**, given on
+the choice question at the foot of the surface, which named the D-528/§8.6 conflict as flagged to L2
+and not decided.
+
+**The facts, each checked at its object.** The derivation, read at the file: S-1 (admitted if and only
+if *"(i) it is part of the notated text — two competent copyists transcribing the same source would
+agree on it … and (ii) it is not a claim about what the music means"*, with its worked cases, among
+them *"a 'declared mode' tag in a file fails (i) — no copyist reads it off the page"*); S-2 (what
+fails is carried beside L0 as annotation, so labelled, *"and no layer may consume it as evidence about
+the music"*). The outgoing text: `cowork_evidence_inventory.md` §1 (Row 12.3, *"Declared mode from the
+file format. INPUT; siloed to the key path"*); `cowork_joint_estimator_architecture.md` §5a (Row 21.14,
+*"the declared mode, where the score carries one, is a second conditioning input with its own fitted
+strength"* — the ratified architecture, D-528 and D-450 LIVE); `cowork_notation_output_contract.md`
+§3.1 (Row 27.3, the declared mode published *"as READ (input echo …)"*); `docs/llm_integration.md`
+§3.4 (Rows 20.2–20.4: the property-system test, the visible list naming chord symbols and lyrics, and
+*"A user who has colored certain notes red is using color to communicate intent — 'these notes are
+flagged for review' — and the LLM needs to see that"*). What the tag is: `CLAUDE.md`'s MusicXML
+declared-mode import patch (lines 1388–1418), a `<mode>` element preserved on import into the key
+signature's mode field, printing nothing. The ruled record: `FRAMEWORK.md` C-2 (line 155, *"The key
+signature is not a statement of the tonality … a weak prior … and nothing else"*); L0's Given list,
+naming the key signature and no declared mode; §8.6 (line 615, *"No user-written analytical content —
+chord symbols, Roman numerals, function, cadence or tonality annotations — enters the analysis in any
+storage form"*); D-501 (a written chord symbol read only as a comparison or ground-truth label, never
+as input); D-522 (explaining to the end user a late-bound display consumer); Ruling 50; Ruling 52's
+principle.
+
+**The positions.** *Position one* — S-1 and S-2 stand, with three clarifications beside them. (i) The
+declared-mode tag is annotation: it fails S-1(i), nothing on the page showing it, and fails (ii) as a
+claim about the tonality; L0 carries it labelled as read — Row 27.3's form — and no layer of the
+analysis consumes it as evidence about the music. The ratified L2 architecture's use of it as a fitted
+prior (D-528, D-450) is in conflict with the charter's §8.6 and C-2, and that conflict is L2's to
+resolve at its own derivation and surface — flagged, not decided. (ii) S-2's bar binds every layer of
+the analysis and any consumer whose output feeds the analysis; a reader outside the analysis — D-522's
+explaining or editing consumer — may be handed annotation labelled as annotation for a purpose other
+than deciding the music, and may never feed it back in. (iii) A note's color, visibility or other
+visual property is on the page, reproducible by a copyist and no claim about the music: an L0 fact
+under Ruling 50's lossless list, which a reader may act on and which no layer treats as evidence about
+the music. Row 20.2's property-system test is recorded as a checkable form of condition (i) for record
+files of this kind — a stored property intentional, a layout-regenerated one computed — with condition
+(ii) applied after it, a stored chord symbol passing (i) and failing (ii). Towards the objective: the
+analysis never rests on an external claim about the tonality — C-14's finding is that Baroque
+signatures under-determine the tonic and the detecting signal is musical, and a tag is a file's
+opinion; what a tag knows is carried and can be compared against, as D-501 does for chord symbols;
+the reader that explains the analysis sees everything, labelled. Towards the principles: the charter's
+ruled words, §8.6 and C-2 (#1); nothing hidden, the tag carried and labelled (#12, Ruling 52); one
+admission test with its checkable form recorded (D-193, #19 — S-1's own falsifier RESIDUAL, Row 20.2's
+not); the analysis free of imported decisions (#7, S-51); the reader placed where D-522 places it.
+*Position two* — the declared mode admitted as an L0 fact and consumed by L2 as a prior, as the
+ratified architecture has it: **excluded at the threshold** — it fails both halves of the admission
+test, and §8.6 forbids a tonality annotation entering the analysis in any storage form, a ruled charter
+clause later than D-528 and governing it. *Position three* — the tag refused outright: excluded on #12
+and S-2, a fact the file holds dropped rather than carried and labelled. **Both axes pointed to
+position one; no conflict, and Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** At the ratification act the derivation gains, beside S-1 and S-2, the three
+clarifications above and the property-system test as a checkable form of (i). **Rows 12.3, 21.14,
+20.2, 20.3 and 20.4 — ADOPTED, proposed**, the proposal being those clauses; **Row 27.3 — carried,
+unchanged.** **Flagged to L2's surface, not decided here:** D-528's and D-450's declared-mode prior
+against `FRAMEWORK.md` §8.6 and C-2. Nothing is applied by this ruling; no outgoing text is edited.
+**No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3bm. Ruling 58 — SPELLING: THE NOTATED SPELLING IS A FACT, READ AND NEVER JUDGED AT L0 OR L1; L0 GRADES NOTHING AND CARRIES AN IMPORT PROVENANCE AS ANNOTATION; A SELF-CONTRADICTORY SPELLING WITHIN A SLICE IS PUBLISHED AS IT STANDS, NEVER REPAIRED; A SPELLING OR A SIGNATURE VALUE DERIVED FROM A DECISION IS A DIFFERENT OBJECT, PUBLISHED AS DERIVED, NEVER IN PLACE OF THE FACT, AND ESTABLISHED AGAINST IT (Position one)
+
+**Taken 2026-09-03 by the ninety-fourth session, the twenty-fifth disposition ruling, over Rows 22.4,
+22.12, 25.13, 27.6 and 27.4 of the reading file, with Rows 15.15 and 29.7 staying QUARANTINED; read at
+the working tree as staged this session through the file tools.** **The user's words, verbatim:
+"yes"**, given on the choice question at the foot of the surface.
+
+**The facts, each checked at its object.** The derivation, read at the file: S-3 (per note *"its
+spelled pitch (letter, accidental, octave — equivalently a tonal pitch class and an octave), at
+concert (sounding) pitch"*); S-14 (*"Where a note's spelling is absent … L0 refuses the score:
+spelling is a required input and L0 does not infer it"*, not falsified by *"a score with a spelling
+the analysis later judges wrong — spelling is read, not judged"*); S-24 (a tie link counts only under
+three conditions, one *"the same spelled pitch"*, a failing link refused rather than repaired —
+*"refusing to repair the flag keeps L1 from deciding what the transcriber meant"*); S-6. The outgoing
+text: `cowork_layer4_chordsymbol_design.md` §2 (Row 22.4: the notated spelling *"names a chord's root
+where pitch class cannot — decisively for the symmetric sonorities. It is a strong-but-fallible signal
+(engraving can be expedient; a MIDI import may carry arbitrary spelling), so it is weighed, not
+trusted blindly"*); §5 (Row 22.12: the root pinned from the spelling only where *"(1) present … (2)
+internally consistent — no two sounding notes of the same pitch class are spelled differently … (3) a
+clean stack of thirds"*, on failure the layer *"defers … and leave[s] the re-spelling judgment to the
+later function step"*); `cowork_notation_adoption_increment.md` §10 (Row 25.13: *"the
+root/bass-spelling derivation from (key, degree) as an instrument to establish at build"*);
+`cowork_notation_output_contract.md` §3.2 and §5.2 (Rows 27.4, 27.6: root and bass spellings
+*"derived from (key, degree/class)"*, established *"by reproduction of the notated spellings on a
+hand-checked corpus sample where the notation is unambiguous; divergences enumerated, none silently
+accepted"*; a signature-fifths value DERIVED from the decided key); `cowork_stage5_fitter_design.md`
+§15 (Row 29.7, measured: two spellings of one pitch class *"collapse to one spelling by iteration
+order, destroying a distinct enharmonic spelling"*). The ruled record: the charter's L0 design point
+(*"Spelling is given, not inferred … it is evidence for the tonality"*); Ruling 41 (the sounding set
+by event identity); Ruling 52's principle; Ruling 57 (file metadata not on the page is annotation).
+
+**The positions.** *Position one* — the notated spelling is a fact, read and never judged at L0 or
+L1; every judgment about it, and every spelling made from a decision, is the consumer's and is kept
+apart from the fact. (i) Row 22.4: L0 supplies the spelling as written and grades nothing; an import
+provenance the file carries is not on the page and is annotation under S-2, carried labelled, so a
+consumer weighing a spelling reads both; S-14's refusal of the absent case stands. (ii) Row 22.12: the
+three-part test pins a chord root, L2's decision, so the row is RELOCATED to L2; its first part is
+S-14, its second — two spellings of one pitch class in one slice — is readable from the sounding set L1
+publishes by event identity, and beside S-3 the specification says that a self-contradictory spelling
+within a slice is published as it stands, never repaired and never resolved by L1, on S-24's ground.
+(iii) Rows 25.13, 27.6, 27.4: a spelling derived from a decided key and degree, and a signature-shaped
+value derived from a decided key, are different objects from the notated spelling and the notated
+signature; the layer that derives one publishes it as derived and never in place of the fact; a
+consumer is told which it holds; the derived one is established against the notated one where the
+notation is unambiguous, divergences enumerated — Row 27.6's condition, in S-52's shape; the
+mechanisms are L2's or L3's and RELOCATED there, the clauses being the L0/L1 half. Towards the
+objective: the spelling is the fact that decides the symmetric sonorities and carries modulation
+direction (Row 15.16, carried), and Row 29.7 measured what a collapse before the consumer costs;
+keeping it whole and unjudged at the fact layer, any derived spelling apart and checked against it,
+lets the consumer use it decisively where trustworthy and weigh it where a labelled provenance says
+otherwise. Towards the principles: spelling given not inferred (#1); facts never altered, hidden or
+added to (Ruling 52, #12); no decision at L0 or L1, a root-pinning validity test being a chord decision
+(S-51, #7); refuse and mark, never repair (S-24's shape); a derived object never wearing a fact's name
+(Ruling 40's #12 rule); the derived instrument established against the fact (#19, S-52). *Position
+two* — the validity test at L1, pinning a root from the spelling: **excluded at the threshold**, a chord
+decision at L1 (S-51) forbidden by the L1 → L2 contract. *Position three* — L0 grading the spelling,
+marking an imported one unreliable and folding it to pitch class where judged arbitrary: **excluded at
+the threshold**, a fact altered and hidden on a judgment (Ruling 52, #12), the collapse Row 29.7
+measured made policy. **Both axes pointed to position one; no conflict, and Ruling 1's precedence
+clause was not exercised.**
+
+**What was decided.** At the ratification act the derivation gains, beside S-3, S-6 and S-14, the
+three clauses above. **Rows 22.4, 25.13, 27.6 and 27.4 — ADOPTED, proposed**, by those clauses. **Row
+22.12 — RELOCATED to L2**, its L0/L1 halves noted at S-14 and beside S-3. **Rows 15.15 and 29.7 —
+QUARANTINED, unchanged.** Nothing is applied by this ruling; no outgoing text is edited. **No
+decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3bn. Ruling 59 — THE PEDAL LINE, OQ-3: RELEASES ARE THE NOTATED RELEASES, THE CHANGE POINTS STAND; THE PEDAL SPAN IS PUBLISHED IN THE MARKS LIST AND PEDAL-HELD ON EVERY CHANGE POINT INSIDE IT; THE FACT THAT HELD-PEDAL TONES RING PAST THEIR RELEASE IS STATED AS THE REASON, AND THE PEDAL-EXTENDED SOUNDING SET IS THE CONSUMER's TO BUILD (Position one)
+
+**Taken 2026-09-03 by the ninety-fourth session, the twenty-sixth disposition ruling, over Row 12.8 of
+the reading file and the derivation's OQ-3 and S-54; read at the working tree as staged this session
+through the file tools.** **The user's words, verbatim: "yes"**, given on the choice question at the
+foot of the surface.
+
+**The facts, each checked at its object.** The derivation, read at the file: S-7 (L0 supplies *"the
+pedal marks with their spans"*); S-54 (*"A release is the notated release of the event, whatever pedal
+mark spans it; the pedal mark is published in the marks list (S-41) with its span, and every change
+point inside the span carries a PEDAL-HELD attribute. Whether a sustained-pedal span should instead
+extend releases to the pedal lift is OQ-3"*, defended: a pedal instruction is *"a performance
+direction whose sounding effect … is not notated … Extending releases would make every pedalled bar
+one slice and would delete the change points the charter makes exhaustive; publishing the span keeps
+the information for L2, which may treat a pedalled arpeggio as one sonority"*; its false-negative
+path, the pedalled arpeggio whose bass leaves at its notated release, *"PEDAL-HELD on those change
+points lets L2 see it"*; status open, no staged file carrying a pedal mark; the pedal mark kept apart
+from the pedal point of D-207). The outgoing text: `cowork_evidence_inventory.md` §1 (Row 12.8,
+*"pedal lines (sustain — affects which pitches actually sound together; the known piano-pedal gap in
+the backlog)"*). The ruled record: the charter's exhaustive change-point set; S-28; Ruling 41; Ruling
+51 (every mark in the positioned marks list with its span); Ruling 52's principle.
+
+**The positions.** *Position one* — S-54's interim rule becomes the rule: releases are the notated
+releases, so the change points and slices stand; the pedal span is published in the marks list and
+PEDAL-HELD stands on every change point inside it; and beside S-54 the specification states Row 12.8's
+fact — that with the damper pedal held, notes ring past their notated release, so the sounding set a
+listener hears inside the span is the union of what has been struck since the pedal went down — as the
+reason the span is published, while L1 publishes no such union: a consumer that wants the
+pedal-extended sounding set builds it from the slices and the span in one step and decides what it
+means. Towards the objective: the candidate set stays exhaustive — a pedalled bar with an arpeggiated
+I–V–I inside it keeps its change points, so L2 can read the harmony changing under the pedal, which it
+could not if the bar were one slice — and L2 has everything to treat a pedalled arpeggio as one
+sonority where the music says so. Towards the principles: the notation read as written, the pedal a
+performance direction (#1, S-54's ground); nothing deleted — extending releases would remove change
+points on the page (#12, the exhaustive set); nothing added — the pedal-extended set a reading, one
+line from published facts, the consumer's (Ruling 52's principle, #6); L1 deciding nothing about what
+the pedal means harmonically (#7, S-51). *Position two* — releases extended to the pedal lift:
+**excluded at the threshold**, deleting notated change points inside the span, not recoverable from
+the merged slice — S-54's own argument and Ruling 52's principle. *Position three* — a second,
+pedal-extended sounding set published by L1 per slice inside a span: admissible, nothing lost, but one
+step from the published facts, a derived object and no information (#6), carrying a reading under
+L1's name (S-51). **Both axes pointed to position one; no conflict, and Ruling 1's precedence clause
+was not exercised.**
+
+**What was decided.** At the ratification act S-54's interim rule stands as the rule, its status
+moving from open to settled, with the sentence above written beside it; **OQ-3 is answered: the
+notated release stands.** **Row 12.8 — ADOPTED, proposed**, the proposal being that sentence. Nothing
+is applied by this ruling; no outgoing text is edited. **No decisions-register identity is allocated**
+— that register cannot accept one and `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3bo. Ruling 60 — EXHAUSTIVE PUBLICATION AND CAPPED LISTS: EVERY PUBLISHED SURFACE STATES WHETHER IT IS EXHAUSTIVE, S-50's LIST EXHAUSTIVE AS A CONTRACT; NO PUBLISHED LIST OF COMPUTED READINGS IS CAPPED AT PUBLICATION, A CAP BEING A CONSUMER's VIEW — ROW 22.16 RELOCATED TO L2 WITH THAT PRINCIPLE (Position one)
+
+**Taken 2026-09-03 by the ninety-fourth session, the twenty-seventh disposition ruling, over Rows 28.12
+and 22.16 of the reading file, with Rows 29.9, 29.8, 24.2 and 24.10 staying QUARANTINED and Row 24.19
+RELOCATED; read at the working tree as staged this session through the file tools.** **The user's
+words, verbatim: "yes"**, given on the choice question at the foot of the surface.
+
+**The facts, each checked at its object.** The derivation, read at the file: S-50 (*"L1 publishes
+exactly: …"*, exhaustive by its word, with no sentence saying so as a contract). The outgoing text:
+`cowork_layer4_chordsymbol_design.md` §15 (Row 22.16: *"the carried alternatives are capped at a fixed
+number of highest-ranked readings (a tunable; identifier `topK`) … calibration facts …, not defects
+here"*); `cowork_voiceleading_axis_design.md` (Row 19.23, carried: *"the full ranked alternative list …
+nothing below the top is discarded"*); `cowork_notation_output_contract.md` (Row 27.8, ratified: no
+truncation constant anywhere in the publication); `cowork_stage5_fitter_design.md` §15 (Row 29.9,
+measured: *"the cap-of-3 discards ≥1 above-threshold reading on 79.5/75.4/79.3 % of slices … a ≥3rd
+distinct root clears threshold on 25.1/16.1/24.9 % of slices"*); `cowork_progression_schema_dictionary.md`
+§9 (Row 28.12: *"Completeness is asymptotic … never assume the catalog is exhaustive"*). The ruled
+record: `FRAMEWORK.md` L2 (*"May not … discard a rival before the whole sequence of spans has been
+scored"*; publishes *"per span, the rivals with their mass"*); §8.4 (*"Never computing a possibility is
+not information loss; only discarding a computed one is"*, D-297); D-006 (two full candidate lists, no
+truncation); Ruling 52's principle.
+
+**The positions.** *Position one* — every published surface states whether it is exhaustive, and no
+published list of computed readings is capped at publication. For L1: S-50 gains one sentence, its
+list exhaustive as a contract, so an absence in an L1 publication means *not there*; the general rule
+is written beside S-50 so that a surface which is not exhaustive says so in the same words, as Row
+28.12 does for itself. For the carried alternatives: a cap on a published list discards computed
+readings — the one thing §8.4 names as loss, measured at Row 29.9 — and the rule that a published list
+of computed readings carries every reading computed, with its mass, a cap being a consumer's own view
+and never the publication, is L2's; Row 22.16 is RELOCATED to L2 with that principle attached, where
+the L2 derivation meets Row 27.8's ratified contract and D-006. Towards the objective: a consumer that
+knows a list is exhaustive can act on an absence and one that knows it is not cannot be misled by one;
+the measured exclusion tail — a third distinct root above threshold on a quarter of slices — is what
+the function layer needs and what a cap threw away. Towards the principles: only discarding a computed
+possibility is loss (§8.4, D-297, #12); the whole truth presented, its use the consumer's (Ruling 52);
+one contract per surface, stated (D-193); the charter's L2 rule and D-006 (#1). *Position two* — a cap
+admitted at publication as a calibration fact: **excluded at the threshold** on #12 in the charter's
+own words, computed readings discarded and the loss measured. *Position three* — silence on
+exhaustiveness: excluded, the record holding both contracts side by side and a consumer unable to tell
+them apart (#10, #13). **Both axes pointed to position one; no conflict, and Ruling 1's precedence
+clause was not exercised.**
+
+**What was decided.** At the ratification act S-50 gains the exhaustiveness sentence and the general
+rule beside it. **Row 28.12 — ADOPTED, proposed**, by those. **Row 22.16 — RELOCATED to L2**, with the
+no-cap principle attached for the L2 derivation. **Rows 29.9, 29.8, 24.2, 24.10 — QUARANTINED,
+unchanged; Row 24.19 — RELOCATED, unchanged.** Nothing is applied by this ruling; no outgoing text is
+edited. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3bp. Ruling 61 — THE KEYBOARD VOICE PROXY, THE CHORDAL MARK AND THE NOTATION's STRUCTURE: L0 STATES THE PART, STAFF AND VOICE STRUCTURE THE RECORD SUPPLIES; L1 PUBLISHES PER ONSET CHANGE POINT AND PER NOTATED VOICE HOW MANY PITCHES THAT VOICE SOUNDS, WITH WITNESSES, AND S-46's RELAXATION NAMES ITS CONDITION; S-13 STANDS AND THE TRUST IN THE PROXY IS THE CONSUMER's, ROW 16.2 RELOCATED TO THE VOICE-LEADING AXIS (Position one)
+
+**Taken 2026-09-03 by the ninety-fourth session, the twenty-eighth disposition ruling, over Rows 19.2,
+19.19 and 16.2 of the reading file, read at the working tree as staged this session through the file
+tools.** **The user's words, verbatim: "yes"**, given on the choice question at the foot of the
+surface.
+
+**The facts, each checked at its object.** The derivation, read at the file: S-3 (per note *"its staff
+and notated voice"*); S-13 (*"L0 supplies notated voices only; a contrapuntal voice that the notation
+does not mark is derived, not given, and no L1 computation may need it"*, its premise *"notated voice
+is a usable proxy for a line"* and its false-negative path *"keyboard notation in which one notated
+voice carries a chord … The cue then sees a chord, not a line, and S-46's fallback fires. This is the
+pack's #17(d) proxy hazard, declared rather than hidden"*); S-46 (the same-voice condition, relaxed
+where the record carries no voice below the staff, the relaxation published). The outgoing text:
+`cowork_voiceleading_axis_design.md` §0 (Row 19.2: *"a staff holds one to four engraving voices, and a
+part may hold several staves (piano: two, one per hand)"*); §5.1 (Row 19.19: *"Chordal voices are a
+recorded fact, not an error: a voice whose events carry multiple simultaneous pitches (keyboard
+writing) is marked chordal per event"*; Row 19.20, carried: reduction *"declared, uniform, and
+per-query — never silent, never per-source"*). `cowork_score_census.md` (Row 16.2: *"For keyboard
+music the engraved voice is close enough to the inference target that the field works with it, and
+that acceptance is itself recorded rather than left unsaid"*). The ruled record: the charter's L0
+design point (*"Voice membership is given … the voices are in the file"*); D-389 (a notated voice a
+FACT, an inferred perceptual line a JUDGMENT, never conflated); D-394 (a reduction a declared parameter
+of the request); Ruling 49 (per-voice relations per onset change point); Ruling 52's principle.
+
+**The positions.** *Position one* — the fact stated whole, the hazard made findable, the trust left
+to the consumer. (i) Row 19.2: L0 states the structure the record supplies — parts, the staves each
+part holds, the notated voices each staff holds — so the per-note pair is interpretable; for this
+record format, one to four voices per staff and a part spanning staves. (ii) Row 19.19: L1 publishes,
+per onset change point and per notated voice, how many pitches that voice sounds at that onset — the
+chordal mark, a count with its witnesses — beside Ruling 49's per-voice relations; S-46's relaxation
+then fires on a published condition, a chordal voice at Z, as well as on *no voice below the staff*,
+and its flag names which. (iii) Row 16.2: S-13 stands — the notated voice supplied as a fact, the
+analysis never inferring a line (D-389); whether it is close enough to a perceptual line for a
+consumer's purpose is that consumer's measured question, and the census's acceptance for keyboard
+music is the voice-leading axis's own recorded stance, RELOCATED there with its ground; the two texts
+do not disagree on the fact, only on how far to trust it, and with (ii) published the trust can be
+measured. Towards the objective: the case S-13 only declares becomes visible at every event, so a
+consumer weighs a cue from a chordal voice knowing it is one, and a measurement of the proxy's failure
+rate has the mark to condition on; the structure statement keeps a consumer from misreading a
+two-staff part as two parts. Towards the principles: voice given, line judged (the charter, D-389,
+#1); the whole truth presented, its use the consumer's (Ruling 52, #12); one home for the per-voice
+view at L1 (#6, Ruling 49); a #17(d) proxy hazard made checkable rather than only declared (#18, #19);
+a count a fact, nothing decided at L1 (#7, S-51). *Position two* — L1 inferring lines through chordal
+voices so that cues run on lines: **excluded at the threshold**, a derived line being a judgment the
+charter and D-389 forbid conflating with the fact, and D-394 making any reduction a declared consumer
+request. *Position three* — S-13 as written, no chordal mark, the hazard declared only: admissible,
+nothing lost from the record, but the hazard found only by a consumer re-deriving the count (#6) and
+S-46's relaxation blind to the case S-13 names as its failure. **Both axes pointed to position one; no
+conflict, and Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** At the ratification act: beside S-3 and S-13, the structure statement; beside
+Ruling 49's per-voice relations, the chordal count with witnesses; S-46's relaxation clause names its
+condition. **Rows 19.2 and 19.19 — ADOPTED, proposed**, by those clauses. **Row 16.2 — RELOCATED to
+the second axis, voice leading**, with S-13 confirmed as the L0 rule. Nothing is applied by this
+ruling; no outgoing text is edited. **No decisions-register identity is allocated** — that register
+cannot accept one and `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+## 3bq. Ruling 62 — THE TAIL, ELEVEN ROWS RULED AS A SET: S-50's LIST COMPLETED AGAINST EVERY PUBLISHED ITEM; NO SILENCE THRESHOLD AND NO SLICE-LENGTH STATISTIC AT L1; THE PER-NOTE LIST S-3's; THE UNIT THE CHANGE POINT; THE AXIS's SAMPLING AND SPAN KIND ITS OWN DERIVED VIEWS; A NAMED REASON ON EVERY DECLINED OUTPUT; THE ACYCLICITY RULE IN GENERAL FORM; PROVENANCE NAMED; NO ENTRY FLAG; THE READER's LAYOUT THE READER's (All eleven as recommended)
+
+**Taken 2026-09-03 by the ninety-fourth session, the twenty-ninth disposition ruling, over Rows 18.15,
+12.6, 12.22, 14.9 (with 1.3, 3.31, 3.41, 3.42, 3.48, 4.3), 14.25, 19.6, 19.7, 19.14, 19.26, 19.28,
+24.18, 20.10 and 20.12 of the reading file, read at the working tree as staged this session through
+the file tools; put as one surface of eleven independent items with the offer to hold any out.** **The
+user's words, verbatim: "all eleven ratified"**, given on the choice question at the foot of the
+surface, holding none out. Each item rests on rulings already taken this session and on the charter;
+none opens a new principle, which is why they were put together.
+
+**The facts, each checked at its object, and what was decided, item by item.**
+
+1. **Row 18.15.** S-50 says *"L1 publishes exactly"* and lists nothing of S-32's *entered sounding* and
+   *cut by the span* marks, S-25's span-edge tie flag or S-52's establishment status
+   (`cowork_bounded_context_design.md` §3 item 10: *"a truncated result is never presented as a complete
+   one"*). **S-50's list gains every published item that S-25, S-32 and S-52 and Rulings 40, 46, 48,
+   49, 51 and 61 name, so that *exactly* is true, as Ruling 60 requires of an exhaustive surface.
+   ADOPTED, proposed.** No alternative admissible: an exhaustive list omitting published items is false
+   (#10).
+2. **Row 12.6.** `cowork_evidence_inventory.md` §1: *"a sufficiently long rest signals a phrase end …
+   the silence threshold fit rather than guessed"*. **No threshold at L1: S-31 publishes every silent
+   slice with its length and S-39 every REST-BEGINS; *long enough* is a consumer's fitted threshold over
+   the published length (Rulings 48, 52). ADOPTED, proposed, beside S-31.** A threshold at L1 excluded
+   at the threshold (#12, Ruling 52).
+3. **Row 12.22.** The same document §4: harmonic rhythm *"computable purely from slice durations"*. **L1
+   publishes no statistic over slice lengths; the series is the slice list, already published; the
+   harmonic rhythm is over decided harmonic spans, the charter's L3. ADOPTED, proposed, beside S-29.**
+   A published pattern at L1 a derived reading (#6, S-51).
+4. **Row 14.9 with Rows 1.3, 3.31, 3.41, 3.42, 3.48, 4.3.** `cowork_target_architecture.md` §2's twelve
+   fields against S-3's list. **The per-note list is S-3's as written, plus Ruling 44's stem direction
+   and Ruling 50's attached marks; the outgoing eleven- and twelve-field lists are descriptions of
+   builds and targets, placed by S-3 — carried where they match, QUARANTINED where they describe code,
+   as the reading file already has 1.3 and 4.3.** Nothing added beyond earlier rulings.
+5. **Row 14.25.** The same document §3 cites a beat-labelling reference engine as *"the winning
+   shape"*; Row 6.58 (ruled) rejects a metric grid. **The per-event unit is the change point (S-28); a
+   beat-labelling engine is cited for the per-event shape only, never for the unit. ADOPTED, proposed,
+   one sentence beside S-28.**
+6. **Rows 19.6, 19.7, 19.14.** `cowork_voiceleading_axis_design.md`: sampling at voice-pair onsets
+   only, a per-voice span kind that may overlap, *"NOT imported: L2 slices"*. **RELOCATED to the second
+   axis, voice leading, as the reading file placed them, with this noted for that axis's surface: under
+   the spine–axis boundary contract the axis consumes L1's published facts and re-derives none, so a
+   sampling by onsets only and a per-voice span kind are the axis's own derived views over L1's change
+   points and never a second L1 unit; Row 18.17's claim stands at L1.**
+7. **Row 19.26.** The same document §5.3: the component *"abstains with a no-pair reason rather than
+   classifying on the remaining evidence"*. **Beside S-52, every L1 item that is not computed or is
+   empty carries a named reason — S-45's *not computed when no such Y exists*, S-46's relaxation and
+   S-31's empty set gain the form. ADOPTED, proposed** (#12: an absence with no reason is a fact
+   hidden).
+8. **Row 19.28.** The same document §9-D6, the cross-axis acyclicity rule. **Beside S-53, the general
+   form: a fact may be consumed freely by any layer or axis because facts depend on no inference; a
+   committed output may be consumed only where the combined dependency graph stays acyclic — the
+   charter's spine–axis contract in one sentence. ADOPTED, proposed.**
+9. **Row 24.18.** `cowork_layer5_engagement_design.md` §7.2: a demoted mechanism's basis value renamed
+   with it. **Beside S-50's naming bar: a published item names how it was arrived at, and a value naming
+   a mechanism is renamed when the mechanism is demoted or renamed. ADOPTED, proposed** (Ruling 40's #12
+   rule applied to provenance).
+10. **Row 20.10.** `docs/llm_integration.md` §6: *"When the choir enters"* as an inferred event. **No new
+    flag: an entry is an onset preceded by silence in that voice, which Ruling 49's *silence before the
+    onset* relation publishes per voice, and an ensemble entry is the end of an ALL-SILENT slice (S-31).
+    ADOPTED, carried by Ruling 49 and S-31** (#6).
+11. **Row 20.12.** The same document §7.1: *"Hierarchical, not flat. Instrument → Measure → Beat →
+    Note"*. **Not L0's or L1's: the specification fixes what is published, and its arrangement for a
+    reader outside the analysis is that reader's (Ruling 57 (ii), D-522). RELOCATED to the reader.**
+
+**On the axes, once for the set.** Every item keeps a fact whole and unjudged at L0/L1 and places each
+judgment with its consumer (Ruling 52's principle, #7, S-51), publishes once (#6), and makes the
+publication list true of itself (#10, Ruling 60); none moves an inference, and none conflicts with the
+other. **Ruling 1's precedence clause was not exercised.**
+
+**With this ruling every first-met family of documents 8 to 29 is ruled.** What remains for the L0/L1
+comparison is the application act's placement of the rows the rulings name, and the reading file's §7,
+§8 and §9 by the next dispatch. Nothing is applied by this ruling; no outgoing text is edited. **No
+decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
 ## 4. What this ruling does NOT do
 
 It authorizes no fix, no design, no inference change, no measurement, and no amendment to any
@@ -3146,3 +5024,36 @@ whole; the close and its end-state section in `cowork_away_returns.md` whole;
 and the authored invocation list of `tools/audit/gen_guard_state.py`. Same targeted-edit method on a
 container copy, committed under the change guard rather than forced. **Nothing else in this record was
 altered by this extension.***
+
+*★ AND WITH **Ruling 34** (§3ao) by the same session, 2026-09-02, the first disposition ruling of the L0/L1
+comparison. For it that session read at the files: the reading file §0, §12, §13 and Rows 2.16, 2.17, 3.44,
+3.57 and 6.55; the derivation §3.1 (S-15, S-16, S-17) and S-30; `ARCHITECTURE.md` at lines 1676–1680 and
+4056–4077; `cowork_layer1_note_model_design.md` §7, §8 and §11; `cowork_layer2_slicing_design.md` §13;
+`decisions/group_D.md` D-569 and D-570; the Couperin score at lines 648–687; and the W3C MusicXML 4.0 pages
+for the `grace` and `note` elements, fetched. One D-253 breach is declared inside the ruling. Same
+targeted-edit method on a container copy, committed under the change guard rather than forced. **Nothing
+else in this record was altered by this extension.***
+
+*★ AND WITH **Ruling 35** (§3ap) by the same session, 2026-09-02, the second disposition ruling. For it that
+session read at the files: the reading file Rows 1.6, 2.8, 2.9, 2.10, 3.2–3.5, 3.13–3.16, 4.37, 6.20 and 6.21;
+the derivation S-1, S-3, S-13, S-15, S-18, S-19, S-20; `FRAMEWORK.md` §5 L0 and L1; `ARCHITECTURE.md` lines
+1650–1656; `cowork_layer1_note_model_design.md` §0 (lines 15–24), §7 and §8; `decisions/group_D.md` D-569.
+Every read through the file tools on bridge-staged snapshots. Same targeted-edit method on a container copy,
+committed under the change guard rather than forced. **Nothing else in this record was altered by this
+extension.***
+
+*★ AND WITH **Ruling 36** (§3aq) by the same session, 2026-09-02. For it that session read at the files:
+the reading file Rows 3.4 and 3.60; the derivation S-3, S-19 and OQ-4/OQ-5; `cowork_layer1_note_model_design.md`
+lines 174–183 and 255–263; and the W3C MusicXML 4.0 `cue` element page, fetched. Same targeted-edit method,
+same change guard. **Nothing else in this record was altered by this extension.***
+
+*★ AND WITH **Ruling 37** (§3ar) by the same session, 2026-09-02. For it that session read at the files:
+the reading file Rows 3.13 and 3.14; the derivation S-18 and S-20; `FRAMEWORK.md` §5 the boundary contracts
+(lines 477–490); `cowork_layer1_note_model_design.md` lines 48 and 191–192; `decisions/group_D.md` D-569. Same
+targeted-edit method, same change guard. **Nothing else in this record was altered by this extension.***
+
+*★ AND WITH **Ruling 38** (§3as) by the same session, 2026-09-02. For it that session read at the files:
+the reading file Row 4.37; the derivation S-3, S-15, S-16, S-18, S-23, S-33, S-35, S-54 and OQ-3, OQ-11;
+`cowork_layer1_tone_collection_design.md` §5 (line 182) and §6; `decisions/group_D.md` D-570; the Couperin
+score at lines 3440–3499 (one `<staffMove>` chord). Same targeted-edit method, same change guard. **Nothing
+else in this record was altered by this extension.***
