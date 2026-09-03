@@ -20437,6 +20437,26 @@ the report?** **Yes, and it is named:** two `STATUS.md` pointer entries, the for
 `PREVIOUS_AIMINGS` rows, and the regenerated `status_batch_bound.json` and
 `session_start_read_size.json` — **every one of them an act Task 2 orders — and nothing else.**
 
+### The end state — measured at the tree carrying the close, and E2 MET, with one red found and cleared on the way
+
+**76 guards run, 10 failing, 4 not run, 16 historical, zero STOPs** — and **the failing set is exactly
+the ten the dispatch names, member for member, plus none.** E2 is met: population unchanged at 76, no
+STOP, nothing added to the reds.
+
+**★ THE FIRST END-STATE RUN MEASURED ELEVEN, AND THE ELEVENTH IS RECORDED RATHER THAN QUIETLY FIXED.**
+`gen_session_start_read_size.py --check` came back STALE. **Its subject is this batch's own ordered
+act** — Task 2(d) orders that artifact regenerated — so under A2 it is classed by its cause and is not
+a STOP. **The cause was ESTABLISHED, not guessed:** the artifact records `STATUS.md` at 10,354
+characters and the file measures 10,356, a difference of exactly two, and the ordering that produced it
+is on the record — **the regeneration ran, and a later turn edited `STATUS.md` again**, so the artifact
+committed in the close was two characters stale on that one member. **`STATUS.md` itself is
+byte-unchanged since the close commit**, established with the sanctioned enumeration tool, so nothing
+about the entries or the move is in question. **This is this batch's own ordering error, of exactly the
+shape the dispatch warns of for the `Last updated: ` prefix — regenerate only after the last edit to a
+member.** The artifact was regenerated, `--check` passes, and the full set was re-run; **the run
+recorded here is that second run, and the ten are the ten.** *Recorded because the guard set catching
+it is the whole reason the end state is measured after the close rather than asserted with it.*
+
 *Provenance: CC, 2026-09-03. Every commit identifier above was read from the commit output at the time
 each commit was taken and `origin/master` was read at its ref file with the file tools after each push;
 the guard verdicts are this batch's own start-state run and not carried from any earlier one; A1 was

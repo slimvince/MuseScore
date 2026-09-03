@@ -180,7 +180,27 @@ The one `tools/audit/*.py` edit is the re-aiming of `gen_status_batch_bound.py`'
 constants and its `PREVIOUS_AIMINGS` list, which Task 2 orders in terms and which **D-648** classes as
 authored-input maintenance.
 
-## 8. Where the hashes are
+## 8. The end state, and the one red the guard set caught
+
+**76 run, 10 failing, 4 not run, 16 historical, zero STOPs**, the failing set exactly the ten the
+dispatch names, plus none.
+
+**The first end-state run measured eleven.** `gen_session_start_read_size.py --check` came back STALE.
+Its subject is this batch's own ordered act — Task 2 orders that artifact regenerated — so under A2 it
+is classed by its cause rather than being a STOP. **The cause was established, not guessed:** the
+committed artifact records `STATUS.md` at 10,354 characters where the file measures 10,356, and the
+ordering that produced the gap is on the record — the regeneration ran, and a later turn edited
+`STATUS.md` again, so the artifact committed in the close was two characters stale on that one member.
+**`STATUS.md` itself is byte-unchanged since the close commit**, established with the sanctioned
+enumeration tool, so nothing about the entries or the forward-bound move is in question. **It is this
+batch's own ordering error** — regenerate only after the last edit to a member, which is exactly the
+shape the dispatch warns of for the `Last updated: ` prefix. The artifact was regenerated, `--check`
+passes, and the set was re-run; **the run committed is that second one.**
+
+This is recorded rather than smoothed over because the guard set catching it is the reason the end
+state is measured after the close instead of asserted alongside it.
+
+## 9. Where the hashes are
 
 The commit table — the tree met, Task 0, the §8 commit, the §9 commit, the §7 commit and the close — is
 in the close section of `cowork_away_returns.md`, each by explicit hash, each pushed and each verified
