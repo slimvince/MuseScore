@@ -741,6 +741,31 @@ KEYWORDS = (
     "atomic", "sounding", "struck", "priority of evidence", "evidence ranking",
 )
 
+# ── L2's ruled keyword list — FORTY-TWO TERMS ─────────────────────────────────────────────────
+# Ruling 86, §3co of `cowork_rulings_2026_08_31_decision_surface_sitting.md`, in its own words:
+# "The pilot's eighteen, unchanged" plus "the twenty-four added for the other three charter
+# limbs", and "the six bare words `mode`, `root`, `quality`, `figure`, `applied` and `passing`
+# are EXCLUDED" — they must not appear below.
+#
+# THE EIGHTEEN ARE TAKEN FROM `KEYWORDS` RATHER THAN RETYPED (#6): the ruling says unchanged, and
+# a second copy of them would be a second place to change.  `KEYWORDS` ITSELF IS NOT WIDENED —
+# `harmony-boundary` reads it, that subject is FROZEN and its verdict table is authored for the
+# candidate set the eighteen produce, so widening the shared tuple would derive candidates with
+# no verdict and `build_subject` would STOP.
+L2_KEYWORDS = KEYWORDS + (
+    # the tonality at each moment
+    "tonality", "tonic", "local key", "key area", "modulation", "tonicization",
+    # which sounding notes belong to the harmony and which elaborate it
+    "chord tone", "non-chord", "chord-tone assignment", "elaboration relation",
+    "passing tone", "passing note", "neighbour", "neighbor", "suspension", "anticipation",
+    "ornament",
+    # what chord is read over each span
+    "scale degree", "roman numeral", "inversion", "applied chord", "chord quality",
+    "figured bass",
+    # the charter's own word for what L2 must publish beside its answer
+    "rival",
+)
+
 CRITERION = {
     "harmony-boundary": {
         "groups": ("E",),
@@ -776,6 +801,61 @@ CRITERION = {
         "home_documents": (),
         "architecture_spans": (),
         "keywords": (),
+        "always": (),
+    },
+    # ── L2, the next deriving subject under Ruling 10 ─────────────────────────────────────────
+    # DORMANT BY DESIGN, AND THE DORMANCY IS DECLARED WITH ITS CONSUMER NAMED (the
+    # fact-publication corollary: a fact consumed by no one is declared dormancy or waste).
+    # NOTHING REACHES THIS ENTRY TODAY: `build()` iterates `WITHHELD`, and no `l2` withheld
+    # family is authored, because L2's family is ruled list by list at Cowork decision surfaces
+    # (Ruling 81, §3cj) and no list exists yet.  Its consumer is `build_subject("l2", ...)`, which
+    # runs when that family lands — a separate act, not this one.
+    #
+    # EVERY TERM IS RULED, each cited to the section that ruled it in
+    # `cowork_rulings_2026_08_31_decision_surface_sitting.md`:
+    #   groups              Ruling 82, §3ck — A, C, D, E, F and G, "the six register groups the
+    #                       charter's four limbs and their vocabulary reach".
+    #   keywords            Ruling 86, §3co — the forty-two of `L2_KEYWORDS` above.
+    #   home_documents      Ruling 87, §3cp — the thirteen documents holding a design-intent entry
+    #                       the group and keyword terms do not already reach — PLUS
+    #                       `ARCHITECTURE.md`, added by Ruling 88, §3cq: fourteen in all.
+    #                       `cowork_layer5_engagement_design.md` is STRUCK by Ruling 89, §3cr,
+    #                       its naming refuted at the object, and MUST NOT appear here.
+    #   architecture_spans  Ruling 88, §3cq — EMPTY.  The file is named as a document, so no
+    #                       passage is named and no anchor is authored.
+    #   always              NO RULING OF THAT RECORD NAMES AN IDENTITY FOR THIS SUBJECT, so the
+    #                       term is empty.  Said here rather than left to be read off an empty
+    #                       tuple, which would not distinguish "none named" from "not yet filled".
+    #
+    # WHAT THIS TABLE PICKS, and it is the one check that it was written as ruled: over the 244
+    # DESIGN-INTENT entries of `tools/audit/rulings_sort_classification.json`'s 411, the group
+    # term alone picks 130, the keyword list adds 47 beyond it, and the home-document list adds
+    # the remaining 67.  130 + 47 + 67 = 244, and the criterion picks 244 of 244.
+    #
+    # THE BOUND THAT SURVIVES THAT (#24, D-661): the population is the sort artifact's 411, NOT
+    # the decisions register's 477.  Sixty-six register entries are outside it and no term of this
+    # criterion can reach them.  Complete is complete relative to that membership and nothing
+    # wider.
+    "l2": {
+        "groups": ("A", "C", "D", "E", "F", "G"),
+        "home_documents": (
+            "ARCHITECTURE.md",
+            "CLAUDE.md",
+            "cowork_architecture_review_2026_07.md",
+            "cowork_census_full_needs_audit.md",
+            "cowork_engage_arc_plan.md",
+            "cowork_layer6_grouping_design.md",
+            "cowork_notation_output_contract.md",
+            "cowork_phrase_boundary_design.md",
+            "cowork_progression_schema_design.md",
+            "cowork_progression_schema_dictionary.md",
+            "cowork_score_census.md",
+            "cowork_voiceleading_axis_design.md",
+            "docs/llm_integration.md",
+            "docs/scoring_model.md",
+        ),
+        "architecture_spans": (),
+        "keywords": L2_KEYWORDS,
         "always": (),
     },
 }

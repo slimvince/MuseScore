@@ -1,0 +1,325 @@
+{
+ "what_this_is": "THE CHECK THAT L2's RULED CANDIDATE CRITERION WAS WRITTEN INTO THE GENERATOR AS RULED. It reads the COMMITTED criterion table and calls the generator's own candidates() over it. It authors no verdict, withholds nothing, renders no pack and boots no session.",
+ "the_rulings_it_checks": [
+  "Ruling 82, section 3ck of cowork_rulings_2026_08_31_decision_surface_sitting.md - the group term at register groups A, C, D, E, F and G.",
+  "Ruling 86, section 3co - the keyword list at forty-two terms, the six bare words excluded.",
+  "Ruling 87, section 3cp - the home-document list at thirteen documents.",
+  "Ruling 88, section 3cq - ARCHITECTURE.md added as a home document, fourteen in all, and the passage term EMPTY.",
+  "Ruling 89, section 3cr - cowork_layer5_engagement_design.md struck."
+ ],
+ "how_it_was_derived": "The generator's own candidates() function over the committed CRITERION table, with nothing injected. No second matcher exists to disagree with the first (#6).",
+ "the_shape_of_the_table": [
+  {
+   "check": "KEYWORDS is still the pilot's eighteen, unchanged",
+   "passed": true,
+   "saw": 18
+  },
+  {
+   "check": "harmony-boundary's keywords are still the eighteen",
+   "passed": true,
+   "saw": 18
+  },
+  {
+   "check": "the l2 group term is A, C, D, E, F, G",
+   "passed": true,
+   "saw": [
+    "A",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
+   ]
+  },
+  {
+   "check": "the l2 keyword list carries forty-two terms",
+   "passed": true,
+   "saw": 42
+  },
+  {
+   "check": "its first eighteen are the pilot's, in order",
+   "passed": true,
+   "saw": [
+    "slice",
+    "slicing",
+    "segment",
+    "segmentation",
+    "boundary",
+    "boundaries",
+    "change-point",
+    "onset",
+    "release",
+    "harmonic rhythm",
+    "where one chord ends",
+    "finest grain",
+    "grain",
+    "atomic",
+    "sounding",
+    "struck",
+    "priority of evidence",
+    "evidence ranking"
+   ]
+  },
+  {
+   "check": "no term of the list is one of the six excluded bare words",
+   "passed": true,
+   "saw": []
+  },
+  {
+   "check": "the l2 home-document list is the ruled fourteen",
+   "passed": true,
+   "saw": [
+    "ARCHITECTURE.md",
+    "CLAUDE.md",
+    "cowork_architecture_review_2026_07.md",
+    "cowork_census_full_needs_audit.md",
+    "cowork_engage_arc_plan.md",
+    "cowork_layer6_grouping_design.md",
+    "cowork_notation_output_contract.md",
+    "cowork_phrase_boundary_design.md",
+    "cowork_progression_schema_design.md",
+    "cowork_progression_schema_dictionary.md",
+    "cowork_score_census.md",
+    "cowork_voiceleading_axis_design.md",
+    "docs/llm_integration.md",
+    "docs/scoring_model.md"
+   ]
+  },
+  {
+   "check": "cowork_layer5_engagement_design.md is not a member (Ruling 89)",
+   "passed": true,
+   "saw": null
+  },
+  {
+   "check": "the l2 ARCHITECTURE.md passage term is empty (Ruling 88)",
+   "passed": true,
+   "saw": []
+  },
+  {
+   "check": "the l2 named-identity term is empty",
+   "passed": true,
+   "saw": []
+  },
+  {
+   "check": "no l2 withheld family was authored",
+   "passed": true,
+   "saw": null
+  },
+  {
+   "check": "no l2 verdict table was authored",
+   "passed": true,
+   "saw": null
+  },
+  {
+   "check": "no l2 extras list was authored",
+   "passed": true,
+   "saw": null
+  },
+  {
+   "check": "no l2 freeze was authored",
+   "passed": true,
+   "saw": null
+  }
+ ],
+ "the_arithmetic": [
+  {
+   "check": "the design-intent population is 244",
+   "passed": true,
+   "saw": 244
+  },
+  {
+   "check": "the group term alone picks 130",
+   "passed": true,
+   "saw": 130
+  },
+  {
+   "check": "the keyword list adds 47 beyond the group term",
+   "passed": true,
+   "saw": 47
+  },
+  {
+   "check": "the home-document list adds the remaining 67",
+   "passed": true,
+   "saw": 67
+  },
+  {
+   "check": "130 + 47 + 67 = 244",
+   "passed": true,
+   "saw": 244
+  },
+  {
+   "check": "the criterion picks 244 of 244",
+   "passed": true,
+   "saw": 244
+  },
+  {
+   "check": "the three parts partition the candidates with none left over",
+   "passed": true,
+   "saw": 0
+  },
+  {
+   "check": "no candidate is picked by an ARCHITECTURE.md passage (the term is empty)",
+   "passed": true,
+   "saw": []
+  },
+  {
+   "check": "no candidate is picked by a named identity (the term is empty)",
+   "passed": true,
+   "saw": []
+  },
+  {
+   "check": "the per-document counts of the sixty-seven sum to 67",
+   "passed": true,
+   "saw": 67
+  }
+ ],
+ "the_counts": {
+  "design_intent_class": 244,
+  "sort_entries_total": 411,
+  "candidates": 244,
+  "picked_by_the_group_term": 130,
+  "added_by_the_keyword_list": 47,
+  "added_by_the_home_document_list": 67
+ },
+ "the_sixty_seven_by_home_document": {
+  "ARCHITECTURE.md": {
+   "count": 23,
+   "ids": [
+    "D-010",
+    "D-072",
+    "D-132",
+    "D-201",
+    "D-202",
+    "D-205",
+    "D-206",
+    "D-229",
+    "D-292",
+    "D-295",
+    "D-296",
+    "D-397",
+    "D-419",
+    "D-421",
+    "D-440",
+    "D-441",
+    "D-469",
+    "D-470",
+    "D-471",
+    "D-496",
+    "D-542",
+    "D-544",
+    "D-629"
+   ]
+  },
+  "CLAUDE.md": {
+   "count": 9,
+   "ids": [
+    "D-168",
+    "D-170",
+    "D-171",
+    "D-172",
+    "D-180",
+    "D-182",
+    "D-185",
+    "D-190",
+    "D-660"
+   ]
+  },
+  "cowork_architecture_review_2026_07.md": {
+   "count": 2,
+   "ids": [
+    "D-498",
+    "D-499"
+   ]
+  },
+  "cowork_census_full_needs_audit.md": {
+   "count": 1,
+   "ids": [
+    "D-516"
+   ]
+  },
+  "cowork_engage_arc_plan.md": {
+   "count": 1,
+   "ids": [
+    "D-279"
+   ]
+  },
+  "cowork_layer6_grouping_design.md": {
+   "count": 2,
+   "ids": [
+    "D-456",
+    "D-461"
+   ]
+  },
+  "cowork_notation_output_contract.md": {
+   "count": 1,
+   "ids": [
+    "D-275"
+   ]
+  },
+  "cowork_phrase_boundary_design.md": {
+   "count": 1,
+   "ids": [
+    "D-482"
+   ]
+  },
+  "cowork_progression_schema_design.md": {
+   "count": 5,
+   "ids": [
+    "D-502",
+    "D-503",
+    "D-507",
+    "D-508",
+    "D-509"
+   ]
+  },
+  "cowork_progression_schema_dictionary.md": {
+   "count": 1,
+   "ids": [
+    "D-406"
+   ]
+  },
+  "cowork_score_census.md": {
+   "count": 4,
+   "ids": [
+    "D-365",
+    "D-514",
+    "D-614",
+    "D-665"
+   ]
+  },
+  "cowork_voiceleading_axis_design.md": {
+   "count": 6,
+   "ids": [
+    "D-388",
+    "D-389",
+    "D-390",
+    "D-393",
+    "D-395",
+    "D-396"
+   ]
+  },
+  "docs/llm_integration.md": {
+   "count": 6,
+   "ids": [
+    "D-442",
+    "D-443",
+    "D-444",
+    "D-445",
+    "D-447",
+    "D-448"
+   ]
+  },
+  "docs/scoring_model.md": {
+   "count": 5,
+   "ids": [
+    "D-220",
+    "D-222",
+    "D-223",
+    "D-492",
+    "D-493"
+   ]
+  }
+ },
+ "the_bound_on_this_check": "It establishes that the table matches the rulings and that the tool's own matcher picks the ruled population. It establishes NOTHING about any entry's verdict: a candidate carries an authored verdict and a candidate ruled OUT is still rendered into the pack, and no verdict for this subject exists. And the population is the sort artifact's 411, not the decisions register's 477 - sixty-six register entries lie outside the criterion's reach and no term of it can reach them (#24, D-661).",
+ "a_defect_of_the_generator_found_by_writing_this_criterion_and_NOT_repaired_here": "candidates() glosses every group match with the hardcoded string 'Layer 2 - the slicer', which is true only of register group E. Under the l2 criterion's six groups that gloss is false for A, C, D, F and G. It is INERT today - build() iterates WITHHELD, l2 has no withheld family, so no manifest or pack renders it, and this artifact does not copy it. It must be repaired before an l2 pack is ever built. This dispatch does not repair it: it writes the criterion and nothing else."
+}
