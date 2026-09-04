@@ -21864,3 +21864,303 @@ regeneration and comparison against the committed blob; both object-level checks
 blob hashes; the four sets by derivation at the rows of §6; the forward bound by running the tool at
 its new aiming and reading its own output. No count of the reading file is restated in this section
 (D-431).*
+
+## THE AUDIT QUESTIONS FOR THE FOUR PER-NOTE FIELD-LIST ROWS (TENTH WRITING): THREE CARRIED BY QUESTION 2, ONE WRITTEN FOR ROW 14.9, NO NUMBERED QUESTION EDITED
+
+**★ THE HEADING IS THE DISPATCH'S ORDERED NAME.** This batch ran
+`cc_instruction_comparison_l0_l1_tenth_2026_09_04.md`: **Task 0** landed Ruling 80, the hundredth entry
+and the dispatch, and pushed; **Task 1** made the five ordered sentence replacements inside §11's added
+subsection in one commit; **Task 2** closed. **NO RULING WAS TAKEN, NO POSITION WAS WEIGHED, NO ROW
+BLOCK WAS TOUCHED, NO PROPOSED DISPOSITION AND NO RULED LINE WAS EDITED OR DELETED ANYWHERE, NO
+NUMBERED ITEM OF §11's LIST 1 TO 82 WAS EDITED, DELETED, RENUMBERED OR REORDERED, §10 AND §12 WERE NOT
+EDITED AT ALL, NO AUDIT QUESTION WAS AUTHORED BY THIS BATCH, AND NO RECOMMENDATION APPEARS ANYWHERE.**
+
+### The commits, by explicit hash
+
+| Act | Commit | What it carries |
+|---|---|---|
+| the tree met | `a70fcf6d510c2e2e8d0fde895cd7817f8872ae47` | the local tip; `origin/master` EQUAL to it — nothing unpushed |
+| Task 0 | `24a6fc712929eaee440e1c1bd25c35856d7062fb` | `cowork_rulings_2026_08_31_decision_surface_sitting.md` (Ruling 80, additions only), `cowork_handoff_entry_one_hundred.md` and this dispatch — **three paths**, not four |
+| Task 1 | `c810f5ad74648a882d0da231abad4a92066e3ad2` | `ratification_surfaces/cowork_comparison_l0_l1_reading.md`, the five ordered sentence replacements — one path |
+| the close | this commit | `STATUS.md`, `STATUS_ARCHIVE.md`, `tools/audit/gen_status_batch_bound.py`, `tools/audit/status_batch_bound.json`, `tools/audit/session_start_read_size.json`, this section, the report |
+| the end state | the one further commit | the end-state guard run, which this section does not assert |
+
+**Every commit above was pushed and `origin/master` verified equal at
+`.git/refs/remotes/origin/master` with the file tools, never from a push's own output.** The Task 1
+commit's own blob for the reading file was read back at `git rev-parse <commit>:<path>` and came back
+`f3edcfe810b96ec6bfde07af2ba213564c59add4` — the very blob the object-level check below was taken over.
+
+**THE DISPATCH WAS PINNED** to blob `d0684269d93d169f81d71a33d790d2a4f932f3b6` at Task 0 under standing
+clause **P-2**, and its blob was proven unmoved immediately before staging. **The working-tree-first
+read is declared** as that clause's own fallback route, the user's opening line having named the
+dispatch file alone.
+
+### Both guard states
+
+**THE START STATE HELD EXACTLY AS DECLARED.** **76 guards run, 10 failing, 4 not run, 16 historical,
+and ZERO STOPs.** The ten failing are the ten the dispatch's own FACT names, member for member, with no
+eleventh red. **THE RUN WAS TAKEN IN `--check` MODE, WHICH THE DISPATCH ORDERS**: the mode was named at
+the tool rather than probed for, on the eighth batch's established finding that this tool does not
+recognise `--help` and silently writes, and the artifact was hashed afterwards rather than assumed
+unmoved — `tools/audit/guard_state.json` came back at blob
+`497e802bac1bcc1715e7f87a80e5854d625eb098`, the very blob the dispatch's FACT names, so the committed
+artifact re-derived exactly and the check mode wrote nothing. **Neither A2 exception fired at boot** —
+`gen_evidence_pin_membership.py --check`, `gen_l0_l1_outgoing_population.py --check`,
+`gen_status_batch_bound.py --check` and `gen_session_start_read_size.py --check` all PASSED.
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it, per the dispatch's item 3.
+
+### E0–E2, graded
+
+- **E0 — MET.** **Three paths in one commit, not four:** A3 was measured before being accepted and came
+  back byte-identical (`fb3a00be…` both sides), so `evidence_pin_membership.json` did not move and the
+  ordered path list's *only if it moved* excluded it. `origin/master` verified at the commit. A1's
+  whole-tree check is below, with its enumeration, and the sitting record's additions-only property was
+  proven at the object.
+- **E1 — MET.** **The five replacements are present and each matches the dispatch's replacement text
+  verbatim**; **every deleted line is accounted for by one of the five quoted anchors** and the
+  enumeration is published below; **the subsection carries nine entries before and nine after**; no
+  numbered item was touched; §10 and §12 are untouched; the object-level properties 1 to 6 are proven
+  and reported as measured.
+- **E2 — carried by the one further commit**, derived from the declared start state plus this batch's
+  own ordered acts.
+
+### A1–A5, graded
+
+- **A1 — HELD IN FULL, and the check was the whole-population one the dispatch ordered.**
+  `tools/audit/changed_paths.py` enumerated the tracked population at boot: **EXACTLY ONE tracked
+  modification**, `cowork_rulings_2026_08_31_decision_surface_sitting.md`, exactly as A1 declares. Both
+  named untracked paths — `cowork_handoff_entry_one_hundred.md` and the dispatch — were confirmed
+  present in the same enumeration and again by the ordered per-path check. **The large standing
+  untracked population of historical `cc_instruction_*` and `cc_*_report` files at the root was met
+  exactly as A1 names it in advance, and none of it was landed**; no further
+  `cowork_handoff_entry_*.md` and no further `cowork_rulings_*.md` stood at the root. **THE SITTING
+  RECORD'S ADDITIONS-ONLY PROPERTY WAS PROVEN AT THE OBJECT**: the working copy was written into the
+  object store (blob `717c8083783748704f3372ea3beeabfefabbb381`) and diffed against
+  `1cc0f48de30c6e5949ef5624e43384cdcae81fd5` between the two explicit hashes — **one changed passage,
+  165 insertions, ZERO deletions, and every added line inside the new `## 3ci.` section**, the hunk's
+  trailing context being the `## 4.` heading and the only added `##` heading being `## 3ci.` itself.
+  The Task 0 commit's own stat confirms it independently: three paths, **1,062 insertions and zero
+  deletions**. **No tracked path was modified at any point in the run other than by this batch's own
+  ordered acts.**
+- **A2 — HELD.** The ten failing tools and zero STOPs, exactly, at the start-state run; **neither A2
+  exception fired**. `gen_l0_l1_outgoing_population.py --check` still re-derives after the reading file
+  and `STATUS.md` moved — **no member of the population moved and the artifact needed no regeneration**
+  — and `gen_session_start_read_size.py` was regenerated LAST, after the forward bound's own edit to
+  `STATUS.md`, with its `--check` green before the commit. `gen_evidence_pin_membership.py --check` was
+  green at boot and the Ruling 80 section moved none of that tool's three routes, so the STOP its
+  staleness would have been did not arise.
+- **A3 — MEASURED BEFORE BEING ACCEPTED and HELD.** `evidence_pin_membership.json` was regenerated and
+  its blob hash compared against the committed one: **byte-identical**
+  (`fb3a00be268401e5386954cc3c410c9c827539df` both sides), movement by zero exactly as A3 predicts. The
+  artifact was therefore **NOT** committed and Task 0 carried three paths rather than four. The
+  dispatch's prediction rested on the reading of that tool's three routes — route A the leading
+  blockquote and the `*Provenance:` paragraphs, route B every line carrying the word *pinned* — and the
+  Ruling 80 section moves none of the three.
+- **A4 — HELD.** **No tool was added.** Population unchanged at **76** at the start-state run; the
+  failing set the ten named, plus none. The one ordered act that touches a tool source is Task 2's
+  re-aiming of `gen_status_batch_bound.py`'s five authored constants, its `PREVIOUS_AIMINGS` list and
+  the head comments that describe the aiming, which **D-648** classes as authored-input maintenance and
+  which the dispatch licenses in terms.
+- **A5 — HOLDS, with its stated exceptions and no other movement.** The derivation is byte-unchanged,
+  banner and body; the derived specification is byte-unchanged and was not opened; the sitting record is
+  untouched beyond the one section Task 0 lands; the brief, the pack directory and
+  `derivation_boot_pack.json`, every outgoing text, `tools/audit/gen_l0_l1_outgoing_population.py` and
+  the population artifact are untouched; the suspension file and every register source are untouched;
+  every governing document except `STATUS.md` and `STATUS_ARCHIVE.md` is untouched. **In the reading
+  file the diff against blob `a025c686cb652ad871bf12b7cec140023ce92609` is exactly the five sentence
+  replacements Task 1 orders and nothing else, all five inside the one added subsection of §11.**
+
+### The object-level check of Task 1, measured rather than asserted, property by property
+
+The edited reading file was written into the object store with `git hash-object -w` (blob
+`f3edcfe810b96ec6bfde07af2ba213564c59add4`) and diffed **between two explicit blob hashes** against the
+base blob `a025c686cb652ad871bf12b7cec140023ce92609`. Both blobs were then materialised to scratch
+paths outside the repository with `git cat-file blob <hash>`, and every structural comparison below was
+taken over those two content-addressed copies. **The diff is 31 insertions and 21 deletions, in two
+changed passages** — and no count of changed passages is offered as a check, the ninth batch having
+established that two nearby edits merge into one passage.
+
+1. **EVERY DELETED LINE IS ONE OF THE FIVE ANCHOR BLOCKS, AND NO OTHER LINE IS DELETED ANYWHERE IN THE
+   FILE.** The twenty-one deleted lines were enumerated and matched, in full, against the five anchors
+   this dispatch quotes: **two** lines from the preamble's last two lines (`the row writes it in. Where
+   no audit question is written at the row, the entry says so and composes` / `none.*`); **five** from
+   Row 3.41's entry; **four** from Row 3.42's; **four** from Row 3.48's; and **six** from Row 14.9's.
+   **2 + 5 + 4 + 4 + 6 = 21**, which is the whole deletion count, so no deleted line falls outside the
+   five anchors. The thirty-one added lines are the five replacement blocks — five, six, five, five and
+   ten — and **5 + 6 + 5 + 5 + 10 = 31**.
+2. **NO `###` HEADING WAS ADDED OR REMOVED** — 264 on each side — and no `##` heading either, 283 on
+   each side, so no section heading was added, moved or renamed.
+3. **NO `**Row` HEADING WAS ADDED OR REMOVED, and that was proven rather than eyeballed.** The set of
+   lines matching the strict row-heading form was extracted from both blobs, sorted and diffed:
+   **817 on each side and the two sets diff empty both ways**. **No `*PROPOSED DISPOSITION` or
+   `*RULED DISPOSITION` line was touched** — 757 and 249 respectively, identical on both sides.
+4. **NO NUMBERED ITEM'S LEADING NUMBER CHANGED.** Every numbered-item opening line was extracted from
+   both blobs **in file order** and compared: **300 on each side and the ordered comparison is empty**,
+   which is stronger than a set comparison because a renumbering that permuted the list would still
+   show. Question 2 in particular stands exactly as it was: it gained no cross-reference and no
+   appended clause.
+5. **§13's TABLES, §13a's TABLES AND FIGURES, AND §13b's THREE TABLES ARE BYTE-IDENTICAL**, and the
+   proof is over the whole file rather than over a line range: every table row in both blobs was
+   extracted, sorted and compared — **901 on each side and the two sets diff empty**.
+6. **THE SUBSECTION'S BULLET COUNT IS NINE ON BOTH SIDES** — Rows 2.16, 2.17, 3.5, 3.41, 3.42, 3.48,
+   4.3, 14.9 and 17.13, read at the file after the edit — and the whole-file count of lines opening
+   `- Row ` is 191 on each side, so no bullet was added or removed anywhere.
+
+**A difference none of those accounts for would have been a STOP; there is none.**
+
+### The five anchors, and that all five stand
+
+**Every anchor the dispatch quotes was found VERBATIM at the file**, each matched on its whole quoted
+block rather than on a fragment, and each proven unique before any edit: the four entry openings occur
+**exactly four times** between them — once each for Rows 3.41, 3.42, 3.48 and 14.9 — and the preamble's
+closing line `none.*` occurs **exactly once**. **So the dispatch's own STOP for a fifth such entry did
+not fire**, and the five replacements, which stand or fall together, all stand. **Placements not made:
+NONE.**
+
+### What was placed, and that this batch composed nothing
+
+**Rows 3.41, 3.42 and 3.48 are recorded as carried by §11's standing numbered question 2**, Row 1.3's,
+in the form §11's own opening convention already carries — the row says so, naming the second, third
+and fourth time that question is met. **Row 14.9 carries the one further audit question Ruling 80
+itself wrote for it**, quoted from the ruling and not composed here, with the ruling's own reason for
+its being a distinct question stated beside it: question 2 asks whether the facts S-3 requires reach
+any consumer in the code, and this asks after a fact the target architecture itself already required
+and the build does not carry. **NO AUDIT QUESTION WAS AUTHORED, PARAPHRASED, EXTENDED OR MERGED BY THIS
+BATCH.**
+
+**The preamble's last clause was amended in the same act**, as Ruling 80's ordered consequence
+requires, **with its former wording preserved verbatim at the site (#12)** — because the subsection
+would otherwise go on saying that where no audit question is written at the row the entry says so and
+composes none, which stopped being true of it the moment Row 14.9's entry carried a question. The
+amended clause records **both** limbs, the placing ruling's own question and the standing numbered
+question, because either limb alone leaves it false of some entry. **No other sentence of the preamble
+was touched.**
+
+**The five entries of the subsection this batch did not touch — Rows 2.16, 2.17, 3.5, 4.3 and 17.13 —
+are byte-unchanged**, which the deleted-line enumeration above proves rather than asserts.
+
+### Declared departures
+
+1. **The dispatch was read from the working tree before it was pinned** — P-2's fallback route, the
+   user's opening line having named only the dispatch file. Pinned at Task 0; blob proven unmoved
+   before staging.
+2. **Diff, guard and check output was written to scratch paths outside the repository and read with the
+   file tools.** Every repository read went through the file tools; the only shell reads were git object
+   queries by explicit hash (`git show <hash>:path`, `git rev-parse <hash>:path`, `git cat-file`,
+   `git hash-object`, `git hash-object -w`, `git show --stat`, and `git diff` between two explicit
+   hashes), some of them piped to `grep`, `sort`, `diff` and `wc` to count and compare object-level line
+   sets over the scratch copies.
+3. **★ The two blobs were materialised to scratch with `git cat-file blob <hash>` and compared there.**
+   Both sides of every structural comparison — the strict row-heading set, the table-row set, the
+   ordered numbered-item list, the disposition-line counts and the heading counts — were taken over
+   those two scratch copies rather than over the working tree. **It is a content-addressed read by
+   explicit hash on both sides**, which is what makes the comparison self-verifying; declared because
+   the reads that followed were ordinary text utilities over those copies.
+4. **★ Three commands were denied by the armed shell-read guard and re-taken.** The first named a
+   scratch file by a relative path after a `cd`, and the second and third named it through a shell
+   variable; in each case the guard refused on its deny-on-indeterminate policy (**D-647**) — it cannot
+   expand a variable and it cannot resolve a relative path it has not been given a directory for, so it
+   cannot decide whether the path is inside the repository. All three were re-taken with fully literal
+   absolute scratch paths. **Recorded because the guard firing is the mechanism working**, and because
+   the substitute is the one the rules name.
+5. **★ One `awk` invocation over the two scratch copies returned an empty count and was abandoned
+   rather than debugged**, its subject — the subsection's bullet count — being then established
+   directly at the file with the Read tool and, whole-file, by the `- Row ` count over both blobs. It
+   read nothing inside the repository and wrote nothing; declared because it is an invocation this
+   batch made and the record should not have to infer it from the absence of output.
+
+### The forward bound — RAN, and the prediction held
+
+**`gen_status_batch_bound.py` was re-aimed at ALL FIVE of its authored inputs** — `BASE_COMMIT` (this
+batch's last task commit, `c810f5ad74…`), `PREVIOUS_BATCH_DISPATCH`, `ACT_DATE`, `DISPATCH`, `TASK` —
+and `PREVIOUS_AIMINGS` was **appended to rather than replaced** (#12) with the ninth writing's aiming,
+now superseded, marked as a move that **RAN**. The head comments that describe the aiming were amended
+in the same act.
+
+**The move then RAN and the dispatch's own prediction held exactly: the NINTH writing's THREE entries
+moved, the second writing's two stayed, and there was no STOP.** The reconciliation the tool derives is
+green in both limbs — every moved entry byte-present in the archive exactly once and absent from the
+must-read — and `--check` passes at the end of the act. **No entry was moved by hand and no earlier
+entry's text was edited.**
+
+**THE SECOND WRITING'S TWO ENTRIES REMAIN IN `STATUS.md`.** That is a declared state, not a STOP, and
+**no open-items row is created for it**; the finding is rowed inside the tool's own `PREVIOUS_AIMINGS`,
+where a later reader meets it at the mechanism.
+
+### What the user is asked to rule
+
+**NOTHING.** The reading file's §15 still reads NOTHING, and this act did not change that. **This
+section recommends nothing** — not about any row, any question, any open question, the derivation, the
+method, the L0/L1 split, or the deriving session's independence, to which no verdict word is attached.
+**And the residue the ninth batch reported is now CLOSED by Ruling 80 rather than by this batch**:
+whether the four rows were owed an audit question, and who writes it, was the user's to settle and he
+settled it; this batch only carried the placement.
+
+### The plan lines
+
+- **The pack finding of §3al.4 goes to L2's pack.**
+- **Then L2**, sequenced by Ruling 10.
+- **And the residue Ruling 79 left open is now DISCHARGED**: every entry of §11's added subsection
+  carries an audit question, so §5's requirement that a quarantined row write one is met across the
+  subsection, and the subsection's own preamble no longer says otherwise.
+
+### The plan's tell, in one sentence
+
+**Did this batch produce anything other than the landed records, the five replaced sentences, the four
+Task-2 files and the report?** **Yes, and it is named in full:** the three `STATUS.md` pointer entries,
+the forward-bound move's `STATUS_ARCHIVE.md` block, the re-aimed `gen_status_batch_bound.py` with its
+new `PREVIOUS_AIMINGS` row and its amended head comments, the regenerated `status_batch_bound.json` and
+`session_start_read_size.json`, this close section, and `tools/audit/guard_state.json` as the artifact
+of the end-state run — **every one of them an act this dispatch's Task 2 orders, and nothing else.**
+
+### The standing self-check (D-196) over this batch's own work
+
+1. *Principles touched.* **#12** — nothing deleted but the five sentences the ruling names; the
+   preamble's former wording preserved verbatim at its own site; every numbered question, every row
+   block and every proposed disposition standing; `PREVIOUS_AIMINGS` appended to rather than replaced.
+   **#10** — the subsection ceased to state something false about itself in the same act that gave Row
+   14.9 its question, which is the whole of what Ruling 80's consequence clause requires. **#6** — one
+   question for one concern: question 2 is pointed at rather than copied, and the one new question is
+   written once, at the row it belongs to. **#19** — nothing is established by this batch; the five
+   anchors were quoted from the file and proven at the object before any edit. **#13** — an anchor not
+   found verbatim would have been a STOP, and the five replacements were treated as standing or falling
+   together. **#17(f)/D-431** — no count of the reading file is restated in any replacement; the counts
+   in this section are this batch's own measurements at the objects, each named with how it was taken.
+   **#24** — no difference between two measured quantities is asserted anywhere in this act. Conforms.
+2. *Conventions.* American English; no self-invented label — *the added subsection*, *an entry*, *the
+   numbered list*, *a row's block* and *a changed passage* are the dispatch's own, defined at its head;
+   music-theory words in their musical sense, with *exclude* for the prohibiting sense and *bar* only
+   the metric unit; *field* only a record's field; no numeric grade anywhere. **A count of changed
+   passages was explicitly refused as a check**, the property carrying the weight being the
+   deleted-line enumeration.
+3. *Figures and premises.* The tip and `origin/master` at the two ref files with the file tools; every
+   commit at `git show --stat` by explicit hash; the guard verdicts from this batch's own start-state
+   run, whose artifact was hash-compared against the tip's; A1 with the sanctioned enumeration tool over
+   the whole tracked population; A3 by regeneration and blob comparison; both object-level diffs between
+   two explicit blob hashes; the five anchors read at the file and their uniqueness measured there; the
+   five row blocks of §6 read at the file to check this dispatch's quotations against the rows; the
+   forward bound by running the tool at its new aiming and reading its own output.
+4. *File-tools rule.* Every repository read through the file tools; the shell used only for git object
+   queries by explicit hash, for reads of scratch copies outside the repository, and for the sanctioned
+   tool invocations. No `git status`, no working-tree `git diff` without an explicit hash. **Three guard
+   denials were met and are declared above as departure 4.**
+5. *Uncertainty.* That the four entries needing replacement are exactly Rows 3.41, 3.42, 3.48 and 14.9
+   is not this batch's reading but a measurement: the entry-opening fragment was counted at the file and
+   occurs exactly four times, at exactly those four rows. **The quotations this dispatch's replacement
+   text makes about the rows were checked against the five row blocks of §6 and each holds** — Row
+   3.41's axis line does read *"the same difference as Row 1.3, stated there"*, Row 3.42 does enumerate
+   the eleven fields and record question 2's own five facts as absent, Row 3.48 is the time clause of
+   that list and lacks the bar-relative position, and Row 14.9 does quote
+   `cowork_target_architecture.md` §2's target list carrying `ties`. **Nothing about whether the placed
+   questions are the RIGHT questions is settled by this batch; that was Ruling 80's, and it is quoted
+   rather than judged.**
+
+*Provenance: CC, 2026-09-04. Every commit identifier above was read from the commit output at the time
+each commit was taken and `origin/master` was read at its ref file with the file tools after each push;
+the guard verdicts are this batch's own start-state run, established as the tip's by a blob comparison;
+A1 was established with the sanctioned enumeration tool over the whole tracked population; A3 by
+regeneration and comparison against the committed blob; both object-level checks between two explicit
+blob hashes; the anchor uniqueness and the deleted-line enumeration at the objects; the forward bound by
+running the tool at its new aiming and reading its own output. No count of the reading file is restated
+in this section (D-431).*
