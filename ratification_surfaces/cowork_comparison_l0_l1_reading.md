@@ -15148,6 +15148,10 @@ more than one row where the same question is met a second, third or fourth time 
 *(Documents 8, 20, 21, 23, 26 and 27 contribute none, each for the reason its own arithmetic section
 states. **Document 29's four are the only QUARANTINED rows in the file that rest on a MEASUREMENT of
 the current surface rather than on a description of it.**)*
+**★ AND IT IS COMPLETE OVER THE PROPOSED DISPOSITIONS, NOT OVER THE RULED ONES.** The rulings taken
+since have quarantined further rows, whose questions are NOT in the numbered list above; they stand in
+the subsection at the foot of this section, added 2026-09-04 under Ruling 79 (§3ch). **The complete set
+of audit questions is this section's numbered list TOGETHER WITH that subsection.**
 
 1. Row 1.2 — does the note model read the score exactly once, and is the queryable surface it builds
    the one the change-point construction consumes?
@@ -15319,12 +15323,55 @@ the current surface rather than on a description of it.**)*
 
 **These are questions for the AUDIT phase. None is answered here, and none is an open-items row.**
 
+### ★ ADDED BY THE ADDITIVE REPAIR — the rows the rulings QUARANTINED that this list did not carry
+
+*Written 2026-09-04 under `cc_instruction_comparison_l0_l1_ninth_2026_09_04.md` Task 1, on Ruling 79
+(§3ch). Additions only; no numbered question above is edited, renumbered or reordered. Each entry names
+the ruling that quarantined its row, and carries that row's audit question in the words the ruling or
+the row writes it in. Where no audit question is written at the row, the entry says so and composes
+none.*
+
+- Row 2.16 — *"does the slicer open a boundary at a grace note, and with what span, against the rule
+  that it opens none (the tuplet half of the same sentence is another family and is not placed
+  here)."* (Ruling 34, §3ao).
+- Row 2.17 — *"the same question."* (Ruling 34, §3ao).
+- Row 3.5 — *"which specifications and code currently define the eligibility combination, since after
+  ratification only L1 does."* (Ruling 35, §3ap).
+- Row 3.41 — **no audit question is written at the row.** It was quarantined by Ruling 62 (§3bq, item
+  4) on the ground *"the outgoing eleven- and twelve-field lists are descriptions of builds and
+  targets, placed by S-3 — carried where they match, QUARANTINED where they describe code."* Ruling 78
+  (§3cg) records that question 2 above, Row 1.3's, is the standing question about the same field list;
+  **this entry states the gap and composes nothing.**
+- Row 3.42 — **no audit question is written at the row.** It was quarantined by Ruling 62 (§3bq, item
+  4) on the ground *"The per-note list is S-3's as written, plus Ruling 44's stem direction and Ruling
+  50's attached marks"*. Ruling 78 (§3cg) records that question 2 above, Row 1.3's, is the standing
+  question about the same field list; **this entry states the gap and composes nothing.**
+- Row 3.48 — **no audit question is written at the row.** It was quarantined by Ruling 62 (§3bq, item
+  4) on the ground *"carried where they match, QUARANTINED where they describe code."* Ruling 78
+  (§3cg) records that question 2 above, Row 1.3's, is the standing question about the same field list;
+  **this entry states the gap and composes nothing.**
+- Row 4.3 — *"does the in-region duration — a note's duration clipped to the queried region — belong
+  to L0's supplied facts at all, being a property of the query rather than of the note?"* (Ruling 78,
+  §3cg).
+- Row 14.9 — **no audit question is written at the row.** It was quarantined by Ruling 62 (§3bq, item
+  4) on the ground *"The per-note list is S-3's as written, plus Ruling 44's stem direction and Ruling
+  50's attached marks; the outgoing eleven- and twelve-field lists are descriptions of builds and
+  targets, placed by S-3 — carried where they match, QUARANTINED where they describe code."* Ruling 78
+  (§3cg) records that question 2 above, Row 1.3's, is the standing question about the same field list;
+  **this entry states the gap and composes nothing.**
+- Row 17.13 — *"does the arm that ships still place any harmonic boundary sequentially after a chord
+  decision, or only inside the joint decode?"* (Ruling 55, §3bj).
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing
 chosen
 
 **★ COMPLETE OVER THE POPULATION.** All 29 documents are tabulated, and every ADOPTED — proposed row
 and every DIFFERS verdict of every one of them is below, each in one sentence. **Nothing is chosen
 between the two texts anywhere in this section, and no item is a recommendation.**
+**★ AND IT IS COMPLETE OVER THE PROPOSED DISPOSITIONS, NOT OVER THE RULED ONES.** The rulings taken
+since have placed rows of the additions half elsewhere; the numbered items naming them stand unedited,
+and the rows are listed in the subsection at the foot of this section, added 2026-09-04 under Ruling 79
+(§3ch). **What is still a live proposal is this section's additions half MINUS that subsection.**
 
 **Additions proposed to the derived specification.**
 
@@ -15927,6 +15974,98 @@ between the two texts anywhere in this section, and no item is a recommendation.
     reading overwritten by a near-duplicate of the winner; and S-50's uncapped publication against a
     measured discard of an above-threshold reading on most slices. **These are the only DIFFERS in the
     file backed by a measurement of the current surface rather than by a reading of a specification.**
+
+### ★ ADDED BY THE ADDITIVE REPAIR — the rows the rulings placed elsewhere, whose proposals above stand unedited
+
+*Written 2026-09-04 under `cc_instruction_comparison_l0_l1_ninth_2026_09_04.md` Task 1, on Ruling 79
+(§3ch). Additions only; **no numbered item above is edited, renumbered, reordered or deleted, and no
+proposed disposition anywhere is deleted (#12)** — a numbered item above may therefore name a row that
+has since been placed elsewhere, and this list is where that is recorded. Each entry names the
+disposition the ruling gave the row and the ruling that gave it. This list concerns the ADDITIONS half
+of this section only: a DIFFERS verdict is a statement about the current text, which a disposition
+ruling does not move.*
+
+- Row 1.6(ii) — ruled **ADOPTED — carried** (Ruling 35, §3ap).
+- Row 2.15 — ruled **ADOPTED — carried** (Ruling 40, §3au).
+- Row 2.16 — ruled **QUARANTINED** (Ruling 34, §3ao).
+- Row 2.17 — ruled **QUARANTINED** (Ruling 34, §3ao).
+- Row 3.2 — ruled **ADOPTED — carried** (Ruling 35, §3ap).
+- Row 3.4 — ruled **ADOPTED — carried** (Ruling 36, §3aq).
+- Row 3.5 — ruled **QUARANTINED** (Ruling 35, §3ap).
+- Row 3.13 — ruled **ADOPTED — carried** (Ruling 37, §3ar).
+- Row 3.15 — ruled **ADOPTED — carried** (Ruling 35, §3ap).
+- Row 3.31 — ruled **ADOPTED — carried** (Ruling 62, §3bq, item 4).
+- Row 3.41 — ruled **QUARANTINED** (Ruling 62, §3bq, item 4).
+- Row 3.42 — ruled **QUARANTINED** (Ruling 62, §3bq, item 4).
+- Row 3.44 — ruled **ADOPTED — carried** (Ruling 34, §3ao).
+- Row 3.48 — ruled **QUARANTINED** (Ruling 62, §3bq, item 4).
+- Row 3.57 — ruled **HISTORICAL** (Ruling 34, §3ao).
+- Row 4.3 — ruled **QUARANTINED** (Ruling 78, §3cg).
+- Row 4.4 — ruled **ADOPTED — carried in substance** (Ruling 42, §3aw).
+- Row 5.14 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 5.16 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 5.33 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 5.35 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 5.40 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 6.55 — ruled **HISTORICAL** (Ruling 34, §3ao).
+- Row 8.5 — ruled **ADOPTED — carried** (Ruling 48, §3bc).
+- Row 8.6 — ruled **ADOPTED — carried** (Ruling 48, §3bc).
+- Row 9.8 — ruled **ADOPTED — carried** (Ruling 48, §3bc).
+- Row 9.14 — ruled **ADOPTED — carried** (Ruling 48, §3bc).
+- Row 9.16 — ruled **ADOPTED — carried** (Ruling 48, §3bc).
+- Row 9.23 — ruled **ADOPTED — carried** (Ruling 48, §3bc).
+- Row 9.33 — ruled **ADOPTED — carried** (Ruling 48, §3bc).
+- Row 10.9 — ruled **RELOCATED — to L3, *the read-off facts*** (Ruling 48, §3bc).
+- Row 10.10 — ruled **RELOCATED — to L3, *the read-off facts*** (Ruling 48, §3bc).
+- Row 10.4 — ruled **RELOCATED — to L3, *the read-off facts*** for its computed half (Ruling 48, §3bc).
+- Row 10.5 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 10.18 — ruled **RELOCATED — to L3, *the read-off facts*** (Ruling 48, §3bc).
+- Row 10.21 — ruled **ADOPTED — proposed** (Ruling 49, §3bd) for its three raw relations, and ruled
+  **RELOCATED — to L3, *the read-off facts*** (Ruling 48, §3bc) for its computed half. **It carries two
+  ruled lines, and only the second takes it out of the proposals half**, so it is listed here for that
+  half and its proposal stands for the other.
+- Row 10.22 — ruled **RELOCATED — to L3, *the read-off facts*** (Ruling 48, §3bc).
+- Row 10.24 — ruled **RELOCATED — to L3, *the read-off facts*** (Ruling 48, §3bc).
+- Row 10.26 — ruled **RELOCATED — to L3, *the read-off facts*** (Ruling 48, §3bc).
+- Row 10.28 — ruled **RELOCATED — to L3, *the read-off facts*** (Ruling 48, §3bc).
+- Row 10.29 — ruled **RELOCATED — to L3, *the read-off facts*** (Ruling 48, §3bc).
+- Row 10.37 — ruled **RELOCATED — to L3, *the read-off facts*** (Ruling 48, §3bc).
+- Row 10.41 — ruled **RELOCATED — to L3, *the read-off facts*** (Ruling 48, §3bc).
+- Row 11.8 — ruled **ADOPTED — carried** (Ruling 53, §3bh).
+- Row 11.12 — ruled **RELOCATED — to L2, *the tonal reading*** (Ruling 54, §3bi).
+- Row 12.19 — ruled **ADOPTED — carried** (Ruling 53, §3bh).
+- Row 12.21 — ruled **ADOPTED — carried** (Ruling 48, §3bc).
+- Row 13.8 — ruled **ADOPTED — carried** (Ruling 48, §3bc).
+- Row 13.14 — ruled **RELOCATED — to L3, *the read-off facts*** (Ruling 54, §3bi).
+- Row 14.9 — ruled **QUARANTINED** (Ruling 62, §3bq, item 4).
+- Row 14.14 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 15.8 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 16.2 — ruled **RELOCATED — to *the second axis — voice leading*** (Ruling 61, §3bp).
+- Row 17.13 — ruled **QUARANTINED** (Ruling 55, §3bj).
+- Row 18.3(i) — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 18.4 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 18.5 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 18.10 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 18.11 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 18.13 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 18.14(i) — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 18.20 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 18.24 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 18.30 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 18.40 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 18.41 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 19.10 — ruled **ADOPTED — carried in substance** (Ruling 46, §3ba).
+- Row 19.13 — ruled **ADOPTED — carried** (Ruling 48, §3bc).
+- Row 20.10 — ruled **ADOPTED — carried** (Ruling 62, §3bq, item 10).
+- Row 20.12 — ruled **RELOCATED — to the reader** (Ruling 62, §3bq, item 11).
+- Row 22.2 — ruled **ADOPTED — carried** (Ruling 48, §3bc).
+- Row 22.12 — ruled **RELOCATED — to L2** (Ruling 58, §3bm).
+- Row 22.16 — ruled **RELOCATED — to L2, *the tonal reading, the one entangled decision***
+  (Ruling 60, §3bo).
+- Row 25.5 — ruled **RELOCATED — to L2, *the tonal reading, the one entangled decision***
+  (Ruling 48, §3bc).
+- Row 27.10 — ruled **RELOCATED — to L2, *the tonal reading, the one entangled decision***
+  (Ruling 48, §3bc).
 
 ## 13. The distribution so far, counted at this file's own rows
 
