@@ -2468,6 +2468,13 @@ property of the query rather than of the note.
 *PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 3.42, and adding one question of
 its own: whether a clipped in-region duration belongs in L0 at all, being a function of the caller's
 region.
+*RULED DISPOSITION (Ruling 78, §3cg — cc_instruction_comparison_l0_l1_eighth_2026_09_04.md Task 1).*
+**QUARANTINED** — placed under Ruling 62 (§3bq, item 4) on the ground its four sibling rows were placed
+on, travelling with Row 3.42 as Rows 3.41, 3.48 and 14.9 do: *"the outgoing eleven- and twelve-field
+lists are descriptions of builds and targets, placed by S-3 — carried where they match, QUARANTINED
+where they describe code."* The per-note list is S-3's as written. *Audit question:* does the in-region
+duration — a note's duration clipped to the queried region — belong to L0's supplied facts at all,
+being a property of the query rather than of the note?
 
 **Row 4.4 — the four things it must not do.**
 *Statement.* "It must **NOT** filter (drop grace/non-playing/invisible), **NOT** weight or aggregate
@@ -16044,6 +16051,10 @@ count closes over those and nothing else.
 `cc_instruction_comparison_l0_l1_seventh_2026_09_03.md` Task 1 and are counted APART, at §13b; the 210
 lines above and their arithmetic are unchanged.*
 
+*★ AND ONE FURTHER RULED LINE WAS ADDED on 2026-09-04, at Row 4.3, under Ruling 78 (§3cg) by
+`cc_instruction_comparison_l0_l1_eighth_2026_09_04.md` Task 1; it is recorded at §13b's foot and is not
+a family placement; the 210 lines above and their arithmetic are unchanged.*
+
 ## 13b. The FAMILY placements — derived at the placement lines
 
 *Written 2026-09-03 under `cc_instruction_comparison_l0_l1_seventh_2026_09_03.md` Task 1(d). Every
@@ -16099,9 +16110,15 @@ notated boundary evidence Ruling 48 governs. Each is a hit the ruling does not r
 report on the fifth writing's own treatment of Row 28.12, and each keeps the disposition it already
 carried, untouched.
 
-**No line here places Row 4.3.** It stands at its proposed disposition — the fifth writing
-reported that Ruling 62 item 4's citation of it and the row's own content do not meet — and it goes to
-the user on its own surface.
+**Row 4.3 is PLACED, and this section's tables do not count it.** On 2026-09-04 the user ruled it
+QUARANTINED under Ruling 78 (§3cg), which places it under Ruling 62's item 4 on the ground its four
+sibling rows were placed on; its line was added by
+`cc_instruction_comparison_l0_l1_eighth_2026_09_04.md` Task 1. It is **not a family placement**, so
+this section's own totals and all three of its tables are unchanged, and it is the one further ruled
+line §13a's foot note names.
+*Former wording, preserved (#12): "**No line here places Row 4.3.** It stands at its proposed
+disposition — the fifth writing reported that Ruling 62 item 4's citation of it and the row's own
+content do not meet — and it goes to the user on its own surface."*
 
 **WHAT THIS TABLE DOES NOT ESTABLISH.** It counts placements; it says nothing about whether any
 placement is right — a kind (A) line is the ruling's own words transcribed to the row, and a kind (B)
