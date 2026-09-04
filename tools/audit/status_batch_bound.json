@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_comparison_l0_l1_seventh_2026_09_03.md, Task 3",
+ "dispatch": "cc_instruction_comparison_l0_l1_eighth_2026_09_04.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -235,37 +235,50 @@
    "executing_act": "cc_instruction_comparison_l0_l1_sixth_2026_09_03.md, Task 2",
    "base_commit": "31a951bb2b206a89f150992fa4181e705115ef6c",
    "the_then_previous_batch": "cc_instruction_comparison_l0_l1_fifth_2026_09_03.md"
+  },
+  {
+   "executing_act": "cc_instruction_comparison_l0_l1_seventh_2026_09_03.md, Task 3",
+   "base_commit": "cbb059bc1924f6fa04afcda959938e4ae610df0e",
+   "the_then_previous_batch": "cc_instruction_comparison_l0_l1_sixth_2026_09_03.md"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "cbb059bc1924f6fa04afcda959938e4ae610df0e",
- "the_then_previous_batch": "cc_instruction_comparison_l0_l1_sixth_2026_09_03.md",
- "entries_moved": 3,
- "characters_moved": 4253,
+ "base_commit": "0e6649fd95665d76f3b3702ceaed886bd7b1e7e3",
+ "the_then_previous_batch": "cc_instruction_comparison_l0_l1_seventh_2026_09_03.md",
+ "entries_moved": 4,
+ "characters_moved": 4570,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1931,
-   "sha256": "52f744f3cdf58f7ed887d8ecd4ec56c3a561545bd9cba74fc4688e8a918dfa0d",
+   "characters": 2254,
+   "sha256": "fddbc00711e2b1dd366d2da80ff70e354a5b3efeec5d9cdb844edccd5c2a8d68",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-09-03 (CC — `cc_instruction_comparison_l0_l1_sixth_2026_09_03.md`, Task 2, the close. **★★ THE RATIFICATION ACT IS APPLIED: THE DERIVED L0/L1 SP"
+   "opening": "*2026-09-03 (CC — `cc_instruction_comparison_l0_l1_seventh_2026_09_03.md`, Task 3, the close. **★★ THE ITEM (d) FAMILY PLACEMENTS ARE MADE: every fami"
   },
   {
    "line_at_base": 10,
-   "characters": 1139,
-   "sha256": "9cb8d24a5e22decd60e22f0700c9cdb4d2cabb13d5a0ffa8b1f0c8cc5a4a6e1a",
+   "characters": 712,
+   "sha256": "5854f885e3b08ca5fe40c6d9899da97ece87d6cb066c5c2053f27d321d12feb1",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-03 (CC — Same dispatch, Task 1. **★ THE CORRECTIONS APPLIED AND CHECKED AT THE OBJECT.** The successor was edited by targeted edits only, nev"
+   "opening": "*2026-09-03 (CC — Same dispatch, Task 2. **★ S-48's ANCHOR NAMED, AND THE CHECK MEASURED AT THE OBJECT.** The successor was edited by two targeted edi"
   },
   {
    "line_at_base": 12,
-   "characters": 1183,
-   "sha256": "49b607fa0acac71c2b9810ed5c180c4daab5fd977e606c801c83ad11ee9b423f",
+   "characters": 843,
+   "sha256": "5823c608c5f5f975e80ca5d5cfb763158b8dc9de4cf5dfb53ff9f4bb942de8a3",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-03 (CC — Same dispatch, Task 0. **★ RULINGS 64–77, THE NINETY-SIXTH ENTRY AND THIS DISPATCH LANDED IN ONE COMMIT OF THREE PATHS.** ★ **A1 WAS"
+   "opening": "*2026-09-03 (CC — Same dispatch, Task 1. **★ ONE PLACEMENT LINE PER ROW, EACH ADDED AS THE LAST LINE OF ITS ROW'S BLOCK.** Every row the dispatch name"
+  },
+  {
+   "line_at_base": 14,
+   "characters": 761,
+   "sha256": "9c0d7737692164124059d84839539a3897b83a26558da7ed5972cdf0c31ca598",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-09-03 (CC — Same dispatch, Task 0. **★ THE NINETY-SEVENTH ENTRY AND THIS DISPATCH LANDED IN ONE COMMIT OF TWO PATHS.** ★ **A1 WAS CHECKED OVER T"
   }
  ],
  "reconciliation": {
