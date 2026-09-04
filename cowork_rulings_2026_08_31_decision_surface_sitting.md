@@ -5961,6 +5961,171 @@ the surface carried the withdrawal on its face.
 **No decisions-register identity is allocated** — that register cannot accept one, and
 `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
 
+## 3ci. Ruling 80 — THE FOUR ROWS OF THE PER-NOTE FIELD LIST THAT RULING 62 QUARANTINED AND LEFT WITHOUT AN AUDIT QUESTION: ROWS 3.41, 3.42 AND 3.48 ARE RECORDED AS CARRIED BY §11's STANDING QUESTION 2, AND ROW 14.9 GAINS ONE FURTHER QUESTION OF ITS OWN (Position two, as recommended)
+
+**Taken 2026-09-04 by the session that booted on `cowork_handoff_entry_one_hundred.md`, after the
+ordinary session-start read in full — `CLAUDE.md` whole, `DECISIONS.md` whole, `STATUS.md`, and the
+derived gating answer read at its own field — with the tip re-verified at both ref files as
+`a70fcf6d510c2e2e8d0fde895cd7817f8872ae47`, `origin/master` equal, and with the four rows, their
+sibling rows, §5, the whole of §11 and Rulings 62, 78 and 79 read at the objects before the surface
+was written.** **The user's words, verbatim: "I agree with your recommendation."**
+
+**★ THE FORM, RECORDED EXACTLY, BECAUSE IT DEPARTED FROM THE ORDER D-249 PRESCRIBES — THE SAME
+DEPARTURE RULING 79 RECORDED ONE RULING EARLIER.** The whole decision surface was delivered as
+user-visible text in one turn, and it closed by saying in terms that the choice question would come in
+the next message. **The user answered before that question was put.** What D-249 exists to secure —
+that the surface is read before it is answered — holds, the answer having come after the whole surface
+was delivered; what did not happen is the asking. The words above name a position and are not a "go
+on". **No choice question is owed and none was put.**
+
+**What was being decided.** Ruling 62 (§3bq) item 4 moved Rows **3.41**, **3.42**, **3.48** and
+**14.9** of `ratification_surfaces/cowork_comparison_l0_l1_reading.md` from ADOPTED — proposed to
+QUARANTINED and wrote no audit question for any of them. The ninth batch's additive repair, ordered by
+Ruling 79 (§3ch), entered all four in the subsection at the foot of §11 with the gap STATED and no
+question composed, and reported the residue to the user: whether the four are owed a question at all,
+and who writes it. **This ruling settles that residue and nothing else.**
+
+**★ THE USER'S OWN OPENING QUESTION, AND THAT THE RECORD WAS CHECKED BEFORE ANYTHING WAS PUT TO HIM.**
+He asked, in his own words, *"These four rows, what do we need to do with them?"* Before a surface was
+written the record was searched for an answer already in it — his bar of 2026-08-28, that a question
+the record settles is not escalated into a user decision. **The record answers it in part:** §5 makes a
+question owed, and §11's own opening supplies the mechanism by which one question may stand for several
+rows. **What the record does not settle is whether the standing question reaches all four rows**, and
+only that residue was put to him, with the part the record already answers stated as answered.
+
+**The facts, each checked at its object.**
+
+- **The reading file's §5, the closed vocabulary.** **QUARANTINED** is *"it states how the
+  implementation currently works, or a measured property of it"*, and *"The row writes the audit
+  question in one sentence."* **The clause carries no exception.**
+- **The same requirement is restated in two further places.** Ruling 78 (§3cg) quotes that clause among
+  its own facts and writes Row 4.3's question on the strength of it; Ruling 79's decided text (§3ch)
+  orders that §11's added entries *"carry the audit question in one sentence as §5 requires"*.
+- **§11's opening already carries the many-rows-per-question convention**: *"82 numbered questions —
+  fewer numbers than rows, because several questions carry more than one row where the same question is
+  met a second, third or fourth time and the row says so."*
+- **§11's numbered question 2, Row 1.3's**: *"do the five per-note facts S-3 requires and the eleven
+  fields do not carry reach any consumer, and does `staffEligible` belong to L0's supplied facts or to
+  an eligibility decision above it?"*
+- **The four rows, read whole at the file.** **3.41** names the note record as *"one tie-resolved note
+  together with its facts (the eleven fields listed in Section 7)"* and its axis line records *"the same
+  difference as Row 1.3, stated there"*. **3.42** enumerates those eleven fields and states the
+  difference: S-3 additionally requires *"whether it is pitched"*, *"whether it is tied to the preceding
+  note and to the following note"*, *"whether it is cue-sized"*, *"the ornament and articulation signs
+  attached to it"* and a metric position as *"(bar index, offset within the bar, absolute position)"*,
+  while the eleven add `staff-eligible`, which S-3 does not name. **3.48** is the time clause of that
+  same list — *"All times are absolute time-positions within the piece."* **14.9** is not about the
+  built record at all: it quotes `cowork_target_architecture.md` §2's TARGET list of twelve fields, and
+  its own distinctive content is that **the target list carries `ties`, which the as-built eleven do
+  not** — in the row's words, one of the five facts S-3 requires and the implementation lacks *"was in
+  the architecture all along."*
+- **Ruling 62 (§3bq) item 4, at this record.** *"The per-note list is S-3's as written, plus Ruling 44's
+  stem direction and Ruling 50's attached marks; the outgoing eleven- and twelve-field lists are
+  descriptions of builds and targets, placed by S-3 — carried where they match, QUARANTINED where they
+  describe code, as the reading file already has 1.3 and 4.3."* **It writes no question for any row it
+  quarantines.**
+- **★ THE WHOLE OF §11's NUMBERED LIST WAS READ, ALL 82, RATHER THAN QUESTION 2 ALONE.** Exactly two
+  questions concern this field list: **question 2**, and **question 69** (Row 19.22), which states in
+  its own text that it is *"The same subject as audit question 2 … met a second time"*. **None of the
+  82 asks anything about the target document's twelve-field list, and none asks why a fact the
+  architecture named was not built.**
+- **The substantive requirement is ALREADY SETTLED and is not reopened here.** **S-3** at
+  `cowork_derived_specification_l0_l1_2026_09_03.md` §2.2 supplies per note, as amended by the rulings:
+  spelled pitch at sounding pitch; whether it is pitched; notated duration with tuplet ratios applied;
+  metric position as bar index, offset within the bar and absolute position; staff and notated voice;
+  whether its staff is hidden; stem direction as engraved; whether it is a grace note; whether it is
+  tied to the preceding and following note; whether it is marked not to be played; whether it is
+  visible; whether it is cue-sized; and the ornament and articulation signs attached to it. **So this
+  ruling reaches only what the AUDIT IS ASKED, never what the specification requires.**
+
+**The three positions, weighed.**
+
+*Position one* — **record at each of the four that question 2 carries it, and write nothing new.**
+Towards the ultimate objective: the audit meets ONE question about the per-note field list rather than
+several, and it is the question that names the code fact at issue. Towards the guiding principles:
+**#6**, one concern keeping one question, through the mechanism §11 already carries; **#12**, every row
+keeping its own text and its own recorded difference; and nothing is authored, a statement that an
+existing question covers a row being a reading of two texts. **Cost, declared:** it asserts that
+question 2 reaches Row 14.9, whose subject is a document rather than the code, and if that is wrong a
+fact goes to the audit unasked with nothing in the file to show it was meant to be looked at.
+
+*Position two* — **record question 2 for the three rows that describe the built record, and write one
+further question for Row 14.9.** Towards the ultimate objective: Row 14.9's fact is that the target
+architecture already required the tie facts the built record lacks, which bears on HOW the gap arose
+and not only that it exists; question 2 asks whether the missing facts reach any consumer in the code
+and does not ask why a fact the architecture named was never built. Towards the guiding principles:
+**#5**, gathering facts where facts may be scarce; **#10**, whose whole purpose is that code can be
+compared against its specification, which is what an audit question serves; **#6** is not strained,
+this being a different question rather than a second copy of question 2. **Cost, declared:** composing
+an audit question is authoring what the audit asks, which the ninth batch deliberately declined to do;
+and the new question could turn out to be answerable only by answering question 2, which would put two
+questions on one concern.
+
+*Position three* — **leave all four as they stand.** Towards the ultimate objective: nothing is
+authored that later proves to be the wrong question, and the audit frames its own when it meets the
+rows. Towards the guiding principles: **#12**, the gap being stated rather than hidden. But §5's clause
+has no exception and the record restates it in three places, so the file would go on holding four rows
+in a state its own rule does not admit, which is the shape **#10** exists against — a document that
+misdescribes its own completeness is one a later reader misuses. **Cost, declared:** what the audit
+would meet at these four rows is a statement that no question is written rather than a question, and
+Ruling 78's own words for that situation are that a quarantined row whose question is not in §11 is a
+question the audit does not meet.
+
+**The shape EXCLUDED, and why it was not put as a live position.** **A separate question for each of
+the four.** The file's own convention is that one question carries several rows where the same question
+is met again, so four questions about one field list would be four copies of one concern (**#6**); and
+the rows themselves say they travel together — 3.41 and 3.48 travel with 3.42, and 14.9 travels with
+1.3, 3.42 and 4.3.
+
+**Both axes to position two. Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** **Rows 3.41, 3.42 and 3.48 are recorded as carried by §11's standing question 2**,
+in the form §11's own convention uses — the row says so. **Row 14.9 gains ONE FURTHER AUDIT QUESTION of
+its own**, asking whether the shipped code carries the tie facts the target list has named all along,
+and if it does not, whether anything downstream depends on their absence. **The writing is ADDITIVE and
+touches only the four entries in the subsection at the foot of §11** that the ninth batch wrote, each of
+which currently reads that no audit question is written at the row: those four sentences are replaced by
+the placement this ruling makes, and **no numbered question of the standing list 1 to 82 is edited,
+renumbered or reordered, and no row block anywhere in the file is touched.** *Why the numbering is left
+alone rather than a question 83 being appended:* Ruling 79 recorded that **whether anything elsewhere in
+the record cites a question by its number is UNMEASURED**, so a shape that leaves every number where it
+is cannot break a citation silently (**D-307**).
+
+**★ AND ONE CONSEQUENCE OF THE SHAPE, ORDERED WITH IT BECAUSE #10 FORCES IT.** The subsection's own
+preamble, written by the ninth batch, ends *"Where no audit question is written at the row, the entry
+says so and composes none."* **That sentence becomes false at the moment Row 14.9's entry carries a
+question**, so it is corrected in the SAME act, its former wording preserved at the site (**#12**).
+This is the shape Ruling 79 required of §11's and §12's own opening claims, and it is required here for
+the same reason: a correction that leaves the surrounding text asserting the state it has just left
+behind repairs nothing. **The corrected sentence records BOTH limbs of what this ruling does, because
+either limb alone leaves it false of some entry: where the ruling which quarantined a row wrote no
+question, the entry carries EITHER the question the PLACING ruling writes, naming that ruling, OR the
+standing numbered question above that the placing ruling records as carrying the row.** No other
+sentence of the preamble is touched, and the count of entries in the subsection does not move.
+*(This sentence was corrected before the ruling landed, on the writing side's own pre-release
+fact-check of the dispatch that executes it: as first drafted it named only the first limb, which is
+false of the three entries this ruling points at question 2, and a dispatch built on it would have
+widened the ruling's words rather than carried them. **The former wording is preserved here (#12):**
+"The corrected sentence records that where the ruling which quarantined a row wrote no question, the
+entry carries the question the PLACING ruling writes, naming that ruling." **Nothing the user ratified
+moves** — both limbs are in the decided text above, which is unchanged.)*
+
+**What it does NOT do.** It takes **no position on any row's disposition** — all four stay QUARANTINED,
+as Ruling 62 ruled. It does not reopen what the note stage is required to supply, which S-3 settles. It
+edits no proposed disposition, no ruled line, no row block, and no figure of §13, §13a or §13b. It does
+not touch §10 or §12. It opens no outgoing text, changes nothing in the derived specification, and
+authorizes no fix, no design, no measurement of the analysis and no inference change. **It does not
+answer any audit question** — it decides which questions the audit is handed.
+
+**★ THE BOUND ON THE READING BEHIND IT, DECLARED (#24).** Read whole for this ruling: Rows 3.41, 3.42,
+3.48, 14.9, 1.3, 3.31 and 4.3; §5's disposition vocabulary; §11's opening, all 82 numbered questions and
+the subsection at its foot; Rulings 62, 78 and 79 at this record; and S-3 at the derived specification.
+**The rest of the comparison reading — a file of 1,101,199 bytes — was not read**, so a row outside that
+set bearing on this was not seen.
+
+**No decisions-register identity is allocated** — that register cannot accept one, and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
 ## 4. What this ruling does NOT do
 
 It authorizes no fix, no design, no inference change, no measurement, and no amendment to any
