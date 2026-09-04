@@ -5733,6 +5733,114 @@ is the route.
 visible alternatives sounds). It creates no user option and decides nothing about playback. It moves
 no file, edits no outgoing text, and allocates no register identity.
 
+## 3cg. Ruling 78 — ROW 4.3 OF THE COMPARISON READING, THE ONE ROW RULING 62's ITEM 4 LEFT UNPLACED: QUARANTINED, ON THE GROUND THAT RULING's OWN RULE GAVE ITS FOUR SIBLING ROWS (Position one, as recommended)
+
+**Taken 2026-09-04 by the session that booted on `cowork_handoff_entry_ninety_eight.md`, performed the
+ordinary session-start read in full, and verified the seventh batch at the objects before the surface
+was written.** **The user's words, verbatim: "I agree with your recommendation."** The whole surface
+was delivered as user-visible text in one turn and the choice question put in a later one (**D-249**);
+between the two the user asked whether what serves best possible inference is lost by the placement or
+only moved to another stage, and that was answered at the objects before the question was put. **A "go
+on" preceded the choice question and was not read as the ratification**; the words above are.
+
+**The facts, each checked at its object.**
+
+- **The reading file's §5**, the closed vocabulary: **ADOPTED — proposed** is admitted only where the
+  statement is *"not implementation-describing, not another charter's, not historical, and the worth
+  test does not discard it"*; **QUARANTINED** is *"it states how the implementation currently works, or
+  a measured property of it"*, and *"The row writes the audit question in one sentence."*
+- **Row 4.3 at the reading file.** Its statement names the built function's contract and eleven
+  per-note facts, two of which — the in-region duration and staff-eligibility — the derivation does not
+  name. Its current-text axis: **S-29 AGREES** on the half-open region, **S-3 DIFFERS** over the five
+  facts S-3 requires and the eleven do not carry. Its disposition: **ADOPTED — proposed**, *travelling
+  with Row 3.42*, adding one question of its own — whether a clipped in-region duration belongs in L0
+  at all, being a function of the caller's region.
+- **Ruling 62 (§3bq) item 4**, at this record: it covers Row 14.9 with Rows 1.3, 3.31, 3.41, 3.42, 3.48
+  and 4.3, and rules *"the outgoing eleven- and twelve-field lists are descriptions of builds and
+  targets, placed by S-3 — carried where they match, QUARANTINED where they describe code, as the
+  reading file already has 1.3 and 4.3."*
+- **The six siblings as the fifth writing placed them**, each read at its row: **1.3** QUARANTINED,
+  unchanged; **3.31 ADOPTED — carried**, the *carried where they match* branch, its subject being the
+  layer's input list rather than the per-note fields; **3.41**, **3.42**, **3.48** and **14.9** all
+  QUARANTINED, each having carried ADOPTED — proposed before.
+- **Row 3.48's ruled line reads *"travelling with Row 3.42"***, the same words Row 4.3's proposed
+  disposition carries.
+- **Row 14.9 has Row 4.3's own two-part shape and was quarantined whole**: one derived statement
+  differing over the field list (S-3) and one agreeing about something else (S-18, the no-filtering
+  discipline). **Its proposed disposition names Row 4.3** among the rows it travels with.
+- **A split placement was available and was not used.** §13a records that two rows carry two ruled
+  lines each — **Row 1.7** (Ruling 45: QUARANTINED for its audit question, ADOPTED — carried in
+  substance for its content) and **Row 10.21** — so one ruling may place two halves of a row. Ruling 62
+  had that option on Row 14.9 and did not take it.
+- **§11 already carries Row 1.3's audit question**, which asks *"do the five per-note facts S-3
+  requires and the eleven fields do not carry reach any consumer, and does `staffEligible` belong to
+  L0's supplied facts or to an eligibility decision above it?"* — so two of the three questions about
+  this field list already wait at the audit.
+
+**The two positions, weighed.**
+
+*Position one* — **QUARANTINED**. Towards the objective: the specification is what the audit measures
+the code against, and its value rests on the line between what the analysis is required to do and what
+the code happens to do being kept clean; the two fields peculiar to the build would otherwise stand as
+candidate requirements on the strength of being in the code, which is the one argument this comparison
+exists to refuse. Towards the principles: **#10**, since the file's own vocabulary forbids ADOPTED —
+proposed on an implementation-describing statement and the row would otherwise state something false
+about itself; **#6**, one rule applied one way across its own row set; **#19**, the eleven fields being
+established as being in the code and as nothing else. **Cost, declared:** the row's own question moves
+from the proposals list to the audit, which is a longer route to an answer if the answer turns out to
+be that the in-region duration should be required; no information is lost, S-29's AGREES standing on
+its own line, which §5 states *"is evidence about the present text and is never a verdict"*.
+
+*Position two* — **left at ADOPTED — proposed**. Towards the objective: the row's question would reach
+the user sooner than the audit reaches it. Towards the principles: it requires the file to keep a
+disposition its own definition of that disposition excludes (**#10**), and one ruling to have been
+applied one way to four rows and the opposite way to a fifth with no difference between them that the
+ruling names; the only candidate difference — that Row 4.3's statement also carries something the
+derivation agrees with — is refuted by Row 14.9, which has that property and was quarantined by the
+same ruling in the same act. **Cost, declared:** five rows about the same field list would say opposite
+things, and the audit would have to reconstruct which is the mistake.
+
+*The third shape, splitting the row*, was considered and **not put as a live alternative**: it is
+available under §13a's Row 1.7 precedent, and Ruling 62 declined it on the row of the same shape.
+
+**Both axes to position one. Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** **Row 4.3 is QUARANTINED**, placed under Ruling 62's item 4 by this ruling, on
+the ground its four sibling rows were placed on. The placement line is written by the next dispatch, at
+the foot of the row, in the shape the file's other ruled lines use, and it carries the audit question
+in one sentence as §5 requires — whether the in-region duration belongs to L0's supplied facts at all,
+being a property of the query rather than of the note. **§13b's paragraph reading *"No line here places
+Row 4.3"* becomes false the moment the line is written and is corrected in the same act, its former
+wording preserved at the site (#12)**; **§13a and §13b each gain a foot note** recording that one
+further ruled line exists and where it is counted, their own figures untouched, which is the shape the
+seventh writing used for §13a. Nothing is applied by this ruling; no file is written by it. **No
+decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**What it does NOT do.** It does not correct Ruling 62's closing phrase (below). It does not re-derive
+§11 or §12 (below). It touches no other row, edits no proposed disposition, moves no figure of §13,
+§13a or §13b, opens no outgoing text, and changes nothing in the derived specification. It authorizes
+no fix, no design, no measurement and no inference change.
+
+**★ ONE THING REPORTED WITH IT, AND DELIBERATELY NOT DECIDED.** Ruling 62's closing phrase — *"as the
+reading file already has 1.3 and 4.3"* — is, read as a statement about those two rows' dispositions at
+the time, true of 1.3 and untrue of 4.3; read as naming which rows are in scope, it is sound. Nothing
+about this placement turns on which reading governs, both giving the same answer. **D-674 answers what
+to do with it without a ruling:** it corrects the body of a live governing surface, re-banners a dated
+record of an act without rewriting its body, and states that a document the two branches do not decide
+is **reported** rather than bannered or rewritten by stretch. A sitting record of the user's rulings is
+not clearly either, so the phrase is reported here and left standing.
+
+**★ AND ONE OWED ACT SURFACED, NOT TAKEN.** The reading file's **§11** (every QUARANTINED row's audit
+question) and **§12** (every ADOPTED — proposed row) both open *"★ COMPLETE OVER THE POPULATION"* and
+were derived from the PROPOSED dispositions. The ruled dispositions since have not been folded into
+them: Rows **3.41**, **3.42**, **3.48** and **14.9** are quarantined at their rows and are not in §11,
+and Row 4.3's placement makes a fifth. **This is not pure apparatus** — the audit reads §11, so a
+quarantined row whose question is not in §11 is a question the audit does not meet — and it is
+therefore surfaced rather than left to be noticed. **It is not folded into this ruling's dispatch**:
+repairing one of the five would leave the file inconsistent in a new way, and the act that closes it is
+one re-derivation of both sections against the ruled dispositions, which is its own scoped act.
+
 ## 4. What this ruling does NOT do
 
 It authorizes no fix, no design, no inference change, no measurement, and no amendment to any
