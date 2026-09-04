@@ -6126,6 +6126,779 @@ set bearing on this was not seen.
 **No decisions-register identity is allocated** — that register cannot accept one, and
 `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
 
+## 3cj. Ruling 81 — THE L2 BOOT PACK CARRIES A WITHHELD FAMILY, DERIVED OVER A CRITERION BUILT FROM L2's OWN CHARTER AND RULED LIST BY LIST AS THE PILOT'S WAS (Position B, as recommended)
+
+**Taken 2026-09-04 by the session that booted on `cowork_handoff_entry_one_hundred_and_one.md`, after
+the ordinary session-start read in full — `CLAUDE.md` whole, `DECISIONS.md` whole, `STATUS.md`, and the
+derived gating answer read at its own field — with the tip verified at both ref files before the
+surface was written, and with `tools/audit/gen_derivation_boot_pack.py`, `FRAMEWORK.md` §5's L2
+charter, §3al.4 of this record and `cowork_rulings_2026_08_22_withheld_family_sitting.md` read at the
+objects.** **The user's words, verbatim: "I agree on B".**
+
+**★ THE FORM, RECORDED EXACTLY, BECAUSE IT DEPARTED FROM D-249's ORDER IN THE SAME WAY RULING 80 DID
+ONE RULING EARLIER.** The whole surface was delivered as user-visible text in one turn and closed by
+saying in terms that the choice question would come in the next message; **the user answered before
+that question was put.** What D-249 exists to secure — that the surface is read before it is answered —
+holds, the answer having come after the whole surface was delivered; what did not happen is the asking.
+**No choice question is owed and none was put.** The surface was delivered twice: once in the turn
+before, and once again fact-checked at the objects on the user's own instruction, which is the delivery
+he ruled on.
+
+**What was being decided.** A *withheld family* is the part of the ratified design-intent extract that
+is cut out of a blind deriving session's boot pack, so that the session cannot read the answer it is
+chartered to derive. L2 is the next deriving subject under Ruling 10. **The question was whether L2's
+pack carries such a family at all, and the record does not answer it** — searched before the surface
+was written, on the user's bar of 2026-08-28: no ruling of this record reaches L2's family, and the two
+empty families that exist rest on grounds each stated not to extend.
+
+**The facts, each checked at its object.**
+
+- **The three subjects the generator carries, read at its authored tables.** `harmony-boundary` — the
+  pilot — withholds **SIXTEEN identities** (the entries graded `IN` in the authored verdict table,
+  counted at the file), **ONE document** (`cowork_joint_estimator_factorization.md`) and **TWO passages
+  of `CLAUDE.md`**. `scoring-model` — every term of its criterion empty, and no identity, document or
+  passage. `l0-l1` — the same emptiness, its ground the dispatch's order on the `scoring-model`
+  precedent, with the generator's own comment recording that **no ruling of 2026-08-31 says of `l0-l1`
+  what a ruling says of `scoring-model`**, so that ground is **declared, not established (#24)**.
+- **What the empty family produced, at §3al.4 of this record.** The `l0-l1` session met **eight**
+  decisions-register entries stating how the analysis currently slices, what its fact layer carries and
+  how it ranks evidence, and stopped under the stop-on-meeting clause without opening the rest of the
+  largest member.
+- **L2's charter, at `FRAMEWORK.md` §5, asks FOUR things in one sentence:** *"over this music, what is
+  the tonality at each moment, where does each harmony give way to the next, which sounding notes
+  belong to the harmony and which elaborate it, and what chord is read over each span?"*
+- **The pilot's family reaches ONE of those four and part of the evidence question behind it.** Its
+  subject is *"how the analysis should decide where one chord ends and the next begins, and what
+  evidence decides it"*, read at the generator's own words. **Its sixteen withheld identities contain
+  no entry stating the current answer for the other three limbs** — D-524 (the mode axis), D-526 (the
+  chord axis as scale degree, the chord symbol derived), D-527 (no live non-chord-tone cleaning stage),
+  D-528 (the signature and declared mode as a weak fitted soft prior) and D-114 (the decoder commits,
+  no abstention on the key axis) are **absent from it**, established by reading the list entry by entry.
+- **The procedure precedent, at `cowork_rulings_2026_08_22_withheld_family_sitting.md`.** The pilot's
+  family was ruled across **five lists, one list per turn**, each list put self-contained with its
+  alternatives, the choice question in the turn after. **Its §7 records the standing bound:** *"The
+  criterion's reach stays unmeasured and the family does not claim completeness."*
+
+**The positions, weighed towards the ultimate objective and towards the guiding principles.**
+*Position A — empty, on the `l0-l1` precedent:* cheapest, and costs the user no ruling turn; but L2 is
+the layer the shipped code most fully implements, so every agreement the later comparison finds would
+be unreadable, nothing separating a derivation from a recollection. **Towards the objective it rates
+lowest** — the reason for deriving L2 is to obtain the specification the theory and the evidence
+support, and a session that has read the implementation's own decisions cannot be shown to have
+produced one. **Towards the principles it fails #19**, an independence claim resting on nothing
+measured being the merely-unfalsified thing that principle refuses. *Position C — reuse the pilot's
+criterion unchanged:* nothing new to author, and it covers the segmentation limb; but it is a partial
+cut presented as a cut, the pack's read-me telling the session a family has been withheld while the
+decisions on tonality, elaboration and chord reading stand in front of it. **Weakest towards the
+principles**, being A's failure with the aggravation that it looks protected. *Position B — derive the
+family over a criterion built from L2's own charter and rule it list by list:* **highest towards the
+objective**, being the only position under which L2's derived specification carries an independence
+claim worth anything, and **what #19 and #2 ask for**, the criterion targeting the specific question
+rather than throwing a general precaution over everything. Its cost is the user's own reading time
+across several ruling turns, and it inherits the unmeasured-reach bound stated above. **Both axes to B;
+Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** **L2's boot pack CARRIES a withheld family.** It is **DERIVED over a criterion
+built from L2's own four-limbed charter**, not inherited from the pilot's one-limbed subject, and it is
+**RULED LIST BY LIST as the pilot's was**: the tool derives the candidates, every candidate carries an
+authored verdict with its finding, its date and its reason, the lists are put to the user one per turn,
+and **no identity is withheld that the user has not ruled.** The unmeasured-reach bound is carried with
+it and stated on the artifact, the family claiming no completeness.
+
+**What this ruling does NOT do.** **It does not fix the criterion's content** — which terms, which
+groups, which documents, which passages — that being a separate decision which goes in its own turn.
+**It authors no verdict and withholds nothing yet.** It touches no passage of `CLAUDE.md`. **It does
+not reopen `l0-l1`'s emptiness**, which is spent and frozen at its blobs. It renders no pack, edits no
+generator, boots no session, and takes no position on the derived L2 specification, on any row of the
+reading file, or on the deriving session's independence. **No decisions-register identity is
+allocated** — that register cannot accept one and `cowork_register_rule_c_suspension_2026_08_28.md` is
+the route.
+
+**★ AN ERROR OF THIS SIDE, COUNTED.** The surface's FIRST delivery said the pilot withholds **fifteen**
+identities. **The tool carries sixteen.** Ruling 1 of the 2026-08-22 sitting ruled fifteen and Ruling 3
+of the same sitting moved a sixteenth in; this side read the first and did not apply the third, though
+both were read in the same act — a claim written without going to the object that would settle it, the
+same family the hundredth and hundred-and-first entries counted. **It was found by this side's own
+fact-check of the surface, before the ruling was taken**, corrected in the fact-checked delivery with
+the correction named to the user there, and **the ruling above was taken on the corrected figure.**
+*(The former wording, preserved (#12): "fifteen ratified decisions withheld".)*
+
+## 3ck. Ruling 82 — THE CRITERION'S **GROUP TERM** FOR L2's WITHHELD FAMILY IS CUT AT ITS WIDEST: THE SIX REGISTER GROUPS THE CHARTER'S FOUR LIMBS AND THEIR VOCABULARY REACH — A, C, D, E, F, G. **THE HOME-DOCUMENT LIST, THE KEYWORD LIST AND THE DERIVED CROSS-REFERENCE ADDITIONS ARE EACH A SEPARATE DECISION AND ARE STILL OWED** (Option 3, as recommended)
+
+**Taken 2026-09-04 by the session that booted on `cowork_handoff_entry_one_hundred_and_two.md`, after
+the ordinary session-start read in full — `CLAUDE.md` whole, `DECISIONS.md` whole, `STATUS.md`, and the
+derived gating answer read at its own field — with the tip verified at BOTH ref files before the
+surface was written (`5922a1f5bc62073681ed4187b5e71bb14e302954`, `origin/master` equal), and with
+`FRAMEWORK.md` §5's L2 charter, the criterion, the candidate derivation and the authored verdict table
+of `tools/audit/gen_derivation_boot_pack.py`, `cowork_rulings_2026_08_22_withheld_family_sitting.md`
+whole and §3cj of this record read at the objects before the surface; and with the derived manifest
+`tools/audit/derivation_boot_pack.json` read at the objects AFTERWARDS, on the user's own
+instruction.** **The user's words, verbatim: "Fact check option 3 - I agree with it, unless the fact
+check changes anything.", and after the fact check was delivered whole, "ok, continue".**
+
+**★ THE FORM, RECORDED EXACTLY.** The whole surface was delivered as user-visible text in one turn,
+carrying no question and closing by saying in terms that the choice question would come in the next
+message (D-249, Ruling 1, Ruling 21). **The user answered before that question was put, and his answer
+was CONDITIONAL on a fact check.** The fact check was performed and delivered whole as its own turn,
+naming three corrections to the surface, one omission from it and one counted error of this side,
+**before this ruling was recorded**. What D-249 exists to secure holds twice: the surface was read
+before it was answered, and the corrections to the surface were read before the answer was acted on.
+**No choice question was put and none is owed.**
+
+### What was being decided
+
+A **withheld family** is the part of the ratified design-intent extract cut out of a blind deriving
+session's boot pack, so that the session cannot read the answer it is chartered to derive. The
+**criterion** is the written rule from which a measurement tool derives the CANDIDATES for that family;
+every candidate then carries an authored verdict — withheld, admitted, or *the entry's own text does
+not settle it* — and the lists go to the user, one per turn.
+
+Ruling 81 (§3cj) settled THAT L2's pack carries such a family, that it is derived over a criterion
+built from L2's own four-limbed charter rather than inherited from the pilot's one-limbed subject, and
+that it is ruled list by list. **It left the criterion's CONTENT open, and this is the first part of
+that content: how wide the criterion's GROUP term is cut.**
+
+The criterion has five terms, each admitting an entry to the candidate list on its own: a list of
+whole **register groups**; a list of **home documents**; named **passages of `ARCHITECTURE.md`**,
+located by their own text on every run; a **keyword list** checked against four fields of every entry;
+and **identities named outright**.
+
+### The facts, each checked at its object
+
+- **The register's group sizes, counted at the INDEX and reconciled.** A (the estimator architecture)
+  **35**, C (cross-cutting analysis contracts) **69**, D (Layer 1, the note model) **6**, E (Layer 2,
+  the slicer) **1**, F (Layer 3, key and mode) **29**, G (Layer 4, chord identity) **47**. Summed with
+  every other group the count is **477**, which is the register's own stated total, so the counting
+  reconciles at the file.
+- **★ THOSE ARE REGISTER ROWS AND THE CRITERION DOES NOT SWEEP THE REGISTER.** Read at the manifest's
+  own `counted` block, the population the criterion sweeps is the **DESIGN-INTENT class, 244 entries**.
+  The group sizes above are therefore an UPPER bound on what a group term reaches, in a ratio this side
+  did not derive — a bound stated, not a figure asserted (#24).
+- **The pilot's derivation, at the manifest.** **75 candidates**; verdicts **IN 16, OUT 59, UNPLACED
+  0**. This reconciles exactly with the 2026-08-22 sitting, which ruled 15 IN, 57 OUT and 3 UNPLACED
+  (75), Ruling 3 of that sitting moving D-569 to IN and D-457 and D-526 to OUT.
+- **★ TERM BY TERM, COUNTED AT EVERY CANDIDATE'S OWN `matched_by`: THE WHOLE-GROUP TERM FIRED ONCE AND
+  WITHHELD NOTHING.** The group term matched **one** candidate, D-605, whose only route it was, and
+  **D-605 was ruled OUT**. The home-document term matched two (D-453, D-565); the passage term one
+  (D-057); the named-identity term one (D-057). **Every other candidate reached the list by keyword**,
+  and **only two of the seventy-five had no keyword route at all** — D-605 and D-453.
+- **AND THE COUNTER-INSTANCE, WHICH IS WHY THIS DOES NOT SETTLE THE QUESTION AGAINST THE NON-KEYWORD
+  TERMS.** D-453's sole route was the home-document term and **D-453 was ruled IN** — one measured
+  case of a term of this kind withholding an entry no keyword would have found. And group E holds ONE
+  design-intent entry, so the group term was never given anything to do; groups A, C, F and G are not
+  in that position.
+- **★ GROUP C IS MEASURED TO HOLD WITHHELD MATERIAL THAT NO GROUP TERM WAS CATCHING.** D-022 (the
+  finest-grain founding principle) and D-023 (the constant-sonority slice as the atomic unit) both
+  carry `"group": "C"` and both reached the pilot's candidate list **by keyword alone** — no group, no
+  home document, no passage — and **both were ruled IN**. This is the fact the widest option was
+  argued on, and it holds at the object.
+- **★ THE PACK WITHHOLDS 33 IDENTITIES, NOT 16, AND THE SECOND MECHANISM IS DERIVED RATHER THAN
+  AUTHORED.** Sixteen are the authored `IN` verdicts; a further **seventeen** are added by a derivation
+  over every design-intent entry whose own text QUOTES OR CROSS-REFERENCES a withheld identity or names
+  a withheld document, searching `rationale` and `status_source`, **two fields the pack does not
+  render**. Its bound is stated on the artifact: **one pass, from the AUTHORED identities only, NOT
+  transitive.**
+- **The pack's arithmetic closes.** 244 design-intent entries = **208 rendered + 33 withheld + 3
+  listed-and-not-rendered** (the three leak entries Ruling 4 of the 2026-08-22 sitting left listed).
+- **THE TOOL'S OWN STOPS, AND THE ONE IT DOES NOT HAVE.** It STOPs on a derived candidate carrying no
+  verdict and on a verdict naming an entry the derivation does not return. **It has no check whatever
+  for an entry that never became a candidate**, and its manifest says so in its own words: *"an entry
+  that bears on this subject in words none of the criterion's terms carry would not appear here, and an
+  empty match would be evidence of nothing."*
+
+### The positions, weighed towards the ultimate objective and towards the guiding principles
+
+*Option 1 — no whole groups at all; reach only by home document, passage, keywords and named
+identities.* Fewest ruling turns. **Lowest towards the objective**: its failure mode is silent and
+one-directional, an entry stating a current answer in words the keyword list does not carry never
+becoming a candidate and nothing reporting it. **Towards the principles it fails #19**, an
+independence claim resting on a cut whose reach nothing establishes.
+
+*Option 2 — whole groups for the four limb-owning subjects, A, E, F and G.* **Strong towards the
+objective**: an entry filed under a subject the charter asks about cannot escape on wording. **Its
+gap:** the charter's third limb — which sounding notes belong to the harmony and which elaborate it —
+is stated in the note model's and the cross-cutting contracts' vocabulary, so groups C and D stay
+reachable only by keyword, which is exactly the position the pilot was in when D-022 and D-023 came
+through on a keyword rather than by design.
+
+*Option 3 — option 2 plus groups C and D.* **Highest towards the objective**, closing that gap over a
+group MEASURED to hold withheld material rather than one merely suspected of it, and **the strongest
+reading of #19**. **Its tension is with #2**, the specific over the general: group C is genuinely
+mixed and a share of the reading will produce verdicts of *this bears on something else*. **Both axes
+to Option 3.**
+
+**★ THE COST WAS CORRECTED IN THE FACT CHECK AND RUNS IN THIS OPTION'S FAVOR.** The population is 244
+and not 477; and the user's ruling turns scale with the number of LISTS, not with the number of
+candidates — the pilot put seventy-five candidates in five turns, one list carrying fifty-seven
+entries. What a wider cut costs is reading INSIDE a list, not a turn per entry.
+
+### What was decided
+
+**The criterion's GROUP term for L2 is the six register groups A, C, D, E, F and G** — the estimator
+architecture; the cross-cutting analysis contracts; Layer 1, the note model; Layer 2, the slicer;
+Layer 3, key and mode; and Layer 4, chord identity. A, E, F and G because their subjects are the
+charter's four limbs; C and D because the charter's third limb is stated in their vocabulary and
+because group C is measured to hold withheld material. **The unmeasured-reach bound is carried and
+restated on the artifact; the family claims no completeness.**
+
+### What this ruling does NOT do
+
+**It does not fix the KEYWORD LIST**, which is measured to have produced seventy-three of the pilot's
+seventy-five candidates and is therefore the load-bearing term — **a separate decision, still owed, in
+its own turn.** **It does not fix the HOME-DOCUMENT LIST**: the surface named that term only as *the
+documents where those layers' specifications live*, which is not a list, so nothing about it is ruled
+here. **It does not settle whether Ruling 81's clause *no identity is withheld that the user has not
+ruled* reaches the seventeen DERIVED cross-reference additions** — on the pilot those were never a
+list put to the user, the 2026-08-22 sitting having ruled five lists of which none was this; **the
+record does not settle it and this ruling does not.**
+
+**It authors no verdict and withholds nothing.** It does not touch the generator, render a pack, boot
+a session, or take any position on the derived L2 specification. It touches no passage of `CLAUDE.md`.
+It does not reopen `l0-l1`'s emptiness, which is spent and frozen at its blobs. **No decisions-register
+identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**★ A SECOND TRACKED MODIFICATION OF THE SAME FILE IS DECLARED HERE.** §3cj declared one; this section
+is a second, spliced by the same method immediately before `## 4. What this ruling does NOT do`, that
+anchor proven to occur exactly once before the insertion. **Additions only; the next dispatch's Task 0
+lands it and the executing side proves additions-only at the object.**
+
+**★ AN ERROR OF THIS SIDE, COUNTED.** The surface was written **without opening
+`tools/audit/derivation_boot_pack.json`**, the derived manifest that records how each criterion term
+actually behaved on the pilot. Two consequences followed and both reached the user: the group sizes
+were quoted from the **477**-row register rather than the **244**-entry design-intent class the
+criterion actually sweeps; and the decision was FRAMED on the group term while the keyword term was
+doing seventy-three of seventy-five candidates' work, so the surface put the second most important
+half of the criterion and treated the first as common ground. **Found by this side's own fact check,
+performed on the user's instruction and delivered whole before this ruling was recorded**, with the
+option's answer unchanged by it and the framing defect named to him in terms. It is the family the
+hundredth, hundred-and-first and hundred-and-second entries have each counted: **a claim written
+without going to the object that would settle it.**
+
+## 3cl. Ruling 83 — THE CRITERION'S REMAINING REACH FOR L2's WITHHELD FAMILY IS **BOTH TERMS AT THEIR STRONGEST**: THE **HOME DOCUMENTS** AND THE **NAMED `ARCHITECTURE.md` PASSAGES** ARE CUT AT THEIR WIDEST, **AND** THE **KEYWORD LIST** IS WIDENED TO ALL FOUR CHARTER LIMBS. **THE GROUP TERM STAYS EXACTLY WHERE RULING 82 PUT IT.** **§3ck's OWED LIST IS CORRECTED HERE, ADDITIVELY: IT OMITTED THE PASSAGE TERM.**
+
+**Taken 2026-09-04 by the session that booted on `cowork_handoff_entry_one_hundred_and_three.md`,
+after the ordinary session-start read in full — `CLAUDE.md` whole, `DECISIONS.md` whole, `STATUS.md`,
+and the derived gating answer read at its own field (218 gating identities, 25 non-gating, 243 open)
+— with the tip verified at BOTH ref files at boot and again immediately before this write
+(`5922a1f5bc62073681ed4187b5e71bb14e302954`, `origin/master` equal, unchanged between them), and with
+the derived manifest `tools/audit/derivation_boot_pack.json`, the decisions register's own INDEX and
+`cowork_design_doc_template.md`'s filing convention read at the objects before this section was
+written.** **The user's words, verbatim: "the one that best meets ultimate objective", and, after this
+side reported a defect in its own surface and proposed a reading neither position was, "take it as
+ruling".**
+
+**★ THE FORM, RECORDED EXACTLY, BECAUSE THE RULED CONTENT IS NOT ONE OF THE POSITIONS PUT.** The
+decision surface was written and delivered whole by the PREVIOUS session as a turn's final response
+carrying no question, and the user answered it; no choice question had been put. This session
+performed the boot read, verified the tip, took the read-only home derivation the hundred-and-third
+entry named as owed, and **put the choice question in its own later turn** (D-249, Ruling 1, Ruling
+21). **The user did not name a position. He named a TEST** — the ultimate objective — and left the
+application to this side. **Applying it exposed a defect in this side's own surface**, reported to him
+unprompted in the next turn together with the reading the corrected facts give; **he ruled on that
+corrected reading and not on either position as put.** What D-249 exists to secure holds: the surface
+was read before it was answered, and the correction to the surface was read before the answer was
+acted on.
+
+### What was being decided
+
+Ruling 82 (§3ck) settled the first of the criterion's five terms — the **group term** — at the six
+register groups A, C, D, E, F and G, which is 187 of the register's 477 rows. What it left open is how
+the criterion reaches the **other 290 rows**. Three of the five terms can do that and all three were
+unruled: the list of **home documents**, the named **passages of `ARCHITECTURE.md`** located by their
+own text on every run, and the **keyword list**. They trade directly against one another, **so they
+are ONE decision and not three** — which is why they were put in one turn.
+
+**★ §3ck NAMED ONLY TWO OF THE THREE AS OWED, AND THE OMISSION IS CORRECTED HERE.** Its *What this
+ruling does NOT do* section names the keyword list, the home-document list and the derived
+cross-reference question, and **does not mention the passage term at all** — neither ruling it nor
+listing it as owed. **The repair is made HERE, additively, and §3ck's own wording is untouched at its
+site (#12).** *Why the repair is additive rather than a correction to §3ck's body:* the filing
+convention (**D-674**) was read at its home this session, and it does not decide a ruling record. Its
+two branches are enumerated as *completed audits, probe reports, dossiers and falsified design
+documents* on the one side and *a first-read surface, a procedure, an inventory a task must trust* on
+the other; the enumerated kind list in the same document carries **Ruling record** as its own kind,
+listed separately from **Report or dossier**, so branch one does not reach it by its examples. The
+convention's own rule for that case is explicit — *a document the two branches do not decide is not
+bannered by stretch and not rewritten by stretch; it is reported* — **so the branch call is a STOP to
+the user and this side does not take it.** It is **MOOT for this repair**, which needs neither branch:
+this section settles all three of the remaining terms, so §3ck's owed list is superseded rather than
+edited.
+
+### The facts, each checked at its object this session
+
+- **★ THE CANDIDATE DISTRIBUTION BY REGISTER GROUP WAS RE-DERIVED AT THE MANIFEST'S OWN `group`
+  FIELDS** and reproduces the hundred-and-third entry's figures exactly: **H 24 · G 13 · A 11 · C 11 ·
+  F 7 · B 2 · D 1 · E 1 · I 1 · J 1 · M 1 · Q 1 · U 1**, summing to 75; **44** inside the six swept
+  groups and **31** outside them.
+- **★ WHERE THOSE THIRTY-ONE ARE WRITTEN DOWN, read at each entry's Home column in the register
+  INDEX.** `cowork_phrase_boundary_design.md` **8** · `ARCHITECTURE.md` **5** ·
+  `cowork_layer6_grouping_design.md` **4** · `docs/scoring_model.md` **3** ·
+  `cowork_layer5_function_design.md` **3** · `cowork_layer5_engagement_design.md` **3** ·
+  `cowork_voiceleading_axis_design.md` **2** · `cowork_notation_output_contract.md`,
+  `cowork_notation_adoption_increment.md` and `cowork_union_search_record.md` **1** each. **The sum
+  closes at 31.**
+- **★ AND ACROSS ALL 290 UNSWEPT REGISTER ROWS**, the same way: `CLAUDE.md` **68** ·
+  `ARCHITECTURE.md` **55** · `cowork_audit_protocol.md` **39** · `docs/scoring_model.md` **10** ·
+  `cowork_phrase_boundary_design.md` **10** · `cowork_voiceleading_axis_design.md` **10** ·
+  `cowork_layer6_grouping_design.md` **9** · `cowork_score_census.md` **9** ·
+  `cowork_progression_schema_design.md` **8** · `docs/implementation_roadmap.md` **8** ·
+  `docs/llm_integration.md` **7** · `cowork_design_doc_template.md` **6** ·
+  `cowork_layer5_function_design.md` **5** · `cowork_progression_schema_dictionary.md` **5** ·
+  `cowork_layer5_engagement_design.md` **4**, and a tail of threes, twos and ones. **The sum closes at
+  290.** **The two dominant homes are not analysis documents at all**, which is why a home-document
+  term cut over this register reaches far less L2 material than its raw size suggests.
+- **★ THE BOUND ON BOTH DISTRIBUTIONS, STATED AND NOT DISCHARGED (#24).** Every figure above counts
+  REGISTER rows. The criterion sweeps the **design-intent class, 244 of 477**, and this side **did not
+  derive** which of the 290 unswept rows are design-intent. Each figure is therefore an UPPER bound on
+  what a home-document term would reach, in a ratio nobody has derived.
+- **★ THE THREE WITHHELD ENTRIES OUTSIDE THE SWEPT GROUPS, AND HOW EACH GOT IN.** **D-383** —
+  the ranking of evidence, *bass, inversion, spelling and key-consistency decide; a licensed
+  progression is only a tie-break and may never override a committed root* — reached the candidate
+  list **only** because the letters of the keyword `slice` occur inside the code identifier
+  `isLicensedProgression`, a match the tool publishes in its own context field. Its home is
+  `cowork_layer5_engagement_design.md` §3.2. **D-491** came in on the real word `sounding`, homed at
+  `docs/scoring_model.md`. **D-545** came in on `slice` inside the compound *note-and-slice* and on
+  `slicing` as a whole word, homed at `ARCHITECTURE.md`. **So exactly ONE of the three has no honest
+  keyword route, and a named home document catches it by design.**
+- **★ THE MEASURED PRICE OF NAMING THAT DOCUMENT, counted at the register INDEX.**
+  `cowork_layer5_engagement_design.md` is the home of **8** register rows; **4** of those (D-380,
+  D-381, D-385, D-386) are group G entries the group term already sweeps, so naming it adds **4 or
+  fewer** — fewer, because the design-intent bound above applies. For contrast, `docs/scoring_model.md`
+  is the home of **35** rows and `ARCHITECTURE.md` of **131**, which is why the passage term exists for
+  the latter instead of a document term.
+- **THE TOOL'S OWN STOPS, AND THE ONE IT DOES NOT HAVE**, unchanged and carried: it STOPs on a
+  candidate carrying no verdict and on a verdict naming an entry the derivation does not return, and
+  **it has no check whatever for an entry that never became a candidate**. Its manifest says so in its
+  own words: *"an entry that bears on this subject in words none of the criterion's terms carry would
+  not appear here, and an empty match would be evidence of nothing."*
+
+### ★ THE CORRECTION THAT DECIDED THE RULING, AND IT IS A CORRECTION OF THIS SIDE'S OWN SURFACE
+
+**BEING MADE A CANDIDATE IS NOT BEING WITHHELD.** The criterion produces candidates; every candidate
+then carries an **authored verdict**, and a candidate ruled OUT is **rendered into the pack**. The
+pilot's own arithmetic settles it and was read at the manifest: **244 design-intent entries = 208
+rendered + 33 withheld + 3 listed-and-not-rendered**, with **75 candidates, 16 IN and 59 OUT** — so
+the 59 ruled OUT are among the 208 rendered.
+
+**This side's surface had rated the three positions as though wider reach meant a more heavily
+stripped pack. It does not.** The cost of a wider term is the **labour of authoring more verdicts**,
+and — the real cost towards the objective — **the risk that an authored verdict is wrong**: a hundred
+verdicts written carelessly protect the objective worse than seventy-five written carefully. **A pack
+is not over-stripped by a wide criterion; it is over-stripped by a wrong verdict.**
+
+**Two consequences followed, and both are recorded because both reached the user.** First, **the two
+positions put to him each bundled two independent choices** — whether to name home documents and
+passages, and whether to widen the keyword list — **and the ultimate objective does not require that
+bundle.** Named reach catches what no word list can, measured once at D-453, whose sole route was the
+home-document term and which was ruled IN, and now a second time at D-383. Lexical reach catches what
+nobody thought to name. **They are not substitutes; each covers the other's blind side.** Second,
+**this side's earlier closing of the group-H position was overstated and is corrected here**: it was
+written as *buys nothing measurable*, which reads as *buys nothing*. What sweeping group H whole would
+buy is **UNMEASURED, not zero** — a group sweep reaches entries carrying none of the criterion's
+words, and nobody has looked at the group-H entries the keyword list never found.
+
+### What was decided
+
+**The criterion's remaining reach for L2 is BOTH non-group terms at their strongest, TOGETHER.**
+
+1. **The HOME-DOCUMENT term is cut at its widest** — the documents where the unswept groups' L2
+   material is measured to live are named, `cowork_layer5_engagement_design.md` among them as the home
+   of the one withheld entry with no honest keyword route.
+2. **The `ARCHITECTURE.md` PASSAGE term is cut at its widest** — the passages carrying that file's own
+   L2 material are named and located by their own text on every run, the file being far too large to
+   name as a document.
+3. **The KEYWORD LIST is WIDENED to all four limbs of the charter**, rather than kept near the pilot's
+   one-limbed list.
+4. **The GROUP term is UNMOVED. Ruling 82 stands exactly as taken** — A, C, D, E, F, G, and group H is
+   not swept.
+
+*The ground, in the user's own test.* The objective is that the deriving session cannot read the
+answer it is chartered to derive, and the failure that matters is an answer-stating entry left in the
+pack. Once candidacy is distinguished from withholding, **reach serves that objective directly and its
+only real price is the care with which verdicts are authored.** Each of the two terms is measured to
+catch what the other misses, so taking either alone spends a blind side for nothing. **Towards #19**
+this is the strongest reading available: the named half is exact and checkable, and the widened half
+is the only thing that reaches what nobody thought to name. **Towards #2** the named half is what
+keeps the widened half from being a general sweep.
+
+*Why the group term is left where it is, stated as a judgment and not as a measurement.* Extending it
+to group H would reach further again — that is now conceded rather than denied. It is declined here on
+two grounds that are not about reach: it would **amend a ruling already taken**, and it is the
+**largest single addition to the verdict table**, where the authored verdict is the thing this ruling
+has just identified as the real risk to the objective.
+
+### What this ruling does NOT do
+
+**It does not settle the derived cross-reference question** — whether Ruling 81's clause *no identity
+is withheld that the user has not ruled* reaches the seventeen DERIVED cross-reference additions. §3ck
+left that owed, the record does not settle it, and **this ruling does not.** It remains the user's.
+
+**It does not name the members of any of the three terms.** It rules how wide each is cut. **The
+actual lists — which documents, which passages, which keywords — are derived and then ruled list by
+list, one list per turn**, exactly as Ruling 81 sequenced it.
+
+**★ IT DOES NOT MEASURE WHAT THE WIDENED KEYWORD LIST COSTS, AND THAT IS OWED BEFORE THE KEYWORD LIST
+IS RULED.** How many candidates a keyword list widened to four limbs produces is **unmeasured**. The
+measurement is a read-only run of the derivation and is cheap; **this side did not take it**, the
+hundred-and-third entry barring the generator until the criterion is ruled whole. **If that count
+comes back large, the trade between reach and carefully-authored verdicts becomes real rather than
+theoretical**, and the user was told so in the same turn in which he ruled.
+
+**It authors no verdict and withholds nothing.** It does not touch the generator, render a pack, boot
+a session, or take any position on the derived L2 specification. It touches no passage of `CLAUDE.md`,
+`ARCHITECTURE.md` or any specification. It does not reopen `l0-l1`'s emptiness. **No
+decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**★ A THIRD TRACKED MODIFICATION OF THE SAME FILE IS DECLARED HERE, AND THE ANCHOR IS NO LONGER UNIQUE
+AS PLAIN TEXT.** §3cj declared one and §3ck a second; this section is a third, spliced immediately
+before the heading line `## 4. What this ruling does NOT do`. **§3ck's own declaration says that
+anchor occurred exactly once, and that was true of it AS A HEADING LINE and is still true — but it is
+no longer true of the bare string**, because §3ck's declaration quotes the heading inline and so
+created a second textual occurrence of it in this file. **This splice was therefore matched on the
+heading line TOGETHER WITH the first words of the section it opens**, which is unique, and the
+non-uniqueness was established before the insertion rather than discovered after it. **A later session
+splicing here must do the same.** **Additions only; the next dispatch's Task 0 lands it and the
+executing side proves additions-only at the object.**
+
+**★ AN ERROR OF THIS SIDE, COUNTED — ONE, AND IT IS THE FAMILY THE LAST FOUR ENTRIES HAVE EACH
+COUNTED.** The decision surface was rated **without asking the object what being a candidate actually
+costs**, and the object was in hand: the manifest's own `counted` block, whose arithmetic shows a
+candidate ruled OUT is rendered into the pack. The consequence reached the user in two forms — a
+position closed on the ground that it *buys nothing measurable* when what it buys is unmeasured, and a
+question put as a choice between two bundles the objective does not require. **Found by this side
+while applying the user's own test, reported unprompted before the ruling was recorded, and the ruled
+content is the corrected reading rather than either position as put.** It is the same shape the
+hundred-and-third entry wrote its standing bar for: **ask the object the question the decision turns
+on, before the surface is written** — and this time the object had already been opened, and was not
+asked this question.
+
+## 3cm. Ruling 84 — RULING 81's CLAUSE *no identity is withheld that the user has not ruled* **REACHES A DERIVED CROSS-REFERENCE ADDITION THAT REVERSES A VERDICT THE USER HAS ALREADY RULED, AND DOES NOT REACH AN ADDITION TO AN ENTRY HE HAS NEVER RULED ON.** A DERIVED PASS MAY ADD; IT MAY NOT OVERTURN. (Position three, as recommended)
+
+**Taken 2026-09-04 by the session that booted on `cowork_handoff_entry_one_hundred_and_three.md`,
+the same session that took Ruling 83 earlier in the same sitting, after the ordinary session-start
+read in full and with the tip verified at BOTH ref files immediately before this write
+(`5922a1f5bc62073681ed4187b5e71bb14e302954`, `origin/master` equal, unchanged across the sitting).
+The objects read for this surface, each at the object and not carried:
+`tools/audit/derivation_boot_pack.json` → the seventeen `derived_cross_reference_additions` with the
+matched field of every one, the same manifest's `THE_CANDIDATES_AND_THEIR_VERDICTS` block,
+`cowork_rulings_2026_08_22_withheld_family_sitting.md` WHOLE, and §3cj of this record.** **The user's
+words, verbatim: "I agree on position three".**
+
+**★ THE FORM, RECORDED EXACTLY — THE FOURTH CONSECUTIVE RULING ANSWERED BEFORE ITS QUESTION WAS PUT.**
+The whole surface was delivered as user-visible text in one turn, carrying no question, and closing by
+saying in terms that the choice question would come in the next message. **The user answered before
+that question was put**, as he did at Rulings 80, 81 and 82. What D-249 exists to secure holds — the
+surface was read before it was answered — and what did not happen is the asking. **No choice question
+is owed and none was put.**
+
+### What was being decided
+
+Ruling 81 (§3cj) ruled that L2's withheld family is **ruled list by list**, in a sentence whose closing
+clause is **"no identity is withheld that the user has not ruled."** The question is whether that
+clause reaches a second, separate mechanism: the **derived cross-reference additions**.
+
+The pilot pack withholds **33 entries by two mechanisms**. **Sixteen** are AUTHORED — candidates
+carrying a hand-written verdict with finding, date and reason, put to the user in lists and ruled by
+him. **Seventeen more** are DERIVED: a pass that runs afterwards and by itself, withholding any
+design-intent entry whose own text quotes or cross-references an authored withheld identity or names a
+withheld document. **No verdict was authored for any of the seventeen and none was ever put to the
+user.** The tool states its own bound on the artifact: **one pass, from the AUTHORED identities only,
+NOT transitive.**
+
+### The facts, each checked at its object this session
+
+- **★ THE 2026-08-22 SITTING RULED FIVE LISTS AND NONE WAS THIS ONE — READ WHOLE AT THE FILE, NOT
+  CARRIED.** List One, the fifteen withheld; List Two, the fifty-seven admitted; List Three, the three
+  formerly unplaced; List Four, the check that catches routes into code; List Five, the withheld
+  passage of `CLAUDE.md`. **The seventeen appear in none of them**, and §0 of that record states in its
+  own words that the five lists are what was put.
+- **★ EVERY ONE OF THE SEVENTEEN IS CAUGHT BY A FIELD THE PACK DOES NOT RENDER**, counted at each
+  addition's own `derived_because`: **`status_source` on fifteen** (D-025, D-026, D-278, D-289, D-376,
+  D-490, D-509, D-524, D-528, D-534, D-535, D-536, D-571, D-576, D-605) and **`rationale` on two**
+  (D-283, D-284). **Exactly ONE, D-278, is additionally caught in `plain`, which the pack DOES
+  render.** *The reading this side stated, marked as its own and not the tool's:* for sixteen of the
+  seventeen the cross-reference sits in text a deriving session never sees, so the pass is not closing
+  a visible route but using the cross-reference as a SIGNAL that the rendered part of the entry
+  probably restates the withheld material. **The tool's own words are that "a cross-reference in either
+  is still a route to the withheld material."** **Whether that signal is accurate is UNMEASURED, and
+  stays unmeasured under every position that was put.**
+- **★★ FIVE OF THE SEVENTEEN CARRY THE USER'S OWN RULING THAT THEY BE ADMITTED, AND ARE WITHHELD
+  ANYWAY.** **D-376, D-490, D-534, D-536 and D-605** each appear TWICE in the manifest — once in the
+  candidate table carrying the verdict `OUT`, and once among the seventeen. Every one of those `OUT`
+  verdicts falls inside the fifty-seven Ruling 2 of the 2026-08-22 sitting ruled ADMITTED. **That they
+  are not in the pack is proven by the pack's own arithmetic**: 244 design-intent entries = 208
+  rendered + 33 withheld + 3 listed-and-not-rendered, and the 33 are 16 authored plus these 17.
+- **★ THE CLEAREST INSTANCE, D-490.** It reached the candidate list only because the letters of the
+  keyword `grain` occur inside the phrase *fine-grain*, and **the recorded reason for admitting it says
+  exactly that** — *"'grain' appears only inside 'fine-grain'."* The user ruled it admitted. The
+  derived pass withheld it, because a field the session never sees names D-491.
+- **THE OTHER TWELVE WERE NEVER CANDIDATES AND CARRY NO VERDICT AT ALL** — D-025, D-026, D-278, D-283,
+  D-284, D-289, D-509, D-524, D-528, D-535, D-571, D-576. They have never been in front of the user in
+  any form.
+- **★ AND THE TEXTUAL CASE ON THE OTHER SIDE, RECORDED BECAUSE AN EXCLUDED ALTERNATIVE IS EVIDENCE
+  ABOUT THE CHOICE.** Ruling 81's clause sits inside a sentence describing the AUTHORED procedure — the
+  tool derives the candidates, every candidate carries an authored verdict with its finding, its date
+  and its reason, the lists go to the user one per turn, and no identity is withheld that he has not
+  ruled — so read in context *identity* means a candidate carrying an authored verdict, and the derived
+  pass was not in view. **And Ruling 1 of the 2026-08-22 sitting DECLINED an alternative that would
+  have added entries to the withheld set beyond the candidate list**, on the stated ground that such an
+  addition *"would be this session's, not derived."* **The seventeen ARE derived, so the ground of that
+  declination does not reach them.**
+- **★ WHAT THIS SIDE COULD NOT ESTABLISH, STATED AND NOT FILLED (#24).** **Whether the derived pass
+  existed when the 2026-08-22 sitting ruled the five lists is UNKNOWN to this side.** If it did not,
+  nothing reversed a live ruling at the time it was made and what happened is a later mechanism
+  overtaking an earlier ruling — a milder thing, and a different one. Settling it needs a git-history
+  query this side did not run. **The reversal stands now either way**, which is what the ruling below
+  turns on.
+
+### ★ THE COST THAT RUNS IN BOTH DIRECTIONS, STATED BECAUSE THE RECORD HAD ONLY EVER ARGUED ONE
+
+**Over-withholding is not free.** A pack stripped of material the deriving session legitimately needs
+makes that session derive from less than the record holds, and the specification that comes out is
+worse for it. Under-withholding is the failure the second mechanism was built against — the session
+reads the answer and the independence claim is worthless. **Both directions cost, and the derived pass
+has only ever been argued as protection against the second.**
+
+### The positions, weighed towards the ultimate objective and towards the guiding principles
+
+*Position one — the clause reaches every derived addition; each is put to the user as its own list.*
+Towards the objective it changes nothing about how much is withheld, only who approves it, and it
+catches the case where the pass withholds what should have been admitted — **a case measured five
+times at the pilot**. **Towards #19 it is strong**: an unmeasured mechanism is trusted only after it is
+positively established, and putting its output in front of the user is that establishment. Its cost is
+a ruling turn per subject over a list that was seventeen at the pilot.
+
+*Position two — the clause does not reach them at all.* Towards the objective it rates highest on a
+plain reading: the pass is a safety net, and making a net wait on a ruling turn weakens it. **Towards
+#19 it is weakest**, taking an unmeasured mechanism on trust, which is what that principle refuses.
+And it must accept openly that a derived mechanism silently reverses a user ruling on five entries.
+
+*Position three — the clause reaches a REVERSAL and not an ADDITION.* **It splits the seventeen exactly
+where the measurement splits them**: five that overturn a ruling, twelve never before the user.
+**Towards the objective it keeps the net at full strength everywhere nobody has ruled**, and returns
+only the cases where a machine overrode the user. **Towards the principles it is strongest on #19 while
+also being the most specific (#2)** — it targets the case that actually went wrong rather than throwing
+a ruling turn over the whole population. **Its cost is the smallest of the three:** five entries at the
+pilot rather than seventeen. **Both axes to position three.**
+
+### What was decided
+
+**Ruling 81's clause REACHES a derived cross-reference addition that REVERSES a verdict the user has
+already ruled. It does NOT reach an addition to an entry he has never ruled on. A derived pass MAY ADD;
+IT MAY NOT OVERTURN.**
+
+**The operational form, so no later session has to reconstruct it.** When a subject's pack is derived,
+the derived additions are **split against the authored verdicts the user has ruled**. Any addition
+whose entry already carries a user-ruled verdict of ADMITTED is **put to him as its own list**, in the
+same self-contained form every other list takes, the choice question in the turn after. Every other
+addition **stands as derived** and needs no ruling.
+
+**THE CONSEQUENCE FOR THE PILOT, STATED RATHER THAN LEFT TO BE INFERRED.** By this ruling the pilot's
+**five** — D-376, D-490, D-534, D-536 and D-605 — are **OWED to the user as a list**. They stand
+withheld today against Ruling 2 of the 2026-08-22 sitting.
+
+### What this ruling does NOT do
+
+**It does not re-open the pilot's pack, its render, or its deriving session**, which has run and is
+frozen at its blobs. **It does not settle whether the pilot's derived specification still carries the
+independence claim it was meant to carry**, given that its session may have been starved of five
+entries the user ruled it should have had — that question was named on the surface as NOT settled and
+is **not settled here**. It remains the user's.
+
+**It does not measure the derived pass's accuracy.** Whether a cross-reference in an unrendered field
+predicts that the rendered part of an entry discloses the answer is **unmeasured**, and this ruling
+leaves it unmeasured, exactly as all three positions did.
+
+**It does not change the pass's own bound** — one pass, from the authored identities only, not
+transitive — and it does not amend Ruling 82 or Ruling 83.
+
+**It authors no verdict and withholds nothing.** It does not touch the generator, render a pack or boot
+a session. It touches no passage of `CLAUDE.md`, `ARCHITECTURE.md` or any specification. **No
+decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**★ A FOURTH TRACKED MODIFICATION OF THE SAME FILE IS DECLARED HERE**, spliced by the method §3cl
+records — the heading line `## 4. What this ruling does NOT do` TOGETHER WITH the first words of the
+section it opens, the bare heading string no longer being unique in this file. **Additions only; the
+next dispatch's Task 0 lands it and the executing side proves additions-only at the object.**
+
+**★ AN ERROR OF THIS SIDE, COUNTED — THE SECOND OF THIS SITTING, AND THE STANDING DEGRADATION RULE
+FIRES AT IT.** The surface delivered to the user said **sixteen** of the seventeen were caught by
+`status_source`. **The manifest gives fifteen**, with two more caught by `rationale`. The count was
+stated rather than derived, with the object already open — which is one of the degradation tells by
+name. **It does not move the argument**, every one of the seventeen still being caught by a field the
+pack does not render and exactly one being also caught in a rendered field, and **the ruling above was
+taken on facts the corrected count does not touch**; but a wrong number reached the user and is
+corrected here rather than absorbed. **Together with this sitting's first counted error — a decision
+surface rated without asking the object what being a candidate costs — that is TWO of one shape,
+"a claim written without asking the object that would settle it", and the standing rule of 2026-08-15
+requires this side to say so unprompted and to recommend handover at a verified stop.** **It was so
+reported to the user in the turn that recorded this ruling.**
+
+## 3cn. Ruling 85 — THE PILOT'S FIVE REVERSED ENTRIES ARE **ADMITTED**: THE DERIVED CROSS-REFERENCE WITHHOLDING OF **D-376, D-490, D-534, D-536 AND D-605** FALLS, AND RULING 2 OF THE 2026-08-22 SITTING STANDS OVER THEM (Alternative A; the user's word: "A")
+
+**Taken 2026-09-04 by the session that booted on `cowork_handoff_entry_one_hundred_and_four.md`,
+after the ordinary session-start read performed in full — `CLAUDE.md` whole, `DECISIONS.md` whole,
+`STATUS.md`, and the derived gating answer's `gating_ids` (218 gating of 243 open rows) — and with
+the tip verified at BOTH ref files at boot and again immediately before this write
+(`5922a1f5bc62073681ed4187b5e71bb14e302954`, `origin/master` equal, unchanged across the sitting).
+The objects read for this surface, each at the object and not carried:
+`tools/audit/derivation_boot_pack.json` → the five candidate records with their verdicts, findings,
+dates and reasons, the seventeen `derived_cross_reference_additions` with the matched field of every
+one, the `counted` block, the `harmony-boundary` subject block and its `★_FROZEN` block; the rendered
+pack member `tools/audit/derivation_boot_pack/harmony-boundary/05_the_ratified_design_intent.md`;
+`cowork_rulings_2026_08_22_withheld_family_sitting.md` WHOLE; and §3cm of this record.** **The user's
+word, verbatim: "A".**
+
+**★ THE FORM, RECORDED EXACTLY — AND CORRECTED AT THE OBJECTS AFTER THIS SECTION'S FIRST WRITING.**
+The surface was delivered as a turn of its own, carrying no question and closing by saying that the
+choice question would come in the next message; **the question was then put, alone, in the following
+turn**, and the user answered it with a position — "A". **D-249 is satisfied in both halves here: the
+surface read before it was answered, and the asking actually done.** **What is distinctive is not that
+a question was put at all, but that ONE side wrote the surface AND put the question, and that the
+answer named a position.** Read at §3ci, §3cj, §3ck and §3cm: **Rulings 80, 81, 82 and 84 were each
+answered before their question was put, and for none of them was a question put at all.** Read at
+§3cl: **Ruling 83's choice question WAS put, in its own later turn** — by a session that had not
+written the surface it put — **and the user answered it by naming a TEST rather than a position**, the
+ruled content then being a corrected reading that neither position carried.
+
+### What was being decided
+
+Ruling 84 (§3cm) ruled that a derived pass **may add but may not overturn**, and fixed the
+operational form: any derived cross-reference addition whose entry already carries a **user-ruled
+verdict of ADMITTED** is put to the user as its own list, the choice question in the turn after.
+**Five of the pilot's seventeen derived additions are that case** — D-376, D-490, D-534, D-536 and
+D-605 — each carrying an authored `OUT` verdict dated 2026-08-22, and each inside the fifty-seven
+that Ruling 2 of the 2026-08-22 sitting admitted. The question was whether that admission stands or
+the derived withholding does.
+
+### The facts, each checked at its object this session
+
+- **★ THE MEASUREMENT THE DECISION TURNS ON, TAKEN AT THE RENDERED MEMBER ITSELF AND NOT AT THE
+  MANIFEST'S CLAIM ABOUT IT.** Member (5) states in its own words: *"Four fields per entry and no
+  others: the identifier, the title, the decision in the words it was decided in, and its plain
+  restatement. Where a decision is recorded, what defends it, **what its status came from** and the
+  words a search finds it by are all deliberately absent."* **All five were caught ONLY in
+  `status_source`** — D-376, D-536 and D-605 on D-001, D-490 on D-491, D-534 on D-449 — **and none in
+  `title`, `verbatim` or `plain`.** **So for every one of the five the route the pass closes does not
+  exist in a rendered pack.** (D-278, the one addition also caught in `plain`, is not among the five
+  and is not touched here.)
+- **THE FIVE AND WHY EACH WAS ADMITTED, read at the manifest's own candidate records.** **D-376** —
+  the bounded-coupling design choice, since shelved; reached the candidate list because the letters of
+  `slice` occur inside the code identifier `chordslicedecoder`; admitted because *"it names no
+  segmentation and no evidence ranking."* **D-490** — the falsified fine-grain function override;
+  reached the list because the letters of `grain` occur inside *fine-grain*; admitted because
+  *"'grain' appears only inside 'fine-grain'."* **D-534** — the missing-tone penalty counted per chord
+  factor; reached the list on `segment`; admitted because *"'segment' appears as the ground truth's
+  own labelled unit."* **D-536** — the dormant vertical scorer's (bass, root, template) triple;
+  reached the list on `onset` inside *beat-onset*; admitted because *"it bears on the dormant vertical
+  scorer's internal ordering."* **D-605** — the local-key hypothesis's circularity guard; reached the
+  list as the sole group-E entry; admitted because its subject *"is what evidence a MODULATION
+  decision may read … and not the chord boundary."*
+- **★ RULING 2 OF THE 2026-08-22 SITTING, READ WHOLE AT THE FILE, ALREADY WEIGHED THE CLOSEST OF THE
+  FIVE.** It admitted all fifty-seven and **named six entries read as one step from the subject —
+  D-285, D-329, D-330, D-339, D-490, D-623 — D-490 among them**, and admitted it with that named. The
+  two entries Ruling 3 of that sitting moved to `OUT` are D-457 and D-526, **neither of them among
+  these five**, so all five sit inside the fifty-seven.
+- **THE PILOT'S PACK IS FROZEN, AT THE OBJECT.** The `harmony-boundary` subject's `★_FROZEN` block,
+  dated 2026-08-31: *"Its deriving session has RUN, so this pack is the record of what that session
+  was given rather than an input to be kept current"*, pinned at its per-file blob digests with a hash
+  STOP in both directions, and `write_all` writes nothing into its directory. **So no ruling on these
+  five can put them into that pack, and this one does not.**
+- **THIS SIDE'S OWN READING, MARKED AS ITS OWN AND NOT AS A MEASUREMENT.** The rendered text of all
+  five — title, verbatim and plain — names **neither** how a boundary is decided **nor** the ranking of
+  evidence, which is what this pack protects. Two details recorded with it rather than absorbed:
+  **D-376's visible text does say the production engine is one combined decision over tonic, mode and
+  chord** — which the pack already carries at **D-005 and D-010, both rendered into it** — and it does
+  **not** carry the segmentation-as-a-modelled-variable half that is why D-001 is withheld. And
+  **D-490 is the closest of the five**: its sibling **D-491**, which does state the ranking, is
+  withheld and stays withheld.
+
+### The positions, weighed towards the ultimate objective and towards the guiding principles
+
+*Alternative A — all five admitted; the derived withholding falls.* Towards the objective it restores
+five ratified decisions to the standing set the next pack is built from, at no cost in independence,
+**because the route those five closed does not exist in a rendered pack**. Towards the principles it
+is strongest on **#19** — an unmeasured mechanism is trusted only after it is positively established,
+and the object shows its route here was already shut — and it is what §3cm was ruled for. Its cost,
+stated: it rests in part on this side's reading of five visible texts, which is a reading and not a
+measurement, and it records that the pilot's session was short five entries.
+
+*Alternative B — all five stay withheld.* Towards the objective it keeps the net at maximum strength
+on the argument that a cross-reference signals the visible text probably restates the answer.
+**Towards #19 it is weakest**, taking an unmeasured mechanism on trust against a checkable fact that
+runs the other way, and it leaves a machine having reversed five user rulings with no reason ever
+written. It also runs mildly against **#12**: five ratified decisions stay out of every future pack on
+no recorded finding.
+
+*Alternative C — four admitted, D-490 kept withheld.* Towards the objective it targets the one entry
+whose subject is a sibling of a withheld measurement, and towards **#2** it is the most specific. But
+**its ground is the one the 2026-08-22 sitting already weighed and rejected on the same facts** —
+D-490 was named as one step from the subject and admitted — and nothing measured since moves it;
+taking it now would re-decide a ruled question without new evidence.
+
+**The surface said in terms that this was not an open three-way choice** — that on the record as it
+stands A is what the facts support, and B and C were recorded because an excluded alternative is
+evidence about the choice.
+
+### What was decided
+
+**All five are ADMITTED. The derived cross-reference withholding of D-376, D-490, D-534, D-536 and
+D-605 FALLS, and Ruling 2 of the 2026-08-22 sitting stands over them.**
+
+### What this ruling does NOT do
+
+**It does not re-open the pilot's pack, its render or its deriving session**, which have run and are
+frozen at their blobs — §3cm says so and the manifest's own freeze block proves it. **Nothing is
+re-rendered by this ruling and no file of that directory moves.**
+
+**It does not settle whether the pilot's derived specification still carries the independence claim it
+was meant to carry.** That question remains the user's, exactly as §3cm left it; this ruling is an
+INPUT to it and not an answer — **the pack that session read was short five entries the user had ruled
+admitted**, and this side has not examined what follows from that.
+
+**It does not measure the derived pass's accuracy**, which stays unmeasured, and **it does not reach
+the other twelve additions** — D-025, D-026, D-278, D-283, D-284, D-289, D-509, D-524, D-528, D-535,
+D-571 and D-576 — which stand as derived under §3cm, none of them ever having been in front of the
+user. **It does not change the pass's own bound** — one pass, from the authored identities only, not
+transitive — and it amends no earlier ruling of this record.
+
+**It authors no verdict beyond these five and withholds nothing.** It does not touch the generator,
+render a pack or boot a session, and it touches no passage of `CLAUDE.md`, `ARCHITECTURE.md` or any
+specification. **No decisions-register identity is allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**★ A CORRECTION OF THE HUNDRED-AND-FOURTH ENTRY, MADE AT THE OBJECT AND RECORDED HERE BECAUSE THE
+NEXT SESSION TO SPLICE THIS FILE NEEDS IT.** That entry says the bare anchor
+`## 4. What this ruling does NOT do` *"now occurs twice"* in this file. **It occurs FOUR times** — at
+lines 6362, 6556 and 6723, where §3ck, §3cl and §3cm each quote it inside their own declarations, and
+once as the heading line itself. **Exactly one is a heading line.** The entry's substance holds and is
+strengthened: a plain-substring edit on the bare anchor is refused. **The method is unchanged — the
+heading line TOGETHER WITH the first words of the section it opens, which is unique — and this
+insertion was made by it.**
+
+**★ AN ERROR OF THIS SIDE, COUNTED — THE FIRST OF THIS SESSION, FOUND BY THE FACT CHECK THE USER
+ORDERED AND CORRECTED BEFORE THIS SECTION WAS LANDED.** This section's first writing carried the
+heading *"★ THE FORM — THE FIRST OF FIVE IN WHICH THE CHOICE QUESTION WAS ACTUALLY PUT"* and the
+sentence *"Rulings 80, 81, 82, 83 and 84 were each answered before their question was put."* **Both
+are false of Ruling 83**, whose own form paragraph at §3cl records that its choice question WAS put,
+in its own later turn. The former wording is preserved here (#12); the corrected paragraph above is
+what stands. **The claim was written from the shape of §3cm's form paragraph — which names Rulings 80,
+81 and 82 and not 83 — without asking §3cl the question that would have settled it**, with that
+section open to this side in the same file it was writing into. **That is the degradation tell the
+hundred-and-fourth entry names by name and the shape both of the previous session's counted errors
+took.** **It moves nothing in the ruling**, which turns on the manifest, the rendered pack member and
+the 2026-08-22 sitting, none of which the correction touches.
+
+**★ A FIFTH TRACKED MODIFICATION OF THE SAME FILE IS DECLARED HERE.** Additions only against the file
+as it stood before this session, spliced by the method above on a container copy of the bridge-staged
+snapshot and committed back under a modification-time guard. **This section was written, then
+corrected in place by the same session before landing** — the correction is confined to this section
+and is recorded in the paragraph above rather than absorbed. **The next dispatch's Task 0 lands it,
+and the executing side proves additions-only at the object.**
+
 ## 4. What this ruling does NOT do
 
 It authorizes no fix, no design, no inference change, no measurement, and no amendment to any
