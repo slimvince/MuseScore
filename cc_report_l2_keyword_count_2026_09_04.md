@@ -260,6 +260,21 @@ it beyond adding its own entry. The only edit made beside the new entry is the r
 carry two such markers; the entry's text itself is untouched apart from *this batch's close* becoming
 *that batch's close*, which the new head makes true.
 
+**(h) AN ELEVENTH GUARD RED APPEARED AT THE END STATE, ITS CAUSE WAS ESTABLISHED AT THE TOOL, AND IT
+WAS REPAIRED IN THE END-STATE COMMIT.** The first end-state run of `tools/audit/gen_guard_state.py`
+returned **76 run, 11 failing** against the ten this batch inherited. The eleventh is
+`tools/audit/gen_session_start_read_size.py --check`, which reported `STALE vs the measurement`. The
+cause was established rather than assumed, at the tool's own output and at the artifact it writes:
+that measurement counts the characters of `STATUS.md`, among other members, and this batch's own
+ordered `STATUS.md` entry grew it — which is exactly the mechanism the preceding batch established
+for the same tool. The artifact was regenerated, its `--check` came back green, and the guard set was
+re-run so that the committed end state is the true one: **76 run, 10 failing, 4 not run, 16
+historical, zero STOPs, the failing set exactly the ten inherited and no eleventh.** The regeneration
+touches a **generated measurement artifact** and none of the subjects the dispatch's *What this
+dispatch may NOT do* section names; it is reported here because the dispatch did not order it, and
+leaving a red this batch's own ordered act created would make the batch read as mid-flight, which
+Task 3's further commit exists to prevent.
+
 **Nothing else.** No `src/` change, no golden, no test changed, moved or run, no build, no
 measurement of the analysis, nothing under `tools/corpus/` or `tools/robust_stop/`. The measuring
 script was written **outside the repository**, at `%TEMP%\l2_keyword_count.py`, exactly as Task 1(c)

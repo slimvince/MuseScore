@@ -22474,3 +22474,237 @@ population; A1b, A3 and the pack-directory proof by blob comparison against the 
 object-level differences between two explicit blob hashes; the deleted-line enumeration at the object;
 the forward bound by running the tool at its new aiming and reading its own output. No figure of any
 pack member is restated in this section (D-431).*
+
+---
+
+## THE READ-ONLY KEYWORD COUNT FOR L2's CANDIDATE CRITERION: THREE LISTS MEASURED, NO VERDICT AUTHORED, NO PACK RENDERED
+
+**★ THE HEADING CARRIES NO ORDINAL, ON THIS FILE'S OWN CONVENTION READ RATHER THAN INVENTED.** The
+sections that number themselves are the L0/L1 comparison line's own writings; every other section —
+the pilot's preparation, the withheld-family rulings, the sizing pack, the `l0-l1` freeze — carries a
+descriptive title and names its dispatch instead. This batch is not a writing of that line, so it does
+the same, in the sentence below.
+
+This batch ran `cc_instruction_l2_keyword_count_2026_09_04.md`, which executes the measurement
+**Ruling 83** (§3cl of `cowork_rulings_2026_08_31_decision_surface_sitting.md`) declared owed in its own
+*What this ruling does NOT do* section — *"IT DOES NOT MEASURE WHAT THE WIDENED KEYWORD LIST COSTS, AND
+THAT IS OWED BEFORE THE KEYWORD LIST IS RULED."* **Task 0** landed Rulings 81–85, the four handoff
+entries and the dispatch, and pushed; **Task 1** took the measurement and committed its artifact alone;
+**Task 2** wrote the report; **Task 3** wrote the `STATUS.md` entry, this section and the end state.
+**NO RULING WAS TAKEN, NO POSITION WAS WEIGHED, NO VERDICT WAS AUTHORED FOR ANY SUBJECT, NOTHING WAS
+WITHHELD, NO PACK WAS RENDERED, NO SESSION WAS BOOTED, AND NO RECOMMENDATION APPEARS ANYWHERE.**
+
+### The commits, by explicit hash
+
+| Act | Commit | What it carries |
+|---|---|---|
+| the tree met | `5922a1f5bc62073681ed4187b5e71bb14e302954` | the local tip; `origin/master` EQUAL to it — nothing unpushed |
+| Task 0 | `bd6ccb722be3700d31b5f5a195e4c9b294c82280` | the sitting record and four handoff entries and the dispatch — **six paths**, additions-only in the one tracked path |
+| Task 1 | `425c9a12b3a6de5f1e2efba6444e2c9459cb0627` | `tools/audit/l2_keyword_count_measurement.json` — **one path** |
+| the close | `16b7b8c0192162ddd31027191919890eff488941` | `STATUS.md` and the report — **two paths** |
+| the end state | this commit | the end-state guard artifact, the regenerated read-size measurement, this section, and the report's departure (h) |
+
+**Every tip was read at BOTH ref files with the file tools** — `.git/refs/heads/master` and
+`.git/refs/remotes/origin/master` — never from a push's own output. The boot tip was
+`5922a1f5bc62073681ed4187b5e71bb14e302954` at both, which is the tip the dispatch declares, so **STOP
+condition 1 did not fire**.
+
+### The five STOP conditions, each tested rather than assumed
+
+1. **The tip at boot** was the declared one at both ref files. Did not fire.
+2. **The sanctioned enumeration tool** reported **exactly one tracked modification** over the whole
+   working tree at boot — `cowork_rulings_2026_08_31_decision_surface_sitting.md`, the path Task 0(a)
+   names — every other one of its 853 records being untracked. The standing untracked `cc_*` population
+   at the root was met exactly as Task 0 names it in advance and none of it was landed. Did not fire.
+3. **Importing the generator module raised nothing**, and `gen.candidates(...)` raised nothing for any
+   of the four criteria; the run exited 0. Did not fire.
+4. **The measurement's own arithmetic closes** at all four checks of Task 1(f). Did not fire.
+5. **Nothing under `tools/audit/derivation_boot_pack/` and not `tools/audit/derivation_boot_pack.json`
+   appeared in the enumeration after the run at all**, so both are unchanged against the commit; and
+   `gen_derivation_boot_pack.py --check` PASSES at the end state with its three frozen subjects intact.
+   Did not fire.
+
+### What the measurement is, and the property that makes it one path and not two
+
+**The measurement calls the generator's OWN `candidates()` function**, with scratch criteria injected
+into the imported module object in memory. Nothing is written to disk that the generator writes, and
+**there is no second matcher that could disagree with the first** (#6) — which is why the dispatch
+forbids editing `gen_derivation_boot_pack.py` and the measurement did not need to. **Not one line of
+that file was edited**, the `VERDICTS` table was not touched for any subject, and `write_all`, `build`,
+`--check` and `--subject` were not run by the measurement.
+
+**The three lists are the writing side's AUTHORED measurement inputs and are not a ruling** — the
+pilot's own eighteen unchanged; the same widened to the precise vocabulary of the other three limbs of
+the L2 charter; and that widening plus the six bare words that sweep, measured so that their cost is a
+number rather than an opinion. The group term is the one **Ruling 82** (§3ck) fixed; the home-document
+and `ARCHITECTURE.md` passage terms are **EMPTY in every criterion measured**, their members not being
+ruled.
+
+**THE MEASUREMENT'S OWN BOUND IS WRITTEN INTO THE ARTIFACT IT PRODUCES** (#19, #24): it counts
+CANDIDATES and not withheld entries — a candidate carries an authored verdict, and a candidate ruled
+OUT is rendered into the pack — and with two of the five terms empty, every count is a count for the
+criterion **as far as it is ruled** and not for the finished criterion.
+
+### The checks of Task 1(f), graded
+
+- **Check 1 — PASSED.** The design-intent population is the declared one, so every count below it is
+  over the population the dispatch names and not a moved one.
+- **Check 2 — PASSED for all three lists.** Each list's *with the group term* equals its *group term
+  alone* plus its *added beyond the group term*, exactly.
+- **Check 3 — PASSED.** The three *added beyond the group term* figures are monotone in list width, so
+  no wider list adds fewer entries than a narrower one.
+- **Check 4 — PASSED, measured at the artifact and not at the tool's word.** Every identity in the
+  LIST W marginal population carries at least one `matched_by` record whose criterion is `keyword` and
+  whose `in_context` shows the matched text in its own surroundings; the section's `id` lines and its
+  `in_context` lines were enumerated with the file tools and each `id` is followed by at least one
+  `in_context` before the next. Every record in that section is a keyword record, the producing
+  function admitting no other kind.
+- **A fifth identity closes beside them, reported although it was not asked for:** the two marginal
+  populations carry between them exactly as many identities as LIST B adds beyond the group term.
+
+**No figure of the measurement is restated in this section (#17f, D-431).** All of them are at
+`tools/audit/l2_keyword_count_measurement.json`, and the report
+`cc_report_l2_keyword_count_2026_09_04.md` carries the subset Task 2 names by name.
+
+### Task 1(g), and the end state
+
+**After the run: 848 records, every one of them untracked, therefore ZERO tracked modifications**, with
+exactly one addition against the pre-run enumeration — the artifact itself. The record arithmetic
+closes: 853 − 6 landed + 1 written = 848.
+
+**The end-state guard set: 76 guards run, 10 failing, 4 not run, 16 historical, and ZERO STOPs — the
+failing set exactly the ten this batch inherited, with no eleventh red.** Reaching that took the repair
+named as departure 2 below.
+
+### Declared departures
+
+1. **THE DISPATCH'S OWN TASK 0(a) COMMAND IS A FORM THE SHELL-READ GUARD DENIES, AND THE SAME FACTS
+   WERE ESTABLISHED BY THE ROUTES THE STANDING RULES REQUIRE.** The command given is a `python -c` code
+   string carrying a literal repository path; the guard denied that form when it was attempted this
+   session, and the working-tree read rule it enforces (**D-253**, as widened on 2026-08-08 to cover
+   interpreter code) is what denies it. **The seven anchor positions were taken with the file tools**
+   over the same file and every one matched the declared position, so no earlier section moved. **The
+   byte size was taken at the OBJECT** — `git cat-file -s` on the staged blob's explicit hash — and
+   returned the declared value. **And because that route reads the staged blob rather than the working
+   tree, additions-only was proven a SECOND way**: a `--numstat` difference between the two explicit
+   blob hashes returns deletions of zero. The claim therefore rests on a measurement and not on the
+   anchor table alone. **No denied form was retried.**
+2. **AN ELEVENTH GUARD RED APPEARED AT THE END STATE, ITS CAUSE WAS ESTABLISHED AT THE TOOL, AND IT WAS
+   REPAIRED IN THIS COMMIT.** The first end-state run returned **11** failing against the ten inherited;
+   the eleventh is `gen_session_start_read_size.py --check`, reporting `STALE vs the measurement`. The
+   cause was established rather than assumed, at the tool's own output and at the artifact it writes:
+   that measurement counts the characters of `STATUS.md` among its members, and this batch's own ordered
+   `STATUS.md` entry grew it — **the same mechanism the preceding batch established for the same tool**.
+   The artifact was regenerated, its `--check` came back green, and the guard set was **re-run** so that
+   the committed end state is the true one rather than the pre-repair one. It touches a generated
+   measurement artifact and none of the subjects the dispatch's prohibitions name; it is declared
+   because the dispatch did not order it, and because leaving a red this batch's own ordered act created
+   would make the batch read as mid-flight — which the further commit exists to prevent.
+3. **TASK 0's HEADING AND TASK 0's OWN ENUMERATION DISAGREE ON THE PATH COUNT.** The heading says *"One
+   commit, five paths"*; (a) names one, (b) names four and (c) names one, which is six. **The six
+   enumerated paths were committed**, the enumeration being what names actual files, and nothing was
+   added to or withheld from that set. Reported rather than absorbed.
+4. **THE REPORT CARRIES FIGURES, ON A READING OF TWO CLAUSES THAT PULL AGAINST EACH OTHER.** Task 1(e)
+   says no figure from the artifact is transcribed into any other document; Task 2 items 3, 4 and 5
+   order the report to carry the three counts, the five keywords *"named with their numbers"* and the
+   marginal entries *"by identity, with the word that matched each"*. **The reading taken:** Task 2 is
+   the specific and later instruction about that document's content, so the report carries exactly the
+   figures Task 2 names by name and no others, cites the artifact as their one home, and **the
+   `STATUS.md` entry and this section restate none of them.**
+5. **`STATUS.md`'s CONTINUOUS-PRUNING BOUND WAS NOT MAINTAINED, AND THE REASON IS THE DISPATCH'S OWN
+   SCOPE CLAUSE.** That file's archive pointer states the bound as keeping only the latest batch's
+   entries. Moving the previous batch's entries out would be writing into `STATUS.md` beyond the one
+   entry Task 3 orders, which the dispatch forbids in terms. **The file already carried two batches'
+   entries on arrival**, so the bound was already unmaintained before this batch, which neither repaired
+   nor worsened it beyond adding its own entry. The only edit beside the new entry is the removal of the
+   `Last updated:` prefix from the entry previously at the head — without which the file would carry two
+   such markers — together with *this batch's close* becoming *that batch's close*, which the new head
+   makes true.
+
+### One observation of fact, carrying no position
+
+Several of the per-word figures are driven by **substring matches inside longer words**, visible in the
+artifact's own `in_context` fields: the tonality vocabulary matching inside an unrelated compound, the
+word for a musical mode matching inside *model* throughout the language-model group, and *applied*
+matching the ordinary non-musical sense. **This is a KNOWN and documented property of the matcher, not
+a surprise** (#13): the keyword branch of `candidates()` in `tools/audit/gen_derivation_boot_pack.py`
+carries a comment saying in terms that a keyword can match inside a longer word, and it emits
+`in_context` for exactly that reason — so a match a reader cannot see is a match nobody can challenge,
+and every one of these is visible. It is stated because it bears on how the per-word column is read.
+**Nothing is concluded from it and no position is taken on the list's membership** — that is the user's
+to rule at a Cowork decision surface (**D-249**).
+
+### What this batch did NOT do
+
+**No ruling was taken, no position weighed, no verdict reached on any open question, on the derivation
+or on the deriving session's independence. No verdict was authored for any subject** — the `VERDICTS`
+table was not touched. **Nothing was withheld and no pack was rendered**: no file under
+`tools/audit/derivation_boot_pack/` was created, edited, deleted or read for writing, and
+`tools/audit/derivation_boot_pack.json` was not regenerated. **Not one line of
+`tools/audit/gen_derivation_boot_pack.py` was edited** — not the `KEYWORDS` tuple, not the `CRITERION`
+table. **No `D-NNN` was allocated**, no open-items row was created, flipped or discarded, and nothing
+was written into `DECISIONS.md`, `CLAUDE.md`, `ARCHITECTURE.md`, `FRAMEWORK.md` or any ruling record.
+No session was booted. No `src/` change, no golden, no test changed, moved or run, no build, no
+measurement of the analysis, nothing under `tools/corpus/` or `tools/robust_stop/`, no guard enrolment
+and no tool added or removed.
+
+### The plan, and this batch's tell
+
+**The plan stands at:** phase OPEN → derivation LANDED → comparison COMPLETE → application act RAN →
+ratification act TAKEN → the specification RATIFIED → the family placements MADE → §11 and §12 REPAIRED
+→ the four rows' AUDIT QUESTIONS PLACED → the `l0-l1` pack FROZEN → **the L2 keyword count TAKEN, the
+keyword list still the user's to rule** → **L2's criterion completed once the keyword list, the home
+documents and the `ARCHITECTURE.md` passages are ruled** → **then L2's pack, and L2 sequenced by
+Ruling 10**.
+
+**The tell, in one sentence: no — this batch produced nothing other than the landed records, the one
+measurement artifact, the `STATUS.md` entry, the report and this section**, the one act outside that
+list being the read-size regeneration named as departure 2, which repaired a red this batch's own
+ordered act had created and is named rather than absorbed.
+
+### The standing self-check over this batch's own diff (D-434)
+
+1. *Principles touched.* **#6** — the measurement calls the generator's own candidate derivation rather
+   than reimplementing the matching, so one concern keeps one path and no second matcher exists to
+   disagree. **#19** — the measurement establishes nothing about any entry's verdict and claims nothing
+   about the criterion's reach; its own bound is written into the artifact it produces, and the
+   end-state guard set was re-run so that what is committed is measured rather than predicted. **#17f /
+   D-431** — every figure lands in the generated artifact and is cited; this section restates none, and
+   the report carries only the subset its own task names. **#24** — the bound on what the counts mean is
+   stated where they are published, and no difference between two measured quantities is asserted
+   anywhere. **#13** — the substring-matching property was checked against the tool's own documentation
+   before being reported, and is recorded as a known property rather than surfaced as a surprise.
+   **#12** — nothing was deleted: the previous head entry stands whole in `STATUS.md` with only its
+   prefix moved, and the pre-repair guard state is recorded here rather than overwritten in silence.
+   **#15** — every property is verified at the objects, the enumerations taken over the whole tracked
+   population and the arithmetic closed at the artifact. **D-249** — no question is put to the user and
+   no position is taken on the list's membership. Conforms.
+2. *Conventions.* American English; no self-invented label — *the group term*, *the keyword list*, *a
+   candidate*, *the withheld family*, *the marginal population* are the dispatch's and the record's own;
+   *measurement tool*, *check*, *script*, never *instrument*; music-theory words in their musical sense,
+   and where a keyword's non-musical sense is the thing being discussed it is named as such.
+3. *Figures and premises.* Both tips at the two ref files with the file tools; the anchor positions with
+   the file tools; the byte size and the additions-only proof at explicit blob hashes; the enumerations
+   with the sanctioned enumeration tool over the whole tracked population, three times; check 4 measured
+   at the artifact with the file tools; the guard states from this batch's own runs, the second taken
+   after the repair.
+4. *File-tools rule.* Every repository read through the file tools; the shell used only for git object
+   queries by explicit hash, for reads of scratch copies outside the repository, and for the sanctioned
+   tool invocations. **One guard denial was met and routed rather than worked around**, declared above
+   as departure 1, and the denied form was not retried.
+5. *Uncertainty.* **What this batch establishes is what three authored keyword lists cost in candidates
+   against the ruled group term, with two of the criterion's five terms empty.** It does **not**
+   establish what any of those candidates' verdicts would be, what the finished criterion would reach,
+   or that any of the three lists is the right one. **The eight inherited guard reds it carried were
+   verified as a SET against the preceding batch's record and their individual causes were not
+   established here** — only the eleventh, which this batch itself caused, was established at its tool.
+
+*Provenance: CC, 2026-09-04, at boot tip `5922a1f5bc62073681ed4187b5e71bb14e302954`, under
+`cc_instruction_l2_keyword_count_2026_09_04.md`, after the ordinary session-start read in full —
+`STATUS.md`, the `DECISIONS.md` INDEX and the derived gating answer — which binds even when the opening
+instruction names a single file (Ruling 5 of
+`cowork_rulings_2026_08_29_ratification_sitting.md`, the framework phase retrospective, P-1). Every
+commit identifier above was read from the ref files by the file tools at the time each commit was
+taken; the anchor positions, the byte size and the additions-only proof as departure 1 records; the
+guard verdicts from this batch's own two runs. No figure of the measurement is restated in this section
+(D-431).*
