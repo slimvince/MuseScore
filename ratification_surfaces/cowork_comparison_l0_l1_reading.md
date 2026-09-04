@@ -15328,8 +15328,11 @@ of audit questions is this section's numbered list TOGETHER WITH that subsection
 *Written 2026-09-04 under `cc_instruction_comparison_l0_l1_ninth_2026_09_04.md` Task 1, on Ruling 79
 (§3ch). Additions only; no numbered question above is edited, renumbered or reordered. Each entry names
 the ruling that quarantined its row, and carries that row's audit question in the words the ruling or
-the row writes it in. Where no audit question is written at the row, the entry says so and composes
-none.*
+the row writes it in. **★ THE LAST CLAUSE OF THIS NOTE IS AMENDED BY RULING 80 (§3ci), AND ITS FORMER
+WORDING IS PRESERVED HERE (#12): "Where no audit question is written at the row, the entry says so and
+composes none."** Where the ruling that quarantined a row wrote no question, the entry carries either
+the question the PLACING ruling writes, naming that ruling, or the standing numbered question above
+that the placing ruling records as carrying the row.*
 
 - Row 2.16 — *"does the slicer open a boundary at a grace note, and with what span, against the rule
   that it opens none (the tuplet half of the same sentence is another family and is not placed
@@ -15337,28 +15340,35 @@ none.*
 - Row 2.17 — *"the same question."* (Ruling 34, §3ao).
 - Row 3.5 — *"which specifications and code currently define the eligibility combination, since after
   ratification only L1 does."* (Ruling 35, §3ap).
-- Row 3.41 — **no audit question is written at the row.** It was quarantined by Ruling 62 (§3bq, item
-  4) on the ground *"the outgoing eleven- and twelve-field lists are descriptions of builds and
-  targets, placed by S-3 — carried where they match, QUARANTINED where they describe code."* Ruling 78
-  (§3cg) records that question 2 above, Row 1.3's, is the standing question about the same field list;
-  **this entry states the gap and composes nothing.**
-- Row 3.42 — **no audit question is written at the row.** It was quarantined by Ruling 62 (§3bq, item
-  4) on the ground *"The per-note list is S-3's as written, plus Ruling 44's stem direction and Ruling
-  50's attached marks"*. Ruling 78 (§3cg) records that question 2 above, Row 1.3's, is the standing
-  question about the same field list; **this entry states the gap and composes nothing.**
-- Row 3.48 — **no audit question is written at the row.** It was quarantined by Ruling 62 (§3bq, item
-  4) on the ground *"carried where they match, QUARANTINED where they describe code."* Ruling 78
-  (§3cg) records that question 2 above, Row 1.3's, is the standing question about the same field list;
-  **this entry states the gap and composes nothing.**
+- Row 3.41 — quarantined by Ruling 62 (§3bq, item 4) on the ground *"the outgoing eleven- and
+  twelve-field lists are descriptions of builds and targets, placed by S-3 — carried where they match,
+  QUARANTINED where they describe code."* That ruling wrote no question. **Its audit question is
+  question 2 above, Row 1.3's, met a second time** (Ruling 80, §3ci): this row names the same
+  eleven-field as-built record that question 2 asks about, and its own axis line reads *"the same
+  difference as Row 1.3, stated there."*
+- Row 3.42 — quarantined by Ruling 62 (§3bq, item 4) on the ground *"The per-note list is S-3's as
+  written, plus Ruling 44's stem direction and Ruling 50's attached marks"*. That ruling wrote no
+  question. **Its audit question is question 2 above, Row 1.3's, met a third time** (Ruling 80, §3ci):
+  this row is the enumeration of the very eleven fields question 2 asks about, and the facts it records
+  as absent are question 2's own five.
+- Row 3.48 — quarantined by Ruling 62 (§3bq, item 4) on the ground *"carried where they match,
+  QUARANTINED where they describe code."* That ruling wrote no question. **Its audit question is
+  question 2 above, Row 1.3's, met a fourth time** (Ruling 80, §3ci): this row is the time clause of
+  that same eleven-field list, and the bar-relative metric position it lacks is one of question 2's own
+  five facts.
 - Row 4.3 — *"does the in-region duration — a note's duration clipped to the queried region — belong
   to L0's supplied facts at all, being a property of the query rather than of the note?"* (Ruling 78,
   §3cg).
-- Row 14.9 — **no audit question is written at the row.** It was quarantined by Ruling 62 (§3bq, item
-  4) on the ground *"The per-note list is S-3's as written, plus Ruling 44's stem direction and Ruling
-  50's attached marks; the outgoing eleven- and twelve-field lists are descriptions of builds and
-  targets, placed by S-3 — carried where they match, QUARANTINED where they describe code."* Ruling 78
-  (§3cg) records that question 2 above, Row 1.3's, is the standing question about the same field list;
-  **this entry states the gap and composes nothing.**
+- Row 14.9 — quarantined by Ruling 62 (§3bq, item 4) on the ground *"The per-note list is S-3's as
+  written, plus Ruling 44's stem direction and Ruling 50's attached marks; the outgoing eleven- and
+  twelve-field lists are descriptions of builds and targets, placed by S-3 — carried where they match,
+  QUARANTINED where they describe code."* That ruling wrote no question, and question 2 above does not
+  reach this row, whose subject is the TARGET list rather than the as-built one. **Its audit question,
+  written by Ruling 80 (§3ci): does the arm that ships carry the tie facts the target list of
+  `cowork_target_architecture.md` §2 has named all along, and if it does not, does any consumer depend
+  on their absence?** *(Distinct from question 2, which asks whether the five facts S-3 requires reach
+  any consumer in the code; this asks after a fact the architecture itself already required and the
+  build does not carry.)*
 - Row 17.13 — *"does the arm that ships still place any harmonic boundary sequentially after a chord
   decision, or only inside the joint decode?"* (Ruling 55, §3bj).
 
