@@ -3112,7 +3112,27 @@
           "leak_not_checked_because": "The leak check is ruled over members (5) and (6) — the two this tool GENERATES.  An extra is quoted, and what it may not carry is cut by its own authored filters, which are verified in both directions.",
           "characters": 50666
         }
-      ]
+      ],
+      "★_FROZEN": {
+        "★_this_subject_is_FROZEN_and_is_NOT_re-rendered": "Its deriving session has RUN, so this pack is the record of what that session was given rather than an input to be kept current. Under D-646 it is pinned at the digests below and the freeze is enforced by a hash STOP at `--check`, in both directions. `write_all` writes nothing into its directory.",
+        "★_so_read_the_member_records_below_with_this_in_mind": "They are built from the sources AS THEY STAND TODAY, because every subject is built the same way and the ruling keeps this subject's entry. Where a member's sources have grown since the pack was rendered, the record's counts describe what WOULD be rendered and NOT what the frozen directory holds. THE DIGESTS ARE THE AUTHORITY ON WHAT THE DIRECTORY HOLDS.",
+        "finding": "Its deriving session has RUN: the detail-specification phase's first derivation was delivered 2026-09-02 and is `cowork_blind_derivation_l0_l1_2026_08_31.md` (the sitting record, §3al). Unlike the two subjects frozen on 2026-08-31, this pack was NOT stale when it was frozen — `--check` PASSED at the tip's own guard run — so the digests recorded here are both what the sources render today and what its session was given.",
+        "date": "2026-09-04",
+        "reason": "A spent subject's pack is the record of what its session was given rather than an input to be kept current (Ruling 17(a); D-646). Left live it would re-render on the first growth of `CLAUDE.md` or `cowork_audit_protocol.md` — the addition-only drift that made the other two packs stale — and would then either turn `--check` red or, if refreshed, back-date into a completed derivation's record rules that did not exist when its session ran (#12). Frozen at the blobs it carries, with the hash STOP.",
+        "the_digests": {
+          "00_READ_THIS_FIRST.md": "7e7339cf3250ac87337317ca109cf9645dd31b8d",
+          "01_the_phase_definitions.md": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+          "02_the_guiding_principles_and_the_conventions.md": "00ffb0bede471f15d70de6cb7435a617b09caa58",
+          "03_the_writing_standards.md": "518048459da6a865285a0f7c66c5d8f8045f0fc2",
+          "04_the_dispatch_protocol.md": "02107d1ab37af197821edf3ca98ccf6f7ae5c0d3",
+          "05_the_ratified_design_intent.md": "60563ab26e5c5c8827e32645b12eceaeb355933b",
+          "06_the_defect_type_catalog.md": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
+          "07_the_charter_the_layers_and_the_decisions.md": "a0513707886414a1c193a884e3f5f15ffd3f12f5",
+          "08_the_five_research_extracts.md": "54d0892b022107a8bd4cedc9e4bba54679a1ed41",
+          "09_the_empirical_findings_ledger.md": "2bf845db798e91382236387e7f35fabf48b2ec07"
+        },
+        "the_digest_form": "The git blob hash of each file's own bytes — `git hash-object <file>` reproduces every value, so the freeze can be confirmed without trusting this generator (#19)."
+      }
     },
     "scoring-model": {
       "subject": "scoring-model",

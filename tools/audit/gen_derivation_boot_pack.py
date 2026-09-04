@@ -84,7 +84,10 @@ writer is frozen at an established snapshot, and the freeze is enforced by a has
 `FROZEN` below is that snapshot: per subject, one digest per file of its pack directory.
 
   WHY A FREEZE AND NOT A REFRESH, recorded here so a later reader meets the ground rather than
-  the mechanism alone.  Members (2) and (4) of both spent packs no longer re-render, because
+  the mechanism alone.  ★ WHAT FOLLOWS IS THE GROUND OF THE TWO FREEZES TAKEN 2026-08-31, and it
+  is scoped to them: each subject's own ground is in its own entry (#6), and `l0-l1`, frozen
+  2026-09-04, was NOT stale when it was frozen.  Members (2) and (4) of the two packs frozen that
+  day no longer re-render, because
   `CLAUDE.md` and `cowork_audit_protocol.md` have GROWN since those packs were rendered.  The
   drift is ADDITION-ONLY, and the first lines a re-render would add are the P-1
   ordinary-session-start-read clause and the P-2 standing dispatch clause, BOTH RATIFIED
@@ -367,8 +370,43 @@ FROZEN: dict[str, dict] = {
             "06_the_defect_type_catalog.md": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
         },
     },
-    # `l0-l1` IS ABSENT DELIBERATELY, and its absence is what makes it LIVE: its deriving session
-    # has not run, so its pack is still an input and must stay current with its sources.
+    "l0-l1": {
+        "finding": ("Its deriving session has RUN: the detail-specification phase's first "
+                    "derivation was delivered 2026-09-02 and is "
+                    "`cowork_blind_derivation_l0_l1_2026_08_31.md` (the sitting record, §3al). "
+                    "Unlike the two subjects frozen on 2026-08-31, this pack was NOT stale when "
+                    "it was frozen — `--check` PASSED at the tip's own guard run — so the "
+                    "digests recorded here are both what the sources render today and what its "
+                    "session was given."),
+        "date": "2026-09-04",
+        "reason": ("A spent subject's pack is the record of what its session was given rather "
+                   "than an input to be kept current (Ruling 17(a); D-646). Left live it would "
+                   "re-render on the first growth of `CLAUDE.md` or `cowork_audit_protocol.md` — "
+                   "the addition-only drift that made the other two packs stale — and would then "
+                   "either turn `--check` red or, if refreshed, back-date into a completed "
+                   "derivation's record rules that did not exist when its session ran (#12). "
+                   "Frozen at the blobs it carries, with the hash STOP."),
+        "digests": {
+            "00_READ_THIS_FIRST.md": "7e7339cf3250ac87337317ca109cf9645dd31b8d",
+            "01_the_phase_definitions.md": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+            "02_the_guiding_principles_and_the_conventions.md":
+                "00ffb0bede471f15d70de6cb7435a617b09caa58",
+            "03_the_writing_standards.md": "518048459da6a865285a0f7c66c5d8f8045f0fc2",
+            "04_the_dispatch_protocol.md": "02107d1ab37af197821edf3ca98ccf6f7ae5c0d3",
+            "05_the_ratified_design_intent.md": "60563ab26e5c5c8827e32645b12eceaeb355933b",
+            "06_the_defect_type_catalog.md": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
+            "07_the_charter_the_layers_and_the_decisions.md":
+                "a0513707886414a1c193a884e3f5f15ffd3f12f5",
+            "08_the_five_research_extracts.md": "54d0892b022107a8bd4cedc9e4bba54679a1ed41",
+            "09_the_empirical_findings_ledger.md": "2bf845db798e91382236387e7f35fabf48b2ec07",
+        },
+    },
+    # `l0-l1` IS FROZEN ABOVE, ITS DERIVING SESSION HAVING RUN ON 2026-09-02; its own ground is
+    # in its own entry and is not restated here (#6).
+    # ★ SUPERSEDED 2026-09-04, THE FORMER WORDING PRESERVED IN PLACE (#12): "`l0-l1` IS ABSENT
+    # DELIBERATELY, and its absence is what makes it LIVE: its deriving session has not run, so
+    # its pack is still an input and must stay current with its sources."  True when written, and
+    # made false by that session's run.
 }
 
 # The header row of `DEFECT_TYPES.md`'s catalog table, matched exactly once.  Amendment (a3)
