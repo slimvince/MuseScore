@@ -22164,3 +22164,313 @@ regeneration and comparison against the committed blob; both object-level checks
 blob hashes; the anchor uniqueness and the deleted-line enumeration at the objects; the forward bound by
 running the tool at its new aiming and reading its own output. No count of the reading file is restated
 in this section (D-431).*
+
+## THE `l0-l1` BOOT PACK FROZEN AT ITS RENDERED BLOBS: THE THIRD FROZEN ENTRY, THE CLOSING COMMENT CORRECTED, THE DOCSTRING BLOCK SCOPED, NO MEMBER RE-RENDERED
+
+**★ THE HEADING IS THE DISPATCH'S ORDERED NAME, AND THE ORDINAL QUESTION IS ANSWERED RATHER THAN
+INVENTED.** The dispatch orders this title with **no ordinal**, this batch not being a writing of the
+L0/L1 comparison line, and directs that if this file's own convention requires one it be reported
+rather than invented. **It does not require one.** Read at this file: the sections that carry an
+ordinal are the comparison line's own writings, which number themselves; every other section — the
+pilot's preparation, the withheld-family rulings, the blind output's landing, the sizing pack — carries
+a descriptive title and **names its dispatch instead**, which is the property the file actually holds
+to. This section does the same, in the sentence below.
+
+This batch ran `cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md`: **Task 0** landed the
+hundred-and-first entry and the dispatch, and pushed; **Task 1** wrote the third `FROZEN` entry,
+corrected the two comments the freeze would otherwise have made false, regenerated the manifest, and
+landed all of it in one commit; **Task 2** closed. **NO RULING WAS TAKEN, NO POSITION WAS WEIGHED, NO
+PACK MEMBER WAS RE-RENDERED, NOTHING WAS WRITTEN INTO ANY PACK DIRECTORY, NO WITHHELD FAMILY WAS
+TOUCHED, NO `MEMBERS` OR `EXTRAS` ENTRY AND NO SPAN ANCHOR WAS EDITED, NO SESSION WAS BOOTED, AND NO
+RECOMMENDATION APPEARS ANYWHERE.**
+
+### The commits, by explicit hash
+
+| Act | Commit | What it carries |
+|---|---|---|
+| the tree met | `655b4f774eb3ffb88cbadc4a6bac2acedd814dd5` | the local tip; `origin/master` EQUAL to it — nothing unpushed |
+| Task 0 | `d43634d981ba983a47de2b9f2c9e7ec8c8ef94b3` | `cowork_handoff_entry_one_hundred_and_one.md` and this dispatch — **two paths**, 769 insertions, zero deletions |
+| Task 1 | `8664a85f1565d14c7c8e4c02911dfdc43c42e166` | `tools/audit/gen_derivation_boot_pack.py` and `tools/audit/derivation_boot_pack.json` — **two paths** |
+| the close | this commit | `STATUS.md`, `STATUS_ARCHIVE.md`, `tools/audit/gen_status_batch_bound.py`, `tools/audit/status_batch_bound.json`, `tools/audit/session_start_read_size.json`, this section, the report |
+| the end state | the one further commit | the end-state guard run, which this section does not assert |
+
+**Both task commits were pushed and `origin/master` verified equal at
+`.git/refs/remotes/origin/master` with the file tools, never from a push's own output.** The blobs each
+commit carries were read back at `git rev-parse <commit>:<path>`: the dispatch
+`b37650bfb9769e64ea8ae5169eb139d3c0352082`, the hundred-and-first entry
+`1124014b4739c5f789892e11818c33e7f3b3a078`, the generator
+`19e0d807ed9234430fd13716039cc089035b76d3`, the manifest
+`59c5c729aae9eea372a0b930a0ddf9c1ca906998` — the last two being the very blobs the object-level checks
+below were taken over.
+
+**THE DISPATCH WAS PINNED** to blob `b37650bfb9769e64ea8ae5169eb139d3c0352082` at Task 0 under standing
+clause **P-2**, and its blob was proven unmoved immediately before staging. **The working-tree-first
+read is declared** as that clause's own fallback route, the user's opening line having named the
+dispatch file alone.
+
+### Both guard states
+
+**THE START STATE HELD EXACTLY AS DECLARED.** **76 guards run, 10 failing, 4 not run, 16 historical,
+and ZERO STOPs.** The ten failing are the ten the dispatch's own FACT names, member for member, with no
+eleventh red. **THE RUN WAS TAKEN IN `--check` MODE, WHICH THE DISPATCH ORDERS**: the mode was named at
+the tool rather than probed for, on the eighth batch's established finding that this tool does not
+recognise `--help` and silently writes, and the artifact was hashed afterwards rather than assumed
+unmoved — `tools/audit/guard_state.json` came back at blob
+`4fe0110c85219f5c4fb7a3fc1d67e2e920fbeb2e`, the very blob the dispatch's FACT names, so the committed
+artifact re-derived exactly and the check mode wrote nothing.
+
+**★ AND THE PRECONDITION A2 MAKES A STOP WAS MET AT THAT RUN: `gen_derivation_boot_pack.py --check`
+PASSED.** The pack had not drifted, so what this batch pinned is what the sources still render — which
+is the distinguishing fact of this freeze and is written into the entry's own `finding`.
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it, per the dispatch's item 3.
+
+### E0–E2, graded
+
+- **E0 — MET.** Two paths in one commit; `origin/master` verified at the commit; A1's whole-tree check
+  is below with its enumeration; **A1b's ten comparisons are reported one by one** in the digest table.
+- **E1 — MET.** The ten digests were taken in **both** forms and agree for every one of the ten; the
+  entry, the two comment corrections and the regenerated manifest landed in **one** commit; `--check` is
+  green with **three** frozen subjects; **every file of every pack directory is proven byte-unchanged**;
+  and the deleted-line enumeration for the generator is published below, every deleted line inside one
+  of the two quoted anchors and none outside them.
+- **E2 — carried by the one further commit**, derived from the declared start state plus this batch's
+  own ordered acts.
+
+### A1, A1b and A2–A5, graded
+
+- **A1 — HELD IN FULL, and the check was the whole-population one the dispatch ordered.**
+  `tools/audit/changed_paths.py` enumerated the tracked population at boot: **ZERO tracked
+  modifications** — every one of the 849 records it returned was untracked — exactly as A1 declares.
+  Both named untracked paths were confirmed present in that enumeration and again by the ordered
+  per-path `git ls-files --others --exclude-standard` check. **The large standing untracked population
+  of historical `cc_instruction_*` and `cc_*_report` files at the root was met exactly as A1 names it in
+  advance, and none of it was landed**; no further `cowork_handoff_entry_*.md` and no further
+  `cowork_rulings_*.md` stood at the root. **No tracked path was modified at any point in the run other
+  than by this batch's own ordered acts** — re-measured before the close commit, which returned exactly
+  the five paths this section's commit row names and no sixth.
+- **A1b — HELD, AND IT IS THE PRECONDITION THE FREEZE RESTS ON.** All ten files of
+  `tools/audit/derivation_boot_pack/l0-l1` are **tracked** and **equal to the blob the current commit
+  carries**; none is untracked and none differs. The comparison was taken per path between the working
+  copy written into the object store and `git rev-parse <tip>:<path>`, and the ten results are the
+  `committed` column of the digest table below. **So the bytes this act pins are the record of what the
+  deriving session was given**, which is the whole ground of the freeze.
+- **A2 — HELD, with both of its named exceptions measured rather than assumed.** The ten failing tools
+  and zero STOPs, exactly, at the start-state run, and `gen_derivation_boot_pack.py --check` PASSING as
+  A2 requires. **`gen_session_start_read_size.py --check` DID go STALE**, exactly as A2 predicts, and
+  the cause was established at the tool: it measures the session-start read and `STATUS.md` grew under
+  this batch's own entries. It was regenerated **LAST**, after the forward bound's own edit to
+  `STATUS.md`, and its `--check` was green before the commit. **`gen_l0_l1_outgoing_population.py
+  --check` did NOT go stale**: it was run and still re-derives, so **no member of the population moved
+  and the artifact needed no regeneration** — the predicted staleness did not materialise and nothing
+  was regenerated on the strength of a prediction. `gen_artifact_inventory.py --check` and
+  `gen_artifact_inventory_surface.py --check` are the standing reds A2 names; **no difference was
+  observed in either and nothing was repaired.**
+  **★ THE BOUND ON THIS GRADE, DECLARED RATHER THAN GLOSSED (#24).** A2 directs that every red met be
+  classified by its cause **at the tool**. That was done for the two reds this batch's own acts could
+  reach — the read-size tool and the population tool, each established by running it and reading its own
+  output. **For the other eight inherited reds this batch measured the SET and not the causes**: they
+  were verified member for member against the dispatch's FACT at the start-state run, and their
+  classing as standing reds is **carried from the dispatch, not established here**. No red outside this
+  batch's own acts' subjects appeared, which is the condition A2 makes a STOP.
+- **A3 — MEASURED BEFORE BEING ACCEPTED and HELD.** `evidence_pin_membership.json` was checked by
+  running its generator's `--check`, which passed, and its blob compared against the committed one:
+  **byte-identical** (`fb3a00be268401e5386954cc3c410c9c827539df` both sides), movement by zero exactly
+  as A3 predicts. The artifact is therefore **NOT** committed.
+- **A4 — HELD.** **No tool was added and none removed.** Population unchanged at **76** at the
+  start-state run; the failing set the ten named, plus none. The two ordered acts that touch a tool
+  source are Task 1's two edits to `gen_derivation_boot_pack.py` and Task 2's re-aiming of
+  `gen_status_batch_bound.py`, the latter of which **D-648** classes as authored-input maintenance and
+  which the dispatch licenses in terms. **`gen_derivation_boot_pack.py --check` passes at the end state
+  and its output carries THREE frozen lines, the new one reading exactly `l0-l1: FROZEN — 10 file(s) at
+  their recorded blobs`.**
+- **A5 — HOLDS, with its stated exceptions and no other movement.** **Every file of every pack
+  directory, all three subjects, is byte-unchanged** — proven at the objects, 24 files, 24 equal, zero
+  moved. The reading file, the sitting record, the derivation, the derived specification, the brief,
+  every outgoing text, the suspension file and every register source are untouched; every governing
+  document except `STATUS.md` and `STATUS_ARCHIVE.md` is untouched; every `tools/audit/*.py` except the
+  two the dispatch names is untouched. **In `gen_derivation_boot_pack.py` the difference is exactly the
+  two edits Task 1 orders and nothing else; in `derivation_boot_pack.json` it is exactly the inserted
+  `★_FROZEN` block under the `l0-l1` record.**
+
+### The ten digests, taken in both forms, with the two-form agreement stated per file
+
+**Every value below was taken with `git hash-object <file>` AND with `git hash-object --no-filters
+<file>`, and the two agree for every one of the ten** — the same establishment the two existing entries
+carry, so what the freeze records is the hash of the bytes on disk and not of a normalized form. The
+third column is `git rev-parse <tip>:<path>`, which is A1b's comparison.
+
+| File | filtered | unfiltered | committed |
+|---|---|---|---|
+| `00_READ_THIS_FIRST.md` | `7e7339cf3250ac87337317ca109cf9645dd31b8d` | agrees | agrees |
+| `01_the_phase_definitions.md` | `518b1e50d60af2b4e2ddcd8978623832eb071899` | agrees | agrees |
+| `02_the_guiding_principles_and_the_conventions.md` | `00ffb0bede471f15d70de6cb7435a617b09caa58` | agrees | agrees |
+| `03_the_writing_standards.md` | `518048459da6a865285a0f7c66c5d8f8045f0fc2` | agrees | agrees |
+| `04_the_dispatch_protocol.md` | `02107d1ab37af197821edf3ca98ccf6f7ae5c0d3` | agrees | agrees |
+| `05_the_ratified_design_intent.md` | `60563ab26e5c5c8827e32645b12eceaeb355933b` | agrees | agrees |
+| `06_the_defect_type_catalog.md` | `1dec7621dc48d89242cacaf79b3048cd965d6a19` | agrees | agrees |
+| `07_the_charter_the_layers_and_the_decisions.md` | `a0513707886414a1c193a884e3f5f15ffd3f12f5` | agrees | agrees |
+| `08_the_five_research_extracts.md` | `54d0892b022107a8bd4cedc9e4bba54679a1ed41` | agrees | agrees |
+| `09_the_empirical_findings_ledger.md` | `2bf845db798e91382236387e7f35fabf48b2ec07` | agrees | agrees |
+
+**★ A PROPERTY WORTH RECORDING BECAUSE IT IS EVIDENCE ABOUT THE PACKS RATHER THAN ABOUT THIS ACT.** Four
+of the ten digests are digests this record already held for another subject — members (1), (3) and (6)
+are the same blobs in all three packs, and member (5) is the same blob in `l0-l1` as in `scoring-model`.
+That is what the generator's own construction predicts, the ruled six being rendered identically wherever
+their sources and their withheld family agree; it is stated here as an observation and nothing is
+concluded from it.
+
+### The deleted-line enumeration for the generator, against the two quoted anchors
+
+Taken between two explicit blob hashes — `488e3fb22d0cb78b911ff567ec278303100c046a` before and
+`19e0d807ed9234430fd13716039cc089035b76d3` after. **THREE lines are deleted in the whole file**, counted
+as every line opening with `-` less the diff's own `---` header line:
+
+1. `  the mechanism alone.  Members (2) and (4) of both spent packs no longer re-render, because` —
+   the **second line of anchor (c)**, the docstring's why-a-freeze opening. Its first line is unchanged
+   context, the replacement having retained it identically.
+2. `    # \`l0-l1\` IS ABSENT DELIBERATELY, and its absence is what makes it LIVE: its deriving session` —
+   the **first line of anchor (b)**.
+3. `    # has not run, so its pack is still an input and must stay current with its sources.` — the
+   **second line of anchor (b)**.
+
+**No line outside the two quoted anchors is deleted anywhere in the file**, and **the `}` line that
+closes the `FROZEN` table is unchanged and stands where it stood** — it appears as unchanged context in
+the same difference. **A count of changed passages was refused as a check**, as the dispatch orders; the
+property carrying the weight is this enumeration.
+
+### The manifest's difference, and the pack directories
+
+**The manifest's difference is exactly the one inserted `★_FROZEN` block under the `l0-l1` subject
+record** — proven between `8ceed61767a7536354e1eaf57db1643b5aaf452f` and
+`59c5c729aae9eea372a0b930a0ddf9c1ca906998`. The only line the difference removes is the closing bracket
+of the member list, re-emitted one line later with the comma the insertion requires; **no value moved,
+no other subject's record moved, and no block was lost.**
+
+**Every file of every pack directory was compared against the current commit's own blob**, all three
+subjects: `harmony-boundary` 7 files, `scoring-model` 7, `l0-l1` 10 — **24 compared, 24 equal, 0
+moved**, and no file added to or removed from any directory. **This batch rendered no pack member and
+wrote nothing into any pack directory**, which is what writing the `FROZEN` entry BEFORE running the
+tool in write mode is for: with the entry in place the generator's writing half skips that directory,
+so the only run this batch took in write mode could not have reached it.
+
+### The forward bound, and the prediction it was run against
+
+**The prediction was stated before the run, from the tool's own mechanism read at its source**: with
+`BASE_COMMIT` at this batch's Task 1 commit and `PREVIOUS_BATCH_DISPATCH` at the tenth comparison
+dispatch, `moved_entries()` finds exactly one dated entry naming that dispatch — the tenth writing's
+close, which at that commit still carries the `Last updated: ` prefix — then walks the run of dated
+entries below it while each says `Same dispatch`, taking its Task 1 and Task 0 entries and stopping at
+the 2026-09-02 close, which says neither. **So three entries were predicted to move**, with the one
+declared textual adjustment applied to the first.
+
+**The run matched the prediction exactly: 3 entries moved, 4,278 characters; byte-present in the
+archive exactly once TRUE; absent from the must-read TRUE; exit 0.** **The second writing's two
+nameless 2026-09-02 entries remain in `STATUS.md`**, as every aiming of this tool since the third
+writing records — a declared state and not a STOP. **All five authored constants moved together** and
+`PREVIOUS_AIMINGS` was **appended to, not replaced** (#12), the superseded aiming's five values read at
+the tool rather than transcribed from the dispatch, whose face does not state them.
+
+### Declared departures
+
+1. **The dispatch was read from the working tree before it was pinned.** The user's opening line named
+   the dispatch file alone, which is standing clause **P-2**'s own fallback route: declared here, pinned
+   at Task 0, and the blob proven unmoved immediately before staging.
+2. **A STALE, EMPTY `.git/index.lock` REFUSED THE FIRST STAGING ATTEMPT, AND THE CAUSE WAS ESTABLISHED
+   BEFORE ANYTHING WAS TOUCHED.** Three things were measured first: **no git process was running** on
+   the machine; **the lock file was empty**, read with the file tools, so no in-progress index write was
+   represented by it; and **`tools/audit/changed_paths.py`'s worktree mode runs `git status
+   --porcelain=v1 -z`**, read at that tool's own frozen `ALLOWED` table — while the hundred-and-first
+   entry records that the writing side's run of that very tool was **killed by a timeout on this
+   repository this same session**, which is exactly what leaves an empty lock behind. Only then was the
+   stale lock removed. **It is a repository-state act on an untracked file that no bar of this dispatch
+   names, it touched no tracked path, no document, no mechanism and no artifact, and Task 0 could not
+   have been performed at all without it** — so it is reported here rather than absorbed.
+3. **THE TASK 0 COMMIT MESSAGE WAS FIRST WRITTEN MALFORMED AND WAS CORRECTED BEFORE THE PUSH. This is a
+   counted error of this side.** The first invocation passed the message through a quoting form the
+   shell in use does not parse, and the commit that resulted carried `@` as its subject with the
+   dispatch's ordered subject demoted into the body. It was found by reading the commit object back —
+   the check that would have been taken anyway — and corrected by amending the message alone, with the
+   tree, the parent and both blobs unchanged, before anything was pushed. **The ordered subject stands
+   exactly as the dispatch writes it.** The lesson is narrow and worth carrying: **a commit subject is
+   verified at the commit object, not at the command's exit status**, which returned zero on the
+   malformed message.
+4. **Three shell-guard denials were met and routed rather than worked around**: a line count aimed at a
+   repository path, a `git diff` whose two hashes sat in shell variables the guard cannot expand (denied
+   on indeterminate, **D-647**, and re-taken with the two hashes written literally), and a metadata read
+   aimed at `.git/index.lock`. Each was re-taken through the file tools or through an explicit-hash
+   object query, and none was retried in the denied form.
+
+### What this batch did NOT do
+
+**No ruling was taken, no position weighed, no verdict reached on any open question, on the derivation
+or on the deriving session's independence. No session was booted. No measurement of the analysis and no
+derivation of any statement about it.** **No pack member was rendered and nothing was written into any
+pack directory.** **No withheld family was touched** — not the `CRITERION` table, not the `VERDICTS`
+table, not the `WITHHELD` records, for any subject — and **nothing about L2's pack was prepared,
+authored or implied.** No `MEMBERS` entry, no `EXTRAS` entry and no span anchor was edited. No
+open-items row was created, flipped or discarded; no decisions-register entry was written and **no
+`D-NNN` was allocated** — that register cannot accept one and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route. No `src/` change, no golden, no test
+changed, moved or run, no build, nothing under `tools/corpus/` or `tools/robust_stop/`, no guard
+enrolment.
+
+### The plan, and this batch's tell
+
+**The plan stands at:** phase OPEN → derivation LANDED → comparison COMPLETE → dispositions: Rulings
+34–63 → application act RAN → ratification act TAKEN: Rulings 64–77 → ratification edits APPLIED, the
+specification RATIFIED → the item (d) family placements MADE → Row 4.3 RULED AND PLACED → §11 and §12
+REPAIRED ADDITIVELY → the four rows' AUDIT QUESTIONS PLACED → **the `l0-l1` pack FROZEN, its deriving
+session having run** → **L2's pack, cut with the §3al.4 finding applied** → **then L2, sequenced by
+Ruling 10**.
+
+**The tell, in one sentence: no — this batch produced nothing other than the landed records, the third
+`FROZEN` entry, the two corrected comments, the regenerated manifest, the Task-2 files and the report**,
+the one act outside that list being the removal of the stale lock named as departure 2, which produced
+nothing and is named rather than absorbed.
+
+### The standing self-check over this batch's own diff
+
+1. *Principles touched.* **#12** — nothing deleted: both superseded comment sentences stand at their own
+   sites marked as superseded, `PREVIOUS_AIMINGS` is appended to rather than replaced, and no pack file
+   was rewritten. **#10** — the generator ceased to state something false about itself in the same act
+   that made it false, which is why the entry, the two comments and the manifest were treated as one
+   member standing or falling together. **#6** — each subject's ground lives in its own entry and the
+   docstring's shared block is scoped rather than duplicated. **#19** — the digests are established in
+   two forms and against the committed blobs rather than asserted, and the freeze is thereafter enforced
+   by the tool's own hash STOP rather than by this record's word. **#13** — an anchor not found verbatim
+   would have been a STOP; both were found verbatim. **#15** — every property is verified at the objects
+   on the full surface, the pack directories included, never at the tool's assertion. **#17(f)/D-431** —
+   no figure of any pack member is restated; the digests here are this batch's own measurements, each
+   named with how it was taken. **#24** — the bound on the A2 grade is stated, and no difference between
+   two measured quantities is asserted anywhere. Conforms.
+2. *Conventions.* American English; no self-invented label — *a boot pack*, *a subject*, *SPENT*,
+   *FROZEN*, *a digest*, *the manifest*, *the withheld family*, *a changed passage* and *the current
+   commit* are the dispatch's own, defined at its head; *measurement tool* never *instrument*;
+   music-theory words in their musical sense, *bar* nowhere used in a prohibiting sense; no numeric grade
+   anywhere. A changed-passage count was explicitly refused as a check.
+3. *Figures and premises.* The tip and `origin/master` at the two ref files with the file tools; every
+   commit at `git cat-file -p` and `git show --stat` by explicit hash; the guard verdicts from this
+   batch's own start-state run, whose artifact was hash-compared against the tip's; A1 with the
+   sanctioned enumeration tool over the whole tracked population, twice; A1b and the pack-directory
+   proof by per-path blob comparison; both object-level differences between two explicit blob hashes;
+   the forward bound's prediction read at the tool's own source before it was run.
+4. *File-tools rule.* Every repository read through the file tools; the shell used only for git object
+   queries by explicit hash, for reads of scratch copies outside the repository, and for the sanctioned
+   tool invocations. No `git status`, no working-tree `git diff` without an explicit hash. **Three guard
+   denials were met and are declared above as departure 4.**
+5. *Uncertainty.* **What this batch establishes is that the ten files were tracked, unmodified and
+   equal to the committed blobs at the moment they were pinned, and that their digests are the hashes of
+   their bytes on disk.** It does **not** establish that those bytes are what the deriving session read
+   — that is the sitting record's §3al and the pack's own modification times, neither of which this
+   batch re-measured — and it does not establish the individual causes of the eight inherited reds it
+   carried rather than measured. Both bounds are stated above where they bear.
+
+*Provenance: CC, 2026-09-04. Every commit identifier above was read from the commit object by explicit
+hash at the time each commit was taken, and `origin/master` was read at its ref file with the file tools
+after each push; the guard verdicts are this batch's own start-state run, established as the tip's by a
+blob comparison; A1 was established with the sanctioned enumeration tool over the whole tracked
+population; A1b, A3 and the pack-directory proof by blob comparison against the committed objects; both
+object-level differences between two explicit blob hashes; the deleted-line enumeration at the object;
+the forward bound by running the tool at its new aiming and reading its own output. No figure of any
+pack member is restated in this section (D-431).*

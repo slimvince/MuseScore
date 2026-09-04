@@ -156,11 +156,25 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # expected to move. **The second writing's two nameless entries remain in `STATUS.md` and no aiming of
 # this tool can identify them**, as the row for the third writing below records; that is a declared
 # state and not a STOP.
-BASE_COMMIT = "c810f5ad74648a882d0da231abad4a92066e3ad2"
+#
+# ★★★★★★★★★★ RE-AIMED AGAIN 2026-09-04 by `cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md`
+# Task 2 — the close of the act that froze the `l0-l1` boot pack at its rendered blobs, its deriving
+# session having run — and again ALL FIVE authored inputs moved together, `PREVIOUS_AIMINGS` being
+# appended to rather than replaced (#12). The aiming this replaces is the TENTH writing's, which RAN
+# and moved the ninth writing's three entries exactly as its own dispatch predicted. `BASE_COMMIT` is
+# this batch's LAST TASK COMMIT — Task 1, the third `FROZEN` entry with its two corrected comments and
+# the regenerated manifest — per this tool's docstring; the then-previous batch is the tenth
+# comparison dispatch, whose close entry names it and whose two entries below it say `Same dispatch`,
+# so THREE entries are expected to move. **The second writing's two nameless entries remain in
+# `STATUS.md` and no aiming of this tool can identify them**, as the row for the third writing below
+# records; that is a declared state and not a STOP. *(This batch is not a writing of the L0/L1
+# comparison line, so it carries no ordinal; the fields below name it by its own dispatch, which is
+# what every membership derivation here reads.)*
+BASE_COMMIT = "8664a85f1565d14c7c8e4c02911dfdc43c42e166"
 
 # The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
 # itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_comparison_l0_l1_ninth_2026_09_04.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_comparison_l0_l1_tenth_2026_09_04.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-04 and this batch ran on 2026-09-04, so the two agree; the field is kept
@@ -168,15 +182,15 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_comparison_l0_l1_ninth_2026_09_04.md"
 # carrying a dispatch's date would say something false about the record (#10) on any batch where the
 # two differ.
 ACT_DATE = "2026-09-04"
-DISPATCH = "cc_instruction_comparison_l0_l1_tenth_2026_09_04.md"
+DISPATCH = "cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. The executing dispatch orders the move and this
-# batch's own `STATUS.md` entries in the same numbered task — for the tenth comparison dispatch that
+# batch's own `STATUS.md` entries in the same numbered task — for the boot-pack freeze dispatch that
 # is its Task 2, whose item 1 orders the pointer entries and the forward bound together — so both halves
 # of "the same act that writes its own entries" sit inside Task 2, and Task 2 is what the archive header
 # names. No sub-item is carried, because the header names an act rather than a sub-step and every
 # previous aiming names a whole task. *(This comment named Task 3 while the seventh comparison dispatch
-# was the executing act, and Task 2 while the eighth and the ninth were, each correct then; the
-# numbered task differs per dispatch and is re-stated with each re-aiming rather than left to be
+# was the executing act, and Task 2 while the eighth, the ninth and the tenth were, each correct then;
+# the numbered task differs per dispatch and is re-stated with each re-aiming rather than left to be
 # inferred.)*
 TASK = "Task 2"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
@@ -407,6 +421,15 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_comparison_l0_l1_ninth_2026_09_04.md, Task 2",
      "base_commit": "778e70c6dd9f74853fcaeaf77643809ecd07e9e6",
      "the_then_previous_batch": "cc_instruction_comparison_l0_l1_eighth_2026_09_04.md"},
+    # ★ RECORDED 2026-09-04 by `cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md` Task 2. This is
+    # the TENTH writing's aiming, now superseded. That move RAN: the tool was re-aimed at all five
+    # authored inputs, `--apply` moved the NINTH writing's three entries to STATUS_ARCHIVE.md, and its
+    # own reconciliation came back green in both limbs — every moved entry byte-present in the archive
+    # exactly once and absent from the must-read. The five values below are read at this tool rather
+    # than transcribed from the executing dispatch, whose face does not state them.
+    {"executing_act": "cc_instruction_comparison_l0_l1_tenth_2026_09_04.md, Task 2",
+     "base_commit": "c810f5ad74648a882d0da231abad4a92066e3ad2",
+     "the_then_previous_batch": "cc_instruction_comparison_l0_l1_ninth_2026_09_04.md"},
 ]
 
 ARCHIVE_HEADER = (
