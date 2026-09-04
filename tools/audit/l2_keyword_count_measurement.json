@@ -1,0 +1,2174 @@
+{
+ "what_this_is": "THE READ-ONLY KEYWORD COUNT owed by Ruling 83 (section 3cl of cowork_rulings_2026_08_31_decision_surface_sitting.md) before L2's keyword list is ruled. It measures three candidate keyword lists against the ruled group term. It authors no verdict, withholds nothing and renders no pack.",
+ "how_it_was_derived": "The generator's own candidates() function, called with scratch criteria injected into the imported module in memory. The committed CRITERION table and KEYWORDS tuple are unchanged on disk.",
+ "the_population": {
+  "design_intent_class": 244,
+  "sort_entries_total": 411
+ },
+ "the_ruled_group_term": {
+  "groups": [
+   "A",
+   "C",
+   "D",
+   "E",
+   "F",
+   "G"
+  ],
+  "candidates": 130
+ },
+ "the_three_lists": {
+  "LIST_P_the_pilots_eighteen": [
+   "slice",
+   "slicing",
+   "segment",
+   "segmentation",
+   "boundary",
+   "boundaries",
+   "change-point",
+   "onset",
+   "release",
+   "harmonic rhythm",
+   "where one chord ends",
+   "finest grain",
+   "grain",
+   "atomic",
+   "sounding",
+   "struck",
+   "priority of evidence",
+   "evidence ranking"
+  ],
+  "LIST_W_widened_to_four_limbs": [
+   "slice",
+   "slicing",
+   "segment",
+   "segmentation",
+   "boundary",
+   "boundaries",
+   "change-point",
+   "onset",
+   "release",
+   "harmonic rhythm",
+   "where one chord ends",
+   "finest grain",
+   "grain",
+   "atomic",
+   "sounding",
+   "struck",
+   "priority of evidence",
+   "evidence ranking",
+   "tonality",
+   "tonic",
+   "local key",
+   "key area",
+   "modulation",
+   "tonicization",
+   "chord tone",
+   "non-chord",
+   "chord-tone assignment",
+   "elaboration relation",
+   "passing tone",
+   "passing note",
+   "neighbour",
+   "neighbor",
+   "suspension",
+   "anticipation",
+   "ornament",
+   "scale degree",
+   "roman numeral",
+   "inversion",
+   "applied chord",
+   "chord quality",
+   "figured bass",
+   "rival"
+  ],
+  "LIST_B_widened_plus_the_six_bare_words": [
+   "slice",
+   "slicing",
+   "segment",
+   "segmentation",
+   "boundary",
+   "boundaries",
+   "change-point",
+   "onset",
+   "release",
+   "harmonic rhythm",
+   "where one chord ends",
+   "finest grain",
+   "grain",
+   "atomic",
+   "sounding",
+   "struck",
+   "priority of evidence",
+   "evidence ranking",
+   "tonality",
+   "tonic",
+   "local key",
+   "key area",
+   "modulation",
+   "tonicization",
+   "chord tone",
+   "non-chord",
+   "chord-tone assignment",
+   "elaboration relation",
+   "passing tone",
+   "passing note",
+   "neighbour",
+   "neighbor",
+   "suspension",
+   "anticipation",
+   "ornament",
+   "scale degree",
+   "roman numeral",
+   "inversion",
+   "applied chord",
+   "chord quality",
+   "figured bass",
+   "rival",
+   "mode",
+   "root",
+   "quality",
+   "figure",
+   "applied",
+   "passing"
+  ]
+ },
+ "the_counts": {
+  "group_term_alone": 130,
+  "LIST_P": {
+   "keywords_alone": 73,
+   "with_the_group_term": 161,
+   "added_beyond_the_group_term": 31
+  },
+  "LIST_W": {
+   "keywords_alone": 109,
+   "with_the_group_term": 177,
+   "added_beyond_the_group_term": 47
+  },
+  "LIST_B": {
+   "keywords_alone": 157,
+   "with_the_group_term": 201,
+   "added_beyond_the_group_term": 71
+  }
+ },
+ "per_word_LIST_B": {
+  "slice": {
+   "design_intent_entries_matched": 22,
+   "of_those_OUTSIDE_the_six_groups": 8,
+   "ids_outside_the_six_groups": [
+    "D-338",
+    "D-341",
+    "D-382",
+    "D-383",
+    "D-387",
+    "D-425",
+    "D-545",
+    "D-623"
+   ]
+  },
+  "slicing": {
+   "design_intent_entries_matched": 2,
+   "of_those_OUTSIDE_the_six_groups": 1,
+   "ids_outside_the_six_groups": [
+    "D-545"
+   ]
+  },
+  "segment": {
+   "design_intent_entries_matched": 14,
+   "of_those_OUTSIDE_the_six_groups": 4,
+   "ids_outside_the_six_groups": [
+    "D-392",
+    "D-400",
+    "D-454",
+    "D-480"
+   ]
+  },
+  "segmentation": {
+   "design_intent_entries_matched": 8,
+   "of_those_OUTSIDE_the_six_groups": 4,
+   "ids_outside_the_six_groups": [
+    "D-392",
+    "D-400",
+    "D-454",
+    "D-480"
+   ]
+  },
+  "boundary": {
+   "design_intent_entries_matched": 25,
+   "of_those_OUTSIDE_the_six_groups": 13,
+   "ids_outside_the_six_groups": [
+    "D-337",
+    "D-455",
+    "D-457",
+    "D-459",
+    "D-476",
+    "D-477",
+    "D-478",
+    "D-479",
+    "D-480",
+    "D-481",
+    "D-484",
+    "D-485",
+    "D-495"
+   ]
+  },
+  "boundaries": {
+   "design_intent_entries_matched": 5,
+   "of_those_OUTSIDE_the_six_groups": 5,
+   "ids_outside_the_six_groups": [
+    "D-454",
+    "D-476",
+    "D-477",
+    "D-479",
+    "D-481"
+   ]
+  },
+  "change-point": {
+   "design_intent_entries_matched": 0,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "onset": {
+   "design_intent_entries_matched": 4,
+   "of_those_OUTSIDE_the_six_groups": 2,
+   "ids_outside_the_six_groups": [
+    "D-224",
+    "D-276"
+   ]
+  },
+  "release": {
+   "design_intent_entries_matched": 2,
+   "of_those_OUTSIDE_the_six_groups": 1,
+   "ids_outside_the_six_groups": [
+    "D-613"
+   ]
+  },
+  "harmonic rhythm": {
+   "design_intent_entries_matched": 0,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "where one chord ends": {
+   "design_intent_entries_matched": 1,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "finest grain": {
+   "design_intent_entries_matched": 1,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "grain": {
+   "design_intent_entries_matched": 4,
+   "of_those_OUTSIDE_the_six_groups": 2,
+   "ids_outside_the_six_groups": [
+    "D-387",
+    "D-490"
+   ]
+  },
+  "atomic": {
+   "design_intent_entries_matched": 2,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "sounding": {
+   "design_intent_entries_matched": 15,
+   "of_those_OUTSIDE_the_six_groups": 4,
+   "ids_outside_the_six_groups": [
+    "D-276",
+    "D-394",
+    "D-491",
+    "D-584"
+   ]
+  },
+  "struck": {
+   "design_intent_entries_matched": 2,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "priority of evidence": {
+   "design_intent_entries_matched": 1,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "evidence ranking": {
+   "design_intent_entries_matched": 0,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "tonality": {
+   "design_intent_entries_matched": 20,
+   "of_those_OUTSIDE_the_six_groups": 7,
+   "ids_outside_the_six_groups": [
+    "D-113",
+    "D-382",
+    "D-383",
+    "D-384",
+    "D-391",
+    "D-504",
+    "D-505"
+   ]
+  },
+  "tonic": {
+   "design_intent_entries_matched": 24,
+   "of_those_OUTSIDE_the_six_groups": 9,
+   "ids_outside_the_six_groups": [
+    "D-131",
+    "D-276",
+    "D-291",
+    "D-335",
+    "D-336",
+    "D-337",
+    "D-341",
+    "D-398",
+    "D-543"
+   ]
+  },
+  "local key": {
+   "design_intent_entries_matched": 3,
+   "of_those_OUTSIDE_the_six_groups": 2,
+   "ids_outside_the_six_groups": [
+    "D-504",
+    "D-505"
+   ]
+  },
+  "key area": {
+   "design_intent_entries_matched": 6,
+   "of_those_OUTSIDE_the_six_groups": 4,
+   "ids_outside_the_six_groups": [
+    "D-457",
+    "D-459",
+    "D-460",
+    "D-472"
+   ]
+  },
+  "modulation": {
+   "design_intent_entries_matched": 9,
+   "of_those_OUTSIDE_the_six_groups": 1,
+   "ids_outside_the_six_groups": [
+    "D-337"
+   ]
+  },
+  "tonicization": {
+   "design_intent_entries_matched": 6,
+   "of_those_OUTSIDE_the_six_groups": 2,
+   "ids_outside_the_six_groups": [
+    "D-291",
+    "D-337"
+   ]
+  },
+  "chord tone": {
+   "design_intent_entries_matched": 7,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "non-chord": {
+   "design_intent_entries_matched": 4,
+   "of_those_OUTSIDE_the_six_groups": 1,
+   "ids_outside_the_six_groups": [
+    "D-391"
+   ]
+  },
+  "chord-tone assignment": {
+   "design_intent_entries_matched": 0,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "elaboration relation": {
+   "design_intent_entries_matched": 0,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "passing tone": {
+   "design_intent_entries_matched": 2,
+   "of_those_OUTSIDE_the_six_groups": 1,
+   "ids_outside_the_six_groups": [
+    "D-545"
+   ]
+  },
+  "passing note": {
+   "design_intent_entries_matched": 2,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "neighbour": {
+   "design_intent_entries_matched": 4,
+   "of_those_OUTSIDE_the_six_groups": 2,
+   "ids_outside_the_six_groups": [
+    "D-472",
+    "D-478"
+   ]
+  },
+  "neighbor": {
+   "design_intent_entries_matched": 1,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "suspension": {
+   "design_intent_entries_matched": 1,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "anticipation": {
+   "design_intent_entries_matched": 1,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "ornament": {
+   "design_intent_entries_matched": 3,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "scale degree": {
+   "design_intent_entries_matched": 4,
+   "of_those_OUTSIDE_the_six_groups": 2,
+   "ids_outside_the_six_groups": [
+    "D-276",
+    "D-391"
+   ]
+  },
+  "roman numeral": {
+   "design_intent_entries_matched": 8,
+   "of_those_OUTSIDE_the_six_groups": 4,
+   "ids_outside_the_six_groups": [
+    "D-335",
+    "D-462",
+    "D-472",
+    "D-506"
+   ]
+  },
+  "inversion": {
+   "design_intent_entries_matched": 9,
+   "of_those_OUTSIDE_the_six_groups": 4,
+   "ids_outside_the_six_groups": [
+    "D-221",
+    "D-382",
+    "D-383",
+    "D-584"
+   ]
+  },
+  "applied chord": {
+   "design_intent_entries_matched": 3,
+   "of_those_OUTSIDE_the_six_groups": 2,
+   "ids_outside_the_six_groups": [
+    "D-291",
+    "D-337"
+   ]
+  },
+  "chord quality": {
+   "design_intent_entries_matched": 1,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "figured bass": {
+   "design_intent_entries_matched": 0,
+   "of_those_OUTSIDE_the_six_groups": 0,
+   "ids_outside_the_six_groups": []
+  },
+  "rival": {
+   "design_intent_entries_matched": 3,
+   "of_those_OUTSIDE_the_six_groups": 1,
+   "ids_outside_the_six_groups": [
+    "D-584"
+   ]
+  },
+  "mode": {
+   "design_intent_entries_matched": 52,
+   "of_those_OUTSIDE_the_six_groups": 19,
+   "ids_outside_the_six_groups": [
+    "D-131",
+    "D-206",
+    "D-229",
+    "D-276",
+    "D-389",
+    "D-440",
+    "D-441",
+    "D-442",
+    "D-443",
+    "D-444",
+    "D-447",
+    "D-448",
+    "D-476",
+    "D-478",
+    "D-480",
+    "D-492",
+    "D-503",
+    "D-544",
+    "D-623"
+   ]
+  },
+  "root": {
+   "design_intent_entries_matched": 31,
+   "of_those_OUTSIDE_the_six_groups": 7,
+   "ids_outside_the_six_groups": [
+    "D-341",
+    "D-382",
+    "D-383",
+    "D-406",
+    "D-490",
+    "D-491",
+    "D-509"
+   ]
+  },
+  "quality": {
+   "design_intent_entries_matched": 13,
+   "of_those_OUTSIDE_the_six_groups": 3,
+   "ids_outside_the_six_groups": [
+    "D-222",
+    "D-389",
+    "D-509"
+   ]
+  },
+  "figure": {
+   "design_intent_entries_matched": 3,
+   "of_those_OUTSIDE_the_six_groups": 2,
+   "ids_outside_the_six_groups": [
+    "D-180",
+    "D-182"
+   ]
+  },
+  "applied": {
+   "design_intent_entries_matched": 24,
+   "of_those_OUTSIDE_the_six_groups": 13,
+   "ids_outside_the_six_groups": [
+    "D-222",
+    "D-223",
+    "D-291",
+    "D-337",
+    "D-392",
+    "D-393",
+    "D-394",
+    "D-421",
+    "D-470",
+    "D-471",
+    "D-542",
+    "D-545",
+    "D-623"
+   ]
+  },
+  "passing": {
+   "design_intent_entries_matched": 5,
+   "of_those_OUTSIDE_the_six_groups": 1,
+   "ids_outside_the_six_groups": [
+    "D-545"
+   ]
+  }
+ },
+ "what_LIST_W_adds_beyond_the_group_term": [
+  {
+   "id": "D-113",
+   "group": "K",
+   "title": "Music-theory words are reserved for their music-theory meaning",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonality",
+     "means": "in `plain`",
+     "in_context": "…ject a score is a piece of music, a key is a tonality, and a measure is a bar. Where a word is nee…"
+    }
+   ]
+  },
+  {
+   "id": "D-131",
+   "group": "M",
+   "title": "One shared style taxonomy, not two parallel vocabularies",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `verbatim`",
+     "in_context": "…shared taxonomy** — the **five idioms**: *Diatonic-functional* · *Chromatic-functional* · *Seve…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `plain`",
+     "in_context": "…drift apart. That set is the five idioms (Diatonic-functional, Chromatic-functional, Seventh-fu…"
+    }
+   ]
+  },
+  {
+   "id": "D-221",
+   "group": "U",
+   "title": "A sparse upper-register lowest note does not earn inversion bonuses",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "inversion",
+     "means": "in `title`",
+     "in_context": "…rse upper-register lowest note does not earn inversion bonuses"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "inversion",
+     "means": "in `verbatim`",
+     "in_context": "- **`hasStructuralBass` gates inversion bonuses.** Sparse upper-register   \"bass\" no…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "inversion",
+     "means": "in `plain`",
+     "in_context": "…s, so the bonuses that reward a recognisable inversion do not fire for it."
+    }
+   ]
+  },
+  {
+   "id": "D-224",
+   "group": "U",
+   "title": "Joint bass-and-chord scoring requires accumulated regional evidence",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "onset",
+     "means": "in `verbatim`",
+     "in_context": "…ed`   fires only when at least one tone has `onsetAtRegionStart == true` or   `distinctMetricPo…"
+    }
+   ]
+  },
+  {
+   "id": "D-276",
+   "group": "B",
+   "title": "Modal colour is published as un-rounded per-degree counts; no mode label is inferred or published anywhere",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "onset",
+     "means": "in `verbatim`",
+     "in_context": "…e 1..7 of its key: the sounding duration and onset count of EVERY chromatic inflection of that …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "sounding",
+     "means": "in `verbatim`",
+     "in_context": "…n and each scale degree 1..7 of its key: the sounding duration and onset count of EVERY chromatic …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `verbatim`",
+     "in_context": "…rom the published L1 note facts relative to (tonic, mode)). This is the whole publication — cou…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "scale degree",
+     "means": "in `verbatim`",
+     "in_context": "For each key run and each scale degree 1..7 of its key: the sounding duration and o…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "onset",
+     "means": "in `plain`",
+     "in_context": "…e record publishes the sounding duration and onset count of every chromatic inflection of that …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "sounding",
+     "means": "in `plain`",
+     "in_context": "… each scale degree, the record publishes the sounding duration and onset count of every chromatic …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "scale degree",
+     "means": "in `plain`",
+     "in_context": "For each key run and each scale degree, the record publishes the sounding duration …"
+    }
+   ]
+  },
+  {
+   "id": "D-291",
+   "group": "H",
+   "title": "The tonicization labeller is NOT wired - wiring it would raise the reported agreement while hiding a real key error",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `title`",
+     "in_context": "The tonicization labeller is NOT wired - wiring it wou…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonicization",
+     "means": "in `title`",
+     "in_context": "The tonicization labeller is NOT wired - wiring it would rais…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `verbatim`",
+     "in_context": "**★ THE TONICIZATION LABELLER IS DELIBERATELY LEFT UNWIRED…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonicization",
+     "means": "in `verbatim`",
+     "in_context": "**★ THE TONICIZATION LABELLER IS DELIBERATELY LEFT UNWIRED, AND T…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "applied chord",
+     "means": "in `plain`",
+     "in_context": "A working labeller for applied chords was deliberately left unwired, and the prop…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `patterns`",
+     "in_context": "\\*\\*Do NOT wire 6-tonic-i\\*\\* Crediting rule NOT warranted"
+    }
+   ]
+  },
+  {
+   "id": "D-335",
+   "group": "H",
+   "title": "The function layer outputs the Roman numeral; the tonic/subdominant/dominant summary is a derived read-out, never a stored output",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `title`",
+     "in_context": "…unction layer outputs the Roman numeral; the tonic/subdominant/dominant summary is a derived re…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "roman numeral",
+     "means": "in `title`",
+     "in_context": "The function layer outputs the Roman numeral; the tonic/subdominant/dominant summary is a…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `verbatim`",
+     "in_context": "… corpora evaluate; the three-role summary   (tonic/subdominant/dominant) is deterministically d…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "roman numeral",
+     "means": "in `verbatim`",
+     "in_context": "- **D1 — Output the Roman numeral; the three-role summary is a derived read-ou…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "roman numeral",
+     "means": "in `plain`",
+     "in_context": "The layer's answer is the Roman numeral — the complete, precise reading. The coarse …"
+    }
+   ]
+  },
+  {
+   "id": "D-336",
+   "group": "H",
+   "title": "Cadence detection is key-agnostic and votes for the key rather than reading one",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `verbatim`",
+     "in_context": "…rd   interval test, which false-positives on tonic-to-subdominant and tonic-to-dominant because…"
+    }
+   ]
+  },
+  {
+   "id": "D-337",
+   "group": "H",
+   "title": "A lean toward another degree is a tonicization by default; a key change needs a confirming cadence AND persistence, expressed as a change-cost",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `title`",
+     "in_context": "A lean toward another degree is a tonicization by default; a key change needs a conf…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonicization",
+     "means": "in `title`",
+     "in_context": "A lean toward another degree is a tonicization by default; a key change needs a confirming …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `verbatim`",
+     "in_context": "… rule (no published threshold exists and the boundary is a continuum); and resolving the   distinc…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `verbatim`",
+     "in_context": "- **D3 — Tonicization is the default; modulation requires c…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "modulation",
+     "means": "in `verbatim`",
+     "in_context": "- **D3 — Tonicization is the default; modulation requires cadence confirmation plus persisten…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonicization",
+     "means": "in `verbatim`",
+     "in_context": "- **D3 — Tonicization is the default; modulation requires cadence …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `plain`",
+     "in_context": "…usic leans toward a note other than the home tonic, the home key holds and the chord is written…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "applied chord",
+     "means": "in `plain`",
+     "in_context": "…ome key holds and the chord is written as an applied chord. The key changes only when a cadence confirm…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `patterns`",
+     "in_context": "Tonicization is the default; modulation requires c…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "modulation",
+     "means": "in `patterns`",
+     "in_context": "Tonicization is the default; modulation requires cadence confirmation"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonicization",
+     "means": "in `patterns`",
+     "in_context": "Tonicization is the default; modulation requires cadence …"
+    }
+   ]
+  },
+  {
+   "id": "D-338",
+   "group": "H",
+   "title": "The function layer selects among the chord layer's carried readings and never re-derives a chord from the notes",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "slice",
+     "means": "in `verbatim`",
+     "in_context": "…ver re-derives.** *Rejected:* re-scoring the slice from   the notes (that is Layer 4's job and …"
+    }
+   ]
+  },
+  {
+   "id": "D-341",
+   "group": "H",
+   "title": "The licensed root-motion set is completed by theory — the ascending fifth, the descending second and the diatonic diminished fifth are added",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `title`",
+     "in_context": "…ding fifth, the descending second and the diatonic diminished fifth are added"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "slice",
+     "means": "in `verbatim`",
+     "in_context": "…ation = its own small dormant   increment (`isLicensedProgression` + tests, instruction pending…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `verbatim`",
+     "in_context": "… **also includes**: **the ascending fifth** (tonic→dominant and plagal   motion — I→V, IV→I), *…"
+    }
+   ]
+  },
+  {
+   "id": "D-382",
+   "group": "H",
+   "title": "The function layer selects by JOINT CONSISTENCY across tonality, root, inversion and bass — not by maximizing any one score — and every ambiguity kind reasons over the full carried distribution",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonality",
+     "means": "in `title`",
+     "in_context": "…on layer selects by JOINT CONSISTENCY across tonality, root, inversion and bass — not by maximizin…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "inversion",
+     "means": "in `title`",
+     "in_context": "… by JOINT CONSISTENCY across tonality, root, inversion and bass — not by maximizing any one score —…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "slice",
+     "means": "in `verbatim`",
+     "in_context": "…e.  So engaged Layer 5's selection, for each slice, reasons over the **graded distinct-root dis…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "inversion",
+     "means": "in `verbatim`",
+     "in_context": "…ect by joint consistency across key / root / inversion / bass**, not by maximizing any single score…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonality",
+     "means": "in `plain`",
+     "in_context": "…s best across all the evidence at once — the tonality, the root, the inversion and the bass — rath…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "inversion",
+     "means": "in `plain`",
+     "in_context": "…idence at once — the tonality, the root, the inversion and the bass — rather than the one that scor…"
+    }
+   ]
+  },
+  {
+   "id": "D-383",
+   "group": "H",
+   "title": "Bass, spelling and tonality-consistency DECIDE; a licensed progression is only a tie-break among already-consistent readings and may never override a committed root",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonality",
+     "means": "in `title`",
+     "in_context": "Bass, spelling and tonality-consistency DECIDE; a licensed progression i…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "slice",
+     "means": "in `verbatim`",
+     "in_context": "…e: the built `resolveAbstained` leads with `isLicensedProgression` (the weak channel) as its *p…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "inversion",
+     "means": "in `verbatim`",
+     "in_context": "…tion/ShareTone arms). The research says bass/inversion + spelling + key-consistency are the primary…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonality",
+     "means": "in `plain`",
+     "in_context": "…itten spelling, and how well a root fits the tonality of the passage. Whether the progression is a…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "inversion",
+     "means": "in `plain`",
+     "in_context": "…lly carries root correctness is the bass and inversion, the written spelling, and how well a root f…"
+    }
+   ]
+  },
+  {
+   "id": "D-384",
+   "group": "H",
+   "title": "Re-ranking the tonality under chord evidence is a SEPARATE step, never part of the function layer's selection — the function layer reasons inside a tonality already fixed",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonality",
+     "means": "in `title`",
+     "in_context": "Re-ranking the tonality under chord evidence is a SEPARATE step, nev…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonality",
+     "means": "in `plain`",
+     "in_context": "…nction stage chooses among readings within a tonality that has already been settled; it never re-o…"
+    }
+   ]
+  },
+  {
+   "id": "D-387",
+   "group": "H",
+   "title": "A contradiction between the function context and a committed chord is surfaced on the ONE open mark, enriched with a reason — not on a second parallel flag, and not by overloading the plain undecided mark",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "slice",
+     "means": "in `verbatim`",
+     "in_context": "…ll open-mark annotation that names *why* the slice is marked — one channel, distinct kinds: - *…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "grain",
+     "means": "in `verbatim`",
+     "in_context": "…151-158`): the demoted `ResolutionBasis::FineGrainOverride` value becomes an **annotation basis…"
+    }
+   ]
+  },
+  {
+   "id": "D-391",
+   "group": "H",
+   "title": "Reads between the two analysis dimensions are admissible only where the combined dependency graph stays acyclic — harmonic layers may take voice-leading FACTS freely; a voice-leading component may take a committed harmonic result only if nothing that result depends on consumes it back",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "non-chord",
+     "means": "in `verbatim`",
+     "in_context": "…L1-derived only) freely — e.g. the future L4 non-chord-tone filter — because facts   depend on no h…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonality",
+     "means": "in `plain`",
+     "in_context": "…ds scale degrees, and scale degrees need the tonality — but only if nothing that harmonic stage de…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "scale degree",
+     "means": "in `plain`",
+     "in_context": "…ommitted — recognizing a stock pattern needs scale degrees, and scale degrees need the tonality — but …"
+    }
+   ]
+  },
+  {
+   "id": "D-392",
+   "group": "H",
+   "title": "The later voice-leading components are CLAIMS WITH OWNERS, not builds — each clears its own design document and its own evidence before any instruction exists",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "segment",
+     "means": "in `plain`",
+     "in_context": "Stream separation, phrase segmentation, pattern recognition, voicing analysis …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "segmentation",
+     "means": "in `plain`",
+     "in_context": "Stream separation, phrase segmentation, pattern recognition, voicing analysis and p…"
+    }
+   ]
+  },
+  {
+   "id": "D-394",
+   "group": "H",
+   "title": "Reducing a chord-bearing voice to one line is a DECLARED parameter of the request, uniform across sources — never silent, never chosen per source; the first version offers exactly one rule",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "sounding",
+     "means": "in `verbatim`",
+     "in_context": "…ides exactly one: **top-note** — the highest sounding pitch   per event, the study's curated-branc…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "sounding",
+     "means": "in `plain`",
+     "in_context": "… rule in the first version: take the highest sounding pitch. It is applied the same way everywhere…"
+    }
+   ]
+  },
+  {
+   "id": "D-398",
+   "group": "H",
+   "title": "Parallel motion is judged SEMITONE-EXACT, not by generic diatonic size — a same-direction move whose semitone interval changes counts as similar motion",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `title`",
+     "in_context": "… is judged SEMITONE-EXACT, not by generic diatonic size — a same-direction move whose semitone …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `verbatim`",
+     "in_context": "…PRESERVED\" IS SEMITONE-EXACT, NOT GENERIC DIATONIC SIZE — CLOSED AT BUILD, 2026-07-03.** Two li…"
+    }
+   ]
+  },
+  {
+   "id": "D-400",
+   "group": "H",
+   "title": "A PER-VOICE span kind is admitted to the span typology — melodic phrases overlap across voices by construction and tile only within one voice",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "segment",
+     "means": "in `verbatim`",
+     "in_context": "…s across the whole texture at once — it is a segmentation of the music, and the members of   one …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "segmentation",
+     "means": "in `verbatim`",
+     "in_context": "…s across the whole texture at once — it is a segmentation of the music, and the members of   one kind …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "segment",
+     "means": "in `plain`",
+     "in_context": "…alogue of span kinds, which is what a phrase-segmentation design can then be written against."
+    },
+    {
+     "criterion": "keyword",
+     "matched": "segmentation",
+     "means": "in `plain`",
+     "in_context": "…alogue of span kinds, which is what a phrase-segmentation design can then be written against."
+    }
+   ]
+  },
+  {
+   "id": "D-425",
+   "group": "B",
+   "title": "The uncertainty surface's contract IS the full posterior; the local slice is the first delivered step, and the completion is a named step, never an indefinite upgrade",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "slice",
+     "means": "in `title`",
+     "in_context": "…'s contract IS the full posterior; the local slice is the first delivered step, and the complet…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "slice",
+     "means": "in `verbatim`",
+     "in_context": "**Recommendation: the contract IS B-full; B-slice is the first DELIVERED step (it is establish…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "slice",
+     "means": "in `patterns`",
+     "in_context": "…act IS B-full never a silent regression to B-slice"
+    }
+   ]
+  },
+  {
+   "id": "D-454",
+   "group": "H",
+   "title": "The grouping layer detects nothing — it assembles what earlier layers decided, and pressure to add detection means the work belongs elsewhere",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "segment",
+     "means": "in `verbatim`",
+     "in_context": "…**: it assembles §5.1–§5.3 (punctuation-span segmentation, key-area grouping, cadence alignment) …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "segmentation",
+     "means": "in `verbatim`",
+     "in_context": "…**: it assembles §5.1–§5.3 (punctuation-span segmentation, key-area grouping, cadence alignment) and h…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundaries",
+     "means": "in `plain`",
+     "in_context": "…no detector of its own. It puts together the boundaries, cadences, keys and unresolved marks the ear…"
+    }
+   ]
+  },
+  {
+   "id": "D-455",
+   "group": "H",
+   "title": "A cadence away from a grouping boundary is surfaced as internal, never snapped to the nearest boundary and never discarded",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `title`",
+     "in_context": "A cadence away from a grouping boundary is surfaced as internal, never snapped to th…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `verbatim`",
+     "in_context": "…to punctuation-spans, asymmetrically; an off-boundary cadence is surfaced, not snapped (§5.3).**  …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `plain`",
+     "in_context": "…ay only. A cadence that lands nowhere near a boundary is marked as falling inside a span and shown…"
+    }
+   ]
+  },
+  {
+   "id": "D-457",
+   "group": "H",
+   "title": "A group truncated by the selection edge is marked as truncated, and a group that runs off the edge unclosed carries an extension cue the grouping layer only surfaces",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `verbatim`",
+     "in_context": "…s the **selection edge rather than a musical boundary** carries the provenance `clipped-by-selecti…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `plain`",
+     "in_context": "…roup reaches the edge with neither a closing boundary nor a cadence, it carries a cue saying that …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "key area",
+     "means": "in `plain`",
+     "in_context": "…s a complete one; the same mark applies to a key area at the edge. When a group reaches the edge w…"
+    }
+   ]
+  },
+  {
+   "id": "D-459",
+   "group": "H",
+   "title": "The key-area confidence is a declared margin-class boundary confidence, and its input is the declared key confidence — never the grading diagnostics' sigmoid",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `title`",
+     "in_context": "…y-area confidence is a declared margin-class boundary confidence, and its input is the declared ke…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `verbatim`",
+     "in_context": "… confidence, a span-level aggregate — is a **boundary confidence under the cross-layer confidence …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `plain`",
+     "in_context": "…or a key area is a quantity crossing a stage boundary, so it obeys the cross-layer confidence rule…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "key area",
+     "means": "in `plain`",
+     "in_context": "…onfidence the grouping stage publishes for a key area is a quantity crossing a stage boundary, so …"
+    }
+   ]
+  },
+  {
+   "id": "D-460",
+   "group": "H",
+   "title": "A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "key area",
+     "means": "in `plain`",
+     "in_context": "…ved, that mark is shown on the group and the key area containing it. The grouping stage never reso…"
+    }
+   ]
+  },
+  {
+   "id": "D-462",
+   "group": "H",
+   "title": "Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "roman numeral",
+     "means": "in `plain`",
+     "in_context": "…ey fall, because that check survives a wrong Roman numeral. WHAT KIND of cadence it is depends on the h…"
+    }
+   ]
+  },
+  {
+   "id": "D-472",
+   "group": "H",
+   "title": "Key areas are grouped by a smoothing pass over regions whose key sequence has already been smoothed, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "key area",
+     "means": "in `title`",
+     "in_context": "Key areas are grouped by a smoothing pass over region…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "key area",
+     "means": "in `verbatim`",
+     "in_context": "**★ KEY AREAS ARE GROUPED BY A SMOOTHING PASS OVER REGION…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "neighbour",
+     "means": "in `verbatim`",
+     "in_context": "… on the user's ruling, immediately below).** Neighbouring regions in the same key are collected int…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "roman numeral",
+     "means": "in `verbatim`",
+     "in_context": "…osing area, so the annotation emitter writes Roman numerals against the key that actually governs the p…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "key area",
+     "means": "in `plain`",
+     "in_context": "…tches in the same key are collected into one key area. A stretch that reads a different key but is…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "neighbour",
+     "means": "in `plain`",
+     "in_context": "Neighbouring stretches in the same key are collected i…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "roman numeral",
+     "means": "in `plain`",
+     "in_context": "…counted inside the surrounding area — so the Roman numerals are written against the key that actually g…"
+    }
+   ]
+  },
+  {
+   "id": "D-476",
+   "group": "H",
+   "title": "The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `title`",
+     "in_context": "The phrase-boundary primitive is owned by the notation-derived v…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundaries",
+     "means": "in `verbatim`",
+     "in_context": "…and the function layer (it consumes phrase   boundaries; it cannot own them)."
+    }
+   ]
+  },
+  {
+   "id": "D-477",
+   "group": "H",
+   "title": "Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "boundaries",
+     "means": "in `title`",
+     "in_context": "Phrase boundaries are read from the written surface alone — ne…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `verbatim`",
+     "in_context": "…-, chord-, and function-agnostic.** A phrase boundary is read from the written surface (rests,   d…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundaries",
+     "means": "in `verbatim`",
+     "in_context": "… layer's cadence detection *consumes* phrase boundaries, so a boundary that   depended on cadence wo…"
+    }
+   ]
+  },
+  {
+   "id": "D-478",
+   "group": "H",
+   "title": "A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `title`",
+     "in_context": "A phrase boundary is a peak in a continuous boundary-strength …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `verbatim`",
+     "in_context": "- **D4 — A graded boundary-strength model, not a binary union (user-rat…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "neighbour",
+     "means": "in `verbatim`",
+     "in_context": "…e that cannot express \"a gap larger than its neighbours,\" inflates recall, and wrecks precision (pe…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "neighbour",
+     "means": "in `plain`",
+     "in_context": "…e that cannot express 'a bigger gap than its neighbours', and it finds too many endings."
+    }
+   ]
+  },
+  {
+   "id": "D-479",
+   "group": "H",
+   "title": "The boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are published",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `title`",
+     "in_context": "The boundary cues run per eligible voice and aggregate to…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundaries",
+     "means": "in `title`",
+     "in_context": "…ture, and BOTH the per-voice and the texture boundaries are published"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundaries",
+     "means": "in `verbatim`",
+     "in_context": "… strength,   exposing **both** the per-voice boundaries and the texture boundaries (§4.3). *Rejected…"
+    }
+   ]
+  },
+  {
+   "id": "D-480",
+   "group": "H",
+   "title": "The phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at all — so it is built right but kept proportionate",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "segment",
+     "means": "in `title`",
+     "in_context": "… competitive reference engine does no phrase segmentation at all — so it is built right but kept …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "segmentation",
+     "means": "in `title`",
+     "in_context": "… competitive reference engine does no phrase segmentation at all — so it is built right but kept propo…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `title`",
+     "in_context": "The phrase-boundary primitive is NOT an accuracy requirement — a…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "segment",
+     "means": "in `verbatim`",
+     "in_context": "… (Contrapunctus) does **no** explicit phrase segmentation or cadence detection and is still compe…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "segmentation",
+     "means": "in `verbatim`",
+     "in_context": "… (Contrapunctus) does **no** explicit phrase segmentation or cadence detection and is still competitiv…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `verbatim`",
+     "in_context": "…tus_findings.md` addendum and `cowork_phrase_boundary_methods.md`."
+    }
+   ]
+  },
+  {
+   "id": "D-481",
+   "group": "H",
+   "title": "The notated markers are emitted as boundaries unconditionally; only the surface-cue strength is peak-picked",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "boundaries",
+     "means": "in `title`",
+     "in_context": "The notated markers are emitted as boundaries unconditionally; only the surface-cue streng…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `verbatim`",
+     "in_context": "The picked-boundary set is **the surface-cue peaks UNION every n…"
+    }
+   ]
+  },
+  {
+   "id": "D-484",
+   "group": "H",
+   "title": "The phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and publishes a per-profile max-normalised boundary confidence",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `title`",
+     "in_context": "The phrase-boundary primitive is a derived view: it inherits the…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `verbatim`",
+     "in_context": "… loaded span   ends**. A consumer that wants boundary evidence beyond that stretch extends the spa…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `plain`",
+     "in_context": "…e loaded stretch ends; a consumer that wants boundary evidence further out asks for the extension …"
+    }
+   ]
+  },
+  {
+   "id": "D-485",
+   "group": "H",
+   "title": "Each picked boundary should carry which cue fired and at what scope; the picked set is scope-blind today and the refinement waits for the inference phase",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `title`",
+     "in_context": "Each picked boundary should carry which cue fired and at what sco…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `verbatim`",
+     "in_context": "**★ EVERY PICKED BOUNDARY CARRIES WHICH CUE OR MARKER FIRED, AND AT WH…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `plain`",
+     "in_context": "…s, so a local breath is promoted to a global boundary and the fact that it was local is lost. A bo…"
+    }
+   ]
+  },
+  {
+   "id": "D-490",
+   "group": "H",
+   "title": "FALSIFIED: no threshold can make the fine-grain function override net-positive — the harm rate is flat against both quantities the threshold is built from",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "grain",
+     "means": "in `title`",
+     "in_context": "FALSIFIED: no threshold can make the fine-grain function override net-positive — the harm ra…"
+    }
+   ]
+  },
+  {
+   "id": "D-491",
+   "group": "H",
+   "title": "REFUTED: making the override's comparison vertically fair does not repair it — even where the alternative fits the notes at least as well, it is still about 71 % harmful",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "sounding",
+     "means": "in `verbatim`",
+     "in_context": "…a reading only when the replacement fits the sounding notes at least as   well. Measured, that ban…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "sounding",
+     "means": "in `plain`",
+     "in_context": "…n a chord only when the replacement fits the sounding notes at least as well as the reading it dis…"
+    }
+   ]
+  },
+  {
+   "id": "D-495",
+   "group": "H",
+   "title": "RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes with vote-weight scaling instead of starving",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `title`",
+     "in_context": "RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes w…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "boundary",
+     "means": "in `verbatim`",
+     "in_context": "…s a stated FALLBACK for a FEATURELESS phrase-boundary profile: relax admission   and scale the vot…"
+    }
+   ]
+  },
+  {
+   "id": "D-504",
+   "group": "M",
+   "title": "A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only where no cadence existed threw corroboration away",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonality",
+     "means": "in `verbatim`",
+     "in_context": "…nce implies **motion of the local key** (the tonality — see the §0 \"key\" row). The consumer expose…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "local key",
+     "means": "in `verbatim`",
+     "in_context": "…## 4.6 Harmonic sequences as evidence of the local key (the Layer-5 §5.3 channel; review A-4) A rec…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonality",
+     "means": "in `plain`",
+     "in_context": "…spositions, that is evidence about where the tonality is going. It is now always published. It cor…"
+    }
+   ]
+  },
+  {
+   "id": "D-505",
+   "group": "M",
+   "title": "A harmonic sequence requires at least two transposed statements of the SAME recognised entry; a single internally-sequential entry emits none",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonality",
+     "means": "in `verbatim`",
+     "in_context": "…nce implies **motion of the local key** (the tonality — see the §0 \"key\" row). The consumer expose…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "local key",
+     "means": "in `verbatim`",
+     "in_context": "…ed harmonic sequence implies **motion of the local key** (the tonality — see the §0 \"key\" row). The…"
+    }
+   ]
+  },
+  {
+   "id": "D-506",
+   "group": "M",
+   "title": "Progression recognition is ADDITIVE: the literal Roman numeral is never rewritten, and a substitution is recorded only in the annotation",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "roman numeral",
+     "means": "in `title`",
+     "in_context": "…ression recognition is ADDITIVE: the literal Roman numeral is never rewritten, and a substitution is re…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "roman numeral",
+     "means": "in `verbatim`",
+     "in_context": "- **D4 — Additive; the literal Roman numeral is never changed.** *Alternatives weighed an…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "roman numeral",
+     "means": "in `plain`",
+     "in_context": "… it says so in the annotation and leaves the Roman numeral exactly as the analysis committed it."
+    }
+   ]
+  },
+  {
+   "id": "D-543",
+   "group": "M",
+   "title": "The encoding is key-normalised tonal-pitch-class TRANSITIONS — spelled where spelling is reliable, mod-12 only where it is genuinely absent — run as two complementary views",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `verbatim`",
+     "in_context": "…s.**   Every piece is transposed to a common tonic and encoded as chord-to-chord moves, using t…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "tonic",
+     "means": "in `plain`",
+     "in_context": "…oves with every piece transposed to a common tonic, using the written note names wherever the s…"
+    }
+   ]
+  },
+  {
+   "id": "D-545",
+   "group": "M",
+   "title": "The uniform mechanical extractor for idiom discovery is the external library, stopping at the note-and-slice front — OUR OWN key/chord/function inference must NEVER touch the extraction",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "slice",
+     "means": "in `title`",
+     "in_context": "…e external library, stopping at the note-and-slice front — OUR OWN key/chord/function inference…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "slice",
+     "means": "in `verbatim`",
+     "in_context": "…rary, and extraction stops at the   note-and-slice front: OUR OWN key/chord/function inference …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "slicing",
+     "means": "in `verbatim`",
+     "in_context": "…sts on is stated with it — reading notes and slicing them is   mechanical, so an error there is a…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "passing tone",
+     "means": "in `verbatim`",
+     "in_context": "…lean: the raw   simultaneities still contain passing tones, which is correct output."
+    }
+   ]
+  },
+  {
+   "id": "D-584",
+   "group": "J",
+   "title": "The perfect/imperfect cadence call is made on the BASS-DERIVED inversion; the soprano arrival degree is demoted to a soft optional nudge and the tool never attempts melody identification",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "inversion",
+     "means": "in `title`",
+     "in_context": "…ect cadence call is made on the BASS-DERIVED inversion; the soprano arrival degree is demoted to a …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "rival",
+     "means": "in `title`",
+     "in_context": "…on the BASS-DERIVED inversion; the soprano arrival degree is demoted to a soft optional nudge a…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "sounding",
+     "means": "in `verbatim`",
+     "in_context": "… note, and this layer may not: the highest   sounding voice is often a doubling, and in some textu…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "inversion",
+     "means": "in `verbatim`",
+     "in_context": "…ect cadence call is made on the BASS-DERIVED INVERSION; the soprano arrival   degree is a soft opti…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "rival",
+     "means": "in `verbatim`",
+     "in_context": "…on the BASS-DERIVED INVERSION; the soprano arrival   degree is a soft optional nudge and this l…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "sounding",
+     "means": "in `plain`",
+     "in_context": "…y tell which line is the melody: the highest sounding voice is often a doubling, and in some music…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "inversion",
+     "means": "in `plain`",
+     "in_context": "…one is decided from the bass and the chord's inversion, not from which note the melody lands on. St…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "inversion",
+     "means": "in `patterns`",
+     "in_context": "soprano arrival degree bass-derived inversion"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "rival",
+     "means": "in `patterns`",
+     "in_context": "soprano arrival degree bass-derived inversion"
+    }
+   ]
+  },
+  {
+   "id": "D-613",
+   "group": "Q",
+   "title": "Ground truth for IMPLIED polyphony is confirmed ABSENT — do not re-search it",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "release",
+     "means": "in `verbatim`",
+     "in_context": "…cu's perceptual-stream pop corpus were never released; VISA excerpt sets not public; Chew&Wu/Guio…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "release",
+     "means": "in `plain`",
+     "in_context": "…ts exists — every candidate was either never released or simply reuses the voices the engraver wr…"
+    }
+   ]
+  },
+  {
+   "id": "D-623",
+   "group": "I",
+   "title": "A selection-aware capability is a PARAMETER on the one orchestrator, never a sibling — the capability must not duplicate the orchestration",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "slice",
+     "means": "in `verbatim`",
+     "in_context": "…ins **one** path that builds the note model, slices it and decodes — the seam specified below. …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "slice",
+     "means": "in `plain`",
+     "in_context": "…ath that builds the note model, cuts it into slices and decodes them. The option is off by defa…"
+    }
+   ]
+  }
+ ],
+ "what_LIST_B_adds_that_LIST_W_does_not": [
+  {
+   "id": "D-180",
+   "group": "S",
+   "title": "#17 - the Premise Gate",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "figure",
+     "means": "in `verbatim`",
+     "in_context": "…hand-transcribed measurement numbers** —     figures enter docs only via generated artifacts (th…"
+    }
+   ]
+  },
+  {
+   "id": "D-182",
+   "group": "S",
+   "title": "#19 - an unestablished measurement tool is forbidden (Class B)",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "figure",
+     "means": "in `verbatim`",
+     "in_context": "…An instrument, corpus, gate, or     recorded figure is trusted only after being *positively esta…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "figure",
+     "means": "in `plain`",
+     "in_context": "…uring script, a corpus, a gate or a recorded figure is trusted only once it has been positively …"
+    }
+   ]
+  },
+  {
+   "id": "D-206",
+   "group": "S",
+   "title": "Intonation is held as a future feature, and is a declared future consumer of the analysis",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `plain`",
+     "in_context": "… tuning will read the analysis - knowing the mode, the chord, its function and the progression…"
+    }
+   ]
+  },
+  {
+   "id": "D-222",
+   "group": "U",
+   "title": "If the diminished bonus rotates the winner to a non-diminished chord, the result without it is used",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "quality",
+     "means": "in `verbatim`",
+     "in_context": "- **Post-bonus winner quality guard for `w_dim`.** The bonus can rotate th…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "applied",
+     "means": "in `plain`",
+     "in_context": "…ck to the answer it had before the bonus was applied."
+    }
+   ]
+  },
+  {
+   "id": "D-223",
+   "group": "U",
+   "title": "A gate that judges the pre-correction winner reads a snapshot, not the live result",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "applied",
+     "means": "in `plain`",
+     "in_context": "…the analysis thought before a correction was applied, it reads a copy taken beforehand rather tha…"
+    }
+   ]
+  },
+  {
+   "id": "D-229",
+   "group": "I",
+   "title": "The MuseScore-dependency rule - one general rule for what our code may depend on",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `verbatim`",
+     "in_context": "…anged. 2. **The bridge layer reads the score model only through the established bridge pattern…"
+    }
+   ]
+  },
+  {
+   "id": "D-389",
+   "group": "H",
+   "title": "A notated voice is a FACT and an inferred perceptual line is a JUDGMENT — the two are separate types and are never conflated",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `verbatim`",
+     "in_context": "- **D3 — two-tier voice model: notated voice = fact; stream = inference.*…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "quality",
+     "means": "in `verbatim`",
+     "in_context": "…rejected:* a single \"voice\" concept with   a quality flag — exactly the silent fact/judgment mixi…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "quality",
+     "means": "in `plain`",
+     "in_context": "…onfidence. Merging them into one idea with a quality flag was considered and rejected."
+    },
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `patterns`",
+     "in_context": "two-tier voice model"
+    }
+   ]
+  },
+  {
+   "id": "D-393",
+   "group": "H",
+   "title": "Every voice-leading inference publishes the committed answer AND the FULL ranked list of all alternatives with their weights — nothing below the top is discarded",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "applied",
+     "means": "in `verbatim`",
+     "in_context": "…minimality-plus-maximal-information contract applied here (the same carried-alternatives discipli…"
+    }
+   ]
+  },
+  {
+   "id": "D-406",
+   "group": "M",
+   "title": "The catalog owns the NAMED progressions and substitutions; the pairwise licensing grammar is owned by the function layer — the two are never derived from each other",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "root",
+     "means": "in `verbatim`",
+     "in_context": "…ns the **pairwise licensing grammar** (which root motions are licensed at all). *Changing the …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "root",
+     "means": "in `plain`",
+     "in_context": "…on layer holds the separate rule about which root motions are allowed at all. Neither is compu…"
+    }
+   ]
+  },
+  {
+   "id": "D-421",
+   "group": "M",
+   "title": "Idiom re-discovery rides every corpus wave, on research material only, and a changed cluster set is its own ratification event",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "applied",
+     "means": "in `verbatim`",
+     "in_context": "…elabel. *Why:* the held-out exclusion is #20 applied to an unsupervised study — discovery   outpu…"
+    }
+   ]
+  },
+  {
+   "id": "D-440",
+   "group": "N",
+   "title": "The language-model integration is purpose-built and does not wait for the plugin-API reform",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `title`",
+     "in_context": "The language-model integration is purpose-built and does not w…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `plain`",
+     "in_context": "The language-model bridge is built as its own focused module a…"
+    }
+   ]
+  },
+  {
+   "id": "D-441",
+   "group": "N",
+   "title": "Analysis and modification are phases of ONE conversation; a follow-up instruction re-uses the reasoning rather than re-analysing",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `plain`",
+     "in_context": "…it happen in a single conversation. When the model has already worked out what is wrong, an in…"
+    }
+   ]
+  },
+  {
+   "id": "D-442",
+   "group": "N",
+   "title": "A validation failure goes back to the language model as a tool-call error and is never shown to the user",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `title`",
+     "in_context": "…validation failure goes back to the language model as a tool-call error and is never shown to …"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `plain`",
+     "in_context": "When the checks reject something the model proposed — a note outside an instrument's r…"
+    }
+   ]
+  },
+  {
+   "id": "D-443",
+   "group": "N",
+   "title": "Tool use is the only capability the provider abstraction requires; a provider without it is read-only",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `plain`",
+     "in_context": "The user picks which language-model provider to use. The only thing the system …"
+    }
+   ]
+  },
+  {
+   "id": "D-444",
+   "group": "N",
+   "title": "The core access layer is a facade over interfaces that already exist, not a redesign",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `plain`",
+     "in_context": "The shared foundation the language-model bridge and any future plugin interface both…"
+    }
+   ]
+  },
+  {
+   "id": "D-447",
+   "group": "N",
+   "title": "The model's tool definitions are generated from the operation set, never maintained by hand",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `title`",
+     "in_context": "The model's tool definitions are generated from the o…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `plain`",
+     "in_context": "What the model is told it can do is derived from the opera…"
+    }
+   ]
+  },
+  {
+   "id": "D-448",
+   "group": "N",
+   "title": "The operation set is curated from observed use, not an exposure of every editing method",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `plain`",
+     "in_context": "The model gets a chosen set of about forty editing op…"
+    }
+   ]
+  },
+  {
+   "id": "D-470",
+   "group": "I",
+   "title": "The temporal-context extension fields are recorded during the pipeline's own analysis pass; no consumer re-runs the chord analysis to rebuild them",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "applied",
+     "means": "in `verbatim`",
+     "in_context": "…tep, which is the fact-publication corollary applied here: the field is   published by its produc…"
+    }
+   ]
+  },
+  {
+   "id": "D-471",
+   "group": "J",
+   "title": "The sub-beat annotation duration gate is not retired on argument — it is kept or dropped on a measured observation run, with the verdict stated in advance",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "applied",
+     "means": "in `verbatim`",
+     "in_context": "…s the pre-declared-protocol discipline (#22) applied to a display gate, and it is the pattern the…"
+    }
+   ]
+  },
+  {
+   "id": "D-492",
+   "group": "H",
+   "title": "The recommended redesign is to demote the override to an annotation — carrying the earlier reading unchanged and surfacing the contradiction — floored by simply disabling it",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `verbatim`",
+     "in_context": "…the bullets   above; the loss it accepts — a modest number of genuine corrections given up — i…"
+    }
+   ]
+  },
+  {
+   "id": "D-503",
+   "group": "M",
+   "title": "The idiom mixture is DISCOVERED from the score and merely SEEDED by the user's preset, in three forward-only phases",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `verbatim`",
+     "in_context": "…eded by the user's preference (user-ratified model, 2026-07-02), in three phases — forward-onl…"
+    }
+   ]
+  },
+  {
+   "id": "D-509",
+   "group": "M",
+   "title": "Where the analysis already committed a chord, a recognised progression corrects it through the EXISTING override frame and may only SELECT an already-carried reading — no new comparison frame, and never a reading built from the notes",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "root",
+     "means": "in `verbatim`",
+     "in_context": "…sion's member position demands a **different root   or quality** than the committed reading, t…"
+    },
+    {
+     "criterion": "keyword",
+     "matched": "quality",
+     "means": "in `verbatim`",
+     "in_context": "…ber position demands a **different root   or quality** than the committed reading, the recognitio…"
+    }
+   ]
+  },
+  {
+   "id": "D-542",
+   "group": "M",
+   "title": "Idiom discovery runs DISCOVER-THEN-NAME: structure is learned on a low-level encoding carrying no theory or genre labels, and theory features and genre labels are interpretation lenses applied afterwards, never clustering input",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "applied",
+     "means": "in `title`",
+     "in_context": "…s and genre labels are interpretation lenses applied afterwards, never clustering input"
+    }
+   ]
+  },
+  {
+   "id": "D-544",
+   "group": "M",
+   "title": "Confound control is a FIRST-CLASS GATE, and the source-leakage test decides validity: if the clusters are explained by which corpus a piece came from, the result is bookkeeping and not idiom",
+   "matched_by": [
+    {
+     "criterion": "keyword",
+     "matched": "mode",
+     "means": "in `verbatim`",
+     "in_context": "…t decides   validity.** The dominant failure mode of this kind of study is discovering **which…"
+    }
+   ]
+  }
+ ],
+ "the_bound_on_this_measurement": "It counts CANDIDATES, not withheld entries: a candidate carries an authored verdict and a candidate ruled OUT is rendered into the pack. The home-document and ARCHITECTURE.md passage terms are EMPTY here because their members are not ruled, so every count is a count for the criterion AS FAR AS IT IS RULED and not for the finished criterion."
+}
