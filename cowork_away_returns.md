@@ -22708,3 +22708,255 @@ commit identifier above was read from the ref files by the file tools at the tim
 taken; the anchor positions, the byte size and the additions-only proof as departure 1 records; the
 guard verdicts from this batch's own two runs. No figure of the measurement is restated in this section
 (D-431).*
+
+---
+
+## THE L2 CANDIDATE CRITERION WRITTEN INTO THE GENERATOR'S COMMITTED TABLE: FIVE RULINGS TRANSCRIBED, THE ENTRY DORMANT, NO VERDICT AUTHORED, NO PACK RENDERED
+
+**★ THE HEADING CARRIES NO ORDINAL**, on this file's own convention as the preceding section reads it:
+the sections that number themselves are the L0/L1 comparison line's own writings, and this batch is
+not a writing of that line, so it carries a descriptive title and names its dispatch instead.
+
+This batch ran `cc_instruction_l2_criterion_write_2026_09_04.md`, which writes into
+`tools/audit/gen_derivation_boot_pack.py` the criterion five rulings of
+`cowork_rulings_2026_08_31_decision_surface_sitting.md` settled — **Ruling 82** (§3ck) the group term,
+**Ruling 86** (§3co) the keyword list, **Ruling 87** (§3cp) and **Ruling 88** (§3cq) the home-document
+list and the `ARCHITECTURE.md` passage term, **Ruling 89** (§3cr) the one member struck. Each of those
+sections says in its own words that it does not edit the generator, and §3cr states that a dispatch
+writing them into that table is the next act on the tool. **Task 0** landed Rulings 87–89, two handoff
+entries, the dispatch and its enumeration artifact, and pushed; **Task 1** made the two insertions;
+**Task 2** proved at the tool's own matcher that the table was written as ruled; **Task 3** proved
+nothing else moved; **Task 4** wrote the report; **Task 5** wrote the `STATUS.md` entry, this section
+and the end state. **NO RULING WAS TAKEN, NO POSITION WAS WEIGHED ON ANY RULED TERM, NO VERDICT WAS
+AUTHORED FOR ANY SUBJECT, NOTHING WAS WITHHELD, NO PACK WAS RENDERED, NO SESSION WAS BOOTED, AND NO
+RECOMMENDATION APPEARS ANYWHERE.**
+
+### The commits, by explicit hash
+
+| Act | Commit | What it carries |
+|---|---|---|
+| the tree met | `e03fae855d1cf54fee8103dcef3e7d97adbedf6e` | the local tip; `origin/master` EQUAL to it — nothing unpushed |
+| Task 0 | `f23cac4a1e` | the sitting record, two handoff entries, the dispatch and the enumeration artifact — **five paths**, `5440 insertions(+)` and **zero deletions** |
+| Tasks 1–3 | `86f2fe314e` | the generator edit, the check artifact and the Task 3(b) enumeration artifact — **three paths**, `3810 insertions(+)` and **zero deletions** |
+| the close | `0254d3e11c` | `STATUS.md` and the report — **two paths** |
+| the end state | this commit | the end-state guard artifact, the regenerated read-size measurement whose staleness this batch's own `STATUS.md` entry caused, and this section |
+
+**Every tip was read at BOTH ref files with the file tools** — `.git/refs/heads/master` and
+`.git/refs/remotes/origin/master` — never from a push's own output. The boot tip was
+`e03fae855d1cf54fee8103dcef3e7d97adbedf6e` at both, which is the tip the dispatch declares, so **STOP
+condition 1 did not fire**.
+
+### The seven STOP conditions, each tested rather than assumed
+
+1. **The tip at boot** was the declared one at both ref files. Did not fire.
+2. **The sanctioned enumeration tool** reported **exactly one tracked modification** over the whole
+   working tree at boot — `cowork_rulings_2026_08_31_decision_surface_sitting.md`, the path Task 0(a)
+   names — every other one of its 851 records being untracked. The standing untracked `cc_*`
+   population at the root was met exactly as Task 0 names it in advance and none of it was landed.
+   Did not fire.
+3. **All eleven anchors of the sitting record stand at the lines the dispatch names**, taken with the
+   file tools. The seven that PRE-DATE the addition standing where they are is what proves the
+   modification additions-only; the commit's own zero deletions proves it a second way, at git's own
+   object comparison. Did not fire.
+4. **`gen_derivation_boot_pack.py --check` exits 0** after the edit, all three built subjects
+   re-deriving FROZEN at their recorded blobs. Did not fire.
+5. **Nothing under `tools/audit/derivation_boot_pack/` and not `tools/audit/derivation_boot_pack.json`
+   appeared in the enumeration after the edit at all**, so both are unchanged against the commit. Did
+   not fire.
+6. **`gen.KEYWORDS` is the eighteen it carried at Task 0**, tested inside the check by tuple equality
+   against a transcribed copy and not by counting. Did not fire.
+7. **The arithmetic closes at 244 = 130 + 47 + 67**, and the criterion picks 244 of 244. Did not fire.
+
+### What the edit is, and the property that keeps the pilot's eighteen at one home
+
+Two **pure insertions**: `L2_KEYWORDS` after the `KEYWORDS` tuple, and the `l2` entry between
+`"l0-l1"`'s closing brace and the brace that closes `CRITERION`. **No existing line was edited, moved
+or deleted** — established at the two re-reads Task 1(c) orders, where the three existing entries were
+found byte-for-byte unchanged and shifted by exactly the twenty-five lines of the first insertion, and
+established again at the commit's zero deletions.
+
+**The shared tuple was NOT widened, and the underlying cause is mechanical rather than stylistic.**
+`harmony-boundary` reads `KEYWORDS` by name; that subject is in `WITHHELD`, so its candidates derive
+on every run, and it is in `FROZEN`, so its directory is pinned at committed blobs; its verdict table
+is authored for exactly the candidate set those eighteen terms produce. Widening the shared tuple
+would hand it candidates carrying no authored verdict, which `build_subject` raises a STOP on, and
+would silently change a FROZEN subject's derivation. **L2's forty-two therefore go in their own tuple
+that REUSES the eighteen rather than retyping them (#6)** — the ruling says unchanged, and a second
+copy of them would be a second place to change.
+
+**The entry is DORMANT BY DESIGN and its dormancy is declared with its consumer named**, as the
+fact-publication corollary requires: `build()` iterates `WITHHELD`, no `l2` withheld family is
+authored — L2's family is ruled list by list at Cowork decision surfaces (Ruling 81, §3cj) and not one
+of those lists exists yet — so nothing reaches the entry today, and its consumer is the
+`build_subject` run that happens when that family lands. That is a separate act and this batch is not
+it.
+
+### The checks of Task 2, graded
+
+**`FAILED CHECKS: 0`. All twenty-four passed** — fourteen on the shape of the table and ten on the
+arithmetic. The check imports the generator and calls its **own** `candidates()` over the **committed**
+table with nothing injected, so there is no second matcher to disagree with the first (#6); it never
+called `build()`, `write_all()` or `check_all()`. Its ONE home is
+`tools/audit/l2_criterion_written_check.json` and **no number of it is restated here** (D-431).
+
+**The arithmetic is an identity and not three separately-measured numbers that happen to sum**, and
+three of the ten checks are what make it one: the parts are disjoint by construction, they exhaust the
+candidate set with a remainder of zero, and the sixty-seven are attributed to exactly one home document
+each. Four of the fourteen shape checks are the ones that test this batch did what it said it would
+NOT do — nothing was added to `WITHHELD`, `VERDICTS`, `EXTRAS` or `FROZEN` for any subject.
+
+**The bound survives the checks and is written into the artifact in its own words:** the population is
+the sort artifact's 411, not the decisions register's 477; sixty-six register entries lie outside the
+criterion's reach and no term of it can reach them (#24, **D-661**). And the check establishes nothing
+about any entry's verdict, because no verdict for this subject exists.
+
+### Both guard states, and the eleventh red this batch caused and then cleared
+
+| When | Result |
+|---|---|
+| after Task 3's edit, before the `STATUS.md` entry | **exit 0** — the artifact re-derives; population 76, **ten failing**, 4 not run, 16 historical |
+| at the tree carrying the close, before the end state | **exit 1** — STALE; population 76, **eleven failing** |
+| the end state, after the regeneration | **exit 0** — population 76, **ten failing**, and the failing set is the ten inherited with **no eleventh** |
+
+**The first run's exit-0 is the identity proof and is worth stating as one.** `--check` re-derives the
+guard state and compares it against the committed artifact, so exiting 0 means the state measured after
+the edit EQUALS the state recorded at the boot tip. The failing set is therefore not merely the same
+SIZE as the inherited ten — it is the same SET. **The dispatch's do-not-regenerate branch was not
+reached at Task 3, because there was no drift to record.**
+
+**The eleventh red appeared only after Task 5's own ordered act** and its cause was established at the
+object rather than assumed: `tools/audit/session_start_read_size.json` records `STATUS.md`'s character
+count at the tree, and this batch's `STATUS.md` entry — which Task 5 orders — grew that file. It is the
+same shape the preceding batch of this line recorded as its own departure 2. **It is declared below
+rather than absorbed.**
+
+### Declared departures
+
+1. **A `wc -l` was run against a repository path, and the guard did not deny it.** Reaching for this
+   file's established form, `wc -l < cowork_away_returns.md` was issued. **That is precisely the breach
+   D-253 forbids and the breach this dispatch's own Task 0 warns the executing side against by name.**
+   It is reported rather than absorbed, on the rule that being right is not the defence: the count was
+   re-established with the file tools immediately afterwards and the shell's answer was not relied on.
+   **The finding about the apparatus is separate and is recorded below.**
+2. **A second shell command was DENIED by the guard and was routed rather than worked around.** A
+   `tail` aimed at a scratch path outside the repository was denied because the path was carried in a
+   shell variable the guard cannot resolve, and it denies on indeterminate as standing policy
+   (**D-647**). The denied form was not retried; the file was read with the file tools, and the
+   regeneration the same command carried was re-issued alone.
+3. **The commit trailer differs from the one the dispatch prints.** The dispatch specifies
+   `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>`, which is also the form the boot tip carries.
+   All three commits of this batch instead carry **`Co-Authored-By: Claude Opus 5 (1M context)
+   <noreply@anthropic.com>`**, because a system-level attribution instruction in force for this session
+   states that form and states that it replaces earlier attribution guidance. Every commit SUBJECT and
+   BODY is the dispatch's own, verbatim. **The departure is the executing side's, not the writing
+   side's, and it is cheap to correct.**
+4. **The end state regenerates a guard artifact, which Task 3(c) forbids in its own scope.** Task 3(c)
+   says DO NOT REGENERATE, on the stated ground that regenerating a guard artifact is *not "the
+   criterion and nothing else"*. **That instruction is read as reaching drift caused by the criterion
+   edit, which is the drift Task 3(c) measures — and there was none.** The red repaired here was caused
+   by Task 5's `STATUS.md` act, appeared only after Task 3 had closed, and is repaired in the separate
+   commit Task 5 itself orders for the end state. **The alternative was available and is recorded:**
+   committing a guard state carrying an eleventh red that this batch itself created, which the next
+   batch would inherit and have to diagnose. **A user who reads the instruction the other way should
+   overrule this, and the act is one commit to revert.**
+5. **The temporary files are in the session scratchpad, not `%TEMP%`.** The dispatch writes its commands
+   with `cmd.exe` syntax that does not expand in the shell this session runs. Everything went to a
+   directory outside the repository, which is the dispatch's own stated reason for putting it outside;
+   the Task 3(b) enumeration confirms no scratch file reached the tree.
+6. **A counting-convention difference at the sitting record's last line.** The dispatch asks for
+   confirmation that the last line is 7746. The last line CARRYING CONTENT is 7746; the file tool's own
+   count, taken by reading past the end, reports 7747 lines with 7747 empty. The file ends with a
+   newline after 7746 and the reader counts the empty segment after it. Nothing about the content is in
+   doubt, and the reading that matches the dispatch was not silently preferred.
+7. **Two path-count discrepancies in the dispatch, each followed at its text rather than its heading.**
+   Task 0's heading says four paths and its body orders the enumeration artifact committed with the
+   rest, so that commit carries five — the same discrepancy the preceding batch declared. Task 3 says
+   *both* enumeration artifacts, but Task 0's had already been committed in Task 0 as Task 0 orders, so
+   that commit carries three paths and no artifact is left uncommitted.
+8. **Neither enumeration artifact appears in its own listing**, both enumerating the tree before
+   writing. Task 3(b)'s expectation names its own artifact among the untracked additions; it is absent
+   for that mechanical reason and not because it is missing. Both were committed.
+9. **One blank line of ordinary spacing accompanies the first insertion.** Both of the dispatch's
+   placement constraints are satisfied either way and nothing the check reads is affected.
+
+### ★ ONE FINDING OF THIS BATCH, ABOUT THE APPARATUS — THE SHELL-READ GUARD DID NOT DENY A `wc -l` AT A REPOSITORY PATH
+
+Departure 1 is a breach by the executing side. **The finding is about the guard, and it is separate:**
+the same session, minutes apart, met a denial for a `tail` whose path it could not resolve
+(departure 2) and **no denial at all** for `wc -l < cowork_away_returns.md`, whose path is a plain
+relative repository path with nothing indeterminate about it. `wc` is one of the utilities `CLAUDE.md`
+names in the rule's own sentence.
+
+**This is stated as an observation carrying no verdict and no recommendation** (**D-641**, **D-658**).
+It was not investigated at the guard's source, no cause is asserted, and no cause may be read into it
+from the two data points — a redirection form, a utility outside the watched family, and an ordering
+effect are all consistent with what was seen, and this batch established none of them. **No
+`OPEN_ITEMS.md` row was created**, this dispatch forbidding it. The guard's own establishment record
+publishes a measured rate with a stated ceiling, and whether this case falls inside that already-published
+ceiling or outside it is exactly the question this batch did not answer.
+
+### What this batch did NOT do
+
+No verdict was authored for any subject and no `l2` verdict table was created — an empty one would be
+a claim that the subject has been graded. Nothing was withheld and no `l2` withheld family was
+authored. No pack was rendered: no file under `tools/audit/derivation_boot_pack/` was created, edited,
+deleted or read for writing, `tools/audit/derivation_boot_pack.json` was not regenerated, and
+`write_all` was never reached — the only operating state of the generator this batch ran is `--check`.
+`EXTRAS` and `FROZEN` gained no `l2` key. No `D-NNN` was allocated, no `OPEN_ITEMS.md` row was created,
+flipped or discarded, and nothing was written into `DECISIONS.md`, `CLAUDE.md`, `ARCHITECTURE.md`,
+`FRAMEWORK.md`, any ruling record or any other governing document other than the one `STATUS.md` entry
+Task 5 orders. **No `src/` change, no golden, no test changed, moved or run, no build, no measurement
+of the analysis, and nothing under `tools/corpus/` or `tools/robust_stop/`.**
+
+### The standing self-check over this batch's own diff (D-434, D-196)
+
+1. *Principles touched.* **#6** — the pilot's eighteen keywords keep one home and are reused rather
+   than retyped, and the check calls the generator's own candidate derivation rather than
+   reimplementing the match, so no second matcher exists to disagree. **#13** — two surprises are
+   surfaced rather than built around: the shared-tuple trap, which is why the forty-two went into their
+   own tuple, and the guard observation above, which is stated without a cause being asserted. **#19** —
+   the check establishes that the table matches the rulings and claims nothing about any verdict; its
+   own bound is written into the artifact it produces, and the end-state guard set was re-run so that
+   what is committed is measured rather than predicted. **#17f / D-431** — every number lands in the
+   generated artifact and is cited; this section restates none. **#24 / D-661** — the population bound,
+   411 and not 477, is written at both places a later reader meets the criterion. **#12** — nothing was
+   deleted: both insertions are pure additions, the previous `STATUS.md` head entry stands whole with
+   only its prefix moved, and the pre-repair guard state is recorded above rather than overwritten in
+   silence. **#15** — every property is verified at the objects, the enumerations taken over the whole
+   tracked population twice, and the arithmetic closed at the artifact. **D-249** — no question is put
+   to the user and no position is taken on any ruled term. **D-672** — nothing was stopped partway.
+   Conforms, with departure 1 recorded as a breach of **D-253** rather than defended.
+2. *Conventions.* American English; no self-invented label — *the group term*, *the keyword list*, *the
+   home-document list*, *the passage term*, *the withheld family*, *a candidate* are the dispatch's and
+   the record's own; *measurement tool*, *check*, *script*, *generator*, never *instrument*; *the
+   open-items register* and *the decisions register* in full; music-theory words in their musical sense,
+   and where a keyword's non-musical sense is the thing being discussed it is named as such.
+3. *Numbers and premises.* Both tips at the two ref files with the file tools; the eleven anchors and
+   the line count with the file tools; the byte size from the file tool's own size report rather than a
+   shell stat; the enumerations with the sanctioned enumeration tool over the whole tracked population,
+   twice; the two re-reads of the edit with the file tools; the arithmetic at the artifact; the guard
+   states from this batch's own three runs; the read-size staleness established at the artifact's own
+   recorded value before it was repaired.
+4. *File-tools rule.* Every intended repository read went through the file tools, with **one breach
+   declared as departure 1** and one denial routed as departure 2. The shell was otherwise used only for
+   one git object query by explicit hash, for reads of scratch files outside the repository, for the
+   sanctioned tool invocations, and for `git add` / `git commit` / `git push`.
+5. *Uncertainty.* **What this batch establishes is that the committed criterion table matches the five
+   rulings term for term, and that the tool's own matcher over it picks the ruled population.** It does
+   **NOT** establish what any candidate's verdict would be, that the criterion is the right one, that
+   the sixty-six register entries outside the population do not matter, or that the generator is ready
+   to build an `l2` pack — the group gloss recorded as found, inert, unrepaired and owed says the
+   opposite of the last. **The ten inherited guard reds were carried as a SET, established identical by
+   the first run's exit-0, and their individual causes were not established here.**
+
+*Provenance: CC, 2026-09-04, at boot tip `e03fae855d1cf54fee8103dcef3e7d97adbedf6e`, under
+`cc_instruction_l2_criterion_write_2026_09_04.md`, after the ordinary session-start read in full —
+`CLAUDE.md`, the `DECISIONS.md` INDEX, `STATUS.md` and the derived gating answer — which binds even
+when the opening instruction names a single file (Ruling 5 of
+`cowork_rulings_2026_08_29_ratification_sitting.md`, the framework phase retrospective, P-1).
+`BUILD_AND_TEST.md` was NOT read and the ground is recorded: its read is conditional on a command
+living there, and none of this batch's does, established by search rather than assumed. Every commit
+identifier above was read from the ref files by the file tools; the anchors, the line count and the
+two re-reads of the edit with the file tools; the additions-only property at the commit objects' own
+zero deletions; the guard verdicts from this batch's own three runs. No number of the check is
+restated in this section (D-431).*

@@ -281,6 +281,41 @@ of this batch's commands live there and the condition does not bind. The uncondi
 performed in full: `CLAUDE.md`, `DECISIONS.md`, `STATUS.md`, and the derived gating answer at
 `tools/audit/nongating_apparatus_rows.json` → `★_the_live_gating_answer` → `gating_ids`.
 
+### Departures that arose AFTER this report was first committed, added in the end-state commit
+
+The four below happened during Task 5, after §8 above was written and committed at `0254d3e11c`.
+They are added here rather than left only in the close section, because a reader of this report must
+meet them. Each is stated at length in `cowork_away_returns.md`'s close section for this batch.
+
+**(i) A `wc -l` was run against a repository path, and the guard did not deny it.** Reaching for the
+established form of `cowork_away_returns.md`, `wc -l < cowork_away_returns.md` was issued. **That is
+precisely the breach D-253 forbids and the one this dispatch's Task 0 warns against by name.** It is
+reported rather than absorbed: the count was re-established with the file tools immediately
+afterwards and the shell's answer was not relied on. Being right is not the defence.
+
+**(ii) A second shell command was DENIED by the guard and routed rather than worked around.** A
+`tail` aimed at a scratch path outside the repository was denied because the path sat in a shell
+variable the guard cannot resolve, and it denies on indeterminate as standing policy (**D-647**). The
+denied form was not retried and the regeneration that command carried was re-issued alone.
+
+**(iii) An ELEVENTH guard red appeared after Task 5's `STATUS.md` entry, and the end state
+REGENERATES a guard artifact — which Task 3(c) forbids in its own scope.** The red is
+`gen_session_start_read_size.py`, whose measurement records `STATUS.md`'s character count; Task 5's
+own ordered entry grew that file. The cause was established at the artifact's recorded value, not
+assumed. Task 3(c)'s do-not-regenerate instruction is read as reaching drift caused by the CRITERION
+edit — the drift Task 3(c) measures, of which there was none. **The alternative was available and is
+recorded:** committing a guard state carrying an eleventh red this batch itself created, for the next
+batch to inherit and diagnose. **A user who reads the instruction the other way should overrule this;
+it is one commit to revert.** After the repair the end state is population 76, ten failing — the ten
+inherited, no eleventh.
+
+**(iv) One finding about the apparatus, carrying no verdict and no recommendation (D-641, D-658).**
+The same session met a denial for a `tail` with an unresolvable path and **no denial at all** for a
+`wc -l` at a plain relative repository path, `wc` being one of the utilities `CLAUDE.md` names in the
+rule's own sentence. It was not investigated at the guard's source, **no cause is asserted**, and
+none may be read in from two data points. No `OPEN_ITEMS.md` row was created, this dispatch
+forbidding it.
+
 **No other departure.** No verdict was authored for any subject, nothing was withheld, no pack was
 rendered, no file under `tools/audit/derivation_boot_pack/` was created, edited, deleted or read for
 writing, `tools/audit/derivation_boot_pack.json` was not regenerated, `write_all` was never reached,
