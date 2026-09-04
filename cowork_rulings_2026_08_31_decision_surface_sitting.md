@@ -6899,6 +6899,612 @@ corrected in place by the same session before landing** — the correction is co
 and is recorded in the paragraph above rather than absorbed. **The next dispatch's Task 0 lands it,
 and the executing side proves additions-only at the object.**
 
+## 3co. Ruling 86 — L2's KEYWORD LIST IS THE **FOUR-LIMB WIDENING AT FORTY-TWO TERMS**: THE PILOT'S EIGHTEEN UNCHANGED PLUS THE TWENTY-FOUR OF THE OTHER THREE CHARTER LIMBS, AND THE **SIX BARE WORDS — `mode`, `root`, `quality`, `figure`, `applied`, `passing` — ARE EXCLUDED** (the recommendation, as recommended; the user's word: "yes")
+
+**Taken 2026-09-04 by the session that booted on `cowork_handoff_entry_one_hundred_and_five.md`,
+after the ordinary session-start read performed in full — `CLAUDE.md` whole, `DECISIONS.md` whole,
+`STATUS.md`, and the derived gating answer's `gating_ids` (218 gating of 243 open rows) — and with
+the tip read at BOTH ref files at boot, again when the executing side's batch was found to have
+moved it, and again at close. The objects read for this surface, each at the object and not carried:
+`cc_instruction_l2_keyword_count_2026_09_04.md` WHOLE; `cc_report_l2_keyword_count_2026_09_04.md`
+WHOLE; `tools/audit/l2_keyword_count_measurement.json` at its population block, its group-term
+block, its three-list counts, its whole per-word table for all forty-eight terms of the widest list,
+and BOTH marginal populations record by record with every `in_context` field; and this batch's close
+section in `cowork_away_returns.md`.** **The user's word, verbatim: "yes".**
+
+**★ THE FORM, RECORDED EXACTLY.** The surface was delivered as a turn of its own, carrying no
+question and closing by saying the choice question would come in the next message; **the question was
+then put, alone, in the following turn, carrying a weighed recommendation at the user's own
+instruction in that turn's opening words**; the user answered it with a position. **D-249 is
+satisfied in both halves: the surface was read before it was answered, and the asking was actually
+done.** As at §3cn, ONE side wrote the surface and put the question. **The recommendation was
+explicitly asked for by the user and is therefore not a departure from the no-recommendation bar the
+DISPATCH placed on the executing side** — that bar binds CC, not this side, and CC honoured it.
+
+### What was being decided
+
+Ruling 82 (§3ck) fixed the criterion's **group term** for L2's withheld family at register groups A,
+C, D, E, F and G. Ruling 83 (§3cl) ruled the **keyword list** widened to all four limbs of the L2
+charter, and stated in its own *What this ruling does NOT do* section that **what the widened list
+costs was not measured and was owed before the list is ruled**. That measurement has now been taken
+by `cc_instruction_l2_keyword_count_2026_09_04.md`. **What was decided here is the list's
+MEMBERSHIP** — which words and phrases the term contains.
+
+**One position was closed before the surface was written, and the surface said so rather than
+offering it:** the pilot's own eighteen, standing alone, are excluded by Ruling 83 itself, which
+already ruled the widening to all four limbs. They appear below only as the baseline the measured
+figures are read against.
+
+### The facts, each checked at its object this session
+
+**★ EVERY FIGURE BELOW IS CITED TO `tools/audit/l2_keyword_count_measurement.json`, WHICH IS ITS ONE
+HOME (D-431).** The figures carried here are those the ruling turns on, and no other; the reading
+taken is the one CC declared for its own report — a ruling record must state the ground it rests on,
+and a ground stated by pointer alone cannot be read against the ruling.
+
+- **THE POPULATION AND THE GROUP TERM.** The criterion runs over the **244** entries classed
+  DESIGN-INTENT of the sort artifact's 411. **The ruled group term alone picks 130 of the 244.**
+- **THE THREE MEASURED LISTS.** The pilot's eighteen pick 161 in total, **31 beyond the group term**.
+  The four-limb widening picks 177, **47 beyond**. That widening plus the six bare words picks 201,
+  **71 beyond**. Read as steps: the widening adds **16** entries the pilot's eighteen do not reach,
+  and the six bare words add a further **24**.
+- **★ THE ARITHMETIC WAS CLOSED A SECOND WAY BY THIS SIDE, AT THE ARTIFACT AND NOT AT CC's WORD.**
+  The union of the identities the pilot's eighteen words reach outside the six groups, taken from the
+  per-word table, is exactly **31** — the same figure the three-list block reports for that list. The
+  two marginal populations carry **47** and **24** identities, and the 24 are exactly the identities
+  CC's report names, one for one.
+- **★ THIS SIDE'S OWN READING OF WHAT THE COST IS MADE OF, MARKED AS A READING AND NOT AS A
+  MEASUREMENT.** Every one of the 24 records the six bare words add, and the four doubtful records
+  among the 16 the widening adds, were opened and each match read in its own surrounding text.
+  **Of the 16 the widening adds, 14 match a real musical use of the added word** — tonicization, key
+  areas, Roman numerals, local keys, chord tones, inversions — **and 2 are accidents**: `tonic`
+  matching inside *Diatonic-functional* at D-131 and inside *diatonic* at D-398. **Of the 24 the six
+  bare words add, 4 match a real musical sense and 20 do not** — **11** are matches inside a longer
+  word (`mode` inside *model* at D-229, D-389, D-440, D-441, D-442, D-443, D-444, D-447, D-448 and
+  D-503, and inside *modest* at D-492) and **9** are the ordinary non-musical English sense
+  (`applied` as *"was applied"* at D-223, D-393, D-421, D-470, D-471 and D-542; `figure` as a
+  reported number at D-180 and D-182; `mode` as *"failure mode"* at D-544). **This is a judgment
+  about which sense of a word fired, taken by reading; it is not a mechanical count, and the
+  mechanical counts are the ones above.**
+- **THE FOUR THAT DO MATCH A REAL MUSICAL SENSE ARE D-206, D-222, D-406 AND D-509**, whose subjects,
+  read at their titles, are intonation as a future consumer of the analysis, a chord-quality guard in
+  the scorer, and root motion in progression recognition, twice. **No verdict is authored on any of
+  them here.**
+- **THEIR HOMES, READ AT THE `DECISIONS.md` INDEX.** D-206's home is `ARCHITECTURE.md`; D-222's is
+  `docs/scoring_model.md`; D-406's is `cowork_progression_schema_dictionary.md` §1; D-509's is
+  `cowork_progression_schema_design.md` §4.3. **So all four remain reachable by the home-document and
+  passage terms, which are the next two decisions of this line.** **Whether those terms will name
+  those documents is NOT decided here and was NOT checked.**
+- **SIX OF THE FORTY-TWO RULED TERMS MATCH NOTHING IN THIS POPULATION** — `change-point`,
+  `harmonic rhythm`, `evidence ranking`, `chord-tone assignment`, `elaboration relation` and
+  `figured bass`. They are inert as things stand. They are ruled in nonetheless: a term that matches
+  nothing costs nothing, and the population the criterion runs over is not the last population it
+  will ever run over.
+- **★ THE MEASUREMENT'S OWN BOUND, CARRIED FROM THE ARTIFACT AND BINDING ON EVERY FIGURE ABOVE
+  (#19, #24).** It counts CANDIDATES and not withheld entries — a candidate carries an authored
+  verdict, and a candidate ruled OUT is still rendered into the pack. And **the home-document and
+  `ARCHITECTURE.md` passage terms are EMPTY in every criterion measured**, their members not being
+  ruled, so **every count is a count for the criterion AS FAR AS IT IS RULED and not for the finished
+  criterion.**
+
+### The positions, weighed towards the ultimate objective and towards the guiding principles
+
+*The four-limb widening, the six bare words excluded — RULED.* Towards the objective it gives the
+deriving session the vocabulary of all four charter limbs, which is what Ruling 83 ruled it must
+have, without spending twenty hand-written verdicts on entries reached by *model*, *modest*, *"was
+applied"* and a reported number. Towards **#2** — target the specific question, not the general — it
+is the stronger by a wide margin: a word that fires on the language-model integration is not
+targeting where one harmony gives way to the next. Towards **#19** it keeps the authored-verdict
+population, which is the surface where a wrong verdict can be written, no larger than the evidence
+supports. Its cost, stated: it carries two accidents of its own (D-131, D-398), and it leaves four
+entries of real musical sense unreached by THIS term.
+
+*That widening plus the six bare words.* Towards the objective its whole case is those four entries,
+and towards **#12** — no information loss — a decision never put in front of the deriving session
+cannot shape the specification. **What answers it is the object:** the four are not lost, only not
+reached by this term, and their homes are exactly the kind of document the two remaining terms name;
+those two terms are the next two decisions of this line, so nothing extra is spent by leaving them to
+it. Against it stands the measured price — **20 of the 24 it buys are matched on a sense of the word
+that has nothing to do with music**, each needing a verdict and each, if ruled out, still rendered
+into the pack the deriving session reads.
+
+*A third route, named and not taken:* rule the widening and separately author narrow phrases aimed at
+the four — *root motion* in place of bare `root`, and so on. **Its cost is a further dispatch and a
+round trip**, to reach four entries the next two decisions may reach for nothing. It was put to the
+user with that cost stated.
+
+**The surface said in terms that the pilot's eighteen were already closed by Ruling 83 and were not
+an open option**, which is the standing bar against presenting a menu the facts do not support.
+
+### What was decided
+
+**L2's candidate criterion carries a KEYWORD LIST of FORTY-TWO TERMS, and no others.**
+
+**The pilot's eighteen, unchanged:** `slice`, `slicing`, `segment`, `segmentation`, `boundary`,
+`boundaries`, `change-point`, `onset`, `release`, `harmonic rhythm`, `where one chord ends`,
+`finest grain`, `grain`, `atomic`, `sounding`, `struck`, `priority of evidence`, `evidence ranking`.
+
+**The twenty-four added for the other three charter limbs.** *For the tonality at each moment:*
+`tonality`, `tonic`, `local key`, `key area`, `modulation`, `tonicization`. *For which sounding notes
+belong to the harmony and which elaborate it:* `chord tone`, `non-chord`, `chord-tone assignment`,
+`elaboration relation`, `passing tone`, `passing note`, `neighbour`, `neighbor`, `suspension`,
+`anticipation`, `ornament`. *For what chord is read over each span:* `scale degree`, `roman numeral`,
+`inversion`, `applied chord`, `chord quality`, `figured bass`. *The charter's own word for what L2
+must publish beside its answer:* `rival`.
+
+**The six bare words `mode`, `root`, `quality`, `figure`, `applied` and `passing` are EXCLUDED.**
+
+### What this ruling does NOT do
+
+**It does not rule the home-document list or the named-`ARCHITECTURE.md`-passage list**, which Ruling
+83 cut at their widest and whose members remain owed. They are the next two decisions of this line
+and this ruling settles nothing in them — including whether either reaches D-206, D-222, D-406 or
+D-509.
+
+**It authors no verdict on any entry.** The 47 identities this list reaches beyond the group term
+each still need one, and none is written here. **It withholds nothing, renders no pack and boots no
+session.**
+
+**It does not itself edit the generator.** `tools/audit/gen_derivation_boot_pack.py`'s committed
+`KEYWORDS` tuple and `CRITERION` table are unchanged on disk and stay so until a dispatch changes
+them under this ruling; **the measurement that grounds this ruling injected its lists into the
+imported module in memory and wrote nothing to that file.**
+
+**It does not reopen the pilot's pack**, which is frozen at its blobs, and it amends no earlier
+ruling of this record — Ruling 82's group term stands exactly where it was put, and Ruling 83's
+widening is what this ruling gives members to.
+
+**It takes no position on the matcher's substring behaviour**, which is documented behaviour of
+`candidates()` and not a defect finding; nothing here asks for it to change, and the reading above
+uses the `in_context` fields it publishes for exactly this purpose.
+
+**No decisions-register identity is allocated** — that register cannot accept one while
+`cowork_register_rule_c_suspension_2026_08_28.md` is the standing route.
+
+**★ A SIXTH TRACKED MODIFICATION OF THIS FILE IS DECLARED HERE.** Additions only against the file as
+it stood after this batch landed it, spliced by the established method — the heading line of §4
+TOGETHER WITH the first words of the section it opens, that bare anchor occurring four times and
+exactly one of them a heading — on a container copy of the bridge-staged snapshot, committed back
+under a modification-time guard. **The next dispatch's Task 0 lands it, and the executing side proves
+additions-only at the object.**
+
+## 3cp. Ruling 87 — L2's HOME-DOCUMENT LIST IS **ALL THIRTEEN DOCUMENTS THAT HOLD A DESIGN-INTENT ENTRY THE RULED GROUP TERM AND THE RULED KEYWORD LIST DO NOT ALREADY REACH**, `ARCHITECTURE.md` EXCEPTED AND LEFT TO ITS PASSAGE TERM (the recommendation, as recommended; the user's word: "agree")
+
+**Taken 2026-09-04 by the session that booted on `cowork_handoff_entry_one_hundred_and_six.md`,
+after the ordinary session-start read performed in full — `CLAUDE.md` whole, `DECISIONS.md` whole,
+`STATUS.md` whole, and the derived gating answer's `gating_ids` read by identity (218 gating, 25
+non-gating, 243 open) — and with the tip read at BOTH ref files at boot
+(`e03fae855d1cf54fee8103dcef3e7d97adbedf6e`, `origin/master` equal, unmoved from what the entry
+declared). The objects read for this surface, each at the object and not carried: §3cl of this file
+WHOLE; `tools/audit/l2_keyword_count_measurement.json` at its population block, its group-term
+block, its three-list counts and BOTH marginal populations by identity;
+`tools/audit/rulings_sort_classification.json` at its population, rule, distribution and
+establishment blocks and at every one of its 411 entries' `id`, `group`, `home` and `proposed_class`
+fields; and `tools/audit/gen_derivation_boot_pack.py` at its `candidates()` function, where the
+home-document term is a `startswith` test on the sort entry's own `home` field.** **The user's word,
+verbatim: "agree".**
+
+**★ THE FORM, RECORDED EXACTLY.** The surface was delivered as a turn of its own, carrying no
+question and closing by saying the choice question would come next; **the question was then put,
+alone, in the following turn, carrying a weighed recommendation** (D-249, Ruling 1, Ruling 21, and
+the form the hundred-and-sixth entry records the user stating in his own words). Two positions were
+put and a third shape was named and DECLINED IN THE PUTTING rather than offered, with its reason
+stated — it rested on this side's document-level reading of subject, which is the coarser form of
+the judgment the verdict table makes per entry.
+
+### What was being decided
+
+Ruling 82 (§3ck) fixed the **group term** at register groups A, C, D, E, F and G. Ruling 86 (§3co)
+fixed the **keyword list** at forty-two terms. Ruling 83 (§3cl) ruled the **home-document term** cut
+at its widest and left its MEMBERS owed. **What was decided here is that membership.**
+
+### The facts, each derived at the objects this session
+
+**★ THE MEASUREMENT RULING 83 DECLARED IT HAD NOT TAKEN IS TAKEN HERE.** §3cl states in terms that
+its three home distributions count REGISTER rows, that the criterion sweeps the design-intent class,
+and that it *"did not derive"* which of the unswept rows are design-intent — so each of its figures
+was an upper bound in a ratio nobody had derived. The ratio is derived here by joining the sort
+artifact's own `group`, `home` and `proposed_class` fields to the identity lists the keyword
+measurement publishes.
+
+- **★ THE POPULATION IS THE SORT'S 411, NOT THE REGISTER'S 477, AND §3cl's PHRASE CONFLATES THEM.**
+  §3cl writes *"the design-intent class, 244 of 477"*. The 244 are of the sort artifact's **411**,
+  whose membership is imported from `tools/audit/decisions_filter_classification.json`'s
+  DECIDING-ACT-NAMED class. **Sixty-six register entries are outside the criterion's population
+  altogether and no term of it can ever reach them** — among them **D-678, D-679 and D-680**, which
+  `DECISIONS.md` carries and the sort does not. This bounds the whole criterion (#24) and is not
+  changed by anything ruled here.
+- **THE THREE SUMS THAT CLOSE, EACH ON A FIGURE NEITHER ARTIFACT STATES TOGETHER.** Design-intent
+  entries whose group is one of the six swept groups: **130**, the figure the measurement states for
+  the group term alone. Design-intent entries outside those groups: **114**, and 130 + 114 = 244. Of
+  those 114 the ruled forty-two-word list reaches **47**, the figure the measurement states, leaving
+  **67**, and 130 + 47 + 67 = 244.
+- **★ THE SIXTY-SEVEN, BY HOME DOCUMENT.** `ARCHITECTURE.md` **23** · `CLAUDE.md` **9** ·
+  `cowork_voiceleading_axis_design.md` **6** · `docs/llm_integration.md` **6** ·
+  `docs/scoring_model.md` **5** · `cowork_progression_schema_design.md` **5** ·
+  `cowork_score_census.md` **4** · `cowork_layer6_grouping_design.md` **2** ·
+  `cowork_architecture_review_2026_07.md` **2** · `cowork_notation_output_contract.md`,
+  `cowork_progression_schema_dictionary.md`, `cowork_engage_arc_plan.md`,
+  `cowork_phrase_boundary_design.md` and `cowork_census_full_needs_audit.md` **1** each. **The column
+  sums to 67.**
+- **★ §3cl's FIGURES WERE LOOSE UPPER BOUNDS AND THE CORRECTION IS RECORDED RATHER THAN ABSORBED
+  (#12).** §3cl's two largest homes across the unswept material were `CLAUDE.md` at 68 and
+  `ARCHITECTURE.md` at 55. Counted over design-intent entries the criterion does not already reach,
+  they are **9** and **23**. The `CLAUDE.md` figure overstated by about sevenfold. §3cl's own bound
+  is what predicted this; the ratio is now derived and the bound discharged for this decision.
+- **★ AND THE MEASURED PRICE §3cl PUBLISHED FOR ITS ONE NAMED MEMBER HAS GONE TO ZERO.** §3cl named
+  `cowork_layer5_engagement_design.md` as a member, *"as the home of the one withheld entry with no
+  honest keyword route"* — that entry being **D-383** — and measured its price at *"4 or fewer"*.
+  **All four of that document's design-intent entries outside the swept groups (D-380 and D-381 are
+  group G and already swept; D-382, D-383, D-384 and D-387 are outside) are reached by the keyword
+  list Ruling 86 then ruled.** Naming it adds **nothing**. **The ground Ruling 83 gave for naming it
+  no longer holds, and what follows from that is NOT decided here — see the owed question below.**
+- **★ THE FOUR ENTRIES RULING 86 GAVE UP ON THE SIX BARE WORDS ARE CHECKED, WHICH §3co LEFT
+  EXPLICITLY UNCHECKED.** All four are in the 67. **D-222** is homed at `docs/scoring_model.md`,
+  **D-406** at `cowork_progression_schema_dictionary.md` and **D-509** at
+  `cowork_progression_schema_design.md` — all three on the list ruled below, so all three are
+  reached. **D-206** is homed at `ARCHITECTURE.md` and is reachable ONLY through the passage term,
+  and only if a passage covering its home is named. **Ruling 86's third supporting fact therefore
+  holds for three of the four now and for the fourth only conditionally**, and the condition is the
+  next decision of this line.
+
+### What was decided
+
+**L2's candidate criterion carries a HOME-DOCUMENT LIST of THESE THIRTEEN DOCUMENTS, and
+`ARCHITECTURE.md` is excepted from it and left to its passage term:**
+
+`CLAUDE.md` · `docs/scoring_model.md` · `docs/llm_integration.md` ·
+`cowork_voiceleading_axis_design.md` · `cowork_progression_schema_design.md` ·
+`cowork_progression_schema_dictionary.md` · `cowork_score_census.md` ·
+`cowork_layer6_grouping_design.md` · `cowork_phrase_boundary_design.md` ·
+`cowork_notation_output_contract.md` · `cowork_architecture_review_2026_07.md` ·
+`cowork_engage_arc_plan.md` · `cowork_census_full_needs_audit.md`
+
+**The term therefore adds 44 candidates — every design-intent entry outside the six swept groups
+that the keyword list does not already reach, except the 23 homed in `ARCHITECTURE.md`.**
+
+*The ground, in the objective's own terms.* The generator STOPs on a candidate carrying no verdict
+and on a verdict naming an entry the derivation does not return, and **it has no check whatever for
+an entry that never became a candidate** — §3cl records this and the manifest states it in its own
+words. **That is the one failure this apparatus cannot see.** A wrong verdict is the other failure
+and it is written down, sits in the verdict table and is challengeable by anyone who reads it. Every
+narrowing trades exposure to the failure that can be caught for exposure to the failure that cannot.
+Towards **#19** the wide net with authored verdicts is checkable at every step where a narrow net is
+trusted rather than established; towards the objective — a deriving session that cannot read the
+answer it is chartered to derive — it is the strongest reading available.
+
+*The cost, stated before the ruling and accepted with it.* At thirteen documents the home-document
+term reaches **every** remaining design-intent entry outside the swept groups. **The term stops
+selecting**, and the criterion now reaches the whole design-intent class except the 23 entries homed
+in `ARCHITECTURE.md`. That runs against **#2** and against Ruling 83's own stated reason for having
+a named half — that the named half is what keeps the widened half from being a general sweep. **The
+honest description of the criterion from here is that it sweeps nearly everything and does its
+selecting at the verdict table, one step later.** The user was told this in the same turn in which
+he ruled.
+
+*The position declined, recorded because an excluded alternative is evidence about the choice.*
+Naming only the **seven** documents that already hold at least one entry the ruled keyword list
+reaches — `CLAUDE.md`, `docs/scoring_model.md`, `cowork_voiceleading_axis_design.md`,
+`cowork_layer6_grouping_design.md`, `cowork_phrase_boundary_design.md`,
+`cowork_progression_schema_design.md`, `cowork_notation_output_contract.md` — which would add 29 of
+the 44 and would MISS **D-406** outright, requiring `cowork_progression_schema_dictionary.md` to be
+added by hand for Ruling 86's ground to hold at all.
+
+### ★ THE QUESTION THIS RULING RETURNS TO THE USER RATHER THAN TAKING
+
+**Ruling 83 NAMED `cowork_layer5_engagement_design.md` a member of this term, and it is not on the
+list above, because it now adds nothing.** Dropping a member a ruling already named is an amendment
+to a ruling already taken, which this side may not make. **The question is put and not answered
+here: does that document stay a named member, inert as things stand and live again only if the
+keyword list is ever narrowed, or is Ruling 83's naming of it spent?** Until the user rules, **it is
+neither on the list nor struck from the record**, and the list above is the thirteen he ruled.
+
+**★ AN ERROR OF THIS SIDE, COUNTED — ONE, AND IT IS THE SAME FAMILY THE LAST FIVE ENTRIES HAVE EACH
+COUNTED.** The surface reported that §3cl's price for that document had gone to zero, and then
+built its two positions out of the thirteen documents holding unreached entries **without asking
+§3cl the question the membership decision turns on — which members it had already named.** The
+object had been read whole in the same session. The consequence is that a member Ruling 83 named
+was absent from both positions put, so the user ruled on a list that silently dropped it. **Found by
+this side while recording the ruling, before the section was landed, and returned to him as an open
+question rather than absorbed.**
+
+### What this ruling does NOT do
+
+**It does not rule the named-`ARCHITECTURE.md`-passage list**, whose 23 entries are the only
+design-intent material outside the swept groups that no ruled term now reaches. It is the next
+decision of this line, and whether it reaches **D-206** is settled there and not here.
+
+**It authors no verdict on any entry.** The 44 identities this term adds each still need one, and
+none is written here. **It withholds nothing, renders no pack and boots no session.**
+
+**It does not edit the generator.** `tools/audit/gen_derivation_boot_pack.py`'s committed
+`CRITERION` table is unchanged on disk and stays so until a dispatch changes it under this ruling.
+
+**It does not repair the population discrepancy it records.** That 66 register entries sit outside
+the criterion's reach, D-678 to D-680 among them, is stated as a bound and nothing is done to it;
+whether the sort's population should be refreshed is a separate act nobody has proposed.
+
+**It amends no earlier ruling.** Ruling 82's group term, Ruling 83's width and Ruling 86's forty-two
+terms all stand exactly where they were put.
+
+**No decisions-register identity is allocated** — that register cannot accept one while
+`cowork_register_rule_c_suspension_2026_08_28.md` is the standing route.
+
+**★ A SEVENTH TRACKED MODIFICATION OF THIS FILE IS DECLARED HERE.** Additions only against the file
+as it stood at `e03fae855d…`, spliced by the established method — the heading line of §4 TOGETHER
+WITH the first words of the section it opens, that bare anchor occurring four times and exactly one
+of them a heading — on a container copy of the bridge-staged snapshot, committed back under a
+modification-time guard. **This file is UNTRACKED-MODIFIED and NOT landed by this side; the next
+dispatch's Task 0 lands it, and the executing side proves additions-only at the object.**
+
+## 3cq. Ruling 88 — `ARCHITECTURE.md` IS NAMED AS A **HOME DOCUMENT**, NOT AS A LIST OF PASSAGES, AND THE PASSAGE TERM IS **EMPTY**. RULING 83's PASSAGE FORM IS DEPARTED FROM ON ITS OWN CORRECTED GROUND: THE 131 FIGURE THAT CHOSE IT COUNTS REGISTER ROWS, AND THE FILE'S MARGINAL COST AT THE POPULATION THE CRITERION READS IS **TWENTY-THREE** (the recommendation, as recommended; the user's word: "I agree with recommendation")
+
+**Taken 2026-09-04 by the session that booted on `cowork_handoff_entry_one_hundred_and_six.md`, in
+the same sitting as Ruling 87 (§3cp) and after the same session-start read, with the tip read at
+BOTH ref files at boot (`e03fae855d1cf54fee8103dcef3e7d97adbedf6e`, `origin/master` equal). The
+objects read for this surface, each at the object: §3cl of this file WHOLE;
+`tools/audit/rulings_sort_classification.json` at every entry's `id`, `group`, `home` and
+`proposed_class`; `tools/audit/l2_keyword_count_measurement.json` at both marginal populations by
+identity; `tools/audit/gen_derivation_boot_pack.py` at `architecture_spans()`, `locate()` and
+`candidates()`, where a passage is an authored `{name, kind, anchor}` triple resolved to a line
+range on every run and a failure to resolve is a STOP; and `ARCHITECTURE.md` itself at its full
+heading list and at lines 1450–1479, the one paragraph-boundary case actually walked.** **The user's
+word, verbatim: "I agree with recommendation".**
+
+**★ THE FORM, RECORDED EXACTLY.** Surface delivered as a turn of its own carrying no question; the
+choice question put alone in the following turn carrying a weighed recommendation; the user answered
+with a position (D-249, Ruling 1, Ruling 21). Two positions were put, both derived, and the cost of
+the recommended one was stated in the same turn in which it was recommended.
+
+### What was being decided
+
+Ruling 83 (§3cl) ruled that `ARCHITECTURE.md` gets a **passage term** rather than a home-document
+naming, and Ruling 87 (§3cp) excepted the file from the home-document list on that basis. **What was
+decided here is the members of that passage term** — and, because the ground for the form itself was
+found to have failed, the form.
+
+### The facts, each derived at the objects this session
+
+- **★ THE TWENTY-THREE ARE THE WHOLE REMAINDER.** After Ruling 82's group term, Ruling 86's
+  forty-two keywords and Ruling 87's thirteen documents, exactly **23** design-intent entries of the
+  sort artifact are uncaught, and every one of them is homed in `ARCHITECTURE.md`. They sit in
+  **fourteen separate regions** of that file — the preamble at 250; the joint estimator's standing
+  rules at 340–342; §2.15 at 1197–1200; §2.16 at 1282–1291; §3.3 at 1453–1476 and again at
+  2088–2104; §5.3 at 4472–4481; §6.7 at 5494–5577; §7 at 5705–5725; §11's opening at 6220–6222;
+  §11.5's annotate path at 7356–7384; §12's opening at 7475–7477; §16 at 7923–7925; and §19.2 at
+  8113–8138. **The regions' entry counts sum to 23.**
+- **★ THE FIGURE THAT CHOSE THE PASSAGE FORM IS MEASURED ON THE WRONG POPULATION, AND THIS IS THE
+  SAME DEFECT §3cl's HOME DISTRIBUTIONS CARRIED.** §3cl states *"`ARCHITECTURE.md` is the home of
+  **131** register rows, against 35 for `docs/scoring_model.md`, so naming it as a document would
+  sweep it wholesale."* **The criterion never reads register rows.** At the sort artifact's
+  design-intent class the file is the home of **87** entries, of which **55** are in the six swept
+  groups and **9** more are reached by the ruled keyword list, so **64 are already candidates and 23
+  are not**. **Naming the file as a document adds 23 — precisely the entries the passage list was to
+  be built to catch. There is no wholesale sweep to avoid.**
+- **★ WHAT A PASSAGE COSTS, READ AT THE GENERATOR AND NOT ASSUMED.** `architecture_spans()` resolves
+  each authored `anchor` through `locate()` on every run and takes the paragraph or table around it;
+  an anchor that cannot be resolved, or that is no longer unique, **STOPS the tool**. So the passage
+  form is a standing maintenance obligation on a file that is edited: an ordinary edit to
+  `ARCHITECTURE.md` can halt the pack generator until an anchor is repaired. **The failure is loud
+  rather than silent, which is in its favour and is recorded as such.**
+- **★ THE NUMBER OF ANCHORS IS BOUNDED, NOT STATED (#24).** Some regions are one unbroken paragraph
+  covering several entries — walked at the object for §3.3, where **D-229** (1460–1473) and
+  **D-296** (1474–1476) are items 3 and 4 of one numbered list with no blank line between them, so
+  one anchor covers both, while **D-072** at 1453 is separated by a blank line and needs its own.
+  Others hold their entries at separate places, as §6.7 does at four. **The list would be between
+  fourteen and twenty-three anchors. This side did not walk every paragraph boundary and gives no
+  number.**
+- **★ AND THE FUTURE HOLE THE TWO FORMS DIFFER ON.** A design-intent entry added to
+  `ARCHITECTURE.md` later is caught by a document naming automatically and by a passage list only if
+  someone notices and authors a new anchor. **Nothing watches for that**, and the tool cannot: §3cl
+  records, and the manifest states in its own words, that it **has no check whatever for an entry
+  that never became a candidate.**
+
+### What was decided
+
+**`ARCHITECTURE.md` IS NAMED AS A HOME DOCUMENT of L2's criterion. THE `ARCHITECTURE.md` PASSAGE
+TERM IS EMPTY — no passage is named, and no anchor is authored.** Ruling 87's exception of the file
+from the home-document list is spent; **the home-document term is Ruling 87's thirteen documents
+PLUS `ARCHITECTURE.md`, fourteen in all.**
+
+*The ground.* The form Ruling 83 chose was chosen on a fact that does not hold at the population the
+criterion reads, and once that fact is corrected the simpler form is also the stronger one. Towards
+the objective it closes the one failure this apparatus cannot detect — an entry that never became a
+candidate — permanently rather than for today only. Towards **#19** an authored anchor is an
+unestablished thing that must keep being true, where a file-name test has nothing to establish.
+Towards **#6** one line replaces up to twenty-three that say the same thing less robustly. And it
+settles **D-206** — the fourth of the four entries Ruling 86 gave up on the six bare words, sitting
+alone in the three lines of §11 before its first subheading — without an act written for that one
+entry. **Ruling 86's third supporting fact is now true of all four: D-222, D-406 and D-509 through
+Ruling 87's documents, D-206 through this one.**
+
+*The cost, stated before the ruling and accepted with it.* **The criterion now reaches every
+design-intent entry of the sort artifact, inside the swept groups and outside them alike. It has
+stopped being a filter.** Everything it was doing happens at the verdict table instead, where each
+entry carries an authored verdict and a verdict of OUT renders the entry into the pack. That runs
+against **#2** and it empties Ruling 83's own stated purpose for having named terms at all. **The
+user was told this in the same turn in which he ruled, and was told that if a criterion that selects
+is what he wants, the place to fix it is the group term or the verdict table and it would be a new
+decision.**
+
+*The position declined, recorded because an excluded alternative is evidence about the choice.*
+Authoring the passage list — between fourteen and twenty-three text anchors — which reaches the same
+23 today, keeps the term specific, and carries both the maintenance obligation and the future hole
+described above.
+
+### ★ THE BOUND ON THE WHOLE CRITERION, RESTATED HERE BECAUSE THIS IS THE ACT THAT COMPLETES IT
+
+**The criterion's population is the sort artifact's 411 entries, not the decisions register's 477.**
+Sixty-six register entries — **D-678, D-679 and D-680** among them — are outside it and no term of
+the criterion can reach them, whatever is ruled. **A criterion that now reaches every design-intent
+entry of its population still reaches nothing outside that population**, and the completeness this
+line has been building is complete only relative to that membership (**D-661**). Nothing here
+repairs it and no act to repair it has been proposed.
+
+### What this ruling does NOT do
+
+**It authors no verdict on any entry.** The 23 identities this naming adds each still need one, and
+none is written here. **It withholds nothing, renders no pack and boots no session.**
+
+**It does not edit the generator.** `tools/audit/gen_derivation_boot_pack.py`'s committed `CRITERION`
+table is unchanged on disk and stays so until a dispatch changes it under Rulings 86, 87 and 88
+together.
+
+**It does not amend Ruling 83's CONTENT.** Ruling 83 ruled the criterion's remaining reach at both
+non-group terms at their strongest, and that is what has been delivered — the widest reach available
+to each. **What is departed from is the FORM Ruling 83 chose for one term, on that ruling's own
+corrected ground, and the departure is the user's act and not this side's.**
+
+**It does not settle the question §3cp returned** — whether `cowork_layer5_engagement_design.md`,
+which Ruling 83 named a member and which now adds nothing, stays a named member. That is still owed.
+
+**It does not repair the population discrepancy it restates**, and it does not reopen whether the
+criterion should select rather than sweep.
+
+**No decisions-register identity is allocated** — that register cannot accept one while
+`cowork_register_rule_c_suspension_2026_08_28.md` is the standing route.
+
+**★ AN EIGHTH TRACKED MODIFICATION OF THIS FILE IS DECLARED HERE.** Additions only against the file
+as it stood after §3cp, spliced by the established method — the heading line of §4 TOGETHER WITH the
+first words of the section it opens — on a container copy of the bridge-staged snapshot, committed
+back under a modification-time guard.
+
+**★ AND A MEASURED DEFECT OF THE BRIDGE ITSELF, RECORDED HERE BECAUSE IT BEARS ON HOW EVERY LATER
+WRITE OF THIS LINE IS PROVED.** Writing §3cp, the first commit returned `written` with nothing
+rejected, **stamped a new modification time on the file and wrote none of the new bytes** — the file
+was still 611,698 bytes afterwards and the new section was not in it. The staging half then served
+the OLD content at the new modification time, so a re-read of the bridge-staged snapshot reported
+the write as not having happened after it had, and would equally have reported it as having happened
+had it not. **A `written` result is not evidence, and a re-read of the staged file is not evidence.
+The check that works is the file's SIZE and MODIFICATION TIME taken from a directory listing**, which
+reads the file on the user's machine. Re-committing from a DIFFERENT container path landed correctly.
+**Every write of this session is proved that way and a later session must do the same.**
+
+## 3cr. Ruling 89 — `cowork_layer5_engagement_design.md` IS **STRUCK** FROM L2's HOME-DOCUMENT LIST. RULING 83 NAMED IT AS *"the home of the one withheld entry with no honest keyword route"*, AND THAT GROUND IS **REFUTED AT THE OBJECT**: D-383 CARRIES **FOUR HONEST KEYWORD ROUTES**, GIVEN TO IT BY THE WIDENING RULING 83 ORDERED IN THE SAME ACT. THE LIST IS THE **FOURTEEN** OF §3cp AND §3cq (the recommendation, as recommended; the user's word: "agree with recommendation")
+
+**Taken 2026-09-04 by the session that booted on `cowork_handoff_entry_one_hundred_and_six.md`, in
+the same sitting as Rulings 87 (§3cp) and 88 (§3cq) and after the same session-start read, with the
+tip read at BOTH ref files at boot (`e03fae855d1cf54fee8103dcef3e7d97adbedf6e`, `origin/master`
+equal). The objects read for this surface: §3cl of this file WHOLE;
+`tools/audit/l2_keyword_count_measurement.json` at the FULL `matched_by` record of D-382, D-383,
+D-384 and D-387, every `in_context` field read; and
+`tools/audit/rulings_sort_classification.json` at all eight of that document's entries' `group`,
+`home` and `proposed_class` fields.** **The user's word, verbatim: "agree with recommendation".**
+
+**★ THE FORM, RECORDED EXACTLY.** Surface delivered as a turn of its own carrying no question, at the
+user's explicit request for a compliant surface on this question; the choice question put alone in
+the following turn with a weighed recommendation; the user answered with a position (D-249, Ruling 1,
+Ruling 21). The argument AGAINST the recommendation was stated in the recommending turn and not left
+to the reader to supply.
+
+### What was being decided
+
+§3cp returned this question rather than answering it: **Ruling 83 named
+`cowork_layer5_engagement_design.md` a member of the home-document term, and Ruling 87's list did not
+contain it.** Dropping a member a ruling has named is an amendment to that ruling, which the writing
+side may not make. **What was decided here is whether that naming stands.**
+
+### The facts, each read at its object this session
+
+- **★ THE DOCUMENT'S EIGHT DESIGN-INTENT ENTRIES ARE ALL ALREADY CANDIDATES.** Four — **D-380,
+  D-381, D-385, D-386** — are group G, which Ruling 82's group term sweeps; §3cl records this and it
+  reproduces. Four — **D-382, D-383, D-384, D-387** — are group H and are reached by Ruling 86's
+  forty-two-term keyword list. **Naming the document adds ZERO. It is the only candidate member of
+  which that is true**; each of the fourteen members ruled at §3cp and §3cq adds at least one.
+- **★ AND THE FOUR ARE REACHED ON WORDS USED IN THEIR MUSICAL SENSE, NOT BY SUBSTRING ACCIDENT —
+  WHICH IS THE FACT THIS RULING TURNS ON AND IS WHY THE FULL `matched_by` RECORDS WERE OPENED RATHER
+  THAN THE COUNTS.** **D-383** carries FIVE matches: `tonality` in its title (*"Bass, spelling and
+  tonality-consistency DECIDE"*), `tonality` in its plain restatement (*"how well a root fits the
+  tonality of the passage"*), `inversion` in its verbatim (*"the research says bass/inversion +
+  spelling + key-consistency are the primary"*), `inversion` in its plain restatement, **and** the
+  old `slice`-inside-`isLicensedProgression` letter coincidence. **Four of the five are honest.**
+  **D-382** carries `tonality`, `inversion` and `slice` (*"for each slice"* — a real use). **D-384**
+  carries `tonality` twice. **D-387** carries `slice` (*"names why the slice is marked"* — a real
+  use) and `grain` inside `FineGrainOverride`, the first honest.
+- **★ SO RULING 83's STATED GROUND IS NOT SPENT — IT IS REFUTED.** §3cl names the document *"as the
+  home of the one withheld entry with no honest keyword route"*, and records the accident precisely:
+  the letters of `slice` occur inside the code identifier `isLicensedProgression`. **That was true of
+  the PILOT'S EIGHTEEN-WORD LIST, which carried neither `tonality` nor `inversion`.** Ruling 83
+  itself ordered the widening to all four charter limbs and Ruling 86 ruled it at forty-two terms,
+  **both of which D-383 genuinely uses. The same ruling that made the naming closed the gap the
+  naming was for.**
+
+### What was decided
+
+**`cowork_layer5_engagement_design.md` is STRUCK from L2's home-document list. The list is the
+FOURTEEN of §3cp and §3cq — the thirteen documents holding otherwise-unreached entries, plus
+`ARCHITECTURE.md`.**
+
+*The ground.* Towards **#19**, keeping an inert member is keeping a mechanism that does nothing today
+and is trusted to act under a future condition nobody has established will arise. Towards **#10** in
+its purpose form — the record must be readable against what it describes — a list of fifteen of which
+fourteen catch something and one catches nothing invites a later reader to believe that document is
+swept for a reason and to reason on from that belief. Towards **#12** nothing is lost: §3cl carries
+the naming and its ground verbatim, §3cp carries the measurement that emptied it, and this section
+carries the refutation, so the naming stays findable and its history intact. **What is struck is a
+member, not the record of it.**
+
+*The argument against, recorded because it is real and was put to the user in the recommending turn.*
+The one failure this apparatus cannot detect is an entry that never became a candidate, and D-383 is
+the entry this record has twice singled out as most exposed to it; striking removes a catch on
+exactly that entry, and the catch costs nothing to keep. **What answers it:** the catch is not free,
+because it costs the list its meaning; and the condition it insures against — a narrowing of the
+keyword list — can arrive only through a ruling that must weigh what it drops, which is this question
+asked at the right moment with the right facts in hand.
+
+### ★ WITH THIS, L2's CANDIDATE CRITERION IS COMPLETE — AND WHAT COMPLETE MEANS HERE, STATED
+
+**All five terms are ruled.** The **group term** at register groups A, C, D, E, F and G (Ruling 82),
+picking 130. The **keyword list** at forty-two terms (Ruling 86), picking 47 more. The
+**home-document list** at fourteen documents (Rulings 87, 88 and this one), picking the remaining
+67. The **`ARCHITECTURE.md` passage term** EMPTY by Ruling 88. The **named identities** as the ruling
+already carried them. **The criterion reaches 244 of the 244 design-intent entries of the sort
+artifact, and 130 + 47 + 67 = 244 closes.**
+
+**★ AND THE BOUND THAT SURVIVES COMPLETION (#24, D-661).** The criterion's population is
+`tools/audit/rulings_sort_classification.json`'s **411** entries, imported from the
+DECIDING-ACT-NAMED class of `tools/audit/decisions_filter_classification.json` — **not** the
+decisions register's **477**. **Sixty-six register entries are outside it and no term of the
+criterion can reach them, whatever is ruled** — **D-678, D-679 and D-680** among them, which
+`DECISIONS.md` carries and the sort does not. **A criterion that reaches every design-intent entry
+of its population reaches nothing outside that population.** Complete is complete relative to that
+membership and to nothing wider. Nothing in this line repairs it and no act to repair it has been
+proposed.
+
+**★ AND THE SEPARATE BOUND ON WHAT COMPLETION BUYS.** The criterion produces CANDIDATES. A candidate
+carries an authored verdict and a candidate ruled OUT is rendered into the pack (§3cl). **A complete
+criterion therefore guarantees that every design-intent entry of the population is LOOKED AT, and
+guarantees nothing about whether any verdict on it is right.** The selection this line began by
+placing in the criterion now sits entirely at the verdict table, which is where the remaining risk to
+the objective lives.
+
+### What this ruling does NOT do
+
+**It authors no verdict on any entry, withholds nothing, renders no pack and boots no session.**
+
+**It does not edit the generator.** `tools/audit/gen_derivation_boot_pack.py`'s committed `CRITERION`
+table and `KEYWORDS` tuple are unchanged on disk. **A dispatch writing Rulings 86, 87, 88 and 89 into
+that table is the next act on the tool, and none of them is in it yet.**
+
+**It does not amend Ruling 83's content.** Ruling 83 ruled the remaining reach at both non-group
+terms at their strongest and that is what has been delivered. What lapses is ONE member it named, on
+a ground refuted at the object, and the retirement is the user's act.
+
+**It does not reopen whether the criterion should select rather than sweep**, which §3cq records as
+the live consequence and as a different decision.
+
+**No decisions-register identity is allocated** — that register cannot accept one while
+`cowork_register_rule_c_suspension_2026_08_28.md` is the standing route.
+
+**★ A NINTH TRACKED MODIFICATION OF THIS FILE IS DECLARED HERE.** Additions only against the file as
+it stood after §3cq, spliced by the established method — the heading line of §4 TOGETHER WITH the
+first words of the section it opens — on a container copy of the bridge-staged snapshot, committed
+back under a modification-time guard, and proved at the file's SIZE AND MODIFICATION TIME TAKEN FROM
+A DIRECTORY LISTING, for the reason §3cq records. **The bridge fault §3cq describes recurred on this
+write too: the first commit returned `written`, stamped the modification time and wrote none of the
+bytes; the second, from a different container path, landed. It is not a one-off — all three writes of
+this session took two commits and in all three the first one lied.**
+
 ## 4. What this ruling does NOT do
 
 It authorizes no fix, no design, no inference change, no measurement, and no amendment to any
