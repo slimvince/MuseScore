@@ -5841,6 +5841,126 @@ therefore surfaced rather than left to be noticed. **It is not folded into this 
 repairing one of the five would leave the file inconsistent in a new way, and the act that closes it is
 one re-derivation of both sections against the ruled dispositions, which is its own scoped act.
 
+## 3ch. Ruling 79 — THE REPAIR OF THE COMPARISON READING'S §11 AND §12 IS ADDITIVE, ON THE PRECEDENT §10 ALREADY SET: NEITHER SECTION'S STANDING TEXT IS EDITED, EACH GAINS A SUBSECTION NAMING THE RULINGS THAT MOVED ITS ROWS, AND EACH SECTION'S OPENING CLAIM IS CORRECTED IN THE SAME ACT (Shape one, as recommended)
+
+**Taken 2026-09-04 by the session that booted on `cowork_handoff_entry_ninety_nine.md`, after the
+ordinary session-start read in full — `CLAUDE.md` whole, `DECISIONS.md` whole, `STATUS.md`, and the
+derived gating answer read at its own field — and after the drift this ruling is about was MEASURED at
+the reading file rather than taken from Ruling 78's account of it.** **The user's words, verbatim:
+"Shape one, the additive repair, for both sections."**
+
+**★ THE FORM, RECORDED EXACTLY, BECAUSE IT DEPARTED FROM THE ORDER D-249 PRESCRIBES.** The whole
+decision surface was delivered as user-visible text in one turn, and it closed by saying the choice
+question would come in a later message. **The user answered before that question was put**, naming the
+shape in his own words. What D-249 exists to secure — that the surface is read before it is answered —
+holds, the answer having come after the whole surface was delivered; what did not happen is the
+asking. The words above name a position and are not a "go on". **No choice question is owed and none
+was put.**
+
+**What was being decided.** Ruling 78 (§3cg) surfaced that the comparison reading's **§11** (the audit
+questions, one per QUARANTINED row) and **§12** (the proposals) both open *"★ COMPLETE OVER THE
+POPULATION"* while both were derived from the PROPOSED dispositions, and that what closes it is one
+re-derivation of both against the ruled dispositions, as its own scoped act. **It did not fix the SHAPE
+of that repair.** This ruling fixes the shape and nothing else.
+
+**The facts, each checked at its object.**
+
+- **The drift was MEASURED, not described.** Every `*PROPOSED DISPOSITION` line and every ruled or
+  placed line of the reading file was extracted mechanically. The extraction reconciles against the
+  file's own published arithmetic in three independent places: **757** proposed lines against §13's 757
+  statements; **249** `*RULED DISPOSITION` lines against §13a's 210 plus §13b's 38 of kind (A) plus the
+  one line Ruling 78 added; and **13** `*PLACED — FAMILY` lines against §13b's 13 of kind (B). Nothing
+  is left over in either direction.
+- **§11 is short by NINE rows, where Ruling 78 named five.** Rows **2.16**, **2.17**, **3.5**,
+  **3.41**, **3.42**, **3.48**, **14.9**, **17.13** and **4.3** were each proposed as something other
+  than QUARANTINED and ruled QUARANTINED, so each carries an audit question at its row and none in the
+  list the audit reads. Ruling 78 named 3.41, 3.42, 3.48, 14.9 and 4.3; the four it did not name are
+  **2.16** and **2.17** (Ruling 34, grace notes), **3.5** (Ruling 35, the eligibility predicate's home)
+  and **17.13** (Ruling 55). **Nothing moved the other way: no row §11 already carries has been ruled
+  out of QUARANTINED.**
+- **§12 over-lists by FIFTY-EIGHT rows**: thirty ruled ADOPTED — carried, ADOPTED — carried in
+  substance, or HISTORICAL; nineteen ruled RELOCATED; and the nine ruled QUARANTINED above. **Nothing
+  moved the other way: no ruling has produced a fresh proposal.**
+- **§10 IS NOT IN THIS REPAIR, AND THE REASON IS THAT IT WAS ALREADY REPAIRED.** The fifth writing
+  added to it on 2026-09-03, under `cc_instruction_comparison_l0_l1_fifth_2026_09_03.md` Task 3(e), a
+  subsection headed *"★ ADDED BY THE APPLICATION ACT — the relocations Rulings 34 to 62 name that this
+  list did not carry"*, and **all nineteen rows measured above as newly RELOCATED stand in it**. No
+  ruling after 62 relocates a row. **§10 is current at the current commit.**
+- **The shape this ruling adopts is the shape that subsection is already written in** — additions
+  only, no standing row edited, each addition naming the ruling that moved its row.
+- **A proposed disposition may not be deleted, so the removing shape was never available for §12.**
+  §13's own closing paragraph states it of this file: *"neither table is changed, and no proposed
+  disposition is deleted (#12)"*.
+
+**★ THE BOUND ON THE MEASUREMENT, DECLARED WITH IT.** The figures above cover the **211** ruled lines
+whose disposition word stands on the line itself. They do **not** cover the **51** family placement
+lines, whose word wraps onto the following line; **seventeen** of those state in their own words that
+the proposed disposition stands, and the remaining **thirty-four** say neither. **So every size above
+is a LOWER bound and never an upper one**, and the act settles the remainder at the rows. **No figure
+here is a figure of record**: none is carried by any generated artifact in the tree, and the dispatch
+executing this ruling states them as THIS SIDE'S PREDICTION, to be checked against the executing
+side's own mechanical derivation rather than transcribed from here (**D-431**).
+
+**The two shapes, weighed.**
+
+*Shape one* — **additive**. Each section gains a subsection at its foot: for §11 the audit questions
+the rulings added, each in one sentence as §5 requires of a quarantined row; for §12 the rows that have
+left the proposals list, each naming the ruling that moved it. No standing text is edited, and each
+section's opening sentence is corrected so that its completeness claim points at its addition instead
+of standing alone. Towards the objective: what the objective needs from §11 is that every quarantined
+row's question reaches the audit, since a question the audit never meets is code never examined against
+the specification, and an appended subsection delivers that in full — slightly less safely than one
+list, which is why the corrected opening sentence is part of the shape and not an optional extra.
+Towards the principles: **#12**, every proposed disposition kept, as this file's own rule requires;
+**#6**, one shape for one job, the shape the file already uses for the neighbouring section; **D-672**,
+stoppable at any member boundary; and no numbering is disturbed. **Cost, declared:** each section is
+thereafter read in two places rather than one, and that cost is permanent until the file is
+regenerated.
+
+*Shape two* — **rebuild both sections whole** against the ruled dispositions, the superseded wording
+preserved. Towards the objective: one list, read once, with no possibility of a reader meeting only
+half of it — a real advantage for a section whose purpose is to be consumed later by the audit.
+Towards the principles: it is closest to Ruling 78's own words, and it satisfies **#10** most directly,
+each section then stating the truth as a whole rather than as a list plus a correction. **Cost,
+declared, in three parts.** §11's questions are numbered 1 to 82 and §12's proposals are numbered as
+well, so rebuilding renumbers them, and **whether anything elsewhere in the record cites a question or
+a proposal by its number is UNMEASURED** — a citation would break silently, the stale-anchor failure
+**D-307** exists against, so that measurement would be owed before this shape could be executed. It is
+a larger act on a large file with more to verify. And **for §12 it cannot be carried out as described
+at all**, deletion of a proposed disposition being barred, so §12 under shape two becomes shape one
+under another name — which would put two shapes on one job (**#6**).
+
+**Both axes to shape one. Ruling 1's precedence clause was not exercised.**
+
+**What was decided.** **The repair of §11 and §12 is ADDITIVE.** Each section keeps its standing text
+unedited and gains one subsection at its foot, in the form §10's own added subsection uses, each entry
+naming the ruling that moved its row; §11's entries carry the audit question in one sentence as §5
+requires. **Each section's opening sentence is corrected in the SAME act**, so that neither goes on
+claiming completeness while the complete answer stands in two parts — without that correction the shape
+leaves standing the very defect it repairs. The enumeration is DERIVED at the rows by the executing
+side and checked against this side's predicted sizes; where the two disagree, the executing side's
+derivation governs and the difference is reported.
+
+**What it does NOT do.** It does not re-derive, rebuild or renumber either section. It edits no
+standing row of either section, no proposed disposition anywhere, and no figure of §13, §13a or §13b.
+**It does not touch §10**, which is current. It takes no position on any row's disposition, opens no
+outgoing text, changes nothing in the derived specification, and authorizes no fix, no design, no
+measurement of the analysis and no inference change. It does not settle whether Ruling 78's phrase
+*"one re-derivation"* would have described shape two better; it settles that those words do not bind
+the shape.
+
+**★ AND ONE CORRECTION OF RECORD, THIS SIDE'S OWN, RECORDED BECAUSE THE RULING WAS REACHED THROUGH
+IT.** Before the measurement, this side put to the user that §10 might carry the same staleness and
+that whether it belonged in the repair's scope was an open question for him. **It was not open: the
+record already answered it**, both at §10's own foot and in the ninety-eighth entry's note that the
+seventh batch's close named §10's added subsections. The scope question should never have been raised,
+and raising it is the shape the user's bar of 2026-08-28 names — escalating into a user decision a
+question the record already settles. It was withdrawn at the objects before the surface was put, and
+the surface carried the withdrawal on its face.
+
+**No decisions-register identity is allocated** — that register cannot accept one, and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
 ## 4. What this ruling does NOT do
 
 It authorizes no fix, no design, no inference change, no measurement, and no amendment to any
