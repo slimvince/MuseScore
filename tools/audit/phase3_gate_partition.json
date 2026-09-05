@@ -584,14 +584,14 @@
     "quote": "| OI-283 | The decisions register's coverage claim states a stale `ARCHITECTURE.md` line count, and nothing keeps it current |",
     "expected_line": 312,
     "found_lines": [
-     321
+     322
     ],
     "found": true,
     "anchor_ok": false,
     "drift": {
      "expected": 312,
      "actual": [
-      321
+      322
      ]
     }
    },
@@ -623,14 +623,14 @@
     "quote": "| OI-289 | The 80 LEGACY-marked register entries were SWEPT, never verified - and two of them were wrong |",
     "expected_line": 318,
     "found_lines": [
-     327
+     328
     ],
     "found": true,
     "anchor_ok": false,
     "drift": {
      "expected": 318,
      "actual": [
-      327
+      328
      ]
     }
    },
@@ -880,14 +880,14 @@
     "quote": "| OI-283 | The decisions register's coverage claim states a stale `ARCHITECTURE.md` line count, and nothing keeps it current |",
     "expected_line": 312,
     "found_lines": [
-     321
+     322
     ],
     "found": true,
     "anchor_ok": false,
     "drift": {
      "expected": 312,
      "actual": [
-      321
+      322
      ]
     }
    },
@@ -896,14 +896,14 @@
     "quote": "| OI-289 | The 80 LEGACY-marked register entries were SWEPT, never verified - and two of them were wrong |",
     "expected_line": 318,
     "found_lines": [
-     327
+     328
     ],
     "found": true,
     "anchor_ok": false,
     "drift": {
      "expected": 318,
      "actual": [
-      327
+      328
      ]
     }
    }
@@ -1106,14 +1106,14 @@
     "quote": "| OI-283 | The decisions register's coverage claim states a stale `ARCHITECTURE.md` line count, and nothing keeps it current |",
     "expected_line": 312,
     "found_lines": [
-     321
+     322
     ],
     "found": true,
     "anchor_ok": false,
     "drift": {
      "expected": 312,
      "actual": [
-      321
+      322
      ]
     }
    },
@@ -1122,14 +1122,14 @@
     "quote": "| OI-289 | The 80 LEGACY-marked register entries were SWEPT, never verified - and two of them were wrong |",
     "expected_line": 318,
     "found_lines": [
-     327
+     328
     ],
     "found": true,
     "anchor_ok": false,
     "drift": {
      "expected": 318,
      "actual": [
-      327
+      328
      ]
     }
    }
