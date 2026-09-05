@@ -1318,6 +1318,476 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
     # The first deriving subject of the detail-specification phase, in the same state and for the
     # same reason: an empty criterion returns no candidate, so there is nothing to grade.
     "l0-l1": {},
+
+    # ── L2, the next deriving subject under Ruling 10 — PROPOSALS, NOT A WITHHELD FAMILY ─────────
+    # Ruling 81 (§3cj of `cowork_rulings_2026_08_31_decision_surface_sitting.md`): every candidate
+    # carries an authored verdict with its finding, its date and its reason; the lists go to the
+    # user one per turn; NO identity is withheld that he has not ruled.  So this table is a set of
+    # proposals.  `WITHHELD` carries no `l2` entry, `build()` iterates `WITHHELD`, and therefore
+    # NOTHING READS THIS TABLE TODAY: it is dormant by design, its consumer the `build_subject("l2")`
+    # run that happens when the user has ruled the lists and the family is authored — a separate act.
+    #
+    # THE TEST, from the pilot's Task 1(d) with L2's four-limbed charter question in place of the
+    # pilot's one-limbed one (`FRAMEWORK.md` §5, the L2 block): IN — a deriving session that read
+    # this entry would know, in whole or in part, what the ruled answer is to "over this music, what
+    # is the tonality at each moment, where does each harmony give way to the next, which sounding
+    # notes belong to the harmony and which elaborate it, and what chord is read over each span?";
+    # OUT — the entry bears on another unit, and the reason says which; UNPLACED — the entry's own
+    # text does not settle it, and the reason says what was read.  DEFAULT NOTHING.
+    #
+    # THE DATE.  Ruling 81 requires each verdict to carry its date.  The renderer stamps every
+    # verdict with the module constant `DATE` (2026-08-22, the pilot's authoring date), which is
+    # false for this table and is recorded as OWED at the batch that builds L2's pack — see
+    # `cc_instruction_l2_verdict_pass_2026_09_05.md`.  Until the mechanism carries a per-subject
+    # date, the authoring date of each group block is stated in that block's own heading comment.
+    #
+    # ORDER: the register groups the ruled group term names first (A, C, D, E, F, G), then the
+    # twelve groups reached only by the keyword or home-document terms (B, H, I, J, K, L, M, N, Q,
+    # S, T, U); inside a group, ascending entry number.  A group block is either COMPLETE — every
+    # candidate of that group graded — or ABSENT; there is no partly written group (D-671, D-672).
+    "l2": {
+
+        # ── group A — The estimator architecture — the joint estimator — 27 candidates — authored 2026-09-05 ──
+        "D-001": (VERDICT_IN,
+                  "Its verbatim rules key, mode and chord inferred by ONE probabilistic decode over "
+                  "`(tonic, mode, chord)` with segmentation as a modeled semi-Markov variable; its "
+                  "plain says that single pass 'also decides where one chord ends and the next "
+                  "begins'.",
+                  "It states the ruled answer to all four limbs at once — the tonality, the "
+                  "boundary, and the chord are decided together in one decode."),
+        "D-002": (VERDICT_OUT,
+                  "Its verbatim compiles the committed artifacts and the selected weight vector "
+                  "VERBATIM into a generated source pair rather than reading them from disk.",
+                  "It bears on how fitted artifacts are delivered into the binary — build and "
+                  "provenance — and says nothing about what tonality, boundary, tone status or "
+                  "chord is read."),
+        "D-003": (VERDICT_IN,
+                  "Its verbatim rules inference PRESET-INDEPENDENT, presets being presentation "
+                  "concerns; its plain says the preset 'changes nothing about what the estimator "
+                  "concludes'.",
+                  "It rules out the style preset as evidence in the reading itself, which is part "
+                  "of the ruled answer to what decides the tonality and the chord."),
+        "D-005": (VERDICT_IN,
+                  "Its verbatim names the joint estimator 'the PRODUCTION inference layer on the "
+                  "batch/corpus surface'; its plain says the graded reading comes from it and not "
+                  "from the older chord-by-chord pipeline.",
+                  "It tells a session that the reading is produced by a joint estimator rather than "
+                  "by a staged chord-by-chord path, which is the shape of the ruled answer."),
+        "D-095": (VERDICT_OUT,
+                  "Its verbatim records the migration state CLOSED on both surfaces and the legacy "
+                  "`region::analyzeRegions` → `analyzeSection` path compiled and dormant, awaiting "
+                  "deletion at the retirement map.",
+                  "It bears on the declared migration state and the retirement of the legacy path — "
+                  "governance under #23 — not on any of the four limbs."),
+        "D-096": (VERDICT_IN,
+                  "Its verbatim rules that factor FORMS come from theory and factor VALUES are fit "
+                  "ONCE against ground truth and never tuned per case.",
+                  "The charter assigns the score's terms and their fitting to this layer's detail "
+                  "specification, and this states the ruled shape of both."),
+        "D-114": (VERDICT_IN,
+                  "Its verbatim rules that on the key axis the decoder commits its "
+                  "maximum-a-posteriori path and NEVER abstains, naming a key for every committed "
+                  "segment.",
+                  "It states the ruled answer to the tonality limb's commitment behaviour: a "
+                  "tonality is named at every moment, with no abstention."),
+        "D-270": (VERDICT_IN,
+                  "Its verbatim fixes the held-out protocol — five-fold cross-validation grouped by "
+                  "ground-truth analysis file, everything fitted inside the training folds only, "
+                  "the held-out fold touched exactly once.",
+                  "The charter names 'how any weight is fitted' as part of this layer's detail "
+                  "specification, and this states the ruled fitting and evaluation protocol."),
+
+        "D-271": (VERDICT_IN,
+                  "Its verbatim fixes the capacity budget — a cell keeps its own estimate only at or "
+                  "above a stated training count, otherwise pooling to a declared parent under "
+                  "smoothing, with free parameters bounded against the training tokens.",
+                  "Same ground as D-270: the charter assigns the fitting of this layer's values to "
+                  "its detail specification, and this states the ruled capacity rule."),
+        "D-283": (VERDICT_IN,
+                  "Its verbatim rejects a learned key detector in favour of structural levers; its "
+                  "plain states that the later ratifications govern — the joint estimator infers "
+                  "the key inside a theory-declared generative form whose factor values are fitted "
+                  "once, its cadence factor carrying the structural insight.",
+                  "The plain restates the current ruled answer to the tonality limb, so a session "
+                  "reading the entry would have it however the verbatim is read."),
+        "D-285": (VERDICT_IN,
+                  "Its verbatim rules embellishment chord-first — segmentation then a "
+                  "non-chord-tone post-process — never a union re-derive or a widened vocabulary; "
+                  "its plain says the ratified factorization's emission carries exactly that shape.",
+                  "It states the ruled answer to the third limb: which sounding notes belong to the "
+                  "harmony is decided against the committed chord, not by widening the chord."),
+        "D-376": (VERDICT_IN,
+                  "Its verbatim weighs a single joint-state decoder against a bounded coupling over "
+                  "two existing decoders and chooses the coupling; its plain says the option "
+                  "rejected there 'is the shape the production engine now has'.",
+                  "It names both candidate shapes for deciding the tonality and the chord together "
+                  "and says which one the production reading has."),
+        "D-449": (VERDICT_IN,
+                  "Its verbatim fixes factor granularity — the bass factor per event, the "
+                  "missing-tone penalty per event of segment length, the emission per tone, and the "
+                  "transition, entry and key-change factors per boundary.",
+                  "It states the ruled counting of every term the four limbs are decided by, and "
+                  "names the length bias that fixing it removes from the boundary decision."),
+        "D-450": (VERDICT_IN,
+                  "Its verbatim rules that the key-signature and declared-mode prior conditions the "
+                  "INITIAL key state only, re-entering only at a notated signature change, and "
+                  "REJECTS a persistent pull toward the signature at every step.",
+                  "It states the ruled answer to what the written signature contributes to the "
+                  "tonality at each moment, and what it may not contribute."),
+        "D-451": (VERDICT_OUT,
+                  "Its verbatim rules that every table value a desk simulation uses is PROVISIONAL, "
+                  "declared before use, and that none may survive into a fit.",
+                  "It bears on the desk-simulation procedure under the Premise Gate (#17c) — how a "
+                  "mechanism is traced by hand — not on what the traced mechanism decides."),
+        "D-452": (VERDICT_OUT,
+                  "Its verbatim rules that every desk-simulation trace runs the generative product "
+                  "with every weight at one, so the trace tests the structure and the tables rather "
+                  "than the weighting.",
+                  "Same subject as D-451: it bears on how a trace is run, not on what tonality, "
+                  "boundary, tone status or chord is read."),
+        "D-453": (VERDICT_UNPLACED,
+                  "Its verbatim is a verdict — 'the ratified factorization passes nine of ten "
+                  "traces as specified; no finding requires re-ratifying the STRUCTURE (variables, "
+                  "factors, decode)' — and states no variable, factor or decode rule.",
+                  "The published text says that a structure survived checking without saying what "
+                  "any part of that structure is, so it settles no limb either way."),
+        "D-524": (VERDICT_IN,
+                  "Its verbatim rules the joint state's mode axis {major, minor} with the composite "
+                  "minor, puts modal and chromatic colour in the pitch-emission factor rather than "
+                  "the state, excludes the dominant-family exotic scales, and requires the "
+                  "un-rounded reading published.",
+                  "It states the ruled vocabulary of the tonality limb and where everything outside "
+                  "that vocabulary is modelled instead."),
+        "D-525": (VERDICT_IN,
+                  "Its verbatim fixes the staged fit — factor tables counted generatively from "
+                  "ground truth and frozen, a small combination-weight vector fit discriminatively, "
+                  "with all-weights-equal-one as the mandatory ablation arm that must be beaten.",
+                  "It states the ruled construction of the score over candidate readings, which the "
+                  "charter assigns to this layer's detail specification."),
+        "D-526": (VERDICT_IN,
+                  "Its verbatim rules the joint state's chord axis SCALE-DEGREE-VALUED — a Roman "
+                  "numeral of degree, quality and inversion relative to the state's own tonic and "
+                  "mode — with the chord symbol a DERIVED fact published once.",
+                  "It states the ruled answer to the fourth limb: what a chord read over a span "
+                  "actually is, and what is merely derived from it."),
+        "D-527": (VERDICT_IN,
+                  "Its verbatim rules that NO live non-chord-tone cleaning stage exists — each tone "
+                  "is emitted by category inside the one decode on chord-independent melodic and "
+                  "metric covariates, and ornament labels are derived AFTER the decode.",
+                  "It states the ruled answer to the third limb: chord identity and tone status are "
+                  "settled together, and no elaboration verdict is committed early."),
+        "D-528": (VERDICT_IN,
+                  "Its verbatim rules the key-signature and declared-mode prior a weak, fitted, "
+                  "transposition-invariant SOFT prior with no conditional gate and no threshold "
+                  "anywhere, and formally retires the hard declared-mode penalty.",
+                  "It states the ruled strength and form of the written signature's contribution to "
+                  "the tonality at each moment."),
+        "D-532": (VERDICT_IN,
+                  "Its verbatim adds one pooling level to the chord-transition table grouping a "
+                  "secondary dominant's continuations by their RELATION to the target — resolves "
+                  "versus moves elsewhere — restoring the distinction from counts.",
+                  "It states a ruled term of the model that decides what chord is read over each "
+                  "span and how one span's chord conditions the next."),
+        "D-533": (VERDICT_IN,
+                  "Its verbatim rules that a continuation too rare to hold its own probability is "
+                  "scored by dividing the row's leftover in PROPORTION to each chord's overall "
+                  "frequency — never evenly and never as impossible.",
+                  "It states the ruled back-off inside the transition model that decides what chord "
+                  "is read over each span."),
+        "D-534": (VERDICT_IN,
+                  "Its verbatim rules the penalty for a chord tone that never sounds COUNTED per "
+                  "chord factor — root, third, fifth, seventh — from every humanly labelled chord "
+                  "segment, replacing one blanket value.",
+                  "It states a ruled term of the emission that decides both which notes a candidate "
+                  "chord expects and what chord is read over a span."),
+        "D-535": (VERDICT_UNPLACED,
+                  "Its verbatim reports that across three passages the real counted values overturn "
+                  "no desk-simulation verdict, that margins moved by 1.5–3.5 in both directions, "
+                  "and that one margin expectation was plainly wrong.",
+                  "The published text reports a checking stage's outcome without stating any table "
+                  "value or any rule about the four limbs, so it settles nothing either way."),
+        "D-565": (VERDICT_IN,
+                  "Its verbatim rules that exact score ties are real and are broken by a declared "
+                  "TOTAL order on paths — fewer segments first, then the earliest boundary-tick "
+                  "sequence, then the canonical class-key order — with no epsilon.",
+                  "Its first two keys decide where the boundaries fall when two readings score "
+                  "equally, which is the ruled answer to the second limb at exactly the hardest "
+                  "case."),
+
+        # ── group C — Cross-cutting analysis contracts — 43 candidates — authored 2026-09-05 ──
+        "D-022": (VERDICT_IN,
+                  "Its verbatim rules the analysis works 'at the finest grain where harmony is "
+                  "well-defined' and makes everything coarser a derived view; its plain names that "
+                  "grain 'the smallest stretch over which the sounding harmony does not change'.",
+                  "It states where a boundary falls — at a change in the sounding harmony — which "
+                  "is the second limb in terms."),
+        "D-023": (VERDICT_IN,
+                  "Its verbatim names the atomic analysis unit 'the constant-sonority slice (L2), "
+                  "never the metric beat'; its plain defines it as 'a stretch during which exactly "
+                  "the same notes are sounding'.",
+                  "It states the boundary rule itself: a boundary is where the sounding set "
+                  "changes."),
+        "D-024": (VERDICT_IN,
+                  "Its verbatim rules L1 (notes) and L2 (slicing) 'style-agnostic and lossless — "
+                  "they carry facts, never style', with style-specificity confined to the judgment "
+                  "layers' calibration.",
+                  "It rules that where one stretch ends is a fact read from the notes and never a "
+                  "style-calibrated judgment, which is part of what evidence may decide a "
+                  "boundary."),
+        "D-025": (VERDICT_IN,
+                  "Its verbatim rules the architecture FORWARD-ONLY; its plain says a confident "
+                  "earlier answer could be overturned only by re-running that stretch forwards, and "
+                  "that 'the one genuinely tangled key-versus-chord case got a narrow, gated "
+                  "exception'.",
+                  "It states how the tonality and the chord decisions relate and how either may be "
+                  "revised, which bears on the first and fourth limbs."),
+        "D-026": (VERDICT_IN,
+                  "Its verbatim records that a subsequent investigation 'measured the full joint "
+                  "cross-layer search INERT'; its plain says the effort was redirected into better "
+                  "evidence flowing forwards.",
+                  "It is a measured ruling on whether the reading is produced by one global joint "
+                  "search, which bears on all four limbs at once."),
+        "D-027": (VERDICT_IN,
+                  "Its verbatim rules that each layer 'emits ranked candidates + a confidence, "
+                  "never a forced point estimate'.",
+                  "The charter has this layer publish the rivals with their mass, and this states "
+                  "the ruled requirement that they be published at all."),
+        "D-028": (VERDICT_OUT,
+                  "Its verbatim bans the unqualified word 'region' as ambiguous and requires every "
+                  "layer to name the span it operates on.",
+                  "It bears on the span-naming vocabulary — which word names which stretch — and "
+                  "states no rule about where any boundary falls."),
+        "D-029": (VERDICT_OUT,
+                  "Its verbatim rules preferring what can be verified against ground truth and, "
+                  "where sound theory cannot be verified, building it with an alternative-confidence "
+                  "path and an 'empirically-unvalidated' mark.",
+                  "It bears on the verifiability contract governing what may be built and how it is "
+                  "marked, not on what tonality, boundary, tone status or chord is read."),
+        "D-030": (VERDICT_OUT,
+                  "Its verbatim states the three binding scale requirements — cost scales with the "
+                  "working span, re-analysis is incremental over the dirty span, the working span is "
+                  "extensible.",
+                  "It bears on the bounded-context contract's cost and incrementality requirements, "
+                  "not on what is read from the music it loads."),
+        "D-031": (VERDICT_OUT,
+                  "Its verbatim states that whole-score analysis is the degenerate case, selection "
+                  "equalling score.",
+                  "It bears on the bounded-context contract's scope — how much music is analysed — "
+                  "and settles none of the four limbs."),
+        "D-032": (VERDICT_OUT,
+                  "Its verbatim requires every confidence crossing a layer boundary to be in [0,1], "
+                  "class-declared, and named to its decision.",
+                  "It bears on the cross-layer confidence contract's FORM requirements, which "
+                  "constrain how a value is published rather than what reading it belongs to."),
+        "D-033": (VERDICT_IN,
+                  "Its verbatim rules that each layer owns one evidence-source-by-question "
+                  "contribution and that 'within its scope uses *all* the information L1 carries "
+                  "losslessly (notated spelling, metric weight, voice)'.",
+                  "It states what evidence this layer may bring to bear on every one of the four "
+                  "limbs — all of the note model's information, not a narrowed subset."),
+        "D-034": (VERDICT_OUT,
+                  "Its verbatim admits a new layer or axis only when it clears three co-equal "
+                  "gates, all required.",
+                  "It bears on the criterion for admitting a new layer or axis to the architecture, "
+                  "not on what any existing layer decides."),
+        "D-035": (VERDICT_OUT,
+                  "Its verbatim rules every cost-driving choice an explicit setting rather than a "
+                  "hardcoded constant, and every optional expensive refinement a separable stage.",
+                  "It bears on the effort control and the governance of cost, not on the reading."),
+        "D-099": (VERDICT_IN,
+                  "Its verbatim rules that 'a ruled-out reading is carried, not dropped' — published "
+                  "on the output surface at low confidence unless the elimination is recomputable.",
+                  "The charter has this layer publish the rivals with their mass including "
+                  "boundary-differing rivals, and this states the ruled rule for carrying the "
+                  "ruled-out ones."),
+        "D-100": (VERDICT_OUT,
+                  "Its verbatim rules every derived analytical fact published exactly once on the "
+                  "producing layer's output surface, consumers reading and never re-deriving.",
+                  "It bears on the fact-publication contract — where a fact lives and who may "
+                  "re-derive it — not on what the fact says about the music."),
+        "D-260": (VERDICT_OUT,
+                  "Its verbatim states the invariant that the analysis output covers exactly the "
+                  "selection and everything outside it is evidence, never a result.",
+                  "It bears on the bounded-context contract's output scope, not on what is read "
+                  "inside that scope."),
+        "D-261": (VERDICT_OUT,
+                  "Its verbatim rules that a layer never guesses how much context it needs and "
+                  "stops on convergence — its in-selection output ceasing to change with further "
+                  "context.",
+                  "It bears on the bounded-context contract's extension and stopping rule, not on "
+                  "what tonality, boundary, tone status or chord is read."),
+        "D-262": (VERDICT_OUT,
+                  "Its verbatim rules the extension increment set by the requesting layer in its "
+                  "own inference scale, an efficiency knob only because convergence fixes the "
+                  "result.",
+                  "Same subject as D-261: it bears on the bounded-context contract's mechanics."),
+        "D-264": (VERDICT_OUT,
+                  "Its verbatim states the equivalence invariant — the result after any sequence of "
+                  "extensions must equal a single fresh run over the final loaded span.",
+                  "It bears on the bounded-context contract's correctness guard, not on what the "
+                  "run reads."),
+        "D-265": (VERDICT_OUT,
+                  "Its verbatim rules the extension request a data-supply call DOWN to the note "
+                  "layer, with inference then flowing forward and never backward.",
+                  "It bears on the bounded-context contract and the forward-only control flow, not "
+                  "on any of the four limbs."),
+        "D-267": (VERDICT_OUT,
+                  "Its verbatim declares exactly two admissible confidence classes — a decision "
+                  "margin and a calibrated probability — and forbids claiming the second until a "
+                  "reliability map is fitted.",
+                  "It bears on the confidence contract's class vocabulary, not on what reading a "
+                  "confidence belongs to."),
+        "D-268": (VERDICT_OUT,
+                  "Its verbatim states five rules of use — a confidence attaches to a named "
+                  "decision, is bounded and class-declared at a layer boundary, is compared only "
+                  "within one class and frame, keeps its identity, and abstention means below the "
+                  "declared bar.",
+                  "It bears on the confidence contract's rules of use; naming key-of-slice and "
+                  "chord-of-slice as decisions does not state what either decides."),
+        "D-278": (VERDICT_IN,
+                  "Its verbatim records the joint key-and-chord step SHELVED, measured not to pay, "
+                  "with the cause stated — 'the carried alternative keys are diatonic-collection "
+                  "siblings so the chord is almost always key-stable'.",
+                  "It is a measured verdict on coupling the tonality and the chord decisions, which "
+                  "is directly about how the first and fourth limbs relate."),
+        "D-282": (VERDICT_OUT,
+                  "Its verbatim rules the oracle-and-tier measurement standing and forbids grading "
+                  "on the bare bass-is-root proxy, which rewards a wrong root that happens to be "
+                  "the bass.",
+                  "It bears on how the analysis is graded — the measurement unit — not on what the "
+                  "analysis reads."),
+        "D-286": (VERDICT_OUT,
+                  "Its verbatim records a measured A/B in which a bounded-window analysis beat a "
+                  "whole-score interactive one against the published annotations, the whole-score "
+                  "variant SHELVED and the bounded window adopted.",
+                  "It bears on the analysis extent — how much music one reading is taken over — "
+                  "which is the effort question and not one of the four limbs."),
+        "D-288": (VERDICT_IN,
+                  "Its verbatim forbids retrying a widened search and gives the reason: 'the wrong "
+                  "reading is the highest-scoring one', so 'only changing how readings are scored, "
+                  "or cutting the music differently, can move it'.",
+                  "It names the two levers that decide the reading — the score and the "
+                  "segmentation — and rules out the third, which is part of the answer's shape."),
+        "D-289": (VERDICT_IN,
+                  "Its verbatim records the meta-principle that 'precision lives in emission + "
+                  "functional labeling, NOT search/path'.",
+                  "It states a ruled steer about what determines the reading — the evidence each "
+                  "candidate is judged on rather than the search over candidates."),
+        "D-293": (VERDICT_IN,
+                  "Its verbatim rules values fitted per IDIOM — one fit event per body of "
+                  "repertoire sharing a practice — and never adjusted to make a named preset come "
+                  "out right.",
+                  "The charter assigns the fitting of this layer's values to its detail "
+                  "specification, and this states the ruled unit of that fit."),
+        "D-313": (VERDICT_OUT,
+                  "Its verbatim rules calibration maps monotone or deferred, a non-monotone "
+                  "empirical curve being an upstream finding rather than a mapping target.",
+                  "It bears on the confidence-calibration contract — turning an internal number "
+                  "into a probability — not on what reading that number belongs to."),
+        "D-339": (VERDICT_IN,
+                  "Its verbatim rules that a confident earlier inference is overturned by decisive "
+                  "later evidence through ONE confidence-weighted forward-recompute mechanism, "
+                  "naming the modulation recompute and the fine-grain chord override as instances.",
+                  "Both named instances overturn a committed tonality or a committed chord, so the "
+                  "rule states how the first and fourth limbs are finally settled."),
+        "D-466": (VERDICT_IN,
+                  "Its verbatim rules forward-only 'a strong *default*, not dogma', a sanctioned "
+                  "backward edge admissible only as a deliberate, surfaced, measured, documented "
+                  "exception.",
+                  "It states the ruled condition under which this layer's reading may be revised "
+                  "backwards, which bears on how every one of the four limbs is settled."),
+        "D-474": (VERDICT_OUT,
+                  "Its verbatim establishes a FACT-of-absence: no published study reports per-axis "
+                  "inter-annotator agreement for Roman-numeral or key annotation of "
+                  "Baroque/classical symbolic music.",
+                  "It bears on the ground-truth ceiling (#21) and on what may be claimed about any "
+                  "residual, not on what the analysis reads."),
+        "D-475": (VERDICT_OUT,
+                  "Its verbatim declares the BCMH chorale annotations unestablished as an "
+                  "instrument — one annotator, annotations sitting on a homorhythmic reduction, "
+                  "reached through a machine translation.",
+                  "It bears on one corpus's establishment status under #19, not on any of the four "
+                  "limbs."),
+        "D-497": (VERDICT_OUT,
+                  "Its verbatim requires the empirically-unvalidated mark applied to the Jazz preset "
+                  "constants and to the idioms no gate-grade ground truth has calibrated, with the "
+                  "validation path named beside each.",
+                  "It bears on the marking and validation of style constants, not on what tonality, "
+                  "boundary, tone status or chord is read."),
+        "D-500": (VERDICT_OUT,
+                  "Its verbatim records the user's ratification of CORPUS EXPANSION — gate-grade "
+                  "jazz ground truth, chromatic material of the Wagner class, and more non-Bach, "
+                  "non-Baroque annotated music.",
+                  "It bears on the material the analysis is measured against, not on the reading "
+                  "itself."),
+        "D-521": (VERDICT_IN,
+                  "Its verbatim states the general law by which an abstract circle becomes acyclic "
+                  "in the concrete — the score already contains one side, a key-agnostic form of "
+                  "the evidence exists, the dependency is on a coarser stable fact, or the ratified "
+                  "forward-override covers the rare remainder.",
+                  "Its own plain names the circle as key, chord, cadence and non-chord tones "
+                  "needing one another, so it states how the mutual dependency of the first, third "
+                  "and fourth limbs is resolved."),
+        "D-522": (VERDICT_OUT,
+                  "Its verbatim makes 'show me why' a late-bound DISPLAY consumer of facts that "
+                  "already exist rather than a new analysis, the gap being publication.",
+                  "It bears on the explainability display surface, not on what the analysis "
+                  "decides."),
+        "D-531": (VERDICT_IN,
+                  "Its verbatim records the standing verdict that the hand-built analysis is "
+                  "CONFIRMED and the learned replacement NOT triggered, retained as an explicit "
+                  "fallback re-opening 'for any slice later established as a genuine ceiling'.",
+                  "It states the ruled answer to what kind of thing scores a candidate reading, "
+                  "which the charter assigns to this layer's detail specification."),
+        "D-576": (VERDICT_OUT,
+                  "Its verbatim states that a chord's root and bass are largely key-independent, so "
+                  "the root-agreement percentage barely moves when the tonality is misread while "
+                  "quality, Roman numeral and some inversions are corrupted.",
+                  "It bears on how a published measurement figure must be read, not on what the "
+                  "analysis reads from the music."),
+        "D-600": (VERDICT_IN,
+                  "Its verbatim records that two post-scoring passes change the chord quality the "
+                  "scorer committed and keep no record of what they replaced, and rules the "
+                  "violation TOLERATED until the gate-dissolution step.",
+                  "It states that the committed chord's quality is overwritten downstream, which is "
+                  "a ruled fact about what chord is read over a span."),
+        "D-601": (VERDICT_OUT,
+                  "Its verbatim hard-gates the fitting of a conversion constant between two "
+                  "differently-scaled confidences behind a premise ledger and a desk simulation.",
+                  "It bears on the confidence contract's comparison frames and on the Premise Gate, "
+                  "not on any of the four limbs."),
+        "D-656": (VERDICT_OUT,
+                  "Its verbatim forbids amending the crediting rule so that a tonicization label "
+                  "counts as agreeing with the annotator's modulated numeral, only a diagnostic "
+                  "partial-sub-split being defensible.",
+                  "It is the MEASUREMENT half of its decision and bears on the grading convention; "
+                  "the build half it names is homed elsewhere and is not in this text."),
+
+        # ── group D — Layer 1 — the note model — 2 candidates — authored 2026-09-05 ──
+        "D-569": (VERDICT_OUT,
+                  "Its verbatim confines the collection layer to collecting every sounding note, "
+                  "annotated and lossless, and forbids it to filter, weight, select a bass, or make "
+                  "'any harmonic/segmentation/key decision'.",
+                  "It bears on the note-model unit — what the collection layer does and does not "
+                  "do — and its only mention of the tonal reading is to exclude it from that "
+                  "layer."),
+        "D-625": (VERDICT_OUT,
+                  "Its verbatim rules spelling presence tested with the validity predicate and "
+                  "never with a non-negative test, because the flat side of the line of fifths is "
+                  "negative.",
+                  "It bears on the note model's spelling representation and its presence test, not "
+                  "on what tonality, boundary, tone status or chord is read."),
+
+        # ── group E — Layer 2 — the slicer — 1 candidate — authored 2026-09-05 ──
+        "D-605": (VERDICT_IN,
+                  "Its verbatim rules that a local-key hypothesis derives from KEY-AGNOSTIC signals "
+                  "only and NEVER from the key-area grouping, and states its own scope: 'what it "
+                  "constrains is *what evidence a modulation decision may read*, which binds any "
+                  "such decision on any arm'.",
+                  "It states what evidence a change-of-tonality decision may read, which is the "
+                  "first limb — the pilot graded it OUT because its one-limbed question was the "
+                  "chord boundary alone, and that reason does not reach the four-limbed question."),
+    },
 }
 
 
