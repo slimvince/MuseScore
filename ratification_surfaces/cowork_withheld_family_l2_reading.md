@@ -1,10 +1,12 @@
 # The WITHHELD FAMILY for the L2 subject — put to the user for a ruling
 
-> **STATUS: READING SURFACE — FOR RULING. NOTHING BELOW IS APPLIED.** Every verdict in this
-> file is a PROPOSAL carried in `tools/audit/gen_derivation_boot_pack.py` → `VERDICTS["l2"]`.
-> No identity is withheld, no pack is rendered and no session is booted until you have ruled the
-> lists (Ruling 81, §3cj of `cowork_rulings_2026_08_31_decision_surface_sitting.md`: *no identity
-> is withheld that the user has not ruled*).
+> **STATUS: RULED 2026-09-05 — the lists below are the RULED lists.** The ruling record is
+> `cowork_rulings_2026_09_05_l2_withheld_family_sitting.md`, three rulings, one per list.  Every verdict below is carried in
+> `tools/audit/gen_derivation_boot_pack.py` → `VERDICTS["l2"]` as ruled.  **No identity is
+> withheld yet and no pack exists**: the withheld family is authored from LIST ONE only after L2's
+> boot-list members are ruled, which is a separate decision (Ruling 81, §3cj of
+> `cowork_rulings_2026_08_31_decision_surface_sitting.md`: *no identity is withheld that the user
+> has not ruled*).
 >
 > **GENERATED FILE — do not hand-edit.** Rendered by `tools/audit/gen_withheld_family_reading.py`
 > from that verdict table and from `tools/audit/l2_candidate_list.json`; its `--check` re-renders and
@@ -44,6 +46,8 @@ chord tones and which elaborate; and what chord is read over each span.  The pil
 only the second of these.  A verdict here is IN if the entry discloses the ruled answer to ANY of
 the four, in whole or in part.
 
+**And, by Ruling 1(a) of the sitting record, a fifth ground the four limbs do not name:** an entry is also IN where it states the recorded HOW of what the charter's L2 block has this layer PUBLISH — the rivals with their mass — because withholding the recorded how costs the deriving session nothing it needs (the charter itself tells it to publish rivals) while admitting it would make the session's derived answer on that point indistinguishable from recall.  Nine entries are IN on that ground: D-027, D-099, D-326, D-331, D-380, D-381, D-425, D-510, D-511.
+
 ## 3. What this family protects, and what is not ruled for L2
 
 For the pilot, a separate ruling named one oracle passage the family protected.  **No ruling
@@ -73,7 +77,7 @@ generator's committed table on this run:
 
 | group | register-group title | candidates | reached by the group term | by a keyword | by a home document | IN | OUT | UNPLACED |
 |---|---|---|---|---|---|---|---|---|
-| A | The estimator architecture — the joint estimator | 27 | 27 | 0 | 0 | 21 | 4 | 2 |
+| A | The estimator architecture — the joint estimator | 27 | 27 | 0 | 0 | 22 | 5 | 0 |
 | C | Cross-cutting analysis contracts | 43 | 43 | 0 | 0 | 17 | 26 | 0 |
 | D | Layer 1 — the note model | 2 | 2 | 0 | 0 | 0 | 2 | 0 |
 | E | Layer 2 — the slicer | 1 | 1 | 0 | 0 | 1 | 0 | 0 |
@@ -91,7 +95,7 @@ generator's committed table on this run:
 | S | The guiding principles | 12 | 0 | 0 | 12 | 0 | 12 | 0 |
 | T | Standing process rules and local patches | 1 | 0 | 0 | 1 | 0 | 1 | 0 |
 | U | The standing decision-bearing surfaces | 5 | 0 | 2 | 3 | 4 | 1 | 0 |
-| **all** | | **244** | | | | **110** | **132** | **2** |
+| **all** | | **244** | | | | **111** | **133** | **0** |
 
 ## 5. The test each verdict was made against
 
@@ -103,6 +107,8 @@ From the pilot's own dispatch, with L2's four-limbed question in place of the pi
   answer.  The reason says what it bears on instead.
 - **UNPLACED** — the entry's own published text does not settle it.  The reason says what was read.
 
+**And, by Ruling 1(a) of the sitting record, a fifth ground the four limbs do not name:** an entry is also IN where it states the recorded HOW of what the charter's L2 block has this layer PUBLISH — the rivals with their mass — because withholding the recorded how costs the deriving session nothing it needs (the charter itself tells it to publish rivals) while admitting it would make the session's derived answer on that point indistinguishable from recall.  Nine entries are IN on that ground: D-027, D-099, D-326, D-331, D-380, D-381, D-425, D-510, D-511.
+
 **Default nothing:** a verdict that could not be defended in one sentence at the entry's own
 verbatim was recorded UNPLACED rather than guessed.  **Every verdict was written at the published
 text** — the entry's verbatim and plain restatement in the candidate list — and no entry's home
@@ -113,7 +119,7 @@ decide anything, and the executing side's report states that they did not.
 
 ## LIST ONE — IN: proposed to be WITHHELD from the pack
 
-*A deriving session that read one of these would know, in whole or in part, what the ruled answer to the charter question is.  Each row says what in the entry's own text discloses it.*  **110 entries.**
+*A deriving session that read one of these would know, in whole or in part, what the ruled answer to the charter question is.  Each row says what in the entry's own text discloses it.*  **111 entries.**
 
 | ID | group | Title | Finding — what the entry's own text says | Reason |
 |---|---|---|---|---|
@@ -129,6 +135,7 @@ decide anything, and the executing side's report states that they did not.
 | D-376 | A | The joint key-and-chord step was designed as a BOUNDED COUPLING over the two existing decoders, and the unified single-state alternative was REJECTED — the option later adopted as the production architecture | Its verbatim weighs a single joint-state decoder against a bounded coupling over two existing decoders and chooses the coupling; its plain says the option rejected there 'is the shape the production engine now has'. | It names both candidate shapes for deciding the tonality and the chord together and says which one the production reading has. |
 | D-449 | A | Factor granularity is fixed: the bass factor is evaluated per event, the missing-tone penalty per event of segment length, the emission per tone, and the boundary-family factors per boundary | Its verbatim fixes factor granularity — the bass factor per event, the missing-tone penalty per event of segment length, the emission per tone, and the transition, entry and key-change factors per boundary. | It states the ruled counting of every term the four limbs are decided by, and names the length bias that fixing it removes from the boundary decision. |
 | D-450 | A | The key-signature and declared-mode prior conditions the INITIAL key state only, re-entering only at a notated signature change | Its verbatim rules that the key-signature and declared-mode prior conditions the INITIAL key state only, re-entering only at a notated signature change, and REJECTS a persistent pull toward the signature at every step. | It states the ruled answer to what the written signature contributes to the tonality at each moment, and what it may not contribute. |
+| D-453 | A | The desk simulation's verdict: the ratified factorization passes nine of ten traces and no finding reopens the structure | Its verbatim is a verdict — 'the ratified factorization passes nine of ten traces as specified; no finding requires re-ratifying the STRUCTURE (variables, factors, decode)' — and states no variable, factor or decode rule. | Ruled IN 2026-09-05 from UNPLACED (Ruling 3 of `cowork_rulings_2026_09_05_l2_withheld_family_sitting.md`): its plain names the counting granularity as the one thing sharpened and the variables, factors and decode as ratified, so a session reading it learns that a ratified factorization exists and which of its points was open; the pilot's family graded the same text IN and that ruling stands, and the same text cannot settle the superset question less than it settled the subset. |
 | D-524 | A | The joint state's mode axis is TWO modes — major and composite minor; modal and chromatic colour lives in the pitch emission, and the un-rounded reading is published | Its verbatim rules the joint state's mode axis {major, minor} with the composite minor, puts modal and chromatic colour in the pitch-emission factor rather than the state, excludes the dominant-family exotic scales, and requires the un-rounded reading published. | It states the ruled vocabulary of the tonality limb and where everything outside that vocabulary is modelled instead. |
 | D-525 | A | The fit is STAGED: the factor tables are counted from ground truth and frozen, and only a small vector of combination weights is fit discriminatively — with an all-weights-equal ablation arm that must be beaten | Its verbatim fixes the staged fit — factor tables counted generatively from ground truth and frozen, a small combination-weight vector fit discriminatively, with all-weights-equal-one as the mandatory ablation arm that must be beaten. | It states the ruled construction of the score over candidate readings, which the charter assigns to this layer's detail specification. |
 | D-526 | A | The joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the chord symbol is a DERIVED fact published once | Its verbatim rules the joint state's chord axis SCALE-DEGREE-VALUED — a Roman numeral of degree, quality and inversion relative to the state's own tonic and mode — with the chord symbol a DERIVED fact published once. | It states the ruled answer to the fourth limb: what a chord read over a span actually is, and what is merely derived from it. |
@@ -232,7 +239,7 @@ decide anything, and the executing side's report states that they did not.
 
 ## LIST TWO — OUT: proposed to be ADMITTED to the pack
 
-*These reached the candidate list, were read, and bear on another unit.  Each row says what the entry bears on instead.*  **132 entries.**
+*These reached the candidate list, were read, and bear on another unit.  Each row says what the entry bears on instead.*  **133 entries.**
 
 | ID | group | Title | Finding — what the entry's own text says | Reason |
 |---|---|---|---|---|
@@ -240,6 +247,7 @@ decide anything, and the executing side's report states that they did not.
 | D-095 | A | The dual path during the joint-estimator build is a declared, bounded, pre-ratified migration state | Its verbatim records the migration state CLOSED on both surfaces and the legacy `region::analyzeRegions` → `analyzeSection` path compiled and dormant, awaiting deletion at the retirement map. | It bears on the declared migration state and the retirement of the legacy path — governance under #23 — not on any of the four limbs. |
 | D-451 | A | A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win | Its verbatim rules that every table value a desk simulation uses is PROVISIONAL, declared before use, and that none may survive into a fit. | It bears on the desk-simulation procedure under the Premise Gate (#17c) — how a mechanism is traced by hand — not on what the traced mechanism decides. |
 | D-452 | A | Every desk-simulation trace runs at identity weights — the ratified ablation baseline — so the trace tests the structure and the tables, not the weighting | Its verbatim rules that every desk-simulation trace runs the generative product with every weight at one, so the trace tests the structure and the tables rather than the weighting. | Same subject as D-451: it bears on how a trace is run, not on what tonality, boundary, tone status or chord is read. |
+| D-535 | A | The checking stage's verdict: the real counted tables overturn no desk-simulation verdict, but margins moved in both directions and one margin expectation was plainly wrong | Its verbatim reports that across three passages the real counted values overturn no desk-simulation verdict, that margins moved by 1.5–3.5 in both directions, and that one margin expectation was plainly wrong. | Ruled OUT 2026-09-05 from UNPLACED (Ruling 3 of the same record): it bears on the checking stage's own outcome — a confirmation that the real counted tables overturned no desk-simulation verdict — reporting no value and no rule; what it discloses about the tables, that they are counted from data and checked, D-525 (withheld) states in full. |
 | D-028 | C | The span typology - every layer names the span it operates on; bare 'region' is banned | Its verbatim bans the unqualified word 'region' as ambiguous and requires every layer to name the span it operates on. | It bears on the span-naming vocabulary — which word names which stretch — and states no rule about where any boundary falls. |
 | D-029 | C | The verifiability contract | Its verbatim rules preferring what can be verified against ground truth and, where sound theory cannot be verified, building it with an alternative-confidence path and an 'empirically-unvalidated' mark. | It bears on the verifiability contract governing what may be built and how it is marked, not on what tonality, boundary, tone status or chord is read. |
 | D-030 | C | Bounded context - cost scales with the working span, not the whole score | Its verbatim states the three binding scale requirements — cost scales with the working span, re-analysis is incremental over the dirty span, the working span is extensible. | It bears on the bounded-context contract's cost and incrementality requirements, not on what is read from the music it loads. |
@@ -373,12 +381,9 @@ decide anything, and the executing side's report states that they did not.
 
 ## LIST THREE — UNPLACED: the entry's own published text does not settle it
 
-*These could not be defended either way in one sentence at the entry's own verbatim, so they were not guessed.  Each row says what was read.  NO RECOMMENDATION IS MADE ON ANY OF THEM (D-658): where the record does not settle the question, the surface gathers facts.*  **2 entries.**
+*These could not be defended either way in one sentence at the entry's own verbatim, so they were not guessed.  Each row says what was read.  NO RECOMMENDATION IS MADE ON ANY OF THEM (D-658): where the record does not settle the question, the surface gathers facts.*  **0 entries.**
 
-| ID | group | Title | Finding — what the entry's own text says | Reason |
-|---|---|---|---|---|
-| D-453 | A | The desk simulation's verdict: the ratified factorization passes nine of ten traces and no finding reopens the structure | Its verbatim is a verdict — 'the ratified factorization passes nine of ten traces as specified; no finding requires re-ratifying the STRUCTURE (variables, factors, decode)' — and states no variable, factor or decode rule. | The published text says that a structure survived checking without saying what any part of that structure is, so it settles no limb either way. |
-| D-535 | A | The checking stage's verdict: the real counted tables overturn no desk-simulation verdict, but margins moved in both directions and one margin expectation was plainly wrong | Its verbatim reports that across three passages the real counted values overturn no desk-simulation verdict, that margins moved by 1.5–3.5 in both directions, and that one margin expectation was plainly wrong. | The published text reports a checking stage's outcome without stating any table value or any rule about the four limbs, so it settles nothing either way. |
+*The list is empty on this run.  The heading stays because the value stays in the generator's closed three-value vocabulary.*
 
 ---
 
@@ -398,15 +403,23 @@ decide anything, and the executing side's report states that they did not.
   for these; the gap is recorded as owed to the batch that builds L2's pack, and the authoring date
   of every group block stands in the table's own heading comments meanwhile.
 
-## 7. What you are asked to rule
+## 7. What was ruled
 
-**Three lists, one per turn, in the order above**, as the pilot's were ruled: LIST ONE (IN),
-LIST TWO (OUT), LIST THREE (UNPLACED).  For each list you may take it as authored, or move named
-entries between lists, or return a list for re-reading.  An UNPLACED entry must end IN or OUT
-before any family is authored, and this file recommends neither for either.  Each ruling is
-recorded in a ruling record, and the ruled lists are then written back to the generator's table
-by a dispatch; **the withheld family itself is authored from the ruled IN list in a later act**,
-together with L2's pack members, which are a separate ruling.
+**2026-09-05, one list per turn, in the order above.  The record is `cowork_rulings_2026_09_05_l2_withheld_family_sitting.md`.**
+
+1. **Ruling 1 — LIST ONE stands as authored: all 110 IN entries are withheld** (the user's word: "A").
+2. **Ruling 2 — LIST TWO stands as authored: all 132 OUT entries are admitted** (the user's word: "A").
+3. **Ruling 3 — LIST THREE: D-453 is IN (withheld); D-535 is OUT (admitted)** (the user's words: "Recommendation: D-453 IN, D-535 OUT.").  The list is now empty; the two verdicts were written back to the table by `cc_instruction_l2_ruling_writeback_2026_09_05.md`, and the lists below are the ruled lists.
+
+**Recorded beside the rulings, at the user's acceptance of the sitting's stated caveats:**
+
+- **Ruling 1(b).** D-005 and D-010 are IN while D-095 is OUT on a disclosure of the same shape — that the reading is produced by the joint estimator and not by the older chord-by-chord path.  Recorded as harmless: the framework's L2 block already calls the reading 'the one entangled decision', so none of the three discloses more than the charter does.
+- **Ruling 1(c).** Thirty-two of the 110 IN entries carry the LEGACY mark in `DECISIONS.md` (the sitting's count at the index's marks).  They are withheld on the reasoning the pilot applied at D-317 and D-318: a project-specific former answer to the same question contaminates a blind session's recall as much as the current answer does.  The mark decided nothing; the reasoning is recorded so the scale of its application is visible.
+- **Ruling 2.** D-495 is admitted as a rule about the cadence detector's own mechanics; the entries stating what the tonality does with a cadence vote (D-336, D-494) are withheld already.
+- **Ruling 3.** D-453 is withheld because the same text settled the pilot's narrower question IN (Ruling 1 of `cowork_rulings_2026_08_22_withheld_family_sitting.md`) and cannot settle the superset question less; D-535 is admitted as the checking stage's own outcome, reporting no value and no rule, what it discloses about the tables being stated in full by the withheld D-525.
+
+**The withheld family itself is authored from LIST ONE in a later act**, together with L2's
+pack members, which are a separate ruling not yet taken.
 
 ## 8. What the ruling does NOT do
 

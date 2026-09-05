@@ -75,6 +75,54 @@ SUBJECTS = {
             "by Claude Code on 2026-09-05 under `cc_instruction_l2_verdict_pass_2026_09_05.md` "
             "Task 2, at each entry's own published verbatim and plain restatement in the candidate "
             "list, in the fixed group order that dispatch names"),
+        # RULED.  Present only once the user has ruled the lists; a subject without this block
+        # renders as a reading surface FOR RULING.  Every string below is the ruling record's own
+        # content, cited to it, and the verdict table carries the ruled verdicts themselves.
+        "ruling": {
+            "record": "cowork_rulings_2026_09_05_l2_withheld_family_sitting.md",
+            "date": "2026-09-05",
+            "rulings": (
+                "**Ruling 1 — LIST ONE stands as authored: all 110 IN entries are withheld** (the "
+                "user's word: \"A\").",
+                "**Ruling 2 — LIST TWO stands as authored: all 132 OUT entries are admitted** (the "
+                "user's word: \"A\").",
+                "**Ruling 3 — LIST THREE: D-453 is IN (withheld); D-535 is OUT (admitted)** (the user's "
+                "words: \"Recommendation: D-453 IN, D-535 OUT.\").  The list is now empty; the two "
+                "verdicts were written back to the table by "
+                "`cc_instruction_l2_ruling_writeback_2026_09_05.md`, and the lists below are the "
+                "ruled lists.",
+            ),
+            # The test as RULED: Ruling 1(a) accepted a fifth ground beside the four limbs.
+            "test_note": (
+                "**And, by Ruling 1(a) of the sitting record, a fifth ground the four limbs do not "
+                "name:** an entry is also IN where it states the recorded HOW of what the charter's "
+                "L2 block has this layer PUBLISH — the rivals with their mass — because withholding "
+                "the recorded how costs the deriving session nothing it needs (the charter itself "
+                "tells it to publish rivals) while admitting it would make the session's derived "
+                "answer on that point indistinguishable from recall.  Nine entries are IN on that "
+                "ground: D-027, D-099, D-326, D-331, D-380, D-381, D-425, D-510, D-511."),
+            "notes": (
+                "**Ruling 1(b).** D-005 and D-010 are IN while D-095 is OUT on a disclosure of the "
+                "same shape — that the reading is produced by the joint estimator and not by the "
+                "older chord-by-chord path.  Recorded as harmless: the framework's L2 block already "
+                "calls the reading 'the one entangled decision', so none of the three discloses more "
+                "than the charter does.",
+                "**Ruling 1(c).** Thirty-two of the 110 IN entries carry the LEGACY mark in "
+                "`DECISIONS.md` (the sitting's count at the index's marks).  They are withheld on the "
+                "reasoning the pilot applied at D-317 and D-318: a project-specific former answer to "
+                "the same question contaminates a blind session's recall as much as the current "
+                "answer does.  The mark decided nothing; the reasoning is recorded so the scale of "
+                "its application is visible.",
+                "**Ruling 2.** D-495 is admitted as a rule about the cadence detector's own mechanics; "
+                "the entries stating what the tonality does with a cadence vote (D-336, D-494) "
+                "are withheld already.",
+                "**Ruling 3.** D-453 is withheld because the same text settled the pilot's narrower "
+                "question IN (Ruling 1 of `cowork_rulings_2026_08_22_withheld_family_sitting.md`) and "
+                "cannot settle the superset question less; D-535 is admitted as the checking stage's "
+                "own outcome, reporting no value and no rule, what it discloses about the tables "
+                "being stated in full by the withheld D-525.",
+            ),
+        },
     },
 }
 
@@ -182,11 +230,21 @@ def render(subject: str) -> str:
     w = L.append
     w(f"# {spec['title']}")
     w("")
-    w("> **STATUS: READING SURFACE — FOR RULING. NOTHING BELOW IS APPLIED.** Every verdict in this")
-    w("> file is a PROPOSAL carried in `tools/audit/gen_derivation_boot_pack.py` → `VERDICTS[\"" + subject + "\"]`.")
-    w("> No identity is withheld, no pack is rendered and no session is booted until you have ruled the")
-    w("> lists (Ruling 81, §3cj of `cowork_rulings_2026_08_31_decision_surface_sitting.md`: *no identity")
-    w("> is withheld that the user has not ruled*).")
+    ruling = spec.get("ruling")
+    if ruling:
+        w(f"> **STATUS: RULED {ruling['date']} — the lists below are the RULED lists.** The ruling record is")
+        w(f"> `{ruling['record']}`, three rulings, one per list.  Every verdict below is carried in")
+        w("> `tools/audit/gen_derivation_boot_pack.py` → `VERDICTS[\"" + subject + "\"]` as ruled.  **No identity is")
+        w("> withheld yet and no pack exists**: the withheld family is authored from LIST ONE only after L2's")
+        w("> boot-list members are ruled, which is a separate decision (Ruling 81, §3cj of")
+        w("> `cowork_rulings_2026_08_31_decision_surface_sitting.md`: *no identity is withheld that the user")
+        w("> has not ruled*).")
+    else:
+        w("> **STATUS: READING SURFACE — FOR RULING. NOTHING BELOW IS APPLIED.** Every verdict in this")
+        w("> file is a PROPOSAL carried in `tools/audit/gen_derivation_boot_pack.py` → `VERDICTS[\"" + subject + "\"]`.")
+        w("> No identity is withheld, no pack is rendered and no session is booted until you have ruled the")
+        w("> lists (Ruling 81, §3cj of `cowork_rulings_2026_08_31_decision_surface_sitting.md`: *no identity")
+        w("> is withheld that the user has not ruled*).")
     w(">")
     w("> **GENERATED FILE — do not hand-edit.** Rendered by `tools/audit/gen_withheld_family_reading.py`")
     w(f"> from that verdict table and from `{spec['candidate_list']}`; its `--check` re-renders and")
@@ -225,6 +283,9 @@ def render(subject: str) -> str:
     w("chord tones and which elaborate; and what chord is read over each span.  The pilot subject asked")
     w("only the second of these.  A verdict here is IN if the entry discloses the ruled answer to ANY of")
     w("the four, in whole or in part.")
+    if ruling:
+        w("")
+        w(ruling["test_note"])
     w("")
     w("## 3. What this family protects, and what is not ruled for L2")
     w("")
@@ -290,6 +351,9 @@ def render(subject: str) -> str:
     w("- **OUT** — the entry bears on another unit, and reading it tells the session nothing about that")
     w("  answer.  The reason says what it bears on instead.")
     w("- **UNPLACED** — the entry's own published text does not settle it.  The reason says what was read.")
+    if ruling:
+        w("")
+        w(ruling["test_note"])
     w("")
     w("**Default nothing:** a verdict that could not be defended in one sentence at the entry's own")
     w("verbatim was recorded UNPLACED rather than guessed.  **Every verdict was written at the published")
@@ -333,16 +397,33 @@ def render(subject: str) -> str:
     w("  for these; the gap is recorded as owed to the batch that builds L2's pack, and the authoring date")
     w("  of every group block stands in the table's own heading comments meanwhile.")
     w("")
-    w("## 7. What you are asked to rule")
-    w("")
-    w("**Three lists, one per turn, in the order above**, as the pilot's were ruled: LIST ONE (IN),")
-    w("LIST TWO (OUT), LIST THREE (UNPLACED).  For each list you may take it as authored, or move named")
-    w("entries between lists, or return a list for re-reading.  An UNPLACED entry must end IN or OUT")
-    w("before any family is authored, and this file recommends neither for either.  Each ruling is")
-    w("recorded in a ruling record, and the ruled lists are then written back to the generator's table")
-    w("by a dispatch; **the withheld family itself is authored from the ruled IN list in a later act**,")
-    w("together with L2's pack members, which are a separate ruling.")
-    w("")
+    if ruling:
+        w("## 7. What was ruled")
+        w("")
+        w(f"**{ruling['date']}, one list per turn, in the order above.  The record is `{ruling['record']}`.**")
+        w("")
+        for i, r in enumerate(ruling["rulings"], 1):
+            w(f"{i}. {r}")
+        w("")
+        w("**Recorded beside the rulings, at the user's acceptance of the sitting's stated caveats:**")
+        w("")
+        for n in ruling["notes"]:
+            w(f"- {n}")
+        w("")
+        w("**The withheld family itself is authored from LIST ONE in a later act**, together with L2's")
+        w("pack members, which are a separate ruling not yet taken.")
+        w("")
+    else:
+        w("## 7. What you are asked to rule")
+        w("")
+        w("**Three lists, one per turn, in the order above**, as the pilot's were ruled: LIST ONE (IN),")
+        w("LIST TWO (OUT), LIST THREE (UNPLACED).  For each list you may take it as authored, or move named")
+        w("entries between lists, or return a list for re-reading.  An UNPLACED entry must end IN or OUT")
+        w("before any family is authored, and this file recommends neither for either.  Each ruling is")
+        w("recorded in a ruling record, and the ruled lists are then written back to the generator's table")
+        w("by a dispatch; **the withheld family itself is authored from the ruled IN list in a later act**,")
+        w("together with L2's pack members, which are a separate ruling.")
+        w("")
     w("## 8. What the ruling does NOT do")
     w("")
     w("- **It boots no session and renders no pack.**")
