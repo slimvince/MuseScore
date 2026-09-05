@@ -21,7 +21,7 @@
 | | commit | read where |
 |---|---|---|
 | **at boot** | `73d27c15e887b4d1063fc15af6d2beadaac1b24a` | `.git/refs/heads/master` and `.git/refs/remotes/origin/master`, both with the file tools — equal, so STOP condition 1 did not fire |
-| **at close** | `<the Task 5 commit's successor — the end-state commit>` | written in the batch's LAST commit, on the convention the preceding report states at its own table: a commit cannot carry its own hash |
+| **at close** | `15b553b90dce7555ececeb5db6d6770412e733ee` | the tip after the Task 5 commit, read at both ref files with the file tools and **written into the end-state commit**, on the convention the preceding report states at its own table: a commit cannot carry its own hash, so naming the Task 3 tip here would leave the row two commits stale |
 
 **Every commit of this batch**, each hash read at both ref files with the file tools immediately
 after its push:
@@ -37,7 +37,8 @@ after its push:
 | Task 2, segment 3 | `2335ea64ff41ab0c8d517b131581f41441432040` | groups B, H — 181 cumulative |
 | Task 2, segment 4 | `addbb741b61b3caaa2613b408f05d947dbfff099` | groups I, J, K, L, M, N, Q, S, T, U — 244 cumulative |
 | Task 3 | `1020a9c80d3d39f3b593eeb9589c7222c47d3eba` | the Task 3 enumeration artifact alone |
-| Task 5 | `<in the commit table of the close section>` | `STATUS.md` and this report |
+| Task 5 | `15b553b90dce7555ececeb5db6d6770412e733ee` | `STATUS.md` and this report |
+| the end state | *this commit* | the end-state guard artifact, the regenerated read-size measurement, the close section, and this table's two close-tip cells |
 
 ---
 
@@ -292,6 +293,19 @@ message read, rather than inferred from the set's summary.
 **Nothing was regenerated at Task 3**, as the dispatch orders. **What Task 5 regenerates, and what it
 deliberately does not, is stated at §7 departure 6** — the licence Task 5 gives names one
 measurement, and this batch did not widen it.
+
+### The end state, measured after the two regenerations
+
+`python tools/audit/gen_session_start_read_size.py` then `--check` → **`the session-start read
+measurement re-derives`, exit 0.** Its regenerated values confirm the cause established above rather
+than leaving it argued: the `gating_ids` span went **2774 → 2787** (Task 1(b)'s row) and `STATUS.md`
+went **22469 → 27707** (Task 5's entry) — two of this batch's own acts and nothing else.
+
+`python tools/audit/gen_guard_state.py` then `--check` → **`the guard state re-derives`, exit 0 — 76
+guards run, TWELVE failing, 4 not run, 16 historical.** The twelve are **the ten inherited plus the
+two this batch caused and deliberately left**; `gen_session_start_read_size.py --check` now **PASSES**.
+The exit-0 is an identity proof that the committed artifact is what a fresh run produces, not merely a
+matching count.
 
 ---
 

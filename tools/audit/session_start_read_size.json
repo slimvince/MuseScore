@@ -32,27 +32,27 @@
   },
   "characters_per_member": {
    "CLAUDE.md": 156659,
-   "STATUS.md": 22469,
+   "STATUS.md": 27707,
    "DECISIONS.md": 127608,
-   "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2774
+   "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2787
   },
-  "total_characters": 309510,
+  "total_characters": 314761,
   "further_spans_of_the_same_artifact_NOT_counted_into_the_read": {
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows": {
-    "characters": 61322,
+    "characters": 61616,
     "what_it_is": "the 216 gating rows, each carrying its recorded ground — the GROUNDS a session opens when it challenges a verdict, and the third of the five figures Ruling 3 orders corrected"
    },
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one": {
-    "characters": 4895,
+    "characters": 4909,
     "what_it_is": "the comparison with the frozen record — retrospective evidence for the phase's retrospective, and the fifth of the five figures Ruling 3 orders corrected"
    }
   },
   "the_section_that_carries_the_pointer": {
    "key": "★_the_live_gating_answer",
-   "characters": 75528,
+   "characters": 75863,
    "what_it_is": "the whole section the artifact carries at that key — the answer TOGETHER with the grounds that establish it. A session reads the answer at boot and opens the rest to challenge a verdict."
   },
-  "characters_the_section_carries_beyond_the_answer": 72754
+  "characters_the_section_carries_beyond_the_answer": 73076
  },
  "at_earlier_commits": [
   {
@@ -117,16 +117,16 @@
   {
    "from_commit": "1760d9a4a87f82a6bdbc7cb17e99ccdd8ae4c433",
    "from_total": 367121,
-   "to_total": 309510,
-   "change_in_characters": -57611,
-   "change_percent": -15.69
+   "to_total": 314761,
+   "change_in_characters": -52360,
+   "change_percent": -14.26
   },
   {
    "from_commit": "594074e1e1900079e449d2b79a38920d21bca6e6",
    "from_total": 296832,
-   "to_total": 309510,
-   "change_in_characters": 12678,
-   "change_percent": 4.27
+   "to_total": 314761,
+   "change_in_characters": 17929,
+   "change_percent": 6.04
   }
  ],
  "what_this_does_not_assert": [
