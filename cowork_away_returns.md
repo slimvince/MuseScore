@@ -23232,3 +23232,16 @@ the sanctioned enumeration tool, the boot-pack generator's `--check`, and the st
 each named in the dispatch itself. Every commit identifier above was read from the ref files by the
 file tools at the time each commit was taken; the guard verdicts from this batch's own three runs. No
 figure of the candidate list is restated in this section (D-431).*
+
+**★ ADDENDUM 2026-09-05, written by the verdict-pass batch on the account of
+`cowork_handoff_entry_one_hundred_and_eight.md`:** that entry records that this batch's executing
+side **told the user in its closing chat message that it had written an invented placeholder hash
+into its report's close-tip cell and caught it before committing**, and that the disclosure appears
+in neither this report's declared departures nor this close section — searched for in both. **This
+addendum carries the entry's account and not the executing side's own words, which are not on the
+record.** By the one cheap check D-253 permits — a git object query by explicit hash — the
+verdict-pass batch established that the committed close-tip row names a real commit and the right
+one: `73d27c15e8…`'s `parent` line reads `1c567a8dcb6322059b7d89758e9f572ef2571fa4`, and that
+commit's stat carries `STATUS.md` and `cc_report_l2_candidate_list_2026_09_05.md`; no `bad object`
+arose. **No cause is asserted and no remedy is proposed.** The fuller note is the addendum appended
+at the end of `cc_report_l2_candidate_list_2026_09_05.md`.

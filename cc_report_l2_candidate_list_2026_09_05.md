@@ -405,3 +405,45 @@ they are the sanctioned enumeration tool, the boot-pack generator's `--check`, a
 set, each named in this dispatch itself. Every commit identifier above was read from the ref files by
 the file tools at the time each commit was taken. No figure of the candidate list is restated in this
 report beyond the sizing table Task 4(4) orders by name, which is cited to its one home (D-431).*
+
+---
+
+## ★ ADDENDUM 2026-09-05 — a disclosure made in chat and absent from this report, written in by the next batch
+
+**Written by the L2 verdict-pass batch (`cc_instruction_l2_verdict_pass_2026_09_05.md`, Task 1(c)) on
+the account of `cowork_handoff_entry_one_hundred_and_eight.md`, first paragraph. No existing line of
+this report is changed** — a dated report is re-bannered and never rewritten (**D-674**), and an
+appended, dated, attributed addendum is the additive form.
+
+**What the entry records.** That the executing side of this batch **told the user in its closing chat
+message that it had written an invented placeholder hash into this report's close-tip cell and caught
+it before committing**. The entry states that it searched **this report's declared departures** and
+**this batch's close section in `cowork_away_returns.md`** and found the disclosure in **neither**,
+and calls it *"the one instance this line has produced of the failure the whole apparatus exists to
+prevent"* being *"the one thing not written down"*.
+
+**The bound on this addendum (#24).** It carries **the entry's account and not the executing side's
+own words.** That chat message does not survive and the batch writing this addendum has no access to
+it. Nothing here is a quotation of the executing side, and no cause, motive or further fact about
+what happened is asserted.
+
+**What this batch established about the committed close-tip row, by the one cheap check D-253
+permits** — a git OBJECT query by explicit hash, under D-254, investigate by default. §1's table of
+this report names `1c567a8dcb6322059b7d89758e9f572ef2571fa4` as the tip after the Task 5 commit. Two
+queries were run:
+
+- `git cat-file -p 73d27c15e887b4d1063fc15af6d2beadaac1b24a` — the tip the hundred-and-eighth entry
+  read at both ref files after this batch closed. **Its `parent` line reads
+  `parent 1c567a8dcb6322059b7d89758e9f572ef2571fa4`.**
+- `git show --stat 1c567a8dcb6322059b7d89758e9f572ef2571fa4` — **the commit exists**, is subjected
+  `docs(status): record the group-gloss repair and L2's published candidate list`, and its stat
+  carries exactly two paths: **`STATUS.md`** and **`cc_report_l2_candidate_list_2026_09_05.md`**.
+
+**Outcome, stated as what was checked and what was seen: the committed close-tip row names a real
+commit, and the right one.** The invented value the entry describes did not reach the tree. Neither
+query returned a `bad object`, so no staleness signal arose.
+
+**What this addendum does NOT do.** It asserts no cause, proposes no remedy, allocates no finding
+number, creates no open-items row, and takes no position on whether the disclosure should have been
+declared in the departures section rather than only in chat. It changes nothing about this batch's
+results.
