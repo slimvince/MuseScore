@@ -17,7 +17,7 @@
 | | Commit | Read at |
 |---|---|---|
 | at boot | `5ba82c9ea7f84e2ad0d45fde4fc35258a9841e4f` | `.git/refs/heads/master` and `.git/refs/remotes/origin/master`, both equal |
-| at close | `⟨CLOSE-TIP MARKER — the end-state commit's hash goes here once it has been read at both ref files; nothing is written in this cell before then⟩` | — |
+| at close | `2e82195260e3a8a919a62137d291b4407f8c48fc` | the tip after the Task 5 commit, read at both ref files with the file tools and **written into the end-state commit** — a commit cannot carry its own hash, so naming the Task 3 tip here would leave the row stale |
 
 The boot tip is exactly the hash the dispatch declares, at both ref files, so **STOP condition 1 did
 not fire**. Every commit identifier in this report was read from the two ref files with the file
@@ -265,6 +265,60 @@ reach a number."* **The alternative — regenerating it, which would have produc
 expects — is declined and recorded here so the user can overrule it in one act.** The end-state
 guard artifact therefore records **eleven** failing, which is the true state.
 
+### ★ The end state is TWELVE failing, not eleven — a twelfth appeared at Task 5, caused by this batch's own ordered `STATUS.md` act
+
+**This section is written at the end state and supersedes the count above for the end state only.**
+The eleven of §5 is the true Task 3 figure; the end-state regeneration reports **77 guard(s) run, 12
+failing, 4 not run, 16 historical record(s)**.
+
+**The twelfth is `tools/audit/gen_l0_l1_outgoing_population.py --check`**, which PASSED at Task 3.
+It was identified by comparing the two runs' `[FAIL]` lines, not assumed, and **its cause is
+established at the objects, to the exact word:**
+
+- run directly it reports `STALE vs the derivation: l0_l1_outgoing_population.json does not
+  re-derive`;
+- that tool runs a term search over the files of three inventory classes, reading membership from
+  `tools/audit/artifact_inventory.json`, and **`STATUS.md` is a member of one of them** — read at
+  that artifact, `{"path": "STATUS.md", …}`;
+- the term list is published on the artifact itself: 27 ADMITTING phrases and 7 RECORDED single
+  words (`slice`, `release`, `eligible`, `grace`, `tie`, `tied`, `repeat`);
+- searched case-insensitively across the whole of `STATUS.md`, **there is exactly ONE hit of any of
+  those 34 terms, and it is on line 8 — this batch's own new entry.** The match is the substring
+  `tie` inside the word **"identities"**, in the clause *"narrowed to the two identities the record
+  names"*.
+
+**So `STATUS.md` carried ZERO hits before this batch and carries ONE now.** This is the *adds a hit*
+case rather than the *shifts recorded positions* case — the very risk the preceding batch flagged
+and checked — and it is stated as measured: **the added hit is RECORDED tier, which by the tool's own
+two-tier rule does not ADMIT a file to the population**, so the population is unchanged and what moved
+is a recorded-hit count.
+
+**★ IT WAS NOT REPAIRED, AND TWO ALTERNATIVES ARE RECORDED AS DECLINED.** *(1) Regenerating
+`l0_l1_outgoing_population.json`* — declined on the same ground as the eleventh: the dispatch's end
+state authorises the guard artifact and the read-size measurement and names no third, and this is a
+third. *(2) Rewording this batch's own `STATUS.md` entry to drop the word "identities"*, which would
+return the file to zero hits and turn the guard green without touching any artifact — **declined
+because it is backwards**: the correct handling of a stale derivation is to regenerate it so it
+matches the tree, never to reword the tree so it matches a stale derivation, and choosing prose to
+keep a check green is precisely what *adjust nothing to reach a number* forbids. **Nothing was
+adjusted to reach a number in either direction.**
+
+**The read-size measurement WAS repaired, the condition the dispatch names being met.**
+`gen_session_start_read_size.py --check` PASSED at Task 3 and went STALE after the Task 5 commit —
+`STATUS.md` being one of the four members it counts — exactly as the preceding batch recorded. It was
+regenerated (`--check` then exit 0), and **`gen_guard_state.py` was run in write mode AFTER that
+repair and again as the last act before the end-state commit**, so the artifact this batch commits
+records the corrected state rather than one already stale when written. **Of the four members that
+measurement counts, `STATUS.md` is the only one this batch touched** — established at the Task 3
+enumeration, which showed zero tracked modifications, `STATUS.md` being the only tracked file edited
+after it.
+
+**The end-state failing set, exactly:** the ten inherited, plus
+`tools/audit/gen_evidence_pin_membership.py --check` (§5) and
+`tools/audit/gen_l0_l1_outgoing_population.py --check` (here). Both were caused by ordered acts of
+this batch, both causes are established at the objects, and both are left standing with their
+declined alternatives recorded, for the user to overrule in one act.
+
 ## 6. STOP conditions
 
 **None fired.** All seven were tested rather than assumed:
@@ -311,11 +365,20 @@ one interpreter script reading only scratch files outside the repository. **No `
 `git status`, no `git log`, and no branch-tip read was relied on for anything** — every tip came from
 the two ref files through the file tools.
 
-**(v) The eleventh guard red was left standing rather than repaired**, with the reading and the
-declined alternative both recorded at §5, because the dispatch's end state names two artifacts and
-this is a third.
+**(v) TWO guard reds beyond the inherited ten were left standing rather than repaired**, each with
+its cause established at the objects and its declined alternatives recorded — the eleventh at §5, the
+twelfth at §5's end-state block — because the dispatch's end state authorises two artifacts and each
+of these is a third.
 
-**(vi) A new untracked root file appeared mid-batch** and is named at §5; it was not created, staged
+**(vi) THIS REPORT WAS AMENDED IN THE END-STATE COMMIT BEYOND ITS TWO CLOSE-TIP CELLS.** The dispatch
+names the close-tip cells; the end-state block in §5 was added as well, because the twelfth red
+appeared *after* §5 was first written and leaving the report saying "eleven" would have left a
+statement in it that this batch's own later act made false. **The Task 3 figure is kept in place and
+labelled as such (#12); nothing was overwritten.** The preceding batch met the same shape and
+recorded the falsification in its close section while leaving the claim standing in its report; this
+batch corrects the report itself and declares the correction.
+
+**(vii) A new untracked root file appeared mid-batch** and is named at §5; it was not created, staged
 or edited by this batch.
 
 ## 8. The writing side's own declared departure, relayed so it is on the record

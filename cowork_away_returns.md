@@ -23694,3 +23694,181 @@ by the file tools at the time each commit was taken; the object comparison from 
 hash; the guard verdicts from this batch's own run; the inherited failing set from the committed
 artifact. No figure of the candidate list or of the verdict distribution is restated in this section
 (D-431).*
+
+---
+
+## THE THREE RULINGS WRITTEN BACK: THE READING FILE STANDS RULED, TWO VERDICTS MOVED IN THEIR ONE HOME, AND TWO GUARD REDS THIS BATCH CAUSED ARE LEFT STANDING WITH THEIR CAUSES ESTABLISHED
+
+**★ THE HEADING CARRIES NO ORDINAL**, on this file's own convention as the preceding sections read
+it: the sections that number themselves are the L0/L1 comparison line's own writings, and this batch
+is not a writing of that line, so it carries a descriptive title and names its dispatch instead.
+
+This batch ran `cc_instruction_l2_ruling_writeback_2026_09_05.md`, the step after the user ruled L2's
+three lists. **Task 0** landed the dispatch and the sitting record; **Task 1** wrote the two ruled
+verdicts back to the authored table; **Task 2** amended the rendering tool's authored prose and
+re-rendered the reading file; **Task 3** proved nothing else moved and ran the guard set; **Task 4**
+wrote the report; **Task 5** wrote the `STATUS.md` entry, this section and the end state.
+
+**★★ NO STOP CONDITION FIRED, AND ALL SEVEN WERE TESTED RATHER THAN ASSUMED. NOTHING WAS WITHHELD, NO
+PACK WAS RENDERED, NO SESSION WAS BOOTED, NO VERDICT MOVED THAT THE USER DID NOT RULE, AND NOTHING IS
+RECOMMENDED ANYWHERE — IN THE REPORT, IN THIS SECTION, OR IN THE READING FILE.**
+
+### The commits, by explicit hash
+
+| Act | Commit | What it carries |
+|---|---|---|
+| the tree met | `5ba82c9ea7f84e2ad0d45fde4fc35258a9841e4f` | the local tip; `origin/master` EQUAL to it, and equal to the hash the dispatch declares |
+| Task 0 | `a0db6711a3` | the dispatch, the sitting record and the Task 0 enumeration artifact — **three paths** |
+| Task 1 | `da22215c4a` | `tools/audit/gen_derivation_boot_pack.py` alone — `14 insertions(+), 6 deletions(-)` |
+| Task 2 | `f0982b5237` | the rendering tool and the re-rendered reading file — **two paths** |
+| Task 3 | `e38cb40441` | the Task 3 enumeration artifact alone |
+| the close | `2e82195260` | `STATUS.md` and the report — **two paths** |
+| the end state | **this commit** | the regenerated guard artifact, the regenerated read-size measurement, this section, and the report's close-tip cell and end-state block |
+
+**This batch follows the practice of the last several batches: the close section and the end-state
+guard artifact are in the SAME commit.** Every tip was read at **both** ref files with the file tools
+— `.git/refs/heads/master` and `.git/refs/remotes/origin/master` — never from a push's own output and
+never from `git rev-parse`. The boot tip was the hash the dispatch declares, at both, so **STOP
+condition 1 did not fire**.
+
+### What Task 1 and Task 2 produced
+
+**The verdicts moved in their ONE home and the reading file was RE-RENDERED, never hand-edited** —
+which is the whole reason the preceding batch built a generator rather than a hand copy. D-453 is now
+`VERDICT_IN` and D-535 `VERDICT_OUT`; **both FINDING strings are byte-unchanged**, and **each new
+reason preserves the verdict the tuple moved FROM** ("from UNPLACED"), so #12 holds at the tuple. A
+**second `D-453` tuple exists** in the generator — the pilot subject's, carrying `VERDICT_IN` and a
+different finding — and it was distinguished and left alone; the dispatch's quoted block is unique
+because it carries the l2 text.
+
+**The stated test now says what the ruling means.** Ruling 1(a)'s fifth ground — beside the charter's
+four limbs — renders into **both** §2 and §5, the banner reads **RULED** with the record named, and
+§7 becomes *What was ruled*, carrying the three rulings and the notes of Rulings 1(b), 1(c), 2 and 3.
+So a later reader meets the caveats the user accepted, not only the verdicts. The counts read
+**IN 111 / OUT 133 / UNPLACED 0** over **244** rows, LIST THREE empty with its standing sentence.
+
+**★ THE RECORD CHECK ORDERED AT TASK 2(c) FOUND A REAL DISAGREEMENT, AND IT IS CORRECTED IN FAVOUR OF
+THE RECORD RATHER THAN ABSORBED.** The dispatch's own authored Ruling 2 note named **D-337** among the
+entries withheld on the cadence-vote ground. **D-337 appears nowhere in the ruling record** — searched,
+zero matches — while the record's Ruling 2 names D-336 and D-494 and its ruled sentence names no
+identity at all. **The claim was established TRUE at the table before anything was touched** (D-337 is
+`VERDICT_IN`, and its finding is about modulation requiring cadence confirmation), so nothing false was
+being said; the string carried content beyond the record on a surface whose whole job is to state what
+was ruled. The parenthetical was narrowed to `(D-336, D-494)`. **This is a SIXTH change to the
+rendering tool beyond the five the dispatch quotes**, made under 2(c)'s explicit *follow the record*
+instruction and **declared as in tension with the general five-edits bar** rather than resolved
+silently. A second, smaller mismatch — 2(c) asks for "three sub-counts" the dispatch's own block
+deliberately does not restate (D-431) — needed no correction and nothing was added.
+
+**★ NOTHING IS WITHHELD, AND THE MECHANISM MAKES THAT MORE THAN A CLAIM.** `WITHHELD` gained no `l2`
+key; `write_all` was never reached and the only mode of the boot-pack generator run was `--check`,
+exit 0 with all three subjects FROZEN at their recorded blobs; **no pack path appears in either
+enumeration in ANY state**; and `EXTRAS`, `FROZEN`, the `CRITERION` table, both keyword tuples and
+`DATE` stand exactly as they stood.
+
+### The end state — TWELVE failing, and both additions are this batch's own doing
+
+**The standing guard set reports DRIFT, not a halt.** **77 guards run, TWELVE failing, 4 not run, 16
+historical.** **The inherited ten were established by comparison against the committed
+`guard_state.json`**, which records `"failing": 10` and enumerates them — not recalled. The reading
+file's own guard **PASSES**, so the surface the user rules from cannot drift from its source silently.
+
+**The eleventh, at Task 3: `gen_evidence_pin_membership.py --check`.** Cause established at the
+objects — that tool derives from **every root-level `cowork_rulings_*.md`**, and **Task 0 landed one**,
+whose leading blockquote names the generated surface `cowork_withheld_family_l2_reading.md`; the
+committed artifact carries neither that record nor that surface nor its generator (searched, zero
+matches for all three).
+
+**The twelfth, at Task 5: `gen_l0_l1_outgoing_population.py --check`**, which passed at Task 3. Cause
+established at the objects **to the exact word**: `STATUS.md` is a member of one of the inventory
+classes that tool term-searches, and across the whole file there is **exactly one hit of any of its 34
+terms — on line 8, this batch's own entry** — the substring `tie` inside the word *"identities"*. So
+`STATUS.md` carried **zero** hits before and **one** now. **This is the *adds a hit* case, not the
+*shifts positions* case** — the very risk the preceding batch flagged — and it is stated as measured:
+the hit is RECORDED tier, which by the tool's own two-tier rule **does not admit a file to the
+population**, so the population is unchanged and a recorded-hit count moved.
+
+**★ NEITHER WAS REPAIRED, AND THE DECLINED ALTERNATIVES ARE RECORDED FOR THE USER TO OVERRULE IN ONE
+ACT.** The dispatch's end state authorises **two** artifacts — the guard artifact and, on its own
+stated condition, the read-size measurement — and each of these is a third. For the eleventh,
+regenerating would **ADD a member to the pinned-evidence class and publish it UNRESOLVED**, which is a
+question that tool exists to put to the user. For the twelfth, a second alternative was available and
+is recorded declined: **rewording this batch's own `STATUS.md` entry to drop "identities"** would have
+returned the file to zero hits and turned the guard green without touching any artifact — **declined
+because it is backwards.** The correct handling of a stale derivation is to regenerate it so it matches
+the tree, never to reword the tree so it matches a stale derivation; choosing prose to keep a check
+green is exactly what *adjust nothing to reach a number* forbids. **Nothing was adjusted to reach a
+number in either direction.**
+
+**The read-size measurement WAS repaired, its condition being the one the dispatch names.** It PASSED
+at Task 3 and went STALE after the Task 5 commit — `STATUS.md` being one of the four members it counts
+— which is the same shape the preceding batch met and recorded. It was regenerated and re-derives, and
+**`gen_guard_state.py` was run in write mode AFTER that repair and again as the last act before this
+commit**, so the artifact committed here records the corrected state rather than one already stale when
+written. Of the four members, **`STATUS.md` is the only one this batch touched**, established at the
+Task 3 enumeration rather than assumed. This commit therefore carries **two** regenerated artifacts and
+both are declared.
+
+### Declared departures, stated rather than absorbed
+
+Each is at length in `cc_report_l2_ruling_writeback_2026_09_05.md` §7 and named here so a reader of
+this section meets them.
+
+**(i) The sixth edit to the rendering tool**, above and at report §4(c) — the only change beyond the
+five quoted blocks, made under 2(c)'s own instruction and declared as in tension with the five-edits
+bar.
+
+**(ii) TWO ATTEMPTS AT A FORM THE SHELL-READ GUARD DENIES, BOTH DENIED BEFORE THEY RAN AND BOTH ROUTED
+TO THE FILE TOOLS.** An interpreter heredoc naming a literal repository path was written twice — once
+to diff the two enumeration artifacts, once to count this file's lines — and **refused by the guard
+both times. Nothing was read on either occasion**, so neither is a D-253 breach of the kind the three
+preceding batches recorded; they are attempts at a denied form and are stated rather than passed over.
+Both were routed: the comparison was redone reading only scratch copies **outside** the repository, the
+line count replaced by a `Grep`. **A sixth and seventh observation of the guard's denial behaviour,
+carrying NO cause and NOT written into OI-378** — this batch does not widen its own licence.
+
+**(iii) The report was amended in this commit beyond its close-tip cell**, by the end-state block in
+§5, because the twelfth red appeared after §5 was written and leaving "eleven" standing would have left
+a statement the batch's own later act made false. **The Task 3 figure is kept in place and labelled
+(#12); nothing was overwritten.** The preceding batch met this shape and recorded the falsification in
+its close section while leaving the claim in its report; this batch corrects the report itself.
+
+**(iv) The report's close-tip cell carried a NAMED MARKER from first drafting until the hash had been
+read at both ref files, and no value was invented.** Two of the three preceding batches wrote an
+invented value into this same cell and caught it. **This is the third batch to meet the cell and the
+first to meet it without the error** — recorded as a fact about the cell's form, with no cause asserted
+and no remedy proposed.
+
+**(v)** The commit trailer carries the system-mandated `Co-Authored-By: Claude Opus 5 (1M context)`
+form, which the dispatch anticipates and orders declared; every commit subject and body is the
+dispatch's verbatim. **(vi) No shell command read a working-tree file at any point** — no `git status`,
+no `git log`, no `git rev-parse`, and no branch-tip read relied on for anything. **(vii)** A new
+untracked root file, `cowork_handoff_entry_one_hundred_and_nine.md`, appeared mid-batch; it is the
+Cowork side's own writing, is **not this batch's to land**, and was not staged or edited. **(viii)** The
+guard set was run three times and each run took many minutes; **no run was killed and no subset was
+substituted**.
+
+### What is NOT done, and belongs to the next acts
+
+- **`WITHHELD["l2"]`**, authored from the ruled LIST ONE — **only after L2's boot-list members are
+  ruled**, which is the next decision surface and was not taken here.
+- **L2's boot-list members and `EXTRAS["l2"]`**; then the pack built, with the derived cross-reference
+  additions (Ruling 84's bound: add, never overturn) and the leak check run — and at that batch, **the
+  `DATE` mechanism**, still owed.
+- **The pluralisation "1 entries"** the rendering tool would print for a one-member list — a cosmetic
+  defect the writing side noticed on synthetic data, noted and not fixed here.
+- **The twelve guard reds**: the ten inherited, untouched by this batch, and the two named above, left
+  standing with their causes established and their alternatives declined.
+
+*Provenance: CC, 2026-09-05, at boot tip `5ba82c9ea7f84e2ad0d45fde4fc35258a9841e4f`, under
+`cc_instruction_l2_ruling_writeback_2026_09_05.md`, after the ordinary session-start read — `CLAUDE.md`
+(the standing instructions), the `DECISIONS.md` INDEX, `STATUS.md` and the derived gating answer at
+`tools/audit/nongating_apparatus_rows.json` → `★_the_live_gating_answer` → `gating_ids` — which binds
+even when the opening instruction names a single file (Ruling 5 of
+`cowork_rulings_2026_08_29_ratification_sitting.md`, P-1). `BUILD_AND_TEST.md` was NOT read: its read is
+conditional on a build, a test, or a measurement tool whose command lives there, and this batch ran none.
+Every commit identifier above was read at both ref files with the file tools at the time each commit was
+taken; the two verdict tuples and the five edit sites at the files themselves; the ruling record whole;
+the inherited failing set at the committed `guard_state.json`; the two new reds' causes at
+`artifact_inventory.json`, `l0_l1_outgoing_population.json`, `evidence_pin_membership.json` and
+`STATUS.md` itself.*
