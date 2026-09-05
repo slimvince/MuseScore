@@ -234,6 +234,17 @@ AUTHORED = [
      "specification set as it stands, and that the residue is published whole — so a document "
      "moving under it, or a member leaving the specification set, halts the run rather than "
      "moving the population silently"),
+    # ---- AUTHORED 2026-09-05, cc_instruction_l2_reading_file_2026_09_05.md Task 2 ---------------
+    # Registered in the act that creates the tool, for the reason the entries above give: a derived
+    # candidate with no authored invocation is this runner's own STOP.
+    ("tools/audit/gen_withheld_family_reading.py", ["--subject", "l2", "--check"],
+     "L2's withheld-family reading file re-renders from the boot-pack generator's own authored "
+     "verdict table and the published candidate list, with the charter sentence located at "
+     "FRAMEWORK.md. What it guards is that the file the user rules from is what the table says — "
+     "every row's finding and reason byte-identical to the generator's authored text, every count "
+     "computed — so an edit to the table without a re-render, a hand edit to the file, or a "
+     "candidate list that no longer matches the table turns this red rather than leaving the user "
+     "reading a surface that has drifted from its source"),
     # ---- AUTHORED 2026-08-15, cc_instruction_artifact_inventory.md ---------------------------
     # Registered in the act that creates it, for the reason stated three entries above.
     ("tools/audit/gen_artifact_inventory.py", ["--check"],
