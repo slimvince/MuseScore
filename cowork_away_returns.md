@@ -22960,3 +22960,275 @@ identifier above was read from the ref files by the file tools; the anchors, the
 two re-reads of the edit with the file tools; the additions-only property at the commit objects' own
 zero deletions; the guard verdicts from this batch's own three runs. No number of the check is
 restated in this section (D-431).*
+
+---
+
+## THE GROUP GLOSS REPAIRED AND L2's CANDIDATE LIST PUBLISHED WHOLE: NO VERDICT AUTHORED, NOTHING WITHHELD, NO PACK RENDERED
+
+**★ THE HEADING CARRIES NO ORDINAL**, on this file's own convention as the two preceding sections read
+it: the sections that number themselves are the L0/L1 comparison line's own writings, and this batch
+is not a writing of that line, so it carries a descriptive title and names its dispatch instead.
+
+This batch ran `cc_instruction_l2_candidate_list_2026_09_05.md`, the step between the criterion write
+and the verdict pass. It does two things and no more. **It repairs the one defect the preceding batch
+found and left** — the candidate derivation's group gloss, hardcoded to group E's title and false for
+five of the six groups the ruled `l2` criterion names — **and it publishes L2's candidate list whole**,
+so that the verdicts the next dispatch authors are written against a published object rather than
+against a count. **Task 0** landed the dispatch and its enumeration artifact; **Task 1** made the
+repair; **Task 2** published the list; **Task 3** proved nothing else moved; **Task 4** wrote the
+report; **Task 5** wrote the `STATUS.md` entry, this section and the end state. **NO VERDICT WAS
+AUTHORED FOR ANY SUBJECT, NOTHING WAS WITHHELD, NO PACK WAS RENDERED, NO SESSION WAS BOOTED, NO
+READING FILE WAS WRITTEN, NO POSITION WAS TAKEN ON ANY CANDIDATE, AND NO RECOMMENDATION APPEARS
+ANYWHERE.**
+
+**★ WHY THE REPAIR CAME BEFORE THE VERDICT PASS AND NOT BEFORE A PACK IS BUILT.** The preceding batch
+recorded the defect as owed *"before an `l2` pack is ever built"*. The dispatch sharpens that in its
+own opening and states the sharpening rather than making it silently: the gloss sits in the match
+record whoever authors a verdict reads to decide it, so a wrong gloss is wrong at the moment the
+verdict is written, not at the moment a pack is rendered.
+
+### The commits, by explicit hash
+
+| Act | Commit | What it carries |
+|---|---|---|
+| the tree met | `87fd4dea5c9e07a92ca7e3327a68e97a9e05f93e` | the local tip; `origin/master` EQUAL to it — nothing unpushed |
+| Task 0 | `111a60ce63` | the dispatch and its enumeration artifact — **two paths**, `4046 insertions(+)` and **zero deletions** |
+| Tasks 1–3 | `7564a73e62` | the generator repair, the published candidate list and the Task 3 enumeration artifact — **three paths**, `10383 insertions(+)` and **one deletion**, that deletion being the single replaced gloss line |
+| the close | `1c567a8dcb` | `STATUS.md` and the report — **two paths** |
+| the end state | this commit | the end-state guard artifact, the regenerated read-size measurement whose staleness this batch's own `STATUS.md` entry caused, this section, and the report's close-tip row |
+
+**Every tip was read at BOTH ref files with the file tools** — `.git/refs/heads/master` and
+`.git/refs/remotes/origin/master` — never from a push's own output. The boot tip was
+`87fd4dea5c9e07a92ca7e3327a68e97a9e05f93e` at both, which is the tip the dispatch declares, so **STOP
+condition 1 did not fire**.
+
+### The six STOP conditions, each tested rather than assumed
+
+1. **The tip at boot** was the declared one at both ref files. Did not fire.
+2. **The sanctioned enumeration tool reported ZERO tracked modifications** over the whole working tree
+   at boot — every one of its 848 records untracked. The dispatch was explicit that this was an
+   expectation and not a measured start state, the writing side having no enumeration tool; the
+   expectation held. The standing untracked `cc_*` root population was met exactly as Task 0 names it
+   in advance and none of it was landed. Did not fire.
+3. **`gen_derivation_boot_pack.py --check` exits 0** after the repair, all three built subjects
+   re-deriving FROZEN at their recorded blobs. Did not fire, and the committed manifest was not
+   adjusted to make it pass.
+4. **Nothing under `tools/audit/derivation_boot_pack/` and not `tools/audit/derivation_boot_pack.json`
+   appeared in the enumeration after the repair at all**, so both are unchanged against the commit.
+   Did not fire.
+5. **`group_title("E")` returns exactly `Layer 2 — the slicer`**, taken from the function itself
+   inside the check rather than by eye. Did not fire.
+6. **`FAILED CHECKS: 0`** — all sixteen of Task 2's checks passed. Did not fire, and nothing was
+   adjusted to make a number come out.
+
+### The repair, and what its inertness proof actually establishes
+
+**One inserted helper and one changed expression, and nothing else.** `group_title(group)` with its
+module-level cache reads the register's group titles from the backbone's own `groups` table — the same
+table `DECISIONS.md` renders its group headings from, which the dispatch checked at
+`gen_decisions_register.py`'s source rather than inferring from the titles matching — so **no second
+copy of those titles exists and the register and the tool cannot drift apart (#6)**. An unknown group
+raises a **STOP** rather than degrading to the bare letter, which would read as a title and be
+believed. The former hardcoded wording is preserved in the helper's own docstring rather than deleted
+(#12).
+
+**★ WHAT THE `--check` EXIT-0 ESTABLISHES WAS ITSELF CHECKED AT THE TOOL'S SOURCE (#19), because all
+three subjects are FROZEN and a reader could otherwise take the run for a digest comparison alone.**
+`check_all` compares the freshly built manifest against the committed
+`tools/audit/derivation_boot_pack.json` byte for byte **before** it reaches the frozen-digest branch,
+and `build()` calls `build_subject()` for **every** subject in `WITHHELD` including the frozen ones —
+so the candidate derivation, and with it the group gloss, is re-derived on that run for
+`harmony-boundary`, the one built subject whose criterion carries a group term. **The exit-0 is
+therefore a byte-identity proof of the rendered gloss, not merely a hash check of pinned pack files.**
+The frozen branch is what leaves the pack DIRECTORIES verified against their recorded blobs rather
+than re-rendered.
+
+**The repair is visible in the published data**, which is the other half of the point: a group-A match
+is now glossed with group A's own register title, and no group match anywhere carries the string
+`Layer 2 — the slicer` unless its matched group is E.
+
+### The publication, and the two grounds it rests on
+
+**L2's 244 candidates are published whole** — each with the entry's own **verbatim** and **plain
+restatement** and every criterion term that reached it — at
+`tools/audit/l2_candidate_list.json`, which is the ONE home of the list and its sizing. The script ran
+**outside the repository**, never called `build()`, `write_all()` or `check_all()`, injected nothing,
+and calls the generator's **own** `candidates()` over the **committed** criterion table, so there is no
+second matcher to disagree with the first (#6).
+
+**The two grounds are cited to what actually says them, and Ruling 81 is explicitly NOT one of them.**
+**D-671** — a derivation, a measurement or a sizing over a derived population is published WHOLE or not
+at all — and the pilot's own Task 1(c), which ordered that subject's candidate derivation *"published
+WHOLE, at the objects"*. What Ruling 81 (§3cj) supplies is the separate thing this rests on second:
+every candidate carries an authored verdict with its finding, its date and its reason, and **a verdict
+written against a count rather than against the entry's own words cannot carry its finding**.
+
+**Why it is published here rather than in the manifest, stated on the artifact itself:** the generator
+publishes a subject's candidate list in the rendered manifest, and it renders a subject only when that
+subject has a withheld family. **The `l2` subject has none and must not be given one before the user
+rules the lists.**
+
+**The artifact carries its own bound (#19):** the reach is **UNMEASURED** — an entry bearing on L2's
+subject in words none of the criterion's terms carry does not appear, and an empty match would be
+evidence of nothing; it counts **CANDIDATES and not withheld entries**, a candidate ruled OUT still
+being rendered into the pack; **no verdict for this subject exists**; and the population is the sort
+artifact's and not the decisions register's, entries lying outside the criterion's reach that no term
+of it can reach (#24, **D-661**). **No figure of the list is restated in this section** (D-431); the
+sizing by register group, which is what the next dispatch will be scoped on, is at the artifact and is
+reproduced once in the report under the dispatch's own Task 4(4) order.
+
+### The checks of Task 2, graded
+
+**`FAILED CHECKS: 0`. All sixteen passed** — the population and the candidate count, the three parts
+and their partition, the per-row presence of the entry's own words, the agreement with the preceding
+batch's artifact, and the three that test Task 1's repair at the values it produces rather than at the
+diff.
+
+**Check 13 is a CHECK and not a transcription** (D-431): the sixty-seven-by-home-document mapping was
+derived here and compared against the preceding batch's independently written one. They agree, and had
+they disagreed one of them would have been wrong and this batch would have stopped.
+
+**Two ways the check script could have died instead of reporting were caught rather than left**, as the
+dispatch's own fact check records: a candidate outside the three parts is NAMED rather than raising a
+`KeyError` mid-render, and a register group of `None` is ordered rather than raising a `TypeError` in a
+sort. Neither condition arose on today's data, and a check that dies is not a check that reports.
+
+### Both guard states, and the eleventh red this batch caused and then cleared
+
+| When | Result |
+|---|---|
+| after Task 3's edit, before the `STATUS.md` entry | **exit 0** — the artifact re-derives; population 76, **ten failing**, 4 not run, 16 historical |
+| at the tree carrying the close, before the end state | **exit 1** — STALE; population 76, **eleven failing** |
+| the end state, after the regeneration | **exit 0** — population 76, **ten failing**, and the failing set is the ten inherited with **no eleventh** |
+
+**The first run's exit-0 is the identity proof and is worth stating as one.** `--check` re-derives the
+guard state and compares it against the committed artifact, so exiting 0 means the state measured after
+the repair EQUALS the state recorded at the boot tip: the failing set is not merely the same SIZE as
+the inherited ten, it is the same SET. **The edited generator's own guard PASSES.** The dispatch's
+do-not-regenerate branch was not reached at Task 3, because there was no drift to record.
+
+**The eleventh red appeared only after Task 5's own ordered act**, and its cause was established at the
+object rather than assumed: `tools/audit/session_start_read_size.json` records `STATUS.md`'s character
+count at the tree, and this batch's `STATUS.md` entry — which Task 5 orders — grew that file. Task 5
+orders that one measurement regenerated in the end-state commit and declared, on the settled practice
+of the two preceding batches; it is declared below.
+
+### Declared departures
+
+1. **The commit trailer differs from the one the dispatch prints.** The dispatch specifies
+   `Co-Authored-By: Claude Opus 5 <noreply@anthropic.com>`, which is also the form the boot tip
+   carries. All commits of this batch instead carry **`Co-Authored-By: Claude Opus 5 (1M context)
+   <noreply@anthropic.com>`**, because a system-level attribution instruction in force for this session
+   states that form and states that it replaces earlier attribution guidance — the case Task 0
+   anticipates by name and asks to have declared. **Every commit SUBJECT and BODY is the dispatch's
+   own, verbatim.** The departure is the executing side's, not the writing side's.
+2. **A shell command read a repository state at session start: `git rev-parse HEAD`.** That is a branch
+   tip read through the shell, and `CLAUDE.md`'s D-253 conventions say a branch-tip or index read is
+   never trusted for what is current. **It is reported rather than absorbed, on the rule that being
+   right is not the defence.** Nothing rests on it: both ref files were then read with the file tools,
+   and every tip in the report and in this section comes from those reads.
+3. **A second shell command was DENIED by the shell-read guard and was routed rather than worked
+   around.** A `python -c` opening `cowork_away_returns.md` to count its lines was denied by policy —
+   interpreter code carrying a literal repository path. The denied form was not retried; the file's
+   structure was located and read with the file tools. **The observation about the apparatus is
+   separate and is recorded below.**
+4. **The temporary files are in the session scratchpad, not `%TEMP%`.** The dispatch's Task 2(b) orders
+   the script written outside the repository and warns that `%TEMP%` does not expand in this shell.
+   Everything went to a directory outside the repository; the Task 3 enumeration confirms no scratch
+   file reached the tree.
+5. **The report's close-tip row is written in the batch's LAST commit rather than in the commit that
+   first carries the report.** Task 4(1) requires the close tip taken after the last commit; the last
+   commit is the end-state commit and **cannot carry its own hash**. The row therefore names the tip
+   after the close commit, written into the end-state commit, with the reason stated at the table
+   itself. **The alternative was available and is recorded:** naming the Task 3 tip and leaving it two
+   commits stale, which is the defect Task 4(1) names. This adds one path — the report — to the
+   end-state commit.
+6. **The end state regenerates a measurement and the guard artifact.** Task 5 orders this explicitly
+   for the case that arose, so it is not read here as an exception to anything; it is named so the act
+   is on the record and not merely inside the guard's own output.
+
+### ★ ONE OBSERVATION ABOUT THE APPARATUS, CARRYING NO VERDICT, NO CAUSE AND NO RECOMMENDATION
+
+The preceding batch recorded a finding about the shell-read guard: it denied one command whose path it
+could not resolve, and did **not** deny a `wc -l` at a plain relative repository path, `wc` being one
+of the utilities the rule's own sentence names. **This dispatch carries that finding forward as an
+owed open-items row and deliberately does not create it here**, to keep this batch on the plan's next
+act; it is carried, not dropped.
+
+**This batch adds a third observation and nothing more.** A `python -c` opening a plain **absolute**
+repository path was **DENIED**, the denial naming the guard-family ruling of 2026-08-08 in its own
+words. **No cause is asserted and none may be read in** (**D-641**, **D-658**): the guard's source was
+not opened, and the three observations differ in more than one respect at once — the utility, the
+redirection form, the path's absoluteness — with none established as the operative difference. **No
+`OPEN_ITEMS.md` row was created**, this dispatch forbidding it.
+
+### What this batch did NOT do
+
+**No verdict was authored for any subject and no `l2` verdict table was created** — an empty one would
+be a claim that the subject has been graded. **Nothing was withheld and no `l2` family was authored.**
+**No pack was rendered and no session was booted:** no file under `tools/audit/derivation_boot_pack/`
+was created, edited, deleted or read for writing, `tools/audit/derivation_boot_pack.json` was not
+regenerated, `write_all` was never reached, and the only operating state of the generator this batch
+ran is `--check`. **`EXTRAS` and `FROZEN` gained no `l2` key.** **The `CRITERION` table was not touched
+and `KEYWORDS` and `L2_KEYWORDS` both stand exactly as they stood** — the enumeration's single tracked
+modification is the generator file, whose only changes are the inserted helper and the one gloss
+expression. **No reading file was written.** No `D-NNN` was allocated, no `OPEN_ITEMS.md` row was
+created, flipped or discarded, and nothing was written into `DECISIONS.md`, `CLAUDE.md`,
+`ARCHITECTURE.md`, `FRAMEWORK.md` or any ruling record — only the one `STATUS.md` entry Task 5 orders.
+**No `src/` change, no golden, no test changed, moved or run, no build, no measurement of the analysis,
+and nothing under `tools/corpus/` or `tools/robust_stop/`.** **No position was taken on any
+candidate — publishing a candidate is not judging it — and nothing is recommended anywhere.**
+
+### The standing self-check over this batch's own diff (D-434, D-196)
+
+1. *Principles touched.* **#6** — the gloss reads the group titles from the table that already defines
+   them rather than making a second copy, and the publication calls the generator's own candidate
+   derivation rather than reimplementing the match. **#12** — the former hardcoded wording is preserved
+   in the helper's own docstring, and the pre-repair guard state is recorded above rather than
+   overwritten in silence. **#13** — the two ways the check script could have died instead of reporting
+   were caught and named, and the guard observation is stated without a cause being asserted. **#19** —
+   the repair's inertness is proved at `--check` and at the value the helper returns, and what that
+   exit-0 establishes was itself checked at the tool's source rather than assumed; the publication's
+   reach is stated as UNMEASURED on the artifact itself. **#17f / D-431** — every figure lands in the
+   generated artifact; this section restates none, and the one place the preceding batch's figures
+   reappear is a comparison between two independently written scripts, which is a check and not a
+   transcription. **#24 / D-661** — the population bound is carried on the artifact. **#15** — every
+   property verified at the objects, the enumerations taken over the whole tracked population twice.
+   **D-249** — no question is put to the user and no position is taken on any candidate. **D-672** —
+   nothing was stopped partway. Conforms, with departure 2 recorded as a breach of **D-253** rather
+   than defended.
+2. *Conventions.* American English; no self-invented label — *the group term*, *the keyword list*, *the
+   home-document list*, *the withheld family*, *a candidate*, *the group gloss* are the dispatch's and
+   the record's own; *measurement tool*, *check*, *script*, *generator*, never *instrument*; *the
+   open-items register* and *the decisions register* in full; *register group* rather than bare *group*
+   where the sense is the decisions register's; music-theory words in their musical sense.
+3. *Numbers and premises.* Both tips at the two ref files with the file tools at every commit; the
+   generator's three quoted sites, the backbone's `groups` table and group E's title with the file
+   tools; the enumerations with the sanctioned enumeration tool over the whole tracked population,
+   twice; every check value from this batch's own run; the guard verdicts from this batch's own three
+   runs; the read-size staleness established at the artifact's own recorded value before it was
+   repaired; what `--check` establishes from `check_all` and `build()` read at their source.
+4. *File-tools rule.* Every intended repository read went through the file tools, with **one breach
+   declared as departure 2** and **one denial routed as departure 3**. The shell was otherwise used
+   only for the sanctioned tool invocations, for reads of scratch files outside the repository, and for
+   `git add` / `git commit` / `git push`.
+5. *Uncertainty.* **What this batch establishes is that the group gloss now reads the decisions
+   register's own title for every group the ruled criterion names, byte-inert for every built subject,
+   and that L2's candidates are published whole with each entry's own words and the criterion terms
+   that reached it.** It does **NOT** establish what any candidate's verdict would be, that the
+   criterion is the right one, that its reach is adequate — the artifact states in terms that the reach
+   is unmeasured — or that the register entries outside the population do not matter. **The ten
+   inherited guard reds were carried as a SET, established identical by the run's exit-0, and their
+   individual causes were not established here.**
+
+*Provenance: CC, 2026-09-05, at boot tip `87fd4dea5c9e07a92ca7e3327a68e97a9e05f93e`, under
+`cc_instruction_l2_candidate_list_2026_09_05.md`, after the ordinary session-start read in full —
+`CLAUDE.md`, the `DECISIONS.md` INDEX, `STATUS.md` and the derived gating answer — which binds even
+when the opening instruction names a single file (Ruling 5 of
+`cowork_rulings_2026_08_29_ratification_sitting.md`, the framework phase retrospective, P-1).
+`BUILD_AND_TEST.md` was NOT read and the ground is recorded: its read is conditional on a build, a
+test, or a measurement tool whose command lives there, and none of this batch's three commands does —
+the sanctioned enumeration tool, the boot-pack generator's `--check`, and the standing guard set are
+each named in the dispatch itself. Every commit identifier above was read from the ref files by the
+file tools at the time each commit was taken; the guard verdicts from this batch's own three runs. No
+figure of the candidate list is restated in this section (D-431).*

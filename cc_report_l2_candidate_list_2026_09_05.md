@@ -17,7 +17,7 @@ Both read at **both ref files with the file tools** — `.git/refs/heads/master`
 | **At boot** | `87fd4dea5c9e07a92ca7e3327a68e97a9e05f93e` | `87fd4dea5c9e07a92ca7e3327a68e97a9e05f93e` |
 | **After Task 0** | `111a60ce63431f208c80a3d922811c252764cfd6` | `111a60ce63431f208c80a3d922811c252764cfd6` |
 | **After Task 3** | `7564a73e62d0821cc652e08924d031b3b718b507` | `7564a73e62d0821cc652e08924d031b3b718b507` |
-| **At close, after the Task 5 commit** | *written in the end-state commit — see the note below* | *written in the end-state commit — see the note below* |
+| **At close, after the Task 5 commit** | `1c567a8dcb6322059b7d89758e9f572ef2571fa4` | `1c567a8dcb6322059b7d89758e9f572ef2571fa4` |
 
 The boot tip is the hash the dispatch names, at both files, so **STOP condition 1 did not fire** and
 `cowork_away_returns.md` was not consulted as a blocker.
@@ -289,10 +289,25 @@ whole of the change to existing text.
    This adds one path — this file — to the end-state commit that Task 5 describes as carrying the
    end-state guard artifact.
 
-6. **The end-state commit regenerates one guard artifact.** Task 5 orders this explicitly where the
-   `STATUS.md` entry it also orders stales the read-size measurement, on the settled practice of the
-   two preceding batches. It is named here so the act is on the record and not merely inside the
-   guard's own output.
+6. **The end-state commit regenerates one measurement and the guard artifact.** Task 5 orders this
+   explicitly where the `STATUS.md` entry it also orders stales the read-size measurement, on the
+   settled practice of the two preceding batches. It is named here so the act is on the record and
+   not merely inside the guard's own output.
+
+   **The cause was established at the object rather than assumed.**
+   `tools/audit/session_start_read_size.json` records `STATUS.md`'s character count at the tree, and
+   the entry Task 5 orders grew that file. The three guard states of this batch:
+
+   | When | Result |
+   |---|---|
+   | after Task 3's edit, before the `STATUS.md` entry | **exit 0** — the artifact re-derives; population 76, **ten failing**, 4 not run, 16 historical |
+   | at the tree carrying the close, before the end state | **exit 1** — STALE; population 76, **eleven failing**, the eleventh being `gen_session_start_read_size.py --check` |
+   | the end state, after the regeneration | **exit 0** — population 76, **ten failing**, the failing set the ten inherited with **no eleventh** |
+
+   The eleventh red appeared only after Task 5's own ordered act, and the regeneration repairs a red
+   this batch itself caused. **The alternative was available and is recorded:** committing a guard
+   state carrying an eleventh red of this batch's own making, which the next batch would inherit and
+   have to diagnose.
 
 ---
 
