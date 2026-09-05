@@ -1787,6 +1787,358 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "It states what evidence a change-of-tonality decision may read, which is the "
                   "first limb — the pilot graded it OUT because its one-limbed question was the "
                   "chord boundary alone, and that reason does not reach the four-limbed question."),
+
+        # ── group F — Layer 3 — key and mode — 24 candidates — authored 2026-09-05 ──
+        "D-057": (VERDICT_IN,
+                  "Its verbatim IS the priority-of-evidence table's strongest row — 'Strongest | "
+                  "Actual sounding notes | what is literally happening now'; its plain ranks the "
+                  "sounding notes above the surrounding bars, the signature and its mode tag.",
+                  "It states the ruled ranking of the evidence that decides the tonality at each "
+                  "moment, which is the first limb; it is also the pilot's own first withheld "
+                  "identity."),
+        "D-306": (VERDICT_IN,
+                  "Its verbatim rules that the key layer's backward re-reading facility 'stays "
+                  "SWITCHED OFF in the shipped configuration', built with `enabled = false` as the "
+                  "shipped default.",
+                  "It states whether the tonality reading may return to an earlier stretch once "
+                  "later evidence arrives, which is part of the ruled answer to the first limb."),
+        "D-323": (VERDICT_IN,
+                  "Its verbatim forbids reintroducing `keyTonicPc + scale` for a membership test — "
+                  "a membership question reads the key signature's own collection, while a "
+                  "scale-DEGREE question legitimately uses the tonic.",
+                  "It states how 'does this pitch belong to the key' is answered, which is a term "
+                  "of the tonality decision and of the chord read against it."),
+        "D-343": (VERDICT_IN,
+                  "Its verbatim gives the key/mode layer the candidate space and the note-evidence "
+                  "model outright, with the residual the notes cannot decide handed forward as "
+                  "ranked alternatives and SELECTED later, never re-scored.",
+                  "It states where the tonality is inferred from the notes, what the candidate "
+                  "space is, and how the undecidable residual is settled — the first limb in "
+                  "full."),
+        "D-344": (VERDICT_IN,
+                  "Its verbatim rules that any scale outside the twenty-one recognized modes — "
+                  "pentatonic, blues, whole-tone, octatonic, non-Western — is reported as the "
+                  "best-fitting recognized mode and never as the unrecognized scale.",
+                  "It states what tonality is emitted for music the vocabulary does not contain, "
+                  "which is the first limb's answer at its edge."),
+        "D-345": (VERDICT_IN,
+                  "Its verbatim makes the key/mode layer the first place the style preset is used, "
+                  "as a deliberately weak per-mode prior the note evidence overrides.",
+                  "It states what the preset contributes to the tonality at each moment and how "
+                  "strongly, which is part of the first limb's ruled answer."),
+        "D-347": (VERDICT_IN,
+                  "Its verbatim fixes the change cost as cheap-to-stay plus a term growing with key "
+                  "distance plus a large relative-pair penalty, rejecting a single flat margin.",
+                  "It states what decides where one tonality gives way to the next, which is the "
+                  "first limb's own segmentation."),
+        "D-348": (VERDICT_IN,
+                  "Its verbatim measures tonal distance as circle-of-fifths (key-signature) "
+                  "distance, not semitone distance and not differing scale tones, and states that "
+                  "there is NO duration threshold for brief-versus-sustained at all.",
+                  "It states the metric inside the tonality change cost and denies the duration "
+                  "rule a reader would expect, both part of the first limb's answer."),
+        "D-349": (VERDICT_IN,
+                  "Its verbatim defines the confidence as how much better the winning sequence is "
+                  "than the best different-key sequence at that stretch, explicitly not the gap "
+                  "between the top two candidates there.",
+                  "It states that the tonality decision is over whole readings rather than one "
+                  "moment, and what the published confidence on it measures."),
+        "D-351": (VERDICT_IN,
+                  "Its verbatim adopts a dedicated best-sequence decoder for key/mode and records "
+                  "reusing the existing chord decoder as considered and rejected.",
+                  "It states how the run of tonalities is searched and that the chord decoder is "
+                  "not what searches it, which bears on the first limb and on its relation to the "
+                  "fourth."),
+        "D-352": (VERDICT_OUT,
+                  "Its verbatim states the grading bar's partition — unambiguous where the "
+                  "annotation gives one local key with no alternative and the analyses agree, "
+                  "genuinely ambiguous otherwise — and what the bar is on each side.",
+                  "It bears on how the key/mode layer is GRADED against the published annotations, "
+                  "not on what tonality it reads."),
+        "D-353": (VERDICT_OUT,
+                  "Its verbatim keeps two quality goals apart — accuracy on the resolvable cases, "
+                  "and calibration of the uncertainty mark on the genuinely ambiguous ones — the "
+                  "second graded in its own right.",
+                  "Same subject as D-352: it bears on the measurement of the key/mode layer rather "
+                  "than on the reading."),
+        "D-494": (VERDICT_IN,
+                  "Its verbatim requires key-confirmation channels that do NOT require a cadence — "
+                  "sustained dominant emphasis and recognized transposition sequences — plus an "
+                  "enharmonic-identity rule for key spans, because on resolution-denying music the "
+                  "cadence-confirmed gate almost never fires.",
+                  "It states what may confirm a change of tonality, which is the first limb's own "
+                  "admission rule."),
+        "D-571": (VERDICT_IN,
+                  "Its verbatim reduces the declared-mode influence to a small additive hint whose "
+                  "smallness IS the gate — it can only flip the winner where the raw note-based gap "
+                  "is already narrow, so no separate confidence test is added.",
+                  "It states the strength and the firing condition of the declared mode's "
+                  "contribution to the tonality at each moment."),
+        "D-572": (VERDICT_IN,
+                  "Its verbatim records the hard post-hoc declared-mode promotion — which moved the "
+                  "best declared-compatible result to the front REGARDLESS of the candidate-score "
+                  "gap — REMOVED OUTRIGHT rather than kept in a gated form.",
+                  "It states what the declared mode may no longer do to the tonality decision, "
+                  "which is exclusion evidence about the first limb's ruled answer."),
+        "D-575": (VERDICT_IN,
+                  "Its verbatim handles the Baroque partial-signature convention by DETECTING it — "
+                  "the flattened sixth degree pervasive and dominating its natural form — and "
+                  "reinterpreting the written signature one step, never by widening the candidate "
+                  "family for every score.",
+                  "It states how a whole class of notation is turned into a tonality reading, which "
+                  "is the first limb."),
+        "D-587": (VERDICT_OUT,
+                  "Its verbatim rules that a preset presents as a familiar genre-era label plus "
+                  "exemplars the user knows, never as an idiom name, genre names being LABELS over "
+                  "mixtures rather than axes.",
+                  "It bears on how a preset is presented to the user and on the style taxonomy's "
+                  "structure, not on what tonality, boundary, tone status or chord is read."),
+        "D-588": (VERDICT_OUT,
+                  "Its verbatim gives preset coverage three tiers with no bare guessing — measured, "
+                  "editorially declared with a stated theory rationale, or self-correcting by "
+                  "detection.",
+                  "It bears on the style system's coverage and validation tiers, not on the "
+                  "reading."),
+        "D-589": (VERDICT_OUT,
+                  "Its verbatim makes every idiom mixture selectable and the discovered cloud the "
+                  "EVIDENCE MAP rather than the boundary, each chosen point carrying its evidence "
+                  "status.",
+                  "It bears on the style system's user configuration and on what may be claimed "
+                  "about a chosen mixture, not on any of the four limbs."),
+        "D-590": (VERDICT_OUT,
+                  "Its verbatim makes the score's own user-defined properties the PRIMARY home of "
+                  "that score's idiom mixture, a user-set mixture never silently overwritten by "
+                  "re-detection.",
+                  "It bears on where a per-piece style setting is stored and how it is refreshed, "
+                  "not on the reading."),
+        "D-591": (VERDICT_OUT,
+                  "Its verbatim splits the licence constraint — the per-idiom ANCHORS are shipped "
+                  "fitted parameters and reached by it, the mixture weights are free user "
+                  "configuration and are not.",
+                  "It bears on licensing and on which half of the style system the fitting-pool "
+                  "constraint reaches, not on what is read from the music."),
+        "D-598": (VERDICT_OUT,
+                  "Its verbatim makes the taxonomy and the per-style weights ONE data-derived "
+                  "object and VALIDATION a separate third job the clustering does not deliver.",
+                  "It bears on the style taxonomy's derivation and validation, not on any of the "
+                  "four limbs."),
+        "D-616": (VERDICT_IN,
+                  "Its verbatim rules that a global tonic anchor enters key scoring at "
+                  "RESOLVER/SECTION scope and never as one more local term inside the window "
+                  "scorer, because a local term strong enough to win the relative-pair near-ties "
+                  "also overrides the correct reading where the mode is present.",
+                  "It states where section-scoped evidence about the tonality may be applied and "
+                  "where it may not, which is the first limb."),
+        "D-622": (VERDICT_IN,
+                  "Its verbatim records the reach-back convergence PROXY measured FALSE and "
+                  "dropped: the as-built tracks the leading-edge key itself and stops when that "
+                  "stops changing, one settled indication not anchoring the leading edge.",
+                  "It states what quantity the tonality reading watches when it reads backwards and "
+                  "when it stops, which is part of the first limb's ruled answer."),
+
+        # ── group G — Layer 4 — chord identity — 33 candidates — authored 2026-09-05 ──
+        "D-207": (VERDICT_IN,
+                  "Its verbatim defines the pedal-point class VOICE-INDEPENDENTLY — a tone "
+                  "sustained or continuously restruck against changing harmony in any voice, "
+                  "sub-labeled bass, internal or inverted.",
+                  "It states which sounding notes are read as standing outside the moving harmony, "
+                  "which is the third limb."),
+        "D-280": (VERDICT_IN,
+                  "Its verbatim rules that a gate or scoring rule reads STRUCTURED FIELDS ONLY — "
+                  "never a chord-symbol string, never a Roman numeral — because signals derived "
+                  "from either are lossy and entangled with the formatter.",
+                  "It states what evidence chord classification may and may not take as input, "
+                  "which is part of the fourth limb's ruled answer."),
+        "D-284": (VERDICT_IN,
+                  "Its verbatim records selection and competition SATURATED — stop adding "
+                  "re-ranking heuristics and gates — with the residual named as candidate "
+                  "generation, key quality, or floor.",
+                  "It states where the chord reading's remaining error lives and which lever is "
+                  "exhausted, which bears on the first and fourth limbs."),
+        "D-317": (VERDICT_IN,
+                  "Its verbatim closes the backward-walk boundary change — counting notes that stop "
+                  "exactly where a stretch begins as belonging to that stretch — and gives the "
+                  "measured reason at the boundary itself, that those notes are OTHER chord tones "
+                  "and the root attacks later.",
+                  "It rules on how a note's release relates to a boundary and to chord membership, "
+                  "which is the second and third limbs together."),
+        "D-318": (VERDICT_IN,
+                  "Its verbatim closes a short-region external merger — measured, its trigger never "
+                  "fires because the same-root merge inside the first pass has already combined "
+                  "those stretches.",
+                  "It rules on whether short neighbouring stretches may be merged after the fact, "
+                  "which is the second limb."),
+        "D-319": (VERDICT_IN,
+                  "Its verbatim closes every tone-aggregation approach to the arpeggio root "
+                  "failure: pooling an arpeggio's notes and re-reading the chord from the pool was "
+                  "measured worse, the wrong pitch sounding longer than the right one.",
+                  "It rules on whether a chord may be read from notes pooled across a stretch, "
+                  "which is the second and fourth limbs together."),
+        "D-320": (VERDICT_IN,
+                  "Its verbatim reverts the absent-root guard entirely and states the premise false "
+                  "corpus-wide — 'an absent root means a wrong reading' is contradicted by readings "
+                  "the published human analysis itself makes with an absent root.",
+                  "It rules on what chord may be read over a span whose root does not sound, which "
+                  "is the fourth limb."),
+        "D-321": (VERDICT_IN,
+                  "Its verbatim rules winner selection by exact double comparison with no epsilon "
+                  "anywhere, exact ties broken by template index then root pitch class.",
+                  "It states how the chord read over a span is chosen among scored candidates, "
+                  "which is the fourth limb."),
+        "D-322": (VERDICT_OUT,
+                  "Its verbatim requires a full corpus A/B on both presets before any change to "
+                  "optimization flags or to the order of the scoring arithmetic is trusted.",
+                  "It bears on the verification obligation attached to a build-level change, not on "
+                  "what tonality, boundary, tone status or chord is read."),
+        "D-324": (VERDICT_OUT,
+                  "Its verbatim rules retirement of a post-scoring rule GLOBAL — a rule live on any "
+                  "one carrier is retained for all.",
+                  "It bears on how the correction-rule population may change, not on what any rule "
+                  "decides about the music."),
+        "D-325": (VERDICT_IN,
+                  "Its verbatim rules that a correction able to change a committed chord's root, "
+                  "quality or bass is retired or folded into the scoring BEFORE the search is "
+                  "widened past it, because such a rule feeds the backward-looking evidence.",
+                  "It states that a later rule can change which chord was committed and what must "
+                  "happen before the search widens, which bears on the fourth limb."),
+        "D-326": (VERDICT_IN,
+                  "Its verbatim rules that the chord-path search emits the WHOLE PATH with every "
+                  "stretch's alternatives and its margins, not the committed reading alone, because "
+                  "the layer above consumes the alternatives.",
+                  "The charter has this layer publish the rivals with their mass, and this states "
+                  "the ruled content of that publication."),
+        "D-327": (VERDICT_IN,
+                  "Its verbatim rules the root-continuity guard reading the RECONSTRUCTED inversion "
+                  "credit rather than testing directly whether the candidate's third is sounding — "
+                  "the two agreeing everywhere except on diminished chords.",
+                  "It states a term inside the decision of what chord is read over a span, and what "
+                  "sounding evidence stands behind it."),
+        "D-329": (VERDICT_IN,
+                  "Its verbatim makes COMPLETENESS the priority — every tertian chord the slice's "
+                  "pitches could spell is listed before any is chosen, because 'a chord never "
+                  "listed can never be chosen'; its plain records the principle transferred to the "
+                  "live joint estimator as its admission premise.",
+                  "The charter puts the rule admitting a candidate to the search inside this "
+                  "layer's specification, and this states it."),
+        "D-330": (VERDICT_IN,
+                  "Its verbatim is 'the authoritative statement of this prohibition' — never a "
+                  "pooled recompute; membership is judged per slice against the prevailing chord, "
+                  "because pooling over-reads and treats every passing note as a chord tone.",
+                  "It states how a note's membership of the harmony is decided and over what "
+                  "stretch, which is the third limb."),
+        "D-331": (VERDICT_IN,
+                  "Its verbatim carries the ranked alternatives and the confidence on EVERY "
+                  "decision — commit and inherit included, filled before the trichotomy and never "
+                  "pruned — so the layer above overrides by selecting among them.",
+                  "It states the ruled completeness of the rivals this layer publishes."),
+        "D-380": (VERDICT_IN,
+                  "Its verbatim makes DISTINCT ROOTS the carry's meaningful axis and requires every "
+                  "above-threshold distinct root carried at graded confidence with ruled-out roots "
+                  "kept at low confidence, a third distinct root clearing threshold on about a "
+                  "quarter of slices.",
+                  "It states what the rivals published for each span are and on what axis they "
+                  "differ."),
+        "D-381": (VERDICT_IN,
+                  "Its verbatim requires the carry to cap on DISTINCT ROOTS with each root's "
+                  "variant depth bounded, rather than on a flat voicing list which gives no "
+                  "structural guarantee that a third root survives.",
+                  "It states the ruled shape of the rivals this layer publishes, which the charter "
+                  "assigns to it."),
+        "D-385": (VERDICT_IN,
+                  "Its verbatim homes pedal-point detection as a reader over the chord layer's "
+                  "carry emitting an additive pedal ANNOTATION on a carried reading, never a "
+                  "mutation of the winner; its plain states the pedaled note may be in any voice.",
+                  "It states how a sustained note read as standing outside the harmony is recorded "
+                  "and that the chord reading is not replaced by it — the third and fourth limbs."),
+        "D-386": (VERDICT_IN,
+                  "Its verbatim states that the pedal reader consumes the carry's own distinct-root "
+                  "margin and adds no further scan, and that 'the ≥2nd distinct root's carried "
+                  "confidence *is* the pedal confirmation signal'.",
+                  "It names the evidence that confirms a note is read as a pedal rather than a "
+                  "chord tone, which is the third limb."),
+        "D-423": (VERDICT_OUT,
+                  "Its verbatim states three prohibitions holding through every stage — no new "
+                  "gates, no threshold widening, no gating of the root-continuity bonus — and makes "
+                  "the per-gate retirement stage the only sanctioned channel of change.",
+                  "It bears on how the post-scoring gate population may change, not on what those "
+                  "gates decide about the music."),
+        "D-463": (VERDICT_IN,
+                  "Its verbatim records that several signals looking backward or forward in time "
+                  "are computed inside the part of the scorer meant to judge one moment, and that "
+                  "Gate R's test uses a score component as a stand-in for 'this candidate has a "
+                  "sounding third'.",
+                  "It states what evidence actually stands behind a term that decides the chord "
+                  "read over a span, which is the fourth limb."),
+        "D-464": (VERDICT_OUT,
+                  "Its verbatim forbids adding any further progression-level signal to the "
+                  "single-step look-around structure and plans the migration of four such fields to "
+                  "the progression-level structure.",
+                  "It bears on where a signal is stored — a structure boundary and its migration — "
+                  "not on what any signal decides."),
+        "D-465": (VERDICT_IN,
+                  "Its verbatim gives three tests for a proposed gate, naming the scorer's "
+                  "bass-as-root pull as the bias two thirds of the gates were correcting, a "
+                  "structural pitch-class condition as likely sound, and a three-step cascade as a "
+                  "signal that the real problem is missing functional context.",
+                  "It states the diagnosed failure structure of the chord reading and which kind of "
+                  "evidence resolves it, which bears on the fourth limb."),
+        "D-467": (VERDICT_IN,
+                  "Its verbatim forbids a rebuilt or re-tuned chord scoring from relying on the "
+                  "held-note repetition bonus the faithful note model removed — a tie-held note "
+                  "counted more than once had been pushing a handful of ambiguous sonorities toward "
+                  "the correct root.",
+                  "It states a constraint on what evidence may carry the chord reading, and names "
+                  "an artifact that must not."),
+        "D-501": (VERDICT_IN,
+                  "Its verbatim rules a written chord symbol readable ONLY as a comparison or "
+                  "ground-truth label — production paths must not read symbols as input to analysis "
+                  "at all, since a symbol is user content and may be wrong.",
+                  "It states what the chord read over a span may not be derived from, which is part "
+                  "of the fourth limb's ruled answer."),
+        "D-510": (VERDICT_IN,
+                  "Its verbatim rules the correct carry the one that KEEPS the distinct alternative "
+                  "reading, the append idiom having been measured to inject a near-copy of the "
+                  "winner and displace the genuinely different partner.",
+                  "It states what the rivals this layer publishes must contain, which the charter "
+                  "assigns to it."),
+        "D-511": (VERDICT_IN,
+                  "Its verbatim rules ONE promotion primitive with a present-first dedup guard, the "
+                  "append branch firing only when the target is genuinely absent so no duplicate "
+                  "can enter the carry.",
+                  "It states how the published rivals are kept free of a duplicate of the winner, "
+                  "which is a rule about the carry's content."),
+        "D-512": (VERDICT_OUT,
+                  "Its verbatim makes byte-for-byte reproduction of the carry the retirement "
+                  "condition for a separate rule, and records that winner-only inertness was not "
+                  "enough because the carry changed on a named subset.",
+                  "It bears on the retirement condition for a rule and on the verification standard "
+                  "(#15) — inertness on the full output surface — not on what is read."),
+        "D-536": (VERDICT_IN,
+                  "Its verbatim rules the bass and the chord chosen TOGETHER as one (bass, root, "
+                  "template) triple, replacing a pipeline that committed the bass first, because a "
+                  "passing note that is the absolute lowest pitch was winning bass selection and "
+                  "flipping the root.",
+                  "It states how the chord read over a span is decided and what it is decided "
+                  "jointly with, which is the fourth limb."),
+        "D-537": (VERDICT_IN,
+                  "Its verbatim fires the completeness bonus ONLY for a root-position reading whose "
+                  "three triad tones are all above the presence threshold, so a genuine slash chord "
+                  "neither gains it nor is beaten by a rival that gains it wrongly.",
+                  "It states a term deciding what chord is read over a span, with its structural "
+                  "entry condition."),
+        "D-538": (VERDICT_OUT,
+                  "Its verbatim orders a multi-signal scoring change landed one signal at a time, "
+                  "the corpus check re-run after each step and no step allowed to increase the "
+                  "error count.",
+                  "It bears on the landing and validation procedure for a change, not on what the "
+                  "changed scoring decides."),
+        "D-580": (VERDICT_IN,
+                  "Its verbatim separates two purely-local VERTICAL refinements that must survive "
+                  "the dissolution from the ten gates that 'read context from beyond their own "
+                  "stretch and are compensation by construction'.",
+                  "It states which corrections refine the reading from the notes of one stretch and "
+                  "which exist only because the decision before them could not see enough, which "
+                  "bears on the second and fourth limbs."),
     },
 }
 
