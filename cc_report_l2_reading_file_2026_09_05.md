@@ -21,7 +21,7 @@
 | | commit | read where |
 |---|---|---|
 | **at boot** | `8457c97445ff9a6c506fe999128681b80969e9ba` | `.git/refs/heads/master` and `.git/refs/remotes/origin/master`, both with the file tools — equal, and equal to the hash the dispatch declares, so STOP condition 1 did not fire |
-| **at close** | *written into this cell by the end-state commit* | the tip after the Task 5 commit, read at both ref files with the file tools and **written into the end-state commit**, on the convention the two preceding reports state at their own tables: a commit cannot carry its own hash, so naming the Task 3 tip here would leave the row stale. **This cell is left empty of any value until that hash has been read** — no provisional or stand-in hash is written into it at any point |
+| **at close** | `d947106a13b6352f0fd973c93cc8a9445a5a5041` | the tip after the Task 5 commit, read at both ref files with the file tools and **written into the end-state commit**, on the convention the two preceding reports state at their own tables: a commit cannot carry its own hash, so naming the Task 3 tip here would leave the row stale. **This cell carried a named marker and no value until that hash had been read at both ref files** — see departure (vii), which records that an invented value was written here at first drafting and was removed before anything was staged |
 
 **Every commit of this batch**, each hash read at **both** ref files with the file tools immediately
 after its push — never from a push's own output:
@@ -33,8 +33,8 @@ after its push — never from a push's own output:
 | Task 1(b) | `3cd4bf4e7b71eeab70adc54b9b41e5419398720c` | `open_items/OI-378.md` — **one path**, `12 insertions(+)`, **zero deletions** |
 | Task 2 | `1fb0a97a72f6155a1436c85f8a1d4c8892b00bab` | the new tool, its guard enrolment, the rendered reading file — **three paths** |
 | Task 3 | `9a124b77d2a5772c32fc9cc00e53e96e0aff3d18` | the Task 3 enumeration artifact alone |
-| Task 5 | *written into this cell by the end-state commit* | `STATUS.md` and this report — **two paths** |
-| the end state | *the commit that carries this table's close-tip cells* | the regenerated guard artifact, the close section in `cowork_away_returns.md`, and this table's two close-tip cells |
+| Task 5 | `d947106a13b6352f0fd973c93cc8a9445a5a5041` | `STATUS.md` and this report — **two paths** |
+| the end state | *the commit that carries this table's close-tip cells* | the regenerated guard artifact, the regenerated read-size measurement (§6a), the close section in `cowork_away_returns.md`, and this table's two close-tip cells |
 
 **On the close test.** Following the practice of the preceding batch, the close section and the
 end-state guard artifact go in the **same** commit, not one apart. The preceding batch recorded that
@@ -344,10 +344,45 @@ two now pass. The ten that remain:
 **None is this batch's, and this batch added no eleventh.** Nothing was regenerated at Task 3, as the
 dispatch orders; the end state regenerates the guard artifact.
 
-**`gen_session_start_read_size.py --check` PASSES.** The dispatch provides for regenerating the
-read-size measurement "where this batch's own acts staled it" — **this batch's acts did not stale
-it**, so it is not regenerated and nothing is touched to make a number come out. This differs from
-the preceding batch, whose regenerated gating answer did stale it.
+**`gen_session_start_read_size.py --check` PASSES at this point in the batch — and STOPPED PASSING
+two commits later, which §6a records.** The dispatch provides for regenerating the read-size
+measurement "where this batch's own acts staled it"; at Task 3 no act of this batch had staled it,
+and the Task 5 `STATUS.md` entry then did.
+
+### 6a. The eleventh red this batch caused at Task 5, established at the objects and repaired in the end state
+
+**A statement this report carried at first drafting was FALSE and is corrected here rather than
+quietly edited.** §6 above concluded from the Task 3 run that "this batch's acts did not stale it, so
+it is not regenerated". That generalised a Task-3 measurement into a claim about the whole batch, and
+the batch was not over: **the Task 5 commit writes an entry into `STATUS.md`, which is one of the four
+members of the session-start read that measurement counts.**
+
+**It surfaced at the end-state regeneration, not by inspection.** `gen_guard_state.py` run in write
+mode after the Task 5 commit reported **`77 guard(s) run, 11 failing`** — one more than the `--check`
+run at Task 3 — and the eleventh, found by comparing the two runs' `[FAIL]` lines rather than by
+assumption, is **`tools/audit/gen_session_start_read_size.py --check`**, which had PASSED at Task 3.
+
+**The cause was established at the objects and not inferred from the timing.** Of the four members the
+measurement counts, **`STATUS.md` is the only one whose character count moved**; `DECISIONS.md` and
+the gating-answer span both re-measure byte-identical to the values the committed artifact carried,
+and `CLAUDE.md` was never edited by this batch. So the movement is this batch's own single act on
+`STATUS.md` and nothing else. **No figure is transcribed here** (D-431): the before and after counts
+are the committed and regenerated states of
+`tools/audit/session_start_read_size.json`, and the per-member table is that tool's own output.
+
+**The repair is the one the dispatch authorises, and only that.** `gen_session_start_read_size.py` was
+regenerated and its `--check` now reports `the session-start read measurement re-derives`, exit 0.
+`gen_guard_state.py` was then re-run in write mode **after** that repair, so the committed
+`guard_state.json` records the corrected state rather than a state that was already stale when it was
+written. **Nothing was adjusted to reach a number**: the read-size measurement was regenerated because
+an act of this batch demonstrably staled it, which is exactly the condition the dispatch names, and no
+other artifact was touched.
+
+**Why this is reported at length rather than absorbed.** The preceding batch met the same condition
+from a different cause — its regenerated gating answer staled the same measurement — and recorded it.
+This batch predicted the opposite and said so in writing before its own last commit had been taken.
+**The prediction was wrong in a direction the batch itself created**, and the standing self-check is
+what caught it, at the regeneration rather than at the claim.
 
 **The new tool's `--check` was run once more on its own after the guard set: `PASS: … re-renders
 byte-identically`, exit 0.**
