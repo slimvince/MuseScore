@@ -1445,12 +1445,17 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "than the weighting.",
                   "Same subject as D-451: it bears on how a trace is run, not on what tonality, "
                   "boundary, tone status or chord is read."),
-        "D-453": (VERDICT_UNPLACED,
+        "D-453": (VERDICT_IN,
                   "Its verbatim is a verdict — 'the ratified factorization passes nine of ten "
                   "traces as specified; no finding requires re-ratifying the STRUCTURE (variables, "
                   "factors, decode)' — and states no variable, factor or decode rule.",
-                  "The published text says that a structure survived checking without saying what "
-                  "any part of that structure is, so it settles no limb either way."),
+                  "Ruled IN 2026-09-05 from UNPLACED (Ruling 3 of "
+                  "`cowork_rulings_2026_09_05_l2_withheld_family_sitting.md`): its plain names the "
+                  "counting granularity as the one thing sharpened and the variables, factors and "
+                  "decode as ratified, so a session reading it learns that a ratified factorization "
+                  "exists and which of its points was open; the pilot's family graded the same text "
+                  "IN and that ruling stands, and the same text cannot settle the superset question "
+                  "less than it settled the subset."),
         "D-524": (VERDICT_IN,
                   "Its verbatim rules the joint state's mode axis {major, minor} with the composite "
                   "minor, puts modal and chromatic colour in the pitch-emission factor rather than "
@@ -1500,12 +1505,15 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "segment, replacing one blanket value.",
                   "It states a ruled term of the emission that decides both which notes a candidate "
                   "chord expects and what chord is read over a span."),
-        "D-535": (VERDICT_UNPLACED,
+        "D-535": (VERDICT_OUT,
                   "Its verbatim reports that across three passages the real counted values overturn "
                   "no desk-simulation verdict, that margins moved by 1.5–3.5 in both directions, "
                   "and that one margin expectation was plainly wrong.",
-                  "The published text reports a checking stage's outcome without stating any table "
-                  "value or any rule about the four limbs, so it settles nothing either way."),
+                  "Ruled OUT 2026-09-05 from UNPLACED (Ruling 3 of the same record): it bears on the "
+                  "checking stage's own outcome — a confirmation that the real counted tables "
+                  "overturned no desk-simulation verdict — reporting no value and no rule; what it "
+                  "discloses about the tables, that they are counted from data and checked, D-525 "
+                  "(withheld) states in full."),
         "D-565": (VERDICT_IN,
                   "Its verbatim rules that exact score ties are real and are broken by a declared "
                   "TOTAL order on paths — fewer segments first, then the earliest boundary-tick "
