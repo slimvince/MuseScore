@@ -1653,9 +1653,11 @@ def group_title(group: str) -> str:
     NOT a second copy of those titles (#6): `DECISIONS.md` renders its group headings from the same
     `groups` table this reads, so the register and this tool cannot drift apart.
 
-    BEFORE 2026-09-05 this gloss was the hardcoded string "Layer 2 — the slicer", written when the
-    only criterion carrying a group term named exactly one group, E.  The `l2` criterion names six,
-    and for A, C, D, F and G that string is false.  Group E's title in the backbone is that same
+    BEFORE 2026-09-05 this gloss was the hardcoded string "Layer 2 — the slicer".  Until the `l2`
+    criterion was written, the only criterion carrying a group term named exactly one group, E, so
+    the string was true of every group match the tool then made; WHY it was written as a literal is
+    not established and is not asserted (#18).  The `l2` criterion names six, and for A, C, D, F and
+    G that string is false.  Group E's title in the backbone is that same
     string, so the `harmony-boundary` subject's rendered manifest is byte-unchanged by this repair,
     which is what makes it a repair and not a behaviour change.  The former wording is preserved
     here rather than deleted (#12).
