@@ -2433,6 +2433,359 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "no distinct gated box between the note layers and it.",
                   "It states what finally settles a tonality or chord left carried as uncertain, "
                   "which bears on the first and fourth limbs."),
+
+        # ── group I — Module boundaries and code structure — 6 candidates — authored 2026-09-05 ──
+        "D-072": (VERDICT_OUT,
+                  "Its verbatim enforces the dependency order and requires any code that would "
+                  "invert it to move to the notation bridge layer.",
+                  "It bears on module dependency structure — what the analysis library may know "
+                  "about the score format — not on what it reads from the music."),
+        "D-229": (VERDICT_OUT,
+                  "Its verbatim states three parts: the analysis library depends on no MuseScore "
+                  "types; the bridge reads the score only through the established pattern and never "
+                  "layout-derived state as analysis input; and editing MuseScore's own code is "
+                  "admissible only for a blocking defect.",
+                  "It bears on module boundaries, and its one analysis-facing clause names the note "
+                  "model as the sanctioned reading surface rather than saying what is read from "
+                  "it."),
+        "D-296": (VERDICT_OUT,
+                  "Its verbatim allows READING and CALLING MuseScore's engraving code from anywhere "
+                  "we may edit, only EDITING the notation and engraving source being off limits.",
+                  "It bears on module boundaries and on what may be edited, not on the reading."),
+        "D-469": (VERDICT_OUT,
+                  "Its verbatim leaves the point-in-time tick-local path OUTSIDE the unified "
+                  "pipeline BY DESIGN, its semantics differing too much to force one interface "
+                  "without distortion.",
+                  "It bears on module boundaries — which paths are unified onto one pipeline — not "
+                  "on what any of them decides."),
+        "D-470": (VERDICT_OUT,
+                  "Its verbatim records the temporal-context extension fields during the analysis "
+                  "pass that computes them, a consumer reading what was recorded and never "
+                  "re-running the chord analysis to rebuild them.",
+                  "It bears on the fact-publication rule at the producing surface — record once, "
+                  "read the record — not on what tonality, boundary, tone status or chord is "
+                  "read."),
+        "D-623": (VERDICT_OUT,
+                  "Its verbatim makes a selection-aware capability a PARAMETER on the one "
+                  "orchestrator rather than a second driver beside it, so one path builds, slices "
+                  "and decodes.",
+                  "It bears on orchestration — that one path sequences build, slice and decode — "
+                  "not on what the decode decides; the pilot graded it OUT on the same ground."),
+
+        # ── group J — Presentation and output conventions — 4 candidates — authored 2026-09-05 ──
+        "D-295": (VERDICT_OUT,
+                  "Its verbatim states the governing requirement of ZERO INFORMATION LOSS TO THE "
+                  "END USER — every inferred object must be displayable, gradual revelation being "
+                  "the intended design.",
+                  "It bears on the presentation surface's obligation to be able to show what was "
+                  "inferred, not on what is inferred."),
+        "D-471": (VERDICT_OUT,
+                  "Its verbatim fixes in advance the verdict rule for the sub-beat annotation "
+                  "duration gate — kept if it reduces clutter without suppressing correct "
+                  "annotations, retired if it suppresses equally many of each — and records it "
+                  "undischarged at HEAD.",
+                  "It bears on a display gate that hides very short chords from the annotation, not "
+                  "on what chord is read over a span."),
+        "D-498": (VERDICT_OUT,
+                  "Its verbatim requires the product stance written for dense abstention and for "
+                  "out-of-domain input — what the user sees when the system says a passage is "
+                  "outside its tonal vocabulary.",
+                  "It bears on the product stance at the presentation surface, not on any of the "
+                  "four limbs."),
+        "D-584": (VERDICT_OUT,
+                  "Its verbatim makes the perfect/imperfect cadence call on the bass-derived "
+                  "inversion, demoting the soprano arrival degree to a soft nudge because the "
+                  "structural melody is not reliably recoverable.",
+                  "It bears on how a cadence's type is decided, which is a read-off fact taken from "
+                  "a settled tonal reading rather than one of the four limbs."),
+
+        # ── group K — Documentation governance — 3 candidates — authored 2026-09-05 ──
+        "D-113": (VERDICT_OUT,
+                  "Its verbatim reserves any term that coincides even slightly with music theory "
+                  "for its musical sense only.",
+                  "It bears on the project's writing conventions, not on what the analysis reads."),
+        "D-499": (VERDICT_IN,
+                  "Its verbatim carries four documentation riders, one of which is to 'record the "
+                  "membership tie-breaker as an idiom-calibrated constant'; its plain calls it 'the "
+                  "rule that breaks a tie about whether a note belongs to the chord'.",
+                  "That rider discloses that a note's membership of the chord is settled at a tie "
+                  "by an idiom-calibrated constant, which is part of the third limb's answer."),
+        "D-660": (VERDICT_OUT,
+                  "Its verbatim rules that a research-tied name is not renamed but governed by two "
+                  "tiers — explained at the introduction site, annotated at every later use — and "
+                  "fixes the cleanup order with no tree-wide rename.",
+                  "It bears on the terminology convention and the order of its cleanup, not on the "
+                  "reading."),
+
+        # ── group L — Licensing, contribution, and coding standards — 2 candidates — authored 2026-09-05 ──
+        "D-292": (VERDICT_OUT,
+                  "Its verbatim restricts the pool a ship-intended weight or table may be estimated "
+                  "on to public-domain, CC0 and CC-BY sources, non-commercially or unlicensed music "
+                  "being usable to validate but never to fit.",
+                  "It bears on licensing — which music a shipped fitted value may be estimated on — "
+                  "rather than on how the value enters the reading."),
+        "D-614": (VERDICT_OUT,
+                  "Its verbatim establishes that every real difficulty-grade label source is "
+                  "research-only or proprietary at origin, so a commercial grading feature needs a "
+                  "licence path or labels of our own.",
+                  "It bears on licensing for a difficulty-grading feature, which is outside the "
+                  "tonal reading entirely."),
+
+        # ── group M — The style system and the knowledge base — 17 candidates — authored 2026-09-05 ──
+        "D-131": (VERDICT_OUT,
+                  "Its verbatim makes the style vocabulary ONE shared taxonomy — the five idioms "
+                  "with mode and chromaticism as orthogonal cross-attributes — the same set the "
+                  "harmonic vocabulary tags with, not two parallel vocabularies.",
+                  "It bears on the style taxonomy's structure and its sharing between two "
+                  "components, not on any of the four limbs."),
+        "D-132": (VERDICT_OUT,
+                  "Its verbatim states that what remains future work is the per-preset WEIGHTS "
+                  "rather than the clusters, the clusters half being delivered by the ratified "
+                  "five-idiom set.",
+                  "It bears on the style system's remaining empirical grounding, not on the "
+                  "reading."),
+        "D-406": (VERDICT_OUT,
+                  "Its verbatim splits ownership — this catalog owns the named progressions and "
+                  "substitutions, the function layer's grammar owns which root motions are licensed "
+                  "at all — the two never derived from each other, coupled only by a one-way "
+                  "consistency test.",
+                  "It bears on the ownership split between two knowledge stores; it states the "
+                  "content of neither."),
+        "D-421": (VERDICT_OUT,
+                  "Its verbatim re-runs idiom discovery after every material corpus change, on "
+                  "research material only, a changed cluster set being its own ratification event.",
+                  "It bears on the style system's re-discovery protocol and its held-out "
+                  "discipline."),
+        "D-496": (VERDICT_OUT,
+                  "Its verbatim makes the one-store-or-two question about the pairwise progression "
+                  "grammar an OWED decision triggered at the recognition-consumer build, and says "
+                  "'no section can yet state a rule here'.",
+                  "It bears on an owed unification decision between two knowledge stores, and "
+                  "states in terms that it fixes no rule."),
+        "D-502": (VERDICT_OUT,
+                  "Its verbatim names the span a recognised progression covers the "
+                  "`progression-schema-span`, reserving 'sequence' and 'progression' for their own "
+                  "senses.",
+                  "It bears on naming and the reserved-vocabulary convention, not on where any span "
+                  "falls."),
+        "D-503": (VERDICT_OUT,
+                  "Its verbatim makes the idiom weight vector DISCOVERED from the score and merely "
+                  "SEEDED by the user's preference, in three forward-only phases.",
+                  "It bears on the style system's idiom-mixture estimation, not on what tonality, "
+                  "boundary, tone status or chord is read."),
+        "D-504": (VERDICT_IN,
+                  "Its verbatim rules a recognised harmonic sequence ALWAYS emitted as evidence of "
+                  "the local key — corroborating a confirming cadence, tempering a disagreeing one, "
+                  "and substituting for the cadence channel at a lower weight where none confirms "
+                  "the candidate key.",
+                  "It states an evidence channel that votes on the tonality and its weight relative "
+                  "to the cadence, which is the first limb."),
+        "D-505": (VERDICT_IN,
+                  "Its verbatim requires at least two transposed statements of the SAME recognised "
+                  "entry for a sequence, a single internally-sequential recognition emitting none.",
+                  "It defines what counts as the sequence evidence that votes for the local key, "
+                  "which is part of the first limb's evidence rule."),
+        "D-506": (VERDICT_IN,
+                  "Its verbatim makes progression recognition ADDITIVE — the literal Roman numeral "
+                  "is never changed — rewriting it to the substituted-for function being rejected "
+                  "as losing the label the ground truth scores.",
+                  "The Roman numeral is this layer's own chord under D-526, so the rule that "
+                  "recognition never rewrites it is about what chord is read over a span."),
+        "D-507": (VERDICT_OUT,
+                  "Its verbatim marks line-defined catalog entries 'chords-only' when recognised by "
+                  "their chord skeleton, the mark retiring per entry when the voice-leading layer "
+                  "supplies the other half.",
+                  "It bears on the progression catalog's recognition and its confidence marking."),
+        "D-508": (VERDICT_OUT,
+                  "Its verbatim ships the catalog/grammar consistency test scoped to the measured "
+                  "containment with an explicit known-gap list, tightening to a clean assertion when "
+                  "the grammar amendment lands.",
+                  "It bears on a consistency test between two knowledge stores, not on the "
+                  "reading."),
+        "D-509": (VERDICT_IN,
+                  "Its verbatim rules that where the chord layer committed, a recognised "
+                  "progression's prior enters the SAME contradiction frame under the same threshold "
+                  "and tie rules, and may only SELECT an existing carried reading — never one built "
+                  "from the notes.",
+                  "It states what may change a committed chord over a span and what it may change "
+                  "it to, which is the fourth limb."),
+        "D-542": (VERDICT_OUT,
+                  "Its verbatim orders idiom discovery DISCOVER-THEN-NAME — structure learned on a "
+                  "label-free low-level encoding, theory features and genre labels applied only "
+                  "afterwards as interpretation lenses.",
+                  "It bears on the style-clustering study's method."),
+        "D-543": (VERDICT_OUT,
+                  "Its verbatim fixes the discovery encoding as key-normalised tonal-pitch-class "
+                  "transitions, spelled where spelling is reliable, run as two complementary views.",
+                  "It bears on the style-clustering study's encoding."),
+        "D-544": (VERDICT_OUT,
+                  "Its verbatim makes confound control a first-class validity gate with a mandatory "
+                  "source-leakage test: if the clusters approximate the source, the study found "
+                  "bookkeeping and not idiom.",
+                  "It bears on the style-clustering study's validity gate."),
+        "D-545": (VERDICT_OUT,
+                  "Its verbatim makes one external library the uniform mechanical extractor for "
+                  "idiom discovery, stopping at notes and simultaneities, our own key/chord/function "
+                  "inference never touching the extraction.",
+                  "It bears on the idiom-discovery study's extraction method, and excludes our own "
+                  "reading from it rather than describing it."),
+
+        # ── group N — Generation, constraints, visualization, and the LLM integration — 8 candidates — authored 2026-09-05 ──
+        "D-440": (VERDICT_OUT,
+                  "Its verbatim makes the language-model integration a purpose-built module tapping "
+                  "existing interfaces directly rather than waiting for the plugin API redesign.",
+                  "It bears on the language-model integration's build scope."),
+        "D-441": (VERDICT_OUT,
+                  "Its verbatim keeps analysis and modification in one conversation thread, a "
+                  "follow-up instruction executing without re-analysis from the model's own "
+                  "history.",
+                  "It bears on the language-model integration's conversational behaviour."),
+        "D-442": (VERDICT_OUT,
+                  "Its verbatim feeds a validation failure back to the model as a tool-call error "
+                  "rather than showing it to the user, only clean output reaching the score.",
+                  "It bears on the language-model integration's error handling."),
+        "D-443": (VERDICT_OUT,
+                  "Its verbatim requires only tool use of a provider; a provider without it may be "
+                  "used for read-only analysis but cannot drive score modification.",
+                  "It bears on the language-model integration's provider abstraction."),
+        "D-444": (VERDICT_OUT,
+                  "Its verbatim makes the core access layer a facade over interfaces that already "
+                  "exist rather than a redesign.",
+                  "It bears on the language-model integration's access layer."),
+        "D-445": (VERDICT_OUT,
+                  "Its verbatim records that an address does not uniquely identify a note, several "
+                  "notes of one chord sharing one address, so the note entity carries its own "
+                  "identifier.",
+                  "It bears on the language-model integration's entity addressing."),
+        "D-447": (VERDICT_OUT,
+                  "Its verbatim generates the model's tool definitions from the operation-set "
+                  "schemas automatically, with no manual maintenance.",
+                  "It bears on the language-model integration's tool generation."),
+        "D-448": (VERDICT_OUT,
+                  "Its verbatim curates about forty operations from observed use rather than "
+                  "exposing every editing method.",
+                  "It bears on the language-model integration's operation set."),
+
+        # ── group Q — Scope and the development toolchain — 5 candidates — authored 2026-09-05 ──
+        "D-365": (VERDICT_OUT,
+                  "Its verbatim answers that a corpus search driven by the sum of all needs is "
+                  "worth running but is step 3 of 3, the needs artifact and the re-scoring of the "
+                  "existing enumeration coming first.",
+                  "It bears on the corpus-search procedure, not on the reading."),
+        "D-514": (VERDICT_OUT,
+                  "Its verbatim makes a newly acquired annotation set whose works overlap the "
+                  "regression corpus RECORD-ONLY over those works — not wired to, not compared "
+                  "against, not bulk-diffed with the gate corpus without a user ruling.",
+                  "It bears on corpus intake and on protecting the gate from contamination."),
+        "D-516": (VERDICT_OUT,
+                  "Its verbatim records two ground-truth classes ADOPTED at the first full-needs "
+                  "audit — contrapuntal/imitative structure, and marked part-writing errors.",
+                  "It bears on which ground-truth classes the project tracks as needed."),
+        "D-613": (VERDICT_OUT,
+                  "Its verbatim records implied-polyphony ground truth CONFIRMED ABSENT and closes "
+                  "the search.",
+                  "It bears on corpus availability for voice and stream separation; the pilot "
+                  "graded it OUT on the same ground, reached only by an in-word match."),
+        "D-665": (VERDICT_OUT,
+                  "Its verbatim requires the intake record to say what a voice/stream label set "
+                  "actually measures — labels derived from engraved notation, not from a listener's "
+                  "judgment about heard lines.",
+                  "It bears on the intake record for a corpus of voice labels."),
+
+        # ── group S — The guiding principles — 12 candidates — authored 2026-09-05 ──
+        "D-168": (VERDICT_OUT,
+                  "Its verbatim is principle #4 whole: 'Long-term goal: maximum-precision "
+                  "inference.'",
+                  "It states the project's objective, against which any answer is judged; it states "
+                  "no answer."),
+        "D-170": (VERDICT_OUT,
+                  "Its verbatim is principle #6: total unification, no duplication, one path per "
+                  "concern.",
+                  "It bears on code structure across the whole project, not on the reading."),
+        "D-171": (VERDICT_OUT,
+                  "Its verbatim is principle #7: enhance a layer only with algorithms and methods "
+                  "that belong to it, the worst case forcing a layer redesign rather than a "
+                  "cross-layer patch.",
+                  "It bears on layer adherence as a general discipline; it says nothing about what "
+                  "this layer decides."),
+        "D-172": (VERDICT_OUT,
+                  "Its verbatim is principle #8: no inference-problem-driven coding until the "
+                  "refactoring, the architectural design and the algorithmic completion are done.",
+                  "It bears on the sequencing of work, not on the reading."),
+        "D-180": (VERDICT_OUT,
+                  "Its verbatim is principle #17, the Premise Gate, with its six lettered "
+                  "requirements from the premise ledger to the no-hand-transcribed-figures rule.",
+                  "It bears on the method by which any inference-affecting design is built or "
+                  "probed, not on what this one decides."),
+        "D-182": (VERDICT_OUT,
+                  "Its verbatim is principle #19: an unestablished instrument, corpus, gate or "
+                  "recorded figure is forbidden until positively established.",
+                  "It bears on the establishment of measurement, not on the reading."),
+        "D-185": (VERDICT_OUT,
+                  "Its verbatim is principle #22: every hard gate carries a pre-declared protocol "
+                  "for the largest change it will face.",
+                  "It bears on gate governance, not on the reading."),
+        "D-190": (VERDICT_OUT,
+                  "Its verbatim is the decision-neutrality corollary: a design is chosen from the "
+                  "principles and the objective alone, reuse cost secondary, downstream impact and "
+                  "user-visible change carrying no weight.",
+                  "It bears on how a design is chosen, not on which design this layer has."),
+        "D-201": (VERDICT_OUT,
+                  "Its verbatim states that very large scores MUST be handled and are expected to "
+                  "be a more common use than our corpora.",
+                  "It bears on a standing scale requirement every later design is judged against, "
+                  "not on any of the four limbs."),
+        "D-202": (VERDICT_OUT,
+                  "Its verbatim makes the effort control ONE setting with several dials behind it, "
+                  "among the quantities it must bound being the time the analysis takes, and marks "
+                  "it DEFERRED.",
+                  "It bears on the effort control, not on what the analysis reads."),
+        "D-205": (VERDICT_OUT,
+                  "Its verbatim makes a HUMAN the ground truth where no formal ground truth exists, "
+                  "an automated triage judge being guidance for that person and never a grader.",
+                  "It bears on the ground-truth policy for unannotated repertoire."),
+        "D-206": (VERDICT_OUT,
+                  "Its verbatim holds the intonation section as a deliberate long-horizon hold and "
+                  "a declared future CONSUMER of the analysis.",
+                  "It bears on a held feature and its status as a consumer of the analysis, not on "
+                  "the analysis."),
+
+        # ── group T — Standing process rules and local patches — 1 candidate — authored 2026-09-05 ──
+        "D-279": (VERDICT_OUT,
+                  "Its verbatim states the Stage-3 entry gate's seven conditions before any "
+                  "engagement wiring can reach production, beginning with Tier-1 defusal as a "
+                  "prerequisite rather than an inventory item.",
+                  "It bears on the process gate a build must clear before wiring reaches "
+                  "production, not on what the wiring would decide."),
+
+        # ── group U — The standing decision-bearing surfaces — 5 candidates — authored 2026-09-05 ──
+        "D-220": (VERDICT_IN,
+                  "Its verbatim requires the augmented-seventh guard to see BOTH the major third "
+                  "and the augmented fifth, the third-only form having been tried and reverted.",
+                  "It states the firing condition of a guard inside the chord decision, which is "
+                  "part of what chord is read over a span."),
+        "D-221": (VERDICT_IN,
+                  "Its verbatim gates the inversion bonuses on `hasStructuralBass`, so a sparse "
+                  "upper-register lowest note earns none.",
+                  "It states when a lowest note counts as a structural bass and so what inversion "
+                  "is read, which is part of the fourth limb."),
+        "D-222": (VERDICT_IN,
+                  "Its verbatim falls back to the without-`w_dim` variant when the post-bonus "
+                  "winner is not diminished or half-diminished, the bonus being able to rotate the "
+                  "winner across bass candidates.",
+                  "It states a rule that decides which reading is committed over a span, which is "
+                  "the fourth limb."),
+        "D-223": (VERDICT_OUT,
+                  "Its verbatim requires a gate computing against the pre-correction winner to read "
+                  "the `originalWinner*` snapshots rather than the live top result.",
+                  "It bears on how a gate reads its own input — an implementation rule — rather "
+                  "than on what the gate decides about the music."),
+        "D-224": (VERDICT_IN,
+                  "Its verbatim fires joint bass-and-chord scoring only where at least one tone "
+                  "came from accumulating a whole stretch, single-tick, status-bar and unit-test "
+                  "paths using the legacy single-bass path.",
+                  "It states when the bass and the chord are scored together and when they are not, "
+                  "which is part of the fourth limb's ruled answer."),
     },
 }
 
