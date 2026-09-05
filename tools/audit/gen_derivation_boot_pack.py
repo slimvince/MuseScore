@@ -1644,6 +1644,38 @@ def haystack(entry: dict, backbone: dict, fields: tuple[str, ...]) -> dict:
     return out
 
 
+_GROUP_TITLES: dict[str, str] | None = None
+
+
+def group_title(group: str) -> str:
+    """The decisions register's OWN title for a register group, read from the table that defines it.
+
+    NOT a second copy of those titles (#6): `DECISIONS.md` renders its group headings from the same
+    `groups` table this reads, so the register and this tool cannot drift apart.
+
+    BEFORE 2026-09-05 this gloss was the hardcoded string "Layer 2 — the slicer", written when the
+    only criterion carrying a group term named exactly one group, E.  The `l2` criterion names six,
+    and for A, C, D, F and G that string is false.  Group E's title in the backbone is that same
+    string, so the `harmony-boundary` subject's rendered manifest is byte-unchanged by this repair,
+    which is what makes it a repair and not a behaviour change.  The former wording is preserved
+    here rather than deleted (#12).
+
+    An unknown group is a STOP rather than a fallback: a gloss that silently degrades to the bare
+    letter would read as a title and be believed.
+    """
+    global _GROUP_TITLES
+    if _GROUP_TITLES is None:
+        _GROUP_TITLES = {g["id"]: g["title"]
+                         for g in read_json(BACKBONE).get("groups", [])
+                         if g.get("id") and g.get("title")}
+        if not _GROUP_TITLES:
+            raise Stop("the backbone carries no usable `groups` table, so no group title can be "
+                       "read and the group gloss has no source")
+    if group not in _GROUP_TITLES:
+        raise Stop(f"register group {group!r} carries no title in the backbone's `groups` table")
+    return _GROUP_TITLES[group]
+
+
 def candidates(subject: str, design_intent: list[dict], backbone: dict) -> list[dict]:
     spec = CRITERION[subject]
     arch = architecture_spans(spec["architecture_spans"])
@@ -1654,7 +1686,7 @@ def candidates(subject: str, design_intent: list[dict], backbone: dict) -> list[
         why = []
         if e.get("group") in spec["groups"]:
             why.append({"criterion": "group", "matched": e.get("group"),
-                        "means": "Layer 2 — the slicer"})
+                        "means": group_title(e.get("group"))})
         home = (e.get("home") or "")
         for doc in spec["home_documents"]:
             if home.startswith(doc):

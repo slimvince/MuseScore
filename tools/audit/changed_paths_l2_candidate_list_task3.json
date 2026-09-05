@@ -1,0 +1,3405 @@
+{
+  "purpose": "A run of tools/audit/changed_paths.py. Generated so a report cites this file rather than transcribing the list (D-431).",
+  "enumeration": "worktree",
+  "commit": null,
+  "records": 849,
+  "rows": [
+    {
+      "code": " M",
+      "path": "tools/audit/gen_derivation_boot_pack.py"
+    },
+    {
+      "code": "??",
+      "path": "cc_L6_corpus_oracle_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_absent_root_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_anchor_design_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_anchor_recompute_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_anchor_redesign_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_approval_styletag_swap_commit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_architecture_opinion.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_artifact_inventory_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_audit_cadencekeyanchor_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_audit_chordanalyzer_oracle_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_audit_harmonicfunctionlayer_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_audit_jointkeydecision_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_audit_keymodeanalyzer_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_audit_localmodulationdetector_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_b2_subdominant_guard_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_b_guard_scoping_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_backfill_engravingbridge_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_backfill_formatter_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_backfill_l3_keymode_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_backfill_l4_oracle_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_baseline_reconciliation_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_batch_analyze_restore_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_batch_analyze_unification_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_bridge_lookahead_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_bwv301_diagnostic_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_clang_branch_coverage_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_consumer_build_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_corpus_hygiene_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_corpus_hygiene_report_corelli.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_corpus_wave1_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_deltaseven_7a_diagnostic_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_deltaseven_phase_e_diagnostic_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_deltaseven_predecessor_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_doc_recovery_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_doctruth_gate_sync_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_e0doubleprime_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_e0prime_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_e3_investigation_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_engage_u1_uncap_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_extension_build_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_foundations_verification_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_gate_r_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_gate_r_verify_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_handoff_prepend_report_2026_09_01.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_L5_close_commit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_L6_corpus_oracle_check.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_a8_metric_rebaseline_measure.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_absent_root_guard.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_absent_root_investigate.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_adoption_commit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_anchor_design_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_anchor_recompute_impl.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_anchor_redesign_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_architecture_opinion.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_audit_cadencekeyanchor.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_audit_chordanalyzer_oracle.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_audit_harmonicfunctionlayer.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_audit_jointkeydecision.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_audit_keymodeanalyzer.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_audit_localmodulationdetector.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_away_batch.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_b2_aug7.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_b2_final.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_b2_guardfix.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_b2_retry.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_b2_subdominant_guard_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_b3.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_b_dominant_subdominant_guard_scoping.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_backfill_engravingbridge.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_backfill_formatter.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_backfill_l3_keymode.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_backfill_l4_oracle_gates.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_backup_batch2.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_backup_cowork_docs.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_baseline_reconciliation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_batch_analyze_restore.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_batch_analyze_unification_audit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_boot_pack_regeneration.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_bridge_anchor_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_bridge_lookahead.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_bwv301_diagnostic.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_c1_investigate.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_cadence_key_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_cadence_precision_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_carryfix2_resolver_identity.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_carryfix_dl5a_e0prime.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_carryfix_task2_addendum.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_clang_branch_coverage.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_classifier_fix.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_commit_cadence_instrument.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_commit_docs.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_commit_exploration_mode.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_commit_idiom_work.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_commit_reads3.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_consumer_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_consumer_build_addendum.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_convert_curated_scores.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_corpus_clone.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_corpus_hygiene.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_corpus_hygiene_corelli.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_corpus_hygiene_record.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_corpus_wave1_dlc_onboarding.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_corpus_wave2_axis2_beds.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_dcml_parser_applied_root_fix.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_decision_enumeration_wave.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_decoder_work_counts.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_deltaseven_7a_diagnostic.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_deltaseven_phase_e_diagnostic.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_deltaseven_predecessor_diagnostic.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_doc_governance_commit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_doc_pass_caps_and_gates.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_doc_recovery.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_doc_sync_layer1.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_doctruth_gate_sync.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e0_addendum_carry_cap.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e0_fullspine_measure.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e1.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2_investigate.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2a.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2b.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2b_fixup.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2b_investigate.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2b_review.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2c.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2c_investigate.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2d.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2d_architecture_review.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2d_cleanup.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2d_enable.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2d_enable_v2.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2d_enable_v2_investigate.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2d_enable_v3.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2d_enable_v3b.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2d_investigate.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2d_investigate2.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e2d_v3c_investigate.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e3.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_e3_investigate.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_engage_u1_uncap.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_equivalence_harness.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_evidence_sizing.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_extension_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_fetch_more_scores.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_foundation_stage0.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_foundation_stage2a.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_foundation_stage3a.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_foundation_stage3b.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_foundations_verification.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_functional_residual_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_gap_analysis_spec_vs_impl.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_gate_default_measure.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_gate_r_verify_and_commit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_gate_rebaseline_verify.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_grammar_completion.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_handoff_prepend_2026_09_01.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_housekeeping_e2d.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_housekeeping_e2d_pass2.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_j_key_i.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_j_key_ii.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_j_key_ii_redux.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_j_key_iii_integration_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_j_key_iii_step2_wiring.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_j_key_iii_step3_land.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_j_key_iii_step3c_dormant_commit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_j_key_iii_step3d_push_then_B.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_jazz_nondeterminism.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_joint_architecture_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_joint_table_codegen.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_key_emission_headroom.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_keyregression_diagnosis.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_l1l3_delta_check_resync.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_l1l3_spec_sync.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_l1l4_review_tidy.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_l3_keyalt_forwardcarry.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_l6_dormant_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer1_audit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer1_coverage.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer1_implementation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer1_phase1a_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer2_audit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer2_corpus_validation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer2_implementation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer2_phase2_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_characterization_scaffold.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_decoder_audit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_decoder_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_decoder_followup.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_docsync_commit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_error_decomposition.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_incrementA_indexing.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_incrementB_groundtruth.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_jazz_churn_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_keymode_audit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_phase3_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_sweep.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_tpc_keymeasure.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_wiring.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_wiring_code.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer3_wiring_commit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer4_audit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer4_b_fairkey.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer4_build_increment_a.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer4_build_increment_b.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_layer4_residual_decomposition.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_measurement_pipeline_audit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_metric_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_metric_build_l0l1.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_metric_decomposition.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_metric_design_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_metric_first_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_metric_rebaseline_batch.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_modulation_keypath_scoping.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_notation_consumption_audit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_notation_seams_2.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_oi274_second_half.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_open_items_split.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_partition2_archives.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase1h_full_reads.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase1i_reads_and_delivery.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase2_architecture_support.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5_kmasks_complete.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5_kmasks_derive.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5b_step0_investigate.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5b_step1_g1.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5b_step2_g2.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5b_step2final_o2_inherit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5b_step3_g6.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5b_step4_g4_spellingpin.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5b_stepM_measure.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5c_L5_close_review.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5c_step1.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5c_step2.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5c_step2_amend.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5c_step2_resolution.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5c_step3.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5c_step4.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5c_step5.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5c_step5_followup.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5c_step6.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5c_stepM.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5c_stepM_consolidate.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase5c_stepM_followup.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase_d_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase_d_merger.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase_d_reanalysis.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase_e_commit_unification.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase_e_exploration_mode.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase_e_predecessor_survey.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phase_e_rcb_bass_chord_tone_gate.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_phrase_boundary_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_precision_headroom_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_push_bi_checkpoint.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_push_doc_sync.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_push_layer1_checkpoint.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_push_layer2.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_push_layer2_validation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_push_layer3_incrementA.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_push_layer3_incrementB.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_redesign_segregation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_redesign_step1_free_wiring.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_redesign_step2_predecessor_confidence.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_refactor1_chordanalyzer_split_design.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_refactor1_split_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_refactor_harmonicsegmenter_split.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_refactor_keymodeanalyzer_split.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_refactor_keyresolver_split.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_refactor_regiontonecollector_split.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_refactor_sectionanalyzer_split.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_repair_direction_enumeration.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_repair_index_verify_b2.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_rerun_discovery.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_revert_absent_root_guard.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_roadmap_sync.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_run_discovery.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_scoring_doc.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_sitting_landing_second_2026_09_01.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_spec_impl_delta_L1L4.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage0_followup.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage0_hygiene.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage1a_functionlayer_tests.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage1b_gate_tests.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage1c_segmentation_key_tests.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage1d_metric_script_tests.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage2_1_phase4c_move.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage2_2_ab_exploration.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage2_2a_corpus_hardening.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage2_2ii_ship_package.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage2_3_addendum.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage2_3_diagnose_production_view.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage2_4_divergence_decisions.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage2_4_ratification.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage2_5_p3_profile.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage3_1_beam1_decoder.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage3_1b_approval.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage3_1b_decode_once.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage3_1b_revision.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage3_2_design.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage3_3_gater_decision.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage3_3_signal_migration.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage3_4i_gate_retirement_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage3_4ii_c1_removal.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage3_decoder_design.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage4_design.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage4a_commit_and_stage4b_scoping.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage4a_declared_mode_import_fix.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage4b_i_commit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage4b_i_demote_and_measure.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage4b_ii_strengthen.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage4c_i_cadence_detector_measure.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage4c_iii_refine_detection.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage4d_i_modulation_detector_measure.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage5_phase3.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stage6_tonic_i_labeler_measure.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_step1_pc_primitive_extraction.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_step2_merge_predicate_dedup.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_step3_key_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_stepback.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_styletag_swap.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_term_grounding_inventory.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_test_backfill.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_tonicization_modulation_metric_check.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_tpc_capability_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_tree_repair_and_coverage.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_tsv_oracle_addendum.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_tsv_oracle_infrastructure.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_types_header_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_types_header_investigation.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_uncertain_resolver_measurement.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_union_branch_coverage.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_vl_idiom_discovery.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_instruction_vocabulary_build.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_j_key_i_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_j_key_ii_redux_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_j_key_ii_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_j_key_iii_integration_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_j_key_iii_step2_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_j_key_iii_step3_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_jazz_nondeterminism_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_joint_architecture_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_kmasks_complete_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_kmasks_derive_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_l1l3_delta_check_resync_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_l1l3_spec_sync_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_l1l4_review_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_l3_keyalt_forwardcarry_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_l6_build_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_label_table_fit_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer1_audit_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer1_doc_sync_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer1_phase1a_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer2_corpus_validation_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer2_phase2_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer3_characterization_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer3_decoder_audit_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer3_decoder_build_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer3_incrementA_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer3_incrementB_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer3_keymode_audit_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer3_phase3_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer3_wiring_design_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer4_audit_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer4_build_a_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer4_build_b_fairkey_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer4_build_b_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_layer4_residual_decomposition_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_measurement_pipeline_audit.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_metric_build_l0l1_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_metric_build_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_metric_decomposition_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_metric_first_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_metric_round2_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_metric_round3_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_modulation_keypath_scoping_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_notation_consumption_audit_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase2_architecture_support_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5b_step0_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5b_step1_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5b_step2_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5b_step2final_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5b_step3_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5b_step4_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5b_stepM_measure_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5c_L5_close_review.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5c_step0_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5c_step1_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5c_step2_amendment.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5c_step2_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5c_step3_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5c_step4_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5c_step5_followup_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5c_step5_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5c_step6_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5c_stepM_followup_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase5c_stepM_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase_d_investigation_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase_e_commit_unification_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase_e_exploration_mode_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phase_e_predecessor_survey_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_phrase_boundary_build_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_precision_headroom_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_refactor_harmonicsegmenter_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_refactor_keymodeanalyzer_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_refactor_keyresolver_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_refactor_regiontonecollector_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_refactor_sectionanalyzer_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_secondary_dominant_refit_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_sitting_landing_second_report_2026_09_01.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_spec_impl_delta_L1L4_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage0_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage1a_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage1b_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage1c_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage1d_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage2_1_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage2_2a_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage2_2ii_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage2_3_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage2_4_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage2_5_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage2a_wip_triage_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage3_1_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage3_1b_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage3_2_design_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage3_3_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage3_4i_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage3_4ii_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage3_design_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage3a_notation_triage_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage4_design_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage4b_i_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage4b_ii_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage4b_scoping_dossier.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage4c_i_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage4c_iii_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage4d_i_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stage6_tonic_i_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_step1_pc_primitive_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_step2_merge_predicate_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_stepback_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_styletag_swap_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_test_backfill_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_tpc_capability_build_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_tpc_capability_verify_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_tree_repair_and_coverage_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_tsv_oracle_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_types_header_build_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_types_header_investigation_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_union_branch_coverage_report.md"
+    },
+    {
+      "code": "??",
+      "path": "cc_vocabulary_build_report.md"
+    },
+    {
+      "code": "??",
+      "path": "external resarch summary/Computational Music Theory and Its.pdf"
+    },
+    {
+      "code": "??",
+      "path": "external resarch summary/Tesi___Knowledge_based_chord_embeddings_nicolas_lazzari.pdf"
+    },
+    {
+      "code": "??",
+      "path": "reading_pass/candidacy_upgrades.md"
+    },
+    {
+      "code": "??",
+      "path": "reading_pass/extracts/bigo-feisthauer-giraud-leve-2018-relevance-of-musical-features-for-cadence-detection.md"
+    },
+    {
+      "code": "??",
+      "path": "reading_pass/extracts/karystinaios-widmer-2022-cadence-detection-graph-neural-networks.md"
+    },
+    {
+      "code": "??",
+      "path": "reading_pass/extracts/pardo-birmingham-2002-algorithms-for-chordal-analysis.md"
+    },
+    {
+      "code": "??",
+      "path": "reading_pass/extracts/sears-pearce-caplin-mcadams-2018-simulating-expectations-for-tonal-cadences.md"
+    },
+    {
+      "code": "??",
+      "path": "reading_pass/extracts/temperley-sleator-1999-modeling-meter-and-harmony.md"
+    },
+    {
+      "code": "??",
+      "path": "reading_pass/object_reads/"
+    },
+    {
+      "code": "??",
+      "path": "reading_pass/remedial_commission_session_record_2026_08_31.md"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/baseline_composing.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/baseline_notation.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/baseline_snapshot.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/baseline_table.md"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/batch_analyze.both.bak"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/batchreg.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_after_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_after_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_after_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_default.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_jazz.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/bir_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_backfill.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_backfill2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_backfill2_err.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_backfill_err.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_dbg.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_final.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_g1.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_g2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_g2b.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_iso.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_revert.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_revert_err.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_step1.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_step1b.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_step1c.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_step2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_stepM.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_stepM2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_stepM_err.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_task1.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/build_task2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c5_guardhelp.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c5_p1w.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c5_triage.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c5_triage2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_bar.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_bar2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_build.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_class.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_classchk.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_ct.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_disp.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_dispv.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_gc_t0.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_gc_t1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_gc_t2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_gc_t4.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_gc_t4b.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_gp.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_final.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_final2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_start.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_t0.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_t0b.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_t0c.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_t1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_t1b.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_t1c.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_t2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_t2b.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_t4.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_t4b.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guard_t4c.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_guardclass_start.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_inv.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_lint.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_nt.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_oi357_a.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_oi357_b.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_oi357_c.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_ps.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_r1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_r12.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_reaim.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_reaimhelp.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_reg.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_regchk.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_routes.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_split.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_sweep.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_sweep2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_sweep3.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_sweep4.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_sweep5.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_sweep6.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_sweep_list.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_bar.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_bar2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_blk.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_class.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_class2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_class3.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_disp.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_disp2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_fl.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_inv.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_outd.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_reaim.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_reg.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_reg2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_routes.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_routes2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_routes3.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t1_routes4.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_blk.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_class.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_class2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_class3.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_class4.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_class5.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_disp.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_fl.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_inv.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_outd.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_r1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_reaim.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_reg.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t2_routes.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_blk.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_cp.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_cp2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_cp3.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_cphelp.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_fl.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_fl2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_inv.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_inv2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_ng.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_ng2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_p1w.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_p1w2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_p1w3.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_r1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_t4_routes.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_triage.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c8_triage2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_changed.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_class.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_classchk.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_guard_start.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_guards1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_guards2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_p1w.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_r1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_reaim.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_regen1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_regen2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_regen3.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_routes.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_shellguard_1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_shellguard_rep.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_split.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_verify1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/c9_verify2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cadence_tests.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cc_collect.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ccc_collect2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ccc_log.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ccc_notation.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ccc_path.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/char_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/char_baroque_l5m.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/char_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/char_default_l5m.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/char_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/char_jazz_l5m.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/claude_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/claude_baroque_sorted.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/claude_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/claude_default_sorted.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/claude_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/claude_jazz_sorted.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_algomusdata.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_asap.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_batch1.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_batch2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_batch3.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_batik.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_bcfb.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_cocopops.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_figbass.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_lieder.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_mcma.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_mikrokosmos.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_openewld.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_piano_svsep.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_protovoice.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_schenker41.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_sq.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/clone_vocsep.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cmp_manifest_sha.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/commit1_msg.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/commit1_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/commit2_msg.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/commit2_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/commit_msg_step2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/comp_run.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/comp_run2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/comp_run3.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/comp_run4.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/comp_step1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/comp_step1c.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing.cobertura.xml"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing_final_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing_full.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing_new_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing_test.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing_test2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/composing_tests_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_g1/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_g2/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_g2iso/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_g6/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_step2final_A/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_step2final_B/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_decode_chord_stepM/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_ours_check/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/corpus_ours_check_g2/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cov_after.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cov_after2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cov_final.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/cov_final2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/coverage/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/coverage_merged.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/coverage_report.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/curation_worksheet.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_baroque_step0.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_default_step0.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g1_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g1_baroque2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g1_default2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g1_driver.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g2_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g2_default.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_g2iso.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_step0_run.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_stepM_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decode_stepM_default.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decompose_g1_after.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decompose_g1_before.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decompose_g2_after.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decompose_g2_before.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decompose_g2iso.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/decompose_step0.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/dlc_baseline_run.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/dlc_pins.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/driver_smoke.err"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/e0dp_cap_decomp.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/e0prime_grader.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/e0prime_supp.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/e0prime_supp.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/filter_hunks.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/fs_regen_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/fs_regen_default.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/fs_regen_driver.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/fs_regen_jazz.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g1_composing.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g1_decode_tests.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g1_notation.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g1_one_decode.err"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g1_one_decode.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g1_snapshots.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g2_composing.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g2_decode_tests.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g2_notation.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/g2_snap.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_after_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_after_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_after_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_before_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_before_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_before_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_check.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/gate_setdiff.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/grade_g1_after.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/grade_g1_before.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/grade_g2_after.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/grade_g2_before.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/grade_g2iso.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/grade_step0.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/guitarset_curl_err.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/guitarset_dl_err.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/guitarset_zenodo.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/harvest_final.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/harvest_final2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/harvest_final3.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/harvest_run1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/harvest_run2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/harvest_run3.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_LIST.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_branch.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_dl.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_err.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_lists.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_repo.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_repos.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_repos_final.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_root.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/hd_tree.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/humdrum_data_closure_71repos.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/humdrum_gitmodules.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/humdrum_gitmodules2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/keyparse_probe.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/l4.err"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/l4.patch"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/l5.err"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/l5.patch"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/l5_smoke.err"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/l5_smoke.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/line_hits.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ninja_direct.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation.cobertura.xml"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_after.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_final.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_full.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_run.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_step1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_test.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_test2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/notation_tests_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/oi357_production_arm/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/oi357_production_arm_legacy_control/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ours_A/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ours_B/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/ours_check_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/parse_cov.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/parse_merge.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/pdmx_inspect.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/pipeline_snapshot_tests_out.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/quote_verify.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/quote_verify2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/reg_A.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/reg_B.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/reg_pre_acq.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/reg_run1.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/reg_run1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/reg_run2.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_baroque_l5.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_default.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_default_l5.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_driver.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_g2_baroque.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_jazz.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/regen_jazz_l5.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/rel_tests.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/repro30.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/repro_block.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/repro_check/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/s5_2b_task1_tables.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/set_baroque.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/set_default.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/set_jazz.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/setdiff.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/sm_comp.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/sm_notation.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/sm_snap.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/smoke.err"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/smoke.json"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/smoke_and_cadence.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_after.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_final.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_full.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_run.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_step1.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_test.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snap_test2.log"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/snapshot_full.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/stepM_analysis_all.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/stepM_analysis_test.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/stepM_analyze.py"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/stepM_l5_measure.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/taskB_run.sh"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/u1_byteid/"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/u1_composing_tests.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/u1_pipeline_snap.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/v2_composing.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/v2_notation.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/v2_snap.txt"
+    },
+    {
+      "code": "??",
+      "path": "scratch_artifacts/wjd_curl_err.txt"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/derivation_exemplars/"
+    },
+    {
+      "code": "??",
+      "path": "tools/audit/l2_candidate_list.json"
+    }
+  ],
+  "establishment": "tools/audit/changed_paths_establishment.json"
+}
