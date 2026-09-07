@@ -15,7 +15,12 @@
 | Task 0 | `665aa83f96bd96a8528cd8735c3f92bff0f7cac6` | 3 | 760 insertions, **0 deletions** — all additions |
 | Task 1 | `14595644da99ead1dd8430e5714a03fdae4b2488` | 4 | 186 insertions, 64 deletions |
 | Task 2 | `acf91d340ebd597cc8803feed211e14945f87b44` | 4 | 121 insertions, 8 deletions; `OPEN_ITEMS.md` **+1 line, 0 deletions** |
-| Task 3, the close | recorded in the end-state commit — **a commit cannot carry its own hash, and no value is invented here** | — | — |
+| Task 3, the close | `31dc1e5d88eb297538b04d2574de520b20cadb19` | 7 | 450 insertions, 44 deletions |
+
+*The close-tip cell above carried a named marker from first drafting until the hash had been read at
+`.git/refs/heads/master` and verified with `git show --stat` by explicit hash; it is filled in by the
+end-state commit that follows the close, because a commit cannot carry its own hash. **No value was
+invented at any point in this batch.***
 
 The tip at session start was read at `.git/refs/heads/master` with the file tools:
 `911f5f7cdaa3fb53b9b5a2bdefb82e793c65eafb`, agreeing with the dispatch. Every task commit's hash was
