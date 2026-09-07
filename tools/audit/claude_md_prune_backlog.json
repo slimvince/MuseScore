@@ -1,0 +1,194 @@
+{
+ "what_this_is": "THE PRUNE-AT-AMENDMENT BACKLOG IN `CLAUDE.md`: every span the ruled archivability test places at this act's pin — including, for the first time, the spans that say their OWN former wording is preserved IN PLACE, which is the pattern rule (D) supersedes and which no earlier recognizer looks for — READ WHOLE before anything moves, with the mechanical proof of where each one stands. Every figure here is computed; none is transcribed (D-431).",
+ "generated_by": "tools/audit/gen_claude_md_prune_backlog.py",
+ "dispatch": "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md, Task 2",
+ "the_order_it_executes": "the user, 2026-09-07: \"1. tidy the mess that was caused by this rule not being followed. 2. make sure this rule is being followed from now on.\" The rule is the CONTINUOUS-PRUNING rule, cowork_rulings_2026_08_16_preparation_return.md §5(D).",
+ "measured_at_commit": "d125281a43192f23a65711199b3ccc27f7f07356",
+ "performed_on_top_of_commit": "87b830889d5471ea067be395de72a2ec28b5dad3",
+ "★_why_the_reading_is_pinned": {
+  "what_that_commit_is": "Task 0 of `cc_instruction_claude_md_prune_at_amendment_2026_09_07.md`, pushed before any of this batch's reading began",
+  "the_reason": "the file is read at a git OBJECT so this act's own writes cannot move the measurement under it, and the subject file is proven byte-identical between the pin and the base commit rather than assumed to be."
+ },
+ "the_reading_test_applied": "A span MOVES only when (1) it IS, read whole, a record of the kind its class names — a span that merely POINTS AT such material preserved elsewhere fails this half — and (2) no part of it states a rule, a STOP condition, a live caveat or a prohibition that a working session acts on today. Anything else stays: the ruled doubt default (§5(E) of `cowork_rulings_2026_08_16_preparation_return.md`), whose recorded ground is that a wrongly archived operative span fails silently while wrongly kept noise fails visibly and cheaply. The test is IMPORTED from the executed split, which is the discipline every archiving act on these files has run under.",
+ "★_the_recognizer_this_act_adds": {
+  "what_it_looks_for": "a span saying that ITS OWN former wording is kept where it stands — the preserve-in-place pattern rule (D) supersedes.",
+  "the_phrasings": [
+   "(?i)\\bpreserved in place\\b",
+   "(?i)\\bstands? in place\\b",
+   "(?i)\\bpreserved under #12\\b",
+   "(?i)\\bformer text, preserved\\b"
+  ],
+  "where_they_come_from": "a search of the five governing files at this act's pin for the shape rule (D) supersedes. They are the phrasings the record uses; none was added on the strength of what a document might say.",
+  "★_what_it_deliberately_does_NOT_match": "a span recording a supersession as a POINTER to where the former text now lives. That is rule (D) working, not a breach of it — the rule fixes HOW a supersession is recorded, and does not forbid recording one.",
+  "the_standing_pointer_constraint_applies_to_it": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17",
+  "the_date_rule_D_was_ruled": "2026-08-16"
+ },
+ "★_what_is_imported_rather_than_re_decided_(#6)": {
+  "the_span_cut_the_classifier_and_the_pointer_constraint": "gen_claude_md_finer_spans.py — `CLAUDE.md`'s own ruled unit",
+  "the_ruled_classes": "gen_governing_surface_spans.py",
+  "the_compact_dated_pointer_shape": "gen_governing_surface_split.py",
+  "the_six_settled_spans": "gen_claude_md_finer_archive.py, its own ruled population read at its own pin"
+ },
+ "the_exclusions_taken_before_any_reading": {
+  "settled_at_the_two_return_sittings": 5,
+  "an_archive_pointer_left_by_a_previous_act": 0
+ },
+ "the_totals": {
+  "candidates": 2,
+  "spans_moved": 0,
+  "spans_left_at_site_by_the_reading": 2,
+  "characters_moved": 0,
+  "characters_left_at_site_by_the_reading": 5282,
+  "base_characters": 156659,
+  "moved_plus_kept_accounts_for_the_base_blob_to_the_character": true
+ },
+ "the_moved": [],
+ "the_left_at_site_by_the_reading": [
+  {
+   "first_line_at_the_pin": 1603,
+   "last_line_at_the_pin": 1631,
+   "kind": "star-marked sub-block",
+   "characters": 2685,
+   "the_class": "preserved-former-wording",
+   "how_it_was_placed": "this act's PRESERVE-IN-PLACE recognizer — the pattern rule (D) supersedes, which no earlier recognizer looks for",
+   "the_evidence": {
+    "the_marker_matched": "PRESERVED IN PLACE",
+    "markers_found_outside_every_archive_pointer": 1
+   },
+   "the_date_the_span_carries": "2026-08-15",
+   "the_opening": "**★ THE THREE-PHASE STRUCTURE BELOW IS SUPERSEDED AND ITS TRUTH HALF IS REPLACED (user-ruled 2026-08-15; the ruling record is `cowork_rulings_2026_08_15_phase_d",
+   "the_verdict": "STAYS AT SITE — flagged by the reading (A3)",
+   "why": "★ FAILS TEST (1) AND TEST (2), AND TEST (2) COMPREHENSIVELY. Read whole, the span is two things and the first of them is live. Lines 1603-1624 are the SUPERSESSION STATEMENT itself: they state the governing structure — six phases, preparation through the audit, with the fix plan after it unchanged — they state the rule that replaced the truth half, in words that say of themselves that it \"must bind even a session that reads nothing else\", they impose the per-phase recorded retrospective, they fix the standing of every embedded sub-ruling one by one, and they fix how the abbreviation HEAD is read in the text below. A working session acts on all five. Lines 1625-1631 are the opening of the preserved former three-phase text, which IS archive material. ★ SO THE SPAN IS A LIVE STATEMENT THAT CARRIES THE OPENING OF A PRESERVED ONE, which fails test (1) — it is not a record of the kind its class names — and archiving it would delete the governing structure from the file. ★ WHAT WOULD BE NEEDED TO REACH THE PRESERVED HALF, stated rather than attempted: a cut that separates a preserved wording from the live statement announcing it. This act does not take it. The record's two span units were each commissioned by a ruling with measured evidence behind it, and inventing a third to reach one span is the stretched judgment the ruled doubt default exists to prevent.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself",
+   "text_sha256": "86a10e6fe5739e2fc9b8c36c751f576b72e4816bb3b5aa47631a8098f2e150fc"
+  },
+  {
+   "first_line_at_the_pin": 1720,
+   "last_line_at_the_pin": 1749,
+   "kind": "star-marked sub-block",
+   "characters": 2597,
+   "the_class": "preserved-former-wording",
+   "how_it_was_placed": "this act's PRESERVE-IN-PLACE recognizer — the pattern rule (D) supersedes, which no earlier recognizer looks for",
+   "the_evidence": {
+    "the_marker_matched": "Former text, preserved",
+    "markers_found_outside_every_archive_pointer": 2
+   },
+   "the_date_the_span_carries": "2026-08-03",
+   "the_opening": "**★ NOTE ON PHASE 2 — THE ENUMERATION THIS CLAUSE POINTS AT IS RATIFIED (user, 2026-08-03; D-439).** `cowork_oi200_perspective_inventory.md` §4 is the ONE home ",
+   "the_verdict": "STAYS AT SITE — flagged by the reading (A3)",
+   "why": "★ FAILS TEST (1) AND TEST (2), on the same shape as the span above and with a smaller live half. Read whole, lines 1720-1733 are the LIVE ratification note — `cowork_oi200_perspective_inventory.md` §4 named as the ONE home for the enumerated discovery channels, and which of its channels the phase-2 clause reaches — and its second half is the operative one: **what the ratification did NOT do**. That the inventory's §6 program is not adopted, that [[OI-200]] is not pulled forward, that the document's §9 request stays open and untaken, that no probe, fix, design or inference change is authorized, and that phase 1 is not complete. A session reading this clause acts on every one of those. Lines 1734-1749 are the preserved former text of the same note, marked as such in its own opening words, and they ARE archive material under §5(E)'s own naming. ★ THE SPAN IS THEREFORE MIXED, fails test (1) as a whole, and stays — the same conclusion and the same missing cut as the span above. ★ WHAT IS NOT CLAIMED: that the preserved half is unarchivable. What is claimed is what test (1) asks — read WHOLE, this span is not a preserved former wording.",
+   "how_the_verdict_was_made": "authored per span, read in the file itself",
+   "text_sha256": "2cdd98eb81b111dc9982dee1691740a363fc9821c3f1d3f3a23ecb850c426253"
+  }
+ ],
+ "reconciliation": {
+  "every_moved_span_is_byte_present_in_the_companion_exactly_once": true,
+  "every_moved_span_is_absent_from_the_parent": true,
+  "every_span_the_reading_flagged_is_still_present_at_site_exactly_once": true,
+  "no_span_the_reading_flagged_is_in_the_companion": true,
+  "the_base_blob_sha256": "924c6b9ec41c81054b6001f27934e9dd4aa384a9fe75adc8b914eafb8eb08a9e",
+  "★_which_direction_carries_the_weight_here": "the third and fourth. Where the reading keeps most or all of its candidates, a check that only proved the moves would be green at a tree where a refusal had been overridden — so what is asserted hardest is that every flagged span is still exactly where the reading left it.",
+  "★_the_line_ending_form_was_normalised_before_any_of_these_decided": true
+ },
+ "the_coarse_unit_reconciled": {
+  "what_this_is": "every span the FRESH COARSE decomposition places in an archive class for this file, and how this act accounts for it. A span it cannot account for STOPS the run, so the two units cannot quietly disagree about what the file holds.",
+  "coarse_archive_class_spans": 11,
+  "the_spans": [
+   {
+    "coarse_first_line": 53,
+    "coarse_last_line": 60,
+    "the_coarse_class": "defense-and-declined-alternatives",
+    "characters": 845,
+    "how_this_act_accounts_for_it": "settled at the seventh- or eighth-return sitting; re-proposing it is forbidden",
+    "the_opening": "**★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6).** R3's clause that an apparatus finding's row is **mandatory** no longer holds for a finding the worth te"
+   },
+   {
+    "coarse_first_line": 202,
+    "coarse_last_line": 238,
+    "the_coarse_class": "preserved-former-wording",
+    "characters": 3299,
+    "how_this_act_accounts_for_it": "settled at the seventh- or eighth-return sitting; re-proposing it is forbidden",
+    "the_opening": "**★ THAT PARAGRAPH REPLACED A NARROWER ONE, AND THE FORMER WORDING STANDS IN PLACE (#12; user-ruled 2026-08-11 on a surface carrying three alternatives with the"
+   },
+   {
+    "coarse_first_line": 388,
+    "coarse_last_line": 418,
+    "the_coarse_class": "defense-and-declined-alternatives",
+    "characters": 2930,
+    "how_this_act_accounts_for_it": "settled at the seventh- or eighth-return sitting; re-proposing it is forbidden",
+    "the_opening": "**★ AND WHAT SUCH A ROW IS OWED — IT STOPS BEING OWED, WITH A PER-ROW LAPSE RECORD (user-ruled 2026-08-11; the ruling record is `cowork_rulings_2026_08_11_fifte"
+   },
+   {
+    "coarse_first_line": 477,
+    "coarse_last_line": 477,
+    "the_coarse_class": "defense-and-declined-alternatives",
+    "characters": 167,
+    "how_this_act_accounts_for_it": "an archive pointer left by a previous act — the standing pointer constraint keeps it at site, and the finer classifier places it there positively",
+    "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 8 line(s), `defense-and-declined-alternatives`, opening \"**THE THREE ALTERNATIVES DECLINED, recorded because an ex"
+   },
+   {
+    "coarse_first_line": 479,
+    "coarse_last_line": 479,
+    "the_coarse_class": "defense-and-declined-alternatives",
+    "characters": 167,
+    "how_this_act_accounts_for_it": "an archive pointer left by a previous act — the standing pointer constraint keeps it at site, and the finer classifier places it there positively",
+    "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 4 line(s), `defense-and-declined-alternatives`, opening \"**THE COSTS THE USER ACCEPTED, stated before the ruling a"
+   },
+   {
+    "coarse_first_line": 490,
+    "coarse_last_line": 649,
+    "the_coarse_class": "preserved-former-wording",
+    "characters": 15395,
+    "how_this_act_accounts_for_it": "the finer classifier does not place it in an archive class — at the finer cut the span carries no admissible marker, which is finding F33's answer working",
+    "the_opening": "**The register is `DECISIONS.md` (the lean INDEX) + `decisions/group_<X>.md` (full entries: the verbatim decision, plain restatement, why, status, home, provena"
+   },
+   {
+    "coarse_first_line": 858,
+    "coarse_last_line": 858,
+    "the_coarse_class": "self-declared-historical-or-superseded",
+    "characters": 172,
+    "how_this_act_accounts_for_it": "an archive pointer left by a previous act — the standing pointer constraint keeps it at site, and the finer classifier places it there positively",
+    "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 5 line(s), `self-declared-historical-or-superseded`, opening \"**Superseded columns preserved (#12):** the OI-168 L"
+   },
+   {
+    "coarse_first_line": 860,
+    "coarse_last_line": 880,
+    "the_coarse_class": "self-declared-historical-or-superseded",
+    "characters": 2231,
+    "how_this_act_accounts_for_it": "settled at the seventh- or eighth-return sitting; re-proposing it is forbidden",
+    "the_opening": "*★ [SUPERSEDED by the OI-178 adoption 2026-07-26 — historical] THE OI-168 RE-BASELINE (2026-07-14; report `cc_oi168_fix_report.md`; outgoing reference preserved"
+   },
+   {
+    "coarse_first_line": 1072,
+    "coarse_last_line": 1108,
+    "the_coarse_class": "self-declared-historical-or-superseded",
+    "characters": 3642,
+    "how_this_act_accounts_for_it": "settled at the seventh- or eighth-return sitting; re-proposing it is forbidden",
+    "the_opening": "**★ A-8 DUAL-TRACK (MEASURED + RATIFIED, user, 2026-07-03; `cc_a8_rebaseline_measure_report.md`).** The **primary reported metric AND the Stage-5 fitting-object"
+   },
+   {
+    "coarse_first_line": 1153,
+    "coarse_last_line": 1153,
+    "the_coarse_class": "self-declared-historical-or-superseded",
+    "characters": 105,
+    "how_this_act_accounts_for_it": "a BARE SECTION HEADING, which the finer classifier places positively at site: archiving it would move the heading while its section body stayed",
+    "the_opening": "### (C) RETROSPECTIVE — the batch 52/24/52 stop (superseded at R10-b, 2026-07-06 — historical reference)"
+   },
+   {
+    "coarse_first_line": 1814,
+    "coarse_last_line": 1836,
+    "the_coarse_class": "preserved-former-wording",
+    "characters": 1989,
+    "how_this_act_accounts_for_it": "settled at the seventh- or eighth-return sitting; re-proposing it is forbidden",
+    "the_opening": "**★ THE RULE COVERS EVERY READ MECHANISM AND EVERY DIALECT (recorded 2026-08-08 on the user's direction, at the third measured instance family).** The restricti"
+   }
+  ]
+ },
+ "★_what_this_act_does_NOT_do": [
+  "It changes no rule `CLAUDE.md` states: a span that states a live rule, its bounding purpose, a live caveat or a STOP stays at site, and doubt keeps a span at site.",
+  "It does not touch the pinned first-wave decomposition or the first wave's tool, so the two archive pointers citing that tool's --check go on proving what they say.",
+  "It prunes no governing document other than `CLAUDE.md`.",
+  "It creates, flips or discards NO open-items row.",
+  "It re-proposes none of the six spans the two return sittings settled."
+ ]
+}

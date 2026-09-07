@@ -1313,6 +1313,26 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "accounts for the net, and the blob-identity comparison is what bounds the rest — a "
         "residual the artifact publishes of itself rather than leaving to be discovered."),
 
+    # ---- AUTHORED 2026-09-07, cc_instruction_claude_md_prune_at_amendment_2026_09_07.md Task 2 -
+    "tools/audit/gen_claude_md_prune_backlog.py": (
+        LIVE, "gen_claude_md_prune_backlog.py, THE STOPS of its module docstring; `candidates()`, "
+              "which re-cuts and re-classes the file at every run and re-derives the exclusions; "
+              "`build()`, which re-reads both live files; `coarse_reconciliation()`, which places "
+              "every coarse archive-class span against this act's own population",
+        "LIVE. Three of its four reconciliation directions are re-answered against the tree AS IT "
+        "STANDS on every run, and the two that matter most here are the KEEP directions: this "
+        "act's reading kept both of its candidates, so a later edit that archived a flagged span "
+        "anyway, or that removed one from the file, fails on the day it happens. Its population is "
+        "re-derived rather than listed — the cut and the classifier are imported and re-run, the "
+        "six settled spans are re-read from the committed record of the acts that settled them, "
+        "and the fresh coarse decomposition is re-reconciled span by span with a STOP on any span "
+        "it cannot place. ★ ONE HALF IS DELIBERATELY FIXED AND IT IS NOT A DATED READING EITHER: "
+        "WHICH spans this act read, and their text, are statements about the file as it stood when "
+        "the act ran, so both are read from git objects rather than from a file that legitimately "
+        "grows — the same epoch pattern the split and the residue move use (D-646). ★ WHAT IT DOES "
+        "NOT ASSERT: that a span left at site is unarchivable, or that the backlog is cleared. The "
+        "reading verdicts are authored judgments published beside the spans they kept."),
+
     # ---- guards that live outside tools/audit -------------------------------------------------
     "tools/open_items_split_check.py": (
         LIVE, "open_items_split_check.py:9-13",

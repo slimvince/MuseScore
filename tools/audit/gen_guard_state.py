@@ -925,6 +925,28 @@ AUTHORED = [
      "per-commit nets not summing to the difference between the two ends' line counts halts it, "
      "which is what makes the enumeration COMPLETE rather than merely non-empty"),
 
+    # ---- AUTHORED 2026-09-07, cc_instruction_claude_md_prune_at_amendment_2026_09_07.md Task 2 -
+    # Registered in the act that creates the tool — the standing new-tool rule. `--check` and never
+    # the bare invocation, for the ordinary reason: run with no flag it REWRITES its committed
+    # artifact; and never `--apply`, which is the act itself.
+    ("tools/audit/gen_claude_md_prune_backlog.py", ["--check"],
+     "where every span of the prune-at-amendment wave's own population actually stands: the spans "
+     "the ruled archivability test places at that act's pin — including, for the first time, the "
+     "spans saying their OWN former wording is preserved IN PLACE, the pattern rule (D) supersedes "
+     "— the reading verdict authored for each, and, in four directions, that every moved span is "
+     "byte-present in `CLAUDE_ARCHIVE.md` exactly once and absent from the parent, and every span "
+     "the reading LEFT AT SITE is still byte-present at site exactly once and in the companion not "
+     "at all. THE LAST TWO CARRY THE WEIGHT HERE, because the reading kept both of its candidates: "
+     "a check that only proved moves would be green at a tree where a refusal had been overridden. "
+     "The population is DERIVED on every run — the cut, the classifier and the pointer constraint "
+     "imported from the finer pass, the six settled spans from the committed record of the two "
+     "return sittings — and the FRESH COARSE decomposition is reconciled against it span by span, "
+     "so the two units cannot quietly disagree about what the file holds. Its STOPs ride with it: "
+     "a candidate with no authored reading verdict, a verdict naming a span the derivation does "
+     "not carry, the subject file differing between the measurement pin and the base commit, and a "
+     "coarse archive-class span the reconciliation cannot account for. ★ WHAT IT DOES NOT ASSERT: "
+     "that a span left at site is unarchivable — only what the imported reading test asks of each"),
+
     ("tools/audit/gen_reserved_word_scanner.py", None,
      "NOT RUN, and the reason is about the tool rather than about its result: it is the ADVISORY "
      "reserved-word inventory the user's Ruling 31 of 2026-08-09 licensed, and its STOP — a derived "

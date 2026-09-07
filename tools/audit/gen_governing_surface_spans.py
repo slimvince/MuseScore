@@ -298,12 +298,12 @@ def git(*args: str) -> str:
     return proc.stdout.decode("utf-8", "replace")
 
 
-def measure(filename: str) -> dict:
+def measure(filename: str, commit: str = PINNED_COMMIT) -> dict:
     try:
-        text = git("show", f"{PINNED_COMMIT}:{filename}")
+        text = git("show", f"{commit}:{filename}")
     except Stop:
         raise Stop(f"a file the ruling names for the measurement is not in the tree at the pinned "
-                   f"commit {PINNED_COMMIT[:10]}: {filename}")
+                   f"commit {commit[:10]}: {filename}")
     total_characters = len(text)
 
     rows, by_class, doubt_characters = [], {}, 0
@@ -347,8 +347,19 @@ def measure(filename: str) -> dict:
     }
 
 
-def build() -> dict:
-    per_file = [measure(name) for name in FILES]
+def build(commit: str = PINNED_COMMIT, commit_is: str = PINNED_COMMIT_IS,
+          dispatch: str = "cc_instruction_preparation_fifth.md, Task 2") -> dict:
+    """The decomposition at ONE commit.
+
+    ★ THE THREE ARGUMENTS ARE WHAT LETS A LATER PRUNING WAVE TAKE ITS OWN MEASUREMENT, and they
+    exist because this file's own pinning comment says a later wave does exactly that. Their
+    DEFAULTS are the first wave's, so a call with no arguments reproduces the committed artifact
+    byte for byte and `--check` is unaffected. What a later wave may NOT do is repoint the frozen
+    artifact: the split tool STOPs unless `governing_surface_spans.json` carries the first wave's
+    own pin, and that STOP is the thing keeping two archive pointers' `--check` citations honest.
+    A later wave therefore writes to its OWN path with `--out`, which changes nothing here.
+    """
+    per_file = [measure(name, commit) for name in FILES]
     return {
         "what_this_is":
             "THE FIVE MANDATORY-READ FILES, DECOMPOSED SPAN BY SPAN AND CLASSED, with byte counts "
@@ -356,10 +367,10 @@ def build() -> dict:
             "decided, and nothing is moved. It is the first of the two artifacts the ruled "
             "read-only pruning batch delivers.",
         "generator": "tools/audit/gen_governing_surface_spans.py",
-        "dispatch": "cc_instruction_preparation_fifth.md, Task 2",
-        "measured_at_commit": PINNED_COMMIT,
+        "dispatch": dispatch,
+        "measured_at_commit": commit,
         "★_why_the_reading_is_pinned": {
-            "what_that_commit_is": PINNED_COMMIT_IS,
+            "what_that_commit_is": commit_is,
             "the_reason": "This artifact is EVIDENCE FOR A RULING — the user rules the surface "
                           "generated from it — so it may not move under the ruling it supports. "
                           "Measured rather than anticipated: taken at the working tree, it went "
@@ -424,20 +435,40 @@ def main(argv: list[str]) -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--check", action="store_true",
                     help="re-derive the decomposition and report whether the artifact matches")
+    ap.add_argument("--commit", default=PINNED_COMMIT,
+                    help="measure at this commit instead of the first wave's pin (a later "
+                         "pruning wave takes its own measurement, which this file's own pinning "
+                         "comment provides for)")
+    ap.add_argument("--commit-is", default=PINNED_COMMIT_IS,
+                    help="what that commit is, published in the artifact")
+    ap.add_argument("--dispatch", default="cc_instruction_preparation_fifth.md, Task 2",
+                    help="the act this measurement is taken for, published in the artifact")
+    ap.add_argument("--out", default=None,
+                    help="write to this path instead of the first wave's artifact. A later wave "
+                         "MUST use it: the split tool STOPs unless the committed artifact carries "
+                         "the first wave's own pin, so repointing that file would leave two "
+                         "archive pointers' --check citations proving nothing")
     args = ap.parse_args(argv)
 
-    text = json.dumps(build(), indent=1, ensure_ascii=False) + "\n"
+    out = (Path(args.out) if Path(args.out).is_absolute() else ROOT / args.out) \
+        if args.out else OUT
+    if args.out and out.resolve() == OUT.resolve():
+        raise Stop("--out names the first wave's own artifact. That file is the pinned record the "
+                   "split tool STOPs on; a later wave writes to its own path.")
+
+    text = json.dumps(build(args.commit, args.commit_is, args.dispatch),
+                      indent=1, ensure_ascii=False) + "\n"
     if args.check:
-        have = OUT.read_text(encoding="utf-8") if OUT.exists() else ""
+        have = out.read_text(encoding="utf-8") if out.exists() else ""
         if have != text:
             print("STALE: the governing-surface span decomposition does not re-derive")
             return 1
         print("the governing-surface span decomposition re-derives")
         return 0
 
-    OUT.write_text(text, encoding="utf-8", newline="")
+    out.write_text(text, encoding="utf-8", newline="")
     data = json.loads(text)
-    print("wrote", OUT.relative_to(ROOT).as_posix())
+    print("wrote", out.relative_to(ROOT).as_posix())
     for f in data["per_file"]:
         print(f"  {f['file']:<20} {f['characters']:>8,} characters, {f['spans']:>5} spans, "
               f"{f['characters_placed_by_the_doubt_default']:>8,} by the doubt default")
