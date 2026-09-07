@@ -3,21 +3,26 @@
  "generated_by": "tools/audit/gen_session_start_read_size.py",
  "generated_for": "cc_instruction_preparation_tenth.md, Task 2, step 6",
  "how_a_key_span_is_counted": "the artifact is written with one-space indentation, so a key's span runs from the line that opens it to the line that opens the next key at the SAME indentation, and the size is the characters of that span — what a reader reads, not a re-serialisation",
- "what_is_authored": "the membership of whole documents, each with the clause in `CLAUDE.md` that makes it a member",
- "what_is_derived": "the artifact-and-key pointer, parsed from rule (a)'s own clause, so a later narrowing moves this measurement without editing this tool; every character count; the total; and each earlier reading",
+ "★_how_a_span_of_claude_md_is_counted_and_how_each_is_located": "every span is named by its HEADING and never by a line number (D-307), and a heading must be found EXACTLY ONCE in heading form or the run STOPs. A span runs from its heading through the line before the next heading at the same or a higher level, with trailing blank lines dropped, and its size is the characters of those lines joined by newlines — what a reader actually reads. Two spans are not headings and are located by the anchors the membership block itself quotes: the session-start read block, which has no heading of its own, and the close of the Guiding principles span. An anchor is sought OUTSIDE the membership block, because the block quotes the anchors it names spans by and the naming is not the thing named.",
+ "★_what_an_ordinary_session_reads_of_claude_md_and_why_it_stopped_being_the_whole_file": "the user ruled on 2026-09-07 what a session reads OF `CLAUDE.md` itself: SIX spans at session start, EIGHT read only when the session's work touches them. Until this repair this tool measured the WHOLE FILE as an ordinary session's read, which after that ruling counts eight CONDITIONAL spans into a read no ordinary session takes — the same error the conditional-read statement below already refuses for `BUILD_AND_TEST.md`. `--check` could not see it: it re-derives this artifact and compares rendered text, so a fault in the DEFINITION of what is measured re-derives identically and the check passes while the measurement overstates (#19). The measured difference is published at `at_the_tree` → `the_reading_of_claude_md`.",
+ "what_is_authored": "the membership of whole documents; two of the three carry the clause in `CLAUDE.md` that makes them members, and `CLAUDE.md`'s own clause is DERIVED from its membership block rather than retyped here",
+ "what_is_derived": "the artifact-and-key pointer, parsed from rule (a)'s own clause, so a later narrowing moves this measurement without editing this tool; what an ordinary session reads OF `CLAUDE.md`, parsed from that file's own membership block on the same idiom — every span name, every heading and every anchor; every character count; the total; and each earlier reading",
  "★_the_further_spans_and_why_they_are_here": "TWO FURTHER SPANS of the SAME artifact rule (a) points at are measured beside the read and are NEVER summed into it. They are the two of Ruling 3's five published figures this tool did not previously derive — the 216 gating rows' recorded grounds, and the comparison with the frozen record — and they are here because a correction ordered BY CITATION cannot be made to a figure no generator produces (D-431). A session reads the ANSWER at boot and opens these to challenge a verdict, which is why counting them would report a read no ordinary session takes.",
  "the_membership": [
   {
    "document": "CLAUDE.md",
-   "the_clause_that_makes_it_a_member": "the project instructions themselves, which every clause below is written in"
+   "the_clause_that_makes_it_a_member": "★ AND THIS IS WHAT A SESSION READS OF `CLAUDE.md` ITSELF — SIX SPANS AT SESSION START, EIGHT READ ONLY WHEN THE SESSION'S WORK TOUCHES THEM (user-ruled 2026-09-07).",
+   "how_much_of_it_an_ordinary_session_reads": "ruled membership"
   },
   {
    "document": "STATUS.md",
-   "the_clause_that_makes_it_a_member": "`CLAUDE.md`, the build-and-test section's opening list: \"Always read these two files at the start of every session\""
+   "the_clause_that_makes_it_a_member": "`CLAUDE.md`, the build-and-test section's opening list: \"Always read these two files at the start of every session\"",
+   "how_much_of_it_an_ordinary_session_reads": "the whole file"
   },
   {
    "document": "DECISIONS.md",
-   "the_clause_that_makes_it_a_member": "the same list, and the decisions register's own rule (a) — \"read the INDEX `DECISIONS.md` at session start\" — explicitly NOT demoted to a conditional read on 2026-08-17"
+   "the_clause_that_makes_it_a_member": "the same list, and the decisions register's own rule (a) — \"read the INDEX `DECISIONS.md` at session start\" — explicitly NOT demoted to a conditional read on 2026-08-17",
+   "how_much_of_it_an_ordinary_session_reads": "the whole file"
   }
  ],
  "a_conditional_read_is_not_a_member": "`BUILD_AND_TEST.md`, `docs/scoring_model.md` and the joint estimator's section of `ARCHITECTURE.md` are read by the sessions their conditions name and not by an ordinary one, which is what CONDITIONAL means. Counting them would report a read no ordinary session takes.",
@@ -30,13 +35,152 @@
    ],
    "clause_characters": 603
   },
+  "the_regime_this_reading_was_taken_under": "ruled membership",
+  "the_reading_of_claude_md": {
+   "regime": "ruled membership",
+   "why_this_regime": "this `CLAUDE.md` carries the membership block, so the read is the six spans it names at session start and nothing else of the file",
+   "the_clause_that_makes_it_a_member": "★ AND THIS IS WHAT A SESSION READS OF `CLAUDE.md` ITSELF — SIX SPANS AT SESSION START, EIGHT READ ONLY WHEN THE SESSION'S WORK TOUCHES THEM (user-ruled 2026-09-07).",
+   "characters": 97805,
+   "the_session_start_spans": [
+    {
+     "name": "Guiding principles",
+     "kind": "session start",
+     "located_by": "the heading “## Guiding principles”, closed at the paragraph the membership names — the one opening “Delegation pointer”",
+     "the_close_is_also_the_end_of_its_section": true,
+     "characters": 26862,
+     "lines": 309
+    },
+    {
+     "name": "The open-items register",
+     "kind": "session start",
+     "located_by": "the heading “## The open-items register (user-directed, 2026-07-10; split into index + detail files, user-ratified 2026-07-26)”",
+     "characters": 14630,
+     "lines": 174
+    },
+    {
+     "name": "The decisions register",
+     "kind": "session start",
+     "located_by": "the heading “## The decisions register (shape user-ratified 2026-07-28; content + living surface 2026-08-02)”",
+     "characters": 16971,
+     "lines": 178
+    },
+    {
+     "name": "This block",
+     "kind": "session start",
+     "located_by": "the two anchors the membership itself quotes — from “Always read these two files at the start of every session:” through the paragraph ending “…NOT part of the session-start read.”",
+     "characters": 5096,
+     "lines": 69
+    },
+    {
+     "name": "Conventions",
+     "kind": "session start",
+     "located_by": "the heading “## Conventions”",
+     "characters": 33487,
+     "lines": 372
+    },
+    {
+     "name": "The self-check after every coding exercise",
+     "kind": "session start",
+     "located_by": "the heading “## The self-check after every coding exercise (user-directed, 2026-07-11)”",
+     "characters": 759,
+     "lines": 10
+    }
+   ],
+   "the_conditional_spans_measured_beside_the_read_and_never_summed_into_it": [
+    {
+     "name": "Project context",
+     "kind": "conditional",
+     "located_by": "the heading “## Project context”",
+     "the_condition_that_calls_for_it": "a session that touches the composing module, or that needs the full project-context pointer",
+     "characters": 260,
+     "lines": 6
+    },
+    {
+     "name": "Autonomous operation — composing module",
+     "kind": "conditional",
+     "located_by": "the heading “## Autonomous operation — composing module”",
+     "the_condition_that_calls_for_it": "a session that edits code under the composing module, or that runs the standard loop for mismatch reduction work that section describes",
+     "characters": 1261,
+     "lines": 27
+    },
+    {
+     "name": "Build and test commands",
+     "kind": "conditional",
+     "located_by": "the heading “## Build and test commands”",
+     "the_condition_that_calls_for_it": "a session that builds, tests, or runs a measurement tool whose command lives there",
+     "the_qualifier_the_membership_writes_beside_the_name": "the command blocks below this block",
+     "characters": 6372,
+     "lines": 99,
+     "characters_shared_with_a_session_start_span": {
+      "This block": 5096
+     }
+    },
+    {
+     "name": "Gate threshold and preset policy",
+     "kind": "conditional",
+     "located_by": "the heading “## Gate threshold and preset policy”",
+     "the_condition_that_calls_for_it": "a session that measures the analysis, changes a gate or a threshold, re-baselines, or needs a ratified baseline",
+     "the_qualifier_the_membership_writes_beside_the_name": "including its blocks (A) to (D)",
+     "characters": 46650,
+     "lines": 524
+    },
+    {
+     "name": "Scoring model",
+     "kind": "conditional",
+     "located_by": "the heading “## Scoring model — `docs/scoring_model.md` (MANDATORY for scoring sessions)”",
+     "the_condition_that_calls_for_it": "unchanged — a session that touches scoring logic, which is that section's own standing condition",
+     "characters": 3560,
+     "lines": 54
+    },
+    {
+     "name": "Score corpora",
+     "kind": "conditional",
+     "located_by": "the heading “## Score corpora”",
+     "the_condition_that_calls_for_it": "any task involving scores",
+     "characters": 408,
+     "lines": 8
+    },
+    {
+     "name": "Local patches — do not revert",
+     "kind": "conditional",
+     "located_by": "the heading “## Local patches — do not revert”",
+     "the_condition_that_calls_for_it": "a session that edits MuseScore's own code, or that runs or reviews a dependency update",
+     "characters": 6638,
+     "lines": 100
+    },
+    {
+     "name": "VS Code extension — bash command rules",
+     "kind": "conditional",
+     "located_by": "the heading “## VS Code extension — bash command rules (MANDATORY for any session that runs bash commands)”",
+     "the_condition_that_calls_for_it": "any session that runs bash commands",
+     "characters": 3013,
+     "lines": 43
+    }
+   ],
+   "why_the_conditional_spans_are_not_summed_in": "each is read by the sessions its own condition names and not by an ordinary one, which is what CONDITIONAL means. Counting them would report a read no ordinary session takes — the same error this tool already refuses for `BUILD_AND_TEST.md`.",
+   "★_the_overstatement_this_repair_removes": {
+    "what_it_is": "until 2026-09-07 this tool measured `len(CLAUDE.md)` as an ordinary session's read of that file. Both values are measured HERE, at the same tree, so the difference is the overstatement itself and not an estimate.",
+    "the_former_measurement_the_whole_file": 160955,
+    "the_repaired_measurement_the_six_session_start_spans": 97805,
+    "characters_the_former_measurement_overstated_by": 63150
+   },
+   "★_the_reconciliation_against_the_block_itself_run_on_every_run": {
+    "how_it_runs": "both directions, and a mismatch in either is a STOP rather than a reported field: none in both, none in neither.",
+    "every_span_resolved_is_one_the_block_names": true,
+    "every_span_the_block_names_was_resolved": true,
+    "no_two_spans_share_a_name": true,
+    "spans_the_block_names": 14,
+    "spans_resolved": 14,
+    "what_it_does_not_establish": "that any span's BOUNDS are the ones the membership intends — what is established is that the two populations are the same and that every one resolved."
+   }
+  },
   "characters_per_member": {
-   "CLAUDE.md": 160955,
+   "CLAUDE.md": 97805,
    "STATUS.md": 15628,
    "DECISIONS.md": 127608,
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2813
   },
-  "total_characters": 307004,
+  "total_characters": 243854,
   "further_spans_of_the_same_artifact_NOT_counted_into_the_read": {
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows": {
     "characters": 62204,
@@ -58,6 +202,7 @@
   {
    "commit": "1760d9a4a87f82a6bdbc7cb17e99ccdd8ae4c433",
    "what_that_commit_is": "the preparation phase's NINTH batch terminus — the TENTH batch's own base, and the state rule (a)'s pointer was narrowed from",
+   "the_regime_this_reading_was_taken_under": "whole-file practice",
    "total_characters": 367121,
    "the_pointer_rule_a_named_there": {
     "artifact": "tools/audit/nongating_apparatus_rows.json",
@@ -65,6 +210,12 @@
      "★_the_live_gating_answer"
     ],
     "clause_characters": 390
+   },
+   "the_reading_of_claude_md_there": {
+    "regime": "whole-file practice",
+    "why_this_regime": "this `CLAUDE.md` carries no membership block, so the whole file was the read — the practice the file's own provenance sentence records as mandated by no clause until 2026-09-07",
+    "the_clause_that_makes_it_a_member": "none — the whole-file read was PRACTICE here, not a clause",
+    "characters": 153246
    },
    "characters_per_member": {
     "CLAUDE.md": 153246,
@@ -86,6 +237,7 @@
   {
    "commit": "594074e1e1900079e449d2b79a38920d21bca6e6",
    "what_that_commit_is": "the commit that narrowed rule (a)'s pointer — `cc_instruction_preparation_tenth.md` Task 2, the act this measurement was built to publish",
+   "the_regime_this_reading_was_taken_under": "whole-file practice",
    "total_characters": 296832,
    "the_pointer_rule_a_named_there": {
     "artifact": "tools/audit/nongating_apparatus_rows.json",
@@ -94,6 +246,12 @@
      "gating_ids"
     ],
     "clause_characters": 603
+   },
+   "the_reading_of_claude_md_there": {
+    "regime": "whole-file practice",
+    "why_this_regime": "this `CLAUDE.md` carries no membership block, so the whole file was the read — the practice the file's own provenance sentence records as mandated by no clause until 2026-09-07",
+    "the_clause_that_makes_it_a_member": "none — the whole-file read was PRACTICE here, not a clause",
+    "characters": 155067
    },
    "characters_per_member": {
     "CLAUDE.md": 155067,
@@ -117,20 +275,29 @@
   {
    "from_commit": "1760d9a4a87f82a6bdbc7cb17e99ccdd8ae4c433",
    "from_total": 367121,
-   "to_total": 307004,
-   "change_in_characters": -60117,
-   "change_percent": -16.38
+   "from_regime": "whole-file practice",
+   "to_total": 243854,
+   "to_regime": "ruled membership",
+   "change_in_characters": -123267,
+   "change_percent": -33.58,
+   "★_this_comparison_crosses_a_regime_boundary": true,
+   "what_that_means_here": "the two sides answer DIFFERENT questions — one side counts the whole of `CLAUDE.md` because that was the practice there, the other counts only the spans the ruled membership names — so the change is not a saving one act made, and must not be read as one"
   },
   {
    "from_commit": "594074e1e1900079e449d2b79a38920d21bca6e6",
    "from_total": 296832,
-   "to_total": 307004,
-   "change_in_characters": 10172,
-   "change_percent": 3.43
+   "from_regime": "whole-file practice",
+   "to_total": 243854,
+   "to_regime": "ruled membership",
+   "change_in_characters": -52978,
+   "change_percent": -17.85,
+   "★_this_comparison_crosses_a_regime_boundary": true,
+   "what_that_means_here": "the two sides answer DIFFERENT questions — one side counts the whole of `CLAUDE.md` because that was the practice there, the other counts only the spans the ruled membership names — so the change is not a saving one act made, and must not be read as one"
   }
  ],
  "what_this_does_not_assert": [
   "That the membership is complete — it is AUTHORED, and a mandatory read added to `CLAUDE.md` without being added here would not appear. Each member carries the clause it comes from so the authored half is checkable by reading three clauses.",
+  "That any span's BOUNDS are the ones the ruled membership intends. What is established is that the two populations are the same, that every named span resolved, and that no span was measured as a silent zero.",
   "That the read is small enough, which is [[OI-370]]'s own subject.",
   "That a session reads nothing else. A session opens the INDEX when it needs a row, the grounds when it challenges a verdict, and whatever its own dispatch orders; none of that is the session-start read."
  ]
