@@ -35,7 +35,7 @@ their four detail files.
 | Task 0 | `dc43e265b46efe35c92a6347dd26cc3f46863717` | 2 | 372 insertions, **0 deletions** — all additions |
 | Tasks 1 and 2 | `61e9e6e54d4bf3eead07927db830829091915f2e` | 2 | 622 insertions, 29 deletions |
 | Task 3 | `5ec1f97cb956488717af7f4cbfde6ffc4eb70a51` | 6 | 423 insertions, 8 deletions |
-| Task 4, the close | *filled in by the end-state commit* | — | — |
+| Task 4, the close | `890ba08b4c7bbfcaf6655f64acb888157759e773` | 7 | 551 insertions, 58 deletions |
 
 Every hash was verified with `git show --stat <sha>` by explicit hash after the commit, and each was
 pushed; each push exited 0. **No value was invented at any point.**
