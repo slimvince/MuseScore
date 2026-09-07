@@ -210,7 +210,21 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # `Last updated: ` from the text read at the base commit, and that stripped form exists in the live
 # file only once the prefix has moved up to the newest of this batch's own entries. Running the two
 # in the other order leaves the prefix where it is, matches nothing, and STOPs.
-BASE_COMMIT = "acf91d340ebd597cc8803feed211e14945f87b44"
+#
+# ★★★★★★★★★★★★★ RE-AIMED AGAIN 2026-09-07 by
+# `cc_instruction_claude_md_prune_at_amendment_2026_09_07.md` Task 4 — the close — and ALL SIX
+# authored inputs moved together, `PREVIOUS_AIMINGS` being appended to rather than replaced (#12).
+# This is an ORDINARY move: the forward clause performed on this batch itself, in the same act that
+# writes its own entries. The aiming it replaces is the forward-bound batch's seventh, which RAN.
+# `BASE_COMMIT` is this batch's LAST TASK COMMIT pushed before the close began — Task 4's row for
+# the prune-at-amendment finding — per this tool's docstring; the then-previous batch is the
+# forward-bound catch-up batch, whose close entry names it and whose three entries below it say
+# `Same dispatch`, so FOUR entries are expected to move. **THE DECLARED PREFIX ADJUSTMENT IS
+# EXPECTED TO FIRE**, which is why this batch's own entries were written into `STATUS.md` BEFORE
+# `--apply` ran. **The second writing's two nameless 2026-09-02 entries remain in `STATUS.md` and no
+# aiming of this tool can identify them**, as the row for the third writing below records; that is a
+# declared state and not a STOP, and it is unchanged by this act.
+BASE_COMMIT = "ff6ba36fddd4bdabdfda88c1fac6fd3b5e63fb03"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -220,7 +234,7 @@ BASE_COMMIT = "acf91d340ebd597cc8803feed211e14945f87b44"
 # 4's forward bound moves exactly these, in the act that writes this batch's own" until 2026-09-07,
 # correct while every aiming this tool had ever carried was an ordinary one; it is widened rather
 # than replaced, because the ordinary reading is still the one that governs an ordinary move — #12.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_l2_ruling_writeback_2026_09_05.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_status_forward_bound_second_2026_09_07.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -231,7 +245,7 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_l2_ruling_writeback_2026_09_05.md"
 # inferred. On a CATCH-UP move the dates of the closes that omitted the move are NOT the act date:
 # the move happens now, and the header says so.)*
 ACT_DATE = "2026-09-07"
-DISPATCH = "cc_instruction_status_forward_bound_second_2026_09_07.md"
+DISPATCH = "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -242,8 +256,10 @@ DISPATCH = "cc_instruction_status_forward_bound_second_2026_09_07.md"
 # sub-step and every previous aiming names a whole task. *(This comment named Task 3 while the seventh
 # comparison dispatch was the executing act, and Task 2 while the eighth, the ninth, the tenth and the
 # boot-pack-freeze dispatch were, each correct then; the numbered task differs per dispatch and is
-# re-stated with each re-aiming rather than left to be inferred.)*
-TASK = "Task 3"
+# re-stated with each re-aiming rather than left to be inferred. It names Task 4 while
+# `cc_instruction_claude_md_prune_at_amendment_2026_09_07.md` is the executing act, that dispatch
+# ordering both halves of the close — this batch's own entries and this move — inside its Task 4.)*
+TASK = "Task 4"
 # ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
 #   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
 #                 moved in the same act that writes this batch's own entries.
@@ -524,6 +540,14 @@ PREVIOUS_AIMINGS = [
      "base_commit": "acf91d340ebd597cc8803feed211e14945f87b44",
      "the_then_previous_batch": "cc_instruction_l2_ruling_writeback_2026_09_05.md",
      "the_kind_of_move": "ordinary"},
+    # ★ THIS BATCH'S OWN AIMING, 2026-09-07 — the prune-at-amendment batch's close, an ORDINARY
+    # move on the shape the row above sets. It is recorded here in the same act that makes it, on
+    # the convention that batch established: every aiming this tool has ever carried is in this
+    # list, so a reader can see the bound being maintained rather than a value that keeps changing.
+    {"executing_act": "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md, Task 4",
+     "base_commit": "ff6ba36fddd4bdabdfda88c1fac6fd3b5e63fb03",
+     "the_then_previous_batch": "cc_instruction_status_forward_bound_second_2026_09_07.md",
+     "the_kind_of_move": "ordinary"},
 ]
 
 HEADER_ORDINARY = (
@@ -609,11 +633,22 @@ def moved_entries() -> list[dict]:
     # tool met the same shift and declared the same constant; it is imported here rather than
     # re-decided. Any entry needing a SECOND adjustment is a STOP, not a second constant: the
     # occurrence test below fires on it.
+    # ★ THE ADJUSTMENT IS ANCHORED AT THE ENTRY'S OPENING, 2026-09-07, AND THE CAUSE WAS ESTABLISHED
+    # AT THE OBJECT BEFORE THE MECHANISM WAS TOUCHED (D-669). The test read
+    # `if PREFIX_ADJUSTMENT in text` until this date — a substring search over the WHOLE entry — and
+    # it fired on an entry that merely QUOTES the prefix in its own prose. Measured, not anticipated:
+    # the forward-bound batch's Task 1 entry explains the adjustment and so contains the literal
+    # `Last updated: ` inside its narrative; the unanchored test stripped that occurrence, produced a
+    # string present nowhere, and the occurrence check below STOPPED the move. **The tool's own STOP
+    # is what caught it, which is that STOP working rather than failing** — nothing was moved wrongly.
+    # The constant's own comment already says what it means: the NEWEST entry of a batch carries the
+    # prefix, and a prefix is at the start. The test now says that. WHAT IT CANNOT DO IS WIDEN: an
+    # entry needing a second adjustment still reaches the occurrence check and still STOPS.
     out = []
     for i in members:
         text = dated[i][1]
         adjusted = False
-        if PREFIX_ADJUSTMENT in text:
+        if text.lstrip("*").startswith(PREFIX_ADJUSTMENT):
             text = text.replace(PREFIX_ADJUSTMENT, "", 1)
             adjusted = True
         out.append({"line_at_base": dated[i][0], "characters": len(text),
