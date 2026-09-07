@@ -947,6 +947,33 @@ AUTHORED = [
      "coarse archive-class span the reconciliation cannot account for. ★ WHAT IT DOES NOT ASSERT: "
      "that a span left at site is unarchivable — only what the imported reading test asks of each"),
 
+    # ---- AUTHORED 2026-09-07, cc_instruction_claude_md_prune_at_amendment_2026_09_07.md Task 3 -
+    # THE PRUNE-AT-AMENDMENT RULE'S OWN WATCH, registered in the act that creates it — the standing
+    # new-tool rule. It takes `--check` for a reason peculiar to a LINT rather than the usual one:
+    # a bare run WRITES its published reach artifact, and this check's verdict must not depend on
+    # whether that artifact happens to be current. `--check` runs the same scan and writes nothing,
+    # so what the guard set records is the RULE's state and never an artifact's freshness.
+    #
+    # ★ IT IS ENROLLED SCOPED TO `CLAUDE.md`, WHICH IS A SCOPE DECISION AND NOT A MEASUREMENT. The
+    # user's order of 2026-09-07 names that file; the other four governing documents are outside
+    # it. The reach over all five was MEASURED BEFORE ENROLMENT and is published in the tool's own
+    # artifact, so what it would catch in the other four is on the record rather than assumed —
+    # and a hit there is REPORTED as a finding. Widening the scope is the user's.
+    ("tools/audit/prune_at_amendment_lint.py", ["--check"],
+     "no span of `CLAUDE.md` uses the preserve-in-place pattern rule (D) supersedes with a date "
+     "AFTER that rule was ruled. It is a live check on the tree AS IT STANDS: the file is re-cut "
+     "and re-scanned on every run, so an amendment landing tomorrow that keeps its superseded "
+     "wording at the site instead of moving it to `CLAUDE_ARCHIVE.md` fails on the day it lands. "
+     "The recognizer is IMPORTED from `gen_claude_md_prune_backlog.py`, its one home (#6), so a "
+     "phrasing added there is watched here the same day; the standing archive-pointer constraint "
+     "rides with it. ★ ITS ONE CUT IS DERIVED RATHER THAN AUTHORED: a statement dated at or before "
+     "the rule's own ruling date was the lawful pattern when it was written and is reported as "
+     "PRE-RULE BACKLOG, one dated after it is a BREACH, and one carrying no date at all is a "
+     "BREACH too — so a statement cannot escape the check by carrying none. Without that cut the "
+     "check would be red forever on text written before the rule existed, and a check red at every "
+     "tree teaches a reader to ignore it. ★ WHAT A PASS DOES NOT SAY: that the pre-rule backlog is "
+     "cleared. It is reported in the tool's own artifact and it stays"),
+
     ("tools/audit/gen_reserved_word_scanner.py", None,
      "NOT RUN, and the reason is about the tool rather than about its result: it is the ADVISORY "
      "reserved-word inventory the user's Ruling 31 of 2026-08-09 licensed, and its STOP — a derived "

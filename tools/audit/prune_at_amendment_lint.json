@@ -1,0 +1,1489 @@
+{
+ "what_this_is": "THE PRUNE-AT-AMENDMENT CHECK: every span of a governing document saying that its OWN former wording is preserved IN PLACE — the pattern rule (D) supersedes — with each one placed before or after the date that rule was ruled, beside every near miss and every supersession the record writes as a POINTER instead. It asserts no cause and proposes no remedy; it reports. Every figure here is computed (D-431).",
+ "generated_by": "tools/audit/prune_at_amendment_lint.py",
+ "dispatch": "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md, Task 3",
+ "the_order_it_serves": "the user, 2026-09-07: \"make sure this rule is being followed from now on.\"",
+ "the_rule": {
+  "where_it_lives": "cowork_rulings_2026_08_16_preparation_return.md §5(D)",
+  "ruled_on": "2026-08-16",
+  "what_it_requires": "an edit to a governing document that supersedes part of it MOVES the newly superseded text, in the SAME act, to its archive home, and the site keeps a compact dated pointer naming where the former text now lives.",
+  "what_it_supersedes": "the preserve-in-place default for governing-document amendments — \"the former wording preserved in place\"."
+ },
+ "★_the_recognizer_and_where_it_lives": {
+  "its_one_home": "tools/audit/gen_claude_md_prune_backlog.py — IMPORTED here, never copied (#6), so a phrasing added there is watched here the same day",
+  "the_phrasings": [
+   "(?i)\\bpreserved in place\\b",
+   "(?i)\\bstands? in place\\b",
+   "(?i)\\bpreserved under #12\\b",
+   "(?i)\\bformer text, preserved\\b"
+  ],
+  "the_standing_pointer_constraint_rides_with_it": "a span whose archive classification derives from text inside an archive pointer is NOT archivable, wherever in the span the pointer sits — Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17"
+ },
+ "★_the_date_cut": {
+  "the_rule": "a preserve-in-place statement dated at or before 2026-08-16 was the lawful pattern when it was written and is PRE-RULE BACKLOG; one dated after it is a BREACH; one carrying no date at all is a BREACH, so a statement cannot escape the check by carrying none.",
+  "why_it_is_derived_rather_than_authored": "it is the rule's own effective date read from the record, not a judgment about which spans deserve an exception. Without it this check would be red forever on text written before the rule existed, and a check that is red at every tree teaches a reader to ignore it — which is the failure the guard set exists against."
+ },
+ "★_the_enrolled_scope_and_why_it_is_one_file": {
+  "the_scope": "CLAUDE.md",
+  "the_ground": "the user's order of 2026-09-07 names `CLAUDE.md`. The other four governing documents are outside it, so a hit in them is REPORTED as a finding and not acted on; widening the scope is the user's."
+ },
+ "the_reach_measured_in_both_directions": {
+  "what_this_is": "what the check CATCHES and what it would LET THROUGH, over all five governing documents, measured before it was enrolled — because a check that fires on four files nobody asked to change is a different act from the one that was ordered.",
+  "★_what_a_near_miss_is": "a span carrying a former-wording marker of the family this recognizer sits beside, which this recognizer does not place. It is what the check lets through, published so the bound is readable rather than assumed (#19).",
+  "per_file": {
+   "CLAUDE.md": {
+    "hits": 5,
+    "of_which_pre_rule_backlog": 5,
+    "of_which_breaches": 0,
+    "near_misses": 1,
+    "supersessions_recorded_as_a_pointer": 9
+   },
+   "OPEN_ITEMS.md": {
+    "hits": 2,
+    "of_which_pre_rule_backlog": 2,
+    "of_which_breaches": 0,
+    "near_misses": 4,
+    "supersessions_recorded_as_a_pointer": 134
+   },
+   "DECISIONS.md": {
+    "hits": 0,
+    "of_which_pre_rule_backlog": 0,
+    "of_which_breaches": 0,
+    "near_misses": 2,
+    "supersessions_recorded_as_a_pointer": 0
+   },
+   "STATUS.md": {
+    "hits": 0,
+    "of_which_pre_rule_backlog": 0,
+    "of_which_breaches": 0,
+    "near_misses": 1,
+    "supersessions_recorded_as_a_pointer": 2
+   },
+   "BUILD_AND_TEST.md": {
+    "hits": 0,
+    "of_which_pre_rule_backlog": 0,
+    "of_which_breaches": 0,
+    "near_misses": 0,
+    "supersessions_recorded_as_a_pointer": 8
+   }
+  }
+ },
+ "the_verdict": {
+  "scope": "CLAUDE.md",
+  "breaches_in_the_enrolled_scope": 0,
+  "passes": true,
+  "★_what_a_pass_says_and_what_it_does_not": "SAYS: no span of the scope file uses the superseded preserve-in-place pattern with a date after the rule was ruled. DOES NOT SAY: that the pre-rule backlog is cleared — it is reported above and stays; nor that a flagged span should move, which an archiving act decides by reading the span whole.",
+  "breaches_in_the_other_governing_documents": {}
+ },
+ "the_findings": {
+  "CLAUDE.md": {
+   "hits": [
+    {
+     "file": "CLAUDE.md",
+     "first_line": 202,
+     "last_line": 221,
+     "characters": 1905,
+     "the_opening": "**★ THAT PARAGRAPH REPLACED A NARROWER ONE, AND THE FORMER WORDING STANDS IN PLACE (#12; user-ruled 2026-08-11 on a surface carrying three alternatives with the",
+     "the_marker_matched": "STANDS IN PLACE",
+     "markers_in_the_span": 1,
+     "the_date_the_span_carries": "2026-08-11",
+     "the_verdict": "PRE-RULE BACKLOG — reported, not failed"
+    },
+    {
+     "file": "CLAUDE.md",
+     "first_line": 388,
+     "last_line": 418,
+     "characters": 2930,
+     "the_opening": "**★ AND WHAT SUCH A ROW IS OWED — IT STOPS BEING OWED, WITH A PER-ROW LAPSE RECORD (user-ruled 2026-08-11; the ruling record is `cowork_rulings_2026_08_11_fifte",
+     "the_marker_matched": "stands in place",
+     "markers_in_the_span": 1,
+     "the_date_the_span_carries": "2026-08-11",
+     "the_verdict": "PRE-RULE BACKLOG — reported, not failed"
+    },
+    {
+     "file": "CLAUDE.md",
+     "first_line": 1603,
+     "last_line": 1631,
+     "characters": 2685,
+     "the_opening": "**★ THE THREE-PHASE STRUCTURE BELOW IS SUPERSEDED AND ITS TRUTH HALF IS REPLACED (user-ruled 2026-08-15; the ruling record is `cowork_rulings_2026_08_15_phase_d",
+     "the_marker_matched": "PRESERVED IN PLACE",
+     "markers_in_the_span": 1,
+     "the_date_the_span_carries": "2026-08-15",
+     "the_verdict": "PRE-RULE BACKLOG — reported, not failed"
+    },
+    {
+     "file": "CLAUDE.md",
+     "first_line": 1720,
+     "last_line": 1749,
+     "characters": 2597,
+     "the_opening": "**★ NOTE ON PHASE 2 — THE ENUMERATION THIS CLAUSE POINTS AT IS RATIFIED (user, 2026-08-03; D-439).** `cowork_oi200_perspective_inventory.md` §4 is the ONE home ",
+     "the_marker_matched": "Former text, preserved",
+     "markers_in_the_span": 2,
+     "the_date_the_span_carries": "2026-08-03",
+     "the_verdict": "PRE-RULE BACKLOG — reported, not failed"
+    },
+    {
+     "file": "CLAUDE.md",
+     "first_line": 1814,
+     "last_line": 1836,
+     "characters": 1989,
+     "the_opening": "**★ THE RULE COVERS EVERY READ MECHANISM AND EVERY DIALECT (recorded 2026-08-08 on the user's direction, at the third measured instance family).** The restricti",
+     "the_marker_matched": "preserved under #12",
+     "markers_in_the_span": 1,
+     "the_date_the_span_carries": "2026-08-07",
+     "the_verdict": "PRE-RULE BACKLOG — reported, not failed"
+    }
+   ],
+   "near_misses": [
+    {
+     "file": "CLAUDE.md",
+     "first_line": 490,
+     "last_line": 649,
+     "characters": 15395,
+     "the_opening": "**The register is `DECISIONS.md` (the lean INDEX) + `decisions/group_<X>.md` (full entries: the verbatim decision, plain restatement, why, status, home, provena",
+     "the_marker_it_carries": "former wording"
+    }
+   ],
+   "supersessions_recorded_as_a_pointer": [
+    {
+     "file": "CLAUDE.md",
+     "first_line": 23,
+     "last_line": 27,
+     "characters": 525,
+     "the_opening": "8. **No inference-problem-driven coding until the refactoring, the architectural design and the algorithmic completion are done.** Build-it-right comes BEFORE t",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "CLAUDE.md",
+     "first_line": 41,
+     "last_line": 52,
+     "characters": 1159,
+     "the_opening": "10. Documentation is kept in sync with code **so that code can always be compared against its specification, and so that the specification is as correct and com",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "CLAUDE.md",
+     "first_line": 53,
+     "last_line": 60,
+     "characters": 845,
+     "the_opening": "**★ WHAT IT SUPERSEDES — A POINTER, NEVER A COPY (#6).** R3's clause that an apparatus finding's row is **mandatory** no longer holds for a finding the worth te",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "CLAUDE.md",
+     "first_line": 477,
+     "last_line": 477,
+     "characters": 167,
+     "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 8 line(s), `defense-and-declined-alternatives`, opening \"**THE THREE ALTERNATIVES DECLINED, recorded because an ex",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "CLAUDE.md",
+     "first_line": 479,
+     "last_line": 479,
+     "characters": 167,
+     "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 4 line(s), `defense-and-declined-alternatives`, opening \"**THE COSTS THE USER ACCEPTED, stated before the ruling a",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "CLAUDE.md",
+     "first_line": 490,
+     "last_line": 649,
+     "characters": 15395,
+     "the_opening": "**The register is `DECISIONS.md` (the lean INDEX) + `decisions/group_<X>.md` (full entries: the verbatim decision, plain restatement, why, status, home, provena",
+     "the_pointer_form": "is preserved in D-432's provenance"
+    },
+    {
+     "file": "CLAUDE.md",
+     "first_line": 858,
+     "last_line": 858,
+     "characters": 172,
+     "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 5 line(s), `self-declared-historical-or-superseded`, opening \"**Superseded columns preserved (#12):** the OI-168 L",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "CLAUDE.md",
+     "first_line": 1155,
+     "last_line": 1155,
+     "characters": 172,
+     "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 8 line(s), `self-declared-historical-or-superseded`, opening \"> The `52/24/52` `stem@tick` case-identity sets belo",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "CLAUDE.md",
+     "first_line": 1190,
+     "last_line": 1190,
+     "characters": 172,
+     "the_opening": "*★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 7 line(s), `self-declared-historical-or-superseded`, opening \"**★ (Historical — the batch stop's FINAL frozen stat",
+     "the_pointer_form": "an archive pointer line"
+    }
+   ]
+  },
+  "OPEN_ITEMS.md": {
+   "hits": [
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 357,
+     "last_line": 357,
+     "characters": 2801,
+     "the_opening": "| OI-317 | `docs/key_path_design.md`’s banner says the document is UNCOMMITTED and under a commit hold; it is committed at HEAD and names no ratification addend",
+     "the_marker_matched": "stand in place",
+     "markers_in_the_span": 1,
+     "the_date_the_span_carries": "2026-08-04",
+     "the_verdict": "PRE-RULE BACKLOG — reported, not failed"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 403,
+     "last_line": 403,
+     "characters": 8803,
+     "the_opening": "| OI-363 | ★ **The Baroque partial-signature correction is recorded as RESOLVED on one anchor case, and over the DERIVED population at committed outputs it leav",
+     "the_marker_matched": "preserved in place",
+     "markers_in_the_span": 1,
+     "the_date_the_span_carries": "2026-08-09",
+     "the_verdict": "PRE-RULE BACKLOG — reported, not failed"
+    }
+   ],
+   "near_misses": [
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 316,
+     "last_line": 316,
+     "characters": 2787,
+     "the_opening": "| OI-274 | `docs/scoring_model.md` describes the legacy scorer as WHAT RUNS, in a document `CLAUDE.md` makes a mandatory session-start read | §1 opens \"`RuleBas",
+     "the_marker_it_carries": "former wording"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 361,
+     "last_line": 361,
+     "characters": 3491,
+     "the_opening": "| OI-321 | `docs/unified_analysis_pipeline.md` states three things as current that are false at HEAD, including a phase it calls deferred that the code says was",
+     "the_marker_it_carries": "FORMER WORDING"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 386,
+     "last_line": 386,
+     "characters": 4402,
+     "the_opening": "| OI-346 | **The empirically-unvalidated mark is SPECIFIED but not APPLIED** — the Jazz preset constants and the ground-truth-less idioms carry no mark and name",
+     "the_marker_it_carries": "former wording"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 397,
+     "last_line": 397,
+     "characters": 11090,
+     "the_opening": "| OI-357 | ★ **The Baroque partial-signature correction lives in the LEGACY key resolver, which the production arm does not run — and whether the joint estimato",
+     "the_marker_it_carries": "FORMER WORDING"
+    }
+   ],
+   "supersessions_recorded_as_a_pointer": [
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 68,
+     "last_line": 68,
+     "characters": 317,
+     "the_opening": "| OI-84 | Full-coverage audit plan (EG-7) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | EG-7 / all layers | ✅ COMPLETE 2026-07-12 — ever",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 70,
+     "last_line": 70,
+     "characters": 272,
+     "the_opening": "| OI-88 | L1/L2 pass-2 doc-precision findings | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | L1/L2 doc | ✅ RESOLVED 2026-07-11 (f76e8b65c",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 88,
+     "last_line": 88,
+     "characters": 311,
+     "the_opening": "| OI-110 | L4-audit instrumentation lifecycle | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | L4 / audit | ✅ CLOSED 2026-07-12 — reverted ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 90,
+     "last_line": 90,
+     "characters": 323,
+     "the_opening": "| OI-112 | L4 formatter/ARCHITECTURE doc drifts | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | ARCHITECTURE doc | ✅ RESOLVED 2026-08-02 (",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 94,
+     "last_line": 94,
+     "characters": 334,
+     "the_opening": "| OI-116 | L5 + instruments pass-1 feasibility stop + partition | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | L5 / audit | ✅ CERTIFIED b",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 114,
+     "last_line": 114,
+     "characters": 323,
+     "the_opening": "| OI-168 | The collection/tonic split breaks inside the engaged decoder | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | L4 | ✅ FIXED + RE-",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 123,
+     "last_line": 123,
+     "characters": 319,
+     "the_opening": "| OI-181 | Desk-sim form for the joint decode | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | joint-estimator | ✅ RESOLVED 2026-07-19 — th",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 125,
+     "last_line": 125,
+     "characters": 331,
+     "the_opening": "| OI-183 | scoring_model.md symbol-level coverage gap | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | scoring_model doc | ✅ RESOLVED — 202",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 150,
+     "last_line": 150,
+     "characters": 345,
+     "the_opening": "| OI-178 | Architecture-adoption protocol for the robust stop | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | measurement / adoption gate ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 155,
+     "last_line": 155,
+     "characters": 343,
+     "the_opening": "| OI-195 | The embedded-table generator embeds CRLF, not LF blobs | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | codegen / establishment ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 157,
+     "last_line": 157,
+     "characters": 347,
+     "the_opening": "| OI-197 | C++ spelling derivation establishment is partial | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | joint module / establishment |",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 163,
+     "last_line": 163,
+     "characters": 438,
+     "the_opening": "| OI-208 | THE DECISIONS REGISTER (structural prevention, proposed at OI-207's rowing): rulings need the same ONE-home treatment issues got | → ARCHIVED 2026-08",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 187,
+     "last_line": 187,
+     "characters": 462,
+     "the_opening": "| OI-278 | A declared adjudication was never recorded as made — and a ratified register entry still offers the unification the code measurement says does not ex",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 189,
+     "last_line": 189,
+     "characters": 377,
+     "the_opening": "| OI-230 | The writing-standards conformance question — DEFERRED by the user to the Friday discussion | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_AR",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 191,
+     "last_line": 191,
+     "characters": 417,
+     "the_opening": "| OI-232 | The canonical architecture document carries five stale or self-contradicting statements about WHICH CODE IS RUNNING | → ARCHIVED 2026-08-17: the full",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 193,
+     "last_line": 193,
+     "characters": 505,
+     "the_opening": "| OI-234 | ★ DECISION CONFLICT: two ratified positions on the inference mechanism cannot both stand — forward-only (2026-06-29, which measured the global joint ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 203,
+     "last_line": 203,
+     "characters": 464,
+     "the_opening": "| OI-236 | §4.1b's safety constraint (\"bonuses never fire for Diminished, HalfDiminished, Augmented, or Suspended\") is superseded by Iter 46 in the same documen",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 204,
+     "last_line": 204,
+     "characters": 479,
+     "the_opening": "| OI-237 | ★ DOCUMENTATION GAP ([[OI-208]] ruling 2): sixteen load-bearing decisions have no layer-specification home; SEVEN of them govern a layer's behaviour ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 205,
+     "last_line": 205,
+     "characters": 487,
+     "the_opening": "| OI-238 | §5.13's analyze-at-tick path table predates the record arm: it asserts \"no path-selection flag\" while a flag selects between two arms, and its entry-",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 207,
+     "last_line": 207,
+     "characters": 484,
+     "the_opening": "| OI-240 | ★ DOCUMENTATION GAP ([[OI-208]] ruling 2, one level out from [[OI-237]]): twelve standing decisions are recorded ONLY on a tracking surface — an open",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 208,
+     "last_line": 208,
+     "characters": 450,
+     "the_opening": "| OI-241 | ★ A MISSING RULING (the user's to make): no GENERAL rule states which existing MuseScore code our code may depend on — only scoped forms exist | → AR",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 209,
+     "last_line": 209,
+     "characters": 479,
+     "the_opening": "| OI-242 | NON-CONFORMANCE / #10: `ARCHITECTURE.md` §12.1a's recorded reason for the harmonic-display preference is false at HEAD — the note-seam analysis costs",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 226,
+     "last_line": 226,
+     "characters": 413,
+     "the_opening": "| OI-204 | The record producer lacks analysis-input staff exclusion (`excludeStaves`) — chord-track self-feedback risk | → ARCHIVED 2026-08-17: the full row is ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 227,
+     "last_line": 227,
+     "characters": 354,
+     "the_opening": "| OI-202 | Register split-check false-fails on every post-split addition | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / regi",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 228,
+     "last_line": 228,
+     "characters": 353,
+     "the_opening": "| OI-184 | WiR anacrusis beat-alignment convention unestablished | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | measurement / establishme",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 229,
+     "last_line": 229,
+     "characters": 326,
+     "the_opening": "| OI-187 | The weight fit's band miss | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | joint-estimator / fit event | ✅ ANSWERED 2026-07-20 ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 236,
+     "last_line": 236,
+     "characters": 311,
+     "the_opening": "| OI-33 | Abstain-aware robust-stop convention | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | measurement | ✅ RESOLVED 2026-07-12 (wave-1",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 238,
+     "last_line": 238,
+     "characters": 303,
+     "the_opening": "| OI-35 | O-18 stale fs_* manifests process fix | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | measurement | ✅ RESOLVED (read-site valida",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 244,
+     "last_line": 244,
+     "characters": 327,
+     "the_opening": "| OI-134 | Debris directory tools/tools/corpus/ | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | measurement / cleanup | ✅ CLOSED 2026-07-1",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 246,
+     "last_line": 246,
+     "characters": 328,
+     "the_opening": "| OI-89 | L1/L2 pass-2 second reading only partially blind | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | audit / L1-L2 | ✅ RE-RUN DONE 2",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 247,
+     "last_line": 247,
+     "characters": 330,
+     "the_opening": "| OI-100 | L3 pass-2 second reading deviated from the P2 rubric | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | audit / L3 | ✅ RE-DERIVATI",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 249,
+     "last_line": 249,
+     "characters": 329,
+     "the_opening": "| OI-123 | L5 instruments silent-failure paths (DT-23) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / measurement | ✅ RESOLV",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 250,
+     "last_line": 250,
+     "characters": 338,
+     "the_opening": "| OI-124 | L5 first-rank establishment/contract gaps (DT-2) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / measurement | ✅ R",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 252,
+     "last_line": 252,
+     "characters": 334,
+     "the_opening": "| OI-126 | L5 dead + duplicated instrument code (DT-5+DT-3) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / measurement | ✅ R",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 254,
+     "last_line": 254,
+     "characters": 344,
+     "the_opening": "| OI-128 | L5 grading+fitting silent-failure paths (DT-23) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / measurement | ✅ RE",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 255,
+     "last_line": 255,
+     "characters": 348,
+     "the_opening": "| OI-129 | Grading/fitting chain skips the anti-contamination guard | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / measureme",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 256,
+     "last_line": 256,
+     "characters": 356,
+     "the_opening": "| OI-130 | Destructive default output paths + unenforced music21 pin (DT-24) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 258,
+     "last_line": 258,
+     "characters": 378,
+     "the_opening": "| OI-132 | L5 grading+fitting duplicated key-parsing + value-copies + dead code (DT-6+DT-3+DT-5) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 259,
+     "last_line": 259,
+     "characters": 378,
+     "the_opening": "| OI-133 | L5 stale docstring figures + dangling anchors + hand-set tolerances (DT-11+DT-12+DT-2) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIV",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 260,
+     "last_line": 260,
+     "characters": 353,
+     "the_opening": "| OI-135 | L5 harness value-copied inference-affecting constants (DT-3) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / harne",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 261,
+     "last_line": 261,
+     "characters": 328,
+     "the_opening": "| OI-136 | Undocumented harness measurement modes (DT-25) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / harness | ✅ RESOLVE",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 262,
+     "last_line": 262,
+     "characters": 344,
+     "the_opening": "| OI-137 | Harness output-discipline + exit-path robustness (#16) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / harness | ✅",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 263,
+     "last_line": 263,
+     "characters": 345,
+     "the_opening": "| OI-138 | Harness doc-sync + audit-tooling fidelity (DT-12) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / harness doc | ✅ ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 264,
+     "last_line": 264,
+     "characters": 359,
+     "the_opening": "| OI-139 | OI-120 factual correction + manifest site-line drift (DT-12) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / measu",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 265,
+     "last_line": 265,
+     "characters": 352,
+     "the_opening": "| OI-140 | WiR-coverage → the hard stop can pass silently (DT-23+DT-2) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / measur",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 267,
+     "last_line": 267,
+     "characters": 312,
+     "the_opening": "| OI-153 | Register ID collision | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | register / harness | ✅ RESOLVED 2026-07-13 — register_lin",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 269,
+     "last_line": 269,
+     "characters": 343,
+     "the_opening": "| OI-155 | The OI-132 consolidation left two regression tests red | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | measurement / #11 | ✅ RE",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 270,
+     "last_line": 270,
+     "characters": 356,
+     "the_opening": "| OI-151 | Destructive default output path on the mode-grading probe (DT-24) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 271,
+     "last_line": 271,
+     "characters": 340,
+     "the_opening": "| OI-52 | S20 — the metric's core comparison written out four times | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / #6 | ✅ RE",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 273,
+     "last_line": 273,
+     "characters": 353,
+     "the_opening": "| OI-157 | A third copy of the mode classification went stale (DT-3/DT-6+DT-11) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 275,
+     "last_line": 275,
+     "characters": 366,
+     "the_opening": "| OI-159 | OI-142 silently staled the committed OI-43/OI-44 joint-probe evidence | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrumen",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 277,
+     "last_line": 277,
+     "characters": 337,
+     "the_opening": "| OI-160 | OI-142 also staled the sibling joint-probe artifact | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | instrument / measurement | ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 285,
+     "last_line": 285,
+     "characters": 282,
+     "the_opening": "| OI-41 | #17(c) sharpening (mechanism-fires before arithmetic) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | user adjudication | ✅ RATI",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 286,
+     "last_line": 286,
+     "characters": 309,
+     "the_opening": "| OI-42 | Audit §5 UNCLEAR rows 1–7 | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | user adjudication | ✅ RATIFIED 2026-07-10 — six were p",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 287,
+     "last_line": 287,
+     "characters": 333,
+     "the_opening": "| OI-43 | Reopen the joint (key,chord) ranking question | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | user adjudication | ✅ SETTLED 2026",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 288,
+     "last_line": 288,
+     "characters": 309,
+     "the_opening": "| OI-44 | Joint step B1–B4 status | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | user adjudication | ✅ DECLARED by the user 2026-07-12 — ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 290,
+     "last_line": 290,
+     "characters": 341,
+     "the_opening": "| OI-142 | Corpus integrity — 12 transposed chorales | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | corpus / measurement (#9/#19) | ✅ RES",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 291,
+     "last_line": 291,
+     "characters": 323,
+     "the_opening": "| OI-143 | The key-grading convention (home + local) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | measurement | ✅ RESOLVED 2026-07-12 (",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 292,
+     "last_line": 292,
+     "characters": 322,
+     "the_opening": "| OI-144 | WiR ground-truth loading has two views | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | measurement | ✅ RESOLVED 2026-07-13 (b35",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 293,
+     "last_line": 293,
+     "characters": 329,
+     "the_opening": "| OI-56 | A music-theory judge without ground truth? | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | user adjudication | ✅ DECIDED by the ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 294,
+     "last_line": 294,
+     "characters": 347,
+     "the_opening": "| OI-62 | Is the intonation/tuning feature still a goal? | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | user adjudication / long-horizon ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 300,
+     "last_line": 300,
+     "characters": 306,
+     "the_opening": "| OI-45 | scoring_model §4/§6 stale anchors | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | doc-sync | ✅ RESOLVED — 2026-08-14 (CC, `cc_in",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 302,
+     "last_line": 302,
+     "characters": 336,
+     "the_opening": "| OI-47 | STATUS.md submission-era sections contradict governing docs | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | doc-sync | ✅ RESOLVE",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 306,
+     "last_line": 306,
+     "characters": 314,
+     "the_opening": "| OI-51 | Foreign uncommitted SHELVED-banner edit | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | doc-sync | ✅ RESOLVED 2026-08-03 (CC, ph",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 307,
+     "last_line": 307,
+     "characters": 432,
+     "the_opening": "| OI-257 | §12.1b documents 2 of the 9 registered harmonic-analysis actions; the right-click chord anchor is an undocumented representative-note choice | → ARCH",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 308,
+     "last_line": 308,
+     "characters": 367,
+     "the_opening": "| OI-260 | CLAUDE.md's gate-threshold policy still lists the retired Gate K (0.20) | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | doc-syn",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 309,
+     "last_line": 309,
+     "characters": 378,
+     "the_opening": "| OI-265 | The Layer-4 as-built body still says production chord analysis runs the legacy path | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.m",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 310,
+     "last_line": 310,
+     "characters": 368,
+     "the_opening": "| OI-266 | The session handoff's working-protocol standing rules have no specification home | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 311,
+     "last_line": 311,
+     "characters": 424,
+     "the_opening": "| OI-268 | ★ Twenty-two standing decisions are recorded in a ratified contract or cross-layer design document, not in a layer specification | → ARCHIVED 2026-08",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 312,
+     "last_line": 312,
+     "characters": 424,
+     "the_opening": "| OI-269 | CONFLICT: a standing process lesson says commit pipeline-affecting changes immediately; the governing document says commit only when asked | → ARCHIV",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 313,
+     "last_line": 313,
+     "characters": 418,
+     "the_opening": "| OI-270 | Four cross-cutting \"meta-findings to institutionalize\" whose ratification the record does not state — the wave's one recorded REMAINDER | → ARCHIVED ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 314,
+     "last_line": 314,
+     "characters": 450,
+     "the_opening": "| OI-272 | Fourteen standing decisions are recorded ONLY in the session-handoff ARCHIVE — a surface two governing documents declare outside the session-start re",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 315,
+     "last_line": 315,
+     "characters": 455,
+     "the_opening": "| OI-273 | ★ NON-CONFORMANCE: a THIRD edit to MuseScore's own code is live at HEAD, absent from `CLAUDE.md`'s local-patches section, with no distribution dispos",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 317,
+     "last_line": 317,
+     "characters": 538,
+     "the_opening": "| OI-275 | ★ CONFLICT: the SIGNED Layer-4 specification makes COMPLETE candidate listing the governing design decision; the production decoder's candidate admis",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 318,
+     "last_line": 318,
+     "characters": 424,
+     "the_opening": "| OI-276 | Three LIVE-SPEC design documents state as CURRENT something false at HEAD — and one names a REGRESSION GATE that no longer exists | → ARCHIVED 2026-0",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 319,
+     "last_line": 319,
+     "characters": 426,
+     "the_opening": "| OI-279 | ★ `ARCHITECTURE.md` §6.7 states the RETIRED genre style taxonomy as the canonical one, and two register entries quote that stale text | → ARCHIVED 20",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 322,
+     "last_line": 322,
+     "characters": 414,
+     "the_opening": "| OI-282 | `cowork_style_clustering_plan.md` still presents the CLUSTERS half as future work, a day after it was delivered and ratified | → ARCHIVED 2026-08-17:",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 324,
+     "last_line": 324,
+     "characters": 452,
+     "the_opening": "| OI-284 | `docs/implementation_roadmap.md`, the SINGLE TRACKER, states the dormant-spine world as current — the layer table, the engage plan, and the supersede",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 325,
+     "last_line": 325,
+     "characters": 418,
+     "the_opening": "| OI-285 | The eight ratification-surface documents are UNCOMMITTED, and the register cites two of them as the provenance of ratified decisions | → ARCHIVED 202",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 326,
+     "last_line": 326,
+     "characters": 461,
+     "the_opening": "| OI-286 | ★ The record says the `chordanalyzer.cpp` file split is OWED and parked; it was delivered on 2026-06-17, and one of the units it produced is LIVE pro",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 327,
+     "last_line": 327,
+     "characters": 416,
+     "the_opening": "| OI-287 | The ratification surfaces and the dispatches have no directory of their own, and moving them re-aims cited paths | → ARCHIVED 2026-08-17: the full ro",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 329,
+     "last_line": 329,
+     "characters": 401,
+     "the_opening": "| OI-289 | The 80 LEGACY-marked register entries were SWEPT, never verified — and two of them were wrong | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 331,
+     "last_line": 331,
+     "characters": 465,
+     "the_opening": "| OI-291 | ★ STOP: the register's `contract-home` class was never reached by any ratified criterion, and the delegation bar excludes documents it currently admi",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 333,
+     "last_line": 333,
+     "characters": 450,
+     "the_opening": "| OI-293 | The WRITE LIST — six homes the record means to keep whose delegation the bar does not admit, or whose delegation names too few sections | → ARCHIVED ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 334,
+     "last_line": 334,
+     "characters": 467,
+     "the_opening": "| OI-294 | Writing the delegations falsified the `CLAUDE.md` rules that asked for them — rule (j) still says no delegation exists, and rule (i)'s defense cites ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 335,
+     "last_line": 335,
+     "characters": 440,
+     "the_opening": "| OI-295 | A user-RATIFIED rule is left with no home because its section is an open-items list — the [[OI-290]] shape, in a signed layer specification | → ARCHI",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 338,
+     "last_line": 338,
+     "characters": 382,
+     "the_opening": "| OI-298 | `CLAUDE.md`'s phase-2 clause leans on an UNRATIFIED DRAFT for the enumeration it requires | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARC",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 340,
+     "last_line": 340,
+     "characters": 407,
+     "the_opening": "| OI-300 | The shell-read guard owes a false-deny establishment run over five shapes its corpora do not contain | → ARCHIVED 2026-08-17: the full row is in `OPE",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 343,
+     "last_line": 343,
+     "characters": 436,
+     "the_opening": "| OI-303 | Six comments in `src/` and `tools/` still describe the production record arm as \"default OFF\", or the record section adapter as having no caller | → ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 344,
+     "last_line": 344,
+     "characters": 379,
+     "the_opening": "| OI-304 | Two dated annotations still assert the opposite of **D-428** as corrected one wave later | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCH",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 345,
+     "last_line": 345,
+     "characters": 468,
+     "the_opening": "| OI-305 | `gen_home_classification.py --check` reports STALE at the committed tree — four `home_section` fields do not re-derive and `phase1q_reclassification.",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 355,
+     "last_line": 355,
+     "characters": 483,
+     "the_opening": "| OI-315 | The piece-start shortcut was removed from the code on 2026-06-14, is still specified in the present tense, is registered LIVE as **D-058**, and is co",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 358,
+     "last_line": 358,
+     "characters": 437,
+     "the_opening": "| OI-318 | Two label defects in the canonical architecture document: the Layer-6 section still calls the grouping unit a “phrase”, and §19.4 is used twice | → A",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 359,
+     "last_line": 359,
+     "characters": 469,
+     "the_opening": "| OI-319 | Every read wave now widens `gen_home_classification.py --check`’s stale report, because a new gap-homed entry cannot be given its `home_section` whil",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 360,
+     "last_line": 360,
+     "characters": 539,
+     "the_opening": "| OI-320 | `docs/score_inventory.md` — the document `CLAUDE.md` sends every score-touching task to FIRST — states the SUPERSEDED batch case-identity gate as the",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 362,
+     "last_line": 362,
+     "characters": 479,
+     "the_opening": "| OI-322 | `docs/symbol_input_audit.md` describes throughout, in the present tense, code its own closing line says was deleted — a reader who stops before the l",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 364,
+     "last_line": 364,
+     "characters": 510,
+     "the_opening": "| OI-324 | **D-057**'s binding scope is now unstated: the priority-of-evidence table's home section was scoped to the LEGACY key path, while the open item that ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 366,
+     "last_line": 366,
+     "characters": 497,
+     "the_opening": "| OI-326 | Whether `ARCHITECTURE.md`'s doc-governance hierarchy clause is itself a DELEGATION under **D-432** is unsettled — and it decides a whole CLASS of per",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 371,
+     "last_line": 371,
+     "characters": 455,
+     "the_opening": "| OI-331 | **A LIVE, USER-RATIFIED entry names a convergence proxy the build MEASURED FALSE and dropped** — **D-261**'s worked example versus **D-622** | → ARCH",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 372,
+     "last_line": 372,
+     "characters": 495,
+     "the_opening": "| OI-332 | Three of read wave 6's documents misdescribe their OWN state — a *\"no code\"* banner over a built design, stale as-built code anchors, and a design wh",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 373,
+     "last_line": 373,
+     "characters": 502,
+     "the_opening": "| OI-333 | **The cluster-disposition layer CANNOT BE REGENERATED at HEAD** — six register patterns are invalid regular expressions, and the guard that watches t",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 374,
+     "last_line": 374,
+     "characters": 416,
+     "the_opening": "| OI-334 | **The decisions register's own published account of itself is FALSE at HEAD in three places** — and one of the three is a figure its own computed tab",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 375,
+     "last_line": 375,
+     "characters": 539,
+     "the_opening": "| OI-335 | **A count of OUTSTANDING work was the MEMBERSHIP of a list of asks** — inside the artifact a phase-1 completion statement would rest on; and the per-",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 376,
+     "last_line": 376,
+     "characters": 421,
+     "the_opening": "| OI-336 | **Ruling R1 moves [[OI-332]]'s own gate verdict** — the row classed itself apparatus on ONE HALF of D-438's line | → ARCHIVED 2026-08-17: the full ro",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 377,
+     "last_line": 377,
+     "characters": 371,
+     "the_opening": "| OI-337 | **The uncommitted backlog is SIX waves, not the three ruling R4 names** — and the waves cannot be committed separately | → ARCHIVED 2026-08-17: the f",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 380,
+     "last_line": 380,
+     "characters": 506,
+     "the_opening": "| OI-340 | ★ **Whether criterion C1 reaches SUPERSEDED register entries is UNRULED** — the per-kind scheme said to settle it does not carry that kind, and read ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 382,
+     "last_line": 382,
+     "characters": 617,
+     "the_opening": "| OI-343 | ★ **The shell-read guard misses any command whose quoted pattern contains a pipe** — it splits the command into pipeline segments BEFORE tokenizing, ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 383,
+     "last_line": 383,
+     "characters": 481,
+     "the_opening": "| OI-342 | **An audit artifact's \"owner is unambiguous\" column is carrying \"outside this dispatch's edit surface\"** — for which the same artifact already has a ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 384,
+     "last_line": 384,
+     "characters": 441,
+     "the_opening": "| OI-344 | **A LIVE guard carries a DATED recomputation of a proxy figure taken off the cluster-disposition layer, so refreshing that layer makes it fail** — `g",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 385,
+     "last_line": 385,
+     "characters": 564,
+     "the_opening": "| OI-345 | ★ **The shell-read guard is armed on the PowerShell tool and its utility set contains no PowerShell reading verb** — so `Get-Content`, `Select-String",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 388,
+     "last_line": 388,
+     "characters": 556,
+     "the_opening": "| OI-348 | ★ **The shell-read guard classifies only the FIRST token of a segment, so a working-tree read carried INSIDE another command's quoted argument is adm",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 389,
+     "last_line": 389,
+     "characters": 656,
+     "the_opening": "| OI-349 | ★ **One decision's two ends sit on different arms: the key-area grouping rule runs on the PRODUCTION record arm while the stabilization it names as i",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 390,
+     "last_line": 390,
+     "characters": 561,
+     "the_opening": "| OI-350 | ★ **A delegation the user writes lands its entries in class C and STOPS four generators** — the finish-line machinery classifies from a stored field ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 391,
+     "last_line": 391,
+     "characters": 506,
+     "the_opening": "| OI-351 | ★ **`ls` aimed at a repository path was ADMITTED by the live guard on 2026-08-08**, one day after the widening whose resolution note records that sha",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 393,
+     "last_line": 393,
+     "characters": 514,
+     "the_opening": "| OI-353 | ★ **Six comments in `src/` say the production notation record path is \"default OFF\"; the configuration sets its default to TRUE** — a reader of any o",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 394,
+     "last_line": 394,
+     "characters": 539,
+     "the_opening": "| OI-354 | ★ **The legacy-mark verification's population has GROWN since it was declared verified, and a drifted citation hid that** — register entries now carr",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 395,
+     "last_line": 395,
+     "characters": 590,
+     "the_opening": "| OI-355 | ★ **The shell-read guard denies every `sed` and `awk`, wherever they are aimed** — the script argument is treated as a path candidate, so a read of a",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 396,
+     "last_line": 396,
+     "characters": 565,
+     "the_opening": "| OI-356 | ★ **A row is judged OPEN or RESOLVED by searching its whole status cell for the resolved mark, so a status cell that merely MENTIONS another row's ✅ ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 398,
+     "last_line": 398,
+     "characters": 621,
+     "the_opening": "| OI-358 | ★ **Five consecutive register entries quote a DIFFERENT rule than their own title, plain restatement and defense describe — one quotes a section head",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 401,
+     "last_line": 401,
+     "characters": 538,
+     "the_opening": "| OI-361 | ★ **A row whose status cell states its resolution IN WORDS, with no ✅, reads OPEN to every derivation over the index** — the same parser's blind spot",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 402,
+     "last_line": 402,
+     "characters": 564,
+     "the_opening": "| OI-362 | ★ **The ONE index parser SILENTLY DROPS any row that does not split into the expected number of cells — one row is being dropped at HEAD, and a dropp",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 405,
+     "last_line": 405,
+     "characters": 553,
+     "the_opening": "| OI-366 | ★ **The shell-read guard's establishment check reports STALE intermittently, while the artifact it checks re-derives BYTE-IDENTICALLY — so a publishe",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 406,
+     "last_line": 406,
+     "characters": 573,
+     "the_opening": "| OI-367 | ★ **A FOURTH row whose status cell states a closure in words reads OPEN to every derivation — and the pass that enumerated that family missed it, bec",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 407,
+     "last_line": 407,
+     "characters": 521,
+     "the_opening": "| OI-368 | ★ **A derived enumeration reports its class EMPTY at HEAD while an instance of that class stands — the same claim, in the same file, at a block the p",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 408,
+     "last_line": 408,
+     "characters": 610,
+     "the_opening": "| OI-369 | ★ **The finish line's LAST homing item counts one entry, and the user has already ruled that entry SUPERSEDED with no home owed — the subtraction its",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 409,
+     "last_line": 409,
+     "characters": 318,
+     "the_opening": "| OI-150 | BUILD_AND_TEST.md stale test baselines | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | doc-sync | ✅ RESOLVED 2026-08-13 (CC, di",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 410,
+     "last_line": 410,
+     "characters": 398,
+     "the_opening": "| OI-370 | A mandatory session-start read cannot be performed — `STATUS.md` has accumulated past the point where the file tools can read it | → ARCHIVED 2026-08",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 413,
+     "last_line": 413,
+     "characters": 529,
+     "the_opening": "| OI-373 | ★ **A guard joined the derived guard-candidate population with no authored invocation, so the guard-set runner cannot exit clean — and the batch reco",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 415,
+     "last_line": 415,
+     "characters": 674,
+     "the_opening": "| OI-375 | ★ **The consequence sentence written into principle #21 carries an UNQUALIFIED argument — \"this repertoire\" — and the two widths the record already u",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 423,
+     "last_line": 423,
+     "characters": 339,
+     "the_opening": "| OI-53 | Tonicization classifier wired, not implemented | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | submission backlog / L5 | ✅ SUPER",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 424,
+     "last_line": 424,
+     "characters": 291,
+     "the_opening": "| OI-54 | Pedal-point calibration needs corpus evidence | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | submission backlog | ✅ SUPERSEDED ",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 425,
+     "last_line": 425,
+     "characters": 343,
+     "the_opening": "| OI-59 | Corelli regressions + 4 deferred tests + chopin cascade | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | submission backlog | ✅ S",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 426,
+     "last_line": 426,
+     "characters": 282,
+     "the_opening": "| OI-60 | Blocking/needs-fix trio | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | submission backlog | ✅ SUPERSEDED 2026-07-13 — all three",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    },
+    {
+     "file": "OPEN_ITEMS.md",
+     "first_line": 440,
+     "last_line": 440,
+     "characters": 299,
+     "the_opening": "| OI-71 | Roadmap 0.1 doc pass | → ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md` | roadmap doc | ✅ SUPERSEDED / DONE 2026-07-13 — layer_archit",
+     "the_pointer_form": "→ ARCHIVED 2026-08-17: the full row is in `OPEN_ITEMS_ARCHIVE.md`"
+    }
+   ]
+  },
+  "DECISIONS.md": {
+   "hits": [],
+   "near_misses": [
+    {
+     "file": "DECISIONS.md",
+     "first_line": 266,
+     "last_line": 266,
+     "characters": 2094,
+     "the_opening": "**The remainder, measured.** The harvest holds 15,224 candidate statements, grouped into 14,460 groups of near-identical statements, and every one of those grou",
+     "the_marker_it_carries": "FORMER WORDING"
+    },
+    {
+     "file": "DECISIONS.md",
+     "first_line": 270,
+     "last_line": 276,
+     "characters": 2299,
+     "the_opening": "> **★ Corrections to this scope block, 2026-08-04.** User, 2026-08-04 (R3), dispatch `cc_instruction_phase1_delegations_and_corrections.md`: the three statement",
+     "the_marker_it_carries": "former wording"
+    }
+   ],
+   "supersessions_recorded_as_a_pointer": []
+  },
+  "STATUS.md": {
+   "hits": [],
+   "near_misses": [
+    {
+     "file": "STATUS.md",
+     "first_line": 12,
+     "last_line": 12,
+     "characters": 2695,
+     "the_opening": "*2026-09-07 (CC — Same dispatch, Task 1. **★★ THE BACKLOG OF SEVEN ENTRIES LEFT BY SIX CONSECUTIVE OMITTING CLOSES IS CLEARED BY THE MECHANISM AND NOT BY HAND**",
+     "the_marker_it_carries": "former wording"
+    }
+   ],
+   "supersessions_recorded_as_a_pointer": [
+    {
+     "file": "STATUS.md",
+     "first_line": 20,
+     "last_line": 20,
+     "characters": 816,
+     "the_opening": "*★ ARCHIVED 2026-08-17 — every dated batch entry EXCEPT the latest batch's was moved verbatim to `STATUS_ARCHIVE.md` by `cc_instruction_preparation_sixth.md` Ta",
+     "the_pointer_form": "moved verbatim to `STATUS_ARCHIVE.md`"
+    },
+    {
+     "file": "STATUS.md",
+     "first_line": 22,
+     "last_line": 22,
+     "characters": 791,
+     "the_opening": "*★ ARCHIVED 2026-08-17, THE SECOND ACT — the dated entries that PREDATE (or paraphrase) the OI-222 pointer convention fell to `operative-rule-text` in the pinne",
+     "the_pointer_form": "moved verbatim to `STATUS_ARCHIVE.md`"
+    }
+   ]
+  },
+  "BUILD_AND_TEST.md": {
+   "hits": [],
+   "near_misses": [],
+   "supersessions_recorded_as_a_pointer": [
+    {
+     "file": "BUILD_AND_TEST.md",
+     "first_line": 136,
+     "last_line": 136,
+     "characters": 166,
+     "the_opening": "*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 3 line(s), `preserved-former-wording`, opening \"*Former wording, preserved in place (#12): \"**Current base",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "BUILD_AND_TEST.md",
+     "first_line": 171,
+     "last_line": 171,
+     "characters": 166,
+     "the_opening": "*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 5 line(s), `preserved-former-wording`, opening \"*Former wording, preserved in place (#12): \"**Current base",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "BUILD_AND_TEST.md",
+     "first_line": 317,
+     "last_line": 317,
+     "characters": 180,
+     "the_opening": "*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 4 line(s), `self-declared-historical-or-superseded`, opening \"Previous baseline (Iteration 54, corpus rege",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "BUILD_AND_TEST.md",
+     "first_line": 324,
+     "last_line": 324,
+     "characters": 180,
+     "the_opening": "*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 3 line(s), `self-declared-historical-or-superseded`, opening \"Previous baseline (Iteration 46, corpus rege",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "BUILD_AND_TEST.md",
+     "first_line": 333,
+     "last_line": 333,
+     "characters": 180,
+     "the_opening": "*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 3 line(s), `self-declared-historical-or-superseded`, opening \"Previous baseline (Iteration 36, corpus rege",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "BUILD_AND_TEST.md",
+     "first_line": 381,
+     "last_line": 381,
+     "characters": 180,
+     "the_opening": "*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 4 line(s), `self-declared-historical-or-superseded`, opening \"Previous Jazz baseline (Iteration 46 binary,",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "BUILD_AND_TEST.md",
+     "first_line": 386,
+     "last_line": 386,
+     "characters": 180,
+     "the_opening": "*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 4 line(s), `self-declared-historical-or-superseded`, opening \"Previous figures for reference (Iteration 32",
+     "the_pointer_form": "an archive pointer line"
+    },
+    {
+     "file": "BUILD_AND_TEST.md",
+     "first_line": 397,
+     "last_line": 397,
+     "characters": 180,
+     "the_opening": "*★ ARCHIVED 2026-08-17 → `BUILD_AND_TEST_ARCHIVE.md`: 8 line(s), `self-declared-historical-or-superseded`, opening \"Previous baselines for reference: Iteration ",
+     "the_pointer_form": "an archive pointer line"
+    }
+   ]
+  }
+ },
+ "★_the_compliant_phrasings_and_where_they_come_from": {
+  "the_phrasings": [
+   "(?i)moved verbatim to `[A-Z_]+\\.md`",
+   "(?i)→ ARCHIVED \\d{4}-\\d{2}-\\d{2}: the full row is in `[A-Z_]+\\.md`",
+   "(?i)is preserved in D-\\d+'s provenance"
+  ],
+  "plus": "any span carrying an archive-pointer line, imported from the finer pass",
+  "where_they_come_from": "a search of the five governing files for how the record actually writes a supersession as a pointer."
+ }
+}

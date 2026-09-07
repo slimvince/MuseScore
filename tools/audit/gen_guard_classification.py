@@ -1333,6 +1333,24 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "NOT ASSERT: that a span left at site is unarchivable, or that the backlog is cleared. The "
         "reading verdicts are authored judgments published beside the spans they kept."),
 
+    # ---- AUTHORED 2026-09-07, cc_instruction_claude_md_prune_at_amendment_2026_09_07.md Task 3 -
+    "tools/audit/prune_at_amendment_lint.py": (
+        LIVE, "prune_at_amendment_lint.py, WHAT IT FAILS ON AND WHAT IT PASSES and THE STOPS of "
+              "its module docstring; `scan()`, which re-cuts and re-scans each governing file at "
+              "the tree on every run; `build()`, which places every hit against the rule's own "
+              "ruling date",
+        "LIVE, and it is the plainest live invariant in this set: it asserts a property of the "
+        "governing documents AS THEY STAND — that none of them uses the preserve-in-place pattern "
+        "rule (D) supersedes with a date after that rule was ruled. Nothing is read at a pinned "
+        "commit and nothing is compared against a stored artifact: the files are re-read, re-cut "
+        "and re-scanned on every run, and its `--check` writes nothing at all, so its verdict "
+        "cannot be confused with an artifact's freshness. An amendment landing tomorrow that keeps "
+        "its superseded wording at the site fails it that day, which is the whole point of it. "
+        "★ WHAT IT DOES NOT ASSERT: that the pre-rule backlog is cleared — those hits are "
+        "reported and stay; that a flagged span should move, which an archiving act decides by "
+        "reading the span whole; or that its recognizer's reach is complete — the near misses it "
+        "publishes per file are the bound, stated rather than assumed (#19)."),
+
     # ---- guards that live outside tools/audit -------------------------------------------------
     "tools/open_items_split_check.py": (
         LIVE, "open_items_split_check.py:9-13",
