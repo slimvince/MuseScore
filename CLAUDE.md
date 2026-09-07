@@ -728,6 +728,45 @@ never-work-from-memory rule's own failure shape and #19's silent-failure directi
 `DECISIONS.md`'s session-start read is changed; what is recorded is that the question was put and
 answered.**
 
+**★ AND THIS IS WHAT A SESSION READS OF `CLAUDE.md` ITSELF — SIX SPANS AT SESSION START, EIGHT READ
+ONLY WHEN THE SESSION'S WORK TOUCHES THEM (user-ruled 2026-09-07).** Every span is named by its
+HEADING and never by a line number (**D-307**).
+
+**READ AT SESSION START — six spans:**
+
+- **Guiding principles**, from its heading through the *Delegation pointer* paragraph that closes it.
+- **The open-items register**, whole.
+- **The decisions register**, whole.
+- **This block** — from *"Always read these two files at the start of every session:"* through the
+  paragraph ending *"…NOT part of the session-start read."*
+- **Conventions**, whole.
+- **The self-check after every coding exercise**, whole.
+
+**READ CONDITIONALLY — eight spans, each with its condition:**
+
+| Span, by heading | Read by |
+|---|---|
+| **Project context** | a session that touches the composing module, or that needs the full project-context pointer |
+| **Autonomous operation — composing module** | a session that edits code under the composing module, or that runs the standard loop for mismatch reduction work that section describes |
+| **Build and test commands** — the command blocks below this block | a session that builds, tests, or runs a measurement tool whose command lives there |
+| **Gate threshold and preset policy**, including its blocks (A) to (D) | a session that measures the analysis, changes a gate or a threshold, re-baselines, or needs a ratified baseline |
+| **Scoring model** | unchanged — a session that touches scoring logic, which is that section's own standing condition |
+| **Score corpora** | any task involving scores |
+| **Local patches — do not revert** | a session that edits MuseScore's own code, or that runs or reviews a dependency update |
+| **VS Code extension — bash command rules** | any session that runs bash commands |
+
+**Provenance, and what this act did and did not do.** The membership is the user's ruling of
+2026-09-07, taken on a self-contained surface delivered in its own earlier turn with the choice
+question put in a later one — the standing decision-surface rule in Conventions. **Until that date
+the whole-file read was PRACTICE and was mandated by no clause of this file:** the session-start
+mandates `CLAUDE.md` carries name the derived gating answer (the open-items register's rule (a)),
+the decisions register's INDEX (that register's rule (a)), `STATUS.md` and `DECISIONS.md` (this
+block), and the binding of those reads against a single-file opening instruction (Conventions) — and
+**none of them names `CLAUDE.md` itself**. So this act does not loosen a rule; it replaces an
+unwritten habit with a stated membership, and the membership is NARROWER than the habit. **It
+changes no rule of this file.** The one wording it amends is the bash-rules heading, at that
+heading, where the amendment is recorded.
+
 Do not rely on memory of previous sessions for baseline numbers or iteration state — read STATUS.md.
 `STATUS_ARCHIVE.md` and `cowork_handoff_archive.md` hold the superseded historical entries moved out
 by the doc split (`cc_instruction_doc_split.md`) — reference-only, NOT part of the session-start read.
@@ -1450,7 +1489,23 @@ is for. Its own provenance said this section carried two subsections and not thi
 written, and closed by the subsection above, which was added the same day it was found. The archive
 is untouched.)*
 
-## VS Code extension — bash command rules (MANDATORY, every session)
+## VS Code extension — bash command rules (MANDATORY for any session that runs bash commands)
+
+*★ THE PARENTHETICAL FORMERLY READ "(MANDATORY, every session)" AND WAS AMENDED 2026-09-07, with the
+user's ruling of that date that this section is read only by a session that runs bash commands. **The
+amendment is a DOC-SYNC CORRECTION, not a supersession, and the reading is recorded rather than
+taken silently:** the former parenthetical stated something FALSE about this section's own scope. Its
+ground, at the object: this section's body carries no read-mandate at all, and its only scope
+statement is the sentence below — two rules that apply **to every bash command** — so "every session"
+widened the body rather than summarizing it; a session that runs no bash command is bound by nothing
+here, Rule 1 governing a command that may return non-zero and Rule 2 a single bash call. Contrast the
+scoring-model heading, whose "(MANDATORY for scoring sessions)" parenthetical IS a summary of an
+explicit read-mandate its body's first sentence states — the parallel that would make this
+parenthetical a read-mandate does not hold at the object. And contrast the `BUILD_AND_TEST.md`
+demotion this act repeats, which superseded a wording that was TRUE of a live obligation, which is
+why the continuous-pruning rule fired there and the former wording moved to `CLAUDE_ARCHIVE.md`.
+**Nothing moved to the archive here**; #12 is satisfied by the former parenthetical being quoted in
+this sentence and in the batch's own record.*
 
 The Claude Code VS Code extension (v2.1.141+) has a 15-second stall detector. If the
 API stream is silent for >15 seconds — which happens any time a bash command is running
