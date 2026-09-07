@@ -170,29 +170,74 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # records; that is a declared state and not a STOP. *(This batch is not a writing of the L0/L1
 # comparison line, so it carries no ordinal; the fields below name it by its own dispatch, which is
 # what every membership derivation here reads.)*
-BASE_COMMIT = "8664a85f1565d14c7c8e4c02911dfdc43c42e166"
+#
+# ★★★★★★★★★★★ RE-AIMED SIX TIMES IN ONE ACT, 2026-09-07, by
+# `cc_instruction_status_forward_bound_second_2026_09_07.md` Task 1 — and every one of those six is a
+# CATCH-UP move rather than the ordinary one Ruling 4's forward clause describes. SIX CONSECUTIVE
+# BATCH CLOSES OMITTED THEIR OWN MOVE, so seven entries stood in `STATUS.md` that the bound says
+# should not. The omitting closes, oldest first: `cc_instruction_l2_keyword_count_2026_09_04.md`,
+# `cc_instruction_l2_criterion_write_2026_09_04.md`, `cc_instruction_l2_candidate_list_2026_09_05.md`,
+# `cc_instruction_l2_verdict_pass_2026_09_05.md`, `cc_instruction_l2_reading_file_2026_09_05.md` and
+# `cc_instruction_l2_ruling_writeback_2026_09_05.md`. The backlog is cleared HERE, by this tool and
+# not by hand, oldest omission first, so the archive reads in the order the moves would have happened
+# had each close performed its own. ALL SIX authored inputs were re-aimed off the previous aiming
+# before the first move ran, and NONE was left naming it — which is the check the recorded 2026-09-02
+# incomplete re-aiming exists to force. Stated exactly rather than loosely, because the loose form
+# would be false: across the six moves five of the six are CONSTANT by construction — one base
+# commit, one act date, one executing dispatch, one task, one kind — and `PREVIOUS_BATCH_DISPATCH`
+# advances by one batch per move. `PREVIOUS_AIMINGS` is appended to rather than replaced at every one
+# of the six (#12), and `MOVE_KIND` — the field the ratified header act added in this same batch — is
+# `"catch-up"` throughout, so that no header claims to have been written in the act that wrote its
+# batch's own entries (#10).
+#
+# ★ WHAT THIS ACT DOES NOT DO. It does not repair the reason the six were missed. The fields below
+# are re-aimed BY HAND at every close, and `--check` reconciles only the aiming currently authored, so
+# a close that never re-aims this tool leaves the guard GREEN and the bound UNMET. That is the true
+# and narrower defect, and it is ROWED rather than fixed: `OPEN_ITEMS.md` OI-379, created by Task 2
+# of the same dispatch. A seventh omission is not prevented by anything here. **The second writing's
+# two nameless entries remain in `STATUS.md` and no aiming of this tool can identify them**, as the
+# row for the third writing below records; that is a declared state and not a STOP.
+BASE_COMMIT = "665aa83f96bd96a8528cd8735c3f92bff0f7cac6"
 
-# The THEN-PREVIOUS batch, named by its dispatch because that is what each of its entries says of
-# itself. Ruling 4's forward bound moves exactly these, in the act that writes this batch's own.
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_comparison_l0_l1_tenth_2026_09_04.md"
+# The batch whose entries this aiming moves, named by its dispatch because that is what each of its
+# entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
+# bound moves exactly these in the act that writes this batch's own entries; on a CATCH-UP move it is
+# the batch whose entries a later close failed to move, and the act happens now. `MOVE_KIND` decides
+# which of the two the archive header states. *(This comment read "The THEN-PREVIOUS batch … Ruling
+# 4's forward bound moves exactly these, in the act that writes this batch's own" until 2026-09-07,
+# correct while every aiming this tool had ever carried was an ordinary one; it is widened rather
+# than replaced, because the ordinary reading is still the one that governs an ordinary move — #12.)*
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_l2_reading_file_2026_09_05.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
-# dispatch is dated 2026-09-04 and this batch ran on 2026-09-04, so the two agree; the field is kept
+# dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
 # authored rather than inferred because the archive header states when the ACT happened, and a header
 # carrying a dispatch's date would say something false about the record (#10) on any batch where the
-# two differ.
-ACT_DATE = "2026-09-04"
-DISPATCH = "cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md"
-# TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. The executing dispatch orders the move and this
-# batch's own `STATUS.md` entries in the same numbered task — for the boot-pack freeze dispatch that
-# is its Task 2, whose item 1 orders the pointer entries and the forward bound together — so both halves
-# of "the same act that writes its own entries" sit inside Task 2, and Task 2 is what the archive header
-# names. No sub-item is carried, because the header names an act rather than a sub-step and every
-# previous aiming names a whole task. *(This comment named Task 3 while the seventh comparison dispatch
-# was the executing act, and Task 2 while the eighth, the ninth and the tenth were, each correct then;
-# the numbered task differs per dispatch and is re-stated with each re-aiming rather than left to be
-# inferred.)*
-TASK = "Task 2"
+# two differ. *(The dates named in this comment were 2026-09-04 while the boot-pack-freeze dispatch
+# was the executing act, correct then, and are re-stated with each re-aiming rather than left to be
+# inferred. On a CATCH-UP move the dates of the closes that omitted the move are NOT the act date:
+# the move happens now, and the header says so.)*
+ACT_DATE = "2026-09-07"
+DISPATCH = "cc_instruction_status_forward_bound_second_2026_09_07.md"
+# TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
+# the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
+# same act that writes its own entries" sit inside it, and that task is what the archive header names.
+# ON A CATCH-UP MOVE THAT REASONING DOES NOT APPLY, and the field names where the LATE move actually
+# happened: `cc_instruction_status_forward_bound_second_2026_09_07.md` orders the six catch-up moves
+# at its Task 1 and this batch's own entries at its Task 3, and `MOVE_KIND` is what keeps the header
+# from claiming otherwise (#10). No sub-item is carried, because the header names an act rather than a
+# sub-step and every previous aiming names a whole task. *(This comment named Task 3 while the seventh
+# comparison dispatch was the executing act, and Task 2 while the eighth, the ninth, the tenth and the
+# boot-pack-freeze dispatch were, each correct then; the numbered task differs per dispatch and is
+# re-stated with each re-aiming rather than left to be inferred.)*
+TASK = "Task 1"
+# ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
+#   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
+#                 moved in the same act that writes this batch's own entries.
+#   "catch-up"  — a LATE move: the close that owed this move omitted it, and this act performs it
+#                 now. The then-previous-batch language is false of such a move, so the header says
+#                 what actually happened instead (#10).
+MOVE_KIND = "catch-up"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
 # Every aiming this tool has had, oldest first. Authored, and kept rather than replaced.
@@ -430,15 +475,56 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_comparison_l0_l1_tenth_2026_09_04.md, Task 2",
      "base_commit": "c810f5ad74648a882d0da231abad4a92066e3ad2",
      "the_then_previous_batch": "cc_instruction_comparison_l0_l1_ninth_2026_09_04.md"},
+    # ★ THE SIX CATCH-UP ROWS, 2026-09-07, one per late move, appended in the order the moves ran —
+    # oldest omission first. Every row carries `the_kind_of_move`, the field the ratified header act
+    # added in this same batch; the rows above carry none, and that absence means those aimings
+    # PREDATE the field rather than that their kind is unknown. This act's own record is the
+    # ★-block above `BASE_COMMIT`, which names the six omitting closes and the rowed defect.
+    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 1",
+     "base_commit": "665aa83f96bd96a8528cd8735c3f92bff0f7cac6",
+     "the_then_previous_batch": "cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md",
+     "the_kind_of_move": "catch-up"},
+    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 1",
+     "base_commit": "665aa83f96bd96a8528cd8735c3f92bff0f7cac6",
+     "the_then_previous_batch": "cc_instruction_l2_keyword_count_2026_09_04.md",
+     "the_kind_of_move": "catch-up"},
+    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 1",
+     "base_commit": "665aa83f96bd96a8528cd8735c3f92bff0f7cac6",
+     "the_then_previous_batch": "cc_instruction_l2_criterion_write_2026_09_04.md",
+     "the_kind_of_move": "catch-up"},
+    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 1",
+     "base_commit": "665aa83f96bd96a8528cd8735c3f92bff0f7cac6",
+     "the_then_previous_batch": "cc_instruction_l2_candidate_list_2026_09_05.md",
+     "the_kind_of_move": "catch-up"},
+    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 1",
+     "base_commit": "665aa83f96bd96a8528cd8735c3f92bff0f7cac6",
+     "the_then_previous_batch": "cc_instruction_l2_verdict_pass_2026_09_05.md",
+     "the_kind_of_move": "catch-up"},
+    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 1",
+     "base_commit": "665aa83f96bd96a8528cd8735c3f92bff0f7cac6",
+     "the_then_previous_batch": "cc_instruction_l2_reading_file_2026_09_05.md",
+     "the_kind_of_move": "catch-up"},
 ]
 
+HEADER_ORDINARY = (
+    f"The entries below are the PREVIOUS batch's (`{PREVIOUS_BATCH_DISPATCH}`), moved verbatim out "
+    f"of `STATUS.md` by `{DISPATCH}` {TASK} in the same act that wrote this batch's own entries"
+)
+HEADER_CATCH_UP = (
+    f"The entries below belong to the batch `{PREVIOUS_BATCH_DISPATCH}`, moved verbatim out of "
+    f"`STATUS.md` by `{DISPATCH}` {TASK} as a LATE move: the close that owed this move omitted it, "
+    f"and this act performs it now"
+)
+# A MOVE_KIND that is neither key raises KeyError HERE, at import, before any move can run. The
+# lookup is deliberate and is not replaced by a conditional expression: a conditional would render
+# the catch-up sentence for a typo, which is the silent-failure direction #19 exists against. It is
+# also not a `Stop`, because `class Stop` is defined BELOW this constant and is not in scope here.
 ARCHIVE_HEADER = (
-    f"> **★ RULING 4's FORWARD BOUND, {ACT_DATE}.** The entries below are the PREVIOUS batch's "
-    f"(`{PREVIOUS_BATCH_DISPATCH}`), moved verbatim out of `STATUS.md` by `{DISPATCH}` {TASK} in "
-    f"the same act that wrote this batch's own entries — Ruling 4 of `{RULINGS}`: *an entry is "
-    f"SUPERSEDED the moment a later batch's close exists, and the site keeps only the latest "
-    f"batch's entries.* Nothing was edited in transit; the reconciliation is re-derived by "
-    f"`tools/audit/gen_status_batch_bound.py --check`.\n\n"
+    f"> **★ RULING 4's FORWARD BOUND, {ACT_DATE}.** "
+    f"{ {'ordinary': HEADER_ORDINARY, 'catch-up': HEADER_CATCH_UP}[MOVE_KIND] } — Ruling 4 of "
+    f"`{RULINGS}`: *an entry is SUPERSEDED the moment a later batch's close exists, and the site "
+    f"keeps only the latest batch's entries.* Nothing was edited in transit; the reconciliation is "
+    f"re-derived by `tools/audit/gen_status_batch_bound.py --check`.\n\n"
 )
 
 
@@ -563,6 +649,7 @@ def build() -> dict:
                       f"that writes its own.",
         "base_commit": BASE_COMMIT,
         "the_then_previous_batch": PREVIOUS_BATCH_DISPATCH,
+        "the_kind_of_move": MOVE_KIND,
         "entries_moved": len(entries),
         "characters_moved": sum(r["characters"] for r in entries),
         "the_moved": [{k: v for k, v in r.items() if k != "_text"} for r in entries],
