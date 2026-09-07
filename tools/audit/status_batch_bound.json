@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md, Task 4",
+ "dispatch": "cc_instruction_claude_md_boot_membership_2026_09_07.md, Task 3",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -303,46 +303,60 @@
    "base_commit": "ff6ba36fddd4bdabdfda88c1fac6fd3b5e63fb03",
    "the_then_previous_batch": "cc_instruction_status_forward_bound_second_2026_09_07.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_claude_md_boot_membership_2026_09_07.md, Task 3",
+   "base_commit": "da693541c65ca67d10ed5bec811a04b40c4c0a9c",
+   "the_then_previous_batch": "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "ff6ba36fddd4bdabdfda88c1fac6fd3b5e63fb03",
- "the_then_previous_batch": "cc_instruction_status_forward_bound_second_2026_09_07.md",
+ "base_commit": "da693541c65ca67d10ed5bec811a04b40c4c0a9c",
+ "the_then_previous_batch": "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md",
  "the_kind_of_move": "ordinary",
- "entries_moved": 4,
- "characters_moved": 7369,
+ "entries_moved": 5,
+ "characters_moved": 6748,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1638,
-   "sha256": "4566496af39e052584a84365f4e1ebed608f66a790b9a9b1638a7b29c48d2727",
+   "characters": 1203,
+   "sha256": "1c0557dc3c1195c7545069d75c47bd53c298c8e65843845aba9363268f75cdaf",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-09-07 (CC — `cc_instruction_status_forward_bound_second_2026_09_07.md`, Task 3, the close. **★★ THE FORWARD CLAUSE IS PERFORMED ON THIS BATCH IT"
+   "opening": "*2026-09-07 (CC — `cc_instruction_claude_md_prune_at_amendment_2026_09_07.md`, Task 4, the close. **★★ THE FORWARD CLAUSE IS PERFORMED ON THIS BATCH I"
   },
   {
    "line_at_base": 10,
-   "characters": 1803,
-   "sha256": "9f1b39c055458c6ee3ae6738461ca00a8c88e631e20e7fe18bfd20c3847e0c4b",
+   "characters": 1763,
+   "sha256": "c9fc5ada79e91a195922332e14540bd642d1f258e6b4849168ef7dd152da49fd",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-07 (CC — Same dispatch, Task 2. **★★ THE TRUE AND NARROWER DEFECT IS ROWED, NOT REPAIRED: `OPEN_ITEMS.md` OI-379 — RULING 4's FORWARD BOUND H"
+   "opening": "*2026-09-07 (CC — Same dispatch, Task 3. **★★ THE PRUNE-AT-AMENDMENT RULE NOW HAS SOMETHING THAT WATCHES IT — the user's second order of this date.** "
   },
   {
    "line_at_base": 12,
-   "characters": 2695,
-   "sha256": "95363bcb0971b3311f7692bc906cc8ebd1ade07b5a221f28e6bc1e806a2570f8",
+   "characters": 1671,
+   "sha256": "8b7f5e6adb214e11f062a707d7e290ee728dc63f485143e1850d112bd913733f",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-07 (CC — Same dispatch, Task 1. **★★ THE BACKLOG OF SEVEN ENTRIES LEFT BY SIX CONSECUTIVE OMITTING CLOSES IS CLEARED BY THE MECHANISM AND NOT"
+   "opening": "*2026-09-07 (CC — Same dispatch, Task 2. **★★ THE BACKLOG WAS DERIVED AND READ WHOLE, AND EVERY CANDIDATE STAYS — the tidy is smaller than the order a"
   },
   {
    "line_at_base": 14,
-   "characters": 1233,
-   "sha256": "ae2d412895c41692dbb7e30491b91e987867cf3ed329a66c92c1bedb6043b85d",
+   "characters": 1483,
+   "sha256": "3d72b48c173561352946334d393a3b0e1ee6231165c4e8199965c9732357a061",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-07 (CC — Same dispatch, Task 0. **★ THE WITHDRAWN DISPATCH, ITS SUCCESSOR AND THE STOP REPORT THAT REFUTED ITS PREMISE LANDED IN ONE COMMIT O"
+   "opening": "*2026-09-07 (CC — Same dispatch, Task 1. **★★ THE UNEXPLAINED GROWTH IS CLOSED AT THE OBJECTS, AND THE DIAGNOSIS BEHIND THIS BATCH IS PARTLY REFUTED.*"
+  },
+  {
+   "line_at_base": 16,
+   "characters": 628,
+   "sha256": "306c2da20eccf075911d5d966e4be148582c2191bf7137aa0ce454763aa0ff12",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-09-07 (CC — Same dispatch, Task 0. **★ A1 WAS CHECKED OVER THE WHOLE TRACKED POPULATION** with the sanctioned enumeration tool and holds exactly"
   }
  ],
  "reconciliation": {

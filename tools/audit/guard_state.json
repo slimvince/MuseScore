@@ -1014,7 +1014,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  entries moved: 4, 7,369 characters",
+        "  entries moved: 5, 6,748 characters",
         "  byte-present in the archive exactly once: True",
         "  absent from the must-read:                True"
       ],
@@ -1146,16 +1146,16 @@
       "stdout": [
         "the session-start read measurement re-derives",
         "  rule (a) points at tools/audit/nongating_apparatus_rows.json -> ★_the_live_gating_answer -> gating_ids",
-        "    CLAUDE.md                                                                156659",
-        "    STATUS.md                                                                 15721",
+        "    CLAUDE.md                                                                160955",
+        "    STATUS.md                                                                 15628",
         "    DECISIONS.md                                                             127608",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids     2813",
-        "  total at the tree 302801",
+        "  total at the tree 307004",
         "  further spans of the same artifact, NOT counted into the read:",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows    62204",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one     4937",
-        "  vs 1760d9a4a8: 367121 -> 302801  (-64320, -17.52%)",
-        "  vs 594074e1e1: 296832 -> 302801  (+5969, +2.01%)"
+        "  vs 1760d9a4a8: 367121 -> 307004  (-60117, -16.38%)",
+        "  vs 594074e1e1: 296832 -> 307004  (+10172, +3.43%)"
       ],
       "stderr": [],
       "what_it_checks": "what an ordinary session reads at session start, in characters, measured at the tree and at the recorded earlier commit's git object. It is the arc's own subject made checkable: the pruning direction of 2026-08-16 is about this number, and every act in the arc has had to state what it saved. Its load-bearing STOP is a demand about the tree AS IT STANDS — rule (a)'s artifact-and-key pointer is PARSED FROM THE CLAUSE ITSELF and must RESOLVE in the artifact it names, so a pointer that has stopped resolving fails on the day it stops rather than being hidden inside a number. It goes red when a governing surface changes, which is the point: the session-start read moved and the record does not yet say so. ★ WHAT IT DOES NOT ASSERT: that the membership is complete — it is AUTHORED, and each member carries the clause that makes it one so the authored half is checkable by reading three clauses; and nothing about whether the read is small enough, which is [[OI-370]]'s own subject"
@@ -1226,8 +1226,42 @@
         "backbone decisions: 477",
         "cross-references resolving: ALL",
         "verbatim quotes found at their cited home: 477/477",
-        "cited line numbers correct: 470/471   (6 cited to a file with no line number, by design)",
-        "  LINE DRIFT D-196: cited CLAUDE.md:1849, actually starts at line 1856"
+        "cited line numbers correct: 436/471   (6 cited to a file with no line number, by design)",
+        "  LINE DRIFT D-191: cited CLAUDE.md:1119, actually starts at line 1158",
+        "  LINE DRIFT D-193: cited CLAUDE.md:1510, actually starts at line 1565",
+        "  LINE DRIFT D-194: cited CLAUDE.md:1506, actually starts at line 1561",
+        "  LINE DRIFT D-195: cited CLAUDE.md:1586, actually starts at line 1641",
+        "  LINE DRIFT D-196: cited CLAUDE.md:1849, actually starts at line 1911",
+        "  LINE DRIFT D-197: cited CLAUDE.md:1420, actually starts at line 1459",
+        "  LINE DRIFT D-198: cited CLAUDE.md:1372, actually starts at line 1411",
+        "  LINE DRIFT D-199: cited CLAUDE.md:1393, actually starts at line 1432",
+        "  LINE DRIFT D-200: cited CLAUDE.md:1751-1753, actually starts at line 1806",
+        "  LINE DRIFT D-203: cited CLAUDE.md:1761-1763, actually starts at line 1816",
+        "  LINE DRIFT D-204: cited CLAUDE.md:1772-1774, actually starts at line 1827",
+        "  LINE DRIFT D-210: cited CLAUDE.md:950-952, actually starts at line 989",
+        "  LINE DRIFT D-211: cited CLAUDE.md:960-962, actually starts at line 999",
+        "  LINE DRIFT D-212: cited CLAUDE.md:965-967, actually starts at line 1004",
+        "  LINE DRIFT D-249: cited CLAUDE.md:1781-1793, actually starts at line 1836",
+        "  LINE DRIFT D-253: cited CLAUDE.md:1795-1813, actually starts at line 1850",
+        "  LINE DRIFT D-254: cited CLAUDE.md:1838-1845, actually starts at line 1893",
+        "  LINE DRIFT D-294: cited CLAUDE.md:937-939, actually starts at line 976",
+        "  LINE DRIFT D-308: cited CLAUDE.md:923-925, actually starts at line 962",
+        "  LINE DRIFT D-315: cited CLAUDE.md:1434-1436, actually starts at line 1473",
+        "  LINE DRIFT D-437: cited CLAUDE.md:1698-1716, actually starts at line 1753",
+        "  LINE DRIFT D-439: cited CLAUDE.md:1720-1732, actually starts at line 1775",
+        "  LINE DRIFT D-468: cited CLAUDE.md:791-792, actually starts at line 830",
+        "  LINE DRIFT D-486: cited CLAUDE.md:982-984, actually starts at line 1021",
+        "  LINE DRIFT D-564: cited CLAUDE.md:1240-1242, actually starts at line 1279",
+        "  LINE DRIFT D-576: cited CLAUDE.md:826-830, actually starts at line 865",
+        "  LINE DRIFT D-602: cited CLAUDE.md:991-993, actually starts at line 1030",
+        "  LINE DRIFT D-603: cited CLAUDE.md:1000-1002, actually starts at line 1039",
+        "  LINE DRIFT D-604: cited CLAUDE.md:1015-1028, actually starts at line 1054",
+        "  LINE DRIFT D-606: cited CLAUDE.md:1029-1038, actually starts at line 1068",
+        "  LINE DRIFT D-638: cited CLAUDE.md:1140-1142, actually starts at line 1179",
+        "  LINE DRIFT D-639: cited CLAUDE.md:1632-1651, actually starts at line 1687",
+        "  LINE DRIFT D-656: cited CLAUDE.md:1044-1053, actually starts at line 1083",
+        "  LINE DRIFT D-660: cited CLAUDE.md:1561-1572, actually starts at line 1616",
+        "  LINE DRIFT D-675: cited CLAUDE.md:1659-1686, actually starts at line 1714"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -1267,8 +1301,8 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 1,
+      "verdict": "FAIL",
       "stdout": [
         "population: 146 entries / 34 documents",
         "  before: {'contract-home': 70, 'gap': 76}",
@@ -1306,7 +1340,12 @@
         "    docs/llm_integration.md: −0 / +7",
         "  write-list documents still holding a `gap` entry: cowork_layer1_tone_collection_design.md",
         "  since phase 1r (the 2026-08-08 apply): 23 moved (to contract-home 23, to gap 0)",
-        "the home classification and its artifact re-derive from the files"
+        "STALE vs the files: 4 classification field(s) do not re-derive",
+        "   {\"id\": \"D-321\", \"what\": \"home_section\", \"to\": \"“Floating-point tie policy”\"}",
+        "   {\"id\": \"D-322\", \"what\": \"home_section\", \"to\": \"“Floating-point tie policy”\"}",
+        "   {\"id\": \"D-323\", \"what\": \"home_section\", \"to\": \"“`dim7CharacteristicBonus`”\"}",
+        "   {\"id\": \"D-324\", \"what\": \"home_section\", \"to\": \"“§6a. The unified promotion primitive `promoteToWinner()`”\"}",
+        "STALE vs the files: home_classification.json does not re-derive"
       ],
       "stderr": [],
       "what_it_checks": "every home-section field re-derives from the documents' own headings"
@@ -1316,10 +1355,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 1,
+      "verdict": "FAIL",
       "stdout": [
-        "the phase-1p delegation-bar artifact re-derives from the files"
+        "STALE vs the files: phase1p_delegation_bar.json does not re-derive"
       ],
       "stderr": [],
       "what_it_checks": "the delegation-bar pre-apply record re-derives"
@@ -1378,8 +1417,42 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  D-196: CLAUDE.md:1849 -> CLAUDE.md:1856   (drift +7)",
-        "anchors drifted: 1"
+        "  D-191: CLAUDE.md:1119 -> CLAUDE.md:1158   (drift +39)",
+        "  D-193: CLAUDE.md:1510 -> CLAUDE.md:1565   (drift +55)",
+        "  D-194: CLAUDE.md:1506 -> CLAUDE.md:1561   (drift +55)",
+        "  D-195: CLAUDE.md:1586 -> CLAUDE.md:1641   (drift +55)",
+        "  D-196: CLAUDE.md:1849 -> CLAUDE.md:1911   (drift +62)",
+        "  D-197: CLAUDE.md:1420 -> CLAUDE.md:1459   (drift +39)",
+        "  D-198: CLAUDE.md:1372 -> CLAUDE.md:1411   (drift +39)",
+        "  D-199: CLAUDE.md:1393 -> CLAUDE.md:1432   (drift +39)",
+        "  D-200: CLAUDE.md:1751-1753 -> CLAUDE.md:1806-1808   (drift +55)",
+        "  D-203: CLAUDE.md:1761-1763 -> CLAUDE.md:1816-1818   (drift +55)",
+        "  D-204: CLAUDE.md:1772-1774 -> CLAUDE.md:1827-1829   (drift +55)",
+        "  D-210: CLAUDE.md:950-952 -> CLAUDE.md:989-991   (drift +39)",
+        "  D-211: CLAUDE.md:960-962 -> CLAUDE.md:999-1001   (drift +39)",
+        "  D-212: CLAUDE.md:965-967 -> CLAUDE.md:1004-1006   (drift +39)",
+        "  D-249: CLAUDE.md:1781-1793 -> CLAUDE.md:1836-1848   (drift +55)",
+        "  D-253: CLAUDE.md:1795-1813 -> CLAUDE.md:1850-1868   (drift +55)",
+        "  D-254: CLAUDE.md:1838-1845 -> CLAUDE.md:1893-1900   (drift +55)",
+        "  D-294: CLAUDE.md:937-939 -> CLAUDE.md:976-978   (drift +39)",
+        "  D-308: CLAUDE.md:923-925 -> CLAUDE.md:962-964   (drift +39)",
+        "  D-315: CLAUDE.md:1434-1436 -> CLAUDE.md:1473-1475   (drift +39)",
+        "  D-437: CLAUDE.md:1698-1716 -> CLAUDE.md:1753-1771   (drift +55)",
+        "  D-439: CLAUDE.md:1720-1732 -> CLAUDE.md:1775-1787   (drift +55)",
+        "  D-468: CLAUDE.md:791-792 -> CLAUDE.md:830-831   (drift +39)",
+        "  D-486: CLAUDE.md:982-984 -> CLAUDE.md:1021-1023   (drift +39)",
+        "  D-564: CLAUDE.md:1240-1242 -> CLAUDE.md:1279-1281   (drift +39)",
+        "  D-576: CLAUDE.md:826-830 -> CLAUDE.md:865-869   (drift +39)",
+        "  D-602: CLAUDE.md:991-993 -> CLAUDE.md:1030-1032   (drift +39)",
+        "  D-603: CLAUDE.md:1000-1002 -> CLAUDE.md:1039-1041   (drift +39)",
+        "  D-604: CLAUDE.md:1015-1028 -> CLAUDE.md:1054-1067   (drift +39)",
+        "  D-606: CLAUDE.md:1029-1038 -> CLAUDE.md:1068-1077   (drift +39)",
+        "  D-638: CLAUDE.md:1140-1142 -> CLAUDE.md:1179-1181   (drift +39)",
+        "  D-639: CLAUDE.md:1632-1651 -> CLAUDE.md:1687-1706   (drift +55)",
+        "  D-656: CLAUDE.md:1044-1053 -> CLAUDE.md:1083-1092   (drift +39)",
+        "  D-660: CLAUDE.md:1561-1572 -> CLAUDE.md:1616-1627   (drift +55)",
+        "  D-675: CLAUDE.md:1659-1686 -> CLAUDE.md:1714-1741   (drift +55)",
+        "anchors drifted: 35"
       ],
       "stderr": [],
       "what_it_checks": "no register home anchor has drifted"
@@ -1447,12 +1520,11 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  CLAUDE.md            hits  5 (backlog 5, breach 0), near misses  1, pointers   9  <= enrolled scope",
+        "  CLAUDE.md            hits  5 (backlog 5, breach 0), near misses  2, pointers   9  <= enrolled scope",
         "  OPEN_ITEMS.md        hits  2 (backlog 2, breach 0), near misses  4, pointers 134",
         "  DECISIONS.md         hits  0 (backlog 0, breach 0), near misses  2, pointers   0",
-        "  STATUS.md            hits  2 (backlog 0, breach 2), near misses  0, pointers   2",
+        "  STATUS.md            hits  0 (backlog 0, breach 0), near misses  0, pointers   2",
         "  BUILD_AND_TEST.md    hits  0 (backlog 0, breach 0), near misses  0, pointers   8",
-        "  REPORTED, not acted on — breaches outside the enrolled scope: {'STATUS.md': 2}",
         "  CLAUDE.md: PASS — 0 breach(es) in the enrolled scope"
       ],
       "stderr": [],
@@ -1486,8 +1558,8 @@
   ],
   "summary": {
     "run": 80,
-    "passing": 67,
-    "failing": 13,
+    "passing": 65,
+    "failing": 15,
     "failing_tools": [
       {
         "tool": "tools/audit/gen_phase3_gate_partition.py",
@@ -1565,6 +1637,18 @@
         "tool": "tools/audit/decisions/gen_cluster_dispositions.py",
         "args": [
           "--verify"
+        ]
+      },
+      {
+        "tool": "tools/audit/decisions/gen_home_classification.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/decisions/gen_phase1p_delegation_bar.py",
+        "args": [
+          "--check"
         ]
       }
     ],
