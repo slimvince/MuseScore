@@ -909,6 +909,22 @@ AUTHORED = [
      "every entry the phase-1w verification puts in the live-prohibition class carries its "
      "pointer to the specification section that restates it as binding"),
 
+    # ---- AUTHORED 2026-09-07, cc_instruction_claude_md_prune_at_amendment_2026_09_07.md Task 1 -
+    # Registered in the act that creates the tool — the standing new-tool rule. `--check` and never
+    # the bare invocation, for the ordinary reason: run with no flag it REWRITES its committed
+    # artifact, which is the record of an attribution made at one range.
+    ("tools/audit/gen_claude_md_growth.py", ["--check"],
+     "the attribution of `CLAUDE.md`'s growth since the pruning measurement still re-derives — "
+     "which commits between the two ends of the range changed the file, by how much, and what each "
+     "one added. The range's ends are fixed history, so it re-derives forever rather than going "
+     "red at the next commit (D-646, the epoch pattern). Its STOPs are what make it a guard rather "
+     "than a record: the parent walk not reaching the range's start halts it, so a chain that is "
+     "not the one claimed cannot be published as though it were; a touching commit with no "
+     "authored statement halts it, so no line change is attributed by silence; a statement naming "
+     "a commit the walk does not place as touching halts it; and — the one that matters — the "
+     "per-commit nets not summing to the difference between the two ends' line counts halts it, "
+     "which is what makes the enumeration COMPLETE rather than merely non-empty"),
+
     ("tools/audit/gen_reserved_word_scanner.py", None,
      "NOT RUN, and the reason is about the tool rather than about its result: it is the ADVISORY "
      "reserved-word inventory the user's Ruling 31 of 2026-08-09 licensed, and its STOP — a derived "

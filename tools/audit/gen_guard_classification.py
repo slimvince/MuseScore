@@ -1297,6 +1297,22 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "words rather than a line number precisely so the citation survives insertions. A live "
         "assertion that every entry in the class still carries its pointer."),
 
+    # ---- AUTHORED 2026-09-07, cc_instruction_claude_md_prune_at_amendment_2026_09_07.md Task 1 -
+    "tools/audit/gen_claude_md_growth.py": (
+        LIVE, "gen_claude_md_growth.py, THE STOPS of its module docstring; `chain()`, which walks "
+              "the history one parent link at a time out of the commit objects; `build()`, which "
+              "re-derives every figure and re-checks the closing sum",
+        "LIVE, and the distinction is worth stating because its RANGE is fixed. What is fixed is "
+        "the two ends — a range whose ends moved would attribute a different growth — and that is "
+        "the epoch pattern rather than a dated reading. Everything the tool ASSERTS about that "
+        "range is re-derived from the git objects on every run: the chain is re-walked, every "
+        "blob identity re-taken, every numstat re-run and the closing sum re-checked, so a "
+        "rewritten history, an unreachable object or an attribution that stops accounting for the "
+        "net fails on the day it happens rather than being carried as a record. ★ WHAT IT DOES "
+        "NOT ASSERT: that two omissions could not cancel. The sum closing proves the enumeration "
+        "accounts for the net, and the blob-identity comparison is what bounds the rest — a "
+        "residual the artifact publishes of itself rather than leaving to be discovered."),
+
     # ---- guards that live outside tools/audit -------------------------------------------------
     "tools/open_items_split_check.py": (
         LIVE, "open_items_split_check.py:9-13",

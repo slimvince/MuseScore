@@ -1,0 +1,92 @@
+{
+ "what_this_is": "WHAT ADDED LINES TO `CLAUDE.md` BETWEEN THE PRUNING MEASUREMENT AND THIS BATCH, attributed per commit at the git objects. A MEASUREMENT ONLY: nothing is moved and the subject file is not edited. Every figure here is computed; none is transcribed (D-431).",
+ "generated_by": "tools/audit/gen_claude_md_growth.py",
+ "dispatch": "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md, Task 1",
+ "the_subject": "CLAUDE.md",
+ "the_range": {
+  "start": "c4f15a7b3224b2709ecc278010e8ac93e0b3a979",
+  "what_that_commit_is": "the commit the governing-surface span decomposition was measured at — the measurement the user ruled the pruning wave from",
+  "end": "d125281a43192f23a65711199b3ccc27f7f07356",
+  "what_that_commit_is_": "Task 0 of `cc_instruction_claude_md_prune_at_amendment_2026_09_07.md`, pushed before this task began. It does not touch the subject file",
+  "commits_in_the_chain": 332,
+  "how_the_chain_was_walked": "one PARENT link at a time out of the commit objects themselves, with `git cat-file` — content-addressed at every step, so no log command is trusted for what the history is (D-253)"
+ },
+ "the_two_ends_measured": {
+  "lines_at_the_range_start": 1853,
+  "lines_at_the_range_end": 1863,
+  "net_lines": 10
+ },
+ "the_attribution": {
+  "commits_that_touched_the_subject": 6,
+  "their_nets_sum_to": 10,
+  "the_sum_closes_against_the_two_ends": true,
+  "★_what_the_closing_sum_establishes_and_what_it_does_not": "ESTABLISHED: the enumerated commits account for the whole net change, so no touching commit is missing whose effect the others do not already carry. NOT ESTABLISHED: that two omissions could not cancel. What bounds that is the identity comparison — a commit that changed the file at all changes its blob identity — so the residual risk lies in the WALK, which its own start-reached STOP covers.",
+  "the_commits": [
+   {
+    "commit": "53e552296ff47d74a7481ef2272682c82531de46",
+    "its_parent_in_this_chain": "1f84f5d62107bde86ddd09317282be1642feb9da",
+    "lines_added": 9,
+    "lines_removed": 70,
+    "net_lines": -61,
+    "what_it_added": "THE EXECUTED GOVERNING-SURFACE SPLIT. Nine spans left the file — two preserved former wordings, four declined-alternatives or accepted-costs records, and three self-declared historical blocks — and nine compact dated archive pointers took their place, one per site, each naming `CLAUDE_ARCHIVE.md`, the span's line count, its class and its opening. This is the only commit in the range that REMOVES text, and it is the removal the dispatch's own premise accounts for.",
+    "how_the_statement_was_made": "read at the diff of the subject file between this commit and its parent; never from a commit subject"
+   },
+   {
+    "commit": "466781625554dc252dd1146a0425bc29086d0884",
+    "its_parent_in_this_chain": "514b0dbc1902df07af3b9c48b7f371c24c652923",
+    "lines_added": 13,
+    "lines_removed": 2,
+    "net_lines": 11,
+    "what_it_added": "RULE (a) OF THE OPEN-ITEMS REGISTER SECTION AMENDED, plus its dated amendment record. The rule's own clause grew — the session-start read moved from the whole INDEX to the derived gating answer, with the INDEX kept as the authoritative status surface — and a dated pointer paragraph was added beneath the section, naming the ruling, the executing dispatch, the #19 precondition, and `CLAUDE_ARCHIVE.md` as where the superseded wording now lives. THE SUPERSEDED WORDING IS NOT IN THE DIFF: it left in the same act.",
+    "how_the_statement_was_made": "read at the diff of the subject file between this commit and its parent; never from a commit subject"
+   },
+   {
+    "commit": "15dfb0e1729c3d34bcef18ab37415909139c69a8",
+    "its_parent_in_this_chain": "b8f5aaf268e06e9f1816249caa51d03629c3f6e1",
+    "lines_added": 22,
+    "lines_removed": 2,
+    "net_lines": 20,
+    "what_it_added": "`BUILD_AND_TEST.md` DEMOTED TO A CONDITIONAL SESSION-START READ, plus two dated records. The list heading changed from three files to two, a conditional heading and the demoted entry were added, then a dated record of the demotion naming its ruling and its archive home, and a record of `DECISIONS.md` being considered for the same treatment and RULED OUT, with the ground stated so a later ruling can answer it. THE SUPERSEDED THREE-FILE LIST IS NOT IN THE DIFF: it left in the same act.",
+    "how_the_statement_was_made": "read at the diff of the subject file between this commit and its parent; never from a commit subject"
+   },
+   {
+    "commit": "594074e1e1900079e449d2b79a38920d21bca6e6",
+    "its_parent_in_this_chain": "b0596b288be30561f612df795b97039ec1a27b3b",
+    "lines_added": 24,
+    "lines_removed": 3,
+    "net_lines": 21,
+    "what_it_added": "RULE (a)'s POINTER NARROWED TO THE GATING-ROW IDENTITIES, plus its dated record and the #19 distinction. The rule's clause grew — the pointer now names `gating_ids` and says where the grounds stand and when they are opened — followed by a dated record naming the ruling and the archive home, and a block stating what the GENERATOR proves on every run, so that a narrower pointer is not read as a weaker establishment. THE SUPERSEDED WORDING IS NOT IN THE DIFF: it left in the same act.",
+    "how_the_statement_was_made": "read at the diff of the subject file between this commit and its parent; never from a commit subject"
+   },
+   {
+    "commit": "4c47b55f3ded9f731f60691faec871646fdc4d7b",
+    "its_parent_in_this_chain": "2d7c3c3119e92dadb7b8fbffa76403ef5c7b6f5f",
+    "lines_added": 12,
+    "lines_removed": 0,
+    "net_lines": 12,
+    "what_it_added": "THREE SHARPENING PARAGRAPHS ADDED INSIDE PRINCIPLES #18, #19 AND #24, and nothing removed. #18 gains the clause that Class A reaches a causal claim only where the claim is checkable; #19 gains the clause naming its four objects and stating that a session, a person or a conversation is never the object of a Class B demand; #24 gains the clause that a condition which cannot be established at an inspectable object is DECLARED as a bound. All three are new operative rule text.",
+    "how_the_statement_was_made": "read at the diff of the subject file between this commit and its parent; never from a commit subject"
+   },
+   {
+    "commit": "3e75ef85bce5805eefee0f5015da59d88cc0582a",
+    "its_parent_in_this_chain": "36666956655fbd9c315786eca14d80918a8abdea",
+    "lines_added": 7,
+    "lines_removed": 0,
+    "net_lines": 7,
+    "what_it_added": "ONE NEW CONVENTIONS BULLET, and nothing removed: the ordinary session-start read binds even when the opening instruction names a single file, with its ratification, its retrospective finding and its measured evidence. New operative rule text.",
+    "how_the_statement_was_made": "read at the diff of the subject file between this commit and its parent; never from a commit subject"
+   }
+  ]
+ },
+ "★_the_shape_the_attribution_shows": {
+  "commits_with_a_negative_net": 1,
+  "the_one_removing_commit": "exactly one commit in the range removes text on balance: the executed governing-surface split. Its net is published with it above.",
+  "commits_with_a_positive_net": 5,
+  "everything_else_is_addition": "every other touching commit adds on balance. Read at their diffs, they are of two kinds: AMENDMENT RECORDS — an amended clause plus the dated paragraph recording the amendment, its ruling and where the superseded wording now lives — and new operative rule text with nothing superseded. Which commit is which is stated per commit above.",
+  "★_what_this_refutes_and_what_it_confirms": {
+   "confirmed": "the growth since the split is dominated by amendment apparatus. Which commit is an amendment record and which is new rule text is stated per commit above, and the added-line figures that decide it are computed there.",
+   "refuted": "that the growth is caused by rule (D) not being followed. In every one of the three amendments the superseded wording is ABSENT FROM THE DIFF — it was moved to `CLAUDE_ARCHIVE.md` in the same act and a compact dated pointer was left at the site, which is rule (D)'s own prescribed shape. What the amendments added is the POINTER AND ITS GROUND, which rule (D) requires.",
+   "★_what_neither_of_those_says": "Nothing here is a claim about the preserve-in-place material the file still carries. This artifact's range begins at the pruning measurement; text older than that range is outside what it can see, and is the separate subject of this dispatch's Task 2."
+  }
+ }
+}
