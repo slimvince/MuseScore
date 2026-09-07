@@ -238,7 +238,24 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # two nameless 2026-09-02 entries remain in `STATUS.md` and no aiming of this tool can identify
 # them**, as the row for the third writing below records; that is a declared state and not a STOP,
 # and it is unchanged by this act.
-BASE_COMMIT = "da693541c65ca67d10ed5bec811a04b40c4c0a9c"
+#
+# ★★★★★★★★★★★★★★★ RE-AIMED AGAIN 2026-09-07 by
+# `cc_instruction_read_size_repair_and_rows_2026_09_07.md` Task 4 — the close — and ALL SIX authored
+# inputs moved together, `PREVIOUS_AIMINGS` being appended to rather than replaced (#12). This is an
+# ORDINARY move: the forward clause performed on this batch itself, in the same act that writes its
+# own entries. The aiming it replaces is the boot-membership batch's, which RAN. `BASE_COMMIT` is
+# this batch's LAST TASK COMMIT pushed before the close began — Task 3, the three owed rows — per
+# this tool's docstring; the then-previous batch is the boot-membership batch, whose close entry
+# names it and whose three entries below it say `Same dispatch`, so FOUR entries are expected to
+# move. **THE DECLARED PREFIX ADJUSTMENT IS EXPECTED TO FIRE**, which is why this batch's own
+# entries were written into `STATUS.md` BEFORE `--apply` ran. *(That adjustment's own defect — the
+# test searching the WHOLE entry rather than its opening — is now ROWED at `OPEN_ITEMS.md` OI-382,
+# established at four objects by this batch and repaired by the prune-at-amendment batch before it;
+# the anchored test is what this move runs under.)* **The second writing's two nameless 2026-09-02
+# entries remain in `STATUS.md` and no aiming of this tool can identify them**, as the row for the
+# third writing below records; that is a declared state and not a STOP, and it is unchanged by this
+# act.
+BASE_COMMIT = "5ec1f97cb956488717af7f4cbfde6ffc4eb70a51"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -248,7 +265,7 @@ BASE_COMMIT = "da693541c65ca67d10ed5bec811a04b40c4c0a9c"
 # 4's forward bound moves exactly these, in the act that writes this batch's own" until 2026-09-07,
 # correct while every aiming this tool had ever carried was an ordinary one; it is widened rather
 # than replaced, because the ordinary reading is still the one that governs an ordinary move — #12.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_claude_md_boot_membership_2026_09_07.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -259,7 +276,7 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_claude_md_prune_at_amendment_2026_09_0
 # inferred. On a CATCH-UP move the dates of the closes that omitted the move are NOT the act date:
 # the move happens now, and the header says so.)*
 ACT_DATE = "2026-09-07"
-DISPATCH = "cc_instruction_claude_md_boot_membership_2026_09_07.md"
+DISPATCH = "cc_instruction_read_size_repair_and_rows_2026_09_07.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -274,8 +291,10 @@ DISPATCH = "cc_instruction_claude_md_boot_membership_2026_09_07.md"
 # `cc_instruction_claude_md_prune_at_amendment_2026_09_07.md` is the executing act, that dispatch
 # ordering both halves of the close — this batch's own entries and this move — inside its Task 4. It
 # names Task 3 while `cc_instruction_claude_md_boot_membership_2026_09_07.md` is the executing act,
-# that dispatch ordering both halves of the close inside its Task 3.)*
-TASK = "Task 3"
+# that dispatch ordering both halves of the close inside its Task 3. It names Task 4 while
+# `cc_instruction_read_size_repair_and_rows_2026_09_07.md` is the executing act, that dispatch
+# ordering both halves of the close — this batch's own entries and this move — inside its Task 4.)*
+TASK = "Task 4"
 # ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
 #   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
 #                 moved in the same act that writes this batch's own entries.
@@ -569,6 +588,12 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_claude_md_boot_membership_2026_09_07.md, Task 3",
      "base_commit": "da693541c65ca67d10ed5bec811a04b40c4c0a9c",
      "the_then_previous_batch": "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md",
+     "the_kind_of_move": "ordinary"},
+    # ★ THIS BATCH'S OWN AIMING, 2026-09-07 — the read-size repair batch's close, an ORDINARY move on
+    # the shape the three rows above set, and recorded here in the same act that makes it.
+    {"executing_act": "cc_instruction_read_size_repair_and_rows_2026_09_07.md, Task 4",
+     "base_commit": "5ec1f97cb956488717af7f4cbfde6ffc4eb70a51",
+     "the_then_previous_batch": "cc_instruction_claude_md_boot_membership_2026_09_07.md",
      "the_kind_of_move": "ordinary"},
 ]
 

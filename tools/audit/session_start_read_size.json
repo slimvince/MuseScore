@@ -176,27 +176,27 @@
   },
   "characters_per_member": {
    "CLAUDE.md": 97805,
-   "STATUS.md": 15628,
+   "STATUS.md": 17316,
    "DECISIONS.md": 127608,
-   "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2813
+   "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2826
   },
-  "total_characters": 243854,
+  "total_characters": 245555,
   "further_spans_of_the_same_artifact_NOT_counted_into_the_read": {
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows": {
-    "characters": 62204,
+    "characters": 62498,
     "what_it_is": "the 216 gating rows, each carrying its recorded ground — the GROUNDS a session opens when it challenges a verdict, and the third of the five figures Ruling 3 orders corrected"
    },
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one": {
-    "characters": 4937,
+    "characters": 4951,
     "what_it_is": "the comparison with the frozen record — retrospective evidence for the phase's retrospective, and the fifth of the five figures Ruling 3 orders corrected"
    }
   },
   "the_section_that_carries_the_pointer": {
    "key": "★_the_live_gating_answer",
-   "characters": 76533,
+   "characters": 76868,
    "what_it_is": "the whole section the artifact carries at that key — the answer TOGETHER with the grounds that establish it. A session reads the answer at boot and opens the rest to challenge a verdict."
   },
-  "characters_the_section_carries_beyond_the_answer": 73720
+  "characters_the_section_carries_beyond_the_answer": 74042
  },
  "at_earlier_commits": [
   {
@@ -276,10 +276,10 @@
    "from_commit": "1760d9a4a87f82a6bdbc7cb17e99ccdd8ae4c433",
    "from_total": 367121,
    "from_regime": "whole-file practice",
-   "to_total": 243854,
+   "to_total": 245555,
    "to_regime": "ruled membership",
-   "change_in_characters": -123267,
-   "change_percent": -33.58,
+   "change_in_characters": -121566,
+   "change_percent": -33.11,
    "★_this_comparison_crosses_a_regime_boundary": true,
    "what_that_means_here": "the two sides answer DIFFERENT questions — one side counts the whole of `CLAUDE.md` because that was the practice there, the other counts only the spans the ruled membership names — so the change is not a saving one act made, and must not be read as one"
   },
@@ -287,10 +287,10 @@
    "from_commit": "594074e1e1900079e449d2b79a38920d21bca6e6",
    "from_total": 296832,
    "from_regime": "whole-file practice",
-   "to_total": 243854,
+   "to_total": 245555,
    "to_regime": "ruled membership",
-   "change_in_characters": -52978,
-   "change_percent": -17.85,
+   "change_in_characters": -51277,
+   "change_percent": -17.27,
    "★_this_comparison_crosses_a_regime_boundary": true,
    "what_that_means_here": "the two sides answer DIFFERENT questions — one side counts the whole of `CLAUDE.md` because that was the practice there, the other counts only the spans the ruled membership names — so the change is not a saving one act made, and must not be read as one"
   }

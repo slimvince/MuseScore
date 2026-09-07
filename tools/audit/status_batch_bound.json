@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_claude_md_boot_membership_2026_09_07.md, Task 3",
+ "dispatch": "cc_instruction_read_size_repair_and_rows_2026_09_07.md, Task 4",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -309,51 +309,49 @@
    "base_commit": "da693541c65ca67d10ed5bec811a04b40c4c0a9c",
    "the_then_previous_batch": "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_read_size_repair_and_rows_2026_09_07.md, Task 4",
+   "base_commit": "5ec1f97cb956488717af7f4cbfde6ffc4eb70a51",
+   "the_then_previous_batch": "cc_instruction_claude_md_boot_membership_2026_09_07.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "da693541c65ca67d10ed5bec811a04b40c4c0a9c",
- "the_then_previous_batch": "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md",
+ "base_commit": "5ec1f97cb956488717af7f4cbfde6ffc4eb70a51",
+ "the_then_previous_batch": "cc_instruction_claude_md_boot_membership_2026_09_07.md",
  "the_kind_of_move": "ordinary",
- "entries_moved": 5,
- "characters_moved": 6748,
+ "entries_moved": 4,
+ "characters_moved": 6656,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1203,
-   "sha256": "1c0557dc3c1195c7545069d75c47bd53c298c8e65843845aba9363268f75cdaf",
+   "characters": 2528,
+   "sha256": "3b592271571f64df0d40c1e6bdbe31b30f2fda62a8e03e89735a73671f175372",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-09-07 (CC — `cc_instruction_claude_md_prune_at_amendment_2026_09_07.md`, Task 4, the close. **★★ THE FORWARD CLAUSE IS PERFORMED ON THIS BATCH I"
+   "opening": "*2026-09-07 (CC — `cc_instruction_claude_md_boot_membership_2026_09_07.md`, Task 3, the close. **★★ THE FORWARD CLAUSE IS PERFORMED ON THIS BATCH ITSE"
   },
   {
    "line_at_base": 10,
-   "characters": 1763,
-   "sha256": "c9fc5ada79e91a195922332e14540bd642d1f258e6b4849168ef7dd152da49fd",
+   "characters": 1037,
+   "sha256": "29c5d77a608132bdcfbd82500074e8c129edfefedb917fa52227d329d0847396",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-07 (CC — Same dispatch, Task 3. **★★ THE PRUNE-AT-AMENDMENT RULE NOW HAS SOMETHING THAT WATCHES IT — the user's second order of this date.** "
+   "opening": "*2026-09-07 (CC — Same dispatch, Task 2. **★ NO OPEN-ITEMS ROW WAS CREATED AND NO DECISIONS-REGISTER ENTRY WAS WRITTEN, AND BOTH ARE DELIBERATE RATHER"
   },
   {
    "line_at_base": 12,
-   "characters": 1671,
-   "sha256": "8b7f5e6adb214e11f062a707d7e290ee728dc63f485143e1850d112bd913733f",
+   "characters": 1963,
+   "sha256": "3abd6d0912f5c4b62345cf12cc5c31c9379157ae223a68e9cf3eb61820713a68",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-07 (CC — Same dispatch, Task 2. **★★ THE BACKLOG WAS DERIVED AND READ WHOLE, AND EVERY CANDIDATE STAYS — the tidy is smaller than the order a"
+   "opening": "*2026-09-07 (CC — Same dispatch, Task 1. **★★ `CLAUDE.md` NOW STATES WHAT A SESSION READS OF IT — six spans at session start, eight read only when the"
   },
   {
    "line_at_base": 14,
-   "characters": 1483,
-   "sha256": "3d72b48c173561352946334d393a3b0e1ee6231165c4e8199965c9732357a061",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-07 (CC — Same dispatch, Task 1. **★★ THE UNEXPLAINED GROWTH IS CLOSED AT THE OBJECTS, AND THE DIAGNOSIS BEHIND THIS BATCH IS PARTLY REFUTED.*"
-  },
-  {
-   "line_at_base": 16,
-   "characters": 628,
-   "sha256": "306c2da20eccf075911d5d966e4be148582c2191bf7137aa0ce454763aa0ff12",
+   "characters": 1128,
+   "sha256": "fd8ffaa8ed94d32ad434cf24c6d25f76d78d805f3a2b0d5a38d72ec178ea00cb",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
    "opening": "*2026-09-07 (CC — Same dispatch, Task 0. **★ A1 WAS CHECKED OVER THE WHOLE TRACKED POPULATION** with the sanctioned enumeration tool and holds exactly"
