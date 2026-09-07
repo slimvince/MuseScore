@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 1",
+ "dispatch": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 3",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -291,22 +291,28 @@
    "base_commit": "665aa83f96bd96a8528cd8735c3f92bff0f7cac6",
    "the_then_previous_batch": "cc_instruction_l2_reading_file_2026_09_05.md",
    "the_kind_of_move": "catch-up"
+  },
+  {
+   "executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 3",
+   "base_commit": "acf91d340ebd597cc8803feed211e14945f87b44",
+   "the_then_previous_batch": "cc_instruction_l2_ruling_writeback_2026_09_05.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "665aa83f96bd96a8528cd8735c3f92bff0f7cac6",
- "the_then_previous_batch": "cc_instruction_l2_reading_file_2026_09_05.md",
- "the_kind_of_move": "catch-up",
+ "base_commit": "acf91d340ebd597cc8803feed211e14945f87b44",
+ "the_then_previous_batch": "cc_instruction_l2_ruling_writeback_2026_09_05.md",
+ "the_kind_of_move": "ordinary",
  "entries_moved": 1,
- "characters_moved": 5386,
+ "characters_moved": 4811,
  "the_moved": [
   {
-   "line_at_base": 10,
-   "characters": 5386,
-   "sha256": "e73f231656245dfbb7d22efab8fd79eb8aabc6fcfc45dd18718794a5c6835027",
+   "line_at_base": 8,
+   "characters": 4811,
+   "sha256": "a63085f664e82f459e90d594cb8f728d1caa4c398074bcb523d98ba29e717d0b",
    "membership": "names the dispatch",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-05 (CC — `cc_instruction_l2_reading_file_2026_09_05.md`, Tasks 0 to 5. **★★ L2's WITHHELD-FAMILY READING FILE EXISTS AND IS RENDERED FROM THE"
+   "the_one_declared_adjustment_applied": true,
+   "opening": "*2026-09-05 (CC — `cc_instruction_l2_ruling_writeback_2026_09_05.md`, Tasks 0 to 5. **★★ THE THREE RULINGS OF THE L2 WITHHELD-FAMILY SITTING ARE WRITT"
   }
  ],
  "reconciliation": {

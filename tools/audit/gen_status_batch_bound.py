@@ -197,7 +197,20 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # of the same dispatch. A seventh omission is not prevented by anything here. **The second writing's
 # two nameless entries remain in `STATUS.md` and no aiming of this tool can identify them**, as the
 # row for the third writing below records; that is a declared state and not a STOP.
-BASE_COMMIT = "665aa83f96bd96a8528cd8735c3f92bff0f7cac6"
+#
+# ★★★★★★★★★★★★ AND THE SEVENTH RE-AIMING OF THE SAME BATCH, 2026-09-07, by
+# `cc_instruction_status_forward_bound_second_2026_09_07.md` Task 3 — the close — which is an
+# `"ordinary"` move and NOT a catch-up: this batch performs Ruling 4's forward clause on ITSELF, in
+# the same act that writes its own entries, exactly as every close is supposed to. `BASE_COMMIT` is
+# this batch's LAST TASK COMMIT pushed before the close began — Task 2, the row for the missing
+# trigger — per this tool's docstring; the then-previous batch is the ruling-write-back batch, whose
+# close entry names it and whose entry below it says nothing of the kind, so ONE entry is expected to
+# move. **THE DECLARED PREFIX ADJUSTMENT IS EXPECTED TO FIRE ON THIS MOVE**, which is why the close's
+# own entries are written into `STATUS.md` BEFORE `--apply` runs: `moved_entries()` strips
+# `Last updated: ` from the text read at the base commit, and that stripped form exists in the live
+# file only once the prefix has moved up to the newest of this batch's own entries. Running the two
+# in the other order leaves the prefix where it is, matches nothing, and STOPs.
+BASE_COMMIT = "acf91d340ebd597cc8803feed211e14945f87b44"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -207,7 +220,7 @@ BASE_COMMIT = "665aa83f96bd96a8528cd8735c3f92bff0f7cac6"
 # 4's forward bound moves exactly these, in the act that writes this batch's own" until 2026-09-07,
 # correct while every aiming this tool had ever carried was an ordinary one; it is widened rather
 # than replaced, because the ordinary reading is still the one that governs an ordinary move — #12.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_l2_reading_file_2026_09_05.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_l2_ruling_writeback_2026_09_05.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -230,14 +243,14 @@ DISPATCH = "cc_instruction_status_forward_bound_second_2026_09_07.md"
 # comparison dispatch was the executing act, and Task 2 while the eighth, the ninth, the tenth and the
 # boot-pack-freeze dispatch were, each correct then; the numbered task differs per dispatch and is
 # re-stated with each re-aiming rather than left to be inferred.)*
-TASK = "Task 1"
+TASK = "Task 3"
 # ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
 #   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
 #                 moved in the same act that writes this batch's own entries.
 #   "catch-up"  — a LATE move: the close that owed this move omitted it, and this act performs it
 #                 now. The then-previous-batch language is false of such a move, so the header says
 #                 what actually happened instead (#10).
-MOVE_KIND = "catch-up"
+MOVE_KIND = "ordinary"
 RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
 
 # Every aiming this tool has had, oldest first. Authored, and kept rather than replaced.
@@ -504,6 +517,13 @@ PREVIOUS_AIMINGS = [
      "base_commit": "665aa83f96bd96a8528cd8735c3f92bff0f7cac6",
      "the_then_previous_batch": "cc_instruction_l2_reading_file_2026_09_05.md",
      "the_kind_of_move": "catch-up"},
+    # ★ AND THE SAME BATCH'S SEVENTH AIMING, its close — an ORDINARY move, the forward clause
+    # performed on this batch itself in the act that writes its own entries. It is the row that shows
+    # the bound met again rather than merely caught up.
+    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 3",
+     "base_commit": "acf91d340ebd597cc8803feed211e14945f87b44",
+     "the_then_previous_batch": "cc_instruction_l2_ruling_writeback_2026_09_05.md",
+     "the_kind_of_move": "ordinary"},
 ]
 
 HEADER_ORDINARY = (
