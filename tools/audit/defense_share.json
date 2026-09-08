@@ -2,7 +2,7 @@
  "what_this_is": "HOW MUCH OF THE SESSION-START READ OF `CLAUDE.md` IS EXPLICITLY-MARKED DEFENSE, in characters, measured at the tree. A MEASUREMENT ONLY: it moves no text, proposes nothing and grades nothing. Every value is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_defense_share.py",
  "generated_for": "cc_instruction_defense_share_sizing_third_2026_09_08.md, Task 2",
- "★_THE_PUBLISHED_FIGURE_IS_A_LOWER_BOUND_AND_THIS_IS_ITS_DECLARED_BOUND": {
+ "★_THE_PUBLISHED_VALUE_IS_A_LOWER_BOUND_AND_THIS_IS_ITS_DECLARED_BOUND": {
   "the_bound": "THE MARKER SET'S REACH IS UNMEASURED. A defense written without one of these markers is NOT COUNTED, so every total below is a LOWER BOUND on the defense material standing in the six session-start spans -- never an estimate of it, and never a ceiling.",
   "why_it_is_stated_rather_than_left_implicit": "D-673: an enumerating pattern whose reach is unmeasured may state its bound on its own artifact. The test that clause fixes is met here -- no analysis decision consumes this enumeration; it sizes a documentation question.",
   "a_known_miss_re_located_on_every_run_rather_than_asserted": {
@@ -20,7 +20,7 @@
   "why_both_cannot_hold_at_this_tree": "`CLAUDE.md` routinely puts two marked defenses in ONE paragraph, so under the literal rule both run to the same paragraph end and overlap. This is the common case here, not an edge.",
   "measured_before_anything_was_decided": "the literal rule attributes 159825 characters to the six spans, whose own total is 97805, and it produces 20 overlapping pair(s). Every value in this sentence is computed by this run; none is transcribed (D-431), and the per-span column `characters_had_every_clause_run_to_its_paragraph_end` below carries the same comparison span by span.",
   "why_the_closing_rule_is_the_faithful_reading": "the quantity the dispatch NAMES is the CHARACTERS standing inside marked defense clauses, and a character standing inside two clauses is one character -- which is what the two STOPs above say, since both are violated only by double-counting.",
-  "and_it_is_measure_preserving": "for clauses ordered by their start and ending at one paragraph end, the union of the untruncated extents and the union of the closed ones are the SAME CHARACTER SET. What changes is only that a character is counted once.",
+  "and_it_preserves_exactly_what_is_measured": "for clauses ordered by their start and ending at one paragraph end, the union of the untruncated extents and the union of the closed ones are the SAME CHARACTER SET. What changes is only that a character is counted once.",
   "clauses_closed_at_the_next_one": 20,
   "the_literal_sum_published_so_the_reading_side_can_rule_without_re_running": 159825,
   "★_what_is_owed_to_the_reading_side": "this is a MEASUREMENT DEFINITION and it belongs to the writing side. It is taken here because the ordered measurement is otherwise unproducible, and it is declared at the tool, on this artifact and in the batch's report rather than taken silently. Every per-clause record below carries BOTH its closed length and the length it would have had running to its paragraph end (#12), so the ruling costs no re-derivation whichever way it falls."
@@ -54,7 +54,7 @@
  ],
  "the_denominators_both_re_derived_through_the_imported_reader_at_this_tree": {
   "the_six_session_start_spans": 97805,
-  "the_whole_ordinary_session_start_read": 245555,
+  "the_whole_ordinary_session_start_read": 244765,
   "why_two": "the first says how much of what a session reads OF `CLAUDE.md` is marked defense; the second says how much of the WHOLE boot it is. A share quoted against one of them is not the share against the other."
  },
  "per_span": [
@@ -111,7 +111,7 @@
   "marked_clauses": 34,
   "characters_those_clauses_hold": 51500,
   "share_of_the_six_session_start_spans": 52.66,
-  "share_of_the_whole_ordinary_session_start_read": 20.97
+  "share_of_the_whole_ordinary_session_start_read": 21.04
  },
  "every_clause_published_so_the_tables_reach_is_inspectable_rather_than_asserted": [
   {
@@ -502,9 +502,9 @@
   "what_it_does_NOT_establish": "that the marker table is COMPLETE. Every check above is about the measurement's internal soundness; none of them can see a defense the table does not admit, which is exactly why the bound above is declared."
  },
  "what_this_does_not_claim": [
-  "That any marked clause is MOVABLE. Movability is Ruling 1's question and nothing here answers any part of it.",
+  "That any marked clause is MOVABLE. Movability is Ruling 1's question and nothing here answers any portion of it.",
   "That any unmarked passage is not a defense -- the declared bound says the opposite.",
-  "That the figure is what a satellite would remove.",
+  "That the value is what a satellite would remove.",
   "That `cowork_claude_md_live_rule_classification_2026_09_08.md` was consumed. It was NOT read by this tool."
  ]
 }

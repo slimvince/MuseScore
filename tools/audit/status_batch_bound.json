@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_read_size_repair_and_rows_2026_09_07.md, Task 4",
+ "dispatch": "cc_instruction_defense_share_sizing_third_2026_09_08.md, Task 3",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -315,43 +315,57 @@
    "base_commit": "5ec1f97cb956488717af7f4cbfde6ffc4eb70a51",
    "the_then_previous_batch": "cc_instruction_claude_md_boot_membership_2026_09_07.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_defense_share_sizing_third_2026_09_08.md, Task 3",
+   "base_commit": "38e8d81ab7e867e282117e9110fd8cf105a74833",
+   "the_then_previous_batch": "cc_instruction_read_size_repair_and_rows_2026_09_07.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "5ec1f97cb956488717af7f4cbfde6ffc4eb70a51",
- "the_then_previous_batch": "cc_instruction_claude_md_boot_membership_2026_09_07.md",
+ "base_commit": "38e8d81ab7e867e282117e9110fd8cf105a74833",
+ "the_then_previous_batch": "cc_instruction_read_size_repair_and_rows_2026_09_07.md",
  "the_kind_of_move": "ordinary",
- "entries_moved": 4,
- "characters_moved": 6656,
+ "entries_moved": 5,
+ "characters_moved": 8343,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2528,
-   "sha256": "3b592271571f64df0d40c1e6bdbe31b30f2fda62a8e03e89735a73671f175372",
+   "characters": 1837,
+   "sha256": "abcbcb421d68f58e07072670bbdf3932ebd9b3ca6c4841a3d1a8f34cf7b40a83",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-09-07 (CC — `cc_instruction_claude_md_boot_membership_2026_09_07.md`, Task 3, the close. **★★ THE FORWARD CLAUSE IS PERFORMED ON THIS BATCH ITSE"
+   "opening": "*2026-09-07 (CC — `cc_instruction_read_size_repair_and_rows_2026_09_07.md`, Task 4, the close. **★★ THE FORWARD CLAUSE IS PERFORMED ON THIS BATCH ITSE"
   },
   {
    "line_at_base": 10,
-   "characters": 1037,
-   "sha256": "29c5d77a608132bdcfbd82500074e8c129edfefedb917fa52227d329d0847396",
+   "characters": 1721,
+   "sha256": "2b04de66a7cd4c1d50d8a7dbb2312af07c09fc16c95e6465e31fe51f9ddf46e3",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-07 (CC — Same dispatch, Task 2. **★ NO OPEN-ITEMS ROW WAS CREATED AND NO DECISIONS-REGISTER ENTRY WAS WRITTEN, AND BOTH ARE DELIBERATE RATHER"
+   "opening": "*2026-09-07 (CC — Same dispatch, Task 3. **★★ THE THREE OWED ROWS ARE OPEN: [[OI-381]], [[OI-382]], [[OI-383]], each with its index row AND its detail"
   },
   {
    "line_at_base": 12,
-   "characters": 1963,
-   "sha256": "3abd6d0912f5c4b62345cf12cc5c31c9379157ae223a68e9cf3eb61820713a68",
+   "characters": 1323,
+   "sha256": "ac43bf7574727895ded3161d5062f72c9c05ec7a03e7f1aa0baea3c97a7a0009",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-07 (CC — Same dispatch, Task 1. **★★ `CLAUDE.md` NOW STATES WHAT A SESSION READS OF IT — six spans at session start, eight read only when the"
+   "opening": "*2026-09-07 (CC — Same dispatch, Task 2. **★★ THE REPAIRED MEASUREMENT IS POSITIVELY ESTABLISHED (#19) ON FOUR CHECKS, NOT MERELY RUN.** The overstate"
   },
   {
    "line_at_base": 14,
-   "characters": 1128,
-   "sha256": "fd8ffaa8ed94d32ad434cf24c6d25f76d78d805f3a2b0d5a38d72ec178ea00cb",
+   "characters": 2247,
+   "sha256": "dbd9821ee5ce5db324a7e6295da3f9c863a22e83714cb34ece0664a07b5e7fce",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-09-07 (CC — Same dispatch, Task 1. **★★ THE SESSION-START READ MEASUREMENT STOPS COUNTING THE EIGHT CONDITIONAL SPANS OF `CLAUDE.md`.** It measu"
+  },
+  {
+   "line_at_base": 16,
+   "characters": 1215,
+   "sha256": "b8cfa480cf17357c773339061b1ce23712efe4518836aa5b03e942bb088b82ec",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
    "opening": "*2026-09-07 (CC — Same dispatch, Task 0. **★ A1 WAS CHECKED OVER THE WHOLE TRACKED POPULATION** with the sanctioned enumeration tool and holds exactly"

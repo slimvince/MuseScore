@@ -23,7 +23,7 @@ WHAT IS AUTHORED AND WHAT IS DERIVED
 ------------------------------------
 authored : the MARKER TABLE -- three forms of run that open a defense clause.  It is a judgment
            about how this record writes a defense, and its reach is UNMEASURED, which is why the
-           published figure is a LOWER BOUND and says so of itself (**D-673**).
+           published value is a LOWER BOUND and says so of itself (**D-673**).
 derived  : every span, every match, every extent, every count and both denominators.  No value is
            transcribed (**D-431**).
 
@@ -53,7 +53,8 @@ and it does so in every span that carries a clause at all.
 WHY THE CLOSING RULE IS THE FAITHFUL READING RATHER THAN A CONVENIENCE.  The quantity the dispatch
 NAMES is *"the characters standing inside explicitly-marked defense clauses"*, and a character
 standing inside two clauses is ONE character; the two establishment STOPs above are what say so,
-since both are violated only by double-counting.  And the repair is exactly measure-preserving: for
+since both are violated only by double-counting.  And the repair preserves exactly what is
+measured: for
 clauses ordered by their start and ending at one paragraph end, the union of the untruncated
 extents and the union of the closed ones are THE SAME CHARACTER SET.  What changes is only that a
 character is counted once.  The literal sum is published below anyway, beside the count of
@@ -82,7 +83,7 @@ one a reader can skip:
 
 WHAT THIS DOES NOT CLAIM.  That any marked clause is MOVABLE -- movability is Ruling 1's question
 and this tool answers none of it.  That any unmarked passage is not a defense; the bound below says
-the opposite.  That the figure is what a satellite would remove.  And it consumes
+the opposite.  That the value is what a satellite would remove.  And it consumes
 `cowork_claude_md_live_rule_classification_2026_09_08.md` not at all -- that file is not read here.
 
 Run:
@@ -114,7 +115,7 @@ use_utf8_output()   # OI-297 -- the findings must survive a non-console stdout
 # FILE rather than guessed: the record writes `Why:`, `Why ` and `Why,`; `Evidence:`; and both
 # `Founding instance:` and `Founding instance,`.  An earlier issue of this arc admitted a colon
 # alone on two of these rows -- which made one row match nothing at all, and made the other
-# silently LOWER the figure by missing the comma form.  The zero-match STOP above is the check that
+# silently LOWER the value by missing the comma form.  The zero-match STOP above is the check that
 # catches the first of those; only reading the file catches the second, which is why the widening
 # is recorded here at the table rather than left in a report.
 MARKERS: tuple[tuple[str, str], ...] = (
@@ -301,7 +302,7 @@ def build() -> dict:
             "nothing and grades nothing. Every value is computed; none is transcribed (D-431).",
         "generated_by": "tools/audit/gen_defense_share.py",
         "generated_for": "cc_instruction_defense_share_sizing_third_2026_09_08.md, Task 2",
-        "★_THE_PUBLISHED_FIGURE_IS_A_LOWER_BOUND_AND_THIS_IS_ITS_DECLARED_BOUND": {
+        "★_THE_PUBLISHED_VALUE_IS_A_LOWER_BOUND_AND_THIS_IS_ITS_DECLARED_BOUND": {
             "the_bound": "THE MARKER SET'S REACH IS UNMEASURED. A defense written without one of "
                          "these markers is NOT COUNTED, so every total below is a LOWER BOUND on "
                          "the defense material standing in the six session-start spans -- never an "
@@ -351,7 +352,7 @@ def build() -> dict:
                 "the quantity the dispatch NAMES is the CHARACTERS standing inside marked defense "
                 "clauses, and a character standing inside two clauses is one character -- which is "
                 "what the two STOPs above say, since both are violated only by double-counting.",
-            "and_it_is_measure_preserving":
+            "and_it_preserves_exactly_what_is_measured":
                 "for clauses ordered by their start and ending at one paragraph end, the union of "
                 "the untruncated extents and the union of the closed ones are the SAME CHARACTER "
                 "SET. What changes is only that a character is counted once.",
@@ -407,9 +408,9 @@ def build() -> dict:
         },
         "what_this_does_not_claim": [
             "That any marked clause is MOVABLE. Movability is Ruling 1's question and nothing "
-            "here answers any part of it.",
+            "here answers any portion of it.",
             "That any unmarked passage is not a defense -- the declared bound says the opposite.",
-            "That the figure is what a satellite would remove.",
+            "That the value is what a satellite would remove.",
             "That `cowork_claude_md_live_rule_classification_2026_09_08.md` was consumed. It was "
             "NOT read by this tool.",
         ],
@@ -447,7 +448,7 @@ def main(argv: list[str]) -> int:
     print("    of the whole session-start read (%d): %.2f%%"
           % (den["the_whole_ordinary_session_start_read"],
              tot["share_of_the_whole_ordinary_session_start_read"]))
-    print("  THE FIGURE IS A LOWER BOUND: the marker set's reach is UNMEASURED.")
+    print("  THE VALUE IS A LOWER BOUND: the marker set's reach is UNMEASURED.")
     return 0
 
 
