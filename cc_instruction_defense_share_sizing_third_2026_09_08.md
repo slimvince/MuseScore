@@ -1,5 +1,36 @@
 # CC INSTRUCTION — the defense-share sizing, THIRD ISSUE, 2026-09-08
 
+> **★ RE-BANNERED 2026-09-08, AND NOT REWRITTEN — THIS DISPATCH HAS RUN AND IS COMMITTED, AND ITS
+> BODY BELOW STANDS EXACTLY AS THE EXECUTING BATCH RAN AGAINST IT (`D-674`).** The banner is added
+> at the head; not one other character of this file is changed. Rewriting the body would falsify
+> what that batch actually executed.
+>
+> **WHAT WAS DEFECTIVE, IN ONE SENTENCE.** §2's extent sentence fixed a marked clause's reach as
+> *"From the first character of the marker through the end of the paragraph containing it"* and, in
+> the same task, made two establishment STOPs — that no two clauses overlap, and that a span's
+> clause characters do not exceed that span's own count. **At the tree it ran on, those could not
+> all hold**, because `CLAUDE.md` routinely writes two marked defenses inside one paragraph, so
+> under the literal wording both run to that paragraph's end and overlap.
+>
+> **THE EXECUTING BATCH DECLARED THE CONFLICT AND RESOLVED IT, AND DID NOT TAKE IT SILENTLY.** It
+> measured the conflict before deciding anything, closed a clause at the next marked one where one
+> opens before the paragraph ends, published both readings per clause (#12), and declared the
+> departure at the tool, on the artifact, in `STATUS.md` and in its report.
+>
+> **THE RESOLUTION WAS RULED ON 2026-09-08** — `cowork_rulings_2026_09_08_extent_rule_sitting.md`,
+> §1: the closing rule IS the definition, and the literal wording above is a drafting defect in a
+> bar the writing side wrote, corrected rather than ratified.
+>
+> **AND THE PARAGRAPH UNIT BOTH READINGS RESTED ON HAS SINCE BEEN REPLACED**, by
+> `cc_instruction_defense_share_authored_ends_2026_09_08.md`, which the ruling record does not reach
+> and does not forbid: the imported paragraph-end function walks forward only until a blank line,
+> and this file carries neither blank lines between its numbered principles nor inside its two
+> longest sections, so an extent ran from its marker to the next marker and carried live rule text.
+> The measurement now ends each clause at an AUTHORED anchor, published in
+> `cowork_defense_clause_ends_2026_09_08.md`, and keeps both earlier readings as comparison columns.
+> **The measured value moved DOWNWARD, which is the point of that act and not a regression against
+> this one.**
+
 **THIS SUPERSEDES `cc_instruction_defense_share_sizing_second_2026_09_08.md`. DO NOT RE-RUN IT.** Its
 Task 0 completed and committed at `45a0527b90e895bee735cf9aa57c4d8e2a640478`; **nothing of that Task 0
 is repeated here.** Its Task 1 stopped on a premise the dispatch declared ESTABLISHED and which was
