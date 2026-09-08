@@ -822,6 +822,30 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "NOT ASSERT: that the membership is complete, it being AUTHORED with each member's own "
         "clause cited; or that the read is small enough, which is [[OI-370]]'s subject."),
 
+    # ---- AUTHORED 2026-09-08, cc_instruction_defense_share_sizing_third_2026_09_08.md Task 2 --
+    # Registered in the act that creates the tool, beside its invocation in `gen_guard_state.py`.
+    # The verdict is LIVE on the ground its nearest sibling already carries: this tool has exactly
+    # the shape `gen_session_start_read_size.py` has, and takes its spans FROM that tool.
+    "tools/audit/gen_defense_share.py": (
+        LIVE, "gen_defense_share.py, WHERE THE SPANS COME FROM and THE STOPS of its module "
+              "docstring; `build()`, which re-measures every character on every run; "
+              "`clauses_in()`, which re-matches every marker against the file as it stands",
+        "LIVE. Its subject is the tree AS IT STANDS. Nothing about the spans is listed here: they "
+        "are IMPORTED from `gen_session_start_read_size.py`, which parses them out of `CLAUDE.md`'s "
+        "own membership block, so an amendment of that membership moves this measurement without "
+        "the tool being edited — the same property that keeps its sibling on this side of the "
+        "ruling. Every match, every extent and every count is re-derived on every run, and its "
+        "STOPs are demands about the tree rather than a dated reading: other than six session-start "
+        "spans, a marker row matching nothing, a clause outside its span, two clauses overlapping, "
+        "a span's clause characters exceeding the span, a re-derived total disagreeing with the "
+        "reader's, and the known unemphasised miss no longer locatable exactly once. It goes red "
+        "when the six spans change, which is the invariant working rather than noise: the defense "
+        "share moved and the record does not yet say so. ★ WHAT IT DOES NOT ASSERT: that the "
+        "marker table is COMPLETE — its reach is UNMEASURED, which is why the artifact publishes a "
+        "LOWER BOUND and declares that of itself (D-673); that any marked clause is MOVABLE, which "
+        "is the 2026-09-08 satellite ruling's question and not this tool's; or that any unmarked "
+        "passage is not a defense."),
+
     # ---- AUTHORED 2026-08-18, cc_instruction_preparation_tenth.md Task 1 ---------------------
     "tools/audit/gen_evidence_pin_membership.py": (
         LIVE, "gen_evidence_pin_membership.py, WHAT IS DERIVED and THE STOPS of its module "

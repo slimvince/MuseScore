@@ -734,6 +734,32 @@ AUTHORED = [
      "clause that makes it one so the authored half is checkable by reading three clauses; and "
      "nothing about whether the read is small enough, which is [[OI-370]]'s own subject"),
 
+    # ---- AUTHORED 2026-09-08, cc_instruction_defense_share_sizing_third_2026_09_08.md Task 2 --
+    # Registered in the act that creates the tool — the standing new-tool rule. A derived candidate
+    # with no authored invocation is this runner's own STOP, and a new guard may not be silently
+    # left unrun. It takes `--check` and never the bare invocation, for the ordinary reason: run
+    # with no flag it REWRITES its committed artifact. The verdict for it is authored in the same
+    # act at `gen_guard_classification.py`, which STOPs if the two tables disagree (#6).
+    ("tools/audit/gen_defense_share.py", ["--check"],
+     "how much of the session-start read of `CLAUDE.md` is explicitly-marked defense, re-measured "
+     "at the tree. Its subject is the tree AS IT STANDS: the spans are IMPORTED from "
+     "`gen_session_start_read_size.py`, which parses them out of `CLAUDE.md`'s own membership "
+     "block, so an amendment of that membership moves this measurement without the tool being "
+     "edited, and every character count is re-derived on every run. It goes red when the six "
+     "session-start spans change, which is the invariant working rather than noise. Its STOPs are "
+     "what make it a guard rather than a record: other than SIX session-start spans halts it, so a "
+     "share is never taken over the wrong denominator; a marker row matching NOTHING halts it, "
+     "which is the check that would have caught the dead row an earlier issue of this arc shipped; "
+     "a clause falling outside the span it is attributed to, two clauses overlapping after the "
+     "closing rule, a clause left holding nothing by that rule, and a span's clause characters "
+     "exceeding the span's own count each halt it, so a double-counting total cannot be published; "
+     "the six spans' re-derived total must equal the reader's own; and the known unemphasised miss "
+     "must stay locatable exactly once, so a named miss that has moved is not asserted. ★ WHAT IT "
+     "DOES NOT ASSERT: that the marker table is COMPLETE — its reach is UNMEASURED, which is why "
+     "the artifact publishes a LOWER BOUND and declares that of itself (D-673); that any marked "
+     "clause is MOVABLE, which is Ruling 1's question and not this tool's; or that any unmarked "
+     "passage is not a defense"),
+
     # ---- AUTHORED 2026-08-19, cc_instruction_preparation_twelfth.md Task 3 -------------------
     # THE EPOCH-PINNED PASSES AND WHAT THEIR WRITE PATHS RESOLVE, registered in the act that
     # creates the tool — the standing new-tool rule. `--check` and never the bare invocation, for

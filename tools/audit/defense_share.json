@@ -1,0 +1,510 @@
+{
+ "what_this_is": "HOW MUCH OF THE SESSION-START READ OF `CLAUDE.md` IS EXPLICITLY-MARKED DEFENSE, in characters, measured at the tree. A MEASUREMENT ONLY: it moves no text, proposes nothing and grades nothing. Every value is computed; none is transcribed (D-431).",
+ "generated_by": "tools/audit/gen_defense_share.py",
+ "generated_for": "cc_instruction_defense_share_sizing_third_2026_09_08.md, Task 2",
+ "★_THE_PUBLISHED_FIGURE_IS_A_LOWER_BOUND_AND_THIS_IS_ITS_DECLARED_BOUND": {
+  "the_bound": "THE MARKER SET'S REACH IS UNMEASURED. A defense written without one of these markers is NOT COUNTED, so every total below is a LOWER BOUND on the defense material standing in the six session-start spans -- never an estimate of it, and never a ceiling.",
+  "why_it_is_stated_rather_than_left_implicit": "D-673: an enumerating pattern whose reach is unmeasured may state its bound on its own artifact. The test that clause fixes is met here -- no analysis decision consumes this enumeration; it sizes a documentation question.",
+  "a_known_miss_re_located_on_every_run_rather_than_asserted": {
+   "what_it_is": "a plain, unemphasised clause opening `Founding instances of the gap:`, in the Conventions span, inside the bullet requiring every design decision to carry its defense at its home. It wraps across two lines.",
+   "why_it_is_deliberately_not_admitted": "admitting it would mean a pattern over UNEMPHASISED prose, which would match ordinary text. The doubt default keeps the table narrow.",
+   "found_at_line": 1651,
+   "the_span_it_stands_in": "Conventions",
+   "how_it_is_located": "by a pattern tolerating a line break inside the phrase, because it wraps -- a single-line search for the whole phrase finds nothing."
+  },
+  "what_the_bound_does_NOT_say": "that these three forms are the only ones the record uses; that an unmarked passage is not a defense; or that the miss above is the only one."
+ },
+ "how_a_marked_clause_is_bounded": "from the first character of the marker through the end of the paragraph containing it, using the reader's own `_paragraph_end`, bounded by the span's own end, AND closed at the next marked clause where one opens before that paragraph ends. A marked clause never extends past its span, and that is checked rather than assumed.",
+ "★_THE_CLOSING_RULE_IS_A_DECLARED_DEPARTURE_FROM_THE_DISPATCH_S_LITERAL_WORDING": {
+  "what_the_dispatch_says": "cc_instruction_defense_share_sizing_third_2026_09_08.md fixes the extent as `From the first character of the marker through the end of the paragraph containing it` and makes `no two overlap` and `a span's clause characters do not exceed that span's own count` establishment STOPs.",
+  "why_both_cannot_hold_at_this_tree": "`CLAUDE.md` routinely puts two marked defenses in ONE paragraph, so under the literal rule both run to the same paragraph end and overlap. This is the common case here, not an edge.",
+  "measured_before_anything_was_decided": "the literal rule attributes 159825 characters to the six spans, whose own total is 97805, and it produces 20 overlapping pair(s). Every value in this sentence is computed by this run; none is transcribed (D-431), and the per-span column `characters_had_every_clause_run_to_its_paragraph_end` below carries the same comparison span by span.",
+  "why_the_closing_rule_is_the_faithful_reading": "the quantity the dispatch NAMES is the CHARACTERS standing inside marked defense clauses, and a character standing inside two clauses is one character -- which is what the two STOPs above say, since both are violated only by double-counting.",
+  "and_it_is_measure_preserving": "for clauses ordered by their start and ending at one paragraph end, the union of the untruncated extents and the union of the closed ones are the SAME CHARACTER SET. What changes is only that a character is counted once.",
+  "clauses_closed_at_the_next_one": 20,
+  "the_literal_sum_published_so_the_reading_side_can_rule_without_re_running": 159825,
+  "★_what_is_owed_to_the_reading_side": "this is a MEASUREMENT DEFINITION and it belongs to the writing side. It is taken here because the ordered measurement is otherwise unproducible, and it is declared at the tool, on this artifact and in the batch's report rather than taken silently. Every per-clause record below carries BOTH its closed length and the length it would have had running to its paragraph end (#12), so the ruling costs no re-derivation whichever way it falls."
+ },
+ "where_the_spans_come_from": "IMPORTED from `tools/audit/gen_session_start_read_size.py`, which parses them out of `CLAUDE.md`'s own membership block. Nothing here re-implements that parse, re-locates a heading, or carries a line number for a span (D-307, #6).",
+ "the_marker_table": [
+  {
+   "the_row": "Why followed by a space, a colon or a comma",
+   "matched_against": "the content of a run the imported ITALIC or BOLD pattern found",
+   "the_opening_it_admits": "Why[ :,]",
+   "matches": 31,
+   "in_bold": 0,
+   "in_italics": 31
+  },
+  {
+   "the_row": "Evidence followed by a colon",
+   "matched_against": "the content of a run the imported ITALIC or BOLD pattern found",
+   "the_opening_it_admits": "Evidence:",
+   "matches": 1,
+   "in_bold": 0,
+   "in_italics": 1
+  },
+  {
+   "the_row": "Founding instance followed by a colon or a comma",
+   "matched_against": "the content of a run the imported ITALIC or BOLD pattern found",
+   "the_opening_it_admits": "Founding instance[:,]",
+   "matches": 2,
+   "in_bold": 1,
+   "in_italics": 1
+  }
+ ],
+ "the_denominators_both_re_derived_through_the_imported_reader_at_this_tree": {
+  "the_six_session_start_spans": 97805,
+  "the_whole_ordinary_session_start_read": 245555,
+  "why_two": "the first says how much of what a session reads OF `CLAUDE.md` is marked defense; the second says how much of the WHOLE boot it is. A share quoted against one of them is not the share against the other."
+ },
+ "per_span": [
+  {
+   "name": "Guiding principles",
+   "characters": 26862,
+   "marked_clauses": 7,
+   "characters_those_clauses_hold": 12507,
+   "characters_had_every_clause_run_to_its_paragraph_end": 47079,
+   "share_of_this_span": 46.56
+  },
+  {
+   "name": "The open-items register",
+   "characters": 14630,
+   "marked_clauses": 6,
+   "characters_those_clauses_hold": 4015,
+   "characters_had_every_clause_run_to_its_paragraph_end": 4631,
+   "share_of_this_span": 27.44
+  },
+  {
+   "name": "The decisions register",
+   "characters": 16971,
+   "marked_clauses": 11,
+   "characters_those_clauses_hold": 12943,
+   "characters_had_every_clause_run_to_its_paragraph_end": 74190,
+   "share_of_this_span": 76.27
+  },
+  {
+   "name": "This block",
+   "characters": 5096,
+   "marked_clauses": 0,
+   "characters_those_clauses_hold": 0,
+   "characters_had_every_clause_run_to_its_paragraph_end": 0,
+   "share_of_this_span": 0.0
+  },
+  {
+   "name": "Conventions",
+   "characters": 33487,
+   "marked_clauses": 10,
+   "characters_those_clauses_hold": 22035,
+   "characters_had_every_clause_run_to_its_paragraph_end": 33925,
+   "share_of_this_span": 65.8
+  },
+  {
+   "name": "The self-check after every coding exercise",
+   "characters": 759,
+   "marked_clauses": 0,
+   "characters_those_clauses_hold": 0,
+   "characters_had_every_clause_run_to_its_paragraph_end": 0,
+   "share_of_this_span": 0.0
+  }
+ ],
+ "the_totals": {
+  "marked_clauses": 34,
+  "characters_those_clauses_hold": 51500,
+  "share_of_the_six_session_start_spans": 52.66,
+  "share_of_the_whole_ordinary_session_start_read": 20.97
+ },
+ "every_clause_published_so_the_tables_reach_is_inspectable_rather_than_asserted": [
+  {
+   "the_span_it_stands_in": "Guiding principles",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 106,
+   "the_marked_run_as_written": "Why:",
+   "last_line": 113,
+   "characters": 667,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 12052
+  },
+  {
+   "the_span_it_stands_in": "Guiding principles",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 113,
+   "the_marked_run_as_written": "Why:",
+   "last_line": 150,
+   "characters": 3154,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 11385
+  },
+  {
+   "the_span_it_stands_in": "Guiding principles",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 150,
+   "the_marked_run_as_written": "Why this belongs at the principle rather than only on that row:",
+   "last_line": 168,
+   "characters": 1701,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 8231
+  },
+  {
+   "the_span_it_stands_in": "Guiding principles",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 168,
+   "the_marked_run_as_written": "Why the exhaustion clause is part of the commissioning:",
+   "last_line": 174,
+   "characters": 636,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 6530
+  },
+  {
+   "the_span_it_stands_in": "Guiding principles",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 174,
+   "the_marked_run_as_written": "Why the commissioning is     recorded at the principle rather than only on the row:",
+   "last_line": 209,
+   "characters": 3362,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 5894
+  },
+  {
+   "the_span_it_stands_in": "Guiding principles",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 209,
+   "the_marked_run_as_written": "Why it was replaced:",
+   "last_line": 238,
+   "characters": 2532,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 2532
+  },
+  {
+   "the_span_it_stands_in": "Guiding principles",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 285,
+   "the_marked_run_as_written": "Why:",
+   "last_line": 290,
+   "characters": 455,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 455
+  },
+  {
+   "the_span_it_stands_in": "The open-items register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 360,
+   "the_marked_run_as_written": "Why it is stated here rather than left to be inferred:",
+   "last_line": 362,
+   "characters": 266,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 266
+  },
+  {
+   "the_span_it_stands_in": "The open-items register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 378,
+   "the_marked_run_as_written": "Why that clause is not discretionary:",
+   "last_line": 379,
+   "characters": 177,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 793
+  },
+  {
+   "the_span_it_stands_in": "The open-items register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 379,
+   "the_marked_run_as_written": "Why the qualification at all:",
+   "last_line": 386,
+   "characters": 616,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 616
+  },
+  {
+   "the_span_it_stands_in": "The open-items register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 400,
+   "the_marked_run_as_written": "Why:",
+   "last_line": 418,
+   "characters": 1695,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 1695
+  },
+  {
+   "the_span_it_stands_in": "The open-items register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 437,
+   "the_marked_run_as_written": "Why the rule is worth a lettered place beside the others.",
+   "last_line": 446,
+   "characters": 939,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 939
+  },
+  {
+   "the_span_it_stands_in": "The open-items register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 472,
+   "the_marked_run_as_written": "Why an input rather than a hand-made correction:",
+   "last_line": 475,
+   "characters": 322,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 322
+  },
+  {
+   "the_span_it_stands_in": "The decisions register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 516,
+   "the_marked_run_as_written": "Why the granularity clause:",
+   "last_line": 520,
+   "characters": 469,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 12943
+  },
+  {
+   "the_span_it_stands_in": "The decisions register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 520,
+   "the_marked_run_as_written": "Why (h) itself:",
+   "last_line": 532,
+   "characters": 1218,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 12474
+  },
+  {
+   "the_span_it_stands_in": "The decisions register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 532,
+   "the_marked_run_as_written": "Why:",
+   "last_line": 544,
+   "characters": 1094,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 11256
+  },
+  {
+   "the_span_it_stands_in": "The decisions register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 544,
+   "the_marked_run_as_written": "Why:",
+   "last_line": 566,
+   "characters": 2106,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 10162
+  },
+  {
+   "the_span_it_stands_in": "The decisions register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 566,
+   "the_marked_run_as_written": "Why:",
+   "last_line": 579,
+   "characters": 1302,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 8056
+  },
+  {
+   "the_span_it_stands_in": "The decisions register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 579,
+   "the_marked_run_as_written": "Why:",
+   "last_line": 606,
+   "characters": 2537,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 6754
+  },
+  {
+   "the_span_it_stands_in": "The decisions register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 606,
+   "the_marked_run_as_written": "Why the default falls this way:",
+   "last_line": 609,
+   "characters": 339,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 4217
+  },
+  {
+   "the_span_it_stands_in": "The decisions register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 609,
+   "the_marked_run_as_written": "Why the timing clause is not decorative:",
+   "last_line": 624,
+   "characters": 1440,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 3878
+  },
+  {
+   "the_span_it_stands_in": "The decisions register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 624,
+   "the_marked_run_as_written": "Why:",
+   "last_line": 631,
+   "characters": 715,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 2438
+  },
+  {
+   "the_span_it_stands_in": "The decisions register",
+   "the_marker_row_it_matched": "Founding instance followed by a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 631,
+   "the_marked_run_as_written": "Founding instance, and the reason the clause is general rather than one entry's treatment:",
+   "last_line": 646,
+   "characters": 1434,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 1723
+  },
+  {
+   "the_span_it_stands_in": "The decisions register",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 646,
+   "the_marked_run_as_written": "Why the line falls at the KIND rather than at the subject:",
+   "last_line": 649,
+   "characters": 289,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 289
+  },
+  {
+   "the_span_it_stands_in": "Conventions",
+   "the_marker_row_it_matched": "Founding instance followed by a colon or a comma",
+   "emphasis": "bold",
+   "first_line": 1553,
+   "the_marked_run_as_written": "Founding instance:",
+   "last_line": 1627,
+   "characters": 6888,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 8023
+  },
+  {
+   "the_span_it_stands_in": "Conventions",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 1627,
+   "the_marked_run_as_written": "Why the second tier is the load-bearing one:",
+   "last_line": 1634,
+   "characters": 635,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 1135
+  },
+  {
+   "the_span_it_stands_in": "Conventions",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 1634,
+   "the_marked_run_as_written": "Why the order rather than a sweep:",
+   "last_line": 1639,
+   "characters": 500,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 500
+  },
+  {
+   "the_span_it_stands_in": "Conventions",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 1694,
+   "the_marked_run_as_written": "Why the line falls there:",
+   "last_line": 1734,
+   "characters": 3902,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 10273
+  },
+  {
+   "the_span_it_stands_in": "Conventions",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 1734,
+   "the_marked_run_as_written": "Why, in the user's own   recorded ground:",
+   "last_line": 1761,
+   "characters": 2487,
+   "it_was_closed_at_the_next_marked_clause": true,
+   "characters_had_it_run_to_the_paragraph_end": 6371
+  },
+  {
+   "the_span_it_stands_in": "Conventions",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 1761,
+   "the_marked_run_as_written": "Why the qualification:",
+   "last_line": 1804,
+   "characters": 3884,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 3884
+  },
+  {
+   "the_span_it_stands_in": "Conventions",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 1844,
+   "the_marked_run_as_written": "Why:",
+   "last_line": 1848,
+   "characters": 367,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 367
+  },
+  {
+   "the_span_it_stands_in": "Conventions",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 1859,
+   "the_marked_run_as_written": "Why:",
+   "last_line": 1891,
+   "characters": 2901,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 2901
+  },
+  {
+   "the_span_it_stands_in": "Conventions",
+   "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
+   "emphasis": "italic",
+   "first_line": 1897,
+   "the_marked_run_as_written": "Why:",
+   "last_line": 1900,
+   "characters": 318,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 318
+  },
+  {
+   "the_span_it_stands_in": "Conventions",
+   "the_marker_row_it_matched": "Evidence followed by a colon",
+   "emphasis": "italic",
+   "first_line": 1906,
+   "the_marked_run_as_written": "Evidence:",
+   "last_line": 1907,
+   "characters": 153,
+   "it_was_closed_at_the_next_marked_clause": false,
+   "characters_had_it_run_to_the_paragraph_end": 153
+  }
+ ],
+ "★_the_establishment_taken_positively_on_every_run": {
+  "how_it_runs": "each of these is a STOP and not a reported field: a reported field would let a reader skip an unsound measurement.",
+  "the_reader_returned_exactly_six_session_start_spans": true,
+  "every_marker_row_matched_at_least_once": true,
+  "every_clause_lies_wholly_inside_the_span_it_is_attributed_to": true,
+  "no_two_clauses_overlap_after_the_closing_rule": true,
+  "no_clause_is_left_holding_nothing_by_the_closing_rule": true,
+  "no_span_s_clause_characters_exceed_that_span_s_own_count": true,
+  "the_six_spans_re_derived_total_equals_the_reader_s_own": true,
+  "the_known_unemphasised_miss_is_locatable_exactly_once": true,
+  "what_it_does_NOT_establish": "that the marker table is COMPLETE. Every check above is about the measurement's internal soundness; none of them can see a defense the table does not admit, which is exactly why the bound above is declared."
+ },
+ "what_this_does_not_claim": [
+  "That any marked clause is MOVABLE. Movability is Ruling 1's question and nothing here answers any part of it.",
+  "That any unmarked passage is not a defense -- the declared bound says the opposite.",
+  "That the figure is what a satellite would remove.",
+  "That `cowork_claude_md_live_rule_classification_2026_09_08.md` was consumed. It was NOT read by this tool."
+ ]
+}

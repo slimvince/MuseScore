@@ -450,13 +450,23 @@ def _resolve_span(lines: list[str], outside: list[str], text: str, kind: str) ->
             "located_by": "the heading “%s”" % heading}
 
 
-def claude_md_reading(claude_md: str) -> dict:
+def claude_md_reading(claude_md: str, with_coordinates: bool = False) -> dict:
     """What an ordinary session reads OF `CLAUDE.md`, under whichever regime the file itself sets.
 
     No span name, heading or anchor is carried in this file: every one is parsed out of the
     membership block.  A file carrying no such block is the WHOLE-FILE regime — that was the
     practice before 2026-09-07 and was mandated by no clause, as the file's own provenance sentence
     records — and it is recorded as such rather than measured as a membership.
+
+    ★ `with_coordinates` IS FOR A CALLER WORKING IN MEMORY, AND MOVES NOTHING THAT IS PUBLISHED
+    (2026-09-08).  Every span is named by its HEADING and never by a line number (D-307), and the
+    artifact this function feeds is a published one — so `lo` and `hi` are stripped from what it
+    returns, deliberately, and THAT STRIP STAYS IN FORCE FOR EVERYTHING RENDERED.  The default is
+    exactly the shape this function returned before the parameter existed, so `measure()` is
+    untouched and no recorded value moves.  A caller that must attribute something it located in
+    the file to the span that something stands in — the defense-share measurement is the first —
+    passes `True` and receives the same records carrying their `lo` and `hi`.  The coordinates
+    reach that caller and nothing else: no artifact of this tool carries one, before or after.
     """
     lines = claude_md.split("\n")
     hits = [i for i, ln in enumerate(lines) if MEMBERSHIP_ANCHOR in ln]
@@ -536,16 +546,23 @@ def claude_md_reading(claude_md: str) -> dict:
                    "%r, resolved-but-unnamed %r, %d names for %d spans"
                    % (in_neither, in_both_only, len(set(named)), len(named)))
 
+    # ★ THE STRIP IS DELIBERATE, AND IT IS WHAT D-307 ASKS OF A PUBLISHED ARTIFACT: a span is named
+    # by its HEADING and never by a line number.  `emit` is the ONE place the strip is decided (#6);
+    # it keeps the strip in force for everything rendered and lifts it only for a caller that asked
+    # for the coordinates in memory, which is what this function's own docstring records.
+    def emit(spans: list[dict]) -> list[dict]:
+        if with_coordinates:
+            return spans
+        return [{k: v for k, v in s.items() if k not in ("lo", "hi")} for s in spans]
+
     return {
         "regime": "ruled membership",
         "why_this_regime": "this `CLAUDE.md` carries the membership block, so the read is the six "
                            "spans it names at session start and nothing else of the file",
         "the_clause_that_makes_it_a_member": clause.group(1).strip(),
         "characters": total,
-        "the_session_start_spans": [
-            {k: v for k, v in s.items() if k not in ("lo", "hi")} for s in session_start],
-        "the_conditional_spans_measured_beside_the_read_and_never_summed_into_it": [
-            {k: v for k, v in s.items() if k not in ("lo", "hi")} for s in conditional],
+        "the_session_start_spans": emit(session_start),
+        "the_conditional_spans_measured_beside_the_read_and_never_summed_into_it": emit(conditional),
         "why_the_conditional_spans_are_not_summed_in":
             "each is read by the sessions its own condition names and not by an ordinary one, which "
             "is what CONDITIONAL means. Counting them would report a read no ordinary session "
