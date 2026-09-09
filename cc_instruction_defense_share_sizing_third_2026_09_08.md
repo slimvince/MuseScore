@@ -1,6 +1,6 @@
 # CC INSTRUCTION — the defense-share sizing, THIRD ISSUE, 2026-09-08
 
-> **★ RE-BANNERED 2026-09-08, AND NOT REWRITTEN — THIS DISPATCH HAS RUN AND IS COMMITTED, AND ITS
+> **★ RE-BANNERED 2026-09-09, AND NOT REWRITTEN — THIS DISPATCH HAS RUN AND IS COMMITTED, AND ITS
 > BODY BELOW STANDS EXACTLY AS THE EXECUTING BATCH RAN AGAINST IT (`D-674`).** The banner is added
 > at the head; not one other character of this file is changed. Rewriting the body would falsify
 > what that batch actually executed.
@@ -21,11 +21,12 @@
 > §1: the closing rule IS the definition, and the literal wording above is a drafting defect in a
 > bar the writing side wrote, corrected rather than ratified.
 >
-> **AND THE PARAGRAPH UNIT BOTH READINGS RESTED ON HAS SINCE BEEN REPLACED**, by
+> **AND THE PARAGRAPH UNIT BOTH READINGS WERE BUILT ON HAS SINCE BEEN REPLACED**, by
 > `cc_instruction_defense_share_authored_ends_2026_09_08.md`, which the ruling record does not reach
 > and does not forbid: the imported paragraph-end function walks forward only until a blank line,
-> and this file carries neither blank lines between its numbered principles nor inside its two
-> longest sections, so an extent ran from its marker to the next marker and carried live rule text.
+> and `CLAUDE.md` carries no blank line between its numbered principles and none inside its sections
+> for the open-items register and for the decisions register, so an extent ran from its marker to
+> the next marker and carried live rule text.
 > The measurement now ends each clause at an AUTHORED anchor, published in
 > `cowork_defense_clause_ends_2026_09_08.md`, and keeps both earlier readings as comparison columns.
 > **The measured value moved DOWNWARD, which is the point of that act and not a regression against
