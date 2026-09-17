@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_defense_share_authored_ends_2026_09_08.md, Task 3",
+ "dispatch": "cc_instruction_passage_guards_historical_resume_2026_09_17.md, Task 3",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -327,46 +327,34 @@
    "base_commit": "e6fa18961a097ab2b2c7afa2affe57aeeed630bf",
    "the_then_previous_batch": "cc_instruction_defense_share_sizing_third_2026_09_08.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_passage_guards_historical_resume_2026_09_17.md, Task 3",
+   "base_commit": "ec86e53b7a2619127087b07457f996d69ea61b35",
+   "the_then_previous_batch": "cc_instruction_defense_share_authored_ends_2026_09_08.md",
+   "the_kind_of_move": "catch-up"
+  },
+  {
+   "executing_act": "cc_instruction_passage_guards_historical_resume_2026_09_17.md, Task 3",
+   "base_commit": "ec86e53b7a2619127087b07457f996d69ea61b35",
+   "the_then_previous_batch": "cc_instruction_root_records_move_finish_commit_three_2026_09_17.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "e6fa18961a097ab2b2c7afa2affe57aeeed630bf",
- "the_then_previous_batch": "cc_instruction_defense_share_sizing_third_2026_09_08.md",
+ "base_commit": "ec86e53b7a2619127087b07457f996d69ea61b35",
+ "the_then_previous_batch": "cc_instruction_root_records_move_finish_commit_three_2026_09_17.md",
  "the_kind_of_move": "ordinary",
- "entries_moved": 4,
- "characters_moved": 7554,
+ "entries_moved": 1,
+ "characters_moved": 1886,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1924,
-   "sha256": "ccadd4b2883485b2a3330feef3ce1232be7469badeba9b47972ab10ee0230f58",
+   "characters": 1886,
+   "sha256": "bd4b7405dc4237e7ff6e08d8da9758f39000bad4d02c2f302f56fec4bf7e610e",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-09-08 (CC — `cc_instruction_defense_share_sizing_third_2026_09_08.md`, Task 3, the close. **★★ THESE ENTRIES COVER BOTH COMMITS THE DISPATCH NAM"
-  },
-  {
-   "line_at_base": 10,
-   "characters": 2716,
-   "sha256": "0e8cf4a85f17a96abd6f6c4eda1ceae5f7d75c66368644574559b8dde7b85d06",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-08 (CC — Same dispatch, Task 2. **★★ THE DEFENSE SHARE OF THE SESSION-START READ IS MEASURED — THE ARC'S FIRST TAKEN MEASUREMENT AFTER TWO BA"
-  },
-  {
-   "line_at_base": 12,
-   "characters": 1235,
-   "sha256": "ccacdf7332d4470628e92763a90aee78090b97cc4f8548502d5008f73983c879",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-08 (CC — Same dispatch, Task 1. **★★ THE READER'S SPAN COORDINATES ARE REACHABLE BY A CALLER AND NOTHING PUBLISHED MOVES.** `claude_md_readin"
-  },
-  {
-   "line_at_base": 14,
-   "characters": 1679,
-   "sha256": "aa7375c1f3e4ddf04eba4ffcd98d14236c58407181d7a5a34b71983ddd399e03",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-09-08 (CC — Same dispatch, Task 0. **★★ THE START STATE WAS ESTABLISHED AT THE OBJECTS, AND THE DISPATCH'S EXPECTATION HELD EXACTLY** — the sanc"
+   "opening": "*2026-09-17 (CC — `records/cc/instructions/cc_instruction_root_records_move_finish_commit_three_2026_09_17.md`, Task 2, the close of the root records "
   }
  ],
  "reconciliation": {

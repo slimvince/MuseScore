@@ -304,7 +304,50 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # entries remain in `STATUS.md` and no aiming of this tool can identify them**, as the row for the
 # third writing below records; that is a declared state and not a STOP, and it is unchanged by this
 # act.
-BASE_COMMIT = "e6fa18961a097ab2b2c7afa2affe57aeeed630bf"
+#
+# ★★★★★★★★★★★★★★★★★★ RE-AIMED TWICE IN ONE ACT, 2026-09-17, by
+# `cc_instruction_passage_guards_historical_resume_2026_09_17.md` Task 3 — the close — oldest move
+# first, and ALL SIX authored inputs moved together at each of the two, `PREVIOUS_AIMINGS` being
+# appended to rather than replaced (#12).
+#
+# **MOVE 1 WAS A CATCH-UP AND HAS RUN**; the fields below now carry **MOVE 2, the ORDINARY move**,
+# which is the forward clause performed on this batch itself in the same act that writes its own
+# entries. The two rows at the foot of `PREVIOUS_AIMINGS` record them separately, and only
+# `PREVIOUS_BATCH_DISPATCH` and `MOVE_KIND` differ between them: the base commit, the act date, the
+# executing dispatch and the task are CONSTANT by construction, this dispatch ordering both moves
+# inside one task. Stated exactly rather than loosely, on the 2026-09-07 catch-up act's own precedent.
+#
+# WHY MOVE 1 WAS OWED AT ALL. The aiming it replaced is the authored-ends batch's, which RAN; that
+# batch's entries nevertheless still stood in `STATUS.md`, because THE CLOSE THAT OWED THE NEXT MOVE
+# OMITTED IT. The omitting close is the root
+# records move's third commit, and the reason is recorded at its own `STATUS.md` entry and at
+# `cowork_handoff_entry_one_hundred_and_ninety_three.md` §0: that close's ordered path list did not
+# carry `tools/audit/status_batch_bound.json`, which a plain run and `--apply` both write, so
+# performing the move would have left either a path outside the list or a committed tree whose guard
+# fails. That is the seventh omission the 2026-09-07 catch-up act declared it could not prevent, and
+# it is exactly the defect rowed at `OPEN_ITEMS.md` OI-379 happening again.
+#
+# `BASE_COMMIT` is this batch's TASK COMMIT — the resume dispatch's Task 1(c), which carries the
+# three `HISTORICAL` entries, the six reversed verdicts, both dispatches and handoff entry 193. The
+# then-previous batch for MOVE 1 was the authored-ends batch, whose close entry names it and whose
+# entries below it say `Same dispatch`; for MOVE 2 it is the root records move's third commit, whose
+# close entry names it and below which no entry says `Same dispatch`. **NO COUNT OF THE ENTRIES
+# EXPECTED TO MOVE IS WRITTEN HERE**,
+# on the reason the previous re-aiming states in its own words: a comment asserting a count the
+# tool's own run contradicts is the defect #10 forbids, and the membership is DERIVED from the
+# entries' own text at the base commit (D-431).
+#
+# **THE DECLARED PREFIX ADJUSTMENT DID NOT FIRE ON MOVE 1 AND IS EXPECTED TO FIRE ON MOVE 2** — the
+# authored-ends batch's entries do not carry the prefix, the root records move's close having taken
+# it when it wrote its own entries above them, and that close's own entry carries it in turn. That
+# is why this batch's own entries were written into `STATUS.md` BEFORE either `--apply` ran: the
+# stripped form exists in the live file only once the prefix has moved up to this batch's newest
+# entry. Running them in the other order matches nothing and STOPs. `ACT_DATE` and the executing
+# dispatch's date AGREE here, both being 2026-09-17. **The second writing's two nameless 2026-09-02
+# entries remain in `STATUS.md` and no aiming of this tool can identify them**, as the row for the
+# third writing below records; that is a declared state and not a STOP, and it is unchanged by this
+# act.
+BASE_COMMIT = "ec86e53b7a2619127087b07457f996d69ea61b35"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -314,7 +357,7 @@ BASE_COMMIT = "e6fa18961a097ab2b2c7afa2affe57aeeed630bf"
 # 4's forward bound moves exactly these, in the act that writes this batch's own" until 2026-09-07,
 # correct while every aiming this tool had ever carried was an ordinary one; it is widened rather
 # than replaced, because the ordinary reading is still the one that governs an ordinary move — #12.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_defense_share_sizing_third_2026_09_08.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_root_records_move_finish_commit_three_2026_09_17.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -324,8 +367,8 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_defense_share_sizing_third_2026_09_08.
 # was the executing act, correct then, and are re-stated with each re-aiming rather than left to be
 # inferred. On a CATCH-UP move the dates of the closes that omitted the move are NOT the act date:
 # the move happens now, and the header says so.)*
-ACT_DATE = "2026-09-09"
-DISPATCH = "cc_instruction_defense_share_authored_ends_2026_09_08.md"
+ACT_DATE = "2026-09-17"
+DISPATCH = "cc_instruction_passage_guards_historical_resume_2026_09_17.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -347,7 +390,9 @@ DISPATCH = "cc_instruction_defense_share_authored_ends_2026_09_08.md"
 # that dispatch ordering both halves of the close — this batch's own entries at its Task 3(a) and
 # this move at its Task 3(b) — inside its Task 3. It names Task 3 again while
 # `cc_instruction_defense_share_authored_ends_2026_09_08.md` is the executing act, that dispatch
-# ordering both halves of the close at the same two sub-items of its own Task 3.)*
+# ordering both halves of the close at the same two sub-items of its own Task 3. It names Task 3
+# again while `cc_instruction_passage_guards_historical_resume_2026_09_17.md` is the executing act,
+# that dispatch ordering this batch's own entries and BOTH of its two moves inside its own Task 3.)*
 TASK = "Task 3"
 # ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
 #   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
@@ -662,6 +707,20 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_defense_share_authored_ends_2026_09_08.md, Task 3",
      "base_commit": "e6fa18961a097ab2b2c7afa2affe57aeeed630bf",
      "the_then_previous_batch": "cc_instruction_defense_share_sizing_third_2026_09_08.md",
+     "the_kind_of_move": "ordinary"},
+    # ★ THIS BATCH'S OWN AIMINGS, 2026-09-17 — TWO moves in one act, on the shape the 2026-09-07
+    # six-catch-up rows above set: one row per move, appended in the order the moves ran, oldest
+    # omission first, and both recorded in the same act that makes them. The row immediately below
+    # is MOVE 1, the CATCH-UP the root records move's third commit omitted; the row after it is
+    # MOVE 2, the ORDINARY move this batch performs on itself. Both carry the same executing act and
+    # the same base commit, because this dispatch orders both inside its own Task 3.
+    {"executing_act": "cc_instruction_passage_guards_historical_resume_2026_09_17.md, Task 3",
+     "base_commit": "ec86e53b7a2619127087b07457f996d69ea61b35",
+     "the_then_previous_batch": "cc_instruction_defense_share_authored_ends_2026_09_08.md",
+     "the_kind_of_move": "catch-up"},
+    {"executing_act": "cc_instruction_passage_guards_historical_resume_2026_09_17.md, Task 3",
+     "base_commit": "ec86e53b7a2619127087b07457f996d69ea61b35",
+     "the_then_previous_batch": "cc_instruction_root_records_move_finish_commit_three_2026_09_17.md",
      "the_kind_of_move": "ordinary"},
 ]
 
