@@ -115,7 +115,7 @@ def norm(s: str) -> str:
 AUTHORED: list[dict] = [
     {
         "row": "OI-90",
-        "surface": "cowork_away_returns.md",
+        "surface": "records/cowork/handoff/cowork_away_returns.md",
         "record_opens_at": "### ★ (i) [[OI-90]] — the stale reason strings under "
                            "`tools/audit/l1l2/` — DISCARDED",
         "the_verdict": "**THE VERDICT — DISCARDED, with what amended #10 requires of a discard "

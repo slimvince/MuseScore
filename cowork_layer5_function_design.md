@@ -488,7 +488,7 @@ match any earlier label.
     major tonic
     before `iv` in 62 / 29 / 56 analysis units on the Baroque / Jazz / Default presets respectively — a known over-trigger whose resolution is the function context, not the guard. An
     earlier framing of this as a "fully-diatonic guard gap" was a **corrected error** — the chord is not diatonic.)
-    - **Source-level proof the guard cannot fix it (the L5-close review, `cc_phase5c_L5_close_review.md`, decision D1,
+    - **Source-level proof the guard cannot fix it (the L5-close review, `records/cc/reports/cc_phase5c_L5_close_review.md`, decision D1,
       2026-06-29; D2/D3 below are the same review's).** A labeler-fired applied chord
       *always* carries a tone foreign to the home-key collection — over the **same** collection mask the foreign-tone
       guard uses — so hoisting the guard ahead of the labeler's early-return would reject **nothing**: the placement is
@@ -565,7 +565,7 @@ identity Layer 4 actually committed. See §5.5.
 
 **D-L5a — the function confidence is published in a boundary form (confidence-contract close-out, 2026-07-02).** The
 function confidence's internal `combined` is an **unbounded** additive of its three components (observed to ~25 on
-**E0** — the dormant full-spine pre-engage measurement run, `cc_e0_fullspine_report.md`), but the cross-layer
+**E0** — the dormant full-spine pre-engage measurement run, `records/cc/reports/cc_e0_fullspine_report.md`), but the cross-layer
 confidence contract (`cowork_confidence_contract.md` §5 R5 / U2) requires a
 layer-boundary confidence to be **[0,1]** so a downstream consumer that reads it as a *comparison input* operates on a
 commensurable quantity. So the unit additionally publishes a **boundary form** — a fixed **monotone** rational squash
@@ -815,7 +815,7 @@ catalog §Sources.
    carry it so later layers inherit it by default rather than re-deriving it. *(Done — the architecture doc's control-flow
    contract now carries it. The earlier-layer override-readiness was verified at source and closed: chord layer already
    carries alternatives+confidence on confident commits; key layer's region forward-carry is the byte-identical close-out
-   `cc_instruction_l3_keyalt_forwardcarry.md`; slicing layer not impacted. See completion-ledger reopen note.)*
+   `records/cc/instructions/cc_instruction_l3_keyalt_forwardcarry.md`; slicing layer not impacted. See completion-ledger reopen note.)*
 2. **Override calibration facts the threshold design must account for (from the source check).** The chord layer's
    carried confidence is **vertical-fit only** (no progression signal — this layer supplies the functional context
    itself, so the threshold scales against vertical decisiveness, not total decisiveness); the carried `alternatives` are
@@ -836,7 +836,7 @@ catalog §Sources.
      **must** then — replace the v1 with the correct reduction, derived from this override's real selection needs, and
      update the key-layer carry + its lock-in test. Do not carry the v1 placeholder past this step. (Why deferred, not
      pinned up front: it would design the reduction against an unspecified consumer — see the completion-ledger reopen
-     note and `cc_instruction_l3_keyalt_forwardcarry.md` §1.3.)
+     note and `records/cc/instructions/cc_instruction_l3_keyalt_forwardcarry.md` §1.3.)
    - **★ Also at this step: re-derive the carry in the J-key-iii re-key path.** The key layer's joint re-key pass
      (`jointKeyWiringEnabled()`, default-OFF today) overrides the chosen key **without** updating the forward-carry
      (`keyAlternatives`/`keyConfidence`) — inert now (gated off, no consumer), but the moment L5 consumes the carry that

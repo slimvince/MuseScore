@@ -396,7 +396,7 @@ GRADES: dict[str, dict] = {
         "'(`OPEN_ITEMS.md` OI-nnn item n)' — recording where an open question or a correction is "
         "tracked. A provenance attribution, and the register's own index rather than a "
         "specification of the analysis."),
-    "cc_adoption_measurement_report.md": g(
+    "records/cc/reports/cc_adoption_measurement_report.md": g(
         PROVENANCE,
         "Named once, inside the adoption banner's citation list, as the adoption record."),
     "CLAUDE.md": g(
@@ -407,11 +407,11 @@ GRADES: dict[str, dict] = {
         "excluded form. ★ The plan's §5 additionally EXCLUDES this document's gate block and "
         "grading conventions by name, as measurement content belonging to the measurement-design "
         "stage."),
-    "cowork_handoff.md": g(
+    "records/cowork/handoff/cowork_handoff.md": g(
         PROVENANCE,
         "Named once, 'per-unit provenance in STATUS.md / `cowork_handoff.md`' — a parenthetical "
         "recording where per-unit provenance is written down."),
-    "cc_instruction_notation_switch.md": g(
+    "records/cc/instructions/cc_instruction_notation_switch.md": g(
         PROVENANCE,
         "Named once, in a parenthesis recording which dispatch performed the switch."),
     "DEFECT_TYPES.md": g(
@@ -426,7 +426,7 @@ GRADES: dict[str, dict] = {
     "open_items/OI-177.md": g(
         PROVENANCE,
         "Named once, in the same parenthetical citation list as OI-176's."),
-    "cowork_rulings_2026_08_11_fourteenth_stop.md": g(
+    "records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md": g(
         PROVENANCE,
         "Named twice, each time in a parenthesis recording where a user ruling was taken — the "
         "bar's second excluded form, word for word."),
@@ -458,10 +458,10 @@ GRADES: dict[str, dict] = {
         PROVENANCE,
         "Named once, as the committed evidence a shelving rests on, with the figures deliberately "
         "not carried across. A provenance attribution."),
-    "cc_layer1_impl_report.md": g(
+    "records/cc/reports/cc_layer1_impl_report.md": g(
         BARE_CITATION,
         "Named once, in a 'See …' citation list of session reports."),
-    "cc_layer1_coverage_report.md": g(
+    "records/cc/reports/cc_layer1_coverage_report.md": g(
         BARE_CITATION,
         "Named once, in the same 'See …' citation list."),
     "cowork_layer2_reslice_design.md": g(
@@ -471,13 +471,13 @@ GRADES: dict[str, dict] = {
         "SECTION, which is why it is graded rather than waved past — but the bar's admitting "
         "second form is a NAMED HOME with sections, and this is a citation supporting a "
         "restatement, not a home. Same grade and same ground as the seed's."),
-    "cc_layer2_impl_report.md": g(
+    "records/cc/reports/cc_layer2_impl_report.md": g(
         BARE_CITATION,
         "Named once, in a 'See …' citation list of three documents."),
-    "cc_layer2_audit_dossier.md": g(
+    "records/cc/reports/cc_layer2_audit_dossier.md": g(
         BARE_CITATION,
         "Named once, in the same 'See …' citation list."),
-    "cc_layer3_wiring_report.md": g(
+    "records/cc/reports/cc_layer3_wiring_report.md": g(
         BARE_CITATION,
         "Named once, in a 'Full provenance:' citation list."),
     "docs/nct_detection_design.md": g(
@@ -499,11 +499,11 @@ GRADES: dict[str, dict] = {
         "delegation this document writes TO the arc plan. Rule (j) is the ruling that keeps the "
         "two roles apart: delegating to a document and being a home are different tests with "
         "different subjects."),
-    "cc_tonicization_modulation_metric_dossier.md": g(
+    "records/cc/reports/cc_tonicization_modulation_metric_dossier.md": g(
         PROVENANCE,
         "Named once, as the record every figure of that measurement lives in and is not restated "
         "from (#17f, D-431). A provenance attribution."),
-    "cowork_rulings_2026_08_09_second_stop.md": g(
+    "records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md": g(
         PROVENANCE,
         "Named once, in a parenthesis recording which ruling corrected a passage."),
     "docs/scoring_model.md": g(

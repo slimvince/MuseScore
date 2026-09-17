@@ -103,7 +103,7 @@ ROOT = Path(__file__).resolve().parent.parent.parent
 FILTER = "tools/audit/decisions_filter_classification.json"
 RECOVERY = "tools/audit/deciding_act_recovery.json"
 BACKBONE = "tools/audit/decisions/backbone_decisions.json"
-RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
+RULING = ROOT / "records" / "cowork" / "rulings" / "cowork_rulings_2026_08_16_preparation_return.md"
 OUT = ROOT / "tools" / "audit" / "sole_carrier_subclass.json"
 
 # The filter's own class names. This pass may not widen them and re-classifies with none of them.

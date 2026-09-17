@@ -568,7 +568,7 @@ recorded act.
 
 ### D-289 — Meta-principle: precision lives in the evidence and the functional labelling, not in the search
 
-- **Recorded at:** `cowork_handoff_archive.md:3082` · **status:** `superseded-by` · **group:** C
+- **Recorded at:** `records/cowork/handoff/cowork_handoff_archive.md:3082` · **status:** `superseded-by` · **group:** C
 - **What the entry says the decision is:** Three independent investigations converged on one rule: accuracy is gained by improving what evidence each reading is judged on and by labelling harmonic function better - not by searching harder over the readings already on the table. The rule is SUPERSEDED as an entry: every part of it is stated by a later decision that is written into a specification, so it is recorded here and homed nowhere, which is what keeps one rule in one place.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 

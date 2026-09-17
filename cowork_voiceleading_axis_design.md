@@ -1,6 +1,6 @@
 # The voice-leading axis (axis 2) — architecture and foundation components (design)
 
-> **★ Status: AS-BUILT (VL-A/B/C foundation, 2026-07-03 — `cc_vl_foundation_build_report.md`).** The dormant
+> **★ Status: AS-BUILT (VL-A/B/C foundation, 2026-07-03 — `records/cc/reports/cc_vl_foundation_build_report.md`).** The dormant
 > foundation is built, tested, and gate-proven (composing 1083 / notation 53 / snapshots 11 no refresh; gate 53/24/53
 > case-identity sets byte-identical on all three presets; dormancy grep-proven; study-parity float-exact on the pinned
 > sample). *(★ The gate named in that sentence is the SUPERSEDED batch case-identity stop — a true record of
@@ -25,7 +25,7 @@
 > **(Original draft banner follows.)** The first design document of the **voice-leading axis** — the
 > second, orthogonal analysis dimension confirmed empirically by the idiom-discovery program
 > (`cowork_idiom_discovery_findings.md` v2.0: orthogonality formally measured, cross-ARI(voice-leading, harmonic) =
-> 0.030 on 1,283 dual-view pieces; study record `cc_vl_idiom_discovery_report.md`, ratified 2026-07-03). Roadmap
+> 0.030 on 1,283 dual-view pieces; study record `records/cc/reports/cc_vl_idiom_discovery_report.md`, ratified 2026-07-03). Roadmap
 > home: `docs/implementation_roadmap.md`, forward-increment step 4 (the discovery half is ✅ done; this document is
 > the remaining spec half). Specified by **rule and direction**; numeric calibration is the later precision phase
 > (the firewall). Build target: **dormant + byte-identical** — nothing in this design touches the harmonic spine's
@@ -79,7 +79,7 @@ concept, the difference is stated. Nothing below is used before it is defined he
   convention; engagement is a separate, deferred event).
 - **Byte-identical / the corpus gate** — the standing regression discipline: after a change, the project's
   hard regression stop reproduces. **★ WHICH STOP THAT IS WAS CORRECTED 2026-08-11** (CC,
-  `cc_instruction_return_continuation_11.md` Task 1; `OPEN_ITEMS.md` OI-276 (3)). **THE STOP IS THE
+  `records/cc/instructions/cc_instruction_return_continuation_11.md` Task 1; `OPEN_ITEMS.md` OI-276 (3)). **THE STOP IS THE
   ROBUST-UNIT ONE — `CLAUDE.md` gate block (A), the granularity-robust union-of-boundaries unit — and it is
   the ONE authority for what this term means here; no criterion is restated in this document (#6, D-431).**
   The batch case-identity gate this bullet formerly named was re-baselined on 2026-07-05 and **SUPERSEDED IN
@@ -199,7 +199,7 @@ phrases, the galant schemata and line cliché (six Harmonic Vocabulary entries c
 waiting for this axis), and chord voicing/arrangement (excluded from the harmonic dictionary's scope); and (c)
 **the named path to measured harmonic residuals** — the non-chord-tone filter, the field's lever for counterpoint
 accuracy, is an L4 (harmonic-emission) concern *informed by* this axis; the dormant full-spine measurement
-(`cc_e0doubleprime_report.md`) attributed ≈45% of the exact-match cap to seventh/extension over-emission
+(`records/cc/reports/cc_e0doubleprime_report.md`) attributed ≈45% of the exact-match cap to seventh/extension over-emission
 dominated by non-chord tones read as chord extensions.
 
 **Scope — in:** the axis decomposition and its cross-axis contract; build-level rules for VL-A/VL-B/VL-C; the
@@ -438,7 +438,7 @@ Rules and direction (numeric calibration precision-phase):
   component that discharges the mapping's "the future layer claims them" flag** — until it exists, the entries'
   harmonic-idiom tags remain the declared placeholders they are today. **Footing found (2026-07-03 sweep,
   research doc §6b):** an expert schema-annotation dataset exists for the Mozart sonatas (ISMIR 2020; 244 at
-  the paper snapshot, **273 at the Wave-2 pin — ONBOARDED 2026-07-03**, `cc_corpus_wave2_report.md` §1; the bed
+  the paper snapshot, **273 at the Wave-2 pin — ONBOARDED 2026-07-03**, `records/cc/reports/cc_corpus_wave2_report.md` §1; the bed
   ships its own self-contained score bundle — same 54 movements as the DCML sonatas, distinct encoding), plus
   a published method line (skipgram candidate enumeration + feature classifier) whose measured lessons — extreme
   candidate imbalance; structural-note status is relational, not local; rejection usually means "a better
@@ -630,7 +630,7 @@ ratified: 2,102 pieces / 45 note-level sources; texture-organized; motion-type-l
 ## 14. Related work & external sources
 
 **Borrowed / built on:** the motion-type and interval feature definitions and the texture taxonomy
-(`cc_vl_idiom_discovery_report.md`, pipeline `idiom_discovery/parsers/voiceleading.py` + `voiceleading2.py`); the
+(`records/cc/reports/cc_vl_idiom_discovery_report.md`, pipeline `idiom_discovery/parsers/voiceleading.py` + `voiceleading2.py`); the
 discovery protocol (multi-seed stability, cap-robustness, confound gate — `cowork_idiom_discovery_design.md`);
 the 2026-07-03 targeted sweep's verified finds (research doc §6b): the DCML schema-annotation dataset + skipgram
 recognition line (VL-F), the per-bar Mozart texture annotations + descriptor baselines (VL-C validation, §15-1),
@@ -665,7 +665,7 @@ where the harmonic study needed lead-sheet-less sources).
    interval changes is `similar`). Replicated exactly in `voiceleadingprofiles.cpp classifyMotion` (oracle-tested).
 3. **Alternative declared reductions** for chordal voices (bass-note, per-stream post-VL-D) — comparison deferred
    until a consumer needs one; top-note is the single v1 rule.
-4. **Census items — ★ THREE OF FOUR ONBOARDED at corpus Wave 2 (2026-07-03, `cc_corpus_wave2_report.md`;
+4. **Census items — ★ THREE OF FOUR ONBOARDED at corpus Wave 2 (2026-07-03, `records/cc/reports/cc_corpus_wave2_report.md`;
    research-tier, hash-pin-only, held-out, under `corpora/annot/`):** the phrase-boundary bed (VL-E — the
    **Essen** CCARH kern edition, pin `2d0ca75e`: 8,473 tunes, europa 6,213, 100% phrase-marked; monophonic-folk
    coverage caveat); the texture-labeled bed (VL-C validation — the ISMIR-2022 per-bar annotations, pin
@@ -679,7 +679,7 @@ where the harmonic study needed lead-sheet-less sources).
    next corpus dispatch; the IMPLIED-polyphony half is a **confirmed-final negative** (VoiSe/Gray-Bunescu
    never released). VL-D's design decides whether notated-voice GT suffices for its v1 target (add to §15-8's
    decision list). Also held: protovoice-annotations (38, reduction-encoded, partial).
-   **★ ACQUIRED (2026-07-04, `cc_acquisition_round_report.md`):** all three N9 beds cloned + pinned + verified —
+   **★ ACQUIRED (2026-07-04, `records/cc/reports/cc_acquisition_round_report.md`):** all three N9 beds cloned + pinned + verified —
    piano_svsep @ `1462e7c2` (MIT code; GT graphs fetched at runtime from `fosfrancesco/piano_corpora_dcml`),
    MCMA @ `2bdb12e2` (475 `.mxl`, split 153/239/83 verified; **license CORRECTED to CC-BY-NC-SA-4.0** — the
    above "CC-BY" was the record's error, the NC clause matters for VL-H's downstream commercial posture),

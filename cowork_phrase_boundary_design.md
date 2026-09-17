@@ -1,6 +1,6 @@
 # Phrase-boundary primitive (Architectural Layer 1.5) — Architecture & Design
 
-> **Status: SIGNED (user, 2026-06-26) — build in progress (`cc_instruction_phrase_boundary_build.md`).** rev. 3 — graded
+> **Status: SIGNED (user, 2026-06-26) — build in progress (`records/cc/instructions/cc_instruction_phrase_boundary_build.md`).** rev. 3 — graded
 > + per-voice/aggregate. Rev. 3 (user,
 > 2026-06-26) makes the cues run **per eligible voice, aggregated to the texture** (so the primitive yields *both*
 > per-voice and texture-level boundaries, and the pitch cue uses every voice, not just the top), and adds **breath marks
@@ -20,7 +20,7 @@
 > standard music / music-cognition vocabulary (glossed in §9). Scope: this one primitive — *not* the cadence or function
 > logic that consumes it.
 
-> **Bounded-context stance (added 2026-07-02, closing gap-analysis v2 finding A-2, `cc_gap_analysis_v2_report.md` —
+> **Bounded-context stance (added 2026-07-02, closing gap-analysis v2 finding A-2, `records/cc/reports/cc_gap_analysis_v2_report.md` —
 > ruled by Cowork):** this primitive is a
 > **derived view** over the Layer-1/Layer-2 outputs: it **inherits the loaded span and requests no extension of its
 > own** (its profile simply ends where the loaded span ends; a consumer wanting boundary evidence beyond the loaded

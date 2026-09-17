@@ -351,7 +351,7 @@ These are not yet decided; each is resolved in its layer's signed design doc. Op
   (Equivalent to treating grace as a layer-1 annotation, not a layer-2 boundary.)
 
 ### 6.2 Layer 3 — the analysis (the only place judgment lives)
-- **★ Diagnostic from layer 1 (recorded 2026-06-21, `cc_layer1_impl_report.md` §5.3):** the current scoring
+- **★ Diagnostic from layer 1 (recorded 2026-06-21, `records/cc/reports/cc_layer1_impl_report.md` §5.3):** the current scoring
   **leans on the tie-inflation bug** — a held (tied) note used to get a spurious repetition-boost that happened to
   push some ambiguous sonorities toward the oracle root (e.g. bwv154.8). The faithful note model removed that
   boost, surfacing a small downstream wobble (+3/+1/+1 charged, KEY flat). **When layer-3 scoring is rebuilt/

@@ -1,0 +1,11423 @@
+# CC REPORT — the reference map of the root record files, 2026-09-16 (READ-ONLY batch)
+
+**Dispatch executed:** `records/cc/instructions/cc_instruction_root_records_reference_map_2026_09_16.md`.
+**This batch changed nothing in the repository** except for two things: it wrote this report, and Task 0(a) wrote the dispatch's blob into the git object store. Nothing was staged, committed or pushed. No generator, guard or build was run.
+
+## How this report was produced, and what it is bounded by
+
+- **Listing and searching** used the Grep and Glob file tools. Every repository-wide Grep carried the negated globs
+  `!docs/research_papers/polyph9-release !scratch_artifacts !external?resarch?summary !Claude?outputs !Codex?research?inventory !.git`.
+  Each glob without a slash excludes a directory of that name at any depth, so the search does not enter it. The `?`
+  stands for the space in the three directory names that contain one. The root-only listings of Task 1 used the
+  negated glob `!*/`, which excludes every directory, so only files directly in the root were searched.
+- **Tool behaviour that bounds the results.** Grep is ripgrep, which skips hidden files and binary files, so a
+  reference inside one of those is not counted. **`.gitignore` did not exclude anything from these searches, as far
+  as can be seen.** `.gitignore` line 116 is `/cc_e2d_*.md`, yet the three root files it covers
+  (`cc_e2d_architecture_review_report.md`, `cc_e2d_v3c_investigation_report.md`, `cc_e2d_investigation_report.md`,
+  all untracked) were listed and searched. The tool's handling of ignore files is therefore not established here,
+  and no claim rests on it. `files_with_matches` does not list an
+  empty file. For that reason the Task 1 root listings were cross-checked against a Glob listing of the same
+  patterns, which does list empty files. Glob, which takes no negated pattern, reported the same totals: 110 + 93
+  for the handoff and rulings patterns, and 944 for `cc_*.md`. Two of the 93 and one of the 944 are outside the
+  root. Glob recursed into subdirectories, and it cannot exclude the directories named in the route rule, so those
+  first Glob calls may have walked them; no path under them was returned. **This is declared as a departure from the
+  route rule's negated-glob requirement for the Glob calls that produced those totals.**
+- **Commands run.** Task 0's three git commands, and `git ls-files --error-unmatch -- <names>` in batches of at most
+  forty literal names for Task 1. `--error-unmatch` prints one `error: pathspec … did not match` line for each
+  untracked name and exits 1; exit 0 means every name in the batch is tracked. **Declared:** the first instruction
+  batch piped the command's output through `grep -v`. That is a shell text utility on a pipe, not on a file, but it
+  is outside the dispatch's "only git commands", and it was dropped for every later batch. Later batches sent
+  standard output to `/dev/null` so that only the untracked-name errors were shown.
+- **Task 2(b) verdicts** were read by read-only helper sessions. Each used Grep and Read only, on named files, under
+  the same exclusions, and returned per-file verdicts with the deciding lines quoted. No refusal occurred in any of them.
+- **Orders.** Lists come in the order the tools returned them. Grep's order is by modification time. The per-batch
+  `git ls-files` output is alphabetical within each batch. No list is re-sorted by hand.
+
+---
+
+## TASK 0 — start state and pinning
+
+- **(a)** `git hash-object -w records/cc/instructions/cc_instruction_root_records_reference_map_2026_09_16.md` →
+  **`97501e3c97f2c67fab7704ec3ca36ee49cd7f388`**. Git also warned: "in the working copy of
+  'records/cc/instructions/cc_instruction_root_records_reference_map_2026_09_16.md', LF will be replaced by CRLF the
+  next time Git touches it". The dispatch was read once, with the Read tool, before the blob was written. It was not
+  read again after pinning, so no `git cat-file` was needed.
+- **(b)** `git rev-parse --abbrev-ref HEAD` → **`master`**; `git rev-parse HEAD` →
+  **`5d24edb565b2e0e9efc92e082c163112bd97087f`**. The branch and commit are the base the dispatch names, so there is no STOP.
+
+---
+
+## TASK 1 — the population to move
+
+Mark: **T** = tracked (named by `git ls-files`), **U** = untracked (reported "did not match any file(s) known to git").
+
+### 1.1 `cowork_handoff_entry_*.md`, `cowork_handoff.md`, `cowork_handoff_archive.md` at the root — every one TRACKED
+
+All three `--error-unmatch` batches exited 0.
+
+```
+T cowork_handoff.md
+T cowork_handoff_archive.md
+T cowork_handoff_entry_eighty_two.md
+T cowork_handoff_entry_eighty_three.md
+T cowork_handoff_entry_eighty_four.md
+T cowork_handoff_entry_eighty_five.md
+T cowork_handoff_entry_eighty_six.md
+T cowork_handoff_entry_eighty_seven.md
+T cowork_handoff_entry_eighty_eight.md
+T cowork_handoff_entry_eighty_nine.md
+T cowork_handoff_entry_ninety.md
+T cowork_handoff_entry_ninety_one.md
+T cowork_handoff_entry_ninety_two.md
+T cowork_handoff_entry_ninety_three.md
+T cowork_handoff_entry_ninety_four.md
+T cowork_handoff_entry_ninety_five.md
+T cowork_handoff_entry_ninety_six.md
+T cowork_handoff_entry_ninety_seven.md
+T cowork_handoff_entry_ninety_eight.md
+T cowork_handoff_entry_ninety_nine.md
+T cowork_handoff_entry_one_hundred.md
+T cowork_handoff_entry_one_hundred_and_one.md
+T cowork_handoff_entry_one_hundred_and_two.md
+T cowork_handoff_entry_one_hundred_and_three.md
+T cowork_handoff_entry_one_hundred_and_four.md
+T cowork_handoff_entry_one_hundred_and_five.md
+T cowork_handoff_entry_one_hundred_and_six.md
+T cowork_handoff_entry_one_hundred_and_seven.md
+T cowork_handoff_entry_one_hundred_and_eight.md
+T cowork_handoff_entry_one_hundred_and_nine.md
+T cowork_handoff_entry_one_hundred_and_ten.md
+T cowork_handoff_entry_one_hundred_and_eleven.md
+T cowork_handoff_entry_one_hundred_and_twelve.md
+T cowork_handoff_entry_one_hundred_and_thirteen.md
+T cowork_handoff_entry_one_hundred_and_fourteen.md
+T cowork_handoff_entry_one_hundred_and_fifteen.md
+T cowork_handoff_entry_one_hundred_and_sixteen.md
+T cowork_handoff_entry_one_hundred_and_seventeen.md
+T cowork_handoff_entry_one_hundred_and_eighteen.md
+T cowork_handoff_entry_one_hundred_and_nineteen.md
+T cowork_handoff_entry_one_hundred_and_twenty.md
+T cowork_handoff_entry_one_hundred_and_twenty_one.md
+T cowork_handoff_entry_one_hundred_and_twenty_two.md
+T cowork_handoff_entry_one_hundred_and_twenty_three.md
+T cowork_handoff_entry_one_hundred_and_twenty_four.md
+T cowork_handoff_entry_one_hundred_and_twenty_five.md
+T cowork_handoff_entry_one_hundred_and_twenty_six.md
+T cowork_handoff_entry_one_hundred_and_twenty_seven.md
+T cowork_handoff_entry_one_hundred_and_twenty_eight.md
+T cowork_handoff_entry_one_hundred_and_twenty_nine.md
+T cowork_handoff_entry_one_hundred_and_thirty.md
+T cowork_handoff_entry_one_hundred_and_thirty_one.md
+T cowork_handoff_entry_one_hundred_and_thirty_two.md
+T cowork_handoff_entry_one_hundred_and_thirty_three.md
+T cowork_handoff_entry_one_hundred_and_thirty_four.md
+T cowork_handoff_entry_one_hundred_and_thirty_five.md
+T cowork_handoff_entry_one_hundred_and_thirty_six.md
+T cowork_handoff_entry_one_hundred_and_thirty_seven.md
+T cowork_handoff_entry_one_hundred_and_thirty_eight.md
+T cowork_handoff_entry_one_hundred_and_thirty_nine.md
+T cowork_handoff_entry_one_hundred_and_forty.md
+T cowork_handoff_entry_one_hundred_and_forty_one.md
+T cowork_handoff_entry_one_hundred_and_forty_two.md
+T cowork_handoff_entry_one_hundred_and_forty_three.md
+T cowork_handoff_entry_one_hundred_and_forty_four.md
+T cowork_handoff_entry_one_hundred_and_forty_five.md
+T cowork_handoff_entry_one_hundred_and_forty_six.md
+T cowork_handoff_entry_one_hundred_and_forty_seven.md
+T cowork_handoff_entry_one_hundred_and_forty_eight.md
+T cowork_handoff_entry_one_hundred_and_forty_nine.md
+T cowork_handoff_entry_one_hundred_and_fifty.md
+T cowork_handoff_entry_one_hundred_and_fifty_one.md
+T cowork_handoff_entry_one_hundred_and_fifty_two.md
+T cowork_handoff_entry_one_hundred_and_fifty_three.md
+T cowork_handoff_entry_one_hundred_and_fifty_four.md
+T cowork_handoff_entry_one_hundred_and_fifty_five.md
+T cowork_handoff_entry_one_hundred_and_fifty_six.md
+T cowork_handoff_entry_one_hundred_and_fifty_seven.md
+T cowork_handoff_entry_one_hundred_and_fifty_eight.md
+T cowork_handoff_entry_one_hundred_and_fifty_nine.md
+T cowork_handoff_entry_one_hundred_and_sixty.md
+T cowork_handoff_entry_one_hundred_and_sixty_one.md
+T cowork_handoff_entry_one_hundred_and_sixty_two.md
+T cowork_handoff_entry_one_hundred_and_sixty_three.md
+T cowork_handoff_entry_one_hundred_and_sixty_four.md
+T cowork_handoff_entry_one_hundred_and_sixty_five.md
+T cowork_handoff_entry_one_hundred_and_sixty_six.md
+T cowork_handoff_entry_one_hundred_and_sixty_seven.md
+T cowork_handoff_entry_one_hundred_and_sixty_eight.md
+T cowork_handoff_entry_one_hundred_and_sixty_nine.md
+T cowork_handoff_entry_one_hundred_and_seventy.md
+T cowork_handoff_entry_one_hundred_and_seventy_one.md
+T cowork_handoff_entry_one_hundred_and_seventy_two.md
+T cowork_handoff_entry_one_hundred_and_seventy_three.md
+T cowork_handoff_entry_one_hundred_and_seventy_four.md
+T cowork_handoff_entry_one_hundred_and_seventy_five.md
+T cowork_handoff_entry_one_hundred_and_seventy_six.md
+T cowork_handoff_entry_one_hundred_and_seventy_seven.md
+T cowork_handoff_entry_one_hundred_and_seventy_eight.md
+T cowork_handoff_entry_one_hundred_and_seventy_nine.md
+T cowork_handoff_entry_one_hundred_and_eighty.md
+T cowork_handoff_entry_one_hundred_and_eighty_one.md
+T cowork_handoff_entry_one_hundred_and_eighty_two.md
+T cowork_handoff_entry_one_hundred_and_eighty_two-1.md
+T cowork_handoff_entry_one_hundred_and_eighty_three.md
+T cowork_handoff_entry_one_hundred_and_eighty_four.md
+T cowork_handoff_entry_one_hundred_and_eighty_five.md
+T cowork_handoff_entry_one_hundred_and_eighty_six.md
+T cowork_handoff_entry_one_hundred_and_eighty_seven.md
+T cowork_handoff_entry_one_hundred_and_eighty_eight.md
+```
+
+**Named because a later step will meet it:** `cowork_handoff_entry_one_hundred_and_eighty_two-1.md` contains a hyphen,
+so Task 2(a) expression 1 (`cowork_handoff_entry_[a-z_]+\.md`) cannot match a reference to that exact name. It
+matches only the prefix `cowork_handoff_entry_one_hundred_and_eighty_two` and then fails on the `-`, so a reference
+to this file is not counted by expression 1.
+
+**Outside the root and outside this pattern set, not in the move, named only because Glob returned it:** nothing
+matched the handoff patterns outside the root.
+
+### 1.2 `cowork_rulings_*.md`, `cowork_ruling_*.md` at the root — every one TRACKED
+
+All three `--error-unmatch` batches exited 0.
+
+```
+T cowork_ruling_guard_family_2026_08_08.md
+T cowork_rulings_2026_08_08_pre_away.md
+T cowork_rulings_2026_08_09_eighth_stop.md
+T cowork_rulings_2026_08_09_fifth_stop.md
+T cowork_rulings_2026_08_09_fourth_stop.md
+T cowork_rulings_2026_08_09_ninth_stop.md
+T cowork_rulings_2026_08_09_return.md
+T cowork_rulings_2026_08_09_second_stop.md
+T cowork_rulings_2026_08_09_seventh_stop.md
+T cowork_rulings_2026_08_09_sixth_stop.md
+T cowork_rulings_2026_08_09_third_stop.md
+T cowork_rulings_2026_08_11_eleventh_stop.md
+T cowork_rulings_2026_08_11_fifteenth_stop.md
+T cowork_rulings_2026_08_11_fourteenth_stop.md
+T cowork_rulings_2026_08_11_sixteenth_stop.md
+T cowork_rulings_2026_08_11_tenth_stop.md
+T cowork_rulings_2026_08_11_thirteenth_stop.md
+T cowork_rulings_2026_08_11_twelfth_stop.md
+T cowork_rulings_2026_08_13_eighteenth_stop.md
+T cowork_rulings_2026_08_13_seventeenth_stop.md
+T cowork_rulings_2026_08_15_batch_return.md
+T cowork_rulings_2026_08_15_inventory_sitting.md
+T cowork_rulings_2026_08_15_method_directions.md
+T cowork_rulings_2026_08_15_period_start.md
+T cowork_rulings_2026_08_15_phase_definition_sitting.md
+T cowork_rulings_2026_08_15_session_length.md
+T cowork_rulings_2026_08_16_preparation_return.md
+T cowork_rulings_2026_08_17_callers_sitting.md
+T cowork_rulings_2026_08_17_eighth_return.md
+T cowork_rulings_2026_08_17_governing_surface_split.md
+T cowork_rulings_2026_08_17_ninth_return.md
+T cowork_rulings_2026_08_17_residue_sitting.md
+T cowork_rulings_2026_08_17_rulings_sort_sitting.md
+T cowork_rulings_2026_08_17_session_start_read_sitting.md
+T cowork_rulings_2026_08_17_seventh_return.md
+T cowork_rulings_2026_08_17_sixth_return.md
+T cowork_rulings_2026_08_18_eleventh_stop.md
+T cowork_rulings_2026_08_18_tenth_return.md
+T cowork_rulings_2026_08_19_eleventh_return.md
+T cowork_rulings_2026_08_19_thirteenth_return.md
+T cowork_rulings_2026_08_19_twelfth_return.md
+T cowork_rulings_2026_08_21_evaluation_brief_sitting.md
+T cowork_rulings_2026_08_21_successor_plan_sitting.md
+T cowork_rulings_2026_08_22_boot_list_sitting.md
+T cowork_rulings_2026_08_22_deriving_side_sitting.md
+T cowork_rulings_2026_08_22_dispatch_order_sitting.md
+T cowork_rulings_2026_08_22_member_two_leak_sitting.md
+T cowork_rulings_2026_08_22_pilot_order_sitting.md
+T cowork_rulings_2026_08_22_step_zero_return_sitting.md
+T cowork_rulings_2026_08_22_withheld_family_sitting.md
+T cowork_rulings_2026_08_23_brief_validation_sitting.md
+T cowork_rulings_2026_08_23_member_two_second_leak_sitting.md
+T cowork_rulings_2026_08_24_blind_return_sitting.md
+T cowork_rulings_2026_08_24_blinding_failure_sitting.md
+T cowork_rulings_2026_08_24_comparison_design_sitting.md
+T cowork_rulings_2026_08_24_method_ruling_sitting.md
+T cowork_rulings_2026_08_24_sizing_brief_sitting.md
+T cowork_rulings_2026_08_24_sizing_leak_list_sitting.md
+T cowork_rulings_2026_08_24_sizing_pilot_sitting.md
+T cowork_rulings_2026_08_25_cascade_sitting.md
+T cowork_rulings_2026_08_25_determination_route_sitting.md
+T cowork_rulings_2026_08_25_forward_fact_sitting.md
+T cowork_rulings_2026_08_25_landing_return_sitting.md
+T cowork_rulings_2026_08_25_method_voiding_sitting.md
+T cowork_rulings_2026_08_25_next_act_sitting.md
+T cowork_rulings_2026_08_25_regress_termination_sitting.md
+T cowork_rulings_2026_08_25_second_vector_sitting.md
+T cowork_rulings_2026_08_25_v1_sufficiency_sitting.md
+T cowork_rulings_2026_08_26_amendment_landing_sitting.md
+T cowork_rulings_2026_08_26_framework_opening_sitting.md
+T cowork_rulings_2026_08_26_ledger_dispositions_sitting.md
+T cowork_rulings_2026_08_26_ledger_form_sitting.md
+T cowork_rulings_2026_08_26_sizing_tests_sitting.md
+T cowork_rulings_2026_08_27_framework_authoring_sitting.md
+T cowork_rulings_2026_08_27_placement_sample_sitting.md
+T cowork_rulings_2026_08_27_redraw_findings_sitting.md
+T cowork_rulings_2026_08_27_stopped_strata_sitting.md
+T cowork_rulings_2026_08_28_framework_delta_sitting.md
+T cowork_rulings_2026_08_28_informed_brief_points_sitting.md
+T cowork_rulings_2026_08_28_informed_framework_sitting.md
+T cowork_rulings_2026_08_28_ledger_precondition_sitting.md
+T cowork_rulings_2026_08_28_unit_question_sitting.md
+T cowork_rulings_2026_08_29_ratification_sitting.md
+T cowork_rulings_2026_08_30_detail_phase_opening_sitting.md
+T cowork_rulings_2026_08_31_decision_surface_sitting.md
+T cowork_rulings_2026_09_05_l2_boot_list_sitting.md
+T cowork_rulings_2026_09_05_l2_withheld_family_sitting.md
+T cowork_rulings_2026_09_08_defense_satellite_sitting.md
+T cowork_rulings_2026_09_08_extent_rule_sitting.md
+T cowork_rulings_2026_09_11_satellite_arc_close.md
+T cowork_rulings_oi345_oi342_2026_08_07.md
+```
+
+**Files these patterns match that are NOT at the root, and therefore not in the move as the dispatch defines it**
+(named so the second dispatch can rule on them):
+`ratification_surfaces/cowork_ruling_registration_queue_2026_08_09.md`,
+`ratification_surfaces/cowork_rulings_sort_surface_2026_08_16.md`.
+
+### 1.3 `cc_instruction_*.md` at the root — tracked except three
+
+Fifteen `--error-unmatch` batches were run. Only batch 1 reported names that git does not know, and the three below are
+the only ones. Every other name is **T**. The order is Grep's, newest first.
+
+**The three UNTRACKED:** `cc_instruction_second_backup_rerun_two_2026_09_16.md`,
+`cc_instruction_second_backup_rerun_2026_09_16.md`, `cc_instruction_second_backup_commit_and_push_2026_09_16.md`.
+
+**Outside the root, matching this pattern, not in the move:** `records/cc/instructions/cc_instruction_root_records_reference_map_2026_09_16.md`
+(this dispatch, already filed at its destination).
+
+```
+U cc_instruction_second_backup_rerun_two_2026_09_16.md
+U cc_instruction_second_backup_rerun_2026_09_16.md
+U cc_instruction_second_backup_commit_and_push_2026_09_16.md
+T cc_instruction_backup_commit_and_push_2026_09_16.md
+T cc_instruction_defense_share_sizing_third_2026_09_08.md
+T cc_instruction_defense_share_authored_ends_2026_09_08.md
+T cc_instruction_defense_share_sizing_second_2026_09_08.md
+T cc_instruction_defense_share_sizing_2026_09_08.md
+T cc_instruction_read_size_repair_and_rows_2026_09_07.md
+T cc_instruction_claude_md_boot_membership_2026_09_07.md
+T cc_instruction_claude_md_prune_at_amendment_2026_09_07.md
+T cc_instruction_status_forward_bound_second_2026_09_07.md
+T cc_instruction_status_forward_bound_2026_09_07.md
+T cc_instruction_l2_ruling_writeback_2026_09_05.md
+T cc_instruction_l2_reading_file_2026_09_05.md
+T cc_instruction_l2_verdict_pass_2026_09_05.md
+T cc_instruction_l2_candidate_list_2026_09_05.md
+T cc_instruction_l2_criterion_write_2026_09_04.md
+T cc_instruction_l2_keyword_count_2026_09_04.md
+T cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md
+T cc_instruction_comparison_l0_l1_tenth_2026_09_04.md
+T cc_instruction_comparison_l0_l1_ninth_2026_09_04.md
+T cc_instruction_comparison_l0_l1_eighth_2026_09_04.md
+T cc_instruction_comparison_l0_l1_seventh_2026_09_03.md
+T cc_instruction_comparison_l0_l1_sixth_2026_09_03.md
+T cc_instruction_comparison_l0_l1_fifth_2026_09_03.md
+T cc_instruction_comparison_l0_l1_fourth_2026_09_03.md
+T cc_instruction_comparison_l0_l1_third_2026_09_02.md
+T cc_instruction_comparison_l0_l1_second_2026_09_02.md
+T cc_instruction_comparison_l0_l1_2026_09_02.md
+T cc_instruction_handoff_prepend_2026_09_01.md
+T cc_instruction_sitting_landing_second_2026_09_01.md
+T cc_instruction_sitting_landing_2026_09_01.md
+T cc_instruction_invisible_notes_establishment_2026_09_01.md
+T cc_instruction_slot_sweep_2026_09_01.md
+T cc_instruction_exemplar_decode_2026_09_01.md
+T cc_instruction_mscz_container_establishment_2026_09_01.md
+T cc_instruction_framework_9_0_correction_2026_08_31.md
+T cc_instruction_l0l1_boot_pack_second_2026_08_31.md
+T cc_instruction_l0l1_boot_pack_2026_08_31.md
+T cc_instruction_l0l1_exemplar_selection_2026_08_31.md
+T cc_instruction_reading_pass_landing_second_2026_08_31.md
+T cc_instruction_reading_pass_landing_2026_08_31.md
+T cc_instruction_phase_close_second_2026_08_30.md
+T cc_instruction_phase_close_2026_08_30.md
+T cc_instruction_third_landing_2026_08_28.md
+T cc_instruction_second_landing_2026_08_28.md
+T cc_instruction_landing_2026_08_28.md
+T cc_instruction_arm_and_site_fillin.md
+T cc_instruction_register_baseline_repair.md
+T cc_instruction_informed_brief_landing.md
+T cc_instruction_framework_arrangement_landing.md
+T cc_instruction_framework_pack_preparation.md
+T cc_instruction_unit_correction_redraw.md
+T cc_instruction_placement_sample_redraw.md
+T cc_instruction_placement_sample.md
+T cc_instruction_ledger_admissions.md
+T cc_instruction_ledger_build.md
+T cc_instruction_sizing_tests.md
+T cc_instruction_boot_pack_regeneration.md
+T cc_instruction_amendment_landing.md
+T cc_instruction_register_reconciliation.md
+T cc_instruction_ledger_harvest.md
+T cc_instruction_cascade_sweep.md
+T cc_instruction_regeneration_and_citation.md
+T cc_instruction_method_voiding_landing.md
+T cc_instruction_sizing_output_landing.md
+T cc_instruction_sizing_brief_ruled.md
+T cc_instruction_manifest_prose_and_sizing_brief.md
+T cc_instruction_sizing_pack_preparation.md
+T cc_instruction_comparison_harmony_boundary.md
+T cc_instruction_blind_output_landing.md
+T cc_instruction_brief_ratification_and_readme_boundary.md
+T cc_instruction_second_passage_withheld.md
+T cc_instruction_withheld_family_correction.md
+T cc_instruction_pilot_preparation_withheld_family.md
+T cc_instruction_pass_continuation_second.md
+T cc_instruction_step_zero_exclusion_and_pass_continuation.md
+T cc_instruction_successor_plan_landing_and_step_zero.md
+T cc_instruction_plan_evaluation.md
+T cc_instruction_plan_challenge.md
+T cc_instruction_preparation_fourteenth.md
+T cc_instruction_preparation_thirteenth.md
+T cc_instruction_preparation_twelfth.md
+T cc_instruction_preparation_eleventh_amended.md
+T cc_instruction_preparation_eleventh.md
+T cc_instruction_preparation_tenth.md
+T cc_instruction_preparation_ninth.md
+T cc_instruction_preparation_eighth.md
+T cc_instruction_preparation_seventh.md
+T cc_instruction_preparation_sixth.md
+T cc_instruction_preparation_fifth.md
+T cc_instruction_preparation_fourth.md
+T cc_instruction_preparation_third.md
+T cc_instruction_preparation_second.md
+T cc_instruction_preparation_opening.md
+T cc_instruction_d231_landing.md
+T cc_instruction_phase_rulings_landing.md
+T cc_instruction_batch_return_rulings.md
+T cc_instruction_ruled_inventory_landing.md
+T cc_instruction_artifact_inventory.md
+T cc_instruction_period_checks.md
+T cc_instruction_evidence_candidate_pass.md
+T cc_instruction_evidence_sizing.md
+T cc_instruction_repair_direction_enumeration.md
+T cc_instruction_scoring_model_pass.md
+T cc_instruction_oi315_class_licence.md
+T cc_instruction_oi315_licence_and_cells.md
+T cc_instruction_oi150_baselines.md
+T cc_instruction_ruling69_discard_input.md
+T cc_instruction_false_statements_pass.md
+T cc_instruction_stop_record_and_enumeration.md
+T cc_instruction_oi274_second_half.md
+T cc_instruction_sizing_regen_and_readme.md
+T cc_instruction_sitting_outcome_and_bound.md
+T cc_instruction_item7_reach_derivation.md
+T cc_instruction_pack_section7_and_errata_state.md
+T cc_instruction_oi375_width_correction.md
+T cc_instruction_oi179_reply_and_phase2_surface.md
+T cc_instruction_worth_test.md
+T cc_instruction_resume_lapse_records.md
+T cc_instruction_apply_the_bearing_cut.md
+T cc_instruction_status_touch_and_oi141_premise_repin.md
+T cc_instruction_row_landing_and_oi141_arm_check.md
+T cc_instruction_return_continuation_14.md
+T cc_instruction_return_continuation_13.md
+T cc_instruction_return_continuation_12.md
+T cc_instruction_return_continuation_11.md
+T cc_instruction_return_continuation_10.md
+T cc_instruction_return_continuation_9.md
+T cc_instruction_return_continuation_8.md
+T cc_instruction_return_continuation_7.md
+T cc_instruction_return_continuation_6.md
+T cc_instruction_return_continuation_5.md
+T cc_instruction_return_continuation_4.md
+T cc_instruction_return_continuation_3.md
+T cc_instruction_return_continuation_2.md
+T cc_instruction_return_continuation.md
+T cc_instruction_away_execution.md
+T cc_instruction_away_batch.md
+T cc_instruction_document_routes_and_d472.md
+T cc_instruction_guard_dialect_close_and_push.md
+T cc_instruction_owner_rulings_homing.md
+T cc_instruction_three_owner_rulings.md
+T cc_instruction_licensed_homing_and_oi344.md
+T cc_instruction_five_rulings.md
+T cc_instruction_guard_fix_and_item1d.md
+T cc_instruction_c1_ruling_and_item1c.md
+T cc_instruction_finish_line_item1b.md
+T cc_instruction_finish_line_item1.md
+T cc_instruction_commit_and_finish_line.md
+T cc_instruction_census_delegation_and_commit.md
+T cc_instruction_phase1_delegations_and_corrections.md
+T cc_instruction_phase1_completion_inventory.md
+T cc_instruction_reads_6.md
+T cc_instruction_reads_5.md
+T cc_instruction_reads_4.md
+T cc_instruction_commit_reads3.md
+T cc_instruction_reads_3.md
+T cc_instruction_reads_2.md
+T cc_instruction_phase1z_commit_and_instrument_record.md
+T cc_instruction_reads_1.md
+T cc_instruction_phase1y_corpus_arm_stamping.md
+T cc_instruction_phase1x_guard_visibility_and_commit.md
+T cc_instruction_phase1w_legacy_mark_verification.md
+T cc_instruction_phase1t_restatement_and_pruning.md
+T cc_instruction_phase1v_channel_ratification.md
+T cc_instruction_phase1u_partition_record_and_directory.md
+T cc_instruction_phase1o_gate_partition_and_probe_rerun.md
+T cc_instruction_phase1s_stale_rules_and_enumeration.md
+T cc_instruction_phase1r_commit_and_reclassify.md
+T cc_instruction_phase1q_reclassification_and_guards.md
+T cc_instruction_phase1p_home_rulings_and_mechanisms.md
+T cc_instruction_phase1n_criterion_premise_and_reading_regime.md
+T cc_instruction_phase1m_dispositions_and_measurements.md
+T cc_instruction_phase1l_rulings_and_reads.md
+T cc_instruction_phase1k_ratification_application_and_reads.md
+T cc_instruction_phase1j_homing_and_reads.md
+T cc_instruction_phase1i_reads_and_delivery.md
+T cc_instruction_phase1h_full_reads.md
+T cc_instruction_phase1g_triage.md
+T cc_instruction_phase1f_final_partition.md
+T cc_instruction_partition2_archives.md
+T cc_instruction_decision_enumeration_wave.md
+T cc_instruction_oi207_residual_pass.md
+T cc_instruction_spec_completion.md
+T cc_instruction_decisions_register_completion.md
+T cc_instruction_oi207_adjudication.md
+T cc_instruction_decision_clustering.md
+T cc_instruction_decision_harvest.md
+T cc_instruction_oi199_joint_p3_p4.md
+T cc_instruction_decoder_work_counts.md
+T cc_instruction_oi199_pass1.md
+T cc_instruction_analysis_cost_profile.md
+T cc_instruction_oi206_investigation.md
+T cc_instruction_marginals.md
+T cc_instruction_notation_switch.md
+T cc_instruction_notation_p7.md
+T cc_instruction_notation_p6.md
+T cc_instruction_notation_noteseam.md
+T cc_instruction_notation_p4.md
+T cc_instruction_notation_seams_2.md
+T cc_instruction_notation_pstrings.md
+T cc_instruction_open_items_split.md
+T cc_instruction_notation_seams_1.md
+T cc_instruction_notation_record_assembly.md
+T cc_instruction_posterior_slice.md
+T cc_instruction_joint_table_codegen.md
+T cc_instruction_notation_consumption_audit.md
+T cc_instruction_adoption_commit.md
+T cc_instruction_adoption_measurement.md
+T cc_instruction_joint_fact_adapter.md
+T cc_instruction_joint_input_parity.md
+T cc_instruction_joint_module_build.md
+T cc_instruction_direct_metric_weight_fit.md
+T cc_instruction_weight_fit.md
+T cc_instruction_algorithm_completion.md
+T cc_instruction_probe_decoder.md
+T cc_instruction_misaligned_span_exclusion.md
+T cc_instruction_secondary_dominant_refit.md
+T cc_instruction_note_table_fit.md
+T cc_instruction_label_table_fit.md
+T cc_instruction_wir_alignment_probe.md
+T cc_instruction_prefit_instruments.md
+T cc_instruction_prefit_gates_commit.md
+T cc_instruction_desk_sim_commit.md
+T cc_instruction_design_pass_commit.md
+T cc_instruction_research_library.md
+T cc_instruction_term_inventory.md
+T cc_instruction_term_grounding_inventory.md
+T cc_instruction_doc_split.md
+T cc_instruction_oi170_measure.md
+T cc_instruction_oi168_fix.md
+T cc_instruction_oi168_magnitude_measure.md
+T cc_instruction_oi167_collection_tonic.md
+T cc_instruction_fact_dependency_audit.md
+T cc_instruction_wave2_dependency_reconciliation.md
+T cc_instruction_oi160_and_push.md
+T cc_instruction_oi158_oi125_oi159.md
+T cc_instruction_instrument_hygiene_sweep.md
+T cc_instruction_oi155.md
+T cc_instruction_harness_group.md
+T cc_instruction_key_grading_and_calibration_rebaseline.md
+T cc_instruction_backlog_triage.md
+T cc_instruction_mode_grading_adjudication_probe.md
+T cc_instruction_measurement_chain_hardening.md
+T cc_instruction_l3_key_decode_mechanism.md
+T cc_instruction_key_grading_rebaseline.md
+T cc_instruction_key_mode_inference_diagnosis.md
+T cc_instruction_mode_key_chord_inference_probe.md
+T cc_instruction_l5_audit_pass2.md
+T cc_instruction_l5_audit_pass1_harness.md
+T cc_instruction_l5_audit_pass1_grading_fitting.md
+T cc_instruction_l5_audit_pass1_instruments.md
+T cc_instruction_l5_audit_pass1_resolver.md
+T cc_instruction_l5_audit_pass1.md
+T cc_instruction_l4_audit_pass2.md
+T cc_instruction_l4_audit_pass1_satellites.md
+T cc_instruction_l4_audit_pass1_oracle.md
+T cc_instruction_l4_audit_pass1_decoder.md
+T cc_instruction_l4_audit_pass1.md
+T cc_instruction_l3_audit_pass2_relabel.md
+T cc_instruction_l3_audit_pass2.md
+T cc_instruction_l3_audit_pass1.md
+T cc_instruction_l1_l2_audit_blind_rerun.md
+T cc_instruction_l1_l2_audit_pass2.md
+T cc_instruction_l1_l2_audit_pass1.md
+T cc_instruction_eg2_establish_and_probe.md
+T cc_instruction_engage_stage3_joint_measure.md
+T cc_instruction_engage_l5_pedal_annotate_design.md
+T cc_instruction_engage_joint_key_chord_design.md
+T cc_instruction_engage_l5_carry_selection_design.md
+T cc_instruction_engage_fanout_measure.md
+T cc_instruction_engage_pre_l5_refactor_batch.md
+T cc_instruction_engage_structural_integrity_audit.md
+T cc_instruction_engage_u1_uncap.md
+T cc_instruction_engage_gateA_unification_build.md
+T cc_instruction_engage_information_loss_audit.md
+T cc_instruction_engage_gateA_unification_design.md
+T cc_instruction_engage_c3_measurement.md
+T cc_instruction_engage_fb_redesign_design.md
+T cc_instruction_stage5_r10b_ratification.md
+T cc_instruction_stage5_r10_assembly.md
+T cc_instruction_stage5_phase3.md
+T cc_instruction_stage5_phase2_3.md
+T cc_instruction_stage5_phase2_2e.md
+T cc_instruction_stage5_phase2_2d.md
+T cc_instruction_stage5_phase2_2c.md
+T cc_instruction_stage5_phase2_2b.md
+T cc_instruction_stage5_phase2_2a.md
+T cc_instruction_stage5_phase2_1.md
+T cc_instruction_stage5_phase1.md
+T cc_instruction_stage5_phase0.md
+T cc_instruction_acquisition_round.md
+T cc_instruction_wave3_addendum.md
+T cc_instruction_corpus_wave3.md
+T cc_instruction_dl3a_closeout.md
+T cc_instruction_c1_fold_and_explanation.md
+T cc_instruction_c1_reliability_instrumentation.md
+T cc_instruction_a8_metric_rebaseline_measure.md
+T cc_instruction_corpus_wave2_axis2_beds.md
+T cc_instruction_vl_docs_fold.md
+T cc_instruction_vl_foundation_build.md
+T cc_instruction_vl_idiom_discovery.md
+T cc_instruction_grammar_completion.md
+T cc_instruction_grammar_completion_addendum.md
+T cc_instruction_consumer_build_addendum.md
+T cc_instruction_consumer_build.md
+T cc_instruction_styletag_swap.md
+T cc_instruction_l6_dormant_build.md
+T cc_instruction_tsv_oracle_addendum.md
+T cc_instruction_tsv_oracle_infrastructure.md
+T cc_instruction_extension_build.md
+T cc_instruction_gap_analysis_spec_vs_impl.md
+T cc_instruction_corpus_wave1_dlc_onboarding.md
+T cc_instruction_carryfix2_resolver_identity.md
+T cc_instruction_carryfix_task2_addendum.md
+T cc_instruction_carryfix_dl5a_e0prime.md
+T cc_instruction_e0_addendum_carry_cap.md
+T cc_instruction_e0_fullspine_measure.md
+T cc_instruction_commit_idiom_work.md
+T cc_instruction_rerun_discovery.md
+T cc_instruction_fetch_more_scores.md
+T cc_instruction_run_discovery.md
+T cc_instruction_convert_curated_scores.md
+T cc_instruction_corpus_clone.md
+T cc_instruction_vocabulary_build.md
+T cc_instruction_doc_governance_commit.md
+T cc_instruction_corpus_hygiene_record.md
+T cc_instruction_corpus_hygiene_corelli.md
+T cc_instruction_L6_corpus_oracle_check.md
+T cc_instruction_L5_close_commit.md
+T cc_instruction_phase5c_L5_close_review.md
+T cc_instruction_phase5c_stepM_consolidate.md
+T cc_instruction_phase5c_stepM_followup.md
+T cc_instruction_phase5c_stepM.md
+T cc_instruction_phase5c_step5_followup.md
+T cc_instruction_phase5c_step6.md
+T cc_instruction_phase5c_step5.md
+T cc_instruction_phase5c_step4.md
+T cc_instruction_phase5c_step3.md
+T cc_instruction_phase5c_step2_resolution.md
+T cc_instruction_phase5c_step2_amend.md
+T cc_instruction_phase5c_step2.md
+T cc_instruction_phase5c_step1.md
+T cc_instruction_phrase_boundary_build.md
+T cc_instruction_l3_keyalt_forwardcarry.md
+T cc_instruction_l1l4_review_tidy.md
+T cc_instruction_phase5b_stepM_measure.md
+T cc_instruction_phase5b_step4_g4_spellingpin.md
+T cc_instruction_phase5b_step3_g6.md
+T cc_instruction_phase5b_step2final_o2_inherit.md
+T cc_instruction_phase5b_step2_g2.md
+T cc_instruction_phase5b_step1_g1.md
+T cc_instruction_phase5b_step0_investigate.md
+T cc_instruction_batch_analyze_restore.md
+T cc_instruction_l1l3_spec_sync.md
+T cc_instruction_batch_analyze_unification_audit.md
+T cc_instruction_l1l3_delta_check_resync.md
+T cc_instruction_backfill_l3_keymode.md
+T cc_instruction_backfill_formatter.md
+T cc_instruction_backfill_l4_oracle_gates.md
+T cc_instruction_backfill_engravingbridge.md
+T cc_instruction_types_header_build.md
+T cc_instruction_types_header_investigation.md
+T cc_instruction_phase5_kmasks_complete.md
+T cc_instruction_phase5_kmasks_derive.md
+T cc_instruction_union_branch_coverage.md
+T cc_instruction_clang_branch_coverage.md
+T cc_instruction_test_backfill.md
+T cc_instruction_tree_repair_and_coverage.md
+T cc_instruction_doctruth_gate_sync.md
+T cc_instruction_tpc_capability_build.md
+T cc_instruction_tpc_capability_verify.md
+T cc_instruction_layer3_phase3_build.md
+T cc_instruction_layer2_phase2_build.md
+T cc_instruction_foundation_stage3b.md
+T cc_instruction_keyregression_diagnosis.md
+T cc_instruction_foundation_stage3a.md
+T cc_instruction_foundation_stage2a.md
+T cc_instruction_doc_recovery.md
+T cc_instruction_foundation_stage0.md
+T cc_instruction_baseline_reconciliation.md
+T cc_instruction_layer1_phase1a_build.md
+T cc_instruction_spec_impl_delta_L1L4.md
+T cc_instruction_uncertain_resolver_measurement.md
+T cc_instruction_layer4_residual_decomposition.md
+T cc_instruction_layer4_b_fairkey.md
+T cc_instruction_layer4_build_increment_b.md
+T cc_instruction_layer4_build_increment_a.md
+T cc_instruction_layer4_audit.md
+T cc_instruction_layer3_tpc_keymeasure.md
+T cc_instruction_backup_batch2.md
+T cc_instruction_backup_cowork_docs.md
+T cc_instruction_layer3_docsync_commit.md
+T cc_instruction_layer3_wiring_commit.md
+T cc_instruction_layer3_jazz_churn_investigation.md
+T cc_instruction_layer3_wiring_code.md
+T cc_instruction_layer3_wiring.md
+T cc_instruction_layer3_sweep.md
+T cc_instruction_layer3_error_decomposition.md
+T cc_instruction_layer3_characterization_scaffold.md
+T cc_instruction_layer3_decoder_followup.md
+T cc_instruction_layer3_decoder_build.md
+T cc_instruction_layer3_decoder_audit.md
+T cc_instruction_push_layer3_incrementB.md
+T cc_instruction_layer3_incrementB_groundtruth.md
+T cc_instruction_push_layer3_incrementA.md
+T cc_instruction_layer3_incrementA_indexing.md
+T cc_instruction_layer3_keymode_audit.md
+T cc_instruction_push_layer2_validation.md
+T cc_instruction_repair_index_verify_b2.md
+T cc_instruction_layer2_corpus_validation.md
+T cc_instruction_roadmap_sync.md
+T cc_instruction_push_layer2.md
+T cc_instruction_layer2_implementation.md
+T cc_instruction_layer2_audit.md
+T cc_instruction_push_doc_sync.md
+T cc_instruction_doc_sync_layer1.md
+T cc_instruction_push_layer1_checkpoint.md
+T cc_instruction_layer1_coverage.md
+T cc_instruction_layer1_implementation.md
+T cc_instruction_layer1_audit.md
+T cc_instruction_metric_build.md
+T cc_instruction_metric_decomposition.md
+T cc_instruction_metric_first_investigation.md
+T cc_instruction_anchor_redesign_investigation.md
+T cc_instruction_anchor_recompute_impl.md
+T cc_instruction_anchor_design_investigation.md
+T cc_instruction_push_bi_checkpoint.md
+T cc_instruction_step2_merge_predicate_dedup.md
+T cc_instruction_step1_pc_primitive_extraction.md
+T cc_instruction_phase2_architecture_support.md
+T cc_instruction_audit_harmonicfunctionlayer.md
+T cc_instruction_audit_chordanalyzer_oracle.md
+T cc_instruction_audit_keymodeanalyzer.md
+T cc_instruction_audit_jointkeydecision.md
+T cc_instruction_audit_localmodulationdetector.md
+T cc_instruction_audit_cadencekeyanchor.md
+T cc_instruction_refactor_keyresolver_split.md
+T cc_instruction_refactor_keymodeanalyzer_split.md
+T cc_instruction_refactor_harmonicsegmenter_split.md
+T cc_instruction_refactor_sectionanalyzer_split.md
+T cc_instruction_refactor_regiontonecollector_split.md
+T cc_instruction_module_layering_assessment.md
+T cc_instruction_refactor1_split_build.md
+T cc_instruction_refactor1_chordanalyzer_split_design.md
+T cc_instruction_bridge_anchor_investigation.md
+T cc_instruction_b2_subdominant_guard_build.md
+T cc_instruction_j_key_iii_step3d_push_then_B.md
+T cc_instruction_b_dominant_subdominant_guard_scoping.md
+T cc_instruction_j_key_iii_step3c_dormant_commit.md
+T cc_instruction_j_key_iii_step3_land.md
+T cc_instruction_j_key_iii_step2_wiring.md
+T cc_instruction_j_key_iii_integration_investigation.md
+T cc_instruction_j_key_ii_redux.md
+T cc_instruction_j_key_ii.md
+T cc_instruction_j_key_i.md
+T cc_instruction_joint_architecture_investigation.md
+T cc_instruction_cadence_precision_investigation.md
+T cc_instruction_stage4d_i_modulation_detector_measure.md
+T cc_instruction_modulation_keypath_scoping.md
+T cc_instruction_tonicization_modulation_metric_check.md
+T cc_instruction_stage6_tonic_i_labeler_measure.md
+T cc_instruction_commit_cadence_instrument.md
+T cc_instruction_stage4c_iii_refine_detection.md
+T cc_instruction_stage4c_i_cadence_detector_measure.md
+T cc_instruction_cadence_key_investigation.md
+T cc_instruction_stage4b_i_commit.md
+T cc_instruction_stage4b_ii_strengthen.md
+T cc_instruction_stage4b_i_demote_and_measure.md
+T cc_instruction_stage4a_commit_and_stage4b_scoping.md
+T cc_instruction_stage4a_declared_mode_import_fix.md
+T cc_instruction_functional_residual_investigation.md
+T cc_instruction_gate_default_measure.md
+T cc_instruction_gate_rebaseline_verify.md
+T cc_instruction_metric_rebaseline_batch.md
+T cc_instruction_measurement_pipeline_audit.md
+T cc_instruction_dcml_parser_applied_root_fix.md
+T cc_instruction_foundations_verification.md
+T cc_instruction_key_emission_headroom.md
+T cc_instruction_stage4_design.md
+T cc_instruction_metric_build_l0l1.md
+T cc_instruction_metric_design_investigation.md
+T cc_instruction_precision_headroom_investigation.md
+T cc_instruction_stage3_2_design.md
+T cc_instruction_stage3_4ii_c1_removal.md
+T cc_instruction_stage3_4i_gate_retirement_dossier.md
+T cc_instruction_stage3_3_gater_decision.md
+T cc_instruction_stage3_3_signal_migration.md
+T cc_instruction_stage3_1b_approval.md
+T cc_instruction_stage3_1b_revision.md
+T cc_instruction_stage3_1b_decode_once.md
+T cc_instruction_stage3_1_beam1_decoder.md
+T cc_instruction_stage3_design_ratification.md
+T cc_instruction_stage3_decoder_design.md
+T cc_instruction_stage2_5_p3_profile.md
+T cc_instruction_stage2_4_ratification.md
+T cc_instruction_stage2_4_divergence_decisions.md
+T cc_instruction_stage2_3_addendum.md
+T cc_instruction_stage2_3_diagnose_production_view.md
+T cc_instruction_corpus_hygiene.md
+T cc_instruction_stage2_2ii_ship_package.md
+T cc_instruction_stage2_2_ab_exploration.md
+T cc_instruction_stage2_2a_corpus_hardening.md
+T cc_instruction_jazz_nondeterminism.md
+T cc_instruction_stage2_1_phase4c_move.md
+T cc_instruction_stage1d_metric_script_tests.md
+T cc_instruction_stage1c_segmentation_key_tests.md
+T cc_instruction_doc_pass_caps_and_gates.md
+T cc_instruction_stage1b_gate_tests.md
+T cc_instruction_stage1a_functionlayer_tests.md
+T cc_instruction_stage0_followup.md
+T cc_instruction_stage0_hygiene.md
+T cc_instruction_commit_exploration_mode.md
+T cc_instruction_phase_e_exploration_mode.md
+T cc_instruction_phase_e_commit_unification.md
+T cc_instruction_phase_e_predecessor_survey.md
+T cc_instruction_phase_d_reanalysis.md
+T cc_instruction_phase_d_merger.md
+T cc_instruction_phase_d_investigation.md
+T cc_instruction_bridge_lookahead.md
+T cc_instruction_deltaseven_7a_diagnostic.md
+T cc_instruction_gate_r_verify_and_commit.md
+T cc_instruction_phase_e_rcb_bass_chord_tone_gate.md
+T cc_instruction_deltaseven_phase_e_diagnostic.md
+T cc_instruction_step3_key_investigation.md
+T cc_instruction_redesign_step2_predecessor_confidence.md
+T cc_instruction_commit_docs.md
+T cc_instruction_redesign_step1_free_wiring.md
+T cc_instruction_revert_absent_root_guard.md
+T cc_instruction_deltaseven_predecessor_diagnostic.md
+T cc_instruction_architecture_opinion.md
+T cc_instruction_absent_root_guard.md
+T cc_instruction_bwv301_diagnostic.md
+T cc_instruction_absent_root_investigate.md
+T cc_instruction_stepback.md
+T cc_instruction_e3.md
+T cc_instruction_e3_investigate.md
+T cc_instruction_housekeeping_e2d_pass2.md
+T cc_instruction_housekeeping_e2d.md
+T cc_instruction_redesign_segregation.md
+T cc_instruction_equivalence_harness.md
+T cc_instruction_e2d_architecture_review.md
+T cc_instruction_e2d_v3c_investigate.md
+T cc_instruction_e2d_enable_v3b.md
+T cc_instruction_e2d_enable_v3.md
+T cc_instruction_e2d_enable_v2_investigate.md
+T cc_instruction_e2d_enable_v2.md
+T cc_instruction_e2d_investigate2.md
+T cc_instruction_e2d_enable.md
+T cc_instruction_e2d_cleanup.md
+T cc_instruction_e2d.md
+T cc_instruction_e2d_investigate.md
+T cc_instruction_e2c.md
+T cc_instruction_e2c_investigate.md
+T cc_instruction_e2b_review.md
+T cc_instruction_e2b_fixup.md
+T cc_instruction_e2b.md
+T cc_instruction_e2b_investigate.md
+T cc_instruction_e2a.md
+T cc_instruction_e2_investigate.md
+T cc_instruction_e1.md
+T cc_instruction_scoring_doc.md
+T cc_instruction_c1_investigate.md
+T cc_instruction_b3.md
+T cc_instruction_b2_guardfix.md
+T cc_instruction_b2_final.md
+T cc_instruction_b2_retry.md
+T cc_instruction_b2_aug7.md
+T cc_instruction_classifier_fix.md
+```
+
+### 1.4 Every other `cc_*.md` at the root (not matching `cc_instruction_*.md`) — tracked and untracked mixed
+
+The files were checked in ten `--error-unmatch` batches. The order below is Grep's. The per-batch arithmetic is written
+as sums of the names each batch's error lines listed: untracked = 4 + 0 + 4 + 1 + 12 + 40 + 29 + 34 + 33 + 11 = 168;
+tracked = 36 + 40 + 36 + 39 + 28 + 0 + 11 + 6 + 7 + 1 = 204.
+
+**Relevant to the move:** `.gitignore` line 116 reads `/cc_e2d_*.md`, a pattern anchored at the root. After the move
+it no longer applies to the three `cc_e2d_*` reports named below, because they would sit under
+`records/cc/reports/`. A second rule in the same file, `ai-assistant/CC_INSTRUCTION_*.md`, is outside this
+population. The rule `tools/cc_*` applies to `tools/`, not to the root.
+
+```
+U cc_report_second_backup_rerun_2026_09_16.md
+U cc_report_second_backup_commit_and_push_2026_09_16.md
+T cc_report_backup_commit_and_push_2026_09_16.md
+T cc_report_defense_share_authored_ends_2026_09_08.md
+T cc_report_defense_share_sizing_third_2026_09_08.md
+T cc_report_defense_share_sizing_second_2026_09_08.md
+T cc_report_defense_share_sizing_2026_09_08.md
+T cc_report_read_size_repair_and_rows_2026_09_07.md
+T cc_report_claude_md_boot_membership_2026_09_07.md
+T cc_report_claude_md_prune_at_amendment_2026_09_07.md
+T cc_report_status_forward_bound_second_2026_09_07.md
+T cc_report_status_forward_bound_2026_09_07.md
+T cc_report_l2_ruling_writeback_2026_09_05.md
+T cc_report_l2_reading_file_2026_09_05.md
+T cc_report_l2_verdict_pass_2026_09_05.md
+T cc_report_l2_candidate_list_2026_09_05.md
+T cc_report_l2_criterion_write_2026_09_04.md
+T cc_report_l2_keyword_count_2026_09_04.md
+T cc_report_boot_pack_freeze_l0l1_2026_09_04.md
+T cc_report_comparison_l0_l1_tenth_2026_09_04.md
+T cc_report_comparison_l0_l1_ninth_2026_09_04.md
+T cc_report_comparison_l0_l1_eighth_2026_09_04.md
+T cc_report_comparison_l0_l1_seventh_2026_09_03.md
+T cc_report_comparison_l0_l1_sixth_2026_09_03.md
+T cc_report_comparison_l0_l1_fifth_2026_09_03.md
+T cc_report_comparison_l0_l1_fourth_2026_09_03.md
+T cc_report_comparison_l0_l1_third_2026_09_02.md
+T cc_report_comparison_l0_l1_second_2026_09_02.md
+T cc_report_comparison_l0_l1_2026_09_02.md
+U cc_handoff_prepend_report_2026_09_01.md
+U cc_sitting_landing_second_report_2026_09_01.md
+T cc_sitting_landing_report_2026_09_01.md
+T cc_invisible_notes_establishment_report_2026_09_01.md
+T cc_slot_sweep_report_2026_09_01.md
+T cc_exemplar_decode_report_2026_09_01.md
+T cc_mscz_container_establishment_report.md
+T cc_framework_9_0_correction_report.md
+T cc_l0l1_boot_pack_second_report.md
+T cc_l0l1_boot_pack_report.md
+T cc_l0l1_exemplar_selection_report.md
+T cc_report_reading_pass_landing_second_2026_08_31.md
+T cc_report_reading_pass_landing_2026_08_31.md
+T cc_report_phase_close_second_2026_08_30.md
+T cc_report_phase_close_2026_08_30.md
+T cc_report_third_landing_2026_08_28.md
+T cc_report_second_landing_2026_08_28.md
+T cc_report_landing_2026_08_28.md
+T cc_report_arm_and_site_fillin.md
+T cc_report_register_baseline_repair.md
+T cc_report_informed_brief_landing.md
+T cc_report_framework_arrangement_landing.md
+T cc_report_framework_pack_preparation.md
+T cc_report_unit_correction_redraw.md
+T cc_report_placement_sample_redraw.md
+T cc_report_placement_sample.md
+T cc_report_ledger_admissions.md
+T cc_report_ledger_build.md
+T cc_report_sizing_tests.md
+T cc_report_boot_pack_regeneration.md
+T cc_report_amendment_landing.md
+T cc_report_register_reconciliation.md
+T cc_report_ledger_harvest.md
+T cc_report_cascade_sweep.md
+T cc_report_regeneration_and_citation.md
+T cc_report_method_voiding_landing.md
+T cc_report_sizing_output_landing.md
+T cc_report_sizing_brief_ruled.md
+T cc_report_manifest_prose_and_sizing_brief.md
+T cc_report_sizing_pack_preparation.md
+T cc_report_comparison_harmony_boundary.md
+T cc_report_blind_output_landing.md
+T cc_report_brief_ratification_and_readme_boundary.md
+T cc_report_second_passage_withheld.md
+T cc_report_withheld_family_correction.md
+T cc_report_pilot_preparation.md
+T cc_report_pass_continuation_second.md
+T cc_report_step_zero_return_executed.md
+T cc_report_step_zero.md
+T cc_report_plan_evaluation.md
+T cc_report_plan_challenge.md
+T cc_report_preparation_fourteenth.md
+T cc_report_preparation_thirteenth.md
+T cc_report_preparation_twelfth.md
+T cc_report_preparation_eleventh_amended.md
+T cc_report_preparation_eleventh.md
+T cc_report_preparation_tenth.md
+T cc_report_preparation_ninth.md
+T cc_report_preparation_eighth.md
+T cc_report_preparation_seventh.md
+T cc_report_preparation_sixth.md
+T cc_report_preparation_fifth.md
+T cc_report_preparation_fourth.md
+T cc_report_preparation_third.md
+T cc_report_preparation_second.md
+T cc_report_preparation_opening.md
+T cc_report_d231_landing.md
+T cc_report_phase_rulings_landing.md
+T cc_report_batch_return_rulings.md
+T cc_report_ruled_inventory_landing.md
+U cc_artifact_inventory_report.md
+T cc_phase1d_enumeration_wave_report.md
+T cc_oi207_residual_pass_report.md
+T cc_oi199_joint_p3_p4_report.md
+T cc_oi199_pass1_report.md
+U cc_notation_consumption_audit_report.md
+T cc_adoption_measurement_report.md
+T cc_direct_metric_search_report.md
+U cc_secondary_dominant_refit_report.md
+T cc_note_table_fit_report.md
+U cc_label_table_fit_report.md
+T cc_uncertain_resolver_measurement_report.md
+T cc_term_inventory_report.md
+T cc_oi170_measure_report.md
+T cc_oi168_fix_report.md
+T cc_oi168_magnitude_report.md
+T cc_oi167_collection_tonic_report.md
+T cc_fact_dependency_audit_report.md
+T cc_wave2_dependency_reconciliation_report.md
+T cc_oi160_report.md
+T cc_mode_key_chord_probe_report.md
+T cc_engage_stage3_joint_measure_report.md
+T cc_wave1_finalize_report.md
+T cc_instrument_hygiene_sweep_report.md
+T cc_oi155_report.md
+T cc_harness_group_report.md
+T cc_key_grading_and_calibration_rebaseline_report.md
+T cc_backlog_triage_report.md
+T cc_mode_grading_adjudication_probe_report.md
+T cc_measurement_chain_hardening_report.md
+T cc_l3_key_decode_mechanism_report.md
+T cc_key_grading_rebaseline_report.md
+T cc_key_mode_inference_diagnosis_report.md
+T cc_l5_audit_pass2_report.md
+T cc_l5_audit_pass1_harness_report.md
+T cc_l5_audit_pass1_grading_fitting_report.md
+T cc_l5_audit_pass1_instruments_report.md
+T cc_l5_audit_pass1_resolver_report.md
+T cc_l5_audit_pass1_report.md
+T cc_l4_audit_pass2_report.md
+T cc_l4_audit_pass1_satellites_report.md
+T cc_l4_audit_pass1_oracle_report.md
+T cc_l4_audit_pass1_decoder_report.md
+T cc_l4_audit_pass1_report.md
+T cc_l3_audit_pass2_relabel_report.md
+T cc_l3_audit_pass2_report.md
+T cc_l3_audit_pass1_report.md
+T cc_l1l2_audit_blind_rerun_report.md
+T cc_l1l2_audit_pass2_report.md
+T cc_l1l2_audit_pass1_report.md
+T cc_eg2_probe_report.md
+T cc_engage_l5_pedal_annotate_design_report.md
+T cc_engage_joint_key_chord_design_report.md
+T cc_engage_l5_carry_selection_design_report.md
+T cc_engage_fanout_measure_report.md
+T cc_engage_pre_l5_refactor_report.md
+T cc_engage_structural_integrity_audit_report.md
+U cc_engage_u1_uncap_report.md
+T cc_engage_gateA_unification_build_report.md
+T cc_engage_information_loss_audit_report.md
+T cc_engage_gateA_unification_design_report.md
+T cc_engage_c3_measurement_report.md
+T cc_engage_fb_redesign_design_report.md
+T cc_stage5_r10b_ratification_report.md
+T cc_stage5_r10_assembly_report.md
+T cc_stage5_phase3_report.md
+T cc_stage5_phase2_3_report.md
+T cc_stage5_phase2_2e_report.md
+T cc_stage5_phase2_2d_report.md
+T cc_stage5_phase2_2c_report.md
+T cc_stage5_phase2_2b_report.md
+T cc_stage5_phase2_2a_report.md
+T cc_stage5_phase2_1_report.md
+T cc_stage5_phase1_report.md
+T cc_stage5_phase0_report.md
+T cc_acquisition_round_report.md
+T cc_wave3_addendum_report.md
+T cc_corpus_wave3_report.md
+T cc_dl3a_closeout_report.md
+T cc_c1_fold_report.md
+T cc_c1_reliability_report.md
+T cc_a8_rebaseline_measure_report.md
+T cc_corpus_wave2_report.md
+T cc_vl_foundation_build_report.md
+T cc_vl_idiom_discovery_report.md
+T cc_grammar_completion_report.md
+U cc_consumer_build_report.md
+U cc_approval_styletag_swap_commit.md
+U cc_styletag_swap_report.md
+U cc_l6_build_report.md
+U cc_tsv_oracle_report.md
+U cc_extension_build_report.md
+T cc_gap_analysis_v2_report.md
+U cc_corpus_wave1_report.md
+T cc_gap_analysis_report.md
+U cc_e0doubleprime_report.md
+U cc_e0prime_report.md
+T cc_e0_fullspine_report.md
+U cc_vocabulary_build_report.md
+U cc_corpus_hygiene_report_corelli.md
+U cc_L6_corpus_oracle_report.md
+U cc_phase5c_L5_close_review.md
+U cc_phase5c_stepM_followup_report.md
+U cc_phase5c_stepM_report.md
+U cc_phase5c_step5_followup_report.md
+U cc_phase5c_step6_report.md
+U cc_phase5c_step5_report.md
+U cc_phase5c_step4_report.md
+U cc_phase5c_step3_report.md
+U cc_phase5c_step2_amendment.md
+U cc_phase5c_step2_report.md
+U cc_phase5c_step1_report.md
+U cc_phase5c_step0_report.md
+U cc_phrase_boundary_build_report.md
+U cc_l3_keyalt_forwardcarry_report.md
+U cc_l1l4_review_report.md
+U cc_phase5b_stepM_measure_report.md
+U cc_phase5b_step4_report.md
+U cc_phase5b_step3_report.md
+U cc_phase5b_step2final_report.md
+U cc_phase5b_step2_report.md
+U cc_phase5b_step1_report.md
+U cc_phase5b_step0_report.md
+U cc_batch_analyze_restore_report.md
+U cc_l1l3_spec_sync_report.md
+U cc_l1l3_delta_check_resync_report.md
+U cc_batch_analyze_unification_report.md
+U cc_backfill_l3_keymode_report.md
+U cc_backfill_formatter_report.md
+U cc_backfill_l4_oracle_report.md
+U cc_backfill_engravingbridge_report.md
+U cc_types_header_build_report.md
+U cc_types_header_investigation_report.md
+U cc_kmasks_complete_report.md
+U cc_kmasks_derive_report.md
+U cc_union_branch_coverage_report.md
+U cc_clang_branch_coverage_report.md
+U cc_test_backfill_report.md
+U cc_tree_repair_and_coverage_report.md
+U cc_doctruth_gate_sync_report.md
+U cc_tpc_capability_build_report.md
+U cc_tpc_capability_verify_report.md
+U cc_layer3_phase3_report.md
+U cc_layer2_phase2_report.md
+T cc_foundation_stage3b_report.md
+T cc_keyregression_diagnosis_report.md
+U cc_stage3a_notation_triage_report.md
+U cc_stage2a_wip_triage_report.md
+U cc_doc_recovery_report.md
+U cc_foundation_stage0_report.md
+U cc_baseline_reconciliation_report.md
+U cc_layer1_phase1a_report.md
+U cc_spec_impl_delta_L1L4_report.md
+U cc_layer4_residual_decomposition_report.md
+U cc_layer4_build_b_fairkey_report.md
+U cc_layer4_build_b_report.md
+U cc_layer4_build_a_report.md
+U cc_layer4_audit_dossier.md
+T cc_layer3_tpc_keymeasure_report.md
+T cc_layer3_wiring_report.md
+T cc_layer3_jazz_churn_investigation.md
+U cc_layer3_wiring_design_dossier.md
+T cc_layer3_sweep_report.md
+T cc_layer3_error_decomposition_report.md
+U cc_layer3_characterization_report.md
+U cc_layer3_decoder_build_report.md
+U cc_layer3_decoder_audit_dossier.md
+U cc_layer3_incrementB_report.md
+U cc_layer3_incrementA_report.md
+U cc_layer3_keymode_audit_dossier.md
+U cc_layer2_corpus_validation_report.md
+T cc_layer2_impl_report.md
+T cc_layer2_audit_dossier.md
+U cc_layer1_doc_sync_report.md
+T cc_layer1_coverage_report.md
+T cc_layer1_impl_report.md
+U cc_layer1_audit_dossier.md
+U cc_metric_build_report.md
+U cc_metric_decomposition_report.md
+U cc_metric_round3_report.md
+U cc_metric_round2_report.md
+U cc_metric_first_dossier.md
+U cc_anchor_redesign_dossier.md
+U cc_anchor_recompute_report.md
+U cc_anchor_design_dossier.md
+U cc_step2_merge_predicate_report.md
+U cc_b2_subdominant_guard_report.md
+U cc_step1_pc_primitive_report.md
+U cc_phase2_architecture_support_report.md
+U cc_audit_harmonicfunctionlayer_report.md
+U cc_audit_chordanalyzer_oracle_report.md
+U cc_audit_keymodeanalyzer_report.md
+U cc_audit_jointkeydecision_report.md
+U cc_audit_localmodulationdetector_report.md
+U cc_audit_cadencekeyanchor_report.md
+U cc_refactor_keyresolver_report.md
+U cc_refactor_keymodeanalyzer_report.md
+U cc_refactor_harmonicsegmenter_report.md
+U cc_refactor_sectionanalyzer_report.md
+U cc_refactor_regiontonecollector_report.md
+T cc_module_layering_assessment_dossier.md
+T cc_refactor1_split_build_report.md
+T cc_refactor1_split_design_dossier.md
+U cc_b_guard_scoping_dossier.md
+U cc_j_key_iii_step3_report.md
+U cc_j_key_iii_step2_report.md
+U cc_j_key_iii_integration_dossier.md
+U cc_j_key_ii_redux_report.md
+U cc_j_key_ii_report.md
+U cc_j_key_i_report.md
+U cc_joint_architecture_dossier.md
+T cc_cadence_precision_investigation_dossier.md
+U cc_stage4d_i_report.md
+U cc_modulation_keypath_scoping_dossier.md
+T cc_tonicization_modulation_metric_dossier.md
+U cc_stage6_tonic_i_report.md
+U cc_stage4c_iii_report.md
+U cc_stage4c_i_report.md
+T cc_cadence_key_investigation_dossier.md
+U cc_stage4b_ii_report.md
+U cc_stage4b_i_report.md
+U cc_stage4b_scoping_dossier.md
+T cc_stage4a_mode_import_report.md
+T cc_functional_residual_dossier.md
+T cc_gate_rebaseline_verify_report.md
+T cc_metric_rebaseline_report.md
+U cc_measurement_pipeline_audit.md
+U cc_foundations_verification_report.md
+T cc_key_emission_headroom_dossier.md
+U cc_stage4_design_report.md
+U cc_metric_build_l0l1_report.md
+U cc_precision_headroom_dossier.md
+U cc_stage3_2_design_report.md
+U cc_stage3_4i_dossier.md
+U cc_stage3_4ii_report.md
+U cc_stage3_3_report.md
+U cc_stage3_1b_report.md
+U cc_stage3_1_report.md
+U cc_stage3_design_report.md
+U cc_stage2_5_report.md
+U cc_stage2_4_report.md
+U cc_stage2_3_report.md
+U cc_corpus_hygiene_report.md
+U cc_stage2_2ii_report.md
+T cc_stage2_2_ab_dossier.md
+U cc_stage2_2a_report.md
+U cc_jazz_nondeterminism_report.md
+U cc_stage2_1_report.md
+U cc_stage1d_report.md
+U cc_stage1c_report.md
+U cc_stage1b_report.md
+U cc_stage1a_report.md
+U cc_stage0_report.md
+U cc_phase_e_exploration_mode_report.md
+U cc_phase_e_commit_unification_report.md
+U cc_phase_e_predecessor_survey_report.md
+T cc_phase_d_merger_report.md
+U cc_phase_d_investigation_report.md
+U cc_bridge_lookahead_report.md
+U cc_deltaseven_7a_diagnostic_report.md
+U cc_gate_r_verify_report.md
+U cc_gate_r_report.md
+U cc_deltaseven_phase_e_diagnostic_report.md
+T cc_step3_key_investigation_report.md
+U cc_deltaseven_predecessor_report.md
+U cc_architecture_opinion.md
+U cc_bwv301_diagnostic_report.md
+U cc_absent_root_investigation.md
+U cc_stepback_report.md
+U cc_e3_investigation_report.md
+U cc_e2d_architecture_review_report.md
+U cc_e2d_v3c_investigation_report.md
+U cc_e2d_investigation_report.md
+```
+
+**Not every file in this population is named `*_report`.** The dispatch's destination for "every other root
+`cc_*.md`" is `records/cc/reports/`. Names in this population that are not of the report shape include
+`cc_approval_styletag_swap_commit.md` (an approval file), `cc_architecture_opinion.md`,
+`cc_absent_root_investigation.md`, `cc_measurement_pipeline_audit.md`, `cc_phase5c_step2_amendment.md`,
+`cc_phase5c_L5_close_review.md`, `cc_layer3_jazz_churn_investigation.md` and every `*_dossier.md`. **No kind judgment
+is made on them here**, beyond the DATED class of Task 2(c).
+
+### 1.5 Every other `cowork_*.md` at the root — NOT in the move — every one TRACKED
+
+Five `--error-unmatch` batches were run and all exited 0. The order is Grep's.
+
+```
+T cowork_l2_task_b_slice_derivation_2026_09_05.md
+T cowork_defense_clause_ends_2026_09_08.md
+T cowork_claude_md_live_rule_classification_2026_09_08.md
+T cowork_memory_pointer_cut_2026_09_07.md
+T cowork_l2_score_set_read_2026_09_05.md
+T cowork_l2_first_pass_extracts_derivation_2026_09_05.md
+T cowork_l2_boot_list_surface_2026_09_05.md
+T cowork_away_returns.md
+T cowork_derived_specification_l0_l1_2026_09_03.md
+T cowork_blind_derivation_l0_l1_2026_08_31.md
+T cowork_running_order_2026_09_01.md
+T cowork_blind_session_brief_l0_l1.md
+T cowork_reading_pass_remedial_commission_2026_08_31.md
+T cowork_reading_pass_findings_2026_08_31.md
+T cowork_reading_pass_commission_2026_08_30.md
+T cowork_audit_protocol.md
+T cowork_framework_phase_retrospective_2026_08_29.md
+T cowork_research_list_disposition_surface_2026_08_29.md
+T cowork_unit_question_surface_2026_08_28.md
+T cowork_arm_and_site_fillin_2026_08_28.md
+T cowork_cross_layer_transfer_list.md
+T cowork_informed_session_brief_framework.md
+T cowork_register_rule_c_suspension_2026_08_28.md
+T cowork_section8_bar_record_2026_08_28.md
+T cowork_informed_brief_provenance.md
+T cowork_section8_breach_surface_2026_08_28.md
+T cowork_register_blocker_surface_2026_08_28.md
+T cowork_blind_session_brief_framework.md
+T cowork_placement_sample_sealed_third_2026_08_27.md
+T cowork_redraw_findings_surface_2026_08_27.md
+T cowork_placement_sample_sealed_redraw_2026_08_27.md
+T cowork_take_rule_surface_2026_08_27.md
+T cowork_declared_readings_surface_2026_08_27.md
+T cowork_stopped_strata_surface_2026_08_27.md
+T cowork_placement_sample_sealed_2026_08_27.md
+T cowork_placement_sample_surface_2026_08_27.md
+T cowork_literature_reachability_2026_08_26.md
+T cowork_framework_phase_opening_surface_2026_08_26.md
+T cowork_empirical_findings_candidates.md
+T cowork_fact_gate_admissions_2026_08_26.md
+T cowork_blind_session_opening_instruction_harmony_boundary.md
+T cowork_blind_derivation_scoring_model_2026_08_24.md
+T cowork_blind_session_brief_scoring_model.md
+T cowork_blind_derivation_harmony_boundary_2026_08_23.md
+T cowork_blind_session_brief_harmony_boundary.md
+T cowork_specification_reconstruction_plan_successor_2026_08_21.md
+T cowork_prediction_tabulation_2026_08_21.md
+T cowork_report_plan_evaluation_2026_08_21.md
+T cowork_evaluation_boot_list_2026_08_21.md
+T cowork_plan_evaluation_brief_2026_08_21.md
+T cowork_review_findings_prediction_2026_08_21.md
+T cowork_specification_reconstruction_plan_v4_2026_08_19.md
+T cowork_specification_reconstruction_plan_v3_2026_08_19.md
+T cowork_specification_reconstruction_plan_v2_2026_08_19.md
+T cowork_specification_reconstruction_plan_2026_08_19.md
+T cowork_curated_boot_list_draft_2026_08_19.md
+T cowork_verification_plan_preparation_tenth.md
+T cowork_spec_code_audit_adjudication_method.md
+T cowork_structural_integrity_audit.md
+T cowork_stage5_fitter_design.md
+T cowork_style_clustering_plan.md
+T cowork_layer3_reachback_design.md
+T cowork_layer1_extend_design.md
+T cowork_design_doc_template.md
+T cowork_phase1_commissioning_surface_2026_08_11.md
+T cowork_layer6_grouping_design.md
+T cowork_voiceleading_axis_design.md
+T cowork_joint_key_chord_design.md
+T cowork_layer3_keymode_design.md
+T cowork_score_census.md
+T cowork_phrase_boundary_design.md
+T cowork_target_document_structure_2026_08_09.md
+T cowork_confidence_contract.md
+T cowork_instruction_return_session.md
+T cowork_document_route_rulings_2026_08_08.md
+T cowork_owner_rulings_2026_08_07.md
+T cowork_engage_arc_plan.md
+T cowork_bounded_context_design.md
+T cowork_layer1_tone_collection_design.md
+T cowork_l1l3_stabilization_plan.md
+T cowork_oi200_perspective_inventory.md
+T cowork_architecture_reassessment.md
+T cowork_layer5_function_design.md
+T cowork_jazz_realization_qa_instrument.md
+T cowork_pending_rulings_2026_08_02.md
+T cowork_candidate_findings_2026_08_02b.md
+T cowork_candidate_open_items_2026_08_02.md
+T cowork_extent_decision_surface.md
+T cowork_notation_output_contract.md
+T cowork_notation_adoption_increment.md
+T cowork_prefit_gates.md
+T cowork_joint_estimator_factorization.md
+T cowork_sensitive_cell_probe.md
+T cowork_factorization_desk_simulation.md
+T cowork_joint_estimator_architecture.md
+T cowork_term_theory_grounding.md
+T cowork_key_layer_design_opening.md
+T cowork_key_chord_joint_inference_grounding.md
+T cowork_key_mode_inference_diagnosis.md
+T cowork_evidence_inventory.md
+T cowork_key_drift_research_grounding.md
+T cowork_mode_key_chord_inference_discussion.md
+T cowork_adjudication_dossier.md
+T cowork_siloed_facts_audit.md
+T cowork_eg1_premise_checks.md
+T cowork_eg2_scoping.md
+T cowork_layer5_engagement_design.md
+T cowork_l1_l5_premise_debt_audit.md
+T cowork_premise_gate_reflection.md
+T cowork_information_loss_audit.md
+T cowork_functional_analysis_research_grounding.md
+T cowork_gateA_unification_design.md
+T cowork_fb_redesign_design.md
+T cowork_candidate_lever_register.md
+T cowork_style_taxonomy_proposal.md
+T cowork_layer4_chordsymbol_design.md
+T cowork_union_search_record.md
+T cowork_product_tool_register.md
+T cowork_census_full_needs_audit.md
+T cowork_polyphony_phrase_harmony_research.md
+T cowork_idiom_discovery_findings.md
+T cowork_spec_polish_findings_b.md
+T cowork_spec_polish_findings_a.md
+T cowork_target_architecture.md
+T cowork_progression_schema_dictionary.md
+T cowork_layer2_slicing_design.md
+T cowork_layer1_note_model_design.md
+T cowork_progression_schema_design.md
+T cowork_score_census_gt_draft.md
+T cowork_score_census_plain_draft.md
+T cowork_architecture_review_2026_07.md
+T cowork_idiom_entry_mapping.md
+T cowork_idiom_discovery_design.md
+T cowork_upstream_merge_risk.md
+T cowork_layer6_grouping_research.md
+T cowork_phase5c_l5_build_plan.md
+T cowork_phrase_boundary_methods.md
+T cowork_layer5_function_methods.md
+T cowork_layer5_spec_review.md
+T cowork_l1l4_completion_ledger.md
+T cowork_l1l4_review_note.md
+T cowork_l1l4_architecture_audit.md
+T cowork_tpc_capability_design.md
+T cowork_phase5b_l4_build_plan.md
+T cowork_types_header_design.md
+T cowork_l1l4_review_charter.md
+T cowork_layer2_reslice_design.md
+T cowork_phase5_branch_backfill_spec.md
+T cowork_uncertain_resolver_investigation.md
+T cowork_spec_language_sweep.md
+T cowork_prune_pass_checklist.md
+T cowork_layer4_spec_review.md
+T cowork_layer3_spec_language_sweep.md
+T cowork_delta_check_dispositions.md
+T cowork_gate_policy_amendment.md
+T cowork_layer3_keymode_impl_design.md
+T cowork_audit_obligation_map.md
+T cowork_phase2_architecture_review.md
+T cowork_audit_remaining_layers.md
+T cowork_audit_regionanalyzer.md
+T cowork_audit_chordpostpasses_sparse.md
+T cowork_audit_postscoringgates.md
+T cowork_audit_harmonicfunctionlayer.md
+T cowork_audit_chordanalyzer_oracle.md
+T cowork_audit_jointkeydecision.md
+T cowork_audit_keyresolver.md
+T cowork_audit_keymodeanalyzer.md
+T cowork_audit_localmodulationdetector.md
+T cowork_audit_sectioncadencedetection.md
+T cowork_audit_cadencekeyanchor.md
+T cowork_corpus_audit.md
+T cowork_implementation_review.md
+T cowork_target_architecture_review.md
+```
+
+**Named because they bear on the dispatch's population lines.** None of the three files below is inside the move
+as the dispatch draws it; they are flagged for the second dispatch to rule on.
+- `cowork_away_returns.md` is a returns file (kind 6 of the kind list), not a handoff.
+- `cowork_instruction_return_session.md` is a dispatch (kind 3 names `cowork_instruction_*.md`), but it does not
+  match `cc_instruction_*.md`.
+- `cowork_report_plan_evaluation_2026_08_21.md` is shaped like a report.
+
+**Outside the root, and not in the move:** a directory `cowork_scratch_2026_08_11/` exists at the root, and its files
+are counted in Task 2(a). The other `cowork_*.md` files outside the root that Glob returned are under
+`ratification_surfaces/`.
+
+---
+
+## TASK 2(a) — text references, per expression, every file with a count
+
+Each expression was run separately over the whole repository with Grep, using `output_mode: "count"` and
+`head_limit: 0` with the exclusions above. Paths are as Grep printed them, with backslashes, relative to the repository
+root. Each list is followed by Grep's own summary line, quoted verbatim, which is the tool's arithmetic and not a
+count made here.
+
+**What a count counts is not established here.** It is either matching lines or individual matches, and the
+difference matters when one line names several record files. Grep's summary calls the figures "occurrences",
+but the tool's count mode was not tested to settle which one it reports, so no claim rests on the distinction.
+A count greater than zero means only that the file contains at least one match.
+
+### Expression 1 — `cowork_handoff_entry_[a-z_]+\.md`
+
+```
+cc_handoff_prepend_report_2026_09_01.md:19
+cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md:4
+cc_instruction_backup_commit_and_push_2026_09_16.md:1
+cc_instruction_comparison_l0_l1_ninth_2026_09_04.md:6
+cc_instruction_comparison_l0_l1_fourth_2026_09_03.md:11
+cc_instruction_arm_and_site_fillin.md:2
+cc_instruction_comparison_l0_l1_fifth_2026_09_03.md:5
+cc_instruction_defense_share_sizing_third_2026_09_08.md:4
+cc_instruction_comparison_l0_l1_eighth_2026_09_04.md:6
+cc_instruction_defense_share_sizing_second_2026_09_08.md:4
+cc_instruction_comparison_l0_l1_2026_09_02.md:6
+cc_instruction_defense_share_sizing_2026_09_08.md:1
+cc_instruction_defense_share_authored_ends_2026_09_08.md:1
+cc_instruction_comparison_l0_l1_sixth_2026_09_03.md:7
+cc_instruction_comparison_l0_l1_third_2026_09_02.md:6
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md:7
+cc_instruction_comparison_l0_l1_tenth_2026_09_04.md:6
+cc_instruction_comparison_l0_l1_second_2026_09_02.md:7
+cc_instruction_handoff_prepend_2026_09_01.md:2
+cc_instruction_l2_verdict_pass_2026_09_05.md:6
+cc_instruction_l2_keyword_count_2026_09_04.md:4
+cc_instruction_l2_criterion_write_2026_09_04.md:2
+cc_instruction_landing_2026_08_28.md:3
+cc_instruction_phase_close_second_2026_08_30.md:3
+cc_instruction_phase_close_2026_08_30.md:3
+cc_instruction_second_backup_rerun_two_2026_09_16.md:2
+cc_instruction_register_baseline_repair.md:5
+cc_instruction_second_backup_rerun_2026_09_16.md:2
+cc_instruction_reading_pass_landing_second_2026_08_31.md:1
+cc_instruction_second_backup_commit_and_push_2026_09_16.md:2
+cc_instruction_reading_pass_landing_2026_08_31.md:5
+cc_instruction_sitting_landing_second_2026_09_01.md:1
+cc_report_boot_pack_freeze_l0l1_2026_09_04.md:1
+cc_report_backup_commit_and_push_2026_09_16.md:153
+cc_report_comparison_l0_l1_sixth_2026_09_03.md:1
+cc_report_comparison_l0_l1_ninth_2026_09_04.md:1
+cc_report_comparison_l0_l1_tenth_2026_09_04.md:1
+cc_report_comparison_l0_l1_seventh_2026_09_03.md:1
+cc_report_defense_share_sizing_2026_09_08.md:3
+cc_report_comparison_l0_l1_fifth_2026_09_03.md:1
+cc_report_defense_share_authored_ends_2026_09_08.md:1
+cc_report_comparison_l0_l1_eighth_2026_09_04.md:2
+cc_report_defense_share_sizing_third_2026_09_08.md:2
+cc_report_defense_share_sizing_second_2026_09_08.md:2
+cc_report_l2_candidate_list_2026_09_05.md:1
+cc_report_l2_verdict_pass_2026_09_05.md:2
+cc_report_l2_ruling_writeback_2026_09_05.md:1
+cc_report_landing_2026_08_28.md:2
+cc_report_phase_close_2026_08_30.md:3
+cc_report_phase_close_second_2026_08_30.md:1
+cc_report_reading_pass_landing_second_2026_08_31.md:4
+cc_report_second_backup_commit_and_push_2026_09_16.md:3
+cc_report_register_baseline_repair.md:7
+cc_report_second_backup_rerun_2026_09_16.md:3
+cc_sitting_landing_report_2026_09_01.md:4
+cc_sitting_landing_second_report_2026_09_01.md:2
+cowork_blind_session_brief_l0_l1.md:1
+cowork_handoff.md:8
+cowork_handoff_entry_eighty_four.md:2
+cowork_handoff_entry_eighty_eight.md:1
+cowork_handoff_entry_eighty_five.md:2
+cowork_handoff_entry_ninety_eight.md:2
+cowork_handoff_entry_eighty_three.md:1
+cowork_away_returns.md:18
+cowork_handoff_entry_eighty_six.md:1
+cowork_handoff_entry_eighty_seven.md:1
+cowork_handoff_entry_ninety.md:1
+cowork_handoff_entry_ninety_seven.md:2
+cowork_handoff_entry_ninety_nine.md:3
+cowork_handoff_entry_one_hundred.md:3
+cowork_handoff_entry_ninety_five.md:1
+cowork_handoff_entry_ninety_one.md:2
+cowork_handoff_entry_ninety_four.md:2
+cowork_handoff_entry_ninety_six.md:2
+cowork_handoff_entry_ninety_two.md:2
+cowork_handoff_entry_one_hundred_and_eight.md:1
+cowork_handoff_entry_one_hundred_and_eighteen.md:1
+cowork_handoff_entry_one_hundred_and_eighty.md:1
+cowork_handoff_entry_one_hundred_and_eighty_eight.md:1
+cowork_handoff_entry_ninety_three.md:3
+cowork_handoff_entry_one_hundred_and_eighty_five.md:1
+cowork_handoff_entry_one_hundred_and_eighty_four.md:2
+cowork_handoff_entry_one_hundred_and_eighty_seven.md:1
+cowork_handoff_entry_one_hundred_and_eighty_six.md:1
+cowork_handoff_entry_one_hundred_and_eighty_one.md:2
+cowork_handoff_entry_one_hundred_and_eighty_three.md:2
+cowork_handoff_entry_one_hundred_and_eighty_two.md:1
+cowork_handoff_entry_one_hundred_and_eighty_two-1.md:1
+cowork_handoff_entry_one_hundred_and_eleven.md:1
+cowork_handoff_entry_one_hundred_and_fifteen.md:1
+cowork_handoff_entry_one_hundred_and_five.md:2
+cowork_handoff_entry_one_hundred_and_forty_nine.md:1
+cowork_handoff_entry_one_hundred_and_forty_eight.md:2
+cowork_handoff_entry_one_hundred_and_forty_two.md:1
+cowork_handoff_entry_one_hundred_and_four.md:2
+cowork_handoff_entry_one_hundred_and_nine.md:1
+cowork_handoff_entry_one_hundred_and_nineteen.md:1
+cowork_handoff_entry_one_hundred_and_one.md:3
+cowork_handoff_entry_one_hundred_and_fourteen.md:1
+cowork_handoff_entry_one_hundred_and_seven.md:2
+cowork_handoff_entry_one_hundred_and_seventeen.md:1
+cowork_handoff_entry_one_hundred_and_seventy.md:1
+cowork_handoff_entry_one_hundred_and_seventy_eight.md:1
+cowork_handoff_entry_one_hundred_and_seventy_five.md:1
+cowork_handoff_entry_one_hundred_and_seventy_four.md:1
+cowork_handoff_entry_one_hundred_and_seventy_nine.md:1
+cowork_handoff_entry_one_hundred_and_seventy_one.md:1
+cowork_handoff_entry_one_hundred_and_seventy_seven.md:1
+cowork_handoff_entry_one_hundred_and_seventy_six.md:1
+cowork_handoff_entry_one_hundred_and_seventy_three.md:1
+cowork_handoff_entry_one_hundred_and_seventy_two.md:1
+cowork_handoff_entry_one_hundred_and_six.md:1
+cowork_handoff_entry_one_hundred_and_sixteen.md:1
+cowork_handoff_entry_one_hundred_and_sixty_eight.md:1
+cowork_handoff_entry_one_hundred_and_sixty_nine.md:2
+cowork_handoff_entry_one_hundred_and_ten.md:2
+cowork_handoff_entry_one_hundred_and_thirty_eight.md:1
+cowork_handoff_entry_one_hundred_and_thirty.md:1
+cowork_handoff_entry_one_hundred_and_thirty_four.md:1
+cowork_handoff_entry_one_hundred_and_thirty_six.md:1
+cowork_handoff_entry_one_hundred_and_thirty_one.md:1
+cowork_handoff_entry_one_hundred_and_thirty_seven.md:1
+cowork_handoff_entry_one_hundred_and_thirty_three.md:1
+cowork_handoff_entry_one_hundred_and_thirteen.md:1
+cowork_handoff_entry_one_hundred_and_thirty_five.md:1
+cowork_handoff_entry_one_hundred_and_twelve.md:1
+cowork_handoff_entry_one_hundred_and_thirty_nine.md:1
+cowork_handoff_entry_one_hundred_and_three.md:3
+cowork_handoff_entry_one_hundred_and_thirty_two.md:1
+cowork_handoff_entry_one_hundred_and_twenty.md:1
+cowork_handoff_entry_one_hundred_and_twenty_eight.md:1
+cowork_handoff_entry_one_hundred_and_twenty_five.md:1
+cowork_handoff_entry_one_hundred_and_twenty_one.md:1
+cowork_handoff_entry_one_hundred_and_twenty_four.md:1
+cowork_handoff_entry_one_hundred_and_twenty_nine.md:1
+cowork_handoff_entry_one_hundred_and_twenty_seven.md:1
+cowork_handoff_entry_one_hundred_and_twenty_six.md:1
+cowork_handoff_entry_one_hundred_and_twenty_three.md:1
+cowork_handoff_entry_one_hundred_and_twenty_two.md:1
+cowork_handoff_entry_one_hundred_and_two.md:2
+cowork_l2_score_set_read_2026_09_05.md:1
+cowork_l2_first_pass_extracts_derivation_2026_09_05.md:1
+cowork_l2_boot_list_surface_2026_09_05.md:2
+cowork_l2_task_b_slice_derivation_2026_09_05.md:1
+cowork_memory_pointer_cut_2026_09_07.md:4
+cowork_reading_pass_remedial_commission_2026_08_31.md:3
+cowork_rulings_2026_08_28_unit_question_sitting.md:1
+cowork_rulings_2026_08_30_detail_phase_opening_sitting.md:2
+cowork_rulings_2026_09_05_l2_boot_list_sitting.md:1
+cowork_rulings_2026_09_05_l2_withheld_family_sitting.md:2
+cowork_rulings_2026_08_31_decision_surface_sitting.md:31
+cowork_running_order_2026_09_01.md:1
+reading_pass\l2_slice_reading_progress_companion.md:27
+reading_pass\l2_slice_reading_progress.md:2
+reading_pass\extracts_second_pass\rocher-robine-hanna-oudre-2010-concurrent-estimation-of-chords-and-keys.md:1
+reading_pass\extracts\yang-cwitkowitz-duan-2023-harmonic-analysis-with-neural-semi-crf.md:1
+reading_pass\extracts\temperley-sleator-1999-modeling-meter-and-harmony.md:1
+reading_pass\extracts\temperley-2009-unified-probabilistic-model-polyphonic-music-analysis.md:1
+reading_pass\extracts\temperley-2002-a-bayesian-approach-to-key-finding.md:1
+reading_pass\extracts\sutton-mccallum-2006-an-introduction-to-conditional-random-fields-for-relational-learning.md:1
+reading_pass\extracts\sheh-ellis-2003-chord-segmentation-and-recognition-using-em-trained-hidden-markov-models.md:1
+reading_pass\extracts\sears-pearce-caplin-mcadams-2018-simulating-expectations-for-tonal-cadences.md:1
+reading_pass\extracts\sarawagi-cohen-2004-semi-markov-conditional-random-fields.md:1
+reading_pass\extracts\rocher-robine-hanna-oudre-2010-concurrent-estimation-of-chords-and-keys.md:1
+reading_pass\extracts\raphael-stoddard-2003-harmonic-analysis-with-probabilistic-graphical-models.md:1
+reading_pass\extracts\pardo-birmingham-2002-algorithms-for-chordal-analysis.md:1
+reading_pass\extracts\noland-sandler-2006-key-estimation-using-a-hidden-markov-model.md:1
+reading_pass\extracts\ni-mcvicar-santosrodriguez-debie-2011-end-to-end-machine-learning-system-harmonic-analysis.md:1
+reading_pass\extracts\micchi-gotham-giraud-2020-not-all-roads-lead-to-rome-pitch-representation-and-model-architecture.md:1
+reading_pass\extracts\masada-bunescu-2019-chord-recognition-in-symbolic-music-a-segmental-crf-model.md:1
+reading_pass\extracts\lafferty-mccallum-pereira-2001-conditional-random-fields-for-segmenting-and-labeling-sequence-data.md:1
+reading_pass\extracts\lafferty-mccallum-pereira-2001-conditional-random-fields-for-segmenting-and-labeling-sequence-data-1.md:1
+reading_pass\extracts\korzeniowski-widmer-2018-improved-chord-recognition-by-combining-duration-and-harmonic-language-models.md:1
+reading_pass\extracts\karystinaios-widmer-2022-cadence-detection-graph-neural-networks.md:1
+reading_pass\extracts\ju-howes-mckay-conditschultz-calvozaragoza-fujinaga-2019-an-interactive-workflow-for-generating-chord-labels.md:1
+reading_pass\extracts\ju-conditschultz-arthur-fujinaga-2017-non-chord-tone-identification-using-deep-neural-networks.md:1
+reading_pass\extracts\granrothwilding-2013-harmonic-analysis-of-music-using-combinatory-categorial-grammar.md:1
+reading_pass\extracts\feisthauer-bigo-giraud-leve-2020-estimating-keys-and-modulations-in-musical-pieces.md:1
+reading_pass\extracts\conditschultz-ju-fujinaga-2018-a-flexible-approach-to-automated-harmonic-analysis.md:1
+reading_pass\extracts\chew-2002-spiral-array-algorithm-for-determining-key-boundaries.md:1
+reading_pass\extracts\chen-su-2021-attend-to-chords-improving-harmonic-analysis-of-symbolic-music.md:1
+reading_pass\extracts\chen-su-2019-harmony-transformer-incorporating-chord-segmentation-into-harmony-recognition.md:1
+reading_pass\extracts\chen-su-2018-functional-harmony-recognition-of-symbolic-music-data-with-multi-task-rnn.md:1
+reading_pass\extracts\catteau-martens-leman-2006-model-based-approach-to-scale-and-chord-estimation.md:1
+reading_pass\extracts\burgoyne-pugin-kereliuk-fujinaga-2007-a-cross-validated-study-of-modelling-strategies-for-automatic-chord-recognition-in-audio.md:1
+reading_pass\extracts\bigo-feisthauer-giraud-leve-2018-relevance-of-musical-features-for-cadence-detection.md:1
+docs\research_papers\BIBLIOGRAPHY.md:1
+ratification_surfaces\cowork_first_deriving_subject_surface_2026_08_31.md:1
+tools\audit\artifact_inventory.json:1
+tools\audit\changed_paths_l2_verdict_pass_task0.json:1
+tools\audit\changed_paths_l2_ruling_writeback_task3.json:1
+tools\audit\changed_paths_l2_criterion_task0.json:2
+tools\audit\changed_paths_defense_sizing_third_task1.json:38
+tools\audit\changed_paths_defense_sizing_third_task0.json:40
+tools\audit\changed_paths_defense_sizing_task0.json:40
+tools\audit\changed_paths_defense_sizing_second_task0.json:40
+tools\audit\changed_paths_defense_authored_ends_task0.json:39
+tools\audit\derivation_boot_pack\l0-l1\08_the_five_research_extracts.md:5
+open_items\OI-378.md:1
+```
+
+Grep's summary line: `Found 803 total occurrences across 199 files.`
+
+### Expression 2 — `cowork_handoff(_archive)?\.md`
+
+```
+cc_artifact_inventory_report.md:1
+ARCHITECTURE.md:1
+cc_handoff_prepend_report_2026_09_01.md:17
+cc_instruction_adoption_measurement.md:1
+cc_instruction_adoption_commit.md:1
+cc_instruction_acquisition_round.md:1
+cc_instruction_algorithm_completion.md:1
+cc_instruction_analysis_cost_profile.md:2
+cc_instruction_arm_and_site_fillin.md:2
+cc_instruction_artifact_inventory.md:2
+cc_instruction_backlog_triage.md:1
+cc_instruction_batch_return_rulings.md:2
+cc_instruction_blind_output_landing.md:3
+cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md:1
+cc_instruction_boot_pack_regeneration.md:2
+cc_instruction_brief_ratification_and_readme_boundary.md:3
+cc_instruction_c1_fold_and_explanation.md:1
+cc_instruction_cascade_sweep.md:3
+cc_instruction_comparison_harmony_boundary.md:3
+cc_instruction_comparison_l0_l1_2026_09_02.md:4
+cc_instruction_comparison_l0_l1_eighth_2026_09_04.md:2
+cc_instruction_comparison_l0_l1_ninth_2026_09_04.md:3
+cc_instruction_comparison_l0_l1_fourth_2026_09_03.md:4
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md:1
+cc_instruction_comparison_l0_l1_fifth_2026_09_03.md:2
+cc_instruction_comparison_l0_l1_third_2026_09_02.md:3
+cc_instruction_comparison_l0_l1_second_2026_09_02.md:7
+cc_instruction_comparison_l0_l1_tenth_2026_09_04.md:2
+cc_instruction_comparison_l0_l1_sixth_2026_09_03.md:1
+cc_instruction_corpus_wave3.md:1
+cc_instruction_decision_clustering.md:1
+cc_instruction_decoder_work_counts.md:1
+cc_instruction_decision_harvest.md:2
+cc_instruction_design_pass_commit.md:5
+cc_instruction_direct_metric_weight_fit.md:1
+cc_instruction_doc_split.md:8
+cc_instruction_desk_sim_commit.md:2
+cc_instruction_doc_sync_layer1.md:1
+cc_instruction_fact_dependency_audit.md:1
+cc_instruction_framework_pack_preparation.md:5
+cc_instruction_framework_arrangement_landing.md:5
+cc_instruction_handoff_prepend_2026_09_01.md:15
+cc_instruction_harness_group.md:2
+cc_instruction_informed_brief_landing.md:7
+cc_instruction_instrument_hygiene_sweep.md:1
+cc_instruction_joint_fact_adapter.md:1
+cc_instruction_joint_module_build.md:2
+cc_instruction_joint_table_codegen.md:1
+cc_instruction_joint_input_parity.md:1
+cc_instruction_key_grading_rebaseline.md:1
+cc_instruction_key_grading_and_calibration_rebaseline.md:1
+cc_instruction_key_mode_inference_diagnosis.md:1
+cc_instruction_l1_l2_audit_blind_rerun.md:2
+cc_instruction_l1_l2_audit_pass1.md:1
+cc_instruction_l1_l2_audit_pass2.md:1
+cc_instruction_l3_audit_pass1.md:2
+cc_instruction_l3_audit_pass2_relabel.md:2
+cc_instruction_l3_audit_pass2.md:2
+cc_instruction_l4_audit_pass1_oracle.md:2
+cc_instruction_l4_audit_pass1_decoder.md:2
+cc_instruction_l4_audit_pass1.md:2
+cc_instruction_l5_audit_pass1_resolver.md:2
+cc_instruction_l3_key_decode_mechanism.md:1
+cc_instruction_label_table_fit.md:1
+cc_instruction_l5_audit_pass1.md:2
+cc_instruction_l4_audit_pass1_satellites.md:2
+cc_instruction_l5_audit_pass1_grading_fitting.md:2
+cc_instruction_l5_audit_pass2.md:2
+cc_instruction_l5_audit_pass1_instruments.md:2
+cc_instruction_l4_audit_pass2.md:2
+cc_instruction_landing_2026_08_28.md:6
+cc_instruction_l5_audit_pass1_harness.md:2
+cc_instruction_layer1_coverage.md:1
+cc_instruction_layer1_implementation.md:1
+cc_instruction_ledger_harvest.md:3
+cc_instruction_manifest_prose_and_sizing_brief.md:3
+cc_instruction_marginals.md:1
+cc_instruction_method_voiding_landing.md:2
+cc_instruction_measurement_chain_hardening.md:1
+cc_instruction_mode_key_chord_inference_probe.md:1
+cc_instruction_misaligned_span_exclusion.md:1
+cc_instruction_mode_grading_adjudication_probe.md:1
+cc_instruction_notation_noteseam.md:1
+cc_instruction_notation_consumption_audit.md:2
+cc_instruction_notation_p4.md:1
+cc_instruction_notation_p7.md:2
+cc_instruction_notation_p6.md:1
+cc_instruction_notation_seams_1.md:1
+cc_instruction_notation_record_assembly.md:1
+cc_instruction_notation_switch.md:1
+cc_instruction_notation_seams_2.md:2
+cc_instruction_note_table_fit.md:1
+cc_instruction_notation_pstrings.md:1
+cc_instruction_oi155.md:1
+cc_instruction_oi158_oi125_oi159.md:1
+cc_instruction_oi167_collection_tonic.md:1
+cc_instruction_oi160_and_push.md:1
+cc_instruction_oi168_magnitude_measure.md:1
+cc_instruction_oi168_fix.md:1
+cc_instruction_oi170_measure.md:1
+cc_instruction_oi199_pass1.md:1
+cc_instruction_oi199_joint_p3_p4.md:1
+cc_instruction_oi206_investigation.md:1
+cc_instruction_pass_continuation_second.md:5
+cc_instruction_open_items_split.md:3
+cc_instruction_partition2_archives.md:1
+cc_instruction_phase1t_restatement_and_pruning.md:4
+cc_instruction_phase_close_2026_08_30.md:4
+cc_instruction_phase_close_second_2026_08_30.md:4
+cc_instruction_plan_challenge.md:1
+cc_instruction_prefit_instruments.md:2
+cc_instruction_phase_rulings_landing.md:4
+cc_instruction_plan_evaluation.md:3
+cc_instruction_placement_sample.md:1
+cc_instruction_pilot_preparation_withheld_family.md:9
+cc_instruction_posterior_slice.md:3
+cc_instruction_preparation_eighth.md:2
+cc_instruction_placement_sample_redraw.md:3
+cc_instruction_preparation_eleventh_amended.md:5
+cc_instruction_preparation_eleventh.md:4
+cc_instruction_prefit_gates_commit.md:2
+cc_instruction_preparation_fourteenth.md:4
+cc_instruction_preparation_fifth.md:2
+cc_instruction_preparation_ninth.md:3
+cc_instruction_preparation_opening.md:5
+cc_instruction_preparation_fourth.md:2
+cc_instruction_preparation_seventh.md:2
+cc_instruction_preparation_sixth.md:2
+cc_instruction_preparation_tenth.md:6
+cc_instruction_preparation_thirteenth.md:4
+cc_instruction_probe_decoder.md:1
+cc_instruction_preparation_twelfth.md:4
+cc_instruction_reading_pass_landing_second_2026_08_31.md:1
+cc_instruction_reading_pass_landing_2026_08_31.md:4
+cc_instruction_regeneration_and_citation.md:3
+cc_instruction_register_reconciliation.md:4
+cc_instruction_register_baseline_repair.md:5
+cc_instruction_row_landing_and_oi141_arm_check.md:4
+cc_instruction_ruled_inventory_landing.md:2
+cc_instruction_ruling69_discard_input.md:2
+cc_instruction_scoring_doc.md:1
+cc_instruction_secondary_dominant_refit.md:1
+cc_instruction_second_landing_2026_08_28.md:1
+cc_instruction_second_passage_withheld.md:3
+cc_instruction_sizing_output_landing.md:3
+cc_instruction_sizing_brief_ruled.md:3
+cc_instruction_sizing_tests.md:1
+cc_instruction_sizing_regen_and_readme.md:1
+cc_instruction_sizing_pack_preparation.md:3
+cc_instruction_stage5_phase0.md:1
+cc_instruction_status_touch_and_oi141_premise_repin.md:1
+cc_instruction_step_zero_exclusion_and_pass_continuation.md:5
+cc_instruction_third_landing_2026_08_28.md:1
+cc_instruction_successor_plan_landing_and_step_zero.md:6
+cc_instruction_term_grounding_inventory.md:1
+cc_instruction_term_inventory.md:1
+cc_instruction_unit_correction_redraw.md:3
+cc_instruction_wave3_addendum.md:1
+cc_instruction_wave2_dependency_reconciliation.md:1
+cc_instruction_wir_alignment_probe.md:1
+cc_instruction_weight_fit.md:1
+cc_l1l2_audit_blind_rerun_report.md:1
+cc_l1l2_audit_pass1_report.md:1
+cc_instruction_withheld_family_correction.md:3
+cc_l3_audit_pass1_report.md:1
+cc_l3_audit_pass2_report.md:1
+cc_l3_audit_pass2_relabel_report.md:1
+cc_l4_audit_pass1_report.md:2
+cc_l5_audit_pass1_resolver_report.md:2
+cc_l5_audit_pass1_report.md:1
+cc_l4_audit_pass2_report.md:1
+cc_note_table_fit_report.md:1
+cc_oi207_residual_pass_report.md:9
+cc_oi160_report.md:3
+cc_notation_consumption_audit_report.md:1
+cc_report_amendment_landing.md:2
+cc_report_arm_and_site_fillin.md:2
+cc_report_blind_output_landing.md:4
+cc_report_batch_return_rulings.md:1
+cc_report_boot_pack_regeneration.md:4
+cc_report_brief_ratification_and_readme_boundary.md:3
+cc_report_cascade_sweep.md:6
+cc_report_comparison_l0_l1_2026_09_02.md:1
+cc_report_comparison_harmony_boundary.md:2
+cc_report_framework_arrangement_landing.md:5
+cc_report_informed_brief_landing.md:4
+cc_report_framework_pack_preparation.md:6
+cc_report_pass_continuation_second.md:1
+cc_report_phase_close_second_2026_08_30.md:6
+cc_report_placement_sample.md:5
+cc_report_landing_2026_08_28.md:10
+cc_report_manifest_prose_and_sizing_brief.md:1
+cc_report_method_voiding_landing.md:6
+cc_report_ledger_harvest.md:11
+cc_report_phase_close_2026_08_30.md:2
+cc_report_phase_rulings_landing.md:3
+cc_report_pilot_preparation.md:1
+cc_report_plan_evaluation.md:4
+cc_report_preparation_eleventh.md:7
+cc_report_preparation_fourteenth.md:3
+cc_report_plan_challenge.md:1
+cc_report_placement_sample_redraw.md:4
+cc_report_preparation_eighth.md:2
+cc_report_preparation_fourth.md:2
+cc_report_preparation_fifth.md:2
+cc_report_preparation_ninth.md:1
+cc_report_preparation_eleventh_amended.md:4
+cc_report_preparation_opening.md:6
+cc_report_preparation_seventh.md:1
+cc_report_preparation_sixth.md:1
+cc_report_preparation_tenth.md:5
+cc_report_preparation_thirteenth.md:3
+cc_report_reading_pass_landing_2026_08_31.md:2
+cc_report_preparation_twelfth.md:3
+cc_report_register_reconciliation.md:8
+cc_report_register_baseline_repair.md:5
+cc_report_sizing_pack_preparation.md:1
+cc_report_sizing_brief_ruled.md:1
+cc_report_sizing_output_landing.md:2
+cc_report_reading_pass_landing_second_2026_08_31.md:2
+cc_report_second_landing_2026_08_28.md:1
+cc_report_regeneration_and_citation.md:7
+cc_report_ruled_inventory_landing.md:1
+cc_report_second_passage_withheld.md:1
+cc_report_sizing_tests.md:4
+cc_report_step_zero_return_executed.md:1
+cc_report_step_zero.md:1
+cc_report_third_landing_2026_08_28.md:1
+cc_secondary_dominant_refit_report.md:1
+cc_report_unit_correction_redraw.md:5
+cc_report_withheld_family_correction.md:1
+cc_wave2_dependency_reconciliation_report.md:1
+CLAUDE.md:6
+cowork_blind_session_brief_framework.md:1
+cowork_audit_protocol.md:6
+cowork_away_returns.md:35
+cowork_declared_readings_surface_2026_08_27.md:1
+cowork_curated_boot_list_draft_2026_08_19.md:1
+cowork_design_doc_template.md:1
+cowork_census_full_needs_audit.md:1
+cowork_empirical_findings_candidates.md:5
+cowork_evaluation_boot_list_2026_08_21.md:3
+cowork_framework_phase_opening_surface_2026_08_26.md:2
+cowork_handoff_entry_eighty_five.md:1
+cowork_handoff_archive.md:5
+cowork_handoff_entry_eighty_eight.md:6
+cowork_handoff.md:97
+cowork_handoff_entry_eighty_nine.md:1
+cowork_handoff_entry_eighty_three.md:1
+cowork_handoff_entry_eighty_four.md:1
+cowork_handoff_entry_eighty_two.md:2
+cowork_handoff_entry_ninety_two.md:1
+cowork_handoff_entry_ninety_five.md:1
+cowork_handoff_entry_ninety_one.md:2
+cowork_handoff_entry_one_hundred_and_forty_four.md:2
+cowork_handoff_entry_one_hundred_and_forty_eight.md:2
+cowork_instruction_return_session.md:2
+cowork_joint_estimator_architecture.md:1
+cowork_informed_session_brief_framework.md:2
+cowork_memory_pointer_cut_2026_09_07.md:3
+cowork_placement_sample_surface_2026_08_27.md:1
+cowork_premise_gate_reflection.md:2
+cowork_reading_pass_remedial_commission_2026_08_31.md:1
+cowork_report_plan_evaluation_2026_08_21.md:1
+cowork_rulings_2026_08_17_governing_surface_split.md:2
+cowork_rulings_2026_08_17_ninth_return.md:1
+cowork_rulings_2026_08_16_preparation_return.md:1
+cowork_rulings_2026_08_18_tenth_return.md:1
+cowork_rulings_2026_08_19_thirteenth_return.md:1
+cowork_rulings_2026_08_21_evaluation_brief_sitting.md:1
+cowork_rulings_2026_08_25_regress_termination_sitting.md:1
+cowork_rulings_2026_08_26_amendment_landing_sitting.md:2
+cowork_rulings_2026_08_26_framework_opening_sitting.md:1
+cowork_rulings_2026_08_26_sizing_tests_sitting.md:2
+cowork_rulings_2026_08_27_framework_authoring_sitting.md:3
+cowork_rulings_2026_08_28_ledger_precondition_sitting.md:2
+cowork_rulings_2026_08_28_informed_brief_points_sitting.md:2
+cowork_rulings_2026_08_28_informed_framework_sitting.md:1
+cowork_rulings_2026_08_31_decision_surface_sitting.md:5
+cowork_running_order_2026_09_01.md:3
+cowork_rulings_2026_08_28_unit_question_sitting.md:1
+cowork_scratch_2026_08_11\README.md:2
+cowork_scratch_2026_08_11\draft_row_status_md_unreadable.md:1
+cowork_scratch_2026_08_11\cowork_verification_plan_continuation_14.md:2
+cowork_stopped_strata_surface_2026_08_27.md:1
+cowork_take_rule_surface_2026_08_27.md:1
+cowork_verification_plan_preparation_tenth.md:5
+DECISIONS.md:3
+decisions\group_A.md:1
+decisions\group_B.md:1
+decisions\group_C.md:9
+decisions\group_D.md:1
+decisions\group_H.md:1
+decisions\group_G.md:2
+decisions\group_F.md:2
+decisions\group_S.md:6
+decisions\group_T.md:18
+decisions\group_L.md:2
+decisions\group_J.md:1
+decisions\group_I.md:3
+docs\implementation_roadmap.md:1
+OPEN_ITEMS_ARCHIVE.md:3
+OPEN_ITEMS.md:3
+records\cc\instructions\cc_instruction_root_records_reference_map_2026_09_16.md:2
+FRAMEWORK.md:3
+open_items\OI-121.md:1
+open_items\OI-146.md:1
+open_items\OI-208.md:2
+open_items\OI-207.md:6
+open_items\OI-206.md:1
+reading_pass\continuation.md:1
+ratification_surfaces\cowork_rulings_sort_surface_2026_08_16.md:1
+ratification_surfaces\cowork_pruning_and_satellites_surface_2026_09_08.md:1
+ratification_surfaces\cowork_discard_residue_surface_2026_08_16.md:13
+ratification_surfaces\cowork_decisions_ratification_delta.md:3
+ratification_surfaces\cowork_decisions_pending_ratification_4.md:29
+ratification_surfaces\cowork_decisions_pending_ratification_2.md:19
+ratification_surfaces\cowork_decisions_pending_ratification.md:11
+ratification_surfaces\cowork_decisions_filter_surface_2026_08_15.md:6
+ratification_surfaces\cowork_deciding_act_recovery_surface_2026_08_16.md:1
+ratification_surfaces\cowork_artifact_inventory_ruling_surface.md:6
+tools\audit\changed_paths_away_task0.json:1
+tools\audit\artifact_inventory.json:6
+tools\audit\claude_md_finer_spans.json:2
+tools\audit\claude_md_finer_readers.json:4
+tools\audit\changed_paths_guard_fix_item1d.json:1
+tools\audit\gen_artifact_inventory_surface.py:2
+tools\audit\gen_artifact_inventory.py:4
+tools\audit\filing_convention_application.json:1
+tools\audit\doc_change_candidates.json:11
+tools\audit\derivation_boot_pack\scoring-model\04_the_dispatch_protocol.md:5
+tools\audit\derivation_boot_pack\scoring-model\03_the_writing_standards.md:1
+tools\audit\derivation_boot_pack\scoring-model\02_the_guiding_principles_and_the_conventions.md:4
+tools\audit\derivation_boot_pack\scoring-model\00_READ_THIS_FIRST.md:1
+tools\audit\derivation_boot_pack\l0-l1\04_the_dispatch_protocol.md:5
+tools\audit\derivation_boot_pack\l0-l1\03_the_writing_standards.md:1
+tools\audit\derivation_boot_pack\l0-l1\02_the_guiding_principles_and_the_conventions.md:4
+tools\audit\derivation_boot_pack\l0-l1\00_READ_THIS_FIRST.md:1
+tools\audit\status_residue_move.json:2
+tools\audit\specification_document_set.json:5
+tools\audit\sole_carrier_subclass.json:1
+tools\audit\rulings_sort_classification.json:1
+open_items\OI-47.md:1
+tools\audit\derivation_boot_pack\harmony-boundary\04_the_dispatch_protocol.md:5
+tools\audit\derivation_boot_pack\harmony-boundary\03_the_writing_standards.md:1
+tools\audit\derivation_boot_pack\harmony-boundary\02_the_guiding_principles_and_the_conventions.md:4
+tools\audit\derivation_boot_pack\harmony-boundary\00_READ_THIS_FIRST.md:1
+open_items\OI-370.md:1
+open_items\OI-369.md:1
+tools\audit\retirement_caller_check.json:87
+tools\audit\residue_discard_application.json:9
+tools\audit\decisions_filter_classification.json:34
+tools\audit\reaim_ratification_surface_paths.py:1
+tools\audit\ratified_document_check.json:111
+tools\audit\ratification_surface_set.json:4
+tools\audit\ratification_surface_reaim.json:2
+open_items\OI-296.md:1
+open_items\OI-281.md:1
+open_items\OI-272.md:2
+tools\audit\phase1_gate_readers.json:4
+open_items\OI-271.md:3
+tools\audit\phase1_finish_line.json:2
+open_items\OI-268.md:3
+tools\audit\phase1_completion_inventory.json:6
+open_items\OI-266.md:2
+tools\audit\period_stratum_split.json:3
+open_items\OI-240.md:4
+open_items\OI-228.md:1
+STATUS_ARCHIVE.md:19
+tools\audit\decisions\cluster_dispositions.json:556
+tools\audit\decisions\cluster_dispositions.csv:553
+tools\audit\decisions\backbone_decisions.json:53
+tools\audit\deciding_act_recovery.json:34
+tools\audit\decisions\gen_decision_harvest.py:2
+tools\audit\decisions\gen_decision_clusters.py:2
+tools\audit\decisions\gen_cluster_dispositions.py:8
+tools\audit\decisions\disposition_manifest.json:3
+tools\audit\decisions\decision_clusters.json:569
+tools\audit\decisions\decision_clusters.csv:553
+tools\audit\decisions\decision_candidates.json:946
+tools\audit\decisions\decision_candidates.csv:787
+tools\audit\decisions\gen_phase1g_triage.py:2
+tools\audit\decisions\oi333_repair.json:5
+tools\audit\decisions\manifest.json:4
+tools\audit\gen_july_screen.py:1
+tools\audit\gen_doc_change_candidates.py:2
+tools\audit\gen_derivation_boot_pack.py:1
+tools\audit\governing_surface_split_application.json:1
+tools\audit\governing_surface_spans_2026_09_07.json:3
+tools\audit\governing_surface_spans.json:4
+tools\audit\governing_surface_readers.json:54
+tools\audit\gen_status_residue_move.py:2
+tools\audit\gen_specification_document_set.py:2
+tools\audit\decisions\r1_superseded_reach.json:1
+tools\audit\decisions\verbatim_subject_consistency.json:1
+tools\audit\decisions\snapshot_2026-08-08_pre_home_classification_apply\backbone_decisions.json:50
+tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\disposition_manifest.json:3
+tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\cluster_dispositions.json:556
+tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\cluster_dispositions.csv:553
+tools\audit\l2_candidate_list.json:1
+tools\audit\l0_l1_outgoing_population.json:1
+tools\audit\july_screen_report.md:4
+tools\audit\july_screen.json:4
+```
+
+Grep's summary line: `Found 6691 total occurrences across 403 files.`
+
+### Expression 3 — `cowork_rulings?_[A-Za-z0-9_]+\.md`
+
+```
+BUILD_AND_TEST_ARCHIVE.md:1
+ARCHITECTURE.md:3
+cc_artifact_inventory_report.md:2
+cc_exemplar_decode_report_2026_09_01.md:4
+cc_framework_9_0_correction_report.md:5
+cc_handoff_prepend_report_2026_09_01.md:3
+cc_instruction_amendment_landing.md:8
+cc_instruction_apply_the_bearing_cut.md:3
+cc_instruction_arm_and_site_fillin.md:3
+cc_instruction_artifact_inventory.md:8
+cc_instruction_away_batch.md:2
+cc_instruction_away_execution.md:2
+cc_instruction_batch_return_rulings.md:3
+cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md:1
+cc_instruction_blind_output_landing.md:6
+cc_instruction_brief_ratification_and_readme_boundary.md:8
+cc_instruction_cascade_sweep.md:6
+cc_instruction_claude_md_boot_membership_2026_09_07.md:3
+cc_instruction_claude_md_prune_at_amendment_2026_09_07.md:3
+cc_instruction_comparison_harmony_boundary.md:10
+cc_instruction_comparison_l0_l1_2026_09_02.md:9
+cc_instruction_comparison_l0_l1_eighth_2026_09_04.md:5
+cc_instruction_comparison_l0_l1_fifth_2026_09_03.md:10
+cc_instruction_comparison_l0_l1_ninth_2026_09_04.md:5
+cc_instruction_comparison_l0_l1_second_2026_09_02.md:9
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md:2
+cc_instruction_comparison_l0_l1_fourth_2026_09_03.md:11
+cc_instruction_comparison_l0_l1_tenth_2026_09_04.md:5
+cc_instruction_comparison_l0_l1_sixth_2026_09_03.md:6
+cc_instruction_comparison_l0_l1_third_2026_09_02.md:9
+cc_instruction_d231_landing.md:3
+cc_instruction_defense_share_sizing_2026_09_08.md:2
+cc_instruction_defense_share_authored_ends_2026_09_08.md:3
+cc_instruction_defense_share_sizing_second_2026_09_08.md:2
+cc_instruction_defense_share_sizing_third_2026_09_08.md:1
+cc_instruction_exemplar_decode_2026_09_01.md:5
+cc_instruction_framework_9_0_correction_2026_08_31.md:5
+cc_instruction_framework_arrangement_landing.md:11
+cc_instruction_framework_pack_preparation.md:8
+cc_instruction_guard_dialect_close_and_push.md:3
+cc_instruction_handoff_prepend_2026_09_01.md:1
+cc_instruction_item7_reach_derivation.md:1
+cc_instruction_invisible_notes_establishment_2026_09_01.md:3
+cc_instruction_informed_brief_landing.md:6
+cc_instruction_l2_ruling_writeback_2026_09_05.md:9
+cc_instruction_l0l1_boot_pack_2026_08_31.md:5
+cc_instruction_l2_reading_file_2026_09_05.md:4
+cc_instruction_l2_candidate_list_2026_09_05.md:2
+cc_instruction_l2_verdict_pass_2026_09_05.md:2
+cc_instruction_l0l1_boot_pack_second_2026_08_31.md:4
+cc_instruction_l2_criterion_write_2026_09_04.md:7
+cc_instruction_l2_keyword_count_2026_09_04.md:4
+cc_instruction_l0l1_exemplar_selection_2026_08_31.md:4
+cc_instruction_landing_2026_08_28.md:2
+cc_instruction_ledger_admissions.md:3
+cc_instruction_ledger_build.md:5
+cc_instruction_ledger_harvest.md:5
+cc_instruction_manifest_prose_and_sizing_brief.md:7
+cc_instruction_method_voiding_landing.md:8
+cc_instruction_mscz_container_establishment_2026_09_01.md:3
+cc_instruction_oi274_second_half.md:1
+cc_instruction_pass_continuation_second.md:11
+cc_instruction_period_checks.md:5
+cc_instruction_phase_close_2026_08_30.md:7
+cc_instruction_phase_close_second_2026_08_30.md:7
+cc_instruction_phase_rulings_landing.md:3
+cc_instruction_pilot_preparation_withheld_family.md:19
+cc_instruction_placement_sample_redraw.md:7
+cc_instruction_placement_sample.md:4
+cc_instruction_preparation_eighth.md:10
+cc_instruction_plan_evaluation.md:2
+cc_instruction_preparation_fourteenth.md:6
+cc_instruction_preparation_eleventh.md:10
+cc_instruction_preparation_opening.md:6
+cc_instruction_preparation_fourth.md:6
+cc_instruction_preparation_ninth.md:11
+cc_instruction_preparation_fifth.md:6
+cc_instruction_preparation_eleventh_amended.md:19
+cc_instruction_preparation_seventh.md:5
+cc_instruction_preparation_second.md:7
+cc_instruction_preparation_sixth.md:6
+cc_instruction_preparation_tenth.md:7
+cc_instruction_preparation_third.md:6
+cc_instruction_preparation_thirteenth.md:6
+cc_instruction_preparation_twelfth.md:9
+cc_instruction_reading_pass_landing_second_2026_08_31.md:4
+cc_instruction_reading_pass_landing_2026_08_31.md:4
+cc_instruction_regeneration_and_citation.md:4
+cc_instruction_register_baseline_repair.md:8
+cc_instruction_register_reconciliation.md:13
+cc_instruction_return_continuation_10.md:1
+cc_instruction_return_continuation.md:2
+cc_instruction_resume_lapse_records.md:1
+cc_instruction_return_continuation_4.md:1
+cc_instruction_return_continuation_9.md:1
+cc_instruction_return_continuation_6.md:1
+cc_instruction_return_continuation_13.md:1
+cc_instruction_row_landing_and_oi141_arm_check.md:2
+cc_instruction_return_continuation_3.md:3
+cc_instruction_return_continuation_2.md:3
+cc_instruction_return_continuation_11.md:1
+cc_instruction_ruling69_discard_input.md:1
+cc_instruction_ruled_inventory_landing.md:3
+cc_instruction_return_continuation_12.md:1
+cc_instruction_return_continuation_8.md:1
+cc_instruction_return_continuation_14.md:1
+cc_instruction_return_continuation_5.md:1
+cc_instruction_return_continuation_7.md:2
+cc_instruction_second_landing_2026_08_28.md:4
+cc_instruction_sitting_landing_2026_09_01.md:5
+cc_instruction_second_passage_withheld.md:11
+cc_instruction_sizing_brief_ruled.md:7
+cc_instruction_sitting_landing_second_2026_09_01.md:1
+cc_instruction_slot_sweep_2026_09_01.md:2
+cc_instruction_sizing_tests.md:6
+cc_instruction_sizing_output_landing.md:7
+cc_instruction_sizing_pack_preparation.md:9
+cc_instruction_status_forward_bound_2026_09_07.md:2
+cc_instruction_status_touch_and_oi141_premise_repin.md:5
+cc_instruction_status_forward_bound_second_2026_09_07.md:1
+cc_instruction_step_zero_exclusion_and_pass_continuation.md:18
+cc_instruction_successor_plan_landing_and_step_zero.md:7
+cc_instruction_third_landing_2026_08_28.md:1
+cc_instruction_unit_correction_redraw.md:5
+cc_invisible_notes_establishment_report_2026_09_01.md:4
+cc_instruction_worth_test.md:2
+cc_instruction_withheld_family_correction.md:12
+cc_l0l1_boot_pack_report.md:2
+cc_l0l1_exemplar_selection_report.md:7
+cc_l0l1_boot_pack_second_report.md:2
+cc_mscz_container_establishment_report.md:4
+cc_report_backup_commit_and_push_2026_09_16.md:5
+cc_report_amendment_landing.md:15
+cc_report_blind_output_landing.md:3
+cc_report_batch_return_rulings.md:1
+cc_report_boot_pack_regeneration.md:1
+cc_report_arm_and_site_fillin.md:4
+cc_report_cascade_sweep.md:7
+cc_report_brief_ratification_and_readme_boundary.md:1
+cc_report_claude_md_boot_membership_2026_09_07.md:2
+cc_report_claude_md_prune_at_amendment_2026_09_07.md:5
+cc_report_comparison_harmony_boundary.md:3
+cc_report_comparison_l0_l1_2026_09_02.md:2
+cc_report_comparison_l0_l1_eighth_2026_09_04.md:1
+cc_report_comparison_l0_l1_ninth_2026_09_04.md:1
+cc_report_comparison_l0_l1_fifth_2026_09_03.md:1
+cc_report_comparison_l0_l1_second_2026_09_02.md:2
+cc_report_comparison_l0_l1_sixth_2026_09_03.md:1
+cc_report_comparison_l0_l1_tenth_2026_09_04.md:1
+cc_report_d231_landing.md:2
+cc_report_defense_share_authored_ends_2026_09_08.md:3
+cc_report_defense_share_sizing_2026_09_08.md:1
+cc_report_framework_arrangement_landing.md:7
+cc_report_framework_pack_preparation.md:2
+cc_report_informed_brief_landing.md:7
+cc_report_l2_criterion_write_2026_09_04.md:1
+cc_report_l2_candidate_list_2026_09_05.md:1
+cc_report_l2_verdict_pass_2026_09_05.md:1
+cc_report_l2_ruling_writeback_2026_09_05.md:6
+cc_report_l2_keyword_count_2026_09_04.md:2
+cc_report_ledger_build.md:8
+cc_report_l2_reading_file_2026_09_05.md:1
+cc_report_landing_2026_08_28.md:3
+cc_report_ledger_admissions.md:3
+cc_report_pass_continuation_second.md:5
+cc_report_phase_rulings_landing.md:1
+cc_report_manifest_prose_and_sizing_brief.md:13
+cc_report_method_voiding_landing.md:12
+cc_report_phase_close_2026_08_30.md:2
+cc_report_placement_sample.md:8
+cc_report_pilot_preparation.md:3
+cc_report_phase_close_second_2026_08_30.md:3
+cc_report_placement_sample_redraw.md:7
+cc_report_plan_evaluation.md:11
+cc_report_ledger_harvest.md:11
+cc_report_preparation_eighth.md:2
+cc_report_preparation_eleventh.md:11
+cc_report_preparation_eleventh_amended.md:12
+cc_report_preparation_fifth.md:3
+cc_report_preparation_fourteenth.md:3
+cc_report_preparation_fourth.md:2
+cc_report_preparation_ninth.md:9
+cc_report_preparation_opening.md:1
+cc_report_preparation_second.md:2
+cc_report_preparation_seventh.md:3
+cc_report_preparation_sixth.md:4
+cc_report_preparation_third.md:1
+cc_report_preparation_thirteenth.md:2
+cc_report_preparation_twelfth.md:10
+cc_report_preparation_tenth.md:3
+cc_report_reading_pass_landing_second_2026_08_31.md:5
+cc_report_reading_pass_landing_2026_08_31.md:3
+cc_report_register_baseline_repair.md:1
+cc_report_regeneration_and_citation.md:10
+cc_report_register_reconciliation.md:17
+cc_report_ruled_inventory_landing.md:2
+cc_report_second_landing_2026_08_28.md:6
+cc_report_second_passage_withheld.md:1
+cc_report_sizing_brief_ruled.md:4
+cc_report_sizing_output_landing.md:4
+cc_report_sizing_pack_preparation.md:4
+cc_report_sizing_tests.md:5
+cc_report_status_forward_bound_2026_09_07.md:1
+cc_report_step_zero.md:2
+cc_report_third_landing_2026_08_28.md:3
+cc_report_step_zero_return_executed.md:4
+cc_sitting_landing_report_2026_09_01.md:5
+cc_report_withheld_family_correction.md:1
+cc_slot_sweep_report_2026_09_01.md:3
+cc_report_unit_correction_redraw.md:15
+cc_sitting_landing_second_report_2026_09_01.md:3
+CLAUDE.md:22
+CLAUDE_ARCHIVE.md:8
+cowork_arm_and_site_fillin_2026_08_28.md:2
+cowork_audit_protocol.md:36
+cowork_blind_session_brief_harmony_boundary.md:11
+cowork_blind_derivation_l0_l1_2026_08_31.md:1
+cowork_blind_session_brief_l0_l1.md:3
+cowork_blind_session_brief_framework.md:14
+cowork_blind_session_brief_scoring_model.md:5
+cowork_blind_session_opening_instruction_harmony_boundary.md:4
+cowork_away_returns.md:128
+cowork_claude_md_live_rule_classification_2026_09_08.md:1
+cowork_cross_layer_transfer_list.md:2
+cowork_derived_specification_l0_l1_2026_09_03.md:1
+cowork_defense_clause_ends_2026_09_08.md:1
+cowork_evaluation_boot_list_2026_08_21.md:4
+cowork_declared_readings_surface_2026_08_27.md:2
+cowork_curated_boot_list_draft_2026_08_19.md:1
+cowork_empirical_findings_candidates.md:5
+cowork_framework_phase_opening_surface_2026_08_26.md:4
+cowork_design_doc_template.md:1
+cowork_framework_phase_retrospective_2026_08_29.md:1
+cowork_handoff.md:281
+cowork_handoff_entry_eighty_two.md:1
+cowork_handoff_entry_ninety_three.md:2
+cowork_handoff_entry_eighty_four.md:3
+cowork_handoff_entry_eighty_three.md:1
+cowork_handoff_entry_ninety_four.md:2
+cowork_handoff_entry_ninety_six.md:1
+cowork_handoff_entry_eighty_six.md:2
+cowork_handoff_entry_eighty_five.md:1
+cowork_handoff_entry_ninety_five.md:1
+cowork_handoff_entry_ninety_seven.md:1
+cowork_handoff_entry_one_hundred_and_eighteen.md:1
+cowork_handoff_entry_eighty_eight.md:1
+cowork_handoff_entry_ninety.md:1
+cowork_handoff_entry_eighty_seven.md:1
+cowork_handoff_entry_ninety_two.md:1
+cowork_handoff_entry_eighty_nine.md:2
+cowork_handoff_entry_one_hundred_and_eighty_eight.md:2
+cowork_handoff_entry_one_hundred_and_eleven.md:2
+cowork_handoff_entry_one_hundred_and_fifty.md:4
+cowork_handoff_entry_one_hundred_and_fifteen.md:1
+cowork_handoff_entry_one_hundred_and_fifty_one.md:3
+cowork_handoff_entry_one_hundred_and_fifty_four.md:1
+cowork_handoff_entry_one_hundred_and_forty_eight.md:3
+cowork_handoff_entry_one_hundred_and_fifty_two.md:1
+cowork_handoff_entry_one_hundred_and_fifty_three.md:1
+cowork_handoff_entry_one_hundred_and_forty_six.md:2
+cowork_handoff_entry_one_hundred_and_five.md:3
+cowork_handoff_entry_one_hundred_and_forty_five.md:2
+cowork_handoff_entry_one_hundred_and_forty_nine.md:2
+cowork_handoff_entry_one_hundred_and_fourteen.md:1
+cowork_handoff_entry_one_hundred_and_forty_four.md:3
+cowork_handoff_entry_one_hundred_and_nineteen.md:1
+cowork_handoff_entry_one_hundred_and_nine.md:4
+cowork_handoff_entry_one_hundred_and_forty_seven.md:3
+cowork_handoff_entry_one_hundred_and_seven.md:3
+cowork_handoff_entry_one_hundred_and_seventeen.md:1
+cowork_handoff_entry_one_hundred_and_forty_three.md:1
+cowork_handoff_entry_one_hundred_and_four.md:3
+cowork_handoff_entry_one_hundred_and_sixteen.md:1
+cowork_handoff_entry_one_hundred_and_six.md:3
+cowork_handoff_entry_one_hundred_and_thirty_four.md:1
+cowork_handoff_entry_one_hundred_and_thirty_seven.md:1
+cowork_handoff_entry_one_hundred_and_thirteen.md:1
+cowork_handoff_entry_one_hundred_and_thirty.md:1
+cowork_handoff_entry_one_hundred_and_sixty_nine.md:3
+cowork_handoff_entry_one_hundred_and_thirty_five.md:1
+cowork_handoff_entry_one_hundred_and_thirty_two.md:1
+cowork_handoff_entry_one_hundred_and_three.md:3
+cowork_handoff_entry_one_hundred_and_thirty_six.md:1
+cowork_handoff_entry_one_hundred_and_thirty_nine.md:2
+cowork_handoff_entry_one_hundred_and_thirty_three.md:1
+cowork_handoff_entry_one_hundred_and_ten.md:3
+cowork_handoff_entry_one_hundred_and_twenty_eight.md:1
+cowork_handoff_entry_one_hundred_and_thirty_one.md:1
+cowork_handoff_entry_one_hundred_and_twenty_five.md:1
+cowork_handoff_entry_one_hundred_and_twenty_four.md:1
+cowork_handoff_entry_one_hundred_and_twelve.md:1
+cowork_handoff_entry_one_hundred_and_twenty.md:1
+cowork_handoff_entry_one_hundred_and_twenty_nine.md:1
+cowork_handoff_entry_one_hundred_and_twenty_one.md:1
+cowork_handoff_entry_one_hundred_and_twenty_seven.md:1
+cowork_handoff_entry_one_hundred_and_twenty_six.md:1
+cowork_handoff_entry_one_hundred_and_twenty_three.md:1
+cowork_handoff_entry_one_hundred_and_twenty_two.md:1
+cowork_handoff_entry_one_hundred_and_two.md:2
+cowork_informed_session_brief_framework.md:13
+cowork_instruction_return_session.md:2
+cowork_l2_boot_list_surface_2026_09_05.md:5
+cowork_l2_score_set_read_2026_09_05.md:1
+cowork_l2_first_pass_extracts_derivation_2026_09_05.md:1
+cowork_l2_task_b_slice_derivation_2026_09_05.md:1
+cowork_literature_reachability_2026_08_26.md:1
+cowork_memory_pointer_cut_2026_09_07.md:2
+cowork_placement_sample_sealed_2026_08_27.md:6
+cowork_placement_sample_surface_2026_08_27.md:2
+cowork_placement_sample_sealed_redraw_2026_08_27.md:111
+cowork_placement_sample_sealed_third_2026_08_27.md:120
+cowork_plan_evaluation_brief_2026_08_21.md:3
+cowork_prediction_tabulation_2026_08_21.md:1
+cowork_reading_pass_commission_2026_08_30.md:3
+cowork_reading_pass_findings_2026_08_31.md:2
+cowork_redraw_findings_surface_2026_08_27.md:4
+cowork_reading_pass_remedial_commission_2026_08_31.md:1
+cowork_research_list_disposition_surface_2026_08_29.md:1
+cowork_report_plan_evaluation_2026_08_21.md:3
+cowork_register_blocker_surface_2026_08_28.md:2
+cowork_rulings_2026_08_08_pre_away.md:1
+cowork_rulings_2026_08_09_eighth_stop.md:1
+cowork_review_findings_prediction_2026_08_21.md:1
+cowork_rulings_2026_08_09_fifth_stop.md:1
+cowork_rulings_2026_08_09_fourth_stop.md:1
+cowork_rulings_2026_08_09_ninth_stop.md:1
+cowork_rulings_2026_08_09_second_stop.md:1
+cowork_rulings_2026_08_09_seventh_stop.md:1
+cowork_rulings_2026_08_09_sixth_stop.md:1
+cowork_rulings_2026_08_09_third_stop.md:1
+cowork_rulings_2026_08_11_eleventh_stop.md:1
+cowork_rulings_2026_08_11_fourteenth_stop.md:1
+cowork_rulings_2026_08_11_thirteenth_stop.md:1
+cowork_rulings_2026_08_11_twelfth_stop.md:1
+cowork_rulings_2026_08_15_inventory_sitting.md:5
+cowork_rulings_2026_08_16_preparation_return.md:2
+cowork_rulings_2026_08_17_callers_sitting.md:1
+cowork_rulings_2026_08_17_governing_surface_split.md:4
+cowork_rulings_2026_08_17_eighth_return.md:5
+cowork_rulings_2026_08_17_rulings_sort_sitting.md:10
+cowork_rulings_2026_08_17_residue_sitting.md:4
+cowork_rulings_2026_08_17_session_start_read_sitting.md:3
+cowork_rulings_2026_08_17_seventh_return.md:3
+cowork_rulings_2026_08_17_ninth_return.md:5
+cowork_rulings_2026_08_17_sixth_return.md:1
+cowork_rulings_2026_08_18_eleventh_stop.md:4
+cowork_rulings_2026_08_18_tenth_return.md:3
+cowork_rulings_2026_08_19_eleventh_return.md:3
+cowork_rulings_2026_08_19_thirteenth_return.md:4
+cowork_rulings_2026_08_19_twelfth_return.md:3
+cowork_rulings_2026_08_21_successor_plan_sitting.md:1
+cowork_rulings_2026_08_22_dispatch_order_sitting.md:1
+cowork_rulings_2026_08_22_pilot_order_sitting.md:2
+cowork_rulings_2026_08_22_step_zero_return_sitting.md:1
+cowork_rulings_2026_08_22_member_two_leak_sitting.md:3
+cowork_rulings_2026_08_22_boot_list_sitting.md:1
+cowork_rulings_2026_08_22_deriving_side_sitting.md:2
+cowork_rulings_2026_08_23_member_two_second_leak_sitting.md:2
+cowork_rulings_2026_08_24_blinding_failure_sitting.md:2
+cowork_rulings_2026_08_24_blind_return_sitting.md:1
+cowork_rulings_2026_08_24_method_ruling_sitting.md:1
+cowork_rulings_2026_08_24_sizing_pilot_sitting.md:2
+cowork_rulings_2026_08_25_forward_fact_sitting.md:1
+cowork_rulings_2026_08_25_method_voiding_sitting.md:7
+cowork_rulings_2026_08_25_regress_termination_sitting.md:2
+cowork_rulings_2026_08_25_next_act_sitting.md:1
+cowork_rulings_2026_08_26_amendment_landing_sitting.md:3
+cowork_rulings_2026_08_26_ledger_dispositions_sitting.md:1
+cowork_rulings_2026_08_25_v1_sufficiency_sitting.md:1
+cowork_rulings_2026_08_26_framework_opening_sitting.md:1
+cowork_rulings_2026_08_26_ledger_form_sitting.md:1
+cowork_rulings_2026_08_27_framework_authoring_sitting.md:3
+cowork_rulings_2026_08_26_sizing_tests_sitting.md:4
+cowork_rulings_2026_08_27_redraw_findings_sitting.md:2
+cowork_rulings_2026_08_27_stopped_strata_sitting.md:1
+cowork_rulings_2026_08_28_informed_brief_points_sitting.md:1
+cowork_rulings_2026_08_28_informed_framework_sitting.md:6
+cowork_rulings_2026_08_28_ledger_precondition_sitting.md:9
+cowork_rulings_2026_08_28_unit_question_sitting.md:1
+cowork_rulings_2026_08_30_detail_phase_opening_sitting.md:1
+cowork_rulings_2026_08_31_decision_surface_sitting.md:11
+cowork_rulings_2026_09_05_l2_boot_list_sitting.md:1
+cowork_rulings_2026_09_05_l2_withheld_family_sitting.md:2
+cowork_rulings_2026_09_08_extent_rule_sitting.md:1
+cowork_rulings_2026_09_11_satellite_arc_close.md:2
+cowork_running_order_2026_09_01.md:7
+cowork_section8_bar_record_2026_08_28.md:1
+cowork_specification_reconstruction_plan_successor_2026_08_21.md:3
+cowork_stopped_strata_surface_2026_08_27.md:4
+cowork_take_rule_surface_2026_08_27.md:2
+cowork_unit_question_surface_2026_08_28.md:1
+cowork_verification_plan_preparation_tenth.md:3
+DECISIONS.md:4
+DECISIONS_ARCHIVE.md:1
+DEFECT_TYPES.md:1
+decisions\group_B.md:7
+EMPIRICAL_FINDINGS_LEDGER.md:10
+decisions\group_A.md:5
+decisions\group_F.md:6
+decisions\group_D.md:3
+decisions\group_C.md:18
+decisions\group_G.md:13
+decisions\group_H.md:10
+docs\duplication_audit.md:1
+decisions\group_J.md:3
+decisions\group_L.md:5
+decisions\group_I.md:3
+decisions\group_M.md:4
+decisions\group_K.md:20
+decisions\group_Q.md:6
+decisions\group_U.md:6
+decisions\group_T.md:57
+decisions\group_S.md:2
+FRAMEWORK.md:8
+docs\key_path_design.md:1
+docs\key_detection_baroque_partial_signature.md:3
+docs\score_inventory.md:1
+docs\stage4c_cadence_key_design.md:1
+docs\stage4b_design.md:1
+docs\unified_analysis_pipeline.md:1
+docs\symbol_input_audit.md:1
+PHASE_CONSTRAINTS_AND_STOP_RULES.md:3
+OPEN_ITEMS_ARCHIVE.md:27
+OPEN_ITEMS.md:12
+reading_pass\population.md:2
+reading_pass\l2_slice_reading_progress.md:1
+reading_pass\extracts\yang-cwitkowitz-duan-2023-harmonic-analysis-with-neural-semi-crf.md:1
+reading_pass\extracts\wu-nakamura-yoshii-2020-variational-autoencoder-for-joint-chord-and-key-estimation.md:1
+reading_pass\extracts\temperley-2009-unified-probabilistic-model-polyphonic-music-analysis.md:1
+reading_pass\extracts\temperley-2002-a-bayesian-approach-to-key-finding.md:1
+reading_pass\extracts\sheh-ellis-2003-chord-segmentation-and-recognition-using-em-trained-hidden-markov-models.md:1
+reading_pass\extracts\sarawagi-cohen-2004-semi-markov-conditional-random-fields.md:1
+reading_pass\extracts\rocher-robine-hanna-oudre-2010-concurrent-estimation-of-chords-and-keys.md:1
+reading_pass\extracts\raphael-stoddard-2003-harmonic-analysis-with-probabilistic-graphical-models.md:1
+reading_pass\extracts\pardo-birmingham-2002-algorithms-for-chordal-analysis.md:1
+reading_pass\extracts\noland-sandler-2006-key-estimation-using-a-hidden-markov-model.md:1
+reading_pass\extracts\ni-mcvicar-santosrodriguez-debie-2011-end-to-end-machine-learning-system-harmonic-analysis.md:1
+reading_pass\extracts\micchi-gotham-giraud-2020-not-all-roads-lead-to-rome-pitch-representation-and-model-architecture.md:1
+reading_pass\extracts\masada-bunescu-2019-chord-recognition-in-symbolic-music-a-segmental-crf-model.md:1
+reading_pass\extracts\lafferty-mccallum-pereira-2001-conditional-random-fields-for-segmenting-and-labeling-sequence-data.md:1
+reading_pass\extracts\lafferty-mccallum-pereira-2001-conditional-random-fields-for-segmenting-and-labeling-sequence-data-1.md:1
+reading_pass\extracts\korzeniowski-widmer-2018-improved-chord-recognition-by-combining-duration-and-harmonic-language-models.md:1
+reading_pass\extracts\ju-conditschultz-arthur-fujinaga-2017-non-chord-tone-identification-using-deep-neural-networks.md:1
+reading_pass\extracts\feisthauer-bigo-giraud-leve-2020-estimating-keys-and-modulations-in-musical-pieces.md:1
+reading_pass\extracts\conditschultz-ju-fujinaga-2018-a-flexible-approach-to-automated-harmonic-analysis.md:1
+reading_pass\extracts\chew-2002-spiral-array-algorithm-for-determining-key-boundaries.md:1
+reading_pass\extracts\chen-su-2021-attend-to-chords-improving-harmonic-analysis-of-symbolic-music.md:1
+reading_pass\extracts\chen-su-2019-harmony-transformer-incorporating-chord-segmentation-into-harmony-recognition.md:1
+reading_pass\extracts\chen-su-2018-functional-harmony-recognition-of-symbolic-music-data-with-multi-task-rnn.md:1
+reading_pass\extracts\catteau-martens-leman-2006-model-based-approach-to-scale-and-chord-estimation.md:1
+reading_pass\extracts\burgoyne-pugin-kereliuk-fujinaga-2007-a-cross-validated-study-of-modelling-strategies-for-automatic-chord-recognition-in-audio.md:1
+reading_pass\continuation.md:2
+reading_pass\candidacy_upgrades.md:1
+ratification_surfaces\cowork_withheld_family_l2_reading.md:6
+ratification_surfaces\cowork_withheld_family_harmony_boundary_reading.md:8
+ratification_surfaces\cowork_withheld_family_framework_reading.md:3
+ratification_surfaces\cowork_sizing_tests_reading.md:3
+ratification_surfaces\cowork_sizing_pack_leak_list_reading.md:1
+ratification_surfaces\cowork_ruling_registration_queue_2026_08_09.md:47
+ratification_surfaces\cowork_rulings_sort_surface_2026_08_16.md:9
+ratification_surfaces\cowork_rule_triage_entries_2026_08_09.md:2
+ratification_surfaces\cowork_restructuring_period_start_decision_surface.md:1
+ratification_surfaces\cowork_reserved_word_inventory_2026_08_09.md:2
+ratification_surfaces\cowork_pruning_and_satellites_surface_2026_09_08.md:1
+ratification_surfaces\cowork_phase_definition_surface_2026_08_15.md:7
+ratification_surfaces\cowork_oi354_legacy_mark_establishment_2026_08_09.md:3
+ratification_surfaces\cowork_governing_surface_split_2026_08_16.md:1
+ratification_surfaces\cowork_first_deriving_subject_surface_2026_08_31.md:1
+ratification_surfaces\cowork_dpk_ground_surface_2026_08_31.md:1
+ratification_surfaces\cowork_discard_residue_surface_2026_08_16.md:6
+ratification_surfaces\cowork_discard_reach_surface_2026_08_16.md:5
+ratification_surfaces\cowork_decisions_filter_surface_2026_08_15.md:4
+ratification_surfaces\cowork_deciding_act_recovery_surface_2026_08_16.md:6
+ratification_surfaces\cowork_d580_transfer_fact_gathering_2026_08_09.md:2
+ratification_surfaces\cowork_comparison_l0_l1_reading.md:4
+ratification_surfaces\cowork_comparison_harmony_boundary_reading.md:4
+ratification_surfaces\cowork_claude_md_finer_split_2026_08_17.md:2
+ratification_surfaces\cowork_artifact_inventory_ruling_surface.md:4
+open_items\OI-179.md:1
+open_items\OI-219.md:1
+open_items\OI-205.md:1
+open_items\OI-233.md:1
+open_items\OI-229.md:2
+open_items\OI-305.md:2
+open_items\OI-301.md:1
+open_items\OI-300.md:1
+open_items\OI-299.md:1
+open_items\OI-297.md:1
+open_items\OI-296.md:1
+open_items\OI-290.md:1
+open_items\OI-281.md:1
+open_items\OI-280.md:1
+open_items\OI-322.md:1
+open_items\OI-321.md:1
+open_items\OI-320.md:1
+open_items\OI-319.md:1
+open_items\OI-317.md:1
+open_items\OI-329.md:1
+open_items\OI-327.md:1
+open_items\OI-324.md:1
+open_items\OI-338.md:1
+open_items\OI-342.md:1
+tools\batch_analyze.cpp:1
+tools\audit\test_construction_evidence.json:1
+tools\audit\status_residue_move.json:1
+tools\audit\status_batch_bound.json:2
+tools\audit\specification_document_set.json:7
+tools\audit\sole_carrier_subclass.json:1
+tools\audit\soft_discard_application.json:12
+tools\audit\shell_read_guard_establishment.json:3
+tools\audit\shell_read_guard.py:9
+open_items\OI-99.md:1
+open_items\OI-85.md:1
+tools\audit\rulings_sort_classification.json:69
+tools\audit\retirement_census_movement.json:1
+open_items\OI-58.md:1
+open_items\OI-50.md:1
+open_items\OI-49.md:1
+open_items\OI-48.md:1
+open_items\OI-46.md:1
+open_items\OI-380.md:3
+open_items\OI-379.md:1
+open_items\OI-377.md:6
+open_items\OI-376.md:4
+open_items\OI-374.md:1
+open_items\OI-373.md:3
+open_items\OI-372.md:1
+open_items\OI-370.md:1
+open_items\OI-369.md:2
+open_items\OI-367.md:1
+open_items\OI-366.md:1
+tools\audit\retirement_caller_check.json:23
+open_items\OI-365.md:3
+open_items\OI-364.md:3
+open_items\OI-363.md:1
+open_items\OI-362.md:1
+tools\audit\residue_discard_application.json:94
+open_items\OI-361.md:1
+tools\audit\reserved_word_scanner.json:3
+open_items\OI-360.md:1
+tools\audit\recognizer_establishment_sort.json:11
+open_items\OI-359.md:1
+open_items\OI-357.md:2
+open_items\OI-356.md:1
+open_items\OI-355.md:2
+open_items\OI-354.md:3
+open_items\OI-352.md:2
+open_items\OI-351.md:1
+open_items\OI-349.md:2
+tools\audit\ratified_document_check.json:537
+open_items\OI-347.md:1
+tools\audit\prune_at_amendment_lint.py:2
+open_items\OI-346.md:1
+tools\audit\prune_at_amendment_lint.json:2
+tools\audit\post_split_archive.json:9
+tools\audit\phase1_gate_readers.json:3
+tools\audit\phase1_finish_line.json:8
+tools\audit\phase1_completion_inventory.json:3
+tools\audit\period_stratum_split.json:2
+tools\audit\oi367_opening_correction.json:5
+tools\audit\oi357_production_arm_run_legacy_control.json:1
+tools\audit\oi357_production_arm_run.json:1
+tools\audit\oi357_production_arm_comparison.json:1
+tools\audit\oi357_partial_signature_establishment.json:1
+tools\audit\oi357_legacy_arm_same_commit_control.json:1
+tools\audit\oi356_parser_correction.json:10
+tools\audit\oi349_record_arm_precondition_probe.py:2
+tools\audit\oi349_record_arm_precondition_probe.json:1
+STATUS_ARCHIVE.md:159
+STATUS.md:3
+tools\audit\nongating_apparatus_rows.json:13
+tools\audit\changed_paths_guard_dialect_close.json:1
+tools\audit\changed_paths_document_routes.json:1
+tools\audit\changed_paths_defense_sizing_third_task1.json:1
+tools\audit\changed_paths_defense_sizing_third_task0.json:1
+tools\audit\changed_paths_defense_sizing_task0.json:2
+tools\audit\changed_paths_defense_sizing_second_task0.json:2
+tools\audit\changed_paths_defense_authored_ends_task0.json:2
+tools\audit\changed_paths_away_task0.json:2
+tools\audit\census_movement_classification.json:1
+tools\audit\artifact_inventory.json:90
+tools\audit\arm_comment_sweep.json:1
+tools\audit\derivation_boot_pack\scoring-model\05_the_ratified_design_intent.md:3
+tools\audit\derivation_boot_pack\scoring-model\04_the_dispatch_protocol.md:36
+tools\audit\derivation_boot_pack\scoring-model\03_the_writing_standards.md:1
+tools\audit\derivation_boot_pack\scoring-model\02_the_guiding_principles_and_the_conventions.md:4
+tools\audit\derivation_boot_pack\l0-l1\09_the_empirical_findings_ledger.md:10
+tools\audit\derivation_boot_pack\l0-l1\08_the_five_research_extracts.md:1
+tools\audit\derivation_boot_pack\l0-l1\07_the_charter_the_layers_and_the_decisions.md:4
+tools\audit\derivation_boot_pack\l0-l1\05_the_ratified_design_intent.md:3
+tools\audit\derivation_boot_pack\l0-l1\04_the_dispatch_protocol.md:36
+tools\audit\derivation_boot_pack\l0-l1\03_the_writing_standards.md:1
+tools\audit\derivation_boot_pack\l0-l1\02_the_guiding_principles_and_the_conventions.md:5
+tools\audit\derivation_boot_pack\harmony-boundary\05_the_ratified_design_intent.md:3
+tools\audit\derivation_boot_pack\harmony-boundary\04_the_dispatch_protocol.md:36
+tools\audit\derivation_boot_pack\harmony-boundary\03_the_writing_standards.md:1
+tools\audit\derivation_boot_pack\harmony-boundary\02_the_guiding_principles_and_the_conventions.md:4
+tools\audit\defense_share.json:1
+tools\audit\decisions_filter_classification.json:392
+tools\audit\decisions\true_half_reach_rows.json:2
+tools\audit\decisions\retired_subject_moves.json:1
+tools\audit\decisions\r1_superseded_reach.json:1
+tools\audit\decisions\phase1w_legacy_verification.json:3
+tools\audit\decisions\phase1q_record_divergence.json:1
+tools\audit\decisions\phase1p_delegation_bar.json:2
+tools\audit\decisions\outstanding_delegations.json:1
+tools\audit\decisions\home_classification.json:1
+tools\audit\decisions\gen_verbatim_subject_consistency.py:1
+tools\audit\decisions\gen_true_half_reach_rows.py:2
+tools\audit\decisions\gen_retired_subject_moves.py:3
+tools\audit\decisions\gen_r1_superseded_reach.py:2
+tools\audit\decisions\gen_phase1w_legacy_verification.py:13
+tools\audit\decisions\gen_phase1q_record_divergence.py:1
+tools\audit\decisions\gen_phase1p_delegation_bar.py:3
+tools\audit\decisions\gen_outstanding_delegations.py:1
+tools\audit\decisions\gen_live_prohibition_pointers.py:1
+tools\audit\decisions\gen_home_classification.py:9
+tools\audit\decisions\gen_finish_line_item1_routes.py:10
+tools\audit\decisions\gen_decisions_register.py:1
+tools\audit\decisions\gen_cluster_dispositions.py:1
+tools\audit\decisions\gen_apply_field_diff.py:1
+tools\audit\decisions\finish_line_item1_routes.json:14
+tools\audit\decisions\backbone_decisions.json:371
+tools\audit\decisions\apply_soft_discard.py:4
+tools\audit\decisions\apply_residue_discard.py:6
+tools\audit\decisions\apply_field_diff.json:1
+tools\audit\deciding_act_recovery.json:726
+tools\audit\claude_md_rule_triage.py:6
+tools\audit\claude_md_rule_triage.json:1
+tools\audit\claude_md_prune_backlog.json:3
+tools\audit\claude_md_finer_spans.json:13
+tools\audit\claude_md_finer_readers.json:68
+tools\audit\claude_md_finer_archive.json:6
+tools\audit\changed_paths_owner_rulings_homing.json:1
+tools\audit\changed_paths_l2_ruling_writeback_task0.json:1
+tools\audit\changed_paths_l2_criterion_task0.json:1
+tools\audit\gen_filing_convention_application.py:1
+tools\audit\gen_evidence_pin_membership.py:4
+tools\audit\gen_epoch_write_path.py:2
+tools\audit\gen_discard_records.py:4
+tools\audit\gen_discard_reach_split.py:2
+tools\audit\gen_derivation_boot_pack.py:39
+tools\audit\gen_defense_share.py:4
+tools\audit\gen_decisions_filter.py:6
+tools\audit\gen_deciding_act_recovery.py:6
+tools\audit\gen_claude_md_prune_backlog.py:5
+tools\audit\gen_claude_md_finer_surface.py:8
+tools\audit\gen_claude_md_finer_spans.py:5
+tools\audit\gen_claude_md_finer_archive.py:4
+tools\audit\gen_census_movement_classification.py:2
+tools\audit\gen_artifact_inventory_surface.py:9
+tools\audit\gen_artifact_inventory.py:6
+tools\audit\gen_arm_comment_sweep.py:2
+tools\audit\gating_row_sizing.json:4
+tools\audit\framework_untrusted_candidates.json:31
+tools\audit\evidence_pin_membership.json:109
+tools\audit\epoch_write_path.json:1
+tools\audit\doc_change_candidates.json:42
+tools\audit\discard_records.json:3
+tools\audit\discard_reach_split.json:2
+tools\audit\derivation_exemplars\l0-l1\bwv1049_03_presto.provenance.md:2
+tools\audit\derivation_boot_pack.json:27
+tools\audit\gen_retirement_caller_check.py:10
+tools\audit\gen_reserved_word_scanner.py:3
+tools\audit\gen_recognizer_establishment_sort.py:2
+tools\audit\gen_ratified_document_check.py:13
+tools\audit\gen_post_split_archive.py:5
+tools\audit\gen_phase1_gate_readers.py:3
+tools\audit\gen_phase1_finish_line.py:5
+tools\audit\gen_phase1_completion_inventory.py:1
+tools\audit\gen_period_stratum_split.py:3
+tools\audit\gen_oi367_opening_correction.py:2
+tools\audit\gen_oi357_production_arm_run.py:2
+tools\audit\gen_oi357_partial_signature_establishment.py:3
+tools\audit\gen_oi356_parser_correction.py:1
+tools\audit\gen_nongating_apparatus_rows.py:17
+tools\audit\gen_l0_l1_outgoing_population.py:5
+tools\audit\gen_l0l1_exemplar_selection.py:2
+tools\audit\gen_july_screen.py:28
+tools\audit\gen_index_status_normalization.py:2
+tools\audit\gen_guard_state.py:3
+tools\audit\gen_guard_classification.py:9
+tools\audit\gen_governing_surface_split.py:3
+tools\audit\gen_governing_surface_spans.py:2
+tools\audit\gen_governing_surface_readers.py:7
+tools\audit\gen_gating_row_sizing.py:3
+tools\audit\gen_framework_untrusted_candidates.py:2
+tools\audit\l0_l1_outgoing_population.json:7
+tools\audit\l0l1_exemplar_selection.json:1
+tools\audit\l0l1_boot_pack_freeze_and_render.json:1
+tools\audit\l0l1_boot_pack_extension.json:1
+tools\audit\july_screen_report.md:58
+tools\audit\july_screen.json:60
+tools\audit\index_status_normalization.json:5
+tools\audit\index_status_lint.py:1
+tools\audit\guard_state.json:1
+tools\audit\guard_classification.json:8
+tools\audit\governing_surface_split_application.json:2
+tools\audit\governing_surface_spans_2026_09_07.json:6
+tools\audit\governing_surface_spans.json:5
+tools\audit\governing_surface_readers.json:84
+tools\audit\gen_withheld_family_reading.py:6
+tools\audit\gen_test_construction_evidence.py:2
+tools\audit\gen_status_residue_move.py:3
+tools\audit\gen_status_batch_bound.py:5
+tools\audit\gen_specification_document_set.py:6
+tools\audit\gen_sole_carrier_subclass.py:3
+tools\audit\gen_session_start_read_size.py:3
+tools\audit\gen_rulings_sort.py:8
+tools\audit\gen_retirement_census_movement.py:2
+tools\audit\l2_keyword_count_measurement.json:1
+tools\audit\l2_criterion_written_check.json:1
+tools\audit\l2_candidate_list.json:3
+```
+
+Grep's summary line: `Found 6276 total occurrences across 713 files.`
+
+**Named because it bears on the move:** `tools\batch_analyze.cpp` is a C++ source file that names a rulings file. It is
+not in Task 2(b)'s file-type list (`*.py *.mjs *.js *.sh *.ps1 *.bat *.cmake`), so its hit lines were not read and it
+has no Task 2(b) verdict. Its class in Task 2(c) is CODE.
+
+### Expression 4 — `cc_instruction_[A-Za-z0-9_]+\.md`
+
+```
+ARCHITECTURE.md:1
+cc_adoption_measurement_report.md:1
+BUILD_AND_TEST_ARCHIVE.md:1
+cc_acquisition_round_report.md:2
+cc_artifact_inventory_report.md:5
+cc_c1_fold_report.md:3
+cc_backlog_triage_report.md:1
+cc_e0prime_report.md:1
+cc_handoff_prepend_report_2026_09_01.md:4
+cc_engage_joint_key_chord_design_report.md:1
+cc_engage_gateA_unification_build_report.md:1
+cc_foundations_verification_report.md:1
+cc_e0_fullspine_report.md:1
+cc_e0doubleprime_report.md:1
+cc_instruction_amendment_landing.md:1
+cc_grammar_completion_report.md:2
+cc_engage_c3_measurement_report.md:1
+cc_engage_information_loss_audit_report.md:1
+cc_engage_stage3_joint_measure_report.md:1
+cc_fact_dependency_audit_report.md:2
+cc_doctruth_gate_sync_report.md:1
+cc_engage_fanout_measure_report.md:1
+cc_engage_gateA_unification_design_report.md:1
+cc_eg2_probe_report.md:1
+cc_engage_pre_l5_refactor_report.md:1
+cc_corpus_wave3_report.md:2
+cc_exemplar_decode_report_2026_09_01.md:3
+cc_gap_analysis_v2_report.md:1
+cc_direct_metric_search_report.md:1
+cc_instruction_acquisition_round.md:1
+cc_gap_analysis_report.md:1
+cc_engage_l5_carry_selection_design_report.md:2
+cc_engage_structural_integrity_audit_report.md:2
+cc_instruction_apply_the_bearing_cut.md:3
+cc_instruction_arm_and_site_fillin.md:1
+cc_instruction_artifact_inventory.md:3
+cc_instruction_away_execution.md:2
+cc_framework_9_0_correction_report.md:3
+cc_instruction_away_batch.md:2
+cc_instruction_backlog_triage.md:1
+cc_instruction_backup_commit_and_push_2026_09_16.md:2
+cc_instruction_batch_return_rulings.md:2
+cc_instruction_blind_output_landing.md:2
+cc_instruction_boot_pack_regeneration.md:2
+cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md:2
+cc_instruction_brief_ratification_and_readme_boundary.md:2
+cc_instruction_c1_fold_and_explanation.md:2
+cc_instruction_c1_reliability_instrumentation.md:1
+cc_instruction_c1_ruling_and_item1c.md:1
+cc_instruction_carryfix_task2_addendum.md:1
+cc_instruction_census_delegation_and_commit.md:1
+cc_instruction_claude_md_boot_membership_2026_09_07.md:1
+cc_instruction_commit_and_finish_line.md:1
+cc_instruction_claude_md_prune_at_amendment_2026_09_07.md:1
+cc_instruction_commit_reads3.md:1
+cc_instruction_comparison_harmony_boundary.md:2
+cc_instruction_comparison_l0_l1_2026_09_02.md:2
+cc_instruction_comparison_l0_l1_eighth_2026_09_04.md:9
+cc_instruction_comparison_l0_l1_fifth_2026_09_03.md:6
+cc_instruction_comparison_l0_l1_fourth_2026_09_03.md:6
+cc_instruction_comparison_l0_l1_ninth_2026_09_04.md:8
+cc_instruction_comparison_l0_l1_second_2026_09_02.md:3
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md:10
+cc_instruction_comparison_l0_l1_tenth_2026_09_04.md:5
+cc_instruction_comparison_l0_l1_sixth_2026_09_03.md:6
+cc_instruction_comparison_l0_l1_third_2026_09_02.md:2
+cc_instruction_corpus_wave3.md:1
+cc_instruction_d231_landing.md:5
+cc_instruction_decoder_work_counts.md:1
+cc_instruction_defense_share_authored_ends_2026_09_08.md:1
+cc_instruction_defense_share_sizing_second_2026_09_08.md:2
+cc_instruction_deltaseven_7a_diagnostic.md:2
+cc_instruction_design_pass_commit.md:1
+cc_instruction_desk_sim_commit.md:1
+cc_instruction_defense_share_sizing_third_2026_09_08.md:2
+cc_instruction_doctruth_gate_sync.md:1
+cc_instruction_document_routes_and_d472.md:1
+cc_instruction_e0_addendum_carry_cap.md:1
+cc_instruction_doc_sync_layer1.md:1
+cc_instruction_e0_fullspine_measure.md:1
+cc_instruction_e2a.md:1
+cc_instruction_e2b_review.md:4
+cc_instruction_e2c.md:3
+cc_instruction_e2d_enable.md:4
+cc_instruction_e2d_enable_v2.md:1
+cc_instruction_e2d.md:1
+cc_instruction_e2d_enable_v2_investigate.md:1
+cc_instruction_evidence_candidate_pass.md:2
+cc_instruction_finish_line_item1b.md:1
+cc_instruction_finish_line_item1.md:1
+cc_instruction_evidence_sizing.md:2
+cc_instruction_five_rulings.md:1
+cc_instruction_false_statements_pass.md:1
+cc_instruction_framework_arrangement_landing.md:1
+cc_instruction_framework_pack_preparation.md:1
+cc_instruction_grammar_completion.md:1
+cc_instruction_guard_dialect_close_and_push.md:1
+cc_instruction_handoff_prepend_2026_09_01.md:1
+cc_instruction_guard_fix_and_item1d.md:1
+cc_instruction_item7_reach_derivation.md:1
+cc_instruction_informed_brief_landing.md:1
+cc_instruction_j_key_iii_step3d_push_then_B.md:1
+cc_instruction_key_grading_rebaseline.md:1
+cc_instruction_key_grading_and_calibration_rebaseline.md:1
+cc_instruction_key_mode_inference_diagnosis.md:1
+cc_instruction_l1_l2_audit_blind_rerun.md:1
+cc_instruction_l2_criterion_write_2026_09_04.md:1
+cc_instruction_l2_candidate_list_2026_09_05.md:2
+cc_instruction_l2_verdict_pass_2026_09_05.md:5
+cc_instruction_l2_ruling_writeback_2026_09_05.md:5
+cc_instruction_l2_reading_file_2026_09_05.md:6
+cc_instruction_l4_audit_pass1_oracle.md:1
+cc_instruction_l2_keyword_count_2026_09_04.md:1
+cc_instruction_l3_audit_pass2_relabel.md:1
+cc_instruction_l4_audit_pass1_decoder.md:1
+cc_instruction_l4_audit_pass1.md:1
+cc_instruction_l3_audit_pass1.md:1
+cc_instruction_l3_key_decode_mechanism.md:1
+cc_instruction_l5_audit_pass1_harness.md:2
+cc_instruction_l5_audit_pass2.md:1
+cc_instruction_l5_audit_pass1_instruments.md:1
+cc_instruction_landing_2026_08_28.md:2
+cc_instruction_l5_audit_pass1_resolver.md:1
+cc_instruction_l4_audit_pass2.md:1
+cc_instruction_l4_audit_pass1_satellites.md:2
+cc_instruction_l5_audit_pass1.md:2
+cc_instruction_l5_audit_pass1_grading_fitting.md:2
+cc_instruction_licensed_homing_and_oi344.md:2
+cc_instruction_ledger_harvest.md:1
+cc_instruction_measurement_chain_hardening.md:1
+cc_instruction_method_voiding_landing.md:1
+cc_instruction_marginals.md:1
+cc_instruction_manifest_prose_and_sizing_brief.md:2
+cc_instruction_mode_key_chord_inference_probe.md:1
+cc_instruction_notation_consumption_audit.md:2
+cc_instruction_notation_noteseam.md:1
+cc_instruction_notation_p4.md:1
+cc_instruction_notation_p7.md:1
+cc_instruction_notation_pstrings.md:1
+cc_instruction_notation_seams_2.md:2
+cc_instruction_oi150_baselines.md:1
+cc_instruction_oi179_reply_and_phase2_surface.md:1
+cc_instruction_oi315_class_licence.md:2
+cc_instruction_oi274_second_half.md:1
+cc_instruction_oi207_residual_pass.md:1
+cc_instruction_oi315_licence_and_cells.md:1
+cc_instruction_oi375_width_correction.md:1
+cc_instruction_open_items_split.md:1
+cc_instruction_owner_rulings_homing.md:1
+cc_instruction_pack_section7_and_errata_state.md:1
+cc_instruction_period_checks.md:3
+cc_instruction_pass_continuation_second.md:2
+cc_instruction_phase1m_dispositions_and_measurements.md:1
+cc_instruction_phase1l_rulings_and_reads.md:4
+cc_instruction_phase1p_home_rulings_and_mechanisms.md:2
+cc_instruction_phase1n_criterion_premise_and_reading_regime.md:1
+cc_instruction_phase1r_commit_and_reclassify.md:2
+cc_instruction_phase1o_gate_partition_and_probe_rerun.md:1
+cc_instruction_phase1t_restatement_and_pruning.md:1
+cc_instruction_phase1s_stale_rules_and_enumeration.md:2
+cc_instruction_phase1q_reclassification_and_guards.md:2
+cc_instruction_phase1v_channel_ratification.md:2
+cc_instruction_phase1w_legacy_mark_verification.md:2
+cc_instruction_phase1x_guard_visibility_and_commit.md:2
+cc_instruction_phase1u_partition_record_and_directory.md:2
+cc_instruction_phase1z_commit_and_instrument_record.md:1
+cc_instruction_phase1_delegations_and_corrections.md:1
+cc_instruction_phase1_completion_inventory.md:1
+cc_instruction_phase1y_corpus_arm_stamping.md:1
+cc_instruction_phase_close_second_2026_08_30.md:5
+cc_instruction_phase_close_2026_08_30.md:2
+cc_instruction_phase_rulings_landing.md:1
+cc_instruction_placement_sample_redraw.md:3
+cc_instruction_plan_evaluation.md:1
+cc_instruction_preparation_eighth.md:1
+cc_instruction_prefit_gates_commit.md:1
+cc_instruction_pilot_preparation_withheld_family.md:4
+cc_instruction_preparation_fifth.md:2
+cc_instruction_preparation_eleventh_amended.md:6
+cc_instruction_preparation_eleventh.md:1
+cc_instruction_phase_d_reanalysis.md:1
+cc_instruction_preparation_fourteenth.md:1
+cc_instruction_preparation_fourth.md:2
+cc_instruction_preparation_ninth.md:1
+cc_instruction_preparation_opening.md:3
+cc_instruction_preparation_second.md:2
+cc_instruction_preparation_seventh.md:2
+cc_instruction_preparation_tenth.md:1
+cc_instruction_preparation_sixth.md:2
+cc_instruction_preparation_thirteenth.md:1
+cc_instruction_preparation_third.md:2
+cc_instruction_preparation_twelfth.md:1
+cc_instruction_reading_pass_landing_second_2026_08_31.md:1
+cc_instruction_reads_1.md:2
+cc_instruction_reads_2.md:1
+cc_instruction_reads_4.md:1
+cc_instruction_reads_3.md:1
+cc_instruction_read_size_repair_and_rows_2026_09_07.md:1
+cc_instruction_reads_5.md:1
+cc_instruction_reads_6.md:1
+cc_instruction_register_baseline_repair.md:3
+cc_instruction_repair_direction_enumeration.md:1
+cc_instruction_register_reconciliation.md:2
+cc_instruction_return_continuation_10.md:2
+cc_instruction_resume_lapse_records.md:2
+cc_instruction_return_continuation.md:2
+cc_instruction_return_continuation_13.md:2
+cc_instruction_return_continuation_11.md:2
+cc_instruction_return_continuation_3.md:2
+cc_instruction_return_continuation_12.md:2
+cc_instruction_return_continuation_14.md:2
+cc_instruction_return_continuation_2.md:2
+cc_instruction_return_continuation_7.md:2
+cc_instruction_return_continuation_5.md:2
+cc_instruction_row_landing_and_oi141_arm_check.md:3
+cc_instruction_return_continuation_6.md:2
+cc_instruction_return_continuation_4.md:2
+cc_instruction_return_continuation_8.md:2
+cc_instruction_roadmap_sync.md:1
+cc_instruction_return_continuation_9.md:2
+cc_instruction_ruled_inventory_landing.md:1
+cc_instruction_ruling69_discard_input.md:1
+cc_instruction_scoring_model_pass.md:1
+cc_instruction_second_backup_commit_and_push_2026_09_16.md:3
+cc_instruction_second_backup_rerun_2026_09_16.md:3
+cc_instruction_second_backup_rerun_two_2026_09_16.md:3
+cc_instruction_second_landing_2026_08_28.md:2
+cc_instruction_second_passage_withheld.md:2
+cc_instruction_sitting_outcome_and_bound.md:1
+cc_instruction_sizing_output_landing.md:2
+cc_instruction_sizing_pack_preparation.md:2
+cc_instruction_sizing_brief_ruled.md:2
+cc_instruction_sizing_regen_and_readme.md:1
+cc_instruction_stage5_phase0.md:1
+cc_instruction_stage5_phase2_1.md:1
+cc_instruction_stage5_phase1.md:1
+cc_instruction_stage5_phase2_2d.md:1
+cc_instruction_stage5_phase2_2b.md:1
+cc_instruction_stage5_phase2_2c.md:1
+cc_instruction_stage5_phase2_2a.md:1
+cc_instruction_stage5_r10b_ratification.md:1
+cc_instruction_status_forward_bound_second_2026_09_07.md:16
+cc_instruction_stage5_phase2_3.md:1
+cc_instruction_status_forward_bound_2026_09_07.md:10
+cc_instruction_stage5_r10_assembly.md:1
+cc_instruction_status_touch_and_oi141_premise_repin.md:6
+cc_instruction_stop_record_and_enumeration.md:1
+cc_instruction_stage5_phase3.md:1
+cc_instruction_step_zero_exclusion_and_pass_continuation.md:2
+cc_instruction_stage5_phase2_2e.md:1
+cc_instruction_successor_plan_landing_and_step_zero.md:2
+cc_instruction_term_inventory.md:1
+cc_instruction_third_landing_2026_08_28.md:2
+cc_instruction_three_owner_rulings.md:1
+cc_instruction_tpc_capability_build.md:1
+cc_instruction_tsv_oracle_addendum.md:1
+cc_instruction_vl_docs_fold.md:2
+cc_instruction_unit_correction_redraw.md:2
+cc_instruction_vocabulary_build.md:1
+cc_instruction_wave3_addendum.md:1
+cc_instruction_withheld_family_correction.md:2
+cc_instruction_worth_test.md:2
+cc_instrument_hygiene_sweep_report.md:1
+cc_invisible_notes_establishment_report_2026_09_01.md:3
+cc_key_grading_and_calibration_rebaseline_report.md:1
+cc_key_mode_inference_diagnosis_report.md:1
+cc_key_grading_rebaseline_report.md:1
+cc_l1l2_audit_pass1_report.md:1
+cc_l1l2_audit_blind_rerun_report.md:1
+cc_l0l1_exemplar_selection_report.md:3
+cc_l4_audit_pass1_oracle_report.md:1
+cc_l3_audit_pass2_relabel_report.md:1
+cc_l0l1_boot_pack_report.md:2
+cc_l3_key_decode_mechanism_report.md:1
+cc_l4_audit_pass1_decoder_report.md:1
+cc_l0l1_boot_pack_second_report.md:2
+cc_l4_audit_pass2_report.md:1
+cc_l5_audit_pass1_report.md:1
+cc_l5_audit_pass1_resolver_report.md:1
+cc_l5_audit_pass2_report.md:1
+cc_l4_audit_pass1_report.md:1
+cc_l6_build_report.md:1
+cc_label_table_fit_report.md:1
+cc_measurement_chain_hardening_report.md:1
+cc_mode_key_chord_probe_report.md:1
+cc_mscz_container_establishment_report.md:3
+cc_notation_consumption_audit_report.md:1
+cc_oi155_report.md:1
+cc_oi160_report.md:1
+cc_note_table_fit_report.md:1
+cc_oi168_magnitude_report.md:1
+cc_oi168_fix_report.md:1
+cc_oi199_pass1_report.md:2
+cc_oi170_measure_report.md:1
+cc_oi199_joint_p3_p4_report.md:1
+cc_phase1d_enumeration_wave_report.md:1
+cc_oi207_residual_pass_report.md:1
+cc_phrase_boundary_build_report.md:1
+cc_report_amendment_landing.md:11
+cc_report_boot_pack_freeze_l0l1_2026_09_04.md:1
+cc_report_batch_return_rulings.md:2
+cc_refactor_regiontonecollector_report.md:1
+cc_report_blind_output_landing.md:2
+cc_report_arm_and_site_fillin.md:2
+cc_report_brief_ratification_and_readme_boundary.md:2
+cc_report_backup_commit_and_push_2026_09_16.md:578
+cc_report_claude_md_boot_membership_2026_09_07.md:1
+cc_report_cascade_sweep.md:6
+cc_report_boot_pack_regeneration.md:5
+cc_report_claude_md_prune_at_amendment_2026_09_07.md:1
+cc_report_comparison_harmony_boundary.md:1
+cc_report_comparison_l0_l1_2026_09_02.md:2
+cc_report_comparison_l0_l1_fifth_2026_09_03.md:1
+cc_report_comparison_l0_l1_eighth_2026_09_04.md:1
+cc_report_comparison_l0_l1_fourth_2026_09_03.md:1
+cc_report_comparison_l0_l1_ninth_2026_09_04.md:1
+cc_report_comparison_l0_l1_second_2026_09_02.md:2
+cc_report_comparison_l0_l1_seventh_2026_09_03.md:1
+cc_report_comparison_l0_l1_tenth_2026_09_04.md:1
+cc_report_comparison_l0_l1_sixth_2026_09_03.md:1
+cc_report_d231_landing.md:5
+cc_report_comparison_l0_l1_third_2026_09_02.md:1
+cc_report_defense_share_sizing_second_2026_09_08.md:2
+cc_report_defense_share_authored_ends_2026_09_08.md:2
+cc_report_defense_share_sizing_2026_09_08.md:2
+cc_report_framework_pack_preparation.md:2
+cc_report_l2_criterion_write_2026_09_04.md:1
+cc_report_framework_arrangement_landing.md:3
+cc_report_l2_candidate_list_2026_09_05.md:4
+cc_report_defense_share_sizing_third_2026_09_08.md:2
+cc_report_informed_brief_landing.md:6
+cc_report_l2_keyword_count_2026_09_04.md:2
+cc_report_l2_reading_file_2026_09_05.md:4
+cc_report_ledger_admissions.md:7
+cc_report_l2_verdict_pass_2026_09_05.md:3
+cc_report_l2_ruling_writeback_2026_09_05.md:3
+cc_report_ledger_harvest.md:5
+cc_report_landing_2026_08_28.md:152
+cc_report_ledger_build.md:10
+cc_report_method_voiding_landing.md:4
+cc_report_manifest_prose_and_sizing_brief.md:2
+cc_report_phase_close_2026_08_30.md:3
+cc_report_pass_continuation_second.md:2
+cc_report_phase_close_second_2026_08_30.md:4
+cc_report_phase_rulings_landing.md:6
+cc_report_pilot_preparation.md:2
+cc_report_placement_sample.md:7
+cc_report_placement_sample_redraw.md:10
+cc_report_plan_challenge.md:2
+cc_report_plan_evaluation.md:4
+cc_report_preparation_eighth.md:1
+cc_report_preparation_eleventh.md:3
+cc_report_preparation_eleventh_amended.md:3
+cc_report_preparation_fifth.md:5
+cc_report_preparation_fourth.md:3
+cc_report_preparation_opening.md:4
+cc_report_preparation_fourteenth.md:2
+cc_report_preparation_ninth.md:1
+cc_report_preparation_tenth.md:2
+cc_report_preparation_thirteenth.md:2
+cc_report_preparation_sixth.md:3
+cc_report_preparation_third.md:3
+cc_report_preparation_seventh.md:3
+cc_report_regeneration_and_citation.md:5
+cc_report_preparation_second.md:3
+cc_report_register_baseline_repair.md:7
+cc_report_read_size_repair_and_rows_2026_09_07.md:1
+cc_report_second_backup_rerun_2026_09_16.md:3
+cc_report_reading_pass_landing_second_2026_08_31.md:4
+cc_report_reading_pass_landing_2026_08_31.md:2
+cc_report_ruled_inventory_landing.md:2
+cc_report_second_backup_commit_and_push_2026_09_16.md:2
+cc_report_sizing_brief_ruled.md:4
+cc_report_register_reconciliation.md:7
+cc_report_preparation_twelfth.md:2
+cc_report_second_landing_2026_08_28.md:6
+cc_report_second_passage_withheld.md:2
+cc_report_sizing_pack_preparation.md:2
+cc_report_status_forward_bound_2026_09_07.md:15
+cc_report_status_forward_bound_second_2026_09_07.md:15
+cc_report_sizing_output_landing.md:3
+cc_report_sizing_tests.md:5
+cc_report_step_zero.md:2
+cc_report_step_zero_return_executed.md:2
+cc_report_third_landing_2026_08_28.md:7
+cc_report_withheld_family_correction.md:2
+cc_report_unit_correction_redraw.md:10
+cc_secondary_dominant_refit_report.md:1
+cc_sitting_landing_second_report_2026_09_01.md:6
+cc_slot_sweep_report_2026_09_01.md:3
+cc_sitting_landing_report_2026_09_01.md:318
+cc_stage1a_report.md:1
+cc_stage4b_i_report.md:1
+cc_stage5_phase0_report.md:4
+cc_stage5_phase1_report.md:2
+cc_stage5_phase2_1_report.md:2
+cc_stage5_phase2_2a_report.md:2
+cc_stage5_phase2_2c_report.md:2
+cc_stage5_phase2_2b_report.md:3
+cc_stage5_phase2_2e_report.md:2
+cc_stage5_phase2_2d_report.md:2
+cc_stage5_phase2_3_report.md:1
+cc_stage5_r10_assembly_report.md:2
+cc_stage5_r10b_ratification_report.md:2
+cc_uncertain_resolver_measurement_report.md:1
+cc_term_inventory_report.md:1
+cc_wave2_dependency_reconciliation_report.md:2
+cc_wave1_finalize_report.md:1
+cc_tsv_oracle_report.md:1
+cc_vl_foundation_build_report.md:1
+cc_vocabulary_build_report.md:1
+CLAUDE_ARCHIVE.md:4
+cowork_arm_and_site_fillin_2026_08_28.md:1
+cc_wave3_addendum_report.md:2
+CLAUDE.md:5
+cowork_audit_protocol.md:17
+cowork_blind_session_brief_scoring_model.md:1
+cowork_blind_session_brief_harmony_boundary.md:2
+cowork_away_returns.md:143
+cowork_declared_readings_surface_2026_08_27.md:1
+cowork_derived_specification_l0_l1_2026_09_03.md:2
+cowork_empirical_findings_candidates.md:6
+cowork_confidence_contract.md:1
+cowork_evaluation_boot_list_2026_08_21.md:3
+cowork_handoff.md:192
+cowork_handoff_entry_eighty_six.md:1
+cowork_handoff_entry_eighty_five.md:4
+cowork_handoff_entry_eighty_eight.md:2
+cowork_handoff_entry_ninety.md:1
+cowork_handoff_entry_ninety_eight.md:1
+cowork_handoff_entry_ninety_one.md:1
+cowork_handoff_entry_ninety_two.md:1
+cowork_handoff_archive.md:50
+cowork_handoff_entry_ninety_five.md:1
+cowork_handoff_entry_ninety_three.md:1
+cowork_handoff_entry_ninety_six.md:1
+cowork_handoff_entry_ninety_seven.md:1
+cowork_handoff_entry_one_hundred_and_eighty_eight.md:2
+cowork_handoff_entry_one_hundred_and_eight.md:3
+cowork_handoff_entry_one_hundred_and_fifty.md:2
+cowork_handoff_entry_one_hundred_and_five.md:3
+cowork_handoff_entry_one_hundred_and_forty_eight.md:3
+cowork_handoff_entry_one_hundred_and_forty_nine.md:2
+cowork_handoff_entry_one_hundred_and_forty_five.md:4
+cowork_handoff_entry_one_hundred_and_nine.md:8
+cowork_handoff_entry_one_hundred_and_forty_six.md:1
+cowork_handoff_entry_one_hundred_and_forty_seven.md:3
+cowork_handoff_entry_one_hundred_and_six.md:1
+cowork_informed_brief_provenance.md:2
+cowork_instruction_return_session.md:1
+cowork_informed_session_brief_framework.md:2
+cowork_joint_key_chord_design.md:2
+cowork_l1l4_completion_ledger.md:1
+cowork_l2_boot_list_surface_2026_09_05.md:1
+cowork_layer1_tone_collection_design.md:1
+cowork_layer3_keymode_design.md:2
+cowork_layer5_function_design.md:2
+cowork_memory_pointer_cut_2026_09_07.md:2
+cowork_notation_adoption_increment.md:3
+cowork_owner_rulings_2026_08_07.md:2
+cowork_notation_output_contract.md:1
+cowork_placement_sample_sealed_2026_08_27.md:3
+cowork_phrase_boundary_design.md:1
+cowork_phase2_architecture_review.md:1
+cowork_phase1_commissioning_surface_2026_08_11.md:2
+cowork_prediction_tabulation_2026_08_21.md:1
+cowork_report_plan_evaluation_2026_08_21.md:1
+cowork_placement_sample_sealed_redraw_2026_08_27.md:3
+cowork_placement_sample_sealed_third_2026_08_27.md:3
+cowork_register_rule_c_suspension_2026_08_28.md:2
+cowork_rulings_2026_08_11_fifteenth_stop.md:1
+cowork_rulings_2026_08_11_sixteenth_stop.md:2
+cowork_rulings_2026_08_15_inventory_sitting.md:2
+cowork_rulings_2026_08_15_batch_return.md:2
+cowork_rulings_2026_08_13_eighteenth_stop.md:1
+cowork_rulings_2026_08_17_eighth_return.md:1
+cowork_rulings_2026_08_15_phase_definition_sitting.md:1
+cowork_rulings_2026_08_16_preparation_return.md:7
+cowork_rulings_2026_08_17_residue_sitting.md:1
+cowork_rulings_2026_08_17_seventh_return.md:2
+cowork_rulings_2026_08_15_period_start.md:1
+cowork_rulings_2026_08_17_ninth_return.md:2
+cowork_rulings_2026_08_17_governing_surface_split.md:2
+cowork_rulings_2026_08_17_rulings_sort_sitting.md:1
+cowork_rulings_2026_08_19_thirteenth_return.md:1
+cowork_rulings_2026_08_18_eleventh_stop.md:1
+cowork_rulings_2026_08_17_sixth_return.md:1
+cowork_rulings_2026_08_19_eleventh_return.md:1
+cowork_rulings_2026_08_18_tenth_return.md:1
+cowork_rulings_2026_08_22_member_two_leak_sitting.md:1
+cowork_rulings_2026_08_22_step_zero_return_sitting.md:1
+cowork_rulings_2026_08_19_twelfth_return.md:1
+cowork_rulings_2026_08_22_withheld_family_sitting.md:1
+cowork_rulings_2026_08_23_brief_validation_sitting.md:1
+cowork_rulings_2026_08_23_member_two_second_leak_sitting.md:1
+cowork_rulings_2026_08_24_sizing_pilot_sitting.md:1
+cowork_rulings_2026_08_25_second_vector_sitting.md:1
+cowork_rulings_2026_08_26_amendment_landing_sitting.md:2
+cowork_rulings_2026_08_28_informed_brief_points_sitting.md:2
+cowork_rulings_2026_08_28_unit_question_sitting.md:2
+cowork_rulings_2026_08_28_ledger_precondition_sitting.md:2
+cowork_rulings_2026_08_30_detail_phase_opening_sitting.md:2
+cowork_rulings_2026_09_05_l2_withheld_family_sitting.md:1
+cowork_rulings_2026_08_27_stopped_strata_sitting.md:2
+cowork_rulings_2026_08_26_sizing_tests_sitting.md:2
+cowork_rulings_2026_08_27_redraw_findings_sitting.md:1
+cowork_rulings_2026_08_31_decision_surface_sitting.md:7
+cowork_rulings_2026_09_08_extent_rule_sitting.md:3
+cowork_rulings_oi345_oi342_2026_08_07.md:1
+cowork_ruling_guard_family_2026_08_08.md:1
+cowork_scratch_2026_08_11\README.md:3
+cowork_scratch_2026_08_11\draft_row_status_md_unreadable.md:2
+cowork_scratch_2026_08_11\cowork_verification_plan_continuation_14.md:1
+cowork_scratch_2026_08_11\cowork_oi141_sitting_pack.md:3
+cowork_sensitive_cell_probe.md:1
+cowork_stopped_strata_surface_2026_08_27.md:4
+cowork_take_rule_surface_2026_08_27.md:1
+cowork_tpc_capability_design.md:1
+cowork_stage5_fitter_design.md:1
+cowork_verification_plan_preparation_tenth.md:4
+cowork_voiceleading_axis_design.md:1
+cowork_unit_question_surface_2026_08_28.md:1
+DECISIONS_ARCHIVE.md:1
+DECISIONS.md:2
+EMPIRICAL_FINDINGS_LEDGER.md:2
+decisions\group_U.md:7
+decisions\group_J.md:6
+decisions\group_I.md:3
+decisions\group_T.md:42
+decisions\group_H.md:23
+decisions\group_S.md:6
+docs\implementation_roadmap.md:2
+decisions\group_G.md:14
+decisions\group_Q.md:8
+docs\beam_widening_design.md:1
+decisions\group_F.md:6
+decisions\group_P.md:1
+docs\key_path_design.md:2
+decisions\group_M.md:15
+decisions\group_C.md:28
+docs\key_detection_baroque_partial_signature.md:1
+decisions\group_L.md:4
+decisions\group_B.md:1
+decisions\group_A.md:12
+decisions\group_K.md:12
+docs\precision_metric_design.md:1
+docs\scoring_model.md:7
+docs\score_inventory.md:1
+docs\redesign_plan.md:1
+PHASE_CONSTRAINTS_AND_STOP_RULES.md:2
+OPEN_ITEMS_ARCHIVE.md:49
+OPEN_ITEMS.md:76
+```
+
+*(Expression 4, continued.)*
+
+```
+open_items\OI-100.md:1
+open_items\OI-107.md:1
+open_items\OI-110.md:1
+records\cc\instructions\cc_instruction_root_records_reference_map_2026_09_16.md:1
+open_items\OI-141.md:2
+open_items\OI-150.md:2
+open_items\OI-168.md:1
+open_items\OI-165.md:1
+open_items\OI-183.md:1
+open_items\OI-182.md:1
+open_items\OI-180.md:1
+open_items\OI-179.md:6
+open_items\OI-170.md:1
+open_items\OI-204.md:2
+open_items\OI-203.md:4
+open_items\OI-202.md:1
+open_items\OI-201.md:1
+open_items\OI-2.md:2
+open_items\OI-199.md:1
+open_items\OI-197.md:1
+open_items\OI-196.md:1
+open_items\OI-195.md:1
+open_items\OI-191.md:1
+open_items\OI-187.md:1
+open_items\OI-186.md:1
+open_items\OI-233.md:1
+open_items\OI-230.md:1
+open_items\OI-229.md:3
+open_items\OI-228.md:3
+open_items\OI-227.md:2
+open_items\OI-226.md:2
+open_items\OI-225.md:2
+open_items\OI-224.md:1
+open_items\OI-222.md:1
+open_items\OI-219.md:1
+open_items\OI-215.md:2
+open_items\OI-210.md:1
+open_items\OI-209.md:1
+open_items\OI-207.md:15
+open_items\OI-206.md:2
+open_items\OI-205.md:1
+open_items\OI-247.md:2
+open_items\OI-237.md:1
+open_items\OI-291.md:1
+open_items\OI-290.md:2
+open_items\OI-289.md:1
+open_items\OI-287.md:1
+open_items\OI-286.md:2
+open_items\OI-285.md:4
+open_items\OI-284.md:1
+open_items\OI-283.md:1
+open_items\OI-282.md:1
+open_items\OI-281.md:3
+open_items\OI-280.md:3
+open_items\OI-279.md:1
+open_items\OI-278.md:1
+open_items\OI-277.md:1
+open_items\OI-276.md:2
+open_items\OI-275.md:1
+open_items\OI-274.md:2
+open_items\OI-273.md:1
+open_items\OI-272.md:1
+open_items\OI-271.md:2
+open_items\OI-270.md:1
+open_items\OI-269.md:2
+open_items\OI-99.md:1
+open_items\OI-268.md:3
+open_items\OI-267.md:1
+open_items\OI-266.md:1
+open_items\OI-265.md:2
+open_items\OI-89.md:1
+open_items\OI-319.md:6
+open_items\OI-318.md:2
+open_items\OI-317.md:4
+open_items\OI-85.md:1
+open_items\OI-316.md:3
+open_items\OI-315.md:6
+open_items\OI-314.md:1
+open_items\OI-313.md:1
+open_items\OI-312.md:1
+open_items\OI-311.md:1
+open_items\OI-310.md:1
+open_items\OI-309.md:2
+open_items\OI-308.md:1
+open_items\OI-307.md:1
+open_items\OI-306.md:2
+open_items\OI-305.md:3
+ratification_surfaces\cowork_withheld_family_l2_reading.md:2
+open_items\OI-304.md:1
+ratification_surfaces\cowork_withheld_family_harmony_boundary_reading.md:3
+open_items\OI-303.md:5
+ratification_surfaces\cowork_withheld_family_framework_reading.md:2
+open_items\OI-302.md:1
+open_items\OI-301.md:2
+ratification_surfaces\cowork_sizing_tests_reading.md:1
+open_items\OI-58.md:1
+open_items\OI-300.md:4
+ratification_surfaces\cowork_sizing_pack_leak_list_reading.md:2
+open_items\OI-299.md:2
+ratification_surfaces\cowork_ruling_registration_queue_2026_08_09.md:41
+open_items\OI-298.md:1
+open_items\OI-297.md:2
+ratification_surfaces\cowork_rule_triage_entries_2026_08_09.md:3
+open_items\OI-296.md:3
+open_items\OI-50.md:1
+open_items\OI-295.md:1
+open_items\OI-294.md:1
+open_items\OI-49.md:1
+ratification_surfaces\cowork_reserved_word_inventory_2026_08_09.md:2
+open_items\OI-292.md:1
+open_items\OI-48.md:1
+open_items\OI-349.md:4
+ratification_surfaces\cowork_phase_definition_surface_2026_08_15.md:1
+open_items\OI-47.md:2
+open_items\OI-348.md:3
+ratification_surfaces\cowork_perspective_inventory_ratification.md:2
+open_items\OI-46.md:1
+ratification_surfaces\cowork_pending_ratifications_next_session.md:1
+open_items\OI-347.md:2
+ratification_surfaces\cowork_oi354_legacy_mark_establishment_2026_08_09.md:2
+open_items\OI-45.md:1
+open_items\OI-346.md:3
+ratification_surfaces\cowork_governing_surface_split_2026_08_16.md:1
+open_items\OI-345.md:2
+ratification_surfaces\cowork_discard_residue_surface_2026_08_16.md:18
+open_items\OI-344.md:4
+open_items\OI-343.md:4
+open_items\OI-383.md:3
+open_items\OI-342.md:5
+open_items\OI-382.md:2
+open_items\OI-341.md:2
+open_items\OI-381.md:3
+open_items\OI-340.md:3
+ratification_surfaces\cowork_decisions_pending_ratification_2.md:1
+open_items\OI-380.md:2
+open_items\OI-339.md:3
+open_items\OI-379.md:10
+ratification_surfaces\cowork_decisions_filter_surface_2026_08_15.md:28
+open_items\OI-338.md:2
+open_items\OI-378.md:5
+ratification_surfaces\cowork_deciding_act_recovery_surface_2026_08_16.md:27
+open_items\OI-337.md:3
+open_items\OI-377.md:3
+open_items\OI-336.md:3
+ratification_surfaces\cowork_d580_transfer_fact_gathering_2026_08_09.md:1
+open_items\OI-376.md:3
+open_items\OI-335.md:2
+open_items\OI-375.md:3
+open_items\OI-334.md:2
+open_items\OI-333.md:4
+open_items\OI-374.md:6
+ratification_surfaces\cowork_comparison_l0_l1_reading.md:64
+open_items\OI-332.md:2
+open_items\OI-373.md:5
+ratification_surfaces\cowork_comparison_harmony_boundary_reading.md:2
+open_items\OI-331.md:3
+open_items\OI-372.md:3
+ratification_surfaces\cowork_claude_md_finer_split_2026_08_17.md:1
+open_items\OI-330.md:1
+open_items\OI-371.md:2
+ratification_surfaces\cowork_artifact_inventory_ruling_surface.md:84
+open_items\OI-370.md:3
+open_items\OI-329.md:4
+open_items\OI-328.md:2
+open_items\OI-369.md:3
+open_items\OI-327.md:5
+open_items\OI-368.md:3
+open_items\OI-326.md:2
+open_items\OI-367.md:3
+open_items\OI-325.md:2
+open_items\OI-366.md:3
+open_items\OI-324.md:3
+open_items\OI-365.md:2
+open_items\OI-323.md:2
+open_items\OI-364.md:3
+open_items\OI-322.md:3
+open_items\OI-363.md:3
+open_items\OI-321.md:5
+open_items\OI-362.md:2
+open_items\OI-320.md:3
+open_items\OI-361.md:2
+open_items\OI-355.md:4
+open_items\OI-360.md:1
+open_items\OI-354.md:3
+open_items\OI-353.md:3
+open_items\OI-359.md:1
+open_items\OI-352.md:2
+open_items\OI-358.md:3
+open_items\OI-351.md:3
+open_items\OI-357.md:5
+open_items\OI-350.md:3
+open_items\OI-356.md:4
+STATUS_ARCHIVE.md:364
+STATUS.md:4
+tools\term_inventory\term_inventory_summary.json:1
+tools\term_inventory\gen_term_inventory.py:2
+tools\robust_stop\snapshot_2026-07-26_pre_oi178_adoption\SNAPSHOT_NOTE.md:1
+tools\robust_stop\snapshot_2026-07-26_pre_oi178_adoption\manifest.json:1
+tools\robust_stop\snapshot_2026-07-13_pre_oi168\manifest.json:1
+tools\robust_stop\snapshot_2026-07-13_pre_oi132_oi144\manifest.json:1
+tools\robust_stop\snapshot_2026-07-12_pre_oi142_oi143\manifest.json:1
+tools\robust_stop\manifest.json:1
+tools\notation_seams\README.md:1
+tools\notation_seams\partition_completeness.json:2
+tools\notation_seams\large_score_profile_counts.json:1
+tools\notation_seams\large_score_decode_profile.json:1
+tools\notation_seams\ground_truth_inventory.json:1
+tools\notation_seams\gen_ground_truth_inventory.py:2
+tools\notation_seams\gen_editing_cycle.py:2
+tools\notation_seams\editing_cycle.json:1
+tools\notation_seams\cost_profile_analysis.json:1
+tools\notation_seams\classify_dualarm.py:1
+tools\notation_seams\analyze_cost_profile.py:2
+tools\audit\test_construction_evidence.json:13
+tools\audit\status_residue_move.json:1
+tools\audit\status_batch_bound.json:128
+tools\audit\status_archive_pass_2026_08_11.json:2
+tools\audit\specification_document_set.json:3
+tools\audit\sole_carrier_subclass.json:1
+tools\audit\soft_discard_application.json:4
+tools\audit\shell_read_guard_establishment.json:2
+tools\audit\shell_read_guard.py:7
+tools\audit\session_start_read_size.json:2
+tools\audit\rulings_sort_classification.json:1
+tools\audit\retirement_census_movement.json:4
+tools\audit\retirement_caller_check.json:240
+tools\audit\residue_discard_application.json:47
+tools\audit\reserved_word_scanner.json:1
+tools\audit\recognizer_establishment_sort.json:2
+tools\audit\ratified_document_check.json:1387
+tools\audit\ratification_surface_set.json:6
+tools\audit\ratification_surface_reaim.json:2
+tools\audit\prune_at_amendment_lint.json:3
+tools\audit\process_check_three_owner_rulings_dispatch.json:4
+tools\audit\process_check_reads6_dispatch.json:8
+tools\audit\process_check_reads5_dispatch.json:14
+tools\audit\process_check_reads4_dispatch.json:2
+tools\audit\process_check_reads3_dispatch.json:13
+tools\audit\process_check_reads2_dispatch.json:10
+tools\audit\process_check_reads1_dispatch.json:3
+tools\extra_scores_registry.json:1
+tools\audit\process_check_phase1_completion_inventory_dispatch.json:10
+tools\audit\process_check_phase1z_dispatch.json:13
+tools\audit\process_check_phase1y_dispatch.json:11
+tools\audit\process_check_phase1x_dispatch.json:13
+tools\audit\process_check_phase1v_dispatch.json:8
+tools\audit\process_check_phase1u_dispatch.json:4
+tools\audit\process_check_phase1s_dispatch.json:3
+tools\audit\process_check_phase1r_dispatch.json:3
+tools\audit\process_check_phase1q_dispatch.json:2
+tools\audit\process_check_phase1o_dispatch.json:7
+tools\audit\process_check_owner_rulings_homing_dispatch.json:3
+tools\audit\process_check_licensed_homing_dispatch.json:15
+tools\audit\process_check_guard_fix_and_item1d_dispatch.json:12
+tools\audit\process_check_guard_dialect_close_dispatch.json:12
+tools\audit\process_check_five_rulings_dispatch.json:25
+tools\audit\process_check_finish_line_item1_dispatch.json:11
+tools\audit\process_check_finish_line_item1b_dispatch.json:10
+tools\audit\process_check_document_routes_dispatch.json:3
+tools\audit\process_check_dispatch_scan.json:20
+tools\audit\process_check_delegations_and_corrections_dispatch.json:14
+tools\audit\process_check_commit_and_finish_line_dispatch.json:11
+tools\audit\process_check_census_delegation_dispatch.json:10
+tools\audit\process_check_c1_ruling_item1c_dispatch.json:9
+tools\audit\process_check.py:1
+tools\audit\post_split_archive.json:3
+tools\audit\phase3_gate_partition.json:2
+tools\audit\phase1_gate_readers.json:47
+tools\audit\phase1_finish_line.json:11
+tools\audit\phase1_completion_inventory.json:7
+tools\audit\period_stratum_split.json:13
+tools\audit\output_encoding_establishment.json:1
+tools\audit\output_encoding.py:1
+tools\audit\oi367_opening_correction.json:53
+tools\audit\oi357_production_arm_comparison.json:1
+tools\audit\oi357_partial_signature_establishment.json:1
+tools\audit\oi357_legacy_arm_same_commit_control.json:1
+tools\audit\oi356_parser_correction.json:37
+tools\audit\oi349_record_arm_precondition_probe.py:1
+tools\audit\oi349_record_arm_precondition_probe.json:1
+tools\audit\oi199\task1_predictions.md:1
+tools\audit\oi199\joint_firecount_large.json:1
+tools\audit\oi199\joint_firecount_fit.json:1
+tools\joint_estimator\weight_search_part_fold4_s7_8_9_10_11_12_13.json:1
+tools\joint_estimator\weight_search_part_fold4_s14_15_16_17_18_19_20.json:1
+tools\joint_estimator\weight_search_part_fold4_s0_1_2_3_4_5_6.json:1
+tools\audit\notation_surface\summary.json:1
+tools\joint_estimator\weight_search_part_fold3_s7_8_9_10_11_12_13.json:1
+tools\audit\notation_surface\gen_notation_surface_audit.py:2
+tools\joint_estimator\weight_search_part_fold3_s14_15_16_17_18_19_20.json:1
+tools\audit\nongating_apparatus_rows.json:16
+tools\joint_estimator\weight_search_part_fold3_s0_1_2_3_4_5_6.json:1
+tools\audit\local_patches_check.py:1
+tools\joint_estimator\weight_search_part_fold2_s7_8_9_10_11_12_13.json:1
+tools\joint_estimator\weight_search_part_fold2_s14_15_16_17_18_19_20.json:1
+tools\joint_estimator\weight_search_part_fold2_s0_1_2_3_4_5_6.json:1
+tools\joint_estimator\weight_search_part_fold1_s7_8_9_10_11_12_13.json:1
+tools\joint_estimator\weight_search_part_fold1_s14_15_16_17_18_19_20.json:1
+tools\joint_estimator\weight_search_part_fold1_s0_1_2_3_4_5_6.json:1
+tools\joint_estimator\weight_search_part_fold0_s7_8_9_10_11_12_13.json:1
+tools\joint_estimator\weight_search_part_fold0_s14_15_16_17_18_19_20.json:1
+tools\joint_estimator\weight_search_part_fold0_s0_1_2_3_4_5_6.json:1
+tools\joint_estimator\weight_search_part_all_s6_7_8_9_10.json:1
+tools\joint_estimator\weight_search_part_all_s16_17_18_19_20.json:1
+tools\joint_estimator\weight_search_part_all_s11_12_13_14_15.json:1
+tools\joint_estimator\weight_search_part_all_s0_1_2_3_4_5.json:1
+tools\audit\l5\pass1_partition.json:1
+tools\joint_estimator\weight_search.json:20
+tools\audit\l5\pass1_dispositions_instruments_core.json:1
+tools\audit\l5\pass1_dispositions_harness.json:1
+tools\audit\l5\gen_instruments_core_dispositions.py:1
+tools\audit\l5\gen_harness_dispositions.py:1
+tools\joint_estimator\search_run.py:1
+tools\joint_estimator\search_grading.json:1
+tools\joint_estimator\search_direct.py:2
+tools\audit\l4\pass1_dispositions_decoder.json:1
+tools\audit\changed_paths_defense_sizing_third_task1.json:287
+tools\audit\changed_paths_defense_sizing_third_task0.json:288
+tools\audit\changed_paths_defense_sizing_task0.json:288
+tools\audit\changed_paths_defense_sizing_second_task0.json:289
+tools\audit\changed_paths_defense_authored_ends_task0.json:288
+tools\audit\changed_paths.py:1
+tools\audit\census_movement_classification.json:3
+tools\audit\artifact_inventory.json:538
+tools\joint_estimator\content_dp_split.json:1
+tools\joint_estimator\adoption_record.json:1
+tools\joint_estimator\adoption_measure_b.py:1
+tools\joint_estimator\adoption_measure.py:1
+tools\audit\l0_l1_outgoing_population.json:12
+tools\audit\l0l1_exemplar_selection.json:1
+tools\audit\l0l1_boot_pack_freeze_and_render.json:1
+tools\audit\l0l1_boot_pack_extension.json:1
+tools\audit\defense_share.json:1
+tools\audit\july_screen_report.md:72
+tools\audit\july_screen.json:79
+tools\audit\instrument_arm_declaration_effect.py:1
+tools\audit\decisions_filter_classification.json:205
+tools\audit\instrument_arm_declaration_effect.json:1
+tools\audit\index_status_normalization.json:43
+tools\joint_estimator\gen_note_events.py:1
+tools\audit\guard_state.json:2
+tools\audit\guard_classification.json:4
+tools\joint_estimator\gen_label_tables.py:1
+tools\audit\guard_armed_check.py:1
+tools\audit\governing_surface_split_application.json:2
+tools\joint_estimator\gen_factor_presence.py:1
+tools\audit\governing_surface_spans_2026_09_07.json:5
+tools\joint_estimator\gen_content_dp_split.py:2
+tools\audit\governing_surface_spans.json:3
+tools\audit\governing_surface_readers.json:567
+tools\audit\gen_withheld_family_reading.py:2
+tools\audit\gen_test_construction_evidence.py:1
+tools\audit\gen_status_residue_move.py:1
+tools\audit\gen_status_batch_bound.py:166
+tools\audit\gen_status_archive_pass.py:5
+tools\audit\gen_specification_document_set.py:3
+tools\audit\gen_sole_carrier_subclass.py:1
+tools\audit\gen_session_start_read_size.py:4
+tools\audit\gen_rulings_sort.py:2
+tools\audit\gen_retirement_census_movement.py:5
+tools\audit\gen_retirement_caller_check.py:3
+tools\audit\gen_reserved_word_scanner.py:1
+tools\audit\gen_recognizer_establishment_sort.py:1
+tools\audit\gen_ratified_document_check.py:4
+tools\audit\gen_ratification_surface_set.py:2
+tools\audit\gen_post_split_archive.py:2
+tools\audit\gen_phase3_gate_partition.py:4
+tools\audit\gen_phase1_gate_readers.py:1
+tools\audit\gen_phase1_finish_line.py:9
+tools\audit\decisions\true_half_reach_rows.json:4
+tools\audit\gen_phase1_completion_inventory.py:5
+tools\audit\decisions\true_half_reach.json:1
+tools\audit\gen_period_stratum_split.py:7
+tools\audit\decisions\three_owner_rulings_edit_shape.json:1
+tools\audit\gen_oi357_partial_signature_establishment.py:1
+tools\joint_estimator\gen_wir_alignment_probe.py:1
+tools\audit\gen_nongating_apparatus_rows.py:18
+tools\audit\decisions\snapshot_2026-08-08_pre_home_classification_apply\backbone_decisions.json:136
+tools\audit\gen_l0_l1_outgoing_population.py:1
+tools\joint_estimator\gen_posterior_slice.py:1
+tools\audit\gen_l0l1_exemplar_selection.py:2
+tools\joint_estimator\gen_note_tables.py:1
+tools\audit\gen_july_screen.py:22
+tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\snapshot_manifest.json:1
+tools\audit\gen_inventory.py:1
+tools\audit\gen_guard_state.py:38
+tools\audit\gen_guard_classification.py:29
+tools\audit\gen_governing_surface_split.py:2
+tools\audit\gen_governing_surface_spans.py:3
+tools\audit\gen_governing_surface_readers.py:5
+tools\audit\gen_gating_row_sizing.py:18
+tools\joint_estimator\normalize.py:1
+tools\audit\gen_framework_untrusted_candidates.py:1
+tools\audit\gen_filing_convention_application.py:3
+tools\audit\gen_evidence_pin_membership.py:2
+tools\audit\gen_epoch_write_path.py:3
+tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\cluster_dispositions.json:3707
+tools\audit\gen_doc_change_candidates.py:3
+tools\audit\gen_discard_records.py:11
+tools\audit\gen_discard_reach_split.py:1
+tools\audit\gen_derivation_boot_pack.py:4
+tools\audit\gen_defense_share.py:2
+tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\cluster_dispositions.csv:3572
+tools\audit\gen_decisions_filter.py:5
+tools\audit\gen_deciding_act_recovery.py:3
+tools\audit\gen_claude_md_prune_backlog.py:2
+tools\audit\gen_claude_md_growth.py:3
+tools\audit\gen_claude_md_finer_surface.py:4
+tools\audit\decisions\snapshot_2026-08-04_pre_home_classification_apply\establishment.json:1
+tools\audit\gen_claude_md_finer_spans.py:2
+tools\audit\gen_claude_md_finer_archive.py:3
+tools\audit\decisions\route_homing_edit_shape.json:1
+tools\audit\gen_census_movement_classification.py:3
+tools\audit\decisions\retired_subject_moves.json:1
+tools\audit\gen_artifact_inventory_surface.py:4
+tools\audit\decisions\reads6_yield.json:1
+tools\audit\gen_artifact_inventory.py:6
+tools\audit\decisions\reads5_yield.json:1
+tools\audit\decisions\reads5_repack.json:2
+tools\audit\gating_row_sizing.json:18
+tools\audit\decisions\reads4_yield.json:1
+tools\audit\framework_untrusted_candidates.json:1
+tools\audit\decisions\reads4_oi326_application.json:3
+tools\audit\filing_convention_application.json:8
+tools\audit\decisions\reads3_yield.json:1
+tools\audit\evidence_pin_membership.json:3
+tools\audit\decisions\reads2_yield.json:1
+tools\audit\epoch_write_path.json:2
+tools\audit\decisions\reads1_yield.json:1
+tools\audit\decisions\r1_superseded_reach.json:5
+tools\audit\decisions\phase1w_legacy_verification.json:3
+tools\audit\decisions\phase1q_record_divergence.json:1
+tools\audit\decisions\phase1p_delegation_bar.json:5
+tools\audit\decisions\phase1g_triage.md:1
+tools\audit\decisions\outstanding_delegations.json:5
+tools\audit\decisions\oi333_repair.json:22
+tools\audit\decisions\manifest.json:670
+tools\audit\decisions\item1_rehome_blocker.json:1
+tools\audit\decisions\home_classification.json:4
+tools\audit\doc_change_candidates.json:140
+tools\audit\decisions\gen_true_half_reach_rows.py:4
+tools\audit\discard_records.json:19
+tools\audit\decisions\gen_true_half_reach.py:2
+tools\audit\discard_reach_split.json:1
+tools\audit\decisions\gen_route_homing_edit_shape.py:1
+tools\audit\decisions\gen_retired_subject_moves.py:1
+tools\audit\decisions\gen_reads6_yield.py:1
+tools\audit\decisions\gen_reads5_yield.py:1
+tools\audit\decisions\gen_reads5_repack.py:2
+tools\audit\derivation_exemplars\l0-l1\bwv1049_03_presto.provenance.md:1
+tools\audit\decisions\gen_reads4_yield.py:1
+tools\audit\decisions\gen_reads4_oi326_application.py:1
+tools\audit\decisions\gen_reads3_yield.py:1
+tools\audit\decisions\gen_reads2_yield.py:1
+tools\audit\decisions\gen_reads1_yield.py:1
+tools\audit\decisions\gen_r1_superseded_reach.py:7
+tools\audit\derivation_boot_pack.json:1
+tools\audit\decisions\gen_phase1w_legacy_verification.py:11
+tools\audit\decisions\gen_phase1q_snapshot_establishment.py:2
+tools\audit\decisions\gen_phase1q_record_divergence.py:1
+tools\audit\decisions\gen_phase1p_delegation_bar.py:5
+tools\joint_estimator\posterior_slice_ref.json:1
+tools\audit\decisions\gen_phase1n_reading_regime.py:1
+tools\audit\decisions\gen_phase1m_measurements.py:1
+tools\audit\decisions\gen_phase1g_triage.py:1
+tools\audit\decisions\gen_outstanding_delegations.py:3
+tools\audit\decisions\gen_oi333_repair.py:3
+tools\audit\decisions\gen_item1_rehome_blocker.py:2
+tools\audit\decisions\gen_homing_edit_shape.py:1
+tools\audit\decisions\gen_home_classification.py:1
+tools\audit\derivation_boot_pack\scoring-model\04_the_dispatch_protocol.md:17
+tools\audit\decisions\gen_finish_line_item1_routes.py:14
+tools\audit\decisions\gen_decision_harvest.py:1
+tools\audit\derivation_boot_pack\scoring-model\01_the_phase_definitions.md:1
+tools\audit\decisions\gen_decision_clusters.py:1
+tools\audit\decisions\gen_apply_field_diff.py:1
+tools\audit\decisions\finish_line_item1_routes.json:6
+tools\audit\derivation_boot_pack\l0-l1\09_the_empirical_findings_ledger.md:2
+tools\audit\derivation_boot_pack\l0-l1\04_the_dispatch_protocol.md:17
+tools\audit\derivation_boot_pack\l0-l1\01_the_phase_definitions.md:1
+tools\audit\derivation_boot_pack\harmony-boundary\04_the_dispatch_protocol.md:17
+tools\audit\derivation_boot_pack\harmony-boundary\01_the_phase_definitions.md:1
+tools\audit\decisions\decision_clusters.json:4058
+tools\audit\decisions\decision_clusters.csv:3561
+tools\audit\decisions\decision_candidates.json:9694
+tools\audit\decisions\decision_candidates.csv:4352
+tools\audit\decisions\cluster_manifest.json:1
+tools\audit\changed_paths_l2_verdict_pass_task3.json:287
+tools\audit\changed_paths_l2_verdict_pass_task0.json:288
+tools\audit\decisions\cluster_dispositions.json:3707
+tools\audit\changed_paths_l2_ruling_writeback_task3.json:287
+tools\audit\changed_paths_l2_ruling_writeback_task0.json:288
+tools\audit\decisions\cluster_dispositions.csv:3572
+tools\audit\changed_paths_l2_reading_file_task3.json:287
+tools\audit\changed_paths_l2_reading_file_task0.json:288
+tools\audit\changed_paths_l2_criterion_task3.json:287
+tools\audit\changed_paths_l2_criterion_task0.json:288
+tools\audit\changed_paths_l2_candidate_list_task3.json:287
+tools\audit\changed_paths_l2_candidate_list_task0.json:288
+tools\audit\decisions\backbone_decisions.json:442
+tools\audit\claude_md_rule_triage.py:9
+tools\audit\decisions\apply_soft_discard.py:2
+tools\audit\claude_md_rule_triage.json:1
+tools\audit\decisions\apply_residue_discard.py:2
+tools\audit\claude_md_prune_backlog.json:2
+tools\audit\decisions\apply_field_diff.json:1
+tools\audit\claude_md_growth_2026_09_07.json:2
+tools\audit\claude_md_finer_spans.json:2
+tools\audit\deciding_act_recovery.json:253
+tools\audit\corpus_arm_stamp.py:2
+tools\audit\claude_md_finer_readers.json:176
+tools\audit\corpus_arm_establishment.json:1
+tools\audit\claude_md_finer_archive.json:2
+tools\audit\corpus_arm_backstamp.json:1
+src\notation\tests\pipeline_snapshot_tests\pipeline_snapshot_tests.cpp:3
+src\composing\tests\inference_presentation_boundary_tests.cpp:1
+src\composing\analysis\section\sectionrecordadapter.h:1
+src\composing\analysis\CMakeLists.txt:1
+```
+
+Grep's summary line: `Found 50970 total occurrences across 1070 files.`
+
+### Expression 5 — `cc_[A-Za-z0-9_]+\.md`
+
+This expression also matches every `cc_instruction_*.md` name, so it overlaps with expression 4.
+
+```
+BUILD_AND_TEST_ARCHIVE.md:1
+ARCHITECTURE.md:7
+BUILD_AND_TEST.md:3
+cc_anchor_recompute_report.md:1
+cc_acquisition_round_report.md:2
+cc_audit_chordanalyzer_oracle_report.md:1
+cc_anchor_design_dossier.md:1
+cc_adoption_measurement_report.md:1
+cc_approval_styletag_swap_commit.md:1
+cc_audit_cadencekeyanchor_report.md:6
+cc_artifact_inventory_report.md:9
+cc_backfill_engravingbridge_report.md:1
+cc_backfill_l4_oracle_report.md:2
+cc_backfill_l3_keymode_report.md:1
+cc_batch_analyze_restore_report.md:1
+cc_audit_localmodulationdetector_report.md:1
+cc_anchor_redesign_dossier.md:2
+cc_audit_harmonicfunctionlayer_report.md:2
+cc_batch_analyze_unification_report.md:1
+cc_backlog_triage_report.md:1
+cc_c1_fold_report.md:6
+cc_cadence_key_investigation_dossier.md:1
+cc_corpus_hygiene_report.md:1
+cc_corpus_hygiene_report_corelli.md:2
+cc_corpus_wave1_report.md:1
+cc_corpus_wave2_report.md:1
+cc_corpus_wave3_report.md:3
+cc_deltaseven_7a_diagnostic_report.md:1
+cc_direct_metric_search_report.md:1
+cc_doctruth_gate_sync_report.md:1
+cc_dl3a_closeout_report.md:1
+cc_e0doubleprime_report.md:2
+cc_e0_fullspine_report.md:2
+cc_e0prime_report.md:2
+cc_eg2_probe_report.md:2
+cc_engage_c3_measurement_report.md:1
+cc_engage_fanout_measure_report.md:1
+cc_engage_gateA_unification_build_report.md:1
+cc_engage_information_loss_audit_report.md:1
+cc_engage_gateA_unification_design_report.md:2
+cc_engage_joint_key_chord_design_report.md:2
+cc_engage_l5_carry_selection_design_report.md:3
+cc_engage_stage3_joint_measure_report.md:4
+cc_engage_pre_l5_refactor_report.md:1
+cc_engage_structural_integrity_audit_report.md:3
+cc_exemplar_decode_report_2026_09_01.md:6
+cc_extension_build_report.md:1
+cc_fact_dependency_audit_report.md:8
+cc_foundations_verification_report.md:2
+cc_foundation_stage3b_report.md:1
+cc_framework_9_0_correction_report.md:6
+cc_functional_residual_dossier.md:1
+cc_gap_analysis_report.md:1
+cc_gap_analysis_v2_report.md:1
+cc_gate_rebaseline_verify_report.md:1
+cc_handoff_prepend_report_2026_09_01.md:4
+cc_grammar_completion_report.md:2
+cc_instruction_absent_root_guard.md:1
+cc_instruction_a8_metric_rebaseline_measure.md:2
+cc_instruction_absent_root_investigate.md:1
+cc_instruction_adoption_commit.md:1
+cc_instruction_acquisition_round.md:3
+cc_instruction_amendment_landing.md:6
+cc_instruction_anchor_recompute_impl.md:2
+cc_instruction_anchor_design_investigation.md:1
+cc_instruction_arm_and_site_fillin.md:2
+cc_instruction_audit_harmonicfunctionlayer.md:1
+cc_instruction_apply_the_bearing_cut.md:3
+cc_instruction_audit_cadencekeyanchor.md:1
+cc_instruction_audit_jointkeydecision.md:1
+cc_instruction_audit_chordanalyzer_oracle.md:1
+cc_instruction_anchor_redesign_investigation.md:3
+cc_instruction_artifact_inventory.md:3
+cc_instruction_audit_localmodulationdetector.md:1
+cc_instruction_architecture_opinion.md:1
+cc_instruction_audit_keymodeanalyzer.md:1
+cc_instruction_away_batch.md:2
+cc_instruction_away_execution.md:2
+cc_instruction_b2_subdominant_guard_build.md:2
+cc_instruction_backfill_engravingbridge.md:2
+cc_instruction_backfill_l4_oracle_gates.md:2
+cc_instruction_backfill_l3_keymode.md:2
+cc_instruction_backfill_formatter.md:2
+cc_instruction_batch_analyze_restore.md:1
+cc_instruction_baseline_reconciliation.md:1
+cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md:3
+cc_instruction_backlog_triage.md:2
+cc_instruction_brief_ratification_and_readme_boundary.md:4
+cc_instruction_backup_commit_and_push_2026_09_16.md:3
+cc_instruction_bridge_anchor_investigation.md:2
+cc_instruction_blind_output_landing.md:4
+cc_instruction_bridge_lookahead.md:1
+cc_instruction_batch_analyze_unification_audit.md:1
+cc_instruction_boot_pack_regeneration.md:5
+cc_instruction_batch_return_rulings.md:4
+cc_instruction_b_dominant_subdominant_guard_scoping.md:1
+cc_instruction_c1_reliability_instrumentation.md:3
+cc_instruction_c1_fold_and_explanation.md:5
+cc_instruction_carryfix_task2_addendum.md:1
+cc_instruction_carryfix2_resolver_identity.md:2
+cc_instruction_cadence_key_investigation.md:2
+cc_instruction_bwv301_diagnostic.md:2
+cc_instruction_cadence_precision_investigation.md:1
+cc_instruction_carryfix_dl5a_e0prime.md:2
+cc_instruction_census_delegation_and_commit.md:1
+cc_instruction_cascade_sweep.md:1
+cc_instruction_c1_ruling_and_item1c.md:1
+cc_instruction_clang_branch_coverage.md:1
+cc_instruction_claude_md_boot_membership_2026_09_07.md:2
+cc_instruction_claude_md_prune_at_amendment_2026_09_07.md:2
+cc_instruction_commit_and_finish_line.md:1
+cc_instruction_commit_reads3.md:1
+cc_instruction_comparison_harmony_boundary.md:3
+cc_instruction_comparison_l0_l1_fifth_2026_09_03.md:8
+cc_instruction_comparison_l0_l1_eighth_2026_09_04.md:10
+cc_instruction_comparison_l0_l1_2026_09_02.md:3
+cc_instruction_comparison_l0_l1_tenth_2026_09_04.md:6
+cc_instruction_comparison_l0_l1_sixth_2026_09_03.md:8
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md:12
+cc_instruction_comparison_l0_l1_second_2026_09_02.md:5
+cc_instruction_corpus_wave2_axis2_beds.md:2
+cc_instruction_dcml_parser_applied_root_fix.md:1
+cc_instruction_corpus_hygiene_corelli.md:1
+cc_instruction_comparison_l0_l1_ninth_2026_09_04.md:9
+cc_instruction_comparison_l0_l1_fourth_2026_09_03.md:8
+cc_instruction_d231_landing.md:7
+cc_instruction_corpus_hygiene_record.md:1
+cc_instruction_corpus_wave1_dlc_onboarding.md:1
+cc_instruction_corpus_hygiene.md:1
+cc_instruction_defense_share_sizing_2026_09_08.md:1
+cc_instruction_corpus_wave3.md:4
+cc_instruction_decoder_work_counts.md:1
+cc_instruction_defense_share_sizing_third_2026_09_08.md:5
+cc_instruction_consumer_build.md:1
+cc_instruction_deltaseven_7a_diagnostic.md:4
+cc_instruction_comparison_l0_l1_third_2026_09_02.md:4
+cc_instruction_defense_share_authored_ends_2026_09_08.md:2
+cc_instruction_defense_share_sizing_second_2026_09_08.md:5
+cc_instruction_deltaseven_phase_e_diagnostic.md:1
+cc_instruction_deltaseven_predecessor_diagnostic.md:2
+cc_instruction_design_pass_commit.md:1
+cc_instruction_desk_sim_commit.md:4
+cc_instruction_dl3a_closeout.md:3
+cc_instruction_doctruth_gate_sync.md:2
+cc_instruction_document_routes_and_d472.md:1
+cc_instruction_doc_pass_caps_and_gates.md:2
+cc_instruction_doc_recovery.md:1
+cc_instruction_doc_split.md:1
+cc_instruction_e0_addendum_carry_cap.md:1
+cc_instruction_doc_sync_layer1.md:2
+cc_instruction_e0_fullspine_measure.md:3
+cc_instruction_e2a.md:1
+cc_instruction_e2d_architecture_review.md:2
+cc_instruction_e2d.md:1
+cc_instruction_e2d_enable_v2_investigate.md:3
+cc_instruction_e2d_enable_v2.md:1
+cc_instruction_e2c.md:3
+cc_instruction_e2d_enable.md:4
+cc_instruction_e2d_v3c_investigate.md:1
+cc_instruction_eg2_establish_and_probe.md:3
+cc_instruction_engage_information_loss_audit.md:1
+cc_instruction_engage_fb_redesign_design.md:2
+cc_instruction_engage_gateA_unification_design.md:1
+cc_instruction_engage_c3_measurement.md:1
+cc_instruction_e2b_review.md:4
+cc_instruction_e3_investigate.md:1
+cc_instruction_e3.md:2
+cc_instruction_engage_fanout_measure.md:1
+cc_instruction_engage_l5_pedal_annotate_design.md:2
+cc_instruction_engage_joint_key_chord_design.md:2
+cc_instruction_engage_l5_carry_selection_design.md:2
+cc_instruction_engage_gateA_unification_build.md:1
+cc_instruction_engage_stage3_joint_measure.md:2
+cc_instruction_engage_structural_integrity_audit.md:1
+cc_instruction_engage_pre_l5_refactor_batch.md:1
+cc_instruction_engage_u1_uncap.md:1
+cc_instruction_evidence_candidate_pass.md:2
+cc_instruction_evidence_sizing.md:2
+cc_instruction_exemplar_decode_2026_09_01.md:2
+cc_instruction_extension_build.md:2
+cc_instruction_false_statements_pass.md:1
+cc_instruction_finish_line_item1.md:1
+cc_instruction_fact_dependency_audit.md:1
+cc_instruction_foundations_verification.md:1
+cc_instruction_finish_line_item1b.md:1
+cc_instruction_five_rulings.md:1
+cc_instruction_foundation_stage3a.md:1
+cc_instruction_framework_arrangement_landing.md:2
+cc_instruction_foundation_stage2a.md:1
+cc_instruction_framework_9_0_correction_2026_08_31.md:2
+cc_instruction_foundation_stage0.md:1
+cc_instruction_foundation_stage3b.md:2
+cc_instruction_gate_default_measure.md:1
+cc_instruction_functional_residual_investigation.md:8
+cc_instruction_grammar_completion.md:3
+cc_instruction_framework_pack_preparation.md:2
+cc_instruction_gate_r_verify_and_commit.md:2
+cc_instruction_guard_dialect_close_and_push.md:1
+cc_instruction_gap_analysis_spec_vs_impl.md:3
+cc_instruction_grammar_completion_addendum.md:2
+cc_instruction_handoff_prepend_2026_09_01.md:1
+cc_instruction_gate_rebaseline_verify.md:2
+cc_instruction_harness_group.md:1
+cc_instruction_informed_brief_landing.md:3
+cc_instruction_instrument_hygiene_sweep.md:1
+cc_instruction_guard_fix_and_item1d.md:1
+cc_instruction_item7_reach_derivation.md:1
+cc_instruction_invisible_notes_establishment_2026_09_01.md:2
+cc_instruction_jazz_nondeterminism.md:2
+cc_instruction_joint_architecture_investigation.md:2
+cc_instruction_joint_module_build.md:1
+cc_instruction_j_key_i.md:1
+cc_instruction_j_key_ii.md:1
+cc_instruction_j_key_iii_integration_investigation.md:1
+cc_instruction_j_key_iii_step2_wiring.md:2
+cc_instruction_j_key_iii_step3d_push_then_B.md:1
+cc_instruction_j_key_ii_redux.md:1
+cc_instruction_j_key_iii_step3_land.md:1
+cc_instruction_key_emission_headroom.md:2
+cc_instruction_keyregression_diagnosis.md:1
+cc_instruction_key_mode_inference_diagnosis.md:4
+cc_instruction_key_grading_and_calibration_rebaseline.md:4
+cc_instruction_key_grading_rebaseline.md:3
+cc_instruction_l0l1_boot_pack_second_2026_08_31.md:2
+cc_instruction_l1l3_delta_check_resync.md:1
+cc_instruction_l1l3_spec_sync.md:2
+cc_instruction_l1_l2_audit_blind_rerun.md:4
+cc_instruction_l1_l2_audit_pass1.md:1
+cc_instruction_l1_l2_audit_pass2.md:3
+cc_instruction_l1l4_review_tidy.md:1
+cc_instruction_l2_candidate_list_2026_09_05.md:3
+cc_instruction_l2_keyword_count_2026_09_04.md:2
+cc_instruction_l2_criterion_write_2026_09_04.md:2
+cc_instruction_l2_reading_file_2026_09_05.md:12
+cc_instruction_l2_ruling_writeback_2026_09_05.md:6
+cc_instruction_l2_verdict_pass_2026_09_05.md:12
+cc_instruction_l3_audit_pass1.md:2
+cc_instruction_l3_audit_pass2.md:2
+cc_instruction_l3_audit_pass2_relabel.md:4
+cc_instruction_l3_keyalt_forwardcarry.md:1
+cc_instruction_l3_key_decode_mechanism.md:4
+cc_instruction_l4_audit_pass1.md:2
+cc_instruction_l4_audit_pass1_oracle.md:4
+cc_instruction_l4_audit_pass1_decoder.md:3
+cc_instruction_l5_audit_pass1_grading_fitting.md:4
+cc_instruction_l5_audit_pass1.md:3
+cc_instruction_l4_audit_pass2.md:3
+cc_instruction_l4_audit_pass1_satellites.md:4
+cc_instruction_l6_dormant_build.md:2
+cc_instruction_L6_corpus_oracle_check.md:1
+cc_instruction_l5_audit_pass2.md:2
+cc_instruction_l5_audit_pass1_resolver.md:3
+cc_instruction_l5_audit_pass1_instruments.md:3
+cc_instruction_l5_audit_pass1_harness.md:3
+cc_instruction_layer1_implementation.md:3
+cc_instruction_layer1_audit.md:2
+cc_instruction_landing_2026_08_28.md:3
+cc_instruction_layer2_phase2_build.md:1
+cc_instruction_layer3_docsync_commit.md:1
+cc_instruction_layer1_coverage.md:1
+cc_instruction_layer3_keymode_audit.md:1
+cc_instruction_layer3_incrementA_indexing.md:1
+cc_instruction_layer3_decoder_audit.md:2
+cc_instruction_layer3_wiring.md:2
+cc_instruction_layer3_error_decomposition.md:2
+cc_instruction_layer2_implementation.md:2
+cc_instruction_layer3_decoder_followup.md:2
+cc_instruction_layer3_wiring_code.md:2
+cc_instruction_layer3_jazz_churn_investigation.md:1
+cc_instruction_layer3_characterization_scaffold.md:1
+cc_instruction_layer3_phase3_build.md:2
+cc_instruction_layer3_decoder_build.md:2
+cc_instruction_layer4_build_increment_b.md:1
+cc_instruction_layer3_sweep.md:2
+cc_instruction_layer3_incrementB_groundtruth.md:1
+cc_instruction_layer4_audit.md:1
+cc_instruction_layer3_tpc_keymeasure.md:1
+cc_instruction_layer4_build_increment_a.md:2
+cc_instruction_layer4_residual_decomposition.md:1
+cc_instruction_layer2_corpus_validation.md:1
+cc_instruction_ledger_admissions.md:3
+cc_instruction_ledger_build.md:4
+cc_instruction_layer1_phase1a_build.md:1
+cc_instruction_layer2_audit.md:1
+cc_instruction_layer4_b_fairkey.md:1
+cc_instruction_ledger_harvest.md:2
+cc_instruction_licensed_homing_and_oi344.md:2
+cc_instruction_manifest_prose_and_sizing_brief.md:4
+cc_instruction_marginals.md:1
+cc_instruction_measurement_chain_hardening.md:4
+cc_instruction_measurement_pipeline_audit.md:2
+cc_instruction_method_voiding_landing.md:2
+cc_instruction_metric_build.md:1
+cc_instruction_metric_build_l0l1.md:1
+cc_instruction_metric_decomposition.md:2
+cc_instruction_metric_design_investigation.md:2
+cc_instruction_metric_rebaseline_batch.md:2
+cc_instruction_misaligned_span_exclusion.md:1
+cc_instruction_mode_grading_adjudication_probe.md:2
+cc_instruction_metric_first_investigation.md:2
+cc_instruction_mode_key_chord_inference_probe.md:3
+cc_instruction_modulation_keypath_scoping.md:3
+cc_instruction_module_layering_assessment.md:1
+cc_instruction_notation_consumption_audit.md:3
+cc_instruction_notation_noteseam.md:1
+cc_instruction_notation_p4.md:1
+cc_instruction_notation_pstrings.md:1
+cc_instruction_notation_seams_2.md:2
+cc_instruction_notation_p7.md:1
+cc_instruction_oi150_baselines.md:1
+cc_instruction_oi155.md:1
+cc_instruction_oi158_oi125_oi159.md:1
+cc_instruction_note_table_fit.md:1
+cc_instruction_oi167_collection_tonic.md:2
+cc_instruction_oi160_and_push.md:1
+cc_instruction_oi168_fix.md:3
+cc_instruction_oi168_magnitude_measure.md:2
+cc_instruction_oi179_reply_and_phase2_surface.md:1
+cc_instruction_oi170_measure.md:2
+cc_instruction_oi199_joint_p3_p4.md:1
+cc_instruction_oi207_residual_pass.md:1
+cc_instruction_oi199_pass1.md:2
+cc_instruction_oi274_second_half.md:1
+cc_instruction_oi315_class_licence.md:2
+cc_instruction_oi315_licence_and_cells.md:1
+cc_instruction_oi375_width_correction.md:1
+cc_instruction_open_items_split.md:1
+cc_instruction_owner_rulings_homing.md:1
+cc_instruction_pack_section7_and_errata_state.md:1
+cc_instruction_pass_continuation_second.md:10
+cc_instruction_period_checks.md:3
+cc_instruction_phase1l_rulings_and_reads.md:4
+cc_instruction_phase1n_criterion_premise_and_reading_regime.md:1
+cc_instruction_phase1m_dispositions_and_measurements.md:1
+cc_instruction_phase1q_reclassification_and_guards.md:2
+cc_instruction_phase1s_stale_rules_and_enumeration.md:2
+cc_instruction_phase1p_home_rulings_and_mechanisms.md:2
+cc_instruction_phase1t_restatement_and_pruning.md:1
+cc_instruction_phase1o_gate_partition_and_probe_rerun.md:1
+cc_instruction_phase1r_commit_and_reclassify.md:2
+cc_instruction_phase1v_channel_ratification.md:2
+cc_instruction_phase1u_partition_record_and_directory.md:2
+cc_instruction_phase1w_legacy_mark_verification.md:2
+cc_instruction_phase1x_guard_visibility_and_commit.md:2
+cc_instruction_phase1y_corpus_arm_stamping.md:1
+cc_instruction_phase1z_commit_and_instrument_record.md:1
+cc_instruction_phase1_completion_inventory.md:1
+cc_instruction_phase1_delegations_and_corrections.md:1
+cc_instruction_phase2_architecture_support.md:1
+cc_instruction_phase5b_step0_investigate.md:1
+cc_instruction_phase5b_step1_g1.md:1
+cc_instruction_phase5b_step2final_o2_inherit.md:1
+cc_instruction_phase5b_step3_g6.md:1
+cc_instruction_phase5b_step4_g4_spellingpin.md:1
+cc_instruction_phase5b_step2_g2.md:1
+cc_instruction_phase5b_stepM_measure.md:1
+cc_instruction_phase5c_L5_close_review.md:1
+cc_instruction_phase5c_step1.md:1
+cc_instruction_phase5c_step2.md:1
+cc_instruction_phase5c_step2_resolution.md:1
+cc_instruction_phase5c_step2_amend.md:1
+cc_instruction_phase5c_step3.md:1
+cc_instruction_phase5c_step4.md:1
+cc_instruction_phase5c_step5.md:1
+cc_instruction_phase5c_step5_followup.md:1
+cc_instruction_phase5c_step6.md:1
+cc_instruction_phase5c_stepM.md:1
+cc_instruction_phase5c_stepM_followup.md:1
+cc_instruction_phase5_kmasks_derive.md:1
+cc_instruction_phase_close_2026_08_30.md:6
+cc_instruction_phase_close_second_2026_08_30.md:13
+cc_instruction_phase5_kmasks_complete.md:1
+cc_instruction_phase_d_investigation.md:1
+cc_instruction_phase_d_merger.md:2
+cc_instruction_phase_d_reanalysis.md:2
+cc_instruction_phase_e_commit_unification.md:1
+cc_instruction_phase_e_exploration_mode.md:1
+cc_instruction_phase_e_predecessor_survey.md:1
+cc_instruction_phase_e_rcb_bass_chord_tone_gate.md:2
+cc_instruction_phase_rulings_landing.md:3
+cc_instruction_phrase_boundary_build.md:1
+cc_instruction_pilot_preparation_withheld_family.md:7
+cc_instruction_placement_sample.md:2
+cc_instruction_placement_sample_redraw.md:30
+cc_instruction_plan_challenge.md:1
+cc_instruction_precision_headroom_investigation.md:2
+cc_instruction_plan_evaluation.md:3
+cc_instruction_preparation_eleventh.md:3
+cc_instruction_prefit_gates_commit.md:2
+cc_instruction_preparation_eighth.md:3
+cc_instruction_preparation_fifth.md:5
+cc_instruction_preparation_fourteenth.md:3
+cc_instruction_preparation_ninth.md:3
+cc_instruction_preparation_eleventh_amended.md:13
+cc_instruction_preparation_second.md:4
+cc_instruction_preparation_fourth.md:6
+cc_instruction_preparation_sixth.md:4
+cc_instruction_preparation_opening.md:5
+cc_instruction_preparation_seventh.md:5
+cc_instruction_preparation_third.md:4
+cc_instruction_preparation_tenth.md:3
+cc_instruction_preparation_twelfth.md:4
+cc_instruction_preparation_thirteenth.md:3
+cc_instruction_refactor_keyresolver_split.md:1
+cc_instruction_read_size_repair_and_rows_2026_09_07.md:2
+cc_instruction_register_reconciliation.md:7
+cc_instruction_refactor_keymodeanalyzer_split.md:1
+cc_instruction_reads_6.md:1
+cc_instruction_register_baseline_repair.md:6
+cc_instruction_reads_5.md:1
+cc_instruction_refactor_harmonicsegmenter_split.md:1
+cc_instruction_reads_4.md:1
+cc_instruction_regeneration_and_citation.md:1
+cc_instruction_refactor1_split_build.md:2
+cc_instruction_refactor_regiontonecollector_split.md:2
+cc_instruction_reads_1.md:2
+cc_instruction_reads_2.md:1
+cc_instruction_refactor_sectionanalyzer_split.md:1
+cc_instruction_return_continuation_10.md:2
+cc_instruction_reading_pass_landing_2026_08_31.md:1
+cc_instruction_return_continuation_13.md:2
+cc_instruction_reads_3.md:1
+cc_instruction_reading_pass_landing_second_2026_08_31.md:2
+cc_instruction_refactor1_chordanalyzer_split_design.md:1
+cc_instruction_return_continuation_11.md:2
+cc_instruction_resume_lapse_records.md:2
+cc_instruction_return_continuation_12.md:2
+cc_instruction_repair_direction_enumeration.md:1
+cc_instruction_return_continuation_14.md:2
+cc_instruction_return_continuation.md:2
+cc_instruction_return_continuation_3.md:2
+cc_instruction_return_continuation_6.md:2
+cc_instruction_return_continuation_2.md:2
+cc_instruction_return_continuation_4.md:2
+cc_instruction_return_continuation_9.md:2
+cc_instruction_return_continuation_7.md:2
+cc_instruction_return_continuation_5.md:2
+cc_instruction_return_continuation_8.md:2
+cc_instruction_roadmap_sync.md:1
+cc_instruction_ruled_inventory_landing.md:5
+cc_instruction_row_landing_and_oi141_arm_check.md:3
+cc_instruction_ruling69_discard_input.md:1
+cc_instruction_scoring_model_pass.md:1
+cc_instruction_secondary_dominant_refit.md:2
+cc_instruction_second_backup_commit_and_push_2026_09_16.md:5
+cc_instruction_second_backup_rerun_2026_09_16.md:5
+cc_instruction_second_backup_rerun_two_2026_09_16.md:6
+cc_instruction_second_landing_2026_08_28.md:8
+cc_instruction_second_passage_withheld.md:4
+cc_instruction_sitting_landing_second_2026_09_01.md:9
+cc_instruction_sitting_outcome_and_bound.md:1
+cc_instruction_sizing_output_landing.md:3
+cc_instruction_sizing_brief_ruled.md:3
+cc_instruction_sizing_tests.md:2
+cc_instruction_sizing_pack_preparation.md:3
+cc_instruction_sizing_regen_and_readme.md:1
+cc_instruction_stage1a_functionlayer_tests.md:2
+cc_instruction_spec_impl_delta_L1L4.md:1
+cc_instruction_stage0_hygiene.md:1
+cc_instruction_slot_sweep_2026_09_01.md:2
+cc_instruction_stage2_1_phase4c_move.md:1
+cc_instruction_stage1c_segmentation_key_tests.md:2
+cc_instruction_stage2_2ii_ship_package.md:2
+cc_instruction_stage2_2_ab_exploration.md:3
+cc_instruction_stage2_2a_corpus_hardening.md:2
+cc_instruction_stage2_3_diagnose_production_view.md:1
+cc_instruction_stage1d_metric_script_tests.md:1
+cc_instruction_stage2_4_divergence_decisions.md:1
+cc_instruction_stage1b_gate_tests.md:2
+cc_instruction_stage2_5_p3_profile.md:1
+cc_instruction_stage2_4_ratification.md:1
+cc_instruction_stage3_1b_decode_once.md:2
+cc_instruction_stage3_1b_revision.md:1
+cc_instruction_stage3_1_beam1_decoder.md:1
+cc_instruction_stage3_2_design.md:1
+cc_instruction_stage3_3_signal_migration.md:1
+cc_instruction_stage3_4ii_c1_removal.md:3
+cc_instruction_stage3_decoder_design.md:1
+cc_instruction_stage3_4i_gate_retirement_dossier.md:1
+cc_instruction_stage4a_declared_mode_import_fix.md:2
+cc_instruction_stage4a_commit_and_stage4b_scoping.md:3
+cc_instruction_stage4b_i_demote_and_measure.md:2
+cc_instruction_stage4b_ii_strengthen.md:1
+cc_instruction_stage4c_i_cadence_detector_measure.md:2
+cc_instruction_stage4b_i_commit.md:2
+cc_instruction_stage4c_iii_refine_detection.md:2
+cc_instruction_stage5_phase0.md:2
+cc_instruction_stage4d_i_modulation_detector_measure.md:1
+cc_instruction_stage5_phase2_2b.md:4
+cc_instruction_stage5_phase3.md:3
+cc_instruction_stage5_phase2_2d.md:3
+cc_instruction_stage4_design.md:2
+cc_instruction_stage5_phase2_2a.md:3
+cc_instruction_stage5_phase2_3.md:3
+cc_instruction_stage5_phase2_2e.md:4
+cc_instruction_stage5_phase1.md:3
+cc_instruction_stage5_phase2_2c.md:4
+cc_instruction_stage5_r10b_ratification.md:7
+cc_instruction_stage5_r10_assembly.md:4
+cc_instruction_stage5_phase2_1.md:3
+cc_instruction_status_forward_bound_2026_09_07.md:11
+cc_instruction_stage6_tonic_i_labeler_measure.md:1
+cc_instruction_status_touch_and_oi141_premise_repin.md:6
+cc_instruction_step1_pc_primitive_extraction.md:2
+cc_instruction_status_forward_bound_second_2026_09_07.md:19
+cc_instruction_step2_merge_predicate_dedup.md:1
+cc_instruction_step3_key_investigation.md:1
+cc_instruction_stepback.md:1
+cc_instruction_step_zero_exclusion_and_pass_continuation.md:8
+cc_instruction_stop_record_and_enumeration.md:1
+cc_instruction_styletag_swap.md:1
+cc_instruction_successor_plan_landing_and_step_zero.md:6
+cc_instruction_term_grounding_inventory.md:1
+cc_instruction_term_inventory.md:2
+cc_instruction_test_backfill.md:2
+cc_instruction_third_landing_2026_08_28.md:4
+cc_instruction_three_owner_rulings.md:1
+cc_instruction_tpc_capability_build.md:3
+cc_instruction_tpc_capability_verify.md:2
+cc_instruction_tonicization_modulation_metric_check.md:2
+cc_instruction_tsv_oracle_addendum.md:1
+cc_instruction_tree_repair_and_coverage.md:1
+cc_instruction_types_header_build.md:2
+cc_instruction_tsv_oracle_infrastructure.md:3
+cc_instruction_uncertain_resolver_measurement.md:1
+cc_instruction_types_header_investigation.md:1
+cc_instruction_vl_docs_fold.md:4
+cc_instruction_union_branch_coverage.md:1
+cc_instruction_vl_foundation_build.md:1
+cc_instruction_unit_correction_redraw.md:5
+cc_instruction_wave2_dependency_reconciliation.md:1
+cc_instruction_wave3_addendum.md:3
+cc_instruction_vocabulary_build.md:2
+cc_instruction_vl_idiom_discovery.md:1
+cc_instruction_worth_test.md:2
+cc_instruction_withheld_family_correction.md:4
+cc_instrument_hygiene_sweep_report.md:1
+cc_invisible_notes_establishment_report_2026_09_01.md:6
+cc_jazz_nondeterminism_report.md:1
+cc_joint_architecture_dossier.md:2
+cc_j_key_iii_step2_report.md:1
+cc_j_key_iii_integration_dossier.md:3
+cc_j_key_ii_report.md:1
+cc_j_key_i_report.md:1
+cc_key_grading_and_calibration_rebaseline_report.md:3
+cc_key_mode_inference_diagnosis_report.md:1
+cc_key_grading_rebaseline_report.md:1
+cc_l0l1_boot_pack_second_report.md:2
+cc_l0l1_boot_pack_report.md:2
+cc_l3_audit_pass2_report.md:1
+cc_l3_key_decode_mechanism_report.md:2
+cc_l0l1_exemplar_selection_report.md:3
+cc_l1l2_audit_pass1_report.md:1
+cc_l1l2_audit_blind_rerun_report.md:2
+cc_l1l3_spec_sync_report.md:1
+cc_l4_audit_pass1_oracle_report.md:2
+cc_l3_audit_pass2_relabel_report.md:4
+cc_l1l2_audit_pass2_report.md:1
+cc_l4_audit_pass1_satellites_report.md:2
+cc_l4_audit_pass1_decoder_report.md:3
+cc_l4_audit_pass1_report.md:1
+cc_l5_audit_pass1_grading_fitting_report.md:2
+cc_l4_audit_pass2_report.md:1
+cc_l5_audit_pass1_harness_report.md:2
+cc_l5_audit_pass1_instruments_report.md:2
+cc_l5_audit_pass1_report.md:1
+cc_l5_audit_pass1_resolver_report.md:2
+cc_l5_audit_pass2_report.md:1
+cc_l6_build_report.md:1
+cc_label_table_fit_report.md:1
+```
+
+*(Expression 5, continued.)*
+
+```
+cc_layer1_impl_report.md:1
+cc_layer2_impl_report.md:1
+cc_layer3_decoder_build_report.md:1
+cc_layer3_decoder_audit_dossier.md:2
+cc_layer3_keymode_audit_dossier.md:1
+cc_layer3_tpc_keymeasure_report.md:1
+cc_layer3_sweep_report.md:1
+cc_layer3_jazz_churn_investigation.md:2
+cc_layer4_audit_dossier.md:2
+cc_layer3_wiring_design_dossier.md:4
+cc_layer3_incrementB_report.md:1
+cc_layer3_wiring_report.md:1
+cc_layer4_build_b_report.md:1
+cc_layer4_build_a_report.md:1
+cc_metric_first_dossier.md:2
+cc_measurement_chain_hardening_report.md:1
+cc_metric_rebaseline_report.md:1
+cc_mode_key_chord_probe_report.md:5
+cc_modulation_keypath_scoping_dossier.md:1
+cc_oi155_report.md:1
+cc_note_table_fit_report.md:2
+cc_notation_consumption_audit_report.md:1
+cc_mscz_container_establishment_report.md:4
+cc_oi199_joint_p3_p4_report.md:2
+cc_oi170_measure_report.md:1
+cc_oi168_magnitude_report.md:1
+cc_oi168_fix_report.md:3
+cc_phase5b_step2final_report.md:1
+cc_phase5b_step4_report.md:1
+cc_oi207_residual_pass_report.md:1
+cc_phase5b_step0_report.md:6
+cc_phase1d_enumeration_wave_report.md:1
+cc_phase5b_step2_report.md:1
+cc_oi160_report.md:5
+cc_phase2_architecture_support_report.md:2
+cc_phase5c_L5_close_review.md:2
+cc_phase5b_step3_report.md:1
+cc_phase5c_stepM_report.md:2
+cc_oi199_pass1_report.md:4
+cc_phase_d_investigation_report.md:2
+cc_phase5b_stepM_measure_report.md:1
+cc_phase_e_predecessor_survey_report.md:5
+cc_phrase_boundary_build_report.md:1
+cc_precision_headroom_dossier.md:1
+cc_refactor1_split_build_report.md:1
+cc_refactor_regiontonecollector_report.md:2
+cc_report_amendment_landing.md:19
+cc_report_arm_and_site_fillin.md:2
+cc_report_batch_return_rulings.md:2
+cc_report_boot_pack_freeze_l0l1_2026_09_04.md:1
+cc_report_backup_commit_and_push_2026_09_16.md:740
+cc_report_blind_output_landing.md:2
+cc_report_cascade_sweep.md:7
+cc_report_comparison_harmony_boundary.md:1
+cc_report_brief_ratification_and_readme_boundary.md:2
+cc_report_claude_md_prune_at_amendment_2026_09_07.md:1
+cc_report_boot_pack_regeneration.md:8
+cc_report_claude_md_boot_membership_2026_09_07.md:1
+cc_report_comparison_l0_l1_fifth_2026_09_03.md:1
+cc_report_comparison_l0_l1_2026_09_02.md:2
+cc_report_comparison_l0_l1_third_2026_09_02.md:1
+cc_report_comparison_l0_l1_fourth_2026_09_03.md:1
+cc_report_comparison_l0_l1_eighth_2026_09_04.md:1
+cc_report_comparison_l0_l1_seventh_2026_09_03.md:1
+cc_report_comparison_l0_l1_ninth_2026_09_04.md:1
+cc_report_comparison_l0_l1_tenth_2026_09_04.md:1
+cc_report_comparison_l0_l1_sixth_2026_09_03.md:1
+cc_report_d231_landing.md:5
+cc_report_comparison_l0_l1_second_2026_09_02.md:2
+cc_report_defense_share_authored_ends_2026_09_08.md:3
+cc_report_defense_share_sizing_2026_09_08.md:3
+cc_report_defense_share_sizing_second_2026_09_08.md:4
+cc_report_defense_share_sizing_third_2026_09_08.md:3
+cc_report_framework_arrangement_landing.md:4
+cc_report_framework_pack_preparation.md:3
+cc_report_informed_brief_landing.md:8
+cc_report_l2_candidate_list_2026_09_05.md:5
+cc_report_l2_criterion_write_2026_09_04.md:1
+cc_report_l2_keyword_count_2026_09_04.md:2
+cc_report_l2_reading_file_2026_09_05.md:6
+cc_report_l2_ruling_writeback_2026_09_05.md:3
+cc_report_l2_verdict_pass_2026_09_05.md:9
+cc_report_ledger_admissions.md:10
+cc_report_ledger_harvest.md:6
+cc_report_landing_2026_08_28.md:155
+cc_report_ledger_build.md:20
+cc_report_phase_close_2026_08_30.md:5
+cc_report_pilot_preparation.md:2
+cc_report_pass_continuation_second.md:4
+cc_report_phase_rulings_landing.md:6
+cc_report_method_voiding_landing.md:5
+cc_report_phase_close_second_2026_08_30.md:7
+cc_report_manifest_prose_and_sizing_brief.md:2
+cc_report_plan_evaluation.md:7
+cc_report_preparation_fourteenth.md:3
+cc_report_preparation_eighth.md:2
+cc_report_plan_challenge.md:3
+cc_report_preparation_eleventh_amended.md:5
+cc_report_preparation_ninth.md:2
+cc_report_preparation_eleventh.md:4
+cc_report_preparation_fifth.md:6
+cc_report_preparation_opening.md:4
+cc_report_preparation_fourth.md:7
+cc_report_preparation_second.md:3
+cc_report_preparation_seventh.md:4
+cc_report_placement_sample_redraw.md:16
+cc_report_preparation_sixth.md:4
+cc_report_preparation_tenth.md:3
+cc_report_preparation_third.md:3
+cc_report_placement_sample.md:13
+cc_report_preparation_thirteenth.md:3
+cc_report_preparation_twelfth.md:3
+cc_report_reading_pass_landing_2026_08_31.md:2
+cc_report_reading_pass_landing_second_2026_08_31.md:5
+cc_report_read_size_repair_and_rows_2026_09_07.md:1
+cc_report_regeneration_and_citation.md:6
+cc_report_register_baseline_repair.md:9
+cc_report_ruled_inventory_landing.md:3
+cc_report_register_reconciliation.md:12
+cc_report_second_backup_commit_and_push_2026_09_16.md:165
+cc_report_second_backup_rerun_2026_09_16.md:167
+cc_report_second_landing_2026_08_28.md:10
+cc_report_second_passage_withheld.md:2
+cc_report_sizing_output_landing.md:3
+cc_report_sizing_pack_preparation.md:2
+cc_report_sizing_brief_ruled.md:4
+cc_report_sizing_tests.md:7
+cc_report_status_forward_bound_2026_09_07.md:15
+cc_report_status_forward_bound_second_2026_09_07.md:15
+cc_report_step_zero_return_executed.md:2
+cc_report_third_landing_2026_08_28.md:8
+cc_report_step_zero.md:2
+cc_report_withheld_family_correction.md:2
+cc_secondary_dominant_refit_report.md:1
+cc_report_unit_correction_redraw.md:16
+cc_sitting_landing_second_report_2026_09_01.md:26
+cc_sitting_landing_report_2026_09_01.md:499
+cc_slot_sweep_report_2026_09_01.md:6
+cc_stage1a_report.md:1
+cc_stage1c_report.md:2
+cc_stage2a_wip_triage_report.md:7
+cc_stage2_2ii_report.md:1
+cc_stage3_2_design_report.md:5
+cc_stage3_4i_dossier.md:2
+cc_stage4b_scoping_dossier.md:2
+cc_stage4b_i_report.md:2
+cc_stage4b_ii_report.md:1
+cc_stage4a_mode_import_report.md:1
+cc_stage5_phase1_report.md:3
+cc_stage5_phase2_2d_report.md:4
+cc_stage5_phase2_2a_report.md:3
+cc_stage4c_i_report.md:2
+cc_stage5_phase0_report.md:6
+cc_stage5_phase2_2c_report.md:4
+cc_stage5_phase2_2b_report.md:4
+cc_stage5_phase2_1_report.md:3
+cc_stage5_r10_assembly_report.md:3
+cc_stage6_tonic_i_report.md:1
+cc_stage5_phase2_3_report.md:1
+cc_stage5_r10b_ratification_report.md:3
+cc_term_inventory_report.md:1
+cc_stage5_phase2_2e_report.md:2
+cc_test_backfill_report.md:1
+cc_tpc_capability_verify_report.md:2
+cc_tpc_capability_build_report.md:1
+cc_types_header_build_report.md:1
+cc_tsv_oracle_report.md:1
+cc_wave1_finalize_report.md:3
+cc_vocabulary_build_report.md:1
+cc_vl_foundation_build_report.md:1
+cc_uncertain_resolver_measurement_report.md:3
+CLAUDE.md:28
+CLAUDE_ARCHIVE.md:5
+cc_wave3_addendum_report.md:2
+cowork_arm_and_site_fillin_2026_08_28.md:1
+cc_wave2_dependency_reconciliation_report.md:2
+cowork_audit_cadencekeyanchor.md:1
+cowork_audit_protocol.md:17
+cowork_audit_sectioncadencedetection.md:1
+cowork_blind_session_brief_harmony_boundary.md:2
+cowork_away_returns.md:201
+cowork_blind_session_brief_framework.md:1
+cowork_blind_session_brief_scoring_model.md:1
+cowork_census_full_needs_audit.md:2
+cowork_confidence_contract.md:3
+cowork_eg1_premise_checks.md:3
+cowork_delta_check_dispositions.md:1
+cowork_derived_specification_l0_l1_2026_09_03.md:2
+cowork_evaluation_boot_list_2026_08_21.md:5
+cowork_declared_readings_surface_2026_08_27.md:2
+cowork_empirical_findings_candidates.md:63
+cowork_fb_redesign_design.md:3
+cowork_factorization_desk_simulation.md:6
+cowork_engage_arc_plan.md:1
+cowork_framework_phase_retrospective_2026_08_29.md:2
+cowork_eg2_scoping.md:9
+cowork_gateA_unification_design.md:3
+cowork_handoff_entry_eighty_eight.md:2
+cowork_handoff_entry_eighty_five.md:5
+cowork_handoff_archive.md:172
+cowork_handoff_entry_eighty_six.md:1
+cowork_handoff.md:297
+cowork_handoff_entry_eighty_two.md:1
+cowork_handoff_entry_ninety.md:1
+cowork_handoff_entry_ninety_eight.md:1
+cowork_handoff_entry_ninety_five.md:2
+cowork_handoff_entry_ninety_seven.md:2
+cowork_handoff_entry_ninety_one.md:1
+cowork_handoff_entry_ninety_three.md:1
+cowork_handoff_entry_ninety_six.md:2
+cowork_handoff_entry_ninety_two.md:1
+cowork_handoff_entry_one_hundred_and_eight.md:3
+cowork_handoff_entry_one_hundred_and_eighty_eight.md:3
+cowork_handoff_entry_one_hundred_and_fifty.md:4
+cowork_handoff_entry_one_hundred_and_fifty_one.md:1
+cowork_handoff_entry_one_hundred_and_five.md:3
+cowork_handoff_entry_one_hundred_and_forty_eight.md:4
+cowork_handoff_entry_one_hundred_and_forty_seven.md:4
+cowork_handoff_entry_one_hundred_and_forty_nine.md:3
+cowork_handoff_entry_one_hundred_and_forty_five.md:4
+cowork_handoff_entry_one_hundred_and_forty_six.md:1
+cowork_handoff_entry_one_hundred_and_nine.md:13
+cowork_handoff_entry_one_hundred_and_six.md:2
+cowork_handoff_entry_one_hundred_and_ten.md:1
+cowork_informed_brief_provenance.md:2
+cowork_instruction_return_session.md:1
+cowork_idiom_discovery_findings.md:1
+cowork_information_loss_audit.md:1
+cowork_informed_session_brief_framework.md:2
+cowork_key_drift_research_grounding.md:1
+cowork_joint_key_chord_design.md:6
+cowork_key_layer_design_opening.md:2
+cowork_l1l3_stabilization_plan.md:1
+cowork_l1l4_architecture_audit.md:1
+cowork_l1l4_completion_ledger.md:1
+cowork_key_mode_inference_diagnosis.md:1
+cowork_l1l4_review_note.md:2
+cowork_l1l4_review_charter.md:1
+cowork_l2_boot_list_surface_2026_09_05.md:3
+cowork_layer1_tone_collection_design.md:1
+cowork_layer3_keymode_design.md:8
+cowork_layer3_reachback_design.md:1
+cowork_layer3_keymode_impl_design.md:1
+cowork_layer5_function_methods.md:1
+cowork_layer5_function_design.md:4
+cowork_layer5_engagement_design.md:6
+cowork_layer4_chordsymbol_design.md:1
+cowork_notation_output_contract.md:1
+cowork_phase5_branch_backfill_spec.md:1
+cowork_layer6_grouping_design.md:2
+cowork_mode_key_chord_inference_discussion.md:2
+cowork_notation_adoption_increment.md:4
+cowork_placement_sample_sealed_third_2026_08_27.md:52
+cowork_memory_pointer_cut_2026_09_07.md:2
+cowork_placement_sample_sealed_redraw_2026_08_27.md:53
+cowork_phrase_boundary_design.md:2
+cowork_owner_rulings_2026_08_07.md:2
+cowork_phase1_commissioning_surface_2026_08_11.md:2
+cowork_polyphony_phrase_harmony_research.md:1
+cowork_prediction_tabulation_2026_08_21.md:3
+cowork_phase2_architecture_review.md:2
+cowork_placement_sample_sealed_2026_08_27.md:4
+cowork_premise_gate_reflection.md:12
+cowork_redraw_findings_surface_2026_08_27.md:2
+cowork_register_rule_c_suspension_2026_08_28.md:2
+cowork_register_blocker_surface_2026_08_28.md:1
+cowork_report_plan_evaluation_2026_08_21.md:1
+cowork_rulings_2026_08_11_sixteenth_stop.md:2
+cowork_rulings_2026_08_11_fifteenth_stop.md:1
+cowork_rulings_2026_08_15_batch_return.md:5
+cowork_rulings_2026_08_15_period_start.md:1
+cowork_rulings_2026_08_13_eighteenth_stop.md:1
+cowork_rulings_2026_08_15_inventory_sitting.md:2
+cowork_rulings_2026_08_15_phase_definition_sitting.md:2
+cowork_rulings_2026_08_16_preparation_return.md:9
+cowork_rulings_2026_08_17_callers_sitting.md:2
+cowork_rulings_2026_08_17_eighth_return.md:1
+cowork_rulings_2026_08_17_governing_surface_split.md:2
+cowork_rulings_2026_08_17_ninth_return.md:2
+cowork_rulings_2026_08_17_residue_sitting.md:1
+cowork_rulings_2026_08_17_rulings_sort_sitting.md:1
+cowork_rulings_2026_08_17_seventh_return.md:2
+cowork_rulings_2026_08_17_sixth_return.md:1
+cowork_rulings_2026_08_18_eleventh_stop.md:2
+cowork_rulings_2026_08_18_tenth_return.md:1
+cowork_rulings_2026_08_19_eleventh_return.md:3
+cowork_rulings_2026_08_19_thirteenth_return.md:1
+cowork_rulings_2026_08_19_twelfth_return.md:1
+cowork_rulings_2026_08_21_evaluation_brief_sitting.md:1
+cowork_rulings_2026_08_22_deriving_side_sitting.md:1
+cowork_rulings_2026_08_22_member_two_leak_sitting.md:1
+cowork_rulings_2026_08_22_pilot_order_sitting.md:1
+cowork_rulings_2026_08_22_step_zero_return_sitting.md:7
+cowork_rulings_2026_08_22_withheld_family_sitting.md:1
+cowork_rulings_2026_08_23_member_two_second_leak_sitting.md:1
+cowork_rulings_2026_08_23_brief_validation_sitting.md:1
+cowork_rulings_2026_08_24_sizing_pilot_sitting.md:1
+cowork_rulings_2026_08_25_regress_termination_sitting.md:1
+cowork_rulings_2026_08_26_amendment_landing_sitting.md:4
+cowork_rulings_2026_08_26_ledger_dispositions_sitting.md:4
+cowork_rulings_2026_08_27_framework_authoring_sitting.md:2
+cowork_rulings_2026_08_25_second_vector_sitting.md:1
+cowork_rulings_2026_08_26_ledger_form_sitting.md:3
+cowork_rulings_2026_08_26_sizing_tests_sitting.md:7
+cowork_rulings_2026_08_28_ledger_precondition_sitting.md:3
+cowork_rulings_2026_08_27_stopped_strata_sitting.md:2
+cowork_rulings_2026_08_28_informed_framework_sitting.md:2
+cowork_rulings_2026_08_27_redraw_findings_sitting.md:2
+cowork_rulings_2026_08_28_informed_brief_points_sitting.md:2
+cowork_rulings_2026_09_05_l2_withheld_family_sitting.md:1
+cowork_rulings_2026_08_31_decision_surface_sitting.md:17
+cowork_rulings_2026_09_05_l2_boot_list_sitting.md:1
+cowork_rulings_2026_08_30_detail_phase_opening_sitting.md:2
+cowork_rulings_2026_08_28_unit_question_sitting.md:3
+cowork_ruling_guard_family_2026_08_08.md:1
+cowork_rulings_oi345_oi342_2026_08_07.md:1
+cowork_score_census.md:12
+cowork_rulings_2026_09_08_extent_rule_sitting.md:4
+cowork_scratch_2026_08_11\cowork_oi141_sitting_pack.md:7
+cowork_sensitive_cell_probe.md:1
+cowork_scratch_2026_08_11\README.md:3
+cowork_specification_reconstruction_plan_successor_2026_08_21.md:2
+cowork_scratch_2026_08_11\draft_row_status_md_unreadable.md:2
+cowork_scratch_2026_08_11\cowork_verification_plan_continuation_14.md:1
+cowork_stage5_fitter_design.md:33
+cowork_stopped_strata_surface_2026_08_27.md:5
+cowork_structural_integrity_audit.md:1
+cowork_take_rule_surface_2026_08_27.md:2
+cowork_target_architecture.md:1
+cowork_tpc_capability_design.md:3
+cowork_term_theory_grounding.md:1
+cowork_uncertain_resolver_investigation.md:1
+cowork_types_header_design.md:1
+cowork_union_search_record.md:1
+cowork_unit_question_surface_2026_08_28.md:1
+DEFECT_TYPES.md:4
+cowork_verification_plan_preparation_tenth.md:5
+DECISIONS_ARCHIVE.md:1
+DECISIONS.md:2
+cowork_voiceleading_axis_design.md:8
+EMPIRICAL_FINDINGS_LEDGER.md:3
+decisions\group_A.md:12
+docs\architecture_joint_inference.md:1
+docs\back_half_design.md:7
+docs\beam_widening_design.md:19
+decisions\group_C.md:32
+docs\decoder_design.md:5
+decisions\group_B.md:1
+decisions\group_I.md:4
+docs\implementation_roadmap.md:16
+decisions\group_H.md:24
+docs\key_detection_baroque_partial_signature.md:2
+docs\key_path_design.md:4
+decisions\group_G.md:17
+decisions\group_U.md:7
+decisions\group_F.md:8
+decisions\group_T.md:43
+decisions\group_M.md:15
+decisions\group_S.md:6
+decisions\group_L.md:4
+decisions\group_Q.md:8
+decisions\group_K.md:12
+decisions\group_P.md:1
+decisions\group_J.md:6
+docs\precision_metric_design.md:3
+docs\redesign_plan.md:10
+docs\stage4c_cadence_key_design.md:2
+docs\stage4b_design.md:2
+docs\score_inventory.md:9
+docs\stage4d_local_modulation_design.md:1
+docs\scoped_joint_design.md:2
+docs\scoring_model.md:17
+idiom_discovery\run_vl_feature_space.py:1
+OPEN_ITEMS.md:78
+PHASE_CONSTRAINTS_AND_STOP_RULES.md:2
+OPEN_ITEMS_ARCHIVE.md:49
+records\cc\instructions\cc_instruction_root_records_reference_map_2026_09_16.md:2
+ratification_surfaces\cowork_claude_md_finer_split_2026_08_17.md:3
+ratification_surfaces\cowork_artifact_inventory_ruling_surface.md:189
+ratification_surfaces\cowork_deciding_act_recovery_surface_2026_08_16.md:29
+ratification_surfaces\cowork_d580_transfer_fact_gathering_2026_08_09.md:1
+ratification_surfaces\cowork_comparison_l0_l1_reading.md:68
+ratification_surfaces\cowork_comparison_harmony_boundary_reading.md:2
+ratification_surfaces\cowork_decisions_pending_ratification_7.md:12
+ratification_surfaces\cowork_decisions_pending_ratification_6.md:2
+ratification_surfaces\cowork_decisions_pending_ratification_4.md:3
+ratification_surfaces\cowork_withheld_family_l2_reading.md:2
+ratification_surfaces\cowork_decisions_pending_ratification_2.md:1
+ratification_surfaces\cowork_withheld_family_harmony_boundary_reading.md:3
+ratification_surfaces\cowork_withheld_family_framework_reading.md:2
+ratification_surfaces\cowork_decisions_pending_ratification.md:2
+ratification_surfaces\cowork_standing_treatment_surface_2026_08_16.md:4
+ratification_surfaces\cowork_decisions_filter_surface_2026_08_15.md:28
+ratification_surfaces\cowork_sizing_tests_reading.md:1
+ratification_surfaces\cowork_sizing_pack_leak_list_reading.md:2
+ratification_surfaces\cowork_phase_definition_surface_2026_08_15.md:2
+ratification_surfaces\cowork_perspective_inventory_ratification.md:2
+ratification_surfaces\cowork_ruling_registration_queue_2026_08_09.md:41
+ratification_surfaces\cowork_pending_ratifications_next_session.md:1
+ratification_surfaces\cowork_oi354_legacy_mark_establishment_2026_08_09.md:2
+ratification_surfaces\cowork_rule_triage_entries_2026_08_09.md:3
+ratification_surfaces\cowork_governing_surface_split_2026_08_16.md:1
+ratification_surfaces\cowork_reserved_word_inventory_2026_08_09.md:2
+ratification_surfaces\cowork_discard_residue_surface_2026_08_16.md:26
+ratification_surfaces\cowork_discard_reach_surface_2026_08_16.md:5
+tools\tests\test_metric_scripts.py:2
+tools\tests\test_dcml_parser_figbass_pedal.py:1
+tools\term_inventory\term_inventory_summary.json:1
+tools\term_inventory\gen_term_inventory.py:2
+open_items\OI-99.md:2
+open_items\OI-98.md:1
+tools\stage5_2_2d_sweep.py:1
+STATUS_ARCHIVE.md:452
+open_items\OI-97.md:1
+STATUS.md:4
+open_items\OI-96.md:1
+open_items\OI-95.md:1
+open_items\OI-94.md:1
+open_items\OI-93.md:1
+open_items\OI-92.md:1
+open_items\OI-91.md:1
+open_items\OI-90.md:1
+open_items\OI-89.md:1
+open_items\OI-88.md:1
+open_items\OI-87.md:1
+open_items\OI-86.md:1
+open_items\OI-85.md:2
+tools\score_census_registry.json:39
+open_items\OI-84.md:1
+open_items\OI-75.md:1
+open_items\OI-70.md:1
+open_items\OI-63.md:1
+open_items\OI-62.md:1
+open_items\OI-61.md:1
+open_items\OI-60.md:1
+open_items\OI-59.md:1
+open_items\OI-58.md:2
+open_items\OI-57.md:1
+open_items\OI-56.md:1
+open_items\OI-55.md:1
+open_items\OI-54.md:1
+open_items\OI-53.md:1
+open_items\OI-52.md:1
+open_items\OI-50.md:1
+tools\robust_stop\snapshot_2026-07-26_pre_oi178_adoption\SNAPSHOT_NOTE.md:2
+open_items\OI-49.md:1
+tools\robust_stop\snapshot_2026-07-26_pre_oi178_adoption\README.md:1
+open_items\OI-48.md:2
+tools\robust_stop\snapshot_2026-07-26_pre_oi178_adoption\manifest.json:3
+open_items\OI-47.md:3
+open_items\OI-46.md:1
+open_items\OI-45.md:1
+open_items\OI-44.md:1
+open_items\OI-43.md:1
+tools\robust_stop\snapshot_2026-07-26_pre_oi178_adoption\corpus_transposition_offsets.json:1
+tools\robust_stop\snapshot_2026-07-26_pre_oi178_adoption\batch_stop_frozen_history.json:3
+open_items\OI-383.md:4
+open_items\OI-382.md:2
+open_items\OI-381.md:4
+open_items\OI-380.md:3
+open_items\OI-38.md:1
+open_items\OI-379.md:12
+open_items\OI-378.md:12
+open_items\OI-377.md:3
+open_items\OI-376.md:3
+open_items\OI-375.md:3
+open_items\OI-374.md:6
+tools\robust_stop\snapshot_2026-07-13_pre_oi168\SNAPSHOT_NOTE.md:3
+open_items\OI-373.md:5
+tools\robust_stop\snapshot_2026-07-13_pre_oi168\README.md:1
+open_items\OI-372.md:3
+open_items\OI-371.md:2
+tools\robust_stop\snapshot_2026-07-13_pre_oi168\manifest.json:3
+open_items\OI-370.md:3
+open_items\OI-369.md:3
+open_items\OI-368.md:3
+open_items\OI-367.md:3
+tools\robust_stop\snapshot_2026-07-13_pre_oi168\corpus_transposition_offsets.json:1
+open_items\OI-366.md:3
+tools\robust_stop\snapshot_2026-07-13_pre_oi168\batch_stop_frozen_history.json:3
+open_items\OI-365.md:2
+open_items\OI-364.md:3
+open_items\OI-363.md:3
+open_items\OI-362.md:2
+open_items\OI-361.md:2
+open_items\OI-360.md:1
+open_items\OI-359.md:1
+open_items\OI-358.md:3
+open_items\OI-357.md:5
+open_items\OI-356.md:4
+open_items\OI-355.md:4
+open_items\OI-354.md:3
+tools\robust_stop\snapshot_2026-07-13_pre_oi132_oi144\SNAPSHOT_NOTE.md:1
+open_items\OI-353.md:3
+tools\robust_stop\snapshot_2026-07-13_pre_oi132_oi144\README.md:1
+open_items\OI-352.md:2
+tools\robust_stop\snapshot_2026-07-13_pre_oi132_oi144\manifest.json:3
+open_items\OI-351.md:3
+open_items\OI-350.md:3
+open_items\OI-35.md:1
+open_items\OI-349.md:4
+tools\calibration_maps\snapshot_2026-07-13_pre_oi132_oi144\SNAPSHOT_NOTE.md:1
+open_items\OI-348.md:3
+open_items\OI-347.md:2
+tools\c1_reliability.py:1
+open_items\OI-346.md:3
+open_items\OI-345.md:2
+tools\robust_stop\snapshot_2026-07-13_pre_oi132_oi144\corpus_transposition_offsets.json:1
+open_items\OI-344.md:4
+tools\robust_stop\snapshot_2026-07-13_pre_oi132_oi144\batch_stop_frozen_history.json:3
+open_items\OI-343.md:4
+open_items\OI-342.md:5
+open_items\OI-341.md:2
+open_items\OI-340.md:3
+open_items\OI-34.md:1
+open_items\OI-339.md:3
+tools\dcml_parser.py:2
+open_items\OI-338.md:2
+open_items\OI-337.md:3
+open_items\OI-336.md:3
+tools\build_score_census_registry.py:44
+open_items\OI-335.md:2
+tools\coverage\run_coverage.ps1:1
+open_items\OI-334.md:2
+tools\robust_stop\snapshot_2026-07-12_pre_oi142_oi143\SNAPSHOT_NOTE.md:1
+open_items\OI-333.md:4
+tools\robust_stop\snapshot_2026-07-12_pre_oi142_oi143\README.md:1
+tools\batch_analyze.cpp:1
+tools\robust_stop\snapshot_2026-07-12_pre_oi142_oi143\manifest.json:2
+open_items\OI-332.md:2
+open_items\OI-331.md:3
+tools\compare_rn.py:1
+open_items\OI-330.md:1
+open_items\OI-33.md:1
+tools\compare_l6_oracle.py:1
+open_items\OI-329.md:4
+open_items\OI-328.md:2
+tools\robust_stop\snapshot_2026-07-12_pre_oi142_oi143\batch_stop_frozen_history.json:3
+open_items\OI-327.md:5
+open_items\OI-326.md:2
+tools\robust_stop\README.md:1
+open_items\OI-325.md:2
+tools\robust_stop\manifest.json:3
+open_items\OI-324.md:3
+open_items\OI-323.md:2
+open_items\OI-322.md:3
+open_items\OI-321.md:5
+open_items\OI-320.md:3
+open_items\OI-319.md:6
+tools\robust_stop\corpus_transposition_offsets.json:1
+open_items\OI-318.md:2
+open_items\OI-317.md:4
+tools\robust_stop\batch_stop_frozen_history.json:3
+open_items\OI-316.md:3
+open_items\OI-315.md:6
+open_items\OI-314.md:1
+tools\REPRODUCIBILITY.md:5
+```
+
+*(Expression 5, continued.)*
+
+```
+open_items\OI-313.md:1
+open_items\OI-312.md:1
+open_items\OI-311.md:1
+open_items\OI-310.md:1
+open_items\OI-309.md:2
+open_items\OI-308.md:1
+open_items\OI-307.md:1
+open_items\OI-306.md:2
+open_items\OI-305.md:3
+open_items\OI-304.md:1
+open_items\OI-303.md:5
+open_items\OI-302.md:1
+open_items\OI-301.md:2
+open_items\OI-300.md:4
+open_items\OI-3.md:1
+open_items\OI-299.md:2
+open_items\OI-298.md:1
+open_items\OI-297.md:2
+open_items\OI-296.md:3
+open_items\OI-295.md:1
+tools\param_manifest.json:3
+open_items\OI-294.md:1
+tools\oracle_root_metric.py:1
+open_items\OI-292.md:1
+open_items\OI-291.md:1
+open_items\OI-290.md:2
+open_items\OI-289.md:1
+open_items\OI-287.md:1
+open_items\OI-286.md:5
+open_items\OI-285.md:4
+open_items\OI-284.md:1
+open_items\OI-283.md:1
+open_items\OI-282.md:1
+open_items\OI-281.md:3
+open_items\OI-280.md:3
+open_items\OI-279.md:1
+open_items\OI-278.md:1
+open_items\OI-277.md:1
+tools\notation_seams\README.md:1
+open_items\OI-276.md:2
+tools\notation_seams\partition_completeness.json:2
+open_items\OI-275.md:1
+open_items\OI-274.md:2
+tools\notation_seams\large_score_profile_counts.json:1
+open_items\OI-273.md:1
+open_items\OI-272.md:1
+tools\notation_seams\large_score_decode_profile.json:1
+open_items\OI-271.md:2
+tools\notation_seams\ground_truth_inventory.json:1
+open_items\OI-270.md:1
+tools\notation_seams\gen_ground_truth_inventory.py:2
+open_items\OI-269.md:2
+tools\notation_seams\gen_editing_cycle.py:2
+open_items\OI-268.md:3
+open_items\OI-267.md:1
+open_items\OI-266.md:1
+open_items\OI-265.md:2
+tools\notation_seams\editing_cycle.json:1
+tools\extra_scores_registry.json:1
+open_items\OI-247.md:2
+open_items\OI-237.md:1
+open_items\OI-233.md:1
+open_items\OI-230.md:1
+open_items\OI-23.md:1
+open_items\OI-229.md:3
+tools\audit\test_construction_evidence.json:15
+open_items\OI-228.md:3
+tools\audit\status_residue_move.json:1
+tools\notation_seams\cost_profile_analysis.json:1
+open_items\OI-227.md:3
+tools\audit\status_batch_bound.json:129
+open_items\OI-226.md:2
+tools\notation_seams\classify_dualarm.py:1
+tools\audit\status_archive_pass_2026_08_11.json:2
+open_items\OI-225.md:2
+tools\notation_seams\analyze_cost_profile.py:2
+open_items\OI-224.md:4
+tools\audit\specification_document_set.json:21
+open_items\OI-223.md:1
+tools\mode_grading_adjudication_probe.py:1
+open_items\OI-222.md:2
+open_items\OI-221.md:1
+tools\audit\sole_carrier_subclass.json:8
+open_items\OI-220.md:1
+tools\audit\soft_discard_application.json:5
+open_items\OI-219.md:1
+tools\audit\shell_read_guard_establishment.json:2
+open_items\OI-217.md:1
+open_items\OI-216.md:1
+tools\audit\shell_read_guard.py:7
+open_items\OI-215.md:3
+tools\audit\session_start_read_size.json:2
+open_items\OI-210.md:1
+open_items\OI-209.md:1
+tools\measure_joint_probe.py:1
+open_items\OI-207.md:17
+open_items\OI-206.md:2
+open_items\OI-205.md:1
+open_items\OI-204.md:2
+open_items\OI-203.md:4
+open_items\OI-202.md:1
+tools\audit\rulings_sort_classification.json:1
+open_items\OI-201.md:1
+tools\audit\retirement_census_movement.json:6
+open_items\OI-2.md:2
+open_items\OI-199.md:2
+open_items\OI-197.md:1
+open_items\OI-196.md:1
+open_items\OI-195.md:1
+open_items\OI-192.md:1
+open_items\OI-191.md:1
+tools\audit\retirement_caller_check.json:1642
+open_items\OI-187.md:1
+tools\audit\residue_discard_application.json:52
+open_items\OI-186.md:1
+tools\audit\reserved_word_scanner.json:1
+open_items\OI-184.md:1
+tools\audit\recognizer_establishment_sort.json:2
+open_items\OI-183.md:2
+open_items\OI-182.md:2
+open_items\OI-180.md:1
+tools\audit\ratified_document_check.json:1474
+open_items\OI-179.md:7
+open_items\OI-178.md:1
+tools\audit\ratification_surface_set.json:6
+tools\audit\ratification_surface_reaim.json:2
+open_items\OI-175.md:1
+open_items\OI-174.md:1
+open_items\OI-173.md:1
+tools\audit\prune_at_amendment_lint.json:3
+open_items\OI-172.md:1
+tools\audit\process_check_three_owner_rulings_dispatch.json:4
+open_items\OI-171.md:1
+tools\audit\process_check_reads6_dispatch.json:8
+open_items\OI-170.md:1
+tools\audit\process_check_reads5_dispatch.json:14
+open_items\OI-169.md:1
+tools\audit\process_check_reads4_dispatch.json:2
+open_items\OI-168.md:1
+tools\audit\process_check_reads3_dispatch.json:13
+open_items\OI-167.md:1
+tools\audit\process_check_reads2_dispatch.json:10
+open_items\OI-166.md:1
+tools\audit\process_check_reads1_dispatch.json:3
+open_items\OI-165.md:2
+tools\audit\process_check_phase1_completion_inventory_dispatch.json:10
+open_items\OI-164.md:1
+tools\audit\process_check_phase1z_dispatch.json:13
+open_items\OI-163.md:1
+tools\audit\process_check_phase1y_dispatch.json:11
+tools\audit\process_check_phase1x_dispatch.json:13
+open_items\OI-162.md:1
+tools\audit\process_check_phase1v_dispatch.json:8
+open_items\OI-161.md:1
+tools\audit\process_check_phase1u_dispatch.json:4
+open_items\OI-160.md:1
+tools\audit\process_check_phase1s_dispatch.json:3
+open_items\OI-159.md:1
+tools\audit\process_check_phase1r_dispatch.json:3
+open_items\OI-158.md:1
+tools\audit\process_check_phase1q_dispatch.json:2
+tools\audit\process_check_phase1o_dispatch.json:7
+open_items\OI-157.md:1
+tools\audit\process_check_owner_rulings_homing_dispatch.json:3
+open_items\OI-156.md:1
+open_items\OI-155.md:1
+tools\audit\process_check_licensed_homing_dispatch.json:15
+tools\audit\process_check_guard_fix_and_item1d_dispatch.json:12
+open_items\OI-153.md:1
+tools\audit\process_check_guard_dialect_close_dispatch.json:12
+open_items\OI-152.md:1
+tools\audit\process_check_five_rulings_dispatch.json:25
+open_items\OI-151.md:1
+tools\audit\process_check_finish_line_item1_dispatch.json:11
+open_items\OI-150.md:3
+tools\audit\process_check_finish_line_item1b_dispatch.json:10
+open_items\OI-149.md:1
+open_items\OI-148.md:1
+tools\audit\process_check_document_routes_dispatch.json:3
+open_items\OI-147.md:1
+tools\audit\process_check_dispatch_scan.json:20
+tools\audit\process_check_delegations_and_corrections_dispatch.json:14
+open_items\OI-145.md:1
+tools\audit\process_check_commit_and_finish_line_dispatch.json:11
+open_items\OI-144.md:1
+tools\audit\process_check_census_delegation_dispatch.json:10
+open_items\OI-143.md:1
+tools\audit\process_check_c1_ruling_item1c_dispatch.json:9
+open_items\OI-142.md:1
+tools\audit\process_check.py:1
+open_items\OI-141.md:3
+tools\audit\post_split_archive.json:3
+open_items\OI-140.md:1
+tools\audit\phase3_gate_partition.json:2
+open_items\OI-139.md:1
+tools\audit\phase1_gate_readers.json:50
+open_items\OI-138.md:1
+tools\audit\phase1_finish_line.json:11
+open_items\OI-137.md:1
+tools\audit\phase1_completion_inventory.json:7
+open_items\OI-136.md:1
+open_items\OI-135.md:1
+tools\audit\period_stratum_split.json:13
+open_items\OI-134.md:1
+open_items\OI-133.md:1
+open_items\OI-132.md:1
+tools\audit\output_encoding_establishment.json:1
+tools\audit\output_encoding.py:1
+open_items\OI-131.md:1
+open_items\OI-130.md:1
+tools\audit\oi367_opening_correction.json:57
+open_items\OI-129.md:1
+tools\audit\oi357_production_arm_comparison.json:1
+open_items\OI-128.md:1
+tools\audit\oi357_partial_signature_establishment.json:1
+open_items\OI-127.md:1
+open_items\OI-126.md:1
+tools\audit\oi357_legacy_arm_same_commit_control.json:1
+open_items\OI-125.md:1
+tools\audit\oi356_parser_correction.json:39
+open_items\OI-124.md:1
+tools\audit\oi349_record_arm_precondition_probe.py:1
+open_items\OI-123.md:1
+tools\audit\oi349_record_arm_precondition_probe.json:1
+open_items\OI-122.md:1
+open_items\OI-121.md:1
+open_items\OI-120.md:1
+open_items\OI-119.md:1
+open_items\OI-118.md:1
+open_items\OI-117.md:1
+open_items\OI-116.md:1
+open_items\OI-115.md:1
+tools\audit\oi199\task1_predictions.md:1
+open_items\OI-114.md:1
+open_items\OI-113.md:1
+open_items\OI-112.md:1
+open_items\OI-111.md:1
+open_items\OI-110.md:3
+open_items\OI-109.md:1
+open_items\OI-108.md:1
+open_items\OI-107.md:2
+tools\audit\oi199\joint_firecount_large.json:1
+open_items\OI-106.md:1
+tools\audit\oi199\joint_firecount_fit.json:1
+open_items\OI-105.md:1
+open_items\OI-104.md:1
+open_items\OI-103.md:1
+open_items\OI-102.md:1
+open_items\OI-101.md:1
+open_items\OI-100.md:1
+tools\audit\notation_surface\summary.json:1
+tools\audit\notation_surface\gen_notation_surface_audit.py:2
+tools\audit\nongating_apparatus_rows.json:16
+tools\audit\local_patches_check.py:1
+tools\audit\l5\pass1_partition.json:1
+tools\audit\l5\pass1_dispositions_resolver.json:1
+tools\audit\l5\pass1_dispositions_instruments_core.json:1
+tools\joint_estimator\weight_search_part_fold4_s7_8_9_10_11_12_13.json:1
+tools\audit\l5\pass1_dispositions_harness.json:1
+tools\joint_estimator\weight_search_part_fold4_s14_15_16_17_18_19_20.json:1
+tools\joint_estimator\weight_search_part_fold4_s0_1_2_3_4_5_6.json:1
+tools\joint_estimator\weight_search_part_fold3_s7_8_9_10_11_12_13.json:1
+tools\joint_estimator\weight_search_part_fold3_s14_15_16_17_18_19_20.json:1
+tools\joint_estimator\weight_search_part_fold3_s0_1_2_3_4_5_6.json:1
+tools\joint_estimator\weight_search_part_fold2_s7_8_9_10_11_12_13.json:1
+tools\joint_estimator\weight_search_part_fold2_s14_15_16_17_18_19_20.json:1
+tools\audit\l5\gen_resolver_dispositions.py:1
+tools\joint_estimator\weight_search_part_fold2_s0_1_2_3_4_5_6.json:1
+tools\audit\l5\gen_instruments_core_dispositions.py:1
+tools\audit\l5\gen_harness_dispositions.py:1
+tools\joint_estimator\weight_search_part_fold1_s7_8_9_10_11_12_13.json:1
+tools\joint_estimator\weight_search_part_fold1_s14_15_16_17_18_19_20.json:1
+tools\joint_estimator\weight_search_part_fold1_s0_1_2_3_4_5_6.json:1
+tools\joint_estimator\weight_search_part_fold0_s7_8_9_10_11_12_13.json:1
+tools\joint_estimator\content_dp_split.json:1
+tools\joint_estimator\weight_search_part_fold0_s14_15_16_17_18_19_20.json:1
+tools\joint_estimator\weight_search_part_fold0_s0_1_2_3_4_5_6.json:1
+tools\joint_estimator\weight_search_part_all_s6_7_8_9_10.json:1
+tools\joint_estimator\weight_search_part_all_s16_17_18_19_20.json:1
+tools\joint_estimator\weight_search_part_all_s11_12_13_14_15.json:1
+tools\joint_estimator\weight_search_part_all_s0_1_2_3_4_5.json:1
+tools\joint_estimator\adoption_record.json:1
+tools\joint_estimator\weight_search.json:20
+tools\joint_estimator\adoption_measure_b.py:1
+tools\joint_estimator\adoption_measure.py:1
+tools\audit\l4\pass1_dispositions_decoder.json:1
+tools\audit\changed_paths.py:1
+tools\audit\census_movement_classification.json:9
+tools\audit\changed_paths_defense_sizing_third_task1.json:449
+tools\audit\changed_paths_defense_sizing_third_task0.json:451
+tools\audit\changed_paths_defense_sizing_task0.json:450
+tools\audit\artifact_inventory.json:873
+tools\audit\changed_paths_defense_sizing_second_task0.json:452
+tools\audit\changed_paths_defense_authored_ends_task0.json:450
+tools\audit\gen_framework_untrusted_candidates.py:1
+tools\joint_estimator\search_run.py:1
+tools\audit\derivation_boot_pack.json:1
+tools\audit\gen_filing_convention_application.py:8
+tools\audit\gen_claude_md_finer_archive.py:3
+tools\joint_estimator\normalize.py:1
+tools\audit\gen_evidence_pin_membership.py:2
+tools\joint_estimator\search_grading.json:1
+tools\audit\gen_census_movement_classification.py:3
+tools\audit\gen_epoch_write_path.py:3
+tools\joint_estimator\search_direct.py:2
+tools\audit\gen_doc_change_candidates.py:3
+tools\audit\gen_artifact_inventory_surface.py:4
+tools\audit\gen_discard_records.py:11
+tools\audit\gen_artifact_inventory.py:6
+tools\audit\gen_discard_reach_split.py:3
+tools\audit\gen_derivation_boot_pack.py:4
+tools\audit\gating_row_sizing.json:18
+tools\audit\gen_defense_share.py:2
+tools\audit\framework_untrusted_candidates.json:1
+tools\audit\gen_decisions_filter.py:6
+tools\audit\derivation_boot_pack\scoring-model\04_the_dispatch_protocol.md:17
+tools\audit\filing_convention_application.json:18
+tools\audit\gen_deciding_act_recovery.py:4
+tools\audit\gen_claude_md_prune_backlog.py:2
+tools\audit\evidence_pin_membership.json:3
+tools\audit\derivation_boot_pack\scoring-model\01_the_phase_definitions.md:1
+tools\audit\epoch_write_path.json:2
+tools\audit\gen_claude_md_growth.py:3
+tools\audit\gen_claude_md_finer_surface.py:4
+tools\audit\gen_claude_md_finer_spans.py:2
+tools\audit\gen_retirement_census_movement.py:5
+tools\audit\gen_retirement_caller_check.py:3
+tools\audit\gen_reserved_word_scanner.py:1
+tools\audit\derivation_boot_pack\l0-l1\09_the_empirical_findings_ledger.md:3
+tools\audit\gen_recognizer_establishment_sort.py:1
+tools\audit\gen_ratified_document_check.py:4
+tools\audit\gen_ratification_surface_set.py:2
+tools\audit\gen_post_split_archive.py:2
+tools\audit\derivation_boot_pack\l0-l1\04_the_dispatch_protocol.md:17
+tools\audit\gen_phase3_gate_partition.py:4
+tools\audit\gen_phase1_gate_readers.py:1
+tools\audit\derivation_boot_pack\l0-l1\01_the_phase_definitions.md:1
+tools\audit\gen_phase1_finish_line.py:9
+tools\audit\doc_change_candidates.json:226
+tools\audit\gen_phase1_completion_inventory.py:5
+tools\audit\discard_records.json:19
+tools\audit\gen_period_stratum_split.py:7
+tools\audit\discard_reach_split.json:2
+tools\audit\derivation_boot_pack\harmony-boundary\04_the_dispatch_protocol.md:17
+tools\audit\gen_oi357_partial_signature_establishment.py:1
+tools\audit\derivation_exemplars\l0-l1\bwv1049_03_presto.provenance.md:1
+tools\audit\gen_nongating_apparatus_rows.py:18
+tools\audit\derivation_boot_pack\harmony-boundary\01_the_phase_definitions.md:1
+tools\audit\gen_l0_l1_outgoing_population.py:1
+tools\audit\gen_l0l1_exemplar_selection.py:2
+tools\audit\gen_guard_classification.py:29
+tools\audit\defense_share.json:1
+tools\audit\gen_governing_surface_split.py:3
+tools\audit\gen_july_screen.py:22
+tools\audit\gen_governing_surface_spans.py:3
+tools\audit\gen_inventory.py:1
+tools\audit\gen_governing_surface_readers.py:5
+tools\audit\gen_gating_row_sizing.py:18
+tools\audit\gen_guard_state.py:38
+tools\audit\decisions_filter_classification.json:209
+tools\audit\index_status_normalization.json:47
+tools\audit\governing_surface_spans_2026_09_07.json:8
+tools\audit\l0_l1_outgoing_population.json:33
+tools\audit\guard_state.json:4
+tools\audit\l0l1_exemplar_selection.json:1
+tools\audit\governing_surface_spans.json:6
+tools\audit\guard_classification.json:4
+tools\audit\l0l1_boot_pack_freeze_and_render.json:1
+tools\audit\guard_armed_check.py:1
+tools\audit\l0l1_boot_pack_extension.json:1
+tools\audit\governing_surface_split_application.json:4
+tools\audit\july_screen_report.md:72
+tools\audit\governing_surface_readers.json:761
+tools\audit\instrument_arm_declaration_effect.py:1
+tools\audit\july_screen.json:79
+tools\audit\gen_withheld_family_reading.py:2
+tools\audit\instrument_arm_declaration_effect.json:1
+tools\audit\gen_test_construction_evidence.py:1
+tools\joint_estimator\gen_label_tables.py:1
+tools\audit\gen_status_residue_move.py:1
+tools\joint_estimator\gen_content_dp_split.py:2
+tools\audit\gen_status_batch_bound.py:167
+tools\joint_estimator\gen_factor_presence.py:1
+tools\audit\gen_status_archive_pass.py:5
+tools\joint_estimator\gen_wir_alignment_probe.py:1
+tools\audit\gen_specification_document_set.py:11
+tools\audit\gen_sole_carrier_subclass.py:1
+tools\joint_estimator\gen_posterior_slice.py:1
+tools\joint_estimator\gen_note_tables.py:1
+tools\audit\gen_session_start_read_size.py:4
+tools\joint_estimator\gen_note_events.py:1
+tools\audit\gen_rulings_sort.py:2
+tools\audit\decisions\true_half_reach_rows.json:4
+tools\audit\decisions\true_half_reach.json:1
+tools\audit\decisions\three_owner_rulings_edit_shape.json:1
+tools\audit\decisions\snapshot_2026-08-08_pre_home_classification_apply\backbone_decisions.json:163
+tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\snapshot_manifest.json:1
+tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\cluster_dispositions.json:8580
+tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\cluster_dispositions.csv:8387
+tools\audit\decisions\snapshot_2026-08-04_pre_home_classification_apply\establishment.json:1
+tools\audit\decisions\route_homing_edit_shape.json:1
+tools\audit\decisions\retired_subject_moves.json:1
+tools\audit\decisions\reads6_yield.json:1
+tools\audit\decisions\reads5_yield.json:1
+tools\audit\decisions\reads5_repack.json:2
+tools\audit\decisions\reads4_yield.json:1
+tools\audit\decisions\reads4_oi326_application.json:6
+tools\audit\decisions\reads3_yield.json:1
+tools\audit\decisions\reads2_yield.json:1
+tools\audit\decisions\reads1_yield.json:1
+tools\audit\decisions\r1_superseded_reach.json:5
+tools\audit\decisions\phase1w_legacy_verification.json:3
+tools\audit\decisions\phase1q_record_divergence.json:1
+tools\audit\decisions\phase1p_delegation_bar.json:5
+tools\audit\decisions\phase1m_measurements.json:1
+tools\audit\decisions\phase1g_triage.md:3
+tools\audit\decisions\outstanding_delegations.json:5
+tools\audit\decisions\oi333_repair.json:33
+tools\audit\decisions\manifest.json:1132
+tools\audit\decisions\item1_rehome_blocker.json:1
+tools\audit\decisions\home_classification.json:4
+tools\audit\decisions\gen_true_half_reach_rows.py:4
+tools\audit\decisions\gen_true_half_reach.py:2
+tools\audit\decisions\gen_route_homing_edit_shape.py:1
+tools\audit\decisions\gen_retired_subject_moves.py:1
+tools\audit\decisions\gen_reads6_yield.py:1
+tools\audit\decisions\gen_reads5_yield.py:1
+tools\audit\decisions\gen_reads5_repack.py:2
+tools\audit\decisions\gen_reads4_yield.py:1
+tools\audit\decisions\gen_reads4_oi326_application.py:1
+tools\audit\decisions\gen_reads3_yield.py:1
+tools\audit\decisions\gen_reads2_yield.py:1
+tools\audit\decisions\gen_reads1_yield.py:1
+tools\audit\decisions\gen_r1_superseded_reach.py:7
+tools\audit\decisions\gen_phase1w_legacy_verification.py:11
+tools\audit\decisions\gen_phase1q_snapshot_establishment.py:2
+tools\audit\decisions\gen_phase1q_record_divergence.py:1
+tools\audit\decisions\gen_phase1p_delegation_bar.py:5
+tools\audit\decisions\gen_phase1n_reading_regime.py:1
+tools\audit\decisions\gen_phase1m_measurements.py:3
+tools\audit\decisions\gen_phase1g_triage.py:4
+tools\audit\decisions\gen_outstanding_delegations.py:3
+tools\audit\decisions\gen_oi333_repair.py:3
+tools\audit\decisions\gen_item1_rehome_blocker.py:2
+tools\audit\decisions\gen_homing_edit_shape.py:1
+tools\audit\decisions\gen_home_classification.py:1
+tools\audit\decisions\gen_finish_line_item1_routes.py:14
+tools\audit\decisions\gen_decision_harvest.py:1
+tools\audit\decisions\gen_decision_clusters.py:1
+tools\audit\decisions\gen_apply_field_diff.py:1
+tools\audit\decisions\finish_line_item1_routes.json:6
+tools\joint_estimator\posterior_slice_ref.json:1
+tools\audit\decisions\decision_clusters.json:9194
+tools\audit\decisions\decision_clusters.csv:8362
+tools\audit\decisions\decision_candidates.json:17768
+src\notation\tests\pipeline_snapshot_tests\pipeline_snapshot_tests.cpp:3
+tools\audit\decisions\decision_candidates.csv:10185
+tools\audit\decisions\cluster_manifest.json:2
+src\notation\tests\notationinteraction_harmony_pinning_tests.cpp:2
+src\notation\tests\notationimplode_tests.cpp:2
+tools\audit\decisions\cluster_dispositions.json:8580
+tools\audit\decisions\cluster_dispositions.csv:8387
+tools\audit\decisions\backbone_decisions.json:472
+tools\audit\decisions\apply_soft_discard.py:3
+tools\audit\decisions\apply_residue_discard.py:2
+tools\audit\decisions\apply_field_diff.json:1
+tools\audit\deciding_act_recovery.json:311
+tools\audit\corpus_arm_stamp.py:2
+tools\audit\corpus_arm_establishment.json:1
+tools\audit\corpus_arm_backstamp.json:1
+tools\audit\claude_md_rule_triage.py:9
+tools\audit\claude_md_rule_triage.json:1
+tools\audit\claude_md_prune_backlog.json:4
+tools\audit\claude_md_growth_2026_09_07.json:2
+tools\audit\claude_md_finer_spans.json:6
+tools\audit\claude_md_finer_readers.json:259
+tools\audit\claude_md_finer_archive.json:4
+tools\audit\changed_paths_l2_verdict_pass_task3.json:449
+tools\audit\changed_paths_l2_verdict_pass_task0.json:450
+tools\audit\changed_paths_l2_ruling_writeback_task3.json:449
+tools\audit\changed_paths_l2_ruling_writeback_task0.json:450
+tools\audit\changed_paths_l2_reading_file_task3.json:449
+tools\audit\changed_paths_l2_reading_file_task0.json:450
+tools\audit\changed_paths_l2_criterion_task3.json:449
+tools\audit\changed_paths_l2_criterion_task0.json:450
+tools\audit\changed_paths_l2_candidate_list_task3.json:449
+tools\audit\changed_paths_l2_candidate_list_task0.json:450
+src\composing\tests\regionanalysis_tests.cpp:1
+src\composing\tests\postscoringgates_tests.cpp:4
+src\composing\tests\modepriorpresets_tests.cpp:1
+src\composing\tests\l3_coverage_tests.cpp:1
+src\composing\tests\inference_presentation_boundary_tests.cpp:1
+src\composing\tests\functioncadence_tests.cpp:1
+src\composing\tests\engravingbridge_branch_tests.cpp:2
+src\composing\tests\decode_keymode_tests.cpp:1
+src\composing\tests\chord_branch_tests.cpp:1
+src\composing\tests\chordvoicing_tests.cpp:1
+src\composing\tests\chordsymbolformatter_branch_tests.cpp:1
+src\composing\tests\analyzechord_robustness_tests.cpp:1
+src\composing\analysis\voiceleading\textureclassifierreference.h:1
+src\composing\analysis\slicing\slicer.h:1
+src\composing\analysis\section\sectionrecordadapter.h:1
+src\composing\analysis\region\regionanalyzer.cpp:1
+src\composing\analysis\region\harmonicrhythm.h:1
+src\composing\analysis\notemodel\note_model.h:1
+src\composing\analysis\key\keymodesequence.h:1
+src\composing\analysis\grouping\groupinglayer.h:1
+src\composing\analysis\function\harmonicfunctionlayer.h:1
+src\composing\analysis\function\functionresolver.h:1
+src\composing\analysis\function\functioncadence.h:2
+src\composing\analysis\CMakeLists.txt:12
+src\composing\analysis\chord\postscoringgates.cpp:2
+src\composing\analysis\chord\keycollectionprobe.h:1
+src\composing\analysis\chord\chordslicedecoder.h:1
+src\composing\analysis\chord\chordanalyzer.cpp:1
+```
+
+Grep's summary line: `Found 102654 total occurrences across 1642 files.`
+
+**Code files this expression found that Task 2(b)'s pattern did not, named so the second dispatch is not surprised by
+them:**
+- `tools\tests\test_metric_scripts.py`, `tools\tests\test_dcml_parser_figbass_pedal.py`,
+  `tools\stage5_2_2d_sweep.py` and `tools\coverage\run_coverage.ps1`. These are of Task 2(b)'s file types, but none
+  matched its pattern; their hit lines are read in §2(b).3 below.
+- `tools\batch_analyze.cpp`, the `src\` C++ files and `src\composing\analysis\CMakeLists.txt`. These are outside
+  Task 2(b)'s file types. Their hit lines were read by an investigative search this batch added, recorded in
+  §2(b).4 below.
+
+### Expression 6 — `cowork_[A-Za-z0-9_]+\.md`
+
+The dispatch asks for this expression "for the files NOT in the move". The regular expression cannot tell those files
+apart, so it also matches every handoff and rulings name. The list below is therefore Grep's whole output, and it
+overlaps with expressions 1 to 3.
+
+```
+cc_approval_styletag_swap_commit.md:1
+BUILD_AND_TEST_ARCHIVE.md:1
+ARCHITECTURE.md:73
+cc_acquisition_round_report.md:7
+cc_audit_chordanalyzer_oracle_report.md:1
+cc_audit_localmodulationdetector_report.md:2
+cc_audit_cadencekeyanchor_report.md:2
+cc_audit_keymodeanalyzer_report.md:2
+cc_artifact_inventory_report.md:7
+cc_audit_jointkeydecision_report.md:2
+cc_audit_harmonicfunctionlayer_report.md:1
+cc_backlog_triage_report.md:3
+cc_batch_analyze_unification_report.md:2
+cc_corpus_hygiene_report_corelli.md:1
+cc_consumer_build_report.md:6
+cc_corpus_hygiene_report.md:1
+cc_corpus_wave3_report.md:3
+cc_c1_fold_report.md:5
+cc_corpus_wave1_report.md:1
+cc_corpus_wave2_report.md:3
+cc_dl3a_closeout_report.md:6
+cc_doc_recovery_report.md:9
+cc_doctruth_gate_sync_report.md:3
+cc_eg2_probe_report.md:2
+cc_engage_c3_measurement_report.md:3
+cc_engage_fb_redesign_design_report.md:1
+cc_engage_gateA_unification_build_report.md:1
+cc_engage_gateA_unification_design_report.md:4
+cc_engage_information_loss_audit_report.md:3
+cc_engage_joint_key_chord_design_report.md:8
+cc_engage_l5_carry_selection_design_report.md:9
+cc_engage_l5_pedal_annotate_design_report.md:13
+cc_engage_pre_l5_refactor_report.md:2
+cc_engage_stage3_joint_measure_report.md:2
+cc_engage_structural_integrity_audit_report.md:6
+cc_exemplar_decode_report_2026_09_01.md:5
+cc_extension_build_report.md:15
+cc_fact_dependency_audit_report.md:13
+cc_framework_9_0_correction_report.md:6
+cc_foundation_stage3b_report.md:2
+cc_functional_residual_dossier.md:1
+cc_gap_analysis_v2_report.md:23
+cc_grammar_completion_report.md:1
+cc_gap_analysis_report.md:8
+cc_harness_group_report.md:2
+cc_handoff_prepend_report_2026_09_01.md:40
+cc_instruction_acquisition_round.md:6
+cc_instruction_adoption_commit.md:2
+cc_instruction_algorithm_completion.md:3
+cc_instruction_amendment_landing.md:10
+cc_instruction_adoption_measurement.md:3
+cc_instruction_analysis_cost_profile.md:3
+cc_instruction_anchor_design_investigation.md:1
+cc_instruction_apply_the_bearing_cut.md:7
+cc_instruction_arm_and_site_fillin.md:20
+cc_instruction_artifact_inventory.md:15
+cc_instruction_audit_chordanalyzer_oracle.md:1
+cc_instruction_audit_jointkeydecision.md:1
+cc_instruction_audit_harmonicfunctionlayer.md:1
+cc_instruction_away_batch.md:5
+cc_instruction_audit_localmodulationdetector.md:1
+cc_instruction_audit_keymodeanalyzer.md:1
+cc_instruction_away_execution.md:5
+cc_instruction_backfill_engravingbridge.md:1
+cc_instruction_backfill_l4_oracle_gates.md:1
+cc_instruction_backlog_triage.md:4
+cc_instruction_backup_commit_and_push_2026_09_16.md:1
+cc_instruction_batch_analyze_unification_audit.md:1
+cc_instruction_blind_output_landing.md:15
+cc_instruction_batch_return_rulings.md:6
+cc_instruction_boot_pack_regeneration.md:3
+cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md:15
+cc_instruction_brief_ratification_and_readme_boundary.md:23
+cc_instruction_c1_fold_and_explanation.md:6
+cc_instruction_c1_ruling_and_item1c.md:1
+cc_instruction_carryfix2_resolver_identity.md:1
+cc_instruction_carryfix_dl5a_e0prime.md:4
+cc_instruction_c1_reliability_instrumentation.md:1
+cc_instruction_cascade_sweep.md:6
+cc_instruction_census_delegation_and_commit.md:4
+cc_instruction_carryfix_task2_addendum.md:1
+cc_instruction_claude_md_boot_membership_2026_09_07.md:3
+cc_instruction_claude_md_prune_at_amendment_2026_09_07.md:3
+cc_instruction_commit_and_finish_line.md:1
+cc_instruction_commit_idiom_work.md:8
+cc_instruction_comparison_harmony_boundary.md:22
+cc_instruction_comparison_l0_l1_eighth_2026_09_04.md:22
+cc_instruction_comparison_l0_l1_2026_09_02.md:40
+cc_instruction_comparison_l0_l1_second_2026_09_02.md:36
+cc_instruction_comparison_l0_l1_ninth_2026_09_04.md:23
+cc_instruction_comparison_l0_l1_fourth_2026_09_03.md:38
+cc_instruction_consumer_build.md:2
+cc_instruction_comparison_l0_l1_fifth_2026_09_03.md:45
+cc_instruction_comparison_l0_l1_sixth_2026_09_03.md:21
+cc_instruction_comparison_l0_l1_third_2026_09_02.md:40
+cc_instruction_comparison_l0_l1_seventh_2026_09_03.md:19
+cc_instruction_comparison_l0_l1_tenth_2026_09_04.md:25
+cc_instruction_d231_landing.md:4
+cc_instruction_decision_enumeration_wave.md:3
+cc_instruction_decoder_work_counts.md:1
+cc_instruction_corpus_wave1_dlc_onboarding.md:3
+cc_instruction_decision_harvest.md:6
+cc_instruction_decisions_register_completion.md:3
+cc_instruction_defense_share_authored_ends_2026_09_08.md:6
+cc_instruction_corpus_clone.md:2
+cc_instruction_corpus_hygiene.md:1
+cc_instruction_decision_clustering.md:2
+cc_instruction_corpus_wave3.md:5
+cc_instruction_defense_share_sizing_second_2026_09_08.md:11
+cc_instruction_defense_share_sizing_third_2026_09_08.md:7
+cc_instruction_defense_share_sizing_2026_09_08.md:8
+cc_instruction_corpus_wave2_axis2_beds.md:3
+cc_instruction_design_pass_commit.md:9
+cc_instruction_desk_sim_commit.md:6
+cc_instruction_direct_metric_weight_fit.md:3
+cc_instruction_dl3a_closeout.md:4
+cc_instruction_doctruth_gate_sync.md:3
+cc_instruction_document_routes_and_d472.md:3
+cc_instruction_doc_governance_commit.md:10
+cc_instruction_doc_recovery.md:18
+cc_instruction_doc_sync_layer1.md:2
+cc_instruction_doc_split.md:9
+cc_instruction_e0_fullspine_measure.md:4
+cc_instruction_engage_fanout_measure.md:4
+cc_instruction_engage_c3_measurement.md:3
+cc_instruction_eg2_establish_and_probe.md:3
+cc_instruction_engage_fb_redesign_design.md:3
+cc_instruction_engage_gateA_unification_build.md:3
+cc_instruction_engage_gateA_unification_design.md:3
+cc_instruction_engage_information_loss_audit.md:3
+cc_instruction_engage_joint_key_chord_design.md:5
+cc_instruction_engage_l5_carry_selection_design.md:5
+cc_instruction_engage_l5_pedal_annotate_design.md:10
+cc_instruction_engage_pre_l5_refactor_batch.md:7
+cc_instruction_engage_stage3_joint_measure.md:3
+cc_instruction_engage_structural_integrity_audit.md:4
+cc_instruction_engage_u1_uncap.md:3
+cc_instruction_evidence_candidate_pass.md:1
+cc_instruction_evidence_sizing.md:1
+cc_instruction_exemplar_decode_2026_09_01.md:6
+cc_instruction_extension_build.md:5
+cc_instruction_false_statements_pass.md:5
+cc_instruction_fact_dependency_audit.md:5
+cc_instruction_five_rulings.md:6
+cc_instruction_foundation_stage2a.md:2
+cc_instruction_foundation_stage3b.md:2
+cc_instruction_framework_9_0_correction_2026_08_31.md:6
+cc_instruction_framework_arrangement_landing.md:27
+cc_instruction_framework_pack_preparation.md:23
+cc_instruction_functional_residual_investigation.md:1
+cc_instruction_gap_analysis_spec_vs_impl.md:17
+cc_instruction_grammar_completion.md:2
+cc_instruction_guard_dialect_close_and_push.md:3
+cc_instruction_handoff_prepend_2026_09_01.md:19
+cc_instruction_harness_group.md:6
+cc_instruction_informed_brief_landing.md:20
+cc_instruction_instrument_hygiene_sweep.md:2
+cc_instruction_invisible_notes_establishment_2026_09_01.md:4
+cc_instruction_item7_reach_derivation.md:3
+cc_instruction_joint_fact_adapter.md:2
+cc_instruction_joint_module_build.md:4
+cc_instruction_joint_table_codegen.md:4
+cc_instruction_joint_input_parity.md:4
+cc_instruction_key_mode_inference_diagnosis.md:5
+cc_instruction_key_grading_rebaseline.md:2
+cc_instruction_key_grading_and_calibration_rebaseline.md:2
+cc_instruction_l0l1_boot_pack_second_2026_08_31.md:5
+cc_instruction_l0l1_boot_pack_2026_08_31.md:7
+cc_instruction_l1l3_spec_sync.md:7
+cc_instruction_l1l4_review_tidy.md:1
+cc_instruction_l0l1_exemplar_selection_2026_08_31.md:6
+cc_instruction_l1l3_delta_check_resync.md:4
+cc_instruction_l1_l2_audit_blind_rerun.md:6
+cc_instruction_l1_l2_audit_pass1.md:7
+cc_instruction_l1_l2_audit_pass2.md:7
+cc_instruction_l2_candidate_list_2026_09_05.md:4
+cc_instruction_l2_criterion_write_2026_09_04.md:31
+cc_instruction_l2_reading_file_2026_09_05.md:12
+cc_instruction_l2_verdict_pass_2026_09_05.md:16
+cc_instruction_l3_audit_pass1.md:6
+cc_instruction_l2_keyword_count_2026_09_04.md:9
+cc_instruction_l2_ruling_writeback_2026_09_05.md:13
+cc_instruction_l3_keyalt_forwardcarry.md:3
+cc_instruction_l3_audit_pass2.md:7
+cc_instruction_l3_audit_pass2_relabel.md:4
+cc_instruction_l4_audit_pass1_oracle.md:8
+cc_instruction_l4_audit_pass1.md:7
+cc_instruction_l4_audit_pass1_decoder.md:7
+cc_instruction_l3_key_decode_mechanism.md:5
+cc_instruction_l5_audit_pass1.md:13
+cc_instruction_l4_audit_pass1_satellites.md:8
+cc_instruction_l4_audit_pass2.md:10
+cc_instruction_l5_audit_pass1_resolver.md:14
+cc_instruction_l5_audit_pass1_harness.md:12
+cc_instruction_l5_audit_pass1_grading_fitting.md:12
+cc_instruction_l5_audit_pass1_instruments.md:12
+cc_instruction_L5_close_commit.md:2
+cc_instruction_l5_audit_pass2.md:12
+cc_instruction_landing_2026_08_28.md:22
+cc_instruction_l6_dormant_build.md:1
+cc_instruction_label_table_fit.md:3
+cc_instruction_layer1_phase1a_build.md:2
+cc_instruction_layer1_audit.md:1
+cc_instruction_layer1_coverage.md:1
+cc_instruction_layer1_implementation.md:2
+cc_instruction_layer2_audit.md:2
+cc_instruction_layer2_implementation.md:2
+cc_instruction_layer2_phase2_build.md:4
+cc_instruction_layer3_decoder_audit.md:1
+cc_instruction_layer3_decoder_build.md:1
+cc_instruction_layer3_incrementA_indexing.md:1
+cc_instruction_layer3_incrementB_groundtruth.md:1
+cc_instruction_layer3_keymode_audit.md:1
+cc_instruction_layer3_phase3_build.md:3
+cc_instruction_layer4_build_increment_a.md:1
+cc_instruction_layer4_audit.md:1
+cc_instruction_misaligned_span_exclusion.md:1
+cc_instruction_marginals.md:2
+cc_instruction_metric_design_investigation.md:1
+cc_instruction_licensed_homing_and_oi344.md:1
+cc_instruction_ledger_build.md:11
+cc_instruction_measurement_chain_hardening.md:3
+cc_instruction_mode_key_chord_inference_probe.md:6
+cc_instruction_method_voiding_landing.md:10
+cc_instruction_manifest_prose_and_sizing_brief.md:16
+cc_instruction_ledger_harvest.md:16
+cc_instruction_ledger_admissions.md:8
+cc_instruction_mode_grading_adjudication_probe.md:2
+cc_instruction_mscz_container_establishment_2026_09_01.md:4
+cc_instruction_notation_consumption_audit.md:8
+cc_instruction_notation_p4.md:2
+cc_instruction_notation_p6.md:2
+cc_instruction_notation_p7.md:3
+cc_instruction_notation_noteseam.md:2
+cc_instruction_notation_pstrings.md:3
+cc_instruction_notation_record_assembly.md:3
+cc_instruction_notation_seams_1.md:2
+cc_instruction_notation_seams_2.md:3
+cc_instruction_notation_switch.md:1
+cc_instruction_oi150_baselines.md:3
+cc_instruction_note_table_fit.md:4
+cc_instruction_oi158_oi125_oi159.md:3
+cc_instruction_oi155.md:1
+cc_instruction_oi168_fix.md:2
+cc_instruction_oi160_and_push.md:2
+cc_instruction_oi167_collection_tonic.md:1
+cc_instruction_oi179_reply_and_phase2_surface.md:5
+cc_instruction_oi206_investigation.md:2
+cc_instruction_oi170_measure.md:2
+cc_instruction_oi199_pass1.md:1
+cc_instruction_oi168_magnitude_measure.md:2
+cc_instruction_oi199_joint_p3_p4.md:4
+cc_instruction_oi315_class_licence.md:2
+cc_instruction_oi375_width_correction.md:2
+cc_instruction_open_items_split.md:3
+cc_instruction_pack_section7_and_errata_state.md:4
+cc_instruction_oi274_second_half.md:2
+cc_instruction_owner_rulings_homing.md:5
+cc_instruction_oi315_licence_and_cells.md:3
+cc_instruction_period_checks.md:10
+cc_instruction_partition2_archives.md:2
+cc_instruction_oi207_adjudication.md:1
+cc_instruction_pass_continuation_second.md:20
+cc_instruction_phase1h_full_reads.md:1
+cc_instruction_phase1g_triage.md:3
+cc_instruction_phase1f_final_partition.md:2
+cc_instruction_phase1j_homing_and_reads.md:6
+cc_instruction_phase1l_rulings_and_reads.md:6
+cc_instruction_phase1i_reads_and_delivery.md:4
+cc_instruction_phase1m_dispositions_and_measurements.md:5
+cc_instruction_phase1k_ratification_application_and_reads.md:13
+cc_instruction_phase1n_criterion_premise_and_reading_regime.md:3
+cc_instruction_phase1p_home_rulings_and_mechanisms.md:4
+cc_instruction_phase1q_reclassification_and_guards.md:5
+cc_instruction_phase1r_commit_and_reclassify.md:5
+cc_instruction_phase1s_stale_rules_and_enumeration.md:3
+cc_instruction_phase1t_restatement_and_pruning.md:5
+cc_instruction_phase1u_partition_record_and_directory.md:2
+cc_instruction_phase1v_channel_ratification.md:1
+cc_instruction_phase1x_guard_visibility_and_commit.md:1
+cc_instruction_phase5b_step0_investigate.md:3
+cc_instruction_phase5b_step1_g1.md:2
+cc_instruction_phase5b_step3_g6.md:1
+cc_instruction_phase5b_step2_g2.md:2
+cc_instruction_phase5b_step4_g4_spellingpin.md:1
+cc_instruction_phase5c_step1.md:1
+cc_instruction_phase5c_step2_amend.md:1
+cc_instruction_phase5c_step2.md:1
+cc_instruction_phase5c_step4.md:1
+cc_instruction_phase5c_step5.md:1
+cc_instruction_phase5c_step6.md:1
+cc_instruction_phase5c_step2_resolution.md:1
+cc_instruction_phase5c_step3.md:1
+cc_instruction_phase5c_step5_followup.md:1
+cc_instruction_phase5c_stepM_consolidate.md:2
+cc_instruction_phase5c_stepM_followup.md:1
+cc_instruction_phase5c_stepM.md:1
+cc_instruction_phase5_kmasks_derive.md:3
+cc_instruction_phase_close_2026_08_30.md:27
+cc_instruction_phase_close_second_2026_08_30.md:27
+cc_instruction_phase_rulings_landing.md:11
+cc_instruction_pilot_preparation_withheld_family.md:51
+cc_instruction_phrase_boundary_build.md:3
+cc_instruction_plan_challenge.md:4
+cc_instruction_posterior_slice.md:4
+cc_instruction_placement_sample_redraw.md:56
+cc_instruction_plan_evaluation.md:11
+cc_instruction_placement_sample.md:12
+cc_instruction_preparation_eighth.md:14
+cc_instruction_prefit_gates_commit.md:4
+cc_instruction_prefit_instruments.md:4
+cc_instruction_precision_headroom_investigation.md:2
+cc_instruction_preparation_opening.md:16
+cc_instruction_preparation_eleventh.md:21
+cc_instruction_preparation_fourteenth.md:17
+cc_instruction_preparation_ninth.md:15
+cc_instruction_preparation_fourth.md:12
+cc_instruction_preparation_fifth.md:14
+cc_instruction_preparation_eleventh_amended.md:32
+cc_instruction_preparation_second.md:10
+cc_instruction_preparation_sixth.md:11
+cc_instruction_preparation_tenth.md:16
+cc_instruction_preparation_seventh.md:9
+cc_instruction_preparation_thirteenth.md:15
+cc_instruction_probe_decoder.md:5
+cc_instruction_preparation_twelfth.md:18
+cc_instruction_preparation_third.md:8
+cc_instruction_reading_pass_landing_2026_08_31.md:15
+cc_instruction_reading_pass_landing_second_2026_08_31.md:6
+cc_instruction_reads_5.md:7
+cc_instruction_register_baseline_repair.md:39
+cc_instruction_register_reconciliation.md:24
+cc_instruction_repair_direction_enumeration.md:3
+cc_instruction_regeneration_and_citation.md:6
+cc_instruction_resume_lapse_records.md:6
+cc_instruction_return_continuation.md:5
+cc_instruction_return_continuation_11.md:2
+cc_instruction_return_continuation_10.md:2
+cc_instruction_return_continuation_13.md:3
+cc_instruction_return_continuation_12.md:2
+cc_instruction_return_continuation_2.md:4
+cc_instruction_return_continuation_4.md:3
+cc_instruction_return_continuation_3.md:4
+cc_instruction_return_continuation_14.md:4
+cc_instruction_return_continuation_6.md:4
+cc_instruction_return_continuation_5.md:4
+cc_instruction_return_continuation_8.md:3
+cc_instruction_return_continuation_9.md:3
+cc_instruction_return_continuation_7.md:5
+cc_instruction_ruled_inventory_landing.md:8
+cc_instruction_row_landing_and_oi141_arm_check.md:13
+cc_instruction_ruling69_discard_input.md:5
+cc_instruction_scoring_doc.md:1
+cc_instruction_scoring_model_pass.md:2
+cc_instruction_secondary_dominant_refit.md:3
+cc_instruction_second_backup_commit_and_push_2026_09_16.md:2
+cc_instruction_second_backup_rerun_2026_09_16.md:2
+cc_instruction_second_backup_rerun_two_2026_09_16.md:2
+cc_instruction_second_passage_withheld.md:20
+cc_instruction_second_landing_2026_08_28.md:10
+cc_instruction_sitting_landing_2026_09_01.md:8
+cc_instruction_sitting_landing_second_2026_09_01.md:2
+cc_instruction_sitting_outcome_and_bound.md:3
+cc_instruction_sizing_brief_ruled.md:15
+cc_instruction_sizing_output_landing.md:15
+cc_instruction_sizing_pack_preparation.md:16
+cc_instruction_sizing_regen_and_readme.md:2
+cc_instruction_sizing_tests.md:13
+cc_instruction_spec_completion.md:1
+cc_instruction_slot_sweep_2026_09_01.md:3
+cc_instruction_spec_impl_delta_L1L4.md:2
+cc_instruction_stage3_decoder_design.md:1
+cc_instruction_stage5_phase2_1.md:2
+cc_instruction_stage4_design.md:1
+cc_instruction_stage5_phase2_2a.md:4
+cc_instruction_stage5_phase2_2c.md:1
+cc_instruction_stage5_phase2_2b.md:2
+cc_instruction_stage5_phase2_2d.md:1
+cc_instruction_stage5_phase1.md:2
+cc_instruction_stage5_phase2_3.md:2
+cc_instruction_stage5_phase2_2e.md:3
+cc_instruction_stage5_phase3.md:3
+cc_instruction_stage5_phase0.md:8
+cc_instruction_stage5_r10_assembly.md:2
+cc_instruction_stage5_r10b_ratification.md:4
+cc_instruction_status_forward_bound_2026_09_07.md:2
+cc_instruction_status_forward_bound_second_2026_09_07.md:1
+cc_instruction_status_touch_and_oi141_premise_repin.md:16
+cc_instruction_step1_pc_primitive_extraction.md:1
+cc_instruction_step2_merge_predicate_dedup.md:1
+cc_instruction_step_zero_exclusion_and_pass_continuation.md:27
+cc_instruction_stop_record_and_enumeration.md:3
+cc_instruction_styletag_swap.md:6
+cc_instruction_successor_plan_landing_and_step_zero.md:26
+cc_instruction_term_grounding_inventory.md:6
+cc_instruction_term_inventory.md:6
+cc_instruction_third_landing_2026_08_28.md:3
+cc_instruction_three_owner_rulings.md:4
+cc_instruction_tpc_capability_build.md:3
+cc_instruction_tpc_capability_verify.md:1
+cc_instruction_tsv_oracle_infrastructure.md:1
+cc_instruction_types_header_build.md:3
+cc_instruction_uncertain_resolver_measurement.md:1
+cc_instruction_unit_correction_redraw.md:20
+cc_instruction_vl_docs_fold.md:2
+cc_instruction_vl_foundation_build.md:4
+cc_instruction_vl_idiom_discovery.md:5
+cc_instruction_vocabulary_build.md:3
+cc_instruction_wave2_dependency_reconciliation.md:2
+cc_instruction_wave3_addendum.md:3
+cc_instruction_weight_fit.md:4
+cc_instruction_wir_alignment_probe.md:3
+cc_instruction_withheld_family_correction.md:21
+cc_instruction_worth_test.md:6
+cc_invisible_notes_establishment_report_2026_09_01.md:5
+cc_key_grading_and_calibration_rebaseline_report.md:1
+cc_key_mode_inference_diagnosis_report.md:1
+cc_kmasks_complete_report.md:1
+cc_l0l1_boot_pack_report.md:7
+cc_kmasks_derive_report.md:4
+cc_l0l1_boot_pack_second_report.md:3
+cc_l1l2_audit_blind_rerun_report.md:3
+cc_l0l1_exemplar_selection_report.md:8
+cc_l1l2_audit_pass1_report.md:9
+cc_l1l2_audit_pass2_report.md:2
+cc_l1l3_delta_check_resync_report.md:7
+cc_l1l3_spec_sync_report.md:7
+cc_l1l4_review_report.md:8
+cc_l3_audit_pass1_report.md:5
+cc_l3_audit_pass2_relabel_report.md:3
+cc_l3_audit_pass2_report.md:5
+cc_l3_keyalt_forwardcarry_report.md:3
+cc_l3_key_decode_mechanism_report.md:1
+cc_l4_audit_pass1_oracle_report.md:3
+cc_l4_audit_pass1_decoder_report.md:4
+cc_l4_audit_pass1_satellites_report.md:1
+cc_l4_audit_pass1_report.md:5
+cc_l5_audit_pass1_grading_fitting_report.md:3
+cc_l5_audit_pass1_harness_report.md:2
+cc_l5_audit_pass1_report.md:5
+cc_l5_audit_pass1_resolver_report.md:7
+cc_l4_audit_pass2_report.md:3
+cc_l6_build_report.md:1
+cc_l5_audit_pass2_report.md:1
+cc_layer1_audit_dossier.md:1
+cc_layer1_impl_report.md:1
+cc_layer2_audit_dossier.md:1
+cc_layer2_impl_report.md:2
+cc_layer1_phase1a_report.md:2
+cc_layer2_phase2_report.md:3
+cc_layer3_decoder_audit_dossier.md:1
+cc_layer3_decoder_build_report.md:2
+cc_layer3_incrementB_report.md:2
+cc_layer3_incrementA_report.md:1
+cc_layer3_phase3_report.md:2
+cc_layer3_keymode_audit_dossier.md:1
+cc_layer4_build_b_report.md:1
+cc_layer4_build_a_report.md:1
+cc_measurement_chain_hardening_report.md:1
+cc_metric_first_dossier.md:1
+cc_mode_grading_adjudication_probe_report.md:1
+cc_layer4_audit_dossier.md:1
+cc_mode_key_chord_probe_report.md:1
+cc_mscz_container_establishment_report.md:5
+cc_notation_consumption_audit_report.md:2
+cc_note_table_fit_report.md:1
+cc_oi160_report.md:4
+cc_oi168_fix_report.md:1
+cc_oi170_measure_report.md:1
+cc_oi199_joint_p3_p4_report.md:6
+cc_oi199_pass1_report.md:2
+cc_oi207_residual_pass_report.md:9
+cc_phase5b_step0_report.md:3
+cc_phase1d_enumeration_wave_report.md:27
+cc_phase5b_step1_report.md:3
+cc_phase5b_step2_report.md:3
+cc_phase5b_step2final_report.md:2
+cc_phase5b_stepM_measure_report.md:1
+cc_phase5b_step3_report.md:2
+cc_phase5b_step4_report.md:1
+cc_phase5c_step2_report.md:3
+cc_phase5c_step1_report.md:4
+cc_phase5c_step2_amendment.md:4
+cc_phase5c_L5_close_review.md:1
+cc_phase5c_step0_report.md:3
+cc_phase5c_step5_followup_report.md:2
+cc_phase5c_step3_report.md:2
+cc_phase5c_step5_report.md:3
+cc_phase5c_step6_report.md:3
+cc_phase5c_stepM_report.md:1
+cc_phase5c_step4_report.md:3
+cc_phase5c_stepM_followup_report.md:1
+cc_phrase_boundary_build_report.md:1
+cc_report_amendment_landing.md:19
+cc_report_backup_commit_and_push_2026_09_16.md:168
+cc_report_arm_and_site_fillin.md:14
+cc_report_brief_ratification_and_readme_boundary.md:11
+cc_report_boot_pack_regeneration.md:6
+cc_report_boot_pack_freeze_l0l1_2026_09_04.md:2
+cc_report_batch_return_rulings.md:2
+cc_report_blind_output_landing.md:13
+cc_report_comparison_l0_l1_2026_09_02.md:7
+cc_report_claude_md_boot_membership_2026_09_07.md:3
+cc_report_claude_md_prune_at_amendment_2026_09_07.md:6
+cc_report_comparison_harmony_boundary.md:7
+cc_report_comparison_l0_l1_ninth_2026_09_04.md:4
+cc_report_comparison_l0_l1_eighth_2026_09_04.md:5
+cc_report_cascade_sweep.md:13
+cc_report_comparison_l0_l1_fifth_2026_09_03.md:9
+cc_report_comparison_l0_l1_third_2026_09_02.md:3
+cc_report_comparison_l0_l1_sixth_2026_09_03.md:6
+cc_report_comparison_l0_l1_fourth_2026_09_03.md:3
+cc_report_comparison_l0_l1_second_2026_09_02.md:5
+cc_report_comparison_l0_l1_seventh_2026_09_03.md:4
+cc_report_d231_landing.md:4
+cc_report_defense_share_authored_ends_2026_09_08.md:9
+cc_report_comparison_l0_l1_tenth_2026_09_04.md:6
+cc_report_defense_share_sizing_second_2026_09_08.md:4
+cc_report_defense_share_sizing_2026_09_08.md:8
+cc_report_defense_share_sizing_third_2026_09_08.md:3
+cc_report_framework_arrangement_landing.md:22
+cc_report_informed_brief_landing.md:23
+cc_report_l2_candidate_list_2026_09_05.md:6
+cc_report_l2_criterion_write_2026_09_04.md:5
+cc_report_framework_pack_preparation.md:14
+cc_report_l2_keyword_count_2026_09_04.md:2
+cc_report_l2_reading_file_2026_09_05.md:6
+cc_report_l2_ruling_writeback_2026_09_05.md:12
+cc_report_l2_verdict_pass_2026_09_05.md:7
+cc_report_landing_2026_08_28.md:31
+cc_report_ledger_admissions.md:9
+cc_report_ledger_harvest.md:36
+cc_report_ledger_build.md:18
+cc_report_manifest_prose_and_sizing_brief.md:18
+cc_report_method_voiding_landing.md:18
+cc_report_pass_continuation_second.md:9
+cc_report_phase_close_2026_08_30.md:13
+cc_report_phase_rulings_landing.md:6
+cc_report_phase_close_second_2026_08_30.md:23
+cc_report_pilot_preparation.md:8
+cc_report_placement_sample_redraw.md:46
+cc_report_placement_sample.md:32
+cc_report_plan_challenge.md:14
+cc_report_preparation_eighth.md:5
+cc_report_plan_evaluation.md:55
+cc_report_preparation_eleventh.md:28
+cc_report_preparation_eleventh_amended.md:26
+cc_report_preparation_fourteenth.md:10
+cc_report_preparation_fourth.md:18
+cc_report_preparation_ninth.md:11
+cc_report_preparation_fifth.md:9
+cc_report_preparation_seventh.md:6
+cc_report_preparation_second.md:3
+cc_report_preparation_opening.md:8
+cc_report_preparation_sixth.md:7
+cc_report_preparation_tenth.md:13
+cc_report_preparation_third.md:9
+cc_report_preparation_thirteenth.md:8
+cc_report_preparation_twelfth.md:16
+cc_report_reading_pass_landing_2026_08_31.md:5
+cc_report_reading_pass_landing_second_2026_08_31.md:13
+cc_report_read_size_repair_and_rows_2026_09_07.md:2
+cc_report_regeneration_and_citation.md:16
+cc_report_register_baseline_repair.md:30
+cc_report_register_reconciliation.md:34
+cc_report_ruled_inventory_landing.md:4
+cc_report_second_backup_commit_and_push_2026_09_16.md:3
+cc_report_second_backup_rerun_2026_09_16.md:3
+cc_report_second_landing_2026_08_28.md:11
+cc_report_second_passage_withheld.md:7
+cc_report_sizing_brief_ruled.md:8
+cc_report_sizing_output_landing.md:19
+cc_report_sizing_pack_preparation.md:11
+cc_report_sizing_tests.md:17
+cc_report_status_forward_bound_2026_09_07.md:1
+cc_report_step_zero.md:4
+cc_report_step_zero_return_executed.md:14
+cc_report_status_forward_bound_second_2026_09_07.md:1
+cc_report_unit_correction_redraw.md:74
+cc_report_third_landing_2026_08_28.md:7
+cc_sitting_landing_report_2026_09_01.md:16
+cc_report_withheld_family_correction.md:6
+cc_secondary_dominant_refit_report.md:3
+cc_spec_impl_delta_L1L4_report.md:2
+cc_stage2a_wip_triage_report.md:8
+cc_slot_sweep_report_2026_09_01.md:4
+cc_sitting_landing_second_report_2026_09_01.md:7
+cc_stage5_phase1_report.md:2
+cc_stage5_phase0_report.md:4
+cc_stage5_phase2_2c_report.md:1
+cc_stage5_phase2_2b_report.md:5
+cc_stage5_phase2_2a_report.md:2
+cc_stage5_phase2_1_report.md:2
+cc_stage5_r10_assembly_report.md:1
+cc_stage5_r10b_ratification_report.md:6
+cc_stage5_phase3_report.md:1
+cc_term_inventory_report.md:1
+cc_stage5_phase2_2e_report.md:1
+cc_stage5_phase2_2d_report.md:1
+cc_stage5_phase2_3_report.md:1
+cc_test_backfill_report.md:1
+cc_tpc_capability_build_report.md:1
+cc_tree_repair_and_coverage_report.md:6
+cc_styletag_swap_report.md:4
+cc_tpc_capability_verify_report.md:1
+cc_types_header_build_report.md:2
+cc_types_header_investigation_report.md:1
+cc_union_branch_coverage_report.md:1
+cc_uncertain_resolver_measurement_report.md:2
+cc_vl_foundation_build_report.md:5
+cc_vl_idiom_discovery_report.md:4
+cc_vocabulary_build_report.md:3
+cc_wave1_finalize_report.md:2
+cc_wave2_dependency_reconciliation_report.md:12
+CLAUDE.md:49
+cc_wave3_addendum_report.md:4
+CLAUDE_ARCHIVE.md:9
+contrapunctus_findings.md:1
+```
+
+*(Expression 6, continued.)*
+
+```
+cowork_adjudication_dossier.md:2
+cowork_architecture_review_2026_07.md:2
+cowork_arm_and_site_fillin_2026_08_28.md:3
+cowork_architecture_reassessment.md:1
+cowork_blind_derivation_harmony_boundary_2026_08_23.md:1
+cowork_audit_obligation_map.md:2
+cowork_blind_derivation_l0_l1_2026_08_31.md:4
+cowork_audit_remaining_layers.md:1
+cowork_audit_protocol.md:44
+cowork_blind_derivation_scoring_model_2026_08_24.md:1
+cowork_blind_session_brief_harmony_boundary.md:17
+cowork_blind_session_brief_framework.md:28
+cowork_blind_session_brief_l0_l1.md:9
+cowork_blind_session_brief_scoring_model.md:9
+cowork_blind_session_opening_instruction_harmony_boundary.md:7
+cowork_bounded_context_design.md:3
+cowork_away_returns.md:340
+cowork_candidate_open_items_2026_08_02.md:2
+cowork_claude_md_live_rule_classification_2026_09_08.md:1
+cowork_census_full_needs_audit.md:4
+cowork_confidence_contract.md:4
+cowork_cross_layer_transfer_list.md:4
+cowork_curated_boot_list_draft_2026_08_19.md:6
+cowork_declared_readings_surface_2026_08_27.md:7
+cowork_defense_clause_ends_2026_09_08.md:1
+cowork_derived_specification_l0_l1_2026_09_03.md:3
+cowork_document_route_rulings_2026_08_08.md:13
+cowork_design_doc_template.md:3
+cowork_eg2_scoping.md:3
+cowork_empirical_findings_candidates.md:20
+cowork_engage_arc_plan.md:12
+cowork_evaluation_boot_list_2026_08_21.md:13
+cowork_evidence_inventory.md:2
+cowork_factorization_desk_simulation.md:5
+cowork_fact_gate_admissions_2026_08_26.md:8
+cowork_framework_phase_retrospective_2026_08_29.md:6
+cowork_framework_phase_opening_surface_2026_08_26.md:10
+cowork_fb_redesign_design.md:5
+cowork_gateA_unification_design.md:2
+cowork_handoff_entry_eighty_eight.md:14
+cowork_handoff_archive.md:97
+cowork_handoff_entry_eighty_five.md:10
+cowork_handoff_entry_eighty_four.md:15
+cowork_handoff_entry_eighty_nine.md:8
+cowork_handoff_entry_eighty_seven.md:6
+cowork_handoff_entry_eighty_six.md:5
+cowork_handoff.md:720
+cowork_handoff_entry_eighty_three.md:5
+cowork_handoff_entry_eighty_two.md:5
+cowork_handoff_entry_ninety.md:5
+cowork_handoff_entry_ninety_eight.md:5
+cowork_handoff_entry_ninety_five.md:10
+cowork_handoff_entry_ninety_nine.md:4
+cowork_handoff_entry_ninety_four.md:7
+cowork_handoff_entry_ninety_one.md:5
+cowork_handoff_entry_ninety_seven.md:5
+cowork_handoff_entry_ninety_six.md:8
+cowork_handoff_entry_ninety_three.md:11
+cowork_handoff_entry_ninety_two.md:6
+cowork_handoff_entry_one_hundred.md:7
+cowork_handoff_entry_one_hundred_and_eight.md:4
+cowork_handoff_entry_one_hundred_and_eighteen.md:6
+cowork_handoff_entry_one_hundred_and_eighty.md:1
+cowork_handoff_entry_one_hundred_and_eighty_eight.md:3
+cowork_handoff_entry_one_hundred_and_eighty_five.md:2
+cowork_handoff_entry_one_hundred_and_eighty_four.md:2
+cowork_handoff_entry_one_hundred_and_eighty_one.md:2
+cowork_handoff_entry_one_hundred_and_eighty_seven.md:2
+cowork_handoff_entry_one_hundred_and_eighty_six.md:2
+cowork_handoff_entry_one_hundred_and_eighty_three.md:2
+cowork_handoff_entry_one_hundred_and_eighty_two-1.md:1
+cowork_handoff_entry_one_hundred_and_eighty_two.md:1
+cowork_handoff_entry_one_hundred_and_eleven.md:11
+cowork_handoff_entry_one_hundred_and_fifty.md:5
+cowork_handoff_entry_one_hundred_and_fifty_eight.md:2
+cowork_handoff_entry_one_hundred_and_fifteen.md:6
+cowork_handoff_entry_one_hundred_and_fifty_five.md:1
+cowork_handoff_entry_one_hundred_and_fifty_four.md:1
+cowork_handoff_entry_one_hundred_and_fifty_nine.md:2
+cowork_handoff_entry_one_hundred_and_fifty_one.md:4
+cowork_handoff_entry_one_hundred_and_fifty_seven.md:1
+cowork_handoff_entry_one_hundred_and_fifty_six.md:1
+cowork_handoff_entry_one_hundred_and_fifty_three.md:1
+cowork_handoff_entry_one_hundred_and_fifty_two.md:3
+cowork_handoff_entry_one_hundred_and_five.md:10
+cowork_handoff_entry_one_hundred_and_forty.md:1
+cowork_handoff_entry_one_hundred_and_forty_eight.md:7
+cowork_handoff_entry_one_hundred_and_forty_five.md:2
+cowork_handoff_entry_one_hundred_and_forty_four.md:6
+cowork_handoff_entry_one_hundred_and_forty_nine.md:4
+cowork_handoff_entry_one_hundred_and_forty_one.md:1
+cowork_handoff_entry_one_hundred_and_forty_seven.md:5
+cowork_handoff_entry_one_hundred_and_forty_three.md:2
+cowork_handoff_entry_one_hundred_and_forty_six.md:2
+cowork_handoff_entry_one_hundred_and_fourteen.md:6
+cowork_handoff_entry_one_hundred_and_forty_two.md:2
+cowork_handoff_entry_one_hundred_and_nineteen.md:6
+cowork_handoff_entry_one_hundred_and_four.md:21
+cowork_handoff_entry_one_hundred_and_nine.md:11
+cowork_handoff_entry_one_hundred_and_seventeen.md:6
+cowork_handoff_entry_one_hundred_and_one.md:8
+cowork_handoff_entry_one_hundred_and_seven.md:23
+cowork_handoff_entry_one_hundred_and_seventy_five.md:3
+cowork_handoff_entry_one_hundred_and_seventy.md:3
+cowork_handoff_entry_one_hundred_and_seventy_eight.md:2
+cowork_handoff_entry_one_hundred_and_seventy_nine.md:1
+cowork_handoff_entry_one_hundred_and_seventy_four.md:4
+cowork_handoff_entry_one_hundred_and_seventy_six.md:3
+cowork_handoff_entry_one_hundred_and_seventy_seven.md:6
+cowork_handoff_entry_one_hundred_and_seventy_one.md:3
+cowork_handoff_entry_one_hundred_and_seventy_two.md:3
+cowork_handoff_entry_one_hundred_and_seventy_three.md:4
+cowork_handoff_entry_one_hundred_and_six.md:15
+cowork_handoff_entry_one_hundred_and_sixteen.md:7
+cowork_handoff_entry_one_hundred_and_sixty.md:4
+cowork_handoff_entry_one_hundred_and_sixty_eight.md:1
+cowork_handoff_entry_one_hundred_and_sixty_nine.md:9
+cowork_handoff_entry_one_hundred_and_sixty_one.md:3
+cowork_handoff_entry_one_hundred_and_sixty_three.md:1
+cowork_handoff_entry_one_hundred_and_ten.md:11
+cowork_handoff_entry_one_hundred_and_thirteen.md:8
+cowork_handoff_entry_one_hundred_and_sixty_two.md:4
+cowork_handoff_entry_one_hundred_and_thirty_eight.md:2
+cowork_handoff_entry_one_hundred_and_thirty.md:8
+cowork_handoff_entry_one_hundred_and_thirty_nine.md:4
+cowork_handoff_entry_one_hundred_and_thirty_five.md:7
+cowork_handoff_entry_one_hundred_and_thirty_four.md:10
+cowork_handoff_entry_one_hundred_and_thirty_three.md:8
+cowork_handoff_entry_one_hundred_and_twelve.md:12
+cowork_handoff_entry_one_hundred_and_thirty_six.md:7
+cowork_handoff_entry_one_hundred_and_three.md:7
+cowork_handoff_entry_one_hundred_and_thirty_seven.md:5
+cowork_handoff_entry_one_hundred_and_thirty_two.md:11
+cowork_handoff_entry_one_hundred_and_twenty.md:6
+cowork_handoff_entry_one_hundred_and_twenty_seven.md:7
+cowork_handoff_entry_one_hundred_and_twenty_one.md:6
+cowork_handoff_entry_one_hundred_and_twenty_five.md:7
+cowork_handoff_entry_one_hundred_and_thirty_one.md:8
+cowork_handoff_entry_one_hundred_and_twenty_four.md:6
+cowork_handoff_entry_one_hundred_and_twenty_eight.md:7
+cowork_handoff_entry_one_hundred_and_twenty_two.md:6
+cowork_handoff_entry_one_hundred_and_twenty_nine.md:8
+cowork_handoff_entry_one_hundred_and_twenty_three.md:6
+cowork_handoff_entry_one_hundred_and_twenty_six.md:8
+cowork_handoff_entry_one_hundred_and_two.md:7
+cowork_idiom_discovery_design.md:5
+cowork_idiom_discovery_findings.md:2
+cowork_idiom_entry_mapping.md:1
+cowork_implementation_review.md:1
+cowork_information_loss_audit.md:3
+cowork_informed_brief_provenance.md:3
+cowork_informed_session_brief_framework.md:26
+cowork_instruction_return_session.md:7
+cowork_joint_estimator_architecture.md:6
+cowork_jazz_realization_qa_instrument.md:1
+cowork_joint_key_chord_design.md:3
+cowork_joint_estimator_factorization.md:6
+cowork_key_layer_design_opening.md:3
+cowork_l1l3_stabilization_plan.md:7
+cowork_l1l4_review_note.md:7
+cowork_l2_boot_list_surface_2026_09_05.md:18
+cowork_l1l4_completion_ledger.md:3
+cowork_l1_l5_premise_debt_audit.md:6
+cowork_layer1_extend_design.md:3
+cowork_layer1_tone_collection_design.md:1
+cowork_l2_task_b_slice_derivation_2026_09_05.md:2
+cowork_layer1_note_model_design.md:9
+cowork_l2_score_set_read_2026_09_05.md:4
+cowork_layer3_keymode_impl_design.md:1
+cowork_layer3_keymode_design.md:15
+cowork_layer3_spec_language_sweep.md:1
+cowork_layer3_reachback_design.md:3
+cowork_layer4_chordsymbol_design.md:18
+cowork_layer2_slicing_design.md:7
+cowork_l2_first_pass_extracts_derivation_2026_09_05.md:2
+cowork_layer4_spec_review.md:1
+cowork_layer2_reslice_design.md:2
+cowork_layer5_engagement_design.md:19
+cowork_layer5_function_design.md:14
+cowork_layer5_function_methods.md:1
+cowork_layer5_spec_review.md:1
+cowork_layer6_grouping_design.md:19
+cowork_literature_reachability_2026_08_26.md:3
+cowork_memory_pointer_cut_2026_09_07.md:11
+cowork_notation_output_contract.md:2
+cowork_mode_key_chord_inference_discussion.md:5
+cowork_oi200_perspective_inventory.md:1
+cowork_pending_rulings_2026_08_02.md:1
+cowork_phase1_commissioning_surface_2026_08_11.md:3
+cowork_owner_rulings_2026_08_07.md:2
+cowork_phase5b_l4_build_plan.md:1
+cowork_phrase_boundary_design.md:18
+cowork_phase5c_l5_build_plan.md:1
+cowork_placement_sample_sealed_2026_08_27.md:95
+cowork_placement_sample_sealed_third_2026_08_27.md:294
+cowork_plan_evaluation_brief_2026_08_21.md:7
+cowork_placement_sample_surface_2026_08_27.md:8
+cowork_placement_sample_sealed_redraw_2026_08_27.md:265
+cowork_polyphony_phrase_harmony_research.md:3
+cowork_prediction_tabulation_2026_08_21.md:5
+cowork_prefit_gates.md:3
+cowork_product_tool_register.md:2
+cowork_premise_gate_reflection.md:5
+cowork_progression_schema_design.md:9
+cowork_progression_schema_dictionary.md:12
+cowork_prune_pass_checklist.md:1
+cowork_reading_pass_findings_2026_08_31.md:6
+cowork_reading_pass_commission_2026_08_30.md:5
+cowork_reading_pass_remedial_commission_2026_08_31.md:8
+cowork_redraw_findings_surface_2026_08_27.md:15
+cowork_register_blocker_surface_2026_08_28.md:2
+cowork_register_rule_c_suspension_2026_08_28.md:2
+cowork_report_plan_evaluation_2026_08_21.md:8
+cowork_research_list_disposition_surface_2026_08_29.md:3
+cowork_rulings_2026_08_08_pre_away.md:2
+cowork_rulings_2026_08_09_fifth_stop.md:2
+cowork_review_findings_prediction_2026_08_21.md:2
+cowork_rulings_2026_08_09_eighth_stop.md:1
+cowork_rulings_2026_08_09_ninth_stop.md:1
+cowork_rulings_2026_08_09_second_stop.md:1
+cowork_rulings_2026_08_09_fourth_stop.md:2
+cowork_rulings_2026_08_09_third_stop.md:1
+cowork_rulings_2026_08_11_eleventh_stop.md:1
+cowork_rulings_2026_08_09_sixth_stop.md:1
+cowork_rulings_2026_08_09_seventh_stop.md:3
+cowork_rulings_2026_08_11_fourteenth_stop.md:2
+cowork_rulings_2026_08_11_twelfth_stop.md:1
+cowork_rulings_2026_08_15_inventory_sitting.md:8
+cowork_rulings_2026_08_15_period_start.md:1
+cowork_rulings_2026_08_11_thirteenth_stop.md:1
+cowork_rulings_2026_08_15_phase_definition_sitting.md:2
+cowork_rulings_2026_08_16_preparation_return.md:7
+cowork_rulings_2026_08_17_callers_sitting.md:1
+cowork_rulings_2026_08_17_eighth_return.md:6
+cowork_rulings_2026_08_17_governing_surface_split.md:10
+cowork_rulings_2026_08_17_ninth_return.md:7
+cowork_rulings_2026_08_17_residue_sitting.md:8
+cowork_rulings_2026_08_17_session_start_read_sitting.md:4
+cowork_rulings_2026_08_17_sixth_return.md:1
+cowork_rulings_2026_08_17_rulings_sort_sitting.md:10
+cowork_rulings_2026_08_17_seventh_return.md:7
+cowork_rulings_2026_08_19_eleventh_return.md:6
+cowork_rulings_2026_08_19_twelfth_return.md:6
+cowork_rulings_2026_08_18_tenth_return.md:9
+cowork_rulings_2026_08_19_thirteenth_return.md:8
+cowork_rulings_2026_08_18_eleventh_stop.md:9
+cowork_rulings_2026_08_22_deriving_side_sitting.md:5
+cowork_rulings_2026_08_21_successor_plan_sitting.md:5
+cowork_rulings_2026_08_22_boot_list_sitting.md:6
+cowork_rulings_2026_08_21_evaluation_brief_sitting.md:4
+cowork_rulings_2026_08_22_withheld_family_sitting.md:1
+cowork_rulings_2026_08_22_member_two_leak_sitting.md:4
+cowork_rulings_2026_08_22_step_zero_return_sitting.md:14
+cowork_rulings_2026_08_22_dispatch_order_sitting.md:1
+cowork_rulings_2026_08_22_pilot_order_sitting.md:5
+cowork_rulings_2026_08_24_sizing_brief_sitting.md:2
+cowork_rulings_2026_08_24_method_ruling_sitting.md:3
+cowork_rulings_2026_08_24_sizing_pilot_sitting.md:3
+cowork_rulings_2026_08_23_brief_validation_sitting.md:2
+cowork_rulings_2026_08_23_member_two_second_leak_sitting.md:2
+cowork_rulings_2026_08_25_next_act_sitting.md:1
+cowork_rulings_2026_08_25_second_vector_sitting.md:4
+cowork_rulings_2026_08_25_forward_fact_sitting.md:1
+cowork_rulings_2026_08_24_sizing_leak_list_sitting.md:2
+cowork_rulings_2026_08_25_method_voiding_sitting.md:8
+cowork_rulings_2026_08_24_blinding_failure_sitting.md:4
+cowork_rulings_2026_08_25_regress_termination_sitting.md:6
+cowork_rulings_2026_08_24_comparison_design_sitting.md:1
+cowork_rulings_2026_08_25_v1_sufficiency_sitting.md:2
+cowork_rulings_2026_08_26_amendment_landing_sitting.md:11
+cowork_rulings_2026_08_26_ledger_dispositions_sitting.md:3
+cowork_rulings_2026_08_26_framework_opening_sitting.md:5
+cowork_rulings_2026_08_26_ledger_form_sitting.md:4
+cowork_rulings_2026_08_24_blind_return_sitting.md:2
+cowork_rulings_2026_08_26_sizing_tests_sitting.md:13
+cowork_rulings_2026_08_27_framework_authoring_sitting.md:10
+cowork_rulings_2026_08_27_placement_sample_sitting.md:1
+cowork_rulings_2026_08_27_redraw_findings_sitting.md:7
+cowork_rulings_2026_08_27_stopped_strata_sitting.md:11
+cowork_rulings_2026_08_28_framework_delta_sitting.md:5
+cowork_rulings_2026_08_28_informed_brief_points_sitting.md:6
+cowork_rulings_2026_08_28_unit_question_sitting.md:7
+cowork_rulings_2026_08_28_ledger_precondition_sitting.md:18
+cowork_rulings_2026_08_28_informed_framework_sitting.md:15
+cowork_rulings_2026_08_29_ratification_sitting.md:7
+cowork_rulings_2026_09_05_l2_boot_list_sitting.md:4
+cowork_rulings_2026_08_31_decision_surface_sitting.md:305
+cowork_rulings_2026_09_08_defense_satellite_sitting.md:1
+cowork_rulings_2026_08_30_detail_phase_opening_sitting.md:8
+cowork_rulings_2026_09_05_l2_withheld_family_sitting.md:5
+cowork_rulings_2026_09_11_satellite_arc_close.md:3
+cowork_running_order_2026_09_01.md:18
+cowork_rulings_2026_09_08_extent_rule_sitting.md:1
+cowork_score_census.md:4
+cowork_section8_bar_record_2026_08_28.md:3
+cowork_section8_breach_surface_2026_08_28.md:2
+cowork_sensitive_cell_probe.md:1
+cowork_siloed_facts_audit.md:1
+cowork_scratch_2026_08_11\cowork_oi141_sitting_pack.md:7
+cowork_scratch_2026_08_11\cowork_verification_plan_continuation_14.md:7
+cowork_scratch_2026_08_11\draft_row_status_md_unreadable.md:1
+cowork_scratch_2026_08_11\README.md:5
+cowork_scratch_2026_08_08\draft_grounding_digest_2026_08_08.md:2
+cowork_specification_reconstruction_plan_successor_2026_08_21.md:12
+cowork_scratch_2026_08_08\draft_phase2_program_surface_2026_08_08.md:1
+cowork_spec_code_audit_adjudication_method.md:1
+cowork_scratch_2026_08_08\draft_return_verification_checklist_2026_08_08.md:1
+cowork_spec_language_sweep.md:1
+cowork_spec_polish_findings_a.md:7
+cowork_scratch_2026_08_08\README.md:1
+cowork_stage5_fitter_design.md:20
+cowork_spec_polish_findings_b.md:5
+cowork_stopped_strata_surface_2026_08_27.md:14
+cowork_style_clustering_plan.md:4
+cowork_structural_integrity_audit.md:4
+cowork_take_rule_surface_2026_08_27.md:6
+cowork_style_taxonomy_proposal.md:3
+cowork_target_architecture.md:7
+cowork_target_document_structure_2026_08_09.md:4
+cowork_term_theory_grounding.md:7
+cowork_unit_question_surface_2026_08_28.md:3
+cowork_verification_plan_preparation_tenth.md:17
+DECISIONS_ARCHIVE.md:1
+DEFECT_TYPES.md:5
+cowork_voiceleading_axis_design.md:16
+DECISIONS.md:199
+decisions\group_A.md:46
+EMPIRICAL_FINDINGS_LEDGER.md:60
+decisions\group_C.md:92
+decisions\group_B.md:16
+decisions\group_H.md:91
+decisions\group_L.md:7
+decisions\group_G.md:62
+decisions\group_F.md:38
+decisions\group_U.md:8
+decisions\group_K.md:47
+decisions\group_E.md:1
+decisions\group_J.md:10
+decisions\group_T.md:160
+decisions\group_D.md:8
+FRAMEWORK.md:32
+decisions\group_I.md:19
+decisions\group_S.md:20
+decisions\group_O.md:2
+decisions\group_M.md:32
+decisions\group_Q.md:19
+docs\layer_architecture_audit.md:1
+docs\decoder_design.md:1
+docs\duplication_audit.md:2
+docs\implementation_roadmap.md:25
+docs\key_detection_baroque_partial_signature.md:5
+docs\iteration_path1_summary.md:1
+docs\key_path_design.md:3
+OPEN_ITEMS_ARCHIVE.md:53
+PHASE_CONSTRAINTS_AND_STOP_RULES.md:10
+OPEN_ITEMS.md:36
+idiom_discovery\model.py:1
+open_items\OI-1.md:1
+idiom_discovery\run_vl_feature_space.py:2
+idiom_discovery\parsers\voiceleading2.py:1
+docs\unified_analysis_pipeline.md:2
+ratification_surfaces\cowork_claude_md_finer_split_2026_08_17.md:2
+docs\symbol_input_audit.md:2
+ratification_surfaces\cowork_artifact_inventory_ruling_surface.md:125
+open_items\OI-118.md:1
+ratification_surfaces\cowork_comparison_harmony_boundary_reading.md:28
+docs\stage4c_cadence_key_design.md:2
+ratification_surfaces\cowork_deciding_act_recovery_surface_2026_08_16.md:102
+open_items\OI-119.md:1
+ratification_surfaces\cowork_comparison_l0_l1_reading.md:68
+records\cc\instructions\cc_instruction_root_records_reference_map_2026_09_16.md:3
+docs\stage4b_design.md:2
+ratification_surfaces\cowork_d580_transfer_fact_gathering_2026_08_09.md:4
+open_items\OI-121.md:1
+docs\scoring_model.md:4
+ratification_surfaces\cowork_decisions_pending_ratification_5.md:9
+ratification_surfaces\cowork_decisions_pending_ratification_3.md:70
+ratification_surfaces\cowork_decisions_pending_ratification.md:26
+ratification_surfaces\cowork_decisions_pending_ratification_6.md:29
+docs\score_inventory.md:3
+ratification_surfaces\cowork_decisions_pending_ratification_4.md:29
+ratification_surfaces\cowork_decisions_pending_ratification_2.md:19
+ratification_surfaces\cowork_dpk_ground_surface_2026_08_31.md:1
+ratification_surfaces\cowork_discard_residue_surface_2026_08_16.md:132
+ratification_surfaces\cowork_decisions_filter_surface_2026_08_15.md:171
+ratification_surfaces\cowork_oi354_legacy_mark_establishment_2026_08_09.md:4
+ratification_surfaces\cowork_first_deriving_subject_surface_2026_08_31.md:2
+ratification_surfaces\cowork_discard_reach_surface_2026_08_16.md:11
+ratification_surfaces\cowork_governing_surface_split_2026_08_16.md:1
+ratification_surfaces\cowork_decisions_pending_ratification_8.md:20
+ratification_surfaces\cowork_decisions_ratification_delta.md:3
+ratification_surfaces\cowork_pruning_and_satellites_surface_2026_09_08.md:3
+ratification_surfaces\cowork_decisions_pending_ratification_7.md:128
+ratification_surfaces\cowork_pending_ratifications_next_session.md:2
+ratification_surfaces\cowork_perspective_inventory_ratification.md:4
+ratification_surfaces\cowork_phase_definition_surface_2026_08_15.md:10
+ratification_surfaces\cowork_rule_triage_entries_2026_08_09.md:2
+reading_pass\remedial_commission_session_record_2026_08_31.md:3
+ratification_surfaces\cowork_rulings_sort_surface_2026_08_16.md:115
+open_items\OI-141.md:3
+ratification_surfaces\cowork_restructuring_period_start_decision_surface.md:1
+open_items\OI-14.md:1
+docs\research_papers\README.md:1
+reading_pass\population.md:10
+ratification_surfaces\cowork_withheld_family_l2_reading.md:7
+ratification_surfaces\cowork_reserved_word_inventory_2026_08_09.md:2
+ratification_surfaces\cowork_standing_treatment_surface_2026_08_16.md:1
+ratification_surfaces\cowork_withheld_family_harmony_boundary_reading.md:13
+ratification_surfaces\cowork_withheld_family_framework_reading.md:9
+ratification_surfaces\cowork_sizing_pack_leak_list_reading.md:1
+open_items\OI-145.md:1
+ratification_surfaces\cowork_sizing_tests_reading.md:16
+ratification_surfaces\cowork_v4_divergence_surface_2026_08_31.md:1
+open_items\OI-146.md:1
+ratification_surfaces\cowork_ruling_registration_queue_2026_08_09.md:103
+open_items\OI-148.md:1
+reading_pass\candidacy_upgrades.md:4
+reading_pass\continuation.md:7
+reading_pass\cross_checks\dehaas-magalhaes-wiering-veltkamp-2013-harmtrace-functional-analysis.md:1
+reading_pass\cross_checks\hentschel-moss-mcleod-neuwirth-rohrmeier-2021-unified-chord-model.md:1
+reading_pass\cross_checks\mcleod-rohrmeier-2021-modular-harmonic-analysis.md:1
+reading_pass\cross_checks\humphrey-bello-2015-four-timely-insights-ace.md:1
+reading_pass\cross_checks\mcleod-rohrmeier-2024-chord-tone-alterations-suspensions.md:1
+reading_pass\object_reads\row17_sapp-2005-visual-hierarchical-key-analysis.md:1
+open_items\OI-154.md:1
+reading_pass\l2_slice_reading_progress.md:14
+reading_pass\cross_checks\viaccoz-harasim-moss-rohrmeier-2023-wavescapes.md:1
+reading_pass\l2_slice_reading_progress_companion.md:34
+reading_pass\object_reads\derived_row_set.md:3
+reading_pass\cross_checks\sapp-2005-visual-hierarchical-key-analysis.md:1
+reading_pass\object_reads\task_a_consolidated_2026_08_31.md:2
+reading_pass\object_reads\row2_mcleod-rohrmeier-2024-chord-tone-alterations-suspensions.md:2
+reading_pass\object_reads\row1_mcleod-rohrmeier-2021-modular-harmonic-analysis.md:2
+reading_pass\object_reads\row21_humphrey-bello-2015-four-timely-insights.md:1
+reading_pass\object_reads\row5_dehaas-magalhaes-wiering-veltkamp-harmtrace.md:1
+reading_pass\object_reads\stop_task_a_method_2026_08_31.md:1
+open_items\OI-158.md:1
+reading_pass\object_reads\row18_viaccoz-harasim-moss-rohrmeier-wavescapes.md:1
+reading_pass\object_reads\stop_row2_dpd_defusal_2026_08_31.md:2
+reading_pass\object_reads\row3_hentschel-moss-mcleod-neuwirth-rohrmeier-unified-chord-model.md:1
+open_items\OI-160.md:1
+open_items\OI-161.md:1
+open_items\OI-162.md:1
+open_items\OI-163.md:1
+open_items\OI-166.md:1
+open_items\OI-165.md:3
+docs\research_papers\reading_pass_2026_08\mcleod-rohrmeier-2021-modular-harmonic-analysis.md:1
+open_items\OI-167.md:1
+open_items\OI-170.md:1
+docs\research_papers\BIBLIOGRAPHY.md:3
+open_items\OI-177.md:1
+reading_pass\extracts_second_pass\yang-cwitkowitz-duan-2023-harmonic-analysis-with-neural-semi-crf.md:1
+open_items\OI-176.md:1
+docs\redesign_plan.md:3
+reading_pass\extracts_second_pass\viaccoz-harasim-moss-rohrmeier-2023-wavescapes.md:1
+open_items\OI-180.md:1
+reading_pass\extracts_second_pass\temperley-2009-unified-probabilistic-model-for-polyphonic-music-analysis.md:2
+open_items\OI-179.md:2
+reading_pass\extracts_second_pass\sheh-ellis-2003-chord-segmentation-and-recognition-using-em-trained-hidden-markov-models.md:1
+reading_pass\extracts_second_pass\sarawagi-cohen-2004-semi-markov-conditional-random-fields.md:1
+open_items\OI-178.md:1
+reading_pass\extracts_second_pass\sapp-2005-visual-hierarchical-key-analysis.md:1
+reading_pass\extracts_second_pass\rocher-robine-hanna-oudre-2010-concurrent-estimation-of-chords-and-keys.md:1
+reading_pass\extracts_second_pass\raphael-stoddard-2003-harmonic-analysis-with-probabilistic-graphical-models.md:2
+open_items\OI-185.md:1
+reading_pass\extracts_second_pass\och-2003-minimum-error-rate-training-in-statistical-machine-translation.md:2
+open_items\OI-184.md:1
+reading_pass\extracts_second_pass\napoleslopez-gotham-fujinaga-2021-augmentednet-roman-numeral-analysis-network.md:1
+reading_pass\extracts_second_pass\micchi-gotham-giraud-2020-not-all-roads-lead-to-rome-pitch-representation-and-model-architecture.md:1
+open_items\OI-181.md:1
+reading_pass\extracts_second_pass\mcleod-rohrmeier-2024-chord-tone-alterations-suspensions.md:1
+reading_pass\extracts_second_pass\mcleod-rohrmeier-2021-modular-harmonic-analysis.md:1
+reading_pass\extracts_second_pass\masada-bunescu-2019-chord-recognition-in-symbolic-music-a-segmental-crf-model.md:1
+open_items\OI-194.md:1
+reading_pass\extracts_second_pass\korzeniowski-widmer-2018-improved-chord-recognition-by-combining-duration-and-harmonic-language-models.md:1
+open_items\OI-193.md:1
+reading_pass\extracts_second_pass\karystinaios-widmer-2023-roman-numeral-analysis-with-graph-neural-networks-onset-wise-predictions.md:1
+reading_pass\extracts_second_pass\karystinaios-hentschel-neuwirth-widmer-2025-analysisgnn-unified-music-analysis.md:1
+reading_pass\extracts_second_pass\humphrey-bello-2015-four-timely-insights-ace.md:1
+open_items\OI-190.md:1
+reading_pass\extracts_second_pass\hentschel-moss-mcleod-neuwirth-rohrmeier-2021-unified-chord-model.md:1
+open_items\OI-189.md:1
+reading_pass\extracts_second_pass\hamanaka-hirata-tojo-2013-computational-music-theory-gttm.md:1
+reading_pass\extracts_second_pass\feisthauer-bigo-giraud-leve-2020-estimating-keys-and-modulations-in-musical-pieces.md:1
+open_items\OI-209.md:1
+reading_pass\extracts_second_pass\dehaas-magalhaes-wiering-veltkamp-2013-harmtrace-functional-analysis.md:1
+open_items\OI-208.md:3
+reading_pass\extracts_second_pass\chen-su-2018-functional-harmony-recognition-of-symbolic-music-data-with-multi-task-rnn.md:1
+open_items\OI-207.md:56
+reading_pass\extracts_second_pass\catteau-martens-leman-2006-model-based-approach-to-scale-and-chord-estimation.md:1
+open_items\OI-206.md:2
+open_items\OI-205.md:1
+open_items\OI-201.md:1
+open_items\OI-2.md:2
+open_items\OI-230.md:3
+open_items\OI-229.md:3
+open_items\OI-228.md:4
+open_items\OI-226.md:4
+open_items\OI-224.md:1
+open_items\OI-219.md:1
+open_items\OI-215.md:1
+open_items\OI-213.md:1
+open_items\OI-212.md:1
+open_items\OI-257.md:1
+open_items\OI-256.md:1
+open_items\OI-255.md:1
+open_items\OI-254.md:1
+open_items\OI-253.md:1
+open_items\OI-252.md:1
+open_items\OI-251.md:1
+open_items\OI-250.md:1
+open_items\OI-249.md:1
+open_items\OI-248.md:1
+open_items\OI-247.md:2
+```
+
+*(Expression 6, continued.)*
+
+```
+reading_pass\extracts\yang-cwitkowitz-duan-2023-harmonic-analysis-with-neural-semi-crf.md:7
+open_items\OI-246.md:1
+reading_pass\extracts\wu-nakamura-yoshii-2020-variational-autoencoder-for-joint-chord-and-key-estimation.md:9
+open_items\OI-245.md:1
+open_items\OI-244.md:1
+reading_pass\extracts\tsushima-nakamura-itoyama-yoshii-2017-arxiv-generative-statistical-models-with-self-emergent-grammar-of-chord-sequences.md:1
+open_items\OI-243.md:2
+reading_pass\extracts\temperley-sleator-1999-modeling-meter-and-harmony.md:4
+reading_pass\extracts\temperley-2009-unified-probabilistic-model-polyphonic-music-analysis.md:9
+open_items\OI-240.md:7
+reading_pass\extracts\temperley-2002-a-bayesian-approach-to-key-finding.md:8
+open_items\OI-239.md:1
+reading_pass\extracts\sutton-mccallum-2006-an-introduction-to-conditional-random-fields-for-relational-learning.md:8
+open_items\OI-238.md:1
+reading_pass\extracts\karystinaios-widmer-2022-cadence-detection-graph-neural-networks.md:2
+open_items\OI-237.md:2
+reading_pass\extracts\sheh-ellis-2003-chord-segmentation-and-recognition-using-em-trained-hidden-markov-models.md:7
+reading_pass\extracts\karystinaios-hentschel-neuwirth-widmer-2025-analysisgnn-unified-music-analysis.md:9
+reading_pass\extracts\sha-pereira-2003-shallow-parsing-with-conditional-random-fields.md:5
+open_items\OI-234.md:1
+reading_pass\extracts\ju-howes-mckay-conditschultz-calvozaragoza-fujinaga-2019-an-interactive-workflow-for-generating-chord-labels.md:4
+open_items\OI-233.md:1
+reading_pass\extracts\sears-pearce-caplin-mcadams-2018-simulating-expectations-for-tonal-cadences.md:2
+reading_pass\extracts\ju-conditschultz-arthur-fujinaga-2017-non-chord-tone-identification-using-deep-neural-networks.md:12
+open_items\OI-232.md:2
+reading_pass\extracts\jacoby-tishby-tymoczko-2015-an-information-theoretic-approach-to-chord-categorization-and-functional-harmony.md:2
+reading_pass\extracts\sarawagi-cohen-2004-semi-markov-conditional-random-fields.md:7
+open_items\OI-231.md:2
+reading_pass\extracts\illescas-rizo-inesta-2007-harmonic-melodic-and-functional-automatic-analysis.md:1
+reading_pass\extracts\sailor-2024-rnbert-fine-tuning-a-masked-language-model-for-roman-numeral-analysis.md:7
+open_items\OI-286.md:4
+reading_pass\extracts\rohrmeier-2011-towards-a-generative-syntax-of-tonal-harmony.md:2
+open_items\OI-285.md:8
+reading_pass\extracts\rohrmeier-2006-towards-modelling-harmonic-movement-in-music.md:3
+reading_pass\extracts\harasim-rohrmeier-odonnell-2018-a-generalized-parsing-framework-for-generative-models-of-harmonic-syntax.md:13
+open_items\OI-284.md:1
+reading_pass\extracts\rocher-robine-hanna-oudre-2010-concurrent-estimation-of-chords-and-keys.md:10
+reading_pass\extracts\hamanaka-hirata-tojo-2013-computational-music-theory-gttm.md:1
+open_items\OI-283.md:2
+reading_pass\extracts\raphael-stoddard-2003-harmonic-analysis-with-probabilistic-graphical-models.md:8
+reading_pass\extracts\granrothwilding-steedman-2012-statistical-parsing-for-harmonic-analysis-of-jazz-chord-sequences.md:2
+open_items\OI-282.md:5
+reading_pass\extracts\pardo-birmingham-2002-algorithms-for-chordal-analysis.md:7
+reading_pass\extracts\granrothwilding-2013-harmonic-analysis-of-music-using-combinatory-categorial-grammar.md:2
+open_items\OI-281.md:67
+reading_pass\extracts\och-2003-minimum-error-rate-training-in-statistical-machine-translation.md:6
+reading_pass\extracts\feisthauer-bigo-giraud-leve-2020-estimating-keys-and-modulations-in-musical-pieces.md:7
+open_items\OI-280.md:5
+reading_pass\extracts\noland-sandler-2006-key-estimation-using-a-hidden-markov-model.md:7
+reading_pass\extracts\ni-mcvicar-santosrodriguez-debie-2011-end-to-end-machine-learning-system-harmonic-analysis.md:7
+open_items\OI-279.md:11
+reading_pass\extracts\declercq-2015-a-model-for-scale-degree-reinterpretation.md:4
+reading_pass\extracts\ng-jordan-2001-on-discriminative-vs-generative-classifiers.md:7
+open_items\OI-278.md:4
+open_items\OI-277.md:1
+reading_pass\extracts\conditschultz-ju-fujinaga-2018-a-flexible-approach-to-automated-harmonic-analysis.md:7
+reading_pass\extracts\napoleslopez-gotham-fujinaga-2021-augmentednet-roman-numeral-analysis-network.md:10
+open_items\OI-276.md:5
+reading_pass\extracts\chew-2002-spiral-array-algorithm-for-determining-key-boundaries.md:7
+open_items\OI-275.md:5
+reading_pass\extracts\micchi-gotham-giraud-2020-not-all-roads-lead-to-rome-pitch-representation-and-model-architecture.md:12
+reading_pass\extracts\chen-su-2021-attend-to-chords-improving-harmonic-analysis-of-symbolic-music.md:5
+reading_pass\extracts\chen-su-2019-harmony-transformer-incorporating-chord-segmentation-into-harmony-recognition.md:9
+open_items\OI-272.md:13
+reading_pass\extracts\chen-su-2018-functional-harmony-recognition-of-symbolic-music-data-with-multi-task-rnn.md:9
+open_items\OI-271.md:5
+reading_pass\extracts\masada-bunescu-2019-chord-recognition-in-symbolic-music-a-segmental-crf-model.md:7
+open_items\OI-270.md:3
+reading_pass\extracts\catteau-martens-leman-2006-model-based-approach-to-scale-and-chord-estimation.md:10
+reading_pass\extracts\lazzari-2023-knowledge-based-chord-embeddings-modal-harmony-ontology.md:1
+reading_pass\extracts\burgoyne-pugin-kereliuk-fujinaga-2007-a-cross-validated-study-of-modelling-strategies-for-automatic-chord-recognition-in-audio.md:7
+reading_pass\extracts\lafferty-mccallum-pereira-2001-conditional-random-fields-for-segmenting-and-labeling-sequence-data.md:10
+open_items\OI-268.md:49
+reading_pass\extracts\lafferty-mccallum-pereira-2001-conditional-random-fields-for-segmenting-and-labeling-sequence-data-1.md:10
+reading_pass\extracts\bigo-feisthauer-giraud-leve-2018-relevance-of-musical-features-for-cadence-detection.md:2
+open_items\OI-267.md:1
+reading_pass\extracts\korzeniowski-widmer-2018-improved-chord-recognition-by-combining-duration-and-harmonic-language-models.md:8
+reading_pass\extracts\karystinaios-widmer-2023-roman-numeral-analysis-with-graph-neural-networks.md:9
+open_items\OI-266.md:5
+open_items\OI-309.md:2
+open_items\OI-305.md:3
+open_items\OI-304.md:2
+open_items\OI-301.md:1
+open_items\OI-300.md:1
+open_items\OI-3.md:1
+open_items\OI-299.md:1
+open_items\OI-298.md:4
+open_items\OI-99.md:2
+open_items\OI-297.md:1
+open_items\OI-296.md:3
+open_items\OI-295.md:8
+open_items\OI-294.md:2
+open_items\OI-91.md:1
+open_items\OI-293.md:18
+open_items\OI-292.md:1
+open_items\OI-291.md:9
+open_items\OI-290.md:11
+open_items\OI-85.md:1
+open_items\OI-83.md:1
+open_items\OI-288.md:3
+docs\precision_metric_design.md:2
+open_items\OI-82.md:1
+open_items\OI-81.md:1
+open_items\OI-287.md:3
+open_items\OI-80.md:1
+open_items\OI-343.md:1
+open_items\OI-342.md:1
+open_items\OI-79.md:1
+open_items\OI-78.md:1
+open_items\OI-340.md:2
+open_items\OI-77.md:1
+open_items\OI-76.md:1
+open_items\OI-75.md:1
+open_items\OI-338.md:2
+open_items\OI-74.md:2
+open_items\OI-73.md:1
+open_items\OI-337.md:2
+open_items\OI-72.md:1
+open_items\OI-336.md:2
+open_items\OI-7.md:2
+open_items\OI-335.md:3
+open_items\OI-334.md:2
+open_items\OI-332.md:2
+open_items\OI-331.md:4
+open_items\OI-330.md:2
+open_items\OI-6.md:1
+open_items\OI-329.md:5
+open_items\OI-58.md:1
+open_items\OI-328.md:1
+open_items\OI-327.md:16
+open_items\OI-326.md:6
+open_items\OI-324.md:2
+open_items\OI-52.md:1
+open_items\OI-51.md:4
+open_items\OI-322.md:1
+open_items\OI-321.md:1
+open_items\OI-50.md:1
+open_items\OI-320.md:1
+open_items\OI-5.md:1
+open_items\OI-319.md:4
+open_items\OI-49.md:1
+open_items\OI-318.md:3
+open_items\OI-48.md:1
+open_items\OI-317.md:1
+open_items\OI-47.md:1
+open_items\OI-367.md:1
+open_items\OI-46.md:1
+open_items\OI-366.md:3
+open_items\OI-43.md:1
+open_items\OI-365.md:4
+open_items\OI-42.md:1
+open_items\OI-364.md:6
+open_items\OI-4.md:1
+open_items\OI-363.md:3
+open_items\OI-383.md:1
+open_items\OI-362.md:1
+open_items\OI-361.md:1
+open_items\OI-380.md:3
+open_items\OI-360.md:1
+open_items\OI-38.md:1
+open_items\OI-359.md:1
+open_items\OI-379.md:1
+open_items\OI-378.md:4
+open_items\OI-358.md:1
+open_items\OI-377.md:6
+open_items\OI-357.md:5
+open_items\OI-356.md:1
+open_items\OI-376.md:4
+open_items\OI-355.md:2
+open_items\OI-375.md:1
+open_items\OI-354.md:4
+open_items\OI-374.md:1
+open_items\OI-352.md:2
+open_items\OI-373.md:5
+open_items\OI-351.md:1
+open_items\OI-350.md:3
+open_items\OI-372.md:5
+open_items\OI-349.md:3
+open_items\OI-370.md:4
+open_items\OI-347.md:1
+open_items\OI-369.md:3
+open_items\OI-346.md:3
+tools\build_score_census_registry.py:5
+tools\term_inventory\gen_term_inventory.py:2
+tools\batch_analyze.cpp:4
+tools\score_census_registry.json:2
+tools\audit\changed_paths_finish_line_wave.json:3
+tools\audit\changed_paths_finish_line_item1b.json:2
+tools\audit\changed_paths_finish_line.json:5
+tools\audit\changed_paths_document_routes.json:2
+tools\audit\changed_paths_defense_sizing_third_task1.json:44
+tools\robust_stop\snapshot_2026-07-26_pre_oi178_adoption\SNAPSHOT_NOTE.md:1
+tools\audit\changed_paths_defense_sizing_third_task0.json:46
+tools\audit\changed_paths_defense_sizing_task0.json:50
+tools\audit\changed_paths_defense_sizing_second_task0.json:50
+tools\audit\changed_paths_defense_authored_ends_task0.json:47
+tools\audit\changed_paths_c1_ruling_item1c.json:3
+tools\audit\changed_paths_backlog_commit.json:3
+tools\audit\changed_paths_away_task2.json:3
+tools\audit\changed_paths_away_task1.json:2
+tools\audit\changed_paths_away_task0.json:6
+tools\audit\census_movement_classification.json:3
+tools\audit\artifact_inventory.json:307
+tools\audit\arm_comment_sweep.json:1
+STATUS_ARCHIVE.md:326
+STATUS.md:5
+tools\REPRODUCIBILITY.md:1
+tools\audit\test_construction_evidence.json:21
+tools\audit\status_residue_move.json:3
+tools\audit\status_batch_bound.json:3
+tools\audit\status_archive_pass_2026_08_11.json:54
+tools\audit\specification_document_set.json:209
+tools\audit\sole_carrier_subclass.json:284
+tools\audit\soft_discard_application.json:13
+tools\audit\shell_read_guard_establishment.json:8
+tools\audit\decisions_filter_classification.json:1008
+tools\audit\shell_read_guard.py:12
+tools\param_manifest.json:1
+tools\audit\rulings_sort_classification.json:319
+tools\audit\retirement_census_movement.json:2
+tools\notation_seams\README.md:2
+tools\notation_seams\partition_completeness.json:1
+tools\audit\retirement_caller_check.json:620
+tools\audit\residue_discard_application.json:112
+tools\audit\reserved_word_scanner.json:6
+tools\audit\recognizer_establishment_sort.json:12
+tools\audit\reaim_ratification_surface_paths.py:2
+tools\audit\ratified_document_check.json:2614
+tools\audit\ratification_surface_set.json:131
+tools\audit\ratification_surface_reaim.json:156
+tools\audit\prune_at_amendment_lint.py:2
+tools\audit\prune_at_amendment_lint.json:4
+tools\audit\process_check_reads5_dispatch.json:1
+tools\audit\decisions\verbatim_subject_consistency.json:251
+tools\audit\decisions\true_half_reach_rows.json:2
+tools\audit\decisions\true_half_reach.json:4
+tools\audit\decisions\three_owner_rulings_edit_shape.json:1
+tools\notation_seams\classify_dualarm.py:1
+tools\music21_batch.py:2
+tools\audit\decisions\snapshot_2026-08-08_pre_home_classification_apply\backbone_decisions.json:768
+tools\audit\process_check_census_delegation_dispatch.json:1
+tools\audit\process_check.py:1
+tools\audit\post_split_archive.json:9
+tools\audit\phase3_gate_partition.json:36
+tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\disposition_manifest.json:4
+tools\audit\phase1_gate_readers.json:27
+tools\audit\phase1_finish_line.json:31
+tools\audit\phase1_completion_inventory.json:92
+tools\audit\period_stratum_split.json:174
+tools\measure_joint_probe.py:1
+tools\audit\pass2_apply_verdicts.py:1
+tools\audit\oi367_opening_correction.json:5
+tools\audit\oi357_production_arm_run_legacy_control.json:1
+tools\audit\oi357_production_arm_run.json:1
+tools\audit\oi357_production_arm_comparison.json:2
+tools\audit\oi357_partial_signature_establishment.json:2
+tools\audit\oi357_legacy_arm_same_commit_control.json:2
+tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\cluster_dispositions.json:2747
+tools\audit\oi356_parser_correction.json:10
+tools\audit\oi349_record_arm_precondition_probe.py:2
+tools\audit\oi349_record_arm_precondition_probe.json:1
+tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\cluster_dispositions.csv:2732
+tools\audit\decisions\snapshot_2026-08-04_pre_home_classification_apply\phase1q_reclassification.json:425
+tools\audit\decisions\snapshot_2026-08-04_pre_home_classification_apply\establishment.json:1
+tools\audit\decisions\seed_recall.json:10
+tools\audit\decisions\retired_subject_moves.json:77
+tools\audit\decisions\reads6_yield.json:31
+tools\audit\decisions\reads5_yield.json:33
+tools\audit\decisions\reads5_repack.json:51
+tools\audit\decisions\reads4_yield.json:38
+tools\audit\decisions\reads4_oi326_application.json:50
+tools\audit\oi199\inventory.json:1
+tools\audit\decisions\reads3_yield.json:48
+tools\audit\decisions\reads2_yield.json:28
+tools\audit\oi199\gen_joint_dispositions.py:1
+tools\audit\decisions\reads1_yield.json:18
+tools\audit\oi199\file_table.csv:1
+tools\audit\decisions\r1_superseded_reach.json:20
+tools\audit\decisions\phase1w_legacy_verification.json:9
+tools\audit\decisions\phase1q_record_divergence.json:1
+tools\audit\notation_surface\summary.json:1
+tools\audit\decisions\phase1p_delegation_bar.json:108
+tools\audit\notation_surface\gen_notation_surface_audit.py:2
+tools\audit\decisions\phase1n_reading_regime.json:126
+tools\audit\decisions\phase1m_measurements.json:120
+tools\audit\nongating_apparatus_rows.json:16
+tools\audit\decisions\phase1g_triage.md:84
+tools\audit\decisions\outstanding_delegations.json:62
+tools\audit\decisions\oi333_repair.json:67
+tools\audit\decisions\manifest.json:109
+tools\audit\decisions\home_classification.json:572
+tools\audit\decisions\gen_verbatim_subject_consistency.py:1
+tools\audit\decisions\gen_true_half_reach_rows.py:2
+tools\audit\decisions\gen_true_half_reach.py:4
+tools\audit\decisions\gen_retired_subject_moves.py:3
+tools\audit\decisions\apply_residue_discard.py:6
+tools\audit\decisions\gen_reads6_yield.py:14
+tools\audit\decisions\gen_reads5_yield.py:16
+tools\audit\decisions\apply_field_diff.json:1
+tools\audit\decisions\gen_reads5_repack.py:1
+tools\audit\decisions\gen_reads4_yield.py:11
+tools\audit\decisions\gen_reads4_oi326_application.py:2
+tools\audit\deciding_act_recovery.json:1403
+tools\audit\decisions\gen_reads3_yield.py:10
+tools\audit\decisions\gen_reads2_yield.py:4
+tools\audit\decisions\gen_reads1_yield.py:3
+tools\audit\claude_md_rule_triage.py:9
+tools\audit\decisions\gen_r1_superseded_reach.py:2
+tools\audit\claude_md_rule_triage.json:2
+tools\audit\decisions\gen_phase1w_legacy_verification.py:21
+tools\audit\claude_md_prune_backlog.json:5
+tools\audit\decisions\gen_phase1q_record_divergence.py:1
+tools\audit\claude_md_finer_spans.json:16
+tools\audit\decisions\gen_phase1p_delegation_bar.py:106
+tools\audit\decisions\gen_phase1m_measurements.py:51
+tools\audit\claude_md_finer_readers.json:298
+tools\audit\decisions\gen_phase1g_triage.py:119
+tools\audit\claude_md_finer_archive.json:6
+tools\audit\decisions\gen_outstanding_delegations.py:22
+tools\audit\changed_paths_three_owner_rulings.json:4
+tools\audit\changed_paths_return_continuation.json:1
+tools\audit\decisions\gen_live_prohibition_pointers.py:1
+tools\audit\l5\inventory.json:1
+tools\audit\changed_paths_phase1_completion_inventory.json:4
+tools\audit\decisions\gen_homing_edit_shape.py:1
+tools\audit\changed_paths_owner_rulings_homing.json:5
+tools\audit\l5\gen_harness_dispositions.py:1
+tools\audit\decisions\gen_home_classification.py:10
+tools\audit\changed_paths_licensed_homing.json:2
+tools\audit\l5\gen_grading_fitting_dispositions.py:1
+tools\audit\decisions\gen_finish_line_item1_routes.py:72
+tools\audit\changed_paths_l2_verdict_pass_task3.json:1
+tools\audit\l5\file_table.csv:1
+tools\audit\decisions\gen_decision_harvest.py:7
+tools\audit\changed_paths_l2_verdict_pass_task0.json:2
+tools\audit\decisions\gen_decision_clusters.py:2
+tools\audit\changed_paths_l2_ruling_writeback_task3.json:2
+tools\audit\decisions\gen_decisions_register.py:1
+tools\audit\changed_paths_l2_ruling_writeback_task0.json:2
+tools\audit\decisions\gen_cluster_dispositions.py:11
+tools\audit\changed_paths_l2_reading_file_task3.json:1
+tools\audit\decisions\gen_apply_field_diff.py:1
+tools\audit\changed_paths_l2_reading_file_task0.json:1
+tools\audit\decisions\finish_line_item1_routes.json:58
+tools\audit\changed_paths_l2_criterion_task3.json:1
+tools\audit\decisions\disposition_manifest.json:4
+tools\audit\changed_paths_l2_criterion_task0.json:4
+tools\audit\decisions\decision_inventory.md:11
+tools\audit\changed_paths_l2_candidate_list_task3.json:1
+tools\audit\changed_paths_l2_candidate_list_task0.json:1
+tools\audit\changed_paths_guard_fix_item1d.json:4
+tools\audit\changed_paths_guard_dialect_close.json:5
+tools\audit\changed_paths_five_rulings.json:2
+tools\audit\l4\pass1_satellites_dispositions.py:1
+tools\audit\decisions\cluster_dispositions.json:2747
+tools\audit\l4\pass1_oracle_dispositions.py:1
+tools\audit\decisions\decision_clusters.json:2914
+tools\audit\decisions\cluster_dispositions.csv:2732
+tools\audit\l4\pass1_dispositions_decoder.json:3
+tools\audit\l4\pass1_dispositions_decoder.csv:2
+tools\audit\decisions\backbone_decisions.json:1125
+tools\audit\decisions\decision_clusters.csv:2731
+tools\audit\decisions\apply_soft_discard.py:5
+tools\audit\decisions\cluster_preview.md:1
+tools\audit\decisions\cluster_manifest.json:2
+tools\audit\l4\inventory.json:1
+tools\audit\l4\file_table.csv:1
+tools\audit\l3\sweep_results.txt:2
+tools\audit\l3\sweep_results.json:2
+tools\audit\decisions\decision_candidates.csv:4641
+tools\audit\gen_epoch_write_path.py:2
+tools\audit\gen_doc_change_candidates.py:2
+tools\audit\gen_dispositions.py:1
+tools\audit\gen_discard_records.py:5
+tools\audit\gen_discard_reach_split.py:2
+tools\audit\gen_derivation_boot_pack.py:68
+tools\audit\gen_defense_share.py:12
+tools\audit\gen_decisions_filter.py:9
+tools\audit\gen_deciding_act_recovery.py:8
+tools\audit\gen_claude_md_prune_backlog.py:5
+tools\audit\gen_claude_md_finer_surface.py:10
+tools\audit\gen_claude_md_finer_spans.py:5
+tools\audit\gen_claude_md_finer_archive.py:5
+tools\joint_estimator\weight_fit_part_folds4.json:1
+tools\audit\l3\inventory.json:1
+tools\audit\gen_census_movement_classification.py:2
+tools\joint_estimator\weight_fit_part_folds3.json:1
+tools\audit\gen_blind_rerun_sample.py:1
+tools\joint_estimator\weight_fit_part_folds2.json:1
+tools\audit\l3\file_table.csv:1
+tools\audit\gen_artifact_inventory_surface.py:13
+tools\joint_estimator\weight_fit_part_folds1.json:1
+tools\audit\gen_artifact_inventory.py:11
+tools\audit\l2_keyword_count_measurement.json:2
+tools\joint_estimator\weight_fit_part_folds0.json:1
+tools\audit\gen_arm_comment_sweep.py:2
+tools\audit\l2_criterion_written_check.json:23
+tools\joint_estimator\weight_fit_part_all.json:1
+tools\audit\gating_row_sizing.json:7
+tools\joint_estimator\weight_fit.json:1
+tools\audit\framework_untrusted_candidates.json:35
+tools\audit\l2_candidate_list.json:243
+tools\audit\filing_convention_application.json:6
+tools\audit\evidence_pin_membership.json:124
+tools\audit\epoch_write_path.json:1
+tools\audit\decisions\decision_candidates.json:6435
+tools\audit\gen_recognizer_establishment_sort.py:3
+tools\audit\gen_ratified_document_check.py:15
+tools\audit\l1l2\pass1_dispositions.json:1
+tools\audit\gen_post_split_archive.py:5
+tools\audit\l1l2\pass1_dispositions.csv:1
+tools\audit\gen_phase3_gate_partition.py:14
+tools\audit\gen_phase1_gate_readers.py:3
+tools\audit\gen_phase1_finish_line.py:5
+tools\joint_estimator\table_fit_inventory.json:2
+tools\audit\gen_phase1_completion_inventory.py:9
+tools\audit\l1l2\inventory.json:1
+tools\audit\gen_period_stratum_split.py:4
+tools\joint_estimator\tables_fold4.json:1
+tools\audit\doc_change_candidates.json:216
+tools\audit\l1l2\file_table.csv:1
+tools\audit\discard_records.json:5
+tools\joint_estimator\tables_fold3.json:1
+tools\audit\discard_reach_split.json:62
+tools\joint_estimator\tables_fold2.json:1
+tools\audit\gen_oi367_opening_correction.py:2
+tools\joint_estimator\tables_fold1.json:1
+tools\audit\gen_oi357_production_arm_run.py:2
+tools\audit\gen_oi357_partial_signature_establishment.py:4
+tools\joint_estimator\tables_fold0.json:1
+tools\audit\gen_oi356_parser_correction.py:1
+tools\audit\l0_l1_outgoing_population.json:538
+tools\joint_estimator\tables_all.json:1
+tools\audit\derivation_exemplars\l0-l1\bwv1049_03_presto.provenance.md:2
+tools\audit\gen_nongating_apparatus_rows.py:19
+tools\audit\l0l1_exemplar_selection.json:1
+tools\audit\gen_l0_l1_outgoing_population.py:13
+tools\audit\l0l1_boot_pack_freeze_and_render.json:2
+tools\audit\gen_l0l1_exemplar_selection.py:2
+tools\audit\l0l1_boot_pack_extension.json:2
+tools\audit\derivation_boot_pack.json:51
+tools\audit\gen_july_screen.py:127
+tools\audit\july_screen_report.md:240
+tools\audit\gen_inventory.py:5
+tools\audit\gen_index_status_normalization.py:2
+tools\audit\july_screen.json:261
+tools\joint_estimator\probe_desksim.py:4
+tools\audit\gen_guard_state.py:4
+tools\joint_estimator\probe_decoder.py:3
+tools\audit\index_status_normalization.json:5
+tools\audit\gen_guard_classification.py:9
+tools\audit\index_status_lint.py:1
+tools\audit\gen_governing_surface_split.py:6
+tools\audit\derivation_boot_pack\scoring-model\05_the_ratified_design_intent.md:13
+tools\audit\gen_governing_surface_spans.py:2
+tools\audit\guard_state.json:32
+tools\audit\derivation_boot_pack\scoring-model\04_the_dispatch_protocol.md:42
+tools\audit\gen_governing_surface_readers.py:10
+tools\audit\derivation_boot_pack\scoring-model\03_the_writing_standards.md:3
+tools\audit\gen_gating_row_sizing.py:6
+tools\audit\guard_classification.json:8
+tools\audit\gen_framework_untrusted_candidates.py:2
+tools\audit\derivation_boot_pack\scoring-model\02_the_guiding_principles_and_the_conventions.md:24
+tools\audit\gen_filing_convention_application.py:4
+tools\audit\governing_surface_split_application.json:134
+tools\audit\derivation_boot_pack\scoring-model\00_READ_THIS_FIRST.md:1
+tools\audit\gen_evidence_pin_membership.py:4
+tools\audit\gen_sole_carrier_subclass.py:3
+tools\audit\governing_surface_spans_2026_09_07.json:37
+tools\audit\gen_session_start_read_size.py:3
+tools\audit\governing_surface_spans.json:38
+tools\audit\gen_rulings_sort.py:10
+tools\audit\derivation_boot_pack\l0-l1\09_the_empirical_findings_ledger.md:60
+tools\joint_estimator\probe_corpus_decode.json:1
+tools\audit\gen_retirement_census_movement.py:2
+tools\audit\derivation_boot_pack\l0-l1\08_the_five_research_extracts.md:17
+tools\audit\gen_retirement_caller_check.py:12
+tools\audit\governing_surface_readers.json:543
+tools\audit\derivation_boot_pack\l0-l1\07_the_charter_the_layers_and_the_decisions.md:6
+tools\audit\gen_reserved_word_scanner.py:6
+tools\audit\gen_withheld_family_reading.py:7
+tools\audit\gen_status_batch_bound.py:6
+tools\audit\derivation_boot_pack\l0-l1\05_the_ratified_design_intent.md:13
+tools\audit\gen_test_construction_evidence.py:2
+tools\audit\gen_status_archive_pass.py:8
+tools\audit\derivation_boot_pack\l0-l1\04_the_dispatch_protocol.md:42
+tools\audit\gen_specification_document_set.py:98
+tools\audit\gen_status_residue_move.py:5
+tools\audit\derivation_boot_pack\l0-l1\03_the_writing_standards.md:3
+tools\audit\derivation_boot_pack\l0-l1\02_the_guiding_principles_and_the_conventions.md:25
+tools\audit\derivation_boot_pack\l0-l1\00_READ_THIS_FIRST.md:1
+tools\compare_vl_parity.py:1
+tools\compare_progressions_oracle.py:1
+tools\audit\derivation_boot_pack\harmony-boundary\05_the_ratified_design_intent.md:12
+tools\audit\derivation_boot_pack\harmony-boundary\04_the_dispatch_protocol.md:42
+tools\audit\derivation_boot_pack\harmony-boundary\03_the_writing_standards.md:3
+tools\audit\derivation_boot_pack\harmony-boundary\02_the_guiding_principles_and_the_conventions.md:24
+tools\audit\derivation_boot_pack\harmony-boundary\00_READ_THIS_FIRST.md:1
+tools\audit\defense_share.json:5
+tools\classify_key_disagreement.py:1
+tools\joint_estimator\count_inventory.json:1
+tools\joint_estimator\gen_label_tables.py:5
+tools\joint_estimator\gen_fold_assignment.py:3
+tools\joint_estimator\gen_fermata_boundary.py:1
+tools\joint_estimator\gen_factor_presence.py:3
+tools\joint_estimator\gen_embedded_tables.py:2
+tools\joint_estimator\factor_presence_inventory.json:2
+tools\joint_estimator\gen_count_inventory.py:2
+tools\joint_estimator\factor_presence_fold4.json:2
+tools\joint_estimator\factor_presence_fold3.json:2
+tools\joint_estimator\gen_wir_alignment_probe.py:1
+tools\joint_estimator\fermata_boundary_addendum.json:1
+tools\joint_estimator\fold_assignment.json:1
+tools\joint_estimator\factor_presence_fold2.json:2
+tools\joint_estimator\fit_weights.py:3
+tools\joint_estimator\factor_presence_fold1.json:2
+tools\joint_estimator\gen_spelling_establishment.py:1
+tools\joint_estimator\gen_mode_marginal.py:1
+tools\joint_estimator\factor_presence_fold0.json:2
+tools\joint_estimator\gen_note_tables.py:2
+tools\joint_estimator\note_tables_fold0.json:1
+tools\joint_estimator\factor_presence_all.json:2
+tools\joint_estimator\note_tables_all.json:1
+tools\joint_estimator\note_tables_fold3.json:1
+tools\joint_estimator\note_tables_fold2.json:1
+tools\joint_estimator\note_tables_fold1.json:1
+tools\joint_estimator\note_table_fit_inventory.json:1
+tools\joint_estimator\note_tables_fold4.json:1
+src\composing\tests\voiceleading_tests.cpp:1
+src\composing\tests\spellingview_tests.cpp:1
+src\composing\tests\slicer_tests.cpp:1
+src\composing\tests\regionanalysis_tests.cpp:1
+src\composing\tests\reachback_tests.cpp:1
+src\composing\tests\progressionrecognizer_tests.cpp:2
+src\composing\tests\postscoringgates_tests.cpp:1
+src\composing\tests\paramoverride_tests.cpp:1
+src\composing\tests\note_model_tests.cpp:2
+src\composing\tests\inference_presentation_boundary_tests.cpp:1
+src\composing\tests\harmonicvocabulary_tests.cpp:1
+src\composing\tests\grouping_tests.cpp:1
+src\composing\tests\functionromannumeral_tests.cpp:1
+src\composing\tests\functionresolver_tests.cpp:3
+src\composing\tests\functionrelationallabel_tests.cpp:1
+src\composing\tests\functionprogression_tests.cpp:1
+src\composing\tests\functionoutput_tests.cpp:1
+src\composing\tests\functionmodulation_tests.cpp:1
+src\composing\tests\functioncadence_tests.cpp:2
+src\composing\tests\forwardoverride_tests.cpp:1
+src\composing\tests\decode_chord_tests.cpp:2
+src\composing\tests\chordanalyzer_tests.cpp:1
+src\composing\tests\data\reachback_anchor.musicxml:1
+src\composing\analysis\voiceleading\voicelinearview.h:1
+src\composing\analysis\voiceleading\voiceleadingprofiles.h:1
+src\composing\analysis\voiceleading\textureclassifierreference.h:1
+src\composing\analysis\voiceleading\textureclassifier.h:2
+src\composing\analysis\vocabulary\harmonicvocabulary.h:7
+src\composing\analysis\vocabulary\harmonicvocabulary.cpp:1
+src\composing\analysis\slicing\slicer.h:2
+src\composing\analysis\slicing\slicer.cpp:1
+src\composing\analysis\section\sectionrecordadapter.h:2
+src\composing\analysis\section\sectionanalyzer.h:1
+src\composing\analysis\region\regionanalyzer.h:1
+src\composing\analysis\region\regionanalyzer.cpp:4
+src\composing\analysis\region\harmonicrhythm.h:1
+src\composing\analysis\progression\progressionrecognizer.h:2
+src\composing\analysis\param\paramoverride.h:1
+src\composing\analysis\notemodel\note_model.h:4
+src\composing\analysis\key\keymodesequence.h:2
+src\composing\analysis\key\keymodeanalyzer.h:3
+src\composing\analysis\joint\labelclass.h:1
+src\composing\analysis\joint\jointweights.h:1
+src\composing\analysis\joint\jointtables.h:1
+src\composing\analysis\joint\jointrender.h:1
+src\composing\analysis\joint\jointprimitives.h:1
+src\composing\analysis\joint\jointnotationrecord.h:2
+src\composing\analysis\joint\jointnotationproducer.h:1
+src\composing\analysis\joint\jointfactadapter.h:1
+src\composing\analysis\joint\jointembeddedartifacts.cpp:4
+src\composing\analysis\joint\jointdecoder.h:1
+src\composing\analysis\joint\jointdecoder.cpp:1
+src\composing\analysis\joint\jointadapter.h:1
+src\composing\analysis\CMakeLists.txt:21
+src\composing\analysis\grouping\groupinglayer.h:2
+src\composing\analysis\chord\postscoringgates.cpp:2
+src\composing\analysis\function\harmonicfunctionlayer.h:1
+src\composing\analysis\chord\chordslicedecoder.h:5
+src\composing\analysis\function\harmonicfunctionlayer.cpp:1
+src\composing\analysis\function\functionromannumeral.h:2
+src\composing\analysis\chord\chordanalyzer.h:5
+src\composing\analysis\chord\chordanalyzer.cpp:1
+src\composing\analysis\function\functionresolver.h:3
+src\composing\analysis\chord\analysisutils.h:1
+src\composing\analysis\function\functionresolver.cpp:1
+src\composing\analysis\function\functionrelationallabel.h:2
+src\composing\analysis\function\functionprogression.h:3
+src\composing\analysis\function\functionoutput.h:2
+src\composing\analysis\function\functionmodulation.h:2
+src\composing\analysis\function\functioncadence.h:2
+src\composing\analysis\function\forwardoverride.h:2
+src\composing\analysis\engravingbridge\spellingview.h:2
+src\composing\analysis\engravingbridge\regiontonecollector.h:1
+src\composing\analysis\engravingbridge\phraseboundaryview.h:2
+```
+
+Grep's summary line: `Found 56888 total occurrences across 1734 files.`
+
+**Named because they bear on the move:**
+- A second scratch directory, `cowork_scratch_2026_08_08\`, exists at the root.
+- A root file named `contrapunctus_findings.md` matches no Task 1 pattern.
+- `src\composing\tests\data\reachback_anchor.musicxml` is a test fixture that names a `cowork_*` design document.
+
+---
+
+## TASK 2(b) — code that finds these files by location
+
+**The search:** Grep with the pattern `cowork_|cc_instruction|cc_report|cc_\*|listdir|glob\(|iterdir|scandir`, over the
+file types `*.py *.mjs *.js *.sh *.ps1 *.bat *.cmake`, with the exclusions above, `output_mode: "content"`, line
+numbers on and `head_limit: 0`. Grep's summary line for the count run of the same search was:
+`Found 2123 total occurrences across 299 files.`
+Every hit line is reproduced verbatim in §2(b).5. Each file's verdict was decided from its hit lines and the
+surrounding code, read with the Read tool. The verdict key is the dispatch's:
+- **(i)** builds a path to one of these files at the repository root;
+- **(ii)** scans the root for them;
+- **(iii)** only mentions a name in a string, comment or docstring;
+- **(iv)** is unrelated.
+
+Where several apply, all are given and the one that matters for the move comes first.
+
+### 2(b).1 The files the move WILL affect — the (i) and (ii) verdicts that reach a MOVING file, and the comparison dependencies
+
+Each entry below states what the code does, and then what the move does to it. "At the root" means the path is built
+from the repository root.
+
+**A. Code that opens a named record file at the root, and STOPS (raises and exits) if that file is missing.** After
+the move, each of these stops until its path is changed.
+
+| File | Record file(s) opened at the root | Deciding lines |
+|---|---|---|
+| `tools/audit/decisions/apply_soft_discard.py` | `cowork_rulings_2026_08_16_preparation_return.md` | 68: `RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"`; 116: `if not RULING.exists():`; 118: `text = flatten(RULING.read_text(encoding="utf-8"))`; 161: `match = B1_BULLET.search(RULING.read_text(encoding="utf-8"))` |
+| `tools/audit/decisions/apply_residue_discard.py` | `cowork_rulings_2026_08_17_residue_sitting.md`; and, through `import apply_soft_discard as first` → `first.b1_keeps`, `cowork_rulings_2026_08_16_preparation_return.md` | 83: `RULING = ROOT / "cowork_rulings_2026_08_17_residue_sitting.md"`; 138: `if not RULING.exists():`; 140: `text = flatten(RULING.read_text(encoding="utf-8"))`; 75: `import apply_soft_discard as first`; 343: `b1 = first.b1_keeps(...)` |
+| `tools/audit/decisions/gen_retired_subject_moves.py` | `cowork_rulings_2026_08_16_preparation_return.md` | 70: `RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"`; 98–99: `if not RULING.exists(): raise Stop(...)`; 100: `text = flatten(RULING.read_text(encoding="utf-8"))` |
+| `tools/audit/decisions/gen_phase1w_legacy_verification.py` | `cc_instruction_phase1m_dispositions_and_measurements.md`; the quote `LEGACY-marked entries` must stand at line 132 | 142: `'where': 'cc_instruction_phase1m_dispositions_and_measurements.md',`; 143: `'line': 132,`; 1156: `p = ROOT / rel`; 1158: `raise Stop('cited file does not exist: %s' % rel)`; 1252: `loc = locate(f['where'], f['line'], f['quote'], ...)` |
+| `tools/audit/gen_phase1_gate_readers.py` | `cowork_rulings_2026_08_16_preparation_return.md` | 79: `RULING = "cowork_rulings_2026_08_16_preparation_return.md"`; 198: `path = os.path.join(ROOT, RULING)`; 200: `raise Stop(f"the ruling record this check serves is missing: {RULING}")`; 201: `with open(path, encoding="utf-8") as fh:` |
+| `tools/audit/gen_ratified_document_check.py` | `cowork_rulings_2026_08_16_preparation_return.md`, read live. The same name is also read with `git show` at a pinned commit, and the move does not affect that read. | 98: `RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"`; 99: `RULING_PATH = "cowork_rulings_2026_08_16_preparation_return.md"`; 273: `if not RULING.exists():`; 275: `return RULING.read_text(encoding="utf-8")`; 286: `return git("show", f"{RULING_PINNED_AT}:{RULING_PATH}")` |
+| `tools/audit/gen_retirement_caller_check.py` | `cowork_rulings_2026_08_15_inventory_sitting.md`, `cowork_rulings_2026_08_16_preparation_return.md`, `cowork_rulings_2026_08_17_callers_sitting.md` | 153: `RULING = ROOT / "cowork_rulings_2026_08_15_inventory_sitting.md"`; 154: `READING_RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"`; 155: `CALLERS_RULING = ROOT / "cowork_rulings_2026_08_17_callers_sitting.md"`; 277 / 379 / 411: `normalized(<each>.read_text(encoding="utf-8"))` |
+| `tools/audit/gen_rulings_sort.py` | `cowork_rulings_2026_08_16_preparation_return.md`, `cowork_rulings_2026_08_17_rulings_sort_sitting.md` | 111: `RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"`; 118: `SORT_RULING = ROOT / "cowork_rulings_2026_08_17_rulings_sort_sitting.md"`; 239: `raise Stop(f"a record this pass rests on is missing: {path}")`; 273: `if not SORT_RULING.exists():`; 275: `text = SORT_RULING.read_text(encoding="utf-8")` |
+| `tools/audit/gen_sole_carrier_subclass.py` | `cowork_rulings_2026_08_16_preparation_return.md` | 106: `RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"`; 227: `if not RULING.exists():`; 228: `raise Stop(f"the ruling record this pass serves is missing: {RULING}")`; 229: `text = norm(RULING.read_text(...))` |
+| `tools/audit/gen_deciding_act_recovery.py` | `cowork_rulings_2026_08_16_preparation_return.md`, read live. It also filters root `cowork_rulings_*` paths out of `git ls-tree` at a pinned commit, and the move does not affect that filter. | 83: `RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"`; 206: `raise Stop(f"the ruling record this pass serves is missing: {RULING}")`; 207: `text = normalized(RULING.read_text(encoding="utf-8"))`; 313: `listing = git("ls-tree", "-r", "--name-only", PINNED_COMMIT)...`; 358: `if "/" not in p and p.startswith("cowork_rulings_") and p.endswith(".md")` |
+| `tools/audit/gen_discard_reach_split.py` | `cowork_rulings_2026_08_16_preparation_return.md`, read live. `cc_report_preparation_third.md` is read from git; on a plain write run that read is at HEAD, so after the move the file is not found at its root path and the run STOPs. `--check` reads it at the recorded commit and is not affected. | 85: `RULING = "cowork_rulings_2026_08_16_preparation_return.md"`; 86: `REPORT = "cc_report_preparation_third.md"`; 130: `path = os.path.join(ROOT, RULING)`; 144: `text = blob_at(commit, REPORT)`; 313: `measured_at = commit or head_commit()`; 513: `rebuilt = build(have.get("measured_at_commit"))` |
+
+**B. Code that SCANS the root for these files.**
+
+| File | What it scans | Deciding lines | What the move does to it |
+|---|---|---|---|
+| `tools/audit/decisions/gen_decision_harvest.py` | Globs the root for `cowork_*.md`, leaving out the two handoff files, and for `cc_*.md`, then opens every match. `GOVERNING` also joins `cowork_handoff.md` and `cowork_handoff_archive.md` to the root. | 105: `"cowork_handoff.md", "cowork_handoff_archive.md", "OPEN_ITEMS.md",`; 140: `for p in glob.glob(os.path.join(REPO, prefix_dir, pat)):`; 148: `gov = [f for f in GOVERNING if os.path.exists(os.path.join(REPO, f))]`; 152: `cowork = md_glob("", "cowork_*.md",`; 166: `cc = md_glob("", "cc_*.md")`; 433: `with open(os.path.join(REPO, rel), ...)` | The moved files drop out of the harvest silently: a missing `GOVERNING` file is skipped, not a STOP. |
+| `tools/audit/gen_artifact_inventory.py` | Classifies every path in `git ls-tree -r` at HEAD with rules anchored at the root. It names `cowork_handoff_archive.md` and `cowork_handoff.md` exactly, and matches the prefixes `cowork_rulings_`, `cowork_ruling_`, `cowork_owner_rulings_`, `cowork_pending_rulings_`, `cowork_document_route_rulings_`, `cowork_instruction_`, `cc_instruction_`, `cc_` and `cowork_`. It also lists root files ignored by git (`git ls-files --ignored`, paths without `/`). | 128: `return lambda p, b, e: "/" not in p and any(b.startswith(x) for x in prefixes)`; 231, 248, 254, 268, 272 (the class rules); 608: `ignored_root_files = [p for p in ignored if "/" not in p]`; 576: `raise Stop(f"these classes match nothing in the tree at ...")`; 802: `build(current)      # raises Stop on an unclassified file or an empty class` | No rule names `records/`. After the move the moved files are unclassified and the record classes are empty, and either one STOPs the run. |
+| `tools/audit/gen_filing_convention_application.py` | Globs the root with `*.md`. It carries authored verdicts keyed by root names, among them `cc_instruction_phase1s_stale_rules_and_enumeration.md`, `cc_instruction_phase1z_commit_and_instrument_record.md`, `cc_key_grading_and_calibration_rebaseline_report.md`, `cc_oi207_residual_pass_report.md`, `cc_stage2a_wip_triage_report.md`, `cc_stage3_4i_dossier.md` and `cc_stage5_phase2_2d_report.md`. | 67: `"*.md",                        # the repository root's own documents`; 145: `"cc_instruction_phase1s_stale_rules_and_enumeration.md": _v(`; 248: `for p in sorted(ROOT.glob(pattern)):`; docstring 29: `3. an authored verdict for a document the derivation no longer carries -- ...` | The moved files leave its population, and STOP 3 fires. |
+| `tools/audit/gen_evidence_pin_membership.py` | Lists the repository root, filters the names with `^cowork_rulings_.*\.md$`, and opens each match. | 112: `RULING_RECORD = re.compile(r'^cowork_rulings_.*\.md$')`; 186–187: `return sorted(fn for fn in os.listdir(ROOT) if RULING_RECORD.match(fn)`; 249: `text = read(os.path.join(ROOT, rec))` | After the move the list is empty. Whether that STOPs or only changes the output was **not established**. |
+| `tools/audit/gen_ratification_surface_set.py` | Lists the repository root and `ratification_surfaces/`, and opens every `.md` in them, whatever the prefix. It keeps files whose opening lines mark them as a ratification queue or review aid. It also walks the whole tree for citations. | 110: `d = os.path.join(REPO, base) if base else REPO`; 113: `for name in sorted(os.listdir(d)):`; 188: `for root, dirs, files in os.walk(REPO):` | Root `cowork_*.md` files are read by this scan. |
+| `tools/audit/decisions/gen_reads4_oi326_application.py` | Globs the root with patterns parsed from `ARCHITECTURE.md` (currently `cowork_layer*_design.md`) and with `*phrase*boundary*.md`. | 171: `hits = globmod.glob(os.path.join(ROOT, pattern))`; 223: `glob_hits[g] = repo_matches(g)`; 228: `prose_candidates = repo_matches("*phrase*boundary*.md")` | At the root, `*phrase*boundary*.md` matches four files in the Task 1 lists: `cowork_phrase_boundary_design.md` and `cowork_phrase_boundary_methods.md`, which stay; and `cc_instruction_phrase_boundary_build.md` (tracked) and `cc_phrase_boundary_build_report.md` (untracked), which move. **The move therefore changes this tool's output.** |
+
+**C. Code that classifies root-relative paths by prefix or exact name, taken from committed data, and opens no record file.**
+
+| File | Deciding lines | What the move does |
+|---|---|---|
+| `tools/audit/decisions/gen_cluster_dispositions.py` | 463: `return f.startswith("cc_instruction_")`; 467: `return f.startswith("cc_") and not f.startswith("cc_instruction_")`; 475: `return f == "cowork_handoff.md"`; 487: `return f == "cowork_handoff_archive.md"`; 526: `if f.startswith("cowork_"):`; 530: `if f.startswith("cc_"):`. Its `--verify` step opens `REPO / fname` for each backbone entry's `home` (341, 348). | Rules BR-11, BR-12, BR-15 and BR-17 and the `surface()` partition would stop matching if the harvest were re-run on moved paths. Whether any `home` names a moving file is decided by the data, not the code. |
+| `tools/audit/decisions/gen_decision_clusters.py` | 113: `if r.startswith("cowork_") and not r.startswith("cowork_handoff"):`; 119: `if r in ("STATUS.md", "cowork_handoff.md", "DEFECT_TYPES.md"):`; 121: `if r in ("STATUS_ARCHIVE.md", "cowork_handoff_archive.md"):`; 123: `if r.startswith("cc_"):` | Paths under `records/` fall to rank 8, "other". |
+| `tools/audit/decisions/gen_phase1g_triage.py` | 386–387: `if p.startswith("cowork_") and p.endswith(".md") and p not in ("cowork_handoff.md", "cowork_handoff_archive.md"):`; 438: `live_bytes = sum(os.path.getsize(os.path.join(ROOT, f)) for f in live_files)`; 417: `raise SystemExit(f"unclassified file(s): {unknown}")` | The prefix filter runs over names in `decision_clusters.json`. If the data ever named a `cowork_rulings_*` or `cowork_handoff_entry_*` file, `build()` would STOP as unclassified. |
+| `tools/audit/decisions/gen_phase1m_measurements.py` and `tools/audit/decisions/gen_phase1n_reading_regime.py` | gen_phase1m 291: `surfaces = {triage.surface_of(f) for f in files}`; 300: `path = os.path.join(ROOT, rel)`; 301: `if not os.path.exists(path):`; gen_phase1n 230: `unresolved, surface_files = p1m.unresolved_by_file()`; 248: `f = p1m.file_facts(doc)` | These open the read or owed design documents at the root. The population comes from the data through `surface_of`, which admits any root `cowork_*.md` except the two handoff files. **Whether that population contains a moving file was not established.** In gen_phase1m a missing file gives zeros, not a STOP. |
+| `tools/audit/gen_doc_change_candidates.py` | 205: `if base.startswith("cc_instruction_"):`; 209: `if base.startswith("cowork_"):`; 559: `"role": document_role(f["path"])` | Labels paths by the bare file name, whatever the directory. Moved files keep their labels. |
+
+**D. Code whose comparison or rewrite depends on how a moving file is NAMED elsewhere.**
+
+| File | Deciding lines | Dependency |
+|---|---|---|
+| `tools/audit/gen_specification_document_set.py` | 410: `"cowork_handoff.md": g(`; 722: `NAME_RE = re.compile(r"[A-Za-z0-9_./-]+\.md\b")`; 801: `unclassified = sorted(scanned - authored)`; 805: `stray = sorted(authored - scanned)` | The `GRADES` keys include `cowork_handoff.md`, `cc_instruction_notation_switch.md`, `cowork_rulings_2026_08_11_fourteenth_stop.md` and `cowork_rulings_2026_08_09_second_stop.md`. They are compared, in both directions, with the `.md` names written in `ARCHITECTURE.md`. If `ARCHITECTURE.md` is re-pointed to a `records/...` name, STOPs 1 and 2 fire until `GRADES` is updated. |
+| `tools/audit/reaim_ratification_surface_paths.py` | 100: `"cowork_handoff.md": {`; 149: `(lambda f: f.startswith("cc_instruction_"), LEAVE,`; 208: `full = os.path.join(REPO, citing_file)`; 229: `with io.open(full, "w", encoding="utf-8", newline="\n") as fh:` | This is a one-time tool, driven by a census. On a RE-AIM verdict it rewrites `cowork_handoff.md` at the root. A census entry under `records/` would match no rule and STOP as having no verdict. |
+| `tools/audit/gen_status_batch_bound.py` | 317: `PREVIOUS_BATCH_DISPATCH = "cc_instruction_defense_share_sizing_third_2026_09_08.md"`; 731: `base = git_show(BASE_COMMIT, "STATUS.md")`; 734: `named = [i for i, (_, line) in enumerate(dated) if PREVIOUS_BATCH_DISPATCH in line]` | Searches for the bare dispatch name as a substring of `STATUS.md` text. A name with a `records/...` prefix still contains the bare name, so the test still matches. |
+| `tools/audit/process_check.py` | 475: `path = f if os.path.isabs(f) else os.path.join(ROOT, f)` | Opens whatever file paths its callers pass. A caller that passes a bare `cc_instruction_*.md` name resolves it at the root. |
+| `tools/audit/shell_read_guard.py` | 345: `cand = s if os.path.isabs(s) else os.path.join(ROOT, s)`; 346: `if os.path.exists(cand):` | No name patterns: any path inside the repository is treated the same, root or `records/`. **The one difference is interpreter code:** a quoted string counts only if the file exists at the root. After the move, a bare `'cowork_handoff.md'` in interpreter code is no longer seen, and `'records/...'` is. None of its test commands names a moving file. |
+| `tools/audit/gen_recognizer_establishment_sort.py` | 172: `WALK_CALLS = ("os.walk", "os.listdir", "glob", "iglob", "rglob", "scandir")`; 293; 540: `tools = walk_tools()` | Describes other tools' code. If a tool above is changed for the move, this tool's `--check` may show drift. Whether it opens the paths it records (`module_paths`) was **not established**. |
+
+**E. Code that opens ROOT `cowork_*` files that are NOT in the move.** These are named because a later ruling to move
+those files would break them.
+
+| File | Root file(s) opened | Deciding lines |
+|---|---|---|
+| `tools/audit/decisions/gen_phase1p_delegation_bar.py` | `ARCHITECTURE.md`, `CLAUDE.md`, `cowork_engage_arc_plan.md`, `cowork_score_census.md` | 95: `RATIFIED_SURFACES = ["ARCHITECTURE.md", "CLAUDE.md", "cowork_engage_arc_plan.md"]`; 765: `with open(os.path.join(ROOT, rel), ...)`; 801: `lines = read_lines("cowork_score_census.md")`; 875: `line, text = locate(surface, anchor)` |
+| `tools/audit/decisions/gen_reads5_repack.py` | `cowork_engage_arc_plan.md` (through `p1m.RATIFIED_SURFACES`), and the design documents opened by `p1m.file_facts` | 156–157: `for s in p1m.RATIFIED_SURFACES: with open(os.path.join(ROOT, s), ...)`; 163 |
+| `tools/audit/decisions/gen_phase1m_measurements.py` | `cowork_engage_arc_plan.md`, and the design documents (see C) | 66: `RATIFIED_SURFACES = [...]`; 314 |
+| `tools/audit/decisions/gen_phase1n_reading_regime.py` | `cowork_engage_arc_plan.md`, and the design documents (see C) | 251–252: `for s in p1m.RATIFIED_SURFACES: for line in open(os.path.join(ROOT, s), ...` |
+| `tools/audit/decisions/gen_outstanding_delegations.py` | the `FORMS` surfaces: `ARCHITECTURE.md`, `CLAUDE.md`, `cowork_engage_arc_plan.md` | 335: `ln, _txt = locate(surface, anchor)`; 332 |
+| `tools/audit/decisions/gen_homing_edit_shape.py` | `cowork_engage_arc_plan.md`, from the working tree and from `git show bd3a608fec:` | 57; 67: `proc = subprocess.run(["git", "show", f"{BEFORE_COMMIT}:{path}"], ...`; 77: `b = (ROOT / path).read_text(encoding="utf-8").splitlines()` |
+| `tools/audit/decisions/gen_phase1w_legacy_verification.py` | `cowork_stage5_fitter_design.md` (line 116), `cowork_structural_integrity_audit.md` (line 323) | 1134, 1135, 1260 |
+| `tools/audit/gen_l0_l1_outgoing_population.py` | `cowork_layer1_note_model_design.md`, `cowork_layer1_tone_collection_design.md`, `cowork_layer1_extend_design.md`, `cowork_layer2_slicing_design.md`, `cowork_layer2_reslice_design.md`, `cowork_layer5_function_design.md`, `cowork_phrase_boundary_design.md`, `cowork_joint_estimator_factorization.md`. A missing file STOPs the run. Its term search also reads whatever paths `artifact_inventory.json` lists under three classes, and **whether that includes a moving file was not established.** | 131; 228: `abs_path = os.path.join(ROOT, rel_path)`; 336: `text = read_text(entry["path"])          # STOPs if absent`; 366 |
+| `tools/audit/gen_phase1_completion_inventory.py` | `cowork_audit_protocol.md` | 251: `PROTOCOL_MD = ROOT / "cowork_audit_protocol.md"`; 281: `text = read(PROTOCOL_MD)` |
+| `tools/audit/gen_reserved_word_scanner.py` | `cowork_audit_protocol.md`, `cowork_design_doc_template.md` | 75: `"cowork_audit_protocol.md",`; 104: `with open(os.path.join(ROOT, rel), ...)` |
+| `tools/audit/gen_phase3_gate_partition.py` | `cowork_oi200_perspective_inventory.md` | 105: `"file": "cowork_oi200_perspective_inventory.md",`; 952: `p = ROOT / rel_path`; 955; 1077 |
+| `tools/audit/gen_derivation_boot_pack.py` | `cowork_design_doc_template.md`, `cowork_audit_protocol.md` (boot members 3 and 4). Frozen subjects are checked against recorded git-blob digests. | 269: `"source": "cowork_design_doc_template.md",`; 277: `"source": "cowork_audit_protocol.md",`; 2803: `path = os.path.join(ROOT, rel)` |
+| `tools/audit/gen_discard_records.py` | `cowork_away_returns.md` (authored pointer; missing is a STOP) | 118: `"surface": "cowork_away_returns.md",`; 394: `surface = ROOT / a["surface"]`; 398 |
+
+**F. Reads at a fixed old commit, which the move does not affect.** `gen_deciding_act_recovery.py` reads the rulings
+filter at `PINNED_COMMIT`. `gen_discard_reach_split.py --check` reads the report at `measured_at_commit`.
+`gen_ratified_document_check.py` reads `RULING_PATH` at `RULING_PINNED_AT`. `gen_july_screen.py` reads design-document
+diffs at fixed commits. `gen_homing_edit_shape.py` reads at `bd3a608fec`. `gen_phase1q_record_divergence.py` and
+`gen_status_archive_pass.py` read at named commits.
+
+### 2(b).2 Every file's verdict, all 299
+
+Where a file appears in §2(b).1, its row here repeats only the verdict.
+
+**Build scripts, third-party code and idiom discovery**
+- `buildscripts\ci\crashdumps\win\generate_breakpad_symbols.py` — **(iv)**. Globs the binary given on the command line. 155: `binary = os.path.abspath(options.binary)`; 157: `binaries += glob.glob(binary)`.
+- `buildscripts\ci\crashdumps\posix\generate_breakpad_symbols.py` — **(iv)**. 350: `potential_symbol_files = glob.glob('%s.breakpad*' % binary)`.
+- `muse\buildscripts\ci\crashdumps\win\generate_breakpad_symbols.py` — **(iv)**. Same code as the non-muse copy (155, 157).
+- `muse\buildscripts\ci\crashdumps\posix\generate_breakpad_symbols.py` — **(iv)**. 350.
+- `muse\framework\draw\thirdparty\freetype\freetype-2.14.1\src\tools\make_distribution_archives.py` — **(iv)**. 101: `build_dir = args.build_dir`; 106: `for item in os.listdir(build_dir):`.
+- `muse\framework\draw\thirdparty\freetype\freetype-2.14.1\builds\meson\generate_reference_docs.py` — **(iv)**. 48: `glob.glob(os.path.join(args.input_dir, "include", "freetype", "*.h"))`.
+- `idiom_discovery\analyze_rootmotion.py` — **(iv)**. 16: `rom = C+"/expl/dcml_romantic"`; 17: `... os.listdir(rom) ...`.
+- `idiom_discovery\buildmat.py` — **(iv)**. 16–17, the same corpus directory.
+- `idiom_discovery\buildprofile.py` — **(iv)**. 28–29.
+- `idiom_discovery\buildmat2.py` — **(iv)**. 16–17.
+- `idiom_discovery\build_full.py` — **(iv)**. 26–27.
+- `idiom_discovery\chordify_resume.py` — **(iv)**. 7: `CUR="/sessions/nice-busy-fermat/mnt/MS/corpora/expl/curated_mxl"`; 11.
+- `idiom_discovery\model.py` — **(iii)**. 3: `See cowork_idiom_discovery_design.md (the spec). ...`. The named document is not moving.
+- `idiom_discovery\run_discovery.py` — **(iv)**. 10: `ROOT = os.path.dirname(HERE)                      # the MS repo root`; 49: `romdir = os.path.join(C, "expl", "dcml_romantic")`; 51: `for s in os.listdir(romdir):`.
+- `idiom_discovery\run_vl_feature_space.py` — **(iii)**. 3 and 176 name `cowork_voiceleading_axis_design.md`, which is not moving. Line 181 writes `cc_vl_idiom_discovery_report.md` into a generated C++ header comment. That report IS moving, so the comment will go stale. The only file written is `src/composing/analysis/voiceleading/textureclassifierreference.h` (169–170, 215). Line 181 was found by a second search with the wider pattern `cc_|cowork|open\(`.
+- `idiom_discovery\run_cross_tradition.py` — **(iv)**. 19–20.
+- `idiom_discovery\run_xt.py` — **(iv)**. 16–17.
+- `idiom_discovery\run_dcml_smoke.py` — **(iv)**. 20–21.
+- `idiom_discovery\parsers\bach_chordify.py` — **(iv)**. 47–48, 52: a folder passed by the caller.
+- `idiom_discovery\parsers\choco.py` — **(iv)**. 24, 69, 140: `choco/jams/*.jams`.
+- `idiom_discovery\parsers\dcml.py` — **(iv)**. 60: `harmonies/*.tsv`.
+- `idiom_discovery\parsers\improvisor.py` — **(iv)**. 16: `**/*.ls` under the caller's folder.
+- `idiom_discovery\parsers\voiceleading2.py` — **(iv), (iii)**. 14 is a docstring naming `cowork_idiom_discovery_design.md`. 142, 214, 316–318 are note and score directories and `<root>/tools/dcml/*`.
+- `idiom_discovery\parsers\voiceleading.py` — **(iv)**. 34.
+- `idiom_discovery\parsers\mcgill.py` — **(iv)**. 57, 59: `root` is the McGill corpus root.
+- `src\composing\tests\verify_chord_track.py` — **(iv)**. 1310, 1318: `*.musicxml` and `*.mxl`.
+- `share\instruments\update_instruments_xml.py` — **(iv)**. 451: `d = "../templates"`; 453, 460.
+- `tools\translations\process_source_ts_files.py` — **(iv)**. 101: `os.chdir(sys.path[0] + '/../..') # make all paths relative to repository root`; 107: `for source_file in glob.glob('share/locale/*_' + source_ts):`.
+
+**Top-level `tools\` scripts, first group**
+- `tools\analyze_wrong_root_iter90.py` — **(iv)**. 26, 82: `tools/corpus/*.ours.json`.
+- `tools\analyze_iter90_regressions.py` — **(iv)**. 18, 31.
+- `tools\analyze_inversion_errors.py` — **(iv)**. 31, 100, 114.
+- `tools\analyze_bir_true_iter19.py` — **(iv)**. 23, 253.
+- `tools\a8_rebaseline_measure.py` — **(iv)**. 304–305, 309.
+- `tools\cc_audit_localmodulation_accuracy.py` — **(iv)**. 80–81: a directory from the command line.
+- `tools\cc_cadence_precision_investigation.py` — **(iv)**. 209, 214.
+- `tools\cc_audit_cadence_anchor_accuracy.py` — **(iii), (iv)**. 5 is a docstring naming `cowork_audit_cadencekeyanchor.md`, which is not moving. 108–109 read a directory from the command line.
+- `tools\cc_b_guard_separability.py` — **(iv)**. 107, 118.
+- `tools\cc_cadence_anchor_measure.py` — **(iv)**. 136, 107.
+- `tools\cc_cadence_aggregate_prototype.py` — **(iv)**. 96, 77.
+- `tools\cc_b2_subdominant_guard_measure.py` — **(iv)**. 70, 77.
+- `tools\cc_e0_fullspine_measure.py` — **(iv)**. 450, 463, 107.
+- `tools\cc_decomp_measure.py` — **(iv)**. 220, 89.
+- `tools\cc_eg2_probe.py` — **(iv)**. 432–433, 198.
+- `tools\calibration_fit.py` — **(iv)**. 68, 321, 342, 341.
+- `tools\cc_floor_classify.py` — **(iv)**. 90, 49.
+- `tools\c1_reliability.py` — **(iv)**. 183, 345, 187.
+- `tools\c1_gen_substrate.py` — **(iv)**. 87, 100, 109, 113.
+- `tools\build_score_census_registry.py` — **(iii), (iv)**. 21, 728 and 1082 name `cowork_score_census_gt_draft.md`, `cowork_union_search_record.md` and `cowork_census_full_needs_audit.md` in the docstring, comments and output. Its comments and strings also cite `cc_*_report.md` files, for example `cc_wave3_addendum_report.md` and `cc_acquisition_round_report.md`. Nothing named is opened. The globs are over `tools/dcml` (34, 154, 140).
+- `tools\cc_j_key_i_byteid.py` — **(iv)**. 56, 59.
+- `tools\cc_j_key_ii_safety.py` — **(iv)**. 47, 55.
+- `tools\cc_j_key_iii_decision_diff.py` — **(iv)**. 49, 27.
+- `tools\cc_j_key_ii_redux_step1.py` — **(iv)**. 198, 202.
+- `tools\cc_joint_residual_probe.py` — **(iv)**. 103, 108.
+- `tools\cc_gen_tpc_corpora.sh` — **(iii)**. 4: `# (tools/cc_* is gitignored). ...`; 7: `ROOT=tools/corpus_tpc`.
+- `tools\cc_j_key_iii_mode_collapse.py` — **(iv)**. 57, 43.
+- `tools\cc_j_key_iii_invariant_check.py` — **(iv)**. 89, 51, 67.
+- `tools\cc_layer3_sweep_grade.py` — **(iv)**. 37, 42.
+- `tools\cc_kma_relpair_probe.py` — **(iv)**. 203–204, 150.
+- `tools\cc_layer3_keymode_baseline.py` — **(iii), (iv)**. 6 and 26 are docstrings naming `cowork_layer3_keymode_design.md` and `cowork_layer3_keymode_impl_design.md`. 1108 is a comment naming `cc_layer3_characterization_report.md`. 1569, 265 and 197 read corpus directories.
+- `tools\cc_j_key_i_measure.py` — **(iv)**. 85, 93.
+- `tools\cc_layer4_residual_decompose.py` — **(iii), (iv)**. 23: `(tools/cc_* is gitignored).`; 200, 304, 210.
+- `tools\cc_layer4_chord_baseline.py` — **(iv)**. 334, 351, 224.
+- `tools\cc_oi125_extrapolation_probe.py` — **(iv)**. 56–57.
+- `tools\cc_oi168_probe_report.py` — **(iv)**. 216, 86, 110.
+- `tools\cc_tonicization_modulation_probe.py` — **(iv)**. 91, 95.
+- `tools\cc_tonicization_measure.py` — **(iv)**. 237, 242.
+- `tools\cc_stepM_l5_measure.py` — **(iii), (iv)**. 9: `REUSE, NOT RE-IMPLEMENT (cc_instruction Step M §1): ...`; 225, 236, 53.
+- `tools\cc_stage4d_i_modulation_measure.py` — **(iv)**. 69–70.
+- `tools\cc_round3_measure.py` — **(iv)**. 206, 51.
+- `tools\cc_round2_genre_cov.py` — **(iv)**. 15, 30, 33, 48.
+- `tools\cc_oracle_crosscheck.py` — **(iv)**. 32, 60.
+- `tools\cc_round2_measure.py` — **(iv)**. 148, 197, 30.
+- `tools\cc_uncertain_resolver_measure.py` — **(iii), (iv)**. 7 is a docstring naming `cc_instruction_uncertain_resolver_measurement.md`, which is moving but is not opened. 238 and 99 read corpus directories.
+
+**Top-level `tools\` scripts, second group.** Each is **(iv)**, a glob or listing of a corpus or report directory,
+unless marked otherwise.
+- `tools\compare_omnibook.py` — **(iv)**. 229, 224.
+- `tools\decode_keymode_corpus.py` — **(iv)**. 127–128.
+- `tools\compare_when_in_rome.py` — **(iv)**. 72, 229, 234.
+- `tools\compare_l6_oracle.py` — **(iv)**. 354, 359.
+- `tools\compare_vl_parity.py` — **(iii)**. 4: `cowork_voiceleading_axis_design.md §5.2 parity duty, §10). It runs`.
+- `tools\decode_chord_corpus.py` — **(iv)**. 128–129.
+- `tools\compare_rn.py` — **(iv)**. 91, 678, 1028, 658.
+- `tools\compare_inversion_regressions.py` — **(iv)**. 66, 151.
+- `tools\dcml_parser.py` — **(iv)**. 609, 614.
+- `tools\compare_progressions_oracle.py` — **(iii), (iv)**. 4: `validation (cowork_progression_schema_design.md §7).`; 118, 122.
+- `tools\compare_gatej.py` — **(iv)**. 11, 19.
+- `tools\compare_bach_wir.py` — **(iv)**. 28.
+- `tools\diff_iter90_classification.py` — **(iv)**. 13, 18.
+- `tools\diag_iter48_step2.py` — **(iv)**. 7: `CORPUS = Path('C:\\s\\MS\\tools\\corpus')`; 10.
+- `tools\characterise_bir_false.py` — **(iv)**. 132, 226, 395.
+- `tools\diag_iter8_gates_detailed.py` — **(iv)**. 51, 269.
+- `tools\diag_iter47_gate_q.py` — **(iv)**. 7, 90.
+- `tools\diag_iter8_bir_false.py` — **(iv)**. 29, 203.
+- `tools\diag_iter63_genuine6_enumerate.py` — **(iv)**. 20, 34.
+- `tools\diag_iter47_gate_m.py` — **(iv)**. 7, 74.
+- `tools\grieg_modal_diagnostic.py` — **(iv)**. 38, 85.
+- `tools\classify_key_disagreement.py` — **(iii), (iv)**. 5–7 are a docstring naming `cc_instruction_key_mode_inference_diagnosis.md`, which is moving; the name is split across two lines. It also names `cowork_key_mode_inference_diagnosis.md`. 773 reads a corpus directory.
+- `tools\diag_iter54_bir_false_enumerate.py` — **(iv)**. 18, 25.
+- `tools\diag_iter32_gate_l.py` — **(iv)**. 10, 51.
+- `tools\gate_n_fp_scan_iter39.py` — **(iv)**. 25, 45.
+- `tools\diag_iter54_alts_full.py` — **(iv)**. 19, 26.
+- `tools\diag_iter28_gate_k.py` — **(iv)**. 15: `for f in sorted(glob.glob('tools/corpus/*.ours.json')):`.
+- `tools\filter_effendi.py` — **(iv)**. 39.
+- `tools\diag_genuine32_characterize.py` — **(iv)**. 19, 42.
+- `tools\dump_birfalse_cases.py` — **(iv)**. 15, 21.
+- `tools\enumerate_near_agree_iter38.py` — **(iv)**. 29, 91.
+- `tools\diff_iter90_flips.py` — **(iv)**. 13, 44.
+- `tools\fix_keysig.py` — **(iv)**. 100, 121.
+- `tools\find_enharmonic_errors_temp.py` — **(iv)**. 8, 34.
+- `tools\find_maj_to_dom7.py` — **(iv)**. 27, 51.
+- `tools\mode_grading_adjudication_probe.py` — **(iv)**. 72, 210, 226.
+- `tools\iter94_birtrue_dump.py` — **(iv)**. 11, 22.
+- `tools\iter45_cluster_a_diagnostic.py` — **(iv)**. 9, 166.
+- `tools\iter95_enumerate_errors.py` — **(iv)**. 31, 132.
+- `tools\inject_m21_rn.py` — **(iv)**. 49, 179, 197.
+- `tools\iter92_jazz_bir_true_analysis.py` — **(iv)**. 28, 87.
+- `tools\measure_joint_probe.py` — **(iii), (iv)**. 6 names `cowork_joint_key_chord_design.md`. 72 is a comment naming `cowork_mode_key_chord_...`, split across lines. 494 reads a corpus directory.
+- `tools\iter94_jazz_regression_analysis.py` — **(iv)**. 37, 88.
+- `tools\measure_fanout.py` — **(iv)**. 146–147.
+- `tools\iter58_diagnostic.py` — **(iv)**. 16, 41, 159.
+- `tools\run_chopin_validation.py` — **(iv)**. 47, 166.
+- `tools\run_beethoven_validation.py` — **(iv)**. 42, 155.
+- `tools\run_bach_suites_validation.py` — **(iv)**. 27, 86, 113.
+- `tools\run_bach_preset.py` — **(iv)**. 475, 484, 499.
+- `tools\oracle_root_metric.py` — **(iv)**. 167.
+- `tools\open_items_split_check.py` — **(iv)**. 59, 61, 159, 279: lists `<repo>/open_items/`.
+- `tools\validate_slices_corpus.py` — **(iv)**. 128–129.
+- `tools\theta_fit.py` — **(iv)**. 89, 138, 303.
+- `tools\rerun_dcml_comparison.py` — **(iv)**. 62, 65, 232, 428, 279.
+- `tools\music21_batch.py` — **(iii)**. 22 and 206 name `cowork_evidence_inventory.md`.
+- `tools\stage5_2_2b_evidence.py` — **(iv)**. 227, 237, 273.
+- `tools\stage5_15_13_population.py` — **(iv)**. 35, 154.
+- `tools\run_grieg_validation.py` — **(iv)**. 47, 146, 198.
+- `tools\section_7_3_diagnostic.py` — **(iv)**. 39, 42–43, 116.
+- `tools\run_tchaikovsky_validation.py` — **(iv)**. 31, 100, 133.
+- `tools\run_mozart_validation.py` — **(iv)**. 50, 158.
+- `tools\run_schumann_validation.py` — **(iv)**. 31, 100, 133.
+- `tools\stage5_2_2e_liveness.py` — **(iv)**. 32, 56, 85.
+- `tools\run_dvorak_validation.py` — **(iv)**. 31, 100, 133.
+- `tools\run_validation.py` — **(iv)**. 410, 424.
+- `tools\run_cpe_bach_validation.py` — **(iv)**. 27, 86, 113.
+- `tools\stage5_2_2c_3way.py` — **(iv)**. 16, 20.
+- `tools\stage5_2_2c_winnerdiff.py` — **(iv)**. 32, 34–35.
+- `tools\stage5_2_2c_byteproof.py` — **(iv)**. 23, 43–44.
+- `tools\run_dlc_baseline.py` — **(iv)**. 45, 60–61, 162.
+- `tools\survey_iii_slash_correct_iter90.py` — **(iv)**. 29, 41.
+- `tools\stage5_fit_driver.py` — **(iv)**. 187.
+- `tools\run_corelli_validation.py` — **(iv)**. 44, 162.
+- `tools\survey_1pc_dominant_slices.py` — **(iv)**. 104, 107.
+- `tools\survey_pc8_flat_authored_bass.py` — **(iv)**. 87–88: `ROOT` here is `tools/`; 255.
+- `tools\refresh_divergence_20260424\corpus_sweep.py` — **(iv)**. 27, 130. Score file types only. Where `TOOLS_DIR` is defined was not read.
+
+**`tools\joint_estimator\`, `tools\notation_seams\`, `tools\term_inventory\` and the `tools\audit\` subdirectories `l3`, `l4`, `l5`, `oi199` and `notation_surface`.**
+None of these files opens or scans a record file at the root.
+- `tools\joint_estimator\adoption_measure.py` — **(iii), (iv)**. 4: `Dispatch: cc_instruction_adoption_measurement.md ...`; 179, 181.
+- `tools\joint_estimator\adoption_measure_b.py` — **(iii)**. 366: `"dispatch": "cc_instruction_adoption_measurement.md (Cowork 2026-07-20; ★R=A1)",`.
+- `tools\joint_estimator\gen_count_inventory.py` — **(iii)**. 303 names `cowork_prefit_gates.md`.
+- `tools\joint_estimator\gen_content_dp_split.py` — **(iii)**. 9, 195.
+- `tools\joint_estimator\fit_weights.py` — **(iii), (iv)**. 7; 68: `_HERE = Path(__file__).resolve().parent`; 1003.
+- `tools\joint_estimator\gen_note_events.py` — **(iii)**. 8.
+- `tools\joint_estimator\gen_mode_marginal.py` — **(iii)**. 11.
+- `tools\joint_estimator\gen_wir_alignment_probe.py` — **(iii), (iv)**. 12, 75, 270.
+- `tools\joint_estimator\gen_label_tables.py` — **(iii)**. 10, 801.
+- `tools\joint_estimator\gen_fold_assignment.py` — **(iii), (iv)**. 224, 59, 92.
+- `tools\joint_estimator\gen_spelling_establishment.py` — **(iii)**. 16.
+- `tools\joint_estimator\gen_fermata_boundary.py` — **(iii)**. 222.
+- `tools\joint_estimator\gen_posterior_slice.py` — **(iii)**. 354.
+- `tools\joint_estimator\gen_factor_presence.py` — **(iii)**. 3, 323.
+- `tools\joint_estimator\gen_embedded_tables.py` — **(iii)**. 18–19.
+- `tools\joint_estimator\gen_note_tables.py` — **(iii)**. 3, 849.
+- `tools\joint_estimator\search_run.py` — **(iii)**. 3 names `cc_instruction_direct_metric_search.md`, a name that is not in the Task 1 lists.
+- `tools\joint_estimator\probe_decoder.py` — **(iii)**. 6, 1111.
+- `tools\joint_estimator\probe_desksim.py` — **(iii)**. 5, 450.
+- `tools\joint_estimator\search_direct.py` — **(iii), (iv)**. 587, 56, 661.
+- `tools\joint_estimator\normalize.py` — **(iii)**. 5.
+- `tools\notation_seams\reconcile_switch_goldens.py` — **(iv)**. 56, 299–300.
+- `tools\notation_seams\gen_ground_truth_inventory.py` — **(iii), (iv)**. 9, 29, 125, 91, 109.
+- `tools\notation_seams\gen_editing_cycle.py` — **(iii)**. 9, 155.
+- `tools\notation_seams\classify_dualarm.py` — **(iii)**. 9, 12.
+- `tools\notation_seams\analyze_cost_profile.py` — **(iii)**. 9, 116.
+- `tools\term_inventory\gen_term_inventory.py` — **(iii), (iv)**. 4, 765; 624, 626, 727, 734. Its globs are anchored at the root but reach only `src/**`, `tools/*.cpp` and corpus directories.
+- `tools\audit\l4\pass1_satellites_firerate.py` — **(iv)**. 37–38.
+- `tools\audit\l4\pass1_satellites_dispositions.py` — **(iii)**. 21.
+- `tools\audit\l4\pass1_oracle_dispositions.py` — **(iii)**. 10.
+- `tools\audit\l4\pass1_decoder_aggregate_decode.py` — **(iv)**. 7–8: a command-line directory, `*.decode.json`.
+- `tools\audit\l4\pass1_oracle_corpus_agg.py` — **(iv)**. 11–12.
+- `tools\audit\l4\pass1_decoder_aggregate_fullspine.py` — **(iv)**. 7–8: `*.fs.json`.
+- `tools\audit\l3\measure_l3_firerate.py` — **(iv)**. 42, 78.
+- `tools\audit\notation_surface\gen_notation_surface_audit.py` — **(iii)**. 6, 427–428.
+- `tools\audit\oi199\gen_joint_dispositions.py` — **(iii)**. 47.
+- `tools\audit\l5\gen_resolver_dispositions.py` — **(iii)**. 294.
+- `tools\audit\l5\gen_instruments_core_dispositions.py` — **(iii)**. 183.
+- `tools\audit\l5\gen_harness_dispositions.py` — **(iii)**. 12, 325.
+- `tools\audit\l5\gen_grading_fitting_dispositions.py` — **(iii)**. 14.
+
+**`tools\audit\` top level.** For each file the entry also gives the artifact it writes and any hash or freeze STOP,
+as far as the file itself states them.
+- `corpus_arm_stamp.py` — **(iv), (iii)**. 70, 101, 140 list `tools/corpus/`; 316 is a `generated_for` label. Writes `corpus_arm_backstamp.json` and `corpus_arm_establishment.json`.
+- `changed_paths.py` — **(iii)**. 5 is in the docstring. Writes `changed_paths_establishment.json`.
+- `claude_md_rule_triage.py` — **(iii)**. 268 and 624 are comments or strings. Writes `claude_md_rule_triage.json`.
+- `gen_arm_comment_sweep.py` — **(iii)**. 254 is a string. Writes `arm_comment_sweep.json`.
+- `gen_claude_md_finer_archive.py` — **(iii)**. 96: `DISPATCH = "cc_instruction_preparation_eighth.md"`; 97: `RULINGS = "cowork_rulings_2026_08_17_seventh_return.md"`; both are used only in output text (398). It opens `CLAUDE.md` and `CLAUDE_ARCHIVE.md` (439). Writes `claude_md_finer_archive.json`. Pinned commit; STOPs.
+- `gen_claude_md_finer_surface.py` — **(iii)**. 65: `SURFACE = ROOT / "ratification_surfaces" / "cowork_claude_md_finer_split_2026_08_17.md"`, which is written, not moved (463). Writes `claude_md_finer_readers.json` and that surface.
+- `gen_census_movement_classification.py` — **(iii)**. 84, 194 are strings. Writes `census_movement_classification.json`. Both ends pinned.
+- `gen_claude_md_finer_spans.py` — **(iii)**. 95, 174. Writes `claude_md_finer_spans.json`. Pinned at `e94f765c25`.
+- `gen_blind_rerun_sample.py` — **(iii)**. 213 is a comment.
+- `gen_defense_share.py` — **(iii)**. 537 is a string; 100 in the docstring says the live-rule classification file "is not read here". Writes `defense_share.json`.
+- `gen_artifact_inventory_surface.py` — **(iii), (iv)**. 151, 686: `rglob("*.md")` runs only over `decisions/` and `open_items/`; 300 is a string. Writes `ratification_surfaces/cowork_artifact_inventory_ruling_surface.md` (120).
+- `gen_decisions_filter.py` — **(iii)**. 215: `("a ruling record named", re.compile(r"cowork_rulings_[0-9a-z_]+\.md")),` is a recognizer run over register text and does not open files. Writes `decisions_filter_classification.json` and `ratification_surfaces/cowork_decisions_filter_surface_2026_08_15.md` (96). Pinned `0a2cc3f86a`, with a byte-identity STOP.
+- `gen_artifact_inventory.py` — **(ii), (iii)**. See §2(b).1 B. Writes `artifact_inventory.json`.
+- `gen_claude_md_prune_backlog.py` — **(iii)**. 116, 117, 454, 480. Writes `claude_md_prune_backlog.json` and `governing_surface_spans_2026_09_07.json`. Pinned.
+- `gen_deciding_act_recovery.py` — **(i), (ii) at a pinned commit, (iii)**. See §2(b).1 A. Writes `deciding_act_recovery.json` and `ratification_surfaces/cowork_deciding_act_recovery_surface_2026_08_16.md`. Pinned `ddbf89d002`, with a byte-identity STOP.
+- `gen_claude_md_growth.py` — **(iii)**. 89, 253. Writes `claude_md_growth_2026_09_07.json`.
+- `gen_evidence_pin_membership.py` — **(ii), (iii)**. See §2(b).1 B. Writes `evidence_pin_membership.json`.
+- `gen_governing_surface_readers.py` — **(iii)**. 94, 129, 193: a `git grep` at a pinned commit that counts any file naming the governing files and does not select by prefix. Writes `governing_surface_readers.json` and `ratification_surfaces/cowork_governing_surface_split_2026_08_16.md`.
+- `gen_discard_records.py` — **(i) for a root file that is NOT moving, (iv), (iii)**. See §2(b).1 E; 341: `for path in sorted(OPEN_ITEMS_DIR.glob("OI-*.md")):`. Writes `discard_records.json`.
+- `gen_epoch_write_path.py` — **(iii)**. 98, 379. Writes `epoch_write_path.json`.
+- `gen_gating_row_sizing.py` — **(iii)**. 61, 75. Writes `gating_row_sizing.json`.
+- `gen_discard_reach_split.py` — **(i), (iii)**. See §2(b).1 A. Writes `discard_reach_split.json`.
+- `gen_doc_change_candidates.py` — **(iii)**. See §2(b).1 C. Writes `doc_change_candidates.json` and `doc_change_candidates_hunks.jsonl`.
+- `gen_framework_untrusted_candidates.py` — **(iii)**. 78: `RULING = "cowork_rulings_2026_08_17_residue_sitting.md"`, used only in label strings (79, 158). Writes `framework_untrusted_candidates.json`.
+- `gen_dispositions.py` — **(iii)**. 102. Writes `l1l2/pass1_dispositions.{csv,json}`.
+- `gen_derivation_boot_pack.py` — **(iii), (iv); (i) for NON-moving root design documents**. See §2(b).1 E; 3981: `on_disk = sorted(n for n in os.listdir(d) if ...)` lists pack directories only; 3530 is read-me text. Writes `derivation_boot_pack.json` and `derivation_boot_pack/<subject>/`. It has a git-blob digest freeze STOP.
+- `gen_filing_convention_application.py` — **(ii), (iii)**. See §2(b).1 B. Writes `filing_convention_application.json`.
+- `gen_july_screen.py` — **(iii)**, plus git-history reads of non-moving design documents. 2001; 3228: `text = git("show", commit, "--no-color", "--format=", "-U0", "--", path)`; 218. Writes `july_screen.json` and `july_screen_report.md`.
+- `gen_guard_classification.py` — **(iii)**. 168, 354. Writes `guard_classification.json`.
+- `gen_inventory.py` — **(iii)**. 23, 638; 1122 has `"listdir"` as a call name it recognizes. Writes the `l1l2/`, `l3/`, `l4/` and `l5/` tables and `manifest.json`.
+- `gen_oi357_partial_signature_establishment.py` — **(iii), (iv)**. 264, 267 list a run directory; 9, 364. Writes `oi357_partial_signature_establishment.json` and `oi357_production_arm_comparison.json`.
+- `gen_governing_surface_split.py` — **(iii)**. 94–95, 451, 666. Writes `governing_surface_split_application.json` and, with `--apply`, the archive companion files. Pinned.
+- `gen_index_status_normalization.py` — **(iii)**. 14, 388. Writes `index_status_normalization.json`.
+- `gen_oi356_parser_correction.py` — **(iii)**. 9. Writes `oi356_parser_correction.json`.
+- `gen_governing_surface_spans.py` — **(iii)**. 351, 370, 384; 125: `FILES = ("CLAUDE.md", "OPEN_ITEMS.md", "DECISIONS.md", "STATUS.md", "BUILD_AND_TEST.md")`, none of which moves. Writes `governing_surface_spans.json`. Pinned.
+- `gen_guard_state.py` — **(iii)**. 185, 1267. Writes `guard_state.json`.
+- `gen_nongating_apparatus_rows.py` — **(iii)**. 8, 1604. Writes `nongating_apparatus_rows.json`.
+- `gen_l0_l1_outgoing_population.py` — **(i) for NON-moving design documents, (iii)**. See §2(b).1 E. Writes `l0_l1_outgoing_population.json`.
+- `gen_phase1_gate_readers.py` — **(i), (iii)**. See §2(b).1 A. It also carries a label regex, 126: `r"^(cc_instruction_|cc_report_|cowork_rulings_|cowork_away_returns\.md$|"`, which is matched only against `os.path.basename` (286), over a `git grep` list at a pinned commit. Writes `phase1_gate_readers.json`.
+- `gen_l0l1_exemplar_selection.py` — **(iv), (iii)**. 30, 383: `NOTES_DIR.iterdir()`; 621. Writes `l0l1_exemplar_selection.json`.
+- `gen_oi367_opening_correction.py` — **(iii)**. 10, 224. Writes `oi367_opening_correction.json`.
+- `gen_phase1_finish_line.py` — **(iii)**. 4, 1365. It imports `gen_phase1_completion_inventory`. Writes `phase1_finish_line.json`.
+- `gen_oi357_production_arm_run.py` — **(iv), (iii)**. 52, 201 list `tools/joint_estimator`; 218. Writes `scratch_artifacts/oi357_production_arm/*.ours.json` and `oi357_production_arm_run.json`.
+- `gen_period_stratum_split.py` — **(iii)**. 151, 83, 165. Writes `period_stratum_split.json`.
+- `gen_phase1_completion_inventory.py` — **(i) for a NON-moving file, (iii)**. See §2(b).1 E; 599: `named_literally = sorted(set(re.findall(r"((?:cowork_|docs/)[a-z0-9_/]+\.md)", text)))` extracts names from JSON text to compare them and opens nothing. Writes `phase1_completion_inventory.json`.
+- `gen_retirement_census_movement.py` — **(iii)**. 99, 746, 793. Writes `retirement_census_movement.json`.
+- `gen_ratified_document_check.py` — **(i), (iii)**. See §2(b).1 A. Writes `ratified_document_check.json` and `ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md`.
+- `gen_retirement_caller_check.py` — **(i), (iii)**. See §2(b).1 A. Writes `retirement_caller_check.json`.
+- `gen_session_start_read_size.py` — **(iii)**. 9, 168, 140. Writes `session_start_read_size.json`.
+- `gen_ratification_surface_set.py` — **(ii), (iii)**. See §2(b).1 B; 241: `".gitignore excludes /cc_instruction_*.md and /cc_*.md as a class, so "` is output text. The artifact it writes, `ratification_surface_set.json`, is named in the code, not the docstring.
+- `gen_reserved_word_scanner.py` — **(i) for NON-moving files, (iii)**. See §2(b).1 E. Writes `reserved_word_scanner.json`.
+- `gen_post_split_archive.py` — **(iii)**. 99–100, 403. Writes `post_split_archive.json`. Pinned `PIN`.
+- `gen_score_tags.py` — **(iv)**. 297–298, 48. Writes `score_tags_l0l1_sweep.json`.
+- `gen_recognizer_establishment_sort.py` — **(iii), (iv)**. See §2(b).1 D. Writes `recognizer_establishment_sort.json`.
+- `gen_phase3_gate_partition.py` — **(i) for a NON-moving file, (iii)**. See §2(b).1 E. Writes `phase3_gate_partition.json`.
+- `gen_rulings_sort.py` — **(i), (iii)**. See §2(b).1 A. Writes `rulings_sort_classification.json` and `ratification_surfaces/cowork_rulings_sort_surface_2026_08_16.md`.
+- `guard_armed_check.py` — **(iii)**. 5, 69.
+- `gen_status_batch_bound.py` — **(iii)**. See §2(b).1 D. Writes `status_batch_bound.json` and, with `--apply`, edits `STATUS.md` and `STATUS_ARCHIVE.md`.
+- `gen_withheld_family_reading.py` — **(iii)**. 82 is a label; 204, 50. Writes `ratification_surfaces/cowork_withheld_family_l2_reading.md`.
+- `gen_status_archive_pass.py` — **(iii)**. 100: `RETURNS = "cowork_away_returns.md"`, matched only as text inside `STATUS.md` (157); 177: `git show` at `BASE`. Writes `status_archive_pass_2026_08_11.json`.
+- `gen_test_construction_evidence.py` — **(iii)**. 158, 335, 342. Writes `test_construction_evidence.json`.
+- `gen_specification_document_set.py` — **(iii) for moving names, with a comparison dependency; (i) for NON-moving design documents**. See §2(b).1 D; 912: `"file_exists_at_the_tree": (ROOT / path).exists()}`; 920: `lines = arch if f == "ARCHITECTURE.md" else read_lines(ROOT / f)`. Writes `specification_document_set.json`.
+- `gen_status_residue_move.py` — **(iii)**. 94–95, 333, 145. Writes `status_residue_move.json`.
+- `gen_sole_carrier_subclass.py` — **(i), (iii)**. See §2(b).1 A. Writes `sole_carrier_subclass.json`.
+- `index_status_lint.py` — **(iii)**. 5, 37.
+- `hardening_battery.py` — **(iv)**. 176.
+- `shell_read_guard.py` — **(iii)**. See §2(b).1 D for how it treats `records/`. Writes `shell_read_guard_establishment.json`.
+- `instrument_arm_declaration_effect.py` — **(iii)**. 244, 53. Writes `instrument_arm_declaration_effect.json`.
+- `reaim_ratification_surface_paths.py` — **(i), (iii)**. See §2(b).1 D. Writes `ratification_surface_reaim.json`.
+- `prune_at_amendment_lint.py` — **(iii)**. 6, 107, 175: `per_file = {name: scan(name) for name in coarse.FILES}`. `coarse.FILES` is the tuple quoted under `gen_governing_surface_spans.py`, which names no moving file. Writes `prune_at_amendment_lint.json`.
+- `process_check.py` — **(iii)**. See §2(b).1 D. Writes `process_check_establishment.json`.
+- `output_encoding.py` — **(iv)**. 206 is a label.
+- `oi349_record_arm_precondition_probe.py` — **(iii)**. 213, 51. Writes `oi349_record_arm_precondition_probe.json`.
+- `pass2_apply_verdicts.py` — **(iii)**. 14, 147.
+- `local_patches_check.py` — **(iii)**. 5, 62.
+
+**`tools\audit\decisions\`**
+- `apply_soft_discard.py` — **(i), (iii)**. See §2(b).1 A. Writes `tools/audit/soft_discard_application.json`; `--apply` edits `backbone_decisions.json`.
+- `apply_residue_discard.py` — **(i), (iii)**. See §2(b).1 A. Writes `residue_discard_application.json`.
+- `gen_decisions_register.py` — **(iii)**. 595 is a docstring. Writes `DECISIONS.md` and `decisions/group_*.md`.
+- `gen_cluster_dispositions.py` — **(iii), with prefix logic over paths, then (iv)**. See §2(b).1 C. Writes `cluster_dispositions.json`, `cluster_dispositions.csv` and `disposition_manifest.json`.
+- `gen_apply_field_diff.py` — **(iii)**. 218, 220. Writes `apply_field_diff.json`.
+- `gen_live_prohibition_pointers.py` — **(iii)**. 69.
+- `gen_item1_rehome_blocker.py` — **(iii)**. 4, 210. Writes `item1_rehome_blocker.json`.
+- `gen_homing_edit_shape.py` — **(i) for a NON-moving file, (iii)**. See §2(b).1 E. Writes `three_owner_rulings_edit_shape.json`.
+- `gen_home_classification.py` — **(iii)**. 53, 585, 716: `if sha256(SNAPSHOT) != recorded:`. Writes into `backbone_decisions.json` and `home_classification.json`. A freeze STOP checks the phase-1q snapshot hash.
+- `gen_finish_line_item1_routes.py` — **(iii)**. 1285: `if owner and "cowork_score_census.md" in owner:`, a substring test on data; 1308. Writes `finish_line_item1_routes.json`.
+- `gen_decision_harvest.py` — **(ii), (i), (iii)**. See §2(b).1 B. Writes `decision_candidates.json`, `decision_candidates.csv`, `manifest.json` and `seed_recall.json`.
+- `gen_decision_clusters.py` — **(iii), with prefix logic over paths**. See §2(b).1 C. Writes `decision_clusters.json`, `decision_clusters.csv`, `cluster_manifest.json`, `cluster_preview.md` and `cluster_establishment.json`.
+- `gen_reads3_yield.py` — **(iii)**. 57, 157, 203. Writes `reads3_yield.json`.
+- `gen_reads2_yield.py` — **(iii)**. 54, 132, 174. Writes `reads2_yield.json`.
+- `gen_reads1_yield.py` — **(iii)**. 55, 112, 149. Writes `reads1_yield.json`.
+- `gen_verbatim_subject_consistency.py` — **(iii)**. 19. Writes `verbatim_subject_consistency.json`.
+- `gen_r1_superseded_reach.py` — **(iii)**. 74, 585. Writes `r1_superseded_reach.json`.
+- `gen_true_half_reach_rows.py` — **(iii)**. 434, 657. Writes `true_half_reach_rows.json`.
+- `gen_true_half_reach.py` — **(iii)**. 66, 159, 177. Writes `true_half_reach.json`.
+- `gen_phase1w_legacy_verification.py` — **(i), (iii)**. See §2(b).1 A and E. Writes `phase1w_legacy_verification.json`.
+- `gen_route_homing_edit_shape.py` — **(iii)**. 121. Writes `route_homing_edit_shape.json`.
+- `gen_phase1q_snapshot_establishment.py` — **(iii)**. 4, 198. Writes `snapshot_2026-08-04_pre_home_classification_apply/establishment.json`. Its `--check` re-verifies the snapshot's frozen sha256.
+- `gen_retired_subject_moves.py` — **(i), (iii)**. See §2(b).1 A. Writes `retired_subject_moves.json`.
+- `gen_phase1q_record_divergence.py` — **(iii)**. 129–130, 56. Writes `phase1q_record_divergence.json`. It measures against the frozen hash in `establishment.json`.
+- `gen_reads6_yield.py` — **(iii)**. 52, 234, 155, 171. Writes `reads6_yield.json`.
+- `gen_reads5_yield.py` — **(iii)**. 50, 231, 157, 173. Writes `reads5_yield.json`.
+- `gen_phase1p_delegation_bar.py` — **(i) for NON-moving files, (iii)**. See §2(b).1 E; 181, 454, 501 are strings. Writes `phase1p_delegation_bar.json`.
+- `gen_reads5_repack.py` — **(i) for a NON-moving file, (iii)**. See §2(b).1 E; 109, 123: `FROZEN_FIELDS = ("recomputed_2026_08_04", "moved_by")`. Writes `reads5_repack.json`.
+- `gen_phase1n_reading_regime.py` — **(i) indirectly, (iii)**. See §2(b).1 C and E; 576. Writes `phase1n_reading_regime.json`. Waves 1–4 are frozen and checked (STOP at 411).
+- `gen_reads4_yield.py` — **(iii)**. 51, 216, 162. Writes `reads4_yield.json`.
+- `gen_phase1m_measurements.py` — **(i) for design documents and a NON-moving surface, (iii)**. See §2(b).1 C and E; 5 is a docstring. Writes `phase1m_measurements.json`.
+- `gen_reads4_oi326_application.py` — **(ii), then (i) for non-moving files, (iii)**. See §2(b).1 B; 176, 301. Writes `reads4_oi326_application.json`.
+- `gen_phase1g_triage.py` — **(ii) as a filter over data, (i), (iii)**. See §2(b).1 C; 577, 579. Writes `phase1g_triage.md`, which is marked GENERATED.
+- `gen_outstanding_delegations.py` — **(i) for NON-moving files, (iii)**. See §2(b).1 E; 159, 162. Writes `outstanding_delegations.json`.
+- `gen_oi333_repair.py` — **(iii)**. 207, 209, 46. Writes `oi333_repair.json`.
+
+### 2(b).3 Code files that expression 5 found and this search's pattern did not
+
+Each of these files is of a Task 2(b) type, but none matched this search's pattern. Their hit lines were read with
+`cc_[A-Za-z0-9_]+\.md`. All four are **(iii)**:
+- `tools\tests\test_metric_scripts.py:23` — ``` ``pins current (suspect) behavior`` and called out in cc_stage1d_report.md §4.```
+- `tools\tests\test_metric_scripts.py:271` — `    cc_stage1d_report.md §4.  Verified by probe run on the real corpus`
+- `tools\tests\test_dcml_parser_figbass_pedal.py:5` — `the Wave-3 addendum (cc_wave3_addendum_report.md).`
+- `tools\stage5_2_2d_sweep.py:5` — `Premise (O-11 ii / cc_stage5_phase2_2c_report.md Task 4): the coupled family-2`
+- `tools\coverage\run_coverage.ps1:16` — `    audit (cc_tree_repair_and_coverage_report.md C1 §7) for the which-branch-of-an-`
+
+### 2(b).4 Source files OUTSIDE Task 2(b)'s file types that name record files
+
+This search was added by this batch, beyond the dispatch's order, and was read-only. Grep with
+`cowork_[A-Za-z0-9_]+\.md|cc_[A-Za-z0-9_]+\.md` over `*.{cpp,h,hpp,c,txt,qml,json,yml,yaml,toml,ini,cfg}`, with the
+same exclusions. The source files among its results were read at their hit lines.
+- **`src\composing\analysis\CMakeLists.txt`**: every hit line is a `#` comment, for example 35:
+  `# See cowork_stage5_fitter_design.md + cc_stage5_phase1_report.md.` The build does not reference the files.
+- **`tools\batch_analyze.cpp`**: every hit line is a `//` comment, at lines 1240, 2593, 3727, 4668 and 5295. For
+  example, 4668: ``// `cowork_rulings_2026_08_11_thirteenth_stop.md`; rowed at OPEN_ITEMS.md OI-368 and OI-303.)``.
+- **The `src\composing\...` C++ sources and headers**: every hit line read is a `//` or `///` comment, with the two
+  exceptions noted in the next bullet. The full list of files is under expression 6.
+- **String literals in `src\notation\tests\`.** Three lines in `pipeline_snapshot_tests.cpp` name
+  `cc_instruction_analysis_cost_profile.md`: line 1879 is a comment, and lines 2447 and 2633 write the name into
+  JSON output as a label with `QStringLiteral`. `notationinteraction_harmony_pinning_tests.cpp` (215, 269) and
+  `notationimplode_tests.cpp` (772, 1751) name `cc_keyregression_diagnosis_report.md` and
+  `cc_foundation_stage3b_report.md` inside assertion-message strings. None of these opens a file.
+- **`src\composing\analysis\joint\jointembeddedartifacts.cpp`** (lines 50, 113, 119, 128): Grep omitted these
+  matching lines as too long to print, so their content was not read. Its generator,
+  `tools\joint_estimator\gen_embedded_tables.py`, names the design documents in its docstring (18–19). **What these
+  four lines contain is not established.**
+
+### 2(b).5 Every hit line, verbatim, in Grep's order
+
+Format: `path:line:content`. Lines are reproduced exactly as Grep printed them.
+
+~~~~text
+buildscripts\ci\crashdumps\win\generate_breakpad_symbols.py:148:  #   pdbs += glob.glob(os.path.join(directory, '*.exe.pdb'))
+buildscripts\ci\crashdumps\win\generate_breakpad_symbols.py:149:  #   pdbs += glob.glob(os.path.join(directory, '*.dll.pdb'))
+buildscripts\ci\crashdumps\win\generate_breakpad_symbols.py:157:  binaries += glob.glob(binary)
+buildscripts\ci\crashdumps\posix\generate_breakpad_symbols.py:350:          potential_symbol_files = glob.glob('%s.breakpad*' % binary)
+idiom_discovery\run_dcml_smoke.py:21:for sub in sorted(os.listdir(rom)):
+idiom_discovery\build_full.py:27:dcml+=[(os.path.join(rom,s),s) for s in (os.listdir(rom) if os.path.isdir(rom) else []) if os.path.isdir(os.path.join(rom,s,"harmonies"))]
+idiom_discovery\buildmat.py:17:specs += [os.path.join(rom,s) for s in os.listdir(rom) if os.path.isdir(os.path.join(rom,s,"harmonies"))]
+idiom_discovery\run_cross_tradition.py:20:specs += [os.path.join(rom, s) for s in os.listdir(rom)
+idiom_discovery\chordify_resume.py:11:queue=[(f,s,t) for s,t in SETS for f in sorted(glob.glob(os.path.join(CUR,s,"*.mxl"))) if os.path.basename(f) not in done]
+idiom_discovery\run_discovery.py:51:        for s in os.listdir(romdir):
+idiom_discovery\buildprofile.py:29:specs+=[os.path.join(rom,s) for s in os.listdir(rom) if os.path.isdir(os.path.join(rom,s,"harmonies"))]
+idiom_discovery\analyze_rootmotion.py:17:specs += [os.path.join(rom, s) for s in os.listdir(rom) if os.path.isdir(os.path.join(rom, s, "harmonies"))]
+idiom_discovery\buildmat2.py:17:specs+=[os.path.join(rom,s) for s in os.listdir(rom) if os.path.isdir(os.path.join(rom,s,"harmonies"))]
+idiom_discovery\run_xt.py:17:for s in os.listdir(rom):
+idiom_discovery\run_vl_feature_space.py:3:Read-only. Decides, BY MEASUREMENT (spec cowork_voiceleading_axis_design.md §5.3,
+idiom_discovery\run_vl_feature_space.py:176:    lines.append("// VL-C texture-classifier reference set (spec cowork_voiceleading_axis_design.md §5.3).")
+idiom_discovery\parsers\bach_chordify.py:52:    for e in exts: files+= _g.glob(_o.path.join(folder,"*"+e))
+idiom_discovery\parsers\choco.py:24:    files=sorted(glob.glob(os.path.join(part_dir,'choco','jams','*.jams')))
+idiom_discovery\parsers\choco.py:69:    files=sorted(_g.glob(_o.path.join(part_dir,"choco","jams","*.jams")))
+idiom_discovery\parsers\choco.py:140:    files=sorted(_g.glob(_o.path.join(part_dir,"choco","jams","*.jams")))
+idiom_discovery\model.py:3:See cowork_idiom_discovery_design.md (the spec). Core principle: a chord is encoded as a
+idiom_discovery\parsers\improvisor.py:16:    files = sorted(glob.glob(os.path.join(folder, "**", "*.ls"), recursive=True))
+idiom_discovery\parsers\dcml.py:60:    for tsv in sorted(glob.glob(os.path.join(repo_dir, "harmonies", "*.tsv"))):
+idiom_discovery\parsers\mcgill.py:59:    for path in sorted(glob.glob(os.path.join(root, "*", "salami_chords.txt"))):
+idiom_discovery\parsers\voiceleading.py:34:    files=sorted(glob.glob(os.path.join(notes_dir,"*.tsv")))
+idiom_discovery\parsers\voiceleading2.py:14:Method contract: `cowork_idiom_discovery_design.md` (discover -> then name; confound gate first-class;
+idiom_discovery\parsers\voiceleading2.py:142:    files = sorted(glob.glob(os.path.join(notes_dir, "*.notes.tsv")))
+idiom_discovery\parsers\voiceleading2.py:144:        files = sorted(glob.glob(os.path.join(notes_dir, "*.tsv")))
+idiom_discovery\parsers\voiceleading2.py:214:        files += glob.glob(os.path.join(folder, "*" + e))
+idiom_discovery\parsers\voiceleading2.py:318:    for d in sorted(glob.glob(os.path.join(base, "*"))):
+idiom_discovery\parsers\voiceleading2.py:320:        if os.path.isdir(nd) and glob.glob(os.path.join(nd, "*.tsv")):
+src\composing\tests\verify_chord_track.py:1318:                sorted(list(target.glob("*.musicxml")) + list(target.glob("*.mxl")))
+tools\cc_j_key_iii_decision_diff.py:27:    for p in sorted(Path(d).glob("*.ours.json")):
+tools\cc_joint_residual_probe.py:108:    files = sorted(corpus_dir.glob("*.ours.json"))
+tools\cc_gen_tpc_corpora.sh:4:# (tools/cc_* is gitignored). Each config = both presets, 353 stems.
+tools\cc_floor_classify.py:49:    files = sorted(Path(ours_dir).glob("*.ours.json"))
+tools\cc_eg2_probe.py:170:    for ours_path in sorted(corpus_dir.glob("*.ours.json")):
+tools\cc_eg2_probe.py:198:    ours_files = sorted(corpus_dir.glob("*.ours.json"))
+tools\cc_eg2_probe.py:337:    stems = sorted({p.stem.replace(".ours", "") for p in reb_dir.glob("*.ours.json")} &
+tools\cc_eg2_probe.py:338:                   {p.stem.replace(".ours", "") for p in leg_dir.glob("*.ours.json")})
+tools\cc_e0_fullspine_measure.py:107:    fs_files = sorted(fs_dir.glob("*.ours.json"))
+tools\cc_decomp_measure.py:89:    for ours_path in sorted(corpus_dir.glob("*.ours.json")):
+tools\cc_cadence_precision_investigation.py:214:    files = sorted(Path(args.ours_dir).glob("*.ours.json"))
+tools\cc_cadence_anchor_measure.py:107:    files = sorted(Path(abs_dir).glob("*.ours.json"))
+tools\cc_cadence_aggregate_prototype.py:77:    files = sorted(Path(abs_dir).glob("*.ours.json"))
+share\instruments\update_instruments_xml.py:453:    for o in sorted(os.listdir(d)):
+share\instruments\update_instruments_xml.py:460:            for t in sorted(os.listdir(ofullPath)):
+tools\cc_b_guard_separability.py:118:    files = sorted(Path(args.ours_dir).glob("*.ours.json"))
+tools\cc_b2_subdominant_guard_measure.py:77:    files = sorted(Path(args.ours_dir).glob("*.ours.json"))
+tools\cc_audit_localmodulation_accuracy.py:81:    files = sorted(Path(corpus).glob("*.ours.json"))
+tools\cc_audit_cadence_anchor_accuracy.py:5:(cowork_audit_cadencekeyanchor.md) asks CC to confirm:
+tools\cc_audit_cadence_anchor_accuracy.py:109:    files = sorted(Path(ours_dir).glob("*.ours.json"))
+tools\calibration_fit.py:70:    for ours_path in sorted(corpus_dir.glob("*.ours.json")):
+tools\calibration_fit.py:113:    for fs_path in sorted(Path(fs_dir).glob("*.ours.json")):
+tools\calibration_fit.py:341:                        for p in (_ROOT / "tools" / "corpus" / carrier).glob("*.ours.json")}
+tools\calibration_fit.py:344:        km_have = ({p.stem.replace(".keymargin", "") for p in km_dir.glob("*.keymargin.json")}
+tools\calibration_fit.py:346:        fs_have = ({p.stem.replace(".ours", "") for p in fs_dir.glob("*.ours.json")}
+tools\c1_reliability.py:187:    for ours_path in sorted(corpus_dir.glob("*.ours.json")):
+tools\c1_reliability.py:235:    for fs_path in sorted(Path(fs_dir).glob("*.ours.json")):
+tools\c1_gen_substrate.py:100:    xml_files = sorted(f for f in corpus_dir.glob("*.xml") if not f.stem.endswith("_m21"))
+tools\c1_gen_substrate.py:113:            for stale in sub.glob(pat):
+tools\build_score_census_registry.py:21:census appendices (cowork_score_census_gt_draft.md) with shas read live where the
+tools\build_score_census_registry.py:140:    for t in hdir.glob("*.harmonies.tsv"):
+tools\build_score_census_registry.py:154:    for d in sorted(DCML.iterdir()):
+tools\build_score_census_registry.py:158:        mscx = len(list((d / "MS3").glob("*.mscx")))
+tools\build_score_census_registry.py:159:        tsv = len(list((d / "harmonies").glob("*.harmonies.tsv"))) if (d / "harmonies").is_dir() else 0
+tools\build_score_census_registry.py:199:# appendices (cowork_score_census_gt_draft.md) + REPRODUCIBILITY.md; shas read
+tools\build_score_census_registry.py:728:    #     (cowork_union_search_record.md §6, user-disposed). N9 voice-separation beds (piano_svsep + MCMA +
+tools\build_score_census_registry.py:1082:            "CLARIFYING CLAUSE (audit-verified 2026-07-04, cowork_census_full_needs_audit.md §4): the `form` column "
+tools\build_score_census_registry.py:1110:            "(cowork_union_search_record.md §6, user-disposed) added to wave3_sources — N9 voice-separation beds "
+tools\validate_slices_corpus.py:129:    stems = sorted(corpus.glob("*.xml"))
+tools\translations\process_source_ts_files.py:107:for source_file in glob.glob('share/locale/*_' + source_ts):
+tools\theta_fit.py:89:    for p in sorted(Path(fs_dir).glob("*.ours.json")):
+tools\theta_fit.py:138:    for p in sorted(Path(fs_dir).glob("*.ours.json")):
+tools\audit\gen_derivation_boot_pack.py:5:`cowork_rulings_2026_08_22_boot_list_sitting.md`), quoted verbatim:
+tools\audit\gen_derivation_boot_pack.py:17:`cowork_rulings_2026_08_22_member_two_leak_sitting.md`):
+tools\audit\gen_derivation_boot_pack.py:36:              (`cowork_curated_boot_list_draft_2026_08_19.md` §2, ruled 2026-08-22) rather than
+tools\audit\gen_derivation_boot_pack.py:49:  (1) `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` -- the phase
+tools\audit\gen_derivation_boot_pack.py:53:  (3) `cowork_design_doc_template.md` -- whole.
+tools\audit\gen_derivation_boot_pack.py:54:  (4) `cowork_audit_protocol.md` -- the dispatch-protocol section, to the end of the file.
+tools\audit\gen_derivation_boot_pack.py:64:`cowork_rulings_2026_08_31_decision_surface_sitting.md` -- his words, verbatim: "extend
+tools\audit\gen_derivation_boot_pack.py:80:`cowork_rulings_2026_08_31_decision_surface_sitting.md`).  A subject whose deriving session HAS
+tools\audit\gen_derivation_boot_pack.py:91:  `CLAUDE.md` and `cowork_audit_protocol.md` have GROWN since those packs were rendered.  The
+tools\audit\gen_derivation_boot_pack.py:159:`cowork_rulings_2026_08_31_decision_surface_sitting.md`).  When the extras dimension landed,
+tools\audit\gen_derivation_boot_pack.py:228:# IMPORTED from the ruled draft `cowork_curated_boot_list_draft_2026_08_19.md` §2 (ruled by the
+tools\audit\gen_derivation_boot_pack.py:229:# user on 2026-08-22, Ruling 1 of `cowork_rulings_2026_08_22_boot_list_sitting.md`) and NOT
+tools\audit\gen_derivation_boot_pack.py:243:        "source": "ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md",
+tools\audit\gen_derivation_boot_pack.py:269:        "source": "cowork_design_doc_template.md",
+tools\audit\gen_derivation_boot_pack.py:277:        "source": "cowork_audit_protocol.md",
+tools\audit\gen_derivation_boot_pack.py:310:# `cowork_rulings_2026_08_31_decision_surface_sitting.md`), quoted verbatim:
+tools\audit\gen_derivation_boot_pack.py:323:# (2) and (4) of both packs no longer re-render because `CLAUDE.md` and `cowork_audit_protocol.md`
+tools\audit\gen_derivation_boot_pack.py:337:                    "because `CLAUDE.md` and `cowork_audit_protocol.md` have grown since this "
+tools\audit\gen_derivation_boot_pack.py:376:                    "`cowork_blind_derivation_l0_l1_2026_08_31.md` (the sitting record, §3al). "
+tools\audit\gen_derivation_boot_pack.py:384:                   "re-render on the first growth of `CLAUDE.md` or `cowork_audit_protocol.md` — "
+tools\audit\gen_derivation_boot_pack.py:421:# `cowork_rulings_2026_08_31_decision_surface_sitting.md`).  The user's words, verbatim:
+tools\audit\gen_derivation_boot_pack.py:506:                                 "`cowork_rulings_2026_08_31_decision_surface_sitting.md`: pure "
+tools\audit\gen_derivation_boot_pack.py:516:                                 "`cowork_rulings_2026_08_31_decision_surface_sitting.md`, "
+tools\audit\gen_derivation_boot_pack.py:556:                                 "`cowork_rulings_2026_08_31_decision_surface_sitting.md`: it is "
+tools\audit\gen_derivation_boot_pack.py:579:                # `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` names
+tools\audit\gen_derivation_boot_pack.py:607:            "Ruling 4(c) of `cowork_rulings_2026_08_21_successor_plan_sitting.md`: the "
+tools\audit\gen_derivation_boot_pack.py:612:            "cowork_joint_estimator_factorization.md": {
+tools\audit\gen_derivation_boot_pack.py:613:                "finding": ("Ruling 1(a1) of `cowork_rulings_2026_08_22_boot_list_sitting.md` "
+tools\audit\gen_derivation_boot_pack.py:630:                            "`cowork_rulings_2026_08_22_member_two_leak_sitting.md`, widened by "
+tools\audit\gen_derivation_boot_pack.py:632:                            "`cowork_rulings_2026_08_22_withheld_family_sitting.md`: the "
+tools\audit\gen_derivation_boot_pack.py:651:                            "`cowork_rulings_2026_08_23_member_two_second_leak_sitting.md`: the "
+tools\audit\gen_derivation_boot_pack.py:671:    # Ruling 1 of `cowork_rulings_2026_08_24_sizing_pilot_sitting.md`, quoted verbatim:
+tools\audit\gen_derivation_boot_pack.py:687:            "`cowork_rulings_2026_08_24_sizing_pilot_sitting.md` rules the withheld family EMPTY "
+tools\audit\gen_derivation_boot_pack.py:699:    # Ruling 10 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` made L0+L1 that
+tools\audit\gen_derivation_boot_pack.py:701:    # `cc_instruction_l0l1_boot_pack_2026_08_31.md`, quoted verbatim:
+tools\audit\gen_derivation_boot_pack.py:720:            "Task 4 of `cc_instruction_l0l1_boot_pack_2026_08_31.md` orders the family empty on "
+tools\audit\gen_derivation_boot_pack.py:732:    # (`cowork_rulings_2026_08_28_informed_framework_sitting.md`).
+tools\audit\gen_derivation_boot_pack.py:745:# Ruling 86, §3co of `cowork_rulings_2026_08_31_decision_surface_sitting.md`, in its own words:
+tools\audit\gen_derivation_boot_pack.py:772:        "home_documents": ("cowork_joint_estimator_factorization.md",
+tools\audit\gen_derivation_boot_pack.py:773:                           "cowork_factorization_desk_simulation.md"),
+tools\audit\gen_derivation_boot_pack.py:815:    # `cowork_rulings_2026_08_31_decision_surface_sitting.md`:
+tools\audit\gen_derivation_boot_pack.py:822:    #                       `cowork_layer5_engagement_design.md` is STRUCK by Ruling 89, §3cr,
+tools\audit\gen_derivation_boot_pack.py:844:            "cowork_architecture_review_2026_07.md",
+tools\audit\gen_derivation_boot_pack.py:845:            "cowork_census_full_needs_audit.md",
+tools\audit\gen_derivation_boot_pack.py:846:            "cowork_engage_arc_plan.md",
+tools\audit\gen_derivation_boot_pack.py:847:            "cowork_layer6_grouping_design.md",
+tools\audit\gen_derivation_boot_pack.py:848:            "cowork_notation_output_contract.md",
+tools\audit\gen_derivation_boot_pack.py:849:            "cowork_phrase_boundary_design.md",
+tools\audit\gen_derivation_boot_pack.py:850:            "cowork_progression_schema_design.md",
+tools\audit\gen_derivation_boot_pack.py:851:            "cowork_progression_schema_dictionary.md",
+tools\audit\gen_derivation_boot_pack.py:852:            "cowork_score_census.md",
+tools\audit\gen_derivation_boot_pack.py:853:            "cowork_voiceleading_axis_design.md",
+tools\audit\gen_derivation_boot_pack.py:865:# date and its reason.  Filled by `cc_instruction_pilot_preparation_withheld_family.md` Task 1(d).
+tools\audit\gen_derivation_boot_pack.py:979:                  "Ruling 3 of `cowork_rulings_2026_08_22_withheld_family_sitting.md`, ruled by "
+tools\audit\gen_derivation_boot_pack.py:996:        #    `cowork_rulings_2026_08_22_withheld_family_sitting.md`: D-569 IN, D-457 and D-526
+tools\audit\gen_derivation_boot_pack.py:1323:    # Ruling 81 (§3cj of `cowork_rulings_2026_08_31_decision_surface_sitting.md`): every candidate
+tools\audit\gen_derivation_boot_pack.py:1341:    # `cc_instruction_l2_verdict_pass_2026_09_05.md`.  Until the mechanism carries a per-subject
+tools\audit\gen_derivation_boot_pack.py:1453:                  "`cowork_rulings_2026_09_05_l2_withheld_family_sitting.md`): its plain names the "
+tools\audit\gen_derivation_boot_pack.py:3075:            "`cowork_rulings_2026_08_31_decision_surface_sitting.md`.  The ruled six are not "
+tools\audit\gen_derivation_boot_pack.py:3232:    LICENSED by Ruling 2(a) of `cowork_rulings_2026_08_24_sizing_leak_list_sitting.md`, quoted
+tools\audit\gen_derivation_boot_pack.py:3417:    LICENSED ACCOMMODATION (ii) of §4(1) of `cowork_rulings_2026_08_24_sizing_pilot_sitting.md`,
+tools\audit\gen_derivation_boot_pack.py:3528:**This directory replaces the ordinary session-start read for you.** `cowork_handoff.md`,
+tools\audit\gen_derivation_boot_pack.py:3530:and its derived gating answer, and every `cc_*` and `cowork_*` file outside this directory — the
+tools\audit\gen_derivation_boot_pack.py:3842:            "`cowork_rulings_2026_08_22_boot_list_sitting.md` — the standing boot list, the "
+tools\audit\gen_derivation_boot_pack.py:3845:            "Ruling 1 of `cowork_rulings_2026_08_22_pilot_order_sitting.md` — the held-out test "
+tools\audit\gen_derivation_boot_pack.py:3847:            "Ruling 1 of `cowork_rulings_2026_08_22_member_two_leak_sitting.md` — the "
+tools\audit\gen_derivation_boot_pack.py:3850:            "Ruling 4(c) of `cowork_rulings_2026_08_21_successor_plan_sitting.md` — the held-out "
+tools\audit\gen_derivation_boot_pack.py:3852:            "Ruling 1 of `cowork_rulings_2026_08_24_sizing_pilot_sitting.md` — the second "
+tools\audit\gen_derivation_boot_pack.py:3855:            "Ruling 1 of `cowork_rulings_2026_08_23_member_two_second_leak_sitting.md` — the "
+tools\audit\gen_derivation_boot_pack.py:3858:            "Ruling 2(a) of `cowork_rulings_2026_08_24_sizing_leak_list_sitting.md` — the "
+tools\audit\gen_derivation_boot_pack.py:3862:            "Ruling 16 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` — the "
+tools\audit\gen_derivation_boot_pack.py:3866:            "`cowork_rulings_2026_08_31_decision_surface_sitting.md` — what the `l0-l1` subject's "
+tools\audit\gen_derivation_boot_pack.py:3870:            "Ruling 17 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` — (a) the two "
+tools\audit\gen_derivation_boot_pack.py:3981:    on_disk = sorted(n for n in os.listdir(d) if os.path.isfile(os.path.join(d, n)))
+tools\audit\gen_derivation_boot_pack.py:4064:        on_disk = sorted(n for n in os.listdir(d) if os.path.isfile(os.path.join(d, n)))
+tools\audit\gen_defense_share.py:6:(`cowork_rulings_2026_09_08_defense_satellite_sitting.md`, Ruling 1, amending the defense-at-home
+tools\audit\gen_defense_share.py:29:           in `cowork_defense_clause_ends_2026_09_08.md`, and every anchor is challengeable there.
+tools\audit\gen_defense_share.py:57:`cowork_rulings_2026_09_08_extent_rule_sitting.md`, §1.  `close_at_the_next_clause` below still
+tools\audit\gen_defense_share.py:100:`cowork_claude_md_live_rule_classification_2026_09_08.md` not at all -- that file is not read here.
+tools\audit\gen_defense_share.py:146:# `cowork_defense_clause_ends_2026_09_08.md`.  This table is that pass made consumable, and every
+tools\audit\gen_defense_share.py:313:    comes first (`cowork_rulings_2026_09_08_extent_rule_sitting.md`, §1).  It is implemented in ONE
+tools\audit\gen_defense_share.py:495:            "cc_instruction_defense_share_authored_ends_2026_09_08.md, Task 1 -- the authored-end "
+tools\audit\gen_defense_share.py:497:            "cc_instruction_defense_share_sizing_third_2026_09_08.md, Task 2, and that dispatch is "
+tools\audit\gen_defense_share.py:529:                                              "`cowork_defense_clause_ends_2026_09_08.md`.",
+tools\audit\gen_defense_share.py:537:                    "cowork_defense_clause_ends_2026_09_08.md",
+tools\audit\gen_defense_share.py:548:                "`cowork_claude_md_live_rule_classification_2026_09_08.md` is NOT read by this "
+tools\audit\gen_defense_share.py:581:                                "`cowork_rulings_2026_09_08_extent_rule_sitting.md`, §1. It is "
+tools\audit\gen_defense_share.py:667:            "That `cowork_claude_md_live_rule_classification_2026_09_08.md` was consumed -- see "
+tools\audit\gen_defense_share.py:708:    print("  and the ends are AUTHORED (cowork_defense_clause_ends_2026_09_08.md).")
+tools\audit\gen_decisions_filter.py:5:`cowork_rulings_2026_08_13_eighteenth_stop.md`, quoted whole because the whole of it is the test:
+tools\audit\gen_decisions_filter.py:11:    `cc_instruction_decision_harvest.md` lists production code comments as a harvest source**, so
+tools\audit\gen_decisions_filter.py:23:(`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §3.1): *"a filter verdict
+tools\audit\gen_decisions_filter.py:97:           / "cowork_decisions_filter_surface_2026_08_15.md")
+tools\audit\gen_decisions_filter.py:119:# Ruling 1 of `cowork_rulings_2026_08_17_ninth_return.md`; recorded here by
+tools\audit\gen_decisions_filter.py:120:# `cc_instruction_preparation_tenth.md` Task 1).  The ruling EXTENDS the §6 kind-1 treatment this
+tools\audit\gen_decisions_filter.py:133:                    "`cc_instruction_preparation_opening.md` Task 2, the run the user read before "
+tools\audit\gen_decisions_filter.py:134:                    "ratifying the keep side (`cc_report_preparation_opening.md` §3)")
+tools\audit\gen_decisions_filter.py:215:    ("a ruling record named", re.compile(r"cowork_rulings_[0-9a-z_]+\.md")),
+tools\audit\gen_decisions_filter.py:516:        "dispatch": "cc_instruction_preparation_opening.md, Task 2",
+tools\audit\gen_decisions_filter.py:518:            "source": "cowork_rulings_2026_08_13_eighteenth_stop.md §2, Ruling 8",
+tools\audit\gen_decisions_filter.py:524:                "the register's origin: `cc_instruction_decision_harvest.md` lists production code "
+tools\audit\gen_decisions_filter.py:527:                "ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md §3.1",
+tools\audit\gen_decisions_filter.py:655:    add("> (`cowork_rulings_2026_08_15_batch_return.md` §5) every identifier used below is")
+tools\audit\gen_decisions_filter.py:674:    add("  (`cowork_rulings_2026_08_13_eighteenth_stop.md` §2), quoted whole in §1 below. It is the")
+tools\audit\gen_decisions_filter.py:679:    add("  (`cowork_rulings_2026_08_15_phase_definition_sitting.md` §2). Its purpose is to turn the")
+tools\audit\gen_deciding_act_recovery.py:4:THE RULING THIS EXISTS FOR.  User, 2026-08-16, §2 of `cowork_rulings_2026_08_16_preparation_return.md`,
+tools\audit\gen_deciding_act_recovery.py:83:RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
+tools\audit\gen_deciding_act_recovery.py:86:           / "cowork_deciding_act_recovery_surface_2026_08_16.md")
+tools\audit\gen_deciding_act_recovery.py:109:# Ruling 1 of `cowork_rulings_2026_08_17_ninth_return.md`; recorded here by
+tools\audit\gen_deciding_act_recovery.py:110:# `cc_instruction_preparation_tenth.md` Task 1).  The ruling EXTENDS the §6 kind-1 treatment this
+tools\audit\gen_deciding_act_recovery.py:123:                    "`cc_instruction_preparation_second.md` Task 2, the run the user read before "
+tools\audit\gen_deciding_act_recovery.py:124:                    "ruling the soft-discard (`cc_report_preparation_second.md` §4)")
+tools\audit\gen_deciding_act_recovery.py:182:    ("a ruling record named", re.compile(r"cowork_rulings_[0-9a-z_]+\.md")),
+tools\audit\gen_deciding_act_recovery.py:358:                      if "/" not in p and p.startswith("cowork_rulings_") and p.endswith(".md")
+tools\audit\gen_deciding_act_recovery.py:605:        "dispatch": "cc_instruction_preparation_second.md, Task 2",
+tools\audit\gen_deciding_act_recovery.py:607:            "source": "cowork_rulings_2026_08_16_preparation_return.md §2",
+tools\audit\gen_deciding_act_recovery.py:740:    add("> standing presentation rule (`cowork_rulings_2026_08_15_batch_return.md` §5) every")
+tools\audit\gen_deciding_act_recovery.py:765:    add("  `ratification_surfaces/cowork_decisions_filter_surface_2026_08_15.md`.")
+tools\audit\gen_deciding_act_recovery.py:771:    add("  (`cowork_rulings_2026_08_15_phase_definition_sitting.md`). Turning the project's own")
+tools\audit\gen_claude_md_prune_backlog.py:6:The rule is §5(D) of `cowork_rulings_2026_08_16_preparation_return.md`, the CONTINUOUS-PRUNING
+tools\audit\gen_claude_md_prune_backlog.py:45:merely point at former wordings held elsewhere.  Ruling 4 of `cowork_rulings_2026_08_17_sixth_return.md`
+tools\audit\gen_claude_md_prune_backlog.py:108:PIN_IS = ("Task 0 of `cc_instruction_claude_md_prune_at_amendment_2026_09_07.md`, pushed before "
+tools\audit\gen_claude_md_prune_backlog.py:116:DISPATCH = "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md"
+tools\audit\gen_claude_md_prune_backlog.py:117:RULE_D = "cowork_rulings_2026_08_16_preparation_return.md §5(D)"
+tools\audit\gen_claude_md_prune_backlog.py:155:    "`cowork_rulings_2026_08_16_preparation_return.md`), whose recorded ground is that a wrongly "
+tools\audit\gen_claude_md_prune_backlog.py:204:    `cowork_rulings_2026_08_17_eighth_return.md` — a span whose archive classification derives from
+tools\audit\gen_claude_md_prune_backlog.py:250:        "live half. Read whole, lines 1720-1733 are the LIVE ratification note — `cowork_oi200_"
+tools\audit\gen_claude_md_growth.py:4:WHY THIS EXISTS.  `cc_instruction_claude_md_prune_at_amendment_2026_09_07.md` Task 1.  The
+tools\audit\gen_claude_md_growth.py:86:RANGE_END_IS = ("Task 0 of `cc_instruction_claude_md_prune_at_amendment_2026_09_07.md`, pushed "
+tools\audit\gen_claude_md_growth.py:89:DISPATCH = "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md"
+tools\audit\gen_claude_md_finer_surface.py:5:`cowork_rulings_2026_08_17_sixth_return.md`: the finer measured pass *"delivers a new
+tools\audit\gen_claude_md_finer_surface.py:65:SURFACE = ROOT / "ratification_surfaces" / "cowork_claude_md_finer_split_2026_08_17.md"
+tools\audit\gen_claude_md_finer_surface.py:71:# (`cc_instruction_preparation_ninth.md` Task 0b; a DECLARED DEPARTURE from that dispatch's words,
+tools\audit\gen_claude_md_finer_surface.py:75:# `cowork_rulings_2026_08_17_seventh_return.md` were taken against it, and Rulings 1-2 of
+tools\audit\gen_claude_md_finer_surface.py:76:# `cowork_rulings_2026_08_17_eighth_return.md` closed the two spans it proposed. That record's own
+tools\audit\gen_claude_md_finer_surface.py:87:# `cowork_rulings_2026_08_16_preparation_return.md` §6 both exist to prevent, and the executing
+tools\audit\gen_claude_md_finer_surface.py:97:# 2026-08-17, Ruling 1 of `cowork_rulings_2026_08_17_ninth_return.md`; recorded here by
+tools\audit\gen_claude_md_finer_surface.py:98:# `cc_instruction_preparation_tenth.md` Task 1).  What was a declared departure applied to a third
+tools\audit\gen_claude_md_finer_surface.py:112:    "the commit `cowork_rulings_2026_08_17_seventh_return.md` names in its own provenance as where "
+tools\audit\gen_claude_md_finer_surface.py:114:    "`ratification_surfaces/cowork_claude_md_finer_split_2026_08_17.md` at commit `cfb69a7ecb`\"")
+tools\audit\gen_claude_md_finer_surface.py:148:        "dispatch": "cc_instruction_preparation_seventh.md, Task 3",
+tools\audit\gen_claude_md_finer_surface.py:210:    add("wrong. Ruling 4 of `cowork_rulings_2026_08_17_sixth_return.md` therefore commissioned "
+tools\audit\gen_claude_md_finer_surface.py:224:    add("§5(E) of `cowork_rulings_2026_08_16_preparation_return.md`. The line is **not** "
+tools\audit\gen_claude_md_finer_surface.py:428:        "2026-08-17, dispatch `cc_instruction_preparation_seventh.md` Task 3.*")
+tools\audit\gen_claude_md_finer_spans.py:5:`cowork_rulings_2026_08_17_sixth_return.md` (the user's word: "A."): *"The finer measured pass
+tools\audit\gen_claude_md_finer_spans.py:95:PINNED_COMMIT_IS = ("Task 2 of `cc_instruction_preparation_seventh.md` — the commit this "
+tools\audit\gen_claude_md_finer_spans.py:134:#      `cowork_rulings_2026_08_17_eighth_return.md`, quoted verbatim:
+tools\audit\gen_claude_md_finer_spans.py:174:    "`cowork_rulings_2026_08_17_eighth_return.md`, 2026-08-17")
+tools\audit\gen_claude_md_finer_spans.py:572:        "dispatch": "cc_instruction_preparation_seventh.md, Task 3",
+tools\audit\gen_claude_md_finer_spans.py:574:            "source": "cowork_rulings_2026_08_17_sixth_return.md §4 (the user's word: \"A.\")",
+tools\audit\gen_claude_md_finer_spans.py:619:                    "the_ruling": "Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`, which "
+tools\audit\gen_claude_md_finer_archive.py:5:`cowork_rulings_2026_08_17_seventh_return.md`: *"Two spans ARCHIVE, with a dated pointer at each
+tools\audit\gen_claude_md_finer_archive.py:27:`cowork_rulings_2026_08_16_preparation_return.md`), whose own recorded ground is the asymmetry —
+tools\audit\gen_claude_md_finer_archive.py:96:DISPATCH = "cc_instruction_preparation_eighth.md"
+tools\audit\gen_claude_md_finer_archive.py:97:RULINGS = "cowork_rulings_2026_08_17_seventh_return.md"
+tools\audit\gen_claude_md_finer_archive.py:100:# to be narrowed rather than left as written (`cc_instruction_preparation_ninth.md` Task 0b).
+tools\audit\gen_claude_md_finer_archive.py:122:EIGHTH_RULINGS = "cowork_rulings_2026_08_17_eighth_return.md"
+tools\audit\gen_claude_md_finer_archive.py:400:            f"`ratification_surfaces/cowork_claude_md_finer_split_2026_08_17.md`. **Each was READ "
+tools\audit\gen_claude_md_finer_archive.py:492:                                        "`cc_instruction_preparation_ninth.md` Task 0b to stay "
+tools\audit\gen_census_movement_classification.py:5:`cowork_rulings_2026_08_16_preparation_return.md`: the two derived censuses
+tools\audit\gen_census_movement_classification.py:73:                    "`cc_instruction_preparation_fifth.md`, at which both censuses re-derived "
+tools\audit\gen_census_movement_classification.py:85:                   "`cc_instruction_preparation_fifth.md` Task 1")
+tools\audit\gen_census_movement_classification.py:192:        "dispatch": "cc_instruction_preparation_fifth.md, Task 1",
+tools\audit\gen_census_movement_classification.py:194:            "source": "cowork_rulings_2026_08_16_preparation_return.md §6 (kind 3)",
+tools\audit\gen_blind_rerun_sample.py:213:# Verdict vocabulary = cowork_audit_protocol.md P2 (kind-appropriate):
+tools\audit\gen_artifact_inventory_surface.py:4:Dispatch: `cc_instruction_artifact_inventory.md`, Task 2 (Cowork, 2026-08-15), executing §2.10 of
+tools\audit\gen_artifact_inventory_surface.py:5:`cowork_rulings_2026_08_15_method_directions.md`: *"per class: role per phase, mining verdict
+tools\audit\gen_artifact_inventory_surface.py:48:2026-08-18, on the user's Rulings 1 and 2 of `cowork_rulings_2026_08_18_eleventh_stop.md`; executed
+tools\audit\gen_artifact_inventory_surface.py:49:by `cc_instruction_preparation_eleventh_amended.md` Task 1).  Two rulings meet here and **NEITHER IS
+tools\audit\gen_artifact_inventory_surface.py:52:  * **The CENSUS keeps re-deriving.**  §6 kind 3 of `cowork_rulings_2026_08_16_preparation_return.md`
+tools\audit\gen_artifact_inventory_surface.py:58:    `cowork_rulings_2026_08_17_ninth_return.md` places in the pinned kind**: a generated document put
+tools\audit\gen_artifact_inventory_surface.py:60:    `ratification_surfaces/cowork_artifact_inventory_ruling_surface.md`, which this file writes.
+tools\audit\gen_artifact_inventory_surface.py:65:`cowork_rulings_2026_08_15_inventory_sitting.md`.  What stops the pin is that **the document standing
+tools\audit\gen_artifact_inventory_surface.py:87:the user's Ruling 2 of `cowork_rulings_2026_08_18_tenth_return.md`; executed by
+tools\audit\gen_artifact_inventory_surface.py:88:`cc_instruction_preparation_eleventh_amended.md` Task 3).  The surface said of itself that nothing on
+tools\audit\gen_artifact_inventory_surface.py:120:OUT = ROOT / "ratification_surfaces" / "cowork_artifact_inventory_ruling_surface.md"
+tools\audit\gen_artifact_inventory_surface.py:280:               "IS FLAGGED RATHER THAN BURIED: `.gitignore` carries the rule `/cc_*.md`, which "
+tools\audit\gen_artifact_inventory_surface.py:300:        reason="`STATUS_ARCHIVE.md` and `cowork_handoff_archive.md` — reference-only by their own "
+tools\audit\gen_artifact_inventory_surface.py:351:        reason="`cowork_handoff.md`, `cowork_away_returns.md` and the writing side's own "
+tools\audit\gen_artifact_inventory_surface.py:540:               "findings document is a `cowork_` file elsewhere; what sits here is the machinery "
+tools\audit\gen_artifact_inventory_surface.py:630:                          "REASON THIS IS NOT `clean-room admissible`: `cowork_*` design documents "
+tools\audit\gen_artifact_inventory_surface.py:686:        for path in sorted(base.rglob("*.md")):
+tools\audit\gen_artifact_inventory_surface.py:825:        "whose record is `cowork_rulings_2026_08_15_inventory_sitting.md`** — the authority for "
+tools\audit\gen_artifact_inventory_surface.py:846:    add(f"> *Dispatch: `cc_instruction_artifact_inventory.md`, Task 2. Derived from the tracked "
+tools\audit\gen_artifact_inventory_surface.py:865:        "rather than a proposal.** §2.11 of `cowork_rulings_2026_08_15_method_directions.md` "
+tools\audit\gen_artifact_inventory_surface.py:1007:    add("`.gitignore` carries the rule `/cc_*.md`. That rule covers **every** dispatch written to "
+tools\audit\gen_artifact_inventory_surface.py:1051:        "`cowork_rulings_2026_08_15_method_directions.md` §3.")
+tools\audit\gen_artifact_inventory.py:4:Dispatch: `cc_instruction_artifact_inventory.md`, Task 1 (Cowork, 2026-08-15), executing §2.10 of
+tools\audit\gen_artifact_inventory.py:5:`cowork_rulings_2026_08_15_method_directions.md`: *"A DERIVED walk of the tree (never hand-listed),
+tools\audit\gen_artifact_inventory.py:45:Ruling 2 of `cowork_rulings_2026_08_18_eleventh_stop.md`; executed by
+tools\audit\gen_artifact_inventory.py:46:`cc_instruction_preparation_eleventh_amended.md` Task 1).  §6 kind 3 of
+tools\audit\gen_artifact_inventory.py:47:`cowork_rulings_2026_08_16_preparation_return.md` rules that a DERIVED CENSUS regenerates under a
+tools\audit\gen_artifact_inventory.py:54:Ruling 1 of `cowork_rulings_2026_08_17_ninth_return.md` places a GENERATED DOCUMENT PUT TO THE USER
+tools\audit\gen_artifact_inventory.py:56:`ratification_surfaces/cowork_artifact_inventory_ruling_surface.md`, which
+tools\audit\gen_artifact_inventory.py:229:     "`STATUS_ARCHIVE.md` and `cowork_handoff_archive.md` — the halves the 2026-07-18 split moved "
+tools\audit\gen_artifact_inventory.py:231:     at_root_named("STATUS_ARCHIVE.md", "cowork_handoff_archive.md"), True),
+tools\audit\gen_artifact_inventory.py:246:     "repository-root files whose name begins `cowork_rulings_`, `cowork_ruling_`, "
+tools\audit\gen_artifact_inventory.py:247:     "`cowork_owner_rulings_`, `cowork_pending_rulings_` or `cowork_document_route_rulings_`",
+tools\audit\gen_artifact_inventory.py:248:     at_root_prefixed("cowork_rulings_", "cowork_ruling_", "cowork_owner_rulings_",
+tools\audit\gen_artifact_inventory.py:249:                      "cowork_pending_rulings_", "cowork_document_route_rulings_"), True),
+tools\audit\gen_artifact_inventory.py:251:     "`cowork_handoff.md`, `cowork_away_returns.md`, and repository-root files beginning "
+tools\audit\gen_artifact_inventory.py:252:     "`cowork_instruction_` — the running session record and the dispatches the writing side "
+tools\audit\gen_artifact_inventory.py:254:     any_of(at_root_named("cowork_handoff.md", "cowork_away_returns.md"),
+tools\audit\gen_artifact_inventory.py:255:            at_root_prefixed("cowork_instruction_")), True),
+tools\audit\gen_artifact_inventory.py:257:     "every other repository-root file beginning `cowork_` — designs, audits, dossiers, plans, "
+tools\audit\gen_artifact_inventory.py:259:     at_root_prefixed("cowork_"), True),
+tools\audit\gen_artifact_inventory.py:261:     "anywhere below a dated `cowork_scratch_*` directory or below `scratch_artifacts/`",
+tools\audit\gen_artifact_inventory.py:263:            lambda p, b, e: p.startswith("cowork_scratch_")), True),
+tools\audit\gen_artifact_inventory.py:267:     "repository-root files beginning `cc_instruction_` — one dispatch per CC session",
+tools\audit\gen_artifact_inventory.py:268:     at_root_prefixed("cc_instruction_"), True),
+tools\audit\gen_artifact_inventory.py:370:     "`cowork_`, `cc_` or governing-document names",
+tools\audit\gen_artifact_inventory.py:385:P1_SOURCE = ("`cc_instruction_artifact_inventory.md` §0a, prediction P1: \"an authored signature "
+tools\audit\gen_artifact_inventory.py:414:P2_SOURCE = ("`cc_instruction_artifact_inventory.md` §0a, prediction P2: \"per-item descent "
+tools\audit\gen_artifact_inventory.py:445:    ("cowork_rulings_2026_08_15_period_start.md", "writing-side-ruling-records",
+tools\audit\gen_artifact_inventory.py:446:     "a ruling record, which must not fall through to the general `cowork_` design class"),
+tools\audit\gen_artifact_inventory.py:447:    ("cc_instruction_artifact_inventory.md", "dispatches-to-the-coding-side",
+tools\audit\gen_artifact_inventory.py:605:    scratch_prefixes = ("scratch_artifacts/", "cowork_scratch_")
+tools\audit\gen_artifact_inventory.py:618:        "dispatch": "cc_instruction_artifact_inventory.md",
+tools\audit\gen_artifact_inventory.py:732:                "repository ignores `/cc_*.md` — the whole dispatch-and-report family. Listing "
+tools\audit\gen_artifact_inventory.py:745:                                  "`cowork_scratch_*` directory"),
+tools\audit\gen_artifact_inventory.py:812:        # to ignore it). Ruled 2026-08-15 (`cowork_rulings_2026_08_15_batch_return.md` §4, a ruling
+tools\audit\gen_arm_comment_sweep.py:5:THE RULING (user, 2026-08-09, `cowork_rulings_2026_08_09_second_stop.md`, Ruling 16; register entry
+tools\audit\gen_arm_comment_sweep.py:254:        "the_ruling": "User, 2026-08-09, Ruling 16 of `cowork_rulings_2026_08_09_second_stop.md`: "
+tools\term_inventory\gen_term_inventory.py:4:Dispatch: cc_instruction_term_inventory.md (Cowork, 2026-07-18) — the code-enumeration
+tools\term_inventory\gen_term_inventory.py:5:half of the joint-estimator design pass (cowork_joint_estimator_architecture.md §4 step 1).
+tools\term_inventory\gen_term_inventory.py:37:# Roster factors (cowork_joint_estimator_architecture.md §2, quoted keys)
+tools\term_inventory\gen_term_inventory.py:624:    files = glob.glob(os.path.join(ROOT, "src", "**", "*.cpp"), recursive=True)
+tools\term_inventory\gen_term_inventory.py:625:    files += glob.glob(os.path.join(ROOT, "src", "**", "*.h"), recursive=True)
+tools\term_inventory\gen_term_inventory.py:626:    files += glob.glob(os.path.join(ROOT, "tools", "*.cpp"))
+tools\term_inventory\gen_term_inventory.py:727:                   for p in glob.glob(os.path.join(ROOT, "tools", "corpus", "*.xml")))
+tools\term_inventory\gen_term_inventory.py:734:    folders = [d for d in sorted(os.listdir(ch_dir)) if os.path.isdir(os.path.join(ch_dir, d))]
+tools\term_inventory\gen_term_inventory.py:765:        "dispatch": "cc_instruction_term_inventory.md (2026-07-18)",
+tools\survey_pc8_flat_authored_bass.py:255:    files = sorted(f for f in os.listdir(CORPUS_DIR) if f.endswith(".ours.json"))
+tools\survey_iii_slash_correct_iter90.py:41:    for ours_path in sorted(_CORPUS.glob("*.ours.json")):
+tools\audit\shell_read_guard.py:5:(`cc_instruction_phase1p_home_rulings_and_mechanisms.md` §6.1).  `CLAUDE.md` Conventions carry
+tools\audit\shell_read_guard.py:222:# The ruling is `cowork_ruling_guard_family_2026_08_08.md`, with OI-351 folded in by Ruling 3 of
+tools\audit\shell_read_guard.py:223:# `cowork_rulings_2026_08_08_pre_away.md`. Everything in this block is licensed by it (D-436), and
+tools\audit\shell_read_guard.py:731:    "git show ccc3086ab3:cowork_joint_key_chord_design.md 2>&1 | head -20",
+tools\audit\shell_read_guard.py:755:    # ── ADDED 2026-08-04 (`cc_instruction_guard_fix_and_item1d.md`, Task 1.2, user ruling R1) ──
+tools\audit\shell_read_guard.py:780:    "git show 4a9c0d4827:cowork_audit_protocol.md",
+tools\audit\shell_read_guard.py:811:    # ── ADDED 2026-08-04 (`cc_instruction_guard_fix_and_item1d.md`, Task 1.2, user ruling R1) ──
+tools\audit\shell_read_guard.py:817:    "grep -nE \"summaris|recognis\" tools/audit/gen_guard_state.py cowork_audit_protocol.md",
+tools\audit\shell_read_guard.py:841:# ── ADDED 2026-08-08 (`cc_instruction_guard_dialect_close_and_push.md`, Task 1.1) ─────────────
+tools\audit\shell_read_guard.py:852:# (`cowork_rulings_oi345_oi342_2026_08_07.md`) — the same order that ruling's predecessor fixed
+tools\audit\shell_read_guard.py:964:# ── ADDED 2026-08-08 (`cc_instruction_away_execution.md` Task 1) ──────────────────────────────
+tools\audit\shell_read_guard.py:968:# THE RULING (user, 2026-08-08, `cowork_ruling_guard_family_2026_08_08.md`, with OI-351 folded in
+tools\audit\shell_read_guard.py:969:# by Ruling 3 of `cowork_rulings_2026_08_08_pre_away.md`): ONE design over the enumerated family —
+tools\audit\shell_read_guard.py:1347:                "User, 2026-08-04 (R1, `cc_instruction_guard_fix_and_item1d.md`): fix the "
+tools\audit\shell_read_guard.py:1437:                "User, 2026-08-07 (ruling 1 of `cowork_rulings_oi345_oi342_2026_08_07.md`, "
+tools\audit\shell_read_guard.py:1438:                "applied by `cc_instruction_guard_dialect_close_and_push.md`): the shell-read "
+tools\audit\shell_read_guard.py:1573:                "User, 2026-08-08 (`cowork_ruling_guard_family_2026_08_08.md`, with "
+tools\audit\shell_read_guard.py:1575:                "`cowork_rulings_2026_08_08_pre_away.md`): ONE design over the whole enumerated "
+tools\audit\shell_read_guard.py:1703:                              "`cowork_rulings_2026_08_11_tenth_stop.md`: DIAGNOSIS FIRST, with a "
+tools\survey_1pc_dominant_slices.py:107:    return sorted(ms3_dir.glob("*.mscx"))
+tools\audit\reaim_ratification_surface_paths.py:100:    "cowork_handoff.md": {
+tools\audit\reaim_ratification_surface_paths.py:105:    "cowork_architecture_reassessment.md": {
+tools\audit\reaim_ratification_surface_paths.py:149:    (lambda f: f.startswith("cc_instruction_"), LEAVE,
+tools\audit\reaim_ratification_surface_paths.py:150:     "A dispatch. .gitignore excludes /cc_instruction_*.md and /cc_*.md as a class, so these "
+tools\audit\prune_at_amendment_lint.py:6:This file is half two.  The rule is §5(D) of `cowork_rulings_2026_08_16_preparation_return.md`,
+tools\audit\prune_at_amendment_lint.py:118:    `cowork_rulings_2026_08_17_sixth_return.md` after the coarse one was MEASURED wrong for it
+tools\stage5_fit_driver.py:187:    for xml in sorted((_ROOT / "tools" / "corpus").glob("*.xml")):
+tools\audit\process_check.py:5:(`cc_instruction_phase1p_home_rulings_and_mechanisms.md` §6.2).  Three rules that were being
+tools\audit\process_check.py:7:`cowork_audit_protocol.md`'s dispatch-protocol section; this makes two of them mechanically
+tools\stage5_2_2e_liveness.py:56:    for bp in sorted((CORPUS / plower).glob("*.ours.json")):
+tools\stage5_2_2e_liveness.py:85:            for op in sorted((off_root / plower).glob("*.ours.json")):
+tools\stage5_2_2c_winnerdiff.py:34:    a_files = {p.name: p for p in a_root.glob("*.ours.json")}
+tools\stage5_2_2c_winnerdiff.py:35:    b_files = {p.name: p for p in b_root.glob("*.ours.json")}
+tools\audit\pass2_apply_verdicts.py:14:# Verdict vocabulary (cowork_audit_protocol.md P2), applied per row kind:
+tools\audit\output_encoding.py:206:        "generated_for": "cc_instruction_phase1x_guard_visibility_and_commit.md, Task 1.3",
+tools\stage5_2_2c_byteproof.py:43:    frozen_files = {p.name: p for p in frozen.glob("*.ours.json")}
+tools\stage5_2_2c_byteproof.py:44:    scratch_files = {p.name: p for p in scratch_out.glob("*.ours.json")}
+tools\audit\oi349_record_arm_precondition_probe.py:12:(`cowork_rulings_2026_08_09_return.md`), which settles the timing question the row reserved.
+tools\audit\oi349_record_arm_precondition_probe.py:213:        "generated_for": "cc_instruction_return_continuation.md, Task 1 -- the user's Ruling 9 of "
+tools\audit\oi349_record_arm_precondition_probe.py:214:                         "2026-08-09 (`cowork_rulings_2026_08_09_return.md`), which settles the "
+tools\stage5_2_2c_3way.py:20:    return {p.name: p for p in d.glob("*.ours.json")}
+tools\analyze_iter90_regressions.py:31:    ours_files = sorted(_CORPUS_DIR.glob("*.ours.json"))
+tools\analyze_inversion_errors.py:114:    ours_files = sorted(ours_dir.glob("*.ours.json"))
+tools\a8_rebaseline_measure.py:309:    ours_files = sorted(corpus_dir.glob("*.ours.json"))
+tools\stage5_2_2b_evidence.py:237:        for bp in sorted((base_root_dir / plower).glob("*.ours.json")):
+tools\stage5_2_2b_evidence.py:273:                for op in sorted((off_root_dir / plower).glob("*.ours.json")):
+tools\audit\oi199\gen_joint_dispositions.py:47:    # the §3 notation output-surface record (cowork_notation_output_contract.md §3)
+tools\analyze_bir_true_iter19.py:253:    ours_files = sorted(_CORPUS_DIR.glob("*.ours.json"))
+tools\audit\decisions\gen_apply_field_diff.py:218:        "generated_for": "cc_instruction_away_execution.md, Task 0 (the epoch treatment ruled by "
+tools\audit\decisions\gen_apply_field_diff.py:220:                         "`cowork_rulings_2026_08_08_pre_away.md`)",
+tools\audit\corpus_arm_stamp.py:101:    return sorted(f for f in os.listdir(corpus_dir) if f.endswith(".ours.json"))
+tools\audit\corpus_arm_stamp.py:140:    found = [d for d in sorted(os.listdir(CORPUS_ROOT))
+tools\audit\corpus_arm_stamp.py:316:        "generated_for": "cc_instruction_phase1y_corpus_arm_stamping.md, Task 3",
+tools\audit\corpus_arm_stamp.py:554:        "generated_for": "cc_instruction_phase1y_corpus_arm_stamping.md, Tasks 1 and 2",
+tools\audit\decisions\apply_residue_discard.py:4:THE RULINGS THIS EXISTS FOR.  User, 2026-08-17, `cowork_rulings_2026_08_17_residue_sitting.md`:
+tools\audit\decisions\apply_residue_discard.py:83:RULING = ROOT / "cowork_rulings_2026_08_17_residue_sitting.md"
+tools\audit\decisions\apply_residue_discard.py:94:RETIRING_ACT = ("CC, `cc_instruction_preparation_eighth.md` Task 2, on the user's rulings of "
+tools\audit\decisions\apply_residue_discard.py:96:AUTHORITY = "cowork_rulings_2026_08_17_residue_sitting.md §§1 and 3"
+tools\audit\decisions\apply_residue_discard.py:97:KEEP_AUTHORITY_47 = "cowork_rulings_2026_08_17_residue_sitting.md §2 (Ruling 2)"
+tools\audit\decisions\apply_residue_discard.py:98:KEEP_AUTHORITY_6 = "cowork_rulings_2026_08_17_residue_sitting.md §4 (Ruling 4)"
+tools\audit\decisions\apply_residue_discard.py:411:        "dispatch": "cc_instruction_preparation_eighth.md, Task 2",
+tools\audit\decisions\apply_residue_discard.py:413:            "source": "cowork_rulings_2026_08_17_residue_sitting.md",
+tools\stage5_15_13_population.py:35:    files = sorted(fs_dir.glob("*.ours.json"))
+tools\audit\decisions\apply_soft_discard.py:5:`cowork_rulings_2026_08_16_preparation_return.md`: *"The 194 NOTHING-FOUND entries are
+tools\audit\decisions\apply_soft_discard.py:68:RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
+tools\audit\decisions\apply_soft_discard.py:80:RETIRING_ACT = ("CC, `cc_instruction_preparation_fifth.md` Task 1, on the user's rulings of "
+tools\audit\decisions\apply_soft_discard.py:82:AUTHORITY = "cowork_rulings_2026_08_16_preparation_return.md §3 (A)"
+tools\audit\decisions\apply_soft_discard.py:278:        "dispatch": "cc_instruction_preparation_third.md, Task 3",
+tools\audit\decisions\apply_soft_discard.py:329:                "cc_report_preparation_third.md §4, and THE PREPARATION THIRD BATCH section of "
+tools\audit\decisions\apply_soft_discard.py:330:                "cowork_away_returns.md — the complete captured output of every check that turned "
+tools\audit\decisions\apply_soft_discard.py:388:    # ★ CORRECTION OF RECORD, 2026-08-17, answering F49 (`cowork_rulings_2026_08_17_eighth_return.md`
+tools\audit\notation_surface\gen_notation_surface_audit.py:6:# generator (dispatch cc_instruction_notation_consumption_audit.md, §8.1 of
+tools\audit\notation_surface\gen_notation_surface_audit.py:7:# cowork_notation_adoption_increment.md, user-ratified 2026-07-26).
+tools\audit\notation_surface\gen_notation_surface_audit.py:427:    summary["dispatch"] = "cc_instruction_notation_consumption_audit.md (READ-ONLY)"
+tools\audit\notation_surface\gen_notation_surface_audit.py:428:    summary["decision_surface"] = "cowork_notation_adoption_increment.md §8.1 (user-ratified 2026-07-26)"
+tools\audit\decisions\gen_decision_clusters.py:5:# harvest (dispatch cc_instruction_decision_clustering.md).
+tools\audit\decisions\gen_decision_clusters.py:113:    if r.startswith("cowork_") and not r.startswith("cowork_handoff"):
+tools\audit\decisions\gen_decision_clusters.py:114:        return 2                      # the ratified cowork_* decision documents
+tools\audit\decisions\gen_decision_clusters.py:119:    if r in ("STATUS.md", "cowork_handoff.md", "DEFECT_TYPES.md"):
+tools\audit\decisions\gen_decision_clusters.py:121:    if r in ("STATUS_ARCHIVE.md", "cowork_handoff_archive.md"):
+tools\audit\decisions\gen_decision_clusters.py:130:    2: "design or decision document (docs/ or cowork_*)",
+tools\audit\local_patches_check.py:5:(`cc_instruction_phase1q_reclassification_and_guards.md` §6), on the user's ruling of
+tools\audit\decisions\gen_decisions_register.py:595:    `cowork_rulings_2026_08_16_preparation_return.md`, executed under §6): the soft-discard moves
+tools\audit\claude_md_rule_triage.py:5:(`cc_instruction_phase1p_home_rulings_and_mechanisms.md` §6.4): classify every process rule in
+tools\audit\claude_md_rule_triage.py:140:                    "`cowork_rulings_2026_08_09_fifth_stop.md`). **The DEEP half is ruled "
+tools\audit\claude_md_rule_triage.py:145:                    "`cowork_design_doc_template.md`, the per-session self-check (D-434) and the "
+tools\audit\claude_md_rule_triage.py:149:                    "puts in `cowork_design_doc_template.md`, where a document of an unlisted kind "
+tools\audit\claude_md_rule_triage.py:268:    # ── AUTHORED 2026-08-09 (CC, `cc_instruction_return_continuation.md` Task 3) on the user's
+tools\audit\claude_md_rule_triage.py:269:    # Ruling 8 of 2026-08-09 (`cowork_rulings_2026_08_09_return.md`): the continuation session
+tools\audit\claude_md_rule_triage.py:338:    # `cowork_rulings_2026_08_09_fourth_stop.md`, applied by
+tools\audit\claude_md_rule_triage.py:339:    # `cc_instruction_return_continuation_4.md` Task 0. The FORMER class and its whole ground are
+tools\audit\claude_md_rule_triage.py:393:    # ── AUTHORED 2026-08-09 (CC, `cc_instruction_return_continuation_4.md` Task 0) ──────────────
+tools\audit\claude_md_rule_triage.py:434:    # ── AUTHORED 2026-08-09, cc_instruction_return_continuation_6.md Task 0 ───────────────────
+tools\audit\claude_md_rule_triage.py:471:    # ── AUTHORED 2026-08-09, cc_instruction_return_continuation_8.md Task 0 ───────────────────
+tools\audit\claude_md_rule_triage.py:536:    # ── AUTHORED 2026-08-11, cc_instruction_apply_the_bearing_cut.md Task 1 ────────────────────
+tools\audit\claude_md_rule_triage.py:537:    # The user's Rulings 65 and 66 of `cowork_rulings_2026_08_11_fifteenth_stop.md` were homed into
+tools\audit\claude_md_rule_triage.py:566:    # ── AUTHORED 2026-08-13, cc_instruction_ruling69_discard_input.md Task 1 ───────────────────
+tools\audit\claude_md_rule_triage.py:567:    # The user's Ruling 69 of `cowork_rulings_2026_08_13_seventeenth_stop.md` was homed into
+tools\audit\claude_md_rule_triage.py:609:# `cowork_rulings_2026_08_16_preparation_return.md`).  The ruled soft-discard retires a register
+tools\audit\claude_md_rule_triage.py:624:    "CC, dispatch `cc_instruction_preparation_fifth.md` Task 1, executing the user's rulings of "
+tools\audit\claude_md_rule_triage.py:726:                             "cowork_audit_protocol.md): runs automatically with no human step; "
+tools\audit\decisions\gen_cluster_dispositions.py:117:    ("BR-11", "The unit is in a Claude Code DISPATCH (`cc_instruction_*.md`) and carries none of "
+tools\audit\decisions\gen_cluster_dispositions.py:123:    ("BR-12", "The unit is in a Claude Code session REPORT (`cc_*.md` that is not a dispatch) and "
+tools\audit\decisions\gen_cluster_dispositions.py:141:    ("BR-15", "The unit is in the SESSION HANDOFF (`cowork_handoff.md`) and carries none of the "
+tools\audit\decisions\gen_cluster_dispositions.py:149:    ("BR-17", "The unit is in the SESSION-HANDOFF ARCHIVE (`cowork_handoff_archive.md`) and carries "
+tools\audit\decisions\gen_cluster_dispositions.py:188:    "cc_* session reports": "The BR-12 EXEMPTION SET — units the sweep refused because they "
+tools\audit\decisions\gen_cluster_dispositions.py:190:    "cc_instruction_* dispatches": "The BR-11 EXEMPTION SET — units the sweep refused because "
+tools\audit\decisions\gen_cluster_dispositions.py:194:    "cowork_* design documents": "A MEASURED PARTITION, still open. **27 of the 143 documents on "
+tools\audit\decisions\gen_cluster_dispositions.py:197:                                 "surfaces, so neither does this one), `cowork_stage5_fitter_"
+tools\audit\decisions\gen_cluster_dispositions.py:200:                                 "(`cowork_layer4_chordsymbol_design.md`, "
+tools\audit\decisions\gen_cluster_dispositions.py:201:                                 "`cowork_layer5_function_design.md`, `docs/decoder_design.md`, "
+tools\audit\decisions\gen_cluster_dispositions.py:215:    "docs/ design documents": "Same treatment as the `cowork_*` surface, and the same reason for "
+tools\audit\decisions\gen_cluster_dispositions.py:221:    "the two archives": "BOTH ARE NOW READ IN FULL — `cowork_handoff_archive.md` (5,704 lines) by "
+tools\audit\decisions\gen_cluster_dispositions.py:373:    # `cowork_rulings_2026_08_16_preparation_return.md`).  A soft-discarded entry is RETIRED from
+tools\audit\decisions\gen_cluster_dispositions.py:463:    return f.startswith("cc_instruction_")
+tools\audit\decisions\gen_cluster_dispositions.py:467:    return f.startswith("cc_") and not f.startswith("cc_instruction_")
+tools\audit\decisions\gen_cluster_dispositions.py:475:    return f == "cowork_handoff.md"
+tools\audit\decisions\gen_cluster_dispositions.py:479:    """`cowork_handoff_archive.md` — the SESSION-HANDOFF ARCHIVE.
+tools\audit\decisions\gen_cluster_dispositions.py:487:    return f == "cowork_handoff_archive.md"
+tools\audit\decisions\gen_cluster_dispositions.py:522:    if f in ("STATUS_ARCHIVE.md", "cowork_handoff_archive.md"):
+tools\audit\decisions\gen_cluster_dispositions.py:524:    if f == "cowork_handoff.md":
+tools\audit\decisions\gen_cluster_dispositions.py:526:    if f.startswith("cowork_"):
+tools\audit\decisions\gen_cluster_dispositions.py:527:        return "cowork_* design documents"
+tools\audit\decisions\gen_cluster_dispositions.py:529:        return "cc_instruction_* dispatches"
+tools\audit\decisions\gen_cluster_dispositions.py:531:        return "cc_* session reports"
+tools\audit\decisions\gen_cluster_dispositions.py:579:        elif cats == {"cc_reports"} and any(p.search(joined) for p in rep):
+tools\audit\changed_paths.py:5:(`cc_instruction_phase1s_stale_rules_and_enumeration.md` §2), on the user's ruling of
+tools\audit\decisions\gen_finish_line_item1_routes.py:50:# ★ WIDENED 2026-08-07 (user's ruling, dispatch `cc_instruction_five_rulings.md` §0a R1, recorded
+tools\audit\decisions\gen_finish_line_item1_routes.py:51:# in `cowork_audit_protocol.md`): a HOMING dispatch may also touch `docs/scoring_model.md`,
+tools\audit\decisions\gen_finish_line_item1_routes.py:83:# `cc_instruction_three_owner_rulings.md` §0a, rulings R1-R3).  The answers are recorded here
+tools\audit\decisions\gen_finish_line_item1_routes.py:94:# `cowork_engage_arc_plan.md`, is a ratified contract document outside every standing licence, and
+tools\audit\decisions\gen_finish_line_item1_routes.py:100:    "D-539": "cowork_engage_arc_plan.md (re-homed 2026-08-07 on the user's ruling R3 — no longer in "
+tools\audit\decisions\gen_finish_line_item1_routes.py:108:# LARGER act by the same user on the same date: the ruling record `cowork_owner_rulings_2026_08_07.md`
+tools\audit\decisions\gen_finish_line_item1_routes.py:159:    "D-568": "cowork_engage_arc_plan.md",
+tools\audit\decisions\gen_finish_line_item1_routes.py:166:# to `cowork_owner_rulings_2026_08_07.md` and applied by `cc_instruction_document_routes_and_d472.md`):
+tools\audit\decisions\gen_finish_line_item1_routes.py:188:# `cc_instruction_return_continuation_7.md` Task 1, under the user's Ruling 38 (the homing default).
+tools\audit\decisions\gen_finish_line_item1_routes.py:194:# `cowork_audit_protocol.md`, the section that already states this project's closed-verdict-set rule,
+tools\audit\decisions\gen_finish_line_item1_routes.py:200:    "D-581": "cowork_audit_protocol.md",
+tools\audit\decisions\gen_finish_line_item1_routes.py:201:    "D-583": "cowork_audit_protocol.md",
+tools\audit\decisions\gen_finish_line_item1_routes.py:205:# the user's RULING 40 (`cowork_rulings_2026_08_09_eighth_stop.md`), STEP 2 of its three-step
+tools\audit\decisions\gen_finish_line_item1_routes.py:213:    "D-513": ("cowork_score_census.md", "§3, the inclusion criteria"),
+tools\audit\decisions\gen_finish_line_item1_routes.py:214:    "D-514": ("cowork_score_census.md", "§4, the overlap-hazard accounting rule"),
+tools\audit\decisions\gen_finish_line_item1_routes.py:215:    "D-500": ("cowork_score_census.md", "§5, the decision-tier block"),
+tools\audit\decisions\gen_finish_line_item1_routes.py:216:    "D-422": ("cowork_score_census.md", "§5, at Tier J"),
+tools\audit\decisions\gen_finish_line_item1_routes.py:217:    "D-614": ("cowork_score_census.md", "§8c, beside the Stage-5 fitting-pool licence constraint"),
+tools\audit\decisions\gen_finish_line_item1_routes.py:221:# user's RULING 45 (`cowork_rulings_2026_08_09_ninth_stop.md`), which is Ruling 40's step 2 reached
+tools\audit\decisions\gen_finish_line_item1_routes.py:230:    "D-515": ("cowork_score_census.md", "§8c, in the mechanism, at the needs-vector step"),
+tools\audit\decisions\gen_finish_line_item1_routes.py:249:        "RULING 44 (user, 2026-08-09, `cowork_rulings_2026_08_09_ninth_stop.md`): CLOSED as an "
+tools\audit\decisions\gen_finish_line_item1_routes.py:281:# `cowork_rulings_2026_08_09_sixth_stop.md`, Ruling 38 (user).  Its words: "For every remaining
+tools\audit\decisions\gen_finish_line_item1_routes.py:306:    "User, 2026-08-09, Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the "
+tools\audit\decisions\gen_finish_line_item1_routes.py:314:# THE RULING.  User, 2026-08-09, Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`, taken
+tools\audit\decisions\gen_finish_line_item1_routes.py:315:# after a three-option decision surface: `cowork_score_census.md` is KEPT as the owning surface for
+tools\audit\decisions\gen_finish_line_item1_routes.py:320:# WHAT WAS PERFORMED.  `cc_instruction_return_continuation_7.md` Task 0 wrote the approved wording
+tools\audit\decisions\gen_finish_line_item1_routes.py:328:# `cowork_score_census.md` as their OWNING SPECIFICATION -- the surface that ought to state their
+tools\audit\decisions\gen_finish_line_item1_routes.py:343:# with both routes named, and the refutation is reported at `cowork_away_returns.md` §1.12.
+tools\audit\decisions\gen_finish_line_item1_routes.py:345:    "User, 2026-08-09, Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`: "
+tools\audit\decisions\gen_finish_line_item1_routes.py:346:    "`cowork_score_census.md` is KEPT as the owning surface for the corpus decisions whose recorded "
+tools\audit\decisions\gen_finish_line_item1_routes.py:366:    "avoid. Reported at `cowork_away_returns.md` §1.12."
+tools\audit\decisions\gen_finish_line_item1_routes.py:372:# THE RULING.  User, 2026-08-09, Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`, taken
+tools\audit\decisions\gen_finish_line_item1_routes.py:391:    "User, 2026-08-09, Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`: Ruling 39's ACT "
+tools\audit\decisions\gen_finish_line_item1_routes.py:410:    # ── EXECUTED 2026-08-09, cc_instruction_return_continuation_8.md Task 1 ───────────────────
+tools\audit\decisions\gen_finish_line_item1_routes.py:459:    # ── EXECUTED 2026-08-11, cc_instruction_return_continuation_9.md Task 0.  The step-3 verdict
+tools\audit\decisions\gen_finish_line_item1_routes.py:567:    # ---- cowork_architecture_reassessment.md -- superseded meta-findings ----------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:583:    # ---- cowork_architecture_review_2026_07.md -- ratified amendments -------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:609:    "D-500": (DELEGATION, "cowork_score_census.md (the corpus decision surface)", False,
+tools\audit\decisions\gen_finish_line_item1_routes.py:614:    # ---- cowork_audit_obligation_map.md ------------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:620:    # ---- cowork_census_full_needs_audit.md ---------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:621:    "D-513": (DELEGATION, "cowork_score_census.md", False,
+tools\audit\decisions\gen_finish_line_item1_routes.py:624:    "D-514": (DELEGATION, "cowork_score_census.md", False,
+tools\audit\decisions\gen_finish_line_item1_routes.py:627:    "D-515": (DELEGATION, "cowork_score_census.md", False,
+tools\audit\decisions\gen_finish_line_item1_routes.py:630:    "D-516": (DELEGATION, "cowork_score_census.md", False,
+tools\audit\decisions\gen_finish_line_item1_routes.py:633:    # ---- cowork_delta_check_dispositions.md --------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:640:    # ---- cowork_eg1_premise_checks.md --------------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:649:    # ---- cowork_eg2_scoping.md ---------------------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:655:    # ---- cowork_factorization_desk_simulation.md ---------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:673:    # ---- cowork_fb_redesign_design.md (LEGACY surface) ---------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:686:    # ---- cowork_gateA_unification_design.md (LEGACY surface) ---------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:696:    # ---- cowork_idiom_discovery_design.md ----------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:708:    # ---- cowork_information_loss_audit.md ----------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:709:    "D-581": (DELEGATION, "cowork_audit_protocol.md", False,
+tools\audit\decisions\gen_finish_line_item1_routes.py:716:    "D-583": (DELEGATION, "cowork_audit_protocol.md", False,
+tools\audit\decisions\gen_finish_line_item1_routes.py:719:    # ---- cowork_layer1_extend_design.md ------------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:725:    # ---- cowork_layer1_tone_collection_design.md ---------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:736:    # ---- cowork_layer3_keymode_impl_design.md ------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:745:    # ---- cowork_layer3_reachback_design.md ---------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:760:    # ---- cowork_layer5_function_methods.md ---------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:773:    # ---- cowork_phase2_architecture_review.md ------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:782:    # ---- cowork_phase5c_l5_build_plan.md -----------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:788:    # ---- cowork_phrase_boundary_methods.md ---------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:794:    # ---- cowork_sensitive_cell_probe.md ------------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:806:    # ---- cowork_term_theory_grounding.md -----------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:815:    "D-475": (DELEGATION, "cowork_score_census.md", False,
+tools\audit\decisions\gen_finish_line_item1_routes.py:819:    # ---- cowork_tpc_capability_design.md -----------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:826:    # ---- cowork_types_header_design.md -------------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:831:    # ---- cowork_union_search_record.md -------------------------------------------------------
+tools\audit\decisions\gen_finish_line_item1_routes.py:832:    "D-613": (DELEGATION, "cowork_score_census.md", False,
+tools\audit\decisions\gen_finish_line_item1_routes.py:835:    "D-614": (DELEGATION, "cowork_score_census.md", False,
+tools\audit\decisions\gen_finish_line_item1_routes.py:845:    "D-539": (REHOME, "cowork_engage_arc_plan.md, beside the MEASURE-BEFORE-BUILD gate", True,
+tools\audit\decisions\gen_finish_line_item1_routes.py:885:    "D-422": (DELEGATION, "cowork_score_census.md", False,
+tools\audit\decisions\gen_finish_line_item1_routes.py:958:    # `cc_instruction_guard_fix_and_item1d.md`, Task 2.2). The former route was
+tools\audit\decisions\gen_finish_line_item1_routes.py:1285:            if owner and "cowork_score_census.md" in owner:
+tools\audit\decisions\gen_finish_line_item1_routes.py:1308:        "generated_for": "cc_instruction_finish_line_item1.md (Task 3.2, ruling R3)",
+tools\audit\decisions\gen_finish_line_item1_routes.py:1370:                    "`cc_instruction_three_owner_rulings.md` §0a). Recorded here BESIDE the verdict "
+tools\audit\decisions\gen_finish_line_item1_routes.py:1388:                    "HOMED in cowork_engage_arc_plan.md, beside the MEASURE-BEFORE-BUILD gate — an "
+tools\audit\decisions\gen_finish_line_item1_routes.py:1406:            "recorded_by": "cc_instruction_return_continuation_6.md Task 0",
+tools\audit\decisions\gen_finish_line_item1_routes.py:1437:            "recorded_by": "cc_instruction_return_continuation_7.md Task 0",
+tools\audit\decisions\gen_finish_line_item1_routes.py:1447:                "NOTHING, in either direction. Every entry actually homed in `cowork_score_census.md` "
+tools\audit\decisions\gen_finish_line_item1_routes.py:1478:            "where_it_is_reported": "cowork_away_returns.md §1.12",
+tools\audit\decisions\gen_finish_line_item1_routes.py:1482:            "recorded_by": "cc_instruction_return_continuation_8.md Task 0",
+tools\audit\decisions\gen_finish_line_item1_routes.py:1515:            "recorded_by": "cc_instruction_return_continuation_9.md Task 0",
+tools\audit\decisions\gen_finish_line_item1_routes.py:1517:                "User, 2026-08-09, Rulings 44-47 of `cowork_rulings_2026_08_09_ninth_stop.md`, "
+tools\audit\decisions\gen_finish_line_item1_routes.py:1599:                "cowork_layer1_tone_collection_design.md's two entries sit here although the user "
+tools\audit\decisions\gen_decision_harvest.py:4:# gen_decision_harvest.py — THE DECISION HARVEST (dispatch cc_instruction_decision_harvest.md).
+tools\audit\decisions\gen_decision_harvest.py:18:#   * enumerates a fixed, deterministic corpus (governing docs, cowork_* design
+tools\audit\decisions\gen_decision_harvest.py:19:#     docs, docs/, the register, cc_* reports, both archives, ARCHITECTURE.md,
+tools\audit\decisions\gen_decision_harvest.py:105:    "cowork_handoff.md", "cowork_handoff_archive.md", "OPEN_ITEMS.md",
+tools\audit\decisions\gen_decision_harvest.py:122:    real failure mode, and many `cc_*` reports carrying rulings 'recorded nowhere
+tools\audit\decisions\gen_decision_harvest.py:137:    def md_glob(prefix_dir, pat, exclude=()):
+tools\audit\decisions\gen_decision_harvest.py:140:        for p in glob.glob(os.path.join(REPO, prefix_dir, pat)):
+tools\audit\decisions\gen_decision_harvest.py:151:    # 2 cowork_* design docs (root), minus the two handoff files already in gov
+tools\audit\decisions\gen_decision_harvest.py:152:    cowork = md_glob("", "cowork_*.md",
+tools\audit\decisions\gen_decision_harvest.py:153:                     exclude=("cowork_handoff.md", "cowork_handoff_archive.md"))
+tools\audit\decisions\gen_decision_harvest.py:154:    cats.append((2, "cowork_docs", cowork))
+tools\audit\decisions\gen_decision_harvest.py:157:    docs = md_glob("docs", "*.md")
+tools\audit\decisions\gen_decision_harvest.py:161:    oi = md_glob("open_items", "*.md")
+tools\audit\decisions\gen_decision_harvest.py:164:    # 5 cc_* reports (root) — every cc_*.md (238 are *_report.md; the rest are
+tools\audit\decisions\gen_decision_harvest.py:166:    cc = md_glob("", "cc_*.md")
+tools\audit\decisions\gen_decision_harvest.py:167:    cats.append((5, "cc_reports", cc))
+tools\audit\decisions\gen_decision_harvest.py:483:    cat_rank = {"governing": 1, "cowork_docs": 2, "docs": 3, "open_items": 4,
+tools\audit\decisions\gen_decision_harvest.py:484:                "cc_reports": 5, "code_comments": 6}
+tools\audit\decisions\gen_decision_harvest.py:592:            "cowork_docs": "cowork_*.md (root)",
+tools\audit\decisions\gen_decision_harvest.py:595:            "cc_reports": "cc_*.md (root)",
+tools\audit\decisions\gen_decision_harvest.py:623:                    "cc_* reports carrying rulings are untracked working notes, and "
+tools\audit\decisions\gen_decision_harvest.py:650:     ["cowork_notation_output_contract.md"],
+tools\audit\decisions\gen_decision_harvest.py:653:     ["cowork_notation_output_contract.md"],
+tools\audit\decisions\gen_decision_harvest.py:656:     ["cowork_notation_output_contract.md"],
+tools\audit\decisions\gen_decision_harvest.py:659:     ["cowork_notation_adoption_increment.md"],
+tools\audit\decisions\gen_decision_harvest.py:665:     ["cowork_notation_output_contract.md"],
+tools\audit\decisions\gen_live_prohibition_pointers.py:69:# `cowork_rulings_2026_08_09_fourth_stop.md`). D-572 entered the derived class in that act and this
+tools\audit\decisions\gen_homing_edit_shape.py:57:    ("cowork_engage_arc_plan.md",
+tools\audit\decisions\gen_homing_edit_shape.py:107:        "generated_for": "cc_instruction_three_owner_rulings.md (Tasks 1 and 3, the ADD-ONLY "
+tools\analyze_wrong_root_iter90.py:82:    ours_files = sorted(_CORPUS_DIR.glob("*.ours.json"))
+tools\section_7_3_diagnostic.py:42:    for entry in runs_root.iterdir():
+tools\section_7_3_diagnostic.py:116:    for ours_path in sorted(ours_dir.glob(corpus['ours_glob'])):
+tools\audit\decisions\gen_item1_rehome_blocker.py:4:THE QUESTION (dispatch `cc_instruction_guard_fix_and_item1d.md`, Task 4, assumption A2): "That
+tools\audit\decisions\gen_item1_rehome_blocker.py:210:        "generated_for": "cc_instruction_guard_fix_and_item1d.md (Task 4, assumption A2)",
+tools\audit\l5\gen_resolver_dispositions.py:294:    'instruction': 'cc_instruction_l5_audit_pass1_resolver (Cowork, 2026-07-12)',
+tools\run_validation.py:424:    xml_files = sorted(f for f in corpus_dir.glob("*.xml")
+tools\audit\decisions\gen_home_classification.py:53:Ruling 1 of `cowork_rulings_2026_08_08_pre_away.md`; the change to this tool is licensed by that
+tools\audit\decisions\gen_home_classification.py:56:`cc_instruction_phase1_delegations_and_corrections.md`.  Until this ruling the applying run
+tools\audit\decisions\gen_home_classification.py:72:`cowork_rulings_2026_08_09_return.md`; written here in the D-644 shape — state the current
+tools\audit\decisions\gen_home_classification.py:74:`cowork_rulings_2026_08_09_second_stop.md`, transcribed from the register data's
+tools\audit\decisions\gen_home_classification.py:121:# `cowork_rulings_2026_08_09_second_stop.md`, together with the file it named, which Ruling 1 of
+tools\audit\decisions\gen_home_classification.py:122:# `cowork_rulings_2026_08_09_return.md` removed. No behaviour moves.
+tools\audit\decisions\gen_home_classification.py:585:                   "(Ruling 1, `cowork_rulings_2026_08_08_pre_away.md`) that the phase-1q record "
+tools\audit\decisions\gen_home_classification.py:693:    `cowork_rulings_2026_08_09_return.md`), so the record now lives at the snapshot alone and this
+tools\audit\decisions\gen_home_classification.py:698:    SUCH, AND IS RATIFIED (user, Ruling 17 of `cowork_rulings_2026_08_09_third_stop.md`,
+tools\audit\decisions\gen_home_classification.py:699:    2026-08-09).  Ruling 13 of `cowork_rulings_2026_08_09_second_stop.md` named ONE stale docstring
+tools\audit\decisions\gen_home_classification.py:702:    the widening was reported at `cowork_away_returns.md` §1.8 rather than taken silently.  THE
+tools\run_tchaikovsky_validation.py:100:    for f in ours_dir.glob('*.ours.json'):
+tools\run_tchaikovsky_validation.py:133:    mscx_files = sorted(_TCHAIKOVSKY_MSCX.glob("*.mscx"))
+tools\audit\l5\gen_instruments_core_dispositions.py:183:        "instruction": "cc_instruction_l5_audit_pass1_instruments.md",
+tools\audit\decisions\gen_outstanding_delegations.py:4:THE RULING (user, 2026-08-04, dispatch `cc_instruction_phase1_delegations_and_corrections.md` R4):
+tools\audit\decisions\gen_outstanding_delegations.py:39:THE RULINGS THIS FILE CARRIES (user, 2026-08-04, dispatch `cc_instruction_census_delegation_and_
+tools\audit\decisions\gen_outstanding_delegations.py:40:commit.md`).  R1 — the census pointer is WIDENED, and `cowork_score_census.md` therefore appears
+tools\audit\decisions\gen_outstanding_delegations.py:88:    "cowork_layer5_function_design.md": (
+tools\audit\decisions\gen_outstanding_delegations.py:92:    "cowork_prefit_gates.md": (
+tools\audit\decisions\gen_outstanding_delegations.py:96:    "cowork_engage_arc_plan.md": (
+tools\audit\decisions\gen_outstanding_delegations.py:101:    "cowork_joint_key_chord_design.md": (
+tools\audit\decisions\gen_outstanding_delegations.py:103:        "The user wrote an explicit delegation clause into `cowork_engage_arc_plan.md`'s arc-#10 "
+tools\audit\decisions\gen_outstanding_delegations.py:105:    "cowork_notation_output_contract.md": (
+tools\audit\decisions\gen_outstanding_delegations.py:109:    "cowork_layer2_slicing_design.md": (
+tools\audit\decisions\gen_outstanding_delegations.py:113:    "cowork_layer1_note_model_design.md": (
+tools\audit\decisions\gen_outstanding_delegations.py:119:    "cowork_layer6_grouping_design.md": (
+tools\audit\decisions\gen_outstanding_delegations.py:124:    "cowork_phrase_boundary_design.md": (
+tools\audit\decisions\gen_outstanding_delegations.py:129:    "cowork_layer1_tone_collection_design.md": (
+tools\audit\decisions\gen_outstanding_delegations.py:135:    "cowork_voiceleading_axis_design.md": (
+tools\audit\decisions\gen_outstanding_delegations.py:140:        "RULED ON 2026-08-04 (ruling R2, dispatch `cc_instruction_census_delegation_and_commit."
+tools\audit\decisions\gen_outstanding_delegations.py:158:    "cowork_voiceleading_axis_design.md": {
+tools\audit\decisions\gen_outstanding_delegations.py:159:        "retired": "2026-08-09, by cc_instruction_return_continuation_6.md Task 1",
+tools\audit\decisions\gen_outstanding_delegations.py:162:            "user's Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md` — re-homing is the "
+tools\audit\decisions\gen_outstanding_delegations.py:180:            "home: `cowork_voiceleading_axis_design.md` §0/§5.1/§5.3/§8/§9/§15/§16 (AS-BUILT)\" — "
+tools\audit\decisions\gen_outstanding_delegations.py:189:            "`cowork_phrase_boundary_design.md` §11) and a list of asks put to the user. A "
+tools\audit\decisions\gen_outstanding_delegations.py:195:    "cowork_structural_integrity_audit.md": {
+tools\audit\decisions\gen_outstanding_delegations.py:202:            "USER RULED ON 2026-08-04 (ruling R3, dispatch `cc_instruction_census_delegation_and_"
+tools\audit\decisions\gen_outstanding_delegations.py:225:    "cowork_score_census.md": {
+tools\audit\decisions\gen_outstanding_delegations.py:227:            "★ RULING R1, user, 2026-08-04, dispatch `cc_instruction_census_delegation_and_"
+tools\audit\decisions\gen_outstanding_delegations.py:238:            "as `cowork_score_census.md` §1/§3/§4/§8/§8b/§8c, states that it settles the "
+tools\audit\decisions\gen_outstanding_delegations.py:253:            "`cowork_score_census.md` — D-… — which this section points at and does not restate."),
+tools\audit\decisions\gen_outstanding_delegations.py:427:            "`cc_instruction_phase1_delegations_and_corrections.md`."
+tools\audit\decisions\gen_outstanding_delegations.py:550:                "`cowork_layer1_tone_collection_design.md` still loses both its entries to the "
+tools\audit\decisions\gen_phase1m_measurements.py:5:(`cc_instruction_phase1m_dispositions_and_measurements.md`) orders two MEASUREMENTS and
+tools\audit\decisions\gen_phase1m_measurements.py:66:RATIFIED_SURFACES = ["ARCHITECTURE.md", "CLAUDE.md", "cowork_engage_arc_plan.md"]
+tools\audit\decisions\gen_phase1m_measurements.py:78:    "cowork_layer3_keymode_design.md": (RULE,
+tools\audit\decisions\gen_phase1m_measurements.py:81:    "cowork_layer4_chordsymbol_design.md": (RULE,
+tools\audit\decisions\gen_phase1m_measurements.py:84:    "cowork_layer5_function_design.md": (RULE,
+tools\audit\decisions\gen_phase1m_measurements.py:87:    "cowork_layer5_engagement_design.md": (RULE,
+tools\audit\decisions\gen_phase1m_measurements.py:91:    "cowork_bounded_context_design.md": (RULE,
+tools\audit\decisions\gen_phase1m_measurements.py:94:    "cowork_voiceleading_axis_design.md": (RULE,
+tools\audit\decisions\gen_phase1m_measurements.py:97:    "cowork_progression_schema_dictionary.md": (RULE,
+tools\audit\decisions\gen_phase1m_measurements.py:101:    "cowork_confidence_contract.md": (RULE,
+tools\audit\decisions\gen_phase1m_measurements.py:105:    "cowork_notation_output_contract.md": (RULE,
+tools\audit\decisions\gen_phase1m_measurements.py:108:    "cowork_stage5_fitter_design.md": (RULE,
+tools\audit\decisions\gen_phase1m_measurements.py:111:    "cowork_prefit_gates.md": (RULE,
+tools\audit\decisions\gen_phase1m_measurements.py:122:    "cowork_joint_key_chord_design.md": (RULE,
+tools\audit\decisions\gen_phase1m_measurements.py:125:    "cowork_engage_arc_plan.md": (RULE,
+tools\audit\decisions\gen_phase1m_measurements.py:130:    "cowork_score_census.md": (FINDING,
+tools\audit\decisions\gen_phase1m_measurements.py:134:    "cowork_structural_integrity_audit.md": (FINDING,
+tools\audit\decisions\gen_phase1m_measurements.py:138:    "cowork_architecture_reassessment.md": (FINDING,
+tools\audit\decisions\gen_phase1m_measurements.py:157:    "cowork_notation_adoption_increment.md": (KIND_UNCLEAR,
+tools\audit\decisions\gen_phase1m_measurements.py:171:    "cowork_layer3_keymode_design.md": (DELEG_PASS,
+tools\audit\decisions\gen_phase1m_measurements.py:173:    "cowork_layer4_chordsymbol_design.md": (DELEG_PASS,
+tools\audit\decisions\gen_phase1m_measurements.py:175:    "cowork_layer5_engagement_design.md": (DELEG_PASS,
+tools\audit\decisions\gen_phase1m_measurements.py:177:        "`cowork_engage_arc_plan.md:41`, `:46`, `:53-55`"),
+tools\audit\decisions\gen_phase1m_measurements.py:178:    "cowork_bounded_context_design.md": (DELEG_PASS,
+tools\audit\decisions\gen_phase1m_measurements.py:180:    "cowork_confidence_contract.md": (DELEG_PASS,
+tools\audit\decisions\gen_phase1m_measurements.py:181:        "`ARCHITECTURE.md:948-949` '…are stated in full in `cowork_confidence_contract.md`'"),
+tools\audit\decisions\gen_phase1m_measurements.py:182:    "cowork_notation_output_contract.md": (DELEG_PASS,
+tools\audit\decisions\gen_phase1m_measurements.py:183:        "`ARCHITECTURE.md:73` '…contract `cowork_notation_output_contract.md`'"),
+tools\audit\decisions\gen_phase1m_measurements.py:184:    "cowork_stage5_fitter_design.md": (DELEG_PASS,
+tools\audit\decisions\gen_phase1m_measurements.py:189:    "cowork_progression_schema_dictionary.md": (DELEG_PASS,
+tools\audit\decisions\gen_phase1m_measurements.py:192:    "cowork_score_census.md": (DELEG_PASS,
+tools\audit\decisions\gen_phase1m_measurements.py:194:        "pool table, is `cowork_score_census.md` §8c', inside a user-ratified passage; and "
+tools\audit\decisions\gen_phase1m_measurements.py:196:    "cowork_structural_integrity_audit.md": (DELEG_PASS,
+tools\audit\decisions\gen_phase1m_measurements.py:197:        "`cowork_engage_arc_plan.md:4` (RATIFIED user 2026-07-07) 'It does not re-derive the "
+tools\audit\decisions\gen_phase1m_measurements.py:198:        "fix details — those live in `cowork_structural_integrity_audit.md` (§3 fix-queue, §4 "
+tools\audit\decisions\gen_phase1m_measurements.py:200:    "cowork_joint_key_chord_design.md": (DELEG_PASS,
+tools\audit\decisions\gen_phase1m_measurements.py:201:        "`cowork_engage_arc_plan.md:44` 'arc #10 — the joint key-and-chord step (`…`)' — by "
+tools\audit\decisions\gen_phase1m_measurements.py:203:    "cowork_engage_arc_plan.md": (DELEG_PASS,
+tools\audit\decisions\gen_phase1m_measurements.py:207:    "cowork_architecture_reassessment.md": (DELEG_FAIL,
+tools\audit\decisions\gen_phase1m_measurements.py:221:    "cowork_voiceleading_axis_design.md": (DELEG_UNCLEAR,
+tools\audit\decisions\gen_phase1m_measurements.py:225:    "cowork_layer5_function_design.md": (DELEG_UNCLEAR,
+tools\audit\decisions\gen_phase1m_measurements.py:226:        "`ARCHITECTURE.md:1480-1481` 'Full spec: `cowork_layer5_function_design.md`.' — two "
+tools\audit\decisions\gen_phase1m_measurements.py:229:    "cowork_prefit_gates.md": (DELEG_UNCLEAR,
+tools\audit\decisions\gen_phase1m_measurements.py:233:    "cowork_notation_adoption_increment.md": (DELEG_UNCLEAR,
+tools\audit\decisions\gen_phase1m_measurements.py:238:        "lives, the same shape as `cowork_prefit_gates.md`, so the verdict is UNCLEAR, not "
+tools\audit\decisions\gen_phase1m_measurements.py:259:    "1h": (["cowork_layer3_keymode_design.md", "cowork_score_census.md",
+tools\audit\decisions\gen_phase1m_measurements.py:260:            "cowork_joint_key_chord_design.md", "cowork_layer5_engagement_design.md",
+tools\audit\decisions\gen_phase1m_measurements.py:261:            "cowork_voiceleading_axis_design.md"],
+tools\audit\decisions\gen_phase1m_measurements.py:263:    "1i": (["cowork_structural_integrity_audit.md"],
+tools\audit\decisions\gen_phase1m_measurements.py:265:    "1j": (["cowork_progression_schema_dictionary.md"],
+tools\audit\decisions\gen_phase1m_measurements.py:269:    "1l": (["cowork_notation_adoption_increment.md"],
+tools\audit\decisions\gen_phase1m_measurements.py:482:                "quotes — most visibly, `cowork_score_census.md`'s entries are now "
+tools\run_schumann_validation.py:100:    for f in ours_dir.glob('*.ours.json'):
+tools\run_schumann_validation.py:133:    mscx_files = sorted(_SCHUMANN_MSCX.glob("*.mscx"))
+tools\audit\l5\gen_harness_dispositions.py:12:Protocol (cowork_audit_protocol.md):
+tools\audit\l5\gen_harness_dispositions.py:325:        "instruction": "cc_instruction_l5_audit_pass1_harness.md",
+tools\audit\decisions\gen_phase1g_triage.py:5:`cowork_*` / `docs/` surface, of which a measured remainder had never been read.  This
+tools\audit\decisions\gen_phase1g_triage.py:18:recorded disposition is `unresolved` and whose occurrences all sit on the `cowork_*` or
+tools\audit\decisions\gen_phase1g_triage.py:21:`cowork_handoff.md` and `cowork_handoff_archive.md` are the handoff and archive
+tools\audit\decisions\gen_phase1g_triage.py:59:    "cowork_bounded_context_design.md",
+tools\audit\decisions\gen_phase1g_triage.py:60:    "cowork_spec_language_sweep.md",
+tools\audit\decisions\gen_phase1g_triage.py:63:    "cowork_phase5_branch_backfill_spec.md",
+tools\audit\decisions\gen_phase1g_triage.py:64:    "cowork_architecture_reassessment.md",
+tools\audit\decisions\gen_phase1g_triage.py:65:    "cowork_layer5_spec_review.md",
+tools\audit\decisions\gen_phase1g_triage.py:66:    "cowork_design_doc_template.md",
+tools\audit\decisions\gen_phase1g_triage.py:67:    "cowork_prefit_gates.md",
+tools\audit\decisions\gen_phase1g_triage.py:69:    "cowork_engage_arc_plan.md",
+tools\audit\decisions\gen_phase1g_triage.py:70:    "cowork_audit_postscoringgates.md",
+tools\audit\decisions\gen_phase1g_triage.py:71:    "cowork_confidence_contract.md",
+tools\audit\decisions\gen_phase1g_triage.py:72:    "cowork_premise_gate_reflection.md",
+tools\audit\decisions\gen_phase1g_triage.py:73:    "cowork_audit_harmonicfunctionlayer.md",
+tools\audit\decisions\gen_phase1g_triage.py:74:    "cowork_prune_pass_checklist.md",
+tools\audit\decisions\gen_phase1g_triage.py:75:    "cowork_audit_regionanalyzer.md",
+tools\audit\decisions\gen_phase1g_triage.py:76:    "cowork_audit_jointkeydecision.md",
+tools\audit\decisions\gen_phase1g_triage.py:77:    "cowork_audit_remaining_layers.md",
+tools\audit\decisions\gen_phase1g_triage.py:78:    "cowork_notation_output_contract.md",
+tools\audit\decisions\gen_phase1g_triage.py:81:    "cowork_stage5_fitter_design.md",
+tools\audit\decisions\gen_phase1g_triage.py:88:    "cowork_layer4_chordsymbol_design.md",
+tools\audit\decisions\gen_phase1g_triage.py:90:    "cowork_layer5_function_design.md",
+tools\audit\decisions\gen_phase1g_triage.py:107:    "cowork_key_layer_design_opening.md": (SUPERSEDED,
+tools\audit\decisions\gen_phase1g_triage.py:108:        "Own banner `:3-8`: ⛔ SUPERSEDED 2026-07-17 by `cowork_joint_estimator_architecture.md`, "
+tools\audit\decisions\gen_phase1g_triage.py:127:    "cowork_audit_cadencekeyanchor.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:132:        "(`cowork_audit_postscoringgates`, `_harmonicfunctionlayer`, `_regionanalyzer`, "
+tools\audit\decisions\gen_phase1g_triage.py:135:    "cowork_audit_chordpostpasses_sparse.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:136:        "Same class and same verification as `cowork_audit_cadencekeyanchor.md` (OI-84 COMPLETE; "
+tools\audit\decisions\gen_phase1g_triage.py:139:    "cowork_audit_keymodeanalyzer.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:140:        "Same class and same verification as `cowork_audit_cadencekeyanchor.md`. Zero "
+tools\audit\decisions\gen_phase1g_triage.py:142:    "cowork_audit_localmodulationdetector.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:143:        "Same class and same verification as `cowork_audit_cadencekeyanchor.md`. Zero "
+tools\audit\decisions\gen_phase1g_triage.py:145:    "cowork_spec_polish_findings_a.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:151:    "cowork_spec_polish_findings_b.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:155:    "cowork_layer3_spec_language_sweep.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:157:        "named as a worked example by `cowork_design_doc_template.md:19` — which phase 1d read in "
+tools\audit\decisions\gen_phase1g_triage.py:159:    "cowork_layer4_spec_review.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:161:        "reviewed document, `cowork_layer4_chordsymbol_design.md`, is in THIS session's full-read set, "
+tools\audit\decisions\gen_phase1g_triage.py:164:    "cowork_target_architecture_review.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:169:    "cowork_implementation_review.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:172:        "verified at current code” by `cowork_structural_integrity_audit.md:11-12`, which extends it "
+tools\audit\decisions\gen_phase1g_triage.py:174:    "cowork_key_drift_research_grounding.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:178:    "cowork_key_chord_joint_inference_grounding.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:181:        "`cowork_joint_estimator_architecture.md:5` cites this document as its grounding. Zero "
+tools\audit\decisions\gen_phase1g_triage.py:183:    "cowork_functional_analysis_research_grounding.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:186:    "cowork_polyphony_phrase_harmony_research.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:189:    "cowork_score_census_gt_draft.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:190:        "An appendix of `cowork_score_census.md`, which names it at `:5-11` as one of two “full "
+tools\audit\decisions\gen_phase1g_triage.py:195:    "cowork_score_census_plain_draft.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:196:        "The second census appendix, named at `cowork_score_census.md:5-11` on the same terms. One "
+tools\audit\decisions\gen_phase1g_triage.py:198:    "cowork_mode_key_chord_inference_discussion.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:203:    "cowork_siloed_facts_audit.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:207:    "cowork_corpus_audit.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:211:    "cowork_l1l4_review_note.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:214:        "serves, `cowork_l1l4_review_charter.md`, stays LIVE-SPEC. Its single hit is a status "
+tools\audit\decisions\gen_phase1g_triage.py:216:    "cowork_product_tool_register.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:220:    "cowork_upstream_merge_risk.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:225:    "cowork_idiom_entry_mapping.md": (REPORT,
+tools\audit\decisions\gen_phase1g_triage.py:228:        "`cowork_style_taxonomy_proposal.md` (RATIFIED 2026-06-30 · EXECUTED), which stays LIVE-SPEC."),
+tools\audit\decisions\gen_phase1g_triage.py:299:    "cowork_layer4_chordsymbol_design.md": "Signed Layer-4 specification; the dispatch's own full-read set. READ IN FULL this session.",
+tools\audit\decisions\gen_phase1g_triage.py:300:    "cowork_layer5_function_design.md": "Signed Layer-5 specification; the dispatch's own full-read set. READ IN FULL this session.",
+tools\audit\decisions\gen_phase1g_triage.py:304:    "cowork_layer3_keymode_design.md": "Banner: SIGNED (user, 2026-06-22), WIRED — AS-BUILT Step 1, with named deferred follow-ups.",
+tools\audit\decisions\gen_phase1g_triage.py:305:    "cowork_score_census.md": "Banner: v1 DELIVERED, for user disposition of the acquisition tiers. §8c is the HOME of the fitting-pool licence constraint that [[OI-271]] turns on.",
+tools\audit\decisions\gen_phase1g_triage.py:306:    "cowork_joint_key_chord_design.md": "Shelved by ratification (D-278) but retained as the architecture record; the design content itself — where the step lives, how key and chord couple — is registered nowhere.",
+tools\audit\decisions\gen_phase1g_triage.py:307:    "cowork_layer5_engagement_design.md": "A design pass (CC, 2026-07-07) whose downstream owner-decisions are enumerated for follow-on passes; the engage-era agenda's fate is itself unrecorded ([[OI-259]]).",
+tools\audit\decisions\gen_phase1g_triage.py:308:    "cowork_structural_integrity_audit.md": "A grounded catalogue that QUEUES named refactors as later user-ratified events; the queue is live.",
+tools\audit\decisions\gen_phase1g_triage.py:309:    "cowork_voiceleading_axis_design.md": "Banner: AS-BUILT + SIGNED (user, 2026-07-03), asks A1–A8 ratified.",
+tools\audit\decisions\gen_phase1g_triage.py:310:    "cowork_progression_schema_dictionary.md": "A component specification with a §0 terms table; the Harmonic Vocabulary's own home (D-133).",
+tools\audit\decisions\gen_phase1g_triage.py:312:    "cowork_notation_adoption_increment.md": "Banner: ★ USER-RATIFIED 2026-07-26, five recommendations adopted.",
+tools\audit\decisions\gen_phase1g_triage.py:313:    "cowork_phrase_boundary_design.md": "Banner: SIGNED (user, 2026-06-26), rev. 3.",
+tools\audit\decisions\gen_phase1g_triage.py:315:    "cowork_progression_schema_design.md": "Banner: ★ FULLY RATIFIED (user, 2026-07-02) — D5, D6, §4.5, §4.6.",
+tools\audit\decisions\gen_phase1g_triage.py:316:    "cowork_fb_redesign_design.md": "A design plus an explicit decision surface for a separately-ratified build event.",
+tools\audit\decisions\gen_phase1g_triage.py:317:    "cowork_idiom_discovery_design.md": "A design specification with a ratified extraction-tooling decision (D6) and resolved open items.",
+tools\audit\decisions\gen_phase1g_triage.py:318:    "cowork_layer1_note_model_design.md": "Banner: AS-BUILT — the Layer-1 specification.",
+tools\audit\decisions\gen_phase1g_triage.py:319:    "cowork_layer2_slicing_design.md": "Banner: AS-BUILT — the Layer-2 specification.",
+tools\audit\decisions\gen_phase1g_triage.py:320:    "cowork_target_architecture.md": "Demoted to detailed design and rationale, but explicitly retains the FULL statements of the contracts that `ARCHITECTURE.md` only summarises — a partial supersession, not a total one.",
+tools\audit\decisions\gen_phase1g_triage.py:322:    "cowork_census_full_needs_audit.md": "Banner: ★ DISPOSED (user, 2026-07-04) — four §6-C rulings (N18/N19 ADOPTED, N15 RATIFIED, N20 as its own needs row).",
+tools\audit\decisions\gen_phase1g_triage.py:323:    "cowork_phase2_architecture_review.md": "Carries the user's sequencing gate of 2026-06-17 (structural fixes before inference) and produces the architecture-fix order.",
+tools\audit\decisions\gen_phase1g_triage.py:325:    "cowork_l1l3_stabilization_plan.md": "Carries the user-ratified ordering principle of 2026-06-25 (build-it-right before tune-precision) and the per-step gates.",
+tools\audit\decisions\gen_phase1g_triage.py:327:    "cowork_evidence_inventory.md": "The live catalog of every hint each layer finds, with standing obligations at [[OI-146]].",
+tools\audit\decisions\gen_phase1g_triage.py:328:    "cowork_gateA_unification_design.md": "Explicitly “the ratification surface” for a separate user-ratified build event.",
+tools\audit\decisions\gen_phase1g_triage.py:329:    "cowork_layer3_reachback_design.md": "Banner: BUILT (capability, gated OFF); records the resolved build-decision form.",
+tools\audit\decisions\gen_phase1g_triage.py:330:    "cowork_layer5_function_methods.md": "`:33` ★ DECIDED (user, 2026-06-26) — output the Roman numeral; T/S/D is a derived read-out only.",
+tools\audit\decisions\gen_phase1g_triage.py:331:    "cowork_layer6_grouping_design.md": "Banner: AS-BUILT (2026-07-02) with a §5.1-a interpretation RULED at ratification.",
+tools\audit\decisions\gen_phase1g_triage.py:332:    "cowork_sensitive_cell_probe.md": "Banner: ★ USER-RATIFIED 2026-07-19 — options 1a, 2a, 3a, with two sharpenings.",
+tools\audit\decisions\gen_phase1g_triage.py:333:    "cowork_term_theory_grounding.md": "Its header says it decides nothing, but `:330-351` carry FIVE design decisions marked ✅ DECIDED 2026-07-19 and “ratified as of 2026-07-19”. The mechanical check caught this; the header is misleading.",
+tools\audit\decisions\gen_phase1g_triage.py:335:    "cowork_architecture_review_2026_07.md": "Banner: AMENDMENTS A-1…A-10 RATIFIED (user, 2026-07-02) plus a ratified corpus expansion.",
+tools\audit\decisions\gen_phase1g_triage.py:336:    "cowork_l1l4_completion_ledger.md": "Banner: ★ L1–L4 COMPLETE — SIGN-OFF, with the residuals it defers by name.",
+tools\audit\decisions\gen_phase1g_triage.py:337:    "cowork_union_search_record.md": "Banner: ★ DISPOSED (user, 2026-07-04) — five approvals including a ratified negative ruling (N13).",
+tools\audit\decisions\gen_phase1g_triage.py:342:    "cowork_factorization_desk_simulation.md": "Banner: ★ USER-RATIFIED 2026-07-19 — the §7 asks granted in full.",
+tools\audit\decisions\gen_phase1g_triage.py:343:    "cowork_joint_estimator_architecture.md": "The GOVERNING architecture decision (user-ratified 2026-07-14/17), named as such at `OPEN_ITEMS.md:15-18`.",
+tools\audit\decisions\gen_phase1g_triage.py:344:    "cowork_l1l4_architecture_audit.md": "A resolution-updated audit with still-open migration debt scheduled for a later engagement.",
+tools\audit\decisions\gen_phase1g_triage.py:345:    "cowork_style_taxonomy_proposal.md": "Banner: RATIFIED (2026-06-30) · EXECUTED — and in possible tension with D-132, which records empirical grounding as future work.",
+tools\audit\decisions\gen_phase1g_triage.py:346:    "cowork_audit_obligation_map.md": "Re-assessed 2026-06-20 — the supersession is explicitly PARTIAL (“supersedes parts of §B/§C/§E”).",
+tools\audit\decisions\gen_phase1g_triage.py:347:    "cowork_delta_check_dispositions.md": "Records proper-layer DISPOSITIONS verified at source plus the L4 build backlog.",
+tools\audit\decisions\gen_phase1g_triage.py:348:    "cowork_eg2_scoping.md": "The premise ledger of an OPEN gate row ([[OI-3]] — decision with the user).",
+tools\audit\decisions\gen_phase1g_triage.py:349:    "cowork_information_loss_audit.md": "A live catalogue of information-loss sites, each fix its own later ratified event.",
+tools\audit\decisions\gen_phase1g_triage.py:350:    "cowork_layer1_tone_collection_design.md": "The pre-rebuild Layer-1 design; no supersession is claimed in it, though Layer 1 was later rebuilt as the note model.",
+tools\audit\decisions\gen_phase1g_triage.py:351:    "cowork_phrase_boundary_methods.md": "`:8` ★ Proportionality (user-ratified 2026-06-26) — a ruling of its own.",
+tools\audit\decisions\gen_phase1g_triage.py:354:    "cowork_adjudication_dossier.md": "Banner: RATIFIED by the user 2026-07-10 — including the one genuine acceptance (A3).",
+tools\audit\decisions\gen_phase1g_triage.py:355:    "cowork_joint_estimator_factorization.md": "Banner: ★ USER-RATIFIED 2026-07-19 — the governing structure of the production estimator.",
+tools\audit\decisions\gen_phase1g_triage.py:356:    "cowork_layer1_extend_design.md": "A DRAFT for sign-off implementing the supplier side of the bounded-context contract.",
+tools\audit\decisions\gen_phase1g_triage.py:357:    "cowork_phase5c_l5_build_plan.md": "A build plan with a non-negotiable per-step method and per-step gates.",
+tools\audit\decisions\gen_phase1g_triage.py:358:    "cowork_tpc_capability_design.md": "Banner: BUILT (capability-only, no production consumer) — a declared dormancy.",
+tools\audit\decisions\gen_phase1g_triage.py:359:    "cowork_uncertain_resolver_investigation.md": "Banner: RESOLVED — user-ratified 2026-06-24; a ruling of its own.",
+tools\audit\decisions\gen_phase1g_triage.py:361:    "cowork_l1_l5_premise_debt_audit.md": "The retroactive #17 ledger for built code; three tiers of premise debt, several still open.",
+tools\audit\decisions\gen_phase1g_triage.py:362:    "cowork_phase5b_l4_build_plan.md": "A build plan with a non-negotiable per-step method.",
+tools\audit\decisions\gen_phase1g_triage.py:363:    "cowork_style_clustering_plan.md": "Banner: committed future direction, user-ratified 2026-06-29.",
+tools\audit\decisions\gen_phase1g_triage.py:368:    "cowork_audit_protocol.md": "The HOME of registered decisions D-208, D-209, D-250, D-251, D-252.",
+tools\audit\decisions\gen_phase1g_triage.py:369:    "cowork_l1l4_review_charter.md": "The user-mandated review gate with its two aims stated as requirements.",
+tools\audit\decisions\gen_phase1g_triage.py:371:    "cowork_idiom_discovery_findings.md": "The empirical basis of the ratified idiom set, and the point where that ratification and D-132 (empirical grounding as future work) may not agree.",
+tools\audit\decisions\gen_phase1g_triage.py:372:    "cowork_layer2_reslice_design.md": "Banner: BUILT; records the §5 build-time decision that was taken.",
+tools\audit\decisions\gen_phase1g_triage.py:373:    "cowork_layer3_keymode_impl_design.md": "Pins the Layer-3 implementation decisions increment by increment.",
+tools\audit\decisions\gen_phase1g_triage.py:374:    "cowork_types_header_design.md": "Banner: BUILT / AS-BUILT with the D1/D2 and leaf-location decisions recorded.",
+tools\audit\decisions\gen_phase1g_triage.py:376:    "cowork_eg1_premise_checks.md": "Premise checks feeding an OPEN gate row; design decisions enumerated and assigned to owning layers.",
+tools\audit\decisions\gen_phase1g_triage.py:377:    "cowork_gate_policy_amendment.md": "The founding provenance of the two-tier gate policy now in `CLAUDE.md` block (B) — registered D-191; the document carries the derivation.",
+tools\audit\decisions\gen_phase1g_triage.py:378:    "cowork_key_mode_inference_diagnosis.md": "A Premise-Gate diagnosis opening whose row [[OI-141]] is still OPEN.",
+tools\audit\decisions\gen_phase1g_triage.py:386:    if p.startswith("cowork_") and p.endswith(".md") and p not in (
+tools\audit\decisions\gen_phase1g_triage.py:387:            "cowork_handoff.md", "cowork_handoff_archive.md"):
+tools\audit\decisions\gen_phase1g_triage.py:491:      "`cowork_stage5_fitter_design.md` and `docs/beam_widening_design.md` by phase 1f — "
+tools\audit\decisions\gen_phase1g_triage.py:527:      "`cowork_term_theory_grounding.md` opens “Nothing here decides anything” and "
+tools\audit\decisions\gen_phase1g_triage.py:529:      "`cowork_layer5_function_methods.md` presents itself as a methods catalog and "
+tools\audit\decisions\gen_phase1g_triage.py:579:    A("- Dispatch: `cc_instruction_phase1g_triage.md`, Task 1. Author: CC, 2026-08-02.")
+tools\run_mozart_validation.py:158:    mscx_files = sorted(_MOZART_MSCX.glob("*.mscx"))
+tools\audit\decisions\gen_oi333_repair.py:5:`cc_instruction_five_rulings.md` §0a) orders the repair in five parts: snapshot the committed
+tools\audit\decisions\gen_oi333_repair.py:207:        "generated_for": "cc_instruction_five_rulings.md (Task 5, ruling R4)",
+tools\audit\decisions\gen_oi333_repair.py:209:            "User, 2026-08-07 (dispatch `cc_instruction_five_rulings.md` §0a, R4): OI-333 is "
+tools\audit\l5\gen_grading_fitting_dispositions.py:14:Verdict vocabulary (cowork_audit_protocol.md P2 + the L4/L5 instructions):
+tools\run_grieg_validation.py:146:    for f in ours_dir.glob('*.ours.json'):
+tools\run_grieg_validation.py:198:    mscx_files = sorted(_GRIEG_MSCX.glob("*.mscx"))
+tools\audit\decisions\gen_phase1q_snapshot_establishment.py:4:THE RULING (user, 2026-08-04, dispatch `cc_instruction_phase1_delegations_and_corrections.md` R2):
+tools\audit\decisions\gen_phase1q_snapshot_establishment.py:198:            "dispatch `cc_instruction_phase1_delegations_and_corrections.md`."
+tools\run_dvorak_validation.py:100:    for f in ours_dir.glob('*.ours.json'):
+tools\run_dvorak_validation.py:133:    mscx_files = sorted(_DVORAK_MSCX.glob("*.mscx"))
+tools\audit\decisions\gen_phase1n_reading_regime.py:576:                "ruled": "User, 2026-08-04 (READ WAVE 5, dispatch `cc_instruction_reads_5.md` "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:37:             granularity; and the `cowork_score_census.md` §8c table-row count.
+tools\audit\decisions\gen_phase1p_delegation_bar.py:95:RATIFIED_SURFACES = ["ARCHITECTURE.md", "CLAUDE.md", "cowork_engage_arc_plan.md"]
+tools\audit\decisions\gen_phase1p_delegation_bar.py:115:    "cowork_layer3_keymode_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:117:        "The ratified contract for this layer is `cowork_layer3_keymode_design.md`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:119:    "cowork_layer4_chordsymbol_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:121:        "The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:123:    "cowork_layer5_engagement_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:129:    "cowork_bounded_context_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:133:    "cowork_confidence_contract.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:135:        "are stated in full in `cowork_confidence_contract.md`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:138:    "cowork_stage5_fitter_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:148:    "cowork_progression_schema_dictionary.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:152:    "cowork_notation_output_contract.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:154:        "DORMANT; contract `cowork_notation_output_contract.md`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:160:    "cowork_score_census.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:163:        "★ MOVED 2026-08-09 (the user's Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`, "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:173:        "`cowork_score_census.md` §8c' — 'A named home with a section — the case the "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:176:    "cowork_voiceleading_axis_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:180:    "cowork_structural_integrity_audit.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:181:        NAMED_SECTIONS, "cowork_engage_arc_plan.md",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:182:        "those live in `cowork_structural_integrity_audit.md`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:187:    "cowork_layer5_function_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:195:    "cowork_prefit_gates.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:202:    "cowork_notation_adoption_increment.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:204:        "`cowork_notation_adoption_increment.md`, which this section points at",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:217:    "cowork_engage_arc_plan.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:227:    "cowork_joint_key_chord_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:228:        CLAUSE, "cowork_engage_arc_plan.md",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:257:    "cowork_layer6_grouping_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:259:        "The ratified contract for this layer is `cowork_layer6_grouping_design.md`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:274:        "DOC-GOVERNANCE GLOB `cowork_layer*_design.md` MATCHES THIS FILENAME AND CONFERS NOTHING "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:277:    "cowork_factorization_desk_simulation.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:280:    "cowork_architecture_reassessment.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:292:    "cowork_term_theory_grounding.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:294:    "cowork_phrase_boundary_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:297:        "`cowork_phrase_boundary_design.md`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:319:    "cowork_architecture_review_2026_07.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:333:    "cowork_progression_schema_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:350:    "cowork_joint_estimator_architecture.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:362:    "cowork_evidence_inventory.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:376:    "cowork_census_full_needs_audit.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:378:    "cowork_sensitive_cell_probe.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:397:    "cowork_joint_estimator_factorization.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:399:        "is `cowork_joint_estimator_factorization.md`, which this section points at",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:407:        "grade, preserved (#12): BARE_CITATION at 'spec: `cowork_joint_estimator_architecture."
+tools\audit\decisions\gen_phase1p_delegation_bar.py:408:        "md`, `cowork_joint_estimator_factorization.md`' — 'The bar's first excluded form, word "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:417:    "cowork_layer1_tone_collection_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:439:    "cowork_union_search_record.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:442:    # `cowork_key_mode_inference_diagnosis.md` (D-633) and `cowork_phase5b_l4_build_plan.md`
+tools\audit\decisions\gen_phase1p_delegation_bar.py:454:# WHY THIS BLOCK EXISTS (user, 2026-08-09, Ruling 4(b) of `cowork_rulings_2026_08_09_return.md`).
+tools\audit\decisions\gen_phase1p_delegation_bar.py:455:# Every re-homing wave moves entries out of a `cowork_*`/`docs/*` document and into the layer
+tools\audit\decisions\gen_phase1p_delegation_bar.py:475:    "CC, dispatch `cc_instruction_return_continuation.md`, Task 0, applying the user's Ruling "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:483:    "CC, dispatch `cc_instruction_return_continuation_7.md`, Task 1, under the user's Ruling 38 of "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:484:    "2026-08-09. ONE document: `cowork_information_loss_audit.md`, emptied by re-homing D-581 and "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:485:    "D-583 into P2 of `cowork_audit_protocol.md`. This tool STOPPED on its grade as a FORM judgment "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:491:    "CC, dispatch `cc_instruction_return_continuation_8.md`, Task 1, under the user's Ruling 40 of "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:494:    "fit deferred to the jazz-ground-truth conversion) into `cowork_score_census.md` §5 at Tier J, "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:501:    "CC, dispatch `cc_instruction_preparation_fifth.md` Task 1, executing the user's rulings of "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:503:    "THREE documents: `cowork_layer2_slicing_design.md` (D-540, D-541), "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:504:    "`cowork_phase2_architecture_review.md` (D-579) and `cowork_types_header_design.md` (D-610). "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:517:    "CC, dispatch `cc_instruction_preparation_eighth.md` Task 2, executing the user's rulings of "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:518:    "2026-08-17 (`cowork_rulings_2026_08_17_residue_sitting.md`, Rulings 1 and 3 -- the 29 "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:520:    "treatment of 2026-08-16. ONE document: `cowork_layer1_note_model_design.md`. It is emptied "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:535:    "cowork_layer1_note_model_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:537:        "The ratified contract for this layer is `cowork_layer1_note_model_design.md`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:542:        "GLOB `cowork_layer*_design.md` MATCHES THIS FILENAME AND CONFERS NOTHING (user, "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:548:    "cowork_types_header_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:550:    "cowork_layer2_slicing_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:552:        "The ratified contract for this layer is `cowork_layer2_slicing_design.md`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:564:        "`cowork_layer*_design.md` MATCHES THIS FILENAME AND CONFERS NOTHING (user, 2026-08-04, "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:567:    "cowork_phase2_architecture_review.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:573:    "cowork_information_loss_audit.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:575:    "cowork_adjudication_dossier.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:577:        "`cowork_adjudication_dossier.md` Part B",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:579:        "'Evidence for why this needs stating: ... + `cowork_adjudication_dossier.md` Part B' — "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:583:    "cowork_audit_obligation_map.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:585:    "cowork_delta_check_dispositions.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:587:    "cowork_eg1_premise_checks.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:589:    "cowork_eg2_scoping.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:591:    "cowork_fb_redesign_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:593:    "cowork_gateA_unification_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:595:    "cowork_idiom_discovery_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:597:    "cowork_idiom_discovery_findings.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:599:        "`cowork_idiom_discovery_findings.md:122`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:603:    "cowork_l1_l5_premise_debt_audit.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:604:        PROVENANCE, "cowork_engage_arc_plan.md",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:605:        "evidence `cowork_l1_l5_premise_debt_audit.md`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:611:    "cowork_layer1_extend_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:613:    "cowork_layer2_reslice_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:615:        "(Phase 2; `cowork_layer2_reslice_design.md` §2)",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:621:        "`cowork_layer2_slicing_design.md`, which the user delegated to by name on 2026-08-04."),
+tools\audit\decisions\gen_phase1p_delegation_bar.py:622:    "cowork_layer3_keymode_impl_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:624:    "cowork_layer3_reachback_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:626:    "cowork_layer5_function_methods.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:628:    "cowork_phase5c_l5_build_plan.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:630:    "cowork_phrase_boundary_methods.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:632:    "cowork_style_clustering_plan.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:634:        "`cowork_style_clustering_plan.md`); the weighting itself is a joint decision",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:639:    "cowork_style_taxonomy_proposal.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:641:        "`cowork_style_taxonomy_proposal.md:11-30`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:650:    "cowork_target_architecture.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:652:        "full statements in `cowork_target_architecture.md`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:658:    "cowork_tpc_capability_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:660:    "cowork_uncertain_resolver_investigation.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:662:        "Measured during the O1 investigation (`cowork_uncertain_resolver_investigation.md`",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:674:        "same shape as `cowork_target_architecture.md`'s demotion, which the phase-1p grade "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:745:    "cowork_layer5_function_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:749:    "cowork_prefit_gates.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:751:        "\"…`cowork_prefit_gates.md`; adoption record…\" — a naming inside a list of "
+tools\audit\decisions\gen_phase1p_delegation_bar.py:753:    "cowork_engage_arc_plan.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:756:        "(`cowork_engage_arc_plan.md`, …)\" — a naming inside a list of citations."),
+tools\audit\decisions\gen_phase1p_delegation_bar.py:757:    "cowork_joint_key_chord_design.md": (
+tools\audit\decisions\gen_phase1p_delegation_bar.py:758:        PROVENANCE, "cowork_engage_arc_plan.md:44",
+tools\audit\decisions\gen_phase1p_delegation_bar.py:795:    """The `cowork_score_census.md` needs-vector table's extent, derived from the file.
+tools\audit\decisions\gen_phase1p_delegation_bar.py:801:    lines = read_lines("cowork_score_census.md")
+tools\audit\decisions\gen_phase1p_delegation_bar.py:940:                   if d["home"].split(":")[0].replace("\\", "/") == "cowork_score_census.md"
+tools\audit\decisions\gen_phase1q_record_divergence.py:129:        "generated_for": "cc_instruction_away_execution.md, Task 0 — applying the user's Ruling 1 "
+tools\audit\decisions\gen_phase1q_record_divergence.py:130:                         "of 2026-08-08 (`cowork_rulings_2026_08_08_pre_away.md`), which declares "
+tools\run_dlc_baseline.py:60:    for d in sorted(_DCML.iterdir()):
+tools\run_dlc_baseline.py:162:        mscx_files = sorted(ms3.glob("*.mscx"))
+tools\run_dlc_baseline.py:178:            "movements_mscx": len(list(ms3.glob("*.mscx"))),
+tools\audit\decisions\gen_reads3_yield.py:57:WAVE_DISPATCH = "cc_instruction_reads_3.md"
+tools\audit\decisions\gen_reads3_yield.py:60:    "cowork_progression_schema_design.md":
+tools\audit\decisions\gen_reads3_yield.py:63:    "cowork_gateA_unification_design.md":
+tools\audit\decisions\gen_reads3_yield.py:65:    "cowork_census_full_needs_audit.md":
+tools\audit\decisions\gen_reads3_yield.py:67:    "cowork_layer1_note_model_design.md":
+tools\audit\decisions\gen_reads3_yield.py:69:    "cowork_evidence_inventory.md":
+tools\audit\decisions\gen_reads3_yield.py:71:    "cowork_joint_estimator_architecture.md":
+tools\audit\decisions\gen_reads3_yield.py:73:    "cowork_sensitive_cell_probe.md":
+tools\audit\decisions\gen_reads3_yield.py:79:    "cowork_layer2_slicing_design.md":
+tools\audit\decisions\gen_reads3_yield.py:81:    "cowork_idiom_discovery_design.md":
+tools\audit\decisions\gen_reads3_yield.py:94:    "cowork_layer2_slicing_design.md":
+tools\audit\decisions\gen_reads5_repack.py:109:    "User, 2026-08-04 (READ WAVE 5, dispatch `cc_instruction_reads_5.md` §0a ruling R5): re-pack "
+tools\audit\decisions\gen_reads5_repack.py:208:                "User, 2026-08-07 (dispatch `cc_instruction_licensed_homing_and_oi344.md` §0a, "
+tools\audit\decisions\gen_reads5_repack.py:230:            "`cowork_engage_arc_plan.md` that name a document. The user wrote six delegations on "
+tools\audit\decisions\gen_reads2_yield.py:54:WAVE_DISPATCH = "cc_instruction_reads_2.md"
+tools\audit\decisions\gen_reads2_yield.py:59:    "cowork_term_theory_grounding.md":
+tools\audit\decisions\gen_reads2_yield.py:61:    "cowork_phrase_boundary_design.md":
+tools\audit\decisions\gen_reads2_yield.py:68:    "cowork_fb_redesign_design.md":
+tools\audit\decisions\gen_reads2_yield.py:70:    "cowork_architecture_review_2026_07.md":
+tools\audit\decisions\gen_reads4_yield.py:51:WAVE_DISPATCH = "cc_instruction_reads_4.md"
+tools\audit\decisions\gen_reads4_yield.py:54:    "cowork_audit_protocol.md":
+tools\audit\decisions\gen_reads4_yield.py:58:    "cowork_idiom_discovery_findings.md":
+tools\audit\decisions\gen_reads4_yield.py:60:    "cowork_l1l3_stabilization_plan.md":
+tools\audit\decisions\gen_reads4_yield.py:64:    "cowork_eg2_scoping.md":
+tools\audit\decisions\gen_reads4_yield.py:66:    "cowork_joint_estimator_factorization.md":
+tools\audit\decisions\gen_reads4_yield.py:68:    "cowork_audit_obligation_map.md":
+tools\audit\decisions\gen_reads4_yield.py:70:    "cowork_layer1_tone_collection_design.md":
+tools\audit\decisions\gen_reads4_yield.py:76:    "cowork_l1l4_architecture_audit.md":
+tools\audit\decisions\gen_reads4_yield.py:78:    "cowork_phase2_architecture_review.md":
+tools\audit\decisions\gen_reads4_yield.py:80:    "cowork_information_loss_audit.md":
+tools\audit\decisions\gen_reads4_yield.py:98:    "cowork_joint_estimator_factorization.md":
+tools\audit\decisions\gen_reads6_yield.py:52:WAVE_DISPATCH = "cc_instruction_reads_6.md"
+tools\audit\decisions\gen_reads6_yield.py:55:    "cowork_union_search_record.md":            ["D-612", "D-613", "D-614"],
+tools\audit\decisions\gen_reads6_yield.py:56:    "cowork_l1_l5_premise_debt_audit.md":       ["D-615"],
+tools\audit\decisions\gen_reads6_yield.py:59:    "cowork_layer3_reachback_design.md":        ["D-622", "D-623", "D-624"],
+tools\audit\decisions\gen_reads6_yield.py:60:    "cowork_tpc_capability_design.md":          ["D-625", "D-626"],
+tools\audit\decisions\gen_reads6_yield.py:61:    "cowork_layer1_extend_design.md":           ["D-627", "D-628"],
+tools\audit\decisions\gen_reads6_yield.py:62:    "cowork_uncertain_resolver_investigation.md": ["D-629", "D-630"],
+tools\audit\decisions\gen_reads6_yield.py:63:    "cowork_layer2_reslice_design.md":          ["D-631", "D-632"],
+tools\audit\decisions\gen_reads6_yield.py:64:    "cowork_key_mode_inference_diagnosis.md":   ["D-633"],
+tools\audit\decisions\gen_reads6_yield.py:65:    "cowork_delta_check_dispositions.md":       ["D-634", "D-635"],
+tools\audit\decisions\gen_reads6_yield.py:66:    "cowork_phase5b_l4_build_plan.md":          ["D-636", "D-637"],
+tools\audit\decisions\gen_reads6_yield.py:67:    "cowork_gate_policy_amendment.md":          ["D-638"],
+tools\audit\decisions\gen_reads6_yield.py:71:    "cowork_l1_l5_premise_debt_audit.md":
+tools\audit\decisions\gen_reads6_yield.py:78:    "cowork_key_mode_inference_diagnosis.md":
+tools\audit\decisions\gen_reads6_yield.py:85:    "cowork_gate_policy_amendment.md":
+tools\run_cpe_bach_validation.py:86:    for f in ours_dir.glob('*.ours.json'):
+tools\run_cpe_bach_validation.py:113:    mscx_files = sorted(_MSCX_DIR.glob("*.mscx"))
+tools\audit\decisions\gen_reads1_yield.py:55:WAVE_DISPATCH = "cc_instruction_reads_1.md"
+tools\audit\decisions\gen_reads1_yield.py:59:    "cowork_factorization_desk_simulation.md":
+tools\audit\decisions\gen_reads1_yield.py:63:    "cowork_layer6_grouping_design.md":
+tools\audit\decisions\gen_reads1_yield.py:67:    "cowork_target_architecture.md":
+tools\audit\decisions\gen_reads4_oi326_application.py:7:         members it names EXPLICITLY.  The glob `cowork_layer*_design.md` and the trailing
+tools\audit\decisions\gen_reads4_oi326_application.py:38:`cowork_target_architecture.md` — *"not a second canonical doc"* — which is the opposite act.
+tools\audit\decisions\gen_reads4_oi326_application.py:171:    hits = globmod.glob(os.path.join(ROOT, pattern))
+tools\audit\decisions\gen_reads4_oi326_application.py:301:            "dispatch": "cc_instruction_reads_4.md",
+tools\audit\decisions\gen_reads4_oi326_application.py:304:                      "to the members it names EXPLICITLY. The glob `cowork_layer*_design.md` "
+tools\audit\decisions\gen_reads4_oi326_application.py:329:                "`cowork_target_architecture.md` — 'not a second canonical doc' — which is the "
+tools\audit\decisions\gen_reads5_yield.py:50:WAVE_DISPATCH = "cc_instruction_reads_5.md"
+tools\audit\decisions\gen_reads5_yield.py:53:    "cowork_layer5_function_methods.md":      ["D-584", "D-585", "D-586"],
+tools\audit\decisions\gen_reads5_yield.py:54:    "cowork_style_taxonomy_proposal.md":      ["D-587", "D-588", "D-589", "D-590", "D-591"],
+tools\audit\decisions\gen_reads5_yield.py:55:    "cowork_l1l4_completion_ledger.md":       ["D-592", "D-593"],
+tools\audit\decisions\gen_reads5_yield.py:58:    "cowork_style_clustering_plan.md":        ["D-598"],
+tools\audit\decisions\gen_reads5_yield.py:59:    "cowork_adjudication_dossier.md":         ["D-599", "D-600", "D-601"],
+tools\audit\decisions\gen_reads5_yield.py:60:    "cowork_phase5c_l5_build_plan.md":        ["D-602"],
+tools\audit\decisions\gen_reads5_yield.py:61:    "cowork_layer3_keymode_impl_design.md":   ["D-603", "D-604"],
+tools\audit\decisions\gen_reads5_yield.py:63:    "cowork_phrase_boundary_methods.md":      ["D-607"],
+tools\audit\decisions\gen_reads5_yield.py:64:    "cowork_eg1_premise_checks.md":           ["D-608", "D-609"],
+tools\audit\decisions\gen_reads5_yield.py:65:    "cowork_types_header_design.md":          ["D-610"],
+tools\audit\decisions\gen_reads5_yield.py:66:    "cowork_l1l4_review_charter.md":          ["D-611"],
+tools\audit\decisions\gen_reads5_yield.py:70:    "cowork_style_clustering_plan.md":
+tools\audit\decisions\gen_reads5_yield.py:76:    "cowork_phase5c_l5_build_plan.md":
+tools\audit\decisions\gen_reads5_yield.py:82:    "cowork_phrase_boundary_methods.md":
+tools\audit\decisions\gen_reads5_yield.py:89:    "cowork_types_header_design.md":
+tools\audit\decisions\gen_reads5_yield.py:93:    "cowork_l1l4_review_charter.md":
+tools\audit\decisions\gen_true_half_reach.py:4:THE RULING (user, 2026-08-04, dispatch `cc_instruction_phase1_delegations_and_corrections.md` R1;
+tools\audit\decisions\gen_true_half_reach.py:66:        "document": "cowork_layer1_extend_design.md",
+tools\audit\decisions\gen_true_half_reach.py:88:        "document": "cowork_layer3_reachback_design.md",
+tools\audit\decisions\gen_true_half_reach.py:177:        "generated_for": "cc_instruction_phase1_delegations_and_corrections.md",
+tools\audit\decisions\gen_true_half_reach.py:224:                {"document": "cowork_layer1_extend_design.md",
+tools\audit\decisions\gen_true_half_reach.py:232:                {"document": "cowork_layer3_reachback_design.md",
+tools\audit\decisions\gen_r1_superseded_reach.py:4:THE RULING (user, 2026-08-04, dispatch `cc_instruction_c1_ruling_and_item1c.md` §0a, R1) is
+tools\audit\decisions\gen_r1_superseded_reach.py:74:# ── Ruling 61 (user, 2026-08-11, `cowork_rulings_2026_08_11_fourteenth_stop.md`) ─────────────────
+tools\audit\decisions\gen_r1_superseded_reach.py:132:                "`cc_instruction_five_rulings.md` §0a R2) that D-426 is the recorded decision "
+tools\audit\decisions\gen_r1_superseded_reach.py:279:                      "`cc_instruction_guard_fix_and_item1d.md`, Task 2.2), which answered exactly "
+tools\audit\decisions\gen_r1_superseded_reach.py:585:        "generated_for": "cc_instruction_c1_ruling_and_item1c.md (Task 2, ruling R1); EXTENDED to "
+tools\audit\decisions\gen_r1_superseded_reach.py:586:                         "the register's `unhomed` class by cc_instruction_return_continuation_14.md "
+tools\audit\decisions\gen_r1_superseded_reach.py:590:                "User, 2026-08-11 (`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 61): the "
+tools\audit\decisions\gen_r1_superseded_reach.py:657:                "A2 of `cc_instruction_c1_ruling_and_item1c.md`: 'That every member of item 1's "
+tools\audit\decisions\gen_r1_superseded_reach.py:682:                "(dispatch `cc_instruction_five_rulings.md` §0a R2): D-426 is the recorded decision "
+tools\run_corelli_validation.py:162:    mscx_files = sorted(_CORELLI_MSCX.glob("*.mscx"))
+tools\audit\l4\pass1_satellites_firerate.py:38:    files = sorted(glob.glob(os.path.join(d, "*.ours.json")))
+tools\audit\decisions\gen_true_half_reach_rows.py:434:            "(`cc_instruction_status_touch_and_oi141_premise_repin.md` Task 2) when the banner "
+tools\audit\decisions\gen_true_half_reach_rows.py:472:            "(`cc_instruction_return_continuation_14.md` Task 3) by the annotation being written. "
+tools\audit\decisions\gen_true_half_reach_rows.py:502:            "(`cc_instruction_return_continuation_14.md` Task 3), both items corrected. THE "
+tools\audit\decisions\gen_true_half_reach_rows.py:532:            "`cowork_rulings_2026_08_11_eleventh_stop.md` corrected this row's status-cell opening "
+tools\audit\decisions\gen_true_half_reach_rows.py:657:        "generated_for": "cc_instruction_return_continuation_10.md, Task 0 (the user's Ruling 51 of "
+tools\audit\decisions\gen_true_half_reach_rows.py:658:                         "`cowork_rulings_2026_08_11_tenth_stop.md`, which places this derivation "
+tools\audit\decisions\gen_route_homing_edit_shape.py:121:        "generated_for": "cc_instruction_document_routes_and_d472.md (Tasks 1 and 2, whose ruling "
+tools\audit\decisions\gen_verbatim_subject_consistency.py:19:user's Ruling 24(b) of 2026-08-09 (`cowork_rulings_2026_08_09_fourth_stop.md`) requires it built
+tools\run_chopin_validation.py:166:    mscx_files = sorted(_CHOPIN_MSCX.glob("*.mscx"))
+tools\audit\decisions\gen_retired_subject_moves.py:5:`cowork_rulings_2026_08_16_preparation_return.md`: the four authored judgment tables *"gain
+tools\audit\decisions\gen_retired_subject_moves.py:70:RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
+tools\audit\decisions\gen_retired_subject_moves.py:295:        "dispatch": "cc_instruction_preparation_fifth.md, Task 1",
+tools\audit\decisions\gen_retired_subject_moves.py:297:            "source": "cowork_rulings_2026_08_16_preparation_return.md §6 (kind 2)",
+tools\audit\l4\pass1_satellites_dispositions.py:21:Verdict rubric (cowork_audit_protocol.md P2):
+tools\audit\decisions\gen_phase1w_legacy_verification.py:69:    # `cowork_rulings_2026_08_09_second_stop.md`, from this tool's own STOP message, which named
+tools\audit\decisions\gen_phase1w_legacy_verification.py:73:    # authored-input maintenance class Ruling 4(b) of `cowork_rulings_2026_08_09_return.md`
+tools\audit\decisions\gen_phase1w_legacy_verification.py:98:        # `cowork_rulings_2026_08_17_sixth_return.md` (the user's word: "A."). The ruled
+tools\audit\decisions\gen_phase1w_legacy_verification.py:106:        # session: the OI-365 row inserted above it by `cc_instruction_return_continuation_5.md`
+tools\audit\decisions\gen_phase1w_legacy_verification.py:142:        'where': 'cc_instruction_phase1m_dispositions_and_measurements.md',
+tools\audit\decisions\gen_phase1w_legacy_verification.py:291:    # `cowork_rulings_2026_08_09_fourth_stop.md`). The fourth instance of the do-not-retry
+tools\audit\decisions\gen_phase1w_legacy_verification.py:330:        'quote': 'The ratified contract for this layer is `cowork_layer3_keymode_design.md`',
+tools\audit\decisions\gen_phase1w_legacy_verification.py:569:     'cowork_architecture_reassessment.md records the successor mapping D-284 -> D-036 with '
+tools\audit\decisions\gen_phase1w_legacy_verification.py:714:     'corrected at phase 1n — cowork_stage5_fitter_design.md:116 and '
+tools\audit\decisions\gen_phase1w_legacy_verification.py:715:     'cowork_structural_integrity_audit.md:323 both say the subject "includes live Layer-1.5 code", '
+tools\audit\decisions\gen_phase1w_legacy_verification.py:733:    # AUTHORED 2026-08-09 by `cc_instruction_return_continuation_3.md` Task 1 on the user's
+tools\audit\decisions\gen_phase1w_legacy_verification.py:734:    # Ruling 18 of `cowork_rulings_2026_08_09_third_stop.md`, delivered for review at
+tools\audit\decisions\gen_phase1w_legacy_verification.py:735:    # `ratification_surfaces/cowork_oi354_legacy_mark_establishment_2026_08_09.md`, and APPLIED
+tools\audit\decisions\gen_phase1w_legacy_verification.py:736:    # HERE 2026-08-09 on the user's Ruling 23 of `cowork_rulings_2026_08_09_fourth_stop.md`,
+tools\audit\decisions\gen_phase1w_legacy_verification.py:837:     'RULING 34 of `cowork_rulings_2026_08_09_fifth_stop.md`, taken on the facts gathered under '
+tools\audit\decisions\gen_phase1w_legacy_verification.py:839:     '`ratification_surfaces/cowork_d580_transfer_fact_gathering_2026_08_09.md`. THE RULING, in its '
+tools\audit\decisions\gen_phase1w_legacy_verification.py:853:     'cell explicitly at Ruling 23 of `cowork_rulings_2026_08_09_fourth_stop.md` pending Ruling 27\'s '
+tools\audit\decisions\gen_phase1w_legacy_verification.py:873:# `cowork_rulings_2026_08_16_preparation_return.md`).  The ruled soft-discard retires a
+tools\audit\decisions\gen_phase1w_legacy_verification.py:893:    "`cc_instruction_preparation_fifth.md` Task 1, executing the user's rulings of 2026-08-16 — "
+tools\audit\decisions\gen_phase1w_legacy_verification.py:895:    "`cc_instruction_preparation_eighth.md` Task 2, executing the user's rulings of 2026-08-17 "
+tools\audit\decisions\gen_phase1w_legacy_verification.py:896:    "(`cowork_rulings_2026_08_17_residue_sitting.md`, Rulings 1 and 3 — the 29 withheld "
+tools\audit\decisions\gen_phase1w_legacy_verification.py:905:    "`cc_instruction_preparation_fifth.md` Task 1, executing the user's rulings of 2026-08-16 "
+tools\audit\decisions\gen_phase1w_legacy_verification.py:1075:# D-648) — CC, `cc_instruction_return_continuation_8.md` Task 4, on the user's Ruling 16 of
+tools\audit\decisions\gen_phase1w_legacy_verification.py:1103:# D-648).  CC, `cc_instruction_return_continuation_9.md` Task 0, on the user's RULING 48 of
+tools\audit\decisions\gen_phase1w_legacy_verification.py:1104:# `cowork_rulings_2026_08_09_ninth_stop.md`, which licenses exactly this one comment-only edit: the
+tools\audit\decisions\gen_phase1w_legacy_verification.py:1117:# never left it.  CC, `cc_instruction_return_continuation_12.md` Task 3 found it by VERIFYING
+tools\audit\decisions\gen_phase1w_legacy_verification.py:1119:# correction is `cc_instruction_return_continuation_13.md` Task 0, on the user's RULING 59 of
+tools\audit\decisions\gen_phase1w_legacy_verification.py:1120:# `cowork_rulings_2026_08_11_thirteenth_stop.md`.  THE SAME CLAIM stood at a SECOND block of the SAME
+tools\audit\decisions\gen_phase1w_legacy_verification.py:1134:    ('cowork_stage5_fitter_design.md', 116, 'their subject includes live Layer-1.5 code'),
+tools\audit\decisions\gen_phase1w_legacy_verification.py:1135:    ('cowork_structural_integrity_audit.md', 323, 'whose subject includes live Layer-1.5 code'),
+tools\audit\decisions\gen_phase1w_legacy_verification.py:1289:        'dispatch': 'cc_instruction_phase1w_legacy_mark_verification.md',
+tools\audit\decisions\gen_phase1w_legacy_verification.py:1459:                        '`cowork_rulings_2026_08_11_thirteenth_stop.md`. Nothing above is '
+tools\audit\l4\pass1_oracle_dispositions.py:10:Protocol P1/P2 (cowork_audit_protocol.md): the scope is the machine-generated inventory
+tools\run_beethoven_validation.py:155:    mscx_files = sorted(_ABC_MSCX.glob("*.mscx"))
+tools\audit\l4\pass1_oracle_corpus_agg.py:12:files = sorted(glob.glob(os.path.join(CORPUS, "*.ours.json")))
+tools\audit\gen_phase1_completion_inventory.py:4:THE RULING (user, 2026-08-04, dispatch `cc_instruction_phase1_completion_inventory.md` R1):
+tools\audit\gen_phase1_completion_inventory.py:248:# The ruling's ONE authored home is `cowork_audit_protocol.md`'s dispatch-protocol section (#6).
+tools\audit\gen_phase1_completion_inventory.py:251:PROTOCOL_MD = ROOT / "cowork_audit_protocol.md"
+tools\audit\gen_phase1_completion_inventory.py:255:# R2 (user, 2026-08-04, `cc_instruction_guard_fix_and_item1d.md`): the shape D-642 leaves open — a
+tools\audit\gen_phase1_completion_inventory.py:285:            "STOP: R1's section could not be located in cowork_audit_protocol.md by its heading. "
+tools\audit\gen_phase1_completion_inventory.py:300:            "STOP: R2's section could not be located in cowork_audit_protocol.md by its heading. "
+tools\audit\gen_phase1_completion_inventory.py:360:        "its_home": "cowork_audit_protocol.md, the dispatch-protocol section, beside D-431, D-434, "
+tools\audit\gen_phase1_completion_inventory.py:444:        "its_home": "cowork_audit_protocol.md, the dispatch-protocol section, beside D-431, D-434, "
+tools\audit\gen_phase1_completion_inventory.py:475:                "The preceding dispatch (`cc_instruction_finish_line_item1b.md`) presented R1 as "
+tools\audit\gen_phase1_completion_inventory.py:599:    named_literally = sorted(set(re.findall(r"((?:cowork_|docs/)[a-z0-9_/]+\.md)", text)))
+tools\audit\gen_phase1_completion_inventory.py:602:                            | {d for d in re.findall(r"(cowork_[a-z0-9_]*archive[a-z0-9_]*\.md)",
+tools\audit\gen_phase1_completion_inventory.py:929:        "generated_for": "cc_instruction_phase1_completion_inventory.md",
+tools\audit\gen_phase1_completion_inventory.py:1072:                        "`cc_instruction_sitting_outcome_and_bound.md` Task 2. Two rulings meet "
+tools\audit\gen_phase1_completion_inventory.py:1118:                        "`cowork_away_returns.md`, the STOP section of the abandoned reach "
+tools\audit\gen_phase1_completion_inventory.py:1222:                        "REPORTED at `cowork_away_returns.md` §1.17 in the act that took it, with "
+tools\audit\gen_phase1_completion_inventory.py:1227:                        "`cowork_rulings_2026_08_11_thirteenth_stop.md`: the §1.17 reported widening "
+tools\run_bach_suites_validation.py:86:    for f in ours_dir.glob('*.ours.json'):
+tools\run_bach_suites_validation.py:113:    mscx_files = sorted(_MSCX_DIR.glob("*.mscx"))
+tools\audit\gen_period_stratum_split.py:4:Dispatch: `cc_instruction_period_checks.md`, Task 1 (Cowork, 2026-08-15), executing the second
+tools\audit\gen_period_stratum_split.py:5:ruling of `cowork_rulings_2026_08_15_period_start.md`.
+tools\audit\gen_period_stratum_split.py:83:    "`cowork_rulings_2026_08_15_period_start.md`, the first ruling: \"The restructuring period "
+tools\audit\gen_period_stratum_split.py:86:    "`ratification_surfaces/cowork_restructuring_period_start_decision_surface.md` (Alternative B).")
+tools\audit\gen_period_stratum_split.py:95:    "specification-or-docs 75)\" — and `cc_instruction_period_checks.md` §0a, which names the same "
+tools\audit\gen_period_stratum_split.py:100:# `cc_instruction_period_checks.md` §0a, prediction P1.  These are the ad-hoc values the decision
+tools\audit\gen_period_stratum_split.py:117:P1_SOURCE = ("`cc_instruction_period_checks.md` §0a, prediction P1, which records the values "
+tools\audit\gen_period_stratum_split.py:134:# Added 2026-08-21 by `cc_instruction_successor_plan_landing_and_step_zero.md` Task 2, executing
+tools\audit\gen_period_stratum_split.py:139:    "Ruling 7 (Alternative A) of `cowork_rulings_2026_08_21_successor_plan_sitting.md`: \"A "
+tools\audit\gen_period_stratum_split.py:151:    "set' means mechanically: the candidate enumeration gives every `cowork_*.md` document the "
+tools\audit\gen_period_stratum_split.py:404:        "dispatch": "cc_instruction_successor_plan_landing_and_step_zero.md",
+tools\audit\gen_period_stratum_split.py:473:        "dispatch": "cc_instruction_period_checks.md",
+tools\audit\gen_sole_carrier_subclass.py:6:`cowork_rulings_2026_08_16_preparation_return.md`, taken at the return of the deciding-act recovery
+tools\audit\gen_sole_carrier_subclass.py:106:RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
+tools\audit\gen_sole_carrier_subclass.py:623:        "dispatch": "cc_instruction_preparation_third.md, Task 1",
+tools\audit\gen_sole_carrier_subclass.py:632:            "source": "cowork_rulings_2026_08_16_preparation_return.md §3 (A)",
+tools\audit\l4\pass1_decoder_aggregate_fullspine.py:8:fs = sorted(glob.glob(D + "/*.fs.json"))
+tools\audit\guard_armed_check.py:5:(`cc_instruction_phase1q_reclassification_and_guards.md` §5), on the user's ruling of
+tools\run_bach_preset.py:130:    for xml in sorted(corpus_dir.glob("*.xml")):
+tools\run_bach_preset.py:484:        for stale in list(out_dir.glob("*.ours.json")) + [out_dir / MANIFEST_NAME]:
+tools\run_bach_preset.py:499:    xml_files = sorted(f for f in corpus_dir.glob("*.xml")
+tools\audit\l4\pass1_decoder_aggregate_decode.py:8:files = sorted(D.glob("*.decode.json"))
+tools\audit\gen_withheld_family_reading.py:11:`cowork_rulings_2026_08_31_decision_surface_sitting.md`).  It renders; it decides nothing.
+tools\audit\gen_withheld_family_reading.py:50:        "out": "ratification_surfaces/cowork_withheld_family_l2_reading.md",
+tools\audit\gen_withheld_family_reading.py:73:            "`cowork_rulings_2026_08_31_decision_surface_sitting.md`."),
+tools\audit\gen_withheld_family_reading.py:75:            "by Claude Code on 2026-09-05 under `cc_instruction_l2_verdict_pass_2026_09_05.md` "
+tools\audit\gen_withheld_family_reading.py:82:            "record": "cowork_rulings_2026_09_05_l2_withheld_family_sitting.md",
+tools\audit\gen_withheld_family_reading.py:92:                "`cc_instruction_l2_ruling_writeback_2026_09_05.md`, and the lists below are the "
+tools\audit\gen_withheld_family_reading.py:120:                "question IN (Ruling 1 of `cowork_rulings_2026_08_22_withheld_family_sitting.md`) and "
+tools\audit\gen_withheld_family_reading.py:240:        w("> `cowork_rulings_2026_08_31_decision_surface_sitting.md`: *no identity is withheld that the user")
+tools\audit\gen_withheld_family_reading.py:246:        w("> lists (Ruling 81, §3cj of `cowork_rulings_2026_08_31_decision_surface_sitting.md`: *no identity")
+tools\audit\gen_guard_state.py:185:    # ---- AUTHORED 2026-08-15, cc_instruction_period_checks.md Task 3 -------------------------
+tools\audit\gen_guard_state.py:205:    # ---- AUTHORED 2026-08-21, cc_instruction_successor_plan_landing_and_step_zero.md Task 1 ---
+tools\audit\gen_guard_state.py:222:    # ---- AUTHORED 2026-09-02, cc_instruction_comparison_l0_l1_second_2026_09_02.md Task 1 -----
+tools\audit\gen_guard_state.py:223:    # Registered under Ruling 33 (§3an of cowork_rulings_2026_08_31_decision_surface_sitting.md),
+tools\audit\gen_guard_state.py:237:    # ---- AUTHORED 2026-09-05, cc_instruction_l2_reading_file_2026_09_05.md Task 2 ---------------
+tools\audit\gen_guard_state.py:248:    # ---- AUTHORED 2026-08-15, cc_instruction_artifact_inventory.md ---------------------------
+tools\audit\gen_guard_state.py:269:    # ---- AUTHORED 2026-08-15, cc_instruction_ruled_inventory_landing.md Task 2 ---------------
+tools\audit\gen_guard_state.py:274:    # 2026-08-15 (`cowork_rulings_2026_08_15_inventory_sitting.md` §5, the extension riding with
+tools\audit\gen_guard_state.py:307:    # ---- AUTHORED 2026-08-15, cc_instruction_preparation_opening.md Task 2 -------------------
+tools\audit\gen_guard_state.py:324:    # ---- AUTHORED 2026-08-15, cc_instruction_preparation_opening.md Task 3 -------------------
+tools\audit\gen_guard_state.py:328:     "the ruled reading of `cowork_rulings_2026_08_16_preparation_return.md` §1, so what it "
+tools\audit\gen_guard_state.py:346:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_second.md Task 2 -------------------
+tools\audit\gen_guard_state.py:365:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_second.md Task 3 -------------------
+tools\audit\gen_guard_state.py:381:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_third.md Task 1 --------------------
+tools\audit\gen_guard_state.py:402:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_third.md Task 2 --------------------
+tools\audit\gen_guard_state.py:422:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_third.md Task 3 --------------------
+tools\audit\gen_guard_state.py:442:    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_eighth.md Task 2 -------------------
+tools\audit\gen_guard_state.py:469:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_fourth.md Task 1 -------------------
+tools\audit\gen_guard_state.py:500:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_fifth.md Task 1 --------------------
+tools\audit\gen_guard_state.py:532:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_fifth.md Task 2 --------------------
+tools\audit\gen_guard_state.py:558:    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_sixth.md Task 1 --------------------
+tools\audit\gen_guard_state.py:583:    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_sixth.md Task 2 --------------------
+tools\audit\gen_guard_state.py:600:    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_seventh.md Task 1 ------------------
+tools\audit\gen_guard_state.py:623:    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_seventh.md Task 2 ------------------
+tools\audit\gen_guard_state.py:640:    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_seventh.md Task 3 ------------------
+tools\audit\gen_guard_state.py:665:    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_eighth.md Task 1 -------------------
+tools\audit\gen_guard_state.py:681:    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_ninth.md Task 2 --------------------
+tools\audit\gen_guard_state.py:701:    # ---- AUTHORED 2026-08-18, cc_instruction_preparation_tenth.md Task 1 ---------------------
+tools\audit\gen_guard_state.py:720:    # ---- AUTHORED 2026-08-18, cc_instruction_preparation_tenth.md Task 2 ---------------------
+tools\audit\gen_guard_state.py:737:    # ---- AUTHORED 2026-09-08, cc_instruction_defense_share_sizing_third_2026_09_08.md Task 2 --
+tools\audit\gen_guard_state.py:763:    # ---- AUTHORED 2026-08-19, cc_instruction_preparation_twelfth.md Task 3 -------------------
+tools\audit\gen_guard_state.py:785:    # ---- AUTHORED 2026-08-19, cc_instruction_preparation_thirteenth.md Task 2 ----------------
+tools\audit\gen_guard_state.py:790:    # ---- AUTHORED 2026-08-22, cc_instruction_pilot_preparation_withheld_family.md Task 1 ------
+tools\audit\gen_guard_state.py:938:    # ---- AUTHORED 2026-09-07, cc_instruction_claude_md_prune_at_amendment_2026_09_07.md Task 1 -
+tools\audit\gen_guard_state.py:954:    # ---- AUTHORED 2026-09-07, cc_instruction_claude_md_prune_at_amendment_2026_09_07.md Task 2 -
+tools\audit\gen_guard_state.py:976:    # ---- AUTHORED 2026-09-07, cc_instruction_claude_md_prune_at_amendment_2026_09_07.md Task 3 -
+tools\audit\gen_guard_state.py:1023:# THE RULING (user, 2026-08-04, READ WAVE 6, dispatch `cc_instruction_reads_6.md` §0a ruling R4;
+tools\audit\gen_guard_state.py:1040:    # RECLASSIFIED 2026-08-16 by `cc_instruction_preparation_fifth.md` Task 1, on the user's
+tools\audit\gen_guard_state.py:1044:    # The ruled soft-discard then retired every entry homed in `cowork_structural_integrity_audit.md`,
+tools\audit\gen_guard_state.py:1143:    # Dispatch `cc_instruction_finish_line_item1b.md`, ruling R2. The earlier classification put
+tools\audit\gen_guard_state.py:1267:        "generated_for": "cc_instruction_phase1x_guard_visibility_and_commit.md, Task 2",
+tools\audit\gen_guard_state.py:1298:            "ruling": "User, 2026-08-04 (READ WAVE 6, dispatch `cc_instruction_reads_6.md` §0a "
+tools\audit\gen_session_start_read_size.py:9:D-431), so the measurement is generated here.  Built by `cc_instruction_preparation_tenth.md`
+tools\audit\gen_session_start_read_size.py:70:`cowork_rulings_2026_08_18_tenth_return.md` ordered corrected that this tool did not derive: the 216
+tools\audit\gen_session_start_read_size.py:168:     "the commit that narrowed rule (a)'s pointer — `cc_instruction_preparation_tenth.md` Task 2, "
+tools\audit\gen_session_start_read_size.py:176:# of `cowork_rulings_2026_08_18_eleventh_stop.md`; executed by
+tools\audit\gen_session_start_read_size.py:177:# `cc_instruction_preparation_eleventh_amended.md` Task 4).  Ruling 3 of
+tools\audit\gen_session_start_read_size.py:178:# `cowork_rulings_2026_08_18_tenth_return.md` orders FIVE published figures corrected by citation to
+tools\audit\gen_session_start_read_size.py:679:        "generated_for": "cc_instruction_preparation_tenth.md, Task 2, step 6",
+tools\audit\gen_test_construction_evidence.py:5:`cowork_rulings_2026_08_15_inventory_sitting.md`, at the artifact-inventory sitting.  Class 1 of the
+tools\audit\gen_test_construction_evidence.py:335:            "User, 2026-08-15, §3.1 of `cowork_rulings_2026_08_15_inventory_sitting.md`: class 1 "
+tools\audit\gen_test_construction_evidence.py:342:        "dispatch": "cc_instruction_ruled_inventory_landing.md, Task 3",
+tools\audit\gen_score_tags.py:297:        name for name in os.listdir(directory)
+tools\audit\gen_status_residue_move.py:5:`cowork_rulings_2026_08_17_sixth_return.md` (the user's word: "A."): *"The next dispatch moves the
+tools\audit\gen_status_residue_move.py:94:DISPATCH = "cc_instruction_preparation_seventh.md"
+tools\audit\gen_status_residue_move.py:95:RULINGS = "cowork_rulings_2026_08_17_sixth_return.md"
+tools\audit\gen_status_residue_move.py:96:SPLIT_RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
+tools\audit\gen_status_residue_move.py:145:        "a block of `cowork_handoff.md`, which is unmoved."),
+tools\audit\gen_status_residue_move.py:187:        "`ARCHITECTURE.md`, and the handover it points at is a block of `cowork_handoff.md`."),
+tools\audit\gen_oi367_opening_correction.py:10:WHAT THE USER RULED.  Ruling 53 of `cowork_rulings_2026_08_11_eleventh_stop.md`: the row's opening
+tools\audit\gen_oi367_opening_correction.py:224:        "the_ruling": "Ruling 53 of `cowork_rulings_2026_08_11_eleventh_stop.md`: the fourth "
+tools\audit\gen_guard_classification.py:4:THE RULING (user, 2026-08-04, READ WAVE 6, dispatch `cc_instruction_reads_6.md` §0a ruling R4;
+tools\audit\gen_guard_classification.py:21:THAN HAVING TO RECALL IT (user, 2026-08-17, Ruling 1 of `cowork_rulings_2026_08_17_ninth_return.md`;
+tools\audit\gen_guard_classification.py:22:written here by `cc_instruction_preparation_tenth.md` Task 1).  The ruling, VERBATIM:
+tools\audit\gen_guard_classification.py:39:EXTENDS §6 kind 1 of `cowork_rulings_2026_08_16_preparation_return.md` — the two completed
+tools\audit\gen_guard_classification.py:168:               "cowork_rulings_2026_08_16_preparation_return.md §4",
+tools\audit\gen_guard_classification.py:190:               "cowork_rulings_2026_08_16_preparation_return.md §4",
+tools\audit\gen_guard_classification.py:204:               "cowork_rulings_2026_08_16_preparation_return.md §4",
+tools\audit\gen_guard_classification.py:217:               "cowork_rulings_2026_08_16_preparation_return.md §4",
+tools\audit\gen_guard_classification.py:235:               "cowork_rulings_2026_08_16_preparation_return.md §4",
+tools\audit\gen_guard_classification.py:252:               "cowork_rulings_2026_08_16_preparation_return.md §4; "
+tools\audit\gen_guard_classification.py:354:    # ---- AUTHORED 2026-08-09, cc_instruction_return_continuation_6.md Task 0 -----------------
+tools\audit\gen_guard_classification.py:399:    # ---- AUTHORED 2026-08-15, cc_instruction_period_checks.md Task 3 -------------------------
+tools\audit\gen_guard_classification.py:417:    # ---- AUTHORED 2026-08-21, cc_instruction_successor_plan_landing_and_step_zero.md Task 1 ---
+tools\audit\gen_guard_classification.py:454:    # ---- AUTHORED 2026-08-15, cc_instruction_artifact_inventory.md ---------------------------
+tools\audit\gen_guard_classification.py:487:    # ---- AUTHORED 2026-08-15, cc_instruction_ruled_inventory_landing.md Task 2 ---------------
+tools\audit\gen_guard_classification.py:488:    # Three tools, on the user's Ruling of 2026-08-15 (`cowork_rulings_2026_08_15_inventory_
+tools\audit\gen_guard_classification.py:580:    # ---- AUTHORED 2026-08-15, cc_instruction_preparation_opening.md Task 2 -------------------
+tools\audit\gen_guard_classification.py:602:    # ---- AUTHORED 2026-08-15, cc_instruction_preparation_opening.md Task 3 -------------------
+tools\audit\gen_guard_classification.py:626:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_second.md Task 2 --------------------
+tools\audit\gen_guard_classification.py:648:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_second.md Task 3 --------------------
+tools\audit\gen_guard_classification.py:668:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_third.md Task 1 ---------------------
+tools\audit\gen_guard_classification.py:676:        "DEFINES the sole-carrier subclass is located in `cowork_rulings_2026_08_16_"
+tools\audit\gen_guard_classification.py:695:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_third.md Task 2 ---------------------
+tools\audit\gen_guard_classification.py:718:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_third.md Task 3 ---------------------
+tools\audit\gen_guard_classification.py:738:    # ---- AUTHORED 2026-08-17, cc_instruction_preparation_eighth.md Task 2 --------------------
+tools\audit\gen_guard_classification.py:771:    # ---- AUTHORED 2026-08-16, cc_instruction_preparation_fourth.md Task 1 --------------------
+tools\audit\gen_guard_classification.py:785:        "in `cowork_rulings_2026_08_16_preparation_return.md`, and every generator the ruling "
+tools\audit\gen_guard_classification.py:808:    # ---- AUTHORED 2026-08-18, cc_instruction_preparation_tenth.md Task 2 ---------------------
+tools\audit\gen_guard_classification.py:825:    # ---- AUTHORED 2026-09-08, cc_instruction_defense_share_sizing_third_2026_09_08.md Task 2 --
+tools\audit\gen_guard_classification.py:849:    # ---- AUTHORED 2026-08-18, cc_instruction_preparation_tenth.md Task 1 ---------------------
+tools\audit\gen_guard_classification.py:865:    # ---- AUTHORED 2026-08-19, cc_instruction_preparation_twelfth.md Task 3 -------------------
+tools\audit\gen_guard_classification.py:884:    # ---- AUTHORED 2026-08-22, cc_instruction_pilot_preparation_withheld_family.md Task 1 -----
+tools\audit\gen_guard_classification.py:917:    # ---- AUTHORED 2026-08-19, cc_instruction_preparation_thirteenth.md Task 2 ----------------
+tools\audit\gen_guard_classification.py:1202:        "dispatch `cc_instruction_licensed_homing_and_oi344.md`; `OPEN_ITEMS.md` OI-344), because "
+tools\audit\gen_guard_classification.py:1219:        "★ RE-CLASSIFIED 2026-08-04 (dispatch `cc_instruction_finish_line_item1b.md`, ruling R2) — "
+tools\audit\gen_guard_classification.py:1324:    # ---- AUTHORED 2026-09-07, cc_instruction_claude_md_prune_at_amendment_2026_09_07.md Task 1 -
+tools\audit\gen_guard_classification.py:1340:    # ---- AUTHORED 2026-09-07, cc_instruction_claude_md_prune_at_amendment_2026_09_07.md Task 2 -
+tools\audit\gen_guard_classification.py:1360:    # ---- AUTHORED 2026-09-07, cc_instruction_claude_md_prune_at_amendment_2026_09_07.md Task 3 -
+tools\audit\gen_guard_classification.py:1446:            "ruling": "User, 2026-08-04 (READ WAVE 6, dispatch `cc_instruction_reads_6.md` §0a "
+tools\audit\gen_guard_classification.py:1486:            "ordered_by": "`cc_instruction_finish_line_item1b.md`, ruling R2 — the read-wave yield "
+tools\audit\gen_oi357_production_arm_run.py:5:(`cowork_rulings_2026_08_09_fifth_stop.md`) licenses ONE bounded EXPLORATIONAL run: the
+tools\audit\gen_oi357_production_arm_run.py:201:    joint_files = sorted(f for f in os.listdir(JOINT) if os.path.isfile(os.path.join(JOINT, f)))
+tools\audit\gen_oi357_production_arm_run.py:218:                          "`cowork_rulings_2026_08_09_fifth_stop.md`.",
+tools\audit\gen_rulings_sort.py:5:`cowork_rulings_2026_08_16_preparation_return.md`: *"The RULINGS SORT may begin over the ratified
+tools\audit\gen_rulings_sort.py:9:(`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §3.1, output (b)): *"the
+tools\audit\gen_rulings_sort.py:49:★★ THE SORT IS RULED — 2026-08-17, `cowork_rulings_2026_08_17_rulings_sort_sitting.md`.  Two
+tools\audit\gen_rulings_sort.py:111:RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
+tools\audit\gen_rulings_sort.py:113:          / "cowork_phase_definition_surface_2026_08_15.md")
+tools\audit\gen_rulings_sort.py:116:           / "cowork_rulings_sort_surface_2026_08_16.md")
+tools\audit\gen_rulings_sort.py:118:SORT_RULING = ROOT / "cowork_rulings_2026_08_17_rulings_sort_sitting.md"
+tools\audit\gen_rulings_sort.py:578:        "dispatch": "cc_instruction_preparation_eighth.md, Task 4 (the ruled placements recorded); "
+tools\audit\gen_rulings_sort.py:579:                    "first run cc_instruction_preparation_second.md, Task 3",
+tools\audit\gen_rulings_sort.py:581:            "authority": "cowork_rulings_2026_08_17_rulings_sort_sitting.md (the user's word: \"I "
+tools\audit\gen_rulings_sort.py:711:    add("> (`cowork_rulings_2026_08_17_rulings_sort_sitting.md`), and this rendering carries the")
+tools\audit\gen_rulings_sort.py:720:    add("> (`cowork_rulings_2026_08_15_batch_return.md` §5) every identifier used below is")
+tools\audit\gen_governing_surface_split.py:5:(`cowork_rulings_2026_08_17_governing_surface_split.md`), taken over the ratification surface
+tools\audit\gen_governing_surface_split.py:6:`ratification_surfaces/cowork_governing_surface_split_2026_08_16.md`:
+tools\audit\gen_governing_surface_split.py:21:own stated residual risk (finding F29 of `cc_report_preparation_fifth.md`) is that a span MIXED at a
+tools\audit\gen_governing_surface_split.py:26:`cc_instruction_preparation_sixth.md`, which rules it the doubt default rather than a batch STOP.
+tools\audit\gen_governing_surface_split.py:94:DISPATCH = "cc_instruction_preparation_sixth.md"
+tools\audit\gen_governing_surface_split.py:95:RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
+tools\audit\gen_governing_surface_split.py:137:        "cowork_away_returns.md — so what moves is a pointer to two documents that are unmoved."),
+tools\audit\gen_governing_surface_split.py:455:    f"`cowork_rulings_2026_08_16_preparation_return.md`). ONE pointer stands for the whole cleared "
+tools\audit\gen_governing_surface_split.py:481:        f"`ratification_surfaces/cowork_governing_surface_split_2026_08_16.md`. It receives spans "
+tools\audit\gen_oi357_partial_signature_establishment.py:9:2026-08-09 (`cowork_rulings_2026_08_09_fourth_stop.md`) orders an EARLY, BOUNDED, READ-ONLY
+tools\audit\gen_oi357_partial_signature_establishment.py:27:`cowork_rulings_2026_08_09_fifth_stop.md`).  That ruling licenses a bounded EXPLORATIONAL run of the
+tools\audit\gen_oi357_partial_signature_establishment.py:267:        stems = sorted(f[: -len(".ours.json")] for f in os.listdir(d)
+tools\audit\gen_oi357_partial_signature_establishment.py:364:                          "`cowork_rulings_2026_08_09_eighth_stop.md`, recorded here by "
+tools\audit\gen_oi357_partial_signature_establishment.py:365:                          "`cc_instruction_return_continuation_8.md` Task 0. Written into this "
+tools\audit\gen_oi357_partial_signature_establishment.py:382:                "`cowork_away_returns.md` rather than propagated, which is the same treatment the "
+tools\audit\gen_status_batch_bound.py:5:`cowork_rulings_2026_08_17_governing_surface_split.md`: *"An entry is SUPERSEDED the moment a later
+tools\audit\gen_status_batch_bound.py:10:pruning rule, §5(D) of `cowork_rulings_2026_08_16_preparation_return.md`.
+tools\audit\gen_status_batch_bound.py:64:# ★ RE-AIMED 2026-09-02 by `cc_instruction_comparison_l0_l1_second_2026_09_02.md` Task 3, the
+tools\audit\gen_status_batch_bound.py:67:# `cc_instruction_reading_pass_landing_second_2026_08_31.md`, act date 2026-09-02 — that move RAN,
+tools\audit\gen_status_batch_bound.py:75:# moved "by `cc_instruction_reading_pass_landing_second_2026_08_31.md` Task 5" when the act was in
+tools\audit\gen_status_batch_bound.py:76:# fact `cc_instruction_comparison_l0_l1_2026_09_02.md` Task 3 — a header that misattributes its own
+tools\audit\gen_status_batch_bound.py:84:# ★★★ RE-AIMED 2026-09-03 by `cc_instruction_comparison_l0_l1_fourth_2026_09_03.md` Task 2, and ALL
+tools\audit\gen_status_batch_bound.py:95:# ★★★★ RE-AIMED AGAIN 2026-09-03 by `cc_instruction_comparison_l0_l1_fifth_2026_09_03.md` Task 4 — the
+tools\audit\gen_status_batch_bound.py:105:# ★★★★★ RE-AIMED AGAIN 2026-09-03 by `cc_instruction_comparison_l0_l1_sixth_2026_09_03.md` Task 2 —
+tools\audit\gen_status_batch_bound.py:115:# ★★★★★★ RE-AIMED AGAIN 2026-09-03 by `cc_instruction_comparison_l0_l1_seventh_2026_09_03.md` Task 3
+tools\audit\gen_status_batch_bound.py:126:# ★★★★★★★ RE-AIMED AGAIN 2026-09-04 by `cc_instruction_comparison_l0_l1_eighth_2026_09_04.md` Task 2
+tools\audit\gen_status_batch_bound.py:137:# ★★★★★★★★ RE-AIMED AGAIN 2026-09-04 by `cc_instruction_comparison_l0_l1_ninth_2026_09_04.md` Task 2
+tools\audit\gen_status_batch_bound.py:148:# ★★★★★★★★★ RE-AIMED AGAIN 2026-09-04 by `cc_instruction_comparison_l0_l1_tenth_2026_09_04.md` Task 2
+tools\audit\gen_status_batch_bound.py:160:# ★★★★★★★★★★ RE-AIMED AGAIN 2026-09-04 by `cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md`
+tools\audit\gen_status_batch_bound.py:175:# `cc_instruction_status_forward_bound_second_2026_09_07.md` Task 1 — and every one of those six is a
+tools\audit\gen_status_batch_bound.py:178:# should not. The omitting closes, oldest first: `cc_instruction_l2_keyword_count_2026_09_04.md`,
+tools\audit\gen_status_batch_bound.py:179:# `cc_instruction_l2_criterion_write_2026_09_04.md`, `cc_instruction_l2_candidate_list_2026_09_05.md`,
+tools\audit\gen_status_batch_bound.py:180:# `cc_instruction_l2_verdict_pass_2026_09_05.md`, `cc_instruction_l2_reading_file_2026_09_05.md` and
+tools\audit\gen_status_batch_bound.py:181:# `cc_instruction_l2_ruling_writeback_2026_09_05.md`. The backlog is cleared HERE, by this tool and
+tools\audit\gen_status_batch_bound.py:202:# `cc_instruction_status_forward_bound_second_2026_09_07.md` Task 3 — the close — which is an
+tools\audit\gen_status_batch_bound.py:215:# `cc_instruction_claude_md_prune_at_amendment_2026_09_07.md` Task 4 — the close — and ALL SIX
+tools\audit\gen_status_batch_bound.py:229:# `cc_instruction_claude_md_boot_membership_2026_09_07.md` Task 3 — the close — and ALL SIX authored
+tools\audit\gen_status_batch_bound.py:243:# `cc_instruction_read_size_repair_and_rows_2026_09_07.md` Task 4 — the close — and ALL SIX authored
+tools\audit\gen_status_batch_bound.py:260:# `cc_instruction_defense_share_sizing_third_2026_09_08.md` Task 3 — the close — and ALL SIX
+tools\audit\gen_status_batch_bound.py:281:# `cc_instruction_defense_share_authored_ends_2026_09_08.md` Task 3 — the close — and ALL SIX
+tools\audit\gen_status_batch_bound.py:317:PREVIOUS_BATCH_DISPATCH = "cc_instruction_defense_share_sizing_third_2026_09_08.md"
+tools\audit\gen_status_batch_bound.py:328:DISPATCH = "cc_instruction_defense_share_authored_ends_2026_09_08.md"
+tools\audit\gen_status_batch_bound.py:333:# happened: `cc_instruction_status_forward_bound_second_2026_09_07.md` orders the six catch-up moves
+tools\audit\gen_status_batch_bound.py:340:# `cc_instruction_claude_md_prune_at_amendment_2026_09_07.md` is the executing act, that dispatch
+tools\audit\gen_status_batch_bound.py:342:# names Task 3 while `cc_instruction_claude_md_boot_membership_2026_09_07.md` is the executing act,
+tools\audit\gen_status_batch_bound.py:344:# `cc_instruction_read_size_repair_and_rows_2026_09_07.md` is the executing act, that dispatch
+tools\audit\gen_status_batch_bound.py:346:# names Task 3 while `cc_instruction_defense_share_sizing_third_2026_09_08.md` is the executing act,
+tools\audit\gen_status_batch_bound.py:349:# `cc_instruction_defense_share_authored_ends_2026_09_08.md` is the executing act, that dispatch
+tools\audit\gen_status_batch_bound.py:359:RULINGS = "cowork_rulings_2026_08_17_governing_surface_split.md"
+tools\audit\gen_status_batch_bound.py:363:    {"executing_act": "cc_instruction_preparation_sixth.md, Task 1",
+tools\audit\gen_status_batch_bound.py:366:    {"executing_act": "cc_instruction_preparation_seventh.md, Task 2",
+tools\audit\gen_status_batch_bound.py:368:     "the_then_previous_batch": "cc_instruction_preparation_sixth.md"},
+tools\audit\gen_status_batch_bound.py:369:    {"executing_act": "cc_instruction_preparation_eighth.md, Task 5",
+tools\audit\gen_status_batch_bound.py:371:     "the_then_previous_batch": "cc_instruction_preparation_seventh.md"},
+tools\audit\gen_status_batch_bound.py:372:    {"executing_act": "cc_instruction_preparation_ninth.md, Task 5",
+tools\audit\gen_status_batch_bound.py:374:     "the_then_previous_batch": "cc_instruction_preparation_eighth.md"},
+tools\audit\gen_status_batch_bound.py:375:    {"executing_act": "cc_instruction_preparation_tenth.md, Task 5",
+tools\audit\gen_status_batch_bound.py:377:     "the_then_previous_batch": "cc_instruction_preparation_ninth.md"},
+tools\audit\gen_status_batch_bound.py:378:    {"executing_act": "cc_instruction_preparation_eleventh_amended.md, Task 5",
+tools\audit\gen_status_batch_bound.py:380:     "the_then_previous_batch": "cc_instruction_preparation_tenth.md"},
+tools\audit\gen_status_batch_bound.py:381:    {"executing_act": "cc_instruction_preparation_twelfth.md, Task 5",
+tools\audit\gen_status_batch_bound.py:383:     "the_then_previous_batch": "cc_instruction_preparation_eleventh_amended.md"},
+tools\audit\gen_status_batch_bound.py:384:    {"executing_act": "cc_instruction_preparation_thirteenth.md, Task 3",
+tools\audit\gen_status_batch_bound.py:386:     "the_then_previous_batch": "cc_instruction_preparation_twelfth.md"},
+tools\audit\gen_status_batch_bound.py:387:    {"executing_act": "cc_instruction_preparation_fourteenth.md, Task 2",
+tools\audit\gen_status_batch_bound.py:389:     "the_then_previous_batch": "cc_instruction_preparation_thirteenth.md"},
+tools\audit\gen_status_batch_bound.py:390:    {"executing_act": "cc_instruction_successor_plan_landing_and_step_zero.md, Task 4",
+tools\audit\gen_status_batch_bound.py:392:     "the_then_previous_batch": "cc_instruction_preparation_fourteenth.md"},
+tools\audit\gen_status_batch_bound.py:393:    {"executing_act": "cc_instruction_step_zero_exclusion_and_pass_continuation.md, Task 3",
+tools\audit\gen_status_batch_bound.py:395:     "the_then_previous_batch": "cc_instruction_successor_plan_landing_and_step_zero.md"},
+tools\audit\gen_status_batch_bound.py:396:    {"executing_act": "cc_instruction_pass_continuation_second.md, Task 2",
+tools\audit\gen_status_batch_bound.py:398:     "the_then_previous_batch": "cc_instruction_step_zero_exclusion_and_pass_continuation.md"},
+tools\audit\gen_status_batch_bound.py:399:    {"executing_act": "cc_instruction_pilot_preparation_withheld_family.md, Task 2",
+tools\audit\gen_status_batch_bound.py:401:     "the_then_previous_batch": "cc_instruction_pass_continuation_second.md"},
+tools\audit\gen_status_batch_bound.py:402:    {"executing_act": "cc_instruction_withheld_family_correction.md, Task 2",
+tools\audit\gen_status_batch_bound.py:404:     "the_then_previous_batch": "cc_instruction_pilot_preparation_withheld_family.md"},
+tools\audit\gen_status_batch_bound.py:405:    {"executing_act": "cc_instruction_second_passage_withheld.md, Task 2",
+tools\audit\gen_status_batch_bound.py:407:     "the_then_previous_batch": "cc_instruction_withheld_family_correction.md"},
+tools\audit\gen_status_batch_bound.py:408:    {"executing_act": "cc_instruction_brief_ratification_and_readme_boundary.md, Task 2",
+tools\audit\gen_status_batch_bound.py:410:     "the_then_previous_batch": "cc_instruction_second_passage_withheld.md"},
+tools\audit\gen_status_batch_bound.py:411:    {"executing_act": "cc_instruction_blind_output_landing.md, Task 1",
+tools\audit\gen_status_batch_bound.py:413:     "the_then_previous_batch": "cc_instruction_brief_ratification_and_readme_boundary.md"},
+tools\audit\gen_status_batch_bound.py:414:    {"executing_act": "cc_instruction_comparison_harmony_boundary.md, Task 2",
+tools\audit\gen_status_batch_bound.py:416:     "the_then_previous_batch": "cc_instruction_blind_output_landing.md"},
+tools\audit\gen_status_batch_bound.py:417:    {"executing_act": "cc_instruction_sizing_pack_preparation.md, Task 2",
+tools\audit\gen_status_batch_bound.py:419:     "the_then_previous_batch": "cc_instruction_comparison_harmony_boundary.md"},
+tools\audit\gen_status_batch_bound.py:420:    {"executing_act": "cc_instruction_manifest_prose_and_sizing_brief.md, Task 2",
+tools\audit\gen_status_batch_bound.py:422:     "the_then_previous_batch": "cc_instruction_sizing_pack_preparation.md"},
+tools\audit\gen_status_batch_bound.py:423:    {"executing_act": "cc_instruction_sizing_brief_ruled.md, Task 1",
+tools\audit\gen_status_batch_bound.py:425:     "the_then_previous_batch": "cc_instruction_manifest_prose_and_sizing_brief.md"},
+tools\audit\gen_status_batch_bound.py:426:    {"executing_act": "cc_instruction_sizing_output_landing.md, Task 1",
+tools\audit\gen_status_batch_bound.py:428:     "the_then_previous_batch": "cc_instruction_sizing_brief_ruled.md"},
+tools\audit\gen_status_batch_bound.py:429:    # ★ BACKFILLED 2026-08-26 by `cc_instruction_amendment_landing.md` Task 7, on Ruling 5 of
+tools\audit\gen_status_batch_bound.py:430:    # `cowork_rulings_2026_08_26_amendment_landing_sitting.md`. This move was performed WITHOUT
+tools\audit\gen_status_batch_bound.py:436:    {"executing_act": "cc_instruction_register_reconciliation.md, Task 4",
+tools\audit\gen_status_batch_bound.py:438:     "the_then_previous_batch": "cc_instruction_sizing_output_landing.md",
+tools\audit\gen_status_batch_bound.py:443:         "reported at `cc_report_register_reconciliation.md` §5.3 and §5.4. Backfilled here on "
+tools\audit\gen_status_batch_bound.py:444:         "Ruling 5 of `cowork_rulings_2026_08_26_amendment_landing_sitting.md`, which also names "
+tools\audit\gen_status_batch_bound.py:446:    {"executing_act": "cc_instruction_amendment_landing.md, Task 7",
+tools\audit\gen_status_batch_bound.py:448:     "the_then_previous_batch": "cc_instruction_register_reconciliation.md"},
+tools\audit\gen_status_batch_bound.py:449:    {"executing_act": "cc_instruction_boot_pack_regeneration.md, Task 4",
+tools\audit\gen_status_batch_bound.py:451:     "the_then_previous_batch": "cc_instruction_amendment_landing.md"},
+tools\audit\gen_status_batch_bound.py:452:    {"executing_act": "cc_instruction_sizing_tests.md, Task 7",
+tools\audit\gen_status_batch_bound.py:454:     "the_then_previous_batch": "cc_instruction_boot_pack_regeneration.md"},
+tools\audit\gen_status_batch_bound.py:455:    {"executing_act": "cc_instruction_ledger_build.md, Task 5",
+tools\audit\gen_status_batch_bound.py:457:     "the_then_previous_batch": "cc_instruction_sizing_tests.md"},
+tools\audit\gen_status_batch_bound.py:458:    {"executing_act": "cc_instruction_ledger_admissions.md, Task 5",
+tools\audit\gen_status_batch_bound.py:460:     "the_then_previous_batch": "cc_instruction_ledger_build.md"},
+tools\audit\gen_status_batch_bound.py:461:    {"executing_act": "cc_instruction_placement_sample.md, Task 5",
+tools\audit\gen_status_batch_bound.py:463:     "the_then_previous_batch": "cc_instruction_ledger_admissions.md"},
+tools\audit\gen_status_batch_bound.py:464:    {"executing_act": "cc_instruction_placement_sample_redraw.md, Task 6",
+tools\audit\gen_status_batch_bound.py:466:     "the_then_previous_batch": "cc_instruction_placement_sample.md"},
+tools\audit\gen_status_batch_bound.py:467:    {"executing_act": "cc_instruction_unit_correction_redraw.md, Task 6",
+tools\audit\gen_status_batch_bound.py:469:     "the_then_previous_batch": "cc_instruction_placement_sample_redraw.md"},
+tools\audit\gen_status_batch_bound.py:470:    {"executing_act": "cc_instruction_framework_pack_preparation.md, Task 2",
+tools\audit\gen_status_batch_bound.py:472:     "the_then_previous_batch": "cc_instruction_unit_correction_redraw.md"},
+tools\audit\gen_status_batch_bound.py:473:    {"executing_act": "cc_instruction_framework_arrangement_landing.md, Task 3",
+tools\audit\gen_status_batch_bound.py:475:     "the_then_previous_batch": "cc_instruction_framework_pack_preparation.md"},
+tools\audit\gen_status_batch_bound.py:476:    {"executing_act": "cc_instruction_informed_brief_landing.md, Task 1",
+tools\audit\gen_status_batch_bound.py:478:     "the_then_previous_batch": "cc_instruction_framework_arrangement_landing.md"},
+tools\audit\gen_status_batch_bound.py:479:    {"executing_act": "cc_instruction_arm_and_site_fillin.md, Task 3",
+tools\audit\gen_status_batch_bound.py:481:     "the_then_previous_batch": "cc_instruction_informed_brief_landing.md"},
+tools\audit\gen_status_batch_bound.py:482:    {"executing_act": "cc_instruction_landing_2026_08_28.md, Task 2",
+tools\audit\gen_status_batch_bound.py:484:     "the_then_previous_batch": "cc_instruction_arm_and_site_fillin.md"},
+tools\audit\gen_status_batch_bound.py:485:    {"executing_act": "cc_instruction_second_landing_2026_08_28.md, Task 2",
+tools\audit\gen_status_batch_bound.py:487:     "the_then_previous_batch": "cc_instruction_landing_2026_08_28.md"},
+tools\audit\gen_status_batch_bound.py:488:    {"executing_act": "cc_instruction_third_landing_2026_08_28.md, Task 2",
+tools\audit\gen_status_batch_bound.py:490:     "the_then_previous_batch": "cc_instruction_second_landing_2026_08_28.md"},
+tools\audit\gen_status_batch_bound.py:491:    {"executing_act": "cc_instruction_phase_close_second_2026_08_30.md, Task 2",
+tools\audit\gen_status_batch_bound.py:493:     "the_then_previous_batch": "cc_instruction_third_landing_2026_08_28.md"},
+tools\audit\gen_status_batch_bound.py:494:    {"executing_act": "cc_instruction_reading_pass_landing_second_2026_08_31.md, Task 5",
+tools\audit\gen_status_batch_bound.py:496:     "the_then_previous_batch": "cc_instruction_phase_close_second_2026_08_30.md"},
+tools\audit\gen_status_batch_bound.py:497:    {"executing_act": "cc_instruction_comparison_l0_l1_2026_09_02.md, Task 3",
+tools\audit\gen_status_batch_bound.py:499:     "the_then_previous_batch": "cc_instruction_reading_pass_landing_second_2026_08_31.md",
+tools\audit\gen_status_batch_bound.py:503:         "(`cc_instruction_reading_pass_landing_second_2026_08_31.md`, Task 5), so the archive "
+tools\audit\gen_status_batch_bound.py:507:         "`cc_instruction_comparison_l0_l1_second_2026_09_02.md` Task 3, which re-aimed all four "
+tools\audit\gen_status_batch_bound.py:511:    {"executing_act": "cc_instruction_comparison_l0_l1_second_2026_09_02.md, Task 3",
+tools\audit\gen_status_batch_bound.py:513:     "the_then_previous_batch": "cc_instruction_comparison_l0_l1_2026_09_02.md"},
+tools\audit\gen_status_batch_bound.py:514:    # ★ RECORDED 2026-09-03 by `cc_instruction_comparison_l0_l1_fourth_2026_09_03.md` Task 2. This
+tools\audit\gen_status_batch_bound.py:521:    {"executing_act": "cc_instruction_comparison_l0_l1_third_2026_09_02.md, Task 2",
+tools\audit\gen_status_batch_bound.py:523:     "the_then_previous_batch": "cc_instruction_comparison_l0_l1_second_2026_09_02.md",
+tools\audit\gen_status_batch_bound.py:526:         "words, quoted from that batch's close in `cowork_away_returns.md`: `STOP: no dated entry "
+tools\audit\gen_status_batch_bound.py:527:         "at e56e1153c0 names cc_instruction_comparison_l0_l1_second_2026_09_02.md — the "
+tools\audit\gen_status_batch_bound.py:539:    # ★ RECORDED 2026-09-03 by `cc_instruction_comparison_l0_l1_fifth_2026_09_03.md` Task 4. This is
+tools\audit\gen_status_batch_bound.py:544:    {"executing_act": "cc_instruction_comparison_l0_l1_fourth_2026_09_03.md, Task 2",
+tools\audit\gen_status_batch_bound.py:546:     "the_then_previous_batch": "cc_instruction_comparison_l0_l1_third_2026_09_02.md"},
+tools\audit\gen_status_batch_bound.py:547:    # ★ RECORDED 2026-09-03 by `cc_instruction_comparison_l0_l1_sixth_2026_09_03.md` Task 2. This is
+tools\audit\gen_status_batch_bound.py:552:    {"executing_act": "cc_instruction_comparison_l0_l1_fifth_2026_09_03.md, Task 4",
+tools\audit\gen_status_batch_bound.py:554:     "the_then_previous_batch": "cc_instruction_comparison_l0_l1_fourth_2026_09_03.md"},
+tools\audit\gen_status_batch_bound.py:555:    # ★ RECORDED 2026-09-03 by `cc_instruction_comparison_l0_l1_seventh_2026_09_03.md` Task 3. This is
+tools\audit\gen_status_batch_bound.py:560:    {"executing_act": "cc_instruction_comparison_l0_l1_sixth_2026_09_03.md, Task 2",
+tools\audit\gen_status_batch_bound.py:562:     "the_then_previous_batch": "cc_instruction_comparison_l0_l1_fifth_2026_09_03.md"},
+tools\audit\gen_status_batch_bound.py:563:    # ★ RECORDED 2026-09-04 by `cc_instruction_comparison_l0_l1_eighth_2026_09_04.md` Task 2. This is
+tools\audit\gen_status_batch_bound.py:568:    {"executing_act": "cc_instruction_comparison_l0_l1_seventh_2026_09_03.md, Task 3",
+tools\audit\gen_status_batch_bound.py:570:     "the_then_previous_batch": "cc_instruction_comparison_l0_l1_sixth_2026_09_03.md"},
+tools\audit\gen_status_batch_bound.py:571:    # ★ RECORDED 2026-09-04 by `cc_instruction_comparison_l0_l1_ninth_2026_09_04.md` Task 2. This is
+tools\audit\gen_status_batch_bound.py:576:    {"executing_act": "cc_instruction_comparison_l0_l1_eighth_2026_09_04.md, Task 2",
+tools\audit\gen_status_batch_bound.py:578:     "the_then_previous_batch": "cc_instruction_comparison_l0_l1_seventh_2026_09_03.md"},
+tools\audit\gen_status_batch_bound.py:579:    # ★ RECORDED 2026-09-04 by `cc_instruction_comparison_l0_l1_tenth_2026_09_04.md` Task 2. This is
+tools\audit\gen_status_batch_bound.py:584:    {"executing_act": "cc_instruction_comparison_l0_l1_ninth_2026_09_04.md, Task 2",
+tools\audit\gen_status_batch_bound.py:586:     "the_then_previous_batch": "cc_instruction_comparison_l0_l1_eighth_2026_09_04.md"},
+tools\audit\gen_status_batch_bound.py:587:    # ★ RECORDED 2026-09-04 by `cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md` Task 2. This is
+tools\audit\gen_status_batch_bound.py:593:    {"executing_act": "cc_instruction_comparison_l0_l1_tenth_2026_09_04.md, Task 2",
+tools\audit\gen_status_batch_bound.py:595:     "the_then_previous_batch": "cc_instruction_comparison_l0_l1_ninth_2026_09_04.md"},
+tools\audit\gen_status_batch_bound.py:601:    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 1",
+tools\audit\gen_status_batch_bound.py:603:     "the_then_previous_batch": "cc_instruction_boot_pack_freeze_l0l1_2026_09_04.md",
+tools\audit\gen_status_batch_bound.py:605:    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 1",
+tools\audit\gen_status_batch_bound.py:607:     "the_then_previous_batch": "cc_instruction_l2_keyword_count_2026_09_04.md",
+tools\audit\gen_status_batch_bound.py:609:    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 1",
+tools\audit\gen_status_batch_bound.py:611:     "the_then_previous_batch": "cc_instruction_l2_criterion_write_2026_09_04.md",
+tools\audit\gen_status_batch_bound.py:613:    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 1",
+tools\audit\gen_status_batch_bound.py:615:     "the_then_previous_batch": "cc_instruction_l2_candidate_list_2026_09_05.md",
+tools\audit\gen_status_batch_bound.py:617:    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 1",
+tools\audit\gen_status_batch_bound.py:619:     "the_then_previous_batch": "cc_instruction_l2_verdict_pass_2026_09_05.md",
+tools\audit\gen_status_batch_bound.py:621:    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 1",
+tools\audit\gen_status_batch_bound.py:623:     "the_then_previous_batch": "cc_instruction_l2_reading_file_2026_09_05.md",
+tools\audit\gen_status_batch_bound.py:628:    {"executing_act": "cc_instruction_status_forward_bound_second_2026_09_07.md, Task 3",
+tools\audit\gen_status_batch_bound.py:630:     "the_then_previous_batch": "cc_instruction_l2_ruling_writeback_2026_09_05.md",
+tools\audit\gen_status_batch_bound.py:636:    {"executing_act": "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md, Task 4",
+tools\audit\gen_status_batch_bound.py:638:     "the_then_previous_batch": "cc_instruction_status_forward_bound_second_2026_09_07.md",
+tools\audit\gen_status_batch_bound.py:642:    {"executing_act": "cc_instruction_claude_md_boot_membership_2026_09_07.md, Task 3",
+tools\audit\gen_status_batch_bound.py:644:     "the_then_previous_batch": "cc_instruction_claude_md_prune_at_amendment_2026_09_07.md",
+tools\audit\gen_status_batch_bound.py:648:    {"executing_act": "cc_instruction_read_size_repair_and_rows_2026_09_07.md, Task 4",
+tools\audit\gen_status_batch_bound.py:650:     "the_then_previous_batch": "cc_instruction_claude_md_boot_membership_2026_09_07.md",
+tools\audit\gen_status_batch_bound.py:654:    {"executing_act": "cc_instruction_defense_share_sizing_third_2026_09_08.md, Task 3",
+tools\audit\gen_status_batch_bound.py:656:     "the_then_previous_batch": "cc_instruction_read_size_repair_and_rows_2026_09_07.md",
+tools\audit\gen_status_batch_bound.py:662:    {"executing_act": "cc_instruction_defense_share_authored_ends_2026_09_08.md, Task 3",
+tools\audit\gen_status_batch_bound.py:664:     "the_then_previous_batch": "cc_instruction_defense_share_sizing_third_2026_09_08.md",
+tools\audit\gen_governing_surface_spans.py:5:`cowork_rulings_2026_08_16_preparation_return.md`, on the user's own stated ground: *"we need to
+tools\audit\gen_governing_surface_spans.py:121:                    "from it — `cc_instruction_preparation_fifth.md` Task 2")
+tools\audit\gen_governing_surface_spans.py:351:          dispatch: str = "cc_instruction_preparation_fifth.md, Task 2") -> dict:
+tools\audit\gen_governing_surface_spans.py:384:            "source": "cowork_rulings_2026_08_16_preparation_return.md §5(A)",
+tools\audit\gen_governing_surface_spans.py:444:    ap.add_argument("--dispatch", default="cc_instruction_preparation_fifth.md, Task 2",
+tools\audit\l3\measure_l3_firerate.py:78:                   for f in glob.glob(os.path.join(CORPUS_OURS, "*.ours.json")))
+tools\audit\gen_oi356_parser_correction.py:9:(`cowork_rulings_2026_08_09_fourth_stop.md`) corrects it: the detection is anchored to the status
+tools\audit\gen_retirement_census_movement.py:5:`cowork_rulings_2026_08_17_sixth_return.md` (the user's word: "A."): *"The next dispatch
+tools\audit\gen_retirement_census_movement.py:99:    {"dispatch": "cc_instruction_preparation_seventh.md, Task 2",
+tools\audit\gen_retirement_census_movement.py:102:    {"dispatch": "cc_instruction_preparation_eighth.md, Task 3",
+tools\audit\gen_retirement_census_movement.py:105:    {"dispatch": "cc_instruction_preparation_ninth.md, Task 4",
+tools\audit\gen_retirement_census_movement.py:782:        "dispatch": "cc_instruction_preparation_eighth.md, Task 3; first run "
+tools\audit\gen_retirement_census_movement.py:783:                    "cc_instruction_preparation_seventh.md, Task 2",
+tools\audit\gen_retirement_census_movement.py:784:        "the_ruling": "Ruling 2 of cowork_rulings_2026_08_17_sixth_return.md: the census is "
+tools\audit\gen_status_archive_pass.py:9:`cc_instruction_status_touch_and_oi141_premise_repin.md` requires: *every moved entry is
+tools\audit\gen_status_archive_pass.py:14:close is recorded in `cowork_away_returns.md`, or when its own text already marks it superseded
+tools\audit\gen_status_archive_pass.py:19:  * DERIVED — an entry naming `cowork_away_returns.md` in its own text has its close recorded
+tools\audit\gen_status_archive_pass.py:27:    the most recent batch's entries stay active.  `cc_instruction_doc_split.md` §2 keeps "the
+tools\audit\gen_status_archive_pass.py:32:    dispatch reports and in the handoff archive, not in `cowork_away_returns.md`, so clause (i)
+tools\audit\gen_status_archive_pass.py:95:        "own CLOSE entry (immediately above it in the same batch) names cowork_away_returns.md "
+tools\audit\gen_status_archive_pass.py:100:RETURNS = "cowork_away_returns.md"
+tools\audit\gen_status_archive_pass.py:110:    "> `cc_instruction_status_touch_and_oi141_premise_repin.md` Task 2, applying the standing rule\n"
+tools\audit\gen_status_archive_pass.py:159:                      "names cowork_away_returns.md, where its dispatch's close is recorded, and "
+tools\audit\gen_status_archive_pass.py:200:            "source": "cc_instruction_status_touch_and_oi141_premise_repin.md, assumption A2",
+tools\audit\gen_status_archive_pass.py:203:                        "`cowork_away_returns.md`, or when its own text already marks it "
+tools\audit\gen_status_archive_pass.py:213:                                    "cc_instruction_doc_split.md §2 keeps 'the most recent one or "
+tools\audit\gen_status_archive_pass.py:219:            "older_side_NOT_moved": "Every entry older than cowork_away_returns.md itself. Their "
+tools\audit\gen_governing_surface_readers.py:5:`cowork_rulings_2026_08_16_preparation_return.md`, which binds the third batch's F13 lesson to this
+tools\audit\gen_governing_surface_readers.py:54:the user's Ruling 2 of `cowork_rulings_2026_08_18_tenth_return.md`; executed by
+tools\audit\gen_governing_surface_readers.py:55:`cc_instruction_preparation_eleventh_amended.md` Task 3).  The surface said of itself that nothing
+tools\audit\gen_governing_surface_readers.py:95:           / "cowork_governing_surface_split_2026_08_16.md")
+tools\audit\gen_governing_surface_readers.py:105:# (`cc_instruction_preparation_eleventh_amended.md` Task 1, executing Ruling 1 of
+tools\audit\gen_governing_surface_readers.py:106:# `cowork_rulings_2026_08_18_tenth_return.md` at the derivation Ruling 3 of
+tools\audit\gen_governing_surface_readers.py:107:# `cowork_rulings_2026_08_18_eleventh_stop.md` sharpened).
+tools\audit\gen_governing_surface_readers.py:128:    "`ratification_surfaces/cowork_governing_surface_split_2026_08_16.md` dated at or before the "
+tools\audit\gen_governing_surface_readers.py:129:    "commit that landed `cowork_rulings_2026_08_17_governing_surface_split.md` in git")
+tools\audit\gen_governing_surface_readers.py:140:    "ratification_surfaces/cowork_governing_surface_split_2026_08_16.md",
+tools\audit\gen_governing_surface_readers.py:186:    `cc_instruction_preparation_seventh.md` Task 3). A LATER measurement over one of these files
+tools\audit\gen_governing_surface_readers.py:280:        "dispatch": "cc_instruction_preparation_fifth.md, Task 2",
+tools\audit\gen_governing_surface_readers.py:289:            "source": "cowork_rulings_2026_08_16_preparation_return.md §5(A)",
+tools\audit\gen_governing_surface_readers.py:327:        "`cowork_rulings_2026_08_17_governing_surface_split.md`**")
+tools\audit\gen_governing_surface_readers.py:522:        "2026-08-16, dispatch `cc_instruction_preparation_fifth.md` Task 2.*")
+tools\audit\gen_nongating_apparatus_rows.py:8:`cowork_rulings_2026_08_17_session_start_read_sitting.md`): "A session no longer reads the whole
+tools\audit\gen_nongating_apparatus_rows.py:160:               "(`cc_instruction_preparation_sixth.md` Task 1, executing Ruling 4 of "
+tools\audit\gen_nongating_apparatus_rows.py:161:               "`cowork_rulings_2026_08_17_governing_surface_split.md`). THE VERDICT WAS CORRECT "
+tools\audit\gen_nongating_apparatus_rows.py:172:              "`cowork_rulings_2026_08_11_twelfth_stop.md`, which APPLIES D-639's reach derivation "
+tools\audit\gen_nongating_apparatus_rows.py:182:              "(`cc_instruction_status_touch_and_oi141_premise_repin.md` Task 2), all four "
+tools\audit\gen_nongating_apparatus_rows.py:206:               "(`cc_instruction_return_continuation_14.md` Task 3): a dated scope annotation, not "
+tools\audit\gen_nongating_apparatus_rows.py:219:               "(`cc_instruction_return_continuation_14.md` Task 3). THE VERDICT WAS CORRECT WHILE "
+tools\audit\gen_nongating_apparatus_rows.py:236:               "(`cc_instruction_return_continuation_14.md` Task 3), and the verdict's own split "
+tools\audit\gen_nongating_apparatus_rows.py:245:               "`cc_instruction_five_rulings.md` §0a, R5); the former NON-GATING verdict is "
+tools\audit\gen_nongating_apparatus_rows.py:251:               "that half reaches two of the three documents. `cowork_layer1_extend_design.md` "
+tools\audit\gen_nongating_apparatus_rows.py:262:               "(`cc_instruction_return_continuation_14.md` Tasks 2 and 3): the falsified design "
+tools\audit\gen_nongating_apparatus_rows.py:281:               "(`cowork_rulings_2026_08_11_fourteenth_stop.md`) supplied the filing decision the "
+tools\audit\gen_nongating_apparatus_rows.py:317:               "(`cowork_rulings_2026_08_11_fourteenth_stop.md`) ruled reading (i): the ranking is "
+tools\audit\gen_nongating_apparatus_rows.py:352:               "(`cowork_rulings_2026_08_11_fourteenth_stop.md`) ruled the FIRST of the two closing "
+tools\audit\gen_nongating_apparatus_rows.py:369:               "(`cc_instruction_return_continuation_13.md` Task 2). Five were corrected by the "
+tools\audit\gen_nongating_apparatus_rows.py:388:               "each complete in itself (`cc_instruction_return_continuation_11.md` Task 1). The "
+tools\audit\gen_nongating_apparatus_rows.py:415:               "`cowork_rulings_2026_08_11_eleventh_stop.md` corrected the opening token PER THE "
+tools\audit\gen_nongating_apparatus_rows.py:431:               "ruled at the fifth STOP (`cowork_rulings_2026_08_09_fifth_stop.md`): the "
+tools\audit\gen_nongating_apparatus_rows.py:433:               "`cowork_design_doc_template.md` and a STOP on an unlisted kind (Ruling 28); "
+tools\audit\gen_nongating_apparatus_rows.py:463:               "(Ruling 24 of `cowork_rulings_2026_08_09_fourth_stop.md`): the five quotes are "
+tools\audit\gen_nongating_apparatus_rows.py:494:               "`cowork_rulings_2026_08_09_third_stop.md` settled WHOSE act the establishment is; "
+tools\audit\gen_nongating_apparatus_rows.py:495:               "Ruling 23 of `cowork_rulings_2026_08_09_fourth_stop.md` ratified the reviewed "
+tools\audit\gen_nongating_apparatus_rows.py:509:               "(`cowork_ruling_guard_family_2026_08_08.md`), corpus first. The verdict was "
+tools\audit\gen_nongating_apparatus_rows.py:563:               "RESOLVED 2026-08-09 (`cc_instruction_return_continuation_8.md` Task 4) on the "
+tools\audit\gen_nongating_apparatus_rows.py:632:               "(`cc_instruction_oi150_baselines.md` Tasks 1 and 2): the two suites were BUILT and "
+tools\audit\gen_nongating_apparatus_rows.py:652:               "(`cc_instruction_oi315_class_licence.md`, Tasks 1-3): the specification and the "
+tools\audit\gen_nongating_apparatus_rows.py:673:              "`docs/scoring_model.md` (`cc_instruction_scoring_model_pass.md` Task 2, commit "
+tools\audit\gen_nongating_apparatus_rows.py:699:               "alternative, taken as an equal outcome (`cc_instruction_scoring_model_pass.md` "
+tools\audit\gen_nongating_apparatus_rows.py:725:              "`cowork_rulings_2026_08_11_twelfth_stop.md`, which APPLIES D-639's reach derivation. "
+tools\audit\gen_nongating_apparatus_rows.py:771:               "`cc_instruction_five_rulings.md` §0a, R5), on the ground [[OI-336]] recorded: this "
+tools\audit\gen_nongating_apparatus_rows.py:1162:    # ---- rowed 2026-08-11, graded 2026-08-11 (`cc_instruction_apply_the_bearing_cut.md` Task 2) --
+tools\audit\gen_nongating_apparatus_rows.py:1168:    # `cowork_rulings_2026_08_17_governing_surface_split.md` supplied the boundary the row's first
+tools\audit\gen_nongating_apparatus_rows.py:1204:    ★ CHANGED 2026-08-09 by the user's Ruling 33 (`cowork_rulings_2026_08_09_fifth_stop.md`), which
+tools\audit\gen_nongating_apparatus_rows.py:1415:            "Ruling 1 of `cowork_rulings_2026_08_17_session_start_read_sitting.md`: \"A session no "
+tools\audit\gen_nongating_apparatus_rows.py:1509:    # `cc_instruction_return_continuation_14.md` Task 3). A row that was RE-CLASSED and has since
+tools\audit\gen_nongating_apparatus_rows.py:1604:        "generated_for": "cc_instruction_phase1o_gate_partition_and_probe_rerun.md, Task 3",
+tools\audit\gen_nongating_apparatus_rows.py:1612:                "User, 2026-08-11, Ruling 56 of `cowork_rulings_2026_08_11_twelfth_stop.md`: the "
+tools\audit\gen_retirement_caller_check.py:6:(`cowork_rulings_2026_08_15_inventory_sitting.md` §3.16): *"every flag is a CANDIDACY; retirement is
+tools\audit\gen_retirement_caller_check.py:9:(`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §8): *"no archiving executes
+tools\audit\gen_retirement_caller_check.py:51:it (`cowork_rulings_2026_08_16_preparation_return.md` §1, Alternative A).  What the ruling adds,
+tools\audit\gen_retirement_caller_check.py:69:`cowork_rulings_2026_08_17_callers_sitting.md`, held at the census's own published evidence.  Four
+tools\audit\gen_retirement_caller_check.py:153:RULING = ROOT / "cowork_rulings_2026_08_15_inventory_sitting.md"
+tools\audit\gen_retirement_caller_check.py:154:READING_RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
+tools\audit\gen_retirement_caller_check.py:155:CALLERS_RULING = ROOT / "cowork_rulings_2026_08_17_callers_sitting.md"
+tools\audit\gen_retirement_caller_check.py:454:            "the_ruling": "cowork_rulings_2026_08_17_callers_sitting.md §1",
+tools\audit\gen_retirement_caller_check.py:1348:        "dispatch": "cc_instruction_preparation_eighth.md, Task 3 (the regeneration under the "
+tools\audit\gen_retirement_caller_check.py:1350:                    "2026-08-16 ruled reading was cc_instruction_preparation_second.md, Task 1; "
+tools\audit\gen_retirement_caller_check.py:1351:                    "first run cc_instruction_preparation_opening.md, Task 3",
+tools\audit\gen_retirement_caller_check.py:1353:            "source": "cowork_rulings_2026_08_15_inventory_sitting.md §3.16",
+tools\audit\gen_retirement_caller_check.py:1358:                "ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md §8: \"no "
+tools\audit\gen_retirement_caller_check.py:1443:            "authority": "cowork_rulings_2026_08_16_preparation_return.md §1 (the user's word: "
+tools\audit\gen_retirement_caller_check.py:1544:            "authority": "cowork_rulings_2026_08_17_callers_sitting.md (the user's word: \"I agree "
+tools\audit\gen_gating_row_sizing.py:61:# (2026-08-17, `cc_instruction_preparation_ninth.md` Task 2). A row the ruled archiving pass moves
+tools\audit\gen_gating_row_sizing.py:182:            "`cowork_away_returns.md` itself, whose closes are recorded in dispatch reports and in "
+tools\audit\gen_gating_row_sizing.py:329:            "Re-word `cowork_layer5_function_design.md` §5.0/§15-12 and the handoff line to record "
+tools\audit\gen_gating_row_sizing.py:496:            "(`cc_instruction_scoring_model_pass.md`, Tasks 2 and 3, commits `b366d44947` and "
+tools\audit\gen_gating_row_sizing.py:783:            "The row RESOLVED 2026-08-14 (`cc_instruction_scoring_model_pass.md`, Task 2, commit "
+tools\audit\gen_gating_row_sizing.py:819:            "The row RESOLVED 2026-08-14 (`cc_instruction_scoring_model_pass.md`, Task 2, commit "
+tools\audit\gen_gating_row_sizing.py:851:            "The row RESOLVED 2026-08-13 (`cc_instruction_oi315_class_licence.md`, Tasks 1-3). "
+tools\audit\gen_gating_row_sizing.py:902:            "(`cowork_rulings_2026_08_13_seventeenth_stop.md`, register entry **D-677**) makes a "
+tools\audit\gen_gating_row_sizing.py:938:            "(`cc_instruction_status_touch_and_oi141_premise_repin.md` Task 2) by performing "
+tools\audit\gen_gating_row_sizing.py:971:            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 3) by "
+tools\audit\gen_gating_row_sizing.py:981:                "Append a dated annotation to `cowork_style_clustering_plan.md` scoping its title "
+tools\audit\gen_gating_row_sizing.py:1000:            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 3) by "
+tools\audit\gen_gating_row_sizing.py:1029:            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 3), both "
+tools\audit\gen_gating_row_sizing.py:1065:            "(`cc_instruction_return_continuation_14.md` Tasks 2 and 3): its NEEDS-RULING second "
+tools\audit\gen_gating_row_sizing.py:1105:            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 2) on the "
+tools\audit\gen_gating_row_sizing.py:1134:            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 2) on the "
+tools\audit\gen_gating_row_sizing.py:1167:            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 0) on the "
+tools\audit\gen_gating_row_sizing.py:1208:            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_14.md` Task 0) on the "
+tools\audit\gen_gating_row_sizing.py:1242:            "The row RESOLVED 2026-08-11 (`cc_instruction_return_continuation_13.md` Task 2) — and "
+tools\audit\gen_gating_row_sizing.py:1295:            "`cowork_rulings_2026_08_11_thirteenth_stop.md`, which discharged BOTH halves below by "
+tools\audit\gen_gating_row_sizing.py:1334:            "The row RESOLVED 2026-08-13 (`cc_instruction_oi150_baselines.md`, Tasks 1 and 2) by "
+tools\audit\gen_gating_row_sizing.py:1386:        "`cowork_rulings_2026_08_11_fourteenth_stop.md`: the joint estimator's `ARCHITECTURE.md` "
+tools\audit\gen_gating_row_sizing.py:1399:        "PERFORMED on 2026-08-14 (`cc_instruction_scoring_model_pass.md`, Tasks 2 and 3, commits "
+tools\audit\gen_gating_row_sizing.py:1560:            "cc_instruction_return_continuation_12.md, Task 0 — placed FIRST and ALONE under D-670, "
+tools\audit\gen_specification_document_set.py:4:Dispatch: `cc_instruction_successor_plan_landing_and_step_zero.md`, Task 1 (Cowork, 2026-08-21),
+tools\audit\gen_specification_document_set.py:5:executing Ruling 6 of `cowork_rulings_2026_08_21_successor_plan_sitting.md`.
+tools\audit\gen_specification_document_set.py:8:(`cowork_specification_reconstruction_plan_successor_2026_08_21.md` §5) needs to know WHICH
+tools\audit\gen_specification_document_set.py:166:    "cowork_joint_estimator_architecture.md": g(
+tools\audit\gen_specification_document_set.py:172:        anchor="`cowork_joint_estimator_architecture.md`.** Key, mode, and chord are inferred",
+tools\audit\gen_specification_document_set.py:174:    "cowork_prefit_gates.md": g(
+tools\audit\gen_specification_document_set.py:180:        anchor="the piece-bootstrap interval — is `cowork_prefit_gates.md`",
+tools\audit\gen_specification_document_set.py:182:    "cowork_notation_output_contract.md": g(
+tools\audit\gen_specification_document_set.py:190:        anchor="as-built, DORMANT; contract `cowork_notation_output_contract.md`",
+tools\audit\gen_specification_document_set.py:192:    "cowork_joint_estimator_factorization.md": g(
+tools\audit\gen_specification_document_set.py:198:        anchor="is `cowork_joint_estimator_factorization.md`, which this section points at",
+tools\audit\gen_specification_document_set.py:200:    "cowork_stage5_fitter_design.md": g(
+tools\audit\gen_specification_document_set.py:205:        anchor="the fitting event's own design contract is `cowork_stage5_fitter_design.md`",
+tools\audit\gen_specification_document_set.py:207:    "cowork_score_census.md": g(
+tools\audit\gen_specification_document_set.py:214:        anchor="`cowork_score_census.md` — a document-level delegation whose reach is judged per section",
+tools\audit\gen_specification_document_set.py:216:    "cowork_progression_schema_dictionary.md": g(
+tools\audit\gen_specification_document_set.py:221:        anchor="(`cowork_progression_schema_dictionary.md`): a static, curated",
+tools\audit\gen_specification_document_set.py:223:    "cowork_progression_schema_design.md": g(
+tools\audit\gen_specification_document_set.py:232:        anchor="`cowork_progression_schema_design.md`, the phrase-boundary design, …) are the **authoritative detail**",
+tools\audit\gen_specification_document_set.py:234:    "cowork_target_architecture.md": g(
+tools\audit\gen_specification_document_set.py:247:        anchor="`cowork_target_architecture.md` is **demoted** to the detailed-rationale reference",
+tools\audit\gen_specification_document_set.py:249:    "cowork_confidence_contract.md": g(
+tools\audit\gen_specification_document_set.py:257:        anchor="are stated in full in `cowork_confidence_contract.md`",
+tools\audit\gen_specification_document_set.py:259:    "cowork_layer6_grouping_design.md": g(
+tools\audit\gen_specification_document_set.py:264:        anchor="The ratified contract for this layer is `cowork_layer6_grouping_design.md` (AS-BUILT, 2026-07-02",
+tools\audit\gen_specification_document_set.py:266:    "cowork_voiceleading_axis_design.md": g(
+tools\audit\gen_specification_document_set.py:272:        anchor="`cowork_voiceleading_axis_design.md` §0/§5.1/§5.3/§8/§9 (AS-BUILT)",
+tools\audit\gen_specification_document_set.py:274:    "cowork_bounded_context_design.md": g(
+tools\audit\gen_specification_document_set.py:278:        anchor="detailed cross-layer spec for this contract is **`cowork_bounded_context_design.md`**",
+tools\audit\gen_specification_document_set.py:280:    "cowork_evidence_inventory.md": g(
+tools\audit\gen_specification_document_set.py:286:        anchor="`cowork_evidence_inventory.md`, kept in step with these layer specifications",
+tools\audit\gen_specification_document_set.py:288:    "cowork_layer1_note_model_design.md": g(
+tools\audit\gen_specification_document_set.py:296:        anchor="The ratified contract for this layer is `cowork_layer1_note_model_design.md`",
+tools\audit\gen_specification_document_set.py:298:    "cowork_phrase_boundary_design.md": g(
+tools\audit\gen_specification_document_set.py:304:        anchor="The ratified contract for the phrase-boundary primitive is `cowork_phrase_boundary_design.md`",
+tools\audit\gen_specification_document_set.py:306:    "cowork_layer2_slicing_design.md": g(
+tools\audit\gen_specification_document_set.py:313:        anchor="The ratified contract for this layer is `cowork_layer2_slicing_design.md`",
+tools\audit\gen_specification_document_set.py:315:    "cowork_layer3_keymode_design.md": g(
+tools\audit\gen_specification_document_set.py:318:        anchor="The ratified contract for this layer is `cowork_layer3_keymode_design.md`",
+tools\audit\gen_specification_document_set.py:320:    "cowork_layer4_chordsymbol_design.md": g(
+tools\audit\gen_specification_document_set.py:323:        anchor="The ratified contract for this layer is `cowork_layer4_chordsymbol_design.md`",
+tools\audit\gen_specification_document_set.py:325:    "cowork_layer5_function_design.md": g(
+tools\audit\gen_specification_document_set.py:330:        anchor="The ratified contract for this layer's function, cadence and tonicization decisions is `cowork_layer5_function_design.md`",
+tools\audit\gen_specification_document_set.py:332:    "cowork_layer5_engagement_design.md": g(
+tools\audit\gen_specification_document_set.py:337:        anchor="is `cowork_layer5_engagement_design.md` (Part 1 §1–§5, Part 2 §6–§10)",
+tools\audit\gen_specification_document_set.py:340:    "cowork_notation_adoption_increment.md": g(
+tools\audit\gen_specification_document_set.py:346:        anchor="`cowork_notation_adoption_increment.md`, which this section points at and does not restate.",
+tools\audit\gen_specification_document_set.py:372:    "cowork_idiom_entry_mapping.md": g(
+tools\audit\gen_specification_document_set.py:385:        anchor="`cowork_idiom_entry_mapping.md` (`cowork_style_taxonomy_proposal.md:3-9`;",
+tools\audit\gen_specification_document_set.py:389:    "cowork_key_chord_joint_inference_grounding.md": g(
+tools\audit\gen_specification_document_set.py:410:    "cowork_handoff.md": g(
+tools\audit\gen_specification_document_set.py:412:        "Named once, 'per-unit provenance in STATUS.md / `cowork_handoff.md`' — a parenthetical "
+tools\audit\gen_specification_document_set.py:414:    "cc_instruction_notation_switch.md": g(
+tools\audit\gen_specification_document_set.py:429:    "cowork_rulings_2026_08_11_fourteenth_stop.md": g(
+tools\audit\gen_specification_document_set.py:439:    "cowork_target_architecture_review.md": g(
+tools\audit\gen_specification_document_set.py:448:    "cowork_siloed_facts_audit.md": g(
+tools\audit\gen_specification_document_set.py:467:    "cowork_layer2_reslice_design.md": g(
+tools\audit\gen_specification_document_set.py:487:    "cowork_l1l4_review_charter.md": g(
+tools\audit\gen_specification_document_set.py:490:    "cowork_phase5b_l4_build_plan.md": g(
+tools\audit\gen_specification_document_set.py:494:    "cowork_engage_arc_plan.md": g(
+tools\audit\gen_specification_document_set.py:506:    "cowork_rulings_2026_08_09_second_stop.md": g(
+tools\audit\gen_specification_document_set.py:529:        "`cowork_layer*_design.md`, which the scan sees as a filename because the glob's asterisk "
+tools\audit\gen_specification_document_set.py:537:    "cowork_style_taxonomy_proposal.md": g(
+tools\audit\gen_specification_document_set.py:543:    "cowork_idiom_discovery_findings.md": g(
+tools\audit\gen_specification_document_set.py:547:    "cowork_style_clustering_plan.md": g(
+tools\audit\gen_specification_document_set.py:582:        "finding": ("`cc_report_step_zero.md` §6 finding 2: `STATUS.md` is a member by the "
+tools\audit\gen_specification_document_set.py:591:        "ruled_at": ("Ruling 1(a) of `cowork_rulings_2026_08_22_step_zero_return_sitting.md` "
+tools\audit\gen_specification_document_set.py:628:    "cowork_joint_estimator_architecture.md": p(
+tools\audit\gen_specification_document_set.py:631:    "cowork_joint_estimator_factorization.md": p(
+tools\audit\gen_specification_document_set.py:633:        "is `cowork_joint_estimator_factorization.md`, which this section points at",
+tools\audit\gen_specification_document_set.py:634:        "Values remain unfit.", "cowork_joint_estimator_factorization.md",
+tools\audit\gen_specification_document_set.py:638:    "cowork_prefit_gates.md": p(
+tools\audit\gen_specification_document_set.py:640:        'protocol ratified — pending execution', "cowork_prefit_gates.md",
+tools\audit\gen_specification_document_set.py:642:    "cowork_notation_output_contract.md": p(
+tools\audit\gen_specification_document_set.py:644:        "as-built, DORMANT; contract `cowork_notation_output_contract.md`",
+tools\audit\gen_specification_document_set.py:649:    "cowork_stage5_fitter_design.md": p(
+tools\audit\gen_specification_document_set.py:653:    "cowork_score_census.md": p(
+tools\audit\gen_specification_document_set.py:657:    "cowork_progression_schema_dictionary.md": p(
+tools\audit\gen_specification_document_set.py:660:    "cowork_progression_schema_design.md": p(
+tools\audit\gen_specification_document_set.py:662:    "cowork_target_architecture.md": p(
+tools\audit\gen_specification_document_set.py:666:    "cowork_confidence_contract.md": p(
+tools\audit\gen_specification_document_set.py:671:    "cowork_layer6_grouping_design.md": p(
+tools\audit\gen_specification_document_set.py:672:        "DORMANT", "cowork_layer6_grouping_design.md",
+tools\audit\gen_specification_document_set.py:674:    "cowork_voiceleading_axis_design.md": p(
+tools\audit\gen_specification_document_set.py:675:        "DORMANT", "cowork_voiceleading_axis_design.md",
+tools\audit\gen_specification_document_set.py:677:    "cowork_bounded_context_design.md": p(
+tools\audit\gen_specification_document_set.py:680:    "cowork_evidence_inventory.md": p(
+tools\audit\gen_specification_document_set.py:683:    "cowork_layer1_note_model_design.md": p(
+tools\audit\gen_specification_document_set.py:686:    "cowork_phrase_boundary_design.md": p(
+tools\audit\gen_specification_document_set.py:690:    "cowork_layer2_slicing_design.md": p(
+tools\audit\gen_specification_document_set.py:693:    "cowork_layer3_keymode_design.md": p(
+tools\audit\gen_specification_document_set.py:696:    "cowork_layer4_chordsymbol_design.md": p(
+tools\audit\gen_specification_document_set.py:699:    "cowork_layer5_function_design.md": p(
+tools\audit\gen_specification_document_set.py:702:    "cowork_layer5_engagement_design.md": p(
+tools\audit\gen_specification_document_set.py:705:    "cowork_notation_adoption_increment.md": p(
+tools\audit\gen_specification_document_set.py:713:    "cowork_idiom_entry_mapping.md": p(
+tools\audit\gen_specification_document_set.py:716:        "Provisional, easy to revise.", "cowork_idiom_entry_mapping.md",
+tools\audit\gen_specification_document_set.py:951:            "under Ruling 6 of `cowork_rulings_2026_08_21_successor_plan_sitting.md`, LESS ONE "
+tools\audit\gen_specification_document_set.py:953:            "`cowork_rulings_2026_08_22_step_zero_return_sitting.md`. It derives "
+tools\audit\gen_specification_document_set.py:956:        "dispatch": "cc_instruction_successor_plan_landing_and_step_zero.md",
+tools\audit\gen_specification_document_set.py:1075:            "THE SET CONTAINS A DATA MAPPING. `cowork_idiom_entry_mapping.md` is a member on the "
+tools\audit\gen_specification_document_set.py:1079:            "BECAUSE THE TEXT LOST THEM — `cowork_layer1_note_model_design.md` and "
+tools\audit\gen_specification_document_set.py:1080:            "`cowork_layer2_slicing_design.md`. Both delegations stand at the text word for word. "
+tools\audit\gen_framework_untrusted_candidates.py:4:THE RULINGS THIS EXISTS FOR.  User, 2026-08-17, `cowork_rulings_2026_08_17_residue_sitting.md`:
+tools\audit\gen_framework_untrusted_candidates.py:78:RULING = "cowork_rulings_2026_08_17_residue_sitting.md"
+tools\audit\gen_framework_untrusted_candidates.py:156:        "dispatch": "cc_instruction_preparation_eighth.md, Task 2",
+tools\audit\gen_l0_l1_outgoing_population.py:4:WHY THIS EXISTS.  Ruling 32 (§3am of `cowork_rulings_2026_08_31_decision_surface_sitting.md`)
+tools\audit\gen_l0_l1_outgoing_population.py:88:    "(§3an of `cowork_rulings_2026_08_31_decision_surface_sitting.md`) narrows Ruling 32's item "
+tools\audit\gen_l0_l1_outgoing_population.py:92:    "delegations under Ruling 6 of `cowork_rulings_2026_08_21_successor_plan_sitting.md` — and "
+tools\audit\gen_l0_l1_outgoing_population.py:131:        "path": "cowork_layer1_note_model_design.md",
+tools\audit\gen_l0_l1_outgoing_population.py:137:        "path": "cowork_layer1_tone_collection_design.md",
+tools\audit\gen_l0_l1_outgoing_population.py:143:        "path": "cowork_layer1_extend_design.md",
+tools\audit\gen_l0_l1_outgoing_population.py:149:        "path": "cowork_layer2_slicing_design.md",
+tools\audit\gen_l0_l1_outgoing_population.py:155:        "path": "cowork_layer2_reslice_design.md",
+tools\audit\gen_l0_l1_outgoing_population.py:173:        "path": "cowork_layer5_function_design.md",
+tools\audit\gen_l0_l1_outgoing_population.py:179:        "path": "cowork_phrase_boundary_design.md",
+tools\audit\gen_l0_l1_outgoing_population.py:185:        "path": "cowork_joint_estimator_factorization.md",
+tools\audit\gen_l0_l1_outgoing_population.py:217:    "(`cc_instruction_comparison_l0_l1_2026_09_02.md`) fixes the partition, and it is authored "
+tools\audit\gen_l0_l1_outgoing_population.py:473:            "`cowork_rulings_2026_08_31_decision_surface_sitting.md`.  It fixes WHICH "
+tools\audit\gen_l0_l1_outgoing_population.py:481:        "the_ruling": "§3am (Ruling 32) of cowork_rulings_2026_08_31_decision_surface_sitting.md",
+tools\audit\gen_reserved_word_scanner.py:8:COMPLETENESS is known, and **Ruling 31** of 2026-08-09 (`cowork_rulings_2026_08_09_fifth_stop.md`)
+tools\audit\gen_reserved_word_scanner.py:75:    "cowork_audit_protocol.md",
+tools\audit\gen_reserved_word_scanner.py:76:    "cowork_design_doc_template.md",
+tools\audit\gen_reserved_word_scanner.py:293:        "the_ruling": "Ruling 31 of `cowork_rulings_2026_08_09_fifth_stop.md`: the collision "
+tools\audit\gen_reserved_word_scanner.py:303:            "the_ruling": "Ruling 37 of `cowork_rulings_2026_08_09_sixth_stop.md`, recorded here "
+tools\audit\gen_reserved_word_scanner.py:305:                          "`cc_instruction_return_continuation_6.md` Task 0.",
+tools\audit\gen_reserved_word_scanner.py:314:                "cowork_audit_protocol.md beside D-436; this artifact is the evidence for it and "
+tools\audit\index_status_lint.py:5:(`cowork_rulings_2026_08_09_fifth_stop.md`): **every INDEX status cell begins with one canonical
+tools\audit\gen_l0l1_exemplar_selection.py:6:Executes `cc_instruction_l0l1_exemplar_selection_2026_08_31.md`, which in turn executes
+tools\audit\gen_l0l1_exemplar_selection.py:7:Ruling 12 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` §3l.
+tools\audit\gen_l0l1_exemplar_selection.py:383:    note_files = sorted(p for p in NOTES_DIR.iterdir() if p.name.endswith(NOTE_SUFFIX))
+tools\audit\gen_l0l1_exemplar_selection.py:621:        "generated_for": "cc_instruction_l0l1_exemplar_selection_2026_08_31.md, Tasks 1 and 2",
+tools\audit\gen_l0l1_exemplar_selection.py:623:            "Ruling 12 of cowork_rulings_2026_08_31_decision_surface_sitting.md, section 3l: for "
+tools\audit\gen_filing_convention_application.py:5:(`cowork_rulings_2026_08_11_fourteenth_stop.md`), homed at `cowork_design_doc_template.md` beside
+tools\audit\gen_filing_convention_application.py:129:APPLIED = ("2026-08-11, `cc_instruction_return_continuation_14.md` Task 0/2, on the user's "
+tools\audit\gen_filing_convention_application.py:145:    "cc_instruction_phase1s_stale_rules_and_enumeration.md": _v(
+tools\audit\gen_filing_convention_application.py:150:    "cc_instruction_phase1z_commit_and_instrument_record.md": _v(
+tools\audit\gen_filing_convention_application.py:174:    "cowork_phase2_architecture_review.md": _v(
+tools\audit\gen_filing_convention_application.py:211:    "ratification_surfaces/cowork_pending_ratifications_next_session.md": _v(
+tools\audit\gen_filing_convention_application.py:248:        for p in sorted(ROOT.glob(pattern)):
+tools\audit\gen_filing_convention_application.py:344:            "cowork_design_doc_template.md, beside the kind list (#6).",
+tools\audit\gen_recognizer_establishment_sort.py:6:`cowork_rulings_2026_08_19_twelfth_return.md`), quoted verbatim:
+tools\audit\gen_recognizer_establishment_sort.py:111:    enumeration (`os.listdir(ROOT)` filtered to the root-level ruling records) PUBLISHED WHOLE as
+tools\audit\gen_recognizer_establishment_sort.py:172:WALK_CALLS = ("os.walk", "os.listdir", "glob", "iglob", "rglob", "scandir")
+tools\audit\gen_recognizer_establishment_sort.py:595:        "generated_for": "cc_instruction_preparation_thirteenth.md, Task 2",
+tools\audit\gen_recognizer_establishment_sort.py:602:                      "`cowork_rulings_2026_08_19_twelfth_return.md`. The clause it lands stands "
+tools\audit\gen_recognizer_establishment_sort.py:603:                      "at `cowork_audit_protocol.md`'s dispatch-protocol section.",
+tools\audit\hardening_battery.py:176:        for committed in sorted((CORPUS_ROOT / p).glob("*.ours.json")):
+tools\audit\gen_evidence_pin_membership.py:5:`cowork_rulings_2026_08_17_ninth_return.md`), quoted verbatim:
+tools\audit\gen_evidence_pin_membership.py:20:that executes the ruling (`cc_instruction_preparation_tenth.md`, Task 1) orders it derived and
+tools\audit\gen_evidence_pin_membership.py:29:RULING RECORDS       Every root-level `cowork_rulings_*.md`.
+tools\audit\gen_evidence_pin_membership.py:39:                     `cowork_rulings_2026_08_16_preparation_return.md` pinned its two completed
+tools\audit\gen_evidence_pin_membership.py:112:RULING_RECORD = re.compile(r'^cowork_rulings_.*\.md$')
+tools\audit\gen_evidence_pin_membership.py:186:    return sorted(fn for fn in os.listdir(ROOT)
+tools\audit\gen_evidence_pin_membership.py:360:        "generated_for": "cc_instruction_preparation_tenth.md, Task 1",
+tools\audit\gen_evidence_pin_membership.py:372:        "the_ruling": "User, 2026-08-17, Ruling 1 of `cowork_rulings_2026_08_17_ninth_return.md`, "
+tools\audit\gen_evidence_pin_membership.py:373:                      "extending §6 kind 1 of `cowork_rulings_2026_08_16_preparation_return.md`.",
+tools\audit\gen_evidence_pin_membership.py:377:            "ruling_records": "every root-level `cowork_rulings_*.md`",
+tools\audit\instrument_arm_declaration_effect.py:244:        "generated_for": "cc_instruction_phase1z_commit_and_instrument_record.md, Task 2.2 -- "
+tools\audit\gen_epoch_write_path.py:6:`cowork_rulings_2026_08_19_eleventh_return.md`), quoted verbatim:
+tools\audit\gen_epoch_write_path.py:57:`cc_instruction_preparation_eleventh_amended.md` Task 3 and declared there, and
+tools\audit\gen_epoch_write_path.py:122:        "corrected to the symmetric shape at `cc_instruction_preparation_eleventh_amended.md` "
+tools\audit\gen_epoch_write_path.py:379:        "generated_for": "cc_instruction_preparation_twelfth.md, Task 3",
+tools\audit\gen_epoch_write_path.py:385:                      "`cowork_rulings_2026_08_19_eleventh_return.md`.",
+tools\audit\gen_ratified_document_check.py:6:`cowork_rulings_2026_08_16_preparation_return.md`: *"The 62 remaining ACT-FOUND entries are NOT
+tools\audit\gen_ratified_document_check.py:62:the user's Ruling 2 of `cowork_rulings_2026_08_18_tenth_return.md`; executed by
+tools\audit\gen_ratified_document_check.py:63:`cc_instruction_preparation_eleventh_amended.md` Task 3).  The surface said of itself that nothing
+tools\audit\gen_ratified_document_check.py:98:RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
+tools\audit\gen_ratified_document_check.py:99:RULING_PATH = "cowork_rulings_2026_08_16_preparation_return.md"
+tools\audit\gen_ratified_document_check.py:102:           / "cowork_discard_residue_surface_2026_08_16.md")
+tools\audit\gen_ratified_document_check.py:115:# class, applied to this member (`cc_instruction_preparation_eleventh_amended.md` Task 1, executing
+tools\audit\gen_ratified_document_check.py:116:# Ruling 1 of `cowork_rulings_2026_08_18_tenth_return.md` at the derivation Ruling 3 of
+tools\audit\gen_ratified_document_check.py:117:# `cowork_rulings_2026_08_18_eleventh_stop.md` sharpened).
+tools\audit\gen_ratified_document_check.py:140:    "`ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md` dated at or before the "
+tools\audit\gen_ratified_document_check.py:141:    "commit that landed `cowork_rulings_2026_08_17_residue_sitting.md` in git — and the only "
+tools\audit\gen_ratified_document_check.py:582:        "dispatch": "cc_instruction_preparation_third.md, Task 2",
+tools\audit\gen_ratified_document_check.py:593:            "source": "cowork_rulings_2026_08_16_preparation_return.md §3 (B2)",
+tools\audit\gen_ratified_document_check.py:705:    add("> whose record is `cowork_rulings_2026_08_17_residue_sitting.md`** — the authority for what")
+tools\audit\gen_ratified_document_check.py:715:    add("> presentation rule (`cowork_rulings_2026_08_15_batch_return.md` §5) every identifier used")
+tools\audit\gen_ratified_document_check.py:752:    add("  (`cowork_rulings_2026_08_15_phase_definition_sitting.md`). Turning the project's own")
+tools\audit\gen_ratified_document_check.py:759:    add("The ruling is `cowork_rulings_2026_08_16_preparation_return.md` §3, and it has three")
+tools\audit\gen_ratified_document_check.py:955:    # `cc_instruction_preparation_eleventh_amended.md` Task 3; DECLARED AS A JUDGMENT in that
+tools\audit\gen_ratified_document_check.py:963:    # qualification renderable at all (Ruling 2 of `cowork_rulings_2026_08_18_tenth_return.md` orders
+tools\diff_iter90_flips.py:44:for stem_path in sorted(POST.glob("*.ours.json")):
+tools\audit\gen_july_screen.py:4:Dispatch: `cc_instruction_period_checks.md`, Task 2 (Cowork, 2026-08-15), executing the second
+tools\audit\gen_july_screen.py:5:ruling of `cowork_rulings_2026_08_15_period_start.md`.
+tools\audit\gen_july_screen.py:119:#    `cc_instruction_successor_plan_landing_and_step_zero.md` Task 3, executing Ruling 7) ──────────
+tools\audit\gen_july_screen.py:148:    "Ruling 2(b) of `cowork_rulings_2026_08_22_step_zero_return_sitting.md`: \"ONLY the "
+tools\audit\gen_july_screen.py:218:  "One pointer, `COWORK_HANDOFF.md` → `cowork_handoff.md`, following the tracked rename of that "
+tools\audit\gen_july_screen.py:311:      "\"The inference-affecting half of the OI-168 dispatch (cc_instruction_oi168_fix.md, Cowork "
+tools\audit\gen_july_screen.py:329:      ratification_at="the commit's own account (\"cc_instruction_oi168_fix.md, Cowork 2026-07-13, "
+tools\audit\gen_july_screen.py:441:      "cowork_notation_adoption_increment.md §5\".",
+tools\audit\gen_july_screen.py:445:      ratification_at="`cowork_notation_adoption_increment.md` §5, the decision surface CLAUDE.md's "
+tools\audit\gen_july_screen.py:714:                  "states the ratifying surface as `cowork_notation_adoption_increment.md` §7 + §10")
+tools\audit\gen_july_screen.py:727:                  "ratifying surface `cowork_notation_adoption_increment.md` §7 + §10")
+tools\audit\gen_july_screen.py:910:  ratification_at="`cowork_confidence_contract.md`'s own banner, \"Status: RATIFIED (user, "
+tools\audit\gen_july_screen.py:1057:# ══ THE PASS CONTINUED, 2026-08-22 (`cc_instruction_step_zero_exclusion_and_pass_continuation.md`
+tools\audit\gen_july_screen.py:1058:#    Task 2, under Ruling 1 of `cowork_rulings_2026_08_22_dispatch_order_sitting.md`).  The remainder
+tools\audit\gen_july_screen.py:1105:                  "`cowork_pending_ratifications_next_session.md`, and the dispatch that applied "
+tools\audit\gen_july_screen.py:1106:                  "them, `cc_instruction_phase1k_apply_rulings.md`")
+tools\audit\gen_july_screen.py:1117:  "that statement is a record document (`cowork_style_taxonomy_proposal.md`, "
+tools\audit\gen_july_screen.py:1118:  "`cowork_progression_schema_dictionary.md`) and none is implementation code; the encoding is "
+tools\audit\gen_july_screen.py:1126:                  "`cowork_pending_ratifications_next_session.md`")
+tools\audit\gen_july_screen.py:1145:                  "`cc_instruction_phase1m_dispositions_and_measurements.md`; and register entry "
+tools\audit\gen_july_screen.py:1173:    "`cowork_prefit_gates.md` (USER-RATIFIED 2026-07-19) and D-270…D-274, with its own parenthesis "
+tools\audit\gen_july_screen.py:1185:    "`cowork_layer5_function_design.md` (SIGNED, user, 2026-06-26) and D-335…D-342, with its own "
+tools\audit\gen_july_screen.py:1254:    "`cc_instruction_census_delegation_and_commit.md`")
+tools\audit\gen_july_screen.py:1303:                  "names, `cc_instruction_c1_ruling_and_item1c.md` (register entry D-642)")
+tools\audit\gen_july_screen.py:1369:                  "`cc_instruction_guard_fix_and_item1d.md` (\"ruling R2 recorded (D-644) and "
+tools\audit\gen_july_screen.py:1371:                  "`cowork_audit_protocol.md`, register entry D-644")
+tools\audit\gen_july_screen.py:1378:    "acts these hunks are is `cc_instruction_owner_rulings_homing.md` — \"the forty-eight owner "
+tools\audit\gen_july_screen.py:1389:           "`cowork_owner_rulings_2026_08_07.md`; the dispatch "
+tools\audit\gen_july_screen.py:1390:           "`cc_instruction_owner_rulings_homing.md`; and D-231's phase-1 clause at `CLAUDE.md` "
+tools\audit\gen_july_screen.py:1553:    "The commit's own account is \"Task 0 of the away batch (`cc_instruction_away_execution.md`), "
+tools\audit\gen_july_screen.py:1554:    "applying the user's Ruling 1 of 2026-08-08 (`cowork_rulings_2026_08_08_pre_away.md`)\", and it "
+tools\audit\gen_july_screen.py:1565:           "record the commit names, `cowork_rulings_2026_08_08_pre_away.md`; and D-231's phase-1 "
+tools\audit\gen_july_screen.py:1577:    "`cowork_joint_estimator_factorization.md` and saying what the six rules beneath it govern by "
+tools\audit\gen_july_screen.py:1692:    "The commit's own account is \"Task 2 of the away batch (`cc_instruction_away_execution.md`). "
+tools\audit\gen_july_screen.py:1693:    "D-601's homing is the one edit Ruling 2 of `cowork_rulings_2026_08_08_pre_away.md` "
+tools\audit\gen_july_screen.py:1705:           "record the batch applies, `cowork_rulings_2026_08_08_pre_away.md`; and D-231's phase-1 "
+tools\audit\gen_july_screen.py:1734:    "applying `cowork_rulings_2026_08_09_return.md` read whole, and it states its scope: \"No src/ "
+tools\audit\gen_july_screen.py:1757:                  "`cowork_rulings_2026_08_09_return.md`; and the rule's home at "
+tools\audit\gen_july_screen.py:1758:                  "`cowork_audit_protocol.md`, register entry D-649")
+tools\audit\gen_july_screen.py:1773:                  "ruling\"; `cowork_rulings_2026_08_09_return.md`; and the measurement half's own "
+tools\audit\gen_july_screen.py:1797:    "The commit's own account is \"Dispatch `cc_instruction_return_continuation_6.md` Task 1, on "
+tools\audit\gen_july_screen.py:1798:    "the user's Ruling 38 of `cowork_rulings_2026_08_09_sixth_stop.md`: re-homing into the owning "
+tools\audit\gen_july_screen.py:1807:           "ruling record the commit names, `cowork_rulings_2026_08_09_sixth_stop.md`; and the "
+tools\audit\gen_july_screen.py:1834:  "user's Ruling 39 of `cowork_rulings_2026_08_09_seventh_stop.md`, and it records that the wording "
+tools\audit\gen_july_screen.py:1843:      "naming `cowork_score_census.md` as a document-level delegation whose reach is judged per "
+tools\audit\gen_july_screen.py:1847:                  "`cowork_rulings_2026_08_09_seventh_stop.md`")
+tools\audit\gen_july_screen.py:1853:    "The commit's own account is \"Rulings 60–64 of `cowork_rulings_2026_08_11_fourteenth_stop.md`, "
+tools\audit\gen_july_screen.py:1854:    "read whole (D-643), applied under `cc_instruction_return_continuation_14.md` Task 0\", and all "
+tools\audit\gen_july_screen.py:1863:           "(`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 63, closing `OPEN_ITEMS.md` "
+tools\audit\gen_july_screen.py:1903:    "either direction\", executing `cc_instruction_return_continuation_14.md` Task 1. It is the "
+tools\audit\gen_july_screen.py:1958:    "`cc_instruction_return_continuation_14.md` Task 3, and the three `ARCHITECTURE.md` hunks are "
+tools\audit\gen_july_screen.py:2000:# ── `cowork_bounded_context_design.md` ────────────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2001:w("d1eadc076cfb7c3923d3742ce74f3b75de4e57b4", "cowork_bounded_context_design.md", "-225 +225,8",
+tools\audit\gen_july_screen.py:2031:w(_BC, "cowork_bounded_context_design.md", "-65,5 +65,26", CODE_INFLUENCED,
+tools\audit\gen_july_screen.py:2037:w(_BC, "cowork_bounded_context_design.md", "-138 +159,5", CODE_INFLUENCED,
+tools\audit\gen_july_screen.py:2044:w(_BC, "cowork_bounded_context_design.md", "-249,2 +274,4", CODE_INFLUENCED,
+tools\audit\gen_july_screen.py:2050:# ── `cowork_confidence_contract.md` ───────────────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2051:w("dfbf3ab824f0717d83cf3cce8e332c69f1074328", "cowork_confidence_contract.md", "-86,0 +87,13",
+tools\audit\gen_july_screen.py:2068:                  "record the batch applies, `cowork_rulings_2026_08_08_pre_away.md`")
+tools\audit\gen_july_screen.py:2070:# ── `cowork_layer3_keymode_design.md` ─────────────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2071:w("f3c7f1afe24668f38b182755e58745f3a4db4aad", "cowork_layer3_keymode_design.md", "-4 +4,17",
+tools\audit\gen_july_screen.py:2083:# ── `cowork_layer6_grouping_design.md` ────────────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2084:w("640d587ab9549904110453b1cbcd362c348de784", "cowork_layer6_grouping_design.md", "-233,0 +234,10",
+tools\audit\gen_july_screen.py:2100:                  "decisions-register rule (l); and `cowork_rulings_2026_08_09_sixth_stop.md`")
+tools\audit\gen_july_screen.py:2102:# ── `cowork_stage5_fitter_design.md` ──────────────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2103:w("1b8ecaf685295024cdeafee067332ca38b26be04", "cowork_stage5_fitter_design.md", "-108,0 +109,11",
+tools\audit\gen_july_screen.py:2116:w("bf48b1f834afe7b0b71da7473b373e37549e99ea", "cowork_stage5_fitter_design.md", "-118,0 +119,11",
+tools\audit\gen_july_screen.py:2128:# ── `cowork_voiceleading_axis_design.md` — a SECTION-SCOPED member (§0, §5.1, §5.3, §8, §9) ───────
+tools\audit\gen_july_screen.py:2129:w("9fe7f4561f750de4403b9bf9cfe812e474a1a5b3", "cowork_voiceleading_axis_design.md", "-95,2 +95,12",
+tools\audit\gen_july_screen.py:2148:w(_VL, "cowork_voiceleading_axis_design.md", "-6 +6,4", OUTSIDE_SECTIONS,
+tools\audit\gen_july_screen.py:2151:w(_VL, "cowork_voiceleading_axis_design.md", "-77,2 +80,12", RATIFIED,
+tools\audit\gen_july_screen.py:2167:w(_VL, "cowork_voiceleading_axis_design.md", "-219,2 +232,5", OUTSIDE_SECTIONS,
+tools\audit\gen_july_screen.py:2169:w(_VL, "cowork_voiceleading_axis_design.md", "-571,3 +587,7", OUTSIDE_SECTIONS,
+tools\audit\gen_july_screen.py:2172:# ── `cowork_phrase_boundary_design.md` ────────────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2182:           "`cowork_rulings_2026_08_09_sixth_stop.md`; and the commit's own subject, which names "
+tools\audit\gen_july_screen.py:2185:w(_PB, "cowork_phrase_boundary_design.md", "-82,0 +83,12", RATIFIED,
+tools\audit\gen_july_screen.py:2193:w(_PB, "cowork_phrase_boundary_design.md", "-192,0 +205,15", RATIFIED,
+tools\audit\gen_july_screen.py:2202:# ── `cowork_layer5_function_design.md` ────────────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2217:w(_LF, "cowork_layer5_function_design.md", "-203 +203,2", RATIFIED,
+tools\audit\gen_july_screen.py:2223:w(_LF, "cowork_layer5_function_design.md", "-208 +209,2", RATIFIED,
+tools\audit\gen_july_screen.py:2229:w(_LF, "cowork_layer5_function_design.md", "-211 +213,8", RATIFIED,
+tools\audit\gen_july_screen.py:2237:w(_LF, "cowork_layer5_function_design.md", "-226 +235", RESTRUCTURING,
+tools\audit\gen_july_screen.py:2244:w(_LF, "cowork_layer5_function_design.md", "-888,12 +897,8", RATIFIED,
+tools\audit\gen_july_screen.py:2253:# ── `cowork_evidence_inventory.md` ────────────────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2262:w("fe985ab04757dc9eb214ed12664001fa5156238e", "cowork_evidence_inventory.md", "-0,0 +1,216",
+tools\audit\gen_july_screen.py:2278:w("3966502265254dbfe721a3607b1b3c50116e030d", "cowork_evidence_inventory.md", "-32 +32,8",
+tools\audit\gen_july_screen.py:2289:w("0bc49b4b48fe5b23413a82f71c906fcf3038f91d", "cowork_evidence_inventory.md", "-205,0 +206,9",
+tools\audit\gen_july_screen.py:2304:w(_EX, "cowork_evidence_inventory.md", "-206 +206", RESTRUCTURING,
+tools\audit\gen_july_screen.py:2312:w(_EX, "cowork_evidence_inventory.md", "-214,0 +215,11", RATIFIED,
+tools\audit\gen_july_screen.py:2328:w("e02bbebf887274edd119bf72cd0f6aa1763f34dc", "cowork_evidence_inventory.md", "-225,0 +226,24",
+tools\audit\gen_july_screen.py:2344:# ══ THE PASS CONTINUED A SECOND TIME, 2026-08-22 (`cc_instruction_pass_continuation_second.md`
+tools\audit\gen_july_screen.py:2345:#    Task 1, under Ruling 1 of `cowork_rulings_2026_08_22_dispatch_order_sitting.md`).  The remainder
+tools\audit\gen_july_screen.py:2352:# ── `cowork_joint_estimator_architecture.md` ──────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2353:w("06d4318bd1f322d055d04622681587c44a01bffb", "cowork_joint_estimator_architecture.md",
+tools\audit\gen_july_screen.py:2363:  "document SUPERSEDES the incremental key-layer framing of `cowork_key_layer_design_opening.md`: "
+tools\audit\gen_july_screen.py:2378:w("910a998e9b5c52383e6accb2460007178070352a", "cowork_joint_estimator_architecture.md",
+tools\audit\gen_july_screen.py:2401:# ── `cowork_joint_estimator_factorization.md` ─────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2402:w("910a998e9b5c52383e6accb2460007178070352a", "cowork_joint_estimator_factorization.md",
+tools\audit\gen_july_screen.py:2408:  "\"The factorization specification (cowork_joint_estimator_factorization.md) is ratified the same "
+tools\audit\gen_july_screen.py:2436:                 "`cowork_factorization_desk_simulation.md`)\"; the commit's own account; and "
+tools\audit\gen_july_screen.py:2437:                 "register entry D-453, whose home is `cowork_factorization_desk_simulation.md` §7")
+tools\audit\gen_july_screen.py:2441:                  "simulation — `cowork_factorization_desk_simulation.md` §4.1, the "
+tools\audit\gen_july_screen.py:2451:w(_DSIM, "cowork_joint_estimator_factorization.md", "-5,2 +5,5", RATIFIED,
+tools\audit\gen_july_screen.py:2458:w(_DSIM, "cowork_joint_estimator_factorization.md", "-58,0 +62,11", RATIFIED,
+tools\audit\gen_july_screen.py:2466:w(_DSIM, "cowork_joint_estimator_factorization.md", "-77 +91,2", RATIFIED,
+tools\audit\gen_july_screen.py:2473:w(_DSIM, "cowork_joint_estimator_factorization.md", "-112,2 +127,6", RATIFIED,
+tools\audit\gen_july_screen.py:2484:w(_DSIM, "cowork_joint_estimator_factorization.md", "-142,0 +162,5", RATIFIED,
+tools\audit\gen_july_screen.py:2491:w(_DSIM, "cowork_joint_estimator_factorization.md", "-169,2 +193,2", RATIFIED,
+tools\audit\gen_july_screen.py:2498:w("73c84b92d3fd3ba1a678ab90236bb40d99a97926", "cowork_joint_estimator_factorization.md",
+tools\audit\gen_july_screen.py:2504:  "\"(user-ratified 2026-07-19 at the fitted-table probe, `cowork_sensitive_cell_probe.md` finding "
+tools\audit\gen_july_screen.py:2515:w("869e75e0a0cdeff78922b7d8f496d14d2f103f3c", "cowork_joint_estimator_factorization.md",
+tools\audit\gen_july_screen.py:2521:  "(cowork_joint_estimator_factorization.md §5, user-ratified 2026-07-20)\". ★ The first class was "
+tools\audit\gen_july_screen.py:2538:# ── `cowork_notation_adoption_increment.md` ───────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2539:w("00c0df81c5682fbda0515a81cea0c3c541e8ee23", "cowork_notation_adoption_increment.md",
+tools\audit\gen_july_screen.py:2565:w("5f3362f35992371c522ef1649f94598c97ac124a", "cowork_notation_adoption_increment.md",
+tools\audit\gen_july_screen.py:2582:# ── `cowork_notation_output_contract.md` ──────────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2588:w("5f3362f35992371c522ef1649f94598c97ac124a", "cowork_notation_output_contract.md",
+tools\audit\gen_july_screen.py:2610:w("04fb57ab083d35fb19943c7c11e702d29d29ce51", "cowork_notation_output_contract.md",
+tools\audit\gen_july_screen.py:2632:w("58ac88079be79bfbf6e0f084dc621cf8e457a2a5", "cowork_notation_output_contract.md",
+tools\audit\gen_july_screen.py:2655:# ── `cowork_prefit_gates.md` ──────────────────────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2656:w("61a8ed750f4ca5ea2465558d69bb1f80045e21cf", "cowork_prefit_gates.md", "-0,0 +1,181", RATIFIED,
+tools\audit\gen_july_screen.py:2679:w("aef4540c0d01676ac4bad326aa78ea141fc91c23", "cowork_prefit_gates.md", "-76,2 +76,6", RATIFIED,
+tools\audit\gen_july_screen.py:2699:w("869e75e0a0cdeff78922b7d8f496d14d2f103f3c", "cowork_prefit_gates.md", "-147,0 +148,9", RATIFIED,
+tools\audit\gen_july_screen.py:2719:                  "`cowork_prefit_gates.md` among its riding doc edits; and register entry D-274, "
+tools\audit\gen_july_screen.py:2728:    "commit\" — taken under \"user ruling ★R=A1\", and it names `cowork_prefit_gates.md` (the ★R=A1 "
+tools\audit\gen_july_screen.py:2748:w(_ADOPT, "cowork_prefit_gates.md", "-117 +117", RATIFIED,
+tools\audit\gen_july_screen.py:2753:w(_ADOPT, "cowork_prefit_gates.md", "-119 +119,11", RATIFIED,
+tools\audit\gen_july_screen.py:2759:# ── `cowork_score_census.md` ──────────────────────────────────────────────────────────────────────
+tools\audit\gen_july_screen.py:2765:    "`cowork_rulings_2026_08_09_eighth_stop.md`, whose three-step procedure it executes, with the "
+tools\audit\gen_july_screen.py:2776:w(_CEN40, "cowork_score_census.md", "-71,0 +72,9", RATIFIED,
+tools\audit\gen_july_screen.py:2785:                  "`cowork_rulings_2026_08_09_eighth_stop.md` as its authority; and register entry "
+tools\audit\gen_july_screen.py:2788:w(_CEN40, "cowork_score_census.md", "-78,0 +88,10", RATIFIED,
+tools\audit\gen_july_screen.py:2799:w(_CEN40, "cowork_score_census.md", "-92,0 +112,18", RATIFIED,
+tools\audit\gen_july_screen.py:2813:w(_CEN40, "cowork_score_census.md", "-254,0 +292,11", RATIFIED,
+tools\audit\gen_july_screen.py:2827:    "of `cowork_rulings_2026_08_09_ninth_stop.md`, read whole (D-643), with the kind half judged per "
+tools\audit\gen_july_screen.py:2834:w(_CEN9, "cowork_score_census.md", "-241,0 +242,15", RATIFIED,
+tools\audit\gen_july_screen.py:2845:                  "which names Rulings 44–48 of `cowork_rulings_2026_08_09_ninth_stop.md`; and "
+tools\audit\gen_july_screen.py:2848:w(_CEN9, "cowork_score_census.md", "-312,0 +328,10", RATIFIED,
+tools\audit\gen_july_screen.py:2858:                  "which names Rulings 44–48 of `cowork_rulings_2026_08_09_ninth_stop.md`; and "
+tools\audit\gen_july_screen.py:2865:  "`cowork_pending_ratifications_next_session.md` §1, applied at phase 1k.*\" The commit's own "
+tools\audit\gen_july_screen.py:2880:                  "`ratification_surfaces/cowork_pending_ratifications_next_session.md` §1")
+tools\audit\gen_july_screen.py:2883:  "One pointer inside the banner is re-aimed — `cowork_pending_ratifications_next_session.md` "
+tools\audit\gen_july_screen.py:2884:  "becomes `ratification_surfaces/cowork_pending_ratifications_next_session.md` — following the "
+tools\audit\gen_july_screen.py:2895:    "wave (`cc_instruction_licensed_homing_and_oi344.md`, named in the commit's own manifest). Each "
+tools\audit\gen_july_screen.py:2986:  "`cowork_rulings_2026_08_08_pre_away.md`. ★ The first class was applied first and does NOT fire: "
+tools\audit\gen_july_screen.py:2998:                  "`cowork_rulings_2026_08_08_pre_away.md`; the homing licence, register entry "
+tools\audit\gen_july_screen.py:3473:        "dispatch": "cc_instruction_period_checks.md",
+tools\audit\gen_july_screen.py:3481:                "From `cowork_rulings_2026_08_15_period_start.md`: \"if any shows a code-influenced "
+tools\audit\gen_july_screen.py:3519:            "taken_at": ("`cc_instruction_period_checks.md` §0a, prediction P2, registered before "
+tools\audit\gen_ratification_surface_set.py:35:Dispatch: cc_instruction_phase1u_partition_record_and_directory.md, Task 4.1.
+tools\audit\gen_ratification_surface_set.py:113:        for name in sorted(os.listdir(d)):
+tools\audit\gen_ratification_surface_set.py:241:                   "only); .gitignore excludes /cc_instruction_*.md and /cc_*.md as a class, so "
+tools\audit\gen_ratification_surface_set.py:244:        "generated_for": "cc_instruction_phase1u_partition_record_and_directory.md, Task 4",
+tools\audit\gen_doc_change_candidates.py:5:Dispatch: `cc_instruction_evidence_candidate_pass.md` (Cowork, 2026-08-13, on the user's rulings of
+tools\audit\gen_doc_change_candidates.py:128:        "act": "STATUS.md and cowork_handoff.md are split into lean active must-reads plus "
+tools\audit\gen_doc_change_candidates.py:131:                          "cowork_handoff_archive.md hold the superseded historical entries moved "
+tools\audit\gen_doc_change_candidates.py:132:                          "out by the doc split (cc_instruction_doc_split.md)\".",
+tools\audit\gen_doc_change_candidates.py:205:    if base.startswith("cc_instruction_"):
+tools\audit\gen_doc_change_candidates.py:209:    if base.startswith("cowork_"):
+tools\audit\gen_doc_change_candidates.py:730:        "dispatch": "cc_instruction_evidence_candidate_pass.md",
+tools\rerun_dcml_comparison.py:65:        for jf in sorted(reports_dir.glob("*.json")):
+tools\rerun_dcml_comparison.py:131:    ours_files = sorted(ours_dir.glob("*.ours.json"))
+tools\rerun_dcml_comparison.py:232:        for cand in sorted(root.glob(cfg["ours_glob"])):
+tools\rerun_dcml_comparison.py:279:    ours_files = sorted(corpus_dir.glob("*.ours.json"))
+tools\diff_iter90_classification.py:18:for stem_path in sorted(POST.glob("*.ours.json")):
+tools\audit\gen_inventory.py:23:WHAT THIS IS (protocol P1, cowork_audit_protocol.md; #17(f) applied to audit SCOPE):
+tools\audit\gen_inventory.py:142:# Authority: ARCHITECTURE.md §"Layer 1/2"; cowork_layer1_note_model_design.md §3/§5;
+tools\audit\gen_inventory.py:143:# cowork_layer2_slicing_design.md §3; roadmap retirement map R1-R10 (docs/
+tools\audit\gen_inventory.py:162:     "Phrase-boundary primitive — L1.5 notation-derived view (cowork_phrase_boundary_design.md)"),
+tools\audit\gen_inventory.py:442:# cowork_layer5_function_design.md (SIGNED) §1/§13; ARCHITECTURE.md §"Layer 5"/§"Layer 6";
+tools\audit\gen_inventory.py:638:# cc_instruction_oi199_pass1.md):
+tools\audit\gen_inventory.py:1122:                "read_csv", "to_csv", "makedirs", "mkdir", "walk", "listdir"}
+tools\audit\gen_post_split_archive.py:5:`cowork_rulings_2026_08_17_session_start_read_sitting.md`: *"The archivability test (§5(E) of the
+tools\audit\gen_post_split_archive.py:39:`cowork_rulings_2026_08_16_preparation_return.md`), whose recorded ground is the asymmetry — a
+tools\audit\gen_post_split_archive.py:54:    standing constraint ruled at Ruling 1 of `cowork_rulings_2026_08_17_eighth_return.md`.
+tools\audit\gen_post_split_archive.py:96:PIN_IS = "cc_instruction_preparation_ninth.md Task 1, pushed before this task began"
+tools\audit\gen_post_split_archive.py:99:DISPATCH = "cc_instruction_preparation_ninth.md"
+tools\audit\gen_post_split_archive.py:100:RULING = "cowork_rulings_2026_08_17_session_start_read_sitting.md"
+tools\audit\gen_post_split_archive.py:180:    "`cowork_rulings_2026_08_17_governing_surface_split.md` moves a batch's entries to "
+tools\audit\gen_dispositions.py:102:        assumes="phrase ends are readable from the notated surface alone, key/chord/function-agnostic (THEORY: local-change surface cues; design cowork_phrase_boundary_design.md §4) — MUST be cadence-agnostic (cadence CONSUMES it — circularity guard)",
+tools\audit\gen_index_status_normalization.py:14:The user's Ruling 33 of 2026-08-09 (`cowork_rulings_2026_08_09_fifth_stop.md`) remedies the family
+tools\audit\gen_index_status_normalization.py:388:        "the_ruling": "Ruling 33 of `cowork_rulings_2026_08_09_fifth_stop.md`: one family, one fix "
+tools\diag_iter8_gates_detailed.py:269:    ours_files = sorted(CORPUS_DIR.glob("*.ours.json"))
+tools\audit\gen_phase3_gate_partition.py:42:# from the dispatch that carries them (cc_instruction_phase1o_gate_partition_and_probe_rerun.md).
+tools\audit\gen_phase3_gate_partition.py:95:        "requirement side - and now POINTS at cowork_oi200_perspective_inventory.md section 4 "
+tools\audit\gen_phase3_gate_partition.py:105:    "file": "cowork_oi200_perspective_inventory.md",
+tools\audit\gen_phase3_gate_partition.py:148:            "cowork_oi200_perspective_inventory.md section 4, the subsection headed 'Which of "
+tools\audit\gen_phase3_gate_partition.py:282:            "file": "cowork_oi200_perspective_inventory.md",
+tools\audit\gen_phase3_gate_partition.py:306:            "file": "cowork_oi200_perspective_inventory.md",
+tools\audit\gen_phase3_gate_partition.py:334:            "file": "cowork_oi200_perspective_inventory.md",
+tools\audit\gen_phase3_gate_partition.py:358:            "file": "cowork_oi200_perspective_inventory.md",
+tools\audit\gen_phase3_gate_partition.py:384:            "file": "cowork_oi200_perspective_inventory.md",
+tools\audit\gen_phase3_gate_partition.py:412:            "file": "cowork_oi200_perspective_inventory.md",
+tools\audit\gen_phase3_gate_partition.py:438:            "file": "cowork_oi200_perspective_inventory.md",
+tools\audit\gen_phase3_gate_partition.py:462:            "file": "cowork_oi200_perspective_inventory.md",
+tools\audit\gen_phase3_gate_partition.py:487:            "file": "cowork_oi200_perspective_inventory.md",
+tools\audit\gen_phase3_gate_partition.py:514:            "file": "cowork_oi200_perspective_inventory.md",
+tools\audit\gen_phase3_gate_partition.py:732:        "cowork_oi200_perspective_inventory.md read in full, and the rule's own clause read at "
+tools\audit\gen_phase3_gate_partition.py:807:# (cc_instruction_phase1u_partition_record_and_directory.md §2). The quote is preserved HERE
+tools\audit\gen_phase3_gate_partition.py:808:# because .gitignore excludes /cc_instruction_*.md as a class, so the surface that made the
+tools\audit\gen_phase3_gate_partition.py:816:        "(cc_instruction_phase1u_partition_record_and_directory.md, section 2). Not a user "
+tools\audit\gen_phase3_gate_partition.py:1020:        "generated_for": "cc_instruction_phase1o_gate_partition_and_probe_rerun.md, Tasks 1-2",
+tools\audit\gen_discard_records.py:5:`cowork_rulings_2026_08_13_seventeenth_stop.md`, homed at `CLAUDE.md`'s open-items register section
+tools\audit\gen_discard_records.py:118:        "surface": "cowork_away_returns.md",
+tools\audit\gen_discard_records.py:135:        "recorded_by": "CC, 2026-08-13, `cc_instruction_false_statements_pass.md` Task 3",
+tools\audit\gen_discard_records.py:150:        "record_opens_at": "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` "
+tools\audit\gen_discard_records.py:156:        "date": "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)",
+tools\audit\gen_discard_records.py:166:        "recorded_by": "CC, 2026-08-12, `cc_instruction_worth_test.md` Task 2",
+tools\audit\gen_discard_records.py:198:        "retired_by": "CC, `cc_instruction_batch_return_rulings.md` Task 2, on the user's ruling "
+tools\audit\gen_discard_records.py:199:                      "of 2026-08-15 (`cowork_rulings_2026_08_15_batch_return.md` §2 — a ruling "
+tools\audit\gen_discard_records.py:206:            "authored on 2026-08-15 (`cc_instruction_ruled_inventory_landing.md` Task 2, under "
+tools\audit\gen_discard_records.py:207:            "`cowork_rulings_2026_08_15_inventory_sitting.md` §5's extension), each after its tool "
+tools\audit\gen_discard_records.py:225:                               "`cc_instruction_worth_test.md` Task 2)",
+tools\audit\gen_discard_records.py:230:            "date": "## ★ DISCARD RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` Task 2)",
+tools\audit\gen_discard_records.py:241:            "recorded_by": "CC, 2026-08-12, `cc_instruction_worth_test.md` Task 2",
+tools\audit\gen_discard_records.py:267:        "the_quote": "## ★ WORTH-TEST RECORD — 2026-08-12 (CC, `cc_instruction_worth_test.md` "
+tools\audit\gen_discard_records.py:341:    for path in sorted(OPEN_ITEMS_DIR.glob("OI-*.md")):
+tools\audit\gen_discard_records.py:531:        "generated_for": "cc_instruction_ruling69_discard_input.md (Task 2)",
+tools\audit\gen_discard_records.py:533:            "User, 2026-08-13, Ruling 69 of `cowork_rulings_2026_08_13_seventeenth_stop.md`, homed "
+tools\audit\gen_phase1_finish_line.py:4:THE RULING (user, 2026-08-04, dispatch `cc_instruction_commit_and_finish_line.md`, R2): derive one
+tools\audit\gen_phase1_finish_line.py:125:    "User, 2026-08-04 (R3), dispatch `cc_instruction_guard_fix_and_item1d.md`: 'Re-cut the finish "
+tools\audit\gen_phase1_finish_line.py:171:        "Dispatch `cc_instruction_commit_and_finish_line.md`, Task 2.1: 'anything D-231's clause "
+tools\audit\gen_phase1_finish_line.py:218:        "2026-08-07 (dispatch `cc_instruction_five_rulings.md` §0a, R5): the classification does "
+tools\audit\gen_phase1_finish_line.py:277:        "performed": "2026-08-11 (CC, `cc_instruction_return_continuation_10.md` Task 0), on the "
+tools\audit\gen_phase1_finish_line.py:278:                     "user's Ruling 51 of `cowork_rulings_2026_08_11_tenth_stop.md`, which placed "
+tools\audit\gen_phase1_finish_line.py:739:    ★ THE USER'S RULING 61 of 2026-08-11 (`cowork_rulings_2026_08_11_fourteenth_stop.md`), closing
+tools\audit\gen_phase1_finish_line.py:812:            "(`cowork_rulings_2026_08_09_sixth_stop.md`) rules re-homing the DEFAULT route for "
+tools\audit\gen_phase1_finish_line.py:872:            "2026-08-04 (rulings R2 and R3 of `cc_instruction_census_delegation_and_commit.md`): "
+tools\audit\gen_phase1_finish_line.py:1122:        "`cc_instruction_five_rulings.md` §0a), and each closed. An empty list here does not mean "
+tools\audit\gen_phase1_finish_line.py:1180:        "User, 2026-08-04 (R2), dispatch `cc_instruction_commit_and_finish_line.md`: 'Derive the "
+tools\audit\gen_phase1_finish_line.py:1365:        "generated_for": "cc_instruction_commit_and_finish_line.md (Task 2, ruling R2)",
+tools\audit\gen_phase1_finish_line.py:1388:                "User, 2026-08-11, Ruling 65 of `cowork_rulings_2026_08_11_fifteenth_stop.md`, "
+tools\audit\gen_phase1_finish_line.py:1482:                    "`cowork_rulings_2026_08_13_seventeenth_stop.md`, homed at CLAUDE.md's "
+tools\diag_iter8_bir_false.py:203:    ours_files = sorted(CORPUS_DIR.glob("*.ours.json"))
+tools\audit\gen_discard_reach_split.py:5:`cowork_rulings_2026_08_16_preparation_return.md` (the soft-discard's REACH, Alternative A as
+tools\audit\gen_discard_reach_split.py:16:run (`cc_report_preparation_third.md` §4.c), read from the GIT OBJECT at the commit this artifact
+tools\audit\gen_discard_reach_split.py:85:RULING = "cowork_rulings_2026_08_16_preparation_return.md"
+tools\audit\gen_discard_reach_split.py:86:REPORT = "cc_report_preparation_third.md"
+tools\audit\gen_discard_reach_split.py:431:        "dispatch": "cc_instruction_preparation_fourth.md, Task 1 (R2)",
+tools\audit\gen_phase1_gate_readers.py:5:`cowork_rulings_2026_08_16_preparation_return.md` (the soft-discard's REACH, Alternative A as
+tools\audit\gen_phase1_gate_readers.py:79:RULING = "cowork_rulings_2026_08_16_preparation_return.md"
+tools\audit\gen_phase1_gate_readers.py:97:# Quoted from `cowork_rulings_2026_08_16_preparation_return.md` §4 and from the executing
+tools\audit\gen_phase1_gate_readers.py:126:    r"^(cc_instruction_|cc_report_|cowork_rulings_|cowork_away_returns\.md$|"
+tools\audit\gen_phase1_gate_readers.py:127:    r"cowork_handoff\.md$|cowork_instruction_|cowork_scratch_|STATUS\.md$|STATUS_ARCHIVE\.md$)")
+tools\audit\gen_phase1_gate_readers.py:439:        "dispatch": "cc_instruction_preparation_fourth.md, Task 1 (R1)",
+tools\diag_iter63_genuine6_enumerate.py:34:    for ours_path in sorted(_CORPUS_DIR.glob("*.ours.json")):
+tools\cc_j_key_i_measure.py:93:    files = sorted(corpus_dir.glob("*.ours.json"))
+tools\cc_oi168_probe_report.py:86:    files_a = sorted(glob.glob(os.path.join(dir_a, "*.ours.json")))
+tools\cc_oi168_probe_report.py:87:    files_b = {_stem(p) for p in glob.glob(os.path.join(dir_b, "*.ours.json"))}
+tools\cc_oi168_probe_report.py:110:    files = sorted(glob.glob(os.path.join(directory, "*.probe.json")))
+tools\cc_oi168_probe_report.py:140:    base_files = sorted(glob.glob(os.path.join(base_dir, "*.ours.json")))
+tools\cc_stepM_l5_measure.py:9:REUSE, NOT RE-IMPLEMENT (cc_instruction Step M §1): the RN comparison is the committed
+tools\cc_stepM_l5_measure.py:53:    files = sorted(corpus_dir.glob("*.ours.json"))
+tools\diag_iter54_bir_false_enumerate.py:25:    for ours_path in sorted(_CORPUS_DIR.glob("*.ours.json")):
+tools\cc_j_key_i_byteid.py:59:    jki_files = sorted(jki_dir.glob("*.ours.json"))
+tools\cc_oi125_extrapolation_probe.py:57:        for ours_path in sorted(corpus_dir.glob("*.ours.json")):
+tools\cc_stage4d_i_modulation_measure.py:70:    files = sorted(ours_dir.glob("*.ours.json"))
+tools\cc_layer4_residual_decompose.py:23:(tools/cc_* is gitignored).
+tools\cc_layer4_residual_decompose.py:210:    for p in sorted(dec_dir.glob("*.decode.json")):
+tools\diag_iter54_alts_full.py:26:    for ours_path in sorted(_CORPUS_DIR.glob("*.ours.json")):
+tools\cc_j_key_ii_safety.py:55:    files = sorted(corpus_dir.glob("*.ours.json"))
+tools\cc_round3_measure.py:51:    for ours_path in sorted(corpus_dir.glob("*.ours.json")):
+tools\cc_layer4_chord_baseline.py:224:    for p in sorted(src_dir.glob("*" + suffix)):
+tools\refresh_divergence_20260424\corpus_sweep.py:130:        paths.extend(corpus_dir.glob(f"*{ext}"))
+tools\cc_j_key_ii_redux_step1.py:202:        files = sorted(corpus_dir.glob("*.ours.json"))
+tools\cc_layer3_sweep_grade.py:42:    for p in sorted(d.glob("*.decode.json")):
+tools\diag_iter48_step2.py:10:for ours_path in sorted(CORPUS.glob('*.ours.json')):
+tools\cc_j_key_iii_mode_collapse.py:43:    for p in sorted(Path(d).glob("*.ours.json")):
+tools\cc_round2_measure.py:30:    for ours_path in sorted(corpus_dir.glob("*.ours.json")):
+tools\cc_layer3_keymode_baseline.py:6:The DIRECT key/mode-vs-ground-truth metric for the L3 audit (cowork_layer3_keymode
+tools\cc_layer3_keymode_baseline.py:26:increment, per `cowork_layer3_keymode_impl_design.md` §2, adds:
+tools\cc_layer3_keymode_baseline.py:197:    ours_files = sorted(ours_dir.glob("*.ours.json"))
+tools\cc_layer3_keymode_baseline.py:520:    for p in sorted(ours_dir.glob("*" + suffix)):
+tools\cc_layer3_keymode_baseline.py:765:    for p in sorted(d.glob("*.decode.json")):
+tools\cc_layer3_keymode_baseline.py:961:    for p in sorted(d.glob("*.decode.json")):
+tools\cc_layer3_keymode_baseline.py:1301:    for p in sorted(d.glob("*.decode.json")):
+tools\diag_iter47_gate_q.py:90:for fpath in sorted(CORPUS.glob('*.ours.json')):
+tools\cc_j_key_iii_invariant_check.py:51:    for p in sorted(Path(d).glob("*.ours.json")):
+tools\cc_j_key_iii_invariant_check.py:67:    for p in sorted(Path(d).glob("*.ours.json")):
+tools\cc_round2_genre_cov.py:30:    return len(glob.glob(str(_ROOT/"tools"/"corpus"/"baroque"/"*.music21.json")))
+tools\cc_round2_genre_cov.py:33:    files = sorted(glob.glob(str(DCML/corpus/"harmonies"/"*.tsv")))
+tools\cc_round2_genre_cov.py:48:    files = sorted(glob.glob(str(DCML/"when_in_rome"/"**"/"*.rntxt"), recursive=True))
+tools\cc_round2_genre_cov.py:50:    ana = sorted(glob.glob(str(DCML/"when_in_rome"/"**"/"analysis.txt"), recursive=True))
+tools\characterise_bir_false.py:132:    present = {p.stem.replace(".ours", "") for p in corpus_dir.glob("*.ours.json")}
+tools\characterise_bir_false.py:226:    ours_files = sorted(corpus_dir.glob("*.ours.json"))
+tools\cc_kma_relpair_probe.py:58:    files = sorted(Path(corpus_dir).glob("*.ours.json"))
+tools\cc_kma_relpair_probe.py:150:    pf = {p.name.replace(".ours.json", ""): p for p in Path(prod_dir).glob("*.ours.json")}
+tools\cc_kma_relpair_probe.py:151:    af = {p.name.replace(".ours.json", ""): p for p in Path(abs_dir).glob("*.ours.json")}
+tools\diag_iter47_gate_m.py:74:for fpath in sorted(CORPUS.glob('*.ours.json')):
+tools\cc_tonicization_modulation_probe.py:95:    files = sorted(Path(args.ours_dir).glob("*.ours.json"))
+tools\cc_uncertain_resolver_measure.py:7:cc_instruction_uncertain_resolver_measurement.md.
+tools\cc_uncertain_resolver_measure.py:99:    ours_files = sorted(corpus_dir.glob("*.ours.json"))
+tools\cc_oracle_crosscheck.py:60:    for x in sorted(CORPUS.glob("*.xml")):
+tools\cc_tonicization_measure.py:242:    files = sorted(Path(args.ours_dir).glob("*.ours.json"))
+tools\compare_progressions_oracle.py:4:validation (cowork_progression_schema_design.md §7).
+tools\compare_progressions_oracle.py:122:    for mscx in sorted(ms3.glob("*.mscx")):
+tools\diag_iter32_gate_l.py:51:ours_files = sorted(CORPUS_DIR.glob("*.ours.json"))
+tools\compare_bach_wir.py:28:    return sorted(glob.glob(str(Path(ours_dir) / "*.ours.json")))
+tools\compare_inversion_regressions.py:66:    ours_files = sorted(ours_dir.glob("*.ours.json"))
+tools\oracle_root_metric.py:167:    for ours_path in sorted(corpus_dir.glob("*.ours.json")):
+tools\compare_omnibook.py:229:    files = sorted(glob.glob(os.path.join(args.ours_dir, "*.ours.json")))
+tools\compare_l6_oracle.py:359:    for mscx in sorted(ms3.glob("*.mscx")):
+tools\diag_iter28_gate_k.py:15:for f in sorted(glob.glob('tools/corpus/*.ours.json')):
+tools\compare_gatej.py:19:ours_files = sorted(CORPUS_DIR.glob('*.ours.json'))
+tools\open_items_split_check.py:159:        f[:-3] for f in os.listdir(DETAIL_DIR)
+tools\open_items_split_check.py:279:        f[:-3] for f in os.listdir(DETAIL_DIR)
+tools\compare_vl_parity.py:4:cowork_voiceleading_axis_design.md §5.2 parity duty, §10). It runs
+tools\diag_genuine32_characterize.py:42:    for ours_path in sorted(_CORPUS_DIR.glob("*.ours.json")):
+tools\compare_rn.py:658:    ours_files = sorted(ours_dir.glob("*.ours.json"))
+tools\compare_rn.py:678:        for cand in sorted(root.glob(cfg["ours_glob"])):
+tools\compare_rn.py:789:    for p in sorted(ours_dir.glob("*.ours.json")):
+tools\compare_rn.py:826:    ours_files = sorted(ours_dir.glob("*.ours.json"))
+tools\compare_when_in_rome.py:72:    for analysis_path in wir_root.glob("**/analysis.txt"):
+tools\compare_when_in_rome.py:229:    return sorted(glob.glob(os.path.join(str(ours_dir), "*.ours.json")))
+tools\decode_keymode_corpus.py:128:    stems = sorted(corpus.glob("*.xml"))
+tools\decode_chord_corpus.py:129:    stems = sorted(corpus.glob("*.xml"))
+tools\dcml_parser.py:614:        folders = os.listdir(chorales_dir)
+tools\fix_keysig.py:121:    for xml_path in sorted(corpus_dir.glob('*.xml')):
+tools\iter45_cluster_a_diagnostic.py:166:for fpath in sorted(CORPUS_DIR.glob('*.ours.json')):
+tools\iter92_jazz_bir_true_analysis.py:87:    ours_files = sorted(_CORPUS_DIR.glob("*.ours.json"))
+tools\inject_m21_rn.py:49:    for f in corpus_dir.glob("*.xml"):
+tools\inject_m21_rn.py:197:        for xml_path in sorted(corpus_dir.glob("*.xml")):
+tools\iter58_diagnostic.py:41:    for of in sorted(CORPUS.glob('*.ours.json')):
+tools\iter58_diagnostic.py:159:for jp in sorted(CORPUS.glob('*.ours.json')):
+tools\find_maj_to_dom7.py:51:        for ours_path in sorted(ours_dir.glob("*.ours.json")):
+tools\iter95_enumerate_errors.py:132:    ours_files = sorted(_CORPUS_DIR.glob("*.ours.json"))
+tools\find_enharmonic_errors_temp.py:34:ours_files = sorted(CORPUS_DIR.glob('*.ours.json'))
+tools\iter94_jazz_regression_analysis.py:88:    ours_files = sorted(_CORPUS_DIR.glob("*.ours.json"))
+tools\filter_effendi.py:39:    files = sorted(glob.glob("tools/corpus_effendi_src/*.xml"))
+tools\notation_seams\reconcile_switch_goldens.py:300:    goldens = sorted(f for f in os.listdir(snap_dir) if f.endswith(".json"))
+tools\iter94_birtrue_dump.py:22:    for ours_path in sorted(_CORPUS_DIR.glob("*.ours.json")):
+tools\notation_seams\gen_ground_truth_inventory.py:9:"""gen_ground_truth_inventory.py — OI-206 / cc_instruction_analysis_cost_profile.md Task 5.
+tools\notation_seams\gen_ground_truth_inventory.py:91:    for f in tsv_dir.glob("*.tsv"):
+tools\notation_seams\gen_ground_truth_inventory.py:109:    for f in ms3_dir.glob("*.mscx"):
+tools\notation_seams\gen_ground_truth_inventory.py:112:    scores = sorted(ms3_dir.glob("*.mscx"), key=lambda p: p.stat().st_size, reverse=True)
+tools\notation_seams\gen_ground_truth_inventory.py:125:        for d in sorted(DCML.iterdir()):
+tools\notation_seams\gen_ground_truth_inventory.py:156:            "open_item": "OI-206 / cc_instruction_analysis_cost_profile.md Task 5",
+tools\notation_seams\gen_editing_cycle.py:9:"""gen_editing_cycle.py — OI-206 / cc_instruction_analysis_cost_profile.md Task 3.
+tools\notation_seams\gen_editing_cycle.py:155:            "open_item": "OI-206 / cc_instruction_analysis_cost_profile.md Task 3",
+tools\grieg_modal_diagnostic.py:85:    mscx_stems = sorted(p.name.removesuffix('.ours.json') for p in ours_dir.glob("*.ours.json"))
+tools\joint_estimator\adoption_measure_b.py:366:            "dispatch": "cc_instruction_adoption_measurement.md (Cowork 2026-07-20; ★R=A1)",
+tools\gate_n_fp_scan_iter39.py:45:    for ours_path in sorted(_CORPUS.glob('*.ours.json')):
+tools\joint_estimator\adoption_measure.py:4:Dispatch: cc_instruction_adoption_measurement.md (Cowork 2026-07-20, at the user's ★R=A1 ruling).
+tools\joint_estimator\adoption_measure.py:181:        for f in d.glob("*.ours.json"):
+tools\notation_seams\classify_dualarm.py:9:ratification (§8.4 of ``cowork_notation_adoption_increment.md``) can read what the
+tools\notation_seams\classify_dualarm.py:12:Classes (per the dispatch ``cc_instruction_notation_p6.md`` Task 3):
+tools\joint_estimator\gen_embedded_tables.py:18:Design (from cowork_notation_adoption_increment.md §5 Decision D1 +
+tools\joint_estimator\gen_embedded_tables.py:19:cowork_notation_output_contract.md §2):
+tools\notation_seams\analyze_cost_profile.py:9:"""analyze_cost_profile.py — OI-206 / cc_instruction_analysis_cost_profile.md Tasks 1/2/4.
+tools\notation_seams\analyze_cost_profile.py:116:        "open_item": "OI-206 / cc_instruction_analysis_cost_profile.md Tasks 1/2/4",
+tools\music21_batch.py:22:    evidence question, gated on the key-layer design — see cowork_evidence_inventory.md.
+tools\music21_batch.py:206:    # on OI-158 and catalogued in cowork_evidence_inventory.md.
+tools\joint_estimator\gen_count_inventory.py:6:capacity budget will be checked against at the fit event (`cowork_prefit_gates.md`, user-ratified
+tools\joint_estimator\gen_count_inventory.py:303:            "protocol": "cowork_prefit_gates.md (OI-177), user-ratified 2026-07-19",
+tools\mode_grading_adjudication_probe.py:226:    for ours_path in sorted(corpus_dir.glob("*.ours.json")):
+tools\joint_estimator\gen_content_dp_split.py:9:"""gen_content_dp_split.py — OI-206 / cc_instruction_analysis_cost_profile.md Task 1: the MANDATORY
+tools\joint_estimator\gen_content_dp_split.py:195:            "open_item": "OI-206 / cc_instruction_analysis_cost_profile.md Task 1 (content vs DP split)",
+tools\joint_estimator\fit_weights.py:6:(`cowork_joint_estimator_factorization.md` §2) is fit by convex conditional likelihood under the
+tools\joint_estimator\fit_weights.py:7:pre-fit gates (`cowork_prefit_gates.md`: OI-176 held-out protocol, OI-177 capacity budget).
+tools\joint_estimator\fit_weights.py:953:        "protocol": ("cowork_prefit_gates.md — OI-176 (5-fold grouped held-out; every fitted object "
+tools\joint_estimator\fit_weights.py:1003:    parts = sorted(_HERE.glob("weight_fit_part_*.json"))
+tools\joint_estimator\gen_note_events.py:8:`cc_instruction_note_table_fit.md` (Cowork 2026-07-19).
+tools\measure_joint_probe.py:6:(cowork_joint_key_chord_design.md §5): does re-deciding the chord under an alternative
+tools\measure_joint_probe.py:72:# Added for the mode/key + chord inference discussion (cowork_mode_key_chord_
+tools\measure_joint_probe.py:494:    xml_files = sorted(f for f in corpus_dir.glob("*.xml") if not f.stem.endswith("_m21"))
+tools\joint_estimator\gen_mode_marginal.py:11:cowork_joint_estimator_factorization.md) needs: for each mode, the count of every normalized chord
+tools\joint_estimator\gen_fold_assignment.py:6:ratified held-out evaluation protocol (`cowork_prefit_gates.md`, OI-176, user-ratified
+tools\joint_estimator\gen_fold_assignment.py:61:# ── Ratified protocol constants (`cowork_prefit_gates.md`, [prov-ratify]) ──
+tools\joint_estimator\gen_fold_assignment.py:92:    ours_files = sorted(DEFAULT_CORPUS_DIR.glob("*.ours.json"))
+tools\joint_estimator\gen_fold_assignment.py:224:            "protocol": "cowork_prefit_gates.md (OI-176), user-ratified 2026-07-19",
+tools\measure_fanout.py:147:    xml_files = sorted(f for f in corpus_dir.glob("*.xml")
+tools\joint_estimator\gen_fermata_boundary.py:222:        "protocol": ("cowork_prefit_gates.md (OI-176/OI-177) — 5-fold grouped split, count>=20 "
+tools\joint_estimator\gen_label_tables.py:9:budget) protocols (`cowork_prefit_gates.md`, user-ratified 2026-07-19). Dispatch:
+tools\joint_estimator\gen_label_tables.py:10:`cc_instruction_label_table_fit.md` (Cowork 2026-07-19).
+tools\joint_estimator\gen_label_tables.py:68:# ── ratified protocol constants (cowork_prefit_gates.md, [prov-ratify]) ──
+tools\joint_estimator\gen_label_tables.py:455:# ── the applied-relation pooling level (option 1a; cowork_sensitive_cell_probe.md finding 1) ──
+tools\joint_estimator\gen_label_tables.py:801:        "protocol": "cowork_prefit_gates.md (OI-176/OI-177), user-ratified 2026-07-19",
+tools\joint_estimator\gen_label_tables.py:1277:            "the applied-relation pooling level (option 1a, cowork_sensitive_cell_probe.md finding "
+tools\joint_estimator\gen_factor_presence.py:3:finding 3). Dispatch: `cc_instruction_secondary_dominant_refit.md` (Cowork 2026-07-19), executing
+tools\joint_estimator\gen_factor_presence.py:4:`cowork_sensitive_cell_probe.md` finding 3 (user-ratified 2026-07-19).
+tools\joint_estimator\gen_factor_presence.py:322:        "protocol": "cowork_prefit_gates.md (OI-176/OI-177), user-ratified 2026-07-19",
+tools\joint_estimator\gen_factor_presence.py:323:        "ratified_probe_finding": "cowork_sensitive_cell_probe.md finding 3, option 3a (2026-07-19)",
+tools\joint_estimator\normalize.py:5:consulted. This is the ONE new normalization the fit event owns (`cc_instruction_label_table_fit.md`,
+tools\enumerate_near_agree_iter38.py:91:    ours_files = sorted(_CORPUS_DIR.glob("*.ours.json"))
+tools\dump_birfalse_cases.py:21:    for ours_path in sorted(_CORPUS_DIR.glob("*.ours.json")):
+tools\joint_estimator\probe_desksim.py:5:`cowork_factorization_desk_simulation.md` §1's provisional tables T0–T9 VERBATIM (including its
+tools\joint_estimator\probe_desksim.py:17:(`cowork_sensitive_cell_probe.md` §2–§3: bwv352 both bass variants; bwv10.7 merge-vs-split) under the
+tools\joint_estimator\probe_desksim.py:450:# (read from cowork_factorization_desk_simulation.md §2). arrival_i = the arrival event index of the
+tools\joint_estimator\probe_desksim.py:626:    """Reproduce the probe's two fitted-table passages (cowork_sensitive_cell_probe.md §2–§3) under
+tools\joint_estimator\gen_spelling_establishment.py:16:(= tpc - Tpc::TPC_C). Spec: cowork_notation_output_contract.md §3.2 + §5.2.
+tools\classify_key_disagreement.py:5:tools/robust_stop/ or tools/corpus/. Executes cc_instruction_key_mode_inference_
+tools\classify_key_disagreement.py:7:written predictions) is cowork_key_mode_inference_diagnosis.md.
+tools\classify_key_disagreement.py:773:    xml_files = sorted(f for f in corpus_dir.glob("*.xml") if not f.stem.endswith("_m21"))
+tools\joint_estimator\gen_posterior_slice.py:354:                "form": ("ratified two-half (dispatch cc_instruction_posterior_slice.md amendment "
+tools\joint_estimator\probe_decoder.py:6:(`cowork_joint_estimator_factorization.md`, user-ratified 2026-07-19) at IDENTITY WEIGHTS (every
+tools\joint_estimator\probe_decoder.py:143:# To score ONE specific rare continuation, the ratified rule (cowork_sensitive_cell_probe.md
+tools\joint_estimator\probe_decoder.py:1111:    # ── the §5 tie-break (user-ratified 2026-07-20; cowork_joint_estimator_factorization.md §5) ──
+tools\joint_estimator\gen_wir_alignment_probe.py:12:Dispatch: `cc_instruction_wir_alignment_probe.md` (Cowork 2026-07-19). Register row OI-184;
+tools\joint_estimator\gen_wir_alignment_probe.py:13:source finding `cowork_factorization_desk_simulation.md` §4.5.
+tools\joint_estimator\gen_wir_alignment_probe.py:270:    for ours_path in sorted(CORPUS_DIR.glob("*.ours.json")):
+tools\joint_estimator\gen_note_tables.py:3:boundary). Dispatch: `cc_instruction_note_table_fit.md` (Cowork 2026-07-19).
+tools\joint_estimator\gen_note_tables.py:191:    (cowork_sensitive_cell_probe.md finding 3, option 3a) is built from this."""
+tools\joint_estimator\gen_note_tables.py:849:        "fit_version": FIT_VERSION, "protocol": "cowork_prefit_gates.md (OI-176/OI-177), user-ratified 2026-07-19",
+muse\framework\draw\thirdparty\freetype\freetype-2.14.1\src\tools\make_distribution_archives.py:106:            for item in os.listdir(build_dir):
+tools\joint_estimator\search_direct.py:3:second attempt). Cowork dispatch `cc_instruction_direct_metric_search.md`, 2026-07-19, executing the
+tools\joint_estimator\search_direct.py:587:        "dispatch": ("cc_instruction_direct_metric_weight_fit.md (Cowork 2026-07-19; the ratified "
+tools\joint_estimator\search_direct.py:661:    parts = sorted(_HERE.glob("weight_search_part_*.json"))
+tools\joint_estimator\search_run.py:3:dispatch, `cc_instruction_direct_metric_search.md`).
+muse\buildscripts\ci\crashdumps\win\generate_breakpad_symbols.py:148:  #   pdbs += glob.glob(os.path.join(directory, '*.exe.pdb'))
+muse\buildscripts\ci\crashdumps\win\generate_breakpad_symbols.py:149:  #   pdbs += glob.glob(os.path.join(directory, '*.dll.pdb'))
+muse\buildscripts\ci\crashdumps\win\generate_breakpad_symbols.py:157:  binaries += glob.glob(binary)
+muse\buildscripts\ci\crashdumps\posix\generate_breakpad_symbols.py:350:          potential_symbol_files = glob.glob('%s.breakpad*' % binary)
+muse\framework\draw\thirdparty\freetype\freetype-2.14.1\builds\meson\generate_reference_docs.py:48:        glob.glob(os.path.join(args.input_dir, "include", "freetype", "*.h"))
+muse\framework\draw\thirdparty\freetype\freetype-2.14.1\builds\meson\generate_reference_docs.py:49:        + glob.glob(
+muse\framework\draw\thirdparty\freetype\freetype-2.14.1\builds\meson\generate_reference_docs.py:54:        + glob.glob(
+~~~~
+
+---
+
+## TASK 2(c) — every file Task 2(a) or 2(b) found, classified
+
+### 2(c).0 How the file set was taken, and how each class was decided
+
+**The file set.** Task 2(a)'s six expressions overlap. Expressions 1, 2 and 3 match only text that expression 6
+also matches, and expression 4 matches only text that expression 5 also matches. So the files 2(a) found are the
+files that match expression 5 or expression 6. That set was listed with one further Grep, run after 2(a) and
+2(b) and under the same exclusions: pattern `(cc|cowork)_[A-Za-z0-9_]+\.md`, `output_mode: "files_with_matches"`,
+`head_limit: 0`. Its summary line, verbatim: "Found 2259 files". **This listing was taken later than 2(a)'s
+counts, and it lists this report itself, which this batch is writing.** Two things are not established: whether
+the report existed when 2(a) ran, and whether any other file changed between the two runs. The report is
+classified below with the rest. The files 2(b) found are the 299 that Grep returned for 2(b)'s pattern
+over 2(b)'s file types (a `files_with_matches` rerun of the same search, summary line "Found 299 files").
+
+**Order.** Files are grouped by location, and within a group they follow the order the 2259-file listing
+returned them in (Grep's order, by modification time), except the CODE group, which follows the 299-file
+listing's order and then adds the code files that only the 2259-file listing found.
+
+**The class rules, each with its ground.**
+
+- **The files in the move** (every root file Task 1 §1.1–§1.4 names) — **DATED**, as one statement (§2(c).1).
+- **LIVE** is given where one of these holds, and the line names which:
+  - the file is a member of the specification document set, `tools/audit/specification_document_set.json`
+    (its targets with `"admitted": true`, less the one authored exclusion, which is `STATUS.md`). These are the
+    documents `ARCHITECTURE.md` delegates to, which is the delegation a session follows to act;
+  - `CLAUDE.md` sends a session to the file (the session-start reads, the conditional reads, the writing-standards
+    read, the score-task read, the self-check read, the delegation pointer);
+  - the file's own banner makes it a governing surface or applies branch two to itself.
+- **DATED** is given to a report, dossier, audit, review, research record, probe record, prediction record,
+  dispatch, brief, commission, rulings record or other record of an act, and to a document whose own banner files
+  it as a historical record, superseded, or ruled and applied.
+- **GENERATED** is given where the file's opening fields, its own banner or footer, or a generator's code name the
+  tool that writes it; the tool is named. A data file under `tools/` whose opening fields name no tool is also
+  classed GENERATED, marked **"generator not stated"**. That second use is a judgment from where the file sits
+  among generated artifacts, not a reading of each file. **FROZEN** marks every file under a directory whose
+  name begins `snapshot_`, and every file of the three derivation boot packs, which
+  `tools/audit/gen_derivation_boot_pack.py` freezes with a hash STOP (D-646). Its docstring says: "A SPENT
+  SUBJECT IS FROZEN RATHER THAN RE-RENDERED … the freeze is enforced by a hash STOP". Its `FROZEN` table
+  carries `harmony-boundary`, `scoring-model` and `l0-l1`.
+- **UNDECIDED** is given where the two branches do not settle the file. The reason is stated on its line.
+- **CODE** is given to every file of 2(b)'s types, and to source files of other types. The latter are marked as
+  outside 2(b)'s types.
+
+### 2(c).1 The files in the move — one statement
+
+**Every root file named in Task 1 §1.1, §1.2, §1.3 and §1.4 is DATED** (branch one): each is a handoff entry, a
+rulings record, a dispatch, or a report, approval record or dossier of one act. Among those, the ones that
+contain a match appear in the 2259-file listing and are not repeated below. **One exception:**
+
+- `cowork_handoff.md` — **LIVE** — kind 7, the status or handoff surface itself. `CLAUDE.md` names it as the
+  home of a standing companion rule ("the ⛔ TOTAL UNIFICATION rule (`cowork_handoff.md`)"). It is a surface
+  that is read in order to act, not the record of one act. Its archive, `cowork_handoff_archive.md`, stays
+  DATED: `CLAUDE.md` calls the archives "reference-only, NOT part of the session-start read".
+
+### 2(c).2 Root files NOT in the move
+
+- `cowork_l2_task_b_slice_derivation_2026_09_05.md` — **UNDECIDED** — its banner says "A READ PUT TO THE USER BY NAME. NOT RULED", yet `reading_pass/l2_slice_reading_progress.md` says the slice "is derived in" it: both a record of a derivation and a working input.
+- `STATUS.md` — **LIVE** — `CLAUDE.md`'s unconditional session-start read.
+- `STATUS_ARCHIVE.md` — **GENERATED** — written by `tools/audit/gen_governing_surface_split.py` (its companion map, lines 107–111), `tools/audit/gen_status_archive_pass.py` (line 277), `tools/audit/gen_status_batch_bound.py` (line 798) and `tools/audit/gen_status_residue_move.py` (its `COMPANION`).
+- `cowork_defense_clause_ends_2026_09_08.md` — **UNDECIDED** — its banner: "a reading put to the user. Nothing is ruled here"; whether it is now an authored input or a record is not settled by the branches.
+- `cowork_claude_md_live_rule_classification_2026_09_08.md` — **UNDECIDED** — same banner: "a reading put to the user. Nothing is ruled here".
+- `OPEN_ITEMS.md` — **LIVE** — the open-items register's INDEX, "the authoritative status surface" (`CLAUDE.md`, the open-items register section).
+- `cowork_memory_pointer_cut_2026_09_07.md` — **DATED**
+- `CLAUDE.md` — **LIVE** — the standing instructions; its six session-start spans are read by every session.
+- `cowork_l2_score_set_read_2026_09_05.md` — **UNDECIDED** — banner "A READ PUT TO THE USER BY NAME. NOT RULED"; a derivation record that is also the staged score set a session would act on.
+- `cowork_l2_first_pass_extracts_derivation_2026_09_05.md` — **UNDECIDED** — same banner and same double role.
+- `cowork_l2_boot_list_surface_2026_09_05.md` — **UNDECIDED** — a decision surface whose banner says "Nothing here is executed"; a rulings record of the same subject exists at the root, and whether it disposes of this surface was not read.
+- `cowork_away_returns.md` — **UNDECIDED** — kind 6, a returns file; its banner calls it "LIVE RETURNS FILE", but its content is a running record of acts that is appended rather than corrected, so neither branch fits.
+- `cowork_derived_specification_l0_l1_2026_09_03.md` — **LIVE** — its banner: "RATIFIED — THE DERIVED L0/L1 SPECIFICATION"; a ratified specification is read in order to act.
+- `cowork_blind_derivation_l0_l1_2026_08_31.md` — **DATED** — its own banner: "THIS IS THE RECORD OF THE BLIND ACT, AND ITS BODY IS NOT REWRITTEN (D-674, branch one".
+- `cowork_running_order_2026_09_01.md` — **UNDECIDED** — an ordering surface written to be acted on, dated in its name; whether it is still the current order is not settled.
+- `cowork_blind_session_brief_l0_l1.md` — **DATED**
+- `FRAMEWORK.md` — **LIVE** — its banner: "RATIFIED by the user 2026-08-29 … the decomposition, charters and boundary contracts govern".
+- `cowork_reading_pass_remedial_commission_2026_08_31.md` — **DATED**
+- `cowork_reading_pass_findings_2026_08_31.md` — **DATED**
+- `cowork_reading_pass_commission_2026_08_30.md` — **DATED**
+- `DEFECT_TYPES.md` — **LIVE** — `CLAUDE.md`'s self-check reads it after every coding exercise.
+- `cowork_audit_protocol.md` — **LIVE** — the home of standing protocol rules (`CLAUDE.md` #10 names it as R3's home, register entry D-641).
+- `cowork_framework_phase_retrospective_2026_08_29.md` — **DATED**
+- `cowork_research_list_disposition_surface_2026_08_29.md` — **UNDECIDED** — a reading surface ("Preparation for the ratification sitting"); whether that sitting disposed of it is not stated in its banner.
+- `cowork_unit_question_surface_2026_08_28.md` — **UNDECIDED** — a decision surface whose banner does not say it was ruled.
+- `cowork_arm_and_site_fillin_2026_08_28.md` — **DATED** — its banner: "WORKING ARTIFACT — NOT A GOVERNING DOCUMENT. IT RULES NOTHING".
+- `cowork_cross_layer_transfer_list.md` — **UNDECIDED** — "OPENED 2026-08-28 … as the framework phase's output"; a list that may be kept current, and its banner does not settle which branch applies.
+- `cowork_informed_session_brief_framework.md` — **DATED**
+- `cowork_register_rule_c_suspension_2026_08_28.md` — **UNDECIDED** — it records a suspension of a live register rule on the user's disposition; whether it is a record or a surface that still governs is not settled.
+- `cowork_section8_bar_record_2026_08_28.md` — **DATED**
+- `cowork_informed_brief_provenance.md` — **DATED**
+- `cowork_section8_breach_surface_2026_08_28.md` — **UNDECIDED** — "Nothing here is ruled"; a decision surface.
+- `cowork_register_blocker_surface_2026_08_28.md` — **UNDECIDED** — "Nothing here is ruled"; a decision surface.
+- `cowork_blind_session_brief_framework.md` — **DATED** — its banner: "SUPERSEDED, 2026-08-28".
+- `PHASE_CONSTRAINTS_AND_STOP_RULES.md` — **LIVE** — its banner: "the live home for amendments to the phase definitions".
+- `cowork_placement_sample_sealed_third_2026_08_27.md` — **DATED**
+- `cowork_redraw_findings_surface_2026_08_27.md` — **UNDECIDED** — a decision surface whose banner does not say it was ruled; a same-subject rulings record exists at the root and was not read for this.
+- `cowork_placement_sample_sealed_redraw_2026_08_27.md` — **DATED**
+- `cowork_take_rule_surface_2026_08_27.md` — **UNDECIDED** — a decision surface whose banner does not say it was ruled.
+- `cowork_declared_readings_surface_2026_08_27.md` — **UNDECIDED** — a decision surface whose banner does not say it was ruled.
+- `cowork_stopped_strata_surface_2026_08_27.md` — **UNDECIDED** — a decision surface whose banner does not say it was ruled; a same-subject rulings record exists at the root and was not read for this.
+- `cowork_placement_sample_sealed_2026_08_27.md` — **DATED**
+- `cowork_placement_sample_surface_2026_08_27.md` — **UNDECIDED** — "A SURFACE. NOTHING HERE IS RULED"; a same-subject rulings record exists at the root and was not read for this.
+- `cowork_literature_reachability_2026_08_26.md` — **DATED**
+- `cowork_framework_phase_opening_surface_2026_08_26.md` — **UNDECIDED** — "A SURFACE. NOTHING HERE IS RULED"; a same-subject rulings record exists at the root and was not read for this.
+- `EMPIRICAL_FINDINGS_LEDGER.md` — **LIVE** — its banner: the record of what the project has measured, which "a deriving session **may** read"; a ledger a task must trust.
+- `cowork_empirical_findings_candidates.md` — **DATED**
+- `DECISIONS.md` — **GENERATED** — `tools/audit/decisions/gen_decisions_register.py` (`CLAUDE.md`, the decisions register's rule (d): "the register is a GENERATED surface").
+- `cowork_fact_gate_admissions_2026_08_26.md` — **DATED**
+- `cowork_blind_session_opening_instruction_harmony_boundary.md` — **DATED**
+- `cowork_blind_derivation_scoring_model_2026_08_24.md` — **DATED** — the record of a completed blind derivation, the kind the L0/L1 derivation's banner files under branch one.
+- `cowork_blind_session_brief_scoring_model.md` — **DATED**
+- `cowork_blind_derivation_harmony_boundary_2026_08_23.md` — **DATED** — same ground as the scoring-model derivation.
+- `cowork_blind_session_brief_harmony_boundary.md` — **DATED**
+- `cowork_specification_reconstruction_plan_successor_2026_08_21.md` — **UNDECIDED** — its banner still reads "DRAFT FOR THE USER'S RATIFICATION", while `tools/audit/specification_document_set.json` executes Ruling 6 on it; whether it is now a governing plan is not settled by the branches.
+- `cowork_prediction_tabulation_2026_08_21.md` — **DATED**
+- `cowork_report_plan_evaluation_2026_08_21.md` — **DATED**
+- `cowork_evaluation_boot_list_2026_08_21.md` — **DATED**
+- `cowork_plan_evaluation_brief_2026_08_21.md` — **DATED**
+- `cowork_review_findings_prediction_2026_08_21.md` — **DATED**
+- `cowork_curated_boot_list_draft_2026_08_19.md` — **UNDECIDED** — `tools/audit/gen_derivation_boot_pack.py` imports its six ruled members from this file's §2; a generator's authored input is neither a record of one act nor a surface a session is sent to.
+- `cowork_verification_plan_preparation_tenth.md` — **DATED**
+- `CLAUDE_ARCHIVE.md` — **GENERATED** — written by `tools/audit/gen_governing_surface_split.py` (companion map) and `tools/audit/gen_claude_md_finer_archive.py` (its `COMPANION`).
+- `OPEN_ITEMS_ARCHIVE.md` — **GENERATED** — `tools/audit/gen_governing_surface_split.py` (companion map; the file's banner names that tool's `--check`).
+- `BUILD_AND_TEST_ARCHIVE.md` — **GENERATED** — `tools/audit/gen_governing_surface_split.py` (companion map).
+- `BUILD_AND_TEST.md` — **LIVE** — `CLAUDE.md`'s conditional read, and a procedure (kind 10) the kind list names.
+- `DECISIONS_ARCHIVE.md` — **GENERATED** — `tools/audit/gen_governing_surface_split.py` (companion map).
+- `cowork_spec_code_audit_adjudication_method.md` — **UNDECIDED** — a phase-2 reading surface stating a method; whether that method now governs is not settled by its banner.
+- `ARCHITECTURE.md` — **LIVE** — the canonical specification (limb 1 of the specification document set).
+- `cowork_structural_integrity_audit.md` — **DATED**
+- `cowork_stage5_fitter_design.md` — **LIVE** — member of the specification document set.
+- `cowork_style_clustering_plan.md` — **UNDECIDED** — a plan named in `ARCHITECTURE.md` but not admitted to the specification document set; it carries a dated scope annotation, and nothing read settles whether a session is sent to it.
+- `cowork_layer3_reachback_design.md` — **UNDECIDED** — a design document of built code, not a member of the specification document set; whether a session is sent to it is not settled.
+- `cowork_layer1_extend_design.md` — **UNDECIDED** — same ground as the reach-back design.
+- `cowork_design_doc_template.md` — **LIVE** — `CLAUDE.md`: "read it before writing any specification, design document, decision surface, or anything presented to the user".
+- `cowork_phase1_commissioning_surface_2026_08_11.md` — **UNDECIDED** — a CC reading surface; whether its commissioning was taken is not stated in its banner.
+- `cowork_layer6_grouping_design.md` — **LIVE** — member of the specification document set.
+- `cowork_voiceleading_axis_design.md` — **LIVE** — member of the specification document set (sections §0, §5.1, §5.3, §8, §9).
+- `cowork_joint_key_chord_design.md` — **UNDECIDED** — its banner: "SHELVED — MEASURED NOT TO PAY … NOT BUILT"; branch one names designs falsified or superseded, and shelved is neither word.
+- `cowork_layer3_keymode_design.md` — **LIVE** — member of the specification document set.
+- `cowork_score_census.md` — **LIVE** — member of the specification document set.
+- `cowork_phrase_boundary_design.md` — **LIVE** — member of the specification document set.
+- `cowork_target_document_structure_2026_08_09.md` — **UNDECIDED** — a Cowork reading surface for orientation; neither branch fits an orientation surface.
+- `cowork_confidence_contract.md` — **LIVE** — member of the specification document set.
+- `cowork_instruction_return_session.md` — **DATED**
+- `cowork_document_route_rulings_2026_08_08.md` — **DATED** — its banner: "RATIFIED RULING RECORD".
+- `cowork_owner_rulings_2026_08_07.md` — **DATED** — its banner: "RATIFIED RULING RECORD".
+- `cowork_engage_arc_plan.md` — **LIVE** — `CLAUDE.md`'s delegation pointer: "The ratified contract for the ORDER OF WORK … is `cowork_engage_arc_plan.md`".
+- `cowork_bounded_context_design.md` — **LIVE** — member of the specification document set.
+- `cowork_layer1_tone_collection_design.md` — **DATED** — its banner: "STATUS: HISTORICAL".
+- `cowork_l1l3_stabilization_plan.md` — **UNDECIDED** — a plan for work since built; a completed plan is not one of branch one's named cases, and nothing sends a session to it.
+- `cowork_oi200_perspective_inventory.md` — **LIVE** — `CLAUDE.md`: its §4 is "the ONE home for the enumerated discovery channels".
+- `cowork_architecture_reassessment.md` — **DATED** — its banner: "ITS FOUR META-FINDINGS WERE RULED SUPERSEDED".
+- `cowork_layer5_function_design.md` — **LIVE** — member of the specification document set.
+- `cowork_jazz_realization_qa_instrument.md` — **UNDECIDED** — "CANDIDATE DESIGN — not built"; neither branch fits an unbuilt candidate.
+- `cowork_pending_rulings_2026_08_02.md` — **DATED** — its banner: "RULED BY THE USER".
+- `cowork_candidate_open_items_2026_08_02.md` — **DATED** — its banner: "SUPERSEDED BY ROWING".
+- `cowork_notation_output_contract.md` — **LIVE** — member of the specification document set.
+- `cowork_notation_adoption_increment.md` — **LIVE** — member of the specification document set.
+- `cowork_prefit_gates.md` — **LIVE** — member of the specification document set.
+- `cowork_joint_estimator_factorization.md` — **LIVE** — member of the specification document set.
+- `cowork_sensitive_cell_probe.md` — **DATED**
+- `cowork_factorization_desk_simulation.md` — **UNDECIDED** — a desk-simulation record (branch one's subject) that is also the recorded home of register entry D-453 (`tools/audit/gen_july_screen.py:2437`), so the two branches point opposite ways.
+- `cowork_joint_estimator_architecture.md` — **LIVE** — member of the specification document set.
+- `cowork_term_theory_grounding.md` — **UNDECIDED** — a grounding study, which the kind list files as a design document; it is not in the specification document set, and nothing settles whether it is live.
+- `cowork_key_layer_design_opening.md` — **DATED** — its banner: "SUPERSEDED 2026-07-17".
+- `cowork_key_mode_inference_diagnosis.md` — **DATED**
+- `cowork_evidence_inventory.md` — **LIVE** — member of the specification document set.
+- `cowork_key_drift_research_grounding.md` — **UNDECIDED** — same ground as the term-level grounding study.
+- `cowork_mode_key_chord_inference_discussion.md` — **DATED**
+- `cowork_adjudication_dossier.md` — **DATED**
+- `cowork_siloed_facts_audit.md` — **DATED**
+- `cowork_eg1_premise_checks.md` — **DATED**
+- `cowork_eg2_scoping.md` — **DATED**
+- `cowork_layer5_engagement_design.md` — **LIVE** — member of the specification document set.
+- `cowork_l1_l5_premise_debt_audit.md` — **DATED**
+- `cowork_premise_gate_reflection.md` — **DATED**
+- `cowork_information_loss_audit.md` — **DATED**
+- `cowork_gateA_unification_design.md` — **UNDECIDED** — a design-and-scoping pass, not a member of the specification document set; its fate is not stated in its banner.
+- `cowork_fb_redesign_design.md` — **UNDECIDED** — same ground as the Gate A design.
+- `cowork_style_taxonomy_proposal.md` — **UNDECIDED** — "RATIFIED … EXECUTED"; a ratified proposal whose content is now in code, so whether it is a record or the idiom set's home is not settled.
+- `cowork_layer4_chordsymbol_design.md` — **LIVE** — member of the specification document set.
+- `cowork_union_search_record.md` — **DATED**
+- `cowork_product_tool_register.md` — **UNDECIDED** — a research register of candidates; the kind list names only the two registers, and neither branch fits a candidate register.
+- `cowork_census_full_needs_audit.md` — **DATED**
+- `cowork_polyphony_phrase_harmony_research.md` — **DATED**
+- `cowork_idiom_discovery_findings.md` — **DATED**
+- `cowork_spec_polish_findings_b.md` — **DATED**
+- `cowork_spec_polish_findings_a.md` — **DATED**
+- `cowork_target_architecture.md` — **LIVE** — member of the specification document set.
+- `cowork_progression_schema_dictionary.md` — **LIVE** — member of the specification document set.
+- `cowork_layer2_slicing_design.md` — **LIVE** — member of the specification document set.
+- `cowork_layer1_note_model_design.md` — **LIVE** — member of the specification document set.
+- `cowork_progression_schema_design.md` — **LIVE** — member of the specification document set.
+- `cowork_architecture_review_2026_07.md` — **DATED**
+- `cowork_idiom_entry_mapping.md` — **LIVE** — member of the specification document set.
+- `cowork_idiom_discovery_design.md` — **UNDECIDED** — "design, v1.2 draft"; not a member of the specification document set, and its fate is not stated.
+- `contrapunctus_findings.md` — **DATED**
+- `cowork_phase5c_l5_build_plan.md` — **UNDECIDED** — a build plan whose banner still reads "DRAFT"; a completed plan is not one of branch one's named cases.
+- `cowork_layer5_function_methods.md` — **DATED**
+- `cowork_layer5_spec_review.md` — **DATED**
+- `cowork_l1l4_completion_ledger.md` — **DATED**
+- `cowork_l1l4_review_note.md` — **DATED**
+- `cowork_l1l4_architecture_audit.md` — **DATED**
+- `cowork_tpc_capability_design.md` — **UNDECIDED** — a design document of built code, not a member of the specification document set.
+- `cowork_phase5b_l4_build_plan.md` — **UNDECIDED** — a build plan named in `ARCHITECTURE.md` but not admitted to the specification document set.
+- `cowork_types_header_design.md` — **UNDECIDED** — "BUILT / AS-BUILT"; a design document of built code, not a member of the specification document set.
+- `cowork_l1l4_review_charter.md` — **UNDECIDED** — the charter of a completed review gate, named in `ARCHITECTURE.md` but not admitted to the specification document set.
+- `cowork_layer2_reslice_design.md` — **UNDECIDED** — "BUILT"; named in `ARCHITECTURE.md` but not admitted to the specification document set.
+- `cowork_phase5_branch_backfill_spec.md` — **DATED**
+- `cowork_uncertain_resolver_investigation.md` — **DATED**
+- `cowork_spec_language_sweep.md` — **DATED**
+- `cowork_prune_pass_checklist.md` — **LIVE** — a procedure (kind 10) standing for a deferred act: "PRUNE / TIDY PASS checklist (deferred, do before any publish)".
+- `cowork_layer4_spec_review.md` — **DATED**
+- `cowork_layer3_spec_language_sweep.md` — **DATED**
+- `cowork_delta_check_dispositions.md` — **DATED**
+- `cowork_layer3_keymode_impl_design.md` — **UNDECIDED** — an implementation design, not a member of the specification document set.
+- `cowork_audit_obligation_map.md` — **DATED**
+- `cowork_phase2_architecture_review.md` — **DATED**
+- `cowork_audit_remaining_layers.md` — **DATED**
+- `cowork_audit_sectioncadencedetection.md` — **DATED**
+- `cowork_audit_cadencekeyanchor.md` — **DATED**
+- `cowork_implementation_review.md` — **DATED**
+
+### 2(c).3 `records/`
+
+- `records\cc\reports\cc_report_root_records_reference_map_2026_09_16.md` — **DATED** — this report.
+- `records\cc\instructions\cc_instruction_root_records_reference_map_2026_09_16.md` — **DATED** — this batch's dispatch.
+
+### 2(c).4 The two `cowork_scratch_*` directories
+
+Both read-me files say what their directories hold. The 2026-08-11 one: "LANDED COWORK DRAFTS. NOT ratified, NOT
+specifications, NOT decision surfaces … Nothing here is a home for anything". The 2026-08-08 one: "LANDED AT THE
+RETURN STOP 2026-08-09 as Cowork reading surfaces; NOT ratified, never specifications". So each file is the record
+of a drafting act.
+
+- `cowork_scratch_2026_08_11\README.md` — **DATED**
+- `cowork_scratch_2026_08_11\cowork_oi141_sitting_pack.md` — **DATED**
+- `cowork_scratch_2026_08_11\cowork_verification_plan_continuation_14.md` — **DATED**
+- `cowork_scratch_2026_08_11\draft_row_status_md_unreadable.md` — **DATED**
+- `cowork_scratch_2026_08_08\draft_return_verification_checklist_2026_08_08.md` — **DATED**
+- `cowork_scratch_2026_08_08\draft_grounding_digest_2026_08_08.md` — **DATED**
+- `cowork_scratch_2026_08_08\draft_phase2_program_surface_2026_08_08.md` — **DATED**
+- `cowork_scratch_2026_08_08\README.md` — **DATED**
+
+### 2(c).5 `ratification_surfaces/`
+
+A surface is kind 5. Each call below comes from the surface's own opening lines (lines 1–9), or from the footer
+or generator code that names the tool that writes it.
+
+- `ratification_surfaces\cowork_pruning_and_satellites_surface_2026_09_08.md` — **UNDECIDED** — "STATUS: a decision surface put to the user. Nothing is ruled here"; whether the same-day rulings record disposes of it was not read.
+- `ratification_surfaces\cowork_withheld_family_l2_reading.md` — **GENERATED** — `tools/audit/gen_withheld_family_reading.py` (`SUBJECTS["l2"]["out"]`).
+- `ratification_surfaces\cowork_comparison_l0_l1_reading.md` — **UNDECIDED** — "READING FILE — a tabulation delivered to the user"; no generator is named in its opening lines, and a delivered tabulation is not a case either branch names.
+- `ratification_surfaces\cowork_first_deriving_subject_surface_2026_08_31.md` — **UNDECIDED** — "PARKED AS A DRAFT, NOT A DELIVERED" surface.
+- `ratification_surfaces\cowork_dpk_ground_surface_2026_08_31.md` — **DATED** — delivered 2026-08-31; `cowork_row7_surface_2026_08_31.md` line 7 records it ruled ("DP-K's ground (ruled B)").
+- `ratification_surfaces\cowork_v4_divergence_surface_2026_08_31.md` — **DATED** — delivered 2026-08-31; the same line records it ruled ("V4 (ruled A)").
+- `ratification_surfaces\cowork_withheld_family_framework_reading.md` — **DATED** — "SUPERSEDED AS A REQUEST, 2026-08-28".
+- `ratification_surfaces\cowork_phase_definition_surface_2026_08_15.md` — **LIVE** — `CLAUDE.md`: "the ruled definitions' ONE home is `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §3".
+- `ratification_surfaces\cowork_sizing_tests_reading.md` — **UNDECIDED** — "GRADED, NOT RATIFIED, NOT A COMPARISON"; a same-subject rulings record exists at the root and was not read for this.
+- `ratification_surfaces\cowork_rulings_sort_surface_2026_08_16.md` — **GENERATED** — `tools/audit/gen_rulings_sort.py` (the file's footer, line 1834); banner "RULED, 2026-08-17".
+- `ratification_surfaces\cowork_sizing_pack_leak_list_reading.md` — **UNDECIDED** — "AWAITING THE USER'S RULING".
+- `ratification_surfaces\cowork_comparison_harmony_boundary_reading.md` — **UNDECIDED** — same ground as the L0/L1 comparison reading file.
+- `ratification_surfaces\cowork_withheld_family_harmony_boundary_reading.md` — **DATED** — "RULED 2026-08-22 and 2026-08-23 — applied".
+- `ratification_surfaces\cowork_discard_residue_surface_2026_08_16.md` — **GENERATED** — `tools/audit/gen_ratified_document_check.py` (the file's footer, line 940); banner "RULED, 2026-08-17".
+- `ratification_surfaces\cowork_artifact_inventory_ruling_surface.md` — **GENERATED** — `tools/audit/gen_artifact_inventory_surface.py` (its `OUT`, line 120, and the file's footer); banner "RULED, 2026-08-15".
+- `ratification_surfaces\cowork_governing_surface_split_2026_08_16.md` — **GENERATED** — `tools/audit/gen_governing_surface_readers.py` (the file's footer, line 194); banner "RULED, 2026-08-17".
+- `ratification_surfaces\cowork_claude_md_finer_split_2026_08_17.md` — **GENERATED** — `tools/audit/gen_claude_md_finer_surface.py` (its `SURFACE`, line 65, and the file's footer, line 346).
+- `ratification_surfaces\cowork_standing_treatment_surface_2026_08_16.md` — **UNDECIDED** — "RULING SURFACE, awaiting the user. NOTHING HERE IS RULED".
+- `ratification_surfaces\cowork_decisions_filter_surface_2026_08_15.md` — **GENERATED** — `tools/audit/gen_decisions_filter.py` (banner line 5 and footer).
+- `ratification_surfaces\cowork_discard_reach_surface_2026_08_16.md` — **UNDECIDED** — "RULING SURFACE, awaiting the user"; no generator is named in its opening lines.
+- `ratification_surfaces\cowork_deciding_act_recovery_surface_2026_08_16.md` — **GENERATED** — `tools/audit/gen_deciding_act_recovery.py` (the file's footer, line 1411).
+- `ratification_surfaces\cowork_restructuring_period_start_decision_surface.md` — **UNDECIDED** — "COWORK DECISION SURFACE, not ratified, deciding nothing itself".
+- `ratification_surfaces\cowork_ruling_registration_queue_2026_08_09.md` — **DATED** — "RULED 2026-08-09".
+- `ratification_surfaces\cowork_reserved_word_inventory_2026_08_09.md` — **UNDECIDED** — "AWAITING THE USER — an ADVISORY reading surface".
+- `ratification_surfaces\cowork_d580_transfer_fact_gathering_2026_08_09.md` — **UNDECIDED** — "A FACT-GATHERING SURFACE. NO VERDICT IS TAKEN HERE".
+- `ratification_surfaces\cowork_rule_triage_entries_2026_08_09.md` — **DATED** — "RULED 2026-08-09".
+- `ratification_surfaces\cowork_oi354_legacy_mark_establishment_2026_08_09.md` — **DATED** — "RULED AND APPLIED 2026-08-09".
+- `ratification_surfaces\cowork_perspective_inventory_ratification.md` — **DATED** — "RULED AND APPLIED … SUPERSEDED BY ITS OWN EXECUTION".
+- `ratification_surfaces\cowork_pending_ratifications_next_session.md` — **DATED** — "RULED AND APPLIED … SUPERSEDED BY ITS OWN EXECUTION".
+- `ratification_surfaces\cowork_decisions_pending_ratification_8.md` — **GENERATED** — "GENERATED REVIEW AID"; generator not stated.
+- `ratification_surfaces\cowork_decisions_pending_ratification_7.md` — **GENERATED** — "GENERATED REVIEW AID"; generator not stated.
+- `ratification_surfaces\cowork_decisions_pending_ratification_6.md` — **GENERATED** — "GENERATED REVIEW AID"; generator not stated.
+- `ratification_surfaces\cowork_decisions_pending_ratification_5.md` — **GENERATED** — "GENERATED REVIEW AID"; generator not stated.
+- `ratification_surfaces\cowork_decisions_pending_ratification_4.md` — **GENERATED** — "GENERATED REVIEW AID"; generator not stated.
+- `ratification_surfaces\cowork_decisions_pending_ratification_3.md` — **GENERATED** — "GENERATED REVIEW AID"; generator not stated.
+- `ratification_surfaces\cowork_decisions_pending_ratification_2.md` — **GENERATED** — "GENERATED REVIEW AID"; generator not stated.
+- `ratification_surfaces\cowork_decisions_pending_ratification.md` — **GENERATED** — "GENERATED REVIEW AID … regenerate with the one-off in the session record"; generator not stated.
+- `ratification_surfaces\cowork_decisions_ratification_delta.md` — **GENERATED** — "GENERATED REVIEW AID"; generator not stated.
+
+### 2(c).6 `docs/`
+
+- `docs\research_papers\README.md` — **LIVE** — an inventory (kind 11) of the local primary sources, saying "what was extracted is recorded in the grounding doc at the cited section"; a task that cites a source trusts it.
+- `docs\research_papers\BIBLIOGRAPHY.md` — **LIVE** — "Complete source register"; an inventory (kind 11) a task must trust.
+- `docs\research_papers\reading_pass_2026_08\mcleod-rohrmeier-2021-modular-harmonic-analysis.md` — **DATED** — "FETCHED CONTENT RECORD … Retrieval record. Fetched 2026-08-30".
+- `docs\precision_metric_design.md` — **UNDECIDED** — "DRAFT. Design + scoping only"; its line 15 says "nothing above says whether the ratification gate" was passed.
+- `docs\key_path_design.md` — **UNDECIDED** — "DRAFT"; its line 19 itself leaves open whether it is "retained as a superseded design record or re-bannered".
+- `docs\scoring_model.md` — **LIVE** — "Status: LIVE MANDATORY REFERENCE"; limb 3 of the specification document set; `CLAUDE.md`'s conditional read.
+- `docs\unified_analysis_pipeline.md` — **LIVE** — its own correction banner applies "branch two — a live governing surface, whose job is to be true now".
+- `docs\duplication_audit.md` — **DATED** — "HISTORICAL RECORD … Banner added 2026-08-13 under the FILING CONVENTION".
+- `docs\key_detection_baroque_partial_signature.md` — **DATED** — its second banner, added under the filing convention: "THE BODY BELOW IS UNTOUCHED (#12)".
+- `docs\score_inventory.md` — **LIVE** — `CLAUDE.md`: "For any task involving scores … read `docs/score_inventory.md` first".
+- `docs\stage4b_design.md` — **DATED** — "HISTORICAL RECORD — a design that LANDED and whose decision is now superseded in fact".
+- `docs\stage4c_cadence_key_design.md` — **DATED** — "HISTORICAL RECORD — a design whose approach was FALSIFIED".
+- `docs\symbol_input_audit.md` — **DATED** — "HISTORICAL RECORD — a completed audit".
+- `docs\redesign_plan.md` — **DATED** — "SUPERSEDED AS A PLAN — RETAINED AS THE RECORD OF WHAT WAS TRIED AND CLOSED".
+- `docs\iteration_path1_summary.md` — **DATED** — "ITERATION-ERA RECORD (path 1)".
+- `docs\implementation_roadmap.md` — **LIVE** — its own line 208 says of the content above it that it is "user-ratified (2026-07-02) and **stay LIVE**", beside annotations that mark other parts historical.
+- `docs\stage4d_local_modulation_design.md` — **UNDECIDED** — "DRAFT — ratification-gated"; its fate is not stated.
+- `docs\scoped_joint_design.md` — **UNDECIDED** — "DRAFT — ratification-gated"; its fate is not stated.
+- `docs\back_half_design.md` — **UNDECIDED** — "DRAFT — FOUNDATIONS VERIFIED, ready for user ratification"; its fate is not stated.
+- `docs\beam_widening_design.md` — **UNDECIDED** — "SHELVED … NOT ratified for implementation"; shelved is neither falsified nor superseded.
+- `docs\decoder_design.md` — **UNDECIDED** — "RATIFIED … design-only", with dated amendments; whether the legacy decoder it designs makes it a record is not stated.
+- `docs\layer_architecture_audit.md` — **DATED** — "Superseded for Layer 1 … This is a historical audit".
+- `docs\architecture_joint_inference.md` — **UNDECIDED** — "ARCHITECTURE DIRECTION — INVESTIGATION-CONFIRMED (2026-06-15), ratifiable; not yet built"; its relation to the joint estimator later ratified is not stated in its banner.
+
+### 2(c).7 `reading_pass/`
+
+Each extract, second-pass extract, cross-check and object read records one reading of one source by one
+session: **DATED**. The files that carry the pass's working state are called separately.
+
+- `reading_pass\extracts_second_pass\och-2003-minimum-error-rate-training-in-statistical-machine-translation.md` — **DATED**
+- `reading_pass\extracts\och-2003-minimum-error-rate-training-in-statistical-machine-translation.md` — **DATED**
+- `reading_pass\extracts_second_pass\chen-su-2018-functional-harmony-recognition-of-symbolic-music-data-with-multi-task-rnn.md` — **DATED**
+- `reading_pass\extracts\chen-su-2018-functional-harmony-recognition-of-symbolic-music-data-with-multi-task-rnn.md` — **DATED**
+- `reading_pass\extracts_second_pass\karystinaios-hentschel-neuwirth-widmer-2025-analysisgnn-unified-music-analysis.md` — **DATED**
+- `reading_pass\extracts_second_pass\karystinaios-widmer-2023-roman-numeral-analysis-with-graph-neural-networks-onset-wise-predictions.md` — **DATED**
+- `reading_pass\extracts_second_pass\napoleslopez-gotham-fujinaga-2021-augmentednet-roman-numeral-analysis-network.md` — **DATED**
+- `reading_pass\extracts_second_pass\micchi-gotham-giraud-2020-not-all-roads-lead-to-rome-pitch-representation-and-model-architecture.md` — **DATED**
+- `reading_pass\extracts_second_pass\sheh-ellis-2003-chord-segmentation-and-recognition-using-em-trained-hidden-markov-models.md` — **DATED**
+- `reading_pass\extracts_second_pass\korzeniowski-widmer-2018-improved-chord-recognition-by-combining-duration-and-harmonic-language-models.md` — **DATED**
+- `reading_pass\extracts_second_pass\yang-cwitkowitz-duan-2023-harmonic-analysis-with-neural-semi-crf.md` — **DATED**
+- `reading_pass\extracts_second_pass\sarawagi-cohen-2004-semi-markov-conditional-random-fields.md` — **DATED**
+- `reading_pass\extracts_second_pass\masada-bunescu-2019-chord-recognition-in-symbolic-music-a-segmental-crf-model.md` — **DATED**
+- `reading_pass\extracts_second_pass\feisthauer-bigo-giraud-leve-2020-estimating-keys-and-modulations-in-musical-pieces.md` — **DATED**
+- `reading_pass\extracts_second_pass\temperley-2009-unified-probabilistic-model-for-polyphonic-music-analysis.md` — **DATED**
+- `reading_pass\extracts_second_pass\raphael-stoddard-2003-harmonic-analysis-with-probabilistic-graphical-models.md` — **DATED**
+- `reading_pass\extracts_second_pass\catteau-martens-leman-2006-model-based-approach-to-scale-and-chord-estimation.md` — **DATED**
+- `reading_pass\extracts_second_pass\rocher-robine-hanna-oudre-2010-concurrent-estimation-of-chords-and-keys.md` — **DATED**
+- `reading_pass\extracts\granrothwilding-2013-harmonic-analysis-of-music-using-combinatory-categorial-grammar.md` — **DATED**
+- `reading_pass\l2_slice_reading_progress.md` — **UNDECIDED** — "PROGRESS RECORD, APPENDED PER SESSION"; a record that the next reading session also works from, so it is both a record and a working surface.
+- `reading_pass\extracts\illescas-rizo-inesta-2007-harmonic-melodic-and-functional-automatic-analysis.md` — **DATED**
+- `reading_pass\extracts\jacoby-tishby-tymoczko-2015-an-information-theoretic-approach-to-chord-categorization-and-functional-harmony.md` — **DATED**
+- `reading_pass\extracts\granrothwilding-steedman-2012-statistical-parsing-for-harmonic-analysis-of-jazz-chord-sequences.md` — **DATED**
+- `reading_pass\extracts\rohrmeier-2011-towards-a-generative-syntax-of-tonal-harmony.md` — **DATED**
+- `reading_pass\candidacy_upgrades.md` — **UNDECIDED** — "DERIVED 2026-08-31"; its verdicts "decide only what is READ next", so it is both a derivation record and the working input of the reading that follows.
+- `reading_pass\extracts\tsushima-nakamura-itoyama-yoshii-2017-arxiv-generative-statistical-models-with-self-emergent-grammar-of-chord-sequences.md` — **DATED**
+- `reading_pass\extracts\rohrmeier-2006-towards-modelling-harmonic-movement-in-music.md` — **DATED**
+- `reading_pass\extracts\harasim-rohrmeier-odonnell-2018-a-generalized-parsing-framework-for-generative-models-of-harmonic-syntax.md` — **DATED**
+- `reading_pass\extracts\declercq-2015-a-model-for-scale-degree-reinterpretation.md` — **DATED**
+- `reading_pass\extracts\ju-howes-mckay-conditschultz-calvozaragoza-fujinaga-2019-an-interactive-workflow-for-generating-chord-labels.md` — **DATED**
+- `reading_pass\extracts\conditschultz-ju-fujinaga-2018-a-flexible-approach-to-automated-harmonic-analysis.md` — **DATED**
+- `reading_pass\extracts\ju-conditschultz-arthur-fujinaga-2017-non-chord-tone-identification-using-deep-neural-networks.md` — **DATED**
+- `reading_pass\extracts\burgoyne-pugin-kereliuk-fujinaga-2007-a-cross-validated-study-of-modelling-strategies-for-automatic-chord-recognition-in-audio.md` — **DATED**
+- `reading_pass\extracts\sutton-mccallum-2006-an-introduction-to-conditional-random-fields-for-relational-learning.md` — **DATED**
+- `reading_pass\extracts\ng-jordan-2001-on-discriminative-vs-generative-classifiers.md` — **DATED**
+- `reading_pass\extracts\sha-pereira-2003-shallow-parsing-with-conditional-random-fields.md` — **DATED**
+- `reading_pass\l2_slice_reading_progress_companion.md` — **UNDECIDED** — the companion of the progress record above, on the same ground.
+- `reading_pass\extracts\lafferty-mccallum-pereira-2001-conditional-random-fields-for-segmenting-and-labeling-sequence-data-1.md` — **DATED**
+- `reading_pass\extracts\lafferty-mccallum-pereira-2001-conditional-random-fields-for-segmenting-and-labeling-sequence-data.md` — **DATED**
+- `reading_pass\extracts\wu-nakamura-yoshii-2020-variational-autoencoder-for-joint-chord-and-key-estimation.md` — **DATED**
+- `reading_pass\extracts\karystinaios-hentschel-neuwirth-widmer-2025-analysisgnn-unified-music-analysis.md` — **DATED**
+- `reading_pass\extracts\sailor-2024-rnbert-fine-tuning-a-masked-language-model-for-roman-numeral-analysis.md` — **DATED**
+- `reading_pass\extracts\karystinaios-widmer-2023-roman-numeral-analysis-with-graph-neural-networks.md` — **DATED**
+- `reading_pass\extracts\napoleslopez-gotham-fujinaga-2021-augmentednet-roman-numeral-analysis-network.md` — **DATED**
+- `reading_pass\extracts\micchi-gotham-giraud-2020-not-all-roads-lead-to-rome-pitch-representation-and-model-architecture.md` — **DATED**
+- `reading_pass\extracts\chen-su-2021-attend-to-chords-improving-harmonic-analysis-of-symbolic-music.md` — **DATED**
+- `reading_pass\extracts\chen-su-2019-harmony-transformer-incorporating-chord-segmentation-into-harmony-recognition.md` — **DATED**
+- `reading_pass\extracts\sheh-ellis-2003-chord-segmentation-and-recognition-using-em-trained-hidden-markov-models.md` — **DATED**
+- `reading_pass\extracts\korzeniowski-widmer-2018-improved-chord-recognition-by-combining-duration-and-harmonic-language-models.md` — **DATED**
+- `reading_pass\extracts\yang-cwitkowitz-duan-2023-harmonic-analysis-with-neural-semi-crf.md` — **DATED**
+- `reading_pass\extracts\sarawagi-cohen-2004-semi-markov-conditional-random-fields.md` — **DATED**
+- `reading_pass\extracts\masada-bunescu-2019-chord-recognition-in-symbolic-music-a-segmental-crf-model.md` — **DATED**
+- `reading_pass\extracts\temperley-2002-a-bayesian-approach-to-key-finding.md` — **DATED**
+- `reading_pass\extracts\feisthauer-bigo-giraud-leve-2020-estimating-keys-and-modulations-in-musical-pieces.md` — **DATED**
+- `reading_pass\extracts\chew-2002-spiral-array-algorithm-for-determining-key-boundaries.md` — **DATED**
+- `reading_pass\extracts\noland-sandler-2006-key-estimation-using-a-hidden-markov-model.md` — **DATED**
+- `reading_pass\extracts\ni-mcvicar-santosrodriguez-debie-2011-end-to-end-machine-learning-system-harmonic-analysis.md` — **DATED**
+- `reading_pass\extracts\temperley-2009-unified-probabilistic-model-polyphonic-music-analysis.md` — **DATED**
+- `reading_pass\extracts\raphael-stoddard-2003-harmonic-analysis-with-probabilistic-graphical-models.md` — **DATED**
+- `reading_pass\extracts\catteau-martens-leman-2006-model-based-approach-to-scale-and-chord-estimation.md` — **DATED**
+- `reading_pass\extracts\rocher-robine-hanna-oudre-2010-concurrent-estimation-of-chords-and-keys.md` — **DATED**
+- `reading_pass\extracts\sears-pearce-caplin-mcadams-2018-simulating-expectations-for-tonal-cadences.md` — **DATED**
+- `reading_pass\extracts\karystinaios-widmer-2022-cadence-detection-graph-neural-networks.md` — **DATED**
+- `reading_pass\extracts\bigo-feisthauer-giraud-leve-2018-relevance-of-musical-features-for-cadence-detection.md` — **DATED**
+- `reading_pass\extracts\temperley-sleator-1999-modeling-meter-and-harmony.md` — **DATED**
+- `reading_pass\extracts\pardo-birmingham-2002-algorithms-for-chordal-analysis.md` — **DATED**
+- `reading_pass\remedial_commission_session_record_2026_08_31.md` — **DATED**
+- `reading_pass\object_reads\task_a_consolidated_2026_08_31.md` — **DATED**
+- `reading_pass\object_reads\row3_hentschel-moss-mcleod-neuwirth-rohrmeier-unified-chord-model.md` — **DATED**
+- `reading_pass\object_reads\row21_humphrey-bello-2015-four-timely-insights.md` — **DATED**
+- `reading_pass\object_reads\row18_viaccoz-harasim-moss-rohrmeier-wavescapes.md` — **DATED**
+- `reading_pass\object_reads\row17_sapp-2005-visual-hierarchical-key-analysis.md` — **DATED**
+- `reading_pass\object_reads\row5_dehaas-magalhaes-wiering-veltkamp-harmtrace.md` — **DATED**
+- `reading_pass\object_reads\stop_row2_dpd_defusal_2026_08_31.md` — **DATED**
+- `reading_pass\object_reads\row2_mcleod-rohrmeier-2024-chord-tone-alterations-suspensions.md` — **DATED**
+- `reading_pass\object_reads\row1_mcleod-rohrmeier-2021-modular-harmonic-analysis.md` — **DATED**
+- `reading_pass\object_reads\stop_task_a_method_2026_08_31.md` — **DATED**
+- `reading_pass\object_reads\derived_row_set.md` — **DATED** — "DERIVED 2026-08-31, BEFORE ANY RE-READ"; the record of one derivation.
+- `reading_pass\continuation.md` — **UNDECIDED** — "THE PASS'S OWN STATE AT THE CLOSE OF SESSION 3 … THE PASS OWES NOTHING BUT ONE DISPATCH"; a state file for a successor, which is neither a record of one act nor a governing surface.
+- `reading_pass\population.md` — **UNDECIDED** — "POPULATION FILE, DERIVED 2026-08-30"; a derivation record that is also the pass's working population.
+- `reading_pass\extracts_second_pass\hamanaka-hirata-tojo-2013-computational-music-theory-gttm.md` — **DATED**
+- `reading_pass\extracts\lazzari-2023-knowledge-based-chord-embeddings-modal-harmony-ontology.md` — **DATED**
+- `reading_pass\extracts\hamanaka-hirata-tojo-2013-computational-music-theory-gttm.md` — **DATED**
+- `reading_pass\cross_checks\humphrey-bello-2015-four-timely-insights-ace.md` — **DATED**
+- `reading_pass\cross_checks\viaccoz-harasim-moss-rohrmeier-2023-wavescapes.md` — **DATED**
+- `reading_pass\cross_checks\sapp-2005-visual-hierarchical-key-analysis.md` — **DATED**
+- `reading_pass\cross_checks\dehaas-magalhaes-wiering-veltkamp-2013-harmtrace-functional-analysis.md` — **DATED**
+- `reading_pass\cross_checks\hentschel-moss-mcleod-neuwirth-rohrmeier-2021-unified-chord-model.md` — **DATED**
+- `reading_pass\cross_checks\mcleod-rohrmeier-2024-chord-tone-alterations-suspensions.md` — **DATED**
+- `reading_pass\cross_checks\mcleod-rohrmeier-2021-modular-harmonic-analysis.md` — **DATED**
+- `reading_pass\extracts_second_pass\humphrey-bello-2015-four-timely-insights-ace.md` — **DATED**
+- `reading_pass\extracts_second_pass\viaccoz-harasim-moss-rohrmeier-2023-wavescapes.md` — **DATED**
+- `reading_pass\extracts_second_pass\sapp-2005-visual-hierarchical-key-analysis.md` — **DATED**
+- `reading_pass\extracts_second_pass\dehaas-magalhaes-wiering-veltkamp-2013-harmtrace-functional-analysis.md` — **DATED**
+- `reading_pass\extracts_second_pass\hentschel-moss-mcleod-neuwirth-rohrmeier-2021-unified-chord-model.md` — **DATED**
+- `reading_pass\extracts_second_pass\mcleod-rohrmeier-2024-chord-tone-alterations-suspensions.md` — **DATED**
+- `reading_pass\extracts_second_pass\mcleod-rohrmeier-2021-modular-harmonic-analysis.md` — **DATED**
+
+### 2(c).8 `decisions/`
+
+Each group file is rendered by `tools/audit/decisions/gen_decisions_register.py`. `CLAUDE.md`'s decisions-register
+rule (d) says: "`DECISIONS.md` (the lean INDEX) + `decisions/group_<X>.md` … the register is a GENERATED surface".
+
+- `decisions\group_T.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_U.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_Q.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_S.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_M.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_O.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_H.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_I.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_J.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_K.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_L.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_G.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_E.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_F.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_C.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_D.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_A.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_B.md` — **GENERATED** — `gen_decisions_register.py`
+- `decisions\group_P.md` — **GENERATED** — `gen_decisions_register.py`
+
+### 2(c).9 `open_items/`
+
+Every detail file below is **UNDECIDED**, on one ground, which is repeated on each line as the dispatch asks. A
+detail file is part of a register (kind 8), whose shape the register's own rules fix: `CLAUDE.md` says it
+"carries narrative and provenance only", with the verbatim original row and dated resolution notes appended.
+Neither branch's act (a top banner, or a body correction) is what those rules prescribe.
+
+- `open_items\OI-381.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-383.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-382.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-380.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-379.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-378.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-374.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-376.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-377.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-370.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-373.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-45.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-317.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-274.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-183.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-315.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-321.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-150.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-247.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-141.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-179.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-375.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-372.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-347.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-346.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-338.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-219.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-58.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-85.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-99.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-48.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-50.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-49.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-46.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-364.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-329.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-327.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-301.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-297.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-299.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-296.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-290.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-281.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-280.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-233.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-229.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-205.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-47.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-371.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-320.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-322.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-324.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-369.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-303.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-368.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-107.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-276.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-367.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-366.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-355.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-353.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-363.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-357.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-362.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-361.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-356.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-365.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-358.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-360.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-359.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-354.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-349.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-305.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-319.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-352.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-300.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-351.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-348.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-350.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-342.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-345.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-344.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-333.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-336.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-331.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-343.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-340.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-341.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-339.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-337.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-334.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-335.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-207.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-332.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-330.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-316.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-328.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-293.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-326.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-325.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-306.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-2.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-228.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-323.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-307.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-312.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-309.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-318.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-314.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-313.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-311.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-310.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-308.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-304.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-302.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-289.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-298.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-292.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-285.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-287.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-208.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-279.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-243.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-244.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-288.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-295.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-294.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-291.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-51.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-165.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-283.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-286.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-277.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-246.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-227.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-215.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-226.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-284.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-282.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-38.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-7.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-268.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-272.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-278.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-223.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-267.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-275.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-273.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-271.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-269.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-270.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-266.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-265.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-257.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-238.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-240.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-237.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-232.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-112.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-234.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-254.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-245.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-213.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-74.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-239.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-256.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-255.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-253.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-252.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-251.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-250.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-249.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-248.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-210.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-212.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-231.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-230.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-110.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-199.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-225.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-224.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-222.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-221.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-220.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-217.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-216.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-203.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-206.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-209.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-180.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-204.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-202.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-182.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-201.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-82.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-83.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-79.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-80.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-81.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-77.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-78.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-75.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-76.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-61.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-72.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-73.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-70.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-63.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-54.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-59.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-60.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-53.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-144.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-56.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-62.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-142.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-143.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-44.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-42.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-43.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-159.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-160.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-57.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-157.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-158.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-151.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-156.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-52.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-154.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-155.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-140.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-152.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-153.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-138.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-139.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-135.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-136.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-137.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-132.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-133.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-129.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-130.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-131.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-127.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-128.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-125.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-126.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-123.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-124.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-95.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-100.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-89.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-134.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-33.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-34.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-35.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-185.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-189.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-190.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-191.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-184.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-187.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-196.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-197.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-193.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-194.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-195.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-178.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-186.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-192.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-87.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-91.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-177.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-23.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-176.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-175.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-181.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-173.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-174.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-170.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-171.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-172.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-168.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-169.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-166.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-167.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-163.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-164.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-149.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-161.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-162.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-148.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-55.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-146.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-147.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-122.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-145.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-119.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-120.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-121.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-117.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-118.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-115.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-116.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-113.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-114.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-111.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-108.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-109.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-105.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-106.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-103.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-104.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-101.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-102.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-96.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-97.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-98.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-93.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-94.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-88.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-90.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-92.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-84.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-86.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-14.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-5.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-6.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-3.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-4.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+- `open_items\OI-1.md` — **UNDECIDED** — register detail file; its shape is fixed by the register's own rules, not by either branch.
+
+### 2(c).10 Files under `tools/` that are not code
+
+A named generator comes from the file's own opening fields (`"generator"`, `"generated_by"`, `"instrument"`, or a
+`"purpose"` reading "A run of tools/…" or "Establishment (#19) of tools/…"), from its banner or footer, or from
+the generator's code. "Generator not stated" means none of these named one in what was read.
+
+- `tools\audit\defense_share.json` — **GENERATED** — `tools/audit/gen_defense_share.py`
+- `tools\audit\session_start_read_size.json` — **GENERATED** — `tools/audit/gen_session_start_read_size.py`
+- `tools\audit\status_batch_bound.json` — **GENERATED** — `tools/audit/gen_status_batch_bound.py`
+- `tools\audit\changed_paths_defense_authored_ends_task0.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\guard_state.json` — **GENERATED** — `tools/audit/gen_guard_state.py`
+- `tools\audit\changed_paths_defense_sizing_third_task1.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\changed_paths_defense_sizing_third_task0.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\changed_paths_defense_sizing_second_task0.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\changed_paths_defense_sizing_task0.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\nongating_apparatus_rows.json` — **GENERATED** — `tools/audit/gen_nongating_apparatus_rows.py`
+- `tools\audit\prune_at_amendment_lint.json` — **GENERATED** — `tools/audit/prune_at_amendment_lint.py`
+- `tools\audit\claude_md_prune_backlog.json` — **GENERATED** — `tools/audit/gen_claude_md_prune_backlog.py`
+- `tools\audit\governing_surface_spans_2026_09_07.json` — **GENERATED** — `tools/audit/gen_governing_surface_spans.py`
+- `tools\audit\claude_md_growth_2026_09_07.json` — **GENERATED** — `tools/audit/gen_claude_md_growth.py`
+- `tools\audit\changed_paths_l2_ruling_writeback_task3.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\changed_paths_l2_ruling_writeback_task0.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\changed_paths_l2_reading_file_task3.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\l0_l1_outgoing_population.json` — **GENERATED** — generator not stated
+- `tools\audit\phase3_gate_partition.json` — **GENERATED** — `tools/audit/gen_phase3_gate_partition.py`
+- `tools\audit\changed_paths_l2_reading_file_task0.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\changed_paths_l2_verdict_pass_task3.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\changed_paths_l2_verdict_pass_task0.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\changed_paths_l2_candidate_list_task3.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\l2_candidate_list.json` — **GENERATED** — generator not stated
+- `tools\audit\changed_paths_l2_candidate_list_task0.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\changed_paths_l2_criterion_task3.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\l2_criterion_written_check.json` — **GENERATED** — generator not stated
+- `tools\audit\changed_paths_l2_criterion_task0.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\l2_keyword_count_measurement.json` — **GENERATED** — generator not stated
+- `tools\audit\derivation_boot_pack.json` — **GENERATED** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\evidence_pin_membership.json` — **GENERATED** — `tools/audit/gen_evidence_pin_membership.py`
+- `tools\audit\derivation_exemplars\l0-l1\bwv1049_03_presto.provenance.md` — **DATED** — "where this file came from, and what was established about it"; the record of one extraction.
+- `tools\audit\derivation_boot_pack\l0-l1\09_the_empirical_findings_ledger.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\l0-l1\07_the_charter_the_layers_and_the_decisions.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\l0-l1\08_the_five_research_extracts.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\l0-l1\04_the_dispatch_protocol.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\l0-l1\05_the_ratified_design_intent.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\l0-l1\00_READ_THIS_FIRST.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\l0-l1\01_the_phase_definitions.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\l0-l1\02_the_guiding_principles_and_the_conventions.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\l0-l1\03_the_writing_standards.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\l0l1_boot_pack_freeze_and_render.json` — **GENERATED** — generator not stated
+- `tools\audit\l0l1_boot_pack_extension.json` — **GENERATED** — generator not stated
+- `tools\audit\l0l1_exemplar_selection.json` — **GENERATED** — `tools/audit/gen_l0l1_exemplar_selection.py`
+- `tools\audit\artifact_inventory.json` — **GENERATED** — `tools/audit/gen_artifact_inventory.py`
+- `tools\audit\derivation_boot_pack\scoring-model\04_the_dispatch_protocol.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\scoring-model\05_the_ratified_design_intent.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\scoring-model\02_the_guiding_principles_and_the_conventions.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\scoring-model\03_the_writing_standards.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\scoring-model\01_the_phase_definitions.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\harmony-boundary\05_the_ratified_design_intent.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\scoring-model\00_READ_THIS_FIRST.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\harmony-boundary\03_the_writing_standards.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\harmony-boundary\04_the_dispatch_protocol.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\harmony-boundary\01_the_phase_definitions.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\harmony-boundary\02_the_guiding_principles_and_the_conventions.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\derivation_boot_pack\harmony-boundary\00_READ_THIS_FIRST.md` — **GENERATED, FROZEN** — `tools/audit/gen_derivation_boot_pack.py`
+- `tools\audit\guard_classification.json` — **GENERATED** — `tools/audit/gen_guard_classification.py`
+- `tools\audit\recognizer_establishment_sort.json` — **GENERATED** — `tools/audit/gen_recognizer_establishment_sort.py`
+- `tools\audit\period_stratum_split.json` — **GENERATED** — `tools/audit/gen_period_stratum_split.py`
+- `tools\audit\specification_document_set.json` — **GENERATED** — `tools/audit/gen_specification_document_set.py`
+- `tools\audit\post_split_archive.json` — **GENERATED** — `tools/audit/gen_post_split_archive.py`
+- `tools\audit\rulings_sort_classification.json` — **GENERATED** — `tools/audit/gen_rulings_sort.py`
+- `tools\audit\claude_md_rule_triage.json` — **GENERATED** — generator not stated
+- `tools\audit\decisions\retired_subject_moves.json` — **GENERATED** — `tools/audit/decisions/gen_retired_subject_moves.py`
+- `tools\audit\decisions\phase1p_delegation_bar.json` — **GENERATED** — generator not stated
+- `tools\audit\decisions\backbone_decisions.json` — **UNDECIDED** — its header: "Hand-authored judgment"; it is the authored data file the decisions register is rendered from (`CLAUDE.md` rule (d): "change `tools/audit/decisions/backbone_decisions.json` and regenerate"), which is neither generated nor a document either branch names.
+- `tools\audit\decisions\home_classification.json` — **GENERATED** — `tools/audit/decisions/gen_home_classification.py`
+- `tools\audit\epoch_write_path.json` — **GENERATED** — `tools/audit/gen_epoch_write_path.py`
+- `tools\audit\july_screen_report.md` — **GENERATED** — `tools/audit/gen_july_screen.py` (its banner: "GENERATED FILE — do not hand-edit")
+- `tools\audit\july_screen.json` — **GENERATED** — `tools/audit/gen_july_screen.py`
+- `tools\audit\ratified_document_check.json` — **GENERATED** — `tools/audit/gen_ratified_document_check.py`
+- `tools\audit\governing_surface_readers.json` — **GENERATED** — `tools/audit/gen_governing_surface_readers.py`
+- `tools\audit\retirement_census_movement.json` — **GENERATED** — `tools/audit/gen_retirement_census_movement.py`
+- `tools\audit\retirement_caller_check.json` — **GENERATED** — `tools/audit/gen_retirement_caller_check.py`
+- `tools\audit\claude_md_finer_readers.json` — **GENERATED** — `tools/audit/gen_claude_md_finer_surface.py`
+- `tools\audit\claude_md_finer_archive.json` — **GENERATED** — `tools/audit/gen_claude_md_finer_archive.py`
+- `tools\audit\claude_md_finer_spans.json` — **GENERATED** — `tools/audit/gen_claude_md_finer_spans.py`
+- `tools\audit\decisions\phase1w_legacy_verification.json` — **GENERATED** — `tools/audit/decisions/gen_phase1w_legacy_verification.py`
+- `tools\audit\residue_discard_application.json` — **GENERATED** — `tools/audit/decisions/apply_residue_discard.py`
+- `tools\audit\framework_untrusted_candidates.json` — **GENERATED** — `tools/audit/gen_framework_untrusted_candidates.py`
+- `tools\audit\status_residue_move.json` — **GENERATED** — `tools/audit/gen_status_residue_move.py`
+- `tools\audit\index_status_normalization.json` — **GENERATED** — `tools/audit/gen_index_status_normalization.py`
+- `tools\audit\discard_records.json` — **GENERATED** — `tools/audit/gen_discard_records.py`
+- `tools\audit\governing_surface_split_application.json` — **GENERATED** — `tools/audit/gen_governing_surface_split.py`
+- `tools\audit\census_movement_classification.json` — **GENERATED** — `tools/audit/gen_census_movement_classification.py`
+- `tools\audit\governing_surface_spans.json` — **GENERATED** — `tools/audit/gen_governing_surface_spans.py`
+- `tools\audit\soft_discard_application.json` — **GENERATED** — `tools/audit/decisions/apply_soft_discard.py`
+- `tools\audit\decisions_filter_classification.json` — **GENERATED** — `tools/audit/gen_decisions_filter.py`
+- `tools\audit\discard_reach_split.json` — **GENERATED** — `tools/audit/gen_discard_reach_split.py`
+- `tools\audit\phase1_gate_readers.json` — **GENERATED** — `tools/audit/gen_phase1_gate_readers.py`
+- `tools\audit\sole_carrier_subclass.json` — **GENERATED** — `tools/audit/gen_sole_carrier_subclass.py`
+- `tools\audit\deciding_act_recovery.json` — **GENERATED** — `tools/audit/gen_deciding_act_recovery.py`
+- `tools\audit\decisions\reads5_repack.json` — **GENERATED** — `tools/audit/decisions/gen_reads5_repack.py`
+- `tools\audit\phase1_finish_line.json` — **GENERATED** — `tools/audit/gen_phase1_finish_line.py`
+- `tools\audit\phase1_completion_inventory.json` — **GENERATED** — `tools/audit/gen_phase1_completion_inventory.py`
+- `tools\audit\test_construction_evidence.json` — **GENERATED** — `tools/audit/gen_test_construction_evidence.py`
+- `tools\audit\doc_change_candidates.json` — **GENERATED** — `tools/audit/gen_doc_change_candidates.py`
+- `tools\audit\gating_row_sizing.json` — **GENERATED** — `tools/audit/gen_gating_row_sizing.py`
+- `tools\audit\decisions\r1_superseded_reach.json` — **GENERATED** — `tools/audit/decisions/gen_r1_superseded_reach.py`
+- `tools\audit\decisions\outstanding_delegations.json` — **GENERATED** — `tools/audit/decisions/gen_outstanding_delegations.py`
+- `tools\audit\decisions\true_half_reach_rows.json` — **GENERATED** — `tools/audit/decisions/gen_true_half_reach_rows.py`
+- `tools\audit\status_archive_pass_2026_08_11.json` — **GENERATED** — `tools/audit/gen_status_archive_pass.py`
+- `tools\audit\decisions\item1_rehome_blocker.json` — **GENERATED** — `tools/audit/decisions/gen_item1_rehome_blocker.py`
+- `tools\audit\decisions\finish_line_item1_routes.json` — **GENERATED** — `tools/audit/decisions/gen_finish_line_item1_routes.py`
+- `tools\audit\filing_convention_application.json` — **GENERATED** — `tools/audit/gen_filing_convention_application.py`
+- `tools\audit\decisions\cluster_dispositions.csv` — **GENERATED** — generator not stated in the file; its sibling `cluster_dispositions.json` names `tools/audit/decisions/gen_cluster_dispositions.py`
+- `tools\audit\decisions\cluster_dispositions.json` — **GENERATED** — `tools/audit/decisions/gen_cluster_dispositions.py`
+- `tools\audit\decisions\disposition_manifest.json` — **GENERATED** — `tools/audit/decisions/gen_cluster_dispositions.py`
+- `tools\audit\oi367_opening_correction.json` — **GENERATED** — `tools/audit/gen_oi367_opening_correction.py`
+- `tools\audit\shell_read_guard_establishment.json` — **GENERATED** — `tools/audit/shell_read_guard.py` (its establishment)
+- `tools\audit\decisions\true_half_reach.json` — **GENERATED** — `tools/audit/decisions/gen_true_half_reach.py`
+- `tools\audit\arm_comment_sweep.json` — **GENERATED** — `tools/audit/gen_arm_comment_sweep.py`
+- `tools\audit\oi357_legacy_arm_same_commit_control.json` — **GENERATED** — `tools/audit/gen_oi357_partial_signature_establishment.py`
+- `tools\audit\oi357_production_arm_comparison.json` — **GENERATED** — `tools/audit/gen_oi357_partial_signature_establishment.py`
+- `tools\audit\oi357_partial_signature_establishment.json` — **GENERATED** — `tools/audit/gen_oi357_partial_signature_establishment.py`
+- `tools\audit\oi357_production_arm_run_legacy_control.json` — **GENERATED** — `tools/audit/gen_oi357_production_arm_run.py`
+- `tools\audit\oi357_production_arm_run.json` — **GENERATED** — `tools/audit/gen_oi357_production_arm_run.py`
+- `tools\audit\reserved_word_scanner.json` — **GENERATED** — `tools/audit/gen_reserved_word_scanner.py`
+- `tools\audit\oi356_parser_correction.json` — **GENERATED** — `tools/audit/gen_oi356_parser_correction.py`
+- `tools\audit\decisions\verbatim_subject_consistency.json` — **GENERATED** — `tools/audit/decisions/gen_verbatim_subject_consistency.py`
+- `tools\audit\changed_paths_return_continuation.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\oi349_record_arm_precondition_probe.json` — **GENERATED** — `tools/audit/oi349_record_arm_precondition_probe.py`
+- `tools\audit\changed_paths_away_task2.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\changed_paths_away_task1.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\changed_paths_away_task0.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\decisions\apply_field_diff.json` — **GENERATED** — `tools/audit/decisions/gen_apply_field_diff.py`
+- `tools\audit\decisions\phase1q_record_divergence.json` — **GENERATED** — `tools/audit/decisions/gen_phase1q_record_divergence.py`
+- `tools\audit\decisions\snapshot_2026-08-08_pre_home_classification_apply\backbone_decisions.json` — **GENERATED, FROZEN** — under a `snapshot_` directory; generator not stated (a copy of the hand-authored data file, taken into the snapshot)
+- `tools\audit\changed_paths_document_routes.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\process_check_document_routes_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\decisions\route_homing_edit_shape.json` — **GENERATED** — `tools/audit/decisions/gen_route_homing_edit_shape.py`
+- `tools\audit\changed_paths_guard_dialect_close.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\process_check_guard_dialect_close_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\changed_paths_owner_rulings_homing.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\process_check_owner_rulings_homing_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\changed_paths_three_owner_rulings.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\decisions\three_owner_rulings_edit_shape.json` — **GENERATED** — `tools/audit/decisions/gen_homing_edit_shape.py`
+- `tools\audit\process_check_three_owner_rulings_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\changed_paths_licensed_homing.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\process_check_licensed_homing_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\changed_paths_five_rulings.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\process_check_five_rulings_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\decisions\oi333_repair.json` — **GENERATED** — `tools/audit/decisions/gen_oi333_repair.py`
+- `tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\snapshot_manifest.json` — **GENERATED, FROZEN** — generator not stated
+- `tools\audit\changed_paths_guard_fix_item1d.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\process_check_guard_fix_and_item1d_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\changed_paths_c1_ruling_item1c.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\process_check_c1_ruling_item1c_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\changed_paths_finish_line_item1b.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\process_check_finish_line_item1b_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\process_check_finish_line_item1_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\changed_paths_finish_line_wave.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\process_check_commit_and_finish_line_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\changed_paths_backlog_commit.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\changed_paths_finish_line.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\process_check_census_delegation_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\decisions\reads1_yield.json` — **GENERATED** — `tools/audit/decisions/gen_reads1_yield.py`
+- `tools\audit\process_check_delegations_and_corrections_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\decisions\snapshot_2026-08-04_pre_home_classification_apply\establishment.json` — **GENERATED, FROZEN** — `tools/audit/decisions/gen_phase1q_snapshot_establishment.py`
+- `tools\audit\decisions\snapshot_2026-08-04_pre_home_classification_apply\phase1q_reclassification.json` — **GENERATED, FROZEN** — generator not stated
+- `tools\audit\changed_paths_phase1_completion_inventory.json` — **GENERATED** — `tools/audit/changed_paths.py`
+- `tools\audit\process_check_phase1_completion_inventory_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\process_check_reads6_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\decisions\reads4_yield.json` — **GENERATED** — `tools/audit/decisions/gen_reads4_yield.py`
+- `tools\audit\decisions\reads6_yield.json` — **GENERATED** — `tools/audit/decisions/gen_reads6_yield.py`
+- `tools\audit\process_check_reads5_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\decisions\reads5_yield.json` — **GENERATED** — `tools/audit/decisions/gen_reads5_yield.py`
+- `tools\audit\process_check_reads4_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\decisions\reads4_oi326_application.json` — **GENERATED** — `tools/audit/decisions/gen_reads4_oi326_application.py`
+- `tools\audit\process_check_reads3_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\decisions\reads3_yield.json` — **GENERATED** — `tools/audit/decisions/gen_reads3_yield.py`
+- `tools\audit\process_check_reads2_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\decisions\reads2_yield.json` — **GENERATED** — `tools/audit/decisions/gen_reads2_yield.py`
+- `tools\audit\process_check_phase1z_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\instrument_arm_declaration_effect.json` — **GENERATED** — `tools/audit/instrument_arm_declaration_effect.py`
+- `tools\audit\process_check_reads1_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\cluster_dispositions.csv` — **GENERATED, FROZEN** — generator not stated
+- `tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\disposition_manifest.json` — **GENERATED, FROZEN** — `tools/audit/decisions/gen_cluster_dispositions.py`
+- `tools\audit\decisions\snapshot_2026-08-07_pre_oi333_repair\cluster_dispositions.json` — **GENERATED, FROZEN** — `tools/audit/decisions/gen_cluster_dispositions.py`
+- `tools\audit\corpus_arm_establishment.json` — **GENERATED** — `tools/audit/corpus_arm_stamp.py --establish`
+- `tools\audit\process_check_phase1y_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\corpus_arm_backstamp.json` — **GENERATED** — `tools/audit/corpus_arm_stamp.py --apply`
+- `tools\audit\process_check_phase1x_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\output_encoding_establishment.json` — **GENERATED** — `tools/audit/output_encoding.py --establish`
+- `tools\audit\ratification_surface_set.json` — **GENERATED** — `tools/audit/gen_ratification_surface_set.py`
+- `tools\audit\process_check_phase1v_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\process_check_phase1u_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\ratification_surface_reaim.json` — **GENERATED** — `tools/audit/reaim_ratification_surface_paths.py`
+- `tools\audit\process_check_phase1o_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\process_check_phase1s_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\process_check_phase1r_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\process_check_phase1q_dispatch.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\process_check_dispatch_scan.json` — **GENERATED** — `tools/audit/process_check.py`
+- `tools\audit\decisions\phase1n_reading_regime.json` — **GENERATED** — `tools/audit/decisions/gen_phase1n_reading_regime.py`
+- `tools\audit\decisions\phase1m_measurements.json` — **GENERATED** — `tools/audit/decisions/gen_phase1m_measurements.py`
+- `tools\audit\decisions\phase1g_triage.md` — **GENERATED** — `tools/audit/decisions/gen_phase1g_triage.py` (its banner: "GENERATED FILE — do not hand-edit")
+- `tools\audit\decisions\decision_inventory.md` — **GENERATED** — generator not stated
+- `tools\audit\decisions\cluster_preview.md` — **GENERATED** — `tools/audit/decisions/gen_decision_clusters.py` (its line 20)
+- `tools\audit\decisions\cluster_manifest.json` — **GENERATED** — `tools/audit/decisions/gen_decision_clusters.py`
+- `tools\audit\decisions\decision_clusters.csv` — **GENERATED** — generator not stated in the file; its sibling `decision_clusters.json` names `tools/audit/decisions/gen_decision_clusters.py`
+- `tools\audit\decisions\decision_clusters.json` — **GENERATED** — `tools/audit/decisions/gen_decision_clusters.py`
+- `tools\audit\decisions\seed_recall.json` — **GENERATED** — generator not stated
+- `tools\audit\decisions\manifest.json` — **GENERATED** — `tools/audit/decisions/gen_decision_harvest.py`
+- `tools\audit\decisions\decision_candidates.csv` — **GENERATED** — generator not stated in the file; its sibling `decision_candidates.json` names `tools/audit/decisions/gen_decision_harvest.py`
+- `tools\audit\decisions\decision_candidates.json` — **GENERATED** — `tools/audit/decisions/gen_decision_harvest.py`
+- `tools\audit\oi199\joint_firecount_large.json` — **GENERATED** — generator not stated
+- `tools\audit\oi199\joint_firecount_fit.json` — **GENERATED** — generator not stated
+- `tools\audit\oi199\task1_predictions.md` — **DATED** — "PRE-REGISTERED prediction bands (#17b) … Written BEFORE the measuring run".
+- `tools\audit\oi199\inventory.json` — **GENERATED** — generator not stated in the file; `tools/audit/oi199/manifest.json` names `tools/audit/gen_inventory.py`
+- `tools\audit\oi199\file_table.csv` — **GENERATED** — generator not stated in the file; `tools/audit/oi199/manifest.json` names `tools/audit/gen_inventory.py`
+- `tools\notation_seams\cost_profile_analysis.json` — **GENERATED** — `tools/notation_seams/analyze_cost_profile.py`
+- `tools\notation_seams\editing_cycle.json` — **GENERATED** — `tools/notation_seams/gen_editing_cycle.py`
+- `tools\joint_estimator\content_dp_split.json` — **GENERATED** — `tools/joint_estimator/gen_content_dp_split.py`
+- `tools\notation_seams\large_score_profile_counts.json` — **GENERATED** — generator not stated
+- `tools\notation_seams\ground_truth_inventory.json` — **GENERATED** — `tools/notation_seams/gen_ground_truth_inventory.py`
+- `tools\notation_seams\large_score_decode_profile.json` — **GENERATED** — generator not stated
+- `tools\extra_scores_registry.json` — **LIVE** — `CLAUDE.md`'s score-corpora section names it as a companion reference for any task involving scores.
+- `tools\notation_seams\partition_completeness.json` — **GENERATED** — generator not stated
+- `tools\notation_seams\README.md` — **UNDECIDED** — a read-me beside generated artifacts; it was not read, so whether it is a procedure a session is sent to is not established.
+- `tools\joint_estimator\posterior_slice_ref.json` — **GENERATED** — generator not stated
+- `tools\audit\notation_surface\summary.json` — **GENERATED** — generator not stated
+- `tools\robust_stop\manifest.json` — **GENERATED** — its `"instrument"` field names `tools/a8_rebaseline_measure.py`; `CLAUDE.md` gate block (A) says the manifest's figures are regenerated by `tools/robust_stop_restamp.py`.
+- `tools\joint_estimator\adoption_record.json` — **GENERATED** — `tools/joint_estimator/adoption_measure.py (+ _b.py)`
+- `tools\robust_stop\snapshot_2026-07-26_pre_oi178_adoption\SNAPSHOT_NOTE.md` — **GENERATED, FROZEN** — under a `snapshot_` directory; generator not stated
+- `tools\joint_estimator\probe_corpus_decode.json` — **GENERATED** — `tools/joint_estimator/probe_run.py`
+- `tools\joint_estimator\search_grading.json` — **GENERATED** — `tools/joint_estimator/search_run.py`
+- `tools\joint_estimator\weight_search.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold0_s14_15_16_17_18_19_20.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold1_s14_15_16_17_18_19_20.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold4_s7_8_9_10_11_12_13.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold4_s14_15_16_17_18_19_20.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_all_s0_1_2_3_4_5.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold0_s7_8_9_10_11_12_13.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold2_s7_8_9_10_11_12_13.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold2_s14_15_16_17_18_19_20.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold0_s0_1_2_3_4_5_6.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold1_s0_1_2_3_4_5_6.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_all_s11_12_13_14_15.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold2_s0_1_2_3_4_5_6.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold3_s0_1_2_3_4_5_6.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold3_s7_8_9_10_11_12_13.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold3_s14_15_16_17_18_19_20.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold1_s7_8_9_10_11_12_13.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_all_s16_17_18_19_20.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_fold4_s0_1_2_3_4_5_6.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_search_part_all_s6_7_8_9_10.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_fit.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_fit_part_all.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_fit_part_folds2.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_fit_part_folds4.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_fit_part_folds0.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_fit_part_folds1.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\weight_fit_part_folds3.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\fermata_boundary_addendum.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\factor_presence_inventory.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\factor_presence_fold3.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\factor_presence_fold4.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\factor_presence_fold2.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\factor_presence_fold0.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\factor_presence_fold1.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\factor_presence_all.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\note_table_fit_inventory.json` — **GENERATED** — `tools/joint_estimator/gen_note_tables.py`
+- `tools\joint_estimator\note_tables_fold3.json` — **GENERATED** — `tools/joint_estimator/gen_note_tables.py`
+- `tools\joint_estimator\note_tables_fold4.json` — **GENERATED** — `tools/joint_estimator/gen_note_tables.py`
+- `tools\joint_estimator\note_tables_fold1.json` — **GENERATED** — `tools/joint_estimator/gen_note_tables.py`
+- `tools\joint_estimator\note_tables_fold2.json` — **GENERATED** — `tools/joint_estimator/gen_note_tables.py`
+- `tools\joint_estimator\note_tables_fold0.json` — **GENERATED** — `tools/joint_estimator/gen_note_tables.py`
+- `tools\joint_estimator\note_tables_all.json` — **GENERATED** — `tools/joint_estimator/gen_note_tables.py`
+- `tools\joint_estimator\table_fit_inventory.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\tables_all.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\tables_fold4.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\tables_fold3.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\tables_fold2.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\tables_fold1.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\tables_fold0.json` — **GENERATED** — generator not stated
+- `tools\joint_estimator\count_inventory.json` — **GENERATED** — `tools/joint_estimator/gen_count_inventory.py`
+- `tools\joint_estimator\fold_assignment.json` — **GENERATED** — `tools/joint_estimator/gen_fold_assignment.py`
+- `tools\term_inventory\term_inventory_summary.json` — **GENERATED** — `tools/term_inventory/gen_term_inventory.py`
+- `tools\robust_stop\snapshot_2026-07-26_pre_oi178_adoption\manifest.json` — **GENERATED, FROZEN** — `tools/a8_rebaseline_measure.py` (its `"instrument"` field)
+- `tools\robust_stop\snapshot_2026-07-13_pre_oi168\SNAPSHOT_NOTE.md` — **GENERATED, FROZEN** — generator not stated
+- `tools\robust_stop\snapshot_2026-07-13_pre_oi168\manifest.json` — **GENERATED, FROZEN** — `tools/a8_rebaseline_measure.py` (its `"instrument"` field)
+- `tools\robust_stop\snapshot_2026-07-13_pre_oi168\corpus_transposition_offsets.json` — **GENERATED, FROZEN** — generator not stated
+- `tools\robust_stop\snapshot_2026-07-13_pre_oi168\batch_stop_frozen_history.json` — **GENERATED, FROZEN** — generator not stated
+- `tools\robust_stop\snapshot_2026-07-13_pre_oi168\README.md` — **GENERATED, FROZEN** — generator not stated
+- `tools\calibration_maps\snapshot_2026-07-13_pre_oi132_oi144\SNAPSHOT_NOTE.md` — **GENERATED, FROZEN** — generator not stated
+- `tools\robust_stop\snapshot_2026-07-13_pre_oi132_oi144\SNAPSHOT_NOTE.md` — **GENERATED, FROZEN** — generator not stated
+- `tools\robust_stop\snapshot_2026-07-13_pre_oi132_oi144\manifest.json` — **GENERATED, FROZEN** — `tools/a8_rebaseline_measure.py` (its `"instrument"` field)
+- `tools\robust_stop\snapshot_2026-07-13_pre_oi132_oi144\corpus_transposition_offsets.json` — **GENERATED, FROZEN** — generator not stated
+- `tools\robust_stop\snapshot_2026-07-13_pre_oi132_oi144\batch_stop_frozen_history.json` — **GENERATED, FROZEN** — generator not stated
+- `tools\robust_stop\snapshot_2026-07-13_pre_oi132_oi144\README.md` — **GENERATED, FROZEN** — generator not stated
+- `tools\param_manifest.json` — **GENERATED** — generator not stated
+- `tools\robust_stop\README.md` — **UNDECIDED** — the read-me of the committed reference that `CLAUDE.md` gate block (A) pins; it was not read, so whether it is a procedure a session is sent to is not established.
+- `tools\robust_stop\snapshot_2026-07-26_pre_oi178_adoption\README.md` — **GENERATED, FROZEN** — generator not stated
+- `tools\robust_stop\corpus_transposition_offsets.json` — **GENERATED** — generator not stated
+- `tools\robust_stop\snapshot_2026-07-26_pre_oi178_adoption\corpus_transposition_offsets.json` — **GENERATED, FROZEN** — generator not stated
+- `tools\robust_stop\snapshot_2026-07-12_pre_oi142_oi143\SNAPSHOT_NOTE.md` — **GENERATED, FROZEN** — generator not stated
+- `tools\robust_stop\snapshot_2026-07-12_pre_oi142_oi143\batch_stop_frozen_history.json` — **GENERATED, FROZEN** — generator not stated
+- `tools\robust_stop\snapshot_2026-07-12_pre_oi142_oi143\README.md` — **GENERATED, FROZEN** — generator not stated
+- `tools\robust_stop\snapshot_2026-07-12_pre_oi142_oi143\manifest.json` — **GENERATED, FROZEN** — `tools/a8_rebaseline_measure.py` (its `"instrument"` field)
+- `tools\audit\l5\pass1_dispositions_harness.json` — **GENERATED** — generator not stated
+- `tools\audit\l5\pass1_dispositions_instruments_core.json` — **GENERATED** — generator not stated
+- `tools\audit\l5\pass1_dispositions_resolver.json` — **GENERATED** — generator not stated
+- `tools\audit\l5\pass1_partition.json` — **GENERATED** — generator not stated
+- `tools\audit\l5\inventory.json` — **GENERATED** — generator not stated in the file; `tools/audit/l5/manifest.json` names `tools/audit/gen_inventory.py`
+- `tools\audit\l5\file_table.csv` — **GENERATED** — generator not stated in the file; `tools/audit/l5/manifest.json` names `tools/audit/gen_inventory.py`
+- `tools\audit\l3\sweep_results.txt` — **GENERATED** — generator not stated
+- `tools\audit\l3\sweep_results.json` — **GENERATED** — generator not stated
+- `tools\audit\l4\pass1_dispositions_decoder.json` — **GENERATED** — generator not stated
+- `tools\audit\l4\pass1_dispositions_decoder.csv` — **GENERATED** — generator not stated
+- `tools\audit\l4\inventory.json` — **GENERATED** — generator not stated in the file; `tools/audit/l4/manifest.json` names `tools/audit/gen_inventory.py`
+- `tools\audit\l4\file_table.csv` — **GENERATED** — generator not stated in the file; `tools/audit/l4/manifest.json` names `tools/audit/gen_inventory.py`
+- `tools\audit\l3\inventory.json` — **GENERATED** — generator not stated in the file; `tools/audit/l3/manifest.json` names `tools/audit/gen_inventory.py`
+- `tools\audit\l3\file_table.csv` — **GENERATED** — generator not stated in the file; `tools/audit/l3/manifest.json` names `tools/audit/gen_inventory.py`
+- `tools\audit\l1l2\pass1_dispositions.json` — **GENERATED** — generator not stated
+- `tools\audit\l1l2\pass1_dispositions.csv` — **GENERATED** — generator not stated
+- `tools\audit\l1l2\inventory.json` — **GENERATED** — generator not stated in the file; `tools/audit/l1l2/manifest.json` names `tools/audit/gen_inventory.py`
+- `tools\audit\l1l2\file_table.csv` — **GENERATED** — generator not stated in the file; `tools/audit/l1l2/manifest.json` names `tools/audit/gen_inventory.py`
+- `tools\robust_stop\batch_stop_frozen_history.json` — **GENERATED** — generator not stated. `CLAUDE.md` calls it "A frozen snapshot of the superseded batch sets", but it is not under a `snapshot_` directory and no hash STOP for it was read, so it is not marked FROZEN.
+- `tools\robust_stop\snapshot_2026-07-26_pre_oi178_adoption\batch_stop_frozen_history.json` — **GENERATED, FROZEN** — generator not stated
+- `tools\REPRODUCIBILITY.md` — **LIVE** — a procedure (kind 10) the kind list names by path; `CLAUDE.md`'s score-corpora section sends a score task to it.
+- `tools\score_census_registry.json` — **GENERATED** — generator not stated
+
+### 2(c).11 CODE
+
+The 299 files of Task 2(b), in that listing's order. Each one's verdict and deciding lines are at §2(b).2.
+
+- `tools\audit\gen_status_batch_bound.py` — **CODE**
+- `tools\audit\gen_defense_share.py` — **CODE**
+- `tools\audit\gen_guard_classification.py` — **CODE**
+- `tools\audit\gen_guard_state.py` — **CODE**
+- `tools\audit\gen_session_start_read_size.py` — **CODE**
+- `tools\audit\prune_at_amendment_lint.py` — **CODE**
+- `tools\audit\gen_claude_md_prune_backlog.py` — **CODE**
+- `tools\audit\gen_governing_surface_spans.py` — **CODE**
+- `tools\audit\gen_claude_md_growth.py` — **CODE**
+- `tools\audit\gen_withheld_family_reading.py` — **CODE**
+- `tools\audit\gen_derivation_boot_pack.py` — **CODE**
+- `tools\audit\gen_l0_l1_outgoing_population.py` — **CODE**
+- `tools\audit\gen_score_tags.py` — **CODE**
+- `tools\audit\gen_l0l1_exemplar_selection.py` — **CODE**
+- `tools\audit\gen_artifact_inventory.py` — **CODE**
+- `tools\audit\gen_july_screen.py` — **CODE**
+- `tools\audit\gen_specification_document_set.py` — **CODE**
+- `tools\audit\gen_period_stratum_split.py` — **CODE**
+- `tools\audit\gen_recognizer_establishment_sort.py` — **CODE**
+- `tools\audit\gen_epoch_write_path.py` — **CODE**
+- `tools\audit\gen_ratified_document_check.py` — **CODE**
+- `tools\audit\gen_artifact_inventory_surface.py` — **CODE**
+- `tools\audit\gen_governing_surface_readers.py` — **CODE**
+- `tools\audit\gen_retirement_census_movement.py` — **CODE**
+- `tools\audit\gen_deciding_act_recovery.py` — **CODE**
+- `tools\audit\gen_decisions_filter.py` — **CODE**
+- `tools\audit\gen_claude_md_finer_surface.py` — **CODE**
+- `tools\audit\gen_evidence_pin_membership.py` — **CODE**
+- `tools\audit\gen_post_split_archive.py` — **CODE**
+- `tools\audit\gen_gating_row_sizing.py` — **CODE**
+- `tools\audit\gen_nongating_apparatus_rows.py` — **CODE**
+- `tools\audit\gen_claude_md_finer_archive.py` — **CODE**
+- `tools\audit\gen_claude_md_finer_spans.py` — **CODE**
+- `tools\audit\decisions\apply_soft_discard.py` — **CODE**
+- `tools\audit\gen_rulings_sort.py` — **CODE**
+- `tools\audit\gen_retirement_caller_check.py` — **CODE**
+- `tools\audit\decisions\gen_phase1p_delegation_bar.py` — **CODE**
+- `tools\audit\decisions\gen_phase1w_legacy_verification.py` — **CODE**
+- `tools\audit\decisions\apply_residue_discard.py` — **CODE**
+- `tools\audit\gen_framework_untrusted_candidates.py` — **CODE**
+- `tools\audit\gen_status_residue_move.py` — **CODE**
+- `tools\audit\gen_governing_surface_split.py` — **CODE**
+- `tools\audit\gen_census_movement_classification.py` — **CODE**
+- `tools\audit\decisions\gen_retired_subject_moves.py` — **CODE**
+- `tools\audit\decisions\gen_home_classification.py` — **CODE**
+- `tools\audit\claude_md_rule_triage.py` — **CODE**
+- `tools\audit\decisions\gen_cluster_dispositions.py` — **CODE**
+- `tools\audit\decisions\gen_decisions_register.py` — **CODE**
+- `tools\audit\gen_discard_reach_split.py` — **CODE**
+- `tools\audit\gen_phase1_gate_readers.py` — **CODE**
+- `tools\audit\gen_sole_carrier_subclass.py` — **CODE**
+- `tools\audit\gen_discard_records.py` — **CODE**
+- `tools\audit\gen_test_construction_evidence.py` — **CODE**
+- `tools\audit\gen_doc_change_candidates.py` — **CODE**
+- `tools\audit\gen_phase1_finish_line.py` — **CODE**
+- `tools\audit\gen_phase1_completion_inventory.py` — **CODE**
+- `tools\audit\decisions\gen_true_half_reach_rows.py` — **CODE**
+- `tools\audit\gen_status_archive_pass.py` — **CODE**
+- `tools\audit\gen_filing_convention_application.py` — **CODE**
+- `tools\audit\decisions\gen_r1_superseded_reach.py` — **CODE**
+- `tools\audit\gen_oi367_opening_correction.py` — **CODE**
+- `tools\audit\shell_read_guard.py` — **CODE**
+- `tools\audit\decisions\gen_finish_line_item1_routes.py` — **CODE**
+- `tools\audit\gen_arm_comment_sweep.py` — **CODE**
+- `tools\audit\gen_oi357_partial_signature_establishment.py` — **CODE**
+- `tools\audit\gen_oi357_production_arm_run.py` — **CODE**
+- `tools\audit\decisions\gen_outstanding_delegations.py` — **CODE**
+- `tools\audit\gen_reserved_word_scanner.py` — **CODE**
+- `tools\audit\gen_index_status_normalization.py` — **CODE**
+- `tools\audit\index_status_lint.py` — **CODE**
+- `tools\audit\gen_oi356_parser_correction.py` — **CODE**
+- `tools\audit\decisions\gen_verbatim_subject_consistency.py` — **CODE**
+- `tools\audit\decisions\gen_live_prohibition_pointers.py` — **CODE**
+- `tools\audit\oi349_record_arm_precondition_probe.py` — **CODE**
+- `tools\audit\decisions\gen_apply_field_diff.py` — **CODE**
+- `tools\audit\decisions\gen_phase1q_record_divergence.py` — **CODE**
+- `tools\audit\decisions\gen_route_homing_edit_shape.py` — **CODE**
+- `tools\audit\decisions\gen_item1_rehome_blocker.py` — **CODE**
+- `tools\audit\decisions\gen_homing_edit_shape.py` — **CODE**
+- `tools\audit\decisions\gen_reads5_repack.py` — **CODE**
+- `tools\audit\decisions\gen_oi333_repair.py` — **CODE**
+- `tools\audit\decisions\gen_true_half_reach.py` — **CODE**
+- `tools\audit\decisions\gen_phase1q_snapshot_establishment.py` — **CODE**
+- `tools\audit\gen_phase3_gate_partition.py` — **CODE**
+- `tools\audit\decisions\gen_reads6_yield.py` — **CODE**
+- `tools\audit\decisions\gen_reads5_yield.py` — **CODE**
+- `tools\audit\decisions\gen_phase1n_reading_regime.py` — **CODE**
+- `tools\audit\decisions\gen_reads4_yield.py` — **CODE**
+- `tools\audit\decisions\gen_reads4_oi326_application.py` — **CODE**
+- `tools\audit\decisions\gen_reads3_yield.py` — **CODE**
+- `tools\audit\decisions\gen_reads2_yield.py` — **CODE**
+- `tools\audit\instrument_arm_declaration_effect.py` — **CODE**
+- `tools\audit\decisions\gen_reads1_yield.py` — **CODE**
+- `tools\audit\corpus_arm_stamp.py` — **CODE**
+- `tools\run_bach_preset.py` — **CODE**
+- `tools\characterise_bir_false.py` — **CODE**
+- `tools\a8_rebaseline_measure.py` — **CODE**
+- `tools\audit\decisions\gen_decision_clusters.py` — **CODE**
+- `tools\audit\decisions\gen_phase1m_measurements.py` — **CODE**
+- `tools\audit\decisions\gen_phase1g_triage.py` — **CODE**
+- `tools\audit\reaim_ratification_surface_paths.py` — **CODE**
+- `tools\audit\gen_ratification_surface_set.py` — **CODE**
+- `tools\audit\changed_paths.py` — **CODE**
+- `tools\audit\local_patches_check.py` — **CODE**
+- `tools\audit\guard_armed_check.py` — **CODE**
+- `tools\audit\process_check.py` — **CODE**
+- `tools\audit\output_encoding.py` — **CODE**
+- `tools\audit\decisions\gen_decision_harvest.py` — **CODE**
+- `tools\audit\oi199\gen_joint_dispositions.py` — **CODE**
+- `tools\audit\gen_inventory.py` — **CODE**
+- `tools\notation_seams\analyze_cost_profile.py` — **CODE**
+- `tools\joint_estimator\gen_content_dp_split.py` — **CODE**
+- `tools\notation_seams\gen_ground_truth_inventory.py` — **CODE**
+- `tools\notation_seams\gen_editing_cycle.py` — **CODE**
+- `tools\notation_seams\reconcile_switch_goldens.py` — **CODE**
+- `tools\notation_seams\classify_dualarm.py` — **CODE**
+- `tools\open_items_split_check.py` — **CODE**
+- `tools\joint_estimator\gen_spelling_establishment.py` — **CODE**
+- `tools\joint_estimator\gen_posterior_slice.py` — **CODE**
+- `tools\joint_estimator\gen_embedded_tables.py` — **CODE**
+- `tools\audit\notation_surface\gen_notation_surface_audit.py` — **CODE**
+- `tools\joint_estimator\adoption_measure.py` — **CODE**
+- `tools\joint_estimator\adoption_measure_b.py` — **CODE**
+- `tools\joint_estimator\search_direct.py` — **CODE**
+- `tools\joint_estimator\probe_decoder.py` — **CODE**
+- `tools\joint_estimator\gen_mode_marginal.py` — **CODE**
+- `tools\joint_estimator\search_run.py` — **CODE**
+- `tools\joint_estimator\fit_weights.py` — **CODE**
+- `tools\joint_estimator\gen_fermata_boundary.py` — **CODE**
+- `tools\joint_estimator\probe_desksim.py` — **CODE**
+- `tools\joint_estimator\gen_note_tables.py` — **CODE**
+- `tools\joint_estimator\gen_note_events.py` — **CODE**
+- `tools\joint_estimator\gen_factor_presence.py` — **CODE**
+- `tools\joint_estimator\gen_label_tables.py` — **CODE**
+- `tools\joint_estimator\normalize.py` — **CODE**
+- `tools\joint_estimator\gen_wir_alignment_probe.py` — **CODE**
+- `tools\joint_estimator\gen_count_inventory.py` — **CODE**
+- `tools\joint_estimator\gen_fold_assignment.py` — **CODE**
+- `tools\term_inventory\gen_term_inventory.py` — **CODE**
+- `tools\cc_oi168_probe_report.py` — **CODE**
+- `tools\measure_joint_probe.py` — **CODE**
+- `tools\cc_oi125_extrapolation_probe.py` — **CODE**
+- `tools\audit\l5\gen_grading_fitting_dispositions.py` — **CODE**
+- `tools\music21_batch.py` — **CODE**
+- `tools\calibration_fit.py` — **CODE**
+- `tools\analyze_inversion_errors.py` — **CODE**
+- `tools\mode_grading_adjudication_probe.py` — **CODE**
+- `tools\classify_key_disagreement.py` — **CODE**
+- `tools\compare_rn.py` — **CODE**
+- `tools\oracle_root_metric.py` — **CODE**
+- `tools\audit\hardening_battery.py` — **CODE**
+- `tools\c1_reliability.py` — **CODE**
+- `tools\stage5_fit_driver.py` — **CODE**
+- `tools\dcml_parser.py` — **CODE**
+- `tools\audit\l5\gen_harness_dispositions.py` — **CODE**
+- `tools\audit\l5\gen_instruments_core_dispositions.py` — **CODE**
+- `tools\audit\l5\gen_resolver_dispositions.py` — **CODE**
+- `tools\audit\l4\pass1_satellites_firerate.py` — **CODE**
+- `tools\audit\l4\pass1_satellites_dispositions.py` — **CODE**
+- `tools\audit\l4\pass1_oracle_corpus_agg.py` — **CODE**
+- `tools\audit\l4\pass1_oracle_dispositions.py` — **CODE**
+- `tools\audit\l4\pass1_decoder_aggregate_fullspine.py` — **CODE**
+- `tools\audit\l4\pass1_decoder_aggregate_decode.py` — **CODE**
+- `tools\audit\l3\measure_l3_firerate.py` — **CODE**
+- `tools\audit\gen_blind_rerun_sample.py` — **CODE**
+- `tools\audit\pass2_apply_verdicts.py` — **CODE**
+- `tools\audit\gen_dispositions.py` — **CODE**
+- `tools\cc_eg2_probe.py` — **CODE**
+- `tools\measure_fanout.py` — **CODE**
+- `tools\theta_fit.py` — **CODE**
+- `tools\c1_gen_substrate.py` — **CODE**
+- `tools\stage5_15_13_population.py` — **CODE**
+- `tools\stage5_2_2e_liveness.py` — **CODE**
+- `tools\stage5_2_2c_winnerdiff.py` — **CODE**
+- `tools\stage5_2_2c_3way.py` — **CODE**
+- `tools\stage5_2_2c_byteproof.py` — **CODE**
+- `tools\stage5_2_2b_evidence.py` — **CODE**
+- `tools\run_dlc_baseline.py` — **CODE**
+- `tools\build_score_census_registry.py` — **CODE**
+- `tools\compare_vl_parity.py` — **CODE**
+- `idiom_discovery\run_vl_feature_space.py` — **CODE**
+- `idiom_discovery\parsers\voiceleading2.py` — **CODE**
+- `idiom_discovery\parsers\voiceleading.py` — **CODE**
+- `tools\compare_progressions_oracle.py` — **CODE**
+- `tools\compare_l6_oracle.py` — **CODE**
+- `tools\cc_e0_fullspine_measure.py` — **CODE**
+- `idiom_discovery\run_discovery.py` — **CODE**
+- `idiom_discovery\parsers\improvisor.py` — **CODE**
+- `idiom_discovery\parsers\choco.py` — **CODE**
+- `idiom_discovery\parsers\bach_chordify.py` — **CODE**
+- `idiom_discovery\parsers\mcgill.py` — **CODE**
+- `idiom_discovery\chordify_resume.py` — **CODE**
+- `idiom_discovery\build_full.py` — **CODE**
+- `idiom_discovery\buildprofile.py` — **CODE**
+- `idiom_discovery\buildmat2.py` — **CODE**
+- `idiom_discovery\buildmat.py` — **CODE**
+- `idiom_discovery\analyze_rootmotion.py` — **CODE**
+- `idiom_discovery\run_xt.py` — **CODE**
+- `idiom_discovery\run_cross_tradition.py` — **CODE**
+- `idiom_discovery\run_dcml_smoke.py` — **CODE**
+- `idiom_discovery\parsers\dcml.py` — **CODE**
+- `idiom_discovery\model.py` — **CODE**
+- `tools\cc_stepM_l5_measure.py` — **CODE**
+- `tools\cc_layer3_keymode_baseline.py` — **CODE**
+- `tools\cc_layer4_chord_baseline.py` — **CODE**
+- `tools\cc_uncertain_resolver_measure.py` — **CODE**
+- `tools\cc_layer4_residual_decompose.py` — **CODE**
+- `tools\decode_chord_corpus.py` — **CODE**
+- `tools\cc_gen_tpc_corpora.sh` — **CODE**
+- `tools\cc_layer3_sweep_grade.py` — **CODE**
+- `tools\decode_keymode_corpus.py` — **CODE**
+- `tools\validate_slices_corpus.py` — **CODE**
+- `tools\cc_decomp_measure.py` — **CODE**
+- `tools\cc_round3_measure.py` — **CODE**
+- `tools\cc_round2_genre_cov.py` — **CODE**
+- `tools\cc_round2_measure.py` — **CODE**
+- `tools\cc_kma_relpair_probe.py` — **CODE**
+- `tools\cc_audit_localmodulation_accuracy.py` — **CODE**
+- `tools\cc_audit_cadence_anchor_accuracy.py` — **CODE**
+- `tools\cc_b2_subdominant_guard_measure.py` — **CODE**
+- `tools\cc_b_guard_separability.py` — **CODE**
+- `tools\cc_j_key_iii_mode_collapse.py` — **CODE**
+- `tools\cc_j_key_iii_invariant_check.py` — **CODE**
+- `tools\cc_j_key_iii_decision_diff.py` — **CODE**
+- `tools\cc_j_key_ii_redux_step1.py` — **CODE**
+- `tools\cc_j_key_ii_safety.py` — **CODE**
+- `tools\cc_j_key_i_byteid.py` — **CODE**
+- `tools\cc_j_key_i_measure.py` — **CODE**
+- `tools\cc_oracle_crosscheck.py` — **CODE**
+- `tools\cc_joint_residual_probe.py` — **CODE**
+- `tools\cc_cadence_precision_investigation.py` — **CODE**
+- `tools\cc_stage4d_i_modulation_measure.py` — **CODE**
+- `tools\cc_tonicization_modulation_probe.py` — **CODE**
+- `tools\cc_tonicization_measure.py` — **CODE**
+- `tools\cc_cadence_aggregate_prototype.py` — **CODE**
+- `tools\cc_cadence_anchor_measure.py` — **CODE**
+- `tools\cc_floor_classify.py` — **CODE**
+- `tools\rerun_dcml_comparison.py` — **CODE**
+- `tools\find_maj_to_dom7.py` — **CODE**
+- `tools\survey_1pc_dominant_slices.py` — **CODE**
+- `tools\iter95_enumerate_errors.py` — **CODE**
+- `tools\iter94_birtrue_dump.py` — **CODE**
+- `tools\iter94_jazz_regression_analysis.py` — **CODE**
+- `tools\dump_birfalse_cases.py` — **CODE**
+- `tools\iter92_jazz_bir_true_analysis.py` — **CODE**
+- `tools\diff_iter90_classification.py` — **CODE**
+- `tools\diff_iter90_flips.py` — **CODE**
+- `tools\analyze_iter90_regressions.py` — **CODE**
+- `tools\survey_iii_slash_correct_iter90.py` — **CODE**
+- `tools\analyze_wrong_root_iter90.py` — **CODE**
+- `tools\survey_pc8_flat_authored_bass.py` — **CODE**
+- `muse\framework\draw\thirdparty\freetype\freetype-2.14.1\src\tools\make_distribution_archives.py` — **CODE**
+- `muse\framework\draw\thirdparty\freetype\freetype-2.14.1\builds\meson\generate_reference_docs.py` — **CODE**
+- `muse\buildscripts\ci\crashdumps\win\generate_breakpad_symbols.py` — **CODE**
+- `muse\buildscripts\ci\crashdumps\posix\generate_breakpad_symbols.py` — **CODE**
+- `share\instruments\update_instruments_xml.py` — **CODE**
+- `tools\diag_iter63_genuine6_enumerate.py` — **CODE**
+- `tools\iter58_diagnostic.py` — **CODE**
+- `tools\diag_iter54_alts_full.py` — **CODE**
+- `tools\diag_iter54_bir_false_enumerate.py` — **CODE**
+- `tools\diag_iter48_step2.py` — **CODE**
+- `tools\diag_iter47_gate_m.py` — **CODE**
+- `tools\diag_iter47_gate_q.py` — **CODE**
+- `tools\iter45_cluster_a_diagnostic.py` — **CODE**
+- `tools\diag_genuine32_characterize.py` — **CODE**
+- `tools\gate_n_fp_scan_iter39.py` — **CODE**
+- `tools\enumerate_near_agree_iter38.py` — **CODE**
+- `tools\analyze_bir_true_iter19.py` — **CODE**
+- `tools\diag_iter32_gate_l.py` — **CODE**
+- `tools\compare_gatej.py` — **CODE**
+- `tools\diag_iter28_gate_k.py` — **CODE**
+- `tools\diag_iter8_gates_detailed.py` — **CODE**
+- `tools\diag_iter8_bir_false.py` — **CODE**
+- `tools\find_enharmonic_errors_temp.py` — **CODE**
+- `tools\compare_inversion_regressions.py` — **CODE**
+- `tools\refresh_divergence_20260424\corpus_sweep.py` — **CODE**
+- `tools\filter_effendi.py` — **CODE**
+- `tools\fix_keysig.py` — **CODE**
+- `tools\grieg_modal_diagnostic.py` — **CODE**
+- `tools\inject_m21_rn.py` — **CODE**
+- `tools\run_bach_suites_validation.py` — **CODE**
+- `tools\run_beethoven_validation.py` — **CODE**
+- `tools\run_chopin_validation.py` — **CODE**
+- `tools\run_corelli_validation.py` — **CODE**
+- `tools\run_cpe_bach_validation.py` — **CODE**
+- `tools\run_dvorak_validation.py` — **CODE**
+- `tools\run_grieg_validation.py` — **CODE**
+- `tools\run_mozart_validation.py` — **CODE**
+- `tools\run_schumann_validation.py` — **CODE**
+- `tools\run_tchaikovsky_validation.py` — **CODE**
+- `tools\run_validation.py` — **CODE**
+- `tools\section_7_3_diagnostic.py` — **CODE**
+- `tools\compare_bach_wir.py` — **CODE**
+- `tools\compare_omnibook.py` — **CODE**
+- `tools\compare_when_in_rome.py` — **CODE**
+- `src\composing\tests\verify_chord_track.py` — **CODE**
+- `tools\translations\process_source_ts_files.py` — **CODE**
+- `buildscripts\ci\crashdumps\win\generate_breakpad_symbols.py` — **CODE**
+- `buildscripts\ci\crashdumps\posix\generate_breakpad_symbols.py` — **CODE**
+
+Code files that only the 2259-file listing found, in its order. The four Python and PowerShell files are the ones
+§2(b).3 names. Every other file here is **outside 2(b)'s file types** (C++ source and headers, a CMake list file,
+a test score), as §2(b).4 records.
+
+- `src\composing\tests\regionanalysis_tests.cpp` — **CODE** — outside 2(b)'s types
+- `tools\batch_analyze.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\section\sectionrecordadapter.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\joint\jointnotationrecord.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\joint\jointnotationproducer.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\CMakeLists.txt` — **CODE** — outside 2(b)'s types (a CMake list file, not `*.cmake`)
+- `src\notation\tests\pipeline_snapshot_tests\pipeline_snapshot_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\joint\jointdecoder.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\joint\jointdecoder.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\joint\jointfactadapter.h` — **CODE** — outside 2(b)'s types
+- `src\notation\tests\notationimplode_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\section\sectionanalyzer.h` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\inference_presentation_boundary_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\joint\jointprimitives.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\joint\jointrender.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\joint\jointembeddedartifacts.cpp` — **CODE** — outside 2(b)'s types; written by `tools/joint_estimator/gen_embedded_tables.py` (its `src_path`, line 296), but it is checked-in source that compiles, so it is called CODE
+- `src\composing\analysis\joint\jointweights.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\joint\jointadapter.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\joint\jointtables.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\notemodel\note_model.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\joint\labelclass.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\chord\chordanalyzer.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\chord_branch_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\chord\postscoringgates.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\function\harmonicfunctionlayer.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\function\harmonicfunctionlayer.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\chord\chordanalyzer.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\chord\keycollectionprobe.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\region\regionanalyzer.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\modepriorpresets_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\region\regionanalyzer.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\slicing\slicer.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\region\harmonicrhythm.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\key\keymodesequence.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\key\keymodeanalyzer.h` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\postscoringgates_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\paramoverride_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\param\paramoverride.h` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\functionresolver_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\function\functionresolver.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\function\functionresolver.h` — **CODE** — outside 2(b)'s types
+- `tools\stage5_2_2d_sweep.py` — **CODE** — §2(b).3
+- `tools\tests\test_dcml_parser_figbass_pedal.py` — **CODE** — §2(b).3
+- `src\composing\tests\voiceleading_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\voiceleading\textureclassifier.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\voiceleading\voiceleadingprofiles.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\voiceleading\voicelinearview.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\voiceleading\textureclassifierreference.h` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\functionoutput_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\function\functionprogression.h` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\progressionrecognizer_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\functionprogression_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\vocabulary\harmonicvocabulary.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\progression\progressionrecognizer.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\vocabulary\harmonicvocabulary.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\harmonicvocabulary_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\grouping_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\grouping\groupinglayer.h` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\decode_chord_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\chord\chordslicedecoder.h` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\reachback_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\note_model_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\function\functionoutput.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\function\functioncadence.h` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\chordanalyzer_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\functioncadence_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\functionrelationallabel_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\function\functionrelationallabel.h` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\functionmodulation_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\function\functionmodulation.h` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\forwardoverride_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\function\forwardoverride.h` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\functionromannumeral_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\function\functionromannumeral.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\engravingbridge\phraseboundaryview.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\engravingbridge\spellingview.h` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\chordsymbolformatter_branch_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\engravingbridge_branch_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\chord\analysisutils.h` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\engravingbridge\regiontonecollector.h` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\chordvoicing_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\l3_coverage_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\analyzechord_robustness_tests.cpp` — **CODE** — outside 2(b)'s types
+- `tools\coverage\run_coverage.ps1` — **CODE** — §2(b).3
+- `src\composing\tests\spellingview_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\data\reachback_anchor.musicxml` — **UNDECIDED** — a test-input score read by a test; it is neither source that runs nor a document either branch names.
+- `src\composing\tests\slicer_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\analysis\slicing\slicer.cpp` — **CODE** — outside 2(b)'s types
+- `src\notation\tests\notationinteraction_harmony_pinning_tests.cpp` — **CODE** — outside 2(b)'s types
+- `src\composing\tests\decode_keymode_tests.cpp` — **CODE** — outside 2(b)'s types
+- `tools\tests\test_metric_scripts.py` — **CODE** — §2(b).3
+
+---
+
+## Declared
+
+- **Nothing was staged, committed or pushed.** The only file written is this report. Task 0(a)'s
+  `git hash-object -w` wrote the dispatch's blob into the object store, as the dispatch orders.
+- **No generator, guard or build was run.** Every later search was read-only: Grep and Read on the files they name,
+  and the helper sessions of Task 2(b), which used Grep and Read only.
+- **The departures already declared in the method section stand:**
+  - the Glob calls behind the Task 1 cross-check could not carry negated globs;
+  - a `grep -v` pipe was used in the first `git ls-files` batch;
+  - `--error-unmatch` was used;
+  - neither how the tools treat ignore files nor what a count counts is established.
+- **Brace globs with a slash inside did not filter as written.** Two kinds of call went wrong:
+  - a Grep whose glob listed paths such as `decisions/cluster_dispositions.json` returned "No matches found";
+  - a negated brace glob over `reading_pass/` subdirectories excluded nothing.
+
+  No result rests on those calls. The files they aimed at were then opened one by one, or searched with a glob
+  that has no slash.
+- **Task 2(c)'s classification is a reading of banners, header fields, footers, `CLAUDE.md` and the specification
+  document set. It is not a reading of each file whole.** Where a call rests on judgment rather than a quoted line
+  (the "generator not stated" data files, and the design documents outside the specification document set), the
+  rule in §2(c).0 says so.

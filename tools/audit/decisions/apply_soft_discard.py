@@ -65,7 +65,7 @@ use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 BACKBONE = HERE / "backbone_decisions.json"
 RECOVERY = ROOT / "tools" / "audit" / "deciding_act_recovery.json"
 GUARD = ROOT / "tools" / "audit" / "sole_carrier_subclass.json"
-RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
+RULING = ROOT / "records" / "cowork" / "rulings" / "cowork_rulings_2026_08_16_preparation_return.md"
 PLAN = ROOT / "tools" / "audit" / "soft_discard_application.json"
 
 RETIRED_BLOCK = "retired_entries"

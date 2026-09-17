@@ -11,7 +11,7 @@
 > ratified amendment with nowhere to go. **The amendments recorded in §2 are the user's and are
 > ratified; the container around them is not.** One word changes any of it.
 >
-> **THE AUTHORITY IT RESTS ON.** Ruling 3 of `cowork_rulings_2026_08_15_phase_definition_sitting.md`,
+> **THE AUTHORITY IT RESTS ON.** Ruling 3 of `records/cowork/rulings/cowork_rulings_2026_08_15_phase_definition_sitting.md`,
 > read at the record: a lesson's consequence *"becomes a proposed amendment to the phase definitions'
 > constraints or stop rules"*, and *"an amendment is the user's ruling, never silently applied — the
 > retrospective PROPOSES; the phase definitions, the target architecture and the way of working move
@@ -27,7 +27,7 @@
 > **WHAT IS OWED AT THE SURFACE ITSELF, AND WHY NO BATCH IS ORDERED TO DO IT.** The frozen surface
 > carries no pointer to this document. A reader who checks §3.3 there will find the set-aside clause
 > of §2.1 below still standing on its face. **Adding that pointer edits a RATIFIED SURFACE, which is
-> not a batch's call**, so `cc_instruction_framework_arrangement_landing.md` deliberately orders
+> not a batch's call**, so `records/cc/instructions/cc_instruction_framework_arrangement_landing.md` deliberately orders
 > nothing under `ratification_surfaces/`. **Whether the surface gets a pointer, or stays untouched
 > with this document standing beside it, is a question for the user.** Until it is settled, **this
 > document governs and the surface is stale wherever the two differ.**
@@ -78,7 +78,7 @@ origin, and the fact that it is **not ruled**. A pending entry binds nothing.
   rule of `cowork_informed_session_brief_framework.md` §3 — reading what exists is permitted, citing
   it as a reason is not — which is the ratified decision-neutrality corollary **D-190** applied at
   this desk, and the sources-and-incumbency record of that brief's §5.
-- **Ruling record:** `cowork_rulings_2026_08_28_informed_framework_sitting.md`.
+- **Ruling record:** `records/cowork/rulings/cowork_rulings_2026_08_28_informed_framework_sitting.md`.
   **The user's words, verbatim:** *"3 it is then, unless you need to do some fact checking first in
   order to support your earlier statement"*, and *"In my opinion 3 still stands, yours too it seems."*
 - **★ CARRIED WITH IT AND NOT DISCHARGED — the #18 exposure.** The framework document authored under
@@ -111,7 +111,7 @@ that no artifact existed that could receive it.
 | P-1 | **Twenty-one of the twenty-six `DEFECT_TYPES.md` rows** | `DEFECT_TYPES.md` — twenty-six DT rows counted at the file; **which twenty-one are the routed set is RELAYED from the ledger's §8 and is not established here** | Not ruled |
 | P-2 | **C31's half (a)** | `cowork_empirical_findings_candidates.md` at C31 | Not ruled |
 | P-3 | **C40** | `cowork_empirical_findings_candidates.md` at C40 | Not ruled |
-| P-4 | **C45's reading three** — *diagnose whether an error is a search failure or a model failure before widening the search* | `EMPIRICAL_FINDINGS_LEDGER.md` §8; ruled ROUTED at `cowork_rulings_2026_08_26_ledger_dispositions_sitting.md` §3 | Routed by ruling; **the amendment itself not ruled** |
+| P-4 | **C45's reading three** — *diagnose whether an error is a search failure or a model failure before widening the search* | `EMPIRICAL_FINDINGS_LEDGER.md` §8; ruled ROUTED at `records/cowork/rulings/cowork_rulings_2026_08_26_ledger_dispositions_sitting.md` §3 | Routed by ruling; **the amendment itself not ruled** |
 
 **Two of the DT rows are flagged at the ledger as bearing on phases not yet run, and are named here so
 they are not lost in the twenty-one:** **DT-20**, an instruction whose mandatory preconditions defeat
@@ -138,7 +138,7 @@ It **lands none of the pending items**, proposes no content for them, and takes 
 them.
 
 It **edits no tracked file.** The superseded banner at `cowork_blind_session_brief_framework.md` is
-ordered by `cc_instruction_framework_arrangement_landing.md` Task 2. The pointer at the frozen surface
+ordered by `records/cc/instructions/cc_instruction_framework_arrangement_landing.md` Task 2. The pointer at the frozen surface
 is **not** ordered by any batch and is a question for the user, per the banner above.
 
 It writes **no register entry** — see §5 — allocates **no finding number**, creates, flips or discards

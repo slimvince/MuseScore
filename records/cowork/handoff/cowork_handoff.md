@@ -36,19 +36,19 @@ below.** Two things in the table are now false:
 
 | # | Act | Whose | Depends on | Blocks |
 |---|---|---|---|---|
-| 1 | **Run `cc_instruction_handoff_prepend_2026_09_01.md`** with CC | the user | **nothing** | act 3 |
+| 1 | **Run `records/cc/instructions/cc_instruction_handoff_prepend_2026_09_01.md`** with CC | the user | **nothing** | act 3 |
 | 2 | **Open a FRESH Cowork session on `cowork_blind_session_brief_l0_l1.md`** | the user | **nothing** | act 4 |
-| 3 | **Open YOU** — the continuing line — on `cowork_handoff.md` | the user | **act 1** | — |
+| 3 | **Open YOU** — the continuing line — on `records/cowork/handoff/cowork_handoff.md` | the user | **act 1** | — |
 | 4 | Write the comparison instruction, then compare | **you** | **act 2's output file** | L2 |
 
 **What remains true of the reasoning under it.** The blind session's whole read is its brief and its
-pack, and the pack's read-me forbids it `cowork_handoff.md` by name — so the prepend never could touch
+pack, and the pack's read-me forbids it `records/cowork/handoff/cowork_handoff.md` by name — so the prepend never could touch
 it. **What that reasoning missed is that the brief and the pack are not a session's whole intake**: the
 project memory index arrives before either. That is the finding the running order and §3ai and §3aj
 exist to handle.
 
 **Act 3 depends on act 1 and on nothing else.** **HOW YOU TELL WHETHER ACT 1 HAS RUN:** open
-`cowork_handoff.md` and read its topmost `## COWORK SESSION CLOSE (` heading. **If it says EIGHTY-EIGHTH,
+`records/cowork/handoff/cowork_handoff.md` and read its topmost `## COWORK SESSION CLOSE (` heading. **If it says EIGHTY-EIGHTH,
 the prepend has run and that file is current and sufficient.** **If it says EIGHTY-FIRST, it has NOT run
 — then this entry and the eighty-second through eighty-seventh staging files beside it are your boot
 read, and the prepend is still owed.**
@@ -61,7 +61,7 @@ are not.
 
 ### What this session was
 
-The session that booted on `cowork_handoff_entry_eighty_seven.md`. It **derived no specification
+The session that booted on `records/cowork/handoff/cowork_handoff_entry_eighty_seven.md`. It **derived no specification
 statement, booted no session, and put no score in front of any deriving session.** It advanced the
 detail-specification phase's first subject from *chosen* to *fully prepared*: it took **Rulings 10
 through 24** and eleven non-ruling entries, wrote **six CC dispatches** the user ran, and landed the
@@ -71,7 +71,7 @@ sitting in **two commits**.
 them, which is why the checking held — and where it did not, §3y, §3aa, §3af and §3ag record the
 misses in this side's own name.
 
-**The sitting record is `cowork_rulings_2026_08_31_decision_surface_sitting.md`**, extended by this
+**The sitting record is `records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md`**, extended by this
 session through **§3aj** — this line originally said §3ag and was corrected when §3ah through §3aj were
 added. **§3ai is Ruling 25 and §3aj is what followed it; read both before acting on the blind
 derivation.** **No content of it is restated here (#6).** Its figures are each published
@@ -224,17 +224,17 @@ except `FRAMEWORK.md` under Ruling 8's closed scope**; the workbook was never op
 It has now been relayed twice without measurement. **Treat it as unestablished rather than as a
 figure**, and if you need it, measure it.
 
-### ★ `cowork_handoff.md` IS SEVEN ENTRIES STALE — ESTABLISHED AT THE FILE, NOT ASSUMED
+### ★ `records/cowork/handoff/cowork_handoff.md` IS SEVEN ENTRIES STALE — ESTABLISHED AT THE FILE, NOT ASSUMED
 
 **Its topmost entry is the EIGHTY-FIRST.** Its headings run 81, 80, 79, 78, 77, 76, 75, 74 — newest
 first — and **entries EIGHTY-TWO through EIGHTY-SEVEN are not in it at all.** They exist only as
 standalone staging files beside this one, and so does this entry. **A session that reads
-`cowork_handoff.md` alone and stops there misses seven entries, this one included, and will resume from
+`records/cowork/handoff/cowork_handoff.md` alone and stops there misses seven entries, this one included, and will resume from
 a superseded picture** — which is the exact failure the phase's own record clause exists to prevent.
 
-**Until that is repaired, `cowork_handoff.md` is NOT sufficient as a boot read.** Read this entry, and
+**Until that is repaired, `records/cowork/handoff/cowork_handoff.md` is NOT sufficient as a boot read.** Read this entry, and
 read the eighty-second through eighty-seventh staging files beside it. **A dispatch is written to
-prepend all seven in order and land them** — `cc_instruction_handoff_prepend_2026_09_01.md`. **It is
+prepend all seven in order and land them** — `records/cc/instructions/cc_instruction_handoff_prepend_2026_09_01.md`. **It is
 mechanical concatenation and belongs in a batch that can read the files rather than re-type them**;
 this side does not re-type a governing file's content from tool output.
 
@@ -267,14 +267,14 @@ remains binding.
 
 ### What this session was
 
-The session that booted on `cowork_handoff_entry_eighty_six.md`. It **derived nothing, read no paper
+The session that booted on `records/cowork/handoff/cowork_handoff_entry_eighty_six.md`. It **derived nothing, read no paper
 for extraction, and wrote no specification statement.** It booted in full at its own start — that boot
 is in this session's own working view, uncompacted, and this entry is written from it — enumerated the
 whole user-owed population from the record, ordered it, put four items to the user in the ruled form
 one per turn, and wrote what he ruled to disk. **It closed at a member boundary by his word and its
 own, with nothing half-done.**
 
-**The sitting record is `cowork_rulings_2026_08_31_decision_surface_sitting.md`**, extended by this
+**The sitting record is `records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md`**, extended by this
 session with **Ruling 7** (§3f), **Ruling 8** (§3g), **§3h** (not a ruling — an item closed by
 declaration) and **Ruling 9** (§3i), under the ratified P-4 practice. It is UNTRACKED and lands at a
 later dispatch's Task 0. **No content of it is restated here (#6); one line each below.**
@@ -449,13 +449,13 @@ blocks remains binding.
 
 ### What this session was
 
-The session that booted on `cowork_handoff_entry_eighty_five.md`. It **derived nothing, read no paper
+The session that booted on `records/cowork/handoff/cowork_handoff_entry_eighty_five.md`. It **derived nothing, read no paper
 for extraction, and wrote no specification statement.** It booted in full at its own start (that boot
 is in this session's own working view, uncompacted, and this entry is written from it), verified two
 other sessions' reports at the files, put two decisions to the user in the ruled form one per turn,
 and wrote what he ruled to disk.
 
-**The sitting record is `cowork_rulings_2026_08_31_decision_surface_sitting.md`**, extended by this
+**The sitting record is `records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md`**, extended by this
 session with **Ruling 5** (§3d) and **Ruling 6** (§3e) under the ratified P-4 practice. It is
 UNTRACKED and lands at a later dispatch's Task 0.
 
@@ -473,7 +473,7 @@ UNTRACKED and lands at a later dispatch's Task 0.
   word — "prior" — and depends on neither instruction.** Its three candidate readings and the evidence
   for the second are stated at §9.0 itself; nothing is restated here (#6).
 - **Both instructions of the eighty-fifth entry HAVE RUN.**
-  - **`cc_instruction_reading_pass_landing_second_2026_08_31.md`** — executed. The pass's whole
+  - **`records/cc/instructions/cc_instruction_reading_pass_landing_second_2026_08_31.md`** — executed. The pass's whole
     evidence base is in git; **Rulings 2 and 3 are executed and were verified at `FRAMEWORK.md` §5 and
     §9 by this session**, additions-plus-preserved-former-wording in both.
   - **`cowork_reading_pass_remedial_commission_2026_08_31.md`** — **Task A is DONE. Task B's
@@ -575,7 +575,7 @@ see Errors below.**
    exceeds the tool's output cap, and this side reached for a shell instead of narrowing to
    subdirectories. **Every later read this session went through the file tools.**
 2. **THREE LINES OF AN EXISTING RULING WERE DROPPED IN TRANSCRIPTION.** Recording Ruling 5 meant
-   inserting one section into `cowork_rulings_2026_08_31_decision_surface_sitting.md`, and this side
+   inserting one section into `records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md`, and this side
    re-typed the whole file to do it, losing §3a's closing *"What it does NOT do"* paragraph. **The
    standing self-check caught it** — section offsets compared against the file as read — and it was
    restored the same evening. **Ruling 6 was inserted surgically instead**, and the offsets prove
@@ -610,7 +610,7 @@ writing.** That is what #18, #19 and the theory-grounding corollary's FACT / THE
 labels exist against, and the labels are applied at extraction while the hardening happens at
 transfer. Recorded as fact; what to do about it is not a session's to propose.
 ---
-## COWORK SESSION CLOSE (EIGHTY-FIFTH ENTRY, 2026-08-31 — THE SIXTY-THIRD SESSION, THE CONTINUING LINE) — ★★ THE DETAIL-SPECIFICATION PHASE IS OPEN, AND THE READING PASS WAS ASSESSED AT THE FILES BY THIS LINE RATHER THAN TAKEN ON REPORT. Three rulings this session: **the phase OPENED**; **the primary-source reading pass commissioned as its first act** (the scope widened by the user's joint-evaluation argument); and, after the other line finished the pass and the user asked whether a separate quality-assurance run was needed, **the narrower remedial and completing acts ORDERED and the pass's output ORDERED LANDED**. **A general QA re-run was NOT ordered and the ground is recorded.** Two instructions stand written on disk and unrun: `cowork_reading_pass_remedial_commission_2026_08_31.md` and `cc_instruction_reading_pass_landing_2026_08_31.md`. **NOTHING IS IN FLIGHT.** THE CURRENT ENTRY POINT.
+## COWORK SESSION CLOSE (EIGHTY-FIFTH ENTRY, 2026-08-31 — THE SIXTY-THIRD SESSION, THE CONTINUING LINE) — ★★ THE DETAIL-SPECIFICATION PHASE IS OPEN, AND THE READING PASS WAS ASSESSED AT THE FILES BY THIS LINE RATHER THAN TAKEN ON REPORT. Three rulings this session: **the phase OPENED**; **the primary-source reading pass commissioned as its first act** (the scope widened by the user's joint-evaluation argument); and, after the other line finished the pass and the user asked whether a separate quality-assurance run was needed, **the narrower remedial and completing acts ORDERED and the pass's output ORDERED LANDED**. **A general QA re-run was NOT ordered and the ground is recorded.** Two instructions stand written on disk and unrun: `cowork_reading_pass_remedial_commission_2026_08_31.md` and `records/cc/instructions/cc_instruction_reading_pass_landing_2026_08_31.md`. **NOTHING IS IN FLIGHT.** THE CURRENT ENTRY POINT.
 
 You start clueless. Read this block first, then perform the ordinary session-start read: `CLAUDE.md`
 whole, `DECISIONS.md` whole, `STATUS.md`, and the derived gating answer
@@ -630,7 +630,7 @@ statement.** It booted in full at its own start (that boot is in this session's 
 uncompacted, and this entry is written from it), put three decisions to the user in the ruled form
 one per turn, and wrote what he ruled to disk.
 
-**The sitting record is `cowork_rulings_2026_08_30_detail_phase_opening_sitting.md`**, extended per
+**The sitting record is `records/cowork/rulings/cowork_rulings_2026_08_30_detail_phase_opening_sitting.md`**, extended per
 ruling in the same session (the ratified P-4 practice) and now carrying all three, each with the
 user's words verbatim and the surface reproduced in its grounds so the record stands alone.
 
@@ -651,7 +651,7 @@ user's words verbatim and the surface reproduced in its grounds so the record st
     re-reads of the six RELAYED central rows on their load-bearing structural claims only; Task B,
     deriving and working the candidacy upgrades that `population.md` §4 records as **none**. The two
     are independent and may run in either order; Task A is the smaller.
-  - **`cc_instruction_reading_pass_landing_2026_08_31.md`** — the landing batch: the two ruled
+  - **`records/cc/instructions/cc_instruction_reading_pass_landing_2026_08_31.md`** — the landing batch: the two ruled
     `FRAMEWORK.md` corrections, tracking the untracked population, prepending **four** staged
     handoff entries in order, and the report.
 ### ★ HOW THE TWO INSTRUCTIONS ARE OPENED, AND IN WHICH ORDER — written out because getting this wrong makes a mess
@@ -665,9 +665,9 @@ SECOND WRITING IS WHAT RUNS.** The opening line carries the pin order in the rat
 because the order is unperformable from inside the file it governs (measured twice; the in-dispatch
 restatement is the declared-departure fallback, not the primary route):
 
-> pin `cc_instruction_reading_pass_landing_second_2026_08_31.md` to a blob with `git hash-object -w`, then read it from that object, and execute it
+> pin `records/cc/instructions/cc_instruction_reading_pass_landing_second_2026_08_31.md` to a blob with `git hash-object -w`, then read it from that object, and execute it
 
-*(The superseded first writing is `cc_instruction_reading_pass_landing_2026_08_31.md`. It is landed
+*(The superseded first writing is `records/cc/instructions/cc_instruction_reading_pass_landing_2026_08_31.md`. It is landed
 by the second batch **as record and is never run** — the pattern the phase-close first writing's
 stop report already set.)*
 
@@ -680,12 +680,12 @@ which in this project's vocabulary are CC instructions.
 Nothing further is said to either. Both files are self-sufficient by construction, and each
 performs the ordinary session-start read as its own first act.
 
-**THIRD — a new session booted on THIS ENTRY** (or on `cowork_handoff.md`'s top block once the
+**THIRD — a new session booted on THIS ENTRY** (or on `records/cowork/handoff/cowork_handoff.md`'s top block once the
 landing has prepended it and deleted the staging file):
 
-> mount `C:\s\MS` and read `cowork_handoff_entry_eighty_five.md`
+> mount `C:\s\MS` and read `records/cowork/handoff/cowork_handoff_entry_eighty_five.md`
 
-CC's report `cc_report_reading_pass_landing_2026_08_31.md` is then read **IN FULL, never a
+CC's report `records/cc/reports/cc_report_reading_pass_landing_2026_08_31.md` is then read **IN FULL, never a
 summary**, its claims verified at the files and its commit identities treated as RELAYED. Only then
 is the first-deriving-subject decision taken up.
 
@@ -828,7 +828,7 @@ written, and the sentence is corrected rather than left standing — #12: the fo
 recorded here as having been wrong, not preserved as if it were once true of the finished
 session.)*
 
-After handing the landing dispatch to the user, this side wrote `cowork_handoff_entry_eighty_five.md`
+After handing the landing dispatch to the user, this side wrote `records/cowork/handoff/cowork_handoff_entry_eighty_five.md`
 to the tree **three further times** — and that file is one of the dispatch's own Task 3 inputs. The
 user then disclosed that CC was already running it. **D-251:** a running dispatch is never
 interrupted or steered mid-flight.
@@ -869,7 +869,7 @@ its own boot in view the whole time.** That is one data point on the same side a
 **a rule gets followed when something makes a session run it, or when the session is short enough
 that the rule is still visible.**
 ---
-## COWORK SESSION CLOSE (EIGHTY-FOURTH ENTRY, 2026-08-31 — THE SIXTY-SECOND SESSION) — ★★ THE PRIMARY-SOURCE READING PASS IS DONE. **THE POPULATION IS COMPLETE — TWENTY ROWS, ROW 7 INCLUDED**, the user having supplied it late in the day; its second-extraction obligation is discharged (all seven central papers cross-checked); **ROW 19 IS CLOSED** on a paper the user supplied, read WHOLE AT THE OBJECT, so **all three of R-7's named unread alternatives are now read at a primary**; and **TASK 4, THE FINDINGS SURFACE, IS WRITTEN AND LANDED** — `cowork_reading_pass_findings_2026_08_31.md`, amended twice the same day. **NO FALSIFIER against any chosen design point was found anywhere in the pass, and no value disagreed anywhere between the cross-checked pairs.** **★ FOUR RULINGS WERE TAKEN — the decision-surface form itself, V4 (Option A), DP-K's ground (Option B), and the row-19 residual (Option A)** — recorded at `cowork_rulings_2026_08_31_decision_surface_sitting.md`. **The V4 STOP is CLOSED. ★★ ALL FOUR USER ITEMS OF THE PASS ARE CLOSED, and §8 IS MET WITHOUT QUALIFICATION: row 19's second extraction was performed and cross-checked, so ALL EIGHT central papers carry cross-checked double extracts.** **★★ THE PASS IS CLOSED AND ITS REPORT TO THE CONTINUING LINE IS `cowork_reading_pass_findings_2026_08_31.md`. THE NEXT SESSION IS THE PHASE'S, NOT THE PASS'S.** **The first-deriving-subject decision returns TO THE PHASE — and choosing the subject is the USER'S decision, not a session's; a PARKED DRAFT surface exists and must be re-derived or endorsed before any question is put on it.** **A dispatch carrying the V4 and DP-K corrections is OWED and UNWRITTEN.** Nothing was landed in git by this session. **Six errors are counted — four of them one rule, and the sixth is running past the pass's own closing boundary, which the user caught. A seventh item is a RETRACTION this side made of its own stated position, before the ruling that tested it.** THE CURRENT ENTRY POINT.
+## COWORK SESSION CLOSE (EIGHTY-FOURTH ENTRY, 2026-08-31 — THE SIXTY-SECOND SESSION) — ★★ THE PRIMARY-SOURCE READING PASS IS DONE. **THE POPULATION IS COMPLETE — TWENTY ROWS, ROW 7 INCLUDED**, the user having supplied it late in the day; its second-extraction obligation is discharged (all seven central papers cross-checked); **ROW 19 IS CLOSED** on a paper the user supplied, read WHOLE AT THE OBJECT, so **all three of R-7's named unread alternatives are now read at a primary**; and **TASK 4, THE FINDINGS SURFACE, IS WRITTEN AND LANDED** — `cowork_reading_pass_findings_2026_08_31.md`, amended twice the same day. **NO FALSIFIER against any chosen design point was found anywhere in the pass, and no value disagreed anywhere between the cross-checked pairs.** **★ FOUR RULINGS WERE TAKEN — the decision-surface form itself, V4 (Option A), DP-K's ground (Option B), and the row-19 residual (Option A)** — recorded at `records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md`. **The V4 STOP is CLOSED. ★★ ALL FOUR USER ITEMS OF THE PASS ARE CLOSED, and §8 IS MET WITHOUT QUALIFICATION: row 19's second extraction was performed and cross-checked, so ALL EIGHT central papers carry cross-checked double extracts.** **★★ THE PASS IS CLOSED AND ITS REPORT TO THE CONTINUING LINE IS `cowork_reading_pass_findings_2026_08_31.md`. THE NEXT SESSION IS THE PHASE'S, NOT THE PASS'S.** **The first-deriving-subject decision returns TO THE PHASE — and choosing the subject is the USER'S decision, not a session's; a PARKED DRAFT surface exists and must be re-derived or endorsed before any question is put on it.** **A dispatch carrying the V4 and DP-K corrections is OWED and UNWRITTEN.** Nothing was landed in git by this session. **Six errors are counted — four of them one rule, and the sixth is running past the pass's own closing boundary, which the user caught. A seventh item is a RETRACTION this side made of its own stated position, before the ruling that tested it.** THE CURRENT ENTRY POINT.
 
 You start clueless. Read this block first, then perform the ordinary session-start read: `CLAUDE.md`
 whole, `DECISIONS.md` whole, `STATUS.md`, and the derived gating answer
@@ -885,7 +885,7 @@ remains binding. **A single-file opening instruction is not an exemption from th
 
 One session — this one, in three parts.
 
-**First**, the user opened it on `cowork_handoff_entry_eighty_three.md` and gave no further direction,
+**First**, the user opened it on `records/cowork/handoff/cowork_handoff_entry_eighty_three.md` and gave no further direction,
 so the cadence that entry states was followed: boot, state where the plan stands and what the proposed
 act does for it, then take a bounded slice of the second-pass cross-checks. **The slice ran to
 completion: all seven, not a subset.**
@@ -933,7 +933,7 @@ three rulings are the user's, and the text changes they call for **await a dispa
   under `ratification_surfaces/` (`cowork_v4_divergence_surface_2026_08_31.md`,
   `cowork_dpk_ground_surface_2026_08_31.md`, `cowork_row7_surface_2026_08_31.md` — **the last now
   moot, and kept unedited under #12 because its declined Option B is the record of a real save**), and
-  **`cowork_rulings_2026_08_31_decision_surface_sitting.md`** at the root.
+  **`records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md`** at the root.
   `reading_pass/population.md` gains **§3b** (the cross-checks), **§3c** (row 19), **§3d** (Task 4),
   **§3e** (row 7 resolved) and **§3f** (the three rulings) plus log entries;
   `reading_pass/additions.md` gains three session notes, **four** citation corrections and the row-7
@@ -1100,7 +1100,7 @@ user-owed list of the eighty-second entry, every item of which also still stands
   second-pass block below. **§8 is now met literally for all eight central papers and the pass's DONE
   condition carries no residual. ALL FOUR ARE CLOSED.**
 
-**A fourth ruling of form, taken first and governing the other three: `cowork_rulings_2026_08_31_decision_surface_sitting.md` Ruling 1.** Decision alternatives must be
+**A fourth ruling of form, taken first and governing the other three: `records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md` Ruling 1.** Decision alternatives must be
 **fact-based and weighed against both the ultimate objective (#4, maximum-precision inference) and the
 guiding principles; where they conflict, the objective takes precedence**; and the alternatives are to
 be shown **in plain language**, not in code-soup. **This binds every future surface, not just the
@@ -1288,11 +1288,11 @@ seven earlier pairs carry the same limitation and were accepted.
 
 ### Three staged entries are now pending prepend, in order
 
-`cowork_handoff_entry_eighty_two.md` and `cowork_handoff_entry_eighty_three.md` were never landed —
+`records/cowork/handoff/cowork_handoff_entry_eighty_two.md` and `records/cowork/handoff/cowork_handoff_entry_eighty_three.md` were never landed —
 no batch has landed anything since the eighty-second was written — so **all three await the next
 batch that lands**, and they prepend **eighty-two, then eighty-three, then eighty-four**, by the
 ratified splice construction from git objects, each staging file deleted only after its prepend is
-proven. The eighty-first entry remains the newest block inside `cowork_handoff.md` itself until then.
+proven. The eighty-first entry remains the newest block inside `records/cowork/handoff/cowork_handoff.md` itself until then.
 
 ### ★★ THE PASS IS CLOSED, AND THIS SESSION SHOULD HAVE CLOSED WITH IT — the boundary error, and the user caught it
 
@@ -1437,7 +1437,7 @@ read** (ratified 2026-08-29, P-1).
 Two sessions, and the first of them left no entry — stated rather than absorbed.
 
 1. **The sixtieth session (the user's sitting, 2026-08-30) took two rulings and wrote one
-   instruction.** Record: `cowork_rulings_2026_08_30_detail_phase_opening_sitting.md`, read whole
+   instruction.** Record: `records/cowork/rulings/cowork_rulings_2026_08_30_detail_phase_opening_sitting.md`, read whole
    by this session at the file. **Ruling 1 — the detail-specification phase is OPEN**, on the terms
    of `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §3.4; its one
    prerequisite, the ratified framework, was met. **Ruling 2 — the primary-source reading pass is
@@ -1545,11 +1545,11 @@ stands untouched by this session.
 
 ### Two staged entries are now pending prepend, in order
 
-`cowork_handoff_entry_eighty_two.md` was never landed — no batch has landed anything since it was
+`records/cowork/handoff/cowork_handoff_entry_eighty_two.md` was never landed — no batch has landed anything since it was
 written — so **both it and this file await the next batch that lands**, and they prepend
 **eighty-two first, then eighty-three**, by the ratified splice construction from git objects, each
 staging file deleted only after its prepend is proven. The eighty-first entry remains the newest
-block inside `cowork_handoff.md` itself until then.
+block inside `records/cowork/handoff/cowork_handoff.md` itself until then.
 
 ### Errors
 
@@ -1577,7 +1577,7 @@ finished rather than batching at the close.
 
 You start clueless. Read this block first, then perform the ordinary session-start read: `CLAUDE.md`
 whole, `DECISIONS.md` whole, `STATUS.md`, and the derived gating answer. The eighty-first entry — now
-prepended inside `cowork_handoff.md` by the closing batch, immediately below this one once this file
+prepended inside `records/cowork/handoff/cowork_handoff.md` by the closing batch, immediately below this one once this file
 is landed — remains binding except where this entry names a change, and every standing bar of the
 earlier blocks remains binding.
 
@@ -1587,7 +1587,7 @@ earlier blocks remains binding.
 
 The eighty-first entry closed with the phase-close second writing committed but not yet run. It has
 now run, clean. The user opened it with CC by the pin-first line; CC's report is
-`cc_report_phase_close_second_2026_08_30.md`, landed in git, read IN FULL by the fifty-ninth session
+`records/cc/reports/cc_report_phase_close_second_2026_08_30.md`, landed in git, read IN FULL by the fifty-ninth session
 and verified at the files within the no-shell method. All seven tasks performed; four declared
 departures, each sound and none absorbed silently; E-final met under its own conditional limb. The
 pin order (P-2's ratified remedy) worked in its primary form for the first time.
@@ -1603,7 +1603,7 @@ the last): `3e75ef85bc` the landing, `1d859fd238` the close, `21e78f575a` the en
   `cowork_framework_document_draft_2026_08_28.md`, with the ratification banner stamped above the
   preserved drafting banner. The framework phase's postcondition is met and the phase is CLOSED.
 - **In git for the first time:** the ratification sitting record
-  (`cowork_rulings_2026_08_29_ratification_sitting.md`), the research-list disposition surface, the
+  (`records/cowork/rulings/cowork_rulings_2026_08_29_ratification_sitting.md`), the research-list disposition surface, the
   ratified retrospective, both phase-close dispatch writings, and the first writing's stop report.
 - **The six ratified retrospective proposals are homed:** P-1 as a `CLAUDE.md` Conventions bullet;
   P-2..P-5 as four standing clauses at the end of `cowork_audit_protocol.md`'s dispatch-protocol
@@ -1626,7 +1626,7 @@ the last): `3e75ef85bc` the landing, `1d859fd238` the close, `21e78f575a` the en
 ### The cadence for your session
 
 0. **Boot as above.** This entry file is UNTRACKED. The next batch that lands anything prepends it
-   into `cowork_handoff.md` from git objects (the ratified splice construction) and deletes the
+   into `records/cowork/handoff/cowork_handoff.md` from git objects (the ratified splice construction) and deletes the
    file. You never land it yourself: the writing side writes dispatches to disk; the USER runs them
    with CC (2026-08-26 role ruling).
 1. **First: nothing.** Do not open, derive, sketch or begin the detail-specification phase. It opens
@@ -1685,7 +1685,7 @@ factor of the model, and not a two-tier reconciliation carrying factors as sub-u
 - **The disposition:** the user's words verbatim — *"Read and I agree with recommendation."* —
   given after confirming the reading, pre-empting the separate choice question. Declared in the
   ruling record, not dressed up.
-- **The record:** `cowork_rulings_2026_08_28_unit_question_sitting.md`, on disk, so the rule-(c)
+- **The record:** `records/cowork/rulings/cowork_rulings_2026_08_28_unit_question_sitting.md`, on disk, so the rule-(c)
   suspension's derivation can reach it. **What it does NOT do is stated inside it:** Δ2 (layer
   ownership) becomes gradable and is NOT decided; the §1.4 ratification hold stands; Δ3 and Δ5 stay
   held; revisitable at ratification if the external research list bears on it.
@@ -1735,7 +1735,7 @@ separate small piece of work, decided when that pass is commissioned.
 
 ### ★★ THE RATIFICATION SITTING RAN ON 2026-08-29 AND THE DECOMPOSITION IS RATIFIED
 
-`cowork_rulings_2026_08_29_ratification_sitting.md`, at the root, committed to the tree (unlanded;
+`records/cowork/rulings/cowork_rulings_2026_08_29_ratification_sitting.md`, at the root, committed to the tree (unlanded;
 rides the next landing act). **Four rulings, each on a full surface delivered as user-visible text
 in its own turn, the user disposing directly — declared in the record, not dressed up:** (1) Δ2
 ruled at the derived side in the split form — a deciding layer owns the ANSWER to its question;
@@ -1761,7 +1761,7 @@ nothing of it is begun by this session.
 
 ### The two landing batches
 
-**The first (`cc_instruction_landing_2026_08_28.md`) ran to completion and its report was read IN
+**The first (`records/cc/instructions/cc_instruction_landing_2026_08_28.md`) ran to completion and its report was read IN
 FULL and verified at the files by this side:** the eightieth entry stands at the handoff's line 4,
 the staging file is gone, `STATUS.md` carries the batch's pointer entries, and the guard artifact's
 own summary reads 75 run / 72 passing / 3 failing — the three known. Its declared fourth commit
@@ -1778,8 +1778,8 @@ owed at `cowork_audit_protocol.md` and is the user's act**; (4) the evidence-pin
 flip-flop is explained by mechanism (its population is the file system, not the index) — nothing
 owed.
 
-**The second (`cc_instruction_second_landing_2026_08_28.md`) ran on 2026-08-29 and its report
-(`cc_report_second_landing_2026_08_28.md`) was read IN FULL and verified by this side:** the
+**The second (`records/cc/instructions/cc_instruction_second_landing_2026_08_28.md`) ran on 2026-08-29 and its report
+(`records/cc/reports/cc_report_second_landing_2026_08_28.md`) was read IN FULL and verified by this side:** the
 STATUS.md close entries and the guard artifact's 75/72/3 summary confirmed at the files, and the
 two Cowork-authored landed documents proven BYTE-IDENTICAL to this side's authored copies by its
 own hash comparison of staged snapshots. Every commit identity remains RELAYED. The batch declared
@@ -1789,9 +1789,9 @@ population is larger than the three enumeration patterns reach (a further class 
 `cc_<subject>_report/investigation/dossier.md` names) — the mixed-population user question got
 larger, and remains a user question.**
 
-**The third (`cc_instruction_third_landing_2026_08_28.md`) ran on 2026-08-30: the workbook is in
+**The third (`records/cc/instructions/cc_instruction_third_landing_2026_08_28.md`) ran on 2026-08-30: the workbook is in
 git and pushed, byte-exact, unopened, the folder spelling kept — E0 and E1 met — but the batch ends
-on a STOP and E2 IS NOT MET, graded honestly by CC** (`cc_report_third_landing_2026_08_28.md`, read
+on a STOP and E2 IS NOT MET, graded honestly by CC** (`records/cc/reports/cc_report_third_landing_2026_08_28.md`, read
 in full and verified at the files by this side: the guard summary 75/70/5 at the artifact, the ref
 at the batch's last declared commit). **Two reds beyond the three known:** (a) the evidence-pin
 membership check, caused by this side's ratification sitting record entering the file-system
@@ -1837,12 +1837,12 @@ in full at the third-batch block above, with its lesson stated for the protocol'
 
 ### The cadence for the successor
 
-0. **The closing dispatch's SECOND WRITING (`cc_instruction_phase_close_second_2026_08_30.md`) is
+0. **The closing dispatch's SECOND WRITING (`records/cc/instructions/cc_instruction_phase_close_second_2026_08_30.md`) is
    the next act.** The FIRST writing stopped at Task 0 on its own declared-start-state clause —
    six failing guard verdicts measured against five declared; the sixth
    (`gen_session_start_read_size.py --check`) went stale when the third landing batch's further
    commit moved `STATUS.md`, a measured input, after the artifact was regenerated
-   (`cc_report_phase_close_2026_08_30.md`, its §4 the established cause). **The stop was correct
+   (`records/cc/reports/cc_report_phase_close_2026_08_30.md`, its §4 the established cause). **The stop was correct
    and is not a counted error on either side; the first writing lands as record, never runs.** The
    second writing declares six, derives its end criterion from six, and declares in advance the
    one red its interim guard runs will see. It clears all three extra reds (the signature row is
@@ -1916,27 +1916,27 @@ no existing file at all** — every act of this side was a new file. **The activ
 pushes per task, so that will not stay true; establish it yourself.** The new files:
 `cowork_informed_brief_provenance.md`, `cowork_section8_bar_record_2026_08_28.md`,
 `cowork_register_rule_c_suspension_2026_08_28.md`,
-`cowork_rulings_2026_08_28_framework_delta_sitting.md`, `cowork_cross_layer_transfer_list.md`,
-`cc_instruction_register_baseline_repair.md` (**PARKED**), `cc_instruction_arm_and_site_fillin.md`
+`records/cowork/rulings/cowork_rulings_2026_08_28_framework_delta_sitting.md`, `cowork_cross_layer_transfer_list.md`,
+`records/cc/instructions/cc_instruction_register_baseline_repair.md` (**PARKED**), `records/cc/instructions/cc_instruction_arm_and_site_fillin.md`
 (**ACTIVE**), and this entry's staging file.
 
 **★ WHY THIS SIDE EDITED NOTHING EXISTING, AND A SUCCESSOR SHOULD NOT READ IT AS TIMIDITY.** The
 user barred the shell again in his opening instruction and confirmed it for the whole session when
 asked — **though the asking was itself this session's counted error, and the answer is therefore
 VOIDABLE; see the errors block below.** **Without a shell there is no in-place edit**: the only route to a modified file is to retype
-it whole through the file tools and commit it back. `cowork_handoff.md` is ~930 KB and the brief is
+it whole through the file tools and commit it back. `records/cowork/handoff/cowork_handoff.md` is ~930 KB and the brief is
 425 lines. **Retyping either is exactly the truncation risk this project has already paid for once**,
 so both edits are ordered inside the dispatch instead, each with a proof CC can run and this side
 cannot: byte-identity before the §8 deletion, and zero-deletion additions-only for the prepend.
 
 ### ★ THE DISPATCH — WRITTEN, NOT DISPATCHED
 
-`cc_instruction_register_baseline_repair.md`, at the root, untracked. **Five tasks.** It carries the
+`records/cc/instructions/cc_instruction_register_baseline_repair.md`, at the root, untracked. **Five tasks.** It carries the
 register repair (Alternative B), the §8 move, the landing of this session's and the previous
 session's untracked documents, the bibliography sweep, and the close.
 
 **★ ITS TASK 0 IS A BRANCH, AND THE BRANCH IS THE WHOLE RISK OF THE BATCH.**
-`cowork_rulings_2026_08_17_residue_sitting.md` §5 ends *"A derivation that does not reconcile to
+`records/cowork/rulings/cowork_rulings_2026_08_17_residue_sitting.md` §5 ends *"A derivation that does not reconcile to
 these sums is a STOP-and-report, not an adjustment."* **This side READ that record whole — the first
 side to do so on this thread — and the reading is set out in the dispatch with its grounds AND with
 the case against it, so CC grades it rather than follows it.** Limb (a) permits the repair; limb (b)
@@ -1969,7 +1969,7 @@ CC's to take and not this side's.
   `★_the_stops…` list carries the same rule in words. **Re-shaping the code and leaving the prose
   would install the exact defect being repaired**; the dispatch orders both.
 - **The later entries carry a `date` field.** D-678, D-679 and D-680 each read `"date": "2026-08-25"`
-  and each `status_source` names **`cc_instruction_amendment_landing.md` Task 6** as the act that
+  and each `status_source` names **`records/cc/instructions/cc_instruction_amendment_landing.md` Task 6** as the act that
   entered them. **The dispatch derives the later-entry set by TWO routes — date, and identity ordinal
   with density established — and STOPS if they disagree.** **It never types the three identities.**
 - **NOT ESTABLISHED, AND STILL OWED: which act bumped the field.** The entering act above is a
@@ -1989,7 +1989,7 @@ on the face of the new file.
 
 ### ★ THE FRAMEWORK-DELTA SITTING — FOUR DISPOSITIONS, RECORDED ON DISK
 
-`cowork_rulings_2026_08_28_framework_delta_sitting.md`, at the root, untracked. **The user disposed of
+`records/cowork/rulings/cowork_rulings_2026_08_28_framework_delta_sitting.md`, at the root, untracked. **The user disposed of
 Δ1, Δ2, Δ3 and Δ5 of the framework document's Appendix A.4 after each surface was delivered as
 user-visible text in its own turn.** His words: *"Agree on your four recommendations."* and, after the
 writing side reported that §10 bears on two of them, *"persist them."*
@@ -2018,7 +2018,7 @@ advice to hold Δ3 and Δ5. **The hold does not rest on it.**
 
 ### ★ THE BATCH RAN TO COMPLETION AND LANDED. `R-2 IS DISCHARGED.`
 
-`cc_instruction_arm_and_site_fillin.md` → `cc_report_arm_and_site_fillin.md`. **Four commits, all
+`records/cc/instructions/cc_instruction_arm_and_site_fillin.md` → `records/cc/reports/cc_report_arm_and_site_fillin.md`. **Four commits, all
 pushed.** The tip is **RELAYED** and must be established by a successor. **The fill-in is on disk at
 `cowork_arm_and_site_fillin_2026_08_28.md`** — nine entries, one per behavioural statement, each with
 its arm, its sites named by file and function, what was searched, and a reachability verdict.
@@ -2041,7 +2041,7 @@ hallucinate.**
   read.**
 
 **What the batch was:** the §10 code-site fill-in — the framework document's own **R-2**, and the
-named later act of Ruling 4 of `cowork_rulings_2026_08_26_framework_opening_sitting.md`.
+named later act of Ruling 4 of `records/cowork/rulings/cowork_rulings_2026_08_26_framework_opening_sitting.md`.
 
 **What it does:** fills **sub-field 1 (the ARM)** and **sub-field 2 (the SITE)** for each of the nine
 behavioural statements at the framework document's §10.2, into **one new file beside that document
@@ -2084,7 +2084,7 @@ this entry was held out of the tree until the report landed.
 
 ### ★ CC RETURNED WITH A STOP ON THE EARLIER DISPATCH AND IT WAS RIGHT — THAT ONE WAS NOT RUN
 
-`cc_report_register_baseline_repair.md`. **Nothing committed, nothing pushed, no tool source edited,
+`records/cc/reports/cc_report_register_baseline_repair.md`. **Nothing committed, nothing pushed, no tool source edited,
 no register field moved, no file deleted. `HEAD` unmoved. Two working-tree edits made under an
 earlier state of the instruction were reverted BYTE-EXACTLY and the reversion is proven at the
 blob.** The tree is as CC found it.
@@ -2125,13 +2125,13 @@ and both halves are recorded here.**
 
 ### ★ WHAT CC ESTABLISHED THAT SURVIVES THE STOP — DO NOT COMMISSION ANY OF IT AGAIN
 
-- **The branch is limb (a)**, with five grounds quoted at `cowork_rulings_2026_08_17_residue_sitting.md`.
+- **The branch is limb (a)**, with five grounds quoted at `records/cowork/rulings/cowork_rulings_2026_08_17_residue_sitting.md`.
   The decisive one: the sentence's addressee is named three times and is the executing act; and the
   sentence names two responses to a failure and requires the first, saying nothing about whether a
   later ruling may change what reconciling means. **Task 0 need not be re-run.**
 - **The bumping commit is `4c47b55f3dedf9f731f60691faec871646fdc4d7b`**, 2026-08-26, exactly one
   commit in the whole history changing that value. **★ AND IT CORRECTS THE SEVENTY-NINTH ENTRY: THE
-  MOVE WAS NOT SILENT.** `cc_report_amendment_landing.md` §7.3 declares it in a titled section and
+  MOVE WAS NOT SILENT.** `records/cc/reports/cc_report_amendment_landing.md` §7.3 declares it in a titled section and
   again in its self-check, with its cause and the consequence that it reddened both discard checks;
   the dispatch never ordered it. **What was missing was not disclosure — it was a route from a landed
   report's finding into a ruling.** The seventy-ninth entry's framing of a silent bump is wrong and is
@@ -2146,12 +2146,12 @@ and both halves are recorded here.**
 - **A2's second limb is FALSIFIED: `gen_evidence_pin_membership.py --check` is GREEN**, because that
   derivation's population moves on `cowork_rulings_*` records and this batch's untracked inputs were
   not ruling records. **★ THAT IS NOW OUT OF DATE IN THE OTHER DIRECTION: this session has since
-  written `cowork_rulings_2026_08_28_framework_delta_sitting.md`, which IS one.** Whoever revalidates
+  written `records/cowork/rulings/cowork_rulings_2026_08_28_framework_delta_sitting.md`, which IS one.** Whoever revalidates
   measures it rather than carrying either statement.
 
 ### ★ THE FINDING THAT CHANGES THE REPAIR ITSELF — A THIRD CODE SITE, ESTABLISHED AT THE SOURCE HERE
 
-CC relays from `cc_report_amendment_landing.md` that the register cannot accept a new entry without
+CC relays from `records/cc/reports/cc_report_amendment_landing.md` that the register cannot accept a new entry without
 turning a guard red, because the renderer refuses to render unless live plus retired equals the
 former population. **This side did not relay it. It read
 `tools/audit/decisions/gen_decisions_register.py` at the source: `check_retired_block` carries the
@@ -2180,10 +2180,10 @@ remains the largest owed item. **The user was offered one this session and decli
 was made blind, so the declination is not a settled ruling and a successor must not cite it as
 one.** The surface has been re-presented in plain language and the answer is owed.
 
-**Read whole:** `cowork_rulings_2026_08_17_residue_sitting.md`; **`cowork_framework_document_draft_2026_08_28.md`
+**Read whole:** `records/cowork/rulings/cowork_rulings_2026_08_17_residue_sitting.md`; **`cowork_framework_document_draft_2026_08_28.md`
 at §0–§5, §9.0, §9's first design points, §10, §11 and Appendix A.4/A.5**; the brief's §8 and its §3
 closed-list region; `cowork_register_blocker_surface_2026_08_28.md`;
-`cc_instruction_informed_brief_landing.md` (for the dispatch form); `apply_residue_discard.py`'s
+`records/cc/instructions/cc_instruction_informed_brief_landing.md` (for the dispatch form); `apply_residue_discard.py`'s
 `the_arithmetic` and its module head; `apply_soft_discard.py`'s `check_applied`. **Read in part:**
 the seventy-ninth, seventy-eighth and seventy-seventh entries of this file;
 `cowork_audit_protocol.md`'s dispatch-protocol section at its standing clauses;
@@ -2192,11 +2192,11 @@ the seventy-ninth, seventy-eighth and seventy-seventh entries of this file;
 ONLY**; `STATUS.md` whole and `EMPIRICAL_FINDINGS_LEDGER.md` at its banner;
 **`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` at §0, §3.3 and §3.9**;
 **`cowork_framework_phase_opening_surface_2026_08_26.md` at its Decisions 4 and 5**;
-**`cowork_rulings_2026_08_26_framework_opening_sitting.md` at Ruling 5 and §6**;
+**`records/cowork/rulings/cowork_rulings_2026_08_26_framework_opening_sitting.md` at Ruling 5 and §6**;
 **`tools/audit/decisions/gen_decisions_register.py` at `check_retired_block`**; **`CLAUDE.md` at its
 Conventions section only, opened late and after error (4)**. **NOT OPENED:**
 `cowork_section8_breach_surface_2026_08_28.md`; `DECISIONS.md`; `OPEN_ITEMS.md`; the three sealed
-files; `BIBLIOGRAPHY.md` beyond staging it; **`cc_report_amendment_landing.md`, whose §7.3 is RELAYED
+files; `BIBLIOGRAPHY.md` beyond staging it; **`records/cc/reports/cc_report_amendment_landing.md`, whose §7.3 is RELAYED
 through CC's report and was not opened here.** **★ THE ORDINARY SESSION-START READ WAS NOT
 PERFORMED**, the user's instruction being a single named file and what it directs — **and the errors
 block above records that as the single cheapest cause of this session's error count. A successor
@@ -2312,10 +2312,10 @@ about what it put to the user.**
 `6005daecaf9f1a6692e61521911ef8b99ed73b55`** — the fill-in batch's four commits landed and were
 pushed. **This side read the new value at `.git/refs/heads/master` with the file tool and it is
 RELAYED nowhere in this entry on purpose: ESTABLISH IT YOURSELF at the object.** Every commit
-identity in `cc_report_arm_and_site_fillin.md` is likewise unverified here.
+identity in `records/cc/reports/cc_report_arm_and_site_fillin.md` is likewise unverified here.
 
 **★ ESTABLISH THE TREE'S STATE YOURSELF; DO NOT ASSUME THE SHAPE BELOW.** As this entry was written:
-**`cowork_informed_session_brief_framework.md` modified; `cowork_handoff.md` modified but NOT by this
+**`cowork_informed_session_brief_framework.md` modified; `records/cowork/handoff/cowork_handoff.md` modified but NOT by this
 side** — CC established that it carries the seventy-eighth AND seventy-ninth entries unlanded, so a
 prepend of this one would make three at once. **Untracked additions by this side and the previous
 one:** the framework author's draft, both earlier 2026-08-28 decision surfaces, the provenance file,
@@ -2332,7 +2332,7 @@ The next acts, in order:
    **CONFIRMED at that batch's own A1 grading:** it enumerated the tree, found the Cowork side's two
    tracked modifications and the eight untracked inputs by path, **and committed none of them** — its
    footprint was its own new file and the artifacts its tasks regenerate.
-   **★ THE ANSWER IS WRITTEN: `cc_instruction_landing_2026_08_28.md`, item 0 of the cadence below.
+   **★ THE ANSWER IS WRITTEN: `records/cc/instructions/cc_instruction_landing_2026_08_28.md`, item 0 of the cadence below.
    Until it runs, this risk is live.** The act that would have landed them is the **parked** register dispatch, which is now
    known incomplete at three points. **Result: two 2026-08-28 sessions' worth of ruling records,
    decision surfaces, the framework document draft, the transfer list and three handoff entries exist
@@ -2340,13 +2340,13 @@ The next acts, in order:
    end-of-session cadence is that work is pushed for backup. **It has not been. A successor should
    treat a landing act as due the moment the running batch reports, and should not let a third
    session pass without one.**
-0. **★ `cc_instruction_landing_2026_08_28.md` IS WRITTEN, ACTIVE AND READY. GIVE IT TO CC FIRST.** It
-   prepends this entry into `cowork_handoff.md`, deletes the staging file, and lands every untracked
+0. **★ `records/cc/instructions/cc_instruction_landing_2026_08_28.md` IS WRITTEN, ACTIVE AND READY. GIVE IT TO CC FIRST.** It
+   prepends this entry into `records/cowork/handoff/cowork_handoff.md`, deletes the staging file, and lands every untracked
    document of the two 2026-08-28 Cowork sessions. **It repairs nothing and moves the phase not at
    all — it is a backup act, and it is first because the work is currently backed up nowhere.**
    *(The fill-in batch returned, landed and pushed; its report is verified at the files by this side
    to the extent a side without a shell can verify it, at the batch block above.)*
-1. **DO NOT re-send `cc_instruction_register_baseline_repair.md`.** It is PARKED, it was handed to CC
+1. **DO NOT re-send `records/cc/instructions/cc_instruction_register_baseline_repair.md`.** It is PARKED, it was handed to CC
    in that state, CC stopped on it correctly, and **it is now known to be incomplete at three points**
    — backlog items 5, 6 and 7. **Whether it is active or parked is one dated note in the file and one
    word from the user; nothing else settles it, and no session settles it alone.**
@@ -2444,7 +2444,7 @@ written. This session alone has produced three counted errors that are retrospec
 
 **★ B0 — FROM THE FILL-IN BATCH. AUDIT-PHASE MATERIAL. IT MUST NOT BE WORKED BEFORE THE AUDIT.**
 
-**Eleven QUARANTINED AUDIT QUESTIONS** are enumerated together at `cc_report_arm_and_site_fillin.md`
+**Eleven QUARANTINED AUDIT QUESTIONS** are enumerated together at `records/cc/reports/cc_report_arm_and_site_fillin.md`
 §9 and again at their own entries in the fill-in — disagreements between a behavioural statement and
 the code, each stated once and unresolved. **They are the first concrete specification-against-code
 evidence this phase has produced, and they are now enumerable rather than hypothetical.** The
@@ -2483,7 +2483,7 @@ and deliberately outside the guard set. **Both owe rows. Neither is acted on.**
 11. The **§3 closed-list item this side ADDED** over `cowork_section8_bar_record_2026_08_28.md` —
     this side's act, not the user's.
 12. The independent challenge run; the three sealed samples' disposition; the first-stage draft's
-    home; the **#18** exposure; the correction of `cc_report_framework_arrangement_landing.md` §3.3.
+    home; the **#18** exposure; the correction of `records/cc/reports/cc_report_framework_arrangement_landing.md` §3.3.
 13. **The register blocker**, whose repair is written, parked, and now known to be incomplete.
 
 ---
@@ -2530,7 +2530,7 @@ at the artifact by this side: 677 before, 165 retired, 512 after.**
 FILE.** `backbone_decisions.json` → `retired_entries` → `the_population_before_this_retirement`
 **reads 680.** It names a historical quantity — the register's size before the 2026-08-16 retirement
 — which was **677** and cannot change; the committed plan still says 677, and
-`cc_report_register_reconciliation.md` measured 677 at that offset. Whoever added **D-678, D-679,
+`records/cc/reports/cc_report_register_reconciliation.md` measured 677 at that offset. Whoever added **D-678, D-679,
 D-680** — all three read at the data file — bumped the field so the block-level arithmetic *"live +
 retired = the former population"* would keep passing, **and that is what broke the plan comparison
 instead.** **NOT ESTABLISHED AND OWED: which act bumped it, and under what dispatch. A change to the
@@ -2552,7 +2552,7 @@ running total.** Alternative C — a written suspension of register rule (c) wit
 listed — was recommended alongside B **and is not ruled.**
 
 **★ THE DISPATCH IS NOT WRITTEN. IT IS THE NEXT ACT ON THIS THREAD.** Its **first task reads
-`cowork_rulings_2026_08_17_residue_sitting.md` at the sentence making a non-reconciling derivation a
+`records/cowork/rulings/cowork_rulings_2026_08_17_residue_sitting.md` at the sentence making a non-reconciling derivation a
 STOP-and-report rather than an adjustment, and STOPS if that sentence bars the re-aiming** rather
 than merely barring a session from adjusting the sums on its own. **This side never read that ruling
 record** — every ruling quoted in the surface is quoted from a tool's source or a committed
@@ -2571,7 +2571,7 @@ revised against seven rulings it is not shown.
 
 **★ THE BAR ITEM WAS THIS SIDE'S OWN DRAFTING, NOT A USER RULING.** The seventy-eighth entry records
 the closed list as that side's fourth error, self-caught at its close. It is over-broad in **exactly
-the shape of Ruling 5 of `cowork_rulings_2026_08_26_amendment_landing_sitting.md`**, read at the
+the shape of Ruling 5 of `records/cowork/rulings/cowork_rulings_2026_08_26_amendment_landing_sitting.md`**, read at the
 record here: the ground there was that the bar *"was this side's own, written over-broad … without
 checking what it would block."* **Three days apart, same shape, and the recorded lesson is to fix the
 bar rather than re-rule around it.**
@@ -2620,11 +2620,11 @@ largest owed item.
 
 **Read whole:** the brief's §8 and its §3 bar region; both discard tools' `--check` implementations
 and `apply_residue_discard.py`'s `the_arithmetic`; `soft_discard_application.json` at its state block;
-Ruling 5 of `cowork_rulings_2026_08_26_amendment_landing_sitting.md`. **Read in part:** the
+Ruling 5 of `records/cowork/rulings/cowork_rulings_2026_08_26_amendment_landing_sitting.md`. **Read in part:** the
 seventy-eighth, seventy-seventh and seventy-sixth entries of this file; **`CLAUDE.md` at the
 decisions-register section and nowhere else**; `tools/audit/guard_state.json`;
 `backbone_decisions.json` at its retired-block header and at D-675–D-680; `BIBLIOGRAPHY.md`;
-`cc_report_register_reconciliation.md` by pattern.
+`records/cc/reports/cc_report_register_reconciliation.md` by pattern.
 
 **NOT OPENED: `cowork_framework_document_draft_2026_08_28.md` itself.** Everything this entry says
 about that document's contents — Δ2, Δ3, DP-N, the §8 declaration — **is RELAYED from the author
@@ -2696,8 +2696,8 @@ mistake. **In conversation with the user, plain ordinary English.**
 
 Tip **`6005daecaf9f1a6692e61521911ef8b99ed73b55`**, read at `.git/refs/heads/master` with the file
 tool. It has moved from the seventy-seventh entry's `8798d6049e2e237efd4d8bffd5b7f7f904815493`,
-**because `cc_instruction_informed_brief_landing.md` ran to completion.** Its report
-`cc_report_informed_brief_landing.md` is on disk and was **read WHOLE by this side.**
+**because `records/cc/instructions/cc_instruction_informed_brief_landing.md` ran to completion.** Its report
+`records/cc/reports/cc_report_informed_brief_landing.md` is on disk and was **read WHOLE by this side.**
 
 **Everything this session wrote is now LANDED IN GIT** — both 2026-08-28 ruling records, the informed
 brief and its revision, `PHASE_CONSTRAINTS_AND_STOP_RULES.md`, both ratification-surface banners, and
@@ -2724,12 +2724,12 @@ fifteen pack-file identities — is RELAYED.**
 ### ★ THIS SIDE'S TWO FURTHER ERRORS. READ THIS BEFORE WRITING ANY DISPATCH.
 
 **(1) THE OVER-BROAD TOOL-SOURCE BAR — A REPEAT OF AN ERROR THE RECORD HAD ALREADY NAMED AND RULED
-AGAINST, TWO DAYS LATER.** `cc_instruction_informed_brief_landing.md` states *"no edit to any tool
+AGAINST, TWO DAYS LATER.** `records/cc/instructions/cc_instruction_informed_brief_landing.md` states *"no edit to any tool
 source — this batch changes no tool at all"* while its own Task 1 orders the forward bound applied
 through `gen_status_batch_bound.py --apply`, **which cannot run without its per-batch re-aiming.** The
 dispatch contradicted itself.
 
-**It was already ruled.** Ruling 5 of `cowork_rulings_2026_08_26_amendment_landing_sitting.md`, read
+**It was already ruled.** Ruling 5 of `records/cowork/rulings/cowork_rulings_2026_08_26_amendment_landing_sitting.md`, read
 at the record by this side: the re-aiming is *"a **named carve-out** from the no-tool-source-edit bar
 in this and future dispatches"*, **on the recorded ground that the bar was *"this side's own, written
 over-broad … without checking what it would block."*** **The writing side made the identical mistake
@@ -2771,7 +2771,7 @@ tree carries TWO tracked modifications: this file and `cowork_informed_session_b
 **★ A DEFECT IN THIS SIDE'S OWN BRIEF, FOUND AT THE CLOSE AND FIXED — read the fix before booting
 anyone.** The revised §3 said what the author MAY open and never what it may NOT, and it dropped the
 superseded brief's clause replacing the ordinary session-start read. **An author booting normally
-would have read `cowork_handoff.md` as part of that read and disqualified itself in its first minutes**
+would have read `records/cowork/handoff/cowork_handoff.md` as part of that read and disqualified itself in its first minutes**
 — the bar being in the banner, which addresses whoever picks the session, and not in the read rule,
 which addresses the session. **§3 now carries a closed list**: the handoff in any portion, both
 2026-08-28 ruling records, every `cc_report_*` and `cc_instruction_*`, its own §8, and the three sealed
@@ -2839,8 +2839,8 @@ as owed stands.
 **Method.** All reads through the file tools on bridge-staged snapshots. **No shell command of any
 kind — the user barred it in his opening instruction, and that bar held for the whole session.**
 
-**Read whole since the seventy-seventh entry:** `cc_report_informed_brief_landing.md`. **Read in
-part:** `cowork_rulings_2026_08_26_amendment_landing_sitting.md` at Ruling 5;
+**Read whole since the seventy-seventh entry:** `records/cc/reports/cc_report_informed_brief_landing.md`. **Read in
+part:** `records/cowork/rulings/cowork_rulings_2026_08_26_amendment_landing_sitting.md` at Ruling 5;
 `tools/audit/guard_state.json` at its `summary` and its `not_run` list.
 
 **★ CONTAMINATION HAZARD, DECLARED.** This side read LIST ONE whole, `CLAUDE.md`'s principles whole,
@@ -2861,8 +2861,8 @@ counted error, and the bar holds.
 
 Tip **`8798d6049e2e237efd4d8bffd5b7f7f904815493`**, read at `.git/refs/heads/master` with the file
 tool. It has moved from the seventy-sixth entry's `bf3249e73d9eb91d0f2513bc2c16aa626b53e464`,
-**because `cc_instruction_framework_arrangement_landing.md` ran to completion.**
-`cc_report_framework_arrangement_landing.md` is on disk and was **read WHOLE by this side.**
+**because `records/cc/instructions/cc_instruction_framework_arrangement_landing.md` ran to completion.**
+`records/cc/reports/cc_report_framework_arrangement_landing.md` is on disk and was **read WHOLE by this side.**
 
 ### ★ THE BATCH DID WHAT IT SAID — AND THIS SIDE CHECKED, NOT ASSUMED
 
@@ -2890,7 +2890,7 @@ the fifteen pack-file identities — is RELAYED.** A session with a shell remain
 
 **§3.3's parenthetical is wrong.** Meeting a conflict between its own count (10 → 12 entry headings)
 and the seventy-fifth entry's "76 entry headings in this handoff", the report explains it by asserting
-that `cowork_handoff_archive.md` holds the entries moved out of the file.
+that `records/cowork/handoff/cowork_handoff_archive.md` holds the entries moved out of the file.
 
 **The archive file does exist** — enumerated at the root by this side, so nothing was invented from
 nothing. **But it is not the cause.** The cause is the report's own counting pattern: it counted the
@@ -2903,7 +2903,7 @@ correct at CC's file.**
 
 ### ★ SEVEN FURTHER RULINGS, AND THE RECORD IS ON DISK
 
-`cowork_rulings_2026_08_28_informed_brief_points_sitting.md`, untracked, **read it whole.** The user's
+`records/cowork/rulings/cowork_rulings_2026_08_28_informed_brief_points_sitting.md`, untracked, **read it whole.** The user's
 words: *"I agree with all recommendations."* Each alternative had been put single-limbed, which is
 what makes one sentence recordable as seven rulings.
 
@@ -2925,7 +2925,7 @@ not be taken and that it is kept as the starting point for any later blind run. 
 of ruled text; both were placed where those files already carry appended banners.**
 
 **★ SO THE TREE NOW CARRIES FOUR TRACKED MODIFICATIONS, NOT ONE — this file, those two surfaces, and
-the revised informed brief.** Every dispatch before `cc_instruction_informed_brief_landing.md` assumed
+the revised informed brief.** Every dispatch before `records/cc/instructions/cc_instruction_informed_brief_landing.md` assumed
 exactly one. **A dispatch written on the old assumption will STOP on its own check**, and the one on
 disk states this at its head and gives A1 a per-path shape: the first three additions-only with zero
 deletions, the brief a revision where deletions are expected.
@@ -2940,7 +2940,7 @@ deletions, the brief a revision where deletions are expected.
    date **established at the user's machine and never asserted from a session's environment**, §7 a
    record of what was ruled and what was declined. **The brief's STATUS is now READY, NOT
    DISPATCHED.**
-2. **★ THE DISPATCH IS ON DISK AND NOT OPENED — `cc_instruction_informed_brief_landing.md`. The user
+2. **★ THE DISPATCH IS ON DISK AND NOT OPENED — `records/cc/instructions/cc_instruction_informed_brief_landing.md`. The user
    opens it; this side never hands it to CC.** It lands six paths in one commit and closes. **It edits
    nothing itself** — every landed path is the writing side's text — **and it touches no tool at all.**
    Its A1 declares **four** tracked modifications with a per-path shape, and says at its head that a
@@ -2958,7 +2958,7 @@ deletions, the brief a revision where deletions are expected.
 ### The cadence for the successor
 
 NOTHING IS RUNNING. Tip `8798d6049e2e237efd4d8bffd5b7f7f904815493`. **A DISPATCH IS ON DISK AND NOT
-OPENED** — `cc_instruction_informed_brief_landing.md`; the user opens it. When it returns: **read its
+OPENED** — `records/cc/instructions/cc_instruction_informed_brief_landing.md`; the user opens it. When it returns: **read its
 report in FULL, treat it as possibly hallucinated, and establish at the files everything a session
 without a shell can.**
 
@@ -2979,7 +2979,7 @@ destroyed the only instrument this phase has**, and the brief says so on its own
 **Method.** All reads through the file tools on bridge-staged snapshots. **No shell command of any
 kind — the user barred it in his opening instruction.** Every tip read as a file at the ref.
 
-**Read whole since the seventy-sixth entry:** `cc_report_framework_arrangement_landing.md`. **Read in
+**Read whole since the seventy-sixth entry:** `records/cc/reports/cc_report_framework_arrangement_landing.md`. **Read in
 part:** `tools/audit/guard_state.json`, `tools/audit/gen_derivation_boot_pack.py` and
 `cowork_blind_session_brief_framework.md`, each by pattern at the claims above; the two
 `ratification_surfaces/` files at their banner regions.
@@ -3015,7 +3015,7 @@ Tip `bf3249e73d9eb91d0f2513bc2c16aa626b53e464`, read at `.git/refs/heads/master`
 
 ### ★ THE RULING — READ THE RECORD, NOT THIS SUMMARY
 
-`cowork_rulings_2026_08_28_informed_framework_sitting.md`, on disk, untracked, **read it whole.** The
+`records/cowork/rulings/cowork_rulings_2026_08_28_informed_framework_sitting.md`, on disk, untracked, **read it whole.** The
 framework phase's deriving session is **NOT implementation-blind**: it may read `ARCHITECTURE.md`, the
 specifications and the registers as design input. **No pack is rendered for this subject, no candidate
 verdicts are taken, no leak check is run.** The user's words: *"In my opinion 3 still stands, yours too
@@ -3044,13 +3044,13 @@ starts from it.
 
 `EMPIRICAL_FINDINGS_LEDGER.md`, at the repository root, 51,246 bytes, **thirty-five entries**, read
 at the file by this side: its banner, §1–§2, its section and entry headings, and §§7–10. It was built
-by Claude Code on 2026-08-26 under `cc_instruction_ledger_build.md` and extended the same day under
-`cc_instruction_ledger_admissions.md`; it is in the ruled form of the 2026-08-26 form sitting — one
+by Claude Code on 2026-08-26 under `records/cc/instructions/cc_instruction_ledger_build.md` and extended the same day under
+`records/cc/instructions/cc_instruction_ledger_admissions.md`; it is in the ruled form of the 2026-08-26 form sitting — one
 hand-written record whose entries cite `cowork_empirical_findings_candidates.md` rather than
 transcribe it. All three ruled seeds are represented; the third seed's coverage bound is declared and
 not discharged.
 
-**So the ground of `cowork_rulings_2026_08_28_ledger_precondition_sitting.md` is FALSE in one part.**
+**So the ground of `records/cowork/rulings/cowork_rulings_2026_08_28_ledger_precondition_sitting.md` is FALSE in one part.**
 Its §1 states *"It was never built"* and *"No ledger file exists at the repository root or in
 `ratification_surfaces/`, both enumerated by this side."* The file was there when that record was
 written. **The ruling itself stands** — the ledger binds before the framework document's author is
@@ -3066,7 +3066,7 @@ untracked and not landed, and what happens to it is the user's.
 ### ★ WHAT IS ACTUALLY OWED IN ITS PLACE, AND IT IS A RULING
 
 **The ledger is NOT one of the boot list's six members.** Ruling 1 of
-`cowork_rulings_2026_08_22_boot_list_sitting.md`, read whole at the record: the six are the phase
+`records/cowork/rulings/cowork_rulings_2026_08_22_boot_list_sitting.md`, read whole at the record: the six are the phase
 definitions surface §3, `CLAUDE.md` at two spans, `cowork_design_doc_template.md`, the
 dispatch-protocol section of `cowork_audit_protocol.md`, the `DESIGN-INTENT` class of
 `rulings_sort_classification.json`, and `DEFECT_TYPES.md`. Its amendment (a2) carries the ledger hole
@@ -3120,17 +3120,17 @@ file at the ref.
 this side; every git-object value anywhere in the record remains RELAYED. A session with a shell is
 still the largest owed item.
 
-**Read whole:** `cc_report_framework_pack_preparation.md`;
-`cowork_rulings_2026_08_28_ledger_precondition_sitting.md`;
-`cowork_rulings_2026_08_26_ledger_form_sitting.md`;
-`cowork_rulings_2026_08_26_ledger_dispositions_sitting.md`;
-`cowork_rulings_2026_08_22_boot_list_sitting.md`. **Read in part:** the seventy-fifth and
+**Read whole:** `records/cc/reports/cc_report_framework_pack_preparation.md`;
+`records/cowork/rulings/cowork_rulings_2026_08_28_ledger_precondition_sitting.md`;
+`records/cowork/rulings/cowork_rulings_2026_08_26_ledger_form_sitting.md`;
+`records/cowork/rulings/cowork_rulings_2026_08_26_ledger_dispositions_sitting.md`;
+`records/cowork/rulings/cowork_rulings_2026_08_22_boot_list_sitting.md`. **Read in part:** the seventy-fifth and
 seventy-fourth entries of this file and the head of the seventy-third, plus two passages found by
 pattern; `ratification_surfaces/cowork_withheld_family_framework_reading.md` at §1–§5, **LIST ONE
 whole**, LIST TWO and LIST THREE; `EMPIRICAL_FINDINGS_LEDGER.md` as above;
 `cowork_blind_session_brief_framework.md` at §3 and §7; **`CLAUDE.md` at its guiding principles
 #1–#24 whole and nowhere else**; `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md`
-at its banner and its constraint clauses; `cowork_rulings_2026_08_15_phase_definition_sitting.md` at
+at its banner and its constraint clauses; `records/cowork/rulings/cowork_rulings_2026_08_15_phase_definition_sitting.md` at
 §2 and §3; `tools/audit/gen_derivation_boot_pack.py` at its docstring STOPs, its authored tables and
 its subject loop; `tools/audit/guard_state.json` by pattern — **`summary` 75 run, 71 passing, 4
 failing, the four named**.
@@ -3151,7 +3151,7 @@ that the authoring side is not the side that argued the case.
 ### This session's counted errors — one, self-caught, and it moved a recommendation
 
 **It mispriced an alternative and recommended on the wrong price.** Alternative 2 was recommended at a
-cost of "one session" when the owed list and `cc_report_framework_pack_preparation.md` §13 put five or
+cost of "one session" when the owed list and `records/cc/reports/cc_report_framework_pack_preparation.md` §13 put five or
 six gates in front of it. Corrected at the files before the user ruled; the corrected price flipped the
 ranking. **Reported unprompted, per the standing rule of 2026-08-15** — one, below the rule's
 two-tell handover threshold. *The overstatement that anchoring "cannot be undone" was also withdrawn
@@ -3188,7 +3188,7 @@ that brief is tracked and a superseded banner on its face is **owed to a dispatc
 what replaces blindness is the brief's §3 incumbency rule — D-190 doing the work — and its §5
 sources-and-incumbency record, which makes the #18 exposure enumerable without discharging it.**
 (3) **THE DISPATCH IS ON DISK AND NOT OPENED —
-`cc_instruction_framework_arrangement_landing.md`. The user opens it; this side never hands it to
+`records/cc/instructions/cc_instruction_framework_arrangement_landing.md`. The user opens it; this side never hands it to
 CC.** Task 0 lands the five untracked writing-side files and the modified handoff; Task 1 deletes the
 `framework` subject's two authored entries from `tools/audit/gen_derivation_boot_pack.py`, and A2
 **predicts, as a prediction, that the fourth failing check goes GREEN and the set reads 75/72/3**;
@@ -3222,12 +3222,12 @@ immediately below, read at this file; no entry count is asserted.)*
 
 Tip **`bf3249e73d9eb91d0f2513bc2c16aa626b53e464`**, read at `.git/refs/heads/master` with the file
 tool. It has moved from the seventy-fourth entry's `acedffc66d8c40f17d5fe6dbb73ca1ac90129997`,
-**because the batch ran to completion during this session.** `cc_report_framework_pack_preparation.md`
+**because the batch ran to completion during this session.** `records/cc/reports/cc_report_framework_pack_preparation.md`
 and `ratification_surfaces/cowork_withheld_family_framework_reading.md` are both on disk.
 
 ### ★ THE BATCH RAN AND RETURNED A DECLARED STOP — READ ITS §7 FIRST
 
-`cc_report_framework_pack_preparation.md`, read WHOLE by this side. **The enumeration ran in full and
+`records/cc/reports/cc_report_framework_pack_preparation.md`, read WHOLE by this side. **The enumeration ran in full and
 is delivered; the manifest gained NO `framework` block and assumption A3 FAILS.** The generator has
 no state for *enumerate the candidates and withhold nothing*: a derived candidate must carry an
 authored verdict or the tool STOPs, and the only verdict that withholds is `IN`. **Nothing was
@@ -3255,11 +3255,11 @@ commits to the hole.** A session with a shell is still the largest owed item.
 
 ### ★ ONE RULING WAS TAKEN AND IS ON DISK
 
-`cowork_rulings_2026_08_28_ledger_precondition_sitting.md`. **The empirical findings ledger BINDS and
+`records/cowork/rulings/cowork_rulings_2026_08_28_ledger_precondition_sitting.md`. **The empirical findings ledger BINDS and
 is written before the framework document's author is booted.** The user's words, verbatim: *"Agree on
 A"*.
 
-**The ground:** Ruling 3 of `cowork_rulings_2026_08_25_v1_sufficiency_sitting.md` — *"B is untouched:
+**The ground:** Ruling 3 of `records/cowork/rulings/cowork_rulings_2026_08_25_v1_sufficiency_sitting.md` — *"B is untouched:
 the empirical findings ledger remains owed before the framework phase"* — carried into the register as
 **D-680**, and **the ledger was never built** (the 2026-08-26 form ruling says so in terms; no ledger
 file exists at the root or in `ratification_surfaces/`). **Neither the framework-opening ruling, nor
@@ -3311,10 +3311,10 @@ correctly dated file is the one named above.
 against the repository and `git status` was never at risk**; every tip read as a file at the ref.
 **The user barred shell use for this session explicitly**, in his opening instruction.
 
-**Read whole:** `cc_report_framework_pack_preparation.md`; `cc_instruction_framework_pack_preparation.md`;
+**Read whole:** `records/cc/reports/cc_report_framework_pack_preparation.md`; `records/cc/instructions/cc_instruction_framework_pack_preparation.md`;
 `cowork_blind_session_brief_framework.md`; `cowork_blind_session_brief_scoring_model.md`;
-`cowork_rulings_2026_08_27_framework_authoring_sitting.md`; `cowork_rulings_2026_08_22_boot_list_sitting.md`;
-`cowork_rulings_2026_08_25_v1_sufficiency_sitting.md`; `cowork_rulings_2026_08_26_ledger_form_sitting.md`;
+`records/cowork/rulings/cowork_rulings_2026_08_27_framework_authoring_sitting.md`; `records/cowork/rulings/cowork_rulings_2026_08_22_boot_list_sitting.md`;
+`records/cowork/rulings/cowork_rulings_2026_08_25_v1_sufficiency_sitting.md`; `records/cowork/rulings/cowork_rulings_2026_08_26_ledger_form_sitting.md`;
 `STATUS.md`; the `DECISIONS.md` INDEX; the derived gating answer at
 `tools/audit/nongating_apparatus_rows.json`. **Read in part:** the seventy-fourth to seventy-first
 entries of this file; `tools/audit/gen_derivation_boot_pack.py`; `CLAUDE.md` at its headings and its
@@ -3360,7 +3360,7 @@ same act; (4) the brief is finalised against the rendered pack and its five rema
 (5) **the ledger is written before the author is booted**; (6) **then, and only in a FRESH Cowork
 session that has read none of this, the framework document is authored.**
 
-**This entry leaves `cowork_handoff.md` tracked-modified, and it may sit that way**, because the next
+**This entry leaves `records/cowork/handoff/cowork_handoff.md` tracked-modified, and it may sit that way**, because the next
 act is not a batch and there is no Task 0 to land it. **The next dispatch, whenever it comes, lands it
 and establishes the entry count at the object — this entry asserts none.**
 
@@ -3385,12 +3385,12 @@ was landed in git by this session.**
 
 ### ★ ONE RULING WAS TAKEN AND IS ON DISK THE SAME DAY
 
-`cowork_rulings_2026_08_27_framework_authoring_sitting.md`. **The framework document is authored NOW;
+`records/cowork/rulings/cowork_rulings_2026_08_27_framework_authoring_sitting.md`. **The framework document is authored NOW;
 RATIFICATION of its decomposition is HELD** until the user's incoming external list has arrived and
 been dispositioned against it. The user's words, verbatim: *"any will do"* on which owed decision to
 put, then *"ok, that works"*.
 
-**The ground, and it turns on one word.** Ruling 6 of `cowork_rulings_2026_08_26_framework_opening_sitting.md`
+**The ground, and it turns on one word.** Ruling 6 of `records/cowork/rulings/cowork_rulings_2026_08_26_framework_opening_sitting.md`
 §6A states the harm as *"by then the decomposition is **ratified** and every search runs inside a
 frame that has already decided the answer"* — so the property it protects survives if authoring
 proceeds and ratification waits. Its own remedy, the widened sweep, already ran and **declares its
@@ -3410,7 +3410,7 @@ form of the two pilot briefs. **It is a DRAFT and is NOT usable:** its §3 names
 `tools/audit/derivation_boot_pack/framework/`, **which does not exist**, and none of its six §7 points
 is ruled.
 
-**`cc_instruction_framework_pack_preparation.md`** — the dispatch that authors the `framework` subject
+**`records/cc/instructions/cc_instruction_framework_pack_preparation.md`** — the dispatch that authors the `framework` subject
 and **ENUMERATES its withheld candidates**. **It is NOT dispatched — the user opens it; this side
 never hands it to CC.** **It deliberately RENDERS NO PACK**, because a rendered pack is a bootable
 pack and the withheld set is not yet ruled. It asserts **no git-object value at all** and **no handoff
@@ -3420,8 +3420,8 @@ entry count**.
 
 Both recorded leaks into blind material were in **member (2), `CLAUDE.md` rendered whole** — the
 founding-instance passage of the never-work-from-memory rule
-(`cowork_rulings_2026_08_22_member_two_leak_sitting.md`) and the founding-instances sentence of the
-defense-at-its-home rule (`cowork_rulings_2026_08_23_member_two_second_leak_sitting.md`). **Both lay
+(`records/cowork/rulings/cowork_rulings_2026_08_22_member_two_leak_sitting.md`) and the founding-instances sentence of the
+defense-at-its-home rule (`records/cowork/rulings/cowork_rulings_2026_08_23_member_two_second_leak_sitting.md`). **Both lay
 outside the leak check's scope, which is members (5) and (6)**, and both were withheld **scoped to
 the harmony-boundary subject.** **That list does not carry across.** For this subject the withheld
 answer is **the decomposition itself**, and `CLAUDE.md` is a document about exactly that. The dispatch
@@ -3450,17 +3450,17 @@ in the record and it is one session older.**
 sealed file are on disk; that **no framework document exists**; that the three phrases the
 seventy-third entry names occur in this file **only inside that entry's own statement of the claim**,
 and across the root-level ruling records of 24–27 August only at
-`cowork_rulings_2026_08_26_framework_opening_sitting.md:147`, which is an unrelated sentence — **a
+`records/cowork/rulings/cowork_rulings_2026_08_26_framework_opening_sitting.md:147`, which is an unrelated sentence — **a
 search on three phrases, not a reading of those records, so the off-record ruling's confirmation is
 still owed**; the boot-pack manifest's two subject blocks and both pack directories; the guard
 summary at run 75, **three** failing checks; and that `ratification_surfaces/cowork_withheld_family_harmony_boundary_reading.md`
 exists.
 
-**Read whole:** `cowork_literature_reachability_2026_08_26.md`; `cc_instruction_sizing_pack_preparation.md`;
+**Read whole:** `cowork_literature_reachability_2026_08_26.md`; `records/cc/instructions/cc_instruction_sizing_pack_preparation.md`;
 `cowork_blind_session_brief_scoring_model.md`; `STATUS.md`; the `DECISIONS.md` INDEX. **Read in part:**
-the seventy-first to seventy-third entries of this file; `cowork_rulings_2026_08_26_framework_opening_sitting.md`;
-`cowork_rulings_2026_08_21_successor_plan_sitting.md` at Ruling 2, **at the object rather than through
-the opening surface's restatement of it**; both member-(2) leak records; `cc_report_unit_correction_redraw.md`
+the seventy-first to seventy-third entries of this file; `records/cowork/rulings/cowork_rulings_2026_08_26_framework_opening_sitting.md`;
+`records/cowork/rulings/cowork_rulings_2026_08_21_successor_plan_sitting.md` at Ruling 2, **at the object rather than through
+the opening surface's restatement of it**; both member-(2) leak records; `records/cc/reports/cc_report_unit_correction_redraw.md`
 §9 and §12.3, **read at the report and not at the seventy-third entry's restatement**;
 `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §3.3.
 
@@ -3506,7 +3506,7 @@ vocabulary renamings; the ARM/SITE fill-in's side; the homeless routed content; 
 ### The cadence for the successor
 
 **NOTHING IS RUNNING.** Tip `acedffc66d8c40f17d5fe6dbb73ca1ac90129997`. **A dispatch is ON DISK and
-NOT OPENED** — `cc_instruction_framework_pack_preparation.md`; the user opens it. When it returns:
+NOT OPENED** — `records/cc/instructions/cc_instruction_framework_pack_preparation.md`; the user opens it. When it returns:
 **read its report in FULL, treat it as possibly hallucinated, and verify at the objects by explicit
 hash.** Then the user rules the two candidate lists; then a later batch renders the pack; then the
 brief is finalised against the rendered pack; **then, and only in a FRESH Cowork session that has read
@@ -3529,7 +3529,7 @@ mistake.
 
 Tip **`acedffc66d8c40f17d5fe6dbb73ca1ac90129997`**, read at `.git/refs/heads/master` with the file
 tool. It has MOVED from the seventy-second entry's `93c154562083516ea41cf6d01bcb6ea6cf4eb859`, so
-the batch ran. `cc_report_unit_correction_redraw.md` and
+the batch ran. `records/cc/reports/cc_report_unit_correction_redraw.md` and
 `cowork_placement_sample_sealed_third_2026_08_27.md` are both on disk.
 
 The report names two commits — `7c32f37fb36c55e16e3504d45934fb692a39be04` (the Task 0(c) landing)
@@ -3547,11 +3547,11 @@ enumerable; **no stratum STOPPED.** The root population widened **19 → 20** an
 ### ★ What THIS side verified itself, and by what route
 
 **At the dispatch, not at the report's restatement of it:** the five zero-returning records
-`cc_instruction_unit_correction_redraw.md` §1.2 names are all present in CC's eight.
+`records/cc/instructions/cc_instruction_unit_correction_redraw.md` §1.2 names are all present in CC's eight.
 
 **At the files:** the three further zero-returning records
-(`cowork_pending_rulings_2026_08_02.md`, `cowork_rulings_2026_08_13_eighteenth_stop.md`,
-`cowork_rulings_2026_08_15_method_directions.md`) were opened and their headings listed — every one
+(`records/cowork/rulings/cowork_pending_rulings_2026_08_02.md`, `records/cowork/rulings/cowork_rulings_2026_08_13_eighteenth_stop.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_15_method_directions.md`) were opened and their headings listed — every one
 is `## n. <prose>`, none says it is a ruling. **CC's zero for all three is confirmed independently.**
 
 **By arithmetic:** all 25 of stratum 1's positions recompute from
@@ -3642,13 +3642,13 @@ Every commit hash, every blob hash, the 173-line insertion, stratum 8's 207 comm
 and all tree arithmetic are CC's and are unverified here. **This is the largest hole in the record
 and it is growing.**
 
-**Read whole:** `cc_report_unit_correction_redraw.md`, `cc_instruction_unit_correction_redraw.md`,
-`cowork_rulings_2026_08_27_redraw_findings_sitting.md`, `cowork_rulings_2026_08_15_session_length.md`.
+**Read whole:** `records/cc/reports/cc_report_unit_correction_redraw.md`, `records/cc/instructions/cc_instruction_unit_correction_redraw.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_27_redraw_findings_sitting.md`, `records/cowork/rulings/cowork_rulings_2026_08_15_session_length.md`.
 **Read in part, and named as partial:** `cowork_literature_reachability_2026_08_26.md` (§0–§5, not
-§6 onward); `cowork_rulings_2026_08_26_framework_opening_sitting.md`;
+§6 onward); `records/cowork/rulings/cowork_rulings_2026_08_26_framework_opening_sitting.md`;
 `cowork_framework_phase_opening_surface_2026_08_26.md`;
 `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md`;
-`cowork_rulings_2026_08_27_placement_sample_sitting.md`; the seventy-second and seventy-first entries
+`records/cowork/rulings/cowork_rulings_2026_08_27_placement_sample_sitting.md`; the seventy-second and seventy-first entries
 of this handoff.
 
 **NOT OPENED:** any part of any of the three sealed sample files; `cowork_evidence_inventory.md`;
@@ -3694,7 +3694,7 @@ decision above.
 act is a Cowork session, not a Claude Code batch, so none is owed. Tip
 `acedffc66d8c40f17d5fe6dbb73ca1ac90129997`.
 
-**This entry leaves `cowork_handoff.md` tracked-modified, and it may sit that way for longer than
+**This entry leaves `records/cowork/handoff/cowork_handoff.md` tracked-modified, and it may sit that way for longer than
 usual**, because the next act is not a Claude Code batch and there is no Task 0 to land it. **The
 next dispatch, whenever it comes, lands it and establishes the entry count at the object — this
 entry asserts none.**
@@ -3711,7 +3711,7 @@ this entry names a change, and every standing bar of the earlier blocks remains 
 **On form.** Short, per the standing bar. Bold is reserved for what stops a successor making a
 mistake.
 
-### The batch ran and closed. `cc_report_placement_sample_redraw.md`, read WHOLE by this side.
+### The batch ran and closed. `records/cc/reports/cc_report_placement_sample_redraw.md`, read WHOLE by this side.
 
 Tip now `93c154562083516ea41cf6d01bcb6ea6cf4eb859`, read at `.git/refs/heads/master` with the file
 tool. The report names two commits — `ec9034011857c223e2eb44ecbb210811908edc61` (the landing) and
@@ -3725,7 +3725,7 @@ ENUMERABLE, no stratum STOPPED.**
 ### ★ FIRST — FOUR FINDINGS CAME BACK, ALL FOUR ARE NOW RULED
 
 Surface: `cowork_redraw_findings_surface_2026_08_27.md`. Record:
-`cowork_rulings_2026_08_27_redraw_findings_sitting.md`. **Alternative B, single-limbed, agreed
+`records/cowork/rulings/cowork_rulings_2026_08_27_redraw_findings_sitting.md`. **Alternative B, single-limbed, agreed
 verbatim: *"Agree with recommendation"*.**
 
 **1 — the unit forms for strata 1 and 2 are CORRECTED and those two strata alone are redrawn.** The
@@ -3756,7 +3756,7 @@ of the seven carry no numbered decision at all.
 **Independent corroboration:** the five zero-returning records in this side's sample of 22 are exactly
 the five CC names across all 79.
 
-### The dispatch is written and on disk: `cc_instruction_unit_correction_redraw.md`
+### The dispatch is written and on disk: `records/cc/instructions/cc_instruction_unit_correction_redraw.md`
 
 **It is NOT dispatched — the user opens it; this side never hands it to CC.** Task 0(c) lands **four**
 paths: this handoff, the findings surface, the findings ruling record, and the dispatch.
@@ -3821,16 +3821,16 @@ the incoming external input** the user is assembling with another LLM elsewhere;
 ### ★ THE CADENCE FOR THE SUCCESSOR — AND YOU ARE PROBABLY BOOTING WHILE THE BATCH RUNS
 
 **State at the moment this entry was written: nothing was running and nothing was dispatched.** Tip
-`93c154562083516ea41cf6d01bcb6ea6cf4eb859`. **This entry leaves `cowork_handoff.md`
+`93c154562083516ea41cf6d01bcb6ea6cf4eb859`. **This entry leaves `records/cowork/handoff/cowork_handoff.md`
 tracked-modified**; the dispatch's Task 0(c) lands it and orders the entry count established at the
 object.
 
 **But this handover was prepared FOR a successor that starts while Claude Code is executing
-`cc_instruction_unit_correction_redraw.md`.** Establish which state you are in before doing anything:
+`records/cc/instructions/cc_instruction_unit_correction_redraw.md`.** Establish which state you are in before doing anything:
 read `.git/refs/heads/master` with the file tool. **If it is still
 `93c154562083516ea41cf6d01bcb6ea6cf4eb859`, the batch has not landed Task 0(c) yet** — it is either
 unopened or in flight. **If it has moved, the batch is at least partway through and
-`cc_report_unit_correction_redraw.md` may or may not exist yet.** Do not infer more than that from the
+`records/cc/reports/cc_report_unit_correction_redraw.md` may or may not exist yet.** Do not infer more than that from the
 hash; this side cannot resolve a commit without a shell and neither may you be able to.
 
 **★ WHAT YOU MUST NOT DO WHILE THE BATCH IS RUNNING, AND THE REASON IS MEASURABLE.** **Do not write
@@ -3857,7 +3857,7 @@ them.
    fill-in and when; the homeless routed content; whether the class-24 record repeats the two-files
    slip.
 
-**When the batch returns:** **read `cc_report_unit_correction_redraw.md` in FULL, never a summary**,
+**When the batch returns:** **read `records/cc/reports/cc_report_unit_correction_redraw.md` in FULL, never a summary**,
 and verify it at the objects by explicit hash. **Treat it as possibly hallucinated** — the last two
 reports each carried a real correction to this side's own dispatch, and this side's last report
 carried a table that invited a wrong reading of its own numbers. **Check the two redrawn strata's
@@ -3888,7 +3888,7 @@ mistake.
 
 The seventieth entry named three decisions as gating the frame and said no surface had been written
 for any of them. **All three were put, one per turn on its own surface, and all three are ruled.**
-The record is `cowork_rulings_2026_08_27_stopped_strata_sitting.md`, closed, carrying Rulings 1–3.
+The record is `records/cowork/rulings/cowork_rulings_2026_08_27_stopped_strata_sitting.md`, closed, carrying Rulings 1–3.
 
 **The frame is now gated on ONE thing only: the new sealed sample existing.** Every stratum the
 previous batch reported as STOPPED is settled.
@@ -3942,7 +3942,7 @@ CC's report gives stratum 8's unreachable region as positions **51–59**. By th
 `k = 2`, the last drawn position is 49, so it is **50–59 — ten items, not nine.** Strata 5 and 7 are
 correct as reported.
 
-### The dispatch is written and on disk: `cc_instruction_placement_sample_redraw.md`
+### The dispatch is written and on disk: `records/cc/instructions/cc_instruction_placement_sample_redraw.md`
 
 **It is NOT dispatched — the user opens it; this side never hands it to CC.** Task 0(c) lands **six**
 paths: this handoff, the three surfaces, the ruling record, and the dispatch itself.
@@ -3979,8 +3979,8 @@ files in `ratification_surfaces/`; the four root-level decision surfaces; **26**
 admits a dispatch and a ruling record. **The next session that has a shell should spend it on the
 object-level verification undone since the sixty-third entry.**
 
-**Read whole:** `cc_report_placement_sample.md`, `cowork_rulings_2026_08_27_placement_sample_sitting.md`,
-`cc_instruction_placement_sample.md`.
+**Read whole:** `records/cc/reports/cc_report_placement_sample.md`, `records/cowork/rulings/cowork_rulings_2026_08_27_placement_sample_sitting.md`,
+`records/cc/instructions/cc_instruction_placement_sample.md`.
 
 **NOT OPENED:** `cowork_placement_sample_sealed_2026_08_27.md` **in any part — not its banner, not its
 §0**; `cowork_evidence_inventory.md`; `ARCHITECTURE.md`; `CLAUDE.md`; `DECISIONS.md`; any source file,
@@ -4018,7 +4018,7 @@ for him, not decided.
 ### The cadence for the successor
 
 **NOTHING IS RUNNING AND NOTHING IS DISPATCHED.** Tip `aa3077709117962ab05b27d79466bfacc77a2382`.
-This entry leaves `cowork_handoff.md` tracked-modified; **the dispatch's Task 0(c) lands it and orders
+This entry leaves `records/cowork/handoff/cowork_handoff.md` tracked-modified; **the dispatch's Task 0(c) lands it and orders
 the entry count established at the object.**
 
 **In order of what moves the work:** the user opens the redraw dispatch; when it returns, **read its
@@ -4039,7 +4039,7 @@ this entry names a change, and every standing bar of the earlier blocks remains 
 **On form.** Short, per the standing bar. Bold is reserved for what stops a successor making a
 mistake.
 
-### The batch ran and closed. `cc_report_placement_sample.md`, read WHOLE by this side.
+### The batch ran and closed. `records/cc/reports/cc_report_placement_sample.md`, read WHOLE by this side.
 
 Tip now `aa3077709117962ab05b27d79466bfacc77a2382`, read at `.git/refs/heads/master` with the file
 tool. The report names two commits — `9053861b9cc71d8de8dc9c12105abd553620b55a` (Task 0(c), the
@@ -4157,10 +4157,10 @@ against the repository by this side and `git status` was never at risk**; the ti
 the ref. **★ THE VERIFICATION LIMIT, STATED PLAINLY: this side cannot resolve a commit or a blob
 without a shell, so CC's object-level figures are RELAYED, not verified** — undone for an eighth
 session. What this side did verify independently: the tip at the ref; the existence on disk of all
-four extra root-level ruling records behind stratum 1's disagreement; and that `cowork_handoff.md`
+four extra root-level ruling records behind stratum 1's disagreement; and that `records/cowork/handoff/cowork_handoff.md`
 measures **812,048 bytes**, matching the blob size CC reports for the working copy.
 
-**Read at the object:** `cc_report_placement_sample.md` **WHOLE, never a summary**;
+**Read at the object:** `records/cc/reports/cc_report_placement_sample.md` **WHOLE, never a summary**;
 `cowork_placement_sample_sealed_2026_08_27.md` **banner and §0 ONLY — no drawn item was read by this
 side, and no drawn item is restated anywhere in this entry.**
 
@@ -4193,7 +4193,7 @@ stop: nothing is running, nothing is dispatched, everything this session wrote i
 **NOTHING IS RUNNING AND NOTHING IS DISPATCHED.** Tip
 `aa3077709117962ab05b27d79466bfacc77a2382`. **Seven tracked modifications stood at CC's close, all
 inside its fence and all named at its §8.1; the closing commits take them.** This entry leaves
-`cowork_handoff.md` tracked-modified — **land it at the next dispatch's Task 0, and this time check
+`records/cowork/handoff/cowork_handoff.md` tracked-modified — **land it at the next dispatch's Task 0, and this time check
 at the object how many entries are new, because the last two accounts of that were wrong.**
 
 **Then: put the three decisions above, one per turn.** Behind them, unchanged: the ARM/SITE
@@ -4211,7 +4211,7 @@ where this entry names a change, and every standing bar of the earlier blocks re
 **On form.** Short, per the standing bar. Bold is reserved for what stops a successor making a
 mistake.
 
-### What was ruled — one sitting, three rulings, all at `cowork_rulings_2026_08_27_placement_sample_sitting.md`
+### What was ruled — one sitting, three rulings, all at `records/cowork/rulings/cowork_rulings_2026_08_27_placement_sample_sitting.md`
 
 Put at `cowork_placement_sample_surface_2026_08_27.md`, delivered with no question in its turn.
 **The user then ruled all three in ONE turn**, verbatim: *"I have read it, and agree with the three
@@ -4240,7 +4240,7 @@ Blinding the author was put and declined on a named ground, not rejected on meri
 **THE FRAME IS GATED ON ONE THING ONLY: the sealed sample.** With these rulings the instrument is
 fully specified and needs no further ruling before it runs.
 
-**THE DISPATCH IS WRITTEN AND ON DISK: `cc_instruction_placement_sample.md`.** **It is NOT
+**THE DISPATCH IS WRITTEN AND ON DISK: `records/cc/instructions/cc_instruction_placement_sample.md`.** **It is NOT
 dispatched — the user opens it, this side never hands it to CC.** Its Task 0(c) lands **seven**
 paths. It does **not** run the placement test and has no frame to run it against.
 
@@ -4278,7 +4278,7 @@ undone for a seventh session.
 
 **NOT OPENED BY THIS SIDE:** `CLAUDE.md`, `ARCHITECTURE.md`, any source file, any measurement
 output, the class-24 record, `EMPIRICAL_FINDINGS_LEDGER.md`, any boot pack, and every PDF in the
-research folder. The dispatch form was taken from `cc_instruction_ledger_build.md`, read whole, not
+research folder. The dispatch form was taken from `records/cc/instructions/cc_instruction_ledger_build.md`, read whole, not
 from the protocol section.
 
 **★ THIS SESSION IS BARRED FROM AUTHORING THE FRAME ON TWO INDEPENDENT GROUNDS** — it is
@@ -4336,7 +4336,7 @@ binaries are gitignore-guarded and live in the private repo `slimvince/research-
 stood in a ratified surface since 2026-08-15.** The class-24 record itself was **not** opened; the
 correction is against that sentence only.
 
-### What was ruled — one sitting, six rulings, all at `cowork_rulings_2026_08_26_framework_opening_sitting.md`
+### What was ruled — one sitting, six rulings, all at `records/cowork/rulings/cowork_rulings_2026_08_26_framework_opening_sitting.md`
 
 Put at `cowork_framework_phase_opening_surface_2026_08_26.md`, delivered with no question in its
 turn. **The user then ruled five in ONE turn** rather than one per turn — his own rule constrains
@@ -4453,7 +4453,7 @@ question.**
 
 **NOTHING IS RUNNING AND NOTHING IS DISPATCHED.** The tip is unchanged at
 `0e7186a961f50b32e0552483b289b11069f1319a`. **THREE root-level files are on disk and untracked or
-tracked-modified — `cowork_handoff.md` (this entry), the opening surface, the ruling record — plus
+tracked-modified — `records/cowork/handoff/cowork_handoff.md` (this entry), the opening surface, the ruling record — plus
 `cowork_literature_reachability_2026_08_26.md`. LAND ALL FOUR AT THE NEXT DISPATCH'S TASK 0.** No
 pending file was created and none should be looked for. **Do not write a dispatch on arrival.**
 
@@ -4488,7 +4488,7 @@ closing notes, and the sixty-sixth entry relayed it faithfully.
 
 **(2) The three-item gloss of the sizing record is not the ruled list.** Plan §6.1 names six; the ruled
 brief's §5 names six that are **not the same six**. *(And this session then wrote a **fourth** wording
-into `cc_instruction_sizing_tests.md` Task 2 — see the errors below.)*
+into `records/cc/instructions/cc_instruction_sizing_tests.md` Task 2 — see the errors below.)*
 
 **(3) Non-oracle-awareness for the `scoring-model` unit protects nothing ruled.** Ruling 1 of the
 sizing-pilot sitting: *"this unit is not held out and has no oracle"*; withholding in the held-out
@@ -4558,7 +4558,7 @@ never been put to the user.** It blocks nothing yet.
 
 **DT-20 — an instruction whose mandatory or unavoidable use defeats a requirement it serves — was hit
 five ways in one day** and it is still routed to a destination that cannot receive it. The routes:
-`cowork_handoff.md` itself states the harmony-boundary oracle's top evidence class; the boot-pack
+`records/cowork/handoff/cowork_handoff.md` itself states the harmony-boundary oracle's top evidence class; the boot-pack
 generator's authored table states the withheld oracle's ranking in prose; the blinding-failure record
 **quotes the withheld sentence verbatim in order to record that it leaked**; a CC session's boot carries
 the whole of `CLAUDE.md` before its first token, which is what voided the method; and this session's own
@@ -4606,7 +4606,7 @@ test of five unestablished sub-fields; **three are reachable**. (4) A ruling was
 re-deriving the sizing unit that applies to a different unit and a different test.
 
 **An instruction written too narrow (four).** (5) A fourth wording of the sizing record written into a
-dispatch. (6) `cc_instruction_ledger_build.md` Task 0(c) omitted
+dispatch. (6) `records/cc/instructions/cc_instruction_ledger_build.md` Task 0(c) omitted
 `cowork_fact_gate_admissions_2026_08_26.md`, so the committed ledger cited an untracked target — cured
 the next batch. (7) A figure (477) ordered restated into a governing document against **D-431**. (8) A
 STOP condition proposed for the third seed that would have gated the framework phase behind an
@@ -4624,7 +4624,7 @@ sixty-sixth entries' conclusion reached a third time.
 ### The cadence for the successor
 
 **NOTHING IS RUNNING AND NOTHING IS DISPATCHED.** The tip is
-`0e7186a961f50b32e0552483b289b11069f1319a` (ref side). **This entry leaves `cowork_handoff.md`
+`0e7186a961f50b32e0552483b289b11069f1319a` (ref side). **This entry leaves `records/cowork/handoff/cowork_handoff.md`
 tracked-modified; land it at the next dispatch's Task 0.** No pending file was created and none should
 be looked for. **Do not write a dispatch on arrival.**
 
@@ -4648,7 +4648,7 @@ software, say so and check it is worth its cost before proposing it.* Keep the n
 
 ### What was ruled, across two sittings
 
-**`cowork_rulings_2026_08_25_v1_sufficiency_sitting.md` — three rulings.** The derivation method is
+**`records/cowork/rulings/cowork_rulings_2026_08_25_v1_sufficiency_sitting.md` — three rulings.** The derivation method is
 **USABLE for v1**, on the user's own ground: a first specification cannot be the ultimate one because
 the sources are not exhausted until the audit has run, so the best derivable from everything held
 except the code is good enough by construction. This **supersedes the method's VOIDED status** and
@@ -4657,7 +4657,7 @@ rows**. **The framework and detail-specification phases are UN-HELD**, and **E a
 next act nor owed** — the held-out test's pass condition tests whether output lands near a judgement
 the user already made, which is not a test of design quality.
 
-**`cowork_rulings_2026_08_26_amendment_landing_sitting.md` — five rulings.** (1) The three ruled clause
+**`records/cowork/rulings/cowork_rulings_2026_08_26_amendment_landing_sitting.md` — five rulings.** (1) The three ruled clause
 amendments land at their home file, **`CLAUDE.md`**, at #18/#19/#24 — not in the register, which is
 generated from `backbone_decisions.json` and whose entries are establishment-checked against their
 home. (2) Only the **unregistered residue** of the sharpened decision-surface rule is registered, as
@@ -4733,12 +4733,12 @@ and detail phases are sequenced.
 
 ### The dispatch that was out
 
-**`cc_instruction_amendment_landing.md`** — lands the five rulings of the amendment-landing sitting.
+**`records/cc/instructions/cc_instruction_amendment_landing.md`** — lands the five rulings of the amendment-landing sitting.
 It verifies register **rule (n)** at `CLAUDE.md` before any write and stops the two verdict rows if it
-is not what `cc_report_register_reconciliation.md` claimed; the phase-status row proceeds regardless.
+is not what `records/cc/reports/cc_report_register_reconciliation.md` claimed; the phase-status row proceeds regardless.
 It amends `CLAUDE.md` behind a three-site fence, additions only. It permits exactly one `.py` edit.
 
-**IT REPORTED — `cc_report_amendment_landing.md`, and the tip is now
+**IT REPORTED — `records/cc/reports/cc_report_amendment_landing.md`, and the tip is now
 `68c42b7f7743c02bdebefacdd9ed06ca9060fbbe`** (verified by the writing side at
 `.git/refs/heads/master`). Three commits: `2d7c3c3119e…` (2 paths, the writing side),
 `4c47b55f3de…` (30 paths, the work), and the report's own.
@@ -4763,7 +4763,7 @@ SIDE'S, TWICE.** Its ruled home is `CLAUDE.md` beside D-249; the register's esta
 requires an entry's quoted text to be **found** in the file its `home` names; the residue words are not
 in `CLAUDE.md`; and the dispatch's own fence permitted writes at exactly three passages. **So the
 dispatch ordered an entry whose home required a write the same dispatch forbade — the identical shape
-as `cc_instruction_register_reconciliation.md`'s Task 2, in consecutive dispatches.** CC stopped rather
+as `records/cc/instructions/cc_instruction_register_reconciliation.md`'s Task 2, in consecutive dispatches.** CC stopped rather
 than choosing a false home class to quiet the guards. **Two routes, neither chosen: (a) authorise the
 `CLAUDE.md` write and home it beside D-249 — one sentence in a dispatch; or (b) author the
 delegation-scope and form judgment for ruling records, which changes what a ruling record IS in this
@@ -4850,7 +4850,7 @@ repository and `git status` never at risk**. On-disk sizes taken by **staging ea
 — a narrower route than the root listing that defeated three previous sittings, and it works; the root
 listing still exceeds the bridge tool's output cap. **No hashes and no carriage-return counts taken by
 this side**; that part of the ordered start-state measurement now stands undone for a fourth session,
-though `cc_report_register_reconciliation.md` §1.3 supplies blob identities for ten paths.
+though `records/cc/reports/cc_report_register_reconciliation.md` §1.3 supplies blob identities for ten paths.
 
 **Relayed, not re-measured:** every figure of both batch reports beyond the four items verified at
 their objects; the rulings-sort totals; the third restatement of the decision-surface rule.
@@ -4913,7 +4913,7 @@ reading anything this side did not already have in front of it.
 `68c42b7f7743c02bdebefacdd9ed06ca9060fbbe`, both batches of 2026-08-26 have reported, and **the
 tracked tree is clean** — 833 changed path records, every one untracked, which is the standing
 population plus this session's own writing-side files. **Do not write a dispatch on arrival.**
-**Merge this entry into `cowork_handoff.md` at the next dispatch's Task 0** (see the banner) and
+**Merge this entry into `records/cowork/handoff/cowork_handoff.md` at the next dispatch's Task 0** (see the banner) and
 **delete `cowork_handoff_entry_66_pending.md` in the same act.**
 
 **★ FIRST, AND AHEAD OF EVERYTHING BELOW: THE BOOT PACKS.** They carry superseded principle text right
@@ -4944,7 +4944,7 @@ supersedes the sixty-fourth only as the entry point, and changes exactly the thi
 
 **A note on this block's form, declared as a departure and not as a change to the form.** This entry
 uses ordinary prose and reserves bold for the few statements that stop a successor making a mistake.
-The ground is a finding recorded at §3 of `cowork_rulings_2026_08_25_regress_termination_sitting.md`:
+The ground is a finding recorded at §3 of `records/cowork/rulings/cowork_rulings_2026_08_25_regress_termination_sitting.md`:
 the entries' emphasis has inflated to the point where nearly every sentence is marked, so the marking
 carries no information and a reader falls back on recency and position — which is how a gloss comes
 to be read as a source. That finding is ruled; this response to it is not. A successor may write in
@@ -4978,18 +4978,18 @@ too**, which the closing session did not think to do until it had already taken 
 
 Four tracked files stand modified against the tip and no commit explains them:
 `open_items/OI-376.md`, `open_items/OI-374.md`, `tools/audit/guard_state.json`, and this
-`cowork_handoff.md`. **Do not revert any of it, do not re-apply the riders, and do not re-litigate
+`records/cowork/handoff/cowork_handoff.md`. **Do not revert any of it, do not re-apply the riders, and do not re-litigate
 it** — it is the stopped ledger-harvest batch's completed work, documented to the byte at §11 of
-`cc_report_ledger_harvest.md`. Untracked, now seven root-level writing-side and coding-side files:
+`records/cc/reports/cc_report_ledger_harvest.md`. Untracked, now seven root-level writing-side and coding-side files:
 the six the sixty-fourth entry names, plus this session's
-`cowork_rulings_2026_08_25_regress_termination_sitting.md` (21,304 bytes, zero carriage returns,
+`records/cowork/rulings/cowork_rulings_2026_08_25_regress_termination_sitting.md` (21,304 bytes, zero carriage returns,
 verified at the re-staged file). The pre-existing untracked population of roughly 834 paths stands as
 a standing condition, already routed, not to be re-litigated or committed. Measure sizes and hashes
 in your own start state; none are given here except the one this session wrote.
 
 ### What this session ruled, and what it changes
 
-The sitting record is `cowork_rulings_2026_08_25_regress_termination_sitting.md`, on disk, untracked.
+The sitting record is `records/cowork/rulings/cowork_rulings_2026_08_25_regress_termination_sitting.md`, on disk, untracked.
 It carries three rulings, all put as full prose surfaces before any choice question and each ruled by
 the user in his own word.
 
@@ -5119,7 +5119,7 @@ lines 1489–1490 was read at any point. `ARCHITECTURE.md` and `BUILD_AND_TEST.m
 blind output opened, and neither comparison artifact opened.** This file was read at its sixty-fourth
 entry whole, its sixty-third to line 400, the opening of its fifty-sixth, and at targeted searches —
 not whole. `DECISIONS.md` searched and read at its glossary and group S table, not whole.
-`decisions/group_S.md` read at eight entries. `cowork_rulings_2026_08_21_successor_plan_sitting.md`
+`decisions/group_S.md` read at eight entries. `records/cowork/rulings/cowork_rulings_2026_08_21_successor_plan_sitting.md`
 read whole. The 2026-08-15 phase-definition record and its ratification surface read at targeted
 sections. The start-state measurement of on-disk sizes and hashes that the sixty-fourth entry orders
 was **not taken**: a directory listing of the repository root exceeds the bridge tool's output cap
@@ -5184,9 +5184,9 @@ DELIBERATE.** **FOUR TRACKED FILES ARE MODIFIED AGAINST THE TIP AND NO COMMIT EX
 are the stopped ledger-harvest batch's completed work: `open_items/OI-376.md` (rider (a), the
 `D-436`→`D-438` citation correction, +4/−1), `open_items/OI-374.md` (rider (b), the launching-shell
 observation), `tools/audit/guard_state.json` (a generated artifact, rewritten by that batch's Task-6
-guard run, +28/−18 across three hunks), and `cowork_handoff.md` (this entry). **★ DO NOT REVERT ANY
+guard run, +28/−18 across three hunks), and `records/cowork/handoff/cowork_handoff.md` (this entry). **★ DO NOT REVERT ANY
 OF IT, DO NOT RE-APPLY THE RIDERS, AND DO NOT RE-LITIGATE IT.** It is documented to the byte at §11
-of `cc_report_ledger_harvest.md`, whose words are: *"Nothing needs redoing except the commits."*
+of `records/cc/reports/cc_report_ledger_harvest.md`, whose words are: *"Nothing needs redoing except the commits."*
 
 **★ THREE STANDING BARS THAT HAVE EACH COST A STEP. (1) DO NOT RUN `git status`** — the `PreToolUse`
 guard refuses it (**D-253**); use **`python tools/audit/changed_paths.py`** (`--staged`, `--commit
@@ -5245,7 +5245,7 @@ cannot carry the oracle; and **(ii)** the timing hole above. **It was NOT amende
 session, deliberately: the amendment's content depends on decisions (1) and (2) below, which are the
 user's.**
 
-**★ THE RULING GIVEN THIS SESSION — `cowork_rulings_2026_08_25_second_vector_sitting.md` (on disk,
+**★ THE RULING GIVEN THIS SESSION — `records/cowork/rulings/cowork_rulings_2026_08_25_second_vector_sitting.md` (on disk,
 untracked). ALTERNATIVE A: the probe runs before any ruling on B (the user's word: "Agree").** The
 ground: **B rests on an unmeasured premise.** *"The vector stands on every session that can be
 opened"* is a premise nobody has measured; B is a permanent verdict foreclosing the paired
@@ -5266,12 +5266,12 @@ real repair is a DESIGN question and gets its own surface. **It is reported and 
 number is allocated (Ruling 9 opens no series).**
 
 **★ THE LEDGER-HARVEST BATCH — STOPPED CORRECTLY, ZERO COMMITS, AND ITS MAIN OBJECTIVE ACHIEVED.**
-`cc_instruction_ledger_harvest.md` ran and **STOPPED at Task 6 on its own ruled stop condition**: the
+`records/cc/instructions/cc_instruction_ledger_harvest.md` ran and **STOPPED at Task 6 on its own ruled stop condition**: the
 guard set reported **two failing, not one**. **A STOP there is a SUCCESS of that batch.** Nothing was
 fixed, regenerated, swept or rowed. What it returned:
 
 - **★ P4 RESOLVED — THE LEDGER'S RULED ENTRY SHAPE EXISTS.** At
-  `cowork_rulings_2026_08_15_method_directions.md:46–54`, **direction 4 of nine**, restated at
+  `records/cowork/rulings/cowork_rulings_2026_08_15_method_directions.md:46–54`, **direction 4 of nine**, restated at
   `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md:95–99` and `:217–219`. **It has
   FIVE fields, not the four the dispatch offered as a fallback**: the fact (approach-level,
   implementation-stripped), provenance, uncertainty (#24), establishment status (#19), **and its
@@ -5320,7 +5320,7 @@ must be answered before the instruction file can be amended, and the amendment i
 `evidence_pin_membership.json` at all? **This one needs a real surface and must not be bundled with
 the other two.** **★ AND ONE OLDER QUESTION STANDS UNANSWERED AND BLOCKS NOTHING:** §3 of the opening
 instruction overrides the output-file name the user personally ruled (**P4**, Ruling 3 of
-`cowork_rulings_2026_08_23_brief_validation_sitting.md`) to
+`records/cowork/rulings/cowork_rulings_2026_08_23_brief_validation_sitting.md`) to
 `cowork_blind_derivation_harmony_boundary_clean.md`, so that the contaminated first arm is not
 overwritten. **It never bit, because no probe wrote an output.**
 
@@ -5368,29 +5368,29 @@ one decision per turn, no governance event built around a small thing.**
 there, and `git status` was never at risk**; the absence of
 `cowork_blind_derivation_harmony_boundary_clean.md` verified by a failed stage; the handoff verified
 unchanged before editing by re-staging and comparing size and mtime. **RELAYED, NOT RE-MEASURED BY
-THIS SIDE:** every figure in `cc_report_ledger_harvest.md` — the guard summary, the rider diffs, the
+THIS SIDE:** every figure in `records/cc/reports/cc_report_ledger_harvest.md` — the guard summary, the rider diffs, the
 candidate table, the entry-shape line numbers — read at the report's headline, §3, §5, §6 and §9 and
 **not independently verified at the objects**; the two probes' §0 reports, **received as reported and
 not auditable from outside the sessions that wrote them**. **Presentation-form: none flagged; the
 six errors above are content and drafting, and are this side's own account of its own work.**
 
 **★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** **Tracked, modified against the tip
-(FOUR):** `cowork_handoff.md` (this entry above the sixty-third, its heading marked superseded);
+(FOUR):** `records/cowork/handoff/cowork_handoff.md` (this entry above the sixty-third, its heading marked superseded);
 `open_items/OI-376.md`; `open_items/OI-374.md`; `tools/audit/guard_state.json`. **Untracked (SIX):**
-`cowork_rulings_2026_08_25_next_act_sitting.md`, `cowork_rulings_2026_08_25_second_vector_sitting.md`,
-`cowork_blind_session_opening_instruction_harmony_boundary.md`, `cc_instruction_ledger_harvest.md`,
-`cc_report_ledger_harvest.md`, `cowork_empirical_findings_candidates.md` — **plus the ~834-path
+`records/cowork/rulings/cowork_rulings_2026_08_25_next_act_sitting.md`, `records/cowork/rulings/cowork_rulings_2026_08_25_second_vector_sitting.md`,
+`cowork_blind_session_opening_instruction_harmony_boundary.md`, `records/cc/instructions/cc_instruction_ledger_harvest.md`,
+`records/cc/reports/cc_report_ledger_harvest.md`, `cowork_empirical_findings_candidates.md` — **plus the ~834-path
 standing population.** **No sizes or hashes are given here deliberately; MEASURE them in your start
 state.** **Nothing committed, nothing pushed, nothing regenerated by this side.**
 **Memory-filesystem: NOT read; nothing written.**
 
 **★ DECLARED DEPARTURES.** The session-start read NOT taken (standing). `CLAUDE.md` NOT opened.
-`BUILD_AND_TEST.md` NOT read. **`cowork_rulings_2026_08_25_method_voiding_sitting.md` NOT opened,
+`BUILD_AND_TEST.md` NOT read. **`records/cowork/rulings/cowork_rulings_2026_08_25_method_voiding_sitting.md` NOT opened,
 deliberately — it may quote the oracle's own words, and its Ruling 2 was quoted instead from the
 next-act record, which cites it.** The memory files NOT opened. Neither blind output read. The
 handoff read at its sixty-third entry and at targeted searches, **NOT whole**.
 `cowork_audit_protocol.md`'s dispatch-protocol section NOT re-read before writing the ledger-harvest
-dispatch — it copies `cc_instruction_cascade_sweep.md`'s structure clause for clause and names every
+dispatch — it copies `records/cc/instructions/cc_instruction_cascade_sweep.md`'s structure clause for clause and names every
 clause it changes at its §9.
 
 **★ THE CADENCE FOR THE SUCCESSOR. NOTHING IS RUNNING, NOTHING IS DISPATCHED, AND NOTHING PROCEEDS
@@ -5427,7 +5427,7 @@ declare, one way or the other, in your first sitting.**
 **`0f18b358bc6a8da5ec6064760d675129e64d8f3b`**, parent `428b44143db6e3eeb6f052ad2216cfd63bd01e9a`,
 itself on `9b1b0a02`. **If you meet THAT tip: NOTHING IS RUNNING AND NOTHING IS DISPATCHED. Do not
 write a dispatch.** Two files sit on disk uncommitted — **this handoff and
-`cowork_rulings_2026_08_25_next_act_sitting.md`** — and **both land at the Task 0 of whatever
+`records/cowork/rulings/cowork_rulings_2026_08_25_next_act_sitting.md`** — and **both land at the Task 0 of whatever
 dispatch the next act eventually produces**, not before.
 
 **★ THREE STANDING BARS THAT HAVE EACH COST A STEP. (1) DO NOT RUN `git status`** — the `PreToolUse`
@@ -5444,7 +5444,7 @@ words. **A clean boot EXISTS** (four configurations, relayed). **The framework p
 detail-specification phase are HELD ON that voided ruling.** The tests batch (a)+(b) stays held.
 **The empirical findings ledger is OWED before the framework phase** whatever the method's fate.
 
-**★ THE RULING — `cowork_rulings_2026_08_25_next_act_sitting.md`. THE NEXT ACT IS THE RE-RUN, AND IT
+**★ THE RULING — `records/cowork/rulings/cowork_rulings_2026_08_25_next_act_sitting.md`. THE NEXT ACT IS THE RE-RUN, AND IT
 IS THE USER'S TO OPEN.** A fresh Cowork session on a configuration chosen to be clean, on the **same
 unit (harmony-boundary)**, with the ruled brief, ruled pack, ruled withheld family and oracle
 **unchanged** — **a re-open, not a re-design.** **Its ONE added bound: before it reads anything it
@@ -5544,7 +5544,7 @@ this side's own account of its own errors, labelled as such.** **Presentation-fo
 signal (8).**
 
 **★ WHAT IS ON DISK AT THIS WRITING.** Untracked:
-`cowork_rulings_2026_08_25_next_act_sitting.md`. Modified against the tip: `cowork_handoff.md` ONLY
+`records/cowork/rulings/cowork_rulings_2026_08_25_next_act_sitting.md`. Modified against the tip: `records/cowork/handoff/cowork_handoff.md` ONLY
 (this entry above the sixty-second, its heading marked superseded). **Nothing committed by this
 side, nothing pushed, nothing regenerated.** Memory-filesystem: not read; nothing written.
 
@@ -5576,9 +5576,9 @@ PILOT UNITS and may never judge, compare or read either blind output beyond a bo
 
 **★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
 **`9b1b0a02943fd047ab0c92ef817e8b81e52cf5a3`**, parent `744ed4a708d3a3cf1c6764ccf2bf6ab33fa5aa2b`,
-itself on `64d640317f`. **If you meet THAT tip, `cc_instruction_cascade_sweep.md` has not yet
+itself on `64d640317f`. **If you meet THAT tip, `records/cc/instructions/cc_instruction_cascade_sweep.md` has not yet
 returned.** Two files sit uncommitted: this handoff and
-`cowork_rulings_2026_08_25_cascade_sitting.md`.
+`records/cowork/rulings/cowork_rulings_2026_08_25_cascade_sitting.md`.
 
 **★ AND TWO STANDING BARS THAT HAVE EACH COST A STEP. (1) DO NOT RUN `git status`** — the
 `PreToolUse` guard refuses it (**D-253**); use **`python tools/audit/changed_paths.py`**. **(2) A
@@ -5605,7 +5605,7 @@ the apparatus generating its own defect stream — except that here it is genera
 OBEYING register rule (c).** Rowing a finding, the ruled routing, costs an unknown number of
 downstream regenerations discovered one per batch.
 
-**★ THE RULING — `cowork_rulings_2026_08_25_cascade_sitting.md`.** **(1) ROW the `216` finding
+**★ THE RULING — `records/cowork/rulings/cowork_rulings_2026_08_25_cascade_sitting.md`.** **(1) ROW the `216` finding
 first. (2) THEN sweep:** run the guard set, **regenerate every tool whose failure is a STALENESS and
 ONLY those**, run again, **repeat to a fixpoint or five rounds. (3)** One commit for the record, the
 handoff, the row, its detail file and every swept artifact; the final guard run in a second.
@@ -5680,12 +5680,12 @@ consumer list in the dispatch is published as a LEAD and explicitly NOT as the c
 three batches have now proved that reasoning about this graph loses to running it.
 **Presentation-form: none flagged.**
 
-**★ WHAT IS ON DISK AT THIS WRITING.** Untracked: `cowork_rulings_2026_08_25_cascade_sitting.md` and
-`cc_instruction_cascade_sweep.md`. Modified against the tip: `cowork_handoff.md` ONLY (this entry
+**★ WHAT IS ON DISK AT THIS WRITING.** Untracked: `records/cowork/rulings/cowork_rulings_2026_08_25_cascade_sitting.md` and
+`records/cc/instructions/cc_instruction_cascade_sweep.md`. Modified against the tip: `records/cowork/handoff/cowork_handoff.md` ONLY (this entry
 above the sixty-first, its heading marked superseded). **Nothing committed by this side, nothing
 pushed, nothing regenerated by this side.** Memory-filesystem: not read; nothing written.
 
-**★ THE CADENCE:** **`cc_instruction_cascade_sweep.md` goes to a fresh CC session.** When it returns,
+**★ THE CADENCE:** **`records/cc/instructions/cc_instruction_cascade_sweep.md` goes to a fresh CC session.** When it returns,
 verify at the objects and close. **A STOP on a DECISION red is a SUCCESS of that batch, not a
 failure.** **Then nothing is owed by this side** — the next move is the user's: **the re-run**, the
 **ledger**, or **the one owed surface (the format test (b))**.
@@ -5710,8 +5710,8 @@ PILOT UNITS and may never judge, compare or read either blind output beyond a bo
 **★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
 **`64d640317fd652d1192350f0eafe4ef83abca680`** — the method-voiding landing batch's second commit,
 parent `2dfe0ba485f438817f60385b4f6ea9fc0e6e4432`, itself on `f225b61343`. **If you meet THAT tip,
-`cc_instruction_regeneration_and_citation.md` has not yet returned.** Two files sit uncommitted:
-this handoff and `cowork_rulings_2026_08_25_landing_return_sitting.md`.
+`records/cc/instructions/cc_instruction_regeneration_and_citation.md` has not yet returned.** Two files sit uncommitted:
+this handoff and `records/cowork/rulings/cowork_rulings_2026_08_25_landing_return_sitting.md`.
 
 **★ AND ONE STANDING BAR THAT COST A STEP THIS CYCLE: DO NOT RUN `git status` IN THIS REPOSITORY.**
 The `PreToolUse` guard refuses it (**D-253**); the sanctioned enumeration is **`python
@@ -5803,12 +5803,12 @@ placement is labelled a READING of the tool's source and is published in the dis
 BE FALSIFIED.** **Presentation-form: none flagged.**
 
 **★ WHAT IS ON DISK AT THIS WRITING.** Untracked:
-`cowork_rulings_2026_08_25_landing_return_sitting.md` and
-`cc_instruction_regeneration_and_citation.md`. Modified against the tip: `cowork_handoff.md` ONLY
+`records/cowork/rulings/cowork_rulings_2026_08_25_landing_return_sitting.md` and
+`records/cc/instructions/cc_instruction_regeneration_and_citation.md`. Modified against the tip: `records/cowork/handoff/cowork_handoff.md` ONLY
 (this entry above the sixtieth, its heading marked superseded). **Nothing committed by this side,
 nothing pushed, nothing regenerated by this side.** Memory-filesystem: not read; nothing written.
 
-**★ THE CADENCE:** **`cc_instruction_regeneration_and_citation.md` goes to a fresh CC session.** When
+**★ THE CADENCE:** **`records/cc/instructions/cc_instruction_regeneration_and_citation.md` goes to a fresh CC session.** When
 it returns, verify at the objects and close. **Then nothing is owed by this side** — the next move is
 the user's: **the re-run**, or the **ledger** as the standing alternative. **ONE SURFACE REMAINS
 NAMED SO IT IS NOT LOST: whether the format test (b) survives on its own ground.**
@@ -5855,7 +5855,7 @@ RECORD THAT REPEATS IT REPEATS THE BOUND WITH IT.** It is enough to act on becau
 1489–1490 carry that unit's oracle VERBATIM (verified at the object), and the never-work-from-memory
 rule holds that *it was probably not used* is no defence.
 
-**★ THE RULING — `cowork_rulings_2026_08_25_method_voiding_sitting.md`.** The method ruling of
+**★ THE RULING — `records/cowork/rulings/cowork_rulings_2026_08_25_method_voiding_sitting.md`.** The method ruling of
 2026-08-24 is **VOIDED**. **The method is neither established nor refuted: it is UNTESTED**, because
 the test that would have tested it was not blind. **The voided ruling's record STANDS UNAMENDED
 (#12); nothing landed is unlanded.** **The held-out test is RE-RUN on the SAME unit** — the pack,
@@ -5947,7 +5947,7 @@ design-intent entries and S25 stay open.
 **★ THE DEGRADATION REPORT (this entry's additions).** **Declared (method):** the tip was verified at
 the object this cycle rather than carried from the previous sitting. **FOUR FURTHER OBJECTS WERE READ
 AT THE TIP, ALL FOR THE SELF-CORRECTION, AND ARE NAMED SO IT CAN BE CHECKED RATHER THAN BELIEVED:**
-`cowork_rulings_2026_08_21_successor_plan_sitting.md` §9; `CLAUDE.md`'s open-items-register section;
+`records/cowork/rulings/cowork_rulings_2026_08_21_successor_plan_sitting.md` §9; `CLAUDE.md`'s open-items-register section;
 the `open_items/` tree listing; the register INDEX's head. **★ AND THE ERROR CLASS IS WORTH CARRYING:
 this side put a RULING CITATION to the user without checking it at the object, and read a
 choice-token "(b)" as a sub-clause. The A1 lesson generalises — a citation is measured, not
@@ -5958,10 +5958,10 @@ the walk-up — is INFERRED AND NOT OBSERVED, and the re-run's first act is what
 **Presentation-form: none flagged.**
 
 **★ WHAT IS ON DISK AT THIS WRITING.** Untracked:
-`cowork_rulings_2026_08_25_determination_route_sitting.md`,
-`cowork_rulings_2026_08_25_forward_fact_sitting.md` (supersedes the first IN ORDER, declines its
+`records/cowork/rulings/cowork_rulings_2026_08_25_determination_route_sitting.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_25_forward_fact_sitting.md` (supersedes the first IN ORDER, declines its
 route D; **the first stands unamended** — #12) and
-`cowork_rulings_2026_08_25_method_voiding_sitting.md`. Modified against the tip: `cowork_handoff.md`
+`records/cowork/rulings/cowork_rulings_2026_08_25_method_voiding_sitting.md`. Modified against the tip: `records/cowork/handoff/cowork_handoff.md`
 ONLY (this entry above the fifty-ninth, its heading marked superseded). **Nothing committed, nothing
 pushed, nothing regenerated.** Memory-filesystem: not read; nothing written.
 
@@ -5978,7 +5978,7 @@ entry point.)*
 
 ---
 
-## ★★★★★ COWORK SESSION CLOSE (FIFTY-NINTH ENTRY, 2026-08-25 — THE SAME FORTY-FIFTH SESSION, FIFTEENTH CYCLE) — ★ **THE PRIORITY IS CORRECTED: THE NEXT ACT IS THE FORWARD FACT, NOT THE BACKWARD DETERMINATION.** ROUTE (D) IS **DECLINED** — THE BOOT STATE IS NOT CARRIED IN A SESSION'S TRANSCRIPT, SO NO READING OF THE SESSION IN QUESTION CAN SETTLE IT, AND THIS SIDE CANNOT REACH PAST SESSIONS AT ALL (CHECKED); ★ THE NEXT ACT IS **ONE THROWAWAY COWORK SESSION** ANSWERING THREE QUESTIONS BEFORE IT READS ANYTHING, OF WHICH **(iii) — WHETHER A CLEAN BOOT IS ACHIEVABLE AT ALL — IS THE LOAD-BEARING ONE**; ★ RECORD `cowork_rulings_2026_08_25_forward_fact_sitting.md` ON DISK, UNTRACKED, BESIDE THE STILL-UNTRACKED ROUTE RECORD IT SUPERSEDES IN ORDER; ★ **NO DISPATCH IS WRITTEN AND NONE IS OWED.** THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the sixtieth entry above.)
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-NINTH ENTRY, 2026-08-25 — THE SAME FORTY-FIFTH SESSION, FIFTEENTH CYCLE) — ★ **THE PRIORITY IS CORRECTED: THE NEXT ACT IS THE FORWARD FACT, NOT THE BACKWARD DETERMINATION.** ROUTE (D) IS **DECLINED** — THE BOOT STATE IS NOT CARRIED IN A SESSION'S TRANSCRIPT, SO NO READING OF THE SESSION IN QUESTION CAN SETTLE IT, AND THIS SIDE CANNOT REACH PAST SESSIONS AT ALL (CHECKED); ★ THE NEXT ACT IS **ONE THROWAWAY COWORK SESSION** ANSWERING THREE QUESTIONS BEFORE IT READS ANYTHING, OF WHICH **(iii) — WHETHER A CLEAN BOOT IS ACHIEVABLE AT ALL — IS THE LOAD-BEARING ONE**; ★ RECORD `records/cowork/rulings/cowork_rulings_2026_08_25_forward_fact_sitting.md` ON DISK, UNTRACKED, BESIDE THE STILL-UNTRACKED ROUTE RECORD IT SUPERSEDES IN ORDER; ★ **NO DISPATCH IS WRITTEN AND NONE IS OWED.** THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the sixtieth entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE. The six phases govern;
@@ -6078,10 +6078,10 @@ measure them should, and should correct this record if it is wrong. **Presentati
 flagged.**
 
 **★ WHAT IS ON DISK AT THIS WRITING.** Untracked:
-`cowork_rulings_2026_08_25_determination_route_sitting.md` and
-`cowork_rulings_2026_08_25_forward_fact_sitting.md` (the second supersedes the first IN ORDER and
+`records/cowork/rulings/cowork_rulings_2026_08_25_determination_route_sitting.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_25_forward_fact_sitting.md` (the second supersedes the first IN ORDER and
 declines its route D; **the first stands unamended**, recording the ruling as it was given — #12).
-Modified against the tip: `cowork_handoff.md` ONLY (this entry above the fifty-eighth, its heading
+Modified against the tip: `records/cowork/handoff/cowork_handoff.md` ONLY (this entry above the fifty-eighth, its heading
 marked superseded). **Nothing committed, nothing pushed, nothing regenerated.** Memory-filesystem:
 not read; nothing written.
 
@@ -6096,7 +6096,7 @@ standing alternative and is taken up in its own right.**
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FIFTY-EIGHTH ENTRY, 2026-08-25 — THE SAME FORTY-FIFTH SESSION, FOURTEENTH CYCLE) — THE DETERMINATION'S ROUTE IS RULED: AN ORDERED CASCADE **D → B → A**, EACH ANSWER CARRYING ITS OWN BOUND — RECORD `cowork_rulings_2026_08_25_determination_route_sitting.md` ON DISK, UNTRACKED; ★ **NO DISPATCH IS WRITTEN AND NONE IS OWED — THE DETERMINATION IS NOT A REPOSITORY ACT**; ★ THE METHOD RULING STANDS **SUSPENDED** AND THE THREE ACTS STAY **HELD**; ★ WHAT EACH ANSWER PRODUCES IS WRITTEN DOWN IN THE RECORD SO NO LATER SESSION INVENTS THE NEXT STEP. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-ninth entry above.)
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-EIGHTH ENTRY, 2026-08-25 — THE SAME FORTY-FIFTH SESSION, FOURTEENTH CYCLE) — THE DETERMINATION'S ROUTE IS RULED: AN ORDERED CASCADE **D → B → A**, EACH ANSWER CARRYING ITS OWN BOUND — RECORD `records/cowork/rulings/cowork_rulings_2026_08_25_determination_route_sitting.md` ON DISK, UNTRACKED; ★ **NO DISPATCH IS WRITTEN AND NONE IS OWED — THE DETERMINATION IS NOT A REPOSITORY ACT**; ★ THE METHOD RULING STANDS **SUSPENDED** AND THE THREE ACTS STAY **HELD**; ★ WHAT EACH ANSWER PRODUCES IS WRITTEN DOWN IN THE RECORD SO NO LATER SESSION INVENTS THE NEXT STEP. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-ninth entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE. The six phases govern;
@@ -6168,8 +6168,8 @@ this session had already verified at the objects, and the record says so of itse
 **Presentation-form: none flagged.**
 
 **★ WHAT IS ON DISK AT THIS WRITING.** Untracked:
-`cowork_rulings_2026_08_25_determination_route_sitting.md`. Modified against the tip:
-`cowork_handoff.md` ONLY (this entry above the fifty-seventh, its heading marked superseded).
+`records/cowork/rulings/cowork_rulings_2026_08_25_determination_route_sitting.md`. Modified against the tip:
+`records/cowork/handoff/cowork_handoff.md` ONLY (this entry above the fifty-seventh, its heading marked superseded).
 **Nothing committed, nothing pushed, nothing regenerated.** Memory-filesystem: not read; nothing
 written.
 
@@ -6195,7 +6195,7 @@ derivation, not a new pilot, not a repository act, and **no session may design a
 instruction-file-free boot.** **CLEAN** → the method ruling stands and the suspension is recorded
 lifted. **CONTAMINATED** → the ruling is voided and the held-out test re-run under a boot that
 provably excludes the file, put to the user then with its own alternatives. **The full statement is
-the fifty-sixth entry below and `cowork_rulings_2026_08_24_blinding_failure_sitting.md`, both now
+the fifty-sixth entry below and `records/cowork/rulings/cowork_rulings_2026_08_24_blinding_failure_sitting.md`, both now
 committed; this entry adds only that the landing is verified and that nothing else is owed.**
 
 **★ YOUR SESSION-START READ is unchanged (#6)** — and note what the fifty-sixth entry establishes
@@ -6250,7 +6250,7 @@ through the shell, the declared class); `grep`/`python3` over `git show <hash>:p
 (object reads). No working-tree `git status`/`git diff`. Neither blind output opened this cycle.
 **Presentation-form: none flagged.**
 
-**★ WHAT IS ON DISK AT THIS WRITING.** Modified against the tip: `cowork_handoff.md` ONLY (this entry
+**★ WHAT IS ON DISK AT THIS WRITING.** Modified against the tip: `records/cowork/handoff/cowork_handoff.md` ONLY (this entry
 above the fifty-sixth, its heading marked superseded). Untracked: **nothing owed by this session.**
 **Nothing committed, nothing pushed, nothing regenerated.** Memory-filesystem: not read; nothing
 written.
@@ -6266,7 +6266,7 @@ ultimate objective and the guiding principles. **Until then, no dispatch, no rec
 entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FIFTY-SIXTH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, TWELFTH CYCLE) — ★★ **THE BLINDING DID NOT HOLD, AND THE METHOD RULING IS SUSPENDED.** THE SIZING SESSION RETURNED AND REPORTED THAT ITS BOOT CARRIED THE UNCUT `CLAUDE.md` AS SYSTEM CONTEXT BEFORE THE BRIEF WAS READ; THIS SIDE VERIFIED AT THE OBJECTS THAT THE UNCUT FILE CARRIES THE SUBJECT'S OWN MATERIAL **AND BOTH HARMONY-BOUNDARY WITHHELD PASSAGES INCLUDING THE ORACLE'S OWN WORDS**, NONE OF WHICH EITHER PACK CARRIES; ★ WHETHER THE **FIRST** UNIT'S SESSION BOOTED THE SAME WAY IS **UNKNOWN AND NOT SETTLEABLE FROM THIS SIDE'S RECORD**; ★ RULED **A + (i)**: THE METHOD RULING IS **SUSPENDED** (NOT VOIDED) PENDING ONE DETERMINATION THE USER MAKES FROM EVIDENCE THAT ALREADY EXISTS, AND THE SIZING OUTPUT **LANDS NOW, UNCOMPARED**, WITH BOTH EXPOSURES RECORDED — RECORD `cowork_rulings_2026_08_24_blinding_failure_sitting.md` ON DISK, UNTRACKED; ★ THE DISPATCH IS WRITTEN — `cc_instruction_sizing_output_landing.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-seventh entry above.)
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-SIXTH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, TWELFTH CYCLE) — ★★ **THE BLINDING DID NOT HOLD, AND THE METHOD RULING IS SUSPENDED.** THE SIZING SESSION RETURNED AND REPORTED THAT ITS BOOT CARRIED THE UNCUT `CLAUDE.md` AS SYSTEM CONTEXT BEFORE THE BRIEF WAS READ; THIS SIDE VERIFIED AT THE OBJECTS THAT THE UNCUT FILE CARRIES THE SUBJECT'S OWN MATERIAL **AND BOTH HARMONY-BOUNDARY WITHHELD PASSAGES INCLUDING THE ORACLE'S OWN WORDS**, NONE OF WHICH EITHER PACK CARRIES; ★ WHETHER THE **FIRST** UNIT'S SESSION BOOTED THE SAME WAY IS **UNKNOWN AND NOT SETTLEABLE FROM THIS SIDE'S RECORD**; ★ RULED **A + (i)**: THE METHOD RULING IS **SUSPENDED** (NOT VOIDED) PENDING ONE DETERMINATION THE USER MAKES FROM EVIDENCE THAT ALREADY EXISTS, AND THE SIZING OUTPUT **LANDS NOW, UNCOMPARED**, WITH BOTH EXPOSURES RECORDED — RECORD `records/cowork/rulings/cowork_rulings_2026_08_24_blinding_failure_sitting.md` ON DISK, UNTRACKED; ★ THE DISPATCH IS WRITTEN — `records/cc/instructions/cc_instruction_sizing_output_landing.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-seventh entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE. The six phases govern;
@@ -6295,13 +6295,13 @@ receipt.**
 
 **★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
 **`4f57ce5133`**, both refs at it, **unmoved — the sizing session committed nothing**. **If you meet
-THAT tip: the dispatch `cc_instruction_sizing_output_landing.md` is yours to hand to a new Claude
+THAT tip: the dispatch `records/cc/instructions/cc_instruction_sizing_output_landing.md` is yours to hand to a new Claude
 Code session after re-taking the branch rule and re-validating its A1 (ONE tracked modification —
 this handoff, its count to be MEASURED; THREE untracked paths — the blind output, the
 blinding-failure record, the dispatch).** If you meet a commit on `4f57ce5133` whose subject opens
 `record: the sizing derivation output landed UNCOMPARED`, the batch has started — READ-ONLY until
-`cc_report_sizing_output_landing.md` exists, then verify its close (THE SIZING OUTPUT LANDED, THE
-METHOD RULING SUSPENDED section of `cowork_away_returns.md`) whole and at the objects, **without
+`records/cc/reports/cc_report_sizing_output_landing.md` exists, then verify its close (THE SIZING OUTPUT LANDED, THE
+METHOD RULING SUSPENDED section of `records/cowork/handoff/cowork_away_returns.md`) whole and at the objects, **without
 reading either blind output beyond its first three lines.** **After it lands: NOTHING PROCEEDS
 UNTIL THE DETERMINATION RETURNS.**
 
@@ -6368,10 +6368,10 @@ nothing was retried in another dialect. **Presentation-form: none flagged this c
 
 **★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
 `cowork_blind_derivation_scoring_model_2026_08_24.md` (the sizing session's, hash above),
-`cowork_rulings_2026_08_24_blinding_failure_sitting.md` and
-`cc_instruction_sizing_output_landing.md` (this side's; sizes and sha256 in the closing message;
+`records/cowork/rulings/cowork_rulings_2026_08_24_blinding_failure_sitting.md` and
+`records/cc/instructions/cc_instruction_sizing_output_landing.md` (this side's; sizes and sha256 in the closing message;
 the record carries `pinned` on no line — the dispatch names the word in its route-B clause and is
-no ruling record). Modified against the tip: `cowork_handoff.md` ONLY (this entry above the
+no ruling record). Modified against the tip: `records/cowork/handoff/cowork_handoff.md` ONLY (this entry above the
 fifty-fifth, its heading marked superseded). **Nothing committed, nothing pushed, nothing
 regenerated by this session.** Memory-filesystem: not read this session; nothing written.
 
@@ -6460,8 +6460,8 @@ FINDING NUMBER ALLOCATED — F88.** The two owed dispositions of the plan's §2 
 quarantined questions stand. **Deferred apparatus items, all three carried and none urgent:** the
 manifest's top-level `the_rulings_it_executes` list is incomplete by THREE; the generator module
 docstring's *WHAT THIS DOES NOT ASSERT* block is stale for an empty-criterion subject (both at
-`cc_report_manifest_prose_and_sizing_brief.md` §6.2–6.3 with verbatim and location); and the brief's
-§8 stray blank line (at `cc_report_sizing_brief_ruled.md` §6.1). Other standing bounds: member (2)
+`records/cc/reports/cc_report_manifest_prose_and_sizing_brief.md` §6.2–6.3 with verbatim and location); and the brief's
+§8 stray blank line (at `records/cc/reports/cc_report_sizing_brief_ruled.md` §6.1). Other standing bounds: member (2)
 of the harmony-boundary pack not claimed free of other leaks; pairing by content, never by number.
 **The first unit's blind output stays unratified**; its ten DIFFERS rows and the comparison report's
 §4 facts stay standing evidence for the AUDIT phase.
@@ -6473,7 +6473,7 @@ the VM (object reads). No working-tree `git status`/`git diff`. **Presentation-f
 this cycle.**
 
 **★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked: **nothing owed by this
-session.** Modified against the tip: `cowork_handoff.md` ONLY (this entry above the fifty-fourth, its
+session.** Modified against the tip: `records/cowork/handoff/cowork_handoff.md` ONLY (this entry above the fifty-fourth, its
 heading marked superseded) — **and it lands at the next dispatch's Task 0, which is the dispatch that
 commits the sizing session's output.** **Nothing committed, nothing pushed, nothing regenerated by
 this session.** Memory-filesystem: not read this session; nothing written.
@@ -6492,7 +6492,7 @@ that output before the tests batch's own dispatch admits it.**
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FIFTY-FOURTH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, TENTH CYCLE) — THE MANIFEST-PROSE BATCH RETURNED AND WAS VERIFIED AT THE OBJECTS (FOUR COMMITS, NO CORRECTION COMMIT, TIP `3fbbcb5b5d`; BOTH CORRECTIONS BOUNDED, THE HARMONY-BOUNDARY MANIFEST BLOCK CHANGED IN NO KEY, ALL FOURTEEN PACK FILES BYTE-IDENTICAL); ★ THE SIZING BRIEF'S THREE OPEN POINTS AND ONE LIMB ARE RULED — RESEARCH ALLOWED, THE THREE ANNOTATED PAIRS STAGED BY NAME AS EXEMPLARS, THE OUTPUT NAME FIXED, THE TWO GENERATOR-PROSE DEFECTS LEFT AS REPORTED FACTS — RECORD `cowork_rulings_2026_08_24_sizing_brief_sitting.md` ON DISK, UNTRACKED; ★ THE BRIEF IS REFRESHED TO **RULED** ON DISK (TRACKED, MODIFIED); ★ THE DISPATCH IS WRITTEN — `cc_instruction_sizing_brief_ruled.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER IT LANDS, NOTHING STANDS BEFORE THE SIZING SESSION. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-fifth entry above.)
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-FOURTH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, TENTH CYCLE) — THE MANIFEST-PROSE BATCH RETURNED AND WAS VERIFIED AT THE OBJECTS (FOUR COMMITS, NO CORRECTION COMMIT, TIP `3fbbcb5b5d`; BOTH CORRECTIONS BOUNDED, THE HARMONY-BOUNDARY MANIFEST BLOCK CHANGED IN NO KEY, ALL FOURTEEN PACK FILES BYTE-IDENTICAL); ★ THE SIZING BRIEF'S THREE OPEN POINTS AND ONE LIMB ARE RULED — RESEARCH ALLOWED, THE THREE ANNOTATED PAIRS STAGED BY NAME AS EXEMPLARS, THE OUTPUT NAME FIXED, THE TWO GENERATOR-PROSE DEFECTS LEFT AS REPORTED FACTS — RECORD `records/cowork/rulings/cowork_rulings_2026_08_24_sizing_brief_sitting.md` ON DISK, UNTRACKED; ★ THE BRIEF IS REFRESHED TO **RULED** ON DISK (TRACKED, MODIFIED); ★ THE DISPATCH IS WRITTEN — `records/cc/instructions/cc_instruction_sizing_brief_ruled.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER IT LANDS, NOTHING STANDS BEFORE THE SIZING SESSION. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-fifth entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE (every alternative
@@ -6508,13 +6508,13 @@ it** (standing declaration). **The bar binds you afresh.**
 **`3fbbcb5b5d`** (parent `41b77c9f92`), both refs at it. The manifest-prose batch's four commits,
 oldest first: `1bd8e434e5` (Task 0 — the leak-list record and the DRAFT brief landed),
 `e1946429d2` (Task 1 — the two prose corrections), `41b77c9f92` (close), `3fbbcb5b5d` (end state).
-**If you meet THAT tip: the dispatch `cc_instruction_sizing_brief_ruled.md` is yours to hand to a
+**If you meet THAT tip: the dispatch `records/cc/instructions/cc_instruction_sizing_brief_ruled.md` is yours to hand to a
 new Claude Code session after re-taking the branch rule and re-validating its A1 (TWO tracked
 modifications — this handoff and the REFRESHED brief; TWO untracked paths — the sizing-brief
 record and the dispatch).** If you meet a commit on `3fbbcb5b5d` whose subject opens `record: the
 2026-08-24 sizing-brief rulings landed`, the batch has started — READ-ONLY until
-`cc_report_sizing_brief_ruled.md` exists, then verify its close (THE SIZING BRIEF RULED section of
-`cowork_away_returns.md`) whole and at the objects. **After it lands, the next act is the SIZING
+`records/cc/reports/cc_report_sizing_brief_ruled.md` exists, then verify its close (THE SIZING BRIEF RULED section of
+`records/cowork/handoff/cowork_away_returns.md`) whole and at the objects. **After it lands, the next act is the SIZING
 SESSION and nothing stands before it:** a FRESH COWORK SESSION, its desktop connecting the
 repository folder AND the chorale folder
 `C:\s\MS\tools\dcml\when_in_rome\Corpus\Early_Choral\Bach,_Johann_Sebastian\Chorales`; it reads
@@ -6568,7 +6568,7 @@ FINDING NUMBER ALLOCATED — F88.** The two owed dispositions of the plan's §2 
 quarantined questions stand. Standing bounds: member (2) not claimed free of other leaks; pairing
 by content, never by number; **the manifest's top-level rulings list is INCOMPLETE BY THREE and the
 module docstring's not-asserted block is stale — both deferred by Ruling 4, both recorded here and
-at `cc_report_manifest_prose_and_sizing_brief.md` §6.2–6.3 with verbatim and location.** The first
+at `records/cc/reports/cc_report_manifest_prose_and_sizing_brief.md` §6.2–6.3 with verbatim and location.** The first
 unit's blind output stays unratified; its ten DIFFERS rows and the comparison report's §4 facts
 stay standing evidence for the AUDIT phase.
 
@@ -6580,10 +6580,10 @@ ruling-record enumeration. No working-tree `git status`/`git diff`. **Presentati
 flagged this cycle.**
 
 **★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
-`cowork_rulings_2026_08_24_sizing_brief_sitting.md` and `cc_instruction_sizing_brief_ruled.md`
+`records/cowork/rulings/cowork_rulings_2026_08_24_sizing_brief_sitting.md` and `records/cc/instructions/cc_instruction_sizing_brief_ruled.md`
 (sizes and sha256 in the closing message; the record carries `pinned` on no line — the dispatch
 names the word in its route-B clause and is no ruling record). Modified against the tip:
-`cowork_handoff.md` (this entry above the fifty-third, its heading marked superseded) and
+`records/cowork/handoff/cowork_handoff.md` (this entry above the fifty-third, its heading marked superseded) and
 `cowork_blind_session_brief_scoring_model.md` (the refresh — banner, §3's annotated-score
 paragraph, §7's one name sentence, §8, and a note appended at the foot of §9; **§§0–2, §4, §5, §6
 and the rest of §9 byte-unchanged**). **Nothing committed, nothing pushed, nothing regenerated by
@@ -6605,7 +6605,7 @@ THAT is the dispatch that commits the sizing output and prepares the tests batch
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FIFTY-THIRD ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, NINTH CYCLE) — THE SIZING-PACK BATCH RETURNED AND WAS VERIFIED AT THE OBJECTS (SIX COMMITS, TIP `24d7f0be93`; THE SCORING-MODEL PACK AT A5 ON EVERY AXIS; LICENSE (i) MEASURED UNNECESSARY, LICENSE (ii) TAKEN WITH ITS BYTE-IDENTITY PROOF); ★ THE LEAK LIST IS RULED A — THE CHECK KEEPS EXCLUDING D-270, D-296, D-440 — AND LIMB (i) LICENSES TWO MANIFEST-PROSE CORRECTIONS; RECORD `cowork_rulings_2026_08_24_sizing_leak_list_sitting.md` ON DISK, UNTRACKED; ★ THE SIZING BRIEF IS WRITTEN — `cowork_blind_session_brief_scoring_model.md`, DRAFT, ON DISK, UNTRACKED, ITS §8 POINTS (P2) (P3) (P4) OPEN; ★ THE DISPATCH IS WRITTEN — `cc_instruction_manifest_prose_and_sizing_brief.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-fourth entry above.)
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-THIRD ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, NINTH CYCLE) — THE SIZING-PACK BATCH RETURNED AND WAS VERIFIED AT THE OBJECTS (SIX COMMITS, TIP `24d7f0be93`; THE SCORING-MODEL PACK AT A5 ON EVERY AXIS; LICENSE (i) MEASURED UNNECESSARY, LICENSE (ii) TAKEN WITH ITS BYTE-IDENTITY PROOF); ★ THE LEAK LIST IS RULED A — THE CHECK KEEPS EXCLUDING D-270, D-296, D-440 — AND LIMB (i) LICENSES TWO MANIFEST-PROSE CORRECTIONS; RECORD `records/cowork/rulings/cowork_rulings_2026_08_24_sizing_leak_list_sitting.md` ON DISK, UNTRACKED; ★ THE SIZING BRIEF IS WRITTEN — `cowork_blind_session_brief_scoring_model.md`, DRAFT, ON DISK, UNTRACKED, ITS §8 POINTS (P2) (P3) (P4) OPEN; ★ THE DISPATCH IS WRITTEN — `records/cc/instructions/cc_instruction_manifest_prose_and_sizing_brief.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-fourth entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE (every alternative
@@ -6624,14 +6624,14 @@ the scoring-model pack), `2fa17e669d` (close), `ed1c1962f8` (end state), `19081f
 reserved-word correction in `STATUS.md`, declared in both surfaces), `24d7f0be93` (sixth: the
 fifth's own guard-state claims RE-MEASURED because they had been written before they were taken —
 #15 applied by CC to its own prose). **If you meet THAT tip: the dispatch
-`cc_instruction_manifest_prose_and_sizing_brief.md` is yours to hand to a new Claude Code session
+`records/cc/instructions/cc_instruction_manifest_prose_and_sizing_brief.md` is yours to hand to a new Claude Code session
 after re-taking the branch rule and re-validating its A1 (ONE tracked modification — this handoff,
 and this time it IS one inserted entry, measured at the object: the committed handoff's newest
 entry is the fifty-second; THREE untracked paths — the leak-list record, the DRAFT sizing brief,
 the dispatch).** If you meet a commit on `24d7f0be93` whose subject opens `record: the 2026-08-24
 sizing leak-list ruling landed`, the batch has started — READ-ONLY until
-`cc_report_manifest_prose_and_sizing_brief.md` exists, then verify its close (THE MANIFEST PROSE
-CORRECTED AND THE SIZING BRIEF LANDED section of `cowork_away_returns.md`) whole and at the
+`records/cc/reports/cc_report_manifest_prose_and_sizing_brief.md` exists, then verify its close (THE MANIFEST PROSE
+CORRECTED AND THE SIZING BRIEF LANDED section of `records/cowork/handoff/cowork_away_returns.md`) whole and at the
 objects. **After it lands, in order:** the user rules the brief's §8 open points; the writing side
 refreshes the brief to RULED and it re-lands at the next dispatch's Task 0 (the first unit's brief
 was handled exactly so); the FRESH COWORK SESSION derives the sizing subject; its output lands
@@ -6697,11 +6697,11 @@ stopped at the banner, and no mechanism content was seen**. No working-tree `git
 diff`. **Presentation-form: none flagged this cycle.**
 
 **★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
-`cowork_rulings_2026_08_24_sizing_leak_list_sitting.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_24_sizing_leak_list_sitting.md`,
 `cowork_blind_session_brief_scoring_model.md` (DRAFT) and
-`cc_instruction_manifest_prose_and_sizing_brief.md` (sizes and sha256 in the closing message;
+`records/cc/instructions/cc_instruction_manifest_prose_and_sizing_brief.md` (sizes and sha256 in the closing message;
 NEITHER the record NOR the brief carries `pinned` on any line — the dispatch names the word in its
-route-B clause and is no ruling record). Modified against the tip: `cowork_handoff.md` ONLY (this
+route-B clause and is no ruling record). Modified against the tip: `records/cowork/handoff/cowork_handoff.md` ONLY (this
 entry above the fifty-second, its heading marked superseded). **Nothing committed, nothing pushed,
 nothing regenerated by this session.** Memory-filesystem: not read this session; nothing written.
 
@@ -6719,7 +6719,7 @@ return; after it lands, the brief's §8 points are the user's.
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FIFTY-SECOND ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, EIGHTH CYCLE) — THE SIZING PILOT IS DESIGNED AND RULED (A, A, A: EMPTY WITHHELD FAMILY WITH THE LEAK CHECK ALONE; A FRESH COWORK SESSION DERIVES; TESTS (a)+(b) IN ONE COMPARISON-SIDE BATCH) — RECORD `cowork_rulings_2026_08_24_sizing_pilot_sitting.md` ON DISK, UNTRACKED, BESIDE THE STILL-UNTRACKED METHOD-RULING RECORD; ★ THE DISPATCH IS WRITTEN — `cc_instruction_sizing_pack_preparation.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ITS TASK 0 LANDS BOTH RECORDS; ★ THE PLAN §6.1/§11 AND RULINGS 3, 4, 8 OF THE SUCCESSOR-PLAN SITTING WERE RE-READ AT THE TIP OBJECTS BEFORE THE SURFACE WAS WRITTEN. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-third entry above.)
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-SECOND ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, EIGHTH CYCLE) — THE SIZING PILOT IS DESIGNED AND RULED (A, A, A: EMPTY WITHHELD FAMILY WITH THE LEAK CHECK ALONE; A FRESH COWORK SESSION DERIVES; TESTS (a)+(b) IN ONE COMPARISON-SIDE BATCH) — RECORD `records/cowork/rulings/cowork_rulings_2026_08_24_sizing_pilot_sitting.md` ON DISK, UNTRACKED, BESIDE THE STILL-UNTRACKED METHOD-RULING RECORD; ★ THE DISPATCH IS WRITTEN — `records/cc/instructions/cc_instruction_sizing_pack_preparation.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ITS TASK 0 LANDS BOTH RECORDS; ★ THE PLAN §6.1/§11 AND RULINGS 3, 4, 8 OF THE SUCCESSOR-PLAN SITTING WERE RE-READ AT THE TIP OBJECTS BEFORE THE SURFACE WAS WRITTEN. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-third entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING — including the fifty-first entry's SHARPENED DECISION-SURFACE RULE. The six phases
@@ -6731,13 +6731,13 @@ it** (standing declaration). **The bar binds you afresh.**
 
 **★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
 **`9264b968b7`**, both refs at it, unmoved since the comparison batch. **If you meet THAT tip:
-the dispatch `cc_instruction_sizing_pack_preparation.md` is yours to hand to a new Claude Code
+the dispatch `records/cc/instructions/cc_instruction_sizing_pack_preparation.md` is yours to hand to a new Claude Code
 session after re-taking the branch rule and re-validating its A1 (ONE tracked modification —
 this handoff; THREE untracked paths — the two 2026-08-24 records of the sixth and seventh
 sittings and the dispatch).** If you meet a commit on `9264b968b7` whose subject opens
 `record: the pilot closes ESTABLISHED and the sizing pilot is designed`, the batch has started —
-READ-ONLY until `cc_report_sizing_pack_preparation.md` exists, then verify its close (THE PILOT
-CLOSED ESTABLISHED AND THE SIZING PACK RENDERED section of `cowork_away_returns.md`) whole and
+READ-ONLY until `records/cc/reports/cc_report_sizing_pack_preparation.md` exists, then verify its close (THE PILOT
+CLOSED ESTABLISHED AND THE SIZING PACK RENDERED section of `records/cowork/handoff/cowork_away_returns.md`) whole and
 at the objects. **After it lands, in the ruled §4 order:** the user rules the LEAK LIST
 (`ratification_surfaces/cowork_sizing_pack_leak_list_reading.md`); the SIZING BRIEF is written
 by the writing side and validated against the landed pack, its open points to the user; the
@@ -6786,11 +6786,11 @@ No working-tree reads beyond the standing byte-identity checks. **Presentation-f
 flagged this cycle** (the fifty-first entry's flagged form stands corrected of record).
 
 **★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
-`cowork_rulings_2026_08_24_method_ruling_sitting.md` (sha256 `dc2eb610…`, 7,235 bytes),
-`cowork_rulings_2026_08_24_sizing_pilot_sitting.md` and
-`cc_instruction_sizing_pack_preparation.md` (sizes and sha256 in the closing message; NO record
+`records/cowork/rulings/cowork_rulings_2026_08_24_method_ruling_sitting.md` (sha256 `dc2eb610…`, 7,235 bytes),
+`records/cowork/rulings/cowork_rulings_2026_08_24_sizing_pilot_sitting.md` and
+`records/cc/instructions/cc_instruction_sizing_pack_preparation.md` (sizes and sha256 in the closing message; NO record
 carries `pinned` on any line — the dispatch names the word in its route-B clause and is no
-ruling record). Modified against the tip: `cowork_handoff.md` ONLY (this entry above the
+ruling record). Modified against the tip: `records/cowork/handoff/cowork_handoff.md` ONLY (this entry above the
 fifty-first, its heading marked superseded). **Nothing committed, nothing pushed, nothing
 regenerated by this session.** Memory-filesystem: not read this session; nothing written.
 
@@ -6809,7 +6809,7 @@ lands, the leak list is the user's, and the brief follows.
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FIFTY-FIRST ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, SEVENTH CYCLE) — **THE PILOT IS CLOSED: THE DERIVATION METHOD IS RULED ESTABLISHED** (Ruling 4(c)'s ex-ante criterion met at the tabulation — 7 MATCHES, 1 DEFENDED ALTERNATIVE, 0 CONTRADICTS, 0 UNGRADED where the oracle speaks; the coverage bound recorded as a fact), AND ROW 18's ALTERNATIVE IS RANKED BESIDE THE ORACLE WITH THE RULED ORDERING UNMOVED — RECORD `cowork_rulings_2026_08_24_method_ruling_sitting.md` ON DISK, UNTRACKED; ★ THE COMPARISON BATCH WAS VERIFIED AT THE OBJECTS (FOUR COMMITS, TIP `9264b968b7`); ★ **A STANDING SHARPENING OF THE DECISION-SURFACE RULE WAS GIVEN BY THE USER AND IS RECORDED IN §0 OF THE SITTING RECORD**; ★ NO DISPATCH IS WRITTEN — THE NEXT ACT IS THE SIZING-PILOT DESIGN SURFACE, AND THE RECORD LANDS AT THAT DISPATCH'S TASK 0. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-second entry above.)
+## ★★★★★ COWORK SESSION CLOSE (FIFTY-FIRST ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, SEVENTH CYCLE) — **THE PILOT IS CLOSED: THE DERIVATION METHOD IS RULED ESTABLISHED** (Ruling 4(c)'s ex-ante criterion met at the tabulation — 7 MATCHES, 1 DEFENDED ALTERNATIVE, 0 CONTRADICTS, 0 UNGRADED where the oracle speaks; the coverage bound recorded as a fact), AND ROW 18's ALTERNATIVE IS RANKED BESIDE THE ORACLE WITH THE RULED ORDERING UNMOVED — RECORD `records/cowork/rulings/cowork_rulings_2026_08_24_method_ruling_sitting.md` ON DISK, UNTRACKED; ★ THE COMPARISON BATCH WAS VERIFIED AT THE OBJECTS (FOUR COMMITS, TIP `9264b968b7`); ★ **A STANDING SHARPENING OF THE DECISION-SURFACE RULE WAS GIVEN BY THE USER AND IS RECORDED IN §0 OF THE SITTING RECORD**; ★ NO DISPATCH IS WRITTEN — THE NEXT ACT IS THE SIZING-PILOT DESIGN SURFACE, AND THE RECORD LANDS AT THAT DISPATCH'S TASK 0. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-second entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them.**
@@ -6873,8 +6873,8 @@ first method surface's alternatives were not rated against the objective and the
 two were reactive self-generated work; re-put corrected; the sharpening recorded as standing.
 
 **★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
-`cowork_rulings_2026_08_24_method_ruling_sitting.md` (size and sha256 in the closing message;
-carries `pinned` on no line). Modified against the tip: `cowork_handoff.md` ONLY (this entry
+`records/cowork/rulings/cowork_rulings_2026_08_24_method_ruling_sitting.md` (size and sha256 in the closing message;
+carries `pinned` on no line). Modified against the tip: `records/cowork/handoff/cowork_handoff.md` ONLY (this entry
 above the fiftieth, its heading marked superseded). **Nothing committed, nothing pushed, nothing
 regenerated by this session.** Memory-filesystem: not read this session; nothing written.
 
@@ -6892,7 +6892,7 @@ is owed but the reading of its return.
 entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FIFTIETH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, SIXTH CYCLE) — THE LANDING BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `3a32d1e708`, TIP `2eeacf6b7a`, BOTH REFS AT IT, THE BLIND OUTPUT IN GIT BYTE-IDENTICAL AND UNREAD BY EVERY ORACLE-AWARE PARTY, MEMBERSHIP 52→53, GUARD 75/74/1; ★ THE COMPARISON SURFACE WAS DELIVERED WHOLE AND THE USER RULED ALL FOUR DECISIONS A ("I agree with A A A A") — A FRESH CC SESSION COMPARES, OUTPUT-FIRST READING ORDER, THE CLOSED TWO-AXIS VOCABULARY, NO METHOD RECOMMENDATION — RECORD `cowork_rulings_2026_08_24_comparison_design_sitting.md` ON DISK, UNTRACKED; ★ THE COMPARISON DISPATCH IS WRITTEN — `cc_instruction_comparison_harmony_boundary.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER ITS RETURN, THE METHOD RULING SURFACE. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-first entry above.)
+## ★★★★★ COWORK SESSION CLOSE (FIFTIETH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, SIXTH CYCLE) — THE LANDING BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `3a32d1e708`, TIP `2eeacf6b7a`, BOTH REFS AT IT, THE BLIND OUTPUT IN GIT BYTE-IDENTICAL AND UNREAD BY EVERY ORACLE-AWARE PARTY, MEMBERSHIP 52→53, GUARD 75/74/1; ★ THE COMPARISON SURFACE WAS DELIVERED WHOLE AND THE USER RULED ALL FOUR DECISIONS A ("I agree with A A A A") — A FRESH CC SESSION COMPARES, OUTPUT-FIRST READING ORDER, THE CLOSED TWO-AXIS VOCABULARY, NO METHOD RECOMMENDATION — RECORD `records/cowork/rulings/cowork_rulings_2026_08_24_comparison_design_sitting.md` ON DISK, UNTRACKED; ★ THE COMPARISON DISPATCH IS WRITTEN — `records/cc/instructions/cc_instruction_comparison_harmony_boundary.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER ITS RETURN, THE METHOD RULING SURFACE. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fifty-first entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them.** If you are the
@@ -6910,12 +6910,12 @@ entries and the membership landed; subject stating no verdict), `d5d9ffe970` (cl
 `2a799c2444` (end state), `2eeacf6b7a` (a declared correction commit — the report and close had
 stated TWO guard denials where the batch produced THREE; only those sentences and the
 commit-count paragraph moved). **If you meet THAT tip: the dispatch
-`cc_instruction_comparison_harmony_boundary.md` is yours to hand to a new Claude Code session
+`records/cc/instructions/cc_instruction_comparison_harmony_boundary.md` is yours to hand to a new Claude Code session
 after re-taking the branch rule and re-validating its A1 (ONE tracked modification — this
 handoff; TWO untracked paths).** If you meet a commit on `2eeacf6b7a` with the subject `record:
 the 2026-08-24 comparison-design rulings landed; evidence-pin membership regenerated`, the batch
-has started — READ-ONLY until `cc_report_comparison_harmony_boundary.md` exists, then verify its
-close (THE COMPARISON TABULATED, THE METHOD UNRULED section of `cowork_away_returns.md`) whole
+has started — READ-ONLY until `records/cc/reports/cc_report_comparison_harmony_boundary.md` exists, then verify its
+close (THE COMPARISON TABULATED, THE METHOD UNRULED section of `records/cowork/handoff/cowork_away_returns.md`) whole
 and at the objects — the tabulation reading file is
 `ratification_surfaces/cowork_comparison_harmony_boundary_reading.md`, and reading IT whole is
 part of the verification (the comparison is not oracle-contaminating: everything in it is already
@@ -6966,10 +6966,10 @@ to rule all four decisions in their next turn by letter — the user's own caden
 decisions, recorded as such in the sitting record §0.
 
 **★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
-`cowork_rulings_2026_08_24_comparison_design_sitting.md` and
-`cc_instruction_comparison_harmony_boundary.md` (sizes and sha256 in the closing message; the
+`records/cowork/rulings/cowork_rulings_2026_08_24_comparison_design_sitting.md` and
+`records/cc/instructions/cc_instruction_comparison_harmony_boundary.md` (sizes and sha256 in the closing message; the
 record carries `pinned` on no line — the dispatch names the word in its route-B clause and is no
-ruling record). Modified against the tip: `cowork_handoff.md` ONLY (this entry above the
+ruling record). Modified against the tip: `records/cowork/handoff/cowork_handoff.md` ONLY (this entry above the
 forty-ninth, its heading marked superseded). **Nothing committed, nothing pushed, nothing
 regenerated by this session.** Memory-filesystem: not read this session; nothing written.
 
@@ -6989,7 +6989,7 @@ the pilot closes at the user's word.
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTY-NINTH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, FIFTH CYCLE) — THE BLIND DERIVING SESSION HAS DELIVERED: `cowork_blind_derivation_harmony_boundary_2026_08_23.md` EXISTS AT THE ROOT (89,497 BYTES, sha256 `86b19428…ab0407`, UNTRACKED, BANNER *DRAFT — BLIND DERIVATION, NOT COMPARED, NOT RATIFIED*), VERIFIED AT NAME, SIZE, HASH AND BANNER AND **DELIBERATELY UNREAD BEYOND THAT BY THIS ORACLE-AWARE SESSION**; ★ ITS OPEN QUESTION 9 VERIFIED REAL AT THE OBJECTS AND RULED A — THE THIRD CHORALE'S HUMAN ANALYSIS IS *WHEN IN ROME* FOLDER 134, CONTENT-MATCHED, RECORD `cowork_rulings_2026_08_24_blind_return_sitting.md` ON DISK, UNTRACKED; ★ THE LANDING DISPATCH IS WRITTEN — `cc_instruction_blind_output_landing.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING, AND IT BARS ITS OWN EXECUTOR FROM READING THE OUTPUT; ★ AFTER IT LANDS, THE NEXT ACT IS THE COMPARISON SURFACE. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fiftieth entry above.)
+## ★★★★★ COWORK SESSION CLOSE (FORTY-NINTH ENTRY, 2026-08-24 — THE SAME FORTY-FIFTH SESSION, FIFTH CYCLE) — THE BLIND DERIVING SESSION HAS DELIVERED: `cowork_blind_derivation_harmony_boundary_2026_08_23.md` EXISTS AT THE ROOT (89,497 BYTES, sha256 `86b19428…ab0407`, UNTRACKED, BANNER *DRAFT — BLIND DERIVATION, NOT COMPARED, NOT RATIFIED*), VERIFIED AT NAME, SIZE, HASH AND BANNER AND **DELIBERATELY UNREAD BEYOND THAT BY THIS ORACLE-AWARE SESSION**; ★ ITS OPEN QUESTION 9 VERIFIED REAL AT THE OBJECTS AND RULED A — THE THIRD CHORALE'S HUMAN ANALYSIS IS *WHEN IN ROME* FOLDER 134, CONTENT-MATCHED, RECORD `records/cowork/rulings/cowork_rulings_2026_08_24_blind_return_sitting.md` ON DISK, UNTRACKED; ★ THE LANDING DISPATCH IS WRITTEN — `records/cc/instructions/cc_instruction_blind_output_landing.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING, AND IT BARS ITS OWN EXECUTOR FROM READING THE OUTPUT; ★ AFTER IT LANDS, THE NEXT ACT IS THE COMPARISON SURFACE. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the fiftieth entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them.** If you are the
@@ -7003,12 +7003,12 @@ it** (standing declaration). **The bar binds you afresh.**
 **★ YOUR FIRST ACT IS THE BRANCH RULE, AT THE TIP, NEVER CARRIED.** At this writing the tip is
 **`3a32d1e708`**, both refs at it, unmoved since the forty-eighth entry; the ONLY new thing on
 disk beyond that entry's account is the blind output, this sitting's record, the landing dispatch
-and this handoff entry. **If you meet THAT tip: the dispatch `cc_instruction_blind_output_landing.md`
+and this handoff entry. **If you meet THAT tip: the dispatch `records/cc/instructions/cc_instruction_blind_output_landing.md`
 is yours to hand to a new Claude Code session after re-taking the branch rule and re-validating
 its A1 (ONE tracked modification — this handoff; THREE untracked paths to land).** If you meet a
 commit on `3a32d1e708` whose subject opens `record: the blind derivation's output file landed
-UNCOMPARED`, the batch has started — READ-ONLY until `cc_report_blind_output_landing.md` exists,
-then verify its close (THE BLIND OUTPUT LANDED, UNCOMPARED section of `cowork_away_returns.md`)
+UNCOMPARED`, the batch has started — READ-ONLY until `records/cc/reports/cc_report_blind_output_landing.md` exists,
+then verify its close (THE BLIND OUTPUT LANDED, UNCOMPARED section of `records/cowork/handoff/cowork_away_returns.md`)
 whole and at the objects — **without reading the blind output itself beyond its first three
 lines**. **After it lands: the COMPARISON SURFACE** — the writing side designs the comparison
 (who compares, what it reads and in what order, how statements are graded against the withheld
@@ -7060,9 +7060,9 @@ turn, ruled by letter.
 
 **★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
 `cowork_blind_derivation_harmony_boundary_2026_08_23.md` (the blind session's, hash above),
-`cowork_rulings_2026_08_24_blind_return_sitting.md` and `cc_instruction_blind_output_landing.md`
+`records/cowork/rulings/cowork_rulings_2026_08_24_blind_return_sitting.md` and `records/cc/instructions/cc_instruction_blind_output_landing.md`
 (this side's; sizes and sha256 in the closing message; the record carries `pinned` on no line,
-and so does the blind output — `grep -c`: 0). Modified against the tip: `cowork_handoff.md` ONLY
+and so does the blind output — `grep -c`: 0). Modified against the tip: `records/cowork/handoff/cowork_handoff.md` ONLY
 (this entry above the forty-eighth, its heading marked superseded). **Nothing committed, nothing
 pushed, nothing regenerated by this session.** Memory-filesystem: not read this session; nothing
 written.
@@ -7102,7 +7102,7 @@ boundary), `48a272d900` (close), `3dcd699929` (end state), `e628334eeb` and `3a3
 declared hash-backfill commits — the report's hash block and the close's §1; each touches only
 those). **If you meet THAT tip: nothing is owed and nothing is running.** The next acts, in
 order: **(1)** the user opens the BLIND DERIVING SESSION — a FRESH COWORK SESSION (Ruling 1 of
-`cowork_rulings_2026_08_22_deriving_side_sitting.md`), its desktop connecting the repository
+`records/cowork/rulings/cowork_rulings_2026_08_22_deriving_side_sitting.md`), its desktop connecting the repository
 folder AND the chorale folder
 `C:\s\MS\tools\dcml\when_in_rome\Corpus\Early_Choral\Bach,_Johann_Sebastian\Chorales`; it reads
 the brief FIRST, then `tools/audit/derivation_boot_pack/harmony-boundary/`, is staged the eight
@@ -7141,7 +7141,7 @@ on the user's VM (object reads); sha256 over landed files on the VM. No working-
 status`/`git diff`. **Presentation-form: none flagged.**
 
 **★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Modified against the tip:
-`cowork_handoff.md` ONLY (this block above the forty-seventh, its heading marked superseded) — to
+`records/cowork/handoff/cowork_handoff.md` ONLY (this block above the forty-seventh, its heading marked superseded) — to
 be landed by the next ordinary dispatch's Task 0. Untracked: nothing owed by this session.
 **Nothing committed, nothing pushed, nothing regenerated by this session.** Memory-filesystem: not
 read this session; nothing written.
@@ -7159,7 +7159,7 @@ and this handoff, and prepares the comparison surface for the user.
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTY-SEVENTH ENTRY, 2026-08-23 — THE SAME FORTY-FIFTH SESSION, THIRD CYCLE) — THE SECOND-PASSAGE BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `972ba18005`, TIP `d2a517c8db`, BOTH REFS AT IT, PASSAGES 1→2 THE ONLY MOVED COUNT, GUARD 75/74/1; ★ THE BRIEF WAS VALIDATED AGAINST THE LANDED PACK — ONE CONFLICT FOUND (THE READ-ME'S ABSOLUTE BOUNDARY FORBIDS THE BRIEF'S RULED INPUTS) AND THREE RULINGS TAKEN (C; P2 CONFIRMED; P4 FIXED), RECORD `cowork_rulings_2026_08_23_brief_validation_sitting.md` ON DISK, UNTRACKED; ★ THE BRIEF IS REFRESHED TO RULED ON DISK (MODIFIED, UNCOMMITTED); ★ THE DISPATCH IS WRITTEN — `cc_instruction_brief_ratification_and_readme_boundary.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER IT LANDS, THE BLIND SESSION IS THE USER'S TO OPEN AND NOTHING STANDS BEFORE IT. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-eighth entry above.)
+## ★★★★★ COWORK SESSION CLOSE (FORTY-SEVENTH ENTRY, 2026-08-23 — THE SAME FORTY-FIFTH SESSION, THIRD CYCLE) — THE SECOND-PASSAGE BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `972ba18005`, TIP `d2a517c8db`, BOTH REFS AT IT, PASSAGES 1→2 THE ONLY MOVED COUNT, GUARD 75/74/1; ★ THE BRIEF WAS VALIDATED AGAINST THE LANDED PACK — ONE CONFLICT FOUND (THE READ-ME'S ABSOLUTE BOUNDARY FORBIDS THE BRIEF'S RULED INPUTS) AND THREE RULINGS TAKEN (C; P2 CONFIRMED; P4 FIXED), RECORD `records/cowork/rulings/cowork_rulings_2026_08_23_brief_validation_sitting.md` ON DISK, UNTRACKED; ★ THE BRIEF IS REFRESHED TO RULED ON DISK (MODIFIED, UNCOMMITTED); ★ THE DISPATCH IS WRITTEN — `records/cc/instructions/cc_instruction_brief_ratification_and_readme_boundary.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER IT LANDS, THE BLIND SESSION IS THE USER'S TO OPEN AND NOTHING STANDS BEFORE IT. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-eighth entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them.**
@@ -7180,14 +7180,14 @@ discharge it** (declared since the forty-fifth block). **The bar binds you afres
 **`d2a517c8db`** (parent `59b3c0ff33`), both refs at it. The second-passage batch's four commits,
 oldest first: `1ff83f569a` (Task 0), `cf00b6af7b` (Task 1 — the second passage cut, the read-me
 counting its passages), `59b3c0ff33` (close), `d2a517c8db` (end state). **If you meet THAT tip:
-the dispatch `cc_instruction_brief_ratification_and_readme_boundary.md` is yours to hand to a new
+the dispatch `records/cc/instructions/cc_instruction_brief_ratification_and_readme_boundary.md` is yours to hand to a new
 Claude Code session after re-taking the branch rule and re-validating its A1 against the tree
 (NOTE its A1 carries TWO tracked modifications — the handoff AND the refreshed brief).** If you
 meet a commit on `d2a517c8db` with the subject `record: the 2026-08-23 brief-validation rulings
 landed and the blind session's brief is RULED; evidence-pin membership regenerated`, the batch
-has started — READ-ONLY until `cc_report_brief_ratification_and_readme_boundary.md` exists, then
+has started — READ-ONLY until `records/cc/reports/cc_report_brief_ratification_and_readme_boundary.md` exists, then
 verify its close (THE BRIEF RULED AND THE PACK'S BOUNDARY TRUE section of
-`cowork_away_returns.md`) whole and at the objects. **After it lands: the BLIND DERIVATION, a
+`records/cowork/handoff/cowork_away_returns.md`) whole and at the objects. **After it lands: the BLIND DERIVATION, a
 FRESH COWORK SESSION the user opens** (Ruling 1 of the deriving-side sitting) — its desktop
 connects the repository folder AND the chorale folder
 `C:\s\MS\tools\dcml\when_in_rome\Corpus\Early_Choral\Bach,_Johann_Sebastian\Chorales`; it reads
@@ -7220,7 +7220,7 @@ the dispatch written — Task 1's read-me wording is constrained by content at A
 wording CC's; a defect CC finds in the brief is a STOP, never a fix. (4) This block written.
 
 **★ THE NEXT DECISION SURFACES, IN ORDER.** **First:** none owed before dispatch — the user
-starts a new Claude Code session on `cc_instruction_brief_ratification_and_readme_boundary.md`.
+starts a new Claude Code session on `records/cc/instructions/cc_instruction_brief_ratification_and_readme_boundary.md`.
 **Then:** the reading of its return; the BLIND SESSION (the user opens it; nothing else stands
 before it); the comparison dispatch; the ruling on the method. **Third in the standing order:**
 the quarantined findings. **The ledger** before the framework phase. **Last:**
@@ -7244,10 +7244,10 @@ check); sha256 over landed files on the VM. No working-tree `git status`/`git di
 turn; P2/P4 through the widget after the surface had been read.
 
 **★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
-`cowork_rulings_2026_08_23_brief_validation_sitting.md` and
-`cc_instruction_brief_ratification_and_readme_boundary.md` (sizes and sha256 in the closing
+`records/cowork/rulings/cowork_rulings_2026_08_23_brief_validation_sitting.md` and
+`records/cc/instructions/cc_instruction_brief_ratification_and_readme_boundary.md` (sizes and sha256 in the closing
 message; the record carries `pinned` on no line — the dispatch names the word in its route-B
-clause and is no ruling record). Modified against the tip: `cowork_handoff.md` (this block above
+clause and is no ruling record). Modified against the tip: `records/cowork/handoff/cowork_handoff.md` (this block above
 the forty-sixth, its heading marked superseded) and
 `cowork_blind_session_brief_harmony_boundary.md` (the refresh, regions named above). **Nothing
 committed, nothing pushed, nothing regenerated by this session.** Memory-filesystem: not read
@@ -7261,7 +7261,7 @@ and the marker positions, and member (5)'s identity checks — all at objects. T
 and older blocks NOT re-read this entry.
 
 **★ THE CADENCE:** the next session starts at the branch rule, establishes whether
-`cc_instruction_brief_ratification_and_readme_boundary.md` has been started, and — if not —
+`records/cc/instructions/cc_instruction_brief_ratification_and_readme_boundary.md` has been started, and — if not —
 re-validates its A1 (TWO tracked modifications) and hands it to a new Claude Code session; while
 it runs, nothing is owed but the reading of its return; after it lands, the user opens the blind
 Cowork session, and the writing side's next act after THAT is the dispatch that commits the blind
@@ -7271,7 +7271,7 @@ output and prepares the comparison.
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTY-SIXTH ENTRY, 2026-08-23 — THE SAME FORTY-FIFTH SESSION, CONTINUED THROUGH THE CORRECTION BATCH'S RETURN) — THE CORRECTION BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `0dcbacce2d`, TIP `972ba18005`, BOTH REFS AT IT, THE MANIFEST AT THE RULED LISTS (IN 16 / OUT 59 / UNPLACED 0, THE PASSAGE WIDENED), GUARD 75/74/1; ★ ONE NEW FINDING AT THE RENDERED MEMBER (2) — THE FOUNDING-INSTANCES SENTENCE NAMES A BOUNDARY-MEMBERSHIP CONVENTION — RULED B: A SECOND AUTHORED PASSAGE, RECORD `cowork_rulings_2026_08_23_member_two_second_leak_sitting.md` ON DISK, UNTRACKED; ★ THE DISPATCH IS WRITTEN — `cc_instruction_second_passage_withheld.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER IT LANDS, NOTHING STANDS BEFORE THE BLIND SESSION. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-seventh entry above.)
+## ★★★★★ COWORK SESSION CLOSE (FORTY-SIXTH ENTRY, 2026-08-23 — THE SAME FORTY-FIFTH SESSION, CONTINUED THROUGH THE CORRECTION BATCH'S RETURN) — THE CORRECTION BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `0dcbacce2d`, TIP `972ba18005`, BOTH REFS AT IT, THE MANIFEST AT THE RULED LISTS (IN 16 / OUT 59 / UNPLACED 0, THE PASSAGE WIDENED), GUARD 75/74/1; ★ ONE NEW FINDING AT THE RENDERED MEMBER (2) — THE FOUNDING-INSTANCES SENTENCE NAMES A BOUNDARY-MEMBERSHIP CONVENTION — RULED B: A SECOND AUTHORED PASSAGE, RECORD `records/cowork/rulings/cowork_rulings_2026_08_23_member_two_second_leak_sitting.md` ON DISK, UNTRACKED; ★ THE DISPATCH IS WRITTEN — `records/cc/instructions/cc_instruction_second_passage_withheld.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ AFTER IT LANDS, NOTHING STANDS BEFORE THE BLIND SESSION. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-seventh entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them.**
@@ -7291,14 +7291,14 @@ you afresh: take the three reads before anything else.**
 **`972ba18005`** (parent `1db5cf1e90`), both refs at it. The correction batch's four commits,
 oldest first: `6e29b06a49` (Task 0), `72534e5da9` (Task 1 — the ruled lists applied),
 `1db5cf1e90` (close), `972ba18005` (end state). **If you meet THAT tip: the dispatch
-`cc_instruction_second_passage_withheld.md` is yours to hand to a new Claude Code session after
+`records/cc/instructions/cc_instruction_second_passage_withheld.md` is yours to hand to a new Claude Code session after
 re-taking the branch rule and re-validating its A1 against the tree.** If you meet a commit on
 `972ba18005` with the subject `record: the 2026-08-23 second member-two leak ruling landed;
 evidence-pin membership regenerated`, the batch has started — READ-ONLY until
-`cc_report_second_passage_withheld.md` exists, then verify its close (THE SECOND PASSAGE
-WITHHELD: THE PACK AT ITS RULED STATE section of `cowork_away_returns.md`) whole and at the
+`records/cc/reports/cc_report_second_passage_withheld.md` exists, then verify its close (THE SECOND PASSAGE
+WITHHELD: THE PACK AT ITS RULED STATE section of `records/cowork/handoff/cowork_away_returns.md`) whole and at the
 objects. **After it lands, the next act is the BLIND DERIVATION by a FRESH COWORK SESSION**
-(Ruling 1 of `cowork_rulings_2026_08_22_deriving_side_sitting.md`) — NOT you, NOT Claude Code —
+(Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_08_22_deriving_side_sitting.md`) — NOT you, NOT Claude Code —
 booted from `cowork_blind_session_brief_harmony_boundary.md` and the pack only; its desktop
 connects the repository folder and the chorale folder named in the forty-fourth block. Before it
 boots, the brief's (P4) (the output file's name) and the brief's validation against the landed
@@ -7327,7 +7327,7 @@ untracked. (3) The dispatch written: one authored addition, ONE licensed read-me
 written.
 
 **★ THE NEXT DECISION SURFACES, IN ORDER.** **First:** none owed before dispatch — the user
-starts a new Claude Code session on `cc_instruction_second_passage_withheld.md`. **Then:** the
+starts a new Claude Code session on `records/cc/instructions/cc_instruction_second_passage_withheld.md`. **Then:** the
 reading of its return; the brief's (P4) and the brief validated against the landed pack; the
 blind Cowork session; the comparison dispatch; the ruling on the method. **Third in the standing
 order:** the quarantined findings. **The ledger** before the framework phase. **Last:**
@@ -7350,10 +7350,10 @@ handoff on the VM (same class). No working-tree `git status`/`git diff` this ent
 deferred to the next; the user answered by letter.
 
 **★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked:
-`cowork_rulings_2026_08_23_member_two_second_leak_sitting.md` and
-`cc_instruction_second_passage_withheld.md` (sizes and sha256 in the closing message; the record
+`records/cowork/rulings/cowork_rulings_2026_08_23_member_two_second_leak_sitting.md` and
+`records/cc/instructions/cc_instruction_second_passage_withheld.md` (sizes and sha256 in the closing message; the record
 carries the word `pinned` on no line — the dispatch names the word in its route-B clause and is
-no ruling record). Modified against the tip: `cowork_handoff.md` (this block above the
+no ruling record). Modified against the tip: `records/cowork/handoff/cowork_handoff.md` (this block above the
 forty-fifth, its heading marked superseded). **Nothing committed, nothing pushed, nothing
 regenerated by this session.** Memory-filesystem: not read this session; nothing written.
 
@@ -7367,7 +7367,7 @@ manifest whole-diff check stands in for the unread middle). The forty-fourth and
 re-read this entry.
 
 **★ THE CADENCE:** the next session starts at the branch rule, establishes whether
-`cc_instruction_second_passage_withheld.md` has been started, and — if not — re-validates its A1
+`records/cc/instructions/cc_instruction_second_passage_withheld.md` has been started, and — if not — re-validates its A1
 against the tree and hands it to a new Claude Code session; while it runs, nothing is owed but
 the reading of its return; after it lands, the blind session is the user's to open and NOTHING
 else stands before it.
@@ -7376,7 +7376,7 @@ else stands before it.
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTY-FIFTH, 2026-08-22) — THE PILOT-PREPARATION BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `dcbfa5fe32`, TIP `0dcbacce2d`, BOTH REFS AT IT, GUARD POPULATION 74→75, THE ONE RED OI-372; ★ THE WITHHELD FAMILY IS RULED, ALL FIVE LISTS, ONE PER TURN (A, A, B, A, B) — RECORD `cowork_rulings_2026_08_22_withheld_family_sitting.md` ON DISK, UNTRACKED; ★ THE CORRECTION DISPATCH IS WRITTEN — `cc_instruction_withheld_family_correction.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ THREE PRESENTATION-FORM DISCREPANCIES FOUND IN THE BATCH'S OWN TEXT, NONE TOUCHING A VERDICT; ★ TELLS DECLARED (METHOD). THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-sixth entry above.)
+## ★★★★★ COWORK SESSION CLOSE (FORTY-FIFTH, 2026-08-22) — THE PILOT-PREPARATION BATCH RETURNED COMPLETE AND WAS VERIFIED AT THE OBJECTS: FOUR COMMITS ON `dcbfa5fe32`, TIP `0dcbacce2d`, BOTH REFS AT IT, GUARD POPULATION 74→75, THE ONE RED OI-372; ★ THE WITHHELD FAMILY IS RULED, ALL FIVE LISTS, ONE PER TURN (A, A, B, A, B) — RECORD `records/cowork/rulings/cowork_rulings_2026_08_22_withheld_family_sitting.md` ON DISK, UNTRACKED; ★ THE CORRECTION DISPATCH IS WRITTEN — `records/cc/instructions/cc_instruction_withheld_family_correction.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ THREE PRESENTATION-FORM DISCREPANCIES FOUND IN THE BATCH'S OWN TEXT, NONE TOUCHING A VERDICT; ★ TELLS DECLARED (METHOD). THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-sixth entry above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them.**
@@ -7405,10 +7405,10 @@ batch, oldest first: `c42f8141f4` (Task 0, seven paths), `a12cc03503` (Task 1), 
 to a new Claude Code session after re-taking the branch rule and re-validating its A1 against the
 tree.** If you meet a commit on `0dcbacce2d` with the subject `record: the 2026-08-22
 withheld-family rulings landed; evidence-pin membership regenerated`, the correction batch has
-started — READ-ONLY until `cc_report_withheld_family_correction.md` exists, then verify its close
-(THE WITHHELD FAMILY RULED AND THE PACK CORRECTED section of `cowork_away_returns.md`) whole and at
+started — READ-ONLY until `records/cc/reports/cc_report_withheld_family_correction.md` exists, then verify its close
+(THE WITHHELD FAMILY RULED AND THE PACK CORRECTED section of `records/cowork/handoff/cowork_away_returns.md`) whole and at
 the objects. **After it lands, the next act is the BLIND DERIVATION by a FRESH COWORK SESSION**
-(Ruling 1 of `cowork_rulings_2026_08_22_deriving_side_sitting.md`), booted from
+(Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_08_22_deriving_side_sitting.md`), booted from
 `cowork_blind_session_brief_harmony_boundary.md` and the pack only — NOT by you, and NOT by Claude
 Code; its desktop connects the repository folder and the chorale folder named in the forty-fourth
 block.
@@ -7437,7 +7437,7 @@ to occur exactly once at `0dcbacce2d:CLAUDE.md` (Ruling 5). (5) Wrote the sittin
 correction dispatch; wrote this block.
 
 **★ THE NEXT DECISION SURFACES, IN ORDER.** **First:** none owed before dispatch — the user
-starts a new Claude Code session on `cc_instruction_withheld_family_correction.md`. **Then:** the
+starts a new Claude Code session on `records/cc/instructions/cc_instruction_withheld_family_correction.md`. **Then:** the
 reading of its return; the brief's (P4) (the output file's name) and the brief validated against
 the landed pack's read-me; the blind Cowork session; the comparison dispatch; the ruling on the
 method. **Third in the standing order:** the quarantined findings. **The ledger** is owed before
@@ -7462,9 +7462,9 @@ working-tree content read through the shell, declared); `grep`/`sed`/`python3` p
 none flagged.** Every list: no question in its turn, the question next turn, one list per turn;
 List One through the widget, the rest answered in conversation by letter.
 
-**★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked: `cowork_rulings_2026_08_22_withheld_family_sitting.md`
-and `cc_instruction_withheld_family_correction.md` (sizes and sha256 in the closing message;
-the record carries the word `pinned` on no line; the dispatch names the word twice in its route-B clause and is no ruling record). Modified against the tip: `cowork_handoff.md` (this block
+**★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked: `records/cowork/rulings/cowork_rulings_2026_08_22_withheld_family_sitting.md`
+and `records/cc/instructions/cc_instruction_withheld_family_correction.md` (sizes and sha256 in the closing message;
+the record carries the word `pinned` on no line; the dispatch names the word twice in its route-B clause and is no ruling record). Modified against the tip: `records/cowork/handoff/cowork_handoff.md` (this block
 above the forty-fourth, its heading marked superseded). **Nothing committed, nothing pushed,
 nothing regenerated by this session.** Memory-filesystem: not read this session; nothing written.
 
@@ -7516,9 +7516,9 @@ Task 0 paths staged; `evidence_pin_membership.json` regenerated with exactly the
 no pack directory, no report. If you meet THAT state: the dispatch is yours to hand to a NEW Claude
 Code session after re-taking the branch rule and re-checking the items by content. If you meet a
 commit on `dcbfa5fe32` carrying SEVEN paths with the amended Task 0 subject, the batch has started
-since this writing — READ-ONLY until `cc_report_pilot_preparation.md` exists, then verify the close
+since this writing — READ-ONLY until `records/cc/reports/cc_report_pilot_preparation.md` exists, then verify the close
 (THE PILOT PREPARED: THE BOOT-PACK GENERATOR AND THE WITHHELD FAMILY section of
-`cowork_away_returns.md`) whole and at the objects. **Its deliverable for the user is the reading
+`records/cowork/handoff/cowork_away_returns.md`) whole and at the objects. **Its deliverable for the user is the reading
 file `ratification_surfaces/cowork_withheld_family_harmony_boundary_reading.md`, now with FIVE
 lists — IN, OUT, UNPLACED, LEAKS, and the withheld passage.**
 
@@ -7530,9 +7530,9 @@ identity IS the eligible sounding-note set with releases as boundaries; … actu
 ranked the STRONGEST evidence"); the running dispatch's leak check was scoped to members (5) and
 (6). The user ruled A: the passage is WITHHELD from the pack by the (a1) generator as an authored
 input in the D-677 shape, `CLAUDE.md` untouched — record
-`cowork_rulings_2026_08_22_member_two_leak_sitting.md`, **read it whole.** (3) The user ruled the
+`records/cowork/rulings/cowork_rulings_2026_08_22_member_two_leak_sitting.md`, **read it whole.** (3) The user ruled the
 deriving side: a FRESH COWORK SESSION, booted from the brief and the pack only (Ruling 1 of
-`cowork_rulings_2026_08_22_deriving_side_sitting.md`), with three conditions quoted verbatim in that
+`records/cowork/rulings/cowork_rulings_2026_08_22_deriving_side_sitting.md`), with three conditions quoted verbatim in that
 record — all existing knowledge scoured before a specification is done; the implementation NOT
 mined for the first derived text (Ruling 2, the user's words: code ideas surface at the audit);
 specifications correct and complete before the audit — and the empirical findings ledger therefore
@@ -7541,7 +7541,7 @@ human-annotation files, staged by name (Ruling 3); the enumeration was taken —
 `.mscx` carries NO harmony annotation; the human analysis is the *When in Rome* `analysis.txt`
 (RomanText, beat-positioned, with analyst variants) under a folder eight deep, which the user
 connected directly in the desktop app; the staged set is the three snapshot-suite chorales 001, 003,
-137 (137 has no BCMH file). (5) At the user's direction, read `cc_report_step_zero.md` whole and its
+137 (137 has no BCMH file). (5) At the user's direction, read `records/cc/reports/cc_report_step_zero.md` whole and its
 close whole, verified at the objects; **corrected this side's own record:** the pilot-order
 sitting's fact (i) ("complete over the whole document set") is true of the PASSAGE population and
 false of the MEMBERS — nine of twenty-six are silent at the tip, `cowork_layer2_slicing_design.md`
@@ -7582,13 +7582,13 @@ turn, the question next turn, one decision per turn. **The session ran long at t
 direction; the next return is a fresh session's.**
 
 **★ WHAT IS ON DISK AT THIS WRITING, STATED BY CONTENT.** Untracked, landed by the amended Task 0:
-`cowork_rulings_2026_08_22_pilot_order_sitting.md` (staged by the crashed session; unchanged);
-`cowork_rulings_2026_08_22_member_two_leak_sitting.md` (5,785 bytes, sha256 `b0da7b9ec43c…`);
-`cowork_rulings_2026_08_22_deriving_side_sitting.md` (13,966 bytes, sha256 `43577e492e75…`);
+`records/cowork/rulings/cowork_rulings_2026_08_22_pilot_order_sitting.md` (staged by the crashed session; unchanged);
+`records/cowork/rulings/cowork_rulings_2026_08_22_member_two_leak_sitting.md` (5,785 bytes, sha256 `b0da7b9ec43c…`);
+`records/cowork/rulings/cowork_rulings_2026_08_22_deriving_side_sitting.md` (13,966 bytes, sha256 `43577e492e75…`);
 `cowork_blind_session_brief_harmony_boundary.md` (21,341 bytes, sha256 `97481d6a5949…`); the
-amended `cc_instruction_pilot_preparation_withheld_family.md` (its hash in the closing message).
+amended `records/cc/instructions/cc_instruction_pilot_preparation_withheld_family.md` (its hash in the closing message).
 None of the three records carries the word `pinned` on any line (`grep -c`: 0, 0, 0). Modified
-against the tip: `cowork_handoff.md` (this block above the forty-third, both earlier headings
+against the tip: `records/cowork/handoff/cowork_handoff.md` (this block above the forty-third, both earlier headings
 marked superseded); `tools/audit/evidence_pin_membership.json` (the crashed session's stale
 regeneration, to be re-run). **Nothing committed, nothing pushed, nothing regenerated by this
 session.** Memory-filesystem: read at boot; one line appended to the project area (the user's three
@@ -7599,8 +7599,8 @@ dispatch-protocol section NOT re-read whole before amending the dispatch — the
 block over a dispatch written under that section by the previous session, and every clause it
 touches is named; a reader counts this for themselves. The successor plan read at §6–§7 and its
 headings; the phase-definition surface at §3.2, §3.8 and its headings; `docs/score_inventory.md`
-whole; `cc_report_step_zero.md` whole and its close whole; `cc_report_pass_continuation_second.md`
-and `cc_report_step_zero_return_executed.md` NOT read (inherited from the forty-third block as its
+whole; `records/cc/reports/cc_report_step_zero.md` whole and its close whole; `records/cc/reports/cc_report_pass_continuation_second.md`
+and `records/cc/reports/cc_report_step_zero_return_executed.md` NOT read (inherited from the forty-third block as its
 reading). The forty-second and older handover blocks NOT read.
 
 **★ THE CADENCE:** the next session starts at the branch rule, establishes whether the amended
@@ -7611,11 +7611,11 @@ to a new Claude Code session; while it runs, nothing is owed but the reading of 
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTY-THIRD, 2026-08-22 — THE SAME FORTY-SECOND SESSION, CONTINUED THROUGH A SECOND CYCLE AT THE USER'S DIRECTION) — THE PER-ENTRY PASS OF THE WIDENED JULY SCREEN IS COMPLETE AND VERIFIED AT THE OBJECTS: SEVEN COMMITS ON `40fb613060`, TIP `dcbfa5fe32`, `origin/master` AT THE TIP, THE RULED FAILURE SIGNAL EVALUATED OVER THE WHOLE POPULATION AND NOT FIRING; ★ ONE NEW RULING (THE PILOT OPENS WITH THE HELD-OUT TEST FIRST), RECORD `cowork_rulings_2026_08_22_pilot_order_sitting.md` ON DISK, UNTRACKED; ★ THE NEXT DISPATCH IS WRITTEN — `cc_instruction_pilot_preparation_withheld_family.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE TELL FIRED AND ONE DECLARED (BOTH METHOD), UNCHANGED ACROSS THE SECOND CYCLE. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-fourth block above.)
+## ★★★★★ COWORK SESSION CLOSE (FORTY-THIRD, 2026-08-22 — THE SAME FORTY-SECOND SESSION, CONTINUED THROUGH A SECOND CYCLE AT THE USER'S DIRECTION) — THE PER-ENTRY PASS OF THE WIDENED JULY SCREEN IS COMPLETE AND VERIFIED AT THE OBJECTS: SEVEN COMMITS ON `40fb613060`, TIP `dcbfa5fe32`, `origin/master` AT THE TIP, THE RULED FAILURE SIGNAL EVALUATED OVER THE WHOLE POPULATION AND NOT FIRING; ★ ONE NEW RULING (THE PILOT OPENS WITH THE HELD-OUT TEST FIRST), RECORD `records/cowork/rulings/cowork_rulings_2026_08_22_pilot_order_sitting.md` ON DISK, UNTRACKED; ★ THE NEXT DISPATCH IS WRITTEN — `records/cc/instructions/cc_instruction_pilot_preparation_withheld_family.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE TELL FIRED AND ONE DECLARED (BOTH METHOD), UNCHANGED ACROSS THE SECOND CYCLE. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-fourth block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them (Ruling 1 of
-`cowork_rulings_2026_08_21_successor_plan_sitting.md`).**
+`records/cowork/rulings/cowork_rulings_2026_08_21_successor_plan_sitting.md`).**
 
 **★ WORDS USED IN THIS BLOCK, EXPLAINED FIRST.** *A changed passage* — one contiguous run of changed
 lines inside one commit's edit of one document (the tools' artifacts say "hunk"). *The widened
@@ -7639,13 +7639,13 @@ batches' pointer entries). **The bar binds you afresh.**
 **`dcbfa5fe32`** (parent `473f287372`), `refs/heads/master` and `refs/remotes/origin/master` both at
 it — read with `git show -s` and `git for-each-ref` at the explicit hash on the user's machine.
 **No commit was added by this Cowork session. Nothing is running. The dispatch is written and NOT
-dispatched.** Establish which state it is in: **not started** (no `cc_report_pilot_preparation.md`
+dispatched.** Establish which state it is in: **not started** (no `records/cc/reports/cc_report_pilot_preparation.md`
 on disk, no commit on `dcbfa5fe32`) — then it is yours to dispatch after re-validating it against
 the tree (the parked-instruction clause: re-take the branch rule, re-check A1 by content, re-check
 that the sitting record carries no line with the word `pinned`); **running** — READ-ONLY on the
 repository until it stops; **completed** — its Task 0 commit sits on `dcbfa5fe32` carrying FOUR
 paths with the subject the dispatch prescribes, and the close is THE PILOT PREPARED: THE BOOT-PACK
-GENERATOR AND THE WITHHELD FAMILY section of `cowork_away_returns.md`, read WHOLE and verified at
+GENERATOR AND THE WITHHELD FAMILY section of `records/cowork/handoff/cowork_away_returns.md`, read WHOLE and verified at
 the objects; **its deliverable for you is a READING FILE,
 `ratification_surfaces/cowork_withheld_family_harmony_boundary_reading.md`, with four lists — IN,
 OUT, UNPLACED, LEAKS — and the user rules them before any session boots from the pack.**
@@ -7654,8 +7654,8 @@ OUT, UNPLACED, LEAKS — and the user rules them before any session boots from t
 second pass-continuation dispatch returned: seven commits `4547a2809f` → `ed51ddd49c` → `8b0a83c71d`
 → `3e47297a03` → `3e9410bfd7` → `473f287372` → `dcbfa5fe32`, every parent pointer read at the
 object; the sitting record and the dispatch at `4547a2809f` hash to the values this session
-delivered them with. `cc_report_pass_continuation_second.md` read whole (1–383) and the close
-section of `cowork_away_returns.md` read whole (16123–16315). Verified at objects: `july_screen.json`
+delivered them with. `records/cc/reports/cc_report_pass_continuation_second.md` read whole (1–383) and the close
+section of `records/cowork/handoff/cowork_away_returns.md` read whole (16123–16315). Verified at objects: `july_screen.json`
 → `★_the_widened_screen.counted` reads `unread: 0`, `read: 234` of 237; the generator diff
 `40fb613060`..`3e9410bfd7` removes exactly 53 `NOT YET READ` verdicts and adds 53, no other class
 touched; the digest `32366793f298…` unchanged; the failure-signal field reads `DOES NOT FIRE`
@@ -7671,7 +7671,7 @@ its three authored inputs re-aimed; CC declared the departure (D-648). The pilot
 dispatch licenses that maintenance in terms. (2) The pilot-opening surface was put self-contained,
 the question in the next turn, and the user ruled **A**: the HELD-OUT TEST on the harmony-boundary
 decision runs FIRST, the sizing pilot on `docs/scoring_model.md` SECOND under an established
-method. Record: `cowork_rulings_2026_08_22_pilot_order_sitting.md` — **read it whole.** Its §1
+method. Record: `records/cowork/rulings/cowork_rulings_2026_08_22_pilot_order_sitting.md` — **read it whole.** Its §1
 carries three facts: the prerequisite is met; the withheld family is BY SUBJECT (the surface's
 reading named D-022, D-023, D-004, D-449, D-565, D-628, D-605, D-057 and the factorization
 document — a reading, NOT an enumeration at the objects); **the identity of the deriving side is
@@ -7699,7 +7699,7 @@ establishment obligation. **Last:** pruning-and-satellites, from measured sizes.
 [[OI-179]] OPEN and GATES. F3 at sixteen surfacings. **NO FINDING NUMBER ALLOCATED — F88.** The two
 owed dispositions of the plan's §2 STILL UNROWED. The ledger hole declared, not filled (Ruling 8).
 FIVE quarantined questions stand surfaced and unacted on (four at
-`cc_report_step_zero_return_executed.md` §8, one at `cc_report_pass_continuation_second.md` §8).
+`records/cc/reports/cc_report_step_zero_return_executed.md` §8, one at `records/cc/reports/cc_report_pass_continuation_second.md` §8).
 The two fact-gate whole reads remain plan lines.
 
 **★ THE DEGRADATION REPORT — ONE TELL FIRED, ONE DECLARED, BOTH METHOD, UNCHANGED ACROSS THE SECOND
@@ -7716,15 +7716,15 @@ a fresh session should take the next return, and the user overrode it knowingly.
 after THIS block is the one the cadence calls for.**
 
 **★ WHAT IS ON DISK AND UNTRACKED AT THIS WRITING, STATED BY CONTENT.** Written by this session in
-its second cycle: `cowork_rulings_2026_08_22_pilot_order_sitting.md` (sha256 `3fcb43c1ac26…`, 6,878
+its second cycle: `records/cowork/rulings/cowork_rulings_2026_08_22_pilot_order_sitting.md` (sha256 `3fcb43c1ac26…`, 6,878
 bytes, zero carriage returns, no line carrying `pinned` — `sha256sum`, `wc -c`, `grep -c` over the
-container copy, re-verified after re-staging); `cc_instruction_pilot_preparation_withheld_family.md`
-(sha256 `ae86979ee68c…`, 35,374 bytes); this block, inserted into `cowork_handoff.md` after the
+container copy, re-verified after re-staging); `records/cc/instructions/cc_instruction_pilot_preparation_withheld_family.md`
+(sha256 `ae86979ee68c…`, 35,374 bytes); this block, inserted into `records/cowork/handoff/cowork_handoff.md` after the
 file on disk was MEASURED byte-identical to the tip's blob (`git show dcbfa5fe32:cowork_handoff.md
 | sha256sum` = `b72ae70a7d9c…`, the value this session delivered it with; 521,681 bytes, zero
 carriage returns), with the forty-second heading marked superseded in the same act. Landed by the
-previous batch and no longer untracked: `cowork_rulings_2026_08_22_boot_list_sitting.md`,
-`cc_instruction_pass_continuation_second.md`. **Nothing committed, nothing pushed, nothing
+previous batch and no longer untracked: `records/cowork/rulings/cowork_rulings_2026_08_22_boot_list_sitting.md`,
+`records/cc/instructions/cc_instruction_pass_continuation_second.md`. **Nothing committed, nothing pushed, nothing
 regenerated.** Memory-filesystem: read at boot; nothing written.
 
 **★ DECLARED DEPARTURES.** `BUILD_AND_TEST.md` NOT read. `ARCHITECTURE.md` read only at lines
@@ -7743,11 +7743,11 @@ together.
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTY-SECOND, 2026-08-22) — THE PREVIOUS DISPATCH RETURNED AND WAS VERIFIED AT THE OBJECTS: TEN COMMITS ON `64e7d2fd7f`, TIP `40fb613060`, `origin/master` AT THE TIP; ★ ONE NEW RULING (THE CURATED BOOT LIST FOR DERIVATION SESSIONS, ALTERNATIVE A WITH THREE AMENDMENTS), RECORD `cowork_rulings_2026_08_22_boot_list_sitting.md` ON DISK, UNTRACKED; ★ THE NEXT DISPATCH IS WRITTEN — `cc_instruction_pass_continuation_second.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE TELL FIRED AND ONE DECLARED (BOTH METHOD). THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-third block above.)
+## ★★★★★ COWORK SESSION CLOSE (FORTY-SECOND, 2026-08-22) — THE PREVIOUS DISPATCH RETURNED AND WAS VERIFIED AT THE OBJECTS: TEN COMMITS ON `64e7d2fd7f`, TIP `40fb613060`, `origin/master` AT THE TIP; ★ ONE NEW RULING (THE CURATED BOOT LIST FOR DERIVATION SESSIONS, ALTERNATIVE A WITH THREE AMENDMENTS), RECORD `records/cowork/rulings/cowork_rulings_2026_08_22_boot_list_sitting.md` ON DISK, UNTRACKED; ★ THE NEXT DISPATCH IS WRITTEN — `records/cc/instructions/cc_instruction_pass_continuation_second.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE TELL FIRED AND ONE DECLARED (BOTH METHOD). THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-third block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them (Ruling 1 of
-`cowork_rulings_2026_08_21_successor_plan_sitting.md`).**
+`records/cowork/rulings/cowork_rulings_2026_08_21_successor_plan_sitting.md`).**
 
 **★ WORDS USED IN THIS BLOCK, EXPLAINED FIRST.** *A changed passage* — one contiguous run of changed
 lines inside one commit's edit of one document (the tools' artifacts say "hunk"). *The document set*
@@ -7771,20 +7771,20 @@ identity at line 244). **The bar binds you afresh.**
 **`40fb613060`** (parent `d276e8afb2`), `refs/heads/master` and `refs/remotes/origin/master` both at
 it — read with `git show -s` and `git for-each-ref` at the explicit hash on the user's machine at
 boot. **No commit was added this session. Nothing is running. The dispatch is written and NOT
-dispatched.** Establish which state it is in: **not started** (no `cc_report_pass_continuation_second.md`
+dispatched.** Establish which state it is in: **not started** (no `records/cc/reports/cc_report_pass_continuation_second.md`
 on disk, no commit on `40fb613060`) — then it is yours to dispatch after re-validating it against
 the tree (the parked-instruction clause: re-take the branch rule, re-check A1 by content, re-check
 that the sitting record carries no line with the word `pinned`); **running** — READ-ONLY on the
 repository until it stops; **completed** — its Task 0 commit sits on `40fb613060` carrying FOUR
 paths with the subject the dispatch prescribes, and the close is THE PER-ENTRY PASS CONTINUED, THE
-SECOND TIME section of `cowork_away_returns.md`, read WHOLE and verified at the objects by explicit
+SECOND TIME section of `records/cowork/handoff/cowork_away_returns.md`, read WHOLE and verified at the objects by explicit
 hash.
 
 **★ WHAT THIS SESSION DID — CADENCE STEPS (a), (b) AND (c), EACH VERIFIED AT THE OBJECT.** (1) The
 previous dispatch's return was verified: ten commits `4f55fe802b` → `beccfa14f5` → `810ff863c9` →
 `f33441940f` → `dc340d84fb` → `979436429d` → `74abd1b905` → `311dee8d11` → `d276e8afb2` →
-`40fb613060`, every parent pointer read at the object; `cc_report_step_zero_return_executed.md`
-read whole (1–407) and the close section of `cowork_away_returns.md` read whole (lines 15935–16120
+`40fb613060`, every parent pointer read at the object; `records/cc/reports/cc_report_step_zero_return_executed.md`
+read whole (1–407) and the close section of `records/cowork/handoff/cowork_away_returns.md` read whole (lines 15935–16120
 of the staged copy, §1–§10). Verified at objects: the verdict digest `32366793f298…` identical at
 `64e7d2fd7f`, `beccfa14f5` and the tip; the document set 27→26 with `targets_ADMITTED` 25
 unchanged and one authored exclusion carrying finding, date and reason; nine third-value rows in
@@ -7797,7 +7797,7 @@ of the owed surfaces by the ultimate objective; this session stated it: boot-lis
 pass continued on the coding side in parallel, the pilot's opening second, the routing of the four
 quarantined findings and the two unrowed dispositions third, pruning-and-satellites last. (3) The
 boot-list surface was put self-contained as a turn's final response, the question asked in the
-next turn, and the user ruled **A**. Record: `cowork_rulings_2026_08_22_boot_list_sitting.md` —
+next turn, and the user ruled **A**. Record: `records/cowork/rulings/cowork_rulings_2026_08_22_boot_list_sitting.md` —
 **read it whole; do not inherit this summary.** In one line: the 2026-08-19 draft's six members and
 eight exclusions are the standing list, with (a1) a generated per-session WITHHELD LIST cut from the
 `DESIGN-INTENT` class by authored identities in the D-677 shape, (a2) the ledger hole carried as
@@ -7826,7 +7826,7 @@ over bridge-staged copies), with the user's verbosity-pass proposal as one alter
 **★ STANDING HAZARDS — none moved.** [[OI-372]] the ONE standing red. [[OI-374]] untouched.
 [[OI-179]] OPEN and GATES. F3 at sixteen surfacings. **NO FINDING NUMBER ALLOCATED — F88.** The two
 owed dispositions of the plan's §2 STILL UNROWED. The ledger hole declared, not filled (Ruling 8).
-The four quarantined questions of `cc_report_step_zero_return_executed.md` §8 stand surfaced and
+The four quarantined questions of `records/cc/reports/cc_report_step_zero_return_executed.md` §8 stand surfaced and
 unacted on. **`DECISIONS.md` on disk hashes to the tip's blob through `git hash-object`** — the
 previous batch established at the object level that the repository normalises line endings on the
 way in, so the carriage-return difference earlier blocks measured does not reach git.
@@ -7843,9 +7843,9 @@ tells: ZERO — one surface, no question in its turn, the question in the next. 
 tool term explained at first use; "hunk" used nowhere except inside quoted field names.
 
 **★ WHAT IS ON DISK AND UNTRACKED AT THIS WRITING, STATED BY CONTENT.** Written by this session:
-`cowork_rulings_2026_08_22_boot_list_sitting.md` (sha256 `af0f8a12f794…`, 7,965 bytes, zero
+`records/cowork/rulings/cowork_rulings_2026_08_22_boot_list_sitting.md` (sha256 `af0f8a12f794…`, 7,965 bytes, zero
 carriage returns — `sha256sum`, `wc -c` over the container copy and over the re-staged disk copy);
-`cc_instruction_pass_continuation_second.md`; this block, inserted into `cowork_handoff.md` after
+`records/cc/instructions/cc_instruction_pass_continuation_second.md`; this block, inserted into `records/cowork/handoff/cowork_handoff.md` after
 the file was MEASURED byte-identical to the tip's blob (`git hash-object` on the user's machine
 against `git ls-tree 40fb613060`; 510,421 bytes, ZERO carriage returns — `wc -c`, `grep -c` over a
 bridge-staged copy) carrying the forty-first block as its entry point, with the forty-first heading
@@ -7856,7 +7856,7 @@ after re-staging (the hashes of the dispatch and of this file are in the closing
 
 **★ DECLARED DEPARTURES.** `BUILD_AND_TEST.md` NOT read. `ARCHITECTURE.md` read only at lines
 394–402 and 4361–4364 of the tip object. The successor plan read at §4, §5, §6.1 (248–289), §11 and
-its heading list. `cowork_handoff.md` read at the forty-first, fortieth, thirty-ninth and
+its heading list. `records/cowork/handoff/cowork_handoff.md` read at the forty-first, fortieth, thirty-ninth and
 thirty-eighth blocks (1–512); older blocks NOT read. The previous dispatch read at 1–330 and
 440–643 (as the template for this one). `gen_july_screen.py` NOT opened except through the
 `f33441940f`..`dc340d84fb` diff. `july_screen.json`, `period_stratum_split.json` NOT opened beyond
@@ -7871,11 +7871,11 @@ while Claude Code works, it builds the pilot-opening decision surface.
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTY-FIRST, 2026-08-22) — THE DISPATCH IS WRITTEN: `cc_instruction_step_zero_exclusion_and_pass_continuation.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE NEW RULING (THE DISPATCH CONTINUES THE PER-ENTRY PASS AND DOES NOT OPEN THE PILOT), RECORD `cowork_rulings_2026_08_22_dispatch_order_sitting.md` ON DISK, UNTRACKED; ★ TWO TELLS (BOTH METHOD) — THE THRESHOLD; THE SESSION HANDS OVER AT A VERIFIED STOP. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-second block above.)
+## ★★★★★ COWORK SESSION CLOSE (FORTY-FIRST, 2026-08-22) — THE DISPATCH IS WRITTEN: `records/cc/instructions/cc_instruction_step_zero_exclusion_and_pass_continuation.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE NEW RULING (THE DISPATCH CONTINUES THE PER-ENTRY PASS AND DOES NOT OPEN THE PILOT), RECORD `records/cowork/rulings/cowork_rulings_2026_08_22_dispatch_order_sitting.md` ON DISK, UNTRACKED; ★ TWO TELLS (BOTH METHOD) — THE THRESHOLD; THE SESSION HANDS OVER AT A VERIFIED STOP. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-second block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them (Ruling 1 of
-`cowork_rulings_2026_08_21_successor_plan_sitting.md`).**
+`records/cowork/rulings/cowork_rulings_2026_08_21_successor_plan_sitting.md`).**
 
 **★ WORDS USED IN THIS BLOCK, EXPLAINED FIRST.** *A changed passage* — one contiguous run of changed
 lines inside one commit's edit of one document (the tools' artifacts say "hunk"). *The document set*
@@ -7895,20 +7895,20 @@ WHOLE (line 180 to the end of the file, 1524), and confirmed [[OI-179]] in `gati
 **`64e7d2fd7f`** (parent `a1d7d95ecc`), `refs/heads/master` and `refs/remotes/origin/master` both at
 it — read with `git show -s` and `git for-each-ref` at the explicit hash on the user's machine at
 boot. **No commit was added this session. Nothing is running. The dispatch is written and NOT
-dispatched.** Establish which state it is in: **not started** (no `cc_report_step_zero_return_executed.md`
+dispatched.** Establish which state it is in: **not started** (no `records/cc/reports/cc_report_step_zero_return_executed.md`
 on disk, no commit on `64e7d2fd7f`) — then it is yours to dispatch after re-validating it against
 the tree (the parked-instruction clause: re-take the branch rule, re-check A1 by content, re-check
 that neither ruling record carries the word `pinned`); **running** — READ-ONLY on the repository
 until it stops; **completed** — its Task 0 commit sits on `64e7d2fd7f` carrying FIVE paths with the
 subject the dispatch prescribes, and the close is THE STEP-ZERO RETURN RULINGS EXECUTED section of
-`cowork_away_returns.md`, read WHOLE and verified at the objects by explicit hash.
+`records/cowork/handoff/cowork_away_returns.md`, read WHOLE and verified at the objects by explicit hash.
 
 **★ WHAT THIS SESSION DID — CADENCE STEP (b), THE DISPATCH, AND ONE RULING.** (1) The record's §5
 left the dispatch's second half open between three alternatives; this session put the decision
 self-contained as a turn's final response, asked in the following turn, and the user ruled **A** —
 continue the per-entry pass, do not open the pilot. The ground stated: the pilot's own prerequisite
 (the curated boot list's ruling for derivation sessions, plan §6.1) is still owed and may not be
-ruled by a session. Record: `cowork_rulings_2026_08_22_dispatch_order_sitting.md`. (2) The dispatch
+ruled by a session. Record: `records/cowork/rulings/cowork_rulings_2026_08_22_dispatch_order_sitting.md`. (2) The dispatch
 was written after the dispatch-protocol section was read whole. **Read the dispatch; do not inherit
 this summary.** In one line per task: Task 0 lands five paths (the two 2026-08-22 sitting records,
 the handoff, the dispatch, the regenerated evidence-pin membership) and pushes; Task 1 adds an
@@ -7944,8 +7944,8 @@ explicit hash or through the file tools. Presentation-form tells: ZERO — one s
 its turn, the question in the next. Vocabulary: every tool term explained at first use.
 
 **★ WHAT IS ON DISK AND UNTRACKED AT THIS WRITING, STATED BY CONTENT.** Written by this session:
-`cowork_rulings_2026_08_22_dispatch_order_sitting.md`; `cc_instruction_step_zero_exclusion_and_pass_continuation.md`;
-this block, inserted into `cowork_handoff.md` after the file was MEASURED at ZERO carriage returns
+`records/cowork/rulings/cowork_rulings_2026_08_22_dispatch_order_sitting.md`; `records/cc/instructions/cc_instruction_step_zero_exclusion_and_pass_continuation.md`;
+this block, inserted into `records/cowork/handoff/cowork_handoff.md` after the file was MEASURED at ZERO carriage returns
 and 502,168 bytes (`wc -c` over a bridge-staged copy) carrying the fortieth block as its entry
 point, with the fortieth heading marked superseded in the same act. Each file was delivered through
 the bridge and verified by hash after re-staging (the hashes are in the closing message, not here).
@@ -7968,11 +7968,11 @@ sessions.
 entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (FORTIETH, 2026-08-22) — ALL FOUR STEP-ZERO FINDINGS ARE RULED, ONE PER TURN; THE RECORD `cowork_rulings_2026_08_22_step_zero_return_sitting.md` IS ON DISK, UNTRACKED; ★ NO DISPATCH WAS WRITTEN — THIS SESSION REACHED THE TWO-TELL THRESHOLD (BOTH METHOD) AND HANDS OVER AT A VERIFIED STOP; ★ THE USER PROPOSED A VERBOSITY-ONLY PRUNING PASS BY CLAUDE CODE, ANSWERED IN CONVERSATION AND NOT RULED. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-first block above.)
+## ★★★★★ COWORK SESSION CLOSE (FORTIETH, 2026-08-22) — ALL FOUR STEP-ZERO FINDINGS ARE RULED, ONE PER TURN; THE RECORD `records/cowork/rulings/cowork_rulings_2026_08_22_step_zero_return_sitting.md` IS ON DISK, UNTRACKED; ★ NO DISPATCH WAS WRITTEN — THIS SESSION REACHED THE TWO-TELL THRESHOLD (BOTH METHOD) AND HANDS OVER AT A VERIFIED STOP; ★ THE USER PROPOSED A VERBOSITY-ONLY PRUNING PASS BY CLAUDE CODE, ANSWERED IN CONVERSATION AND NOT RULED. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the forty-first block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the successor plan EXECUTES three of them (Ruling 1 of
-`cowork_rulings_2026_08_21_successor_plan_sitting.md`).**
+`records/cowork/rulings/cowork_rulings_2026_08_21_successor_plan_sitting.md`).**
 
 **★ WORDS USED IN THIS BLOCK, EXPLAINED FIRST (the no-invented-jargon rule).** *A changed passage* —
 one contiguous run of changed lines inside one commit's edit of one document; the screen's unit (the
@@ -7998,13 +7998,13 @@ boot. **No commit was added this session. Nothing is running. No dispatch is act
 written.** Working tree against the tip, measured over bridge-staged copies: `CLAUDE.md`,
 `STATUS.md`, `cowork_audit_protocol.md` byte-identical to the tip's blobs; **`DECISIONS.md` on disk
 is the tip's content plus 858 carriage returns** (129,386 bytes vs 128,528; content identical once
-CRs are stripped — the F52 shape; NOT acted on); `cowork_handoff.md` is the tip's blob plus the
+CRs are stripped — the F52 shape; NOT acted on); `records/cowork/handoff/cowork_handoff.md` is the tip's blob plus the
 thirty-ninth block and now this one. `git status` / `git diff` NOT run.
 
 **★ WHAT THIS SESSION DID — CADENCE STEP (b), THE FOUR RULINGS; NOT THE DISPATCH.** The four findings
-of `cc_report_step_zero.md` §6 were put one per turn, each self-contained with alternatives rated
+of `records/cc/reports/cc_report_step_zero.md` §6 were put one per turn, each self-contained with alternatives rated
 towards the objective and towards the principles, and ruled by the user in the following turn. The
-record is **`cowork_rulings_2026_08_22_step_zero_return_sitting.md`** — on disk, UNTRACKED, lands at
+record is **`records/cowork/rulings/cowork_rulings_2026_08_22_step_zero_return_sitting.md`** — on disk, UNTRACKED, lands at
 the next dispatch's Task 0. **Read it whole; do not inherit this summary.** In one line each:
 **(1)** `STATUS.md` LEAVES the document set by an AUTHORED EXCLUSION fed to the generator with
 finding, date and reason (the D-677 shape; the derivation's name states it, D-661); its 200 changed
@@ -8049,7 +8049,7 @@ rule (i)'s clause in `CLAUDE.md` at run time — so a verbosity pass over `CLAUD
 members are the plan's SOURCES and are not to be reworded before the derivation reads them;
 (iv) the just-in-time rule allows ONE dispatch in flight on one worktree — a parallel pass needs the
 user to set up a second worktree explicitly, and both land on `master`; (v) the safe first scope is
-the process record — `cowork_handoff.md`'s older blocks, reports, dispatches — with a
+the process record — `records/cowork/handoff/cowork_handoff.md`'s older blocks, reports, dispatches — with a
 read-before-move safeguard and the verification run after. **Owed: the decision surface on the
 2026-08-22 pruning-and-satellites direction (thirty-ninth block), with this proposal as one of its
 alternatives, built from measured sizes.**
@@ -8059,7 +8059,7 @@ alternatives, built from measured sizes.**
 owed dispositions of the plan's §2 STILL UNROWED. The ledger hole declared, not filled (Ruling 8).
 
 **★ THE DEGRADATION REPORT — TWO TELLS, BOTH METHOD, THE THRESHOLD; THE SESSION HANDS OVER.**
-**(1)** At boot the staged `cowork_handoff.md` was read with `head`, `grep` and `wc` in the sandbox
+**(1)** At boot the staged `records/cowork/handoff/cowork_handoff.md` was read with `head`, `grep` and `wc` in the sandbox
 before the file tools — the D-253 spelling the 2026-08-08 widening names. **(2)** One elided long
 line of `specification_document_set.json` was read with `sed -n` over the staged copy instead of
 the Read tool. Every cited value was also confirmed through the file tools or at a git object by
@@ -8068,9 +8068,9 @@ question in a surface's turn, one ruling per turn. Vocabulary: "hunk" and "deriv
 used; every term explained at first use.
 
 **★ WHAT IS ON DISK AND UNTRACKED AT THIS WRITING, STATED BY CONTENT.** Written by this session:
-`cowork_rulings_2026_08_22_step_zero_return_sitting.md` (delivered through the bridge four times as
+`records/cowork/rulings/cowork_rulings_2026_08_22_step_zero_return_sitting.md` (delivered through the bridge four times as
 rulings accrued, each re-staged and hash-verified; the final hash is in the closing message). This
-block, inserted into `cowork_handoff.md`, with the thirty-ninth heading marked superseded in the
+block, inserted into `records/cowork/handoff/cowork_handoff.md`, with the thirty-ninth heading marked superseded in the
 same act. **Nothing committed, nothing pushed, nothing regenerated.** Memory-filesystem: read at
 boot (`/preferences.md`, `/areas/musescore-arranger.md`); nothing written.
 
@@ -8091,11 +8091,11 @@ the entry point.)*
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern, and the successor plan EXECUTES three of them (Ruling 1 of
-`cowork_rulings_2026_08_21_successor_plan_sitting.md`).**
+`records/cowork/rulings/cowork_rulings_2026_08_21_successor_plan_sitting.md`).**
 
 **★ TWO WORDS THIS BLOCK USES, EXPLAINED BEFORE THEY ARE USED (the no-invented-jargon rule; the
 user flagged both in this session — and "a changed passage" for hunk was ALREADY RULED on
-2026-08-17, `cowork_rulings_2026_08_17_eighth_return.md` §3, beside *the current commit* for HEAD,
+2026-08-17, `records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md` §3, beside *the current commit* for HEAD,
 *untrusted source* for witness and *measurement tool* for instrument; this session breached a
 standing ruling, not merely a convention).** *A changed passage* — in this block the plain phrase is
 used wherever the step-zero tools' own artifacts say **"hunk"**, which is git's word for ONE contiguous
@@ -8126,16 +8126,16 @@ is running. No dispatch is active.** The step-zero dispatch is COMPLETED: the ch
 `3cfb220b1d` is `292e4506b6` (Task 0, eighteen paths, the withheld push performed) → `50e7b9fd0c`
 (Task 1) → `f34b451fe8` (Task 2) → `67ecba11e1`, `ac17b7fdba`, `553dd5f405` (Task 3) →
 `a1d7d95ecc` (the close) → `64e7d2fd7f` (the end-state run). Every parent pointer was read at the
-object. **The working tree is UNMODIFIED at the three files this session staged** — `cowork_handoff.md`
-(before this block was inserted), `cc_report_step_zero.md` and `cowork_away_returns.md` each hash to
+object. **The working tree is UNMODIFIED at the three files this session staged** — `records/cowork/handoff/cowork_handoff.md`
+(before this block was inserted), `records/cc/reports/cc_report_step_zero.md` and `records/cowork/handoff/cowork_away_returns.md` each hash to
 the tip's blob (sha256 prefixes `0ef8e62d11db…`, `0b67264b077b…`, `a34a42b6b1ad…`, computed over
 bridge-staged copies and over `git show 64e7d2fd7f:<path>`). `git status` and `git diff` NOT run
 (measured timeout); no other working-tree path was compared, so the untracked population beyond
 those three is NOT established by this session.
 
 **★ WHAT THIS SESSION DID — CADENCE STEP (a) ONLY, EACH CLAIM VERIFIED AT THE OBJECT.** (1) The
-STEP ZERO section of `cowork_away_returns.md` (lines 15706–15931 of the staged copy, its §1–§8) was
-read WHOLE, and `cc_report_step_zero.md` whole (1–401). (2) The end-state guard table was checked at
+STEP ZERO section of `records/cowork/handoff/cowork_away_returns.md` (lines 15706–15931 of the staged copy, its §1–§8) was
+read WHOLE, and `records/cc/reports/cc_report_step_zero.md` whole (1–401). (2) The end-state guard table was checked at
 `git show 64e7d2fd7f:tools/audit/guard_state.json` → `summary`: run 74, passing 73, failing 1,
 not_run 4, historical 16, and no `"STOP"` string anywhere in the object — the close commit's copy at
 `a1d7d95ecc` reads run 73 / passing 72 / failing 1, which is the mid-batch lag the close's §8 declares.
@@ -8154,7 +8154,7 @@ carried forward as this session's own — D-431.)*
 **★ ONE OBSERVATION, VERIFIED AT THE OBJECT AND NOT ROWED — re-derive it before you rely on it.**
 The STOP text the failing check now emits (read at `guard_state.json` → `runs[20].stderr` at the tip)
 is *"derived candidates with no authored verdict: BUILD_AND_TEST_ARCHIVE.md, OPEN_ITEMS_ARCHIVE.md,
-cc_report_preparation_fourteenth.md"* (D-661) — in plain words: the tool's scan of the tree found
+records/cc/reports/cc_report_preparation_fourteenth.md"* (D-661) — in plain words: the tool's scan of the tree found
 three documents that look like filing candidates and nobody has written a filing verdict for them
 — NOT the third-STOP text [[OI-372]]'s row records
 (*"authored verdicts for documents the derivation does not carry: STATUS_ARCHIVE.md"*). The tool is
@@ -8183,7 +8183,7 @@ with the stoppable pass SECOND (D-670). **Read `cowork_audit_protocol.md`'s disp
 section whole before writing it; this session did NOT.**
 
 **★ WHAT IS ON DISK AND UNTRACKED AT THIS WRITING, STATED BY CONTENT (the F25 lesson).** ONE
-modification this session made: this block, inserted into `cowork_handoff.md` after the file was
+modification this session made: this block, inserted into `records/cowork/handoff/cowork_handoff.md` after the file was
 MEASURED byte-identical to the tip's blob (sha256 `0ef8e62d11db…`, 476,832 bytes, ZERO carriage
 returns), with the thirty-eighth heading marked superseded-as-entry-point in the same act; the block
 was delivered once, corrected on the user's reading (tells 3 and 4 below), and delivered again — the
@@ -8211,7 +8211,7 @@ observed, and it is recorded as his finding:** this session reached its capacity
 immediately after booting — the pruning of the record done to shrink the boot read has NOT made a
 session's context smaller in practice. That is a fact about the record for the next session to
 carry, not a finding this session acted on. **(1)** At
-boot `cowork_handoff.md` was read through `cat` over the mount in a shell BEFORE staging — the exact
+boot `records/cowork/handoff/cowork_handoff.md` was read through `cat` over the mount in a shell BEFORE staging — the exact
 D-253 breach the thirty-sixth, thirty-seventh and thirty-eighth each counted. The directory listing
 in the same shell call was read back from the saved tool result. **(2)** Two fields of the staged
 `tools/audit/guard_state.json` copy (`runs[20]`'s verdict and stderr) were read with `python` over the
@@ -8229,7 +8229,7 @@ whole; the thirty-fourth in part; everything older NOT read. NOT opened: `july_s
 `specification_document_set.json`, `period_stratum_split.json` (staged, unread), `guard_classification.json`,
 `recognizer_establishment_sort.json`, the sitting record's object (read whole from disk, not compared
 to the `292e4506b6` blob), `STATUS_ARCHIVE.md`. The dispatch
-`cc_instruction_successor_plan_landing_and_step_zero.md` was staged and NOT read; every claim about
+`records/cc/instructions/cc_instruction_successor_plan_landing_and_step_zero.md` was staged and NOT read; every claim about
 what it ordered is cited to the thirty-eighth block and to CC's report.
 
 **★ A USER DIRECTION, 2026-08-22, RECORDED AS A DIRECTION AND NOT A RULING (stated in conversation
@@ -8260,7 +8260,7 @@ and it starts at the branch rule, never from this sentence.
 summarises them, its account of the dispatch, its hazards; it is superseded only as the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (THIRTY-EIGHTH, 2026-08-21) — THE SUCCESSOR PLAN IS RATIFIED: ALL TWELVE §12 DECISIONS RULED, ONE PER TURN, THE RECORD `cowork_rulings_2026_08_21_successor_plan_sitting.md` ON DISK, UNTRACKED; ★ THE DISPATCH THAT LANDS EVERYTHING AND PERFORMS STEP ZERO IS WRITTEN — `cc_instruction_successor_plan_landing_and_step_zero.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE TELL FIRED AND ONE DECLARED. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the thirty-ninth block above.)
+## ★★★★★ COWORK SESSION CLOSE (THIRTY-EIGHTH, 2026-08-21) — THE SUCCESSOR PLAN IS RATIFIED: ALL TWELVE §12 DECISIONS RULED, ONE PER TURN, THE RECORD `records/cowork/rulings/cowork_rulings_2026_08_21_successor_plan_sitting.md` ON DISK, UNTRACKED; ★ THE DISPATCH THAT LANDS EVERYTHING AND PERFORMS STEP ZERO IS WRITTEN — `records/cc/instructions/cc_instruction_successor_plan_landing_and_step_zero.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ ONE TELL FIRED AND ONE DECLARED. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the thirty-ninth block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern, and the successor plan now EXECUTES three of them (Ruling 1).**
@@ -8274,15 +8274,15 @@ all three itself** (`CLAUDE.md` 1–1845, `DECISIONS.md` 1–858, `STATUS.md` wh
 date. **The bar binds you afresh.**
 
 **★ YOUR FIRST ACT IS THE BRANCH RULE, TAKEN AT THE TIP AND NEVER CARRIED.** At this writing the
-tip is **`3cfb220b1d`**, parent `7d7a0e76f7`, carrying `cc_report_plan_evaluation.md` alone, **NOT
+tip is **`3cfb220b1d`**, parent `7d7a0e76f7`, carrying `records/cc/reports/cc_report_plan_evaluation.md` alone, **NOT
 PUSHED — `origin/master` at `891bacc5d2`.** Read by this session with `git show --stat` at that
 explicit hash on the user's machine; `git log`, `git status` and `git rev-parse` NOT run. Establish
-which state the step-zero dispatch is in: **not started** (no `cc_report_step_zero.md` on disk, no
+which state the step-zero dispatch is in: **not started** (no `records/cc/reports/cc_report_step_zero.md` on disk, no
 commit on `3cfb220b1d`, `origin/master` still at `891bacc5d2`) — then it is yours to dispatch, after
 re-validating it against the tree (the parked-instruction clause); **running** — then you are
 READ-ONLY on the repository until it stops; **completed** — then its Task 0 commit sits on
 `3cfb220b1d` carrying eighteen paths with the subject line the dispatch prescribes, `origin/master`
-has moved, and the close is the STEP ZERO section of `cowork_away_returns.md`, read WHOLE and never
+has moved, and the close is the STEP ZERO section of `records/cowork/handoff/cowork_away_returns.md`, read WHOLE and never
 from a summary, with every claim verified at the objects by explicit hash.
 
 **★ WHAT HAPPENED THIS SESSION, IN ORDER, EACH VERIFIED AT THE OBJECT.** (1) Booted under the
@@ -8314,7 +8314,7 @@ ruled, its form deferred to the framework ratification (11). Reading depth is de
 
 **★ THE DISPATCH, AND WHAT IT ORDERS.** Task 0 lands eighteen paths — the modified handoff, the
 regenerated evidence-pin membership, and sixteen untracked files named one by one, the four
-withdrawn plan versions and the challenge dispatch among them (`cc_report_plan_challenge.md` is
+withdrawn plan versions and the challenge dispatch among them (`records/cc/reports/cc_report_plan_challenge.md` is
 already tracked; checked at the object) — and PUSHES, the push the evaluation dispatch withheld.
 Tasks 1–3 are step zero: the document set derived and published whole by a new generator
 (`gen_specification_document_set.py`, authored grades with a quote-fidelity check, the delegation
@@ -8329,7 +8329,7 @@ from both routes (neither record carries the word `pinned`).** No finding number
 repaired guardrail 2 routes findings.
 
 **★ WHAT IS ON DISK AND UNTRACKED AT THIS WRITING, STATED BY CONTENT (the F25 lesson).** TWO files
-this session wrote: the sitting record and the dispatch. `cowork_handoff.md` carries this block,
+this session wrote: the sitting record and the dispatch. `records/cowork/handoff/cowork_handoff.md` carries this block,
 inserted after the file was MEASURED at sha256 `16dcf35a0388…`, 466,380 bytes, ZERO carriage returns
 (`sha256sum`, `wc -c` over a bridge-staged copy), with the thirty-seventh heading marked
 superseded-as-entry-point in the same act. **The committed blob at the tip opens at the THIRTY-THIRD
@@ -8350,7 +8350,7 @@ default; `CLAUDE.md` #21's stale phase numbering) are carried in the plan's §2,
 dispatch as NOT its to act on, and STILL UNROWED.
 
 **★ THE DEGRADATION REPORT — ONE TELL FIRED, ONE DECLARED; BELOW THE THRESHOLD; REPORTED REGARDLESS.**
-**(1, fired)** At boot this session read `cowork_handoff.md` through `cat` over the mount in a shell
+**(1, fired)** At boot this session read `records/cowork/handoff/cowork_handoff.md` through `cat` over the mount in a shell
 BEFORE staging it — the exact D-253 breach the thirty-sixth and thirty-seventh each counted as their
 tell (1). Every later read went through bridge-staged snapshots and the file tools; hashes were
 computed over container copies for verification only. **(2, declared)** The directory listing
@@ -8370,7 +8370,7 @@ read whole). NOT opened by this session: `ARCHITECTURE.md`'s body, `period_strat
 plan versions — every claim about them in the dispatch is cited to the successor plan, to the
 evaluator that read them, or to the tool docstrings this session DID read
 (`gen_july_screen.py` 1–130, `gen_period_stratum_split.py` 1–140, `gen_doc_change_candidates.py`
-1–60 and `document_role`). `cowork_away_returns.md` staged and NOT read (1,174,366 bytes at staging).
+1–60 and `document_role`). `records/cowork/handoff/cowork_away_returns.md` staged and NOT read (1,174,366 bytes at staging).
 
 **★ THE CADENCE, AS THE USER DIRECTED 2026-08-21 (thirty-sixth block):** this session was the second
 half of (b) — the ratification sitting and the dispatch — and (c), this handover. The next act is
@@ -8393,7 +8393,7 @@ all three itself** (`CLAUDE.md` 1–1845, `DECISIONS.md` 1–858, `STATUS.md` wh
 [[OI-179]] in `gating_ids` on this date. **The bar binds you afresh.**
 
 **★ YOUR FIRST ACT IS THE BRANCH RULE, TAKEN AT THE TIP AND NEVER CARRIED.** At this writing the
-tip is **`3cfb220b1d`**, parent `7d7a0e76f7`, carrying `cc_report_plan_evaluation.md` alone (867
+tip is **`3cfb220b1d`**, parent `7d7a0e76f7`, carrying `records/cc/reports/cc_report_plan_evaluation.md` alone (867
 lines, blob sha256 `1f781a4a8839…`, subject line the neutral one the dispatch ordered), **NOT
 PUSHED — `origin/master` at `891bacc5d2`.** Read by this session with `git show --stat` and
 `git show <hash>:path` at that explicit hash on the user's machine; `git log`, `git status` and
@@ -8409,7 +8409,7 @@ user took. (3) CC returned; the report was read from a staged copy byte-identica
 blob. Both reports were read WHOLE. (4) Under Ruling 3 the sealed prediction was opened for the
 first time and tabulated against both BEFORE any drafting:
 **`cowork_prediction_tabulation_2026_08_21.md`** (on disk, untracked, sha256 `f64cc0ad6b50…`). (5)
-The four plan versions, `cc_report_plan_challenge.md`, its dispatch, the boot-list draft, the
+The four plan versions, `records/cc/reports/cc_report_plan_challenge.md`, its dispatch, the boot-list draft, the
 phase-definition surface, its sitting record, the method-directions record and
 `cowork_design_doc_template.md` were then read whole. (6) The successor plan was written and
 delivered, then corrected once at the user's reading (decision 2 unreadable; *placement test*
@@ -8447,7 +8447,7 @@ as the user prefers — then the sitting record, then the CC dispatch that lands
 
 **★ WHAT IS ON DISK AND UNTRACKED AT THIS WRITING, STATED BY CONTENT (the F25 lesson).** THREE
 files this session wrote: the tabulation, the successor plan, and this block (inserted into
-`cowork_handoff.md`, which was MEASURED UNMODIFIED-SINCE-BOOT before editing at sha256
+`records/cowork/handoff/cowork_handoff.md`, which was MEASURED UNMODIFIED-SINCE-BOOT before editing at sha256
 `e9a8e09d577e…`, 456,243 bytes, ZERO carriage returns — the thirty-sixth's stated `43ce8d6e5e75…`
 was the pre-thirty-sixth state, which is consistent). ONE file another session wrote: the Cowork
 evaluator's report. The thirty-sixth's population (the sitting record, the evaluation dispatch,
@@ -8471,7 +8471,7 @@ routes the ceiling commissioning through a superseded phase numbering with no po
 remap — both evaluators read through the remap without flagging the stale text.
 
 **★ THE DEGRADATION REPORT — TWO TELLS, THE THRESHOLD; THE SESSION HANDS OVER.** **(1)** At boot,
-`cowork_handoff.md` was sized and its headings located with shell utilities (`wc`, `head`, `grep`)
+`records/cowork/handoff/cowork_handoff.md` was sized and its headings located with shell utilities (`wc`, `head`, `grep`)
 over the bridge-staged copy before the file tools were used — the same act the thirty-sixth
 counted as its tell (2). Every later read went through the file tools; hashes were computed over
 container copies for verification only. **(2)** The delivered decision surface needed two
@@ -8503,7 +8503,7 @@ contamination rule as it applied while the evaluations ran, and its cadence dire
 superseded only as the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (THIRTY-SIXTH, 2026-08-21) — THE EVALUATION BRIEF IS RATIFIED AND ITS FOUR OPEN QUESTIONS ARE RULED; ★ THE DISPATCH FOR EVALUATION (a) IS WRITTEN — `cc_instruction_plan_evaluation.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ THE BOOT LIST IS RULED FOR BOTH EVALUATORS AND THE HANDOVER-BLOCK CLAUSE IS DEPARTED FROM FOR THAT ONE DISPATCH, BY RULING; ★ FOUR TELLS, DECLARED. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the thirty-seventh block above.)
+## ★★★★★ COWORK SESSION CLOSE (THIRTY-SIXTH, 2026-08-21) — THE EVALUATION BRIEF IS RATIFIED AND ITS FOUR OPEN QUESTIONS ARE RULED; ★ THE DISPATCH FOR EVALUATION (a) IS WRITTEN — `records/cc/instructions/cc_instruction_plan_evaluation.md`, ON DISK, UNTRACKED, **NOT DISPATCHED** AT THIS WRITING; ★ THE BOOT LIST IS RULED FOR BOTH EVALUATORS AND THE HANDOVER-BLOCK CLAUSE IS DEPARTED FROM FOR THAT ONE DISPATCH, BY RULING; ★ FOUR TELLS, DECLARED. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the thirty-seventh block above.)
 
 **⛔ IF YOU ARE AN EVALUATOR UNDER `cowork_plan_evaluation_brief_2026_08_21.md`, YOU ARE READING
 THE WRONG FILE AND MUST STOP.** Your boot list is `cowork_evaluation_boot_list_2026_08_21.md` and it
@@ -8523,7 +8523,7 @@ and confirmed [[OI-179]] in `gating_ids` on this date. **The bar binds you afres
 
 **★ YOUR FIRST ACT IS THE BRANCH RULE, TAKEN AT THE TIP AND NEVER CARRIED.** At this writing the
 tip is `7d7a0e76f7`, parent `891bacc5d2`, **NOT PUSHED — `origin/master` at `891bacc5d2`.** Establish
-which state the evaluation dispatch is in: **not started** (no `cc_report_plan_evaluation.md` on
+which state the evaluation dispatch is in: **not started** (no `records/cc/reports/cc_report_plan_evaluation.md` on
 disk, no commit on `7d7a0e76f7`) — then it is yours to dispatch; **running** — then you are READ-ONLY
 on the repository until it stops; **completed** — then one further commit sits on `7d7a0e76f7`
 carrying that one file, and its subject line is the neutral one the dispatch prescribes. **Do not
@@ -8531,7 +8531,7 @@ open the report until the second evaluation has also returned** — the successo
 the one that reads both, and it is a FRESH session (Ruling 3).
 
 **★ WHAT THE USER RULED AT THIS SITTING — the record is
-`cowork_rulings_2026_08_21_evaluation_brief_sitting.md`, the authority, not restated here (#6).**
+`records/cowork/rulings/cowork_rulings_2026_08_21_evaluation_brief_sitting.md`, the authority, not restated here (#6).**
 The user's words, verbatim: *"Of course we should do two independent reviews - that has never up
 for discussion, has it? On the others - agree with your recommendation."* **Ruling 1** — both
 evaluators blind; and the question was not open, which is recorded as this session's third tell.
@@ -8544,7 +8544,7 @@ enters the successor as labelled input (DIRECT cited; SWEEP marked unestablished
 never as verdict. The brief and the boot list each carry a dated ratification note appended at
 their foot; nothing above the notes was rewritten.
 
-**★ THE PROGRAMME FROM HERE, in order.** (a) Dispatch `cc_instruction_plan_evaluation.md` to
+**★ THE PROGRAMME FROM HERE, in order.** (a) Dispatch `records/cc/instructions/cc_instruction_plan_evaluation.md` to
 Claude Code. (b) Open a FRESH Cowork session on a model different from the plan's author and the
 reviewer, with the opening line *"mount C:\s\MS and read `cowork_evaluation_boot_list_2026_08_21.md`
 first and nothing else; follow it"* — **never the habitual handoff-reading opener, which is the
@@ -8558,7 +8558,7 @@ first delivered draft of this block and of the sitting record said otherwise, an
 corrected on a re-read the USER had to prompt — tell (4) below.)
 
 **★ THE CONTAMINATION RULE, UNCHANGED AND WIDENED BY ONE FILE.** Evaluators do not read
-`cc_report_plan_challenge.md`, `cc_instruction_plan_challenge.md`, this file,
+`records/cc/reports/cc_report_plan_challenge.md`, `records/cc/instructions/cc_instruction_plan_challenge.md`, this file,
 `cowork_review_findings_prediction_2026_08_21.md`, the sitting record, or each other's dispatch or
 report. The session that wrote this block is itself contaminated and is not eligible as an
 evaluator.
@@ -8566,7 +8566,7 @@ evaluator.
 **★ WHAT IS ON DISK AND UNTRACKED AT THIS WRITING, STATED BY CONTENT (the F25 lesson).** TWO files
 this session wrote: the sitting record and the dispatch. TWO files this session appended a dated
 note to: the brief and the boot list. The prediction, the boot-list draft, the four plan versions
-and the challenge dispatch remain as the thirty-fifth names them. `cowork_handoff.md` carries **two
+and the challenge dispatch remain as the thirty-fifth names them. `records/cowork/handoff/cowork_handoff.md` carries **two
 parts of one act** — this block inserted and the THIRTY-FIFTH heading's entry-point demotion
 marker; it was MEASURED UNMODIFIED-BY-THIS-SESSION before editing at sha256 `43ce8d6e5e75…`,
 446,640 bytes, ZERO carriage returns. The rest of the untracked population is named as the tree
@@ -8579,7 +8579,7 @@ the one marked.** [[OI-372]] the ONE standing red. [[OI-374]] untouched. [[OI-17
 stands at F88.**
 
 **★ THE DEGRADATION REPORT — FOUR TELLS.** **(1)**
-`cowork_handoff.md` read through `cat` on the mount before staging (D-253). **(2)** `gating_ids`
+`records/cowork/handoff/cowork_handoff.md` read through `cat` on the mount before staging (D-253). **(2)** `gating_ids`
 read with a Python snippet over the bridge-staged copy (the rule names the mechanism; declared).
 **(3)** A question put as open that the record had already answered (Ruling 1). **(4)** The
 standing self-check was ASSERTED in the dispatch and not PERFORMED: the delivered files were not
@@ -8598,7 +8598,7 @@ with `git rev-parse`/`git log`, never trusted for what is current. `BUILD_AND_TE
 The shell read of this file was truncated at 262,144 characters, so the ninth block's tail and
 everything older were NOT read by this session. The brief's §3 governing texts (the
 phase-definition surface, its sitting record, the method-directions record) NOT opened. The four
-plan versions and `cc_report_plan_challenge.md` NOT opened, deliberately — the coordinator does not
+plan versions and `records/cc/reports/cc_report_plan_challenge.md` NOT opened, deliberately — the coordinator does not
 pre-judge the object.
 
 **★ A USER DIRECTION, 2026-08-21, RECORDED AS A DIRECTION AND NOT A RULING (it was stated in
@@ -8640,7 +8640,7 @@ conditional; NOT the whole open-items INDEX but rule (a)'s derived gating answer
 thirty-fourth's open departure and binds you afresh on your own account.**
 
 **★ YOUR FIRST ACT IS THE BRANCH RULE, TAKEN AT THE TIP AND NEVER CARRIED.** At this close the tip
-is `7d7a0e76f7`, parent `891bacc5d2`, carrying `cc_report_plan_challenge.md` alone, **NOT PUSHED —
+is `7d7a0e76f7`, parent `891bacc5d2`, carrying `records/cc/reports/cc_report_plan_challenge.md` alone, **NOT PUSHED —
 `origin/master` stands at `891bacc5d2`.** Nothing is running. **Re-take it yourself; this sentence
 is a statement about a live tree made by a session that has ended.**
 
@@ -8662,7 +8662,7 @@ independently. **(c)** A successor plan is built from the existing plan plus bot
 Its four open questions are unruled at this close.
 
 **★ THE CONTAMINATION RULE, WHICH IS THE THING A SUCCESSOR MOST NEEDS.** Both evaluators must be
-blind to `cc_report_plan_challenge.md`, to its dispatch, to this file, and to
+blind to `records/cc/reports/cc_report_plan_challenge.md`, to its dispatch, to this file, and to
 `cowork_review_findings_prediction_2026_08_21.md`. **A second answer written after reading the first
 is a commentary on the first — that is precisely what this session produced.** The tip commit's own
 subject line states the verdict, which is why the boot list tells the second evaluator to take no
@@ -8671,7 +8671,7 @@ branch rule and read no log.
 **★ THE RULE-GENERATION CORRECTION. READ THIS BEFORE YOU JUDGE ANYTHING ABOUT BLINDNESS.**
 Eighteenth-stop Ruling 10 (*reconciliation, not rollback — pending a pilot*) was **formally
 SUPERSEDED by derivation-first**, ruled 2026-08-15 at
-`cowork_rulings_2026_08_15_phase_definition_sitting.md` §6, the user's word recorded as *"yes"* —
+`records/cowork/rulings/cowork_rulings_2026_08_15_phase_definition_sitting.md` §6, the user's word recorded as *"yes"* —
 and that record states its own character: *"an extension, not a reversal"*, Ruling 10's character
 test surviving at full strength inside the disposition discipline, applied AFTER derivation against
 a derived statement. **So the live rule is an ORDERING, not a prohibition:** derive blind from
@@ -8686,7 +8686,7 @@ plan's own guardrail 4, a freeze on a declared source list.
 **★ WHAT IS ON DISK AND UNTRACKED AT THIS CLOSE, STATED BY CONTENT (the F25 lesson).** THREE files
 this session wrote: the evaluation brief, the boot list, and the registered prediction. The SIX the
 thirty-fourth names remain: the boot-list draft, the four plan versions, the dispatch.
-`cowork_handoff.md` carries **two parts of one act** — this block inserted and the THIRTY-FOURTH
+`records/cowork/handoff/cowork_handoff.md` carries **two parts of one act** — this block inserted and the THIRTY-FOURTH
 heading's entry-point demotion marker. **The rest of the untracked population is named as the tree
 carries it rather than as a class (F82)**, none of it touched here. **Nothing was committed by this
 session and nothing was pushed.**
@@ -8728,7 +8728,7 @@ this session produced failed.**
 `BUILD_AND_TEST.md` NOT read: nothing built, tested or measured. `cowork_audit_protocol.md`'s
 dispatch-protocol section NOT read: no dispatch written — **and a dispatch for (a) is owed, so read
 it before you write one.** The `OPEN_ITEMS.md` INDEX not opened; no row was needed. **TWO
-file-tools-rule violations (D-253):** `cowork_handoff.md`'s opening read through `wc`/`head`, and one
+file-tools-rule violations (D-253):** `records/cowork/handoff/cowork_handoff.md`'s opening read through `wc`/`head`, and one
 JSON artifact read through `python -c`, both before staging; every later read went through the file
 tools. Branch state was read through `git rev-parse`/`log`, which the rule says is never trusted for
 what is current — corroborated by hashing the report against the commit's blob, which matched.
@@ -8757,11 +8757,11 @@ THING HAS CHANGED: the standing clauses are now MARKED AT THEIR OWN SITES** in
 read-first block names the MARKER and never a number.
 
 **★ YOUR FIRST ACT IS THE BRANCH RULE, TAKEN AT THE TIP AND NEVER CARRIED.** At this close the tip is
-`7d7a0e76f7`, carrying `cc_report_plan_challenge.md` alone, parent `891bacc5d2`, **and it is NOT
+`7d7a0e76f7`, carrying `records/cc/reports/cc_report_plan_challenge.md` alone, parent `891bacc5d2`, **and it is NOT
 PUSHED — the remote stands at `891bacc5d2`.** Nothing is running. **Re-take the rule yourself; this
 sentence is a statement about a live tree made by a session that has ended.**
 
-**★ THE ONE THING TO DO BEFORE ANYTHING ELSE: READ `cc_report_plan_challenge.md` IN FULL, AT THE
+**★ THE ONE THING TO DO BEFORE ANYTHING ELSE: READ `records/cc/reports/cc_report_plan_challenge.md` IN FULL, AT THE
 OBJECT.** **This session did not read it, deliberately.** It had degraded (below), and a degraded
 reading written into this block would have made a successor inherit a summary instead of the report —
 the exact defect the record names. **The only thing this session knows of it is its commit message,
@@ -8802,7 +8802,7 @@ after this session measured that **every preparation dispatch from the opening t
 carries the line *"No curated boot list"***; the handover's claim that it was DRAFTED was false, only
 its definition existed. Then `cowork_specification_reconstruction_plan_2026_08_19.md` and its `_v2_`,
 `_v3_` and `_v4_` successors — **v1 to v3 are WITHDRAWN and preserved (#12); v4 was the live one** —
-and `cc_instruction_plan_challenge.md`, the dispatch CC has now executed.
+and `records/cc/instructions/cc_instruction_plan_challenge.md`, the dispatch CC has now executed.
 
 **★ AND THE PLAN IS REFUTED AT TEN OF TEN BY ITS OWN REVIEW'S COMMIT MESSAGE, SO NOTHING ON DISK IS
 AUTHORITY.** **Do not build on v4. Do not apply the amendments below before reading the report.** The
@@ -8843,12 +8843,12 @@ built"* (a name-pattern search, a lower bound); the §8 subsections it named but
 1328; and every judgment in the four plan versions. **What may be inherited is the object-level
 verification of the fourteenth batch above, which was derived and re-derived at explicit hashes.**
 
-**★ WHAT IS UNCOMMITTED AT THIS CLOSE, STATED BY CONTENT (the F25 lesson).** `cowork_handoff.md` carries
+**★ WHAT IS UNCOMMITTED AT THIS CLOSE, STATED BY CONTENT (the F25 lesson).** `records/cowork/handoff/cowork_handoff.md` carries
 **two parts of one act**: this block inserted, and the THIRTY-THIRD heading's entry-point demotion marker.
 **SIX files are on disk and untracked**: the boot-list draft, the four plan versions, and the dispatch.
 **The REST of the untracked population is named as the tree carries it rather than as a class (F82):**
 newly visible `cc_instruction_*.md` files, `cc_*_report.md` and `cc_*_dossier.md` files, and a scratch
-directory, none of which this session touched. **And `cc_report_plan_challenge.md` is COMMITTED at
+directory, none of which this session touched. **And `records/cc/reports/cc_report_plan_challenge.md` is COMMITTED at
 `7d7a0e76f7` and NOT PUSHED.**
 
 **★ STANDING HAZARDS, UNCHANGED.** [[OI-372]] is the ONE standing red. [[OI-374]] untouched. **[[OI-179]]
@@ -8867,8 +8867,8 @@ than by delegation, which is an improvement on the thirty-third close. `DECISION
 DELEGATION and that is a DEPARTURE, not a discharge, and it binds you afresh.** No working-tree file was
 read through a shell. **The F57 caveat was applied rather than assumed and it FIRED**: the staged
 `DECISIONS.md` carries 858 carriage returns and reproduces its committed blob only after normalisation,
-while `CLAUDE.md`, `cowork_handoff.md`, the report, the close, the dispatch and the protocol file carry
-zero. `cowork_handoff.md` was MEASURED UNMODIFIED at `4a958576a7` immediately before it was edited, and
+while `CLAUDE.md`, `records/cowork/handoff/cowork_handoff.md`, the report, the close, the dispatch and the protocol file carry
+zero. `records/cowork/handoff/cowork_handoff.md` was MEASURED UNMODIFIED at `4a958576a7` immediately before it was edited, and
 every file this session wrote was delivered through the bridge and round-tripped back byte-identical to
 the content the act intended, whose hash was measured before delivery (**F74**), never by shell redirection.
 
@@ -8879,7 +8879,7 @@ response carrying no question, and the user ruled in a later turn each time.
 entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (THIRTY-THIRD, 2026-08-19) — THE THIRTEENTH BATCH RETURNED COMPLETE AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL THREE DECISIONS ARE RULED; ★ THE E-ORDERING IS PROVEN IN THE REPORT'S OWN BLOBS AND NOT ONLY IN THE PATH-SETS; ★ THE STANDING-CLAUSE COUNT IS RULED RETIRED AND THE POPULATION MARKED AT ITS OWN SITES — F88; TWO RULINGS ORDER NOTHING AND SAY SO; ★ `cc_instruction_preparation_fourteenth.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. (SUPERSEDED as the entry point by the thirty-fourth block above.)
+## ★★★★★ COWORK SESSION CLOSE (THIRTY-THIRD, 2026-08-19) — THE THIRTEENTH BATCH RETURNED COMPLETE AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL THREE DECISIONS ARE RULED; ★ THE E-ORDERING IS PROVEN IN THE REPORT'S OWN BLOBS AND NOT ONLY IN THE PATH-SETS; ★ THE STANDING-CLAUSE COUNT IS RULED RETIRED AND THE POPULATION MARKED AT ITS OWN SITES — F88; TWO RULINGS ORDER NOTHING AND SAY SO; ★ `records/cc/instructions/cc_instruction_preparation_fourteenth.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. (SUPERSEDED as the entry point by the thirty-fourth block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
@@ -8908,9 +8908,9 @@ carries THIRTY-NINE `###` sections against an asserted seven.** The fourteenth b
 at its own site and **retires the count as a second home**. **Until it lands, read the section IN FULL
 and meet every clause that binds a dispatch.**
 
-**★ YOUR FIRST ACT IS THE BRANCH RULE.** `cc_instruction_preparation_fourteenth.md` was WRITTEN at
+**★ YOUR FIRST ACT IS THE BRANCH RULE.** `records/cc/instructions/cc_instruction_preparation_fourteenth.md` was WRITTEN at
 this close and was **NOT DISPATCHED**. Establish which of three states holds: **not started** (no
-PREPARATION FOURTEENTH BATCH section in `cowork_away_returns.md`, no `STATUS.md` pointer entries for
+PREPARATION FOURTEENTH BATCH section in `records/cowork/handoff/cowork_away_returns.md`, no `STATUS.md` pointer entries for
 it, no commit on the thirteenth batch's terminus `4e93ee84c3`) — then it is yours to dispatch or to
 amend; **running** — then **you are READ-ONLY on the repository until it stops**; **completed** — then
 VERIFY AT THE OBJECTS before trusting any of it, read its FULL close and prove the reading by
@@ -8929,26 +8929,26 @@ terminus is `4e93ee84c3`, and it carries the report alone: a commit cannot conta
 so **every close and every report is one commit short of the tip BY CONSTRUCTION, not by omission.**
 The thirteenth declared it, as the twelfth did. **Take it as standing.**
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_19_thirteenth_return.md` IN FULL** — the three
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_19_thirteenth_return.md` IN FULL** — the three
 rulings this session took and the whole authority of the fourteenth dispatch; **its §3 above all**,
 which carries Ruling 3, the test the placement applies, the two members it settles, and **a dated
 correction of the evidence the ruling was taken on**. (2)
-**`cc_instruction_preparation_fourteenth.md` IN FULL** — what the next batch is bound to do, its
+**`records/cc/instructions/cc_instruction_preparation_fourteenth.md` IN FULL** — what the next batch is bound to do, its
 premise ledger, its declared start state and its STOP conditions. (3)
-**`cc_report_preparation_thirteenth.md` IN FULL, its §4.e, §4.f and §10 above all** — the three
+**`records/cc/reports/cc_report_preparation_thirteenth.md` IN FULL, its §4.e, §4.f and §10 above all** — the three
 member-test corrections Ruling 1 disposes of. (4) **The FULL close of that batch** — THE PREPARATION
-THIRTEENTH BATCH section of `cowork_away_returns.md`. (5)
-**`cowork_rulings_2026_08_19_twelfth_return.md` IN FULL** — Ruling 1 there is the recognizer
-establishment clause this arc now rests on. (6) `cowork_rulings_2026_08_19_eleventh_return.md` IN
+THIRTEENTH BATCH section of `records/cowork/handoff/cowork_away_returns.md`. (5)
+**`records/cowork/rulings/cowork_rulings_2026_08_19_twelfth_return.md` IN FULL** — Ruling 1 there is the recognizer
+establishment clause this arc now rests on. (6) `records/cowork/rulings/cowork_rulings_2026_08_19_eleventh_return.md` IN
 FULL — the name-the-object ruling, **PROVEN at the objects**. (7)
-`cowork_rulings_2026_08_18_eleventh_stop.md` and `cowork_rulings_2026_08_18_tenth_return.md` IN FULL —
-**not re-opened at this close.** (8) `cowork_rulings_2026_08_17_ninth_return.md` IN FULL. (9)
-`cowork_rulings_2026_08_17_session_start_read_sitting.md` and
-`cowork_rulings_2026_08_17_eighth_return.md`, **its §6 above all**. (10) The FOUR sitting records of
-2026-08-17 and `cowork_rulings_2026_08_15_inventory_sitting.md`. (11)
-`cowork_rulings_2026_08_17_sixth_return.md`,
-`cowork_rulings_2026_08_17_governing_surface_split.md` and
-`cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding, **its §6 carrying the
+`records/cowork/rulings/cowork_rulings_2026_08_18_eleventh_stop.md` and `records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md` IN FULL —
+**not re-opened at this close.** (8) `records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md` IN FULL. (9)
+`records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md`, **its §6 above all**. (10) The FOUR sitting records of
+2026-08-17 and `records/cowork/rulings/cowork_rulings_2026_08_15_inventory_sitting.md`. (11)
+`records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding, **its §6 carrying the
 correction of the kind-3 tool identification.** (12) **`cowork_audit_protocol.md`'s dispatch-protocol
 section IN FULL.** (13) This block. (14) The thirty-second block below and everything it binds.
 `CLAUDE.md` in full before drafting anything — **and see the declared departure below, which is why
@@ -8981,7 +8981,7 @@ git object. **Proof (b) establishes the ORDER absolutely and the VALUES not at a
 73 entries with one FAIL corroborate §13 and do not prove it.
 
 **★ THE THREE RULINGS THIS SESSION TOOK — the record is
-`cowork_rulings_2026_08_19_thirteenth_return.md`, which is the authority and is not restated here
+`records/cowork/rulings/cowork_rulings_2026_08_19_thirteenth_return.md`, which is the authority and is not restated here
 (#6).** **Ruling 1** — the sort's three member-test widenings stand **as executed**; no review pass,
 the narrow test not restored, the general form homed at the ruling record and **no finding number
 allocated for it**: *a static test over a single source file systematically misreads exactly the code
@@ -9031,9 +9031,9 @@ with its cause, **together with the guard registry's own drift, which the same i
 applied rather than repeated).
 
 **★ WHAT IS UNCOMMITTED AT THIS CLOSE — STATED BY CONTENT, NEVER BY A CHANGED-PASSAGE COUNT (the F25
-lesson).** `cowork_handoff.md` carries **two parts of one act**: this block inserted, and the
+lesson).** `records/cowork/handoff/cowork_handoff.md` carries **two parts of one act**: this block inserted, and the
 THIRTY-SECOND heading's entry-point demotion marker. **TWO files are on disk and untracked:**
-`cowork_rulings_2026_08_19_thirteenth_return.md` and `cc_instruction_preparation_fourteenth.md`.
+`records/cowork/rulings/cowork_rulings_2026_08_19_thirteenth_return.md` and `records/cc/instructions/cc_instruction_preparation_fourteenth.md`.
 **Nothing else this session touched the tree.** **And the REST of the untracked population is named as
 the tree carries it rather than as a class — F82 applied rather than repeated:** newly visible
 `cc_instruction_*.md` files, `cc_*_report.md` and `cc_*_dossier.md` files, and a scratch directory,
@@ -9052,7 +9052,7 @@ out identically, so **this session could not enumerate tracked modifications and
 confirming 100% coverage of 1,845 and 859 lines and returning digests — **rather than read line by
 line into this session's own context. The session-start read's bar is a read BY THE SESSION, so this
 is a DEPARTURE and not a discharge, and it binds a successor afresh.** **F57 was applied rather than
-assumed: `cowork_handoff.md` was MEASURED UNMODIFIED at the terminus immediately before it was
+assumed: `records/cowork/handoff/cowork_handoff.md` was MEASURED UNMODIFIED at the terminus immediately before it was
 edited** — reproducing the committed blob `ada40e3602` exactly, at 408,269 bytes with ZERO carriage
 returns — and every file this session wrote was delivered through the bridge and **round-tripped back
 byte-identical to the content the act INTENDED, whose hash was measured before the delivery (F74)**,
@@ -9070,7 +9070,7 @@ close, so a close that quietly reported zero would be false.
 entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (THIRTY-SECOND, 2026-08-19) — THE TWELFTH BATCH RETURNED COMPLETE AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL THREE DECISIONS ARE RULED; ★ THE RECOGNIZER ESTABLISHMENT TEST IS RULED AS A CLASS — AN INDEPENDENTLY-KNOWN POPULATION OR A DECLARED LOWER BOUND; TWO RULINGS ORDER NOTHING AND SAY SO; ★ `cc_instruction_preparation_thirteenth.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT. ★ THIS BLOCK IS A HANDOVER TO A FRESH SESSION, BY THE USER'S DIRECTION. (SUPERSEDED as the entry point by the thirty-third block above.)
+## ★★★★★ COWORK SESSION CLOSE (THIRTY-SECOND, 2026-08-19) — THE TWELFTH BATCH RETURNED COMPLETE AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL THREE DECISIONS ARE RULED; ★ THE RECOGNIZER ESTABLISHMENT TEST IS RULED AS A CLASS — AN INDEPENDENTLY-KNOWN POPULATION OR A DECLARED LOWER BOUND; TWO RULINGS ORDER NOTHING AND SAY SO; ★ `records/cc/instructions/cc_instruction_preparation_thirteenth.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT. ★ THIS BLOCK IS A HANDOVER TO A FRESH SESSION, BY THE USER'S DIRECTION. (SUPERSEDED as the entry point by the thirty-third block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
@@ -9106,9 +9106,9 @@ thirteenth batch lands, is the recognizer clause ruled at this sitting.**
 **★ THE FINDINGS SERIES STANDS AT F87.** The executing side allocated F82–F86 at the twelfth batch;
 this session allocated **F87** at the return sitting. **The thirteenth dispatch numbers from F88.**
 
-**★ YOUR FIRST ACT IS THE BRANCH RULE.** `cc_instruction_preparation_thirteenth.md` was WRITTEN at
+**★ YOUR FIRST ACT IS THE BRANCH RULE.** `records/cc/instructions/cc_instruction_preparation_thirteenth.md` was WRITTEN at
 this close and was **NOT DISPATCHED**. Establish which of three states holds: **not started** (no
-PREPARATION THIRTEENTH BATCH section in `cowork_away_returns.md`, no `STATUS.md` pointer entries for
+PREPARATION THIRTEENTH BATCH section in `records/cowork/handoff/cowork_away_returns.md`, no `STATUS.md` pointer entries for
 it, no commit on the twelfth batch's terminus `16a172715a`) — then it is yours to dispatch or to
 amend; **running** — then **you are READ-ONLY on the repository until it stops**; **completed** — then
 VERIFY AT THE OBJECTS before trusting any of it, read its FULL close and prove the reading by
@@ -9121,24 +9121,24 @@ close and every report is one commit short of the tip BY CONSTRUCTION, not by om
 batch left that hazard undeclared and a reader taking its close's provenance as naming the last commit
 was one commit short; the twelfth declared it. **Take it as standing.**
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_19_twelfth_return.md` IN FULL** — the three
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_19_twelfth_return.md` IN FULL** — the three
 rulings this session took and the whole authority of the thirteenth dispatch. (2)
-**`cc_instruction_preparation_thirteenth.md` IN FULL** — what the next batch is bound to do, its
+**`records/cc/instructions/cc_instruction_preparation_thirteenth.md` IN FULL** — what the next batch is bound to do, its
 premise ledger, its declared start state and its STOP conditions. (3)
-**`cc_report_preparation_twelfth.md` IN FULL, its §5 and §10 above all** — §10 carries **F84**, which
+**`records/cc/reports/cc_report_preparation_twelfth.md` IN FULL, its §5 and §10 above all** — §10 carries **F84**, which
 is the ground of the clause the thirteenth batch lands, and §5 is the derivation it generalizes. (4)
-**The FULL close of that batch** — THE PREPARATION TWELFTH BATCH section of `cowork_away_returns.md`.
-(5) **`cowork_rulings_2026_08_19_eleventh_return.md` IN FULL** — Ruling 1 there is the
+**The FULL close of that batch** — THE PREPARATION TWELFTH BATCH section of `records/cowork/handoff/cowork_away_returns.md`.
+(5) **`records/cowork/rulings/cowork_rulings_2026_08_19_eleventh_return.md` IN FULL** — Ruling 1 there is the
 name-the-object ruling this arc now rests on, **and it is PROVEN at the objects (see below)**. (6)
-`cowork_rulings_2026_08_18_eleventh_stop.md` and `cowork_rulings_2026_08_18_tenth_return.md` IN FULL —
-**not re-opened at this close.** (7) `cowork_rulings_2026_08_17_ninth_return.md` IN FULL. (8)
-`cowork_rulings_2026_08_17_session_start_read_sitting.md` and
-`cowork_rulings_2026_08_17_eighth_return.md`, **its §6 above all**. (9) The FOUR sitting records of
-2026-08-17 and `cowork_rulings_2026_08_15_inventory_sitting.md` — **the last, the residue and the
+`records/cowork/rulings/cowork_rulings_2026_08_18_eleventh_stop.md` and `records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md` IN FULL —
+**not re-opened at this close.** (7) `records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md` IN FULL. (8)
+`records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md`, **its §6 above all**. (9) The FOUR sitting records of
+2026-08-17 and `records/cowork/rulings/cowork_rulings_2026_08_15_inventory_sitting.md` — **the last, the residue and the
 rulings-sort records now carry the eleventh and twelfth batches' dated corrections.** (10)
-`cowork_rulings_2026_08_17_sixth_return.md`,
-`cowork_rulings_2026_08_17_governing_surface_split.md` and
-`cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding, **its §6 carrying the
+`records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding, **its §6 carrying the
 correction of the kind-3 tool identification.** (11) **`cowork_audit_protocol.md`'s dispatch-protocol
 section IN FULL** — seven standing clauses live there. (12) This block. (13) The thirty-first block
 below and everything it binds. `CLAUDE.md` in full before drafting anything — **this session read it
@@ -9174,7 +9174,7 @@ Verifying an end state means re-running the guard set, which touches the tree an
 what F79 was about — and NOT the values.**
 
 **★ THE THREE RULINGS THIS SESSION TOOK — the record is
-`cowork_rulings_2026_08_19_twelfth_return.md`, which is the authority and is not restated here (#6).**
+`records/cowork/rulings/cowork_rulings_2026_08_19_twelfth_return.md`, which is the authority and is not restated here (#6).**
 **Ruling 1** — a recognizer is established only by both-ways reconciliation against an
 **independently-known population**; where none exists its output IS the population, no seed set can
 establish it, and it publishes as a **LOWER BOUND with its reach declared UNMEASURED**. Ruled as a
@@ -9216,9 +9216,9 @@ with its cause, **together with the guard registry's own drift, which the same i
 applied rather than repeated).
 
 **★ WHAT IS UNCOMMITTED AT THIS CLOSE — STATED BY CONTENT, NEVER BY A CHANGED-PASSAGE COUNT (the F25
-lesson).** `cowork_handoff.md` carries **two parts of one act**: this block inserted, and the
+lesson).** `records/cowork/handoff/cowork_handoff.md` carries **two parts of one act**: this block inserted, and the
 THIRTY-FIRST heading's entry-point demotion marker. **TWO files are on disk and untracked:**
-`cowork_rulings_2026_08_19_twelfth_return.md` and `cc_instruction_preparation_thirteenth.md`.
+`records/cowork/rulings/cowork_rulings_2026_08_19_twelfth_return.md` and `records/cc/instructions/cc_instruction_preparation_thirteenth.md`.
 **Nothing else this session touched the tree.** **And the REST of the untracked population is named as
 the tree carries it rather than as a class — F82 applied rather than repeated:** newly visible
 `cc_instruction_*.md` files, `cc_*_report.md` and `cc_*_dossier.md` files, and a scratch directory,
@@ -9229,7 +9229,7 @@ regenerated membership artifact — four in all — and its assumption A1 states
 environment. **No working-tree file was read through a shell**: the report and every governing
 document were read from snapshots staged through the device bridge and opened with the file tools.
 Every establishment above was taken by **git OBJECT read at an explicit hash**. **`git status` was NOT
-run.** **F57 was applied rather than assumed: `cowork_handoff.md` was MEASURED UNMODIFIED at the
+run.** **F57 was applied rather than assumed: `records/cowork/handoff/cowork_handoff.md` was MEASURED UNMODIFIED at the
 terminus immediately before it was edited** — reproducing the committed blob `bf31a8007e` exactly, at
 392,730 bytes with ZERO carriage returns — and both files this session wrote were delivered through
 the bridge and **round-tripped back byte-identical to the content the act INTENDED, whose hash was
@@ -9250,7 +9250,7 @@ recorded so a successor does not read it as one.
 entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (THIRTY-FIRST, 2026-08-19) — THE AMENDED ELEVENTH BATCH RETURNED COMPLETE WITH ONE RULED STOP INSIDE TASK 1 AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED; ★ THE TWO SEPARATED RENDERINGS ARE CLOSED BY **NAMING THE OBJECT** RATHER THAN BY PINNING, RULED AS A CLASS; THE BOOKKEEPING BAR IS SHARPENED; THE WRITE-PATH ENUMERATION AUTHORIZES NOTHING; TWO STATEMENTS ARE CORRECTED OF RECORD; ★ `cc_instruction_preparation_twelfth.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the thirty-second block above.)
+## ★★★★★ COWORK SESSION CLOSE (THIRTY-FIRST, 2026-08-19) — THE AMENDED ELEVENTH BATCH RETURNED COMPLETE WITH ONE RULED STOP INSIDE TASK 1 AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED; ★ THE TWO SEPARATED RENDERINGS ARE CLOSED BY **NAMING THE OBJECT** RATHER THAN BY PINNING, RULED AS A CLASS; THE BOOKKEEPING BAR IS SHARPENED; THE WRITE-PATH ENUMERATION AUTHORIZES NOTHING; TWO STATEMENTS ARE CORRECTED OF RECORD; ★ `records/cc/instructions/cc_instruction_preparation_twelfth.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the thirty-second block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
@@ -9273,9 +9273,9 @@ series stands at F81 at this close** — the executing side allocated F75–F79 
 batch; this session allocated **F80** and **F81** at the return sitting. **The twelfth dispatch
 numbers from F82.**
 
-**★ YOUR FIRST ACT IS THE BRANCH RULE.** `cc_instruction_preparation_twelfth.md` was WRITTEN at this
+**★ YOUR FIRST ACT IS THE BRANCH RULE.** `records/cc/instructions/cc_instruction_preparation_twelfth.md` was WRITTEN at this
 close and was **NOT DISPATCHED**. Establish which of three states holds: **not started** (no
-PREPARATION TWELFTH BATCH section in `cowork_away_returns.md`, no `STATUS.md` pointer entries for it,
+PREPARATION TWELFTH BATCH section in `records/cowork/handoff/cowork_away_returns.md`, no `STATUS.md` pointer entries for it,
 no commit on the eleventh batch's terminus `46d68a146d`) — then it is yours to dispatch or to amend;
 **running** — then **you are READ-ONLY on the repository until it stops**; **completed** — then
 VERIFY AT THE OBJECTS before trusting any of it, read its FULL close and prove the reading by
@@ -9283,28 +9283,28 @@ quotation. Its tasks and its registered expectations E0–E5 are stated in the d
 is the authority for them and is not restated here (#6).
 
 **★ THE TERMINUS IS `46d68a146d`, AND IT IS A COMMIT NO CLOSE AND NO REPORT NAMES.** It carries
-`cc_report_preparation_eleventh_amended.md` alone — *"chain: the report names all eight commits of
+`records/cc/reports/cc_report_preparation_eleventh_amended.md` alone — *"chain: the report names all eight commits of
 the batch, written after every one of them existed."* A session that takes the close's own provenance
 as naming the last commit will be one commit short; **read the chain at the branch tip, not at the
 close.**
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_19_eleventh_return.md` IN FULL** — the four
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_19_eleventh_return.md` IN FULL** — the four
 rulings this session took and the whole authority of the twelfth dispatch. (2)
-**`cc_instruction_preparation_twelfth.md` IN FULL** — what the next batch is bound to do, its premise
+**`records/cc/instructions/cc_instruction_preparation_twelfth.md` IN FULL** — what the next batch is bound to do, its premise
 ledger, its declared start state and its STOP conditions. (3)
-**`cc_report_preparation_eleventh_amended.md` IN FULL, its §3 and §11 above all** — the batch's own
+**`records/cc/reports/cc_report_preparation_eleventh_amended.md` IN FULL, its §3 and §11 above all** — the batch's own
 STOP on two of the four pin members, and the questions Ruling 1 answers. (4) **The FULL close of that
-batch** — THE PREPARATION ELEVENTH BATCH, AMENDED section of `cowork_away_returns.md`. (5)
-**`cowork_rulings_2026_08_18_eleventh_stop.md`** and **`cowork_rulings_2026_08_18_tenth_return.md`**
+batch** — THE PREPARATION ELEVENTH BATCH, AMENDED section of `records/cowork/handoff/cowork_away_returns.md`. (5)
+**`records/cowork/rulings/cowork_rulings_2026_08_18_eleventh_stop.md`** and **`records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md`**
 IN FULL — the rulings this arc is completing, **NOT re-opened at this close**. (6)
-`cowork_rulings_2026_08_17_ninth_return.md` IN FULL. (7)
-`cowork_rulings_2026_08_17_session_start_read_sitting.md` and
-`cowork_rulings_2026_08_17_eighth_return.md`, **its §6 above all**. (8) The FOUR sitting records of
+`records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md` IN FULL. (7)
+`records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md`, **its §6 above all**. (8) The FOUR sitting records of
 2026-08-17 — `_seventh_return.md` (its §5 correction), `_residue_sitting.md`, `_callers_sitting.md`,
 `_rulings_sort_sitting.md` — **the last two now carrying the eleventh batch's dated corrections, and
 the fourth being a subject of the twelfth dispatch's Task 1.** (9)
-`cowork_rulings_2026_08_17_sixth_return.md`, `cowork_rulings_2026_08_17_governing_surface_split.md`
-and `cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding, **its §6 now carrying
+`records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md`, `records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md`
+and `records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding, **its §6 now carrying
 the eleventh batch's correction of the kind-3 tool identification.** (10)
 **`cowork_audit_protocol.md`'s dispatch-protocol section IN FULL** — four standing clauses now live
 there and the twelfth dispatch adds three more. (11) This block. (12) The thirtieth block below and
@@ -9328,7 +9328,7 @@ answer did not move. (c) `tools/audit/guard_state.json` is **byte-identical at e
 batch** (`408e7d3b78`), and the ONE FURTHER commit carries **exactly one path,
 `tools/audit/session_start_read_size.json`** — independent physical corroboration of **F79**, that
 being precisely the artifact whose check went red on the first end-state run. (d) `git ls-tree
-53e552296f` returns **nothing** for `cowork_rulings_2026_08_17_rulings_sort_sitting.md`, and the
+53e552296f` returns **nothing** for `records/cowork/rulings/cowork_rulings_2026_08_17_rulings_sort_sitting.md`, and the
 record is present at `570f2b63b1` — so the input that member's generator reads did not exist at the
 pinned commit and the pin is genuinely not constructible.
 
@@ -9339,7 +9339,7 @@ the guard set, which touches the tree and meets the `BUILD_AND_TEST.md` conditio
 not. **Proof (c) above is corroboration and is not proof, and it is recorded as such.**
 
 **★ THE FOUR RULINGS THIS SESSION TOOK — the record is
-`cowork_rulings_2026_08_19_eleventh_return.md`, which is the authority and is not restated here
+`records/cowork/rulings/cowork_rulings_2026_08_19_eleventh_return.md`, which is the authority and is not restated here
 (#6).** **Ruling 1** — where the ruled rendering and the committed document have SEPARATED, the
 evidence is preserved by **naming the BLOB** in the ruling record and the member is recorded NOT
 PINNED with its reason; **ruled as a CLASS**; restore-and-pin declined because on one member it would
@@ -9386,9 +9386,9 @@ ruling record**, which is Ruling 1 of the STOP sitting's own subject firing on t
 it — the twelfth dispatch's Task 0 clears it, and its declared start state names it with its cause.
 
 **★ WHAT IS UNCOMMITTED AT THIS CLOSE — STATED BY CONTENT, NEVER BY A CHANGED-PASSAGE COUNT (the F25
-lesson).** `cowork_handoff.md` carries **two parts of one act**: this block inserted, and the
+lesson).** `records/cowork/handoff/cowork_handoff.md` carries **two parts of one act**: this block inserted, and the
 THIRTIETH heading's entry-point demotion marker. **TWO files are on disk and untracked:**
-`cowork_rulings_2026_08_19_eleventh_return.md` and `cc_instruction_preparation_twelfth.md`.
+`records/cowork/rulings/cowork_rulings_2026_08_19_eleventh_return.md` and `records/cc/instructions/cc_instruction_preparation_twelfth.md`.
 **Nothing else this session touched the tree**, and the twelfth dispatch's Task 0 lands all three
 paths plus the regenerated membership artifact — four in all — with its assumption A1 stating exactly
 this shape.
@@ -9398,7 +9398,7 @@ environment. **No working-tree file was read through a shell**: the report, the 
 governing document were read from snapshots staged through the device bridge and opened with the file
 tools, on the user's standing direction. Every establishment above was taken by **git OBJECT read at
 an explicit hash** or by a **per-path git history query**. **`git status` was NOT run.** **F57 was
-applied rather than assumed: `cowork_handoff.md` was MEASURED UNMODIFIED at the terminus immediately
+applied rather than assumed: `records/cowork/handoff/cowork_handoff.md` was MEASURED UNMODIFIED at the terminus immediately
 before it was edited** — its content reproducing the committed blob `cbed24a27d` exactly, at 378,581
 bytes with ZERO carriage returns — and both files this session wrote were delivered through the bridge
 and **round-tripped back byte-identical to the content the act INTENDED, whose hash was measured
@@ -9417,7 +9417,7 @@ flight; no dispatch is active.**
 entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (THIRTIETH, 2026-08-18) — THE ELEVENTH DISPATCH STOPPED AT ITS DECLARED PRECONDITION AND ITS STOP SITTING IS HELD, ALL FOUR DECISIONS RULED; ★ THE START STATE IS NOW DECLARED AT THE TREE THE DISPATCH WILL MEET, §6 KIND 3's TOOL IDENTIFICATION IS CORRECTED, THE PIN DERIVATION IS SHARPENED TO THE LANDING-COMMIT BOUND, AND THE TWO HOMELESS VALUES ARE DERIVED RATHER THAN WITHDRAWN; ★ `cc_instruction_preparation_eleventh_amended.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the thirty-first block above.)
+## ★★★★★ COWORK SESSION CLOSE (THIRTIETH, 2026-08-18) — THE ELEVENTH DISPATCH STOPPED AT ITS DECLARED PRECONDITION AND ITS STOP SITTING IS HELD, ALL FOUR DECISIONS RULED; ★ THE START STATE IS NOW DECLARED AT THE TREE THE DISPATCH WILL MEET, §6 KIND 3's TOOL IDENTIFICATION IS CORRECTED, THE PIN DERIVATION IS SHARPENED TO THE LANDING-COMMIT BOUND, AND THE TWO HOMELESS VALUES ARE DERIVED RATHER THAN WITHDRAWN; ★ `records/cc/instructions/cc_instruction_preparation_eleventh_amended.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the thirty-first block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
@@ -9441,37 +9441,37 @@ tells the next batch to number from F75**, which is Ruling 2(c)'s allocation poi
 than failing: F74 was allocated after the dispatch was drafted, and the dispatch was amended in the
 same act rather than left to collide.
 
-**★ YOUR FIRST ACT IS THE BRANCH RULE.** `cc_instruction_preparation_eleventh_amended.md` was
+**★ YOUR FIRST ACT IS THE BRANCH RULE.** `records/cc/instructions/cc_instruction_preparation_eleventh_amended.md` was
 WRITTEN at this close and was **NOT DISPATCHED**. Establish which of three states holds: **not
-started** (no PREPARATION ELEVENTH BATCH section in `cowork_away_returns.md`, no `STATUS.md` pointer
+started** (no PREPARATION ELEVENTH BATCH section in `records/cowork/handoff/cowork_away_returns.md`, no `STATUS.md` pointer
 entries for it, no commit on the tenth batch's terminus `9390e2ca2c`) — then it is yours to dispatch
 or to amend; **running** — then **you are READ-ONLY on the repository until it stops**; **completed**
 — then VERIFY AT THE OBJECTS before trusting any of it, read its FULL close and prove the reading by
 quotation. Its tasks and its registered expectations E0–E5 are stated in the dispatch itself, which
 is the authority for them and is not restated here (#6).
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_18_eleventh_stop.md` IN FULL** — the four
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_18_eleventh_stop.md` IN FULL** — the four
 rulings this session took and the whole authority of the amended dispatch. (2)
-**`cc_instruction_preparation_eleventh_amended.md` IN FULL** — what the next batch is bound to do,
+**`records/cc/instructions/cc_instruction_preparation_eleventh_amended.md` IN FULL** — what the next batch is bound to do,
 its premise ledger, its declared start state and its STOP conditions. (3)
-**`cc_report_preparation_eleventh.md` IN FULL** — the executing side's STOP report, which carries
+**`records/cc/reports/cc_report_preparation_eleventh.md` IN FULL** — the executing side's STOP report, which carries
 findings F67–F71 and whose §5.b and §6 are the evidence three of the four rulings rest on. (4)
-**`cc_instruction_preparation_eleventh.md`** — the SUPERSEDED dispatch, read so that you meet what
+**`records/cc/instructions/cc_instruction_preparation_eleventh.md`** — the SUPERSEDED dispatch, read so that you meet what
 was dispatched rather than a description of it; it governs nothing. (5)
-**`cowork_rulings_2026_08_18_tenth_return.md` IN FULL** — the three rulings and the sub-ruling this
+**`records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md` IN FULL** — the three rulings and the sub-ruling this
 arc is completing; **NOT re-opened by anything at this close**. (6)
-**`cowork_rulings_2026_08_17_ninth_return.md` IN FULL** — Ruling 1 is the class this arc completes,
+**`records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md` IN FULL** — Ruling 1 is the class this arc completes,
 and its §3 carries values the amended dispatch's Task 4 corrects. (7)
-`cowork_rulings_2026_08_17_session_start_read_sitting.md` and
-`cowork_rulings_2026_08_17_eighth_return.md`, **its §6 above all** — still binding. (8) The FOUR
+`records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md`, **its §6 above all** — still binding. (8) The FOUR
 sitting records of 2026-08-17 — `_seventh_return.md` (its §5 correction), `_residue_sitting.md`,
 `_callers_sitting.md`, `_rulings_sort_sitting.md` — **all four are subjects of the amended
-dispatch's Task 1.** (9) `cowork_rulings_2026_08_17_sixth_return.md`,
-`cowork_rulings_2026_08_17_governing_surface_split.md` and
-`cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding, **and its §6 kind 3 is
+dispatch's Task 1.** (9) `records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding, **and its §6 kind 3 is
 corrected by the amended dispatch's Task 1 step 6, not by reading.** (10)
-`cc_report_preparation_tenth.md` IN FULL and the TENTH batch's FULL close in
-`cowork_away_returns.md`. (11) This block. (12) The twenty-ninth block below and everything it
+`records/cc/reports/cc_report_preparation_tenth.md` IN FULL and the TENTH batch's FULL close in
+`records/cowork/handoff/cowork_away_returns.md`. (11) This block. (12) The twenty-ninth block below and everything it
 binds — **read through its own ★ POINTER and its dated CORRECTION, which are the authority where
 its heading and body disagree with them.** `CLAUDE.md` in full before drafting anything — **this
 session read it in full and the bar is discharged for THIS session only; it binds you afresh.**
@@ -9509,7 +9509,7 @@ carries for `git status` and `changed_paths.py`. **That is why the amended dispa
 all four members RE-DERIVED at the objects and inherits none of the report's §5.b.**
 
 **★ THE FOUR RULINGS THIS SESSION TOOK — the record is
-`cowork_rulings_2026_08_18_eleventh_stop.md`, which is the authority and is not restated here (#6).**
+`records/cowork/rulings/cowork_rulings_2026_08_18_eleventh_stop.md`, which is the authority and is not restated here (#6).**
 **Ruling 1** — a dispatch declares its start state **at the tree it will meet**, including the reds
 its own inputs cause, each named with its cause, and the membership regeneration is an ordered act
 of Task 0; deriving the population from the git index was DECLINED because the artifact would then
@@ -9536,7 +9536,7 @@ admitted on a MEASURED cost (#19).** **F1–F71 ride unchanged. F3 is THIRTEEN t
 and unrowed.**
 
 **★ ONE INCIDENT THIS SESSION DECLARES, AND IT IS ITS OWN — WITH THE FINDING IT PRODUCED.** While
-delivering the edited `cowork_handoff.md` through the device bridge, the code that built the edit
+delivering the edited `records/cowork/handoff/cowork_handoff.md` through the device bridge, the code that built the edit
 wrote it to a **relative path** while the shell's working directory had reset, so the edit landed in
 the session workspace and **the UNMODIFIED staged copy was delivered to the repository instead.**
 **No content was lost or corrupted: the device file was byte-identical to its pre-edit state — the
@@ -9582,14 +9582,14 @@ eroding for exactly the population that ruling identified. Second: **`gen_eviden
 Ruling 1's own subject firing on the act that ruled it — the amended dispatch's Task 0 clears it.
 
 **★ WHAT IS UNCOMMITTED AT THIS CLOSE — STATED BY CONTENT, NEVER BY A CHANGED-PASSAGE COUNT (the F25
-lesson).** `cowork_handoff.md` carries **five parts of one act**: the TWENTY-NINTH block inserted;
+lesson).** `records/cowork/handoff/cowork_handoff.md` carries **five parts of one act**: the TWENTY-NINTH block inserted;
 the TWENTY-EIGHTH heading's entry-point demotion marker; the ★ POINTER appended at the head of the
 twenty-ninth block; the dated CORRECTION appended at its foot; and **this block inserted with the
 TWENTY-NINTH heading's own demotion marker.** **SIX files are on disk and untracked:**
-`cowork_rulings_2026_08_18_tenth_return.md`, `cowork_verification_plan_preparation_tenth.md`,
-`cc_instruction_preparation_eleventh.md`, `cc_report_preparation_eleventh.md`,
-`cowork_rulings_2026_08_18_eleventh_stop.md` and
-`cc_instruction_preparation_eleventh_amended.md`. **Nothing else this session touched the tree.**
+`records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md`, `cowork_verification_plan_preparation_tenth.md`,
+`records/cc/instructions/cc_instruction_preparation_eleventh.md`, `records/cc/reports/cc_report_preparation_eleventh.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_18_eleventh_stop.md` and
+`records/cc/instructions/cc_instruction_preparation_eleventh_amended.md`. **Nothing else this session touched the tree.**
 The amended dispatch's Task 0 lands all seven paths plus the regenerated membership artifact — eight
 in all — and its assumption A1 states exactly this shape.
 
@@ -9598,7 +9598,7 @@ environment, where the sanctioned file tools do not reach the repository directl
 establishment above was taken either by **git OBJECT read at an explicit hash**, by a **per-path git
 history query**, or by **staging a snapshot through the device bridge and reading it with the file
 tools**. **No working-tree file was read through a shell.** **F57 was applied rather than assumed:
-`cowork_handoff.md` was MEASURED at 357,983 bytes with ZERO carriage returns immediately before it
+`records/cowork/handoff/cowork_handoff.md` was MEASURED at 357,983 bytes with ZERO carriage returns immediately before it
 was edited** (sha256 `4690eab63f1750dd650d0db7afb5bd3495e791923969ef003e0fe42cfc4324e1`), and every
 file this session wrote was delivered through the bridge and **round-tripped back byte-identical to
 the content the act INTENDED, whose hash was measured before the delivery** — never by shell
@@ -9613,7 +9613,7 @@ and was not retried**, which is why Task 1 orders all four re-derived rather tha
 **★ WHY THE SESSION STAYED THROUGH THE SITTING AND THE DRAFTING, RECORDED SO THE JUDGMENT IS
 CHALLENGEABLE.** The fresh-session-per-dispatch-cycle direction of §7 of the 2026-08-16 record is
 **discharged by its own condition** — the governing-surface pruning has landed, as
-`cowork_rulings_2026_08_17_sixth_return.md` §5 records — so session length returns to the standing
+`records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md` §5 records — so session length returns to the standing
 two-tell instruction alone, and **ZERO presentation-form tells fired**: the STOP sitting's full
 self-contained surface was delivered as the turn's final response carrying NO question, and the user
 ruled in a LATER turn. **The counter-consideration is recorded rather than suppressed:** the session
@@ -9627,7 +9627,7 @@ flight; no dispatch is active.**
 and correction; it is superseded only as the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (TWENTY-NINTH, 2026-08-18) — THE TENTH BATCH RETURNED COMPLETE AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL THREE DECISIONS ARE RULED; ★ THE EVIDENCE PIN'S FOUR UNRESOLVED MEMBERS ARE CLOSED BY CORRECTING THE RECORDS RATHER THAN THE RULE, THE THREE STALE RULING-SURFACE BANNERS BY CORRECTING THEIR GENERATORS, AND THE PUBLISHED SESSION-START-READ FIGURE IS CORRECTED OF RECORD — IT WAS 6,908 CHARACTERS LOW; ★ `cc_instruction_preparation_eleventh.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the thirtieth block above.)
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-NINTH, 2026-08-18) — THE TENTH BATCH RETURNED COMPLETE AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL THREE DECISIONS ARE RULED; ★ THE EVIDENCE PIN'S FOUR UNRESOLVED MEMBERS ARE CLOSED BY CORRECTING THE RECORDS RATHER THAN THE RULE, THE THREE STALE RULING-SURFACE BANNERS BY CORRECTING THEIR GENERATORS, AND THE PUBLISHED SESSION-START-READ FIGURE IS CORRECTED OF RECORD — IT WAS 6,908 CHARACTERS LOW; ★ `records/cc/instructions/cc_instruction_preparation_eleventh.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the thirtieth block above.)
 
 > **★ POINTER, appended 2026-08-18 AFTER this heading and this block's body were written, and placed
 > HERE because this is where a clueless session looks first. THE HEADING ABOVE AND THREE STATEMENTS
@@ -9639,7 +9639,7 @@ and correction; it is superseded only as the entry point.)*
 > committed**, so the branch rule below still correctly reads NOT STARTED — `HEAD` and
 > `origin/master` are both `9390e2ca2c` with zero commits on it, verified at the objects.
 >
-> **(2) READ `cc_report_preparation_eleventh.md` IN FULL FIRST — BEFORE the ordered list below,
+> **(2) READ `records/cc/reports/cc_report_preparation_eleventh.md` IN FULL FIRST — BEFORE the ordered list below,
 > which does not name it.** It is on disk, UNTRACKED and UNCOMMITTED deliberately, so that
 > committing it could not make the branch rule read STARTED. It is the authority for the STOP, it
 > carries findings **F67–F71**, and its §5.b already holds the derivation the next dispatch needs.
@@ -9673,32 +9673,32 @@ the current handover block of this file.** Ruling 2(c) of the ninth-return sitti
 that neither candidate its own dispatch named was the record's home (F65, below). **The findings
 series stands at F66 at this close.**
 
-**★ YOUR FIRST ACT IS THE BRANCH RULE.** `cc_instruction_preparation_eleventh.md` was WRITTEN at
+**★ YOUR FIRST ACT IS THE BRANCH RULE.** `records/cc/instructions/cc_instruction_preparation_eleventh.md` was WRITTEN at
 this close and was **NOT DISPATCHED**. Establish which of three states holds: **not started** (no
-PREPARATION ELEVENTH BATCH section in `cowork_away_returns.md`, no `STATUS.md` pointer entries for
+PREPARATION ELEVENTH BATCH section in `records/cowork/handoff/cowork_away_returns.md`, no `STATUS.md` pointer entries for
 it, no commit on the tenth batch's terminus `9390e2ca2c`) — then it is yours to dispatch or to
 amend; **running** — then **you are READ-ONLY on the repository until it stops**; **completed** —
 then VERIFY AT THE OBJECTS before trusting any of it, read its FULL close and prove the reading by
 quotation. Its tasks and its registered expectations E0 and E1–E4 are stated in the dispatch itself,
 which is the authority for them and is not restated here (#6).
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_18_tenth_return.md` IN FULL** — the three
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md` IN FULL** — the three
 rulings and the one sub-ruling this session took, and the whole authority of the eleventh dispatch.
-(2) **`cc_instruction_preparation_eleventh.md` IN FULL** — what the next batch is bound to do, its
+(2) **`records/cc/instructions/cc_instruction_preparation_eleventh.md` IN FULL** — what the next batch is bound to do, its
 premise ledger and its STOP conditions. (3) **`cowork_verification_plan_preparation_tenth.md`** —
 the writing side's pre-registered expectations for the tenth batch, written before its report
 existed, with its own dated correction; it is evidence and not authority. (4)
-**`cowork_rulings_2026_08_17_ninth_return.md` IN FULL** — Ruling 1 is the class this arc is
+**`records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md` IN FULL** — Ruling 1 is the class this arc is
 completing, and its §3 carries figures the eleventh batch's Task 3 corrects. (5)
-`cowork_rulings_2026_08_17_session_start_read_sitting.md` and
-`cowork_rulings_2026_08_17_eighth_return.md`, **its §6 above all** — still binding. (6) The FOUR
+`records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md`, **its §6 above all** — still binding. (6) The FOUR
 sitting records of 2026-08-17 — `_seventh_return.md` (its §5 correction), `_residue_sitting.md`,
 `_callers_sitting.md`, `_rulings_sort_sitting.md` — **all four are subjects of the eleventh
-dispatch's Task 1.** (7) `cowork_rulings_2026_08_17_sixth_return.md`,
-`cowork_rulings_2026_08_17_governing_surface_split.md` and
-`cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (8)
-`cc_report_preparation_tenth.md` IN FULL and the batch's FULL close (THE PREPARATION TENTH BATCH
-section of `cowork_away_returns.md`). (9) This block. (10) The twenty-eighth block below and
+dispatch's Task 1.** (7) `records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (8)
+`records/cc/reports/cc_report_preparation_tenth.md` IN FULL and the batch's FULL close (THE PREPARATION TENTH BATCH
+section of `records/cowork/handoff/cowork_away_returns.md`). (9) This block. (10) The twenty-eighth block below and
 everything it binds — **but see the figure correction flagged below.** `CLAUDE.md` in full before
 drafting anything — **this session read it in full and the bar is discharged for THIS session only;
 it binds you afresh.**
@@ -9738,7 +9738,7 @@ ratification surface's **entire difference is three `CLAUDE.md` line coordinates
 line.
 
 **★ THE THREE RULINGS THIS SESSION TOOK — the record is
-`cowork_rulings_2026_08_18_tenth_return.md`, which is the authority and is not restated here (#6).**
+`records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md`, which is the authority and is not restated here (#6).**
 **Ruling 1** — the evidence pin's four unresolved members are closed by **CORRECTING THE RECORDS,
 not the rule**: each of the four ruling records gains a dated correction naming the commit its
 surface was ruled at, derived as **the last commit touching that surface dated at or before its
@@ -9796,9 +9796,9 @@ did so inside the tenth batch itself** — so the evidence of what was PUT in fr
 eroding for exactly the population Ruling 1 identified.
 
 **★ WHAT IS UNCOMMITTED AT THIS CLOSE — STATED BY CONTENT, NEVER BY A CHANGED-PASSAGE COUNT (the F25
-lesson).** `cowork_handoff.md` carries **this block inserted AND the twenty-eighth heading's
+lesson).** `records/cowork/handoff/cowork_handoff.md` carries **this block inserted AND the twenty-eighth heading's
 entry-point demotion marker — two parts of one act.** Three files are on disk and untracked:
-`cowork_rulings_2026_08_18_tenth_return.md`, `cc_instruction_preparation_eleventh.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md`, `records/cc/instructions/cc_instruction_preparation_eleventh.md` and
 `cowork_verification_plan_preparation_tenth.md`. **Nothing else this session touched the tree**, and
 no root file was modified after the terminus commit, established from file metadata. The eleventh
 dispatch's Task 0 lands all four paths and its assumption A1 states exactly this shape.
@@ -9808,7 +9808,7 @@ environment, where the sanctioned file tools do not reach the repository directl
 establishment above was taken either by **git OBJECT read at an explicit hash** — the one sanctioned
 shell mechanism — or by **staging a snapshot through the device bridge and reading it with the file
 tools**. **No working-tree file was read through a shell.** **F57 was applied rather than assumed:
-`cowork_handoff.md` was MEASURED to be stored with LF line endings (zero carriage returns) before it
+`records/cowork/handoff/cowork_handoff.md` was MEASURED to be stored with LF line endings (zero carriage returns) before it
 was edited**, and all three files this session wrote were delivered through the bridge and
 **round-tripped back byte-identical**, never by shell redirection (the recorded 2026-08-02 slip).
 **`git status` was NOT run** — the recorded index-refresh hazard on this mount, and the standing rule
@@ -9835,14 +9835,14 @@ corrected above; it is superseded only as the entry point.)*
 > being deleted (#12), and the block is corrected by APPENDING, never by rewriting.**
 >
 > **THE SENTENCE CORRECTED, quoted verbatim from this block's own heading:** *"★
-> `cc_instruction_preparation_eleventh.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT
+> `records/cc/instructions/cc_instruction_preparation_eleventh.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT
 > THIS CLOSE. NOTHING IS RUNNING."* **It was dispatched. It STOPPED at its declared precondition,
 > before Task 0, and NOTHING WAS COMMITTED.**
 >
 > **★ THE BRANCH RULE STILL READS NOT STARTED, AND THAT IS DELIBERATE.** `HEAD` and `origin/master`
 > are both `9390e2ca2c` — the tenth batch's terminus — with **zero commits on it**, verified at the
 > objects by the writing side. No `PREPARATION ELEVENTH BATCH` section exists and no `STATUS.md`
-> pointer entry for it. **The report `cc_report_preparation_eleventh.md` is on disk, UNTRACKED and
+> pointer entry for it. **The report `records/cc/reports/cc_report_preparation_eleventh.md` is on disk, UNTRACKED and
 > UNCOMMITTED, deliberately**, because committing it would put a commit on that terminus and the
 > branch rule reads exactly that as evidence the batch has started. **Read it IN FULL before
 > anything else** — it is the authority for everything in this correction.
@@ -9861,7 +9861,7 @@ corrected above; it is superseded only as the entry point.)*
 > declared start state and assumption A1 contradict each other by construction:
 > `gen_evidence_pin_membership.py` derives its population from *every root-level
 > `cowork_rulings_*.md`* **on the file system rather than the index**, so the artifact went stale the
-> moment the writing side saved `cowork_rulings_2026_08_18_tenth_return.md` — before the executing
+> moment the writing side saved `records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md` — before the executing
 > side was dispatched. **F68** — Ruling 1b's premise says the census and the ratification document
 > are *"two different OUTPUTS of one tool"*; at the objects they are **one output each from two
 > tools** (`gen_artifact_inventory.py` writes the census, `gen_artifact_inventory_surface.py` writes
@@ -9891,7 +9891,7 @@ corrected above; it is superseded only as the entry point.)*
 >
 > **★ THE NEXT WRITING-SIDE ACT IS THE AMENDED DISPATCH, AND THIS SESSION DID NOT WRITE IT.** Four
 > premise errors in one drafting act is two-plus tells under
-> `cowork_rulings_2026_08_15_session_length.md`; they are reported here unprompted and the handover
+> `records/cowork/rulings/cowork_rulings_2026_08_15_session_length.md`; they are reported here unprompted and the handover
 > is recommended by the session that made them, which is the instruction's own predicted-failure
 > shape avoided rather than repeated. **The four questions the report returns, none of which the
 > record settles:** how the start state is declared given that a dispatch's own inputs move a derived
@@ -9899,17 +9899,17 @@ corrected above; it is superseded only as the entry point.)*
 > stand once the objects are named (F68); whether the pin derivation reads the sitting at date
 > granularity or at the landing-commit bound (F69); and whether the two figures with no generated
 > home are withdrawn or the generator extended (F70). **The three rulings of
-> `cowork_rulings_2026_08_18_tenth_return.md` are NOT re-opened by any of this** — every defect is in
+> `records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md` are NOT re-opened by any of this** — every defect is in
 > how the dispatch operationalized them, not in what was ruled.
 >
 > **★ WHAT IS UNCOMMITTED, RESTATED FOR THE SUCCESSOR.** Unchanged from the block above except for
-> one addition: `cc_report_preparation_eleventh.md` is now on disk and untracked. **The amended
+> one addition: `records/cc/reports/cc_report_preparation_eleventh.md` is now on disk and untracked. **The amended
 > dispatch's Task 0 must account for it**, and its A1 must state the tree it will actually meet
 > rather than the tree the previous batch left — which is F67's remedy applied to the very next
 > dispatch. The findings series stands at **F71**.
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (TWENTY-EIGHTH, 2026-08-17) — THE NINTH BATCH RETURNED COMPLETE AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL THREE DECISIONS ARE RULED (ALTERNATIVE A ON ALL THREE); ★ THE SESSION-START READ IS CUT 656,292 → 360,213 CHARACTERS (−45.1 %) AND THE USER'S 2026-08-16 PRUNING DIRECTION IS DISCHARGED FOR ORDINARY SESSIONS; ★ `cc_instruction_preparation_tenth.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-ninth block above.)
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-EIGHTH, 2026-08-17) — THE NINTH BATCH RETURNED COMPLETE AND IS VERIFIED AT THE OBJECTS; ITS RETURN SITTING IS HELD AND ALL THREE DECISIONS ARE RULED (ALTERNATIVE A ON ALL THREE); ★ THE SESSION-START READ IS CUT 656,292 → 360,213 CHARACTERS (−45.1 %) AND THE USER'S 2026-08-16 PRUNING DIRECTION IS DISCHARGED FOR ORDINARY SESSIONS; ★ `records/cc/instructions/cc_instruction_preparation_tenth.md` IS WRITTEN, ON DISK, UNTRACKED, AND **NOT DISPATCHED** AT THIS CLOSE. NOTHING IS RUNNING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-ninth block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
@@ -9924,28 +9924,28 @@ DO NOT READ THE WHOLE OPEN-ITEMS INDEX.** Rule (a) now reads the **DERIVED GATIN
 derived answer is a route to ONE question it answers, never a second home for status (#6). An
 archive companion is reached only when a decision is re-opened.
 
-**★ YOUR FIRST ACT IS THE BRANCH RULE.** `cc_instruction_preparation_tenth.md` was WRITTEN at this
+**★ YOUR FIRST ACT IS THE BRANCH RULE.** `records/cc/instructions/cc_instruction_preparation_tenth.md` was WRITTEN at this
 close and was **NOT DISPATCHED**. Establish which of three states holds: **not started** (no
-PREPARATION TENTH BATCH section in `cowork_away_returns.md`, no `STATUS.md` pointer entries for it,
+PREPARATION TENTH BATCH section in `records/cowork/handoff/cowork_away_returns.md`, no `STATUS.md` pointer entries for it,
 no commit on the ninth batch's terminus `1760d9a4a8`) — then it is yours to dispatch or to amend;
 **running** — then **you are READ-ONLY on the repository until it stops**; **completed** — then
 VERIFY AT THE OBJECTS before trusting any of it, read its FULL close and prove the reading by
 quotation. Its tasks and its registered expectations E0a, E0b and E1–E5 are stated in the dispatch
 itself, which is the authority for them and is not restated here (#6).
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_17_ninth_return.md` IN FULL** — the three
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md` IN FULL** — the three
 rulings this session took and the whole authority of the tenth dispatch. (2)
-**`cc_instruction_preparation_tenth.md` IN FULL** — what the next batch is bound to do, its premise
-ledger and its STOP conditions. (3) **`cowork_rulings_2026_08_17_session_start_read_sitting.md` IN
+**`records/cc/instructions/cc_instruction_preparation_tenth.md` IN FULL** — what the next batch is bound to do, its premise
+ledger and its STOP conditions. (3) **`records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md` IN
 FULL** — the four rulings that moved the session-start read, three of them now EXECUTED and LIVE.
-(4) `cowork_rulings_2026_08_17_eighth_return.md` IN FULL, **its §6 above all** — the correction note
+(4) `records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md` IN FULL, **its §6 above all** — the correction note
 and F51. (5) The FOUR sitting records of 2026-08-17 —
-`cowork_rulings_2026_08_17_seventh_return.md` (**its §5 carries its own F51 correction, appended by
+`records/cowork/rulings/cowork_rulings_2026_08_17_seventh_return.md` (**its §5 carries its own F51 correction, appended by
 the ninth batch**), `_residue_sitting.md`, `_callers_sitting.md`, `_rulings_sort_sitting.md`. (6)
-`cowork_rulings_2026_08_17_sixth_return.md`, `cowork_rulings_2026_08_17_governing_surface_split.md`
-and `cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (7)
-`cc_report_preparation_ninth.md` IN FULL and the batch's FULL close (THE PREPARATION NINTH BATCH
-section of `cowork_away_returns.md`). (8) This block. (9) The twenty-seventh block below and
+`records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md`, `records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md`
+and `records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (7)
+`records/cc/reports/cc_report_preparation_ninth.md` IN FULL and the batch's FULL close (THE PREPARATION NINTH BATCH
+section of `records/cowork/handoff/cowork_away_returns.md`). (8) This block. (9) The twenty-seventh block below and
 everything it binds — **but see the numbering correction flagged below: its two finding numbers are
 corrected by the tenth dispatch's Task 0b, not by reading.** `CLAUDE.md` in full before drafting
 anything — **this session read it in full and the bar is discharged for THIS session only; it binds
@@ -9977,7 +9977,7 @@ sessions.** Ruling 3 below takes it to approximately **294,000 (−55 %)** once 
 executes.
 
 **★ THE THREE RULINGS THIS SESSION TOOK — the record is
-`cowork_rulings_2026_08_17_ninth_return.md`, which is the authority and is not restated here (#6).**
+`records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md`, which is the authority and is not restated here (#6).**
 **Ruling 1** — the evidence pin is ratified **AS A CLASS**: a generated document put to the user for
 a ruling joins the pinned kind at the moment it is ruled from, extending the Kind-1 treatment of §6
 of the 2026-08-16 record beyond the two measurements it named. **Ruling 2** — the findings series
@@ -9993,7 +9993,7 @@ formerly numbered F52 by the writing side)** — the ruled snapshot-hash test is
 and fails in the false-alarm direction; **it fired for real inside the ninth batch** at its own
 §4.e. **F58** — a shared numbered series with no single allocation point collides whenever both
 sides work concurrently; the sharper half is that **the ninth dispatch ordered CC to WRITE INTO
-`cowork_handoff.md` without ever ordering it READ**, so the numbers allocated three blocks above
+`records/cowork/handoff/cowork_handoff.md` without ever ordering it READ**, so the numbers allocated three blocks above
 CC's own edits were invisible to it. **The lesson: a dispatch that orders a write into a document
 must also order the read of it.** **F59** — a ruling's executing act pointed a session at the
 EVIDENCE along with the ANSWER: rule (a) as executed names a 67,950-character section to deliver a
@@ -10031,9 +10031,9 @@ instruction files and the remaining ignored files unlanded; every candidacy behi
 conditions.
 
 **★ WHAT IS UNCOMMITTED AT THIS CLOSE — STATED BY CONTENT, NEVER BY A CHANGED-PASSAGE COUNT (the F25
-lesson).** `cowork_handoff.md` carries **this block inserted AND the twenty-seventh heading's
+lesson).** `records/cowork/handoff/cowork_handoff.md` carries **this block inserted AND the twenty-seventh heading's
 entry-point demotion marker — two parts of one act.** Two files are on disk and untracked:
-`cowork_rulings_2026_08_17_ninth_return.md` and `cc_instruction_preparation_tenth.md`. **Nothing
+`records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md` and `records/cc/instructions/cc_instruction_preparation_tenth.md`. **Nothing
 else this session touched the tree.** The tenth dispatch's Task 0a lands all three paths and its
 assumption A1 states exactly this shape. **The working copy of this file was proven byte-identical
 to its committed blob at `1760d9a4a8` immediately before this block was written** (content sha256
@@ -10044,7 +10044,7 @@ environment, where the sanctioned file tools do not reach the repository directl
 establishment above was taken either by **git OBJECT read at an explicit hash** — the one sanctioned
 shell mechanism — or by **staging a snapshot through the device bridge and reading it with the file
 tools**. No working-tree file was read through a shell. **F57 was applied rather than assumed:
-`cowork_handoff.md` was MEASURED to be stored with LF line endings (zero carriage returns) before it
+`records/cowork/handoff/cowork_handoff.md` was MEASURED to be stored with LF line endings (zero carriage returns) before it
 was edited, so it is written back in its own form and no line is re-line-ended.** This file, the
 ruling record and the dispatch were written by delivering each through the bridge and
 **round-tripping it back byte-identical**, never by shell redirection (the recorded 2026-08-02
@@ -10080,7 +10080,7 @@ CITATION to it and never by transcription (**D-431**): the read after the ninth 
 `at_earlier_commits[0].total_characters`, read at that batch's own terminus `1760d9a4a8`. The
 remaining four figures of the same measurement — the section rule (a) then named, the list of gating
 identities, the 216 rows' recorded grounds, and the comparison with the frozen record — are corrected
-in the same act at §3 of `cowork_rulings_2026_08_17_ninth_return.md`, where they are published, and
+in the same act at §3 of `records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md`, where they are published, and
 none of them is restated here (#6). **THE ARITHMETIC CLOSES EXACTLY:** the whole gap between the
 total quoted above and the derived total is ONE TERM, the section rule (a) then named, and every
 other member of the read agrees to the digit. **THE PRE-NINTH-BATCH TOTAL AND THE PERCENTAGE DERIVED
@@ -10090,40 +10090,40 @@ reach the regime before the ninth batch — *"the read regime named a DIFFERENT 
 forcing it would compare two different questions"* — so a corrected percentage would be a hand
 computation across two different questions. **The narrowing this block reports is not weakened by any
 of it: the saving is LARGER than the record stated, not smaller.** *Authority: Ruling 3 of
-`cowork_rulings_2026_08_18_tenth_return.md`, executed under Ruling 4 of
-`cowork_rulings_2026_08_18_eleventh_stop.md` by `cc_instruction_preparation_eleventh_amended.md`
+`records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md`, executed under Ruling 4 of
+`records/cowork/rulings/cowork_rulings_2026_08_18_eleventh_stop.md` by `records/cc/instructions/cc_instruction_preparation_eleventh_amended.md`
 Task 4. The standing clause riding it — a published character figure names the tool that produced it
 — is homed at `cowork_audit_protocol.md`'s dispatch-protocol section beside D-431 and is not restated
 here (#6).*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (TWENTY-SEVENTH, 2026-08-17) — NO BATCH RAN AND NO SITTING WAS HELD: THE TWENTY-SIXTH BLOCK'S ORDERED READ WAS PERFORMED IN FULL AND VERIFIED AT THE OBJECTS, AND THE NINTH DISPATCH IS WRITTEN — `cc_instruction_preparation_ninth.md`, ON DISK, UNTRACKED, EXECUTING THE SESSION-START-READ SITTING'S RULINGS 1–3 AND THE EIGHTH-RETURN SITTING'S TWO REMAINING ACTS. ★ TWO WRITING-SIDE FINDINGS ADDED — **F52** (THE RULED SNAPSHOT-HASH TEST IS NOT LINE-ENDING-SAFE) AND **F53** (THE ONE ARTIFACT ENUMERATING GATING ROWS BY IDENTITY DRAWS THAT ENUMERATION FROM A FROZEN INVENTORY). ★ NOTHING IS RUNNING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-eighth block above.)
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-SEVENTH, 2026-08-17) — NO BATCH RAN AND NO SITTING WAS HELD: THE TWENTY-SIXTH BLOCK'S ORDERED READ WAS PERFORMED IN FULL AND VERIFIED AT THE OBJECTS, AND THE NINTH DISPATCH IS WRITTEN — `records/cc/instructions/cc_instruction_preparation_ninth.md`, ON DISK, UNTRACKED, EXECUTING THE SESSION-START-READ SITTING'S RULINGS 1–3 AND THE EIGHTH-RETURN SITTING'S TWO REMAINING ACTS. ★ TWO WRITING-SIDE FINDINGS ADDED — **F52** (THE RULED SNAPSHOT-HASH TEST IS NOT LINE-ENDING-SAFE) AND **F53** (THE ONE ARTIFACT ENUMERATING GATING ROWS BY IDENTITY DRAWS THAT ENUMERATION FROM A FROZEN INVENTORY). ★ NOTHING IS RUNNING. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-eighth block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
 
-**★ YOUR FIRST ACT IS THE BRANCH RULE.** `cc_instruction_preparation_ninth.md` was WRITTEN at this
+**★ YOUR FIRST ACT IS THE BRANCH RULE.** `records/cc/instructions/cc_instruction_preparation_ninth.md` was WRITTEN at this
 close but had NOT been dispatched when this block was written. Establish which of three states
-holds: **not started** (no PREPARATION NINTH BATCH section in `cowork_away_returns.md`, no
+holds: **not started** (no PREPARATION NINTH BATCH section in `records/cowork/handoff/cowork_away_returns.md`, no
 `STATUS.md` pointer entries for it, no commit on the eighth batch's terminus) — then it is yours
 to dispatch or to amend; **running** — then **you are READ-ONLY on the repository until it
 stops**; **completed** — then VERIFY AT THE OBJECTS before trusting any of it, read its FULL close
 and prove the reading by quotation. Its tasks and its registered expectations E0a, E0b and E1–E5
 are stated in the dispatch itself, which is the authority for them and is not restated here (#6).
 
-**★ READ, IN ORDER:** (1) **`cc_instruction_preparation_ninth.md` IN FULL** — what the next batch
+**★ READ, IN ORDER:** (1) **`records/cc/instructions/cc_instruction_preparation_ninth.md` IN FULL** — what the next batch
 is bound to do, its premise ledger and its STOP conditions. (2)
-**`cowork_rulings_2026_08_17_session_start_read_sitting.md` IN FULL** — the four rulings that
+**`records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md` IN FULL** — the four rulings that
 supply the route to a smaller ordinary session-start read, **and the frozen-artifact correction
-inside its Ruling 1**. (3) **`cowork_rulings_2026_08_17_eighth_return.md` IN FULL, its §6 above
+inside its Ruling 1**. (3) **`records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md` IN FULL, its §6 above
 all** — the correction note and F51. (4) The FOUR sitting records of 2026-08-17 —
-`cowork_rulings_2026_08_17_seventh_return.md` (**its §3 carries the F51 defect and is corrected by
+`records/cowork/rulings/cowork_rulings_2026_08_17_seventh_return.md` (**its §3 carries the F51 defect and is corrected by
 the ninth dispatch's Task 0b, not by reading**), `_residue_sitting.md`, `_callers_sitting.md`,
-`_rulings_sort_sitting.md`. (5) `cowork_rulings_2026_08_17_sixth_return.md`,
-`cowork_rulings_2026_08_17_governing_surface_split.md` and
-`cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (6)
-`cc_report_preparation_eighth.md` IN FULL and the batch's FULL close (THE PREPARATION EIGHTH BATCH
-section of `cowork_away_returns.md`). (7) This block. (8) The twenty-sixth block below and
+`_rulings_sort_sitting.md`. (5) `records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (6)
+`records/cc/reports/cc_report_preparation_eighth.md` IN FULL and the batch's FULL close (THE PREPARATION EIGHTH BATCH
+section of `records/cowork/handoff/cowork_away_returns.md`). (7) This block. (8) The twenty-sixth block below and
 everything it binds. `CLAUDE.md` in full before drafting anything — **this session read it in
 full and the bar is discharged for THIS session only; it binds you afresh.**
 
@@ -10136,7 +10136,7 @@ reads were re-measured at the terminus's own objects and reproduce the session-s
 sitting's §0 figure exactly** — 340,400 / 151,045 / 126,774 / 27,179 / 10,894, **656,292
 characters**. `CLAUDE.md` was read in full at a snapshot whose content hash was proven equal to
 its committed blob. Both ruling records were confirmed ABSENT from the terminus tree — untracked,
-as declared — and `cowork_handoff.md` was confirmed modified against its blob **by content**: the
+as declared — and `records/cowork/handoff/cowork_handoff.md` was confirmed modified against its blob **by content**: the
 committed blob carries four `TWENTY-` close headings and the working copy carried six, which is
 the twenty-fifth and twenty-sixth blocks and nothing else. **Then the ninth dispatch was drafted
 over the whole of it.** No sitting was held, no ruling was taken, no surface was put, and nothing
@@ -10184,7 +10184,7 @@ F1–F51.
 
 **★ CORRECTION OF RECORD, 2026-08-18 — THE TWO FINDING NUMBERS IN THE PARAGRAPH ABOVE AND IN THIS
 BLOCK'S OWN HEADING ARE CORRECTED BY THIS APPENDED PASSAGE, ON RULING 2(b) OF
-`cowork_rulings_2026_08_17_ninth_return.md`. THE BLOCK'S OWN TEXT IS NOT REWRITTEN** — a handover
+`records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md`. THE BLOCK'S OWN TEXT IS NOT REWRITTEN** — a handover
 block is corrected by appending, on the pattern the ninth batch's own Task 0b used. The sentence
 corrected is this block's heading, quoted verbatim: *"★ TWO WRITING-SIDE FINDINGS ADDED — **F52**
 (THE RULED SNAPSHOT-HASH TEST IS NOT LINE-ENDING-SAFE) AND **F53** (THE ONE ARTIFACT ENUMERATING
@@ -10208,11 +10208,11 @@ and **no finding's CONTENT changes by any of them.**
   knew about — and the ninth dispatch ordered CC to WRITE INTO this file without ever ordering it
   READ, so the numbers allocated three blocks above CC's own edits were invisible to it. **From
   Ruling 2(c) onward every dispatch's read-first block names the current handover block of
-  `cowork_handoff.md`**, which is where the writing side's own additions to the series are
+  `records/cowork/handoff/cowork_handoff.md`**, which is where the writing side's own additions to the series are
   announced.
 
-*(Recorded by CC, 2026-08-18, dispatch `cc_instruction_preparation_tenth.md` Task 0b, executing
-Ruling 2 of `cowork_rulings_2026_08_17_ninth_return.md` — dated 2026-08-17, executed the following
+*(Recorded by CC, 2026-08-18, dispatch `records/cc/instructions/cc_instruction_preparation_tenth.md` Task 0b, executing
+Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md` — dated 2026-08-17, executed the following
 day. No finding is dropped, merged or graded; none is rowed; the row bar stands whole.)*
 
 **★ WHAT AWAITS THE USER:** (1) the ninth batch — dispatch it, then verify its return at the
@@ -10243,12 +10243,12 @@ the A1 premise error ride to the phase's retrospective. The 284 newly visible in
 and the remaining ignored files unlanded; every candidacy behind its ruled conditions.
 
 **★ WHAT IS UNCOMMITTED AT THIS CLOSE — STATED BY CONTENT, NEVER BY A CHANGED-PASSAGE COUNT (the
-F25 lesson).** `cowork_handoff.md` carries **THREE inserted blocks — the twenty-fifth, the
+F25 lesson).** `records/cowork/handoff/cowork_handoff.md` carries **THREE inserted blocks — the twenty-fifth, the
 twenty-sixth and this one — and the twenty-sixth, twenty-fifth and twenty-fourth headings each
 carrying an entry-point demotion marker.** Three files are on disk and untracked:
-`cowork_rulings_2026_08_17_eighth_return.md`,
-`cowork_rulings_2026_08_17_session_start_read_sitting.md` and
-`cc_instruction_preparation_ninth.md`. **Nothing else this session touched the tree.** The ninth
+`records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md` and
+`records/cc/instructions/cc_instruction_preparation_ninth.md`. **Nothing else this session touched the tree.** The ninth
 dispatch's Task 0a lands all four paths and its assumption A1 states exactly this shape.
 
 **★ THE DECLARED ENVIRONMENT DEPARTURE, CARRIED FORWARD AND NARROWED BY F52.** This session ran in
@@ -10279,7 +10279,7 @@ the entry point.)*
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
 
-**★ NO BRANCH CHECK IS OWED AND YOU ARE NOT READ-ONLY.** `cc_instruction_preparation_eighth.md`
+**★ NO BRANCH CHECK IS OWED AND YOU ARE NOT READ-ONLY.** `records/cc/instructions/cc_instruction_preparation_eighth.md`
 HAS COMPLETED and was verified at the objects by the writing side before any decision was put:
 the chain `56ad941ee7` → `570f2b63b1` → `dd698031df` → `b0b51ee657` → `d499027a8c` →
 `a21a55fc12` → `6bacb9bb9e`, every parent confirmed and every path count to the digit (6, 6, 34,
@@ -10288,18 +10288,18 @@ the chain `56ad941ee7` → `570f2b63b1` → `dd698031df` → `b0b51ee657` → `d
 HAS BEEN WRITTEN — writing it is the next writing-side act**, and its Task 0 list is enumerated
 below.
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_17_eighth_return.md` IN FULL — its §6 above
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md` IN FULL — its §6 above
 all**, which carries the correction note and **F51**. (2)
-**`cowork_rulings_2026_08_17_session_start_read_sitting.md` IN FULL** — the four rulings that
+**`records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md` IN FULL** — the four rulings that
 supply the route the direction of 2026-08-16 had lost, **and the frozen-artifact correction inside
 its Ruling 1**. (3) The FOUR sitting records of 2026-08-17 —
-`cowork_rulings_2026_08_17_seventh_return.md` (**its §3 carries the F51 defect and is corrected by
+`records/cowork/rulings/cowork_rulings_2026_08_17_seventh_return.md` (**its §3 carries the F51 defect and is corrected by
 the next dispatch, not by reading**), `_residue_sitting.md`, `_callers_sitting.md`,
-`_rulings_sort_sitting.md`. (4) `cowork_rulings_2026_08_17_sixth_return.md`,
-`cowork_rulings_2026_08_17_governing_surface_split.md` and
-`cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (5)
-`cc_report_preparation_eighth.md` IN FULL and the batch's FULL close (THE PREPARATION EIGHTH BATCH
-section of `cowork_away_returns.md`), proved by quotation. (6) This block. (7) The twenty-fifth and
+`_rulings_sort_sitting.md`. (4) `records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (5)
+`records/cc/reports/cc_report_preparation_eighth.md` IN FULL and the batch's FULL close (THE PREPARATION EIGHTH BATCH
+section of `records/cowork/handoff/cowork_away_returns.md`), proved by quotation. (6) This block. (7) The twenty-fifth and
 twenty-fourth blocks below and everything they bind. `CLAUDE.md` in full before drafting anything —
 **this session read it in full and the bar is discharged for THIS session only; it binds you
 afresh.**
@@ -10353,12 +10353,12 @@ question is CLOSED — both ruled spans stay at site and the recognizer route is
 **★ THE NINTH DISPATCH'S TASK 0 IS ALREADY ENUMERATED — SEVEN THINGS, NOT FOUR.** (a) this block
 and (b) the TWENTY-FIFTH block, uncommitted since it was written during the eighth batch's flight
 and deliberately declared rather than landed by that batch; (c)
-`cowork_rulings_2026_08_17_eighth_return.md`; (d)
-`cowork_rulings_2026_08_17_session_start_read_sitting.md`; (e) the dispatch itself; (f) **Ruling 1
+`records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md`; (d)
+`records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md`; (e) the dispatch itself; (f) **Ruling 1
 of the eighth-return record's STANDING CONSTRAINT** written where a future pass meets it — *a span
 whose archive classification derives from text inside an archive pointer is NOT archivable,
 wherever in the span the pointer sits*; (g) **F49's one-sentence correction at its generator** and
-**the F51 correction at its three remaining sites** — `cowork_rulings_2026_08_17_seventh_return.md`
+**the F51 correction at its three remaining sites** — `records/cowork/rulings/cowork_rulings_2026_08_17_seventh_return.md`
 §3 and the twenty-fourth and twenty-fifth blocks below — as recorded acts, the corrected wording
 preserved (#12). **The dispatch's own tasks then execute the session-start-read sitting**, whose
 Ruling 1 carries a first task the ruling itself names: **DERIVE what the live gating answer is —
@@ -10378,7 +10378,7 @@ The user's ground, verbatim: *"EXTREME langauge precision with as little risk as
 misunderstandings is key, for me and probably also for you and CC."* This joins the earlier
 vocabulary rulings — *a changed passage* for hunk, *the current commit* for bare HEAD, *untrusted
 source* for witness, *measurement tool* for instrument. Recorded at
-`cowork_rulings_2026_08_17_eighth_return.md` §3.
+`records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md` §3.
 
 **★ STANDING HAZARDS:** [[OI-372]] is the ONE standing red (`gen_filing_convention_application.py`;
 the end-state run is 68 guards, 67 passing, that one failing, zero STOPs). [[OI-374]] untouched.
@@ -10389,10 +10389,10 @@ the phase's retrospective. The 284 newly visible instruction files and the remai
 unlanded; every candidacy behind its ruled conditions.
 
 **★ WHAT IS UNCOMMITTED AT THIS CLOSE — STATED BY CONTENT, NEVER BY A CHANGED-PASSAGE COUNT (the
-F25 lesson).** `cowork_handoff.md` carries **this block inserted AND the twenty-fifth heading's
+F25 lesson).** `records/cowork/handoff/cowork_handoff.md` carries **this block inserted AND the twenty-fifth heading's
 entry-point demotion marker — two parts of one act.** Two ruling records are on disk and untracked:
-`cowork_rulings_2026_08_17_eighth_return.md` and
-`cowork_rulings_2026_08_17_session_start_read_sitting.md`. Nothing else this session touched the
+`records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md`. Nothing else this session touched the
 tree. **The twenty-fifth block's own modification is INCLUDED in this file's current difference** —
 it was never landed, so the difference against the last commit carries both blocks and both
 demotion markers.
@@ -10421,7 +10421,7 @@ and the ninth dispatch's Task 0 enumerated above.
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (TWENTY-FIFTH, 2026-08-17) — A SHORT SESSION, CLOSED ON A MODEL-USAGE LIMIT: THE BRANCH RULE WAS EXECUTED AND IS THIS SESSION'S WHOLE YIELD — THE EIGHTH BATCH IS ESTABLISHED IN FLIGHT (ITS TASK 0 LANDED, `570f2b63b1` ON THE TERMINUS `56ad941ee7`; NO CLOSE, NO REPORT, NO POINTER ENTRIES AS OF 14:50 UTC); THE ORDERED READS WERE NOT PERFORMED AND NOTHING WAS RULED; ★ THE ACTIVE DISPATCH REMAINS `cc_instruction_preparation_eighth.md`. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-sixth block above.)
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-FIFTH, 2026-08-17) — A SHORT SESSION, CLOSED ON A MODEL-USAGE LIMIT: THE BRANCH RULE WAS EXECUTED AND IS THIS SESSION'S WHOLE YIELD — THE EIGHTH BATCH IS ESTABLISHED IN FLIGHT (ITS TASK 0 LANDED, `570f2b63b1` ON THE TERMINUS `56ad941ee7`; NO CLOSE, NO REPORT, NO POINTER ENTRIES AS OF 14:50 UTC); THE ORDERED READS WERE NOT PERFORMED AND NOTHING WAS RULED; ★ THE ACTIVE DISPATCH REMAINS `records/cc/instructions/cc_instruction_preparation_eighth.md`. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-sixth block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight. This block adds
@@ -10430,8 +10430,8 @@ this session did and did not do. The twenty-fourth block's whole program is UNDI
 passes to you.**
 
 **★ YOUR FIRST ACT IS THE BRANCH RULE — RE-RUN IT; DO NOT CARRY THIS SESSION'S ANSWER.**
-Establish whether `cc_instruction_preparation_eighth.md` has completed — its close appended to
-`cowork_away_returns.md` (a PREPARATION EIGHTH BATCH section), `STATUS.md` pointer entries
+Establish whether `records/cc/instructions/cc_instruction_preparation_eighth.md` has completed — its close appended to
+`records/cowork/handoff/cowork_away_returns.md` (a PREPARATION EIGHTH BATCH section), `STATUS.md` pointer entries
 (under the standing Ruling-4 bound the file keeps only the latest batch's entries), its commits
 verified at the objects by explicit hash. **If it still runs you are READ-ONLY on the repository
 until it stops.** If it has completed, VERIFY AT THE OBJECTS before trusting any of it, read its
@@ -10444,9 +10444,9 @@ Established, with the declared caveat below: the eighth batch's Task 0 HAS LANDE
 `570f2b63b1` ("land: the four sittings of 2026-08-17, the twenty-fourth handover block and the
 dispatch that executes them enter git") sits directly on the seventh batch's terminus
 `56ad941ee7`, exactly the chain the twenty-fourth block names — while NONE of the completion
-marks existed: no PREPARATION EIGHTH BATCH section in `cowork_away_returns.md` (its last write
+marks existed: no PREPARATION EIGHTH BATCH section in `records/cowork/handoff/cowork_away_returns.md` (its last write
 10:37, the seventh close), `STATUS.md` carrying only the seventh batch's pointer entries, no
-`cc_report_preparation_eighth.md` on disk; the newest writes in the tree were the four sitting
+`records/cc/reports/cc_report_preparation_eighth.md` on disk; the newest writes in the tree were the four sitting
 records (12:51–14:12) and the dispatch plus the twenty-fourth block (14:19), nothing modified
 since, the check taken at 14:50 UTC. Conclusion: the batch was IN FLIGHT and this session was
 read-only on the repository throughout. **THE DECLARED DEPARTURE — this session's environment
@@ -10460,19 +10460,19 @@ close; the successor re-establishes from the batch's own close before trusting a
 
 **★ WHAT THIS SESSION DID NOT DO — all of it passes to you.** The twenty-fourth block's ordered
 reads were NOT performed: the four sitting records of 2026-08-17 were not read in full,
-`cc_report_preparation_seventh.md` was not read, `CLAUDE.md` was not read. No sitting was held,
+`records/cc/reports/cc_report_preparation_seventh.md` was not read, `CLAUDE.md` was not read. No sitting was held,
 no ruling was taken, no surface was drafted, no dispatch was written, and nothing was written to
 the repository except this block and the heading demotion beneath it. Credit this session with
 no reading it did not prove.
 
 **★ READ, IN ORDER — exactly the twenty-fourth block's list, unchanged:** (1) the FOUR sitting
-records of 2026-08-17 IN FULL — `cowork_rulings_2026_08_17_seventh_return.md`,
-`cowork_rulings_2026_08_17_residue_sitting.md`, `cowork_rulings_2026_08_17_callers_sitting.md`,
-`cowork_rulings_2026_08_17_rulings_sort_sitting.md`. (2)
-`cowork_rulings_2026_08_17_sixth_return.md`, `cowork_rulings_2026_08_17_governing_surface_split.md`
-and `cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (3)
-`cc_report_preparation_seventh.md` IN FULL — §4 and §7 above all (F40–F43) — AND the batch's
-FULL close (THE PREPARATION SEVENTH BATCH section of `cowork_away_returns.md`), proved by
+records of 2026-08-17 IN FULL — `records/cowork/rulings/cowork_rulings_2026_08_17_seventh_return.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_17_residue_sitting.md`, `records/cowork/rulings/cowork_rulings_2026_08_17_callers_sitting.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_17_rulings_sort_sitting.md`. (2)
+`records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md`, `records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md`
+and `records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (3)
+`records/cc/reports/cc_report_preparation_seventh.md` IN FULL — §4 and §7 above all (F40–F43) — AND the batch's
+FULL close (THE PREPARATION SEVENTH BATCH section of `records/cowork/handoff/cowork_away_returns.md`), proved by
 quotation. (4) This block. (5) The twenty-fourth block below and everything it binds.
 `CLAUDE.md` in full before drafting anything.
 
@@ -10485,18 +10485,18 @@ ruled conditions clear — read the candidacies at the REGENERATED census, never
 the mining and the landing of the 284 newly visible instruction files. **The prose-citation
 question is CLOSED** — ruled at the callers sitting.
 
-> **★ CORRECTION, appended 2026-08-17 by `cc_instruction_preparation_ninth.md` Task 0b — F51.**
+> **★ CORRECTION, appended 2026-08-17 by `records/cc/instructions/cc_instruction_preparation_ninth.md` Task 0b — F51.**
 > The corrected wording stands above rather than being deleted (#12). The parenthesis quoted
 > verbatim — *"(the standing route to the smaller session-start read, with the
 > `BUILD_AND_TEST.md` conditional-read input recorded in the seventh-return record §3)"* — is
 > WRONG at the boot list's own ruled definition, and it was inherited from
-> `cowork_rulings_2026_08_17_seventh_return.md` §3, whose own correction is that record's §5.
+> `records/cowork/rulings/cowork_rulings_2026_08_17_seventh_return.md` §3, whose own correction is that record's §5.
 > **THE RULED DEFINITION**, at the surface the user ratified 2026-08-15
 > (`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md`): the curated boot list
 > is *"the implementation-free read list an implementation-blind session boots from, replacing
 > the ordinary session-start reads (which include implementation-describing text) **for those
 > sessions only.**"* Ruling 4 of
-> `cowork_rulings_2026_08_17_session_start_read_sitting.md` confirms it and states that the boot
+> `records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md` confirms it and states that the boot
 > list *"is NOT widened to ordinary sessions."* **THE ROUTE FOR ORDINARY SESSIONS IS RULINGS 1–3
 > of that same sitting record** — the derived gating answer replacing the whole-index read behind
 > its #19 precondition, the archiving pass the standing archivability test already authorises,
@@ -10529,14 +10529,14 @@ order and its whole program, which this session did not discharge; it is superse
 entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (TWENTY-FOURTH, 2026-08-17) — THE SEVENTH BATCH RETURNED COMPLETE (TWO REDS CLEARED BY THE RULED ACTS; THE PREDICTED END STATE REACHED FOR THE FIRST TIME IN THREE BATCHES; THE COMMISSIONED FINER PASS ANSWERED IN THE NEGATIVE — F42) AND WAS VERIFIED AT THE OBJECTS; ALL FOUR AWAITING SITTINGS ARE HELD AND EVERY RECOMMENDATION RULED AS PUT; ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_eighth.md` — THE FOUR SITTINGS EXECUTED. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-fifth block above.)
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-FOURTH, 2026-08-17) — THE SEVENTH BATCH RETURNED COMPLETE (TWO REDS CLEARED BY THE RULED ACTS; THE PREDICTED END STATE REACHED FOR THE FIRST TIME IN THREE BATCHES; THE COMMISSIONED FINER PASS ANSWERED IN THE NEGATIVE — F42) AND WAS VERIFIED AT THE OBJECTS; ALL FOUR AWAITING SITTINGS ARE HELD AND EVERY RECOMMENDATION RULED AS PUT; ★ THE ACTIVE DISPATCH IS `records/cc/instructions/cc_instruction_preparation_eighth.md` — THE FOUR SITTINGS EXECUTED. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-fifth block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
 
 **★ YOUR FIRST ACT IS THE BRANCH RULE:** establish whether
-`cc_instruction_preparation_eighth.md` has completed — its close appended to
-`cowork_away_returns.md` (a PREPARATION EIGHTH BATCH section), `STATUS.md` pointer entries
+`records/cc/instructions/cc_instruction_preparation_eighth.md` has completed — its close appended to
+`records/cowork/handoff/cowork_away_returns.md` (a PREPARATION EIGHTH BATCH section), `STATUS.md` pointer entries
 (under the standing Ruling-4 bound the file keeps only the latest batch's entries), its commits
 verified at the objects by explicit hash. **If it still runs you are READ-ONLY on the
 repository until it stops.** If it has completed, VERIFY AT THE OBJECTS before trusting any of
@@ -10551,13 +10551,13 @@ Task 2's pin, every movement classed; 4 — the sort's 60 USER-RULED placements 
 zero STOPs.
 
 **★ READ, IN ORDER:** (1) **the FOUR sitting records of 2026-08-17 IN FULL** —
-`cowork_rulings_2026_08_17_seventh_return.md`, `cowork_rulings_2026_08_17_residue_sitting.md`,
-`cowork_rulings_2026_08_17_callers_sitting.md`,
-`cowork_rulings_2026_08_17_rulings_sort_sitting.md` — the day's whole authority. (2)
-`cowork_rulings_2026_08_17_sixth_return.md`, `cowork_rulings_2026_08_17_governing_surface_split.md`
-and `cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (3)
-**`cc_report_preparation_seventh.md` IN FULL — §4 and §7 above all (F40–F43)** — AND the
-batch's FULL close (THE PREPARATION SEVENTH BATCH section of `cowork_away_returns.md`), proved
+`records/cowork/rulings/cowork_rulings_2026_08_17_seventh_return.md`, `records/cowork/rulings/cowork_rulings_2026_08_17_residue_sitting.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_17_callers_sitting.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_17_rulings_sort_sitting.md` — the day's whole authority. (2)
+`records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md`, `records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md`
+and `records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (3)
+**`records/cc/reports/cc_report_preparation_seventh.md` IN FULL — §4 and §7 above all (F40–F43)** — AND the
+batch's FULL close (THE PREPARATION SEVENTH BATCH section of `records/cowork/handoff/cowork_away_returns.md`), proved
 by quotation. (4) This block. (5) The twenty-third block below and everything it binds.
 `CLAUDE.md` in full before drafting anything.
 
@@ -10606,18 +10606,18 @@ candidacies at the REGENERATED census, never at a stale one; the mining and the 
 284 newly visible instruction files. **The prose-citation question is no longer open** — ruled
 at the callers sitting.
 
-> **★ CORRECTION, appended 2026-08-17 by `cc_instruction_preparation_ninth.md` Task 0b — F51.**
+> **★ CORRECTION, appended 2026-08-17 by `records/cc/instructions/cc_instruction_preparation_ninth.md` Task 0b — F51.**
 > The corrected wording stands above rather than being deleted (#12). The parenthesis quoted
 > verbatim — *"(the standing route to the smaller session-start read, with the
 > `BUILD_AND_TEST.md` conditional-read input recorded in the seventh-return record §3)"* — is
 > WRONG at the boot list's own ruled definition, and it was inherited from
-> `cowork_rulings_2026_08_17_seventh_return.md` §3, whose own correction is that record's §5.
+> `records/cowork/rulings/cowork_rulings_2026_08_17_seventh_return.md` §3, whose own correction is that record's §5.
 > **THE RULED DEFINITION**, at the surface the user ratified 2026-08-15
 > (`ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md`): the curated boot list
 > is *"the implementation-free read list an implementation-blind session boots from, replacing
 > the ordinary session-start reads (which include implementation-describing text) **for those
 > sessions only.**"* Ruling 4 of
-> `cowork_rulings_2026_08_17_session_start_read_sitting.md` confirms it and states that the boot
+> `records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md` confirms it and states that the boot
 > list *"is NOT widened to ordinary sessions."* **THE ROUTE FOR ORDINARY SESSIONS IS RULINGS 1–3
 > of that same sitting record** — the derived gating answer replacing the whole-index read behind
 > its #19 precondition, the archiving pass the standing archivability test already authorises,
@@ -10644,7 +10644,7 @@ was taken, and ZERO presentation-form tells fired this session.
 as the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (TWENTY-THIRD, 2026-08-17) — THE SIXTH BATCH RETURNED (THE SPLIT EXECUTED: 281 SPANS ARCHIVED, THE FIVE MANDATORY READS HALVED; THE SAFEGUARD HELD BACK 17 MIS-CLASSED SPANS — THE MEASUREMENT'S ERROR RAN ENTIRELY IN THE ARCHIVE DIRECTION), WAS VERIFIED AT THE OBJECTS; THE INTERIM READING SCOPE HAS EXPIRED; THE RETURN SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED (ALTERNATIVE A ON ALL FOUR); ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_seventh.md`. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-fourth block above.)
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-THIRD, 2026-08-17) — THE SIXTH BATCH RETURNED (THE SPLIT EXECUTED: 281 SPANS ARCHIVED, THE FIVE MANDATORY READS HALVED; THE SAFEGUARD HELD BACK 17 MIS-CLASSED SPANS — THE MEASUREMENT'S ERROR RAN ENTIRELY IN THE ARCHIVE DIRECTION), WAS VERIFIED AT THE OBJECTS; THE INTERIM READING SCOPE HAS EXPIRED; THE RETURN SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED (ALTERNATIVE A ON ALL FOUR); ★ THE ACTIVE DISPATCH IS `records/cc/instructions/cc_instruction_preparation_seventh.md`. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-fourth block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
@@ -10657,8 +10657,8 @@ they now stand (they are half their former size); an archive companion (`CLAUDE_
 dated pointer at its site.
 
 **★ YOUR FIRST ACT IS THE BRANCH RULE:** establish whether
-`cc_instruction_preparation_seventh.md` has completed — its close appended to
-`cowork_away_returns.md` (a PREPARATION SEVENTH BATCH section), `STATUS.md` pointer entries
+`records/cc/instructions/cc_instruction_preparation_seventh.md` has completed — its close appended to
+`records/cowork/handoff/cowork_away_returns.md` (a PREPARATION SEVENTH BATCH section), `STATUS.md` pointer entries
 (under the standing Ruling-4 bound the file keeps only the latest batch's entries), its commits
 verified at the objects by explicit hash. **If it still runs you are READ-ONLY on the
 repository until it stops.** If it has completed, VERIFY AT THE OBJECTS before trusting any of
@@ -10669,13 +10669,13 @@ classes; 3 — the finer `CLAUDE.md` measurement, READ-ONLY, returning
 `ratification_surfaces/cowork_claude_md_finer_split_2026_08_17.md` for the user's ruling; 4 —
 the close. Expected end state: ONE failing check ([[OI-372]]'s tool) and zero STOPs.
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_17_sixth_return.md` IN FULL** — the return
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md` IN FULL** — the return
 sitting: the taught citation, the census regeneration, the residue move, the commissioned finer
 pass, and §5's note that §7's fresh-session condition is MET (session length returns to the
-standing two-tell instruction alone). (2) `cowork_rulings_2026_08_17_governing_surface_split.md`
-and `cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (3)
-**`cc_report_preparation_sixth.md` IN FULL — §2.b, §6 and §7 above all (F33–F39)** — AND the
-batch's FULL close (THE PREPARATION SIXTH BATCH section of `cowork_away_returns.md`), proved by
+standing two-tell instruction alone). (2) `records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md`
+and `records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding. (3)
+**`records/cc/reports/cc_report_preparation_sixth.md` IN FULL — §2.b, §6 and §7 above all (F33–F39)** — AND the
+batch's FULL close (THE PREPARATION SIXTH BATCH section of `records/cowork/handoff/cowork_away_returns.md`), proved by
 quotation. (4) This block. (5) The twenty-second block below and everything it binds.
 `CLAUDE.md` in full before drafting anything.
 
@@ -10736,18 +10736,18 @@ ready, nothing in flight.
 as the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (TWENTY-SECOND, 2026-08-17) — THE FIFTH BATCH RETURNED COMPLETE (THE DISCARD EXECUTED: 165 RETIRED, 512 LIVE; THE PRUNING MEASURED) AND WAS VERIFIED AT THE OBJECTS BY A FRESH SESSION AFTER A CRASH TOOK THE PRIOR SESSION'S HISTORY — THE RECORD LOST NOTHING; THE GOVERNING-SURFACE SPLIT SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED (ALTERNATIVE A ON ALL FOUR); ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_sixth.md` — THE SPLIT EXECUTED. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-third block above.)
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-SECOND, 2026-08-17) — THE FIFTH BATCH RETURNED COMPLETE (THE DISCARD EXECUTED: 165 RETIRED, 512 LIVE; THE PRUNING MEASURED) AND WAS VERIFIED AT THE OBJECTS BY A FRESH SESSION AFTER A CRASH TOOK THE PRIOR SESSION'S HISTORY — THE RECORD LOST NOTHING; THE GOVERNING-SURFACE SPLIT SITTING IS HELD AND ALL FOUR DECISIONS ARE RULED (ALTERNATIVE A ON ALL FOUR); ★ THE ACTIVE DISPATCH IS `records/cc/instructions/cc_instruction_preparation_sixth.md` — THE SPLIT EXECUTED. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-third block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
 
 **★ YOUR SESSION-START READS RUN UNDER THE RULED INTERIM READING SCOPE**
-(`cowork_rulings_2026_08_16_preparation_return.md` §5(B)) — UNTIL the active dispatch's Task 1
+(`records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §5(B)) — UNTIL the active dispatch's Task 1
 lands, at which point the scope EXPIRES by its own ruled terms (the executed split makes the
 boundary physical). Check the branch below before assuming either state.
 
-**★ YOUR FIRST ACT IS THE BRANCH RULE:** establish whether `cc_instruction_preparation_sixth.md`
-has completed — its close appended to `cowork_away_returns.md` (a PREPARATION SIXTH BATCH
+**★ YOUR FIRST ACT IS THE BRANCH RULE:** establish whether `records/cc/instructions/cc_instruction_preparation_sixth.md`
+has completed — its close appended to `records/cowork/handoff/cowork_away_returns.md` (a PREPARATION SIXTH BATCH
 section), `STATUS.md` pointer entries (NOTE: under Ruling 4 of the 2026-08-17 record,
 `STATUS.md` now keeps ONLY the latest batch's entries — an older batch's absence is the rule
 working, not a gap), its commits verified at the objects by explicit hash. **If it still runs
@@ -10757,14 +10757,14 @@ Task 1 is the split executed (four archive companions created, the spans moved v
 dated pointers, the `STATUS.md` backlog cleared, [[OI-370]] flipped); its Task 2 is the close
 under the new standing `STATUS.md` bound.
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_17_governing_surface_split.md` IN FULL** —
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md` IN FULL** —
 the sitting record: the per-class fates (operative and doubt-defaulted spans stay; four classes
 archive with dated pointers), the doubt-defaulted share accepted, the per-file archive
 companions, and the `STATUS.md` superseded-entry rule (latest batch only, maintained at every
-future close). (2) `cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding in
-full. (3) **`cc_report_preparation_fifth.md` IN FULL, §4 and §7 above all** — the discard's
+future close). (2) `records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §§1–7 — still binding in
+full. (3) **`records/cc/reports/cc_report_preparation_fifth.md` IN FULL, §4 and §7 above all** — the discard's
 execution proofs, the pins, and F27–F32 — AND the batch's FULL close (THE PREPARATION FIFTH
-BATCH section of `cowork_away_returns.md`), proved by quotation. (4)
+BATCH section of `records/cowork/handoff/cowork_away_returns.md`), proved by quotation. (4)
 `ratification_surfaces/cowork_governing_surface_split_2026_08_16.md` — the ruled surface. (5)
 This block. (6) The twenty-first block below and everything it binds. `CLAUDE.md` (under the
 interim scope while it lasts) in full before drafting anything.
@@ -10814,21 +10814,21 @@ ready, and nothing in flight.
 as the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (TWENTY-FIRST, 2026-08-16) — THE FOURTH BATCH RETURNED, WAS VERIFIED AT THE OBJECTS, AND STOP-REPORTED AGAIN (THE STANDING CLASS IS NOT ONE CLASS); THE TREATMENT IS RULED, THE GOVERNING-SURFACE PRUNING IS RULED IN FIVE LIMBS, AND ★ THE ACTIVE DISPATCH IS `cc_instruction_preparation_fifth.md` — THE DISCARD COMPLETE PLUS THE PRUNING MEASUREMENT. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-second block above.)
+## ★★★★★ COWORK SESSION CLOSE (TWENTY-FIRST, 2026-08-16) — THE FOURTH BATCH RETURNED, WAS VERIFIED AT THE OBJECTS, AND STOP-REPORTED AGAIN (THE STANDING CLASS IS NOT ONE CLASS); THE TREATMENT IS RULED, THE GOVERNING-SURFACE PRUNING IS RULED IN FIVE LIMBS, AND ★ THE ACTIVE DISPATCH IS `records/cc/instructions/cc_instruction_preparation_fifth.md` — THE DISCARD COMPLETE PLUS THE PRUNING MEASUREMENT. THE CURRENT ENTRY POINT. (SUPERSEDED as the entry point by the twenty-second block above.)
 
 **You start clueless. Read this block first. The standing bars of the earlier blocks REMAIN
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight.**
 
 **★ YOUR SESSION-START READS RUN UNDER THE RULED INTERIM READING SCOPE**
-(`cowork_rulings_2026_08_16_preparation_return.md` §5(B)): in `CLAUDE.md`, SKIP the blocks that
+(`records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` §5(B)): in `CLAUDE.md`, SKIP the blocks that
 state of themselves that they are historical or superseded (the frozen historical case
 enumerations, the superseded baseline narratives, the preserved former wordings of amended
 rules); in `OPEN_ITEMS.md`, SKIP the rows whose status cell opens with the resolved mark. The
 orders' own premise — that everything read is useful and not noise — is the ruled ground; state
 the scope in every dispatch's read-first block, citing §5(B).
 
-**★ YOUR FIRST ACT IS THE BRANCH RULE:** establish whether `cc_instruction_preparation_fifth.md`
-has completed — its close appended to `cowork_away_returns.md` (a PREPARATION FIFTH BATCH
+**★ YOUR FIRST ACT IS THE BRANCH RULE:** establish whether `records/cc/instructions/cc_instruction_preparation_fifth.md`
+has completed — its close appended to `records/cowork/handoff/cowork_away_returns.md` (a PREPARATION FIFTH BATCH
 section), one `STATUS.md` pointer entry per task, its commits verified at the objects by
 explicit hash. **If it still runs you are READ-ONLY on the repository until it stops.** If it
 has completed, VERIFY AT THE OBJECTS before trusting any of it, read its FULL close and prove
@@ -10836,7 +10836,7 @@ the reading by quotation. Its Task 1 is the discard COMPLETE (the third attempt,
 completed ruling); its Task 2 is the READ-ONLY governing-surface pruning measurement, returning
 `ratification_surfaces/cowork_governing_surface_split_2026_08_16.md` for the user's ruling.
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_16_preparation_return.md` IN FULL, §§1–7**
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` IN FULL, §§1–7**
 — the day's whole record: §3 the soft-discard, §4 the reach (Alternative A), §5 the pruning
 rulings (A the wave-1 split act, B the interim scope above, C `STATUS.md` in scope, D
 continuous pruning at the point of amendment — superseding preserve-in-place, a dated pointer
@@ -10848,10 +10848,10 @@ regenerate under the THREE-category bound, citation-carried standing added; F22'
 an ACCEPTED NAMED COST), §7 fresh sessions every dispatch cycle until the pruning lands.
 (2) `ratification_surfaces/cowork_standing_treatment_surface_2026_08_16.md` and
 `ratification_surfaces/cowork_discard_reach_surface_2026_08_16.md` — the two ruled surfaces.
-(3) **`cc_report_preparation_fourth.md` IN FULL, §4 above all** — what is measured working and
+(3) **`records/cc/reports/cc_report_preparation_fourth.md` IN FULL, §4 above all** — what is measured working and
 the three grounds (F19 five checks cannot regenerate; F20 one would replace the ratified
 classification; F21 one moves a candidacy set partly outside the bound) — AND the batch's FULL
-close (THE PREPARATION FOURTH BATCH section of `cowork_away_returns.md`), proved by quotation.
+close (THE PREPARATION FOURTH BATCH section of `records/cowork/handoff/cowork_away_returns.md`), proved by quotation.
 (4) The two surfaces awaiting the user, listed below. (5) This block. (6) The twentieth block
 below and everything it binds. `CLAUDE.md` (under the interim scope) in full before drafting
 anything.
@@ -10917,7 +10917,7 @@ the entry point.)*
 BINDING. The six phases govern; the PREPARATION phase is open and mid-flight; nothing is
 running and you are not read-only.**
 
-**★ NO BRANCH CHECK IS OWED.** Three preparation batches (`cc_instruction_preparation_opening.md`,
+**★ NO BRANCH CHECK IS OWED.** Three preparation batches (`records/cc/instructions/cc_instruction_preparation_opening.md`,
 `_second.md`, `_third.md`) have COMPLETED and were each verified by the writing side at the
 objects before this block was written — path sets, numstats, artifact populations recounted at
 the artifacts, the decisions register's byte-identity proven by hashing at every mutation claim.
@@ -10926,15 +10926,15 @@ The third batch's terminus is `1b824b23b1` plus its two recording commits, pushe
 STOP. **Do not name terminus commits as premises in a dispatch — pin content blobs instead; see
 the errors block below.**
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_16_preparation_return.md` IN FULL** — the
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md` IN FULL** — the
 sitting record: §1 the caller-check ruling (an enumeration does not hold; derived caller-kind;
 the prose-citation question deferred to evidence), §2 the filter's keep side RATIFIED (the 411;
 recovery pass ordered; the rulings sort permitted; the provenance-not-soundness clause), §3 the
 soft-discard rulings (A: the 194 behind the sole-carrier guard; B1: ten clear recoveries kept —
 D-004, D-008, D-009, D-021, D-123, D-248, D-315, D-403, D-410, D-411; B2: the 62 checked before
-ruling). (2) **`cc_report_preparation_third.md` IN FULL, §4 above all** — the STOP that is the
+ruling). (2) **`records/cc/reports/cc_report_preparation_third.md` IN FULL, §4 above all** — the STOP that is the
 current center of gravity — AND the batch's FULL close (THE PREPARATION THIRD BATCH section of
-`cowork_away_returns.md`), proved by quotation (eighteenth-stop Ruling 15). (3)
+`records/cowork/handoff/cowork_away_returns.md`), proved by quotation (eighteenth-stop Ruling 15). (3)
 **`ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md`** — awaiting the user: the
 29 withheld sole-carriers and the 62's check results. (4)
 `ratification_surfaces/cowork_rulings_sort_surface_2026_08_16.md` — proposed, awaiting its
@@ -11000,7 +11000,7 @@ act, reported by the version history as ONE changed passage because they are adj
 
 **★ WHY THE SESSION CLOSED HERE:** the writing side recognized a repeated premise error (F12 →
 F17) plus an inconsistent premise (F18) — two-plus tells under
-`cowork_rulings_2026_08_15_session_length.md` — reported them unprompted and recommended the
+`records/cowork/rulings/cowork_rulings_2026_08_15_session_length.md` — reported them unprompted and recommended the
 handover itself. Every ruling is on disk in the turn it was taken; every batch is closed and
 verified; nothing is in flight.
 
@@ -11017,7 +11017,7 @@ warning from this file, because the entry itself now opens with the ruled supers
 a disagreement between specification and code is EVIDENCE, reserved for the audit).**
 
 **★ NO BRANCH CHECK IS OWED AND YOU ARE NOT READ-ONLY.** The last dispatch,
-`cc_instruction_d231_landing.md`, HAS COMPLETED: commits `3dd468d978` (the §9 ruling and the
+`records/cc/instructions/cc_instruction_d231_landing.md`, HAS COMPLETED: commits `3dd468d978` (the §9 ruling and the
 dispatch), `b2a9fad4c9` (the D-231 edit plus the six affected artifacts and the three
 anchor-carrying register surfaces, ten paths), `1b3dc7990e` (the close) and `02636987b0` (the
 E3 run and SHAs), all pushed to `origin/master`. **The writing side verified the batch at the
@@ -11029,7 +11029,7 @@ inside the dispatch's registered set on the only self-consistent reading, and ob
 decisions register's rule (d)). Verify before you trust, as ever: at the objects, full closes,
 never summaries, proved by quotation (eighteenth-stop Ruling 15).
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_15_phase_definition_sitting.md` IN FULL**
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_15_phase_definition_sitting.md` IN FULL**
 — the sitting's nine sections: the three further vocabulary replacements (*a changed passage*
 for hunk; *the current commit* for bare HEAD; *untrusted source* for witness, with *the
 preserved pre-restructuring version* for the tree at `b006dc15b5`), the six-phase ruling with
@@ -11040,16 +11040,16 @@ supersession, the three-header adoption, and §9's ruling that landed the edit. 
 definitions' ONE home: §3 the six phases with their headers and §3.9 the retrospective, §8 the
 pruning plan (three waves plus continuous), §10 what it does not do. (3) The still-binding
 records as before, IN FULL when their subject is touched:
-`cowork_rulings_2026_08_15_batch_return.md` (its §5 presentation rule — every decision surface
-self-contained), `cowork_rulings_2026_08_15_inventory_sitting.md` (the class verdicts and first
-vocabulary set), `cowork_rulings_2026_08_13_eighteenth_stop.md`,
-`cowork_rulings_2026_08_15_method_directions.md`. (4) This block. (5)
-`cc_report_d231_landing.md` AND the batch's FULL close (the D-231 LANDING section of
-`cowork_away_returns.md`), plus `cc_report_phase_rulings_landing.md` — the first attempt's
+`records/cowork/rulings/cowork_rulings_2026_08_15_batch_return.md` (its §5 presentation rule — every decision surface
+self-contained), `records/cowork/rulings/cowork_rulings_2026_08_15_inventory_sitting.md` (the class verdicts and first
+vocabulary set), `records/cowork/rulings/cowork_rulings_2026_08_13_eighteenth_stop.md`,
+`records/cowork/rulings/cowork_rulings_2026_08_15_method_directions.md`. (4) This block. (5)
+`records/cc/reports/cc_report_d231_landing.md` AND the batch's FULL close (the D-231 LANDING section of
+`records/cowork/handoff/cowork_away_returns.md`), plus `records/cc/reports/cc_report_phase_rulings_landing.md` — the first attempt's
 STOP, whose measured six reds became §9's ground. (6) `CLAUDE.md` — its D-231 entry now
 carries the supersession at its own head. (7) `OPEN_ITEMS.md` (INDEX). **`DECISIONS.md` is
 still under the filtering ruling and is not authority.** The writing side is bound by
-`cowork_rulings_2026_08_15_session_length.md`.
+`records/cowork/rulings/cowork_rulings_2026_08_15_session_length.md`.
 
 **★ WHAT HAPPENED IN THIS SESSION.** The phase-definition surface was drafted (the eighteenth
 block's ordered act), revised once on the user's vocabulary correction (hunk / HEAD / witness)
@@ -11115,31 +11115,31 @@ blocks say about `CLAUDE.md`'s superseded D-231 truth half and the standing bars
 and is not restated here.**
 
 **★ NO BRANCH CHECK IS OWED AND YOU ARE NOT READ-ONLY.** The last dispatch,
-`cc_instruction_batch_return_rulings.md`, HAS COMPLETED: six commits (`06cc33427d` the two
+`records/cc/instructions/cc_instruction_batch_return_rulings.md`, HAS COMPLETED: six commits (`06cc33427d` the two
 records, `e1a313925e` the ignore rule, `83312c18b6` the clearing act, `0895883778` the
 printing-side fix, `7bd59e14a2` the close, `b1a44ec046` the report — the first report ever to
 land as an ordinary tracked file), all pushed to `origin/master`, its close appended to
-`cowork_away_returns.md` (the BATCH RETURN RULINGS section), one `STATUS.md` pointer entry per
+`records/cowork/handoff/cowork_away_returns.md` (the BATCH RETURN RULINGS section), one `STATUS.md` pointer entry per
 task. **The writing side verified all of it at the objects before this block was written** —
 path counts, the one-line `.gitignore` deletion, the two derived counting artifacts moving by
 exactly one line each, the row flip, the one-word printing fix — and ran
 `gen_discard_records.py --check` itself (passes). Verify before you trust, as ever: at the
 objects, full closes, never summaries, proved by quotation (eighteenth-stop Ruling 15).
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_15_batch_return.md` IN FULL** — the four
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_15_batch_return.md` IN FULL** — the four
 return rulings AND the standing presentation rule its §5 records: **every decision surface is
 self-contained — each identifier's referent re-explained from scratch in plain terms before its
 question is put; never assume the user remembers a class number, an open-items number or a
-section mark.** (2) `cowork_rulings_2026_08_15_inventory_sitting.md` IN FULL. (3)
-`cowork_rulings_2026_08_13_eighteenth_stop.md` and `cowork_rulings_2026_08_15_method_directions.md`
-IN FULL, as before. (4) This block. (5) `cc_report_batch_return_rulings.md` and the batch's FULL
+section mark.** (2) `records/cowork/rulings/cowork_rulings_2026_08_15_inventory_sitting.md` IN FULL. (3)
+`records/cowork/rulings/cowork_rulings_2026_08_13_eighteenth_stop.md` and `records/cowork/rulings/cowork_rulings_2026_08_15_method_directions.md`
+IN FULL, as before. (4) This block. (5) `records/cc/reports/cc_report_batch_return_rulings.md` and the batch's FULL
 close. (6) `ratification_surfaces/cowork_artifact_inventory_ruling_surface.md` — the ruled
 enumeration; the inventory-sitting record §3 carries the verdicts, the batch-return record §1
 the class-1 follow-up. (7) `CLAUDE.md` with the standing caveats — **read it IN FULL before
 drafting anything; the closing session deferred that read and a drafting session must not
 inherit the deferral.** (8) `OPEN_ITEMS.md` (INDEX). **`DECISIONS.md` is still under the
 filtering ruling and is not authority.** The writing side is bound by
-`cowork_rulings_2026_08_15_session_length.md`.
+`records/cowork/rulings/cowork_rulings_2026_08_15_session_length.md`.
 
 **★ WHAT HAPPENED IN THIS SESSION.** The ruled-inventory-landing batch returned and was verified
 at the objects; its three findings and one follow-up were put to the user as four self-contained
@@ -11190,29 +11190,29 @@ presentation-form correction had fired (the self-contained-surfaces rule above);
 the entry point.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE (SEVENTEENTH, 2026-08-15) — THE INVENTORY SITTING IS HELD AND EVERYTHING PUT WAS RULED: THE 122-FILE LANDING AND THE `.gitignore` RULE REMOVAL, ALL 44 CLASSES (ONE CONDITIONALLY), THE MEASUREMENT-LAYER SCOPE, THE PERIOD (STANDS, NARROW WIDTH, NAMED CARRY), AND THE GUARD CLEARING WITH ITS EXTENSION. THE ACTIVE DISPATCH IS `cc_instruction_ruled_inventory_landing.md`. (SUPERSEDED as the entry point by the eighteenth block above.)
+## ★★★★★ COWORK SESSION CLOSE (SEVENTEENTH, 2026-08-15) — THE INVENTORY SITTING IS HELD AND EVERYTHING PUT WAS RULED: THE 122-FILE LANDING AND THE `.gitignore` RULE REMOVAL, ALL 44 CLASSES (ONE CONDITIONALLY), THE MEASUREMENT-LAYER SCOPE, THE PERIOD (STANDS, NARROW WIDTH, NAMED CARRY), AND THE GUARD CLEARING WITH ITS EXTENSION. THE ACTIVE DISPATCH IS `records/cc/instructions/cc_instruction_ruled_inventory_landing.md`. (SUPERSEDED as the entry point by the eighteenth block above.)
 
 **You start clueless. Read this block first. Everything the sixteenth and fifteenth blocks say
 about `CLAUDE.md`'s superseded D-231 truth half and the standing bars REMAINS BINDING and is not
 restated here.**
 
 **★ YOUR FIRST ACT IS THE BRANCH RULE:** establish whether
-`cc_instruction_ruled_inventory_landing.md` has completed — its close appended to
-`cowork_away_returns.md`, one `STATUS.md` pointer entry per task, its commits verified at the
+`records/cc/instructions/cc_instruction_ruled_inventory_landing.md` has completed — its close appended to
+`records/cowork/handoff/cowork_away_returns.md`, one `STATUS.md` pointer entry per task, its commits verified at the
 objects by explicit hash. **If it still runs you are READ-ONLY on the repository until it
 stops.** If it has completed, VERIFY ITS REPORT AT THE OBJECTS before trusting any of it, read
 its FULL close and prove the reading by quotation (eighteenth-stop Ruling 15).
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_15_inventory_sitting.md` IN FULL** — the
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_15_inventory_sitting.md` IN FULL** — the
 sitting's rulings, INCLUDING the vocabulary replacements that now govern all plan prose
 (implementation-derived material / independent sources / fact-gate / implementation-blind
-redesign). (2) `cowork_rulings_2026_08_13_eighteenth_stop.md` and
-`cowork_rulings_2026_08_15_method_directions.md` IN FULL, as before. (3) This block. (4) The
+redesign). (2) `records/cowork/rulings/cowork_rulings_2026_08_13_eighteenth_stop.md` and
+`records/cowork/rulings/cowork_rulings_2026_08_15_method_directions.md` IN FULL, as before. (3) This block. (4) The
 active dispatch and, if returned, its report and full close. (5)
 `ratification_surfaces/cowork_artifact_inventory_ruling_surface.md` — now the RULED enumeration,
 the ruling record §3 carrying the verdicts. (6) `CLAUDE.md` with the standing caveats. (7)
 `OPEN_ITEMS.md` (INDEX). **`DECISIONS.md` is still under the filtering ruling and is not
-authority.** The writing side is bound by `cowork_rulings_2026_08_15_session_length.md`.
+authority.** The writing side is bound by `records/cowork/rulings/cowork_rulings_2026_08_15_session_length.md`.
 
 **★ WHAT HAPPENED IN THIS SESSION.** The sitting walked every awaiting decision in the
 recommended order, each presented as a full visible decision surface (restarted once on the
@@ -11259,15 +11259,15 @@ the entry point.)*
 fifteenth block says about `CLAUDE.md`'s superseded D-231 truth half, the derivation-first
 re-shape and the standing bars REMAINS BINDING and is not restated here.**
 
-**★ READ, IN ORDER:** (1) `cowork_rulings_2026_08_13_eighteenth_stop.md` IN FULL. (2)
-`cowork_rulings_2026_08_15_method_directions.md` IN FULL — the re-shaped plan's authority. (3)
+**★ READ, IN ORDER:** (1) `records/cowork/rulings/cowork_rulings_2026_08_13_eighteenth_stop.md` IN FULL. (2)
+`records/cowork/rulings/cowork_rulings_2026_08_15_method_directions.md` IN FULL — the re-shaped plan's authority. (3)
 This block, then the fifteenth below. (4)
 **`ratification_surfaces/cowork_artifact_inventory_ruling_surface.md` — the deliverable awaiting
-the user.** (5) `cc_artifact_inventory_report.md` AND the batch's FULL close in
-`cowork_away_returns.md` (the ARTIFACT INVENTORY section) — read the close, never a summary, and
+the user.** (5) `records/cc/reports/cc_artifact_inventory_report.md` AND the batch's FULL close in
+`records/cowork/handoff/cowork_away_returns.md` (the ARTIFACT INVENTORY section) — read the close, never a summary, and
 prove it by quotation (eighteenth-stop Ruling 15). (6) `CLAUDE.md` with the standing caveats.
 (7) `OPEN_ITEMS.md` (INDEX). **`DECISIONS.md` is still under the filtering ruling and is not
-authority.** The writing side is bound by `cowork_rulings_2026_08_15_session_length.md`.
+authority.** The writing side is bound by `records/cowork/rulings/cowork_rulings_2026_08_15_session_length.md`.
 
 **★ WHAT HAPPENED SINCE THE FIFTEENTH BLOCK.** The inventory batch ran whole: four commits
 (`363f935732` Task 0 — the writing-side records landed, exactly the eight named files;
@@ -11299,7 +11299,7 @@ and 7 discharge there), then the preparation acts, the pilot, the framework, the
 the audit.
 
 **★ THIS BLOCK IS UNCOMMITTED AT ITS OWN CLOSE** — the next batch's FIRST task lands it, the
-Task-0 pattern of `cc_instruction_artifact_inventory.md`, naming this file explicitly.
+Task-0 pattern of `records/cc/instructions/cc_instruction_artifact_inventory.md`, naming this file explicitly.
 
 **★ WHY THE SESSION CLOSED HERE:** under the session-length standing instruction, two
 degradation tells had fired (a summary read instead of the full close, caught by the user; and
@@ -11318,15 +11318,15 @@ the entry point.)*
 (the fourteenth block's diagnosis and its bar STAND: make no correction to any document on the
 ground that the code says otherwise).**
 
-**★ READ, IN ORDER:** (1) `cowork_rulings_2026_08_13_eighteenth_stop.md` IN FULL — still the
-diagnosis everything rests on. (2) **`cowork_rulings_2026_08_15_method_directions.md` IN FULL —
+**★ READ, IN ORDER:** (1) `records/cowork/rulings/cowork_rulings_2026_08_13_eighteenth_stop.md` IN FULL — still the
+diagnosis everything rests on. (2) **`records/cowork/rulings/cowork_rulings_2026_08_15_method_directions.md` IN FULL —
 the user's re-shaping of the whole repair, taken in conversation 2026-08-15 and carried nowhere
-else.** (3) `cowork_rulings_2026_08_15_period_start.md` — the period ruling and its two attached
+else.** (3) `records/cowork/rulings/cowork_rulings_2026_08_15_period_start.md` — the period ruling and its two attached
 checks. (4) This block. (5) `CLAUDE.md`, with the caveats above. (6)
 `tools/audit/period_stratum_split.json` and `tools/audit/july_screen_report.md` — the two checks'
 artifacts, verified at the objects. (7) `OPEN_ITEMS.md` (INDEX). **`DECISIONS.md` is still under
 the filtering ruling and is not authority.** The writing side is bound by
-`cowork_rulings_2026_08_15_session_length.md` (the degradation tells and the handover rule).
+`records/cowork/rulings/cowork_rulings_2026_08_15_session_length.md` (the degradation tells and the handover rule).
 
 **★ WHAT WAS RULED AND RUN 2026-08-15.** The restructuring period **opens EXCLUSIVE at
 `b006dc15b5`** (Alternative B, on the surface in `ratification_surfaces/`), with two checks
@@ -11353,7 +11353,7 @@ superseded by construction, closure ruling owed. Pilot on `docs/scoring_model.md
 method and size, output quarantined.
 
 **★ THE SEQUENCE AS DIRECTED:** the **ARTIFACT INVENTORY FIRST** — the active dispatch is
-**`cc_instruction_artifact_inventory.md`** (Task 0 lands the writing-side records, making the
+**`records/cc/instructions/cc_instruction_artifact_inventory.md`** (Task 0 lands the writing-side records, making the
 record handover-safe; then the derived inventory and its ruling surface) → the user rules the
 class verdicts → the phase-definition surface (discharging eighteenth-stop Rulings 6 and 7) →
 the preparation acts (register filter, rulings sort, findings ledger) → the pilot → the framework
@@ -11364,7 +11364,7 @@ UNROWED stall of `gen_guard_classification.py` since 2026-08-13 (surfaced in the
 close §1.c; needs a row or a discard-with-record). `STATUS.md` is still unreadable as a mandatory
 read ([[OI-370]]). [[OI-179]] stays OPEN and GATES.
 
-**★ WORKING RULES RE-EVIDENCED THIS SESSION:** read CC's FULL close in `cowork_away_returns.md`
+**★ WORKING RULES RE-EVIDENCED THIS SESSION:** read CC's FULL close in `records/cowork/handoff/cowork_away_returns.md`
 and PROVE it by quotation — this session worked from the chat summary once, was caught by the
 user, and the full close carried a second user decision (the width ruling) the summary had
 compressed away. Verify every CC report at the objects — the fired hunk was re-retrieved
@@ -11396,7 +11396,7 @@ instructs that *the specification text is corrected wherever it states something
 no correction to any document on the ground that the code says otherwise.** An inconsistency between
 two documents is restructuring and is in scope; anything reaching to the code waits for the audit.
 
-**★ READ, IN ORDER:** (1) **`cowork_rulings_2026_08_13_eighteenth_stop.md` IN FULL** — the day's
+**★ READ, IN ORDER:** (1) **`records/cowork/rulings/cowork_rulings_2026_08_13_eighteenth_stop.md` IN FULL** — the day's
 fifteen rulings with their grounds, and §3's list of what is *not* ruled. (2) This block. (3)
 `CLAUDE.md`, **knowing that D-231 and the phase structure are superseded and not yet rewritten.**
 (4) `tools/audit/doc_change_candidates.json` — the candidate list, with the caveat below. (5)
@@ -11426,7 +11426,7 @@ file and its result; the decisions-register filter; and whether the two `src/` c
 marked, which needs a ruling permitting a named edit.
 
 **★ WORKING RULES THIS ARC EARNED THE HARD WAY.** **Read CC's FULL close in
-`cowork_away_returns.md`, never the chat summary — and prove it** by quoting something from the
+`records/cowork/handoff/cowork_away_returns.md`, never the chat summary — and prove it** by quoting something from the
 close that was not in the summary; several of this arc's errors came from working off summaries.
 **Grep locates; it does not establish.** **Write a premise ledger for your OWN claims, not only for
 CC's** — every one of the writing side's ten errors this arc was a claim put to the user with no
@@ -11450,7 +11450,7 @@ available now, and the user's rulings on the user-blocked set. Nothing else move
 no re-classification, no derivation; that was tested and abandoned, and the ground is recorded.
 Everything else rides a scheduled event, the phase order, the `src/` freeze or the role
 separation. **The previous arc wrote twelve dispatches and moved neither of the two.** Read the
-enumeration of available acts in `cowork_away_returns.md` (the Task 2 section headed *the
+enumeration of available acts in `records/cowork/handoff/cowork_away_returns.md` (the Task 2 section headed *the
 enumeration, published at the artifact's own field values*) and the user-blocked set at
 `tools/audit/gating_row_sizing.json`, and work those. **If you find yourself writing a dispatch
 about whatever the last report contained, stop and ask where it sits in this order.**
@@ -11460,7 +11460,7 @@ WORTH TEST**, which is the rule that governs whether a finding becomes anything 
 open-items register's non-gating declaration now carries **D-676**, an apparatus row stops being
 owed. (2) `DECISIONS.md` (INDEX). (3) `OPEN_ITEMS.md` (INDEX). (4)
 `tools/audit/phase1_finish_line.json` and `tools/audit/gating_row_sizing.json` at HEAD.
-(5) `cowork_away_returns.md` from the STOP-record section to the end. (6) `STATUS.md`'s top
+(5) `records/cowork/handoff/cowork_away_returns.md` from the STOP-record section to the end. (6) `STATUS.md`'s top
 entries — **and note it cannot be read in full; that is [[OI-370]], open and gating.**
 
 **★ WHAT CHANGED, AND IT IS A RATE CHANGE RATHER THAN A DRAIN.** Four user rulings:
@@ -11524,8 +11524,8 @@ awaits the user is superseded entirely.)*
 
 **You (the next session) start clueless — this block is your boot; no population is restated
 here by design (D-431); every figure is an artifact you read at HEAD. Your first act is NOT a
-branch check: `cc_instruction_return_continuation_14.md` HAS COMPLETED — five commits, tip
-`e263aa9174`, pushed to `origin/master`, its close appended to `cowork_away_returns.md`.
+branch check: `records/cc/instructions/cc_instruction_return_continuation_14.md` HAS COMPLETED — five commits, tip
+`e263aa9174`, pushed to `origin/master`, its close appended to `records/cowork/handoff/cowork_away_returns.md`.
 Nothing is running. You are not read-only.**
 
 **Read, in order:** (1) `CLAUDE.md` IN FULL — it gained Ruling 64's conditional read (any
@@ -11616,8 +11616,8 @@ the fourteenth continuation as ACTIVE is superseded: it has completed and been v
 
 **You (the next session) start clueless — this block is your boot; no figure appears here by
 design (D-431); every population is an artifact you read at HEAD. Your first act: establish
-whether `cc_instruction_return_continuation_14.md` has completed (its per-task STATUS
-pointer entries; its close appended to `cowork_away_returns.md`); if it still runs you are
+whether `records/cc/instructions/cc_instruction_return_continuation_14.md` has completed (its per-task STATUS
+pointer entries; its close appended to `records/cowork/handoff/cowork_away_returns.md`); if it still runs you are
 READ-ONLY on the repository until it stops.**
 
 **Read, in order:** (1) `CLAUDE.md` IN FULL — since the tenth block it gained, all
@@ -11634,9 +11634,9 @@ arc's Cowork side are recorded as correction notes on the ruling records). (3)
 `tools/audit/phase1_finish_line.json` at HEAD — THE SCOPE. (5) `STATUS.md` top entries.
 (6) **`cowork_phase1_commissioning_surface_2026_08_11.md`** — the deliverable this arc
 walked to: everything between HEAD and the completion statement, grouped by whose act each
-needs, sized per row. (7) `cowork_away_returns.md` END TO END — the whole program's
-returns file. (8) The FOURTEEN ruling records (`cowork_rulings_2026_08_09_return.md`
-through `cowork_rulings_2026_08_11_fourteenth_stop.md`, WITH their correction notes) —
+needs, sized per row. (7) `records/cowork/handoff/cowork_away_returns.md` END TO END — the whole program's
+returns file. (8) The FOURTEEN ruling records (`records/cowork/rulings/cowork_rulings_2026_08_09_return.md`
+through `records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md`, WITH their correction notes) —
 read whole when a task touches their subject (D-643); their register entries land via the
 registration queue (`ratification_surfaces/cowork_ruling_registration_queue_2026_08_09.md`),
 whose extensions the user rules sitting by sitting. (9)
@@ -11692,14 +11692,14 @@ anything from it; its state is three arcs stale.)*
 ---
 ## ★★★★★ COWORK SESSION CLOSE 2026-08-08 (TENTH) — THE FINISH LINE'S ITEM 1 IS SUBSTANTIALLY EXECUTED UNDER A DAY OF USER RULINGS; THE AWAY BATCH RUNS WITH THE USER ABSENT; EIGHT PREPARED SURFACES AWAIT THE RETURN STOP. (SUPERSEDED as the entry point by the block above.)
 
-**You (the next session) start clueless — this block plus `cowork_instruction_return_session.md`
+**You (the next session) start clueless — this block plus `records/cowork/instructions/cowork_instruction_return_session.md`
 are the entire handover. No figure appears here by design (D-431); every population is an
 artifact you read at HEAD. Your first act: the BRANCH RULE in that instruction file — establish
-whether `cc_instruction_away_execution.md` has completed (its batch summary in
-`cowork_away_returns.md`; one `STATUS.md` pointer entry per task); if it still runs you are
+whether `records/cc/instructions/cc_instruction_away_execution.md` has completed (its batch summary in
+`records/cowork/handoff/cowork_away_returns.md`; one `STATUS.md` pointer entry per task); if it still runs you are
 READ-ONLY on the repository until it stops.**
 
-**Read, in order:** (1) `cowork_instruction_return_session.md` IN FULL — your program, tasks
+**Read, in order:** (1) `records/cowork/instructions/cowork_instruction_return_session.md` IN FULL — your program, tasks
 1–6. (2) `CLAUDE.md` IN FULL — since the ninth block it gained, among much else: the D-253
 clause covering EVERY read mechanism and dialect (both assistants' breaches recorded, the
 Cowork sandbox instance self-reported at the user's challenge); gate block (A)'s further homed
@@ -11712,7 +11712,7 @@ the C1-reach ruling all live as process entries in `cowork_audit_protocol.md`'s
 dispatch-protocol section). (4) `OPEN_ITEMS.md` (INDEX). (5)
 `tools/audit/phase1_finish_line.json` at HEAD — THE SCOPE, regenerated by the batch; carry
 nothing about its populations from any prose. (6) `STATUS.md` top entries. (7)
-`cowork_away_returns.md` END TO END. (8) The five ruling records of 2026-08-07/08 (named in
+`records/cowork/handoff/cowork_away_returns.md` END TO END. (8) The five ruling records of 2026-08-07/08 (named in
 the instruction file) — the day's rulings live there and in the register, not in memory.
 
 **★ WHAT THIS ARC DID (verify everything at the objects, carry no figure).** Four ruled
@@ -11725,7 +11725,7 @@ delegations, re-homed the route-(ii) documents (D-601 held for licence, then rul
 OI-331 (the bounded-context proxy clause struck, D-622 superseding), OI-333, OI-336, OI-342,
 OI-344 by user rulings, and pushed everything committed to `origin` (`bd3a608…`, `d1891db1…`,
 `03bce02e…`, then one commit per batch task). **In flight at close: the away batch** —
-`cc_instruction_away_execution.md` (tasks: the OI-305 epoch treatment unblocking the six
+`records/cc/instructions/cc_instruction_away_execution.md` (tasks: the OI-305 epoch treatment unblocking the six
 generators; the guard FAMILY design with OI-351 folded in; the archive-unhomed eleven +
 D-601; the defense-gap searches; the reach derivation; the remaining re-homes; the
 session-executable gating rows; the OI-349 read-only conformance probe; the OI-346 marks) —
@@ -11831,7 +11831,7 @@ Verify every CC report **at the objects** — run the guards yourself, read the 
 **Never bash to read working-tree files** (D-253); the shell-read guard is armed but has a measured
 false-negative — any pipe inside a quoted argument defeats it (**OI-343**, being fixed now).
 
-**★ THE ACTIVE DISPATCH is `cc_instruction_guard_fix_and_item1d.md`** — fix the shell-read guard with
+**★ THE ACTIVE DISPATCH is `records/cc/instructions/cc_instruction_guard_fix_and_item1d.md`** — fix the shell-read guard with
 its establishment corpus extended **before** any rate is republished; record and apply **R2** (a
 superseded decision whose content is a REMOVAL: the owning specification states current behaviour and
 records the removal as tried-and-closed, the precedent being `ARCHITECTURE.md` §5.2 / D-058); re-cut
@@ -11927,8 +11927,8 @@ the test-gap list), **OI-237/OI-240** (the homing acts phase 1 executes), **OI-2
 for the 6,374-cluster residual second pass), and the struck-vs-sounding family rows
 (OI-215/226/227/228 — fix DEFERRED, now behind phases 1–2 by the sequencing rule). (4) `STATUS.md`
 (the two 2026-08-02 entries). (5) The active dispatches, in order:
-**`cc_instruction_spec_completion.md`** (phase 1a homing + 1b truth-sync) then
-**`cc_instruction_oi207_residual_pass.md`** (phase 1c). Verify every CC report at the objects
+**`records/cc/instructions/cc_instruction_spec_completion.md`** (phase 1a homing + 1b truth-sync) then
+**`records/cc/instructions/cc_instruction_oi207_residual_pass.md`** (phase 1c). Verify every CC report at the objects
 (SHAs + fresh reads + the guards re-run: `gen_decisions_register.py --check`,
 `gen_cluster_dispositions.py --verify`, `tools/open_items_split_check.py`).
 
@@ -11961,7 +11961,7 @@ run every guard explicitly at the committed tree). Anchor-remap discipline: any 
 *(The six earlier blocks below are the 2026-07-28 arc's record — kept for provenance.)*
 
 ---
-## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (SIXTH) — THE CONFORMANCE-ADJUDICATION ARC IS FULLY PREPARED AND **THE OI-207 ADJUDICATION IS IN FLIGHT** (the higher-capacity session, dispatch `cc_instruction_oi207_adjudication.md`). (SUPERSEDED as the entry point by the block above.)
+## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (SIXTH) — THE CONFORMANCE-ADJUDICATION ARC IS FULLY PREPARED AND **THE OI-207 ADJUDICATION IS IN FLIGHT** (the higher-capacity session, dispatch `records/cc/instructions/cc_instruction_oi207_adjudication.md`). (SUPERSEDED as the entry point by the block above.)
 
 **You (the next session) start clueless — this block is the entire handover.** Read, in order:
 (1) `CLAUDE.md` IN FULL — it gained THREE Conventions entries this arc, all user-directed
@@ -11977,7 +11977,7 @@ carries the user's RATIFIED register shape), OI-228, OI-215/226/227, OI-229, OI-
 OI-210, OI-212, OI-199, OI-206**; (3) this block, then the five earlier 2026-07-28 blocks below
 (the day's full arc: OI-206 diagnosis → cost profile → OI-215 → OI-199 pass 1 → the fire-count
 answer → the harvest/clustering preparation); (4) the active dispatch
-`cc_instruction_oi207_adjudication.md` — read it IN FULL before touching anything it owns.
+`records/cc/instructions/cc_instruction_oi207_adjudication.md` — read it IN FULL before touching anything it owns.
 
 **★ WHERE THE PROJECT STANDS.** The joint estimator is production on both surfaces (the 2026-07-27
 switch). The live defect family: **the decoder reads STRUCK notes where the design says SOUNDING**
@@ -12021,7 +12021,7 @@ mechanically via the cluster partition: every cluster reaches ONE recorded dispo
 not-a-decision / boilerplate / no-spec-home / unresolved — unresolved PERMITTED and wanted), bulk
 rules stated with counts, completeness checked by arithmetic against 14,460.
 
-**★ THE ADJUDICATION IN FLIGHT (`cc_instruction_oi207_adjudication.md`).** Method
+**★ THE ADJUDICATION IN FLIGHT (`records/cc/instructions/cc_instruction_oi207_adjudication.md`).** Method
 SPECIFICATION-FIRST, not harvest-first — the harvest cannot see decisions written as plain
 specification (three load-bearing ones are known-absent: the priority-of-evidence ranking
 `ARCHITECTURE.md:3134-3141`, the slicer boundary rule `:1045`, the piece-start shortcut
@@ -12071,7 +12071,7 @@ session-start read (the OI-222 remedy — STATUS carries a pointer, content live
 artifacts).
 
 *(The five earlier 2026-07-28 blocks below are the day's running record — kept for provenance;
-they move to `cowork_handoff_archive.md` at the next doc split.)*
+they move to `records/cowork/handoff/cowork_handoff_archive.md` at the next doc split.)*
 
 ---
 ## ★★★★★ COWORK SESSION CLOSE 2026-07-28 (FIFTH) — OI-215 IS **NOT** ALONE; AND THE EMISSION ITSELF READS STRUCK NOTES WHERE THE RATIFIED SPEC SAYS PER TONE. (SUPERSEDED as the entry point by the block above.)
@@ -12125,7 +12125,7 @@ session, that doing so means reading every ratified decision, shelving and exclu
 across two archives and the design corpus and checking each against the code, and that claiming
 completeness would be overreach. What runs NOW is its preparation.
 
-**★ THE ACTIVE DISPATCH is `cc_instruction_decision_harvest.md`** — mechanical, read-only,
+**★ THE ACTIVE DISPATCH is `records/cc/instructions/cc_instruction_decision_harvest.md`** — mechanical, read-only,
 **NO adjudication**: extract every decision-bearing statement across both archives, every
 `cowork_*` document, `CLAUDE.md`, `ARCHITECTURE.md`, `docs/`, the register, the `cc_*` reports
 **and production code comments** (the 44-line Stage-3.1b block in `notationcomposingbridge.cpp`
@@ -12200,7 +12200,7 @@ only.
 (1) `CLAUDE.md` IN FULL; (2) `OPEN_ITEMS.md` (INDEX), opening at minimum **OI-215, OI-216…OI-223,
 OI-199, OI-209, OI-210, OI-206, OI-110, OI-89, OI-100, OI-84, OI-207**; (3) this block, then the
 three earlier 2026-07-28 blocks; (4) the method precedent this arc is measured against —
-`cc_l4_audit_pass1_decoder_report.md` and `tools/audit/l4/`; (5) `docs/p3_granularity_ab_3_1b.md`
+`records/cc/reports/cc_l4_audit_pass1_decoder_report.md` and `tools/audit/l4/`; (5) `docs/p3_granularity_ab_3_1b.md`
 and `cowork_architecture_review_2026_07.md` §7.
 
 **★ TWO PROCESS FAILURES, AND ONE OF THEM IS COWORK'S.** (1) **The blinding was defeated by
@@ -12241,7 +12241,7 @@ basis was incomplete; designing a fix around a single instance without knowing w
 siblings is what that principle forbids. **No fix may be designed until the family is
 enumerated.**
 
-**★ THE ACTIVE DISPATCH is `cc_instruction_oi199_joint_p3_p4.md`** (user-ratified, amended
+**★ THE ACTIVE DISPATCH is `records/cc/instructions/cc_instruction_oi199_joint_p3_p4.md`** (user-ratified, amended
 alternative 2 — dispositions NOT redone, the two arms completed). Per-branch and per-filter fire
 counts under the OI-110 disposition (default-OFF, byte-identity proven, REVERTED at close, hash
 recorded) over **BOTH** the fit corpus **and the 23 committed large scores** — the first time this
@@ -12331,7 +12331,7 @@ decided by MEASUREMENT, not estimate** (alternative 2) — both prior large audi
 stop at Task 1 and partitioned on measured counts, so guessing the partition is the thing
 precedent says does not work.
 
-**★ THE ACTIVE DISPATCH is `cc_instruction_oi199_pass1.md`** — the blind enumerative pass 1: the
+**★ THE ACTIVE DISPATCH is `records/cc/instructions/cc_instruction_oi199_pass1.md`** — the blind enumerative pass 1: the
 mechanical inventory across all four OI-199 areas (joint module / record path and seams / codegen
 / new instruments) with **the legacy arm excluded by construction** (OI-84's A1: retiring code
 gets no audit, only the #12 check at deletion); a **feasibility stop with a partition proposal as
@@ -12447,7 +12447,7 @@ know factually which parts of the inference must be switchable.** The user's rec
 verbatim, entered as a #17(b) band to be checked and not confirmed: *"always read the entire score
 will VERY likely not survive (maybe only under some effort setting = EXTREME)."*
 
-**★ THE ACTIVE DISPATCH is `cc_instruction_analysis_cost_profile.md`** (read-only; user-ratified
+**★ THE ACTIVE DISPATCH is `records/cc/instructions/cc_instruction_analysis_cost_profile.md`** (read-only; user-ratified
 plan and score set). It commits the 23 large scores the user supplied under `"tools/extra
 scores/large/"` with measured event and staff counts and per-file licence (plus an explicit
 `*.mscz binary` rule and a byte-identity round-trip check — this repo has been bitten twice by
@@ -12558,10 +12558,10 @@ the MAP does not proceed over unknown contradictions) and **OI-208** (the DECISI
 proposal — the OPEN_ITEMS pattern for rulings; shape awaits user ratification). (4) The
 marginals arc is half-delivered: the Python reference's oracle PASSES on all 326 (OI-193's
 publication gate established); the C++ half is a queued follow-up with Cowork's dated
-logsumexp ruling on `cc_instruction_marginals.md` (bit-identity first; drift =
+logsumexp ruling on `records/cc/instructions/cc_instruction_marginals.md` (bit-identity first; drift =
 STOP-and-characterize).
 
-**★ IN FLIGHT AT SESSION CLOSE: CC is executing `cc_instruction_oi206_investigation.md`**
+**★ IN FLIGHT AT SESSION CLOSE: CC is executing `records/cc/instructions/cc_instruction_oi206_investigation.md`**
 (read-only, fix-free): Task 1 the call-path confirmation (which selection kinds reach the
 funnel; produce-calls per event; synchronicity; no re-trigger loop; the field pattern
 reproduced by code facts); Task 2 the windowed-vs-whole-piece decode study FOR A (nested-span
@@ -12590,7 +12590,7 @@ tests pin flags explicitly (production gets defaults via module onInit). CC's po
 machine shutdowns remain user-authorized.
 
 *(The 2026-07-26 block below is this arc's detailed running record — kept for provenance; it
-moves to `cowork_handoff_archive.md` at the next doc split.)*
+moves to `records/cowork/handoff/cowork_handoff_archive.md` at the next doc split.)*
 
 ---
 ## ★★★★★ COWORK SESSION CLOSE 2026-07-26 — THE JOINT ESTIMATOR: DESK-SIMULATED, GATED, FITTED, BUILT, MEASURED, AND **ADOPTION USER-RATIFIED**. (SUPERSEDED 2026-07-28 as the entry point — this arc's running record follows.)
@@ -12605,7 +12605,7 @@ WITH its dated amendments: factor granularity, the below-threshold rule, the tie
 `cowork_prefit_gates.md` (the four protocols WITH the dated amendments: weight cap ≤ 14, the
 L1-extension sanction widening, the ★R=A1 adoption-condition amendment),
 `cowork_factorization_desk_simulation.md` and `cowork_sensitive_cell_probe.md` (the ratified
-paper stages), and `cc_adoption_measurement_report.md` + `tools/joint_estimator/adoption_record*`
+paper stages), and `records/cc/reports/cc_adoption_measurement_report.md` + `tools/joint_estimator/adoption_record*`
 (the measured basis of the adoption ruling).
 
 **★ THE HEADLINE.** The joint estimator (the 2026-07-17 architecture decision) went from paper to
@@ -12663,7 +12663,7 @@ completion rowed **OI-193**; (C1) two-mode key + the published un-rounded modal 
 INSIDE the increment, ornament labels their OWN increment, rowed **OI-194** (BCMH validation
 resource not on disk). Rows OI-193/OI-194 are on disk at ruling time (register rule (c)), riding
 the next commit with this entry and the ratified decision doc. **THE ACTIVE DISPATCH is
-`cc_instruction_notation_consumption_audit.md`** — Task 0 the ratification commit (CLAUDE.md
+`records/cc/instructions/cc_instruction_notation_consumption_audit.md`** — Task 0 the ratification commit (CLAUDE.md
 corollary + the riding Cowork edits), then the READ-ONLY notation consumption-surface audit
 (§8.1 of the decision doc: every consumed field of the legacy region stream with file:line →
 declared source on A's surface or declared retirement; the exotic-`KeySigMode` consumer list; the
@@ -12706,7 +12706,7 @@ pitch classes (L1 facts). After ratification: the build dispatches (record + tab
 behind the default-OFF driver first).
 
 **★ THE CONTRACT IS USER-RATIFIED (2026-07-26, as specified, no amendments) AND THE BUILD ARC
-OPENS.** The ACTIVE dispatch is **`cc_instruction_joint_table_codegen.md`** — Task 0 the second
+OPENS.** The ACTIVE dispatch is **`records/cc/instructions/cc_instruction_joint_table_codegen.md`** — Task 0 the second
 ratification-record commit (the P1/§10 edits + the ratified contract + the sharpened OI-194 row
 + this handoff block), then Decision D1 executed: the five table artifacts + the selected weight
 vector embedded VERBATIM (JSON bytes + sha256 hashes) as generated source in the joint module,
@@ -12728,7 +12728,7 @@ WORKING-TREE checkout form, not the git-canonical LF blobs (blob 114,787 vs embe
 in a `src/` generated file; #16). NO inference impact (JSON parse is line-ending-insensitive;
 every establishment check passed). Fix = LF-normalize at the generator, regenerate, normalize
 the guard's file side — Task 1 of the ACTIVE dispatch. **THE ACTIVE DISPATCH is
-`cc_instruction_posterior_slice.md`:** Task 1 the OI-195 fix (own commit, carries the riding
+`records/cc/instructions/cc_instruction_posterior_slice.md`:** Task 1 the OI-195 fix (own commit, carries the riding
 Cowork rows/handoff edits, flips OI-195); Task 2 the Python posterior-slice reference instrument
 (full key-list + chord-class-list content scores per committed segment, established against the
 committed probe artifact's runner-up/gap slice); Task 3 the C++ slice on the module surface
@@ -12769,7 +12769,7 @@ contract needs the dated amendment (full-list, presentation subsets downstream) 
 build must truncate — the user's call, surface presented in chat. **RULED: option 1 (user,
 2026-07-26)** — the contract §3.3 now carries the dated FULL-LIST amendment (both axes; no
 truncation constant; top-N/gap-window excluded with ledger rationale). **THE ACTIVE DISPATCH is
-`cc_instruction_notation_record_assembly.md`:** Task 0 the ratification-record commit (the
+`records/cc/instructions/cc_instruction_notation_record_assembly.md`:** Task 0 the ratification-record commit (the
 amended contract + this handoff); then the record assembly — the formatter primitives
 single-sourced into the joint module (batch re-pointed, corpus byte-identity the establishment),
 the §3.1/§3.2 record struct with the derived chord facts (fifths mapping reused, member/factor
@@ -12797,7 +12797,7 @@ spelling establishment is PARTIAL — the corpus figure is Python-side; a lof-ex
 corpus parity is OWED BEFORE THE SWITCH). §3.1 note: the adapter exposes only the initial
 signature, so the re-anchor list is empty — recorded, consistent with the fitted corpus
 behavior (multi-signature pieces were a flagged small population at the fit). **THE ACTIVE
-DISPATCH is `cc_instruction_notation_seams_1.md`:** Task 0 the rows commit; Task 1 the OI-197
+DISPATCH is `records/cc/instructions/cc_instruction_notation_seams_1.md`:** Task 0 the rows commit; Task 1 the OI-197
 lof-exact parity (flips the row or STOPs); Task 2 the record-producing entry — the joint
 module's one-call score→record producer (adapter → embedded decode → assembly) + the span view
 and the note-seam tick lookup (containing segment, `startTick <= t < endTick`), dormant,
@@ -12813,7 +12813,7 @@ nonzero exit); the C++ mapping inherits the Python-side corpus establishment. Th
 raw-DOM read) + span view (overlap semantics) + note view (half-open containment) delivered
 dormant with 5 tests incl. edge duties (empty span; out-of-span tick; adapter failure → whole-
 record failure state, never partial). Suites 1174/53/11 green. **THE ACTIVE DISPATCH is
-`cc_instruction_notation_seams_2.md` — the LAST pre-switch increment:** the consumer re-plumb
+`records/cc/instructions/cc_instruction_notation_seams_2.md` — the LAST pre-switch increment:** the consumer re-plumb
 behind an internal default-OFF configuration flag (both paths compiled; flag OFF byte-identical
 per commit) — section layer + span-path composing bridge, implode + tuning (with the §4.1
 DECLARED presentation constants on the gap scale, values chosen by measured correspondence to
@@ -12834,7 +12834,7 @@ layer/gate, STATUS (authoritative HERE ONLY), and the link to a per-item detail 
 doc-split discipline). Detail files carry narrative/provenance, never a status line (the
 two-place drift killer); rule (c) becomes index-row + detail-file in the discovery commit;
 CLAUDE.md's register section amends in the same commit (the user's ratification here is the
-lawful path). Cowork writes `cc_instruction_open_items_split.md` when seams 2 lands. **RESCHEDULED (user,
+lawful path). Cowork writes `records/cc/instructions/cc_instruction_open_items_split.md` when seams 2 lands. **RESCHEDULED (user,
 2026-07-26, mid-P3): the split runs as the NEXT CC session after the P3 report verifies,
 BEFORE P4** — the concurrency concern was the real one, not order; P4's OI-182 edit then
 happens in the new index+detail structure, and the seams-2 dispatch gets a dated note to that
@@ -12851,7 +12851,7 @@ presented in chat; amendment 6 on ruling): (1) Nashville is a record-path public
 (legacy published it via three consumers; the record publishes none); (2) the record's
 `chordSymbol` is the GRADING form ("GMaj"/"GDom7"), not a display-idiomatic, spelling-aware
 form. Until ruled: record arm writes no Nashville; emitters keep the current form. **ORDER:
-the register split (`cc_instruction_open_items_split.md`, WRITTEN, the next CC session) →
+the register split (`records/cc/instructions/cc_instruction_open_items_split.md`, WRITTEN, the next CC session) →
 P-strings (amendment 6, post-ruling) → P4 (bucket + OI-182, in the NEW register shape) → the
 merged note-seam unit → P6 → P7.**
 
@@ -12875,7 +12875,7 @@ the lean INDEX (status authoritative HERE only); every item's full narrative liv
 `open_items/OI-<n>.md`; CLAUDE.md's register section carries the amended rules (dated,
 user-ratified); the reconciliation instrument `tools/open_items_split_check.py` is permanent.
 The mixed-state rows' condensations kept BOTH operative states (verified faithful). ALL future
-row work targets index row + detail file. **NEXT: hand `cc_instruction_notation_seams_2.md`
+row work targets index row + detail file. **NEXT: hand `records/cc/instructions/cc_instruction_notation_seams_2.md`
 back to CC — it resumes at P-strings (amendment 6) from HEAD `1e32b5e92e`** (the riding
 Cowork edits now: `cowork_notation_output_contract.md` (the presentation-derivations amendment,
 correctly left unstaged by the split) + this handoff block). Then P4 → merged note-seam →
@@ -12893,7 +12893,7 @@ new register shape):** the aug-sixth display symbol renders as the coarse major 
 vocabulary collapsed the family; the It/Ger/Fr character reaches the reader via the Roman only)
 — a presentation-completeness gap for P6's catalogue, resolution at its #8-correct stage.
 P6-catalogue sibling noted by Cowork: the applied-chord Nashville "?" convention (legacy's own,
-continuity-preserved). **THE ACTIVE DISPATCH is `cc_instruction_notation_p4.md`** (fresh-file
+continuity-preserved). **THE ACTIVE DISPATCH is `records/cc/instructions/cc_instruction_notation_p4.md`** (fresh-file
 pattern): implode + tuning record paths, the exposure-bucket unification on the gap scale
 (tentative constant from the committed artifact at full precision), the C1 two-mode rule at the
 implode labels, `kSameChordReannotationGap` re-homed unchanged, **OI-182 EXECUTES** (index row +
@@ -12910,7 +12910,7 @@ carried: the split-check false-fails on post-split items (frozen baseline)** —
 as Task 1 of the ACTIVE dispatch (OI-202, created-and-resolved, the OI-195 pattern; the
 instrument gains a LIVING mode — bijection + no-status-in-detail for all items, verbatim
 reconciliation kept for the original 200; `split_reconciliation.json` stays the historical
-record). **THE ACTIVE DISPATCH is `cc_instruction_notation_noteseam.md`** — the ratified
+record). **THE ACTIVE DISPATCH is `records/cc/instructions/cc_instruction_notation_noteseam.md`** — the ratified
 MERGED note-seam unit: the `NoteHarmonicContext` record-arm carriage built ONCE (committed +
 §3.3 alternatives through the ONE `chordResultFromRecordSegment` converter; `keyConfidence` =
 raw nats gap documented; pedal suspended; window-cache disposition honest — bypass-with-note
@@ -12928,7 +12928,7 @@ whole-score decode per interactive query; cache deferred measured-then-built pos
 a switch blocker) **and OI-204** (the record producer lacks `excludeStaves` input scoping —
 Cowork RAISED CC's classing: the legacy exclusion guards against consuming the imploded chord
 track's own notes, so the record arm carries a SELF-FEEDBACK hazard in the in-app implode
-case; **a PRE-SWITCH gate**, #18). **THE ACTIVE DISPATCH is `cc_instruction_notation_p6.md`:**
+case; **a PRE-SWITCH gate**, #18). **THE ACTIVE DISPATCH is `records/cc/instructions/cc_instruction_notation_p6.md`:**
 Task 1 the OI-204 producer input-scoping fix (layer-correct at the producer/adapter; empty-set
 byte-identity + populated-chord-track fixture establishment; row flips); then the dual-arm
 capture instrument (both arms, full surface, snapshot corpus, deterministic) and the CLASSIFIED
@@ -12944,7 +12944,7 @@ arm-for-arm). **THE SWITCH EVIDENCE EXISTS:** the dual-arm classified report
 (`tools/notation_seams/dualarm_classified_report.json`, deterministic capture sha256-proven) —
 **identical 2053 / inference-driven 6029 / presentation-rule 220 (every one rule-cited: C1 86,
 ordering 74, Nashville-"?" 52, §4.1 gates 5, pedal 3) / input-scoping 0 (as predicted) /
-UNEXPLAINED 0.** **THE ACTIVE DISPATCH is `cc_instruction_notation_p7.md`** — the partition
+UNEXPLAINED 0.** **THE ACTIVE DISPATCH is `records/cc/instructions/cc_instruction_notation_p7.md`** — the partition
 close-out: read-only completeness verification (every consumer's record branch cited; every
 ruling grep-verified incl. the raw-gap rule; every seams-era row state checked; a gap =
 FINDING/STOP, repaired nowhere) + the ARCHITECTURE/STATUS consolidation. AFTER ITS REPORT:
@@ -12960,7 +12960,7 @@ THE SWITCH DECISION SURFACE IS PRESENTED TO THE USER (in chat, this session) —
 ratified commit; on ratification Cowork writes the switch dispatch.**
 
 **★★ THE SWITCH IS USER-RATIFIED (2026-07-27).** The ACTIVE dispatch is
-**`cc_instruction_notation_switch.md`** — ONE revertible, provenance-stamped commit: the flag
+**`records/cc/instructions/cc_instruction_notation_switch.md`** — ONE revertible, provenance-stamped commit: the flag
 default flips ON; the pipeline-snapshot goldens refresh (verified-correct precondition: the
 establishment chain + the P6 classified report + this ratification, cited in the commit body;
 **a golden diff class NOT explained by the P6 catalogue is a STOP**); tests disposed per kind
@@ -12998,7 +12998,7 @@ then OI-205(b) + OI-198/OI-199/OI-200; then the inference era (OI-192 first in q
 prioritized by OI-200's output).**
 
 **★ THE POST-SWITCH ARC OPENS (user "go", 2026-07-27). THE ACTIVE DISPATCH is
-`cc_instruction_marginals.md`** — post-switch increment 1, ordered by Cowork: Task 1 the
+`records/cc/instructions/cc_instruction_marginals.md`** — post-switch increment 1, ordered by Cowork: Task 1 the
 OI-203 latency MEASUREMENT (read-only; the live-pain item measured first per
 measure-before-build; the cache DESIGN returns to Cowork with the numbers), then **OI-193 —
 the contract's group (ii) full forward-backward marginals**: the Python reference over the
@@ -13045,7 +13045,7 @@ record fields) partitioned to a follow-up. **Cowork's logsumexp ruling (dated am
 the marginals dispatch): bit-identity FIRST** (the 2026-07-25 record: `std::log` == Python
 bit-for-bit on this platform; same operation order + Neumaier); a residual drift is
 STOP-and-characterize, never a self-ratified tolerance. **THE ACTIVE DISPATCH is
-`cc_instruction_oi206_investigation.md`** (read-only, before any fix): Task 1 the call-path
+`records/cc/instructions/cc_instruction_oi206_investigation.md`** (read-only, before any fix): Task 1 the call-path
 confirmation (which selection kinds invoke the funnel; produce-calls per event; synchronous;
 no loop; the field pattern reproduced by code facts); Task 2 the windowed-vs-whole-piece
 decode study — the 3.1b transfer question measured FOR A: per-query stability curves over
@@ -13076,7 +13076,7 @@ restructure = a design decision surface (candidate: the register split's index+s
 pattern), timed by the ratified restructure-once lesson — AFTER the OI-180 map's deletions
 settle, BEFORE the OI-198/199/200 reviews consume it.
 
-**★ REGISTER SPLIT DELIVERED (CC, 2026-07-26; dispatch `cc_instruction_open_items_split.md`).**
+**★ REGISTER SPLIT DELIVERED (CC, 2026-07-26; dispatch `records/cc/instructions/cc_instruction_open_items_split.md`).**
 The register is now the lean INDEX `OPEN_ITEMS.md` (the authoritative status surface, 200 rows,
 ~76 KB — the render problem is gone) + one verbatim detail file per item under `open_items/OI-<n>.md`
 (narrative/provenance only, never a status of record). The split is byte-reconciled: every
@@ -13132,7 +13132,7 @@ handoff, verified):** CC de-risked the adapter instead of rushing it at session 
 `jointOursQuality` map (reuse, #6); `rootTpc = rootSpellingLof + Tpc::TPC_C`. Open at
 implementation: degree string→int, the composing-side per-span tone collector, rootPc/bassPc
 sourcing — all in the STATUS resume note. **Cowork's ruling: P2b runs in a FRESH CC session**,
-same dispatch (`cc_instruction_notation_seams_2.md`), resume at P2b from HEAD `493dc8ca35`.
+same dispatch (`records/cc/instructions/cc_instruction_notation_seams_2.md`), resume at P2b from HEAD `493dc8ca35`.
 
 **★ P2b DELIVERED AND COWORK-VERIFIED (2026-07-26; `d25cf40170` adapter + `3acc8e141c` STATUS,
 verified at the objects — `analyzeSectionFromRecord`, the shared `groupKeyAreas` extraction
@@ -13183,7 +13183,7 @@ The never-bash-for-local-files rule held all arc; git object reads by explicit S
 sanctioned bash use.
 
 *(The 2026-07-19 block below is this arc's detailed running record — kept for provenance; it
-moves to `cowork_handoff_archive.md` at the next doc split, per the standing pattern.)*
+moves to `records/cowork/handoff/cowork_handoff_archive.md` at the next doc split, per the standing pattern.)*
 
 ---
 ## ★★★★★ COWORK SESSION CLOSE 2026-07-19 — THE DESIGN PASS IS DONE: THEORY GROUNDED, FIVE DECISIONS + THE FACTORIZATION SPECIFICATION USER-RATIFIED. (SUPERSEDED 2026-07-26 as the entry point — this arc's running record follows.)
@@ -13258,7 +13258,7 @@ unaffected), with the WiR m0 pickup label systematically displaced (beat−1)·4
 pieces and 7 pieces carrying >2pp LOCAL misalignment (incl. bwv110.7 — desk-sim §4.5 resolved as
 local)**; OI-184 flipped ✅ with consequences on the row (pickup-aware count extraction at the
 fit-event layer; the 7 flagged pieces; the deferred substrate-correction option). **The fit event part 1 (label-side tables) is DELIVERED and Cowork-verified at the artifacts**
-(`c7094c71b3`; report `cc_label_table_fit_report.md`, untracked): six tables fit per training fold +
+(`c7094c71b3`; report `records/cc/reports/cc_label_table_fit_report.md`, untracked): six tables fit per training fold +
 all-326 under the ratified protocols — capacity PASS 19× over the bound (581 params, tokens/param
 186–213), exact count reconciliation, byte-reproducible, the §4.3 sensitive cells disposed as the
 desk sim anticipated (three pooled at <20; two count deltas explained by the finer OI-186(a)
@@ -13278,7 +13278,7 @@ with the minor leading-tone ≫ subtonic contrast (.0753 vs .0355); the event-le
 denominator superseding-for-A part 1's grid variant (sub-tactus .307 vs .066); template mapping
 established 99.94 % vs the music21 oracle; combined capacity PASS ~38× over the bound (666 params /
 294,930 tokens all-326); hand-checks reproduce the desk-sim segments). Reports:
-`cc_label_table_fit_report.md`, `cc_note_table_fit_report.md` (untracked). The GT-jitter caveat
+`records/cc/reports/cc_label_table_fit_report.md`, `records/cc/reports/cc_note_table_fit_report.md` (untracked). The GT-jitter caveat
 (1.53 %) is recorded on the OI-184 row. BCMH ornament validation stays deferred (dataset not on
 disk; also OI-185). **Every fitted value is FROZEN; the weight fit happens only at the build arc
 per the ratified staged fitting.**
@@ -13305,7 +13305,7 @@ ratified after the alternatives were examined against the principles and the pre
 with the user's two sharpenings incorporated (the genre scope limit: every counted value is a
 Bach-chorale value, jazz de-scoped per the register's item 7; the per-factor asymmetry: a silent
 seventh must be near-prohibitive for a seventh-chord reading, which per-factor counting delivers).
-The dispatch `cc_instruction_secondary_dominant_refit.md` is DELIVERED and Cowork-verified at the
+The dispatch `records/cc/instructions/cc_instruction_secondary_dominant_refit.md` is DELIVERED and Cowork-verified at the
 artifacts (`73c84b92d3`): the applied-relation pooling level is counted — P(secondary dominant
 resolves to its target) = 0.771 major / 0.774 minor, root-position triad resolution 0.647/0.660;
 101 applied rows corrected from the mode's plain frequency list; every other table byte-identical;
@@ -13315,7 +13315,7 @@ table are counted with the measured-misaligned spans LEFT OUT** (the mechanical 
 labeled span containing zero of its own chord's tones is skipped and listed) — ratified as the
 most-precise option available while the substrate repair (the OI-184 row's consequence (c)) stays
 a deferred future event; the rule is INTERIM, retired by that repair, recorded on the OI-184 row
-per the interim-exception discipline. The dispatch `cc_instruction_misaligned_span_exclusion.md` is DELIVERED and Cowork-verified at the
+per the interim-exception discipline. The dispatch `records/cc/instructions/cc_instruction_misaligned_span_exclusion.md` is DELIVERED and Cowork-verified at the
 artifacts (`b28b4a8fdb`): the criterion established at the data (10-span sample, all
 anchoring-shifts), 332 spans left out, every movement small and in the predicted band
 (seventh-presence 0.9235 → 0.9357; the remaining gap to ~0.97 is PARTIAL misalignment, recoverable
@@ -13349,7 +13349,7 @@ probe dispatch's riding-edit list; CC correctly left it uncommitted; it rides th
 **THE DECISION IS USER-RULED (2026-07-19): option 2 — complete the algorithm in the instrument
 layer first; build the production module only when the algorithm is COMPLETE** (the standing
 completion-before-build discipline). **The ACTIVE dispatch is
-`cc_instruction_algorithm_completion.md` (step 1 of 2):** the fermata extraction addendum (with
+`records/cc/instructions/cc_instruction_algorithm_completion.md` (step 1 of 2):** the fermata extraction addendum (with
 field-wise substrate invariance proven and the fermata-conditioned boundary cells counted under
 the standing protocol), the cadence features wired but WEIGHTLESS (fire-establishment against the
 desk-simulation cases; weights come only at the weight-fitting stage), and the chord-class
@@ -13420,7 +13420,7 @@ selected, every divergence in that class). **User ruling (2026-07-20): option 1 
 accepted-and-recorded; the OI-184 repair event's scope WIDENED to the full reader unification**
 (production fact layer becomes the single extraction source; re-extract, re-count, re-fit; the
 music21 scaffold retires) — on the OI-184 row. **The ACTIVE dispatch (pending ONE ruling) is
-`cc_instruction_adoption_measurement.md` — the OI-178 protocol's measurement phase**: O-12
+`records/cc/instructions/cc_instruction_adoption_measurement.md` — the OI-178 protocol's measurement phase**: O-12
 snapshot, A's production-path decode on the full covered corpus, the per-preset class-(b)
 duration delta + fully-classified set-diff, the key/RN columns with bootstrap intervals, the GT
 self-agreement ceiling, the modulation-rate guard, timing — assembled into the adoption record
@@ -13439,7 +13439,7 @@ fifth-apart functional substitutions with the key correct — the named post-ado
 candidate for the chord-transition/bass factor). **THE USER RATIFIED OPTION 1 (2026-07-26): ADOPT.**
 Scoping ruling recorded the same day: the product is UNSHIPPED — end-user behavior-change
 considerations carry no weight in decision surfaces; correctness and the disciplines alone
-govern. **The ACTIVE dispatch is `cc_instruction_adoption_commit.md` — ONE revertible adoption
+govern. **The ACTIVE dispatch is `records/cc/instructions/cc_instruction_adoption_commit.md` — ONE revertible adoption
 commit:** the wiring (A = the production inference layer, preset-independent; legacy code stays
 compiled, dormant on the output path), the corpus regeneration (must equal the measured
 `adoption_decode.json` or STOP), the `tools/robust_stop/` re-baseline (figures must equal the
@@ -13467,7 +13467,7 @@ abbreviations. Every behavior change is user-ratified (#14). The presentation-la
 attached to decisions (1) and (4) — the published un-rounded modal reading and the published ornament
 labels — are PART of the ratified record; do not let them drop out of the build.
 
-*(The superseded 2026-07-17 session-close block was moved verbatim to `cowork_handoff_archive.md` by
+*(The superseded 2026-07-17 session-close block was moved verbatim to `records/cowork/handoff/cowork_handoff_archive.md` by
 the 2026-07-19 design-pass commit `910a998e9b`.)*
 
 ---
@@ -13526,7 +13526,7 @@ them), risk being skipped, and risk out-of-order execution. The rules:
    covered waits for the report and is ruled at verification. The only mid-run channel is the one CC
    itself opens (its own STOP question), answered when CC asks.
    *(As of 2026-07-04: NO parked instruction files — the formerly-parked gap-analysis and Wave-1 instructions
-   both executed and were ratified (sessions 21e/21i/21f). Active: `cc_instruction_c1_reliability_instrumentation.md`
+   both executed and were ratified (sessions 21e/21i/21f). Active: `records/cc/instructions/cc_instruction_c1_reliability_instrumentation.md`
    — see the START HERE header.)*
 
 ---
@@ -13538,7 +13538,7 @@ them), risk being skipped, and risk out-of-order execution. The rules:
 - When the user says "go", "do E2b", "execute", or similar: the response is
   "The instruction is ready at `cc_instruction_X.md` — give it to CC."
 - Cowork MAY: read source files **via the file tools (Read / Grep / Glob) — NOT bash** (see the NEVER-BASH
-  standing rule below), write `.md` instruction files, update `cowork_handoff.md` / `STATUS.md` summaries after CC reports.
+  standing rule below), write `.md` instruction files, update `records/cowork/handoff/cowork_handoff.md` / `STATUS.md` summaries after CC reports.
 - Cowork MUST NOT: spawn agents that run build commands or modify `src/` files;
   use Edit/Write tools on anything under `src/`; use bash redirects on source files.
 - Violating this rule has broken the codebase twice (E1, E2b). Do not do it again.

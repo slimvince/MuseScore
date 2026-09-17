@@ -65,6 +65,11 @@ REGISTER = HERE / "decisions" / "backbone_decisions.json"
 # its own kind with its own rules (the kind list says so).
 SURFACE_GLOBS = [
     "*.md",                        # the repository root's own documents
+    "records/cc/instructions/*.md",
+    "records/cc/reports/*.md",
+    "records/cowork/handoff/*.md",
+    "records/cowork/rulings/*.md",
+    "records/cowork/instructions/*.md",
     "docs/*.md",
     "ratification_surfaces/*.md",
     "tools/*.md",
@@ -142,32 +147,32 @@ VERDICTS: dict[str, dict] = {
         "It IS the historical record, and it says so in its own first two lines: moved verbatim out "
         "of the live status surface, NOT part of the session-start read, nothing edited. That is "
         "the branch-one banner already standing."),
-    "cc_instruction_phase1s_stale_rules_and_enumeration.md": _v(
+    "records/cc/instructions/cc_instruction_phase1s_stale_rules_and_enumeration.md": _v(
         CONFORMANT,
         "A DISPATCH — kind 3 of the kind list, an exempt genre. A dispatch is an instruction to one "
         "session, dated by construction, and the record of what it did is the report or returns "
         "entry it produced. It describes no state the record has left behind."),
-    "cc_instruction_phase1z_commit_and_instrument_record.md": _v(
+    "records/cc/instructions/cc_instruction_phase1z_commit_and_instrument_record.md": _v(
         CONFORMANT,
         "A DISPATCH, on the same ground as its sibling above."),
-    "cc_key_grading_and_calibration_rebaseline_report.md": _v(
+    "records/cc/reports/cc_key_grading_and_calibration_rebaseline_report.md": _v(
         CONFORMANT,
         "A dated report carrying its date, its dispatch and the ruling it executed at the head. The "
         "signature fires on the report's own account of a snapshot IT took — a finding, not a fate "
         "that has overtaken it."),
-    "cc_oi207_residual_pass_report.md": _v(
+    "records/cc/reports/cc_oi207_residual_pass_report.md": _v(
         CONFORMANT,
         "Its banner opens `Status: DELIVERED 2026-08-02` with the freeze it ran under. The "
         "signature fires on a measured line count inside the body."),
-    "cc_stage2a_wip_triage_report.md": _v(
+    "records/cc/reports/cc_stage2a_wip_triage_report.md": _v(
         CONFORMANT,
         "A dated read-only classification whose banner states its scope discipline and its date. "
         "The signature fires on a QUESTION the report puts to its reader, not on a fate."),
-    "cc_stage3_4i_dossier.md": _v(
+    "records/cc/reports/cc_stage3_4i_dossier.md": _v(
         CONFORMANT,
         "Header carries its date, its base commit and its owner. The signature fires on the "
         "dossier's own finding that no gate was retired — the opposite of a fate declaration."),
-    "cc_stage5_phase2_2d_report.md": _v(
+    "records/cc/reports/cc_stage5_phase2_2d_report.md": _v(
         CONFORMANT,
         "Header carries its dispatch, the HEAD it ran at and its nature (measurement only, no "
         "adoption). The signature fires on that scope statement."),

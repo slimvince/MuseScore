@@ -34,13 +34,13 @@
    "what_it_is": "a marked clause reaches its paragraph's end OR the next marked clause, whichever comes first.",
    "its_standing": "RULED the definition on 2026-09-08 and no longer outstanding -- `cowork_rulings_2026_09_08_extent_rule_sitting.md`, §1. It is REPLACED here as the MEASUREMENT because it inherits the paragraph unit, which is the defect; the ruling settled a double-counting question between two readings and does not reach the unit both of them are built on.",
    "it_is_still_implemented_in_one_place": "`close_at_the_next_clause` below, unchanged and now run over a COPY of the extents so that it produces this column and not the measurement (#6).",
-   "characters_it_attributes_to_the_six_spans": 51500,
+   "characters_it_attributes_to_the_six_spans": 51684,
    "clauses_it_would_have_closed_at_the_next_one": 20
   },
   "the_literal_paragraph_reading": {
    "what_it_is": "from the first character of the marker through the end of the paragraph containing it, with no closing at all -- the wording of the dispatch that created this tool.",
    "why_it_cannot_be_a_share_of_anything": "it attributes more characters to the six spans than those six spans hold.",
-   "characters_it_attributes_to_the_six_spans": 159825
+   "characters_it_attributes_to_the_six_spans": 160906
   },
   "what_the_authored_ends_move": {
    "clauses_whose_measured_end_now_falls_short_of_the_ruled_closing_end": 27,
@@ -76,41 +76,41 @@
   }
  ],
  "the_denominators_both_re_derived_through_the_imported_reader_at_this_tree": {
-  "the_six_session_start_spans": 97805,
-  "the_whole_ordinary_session_start_read": 244912,
+  "the_six_session_start_spans": 98453,
+  "the_whole_ordinary_session_start_read": 246003,
   "why_two": "the first says how much of what a session reads OF `CLAUDE.md` is marked defense; the second says how much of the WHOLE boot it is. A share quoted against one of them is not the share against the other."
  },
  "per_span": [
   {
    "name": "Guiding principles",
-   "characters": 26862,
+   "characters": 26908,
    "marked_clauses": 7,
    "characters_those_clauses_hold": 3099,
-   "characters_had_every_clause_been_closed_at_the_next_marked_clause": 12507,
-   "characters_had_every_clause_run_to_its_paragraph_end": 47079,
-   "share_of_this_span": 11.54
+   "characters_had_every_clause_been_closed_at_the_next_marked_clause": 12530,
+   "characters_had_every_clause_run_to_its_paragraph_end": 47148,
+   "share_of_this_span": 11.52
   },
   {
    "name": "The open-items register",
-   "characters": 14630,
+   "characters": 14816,
    "marked_clauses": 6,
    "characters_those_clauses_hold": 3041,
    "characters_had_every_clause_been_closed_at_the_next_marked_clause": 4015,
    "characters_had_every_clause_run_to_its_paragraph_end": 4631,
-   "share_of_this_span": 20.79
+   "share_of_this_span": 20.53
   },
   {
    "name": "The decisions register",
-   "characters": 16971,
+   "characters": 17109,
    "marked_clauses": 11,
    "characters_those_clauses_hold": 3345,
-   "characters_had_every_clause_been_closed_at_the_next_marked_clause": 12943,
-   "characters_had_every_clause_run_to_its_paragraph_end": 74190,
-   "share_of_this_span": 19.71
+   "characters_had_every_clause_been_closed_at_the_next_marked_clause": 13058,
+   "characters_had_every_clause_run_to_its_paragraph_end": 75156,
+   "share_of_this_span": 19.55
   },
   {
    "name": "This block",
-   "characters": 5096,
+   "characters": 5213,
    "marked_clauses": 0,
    "characters_those_clauses_hold": 0,
    "characters_had_every_clause_been_closed_at_the_next_marked_clause": 0,
@@ -119,12 +119,12 @@
   },
   {
    "name": "Conventions",
-   "characters": 33487,
+   "characters": 33648,
    "marked_clauses": 10,
    "characters_those_clauses_hold": 3472,
-   "characters_had_every_clause_been_closed_at_the_next_marked_clause": 22035,
-   "characters_had_every_clause_run_to_its_paragraph_end": 33925,
-   "share_of_this_span": 10.37
+   "characters_had_every_clause_been_closed_at_the_next_marked_clause": 22081,
+   "characters_had_every_clause_run_to_its_paragraph_end": 33971,
+   "share_of_this_span": 10.32
   },
   {
    "name": "The self-check after every coding exercise",
@@ -139,10 +139,10 @@
  "the_totals": {
   "marked_clauses": 34,
   "characters_those_clauses_hold": 12957,
-  "characters_had_every_clause_been_closed_at_the_next_marked_clause": 51500,
-  "characters_had_every_clause_run_to_its_paragraph_end": 159825,
-  "share_of_the_six_session_start_spans": 13.25,
-  "share_of_the_whole_ordinary_session_start_read": 5.29
+  "characters_had_every_clause_been_closed_at_the_next_marked_clause": 51684,
+  "characters_had_every_clause_run_to_its_paragraph_end": 160906,
+  "share_of_the_six_session_start_spans": 13.16,
+  "share_of_the_whole_ordinary_session_start_read": 5.27
  },
  "every_clause_published_so_the_tables_reach_is_inspectable_rather_than_asserted": [
   {
@@ -153,7 +153,7 @@
    "the_marked_run_as_written": "Why:",
    "characters_had_it_been_closed_at_the_next_marked_clause": 667,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 12052,
+   "characters_had_it_run_to_its_paragraph_end": 12075,
    "the_authored_end_anchor": "which is the defect the catalog names DT-2.",
    "the_line_the_anchor_ends_on": 109,
    "characters": 333
@@ -166,7 +166,7 @@
    "the_marked_run_as_written": "Why:",
    "characters_had_it_been_closed_at_the_next_marked_clause": 3154,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 11385,
+   "characters_had_it_run_to_its_paragraph_end": 11408,
    "the_authored_end_anchor": "would confound a structural verdict with a weighting one.",
    "the_line_the_anchor_ends_on": 115,
    "characters": 183
@@ -177,9 +177,9 @@
    "emphasis": "italic",
    "first_line": 150,
    "the_marked_run_as_written": "Why this belongs at the principle rather than only on that row:",
-   "characters_had_it_been_closed_at_the_next_marked_clause": 1701,
+   "characters_had_it_been_closed_at_the_next_marked_clause": 1724,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 8231,
+   "characters_had_it_run_to_its_paragraph_end": 8254,
    "the_authored_end_anchor": "however convenient the invariant they share.",
    "the_line_the_anchor_ends_on": 156,
    "characters": 599
@@ -322,7 +322,7 @@
    "the_marked_run_as_written": "Why the granularity clause:",
    "characters_had_it_been_closed_at_the_next_marked_clause": 469,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 12943,
+   "characters_had_it_run_to_its_paragraph_end": 13058,
    "the_authored_end_anchor": "it was never ruled to require every delegation to name sections.",
    "the_line_the_anchor_ends_on": 520,
    "characters": 467
@@ -335,7 +335,7 @@
    "the_marked_run_as_written": "Why (h) itself:",
    "characters_had_it_been_closed_at_the_next_marked_clause": 1218,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 12474,
+   "characters_had_it_run_to_its_paragraph_end": 12589,
    "the_authored_end_anchor": "each of which produced the evidence locating its own error.",
    "the_line_the_anchor_ends_on": 526,
    "characters": 652
@@ -348,7 +348,7 @@
    "the_marked_run_as_written": "Why:",
    "characters_had_it_been_closed_at_the_next_marked_clause": 1094,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 11256,
+   "characters_had_it_run_to_its_paragraph_end": 11371,
    "the_authored_end_anchor": "and a status banner does not change that.",
    "the_line_the_anchor_ends_on": 534,
    "characters": 119
@@ -361,7 +361,7 @@
    "the_marked_run_as_written": "Why:",
    "characters_had_it_been_closed_at_the_next_marked_clause": 2106,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 10162,
+   "characters_had_it_run_to_its_paragraph_end": 10277,
    "the_authored_end_anchor": "The distinction is `ARCHITECTURE.md`'s own, not a preference.",
    "the_line_the_anchor_ends_on": 547,
    "characters": 292
@@ -374,7 +374,7 @@
    "the_marked_run_as_written": "Why:",
    "characters_had_it_been_closed_at_the_next_marked_clause": 1302,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 8056,
+   "characters_had_it_run_to_its_paragraph_end": 8171,
    "the_authored_end_anchor": "what keeps (i) a mechanical test rather than one with a case-by-case exception.",
    "the_line_the_anchor_ends_on": 568,
    "characters": 219
@@ -385,9 +385,9 @@
    "emphasis": "italic",
    "first_line": 579,
    "the_marked_run_as_written": "Why:",
-   "characters_had_it_been_closed_at_the_next_marked_clause": 2537,
+   "characters_had_it_been_closed_at_the_next_marked_clause": 2560,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 6754,
+   "characters_had_it_run_to_its_paragraph_end": 6869,
    "the_authored_end_anchor": "and an ellipsis by anything at all.",
    "the_line_the_anchor_ends_on": 582,
    "characters": 263
@@ -400,7 +400,7 @@
    "the_marked_run_as_written": "Why the default falls this way:",
    "characters_had_it_been_closed_at_the_next_marked_clause": 339,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 4217,
+   "characters_had_it_run_to_its_paragraph_end": 4309,
    "the_authored_end_anchor": "without the register standing in for the specification.",
    "the_line_the_anchor_ends_on": 609,
    "characters": 337
@@ -411,9 +411,9 @@
    "emphasis": "italic",
    "first_line": 609,
    "the_marked_run_as_written": "Why the timing clause is not decorative:",
-   "characters_had_it_been_closed_at_the_next_marked_clause": 1440,
+   "characters_had_it_been_closed_at_the_next_marked_clause": 1486,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 3878,
+   "characters_had_it_run_to_its_paragraph_end": 3970,
    "the_authored_end_anchor": "which is what shows it is real rather than notional.",
    "the_line_the_anchor_ends_on": 611,
    "characters": 222
@@ -426,7 +426,7 @@
    "the_marked_run_as_written": "Why:",
    "characters_had_it_been_closed_at_the_next_marked_clause": 715,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 2438,
+   "characters_had_it_run_to_its_paragraph_end": 2484,
    "the_authored_end_anchor": "what the mechanism's own output already carries, which is what #6 forbids.",
    "the_line_the_anchor_ends_on": 626,
    "characters": 198
@@ -437,9 +437,9 @@
    "emphasis": "italic",
    "first_line": 631,
    "the_marked_run_as_written": "Founding instance, and the reason the clause is general rather than one entry's treatment:",
-   "characters_had_it_been_closed_at_the_next_marked_clause": 1434,
+   "characters_had_it_been_closed_at_the_next_marked_clause": 1480,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 1723,
+   "characters_had_it_run_to_its_paragraph_end": 1769,
    "the_authored_end_anchor": "already carried at the table the adoption happened in.",
    "the_line_the_anchor_ends_on": 634,
    "characters": 287
@@ -463,9 +463,9 @@
    "emphasis": "bold",
    "first_line": 1553,
    "the_marked_run_as_written": "Founding instance:",
-   "characters_had_it_been_closed_at_the_next_marked_clause": 6888,
+   "characters_had_it_been_closed_at_the_next_marked_clause": 6911,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 8023,
+   "characters_had_it_run_to_its_paragraph_end": 8046,
    "the_authored_end_anchor": "which is the general case, not the exception.",
    "the_line_the_anchor_ends_on": 1560,
    "characters": 688
@@ -502,9 +502,9 @@
    "emphasis": "italic",
    "first_line": 1694,
    "the_marked_run_as_written": "Why the line falls there:",
-   "characters_had_it_been_closed_at_the_next_marked_clause": 3902,
+   "characters_had_it_been_closed_at_the_next_marked_clause": 3925,
    "it_would_have_been_closed_at_the_next_marked_clause": true,
-   "characters_had_it_run_to_its_paragraph_end": 10273,
+   "characters_had_it_run_to_its_paragraph_end": 10296,
    "the_authored_end_anchor": "already forbids citing code by line number in the first place.",
    "the_line_the_anchor_ends_on": 1698,
    "characters": 428

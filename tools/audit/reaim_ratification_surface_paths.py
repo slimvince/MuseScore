@@ -97,7 +97,7 @@ BY_FILE = {
                   "stood before it. Its dated resolution note carries the new paths.",
         "by_line": {},
     },
-    "cowork_handoff.md": {
+    "records/cowork/handoff/cowork_handoff.md": {
         "default": REAIM,
         "reason": "Live pointers in the handoff's reading list.",
         "by_line": {},
@@ -146,7 +146,7 @@ WHOLE_FILE_RULES = [
      "OI-285's resolution states that a ratification surface which has been tidied is no "
      "longer the surface that was ratified. The citation also resolves unchanged, both "
      "files now sitting in the same directory."),
-    (lambda f: f.startswith("cc_instruction_"), LEAVE,
+    (lambda f: f.startswith("records/cc/instructions/cc_instruction_"), LEAVE,
      "A dispatch. .gitignore excludes /cc_instruction_*.md and /cc_*.md as a class, so these "
      "are not in the record; and they are another wave's working instruction, which this "
      "wave does not edit. Reported rather than changed."),

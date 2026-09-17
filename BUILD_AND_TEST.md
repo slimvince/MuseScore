@@ -287,8 +287,8 @@ bare integer):
 strict superset of the old 13/7/14 (0 lost, oracle-verified); the L3-wiring delta (−4 / +1 / −4,
 2026-06-26) later moved the prior 57/23/57 → 53/24/53 (the SET, not the integer, is the gate).
 The authoritative `stem@tick`
-identity sets live in **CLAUDE.md** (gate section); see `cc_metric_rebaseline_report.md` +
-`cc_gate_rebaseline_verify_report.md` for provenance. ~95% of the added mass is legitimate
+identity sets live in **CLAUDE.md** (gate section); see `records/cc/reports/cc_metric_rebaseline_report.md` +
+`records/cc/reports/cc_gate_rebaseline_verify_report.md` for provenance. ~95% of the added mass is legitimate
 ambiguity (symmetric-dim7 ≈53% Baroque + viio↔V7 share-tone).
 (`analyze_inversion_errors.py` is the separate secondary `bassIsRoot` metric; its three-way
 genuine split was Baroque 24/13, Jazz 35/7 under the OLD parser — **NOT yet re-measured under
@@ -454,7 +454,7 @@ insertion, key/mode stabilization, sparse-quality refinement) on top of the batc
 region stream, giving the measure-aligned (per-beat) view instead of the coarse
 cross-barline regions. It only affects `--dump-regions batch` and does **not**
 change the committed BIR gate (which stays at batch granularity). Flag-off output
-is byte-identical to HEAD. Background and A/B in `cc_stage2_2_ab_dossier.md`.
+is byte-identical to HEAD. Background and A/B in `records/cc/reports/cc_stage2_2_ab_dossier.md`.
 
 ```
 ./batch_analyze.exe "<score>" --section-level > /tmp/sec.json; echo "exit:$?"

@@ -40,42 +40,42 @@
    "regime": "ruled membership",
    "why_this_regime": "this `CLAUDE.md` carries the membership block, so the read is the six spans it names at session start and nothing else of the file",
    "the_clause_that_makes_it_a_member": "★ AND THIS IS WHAT A SESSION READS OF `CLAUDE.md` ITSELF — SIX SPANS AT SESSION START, EIGHT READ ONLY WHEN THE SESSION'S WORK TOUCHES THEM (user-ruled 2026-09-07).",
-   "characters": 97805,
+   "characters": 98453,
    "the_session_start_spans": [
     {
      "name": "Guiding principles",
      "kind": "session start",
      "located_by": "the heading “## Guiding principles”, closed at the paragraph the membership names — the one opening “Delegation pointer”",
      "the_close_is_also_the_end_of_its_section": true,
-     "characters": 26862,
+     "characters": 26908,
      "lines": 309
     },
     {
      "name": "The open-items register",
      "kind": "session start",
      "located_by": "the heading “## The open-items register (user-directed, 2026-07-10; split into index + detail files, user-ratified 2026-07-26)”",
-     "characters": 14630,
+     "characters": 14816,
      "lines": 174
     },
     {
      "name": "The decisions register",
      "kind": "session start",
      "located_by": "the heading “## The decisions register (shape user-ratified 2026-07-28; content + living surface 2026-08-02)”",
-     "characters": 16971,
+     "characters": 17109,
      "lines": 178
     },
     {
      "name": "This block",
      "kind": "session start",
      "located_by": "the two anchors the membership itself quotes — from “Always read these two files at the start of every session:” through the paragraph ending “…NOT part of the session-start read.”",
-     "characters": 5096,
+     "characters": 5213,
      "lines": 69
     },
     {
      "name": "Conventions",
      "kind": "session start",
      "located_by": "the heading “## Conventions”",
-     "characters": 33487,
+     "characters": 33648,
      "lines": 372
     },
     {
@@ -109,10 +109,10 @@
      "located_by": "the heading “## Build and test commands”",
      "the_condition_that_calls_for_it": "a session that builds, tests, or runs a measurement tool whose command lives there",
      "the_qualifier_the_membership_writes_beside_the_name": "the command blocks below this block",
-     "characters": 6372,
+     "characters": 6489,
      "lines": 99,
      "characters_shared_with_a_session_start_span": {
-      "This block": 5096
+      "This block": 5213
      }
     },
     {
@@ -121,7 +121,7 @@
      "located_by": "the heading “## Gate threshold and preset policy”",
      "the_condition_that_calls_for_it": "a session that measures the analysis, changes a gate or a threshold, re-baselines, or needs a ratified baseline",
      "the_qualifier_the_membership_writes_beside_the_name": "including its blocks (A) to (D)",
-     "characters": 46650,
+     "characters": 47180,
      "lines": 524
     },
     {
@@ -129,7 +129,7 @@
      "kind": "conditional",
      "located_by": "the heading “## Scoring model — `docs/scoring_model.md` (MANDATORY for scoring sessions)”",
      "the_condition_that_calls_for_it": "unchanged — a session that touches scoring logic, which is that section's own standing condition",
-     "characters": 3560,
+     "characters": 3583,
      "lines": 54
     },
     {
@@ -145,7 +145,7 @@
      "kind": "conditional",
      "located_by": "the heading “## Local patches — do not revert”",
      "the_condition_that_calls_for_it": "a session that edits MuseScore's own code, or that runs or reviews a dependency update",
-     "characters": 6638,
+     "characters": 6676,
      "lines": 100
     },
     {
@@ -160,9 +160,9 @@
    "why_the_conditional_spans_are_not_summed_in": "each is read by the sessions its own condition names and not by an ordinary one, which is what CONDITIONAL means. Counting them would report a read no ordinary session takes — the same error this tool already refuses for `BUILD_AND_TEST.md`.",
    "★_the_overstatement_this_repair_removes": {
     "what_it_is": "until 2026-09-07 this tool measured `len(CLAUDE.md)` as an ordinary session's read of that file. Both values are measured HERE, at the same tree, so the difference is the overstatement itself and not an estimate.",
-    "the_former_measurement_the_whole_file": 160955,
-    "the_repaired_measurement_the_six_session_start_spans": 97805,
-    "characters_the_former_measurement_overstated_by": 63150
+    "the_former_measurement_the_whole_file": 162194,
+    "the_repaired_measurement_the_six_session_start_spans": 98453,
+    "characters_the_former_measurement_overstated_by": 63741
    },
    "★_the_reconciliation_against_the_block_itself_run_on_every_run": {
     "how_it_runs": "both directions, and a mismatch in either is a STOP rather than a reported field: none in both, none in neither.",
@@ -175,12 +175,12 @@
    }
   },
   "characters_per_member": {
-   "CLAUDE.md": 97805,
-   "STATUS.md": 16673,
-   "DECISIONS.md": 127608,
+   "CLAUDE.md": 98453,
+   "STATUS.md": 17024,
+   "DECISIONS.md": 127700,
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2826
   },
-  "total_characters": 244912,
+  "total_characters": 246003,
   "further_spans_of_the_same_artifact_NOT_counted_into_the_read": {
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows": {
     "characters": 62498,
@@ -276,10 +276,10 @@
    "from_commit": "1760d9a4a87f82a6bdbc7cb17e99ccdd8ae4c433",
    "from_total": 367121,
    "from_regime": "whole-file practice",
-   "to_total": 244912,
+   "to_total": 246003,
    "to_regime": "ruled membership",
-   "change_in_characters": -122209,
-   "change_percent": -33.29,
+   "change_in_characters": -121118,
+   "change_percent": -32.99,
    "★_this_comparison_crosses_a_regime_boundary": true,
    "what_that_means_here": "the two sides answer DIFFERENT questions — one side counts the whole of `CLAUDE.md` because that was the practice there, the other counts only the spans the ruled membership names — so the change is not a saving one act made, and must not be read as one"
   },
@@ -287,10 +287,10 @@
    "from_commit": "594074e1e1900079e449d2b79a38920d21bca6e6",
    "from_total": 296832,
    "from_regime": "whole-file practice",
-   "to_total": 244912,
+   "to_total": 246003,
    "to_regime": "ruled membership",
-   "change_in_characters": -51920,
-   "change_percent": -17.49,
+   "change_in_characters": -50829,
+   "change_percent": -17.12,
    "★_this_comparison_crosses_a_regime_boundary": true,
    "what_that_means_here": "the two sides answer DIFFERENT questions — one side counts the whole of `CLAUDE.md` because that was the practice there, the other counts only the spans the ruled membership names — so the change is not a saving one act made, and must not be read as one"
   }

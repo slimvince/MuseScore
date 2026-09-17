@@ -373,7 +373,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-282 | Meta-finding: the oracle/tier metric, never a bare proxy - superseded by the robust-unit stop and the two-tier policy | SUPERSEDED BY D-115 and D-191 | — | `cowork_architecture_reassessment.md` §4 ⚠gap |
 | D-286 | Whole-score interactive analysis was SHELVED WITH EVIDENCE; the bounded window is the ratified reading | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-288 | Beam widening is SHELVED - a wider search cannot fix the failure class it was proposed for | LIVE ⚠LEGACY | 2026-08-02 · user | `ARCHITECTURE.md` |
-| D-289 | Meta-principle: precision lives in the evidence and the functional labelling, not in the search | SUPERSEDED BY D-284 (and through it D-036 with D-001/D-010), with D-288 and D-287 | 2026-08-02 · user | `cowork_handoff_archive.md` ⚠tracking-surface-only |
+| D-289 | Meta-principle: precision lives in the evidence and the functional labelling, not in the search | SUPERSEDED BY D-284 (and through it D-036 with D-001/D-010), with D-288 and D-287 | 2026-08-02 · user | `records/cowork/handoff/cowork_handoff_archive.md` ⚠tracking-surface-only |
 | D-293 | Fitted values are fitted per IDIOM, never for a user preset; presets are regression surfaces and delivery carriers | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
 | D-294 | The only ground truth is the human annotation; the algorithmic analysis is a filter, and no self-annotation ever enters a measurement | LIVE | 2026-08-02 · user | `CLAUDE.md` |
 | D-297 | Correction of record: never computing a possibility is not information loss; only discarding a computed one is | LIVE | 2026-08-02 · user | `ARCHITECTURE.md` |
@@ -832,9 +832,9 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-675 | Phase 1 completes when the INFERENCE-BEARING obligations are discharged — the finish line is cut by D-438's test, the apparatus residue does not gate the completion, and the cut carries a falsification test | LIVE | — | `CLAUDE.md` |
 | D-676 | An apparatus row STAYS OPEN, STOPS GATING and STOPS BEING OWED — with a per-row lapse record naming the derivation that graded it, and no row lapses without one | LIVE | — | `CLAUDE.md` |
 | D-677 | A DISCARD verdict on an already-rowed item is an INPUT to the derivation that decides gating, never an edit to a gating verdict — the row stays open, draws no capacity, and a record lacking finding, date or reason does not reach the cut | LIVE | — | `CLAUDE.md` |
-| D-678 | The derivation method is ruled USABLE for v1 on the user's ground - a first specification cannot be the ultimate one, so the best derivable from everything held except the code is good enough by construction; this supersedes the method's VOIDED status | LIVE | — | `cowork_rulings_2026_08_25_v1_sufficiency_sitting.md` |
-| D-679 | A deriving session's independence from the shipped code is evidenced by the ten DIFFERS rows of the harmony-boundary comparison reading, not by the held-out test | LIVE | — | `cowork_rulings_2026_08_25_v1_sufficiency_sitting.md` |
-| D-680 | The framework and detail-specification phases are no longer HELD; E and C are neither the next act nor owed, and the empirical findings ledger remains owed before the framework phase | LIVE | — | `cowork_rulings_2026_08_25_v1_sufficiency_sitting.md` |
+| D-678 | The derivation method is ruled USABLE for v1 on the user's ground - a first specification cannot be the ultimate one, so the best derivable from everything held except the code is good enough by construction; this supersedes the method's VOIDED status | LIVE | — | `records/cowork/rulings/cowork_rulings_2026_08_25_v1_sufficiency_sitting.md` |
+| D-679 | A deriving session's independence from the shipped code is evidenced by the ten DIFFERS rows of the harmony-boundary comparison reading, not by the held-out test | LIVE | — | `records/cowork/rulings/cowork_rulings_2026_08_25_v1_sufficiency_sitting.md` |
+| D-680 | The framework and detail-specification phases are no longer HELD; E and C are neither the next act nor owed, and the empirical findings ledger remains owed before the framework phase | LIVE | — | `records/cowork/rulings/cowork_rulings_2026_08_25_v1_sufficiency_sitting.md` |
 
 ## U. The standing decision-bearing surfaces — [full entries](decisions/group_U.md)
 

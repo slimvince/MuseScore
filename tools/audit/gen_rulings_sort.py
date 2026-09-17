@@ -108,14 +108,14 @@ use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 ROOT = Path(__file__).resolve().parent.parent.parent
 FILTER = ROOT / "tools" / "audit" / "decisions_filter_classification.json"
 BACKBONE = ROOT / "tools" / "audit" / "decisions" / "backbone_decisions.json"
-RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
+RULING = ROOT / "records" / "cowork" / "rulings" / "cowork_rulings_2026_08_16_preparation_return.md"
 PHASES = (ROOT / "ratification_surfaces"
           / "cowork_phase_definition_surface_2026_08_15.md")
 OUT = ROOT / "tools" / "audit" / "rulings_sort_classification.json"
 SURFACE = (ROOT / "ratification_surfaces"
            / "cowork_rulings_sort_surface_2026_08_16.md")
 
-SORT_RULING = ROOT / "cowork_rulings_2026_08_17_rulings_sort_sitting.md"
+SORT_RULING = ROOT / "records" / "cowork" / "rulings" / "cowork_rulings_2026_08_17_rulings_sort_sitting.md"
 
 CONFIRMED = "DECIDING-ACT-NAMED"
 

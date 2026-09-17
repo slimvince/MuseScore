@@ -49,7 +49,7 @@ held (no `src/`, no build, no corpus write, no constant fitted/tuned):**
   enumerated, owed measurements flagged. *(Delegation written 2026-08-03 on the user's direction, the OI-293 write
   list; the previous parenthetical naming was a citation, which rule (i) does not admit.)*
 - **arc #11 — pedal detection's home + the F-B annotate mechanics** (`cowork_layer5_engagement_design.md` Part 2
-  §6–§10; `cc_engage_l5_pedal_annotate_design_report.md`): pedal placed as a **reader over the carry** (the
+  §6–§10; `records/cc/reports/cc_engage_l5_pedal_annotate_design_report.md`): pedal placed as a **reader over the carry** (the
   audit's clobber/re-scan/defensive-disable symptoms dissolved); F-B demoted to an **annotation on the unified
   open-mark** (reuse, not a parallel channel — the plain boolean shown semantically wrong for a confident-commit
   contradiction), the contradiction carried as calibrated uncertainty (#12), the trigger an annotation lever

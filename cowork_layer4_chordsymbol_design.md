@@ -618,7 +618,7 @@ Architectural Layer 5 knows what to resolve.
   **competitiveness is an idiom-calibrated constant** (`kPowerChord3PcPenalty` — the Stage-5 manifest already
   declares it idiom-varying), never a structural per-idiom branch: a large idiom-#2 value effectively yields the
   dyad to context-completed triads, a small idiom-#4 value lets C5 stand. **Measured support (Stage-5 Phase 2.1,
-  `cc_stage5_phase2_1_report.md`):** the fit's feasible direction on idiom-#2 data RAISES the penalty (fewer
+  `records/cc/reports/cc_stage5_phase2_1_report.md`):** the fit's feasible direction on idiom-#2 data RAISES the penalty (fewer
   bare-fifth readings in Bach — aligned with the theory answer), while the objective's blocked unconstrained
   direction (lowering it, +0.376 root) gains root agreement only because the root-only objective is
   quality-silent — it adds class-(b) functional errors, exactly the impoverished-reading trap the theory

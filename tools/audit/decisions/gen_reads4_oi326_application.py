@@ -225,7 +225,8 @@ def build() -> dict:
             members.setdefault(m, "glob-match")
 
     prose_present = "the phrase-boundary design" in clause_text
-    prose_candidates = repo_matches("*phrase*boundary*.md")
+    prose_candidates = sorted(repo_matches("*phrase*boundary*.md")
+                              + repo_matches("records/cc/*/*phrase*boundary*.md"))
     for m in prose_candidates:
         members.setdefault(m, "prose-reference")
 

@@ -165,7 +165,7 @@
 > the layer boundaries stabilize; (2) **Stage 5** the dissolution of the post-hoc gate-correction layer
 > (Gates A–L) into fitted weights — the gates are still load-bearing (3.4 retired none). Neither blocks the
 > current Stage-4 key work, but both are OWED and must be surfaced at every planning checkpoint until done.
-> Mirrored in `cowork_handoff.md` (top standing block).
+> Mirrored in `records/cowork/handoff/cowork_handoff.md` (top standing block).
 
 **In plain words.** Two pieces of restructuring were postponed rather than dropped: splitting the large chord-analysis source file along its layer seams (with the iteration-era function names renamed), and dissolving the layer of after-the-fact correction rules into fitted weights. Neither may be quietly forgotten — each planning checkpoint has to raise them until they are done.
 

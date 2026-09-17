@@ -102,7 +102,7 @@ COMPILED = [(n, re.compile(rx, re.IGNORECASE), t) for (n, rx, t) in SIGNATURES]
 # ── Corpus enumeration (deterministic) ────────────────────────────────────────
 GOVERNING = [
     "CLAUDE.md", "ARCHITECTURE.md", "STATUS.md", "STATUS_ARCHIVE.md",
-    "cowork_handoff.md", "cowork_handoff_archive.md", "OPEN_ITEMS.md",
+    "records/cowork/handoff/cowork_handoff.md", "records/cowork/handoff/cowork_handoff_archive.md", "OPEN_ITEMS.md",
     "DEFECT_TYPES.md",
 ]
 
@@ -149,8 +149,11 @@ def enumerate_corpus():
     cats.append((1, "governing", gov))
 
     # 2 cowork_* design docs (root), minus the two handoff files already in gov
-    cowork = md_glob("", "cowork_*.md",
-                     exclude=("cowork_handoff.md", "cowork_handoff_archive.md"))
+    cowork = sorted(md_glob("", "cowork_*.md")
+                    + md_glob("records/cowork/handoff", "cowork_*.md",
+                              exclude=("records/cowork/handoff/cowork_handoff.md", "records/cowork/handoff/cowork_handoff_archive.md"))
+                    + md_glob("records/cowork/rulings", "cowork_*.md")
+                    + md_glob("records/cowork/instructions", "cowork_*.md"))
     cats.append((2, "cowork_docs", cowork))
 
     # 3 docs/
@@ -163,7 +166,8 @@ def enumerate_corpus():
 
     # 5 cc_* reports (root) — every cc_*.md (238 are *_report.md; the rest are
     #   dispatches/notes that also carry rulings). Over-capture is free.
-    cc = md_glob("", "cc_*.md")
+    cc = sorted(md_glob("records/cc/instructions", "cc_*.md")
+                + md_glob("records/cc/reports", "cc_*.md"))
     cats.append((5, "cc_reports", cc))
 
     # 6 production code COMMENT text: src/composing, src/notation (C++), tools/**.py

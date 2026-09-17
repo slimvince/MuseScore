@@ -1,8 +1,8 @@
 # The derived L0/L1 specification — the notated record, and change points, candidates and notated evidence — as amended by Rulings 34–62 and RATIFIED under Rulings 64–77
 
 > **STATUS: RATIFIED — THE DERIVED L0/L1 SPECIFICATION, RATIFIED FACE BY FACE BY RULINGS 66–77 OF
-> `cowork_rulings_2026_08_31_decision_surface_sitting.md` UNDER RULINGS 64 AND 65, WITH THE EDITS THOSE
-> RULINGS ORDER APPLIED BY `cc_instruction_comparison_l0_l1_sixth_2026_09_03.md` TASK 1.** One document
+> `records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md` UNDER RULINGS 64 AND 65, WITH THE EDITS THOSE
+> RULINGS ORDER APPLIED BY `records/cc/instructions/cc_instruction_comparison_l0_l1_sixth_2026_09_03.md` TASK 1.** One document
 > for both charters: §2 is L0, the notated record, and §3 is L1; the split is that section boundary and
 > not a file boundary (Ruling 64). Written 2026-09-03 by Claude Code under the fifth comparison
 > dispatch from the derivation `cowork_blind_derivation_l0_l1_2026_08_31.md` at blob
@@ -1402,7 +1402,7 @@ published values — four beats for the degrees, one bar for the anchor, the low
   texture more than on beats. Declared.
 - *Falsifier.* RESIDUAL until measured; thereafter CODE: the window in use equals the ruled value.
 - *Reworded under Ruling 42 (§3aw) — "S-45 to S-49 follow the same naming" — as a consequential
-  correction of cc_instruction_comparison_l0_l1_seventh_2026_09_03.md, Ruling 74 (§3cc) item (1)
+  correction of records/cc/instructions/cc_instruction_comparison_l0_l1_seventh_2026_09_03.md, Ruling 74 (§3cc) item (1)
   having listed S-45, S-46, S-47 and S-49 and not S-48; formerly "one bar for the bass anchor"; the
   derived wording stands at the derivation, S-48.*
 - *Beside S-48 (Ruling 53, §3bh) — the stand-ins are accepted as provisional.* *"S-48's stand-ins

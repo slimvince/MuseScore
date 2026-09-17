@@ -2,7 +2,7 @@
 
 **★ RATIFIED BY THE USER 2026-07-26, as asked in §8 — as specified, no amendments.** The build
 dispatches open under the OI-180 sanction pattern; the first is the table codegen
-(`cc_instruction_joint_table_codegen.md`, Decision D1 executed).
+(`records/cc/instructions/cc_instruction_joint_table_codegen.md`, Decision D1 executed).
 
 **Author:** Cowork, 2026-07-26, at the user's "go" after the P1 pedal ruling. **Status:
 ratified.** This is the contract-drafting step of

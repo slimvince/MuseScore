@@ -1,7 +1,7 @@
 # The framework document — the all-encompassing architecture of the harmonic analysis
 
 > **★ RATIFIED by the user 2026-08-29 — Ruling 2 of
-> `cowork_rulings_2026_08_29_ratification_sitting.md`; the decomposition, charters and boundary
+> `records/cowork/rulings/cowork_rulings_2026_08_29_ratification_sitting.md`; the decomposition, charters and boundary
 > contracts govern. Renamed from `cowork_framework_document_draft_2026_08_28.md` to
 > `FRAMEWORK.md` at ratification per Ruling 5. The banner below is preserved as written at
 > drafting; its "DRAFT / NOT RATIFIED" words describe the drafting moment, not the present.**
@@ -55,7 +55,7 @@
 >
 > **The user's call, and the writing side takes no view on it:** this document stands, or it is
 > re-authored by a side that has not read §8. Nothing else on the closed list was opened —
-> `cowork_handoff.md`, the two ruling records of 2026-08-28, and every `cc_report_*.md` and
+> `records/cowork/handoff/cowork_handoff.md`, the two ruling records of 2026-08-28, and every `cc_report_*.md` and
 > `cc_instruction_*.md` remain unread (Appendix A item 6).
 >
 > Bound by the fourteen-section design-document standard (`cowork_design_doc_template.md`). Two of that
@@ -356,7 +356,7 @@ metrical-accent features from a segmental analyser costs about six points of F-m
 [FACT — both.]
 
 **★ CORRECTED 2026-08-31 ON THE USER'S RULING, WITH THE FORMER WORDING PRESERVED IN PLACE (#12.)**
-Ruling 2 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` §3a, Option A — correct
+Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md` §3a, Option A — correct
 minimally. **THE FORMER WORDING WAS:** *"harmonic change was counted at 71.5% of tactus beats
 against 2.4% of the lowest metrical level"*. *Why it was corrected:* the primary-source reading pass
 read Temperley 2009 at the object and returned a DIVERGES verdict on this figure, written up at
@@ -642,7 +642,7 @@ change:* every decision would carry its factor set as sub-units, roughly doublin
 making every charter two-tiered.
 
 **SETTLED BY THE USER, 2026-08-31 — Ruling 8 of
-`cowork_rulings_2026_08_31_decision_surface_sitting.md`.** A unit of this architecture is a
+`records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md`.** A unit of this architecture is a
 **decision the analysis makes about the music** — the second of the three readings above. **A factor
 is not a unit:** §0 states that a factor is *"a means of computing a decision, never a decision."*
 **The factor roster and the terms that rate candidate readings stay inside L2's detail
@@ -650,7 +650,7 @@ specification**, where §5's L2 charter and DP-P already place them.
 
 **★ THIS SECTION'S HEADING AND ITS CLOSING SENTENCE WERE CORRECTED 2026-08-31 ON THE USER'S RULING,
 WITH BOTH FORMER WORDINGS PRESERVED IN PLACE (#12.)** Ruling 8 of
-`cowork_rulings_2026_08_31_decision_surface_sitting.md` §3g — Option A, the grain of a unit is the
+`records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md` §3g — Option A, the grain of a unit is the
 decision; the user's words, verbatim, *"Agree on A"* — scoped into a narrow batch of its own by
 Ruling 18 (§3r) of the same record. **THE FORMER HEADING WAS:** *"### 9.0 The prior question: what is
 a unit? — PUT TO THE USER, NOT SETTLED"*. **THE FORMER CLOSING SENTENCE WAS:** *"**Stated as this
@@ -750,7 +750,7 @@ ground travels no stronger than the read that produced it:**
   [Nápoles López, Feisthauer, Levé & Fujinaga 2020 — RELAYED.]
 
 **★ GROUND 2 WAS NARROWED HERE AND THE FORMER WORDING IS PRESERVED IN PLACE (#12.)** Ruling 3 of
-`cowork_rulings_2026_08_31_decision_surface_sitting.md` §3b, Option B — qualify in place and add the
+`records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md` §3b, Option B — qualify in place and add the
 on-domain evidence; the decision surface is
 `ratification_surfaces/cowork_dpk_ground_surface_2026_08_31.md`. **THE FORMER WORDING WAS:** *"and
 the finding that automatic systems already score **above** human-human agreement on the same data,
@@ -928,7 +928,7 @@ the most plausible reading.**
 
 **★ R-6's HEADING AND ITS §9.0 CLAUSE WERE CORRECTED 2026-08-31 ON THE USER'S RULING, WITH THE FORMER
 WORDING PRESERVED IN PLACE (#12.)** Ruling 8 of
-`cowork_rulings_2026_08_31_decision_surface_sitting.md` §3g, scoped by Ruling 18 (§3r) of the same
+`records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md` §3g, scoped by Ruling 18 (§3r) of the same
 record. **THE FORMER WORDING WAS:** *"**R-6 — Three design points are underived and one is put to the
 user.** DP-N (the cadential six-four), DP-O (hierarchy) and DP-Q (declining to read a span) are open
 with their falsifiers or their settling conditions stated; §9.0 (the grain of a unit) is a finding for
@@ -1293,9 +1293,9 @@ session, by this session or by any reader it delegated to.** No listing of the r
 this session made was read for their contents; their names were seen in a directory listing and nothing
 more.
 
-**Of the rest of the closed list, all but one item was untouched:** no entry of `cowork_handoff.md`;
-neither `cowork_rulings_2026_08_28_informed_framework_sitting.md` nor
-`cowork_rulings_2026_08_28_informed_brief_points_sitting.md`; and no `cc_report_*.md` and no
+**Of the rest of the closed list, all but one item was untouched:** no entry of `records/cowork/handoff/cowork_handoff.md`;
+neither `records/cowork/rulings/cowork_rulings_2026_08_28_informed_framework_sitting.md` nor
+`records/cowork/rulings/cowork_rulings_2026_08_28_informed_brief_points_sitting.md`; and no `cc_report_*.md` and no
 `cc_instruction_*.md`.
 
 **★ THE ONE EXCEPTION IS §8 OF THE SESSION BRIEF, WHICH WAS READ.** It is declared in full on this
@@ -1374,7 +1374,7 @@ standard this document is bound by. The six ground-truth exemplars of the brief'
 
 **Not opened.** `ARCHITECTURE.md`; any document under `docs/` other than the research papers;
 `docs/scoring_model.md`; `DECISIONS.md`; `OPEN_ITEMS.md`; `CLAUDE.md`; `STATUS.md`; any source file;
-any `cc_report_*` or `cc_instruction_*`; `cowork_handoff.md`; either 2026-08-28 ruling record; the
+any `cc_report_*` or `cc_instruction_*`; `records/cowork/handoff/cowork_handoff.md`; either 2026-08-28 ruling record; the
 three sealed placement-sample files; and the framework-phase opening surface, which was set aside for
 stage two because it could not be established in advance that it carries no description of the built
 analysis.

@@ -46,7 +46,7 @@
 > exposure/confidence, cadences, key areas) and the fitted-table packaging to the in-app runtime — is DELIVERED;
 > see "THE RECORD PATH" below, subsections (1)–(6). Full
 > spec: `cowork_joint_estimator_architecture.md`, `cowork_joint_estimator_factorization.md`; pre-fit gates
-> `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`.
+> `cowork_prefit_gates.md`; adoption record `records/cc/reports/cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`.
 >
 > **Delegation pointer (the fifth home case; written 2026-08-03 on the user's direction, the OI-293 write list).** The
 > ratified contract for the PRE-FIT PROTOCOLS this estimator's fitting must satisfy — the five-fold split, the
@@ -112,7 +112,7 @@
 > **THE RECORD PATH — the notation output-surface contract as-built (the PRODUCTION notation path since THE SWITCH,
 > user-ratified 2026-07-27; `useJointNotationRecord` defaults ON).** This is the consolidated, forward end-to-end record
 > of the joint estimator's A-native notation record and the re-plumbed notation consumers that read it (delivered by the
-> seams partition P0-P7; per-unit provenance in STATUS.md / `cowork_handoff.md`). At the switch the migration posture
+> seams partition P0-P7; per-unit provenance in STATUS.md / `records/cowork/handoff/cowork_handoff.md`). At the switch the migration posture
 > **CLOSED**: the record path is now THE in-app notation analysis; the legacy `analyzeHarmonicRhythm`/`analyzeChord`
 > path remains COMPILED and DORMANT, selected only by an explicit `useJointNotationRecord = false`, awaiting deletion at
 > the **OI-180 retirement map (now fully live)**. Through the whole P0-P7 build the flag stayed OFF and the legacy path
@@ -246,7 +246,7 @@
 > **(6) THE SWITCH — the migration posture is CLOSED (user-ratified 2026-07-27).** The seams partition (P0-P7) was
 > closed out and completeness-verified (`tools/notation_seams/partition_completeness.json` — every consumer's record
 > branch cited, every ruling checked, every seams-era register row in state, the flag OFF everywhere, the three suites
-> green; NO finding), and the switch — ONE revertible, user-ratified commit (dispatch `cc_instruction_notation_switch.md`)
+> green; NO finding), and the switch — ONE revertible, user-ratified commit (dispatch `records/cc/instructions/cc_instruction_notation_switch.md`)
 > — flipped `useJointNotationRecord`'s default to **ON**. The batch/corpus output is A's (the OI-178 adoption); the in-app
 > notation analysis is now **A's record path** too. The switch refreshed the pipeline-snapshot goldens against the
 > established record arm (cited preconditions: the P6 classified report `dualarm_classified_report.json` + the OI-178
@@ -384,7 +384,7 @@
 
 ### The evidential priority the emission is scored under — ACTUAL SOUNDING NOTES ARE THE STRONGEST EVIDENCE, and the ranking is ARM-INDEPENDENT
 
-**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 63,
+**Ruled by the user, 2026-08-11** (`records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 63,
 closing `OPEN_ITEMS.md` OI-324). The six rules above govern how the estimator's values are fitted,
 evaluated and searched, and the block below fixes what the decode counts. **Neither says what
 EVIDENCE outranks what** — and the ranking that does was stated only inside §5.2, a section whose own
@@ -1597,7 +1597,7 @@ improved). This is a correct-**upstream** / frozen-**downstream** wobble (the ol
 repetition-inflation happened to nudge a few borderline chords toward the oracle); it re-tunes at
 layer 3 and is **not** an unexplained regression (proven: a legacy reproduction mode reproduced
 the prior oracle set byte-exactly). **Next: layer 3 (per-slice analysis).** See
-`cc_layer1_impl_report.md` / `cc_layer1_coverage_report.md` (HELD).
+`records/cc/reports/cc_layer1_impl_report.md` / `records/cc/reports/cc_layer1_coverage_report.md` (HELD).
 
 **The finest meaningful extension step is the CHANGE-POINT — a finer request loads no note and can
 move no answer (D-628; re-homed into this specification 2026-08-04 from the design document that formerly
@@ -1689,8 +1689,8 @@ re-slice equivalence). `changePointSlices` is consumed by L3 on a **whole-score*
 (`regionanalyzer.cpp` → `KeyModeSequenceDecoder`; `batch_analyze` key/chord decode), where the
 Phase-2 clip is inert — so composing / notation / pipeline-snapshot / BIR / oracle are
 byte-identical (composing 631/631, notation 53/53, snapshots 11/11 with no golden refresh; corpus
-0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,
-`cc_layer2_audit_dossier.md`.
+0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `records/cc/reports/cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,
+`records/cc/reports/cc_layer2_audit_dossier.md`.
 
 **Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate. *(The "See …" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i) distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*
 
@@ -1856,7 +1856,7 @@ class-(a) symmetric-dim7 / share-tone **rotation** ambiguity (root pitch-class-u
 construction). The Jazz +1 is accepted under the two-tier BIR-gate amendment (CLAUDE.md, "Gate
 threshold and preset policy"); it retires when Layer 4 (function/cadence) pins the rotation.
 `composing_tests` 596/596; the P1/P2/P3/keyAreas snapshot goldens were refreshed for the ratified
-key moves with **P4 untouched**. Full provenance: `cc_layer3_wiring_report.md` (HELD),
+key moves with **P4 untouched**. Full provenance: `records/cc/reports/cc_layer3_wiring_report.md` (HELD),
 `cowork_layer3_keymode_design.md`.
 
 **Four standing rules of this layer, re-homed into this specification 2026-08-07 on the user's
@@ -2182,7 +2182,7 @@ residue.
 > labeller, it **MASKS** the key error underneath it. Of the affected cases the great majority are
 > cadence-confirmed local keys in the ground truth and most last five chords or more; only a small
 > remainder is brief enough for either reading to be defensible. **No figure is carried here** —
-> every one lives in `cc_tonicization_modulation_metric_dossier.md` (#17f, **D-431**).
+> every one lives in `records/cc/reports/cc_tonicization_modulation_metric_dossier.md` (#17f, **D-431**).
 >
 > **This is the clearest recorded win of the measure-before-building rule**, and it is why the
 > decision is written into a specification rather than left in a session record: without the check
@@ -2221,7 +2221,7 @@ not-a-new-detector reasoning this layer's contract states for grouping generally
 
 **★ WHAT SUPPLIES THE SMOOTHED KEY SEQUENCE, AND WHY THE PRECONDITION IS NOT ONE NAMED PASS
 (corrected 2026-08-09 on the user's ruling — Ruling 15 of
-`cowork_rulings_2026_08_09_second_stop.md` — after the read-only probe the open-items register had
+`records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md` — after the read-only probe the open-items register had
 reserved to the user established the answer at the code).** The rule above requires that the
 per-region key sequence it groups over has already been smoothed; it does NOT require that the
 smoothing be any one implementation of it. **Two designs meet the requirement, one per arm.** On the
@@ -4295,7 +4295,7 @@ and it is still what plain `batch_analyze` runs when `--joint-inference` is not 
 the production key path**, which is the joint estimator's decode (§3.3; register entry D-051).
 Nothing in §5.2 describes what the shipped analysis does on the key axis.
 
-**★ ANNOTATION (2026-08-11, the user's Ruling 63 of `cowork_rulings_2026_08_11_fourteenth_stop.md`,
+**★ ANNOTATION (2026-08-11, the user's Ruling 63 of `records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md`,
 closing `OPEN_ITEMS.md` OI-324) — WHAT THE SCOPING SENTENCE ABOVE DOES AND DOES NOT SCOPE. The note
 is preserved exactly as written (#12); this says how to read it beside a later ruling.** The sentence
 scopes the MECHANISM this section describes — which code path runs, through which helper, under which

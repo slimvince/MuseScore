@@ -254,5 +254,5 @@ Recorded with the §6 assessment; each has a register row. None changes the deci
 ---
 
 *Provenance: the architecture decision is the user's, 2026-07-14, on the grounding review. The register
-(OI rows re-tagged as A-factors / superseded) and `STATUS.md`/`cowork_handoff.md` are updated to point here
+(OI rows re-tagged as A-factors / superseded) and `STATUS.md`/`records/cowork/handoff/cowork_handoff.md` are updated to point here
 as the governing architecture; the key-layer design opening is marked superseded-by-this at its next touch.*

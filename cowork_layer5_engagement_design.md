@@ -6,7 +6,7 @@
 > selects among the carried readings by joint consistency. The downstream owner-decisions (the quality-from-key
 > owner FQ-2, pedal detection's home, the joint key-and-chord step O-18/C3, the F-B annotate mechanics) are
 > **enumerated for follow-on passes (§4.3), NOT resolved here.** Provenance report:
-> `cc_engage_l5_carry_selection_design_report.md`.
+> `records/cc/reports/cc_engage_l5_carry_selection_design_report.md`.
 >
 > **★ STRUCTURE ONLY — constants are precision-phase (R5). Not inference work (#8).** This designs the
 > *architecture* of the selection (its evidence channels, how the concerns compose, the confidence contract it
@@ -111,14 +111,14 @@ The contract's frames/rules (`cowork_confidence_contract.md` §4/§5) are realiz
 | Output assembly | `assembleFunctionOutput` `[code]` | maps L4 chosen → RN; confidence emit — §3.4 |
 | Confidence boundary | `combinedBoundary` (D-L5a) `[code]` | add the selection's joint-consistency margin as a declared Class-M confidence — §3.4 |
 | Pedal detection | **none in the decoder** (audit gap) `[code]` | a **new reader-over-carry** — enumerated §4.2 |
-| Joint key↔chord | **none** (C3 un-computable, `cc_engage_c3_measurement_report.md`) `[data]` | a **distinct downstream step** O-18 — enumerated §4.3 |
+| Joint key↔chord | **none** (C3 un-computable, `records/cc/reports/cc_engage_c3_measurement_report.md`) `[data]` | a **distinct downstream step** O-18 — enumerated §4.3 |
 
 ---
 
 ## §2 — The carry contract: decoder → Layer 5 (Task 2)
 
 ### §2.1 What Layer 5 reads — the distinct-root distribution, not a top-N list
-The §8 arc fan-out measurement (`cc_engage_fanout_measure_report.md`) fixes the **factual shape** of the carry
+The §8 arc fan-out measurement (`records/cc/reports/cc_engage_fanout_measure_report.md`) fixes the **factual shape** of the carry
 `[data]`: per competition slice the above-threshold ranked set is **wide in readings but narrow in roots** —
 median **5/4/5** readings (Baroque/Jazz/Default) but distinct **roots** median **2/1/2**, mean **2.13/1.73/2.12**.
 The large reading count is mostly template/voicing variants of the same ~2 roots.
@@ -300,7 +300,7 @@ agenda:
 - **O-18 / C3 — the joint key-and-chord step.** **Hinge:** the exclusion tail (§2.2, #12) is carried **so the
   joint step can re-rank the region key under the carried chord alternatives** — that is *why* the ≥3rd root is
   load-bearing. The joint step is un-computable today (C3 trigger not computed anywhere,
-  `cc_engage_c3_measurement_report.md` `[data]`) and its design is owed at Stage 5; the carry contract (§2) is
+  `records/cc/reports/cc_engage_c3_measurement_report.md` `[data]`) and its design is owed at Stage 5; the carry contract (§2) is
   designed to **feed** it (the beam of hypotheses `[research]` §3), and the §4.1 boundary reserves its place. The
   F-B correction job (§3.3) re-homes here long-run.
 - **The F-B annotate mechanics.** **Hinge:** §3.3 — the annotation action (the `ResolvedReading` advisory field,
@@ -337,7 +337,7 @@ Both regression stops untouched/green (no `src/`, no build). Fork-only; `upstrea
 > **Status: DESIGN (CC, 2026-07-07). READ-ONLY architectural design pass — no `src/` change, no build, no corpus
 > write, no constant fitted or tuned.** Engage arc #11, the **last two Layer-5 engagement design pieces** Part 1
 > enumerated as follow-ons (§4.2 gap 3 pedal, §4.3 F-B annotate mechanics). Settling them **closes the Stage-2
-> design phase** (`cowork_engage_arc_plan.md`). Provenance report: `cc_engage_l5_pedal_annotate_design_report.md`.
+> design phase** (`cowork_engage_arc_plan.md`). Provenance report: `records/cc/reports/cc_engage_l5_pedal_annotate_design_report.md`.
 >
 > **★ STRUCTURE ONLY — constants are precision-phase (R5). Not inference work (#8).** This designs the *architecture*
 > of the pedal reader and the F-B annotation (their homes, how they read the carry, the vehicle they reuse); it
@@ -615,7 +615,7 @@ re-baseline discipline (#16):
    dissolution (the arc plan's Stage-2/Stage-3 split); the hinge Part 1 §4.3 named for the key-consistency channel.
 6. **The joint step B1–B4** — *(⛔ SHELVED, user-ratified 2026-07-07 at arc #12; synced here 2026-07-10,
    doc-sync #10)*: measured NOT to pay (net +0.05–0.16 pp, harm 75–90 % of correction, oracle ceiling
-   +0.6 pp, coupled-minority net ~0, fire-rate 1.4 % — `cc_engage_stage3_joint_measure_report.md`). OFF the
+   +0.6 pp, coupled-minority net ~0, fire-rate 1.4 % — `records/cc/reports/cc_engage_stage3_joint_measure_report.md`). OFF the
    Stage-3 build list per `cowork_engage_arc_plan.md`. Original enumeration kept for provenance: **B1** the
    per-key chord re-decode driver over the built decoder (Layer 4); **B2** the beam/coupling driver
    generalizing `decideJointKey`; **B3** the trigger gate; **B4** the production wiring completing J-key-iii —

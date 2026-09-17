@@ -2,7 +2,7 @@
 
 > **Status: AS-BUILT (2026-07-02) — built dormant + oracle-validated after the extension gate passed.**
 > `analysis/grouping/groupinglayer.{h,cpp}` (commits `da06242dd2`/`73b2a5a791`/`b17abc9e71`; report
-> `cc_l6_build_report.md`, Cowork-ratified): §5.1–§5.5 exactly, over plain-data input structures a test can construct
+> `records/cc/reports/cc_l6_build_report.md`, Cowork-ratified): §5.1–§5.5 exactly, over plain-data input structures a test can construct
 > by hand; 18 oracle-asserted
 > tests (bringing the composing suite to 1033 tests total); the §10 step-1 validation on the 16 **dev beds** (the
 > development-split sub-corpora of the corpus registry, used as test beds — held-out beds untouched) with the
@@ -436,7 +436,7 @@ located system models concurrent overlapping per-voice phrases for harmonic anal
    after this design is signed.
    **★ Update (2026-07-02, corpus Wave 1 — the oracle is now MEASURED, at scale):** the full **DLC** container — the
    DCML **Distant Listening Corpus**, all 40 of its 40 member corpora — is
-   onboarded and inventoried (`cc_corpus_wave1_report.md` §4; registry `layer_label_counts`): **9,662 cadence labels in
+   onboarded and inventoried (`records/cc/reports/cc_corpus_wave1_report.md` §4; registry `layer_label_counts`): **9,662 cadence labels in
    921 of 1,284 files** (PAC 4,667 / HC 2,614 / IAC 1,616 / EC 279 / DC 195 / PC 86 + HC sub-types) and **24,436
    `phraseend` markers** — and `dcml_parser.py` currently **drops all three columns**, so the §10 oracles are a purely
    additive parser extension away. Known coverage limits, for the §10 metrics: **12 sub-corpora carry the column but 0

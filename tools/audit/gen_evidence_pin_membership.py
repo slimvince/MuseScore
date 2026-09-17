@@ -183,9 +183,10 @@ def pin_census(tool_paths: list[str]) -> dict:
 
 
 def ruling_records() -> list[str]:
-    return sorted(fn for fn in os.listdir(ROOT)
+    return sorted("records/cowork/rulings/" + fn
+                  for fn in os.listdir(os.path.join(ROOT, "records", "cowork", "rulings"))
                   if RULING_RECORD.match(fn)
-                  and os.path.isfile(os.path.join(ROOT, fn)))
+                  and os.path.isfile(os.path.join(ROOT, "records", "cowork", "rulings", fn)))
 
 
 def own_statement_blocks(text: str) -> list[dict]:

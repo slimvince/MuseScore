@@ -3,7 +3,7 @@
 > **Status: SIGNED (user, 2026-06-22)** — conditional sign-off met by stating the recognized mode vocabulary
 > explicitly (Section 1).
 >
-> **★ SCOPE, CORRECTED 2026-08-11 (CC, `cc_instruction_return_continuation_11.md` Task 1; `OPEN_ITEMS.md`
+> **★ SCOPE, CORRECTED 2026-08-11 (CC, `records/cc/instructions/cc_instruction_return_continuation_11.md` Task 1; `OPEN_ITEMS.md`
 > OI-276 (1)). THE AS-BUILT CLAUSE IMMEDIATELY BELOW IS FALSE AT HEAD AND ITS FORMER WORDING IS PRESERVED
 > IN PLACE (#12).** This document describes the **Layer-3 key/mode decoder**, which is **BUILT AND
 > DORMANT**: the joint estimator is the production key path on **both** surfaces — the batch/corpus surface
@@ -61,7 +61,7 @@ prose definitions of this layer's own coinages are in the §12 glossary; this ta
 | **Duration-majority** | The slice→coarse-region reduction at the wiring seam: a region takes the key/mode holding the majority of its duration. |
 | **BIR gate** | The project's two-tier **bass-is-root** corpus regression gate (CLAUDE.md); "the project-wide accuracy metric" in this document means this gate's metric, run on the two tuning presets (Baroque, Jazz). |
 | **Pinned analysis snapshots** | Stored golden outputs the test suites compare exactly; refreshed only after a change is confirmed correct. **Byte-identical** = output identical byte-for-byte to the previous behaviour on those pinned outputs. |
-| **The clean set** | The measured subset of this layer's misses that is genuinely fixable within key/mode from the notes alone (A∩stable + B∩stable, ≈11.5% of Baroque / 7.4% of Jazz misses) — defined and measured in `cc_layer3_error_decomposition_report.md`; the §11 sweep grades against it (`cc_layer3_sweep_report.md`). |
+| **The clean set** | The measured subset of this layer's misses that is genuinely fixable within key/mode from the notes alone (A∩stable + B∩stable, ≈11.5% of Baroque / 7.4% of Jazz misses) — defined and measured in `records/cc/reports/cc_layer3_error_decomposition_report.md`; the §11 sweep grades against it (`records/cc/reports/cc_layer3_sweep_report.md`). |
 | **Tonal pitch class (tpc)** | The notated spelling of a pitch (G♯ distinct from A♭), as carried losslessly by Architectural Layer 1. |
 | **The inference firewall** | The project rule splitting mechanism/structure changes (allowed now) from inference-quality tuning (deferred to the precision phase, Phase B of `cowork_l1l3_stabilization_plan.md`). |
 
@@ -103,7 +103,7 @@ region must **carry the ranked alternative keys + confidence forward** so the ov
 is an additive forward-carry of already-computed data (no production consumer yet, so production output is unchanged
 byte-for-byte), protected by a regression test that pins the carried fields so they cannot be silently dropped.
 Full mechanism: `cowork_layer5_function_design.md` §8/§9-D7; `cowork_target_architecture.md` control-flow contract;
-close-out: `cc_instruction_l3_keyalt_forwardcarry.md`.
+close-out: `records/cc/instructions/cc_instruction_l3_keyalt_forwardcarry.md`.
 
 **What music Architectural Layer 3 operates on.** The slices from Architectural Layer 2, over the notes from
 Architectural Layer 1, for the user-selected part of the score.
@@ -251,7 +251,7 @@ Deciding the sequence has four steps:
    the slices where it locally scored below the top K, so the change cost — not candidate elimination — decides
    whether the excursion switches the key. *(A per-slice alternative — explicitly injecting only the incumbent
    decoded key into each slice's list rather than the whole union — is not decidable by argument against the union;
-   ruled 2026-07-02 (gap-analysis ruling #2, `cc_gap_analysis_report.md`) to be resolved by a decode-only A/B at the
+   ruled 2026-07-02 (gap-analysis ruling #2, `records/cc/reports/cc_gap_analysis_report.md`) to be resolved by a decode-only A/B at the
    next Layer-3-touching increment. The union is the as-built and the spec's normative rule until that measurement rules otherwise.)*
 2. **Change cost.** Define the cost of moving from one key/mode to another between consecutive slices: zero to stay;
    otherwise a base "change penalty" plus an amount that grows with how far apart the two keys are, plus an extra,
@@ -410,14 +410,14 @@ confidence level below which a slice is marked "uncertain" — are tunable value
   terms); a Layer-3 emission increment scheduled for **Phase B, item B2** of the stabilization plan
   (`cowork_l1l3_stabilization_plan.md`) — leading-tone de-brittling is inference-quality, behind the inference
   firewall (§0), *not* the Phase-4 tpc (tonal pitch class, §0) capability foundation —
-  not a foundation patch.** Full diagnosis: `cc_keyregression_diagnosis_report.md`.
+  not a foundation patch.** Full diagnosis: `records/cc/reports/cc_keyregression_diagnosis_report.md`.
 - **One key/mode fix is deferred to wiring.** The fix for the stable-region under-weighting is a change to the shared
   per-window scorer; because that scorer is also used by the current per-region resolver, changing it now would move
   production output, so it is specified and deferred to the wiring increment — when the decoder replaces the resolver
   and the scorer can be tuned once for both.
 - **The decoder-private settings are exhausted (sweep, 2026-06-22).** A bounded sweep of every decoder-private
   setting found none that moves the **clean set** (§0; the fixable-within-key/mode miss subset defined in
-  `cc_layer3_error_decomposition_report.md`) net-positive — sweep record: `cc_layer3_sweep_report.md`. Widening the
+  `records/cc/reports/cc_layer3_error_decomposition_report.md`) net-positive — sweep record: `records/cc/reports/cc_layer3_sweep_report.md`. Widening the
   per-slice window recovers the **stable measurement category** (the grading corpus's spans whose ground-truth key is
   constant) but destroys tracking on the **modulation category** (spans containing a ground-truth key change);
   lowering the change cost is net-negative on Baroque (a Jazz-only gain that would need
@@ -428,7 +428,7 @@ confidence level below which a slice is marked "uncertain" — are tunable value
   *scale-membership* term, not its (inert) leading-tone term. Sharpening the out-of-candidate-scale penalty lifts
   *both* stable- and modulation-category accuracy with no trade-off (measured decode-only on the held-out test set at
   coarse-region granularity: a net +57…+73 regions corrected on Baroque / +38…+68 on Jazz, depending on the sharpen
-  step — `cc_layer3_sweep_report.md` §3);
+  step — `records/cc/reports/cc_layer3_sweep_report.md` §3);
   raising the leading-tone weight instead collapses accuracy. This is the change handed to the wiring increment, where
   it is applied once to the shared scorer and must clear the project BIR gate and the snapshots (its production-side
   magnitude is a wiring-time calibration; only its direction is validated so far).
@@ -510,7 +510,7 @@ say plainly which we rejected and why.*
   Layer 4's output (for the better), so re-run Architectural Layer 4's snapshots + metrics after this retrofit; the
   forward-only layering keeps that a bounded re-check, not a redesign. (iii) The chord layer needs **no change** to
   benefit — it improves automatically through the diatonic prior; this retrofit is decoupled from building Layer 4.
-  **MEASURED (read-only, 2026-06-22, `cc_layer3_tpc_keymeasure_report.md`):** a decode-only line-of-fifths tpc term is
+  **MEASURED (read-only, 2026-06-22, `records/cc/reports/cc_layer3_tpc_keymeasure_report.md`):** a decode-only line-of-fifths tpc term is
   **genuine spelling signal** (its modulation-gain/stable-loss frontier beats a change-cost control on both presets)
   and helps modulation regions cleanly (+2–8 pts), **but** as a *standalone Layer-3* term it is only **marginal
   overall** (best net +0.5 Baroque / +0.6 Jazz at a low weight) because it **hurts stable regions** — it over-switches

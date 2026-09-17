@@ -139,7 +139,7 @@ RECORDED_FIGURES = [
     },
     {
         'figure': 75,
-        'where': 'cc_instruction_phase1m_dispositions_and_measurements.md',
+        'where': 'records/cc/instructions/cc_instruction_phase1m_dispositions_and_measurements.md',
         'line': 132,
         'quote': 'LEGACY-marked entries',
         'note': 'The phase-1m dispatch that opened OI-289 — so the row was sized from a figure that '

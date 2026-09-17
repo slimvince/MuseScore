@@ -28,8 +28,8 @@ pinned to ONE sense for this document.
 | **the fitter** | The Stage-5 component this document designs: the machinery that replaces hand-chosen numeric constants in the harmonic-analysis scoring pipeline with values optimized against the declared objective, under the declared constraints. |
 | **constant / parameter** | A numeric value in the scoring pipeline that was chosen by hand (a bonus, penalty, threshold, weight, squash constant, or override factor θ). "Parameter" is used once the constant is under the fitter's management. |
 | **objective** | The single quantity the fitter maximizes: duration-weighted **root agreement** on the robust unit under variant (b), measured on the fitting split of the licensed pool. Declared fully in §4.2, including the scope of every constraint attached to it. |
-| **robust unit** | The granularity-robust **union-of-boundaries cell**: overlay our region boundaries with the human-annotation row boundaries; each resulting half-open tick span is scored once and weighted by its duration. Defined and measured in `cc_a8_rebaseline_measure_report.md` §1.1. |
-| **variant (b)** | The adjudication rule "human annotation only, no music21 anywhere": each cell is scored directly against the WiR human annotation. (Its ratified name elsewhere is "variant (b) DCML-only", where "DCML" names the *annotation format*; this document says "variant (b)" to avoid the corpus/format ambiguity — see the DCML row.) `cc_a8_rebaseline_measure_report.md` §1.3. |
+| **robust unit** | The granularity-robust **union-of-boundaries cell**: overlay our region boundaries with the human-annotation row boundaries; each resulting half-open tick span is scored once and weighted by its duration. Defined and measured in `records/cc/reports/cc_a8_rebaseline_measure_report.md` §1.1. |
+| **variant (b)** | The adjudication rule "human annotation only, no music21 anywhere": each cell is scored directly against the WiR human annotation. (Its ratified name elsewhere is "variant (b) DCML-only", where "DCML" names the *annotation format*; this document says "variant (b)" to avoid the corpus/format ambiguity — see the DCML row.) `records/cc/reports/cc_a8_rebaseline_measure_report.md` §1.3. |
 | **WiR human annotations** | The When-in-Rome human harmonic analyses of the reference corpus's Bach chorales (Roman-numeral text files in the DCML annotation format), license CC-BY-SA. The ground truth of variant (b). Coverage: 326 of the 352 corpus scores. |
 | **DCML** | The Digital and Cognitive Musicology Lab. Used in TWO derived senses elsewhere in the project — (i) the *annotation format* the WiR analyses use, (ii) the lab's *Distant Listening Corpus*. In this document "DCML" appears only inside the fixed names "DCML annotation format" and the ratified variant name quoted above; the corpus is always called the DLC. |
 | **DLC** | The Distant Listening Corpus: the 40 DCML-lab corpora held as research material. License class NC — **excluded from the fitting pool**, validation-only (§2 constraint 1). |
@@ -42,7 +42,7 @@ pinned to ONE sense for this document.
 | **Gate A–L** | One of the lettered post-scoring correction rules in the chord scorer (`docs/scoring_model.md` §6): rank-mutating swaps/pulls applied after template scoring. Always written with its letter or as "Gates A–L". **The live lettered set is A, E, F, the G-family (G-E/G-B/G-C/G-D), H, I, J, K, L — Gates B, C, D were removed at Stage 3.4b as provably dead code.** The §6 block also contains unlettered members (the bias correction, the FM2 fallback); the dissolution scope in §4.4 is the whole block, lettered or not. (Gate R is NOT in this set — it is a scoring-time guard, see its row.) |
 | **Gate R** | The rcb bass-chord-tone guard inside template scoring (`docs/scoring_model.md` §4) — a scoring-time entry condition, not a post-scoring rank mutation. Outside the §4.4 dissolution scope; its documented coupling to the temporal-signal migration is roadmap item 3.3. |
 | **engage criterion G1–G6 / engage step E0–E5** | The ratified criteria (G1–G6) and staged plan (E0 dormant measurement → E1 wire default-off → E2 measured A/B → E3 default-on, a user event → E4 retirements → E5 seal) for switching the dormant chain on (`docs/implementation_roadmap.md`, ENGAGE CRITERIA block). Always written with the number. |
-| **class (a) / class (b)** | The two-tier failure classes: class (a) = the sonority's root is pitch-class-undecidable by construction (symmetric or share-tone collections — a coin-flip between rotations); class (b) = the root is pitch-class-decidable and the analysis is functionally wrong. CLAUDE.md two-tier policy; per-cell test in `cc_a8_rebaseline_measure_report.md` §1.5. |
+| **class (a) / class (b)** | The two-tier failure classes: class (a) = the sonority's root is pitch-class-undecidable by construction (symmetric or share-tone collections — a coin-flip between rotations); class (b) = the root is pitch-class-decidable and the analysis is functionally wrong. CLAUDE.md two-tier policy; per-cell test in `records/cc/reports/cc_a8_rebaseline_measure_report.md` §1.5. |
 | **Class M / Class P** | The two admissible confidence classes of the confidence contract: Class M = a squashed decision margin (a rank statement); Class P = a calibrated probability (empirical correctness at that confidence). `cowork_confidence_contract.md` §2. |
 | **reliability map** | The fitted monotone map from a layer's published Class-M confidence to empirical correctness, upgrading it to Class P. The map is part of contract obligation **C1**'s deliverable (curves + fitted maps); the C1 measurement arc delivered the curves, and the maps land here. |
 | **frame / θ** | A declared cross-layer comparison (incumbent confidence, contradiction strength, conversion) and its override factor: an override fires if and only if the contradiction strength exceeds θ times the incumbent confidence, expressed in one scale. `cowork_confidence_contract.md` §4. Re-expressing θ against calibrated quantities is contract obligation **C2**. |
@@ -86,7 +86,7 @@ data, under hard regression constraints, with every adoption a deliberate user e
    2026-06-14); this arc is its named discharge point (retirement map R1: "Gates A–L — E4, or Stage 5 if
    first").
 3. **The confidence contract's calibration obligations are due here.** C1's curves are measured
-   (`cc_c1_reliability_report.md`) but C1's fitted reliability maps remain; C2 (θ re-expression) and the
+   (`records/cc/reports/cc_c1_reliability_report.md`) but C1's fitted reliability maps remain; C2 (θ re-expression) and the
    C3 joint-step design are assigned to Stage 5 (`cowork_confidence_contract.md` §6).
 4. **The metric arc ends here.** The ratified A-8 dual-track holds "until the Stage-5 fitter lands"; at
    adoption, retirement item R10 fires and the robust unit becomes the governing regression stop.
@@ -207,7 +207,7 @@ Stage-5-neighborhood method levers); the engage decision itself (E3 is its own u
   self-validating against the pinned grid primitive on every piece), `tools/c1_reliability.py` (reliability
   curves), `tools/characterise_bir_false.py` (the batch stop; refuses unmanifested or contaminated dirs —
   a harness requirement, §4.3), `tools/run_bach_preset.py` (regen).
-- **The C1 evidence** (`cc_c1_reliability_report.md`): per-(layer × decision × preset) reliability curves,
+- **The C1 evidence** (`records/cc/reports/cc_c1_reliability_report.md`): per-(layer × decision × preset) reliability curves,
   the calibration facts its §5 recorded for this arc.
 - **The parameter sites** (inventory owed to Phase 0; the two known homes are the chord scorer
   `src/composing/analysis/chord/chordanalyzer.cpp` + `postscoringgates.cpp` and the preset definitions in
@@ -332,7 +332,7 @@ root improvement is surfaced to the user at the adoption event, not silently acc
 
 **Class-(a) cells stay in the objective at full weight** initially: they are ~3.5–3.9 % of root-failing
 duration under variant (b) (cell-count share ~3.6–4.0 %; both measured,
-`cc_a8_rebaseline_measure_report.md` §4.2), too small to distort the fit, and excluding them would hide a
+`records/cc/reports/cc_a8_rebaseline_measure_report.md` §4.2), too small to distort the fit, and excluding them would hide a
 parameter change that destabilizes many symmetric sonorities at once (the two-tier policy's "large
 class-(a) net increase trips investigation" signal). Revisit only if Phase-2 fits show class-(a) churn
 dominating a fit direction (§15 O-2).
@@ -368,7 +368,7 @@ the dissolution track, §4.4), and the frozen-row verification findings.
 **Checkpoint P1 (ratification):** the optimizer choice (§9 D-3, decided on the measured cost and
 sensitivity), the family staging order, the R-13 augmentation decision (§14), and the split definition —
 all on 1b's numbers.
-**★ P1 RATIFIED (user, 2026-07-04, on the Phase-1 measured surface — `cc_stage5_phase1_report.md`):**
+**★ P1 RATIFIED (user, 2026-07-04, on the Phase-1 measured surface — `records/cc/reports/cc_stage5_phase1_report.md`):**
 (1) **the 261/65 mode-stratified fitting/held-out split RATIFIED** (`tools/stage5_split_registry.json`);
 (2) **optimizer = coordinate/pattern search** (D-3's default, confirmed budget-feasible at ~45 s/eval,
 ~35 live rows post-dead-pruning); (3) **staging adopted:** the clean lever (`kPowerChord3PcPenalty`,
@@ -382,7 +382,7 @@ leverage shows the anchor is load-bearing, not that it should float), `maxTotalI
 = DELIBERATELY NON-BINDING at its current value (the individual bonuses are the tunable surface; a
 floating cap coupled to the bonuses it caps is a redundant degree of freedom). The rationale
 corrections ride the next manifest edit.
-**★ PHASE 2.1 — THE FIRST FIT DELIVERED as a CANDIDATE (CC, 2026-07-05, `cc_stage5_phase2_1_report.md`;
+**★ PHASE 2.1 — THE FIRST FIT DELIVERED as a CANDIDATE (CC, 2026-07-05, `records/cc/reports/cc_stage5_phase2_1_report.md`;
 awaiting Cowork verification):** the family-1 clean lever `kPowerChord3PcPenalty` fitted 1-D on the
 fitting split (261, Baroque carrier) → **candidate 0.6375** (best feasible; fitting root +0.073). The row
 is **constraint-bounded**: the unconstrained optimum (0.15, +0.376) is infeasible (adds class-(b) batch
@@ -452,7 +452,7 @@ Each family lands as its own adoption event (or is rejected on its numbers).
 
 ### §4.5 Phase 3 — calibration (completing C1's maps; C2)
 
-> **★ DELIVERED (session 22x, 2026-07-06; `cc_stage5_phase3_report.md`; see O-14). Measurement + committed
+> **★ DELIVERED (session 22x, 2026-07-06; `records/cc/reports/cc_stage5_phase3_report.md`; see O-14). Measurement + committed
 > artifacts only, NOTHING wired, NO behavior change, NO push.** Curves re-measured on the adopted corpus
 > (ECE Δ≤0.001). Maps 1 (L3 margin) + 2 (L4 composite) FITTED (isotonic, Baroque/Default carriers, Jazz
 > A-7-unmapped), validated held-out (post-map ECE 0.017–0.041); L4 flat-band asserted+held (0.289). The
@@ -516,7 +516,7 @@ R10-b: the 2.2e KEY column is unreproducible (root/RN reproduce exactly; key = t
 Jazz byte-identity proving 64.43) — its CLAUDE.md correction is an R10-b action. **R10-b (the user's
 ratification + the handover commit) remains the arc-closing event.**
 
-**★ R10-b FIRED — the arc-closing ratification (session 23, 2026-07-06; `cc_stage5_r10b_ratification_report.md`).**
+**★ R10-b FIRED — the arc-closing ratification (session 23, 2026-07-06; `records/cc/reports/cc_stage5_r10b_ratification_report.md`).**
 The batch→robust handover is MADE. The CLAUDE.md gate section is now: block (A) the robust-unit stop (class-(b)
 root-disagree DURATION non-increase per preset + mandatory explained run-diff; reference `tools/robust_stop/`;
 baselines root 63.36/62.37/63.25, RN 44.58/42.40/44.41, key 68.13/64.43/67.50) · block (B) the two-tier per-cell
@@ -961,7 +961,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   tuning bridge; if so, it enters the retirement map at that edit (§4.1). *(Resolved at Phase 0: CLEAN —
   the tuning bridge reads no scoring parameter.)*
 - **O-7 (Phase 2.1 closure, user-ruled 2026-07-05): the family-1 candidate is PARKED, not adopted.** The
-  fitted `kPowerChord3PcPenalty = 0.6375` candidate (full surface in `cc_stage5_phase2_1_report.md`) was
+  fitted `kPowerChord3PcPenalty = 0.6375` candidate (full surface in `records/cc/reports/cc_stage5_phase2_1_report.md`) was
   feasible and improved the full corpus (+0.038/+0.085/+0.055) with class-(b) duration down ×3 and the
   batch sets untouched — but **regressed the held-out split (−0.098)**: the design's own overfit tell.
   Ruling: no value change; the family closes "feasible, constraint-bounded, non-generalizing at held-out";
@@ -971,7 +971,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   the 1b "clean at ±0.05" read does not extend to the full range. The theory question the fit raised
   (is the power chord an accepted chord category?) is recorded at its proper layer: **L4 design §15 O4**
   (idiom-dependent by the theory itself; competitiveness stays an idiom-calibrated constant per §2.15).
-  - **O-7 RESOLVED at the family-2 joint fit (Phase 2.2b, CC 2026-07-05, `cc_stage5_phase2_2b_report.md`):**
+  - **O-7 RESOLVED at the family-2 joint fit (Phase 2.2b, CC 2026-07-05, `records/cc/reports/cc_stage5_phase2_2b_report.md`):**
     re-entered in the 8-row coupled cluster, `kPowerChord3PcPenalty` **does NOT move at the joint optimum**
     — at the coupled point (bassNoteRootBonus 0.775 / kWStepIn 0.125 / sameRootInversionBonus 0.475) its
     whole local ladder [0.20…0.40] is feasible yet every point scores below the current 0.30; its apparent
@@ -995,7 +995,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   `bassNoteRootBonus` points from the committed ledger, full surface re-measured; the `bwv392@17520`
   class score-verified per guardrail (2) before it is treated as final). External precedent: negative
   transfer under hard sharing, §14.
-  **★ DELIVERED (2.2c, `cc_stage5_phase2_2c_report.md`):** the per-carrier scoping mechanism LANDED
+  **★ DELIVERED (2.2c, `records/cc/reports/cc_stage5_phase2_2c_report.md`):** the per-carrier scoping mechanism LANDED
   (`batch_analyze.cpp` `6a468f82ac`: `bassNoteRootBonus` per prefs-field, `kWStepIn` per preset via the
   registered-global writer written BEFORE the override load; values unchanged → byte-identical ×3). The
   **production-path plumbing question is REPORTED, not improvised**: production has no preset-selection
@@ -1022,7 +1022,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   total-unification item, claimable by the L4 carry work or a §6-block consolidation increment).
   Evidence-method lesson recorded: firing-site/inertness evidence must measure the FULL output surface
   (winner + alternatives), not the winner alone. (ii) **Family 2 (the coupled continuous cluster)
-  CLOSED NOT-ADOPTABLE at every swept value** (`cc_stage5_phase2_2c_report.md` Task 4): low
+  CLOSED NOT-ADOPTABLE at every swept value** (`records/cc/reports/cc_stage5_phase2_2c_report.md` Task 4): low
   `bassNoteRootBonus` is fitting-blocked (`bwv379@11520`), every fitting-feasible value is
   full-corpus-blocked by the Task-3-verified class-(b) `bwv392@17520` — which is driven by the
   `sameRootInversionBonus 0.475 + kWStepIn 0.125` PAIR (present even at bnrb 0.70), a **Layer-2/4
@@ -1038,13 +1038,13 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   `bwv244.32@5760`, ZERO new class-(b) anywhere, DLC net-positive. The tie-break vs (0.425, 0.125)
   ruled for the single-lever point (identical class-(b) win; the alternative's batch edge is class-(a)
   churn + a fragile coupling + struct-default leakage into unmeasured carriers). The adoption event =
-  its own dispatch (`cc_instruction_stage5_phase2_2e.md`): the value + provenance stamp (the FIRST §7
+  its own dispatch (`records/cc/instructions/cc_instruction_stage5_phase2_2e.md`): the value + provenance stamp (the FIRST §7
   license-provenance fill) + goldens refresh + **the first deliberate frozen-corpus re-baseline**
   (expected 52/24/52, removal-only diff {bwv244.32@5760} ×Baroque/Default; CLAUDE.md sets re-stamped;
   A-8 baselines re-measured) + unmeasured carriers explicitly pinned (mandate 4c) + the O-10
   retained-rule liveness re-measurement. **The batch stop REMAINS the hard stop (dual-track unchanged —
   this is a set re-stamp within the policy, NOT the R10 dissolution).**
-  **★ EXECUTED (2.2e, 2026-07-05, `cc_stage5_phase2_2e_report.md`; commit `c50002fee1` `feat(analysis):` +
+  **★ EXECUTED (2.2e, 2026-07-05, `records/cc/reports/cc_stage5_phase2_2e_report.md`; commit `c50002fee1` `feat(analysis):` +
   the corpus chore).** Landed exactly as specified: kWStepIn 0.10→0.125 (Baroque/Default; production via the
   Default global initializer; Jazz + Standard/Modal/Contemporary pinned 0.10), sameRootInversionBonus 0.40
   unchanged. **Corpus re-baselined 52/24/52**, set-diff = **removal-only `{bwv244.32@5760}`** on Baroque+Default,
@@ -1062,7 +1062,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   as-recorded per the annotate-don't-rewrite rule.]**); CLAUDE.md re-stamped 52/24/52; goldens refreshed 11/11; O-10
   liveness recorded (all four retained rules LIVE, counts near-prior; ledger `stage5_2_2e_liveness.jsonl`).
   Suites 1101/53/11 green.
-  **★ DELIVERED (2.2d, `cc_stage5_phase2_2d_report.md`): the sub-sweep FOUND a feasible slice — the
+  **★ DELIVERED (2.2d, `records/cc/reports/cc_stage5_phase2_2d_report.md`): the sub-sweep FOUND a feasible slice — the
   answer is YES.** The 18-point 2-D grid (srib∈{0.40…0.4625}×kw∈{0.10,0.1125,0.125}, bnrb fixed 0.70,
   Jazz byte-identical by O-9 construction) yields **three full-feasible points**, all at high kw, with
   a **top-gain 2-point tie at fitting +0.0365**: **(srib 0.40, kw 0.125)** kw-only and **(srib 0.425,
@@ -1098,7 +1098,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   frozen corpus should become git-tracked (or snapshot-archived per re-baseline) is a user call,
   recorded as open.
 - **O-13 (staging step 3 closure + the family-4 §15-13 population, 2026-07-06, Phase 2.3;
-  `cc_stage5_phase2_3_report.md`).** Two cheap measurements; nothing adopted, no value change, no corpus write.
+  `records/cc/reports/cc_stage5_phase2_3_report.md`).** Two cheap measurements; nothing adopted, no value change, no corpus write.
   **(i) Staging step 3 — the three surviving §6-block margins hold NO fittable gain at full range → each RETAINED,
   constant stays hand-set (skip-with-record).** Full-range 1-D ladders (Baroque carrier, fitting split, refine-0)
   on `kGateIMargin` [0,1.0], `kGateLMargin` [0,1.0], `kHalfDimFirstInversionBonus` [0,1.2]: **no feasible Δ>0 on
@@ -1124,7 +1124,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   output becomes what the objective grades) OR a dedicated resolver-output objective + GT — a design/sequencing
   question returned to the user. **No fit run either way (per the dispatch); the number + this substrate
   observation are the checkpoint material.** The §15-13 item stays open, now with its measured population.
-- **O-14 (Phase 3 CALIBRATION delivered, 2026-07-06, session 22x; `cc_stage5_phase3_report.md`).** Measurement
+- **O-14 (Phase 3 CALIBRATION delivered, 2026-07-06, session 22x; `records/cc/reports/cc_stage5_phase3_report.md`).** Measurement
   + committed artifacts; NOTHING wired, NO behavior change, NO corpus write, NO push. **(i) Curves re-measured**
   on the adopted corpus `c50002fee1` (predated 2.2e): every harmonic-row ECE Δ≤0.001 — the adoption did not move
   the calibration. **(ii) Class-P maps FITTED + COMMITTED** (`tools/calibration_maps/stage5_classP_{l3_key_margin,
@@ -1156,7 +1156,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   later engage-adjacent increment. Next: the arc-close checkpoint §4.7/R10.
 - **O-27 (ENGAGE ARC #11 — PEDAL detection's home + the F-B ANNOTATE mechanics, read-only / structure-only —
   ★ CLOSES STAGE 2, 2026-07-07; `cowork_layer5_engagement_design.md` Part 2 §6–§10 + report
-  `cc_engage_l5_pedal_annotate_design_report.md`).** The last two Layer-5 engagement design pieces (Part 1's §4.3
+  `records/cc/reports/cc_engage_l5_pedal_annotate_design_report.md`).** The last two Layer-5 engagement design pieces (Part 1's §4.3
   hinges). **Fitter-relevant facts:** (a) **Pedal detection** placed as a **reader over the decoder's governed
   carry** (grep-confirmed the decoder has 0 pedal detection today), emitting a distinct pedal-annotated result — its
   confirmation margin **read from the carry's distinct-root ranking / the FQ-1 primitive**, NOT a re-computed scan
@@ -1177,7 +1177,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   (this) all designed, structure-only; Stage 3 (E4 / algorithmic completion) is the user's to open. No `src`/build/
   corpus/fit; both stops green by construction (no code path touched); fork-only.
 - **O-26 (ENGAGE ARC #10 — the JOINT key-and-chord step ARCHITECTURE DESIGN, read-only / structure-only,
-  2026-07-07; `cowork_joint_key_chord_design.md` + report `cc_engage_joint_key_chord_design_report.md`).** The O-4
+  2026-07-07; `cowork_joint_key_chord_design.md` + report `records/cc/reports/cc_engage_joint_key_chord_design_report.md`).** The O-4
   deliverable. **Fitter-relevant facts:** (a) The joint step is designed as a **total-unification completion (#6)
   of the built `decideJointKey`** (J-key-i/ii/iii) — its key-axis half (lattice + Viterbi + **key-transition
   prior** `transitionPenalty` + measured **coupled minority ~13.5%** + config-B chord→key `couplingScore`) is
@@ -1199,7 +1199,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   construction (no code path touched); fork-only. Closes O-4.
 - **O-25 (ENGAGE ARC #9 — Layer-5 engagement DESIGN Part 1: the carry + selection architecture, read-only /
   structure-only, 2026-07-07; `cowork_layer5_engagement_design.md` + report
-  `cc_engage_l5_carry_selection_design_report.md`).** Stage 2 opened on the O-24 real fan-out. **Fitter-relevant
+  `records/cc/reports/cc_engage_l5_carry_selection_design_report.md`).** Stage 2 opened on the O-24 real fan-out. **Fitter-relevant
   facts:** (a) the **carry contract** is designed on the **distinct-root axis** (not a top-N reading list) with
   the **exclusion tail carried (#12)** — the fitter's objective scores over this graded distinct-root
   distribution, incl. the ≥3rd-root minority (25/16/25 %). (b) **The decoder's distinct-root guarantee is OWED**:
@@ -1215,7 +1215,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   O-18/C3 joint step, F-B annotate mechanics) — not resolved. No `src`/build/corpus; both stops green by
   construction (no code path touched); fork-only.
 - **O-24 (ENGAGE ARC #8 — the TRUE untruncated Layer-5 fan-out MEASURED read-only, 2026-07-07;
-  `cc_engage_fanout_measure_report.md` + data `cc_engage_fanout_measure_data.json`; instrument
+  `records/cc/reports/cc_engage_fanout_measure_report.md` + data `cc_engage_fanout_measure_data.json`; instrument
   `tools/measure_fanout.py`).** The O-22 audit measured only the **capped floor** (append fires ~36 %
   Baroque/Default, 21.5 % Jazz); this measures the **uncapped above-threshold ranked set** the cap-of-3
   truncates — `gateCtx.rawCandidates` filtered by `gateCtx.threshold`, captured with the **real production
@@ -1234,7 +1234,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   Layer-5 selection the fitter's objective scores over. Observation only (moratorium — no inference coding, no
   design decision); the numbers are for Cowork to open Stage 2 on the real distribution.
 - **O-23 (ENGAGE ARC #7 — STAGE 1 PRE-Layer-5 refactor batch DELIVERED, 2026-07-07;
-  `cc_engage_pre_l5_refactor_report.md`).** The portable pre-L5 unification wins landed as three
+  `records/cc/reports/cc_engage_pre_l5_refactor_report.md`).** The portable pre-L5 unification wins landed as three
   byte-identical revertible commits (FQ-5 `65764881d0`, FQ-7/S8 `56b06462db`, FQ-6 `5420e6e543`; each
   0-diff `.ours.json` 352×3 + robust PASS + characterise 52/24/52 + suites 1101/53/11 no-refresh). **Two
   fitter-relevant observations for the Stage-2 design:** (a) **FQ-7/S8 done** — the key-decoder's
@@ -1248,7 +1248,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   E4-decided owner). Both await Cowork adjudication before Stage-2. The §6-block / cap→append tangles
   (FQ-2, FQ-4) remain owned by Stage-2/E4 as planned — unchanged by this batch.
 - **O-22 (ENGAGE ARC #6 — the STRUCTURAL-INTEGRITY audit, read-only grounded catalogue, ALL built layers,
-  2026-07-07; `cowork_structural_integrity_audit.md` + `cc_engage_structural_integrity_audit_report.md`).**
+  2026-07-07; `cowork_structural_integrity_audit.md` + `records/cc/reports/cc_engage_structural_integrity_audit_report.md`).**
   Total-unification (#6) + layer-adherence (#7) + build-on-clean-theory (#1) made proactive — the structural
   analogue of the O-20 information-loss audit, swept systematically. READ-ONLY: no `src`/corpus/build/fix;
   both stops untouched/green. The anchor (`results` carry substrate, Layer-4 legacy) is a genuine
@@ -1274,7 +1274,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   portable unifications (FQ-1/3/5/6), then §6-block dissolution owns FQ-2, then E4 owns the anchor (FQ-4),
   then R9 splits `chordanalyzer.cpp`.
 - **O-21 (ENGAGE ARC #3b — the GateA promotion-unification BUILD event DELIVERED, 2026-07-06;
-  `cowork_gateA_unification_design.md` + `cc_engage_gateA_unification_build_report.md`; feat `200681a855`).**
+  `cowork_gateA_unification_design.md` + `records/cc/reports/cc_engage_gateA_unification_build_report.md`; feat `200681a855`).**
   The ratified arc-#3 design, built (Layer 4 only). One `promoteToWinner` primitive + one builder wrapper
   `buildResultFromGateCtx` now own all post-scoring promotion; the enharmonic Major-add6→Minor7 flip is one
   primitive call whose present branch (`presentHint = bestAltIdx`) reproduces Gate A's `std::swap` byte-for-byte
@@ -1288,7 +1288,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   (scratch). §6 rules 10→9; FM2 the surviving flip rule. The Stage-5 §6-block dissolution continues from the
   unified surface. Next: the remaining fix-queue (L2 spelling collapse) + the UNCLEAR rows (U1/U2/U3) per O-20.
 - **O-20 (ENGAGE ARC #4 — the INFORMATION-LOSS audit, read-only grounded catalogue, 2026-07-06;
-  `cowork_information_loss_audit.md` + `cc_engage_information_loss_audit_report.md`).** Principle #12 made
+  `cowork_information_loss_audit.md` + `records/cc/reports/cc_engage_information_loss_audit_report.md`).** Principle #12 made
   systematic: a static sweep of the load-bearing surfaces (bass · spelling · distinct alternatives · preserved
   uncertainty, `cowork_functional_analysis_research_grounding.md`) for the a–i(+) loss forms, every hit grounded at
   code and classified on the user's central axis (OK-provisioned / DEFECT-lost / DEFECT-should-already / UNCLEAR;
@@ -1319,7 +1319,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   `src/`/corpus/build/fix; both stops green by construction; suites unchanged. **The fix-queue (L1/L2) + the UNCLEAR
   rows are the user-adjudication surface; each fix is its own later Gate-A-style ratified event.**
 - **O-19 (ENGAGE ARC #3 — the GateA promotion-unification design/scoping pass, 2026-07-06;
-  `cowork_gateA_unification_design.md` + `cc_engage_gateA_unification_design_report.md`).** Read-only
+  `cowork_gateA_unification_design.md` + `records/cc/reports/cc_engage_gateA_unification_design_report.md`).** Read-only
   restructuring design (the order-of-operations first step) that assembles the ratification surface for the
   held-since-O-11 GateA retirement. **Blast radius re-measured at HEAD on the FULL surface** (HEAD-binary
   `disable_rule GateA` decode, scratch, frozen corpus read-not-written): **36 Baroque scores, 0 winner-diffs /
@@ -1343,7 +1343,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   suites/snapshots unchanged). No `src`/corpus/build/push-of-behavior-change. **O-11 retirement condition now
   has its ratification surface.**
 - **O-19 (ENGAGE ARC #12 — the joint key↔chord step's benefit MEASURED = it barely pays, and not at all on its
-  scoped population, 2026-07-07, session 35; `cc_engage_stage3_joint_measure_report.md` + data
+  scoped population, 2026-07-07, session 35; `records/cc/reports/cc_engage_stage3_joint_measure_report.md` + data
   `tools/reports/joint_probe_measure.json`).** Stage 3 opens measurement-first (#1/#3/#5): the decisive fact the
   joint-step design (`cowork_joint_key_chord_design.md`) left as owed-2/3 — does re-deciding the chord under
   alternative CARRIED keys improve root-correctness? — measured BEFORE any build (the same guard O-17/O-18 applied
@@ -1370,7 +1370,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   (production byte-identical — 12/12 corpus stems reproduce committed `.ours.json`; no `src/`, no build of the
   joint step, no fit; no golden refresh). Pushed fork-only.
 - **O-18 (ENGAGE ARC #2 — the C3 genuinely-coupled key↔chord population MEASURED = UN-COMPUTABLE, 2026-07-06,
-  session 25; `cc_engage_c3_measurement_report.md` + `cowork_fb_redesign_design.md` §3.D-2).** The
+  session 25; `records/cc/reports/cc_engage_c3_measurement_report.md` + `cowork_fb_redesign_design.md` §3.D-2).** The
   specific-research move (#5/#2) the O-17 surprise called for (#3): does F-B's override isolate a net-positive
   correction subpopulation on the C3 coupled minority? Read-only (no `src/`, no build, no telemetry, no corpus
   write, no θ retune). **VERDICT 3 — the C3 trigger is NOT computed anywhere**; it is un-computable read-only
@@ -1400,7 +1400,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   identity-PASS). On CC's report: Cowork verifies at objects → presents the **annotate(±C3)** build-event
   decision surface to the user (annotate-everywhere now; C3-restrict deferred to the joint step).
 - **O-17 (ENGAGE ARC #1 — the F-B fine-grain override REDESIGN design/scoping pass, 2026-07-06, session 24;
-  `cc_engage_fb_redesign_design_report.md` + `cowork_fb_redesign_design.md`).** The engage arc's opener,
+  `records/cc/reports/cc_engage_fb_redesign_design_report.md` + `cowork_fb_redesign_design.md`).** The engage arc's opener,
   read-only (no `src/`, no scoring value, no corpus write, no build, no θ retune — architectural design,
   moratorium-clear; NOT the D-FS θ closure, which Phase 3 already proved a dead end). **The ratified backlog
   pushed fork-only** (`ce509b0961..923f149561`, 76→0; `upstream` untouched). **F-B characterized at the
@@ -1428,7 +1428,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   them). On CC's report: Cowork verifies at objects → presents the redesign-option decision surface to the
   user (annotate vs disable vs C3-restrict).
 - **O-16 (R10-b — the batch→robust stop handover MADE; STAGE-5 ARC CLOSED, 2026-07-06, session 23;
-  `cc_stage5_r10b_ratification_report.md`).** The user's arc-closing ratification event on the R10-a surface.
+  `records/cc/reports/cc_stage5_r10b_ratification_report.md`).** The user's arc-closing ratification event on the R10-a surface.
   Docs + one-JSON-snapshot only — NO `src/`, NO scoring value, NO corpus write, NO build, NO push (outside the
   inference-fixing moratorium: this is regression-STOP infrastructure, not an analyzer change). **(i)** CLAUDE.md
   gate section rewritten to four blocks: (A) the robust-unit regression stop is now THE hard stop (granularity-robust
@@ -1453,7 +1453,7 @@ licensed lever at L5 §15-13 for this arc (§4.4 family 4).
   §4.7 executed; the Stage-5 arc is CLOSED. The engage arc inherits: F-B redesign [1043/53/809] · §15-13 [5544,
   parked] · θ/map wiring · L1.5 surface map · GateA unification · the L5 inversion · tonicVote.**
 - **O-15 (R10-a — the batch→robust stop handover surface ASSEMBLED, 2026-07-06, session 22z;
-  `cc_stage5_r10_assembly_report.md`).** Measurement + draft only; NO normative doc change, NO committed
+  `records/cc/reports/cc_stage5_r10_assembly_report.md`).** Measurement + draft only; NO normative doc change, NO committed
   value, NO corpus write, NO push — the §4.7 R10 decision surface is now assembled for the user's R10-b
   ratification (the handover itself: the CLAUDE.md gate rewrite, the batch-set freeze-as-history, firing
   roadmap R10). **(i) The committed robust-unit reference** lives at **`tools/robust_stop/`** (the diff

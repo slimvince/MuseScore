@@ -483,7 +483,7 @@
    "namings_in_ARCHITECTURE.md": [
     {
      "line": 115,
-     "line_text": "> seams partition P0-P7; per-unit provenance in STATUS.md / `cowork_handoff.md`). At the switch the migration posture"
+     "line_text": "> seams partition P0-P7; per-unit provenance in STATUS.md / `records/cowork/handoff/cowork_handoff.md`). At the switch the migration posture"
     },
     {
      "line": 553,
@@ -613,118 +613,6 @@
    "namings_counted": 1
   },
   {
-   "target": "cc_adoption_measurement_report.md",
-   "form": "provenance-attribution",
-   "admitted": false,
-   "why_this_grade": "Named once, inside the adoption banner's citation list, as the adoption record.",
-   "decided_by": "rule_(i)_not_admitted",
-   "namings_in_ARCHITECTURE.md": [
-    {
-     "line": 49,
-     "line_text": "> `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`."
-    }
-   ],
-   "namings_counted": 1
-  },
-  {
-   "target": "cc_instruction_notation_switch.md",
-   "form": "provenance-attribution",
-   "admitted": false,
-   "why_this_grade": "Named once, in a parenthesis recording which dispatch performed the switch.",
-   "decided_by": "rule_(i)_not_admitted",
-   "namings_in_ARCHITECTURE.md": [
-    {
-     "line": 249,
-     "line_text": "> green; NO finding), and the switch — ONE revertible, user-ratified commit (dispatch `cc_instruction_notation_switch.md`)"
-    }
-   ],
-   "namings_counted": 1
-  },
-  {
-   "target": "cc_layer1_coverage_report.md",
-   "form": "bare-appended-citation",
-   "admitted": false,
-   "why_this_grade": "Named once, in the same 'See …' citation list.",
-   "decided_by": "rule_(i)_not_admitted",
-   "namings_in_ARCHITECTURE.md": [
-    {
-     "line": 1600,
-     "line_text": "`cc_layer1_impl_report.md` / `cc_layer1_coverage_report.md` (HELD)."
-    }
-   ],
-   "namings_counted": 1
-  },
-  {
-   "target": "cc_layer1_impl_report.md",
-   "form": "bare-appended-citation",
-   "admitted": false,
-   "why_this_grade": "Named once, in a 'See …' citation list of session reports.",
-   "decided_by": "rule_(i)_not_admitted",
-   "namings_in_ARCHITECTURE.md": [
-    {
-     "line": 1600,
-     "line_text": "`cc_layer1_impl_report.md` / `cc_layer1_coverage_report.md` (HELD)."
-    }
-   ],
-   "namings_counted": 1
-  },
-  {
-   "target": "cc_layer2_audit_dossier.md",
-   "form": "bare-appended-citation",
-   "admitted": false,
-   "why_this_grade": "Named once, in the same 'See …' citation list.",
-   "decided_by": "rule_(i)_not_admitted",
-   "namings_in_ARCHITECTURE.md": [
-    {
-     "line": 1693,
-     "line_text": "`cc_layer2_audit_dossier.md`."
-    }
-   ],
-   "namings_counted": 1
-  },
-  {
-   "target": "cc_layer2_impl_report.md",
-   "form": "bare-appended-citation",
-   "admitted": false,
-   "why_this_grade": "Named once, in a 'See …' citation list of three documents.",
-   "decided_by": "rule_(i)_not_admitted",
-   "namings_in_ARCHITECTURE.md": [
-    {
-     "line": 1692,
-     "line_text": "0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,"
-    }
-   ],
-   "namings_counted": 1
-  },
-  {
-   "target": "cc_layer3_wiring_report.md",
-   "form": "bare-appended-citation",
-   "admitted": false,
-   "why_this_grade": "Named once, in a 'Full provenance:' citation list.",
-   "decided_by": "rule_(i)_not_admitted",
-   "namings_in_ARCHITECTURE.md": [
-    {
-     "line": 1859,
-     "line_text": "key moves with **P4 untouched**. Full provenance: `cc_layer3_wiring_report.md` (HELD),"
-    }
-   ],
-   "namings_counted": 1
-  },
-  {
-   "target": "cc_tonicization_modulation_metric_dossier.md",
-   "form": "provenance-attribution",
-   "admitted": false,
-   "why_this_grade": "Named once, as the record every figure of that measurement lives in and is not restated from (#17f, D-431). A provenance attribution.",
-   "decided_by": "rule_(i)_not_admitted",
-   "namings_in_ARCHITECTURE.md": [
-    {
-     "line": 2185,
-     "line_text": "> every one lives in `cc_tonicization_modulation_metric_dossier.md` (#17f, **D-431**)."
-    }
-   ],
-   "namings_counted": 1
-  },
-  {
    "target": "cowork_bounded_context_design.md",
    "form": "explicit-delegation-clause",
    "admitted": true,
@@ -809,20 +697,6 @@
    "delegation_scope": "document",
    "delegated_sections": null,
    "scope_decided_by": "rule_(h)_granularity"
-  },
-  {
-   "target": "cowork_handoff.md",
-   "form": "provenance-attribution",
-   "admitted": false,
-   "why_this_grade": "Named once, 'per-unit provenance in STATUS.md / `cowork_handoff.md`' — a parenthetical recording where per-unit provenance is written down.",
-   "decided_by": "rule_(i)_not_admitted",
-   "namings_in_ARCHITECTURE.md": [
-    {
-     "line": 115,
-     "line_text": "> seams partition P0-P7; per-unit provenance in STATUS.md / `cowork_handoff.md`). At the switch the migration posture"
-    }
-   ],
-   "namings_counted": 1
   },
   {
    "target": "cowork_idiom_discovery_findings.md",
@@ -987,7 +861,7 @@
    "namings_in_ARCHITECTURE.md": [
     {
      "line": 1692,
-     "line_text": "0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,"
+     "line_text": "0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `records/cc/reports/cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,"
     },
     {
      "line": 1695,
@@ -1254,7 +1128,7 @@
    "namings_in_ARCHITECTURE.md": [
     {
      "line": 49,
-     "line_text": "> `cowork_prefit_gates.md`; adoption record `cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`."
+     "line_text": "> `cowork_prefit_gates.md`; adoption record `records/cc/reports/cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`."
     },
     {
      "line": 53,
@@ -1346,38 +1220,6 @@
    "delegated_sections": null,
    "scope_decided_by": "rule_(h)_granularity",
    "other_namings_do_not_undo_it": "rule_(k1)_the_strongest_naming_governs"
-  },
-  {
-   "target": "cowork_rulings_2026_08_09_second_stop.md",
-   "form": "provenance-attribution",
-   "admitted": false,
-   "why_this_grade": "Named once, in a parenthesis recording which ruling corrected a passage.",
-   "decided_by": "rule_(i)_not_admitted",
-   "namings_in_ARCHITECTURE.md": [
-    {
-     "line": 2224,
-     "line_text": "`cowork_rulings_2026_08_09_second_stop.md` — after the read-only probe the open-items register had"
-    }
-   ],
-   "namings_counted": 1
-  },
-  {
-   "target": "cowork_rulings_2026_08_11_fourteenth_stop.md",
-   "form": "provenance-attribution",
-   "admitted": false,
-   "why_this_grade": "Named twice, each time in a parenthesis recording where a user ruling was taken — the bar's second excluded form, word for word.",
-   "decided_by": "rule_(i)_not_admitted",
-   "namings_in_ARCHITECTURE.md": [
-    {
-     "line": 387,
-     "line_text": "**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 63,"
-    },
-    {
-     "line": 4298,
-     "line_text": "**★ ANNOTATION (2026-08-11, the user's Ruling 63 of `cowork_rulings_2026_08_11_fourteenth_stop.md`,"
-    }
-   ],
-   "namings_counted": 2
   },
   {
    "target": "cowork_score_census.md",
@@ -1855,6 +1697,164 @@
     }
    ],
    "namings_counted": 1
+  },
+  {
+   "target": "records/cc/instructions/cc_instruction_notation_switch.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, in a parenthesis recording which dispatch performed the switch.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 249,
+     "line_text": "> green; NO finding), and the switch — ONE revertible, user-ratified commit (dispatch `records/cc/instructions/cc_instruction_notation_switch.md`)"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "records/cc/reports/cc_adoption_measurement_report.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, inside the adoption banner's citation list, as the adoption record.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 49,
+     "line_text": "> `cowork_prefit_gates.md`; adoption record `records/cc/reports/cc_adoption_measurement_report.md` / `tools/joint_estimator/adoption_record.json`."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "records/cc/reports/cc_layer1_coverage_report.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, in the same 'See …' citation list.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1600,
+     "line_text": "`records/cc/reports/cc_layer1_impl_report.md` / `records/cc/reports/cc_layer1_coverage_report.md` (HELD)."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "records/cc/reports/cc_layer1_impl_report.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, in a 'See …' citation list of session reports.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1600,
+     "line_text": "`records/cc/reports/cc_layer1_impl_report.md` / `records/cc/reports/cc_layer1_coverage_report.md` (HELD)."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "records/cc/reports/cc_layer2_audit_dossier.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, in the same 'See …' citation list.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1693,
+     "line_text": "`records/cc/reports/cc_layer2_audit_dossier.md`."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "records/cc/reports/cc_layer2_impl_report.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, in a 'See …' citation list of three documents.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1692,
+     "line_text": "0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53). See `records/cc/reports/cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "records/cc/reports/cc_layer3_wiring_report.md",
+   "form": "bare-appended-citation",
+   "admitted": false,
+   "why_this_grade": "Named once, in a 'Full provenance:' citation list.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 1859,
+     "line_text": "key moves with **P4 untouched**. Full provenance: `records/cc/reports/cc_layer3_wiring_report.md` (HELD),"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "records/cc/reports/cc_tonicization_modulation_metric_dossier.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, as the record every figure of that measurement lives in and is not restated from (#17f, D-431). A provenance attribution.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 2185,
+     "line_text": "> every one lives in `records/cc/reports/cc_tonicization_modulation_metric_dossier.md` (#17f, **D-431**)."
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "records/cowork/handoff/cowork_handoff.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, 'per-unit provenance in STATUS.md / `cowork_handoff.md`' — a parenthetical recording where per-unit provenance is written down.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 115,
+     "line_text": "> seams partition P0-P7; per-unit provenance in STATUS.md / `records/cowork/handoff/cowork_handoff.md`). At the switch the migration posture"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named once, in a parenthesis recording which ruling corrected a passage.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 2224,
+     "line_text": "`records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md` — after the read-only probe the open-items register had"
+    }
+   ],
+   "namings_counted": 1
+  },
+  {
+   "target": "records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md",
+   "form": "provenance-attribution",
+   "admitted": false,
+   "why_this_grade": "Named twice, each time in a parenthesis recording where a user ruling was taken — the bar's second excluded form, word for word.",
+   "decided_by": "rule_(i)_not_admitted",
+   "namings_in_ARCHITECTURE.md": [
+    {
+     "line": 387,
+     "line_text": "**Ruled by the user, 2026-08-11** (`records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 63,"
+    },
+    {
+     "line": 4298,
+     "line_text": "**★ ANNOTATION (2026-08-11, the user's Ruling 63 of `records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md`,"
+    }
+   ],
+   "namings_counted": 2
   }
  ],
  "the_authored_exclusions": [
@@ -1877,7 +1877,7 @@
     "namings_in_ARCHITECTURE.md": [
      {
       "line": 115,
-      "line_text": "> seams partition P0-P7; per-unit provenance in STATUS.md / `cowork_handoff.md`). At the switch the migration posture"
+      "line_text": "> seams partition P0-P7; per-unit provenance in STATUS.md / `records/cowork/handoff/cowork_handoff.md`). At the switch the migration posture"
      },
      {
       "line": 553,
@@ -2544,7 +2544,7 @@
    "file_exists_at_the_tree": true,
    "live_or_dormant": {
     "value": "DORMANT",
-    "quote": "> **★ Status: AS-BUILT (VL-A/B/C foundation, 2026-07-03 — `cc_vl_foundation_build_report.md`).** The dormant",
+    "quote": "> **★ Status: AS-BUILT (VL-A/B/C foundation, 2026-07-03 — `records/cc/reports/cc_vl_foundation_build_report.md`).** The dormant",
     "at": "cowork_voiceleading_axis_design.md:3"
    },
    "declared_establishment_status": {

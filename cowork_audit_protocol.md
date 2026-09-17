@@ -160,7 +160,7 @@ programme, and it is what P9's dependency-ordered partition and P8's two runs ar
 the alternative, verifying per change, was what left the module with a coverage figure nobody could state.
 It was realised as the dependency-ordered per-layer certification plan (`OPEN_ITEMS.md` OI-84, complete
 2026-07-12), which is the same rule applied end to end. Ratified by the user 2026-06-14; homed here
-2026-08-02 from `cowork_handoff_archive.md` (`OPEN_ITEMS.md` OI-272), a surface two governing documents
+2026-08-02 from `records/cowork/handoff/cowork_handoff_archive.md` (`OPEN_ITEMS.md` OI-272), a surface two governing documents
 declare outside the session-start read.
 
 ## The one-line summary
@@ -183,14 +183,14 @@ ran under, so a certification is reproducible.*
 audit above is commissioned as a written instruction to a working session and executed by that
 session; P5's withheld-finding rule and P8's blind-pass-first ordering are already rules about how
 that instruction is *written* and *sequenced*. The three rules below are the rest of that protocol.
-They stood for months recorded only in `cowork_handoff.md`, which is a place for tracking a
+They stood for months recorded only in `records/cowork/handoff/cowork_handoff.md`, which is a place for tracking a
 handover, not a home for a standing rule — the finding that produced this section. **Their scope is
 wider than this document's audits**: they govern every dispatch, and this document is their home
 because it is where the project's dispatch-construction rules already live.
 
 **★ HOW THE STANDING CLAUSES ARE OBTAINED, AND WHY NO NUMBER IS WRITTEN ANYWHERE (user-ruled
-2026-08-19 — Ruling 3 of `cowork_rulings_2026_08_19_thirteenth_return.md`; written here by
-`cc_instruction_preparation_fourteenth.md` Task 1).** **THE STANDING CLAUSES ARE THE `###` SECTIONS
+2026-08-19 — Ruling 3 of `records/cowork/rulings/cowork_rulings_2026_08_19_thirteenth_return.md`; written here by
+`records/cc/instructions/cc_instruction_preparation_fourteenth.md` Task 1).** **THE STANDING CLAUSES ARE THE `###` SECTIONS
 OF THIS SECTION THAT CARRY THE MEMBERSHIP MARKER, AND A SESSION OBTAINS THEM BY READING THEM HERE.**
 Every member carries the same one-line marker directly above its own heading, so the population is
 greppable by a reader with no tool at all, and a section written later is a member exactly when
@@ -239,7 +239,7 @@ was made — not that any one section's placement is right, which stays challeng
 **Cowork writes instruction files. CC executes them. Never the other way around.** When the user
 says "go", "execute", or names an increment, the response is that the instruction is ready at its
 `cc_instruction_*.md` path and should be given to the executing session. The planning side **may**
-read source files via the file tools, write `.md` instruction files, and update `cowork_handoff.md`
+read source files via the file tools, write `.md` instruction files, and update `records/cowork/handoff/cowork_handoff.md`
 and `STATUS.md` after a report lands. It **must not** edit anything under `src/`, run builds, or
 spawn agents that run build commands or modify `src/`. *Why:* violating this rule has broken the
 codebase twice, at the E1 and E2b increments — the evidence is stated with the rule itself.
@@ -271,12 +271,12 @@ several times proven disastrous.
 
 *★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
-### Every dispatch's read-first block names the CURRENT HANDOVER BLOCK of `cowork_handoff.md`
+### Every dispatch's read-first block names the CURRENT HANDOVER BLOCK of `records/cowork/handoff/cowork_handoff.md`
 
 **Ruled by the user, 2026-08-17 — limb (c) of Ruling 2 of
-`cowork_rulings_2026_08_17_ninth_return.md`; written here 2026-08-18 by
-`cc_instruction_preparation_tenth.md` Task 3.** **Every dispatch's read-first block names the
-current handover block of `cowork_handoff.md`.** It is a rule about how a dispatch is WRITTEN, so
+`records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md`; written here 2026-08-18 by
+`records/cc/instructions/cc_instruction_preparation_tenth.md` Task 3.** **Every dispatch's read-first block names the
+current handover block of `records/cowork/handoff/cowork_handoff.md`.** It is a rule about how a dispatch is WRITTEN, so
 it binds the writing side, and it stands beside the self-sufficiency rule above rather than inside
 it: an instruction can be self-sufficient about the work it orders and still send the executing
 session in without the one thing both sides share.
@@ -291,7 +291,7 @@ knew the series stood at F51, numbered from F52 — and **F52 was double-booked 
 findings.**
 
 **THE SHARPER HALF, and the reason the remedy is a read rather than a numbering convention.** The
-dispatch that produced the collision named `cowork_handoff.md` three times — as something to
+dispatch that produced the collision named `records/cowork/handoff/cowork_handoff.md` three times — as something to
 commit, as the subject of an assumption's check, and as a place to WRITE two corrections — and
 never once as something to READ. **So the executing side was routed to write into the file that
 carried the number assignment, three blocks below where the assignment was made, without ever being
@@ -307,8 +307,8 @@ the same thing.
 ### A ruling record taken from a GENERATED DOCUMENT names the commit it was ruled at
 
 **Ruled by the user, 2026-08-18 — the forward clause of Ruling 1 of
-`cowork_rulings_2026_08_18_tenth_return.md`; written here by
-`cc_instruction_preparation_eleventh_amended.md` Task 2.** **A ruling record whose sitting was held
+`records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md`; written here by
+`records/cc/instructions/cc_instruction_preparation_eleventh_amended.md` Task 2.** **A ruling record whose sitting was held
 over a GENERATED document names, in that record, the commit the document was ruled at.** It is a rule
 about how a ruling record is WRITTEN, so it binds the writing side, and it stands beside the
 read-first clause above for the same reason: both are about what a document must carry so that a
@@ -336,8 +336,8 @@ a ruling record carries; whether any particular generator is pinned is that memb
 ### Where the ruled rendering and the committed document have SEPARATED, the ruling record names the BLOB and the member stays unpinned
 
 **Ruled by the user, 2026-08-19 — the forward clause of Ruling 1 of
-`cowork_rulings_2026_08_19_eleventh_return.md`, ruled AS A CLASS; written here by
-`cc_instruction_preparation_twelfth.md` Task 2.** **WHERE A GENERATED DOCUMENT'S COMMITTED CONTENT
+`records/cowork/rulings/cowork_rulings_2026_08_19_eleventh_return.md`, ruled AS A CLASS; written here by
+`records/cc/instructions/cc_instruction_preparation_twelfth.md` Task 2.** **WHERE A GENERATED DOCUMENT'S COMMITTED CONTENT
 HAS SEPARATED FROM THE RENDERING A RULING WAS TAKEN OVER, THE RULING RECORD NAMES THE BLOB OF THE
 RULED RENDERING AND THE MEMBER IS RECORDED NOT PINNED WITH ITS REASON.** It stands beside the clause
 immediately above because that clause says a ruling record names the COMMIT, and this says what the
@@ -377,8 +377,8 @@ is untouched — and it authorizes no restore, no overwrite and no regeneration 
 ### A dispatch's DECLARED START STATE is stated at the tree the dispatch will meet, including the reds its own inputs cause
 
 **Ruled by the user, 2026-08-18 — the standing clause riding Ruling 1 of
-`cowork_rulings_2026_08_18_eleventh_stop.md`; written here by
-`cc_instruction_preparation_eleventh_amended.md` Task 2.** **A dispatch's declared start state is
+`records/cowork/rulings/cowork_rulings_2026_08_18_eleventh_stop.md`; written here by
+`records/cc/instructions/cc_instruction_preparation_eleventh_amended.md` Task 2.** **A dispatch's declared start state is
 stated at the tree the dispatch will actually meet, INCLUDING the reds the dispatch's own inputs
 cause, EACH NAMED WITH ITS CAUSE.** It is a rule about how a dispatch is WRITTEN, so it binds the
 writing side, and it stands beside the read-first clause above rather than inside it: a dispatch can
@@ -415,8 +415,8 @@ session to work around a red. It says what the DECLARATION must contain.
 ### Where a derivation reaches its inputs by MORE THAN ONE ROUTE, a prediction about its output is taken from EVERY route
 
 **Ruled by the user, 2026-08-19 — the second clause of Ruling 2 of
-`cowork_rulings_2026_08_19_eleventh_return.md`; written here by
-`cc_instruction_preparation_twelfth.md` Task 2.** **WHERE A DERIVATION REACHES ITS INPUTS BY MORE
+`records/cowork/rulings/cowork_rulings_2026_08_19_eleventh_return.md`; written here by
+`records/cc/instructions/cc_instruction_preparation_twelfth.md` Task 2.** **WHERE A DERIVATION REACHES ITS INPUTS BY MORE
 THAN ONE ROUTE, A PREDICTION ABOUT ITS OUTPUT IS TAKEN FROM EVERY ROUTE.** **It stands beside the
 declared-start-state clause immediately above because it is the second half of the same lesson:**
 that clause says a dispatch declares the reds its own inputs cause, and this says that where the
@@ -441,8 +441,8 @@ says what a prediction about a derived artifact's difference must cover before i
 ### A check on a derived artifact's difference bars the MOVEMENT of a value, not the ADDITION of a derived cross-reference the ordered act causes
 
 **Ruled by the user, 2026-08-19 — the sharpened bar of Ruling 2 of
-`cowork_rulings_2026_08_19_eleventh_return.md`; written here by
-`cc_instruction_preparation_twelfth.md` Task 2.** **A CHECK ON A DERIVED ARTIFACT'S DIFFERENCE BARS
+`records/cowork/rulings/cowork_rulings_2026_08_19_eleventh_return.md`; written here by
+`records/cc/instructions/cc_instruction_preparation_twelfth.md` Task 2.** **A CHECK ON A DERIVED ARTIFACT'S DIFFERENCE BARS
 THE MOVEMENT OF AN EXISTING VALUE, AND DOES NOT BAR THE ADDITION OF A DERIVED CROSS-REFERENCE WHOSE
 CAUSE IS THE ACT THE DISPATCH ITSELF ORDERS.** It stands beside the two clauses above because all
 three govern the same moment: a dispatch's ordered check over an artifact its own act regenerates.
@@ -475,8 +475,8 @@ value. An addition still enters the report, with its cause established at the re
 ### A SITTING RECORD is an interim carrier, and the commit that lands it bounds when the sitting was held
 
 **Ruled by the user, 2026-08-18 — the forward clause of Ruling 3 of
-`cowork_rulings_2026_08_18_eleventh_stop.md`; written here by
-`cc_instruction_preparation_eleventh_amended.md` Task 2.** **A sitting record is an interim carrier:
+`records/cowork/rulings/cowork_rulings_2026_08_18_eleventh_stop.md`; written here by
+`records/cc/instructions/cc_instruction_preparation_eleventh_amended.md` Task 2.** **A sitting record is an interim carrier:
 it is written in the turn its ruling is given and lands in git at the next dispatch's Task 0 — so THE
 COMMIT THAT LANDS IT BOUNDS WHEN THE SITTING WAS HELD.** This writes down a practice the record has
 followed throughout and had never stated. **It is what a dated correction under the clause two above
@@ -564,8 +564,8 @@ rule rather than a one-off.
 ### A published CHARACTER FIGURE names the tool that produced it
 
 **Ruled by the user, 2026-08-18 — the standing clause riding Ruling 3 of
-`cowork_rulings_2026_08_18_tenth_return.md`; written here by
-`cc_instruction_preparation_eleventh_amended.md` Task 2.** **A character figure published anywhere in
+`records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md`; written here by
+`records/cc/instructions/cc_instruction_preparation_eleventh_amended.md` Task 2.** **A character figure published anywhere in
 the record — the size of a read, of a file, of a span — NAMES THE TOOL THAT PRODUCED IT.** It stands
 beside the rule immediately above because **it is that rule's own missing half: the rule above says
 where a figure comes FROM, and this says that a reader must be able to SEE where it came from.**
@@ -589,7 +589,7 @@ merely obeyed.
 
 ### A DIRECTION with its artifact named is not a transcribed value
 
-**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 35(c)). A
+**Ruled by the user, 2026-08-09** (`records/cowork/rulings/cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 35(c)). A
 reading of the rule immediately above, recorded against it so that a session meeting the
 prohibition meets the clause that says what it still permits. **A DIRECTION — *fewer than half*,
 *the large majority*, *markedly better* — stated with the generated artifact CITED BESIDE IT is not
@@ -611,7 +611,7 @@ comparison.
 
 ### A count of OUTSTANDING work is DERIVED from state, never taken from the membership of a list of asks
 
-**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_phase1_delegations_and_corrections.md`,
+**Ruled by the user, 2026-08-04** (dispatch `records/cc/instructions/cc_instruction_phase1_delegations_and_corrections.md`,
 R4). A figure reporting how much of something is still owed is computed from the CURRENT STATE of
 each candidate, at HEAD. It is **never** taken from the length of a list that records what was asked
 for, and never from an authored disposition field written beside the row when the ask was made.
@@ -728,8 +728,8 @@ expected-failing check rather than as coverage (`OPEN_ITEMS.md` OI-292).
 
 ### "Complete" means complete relative to a NAMED DERIVATION, whose measured miss rate against the record is part of its name
 
-**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 31; restated as
-the standing statement by Ruling 37 of `cowork_rulings_2026_08_09_sixth_stop.md` when the derivation
+**Ruled by the user, 2026-08-09** (`records/cowork/rulings/cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 31; restated as
+the standing statement by Ruling 37 of `records/cowork/rulings/cowork_rulings_2026_08_09_sixth_stop.md` when the derivation
 it licensed came back negative). It belongs beside the three measured conditions above because it is
 the same rule one level out: those say what a MECHANISM is worth unmeasured, and this says what a
 COMPLETENESS CLAIM is worth unmeasured.
@@ -761,8 +761,8 @@ MEASURED clean separation, which is the third of the conditions above.
 
 ### An ENUMERATING PATTERN whose reach has never been measured may STATE its bound on its own artifact instead of owing a detection measurement — and the test is whether an ANALYSIS DECISION consumes it
 
-**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 60, taking
-the proposed decision of Ruling 59 of `cowork_rulings_2026_08_11_thirteenth_stop.md`). It belongs
+**Ruled by the user, 2026-08-11** (`records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 60, taking
+the proposed decision of Ruling 59 of `records/cowork/rulings/cowork_rulings_2026_08_11_thirteenth_stop.md`). It belongs
 beside the two sections above for the reason the second gives for its own siting: those say what a
 MECHANISM is worth unmeasured and what a COMPLETENESS CLAIM is worth unmeasured, and this says which
 of the two an ENUMERATING PATTERN is — a search expression run over text to locate every instance of
@@ -802,8 +802,8 @@ in any of the waves that met the pattern.
 ### A RECOGNIZER OVER A POPULATION states, at its own artifact, whether an INDEPENDENTLY-KNOWN population exists to reconcile against — and where none does, it publishes its output as a LOWER BOUND with its reach declared UNMEASURED, never as a census
 
 **Ruled by the user, 2026-08-19 — the forward clause of Ruling 1 of
-`cowork_rulings_2026_08_19_twelfth_return.md`, ruled AS A CLASS; written here by
-`cc_instruction_preparation_thirteenth.md` Task 1.** **A RECOGNIZER OVER A POPULATION STATES, AT ITS
+`records/cowork/rulings/cowork_rulings_2026_08_19_twelfth_return.md`, ruled AS A CLASS; written here by
+`records/cc/instructions/cc_instruction_preparation_thirteenth.md` Task 1.** **A RECOGNIZER OVER A POPULATION STATES, AT ITS
 OWN ARTIFACT, WHETHER AN INDEPENDENTLY-KNOWN POPULATION EXISTS TO RECONCILE AGAINST — AND WHERE NONE
 DOES, IT PUBLISHES ITS OUTPUT AS A LOWER BOUND WITH ITS REACH DECLARED UNMEASURED, NEVER AS A
 CENSUS.**
@@ -862,8 +862,8 @@ itself, and nothing else.
 
 ### A maintenance act ESTABLISHES THE CAUSE before it touches the mechanism — and a cause that resists establishment is a STOP, with no fix taken on a named-but-unasserted candidate
 
-**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_eleventh_stop.md`, Ruling 52, taking
-Ruling 50 of `cowork_rulings_2026_08_11_tenth_stop.md`). The two sections above say what a MECHANISM
+**Ruled by the user, 2026-08-11** (`records/cowork/rulings/cowork_rulings_2026_08_11_eleventh_stop.md`, Ruling 52, taking
+Ruling 50 of `records/cowork/rulings/cowork_rulings_2026_08_11_tenth_stop.md`). The two sections above say what a MECHANISM
 is worth unmeasured and what a COMPLETENESS CLAIM is worth unmeasured. This says what an ACT owes
 before it changes a mechanism at all, and it is sited here so that a reader meeting the fix order in
 the guard-family rules below meets the diagnosis order first.
@@ -895,7 +895,7 @@ is accepted.**
 
 ### When a shell-read policy cannot decide, it DENIES — and the ceiling it cannot see is published in the measured rate
 
-**Ruled by the user, 2026-08-08** (`cowork_ruling_guard_family_2026_08_08.md`, clauses 4 and 2).
+**Ruled by the user, 2026-08-08** (`records/cowork/rulings/cowork_ruling_guard_family_2026_08_08.md`, clauses 4 and 2).
 Two standing statements about the guard that enforces the working-tree-read rule, both of which
 bind beyond the act that introduced them.
 
@@ -925,7 +925,7 @@ further widening of the guard: a widening is a mechanism change, which stays the
 
 ### Moving an authored judgment WHOLE into a retired block is MAINTENANCE, not a mechanism change
 
-**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_return.md`, Ruling 4(b)). A generated
+**Ruled by the user, 2026-08-09** (`records/cowork/rulings/cowork_rulings_2026_08_09_return.md`, Ruling 4(b)). A generated
 pass whose inputs are partly AUTHORED — a per-document judgment, a per-entry verdict, a per-row
 classification — STOPS when one of those inputs names something the tree no longer has. **Moving
 that judgment WHOLE into the pass's own retired block, with the reason it retired and with nothing
@@ -951,7 +951,7 @@ which is those passes' own STOPs working.
 
 ### A mechanism change is decided over its WHOLE population BOTH WAYS before it is applied, and only the members the defect's own shape names may move
 
-**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fourth_stop.md`, Ruling 25). The two
+**Ruled by the user, 2026-08-09** (`records/cowork/rulings/cowork_rulings_2026_08_09_fourth_stop.md`, Ruling 25). The two
 rules above bound the mechanism question from either side — how a mechanism is JUDGED once it
 exists, and when the mechanism-change reservation is ENGAGED at all. This states what a mechanism
 CHANGE owes BEFORE it is applied.
@@ -968,7 +968,7 @@ condition added one thing to the form and it is recorded here because it decides
 survives: the BEFORE half is read from a git object by explicit hash, never from the working tree.
 A pass that takes its baseline from the tree can be run exactly once — the second run reports the
 tree it has itself already changed — and one such record was overwritten by an accidental
-invocation before the change was made. See `cowork_away_returns.md`, the fifth continuation's Task 1
+invocation before the change was made. See `records/cowork/handoff/cowork_away_returns.md`, the fifth continuation's Task 1
 log.)*
 
 *Why the condition binds rather than merely advising:* it has already killed a ruled remedy. Applied
@@ -986,7 +986,7 @@ look like before the question is put.
 
 ### A generated record that must outlive its own writer is FROZEN at an established snapshot, and the freeze is a hash STOP
 
-**Ruled by the user, 2026-08-08** (`cowork_rulings_2026_08_08_pre_away.md`, Ruling 1). **Where a
+**Ruled by the user, 2026-08-08** (`records/cowork/rulings/cowork_rulings_2026_08_08_pre_away.md`, Ruling 1). **Where a
 generated artifact RECORDS WHAT A PASS FOUND and the tool that writes it must go on running, the
 artifact is declared HISTORICAL and frozen at an ESTABLISHED SNAPSHOT; the writer then runs at HEAD;
 and the freeze is enforced by a STOP on the snapshot's own bytes.** The writing tool carries one
@@ -1014,7 +1014,7 @@ how a record-bearing generated artifact is kept, and nothing else.
 
 ### A finding that bears on the analysis is SURFACED whatever its size; an apparatus finding is ROWED AND LEFT
 
-**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_commit_and_finish_line.md`, R3). Every
+**Ruled by the user, 2026-08-04** (dispatch `records/cc/instructions/cc_instruction_commit_and_finish_line.md`, R3). Every
 finding a session makes is sorted by **D-438's own test**, and by nothing else: *does the finding's
 subject bear on the analysis, on the analysis's inputs, or on an instrument a measurement depends
 on?*
@@ -1063,7 +1063,7 @@ that what a stage waits on and what phase 1 owes are different tests with differ
 
 > **★ THE MANDATORY-ROW CLAUSE ABOVE IS SUPERSEDED FOR ONE CLASS — the findings the WORTH TEST
 > DISCARDS (user-ruled 2026-08-11; the ruling record is
-> `cowork_rulings_2026_08_11_sixteenth_stop.md`, Ruling 68).** The NO branch's *"The row is written,
+> `records/cowork/rulings/cowork_rulings_2026_08_11_sixteenth_stop.md`, Ruling 68).** The NO branch's *"The row is written,
 > and the row is the whole of what is owed"*, and the closing paragraph's *"the row is mandatory"*,
 > **no longer hold for a finding that fails the worth test principle #10 now carries**: such a
 > finding is **recorded as DISCARDED and is not rowed**. **The test itself, what a discard record
@@ -1090,7 +1090,7 @@ that what a stage waits on and what phase 1 owes are different tests with differ
 
 ### A session may AUTHOR an establishment; its verdicts clear no guard until the reviewed set is applied
 
-**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_third_stop.md`, Ruling 18). The block
+**Ruled by the user, 2026-08-09** (`records/cowork/rulings/cowork_rulings_2026_08_09_third_stop.md`, Ruling 18). The block
 immediately above says WHEN an establishment obligation starts gating. This says how it STOPS.
 **A session is licensed to perform an owed establishment and to author its verdicts — by the
 originating pass's own method and by no invented one (#6, #16) — and those verdicts CLEAR NO GUARD
@@ -1116,7 +1116,7 @@ the reviewed application does not move. No fix to the analysis, no design, no in
 
 ### Criterion C1 reaches every decision whose content is LIVE — a superseded entry's obligation moves to its successor
 
-**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_c1_ruling_and_item1c.md`, §0a R1).
+**Ruled by the user, 2026-08-04** (dispatch `records/cc/instructions/cc_instruction_c1_ruling_and_item1c.md`, §0a R1).
 **Criterion C1 — D-231's phase-1 obligation that every recorded decision is written into its owning
 specification — reaches every decision whose content is LIVE.** A superseded decision's live content
 lives in its **successor**; C1 is satisfied for that content **when the successor is homed**, and the
@@ -1133,7 +1133,7 @@ at HEAD, at `tools/audit/phase1_completion_inventory.json` → `the_requirement.
 which is what the rule immediately below requires of a citation like this one.
 
 **★ THE BASIS PREVIOUSLY CLAIMED IS WITHDRAWN, AND THE WITHDRAWAL IS PART OF THE RULING.** The
-preceding dispatch (`cc_instruction_finish_line_item1b.md`) presented this ruling as an APPLICATION
+preceding dispatch (`records/cc/instructions/cc_instruction_finish_line_item1b.md`) presented this ruling as an APPLICATION
 of `OPEN_ITEMS.md` OI-272's per-kind home scheme to the superseded kind, and declared that reading as
 an assumption with an instruction to STOP rather than stretch the scheme. The check came back
 negative and **the reading is withdrawn**: the scheme partitions by what a decision IS rather than by
@@ -1153,7 +1153,7 @@ entry's home class. It decides which entries criterion C1 reaches, and nothing e
 
 ### A claim that invokes a ruling AS AN APPLICATION quotes that ruling in full, not the branch that supports the claim
 
-**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_c1_ruling_and_item1c.md`, §0a R2). **A
+**Ruled by the user, 2026-08-04** (dispatch `records/cc/instructions/cc_instruction_c1_ruling_and_item1c.md`, §0a R2). **A
 claim that invokes a ruling as an application of it must QUOTE THAT RULING IN FULL, not the branch of
 it that supports the claim.**
 
@@ -1180,7 +1180,7 @@ the same ground D-431 gives: a dispatch's premise becomes the next session's sta
 
 ### Where a superseded decision's content is a REMOVAL, the specification states the current behaviour and records the removal as a tried-and-closed line
 
-**Ruled by the user, 2026-08-04** (dispatch `cc_instruction_guard_fix_and_item1d.md`, §0a R2).
+**Ruled by the user, 2026-08-04** (dispatch `records/cc/instructions/cc_instruction_guard_fix_and_item1d.md`, §0a R2).
 **Where a superseded decision's content is a REMOVAL, the owning specification STATES THE CURRENT
 BEHAVIOUR and RECORDS THE REMOVAL AS A TRIED-AND-CLOSED LINE; the register holds the status.**
 
@@ -1211,7 +1211,7 @@ of entry, and nothing else.
 
 ### Where the implementation CONTRADICTS the decision being homed, the shelving is written in AS a shelving, the contradiction stated beside it, and the questions POINTED at their rows
 
-**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_return.md`, Ruling 5). Same family as
+**Ruled by the user, 2026-08-09** (`records/cowork/rulings/cowork_rulings_2026_08_09_return.md`, Ruling 5). Same family as
 the two rules above: a FORM for writing a decision into a specification when the plain form would
 state something false. **Where the record says a later build specified the opposite of the decision
 being homed, the decision is written into its owning section AS WHAT IT IS — a shelving as a
@@ -1235,8 +1235,8 @@ expose. It is now a twice-ruled, named pattern rather than a one-off treatment.
 
 ### Two same-dated texts are compared VERBATIM before either is retired into the other; where they bind different acts they are homed SIDE BY SIDE
 
-**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_return.md`, Ruling 7, and
-`cowork_rulings_2026_08_09_second_stop.md`, Ruling 11 — one method, recorded as one rule because the
+**Ruled by the user, 2026-08-09** (`records/cowork/rulings/cowork_rulings_2026_08_09_return.md`, Ruling 7, and
+`records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md`, Ruling 11 — one method, recorded as one rule because the
 test and the remedy are useless apart). Same family as the form above.
 
 **THE CONDITION.** Before a recorded decision is treated as ONE DECISION RECORDED TWICE and retired
@@ -1262,8 +1262,8 @@ session that runs the test correctly is left with a STOP and no form to write th
 
 ### A homing act tests a section in a FIXED ORDER — pointer move first, kind half before any write — and a findings-recording owner means HELD, never written by stretch
 
-**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49, taking the
-upgrade reading of Ruling 40 of `cowork_rulings_2026_08_09_eighth_stop.md`). Same family as the two
+**Ruled by the user, 2026-08-11** (`records/cowork/rulings/cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49, taking the
+upgrade reading of Ruling 40 of `records/cowork/rulings/cowork_rulings_2026_08_09_eighth_stop.md`). Same family as the two
 forms above, and the one they leave out: those say HOW to write a decision into a section that will
 not take the plain form, and this says **in what order a homing act tests a section at all, and what
 happens when the test fails.**
@@ -1305,7 +1305,7 @@ it stopped on is not a formality.
 
 ### Where the record does not settle the question, the surface that returns it to the user gathers FACTS and makes NO recommendation
 
-**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_fourth_stop.md`, Ruling 27), on the
+**Ruled by the user, 2026-08-09** (`records/cowork/rulings/cowork_rulings_2026_08_09_fourth_stop.md`, Ruling 27), on the
 user's own instruction, quoted in the ruling verbatim: *"follow the rule: fact based decisions or
 exploration to gather facts are allowed, not decided on unsure/fabulated/misremembered facts."* The
 third member of the family above, and the case those two do not cover: not *the plain form would
@@ -1333,7 +1333,7 @@ than by the user on facts.
 
 ### A correction that reconciles a specification to the arm that SHIPS carries the behavioural non-equivalence visibly, as unmeasured
 
-**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_second_stop.md`, Ruling 15). The
+**Ruled by the user, 2026-08-09** (`records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md`, Ruling 15). The
 doc-sync case of the same family. **Where a specification names one implementation as a rule's
 precondition and the arm that ships meets that precondition by a DIFFERENT design, the correction
 states the requirement rather than the implementation, names the design on each arm — and MUST CARRY
@@ -1353,7 +1353,7 @@ comparison of the two outputs taken.
 
 ### A homing dispatch may edit three further files, and the license is scoped to homing acts alone
 
-**Ruled by the user, 2026-08-07** (dispatch `cc_instruction_five_rulings.md`, §0a R1). **The edit
+**Ruled by the user, 2026-08-07** (dispatch `records/cc/instructions/cc_instruction_five_rulings.md`, §0a R1). **The edit
 surface a HOMING dispatch may touch is widened to `docs/scoring_model.md`, `CLAUDE.md` and
 `BUILD_AND_TEST.md`, SCOPED TO HOMING ACTS ONLY** — writing a register entry's decision into its
 owning specification, in that section's own voice, with its defense, and with the entry's former
@@ -1386,7 +1386,7 @@ record before anything is written under it.
 
 ### Where a licence's letter leaves a known falsity standing in the file it licensed, the session CORRECTS it and REPORTS the widening in the same act
 
-**Ruled by the user, 2026-08-09** (`cowork_rulings_2026_08_09_third_stop.md`, Ruling 17). The
+**Ruled by the user, 2026-08-09** (`records/cowork/rulings/cowork_rulings_2026_08_09_third_stop.md`, Ruling 17). The
 subsection above states the SCOPE of a licence. This states the one case that scope does not cover.
 **Where performing a one-edit licence to the letter would leave, in the very file being corrected, a
 second instance of the same falsity made false by the same act, the session CORRECTS THAT INSTANCE
@@ -1410,8 +1410,8 @@ process point.
 
 ### A task that CANNOT BE STOPPED PARTWAY is dispatched FIRST, with nothing large in front of it — and the ordering is RULED, never left to a preference
 
-**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_eleventh_stop.md`, Ruling 52, taking
-Ruling 51 of `cowork_rulings_2026_08_11_tenth_stop.md`). Every other rule in this block says what a
+**Ruled by the user, 2026-08-11** (`records/cowork/rulings/cowork_rulings_2026_08_11_eleventh_stop.md`, Ruling 52, taking
+Ruling 51 of `records/cowork/rulings/cowork_rulings_2026_08_11_tenth_stop.md`). Every other rule in this block says what a
 dispatch may contain or how an act inside one is performed. This says in what ORDER the tasks of a
 dispatch are placed, and it exists because two rules the project already runs on collide and nothing
 said which wins.
@@ -1446,7 +1446,7 @@ its end, and the two rules are stated above in the terms this rule needs them in
 because homing them is a separate act nobody has ruled.
 
 > **★ THE CLOSING CLAUSE ABOVE IS OVERTAKEN, AND THE FORMER WORDING STANDS (#12; corrected
-> 2026-08-11 on the user's Ruling 55 of `cowork_rulings_2026_08_11_twelfth_stop.md`).** *"Homing them
+> 2026-08-11 on the user's Ruling 55 of `records/cowork/rulings/cowork_rulings_2026_08_11_twelfth_stop.md`).** *"Homing them
 > is a separate act nobody has ruled"* was true when it was written and is no longer: the user ruled
 > that act one stop later, and **both rules are now homed in the two subsections immediately below**,
 > in this block's own voice. Nothing in the rule above moves; what changes is that the two rules it
@@ -1457,7 +1457,7 @@ because homing them is a separate act nobody has ruled.
 
 ### A derivation, a measurement or a sizing over a derived population is published WHOLE or not at all — and a subset is published only under a scope that NAMES its members
 
-**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_twelfth_stop.md`, Ruling 55), which
+**Ruled by the user, 2026-08-11** (`records/cowork/rulings/cowork_rulings_2026_08_11_twelfth_stop.md`, Ruling 55), which
 homes a rule this project had been running on since the fourth return continuation without any
 governing surface stating it. The rule above arbitrates between this rule and the one below; until
 this act neither of the two was written anywhere a session would find them.
@@ -1495,7 +1495,7 @@ partial publication of a larger one, provided the boundary is declared where the
 
 ### A PER-ENTRY PASS may be stopped at any member boundary, and the stop is RECORDED — what was done, what was not, and that the remainder is untouched rather than partly worked
 
-**Ruled by the user, 2026-08-11** (`cowork_rulings_2026_08_11_twelfth_stop.md`, Ruling 55), the
+**Ruled by the user, 2026-08-11** (`records/cowork/rulings/cowork_rulings_2026_08_11_twelfth_stop.md`, Ruling 55), the
 second of the two rules the ordering rule above arbitrates between, and homed in the same act for the
 same reason: it governed every batch of this arc from dispatch prose alone.
 

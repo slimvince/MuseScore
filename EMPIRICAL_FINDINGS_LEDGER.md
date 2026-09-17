@@ -5,7 +5,7 @@
 > are different kinds. An entry here is a fact a deriving session **may** read: it has crossed the
 > blindness barrier, where our code and every document derived from it may not be read at all.
 >
-> **FORM (user-ruled 2026-08-26, `cowork_rulings_2026_08_26_ledger_form_sitting.md` Ruling 1, the
+> **FORM (user-ruled 2026-08-26, `records/cowork/rulings/cowork_rulings_2026_08_26_ledger_form_sitting.md` Ruling 1, the
 > user's word "C").** This is **one hand-written record whose entries CITE rather than transcribe.**
 > Each entry names its fact, its gate verdict, and **where its five ruled fields already stand**. It
 > does **not** restate them. The ground is narrow and is the whole reason for the form: every admitted
@@ -13,7 +13,7 @@
 > `cowork_empirical_findings_candidates.md`, and this project has already ruled that retyping such a
 > fact is the transcription **D-431** forbids and *"would let the two copies drift"*.
 >
-> **Built by CC, 2026-08-26, dispatch `cc_instruction_ledger_build.md`, at the tip its Task 0(c) left.
+> **Built by CC, 2026-08-26, dispatch `records/cc/instructions/cc_instruction_ledger_build.md`, at the tip its Task 0(c) left.
 > Start-of-batch tip `673d0eec4e66fc62ceb9eb7d33faf7aef98d4c7f`, read at `.git/refs/heads/master`
 > with the file tool — the ref side.** No admission was made, changed or refused as an act by that
 > batch: the thirty-one admissions are the **user's**, taken at
@@ -22,9 +22,9 @@
 >
 > **★ EXTENDED 2026-08-26 — THE SEVEN OUTSTANDING ITEMS ARE DISPOSED AND THIS LEDGER NOW HOLDS
 > THIRTY-FIVE ENTRIES.** The user disposed the one admission the first re-check refused and the six
-> candidates of the third harvest, at `cowork_rulings_2026_08_26_ledger_dispositions_sitting.md` (his
+> candidates of the third harvest, at `records/cowork/rulings/cowork_rulings_2026_08_26_ledger_dispositions_sitting.md` (his
 > words: *"B"*, *"confirm"*, *"A"*). **Written in by CC, dispatch
-> `cc_instruction_ledger_admissions.md`. Start-of-batch tip
+> `records/cc/instructions/cc_instruction_ledger_admissions.md`. Start-of-batch tip
 > `052b183006ec89243d8f7863c59622b7d62d435c`, read at `.git/refs/heads/master` with the file tool —
 > the ref side.** **That batch disposed nothing:** the
 > dispositions are the **user's**, and what it performed is the Ruling 8 re-check on the five
@@ -63,7 +63,7 @@ Quoted from `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md
 >   that is its job.
 
 And the separately judged half, from the ruling that created the ledger
-(`cowork_rulings_2026_08_15_method_directions.md:46–54`): entries are **approach-level,
+(`records/cowork/rulings/cowork_rulings_2026_08_15_method_directions.md:46–54`): entries are **approach-level,
 implementation-stripped** — the statement is made without our implementation's words in it.
 
 **The gate is NOT a correctness test, and the user clarified this at the admissions sitting.**
@@ -82,7 +82,7 @@ and whether it should become one is not decided anywhere.
 ## 2. THE FIVE-FIELD SHAPE AND ITS TWO ATTACHED RULES
 
 **Quoted whole from the ruling that states them,
-`cowork_rulings_2026_08_15_method_directions.md:46–54`, direction 4 of nine:**
+`records/cowork/rulings/cowork_rulings_2026_08_15_method_directions.md:46–54`, direction 4 of nine:**
 
 > 4. **OUR OWN EXPERIMENTAL FINDINGS ENTER VIA AN EMPIRICAL FINDINGS LEDGER, THROUGH AN AIRLOCK.**
 >    Admission test: *does the fact survive the implementation being thrown away?* Entries are
@@ -118,7 +118,7 @@ different records.** **C8 and C11** were admitted at the sitting of 2026-08-26 a
 is at `cowork_fact_gate_admissions_2026_08_26.md:119` and `:121`. **C9's admitted text is NOT the
 sentence at `:120`** — that wording is the one **refused** at the first re-check and it stands at §5;
 the sentence C9's entry carries is the **later ruled restatement**, authored at
-`cowork_rulings_2026_08_26_ledger_dispositions_sitting.md:33–34`.
+`records/cowork/rulings/cowork_rulings_2026_08_26_ledger_dispositions_sitting.md:33–34`.
 
 *(The former wording is preserved here (#12); it remains true of C8 and C11 and is false of C9:
 **"★ The one place the admitted text is TRANSCRIBED rather than cited, and it has to be: three entries
@@ -175,7 +175,7 @@ with the criterion, the population split by home, and the coverage bound stated 
 DAY.** Nothing enters this ledger that the user has not admitted, and admission is never a session's
 act — which is why the six stood in the candidates file carrying *proposed* verdicts he might
 overturn, exactly as C1–C41 did before the admissions sitting, and why they entered only once he had
-ruled. He ruled at `cowork_rulings_2026_08_26_ledger_dispositions_sitting.md` §2 and §3: **C42
+ruled. He ruled at `records/cowork/rulings/cowork_rulings_2026_08_26_ledger_dispositions_sitting.md` §2 and §3: **C42
 admitted on its leading-tone half, C43 on its fact half, C44 at the ruled width, C45 split three ways
 with reading one admitted, C46 proposed for nothing, C47 failed.** The four entries that follow are in
 §6; everything else is at §8.
@@ -187,7 +187,7 @@ would create the second copy this ledger's whole form exists to prevent (Ruling 
 sentence calling itself superseded is likewise untouched — see §10.
 
 **★ AND A CORRECTION OF RECORD IS CARRIED HERE because it bears on this ledger's own completeness.**
-`cc_report_ledger_harvest.md` §9.1 states that of the three ruled seeds *"Task 3 names the second and
+`records/cc/reports/cc_report_ledger_harvest.md` §9.1 states that of the three ruled seeds *"Task 3 names the second and
 the third and not the first"*. **That is false at the object:** the first harvest's Task 3 named the
 second only; its source 2 is the **open-items** register, a different register, which that report read
 as though it were the ruled third seed. The consequence is precisely why this section exists — a ruled
@@ -197,7 +197,7 @@ seed stood recorded as accounted for while nothing had been mined from it.
 
 ## 5. ★ THE RE-CHECKS AT THE GATE — TWO RUNS, ONE REFUSAL, AND THE REPLACEMENT IT NOW HAS
 
-Ruling 8 of `cowork_rulings_2026_08_21_successor_plan_sitting.md` requires **every hand admission to
+Ruling 8 of `records/cowork/rulings/cowork_rulings_2026_08_21_successor_plan_sitting.md` requires **every hand admission to
 be re-checked at the ledger's gate when it enters.** It has run twice, and both runs are reported.
 
 **THE FIRST RE-CHECK, 2026-08-26, over the thirty-one admissions of the fact-gate sitting.** **Thirty
@@ -217,7 +217,7 @@ carry the same obligation. **ALL FIVE PASS**, each with its one-sentence ground 
 | **C9** — admitted as the restatement *"The presence of a leading tone does not distinguish the genuine cases."* (`cowork_fact_gate_admissions_2026_08_26.md:120`) | `cowork_empirical_findings_candidates.md` §C9, `:301–321` | **The admitted sentence's SUBJECT is a population defined by a mechanism of the implementation.** *"The genuine cases"* denotes the correct fires of the minor-read-as-diminished gate — register entry **D-300**, homed `docs/scoring_model.md:1418–1424` — so with the implementation thrown away the sentence has no population and the fact does not survive **in the form admitted**. The stripping that produced it removed our vocabulary from the predicate (*"available at analysis time"*) and left it in the subject. **This is a verdict on the admitted SENTENCE, not on whatever music claim may sit under it.** |
 
 **★ AND THE USER HAS SINCE RECONCILED THE REFUSAL — THE POINTER, so this refusal is never read as the
-last word on it.** At `cowork_rulings_2026_08_26_ledger_dispositions_sitting.md` §1 he let the refusal
+last word on it.** At `records/cowork/rulings/cowork_rulings_2026_08_26_ledger_dispositions_sitting.md` §1 he let the refusal
 **stand as a fact of the record** and admitted a **restatement on the music** in its place:
 *"In this repertoire, the presence of a leading tone does not distinguish passages where a diminished
 reading is the correct one from passages where it is not."* **That restatement is entry C9 in §6, and
@@ -306,7 +306,7 @@ admitted is behind the barrier and must stay there.
   music, checkable at the notes and at the published human annotation, so nothing in it depends on our
   code existing; and the subject phrase whose implementation-defined population caused the first
   refusal is gone from it.
-- **The admitted text, verbatim:** `cowork_rulings_2026_08_26_ledger_dispositions_sitting.md:33–34`.
+- **The admitted text, verbatim:** `records/cowork/rulings/cowork_rulings_2026_08_26_ledger_dispositions_sitting.md:33–34`.
   It is the **user's** ruling of that date (his word: *"B"*), authored there and nowhere else.
 - **Five fields:** `cowork_empirical_findings_candidates.md` §C9, `:301–321`.
 - **★ THE MEASURED SCOPE IS IN THE UNCERTAINTY FIELD AND NOT IN THE SENTENCE, which is how it was
@@ -642,7 +642,7 @@ verdict on it: the re-check's subject is the thirty-one admissions.
 
 **And one bound of a different kind, carried because it travels with the harvest that produced the
 eight `docs/scoring_model.md` §8 entries.** Ruling 1 of
-`cowork_rulings_2026_08_26_sizing_tests_sitting.md` attaches a **coverage** bound to the record
+`records/cowork/rulings/cowork_rulings_2026_08_26_sizing_tests_sitting.md` attaches a **coverage** bound to the record
 check's harvest — which dead ends came up for examination was driven by which statements they collided
 with. **§8 of that record adds the measured fact that the same corpus had already been mined WHOLE on
 2026-08-25**, so the larger, measured bound dominates the ruled one.

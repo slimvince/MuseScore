@@ -1587,5 +1587,5 @@
       }
     }
   ],
-  "_large_description": "23 user-committed large/orchestral scores (tools/extra scores/large/), ground_truth=false, committed 2026-07-28 (cc_instruction_analysis_cost_profile.md Task 0). Counts are MEASURED as the joint fact adapter counts them (large_score_profile_counts.json). Licence read from each file's own copyright metaTag only; 'undetermined' where the metaTag is empty or a bare date."
+  "_large_description": "23 user-committed large/orchestral scores (tools/extra scores/large/), ground_truth=false, committed 2026-07-28 (records/cc/instructions/cc_instruction_analysis_cost_profile.md Task 0). Counts are MEASURED as the joint fact adapter counts them (large_score_profile_counts.json). Licence read from each file's own copyright metaTag only; 'undetermined' where the metaTag is empty or a bare date."
 }

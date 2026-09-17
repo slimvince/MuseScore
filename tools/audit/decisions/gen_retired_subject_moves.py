@@ -67,7 +67,7 @@ import gen_phase1w_legacy_verification as legacy                    # noqa: E402
 
 BACKBONE = HERE / "backbone_decisions.json"
 OUT = HERE / "retired_subject_moves.json"
-RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
+RULING = ROOT / "records" / "cowork" / "rulings" / "cowork_rulings_2026_08_16_preparation_return.md"
 
 RETIRED_BLOCK = "retired_entries"
 

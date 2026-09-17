@@ -2624,7 +2624,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 60339
+          "characters": 60546
         },
         {
           "member": 3,
@@ -2641,7 +2641,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 15002
+          "characters": 15048
         },
         {
           "member": 4,
@@ -2659,7 +2659,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 103431
+          "characters": 104805
         },
         {
           "member": 5,
@@ -2669,7 +2669,7 @@
           "rendered_from": "GENERATED — the DESIGN-INTENT class less the withheld family, four fields per entry",
           "entries_rendered": 208,
           "leak_checked": true,
-          "characters": 252572
+          "characters": 252641
         },
         {
           "member": 6,
@@ -2836,7 +2836,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 61113
+          "characters": 61320
         },
         {
           "member": 3,
@@ -2853,7 +2853,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 15002
+          "characters": 15048
         },
         {
           "member": 4,
@@ -2871,7 +2871,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 103431
+          "characters": 104805
         },
         {
           "member": 5,
@@ -2881,7 +2881,7 @@
           "rendered_from": "GENERATED — the DESIGN-INTENT class less the withheld family, four fields per entry",
           "entries_rendered": 241,
           "leak_checked": true,
-          "characters": 295073
+          "characters": 295142
         },
         {
           "member": 6,
@@ -2951,12 +2951,12 @@
                 }
               ],
               "★_verified_in_both_directions": "What each filter removed is ABSENT from the rendered text, AND re-inserting exactly what was removed at the offsets it came from reproduces this source byte for byte — so nothing else was taken out.  Both are STOPs, re-run on every render.",
-              "characters": 29030
+              "characters": 29122
             }
           ],
           "leak_checked": false,
           "leak_not_checked_because": "The leak check is ruled over members (5) and (6) — the two this tool GENERATES.  An extra is quoted, and what it may not carry is cut by its own authored filters, which are verified in both directions.",
-          "characters": 29031
+          "characters": 29123
         },
         {
           "member": 8,
@@ -3105,12 +3105,12 @@
               ],
               "filters_applied": [],
               "★_verified_in_both_directions": "What each filter removed is ABSENT from the rendered text, AND re-inserting exactly what was removed at the offsets it came from reproduces this source byte for byte — so nothing else was taken out.  Both are STOPs, re-run on every render.",
-              "characters": 50665
+              "characters": 50962
             }
           ],
           "leak_checked": false,
           "leak_not_checked_because": "The leak check is ruled over members (5) and (6) — the two this tool GENERATES.  An extra is quoted, and what it may not carry is cut by its own authored filters, which are verified in both directions.",
-          "characters": 50666
+          "characters": 50963
         }
       ],
       "★_FROZEN": {
@@ -3266,7 +3266,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 61113
+          "characters": 61320
         },
         {
           "member": 3,
@@ -3283,7 +3283,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 15002
+          "characters": 15048
         },
         {
           "member": 4,
@@ -3301,7 +3301,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "members (1)-(4) are ruled WHOLE; the leak check is scoped to the two members this tool GENERATES. What member (2) carries is handled by the authored withheld passage instead.",
-          "characters": 103431
+          "characters": 104805
         },
         {
           "member": 5,
@@ -3311,7 +3311,7 @@
           "rendered_from": "GENERATED — the DESIGN-INTENT class less the withheld family, four fields per entry",
           "entries_rendered": 241,
           "leak_checked": true,
-          "characters": 295073
+          "characters": 295142
         },
         {
           "member": 6,

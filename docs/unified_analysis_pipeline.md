@@ -17,7 +17,7 @@ Predecessors: `docs/policy2_coalescing_map.md`, project memory
 > cite it as the **design contract** (`src/composing/analyzed_section.h`) and as the source of the
 > key-area grouping rule (`src/composing/analysis/section/sectionanalyzer.h`), so a reader is sent
 > here to act on it. Under the filing convention (`cowork_design_doc_template.md`, the user's Ruling
-> 62 of `cowork_rulings_2026_08_11_fourteenth_stop.md`) that is **branch two — a live governing
+> 62 of `records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md`) that is **branch two — a live governing
 > surface, whose job is to be true now** — so the body is corrected in place, with **each former
 > wording preserved beside its correction (#12)**. Contrast a design whose approach was later
 > falsified or superseded, which is re-bannered and never rewritten.

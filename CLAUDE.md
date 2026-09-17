@@ -155,7 +155,7 @@ override convenience.
     are **not** a ceiling for this repertoire and may not be used as one, however convenient the
     invariant they share.
     **★ AND THE MEASUREMENT IS NOW COMMISSIONED, IN TWO HALVES, WITH THE RULE THAT ENDS THE CONTACT
-    ROUTE (user-ruled 2026-08-09; the ruling record is `cowork_rulings_2026_08_09_return.md`,
+    ROUTE (user-ruled 2026-08-09; the ruling record is `records/cowork/rulings/cowork_rulings_2026_08_09_return.md`,
     Ruling 10).** The block above establishes that this principle cannot be satisfied by citation.
     What follows is the route to satisfying it, and both halves are recorded here because each
     settles something a later session would otherwise re-decide. **(a) THE LABORATORY CONTACT IS THE
@@ -298,7 +298,7 @@ were ratified by the user on 2026-07-18 at the joint-estimator plan review — a
 `cowork_joint_estimator_architecture.md` §6/§7, operational rows OI-176…OI-181; the
 decision-neutrality corollary was ratified by the user on 2026-07-26 at the notation-layer
 adoption increment's decision surface — analysis in `cowork_notation_adoption_increment.md` §2. Companion standing rules elsewhere: the
-⛔ TOTAL UNIFICATION rule (`cowork_handoff.md`), the MEASURE-BEFORE-BUILD gate
+⛔ TOTAL UNIFICATION rule (`records/cowork/handoff/cowork_handoff.md`), the MEASURE-BEFORE-BUILD gate
 (`cowork_engage_arc_plan.md`, now the middle stage of the #17 funnel), and the doc-sync,
 layer, and gate policies below.*
 
@@ -336,14 +336,14 @@ discovered" means: every item has ONE index row, an owning layer, and a blocking
 `tools/open_items_split_check.py` → `open_items/split_reconciliation.json`.)
 
 *★ RULE (a) AMENDED 2026-08-17 on the user's Ruling 1 of
-`cowork_rulings_2026_08_17_session_start_read_sitting.md`, executed by
-`cc_instruction_preparation_ninth.md` Task 1 — and only after the substitute was POSITIVELY
+`records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md`, executed by
+`records/cc/instructions/cc_instruction_preparation_ninth.md` Task 1 — and only after the substitute was POSITIVELY
 ESTABLISHED under #19, which is the ruling's own precondition. The superseded wording moved
 verbatim to `CLAUDE_ARCHIVE.md` in the same act, under the continuous-pruning rule (§5(D) of
-`cowork_rulings_2026_08_16_preparation_return.md`).*
+`records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md`).*
 
 *★ AND RULE (a)'s POINTER NARROWED AGAIN 2026-08-18, on the user's Ruling 3 of
-`cowork_rulings_2026_08_17_ninth_return.md`, executed by `cc_instruction_preparation_tenth.md`
+`records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md`, executed by `records/cc/instructions/cc_instruction_preparation_tenth.md`
 Task 2: it names the ANSWER — the list of gating row identities — and no longer the whole section
 that carries the answer together with the evidence establishing it. The superseded wording moved
 verbatim to `CLAUDE_ARCHIVE.md` in the same act, under the same continuous-pruning rule. Nothing
@@ -386,7 +386,7 @@ candidate row lacks a verdict or any verdict names a row the INDEX no longer car
 row identity or count is restated here (#17f, D-431).
 
 **★ AND WHAT SUCH A ROW IS OWED — IT STOPS BEING OWED, WITH A PER-ROW LAPSE RECORD (user-ruled
-2026-08-11; the ruling record is `cowork_rulings_2026_08_11_fifteenth_stop.md`, Ruling 66).** The
+2026-08-11; the ruling record is `records/cowork/rulings/cowork_rulings_2026_08_11_fifteenth_stop.md`, Ruling 66).** The
 declaration above says an apparatus row gates nothing, and then says three things about what such a
 row IS: *it stays open, it stays owed, and it is worked in leftover capacity.* **THE SECOND AND
 THIRD ARE SUPERSEDED HERE. An apparatus row STAYS OPEN in the open-items register, STOPS GATING ANY
@@ -418,7 +418,7 @@ put one state in two places (#6). The lapse population and every lapse record ar
 hand-listed; no row identity or count is restated here (#17f, D-431).
 
 **★ RULE (f) — EVERY INDEX STATUS CELL BEGINS WITH ONE CANONICAL TOKEN (user-ruled 2026-08-09; the
-ruling record is `cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 33).** Rules (a)–(e) above say
+ruling record is `records/cowork/rulings/cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 33).** Rules (a)–(e) above say
 how the register is kept. This is the sixth, and it is about the one cell three separate derivations
 read. **A row's STATE is carried by the first token of its status cell — the resolved mark at the
 head of the cell, or one of the open-state words — and by nothing else.** Two consequences follow
@@ -447,7 +447,7 @@ carries a POINTER to this rule and is explicitly not its home** (#6).
 
 **★ AND WHAT A DISCARD VERDICT DOES TO A ROW ALREADY ON THE BOOKS — IT IS AN INPUT TO THE
 DERIVATION THAT DECIDES GATING, NEVER AN EDIT TO A GATING VERDICT (user-ruled 2026-08-13; the
-ruling record is `cowork_rulings_2026_08_13_seventeenth_stop.md`, Ruling 69).** The worth test at
+ruling record is `records/cowork/rulings/cowork_rulings_2026_08_13_seventeenth_stop.md`, Ruling 69).** The worth test at
 principle #10 says which findings are DISCARDED, and the ruling that created it says in its own
 words that it does not retroactively discard the open population — *"it states the test; what the
 test does to rows already on the books is a separate act."* **This is that act, and it was forced
@@ -593,7 +593,7 @@ moves nothing — the enumeration, the reasoning and every count are generated a
 `tools/audit/decisions/reads4_oi326_application.json`, and no figure is restated here (#17f, D-431).
 **(l) WHERE NO DELEGATION ADMITS AN ENTRY'S HOME, RE-HOMING IS THE DEFAULT CLOSING ROUTE — AND WHO
 MAY EXCEPT A DOCUMENT FROM IT, AND WHEN (user-ruled 2026-08-09; the ruling record is
-`cowork_rulings_2026_08_09_sixth_stop.md`, Ruling 38).** Rules (g)–(k) decide which documents and
+`records/cowork/rulings/cowork_rulings_2026_08_09_sixth_stop.md`, Ruling 38).** Rules (g)–(k) decide which documents and
 sections are homes. This is the rule they lack: what closes an entry whose home is a home under
 none of them. **For every register entry whose home document is named in NO user-ratified surface,
 or only in a form the delegation bar excludes, the closing act is RE-HOMING into the owning layer's
@@ -614,8 +614,8 @@ there is none — an entry whose live content is already carried by a homed succ
 because that would put a second copy of a homed rule (#6), and an entry with no decision content to
 write has nothing to re-home. That class stays dispositioned where it already was.
 **(m) AN EVENT A MECHANISM EXISTS TO PRODUCE IS NOT A RULE NEEDING A HOME (user-ruled 2026-08-11;
-the ruling record is `cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49, taking Ruling 44 of
-`cowork_rulings_2026_08_09_ninth_stop.md`).** Rule (l) chooses between two available closing routes.
+the ruling record is `records/cowork/rulings/cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49, taking Ruling 44 of
+`records/cowork/rulings/cowork_rulings_2026_08_09_ninth_stop.md`).** Rule (l) chooses between two available closing routes.
 This is the neighbouring case it does not reach: an entry for which **neither route is owed, because
 there is no rule to write at all.** **Where a register entry's whole content is an EVENT that a
 standing mechanism exists to produce and has produced — an adoption, an admission, a membership
@@ -633,8 +633,8 @@ clause is general rather than one entry's treatment:* three separate waves held 
 not place, and one of them turned out to have nothing to write — the needs vector's membership,
 already carried at the table the adoption happened in.
 **(n) A PER-CORPUS ESTABLISHMENT VERDICT IS A STATUS, SO THE DECISIONS REGISTER IS ITS HOME
-(user-ruled 2026-08-11; the ruling record is `cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49,
-taking Ruling 46 of `cowork_rulings_2026_08_09_ninth_stop.md`).** The phase-1 rule assigns STATUS to
+(user-ruled 2026-08-11; the ruling record is `records/cowork/rulings/cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49,
+taking Ruling 46 of `records/cowork/rulings/cowork_rulings_2026_08_09_ninth_stop.md`).** The phase-1 rule assigns STATUS to
 this register and CONFORMANCE to the specifications; it does not say which of the two an
 establishment verdict is, and this fixes it. **An establishment verdict (#19) about ONE corpus, one
 measurement tool or one gate — that it is established, or that it is not, or that the route to
@@ -649,7 +649,7 @@ entry are both statements about the STANDING of something the record holds, whic
 register is for; the rule the verdict bears on is elsewhere and is unmoved by it.
 
 **★ HOW RULE (c) IS DISCHARGED ONCE IT HAS ALREADY BEEN MISSED (user-ruled 2026-08-09; the ruling
-record is `cowork_rulings_2026_08_09_second_stop.md`, Ruling 12).** Rule (c) says a new ratification,
+record is `records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md`, Ruling 12).** Rule (c) says a new ratification,
 shelving or falsification gets its register entry IN the commit that records it. It does not say what
 happens when a run of rulings has accumulated OUTSIDE the register — which is the state the rule is
 meant to prevent and, once reached, a state the rule alone does not resolve. **The discharge is: the
@@ -712,12 +712,12 @@ measurement tool whose command lives there:**
 - `C:\s\MS\BUILD_AND_TEST.md` — authoritative commands for all build variants, both test suites, and all Python tools
 
 *★ `BUILD_AND_TEST.md` WAS DEMOTED from an unconditional session-start read to a conditional one on
-2026-08-17, on the user's Ruling 3 of `cowork_rulings_2026_08_17_session_start_read_sitting.md`,
-executed by `cc_instruction_preparation_ninth.md` Task 3. It is the twice-ruled CONDITIONAL-READ
+2026-08-17, on the user's Ruling 3 of `records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md`,
+executed by `records/cc/instructions/cc_instruction_preparation_ninth.md` Task 3. It is the twice-ruled CONDITIONAL-READ
 pattern — the `docs/scoring_model.md` conditional and Ruling 64's conditional read — applied for
 the first time to DEMOTE rather than to add. The superseded wording moved verbatim to
 `CLAUDE_ARCHIVE.md` in the same act, under the continuous-pruning rule (§5(D) of
-`cowork_rulings_2026_08_16_preparation_return.md`).*
+`records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md`).*
 
 *★ AND `DECISIONS.md` WAS CONSIDERED FOR THE SAME TREATMENT AND RULED OUT, the ground recorded here
 because a later ruling may revisit it and must have the ground to answer.* Its rule (a) rests on a
@@ -768,8 +768,8 @@ changes no rule of this file.** The one wording it amends is the bash-rules head
 heading, where the amendment is recorded.
 
 Do not rely on memory of previous sessions for baseline numbers or iteration state — read STATUS.md.
-`STATUS_ARCHIVE.md` and `cowork_handoff_archive.md` hold the superseded historical entries moved out
-by the doc split (`cc_instruction_doc_split.md`) — reference-only, NOT part of the session-start read.
+`STATUS_ARCHIVE.md` and `records/cowork/handoff/cowork_handoff_archive.md` hold the superseded historical entries moved out
+by the doc split (`records/cc/instructions/cc_instruction_doc_split.md`) — reference-only, NOT part of the session-start read.
 
 ```
 # Build — use PowerShell Start-Process (cmd.exe //c fails in MSYS2/Git Bash)
@@ -813,7 +813,7 @@ variant (b) DCML-only** (music21 is NOT ground truth), duration-weighted and
 **segmentation-invariant**. **Root governs; RN and key are always tracked beside it.** This is the
 granularity-robust metric mandated at Stage 5; it **supersedes the batch 52/24/52 case-identity stop**
 (now historical — see block (C)). Ratified at **R10-b (2026-07-06)**; handover provenance
-`cc_stage5_r10b_ratification_report.md` (assembly surface: `cc_stage5_r10_assembly_report.md`).
+`records/cc/reports/cc_stage5_r10b_ratification_report.md` (assembly surface: `records/cc/reports/cc_stage5_r10_assembly_report.md`).
 
 **Committed reference (the diff base): `tools/robust_stop/`** — per-preset `stem@runStartTick`
 variant-(b) root-failing run enumerations (**4547 runs on every preset** since the OI-178 adoption
@@ -846,7 +846,7 @@ absent from precisely the invocation that most needs it. **Reversal is one defau
 and is recorded here because this block is what pins it (#7).
 
 **★ Ratified baselines — RE-BASELINED AT THE OI-178 JOINT-ESTIMATOR ADOPTION, 2026-07-26 (user-ratified,
-option 1; measurement provenance `d615152c51`; report `cc_adoption_measurement_report.md`, record
+option 1; measurement provenance `d615152c51`; report `records/cc/reports/cc_adoption_measurement_report.md`, record
 `tools/joint_estimator/adoption_record.json`).** The joint estimator is now the **PRODUCTION inference
 layer on the batch/corpus surface**: `batch_analyze --joint-inference <dir>` produces each `.ours.json`
 from the joint module's decode (the L1 fact adapter → the ratified §5 decoder at the committed all-326
@@ -891,12 +891,12 @@ non-flag-gated surfaces byte-identical** (`tools/notation_seams/switch_golden_re
 inference/§3.3-presentation/inert-auxiliary split is the record arm's expected notation differences). **The
 batch/corpus surface and `tools/robust_stop/` are UNMOVED** (the flag is notation-side; `test_batch_analyze_
 regressions` passes, no `tools/corpus/` or `tools/robust_stop/` diff). Provenance: dispatch
-`cc_instruction_notation_switch.md`; the P6 report `tools/notation_seams/dualarm_classified_report.json`; the
+`records/cc/instructions/cc_instruction_notation_switch.md`; the P6 report `tools/notation_seams/dualarm_classified_report.json`; the
 OI-178 adoption record `tools/joint_estimator/adoption_record.json`.
 
 *★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 5 line(s), `self-declared-historical-or-superseded`, opening "**Superseded columns preserved (#12):** the OI-168 LEGACY-AN…"*
 
-*★ [SUPERSEDED by the OI-178 adoption 2026-07-26 — historical] THE OI-168 RE-BASELINE (2026-07-14; report `cc_oi168_fix_report.md`; outgoing reference preserved at
+*★ [SUPERSEDED by the OI-178 adoption 2026-07-26 — historical] THE OI-168 RE-BASELINE (2026-07-14; report `records/cc/reports/cc_oi168_fix_report.md`; outgoing reference preserved at
 `tools/robust_stop/snapshot_2026-07-13_pre_oi168/`, O-12). **Every published column above is UNCHANGED at
 the two decimals reported here** — what moved is the hard stop itself and the Jazz run count.
 `analyzeChord`'s two key-consuming scoring terms (`dim7CharacteristicBonus`, `diatonicRootContribution`)
@@ -926,15 +926,15 @@ changed: the five dominant-family exotic modes (Phrygian dominant, altered, Lydi
 Mixolydian ♭6) now reduce to the MINOR key of their PARENT COLLECTION — an emitted "C♯PhrygDom" grades as F♯
 minor, the key it is the dominant of — in the ONE shared reduction `compare_rn._our_key_tonic`, onto which the
 second key parser (`oracle_root_metric`) was folded. Key-abstain also drops (7680/10800/33120 → 0/4080/2400
-ticks). The user's ruling and the evidence: `cc_mode_grading_adjudication_probe_report.md` (the parent-collection
+ticks). The user's ruling and the evidence: `records/cc/reports/cc_mode_grading_adjudication_probe_report.md` (the parent-collection
 reading matches the DCML annotators on 67 % of the affected duration on the local column; the tonic-triad
-reading on 0 %). Provenance: `cc_key_grading_and_calibration_rebaseline_report.md`.*
+reading on 0 %). Provenance: `records/cc/reports/cc_key_grading_and_calibration_rebaseline_report.md`.*
 
 *Earlier columns, for the record: the OI-142/OI-143 re-baseline (user-ratified 2026-07-12) applied the 12
 transposed editions' constant offsets to the WiR ground truth at the shared substrate
 `dcml_parser.load_wir_regions` (OI-142) and split the key column into home/local (OI-143); its run-level
 set-diff was confined to the 12 corrected stems and the class-(b) root-disagree duration DECREASED on all
-presets (`cc_key_grading_rebaseline_report.md`; offsets in `tools/robust_stop/corpus_transposition_offsets.json`).
+presets (`records/cc/reports/cc_key_grading_rebaseline_report.md`; offsets in `tools/robust_stop/corpus_transposition_offsets.json`).
 It in turn superseded the R10-b column (root 63.36/62.37/63.25, RN 44.58/42.40/44.41, key 68.13/64.43/67.50),
 preserved in `tools/robust_stop/snapshot_2026-07-12_pre_oi142_oi143/`.*
 
@@ -974,7 +974,7 @@ building them, or on a session-handoff archive — surfaces that track work and 
 standing convention).** Every number in this block depends on all four.
 
 - **THE ONLY GROUND TRUTH IS THE HUMAN ANNOTATION. The algorithmic analysis is a noise filter, never a
-  standard of correctness** (user mandate 2026-06-10; homed here 2026-08-02 from `cowork_handoff_archive.md`,
+  standard of correctness** (user mandate 2026-06-10; homed here 2026-08-02 from `records/cowork/handoff/cowork_handoff_archive.md`,
   `OPEN_ITEMS.md` OI-272). Accuracy is measured against the published human analyses — *When in Rome* /
   DCML — and against nothing else. music21 is an algorithmic second opinion used to filter noise, so a
   count taken through it is a LOWER BOUND on human-adjudicated error, not an agreement rate. Three clauses
@@ -991,10 +991,10 @@ standing convention).** Every number in this block depends on all four.
   dominant-family exotic modes, grading reduces it to the minor key of the collection it belongs to — an
   emitted C♯ Phrygian dominant grades as F♯ minor, the key it is the dominant of. *Why:* measured — on
   the affected duration the parent-collection reading agrees with the DCML annotators on **67 %** of the
-  local key column and the tonic-triad reading on **0 %** (`cc_mode_grading_adjudication_probe_report.md`).
+  local key column and the tonic-triad reading on **0 %** (`records/cc/reports/cc_mode_grading_adjudication_probe_report.md`).
   The consolidation moved the key columns only: root, Roman numeral, every root-failing run set and the
   class-(b) hard-stop duration were byte-identical, run-difference +0/−0 on all presets
-  (`cc_key_grading_and_calibration_rebaseline_report.md`). It is implemented in ONE shared reduction,
+  (`records/cc/reports/cc_key_grading_and_calibration_rebaseline_report.md`). It is implemented in ONE shared reduction,
   `compare_rn._our_key_tonic` (#6), onto which the second key parser was folded.
 - **Key agreement is reported against BOTH the global home key and the local key** (user-ratified
   2026-07-12, OI-143; adopted `d9b52ba969`). Both columns are carried everywhere the key column appears;
@@ -1083,17 +1083,17 @@ figures contain is READ; neither moves a value in them.
 **★ THE CREDITING RULE IS NOT AMENDED TO COUNT A TONICIZATION LABEL AS AGREEING WITH THE
 ANNOTATOR'S MODULATED NUMERAL; ONLY A DIAGNOSTIC PARTIAL-SUB-SPLIT IS DEFENSIBLE** (2026-06-14; the
 record states no ratifier for the decision itself. Homed here 2026-08-09 on the user's ruling —
-Ruling 11 of `cowork_rulings_2026_08_09_second_stop.md` — as the MEASUREMENT half of register entry
+Ruling 11 of `records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md` — as the MEASUREMENT half of register entry
 **D-291**, whose BUILD half belongs to the Layer-5 function specification and is not restated here,
 #6. **SPLIT INTO TWO REGISTER IDENTIFIERS 2026-08-09** on the user's Ruling 21 of
-`cowork_rulings_2026_08_09_fourth_stop.md`: this half now carries its own entry, **D-656**, and
+`records/cowork/rulings/cowork_rulings_2026_08_09_fourth_stop.md`: this half now carries its own entry, **D-656**, and
 **D-291** keeps the build half; the two cross-reference each other, and neither text changed).
 Where our analysis labels an applied chord relative to the home key and the human annotator
 has changed key, the comparison is **not** to be changed so that the label counts as agreement. The
 prohibition survives in the words it was recorded in: *"Crediting rule NOT warranted (harmful —
 masks the 95% real error); only a DIAGNOSTIC partial-sub-split (expose the masking) is
 defensible."* *(The percentage inside that sentence is the source's own wording, quoted rather than
-reported: every value of that measurement lives in `cc_tonicization_modulation_metric_dossier.md`
+reported: every value of that measurement lives in `records/cc/reports/cc_tonicization_modulation_metric_dossier.md`
 and none is restated here, #17f, **D-431**.)* *Why:* measured before it was decided — the
 comparison already credits such a label by root and quality, so it does not over-penalise, it
 **MASKS**; and the affected cases are overwhelmingly cadence-confirmed local keys of substantial
@@ -1108,26 +1108,26 @@ governs the comparison itself and binds on every measurement; that one governs t
 modulation-detecting change is judged at. Collapsing them would lose this, the more specific and
 more easily violated prohibition (#12).
 
-**★ A-8 DUAL-TRACK (MEASURED + RATIFIED, user, 2026-07-03; `cc_a8_rebaseline_measure_report.md`).** The
+**★ A-8 DUAL-TRACK (MEASURED + RATIFIED, user, 2026-07-03; `records/cc/reports/cc_a8_rebaseline_measure_report.md`).** The
 **primary reported metric AND the Stage-5 fitting-objective basis** is the robust unit above: root
 governs, RN + key(home,local) tracked beside. **★ Ratified baselines — RE-BASELINED AT THE OI-178
 JOINT-ESTIMATOR ADOPTION, 2026-07-26 (user-ratified, option 1; the joint estimator IS the production
 inference layer on the batch/corpus surface, PRESET-INDEPENDENT — full detail in block (A) above):
 root-agree 77.03 %, RN-agree 64.12 %, key-agree vs HOME/global 56.14 %, key-agree vs LOCAL 78.42 %**
 (one value per column, all three presets; class-(b) hard-stop duration 1,817,280 per preset;
-`robust_stop_diff` OVERALL PASS; measurement provenance `d615152c51`, `cc_adoption_measurement_report.md`).
+`robust_stop_diff` OVERALL PASS; measurement provenance `d615152c51`, `records/cc/reports/cc_adoption_measurement_report.md`).
 **The recitation that follows is HISTORICAL — the superseded OI-168/OI-132 legacy-analysis lineage,
 retained for provenance.** *The superseded OI-168 columns (variant b, 326/352 coverage; re-baselined at
-the signature-mask fix, 2026-07-14, `cc_oi168_fix_report.md`; the movement then was Jazz root-agree
+the signature-mask fix, 2026-07-14, `records/cc/reports/cc_oi168_fix_report.md`; the movement then was Jazz root-agree
 +0.0058 pp, the Jazz run count 6689→6688 and class-(b) −480 vs the OI-132 mode-grading consolidation,
-user-ratified 2026-07-13, `cc_key_grading_and_calibration_rebaseline_report.md`): **root-agree Baroque
+user-ratified 2026-07-13, `records/cc/reports/cc_key_grading_and_calibration_rebaseline_report.md`): **root-agree Baroque
 66.04 % / Jazz 64.98 % / Default 65.93 %**, RN-agree 46.33/44.10/46.23 %, **key-agree vs HOME/global
 71.42/67.83/70.65 %** + **vs LOCAL 65.99/62.98/65.71 %** (the OI-143 dual column, both tracked). That consolidation reduces the five
 dominant-family exotic modes to their PARENT COLLECTION's minor key in the one shared reduction
 `compare_rn._our_key_tonic`; it moved the KEY columns only — root, RN, every root-failing run set and the
 class-(b) hard-stop duration are byte-identical (run-diff +0/−0 on all presets). The key columns it superseded
 (home 71.29/67.49/70.52, local 65.72/62.49/65.39) came from the OI-142/OI-143 re-baseline (user-ratified
-2026-07-12, `cc_key_grading_rebaseline_report.md`), which applied the 12 transposed editions' offsets to the
+2026-07-12, `records/cc/reports/cc_key_grading_rebaseline_report.md`), which applied the 12 transposed editions' offsets to the
 WiR ground truth at `dcml_parser.load_wir_regions` (OI-142) and split the key column (OI-143); its run-diff was
 confined to the 12 corrected stems (the other 314 byte-identical) and class-(b) root-disagree duration
 DECREASED on all presets. *The superseded R10-b column (root
@@ -1144,7 +1144,7 @@ kWStepIn re-segmentation, Jazz/Default reproduce the prior 64.43/67.50 to the di
 63.32/62.37/63.22, RN 44.56/42.40/44.40, key 68.11/64.43/67.50.)* When it governs, the **hard stop is
 the class-(b) root-disagree DURATION non-increase per preset** + the **mandatory explained per-run
 set-diff** (zero-new-case cannot scale to ~7,000 runs; class-(b) dominates ~96.5 % at this unit). C1
-reliability curves on this unit: `cc_c1_reliability_report.md`.
+reliability curves on this unit: `records/cc/reports/cc_c1_reliability_report.md`.
 
 ### (B) The two-tier per-cell class policy — CARRIED OVER, LIVE
 
@@ -1187,7 +1187,7 @@ symmetric-rotation churn.** A *new* BIR=false case is one of two classes:
   `bwv291@17760` (Eø7↔Gm6 same-collection center), `bwv244.15@10080` fixed; both new verified class-(a) at the
   score, zero new class-(b), and the L3 reduction-rule lever measured byte-identically inert (a≡b on all presets) —
   so the +1 is irreducible at Layer 3. **Retires when Layer 4 (function/cadence) pins the rotation/center** —
-  rotation-pinning is a named early Layer-4 job. Investigation: `cc_layer3_jazz_churn_investigation.md`.
+  rotation-pinning is a named early Layer-4 job. Investigation: `records/cc/reports/cc_layer3_jazz_churn_investigation.md`.
 
 ### (C) RETROSPECTIVE — the batch 52/24/52 stop (superseded at R10-b, 2026-07-06 — historical reference)
 
@@ -1224,7 +1224,7 @@ Baroque) and **viio↔V7 share-tone** readings; the genuinely-new *actionable* e
 is only ~1–3 per preset (net ≈9–10 Baroque / ~4 Jazz). The symmetric-dim7 members are
 structurally unresolvable by pitch class and are the seed of a future **two-tier /
 spelling-aware** gate (Stage 5/6 — noted, not built). Full provenance:
-`cc_metric_rebaseline_report.md` + `cc_gate_rebaseline_verify_report.md`.
+`records/cc/reports/cc_metric_rebaseline_report.md` + `records/cc/reports/cc_gate_rebaseline_verify_report.md`.
 
 *★ ARCHIVED 2026-08-17 → `CLAUDE_ARCHIVE.md`: 7 line(s), `self-declared-historical-or-superseded`, opening "**★ (Historical — the batch stop's FINAL frozen state before…"*
 
@@ -1257,7 +1257,7 @@ Default measured at `53`.) The **case-identity set, not the integer, is the gate
   measurement, Default = Baroque-52 with `{bwv352@1440, bwv60.5@30960}` replaced by `{bwv227.7@18000, bwv387@10560}`
   (the rest identical to Baroque-52). Re-baselined at the ratified 2.2e adoption: removal-only `{bwv244.32@5760}`
   vs the prior Default-53 (the same class-(b) case the kWStepIn adoption fixed on Baroque). *(✅ RE-CONFIRMED by measurement at the 2026-07-03 grammar-completion regen
-  (`cc_grammar_completion_report.md`, commit `ce509b0961`): all three presets' case-identity sets matched this
+  (`records/cc/reports/cc_grammar_completion_report.md`, commit `ce509b0961`): all three presets' case-identity sets matched this
   document exactly, set-diff empty both directions — the earlier Stage-0 prose-inconsistency caveat is discharged and
   the Default identities above may be relied on.)*
 
@@ -1267,7 +1267,7 @@ Default measured at `53`.) The **case-identity set, not the integer, is the gate
 one; it applies equally to the robust unit).** the BIR=false set is **not** the Layer-5 resolver
 residual — it is a **work budget distributed across Layers 1–5**, and it overstates the function-only remainder
 several-fold. Measured during the O1 investigation (`cowork_uncertain_resolver_investigation.md` +
-`cc_uncertain_resolver_measurement_report.md`): ≈60% Baroque / ≈42% Jazz are **spelling-resolvable** (the Layer-4
+`records/cc/reports/cc_uncertain_resolver_measurement_report.md`): ≈60% Baroque / ≈42% Jazz are **spelling-resolvable** (the Layer-4
 notated-spelling root pin), and most of the rest is **bass/inversion**, **local voice-leading**, or plain
 **segmentation over-grab** the change-point slicer (Layer 2) removes by construction (e.g. `bwv10.7@36000` — a 5-note
 scale `C-D-E♭-F-G` over-grabbed across two GT chords `i43`/`iv532`, Cowork-verified at the score). The genuinely
@@ -1296,12 +1296,12 @@ as the hard stop. *(Historical statement of the resolved problem, kept for prove
 `53/24`→`52/24/52` gate was measured at **batch (cross-barline) region** granularity; the user-visible
 **per-beat** root-error rate is ~7× higher when the same scores are scored at measure-aligned (section)
 granularity — the block-(A) unit closes that gap. Inspect the per-beat view with `batch_analyze
---section-level` (diagnostic flag, default OFF). See `cc_stage2_2_ab_dossier.md` for the A/B that quantified
+--section-level` (diagnostic flag, default OFF). See `records/cc/reports/cc_stage2_2_ab_dossier.md` for the A/B that quantified
 the granularity gap.
 
 (`tools/analyze_inversion_errors.py` is a *separate* secondary metric: its three-way
 `music21_dcml_agree` genuine split is `bassIsRoot` true/false. **Re-measured under the
-corrected parser** (`cc_functional_residual_dossier.md`, 2026-06-14): **Baroque 24/13→47/57,
+corrected parser** (`records/cc/reports/cc_functional_residual_dossier.md`, 2026-06-14): **Baroque 24/13→47/57,
 Jazz 35/7→81/23** — the `bassIsRoot`=false halves (**57 / 23**) independently match the
 re-baselined gate. `characterise_bir_false.py` reproduces that BIR=false half (57/23, Default 57).
 Since Stage 2.2-ii (Rider 1) it takes `--corpus-dir` and reads BOTH `.ours.json` and
@@ -1331,7 +1331,7 @@ logic in `chordanalyzer.cpp`** — this includes adding or modifying templates,
 bonuses, guards, gates, score matrices, or post-scoring passes.
 
 **★ THE SAME FORM, FOR THE PRODUCTION INFERENCE LAYER (user-ruled 2026-08-11; the ruling record is
-`cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 64).** **Read the joint estimator's section of
+`records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md`, Ruling 64).** **Read the joint estimator's section of
 `ARCHITECTURE.md` — its standing rules and the factorization contract that section delegates to — at
 the start of any session that touches the joint estimator's behaviour.** *Why:* the
 never-work-from-memory rule's founding instance is measured evidence that routing a session to a
@@ -1438,7 +1438,7 @@ the whole `KeySig` was dropped, and the declared `<mode>` went with it →
 `KeyMode::UNKNOWN` downstream. Export *does* write `<mode>`
 (`exportmusicxml.cpp:2473`), so this broke export/import round-trip of `<mode>` and,
 in our pipeline, dropped the declared-mode anchor on ~79 zero-signature Bach stems
-(`cc_key_emission_headroom_dossier.md` — `declaredModeOrdinal=-1`). The maintainers'
+(`records/cc/reports/cc_key_emission_headroom_dossier.md` — `declaredModeOrdinal=-1`). The maintainers'
 own `// TODO only if different custom key ?` flags the dedup as known-incomplete.
 
 The fix: fetch the prevailing `KeySigEvent` (not just the `Key` fifths) and add an
@@ -1453,7 +1453,7 @@ changed, 0 non-empty-signature stems); BIR gate byte-identical on all three pres
 Upstream issue: musescore/MuseScore#9444. The buggy fifths-only dedup is upstream-unchanged
 code (the `// TODO only if different custom key ?` line). Stage-4a discrete step; the
 graded-prior / KeyArea work that softens the resolver's −7 declared-mode wall is a later
-Stage-4 step (see `cc_stage4a_mode_import_report.md`).
+Stage-4 step (see `records/cc/reports/cc_stage4a_mode_import_report.md`).
 **Do not revert; do not let dependency updates overwrite without approval.**
 
 **★ DISTRIBUTION CONSTRAINT (user, 2026-06-15): FORK-LOCAL ONLY — NEVER merge upstream / to the
@@ -1614,7 +1614,7 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   accident (`totalScore`, `content score`, `segmentContentScore` are qualified already), so only
   the BARE uses in a non-musical sense need touching.
   **★ WHAT HAPPENS TO A NAME BORROWED FROM THE PUBLISHED RESEARCH, AND IN WHAT ORDER THE CLEANUP
-  RUNS (user-ruled 2026-08-09; the ruling record is `cowork_rulings_2026_08_09_fifth_stop.md`,
+  RUNS (user-ruled 2026-08-09; the ruling record is `records/cowork/rulings/cowork_rulings_2026_08_09_fifth_stop.md`,
   Ruling 30).** The block above says the existing tree is not renamed unilaterally and that the
   pass is a decision surface rather than a sweep. It does not say what a session does with a term
   that carries correspondence to the research the design is grounded in, and it does not fix the
@@ -1656,7 +1656,7 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   2026-08-02; sharpens #8, which forbade inference-problem coding before layer completion — this
   forbids fix DESIGN before knowledge completion).**
   **★ THE THREE-PHASE STRUCTURE BELOW IS SUPERSEDED AND ITS TRUTH HALF IS REPLACED (user-ruled
-  2026-08-15; the ruling record is `cowork_rulings_2026_08_15_phase_definition_sitting.md`; the ruled
+  2026-08-15; the ruling record is `records/cowork/rulings/cowork_rulings_2026_08_15_phase_definition_sitting.md`; the ruled
   definitions' ONE home is `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` §3 —
   a pointer, never a copy, #6).** The governing structure is now SIX PHASES — preparation → the pilot
   (on `docs/scoring_model.md`) → the framework → the detail specifications → measurement design → the
@@ -1713,7 +1713,7 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   from a cut and never hand-added, so it is the user's. Stated and left at OI-336.
   **★ WHEN PHASE 1 IS COMPLETE — THE FINISH LINE IS CUT BY D-438'S TEST, AND THE APPARATUS RESIDUE
   DOES NOT GATE THE COMPLETION (user-ruled 2026-08-11; the ruling record is
-  `cowork_rulings_2026_08_11_fifteenth_stop.md`, Ruling 65).** The clause above says WHAT phase 1
+  `records/cowork/rulings/cowork_rulings_2026_08_11_fifteenth_stop.md`, Ruling 65).** The clause above says WHAT phase 1
   requires; it does not say which of those requirements the completion WAITS ON, and until this
   ruling the derived finish line waited on all of them. **The finish line is cut by D-438's own
   test — does the item's subject bear on the analysis, on the analysis's inputs, or on a measurement
@@ -1834,7 +1834,7 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   emission-side twin (OI-228), neither visible from the first symptom (OI-215).
 
 - **THE WHOLE DECISION SURFACE IS DELIVERED AS USER-VISIBLE TEXT BEFORE ANY CHOICE QUESTION (user
-  mandate 2026-07-05; homed here 2026-08-02 from `cowork_handoff.md`, `OPEN_ITEMS.md` OI-266).**
+  mandate 2026-07-05; homed here 2026-08-02 from `records/cowork/handoff/cowork_handoff.md`, `OPEN_ITEMS.md` OI-266).**
   Never present the user with options before the entire situation has been explained in a message the
   user has actually seen. The decision surface — what is being decided, the background, what each
   option means, the risks both ways, and the recommendation with its reason — is delivered as
@@ -1848,7 +1848,7 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   ratifications were re-presented and re-confirmed.
 
 - **WORKING-TREE FILES ARE READ WITH THE FILE TOOLS; SHELL ACCESS IS LIMITED TO GIT OBJECT QUERIES BY
-  EXPLICIT HASH (user mandate 2026-06-21; homed here 2026-08-02 from `cowork_handoff.md`,
+  EXPLICIT HASH (user mandate 2026-06-21; homed here 2026-08-02 from `records/cowork/handoff/cowork_handoff.md`,
   `OPEN_ITEMS.md` OI-266).** Local file content, existence, line counts and searches always go
   through the file tools (Read / Grep / Glob), never through shell text utilities — no `cat`, `wc`,
   `grep`, `sed`, `head`, `tail`, `git status` or `git diff` on working-tree files. Shell access is
@@ -1891,7 +1891,7 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   already rejects.
 
 - **INVESTIGATE BY DEFAULT; NEVER ASK THE USER WHETHER TO INVESTIGATE OR PROCEED (user mandate
-  2026-06-14; homed here 2026-08-02 from `cowork_handoff.md`, `OPEN_ITEMS.md` OI-266).** Wherever a
+  2026-06-14; homed here 2026-08-02 from `records/cowork/handoff/cowork_handoff.md`, `OPEN_ITEMS.md` OI-266).** Wherever a
   step could be investigated or measured BEFORE it is committed to, it is measured first — and that
   is not put to the user as a choice. When such a fork is reached, the read-only investigation or
   measurement is written and run directly, byte-identical where possible. *Why:* the user's standing
@@ -1900,7 +1900,7 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   commitment — and it operationalizes principle #5 (investigate when facts may be scarce).
 
 - **THE ORDINARY SESSION-START READ BINDS EVEN WHEN THE OPENING INSTRUCTION NAMES A SINGLE FILE
-  (ratified 2026-08-29, Ruling 5 of `cowork_rulings_2026_08_29_ratification_sitting.md`; the
+  (ratified 2026-08-29, Ruling 5 of `records/cowork/rulings/cowork_rulings_2026_08_29_ratification_sitting.md`; the
   framework phase retrospective, P-1).** A single-file opening instruction is not an exemption from
   the standing conventions: the reads rule (a) and the register sections mandate are performed
   before the named file is acted on. *Evidence:* the fifty-eighth session skipped the read on that

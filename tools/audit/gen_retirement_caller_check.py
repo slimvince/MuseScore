@@ -150,9 +150,9 @@ import gen_artifact_inventory_surface as surface                  # noqa: E402  
 use_utf8_output()   # OI-297 — the findings must survive a non-console stdout
 
 ROOT = Path(__file__).resolve().parent.parent.parent
-RULING = ROOT / "cowork_rulings_2026_08_15_inventory_sitting.md"
-READING_RULING = ROOT / "cowork_rulings_2026_08_16_preparation_return.md"
-CALLERS_RULING = ROOT / "cowork_rulings_2026_08_17_callers_sitting.md"
+RULING = ROOT / "records" / "cowork" / "rulings" / "cowork_rulings_2026_08_15_inventory_sitting.md"
+READING_RULING = ROOT / "records" / "cowork" / "rulings" / "cowork_rulings_2026_08_16_preparation_return.md"
+CALLERS_RULING = ROOT / "records" / "cowork" / "rulings" / "cowork_rulings_2026_08_17_callers_sitting.md"
 OUT = ROOT / "tools" / "audit" / "retirement_caller_check.json"
 
 # The commit whose git OBJECT carries the census reading the callers sitting was held over. Its

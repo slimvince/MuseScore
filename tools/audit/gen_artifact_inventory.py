@@ -228,7 +228,7 @@ SIGNATURE_TABLE = [
     ("governing-documents-superseded-halves",
      "`STATUS_ARCHIVE.md` and `cowork_handoff_archive.md` — the halves the 2026-07-18 split moved "
      "out of the two live documents above, reference-only and outside the session-start reads",
-     at_root_named("STATUS_ARCHIVE.md", "cowork_handoff_archive.md"), True),
+     at_root_named("STATUS_ARCHIVE.md", "records/cowork/handoff/cowork_handoff_archive.md"), True),
     ("the-open-items-register-detail-files",
      "anywhere below `open_items/` — one detail file per row plus the split reconciliation "
      "artifact; the INDEX itself is a governing document above",
@@ -245,18 +245,20 @@ SIGNATURE_TABLE = [
     ("writing-side-ruling-records",
      "repository-root files whose name begins `cowork_rulings_`, `cowork_ruling_`, "
      "`cowork_owner_rulings_`, `cowork_pending_rulings_` or `cowork_document_route_rulings_`",
-     at_root_prefixed("cowork_rulings_", "cowork_ruling_", "cowork_owner_rulings_",
-                      "cowork_pending_rulings_", "cowork_document_route_rulings_"), True),
+     lambda p, b, e: posixpath.dirname(p) == "records/cowork/rulings" and any(
+         b.startswith(x) for x in ("cowork_rulings_", "cowork_ruling_", "cowork_owner_rulings_",
+                                   "cowork_pending_rulings_", "cowork_document_route_rulings_")), True),
     ("writing-side-session-records",
      "`cowork_handoff.md`, `cowork_away_returns.md`, and repository-root files beginning "
      "`cowork_instruction_` — the running session record and the dispatches the writing side "
      "wrote to itself",
-     any_of(at_root_named("cowork_handoff.md", "cowork_away_returns.md"),
-            at_root_prefixed("cowork_instruction_")), True),
+     any_of(at_root_named("records/cowork/handoff/cowork_handoff.md", "records/cowork/handoff/cowork_away_returns.md"),
+            lambda p, b, e: posixpath.dirname(p) == "records/cowork/instructions" and b.startswith("cowork_instruction_")), True),
     ("writing-side-design-documents",
      "every other repository-root file beginning `cowork_` — designs, audits, dossiers, plans, "
      "inventories and findings authored by the writing side",
-     at_root_prefixed("cowork_"), True),
+     any_of(at_root_prefixed("cowork_"),
+            lambda p, b, e: posixpath.dirname(p) == "records/cowork/handoff" and b.startswith("cowork_")), True),
     ("writing-side-scratch-directories",
      "anywhere below a dated `cowork_scratch_*` directory or below `scratch_artifacts/`",
      any_of(under("scratch_artifacts/"),
@@ -265,11 +267,11 @@ SIGNATURE_TABLE = [
     # ---- the coding side's own record ---------------------------------------------------------------
     ("dispatches-to-the-coding-side",
      "repository-root files beginning `cc_instruction_` — one dispatch per CC session",
-     at_root_prefixed("cc_instruction_"), True),
+     lambda p, b, e: posixpath.dirname(p) == "records/cc/instructions" and b.startswith("cc_instruction_"), True),
     ("reports-from-the-coding-side",
      "every other repository-root file beginning `cc_` — the reports, dossiers and measurement "
      "outputs CC returned",
-     at_root_prefixed("cc_"), True),
+     lambda p, b, e: posixpath.dirname(p) == "records/cc/reports" and b.startswith("cc_"), True),
 
     # ---- the documentation directory ------------------------------------------------------------------
     ("llm-triage-prompts",

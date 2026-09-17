@@ -8,10 +8,10 @@ marginal completion is rowed **OI-193**), **C1** (two-mode key + published un-ro
 reading), **D1** (tables embedded as provenance-stamped generated source), **E** (modal reading
 inside the increment; ornament labels their own increment, rowed **OI-194**). Rows created at
 ruling time per register rule (c). The first dispatch is the §8.1 read-only consumption-surface
-audit (`cc_instruction_notation_consumption_audit.md`).
+audit (`records/cc/instructions/cc_instruction_notation_consumption_audit.md`).
 
 **Author:** Cowork, 2026-07-26, at the user's direction — the named successor increment of the
-OI-178 staged-scope adoption (`cc_instruction_adoption_commit.md` header; CLAUDE.md gate block (A)
+OI-178 staged-scope adoption (`records/cc/instructions/cc_instruction_adoption_commit.md` header; CLAUDE.md gate block (A)
 "STAGED SCOPE"). **Status: ratified, fourth writing.**
 
 **The rulings this writing incorporates (user, 2026-07-26, in order):**
@@ -478,14 +478,14 @@ ruling.**
 Decisions A2, B-full (slice-first, completion rowed OI-193), C1, D1, and the E split (modal
 reading in-increment; ornament labels rowed OI-194) — all as recommended. The verification plan
 (§8) stands as standing policy. This document is now part of the ratified record; the
-ratification commit rode the first dispatch (`cc_instruction_notation_consumption_audit.md`,
+ratification commit rode the first dispatch (`records/cc/instructions/cc_instruction_notation_consumption_audit.md`,
 Task 0 — commit `00c0df81c5`).
 
 ## 10. The consumption-audit findings and the pedal-point ruling (2026-07-26, same day)
 
 **The §8.1 audit is DELIVERED and Cowork-verified at the objects** (ratification commit
 `00c0df81c5`; artifact commit `21422ee77d`, `tools/audit/notation_surface/`; report
-`cc_notation_consumption_audit_report.md`, untracked). 75 consumed-field rows: 56 A-SOURCED,
+`records/cc/reports/cc_notation_consumption_audit_report.md`, untracked). 75 consumed-field rows: 56 A-SOURCED,
 13 DERIVABLE, 4 RETIRE-CANDIDATE, 2 UNRESOLVED. The scope check (the OI-175 lesson) corrected
 this document's §1 three ways, now record: **(a) there is a SECOND notation entry point** —
 the single-note `analyzeNoteHarmonicContext[Details]` surface, consumed by the tuning bridge,

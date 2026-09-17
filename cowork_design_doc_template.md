@@ -93,7 +93,7 @@ below is the enumeration, and it is what a conformance check reads.
 5. **Ratification queue or reading surface** — a surface written to be read and ruled on
    (`ratification_surfaces/`).
 6. **Returns file** — a running record of what a batch did, held and surfaced.
-7. **Status or handoff surface** — `STATUS.md`, `cowork_handoff.md` and their archives.
+7. **Status or handoff surface** — `STATUS.md`, `records/cowork/handoff/cowork_handoff.md` and their archives.
 8. **Register** — the open-items register and the decisions register, index and detail files alike,
    whose shape is fixed by their own rules.
 9. **Report or dossier** — a dated record of what one investigation or measurement found.
@@ -122,7 +122,7 @@ without it, "exempt" is whatever a session decides a document is.*
 The kind list above says which documents the section structure binds. **This says what is done when a
 document, of whatever kind, describes a state the record has since left behind** — the shape three
 open rows arrived at independently, each stopping at the same question and none able to answer it.
-The convention is written under the user's Ruling 62 of `cowork_rulings_2026_08_11_fourteenth_stop.md`
+The convention is written under the user's Ruling 62 of `records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md`
 and it turns on the SAME kind call the list above already makes.
 
 **BRANCH ONE — a DATED REPORT: it is RE-BANNERED as a historical record, and its BODY IS NEVER

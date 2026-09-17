@@ -11,7 +11,7 @@
 > decisions-register rule (g)).*
 >
 > *★ **The body's present tense is now SCOPED, at the §1 scoping sentence** (added 2026-08-14 at
-> `cc_instruction_scoring_model_pass.md`). **The former wording of the sentence this replaces,
+> `records/cc/instructions/cc_instruction_scoring_model_pass.md`). **The former wording of the sentence this replaces,
 > preserved (#12), was:** "The body's present tense is NOT corrected by this banner —
 > `OPEN_ITEMS.md` OI-274 stays open for that." That was true until the scoping sentence landed.
 > **OI-274 stays open for its SECOND half only** — whether `CLAUDE.md`'s mandatory-read instruction
@@ -41,10 +41,10 @@ invariants that future changes must respect.
 > + their helpers), `chorddiagnose.cpp` (`diagnoseChord`), and `chordvoicing.cpp`
 > (`chordTonePitchClasses`/`closePositionVoicing`). `chordanalyzer.h` is unchanged — the
 > stable integration boundary. The competition / function layer was already external
-> (`function/harmonicfunctionlayer.cpp`). See `cc_refactor1_split_design_dossier.md`.
+> (`function/harmonicfunctionlayer.cpp`). See `records/cc/reports/cc_refactor1_split_design_dossier.md`.
 
 > **★ CODE LOCATORS — EVERY RAW LINE-NUMBER ANCHOR IN THIS DOCUMENT WAS RE-AIMED TO A NAMED CODE
-> REGION (2026-08-14, at `cc_instruction_scoring_model_pass.md`; `OPEN_ITEMS.md` OI-45).** A
+> REGION (2026-08-14, at `records/cc/instructions/cc_instruction_scoring_model_pass.md`; `OPEN_ITEMS.md` OI-45).** A
 > specification cites code **by function or by section anchor, never by a raw line number**
 > (register entry **D-307**) — a coordinate goes stale the moment anything above it changes, and
 > §6's Location column had already been converted on exactly that ground. The eight raw anchors this
@@ -73,7 +73,7 @@ invariants that future changes must respect.
 
 > **★ SCOPING SENTENCE — THE SCORER DESCRIBED BELOW IS DORMANT ON BOTH PRODUCTION SURFACES, AND THE
 > BODY'S PRESENT TENSE IS THE TENSE OF ITS SPECIFICATION RATHER THAN A STATEMENT ABOUT WHAT RUNS
-> (added 2026-08-14 at `cc_instruction_scoring_model_pass.md`; it discharges the first half of
+> (added 2026-08-14 at `records/cc/instructions/cc_instruction_scoring_model_pass.md`; it discharges the first half of
 > `OPEN_ITEMS.md` OI-274, and it is the same form OI-232 and OI-265 were resolved by, one document
 > over).** Everything from here on — this section's pipeline, §2's templates, §3's matrices, §4's
 > bonus and penalty terms, §5's joint scoring, §6's post-scoring gates and §7's inversion
@@ -346,8 +346,8 @@ true for 19 of the 21 `KeySigMode` values, **false for `Altered` and `AlteredDom
 sits a semitone above their parent's. For those two the set was the signature's collection
 **transposed up a semitone** (2 of 7 pitch classes shared), so both terms scored against the wrong
 collection. It is not repairable by re-parenting: their tonic is not a member of any parent
-collection. Measured magnitude (`cc_oi168_magnitude_report.md`) and adoption
-(`cc_oi168_fix_report.md`): `Altered` is emitted on Jazz only — 24 surviving regions, 49 scorer
+collection. Measured magnitude (`records/cc/reports/cc_oi168_magnitude_report.md`) and adoption
+(`records/cc/reports/cc_oi168_fix_report.md`): `Altered` is emitted on Jazz only — 24 surviving regions, 49 scorer
 entries — and the corruption flipped exactly **one** committed chord (`bwv145.5@12960`: `Ebm` →
 `B/Eb`, correcting a class-(b) root failure against the DCML ground truth); on the other 22 regions it
 moved the score without moving the winner. Baroque and Default regenerate **byte-identically** under
@@ -359,7 +359,7 @@ Note that `buildChordResult`'s `diatonicToKey` flag and the Gate I / Gate L `inv
 (`postscoringgates.cpp`) still answer a *collection* question through the *tonic* pair and so still
 carry the OI-168 defect — they are declared, not fixed (see `OPEN_ITEMS.md` OI-170).
 
-**OI-170 measured those three sites (2026-07-16; `cc_oi170_measure_report.md`) — the code carries a
+**OI-170 measured those three sites (2026-07-16; `records/cc/reports/cc_oi170_measure_report.md`) — the code carries a
 DEFAULT-OFF A/B for them, and no fix is promoted.** Each of the three evaluates *both* predicates
 whenever `MU_KEY_COLLECTION_PROBE` is set, and takes the signature-collection answer only when
 `MU_KEY_COLLECTION_SIGMASK_VARIANT` is also set; **both flags are unset in production and the OFF path
@@ -473,7 +473,7 @@ requires stepwise-bass evidence — a temporal condition no vertical pcWeight te
 A Dim continuation with foreign bass + sounding third but no stepwise bass earns no credit
 (old gate fires) yet has a sounding third (literal test would spare it) — a 0.40×cf×af output
 swing. Reading the reconstructed credit avoids this gap entirely. See
-`docs/decoder_design.md` §6 amendment and `cc_stage3_3_report.md` §1.
+`docs/decoder_design.md` §6 amendment and `records/cc/reports/cc_stage3_3_report.md` §1.
 
 **★ THE DECISION, STATED AS SUCH — the RECONSTRUCTED-CREDIT read is the ratified form of this
 guard, and the originally designed literal sounding-third test is NOT what shipped (re-homed into
@@ -680,7 +680,7 @@ same leaf header (in the `mu::composing::function` namespace) rather than in
 chordanalyzer.h → analysistypes.h` and the `= ScoringPhase::Final` default member
 initializer needs the complete enum.
 
-*(★ Locator re-aimed 2026-08-14 at `cc_instruction_scoring_model_pass.md` — a stale FILE
+*(★ Locator re-aimed 2026-08-14 at `records/cc/instructions/cc_instruction_scoring_model_pass.md` — a stale FILE
 citation of the same class as OI-45's line anchors, found by enumerating at the document
 rather than from the row's list. **The former wording, preserved (#12), was:** "…
 (`ChordAnalyzerPreferences`, `chordanalyzer.h`). The enum is defined in `chordanalyzer.h`
@@ -745,7 +745,7 @@ range entry, and the two `std::min` clamp sites. The previously documented
 "Baroque=2.5 / Jazz=0.6" values were aspirational: they entered the field's
 doc-comment at its introduction (`46c76ad67f`, 2026-05-05) as planned "Iteration 4"
 tuning that never happened, and a full-history pickaxe shows no commit ever assigned
-them (cap archaeology, 2026-06-10 doc pass; inventory in `cc_stage1b_report.md`
+them (cap archaeology, 2026-06-10 doc pass; inventory in `records/cc/reports/cc_stage1b_report.md`
 §1.6). The cap cannot bind at current values: the four inversion bonuses sum to 1.85
 (Baroque/default prefs) and 0.75 (Jazz), both below 2.0. Jazz's different inversion
 behavior comes from its **reduced individual bonuses** (0.20/0.20/0.15/0.20, set in
@@ -755,7 +755,7 @@ load-bearing per-preset value.
 
 ### The registered scoring constants this document does not table above
 
-**★ ADDED 2026-08-14 at `cc_instruction_scoring_model_pass.md`, discharging `OPEN_ITEMS.md`
+**★ ADDED 2026-08-14 at `records/cc/instructions/cc_instruction_scoring_model_pass.md`, discharging `OPEN_ITEMS.md`
 OI-183.** Every hand-chosen scoring constant on this surface is registered by name for the
 Stage-5 override mechanism (§1's note). Twelve of them had **no by-name mention anywhere in
 this document**, so the staleness check — which greps the document by symbol — could not see
@@ -987,7 +987,7 @@ addressable.)
 
 **Retired gates (Stage 5, 2026-07-05 — §6-block dissolution audit, design D-7).** Each rule below
 changed **ZERO winners across all three carriers** (Baroque/Jazz/Default; the 2.2b firing-site
-ledger, `cc_stage5_phase2_2b_report.md` §1.2) and its removal is **corpus-byte-identical including
+ledger, `records/cc/reports/cc_stage5_phase2_2b_report.md` §1.2) and its removal is **corpus-byte-identical including
 `alternatives[]`** (full-corpus regen ×3, 0 diffs — verified in 2.2c). The joint fit reached the
 identical optimum with them disabled (Config II ≡ Config I, 2.2b §2). Retired in their own
 user-ratified commits (2026-07-05):
@@ -1013,10 +1013,10 @@ reproduces Gate A's swap byte-for-byte, the append branch reproduces FM2, so the
 **byte-identical to HEAD on the full output surface — winner AND `alternatives[]` — across all
 352 scores × 3 presets** (0 net move, including the 36). The separate `GateA` rule (its enum
 member, guard, name-map entry) is therefore removed; **FM2** is the surviving rule name for the
-flip. Evidence: `cowork_gateA_unification_design.md`, `cc_stage5_phase2_2c_report.md`.
+flip. Evidence: `cowork_gateA_unification_design.md`, `records/cc/reports/cc_stage5_phase2_2c_report.md`.
 
 **RETAINED / DEFERRED dispositions (Stage-5 §6-block audit, user-ratified 2026-07-05; D-7).** Of the
-rules NOT retired, the 2.2b cross-carrier evidence (`cc_stage5_phase2_2b_report.md` §1/§3.2) adjudicated:
+rules NOT retired, the 2.2b cross-carrier evidence (`records/cc/reports/cc_stage5_phase2_2b_report.md` §1/§3.2) adjudicated:
 
 - **RETAIN-as-structural (4):** **GateI** (disabling adds +5 class-(b) Jazz batch cases, §1.1), **FM2**
   (disabling adds the class-(b) case bwv227.7@18000, §1.1; since 2026-07-06 FM2 is the whole unified
@@ -1045,7 +1045,7 @@ the `preferMinorOverMajorAdd6` flag (Baroque/Standard true, Jazz/Default false).
 `disable_rule BiasCorrection` suppresses this bonus along with the deduction. It is a
 §6-block dissolution target (Stage-5 family 2).
 
-*(★ Location corrected 2026-08-14 at `cc_instruction_scoring_model_pass.md`, at the code
+*(★ Location corrected 2026-08-14 at `records/cc/instructions/cc_instruction_scoring_model_pass.md`, at the code
 (`OPEN_ITEMS.md` OI-45, whose own cell says this constant is "missing from §6 entirely" — at
 HEAD the entry EXISTS; what was wrong was where it said the bonus fires). **The former
 wording, preserved (#12), was:** "**`kHalfDimFirstInversionBonus` (= 0.55) — additive bonus
@@ -1637,7 +1637,7 @@ the function layer removes the replica: there is exactly one winner-selection
 pipeline, so nothing can drift. This is the section 4.1c separation
 (progression/contextual signals belong in a post-ranking layer, not in the
 vertical scorer) taken literally, and it is the architecture-review's preferred
-strategy (`cc_e2d_architecture_review_report.md`, Q4/Q5 option 1).
+strategy (`records/cc/reports/cc_e2d_architecture_review_report.md`, Q4/Q5 option 1).
 
 **Removed.** `ChordAnalyzerPreferences::suppressProgressionSignals` and
 `::captureScoringSnapshot` are gone (no suppress-then-recompute mode; the snapshot
@@ -1711,7 +1711,7 @@ basisDep (reconstructed-credit, §4) — byte-identical, closing the cross-layer
 ---
 
 *Last updated: **2026-08-14** — the `docs/scoring_model.md` pass at
-`cc_instruction_scoring_model_pass.md`, over `OPEN_ITEMS.md` OI-45, OI-183 and OI-274's first half:
+`records/cc/instructions/cc_instruction_scoring_model_pass.md`, over `OPEN_ITEMS.md` OI-45, OI-183 and OI-274's first half:
 the **§1 scoping sentence** saying the scorer described here is dormant on both production surfaces
 and that the body's present tense is a specification's tense; the **eight raw line-number anchors
 re-aimed** to named code regions (**D-307**), their former wordings preserved verbatim in the "Code

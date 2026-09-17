@@ -453,7 +453,7 @@
 ### D-652 — How the decisions register's same-commit rule is discharged once it has already been missed
 
 > **★ HOW RULE (c) IS DISCHARGED ONCE IT HAS ALREADY BEEN MISSED (user-ruled 2026-08-09; the ruling
-> record is `cowork_rulings_2026_08_09_second_stop.md`, Ruling 12).** Rule (c) says a new ratification,
+> record is `records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md`, Ruling 12).** Rule (c) says a new ratification,
 > shelving or falsification gets its register entry IN the commit that records it. It does not say what
 > happens when a run of rulings has accumulated OUTSIDE the register — which is the state the rule is
 > meant to prevent and, once reached, a state the rule alone does not resolve. **The discharge is: the
@@ -494,7 +494,7 @@
 ### D-660 — A research-tied name is not renamed but is governed by a two-tier rule, and the terminology cleanup runs in a fixed order with no tree-wide rename
 
 > **★ WHAT HAPPENS TO A NAME BORROWED FROM THE PUBLISHED RESEARCH, AND IN WHAT ORDER THE CLEANUP
->   RUNS (user-ruled 2026-08-09; the ruling record is `cowork_rulings_2026_08_09_fifth_stop.md`,
+>   RUNS (user-ruled 2026-08-09; the ruling record is `records/cowork/rulings/cowork_rulings_2026_08_09_fifth_stop.md`,
 >   Ruling 30).** The block above says the existing tree is not renamed unilaterally and that the
 >   pass is a decision surface rather than a sweep. It does not say what a session does with a term
 >   that carries correspondence to the research the design is grounded in, and it does not fix the
@@ -519,7 +519,7 @@
 ### D-662 — Every open-items index status cell begins with one canonical token, with a lint and a parser STOP behind it
 
 > **★ RULE (f) — EVERY INDEX STATUS CELL BEGINS WITH ONE CANONICAL TOKEN (user-ruled 2026-08-09; the
-> ruling record is `cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 33).** Rules (a)–(e) above say
+> ruling record is `records/cowork/rulings/cowork_rulings_2026_08_09_fifth_stop.md`, Ruling 33).** Rules (a)–(e) above say
 > how the register is kept. This is the sixth, and it is about the one cell three separate derivations
 > read. **A row's STATE is carried by the first token of its status cell — the resolved mark at the
 > head of the cell, or one of the open-state words — and by nothing else.** Two consequences follow
@@ -542,7 +542,7 @@
 
 > **(l) WHERE NO DELEGATION ADMITS AN ENTRY'S HOME, RE-HOMING IS THE DEFAULT CLOSING ROUTE — AND WHO
 > MAY EXCEPT A DOCUMENT FROM IT, AND WHEN (user-ruled 2026-08-09; the ruling record is
-> `cowork_rulings_2026_08_09_sixth_stop.md`, Ruling 38).** Rules (g)–(k) decide which documents and
+> `records/cowork/rulings/cowork_rulings_2026_08_09_sixth_stop.md`, Ruling 38).** Rules (g)–(k) decide which documents and
 > sections are homes. This is the rule they lack: what closes an entry whose home is a home under
 > none of them. **For every register entry whose home document is named in NO user-ratified surface,
 > or only in a form the delegation bar excludes, the closing act is RE-HOMING into the owning layer's
@@ -566,8 +566,8 @@
 ### D-666 — An event a mechanism exists to produce is not a rule needing a home — the entry closes as the event, its evidence pointed at the surface the mechanism wrote to
 
 > **(m) AN EVENT A MECHANISM EXISTS TO PRODUCE IS NOT A RULE NEEDING A HOME (user-ruled 2026-08-11;
-> the ruling record is `cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49, taking Ruling 44 of
-> `cowork_rulings_2026_08_09_ninth_stop.md`).** Rule (l) chooses between two available closing routes.
+> the ruling record is `records/cowork/rulings/cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49, taking Ruling 44 of
+> `records/cowork/rulings/cowork_rulings_2026_08_09_ninth_stop.md`).** Rule (l) chooses between two available closing routes.
 > This is the neighbouring case it does not reach: an entry for which **neither route is owed, because
 > there is no rule to write at all.** **Where a register entry's whole content is an EVENT that a
 > standing mechanism exists to produce and has produced — an adoption, an admission, a membership
@@ -588,8 +588,8 @@
 ### D-667 — A per-corpus establishment verdict is a STATUS, so the decisions register is its home — and writing one into a rule-stating section is the mirror of the findings-table error
 
 > **(n) A PER-CORPUS ESTABLISHMENT VERDICT IS A STATUS, SO THE DECISIONS REGISTER IS ITS HOME
-> (user-ruled 2026-08-11; the ruling record is `cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49,
-> taking Ruling 46 of `cowork_rulings_2026_08_09_ninth_stop.md`).** The phase-1 rule assigns STATUS to
+> (user-ruled 2026-08-11; the ruling record is `records/cowork/rulings/cowork_rulings_2026_08_11_tenth_stop.md`, Ruling 49,
+> taking Ruling 46 of `records/cowork/rulings/cowork_rulings_2026_08_09_ninth_stop.md`).** The phase-1 rule assigns STATUS to
 > this register and CONFORMANCE to the specifications; it does not say which of the two an
 > establishment verdict is, and this fixes it. **An establishment verdict (#19) about ONE corpus, one
 > measurement tool or one gate — that it is established, or that it is not, or that the route to
@@ -614,7 +614,7 @@
 > The kind list above says which documents the section structure binds. **This says what is done when a
 > document, of whatever kind, describes a state the record has since left behind** — the shape three
 > open rows arrived at independently, each stopping at the same question and none able to answer it.
-> The convention is written under the user's Ruling 62 of `cowork_rulings_2026_08_11_fourteenth_stop.md`
+> The convention is written under the user's Ruling 62 of `records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md`
 > and it turns on the SAME kind call the list above already makes.
 >
 > **BRANCH ONE — a DATED REPORT: it is RE-BANNERED as a historical record, and its BODY IS NEVER

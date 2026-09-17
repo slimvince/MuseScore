@@ -106,7 +106,7 @@ def derive_class():
     actually sits, so a later run reports what is filed and what is not.
     """
     out = {}
-    for base in ("", RATIFICATION_DIR):
+    for base in ("", RATIFICATION_DIR, "records/cowork/rulings"):
         d = os.path.join(REPO, base) if base else REPO
         if not os.path.isdir(d):
             continue

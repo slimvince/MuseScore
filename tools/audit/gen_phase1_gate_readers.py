@@ -195,7 +195,7 @@ def flatten(text: str) -> str:
 
 
 def locate_ruling() -> dict[str, str]:
-    path = os.path.join(ROOT, RULING)
+    path = os.path.join(ROOT, "records", "cowork", "rulings", RULING)
     if not os.path.exists(path):
         raise Stop(f"the ruling record this check serves is missing: {RULING}")
     with open(path, encoding="utf-8") as fh:

@@ -80,7 +80,7 @@ RECOVERY = ROOT / "tools" / "audit" / "deciding_act_recovery.json"
 GUARD = ROOT / "tools" / "audit" / "sole_carrier_subclass.json"
 CHECK = ROOT / "tools" / "audit" / "ratified_document_check.json"
 FILTER = ROOT / "tools" / "audit" / "decisions_filter_classification.json"
-RULING = ROOT / "cowork_rulings_2026_08_17_residue_sitting.md"
+RULING = ROOT / "records" / "cowork" / "rulings" / "cowork_rulings_2026_08_17_residue_sitting.md"
 PLAN = ROOT / "tools" / "audit" / "residue_discard_application.json"
 
 RETIRED_BLOCK = first.RETIRED_BLOCK

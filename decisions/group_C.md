@@ -682,7 +682,7 @@
 
 **Entry ratified.** 2026-08-02 · by user
 
-**Home.** `cowork_handoff_archive.md:3082`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
+**Home.** `records/cowork/handoff/cowork_handoff_archive.md:3082`  ⚠ **recorded only on a tracking surface** — an open-item row or a session handoff block, neither of which is a home for a standing decision; see `OPEN_ITEMS.md`.
 
 **Provenance.** Recorded in `cowork_handoff_archive.md` (the 2026-06-13 Stage-4 design-investigation block) and `docs/implementation_roadmap.md`. ★ FLAGGED against the OI-270 meta-findings (D-282…D-285): this is an EARLIER and independently-derived statement of the same insight as D-284 (selection and competition are saturated). It does not change D-284's ruled status; it dates and corroborates it. It was itself later RECONCILED rather than overturned: `cowork_handoff_archive.md:3920-3921` records that the joint decode's value is broad-evidence integration, NOT search — "search is about zero" having been measured over a FIXED NARROW evidence surface. Found by the phase-1e second-partition archive read, 2026-08-02. ★ RATIFIED (user, 2026-08-02, the phase-1e archive queue). ★ RULED SUPERSEDED 2026-08-09 (CC, `cc_instruction_return_continuation.md` Task 2) ON THE USER'S RULING 6 OF 2026-08-09 (`cowork_rulings_2026_08_09_return.md`), by the D-642 route: a superseded entry's obligation moves to its named successors and is discharged where they are homed. The 2026-08-08 hold's own text is kept above, unedited (#12). **NOTHING IS WRITTEN INTO ANY SPECIFICATION FOR THIS ENTRY** — a supersession is register business, which D-231's clause assigns to the register, and the archive is UNTOUCHED. **THE RULING'S CONDITION WAS CHECKED PART BY PART AT THE SUCCESSORS' HOMES BEFORE THE STATUS WAS RECORDED, and it HOLDS; a residue no successor carried would have been a STOP back to the user (#12).** The entry says four things and each is carried: **(1) NOT SEARCH** — do not widen the search, because the wrong reading is the highest-scoring one — is **D-288**, homed in the joint-estimator specification's search block, which additionally carries the very re-grounding this entry's own provenance records, so the qualification travels with the prohibition rather than being lost. **(2) NOT THE KEY PATH** — the path reaches about a tenth of the key errors because the correct key is usually not even ranked second — is **D-287**, homed in the Layer-3 key section, which states the rank finding as the ground of its own shelving; the positive counterpart, that the lever is the keychain structure rather than learned keys, is **D-283**, superseded into **D-001**/**D-096**, both homed. **(3) THE POSITIVE HALF** — precision lives in the evidence and the functional labelling rather than in selection — is **D-284** in different vocabulary (*"the residual is candidate-generation, key-quality, or floor"*), which this entry's own provenance already identifies as the same insight independently derived, and which the user ruled SUPERSEDED on 2026-08-02 into **D-036** (the standing gates doctrine) with **D-001**/**D-010** (which retired the legacy selection surface), all three homed in a layer specification. That 2026-08-02 ruling is what settles whether the positive half is carried, and it is not re-opened here. **(4) WHAT DELIVERS INSTEAD** — key-area spans and the key-emission fix — is **D-472**, homed in the Layer-6 section, and **D-001**. **THE EXCLUDED ALTERNATIVE, RECORDED (the ruling asks for it):** homing this entry as doctrine in the joint-estimator specification's search block, the candidate the hold named. It is excluded because that section already states D-288's prohibition and its clause (c) re-grounding, so a second statement of the same rule in the same section is the duplication #6 forbids — which is the reason this entry sat in the NO-HOME class to begin with, not a new objection. **WHAT SUPERSEDED DOES NOT MEAN HERE:** the entry is not falsified and was not shown wrong. Its content stands; what changed is that later decisions state it, and this register row now points at them instead of competing with them.
 
@@ -707,7 +707,7 @@
 ### D-294 — The only ground truth is the human annotation; the algorithmic analysis is a filter, and no self-annotation ever enters a measurement
 
 > - **THE ONLY GROUND TRUTH IS THE HUMAN ANNOTATION. The algorithmic analysis is a noise filter, never a
->   standard of correctness** (user mandate 2026-06-10; homed here 2026-08-02 from `cowork_handoff_archive.md`,
+>   standard of correctness** (user mandate 2026-06-10; homed here 2026-08-02 from `records/cowork/handoff/cowork_handoff_archive.md`,
 >   `OPEN_ITEMS.md` OI-272). Accuracy is measured against the published human analyses — *When in Rome* /
 
 **In plain words.** Accuracy is measured against published human analyses only. The second, computer-generated analysis is a noise filter, not a standard of correctness, so a measurement that uses it reports a lower bound rather than an agreement rate - and must never be described as agreement with ground truth. Our own outputs and our own test fixtures are never used as a standard of correctness; they pin behaviour against change and nothing more.
@@ -1433,7 +1433,7 @@ chosen quality is Diminished"* — was an unlabeled ASSUMPTION, and the probe me
 ### D-651 — The ground-truth ceiling measurement is COMMISSIONED in two halves, and silence on the laboratory contact route is recorded as the route EXHAUSTED
 
 >     **★ AND THE MEASUREMENT IS NOW COMMISSIONED, IN TWO HALVES, WITH THE RULE THAT ENDS THE CONTACT
->     ROUTE (user-ruled 2026-08-09; the ruling record is `cowork_rulings_2026_08_09_return.md`,
+>     ROUTE (user-ruled 2026-08-09; the ruling record is `records/cowork/rulings/cowork_rulings_2026_08_09_return.md`,
 >     Ruling 10).** The block above establishes that this principle cannot be satisfied by citation.
 >     What follows is the route to satisfying it, and both halves are recorded here because each
 >     settles something a later session would otherwise re-decide. **(a) THE LABORATORY CONTACT IS THE
@@ -1469,10 +1469,10 @@ chosen quality is Diminished"* — was an unlabeled ASSUMPTION, and the probe me
 > **★ THE CREDITING RULE IS NOT AMENDED TO COUNT A TONICIZATION LABEL AS AGREEING WITH THE
 > ANNOTATOR'S MODULATED NUMERAL; ONLY A DIAGNOSTIC PARTIAL-SUB-SPLIT IS DEFENSIBLE** (2026-06-14; the
 > record states no ratifier for the decision itself. Homed here 2026-08-09 on the user's ruling —
-> Ruling 11 of `cowork_rulings_2026_08_09_second_stop.md` — as the MEASUREMENT half of register entry
+> Ruling 11 of `records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md` — as the MEASUREMENT half of register entry
 > **D-291**, whose BUILD half belongs to the Layer-5 function specification and is not restated here,
 > #6. **SPLIT INTO TWO REGISTER IDENTIFIERS 2026-08-09** on the user's Ruling 21 of
-> `cowork_rulings_2026_08_09_fourth_stop.md`: this half now carries its own entry, **D-656**, and
+> `records/cowork/rulings/cowork_rulings_2026_08_09_fourth_stop.md`: this half now carries its own entry, **D-656**, and
 > **D-291** keeps the build half; the two cross-reference each other, and neither text changed).
 > Where our analysis labels an applied chord relative to the home key and the human annotator
 > has changed key, the comparison is **not** to be changed so that the label counts as agreement.

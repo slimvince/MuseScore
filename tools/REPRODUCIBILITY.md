@@ -286,7 +286,7 @@ They are all regenerable.
 - **Source of truth for the pins:** `tools/score_census_registry.json →
   annotation_beds[].pinned_commit` (regenerate with
   `python tools/build_score_census_registry.py`; shas read live from the clones).
-  Full inventory + paper-claim verification: `cc_corpus_wave2_report.md`.
+  Full inventory + paper-claim verification: `records/cc/reports/cc_corpus_wave2_report.md`.
 - **Licenses (recorded, all hash-pin-only regardless):** schema — no in-repo
   LICENSE (DCMLab org CC BY-NC-SA [reported] → unclear); texture — GPLv3 (code) +
   ODbL-1.0 (data); Essen — CCARH MuseData **non-commercial** (no commercial/
@@ -320,7 +320,7 @@ git clone https://github.com/ccarh/essen-folksong-collection \
   holds the GT beds, `corpora/plain/` the plain-score stress material.
 - **Source of truth for pins:** `tools/score_census_registry.json → wave3_sources[].pinned_commit`
   (regenerate with `python tools/build_score_census_registry.py`; shas read live from the
-  clones). Full inventory + paper-claim verification: `cc_corpus_wave3_report.md`.
+  clones). Full inventory + paper-claim verification: `records/cc/reports/cc_corpus_wave3_report.md`.
 - **Licenses (recorded; all hash-pin-only regardless):** CoCoPops CC-BY · OpenEWLD PD ·
   BCFB CC-BY · algomus-data ODbL-1.0 · protovoice-annotations unclear · schenker41 unclear ·
   WJD ODbL-1.0 · OpenScore Lieder/StringQuartets CC0 · ASAP CC-BY-NC. None forbids a local
@@ -361,7 +361,7 @@ git clone --depth 1 https://github.com/fosfrancesco/asap-dataset \
 
 ### corpora/gt/ — corpus wave 3 ADDENDUM (2026-07-04)
 
-Two DDMAL direct pickups added at the Wave-3 addendum (`cc_wave3_addendum_report.md`): KMT (the N5
+Two DDMAL direct pickups added at the Wave-3 addendum (`records/cc/reports/cc_wave3_addendum_report.md`): KMT (the N5
 key/modulation upstream) + the Flexible chorale annotations (N2 candidate, RECORD-ONLY re the gate —
 its 371 Bach chorales overlap the gate repertoire). Both hash-pin-only, held-out, gitignored under
 `corpora/gt/`. **Licenses:** KMT = CC-BY-SA-4.0 (scores) + MIT (code); Flexible = GPL-3.0. Neither
@@ -382,7 +382,7 @@ git clone https://github.com/DDMAL/Flexible_harmonic_chorale_annotations \
 ### corpora/gt/ — the ACQUISITION ROUND (2026-07-04)
 
 The union-search-approved pickups (`cowork_union_search_record.md` §6, user-disposed; full inventory +
-paper-claim verification in `cc_acquisition_round_report.md`): N9 voice-separation beds + N14 Mikrokosmos +
+paper-claim verification in `records/cc/reports/cc_acquisition_round_report.md`): N9 voice-separation beds + N14 Mikrokosmos +
 N12 GuitarSet (annotation artifact) + multi-need Batik-plays-Mozart. All hash-pin-only, held-out, gitignored
 under `corpora/gt/`. **Two record license mismatches CORRECTED at the data:** MCMA = **CC-BY-NC-SA-4.0**
 (record said CC-BY-4.0); vocsep = **MIT** (record said unstated). piano_svsep + vocsep ship CODE — their GT
@@ -420,7 +420,7 @@ mkdir -p guitarset && curl -sSL -o guitarset/annotation.zip \
   recordings, no symbolic scores; recorded). **PDMX N12 `<harmony>` counting pass: ATTEMPTED + STOPPED** —
   the held form (`tools/pdmx/PDMX.csv` metadata index + 5 spot-check .mxl) has no chord-symbol column and
   the raw MXL lives only in the Zenodo archive; counting would require a re-download the read-only dispatch
-  forbids (see `cc_acquisition_round_report.md` §Task-3 and the `pdmx` registry row).
+  forbids (see `records/cc/reports/cc_acquisition_round_report.md` §Task-3 and the `pdmx` registry row).
 
   **Inventoried, not re-cloned (already held):** the ChoCo `jazz-corpus` (160 jams) +
   `weimar` (916 jams) partitions in `corpora/ship/choco`; the WiR interior slices in

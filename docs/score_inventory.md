@@ -144,8 +144,8 @@ distribution / tier / **split (dev|held-out)** / pinned_commit) is
 `tools/REPRODUCIBILITY.md`; descriptive per-corpus baselines via
 `tools/run_dlc_baseline.py --all-new`. Every DLC `harmonies` TSV also carries
 `cadence` and `phraseend` GT columns that the parser currently drops (the "free
-cadence win" — see `cc_corpus_wave1_report.md`). Full provenance:
-`cc_corpus_wave1_report.md`.
+cadence win" — see `records/cc/reports/cc_corpus_wave1_report.md`). Full provenance:
+`records/cc/reports/cc_corpus_wave1_report.md`.
 
 ---
 
@@ -196,7 +196,7 @@ silently treat one as a superset of the other.
 
 **★ WHICH GATE THIS SECTION IS ABOUT — corrected 2026-08-11 under the FILING CONVENTION
 (`cowork_design_doc_template.md`; the user's Ruling 62 of
-`cowork_rulings_2026_08_11_fourteenth_stop.md`), `OPEN_ITEMS.md` OI-320. This document is a live
+`records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md`), `OPEN_ITEMS.md` OI-320. This document is a live
 governing surface — `CLAUDE.md` sends every score-touching task here FIRST — so its body is
 corrected rather than bannered.** Everything below describes the **BATCH BIR characterisation**,
 which is the **retired diagnostic** of `CLAUDE.md` gate block **(C)**, not the governing hard stop.
@@ -264,7 +264,7 @@ Documented in `tools/extra_scores_registry.json` (`ground_truth: false`). The pa
 
 23 user-committed large/orchestral scores (symphonies, concertos, the B-minor Mass, the Art of Fugue,
 string-quartet and quintet movements) added for the analysis-cost measurement
-(`cc_instruction_analysis_cost_profile.md`, OI-209 the large-score requirement). **`ground_truth: false`**;
+(`records/cc/instructions/cc_instruction_analysis_cost_profile.md`, OI-209 the large-score requirement). **`ground_truth: false`**;
 registered in `tools/extra_scores_registry.json` under `"large"` with **measured** counts (notes/events as
 the joint fact adapter counts them, staves, parts, measures, file size — from
 `tools/notation_seams/large_score_profile_counts.json`) and the **licence read from each file's own
@@ -311,7 +311,7 @@ in `corpora/ship|expl/` by design (they annotate scores already held, or fall ou
 - `essen-folksong-collection` (CCARH kern) — **phrase-boundary** marks on ~6.2k European monophonic folksongs (VL-E).
 
 Pins + verification: `tools/score_census_registry.json → annotation_beds`; reproduction in `tools/REPRODUCIBILITY.md`;
-full inventory in `cc_corpus_wave2_report.md`.
+full inventory in `records/cc/reports/cc_corpus_wave2_report.md`.
 
 ### `corpora/gt/` + `corpora/plain/` — Wave-3 GT & stress beds (corpus wave 3, 2026-07-04)
 
@@ -331,14 +331,14 @@ beds; `corpora/plain/` = plain-score stress material.
 - `plain/Lieder`, `plain/StringQuartets` (OpenScore, CC0), `plain/asap-dataset` (romantic piano MusicXML) — Tier-S
   chromatic/texture stress (no GT; **not** gate material — dormant-build discipline).
 
-**Wave-3 addendum (2026-07-04, `cc_wave3_addendum_report.md`) — two DDMAL direct pickups under `corpora/gt/`:**
+**Wave-3 addendum (2026-07-04, `records/cc/reports/cc_wave3_addendum_report.md`) — two DDMAL direct pickups under `corpora/gt/`:**
 - `key_modulation_dataset` (DDMAL, KMT) — 201 annotated Humdrum `.krn` (5 textbooks: aldwell/kostka-payne/reger/
   rimsky-korsakov/tchaikovsky), **key/modulation** GT (N5) + textbook RN; CC-BY-SA scores / MIT code.
 - `Flexible_harmonic_chorale_annotations` (DDMAL) — 571 chorales (371 Bach + 200 Praetorius), **permutational
   multi-reading** harmony GT in an R-package binary (N2 candidate); GPLv3. **⚠ RECORD-ONLY** — its 371 Bach
   chorales overlap the gate repertoire; never wired to / compared against the gate corpus (future user ruling).
 
-**Acquisition round (2026-07-04, `cc_acquisition_round_report.md`) — the union-search-approved pickups under `corpora/gt/`:**
+**Acquisition round (2026-07-04, `records/cc/reports/cc_acquisition_round_report.md`) — the union-search-approved pickups under `corpora/gt/`:**
 - `piano_svsep` (CPJKU, ISMIR 2024) — **N9 voice/staff separation**; ships CODE (MIT), GT graphs fetched at runtime from
   `fosfrancesco/piano_corpora_dcml` (393 DCML piano pieces; `jpop` companion confirmed non-public).
 - `mcma` (skalo, GitLab) — **N9**; 475 `.mxl` one-voice-per-track Baroque counterpoint (split 153/239/83 verified);
@@ -356,9 +356,9 @@ beds; `corpora/plain/` = plain-score stress material.
   count would need a re-download the read-only dispatch forbids (see the report §Task-3 + the `pdmx` registry row).
 
 Pins + verification: `tools/score_census_registry.json → wave3_sources`; reproduction in `tools/REPRODUCIBILITY.md`;
-full inventory + paper-claim verification + the gated/unavailable/enumerated records in `cc_corpus_wave3_report.md`
-(+ the two addendum pickups + the `figbass`/`pedal` parser exposure in `cc_wave3_addendum_report.md`; + the acquisition
-round in `cc_acquisition_round_report.md`).
+full inventory + paper-claim verification + the gated/unavailable/enumerated records in `records/cc/reports/cc_corpus_wave3_report.md`
+(+ the two addendum pickups + the `figbass`/`pedal` parser exposure in `records/cc/reports/cc_wave3_addendum_report.md`; + the acquisition
+round in `records/cc/reports/cc_acquisition_round_report.md`).
 
 ---
 
