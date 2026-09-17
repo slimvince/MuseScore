@@ -990,10 +990,11 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "that a naming is a dependency, or that the parser list is complete — the bound is the "
         "imported scan's own and is published on the surface itself."),
     "tools/audit/gen_claude_md_finer_archive.py": (
-        LIVE, "gen_claude_md_finer_archive.py, THE STOPS of its module docstring; `build()`, which "
+        POINT, "gen_claude_md_finer_archive.py, THE STOPS of its module docstring; `build()`, which "
               "re-reads both live files on every run; `ruled_population()`, which re-derives the "
               "ruled archive and refused sets from the pinned artifact's own conflict evidence",
-        "LIVE. Every one of its claims is re-answered against the tree AS IT STANDS on every run — "
+        "RECORDS A POINT-IN-TIME MEASUREMENT — reclassified 2026-09-17 on the user's ruling (Alternative A1, "
+        "handoff entry 193 §1). ★ THE FORMER VERDICT, PRESERVED (#12): LIVE. Every one of its claims is re-answered against the tree AS IT STANDS on every run — "
         "each moved span byte-present in `CLAUDE_ARCHIVE.md` exactly once and absent from "
         "`CLAUDE.md`, each span the reading flagged and each span the ruling REFUSED still present "
         "at site exactly once and in the companion not at all. At this tree the safeguard returned "
@@ -1010,11 +1011,12 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "`CLAUDE.md` is small enough to read — the first is a later ruling's, the second is "
         "[[OI-370]]'s own subject."),
     "tools/audit/gen_post_split_archive.py": (
-        LIVE, "gen_post_split_archive.py, THE STOPS of its module docstring; `build()`, which "
+        POINT, "gen_post_split_archive.py, THE STOPS of its module docstring; `build()`, which "
               "re-reads every live parent and companion on every run; `proposals()`, which "
               "re-derives the placed population from the imported cut and recognizers and takes "
               "the three ruled exclusions by derivation rather than from a list",
-        "LIVE. Every one of its claims is re-answered against the tree AS IT STANDS on every run, "
+        "RECORDS A POINT-IN-TIME MEASUREMENT — reclassified 2026-09-17 on the user's ruling (Alternative A1, "
+        "handoff entry 193 §1). ★ THE FORMER VERDICT, PRESERVED (#12): LIVE. Every one of its claims is re-answered against the tree AS IT STANDS on every run, "
         "per file and in both directions: each moved span byte-present in its companion exactly "
         "once and absent from its parent, and each span the reading LEFT AT SITE still present at "
         "site exactly once and in the companion not at all. Eighteen of its nineteen proposals "
@@ -1339,11 +1341,12 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
 
     # ---- AUTHORED 2026-09-07, cc_instruction_claude_md_prune_at_amendment_2026_09_07.md Task 2 -
     "tools/audit/gen_claude_md_prune_backlog.py": (
-        LIVE, "gen_claude_md_prune_backlog.py, THE STOPS of its module docstring; `candidates()`, "
+        POINT, "gen_claude_md_prune_backlog.py, THE STOPS of its module docstring; `candidates()`, "
               "which re-cuts and re-classes the file at every run and re-derives the exclusions; "
               "`build()`, which re-reads both live files; `coarse_reconciliation()`, which places "
               "every coarse archive-class span against this act's own population",
-        "LIVE. Three of its four reconciliation directions are re-answered against the tree AS IT "
+        "RECORDS A POINT-IN-TIME MEASUREMENT — reclassified 2026-09-17 on the user's ruling (Alternative A1, "
+        "handoff entry 193 §1). ★ THE FORMER VERDICT, PRESERVED (#12): LIVE. Three of its four reconciliation directions are re-answered against the tree AS IT "
         "STANDS on every run, and the two that matter most here are the KEEP directions: this "
         "act's reading kept both of its candidates, so a later edit that archived a flagged span "
         "anyway, or that removed one from the file, fails on the day it happens. Its population is "

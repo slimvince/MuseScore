@@ -1184,6 +1184,30 @@ HISTORICAL: dict[str, str] = {
         "before the reads, and each wave's authored read list), so it re-computes a closed sum and "
         "cannot detect a change in the tree. NO LIVE COVERAGE IS LOST, on the same three live "
         "guards named at wave 1's entry.",
+    # ── THE THREE PASSAGE-PROTECTION CHECKS ───────────────────────────────────────────────────
+    # RECLASSIFIED 2026-09-17 by `cc_instruction_passage_guards_historical_2026_09_17.md` Task 1, on the
+    # user's ruling of 2026-09-17 (Alternative A1), recorded at
+    # `records/cowork/handoff/cowork_handoff_entry_one_hundred_and_ninety_three.md` §1. Each was classed LIVE,
+    # and the reason is preserved at its verdict in `gen_guard_classification.py` (#12). ★ THE COST THE USER
+    # ACCEPTED: nothing now fails on the day a later act archives one of the passages these checks held.
+    "tools/audit/gen_claude_md_finer_archive.py":
+        "HISTORICAL RECORD: the reading of the six `CLAUDE.md` passages settled at the seventh- and "
+        "eighth-return sittings, a question its own record calls CLOSED. Its at-site test compares each "
+        "passage's wording, read at a pinned commit, word for word with the live file, so it cannot tell an "
+        "archiving act from a renamed path or an ordinary amendment; the 2026-09-17 root records move "
+        "turned it red on renamed paths. The artifact stays on disk as committed (#12).",
+    "tools/audit/gen_post_split_archive.py":
+        "HISTORICAL RECORD: the one-off post-split archiving pass over the five governing files, which moved "
+        "one resolved row and left the rest at site. Its at-site test compares the left-at-site passages' "
+        "pinned wording word for word with the live files, so it fails on a renamed path or an ordinary "
+        "amendment as surely as on an archiving act; the 2026-09-17 root records move turned it red on "
+        "renamed paths. The artifact stays on disk as committed (#12).",
+    "tools/audit/gen_claude_md_prune_backlog.py":
+        "HISTORICAL RECORD: the one-off prune-at-amendment backlog pass of 2026-09-07, which read two "
+        "candidates and moved neither. Its at-site test compares their pinned wording word for word with the "
+        "live `CLAUDE.md`, so it fails on a renamed path or an ordinary amendment as surely as on an archiving "
+        "act; the 2026-09-17 root records move turned it red on renamed paths. The artifact stays on disk as "
+        "committed (#12).",
 }
 
 
