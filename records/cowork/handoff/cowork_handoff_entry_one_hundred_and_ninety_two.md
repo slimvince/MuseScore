@@ -6,11 +6,11 @@ CC's report or chat reply and not checked here.
 
 ## 0. State at close — A DISPATCH IS RUNNING
 
-- **Running:** `records/cc/instructions/cc_instruction_root_records_move_finish_commit_two_2026_09_17.md` (§1 item
-  8), handed to CC after this entry's last landing; its size is at its landing staging call and it was proved at
-  content **[checked]**. It continues the resume dispatch (third issue, 11,857 bytes at landing **[checked]**).
-- **Commit 1 exists:** `.git/refs/heads/master` reads `447311137a934ab8e3f51e7abf8e18e7b8d2bd0e` **[checked]** — the
-  978 renames **[relayed]**. Nothing pushed.
+- **Running:** `records/cc/instructions/cc_instruction_root_records_move_finish_commit_three_2026_09_17.md` (§1 item
+  9), handed to CC after this entry's last landing, proved at content **[checked]**. It continues the resume dispatch
+  (third issue, 11,857 bytes at landing **[checked]**).
+- **Commits 1 and 2 exist:** `.git/refs/heads/master` reads `54804de49ac593b532e804bcfb881366e3a018b5` (Commit 2)
+  **[checked]**; Commit 1 is `447311137a934ab8e3f51e7abf8e18e7b8d2bd0e`, the 978 renames **[relayed]**. Nothing pushed.
   **Do not touch it, or its base dispatch, while it runs (D-251).**
 - **Its base text:** `records/cc/instructions/cc_instruction_root_records_move_finish_2026_09_17.md`, third issue,
   24,430 bytes at landing **[checked]**; CC reads it from blob `a16402ac47ed9f07de68629f299b65fd71eee51e` **[relayed]**.
@@ -53,6 +53,11 @@ CC's report or chat reply and not checked here.
 8. **Resume run 3 made Commit 1 and stopped before Commit 2** (`…_finish_resume_third_2026_09_17.md`), on a guard
    refusal of a `cat` CC added. **CC's defect.** Task 2(c) matched the stated pattern: 18 failing, the three ruled
    checks among them **[relayed]**. A new short dispatch, `…_finish_commit_two_2026_09_17.md`, starts at Commit 2.
+9. **The commit-two run made Commit 2 and stopped at its content proof** (`…_finish_commit_two_2026_09_17.md`): eleven
+   entries of `specification_document_set.json` moved position. **Checked at `gen_specification_document_set.py` line
+   817:** the array is written `sorted(GRADES)`, and those keys were renamed to paths; CC found the entries equal field
+   by field once paths are put back to names **[relayed]**. Settled by the writing side as part of a name becoming its
+   path (its own bar), not put to the user. `…_finish_commit_three_2026_09_17.md` does Commit 3 and the push.
 
 ## 2. The user's ruling, 2026-09-17
 
@@ -74,7 +79,7 @@ write mode and check passing with all three subjects frozen **[relayed]**.
    `STATUS.md`, the gating answer), the 118th's bridge-fault section, the 152nd's (v)–(x), the 169th whole. Then this
    entry whole; entry 191 only where pointed.
 2. **Read CC's report on the running batch whole:**
-   `records/cc/reports/cc_report_root_records_move_finish_commit_two_2026_09_17.md`, and its chat reply (ask the
+   `records/cc/reports/cc_report_root_records_move_finish_commit_three_2026_09_17.md`, and its chat reply (ask the
    user to paste it). Verify any commit it claims at `.git/refs/heads/master` and `.git/refs/remotes/origin/master`.
 3. **If it stopped:** read the stop at the objects; check whether the record already answers it before putting it to
    the user. Every earlier report of this line is listed in §1.
