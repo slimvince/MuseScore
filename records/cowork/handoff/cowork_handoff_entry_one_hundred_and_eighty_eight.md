@@ -15,6 +15,8 @@ the user's opening instruction gave, at one staging call.
 **(2) THE TIP IS UNMOVED: `0f69cc6b79610c962a8400cdaba3dfc12facfe55`**, read at `.git/refs/heads/master`
 over a staged copy (41 bytes, modification time 1788912529237). A ref file read is the value on disk now,
 not proof of what ran. **No commit to git. Nothing is running, nothing is awaited, no dispatch is out.**
+*(★ MADE STALE AFTER THE CLOSING REPORT, LEFT STANDING (#12): a backup dispatch was written and run by
+CC; the tip moved to `5d24edb565b2e0e9efc92e082c163112bd97087f` — §5.)*
 
 **(3) ROW 15 IS DONE AT STEPS 7 AND 8, WITH ONE PART HELD FOR THE USER.** The cross-check is at the second
 extract's §9. **The paper went against the first extract at four items and against the second at two.**
@@ -86,11 +88,18 @@ not reopened.**
 **(ii)** No WebSearch, WebFetch, subagent, popup or widget; no task list. Two verbatim messages mid-turn:
 the boot report with the first capacity judgment, and the re-judgment once the first extract's size was
 known. One file was sent to the conversation (the second extract, before landing) to obtain its identifier.
+*(★ CORRECTED AT THE AMENDMENT CHECK. FORMER WORDING, PRESERVED ABOVE (#12) — made incomplete by later acts:
+the second extract was sent twice more and the first extract once, each before a landing, for the same
+reason.)*
 
 **(iii)** No generator, guard set, enumeration or git command. No commit to git. **The progress record was
 not updated.**
 
 **(iv)** The memory store was not read or written by any memory tool call.
+*(★ CORRECTED AT THE AMENDMENT CHECK. FORMER WORDING, PRESERVED ABOVE (#12) — made false by a later act:
+five project memory files were READ by one memory tool call before the backup dispatch was written (the
+dispatch-writing rules, the push rule, the mid-write corruption check, the project preferences, and the
+no-shell editing rule). Nothing was written to memory by this side.)*
 
 **(v) LANDING ACTS — the one site for landing figures.**
 - **Row 15's second extract: 42,874 → 50,016 bytes, modification time 1789587183096.** The size was
@@ -118,6 +127,12 @@ editing); `reading_pass/l2_slice_reading_progress.md` (396,426) **by one search 
 two path strings (lines 62 and 94); row 15's first extract whole; **row 15's PDF, all eight pages, in
 requests 1–4 and 5–8, every image present.** Every boot size the hundred-and-eighty-sixth records (its
 head (1) and §5(vi)) matched.
+
+*(★ Added at the amendment check, reads after the closing report:* `decisions/group_T.md` at D-658 and
+`decisions/group_C.md` at D-568; `.git/HEAD`; `.git/config`; `.gitignore` whole;
+`cc_instruction_defense_share_authored_ends_2026_09_08.md` whole, for the dispatch form;
+`cc_report_backup_commit_and_push_2026_09_16.md` whole (1,708 lines, two calls); `.git/refs/heads/master`
+and `.git/refs/remotes/origin/master` again.)*
 
 **NOT read:** `FRAMEWORK.md`; `population.md`; the findings surface; the candidacy file;
 `BIBLIOGRAPHY.md`; every rulings record; the progress table itself.
@@ -166,8 +181,78 @@ recommends that row 12 be taken by a fresh session.**
 
 ---
 
+### §5 — ★ After the ruling: recommendations, D-658, and the backup
+
+**THE USER'S STANDING INSTRUCTION, 2026-09-16, his words:** *"I want you recommendations in combination
+with weighing visavi ultimate objective, guiding principles etc."* **Every decision surface from here on
+carries each alternative rated towards the ultimate objective and the guiding principles, AND a
+recommendation with its reason**; the choice question still goes in a separate, later turn, one decision
+per turn, no popup.
+
+**D-658, and why recommendations stopped.** The user said: *"Something is wrong with d-658. I do not
+understand it. Once you used to include recommendations in decision surfaces, then recently you stopped."*
+What this side found, at `decisions/group_T.md` (D-658) and `CLAUDE.md` Conventions (read this sitting):
+- Conventions (D-249) says a decision surface carries *"the recommendation with its reason"*.
+- D-658 (Ruling 27 of `cowork_rulings_2026_08_09_fourth_stop.md`) says a surface returning a question
+  *"the record does not settle"* carries *"NO RECOMMENDATION AT ALL"*. It was made for one fact-gathering
+  surface (the D-580 cell), but its wording is general. **This side's reading, not a ruling:** a question
+  the record settles is not escalated to the user at all (the user's stated rule of 2026-08-28, carried in the Cowork memory, not in the repository), so D-658's wording
+  reaches almost every surface, and the two rules conflict.
+- **The quoted instruction D-658 rests on**, as its register entry reproduces it: *"follow the rule: fact
+  based decisions or exploration to gather facts are allowed, not decided on unsure/fabulated/misremembered
+  facts."* **The user's reading, his words:** *follow the rule: "fact based decisions or exploration to
+  gather facts are allowed. DECISIONS on unsure/fabulated/misremembered facts are not allowed."* **Neither
+  reading of the quotation mentions recommendations**; the no-recommendation clause and its reason are not
+  in the quoted instruction.
+- **NOT checked:** the ruling record itself was not opened, so whether the odd wording is the user's as
+  typed or a transcription defect is unknown. **Open it before any amendment of D-658 is drafted.** The
+  quotation stays as recorded. **D-658 is unamended; amending it is a process act, not put this sitting.**
+
+**THE BACKUP.** On the user's order (*"we need to instruct CC to commit and push all our extracts etc.
+Otherwise they will be lost if my disc crashes"*), this side wrote
+`cc_instruction_backup_commit_and_push_2026_09_16.md` (8,444 bytes, landed and proved). **CC ran it. What
+follows is CC's report, read whole, RELAYED except where marked checked:**
+- **Checked at the objects by this side:** `.git/refs/heads/master` and `.git/refs/remotes/origin/master`
+  both read `5d24edb565b2e0e9efc92e082c163112bd97087f` (the report commit).
+- **Relayed:** backup commit `d7bb4720036ac7356c8d5a2b17d161c12e558f80`; push `d2ebe3cc98..d7bb472003`,
+  which also published seven earlier unpushed commits, named in the report; premises 1–4 held; no NUL byte,
+  no empty file, nothing over 5 MB; the three expected sizes (53,513, 50,903, 12,349) matched; every committed
+  path an addition, none a modification; `reading_pass/` already had tracked files, so premise 4's stop did
+  not fire.
+- **CC's declared deviations** (report, six numbered): the enumeration command was refused by the shell
+  guard and `tools/audit/changed_paths.py` used instead, with `reading_pass/object_reads/` expanded by Glob;
+  the enumeration kept in a scratchpad file outside the repository; the NUL check read bytes through
+  PowerShell, cross-checked against staged blob sizes; the staged-path check used the same sanctioned tool;
+  the commit carries the attribution trailer; the push published earlier commits. **One inconsistency in
+  CC's own writing:** its chat reply says four deviations, the report numbers six, and its self-check says
+  three and one scope reading. Nothing committed rests on the count.
+- **STATUS.md was not written.** CC named two rules that could require an entry (`STATUS.md`'s banner;
+  Ruling 4 of `cowork_rulings_2026_08_17_governing_surface_split.md`) and left the question open. Not put
+  to the user: it is about the process only.
+
+**★ WHAT IS STILL NOT BACKED UP — two defects of this side's dispatch, and the files they left out.**
+- **The `cc_report_*.md` pattern was too narrow.** CC's session reports are named
+  `cc_<subject>_report.md`, `_dossier.md`, `_investigation.md` and similar, and none matched; CC's list 2
+  names them (relay).
+- **The `docs/research_papers/` exclusion was too wide.** It was meant to keep paper PDFs off the public
+  fork (`.gitignore` already does that, read this sitting); it also left `docs/research_papers/BIBLIOGRAPHY.md`
+  and `README.md`, which CC's list 2 reports as modified tracked files (relay), uncommitted.
+- **Also uncommitted, by the dispatch's scope** (relay): `tools/audit/derivation_exemplars/`,
+  `Claude outputs/`, `Codex research inventory/`, `scratch_artifacts/`, `external resarch summary/` (two
+  PDFs), and `docs/research_papers/polyph9-release/`.
+- **And this entry's amended version**, landed after the backup commit.
+**Recommendation, rated towards the objective and principle 12 (no information loss):** a second backup
+dispatch early in the next sitting, committing the CC report family, the two modified text files under `docs/research_papers/`,
+`tools/audit/derivation_exemplars/` and this entry, with `polyph9-release/`, the PDFs and
+`scratch_artifacts/` held back until the user says whether they belong in a public fork. Whether to
+include `Claude outputs/` and `Codex research inventory/` is the user's call: this side has not seen
+their content.
+
+---
+
 ### The watch line
 
+**(0) ★ SECOND BACKUP DISPATCH** — §5, recommended as the next sitting's first act.
 **(1) ROW 15 IS CLOSED** — both extracts corrected and landed (§4). *(★ FORMER WORDING, PRESERVED (#12):
 "THE DECISION ON ROW 15's FIRST EXTRACT — §2; the choice question is still to be put." — settled by the
 ruling at §4.)*
@@ -177,6 +262,8 @@ ruling at §4.)*
 **(5) ROW 18's TABLE 3 CELL** stands as recorded. **(6) `polyph9-release/` IS UNOPENED.**
 **(7) THE GATE** — one limb established, one unchecked; holds nothing up, authorises no derivation.
 **(8) THE PRUNING PASS** stays paused. Nothing is running and nothing is awaited.
+**(9) D-658 AGAINST THE CONVENTIONS' RECOMMENDATION RULE** — §5; the user's standing instruction governs
+surfaces meanwhile. **(10) THE STATUS.md QUESTION CC LEFT OPEN** — §5; process only.
 
 ---
 
@@ -187,3 +274,5 @@ proved at its last content line read and at size. The closing figure is at the c
 the conversation's closing report. It is written to come in under the hundred-and-eighty-seventh's 10,376
 bytes; whether it does is stated in the closing report. **§4 was added after the first closing report
 and the entry was re-landed; the final figure is at the last staging call and in the last report.**
+**§5 was added after CC's return and the entry re-landed again; it no longer comes in under the
+hundred-and-eighty-seventh's size. The final figure is at the last staging call and in the last report.**

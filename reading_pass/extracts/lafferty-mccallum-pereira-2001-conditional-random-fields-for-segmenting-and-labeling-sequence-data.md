@@ -4,6 +4,15 @@
 > `cowork_reading_pass_commission_2026_08_30.md` §4, whose form the remedial commission
 > (`cowork_reading_pass_remedial_commission_2026_08_31.md` §3) binds unchanged.
 >
+> **★ CORRECTED 2026-09-19 ON THE USER'S RULING OF THAT DATE, FOR ROW 12 ONLY.** The second extraction's
+> cross-check (`reading_pass/extracts_second_pass/lafferty-mccallum-pereira-2001-conditional-random-fields-probabilistic-models-for-segmenting-and-labeling-sequence-data.md`
+> §9.3, items (a) to (c)) found three places where the paper goes against this file, none moving a value.
+> The user ruled (entry 196 §2, Option 2) that they are corrected at their own sites, the former wording
+> preserved (#12). Each site carries a "★ CORRECTED 2026-09-19" note placed outside the quotation. **No
+> value, no cell, no finding and no verdict changed.** The paper was not re-opened for this act; the ground
+> for each correction is that file's §9.3, which resolved each item at the page image. The ruling is for
+> row 12 only; the class question for other rows is not ruled by it.
+>
 > **The grade.** All eight pages of the held PDF were read AT THE OBJECT: staged through the bridge and
 > read with the file tools as page images. **No relay, no web-fetch read, no prompted extraction.**
 > **The page count was ESTABLISHED rather than assumed** — a request for page 20 was refused by the
@@ -161,7 +170,12 @@ width claim attached to it: *"Although it encompasses HMM-like models, the class
 fields is much more expressive, because it allows arbitrary dependencies on the observation sequence.
 In addition, the features do not need to specify completely a state or observation, so one might expect
 that the model can be estimated from less training data. Another attractive property is the convexity of
-the loss function; indeed CRFs share all of the convexity properties of general maximum entropy models."*
+the loss function; indeed, CRFs share all of the convexity properties of general maximum entropy models."*
+
+*(★ CORRECTED 2026-09-19 on the user's ruling, from the second extraction's cross-check, §9.3(c). FORMER
+WORDING, PRESERVED (#12): "indeed CRFs share all of the convexity properties" — the page (4, §3, left
+column) prints a comma after "indeed". One comma added inside the quotation; no word changed, no value
+moves.)*
 
 ### §2 — the label bias problem, quoted at length because it is this read's principal finding
 
@@ -191,11 +205,16 @@ argument** — see finding (4).
 
 **[FACT, p. 2 §2] The worked example.** Figure 1's five-state automaton distinguishes *rib* from *rob*;
 on the observation sequence `r i b`, *"Both states 1 and 4 have only one outgoing transition. State 1
-has seen this observation often in training, state 4 has almost never seen this observation; but
-regardless, state 4 has no choice but to pass all its mass to its single outgoing transition, since it is
+has seen this observation often in training, state 4 has almost never seen this observation; but like
+state 1, state 4 has no choice but to pass all its mass to its single outgoing transition, since it is
 not generating the observation, only conditioning on it. Thus, states with a single outgoing transition
 effectively ignore their observations. More generally, states with low-entropy next state distributions
 will take little notice of observations."*
+
+*(★ CORRECTED 2026-09-19 on the user's ruling, from the second extraction's cross-check, §9.3(a). FORMER
+WORDING, PRESERVED (#12): "state 4 has almost never seen this observation; but regardless, state 4 has no
+choice but to pass all its mass" — the page (2, §2, right column) reads "but like state 1, state 4 has no
+choice"; "regardless" is not on the page. No value moves.)*
 
 **[FACT, p. 2–3 §2] The two solutions the paper rejects, and the shape it says a proper solution must
 have.** Bottou's two: changing the state-transition structure by determinization — *"but determinization
@@ -341,10 +360,14 @@ proposed for parsing (Collins, 2000). **However, these methods fail when the cor
 in the first pass.**"* (Emphasis this reader's; the words are the paper's.)
 
 **[FACT, p. 8 §7] The nearest rival named, and its stated defect.** *"Closest to our proposal are
-gradient-descent methods that adjust the parameters of all the local classifiers to minimize a smooth loss
-function (e.g., quadratic loss) combining loss terms for each label. If state dependencies are local, this
-can be done efficiently with dynamic programming (LeCun et al., 1998). Such methods should alleviate label
-bias. However, their loss function is not convex, so they may get stuck in local minima."*
+gradient-descent methods that adjust the parameters of all of the local classifiers to minimize a smooth
+loss function (e.g., quadratic loss) combining loss terms for each label. If state dependencies are local,
+this can be done efficiently with dynamic programming (LeCun et al., 1998). Such methods should alleviate
+label bias. However, their loss function is not convex, so they may get stuck in local minima."*
+
+*(★ CORRECTED 2026-09-19 on the user's ruling, from the second extraction's cross-check, §9.3(b). FORMER
+WORDING, PRESERVED (#12): "adjust the parameters of all the local classifiers" — the page (8, §7, left
+column top) reads "all of the local classifiers". One word restored inside the quotation; no value moves.)*
 
 **★ [FACT, p. 8 §7] The paper's own summary of its properties AND its own stated limitation.**
 *"Conditional random fields offer a unique combination of properties: discriminatively trained models for

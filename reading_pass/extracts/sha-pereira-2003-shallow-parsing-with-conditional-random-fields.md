@@ -11,6 +11,15 @@
 > nothing else moved. **The former banner said no centrality verdict was given and that the row was
 > not read for the gate; both are superseded by this one (#12: the earlier state is what it was, and
 > is recorded here rather than erased).**
+>
+> **★ CORRECTED 2026-09-19 ON THE USER'S RULING OF THAT DATE, FOR ROW 14 ONLY.** The second extraction's
+> cross-check (`reading_pass/extracts_second_pass/sha-pereira-2003-shallow-parsing-with-conditional-random-fields.md`
+> §9.3, items (a) to (c)) found three places where the paper goes against this file, none moving a value.
+> The user ruled (entry 197 §3, Option 2, all three sites) that they are corrected at their own sites, the
+> former wording preserved (#12). Each site carries a "★ CORRECTED 2026-09-19" note placed outside the
+> quotation. **No value, no cell, no finding and no verdict changed.** The paper was not re-opened for
+> this act; the ground for each correction is that file's §9.3, which resolved each item at the page
+> image. The ruling is for row 14 only; the class question for other rows is not ruled by it.
 
 ---
 
@@ -40,9 +49,13 @@ Fields," NAACL 2003*; the URL `https://aclanthology.org/N03-1028.pdf`; held ✓;
 Anthology)**.
 
 **What page 1 prints**, in a header above the title: *Proceedings of HLT-NAACL 2003, Main Papers,
-pp. 134–141, Edmonton, May-June 2003*. Title *"Shallow Parsing with Conditional Random Fields"*.
+pp. 134-141, Edmonton, May-June 2003*. Title *"Shallow Parsing with Conditional Random Fields"*.
 Authors **Fei Sha** and **Fernando Pereira**, Department of Computer and Information Science,
 University of Pennsylvania, with a shared e-mail line.
+
+*(★ CORRECTED 2026-09-19 on the user's ruling, from the second extraction's cross-check, §9.3(a). FORMER
+WORDING, PRESERVED (#12): "pp. 134–141" with an en dash — the page (1, header) prints a hyphen. One
+character of punctuation inside the rendering of the header; no value moves.)*
 
 | Axis | Verdict |
 |---|---|
@@ -229,12 +242,16 @@ shape of an addition candidate, the class rows 4 and 39 produced in the L1 slice
 applied nowhere, and it is the user's whether it is written into either design point's ground.* The
 instance itself, at the paper's own pages: §4.3 records that *the best F score is attained while the
 log-likelihood is still improving*, and that the Gaussian prior *"may not be enough to keep the
-optimization from making weight adjustments that slightly improve training log-likelihood but cause
+optimization from making weight adjustments that slighly improve training log-likelihood but cause
 large F score fluctuations"*. Footnote 2 records one method with the higher penalised log-likelihood
 and the lower likelihood on the data. §5.2 states there is *"no direct relationship between F scores
 and log-likelihood"*, while observing that in these experiments F tends to follow it. **This is the
 gap DP-P's live candidate exists to address, exhibited by a paper that is not arguing for that
 candidate.** *Routed to DP-P and to measurement design; no verdict.*
+
+*(★ CORRECTED 2026-09-19 on the user's ruling, from the second extraction's cross-check, §9.3(b). FORMER
+WORDING, PRESERVED (#12): "slightly improve" — the page (5, §4.3) prints "slighly", a misprint of the
+paper's own; the quotation now carries the page as printed. No value moves.)*
 
 **(4) held-out data sets both the regularisation strength and the stopping point.**
 §4.3 and §3.1. Set against what this slice has found — row 45's no-held-out-test-set practice, row
@@ -307,10 +324,13 @@ ratified figure and no characterisation of the record rests on this paper. **Tha
 detail specification or against a design point*.** An L2 detail specification that instantiates the
 score family this slice's chosen option belongs to must decide **how that score is actually fitted**,
 and this paper's claims are the ones such a specification would cite for it: that general-purpose
-convex optimisation replaces iterative scaling, with iterative scaling failing to reach the target at
-all; that preconditioning is what buys the convergence and must be switched off before it destabilises;
+convex optimisation replaces iterative scaling, with iterative scaling failing to reach the target
+after 3,700 iterations; that preconditioning is what buys the convergence and must be switched off before it destabilises;
 that the regularisation strength and the stopping point are both set on held-out data; and the caution
-at §6(3). **This is ROW 12's OWN CENTRALITY REASONING, applied to the fitting of row 12's own
+at §6(3). *(★ CORRECTED 2026-09-19 on the user's ruling, from the second extraction's cross-check,
+§9.3(c). FORMER WORDING, PRESERVED (#12): "with iterative scaling failing to reach the target at all" —
+the page (6, §5.2) says GIS "failed to reach the target, after 3,700 iterations" and that in theory it
+would eventually converge; §6(2) above carries the hedge this sentence had dropped. No value moves.)* **This is ROW 12's OWN CENTRALITY REASONING, applied to the fitting of row 12's own
 formalism family rather than to its form.**
 
 **★ THE GROUND ON WHICH NOT CENTRAL COULD BE ARGUED, STATED IN FULL SO THE CHOICE IS CHALLENGEABLE

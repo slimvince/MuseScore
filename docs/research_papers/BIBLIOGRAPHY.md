@@ -33,7 +33,7 @@ only (personal-use copies as obtained). Licensing notes reflect publisher policy
 | Yang, Cwitkowitz & Duan, "Harmonic Analysis with Neural Semi-CRF" (Harana), ISMIR 2023 | https://archives.ismir.net/ismir2023/paper/000080.pdf | ✓ | CC (recent ISMIR CC BY) |
 | Korzeniowski & Widmer, "Improved Chord Recognition by Combining Duration and Harmonic Language Models," ISMIR 2018 | https://archives.ismir.net/ismir2018/paper/000300.pdf | ✓ | CC |
 | Harasim, Rohrmeier & O'Donnell, "A Generalized Parsing Framework for Generative Models of Harmonic Syntax," ISMIR 2018 | https://ismir2018.ircam.fr/doc/pdfs/258_Paper.pdf | ✓ | CC |
-| Rohrmeier, "Towards a Generative Syntax of Tonal Harmony," JMM 5(1), 2011 | https://doi.org/10.1080/17459737.2011.573676 | — | PAYWALL |
+| Rohrmeier, "Towards a Generative Syntax of Tonal Harmony," JMM 5(1), 2011, pp. 35–53 | https://doi.org/10.1080/17459737.2011.573676 | ✓ (`rohrmeier_2011_jmm_generative_syntax_tonal_harmony.pdf`; placed as `Rohrmeier2011.pdf`, renamed by the user 2026-09-12) | PAYWALL |
 | Rohrmeier, "Towards Modelling Harmonic Movement in Music…," Darwin College DCRR-004, 2006 | https://www.darwin.cam.ac.uk/wp-content/uploads/2024/11/dcrr004.pdf | ✓ | LINK |
 | Rohrmeier & Cross, "Statistical Properties of Tonal Harmony in Bach's Chorales," ICMPC 2008 | (no open copy found) | — | PAYWALL |
 | Tsushima, Nakamura, Itoyama & Yoshii, "Generative Statistical Models with Self-Emergent Grammar of Chord Sequences," arXiv:1708.02255 | https://arxiv.org/abs/1708.02255 | ✓ | LINK |
@@ -87,6 +87,24 @@ only (personal-use copies as obtained). Licensing notes reflect publisher policy
 | Sears, Verbeten & Percival, "Does Order Matter?…," JEP:HPP 2023 | https://doi.org/10.1037/xhp0001103 | ✓ | PAYWALL (APA — explicit personal-use notice) |
 | BCMH corpus (PeARL lab) | https://github.com/PeARL-laboratory/BCMH | ✓ (`tools/BCMH_dataset/`) | CC (CC BY 4.0, cite the two papers) |
 
+## The grammar branch — added on the user's ruling of 2026-09-12
+
+Three works named in read rows' reference lists and in none of the tables above, placed in this folder
+by the user on 2026-09-12 and **ruled into the population** the same day. Each is identified at its own
+page 1; where page 1 prints no venue or year the row says whose citation the venue and year come from.
+
+| Source | URL | Local | Redist. |
+|---|---|---|---|
+| Granroth-Wilding & Steedman, "Statistical Parsing for Harmonic Analysis of Jazz Chord Sequences" — page 1 prints title, both authors and the School of Informatics, University of Edinburgh, and **no venue and no year**; *ICMC 2012, pp. 478–485* is how candidacy row 25's paper cites it (its reference [24], which mis-prints the first author as "W. Granroth") | (none recorded) | ✓ (`granrothwilding_steedman_2012_icmc_statistical_parsing_jazz_chord_sequences.pdf`, 196,593 bytes, 8 pages) | LINK by default — no licence line on page 1; to be checked at the whole read |
+| Granroth-Wilding, *Harmonic Analysis of Music Using Combinatory Categorial Grammar*, PhD thesis, Institute for Language, Cognition and Computation, School of Informatics, University of Edinburgh, 2013 | (none recorded) | ✓ (`granrothwilding_2013_phd_edinburgh_harmonic_analysis_ccg.pdf`, 1,331,533 bytes, 183 pages) | LINK by default — no licence line on page 1; to be checked at the whole read |
+| Jacoby, Tishby & Tymoczko, "An Information Theoretic Approach to Chord Categorization and Functional Harmony," *Journal of New Music Research*, 2015, DOI `10.1080/09298215.2015.1036888`, published online 22 Sep 2015 | https://doi.org/10.1080/09298215.2015.1036888 | ✓ (`jacoby_tishby_tymoczko_2015_jnmr_information_theoretic_chord_categorization.pdf`, 2,217,625 bytes, 27 pages) | **PAYWALL** — page 1 is a Taylor & Francis download cover (*"Download by: [158.222.154.197]"*); rule 3 binds, do not redistribute |
+
+*The files were placed as `icmc.pdf`, `phd_thesis.pdf` and `jacobytishbytymockzo.pdf` and **renamed by
+the user on 2026-09-12** to the names above, which follow this folder's `author_year_venue_subject`
+pattern; the renames were confirmed at the folder's own listing, each file at the same size as before.
+The Cowork session had recorded the intended names here when its own rename attempt failed to reach the
+folder; the Local cells above were updated in one act once the listing showed the new names.*
+
 ## Maintenance rules
 
 1. **The citation register is COMPLETE by policy** — every source the grounding docs lean on has a row
@@ -97,3 +115,38 @@ only (personal-use copies as obtained). Licensing notes reflect publisher policy
 3. **Public redistribution** (e.g., alongside an open-source release of the inferrer): ship this file +
    the **CC**-tier PDFs only; everything else stays links/citations. PAYWALL-tier copies must never
    enter a public repo. Verify CC status per item at release time; not legal advice.
+
+## Corrections
+
+**2026-09-12 — the Rohrmeier JMM 2011 row is flipped to HELD, under maintenance rule 2.** The user
+placed a file at `docs/research_papers/Rohrmeier2011.pdf` (646,572 bytes at the folder's own listing).
+Its page 1 was read at the object and prints *Journal of Mathematics and Music* Vol. 5, No. 1, March
+2011, **35–53**; the title *"Towards a generative syntax of tonal harmony"*; **Martin Rohrmeier**, one
+author; DOI `10.1080/17459737.2011.573676`, which is this row's own URL in resolver form. **The row's
+title is title-cased here and sentence-cased in the printed article; that is the only difference found
+on the axes checked** (title, author, journal, volume, issue, year, DOI). The **pagination is added
+here**, this row having carried none. **THE PAYWALL TIER IS UNCHANGED AND CORRECT**: page 1 prints
+*"© 2011 Taylor & Francis"* and no open licence, so rule 3 binds — this copy must never enter a public
+repo. **FORMER CELL, PRESERVED (#12): the Local column read `—`.** *Bound: pages 3 to 19 of the 20-page
+file were not opened, so that the file is the article entire is consistent with what was seen and is
+not established.*
+
+**2026-09-12, later — three rows ADDED under maintenance rule 1, on the user's ruling.** The section
+*"The grammar branch — added on the user's ruling of 2026-09-12"* is new. Each work was identified at
+its own page 1 by the Cowork session that booted on `cowork_handoff_entry_one_hundred_and_sixty_two.md`;
+page counts were established at the file tool's own out-of-range reports; no page beyond page 1 (and,
+for the thesis, page 2, which is blank) was opened. **Redistribution tiers for the two Granroth-Wilding
+files are defaults and not findings** — no licence line is on page 1, and the whole read decides. All
+three were previously named in read rows' reference lists (rows 25, 46, 57 and 58, at their extracts) and
+in no row of this file, which is what the user's question of that day established. **Nothing else in this
+file changed.**
+
+**2026-09-12, later still — two folder acts by the user, recorded here because a row's Local cell and a
+recorded duplicate turn on them.** *(i)* `Rohrmeier2011.pdf` was **renamed by the user** to
+`rohrmeier_2011_jmm_generative_syntax_tonal_harmony.pdf`, the folder's pattern; the row-36 Local cell is
+updated and the 2026-09-12 note above keeps the name at placement. *(ii)* **`dcrr004.pdf` was DELETED by
+the user.** It had stood at 1,648,192 bytes beside `rohrmeier_2006_dcrr004_harmonic_movement.pdf` of the
+same size — the file the DCRR-004 row points at and row 23 was read from, which stands unchanged at the
+listing. **Whether the two were byte-identical was not checked by the session that recorded the duplicate,
+no earlier check is on the record, and it is now not checkable; the deletion was the user's decision on the recorded question.** Both acts were confirmed at
+the folder's own listing before this note was written: the new name present, the two old names absent.

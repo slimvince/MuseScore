@@ -18,6 +18,35 @@ cited section. Filenames are descriptive; originals as uploaded.
 Copyright: personal-use copies for this project's research; do not redistribute (the Sears 2023 PDF
 carries an explicit APA personal-use notice).
 
+## Later additions, indexed under `BIBLIOGRAPHY.md` maintenance rule 2
+
+The table above is the 2026-07-19 user-supplied set, and its sentence *"Each was read by Cowork on
+2026-07-19"* is true of that set only. Files obtained later are indexed here so that sentence stays true.
+
+| File | Citation | Added | State |
+|---|---|---|---|
+| `rohrmeier_2011_jmm_generative_syntax_tonal_harmony.pdf` (placed as `Rohrmeier2011.pdf`; renamed by the user later on 2026-09-12, confirmed at the listing) | Rohrmeier, "Towards a generative syntax of tonal harmony," *Journal of Mathematics and Music* 5(1), March 2011, pp. 35–53. DOI `10.1080/17459737.2011.573676`. **© 2011 Taylor & Francis — PAYWALL tier; do not redistribute.** | 2026-09-12, by the user | **NOT YET READ.** Identity established at page 1 only: title, author, journal, volume, issue, year, pagination and DOI all match `BIBLIOGRAPHY.md`'s row, whose title is title-cased where the article prints sentence case. 646,572 bytes, 20 PDF pages; pages 1, 2 and 20 opened, page 20 blank, pages 3–19 not opened. This is **candidacy row 22**, the grammar DP-O's *for* side rests on, and the user ruled it into L2's slice of Task B on the same date. |
+
+| `granrothwilding_steedman_2012_icmc_statistical_parsing_jazz_chord_sequences.pdf` (placed as `icmc.pdf`; renamed by the user 2026-09-12, confirmed at the listing) | Granroth-Wilding & Steedman, "Statistical Parsing for Harmonic Analysis of Jazz Chord Sequences" — page 1 prints no venue or year; ICMC 2012 by row 25's citation | 2026-09-12, by the user | **NOT YET READ.** Page 1 only: title, two authors, University of Edinburgh; no licence line. 196,593 bytes, 8 pages. **Candidacy row 65**, ruled into L2's slice by the user the same day. |
+| `granrothwilding_2013_phd_edinburgh_harmonic_analysis_ccg.pdf` (placed as `phd_thesis.pdf`; renamed by the user 2026-09-12, confirmed at the listing) | Granroth-Wilding, *Harmonic Analysis of Music Using Combinatory Categorial Grammar*, PhD thesis, University of Edinburgh, 2013 | 2026-09-12, by the user | **NOT YET READ.** Pages 1–2 only (title page; page 2 blank); no licence line seen. 1,331,533 bytes, 183 pages. **Candidacy row 66**, ruled into L2's slice the same day. |
+| `jacoby_tishby_tymoczko_2015_jnmr_information_theoretic_chord_categorization.pdf` (placed as `jacobytishbytymockzo.pdf`; renamed by the user 2026-09-12, confirmed at the listing) | Jacoby, Tishby & Tymoczko, "An Information Theoretic Approach to Chord Categorization and Functional Harmony," *JNMR* 2015, DOI `10.1080/09298215.2015.1036888`. **Taylor & Francis download — PAYWALL tier; do not redistribute.** | 2026-09-12, by the user | **NOT YET READ.** Page 1 only, a publisher cover page. 2,217,625 bytes, 27 pages. **Candidacy row 67**, ruled into L2's slice the same day. |
+
+*The three renames were ordered by the user, could not be performed from the Cowork session of
+2026-09-12 (the device shell reported the folder unreachable, and a copy under the new name would have
+left the original beside it), and were then made by the user the same day; the rows above were updated in
+one act after the folder's listing showed the new names and no old one.*
+
+**★ A DUPLICATE IS RECORDED AND NOT ACTED ON.** The folder's own listing of 2026-09-12 shows
+**`dcrr004.pdf`** at **1,648,192 bytes**, the same size as **`rohrmeier_2006_dcrr004_harmonic_movement.pdf`**,
+which is the file `BIBLIOGRAPHY.md`'s DCRR-004 row points at and the one candidacy row 23 was read from.
+**Whether the two are byte-identical was NOT checked** — no shell was run over either — and neither file
+was deleted, moved or renamed. It is recorded here so a later session does not mistake it for a second
+work by the same author. **★ RESOLVED BY THE USER LATER ON 2026-09-12: `dcrr004.pdf` was DELETED by the
+user, and the folder's listing afterwards shows `rohrmeier_2006_dcrr004_harmonic_movement.pdf` alone, at
+1,648,192 bytes, unchanged. Byte-identity was not checked by the session that recorded the duplicate, no earlier check is on the
+record, and it is now not checkable; the
+deletion was the user's decision. The paragraph above stands as the record of the question, #12.**
+
 ## Binary git home (2026-07-19)
 
 Every PDF in this folder, plus the full batch-downloaded set of `BIBLIOGRAPHY.md` "wanted" rows and
