@@ -2972,7 +2972,7 @@
                 {
                   "kind": "whole",
                   "taken": "the whole file",
-                  "lines_rendered": 297
+                  "lines_rendered": 415
                 }
               ],
               "filters_applied": [
@@ -2982,12 +2982,12 @@
                   "heading_contains": "detail specification could adopt, adapt, or must argue against",
                   "closes_before": "## ★ Findings, routed and not applied",
                   "why": "Ruling 11 Decision 2 of `cowork_rulings_2026_08_31_decision_surface_sitting.md`: it is this side's conclusion about what an L1 specification should do with the paper, which is the deriving session's own work.",
-                  "the_text_removed": "## What an L1 or L2 detail specification could adopt, adapt, or must argue against\n\n- **Adopt:** the partition-point construction itself, which is the L1 charter's own — and the bound it\n  carries, that partition points are at most twice the number of notes, which is what makes the change-point\n  set finite and enumerable.\n- **Adapt:** the note weight defined as the count of minimal segments a note spans rather than its\n  notated duration. This is a live alternative to duration weighting for any evidence term over a span,\n  and the authors report choosing it over duration and velocity on measured grounds.\n- **Must argue against:** the context-free segment content score. The framework's L2 decides\n  segmentation *with* tonality, chord and chord-tone assignment; this paper's decomposition is the\n  boundary case where the segment content score reads nothing but pitch classes, and its authors' own\n  conclusion is that the assumption does not hold well enough to recover the analyst's segmentation.\n- **Must argue against, second:** the two-subtask split itself — label a segment, then search over\n  segmentations using those labels' scores. That is DP-C's *before* rival in its cleanest published form,\n  built by authors who state its limits themselves.\n\n",
-                  "characters_removed": 1266
+                  "the_text_removed": "## What an L1 or L2 detail specification could adopt, adapt, or must argue against\n\n- **Adopt:** the partition-point construction itself, which is the L1 charter's own — and the bound it\n  carries, that partition points are at most twice the number of notes, which is what makes the change-point\n  set finite and enumerable.\n- **Adapt:** the note weight defined as the count of minimal segments a note spans rather than its\n  notated duration. This is a live alternative to duration weighting for any evidence term over a span,\n  and the authors report that they tried approaches involving duration, velocity and the highest or\n  lowest note and *\"found that the approach based on minimal segments worked surprisingly well\"*\n  (p. 30); a measurement of the alternatives was not met in the pages as the second reader read them.\n  *(★ This sentence's close was itself brought inside its bound at the user-ordered check of the same\n  day; it had read \"they print no measurement of the alternatives\".)*\n  *(★ CORRECTED 2026-09-20 UNDER THE USER'S RULING. FORMER WORDING, PRESERVED (#12): \"and the authors\n  report choosing it over duration and velocity on measured grounds.\" — a measurement of any\n  alternative was met nowhere in the pages as the second reader read them; p. 30 adds that the choice\n  fits the authors' preference for the simplest approach. The Centrality verdict below, which names\n  the note-weight alternative, is not changed by this note.)*\n- **Must argue against:** the context-free segment content score. The framework's L2 decides\n  segmentation *with* tonality, chord and chord-tone assignment; this paper's decomposition is the\n  boundary case where the segment content score reads nothing but pitch classes, and its authors' own\n  conclusion is that the assumption does not hold well enough to recover the analyst's segmentation.\n- **Must argue against, second:** the two-subtask split itself — label a segment, then search over\n  segmentations using those labels' scores. That is DP-C's *before* rival in its cleanest published form,\n  built by authors who state its limits themselves.\n\n",
+                  "characters_removed": 2111
                 }
               ],
               "★_verified_in_both_directions": "What each filter removed is ABSENT from the rendered text, AND re-inserting exactly what was removed at the offsets it came from reproduces this source byte for byte — so nothing else was taken out.  Both are STOPs, re-run on every render.",
-              "characters": 19434
+              "characters": 28545
             },
             {
               "source": "reading_pass/extracts/temperley-sleator-1999-modeling-meter-and-harmony.md",
@@ -3084,7 +3084,7 @@
           ],
           "leak_checked": false,
           "leak_not_checked_because": "The leak check is ruled over members (5) and (6) — the two this tool GENERATES.  An extra is quoted, and what it may not carry is cut by its own authored filters, which are verified in both directions.",
-          "characters": 76722
+          "characters": 85833
         },
         {
           "member": 9,
