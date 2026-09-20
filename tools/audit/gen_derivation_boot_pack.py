@@ -105,7 +105,21 @@ writer is frozen at an established snapshot, and the freeze is enforced by a has
   `check_all` verifies that subject against its RECORDED DIGESTS instead of against a re-render,
   in both directions -- every recorded file present, every present file recorded, every digest
   equal -- and any mismatch is a STOP rather than a drift line, because a moved frozen file is
-  not staleness to be regenerated away.  The manifest CONTINUES TO CARRY both subjects' entries.
+  not staleness to be regenerated away.  The manifest CONTINUES TO CARRY EVERY FROZEN SUBJECT'S
+  ENTRY.
+  ★ AMENDED 2026-09-20, FORMER WORDING PRESERVED (#12): that last sentence read "The manifest
+  CONTINUES TO CARRY both subjects' entries", which was written when two subjects were frozen and
+  went stale when `l0-l1` was frozen on 2026-09-04.
+
+  AND SINCE 2026-09-20 THE MANIFEST'S RECORD OF A FROZEN SUBJECT DESCRIBES ITS DIRECTORY (user,
+  Ruling 1 of the sitting recorded at handoff entry 220 §3).  Every subject is still BUILT, so
+  every STOP above still runs for every subject; what changes is what the manifest KEEPS of a
+  frozen subject's build.  `frozen_from_disk` re-measures `characters` at the frozen file itself
+  and `files_in_the_pack` by counting the directory, and DROPS the per-span, per-part and
+  per-filter measures, which the directory cannot supply without a re-render.  The figures a
+  re-render WOULD produce are not thrown away: Ruling 2 of the same sitting keeps them PRINTED at
+  `--check` and EXCLUDED FROM THE COMPARISON, so they set no exit code, and no batch condition may
+  be written on that printed text -- a condition over this guard is written on its VERDICT.
 
 THE LEAK CHECK, AND ITS SCOPE, STATED HERE BECAUSE A SCOPE THAT IS NOT STATED READS AS TOTAL.  It
 runs over MEMBERS (5) AND (6) ONLY -- the two members this tool GENERATES rather than quotes.  An
@@ -152,8 +166,10 @@ THE STOPS, so this cannot silently stop being a derivation:
  12. a FROZEN subject whose directory does not hold EXACTLY the recorded files, or one of whose
      files does not carry its recorded digest, STOPS it -- in both directions, so neither an
      added file nor a removed one passes; a FROZEN entry naming a subject this tool does not
-     build STOPS it; and a freeze record missing its finding, its date or its reason STOPS it,
-     on the same demand every other authored input here answers.
+     build STOPS it; a freeze record missing its finding, its date or its reason STOPS it, on the
+     same demand every other authored input here answers; and a FROZEN subject whose directory
+     does not hold a file this tool renders for it STOPS it, because the manifest cannot describe
+     a file that is not there.
 
 THE FOUR RESIDUALS THE EXTENSION CAUSED ARE REPAIRED (user, Ruling 17(c) of
 `cowork_rulings_2026_08_31_decision_surface_sitting.md`).  When the extras dimension landed,
@@ -3805,7 +3821,7 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
     return record, files
 
 
-def build() -> tuple[dict, dict[str, dict[str, str]]]:
+def build() -> tuple[dict, dict[str, dict[str, str]], list[dict]]:
     sort = read_json(SORT)
     if "entries" not in sort:
         raise Stop("the rulings sort artifact carries no `entries`")
@@ -3822,11 +3838,17 @@ def build() -> tuple[dict, dict[str, dict[str, str]]]:
     if orphan_freeze:
         raise Stop(f"FROZEN names subject(s) this tool does not build: {orphan_freeze}")
 
-    subjects, packs = {}, {}
+    # EVERY SUBJECT IS STILL BUILT IN FULL, frozen or not, and that is deliberate: this tool's own
+    # STOPs — an anchor no longer found exactly once, a withheld passage that no longer matches, a
+    # verdict left unpaired — run only because the build runs.  Stopping the build for a spent
+    # subject would leave this tool checking almost nothing, all three subjects being spent.  What
+    # changes for a FROZEN subject is what the manifest KEEPS of that build (Ruling 1, 2026-09-20).
+    subjects, packs, displaced = {}, {}, []
     for subject in sorted(WITHHELD):
         rec, files = build_subject(subject, sort["entries"], backbone)
         if subject in FROZEN:
             rec["★_FROZEN"] = frozen_block(subject)
+            displaced.extend(frozen_from_disk(subject, rec))
         subjects[subject] = rec
         packs[subject] = files
 
@@ -3903,6 +3925,11 @@ def build() -> tuple[dict, dict[str, dict[str, str]]]:
             "the cross-reference additions to the withheld set",
             "the cut of the DESIGN-INTENT class and the leak check over it",
             "every rendered file, byte for byte, and every count",
+            "AND, FOR A FROZEN SUBJECT, ITS MEASURED FIELDS ARE MEASURED AT THE PACK DIRECTORY "
+            "INSTEAD (Ruling 1 of the sitting recorded at handoff entry 220 §3): `characters` at "
+            "the frozen file itself, `files_in_the_pack` by counting that directory, and the "
+            "per-span, per-part and per-filter measures not carried at all. The figures a "
+            "re-render would produce are PRINTED at `--check` and compared against nothing.",
         ],
         "the_STOPS": [
             "an anchor not found exactly once in its file",
@@ -3928,8 +3955,9 @@ def build() -> tuple[dict, dict[str, dict[str, str]]]:
             "members",
             "a FROZEN subject whose directory does not hold EXACTLY the recorded files, or one "
             "of whose files does not carry its recorded blob digest — checked in both "
-            "directions; a FROZEN entry naming a subject this tool does not build; and a freeze "
-            "record missing its finding, its date or its reason",
+            "directions; a FROZEN entry naming a subject this tool does not build; a freeze "
+            "record missing its finding, its date or its reason; and a FROZEN subject whose "
+            "directory does not hold a file this tool renders for it",
         ],
         # DERIVED PER SUBJECT (Ruling 17(c)), from the members actually rendered for it, so this
         # field can no longer name six files over a directory of ten.  It is derived from the
@@ -3941,7 +3969,7 @@ def build() -> tuple[dict, dict[str, dict[str, str]]]:
         },
         "subjects": subjects,
     }
-    return manifest, packs
+    return manifest, packs, displaced
 
 
 def pack_dir(subject: str) -> str:
@@ -4011,11 +4039,20 @@ def frozen_block(subject: str) -> dict:
             "digests below and the freeze is enforced by a hash STOP at `--check`, in both "
             "directions. `write_all` writes nothing into its directory."),
         "★_so_read_the_member_records_below_with_this_in_mind": (
-            "They are built from the sources AS THEY STAND TODAY, because every subject is built "
-            "the same way and the ruling keeps this subject's entry. Where a member's sources "
-            "have grown since the pack was rendered, the record's counts describe what WOULD be "
-            "rendered and NOT what the frozen directory holds. THE DIGESTS ARE THE AUTHORITY ON "
-            "WHAT THE DIRECTORY HOLDS."),
+            "Their MEASURED fields describe THIS DIRECTORY. `characters` on each member record is "
+            "the length of the file the freeze pins, measured at that file. The per-span, "
+            "per-part and per-filter measures are not carried at all, the directory holding the "
+            "joined file and not its parts. What stands beside them — which source, which "
+            "anchors, what was cut and why — is this tool's own authored constant, not a "
+            "measurement. THE DIGESTS REMAIN THE AUTHORITY ON WHAT THE DIRECTORY HOLDS."),
+        "★_the_former_wording_of_the_clause_above_PRESERVED_12": (
+            "SUPERSEDED 2026-09-20 by Ruling 1 of the sitting recorded at handoff entry 220 §3, "
+            "which made it false of this record. IT READ: \"They are built from the sources AS "
+            "THEY STAND TODAY, because every subject is built the same way and the ruling keeps "
+            "this subject's entry. Where a member's sources have grown since the pack was "
+            "rendered, the record's counts describe what WOULD be rendered and NOT what the "
+            "frozen directory holds. THE DIGESTS ARE THE AUTHORITY ON WHAT THE DIRECTORY "
+            "HOLDS.\""),
         "finding": rec["finding"],
         "date": rec["date"],
         "reason": rec["reason"],
@@ -4024,6 +4061,76 @@ def frozen_block(subject: str) -> dict:
             "The git blob hash of each file's own bytes — `git hash-object <file>` reproduces "
             "every value, so the freeze can be confirmed without trusting this generator (#19)."),
     }
+
+
+def frozen_from_disk(subject: str, rec: dict) -> list[dict]:
+    """Re-point a FROZEN subject's MEASURED fields at its pack directory, and return what that displaced.
+
+    Ruling 1 of the sitting recorded at handoff entry 220 §3: for a frozen subject the manifest
+    DESCRIBES THE DIRECTORY, never a re-render.  The subject goes on being BUILT — every STOP this
+    tool carries runs over the live sources for every subject — and what changes is only what the
+    manifest KEEPS of that build.
+
+    What is re-measured, what is dropped, and why the two differ:
+
+      * `characters` on a member record IS recoverable from the directory, the pack holding exactly
+        one file per member, so it is MEASURED AT THAT FILE and keeps its name.
+      * a per-SPAN `lines_rendered`, a per-PART `characters`, and a filter's record of the text it
+        removed are NOT recoverable from the directory: the pack holds the joined file and not its
+        parts, so recovering them would mean re-rendering, which is the act this ruling removed.
+        They are DROPPED rather than carried, because a figure describing what WOULD be rendered
+        describes nothing this directory holds.  The AUTHORED structure beside them — which source,
+        which anchors, what was cut and why — stays: it is this tool's own constant.
+      * members (5) and (6) count what today's inputs yield, so their counts are dropped on that
+        same ground.
+
+    Returns the displaced per-file figures.  Ruling 2 keeps them: they are NOT written into the
+    manifest, and `check_all` PRINTS them, where they set no exit code.
+    """
+    d = pack_dir(subject)
+    displaced: list[dict] = []
+    for r in rec["the_members_as_rendered"]:
+        p = os.path.join(d, r["file"])
+        if not os.path.exists(p):
+            raise Stop(f"{subject} is FROZEN and its directory does not hold {r['file']}, which "
+                       f"this tool renders for it — the manifest cannot describe a file that is "
+                       f"not there")
+        # `newline=""` so that no line ending is translated on the way in: `write_all` wrote these
+        # files with `newline=""` too, so this is the length of the file AS IT STANDS, which is
+        # what "the directory holds" has to mean if the figure is to be checkable from outside.
+        in_the_directory = len(open(p, encoding="utf-8", newline="").read())
+        displaced.append({
+            "subject": subject,
+            "file": r["file"],
+            "characters_in_the_directory": in_the_directory,
+            "characters_a_re_render_would_produce": r["characters"],
+        })
+        r["characters"] = in_the_directory
+        for s in r.get("spans", []):
+            s.pop("lines_rendered", None)
+        for part in r.get("parts", []):
+            part.pop("characters", None)
+            for s in part.get("spans", []):
+                s.pop("lines_rendered", None)
+            for f in part.get("filters_applied", []):
+                for k in ("the_text_removed", "characters_removed", "heading", "closes_before"):
+                    f.pop(k, None)
+        for k in ("entries_rendered", "rows_rendered", "columns_kept"):
+            r.pop(k, None)
+        r["★_where_this_record's_measures_COME_FROM"] = (
+            "`characters` is the length of this file AS THE PACK DIRECTORY HOLDS IT, measured at "
+            "the frozen file itself and never at a re-render. The per-span, per-part and "
+            "per-filter measures are NOT CARRIED AT ALL: the directory holds the joined file and "
+            "not its parts, so they could come only from a re-render, and a figure describing what "
+            "WOULD be rendered describes nothing this pack holds. The sources, the anchors, the "
+            "filters and their reasons stay — they are this tool's own authored constants.")
+    rec["counted"]["files_in_the_pack"] = len(
+        [n for n in os.listdir(d) if os.path.isfile(os.path.join(d, n))])
+    rec["counted"]["★_which_of_these_counts_describe_the_DIRECTORY"] = (
+        "`files_in_the_pack` is COUNTED IN THE PACK DIRECTORY. The other counts here are over this "
+        "tool's authored tables and over the candidate derivation against today's inputs; they are "
+        "NOT measurements of the frozen files and are not offered as any.")
+    return displaced
 
 
 def write_all(manifest: dict, packs: dict, only: str | None) -> None:
@@ -4043,7 +4150,27 @@ def write_all(manifest: dict, packs: dict, only: str | None) -> None:
                 fh.write(text)
 
 
-def check_all(manifest: dict, packs: dict) -> int:
+def check_all(manifest: dict, packs: dict, displaced: list[dict]) -> int:
+    # RULING 2 of the sitting recorded at handoff entry 220 §3: the drift a frozen subject's
+    # sources have accumulated is PRINTED and never COMPARED.  It joins no drift list, it reaches
+    # no exit code, and NO BATCH CONDITION MAY BE WRITTEN ON THIS TEXT — a condition over this
+    # guard belongs on its VERDICT, because these lines move whenever a source moves and an
+    # equality over them would stop a batch for a green guard (entry 220 §4 item 4).
+    #
+    # THE SCOPE OF WHAT IS PRINTED, stated because a scope that is not stated reads as total: one
+    # line per frozen pack FILE whose re-render length differs from the length on disk.  The
+    # per-span, per-part and per-filter figures the manifest no longer carries are computed on
+    # every run, by the ordinary build, and are not printed — printing every one of them would
+    # bury the file-level difference this line exists to show.
+    moved = [m for m in displaced
+             if m["characters_in_the_directory"] != m["characters_a_re_render_would_produce"]]
+    print(f"FROZEN SOURCES: {len(moved)} of {len(displaced)} frozen pack file(s) would render at a "
+          f"different length from the sources as they stand today. NOT COMPARED; sets no exit "
+          f"code.")
+    for m in sorted(moved, key=lambda x: (x["subject"], x["file"])):
+        print(f"  - {m['subject']}/{m['file']}: the directory holds "
+              f"{m['characters_in_the_directory']} characters; today's sources would render "
+              f"{m['characters_a_re_render_would_produce']}")
     drift: list[str] = []
     frozen_checked: dict[str, dict] = {}
     want = json.dumps(manifest, indent=2, ensure_ascii=False) + "\n"
@@ -4086,12 +4213,12 @@ def main(argv: list[str]) -> int:
     ap.add_argument("--check", action="store_true", help="re-render and compare, exit 1 on drift")
     args = ap.parse_args(argv)
 
-    manifest, packs = build()
+    manifest, packs, displaced = build()
     if args.subject and args.subject not in packs:
         raise Stop(f"no authored subject {args.subject!r}")
 
     if args.check:
-        return check_all(manifest, packs)
+        return check_all(manifest, packs, displaced)
 
     write_all(manifest, packs, args.subject)
     print(f"wrote {os.path.relpath(OUT, ROOT)}")
