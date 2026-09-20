@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_backup_second_commit_and_push_2026_09_19.md, Task 3",
+ "dispatch": "cc_instruction_framework_dp_c_correction_second_2026_09_20.md, Task 4",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -345,22 +345,28 @@
    "base_commit": "3887c38c063cb8f29386757338908cf45ca5b5f1",
    "the_then_previous_batch": "cc_instruction_passage_guards_historical_resume_2026_09_17.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_framework_dp_c_correction_second_2026_09_20.md, Task 4",
+   "base_commit": "bfc1348c3bccfadd5b210c84c49d3c6ac6560d3e",
+   "the_then_previous_batch": "cc_instruction_backup_second_commit_and_push_2026_09_19.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "3887c38c063cb8f29386757338908cf45ca5b5f1",
- "the_then_previous_batch": "cc_instruction_passage_guards_historical_resume_2026_09_17.md",
+ "base_commit": "bfc1348c3bccfadd5b210c84c49d3c6ac6560d3e",
+ "the_then_previous_batch": "cc_instruction_backup_second_commit_and_push_2026_09_19.md",
  "the_kind_of_move": "ordinary",
  "entries_moved": 1,
- "characters_moved": 2678,
+ "characters_moved": 1651,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2678,
-   "sha256": "4759f7a207e76fca52a58702cf56f24cce6cb17e7f9b76da39f8839d54a1ecc3",
+   "characters": 1651,
+   "sha256": "880061a3986186764cbe812d995fcc6132bc4e63e538804711e366be17497374",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-09-17 (CC — `records/cc/instructions/cc_instruction_passage_guards_historical_2026_09_17.md` and its resume `records/cc/instructions/cc_instruct"
+   "opening": "*2026-09-19 (CC — `records/cc/instructions/cc_instruction_backup_second_commit_and_push_2026_09_19.md`, Task 3, the close. **★★ A BACKUP COMMIT OF REC"
   }
  ],
  "reconciliation": {
