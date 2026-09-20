@@ -391,7 +391,30 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # **The second writing's two nameless 2026-09-02 entries remain in `STATUS.md` and no aiming of this
 # tool can identify them**, as the row for the third writing below records; that is a declared state
 # and not a STOP, and it is unchanged by this act.
-BASE_COMMIT = "bfc1348c3bccfadd5b210c84c49d3c6ac6560d3e"
+#
+# ★★★★★★★★★★★★★★★★★★★★★ RE-AIMED AGAIN 2026-09-20 by
+# `cc_instruction_backup_third_commit_and_push_2026_09_20.md` Task 3 — the close — and ALL SIX
+# authored inputs moved together, `PREVIOUS_AIMINGS` being appended to rather than replaced (#12)
+# and `MOVE_KIND` being re-aimed to the same value it already carried, which is the value this move
+# takes. This is an ORDINARY move: the forward clause performed on this batch itself, in the same
+# act that writes its own entry. The aiming it replaces is the DP-C correction's, which RAN and is
+# ALREADY the last row of `PREVIOUS_AIMINGS`, recorded there by that batch in the act that made it;
+# it is therefore NOT appended a second time, and this batch's own aiming is appended instead, so
+# the list still holds every aiming exactly once — and the executing dispatch orders exactly that,
+# in those words, rather than leaving it to be read off the convention. `BASE_COMMIT` is this
+# batch's TASK COMMIT — the backup commit of record files by explicit path — per this tool's
+# docstring; the then-previous batch is the DP-C correction, whose close entry names its dispatch
+# and below which no entry says `Same dispatch`. **NO COUNT OF THE ENTRIES EXPECTED TO MOVE IS
+# WRITTEN HERE**, on the reason the authored-ends re-aiming states in its own words: the membership
+# is DERIVED from the entries' own text at the base commit (D-431).
+#
+# **THE DECLARED PREFIX ADJUSTMENT IS EXPECTED TO FIRE**, the DP-C correction's entry carrying the
+# prefix at the base commit, which is why this batch's own entry was written into `STATUS.md` BEFORE
+# `--apply` ran. `ACT_DATE` and the executing dispatch's date AGREE here, both being 2026-09-20.
+# **The second writing's two nameless 2026-09-02 entries remain in `STATUS.md` and no aiming of this
+# tool can identify them**, as the row for the third writing below records; that is a declared state
+# and not a STOP — the executing dispatch says so in its own words — and it is unchanged by this act.
+BASE_COMMIT = "4d248dd096f0960021e622160a962d48476b8eb5"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -401,7 +424,7 @@ BASE_COMMIT = "bfc1348c3bccfadd5b210c84c49d3c6ac6560d3e"
 # 4's forward bound moves exactly these, in the act that writes this batch's own" until 2026-09-07,
 # correct while every aiming this tool had ever carried was an ordinary one; it is widened rather
 # than replaced, because the ordinary reading is still the one that governs an ordinary move — #12.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_backup_second_commit_and_push_2026_09_19.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_framework_dp_c_correction_second_2026_09_20.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -412,7 +435,7 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_backup_second_commit_and_push_2026_09_
 # inferred. On a CATCH-UP move the dates of the closes that omitted the move are NOT the act date:
 # the move happens now, and the header says so.)*
 ACT_DATE = "2026-09-20"
-DISPATCH = "cc_instruction_framework_dp_c_correction_second_2026_09_20.md"
+DISPATCH = "cc_instruction_backup_third_commit_and_push_2026_09_20.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -441,8 +464,11 @@ DISPATCH = "cc_instruction_framework_dp_c_correction_second_2026_09_20.md"
 # executing act, that dispatch ordering this batch's own entry and its one move inside its own
 # Task 3. It names Task 4 while `cc_instruction_framework_dp_c_correction_second_2026_09_20.md` is
 # the executing act, that dispatch ordering both halves of the close — this batch's own entry and
-# this move — inside its own Task 4.)*
-TASK = "Task 4"
+# this move — inside its own Task 4. It names Task 3 again while
+# `cc_instruction_backup_third_commit_and_push_2026_09_20.md` is the executing act, that dispatch
+# ordering this batch's own entry at its Task 3 step 1 and this move at its Task 3 step 2, both
+# inside its own Task 3.)*
+TASK = "Task 3"
 # ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
 #   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
 #                 moved in the same act that writes this batch's own entries.
@@ -786,6 +812,15 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_framework_dp_c_correction_second_2026_09_20.md, Task 4",
      "base_commit": "bfc1348c3bccfadd5b210c84c49d3c6ac6560d3e",
      "the_then_previous_batch": "cc_instruction_backup_second_commit_and_push_2026_09_19.md",
+     "the_kind_of_move": "ordinary"},
+    # ★ THIS BATCH'S OWN AIMING, 2026-09-20 — the third backup's close, an ORDINARY move on the
+    # shape the rows above set, and recorded here in the same act that makes it. The aiming it
+    # replaces is the row immediately above, which that batch recorded in its own act, so it is not
+    # appended a second time; the executing dispatch orders that reading in its own words rather
+    # than leaving it to the convention.
+    {"executing_act": "cc_instruction_backup_third_commit_and_push_2026_09_20.md, Task 3",
+     "base_commit": "4d248dd096f0960021e622160a962d48476b8eb5",
+     "the_then_previous_batch": "cc_instruction_framework_dp_c_correction_second_2026_09_20.md",
      "the_kind_of_move": "ordinary"},
 ]
 
