@@ -2918,7 +2918,7 @@
                   "kind": "heading-to-heading",
                   "opens_at": "## 9. Architecture decisions",
                   "closes_before": "## 10. Quality and testing",
-                  "lines_rendered": 197
+                  "lines_rendered": 240
                 }
               ],
               "filters_applied": [
@@ -2951,12 +2951,12 @@
                 }
               ],
               "★_verified_in_both_directions": "What each filter removed is ABSENT from the rendered text, AND re-inserting exactly what was removed at the offsets it came from reproduces this source byte for byte — so nothing else was taken out.  Both are STOPs, re-run on every render.",
-              "characters": 29122
+              "characters": 33066
             }
           ],
           "leak_checked": false,
           "leak_not_checked_because": "The leak check is ruled over members (5) and (6) — the two this tool GENERATES.  An extra is quoted, and what it may not carry is cut by its own authored filters, which are verified in both directions.",
-          "characters": 29123
+          "characters": 33067
         },
         {
           "member": 8,

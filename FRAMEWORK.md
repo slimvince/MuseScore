@@ -696,9 +696,52 @@ segmental model beating event-level tagging by 7.6 to 38.2 points of segment F-m
 21.3 to 31.5 on another; the joint segmentation component the single largest contributor in a third
 system's ablation; and the formal result that letting segment length be a decoded variable buys the
 expressive power of a high-order model at linear rather than exponential inference cost. [FACT — each
-reported by the work named.] One further measurement is worth carrying: with perfect tie-breaking
-between equally-scoring labels, one published segment-then-label system would still remove only 26% of
-its errors — the rest needs tonal context and voice leading its decomposition does not admit. [FACT.]
+reported by the work named.] One further measurement is worth carrying, and the conditions it was
+made under carry with it. In one published segment-then-label system, whose chord naming considers
+harmonic context only through a single tie-breaking rule for the resolution of diminished seventh
+chords, the segmentation for the labeling experiment was taken from the positions of the chord
+labels in the answer key, and every labeling error on every excerpt of the corpus was then examined
+and classified, to understand what error remains when full tie breaking is enabled. The authors
+report that perfect tie-breaking between equally-scoring labels would eliminate three of those error
+classes — 26% of the errors — and they call that the maximum improvement improved tie-breaking can
+give. For the rest they name a different cause or a different remedy class by class: an incomplete
+chord identifiable only through tonal function in context (12% of the errors); a class they say
+might perhaps be resolved through a deep understanding of structural voice leading, whose passages
+they expect would probably coincide with disagreement among human analysts (15%); beat information
+added to the note weights for two classes (23% and 6%), with heavily syncopated music still a
+problem; a two-pass system over the chord names for one idiomatic sequence (6%); and the answer key
+itself, or timing variation in the performed MIDI file, for two more (6% and 5%). They add that
+knowledge of adjacent chord labels might be used to adjust the chord-label weights, and that this
+would make the calculation of chord labels much more difficult, because the weights across a piece
+would then influence one another. [FACT — Pardo and Birmingham 2002, pp. 31–35; each class
+percentage is the value printed in Figure 8, in small numerals.]
+
+**★ NARROWED HERE 2026-09-20 ON THE USER'S RULING, WITH THE FORMER WORDING PRESERVED IN PLACE (#12.)**
+The ruling is recorded at `records/cowork/handoff/cowork_handoff_entry_two_hundred_and_seven.md` §1
+item 4 — the user's words, *"I agree: A"* — taken on the self-contained surface that entry's §1 item
+2 sets out, whose three alternatives were: narrow the sentence in place to what the authors report
+(A); keep the 26% and delete the second half (B); strike the whole sentence (C). **No separate
+rulings record was written for this ruling** — at a listing of `records/cowork/rulings/` on
+2026-09-20, no file name there carries a date after 2026-09-11 — so the handoff entry is the record
+this note cites; whether a rulings record is owed for it is not settled here. **THE FORMER WORDING
+WAS:** *"One further measurement is worth carrying: with perfect tie-breaking between
+equally-scoring labels, one published segment-then-label system would still remove only 26% of its
+errors — the rest needs tonal context and voice leading its decomposition does not admit. [FACT.]"*
+*Why it was narrowed:* the source's second independent extraction,
+`reading_pass/extracts_second_pass/pardo-birmingham-2002-algorithms-for-chordal-analysis.md`, bears
+on it in two places. **First, the attribution was too wide** (that extract's §9.4 item 2): of the
+seven error classes the 26% does not cover, the authors attribute two to tonal context and to
+structural voice leading, and for the other five they name beat information, a two-pass relabeling,
+the answer key itself and performed timing. **Second, the measurement's own conditions were absent**
+(that extract's §5.1, which records the segmentation as taken from the answer key): the errors were
+counted under given boundaries, so the figure bears on labeling and not on what a segmenter of that
+design produces — which is the question this design point decides. **The replacement text was
+checked at the paper's printed pages 31–35, at the page images, by the writing side on 2026-09-20**,
+on the user's ruling of that date that the check be made there, recorded at
+`records/cowork/handoff/cowork_handoff_entry_two_hundred_and_nine.md` §2. **DP-C is not reopened
+and its choice is unchanged:** its stated grounds are the ledger's **C27**, three measurements and
+one formal result, and this sentence stands, then as now, as a further measurement worth carrying
+rather than as a ground.
 
 **DP-D — Where does the chord-tone assignment live?**
 *Candidates:* an input, from an elaboration detector running first (published; F .72); a layer of its
