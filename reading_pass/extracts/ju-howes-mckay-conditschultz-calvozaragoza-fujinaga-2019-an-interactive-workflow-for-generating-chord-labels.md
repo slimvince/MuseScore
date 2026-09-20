@@ -16,6 +16,25 @@
 > **How this extract was made.** Every repository file was read with the file tools over a bridge-staged
 > copy; the PDF was read as page images the same way. No shell command touched a repository path in any
 > dialect (D-253). No WebSearch, no WebFetch, no subagent, no widget.
+>
+> **★ NOTE ADDED 2026-09-19, AFTER THE SECOND INDEPENDENT EXTRACTION'S CROSS-CHECK.** The second extract
+> (`reading_pass/extracts_second_pass/`, same file name) lists at its §9.3 where the page goes against
+> this file. **Six quotation sites that touch no value, finding or verdict are corrected below under the
+> standing rule the user ruled on 2026-09-19** (handoff entry 198 §7), each with a "★ CORRECTED
+> 2026-09-19" remark outside the quotation and the former wording preserved (#12). **Four further sites
+> touch a value or stand inside a numbered finding and are NOT corrected by that act; they stand with the
+> user** and are listed at the second extract's §9.4: Table 1's SVM CA1 cell under PC12W1/2 with finding
+> (5)'s difference derived from it, a quotation inside finding (3), finding (10), and a quotation inside
+> finding (12).
+>
+> **★ AND THOSE FOUR WERE THEN RULED, 2026-09-19, the user's words: "I agree with recommendation."** The
+> recommendation was: correct the table cell, finding (5)'s difference and the two quotations at their
+> sites with the former wording preserved, and withdraw finding (10) with its first writing kept whole
+> beneath the withdrawal. **Done at those sites, each marked "★ CORRECTED 2026-09-19 (RULED)" or "★
+> WITHDRAWN 2026-09-19 (RULED)".** The sentence above that the four *"are NOT corrected"* and *"stand
+> with the user"* was true when written and is left standing (#12). **The ground for each is the second
+> read of the page images** (second extract §9.4); both reads are a language model's reads of rendered
+> pages, and whether the user looked at the two pages before ruling is not known to the writing side.
 
 ## Identity — a PREFIX title match BY CONSTRUCTION, six printed authors where the row names one and *et al.*, and a printed CC BY 4.0 that the CC tier AGREES with
 
@@ -109,7 +128,7 @@ the consistency of rule-based models with the nuance of manual analysis to gener
 inexpensive high-quality ground truth for training effective machine learning models."*
 
 **[FACT — the four workflow steps, §1, transcribed because they ARE the method.]** *"1. To solve the
-problem of analytical inconsistency, we use an existing, consistent RB model [4] to generate
+problem of analytical inconsistency, we use an existing RB model [4] to generate
 preliminary, consistent chord labels according to a particular analytical style. 2. These analyses are
 used to pre-train three ML models, which together with the RB model form an algorithm ensemble, where
 each model within the ensemble labels all the chords. The most-preferred chord labels are then output as
@@ -120,7 +139,10 @@ expert is significantly reduced. The first three steps of this workflow are show
 4. Once the expert's corrections are obtained (Analysis 2), we re-train the ML models. The most-preferred
 chord labels from the new ensemble are chosen as the final chord labels (Analysis 3), which is shown in
 Part 2 of Fig. 2. This paradigm of manually modifying the generated data and re-training the ML models is
-known as "interactive machine learning" [1,7]."* Footnote 3: *"If there is a tie, prefer the label for
+known as "interactive machine learning" [1,7]."* *(★ CORRECTED 2026-09-19, second extract §9.3(a). FORMER
+WORDING, PRESERVED (#12): step 1 read "we use an existing, consistent RB model [4]" — page 2 prints "we
+use an existing RB model [4]"; the word "consistent" stands once in that sentence, before "chord
+labels".)* Footnote 3: *"If there is a tie, prefer the label for
 which the rule-based algorithm voted."* And §1's own scope sentence: *"This workflow is not limited to
 Bach chorales. With an adapted RB model (Model 4 in Fig. 2), it can easily be applied to other genres of
 music in a fully automatic way (ending with Analysis 1) or interactively if an expert analyst is
@@ -147,7 +169,9 @@ slice is formed whenever a new note onset occurs in any musical voice, and consi
 pitch classes sounding at that moment."* Figure 4's caption: *"Illustration of note onset slices, aligned
 with chord labels. An onset slice is created whenever a new note onset occurs in any musical voice
 (middle). Any note sustained from a previous slice becomes an "artificial onset" in the new slice (right,
-circled)."* **So the grid is ONSET-ONLY — a release opens no slice — and the slice's content is the
+circled)."* *(★ CORRECTED 2026-09-19, second extract §9.3(b) — a remark and no change of wording: in both
+quotations above the page prints the word "any" in italics, which these transcriptions do not show.)*
+**So the grid is ONSET-ONLY — a release opens no slice — and the slice's content is the
 sounding set, with the struck-versus-sustained distinction carried as a separate feature rather than by
 the grid.**
 
@@ -219,12 +243,16 @@ Columns indicate features (see Section 2.2) and rows indicate machine learning a
 
 | Model | Metric | PC12 | PC12M | PC12W1/2 | PC12MW1/2 | PC12MOW1/2 |
 |---|---|---|---|---|---|---|
-| SVM | CA1 | **81.7±1.4** | 81.6±1.4 | 82.0±1.0 | 83.0±1.0 | 83.5±0.9 |
+| SVM | CA1 | **81.7±1.4** | 81.6±1.4 | 82.7±1.0 | 83.0±1.0 | 83.5±0.9 |
 | SVM | CA2 | 73.0±1.5 | 73.1±1.6 | 85.4±1.3 | 86.1±1.5 | 87.4±1.5 |
 | SVM | CA3 | 74.9±1.6 | 75.6±1.5 | 85.4±1.3 | 85.9±1.3 | 87.7±1.5 |
 | DNN | CA1 | 81.0±1.5 | **81.7±1.5** | 85.3±0.9 | 85.6±0.9 | 85.8±0.9 |
 | DNN | CA2 | 74.2±1.8 | 75.1±1.6 | **88.5±1.3** | **89.6±1.3** | **90.1±1.5** |
 | DNN | CA3 | 74.6±1.8 | 75.3±1.4 | 87.5±1.7 | 88.3±1.7 | 89.0±2.0 |
+
+*(★ CORRECTED 2026-09-19 (RULED), second extract §9.4(g). FORMER VALUE, PRESERVED (#12): the SVM CA1 cell
+under PC12W1/2 read "82.0±1.0"; the second read met 82.7±1.0 at three openings of page 5. No other cell
+changed.)*
 
 *(The bold cells are as printed: the column best. The paper prints CA1's bold at SVM/PC12 and DNN/PC12M
 and the remaining three columns' bold at DNN/CA2.)*
@@ -236,8 +264,10 @@ Wn) improved the performances of Model 2 and Model 3 significantly.⁹ This refl
 theoretical understanding that, in cases of ambiguous harmony (e.g., an incomplete chord), a chord's
 immediate context is essential to label it properly. It is important to note that these Experiment 1
 findings are based on imperfect ground truth (see Section 3.1), and so must be interpreted more as
-preliminary indications rather than confirmed truth. Experiment 2 was performed in order to obtain more
-empirically meaningful results."* Footnote 9: *"p<0.05 in Students' t-tests comparing all Model 2 and 3
+preliminary indications rather than as confirmed truth. Experiment 2 was performed in order to obtain more
+empirically meaningful results."* *(★ CORRECTED 2026-09-19, second extract §9.3(c). FORMER WORDING,
+PRESERVED (#12): "rather than confirmed truth" — page 4 prints "rather than as confirmed truth". The same
+words quoted inside finding (3) are NOT corrected by this act; they stand with the user.)* Footnote 9: *"p<0.05 in Students' t-tests comparing all Model 2 and 3
 accuracies for PC12 and PC12M with those of PC12W1/2 and PC12MW1/2."*
 
 **[FACT — Experiment 2's protocol, §3.3 and §3.3.1.]** *"Experiment 2 compared the performance of the
@@ -257,10 +287,12 @@ pre-trained models, and then the re-trained models."*
 trained using different training/validation sets, and uncertainty values indicate standard error across
 these folds. Values indicate how many onset slices were correctly classified by Model 1 (CA1), Model 2
 (CA2), Model 3 (CA3), Model 4 (CA4), the ensemble as a whole (CAVote), and just those CAVote predictions
-that were unanimous (PUA). "PC12MOW1/2" indicates the input features (see Section 2.2). "Pre-trained"
+that were unanimous (PUA). "PC12MOW1/2" indicates the input features (see Section 2.2. "Pre-trained"
 indicates performance before manual correction (i.e., Analysis 1 in Fig. 2), and "Re-trained" indicates
 performance after re-training on the corrected data (i.e., Analysis 3 in Fig. 2). The best performance
-in each column is highlighted in bold."*
+in each column is highlighted in bold."* *(★ CORRECTED 2026-09-19, second extract §9.3(d). FORMER WORDING,
+PRESERVED (#12): "(see Section 2.2)." — page 5 prints no closing parenthesis there: "(see Section 2.2.
+"Pre-trained" indicates…".)*
 
 | Model | Metric | PC12MOW1/2 Pre-trained | PC12MOW1/2 Re-trained |
 |---|---|---|---|
@@ -276,7 +308,9 @@ in each column is highlighted in bold."*
 | DNN | PUA | 80.4±1.2% | 79.7±0.4% |
 | RB | CA4 | 90.7% (one value spanning both columns) | |
 
-**[FACT — Experiment 2's own reading, §3.3.2.]** *"One can see from Table 2 that the original RB
+**[FACT — Experiment 2's own reading, §3.3.2.]** *(★ CORRECTED 2026-09-19, second extract §9.3(e). FORMER
+WORDING, PRESERVED (#12): "One can see from Table 2" — page 5 prints "One can see in Table 2".)* *"One can
+see in Table 2 that the original RB
 algorithm (Model 4 in Fig. 2) attains a chord accuracy of 90.7%, which serves as our baseline. The
 highest accuracy obtained by the pre-trained ensemble is 91.4%, using PC12MOW1/2, SVM classifiers, and
 voting. This (pre-trained) performance is achieved without any expert human intervention. It is of
@@ -329,13 +363,15 @@ versatile interactive workflow for generating chord labels for homorhythmic musi
 fully automatic way or, with a relatively small amount of effort from an expert human analyst who corrects
 a small, automatically selected fraction of the generated analyses, a re-trained classifier ensemble can be
 produced that performs even better."* And the limitations: *"There are currently a few limitations to our
-research. First, music21's automatic key-finding might not be ideal for our dataset (early tonal music),
+research. First, music21's automatic key-finding may not be ideal for our dataset (early tonal music),
 and may have resulted in reduced performance due to faulty transpositions. Instead of transposing all
 chorales to the same key, a better, but more complicated solution would be to augment our data by
 transposing all chorales to all 12 possible keys. Second, the RB model can be improved to include chords
 of other qualities (e.g., augmented-sixth chords). Finally, the ground-truth annotations were prepared by
 a single expert annotator, and it would be better to repeat this process using annotations from multiple
-experts."* And the future work: *"An important next step will be to test this workflow using other
+experts."* *(★ CORRECTED 2026-09-19, second extract §9.3(f). FORMER WORDING, PRESERVED (#12): "might not be
+ideal" — page 6 prints "may not be ideal". The same words quoted inside finding (12) are NOT corrected by
+this act; they stand with the user.)* And the future work: *"An important next step will be to test this workflow using other
 analytical styles (e.g., the "melodic" style), which can be done simply by specifying different heuristics
 in the RB model. We also plan to tackle the larger category of homophonic music, which includes any music
 with a primary melodic line accompanied by harmonic support. A greater variety of homophonic textures poses
@@ -524,7 +560,8 @@ three totals are derived here at the table.**
 with Model 3 anywhere in the paper** — the three footnoted t-test families test the contextual window, the
 before-and-after of re-training, and the vote against the single models, and none of them tests this pair.
 Experiment 1's figures rest on ground truth the paper itself calls imperfect and says must be read *"more
-as preliminary indications rather than confirmed truth"*. And **neither model is DP-D's CHOSEN answer**:
+as preliminary indications rather than as confirmed truth"* *(★ CORRECTED 2026-09-19 (RULED), second
+extract §9.4(i). FORMER WORDING, PRESERVED (#12): "rather than confirmed truth")*. And **neither model is DP-D's CHOSEN answer**:
 Model 2 decides the chord-tone assignment before the chord, Model 3 decides it not at all and publishes
 none, while DP-D's chosen answer publishes the assignment **out of** the one decision. **So this measures
 DP-D's two RIVALS against each other and does not measure the chosen point.**
@@ -576,8 +613,10 @@ are appended. **The window is not one slice each side for every head, and the pa
 MLA and MLC — the non-chord-tone remover and the direct chord labeller — and **n = 2 for MLB**, the chord
 labeller inside Model 2, which therefore sees two slices on each side. The SVM family moves the same way
 and further — Model 2 from 73.0±1.5 to 85.4±1.3, Model 3 from 74.9±1.6 to 85.4±1.3. **Model 1 moves much
-less, and not equally in the two families** (SVM 81.7±1.4 → 82.0±1.0, +0.3; DNN 81.0±1.5 → 85.3±0.9, +4.3 —
-both derived here by subtraction), which is itself a datum: Model 1's chord labelling is a heuristic over
+less, and not equally in the two families** (SVM 81.7±1.4 → 82.7±1.0, +1.0; DNN 81.0±1.5 → 85.3±0.9, +4.3 —
+both derived here by subtraction) *(★ CORRECTED 2026-09-19 (RULED), second extract §9.4(g). FORMER WORDING,
+PRESERVED (#12): "SVM 81.7±1.4 → 82.0±1.0, +0.3" — it follows the table cell corrected above. The sentence
+it stands in holds with either value.)*, which is itself a datum: Model 1's chord labelling is a heuristic over
 the chord tones left after removal, so only its detector consumes the window. The authors' own reading, §3.2.2: *"the addition of a small contextual window
 (feature Wn) improved the performances of Model 2 and Model 3 significantly. This reflects the general
 music theoretical understanding that, in cases of ambiguous harmony (e.g., an incomplete chord), a chord's
@@ -657,6 +696,18 @@ three percentages reconstruct only across families either way. **This is a preci
 about the record**, no ratified text resting on any of these values; it is recorded because finding (3) and
 finding (4) both quote figures from this table and a later reader must know which column each comes from.
 
+**(10) ★ WITHDRAWN 2026-09-19 (RULED), second extract §9.4(h).** The second read met Figure 3's caption, at
+two openings of page 4, as *"…the latter first identifies and removes non-chord tones from the score, and
+then generates chord labels from the remaining chord tones."* **As so read the caption agrees with the
+diagram's own label and with Figure 2's caption, and there is no printing inconsistency to record.** The
+user ruled the withdrawal on 2026-09-19 (*"I agree with recommendation"*). The ground is one language
+model's read of the page image against another's; the place to look is printed page 865, the last
+sentence of Figure 3's caption. **The second reader met nothing else in this file that rests on this finding** (a whole read, and a search
+for *"finding (10)"* that returned the banner's remark alone) — its own last
+sentence says every use of the NCT-first paradigm here rests on §2.4 and Figure 2's caption. The banner's
+sentence that page 4 was opened again to check the caption, and the two later sections' mentions of it,
+are accounts of what was done and are left as written. **THE FIRST WRITING, KEPT WHOLE (#12):**
+
 **(10) ONE PRINTING INCONSISTENCY, RECORDED AS PRINTED AND RECONCILED NOWHERE.** **Figure 3's caption**
 (page 4, opened a second time on its own to check this) reads: *"The former identifies chords directly from
 the score, while the latter first identifies and removes **chord tones** from the score, and then generates
@@ -685,7 +736,8 @@ routed to the L1 charter's *sounding note set* wording as a datum only.
 
 **(12) A TONALITY IS CONSUMED BY PREPROCESSING AND DECIDED NOWHERE — and the paper names that step as a
 source of its own error.** §2.1 transposes every chorale and its labels to C major or A minor by music21's
-Aarden-Essen key finder; §5 states *"music21's automatic key-finding might not be ideal for our dataset
+Aarden-Essen key finder; §5 states *(★ CORRECTED 2026-09-19 (RULED), second extract §9.4(j). FORMER
+WORDING, PRESERVED (#12): "might not be ideal")* *"music21's automatic key-finding may not be ideal for our dataset
 (early tonal music), and may have resulted in reduced performance due to faulty transpositions."* **So of
 L2's four entangled questions the method decides the chord — in a reduced label space — and, on two of its
 four model paths, the chord-tone assignment; it takes the tonality as given by a separate unvalidated
@@ -944,7 +996,8 @@ report the significance tests within the DNN family"* — the footnotes name no 
 reader's inference and is now marked as one. *"Every other statement of the same step"* — three statements
 were collected, and three are now named. *"Names the plural-label protocol as not yet built"* — the paper
 says *"we will investigate"*, a statement about its authors' plans. *"Model 1 barely moves"* — it moves
-+0.3 in one family and **+4.3** in the other. And the title of finding (5) said *"one slice of context on
++0.3 in one family and **+4.3** in the other *(★ REMARK 2026-09-19: the "+0.3" is this check's figure as
+it stood; finding (5) now reads +1.0 under the ruled correction of the table cell it derives from)*. And the title of finding (5) said *"one slice of context on
 either side"* where the paper sets n = 2 for MLB, so Model 2's chord head sees two.
 
 **★ TWO INCOHERENCES.** The identity section said pages 2 to 8 carry a page number *"862 through 869"* —

@@ -1,5 +1,25 @@
 # EXTRACT — Harasim, Rohrmeier & O'Donnell, "A Generalized Parsing Framework for Generative Models of Harmonic Syntax" — Task B candidacy row 21, first pass, AT THE OBJECT
 
+> **★ CORRECTED 2026-09-19 AT THE SECOND EXTRACT'S CROSS-CHECK, UNDER THE STANDING RULE OF HANDOFF
+> ENTRY 198 §7** (the user's ruling of 2026-09-19: where a cross-check finds the first extract departing
+> from the page and no value, finding or verdict moves, the site is corrected with the former wording
+> preserved, without a new surface). The second extract is
+> `reading_pass/extracts_second_pass/harasim-rohrmeier-odonnell-2018-a-generalized-parsing-framework-for-generative-models-of-harmonic-syntax.md`;
+> its §9.3 lists the sites, (a) to (n), each marked below at its own place with a "★ CORRECTED" or
+> "★ REMARKED" remark outside the quotation. **No printed value, no derived number, no Finding and no
+> verdict was changed.** **Three sites inside Findings (4), (8) and (9) were NOT touched and stand with
+> the user** — that file's §9.4. *(★ That last sentence was made stale by the ruling below and is left
+> standing, #12.)*
+>
+> **★ AND ON THE USER'S RULING OF 2026-09-19, his words "I agree with recommendation A.", the three
+> sites were corrected at their places** with the former wording preserved: Finding (4)'s two
+> quotations now carry the page's words; Finding (8)'s third bullet is narrowed to what the pages
+> describe and now carries the paper's word "semi-supervised", with "were never fitted" in its fourth
+> bullet narrowed to match; Finding (9) reads "no second annotating group and no agreement figure
+> reported". **No printed value, derived number or verdict was changed, and Finding (8)'s conclusion —
+> intermediate, not established as held-out — stands.** The second extract records the ruling and the
+> act at its §9.7.
+>
 > **STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-12).** Written under
 > `cowork_reading_pass_commission_2026_08_30.md` §4, whose form the remedial commission
 > (`cowork_reading_pass_remedial_commission_2026_08_31.md` §3) binds unchanged. That remedial
@@ -138,6 +158,11 @@ Three footnotes: the implementation as a publicly available Julia package
 
 ## The paper's own claims, labelled
 
+*(★ REMARKED 2026-09-19, the second extract's §9.3 item (l), under the standing rule of handoff entry
+198 §7; no word changed. **Bold type inside a quotation from the paper, in this section and in the
+Findings below, is this extract's emphasis.** As the second reader read the pages, the paper's running
+text sets none of the quoted words in bold; its own emphasis is italic, on terms it introduces.)*
+
 ### The formalism
 
 - **[FACT — §3.1, Definition 1]** A (non-probabilistic) **Abstract Context-free Grammar** (ACFG) is
@@ -174,9 +199,12 @@ Three footnotes: the implementation as a publicly available Julia package
 ### Parsing
 
 - **[FACT — §3.2]** Parsing is *"the task of computing the distribution of parse trees conditioned on
-  this sequence"*. Rather than converting the grammar to Chomsky normal form — which *"might
-  considerably blow up the grammar"* — the parser **transforms grammars on the fly during parsing**,
-  following reference [18]. Each rule of the form `A ⟶ B₁ … B_k` becomes a set of **states** with a
+  this sequence"*. Rather than converting the grammar to Chomsky normal form — which *"considerably
+  blow up the grammar"* — the parser **transforms grammars on the fly during parsing**,
+  following reference [18]. *(★ CORRECTED 2026-09-19 at the second extract's cross-check, its §9.3
+  item (a), under the standing rule of handoff entry 198 §7. FORMER WORDING, PRESERVED (#12): the
+  quotation read "might considerably blow up the grammar". The page prints no "might": "Since grammar
+  transformations into Chomsky normal form considerably blow up the grammar".)* Each rule of the form `A ⟶ B₁ … B_k` becomes a set of **states** with a
   **transition function** `tran : S × (T ∪ C) → S` and a **completion function** `comp : S → 2^C`.
   *"the states and the transition function form a search trie where the completion function checks if
   there is a rewrite rule that has a sequence of terminal symbols and categories as its right-hand
@@ -214,7 +242,10 @@ Three footnotes: the implementation as a publicly available Julia package
   triad, or a suspended chord* — **ten forms**.
 - **[FACT]** Categories are **pairs of scale degrees and keys**: `C = Z₇ × K`, where a key is a pitch
   class for its root and a string for its mode, `K = Z₁₂ × {major, min}`. *"Scale degrees are denoted
-  by Roman numerals. All categories with scale degree I are start symbols, `C₀ = {I} × K`."*
+  by roman numerals from I to VII. All categories with scale degree I are start symbols,
+  `C₀ = {I} × K`."* *(★ CORRECTED 2026-09-19, the second extract's §9.3 item (b), same rule. FORMER
+  WORDING, PRESERVED (#12): "Scale degrees are denoted by Roman numerals. All categories…" — the page
+  prints "roman numerals from I to VII"; the quotation had dropped three words without a mark.)*
 - **[FACT]** The rewrite functions, quoted as the paper defines them, for an arbitrary key `k`:
   - *prolongation*: `PROLONG(⟨x,k⟩) = ⟨x,k⟩ ⟨x,k⟩` for `x ∈ Z₇`;
   - *diatonic preparation*: `DIAT-PREP(⟨x,k⟩) = ⟨x + 4 mod 7, k⟩ ⟨x,k⟩` for `x ∈ Z₇ \ {IV}`;
@@ -254,23 +285,32 @@ Three footnotes: the implementation as a publicly available Julia package
   performances is nevertheless usually a tonic chord."* The worked instance: *All of me* starts with
   `C△` and ends with the turnaround `E♭°⁷ Dm⁷ G⁷`.
 - **[FACT]** *"The grammar of Jazz harmony proposed above assumes that pieces end with a tonic chord.
-  Therefore, a simple implementation of this grammar would not be able to parse lead-sheets that end
+  Therefore, a simple implementation of this grammar would not able to parse lead-sheets that end
   in turnarounds. We solve this problem by cyclic parsing, meaning that we assume that constituents
-  can have spans from the end of a piece back to the beginning."*
+  can have spans from the end of a piece back to the beginning, see Figure 3."* *(★ CORRECTED
+  2026-09-19, the second extract's §9.3 items (c) and (d), same rule. FORMER WORDING, PRESERVED (#12):
+  "would not be able to parse" — the page prints "would not able to parse", a slip of the paper's that
+  the quotation had silently mended; and the quotation closed on a full stop after "back to the
+  beginning", where the page's sentence runs on with ", see Figure 3.")*
 
 ### The experiments (§6)
 
 - **[FACT — §6.1]** *"The model is evaluated using the iRealPro dataset of Jazz-standards. This
-  dataset consists of **1173 chord sequences** that are electronically-encoded by the Jazz musician
+  dataset consists of **1173 chord sequences** electronically-encoded by the Jazz musician
   community including metadata such as the titles, composers, and keys. The sequences were collected
   and converted into the Humdrum format [10] by Daniel Shanahan and Yuri Broze [28], and are available
   online."* *"The chord forms in the iRealPro dataset include information about ninths and elevenths
-  that are not considered in this study."*
+  that are not considered in this study."* *(★ CORRECTED 2026-09-19, the second extract's §9.3 item
+  (e), same rule. FORMER WORDING, PRESERVED (#12): "1173 chord sequences that are
+  electronically-encoded" — the page prints no "that are".)*
 - **[FACT — §6.1]** *"The subset of **394** Jazz-standards that consist of at most **40** chords was
   considered to train the models. **34.52% (136)** of these pieces were parsable using the standard
-  approach and **90.61% (357)** pieces were parsable using the cyclic parsing approach. Less then 55%
-  of the considered Jazz-standards therefore end in turnarounds."* *(The final sentence is an
-  arithmetic residue; it is derived and stated below rather than repeated as a result.)*
+  approach and **90.61% (357)** pieces were parsable using the cyclic parsing approach described
+  above. Less then 55% of the considered Jazz-standards therefore end in turnarounds."* *(The final
+  sentence is an arithmetic residue; it is derived and stated below rather than repeated as a
+  result.)* *(★ CORRECTED 2026-09-19, the second extract's §9.3 item (f), same rule. FORMER WORDING,
+  PRESERVED (#12): "using the cyclic parsing approach. Less then 55%" — the page prints "approach
+  described above."; two words had been dropped without a mark. No value is touched.)*
 - **[FACT — §6.2]** *"We compare four models: (i) the proposed PACFG model that uses a representation
   of rules independent of key, (ii) its PCFG counterpart the rules of which are not independent of
   key, (iii) a baseline of randomly generated trees, and (iv) a right-branching baseline in which all
@@ -282,14 +322,19 @@ Three footnotes: the implementation as a publicly available Julia package
   a tree node is defined as the start index of its leftmost leaf together with the end index of its
   rightmost leaf."*
 - **[FACT — §6.2, Figure 4's caption and the text]** *"Figure 4 shows the means of the tree accuracies
-  including **95% confidence intervals as error bars**."*
+  including **95% confidence intervals as error bars**."* *(★ REMARKED 2026-09-19, the second
+  extract's §9.3 item (n), same rule; no word changed: the quoted sentence is §6.2's running text.
+  Figure 4's caption, as the second reader read it, is "Tree accuracy plot" and says nothing of the
+  error bars.)*
 - **[FACT — §6.2, the four figures the record cites, quoted in the paper's own order]** *"The
   right-branching baseline performs at an accuracy level **under 10%**. The random baseline performs
   slightly better at an accuracy level of **15.35%**. Under a uniform prior, both the PACFG and the
   PCFG model perform at an accuracy level of **36.30%** a priori of the data. As opposed to the trained
   PCFG model that only improves its performance by about 3% (in comparison to the uniform prior)
   reaching an accuracy of **39.43%**, the trained PACFG model improves by about 10% (in comparison to
-  the uniform prior) reaching an accuracy of **45.95%**."*
+  the uniform prior) reaching an accuracy of **45.95%**."* *(★ REMARKED 2026-09-19, the second
+  extract's §9.3 item (g), same rule; no word changed: the page prints no full stop between "15.35%"
+  and "Under a uniform prior" — the one inside this quotation is this extract's.)*
 - **[FACT — §6.2]** *"The PACFG model was thus able to learn more from the data than the PCFG model.
   Note that since the PCFG model does not abstract the grammar rules from the concrete key wherein
   they are applied, **the number of free parameters of the PCFG model is approximately 12 times higher
@@ -314,21 +359,37 @@ Three footnotes: the implementation as a publicly available Julia package
   relative key (e.g. from C major to A minor and vice versa), **the model may be using them to
   alternate between relative keys**. The prominence of the VII in minor keys is **probably related to**
   the fact that it has a dominant-seventh chord form. **The model may be interpreting** a I in major as
-  a III in minor."* The worked derivation given for the transition `G⁷ C△` is
-  `Iα ⟶ IIIα ⟶ VIIα IIIα ⟶ G⁷ IIIα ⟶ G⁷ C△`. **Three hedged sentences and one derivation; no
-  measurement of the alternation itself appears.**
+  a III in the relative minor key that is then prepared by the VII in minor."* The worked derivation
+  given for the transition `G⁷ C△` is `I_a ⟶ III_a ⟶ VII_a III_a ⟶ G⁷ III_a ⟶ G⁷ C△`. **Three hedged
+  sentences and one derivation; no measurement of the alternation itself appears.** *(★ CORRECTED
+  2026-09-19, the second extract's §9.3 items (h) and (i), same rule. FORMER WORDING, PRESERVED (#12):
+  the quotation ended "as a III in minor." — the page's sentence reads "as a III in the relative minor
+  key that is then prepared by the VII in minor."; and the derivation's subscripts were written "α"
+  (`Iα ⟶ IIIα ⟶ VIIα IIIα ⟶ G⁷ IIIα ⟶ G⁷ C△`), where the second reader read an italic lower-case
+  "a" at two requests of page 6, the key of the sentence before being A minor. Both are a language
+  model's reads of a page image. **The same shortened words stand inside Finding (4) below; that site
+  is NOT corrected here and stands with the user** — the second extract's §9.4.)* *(★ That last
+  sentence was made stale by the user's ruling of 2026-09-19 and is left standing, #12: the site in
+  Finding (4) is now corrected there.)*
 
 ### The paper's own statements about the field (§1 and §7)
 
 - **[FACT — §1]** *"to the best of our knowledge there is currently no dataset of hierarchically
-  analyzed chord sequences by human experts that could serve for the training and the evaluation of
+  analyzed chord sequences by human experts that could serve for the training or the evaluation of
   models of harmonic syntax. As a consequence, there exist no comparisons of models of harmonic syntax
-  against expert analyses."*
+  against expert analyses."* *(★ CORRECTED 2026-09-19, the second extract's §9.3 item (j), same rule.
+  FORMER WORDING, PRESERVED (#12): "for the training and the evaluation" — the page prints "or".)*
 - **[FACT — §1]** The earlier work's bounds, as the paper states them: applications to *"monophonic
-  Schenkerian data [21]"*; *"a corpus of 39 blues chord progressions with a maximum of 24 chords per
+  melodic data [21]"*; *"a corpus of 39 blues chord progressions with a maximum of 24 chords per
   progression [12]"*; *"a dataset of 76 chord progressions (avg. length 40) from Jazz-standards that
-  was restricted to subsequences of pieces that did not end in turnarounds [4]"*. And: *"All these
-  earlier approaches assume the knowledge of the key of the pieces a priori."*
+  was restricted to subsequences of pieces that did not change key [4]"*. And: *"All these
+  earlier approaches assume the knowledge of the key of the pieces a priori."* *(★ CORRECTED
+  2026-09-19, the second extract's §9.3 item (k), same rule. FORMER WORDING, PRESERVED (#12):
+  "monophonic Schenkerian data [21]" and "restricted to subsequences of pieces that did not end in
+  turnarounds [4]". The second reader read "monophonic melodic data [21]" and "did not change key [4]"
+  at two requests of page 2. **These two change what the paper is reported to say about earlier work**;
+  the second reader found no value, Finding or verdict of this file resting on either, by a search of
+  this file for both phrases, which met them at this bullet alone.)*
 - **[FACT — §1]** *"At present, there are music databases of simplified Schenkerian analyses [13],
   syntactic analyses of melodies based on the generative theory of tonal music [8], and annotated
   harmonic functions [4]."*
@@ -343,7 +404,9 @@ Three footnotes: the implementation as a publicly available Julia package
   structure that have more complex dependencies than those representable in simple tree structures."*
 - **[FACT — footnote 1]** *"The implementation of the algorithms developed in this study are publicly
   available as a package of the Julia programming language [1]"* —
-  `https://github.com/dharasim/GeneralizedChartParsing.jl`.
+  `https://github.com/dharasim/GeneralizedChartParsing.jl`. *(★ REMARKED 2026-09-19, the second
+  extract's §9.3 item (m), same rule; no word changed: the quoted sentence is running text of §1 on
+  page 2; footnote 1 is the URL alone.)*
 
 ---
 
@@ -596,9 +659,14 @@ table on 326 chorales, and no such claim is made.**
 **★ AND ITS COUNTERWEIGHT, RECORDED WITH IT RATHER THAN LEFT OUT, because an addition candidate that
 carries only the favourable half is the defect this record keeps finding.** The same paper diagnoses a
 characteristic **failure** of the same device: §6.3 reads Figure 6's over-use of VI in major and III in
-minor as the model *"alternating between relative keys"* and *"interpreting a I in major as a III in
-minor"* — a pathology of key-independent sharing, since the shared rule set makes the relative pair
-cheap to swap. **The authors state it three times with hedges — *may be*, *probably*, *may be* — and
+minor as the model possibly *"using them to alternate between relative keys"* and *"interpreting a I in
+major as a III in the relative minor key that is then prepared by the VII in minor"* — a pathology of
+key-independent sharing, since the shared rule set makes the relative pair cheap to swap. *(★ CORRECTED
+2026-09-19 ON THE USER'S RULING of that date, "I agree with recommendation A", taken on the three
+sites of the second extract's §9.4. FORMER WORDING, PRESERVED (#12): the two quotations read
+"alternating between relative keys" and "interpreting a I in major as a III in minor", neither of
+which the page prints in that form; "possibly" is added outside the quotation to carry the page's
+"may be". The Finding's sense is unchanged.)* **The authors state it three times with hedges — *may be*, *probably*, *may be* — and
 measure none of it, so it is CONJECTURE and is labelled so above.** Whoever takes the favourable figure
 takes this beside it.
 
@@ -695,11 +763,21 @@ inventory it would be new to was not opened.
   *train/test split* and *cross-validation* do not appear.
 - The models are **trained on the 357 cyclic-parsable sequences** and **evaluated on 13 pieces
   hand-annotated by the authors**. **Whether those 13 are among the 357 is not stated.**
-- **But the graded labels are unseen by construction.** Training is over chord sequences only —
-  variational inference on rule probabilities given `D` — and **no tree is ever an input to training**.
-  The hand annotations exist only as the evaluation target.
+- **But as the pages describe the training, the graded labels are not an input to it.** Training as
+  §3.3 and §6.2 describe it is over chord sequences — variational inference on rule probabilities
+  given `D` — and **the pages describe no tree entering training**. The hand annotations appear in the
+  pages as the evaluation target. **The paper's §1 nevertheless calls the training "semi-supervised"
+  (*"We train the model in a semi-supervised fashion on a dataset of Jazz-standards"*, printed page
+  153) and the pages do not say what the supervised part is.** *(★ CORRECTED 2026-09-19 ON THE USER'S
+  RULING of that date, "I agree with recommendation A" — the second extract's §9.4 item 2. FORMER
+  WORDING, PRESERVED (#12): "**But the graded labels are unseen by construction.** Training is over
+  chord sequences only — variational inference on rule probabilities given `D` — and **no tree is ever
+  an input to training**. The hand annotations exist only as the evaluation target." That wording was
+  firmer than the pages, and this file did not carry the paper's word "semi-supervised".)*
 - **So the position is intermediate and should be reported as such:** the *labels* the accuracy is
-  measured against were never fitted, which is stronger than a fitted-and-self-measured number; the
+  measured against are not described as fitted *(★ same correction; FORMER WORDING, PRESERVED (#12):
+  "were never fitted")*, which — if that description is whole — is stronger than a
+  fitted-and-self-measured number; the
   *sequences* they are measured on are not declared disjoint from the training set, which is weaker
   than a declared held-out protocol. **Under #20 the headline rates are not established as held-out
   figures, and they are not the fitted-and-self-measured class either.**
@@ -712,7 +790,11 @@ inventory it would be new to was not opened.
 ## ★ FINDING (9) — The ground truth is the authors' own, and the paper says so
 
 The evaluation set is *"13 pieces hand-annotated by the authors"*. **One annotating group, which is the
-group that built the model; no second annotator; no agreement figure; n = 13.** §7 calls this *"the
+group that built the model; no second annotating group and no agreement figure reported; n = 13.**
+*(★ CORRECTED 2026-09-19 ON THE USER'S RULING of that date, "I agree with recommendation A" — the
+second extract's §9.4 item 3. FORMER WORDING, PRESERVED (#12): "no second annotator; no agreement
+figure". The page says the pieces were annotated "by the authors", of whom there are three; how many
+of them annotated each piece is not stated.)* §7 calls this *"the
 first computational approach that automatically performs hierarchical analyses of chord sequences and
 evaluates them on analyses by human experts"* — **the human experts being the authors themselves.**
 

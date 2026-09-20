@@ -237,15 +237,22 @@ requires.** The remaining order stands as proposed, headed by L2's entangled dec
 
 | Row | Paper | Grade | Extract | Centrality | Second pass |
 |---|---|---|---|---|---|
-| 4 | Pardo & Birmingham 2002, algorithms for chordal analysis | **AT THE OBJECT**, whole, pp. 27–49 | `reading_pass/extracts/pardo-birmingham-2002-algorithms-for-chordal-analysis.md` | **CENTRAL** | **OWED** |
-| 7 | Temperley & Sleator 1999, modeling meter and harmony | **AT THE OBJECT**, whole, pp. 10–27 | `reading_pass/extracts/temperley-sleator-1999-modeling-meter-and-harmony.md` | **CENTRAL** | **OWED** |
-| 37 | Bigo, Feisthauer, Giraud & Levé 2018, relevance of musical features for cadence detection | **AT THE OBJECT**, whole, pp. 355–361 | `reading_pass/extracts/bigo-feisthauer-giraud-leve-2018-relevance-of-musical-features-for-cadence-detection.md` | **CENTRAL** | **OWED** |
-| 38 | Karystinaios & Widmer 2022, cadence detection using graph neural networks | **AT THE OBJECT**, whole, 8 pp. | `reading_pass/extracts/karystinaios-widmer-2022-cadence-detection-graph-neural-networks.md` | **CENTRAL** | **OWED** |
+| 4 | Pardo & Birmingham 2002, algorithms for chordal analysis | **AT THE OBJECT**, whole, pp. 27–49 | `reading_pass/extracts/pardo-birmingham-2002-algorithms-for-chordal-analysis.md` | **CENTRAL** | **DONE** — the second extract is on disk in `reading_pass/extracts_second_pass/` under the same file name *(★ UPDATED 2026-09-20 by the progress update; see the note beneath "THE L0+L1 SLICE IS COMPLETE" below. Former wording, preserved (#12): "**OWED**")* |
+| 7 | Temperley & Sleator 1999, modeling meter and harmony | **AT THE OBJECT**, whole, pp. 10–27 | `reading_pass/extracts/temperley-sleator-1999-modeling-meter-and-harmony.md` | **CENTRAL** | **DONE** — the second extract is on disk in `reading_pass/extracts_second_pass/` under the same file name *(★ UPDATED 2026-09-20 by the progress update; see the note beneath "THE L0+L1 SLICE IS COMPLETE" below. Former wording, preserved (#12): "**OWED**")* |
+| 37 | Bigo, Feisthauer, Giraud & Levé 2018, relevance of musical features for cadence detection | **AT THE OBJECT**, whole, pp. 355–361 | `reading_pass/extracts/bigo-feisthauer-giraud-leve-2018-relevance-of-musical-features-for-cadence-detection.md` | **CENTRAL** | **DONE** — the second extract is on disk in `reading_pass/extracts_second_pass/` under the same file name *(★ UPDATED 2026-09-20 by the progress update; see the note beneath "THE L0+L1 SLICE IS COMPLETE" below. Former wording, preserved (#12): "**OWED**")* |
+| 38 | Karystinaios & Widmer 2022, cadence detection using graph neural networks | **AT THE OBJECT**, whole, 8 pp. | `reading_pass/extracts/karystinaios-widmer-2022-cadence-detection-graph-neural-networks.md` | **CENTRAL** | **DONE** — the second extract is on disk in `reading_pass/extracts_second_pass/` under the same file name *(★ UPDATED 2026-09-20 by the progress update; see the note beneath "THE L0+L1 SLICE IS COMPLETE" below. Former wording, preserved (#12): "**OWED**")* |
 | 39 | Sears, Pearce, Caplin & McAdams 2018, simulating expectations for tonal cadences | **AT THE OBJECT**, whole, pp. 29–52 | `reading_pass/extracts/sears-pearce-caplin-mcadams-2018-simulating-expectations-for-tonal-cadences.md` | **NOT CENTRAL for L1** | not decided here |
 
 **What row 4's read produced, in one line each — the extract is the record and nothing is restated
 here (#6):** the L1 charter's partition-point construction is confirmed at its own primary including
-the release half; DP-C's tie-breaking residual is verified at the object with no correction owed; **one
+the release half; DP-C's tie-breaking residual is verified at the object with no correction owed *(★ made
+stale 2026-09-20 and left standing, #12: on the user's ruling of that date, his words "I agree: A", row 4's
+finding (2) was corrected in its first extract — the extract's own banner records it — and the
+`FRAMEWORK.md` sentence at DP-C was narrowed in place, former wording preserved, by a Claude Code dispatch
+run the same day, as handoff entry 210 §0–§1 records, that sitting having checked it at the file. The 26%
+itself verifies;
+what was corrected is a gloss wider than the authors' account. Recorded here by the progress update of
+2026-09-20.)*; **one
 ADDITION CANDIDATE to DP-C's defense is routed to the user and not applied** — an on-domain
 boundaries-given-versus-found gap where a guaranteed-optimal search over a context-free segment content
 score still fails to recover the analyst's segmentation; one authors' suggestion is labelled CONJECTURE
@@ -296,7 +303,26 @@ derivation before the chosen subject's slice of Task B is in — is therefore di
 
 **What is owed and is NOT discharged, stated so the completion is not read as more than it is:** four of
 the five rows are CENTRAL and **each owes a second independent extraction** under the original
-commission's §4; none has been performed. **Three findings are routed to the user as addition candidates
+commission's §4; none has been performed. *(★ MADE STALE AND LEFT STANDING, #12 — THE PROGRESS UPDATE OF
+2026-09-20: all four second extractions — rows 4, 7, 37 and 38 — are done on the word of handoff entry 213
+§3 item 1, which names entries 206, 211, 212 and 213 as the sittings that did them (a relay); each second
+extract is on disk in `reading_pass/extracts_second_pass/` under its first extract's file name, checked at
+that folder's listing that day; and the table's four cells above now read DONE. **Each of the four first
+extracts still says that a second extraction is owed and has not been performed** — row 4's at its line
+394, row 7's at lines 291–292, row 37's at line 211 and row 38's at line 267, established by search — **and,
+on the user's ruling of 2026-09-20 as this side reads his reply ("go ahead", to a surface recommending
+this option), those sentences are NOT edited: this note states once that each is overtaken.** The same
+ruling covers the 28 L2 rows, recorded in `reading_pass/l2_slice_reading_progress.md`. Row 39's cell,
+*"not decided here"*, is unchanged. *(★ This note corrected at the user-ordered check of 2026-09-20, which
+found its first writing calling the four extractions "now done" on this side's own word where it is a relay,
+placing each sentence "in its centrality section" without having established that, and stating the ruling
+without saying it is this side's reading. Former wording, preserved (#12): "all four second extractions —
+rows 4, 7, 37 and 38 — are now done, each second extract on disk in `reading_pass/extracts_second_pass/`
+under its first extract's file name, checked at that folder's listing that day, and the table's four cells
+above now read DONE. Which sitting did which is recorded in handoff entries 206, 211, 212 and 213, relayed
+here through entry 213 §3 item 1. Each of the four first extracts still says in its centrality section that
+a second extraction is owed and has not been performed — [the line list] — and on the user's ruling of
+2026-09-20 those sentences are NOT edited: this note states once that each is overtaken.")* **Three findings are routed to the user as addition candidates
 or precisions and none is applied** — the on-domain boundaries-given-versus-found gap for DP-C's defense
 (row 4), the third-method half-cadence corroboration for DP-I's defense (row 39), and the
 independence-of-method-not-of-data precision on the charter's two-study citation (row 39). **No

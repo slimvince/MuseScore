@@ -4,6 +4,24 @@
 > `cowork_reading_pass_commission_2026_08_30.md` §4, whose form the remedial commission
 > (`cowork_reading_pass_remedial_commission_2026_08_31.md` §3) binds unchanged.
 >
+> **★ 2026-09-19 — THE SECOND INDEPENDENT EXTRACT EXISTS AND WAS CROSS-CHECKED AGAINST THIS FILE**
+> (`reading_pass/extracts_second_pass/declercq-2015-a-model-for-scale-degree-reinterpretation.md`, its
+> §9). **Five items, (a) to (e) at that file's §9.3, standing at seven places, where the page goes
+> against this file and no value, finding or verdict moves were corrected here under the standing rule of handoff entry 198 §7**, each at its site with the former
+> wording preserved (#12): claim (7)'s hyphen; claim (13)'s quotation close; the third arithmetic
+> residue's *"Table 9's own caption"*; emphasis inside three quotations (claims 15a, 19, 21), remarked
+> and not changed; claim (10)'s plagal sentence. **Two sites were NOT corrected and stand with the
+> user** (that file's §9.4): claim (10)'s quotation *"tidily encompasses four different cadence
+> types"*, where the second reader read *"a few different cadence types"* at page 201; and Finding
+> (8)'s quotation *"simulate the Bach style"*, where the second reader read *"simulate the Bach chorale
+> style"* at page 191. *(★ That sentence was made stale later the same day and is left standing (#12):
+> **THE USER RULED, 2026-09-19, his words: "I agree with recommendation A"** — correct both at their
+> sites with the former wording preserved — **and both are corrected**, at claim (10) and at Finding
+> (8). Whether the user looked at the two pages before ruling is not known to the side that made the
+> act.)* **This file's record-facing half — its banner sweeps, the placement section, the
+> cross-primary and reference-list checks against the record, the routings and the centrality
+> verdict — lies outside that cross-check and was not touched.**
+>
 > **The grade.** All nineteen pages of the held PDF were read AT THE OBJECT: staged through the bridge
 > and read with the file tools as page images, in six requests of three pages each — 1–3, 4–6, 7–9,
 > 10–12, 13–15, 16–18 — and a seventh request for pages 19–21 **that returned one page, which is
@@ -264,9 +282,11 @@ degree b7 → the subtonic (VII-PA1); degrees 5/b7 → the **dominant** (v-PA1, 
 degree b6; degrees 4/5/b6 → the **subdominant** (iv-PA1*, iv-HF5, iv-IA3). Asterisks mark
 model/data mismatches. The paper states the model's content in one sentence: *"a harmonization default
 is to interpret the soprano note at the fermata as scale degree 1 (via a perfect authentic cadence), 2
-(via a half cadence), or 3 (via an imperfect authentic cadence) in tonic or some closely related key
+(via a half cadence), or 3 (via an imperfect authentic cadence) in tonic or some closely-related key
 area, with the tonic, dominant, and submediant keys being more likely destinations (in that order)
-than the subdominant or supertonic."* For minor it records that *"there is a tendency to modulate to
+than the subdominant or supertonic."* *(★ CORRECTED 2026-09-19 at the second extract's cross-check, its
+§9.3 (a), under the standing rule of handoff entry 198 §7. FORMER WORDING, PRESERVED (#12): "closely
+related key area" — the page prints the hyphen.)* For minor it records that *"there is a tendency to modulate to
 the relative major whenever possible"*, which is why the **mediant** is the left-most column of Table 8.
 
 **(8) [FACT — page 199, and its arithmetic re-derived here.]** *"Its success rate sits at 80.6% overall
@@ -292,12 +312,20 @@ and letting the reader discount it.**
 three. **The deceptive cadence**, 2.5% of cadences overall, used *"primarily to add harmonic variety to
 adjacent melodic phrases that end on the same note"*, with **a significantly higher incidence as the
 penultimate cadence (p < .01; Fisher's exact test**, note [11] stating the test's exact form). **The
-plagal cadence**, 2.8% overall, typically arising *"out of melodic upper neighbor motion around
-scale-degree 5"*. **The subdominant stop**, 2.7% of all fermata events, *"especially more probable
+plagal cadence**, 2.8% overall, whose most common type, PL5, typically arises *"out of melodic upper
+neighbor motion around scale-degree 5"*. *(★ CORRECTED 2026-09-19 at the second extract's cross-check,
+its §9.3 (e), under the standing rule of handoff entry 198 §7. FORMER WORDING, PRESERVED (#12): "The
+plagal cadence, 2.8% overall, typically arising "out of melodic upper neighbor motion around
+scale-degree 5"" — the page says that of the PL5 type, which it calls the most common, and says the
+PL1 cases arise from a repeated note. No value is changed.)* **The subdominant stop**, 2.7% of all fermata events, *"especially more probable
 within the tonic key than in any other key (p < .001; FET)"*, note [12] stating that form. And
 **"expansion to the octave"**, an ascending melodic line against a descending bass line, each moving by
-step into the final chord, which *"tidily encompasses four different cadence types, including certain
-classes of imperfect authentic, half, and phrygian cadences"* — the paper notes that *in every case of
+step into the final chord, which *"tidily encompasses a few different cadence types, including certain
+classes of imperfect authentic, half, and phrygian cadences"* *(★ CORRECTED 2026-09-19 ON THE USER'S
+RULING of that date — his words, "I agree with recommendation A" — the second extract's §9.4 (f) and
+§9.7. FORMER WORDING, PRESERVED (#12): "tidily encompasses four different cadence types" — the second
+reader read "a few" at page 201 at two requests. Both reads are a language model's reads of a page
+image.)* — the paper notes that *in every case of
 expansion to the octave, there is half-step motion in one of the outer voices at the cadential
 arrival.*
 
@@ -319,7 +347,11 @@ determined on a case-by-case basis, with the cadential arrival (if any) taken as
 harmony at or before the fermata"* (page 193).
 
 **(13) [FACT — page 194, a stated definition and a stated caveat.]** *"In this paper, I will use the
-term 'cadence' to mean 'the harmonic event at the phrase ending as indicated by the fermata.'"* The
+term 'cadence' to mean 'the harmonic event at the phrase ending as indicated by the fermata,' if only
+because the former is less clumsy."* *(★ CORRECTED 2026-09-19 at the second extract's cross-check, its
+§9.3 (b), under the standing rule of handoff entry 198 §7. FORMER WORDING, PRESERVED (#12): "…as
+indicated by the fermata.'" — the quotation closed on a full stop the page does not print there; the
+page's sentence runs on with a comma, and its close is now carried.)* The
 paper states that this is contestable: *"Some readers – especially those with Schenkerian leanings
 (see Caplin 2004) – may feel that the subdominant stop is not truly a cadence at all. This feeling may
 extend to the plagal cadence or the deceptive cadence as well."* Its own justification is that the
@@ -354,7 +386,10 @@ that carries accidentals is why it can.)*
 analytical issues involved the tonality of the chorale. In some cases, the global key of the chorale is
 not entirely clear. This situation was found to be fairly rare, though. Moreover, as I hope to show,
 **the global key turns out to be less important than the local key implications in terms of what cadence
-type to expect given a particular melodic pattern**."* **The record reports key agreement against BOTH
+type to expect given a particular melodic pattern**."* *(★ REMARK ADDED 2026-09-19 at the second
+extract's cross-check, its §9.3 (d), under the standing rule of handoff entry 198 §7: the bold inside
+this quotation is this extract's emphasis; the page prints the sentence without it. No word is
+changed.)* **The record reports key agreement against BOTH
 the global home key and the local key (D-211, LIVE, user-ratified 2026-07-12), and `CLAUDE.md` records
 with that convention that the measured local percentage is the lower of the two and that the difference
 is itself the finding.** This is a published statement, on this repertoire, that for the question it
@@ -393,7 +428,9 @@ theory treatises (Ebcioğlu 1988, 1990), neural networks trained on their own an
 of these models have been fairly successful at creating convincingly stylistic harmonizations.
 Unfortunately, these studies have limited benefits for music theory pedagogy; even when these models are
 successful, **it is difficult to infer any practical advice to a music student since a wide variety of
-parameters and settings are involved**."* **Recorded as DATA and routed nowhere.** It is a
+parameters and settings are involved**."* *(★ REMARK ADDED 2026-09-19, the second extract's §9.3 (d):
+the bold inside this quotation is this extract's emphasis, not the page's. No word is changed.)*
+**Recorded as DATA and routed nowhere.** It is a
 published statement that a successful generative model can be uninformative about the thing it models —
 adjacent in subject to D-522 (*"Explaining an inference to the end user is a late-bound DISPLAY consumer
 of facts that already exist"*), **but it is said of harmonization systems and not of analysis systems,
@@ -410,7 +447,9 @@ characterisation made by a source this project holds, of a source it does not, a
 
 **(21) [AN ERROR OF THE PAPER, minor, recorded so a later reader is not sent to the wrong figure —
 page 199.]** Discussing the rarity of I-HF3 cadences, the paper writes *"(This finding is a notable
-exception to the list of common cadences that Gauldin proposes shown in **Figure 5**.)"* **Gauldin's
+exception to the list of common cadences that Gauldin proposes shown in **Figure 5**.)"* *(★ REMARK
+ADDED 2026-09-19, the second extract's §9.3 (d): the bold on "Figure 5" is this extract's emphasis, not
+the page's. No word is changed.)* **Gauldin's
 proposed cadences are Figure 4** — its caption reads *"Fig. 4. Typical cadential formulas from Gauldin
 1988/1995 (p. 44)"* (page 191) — while **Figure 5's caption reads *"Fig. 5. Different cadential arrivals
 (*) in the opening bars of four Bach chorales"*** (page 192). Both captions were read at their pages.
@@ -431,8 +470,12 @@ because **the paper states no reconciliation and this read did not find one.**
   READING OF THIS EXTRACT, the first writing having derived Table 9's Instances column and not its
   Matches column. Table 9's printed *Model Matches* cells are 968, 346, 85, 8, 4 and 12, with the
   ascending-3rd cell printed as ".." — and those six sum to 1,423.** The unprinted cell can be at most
-  1, its Instances cell being 1, so the column totals **1,423 or 1,424**. **Claim (8) and Table 9's own
-  caption give the model's matches as 1,420 — at least three fewer than Table 9's own column.** The
+  1, its Instances cell being 1, so the column totals **1,423 or 1,424**. **Claim (8)'s sentence in the
+  paper's running text gives the model's matches as 1,420 — at least three fewer than Table 9's own
+  column.** *(★ CORRECTED 2026-09-19 at the second extract's cross-check, its §9.3 (c), under the
+  standing rule of handoff entry 198 §7. FORMER WORDING, PRESERVED (#12): "Claim (8) and Table 9's own
+  caption give the model's matches as 1,420" — Table 9's caption, read at page 199 twice by the second
+  reader, prints no count; the 1,420 stands in the running text alone. No value is changed.)* The
   success rate the paper reports, 80.6%, is 1420/1761 and not 1423/1761 (which is 80.8%), so **the
   headline figure is the one consistent with the stated total and not with the printed column.**
   **Every per-row rate in Table 9 IS consistent with its own two cells** — 968/1084 = 89.3%, 346/456 =
@@ -790,7 +833,11 @@ the placement section above works from. **ADMITTED stands**, on the criterion's 
 **★ FINDING (8) — a ground on which NOT ADMITTED could have been argued at the row, recorded because
 an excluded alternative is evidence about the choice, and NOT taken here.** The paper's stated purpose
 is **generation-side and pedagogical**: *"we can better know when and to where it is advisable to
-modulate at phrase endings if we want to simulate the Bach style"* (page 191). **Rows 41 and 42
+modulate at phrase endings if we want to simulate the Bach chorale style"* (page 191). *(★ CORRECTED
+2026-09-19 ON THE USER'S RULING of that date — his words, "I agree with recommendation A" — the second
+extract's §9.4 (g) and §9.7. FORMER WORDING, PRESERVED (#12): "if we want to simulate the Bach style" —
+the second reader read "the Bach chorale style" at page 191 at two requests. Both reads are a language
+model's reads of a page image. Nothing else in this Finding is changed.)* **Rows 41 and 42
 (DeepBach, BachBot) are NOT ADMITTED on exactly that ground** — *"A generation method. No charter owns
 generation; L1–L3 decide an analysis of a given score."* **Why this side did not take it:** the paper's
 empirical content is a description of a corpus of finished **analyses** — a local key area and a

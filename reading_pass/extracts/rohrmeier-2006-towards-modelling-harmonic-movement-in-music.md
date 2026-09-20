@@ -12,6 +12,24 @@
 > were applied, and §11 was added as its own edit afterwards. That order is the structural fix the
 > hundred-and-fifty-ninth entry's self-audit proposes. **It was followed here from the start rather than
 > after a catch; no claim is made about which sittings followed it before, none having been checked.**
+>
+> **★ NOTE ADDED 2026-09-19, AFTER THE SECOND INDEPENDENT EXTRACTION'S CROSS-CHECK** (the second extract
+> is `reading_pass/extracts_second_pass/rohrmeier-2006-towards-modelling-harmonic-movement-in-music.md`;
+> the cross-check is its §9). Two places where this extract departed from the page, neither moving a
+> value, a finding or the verdict, are corrected at their sites below with the former wording preserved
+> (#12), under the standing rule the user ruled on 2026-09-19 (handoff entry 198 §7): §3(d)'s
+> transcription of one empty cell of Table 4.1, and one quotation in Finding (4). **Four further items
+> touch a value or stand inside a finding; they are NOT corrected here and stand with the user** — they
+> are listed at the second extract's §9.4. *(★ That sentence was made stale by the ruling below and is
+> left standing, #12.)*
+>
+> **★ RULED 2026-09-20 (shortly after midnight, Stockholm time, in the sitting that began 2026-09-19), the user's words: "I agree on A."** Alternative A of the surface put to him was:
+> correct or remark the four items at their sites, the former wording preserved, the ruling recorded
+> here. Done in the same sitting, at §3(a) with Finding (4), §3(b), §5's consonance bullet with §9's
+> fourth bullet, and Finding (8) with §10. **Each site carries a "★ CORRECTED" or "★ REMARK" note dated
+> 2026-09-20 with its former wording. No printed value, no finding's conclusion and not the verdict was
+> changed; the paper was not opened again for the act** — the ground for each is the second extract's
+> §9.4 and §7, which read each site at the page image. **The ruling is for row 23's four items only.**
 
 ---
 
@@ -114,7 +132,14 @@ project measures.*
   the author because it *"reduplicates held chords into larger chunks of a single repeated pc set."*
 - **Dense segmentation:** segment *"only at those time positions where at least one voice/note event
   changes"*, so *"meaningless pc set repetitions are avoided and repetitions of a pc set indeed denote a
-  change of voicing of the same pc set."* **This is, in its construction, our own change-point grid.**
+  change of voicing of the same pc set."* **This is, in its construction, close to our own change-point grid — with one difference the formal
+  definition shows.** *(★ CORRECTED 2026-09-20 on the user's ruling of that date, recorded in the banner.
+  FORMER WORDING, PRESERVED (#12): "This is, in its construction, our own change-point grid." The
+  paper's prose can be read to include a note ending, but its formal definition (printed p. 13) is
+  `S = {k(o_i)}`, one segment per note ONSET, so a note that stops while the others hold opens no new
+  segment; this project's slice begins when any note starts or stops (the terms table of
+  `DECISIONS.md`). In four-part chorales the two will seldom differ. Ground: the second extract's §4.1
+  and §9.4 item 4.)*
 - **Metrical segmentation:** only pc sets on stronger metrical positions are taken.
 - **Harmony approximation:** for each one-beat segment, the single pc set scoring best on a hand-built
   dissonance function is selected, under rule **(R1)**: *"If the first chords of a set is dissonant, the
@@ -124,7 +149,11 @@ project measures.*
 **(b) The dissonance score is a hand-built table, and its constants are declared rather than derived.**
 §3.1.1 states it as *"a simple score system for pc sets"*: the score is the sum of each interval's
 occurrences multiplied by **−4 for minor seconds, −1 for major seconds, −1 for tritones and 0 otherwise**;
-an augmented triad is given **3**; triads **2**; dominant sevenths with and without fifth **1**. Table 3.1
+an augmented triad is given **3** in the prose *(★ REMARK 2026-09-20 on the user's ruling of that date,
+recorded in the banner. FORMER WORDING, PRESERVED (#12): "an augmented triad is given **3**;". The prose
+on printed p. 12 does say "a score of three"; **Table 3.1 (PDF page 87) and Table 5.3 (PDF page 90) both
+print −3 for (C.E.G#)**, so the prose drops the sign. Ground: the second extract's §7 item 7 and §9.4
+item 3.)*; triads **2**; dominant sevenths with and without fifth **1**. Table 3.1
 (Appendix B) is captioned *"Dissonance ratings for all different pc set genera"*. **★ THAT THOSE VALUES
 ARE UNFITTED AND UNVALIDATED IS THIS SIDE'S OBSERVATION AND NOT THE PAPER'S CLAIM** — the paper does not
 call them invented, and offers no fit, no ablation and no validation of them anywhere in the whole read.
@@ -152,8 +181,14 @@ Holtzmann *"could not be used here as they are based on monophonic input"*. The 
 usually the tonic; if the final chord is minor it is assumed to be the tonic; otherwise the key signature
 narrows the candidates and four ambiguous cases are settled by preference rules. **Table 4.1** prints the
 resulting map with a *Number of cases* row `190 / 30 / 24 / 0 / 11 / 114 / 1` and a *Number of exceptions*
-row `0 / 0 / 0 / – / 0 / 5 / 0`, under a caption stating the key signature is assumed to be C major
-without accidentals. **Whether those case counts are over the whole 386-piece corpus is not stated at the
+row `0 / 0 / 0 / (empty cell) / 0 / 5 / 0`, under a caption stating the key signature is assumed to be C major
+without accidentals. *(★ CORRECTED 2026-09-19 at the second extraction's cross-check, under the standing
+rule of handoff entry 198 §7. FORMER WORDING, PRESERVED (#12): "`0 / 0 / 0 / – / 0 / 5 / 0`". At the page
+(printed 21, requested again at the cross-check) the exceptions cell under final chord F is empty; in that
+column the dash stands in three rows higher up (remaining key possibilities, key heuristic, assigned
+key) and the cases row has 0. No value moves. ★ This note's own wording was corrected 2026-09-20 at the
+user-ordered check (the second extract's §10); it had read "the dash stands in the three rows above it,
+not in this one", which misplaces the dashes.)* **Whether those case counts are over the whole 386-piece corpus is not stated at the
 table and is not asserted here.**
 
 **(e) The analyses (§5).** Single pc-set distributions per mode; pc-set transitions (2-grams) compared
@@ -247,6 +282,14 @@ human harmonic analysis, because the study holds none (§2).**
   12545 : 6222 gives 0.6685 : 0.3315 against the printed 0.6668 : 0.3332. The discrepancy is about
   0.0017 in proportion. **No cause is asserted and no figure of the paper is corrected;** it is recorded
   because it bears on how much weight the major split can carry.
+  *(★ REMARK 2026-09-20 on the user's ruling of that date, recorded in the banner. The bullet above is
+  left as written (#12). **The second extraction located the cause at two further places in the paper:**
+  Table 5.3's own major rows rated 0 or above sum to 7655 + 2325 + 1654 + 220 + 177 + 277 + 125 + 21 =
+  **12,454**, and Appendix A gives the major total as 3446 / 0.18451 = 18,677. With 12,454 the printed
+  0.6668 : 0.3332 follows (12,454 / 18,676 = 0.6668). **So the text's "12545" reads as 12454 with two
+  digits exchanged, the printed proportion is right, and the major split carries the same weight as the
+  minor one.** Both sums are the second reader's, worked by hand from its reading of the page images.
+  Ground: the second extract's §7 item 1 and §9.4 item 2.)*
 - **Transition counts.** *"Using the dense and the harmonic approximation segmentation, 2320/2509 and
   1022/1063 different progressions for major/minor have been found."*
 - **Correlations with external data.** Budge (1943) chord frequencies against the computed pc-set
@@ -379,12 +422,19 @@ measures nothing.
 THE CHANGE-POINT GRID ALONE CANNOT DISCRIMINATE ELABORATION.** The L2 charter fixes the segmentation as
 *"a partition of the working span into harmonic spans whose boundaries are a subset of L1's change
 points"* (`FRAMEWORK.md:393-394`), and §4.2's C27 states that the discriminating information lives in the
-boundary placement. **Row 23 defines dense segmentation as our change-point grid and then states its
-insufficiency directly:** *"this method treats all note events equally and there is no distinction between
+boundary placement. **Row 23 defines dense segmentation as a grid close to our change-point grid — cut at note
+onsets, by its formal definition — and then states its insufficiency directly:** *(★ CORRECTED
+2026-09-20 on the user's ruling of that date, recorded in the banner. FORMER WORDING, PRESERVED (#12):
+"Row 23 defines dense segmentation as our change-point grid and then states its insufficiency directly:".
+See the note at §3(a). The finding's point does not depend on the difference.)* *"this method […] treats all note events equally and there is no distinction between
 a semiquaver passing event and a crotchet chord. Thus, this method is useful to investigate the range and
 transitions of the whole set of pc sets occurring in a piece, but is inadequate to reveal the similarity
 of patterns which just differ slightly, are elaborations of a simpler structure or are rhythmical
-variations of each other."* **What bounds it:** he is arguing for a REDUCTION and against the grid's use as
+variations of each other."* *(★ CORRECTED 2026-09-19 at the second extraction's cross-check, under the
+standing rule of handoff entry 198 §7. FORMER WORDING, PRESERVED (#12): the quotation opened "this method
+treats all note events equally", closing up silently what the page prints between those words — a
+footnote mark and the parenthesis "('dense segmentation')" (printed 10, requested again at the
+cross-check). The omission is now marked. No word of the finding moves.)* **What bounds it:** he is arguing for a REDUCTION and against the grid's use as
 an analytical unit, where our charter uses the grid as the candidate boundary set for a decision taken
 later. **The two are compatible, and the value is that the insufficiency is stated independently, on this
 repertoire, by a source the record does not yet cite.**
@@ -432,8 +482,15 @@ cut and the 90 % ambiguity margin — **neither fitted and neither ablated**, wh
 hand-declared constant silently doing a measurement's work. *(`DEFECT_TYPES.md` was NOT opened by this
 side, so no catalog entry is named for that shape and none is claimed.)*
 
-**Finding (8) — THE #20 POSITION, STATED EXACTLY.** There is no fit and no held-out set anywhere in this
-paper, so #20 does not bind on it. **What does bind, and is stated so it is not mistaken for a fit:** the
+**Finding (8) — THE #20 POSITION, STATED EXACTLY.** No value that the paper's key induction
+or its sliding-window model uses is fitted, and there is no held-out set anywhere in this paper, so #20
+does not bind on those. *(★ CORRECTED 2026-09-20 on the user's ruling of that date, recorded in the
+banner. FORMER WORDING, PRESERVED (#12): "There is no fit and no held-out set anywhere in this paper, so
+#20 does not bind on it." **The paper does make one fit:** Diagram 5.11's caption (PDF page 100) reads
+"Zipf plots and least square fits with Simon's (1955) formula for n-grams with n = 1,2,3,4,5,6", and
+§3(e) above lists those fits among the analyses. The second reader met no fitted parameter and no
+goodness-of-fit value for them in the pages as read, and nothing in the paper is graded on them. Ground:
+the second extract's §5.4 and §9.4 item 1.)* **What does bind, and is stated so it is not mistaken for a fit:** the
 key profiles used by the §6 induction method are counted from the same 386-chorale corpus the §7 model is
 then demonstrated on, and the paper does not hold any piece back. **The author names the consequence
 himself, in the generality direction rather than the evaluation direction:** *"the length of the sequences
@@ -497,7 +554,10 @@ being later than 2006.
   corpus, not tree accuracy, so it is not commensurable with the 45.95 % DP-O carries and no comparison is
   drawn.**
 - **It corrects no figure of the paper** — the major-proportion discrepancy at §5 is recorded as derived
-  and is not resolved.
+  and is not resolved. *(★ REMARK 2026-09-20 on the user's ruling of that date: "is not resolved" was
+  true of this extract's first pass; the second extraction located the cause, and the remark at §5's
+  bullet carries it. This extract still corrects no figure of the paper — it records that one printed
+  count does not fit the paper's own tables.)*
 - **It claims nothing about candidacy row 22** beyond that row 23 does not cite it and predates it.
   *(★ CORRECTED 2026-09-12 on the user's ordered fact-check; the former wording read "which is paywalled
   and not held" and its second half is false at HEAD — see the dated correction at §4. Row 22 remains
@@ -520,7 +580,9 @@ first-running-reduction failure DP-D's exclusion ground asserts**, and **a state
 grid alone cannot discriminate elaboration**, which is C27's claim from the other side.
 
 **For NOT CENTRAL, stated in full.** The paper holds **no harmonic ground truth, no accuracy figure for
-its own key model, no fitted value anywhere, and no held-out evaluation**; its unit is the **pc set**,
+its own key model, no fitted value in that model, and no held-out evaluation** *(★ CORRECTED 2026-09-20
+on the user's ruling of that date. FORMER WORDING, PRESERVED (#12): "no fitted value anywhere". See the
+note at Finding (8): the paper's one fit is of its rank–frequency curves.)*; its unit is the **pc set**,
 which is neither our chord nor our degree, and which asserts enharmonic equivalence our L0 does not; its
 input is **MIDI without fermatas or reliable metre**, which our L0 contract excludes by construction; and
 its explicitly stated scope caveat is that the profiles *"need to be compiled from a corpus from the

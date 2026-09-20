@@ -13,6 +13,35 @@
 > record and reproduces no rule table, figure or page.**
 > A second independent extraction is OWED if the verdict below is CENTRAL and the user does not flip it.
 >
+> **★ NOTE OF 2026-09-20 — THE SECOND EXTRACTION HAS BEEN RUN AND CROSS-CHECKED AGAINST THIS FILE**
+> (`reading_pass/extracts_second_pass/rohrmeier-2011-towards-a-generative-syntax-of-tonal-harmony.md`,
+> its §9). Five places where this file departed from the page and no value, finding or verdict moves
+> were corrected here by the second reader under the user's standing rule of 2026-09-19 (handoff entry
+> 198 §7), each at its site with a "★ CORRECTED 2026-09-20" remark and the former wording preserved
+> (#12): the classification label in §1; one quotation in §2; the spelling of a composer's name in §2
+> and §3; the count of the paper's sample analyses in §3 and twice in §5; and the routes for third
+> relations in §3. **Three wordings inside findings (2) and (5), §4 and the verdict were NOT touched;
+> they stand with the user** (the second extract's §9.4). No finding, no verdict and nothing in §4, §6,
+> §7, §8, §9, §10 or §11 was edited.
+>
+> **★ THE RULING ON THOSE THREE WORDINGS, 2026-09-20, the user's words: "I agree with recommendation
+> A."** A was: correct each wording at its site, the former wording preserved, this banner recording the
+> ruling. **The two sentences that close the note above — "they stand with the user" and "No finding,
+> no verdict and nothing in §4 … was edited" — are made stale by this act and left standing (#12).**
+> Narrowed to what the page prints, each with a "★ CORRECTED 2026-09-20 UNDER THE USER'S RULING" remark:
+> §4's falsifier paragraph; finding (2); finding (5)'s heading; and the verdict's NOT CENTRAL case.
+> **No finding's candidacy or bound, and not the verdict, was changed. The paper was not opened again
+> for the act**; the ground for each is the second extract's §9.4, which quotes printed pages 35, 44,
+> 47, 48 and 50 as the second reader had them in view.
+>
+> **★ AND THE SECOND READER'S USER-ORDERED CHECK OF ITS OWN WRITING, 2026-09-20** (the second extract's
+> §10), for which printed pages 36–40 and 44–50 were requested again, brought three of the remarks that
+> reader had written into this file closer to the page: the rewritten *"few rules suffice"* sentence in
+> §5; the wording put in place of *"disclaims cognitive reality"* in finding (2) and in the verdict's
+> NOT CENTRAL case; and the Figure 1 clause of the remark at §3's §5 paragraph. Each carries its
+> earlier wording. The same check repaired this banner's own layout, where the paragraph above had lost
+> the quotation mark of its last line. Nothing of the first reader's was touched by it.
+>
 > **THE CLOSING SECTION — §11, what the whole reading of this extract found — IS WRITTEN IN THE ACT
 > THAT RUNS THAT READING AND NOT BEFORE.** This extract was written with §11 absent and landed nowhere;
 > the reading was then run against the paper's pages and against the record spans this extract cites
@@ -78,8 +107,10 @@ Read at file page 1 (printed page 35) and at file pages 17–19 (the reference l
 - **ISSN**: 1745-9737 print / 1745-9745 online, printed in the page-1 footer, with the URL
   `http://www.informaworld.com`.
 - **Keywords** (page 1): *generative grammar; harmony; recursion; music theory; tonal music; music
-  syntax; music and language; context-free grammar; music cognition*. **MSC/CCS/AMS classification
-  and CR category numbers**: F1.1; F4.3.
+  syntax; music and language; context-free grammar; music cognition*. **The classification line, printed *"MCS/CCS/AMS
+  Classification/CR Category numbers"***: F1.1; F4.3. *(★ CORRECTED 2026-09-20 at the cross-check.
+  FORMER WORDING, PRESERVED (#12): "**MSC/CCS/AMS classification and CR category numbers**" — the page
+  prints "MCS", and prints the label as quoted.)*
 - **Licence**: **no licence line on any of the 20 pages**; page 1 prints *"© 2011 Taylor & Francis"*.
   **The PAYWALL tier stands, and rule 3 of the folder's README binds: this copy must never enter a
   public repository.** The bibliography's Corrections note had bounded this to page 1 (*"pages 3 to 19
@@ -111,9 +142,14 @@ syntax account of tonal harmonic progressions"*), and its inputs are the inputs 
   …*} and the key symbols 𝕂 = {*Cmaj, Cmin, C♯maj, …*}. **Not notes, not a spelled score, not audio.**
 - **What it does NOT operate on, in its own words** (page 45): *"the chord symbols in the analysis do
   not incorporate figured bass notation or chord inversions since such differences as well as resulting
-  features of the underlying bass movement need to be modelled independently"*; and (page 43) the
-  voice-leading rules and altered-chord derivations *"are a matter of fine-grained style-specific rules
-  that do not belong to the general formalism presented here"*. **So the grammar is inversion-blind,
+  features of the underlying bass movement need to be modelled independently"*; and (page 43), after
+  naming voice-leading rules and altered-chord derivations, *"The description of the specific details
+  of specialized and stylistic rules will be a matter of fine-grained style-specific rules that do not
+  belong to the general formalism presented here"*. *(★ CORRECTED 2026-09-20 at the cross-check. FORMER
+  WORDING, PRESERVED (#12): the voice-leading rules and altered-chord derivations *"are a matter of
+  fine-grained style-specific rules that do not belong to the general formalism presented here"* — the
+  quotation's first two words were not the page's, and the page's subject is the description of
+  specialized and stylistic rules.)* **So the grammar is inversion-blind,
   bass-blind and voicing-blind by declared scope.**
 - **The worked examples, each a hand analysis and none a measurement**: Kostka & Payne's analysis of
   Haydn's Sonata No. 33, II (Figure 1, page 36 — relayed from Kostka & Payne, with the author's own
@@ -121,7 +157,9 @@ syntax account of tonal harmonic progressions"*), and its inputs are the inputs 
   "ten variants", counting the base sequence (a) among them; corrected at the user-ordered second check)*; a phrase
   of the Bach chorale *Ermuntre Dich, mein schwacher Geist*, mm. 1–4 (Figure 3, page 44); the first
   phrase of the jazz standard *Autumn leaves* in two analyses (Figure 4, page 45); a phrase of
-  Bortniansky's *Tebe Poëm* (Figure 5, page 46); the opening of Beethoven's Waldstein sonata, op. 53, I,
+  Bortnianski's *Tebe Poëm* (Figure 5, page 46) *(★ CORRECTED 2026-09-20 at the cross-check: this file
+  wrote "Bortniansky's" here and "the Bortniansky and Waldstein examples" in §3; Figure 5's caption
+  prints "Bortnianski's")*; the opening of Beethoven's Waldstein sonata, op. 53, I,
   mm. 1–13 in reduction, two analyses (Figure 6, page 47).
 - **Repertoire, as stated**: the grammar is offered for *"diatonic harmonic progressions"* (abstract)
   and *"a core set of rules describing core tonal phrases and the relationship between keys and
@@ -227,11 +265,16 @@ a surface phenomenon that does not enter recursive expansion and *"may often not
 sequence of separate events"***; the surface-level rules that map a keyed scale degree to a chord symbol
 are *"trivial"*.
 
-**§5 Sample analyses (pages 44–47).** The five hand analyses of §2 above. What the text draws from
+**§5 Sample analyses (pages 44–47).** The four sample analyses of Figures 3 to 6, in six trees. *(★
+CORRECTED 2026-09-20 at the cross-check. FORMER WORDING, PRESERVED (#12): "The five hand analyses of §2
+above." — the paper's section 5 holds Figures 3 to 6; Figure 1, page 36, is captioned as Kostka & Payne's
+analysis and carries no label of the grammar *(the second reader first wrote "and applies none of the
+28 rules"; narrowed at its user-ordered check)*, and Figure 2, page 37, is the dependency tree of the constructed
+example.)* What the text draws from
 them, in its own words: *"few rules suffice to cover a large number of cases"* (page 44); the pivot G
 in the Bach chorale *"is derived twice from the respective adjacent branches"* (page 45, Figure 3's '='
 signs); *Autumn leaves* admits **two analyses** — a head-recursive descending-fifth sequence, or two
-tonal regions *Gm* and *B♭* (page 45, Figure 4); the Bortniansky and Waldstein examples show
+tonal regions *Gm* and *B♭* (page 45, Figure 4); the Bortnianski and Waldstein examples show
 *"adjacencies of structurally/functionally not closely related chords"* (page 45) accounted for as
 *"adjacent events on locally disjunct subtrees"* (page 46); and **the Waldstein's second analysis
 "illustrates some of the difficulties of the presented model with respect to some sequential
@@ -242,7 +285,11 @@ third of these quotations at pages 45 and 47; both stand on page 46, corrected a
 **§6 Discussion (pages 47–50).** The paper's own claims about itself, which §4 below sets against the
 record: a reconciliation of Riemannian function theory with recursive prolongation; functions chosen
 as heads *"rather than the musical surface elements (chords or pitches) as in [12,40]"* (page 48);
-third relations licensed only through substitution or as adjacent events on disjunct subtrees; the
+third relations licensed through functional substitution (*IV–II*, *V–VII*) or functional progression
+(*VI–IV*, *II–VII*), and otherwise derivable only as adjacent events on locally disjunct subtrees *(★
+CORRECTED 2026-09-20 at the cross-check. FORMER WORDING, PRESERVED (#12): "third relations licensed
+only through substitution or as adjacent events on disjunct subtrees" — page 48 names functional
+progressions as a second licensing route)*; the
 formalism extends Steedman's blues grammar with phrase/function/scale-degree levels and modulation;
 whether the rules extend to whole pieces is *"not … argued on the basis of this paper"* (page 48); the
 grammar models *"the subsystem harmony"* and not counterpoint, bass motion or sequences (page 48–49);
@@ -322,8 +369,12 @@ marked *"[FACT.]"* separately. **`FRAMEWORK.md` names Rohrmeier nowhere — a gr
 **The falsifier — *a tree model beating a matched-capacity sequence model on this repertoire's ground
 truth, measured on the same corpus and the same axis*.** **This paper supplies nothing toward it and
 claims nothing toward it**: no model is trained, no capacity is stated, no corpus is used, no ground
-truth exists, and the paper's own §6 says the grammar's cognitive reality *"cannot be taken for
-granted"* and that its rules *"may be arguable"*. **What it supplies is the theoretical case the
+truth exists, and the paper's own §6 says the cognitive reality of recursive dependencies on the
+largest levels *"cannot be taken for granted"* (page 50) and that some of the rules proposed *"may be
+arguable"* (page 47). *(★ CORRECTED 2026-09-20 UNDER THE USER'S RULING. FORMER WORDING, PRESERVED (#12):
+"says the grammar's cognitive reality *"cannot be taken for granted"* and that its rules *"may be
+arguable"*" — the page limits the first to "the largest levels" and the second to "some of the rules
+proposed".)* **What it supplies is the theoretical case the
 falsifier would test** — the pages 49–50 argument that Markov and n-gram models cannot express
 prolongation and return-to-key — in the form of an argument, not a measurement.
 
@@ -337,15 +388,19 @@ significance test. Its numbered objects are 28 rewrite rules, 6 figures (one rel
 dependency tree, four parse trees over score excerpts) and 14 endnotes. **The figure sweep item (h)
 orders therefore has nothing of this paper's to run on, and that is the result rather than an
 omission** — the practice recorded per row is: **row 22, no quantity anywhere, by construction.** The
-claim *"few rules suffice to cover a large number of cases"* (page 44) is asserted over the five worked
-examples and is measured by nothing.
+claim *"few rules suffice to cover a large number of cases"* (page 44) is asserted at the head of the
+paper's section 5, which then gives four sample analyses, and is measured by nothing. *(★ CORRECTED
+2026-09-20 at the cross-check. FORMER WORDING, PRESERVED (#12): "is asserted over the five worked
+examples" — see the remark at §3's §5 paragraph. ★ AND CORRECTED AGAIN the same day at the second
+reader's user-ordered check: that reader's first rewrite said "over its four sample analyses"; page 44
+asserts it of "a large number of cases".)*
 
 **What the paper claims and how each claim is grounded, so nothing is carried out at the wrong grade:**
 
 | Claim, in the paper's words or close to them | Grounded by |
 |---|---|
 | The dependency structure of a chord sequence is a planar tree with functional heads (§2) | Asserted on the *C A⁷ Dm G C* variants; one empirical citation, Woolhouse & Rohrmeier [35] (a 2008 talk) |
-| 28 rules cover phrase, function, modulation, secondary dominants and diatonic fifth sequences (§3) | Stated; illustrated on five hand analyses (§5) |
+| 28 rules cover phrase, function, modulation, secondary dominants and diatonic fifth sequences (§3) | Stated; illustrated on four sample analyses, Figures 3 to 6 (§5) *(★ corrected 2026-09-20; it read "illustrated on five hand analyses (§5)")* |
 | Modulation, tonicization and local diatonic change differ only gradually, by tree depth (page 42) | Asserted as a consequence of rule 15's design |
 | Secondary dominants belong at the scale-degree level, not the functional level (page 42) | Argued from the *A⁷ D⁷ G* case and from avoiding re-entry into recursion |
 | Chord repetition is a surface phenomenon outside recursion (rule 28, page 44) | Asserted |
@@ -463,7 +518,13 @@ framework's own reading — it names the paper its readers could reach.
 THEORY, not FACT.** §4 part 3. The theory-grounding corollary distinguishes *FACT (stated or measured
 in a paper actually fetched and read)* from *THEORY (established published theory)*; the
 representational claim, at this paper, is a proposal in a theory journal that measures nothing and
-disclaims cognitive reality. **Candidate for:** the same wording question row 21's finding (1) put to
+says of itself — page 50 — that the grammar *"models structural dependencies rather than a cognitive
+system"*, and that the cognitive reality of recursive dependencies on the largest levels *"cannot be
+taken for granted"*. *(★ CORRECTED 2026-09-20 UNDER THE USER'S RULING. FORMER WORDING, PRESERVED (#12):
+"and disclaims cognitive reality." — wider than page 50; the abstract speaks of "a structural and
+potentially cognitive level" and page 48 says the three functions "may have cognitive correlates". ★
+The second reader's first rewrite opened "does not offer itself as a cognitive model — page 50:";
+brought to the page's own words at that reader's user-ordered check.)* **Candidate for:** the same wording question row 21's finding (1) put to
 the user, with the additional fact that the theory source is now held and read. **Bounded by:** whether
 the record's `[FACT]` is of the figures alone is the user's reading of his own sentence; this extract
 does not re-mark anything. **Applied nowhere.**
@@ -499,8 +560,11 @@ read and is not settled here; and the paper's reason for placing the rule at the
 re-entry into recursion) has no counterpart in a flat transition table. **Applied nowhere.**
 
 **(5) A SEGMENTATION-SIDE STATEMENT FOR THE L2 DETAIL SPECIFICATION TO WEIGH — chord repetition is a
-surface phenomenon, outside the grammar and "often not even … a sequence of separate events."** Rule
-28, page 44. **Candidate for:** the L2 detail specification's treatment of a repeated identical
+surface phenomenon that does not enter the grammar's recursive expansion, and "often not even … a
+sequence of separate events."** *(★ CORRECTED 2026-09-20 UNDER THE USER'S RULING. FORMER WORDING,
+PRESERVED (#12): "chord repetition is a surface phenomenon, outside the grammar and" — rule 28 is a
+numbered rule of the grammar; what page 44 says is that repetition "does not enter recursive
+expansion".)* Rule 28, page 44. **Candidate for:** the L2 detail specification's treatment of a repeated identical
 sonority across slices — as one span or as several — which the record's L2 charter decides at the
 slice grain and which DP-O's clause leaves open at the grammar level. **Bounded by:** the paper's unit
 is the chord symbol, already segmented; it says nothing about what a repetition IS at the note level,
@@ -654,7 +718,12 @@ whole reading.)*
 **For NOT CENTRAL, stated in full.** The paper holds **no ground truth, no corpus, no figure of any
 kind, no fitted value and no evaluation**; its input is chord symbols already segmented and already
 keyed, one level above L2's; it is inversion-, bass- and voice-leading-blind by declared scope; its
-author disclaims cognitive reality and calls the rules arguable; the framework has adopted no hierarchy
+author says the grammar models structural dependencies rather than a cognitive system, that cognitive
+reality on the largest levels cannot be taken for granted, and that some of the rules proposed may be
+arguable *(★ CORRECTED 2026-09-20 UNDER THE USER'S RULING. FORMER WORDING, PRESERVED (#12): "its author
+disclaims cognitive reality and calls the rules arguable" — both wider than pages 50 and 47; see the
+remarks at §4 and at finding (2). ★ The second reader's first rewrite said "says the grammar is not a
+cognitive system"; brought to the page's words at that reader's user-ordered check)*; the framework has adopted no hierarchy
 and DP-O is open; and its bearing on the record is one citation candidate, one marker question already
 open, and positions a detail specification would meet in its defense. **On that reading it is the
 theory behind an open design point, cited by characterisation and by no figure, and its weight is that

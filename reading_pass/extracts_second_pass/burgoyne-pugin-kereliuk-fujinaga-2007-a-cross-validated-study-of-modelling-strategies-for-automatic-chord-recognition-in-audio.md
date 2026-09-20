@@ -699,6 +699,12 @@ each song"* and names no source. **It was NOT corrected:** the wording stands in
 user's standing rule of 2026-09-19 (handoff entry 198 §7) keeps anything that touches a finding for him.
 It is recorded in entry 198 as an item that stands with the user. §9.3 above is left as it was written.
 
+*(★ Made stale later the same day, and left standing (#12). The user ruled on the item on 2026-09-19 —
+his words, in reply to the surface that recommended it: "I agree with your recommendation." — and the
+three wordings were then corrected in the first extract at their sites, each with a note and the former
+wording preserved, after the second backup's batch had closed. The line numbers above are the first
+extract's before that act. The account and the landing figures are in handoff entry 199 §8 and §9.)*
+
 **What the check confirmed at its objects, not struck:** Table 2's cells and §4.3's arithmetic (redone a
 second time); the quotations of §2.3 to §2.7 on pages 2 to 4, against the second request's images; §9.3's
 eight sites and §9.5's two observations at those same images; §9.2's list against the first extract as

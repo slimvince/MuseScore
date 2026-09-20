@@ -15,6 +15,18 @@
 >
 > **This extract derives no specification statement, amends no document, opens no code and writes no
 > open-items row or decisions-register entry.**
+>
+> **★ CORRECTED 2026-09-20, under the standing rule of handoff entry 198 §7 as narrowed by entry 200 §1
+> item 2**: where the second independent extraction's cross-check found this file departing from the
+> page and no value, finding or verdict moves, the departure is corrected at its site with the former
+> wording preserved (#12). Eight departures at six sites, each site marked "★ CORRECTED 2026-09-20" and
+> each departure resolved at the page images; the ground is the second extract's §9.3
+> (`reading_pass/extracts_second_pass/temperley-sleator-1999-modeling-meter-and-harmony.md`). Two further
+> places, inside or beside a finding or a verdict, were **not** corrected and stand with the user (that
+> extract's §9.4).
+> *(★ The sentence above was made stale the same day: the user ruled alternative A for both places — his
+> words, "I agree with A for both" — and both are now corrected at their sites, finding (2) and the
+> "Adapt — the line of fifths" verdict, with the former wording kept (#12).)*
 
 ## Identity
 
@@ -61,10 +73,16 @@ realization of music artificial intelligence has been that quantization and mete
 part of the same process."* The input is quantized to 35-msec **pips**, a value *"simply found to be
 optimal through trial and error"*; beats may fall only at pip starts.
 
-**[FACT, p. 15]** Five metrical levels prove sufficient; the tactus is level 2, with two levels above
-and two below. The regularity requirement is a preference, not a well-formedness constraint, so the
-system tracks tempo change: *"we cannot simply infer the metrical structure at the beginning of a
-piece and extrapolate it metronomically through the rest of the piece."*
+**[FACT, pp. 13–15]** Five metrical levels prove sufficient *"for the great majority of pieces"* (p. 15);
+the tactus is level 2, with two levels above and two below (p. 15). The regularity requirement is a
+preference, not a well-formedness constraint (p. 14), so the system tracks tempo change: *"we cannot
+simply infer the metrical structure at the beginning of a piece and extrapolate it metronomically
+through the rest of the piece"* (p. 13).
+*(★ CORRECTED 2026-09-20, at the page. FORMER WORDING, PRESERVED (#12): "**[FACT, p. 15]** Five metrical
+levels prove sufficient; the tactus is level 2, with two levels above and two below. The regularity
+requirement is a preference, not a well-formedness constraint, so the system tracks tempo change:" —
+two defects: the page's qualifier "for the great majority of pieces" was dropped, and the quotation
+stands on p. 13 and the preference sentence on p. 14, not p. 15.)*
 
 ### The harmonic half
 
@@ -75,8 +93,10 @@ labels roots in absolute terms."* No key, no mode, no Roman numeral.
 **[FACT, p. 16]** Four harmonic preference rules in the authors' wording: the **compatibility rule** —
 *"prefer roots that result in certain pitch-root relationships"*, preferred in the order 1, 5, 3, ♭3,
 ♭7, ♭5, ♭9, ornamental; the **ornamental dissonance rule** — *"in labeling events as ornamental, prefer
-events that are (1) closely followed by another event a half-step or whole-step away, and (2)
-metrically weak"*; the **harmonic variance rule** — *"prefer roots such that roots of nearby chord spans
+events that are (1) closely followed by another event a half-step or whole-step away in pitch, and (2)
+metrically weak"* *(★ CORRECTED 2026-09-20, at the page. FORMER WORDING, PRESERVED (#12): "a half-step
+or whole-step away, and (2)" — the words "in pitch" were dropped from inside the quotation with no
+ellipsis.)*; the **harmonic variance rule** — *"prefer roots such that roots of nearby chord spans
 are close together on the line of fifths"*; and (p. 17) the **pitch-variance rule** — *"prefer spellings
 for pitch events such that nearby events are close together on the line of fifths."*
 
@@ -119,22 +139,31 @@ section.
 
 **[FACT, p. 25]** *"Making use of the harmonic analysis is another approach to improving the performance
 of the metrical program on the higher levels. … The idea, then, is to let the harmonic analysis influence
-the metrical analysis by favoring strong beats at changes of harmony. **This presents a serious
+the metrical analysis by favoring strong beats at changes of harmony. This presents a serious
 chicken-and-egg problem, however, since meter is crucial as input to harmony. One solution would be to
 compute everything at once, optimizing over both the metrical and harmonic rules, but we have not yet
-found an efficient way of doing this.** Another solution, which we are currently exploring, is to first
+found an efficient way of doing this. Another solution, which we are currently exploring, is to first
 run the piece through the harmonic program, generating a provisional harmonic analysis, then run the
 output of that through the meter program, which is now modified to prefer strong beats at points of
 harmonic change, and finally run this output through the harmonic program again to generate the final
 harmonic analysis."*
+*(★ CORRECTED 2026-09-20, at the page. FORMER EMPHASIS, PRESERVED (#12): the two sentences from "This
+presents a serious chicken-and-egg problem" through "an efficient way of doing this." were set in bold
+inside the quotation; the page prints them in roman, and the emphasis was this extract's, unmarked.)*
 
 ## Measured results, as the paper states them
 
 **★ THERE ARE NONE. This is the single most consequential fact in the paper for our purposes, and it is
 stated as an absence rather than inferred.** The paper reports **no corpus, no metric and no accuracy
-value anywhere in its eighteen pages.** Its evidence is four worked examples shown as output listings and
-discussed in prose: Bach's Cello Suite No. 3 Courante (Figures 6–7), Beethoven's Op. 13 II (Figures 8–9),
-Schubert's *Moment Musical* No. 6 (Figure 10) and Schumann's Op. 15 No. 2 (Figure 11). The scope of
+value anywhere in its eighteen pages.** Its evidence is four worked examples discussed in prose: Bach's
+Cello Suite No. 3 Courante (Figures 6–7) and Beethoven's Op. 13 II (Figures 8–9), each with an output
+listing; Schubert's *Moment Musical* No. 6 (Figure 10), with the program's analysis shown as chord symbols
+on the score; and Schumann's Op. 15 No. 2 (Figure 11), shown as the score alone.
+*(★ CORRECTED 2026-09-20, at the page. FORMER WORDING, PRESERVED (#12): "Its evidence is four worked
+examples shown as output listings and discussed in prose: Bach's Cello Suite No. 3 Courante (Figures
+6–7), Beethoven's Op. 13 II (Figures 8–9), Schubert's Moment Musical No. 6 (Figure 10) and Schumann's Op.
+15 No. 2 (Figure 11)." — only two of the four are output listings (p. 22: for the Schubert, "rather than
+showing the output, we simply show the program's analysis as chord symbols on the score").)* The scope of
 testing is given only as *"We have tested the program on a number of pieces and sections of pieces …
 Most are pieces from the common-practice (Bach to Brahms) era, mainly piano pieces; there are also a
 number of unaccompanied melodies"* (p. 19).
@@ -146,9 +175,18 @@ basis. After many tests and adjustments, we have found a set of values that seem
 good results."*
 
 **The authors' own catalogue of failures, from the worked examples** [FACT, pp. 22–25]: no knowledge of
-**pedals**, so a chord over a pedal is misread (measures 7 and 15 of the Schubert); no knowledge of
-**voice leading**, which *"results in a fair number of spelling mistakes"* and misreads a German sixth as
-a dominant seventh; **no anticipations or escape tones**; upper metrical levels are weak — *"The
+**pedals**, so the chord over a pedal or bass in measures 7 and 15 of the Schubert is not read as such —
+measure 7 analyzed *"reasonably, as an E♭ chord with several appoggiaturas"*, measure 15 *"bizarrely
+labeled as a B♭ chord"* (p. 24); the German sixth in measures 16–17 *"incorrectly labeled as an F♭
+dominant seventh"*, with its D misspelled E♭♭, and no knowledge of **voice leading**, which the page ties
+to that misspelling and which *"results in a fair number of spelling mistakes"* (p. 24); **no
+anticipations or escape tones**;
+*(★ CORRECTED 2026-09-20, at the page. FORMER WORDING, PRESERVED (#12): "no knowledge of **pedals**, so a
+chord over a pedal is misread (measures 7 and 15 of the Schubert); no knowledge of **voice leading**,
+which *"results in a fair number of spelling mistakes"* and misreads a German sixth as a dominant
+seventh;" — two defects: the page calls measure 7's reading reasonable, not misread; and it states the
+German sixth's mislabeling as an error of its own, tying voice leading to the D/E♭♭ spelling that
+follows, not to the dominant-seventh label.)* upper metrical levels are weak — *"The
 performance on the upper levels is weaker, especially on level 4. Frequently the program correctly
 identifies level 4 as duple, which it usually is, but chooses the incorrect phase"*; and the output
 *"indicates only the roots of chords, without further information such as mode (major or minor),
@@ -167,8 +205,10 @@ cadence and no phrase grouping.**
 
 **Its own STATED SCOPE and limits.** Western tonal music, particularly common-practice art music (p. 10).
 Grouping structure is named as the missing piece that would fix the upper metrical levels, and the authors
-report their own attempt failed: *"getting a computer to determine grouping boundaries proves to be a very
-difficult problem, and our preliminary efforts have been unsuccessful"* (p. 25). The meter-harmony
+report their own attempt failed: *"getting a computer to recognize grouping boundaries proves to be a very
+difficult problem, and our preliminary efforts have been unsuccessful"* (p. 25).
+*(★ CORRECTED 2026-09-20, at the page. FORMER WORDING, PRESERVED (#12): "getting a computer to determine
+grouping boundaries" — the page prints "recognize".)* The meter-harmony
 circularity is unresolved in the joint form (p. 25, quoted above). No evaluation is claimed.
 
 ## What an L1 or L2 detail specification could adopt, adapt, or must argue against
@@ -184,8 +224,12 @@ circularity is unresolved in the joint form (p. 25, quoted above). No evaluation
   rival is the claim that a system which does not must still carry the dependency somewhere.
 - **Adapt — the line of fifths as the space for root and spelling proximity.** A spatial model in which
   proximity is computed by a recency-weighted centre of gravity is a live candidate for any term over
-  neighbouring spans, and it is unbounded rather than circular, which the authors give as its advantage
-  (p. 18).
+  neighbouring spans; the advantage the authors give is that, *"rather than a circular space"*, the line
+  of fifths *"permits this easy way of calculating spatial proximity"* (p. 18).
+  *(★ CORRECTED 2026-09-20 on the user's ruling of that date (alternative A), at the page. FORMER WORDING,
+  PRESERVED (#12): "and it is unbounded rather than circular, which the authors give as its advantage
+  (p. 18)." — the page names the easy calculation of proximity as the advantage, not the unboundedness.
+  The verdict "Adapt" is unchanged.)*
 - **Adapt — the ornamental dissonance rule's two conditions** (closely followed by a step, and metrically
   weak) as a chord-tone-assignment term. Note this is DP-D's territory and this system decides ornamental
   status *inside* the same optimisation as the root, not before it.
@@ -206,7 +250,11 @@ alternative to it rather than as a solution to it. **No correction is owed.**
 **(2) ★ THE RIVAL SHAPE FOR THE L1/L2 DIVISION IS UNEVALUATED, AND THAT IS A FINDING ABOUT THE RIVAL.**
 The candidacy derivation admitted this row as *"a rival shape for the L1/L2 division"*. Read whole, the
 rival **reports no accuracy value of any kind** — no corpus, no metric, no comparison. Its parameters are
-hand-tuned by trial and error until the output looked good. **A rival with no measured performance cannot
+hand-tuned by trial and error until, in the authors' words, they *"found a set of values that seems to
+produce generally good results"* (p. 20). *(★ CORRECTED 2026-09-20 on the user's ruling of that date
+(alternative A), at the page. FORMER WORDING, PRESERVED (#12): "hand-tuned by trial and error until the
+output looked good." — the page does not print "until the output looked good". The finding is
+unchanged.)* **A rival with no measured performance cannot
 be preferred to a chosen design point on evidence, and cannot falsify one.** This is not a criticism of a
 1999 paper; it is the fact that decides what weight the rival carries in a detail specification.
 *(Independently corroborated inside our own read set: Pardo & Birmingham 2002, read at the object as row 4,

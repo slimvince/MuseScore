@@ -71,6 +71,16 @@
 > former wording preserved (#12). Each site carries a "★ CORRECTED 2026-09-19" note placed outside the
 > quotation. **No value, no cell, no finding and no verdict changed.** The paper was not re-opened for
 > this act; the ground for each correction is that file's §9.3, which read each item at the page image.
+>
+> **★ AND THREE FURTHER WORDINGS WERE CORRECTED LATER THE SAME DAY, ON A SECOND RULING OF THE USER'S**
+> (handoff entry 199 §8 and §9; his words, in reply to the surface that recommended it: *"I agree with your
+> recommendation."*): *"supplied by hand"* in the coupling facts, *"done by hand"* in the DP-B datum and
+> *"hand-supplied"* in finding (5). The page says *"given knowledge about the original key of each song"*
+> and names no source for that knowledge (the second extract's §10 found the wording). Each site carries a
+> "★ CORRECTED 2026-09-19, ON THE USER'S SECOND RULING" note with the former wording preserved (#12). **No
+> value, cell or derived number changed, no verdict moved, and finding (5)'s substance stands** — a key
+> taken as known, measured effect of mixed sign. The paper was not re-opened for this act. This file's
+> words *"oracle"* and *"PERFECT key"* were not among the wordings put to the user and stand as written.
 
 ## Identity — a MILD finding on the title axis; the input is AUDIO
 
@@ -350,8 +360,11 @@ had to.
 **What the method ASSUMES about its upstream.**
 - Audio at 11 025 Hz; a 12-bin PCP vector per 92 ms frame. **No notes, no spelling, no beat grid, no
   meter, no voices.**
-- **For the rotated condition, the GLOBAL KEY OF EACH SONG, supplied by hand** — *"given knowledge about
-  the original key of each song"* — used to transpose both the features and the labels to C major. This
+- **For the rotated condition, the GLOBAL KEY OF EACH SONG, taken as known, its source unstated** —
+  *"given knowledge about the original key of each song"*
+  *(★ CORRECTED 2026-09-19, ON THE USER'S SECOND RULING. Former wording, preserved (#12): "the GLOBAL KEY OF
+  EACH SONG, supplied by hand" — "by hand" is not on the page.)*
+  — used to transpose both the features and the labels to C major. This
   is a tonality consumed as an input, one per song, never decided by the system and never changing within
   a song.
 - For training, **fully labelled AND time-aligned** chord labels per frame (the CRF requires alignment in
@@ -437,7 +450,9 @@ had to.
   oracle.** The rotated condition expresses every chord relative to a given global key (features and
   labels both transposed to C), which is the scale-degree-valued chord axis D-526 states in the state
   space, here reached by relabelling — and it is *tonality first, then chord* in its crudest form, with
-  the *first* step done by hand. **The measured effect of key-relative against absolute representation
+  the *first* step taken as known and not decided by the system *(★ CORRECTED 2026-09-19, ON THE USER'S
+  SECOND RULING; former wording, preserved (#12): "the *first* step done by hand" — the page names no source
+  for the key)*. **The measured effect of key-relative against absolute representation
   is of MIXED SIGN:** for the HMMs, within 4.6 points either way (the 24-Gaussian row aside), the sign
   flipping with the number of Gaussians; for CRF-G, +4.8 for key-relative; for CRF-D, −5.8; for CRF-DG,
   −2.5. **So with a PERFECT key, relabelling chords by degree did not reliably help this system on this
@@ -521,7 +536,8 @@ paper — put to the user and applied nowhere.** Recorded beside row 13's additi
 under `D-525`, and merged with neither it nor row 12's.
 
 **(5) ★ A KEY-RELATIVE CHORD REPRESENTATION WITH AN ORACLE KEY MEASURED OF MIXED SIGN.** The rotated
-condition is D-526's scale-degree chord axis reached by relabelling, with a hand-supplied global key. Its
+condition is D-526's scale-degree chord axis reached by relabelling, with a global key taken as known, its source unstated *(★ CORRECTED 2026-09-19, ON
+THE USER'S SECOND RULING; former wording, preserved (#12): "with a hand-supplied global key")*. Its
 measured effect against the absolute representation is within five points either way for the HMMs (the
 sign depending on the mixture size), +4.8 for CRF-G, −5.8 for CRF-D and −2.5 for CRF-DG — none separable
 from the unprinted fold spread. **Another instance of the root-invariance idea beside the three row 18's extract names, and one where

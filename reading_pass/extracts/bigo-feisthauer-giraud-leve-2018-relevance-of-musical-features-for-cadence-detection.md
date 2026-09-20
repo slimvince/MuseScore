@@ -12,6 +12,22 @@
 >
 > **This extract derives no specification statement, amends no document, opens no code and writes no
 > open-items row or decisions-register entry.**
+>
+> **★ CORRECTED 2026-09-20 under the standing rule of handoff entry 198 §7** (a departure from the page
+> that touches no value, finding or verdict is corrected at its site, former wording preserved, #12).
+> Three sites, each carrying a "★ CORRECTED 2026-09-20" note; the ground for each is the second
+> extract's §9.3, which read it at the page image. **No value, finding or verdict changed.** Two further
+> places, inside or beside a finding or a verdict, are NOT corrected here and stand with the user (the
+> second extract's §9.4).
+>
+> **★ RULED 2026-09-20, the user's words: "decision: 1 for both."** The two places above were then
+> corrected at their sites, each with a "★ CORRECTED 2026-09-20 ON THE USER'S RULING" note and its former
+> wording preserved (#12): the §2.1 quotation beside finding (2), and the FACT-labelled sentence beside
+> the "Adapt" verdict. **No value, numbered finding or verdict changed.** At the second place the
+> unprinted sentence is replaced by the authors' own words, and Table 4's four values from features XYZ
+> to XYZR are added beside them, copied from this file's own Table 4 line. *(The sentence above saying the two
+> places "are NOT corrected here and stand with the user" is made stale by this act and left standing,
+> #12.)*
 
 ## Identity
 
@@ -51,8 +67,12 @@ on the corpus — quarter note for Haydn, eighth for Bach, *"to cope with the fa
 (modulo octave) than the lowest note of Y."*
 
 **★ [FACT, §2.1] The feature that IS the L1 charter's third cue.** *"Z-bass-compatible-with-I (resp.
-Z-bass-compatible-with-V): Both notes 4 and 7 of the tonality that would be implied by the bass of Z are
-present in the four beats before Z."* A companion feature, `Z-bass-compatible-with-I-scale`, asks whether
+Z-bass-compatible-with-V): Both notes 4 and 7 of the tonality that would be implied if the bass of Z is I
+(resp. V) are present in the four beats before Z"* (357). *(★ CORRECTED 2026-09-20 ON THE USER'S RULING.
+FORMER WORDING, PRESERVED (#12): "Both notes 4 and 7 of the tonality that would be implied by the bass of
+Z are present in the four beats before Z." — the page prints "implied if the bass of Z is I (resp. V)";
+the dropped condition is what separates the two features. Finding (2) below concerns
+`Z-bass-compatible-with-I`, the feature whose implied tonality has Z's bass as its tonic.)* A companion feature, `Z-bass-compatible-with-I-scale`, asks whether
 *"The 8 previous beats exhibits the whole scale of the same implied tonality."*
 
 **[FACT, §2.1–2.4]** The other feature families, in the paper's own groupings: chord constitution at Z
@@ -92,8 +112,11 @@ from Sears and colleagues.
 
 **[FACT, §4.4]** *"The detection of PAC is good, with more than 75% PAC detected and a low false
 positive rate (< 1%)."* And, recorded because it is the authors' own caution about an earlier number:
-*"Note that we previously reported 82% of PAC detection in fugues with manual hand-coded rules but that
-may have resulted in overfitting."*
+*"Note that we previously reported 82% of PAC detection in fugues [9] but with manual hard-coded rules
+that may have resulted in overfitting."*
+*(★ CORRECTED 2026-09-20. FORMER WORDING, PRESERVED (#12): "Note that we previously reported 82% of PAC
+detection in fugues with manual hand-coded rules but that may have resulted in overfitting." — the page
+(360) prints "hard-coded", places "but" before "with", and carries the citation "[9]".)*
 
 **★ [FACT, §4.2] The stated reason the half cadence is hard — and it is the framework's own sentence.**
 *"We also notably lack strong significant features for HC. Indeed, the Y-Z bass move in a HC is variable
@@ -104,9 +127,13 @@ with about 2% FP."*
 **[FACT, §4.4]** Of 28 PAC false positives in Haydn, *"at least 5 FP can be seen as actual cadences"* —
 the annotation itself is contestable at the margin.
 
-**[FACT, §4.4]** Rhythmic features matter most where the harmony is weakest: *"Rhythmic features (R)
-bring an improvement especially for HC, in particular with R-Z-strong-beat that correctly filters out
-more than half of the beats."*
+**[FACT, §4.4]** The authors write: *"Rhythmic features (R) bring an improvement especially for HC, in
+particular with R-Z-strong-beat that correctly filters out more than half of the beats."* Their Table 4
+gives, from features XYZ to XYZR: Haydn HC 0.25 → 0.29, Haydn PAC 0.72 → 0.69, Bach PAC 0.74 → 0.80, Bach
+PAC+rIAC 0.54 → 0.68. *(★ CORRECTED 2026-09-20 ON THE USER'S RULING. FORMER WORDING, PRESERVED (#12):
+"**[FACT, §4.4]** Rhythmic features matter most where the harmony is weakest:" — the page does not print
+that sentence, and the Table 4 values now given beside the quotation do not bear it: the largest gain
+from R is on Bach PAC+rIAC, and R lowers Haydn PAC.)*
 
 ## Coupling facts (mandatory)
 
@@ -118,15 +145,21 @@ segmentation** and **no harmonic analysis**. Features are extracted with music21
 scikit-learn.
 
 **What it HANDS downstream.** A per-beat binary verdict — this beat is or is not the arrival point of a
-cadence of the trained type (PAC, rIAC or HC) — and, in the study itself, the per-feature significance
+cadence of the trained type (PAC, PAC+rIAC or HC) *(★ CORRECTED 2026-09-20. FORMER WORDING, PRESERVED
+(#12): "(PAC, rIAC or HC)" — the page trains PAC and PAC+rIAC on the Bach corpus and PAC and HC on the
+Haydn corpus (358, Table 1 caption; 360, Table 3); no rIAC-only classifier was met in the pages as read)* — and, in the
+study itself, the per-feature significance
 tallies of Table 2. It hands on **no chord, no key, no segmentation and no cadence type beyond the class
 trained for.**
 
 **Its own STATED SCOPE and limits.** Two corpora, Bach fugues and Haydn quartet expositions; the
 annotations *"model cadences in the light of a global analysis of the form"* while the detection is
 local, which the authors state as a known mismatch: *"we have used them as a benchmark on our local
-feature-based detection."* Suspensions were expected to be significant for both PAC and HC and *"do not
-appear significantly in these corpora."* The conclusion names the shape of the fix: *"Cadence
+feature-based detection."* The authors were *"expecting to find more suspensions for both PAC and HC"*,
+which *"do not appear significantly in these corpora."* *(★ CORRECTED 2026-09-20. FORMER WORDING,
+PRESERVED (#12): "Suspensions were expected to be significant for both PAC and HC and" — the page (358,
+§4.2) says "We were expecting to find more suspensions for both PAC and HC as a way to retain tension
+before the ultimate resolution but they do not appear significantly in these corpora.")* The conclusion names the shape of the fix: *"Cadence
 preparations could for example be described by features regarding contiguous 'spans' of onsets rather
 than single onsets X and Y, in order to improve the harmony relevance of the model. Research along these
 lines could significantly improve HC detection."*

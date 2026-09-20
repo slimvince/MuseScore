@@ -96,6 +96,25 @@
 >
 > **This extract derives no specification statement, amends no document, opens no code and writes no
 > open-items row or decisions-register entry.**
+>
+> **★ CORRECTED 2026-09-19 AT THREE SITES, AFTER THE SECOND INDEPENDENT EXTRACT'S CROSS-CHECK** (that
+> extract's §9, same file name under `reading_pass/extracts_second_pass/`), under the user's standing
+> ruling of 2026-09-19 (handoff entry 198 §7): where a cross-check finds this extract departing from the
+> page and no value, finding or verdict moves, the correction is made at the site with the former wording
+> preserved (#12). Each site carries a "★ CORRECTED 2026-09-19" note placed outside the quotation it
+> concerns. **No value, table cell, derived number, finding or verdict changed.** Three further wordings the
+> cross-check questions stand inside or beside findings (8), (9) and (10) and were NOT changed; they are
+> with the user (the second extract's §9.4).
+>
+> **★ AND THOSE THREE WORDINGS WERE THEN CORRECTED, 2026-09-19, ON THE USER'S RULING OF THAT DATE** (handoff
+> entry 199 §8; his words, in reply to the surface that recommended it: *"I agree with your
+> recommendation."*): the key's source (the coupling facts, the DP-B datum and finding (9)), the unit of
+> the 8% (the class-imbalance paragraph, the emission-design datum and finding (10)) and the output's
+> indexing (finding (8)). Each site carries a "★ CORRECTED 2026-09-19, ON THE USER'S RULING" note with the
+> former wording preserved (#12). **No value, table cell or derived number changed, no verdict moved, and
+> each finding's substance stands** — a key taken as given, a base rate of 8%, a four-position output.
+> The ruling is for these wordings and for row 17's first extract's like wording; it does not widen the
+> standing rule, which still keeps for the user what touches a finding.
 
 ## Identity — a FULL title match; ONE venue printed of the two the bibliography names; a CC licence printed that the LINK tier understates; the input is SYMBOLIC
 
@@ -169,16 +188,25 @@ input, from an elaboration detector running first"* and excludes.**
 
 **[FACT — the dataset and the ground truth's construction, §2.]** *"Harmonic labels in the Rameau dataset
 are aligned with the music as salami-slices: a "salami-slice" is formed whenever a new note onset occurs in
-any musical voice. To make the tonal relationships between pitch-classes consistent across the dataset, we
+any musical voice. To make the tonal relationships between picth-classes consistent across the dataset, we
 also transposed all the chorales into the same key. Non-chord tones can be identified and labeled from each
 chord label associated with the slice."* Footnote 1 gives the dataset's location,
-`https://github.com/kroger/rameau/tree/master/rameau-deps/genos-corpus`. **Three things this states in
+`https://github.com/kroger/rameau/tree/master/rameau-deps/genos-corpus`.
+*(★ CORRECTED 2026-09-19. The page prints the misspelling "picth-classes", read at the image three times
+by the second reader; the quotation above formerly read "pitch-classes", a silent correction of the
+page. Former wording, preserved (#12): "between pitch-classes consistent".)*
+**Three things this states in
 terms:** the slice grid is ONSET-ONLY (a new onset in any voice; a release opens no slice); the chorales
 are TRANSPOSED to one key before anything is learned, so a tonality is consumed as given, one per chorale,
 and the paper does not say where it came from; and **the non-chord-tone ground truth is DERIVED FROM THE
-CHORD LABELS** — a note is a non-chord tone in the ground truth exactly when it is outside the annotated
-chord of its slice. Figure 1 shows the same thing: the *Chord* line is the given annotation and the
-*Non-chord tone* line is read off it.
+CHORD LABELS**. Figure 1 prints a *Chord* line and a *Non-chord tone* line under the same slices.
+*(★ CORRECTED 2026-09-19. Former wording, preserved (#12): "DERIVED FROM THE CHORD LABELS** — a note is a
+non-chord tone in the ground truth exactly when it is outside the annotated chord of its slice. Figure 1
+shows the same thing: the *Chord* line is the given annotation and the *Non-chord tone* line is read off
+it." The page states that non-chord tones "can be identified and labeled from each chord label" and states
+no criterion; "exactly when it is outside the annotated chord" and "read off it" are the first reader's
+gloss, stood here under "states in terms". That the ground truth is derived from the chord labels IS
+stated in terms, so finding (5)'s fact is untouched.)*
 
 **[FACT — the method, §3 and Table 1.]** Input per slice: *"a vector of twelve ones or zeros, representing
 which pitch classes (C, C#/Db, D, D#/Eb, etc.) are present (1) or absent (0) in the slice"*, plus *"metric
@@ -190,7 +218,14 @@ left in the input vector, is a non-chord tone"*. §4: *"one slice adjacent (befo
 current one were added to the input vector, creating a windowed input that allows the model to consider
 context"* — Table 2's column heading *PC + B + WS1 (D:42)* is that: three slices of 12 + 1 + 1 = 14, so 42
 input dimensions *(derived here from the caption's own key: PC pitch-class, B on/off-beat, WS window
-size, D dimension; the paper does not spell the arithmetic out)*. Table 1: network structure *2 hidden
+size, D dimension; the paper does not spell the arithmetic out)*.
+*(★ CORRECTED 2026-09-19, by a note; the sentence above is left standing (#12). The page supports 3 × 14 =
+42 as arithmetic and does not supply the fourteen: the text gives twelve pitch-class values and ONE
+on/off-beat value per slice, which is thirteen, and 3 × 13 = 39. The second "+ 1" above has no referent on
+the page — the caption's WS is the window, which is the factor of three and not a value per slice. How the
+dimension comes to 42 is unexplained by the pages as read. "Over 42 bits" below rests on the printed
+"D:42" and stands.)*
+Table 1: network structure *2 hidden
 layers, 200 nodes each*; optimizer *ADAM*; loss *binary cross-entropy*; data division *8:1:1
 (training:validation:test)*; evaluation metric *precision, recall, F1-measure*; evaluation method *10-fold
 cross validation*. *"The experimental settings were determined empirically (shown in Table 1)."* **So the
@@ -218,8 +253,14 @@ DP4 print *F .72* alone.
 
 **[FACT — the class imbalance, §4.]** *"Because of the significant imbalance between the number of chord
 tones and non-chord tones (92% and 8%), we report the metrics of precision, recall, and F1-measure."* **A
-measured base rate under this ground truth: 8% of voice-slice slots in 140 Bach chorales carry a
-non-chord tone.** *Derived here, not printed, and marked so it is not mistaken for the paper's own claim:*
+measured base rate under this ground truth: 8% of the tones the paper counts, in 140 Bach chorales, are
+non-chord tones; the paper states no unit beyond "the number of chord tones and non-chord tones".**
+*(★ CORRECTED 2026-09-19, ON THE USER'S RULING. Former wording, preserved (#12): "8% of voice-slice slots
+in 140 Bach chorales carry a non-chord tone." — "voice-slice slots" is the first reader's reading of the
+unit, not the page's word. The derived shares that follow, and their use at finding (7), keep the word
+"slots" as first written and inherit that reading; their arithmetic over the printed values was re-done
+by the second reader and holds.)*
+*Derived here, not printed, and marked so it is not mistaken for the paper's own claim:*
 under that imbalance a recall of 63.14% and a precision of 86.02% correspond to about 5.05% of slots
 correctly flagged, about 2.95% missed and about 0.82% falsely flagged — **about 3.8% of all voice-slice
 slots misclassified**, and about 37% of true non-chord tones missed (1 − recall). Neither of those is
@@ -293,8 +334,11 @@ project's root-agreement baseline is a different quantity on a different corpus.
 - A score in exactly FOUR voices (the output is one bit per voice), sliced at every new onset in any voice
   — the onset half of L1's partition-point construction with the release half absent.
 - **A tonality per chorale, supplied before anything is learned** (*"we also transposed all the chorales
-  into the same key"*), its source unstated — an oracle key, never decided by the system and never
-  changing within a chorale.
+  into the same key"*), its source unstated — a key taken as given and not decided by the system.
+  *(★ CORRECTED 2026-09-19, ON THE USER'S RULING. Former wording, preserved (#12): "its source unstated —
+  an oracle key, never decided by the system and never changing within a chorale." The page names no
+  source for the key, so "oracle" is a gloss; and it says nothing of a key changing or not changing
+  within a chorale.)*
 - For training, **a chord label per slice from which the non-chord-tone labels are read off** — the
   detector's target is a function of the chord annotation it is meant to precede.
 - Pitch-class presence only: no spelling, no octave, no duration, no bass, no voice identity of the
@@ -353,13 +397,18 @@ project's root-agreement baseline is a different quantity on a different corpus.
   *"a new note onset occurs in any musical voice."* A release opens no slice, so an elaboration whose
   moment begins at a release is invisible on this grid — the class of case C27 names. Recorded beside V8
   as a published instance of the half-construction, routed to L1's detail specification; no verdict.
-- **A datum for DP-B and D-526 (oracle key, chords relative to it).** Transposing every chorale to one
-  key before learning is D-526's key-relative representation reached by relabelling, with the key supplied
-  by hand — row 17's rotated condition on symbolic input, as that extract records it (read this sitting).
+- **A datum for DP-B and D-526 (a key taken as given, chords relative to it).** Transposing every chorale
+  to one key before learning is D-526's key-relative representation reached by relabelling, with the key
+  taken as given and its source unstated — row 17's rotated condition on symbolic input, as that extract
+  records it (read this sitting).
+  *(★ CORRECTED 2026-09-19, ON THE USER'S RULING. Former wording, preserved (#12): the heading's "(oracle
+  key, chords relative to it)" and "with the key supplied by hand". The page names no source for the key.)*
   The paper measures nothing against an untransposed condition, so unlike row 17 it supplies no sign.
   Recorded, nothing carried.
-- **A datum for the emission design's base rates (D-527) and for measurement design.** 8% of voice-slice
-  slots are non-chord tones under this annotation of 140 chorales — a measured prior for the category
+- **A datum for the emission design's base rates (D-527) and for measurement design.** 8% of the tones the
+  paper counts are non-chord tones under this annotation of 140 chorales *(★ CORRECTED 2026-09-19, ON THE
+  USER'S RULING; former wording, preserved (#12): "8% of voice-slice slots are non-chord tones" — the page
+  states no unit)* — a measured prior for the category
   emission, on this repertoire, at this grid, under this ground truth. Beside it: population row 14's
   measured style dependence of non-chord-tone rates, as the findings surface states it at line 670 (that
   paper not opened), merged with nothing.
@@ -446,14 +495,23 @@ detector, and a third quantity again. Put to the user as a question about a rati
 nothing applied; D-527's rule — no live cleaning stage — rests on the circularity and #12 arguments its
 own text carries and is unmoved by the figure either way.
 
-**(8) THE OUTPUT IS PER VOICE, FOR FOUR VOICES.** §3 in terms. As DP-D's rival the method cannot produce
+**(8) THE OUTPUT IS PER VOICE, FOR FOUR VOICES.** §3's general sentence, in terms; the worked example on
+the same page explains the same output by the position of a one in the INPUT vector, and the page does
+not reconcile the two. *(★ CORRECTED 2026-09-19, ON THE USER'S RULING. Former wording, preserved (#12):
+"§3 in terms." The finding stands on the general sentence; it is less settled by the page than the
+former wording suggested.)* As DP-D's rival the method cannot produce
 L2's per-sounding-note publication and cannot run on other textures. Recorded beside DP-D as a datum for
 the exclusion; no verdict.
 
-**(9) THE GRID IS ONSET-ONLY and THE KEY IS AN ORACLE.** §2 in terms. Two data — for V8 and L1's detail
+**(9) THE GRID IS ONSET-ONLY and THE KEY IS TAKEN AS GIVEN, ITS SOURCE UNSTATED.** §2 in terms for the
+grid and for the transposition into one key. *(★ CORRECTED 2026-09-19, ON THE USER'S RULING. Former
+wording, preserved (#12): "THE KEY IS AN ORACLE.** §2 in terms." — §2 does not say where the key came
+from.)* Two data — for V8 and L1's detail
 specification, and for DP-B / D-526 — routed above; nothing carried.
 
-**(10) A MEASURED BASE RATE: 8% non-chord-tone slots under this annotation.** §4. Routed to the emission
+**(10) A MEASURED BASE RATE: 8% non-chord tones under this annotation, unit not stated by the page.** §4.
+*(★ CORRECTED 2026-09-19, ON THE USER'S RULING. Former wording, preserved (#12): "8% non-chord-tone slots
+under this annotation.")* Routed to the emission
 design (D-527) and measurement design as a datum; merged with population row 14's rates nowhere.
 
 **(11) UNCERTAINTY PRINTED BUT UNDEFINED; ONE CONFIGURATION; NO COMPARISON.** A "±" on every cell whose
