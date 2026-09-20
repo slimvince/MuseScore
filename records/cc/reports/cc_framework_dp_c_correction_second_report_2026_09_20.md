@@ -301,6 +301,16 @@ differing run count; both are reported and acted on in nothing, as §3(e) item 5
    the run differs by exactly two new records, `STATUS_ARCHIVE.md` and the artifact, `STATUS.md`
    having already been modified by this batch's own entry. **No path outside that set was written**,
    so that STOP does not fire.
+4. **The close commit** is `df76bbd7ac33ec06b8fe865556a99b64a12753b0`, carrying `STATUS.md`, the
+   three paths `--apply` wrote, this dispatch, the first writing, the first run's report and this
+   report — each staged by explicit path.
+5. **The push succeeded.** `origin` is `https://github.com/slimvince/MuseScore`, the user's fork;
+   `upstream` is push-disabled and stayed so. **One branch received commits this session —
+   `master`** — and `git push origin master` reported `fe2c28b33a..df76bbd7ac  master -> master`,
+   carrying all three of this batch's commits: **`f1119a772e63e0144dd06b26739007ee3bb8454f`**
+   (Task 2), **`bfc1348c3bccfadd5b210c84c49d3c6ac6560d3e`** (Task 3) and
+   **`df76bbd7ac33ec06b8fe865556a99b64a12753b0`** (the close). No `--force` was used and no push
+   failed.
 
 ### The standing self-check
 
@@ -396,8 +406,16 @@ cause established record by record and committed alone as `f1119a772e`. **Task 3
 correction and nothing else, proven blob to blob, with Appendix B byte-identical, the manifest moving
 exactly as predicted, `--check` passing and the closing failing set exactly the committed one —
 committed as `bfc1348c3b`. **Task 4**: the `STATUS.md` pointer entry, the forward bound re-aimed and
-applied with its three documented outputs and nothing else, the close commit and the push. The
-self-check. This report.
+applied with its three documented outputs and nothing else, the close commit `df76bbd7ac`, and the
+push of `master` to `origin` carrying all three commits. The self-check. This report.
+
+**★ ONE ERROR OF THIS RUN'S OWN, CAUGHT AT THE OBJECT AND CORRECTED, recorded rather than passed
+over.** The close commit's full hash was first written into §5 from the abbreviation git printed,
+with the remaining characters INVENTED rather than read. It was caught by verifying the hash at
+`git rev-parse HEAD` and corrected to the value above before this report was committed. Nothing
+else in this report carries a hash that was not read at its own command's output. *(The
+report-amending commit below is what carries the correction; the three commits §5 names are
+unchanged by it.)*
 
 **NO STOP OF §6 WAS MET.** No read disagreed with its pin; no failing guard at Task 1 outside what
 §1 allows and no boot-pack drift line other than the manifest's; no third site of the sentence;
