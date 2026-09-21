@@ -759,6 +759,59 @@ candidate set already has — the previous close's report, written after its com
 later batch — and it is declared here so that no reader takes the committed text for a claim that the
 push had happened when it was written.
 
+### 6(a) The commit
+
+`git commit` over the sixteen staged paths **exited 0** and printed:
+
+```
+[master ef4fad940d] Close: the batch that stopped at §6(b), with its two stale measurements regenerated
+ 16 files changed, 3879 insertions(+), 180 deletions(-)
+ create mode 100644 records/cc/instructions/cc_instruction_boot_pack_frozen_manifest_2026_09_20.md
+ create mode 100644 records/cc/instructions/cc_instruction_boot_pack_frozen_manifest_close_2026_09_20.md
+ create mode 100644 records/cc/reports/cc_report_backup_third_close_2026_09_20.md
+ create mode 100644 records/cc/reports/cc_report_boot_pack_frozen_manifest_2026_09_20.md
+ create mode 100644 records/cc/reports/cc_report_boot_pack_frozen_manifest_close_2026_09_20.md
+ create mode 100644 records/cowork/handoff/cowork_handoff_entry_two_hundred_and_nineteen.md
+ create mode 100644 records/cowork/handoff/cowork_handoff_entry_two_hundred_and_twenty.md
+ create mode 100644 records/cowork/handoff/cowork_handoff_entry_two_hundred_and_twenty_one.md
+```
+
+`git rev-parse HEAD`, run once, printed
+**`ef4fad940d806edf8f84eb9a895f88d70a9bbcf2`**, which begins with the ten characters `git commit`
+printed. **THE CLOSE COMMIT IS `ef4fad940d806edf8f84eb9a895f88d70a9bbcf2`**, on base
+`d42fa5604538ece1abadcada6437415e67a81dbd`.
+
+**The commit's own diff against the base**, by
+`git diff --name-status d42fa5604538ece1abadcada6437415e67a81dbd HEAD`, names the sixteen members of
+§5(b) and nothing else — the same sixteen paths with the same sixteen status codes. The commit
+therefore carries exactly the candidate set, proved at the commit and not only at the index.
+
+### 6(b) The push
+
+`git push origin master` **exited 0** and printed, whole:
+
+```
+To https://github.com/slimvince/MuseScore
+   d42fa56045..ef4fad940d  master -> master
+```
+
+**ONE BRANCH RECEIVED THE COMMIT AND ONE BRANCH WAS PUSHED: `master`, to `origin`** — the fork.
+`git branch --contains ef4fad940d806edf8f84eb9a895f88d70a9bbcf2` names `master` and no other branch,
+so no second branch was owed. `upstream` was not pushed to and was not named; its push is disabled
+and this batch left it so. The push was run with no `--force`, no `--force-with-lease`, no other
+refspec and no `--tags`. It was not rejected and did not fail, so no pull, fetch, merge, rebase,
+retry or second push was run.
+
+`git rev-parse refs/remotes/origin/master` then printed
+**`ef4fad940d806edf8f84eb9a895f88d70a9bbcf2`** — **equal to the close commit.**
+
+### 6(c) The state this report is left in
+
+This closing note was appended after the push, so **this file now stands as ONE modified tracked path
+against the commit that contains it** — the only path in the tree that this batch's own commit
+carries and that has since moved. Nothing else was touched after the commit: no staging, no second
+commit, no amend, no second push. The held-back paths of §5(b) are exactly as they were.
+
 ---
 
 ## 7. What this batch did NOT do — named rather than counted
@@ -792,8 +845,11 @@ push had happened when it was written.
 `C:\Users\vince\AppData\Local\Temp\claude\c--s-MS\de9eb9bc-8997-415c-8907-6cf076ee888e\scratchpad\`:
 `guard_open.txt` (1(e)), `guard_close.txt` (§4), `changed_open.txt` (1(d)),
 `changed_after_task2.txt` (3(e)), `changed_before_stage.txt` (§4's no-path-moved proof),
-`t2_srs_write.txt`, `t2_ds_write.txt`, `t2_srs_check.txt`, `t2_ds_check.txt` (§3), and the staging
-and commit captures named in §5(b) and §6.
+`t2_srs_write.txt`, `t2_ds_write.txt`, `t2_srs_check.txt`, `t2_ds_check.txt` (§3), and
+`changed_final.txt` (the enumeration taken after the push, §6(c)). **The staging, commit and push
+outputs of §5(b) and §6 were NOT written to capture files** — they are quoted in this report directly
+from each command's own printed output, which is said here rather than left to be assumed from the
+list above.
 
 ---
 
@@ -801,8 +857,20 @@ and commit captures named in §5(b) and §6.
 
 Re-read against the guiding principles, the conventions, the gate and threshold policies, and
 `DEFECT_TYPES.md`. The whole of this batch's own writing is one insertion into one line of
-`STATUS.md` and this report; the other changed paths are the previous batch's work, committed
-unchanged and proved unchanged at §1(c) and §5(a).
+`STATUS.md`, the two regenerated artifacts, and this report; the other changed paths are the previous
+batch's work, committed unchanged and proved unchanged at §1(c) and §5(a).
+
+**The diff was READ, not remembered.** `git diff` between the base and the close commit, both named
+by explicit hash, shows for the two regenerated artifacts a movement confined to the quantities that
+depend on `STATUS.md`'s size and to nothing else: `session_start_read_size.json` moves its
+`STATUS.md` member 13,857 → 14,426 and the three totals and two comparison deltas that follow from
+it; `defense_share.json` moves only `the_whole_ordinary_session_start_read` 242,836 → 243,405 and the
+share derived from it, its own measured 12,957 characters in 34 clauses unchanged, as it must be
+since `CLAUDE.md` did not move. **Neither artifact gained, lost or reordered a field.** The
+`STATUS.md` word-diff against the same base shows the previous batch's entry replacement — that
+batch's work, not this one's — with this batch's inserted sentence present in it word for word and
+no removal attributable to this batch; that the superseded span itself still stands is proved
+separately at the file in §2, which is the stronger check.
 
 Three things are surfaced rather than shipped silently, and all three are already at their sites
 above:
@@ -816,8 +884,10 @@ above:
 2. **The ordinary session-start read was performed before this dispatch was acted on**, the standing
    rule that a single-file opening instruction is not an exemption from it: the derived gating answer
    at `tools/audit/nongating_apparatus_rows.json` → `★_the_live_gating_answer` → `gating_ids`,
-   `STATUS.md`, and the `DECISIONS.md` INDEX in full. `BUILD_AND_TEST.md` was read under its own
-   condition and carries none of this batch's commands.
+   `STATUS.md`, and the `DECISIONS.md` INDEX in full. `BUILD_AND_TEST.md` is a CONDITIONAL read since
+   2026-08-17, and its condition was tested rather than assumed: it was searched for the two
+   generators and the guard runner this batch invokes and holds **none** of them, so none of this
+   batch's commands lives there.
 3. **No figure in this report is transcribed from memory** (D-431): every one is quoted from a
    capture named in §7 or read at the object cited beside it, and the two claims the `STATUS.md`
    insertion makes about the two tools were re-established at those tools rather than carried from
