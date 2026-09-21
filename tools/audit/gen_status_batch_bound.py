@@ -442,7 +442,32 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # tool can identify them** — a declared state and not a STOP, unchanged by this act. **NO COUNT OF
 # THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431): the membership is DERIVED from the entries'
 # own text at the base commit.
-BASE_COMMIT = "d42fa5604538ece1abadcada6437415e67a81dbd"
+# ★ RE-AIMED 2026-09-21 by `cc_instruction_l2_withheld_documents_2026_09_21.md` Task 3, at its
+# 5(b), and ALL FIVE authored inputs moved together, `PREVIOUS_AIMINGS` being appended to rather
+# than replaced (#12). The aiming it replaces is the boot-pack frozen-manifest batch's, which is
+# ALREADY the last row of `PREVIOUS_AIMINGS` — that batch recorded its own aiming in its own act —
+# so it is not appended a second time, and this batch's aiming is appended instead. `BASE_COMMIT`
+# is this batch's own base: the commit both `master` and `origin/master` stood at when this batch
+# opened, read at the two ref FILES with the file tools rather than at a branch tip (D-253), and
+# the commit the executing dispatch names on its own face.
+#
+# ★★ THE THEN-PREVIOUS BATCH IS AGAIN NAMED BY THE DISPATCH ITS ENTRY SAYS OF ITSELF, AND AGAIN
+# THAT IS NOT THE LITERALLY PREVIOUS DISPATCH — the same shape the aiming above met, stated again
+# rather than left to be inferred from it. `cc_instruction_boot_pack_frozen_manifest_close_2026_09_20.md`
+# ran last and wrote no entry of its own: it AMENDED the boot-pack frozen-manifest batch's entry in
+# place, and that entry still opens by naming that batch. **Both names occur in that one entry's
+# line**, the close's ★★ sentence naming its own dispatch inside it, so either string selects the
+# same single entry and the membership is unaffected either way; what the choice decides is what the
+# archive header SAYS, and it says the batch whose entry it is (#10).
+#
+# **THE DECLARED PREFIX ADJUSTMENT IS EXPECTED TO FIRE**, that entry carrying the `Last updated: `
+# prefix at the base commit, which is why this batch's own entry was written into `STATUS.md` BEFORE
+# `--apply` ran. `ACT_DATE` and the executing dispatch's date AGREE here, both being 2026-09-21.
+# **The second writing's two nameless 2026-09-02 entries remain in `STATUS.md` and no aiming of this
+# tool can identify them** — a declared state and not a STOP, unchanged by this act. **NO COUNT OF
+# THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431): the membership is DERIVED from the entries'
+# own text at the base commit.
+BASE_COMMIT = "ef4fad940d806edf8f84eb9a895f88d70a9bbcf2"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -452,7 +477,7 @@ BASE_COMMIT = "d42fa5604538ece1abadcada6437415e67a81dbd"
 # 4's forward bound moves exactly these, in the act that writes this batch's own" until 2026-09-07,
 # correct while every aiming this tool had ever carried was an ordinary one; it is widened rather
 # than replaced, because the ordinary reading is still the one that governs an ordinary move — #12.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_backup_third_commit_and_push_2026_09_20.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_boot_pack_frozen_manifest_2026_09_20.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -462,8 +487,8 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_backup_third_commit_and_push_2026_09_2
 # was the executing act, correct then, and are re-stated with each re-aiming rather than left to be
 # inferred. On a CATCH-UP move the dates of the closes that omitted the move are NOT the act date:
 # the move happens now, and the header says so.)*
-ACT_DATE = "2026-09-20"
-DISPATCH = "cc_instruction_boot_pack_frozen_manifest_2026_09_20.md"
+ACT_DATE = "2026-09-21"
+DISPATCH = "cc_instruction_l2_withheld_documents_2026_09_21.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -499,8 +524,11 @@ DISPATCH = "cc_instruction_boot_pack_frozen_manifest_2026_09_20.md"
 # `cc_instruction_boot_pack_frozen_manifest_2026_09_20.md` is the executing act — the first executing
 # dispatch whose close is a lettered SECTION rather than a numbered task, that dispatch ordering this
 # batch's own entry at its §6(c) and this move at its §6(d), both inside its own §6. The field names
-# an act, and this act's name is a section; nothing else about the field changes.)*
-TASK = "§6 (the close)"
+# an act, and this act's name is a section; nothing else about the field changes. It names Task 3
+# again while `cc_instruction_l2_withheld_documents_2026_09_21.md` is the executing act, that
+# dispatch ordering both halves of the close — this batch's own entry at its 5(a) and this move at
+# its 5(b) — inside its own Task 3, which that dispatch's §5 heading names in those words.)*
+TASK = "Task 3"
 # ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
 #   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
 #                 moved in the same act that writes this batch's own entries.
@@ -862,6 +890,17 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_boot_pack_frozen_manifest_2026_09_20.md, §6 (the close)",
      "base_commit": "d42fa5604538ece1abadcada6437415e67a81dbd",
      "the_then_previous_batch": "cc_instruction_backup_third_commit_and_push_2026_09_20.md",
+     "the_kind_of_move": "ordinary"},
+    # ★ THIS BATCH'S OWN AIMING, 2026-09-21 — the close of the batch that derived and printed L2's
+    # withheld documents, an ORDINARY move on the shape the rows above set, and recorded here in the
+    # same act that makes it. The aiming it replaces is the row immediately above, which that batch
+    # recorded in its own act, so it is not appended a second time. Its `the_then_previous_batch` is
+    # again NOT the literally previous dispatch: the boot-pack frozen-manifest batch's CLOSE ran
+    # between the two and wrote no entry of its own, amending that batch's entry in place instead.
+    # The reasoning is at `BASE_COMMIT` above and is not restated here.
+    {"executing_act": "cc_instruction_l2_withheld_documents_2026_09_21.md, Task 3",
+     "base_commit": "ef4fad940d806edf8f84eb9a895f88d70a9bbcf2",
+     "the_then_previous_batch": "cc_instruction_boot_pack_frozen_manifest_2026_09_20.md",
      "the_kind_of_move": "ordinary"},
 ]
 

@@ -838,6 +838,28 @@ AUTHORED = [
      "declares that of itself. ★ AND IT AUTHORIZES NOTHING: the ruling it exists for says in its "
      "own words that the result authorizes NOTHING."),
 
+    # ---- AUTHORED 2026-09-21, cc_instruction_l2_withheld_documents_2026_09_21.md Task 2 -------
+    # THE DERIVATION OF L2's WITHHELD DOCUMENTS, registered in the act that creates the tool — the
+    # standing new-tool rule. `--check` and never the bare invocation, for the reason the boot
+    # pack's own entry above gives: a bare run REWRITES the artifact a ruling is taken over.
+    ("tools/audit/gen_l2_withheld_documents.py", ["--check"],
+     "the L2 withheld-document derivation still re-derives from the ruled verdict table and the "
+     "register's data file — the set of home documents of the entries `VERDICTS[\"l2\"]` grades "
+     "IN, read through that module's own VERDICT_IN token and never re-authored here (#6, D-431), "
+     "over a backbone assembled exactly as the boot pack's own `build()` assembles it so the two "
+     "derivations cannot disagree. Its four STOPs are what make it a guard rather than a print: "
+     "an IN identity the register's data file does not carry halts it, so a verdict cannot "
+     "outlive its entry; a home that is absent, empty, or whose leading token is not a document "
+     "path halts it, so no document is ever taken from a home that has drifted and none is "
+     "repaired by guess; either direction of the reconciliation failing halts it — every IN "
+     "identity accounted to exactly one document, every listed document named by at least one — "
+     "so neither a lost identity nor an orphan document can pass as a field; and an IN count "
+     "other than the 111 the user ruled halts it, so the derivation can never run over a family "
+     "he did not rule. ★ WHAT IT DOES NOT ASSERT: that any document in the set SHOULD be "
+     "withheld — that judgment is the user's and Ruling 6 reserves it (D-661, #24) — or that any "
+     "verdict in the table it reads is right. ★ AND IT AUTHORS NOTHING: not `WITHHELD`, not "
+     "`EXTRAS`, not `VERDICTS`, not `CRITERION`, and no pack directory"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "

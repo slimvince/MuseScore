@@ -1,0 +1,381 @@
+{
+  "what_this_is": "The set of home documents of the entries the ruled L2 verdict table grades IN, derived under Ruling 6 of `records/cowork/rulings/cowork_rulings_2026_09_05_l2_boot_list_sitting.md`, printed for the user's confirmation and authored into nothing.",
+  "generator": "tools/audit/gen_l2_withheld_documents.py",
+  "the_ruling_it_executes": {
+    "ruling": "Ruling 6 of `records/cowork/rulings/cowork_rulings_2026_09_05_l2_boot_list_sitting.md`",
+    "verbatim": "The pack-build dispatch derives, from the register's data file (`tools/audit/decisions/backbone_decisions.json`) and the ruled verdict table, the set of home documents of the 111 IN entries; prints it; and **STOPs for the user's confirmation before the set is authored into `WITHHELD[\"l2\"][\"withheld_documents\"]`**, each with its finding, date and reason. The pilot's one withheld document is not restated for L2 — it enters, if at all, as a member of the derived set."
+  },
+  "where_it_reads_from": {
+    "the_verdict_table": "gen_derivation_boot_pack.VERDICTS[\"l2\"], with that module's own VERDICT_IN token. The identity list is not re-authored here (#6, D-431).",
+    "the_homes": "tools/audit/decisions/backbone_decisions.json, assembled exactly as gen_derivation_boot_pack.build() assembles it — the decisions array keyed by id, then each retired entry's `the_entry` added under its own id where it carries a truthy id and that id is not already present.",
+    "how_a_document_is_taken_from_a_home": "the substring before the first `:` in the entry's `home` string, whitespace stripped, which must then match `^[^\\s:]+\\.md$`. A home that is absent, empty or whose leading token does not match STOPS the run, naming the entry and its home string. Nothing is guessed and no home is repaired."
+  },
+  "in_entries": [
+    "D-001",
+    "D-003",
+    "D-005",
+    "D-010",
+    "D-022",
+    "D-023",
+    "D-024",
+    "D-025",
+    "D-026",
+    "D-027",
+    "D-033",
+    "D-057",
+    "D-096",
+    "D-099",
+    "D-114",
+    "D-207",
+    "D-220",
+    "D-221",
+    "D-222",
+    "D-224",
+    "D-270",
+    "D-271",
+    "D-276",
+    "D-278",
+    "D-280",
+    "D-283",
+    "D-284",
+    "D-285",
+    "D-288",
+    "D-289",
+    "D-291",
+    "D-293",
+    "D-306",
+    "D-317",
+    "D-318",
+    "D-319",
+    "D-320",
+    "D-321",
+    "D-323",
+    "D-325",
+    "D-326",
+    "D-327",
+    "D-329",
+    "D-330",
+    "D-331",
+    "D-335",
+    "D-336",
+    "D-337",
+    "D-338",
+    "D-339",
+    "D-341",
+    "D-343",
+    "D-344",
+    "D-345",
+    "D-347",
+    "D-348",
+    "D-349",
+    "D-351",
+    "D-376",
+    "D-380",
+    "D-381",
+    "D-382",
+    "D-383",
+    "D-384",
+    "D-385",
+    "D-386",
+    "D-387",
+    "D-391",
+    "D-425",
+    "D-449",
+    "D-450",
+    "D-453",
+    "D-463",
+    "D-465",
+    "D-466",
+    "D-467",
+    "D-490",
+    "D-491",
+    "D-492",
+    "D-493",
+    "D-494",
+    "D-499",
+    "D-501",
+    "D-504",
+    "D-505",
+    "D-506",
+    "D-509",
+    "D-510",
+    "D-511",
+    "D-521",
+    "D-524",
+    "D-525",
+    "D-526",
+    "D-527",
+    "D-528",
+    "D-531",
+    "D-532",
+    "D-533",
+    "D-534",
+    "D-536",
+    "D-537",
+    "D-565",
+    "D-571",
+    "D-572",
+    "D-575",
+    "D-580",
+    "D-600",
+    "D-605",
+    "D-616",
+    "D-622",
+    "D-629"
+  ],
+  "documents": [
+    {
+      "document": "ARCHITECTURE.md",
+      "in_entries_homed_here": [
+        "D-001",
+        "D-003",
+        "D-005",
+        "D-010",
+        "D-022",
+        "D-023",
+        "D-024",
+        "D-025",
+        "D-026",
+        "D-027",
+        "D-033",
+        "D-057",
+        "D-096",
+        "D-099",
+        "D-114",
+        "D-207",
+        "D-280",
+        "D-288",
+        "D-291",
+        "D-293",
+        "D-306",
+        "D-326",
+        "D-449",
+        "D-450",
+        "D-466",
+        "D-467",
+        "D-494",
+        "D-501",
+        "D-531",
+        "D-532",
+        "D-533",
+        "D-534",
+        "D-572",
+        "D-575",
+        "D-605",
+        "D-616",
+        "D-622",
+        "D-629"
+      ],
+      "how_many": 38
+    },
+    {
+      "document": "cowork_architecture_reassessment.md",
+      "in_entries_homed_here": [
+        "D-283",
+        "D-284",
+        "D-285"
+      ],
+      "how_many": 3
+    },
+    {
+      "document": "cowork_architecture_review_2026_07.md",
+      "in_entries_homed_here": [
+        "D-499"
+      ],
+      "how_many": 1
+    },
+    {
+      "document": "cowork_engage_arc_plan.md",
+      "in_entries_homed_here": [
+        "D-278"
+      ],
+      "how_many": 1
+    },
+    {
+      "document": "cowork_evidence_inventory.md",
+      "in_entries_homed_here": [
+        "D-521"
+      ],
+      "how_many": 1
+    },
+    {
+      "document": "cowork_factorization_desk_simulation.md",
+      "in_entries_homed_here": [
+        "D-453"
+      ],
+      "how_many": 1
+    },
+    {
+      "document": "cowork_joint_estimator_architecture.md",
+      "in_entries_homed_here": [
+        "D-524",
+        "D-525",
+        "D-526",
+        "D-527",
+        "D-528"
+      ],
+      "how_many": 5
+    },
+    {
+      "document": "cowork_joint_estimator_factorization.md",
+      "in_entries_homed_here": [
+        "D-565"
+      ],
+      "how_many": 1
+    },
+    {
+      "document": "cowork_joint_key_chord_design.md",
+      "in_entries_homed_here": [
+        "D-376"
+      ],
+      "how_many": 1
+    },
+    {
+      "document": "cowork_layer3_keymode_design.md",
+      "in_entries_homed_here": [
+        "D-343",
+        "D-344",
+        "D-345",
+        "D-347",
+        "D-348",
+        "D-349",
+        "D-351"
+      ],
+      "how_many": 7
+    },
+    {
+      "document": "cowork_layer4_chordsymbol_design.md",
+      "in_entries_homed_here": [
+        "D-329",
+        "D-330",
+        "D-331"
+      ],
+      "how_many": 3
+    },
+    {
+      "document": "cowork_layer5_engagement_design.md",
+      "in_entries_homed_here": [
+        "D-380",
+        "D-381",
+        "D-382",
+        "D-383",
+        "D-384",
+        "D-385",
+        "D-386",
+        "D-387"
+      ],
+      "how_many": 8
+    },
+    {
+      "document": "cowork_layer5_function_design.md",
+      "in_entries_homed_here": [
+        "D-335",
+        "D-336",
+        "D-337",
+        "D-338",
+        "D-339",
+        "D-341"
+      ],
+      "how_many": 6
+    },
+    {
+      "document": "cowork_notation_adoption_increment.md",
+      "in_entries_homed_here": [
+        "D-425"
+      ],
+      "how_many": 1
+    },
+    {
+      "document": "cowork_notation_output_contract.md",
+      "in_entries_homed_here": [
+        "D-276"
+      ],
+      "how_many": 1
+    },
+    {
+      "document": "cowork_prefit_gates.md",
+      "in_entries_homed_here": [
+        "D-270",
+        "D-271"
+      ],
+      "how_many": 2
+    },
+    {
+      "document": "cowork_progression_schema_design.md",
+      "in_entries_homed_here": [
+        "D-504",
+        "D-505",
+        "D-506",
+        "D-509"
+      ],
+      "how_many": 4
+    },
+    {
+      "document": "cowork_voiceleading_axis_design.md",
+      "in_entries_homed_here": [
+        "D-391"
+      ],
+      "how_many": 1
+    },
+    {
+      "document": "docs/scoring_model.md",
+      "in_entries_homed_here": [
+        "D-220",
+        "D-221",
+        "D-222",
+        "D-224",
+        "D-317",
+        "D-318",
+        "D-319",
+        "D-320",
+        "D-321",
+        "D-323",
+        "D-325",
+        "D-327",
+        "D-463",
+        "D-465",
+        "D-490",
+        "D-491",
+        "D-492",
+        "D-493",
+        "D-510",
+        "D-511",
+        "D-536",
+        "D-537",
+        "D-580",
+        "D-600"
+      ],
+      "how_many": 24
+    },
+    {
+      "document": "docs/stage4b_design.md",
+      "in_entries_homed_here": [
+        "D-571"
+      ],
+      "how_many": 1
+    },
+    {
+      "document": "records/cowork/handoff/cowork_handoff_archive.md",
+      "in_entries_homed_here": [
+        "D-289"
+      ],
+      "how_many": 1
+    }
+  ],
+  "counted": {
+    "in_entries": 111,
+    "documents": 21,
+    "sum_of_the_per_document_identity_counts": 111
+  },
+  "★_the_reconciliation_taken_in_both_directions": {
+    "every_IN_identity_accounted_to_exactly_one_document": true,
+    "every_listed_document_named_by_at_least_one_IN_identity": true,
+    "the_sum_of_the_per_document_counts_equals_the_IN_count": true,
+    "a_failure_of_either_direction_is_a_STOP_not_a_field": "Each of the three is proved before this artifact is built; a failure raises and ends the run, so a `true` here is a record of a check that passed and never a claim made in place of one."
+  },
+  "★_the_bound": {
+    "what_this_derivation_reaches": "The entries of the ruled L2 verdict table and nothing wider. An entry the table does not grade is not reached, whatever its subject.",
+    "what_a_document's_presence_here_is_not": "It is NOT a judgment that the document should be withheld. That judgment is the user's, and Ruling 6 reserves it: the set is printed and STOPs for his confirmation before anything is authored (D-661, #24).",
+    "what_this_run_authored": "Nothing. No `WITHHELD`, no `EXTRAS`, no `VERDICTS`, no `CRITERION`, no pack directory."
+  }
+}
