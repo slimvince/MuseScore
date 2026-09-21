@@ -1492,7 +1492,7 @@ recorded act.
 
 ### D-576 — The corpus root-agreement measurement UNDERSTATES the real-world quality impact of a wrong key, because root and bass are largely key-independent
 
-- **Recorded at:** `CLAUDE.md:826-830` · **status:** `live` · **group:** C
+- **Recorded at:** `CLAUDE.md:865-869` · **status:** `live` · **group:** C
 - **What the entry says the decision is:** A chord's root and its lowest note can both be named correctly while the key is wrong. So a measurement built on root agreement barely moves when the tonality is misread — but the quality of the chord, its Roman numeral and some of its inversions are all corrupted. The measurement therefore reports less damage than a listener or reader would see.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
@@ -1606,13 +1606,13 @@ recorded act.
 
 ### D-656 — The crediting rule is NOT amended to count a tonicization label as agreeing with the annotator's modulated numeral; only a diagnostic partial-sub-split is defensible
 
-- **Recorded at:** `CLAUDE.md:1044-1053` · **status:** `live` · **group:** C
+- **Recorded at:** `CLAUDE.md:1083-1092` · **status:** `live` · **group:** C
 - **What the entry says the decision is:** Where our analysis names an applied chord relative to the home key and the human annotator has changed key, the accuracy comparison is not to be altered so that our label counts as agreeing. Only a diagnostic that splits such cases out and exposes the masking is defensible. This is the measurement half of a decision whose build half — leaving the labeller unwired — belongs to the function layer's specification.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
 ### D-660 — A research-tied name is not renamed but is governed by a two-tier rule, and the terminology cleanup runs in a fixed order with no tree-wide rename
 
-- **Recorded at:** `CLAUDE.md:1561-1572` · **status:** `live` · **group:** K
+- **Recorded at:** `CLAUDE.md:1616-1627` · **status:** `live` · **group:** K
 - **What the entry says the decision is:** A term borrowed from the published research that collides with this project's vocabulary is not renamed. Instead: where the research is actually discussed, the collision is explained and our own synonym stated; and every later use of the borrowed term outside our vocabulary carries a short inline note pointing at the research, so an unannotated repeat use is a flag. The wider terminology cleanup runs in a fixed order — the derived inventory first, then per-word batches the user rules, governing surfaces first — and there is no tree-wide rename.
 - **Decided by:** the authored word recognizers, over the decisions register's own restatement — the entry's own title and plain restatement carry the subject of the analysis and nothing of the working process
 
@@ -1799,7 +1799,7 @@ standing rules regardless of the sort.
 - **D-654** — Where a licence's letter leaves a known falsity standing in the file it licensed, the session corrects it and REPORTS the widening in the same act *(decided by the decisions register's own `nonspec_kind`, by the definition its data file's header gives that value)*
 - **D-655** — A session may author an owed establishment; its verdicts clear no guard until the reviewed set is applied *(decided by the decisions register's own `nonspec_kind`, by the definition its data file's header gives that value)*
 - **D-657** — A mechanism change is decided over its whole population both ways before it is applied, and only the members the defect's own shape names may move *(decided by the decisions register's own `nonspec_kind`, by the definition its data file's header gives that value)*
-- **D-658** — Where the record does not settle the question, the surface that returns it to the user gathers facts and makes no recommendation *(decided by the decisions register's own `nonspec_kind`, by the definition its data file's header gives that value)*
+- **D-658** — Where the record does not settle the question, the surface that returns it to the user gathers facts, marks what is unsettled, and carries a recommendation *(decided by the decisions register's own `nonspec_kind`, by the definition its data file's header gives that value)*
 - **D-659** — Document-structure conformance is kind-scoped, and the kind list is enumerated with a STOP on an unlisted kind *(decided by the decisions register's own `nonspec_kind`, by the definition its data file's header gives that value)*
 - **D-661** — Complete means complete relative to a named derivation, whose measured miss rate against the record is part of its name *(decided by the decisions register's own `nonspec_kind`, by the definition its data file's header gives that value)*
 - **D-662** — Every open-items index status cell begins with one canonical token, with a lint and a parser STOP behind it *(decided by the decisions register's own `nonspec_kind`, by the definition its data file's header gives that value)*

@@ -1847,6 +1847,74 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   arrives blind. Its first application is on the record: the 2026-07-05 verdict-14 and 2.2c
   ratifications were re-presented and re-confirmed.
 
+- **HOW A DECISION SURFACE IS WRITTEN, AND IN WHAT ORDER ITS RULES APPLY (consolidated here on the
+  user's direction, 2026-09-21; each part keeps its own home and is CITED, never copied — #6).** The
+  rules governing what is put to the user for a decision live in four register entries homed in four
+  documents, and in a run of per-sitting rulings that carry no register entry at all. A session can
+  hold every one of them and still apply them in the wrong order, and on 2026-09-21 one did: it
+  established the fact that decides which rule governs, and then took the other branch. **This block
+  exists for the ORDER.**
+  **ONE WORD BEFORE THE LIST, so nothing is read the wrong way round.** The numbered STEPS below are
+  this block's own. Where a step cites *clause N*, that means one of the FOUR CLAUSES the user gave
+  on 2026-09-21, whose numbering is his — **and the two numberings do not line up**: his clause 1 is
+  step 2 here, his clause 2 is step 3, his clause 3 is step 4, and his clause 4 is step 5. **The
+  order is:**
+  1. **APPLY THE STANDING PRINCIPLES FIRST (D-599).** Where the guiding principles and the ultimate
+     objective decide the question, there is no genuine choice for the user, and what remains for him
+     is ratifying the derivation rather than picking an option.
+  2. **THEN ASK WHETHER ANY REAL CHOICE REMAINS** — valued towards the ultimate objective, towards
+     the guiding principles, and by the meta level of the suggested act. **If none remains, say so
+     and present NO decision surface** (the user's ruling of 2026-09-21, clause 1, generalising his
+     ruling of 2026-08-28: *"There is no choice anymore, B or what?"*). **A bar this side wrote for
+     itself is not a question for the user**: check whether the record already answers it before
+     escalating it (2026-08-28).
+  3. **WHERE A CHOICE REMAINS, A DECISION SURFACE IS OWED** (2026-09-21, clause 2), **and it presents
+     ALL the alternatives** (clause 3).
+  4. **EVERY ALTERNATIVE IS WEIGHED ON THREE STANDING GROUNDS** (clause 3, sharpening **D-424** and
+     Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md`):
+     **towards the ultimate objective** — maximum-precision inference, #4; **towards the guiding
+     principles**; and **marked for the META LEVEL of the suggested act** — whether it acts on the
+     analysis, on a measurement tool, or on this project's own governance apparatus. The three named
+     are the floor and not the ceiling. Every alternative is **fact-based**: a checkable claim about
+     our own system is checked before it carries load in a surface (#18), and one that cannot be
+     checked is LABELLED a reading rather than stated as a fact. **Every pro and con names the
+     principle, rule or gate it rests on (D-424).** Where the objective and the principles conflict,
+     the objective takes precedence — **and how far that reaches is an OPEN QUESTION the user has not
+     answered**: read at its widest it could be taken as licence to override #18, #19 or #20 by
+     asserting a benefit to the objective, and §3 of that same record states that the narrowing is
+     not a session's to take. Until he answers, it is applied as written, and any case where the wide
+     reading would change an outcome is flagged to him.
+  5. **THE SURFACE CARRIES A RECOMMENDATION, ALWAYS, EXPLAINED IN THOSE SAME THREE TERMS**
+     (2026-09-21, clause 4). His words with the ruling: *"I cannot think of any example of decision
+     surface that should exclude a recommendation."* **A recommendation given WITHOUT its
+     three-ground explanation reopens the hazard the superseded rule existed against** — the user
+     ruling on a verdict rather than on a reasoning he can check at its grounds.
+  6. **THE WHOLE SURFACE IS DELIVERED AS TEXT THE USER HAS ACTUALLY SEEN, BEFORE ANY CHOICE
+     QUESTION (D-249)**, self-contained, **every identifier re-explained from scratch** (2026-08-15).
+     For a consequential decision the choice question goes in a **SEPARATE, LATER turn**, and **ONE
+     DECISION PER TURN** (2026-08-21). **No multiple-choice widget** (2026-09-04). **A decision
+     answered blind is voidable** (D-249).
+  7. **IT IS WRITTEN IN PLAIN, UNCOMPRESSED ORDINARY ENGLISH**, reasoning on the page rather than
+     summarising a reasoning that happened elsewhere, with no vocabulary invented for the occasion,
+     and **no rating compressed into a stub** (Ruling 21 of the 2026-08-31 record). The record form
+     belongs in the records and not in conversation with the user (2026-08-28). The two writing
+     standards of `cowork_design_doc_template.md` bind it: that document states in its own words that
+     they are NOT kind-scoped and bind every document and everything written for the user.
+  8. **WHERE A QUESTION GENUINELY GOES BACK TO THE USER BECAUSE THE RECORD DOES NOT ANSWER IT, THE
+     THREE SURVIVING REQUIREMENTS OF D-658 HOLD**: every claim cited at its source and read in place;
+     the records concerned read whole; and anything the record does not settle **marked UNSETTLED
+     rather than filled**. **D-658's fourth requirement — no recommendation at all — is SUPERSEDED by
+     step 5 above, which is the user's clause 4, and is dead.** It is corrected at D-658's own home in
+     `cowork_audit_protocol.md`, the former wording preserved there in place (#12).
+  **WHAT THIS BLOCK IS, AND WHAT IT IS NOT.** It states the combined rule and its order. The verbatim
+  of each part stays at its own home and is cited here, never copied (#6): **D-249** in this
+  Conventions section; **D-424** in `cowork_notation_adoption_increment.md`; **D-599** in
+  `cowork_adjudication_dossier.md`; **D-658** in `cowork_audit_protocol.md`. The per-sitting rulings
+  of 2026-08-15, 2026-08-21, 2026-08-28, 2026-09-04 and 2026-09-21 live in their handoff entries and
+  ruling records and are cited here by their dates. **NO DECISIONS-REGISTER IDENTITY IS ALLOCATED for
+  the 2026-09-21 ruling or for this block** — that register cannot accept one while its rule (c) is
+  suspended, and `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
 - **WORKING-TREE FILES ARE READ WITH THE FILE TOOLS; SHELL ACCESS IS LIMITED TO GIT OBJECT QUERIES BY
   EXPLICIT HASH (user mandate 2026-06-21; homed here 2026-08-02 from `records/cowork/handoff/cowork_handoff.md`,
   `OPEN_ITEMS.md` OI-266).** Local file content, existence, line counts and searches always go

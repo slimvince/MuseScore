@@ -74,6 +74,7 @@
       "what_is_NOT_frozen": "`read_documents_whose_naming_count_moved_since_registration`, which carries no date and is a statement about the surfaces as they stand today. It is still computed live on every run and can still move."
     },
     "read_documents_whose_naming_count_moved_since_registration": [
+      "cowork_design_doc_template.md",
       "cowork_engage_arc_plan.md",
       "cowork_layer5_function_design.md",
       "cowork_notation_adoption_increment.md",

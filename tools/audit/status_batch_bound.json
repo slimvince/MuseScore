@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l2_withheld_documents_2026_09_21.md, Task 3",
+ "dispatch": "cc_instruction_decision_rules_consolidation_2026_09_21.md, Task 5",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -369,22 +369,28 @@
    "base_commit": "ef4fad940d806edf8f84eb9a895f88d70a9bbcf2",
    "the_then_previous_batch": "cc_instruction_boot_pack_frozen_manifest_2026_09_20.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_decision_rules_consolidation_2026_09_21.md, Task 5",
+   "base_commit": "3720bd323e5c25dcd538d77b4338214b16427349",
+   "the_then_previous_batch": "cc_instruction_l2_withheld_documents_2026_09_21.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "ef4fad940d806edf8f84eb9a895f88d70a9bbcf2",
- "the_then_previous_batch": "cc_instruction_boot_pack_frozen_manifest_2026_09_20.md",
+ "base_commit": "3720bd323e5c25dcd538d77b4338214b16427349",
+ "the_then_previous_batch": "cc_instruction_l2_withheld_documents_2026_09_21.md",
  "the_kind_of_move": "ordinary",
  "entries_moved": 1,
- "characters_moved": 5149,
+ "characters_moved": 3017,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 5149,
-   "sha256": "2a28742e948702dd858249503d3e432aa1899d50f8cf5719de3f377341ea73f3",
+   "characters": 3017,
+   "sha256": "abf0cb5e541b49855fd292ea56cbfb52014a3fccef254d46a6b3b3c62120beb4",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-09-20 (CC — `records/cc/instructions/cc_instruction_boot_pack_frozen_manifest_2026_09_20.md`. **★★ A FROZEN SUBJECT'S MANIFEST RECORD NOW DESCRI"
+   "opening": "*2026-09-21 (CC — `records/cc/instructions/cc_instruction_l2_withheld_documents_2026_09_21.md`. **★★ L2's WITHHELD DOCUMENTS ARE DERIVED AND PRINTED F"
   }
  ],
  "reconciliation": {

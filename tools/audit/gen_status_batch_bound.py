@@ -467,7 +467,36 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # tool can identify them** — a declared state and not a STOP, unchanged by this act. **NO COUNT OF
 # THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431): the membership is DERIVED from the entries'
 # own text at the base commit.
-BASE_COMMIT = "ef4fad940d806edf8f84eb9a895f88d70a9bbcf2"
+# ★ RE-AIMED 2026-09-21 by `cc_instruction_decision_rules_consolidation_2026_09_21.md` Task 5, at its
+# 7(b), and ALL FIVE authored inputs moved together, `PREVIOUS_AIMINGS` being appended to rather than
+# replaced (#12). The aiming it replaces is the L2-withheld-documents batch's, which is ALREADY the
+# last row of `PREVIOUS_AIMINGS` — that batch recorded its own aiming in its own act — so it is not
+# appended a second time, and this batch's aiming is appended instead.
+#
+# ★★ `BASE_COMMIT` IS NOT THE COMMIT BOTH REFS STOOD AT WHEN THIS BATCH OPENED, AND THE DEPARTURE IS
+# DECLARED RATHER THAN LEFT TO BE NOTICED. This batch opened with the two refs DISAGREEING and with
+# the then-previous batch's `STATUS.md` entry FINISHED BUT UNCOMMITTED, that batch having stopped
+# before its own second commit. At `7d7291f401d05052240d76078db175ce160e8b91` — the commit `master`
+# stood at, read at the ref FILE with the file tools (D-253) — `STATUS.md`'s object does NOT carry
+# that entry, so an aiming there would meet this tool's own first STOP: the then-previous batch
+# cannot be identified. `BASE_COMMIT` therefore names this batch's Task 0 commit, which committed
+# that batch's work unchanged and is the first commit whose `STATUS.md` object carries the entry this
+# act moves. The choice is between that commit and the interim-carrier commit above it, whose
+# `STATUS.md` is byte-identical; the work-landing commit is named because it is the one that carries
+# the batch being moved.
+#
+# ★★ THE THEN-PREVIOUS BATCH IS THE LITERALLY PREVIOUS ONE AGAIN, which the two aimings above were
+# not — no close ran between them writing no entry of its own. `PREVIOUS_BATCH_DISPATCH` names the
+# L2-withheld-documents batch, whose entry names it and stands alone.
+#
+# **THE DECLARED PREFIX ADJUSTMENT IS EXPECTED TO FIRE**, that entry carrying the `Last updated: `
+# prefix at the base commit, which is why this batch's own entry was written into `STATUS.md` BEFORE
+# `--apply` ran. `ACT_DATE` and the executing dispatch's date AGREE here, both being 2026-09-21.
+# **The second writing's two nameless 2026-09-02 entries remain in `STATUS.md` and no aiming of this
+# tool can identify them** — a declared state and not a STOP, unchanged by this act. **NO COUNT OF
+# THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431): the membership is DERIVED from the entries'
+# own text at the base commit.
+BASE_COMMIT = "3720bd323e5c25dcd538d77b4338214b16427349"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -477,7 +506,7 @@ BASE_COMMIT = "ef4fad940d806edf8f84eb9a895f88d70a9bbcf2"
 # 4's forward bound moves exactly these, in the act that writes this batch's own" until 2026-09-07,
 # correct while every aiming this tool had ever carried was an ordinary one; it is widened rather
 # than replaced, because the ordinary reading is still the one that governs an ordinary move — #12.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_boot_pack_frozen_manifest_2026_09_20.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_l2_withheld_documents_2026_09_21.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -488,7 +517,7 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_boot_pack_frozen_manifest_2026_09_20.m
 # inferred. On a CATCH-UP move the dates of the closes that omitted the move are NOT the act date:
 # the move happens now, and the header says so.)*
 ACT_DATE = "2026-09-21"
-DISPATCH = "cc_instruction_l2_withheld_documents_2026_09_21.md"
+DISPATCH = "cc_instruction_decision_rules_consolidation_2026_09_21.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -527,8 +556,11 @@ DISPATCH = "cc_instruction_l2_withheld_documents_2026_09_21.md"
 # an act, and this act's name is a section; nothing else about the field changes. It names Task 3
 # again while `cc_instruction_l2_withheld_documents_2026_09_21.md` is the executing act, that
 # dispatch ordering both halves of the close — this batch's own entry at its 5(a) and this move at
-# its 5(b) — inside its own Task 3, which that dispatch's §5 heading names in those words.)*
-TASK = "Task 3"
+# its 5(b) — inside its own Task 3, which that dispatch's §5 heading names in those words. It names
+# Task 5 while `cc_instruction_decision_rules_consolidation_2026_09_21.md` is the executing act, that
+# dispatch ordering both halves of the close — this batch's own entry at its 7(a) and this move at
+# its 7(b) — inside its own Task 5, which that dispatch's §7 heading names in those words.)*
+TASK = "Task 5"
 # ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
 #   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
 #                 moved in the same act that writes this batch's own entries.
@@ -901,6 +933,17 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_l2_withheld_documents_2026_09_21.md, Task 3",
      "base_commit": "ef4fad940d806edf8f84eb9a895f88d70a9bbcf2",
      "the_then_previous_batch": "cc_instruction_boot_pack_frozen_manifest_2026_09_20.md",
+     "the_kind_of_move": "ordinary"},
+    # ★ THIS BATCH'S OWN AIMING, 2026-09-21 — the close of the batch that consolidated the
+    # decision-surface rules into `CLAUDE.md` and corrected D-658 at its home, an ORDINARY move on
+    # the shape the rows above set, and recorded here in the same act that makes it. The aiming it
+    # replaces is the row immediately above, which that batch recorded in its own act, so it is not
+    # appended a second time. Its `base_commit` is NOT the commit the refs stood at when this batch
+    # opened — the entry this move takes was uncommitted there — and the reasoning is at
+    # `BASE_COMMIT` above and is not restated here.
+    {"executing_act": "cc_instruction_decision_rules_consolidation_2026_09_21.md, Task 5",
+     "base_commit": "3720bd323e5c25dcd538d77b4338214b16427349",
+     "the_then_previous_batch": "cc_instruction_l2_withheld_documents_2026_09_21.md",
      "the_kind_of_move": "ordinary"},
 ]
 

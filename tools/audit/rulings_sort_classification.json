@@ -1598,7 +1598,7 @@
    "id": "D-191",
    "group": "C",
    "title": "The two-tier regression class policy - functional regression stops, rotation churn is tracked",
-   "home": "CLAUDE.md:1119",
+   "home": "CLAUDE.md:1158",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -1612,7 +1612,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1119"
+     "the_home_it_names": "CLAUDE.md:1158"
     }
    ]
   },
@@ -1620,7 +1620,7 @@
    "id": "D-193",
    "group": "K",
    "title": "The writing standards live in one place, and predicates must be qualified",
-   "home": "CLAUDE.md:1510",
+   "home": "CLAUDE.md:1565",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -1634,7 +1634,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1510"
+     "the_home_it_names": "CLAUDE.md:1565"
     }
    ]
   },
@@ -1642,7 +1642,7 @@
    "id": "D-194",
    "group": "K",
    "title": "No self-invented labels, abbreviations, numbering schemes or jargon",
-   "home": "CLAUDE.md:1506",
+   "home": "CLAUDE.md:1561",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -1656,7 +1656,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1506"
+     "the_home_it_names": "CLAUDE.md:1561"
     }
    ]
   },
@@ -1664,7 +1664,7 @@
    "id": "D-195",
    "group": "K",
    "title": "Every design decision carries its defense at its home",
-   "home": "CLAUDE.md:1586",
+   "home": "CLAUDE.md:1641",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -1678,7 +1678,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1586"
+     "the_home_it_names": "CLAUDE.md:1641"
     }
    ]
   },
@@ -1686,7 +1686,7 @@
    "id": "D-196",
    "group": "T",
    "title": "The self-check: re-read the diff against the principles before reporting",
-   "home": "CLAUDE.md:1849",
+   "home": "CLAUDE.md:1979",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -1700,7 +1700,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1849"
+     "the_home_it_names": "CLAUDE.md:1979"
     }
    ]
   },
@@ -1708,7 +1708,7 @@
    "id": "D-197",
    "group": "T",
    "title": "The distribution constraint - the import-fix patch is fork-local and never goes upstream",
-   "home": "CLAUDE.md:1420",
+   "home": "CLAUDE.md:1459",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -1722,7 +1722,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1420"
+     "the_home_it_names": "CLAUDE.md:1459"
     }
    ]
   },
@@ -1730,7 +1730,7 @@
    "id": "D-198",
    "group": "T",
    "title": "The Windows snap fix in the muse submodule is intentional and must not be reverted",
-   "home": "CLAUDE.md:1372",
+   "home": "CLAUDE.md:1411",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -1744,7 +1744,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1372"
+     "the_home_it_names": "CLAUDE.md:1411"
     }
    ]
   },
@@ -1752,7 +1752,7 @@
    "id": "D-199",
    "group": "T",
    "title": "The MusicXML declared-mode import fix is intentional and must not be reverted",
-   "home": "CLAUDE.md:1393",
+   "home": "CLAUDE.md:1432",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -1766,7 +1766,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1393"
+     "the_home_it_names": "CLAUDE.md:1432"
     }
    ]
   },
@@ -1774,7 +1774,7 @@
    "id": "D-200",
    "group": "S",
    "title": "Make it work first; compromise on performance only if performance proves a problem",
-   "home": "CLAUDE.md:1751-1753",
+   "home": "CLAUDE.md:1806-1808",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -1788,7 +1788,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1751-1753"
+     "the_home_it_names": "CLAUDE.md:1806-1808"
     }
    ]
   },
@@ -1838,7 +1838,7 @@
    "id": "D-203",
    "group": "S",
    "title": "Candidate admission is completion, not refinement - so #8 permits fixing it now",
-   "home": "CLAUDE.md:1761-1763",
+   "home": "CLAUDE.md:1816-1818",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -1852,7 +1852,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1761-1763"
+     "the_home_it_names": "CLAUDE.md:1816-1818"
     }
    ]
   },
@@ -1860,7 +1860,7 @@
    "id": "D-204",
    "group": "S",
    "title": "One fix is designed once over the whole enumerated family, never per symptom",
-   "home": "CLAUDE.md:1772-1774",
+   "home": "CLAUDE.md:1827-1829",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -1874,7 +1874,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1772-1774"
+     "the_home_it_names": "CLAUDE.md:1827-1829"
     }
    ]
   },
@@ -1989,7 +1989,7 @@
    "id": "D-210",
    "group": "C",
    "title": "An exotic mode is graded against its parent collection's minor key, not its own tonic triad",
-   "home": "CLAUDE.md:950-952",
+   "home": "CLAUDE.md:989-991",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -2003,7 +2003,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:950-952"
+     "the_home_it_names": "CLAUDE.md:989-991"
     }
    ]
   },
@@ -2011,7 +2011,7 @@
    "id": "D-211",
    "group": "C",
    "title": "Key agreement is reported against both the global home key and the local key",
-   "home": "CLAUDE.md:960-962",
+   "home": "CLAUDE.md:999-1001",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -2025,7 +2025,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:960-962"
+     "the_home_it_names": "CLAUDE.md:999-1001"
     }
    ]
   },
@@ -2033,7 +2033,7 @@
    "id": "D-212",
    "group": "C",
    "title": "The regression stop is abstain-aware: an abstention counts as disagreement on root",
-   "home": "CLAUDE.md:965-967",
+   "home": "CLAUDE.md:1004-1006",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -2047,7 +2047,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:965-967"
+     "the_home_it_names": "CLAUDE.md:1004-1006"
     }
    ]
   },
@@ -2247,7 +2247,7 @@
    "id": "D-249",
    "group": "T",
    "title": "The whole decision surface is delivered as user-visible text before any choice question",
-   "home": "CLAUDE.md:1781-1793",
+   "home": "CLAUDE.md:1836-1848",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -2261,7 +2261,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1781-1793"
+     "the_home_it_names": "CLAUDE.md:1836-1848"
     }
    ]
   },
@@ -2291,7 +2291,7 @@
    "id": "D-253",
    "group": "T",
    "title": "Working-tree files are read with the file tools; bash is limited to git object queries by explicit hash",
-   "home": "CLAUDE.md:1795-1813",
+   "home": "CLAUDE.md:1918-1936",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -2305,7 +2305,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1795-1813"
+     "the_home_it_names": "CLAUDE.md:1918-1936"
     }
    ]
   },
@@ -2313,7 +2313,7 @@
    "id": "D-254",
    "group": "T",
    "title": "Investigate by default; never ask the user whether to investigate or proceed",
-   "home": "CLAUDE.md:1838-1845",
+   "home": "CLAUDE.md:1961-1968",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -2327,7 +2327,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1838-1845"
+     "the_home_it_names": "CLAUDE.md:1961-1968"
     }
    ]
   },
@@ -3141,7 +3141,7 @@
    "id": "D-294",
    "group": "C",
    "title": "The only ground truth is the human annotation; the algorithmic analysis is a filter, and no self-annotation ever enters a measurement",
-   "home": "CLAUDE.md:937-939",
+   "home": "CLAUDE.md:976-978",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -3155,7 +3155,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:937-939"
+     "the_home_it_names": "CLAUDE.md:976-978"
     }
    ]
   },
@@ -3268,7 +3268,7 @@
    "id": "D-308",
    "group": "Q",
    "title": "A newly acquired corpus enters as research material; the frozen regression corpus stays the gate until a deliberate re-baseline",
-   "home": "CLAUDE.md:923-925",
+   "home": "CLAUDE.md:962-964",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -3282,7 +3282,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:923-925"
+     "the_home_it_names": "CLAUDE.md:962-964"
     }
    ]
   },
@@ -5226,7 +5226,7 @@
    "id": "D-437",
    "group": "T",
    "title": "Phase 3 waits on the phase-2 items that could find another member of the family being designed for, not on all of phase 2",
-   "home": "CLAUDE.md:1698-1716",
+   "home": "CLAUDE.md:1753-1771",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -5240,7 +5240,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1698-1716"
+     "the_home_it_names": "CLAUDE.md:1753-1771"
     }
    ]
   },
@@ -5270,7 +5270,7 @@
    "id": "D-439",
    "group": "T",
    "title": "The perspective inventory's §4 is the one home for the enumerated discovery channels, and CLAUDE.md's phase-2 clause points at it instead of listing its own subjects",
-   "home": "CLAUDE.md:1720-1732",
+   "home": "CLAUDE.md:1775-1787",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -5284,7 +5284,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1720-1732"
+     "the_home_it_names": "CLAUDE.md:1775-1787"
     }
    ]
   },
@@ -5886,7 +5886,7 @@
    "id": "D-468",
    "group": "C",
    "title": "The pinned block-(A) instrument declares which inference arm its baselines were measured on, and refuses a corpus whose stamp disagrees",
-   "home": "CLAUDE.md:791-792",
+   "home": "CLAUDE.md:830-831",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -5900,7 +5900,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:791-792"
+     "the_home_it_names": "CLAUDE.md:830-831"
     }
    ]
   },
@@ -6295,7 +6295,7 @@
    "id": "D-486",
    "group": "C",
    "title": "A measurement publishes its coverage denominator and its per-corpus breakdown; a single aggregate number that hides which corpus moved is not reported",
-   "home": "CLAUDE.md:982-984",
+   "home": "CLAUDE.md:1021-1023",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -6309,7 +6309,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:982-984"
+     "the_home_it_names": "CLAUDE.md:1021-1023"
     }
    ]
   },
@@ -7596,7 +7596,7 @@
    "id": "D-564",
    "group": "C",
    "title": "Correction of record: the 'function-only' share of the legacy residual was overstated, because over-grabbed segmentation corrupts the BASS and not only the pitch-class window",
-   "home": "CLAUDE.md:1240-1242",
+   "home": "CLAUDE.md:1279-1281",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -7610,7 +7610,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1240-1242"
+     "the_home_it_names": "CLAUDE.md:1279-1281"
     }
    ]
   },
@@ -7838,7 +7838,7 @@
    "id": "D-576",
    "group": "C",
    "title": "The corpus root-agreement measurement UNDERSTATES the real-world quality impact of a wrong key, because root and bass are largely key-independent",
-   "home": "CLAUDE.md:826-830",
+   "home": "CLAUDE.md:865-869",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "project-convention",
@@ -8223,7 +8223,7 @@
    "id": "D-602",
    "group": "T",
    "title": "A layer's measurement is judged on coverage-matched accuracy AND correct abstention, never on raw coverage — abstaining on a genuinely undecidable case is a RIGHT outcome",
-   "home": "CLAUDE.md:991-993",
+   "home": "CLAUDE.md:1030-1032",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8237,7 +8237,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:991-993"
+     "the_home_it_names": "CLAUDE.md:1030-1032"
     }
    ]
   },
@@ -8245,7 +8245,7 @@
    "id": "D-603",
    "group": "T",
    "title": "While the pipeline is being rebuilt, a behaviour-changing increment is graded DIRECTIONALLY and not against a fixed bar — meaningful comparison happens only against the fully reconstructed pipeline",
-   "home": "CLAUDE.md:1000-1002",
+   "home": "CLAUDE.md:1039-1041",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8259,7 +8259,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1000-1002"
+     "the_home_it_names": "CLAUDE.md:1039-1041"
     }
    ]
   },
@@ -8267,7 +8267,7 @@
    "id": "D-604",
    "group": "C",
    "title": "A defensible modal reading the major/minor ground truth cannot represent is a GROUND-TRUTH LIMITATION, not a defect to optimise away",
-   "home": "CLAUDE.md:1015-1028",
+   "home": "CLAUDE.md:1054-1067",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8281,7 +8281,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1015-1028"
+     "the_home_it_names": "CLAUDE.md:1054-1067"
     }
    ]
   },
@@ -8310,7 +8310,7 @@
    "id": "D-606",
    "group": "D",
    "title": "The binding metric for the modulation detector is modulation CORRECTNESS — explicitly not the agreement percentage, which the change under test can game",
-   "home": "CLAUDE.md:1029-1038",
+   "home": "CLAUDE.md:1068-1077",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8324,7 +8324,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1029-1038"
+     "the_home_it_names": "CLAUDE.md:1068-1077"
     }
    ]
   },
@@ -8548,7 +8548,7 @@
    "id": "D-638",
    "group": "G",
    "title": "The symmetric-rotation churn is a chord-layer root ambiguity SURFACED, not caused, by a key change — the proper fix is spelling-aware root selection, never a key-layer change",
-   "home": "CLAUDE.md:1140-1142",
+   "home": "CLAUDE.md:1179-1181",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8562,7 +8562,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1140-1142"
+     "the_home_it_names": "CLAUDE.md:1179-1181"
     }
    ]
   },
@@ -8570,7 +8570,7 @@
    "id": "D-639",
    "group": "S",
    "title": "Phase 1's doc-sync half reaches a document's account of ITSELF only where that account changes how its analysis content is read — with three worked examples that are the test, and a fallback ruled with it",
-   "home": "CLAUDE.md:1632-1651",
+   "home": "CLAUDE.md:1687-1706",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "project-convention",
@@ -8715,7 +8715,7 @@
    "id": "D-645",
    "group": "T",
    "title": "A homing dispatch may edit docs/scoring_model.md, CLAUDE.md and BUILD_AND_TEST.md, and the license is scoped to homing acts alone",
-   "home": "cowork_audit_protocol.md:1354-1383",
+   "home": "cowork_audit_protocol.md:1395-1424",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8729,7 +8729,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:1354-1383"
+     "the_home_it_names": "cowork_audit_protocol.md:1395-1424"
     }
    ]
   },
@@ -8889,7 +8889,7 @@
    "id": "D-653",
    "group": "T",
    "title": "A correction reconciling a specification to the arm that ships must carry the behavioural non-equivalence visibly, as unmeasured",
-   "home": "cowork_audit_protocol.md:1334-1342",
+   "home": "cowork_audit_protocol.md:1375-1383",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8903,7 +8903,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:1334-1342"
+     "the_home_it_names": "cowork_audit_protocol.md:1375-1383"
     }
    ]
   },
@@ -8911,7 +8911,7 @@
    "id": "D-654",
    "group": "T",
    "title": "Where a licence's letter leaves a known falsity standing in the file it licensed, the session corrects it and REPORTS the widening in the same act",
-   "home": "cowork_audit_protocol.md:1387-1394",
+   "home": "cowork_audit_protocol.md:1428-1435",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -8925,7 +8925,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:1387-1394"
+     "the_home_it_names": "cowork_audit_protocol.md:1428-1435"
     }
    ]
   },
@@ -8955,7 +8955,7 @@
    "id": "D-656",
    "group": "C",
    "title": "The crediting rule is NOT amended to count a tonicization label as agreeing with the annotator's modulated numeral; only a diagnostic partial-sub-split is defensible",
-   "home": "CLAUDE.md:1044-1053",
+   "home": "CLAUDE.md:1083-1092",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "project-convention",
@@ -8996,12 +8996,12 @@
   {
    "id": "D-658",
    "group": "T",
-   "title": "Where the record does not settle the question, the surface that returns it to the user gathers facts and makes no recommendation",
+   "title": "Where the record does not settle the question, the surface that returns it to the user gathers facts, marks what is unsettled, and carries a recommendation",
    "home": "cowork_audit_protocol.md:1306-1317",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
-   "what_the_entry_says_the_decision_is_quoted_from_the_register": "When a question has to go back to the user because the record does not answer it, the surface it goes back on cites every claim at the place it can be checked, reads the records concerned whole, marks anything the record does not settle as unsettled instead of filling it in, and offers no recommendation of any kind.",
+   "what_the_entry_says_the_decision_is_quoted_from_the_register": "When a question has to go back to the user because the record does not answer it, the surface it goes back on cites every claim at the place it can be checked, reads the records concerned whole, marks anything the record does not settle as unsettled instead of filling it in, and carries a recommendation explained towards the ultimate objective, towards the guiding principles and by the meta level of the act it suggests.",
    "the_evidence_shape_the_filter_recorded": "a dated user ruling named+a numbered ruling named+a ratification event named+a recorded ratifier+a ruling record named+a user-act marker",
    "proposed_class": "IMPLEMENTATION-MANAGEMENT",
    "decided_by": "the decisions register's own `nonspec_kind`, by the definition its data file's header gives that value",
@@ -9041,7 +9041,7 @@
    "id": "D-660",
    "group": "K",
    "title": "A research-tied name is not renamed but is governed by a two-tier rule, and the terminology cleanup runs in a fixed order with no tree-wide rename",
-   "home": "CLAUDE.md:1561-1572",
+   "home": "CLAUDE.md:1616-1627",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "project-convention",
@@ -9257,7 +9257,7 @@
    "id": "D-670",
    "group": "T",
    "title": "A task that cannot be stopped partway is dispatched FIRST with nothing large in front of it, and the ordering is ruled rather than preferred",
-   "home": "cowork_audit_protocol.md:1411-1417",
+   "home": "cowork_audit_protocol.md:1452-1458",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -9271,7 +9271,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:1411-1417"
+     "the_home_it_names": "cowork_audit_protocol.md:1452-1458"
     }
    ]
   },
@@ -9279,7 +9279,7 @@
    "id": "D-671",
    "group": "T",
    "title": "A derivation, a measurement or a sizing over a derived population is published WHOLE or not at all, and a subset only under a scope that NAMES its members",
-   "home": "cowork_audit_protocol.md:1458-1463",
+   "home": "cowork_audit_protocol.md:1499-1504",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -9293,7 +9293,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:1458-1463"
+     "the_home_it_names": "cowork_audit_protocol.md:1499-1504"
     }
    ]
   },
@@ -9301,7 +9301,7 @@
    "id": "D-672",
    "group": "T",
    "title": "A per-entry pass may be stopped at any member boundary, and the stop is RECORDED — what was done, what was not, and that the remainder is untouched",
-   "home": "cowork_audit_protocol.md:1496-1500",
+   "home": "cowork_audit_protocol.md:1537-1541",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -9315,7 +9315,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "cowork_audit_protocol.md:1496-1500"
+     "the_home_it_names": "cowork_audit_protocol.md:1537-1541"
     }
    ]
   },
@@ -9367,7 +9367,7 @@
    "id": "D-675",
    "group": "T",
    "title": "Phase 1 completes when the INFERENCE-BEARING obligations are discharged — the finish line is cut by D-438's test, the apparatus residue does not gate the completion, and the cut carries a falsification test",
-   "home": "CLAUDE.md:1659-1686",
+   "home": "CLAUDE.md:1714-1741",
    "status": "live",
    "home_is_layer_spec": false,
    "nonspec_kind": "process",
@@ -9381,7 +9381,7 @@
      "field": "nonspec_kind",
      "value": "process",
      "the_definition_quoted_from_the_header": "'process' (a decision about how the work is done, not about the system)",
-     "the_home_it_names": "CLAUDE.md:1659-1686"
+     "the_home_it_names": "CLAUDE.md:1714-1741"
     }
    ]
   },

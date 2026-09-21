@@ -820,7 +820,7 @@ THE HOME CLASS OF EVERY NON-SPECIFICATION ENTRY IS SET BY ONE PASS, and the fiel
 | D-654 | Where a licence's letter leaves a known falsity standing in the file it licensed, the session corrects it and REPORTS the widening in the same act | LIVE | — | `cowork_audit_protocol.md` |
 | D-655 | A session may author an owed establishment; its verdicts clear no guard until the reviewed set is applied | LIVE | — | `cowork_audit_protocol.md` |
 | D-657 | A mechanism change is decided over its whole population both ways before it is applied, and only the members the defect's own shape names may move | LIVE | — | `cowork_audit_protocol.md` |
-| D-658 | Where the record does not settle the question, the surface that returns it to the user gathers facts and makes no recommendation | LIVE | — | `cowork_audit_protocol.md` |
+| D-658 | Where the record does not settle the question, the surface that returns it to the user gathers facts, marks what is unsettled, and carries a recommendation | LIVE | — | `cowork_audit_protocol.md` |
 | D-661 | Complete means complete relative to a named derivation, whose measured miss rate against the record is part of its name | LIVE | — | `cowork_audit_protocol.md` |
 | D-663 | A direction with its artifact named is not a transcribed value | LIVE | — | `cowork_audit_protocol.md` |
 | D-668 | A homing act tests a section in a FIXED ORDER — pointer move first, kind half before any write — and a findings-recording owner means HELD, never written by stretch | LIVE | — | `cowork_audit_protocol.md` |

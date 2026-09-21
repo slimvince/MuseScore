@@ -1303,7 +1303,7 @@ it stopped on is not a formality.
 
 *★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 
-### Where the record does not settle the question, the surface that returns it to the user gathers FACTS and makes NO recommendation
+### Where the record does not settle the question, the surface that returns it to the user gathers FACTS, marks what is UNSETTLED, and CARRIES A RECOMMENDATION
 
 **Ruled by the user, 2026-08-09** (`records/cowork/rulings/cowork_rulings_2026_08_09_fourth_stop.md`, Ruling 27), on the
 user's own instruction, quoted in the ruling verbatim: *"follow the rule: fact based decisions or
@@ -1313,21 +1313,62 @@ state something false*, but *the record does not answer the question at all*.
 
 **THE FORM.** Where a question the session cannot settle has to go back to the user, the surface it
 goes back on carries: **every claim CITED AT ITS SOURCE and read in place; the records concerned
-READ WHOLE; anything the record does not settle marked UNSETTLED rather than filled — and NO
-RECOMMENDATION AT ALL.**
+READ WHOLE; anything the record does not settle marked UNSETTLED rather than filled — and A
+RECOMMENDATION on the three standing grounds the decision-surface rule in `CLAUDE.md` names.**
 
-**The last clause is the load-bearing one, and it is the one a session will be tempted to break.** A
-fact-gathering pass that ends in a recommendation has decided the question it was sent to inform:
-the user then rules on the session's reading rather than on the facts, which is the outcome the
-instruction above exists against. Marking an item UNSETTLED is likewise an ANSWER and not a
-shortfall — *the record does not address this* is what a reader needs in order to rule, and filling
-it from the most plausible reading is the invention the never-work-from-memory rule forbids.
+*★ THE FOURTH REQUIREMENT WAS REVERSED ON THE USER'S RULING OF 2026-09-21, AND THE FORMER WORDING IS
+PRESERVED HERE IN PLACE (#12).* The heading above formerly ended *"gathers FACTS and makes NO
+recommendation"*, and THE FORM's fourth requirement formerly read *"— and NO RECOMMENDATION AT
+ALL."* **The user struck that wording himself, on 2026-09-21, in these words:** *"'makes NO
+recommendation' is directly false."* The ruling that reversed it is
+`records/cowork/rulings/cowork_rulings_2026_09_21_decision_surface_form_sitting.md`, Ruling 1,
+clause 4: a decision surface always carries a recommendation, explained towards the ultimate
+objective, towards the guiding principles and by the meta level of the suggested act. His words with
+that ruling: *"I cannot think of any example of decision surface that should exclude a
+recommendation."* *(Why no residue of the old clause survives is the writing side's reading and not
+his: under clause 2 a question that goes back to the user because the record does not answer it is a
+decision, so a surface is owed and clause 4 reaches it; under clause 1, where no choice remains, no
+surface is presented at all. **His own ground is the sentence quoted above and needs no derivation
+from this side.**)* **No decisions-register identity is allocated for that ruling** — the register
+cannot accept one while its rule (c) is suspended, and
+`cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+
+**THE OTHER THREE REQUIREMENTS ARE UNTOUCHED AND STILL BIND**: every claim cited at its source and
+read in place, the records concerned read whole, and anything the record does not settle marked
+UNSETTLED rather than filled. **That is why this entry stays LIVE rather than becoming superseded** —
+one clause of four was replaced, and the entry as corrected states a live rule. *(That reading is the
+Cowork writing side's, taken because the register's status vocabulary has no partial-supersession
+word and because a SUPERSEDED BY status must name its replacement by an identity the suspended
+register cannot issue. It is stated here so the user can correct it in one word.)*
+
+**The load-bearing requirement is now the UNSETTLED marking, and it is the one a session will be
+tempted to break.** Marking an item UNSETTLED is an ANSWER and not a shortfall — *the record does not
+address this* is what a reader needs in order to rule, and filling it from the most plausible reading
+is the invention the never-work-from-memory rule forbids. **What the superseded clause protected is
+now held by the recommendation's own form**: a recommendation explained on the three standing grounds
+lets the user rule on a reasoning he can check at each ground, rather than on a verdict. A
+recommendation given WITHOUT that explanation reopens the hazard in full, which is why the second
+half of the user's clause 4 — *explained in terms of* those three grounds — is not decoration.
+
+*★ FORMER WORDING, PRESERVED (#12), superseded 2026-09-21:* "**The last clause is the load-bearing
+one, and it is the one a session will be tempted to break.** A fact-gathering pass that ends in a
+recommendation has decided the question it was sent to inform: the user then rules on the session's
+reading rather than on the facts, which is the outcome the instruction above exists against. Marking
+an item UNSETTLED is likewise an ANSWER and not a shortfall — *the record does not address this* is
+what a reader needs in order to rule, and filling it from the most plausible reading is the invention
+the never-work-from-memory rule forbids."
 
 *Why the form earns its place:* applied at the case that produced it, gathering the facts settled
 more than the question asked — and it LOCATED a conflict between two records that nobody had put
-side by side, with two readings visible and neither chosen. A pass permitted to recommend would
-have chosen one, and the conflict would have been resolved by a session's reading of intent rather
-than by the user on facts.
+side by side, with two readings visible. **What the form protects is that the user rules on a
+reasoning he can check at its grounds rather than on a bare verdict**, and since 2026-09-21 the
+recommendation's three-ground explanation is what carries that load.
+
+*★ FORMER WORDING, PRESERVED (#12), superseded 2026-09-21:* "*Why the form earns its place:* applied
+at the case that produced it, gathering the facts settled more than the question asked — and it
+LOCATED a conflict between two records that nobody had put side by side, with two readings visible
+and neither chosen. A pass permitted to recommend would have chosen one, and the conflict would have
+been resolved by a session's reading of intent rather than by the user on facts."
 
 *★ STANDING CLAUSE — a dispatch's read-first block requires the clause below to be met.*
 

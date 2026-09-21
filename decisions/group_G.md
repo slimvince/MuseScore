@@ -1192,7 +1192,7 @@ complete_bonus applies when:
 
 **Status.** LIVE · decided 2026-06-22 · ratified by user
 
-**Home.** `CLAUDE.md:1140-1142`  — a decision about how the work is done, not about the system; this is its correct home.
+**Home.** `CLAUDE.md:1179-1181`  — a decision about how the work is done, not about the system; this is its correct home.
 
 **Provenance.** `CLAUDE.md` gate block (B), the two-tier per-cell class policy, carried over unchanged to the robust unit at R10-b. Its full provenance is `cowork_gate_policy_amendment.md`, read in full by READ WAVE 6, 2026-08-04, whose root-cause-attribution section states the same finding with the four founding cases behind it. **D-191** carries the two-tier policy itself; this is the separate attribution clause it rests on — the reason the tracked class is interim and the reason no key-layer change is the remedy — which D-191's verbatim does not include. Homed at the governing document rather than at the amendment proposal, because that is where the rule binds.
 
