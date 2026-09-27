@@ -293,10 +293,7 @@ attached to it.**
     carries is not on the page and is annotation under S-2, carried labelled, so a consumer weighing a
     spelling reads both; S-14's refusal of the absent case stands."*
   - **(ii)** *"…beside S-3 the specification says that a self-contradictory spelling within a slice is
-    published as it stands, never repaired and never resolved by L1, on S-24's ground."* The
-    three-part root-pinning test is L2's decision and is RELOCATED there; its first part is S-14, and
-    its second — two spellings of one pitch class in one slice — *"is readable from the sounding set
-    L1 publishes by event identity"*.
+    published as it stands, never repaired and never resolved by L1, on S-24's ground."*
   - **(iii)** *"a spelling derived from a decided key and degree, and a signature-shaped value derived
     from a decided key, are different objects from the notated spelling and the notated signature; the
     layer that derives one publishes it as derived and never in place of the fact; a consumer is told
@@ -1162,8 +1159,7 @@ of its span, placed as FERMATA is at the release — Ruling 50).**
 - *Ruled (Ruling 54, §3bi) — the fermata displacement is the consumer's.* *"S-39's placement rule
   stands unchanged; nothing is added to L1."* The L1 facts a displacement is read from are published
   already — *"the mark's position and class (Ruling 51), the flag at the release (S-39), the class of
-  every change point (Ruling 47)"* — and relating them is L2's cadence-factor covariate and L3's
-  alignment window, to which Rows 11.12 and 13.14 are relocated.
+  every change point (Ruling 47)"*.
 
 **S-40. Several marks at one change point are published as several flags in the set; nothing is
 collapsed to a single "boundary strength". A repeat sign coinciding with a double bar and a fermata
@@ -1278,9 +1274,7 @@ that name — not a notated voice. The word *bass* is reserved for the chord's b
 - *Beside S-44 (Ruling 53, §3bh) — the cadence cues' inputs, and no gate.* *"Beside S-44, that the cues
   are computed from L0 and the slice list alone and anchored on the bass *(the ruling's own word; the
   anchor is S-44's — Ruling 74)*, never on a chord or a candidate key … [and] beside S-44, that no cue
-  is gated on boundary evidence at L1."* The outgoing
-  detector over an event pair of chords, and the factorization's features evaluated in candidate key k
-  with fitted weights, are *"L2's cadence factor … a consumer reading L1's cues and its own state"*.
+  is gated on boundary evidence at L1."*
   **Not settled by that ruling:** the window's value (OQ-10, a measurement), and *"the keyboard voice
   proxy on which S-46's same-voice condition rests"*.
 
@@ -1313,8 +1307,7 @@ cue is not computed when no such Y exists in the window.**
   L3; the derived wording stands at the derivation, S-45; the flag formerly BASS-FALLS-A-FIFTH.*
 - *Beside S-45 (Ruling 62, §3bq, item 7).* S-45's *"not computed when no such Y exists"* **gains the
   named-reason form** the ruling states beside S-52: *"every L1 item that is not computed or is empty
-  carries a named reason."* S-45 itself *"stands as L1's"* (Ruling 53), Row 11.8's *"not in the first
-  structure"* being L2's choice not to consume it.
+  carries a named reason."* S-45 itself *"stands as L1's"* (Ruling 53).
 
 **S-46. LEADING-TONE-RESOLVES: at onset change point Z, the cue is true when some eligible event in the
 slice before Z, in a notated voice, is a semitone below Z's lowest sounding pitch class (modulo
@@ -1575,9 +1568,7 @@ and this derivation does not fill it.**
   whose sounding effect (which notes actually ring, and how loudly) is not notated [THEORY]. Extending
   releases would make every pedalled bar one slice and would delete the change points the charter
   makes exhaustive; publishing the span keeps the information for L2, which may treat a pedalled
-  arpeggio as one sonority. The pack's design intent defines a pedal *point* voice-independently
-  (D-207) — a different thing (a held tone in the harmony) from a pedal *mark* (a damper instruction);
-  the two words are kept apart here.
+  arpeggio as one sonority.
 - *Source class.* Derived (interim); open.
 - *Status.* **Settled** — *"S-54's interim rule stands as the rule, its status moving from open to
   settled"* (was: *Open (OQ-3)*; Ruling 59, §3bn).
