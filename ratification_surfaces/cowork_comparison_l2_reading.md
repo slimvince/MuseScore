@@ -45,7 +45,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 5 | `cowork_layer5_function_design.md`, whole | **DONE** (§6.5) |
 | 6 | `cowork_layer4_chordsymbol_design.md`, whole | **DONE** (§6.6) |
 | 7 | `cowork_layer3_keymode_design.md`, whole | **DONE** (§6.7) |
-| 8 | `cowork_layer5_engagement_design.md`, whole | NOT YET TABULATED |
+| 8 | `cowork_layer5_engagement_design.md`, whole | **DONE** (§6.8) |
 | 9 | `cowork_stage5_fitter_design.md`, whole | NOT YET TABULATED |
 | 10 | `cowork_joint_estimator_factorization.md`, whole | NOT YET TABULATED |
 | 11 | `cowork_score_census.md`, whole | NOT YET TABULATED |
@@ -103,11 +103,11 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 7 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
-`cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole, and
-`cowork_layer3_keymode_design.md`, whole.**
+each. **Done: positions 1 to 8 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+`cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
+`cowork_layer3_keymode_design.md`, whole, and `cowork_layer5_engagement_design.md`, whole.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 7 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 8 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -117,9 +117,9 @@ derived statement, each corrected before its member was committed. The second ba
 capacity judgment (its Task 1(h)): position 6 was judged not finishable whole in the context that remained,
 and was not opened. The third batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_third_2026_09_27.md`, resumed at position 6
-and tabulated positions 6 and 7, each whole and in its own commit. **Positions 8 to 62 are UNTOUCHED**: not
+and tabulated positions 6, 7 and 8, each whole and in its own commit. **Positions 9 to 62 are UNTOUCHED**: not
 read for tabulation, not quoted, not counted and not placed, and nothing in them is partly worked. **The next
-writing resumes at position 8**, `cowork_layer5_engagement_design.md`, whole. §7, §8, §9 and §14 stay NOT YET WRITTEN, being
+writing resumes at position 9**, `cowork_stage5_fitter_design.md`, whole. §7, §8, §9 and §14 stay NOT YET WRITTEN, being
 written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation,
 not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -14474,6 +14474,2529 @@ L2-S31 DIFFERS.)* DIFFERS: 7.5(i), 7.7, 7.9(i), 7.9(ii), 7.10, 7.13(i), 7.13(iii
   7.150; L2-S38 (entry 6) — 7.115, 7.117, 7.166; L2-S43 (entry 4) — 7.101; L2-S45 (entry 4) — 7.70. No row of this
   member names L2-S12 or L2-S42.
 
+---
+
+### 6.8 — Member 8: `cowork_layer5_engagement_design.md`, whole
+
+> **Manifest for this member.** Position **8**. Kind: *item 2 — a whole document (a specification-set
+> member)*. Document: `cowork_layer5_engagement_design.md`. Label: *the whole document*. Range, as a locator
+> only: lines 1–659, from its first line *"# Layer-5 engagement design — Part 1: the CARRY and the SELECTION
+> architecture"* to its last *"Both regression stops untouched/green (no `src/`, no build). Fork-only; `upstream`
+> untouched.*"*, exactly as the artifact publishes it (**D-307**). Outgoing statements: **212** (rows 8.1
+> to 8.191; 20 of those rows carry two or more claims each and are split — the arithmetic is at the
+> foot of this member). Listed under *not a statement*: **93**. Counted at this member by this session; the
+> counts appear here and nowhere else.
+>
+> **What kind of text this member is, read at its own banner.** Two read-only design passes, written by Claude
+> Code on 2026-07-07 and marked *"DESIGN"*, for engaging the dormant Layer 4 and Layer 5 chain: how the dormant
+> function layer would read the chord decoder's carried readings and select among them (its first half), and where pedal
+> detection and the fine-grain override's annotation would live (its second half). Much of the text inventories the dormant
+> code at named source lines; the remainder designs the engagement and lists the build it would owe. **The placement
+> readings are those of member 6, applied unchanged** (its manifest states them): a description of the dormant
+> chain's mechanism, built or designed, is QUARANTINED; a build state, a plan, an owed build or an owed
+> measurement is HISTORICAL; a rule the text records as a ruling that a derived statement contradicts is
+> UNPLACED; a design principle is placed on its own terms; and a bold label or phrase whose claim the body states
+> again, or that carries none, is listed under *not a statement*. Where the text names a rejected alternative
+> with its reasons, the alternative is listed under *not a statement*.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 8:
+> **D-380** (lines 136–142), **D-381** (164–172), **D-382** (187–198), **D-383** (212–217), **D-384**
+> (263–266), **D-385** (410–414), **D-386** (445–452), **D-387** (490–505). A row is marked WITHHELD where its
+> statement lies inside one of those homes. **No SEEN home lies in this member** — none of the eight identities
+> 1(c) names (D-002, D-095, D-223, D-261, D-275, D-279, D-322, D-393) is among the identities the artifact places
+> in position 8.
+
+---
+
+**Row 8.1 — the dormant function layer is built and dormant.**
+
+*Outgoing statement.* "Layer 5 is **built and dormant** — no production consumer; exercised only by its unit tests; byte-identical on production by construction (`functionresolver.h:77`, `functionoutput.h:66-68`) `[code]`." — §1, *The dormant Layer 5 at the code: built vs owed* (locator: lines 34–35).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to what is built.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.2 — engagement wires an existing pipeline rather than designing one.**
+
+*Outgoing statement.* "Engagement does **not** design its machinery from scratch (#6) — it wires an existing pipeline." — §1 (locator: lines 35–36).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.3 — the resolver consumes a vector of function slices.**
+
+*Outgoing statement.* "The resolver consumes a `std::vector<FunctionSlice>` (`functionresolver.h:121-148`)." — §1.1, *The input contract already declared* (locator: lines 40–41).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what does the dormant function layer consume per slice at the current commit, and what, if anything, populates it outside the tests?
+
+---
+
+**Row 8.4 — the progression view carried by each function slice.**
+
+*Outgoing statement.* "the **§5.0 progression view** — `chord` (root+quality projection), `committed`, `metricWeight`, ticks;" — §1.1 (locator: line 42).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.3.
+
+---
+
+**Row 8.5 — the carried-reading contract consumed directly from the chord decoder.**
+
+*Outgoing statement.* "the **L4→L5 carried-reading contract** consumed **directly** from `chord/chordslicedecoder.h` (a declared build-detail decision, `functionresolver.h:58-69`) — `decision` (Commit/Inherit/Abstain), `openQuestion` (`OpenQuestionLabel`: readingA/readingB + `AmbiguityKind`), `alternatives[]` (ranked carried candidates), `confidence` (`SliceConfidence`, composite ∈ [0,1]), and `chosen` (the committed identity carried **verbatim** — root+quality+bass/inversion+extensions, the §5.5/§7 emit source)." — §1.1 (locator: lines 43–47).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.3.
+
+---
+
+**Row 8.6 — the shape of the carry is already fixed in code.**
+
+*Outgoing statement.* "So the *shape* of the carry Layer 5 reads is **already fixed in code** as the `FunctionSlice` fields." — §1.1 (locator: lines 49–50).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.3.
+
+---
+
+**Row 8.7 — the population of those fields from the live decoder is not yet built.**
+
+*Outgoing statement.* "What is not yet built is the **population** of those fields from the live decoder (today they are hand-injected in tests — `functionresolver.h:120` "injected by hand"; `functionoutput.h:149` "the tests inject by hand")." — §1.1 (locator: lines 50–52).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.8 — the resolver runs one forward pass in two phases.**
+
+*Outgoing statement.* "`resolveCarriedReadings` (`functionresolver.cpp:502-534`) runs one forward pass in two phases:" — §1.2, *The selection machinery already built* (locator: line 55).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.56.
+
+---
+
+**Row 8.9 — phase 1: every abstained slice settled by selecting among the carried readings by its ambiguity kind.**
+
+*Outgoing statement.* "**Phase 1 — base resolution.** For every `Abstain` slice, `resolveAbstained` (`:154-348`) **selects among the carried readings by the named `AmbiguityKind`**, never re-deriving from notes (D4):" — §1.2 (locator: lines 57–58).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 6.21.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.63.
+
+---
+
+**Row 8.10 — the transition and share-tone arms: the licensed progression first.**
+
+*Outgoing statement.* "*TransitionVsContinuation / ShareTone* — the licensed-progression test (§5.0 `isLicensedProgression`) into the established next function; then the neighbouring-harmony continuation; then the §5.7 bass-degree prior; then the honest open mark." — §1.2 (locator: lines 59–61).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.144.
+
+---
+
+**Row 8.11 — the both-licensed case falls through to the structural tie-breaks.**
+
+*Outgoing statement.* "The **both-licensed** case is telemetered (`bothLicensed`, `:223/:244`) and deliberately falls through to the structural tie-breaks (the §5.5 ruling; `[code]` matches the signed spec)." — §1.2 (locator: lines 61–62).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.156.
+
+---
+
+**Row 8.12 — the relative-pair arm: the cadence tonic-vote.**
+
+*Outgoing statement.* "*RelativePair* — the cadence tonic-vote (§5.2) between the two candidate tonics (`:258-263`); then prior; then open." — §1.2 (locator: lines 63–64).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.148.
+
+---
+
+**Row 8.13 — the close-reading and insufficient-evidence arms: a fixed-feature plausibility score.**
+
+*Outgoing statement.* "*CloseReading / InsufficientEvidence* — the `plausibility()` fixed-feature score (licensed-out + licensed-in + cadential-fit, `:90-107`), deciding only past `decidingMargin`; then prior; then open." — §1.2 (locator: lines 65–66).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.149(i).
+
+---
+
+**Row 8.14 — the symmetric-rotation arm: over the full carried rotation pool.**
+
+*Outgoing statement.* "*SymmetricRotation* — over the **full carried rotation pool** (`s.alternatives`, deduped by root, `:290-308`): the unique rotation resolving as an applied/leading-tone chord into the next, or the unique rotation a cadence pins; else the honest open mark (class-(a) undecidable)." — §1.2 (locator: lines 67–69).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.63.
+
+---
+
+**Row 8.15 — that arm is the one already reasoning over the whole carried set.**
+
+*Outgoing statement.* "**This is the one arm that already reasons over the whole `alternatives[]` set, not just the readingA/readingB pair** — the structural precedent §3 builds on." — §1.2 (locator: lines 69–70).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.63.
+
+---
+
+**Row 8.16 — every non-abstain slice emits the committed reading verbatim.**
+
+*Outgoing statement.* "Every non-abstain slice `carryThrough` (`:357-370`) emits `s.chosen` **verbatim** (L4's commit stands)." — §1.2 (locator: line 71).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.163.
+
+---
+
+**Row 8.17 — phase 2: the fine-grain override.**
+
+*Outgoing statement.* "**Phase 2 — the fine-grain override (Frame F-B).** `attemptFineGrainOverride` (`:381-498`) — the §8 case-4 channel." — §1.2 (locator: lines 72–73).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 6.11.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.158.
+
+---
+
+**Row 8.18 — the override measured net-harmful; its disposition settled as annotate-not-override.**
+
+*Outgoing statement.* "**This is the mechanism measured net-harmful** (`cowork_fb_redesign_design.md`: 1043 fires / 53 corrections / **809 harms** on the E0 decode chain `[data]`); its disposition is **settled = §3.D-1 annotate-not-override**." — §1.2 (locator: lines 73–75). Two claims: (i) the override is measured net-harmful; (ii) its disposition is settled as annotate-not-override.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the recorded count of the fine-grain override's corrections and harms reproduce at the current commit, on which decode? (ii) **HISTORICAL.**
+
+---
+
+**Row 8.19 — the dormant bounded-context extension loop is also built.**
+
+*Outgoing statement.* "Also built: `resolveCarriedReadingsExtending` (`:608-673`) — the dormant bounded-context forward-extension requester loop (default OFF ⇒ byte-identical to the base resolver), and the §8 primitive it fires through (`forwardoverride.cpp` `OnePassClosure::tryOverride` / `forwardRecompute`)." — §1.2 (locator: lines 77–79).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.226.
+
+---
+
+**Row 8.20 — the output assembly is pure assembly.**
+
+*Outgoing statement.* "`assembleFunctionOutput` (`functionoutput.h:180-185`) is **pure assembly, no re-derivation** (§7): it shuffles the Step-1..5 products into the `FunctionLayerOutput` contract and combines the confidence at default weights." — §1.3, *The output assembly already built* (locator: lines 82–83).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.212.
+
+---
+
+**Row 8.21 — the output carries the full Roman numeral.**
+
+*Outgoing statement.* "the **full DCML Roman numeral** (`relational.label`, base RN + relational label already combined upstream);" — §1.3 (locator: line 85).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.212.
+
+---
+
+**Row 8.22 — the output carries the function confidence and its boundary squash.**
+
+*Outgoing statement.* "the **`FunctionConfidence`** — three fixed components (cadence-vote weight, licensed-progression fit, next-best margin) combined at default weights into `combined`, **plus** the boundary squash `combinedBoundary = combined/(combined+kBoundary) ∈ [0,1)` (D-L5a, `functionoutput.h:90-98`) required by contract U2;" — §1.3 (locator: lines 86–88).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.212.
+
+---
+
+**Row 8.23 — the output carries the honest open mark.**
+
+*Outgoing statement.* "the honest **`openMark`**;" — §1.3 (locator: line 89).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.51.
+
+---
+
+**Row 8.24 — the output carries the committed identity verbatim.**
+
+*Outgoing statement.* "the **`committedIdentity`** carried verbatim (L4's decision preserved, not replaced)." — §1.3 (locator: line 90).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.163.
+
+---
+
+**Row 8.25 — per region, the local key and the cadence markers.**
+
+*Outgoing statement.* "Per region: `FunctionRegionMarkers` (local key possibly modulated, cadence markers)." — §1.3 (locator: line 91).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.212.
+
+---
+
+**Row 8.26 — frame F-B as realized in the code.**
+
+*Outgoing statement.* "**Frame F-B** (`:458-468`) — incumbent `s.confidence.composite` (L4 vertical-fit-only, [0,1]); contradiction `bestPlaus − committedPlaus` (integer ∈ {0..3}); the §8 `tryOverride` bar." — §1.4, *The confidence contract realized in code* (locator: lines 95–96).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.216.
+
+---
+
+**Row 8.27 — the realization is faithful to the frame; the finding a premise-invalidation.**
+
+*Outgoing statement.* "Faithful to the declared frame; the finding is a **premise-invalidation, not a drift** (`cowork_fb_redesign_design.md` §1.4)." — §1.4 (locator: lines 96–97).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.216.
+
+---
+
+**Row 8.28 — frame F-A lives on the modulation path.**
+
+*Outgoing statement.* "**Frame F-A** — the cadence-confirmed modulation recompute (L5 §5.4; lives on the modulation path, not `functionresolver.cpp`)." — §1.4 (locator: lines 98–99).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.16.
+
+---
+
+**Row 8.29 — D-L5a closed: the boundary squash is published.**
+
+*Outgoing statement.* "**D-L5a CLOSED** — the boundary squash is published (`combinedBoundary`)." — §1.4 (locator: line 100).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.30 — D-FS open: the frames' squash constants are later calibration.**
+
+*Outgoing statement.* "**D-FS OPEN** — the frame contradiction *scales* (F-A cadential weight, F-B plausibility diff) are declared but their squash constants / θ are Stage-5 calibration (`[contract]` §7 D-FS)." — §1.4 (locator: lines 101–102).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.31 — built and owed: the input contract.**
+
+*Outgoing statement.* "| Input contract | `FunctionSlice` fields declared `[code]` | **populate from the live decoder** (§2 wiring) |" — §1.5, the built-versus-owed table (locator: line 107).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.32 — built and owed: the abstain selection, to be generalized to the full distinct-root carry.**
+
+*Outgoing statement.* "| Abstain selection | `resolveAbstained` per `AmbiguityKind` `[code]` | **generalize to the full distinct-root carry**, not the readingA/readingB pair (§3) |" — §1.5 (locator: line 108).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.33 — built and owed: the symmetric rotation over the pool as the precedent.**
+
+*Outgoing statement.* "| Symmetric-rotation over the pool | reasons over full `alternatives[]` `[code]` | the structural precedent §3 extends to all kinds |" — §1.5 (locator: line 109).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.34 — built and owed: the fine-grain override, to be re-framed as annotation.**
+
+*Outgoing statement.* "| Fine-grain override (F-B) | `attemptFineGrainOverride` `[code]` | **re-frame as annotation** (settled §3.D-1) — §3.3 |" — §1.5 (locator: line 110).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.35 — built and owed: the output assembly.**
+
+*Outgoing statement.* "| Output assembly | `assembleFunctionOutput` `[code]` | maps L4 chosen → RN; confidence emit — §3.4 |" — §1.5 (locator: line 111).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.36 — built and owed: the confidence boundary, a joint-consistency margin to be added.**
+
+*Outgoing statement.* "| Confidence boundary | `combinedBoundary` (D-L5a) `[code]` | add the selection's joint-consistency margin as a declared Class-M confidence — §3.4 |" — §1.5 (locator: line 112).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.37 — built and owed: pedal detection, none in the decoder.**
+
+*Outgoing statement.* "| Pedal detection | **none in the decoder** (audit gap) `[code]` | a **new reader-over-carry** — enumerated §4.2 |" — §1.5 (locator: line 113).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.38 — built and owed: the joint key-and-chord step, none, a distinct downstream step.**
+
+*Outgoing statement.* "| Joint key↔chord | **none** (C3 un-computable, `records/cc/reports/cc_engage_c3_measurement_report.md`) `[data]` | a **distinct downstream step** O-18 — enumerated §4.3 |" — §1.5 (locator: line 114).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.39 — the measured fan-out: wide in readings, narrow in roots.**
+
+*Outgoing statement.* "The §8 arc fan-out measurement (`records/cc/reports/cc_engage_fanout_measure_report.md`) fixes the **factual shape** of the carry `[data]`: per competition slice the above-threshold ranked set is **wide in readings but narrow in roots** — median **5/4/5** readings (Baroque/Jazz/Default) but distinct **roots** median **2/1/2**, mean **2.13/1.73/2.12**." — §2.1, *What Layer 5 reads — the distinct-root distribution, not a top-N list* (locator: lines 121–123).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the recorded fan-out of the carried chord readings — their count and their count of distinct roots per slice — reproduce at the current commit, on which substrate?
+
+---
+
+**Row 8.40 — the reading count is mostly variants of the same two roots.**
+
+*Outgoing statement.* "The large reading count is mostly template/voicing variants of the same ~2 roots." — §2.1 (locator: line 124).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.39.
+
+---
+
+**Row 8.41 — the carry expressed on the axis of distinct roots.**
+
+*Outgoing statement.* "So the carry contract is best expressed on the **meaningful axis — distinct roots**." — §2.1 (locator: line 126).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing carry is expressed on *"the **meaningful axis — distinct roots**"*; L2-S40's span-rival mass is *"the total mass of all whole readings that contain that span, with that start, that end and that reading of it"*, a reading carrying tonality, degree, quality, figure and applied target.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on what axis does the dormant chord decoder carry its alternatives, and are they deduplicated by root, by voicing or by neither?
+
+---
+
+**Row 8.42 — per slice, a distribution over distinct roots.**
+
+*Outgoing statement.* "Per slice Layer 5 reads a **distribution over distinct roots**, each root carrying:" — §2.1 (locator: lines 126–127).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS** — as at Row 8.41.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.41.
+
+---
+
+**Row 8.43 — each root's best voicing, carried verbatim.**
+
+*Outgoing statement.* "its **best voicing/variant** (root+quality+bass/inversion+extensions — the `ChordSliceCandidate` identity, carried verbatim for emission, §5.5/§7);" — §2.1 (locator: lines 128–129).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.41.
+
+---
+
+**Row 8.44 — each root's variant set.**
+
+*Outgoing statement.* "its **variant set** (the template/voicing/inversion alternatives at that root — the material the bass/inversion channel §3.2 reasons over);" — §2.1 (locator: lines 130–131).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.41.
+
+---
+
+**Row 8.45 — each root's carried confidence, so that its rank and margin survive.**
+
+*Outgoing statement.* "its **carried confidence** — the L4 `SliceConfidence`/score, so a root's *rank and margin* survive, not just its presence." — §2.1 (locator: lines 132–133).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — each rival is published with its mass, not only its presence.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S40).
+
+---
+
+**Row 8.46 — a third distinct root clears the threshold on about a quarter of slices.** *WITHHELD — D-380.*
+
+*Outgoing statement.* "The decisive fan-out finding `[data]`: a **≥3rd distinct root clears threshold on 25.1 % / 16.1 % / 24.9 %** of slices." — §2.2, *The exclusion tail is load-bearing and must be carried* (locator: lines 136–137).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.39.
+
+---
+
+**Row 8.47 — the ruled-out and low-confidence roots are information, not noise.** *WITHHELD — D-380.*
+
+*Outgoing statement.* "This is exactly the **load-bearing exclusion tail** (#12, finding-by-exclusion): the ruled-out and low-confidence roots are **information**, not noise — they are where selection (§3) and the eventual joint step (§4.3) earn their keep." — §2.2 (locator: lines 137–139).
+
+*Derived statements that speak to it.* L2-S42 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S42: **AGREES** — a rival is withheld only where it is recomputable, *"A collapse is a loss only where the several values cannot be got back"* (its defense, relaying principle #12), and the withheld mass is published.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S42).
+
+---
+
+**Row 8.48 — carry every above-threshold distinct root at its graded confidence; carry the ruled-out roots at low confidence.** *WITHHELD — D-380.*
+
+*Outgoing statement.* "The contract therefore requires: **carry every above-threshold distinct root, each at its graded confidence; carry ruled-out roots at low confidence rather than dropping them.**" — §2.2 (locator: lines 139–140). Two claims: (i) every above-threshold distinct root is carried at its graded confidence; (ii) the ruled-out roots are carried at low confidence rather than dropped.
+
+*Derived statements that speak to it.* (i) L2-S40. (ii) L2-S42 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S40: **DIFFERS** — as at Row 8.41. (ii) L2-S42: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing ruled-out roots are carried *"at low confidence rather than dropping them"*; L2-S42 *"may withhold from publication rivals whose mass falls below a declared threshold, but only because every withheld rival is recomputable"*, the threshold and the withheld mass published.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED.** *What was read:* the ruled carry (D-380, homed here), keyed on distinct roots, against L2-S40's rivals over whole readings; choosing a disposition would choose between a ruled answer and a derived one. (ii) **UNPLACED.** *What was read:* the same ruling's carry of every ruled-out root, against L2-S42's recomputable withholding below a published threshold.
+
+---
+
+**Row 8.49 — a carry of the winner and one alternate discards the third root on about a quarter of slices.** *WITHHELD — D-380.*
+
+*Outgoing statement.* "A carry that surfaces only the winner + one alternate (the legacy cap-of-3 + single diff-root append) **discards the ≥3rd root on ~¼ of slices** — a #12 violation the engaged carry must not inherit." — §2.2 (locator: lines 140–142).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.39.
+
+---
+
+**Row 8.50 — the decoder's alternatives: distinct voicings after the chosen chord, capped at six.**
+
+*Outgoing statement.* "the distinct chord **voicings** after `chosen` — deduped by `sameChordVoicing` (`:752`), capped at **`topK` (default 6, `chordslicedecoder.h:169`)**;" — §2.3, *Does the decoder's governed carry provide this?* (locator: lines 146–147).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.192(ii).
+
+---
+
+**Row 8.51 — the prevailing chord kept alive even below the cap.**
+
+*Outgoing statement.* "**∪ the prevailing chord** (the L3-incumbent-carry pattern, `:766-789`) — kept alive even when below `topK`, so the incumbent root always survives." — §2.3 (locator: lines 148–149).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.192(ii).
+
+---
+
+**Row 8.52 — on an abstain exactly one alternate root is named.**
+
+*Outgoing statement.* "Plus `nameOpenQuestion` (`:925-975`) sets `readingB` = the first alternative with a **different root+quality** (`:929-931`), so on an **abstain** exactly one alternate root is *named*." — §2.3 (locator: lines 150–151).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.192(ii).
+
+---
+
+**Row 8.53 — the cap is on voicings, not roots.**
+
+*Outgoing statement.* "The `topK` cap is on **voicings** (`sameChordVoicing`), **not roots**." — §2.3, *The gap, stated precisely* (locator: line 154).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.192(ii).
+
+---
+
+**Row 8.54 — six voicings can be saturated by the top two roots, so a third root is not guaranteed.**
+
+*Outgoing statement.* "`topK=6` voicings can be **saturated by the top ~2 roots' inversions/templates** before a 3rd distinct root is reached — so the ≥3rd-root minority (25 %/16 % of slices, §2.2) is **not guaranteed to survive** into `alternatives[]`." — §2.3 (locator: lines 154–156).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.192(ii).
+
+---
+
+**Row 8.55 — a smaller leak than the legacy cap, but not a structural guarantee.**
+
+*Outgoing statement.* "This is a *smaller* leak than the legacy cap-of-3 (topK=6 > 3), but it is **not a structural guarantee**." — §2.3 (locator: lines 156–157).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.192(ii).
+
+---
+
+**Row 8.56 — on a committed slice no alternate root is named at all.**
+
+*Outgoing statement.* "The **incumbent-carry guarantees the prevailing root**, and **readingB names one alternate root on abstains** — but neither guarantees a *third* distinct root, and on a **Commit** slice `openQuestion` is `None` (`:914`) so **no alternate root is named at all** — only whatever `alternatives[]` happens to hold." — §2.3 (locator: lines 158–160).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.192(ii).
+
+---
+
+**Row 8.57 — the signed specification records the cap as a known input property, not a defect.**
+
+*Outgoing statement.* "The signed spec already records this as a known input property, not a defect: §15-2 "the carried `alternatives` are **capped (topK)**" `[code]`." — §2.3 (locator: lines 161–162).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.192(ii).
+
+---
+
+**Row 8.58 — the engaged carry must preserve distinct roots explicitly.** *WITHHELD — D-381.*
+
+*Outgoing statement.* "The engaged carry must **preserve distinct roots explicitly**, not as a by-product of a voicing cap." — §2.3, *The owed guarantee (structure only; R5)* (locator: lines 164–165).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS** — as at Row 8.41.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* the ruled carry on distinct roots (D-381, homed here), against L2-S40's rivals over whole readings; choosing a disposition would choose between a ruled answer and a derived one.
+
+---
+
+**Row 8.59 — a distinct-root-first carry capped on distinct roots.** *WITHHELD — D-381.*
+
+*Outgoing statement.* "The declared *shape*: a **distinct-root-first carry** — for each distinct root above threshold, carry its best voicing + its variant set + its confidence, and cap on **distinct roots** (with each root's own variant depth bounded), rather than capping on a flat voicing list." — §2.3 (locator: lines 165–167).
+
+*Derived statements that speak to it.* L2-S42 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S42: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing carry is capped *"on **distinct roots**"*; L2-S42 withholds a rival only *"because every withheld rival is recomputable"*, below *"a declared threshold"*, with *"The threshold's value, and the withheld total mass per span, ... published with the rivals."*
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.58. *What was read:* as at Row 8.58, and L2-S42's withholding rule.
+
+---
+
+**Row 8.60 — the exclusion tail carried as the low-confidence roots.** *WITHHELD — D-381.*
+
+*Outgoing statement.* "The exclusion tail (#12) is carried as the low-confidence roots below the primary set." — §2.3 (locator: lines 167–168).
+
+*Derived statements that speak to it.* L2-S42 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S42: **DIFFERS** — as at Row 8.48(ii).
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.48(ii). *What was read:* as at Row 8.48(ii).
+
+---
+
+**Row 8.61 — the cap depths are constants fitted later.** *WITHHELD — D-381.*
+
+*Outgoing statement.* "**The exact cap depths (how many distinct roots, how deep each root's variant set) are precision-phase constants (R5)** — the fan-out distribution (p90 ≈ 4 roots, max 11) informs the *floor*, but the value is fitted later, not here." — §2.3 (locator: lines 168–170).
+
+*Derived statements that speak to it.* L2-S41.
+
+*Current-text axis.* L2-S41: **AGREES** — *"How many whole readings are published is *measured* (OQ-L2-15)"*, and no value is given.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S41).
+
+---
+
+**Row 8.62 — an owed change to the decoder's carry, not built in this pass.** *WITHHELD — D-381.*
+
+*Outgoing statement.* "This is an **owed change to the decoder's carry construction** (Layer 4 / E4), named here so the engagement design and E4 agree on the contract; it is not built in this pass." — §2.3 (locator: lines 170–172).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.63 — the fan-out was measured on the legacy production path.**
+
+*Outgoing statement.* "The §8 fan-out was measured on the **legacy production path** (`gateCtx.rawCandidates`, cap-of-3) — the current substrate." — §2.3, *Note (scope of the fan-out measurement)* (locator: lines 174–175).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.39.
+
+---
+
+**Row 8.64 — the decoder's alternatives replace that substrate at engagement.**
+
+*Outgoing statement.* "The decoder's `alternatives` (topK=6) is the *engaged* substrate that replaces it at E4." — §2.3 (locator: lines 175–176).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.65 — the distinct-root distribution is a property of the scored set.**
+
+*Outgoing statement.* "Both draw from the same 204-cell scored grid, so the **distinct-root distribution (median 2, ≥3rd on 25 %/16 %) is a property of the scored set** and applies to the decoder's carry too; the exact voicing-count a topK=6 cap admits was not separately measured on the decoder path." — §2.3 (locator: lines 176–178).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.39.
+
+---
+
+**Row 8.66 — the guarantee gap is a structural argument from the voicing-keyed cap.**
+
+*Outgoing statement.* "The distinct-root *guarantee* gap (§2.3) is a structural argument from the cap being voicing-keyed, independent of that unmeasured count." — §2.3 (locator: lines 179–180).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.192(ii).
+
+---
+**Row 8.67 — select by joint consistency across key, root, inversion and bass, not by maximizing one score.** *WITHHELD — D-382.*
+
+*Outgoing statement.* "The decisive published lesson `[research]` §2: **select by joint consistency across key / root / inversion / bass**, not by maximizing any single score." — §3.1, *The objective: select by JOINT CONSISTENCY, not by strengthening one score* (locator: lines 187–188).
+
+*Derived statements that speak to it.* L2-S11; L2-S27.
+
+*Current-text axis.* L2-S11: **AGREES** — the boundary, the tonality, the chord and the assignments are decided *"together"*, *"in the one decision"*. L2-S27: **AGREES** — the chord is decided as degree, quality, figure and applied target, *"read against the span's tonality"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S11, L2-S27).
+
+---
+
+**Row 8.68 — per slice, the selection picks the reading most consistent across the channels over the graded distinct-root carry.** *WITHHELD — D-382.*
+
+*Outgoing statement.* "So engaged Layer 5's selection, for each slice, reasons over the **graded distinct-root distribution including the exclusion tail** (§2, #12) and picks the reading that is **maximally consistent across the evidence channels**, carrying the rest at graded confidence and open-marking where no reading dominates." — §3.1 (locator: lines 193–195). Two claims: (i) per slice, a later layer selects among the carried distinct-root distribution the most consistent reading; (ii) the remainder is carried at graded confidence, with an open mark where no reading dominates.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) L2-S40; L2-S43 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S11: **DIFFERS**. (ii) L2-S40: **AGREES** — the rivals are published with their mass. L2-S43: **DIFFERS**.
+
+*The difference, in both texts' own words.* (i) The outgoing selection runs *"for each slice"* over the chord decoder's already decided carry; L2-S11 decides the boundary *"together with the tonality, the chord and the assignments, in the one decision"*, *"never decided before the chord or after it"*. (ii) The outgoing text open-marks *"where no reading dominates"*; L2-S43 publishes a principal even where two readings have equal candidate scores, *"chosen between them by a declared, deterministic rule that the publication names, and the tie is flagged"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED.** *What was read:* the ruled selection by joint consistency over the carried readings (D-382, homed here), a per-slice choice after the chord decoder, against L2-S11's one decision; choosing a disposition would choose between a ruled answer and a derived one. (ii) **UNPLACED.** *What was read:* the same ruling's open mark where no reading dominates, against L2-S43's declared tie-break rule and flag.
+
+---
+
+**Row 8.69 — engaged selection lifts every ambiguity kind to reason over the full distinct-root carry.** *WITHHELD — D-382.*
+
+*Outgoing statement.* "Engaged selection lifts *all* kinds to reason over the full distinct-root carry — the SymmetricRotation arm is the structural precedent." — §3.1 (locator: lines 197–198).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS** — as at Row 8.41.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.68(i). *What was read:* as at Row 8.68(i), and L2-S40's rivals over whole readings.
+
+---
+
+**Row 8.70 — the bass and inversion channel: load-bearing, the committed bass carried verbatim.**
+
+*Outgoing statement.* "**load-bearing** — a strong, semi-independent root-correctness signal. The committed bass (carried verbatim, §2.1) supports/undercuts each candidate root's inversion." — §3.2, the channel table, row *Bass / inversion* (locator: line 205). Two claims: (i) the bass is a strong, semi-independent signal of root correctness; (ii) the committed bass, carried verbatim from the chord decoder, supports or undercuts each candidate's inversion.
+
+*Derived statements that speak to it.* (i) L2-S28. (ii) L2-S28.
+
+*Current-text axis.* (i) L2-S28: **AGREES** — *"The candidate score has a term relating the figure to the lowest sounding pitch of each slice of the span"*. (ii) L2-S28: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing inversion is tested against *"The committed bass (carried verbatim, §2.1)"*; L2-S28 says *"The figure is decided in the reading. It is the chord member the reading takes as the span's structural bass, which is not necessarily the lowest pitch sounding at the span's first slice."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S28). (ii) **QUARANTINED.** *Audit question:* where does the dormant function layer take the bass it tests an inversion against, and is that bass the chord decoder's committed one?
+
+---
+
+**Row 8.71 — the pitch-spelling channel: load-bearing, read only where the distinction is one of spelling.**
+
+*Outgoing statement.* "**load-bearing** — disambiguates enharmonic/symmetric roots pitch-class-blind fit cannot (the symmetric-rotation churn). Read only where the distinction *is* a spelling distinction (§8 crosscutting)." — §3.2, the channel table, row *Pitch spelling* (locator: line 206). Two claims: (i) spelling separates enharmonic and symmetric roots that a fit blind to spelling cannot; (ii) spelling is read only where the distinction is a spelling distinction.
+
+*Derived statements that speak to it.* (i) L2-S32. (ii) L2-S32.
+
+*Current-text axis.* (i) L2-S32: **AGREES** — the content term rates the events against *"the chord in its spelled form"*. (ii) L2-S32: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing spelling is *"Read only where the distinction *is* a spelling distinction"*; L2-S32's content term always rates how the events *"fit the chord in its spelled form"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S32). (ii) **QUARANTINED.** *Audit question:* where, if anywhere, does the dormant function layer read spelling, and under what condition?
+
+---
+
+**Row 8.72 — the key-consistency channel: a root's fit in the region's local key, the degree bias its built soft form.**
+
+*Outgoing statement.* "**load-bearing** — a root's diatonic/functional fit in the region's local key; the §5.7 degree bias is the built soft form." — §3.2, the channel table, row *Joint consistency w/ region key* (locator: line 207). Two claims: (i) a root's fit in the local key is a channel of the choice; (ii) the degree bias is the built soft form of that channel.
+
+*Derived statements that speak to it.* (i) L2-S3. (ii) None.
+
+*Current-text axis.* (i) L2-S3: **AGREES** — *"A chord whose pitches are foreign to the span's tonality is admitted and costs more in the candidate score."* (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S3). (ii) **QUARANTINED.** *Audit question:* what does the dormant function layer's degree bias read, and where is it applied?
+
+---
+
+**Row 8.73 — the cadence tonic-vote channel: supporting, pins the tonic.**
+
+*Outgoing statement.* "supporting — pins the tonic in RelativePair / leading-tone-rotation cases (§5.2, already built)." — §3.2, the channel table, row *Cadence tonic-vote* (locator: line 208).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing cadence *"pins the tonic"* by a vote in a later layer; L2-S34's progression term, inside the candidate score, includes *"the cadential progressions that confirm a tonality"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.12.
+
+---
+
+**Row 8.74 — the licensed-progression channel: uncorrelated with root correctness.**
+
+*Outgoing statement.* "**weak / NON-load-bearing for root correctness** — a tidy signal *uncorrelated* with root correctness; used only as a **tie-break among already-consistent readings**, NEVER as an override lever." — §3.2, the channel table, row *Licensed progression* (locator: line 209). Two claims: (i) the licensed-progression signal is uncorrelated with root correctness; (ii) it is used only as a tie-break among already consistent readings, never as an override.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S34; L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S34: **DIFFERS**. L2-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing progression is *"used only as a **tie-break among already-consistent readings**"*; L2-S34 makes it one of three families of terms in the candidate score, *"Each family's weights are fitted"*, and L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the recorded finding that the licensed-progression signal is uncorrelated with root correctness reproduce at the current commit, on which decode? (ii) **UNPLACED**, travelling with Row 8.77. *What was read:* as at Row 8.77.
+
+---
+
+**Row 8.75 — the metric-position channel: a supporting feature, not a hand-weighted prior.**
+
+*Outgoing statement.* "supporting feature (not a hand-weighted prior)." — §3.2, the channel table, row *Metric position / harmonic rhythm* (locator: line 210).
+
+*Derived statements that speak to it.* L2-S12 — one §6.3 names as NEAREST to material met (entry 5).
+
+*Current-text axis.* L2-S12: **AGREES** — the metric strength class enters *"as a term"*, *"Its weights are fitted per class, and none is set here."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S12).
+
+---
+
+**Row 8.76 — the built resolver leads with the weak channel.** *WITHHELD — D-383.*
+
+*Outgoing statement.* "The **re-ordering vs the as-built resolver** is the load-bearing structural change: the built `resolveAbstained` leads with `isLicensedProgression` (the weak channel) as its *primary* separator (Transition/ShareTone arms)." — §3.2 (locator: lines 212–213).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.10.
+
+---
+
+**Row 8.77 — the re-ordering: the load-bearing channels decide, progression only decides between otherwise equal readings.** *WITHHELD — D-383.*
+
+*Outgoing statement.* "Engaged selection **re-orders** so the load-bearing channels decide and progression only breaks ties among mutually-consistent readings." — §3.2 (locator: lines 215–216).
+
+*Derived statements that speak to it.* L2-S31 (NEAREST, §6.3 entry 1); L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S31: **DIFFERS**. L2-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing channels are ranked, *"the load-bearing channels decide and progression only breaks ties"*; L2-S31 says *"The candidate score of a reading is a sum over its spans of span terms, plus a sum over adjacent span pairs of pair terms"*, and L2-S38 *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* the ruled re-ordering of the evidence channels (D-383, homed here), a fixed precedence among them, against L2-S31's sum of terms and L2-S38's fitted weights; choosing a disposition would choose between a ruled answer and a derived one.
+
+---
+
+**Row 8.78 — the channel weights and deciding margin fitted later; only the ordering fixed here.** *WITHHELD — D-383.*
+
+*Outgoing statement.* "*(The channel weights and the deciding margin are precision-phase, R5 — only the ordering/direction is fixed here.)*" — §3.2 (locator: lines 216–217). Two claims: (i) the channel weights and the deciding margin are fitted later; (ii) the ordering and direction of the channels are fixed here.
+
+*Derived statements that speak to it.* (i) L2-S38 (NEAREST, §6.3 entry 6). (ii) L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* (i) L2-S38: **AGREES** — *"No value is given here."* (ii) L2-S38: **DIFFERS** — as at Row 8.77.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S38). (ii) **UNPLACED**, travelling with Row 8.77. *What was read:* as at Row 8.77.
+
+---
+
+**Row 8.79 — the settled disposition: the fine-grain override demoted to annotation, floored by disabling it.**
+
+*Outgoing statement.* "The settled F-B disposition (`cowork_fb_redesign_design.md` §4, ratified surface) is **§3.D-1: demote F-B from OVERRIDE to ANNOTATION** (the §8 case-3 honest carry), floored by §3.A (disable)." — §3.3, *Reconciling with the F-B finding and the existing frames* (locator: lines 220–221).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 6.11.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.158.
+
+---
+
+**Row 8.80 — the measured basis: net-harmful, no threshold repairs it, the repair premise refuted.**
+
+*Outgoing statement.* "The measured basis: the override is net-harmful by −756, no θ repairs it, no structural gate on the available features beats disable, and the incumbent-repair premise is refuted `[data]`." — §3.3 (locator: lines 221–223).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.18(i).
+
+---
+
+**Row 8.81 — the load-bearing channels are exactly those the override lacked.**
+
+*Outgoing statement.* "Engaged selection's **load-bearing channels are bass / spelling / key-consistency / cadence** (§3.2) — exactly the channels the research says carry root correctness and F-B lacked." — §3.3 (locator: lines 224–225).
+
+*Derived statements that speak to it.* L2-S31 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* L2-S31: **DIFFERS** — as at Row 8.77.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.77. *What was read:* as at Row 8.77.
+
+---
+
+**Row 8.82 — the progression signal demoted to a tie-break, never an override of a committed root.**
+
+*Outgoing statement.* "The **licensed-progression signal is demoted to a tie-break** among already-consistent readings — never an override of a vertically-committed root." — §3.3 (locator: lines 226–227).
+
+*Derived statements that speak to it.* L2-S34; L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S34: **DIFFERS**. L2-S38: **DIFFERS** — as at Row 8.74(ii).
+
+*The difference, in both texts' own words.* The outgoing progression is *"never an override of a vertically-committed root"*; L2-S34's progression term relates *"the pair of adjacent chords *read as degrees in their tonalities*"* inside the one candidate score, over no committed root.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.77. *What was read:* as at Row 8.77.
+
+---
+
+**Row 8.83 — the fine-grain override's frame re-declared as an annotation channel.**
+
+*Outgoing statement.* "**Frame F-B is re-declared as an annotation channel, not an override frame** (`[contract]` §4 requires the re-declaration; the mechanics — the advisory field, the annotate-vs-mutate action — are a **downstream follow-on**, §4.3, per the F-B doc's §4.2)." — §3.3 (locator: lines 229–231). Two claims: (i) the override's frame is re-declared as an annotation channel; (ii) the mechanics are a later follow-on.
+
+*Derived statements that speak to it.* (i) L2-S35. (ii) None.
+
+*Current-text axis.* (i) L2-S35: **DIFFERS** — as at Row 6.11. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 5.158. (ii) **HISTORICAL.**
+
+---
+
+**Row 8.84 — the committed chord carried unchanged, a contradiction surfaced as an open mark or advisory.**
+
+*Outgoing statement.* "Engaged selection **carries the L4 commit unchanged** and, where the functional context contradicts it, **surfaces the contradiction as an honest open mark / advisory** (the §8 case-3 honest carry), preserving the contradiction signal (#12) without overturning the vertically-correct root." — §3.3 (locator: lines 231–233).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing selection *"carries the L4 commit unchanged"* and surfaces a functional contradiction beside it; L2-S11 decides the chord *"together with the tonality, the chord and the assignments, in the one decision"*, so no chord is committed before the function is read.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.158.
+
+---
+
+**Row 8.85 — the function layer publishes its function confidence and the boundary squash.**
+
+*Outgoing statement.* "the **`FunctionConfidence`** (§7) — three fixed components combined at default weights (unbounded internal `combined`) + the **boundary squash `combinedBoundary ∈ [0,1)`** (D-L5a, already built);" — §3.4, *The confidence Layer 5 publishes* (locator: lines 237–238).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.212.
+
+---
+
+**Row 8.86 — new: the selection's joint-consistency margin as a declared confidence.**
+
+*Outgoing statement.* "**NEW: the selection's joint-consistency margin** as a declared **Class-M** confidence — "how much more consistent is the selected reading than the best *different-root* reading, across the §3.2 channels" — squashed to [0,1) by a fixed monotone map (R5)." — §3.4 (locator: lines 239–241).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing confidence is a margin, *"how much more consistent is the selected reading than the best *different-root* reading"*; L2-S40 publishes *"Mass"*, *"the probability the fitted, whole-reading-normalised model (L2-S35) assigns"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant function layer publish any margin of its selection against the best reading on a different root, and in what class?
+
+---
+
+**Row 8.87 — the confidence of the selection decision itself, distinct from the resolver's next-best margin.**
+
+*Outgoing statement.* "This is the honest confidence of the *selection decision itself* (U1: it attaches to the named decision "function-of-unit-by-selection"), distinct from the resolver's `nextBestMargin` component." — §3.4 (locator: lines 241–243).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS** — as at Row 8.86.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.86.
+
+---
+
+**Row 8.88 — the squash shape declared here, its constant fitted later.**
+
+*Outgoing statement.* "Its squash shape is declared here; **its constant is precision-phase (R5)**." — §3.4 (locator: line 243).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.86.
+
+---
+
+**Row 8.89 — abstention is the selection margin below the declared threshold.**
+
+*Outgoing statement.* "**abstention / open mark = the selection margin below the declared bar** (contract U5) — uniform with the rest of the contract; the honest residual is carried, never guessed." — §3.4 (locator: lines 244–245).
+
+*Derived statements that speak to it.* L2-S43 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S43: **DIFFERS** — as at Row 8.68(ii).
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.51.
+
+---
+
+**Row 8.90 — no constant is fitted; every weight, margin and squash constant is a default seed.**
+
+*Outgoing statement.* "**No constant is fitted (R5).** Every weight, margin, and squash constant above is a default seed; the point is *declared comparability*, not tuned optimality." — §3.4 (locator: lines 247–248).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — *"No value is given here."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S38).
+
+---
+
+**Row 8.91 — the calibration of these confidences is a later stage.**
+
+*Outgoing statement.* "The Class-M → Class-P calibration of these confidences is Stage-5 (contract §6 C1), out of this pass." — §3.4 (locator: lines 248–249).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — *"Until a reliability map is fitted, mass is a model quantity and not a calibrated probability."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S40).
+
+---
+
+**Row 8.92 — Layer 4 owns the distinct-root distribution, under a key already chosen by Layer 3.**
+
+*Outgoing statement.* "**Layer 4 (the decoder's carry)** owns: producing the per-slice **distinct-root distribution** (candidate readings + variants + per-slice confidence + committed identity), under a **region key already chosen by Layer 3**." — §4.1, *Layer boundaries (#7) — what belongs where* (locator: lines 256–258).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing chord carry is produced *"under a **region key already chosen by Layer 3**"*; L2-S11 decides the chord and the tonality *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 7.9(ii).
+
+---
+
+**Row 8.93 — the distinct-root-preserving carry is the chord layer's concern.**
+
+*Outgoing statement.* "The distinct-root-preserving carry (§2.3) is a **Layer-4/E4** concern." — §4.1 (locator: line 258).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.41.
+
+---
+
+**Row 8.94 — Layer 5 owns selecting among the carried readings and producing the Roman numeral, the cadences, the local key and the open marks.**
+
+*Outgoing statement.* "**Layer 5 (selection over the carry → the functional analysis)** owns: **selecting** among the carried readings by joint consistency (§3), producing the Roman numeral, the cadence markers, the region local key (possibly modulated), and the honest open marks." — §4.1 (locator: lines 259–261).
+
+*Derived statements that speak to it.* L2-S11; L2-S45 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.68(i). L2-S45: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing function layer produces *"the Roman numeral, the cadence markers, the region local key (possibly modulated), and the honest open marks"* after the chord is carried; L2-S45 publishes from the one decision *"the segmentation, the tonality per span, the chord per span, the assignments per event, and the rivals with their mass"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.212.
+
+---
+
+**Row 8.95 — Layer 5 reads the carry forward, never re-derives from notes, and reasons within the key Layer 3 chose.**
+
+*Outgoing statement.* "It **reads L4's carry forward and never re-derives from notes** (D4) — it reasons **within** the region key L3 chose." — §4.1 (locator: lines 261–262). Two claims: (i) the function layer reads the chord layer's carry forward and never re-derives from notes; (ii) it reasons within the key Layer 3 chose.
+
+*Derived statements that speak to it.* (i) L2-S47. (ii) L2-S11.
+
+*Current-text axis.* (i) L2-S47: **AGREES** — *"L2 never re-derives an L1 fact."* (ii) L2-S11: **DIFFERS** — as at Row 8.92.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S47). (ii) **QUARANTINED**, travelling with Row 7.9(ii).
+
+---
+
+**Row 8.96 — the joint key-and-chord step is a distinct step, not the function layer's selection.** *WITHHELD — D-384.*
+
+*Outgoing statement.* "**The joint key↔chord step (O-18 / contract C3)** is a **distinct step, not L5 selection.**" — §4.1 (locator: line 263).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing joint key-and-chord step is *"a **distinct step, not L5 selection.**"*, beside a key chosen first and a chord carried; L2-S11 decides the tonality and the chord *"in the one decision. It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* the ruled placement of the joint key-and-chord step as a separate downstream step (D-384, homed here), against L2-S11's one decision; choosing a disposition would choose between a ruled answer and a derived one.
+
+---
+
+**Row 8.97 — the joint step re-ranks the key under chord evidence, and the reverse.** *WITHHELD — D-384.*
+
+*Outgoing statement.* "L5 selection reasons within a *fixed* region key; the joint step is the coupled machinery that **re-ranks the key under chord evidence** (and vice versa) — the "carry a beam of (key, chord) hypotheses and let downstream chord evidence re-rank the key" of `[research]` §3." — §4.1 (locator: lines 263–266).
+
+*Derived statements that speak to it.* L2-S11; L2-S36.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.96. L2-S36: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing joint step carries *"a beam of (key, chord) hypotheses"*; L2-S36 says *"No beam that discards readings on partial candidate scores is admitted."*
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.96, and L2-S36's rule against a discarding beam.
+
+---
+
+**Row 8.98 — the joint step is the home of the genuinely coupled minority.** *WITHHELD — D-384.*
+
+*Outgoing statement.* "It is the home of the C3 "genuinely-coupled key↔chord minority."" — §4.1 (locator: line 266).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing coupling is confined to *"the C3 "genuinely-coupled key↔chord minority.""*; L2-S11 decides every boundary, tonality and chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.96.
+
+---
+
+**Row 8.99 — acyclicity: the only cross-layer recompute is the bounded forward mechanism.**
+
+*Outgoing statement.* "L5 reads L4's carry forward; the only cross-layer *recompute* is the §8 localized-forward-convergence-bounded mechanism (marked-final one-pass closure), never a back-edge." — §4.1, *Acyclicity (the forward-only control-flow contract, §8/§9-D7)* (locator: lines 267–269). Two claims: (i) the carry is read forward, never by a back-edge; (ii) the only cross-layer recompute is the bounded forward mechanism.
+
+*Derived statements that speak to it.* (i) L2-S49. (ii) None.
+
+*Current-text axis.* (i) L2-S49: **AGREES** — *"The dependency is one-way: L3 reads L2."* (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S49). (ii) **QUARANTINED**, travelling with Row 5.226.
+
+---
+
+**Row 8.100 — the joint step, when built, a bounded instance of the forward discipline, not a free search.**
+
+*Outgoing statement.* "The joint step, when built, is a **bounded** instance of that same forward discipline (a declared exception with its own closure), not a free cross-layer search — which the spec measured inert (§8 "What this is NOT")." — §4.1 (locator: lines 269–271). Two claims: (i) the joint step is a bounded forward instance with its own closure; (ii) a free cross-layer search was measured inert.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) None.
+
+*Current-text axis.* (i) L2-S11: **DIFFERS** — as at Row 8.96. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 5.226. (ii) **QUARANTINED.** *Audit question:* does the recorded measurement that a free cross-layer search is inert reproduce at the current commit, and on which search?
+
+---
+
+**Row 8.101 — gap 1: the carry wiring, the load-bearing engagement build.**
+
+*Outgoing statement.* "**The carry wiring** — populate `FunctionSlice` from the live decoder `SliceChord` (today hand-injected; §1.1). The load-bearing engagement build." — §4.2, *Engagement gaps*, item 1 (locator: lines 274–275).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.102 — gap 2: the distinct-root guarantee in the carry.**
+
+*Outgoing statement.* "**The distinct-root guarantee in the carry** — the owed §2.3 change to the decoder's carry construction (E4)." — §4.2, item 2 (locator: line 276).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.103 — gap 3: the decoder has no pedal detection; the legacy pedal pass overwrites the results.**
+
+*Outgoing statement.* "**Pedal detection as a reader-over-carry** — the **decoder has none** (structural-integrity audit gap; the legacy `chordpostpasses.cpp` pedal pass clobbers `results` and re-implements a diff-root scan — a Layer-4 legacy tangle that retires with E4)." — §4.2, item 3 (locator: lines 277–279).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* where, at the current commit, is a pedal detected, and does any code path overwrite the chord results when it is?
+
+---
+
+**Row 8.104 — pedal detection is needed as a reader over the carry, its home a later decision.**
+
+*Outgoing statement.* "Engaged Layer 5 (or its carry) needs pedal detection as a **reader over the carry**, not a `results`-mutating post-pass. **Its home is a downstream decision (§4.3).**" — §4.2, item 3 (locator: lines 279–280). Two claims: (i) pedal detection is a reader over the carry, not a post-pass mutating the results; (ii) its home is a later decision.
+
+*Derived statements that speak to it.* (i) L2-S47. (ii) None.
+
+*Current-text axis.* (i) L2-S47: **DIFFERS**. (ii) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (i) The outgoing pedal is detected by *"a **reader over the carry**"* of the chord decoder; L2-S47 says *"A pedal-extended sounding set is not a want: the input contract already assigns building it to the consumer"*, a set built from L1's slices and span.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* what does the dormant chain read to detect a pedal — the chord decoder's carry, or L1's slices? (ii) **HISTORICAL.**
+
+---
+
+**Row 8.105 — gap 4: the annotate mechanics of the fine-grain override.**
+
+*Outgoing statement.* "**The F-B annotate mechanics** — the advisory field on `ResolvedReading` and the annotate-vs-mutate action (settled disposition §3.3; mechanics are §4.3)." — §4.2, item 4 (locator: lines 281–282).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.106 — gap 5: the commensurability of the frame scales, a later calibration dependency.**
+
+*Outgoing statement.* "**Frame-scale commensurability (D-FS)** — the contradiction-scale squashes / θ the contract leaves to Stage-5; the annotate re-frame (§3.3) removes F-B's override arithmetic from the critical path, but the F-A modulation frame still consumes it — a Stage-5 calibration dependency, not this pass." — §4.2, item 5 (locator: lines 283–285).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.107 — the quality-from-key question has no single owner.**
+
+*Outgoing statement.* "**FQ-2 — the quality-from-key single owner.** The structural-integrity audit found quality-from-key second-guessing has **no single owner** (≥4 sites / 3 layers)." — §4.3, *The downstream pieces this Part DEPENDS ON* (locator: lines 291–292).
+
+*Derived statements that speak to it.* L2-S27.
+
+*Current-text axis.* L2-S27: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing quality is re-decided from the key at *"≥4 sites / 3 layers"*; L2-S27 says *"L2 decides the chord as degree, quality, figure and applied target, read against the span's tonality"*, one decision in one layer.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* at how many sites, and in which layers, does the code at the current commit decide a chord's quality from the key?
+
+---
+
+**Row 8.108 — the hinge: the key-consistency channel reads an unowned signal until the owner is fixed.**
+
+*Outgoing statement.* "**Hinge:** §3.2's key-consistency channel reads a root's quality-in-key; if quality-from-key is re-decided in multiple places the selection channel is reading an un-owned signal. The owner must be fixed (a Layer-5 decision per the sequencing call) before the key-consistency channel is more than structural." — §4.3, item *FQ-2* (locator: lines 292–295).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.109 — the hinge: whether pedal detection is a chord-layer annotation or a reader determines what the carry carries.**
+
+*Outgoing statement.* "**Hinge:** §4.2 gap 3 — whether pedal detection is a Layer-4 carry annotation (a slice property the carry exposes) or a Layer-5 reader-over-carry determines *what the carry contract carries* and *what selection consumes*." — §4.3, item *Pedal detection's home* (locator: lines 296–298).
+
+*Derived statements that speak to it.* L2-S47.
+
+*Current-text axis.* L2-S47: **DIFFERS** — as at Row 8.104(i).
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.104(i).
+
+---
+
+**Row 8.110 — the carry and the channels both change if a pedal is a carried slice attribute.**
+
+*Outgoing statement.* "The distinct-root carry (§2.3) and the selection channels (§3.2) both change if pedal points are a carried slice attribute." — §4.3, item *Pedal detection's home* (locator: lines 298–299).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.104(i).
+
+---
+
+**Row 8.111 — the exclusion tail is carried so that the joint step can re-rank the key.**
+
+*Outgoing statement.* "**Hinge:** the exclusion tail (§2.2, #12) is carried **so the joint step can re-rank the region key under the carried chord alternatives** — that is *why* the ≥3rd root is load-bearing." — §4.3, item *O-18 / C3* (locator: lines 300–302).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.96.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.96.
+
+---
+
+**Row 8.112 — the joint step is not computable today, its design owed later.**
+
+*Outgoing statement.* "The joint step is un-computable today (C3 trigger not computed anywhere, `records/cc/reports/cc_engage_c3_measurement_report.md` `[data]`) and its design is owed at Stage 5;" — §4.3, item *O-18 / C3* (locator: lines 302–303).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.113 — the carry contract is designed to feed the joint step; its place is reserved.**
+
+*Outgoing statement.* "the carry contract (§2) is designed to **feed** it (the beam of hypotheses `[research]` §3), and the §4.1 boundary reserves its place." — §4.3, item *O-18 / C3* (locator: lines 303–304).
+
+*Derived statements that speak to it.* L2-S36.
+
+*Current-text axis.* L2-S36: **DIFFERS** — as at Row 8.97.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.97.
+
+---
+
+**Row 8.114 — the override's correction job re-homes at the joint step in the long run.**
+
+*Outgoing statement.* "The F-B correction job (§3.3) re-homes here long-run." — §4.3, item *O-18 / C3* (locator: lines 304–305).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.115 — the hinge: the annotate mechanics are a separately ratified build event.**
+
+*Outgoing statement.* "**Hinge:** §3.3 — the annotation action (the `ResolvedReading` advisory field, the contract §4 F-B re-declaration, the L5 §5.5/§10/§15-2 spec edits) is the *mechanics* of the settled disposition; a separately-ratified build event (`cowork_fb_redesign_design.md` §4.2)." — §4.3, item *The F-B annotate mechanics* (locator: lines 306–308).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.116 — the selection's structure is fixed; the mechanics are the follow-on.**
+
+*Outgoing statement.* "Selection's structure (§3.3) is fixed; the mechanics are the follow-on." — §4.3, item *The F-B annotate mechanics* (locator: lines 308–309).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.117 — where selection's recovery of the corrections needs a correctness-correlated signal, that is an inference-quality question, not built.**
+
+*Outgoing statement.* "This designs no inference fix — where selection's recovery of the 53 F-B corrections requires a correctness-correlated signal, that is declared to Cowork as an inference-quality question (§3.3), not built here (#8, #13)." — §5, *What this Part settles* (locator: lines 325–327).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+**Row 8.118 — settling the two pieces closes the design stage.**
+
+*Outgoing statement.* "Settling them **closes the Stage-2 design phase** (`cowork_engage_arc_plan.md`)." — Part 2, the status banner (locator: lines 339–340).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.119 — the legacy pedal pass: its entry condition, the sounding bass not a chord tone of the winner.**
+
+*Outgoing statement.* "reads `r1 = results.front()` (the Pass-1 full-voice winner) and tests `!cptIsBassChordTone(bassPc, r1…)` — the structural entry condition "the sounding bass is not a chord tone of the winner" (`:210-215`);" — §6.1, *The current mechanism at the code, and its three symptoms*, step 1 (locator: lines 364–365).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the legacy pedal pass exist at the current commit, on which arm does it run, and what does it test to enter?
+
+---
+
+**Row 8.120 — the legacy pedal pass: a whole second analysis with the bass stripped.**
+
+*Outgoing statement.* "strips every tone at `bassPc` and runs a **whole second analysis** `RuleBasedChordAnalyzer{}.analyzeChord(upperTones…)` → `pass2` (`:216-249`);" — §6.1, step 2 (locator: lines 366–367).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 8.121 — the legacy pedal pass: a confirmation gap from a hand-rolled scan, squashed.**
+
+*Outgoing statement.* "computes a confirmation gap = `pass2.front().score − pass2AltScore`, where `pass2AltScore` is found by a **hand-rolled scan for the best DIFFERENT-root competitor** in `pass2` (`:262-269`), squashed through a sigmoid `c2` (`:270-271`);" — §6.1, step 3 (locator: lines 368–370).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 8.122 — the legacy pedal pass: past its threshold, the whole result vector is overwritten.**
+
+*Outgoing statement.* "on `c2 ≥ pedalConfidenceThreshold`: **`results = pass2`** (`:274`) — the whole winner+carry vector is overwritten — then stamps `isPedalPoint`/`pedalBassPc` on the new `front()` (`:275-276`)." — §6.1, step 4 (locator: lines 371–372).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 8.123 — the audit catalogues the pedal pass as a high-severity violation with three coupled symptoms.**
+
+*Outgoing statement.* "The structural-integrity audit `[audit §1.1 #7 / §1.3]` catalogues this as **VIOLATION / HIGH** — "a detection concern mutating the winning identity in place," with three coupled symptoms, all reproduced verbatim above:" — §6.1 (locator: lines 374–375).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 8.124 — symptom (i): the overwrite discards the full-voice reading and its alternatives.**
+
+*Outgoing statement.* "**(i) the clobber** — `results = pass2` replaces the shared winner+carry vector, discarding the Pass-1 full-voice reading and its distinct-root alternatives (a #12 information-loss on the carry);" — §6.1 (locator: lines 376–377).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 8.125 — symptom (ii): the fourth copy of the best-different-root decision.**
+
+*Outgoing statement.* "**(ii) the re-implemented diff-root scan** — `:262-269` is the **4th copy** of the "best different-root alternative" decision (`[audit §1.3]`: the append `:537-540`, the pedal gap here, the FM2/`promoteToWinner` primitive, and the decoder `chordslicedecoder.cpp:927-930`);" — §6.1 (locator: lines 378–380).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* how many separate computations of the best reading on a different root exist at the current commit, and where?
+
+---
+
+**Row 8.126 — symptom (iii): a defensive disabling of the append contaminates the detection with a display concern.**
+
+*Outgoing statement.* "**(iii) the defensive append-disable** — `pass2Prefs.inversionSuspicionMargin = 0.0` + a fresh `pass2GateCtx` (`:240-245`) exist **only** to suppress the legacy cap→append/inversion-correction (a display-carry concern) because it "would distort the confidence gap used to confirm the pedal" (`:237-239`) — a display concern contaminating the detection math." — §6.1 (locator: lines 381–384).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 8.127 — the dormant decoder has no pedal detection; engagement must give it a home.**
+
+*Outgoing statement.* "And the named gap `[audit §1.4]`: **the dormant decoder has NO pedal detection** (grep of `chordslicedecoder.cpp`: 0 matches `[code]`) — engagement must give pedal a home, it is not inheriting one." — §6.1 (locator: lines 386–387). Two claims: (i) the dormant chord decoder has no pedal detection; (ii) engagement must give it a home.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 8.103. (ii) **HISTORICAL.**
+
+---
+
+**Row 8.128 — the pedal decision needs the upper-voice harmony and a confidence gap confirming it.**
+
+*Outgoing statement.* "The pedal decision needs two things: (1) the **upper-voice harmony** (the chord above the sustained bass) and (2) a **confidence gap** confirming it." — §6.2, *The material pedal needs is (usually) already IN the carry* (locator: lines 390–391).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.104(i).
+
+---
+
+**Row 8.129 — both are latent in the decoder's governed carry.**
+
+*Outgoing statement.* "Both are latent in the decoder's governed carry (Part 1 §2):" — §6.2 (locator: line 391).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.104(i).
+
+---
+
+**Row 8.130 — the upper-voice chord with the bass as a non-chord tone is a distinct-root alternative of the full slice.**
+
+*Outgoing statement.* "A pedal slice's full pc set is `{pedal bass} ∪ {upper chord}`. A reading whose **root ≠ bass and whose template excludes the bass pc** — i.e. the upper-voice chord with the bass as a non-chord-tone — is exactly a **distinct-root alternative of the full slice**." — §6.2 (locator: lines 392–394).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **AGREES** — *"A chord is admissible over a span whose sounding set lacks its root, or lacks its third"*, and an event is a chord tone *"only if its spelled pitch class is a member of the span's chord"*, so the bass outside the chord is a rival reading of the same span.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S10).
+
+---
+
+**Row 8.131 — the distinct-root carry is where the upper-voice reading already lives, not a second decode.**
+
+*Outgoing statement.* "The distinct-root-preserving carry Part 1 §2.1/§2.3 mandates (each distinct root with its best voicing + variant set + carried confidence, **including the exclusion tail #12**) is therefore the natural place the upper-voice reading already lives — *as a carried alternative*, not as a second decode." — §6.2 (locator: lines 394–396).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS** — as at Row 8.41.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.104(i).
+
+---
+
+**Row 8.132 — the confirmation gap is the carried margin between the pedal reading's root and the committed root.**
+
+*Outgoing statement.* "The confirmation gap pedal computes by hand (§6.1 (ii)) is the **carried confidence margin between the pedal reading's root and the committed (bass-rooted) root** — already the carry's distinct-root ranking (Part 1 §2.1: "carry its confidence, so a root's rank and margin survive")." — §6.2 (locator: lines 397–399).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing confirmation is a *"carried confidence margin between the pedal reading's root and the committed (bass-rooted) root"*; L2-S40 publishes each rival's *"Mass"*, and *"A consumer may compare masses within one working span's publication"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.104(i).
+
+---
+
+**Row 8.133 — the clean design reads the carry rather than a second analysis, subject to one owed measurement.**
+
+*Outgoing statement.* "So the clean design reads the carry rather than re-deriving from a second analysis — **subject to one owed measurement** (§8.3 [owed-P1]): whether the carried distinct-root alternative (bass-as-non-chord-tone) **agrees** with today's upper-voice re-decode `pass2`." — §6.2 (locator: lines 401–403). Two claims: (i) the design reads the carry rather than a second analysis; (ii) whether the two agree is an owed measurement.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 8.104(i). (ii) **HISTORICAL.**
+
+---
+
+**Row 8.134 — pedal detection is a chord-identity concern: the harmony is the upper chord, the bass a non-chord pedal tone.**
+
+*Outgoing statement.* "Pedal detection is a **chord-identity concern** (it decides "the harmony is the upper-voice chord; the bass is a non-chord pedal tone")." — §6.3, *Placement (#7): a reader-over-carry producing a distinct pedal-annotated result* (locator: lines 407–408).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **AGREES** — *"The assignments are part of the one decision"*, made *"relative to each candidate reading's chord"*: which notes are chord tones is decided with the chord.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S23).
+
+---
+
+**Row 8.135 — the home: a reader over the chord layer's carry, an additive annotation, not a mutation of the winner.** *WITHHELD — D-385.*
+
+*Outgoing statement.* "**Home: a reader over the decoder's Layer-4 carry, emitting a pedal-annotated result — an additive annotation on a carried reading, NOT a mutation of the winner.**" — §6.3 (locator: lines 410–411).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing pedal is decided by *"a reader over the decoder's Layer-4 carry"*, after the chord decoder; L2-S23 says the assignments *"are made inside the candidate score, relative to each candidate reading's chord, and never by a detector that runs first."*
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* the ruled home of pedal detection (D-385, homed here), a reader after the chord decoder that marks the bass as a pedal tone, against L2-S23's assignments made inside the one decision; choosing a disposition would choose between a ruled answer and a derived one.
+
+---
+
+**Row 8.136 — the reader sits at the carry side and feeds the selection one pedal-annotated candidate.** *WITHHELD — D-385.*
+
+*Outgoing statement.* "Because the material it needs is the carry's distinct-root distribution (§6.2), and chord identity is Layer 4, the reader sits at the **carry side (Layer-4 output / a decoder post-reader)** and feeds L5 selection *one* pedal-annotated candidate." — §6.3 (locator: lines 411–413).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **DIFFERS** — as at Row 8.135.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.135. *What was read:* as at Row 8.135.
+
+---
+
+**Row 8.137 — the reader never owns the winner and never writes back into the decoder's scoring.** *WITHHELD — D-385.*
+
+*Outgoing statement.* "It never owns `results.front()` and never writes back into the decoder's scoring — it reads the carry forward and annotates." — §6.3 (locator: lines 413–414).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **DIFFERS** — as at Row 8.135.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.135. *What was read:* as at Row 8.135.
+
+---
+
+**Row 8.138 — what the reader emits: the carried alternative excluding the bass, marked as the pedal reading.**
+
+*Outgoing statement.* "**What it emits:** on the pedal structural condition (bass is a non-chord-tone of the committed reading) **and** a carried distinct-root alternative excluding the bass clearing the pedal-confidence bar, the reader **marks that alternative as the pedal reading** (`isPedalPoint`, `pedalBassPc`, the upper-voice chord as the identity) and carries it as the slice's pedal-annotated candidate" — §6.3 (locator: lines 415–418).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **DIFFERS** — as at Row 8.135.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.135. *What was read:* as at Row 8.135.
+
+---
+
+**Row 8.139 — the full-voice reading and the remainder of the distribution survive as alternatives.**
+
+*Outgoing statement.* "**while the original full-voice reading and the rest of the distinct-root distribution SURVIVE in the carry** as honest alternatives (#12: no information loss; the bass-rooted reading is retained at its graded confidence, not overwritten)." — §6.3 (locator: lines 418–420).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — the rival readings are published with their mass rather than overwritten.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S40).
+
+---
+
+**Row 8.140 — selection then reasons over the carry including the pedal annotation.**
+
+*Outgoing statement.* "Selection (Part 1 §3) then reasons over the carry *including* the pedal annotation, exactly as it reasons over any carried reading." — §6.3 (locator: lines 420–421).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.68(i).
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.68(i). *What was read:* as at Row 8.68(i).
+
+---
+
+**Row 8.141 — the fallback: an upper-voice-conditioned reading as a carried slice attribute.**
+
+*Outgoing statement.* "If [owed-P1] shows the carried alternative materially diverges from the bass-stripped re-decode, the correct form is **not** the legacy in-place second analysis but a **Layer-4 carry annotation**: the decoder (which already holds the slice's tones) exposes an upper-voice-conditioned reading as a *carried slice attribute* — still a reader/annotation, still no winner mutation." — §6.3, *The upper-voice-re-decode fallback* (locator: lines 422–426).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **DIFFERS** — as at Row 8.135.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.104(i).
+
+---
+
+**Row 8.142 — which form is right is the measurement's to settle.**
+
+*Outgoing statement.* "Which form is right is the measurement's to settle; both keep pedal a reader, never a mutator." — §6.3 (locator: line 426).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.143 — under the reader, the overwrite is gone; the pedal reading is one more carried candidate.**
+
+*Outgoing statement.* "The reader **annotates a carried candidate**; it never assigns `results = pass2`. The winner+carry vector is not overwritten; the full-voice reading is preserved (#12). The pedal reading is one more carried candidate (pedal-annotated), which selection weighs — not a silent replacement of the whole vector." — §6.4, *The three symptoms dissolve under reader-over-carry*, symptom (i) (locator: lines 429–431).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — as at Row 8.139.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S40).
+
+---
+
+**Row 8.144 — under the reader, the confirmation margin is read from the carry, no fourth scan.**
+
+*Outgoing statement.* "The confirmation margin is **read** from the carry's distinct-root ranking (§6.2). No 4th hand-rolled scan — this is the FQ-1 tie (§6.5)." — §6.4, symptom (ii) (locator: lines 432–433).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.150.
+
+---
+
+**Row 8.145 — the append the pedal defended against is a property of the legacy substrate.**
+
+*Outgoing statement.* "The cap→append/inversion-correction the pedal defended against is a property of the **legacy `results` substrate** (`[audit §1.2]` the cap→append pair)." — §6.4, symptom (iii) (locator: lines 434–435).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 8.146 — the decoder's carry is governed, so there is no append to contaminate the pedal computation.**
+
+*Outgoing statement.* "The decoder's carry is **governed** — `topK`-on-distinct-voicings ∪ a principled incumbent-carry (`chordslicedecoder.cpp:746-789`, `[audit §1.4]` OK) — there is **no display-carry append to contaminate** the pedal math, so there is nothing to defensively disable." — §6.4, symptom (iii) (locator: lines 435–438).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.192(ii).
+
+---
+
+**Row 8.147 — all three symptoms come from one defect: the pedal mutating the winning identity in place.**
+
+*Outgoing statement.* "**All three are symptoms of the single defect** the audit named — pedal *mutating the winning identity in place* rather than *reading the carry and producing a distinct pedal-annotated result* (`[audit §1.3]`)." — §6.4 (locator: lines 440–441).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 8.148 — the confirmation margin is the best-different-root decision the audit counts four times.** *WITHHELD — D-386.*
+
+*Outgoing statement.* "The confirmation margin (§6.1 (ii)) is the **"best different-root alternative"** decision the audit catalogues as computed 4× (`[audit §1.3]`, FQ-1)." — §6.5, *The diff-root need is served by the carry / FQ-1 — do NOT re-implement a 4th scan (#6)* (locator: lines 445–446).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.125.
+
+---
+
+**Row 8.149 — the decoder already reads the best different-root reading; one primitive unifies the scan, with the decoder.** *WITHHELD — D-386.*
+
+*Outgoing statement.* "Under the engaged carry it is served two-ways-that-are-one: the decoder already **reads** the best different-root reading from its carry (`chordslicedecoder.cpp:927-930` `[code]`), and FQ-1 unifies that scan into one primitive (`[audit]` FQ-1, sequenced into E4 — Stage-1 STOP-reported the four legacy scans are *not* byte-identically one, so the unification lands with the decoder, not pre-L5)." — §6.5 (locator: lines 446–449). Two claims: (i) the chord decoder already reads the best reading on a different root from its carry; (ii) the unifying primitive is sequenced with the decoder, the four legacy scans not being byte-identically one.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 8.52. (ii) **HISTORICAL.**
+
+---
+
+**Row 8.150 — the pedal reader consumes the carry's distinct-root margin and adds no fourth scan.** *WITHHELD — D-386.*
+
+*Outgoing statement.* "The pedal reader therefore **consumes the carry's distinct-root margin** (or the FQ-1 primitive over the carry) — it adds **no fourth scan**." — §6.5 (locator: lines 449–451).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does any pedal detection at the current commit compute its own best reading on a different root, or read one already computed?
+
+---
+
+**Row 8.151 — the second distinct root's carried confidence is the pedal confirmation signal.** *WITHHELD — D-386.*
+
+*Outgoing statement.* "This is the concrete pedal instance of Part 1 §2.2's load-bearing exclusion tail: the ≥2nd distinct root's carried confidence *is* the pedal confirmation signal." — §6.5 (locator: lines 451–452).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.150.
+
+---
+
+**Row 8.152 — the override's measured record: fires, corrections, harms, neutral; most fires move a correct root to a wrong one.**
+
+*Outgoing statement.* "The F-B fine-grain override is **measured net-harmful** — 1043 fires = 53 corrections + **809 harms** + 181 neutral on the E0 decode chain, ~78 % of fires move an L4-correct root to a wrong one; no θ separates corrections from harms; no structural gate on the available features beats disable; the incumbent-repair premise is refuted `[fb §2]`." — §7.1, *The settled disposition (recap, not re-litigated)* (locator: lines 459–461).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.18(i).
+
+---
+
+**Row 8.153 — the existing open mark is one channel threaded through three structures.**
+
+*Outgoing statement.* "**The existing open-mark carry** is one honest-uncertainty channel threaded through three structs `[code]`: `ResolvedReading.openMark` (`functionresolver.h:170` — "the honest open mark — genuinely undecidable (§7)") → `FunctionUnitAssembly.openMark` (`functionoutput.h:165`) → `FunctionAnalysisUnit.openMark` (`functionoutput.h:124` — the L5→L6 contract)." — §7.2, *The vehicle (#6, the load-bearing decision)* (locator: lines 472–475).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.51.
+
+---
+
+**Row 8.154 — the open mark is the realized honest carry and the both-licensed case's terminus.**
+
+*Outgoing statement.* "It is the realized §8 **case-3** carry (`cowork_layer5_function_design.md:582`: "earlier layer was uncertain and the later evidence still cannot decide → carry the residual honestly") and the §15-13 both-licensed fall-through's honest terminus." — §7.2 (locator: lines 475–477).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.51.
+
+---
+
+**Row 8.155 — promote the boolean open mark to an annotation that names why the slice is marked.** *WITHHELD — D-387.*
+
+*Outgoing statement.* "Promote the boolean `openMark` (across the three structs and their assembly) to a small open-mark annotation that names *why* the slice is marked — one channel, distinct kinds:" — §7.2 (locator: lines 490–492).
+
+*Derived statements that speak to it.* L2-S45 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S45: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing publication carries *"a small open-mark annotation that names *why* the slice is marked"*; L2-S45 publishes *"exactly what the charter lists, and nothing else"*: *"the segmentation, the tonality per span, the chord per span, the assignments per event, and the rivals with their mass"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* the ruled vehicle of the annotation, one open mark carrying its reason (D-387, homed here), against L2-S45's closed list of what is published; choosing a disposition would choose between a ruled answer and a derived one.
+
+---
+
+**Row 8.156 — the undecided kind: the abstain and both-licensed honest carry, today's meaning preserved.** *WITHHELD — D-387.*
+
+*Outgoing statement.* "**`Undecided`** — the case-3 abstain / §15-13 both-licensed honest-carry (today's `openMark = true` semantics, preserved exactly);" — §7.2 (locator: lines 493–494).
+
+*Derived statements that speak to it.* L2-S43 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S43: **DIFFERS** — as at Row 8.68(ii).
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.155. *What was read:* as at Row 8.155, and L2-S43's declared tie-break rule and flag.
+
+---
+
+**Row 8.157 — the contradiction kind: the reading stays the chord layer's commit, the contradiction carried as uncertainty.** *WITHHELD — D-387.*
+
+*Outgoing statement.* "**`FunctionContextContradiction`** — the F-B case: **the reading stays the L4 commit** (`overrodeCommit` stays **false**, `reading` = the committed chord — the additive-not-replace contract `ResolvedReading` already declares, `functionresolver.h:160-165` `[code]`), and the annotation carries the contradiction as calibrated uncertainty (§7.3)." — §7.2 (locator: lines 495–498).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.84.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.155. *What was read:* as at Row 8.155, and L2-S11's one decision against a chord committed before its function is read.
+
+---
+
+**Row 8.158 — the vehicle reuses the existing open-mark path: a unification, not a parallel channel.** *WITHHELD — D-387.*
+
+*Outgoing statement.* "This **reuses the existing open-mark carry path** (no new field threaded through three structs) and **dissolves `[fb §4.2]`'s "new advisory field" into "the existing open-mark, enriched with a reason"** — a unification, not a parallel channel, exactly the instruction's licensed outcome ("a *unified* advisory, not a duplicate")." — §7.2 (locator: lines 500–502).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.51.
+
+---
+
+**Row 8.159 — the override's value of the `ResolutionBasis` field becomes an annotation basis, an owed specification edit.** *WITHHELD — D-387.*
+
+*Outgoing statement.* "It composes with the existing `ResolutionBasis` transparency enum (`functionresolver.h:151-158`): the demoted `ResolutionBasis::FineGrainOverride` value becomes an **annotation basis** (renamed/re-valued to `FineGrainContradiction` — an owed spec edit, §8.2), never an override basis." — §7.2 (locator: lines 502–505). Two claims: (i) the override's value of the `ResolutionBasis` field becomes an annotation basis, never an override basis; (ii) the renaming is an owed specification edit.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* which values does the dormant resolver's `ResolutionBasis` field carry at the current commit, and does the fine-grain override value still name an override? (ii) **HISTORICAL.**
+
+---
+
+**Row 8.160 — the chord layer's reading is carried, the correct root surviving.**
+
+*Outgoing statement.* "the **L4 reading is carried** (the correct root survives — the +756 net-correct-root recovery `[fb §3.A]`);" — §7.3, *What it carries (#12)* (locator: line 510).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.80.
+
+---
+
+**Row 8.161 — the contradiction preserved as the open mark's payload: the frame's two quantities as uncertainty.**
+
+*Outgoing statement.* "the **contradiction is preserved as the open-mark payload** — the frame's two quantities (the L4 composite incumbent `C ∈ [0,1]` and the plausibility contradiction `S = bestPlaus − committedPlaus ∈ {2,3}`, `[fb §1.2]` `[contract §4 F-B]`) carried as a **Class-M calibrated-uncertainty** on the annotation (squashed per the contract R5; **its constant precision-phase, R5**)." — §7.3 (locator: lines 511–514).
+
+*Derived statements that speak to it.* L2-S45 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S45: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing payload carries *"the plausibility contradiction `S = bestPlaus − committedPlaus ∈ {2,3}`"*, a difference of two plausibility values; L2-S45 says *"No term value, weight, partial candidate score or other intermediate quantity crosses."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what does the dormant function layer carry beside its open mark, and is any of it an internal scoring quantity?
+
+---
+
+**Row 8.162 — the signals become uncertainty annotations, for a future joint step to consume.**
+
+*Outgoing statement.* "The 1043 signals `[fb §2]` become uncertainty annotations, not dropped — the exact information a future C3 joint step (`[fb §3.D-2]`, Part 1 §4.3) will consume." — §7.3 (locator: lines 514–515).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.161.
+
+---
+
+**Row 8.163 — the trigger: where the frame's condition holds, the resolver writes the reason and payload and leaves the reading.**
+
+*Outgoing statement.* "The F-B fine-grain contradiction becomes an **annotation trigger**: when the frame's `S > θ·C` condition holds (`[contract §4]` the §8 override arithmetic), the resolver **writes the open-mark reason `FunctionContextContradiction` + the uncertainty payload** and **leaves the reading = the L4 commit**." — §7.4, *The trigger: an annotation trigger, never an override lever* (locator: lines 520–522).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 6.11.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.158.
+
+---
+
+**Row 8.164 — no override, so no mutation and no localized recompute.**
+
+*Outgoing statement.* "It no longer sets `overrodeCommit = true`, no longer mutates `prog[i].chord = toPC(bestAlt)`, and no longer fires the localized `forwardRecompute` (`[fb §1.2/§4.2]`, `functionresolver.cpp:490-497` `[code]`) — there is no override, so there is no recompute." — §7.4 (locator: lines 522–525).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.158.
+
+---
+
+**Row 8.165 — the pedal reader's boundary: at the carry side, feeding the selection.**
+
+*Outgoing statement.* "**Pedal reader (chord-identity)** — lives at the **carry side (Layer-4 output / decoder post-reader)**; reads the decoder's governed carry *forward*, emits a pedal-annotated candidate consumed by L5 selection." — §8.1, *Layer boundaries (#7)* (locator: lines 536–537).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **DIFFERS** — as at Row 8.135.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.135. *What was read:* as at Row 8.135.
+
+---
+
+**Row 8.166 — no back-edge into the decoder's scoring, no mutation, the margin read from the carry.**
+
+*Outgoing statement.* "**No back-edge** into the decoder's scoring; **no `results`-winner mutation**; the diff-root margin is read from the carry / FQ-1, not a fresh cross-layer scan." — §8.1 (locator: lines 537–539).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.150.
+
+---
+
+**Row 8.167 — the annotation's boundary: in the function layer, reading the committed reading, writing the open mark.**
+
+*Outgoing statement.* "**F-B annotation** — lives in **Layer 5** (`functionresolver`, the case-4 site); reads L4's committed reading + the functional context the resolver already holds; writes the L5 output's open-mark (additive §7, the `ResolvedReading` contract's declared "it annotates; it does not replace")." — §8.1 (locator: lines 541–543).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.84.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.84.
+
+---
+
+**Row 8.168 — the acyclicity strengthened: the one former recompute on that path removed.**
+
+*Outgoing statement.* "**No override, no recompute, no back-edge** — the acyclicity Part 1 §4.1 requires is *strengthened* (the one former cross-layer *recompute* on the F-B path is removed)." — §8.1 (locator: lines 543–545).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.99(ii).
+
+---
+
+**Row 8.169 — owed build 1: the pedal reader over the carry, retiring the legacy pedal tail.**
+
+*Outgoing statement.* "**The pedal reader-over-carry** (§6) — a carry-reader emitting the pedal-annotated candidate; consumes the distinct-root-preserving carry (Part 1 §2.3, the E4 prerequisite) and the FQ-1 primitive. Layer: carry-side / decoder post-reader. Retires `applyIter8691Pedal`'s pedal tail (`chordpostpasses.cpp:209-281`) with the anchor (FQ-4 / E4)." — §8.2, *Owed build*, item 1 (locator: lines 550–553).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.170 — owed build 2: the annotation wiring, a separately ratified build event.**
+
+*Outgoing statement.* "**The F-B annotation wiring** (§7) — (a) enrich the open-mark to carry a reason/kind across `ResolvedReading` (`functionresolver.h`) + `FunctionUnitAssembly` + `FunctionAnalysisUnit` (`functionoutput.h`) + `assembleFunctionOutput`; (b) demote `attemptFineGrainOverride` (`functionresolver.cpp:381-498`) from mutate-and-recompute to annotate-and-carry; (c) re-value `ResolutionBasis::FineGrainOverride` → `FineGrainContradiction`; (d) the contract §4 F-B re-declaration; (e) the L5 §5.5/§10/§15-2 spec edits + `docs/scoring_model.md` sync (per `[fb §4.2]`). Layer: L5. A separately-ratified build event (`[fb §4.2]`)." — §8.2, item 2 (locator: lines 554–559).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.171 — owed measurement 1: whether the carried alternative agrees with the upper-voice re-decode.**
+
+*Outgoing statement.* "**[owed-P1] Pedal reader vs the current in-place detection — agreement.** Does the pedal reading read from the carried distinct-root alternative (bass-as-non-chord-tone) **agree** with today's upper-voice re-decode `pass2` on the corpus? If yes ⟹ a pure reader (no re-decode). If it materially diverges ⟹ the carry must expose an upper-voice-conditioned reading (a Layer-4 carry attribute, §6.3). **Not assumed** — a corpus fact to measure post-E4-carry, read-only, over the distinct-root-preserving carry." — §8.3, *Owed measurements* (locator: lines 562–566).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.172 — owed measurement 2: whether the carried margin reproduces the pedal confirmation signal.**
+
+*Outgoing statement.* "**[owed-P2] The confirmation gap from the carried margin vs the recomputed `pass2` sigmoid.** Does reading the carry's distinct-root confidence margin reproduce the current pedal-confirmation signal (`c2`, `:270-271`)? Owed post-E4." — §8.3 (locator: lines 567–569).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.173 — the annotation is byte-identical on production today, the override being dormant.**
+
+*Outgoing statement.* "**[owed-FB1] F-B annotate is byte-identical on production today** (F-B is dormant — `[fb §1.1]`; its only callers are the unit tests and `--dump-fullspine`)." — §8.3 (locator: lines 570–571).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.11.
+
+---
+
+**Row 8.174 — at engagement, removing the override's harms must move the hard-stop duration favorably.**
+
+*Outgoing statement.* "The build event's robust-stop sandwich is an **identity-PASS** by construction; at engage, removing F-B's 809 harms must **move the class-(b) root-disagree DURATION favorably** (`[fb §4.3]` — the harms are ~non-symmetric pitch-class-decidable roots, class-(b) by construction)." — §8.3 (locator: lines 571–573).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.175 — every engagement design piece of the function layer is designed.**
+
+*Outgoing statement.* "With pedal home and F-B annotate settled, **every Layer-5 engagement design piece is designed, structure-only**:" — §9.1, *The Layer-5 engagement design phase (Stage 2) is COMPLETE* (locator: line 581).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.176 — the design state: the carry contract and the selection architecture designed.**
+
+*Outgoing statement.* "| The carry contract (distinct-root fan-out, exclusion tail #12) + the selection-by-joint-consistency architecture | #9 | this doc Part 1 (§1–§5) | ✓ designed |" — §9.1, the design-state table (locator: line 585).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.177 — the design state: the joint key-and-chord step designed.**
+
+*Outgoing statement.* "| The joint key-and-chord step (the coupled key↔chord decision) | #10 | `cowork_joint_key_chord_design.md` | ✓ designed |" — §9.1, the design-state table (locator: line 586).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.178 — the design state: the pedal home and the annotate mechanics designed.**
+
+*Outgoing statement.* "| Pedal detection's home (reader-over-carry) + the F-B annotate mechanics (open-mark unify) | #11 | this doc Part 2 (§6–§10) | ✓ designed |" — §9.1, the design-state table (locator: line 587).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.179 — no engagement concern of the function layer remains undesigned.**
+
+*Outgoing statement.* "No Layer-5 engagement concern remains undesigned." — §9.1 (locator: line 589).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.180 — the next stage, algorithmic completion, is the user's to open.**
+
+*Outgoing statement.* "**Stage 3 (algorithmic completion / E4) is the user's to open** — with nothing left undesigned." — §9.1 (locator: lines 590–591).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.181 — to build 1: the decoder's carry replaces the legacy results.**
+
+*Outgoing statement.* "**The anchor — the decoder carry replaces `results`** (FQ-4, `[audit §1/§4]`): the cap→append + pedal clobber + Iter 86/91 in-place mutation die by construction as the governed carry becomes the substrate." — §9.2, *What Stage 3 inherits to BUILD*, item 1 (locator: lines 598–599).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.182 — to build 2: the distinct-root-preserving carry, a prerequisite.**
+
+*Outgoing statement.* "**The distinct-root-preserving carry** (Part 1 §2.3) — the E4 change to the decoder's carry construction (cap on *distinct roots*, not voicings; the exclusion tail #12 carried). **Prerequisite** for the pedal reader, the joint step B1, and the selection's full-fan-out reasoning." — §9.2, item 2 (locator: lines 600–602).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.183 — to build 3: the pedal reader, hard-gated on an established pedal-dense corpus; its premise underpowered and unfavorable.**
+
+*Outgoing statement.* "**The pedal reader-over-carry** (Part 2 §6, owed build §8.2 #1) + its owed measurements [owed-P1/P2]. *(⛔ HARD-GATED 2026-07-10, Stage-3 entry gate EG-3, CLAUDE.md #18/#19: [owed-P1] must be settled on an ESTABLISHED pedal-dense corpus BEFORE this is built — the load-bearing premise "the material pedal need is usually already a carried distinct-root alternative" is currently underpowered AND unfavorable (0.20/0.50/0.20, n=2–5, arc #12)." — §9.2, item 3 (locator: lines 603–607). Two claims: (i) the pedal reader is owed, gated on the owed measurement settled on an established pedal-dense corpus; (ii) the premise that the pedal's material is usually already a carried alternative is underpowered and unfavorable as measured.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **QUARANTINED.** *Audit question:* on which corpus, and at what size, was the agreement between the carried alternative and the upper-voice re-decode measured, and is that corpus established?
+
+---
+
+**Row 8.184 — to build 4: the annotation, promoted to an entry prerequisite; the as-built override runs unconditionally and the resolver selects progression-first.**
+
+*Outgoing statement.* "**The F-B annotation** (Part 2 §7, owed build §8.2 #2) + [owed-FB1] — the open-mark unify + the annotate-not-override demotion + the contract §4 re-declaration. *(★ PROMOTED 2026-07-10: together with the arc-#9 selection re-ordering this is a Stage-3 entry-gate PREREQUISITE (EG-1) — the as-built `attemptFineGrainOverride` runs unconditionally (`functionresolver.cpp:529-531`) and `resolveAbstained` selects progression-first at confidence 1.0; neither may reach production unfixed." — §9.2, item 4 (locator: lines 608–612). Three claims: (i) the annotation, with the re-ordering, is an entry prerequisite of the next stage; (ii) the as-built override runs unconditionally and the resolver selects progression-first at confidence one; (iii) neither may reach production unfixed.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **QUARANTINED**, travelling with Row 8.76. (iii) **HISTORICAL.**
+
+---
+
+**Row 8.185 — to build 5: the single owner of quality-from-key.**
+
+*Outgoing statement.* "**Quality-from-key's single owner** (FQ-2, `[audit]` X/S12/S15/S16/S17) — decided **with** the §6-block dissolution (the arc plan's Stage-2/Stage-3 split); the hinge Part 1 §4.3 named for the key-consistency channel." — §9.2, item 5 (locator: lines 614–615).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.186 — to build 6: the joint step, shelved; measured not to pay.**
+
+*Outgoing statement.* "**The joint step B1–B4** — *(⛔ SHELVED, user-ratified 2026-07-07 at arc #12; synced here 2026-07-10, doc-sync #10)*: measured NOT to pay (net +0.05–0.16 pp, harm 75–90 % of correction, oracle ceiling +0.6 pp, coupled-minority net ~0, fire-rate 1.4 % — `records/cc/reports/cc_engage_stage3_joint_measure_report.md`)." — §9.2, item 6 (locator: lines 616–618). Two claims: (i) the joint step is shelved; (ii) it was measured not to pay.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **QUARANTINED.** *Audit question:* does the recorded measurement of the shelved joint key-and-chord step reproduce at the current commit, and on which arm and corpus was it taken?
+
+---
+
+**Row 8.187 — the joint step is off the build list.**
+
+*Outgoing statement.* "OFF the Stage-3 build list per `cowork_engage_arc_plan.md`." — §9.2, item 6 (locator: lines 618–619).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.188 — whether the measurement tested the right framing remains open.**
+
+*Outgoing statement.* "*(PONDER-POINT 1 — whether the measurement tested the right framing (key-first-then-chord vs full joint ranking) — remains open; any reopening runs under the #17 Premise Gate as an explorational question first.)*" — §9.2, item 6 (locator: lines 622–624).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing question, *"key-first-then-chord vs full joint ranking"*, stands open; L2-S11 decides the tonality and the chord *"in the one decision. It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.189 — to build 7: the owed migrations and the different-root primitive.**
+
+*Outgoing statement.* "**The owed migrations** (FQ-8, `[audit]`): the two-segmenters retirement (S3/S4), the two-pitch-context collapse (S2), the tpc-reader fold (S6), the `function/` dir rename (S18); **FQ-1** the different-root primitive (retires *with* the decoder — the pedal reader and Iter 86/91 route through it); **FQ-3** the `findTemporalContext` ownership move." — §9.2, item 7 (locator: lines 625–628).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.190 — to build 8: the fix to the confidence frames' calibration, a later dependency.**
+
+*Outgoing statement.* "**The confidence-scale fix** (F-1 / S19 / D-FS, `[audit]` FQ-8) — Stage-5-adjacent; the annotate re-frame (§7.4) **removes F-B's override arithmetic from the critical path** (Part 1 §4.2 gap 5), leaving only the F-A modulation frame consuming the contradiction-scale θ — a Stage-5 calibration dependency, not a Stage-3 blocker." — §9.2, item 8 (locator: lines 629–631).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 8.191 — then the split of the chord analyzer, and the precision work.**
+
+*Outgoing statement.* "Then **Stage 4 (R9)** splits `chordanalyzer.cpp` last, and **Stage 5** lifts the moratorium for the precision work (recover the 53 F-B corrections via a correctness-correlated signal `[fb §4.4]`; wire the calibration maps + θ) — per `cowork_engage_arc_plan.md`, unchanged." — §9.2 (locator: lines 633–635).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+#### Not a statement — listed so the arithmetic closes (93)
+
+1. "**Status: DESIGN (CC, 2026-07-07). READ-ONLY architectural design pass — no `src/` change, no build, no corpus write, no constant fitted or tuned.**" (3–4) — *provenance and a status of the document*.
+2. "Engage arc #9, Stage 2 of the ratified plan (`cowork_engage_arc_plan.md`)." (4–5) — *provenance*.
+3. "This is **Part 1**: how engaged Layer 5 reads the decoder's governed carry and selects among the carried readings by joint consistency." (5–6) — *the document's account of its own scope, whose claims the body states*, tabulated at Rows 8.41 and 8.68.
+4. "The downstream owner-decisions (the quality-from-key owner FQ-2, pedal detection's home, the joint key-and-chord step O-18/C3, the F-B annotate mechanics) are **enumerated for follow-on passes (§4.3), NOT resolved here.**" (6–8) — *the document's account of itself*.
+5. "Provenance report: `records/cc/reports/cc_engage_l5_carry_selection_design_report.md`." (8–9) — *a pointer*.
+6. "**★ STRUCTURE ONLY — constants are precision-phase (R5). Not inference work (#8).**" (11) — *a title whose claim the body states*, tabulated at Row 8.90.
+7. "This designs the *architecture* of the selection (its evidence channels, how the concerns compose, the confidence contract it emits), grounded in published fact (#1) and the existing confidence contract." (11–13) — *the document's account of itself*.
+8. "It fits no constant, tunes no threshold, and chases no case — declared comparability before tuned optimality (R5)." (13–14) — *the document's account of itself*.
+9. "Where a step needs a fitted value, the *shape* is declared and the constant marked precision-phase." (14–15) — *the document's account of its own method*.
+10. "**Why a NEW doc, not an edit of `cowork_layer5_function_design.md` (#6, one home per concern).**" (17) — *a title*.
+11. "The existing L5 design doc is the **SIGNED spec of the dormant build** — what the §5.5 resolver, the §7 output assembly, and the §8 override machinery *are*." (17–19) — *the document's account of its relation to another document*.
+12. "This document is a **distinct concern**: how that built machinery is **wired to the decoder's carry** at engagement and how the selection is **re-architected** to reason over the full distinct-root fan-out (§8 arc measurement) and to reconcile with the settled F-B annotate-not-override finding (`cowork_fb_redesign_design.md`)." (19–22) — *the document's account of itself*.
+13. "Folding engagement wiring into the signed spec would mix "what was built" with "how it engages" and muddy the signed provenance." (22–23) — *the document's account of its own filing*.
+14. "This doc **references** the signed spec's sections (§5.5 / §7 / §8 / §5.0 / §15) rather than restating them." (23–24) — *the document's account of its own form*.
+15. "**Grounding tags.** `[code]` = read at the named source symbol; `[contract]` = `cowork_confidence_contract.md`; `[research]` = `cowork_functional_analysis_research_grounding.md`; `[data]` = a measured figure from a named report; `[flag]` = a gap the evidence does not close, called out rather than assumed." (26–28) — *a definition of the document's tags*.
+16. "What follows is the inventory: what is already built (§1.1–§1.3), and the delta engagement must add (§1.4)." (36–37) — *a lead-in*.
+17. "Each `FunctionSlice` **unions** two views:" (40–41) — *a lead-in to the two items, which are tabulated*.
+18. "That wiring is the engagement gap (§1.4, §2)." (51–52) — *a pointer*.
+19. "§3 re-frames it; it is NOT re-designed here." (75) — *the document's account of itself*.
+20. "It carries, **additive over the L4 committed chord** (`FunctionAnalysisUnit`, `functionoutput.h:115-127`):" (83–84) — *a lead-in to the items, which are tabulated*.
+21. "The contract's frames/rules (`cowork_confidence_contract.md` §4/§5) are realized as:" (94) — *a lead-in*.
+22. "Not touched here." (102) — *the document's account of itself*.
+23. "The decoder builds `sc.alternatives` as (`chordslicedecoder.cpp:746-789`) `[code]`:" (145) — *a lead-in to the two items, which are tabulated*.
+24. "**The gap, stated precisely `[code]`:**" (153) — *a label*.
+25. "**The owed guarantee (structure only; R5).**" (164) — *a label*, inside the WITHHELD home of D-381.
+26. "**Note (scope of the fan-out measurement) `[flag]`.**" (174) — *a label*.
+27. "ChordGNN wins the full Roman-numeral label while scoring *lower* on the individual heads — the payoff is the mutually-consistent reading, not a stronger vertical or progression score; AnalysisGNN's logit-fusion confirms it." (188–190) — *a defense* of Row 8.67, inside the WITHHELD home of D-382.
+28. "This is the direct analog of our selection problem and the steer for the L5 objective." (190–191) — *a defense* of Row 8.67, inside the WITHHELD home of D-382.
+29. "This **generalizes** `resolveAbstained` (§1.2): today only the SymmetricRotation arm reasons over the full pool; the other arms decide on the readingA/readingB pair." (195–197) — *a restatement of Row 8.15*, inside the WITHHELD home of D-382.
+30. "The channels the selection composes, and their evidentiary weight from the literature and our own F-B finding:" (201) — *a lead-in to the table, whose rows are tabulated*.
+31. "Vuvan et al. 2021 dissociate bass from pitch-class content; both independently drive expectation `[research]` §1" (205) — *a defense* of Row 8.70, the row's grounding cell.
+32. "Micchi 2020; McLeod & Rohrmeier 2021 `[research]` §1" (206) — *a citation*, the grounding cell of Row 8.71.
+33. "ChordGNN/AnalysisGNN joint-consistency `[research]` §2" (207) — *a citation*, the grounding cell of Row 8.72.
+34. "signed spec §5.2 `[code]`" (208) — *a citation*, the grounding cell of Row 8.73.
+35. "F-B measured net-harm `[data]`; Korzeniowski & Widmer 2018; Vuvan 2021 `[research]` §1" (209) — *a citation*, the grounding cell of Row 8.74.
+36. "ChordGNN 2023; AnalysisGNN 2025 `[research]` §1" (210) — *a citation*, the grounding cell of Row 8.75.
+37. "The research says bass/inversion + spelling + key-consistency are the primary channels and progression is the tie-break." (213–215) — *a defense* of Row 8.77, inside the WITHHELD home of D-383.
+38. "This design **consumes that finding**:" (223) — *a lead-in*.
+39. "This is the structural form of "F-B's progression contradiction is uncorrelated with correctness."" (227–228) — *a defense* of Row 8.82.
+40. "Engaged Layer 5 publishes, per the confidence contract (U2/R4–R6):" (236) — *a lead-in to the items, which are tabulated*.
+41. "**Acyclicity (the forward-only control-flow contract, §8/§9-D7).**" (267) — *a label*.
+42. "Each is a follow-on pass; named here with the carry/selection decision that hinges on it, so the follow-on has its agenda:" (288–289) — *a lead-in*.
+43. "**Pedal detection's home.**" (296) — *a label*.
+44. "**O-18 / C3 — the joint key-and-chord step.**" (300) — *a label*.
+45. "**The F-B annotate mechanics.**" (306) — *a label*.
+46. "**Settles:** the dormant Layer 5 inventoried at code (built vs owed, §1); the **carry contract** on the distinct-root fan-out with the exclusion tail preserved (#12) and the decoder's distinct-root guarantee named as owed (§2); the **selection-by-joint-consistency** architecture — evidence channels ranked load-bearing-first, progression demoted to a tie-break, reconciled with the F-B annotate finding and the confidence frames (§3, structure only, constants precision-phase R5); the **layer boundaries**, engagement gaps, and the enumerated downstream agenda with each hinge named (§4)." (315–320) — *a summary of the rows above*.
+47. "**Boundary honored (#8 / R5):** no `src/` change, no build, no corpus write, **no constant fitted or tuned** — the architecture of the selection is designed; the fitting is the later precision phase." (322–323) — *the document's account of itself*.
+48. "No downstream concern-owner is resolved (enumerated only, §4.3)." (323–324) — *the document's account of itself*.
+49. "Every claim is tagged to the code / the contract / the research (#1); gaps are flagged (§2.3 note, §4.2), not assumed." (324–325) — *the document's account of itself*.
+50. "*CC, 2026-07-07. Engage arc #9 — Layer-5 engagement design Part 1 (carry + selection), read-only, structure-only. Both regression stops untouched/green (no `src/`, no build). Fork-only; `upstream` untouched.*" (329–330) — *provenance*.
+51. "**Status: DESIGN (CC, 2026-07-07). READ-ONLY architectural design pass — no `src/` change, no build, no corpus write, no constant fitted or tuned.**" (337–338) — *provenance and a status of the document*, Part 2's banner.
+52. "Engage arc #11, the **last two Layer-5 engagement design pieces** Part 1 enumerated as follow-ons (§4.2 gap 3 pedal, §4.3 F-B annotate mechanics)." (338–339) — *provenance*.
+53. "Provenance report: `records/cc/reports/cc_engage_l5_pedal_annotate_design_report.md`." (340) — *a pointer*.
+54. "**★ STRUCTURE ONLY — constants are precision-phase (R5). Not inference work (#8).** This designs the *architecture* of the pedal reader and the F-B annotation (their homes, how they read the carry, the vehicle they reuse); it fits no constant, tunes no threshold, chases no case." (342–344) — *the document's account of itself*.
+55. "**Why a Part 2 appended here, not a new doc (#6, one home per concern).**" (346) — *a title*.
+56. "Part 1 designed the carry + selection and **explicitly deferred these two pieces to itself** as §4.3 downstream hinges ("Pedal detection's home"; "The F-B annotate mechanics")." (346–348) — *the document's account of itself*.
+57. "They are the *same* Layer-5-engagement concern, not a distinct one — folding them into the doc that enumerated them keeps one home for the engagement design (Part 1 = carry+selection, Part 2 = the two owner-decisions it left open)." (348–350) — *the document's account of its own filing*.
+58. "A new doc would split one concern across two files. Section numbering continues globally: Part 1 is §1–§5, Part 2 is §6–§10." (350–351) — *the document's account of its own form*.
+59. "**Grounding tags** (as Part 1): `[code]` = read at the named source symbol; `[contract]` = `cowork_confidence_contract.md`; `[audit]` = `cowork_structural_integrity_audit.md`; `[fb]` = `cowork_fb_redesign_design.md`; `[joint]` = `cowork_joint_key_chord_design.md`; `[flag]` = a gap the evidence does not close, called out rather than assumed." (353–356) — *a definition of the document's tags*.
+60. "`applyIter8691Pedal`'s pedal tail (`chord/chordpostpasses.cpp:209-281`) runs, over the legacy `results` substrate:" (363) — *a lead-in to the four steps, which are tabulated*.
+61. "Stripping the bass pc can change which template wins among the upper voices, so the equivalence is a corpus fact to *measure*, not assume `[flag]`." (403–404) — *a defense* of Row 8.133(ii).
+62. "Part 1 §4.3 left its home as a hinge between two forms; this pass **decides it**, grounded:" (408) — *the document's account of itself*.
+63. "**The upper-voice-re-decode fallback, if the measurement forces it `[flag]`.**" (422) — *a label*.
+64. "The pedal reader reads a clean governed carry." (438) — *a restatement of Row 8.146*.
+65. "Removing the mutation removes all three at once; the reader-over-carry is that removal." (441–442) — *a restatement of Row 8.147*.
+66. "The ratified disposition is **§3.D-1: demote F-B from OVERRIDE to ANNOTATION** — carry the L4 reading **unchanged** and flag the functional-context contradiction as calibrated uncertainty (the §8 case-3 honest-carry), floored by §3.A disable `[fb §3.D-1/§4.1]`." (462–464) — *a recap of Rows 8.79 and 8.84*, so named at its own heading.
+67. "Part 1 §3.3 already consumed this into the selection architecture (progression demoted to a non-override tie-break)." (464–465) — *a pointer*.
+68. "**This section designs only the *mechanics* of the annotation** — the vehicle it writes to — which Part 1 §4.3 and `[fb §4.2]` left as the follow-on." (465–466) — *the document's account of itself*.
+69. "`[fb §4.2]` proposed *"a new `ResolvedReading` advisory flag `functionContextContradiction`."*" (469) — *a rejected alternative, named with its reasons below*.
+70. "The instruction requires reconciling that with the **existing open-mark machinery**. Decided at the code:" (469–470) — *a lead-in*.
+71. "**Two rejected forms, and why:**" (479) — *a label*.
+72. "**Overloading the plain boolean `openMark = true` on an F-B slice is semantically WRONG.** `openMark` means *"no decided answer — genuinely undecidable."*" (480–481) — *a rejected alternative with its reason*.
+73. "The F-B case is the opposite: **L4 committed confidently** (it is *not* undecided — `[fb §3.D-1]` "L4 is not even uncertain (it committed)") and the reading is carried unchanged; what is surfaced is a *secondary* contradicting signal." (481–483) — *the reason a rejected alternative was rejected*.
+74. "Setting `openMark` would tell L6/display "undecided" when L4 decided — an information loss (#12) and a **semantic collision** with the case-3 abstain meaning already on that field." (483–485) — *the reason a rejected alternative was rejected*.
+75. "**A parallel `functionContextContradiction` bool beside `openMark` is a duplicate channel (#6 violation)** — two booleans on the same struct both meaning "a surfaced honest-uncertainty annotation on this reading," threaded redundantly through the same three structs." (486–488) — *a rejected alternative with its reason*.
+76. "**The #6-clean vehicle: UNIFY into one structured open-mark carrying its REASON/KIND.**" (490) — *a title whose claim the body states*, tabulated at Row 8.155, inside the WITHHELD home of D-387.
+77. "The information the override used to **discard** — it overwrote the L4-correct root on 809 slices `[fb §2]` — is now **preserved twice over**:" (508–509) — *a lead-in to the two items, which are tabulated*.
+78. "This is the §8 case-3 honest-carry realized: **zero information loss** (#12), strictly dominating §3.A disable (which throws the 1043 signals away) `[fb §4.1 point 4]`." (515–517) — *a defense* of Rows 8.160 and 8.161.
+79. "**Frame F-B is re-declared in the contract §4 as an annotation channel, not an override frame** (`[contract §4]` mandates the re-declaration: "an undeclared cross-layer comparison is a contract violation; a retired/re-framed one must be recorded here")." (525–527) — *a restatement of Row 8.83(i), with the contract's mandate as its defense*.
+80. "This is the mechanical form of Part 1 §3.3 (progression demoted to a non-override tie-break) and §3.2 (licensed progression is the weak, non-load-bearing channel — it may annotate, never override a vertically-committed root)." (527–529) — *a pointer restating Rows 8.74 and 8.82*.
+81. "If [owed-P1] forces the upper-voice-conditioned form, it is a **Layer-4 carry attribute** the decoder exposes — still forward, still no reach-in." (539–540) — *a restatement of Row 8.141*.
+82. "**No new cross-layer reach-in** is introduced by either piece; both are readers/annotators over an existing forward carry." (546–547) — *a summary of Rows 8.165 to 8.168*.
+83. "A measurement gate at the build event, **not** an assumption now. `[flag]`" (574) — *the document's account of itself*.
+84. "The moratorium boundary held throughout: no `src/` change, no build, no corpus write, **no constant fitted or tuned** (#8 / R5) across all three arcs." (589–590) — *the document's account of itself*.
+85. "Each is enumerated (`[audit §3/§4]` fix-queue + sequencing; `[joint §4]`; this doc), not built — a later, separately-ratified behavior change (#14) proven on the full surface (#15) under the robust-unit stop (#11) with the re-baseline discipline (#16):" (594–596) — *a lead-in to the eight items, which are tabulated*.
+86. "Original enumeration kept for provenance: **B1** the per-key chord re-decode driver over the built decoder (Layer 4); **B2** the beam/coupling driver generalizing `decideJointKey`; **B3** the trigger gate; **B4** the production wiring completing J-key-iii — plus its owed measurements (`[joint §5]`)." (619–622) — *provenance of a shelved plan*.
+87. "**Settles:** **pedal detection's home** — a reader over the decoder's governed carry that emits a distinct pedal-annotated result, never a `results`-winner mutation; the audit's three symptoms (clobber / re-scan / defensive-disable) shown to **dissolve** under reader-over-carry, the diff-root need served by the carry / FQ-1 with no 4th scan (§6)." (641–644) — *a summary of the rows above*.
+88. "**The F-B annotate vehicle** — decided at the code as the **unified open-mark carrying a reason/kind** (reuse, not a parallel channel; the plain boolean shown semantically wrong for a confident-commit contradiction), the contradiction carried as calibrated uncertainty (#12), the trigger an annotation lever never an override (§7)." (644–646) — *a summary of the rows above*.
+89. "The **layer boundaries** (acyclicity kept, no new reach-in), the **owed build** (enumerated, not built), and the **owed measurements** (flagged, not assumed) (§8). The **Stage-2-complete** statement and the **Stage-3 build inventory** (§9)." (647–649) — *a summary of the rows above*.
+90. "**Boundary honored (#8 / R5):** no `src/` change, no build, no corpus write, **no constant fitted or tuned** — the architecture of the pedal reader and the F-B annotation is designed; the fitting is Stage 5." (651–652) — *the document's account of itself*.
+91. "Every claim is tagged to the code / the audit / the F-B design / the contract / the joint-step design (#1); the pedal reader-vs-detection agreement, the confirmation-gap reproduction, and the F-B engage-time stop movement are flagged as **owed measurements** (#5), not assumed." (652–655) — *the document's account of itself*.
+92. "No inference fix is designed here (#8, #13) — recovering the 53 F-B corrections remains the declared Stage-5 inference-quality question (`[fb §4.4]`)." (655–656) — *a restatement of Row 8.117*.
+93. "*CC, 2026-07-07. Engage arc #11 — Layer-5 engagement design Part 2 (pedal home + F-B annotate); closes Stage 2. Both regression stops untouched/green (no `src/`, no build). Fork-only; `upstream` untouched.*" (658–659) — *provenance*.
+
+#### The arithmetic at this member
+
+- Rows written: **191** (8.1 to 8.191).
+- Rows split into two claims, **+1 each**: 8.18, 8.48, 8.68, 8.70, 8.71, 8.72, 8.74, 8.78, 8.83, 8.95, 8.99, 8.100, 8.104, 8.127, 8.133, 8.149, 8.159, 8.183, 8.186 — nineteen rows, **+19**. Rows split into three claims, **+2 each**: 8.184 — one row, **+2**.
+- **Outgoing statements placed: 191 + 19 + 2 = 212.**
+- Listed under *not a statement*: **93**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 212 dispositions over
+  212 statements.
+- **UNPLACED at this member: 27** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 17 | 8.45, 8.47, 8.61, 8.67, 8.70(i), 8.71(i), 8.72(i), 8.75, 8.78(i), 8.90, 8.91, 8.95(i), 8.99(i), 8.130, 8.134, 8.139, 8.143 |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 111 | 8.3, 8.4, 8.5, 8.6, 8.8, 8.9, 8.10, 8.11, 8.12, 8.13, 8.14, 8.15, 8.16, 8.17, 8.18(i), 8.19, 8.20, 8.21, 8.22, 8.23, 8.24, 8.25, 8.26, 8.27, 8.28, 8.39, 8.40, 8.41, 8.42, 8.43, 8.44, 8.46, 8.49, 8.50, 8.51, 8.52, 8.53, 8.54, 8.55, 8.56, 8.57, 8.63, 8.65, 8.66, 8.70(ii), 8.71(ii), 8.72(ii), 8.73, 8.74(i), 8.76, 8.79, 8.80, 8.83(i), 8.84, 8.85, 8.86, 8.87, 8.88, 8.89, 8.92, 8.93, 8.94, 8.95(ii), 8.99(ii), 8.100(i), 8.100(ii), 8.103, 8.104(i), 8.107, 8.109, 8.110, 8.119, 8.120, 8.121, 8.122, 8.123, 8.124, 8.125, 8.126, 8.127(i), 8.128, 8.129, 8.131, 8.132, 8.133(i), 8.141, 8.144, 8.145, 8.146, 8.147, 8.148, 8.149(i), 8.150, 8.151, 8.152, 8.153, 8.154, 8.158, 8.159(i), 8.160, 8.161, 8.162, 8.163, 8.164, 8.166, 8.167, 8.168, 8.173, 8.183(ii), 8.184(ii), 8.186(ii) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 57 | 8.1, 8.2, 8.7, 8.18(ii), 8.29, 8.30, 8.31, 8.32, 8.33, 8.34, 8.35, 8.36, 8.37, 8.38, 8.62, 8.64, 8.83(ii), 8.101, 8.102, 8.104(ii), 8.105, 8.106, 8.108, 8.112, 8.114, 8.115, 8.116, 8.117, 8.118, 8.127(ii), 8.133(ii), 8.142, 8.149(ii), 8.159(ii), 8.169, 8.170, 8.171, 8.172, 8.174, 8.175, 8.176, 8.177, 8.178, 8.179, 8.180, 8.181, 8.182, 8.183(i), 8.184(i), 8.184(iii), 8.185, 8.186(i), 8.187, 8.188, 8.189, 8.190, 8.191 |
+| UNPLACED | 27 | 8.48(i), 8.48(ii), 8.58, 8.59, 8.60, 8.68(i), 8.68(ii), 8.69, 8.74(ii), 8.77, 8.78(ii), 8.81, 8.82, 8.96, 8.97, 8.98, 8.111, 8.113, 8.135, 8.136, 8.137, 8.138, 8.140, 8.155, 8.156, 8.157, 8.165 |
+| **Total** | **212** | — |
+
+**The arithmetic closes at this member**: 17 + 0 + 0 + 111 + 0 + 57 + 27 = 212, against 212 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 19 |
+| DIFFERS | 59 |
+| THE DERIVATION IS SILENT | 141 |
+| **Total verdicts** | **219** |
+
+*(219 verdicts over 212 statements because seven statements each name two derived statements: 8.67, L2-S11 and
+L2-S27 both AGREES; 8.68(ii), L2-S40 AGREES and L2-S43 DIFFERS; 8.74(ii), L2-S34 and L2-S38 both DIFFERS; 8.77,
+L2-S31 and L2-S38 both DIFFERS; 8.82, L2-S34 and L2-S38 both DIFFERS; 8.94, L2-S11 and L2-S45 both DIFFERS; and
+8.97, L2-S11 and L2-S36 both DIFFERS.)* DIFFERS: 8.9, 8.17, 8.41, 8.42, 8.48(i), 8.48(ii), 8.58, 8.59, 8.60,
+8.68(i), 8.68(ii), 8.69, 8.70(ii), 8.71(ii), 8.73, 8.74(ii), 8.77, 8.78(ii), 8.79, 8.81, 8.82, 8.83(i), 8.84, 8.86,
+8.87, 8.89, 8.92, 8.94, 8.95(ii), 8.96, 8.97, 8.98, 8.100(i), 8.104(i), 8.107, 8.109, 8.111, 8.113, 8.131, 8.132,
+8.135, 8.136, 8.137, 8.138, 8.140, 8.141, 8.155, 8.156, 8.157, 8.161, 8.163, 8.165, 8.167, 8.188.
+
+#### The marks at this member
+
+- **WITHHELD rows: 8.46 to 8.49 (D-380); 8.58 to 8.62 (D-381); 8.67, 8.68, 8.69 (D-382); 8.76, 8.77, 8.78
+  (D-383); 8.96, 8.97, 8.98 (D-384); 8.135, 8.136, 8.137 (D-385); 8.148 to 8.151 (D-386); 8.155 to 8.159
+  (D-387).** No boundary case arises at this member: every WITHHELD statement opens and closes inside its home as
+  cited, and Row 8.57, the sentence immediately before D-381's home, is not marked. **An AGREES stands on these
+  WITHHELD statements:** 8.47, 8.61, 8.67, 8.68(ii), 8.78(i).
+- **SEEN rows: none.** None of the eight identities 1(c) names — D-002, D-095, D-223, D-261, D-275, D-279,
+  D-322, D-393 — is among the identities the artifact places in position 8.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S12 (entry 5) — 8.75; L2-S31
+  (entry 1) — 8.77, 8.81; L2-S38 (entry 6) — 8.74, 8.77, 8.78, 8.82, 8.90; L2-S42 (entry 4) — 8.47, 8.48, 8.59,
+  8.60; L2-S43 (entry 4) — 8.68, 8.89, 8.156; L2-S45 (entry 4) — 8.94, 8.155, 8.161. No row of this member names
+  L2-S17 or L2-S22.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -14652,7 +17175,8 @@ the row says which.
   optimize away.
 
 *(Member 2 relocates no row. Member 3 relocates one, Row 3.38, above. Member 5's relocations are the rows
-numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows numbered 7.n.)*
+numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows numbered 7.n. Member 8 relocates
+no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -15005,6 +17529,77 @@ rows here, each with its audit question, in the commit that tabulates it.
 - Row 7.167 — does the dormant key decoder read any notated spelling at the current commit?
 - Row 7.174, with Row 7.175 — does the recorded measurement of a spelling term in the key decode reproduce at
   the current commit?
+- Row 8.3, with Rows 8.4, 8.5 and 8.6 — what does the dormant function layer consume per slice at the current
+  commit, and what, if anything, populates it outside the tests?
+- Row 8.8 — travelling with Row 5.56: does the dormant function layer run as a forward pass over a committed
+  key-and-chord stream, in the order listed?
+- Rows 8.9, 8.14 and 8.15 — travelling with Row 5.63: does the dormant function layer select per named ambiguity
+  kind, and which kinds does the dormant Layer 4 carry?
+- Rows 8.10, 8.76 and 8.184(ii) — travelling with Row 5.144: does the dormant resolver decide a transition slice
+  by the licensed-progression test, as described?
+- Row 8.11 — travelling with Row 5.156: does the dormant resolver decline to select by the licensing test when
+  both readings are licensed, and fall to the stated steps?
+- Rows 8.12 and 8.73 — travelling with Row 5.148: does the dormant resolver decide a relative-pair slice by the
+  cadence tonic-vote and the three same-collection cues?
+- Row 8.13 — travelling with Row 5.149(i): does the dormant resolver settle a close tie-break case by a
+  functional-plausibility score over the stated features?
+- Rows 8.16 and 8.24 — travelling with Row 5.163: does the dormant resolver emit the selected source's committed
+  identity whole, as described?
+- Rows 8.17, 8.79, 8.83(i), 8.84, 8.163, 8.164 and 8.167 — travelling with Row 5.158: does the dormant function
+  layer override a confident Layer 4 commit through the selection machinery, and does it run?
+- Row 8.18(i), with Rows 8.80, 8.152 and 8.160 — does the recorded count of the fine-grain override's corrections
+  and harms reproduce at the current commit, on which decode?
+- Rows 8.19, 8.99(ii), 8.100(i) and 8.168 — travelling with Row 5.226: are the modulation recompute and the
+  fine-grain override built as instances of one mechanism, and does either run?
+- Rows 8.20, 8.21, 8.22, 8.25, 8.85 and 8.94 — travelling with Row 5.212: does the dormant function layer publish
+  a boundary form of its confidence, and how is it computed?
+- Rows 8.23, 8.89, 8.153, 8.154 and 8.158 — travelling with Row 5.51: does the dormant function layer publish,
+  for an abstained slice, a selected reading with a function-level confidence and an open mark, as described?
+- Rows 8.26 and 8.27 — travelling with Row 5.216: which values do the as-built override sites compare, and does
+  any read the function layer's combined value?
+- Row 8.28 — travelling with Row 5.16: does the dormant function layer's modulation recompute exist as described,
+  and does it run on any arm?
+- Row 8.39, with Rows 8.40, 8.46, 8.49, 8.63 and 8.65 — does the recorded fan-out of the carried chord readings —
+  their count and their count of distinct roots per slice — reproduce at the current commit, on which substrate?
+- Row 8.41, with Rows 8.42, 8.43, 8.44 and 8.93 — on what axis does the dormant chord decoder carry its
+  alternatives, and are they deduplicated by root, by voicing or by neither?
+- Rows 8.50, 8.51, 8.52, 8.53, 8.54, 8.55, 8.56, 8.57, 8.66, 8.146 and 8.149(i) — travelling with Row 6.192(ii):
+  how many alternatives does the dormant decoder carry, by what cap, and are the spelling-pinned symmetric
+  siblings excluded at the current commit?
+- Row 8.70(ii) — where does the dormant function layer take the bass it tests an inversion against, and is that
+  bass the chord decoder's committed one?
+- Row 8.71(ii) — where, if anywhere, does the dormant function layer read spelling, and under what condition?
+- Row 8.72(ii) — what does the dormant function layer's degree bias read, and where is it applied?
+- Row 8.74(i) — does the recorded finding that the licensed-progression signal is uncorrelated with root
+  correctness reproduce at the current commit, on which decode?
+- Row 8.86, with Rows 8.87 and 8.88 — does the dormant function layer publish any margin of its selection against
+  the best reading on a different root, and in what class?
+- Rows 8.92 and 8.95(ii) — travelling with Row 7.9(ii): does the dormant key decoder decide the key before and
+  apart from any chord, and what reads its key-spans?
+- Row 8.100(ii) — does the recorded measurement that a free cross-layer search is inert reproduce at the current
+  commit, and on which search?
+- Row 8.103, with Row 8.127(i) — where, at the current commit, is a pedal detected, and does any code path
+  overwrite the chord results when it is?
+- Row 8.104(i), with Rows 8.109, 8.110, 8.128, 8.129, 8.131, 8.132, 8.133(i) and 8.141 — what does the dormant
+  chain read to detect a pedal — the chord decoder's carry, or L1's slices?
+- Row 8.107 — at how many sites, and in which layers, does the code at the current commit decide a chord's
+  quality from the key?
+- Row 8.119, with Rows 8.120, 8.121, 8.122, 8.123, 8.124, 8.126, 8.145 and 8.147 — does the legacy pedal pass
+  exist at the current commit, on which arm does it run, and what does it test to enter?
+- Row 8.125, with Row 8.148 — how many separate computations of the best reading on a different root exist at the
+  current commit, and where?
+- Row 8.150, with Rows 8.144, 8.151 and 8.166 — does any pedal detection at the current commit compute its own
+  best reading on a different root, or read one already computed?
+- Row 8.159(i) — which values does the dormant resolver's `ResolutionBasis` field carry at the current commit,
+  and does the fine-grain override value still name an override?
+- Row 8.161, with Row 8.162 — what does the dormant function layer carry beside its open mark, and is any of it
+  an internal scoring quantity?
+- Row 8.173 — travelling with Row 6.11: does the fine-grain override exist on any arm, does it run, and which
+  class of root error does it change at the current commit?
+- Row 8.183(ii) — on which corpus, and at what size, was the agreement between the carried alternative and the
+  upper-voice re-decode measured, and is that corpus established?
+- Row 8.186(ii) — does the recorded measurement of the shelved joint key-and-chord step reproduce at the current
+  commit, and on which arm and corpus was it taken?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -15329,6 +17924,54 @@ words.
   L2-S18 decides the principal reading *"by the candidate score over the whole sequence, not by a rule"*.
 - Row 7.39(i) — travelling with Row 6.25(ii): the outgoing key layer leaves grouping to a later layer; L2-S14
   says *"Two adjacent spans never carry the same tonality and the same chord"*.
+- Rows 8.9, 8.68(i), 8.84, 8.94, 8.140, 8.157 and 8.167 — the outgoing function layer selects *"among the
+  carried readings"* per slice, after the chord decoder, and *"carries the L4 commit unchanged"*; L2-S11 decides
+  the boundary *"together with the tonality, the chord and the assignments, in the one decision"*.
+- Rows 8.92 and 8.95(ii) — the outgoing chord carry is produced *"under a **region key already chosen by Layer
+  3**"*, and the function layer *"reasons **within** the region key L3 chose"*; L2-S11 decides the tonality and
+  the chord *"in the one decision"*.
+- Rows 8.96, 8.97, 8.98, 8.100(i), 8.111 and 8.188 — the outgoing joint key-and-chord step is *"a **distinct
+  step, not L5 selection.**"*, confined to *"the C3 "genuinely-coupled key↔chord minority.""*; L2-S11 says *"It
+  is never decided before the chord or after it."*
+- Rows 8.97 and 8.113 — the outgoing joint step carries *"a beam of (key, chord) hypotheses"*; L2-S36 says *"No
+  beam that discards readings on partial candidate scores is admitted."*
+- Rows 8.41, 8.42, 8.48(i), 8.58, 8.69 and 8.131 — the outgoing carry is expressed on *"the **meaningful axis —
+  distinct roots**"*; L2-S40's span-rival mass is *"the total mass of all whole readings that contain that span,
+  with that start, that end and that reading of it"*.
+- Rows 8.48(ii), 8.59 and 8.60 — the outgoing ruled-out roots are carried *"at low confidence rather than
+  dropping them"* and the carry is capped *"on **distinct roots**"*; L2-S42 withholds a rival *"only because
+  every withheld rival is recomputable"*, below *"a declared threshold"*.
+- Rows 8.68(ii), 8.89 and 8.156 — the outgoing text open-marks *"where no reading dominates"*, abstention being
+  *"the selection margin below the declared bar"*; L2-S43 publishes both readings of equal candidate score,
+  the principal *"chosen between them by a declared, deterministic rule that the publication names, and the tie
+  is flagged"*.
+- Row 8.70(ii) — the outgoing inversion is tested against *"The committed bass (carried verbatim, §2.1)"*; L2-S28
+  says *"The figure is decided in the reading."*
+- Row 8.71(ii) — the outgoing spelling is *"Read only where the distinction *is* a spelling distinction"*; L2-S32's
+  content term rates the events against *"the chord in its spelled form"*.
+- Row 8.73 — the outgoing cadence *"pins the tonic"* by a vote in a later layer; L2-S34's progression term includes
+  *"the cadential progressions that confirm a tonality"*.
+- Rows 8.74(ii), 8.77, 8.78(ii), 8.81 and 8.82 — the outgoing channels are ranked so that *"the load-bearing
+  channels decide and progression only breaks ties"*, the ordering *"fixed here"*; L2-S31's candidate score is *"a
+  sum over its spans of span terms, plus a sum over adjacent span pairs of pair terms"*, and L2-S38 says *"Every
+  weight of the candidate score is fitted from annotated music, not set by hand."*
+- Rows 8.17, 8.79, 8.83(i) and 8.163 — travelling with Row 6.11: the outgoing fine-grain override, and its
+  re-framing as an annotation, compare a later layer's plausibility with the chord decoder's confidence; L2-S35
+  says *"No span's alternatives are normalised against each other alone."*
+- Rows 8.86, 8.87 and 8.132 — the outgoing confidence is a margin, *"how much more consistent is the selected
+  reading than the best *different-root* reading"*; L2-S40 publishes *"Mass"*, *"the probability the fitted,
+  whole-reading-normalised model (L2-S35) assigns"*.
+- Rows 8.94, 8.155 and 8.161 — the outgoing publication carries *"a small open-mark annotation that names *why*
+  the slice is marked"*, with *"the plausibility contradiction"* as its payload; L2-S45 publishes *"exactly what
+  the charter lists, and nothing else"*, and *"No term value, weight, partial candidate score or other
+  intermediate quantity crosses."*
+- Rows 8.104(i) and 8.109 — the outgoing pedal is detected by *"a **reader over the carry**"*; L2-S47 says *"A
+  pedal-extended sounding set is not a want: the input contract already assigns building it to the consumer"*.
+- Rows 8.135, 8.136, 8.137, 8.138, 8.141 and 8.165 — the outgoing pedal home is *"a reader over the decoder's
+  Layer-4 carry"*, after the chord decoder; L2-S23 says the assignments *"are made inside the candidate score,
+  relative to each candidate reading's chord, and never by a detector that runs first."*
+- Row 8.107 — the outgoing quality is decided from the key at *"≥4 sites / 3 layers"*; L2-S27 says *"L2 decides
+  the chord as degree, quality, figure and applied target, read against the span's tonality"*.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -15347,10 +17990,11 @@ own distribution table in §6.
 | 5 | 417 | 81 | 9 | 85 | 131 | 0 | 51 | 60 | 67 |
 | 6 | 272 | 73 | 6 | 21 | 124 | 0 | 17 | 31 | 111 |
 | 7 | 224 | 53 | 2 | 20 | 103 | 0 | 22 | 24 | 89 |
-| **Total** | **1126** | **265** | **33** | **142** | **423** | **0** | **134** | **129** | **376** |
+| 8 | 212 | 17 | 0 | 0 | 111 | 0 | 57 | 27 | 93 |
+| **Total** | **1338** | **282** | **33** | **142** | **534** | **0** | **191** | **156** | **469** |
 
-**The arithmetic check:** 265 + 33 + 142 + 423 + 0 + 134 + 129 = 1126, against 1126 statements placed (72 +
-65 + 40 + 36 + 417 + 272 + 224).
+**The arithmetic check:** 282 + 33 + 142 + 534 + 0 + 191 + 156 = 1338, against 1338 statements placed (72 +
+65 + 40 + 36 + 417 + 272 + 224 + 212).
 
 **Current-text verdicts.**
 
@@ -15363,9 +18007,10 @@ own distribution table in §6.
 | 5 | 157 | 128 | 145 | 430 |
 | 6 | 84 | 112 | 77 | 273 |
 | 7 | 58 | 87 | 80 | 225 |
-| **Total** | **380** | **361** | **408** | **1149** |
+| 8 | 19 | 59 | 141 | 219 |
+| **Total** | **399** | **420** | **549** | **1368** |
 
-**The arithmetic check:** 380 + 361 + 408 = 1149 (78 + 65 + 40 + 38 + 430 + 273 + 225).
+**The arithmetic check:** 399 + 420 + 549 = 1368 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219).
 
 ## 14. The derivation's independence record, relayed
 
@@ -15396,4 +18041,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 7 are done, positions 8 to 62 are untouched.
+  untouched: positions 1 to 8 are done, positions 9 to 62 are untouched.
