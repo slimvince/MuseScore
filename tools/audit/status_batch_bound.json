@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l2_input_contract_cuts_2026_09_27.md, Task 3",
+ "dispatch": "cc_instruction_l2_derivation_commit_2026_09_27.md, Task 1",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -393,22 +393,28 @@
    "base_commit": "9f42ec57cb75b36267aebfc37fc0be3749d9346f",
    "the_then_previous_batch": "cc_instruction_l2_brief_landing_2026_09_27.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l2_derivation_commit_2026_09_27.md, Task 1",
+   "base_commit": "19673e24f17384d205ef7f3503a1c2ebf8f9a11e",
+   "the_then_previous_batch": "cc_instruction_l2_input_contract_cuts_2026_09_27.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "9f42ec57cb75b36267aebfc37fc0be3749d9346f",
- "the_then_previous_batch": "cc_instruction_l2_brief_landing_2026_09_27.md",
+ "base_commit": "19673e24f17384d205ef7f3503a1c2ebf8f9a11e",
+ "the_then_previous_batch": "cc_instruction_l2_input_contract_cuts_2026_09_27.md",
  "the_kind_of_move": "ordinary",
  "entries_moved": 1,
- "characters_moved": 1865,
+ "characters_moved": 1516,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1865,
-   "sha256": "2690bda85b27a3d1093f19016ff62e386b64966295b57dca4ea2eb2c2fafef7f",
+   "characters": 1516,
+   "sha256": "2d88cbd14e9705c33eea4e83143f79d50f26bd7a7be69a347cd3c7054a505a8f",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-09-27 (CC — `records/cc/instructions/cc_instruction_l2_brief_landing_2026_09_27.md`. **★★ THE COWORK SIDE'S RECORDS AND THE DRAFT L2 BRIEF ARE C"
+   "opening": "*2026-09-27 (CC — `records/cc/instructions/cc_instruction_l2_input_contract_cuts_2026_09_27.md`. **★★ THE CUT-LIST SITTING'S RECORD IS COMMITTED**, `r"
   }
  ],
  "reconciliation": {
