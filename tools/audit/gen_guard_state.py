@@ -860,6 +860,21 @@ AUTHORED = [
      "verdict in the table it reads is right. ★ AND IT AUTHORS NOTHING: not `WITHHELD`, not "
      "`EXTRAS`, not `VERDICTS`, not `CRITERION`, and no pack directory"),
 
+    # ---- AUTHORED 2026-09-27, cc_instruction_l2_outgoing_population_2026_09_27.md Task 1 -------
+    # THE L2 COMPARISON'S OUTGOING POPULATION, registered in the act that creates the tool — the
+    # standing new-tool rule. `--check` and never the bare invocation, for the ordinary reason: a bare
+    # run REWRITES its committed artifact.
+    ("tools/audit/gen_l2_outgoing_population.py", ["--check"],
+     "the L2 outgoing population re-derives under the ruling of 2026-09-27 (Option B): the four "
+     "named ARCHITECTURE.md sections located by heading text, the .md names inside them, the "
+     "forty-two ruled terms read from their one home and searched over the three prose classes "
+     "with the residue published whole, and the 111 confirmed decision passages read at their "
+     "homes. Its STOPs are what make it a guard: a heading that moves, a term list that is not "
+     "forty-two long, an identity count other than 111, a home of unreadable shape or past its "
+     "file's end, or a grouping that disagrees with the confirmed withheld-document artifact halts "
+     "it. WHAT IT DOES NOT ASSERT: that the term search reaches every passage about L2's subject — "
+     "its reach is stated on the artifact as a lower bound"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "
