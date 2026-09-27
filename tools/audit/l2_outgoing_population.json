@@ -750,7 +750,7 @@
    "hits_per_term": {
     "slice": 1083,
     "tonic": 1043,
-    "boundary": 1022,
+    "boundary": 1023,
     "segment": 795,
     "inversion": 518,
     "segmentation": 448,
@@ -40130,10 +40130,16 @@
       "governing-documents"
      ],
      "in_the_specification_document_set": false,
-     "hit_lines_distinct": 1,
-     "hits": 1,
+     "hit_lines_distinct": 2,
+     "hits": 2,
      "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map",
      "hit_records": [
+      {
+       "line_number": 8,
+       "term": "boundary",
+       "tier": "admitting",
+       "line": "*Last updated: 2026-09-27 (CC — `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`. **★★ THE L2 COMPARISON'S TABULATION POPULATION IS PUBLISHED IN ITS ORDER, AND THE TABULATION IS OPEN: THE FOUR NAMED `ARCHITECTURE.md` SECTIONS ARE TABULATED, AND THE REST IS UNTOUCHED.** ★ **THE RECORDS ARE COMMITTED** — the user's named-documents ruling of 2026-09-27, Option B, at `records/cowork/rulings/cowork_rulings_2026_09_27_l2_named_documents_sitting.md`, with `records/cowork/handoff/cowork_handoff_entry_two_hundred_and_sixty_two.md` and this dispatch, each checked at its blob for a complete final line before it was staged. ★ **THE POPULATION TOOL `tools/audit/gen_l2_outgoing_population.py` NOW ALSO PUBLISHES THE TABULATION POPULATION** — the outgoing population cut into members, in the order the comparison tabulates them, under the named-documents ruling (which of the documents the four sections name are compared whole, and which are listed and not compared whole) and a stated passage rule — at `tools/audit/l2_outgoing_population.json` → `the_tabulation_population`, its four new helper functions checked on synthetic lines before any run, every hit line and every decision's home proven by STOP to lie in exactly one member, and every value the artifact held before shown unchanged except the two strings the dispatch named. ★ **THE READING FILE `ratification_surfaces/cowork_comparison_l2_reading.md` IS OPEN**, the blind derivation having been read whole before anything else this session read: **positions 1 to 4 — the four named `ARCHITECTURE.md` sections — are tabulated, one member per commit, every outgoing statement placed under exactly one proposed disposition beside the current-text axis; the writing STOPPED AT THE MEMBER BOUNDARY after position 4 under the dispatch's context rule, and positions 5 onward are UNTOUCHED, not partly worked (D-672)**; the file's own §0 says where the next writing resumes. ★★ **EVERY DISPOSITION IS A PROPOSAL AND NOTHING IS APPLIED**: no outgoing text, derivation, brief, boot pack or register was edited; the five questions the derivation marks for the user are not put; no recommendation is made anywhere. No session booted; no open-items row created, flipped or discarded; no decisions-register identity allocated; no tool source edited but the population tool and the forward bound's authored aiming; no governing document amended but this file; no `src/` file, build, test, golden, score corpus or measurement of the analysis. Per the OI-222 pointer convention this entry is a **POINTER** — the whole of it is `records/cc/reports/cc_report_l2_comparison_tabulation_2026_09_27.md` — and no figure is restated here (**D-431**).)*"
+      },
       {
        "line_number": 10,
        "term": "boundary",
