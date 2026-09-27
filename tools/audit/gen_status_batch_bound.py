@@ -601,7 +601,33 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # tool can identify them** — a declared state and not a STOP, unchanged by this act. **NO COUNT OF
 # THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431): the membership is DERIVED from the entries'
 # own text at the base commit.
-BASE_COMMIT = "19673e24f17384d205ef7f3503a1c2ebf8f9a11e"
+# ★ RE-AIMED 2026-09-27 by `cc_instruction_l2_outgoing_population_2026_09_27.md` Task 2, at its 2(b),
+# and ALL FIVE authored inputs moved together, `PREVIOUS_AIMINGS` being appended to rather than
+# replaced (#12) and `MOVE_KIND` staying at the value it already carried, which is the value this move
+# takes. The aiming it replaces is the L2 derivation-commit batch's, which is ALREADY the last row of
+# `PREVIOUS_AIMINGS` — that batch recorded its own aiming in its own act — so it is not appended a
+# second time, and this batch's aiming is appended instead. `BASE_COMMIT` was
+# `19673e24f17384d205ef7f3503a1c2ebf8f9a11e` and is now
+# `c8a1a8502373abddcf7961e35cad6f12353c4d8b`: this batch's Task 0 commit, the L2 outgoing-population
+# ruling record, entries 259 to 261 and the population dispatch. Task 0 commits no `STATUS.md`, so that
+# commit's `STATUS.md` object is the one both refs carried when this batch opened
+# (`1fb7f5189a44eb927049694faf137ea01ef528ac`, read at the two ref FILES with the file tools, D-253) —
+# the same blob at both commits, established at `git ls-tree` of each — and it carries the
+# derivation-commit batch's entry at the head of the dated entries.
+#
+# ★★ THE THEN-PREVIOUS BATCH IS THE L2 DERIVATION COMMIT. `PREVIOUS_BATCH_DISPATCH` was
+# `cc_instruction_l2_input_contract_cuts_2026_09_27.md` and now names
+# `cc_instruction_l2_derivation_commit_2026_09_27.md`, whose entry names it; that batch wrote its
+# entry and its move inside its own Task 1, and no close ran between it and this batch.
+#
+# **THE DECLARED PREFIX ADJUSTMENT IS EXPECTED TO FIRE**, that entry carrying the `Last updated: `
+# prefix at the base commit, which is why this batch's own entry was written into `STATUS.md` BEFORE
+# `--apply` ran. `ACT_DATE` and the executing dispatch's date AGREE here, both being 2026-09-27.
+# **The second writing's two nameless 2026-09-02 entries remain in `STATUS.md` and no aiming of this
+# tool can identify them** — a declared state and not a STOP, unchanged by this act. **NO COUNT OF
+# THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431): the membership is DERIVED from the entries'
+# own text at the base commit.
+BASE_COMMIT = "c8a1a8502373abddcf7961e35cad6f12353c4d8b"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -611,7 +637,10 @@ BASE_COMMIT = "19673e24f17384d205ef7f3503a1c2ebf8f9a11e"
 # 4's forward bound moves exactly these, in the act that writes this batch's own" until 2026-09-07,
 # correct while every aiming this tool had ever carried was an ordinary one; it is widened rather
 # than replaced, because the ordinary reading is still the one that governs an ordinary move — #12.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_l2_input_contract_cuts_2026_09_27.md"
+# *(`PREVIOUS_BATCH_DISPATCH` read "cc_instruction_l2_input_contract_cuts_2026_09_27.md" while
+# `cc_instruction_l2_derivation_commit_2026_09_27.md` was the executing act; it is re-stated here for
+# `cc_instruction_l2_outgoing_population_2026_09_27.md`, whose then-previous batch is that one.)*
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_l2_derivation_commit_2026_09_27.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -632,9 +661,12 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_l2_input_contract_cuts_2026_09_27.md"
 # 2026-09-27, whose move ran on 2026-09-27, so the two dates agree.)* *(`ACT_DATE` read "2026-09-27"
 # and `DISPATCH` `cc_instruction_l2_input_contract_cuts_2026_09_27.md` while that batch was the
 # executing act; both are re-stated here for `cc_instruction_l2_derivation_commit_2026_09_27.md`,
+# dated 2026-09-27, whose move ran on 2026-09-27, so the two dates agree.)* *(`ACT_DATE` read
+# "2026-09-27" and `DISPATCH` `cc_instruction_l2_derivation_commit_2026_09_27.md` while that batch was
+# the executing act; both are re-stated here for `cc_instruction_l2_outgoing_population_2026_09_27.md`,
 # dated 2026-09-27, whose move ran on 2026-09-27, so the two dates agree.)*
 ACT_DATE = "2026-09-27"
-DISPATCH = "cc_instruction_l2_derivation_commit_2026_09_27.md"
+DISPATCH = "cc_instruction_l2_outgoing_population_2026_09_27.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -688,8 +720,11 @@ DISPATCH = "cc_instruction_l2_derivation_commit_2026_09_27.md"
 # own Task 3, which that dispatch's §5 heading names in those words. It names Task 1 while
 # `cc_instruction_l2_derivation_commit_2026_09_27.md` is the executing act, that dispatch ordering
 # both halves of the close — this batch's own entry at its 1(a) and this move at its 1(b) — inside its
-# own Task 1, which that dispatch's §3 heading names in those words.)*
-TASK = "Task 1"
+# own Task 1, which that dispatch's §3 heading names in those words. It names Task 2 while
+# `cc_instruction_l2_outgoing_population_2026_09_27.md` is the executing act, that dispatch ordering
+# both halves of the close — this batch's own entry at its 2(a) and this move at its 2(b) — inside its
+# own Task 2, which that dispatch's §4 heading names in those words.)*
+TASK = "Task 2"
 # ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
 #   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
 #                 moved in the same act that writes this batch's own entries.
@@ -1089,6 +1124,10 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_l2_derivation_commit_2026_09_27.md, Task 1",
      "base_commit": "19673e24f17384d205ef7f3503a1c2ebf8f9a11e",
      "the_then_previous_batch": "cc_instruction_l2_input_contract_cuts_2026_09_27.md",
+     "the_kind_of_move": "ordinary"},
+    {"executing_act": "cc_instruction_l2_outgoing_population_2026_09_27.md, Task 2",
+     "base_commit": "c8a1a8502373abddcf7961e35cad6f12353c4d8b",
+     "the_then_previous_batch": "cc_instruction_l2_derivation_commit_2026_09_27.md",
      "the_kind_of_move": "ordinary"},
 ]
 

@@ -233,7 +233,7 @@
     ".mscx": 100,
     "repeat": 98,
     "eligible": 96,
-    "release": 74,
+    "release": 73,
     "change-point": 72,
     "key signature": 72,
     "leading tone": 66,
@@ -3308,23 +3308,6 @@
       "term": "slice",
       "tier": "recorded",
       "line": "| OI-73 | Membership verdict dies at the L4→L5 boundary | chordTonePcs/nonChordTonePcs are never copied onto FunctionSlice. | siloed facts / E4 surface | OPEN — E4 surface design | [detail](open_items/OI-73.md) |"
-     }
-    ]
-   },
-   "STATUS.md": {
-    "path": "STATUS.md",
-    "inventory_class": "governing-documents",
-    "is_a_named_member": false,
-    "in_the_specification_document_set": false,
-    "admitting_hit_count": 0,
-    "recorded_hit_count": 1,
-    "admitting_hits": [],
-    "recorded_hits": [
-     {
-      "line_number": 8,
-      "term": "release",
-      "tier": "recorded",
-      "line": "*Last updated: 2026-09-27 (CC — `records/cc/instructions/cc_instruction_l2_derivation_commit_2026_09_27.md`. **★★ THE BLIND DERIVATION OF L2 IS COMMITTED AS IT STANDS**, `cowork_blind_derivation_l2_2026_09_27.md`, with its DRAFT banner — **not compared and not ratified**. ★ **THE RELEASED L2 BRIEF IS COMMITTED**, `cowork_blind_session_brief_l2.md`, and **THE COWORK SIDE'S HANDOFF ENTRIES ARE COMMITTED** — `records/cowork/handoff/cowork_handoff_entry_two_hundred_and_fifty_six.md`, `records/cowork/handoff/cowork_handoff_entry_two_hundred_and_fifty_seven.md` and `records/cowork/handoff/cowork_handoff_entry_two_hundred_and_fifty_eight.md` — with this dispatch, each at the size the dispatch stated wherever it stated one, and each checked at its blob for a complete final line before it was staged. ★★ **WHAT THIS BATCH DID NOT DO: no comparison was made; no session was booted; NO FILE IT COMMITTED WAS EDITED** — not the derivation, not the brief, not a handoff entry; the boot pack, the exemplars and the source specification were not touched; no score or analysis file was copied, moved or edited. No open-items row created, flipped or discarded; no decisions-register identity allocated and no `D-NNN` created; no tool source edited but the forward bound's authored aiming; no governing document amended but this file; no `src/` file, build, test, golden, score corpus or measurement of the analysis. Per the OI-222 pointer convention this entry is a **POINTER** — the whole of it is `records/cc/reports/cc_report_l2_derivation_commit_2026_09_27.md` — and no figure is restated here (**D-431**).)*"
      }
     ]
    },

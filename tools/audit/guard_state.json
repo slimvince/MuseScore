@@ -65,6 +65,7 @@
       "tools/audit/gen_governing_surface_split.py",
       "tools/audit/gen_july_screen.py",
       "tools/audit/gen_l0_l1_outgoing_population.py",
+      "tools/audit/gen_l2_outgoing_population.py",
       "tools/audit/gen_l2_withheld_documents.py",
       "tools/audit/gen_nongating_apparatus_rows.py",
       "tools/audit/gen_period_stratum_split.py",
@@ -96,7 +97,7 @@
       "tools/audit/shell_read_guard.py"
     ],
     "derived_rule": "every *.py under tools/audit/ carrying a --check, --verify or --establish mode",
-    "authored_entries": 102,
+    "authored_entries": 103,
     "unclassified_candidates": [],
     "unclassified_means": "a derived candidate with no authored invocation. NON-EMPTY IS A STOP: a guard exists that this run did not cover.",
     "not_a_subject_of_this_run": [
@@ -1040,7 +1041,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  entries moved: 1, 1,516 characters",
+        "  entries moved: 1, 1,593 characters",
         "  byte-present in the archive exactly once: True",
         "  absent from the must-read:                True"
       ],
@@ -1119,7 +1120,7 @@
       "verdict": "PASS",
       "stdout": [
         "the evidence pin's class membership re-derives",
-        "  generated ratification documents 7; ruling records read 100",
+        "  generated ratification documents 7; ruling records read 101",
         "  members 7 — pinned 5, UNRESOLVED 0",
         "  tools carrying a pin constant 8; outside this class 3",
         "    tools/audit/gen_artifact_inventory_surface.py        NOT PINNED — a record states the commit; the pin is not applied",
@@ -1160,15 +1161,15 @@
         "    [conditional  ] VS Code extension — bash command rules                    3013",
         "  whole file 168350, the six session-start spans 104609, overstated by 63741",
         "    CLAUDE.md                                                                104609",
-        "    STATUS.md                                                                 10870",
+        "    STATUS.md                                                                 11664",
         "    DECISIONS.md                                                             127727",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids     2826",
-        "  total at the tree 246032",
+        "  total at the tree 246826",
         "  further spans of the same artifact, NOT counted into the read:",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows    62498",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one     4951",
-        "  vs 1760d9a4a8: 367121 [whole-file practice] -> 246032 [ruled membership]  (-121089, -32.98%)  <- CROSSES A REGIME BOUNDARY",
-        "  vs 594074e1e1: 296832 [whole-file practice] -> 246032 [ruled membership]  (-50800, -17.11%)  <- CROSSES A REGIME BOUNDARY"
+        "  vs 1760d9a4a8: 367121 [whole-file practice] -> 246826 [ruled membership]  (-120295, -32.77%)  <- CROSSES A REGIME BOUNDARY",
+        "  vs 594074e1e1: 296832 [whole-file practice] -> 246826 [ruled membership]  (-50006, -16.85%)  <- CROSSES A REGIME BOUNDARY"
       ],
       "stderr": [],
       "what_it_checks": "what an ordinary session reads at session start, in characters, measured at the tree and at the recorded earlier commit's git object. It is the arc's own subject made checkable: the pruning direction of 2026-08-16 is about this number, and every act in the arc has had to state what it saved. Its load-bearing STOP is a demand about the tree AS IT STANDS — rule (a)'s artifact-and-key pointer is PARSED FROM THE CLAUSE ITSELF and must RESOLVE in the artifact it names, so a pointer that has stopped resolving fails on the day it stops rather than being hidden inside a number. It goes red when a governing surface changes, which is the point: the session-start read moved and the record does not yet say so. ★ WHAT IT DOES NOT ASSERT: that the membership is complete — it is AUTHORED, and each member carries the clause that makes it one so the authored half is checkable by reading three clauses; and nothing about whether the read is small enough, which is [[OI-370]]'s own subject"
@@ -1194,7 +1195,7 @@
         "  TOTAL 12957 character(s) in 34 clause(s), at the AUTHORED ends",
         "    the ruled closing reading would attribute 51684; the literal paragraph reading 160906",
         "    of the six session-start spans (104609): 12.39%",
-        "    of the whole session-start read (246032): 5.27%",
+        "    of the whole session-start read (246826): 5.25%",
         "  THE VALUE IS A LOWER BOUND ON MARKED DEFENSE: the marker set's reach is UNMEASURED,",
         "  and the ends are AUTHORED (cowork_defense_clause_ends_2026_09_08.md)."
       ],
@@ -1271,6 +1272,19 @@
       ],
       "stderr": [],
       "what_it_checks": "the L2 withheld-document derivation still re-derives from the ruled verdict table and the register's data file — the set of home documents of the entries `VERDICTS[\"l2\"]` grades IN, read through that module's own VERDICT_IN token and never re-authored here (#6, D-431), over a backbone assembled exactly as the boot pack's own `build()` assembles it so the two derivations cannot disagree. Its four STOPs are what make it a guard rather than a print: an IN identity the register's data file does not carry halts it, so a verdict cannot outlive its entry; a home that is absent, empty, or whose leading token is not a document path halts it, so no document is ever taken from a home that has drifted and none is repaired by guess; either direction of the reconciliation failing halts it — every IN identity accounted to exactly one document, every listed document named by at least one — so neither a lost identity nor an orphan document can pass as a field; and an IN count other than the 111 the user ruled halts it, so the derivation can never run over a family he did not rule. ★ WHAT IT DOES NOT ASSERT: that any document in the set SHOULD be withheld — that judgment is the user's and Ruling 6 reserves it (D-661, #24) — or that any verdict in the table it reads is right. ★ AND IT AUTHORS NOTHING: not `WITHHELD`, not `EXTRAS`, not `VERDICTS`, not `CRITERION`, and no pack directory"
+    },
+    {
+      "tool": "tools/audit/gen_l2_outgoing_population.py",
+      "args": [
+        "--check"
+      ],
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "l2_outgoing_population.json re-derives"
+      ],
+      "stderr": [],
+      "what_it_checks": "the L2 outgoing population re-derives under the ruling of 2026-09-27 (Option B): the four named ARCHITECTURE.md sections located by heading text, the .md names inside them, the forty-two ruled terms read from their one home and searched over the three prose classes with the residue published whole, and the 111 confirmed decision passages read at their homes. Its STOPs are what make it a guard: a heading that moves, a term list that is not forty-two long, an identity count other than 111, a home of unreadable shape or past its file's end, or a grouping that disagrees with the confirmed withheld-document artifact halts it. WHAT IT DOES NOT ASSERT: that the term search reaches every passage about L2's subject — its reach is stated on the artifact as a lower bound"
     },
     {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
@@ -1541,8 +1555,8 @@
     }
   ],
   "summary": {
-    "run": 79,
-    "passing": 67,
+    "run": 80,
+    "passing": 68,
     "failing": 12,
     "failing_tools": [
       {
