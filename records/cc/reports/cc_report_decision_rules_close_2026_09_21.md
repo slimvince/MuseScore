@@ -534,6 +534,13 @@ other modified tracked path is `tools/audit/claude_md_finer_archive.json`, which
    this was established at the tool source, including the line that copies the `home` anchor into
    every output row.
 3. **THE TWO REFS NOW AGREE** — recorded in the closing note below, written after the push.
+4. *★ THIS ITEM WAS ADDED AFTER THE COMMIT, so it is not in the committed text of this section; §11's
+   statement that everything above it was written before the commit holds for items 1 to 3 and not for
+   this one. It is repeated here from the closing note because this is the section a reader looks at.*
+   **The dispatch's own diagnosis is wrong for the third tool.** `gen_reads5_repack.py` reads
+   `CLAUDE.md` too — indirectly, through `gen_phase1m_measurements.RATIFIED_SURFACES` — and its
+   artifact's whole change is the `CLAUDE.md` insertion, not the backbone edit. The diagnosis moves;
+   the repair does not.
 
 ---
 
@@ -583,3 +590,106 @@ figure above is cited to the object, the artifact or the capture that produced i
 captures are at `scratchpad/guard_open.txt` and `scratchpad/guard_close.txt` outside the working
 tree, and the per-task outputs at the `scratchpad/t1b_*`, `t2_*` and `t2a_*`/`t2b_*` files named in
 place.*
+
+---
+
+## THE CLOSING NOTE — written after the push, and therefore uncommitted
+
+*Everything above this note is inside the commit it describes; this note is not, for the reason §11
+states. It stands as an uncommitted modification to this file.*
+
+### The staging proof
+
+`python tools/audit/changed_paths.py --staged` reported **exactly 27 records** before the commit —
+the candidate set of §7.3, member for member, with nothing else. **The held-back paths were proved
+absent by search, not by recollection**: no record matching `claude_md_finer_archive`,
+`scratch_artifacts`, `Claude outputs`, `Codex research`, `polyph9-release`, `external resarch` or
+`derivation_exemplars` appears anywhere in the staged enumeration.
+
+### The commit
+
+```
+[master 9909492ff0] Close: the decision-rules batch, with its three staled artifacts re-derived
+ 27 files changed, 3027 insertions(+), 435 deletions(-)
+ create mode 100644 records/cc/instructions/cc_instruction_decision_rules_close_2026_09_21.md
+ create mode 100644 records/cc/instructions/cc_instruction_decision_rules_consolidation_2026_09_21.md
+ create mode 100644 records/cc/reports/cc_report_decision_rules_close_2026_09_21.md
+ create mode 100644 records/cc/reports/cc_report_decision_rules_consolidation_2026_09_21.md
+```
+
+**Full hash, read at `.git/refs/heads/master` with the file tools:
+`9909492ff02b19e4163eaed73ce163e7c62f742c`.** ONE commit, staged by explicit path, never by a
+directory pathspec.
+
+**THE COMMIT'S OWN DIFF AGAINST THE BASE, by explicit hash** — `git diff --name-status
+6b5bdfc381… 9909492ff0…` — returns **the same 27 paths with the same 27 status codes** as the staged
+enumeration. The commit therefore carries exactly the candidate set, proved at the commit and not
+only at the index.
+
+### The push
+
+```
+git push origin master
+To https://github.com/slimvince/MuseScore
+   ef4fad940d..9909492ff0  master -> master                              [exit 0]
+```
+
+**`master` is the only branch that received a commit, so no second branch was owed.** `upstream` was
+not named and not pushed to; its push stays disabled. **No `--force` was passed.**
+
+**★ THE GAP IS CLOSED.** `.git/refs/remotes/origin/master`, read at the loose ref file with the Read
+tool after the push, is **`9909492ff02b19e4163eaed73ce163e7c62f742c` — equal to `master`.** The two
+refs have disagreed since the L2-withheld-documents batch; they now agree. *(The value was found in
+the loose ref file, not in `.git/packed-refs`.)*
+
+### ★★ A FINDING FOUND IN THE CLOSING SELF-CHECK, AFTER THE COMMIT — THE DISPATCH'S OWN DIAGNOSIS IS WRONG FOR THE THIRD TOOL
+
+**This corrects the committed body above, and it is recorded here rather than by rewriting that text
+(#12).** It changes the diagnosis, not the repair: the artifact needed re-deriving either way, it was
+re-derived, and it is green.
+
+**What the dispatch states at its 0(b):** *"All three read `tools/audit/decisions/backbone_decisions.json`
+and nothing else that batch touched, so all three were staled by its Task 4 backbone edit."*
+
+**What the committed §2.3 says of the third tool:** *"Also read and never written: `REGIME` (line 93,
+`phase1n_reading_regime.json`), untouched by the previous batch."* That names one further input and
+reads as though it named them all.
+
+**Both are incomplete, and the reading-in-full that found it was the diff of the artifact.**
+`tools/audit/decisions/gen_reads5_repack.py` gained **exactly one line**:
+
+```
+ "read_documents_whose_naming_count_moved_since_registration": [
++      "cowork_design_doc_template.md",
+```
+
+That field is not backbone-derived. Traced at the source: the tool imports
+`gen_phase1m_measurements as p1m` (line 104) and, inside `named_now` (lines 153–161), **opens every
+member of `p1m.RATIFIED_SURFACES`** — which is `["ARCHITECTURE.md", "CLAUDE.md",
+"cowork_engage_arc_plan.md"]` (`gen_phase1m_measurements.py:66`) — counting the lines that name each
+read document. **So this tool DOES read `CLAUDE.md`**, indirectly but really.
+
+**And the `CLAUDE.md` insertion is what moved it.** The block the previous batch's Task 2 inserted
+cites `cowork_design_doc_template.md` at **`CLAUDE.md:1901`**, inside the inserted span; that
+document is named at lines 1565 and 1576 besides, so its count in a user-ratified surface went from
+two to three and it entered the moved-count list. The re-aimed anchors cannot have done it: the tool
+takes `doc = d["home"].split(":")[0]` (line 149), which strips the line number the re-aim changes.
+
+**So for this one tool the cause is the opposite of the dispatch's:** the `CLAUDE.md` insertion
+staled it and the backbone edit contributed nothing to its diff. **The dispatch's statement holds for
+the other two**, each checked at its own source: `claude_md_rule_triage.py` imports only
+`output_encoding` and opens two files; `gen_rulings_sort.py` reads the decisions filter, the
+backbone, and three ruling and phase records, and no governing document.
+
+**Nothing was changed on the strength of this**, and no bar was resolved. It is reported.
+
+### The working tree after the push
+
+Two paths stand modified, both expected and neither a defect:
+
+- **this report**, which this note modifies after its own commit — the declared shape of §11, and the
+  same shape the previous close's report had when this batch picked it up;
+- **`tools/audit/claude_md_finer_archive.json`**, held back by B7 and untouched throughout.
+
+Nothing else. Nothing is staged.
+
