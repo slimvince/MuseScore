@@ -1,10 +1,15 @@
 # BRIEF for the blind deriving session — the L2 subject (the detail-specification phase's second derivation)
 
-> **STATUS: DRAFT — WRITTEN 2026-09-27, NOT YET RELEASED.** It is released when the Claude Code batch that
-> lands it has also landed the input-contract file §3 names and the user has seen that file's cut list
-> (Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_09_27_l2_brief_sitting.md`). **The user opens
-> the deriving session when the user chooses**; the writing side writes instructions to disk and never
-> starts the sessions that run them.
+> **STATUS: RELEASED 2026-09-27.** Written 2026-09-27 as a draft and released once both of its
+> conditions held: the input-contract file §3 names has been landed by Claude Code, cut, and the user has
+> seen that file's cut list and ruled on it (Ruling 1 of
+> `records/cowork/rulings/cowork_rulings_2026_09_27_l2_brief_sitting.md`). **The user opens the deriving
+> session when the user chooses**; the writing side writes instructions to disk and never starts the
+> sessions that run them.
+> *(The former banner, kept for the record: "DRAFT — WRITTEN 2026-09-27, NOT YET RELEASED. It is
+> released when the Claude Code batch that lands it has also landed the input-contract file §3 names and
+> the user has seen that file's cut list (Ruling 1 of
+> `records/cowork/rulings/cowork_rulings_2026_09_27_l2_brief_sitting.md`).")*
 >
 > **Who reads this file, and when.** The deriving session reads it FIRST and ALONE, in the first message
 > it is sent (§3a). Everything else the session may read arrives later and is named in §3. **The
