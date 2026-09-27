@@ -935,3 +935,67 @@ M	tools/audit/status_batch_bound.json
 `tools/audit/claude_md_finer_archive.json` and entry 252 are **absent** from the staged set. This report
 was staged, then this paragraph was written, and then the report was staged again. The listing was
 re-run after that second staging, and it must be identical before the commit is made (§12.7 records it).
+
+### 12.7 The commit and the push — written AFTER the commit, and not inside it
+
+*A report cannot carry the hash of the commit that contains it. Everything above this subsection is in
+the batch commit. This subsection was appended after that commit and the push, so it is additions only,
+it is uncommitted, and it lands at the next batch's Task 0. That is the shape this batch's own commit
+one used for the previous close report (§1, 0(d)).*
+
+- The re-run of `changed_paths.py --staged` after the report's second staging was **identical to the
+  listing in §12.6**: 23 records (`scratchpad2/staged2.txt`). The worktree enumeration just before the
+  commit (`scratchpad2/cp_precommit.txt`) showed every one of the 23 as staged with a clean worktree
+  column. The only other tracked modification was ` M tools/audit/claude_md_finer_archive.json`, which
+  is held back.
+- **The batch commit: `84ab3a5c404bf9953a568df7c0c57022dba06f8f`**, parent
+  `a84e2375301973b48cb2a0cc5a0fb13e6ec41c24` (commit two). `git show --stat` of it: `23 files changed`,
+  the 23 paths of §12.6 and no other.
+- **Push:** `git push origin master` (no `--force`), verbatim:
+
+```
+To https://github.com/slimvince/MuseScore
+   9909492ff0..84ab3a5c40  master -> master
+exit:0
+```
+
+- **The pushed branch: `master`**. The push carried three commits: `42cbfa676f` and `a84e237530` (the two
+  Task 0 commits) and `84ab3a5c40`. `upstream` was not used.
+- **`origin/master` after the push**, read with the file tools at `.git/refs/remotes/origin/master`:
+  `84ab3a5c404bf9953a568df7c0c57022dba06f8f`. **It equals `master`** (`.git/refs/heads/master`, read the
+  same way).
+
+### 12.8 What the close did NOT do
+
+- **No tool source was edited** — not `gen_derivation_boot_pack.py`, not `gen_status_batch_bound.py`, not
+  `gen_evidence_pin_membership.py`, not `gen_withheld_family_reading.py`, not any other. The tool edits
+  the stopped batch made were committed as they stood at R0's blobs.
+- No extract was edited, and nothing was written under the three frozen pack directories.
+- No governing document was amended except `STATUS.md`, at R1's one phrase.
+- No session was booted, no brief was written and no score was staged. The leak list was not acted on.
+- No open-items row was created, flipped or discarded. No `D-NNN` was created and no register identity
+  was allocated.
+- No `src/` file, build, test, golden, score corpus or measurement of the analysis was touched.
+- `gen_l0_l1_outgoing_population.py` was not regenerated at R2, because it re-derived.
+- `tools/audit/claude_md_finer_archive.json` and handoff entry 252 were held back.
+  `gen_guard_classification.py`'s STOP was carried, not chased.
+
+### 12.9 What goes to the user
+
+1. **The leak list**, §7 above, unchanged by the close.
+2. **The pin tool's blind spot.** The first problem is that `tools/audit/gen_evidence_pin_membership.py`
+   recognises a generated ratification document only when two things hold:
+   - a module-level constant composes `ratification_surfaces` with a `.md` name;
+   - the file is written through that constant.
+
+   A generator that declares its output in a table does not meet that shape, and neither does one that
+   writes through a local variable. `tools/audit/gen_withheld_family_reading.py` does both, so the tool
+   does not see it.
+
+   The consequence is that its document (`cowork_withheld_family_l2_reading.md`) is filed as *"named in
+   a ruling record but not generated"*, and its generator is **not** a pinned-evidence member, resolved
+   or unresolved. The membership is therefore complete only relative to the pattern the tool
+   recognises. This is reported, not repaired (D-436), and whether the tool should see such a generator
+   is the user's question.
+3. **The STOP** at §12(c) of the stopped batch (§8). The close dispatch resolved it by no longer
+   expecting the member. **No new STOP arose in R0 to R5.**
