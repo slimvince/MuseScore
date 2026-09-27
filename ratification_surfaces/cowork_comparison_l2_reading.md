@@ -3,7 +3,8 @@
 > **STATUS: READING FILE — a tabulation delivered to the user. It recommends nothing, establishes
 > nothing, applies nothing, and rules on nothing.** Prepared by Claude Code, 2026-09-27, under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md` Task 2, and continued under
-> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_second_2026_09_27.md` Task 1, executing
+> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_second_2026_09_27.md` Task 1, and further under
+> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_third_2026_09_27.md` Task 1, executing
 > the user's ruling of 2026-09-27, Option B
 > (`records/cowork/rulings/cowork_rulings_2026_09_27_l2_outgoing_population_sitting.md` §2), the
 > named-documents ruling of the same date, Option B
@@ -42,7 +43,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 3 | `ARCHITECTURE.md` — *Layer 4 — the per-slice chord-symbol decoder* | **DONE** (§6.3) |
 | 4 | `ARCHITECTURE.md` — *Layer 5 — the function/cadence layer* | **DONE** (§6.4) |
 | 5 | `cowork_layer5_function_design.md`, whole | **DONE** (§6.5) |
-| 6 | `cowork_layer4_chordsymbol_design.md`, whole | NOT YET TABULATED |
+| 6 | `cowork_layer4_chordsymbol_design.md`, whole | **DONE** (§6.6) |
 | 7 | `cowork_layer3_keymode_design.md`, whole | NOT YET TABULATED |
 | 8 | `cowork_layer5_engagement_design.md`, whole | NOT YET TABULATED |
 | 9 | `cowork_stage5_fitter_design.md`, whole | NOT YET TABULATED |
@@ -102,10 +103,10 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 5 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole, and
-`cowork_layer5_function_design.md`, whole.**
+each. **Done: positions 1 to 6 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+`cowork_layer5_function_design.md`, whole, and `cowork_layer4_chordsymbol_design.md`, whole.**
 
-**★ THIS WRITING STOPS HERE, AT THE MEMBER BOUNDARY AFTER POSITION 5 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 6 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -113,10 +114,12 @@ derived statement, each corrected before its member was committed. The second ba
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_second_2026_09_27.md`, resumed at position
 5, tabulated it whole in one commit, and stopped at the member boundary after it under that dispatch's
 capacity judgment (its Task 1(h)): position 6 was judged not finishable whole in the context that remained,
-and was not opened. **Positions 6 to 62 are UNTOUCHED**: not read for tabulation, not quoted, not counted
-and not placed, and nothing in them is partly worked. **The next writing resumes at position 6**,
-`cowork_layer4_chordsymbol_design.md`, whole. §7, §8, §9 and §14 stay NOT YET WRITTEN, being written once
-after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation,
+and was not opened. The third batch, under
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_third_2026_09_27.md`, resumed at position 6
+and tabulated it whole in one commit. **Positions 7 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at
+position 7**, `cowork_layer3_keymode_design.md`, whole. §7, §8, §9 and §14 stay NOT YET WRITTEN, being
+written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation,
 not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
 ---
@@ -9308,6 +9311,2786 @@ carries DIFFERS against both of its derived statements.)* DIFFERS: 5.7(ii), 5.8,
   5.319; L2-S43 (entry 4) — 5.71, 5.133, 5.153, 5.253, 5.287; L2-S45 (entry 4) — 5.5, 5.6, 5.27, 5.65,
   5.208, 5.235, 5.236, 5.284, 5.303. No row of this member names L2-S17.
 
+---
+
+### 6.6 — Member 6: `cowork_layer4_chordsymbol_design.md`, whole
+
+> **Manifest for this member.** Position **6**. Kind: *item 2 — a whole document (a specification-set
+> member)*. Document: `cowork_layer4_chordsymbol_design.md`. Label: *the whole document*. Range, as a
+> locator only: lines 1–629, from its first line *"# Architectural Layer 4 — CHORD SYMBOL (with NON-CHORD
+> TONES) — Architecture & Design"* to its last *"scorer's competitiveness constant."*, exactly as the
+> artifact publishes it (**D-307**). Outgoing statements: **272** (rows 6.1 to 6.205;
+> 46 of those rows carry two or more claims each and are split — the arithmetic is at the foot
+> of this member). Listed under *not a statement*: **111**. Counted at this member by this session;
+> the counts appear here and nowhere else.
+>
+> **What kind of text this member is, read at its own banner.** It is the signed design of the former
+> Architectural Layer 4, the per-slice chord-symbol decoder; its banner records the design *"now
+> realised"* in a decoder that is *"built but DORMANT"*, production running the legacy path. Its body
+> therefore describes, section by section, how that dormant decoder is specified to work: per slice,
+> after a separate key layer, handing what it cannot decide to a separate function layer. **The three
+> further readings of the unit the second batch took at position 5 are applied here unchanged**, the
+> third read as reaching this dormant layer (the dispatch's premise ledger): a description of the dormant
+> decoder's mechanism is QUARANTINED; a rule the text records as a ruling, or as a chosen design
+> decision, that a derived statement contradicts is UNPLACED. Where a sentence states a design principle
+> rather than the decoder's procedure, the principle is placed on its own terms — carried where a derived
+> statement carries it, proposed where none does. A bold label or phrase that opens a bullet or a
+> paragraph, where the body states its claim again or it carries none, is listed under *not a statement*
+> as a label or a title — the shape the earlier members use for such labels — and the body is tabulated.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position
+> 6: **D-329** (lines 208–212), **D-330** (394–398), **D-331** (576–579). A row is marked WITHHELD only
+> where its statement lies inside one of those homes; the one sentence that opens a line before a home
+> and holds the whole of it is marked, and its row says so. **No SEEN home lies in this member** — none
+> of the eight identities 1(c) names (D-002, D-095, D-223, D-261, D-275, D-279, D-322, D-393) is among the
+> identities the artifact places in position 6.
+
+---
+
+**Row 6.1 — the as-built record: the specification realized in the dormant decoder.**
+
+*Outgoing statement.* "**★ AS-BUILT (2026-06-26): this spec is now realised** — `chord/chordslicedecoder.{h,cpp}` implements G1 (commit/inherit/abstain + ≥3-template-tone sufficiency), G2/G3 three-tier membership + plausibility, the §4 two-reading both-sides inherit, G6 (confidence + the open-question Layer-4-to-Layer-5 contract), and the G4/C1 symmetric-root spelling-pin (consuming `engravingbridge::spellingview`)." — the status banner (locator: lines 9–12).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to what has been built.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 6.2 — built but dormant; production on the legacy path; the switch deferred.**
+
+*Outgoing statement.* "It is **built but DORMANT** (§0) — production still runs legacy `analyzeChord`/`ChordPathDecoder`; the **engage-with-L5** strategy (§0) defers the production switch + legacy retirement to the joint L4+L5 step (measured: better where it commits; ~85% of its abstention genuinely function-dependent — handed to Architectural Layer 5)." — the status banner (locator: lines 12–15). Two claims: (i) the decoder is built but dormant, production running the legacy path, and the production switch is deferred to a joint step; (ii) the parenthetical measurement of where the dormant decoder is better and of the share of its abstention that is function-dependent.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **QUARANTINED.** *Audit question:* at the current commit, is the dormant decoder more accurate than the legacy path where it commits, and what share of its abstentions is function-dependent?
+
+---
+
+**Row 6.3 — two refinements deferred to the engage step.**
+
+*Outgoing statement.* "§15-O2 (bounded-window joint) + C2 (new four-note types) are deferred to the engage step." — the status banner (locator: line 17).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 6.4 — the ruling that the step that settles an uncertain slice is the function layer itself.**
+
+*Outgoing statement.* "**Open item O1 is resolved (user-ratified 2026-06-24, see §15):** the step that resolves a slice marked "uncertain" is **Architectural Layer 5 (function) itself** — there is no distinct box between the note-layers and Layer 5." — the status banner (locator: lines 20–21).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text hands a slice *"marked "uncertain""* forward to a later *"Architectural Layer 5 (function)"* that settles it; L2-S11 decides the boundary *"together with the tonality, the chord and the assignments, in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a ruling the text records as user-ratified, which places the settling of an undecided chord in a layer after the chord decision, against L2-S11's one decision; neither carrying it nor quarantining it can be defended in one sentence at the two texts.
+
+---
+
+**Row 6.5 — the function layer settles the carried readings at its gated entry.**
+
+*Outgoing statement.* "Layer 5 resolves the carried readings at its gated entry, as part of assigning function." — the status banner (locator: lines 21–22).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 6.4.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 6.4. *What was read:* the same ruling, as at Row 6.4.
+
+---
+
+**Row 6.6 — the slice; a decision per slice; the chord-span assembled downstream.**
+
+*Outgoing statement.* "The **constant-sonority slice** from Architectural Layer 2 (`cowork_layer2_slicing_design.md`; the §2.15 span typology's atomic unit). This layer decides **per slice**; the typology's **chord-span** (the span one committed chord prevails over — the family member formerly named "harmonic region") is the maximal run of same-chord slices, assembled downstream, never decided here." — §0, the terms table, row *Slice* (locator: line 35). Three claims: (i) the slice is the constant-sonority slice of the layer below; (ii) this layer decides per slice; (iii) the chord-span is assembled downstream and never decided here.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S1. (iii) L2-S11.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — the derivation takes slices as the input contract defines them and states nothing about them. (ii) L2-S1: **DIFFERS**. (iii) L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing text decides *"per slice"*; L2-S1 says *"The search's unit is the whole reading, not a span."* (iii) The outgoing chord-span is *"assembled downstream, never decided here"*; L2-S11 decides *"where the boundaries fall"* in the one decision.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, whose charter publishes the slices *(the input contract defines the slice at its §0, as the derivation's §0 relays)*. (ii) **QUARANTINED.** *Audit question:* over what unit does the dormant decoder decide, and does it decide any harmonic boundary? (iii) **QUARANTINED**, travelling with (ii).
+
+---
+
+**Row 6.7 — the shared tier of notation-derived views, and the texture strength profile.**
+
+*Outgoing statement.* "The shared notation-derived-view half-tier (bass, spelling, metric-weight, and phrase-boundary views) — ARCHITECTURE.md §2.15; the **texture strength profile** is the phrase-boundary primitive's aggregated boundary-strength output (`cowork_phrase_boundary_design.md` §4.3)." — §0, the terms table, row *Layer 1.5* (locator: line 38). Two claims: (i) a shared tier of views derived from the notation — bass, spelling, metric weight and phrase boundary; (ii) the texture strength profile as the phrase-boundary primitive's aggregated output.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence* *(the input contract carries the metric strength class at IC S-35, the notated boundary evidence at IC S-39 and S-41, the lowest sounding pitch as a cue anchor at IC S-44, and spelled pitch at IC S-3)*. (ii) **RELOCATED** — to *L3 — The read-off facts*, read beside the L0/L1 comparison's relocation of the graded phrase-boundary profile to L3 (its §10, Ruling 48).
+
+---
+
+**Row 6.8 — the punctuation-span is the grouping layer's.**
+
+*Outgoing statement.* "Layer 6's surface-punctuation-delimited grouping span (`cowork_layer6_grouping_design.md` §0)." — §0, the terms table, row *Punctuation-span* (locator: line 39).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — a grouping span is downstream of the reading, and L2 consumes *"no cadence type, phrase or section grouping"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts* (phrase and section grouping). *(L2-S49 travels with it.)*
+
+---
+
+**Row 6.9 — the home metric.**
+
+*Outgoing statement.* "The held-out chord-root + bass agreement measure this layer is graded by (§10); "BIR" = **bass-is-root**, the project gate's per-event classification (gate policy: CLAUDE.md)." — §0, the terms table, row *The home metric* (locator: line 40).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S38 leaves *"the graded measure"* to the measurement-design stage.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 6.10 — the two error classes of the gate policy.**
+
+*Outgoing statement.* "The gate policy's error classes (CLAUDE.md): **class-(a)** = a pitch-class-undecidable case (e.g. a symmetric rotation), where churn is tolerated; **class-(b)** = a root/key error at a pitch-class-**decidable** sonority — a meaningful error, never allowed to grow." — §0, the terms table, row *Class-(a) / class-(b)* (locator: line 41).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 6.11 — the fine-grain override exists to fix class-(b) transients.**
+
+*Outgoing statement.* "The §15-O1b fine-grain override exists to fix class-(b) transients." — §0, the terms table, row *Class-(a) / class-(b)* (locator: line 41).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text overturns a committed chord by *"The §15-O1b fine-grain override"*; L2-S35 normalizes *"over whole readings"*, so that evidence after a span can change *"the total mass of a branch through it"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the fine-grain override exist on any arm, does it run, and which class of root error does it change at the current commit?
+
+---
+
+**Row 6.12 — a chord symbol per slice, and a chord-tone call for every sounding note.**
+
+*Outgoing statement.* "For each slice produced by Architectural Layer 2 it names the **chord symbol** (for example `Bm7`, `Gdim`, `C`) **and** decides, for every note sounding in that slice, whether the note belongs to that chord (a **chord tone**) or not (a **non-chord tone**)." — §1, *What Architectural Layer 4 is* (locator: lines 48–50). Two claims: (i) it names a chord symbol per slice; (ii) it decides, for every sounding note, chord tone or non-chord tone.
+
+*Derived statements that speak to it.* (i) L2-S27. (ii) L2-S1.
+
+*Current-text axis.* (i) L2-S27: **DIFFERS**. (ii) L2-S1: **AGREES** — its item (iv), *"Per event sounding in the span, an assignment: chord tone, or elaboration together with its relation."*
+
+*The difference, in both texts' own words.* (i) The outgoing text *"names the **chord symbol**"* per slice; L2-S27 says *"It publishes no chord symbol (root pitch class, quality and bass note). That is L3's read-off."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* what does the dormant decoder publish per slice — a chord symbol, a degree read against a tonality, or both? (ii) **ADOPTED — carried** (L2-S1).
+
+---
+
+**Row 6.13 — the symbol and the membership are one decision.**
+
+*Outgoing statement.* "It treats these as **one** decision, because the symbol cannot be named without deciding which notes belong to it: the slice `{C, E, G, D}` is `C major` with `D` a passing non-chord tone **or** `Cadd9` with `D` a chord tone, and which reading is right *is* the membership decision." — §1 (locator: lines 50–52).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **AGREES** — *"The assignments are part of the one decision."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S23).
+
+---
+
+**Row 6.14 — the key from a separate layer as a preference, over the user's selection.**
+
+*Outgoing statement.* "The slices from Architectural Layer 2, over the notes from Architectural Layer 1, with the key/mode from Architectural Layer 3 available as a preference, for the user-selected part of the score." — §1, *What music it operates on* (locator: lines 54–55). Two claims: (i) the key/mode comes from a separate key layer, available as a preference; (ii) the music read is the user-selected portion of the score.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) L2-S48.
+
+*Current-text axis.* (i) L2-S11: **DIFFERS**. (ii) L2-S48: **AGREES** — *"L2's publication covers exactly the working span."*
+
+*The difference, in both texts' own words.* (i) The outgoing text takes *"the key/mode from Architectural Layer 3 available as a preference"*; L2-S11 decides the boundary together with *"the tonality, the chord and the assignments, in the one decision"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the dormant decoder read a tonality committed by a separate key layer, and in what form? (ii) **ADOPTED — carried** (L2-S48).
+
+---
+
+**Row 6.15 — where the notes determine a chord, the layer names it.**
+
+*Outgoing statement.* "Where the notes (helped by the key preference and the neighbouring chords) determine a chord, the layer names it." — §1, *Why it commits where it can and abstains where it cannot* (locator: lines 58–59).
+
+*Derived statements that speak to it.* L2-S30.
+
+*Current-text axis.* L2-S30: **AGREES** — *"The chord terms also read the neighbouring spans' readings (the progression)"*, with the tonality–chord cost of L2-S3 beside them.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S30).
+
+---
+
+**Row 6.16 — where the notes do not decide, the layer marks the slice uncertain and hands it forward.**
+
+*Outgoing statement.* "Where they do not — too few notes to fix a chord, or two readings that only function or spelling can separate — the layer **does not guess**: it marks the slice "uncertain," records which question is open and the competing readings, and hands that forward." — §1 (locator: lines 59–62).
+
+*Derived statements that speak to it.* L2-S44.
+
+*Current-text axis.* L2-S44: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text *"marks the slice "uncertain,""* and hands it forward; L2-S44 leaves *"Whether a *sounding* span may be published with "no chord""* to the charter's open DP-Q, and L2-S43 publishes a principal reading with its rivals.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* when does the dormant decoder abstain, on what test, and what does it hand forward?
+
+---
+
+**Row 6.17 — the uncertain mark is the explicit hand-off.**
+
+*Outgoing statement.* "Knowing *where the note evidence runs out* is part of this layer's job; the "uncertain" mark is the explicit hand-off." — §1 (locator: lines 62–63).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text makes *"the "uncertain" mark"* the hand-off where the evidence runs out; L2-S40 publishes each rival with its *"Mass"*, *"the probability the fitted, whole-reading-normalised model (L2-S35) assigns"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.16.
+
+---
+
+**Row 6.18 — the layer owns the note evidence's contribution; the key a lean, never a determinant.**
+
+*Outgoing statement.* "Architectural Layer 4 owns the contribution of the **note evidence** — the slice's pitches, their notated spelling, their metric weight, and the immediately neighbouring chords — to the chord-and-membership question, with the key/mode used as a **preference** (a lean toward the diatonic reading, never a determinant)." — §1, *The responsibility boundary* (locator: lines 65–68). Two claims: (i) the note evidence — pitches, their spelling, their metric weight, the neighboring chords — bears on the chord and the membership; (ii) the key/mode is a lean toward the diatonic reading and never a determinant.
+
+*Derived statements that speak to it.* (i) L2-S32. (ii) L2-S3.
+
+*Current-text axis.* (i) L2-S32: **AGREES** — the span content term rates how the span's events *"fit the chord in its spelled form"*, with metric-weighted forms. (ii) L2-S3: **AGREES** — *"No chord is excluded under any tonality. A chord whose pitches are foreign to the span's tonality is admitted and costs more in the candidate score."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S32). (ii) **ADOPTED — carried** (L2-S3).
+
+---
+
+**Row 6.19 — the layer settles everything the notes and the key preference can.**
+
+*Outgoing statement.* "It resolves everything the notes and that preference can resolve." — §1 (locator: line 68).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text settles at this layer what *"the notes and that preference can resolve"*, leaving the remainder to a later layer; L2-S11 decides the four fields *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.16.
+
+---
+
+**Row 6.20 — the symmetric and the function-dependent cases are not this layer's to arbitrate.**
+
+*Outgoing statement.* "It does **not** own the final arbitration of the cases the notes and key alone cannot decide: the **symmetric sonorities** whose root is undefined by pitch class and unfixed by spelling (a MIDI-imported diminished-seventh), and the chords whose reading turns on **function** (a passing diminished versus a real applied chord)." — §1 (locator: lines 68–71).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 6.19.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder hand the symmetric and the function-dependent cases forward as carried readings rather than deciding them, and what reads them?
+
+---
+
+**Row 6.21 — the residual is handed forward and settled by selection among the carried readings.**
+
+*Outgoing statement.* "That residual is handed forward — as the competing readings plus the "uncertain" mark naming what is open — to Architectural Layer 5, which resolves it by **selecting among the readings this layer carried**, never by inventing a chord or re-deriving one from the raw notes." — §1 (locator: lines 71–73).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing residual is *"handed forward"* to a later layer that settles it *"by **selecting among the readings this layer carried**"*; L2-S11 decides boundary, tonality and chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.20.
+
+---
+
+**Row 6.22 — what the layer assigns each slice.**
+
+*Outgoing statement.* "**Scope — what it does:** assign each slice a chord symbol (root, quality, and bass/inversion), a chord-tone set, a non-chord-tone set, the ranked competing readings, a confidence, and an "uncertain" mark (naming the open question) where the evidence does not decide." — §1 (locator: lines 75–77). Five claims: (i) a chord symbol per slice; (ii) a chord-tone set and a non-chord-tone set; (iii) the ranked competing readings; (iv) a confidence; (v) an uncertain mark naming the open question.
+
+*Derived statements that speak to it.* (i) L2-S27. (ii) L2-S1. (iii) L2-S15. (iv) L2-S40. (v) L2-S44.
+
+*Current-text axis.* (i) L2-S27: **DIFFERS**. (ii) L2-S1: **AGREES**. (iii) L2-S15: **AGREES** — rivals are carried with their mass. (iv) L2-S40: **DIFFERS**. (v) L2-S44: **DIFFERS**.
+
+*The difference, in both texts' own words.* (i) As at Row 6.12(i). (iv) The outgoing text assigns *"a confidence"*; L2-S40 publishes *"Mass"*, *"a model quantity and not a calibrated probability"*. (v) As at Row 6.16.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 6.12(i). (ii) **ADOPTED — carried** (L2-S1). (iii) **ADOPTED — carried** (L2-S15). (iv) **QUARANTINED.** *Audit question:* what confidence does the dormant decoder attach to a slice, and from which components is it computed? (v) **QUARANTINED**, travelling with Row 6.16.
+
+---
+
+**Row 6.23 — no function and no Roman numeral at this layer.**
+
+*Outgoing statement.* "It does **not** name **function** or Roman/Nashville numerals — that is the chord symbol read *in* the key, decided by Architectural Layer 5." — §1, *What it explicitly does NOT do* (locator: lines 81–82).
+
+*Derived statements that speak to it.* L2-S27.
+
+*Current-text axis.* L2-S27: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text leaves the numeral to *"the chord symbol read *in* the key, decided by Architectural Layer 5"*; L2-S27 says *"L2 decides the chord as degree, quality, figure and applied target, read against the span's tonality."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder produce any degree or numeral, or only a chord symbol that a later layer reads in a key?
+
+---
+
+**Row 6.24 — the key is not decided here, and a chord reaches the key only through the function layer.**
+
+*Outgoing statement.* "It does **not** decide the **key/mode** (Architectural Layer 3); it consumes the key as a preference and never feeds a chord decision back into key, except through Architectural Layer 5." — §1 (locator: lines 83–84).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing layer *"does **not** decide the **key/mode**"* and *"consumes the key as a preference"*; L2-S11 decides the tonality with the boundary and the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.14(i).
+
+---
+
+**Row 6.25 — no cadence detection, no grouping for display, no reading or changing of the notes.**
+
+*Outgoing statement.* "It does **not** detect **cadences** (a function-level event, Architectural Layer 5), and does **not** group equal slices for display (Architectural Layer 6), and does **not** read or change the notes or slices (Architectural Layers 1 and 2)." — §1 (locator: lines 85–87). Three claims: (i) it detects no cadence; (ii) it does not group equal slices, which a later layer does; (iii) it does not read or change the notes or the slices.
+
+*Derived statements that speak to it.* (i) L2-S49. (ii) L2-S14. (iii) L2-S47.
+
+*Current-text axis.* (i) L2-S49: **AGREES** — L2 consumes no *"cadence type"*, and cadential confirmation is read from the proposed progression. (ii) L2-S14: **DIFFERS**. (iii) L2-S47: **AGREES** — *"L2 never re-derives an L1 fact."*
+
+*The difference, in both texts' own words.* (ii) The outgoing layer *"does **not** group equal slices"*, leaving it to a later layer; L2-S14 says *"Two adjacent spans never carry the same tonality and the same chord"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S49). (ii) **QUARANTINED.** *Audit question:* does the dormant decoder emit adjacent slices with the same chord, leaving their merging to a later layer? (iii) **ADOPTED — carried** (L2-S47).
+
+---
+
+**Row 6.26 — the type of a non-chord tone is not classified here.**
+
+*Outgoing statement.* "It does **not** classify the **type** of a non-chord tone (passing, neighbour, suspension, anticipation): naming the chord needs only the chord-tone-versus-non-chord-tone call; the type label is a separable later annotation." — §1 (locator: lines 88–89).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text makes *"the type label"* *"a separable later annotation"*; L2-S1's assignment is *"chord tone, or elaboration together with its relation"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder publish any elaboration relation, or only the chord-tone call?
+
+---
+
+**Row 6.27 — no analysis of voice leading across the progression.**
+
+*Outgoing statement.* "It does **not** analyse **voice-leading across the progression** (a separable, later concern)." — §1 (locator: line 90).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S24 reads L1's per-voice relations as evidence for an elaboration relation and analyzes no voice leading across the progression.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*.
+
+---
+
+**Row 6.28 — the local stepwise treatment of a note is one membership cue.**
+
+*Outgoing statement.* "It *does* use the **local** stepwise treatment of a note within its window — a note approached and left by step is embellishment-like — as one membership cue; that is a property of the single note in its window, not an analysis of the progression." — §1 (locator: lines 90–92).
+
+*Derived statements that speak to it.* L2-S24.
+
+*Current-text axis.* L2-S24: **AGREES** — *"The voice-leading evidence an elaboration relation needs is read from L1's per-voice relations."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S24).
+
+---
+
+**Row 6.29 — no chord re-derived from a pooled bag of several slices' notes.**
+
+*Outgoing statement.* "It does **not** re-derive a chord from a **pooled bag of several slices' notes**." — §1 (locator: line 93).
+
+*Derived statements that speak to it.* L2-S31 — one §6.3 names as NEAREST to material met (entry 1).
+
+*Current-text axis.* L2-S31: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text never re-derives a chord *"from a **pooled bag of several slices' notes**"*; L2-S31's span term reads *"the span's position, its content (sounding set, assignments, attachments)"* over a span that may hold several slices, the assignments deciding which of those notes count.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 6.133, where the same prohibition is stated at its home. *What was read:* the prohibition registered as a ruling (D-330), and L2-S31's span content read under the reading's assignments; whether the derived span term is the pooled recompute the prohibition names cannot be settled in one sentence at the two texts.
+
+---
+
+**Row 6.30 — the chords recognized are those built by stacking thirds.**
+
+*Outgoing statement.* "Any chord built by stacking thirds." — §1, *Which chords it recognizes* (locator: line 96).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text recognizes *"Any chord built by stacking thirds"*; L2-S4 names classes the vocabulary contains *"at least"*, among them *"the three augmented sixths"*, and holds its completeness **Open** (OQ-L2-1).
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which chord classes does the dormant decoder list, and does its list include the augmented sixths and the Neapolitan?
+
+---
+
+**Row 6.31 — the root is tried at every one of the twelve pitch classes.**
+
+*Outgoing statement.* "**the root** — the note the chord is built on (each of the twelve pitch classes is tried);" — §1, the first of the three pieces a chord is named in (locator: line 98).
+
+*Derived statements that speak to it.* L2-S27.
+
+*Current-text axis.* L2-S27: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing root is tried at *"each of the twelve pitch classes"*; L2-S27 decides the chord *"as degree, quality, figure and applied target, read against the span's tonality"*, the tonic spelled (L2-S1).
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.30.
+
+---
+
+**Row 6.32 — the basic qualities: four triads and six seventh chords.**
+
+*Outgoing statement.* "**the basic quality** — the pattern of thirds on that root: one of the four **triads** (major, minor, diminished, augmented) or the six **seventh chords** (dominant, major, minor, half-diminished, diminished-seventh, minor-major);" — §1, the second piece (locator: lines 99–100).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text names *"the six **seventh chords**"*, the minor-major among them; L2-S4 names *"the five seventh-chord qualities (dominant, major, minor, half-diminished, fully diminished)"* and adds *"the Neapolitan"* and *"the three augmented sixths"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.30.
+
+---
+
+**Row 6.33 — the added notes are read off the membership decision.**
+
+*Outgoing statement.* "**the added notes** — any sixth, ninth, eleventh, thirteenth, or altered tone above the basic quality, read off the membership decision (§5), not matched as a separate thing." — §1, the third piece (locator: lines 101–102).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing added notes are chord tones *"read off the membership decision"*; L2-S4 records that the annotation tradition writes a ninth and an eleventh as elaborations, so *"they reach L2 as elaboration assignments (L2-S8)"*, and leaves an added-sixth class to OQ-L2-1.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder report a sounding sixth, ninth or eleventh as a chord tone of an extended chord, and on what test?
+
+---
+
+**Row 6.34 — the recognized vocabulary: every quality by every root by the added notes found.**
+
+*Outgoing statement.* "So the recognized vocabulary is *(every quality) × (every root) × (whatever added notes membership finds)* — large by construction (`C6`, `Am7`, `Cmaj9`, `G7♭9`, …)." — §1 (locator: lines 104–105).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **DIFFERS** — as at Row 6.33.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.33.
+
+---
+
+**Row 6.35 — `C6` is a major chord whose chord tones include the sixth, not a stored type.**
+
+*Outgoing statement.* "`C6` is a major-quality chord on C whose chord tones happen to include the sixth; it is not stored anywhere as "`C6`."" — §1 (locator: lines 105–106).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text reads `C6` as a major chord with the sixth a chord tone; L2-S4 says *"Whether the vocabulary needs an added-sixth class separately is part of OQ-L2-1."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.33.
+
+---
+
+**Row 6.36 — the stored list is a catalogue of types.**
+
+*Outgoing statement.* "**The stored list is a catalogue of chord *types*, not of finished chords.**" — §1 (locator: line 108).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to a stored list.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what does the dormant decoder store as its candidate list, and how is it enumerated?
+
+---
+
+**Row 6.37 — one entry per quality, matched at every root and scored.**
+
+*Outgoing statement.* "It holds one entry per **quality** — an interval pattern such as *root, major third, perfect fifth* — matched at every root and scored." — §1 (locator: lines 108–110).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — its classes are admitted *"on every diatonic and chromatically altered degree"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S4).
+
+---
+
+**Row 6.38 — inversion and note order factored out; the bass tracked separately.**
+
+*Outgoing statement.* "**Inversion and note-order are factored out by construction:** a pattern is a *set* of intervals (order-independent), tried at the twelve roots, with the bass tracked separately, so neither multiplies the entries." — §1 (locator: lines 110–112).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S1 carries the figure as a field of the chord and states nothing about how candidates are enumerated.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.36.
+
+---
+
+**Row 6.39 — the added notes are kept out of the catalogue and recovered afterward.**
+
+*Outgoing statement.* "What is deliberately **not** in the catalogue is the added notes (sixths, ninths, suspensions): established practice finds that folding these into the chord vocabulary degrades recognition, so the standard recipe is **a small catalogue of basic types plus recovering the added notes afterward** (§14) — which is exactly this layer's membership decision." — §1 (locator: lines 112–115). Two claims: (i) sixths, ninths and suspensions are not chord types of the catalogue; (ii) the added notes are recovered afterward by the membership decision.
+
+*Derived statements that speak to it.* (i) L2-S4. (ii) L2-S4.
+
+*Current-text axis.* (i) L2-S4: **AGREES** — sixths, ninths and suspensions are not among its classes, the ninth reaching L2 as an elaboration. (ii) L2-S4: **DIFFERS** — as at Row 6.33.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S4). (ii) **QUARANTINED**, travelling with Row 6.33.
+
+---
+
+**Row 6.40 — non-tertian sonorities are not recognized.**
+
+*Outgoing statement.* "Non-tertian sonorities — quartal/quintal chords, secundal clusters, anything not expressible as stacked thirds." — §1, *Which chords it does NOT recognize* (locator: lines 117–118).
+
+*Derived statements that speak to it.* L2-S2.
+
+*Current-text axis.* L2-S2: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text excludes *"anything not expressible as stacked thirds"* by construction; L2-S2 says *"A reading type that some analyst writes and the rule does not admit is excluded only by a named ruling that carries the ceiling cost it imposes."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder admit any non-tertian sonority, and which annotated readings of the grading repertoire does the exclusion reach?
+
+---
+
+**Row 6.41 — a non-tertian passage is reported as the best-fitting tertian chord or marked uncertain.**
+
+*Outgoing statement.* "A passage genuinely in one of these is reported as the **best-fitting** recognized tertian chord — by the §5 fit score, not any separate distance measure — or marked "uncertain," never as the unrecognized construction." — §1 (locator: lines 118–120).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.40.
+
+---
+**Row 6.42 — minimality: settle only what the notes and the key decide, defer every separable sub-problem.**
+
+*Outgoing statement.* "Architectural Layer 4 settles only what the notes and the key preference decide, and **defers every separable sub-problem**: the unfixable symmetric-sonority root (→ the later function step), the non-chord-tone *type* (→ a later annotation), and voice-leading across the progression (→ a relational later concern)." — §2, *Minimality (the governing principle, stated once)* (locator: lines 124–127).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing layer *"defers every separable sub-problem"* — the symmetric root to *"the later function step"*, the non-chord-tone type to *"a later annotation"*; L2-S11 decides boundary, tonality, chord and assignments *"in the one decision"*, and L2-S1's assignment carries the elaboration *"together with its relation"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which sub-problems does the dormant decoder leave to later layers, and which of those does any later layer settle at the current commit?
+
+---
+
+**Row 6.43 — whatever can stand alone with its own evidence is not done here.**
+
+*Outgoing statement.* "Whatever can stand alone with its own evidence is not done here." — §2 (locator: line 127).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.42.
+
+---
+
+**Row 6.44 — all the note information, the notated spelling above all.**
+
+*Outgoing statement.* "Within its question the layer uses **all** the note information Architectural Layer 1 carries, most importantly the **notated spelling** (the tonal pitch class, `G♯` versus `A♭`), which names a chord's root where pitch class cannot — decisively for the symmetric sonorities." — §2, *Maximal information — use the notated spelling, not bare pitch class* (locator: lines 128–131).
+
+*Derived statements that speak to it.* L2-S32.
+
+*Current-text axis.* L2-S32: **AGREES** — the content term is *"falsified if the term reads an unspelled pitch class where the spelled pitch is available"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S32).
+
+---
+
+**Row 6.45 — the spelling is weighed, not trusted blindly.**
+
+*Outgoing statement.* "It is a strong-but-fallible signal (engraving can be expedient; a MIDI import may carry arbitrary spelling), so it is weighed, not trusted blindly, by the precedence ladder in §5." — §2 (locator: lines 131–132).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing spelling *"is weighed, not trusted blindly"*; L2-S10 says *"An event is a chord tone of a span only if its spelled pitch class is a member of the span's chord, spelled"*, an enharmonic allowance left to OQ-L2-1.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a design rule that the notated spelling is one weighed signal, against L2-S10, which makes spelled membership a condition of a chord tone; the two differ on the role of the spelling, and choosing a disposition would choose between them.
+
+---
+
+**Row 6.46 — the evidence the layer may use.**
+
+*Outgoing statement.* "The evidence it may use is the **notes** (which pitches sound, their notated spelling, their metric weight), the **key/mode** (a preference), and the **immediately neighbouring chords** (its own decisions, so an embellishment slice does not spawn a new symbol)." — §2, *Chord symbol and chord-tone membership only* (locator: lines 133–136).
+
+*Derived statements that speak to it.* L2-S31 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* L2-S31: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing layer may use the notes, *"the **key/mode** (a preference)"* and *"the **immediately neighbouring chords**"*; L2-S31's span term also reads *"the evidence at and inside it"* and its pair term *"the evidence at their shared boundary"*, with the tonality one of the reading's own fields.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which evidence does the dormant decoder read, and does it read L1's notated boundary evidence or cadence cues at all?
+
+---
+
+**Row 6.47 — no function, no cadence, no downstream result.**
+
+*Outgoing statement.* "It may **not** use function, cadence, or any already-decided downstream result." — §2 (locator: line 136).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — *"L2 consumes nothing L3 publishes"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S49).
+
+---
+
+**Row 6.48 — the notes primary; the key tips only a close reading; weaker when the key is uncertain.**
+
+*Outgoing statement.* "The notes are primary; the key preference tips a reading only when the notes leave it close (the precedence ladder, §5), and is itself weakened when Architectural Layer 3 marked the key "uncertain."" — §2, *The key is a preference, not a determinant* (locator: lines 137–139). Two claims: (i) the notes are primary and the key preference tips a reading only when the notes leave it close; (ii) the preference is weakened when the separate key layer marked the key uncertain.
+
+*Derived statements that speak to it.* (i) L2-S3. (ii) L2-S11.
+
+*Current-text axis.* (i) L2-S3: **AGREES** — the tonality–chord coupling is a finite cost, *"Not falsified by: a large finite cost"*. (ii) L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing preference is *"weakened when Architectural Layer 3 marked the key "uncertain.""*; L2-S11 decides the tonality with the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S3). (ii) **QUARANTINED**, travelling with Row 6.14(i).
+
+---
+
+**Row 6.49 — commit where the evidence decides; otherwise mark uncertain and name the open question.**
+
+*Outgoing statement.* "Where the evidence decides, it commits; where it does not, it records the competing readings, marks the slice "uncertain," and **names which question is open** — the root, the quality, or a specific note's membership." — §2, *Its output states its own certainty, and what is uncertain* (locator: lines 140–142).
+
+*Derived statements that speak to it.* L2-S44.
+
+*Current-text axis.* L2-S44: **DIFFERS** — as at Row 6.16.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.16.
+
+---
+
+**Row 6.50 — the window extends while the neighbors support one consistent reading.**
+
+*Outgoing statement.* "The window starts at the slice and its immediate neighbours and extends across contiguous neighbouring slices **while they continue to support one consistent chord reading**, stopping at the first slice whose notes are inconsistent with that reading." — §2, *It reads each slice with a window that extends only as far as the slice's own chord* (locator: lines 143–145).
+
+*Derived statements that speak to it.* L2-S31 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* L2-S31: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing window stops *"at the first slice whose notes are inconsistent with that reading"*; L2-S31 says *"Span length is a variable of the reading, not a fixed grid"*, decided with the reading.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* how does the dormant decoder bound the window it reads each slice with, and on what stop test?
+
+---
+
+**Row 6.51 — the window never reaches past the first inconsistent slice; the next chord is progression reasoning.**
+
+*Outgoing statement.* "That first inconsistent boundary is the operational meaning of "the slice's chord is now fully in view"; the window never reaches past it, because the *next* chord is progression reasoning and belongs to Architectural Layer 5." — §2 (locator: lines 145–148).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text places *"the *next* chord"* in *"progression reasoning"* that *"belongs to Architectural Layer 5"*; L2-S34 carries in L2's candidate score *"Progression: a term on the pair of adjacent chords *read as degrees in their tonalities*"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.50.
+
+---
+
+**Row 6.52 — the window must not assume a neighbor slice exists.**
+
+*Outgoing statement.* "The window must **not assume a neighbour slice exists.**" — §2, *Bounded context at the selection edge* (locator: lines 149–150).
+
+*Derived statements that speak to it.* L2-S22 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — *"At the edge of the working span, L2's tonality (and the rest of its reading) depends on music before and after the span."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 6.53 — at the selection edge, request an extension; at the score boundary, proceed truncated.**
+
+*Outgoing statement.* "When it would reach beyond the currently-loaded span — at the edge of the user's selection — Architectural Layer 4 either **requests an extension** (one harmony's worth, the same bound as the stop condition above) or, if Architectural Layer 1 reports the **score boundary**, proceeds with the truncated window." — §2 (locator: lines 151–153). Two claims: (i) at the selection edge the layer requests an extension, and at the score boundary it proceeds with what it has; (ii) the extension requested is one harmony's worth, the window's own bound.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S22: **AGREES** — *"L2 is the layer that asks for more music"*, and a stop at the record edge does not falsify it. (ii) **THE DERIVATION IS SILENT** — L2-S22 names no increment.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22). (ii) **QUARANTINED.** *Audit question:* does the dormant decoder request an extension at a selection edge, and of what size?
+
+---
+
+**Row 6.54 — a slice at the edge of a selection reaches for the missing context.**
+
+*Outgoing statement.* "A slice at the very start or end of the piece simply has one fewer neighbour; a slice at the edge of a *selection* (not of the score) reaches for the missing context rather than guessing without it." — §2 (locator: lines 153–155).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — L2 asks for more music until its in-span publication stops changing, and stops at the record edge.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 6.55 — the layer is built to bounded context, never to a whole score always loaded.**
+
+*Outgoing statement.* "This contract is fixed now so the layer is built to bounded context, never to "the whole score is always loaded."" — §2 (locator: line 155).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 6.54.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 6.56 — a notated structural boundary is a second reason the window should not read across.**
+
+*Outgoing statement.* "A *notated* structural/phrase boundary — a double bar, a fermata, an all-voice rest — read from the **Layer-1.5 phrase-boundary primitive** (§0; its texture strength profile — never Layer 6's assembled punctuation-span (§0), which is downstream) is a second, **surface** reason the embellishment/neighbour window should not read across: a neighbour slice *after* a phrase end is not context for the chord *before* it." — §2, *A strong texture boundary truncates the window* (locator: lines 158–161).
+
+*Derived statements that speak to it.* L2-S13.
+
+*Current-text axis.* L2-S13: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text holds that *"a neighbour slice *after* a phrase end is not context for the chord *before* it"*; L2-S13 says *"No flag forces or forbids a boundary"* and reads the evidence as bearing on *"the likelihood of a boundary *near* the flag"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a recorded architectural consideration, not built, that a notated boundary truncates the reading's context, against L2-S13, which admits the notated evidence only as terms; the text records it as not yet a rule of the built decoder, so neither quarantining it nor proposing it can be defended in one sentence.
+
+---
+
+**Row 6.57 — a window-truncation prior, and the wide context kept in the key layer.**
+
+*Outgoing statement.* "It would enter as a **window-truncation prior**, not as wide phrase-length context (which stays in Architectural Layer 3 and feeds forward as a preference, §8)." — §2 (locator: lines 162–163). Two claims: (i) the notated boundary would enter as a prior, not as a rule; (ii) wide phrase-length context stays in the key layer and feeds forward as a preference.
+
+*Derived statements that speak to it.* (i) L2-S13. (ii) L2-S11.
+
+*Current-text axis.* (i) L2-S13: **AGREES** — *"L1's notated boundary evidence enters as terms on a boundary reading"*. (ii) L2-S11: **DIFFERS** — as at Row 6.24.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S13). (ii) **QUARANTINED**, travelling with Row 6.14(i).
+
+---
+
+**Row 6.58 — only strong, texture-level boundaries qualify.**
+
+*Outgoing statement.* "Only strong, **texture-level** boundaries qualify (a lone per-part breath does not — see the primitive's marker-scope refinement, `cowork_phrase_boundary_design.md` §11-5)." — §2 (locator: lines 163–165).
+
+*Derived statements that speak to it.* L2-S13.
+
+*Current-text axis.* L2-S13: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text admits *"Only strong, **texture-level** boundaries"*; L2-S13 reads *"the flags with their scope, the positioned marks and the per-voice relations"* as terms whose weight the fit sets.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 6.56. *What was read:* as at Row 6.56.
+
+---
+
+**Row 6.59 — the consideration is recorded and not built.**
+
+*Outgoing statement.* "Recorded as a proper-layer consideration; per the standing rule, not built until the inference phase opens." — §2 (locator: lines 165–166).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 6.60 — the layer is judged by accuracy measurement; snapshots refreshed only after a confirmed change.**
+
+*Outgoing statement.* "**It changes analysis output** (unlike Architectural Layers 1 and 2), so it is judged by accuracy measurement, not by identical output; the pinned analysis snapshots are refreshed only after a change is confirmed correct." — §2 (locator: lines 167–168).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 6.61 — any size and any style; the structure assumes no style.**
+
+*Outgoing statement.* "**Works on the user's selected music, at any size and in any style** (its *structure* assumes no style)." — §2 (locator: line 169). Two claims: (i) it works on the user's selected music at any size; (ii) its structure assumes no style.
+
+*Derived statements that speak to it.* (i) L2-S48. (ii) None.
+
+*Current-text axis.* (i) L2-S48: **AGREES** — *"L2's publication covers exactly the working span."* (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S48). (ii) **ADOPTED — proposed.** *Proposal:* that L2's structure — its admission rule and the forms of its terms — assume no style, style entering only through fitted values.
+
+---
+
+**Row 6.62 — the style preset as a weak preference on the likely chord vocabulary.**
+
+*Outgoing statement.* "The style preset enters as a **weak preference on the likely chord vocabulary** — Baroque expects triads and sevenths; Jazz raises the extended and altered chords; "Standard" sits between." — §2 (locator: lines 169–171).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to a style preset.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder read the style preset, and does any inference on the production arm read it?
+
+---
+
+**Row 6.63 — the preset's preference as a bounded additive adjustment.**
+
+*Outgoing statement.* "The hand-off between preset and notes has a stated structure: the preference is a **bounded additive adjustment** to a candidate's §5 fit score (its magnitude a precision-phase constant), so it can reorder only readings whose note-fit difference is **smaller than that bound** — that is the operational meaning of "overridden by clear note evidence": wherever the note-fit difference exceeds the preference's bounded weight, the notes decide and the preset cannot flip the reading (the same shape as the §5 key preference)." — §2 (locator: lines 171–176).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.62.
+
+---
+
+**Row 6.64 — the layer does not notice edits to the music; staleness is the caller's decision.**
+
+*Outgoing statement.* "**It does not notice score edits** — deciding the analysis is stale is the caller's job." — §2 (locator: line 177).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that L2 not detect edits to the notated record, the decision that a published reading is stale belonging to its caller.
+
+---
+
+**Row 6.65 — what the layer reads.**
+
+*Outgoing statement.* "**What it reads (inputs):** the slices from Architectural Layer 2; the notes from Architectural Layer 1 (each slice's pitches, their notated spelling, their metric weight, and the immediately neighbouring slices); the key/mode from Architectural Layer 3 (the chosen key plus its competing keys and "uncertain" mark) as a preference; its own neighbouring chord decisions (for embellishment context); the style preset; and its own tunable settings." — §3 (locator: lines 181–184). Five claims: (i) the slices and the notes from the layers below; (ii) the key/mode from a separate key layer, with its competing keys and uncertain mark, as a preference; (iii) its own neighboring chord decisions; (iv) the style preset; (v) its own tunable settings.
+
+*Derived statements that speak to it.* (i) L2-S47. (ii) L2-S11. (iii) L2-S30. (iv) None. (v) None.
+
+*Current-text axis.* (i) L2-S47: **AGREES** — L2 reads the slices and events as L1 and L0 publish them and never re-derives them. (ii) L2-S11: **DIFFERS** — as at Row 6.24. (iii) L2-S30: **AGREES** — the chord terms read *"the neighbouring spans' readings (the progression)"*. (iv) **THE DERIVATION IS SILENT**. (v) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S47). (ii) **QUARANTINED**, travelling with Row 6.14(i). (iii) **ADOPTED — carried** (L2-S30). (iv) **QUARANTINED**, travelling with Row 6.62. (v) **QUARANTINED.** *Audit question:* which of the dormant decoder's settings are hand-set and which are fitted, at the current commit?
+
+---
+
+**Row 6.66 — the operation: one result per slice.**
+
+*Outgoing statement.* "*Name the chord-and-membership for each slice* — given the slices, the notes, and the key, return one result per slice: the chosen symbol, its chord-tone set, its non-chord-tone set, the competing readings, a confidence, and the "uncertain" mark with its open-question label." — §3, *What it offers* (locator: lines 188–190).
+
+*Derived statements that speak to it.* L2-S45 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S45: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing operation returns *"one result per slice: the chosen symbol, ... a confidence, and the "uncertain" mark"*; L2-S45 publishes *"the segmentation, the tonality per span, the chord per span, the assignments per event, and the rivals with their mass"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what record does the dormant decoder return, field by field, and what reads it?
+
+---
+
+**Row 6.67 — the operation: re-name a sub-range after a small edit.**
+
+*Outgoing statement.* "*Re-name a sub-range* — re-run the naming over part of the sequence after a small edit, consistent with the incremental contract of the layers below." — §3 (locator: lines 191–192).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder offer a sub-range re-run, and does its result equal a fresh run over the whole?
+
+---
+
+**Row 6.68 — the consumers: the function layer, the grouping layer, the later settling step.**
+
+*Outgoing statement.* "**Who uses it (consumers):** Architectural Layer 5 (function — reads each slice's chord symbol *in* the key); Architectural Layer 6 (grouping — merges adjacent slices carrying the same chord-and-membership); and the later function step that resolves the slices marked "uncertain."" — §3 (locator: lines 194–196).
+
+*Derived statements that speak to it.* L2-S14.
+
+*Current-text axis.* L2-S14: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing grouping layer *"merges adjacent slices carrying the same chord-and-membership"*; L2-S14 says *"Two adjacent spans never carry the same tonality and the same chord"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.25(ii).
+
+---
+
+**Row 6.69 — what the layer deliberately does not read.**
+
+*Outgoing statement.* "**What it deliberately does not read:** function, cadences, or any already-decided downstream result fed back to it." — §3 (locator: line 198).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 6.47.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S49).
+
+---
+
+**Row 6.70 — the slices read left to right, each within its window.**
+
+*Outgoing statement.* "Read the slices left to right, each within its window (§2)." — §4 (locator: line 206).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing layer reads *"the slices left to right, each within its window"*; L2-S1 says *"The search's unit is the whole reading, not a span."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.6(ii).
+
+---
+
+**Row 6.71 — list every tertian chord the pitches could spell, each scored by fit.** *WITHHELD — D-329.*
+
+*Outgoing statement.* "**List the possible chords.** From the slice's pitches, generate **every** tertian chord the pitches could spell — each basic type at each root — and score each by how well the pitches fit it." — §4, step 1 (locator: lines 208–210). Two claims: (i) every tertian chord the pitches could spell is listed, each basic type at each root; (ii) each is scored by how well the pitches fit it.
+
+*Derived statements that speak to it.* (i) L2-S2. (ii) L2-S32.
+
+*Current-text axis.* (i) L2-S2: **AGREES** — the admission rule is a closure test, and a reading the search cannot reach cannot be found. (ii) L2-S32: **AGREES** — *"The span content term rates how the span's events, under the reading's assignments, fit the chord in its spelled form."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S2). (ii) **ADOPTED — carried** (L2-S32).
+
+---
+
+**Row 6.72 — completeness is the priority; a chord never listed can never be chosen.** *WITHHELD — D-329.*
+
+*Outgoing statement.* "**Completeness is the priority:** a chord never listed can never be chosen, and the measured dominant error is "the right chord was never on the list," not "the wrong one was picked among good options."" — §4, step 1 (locator: lines 210–212). Two claims: (i) completeness is the priority, since a chord never listed can never be chosen; (ii) the measured dominant error is an unlisted chord, not a mis-ranked one.
+
+*Derived statements that speak to it.* (i) L2-S2. (ii) None.
+
+*Current-text axis.* (i) L2-S2: **AGREES** — *"only the ceiling is the admission rule's to fix"*, the charter holding that a reading the search cannot reach cannot be found. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S2). (ii) **QUARANTINED.** *Audit question:* at the current commit, is the dominant chord error of the production decoder an unlisted candidate rather than a mis-ranked one, measured on which corpus?
+
+---
+
+**Row 6.73 — a candidate implies which notes are chord tones; each left-over note is judged.**
+
+*Outgoing statement.* "**Decide membership together with the symbol.** A candidate chord implies which notes are chord tones and which are left over; each left-over note is judged chord-tone versus non-chord-tone by the rule in §5." — §4, step 2 (locator: lines 214–215).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **AGREES** — the assignments are made *"relative to each candidate reading's chord"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S23).
+
+---
+
+**Row 6.74 — the symbol and the membership chosen together; the membership feeds back into the candidate score.**
+
+*Outgoing statement.* "The symbol and the membership are chosen together — the reading that best explains the slice as *a chord plus its embellishments* — and the membership feeds back into the score (a reading that needs implausible chord tones, defined in §5, is penalised)." — §4, step 2 (locator: lines 215–218). Two claims: (i) the symbol and the membership are chosen together; (ii) the membership feeds back into the candidate score, a reading needing implausible chord tones penalized.
+
+*Derived statements that speak to it.* (i) L2-S23. (ii) L2-S32.
+
+*Current-text axis.* (i) L2-S23: **AGREES**. (ii) L2-S32: **AGREES** — *"Chord tones, elaborations and the absence of chord members each contribute."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S23). (ii) **ADOPTED — carried** (L2-S32).
+
+---
+
+**Row 6.75 — a chord tone above the basic triad or seventh is the added note.**
+
+*Outgoing statement.* "The added notes fall out of this: a chord tone above the basic triad or seventh *is* the sixth/ninth." — §4, step 2 (locator: line 218).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **DIFFERS** — as at Row 6.33.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.33.
+
+---
+
+**Row 6.76 — commit, inherit, or abstain.**
+
+*Outgoing statement.* "Pick the highest-scoring chord-and-membership and test it against the two certainty conditions in §5: if the slice has enough independent chord tones and a clear-enough winner, **commit** it; if it does not have enough notes to fix a chord but its notes are consistent with the prevailing chord, **inherit** the prevailing chord; otherwise **abstain** — mark "uncertain," name the open question, and carry the competing readings." — §4, step 3, *Commit, inherit, or abstain* (locator: lines 219–222).
+
+*Derived statements that speak to it.* L2-S44.
+
+*Current-text axis.* L2-S44: **DIFFERS** — as at Row 6.16.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.16.
+
+---
+
+**Row 6.77 — a new symbol is never committed from too few notes.**
+
+*Outgoing statement.* "**A new symbol is never committed from too few notes** (this is the rule the phantom-root defect violated)." — §4, step 3 (locator: lines 223–224).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing rule is *"A new symbol is never committed from too few notes"*; L2-S10 says *"A chord is admissible over a span whose sounding set lacks its root, or lacks its third"*, with no count of sounding chord tones.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a design rule the text records as the correction of a named defect, against L2-S10, which admits a chord over a thinly sounding span and leaves the choice to the candidate score; the two differ on whether a thin span may carry a new chord, and choosing a disposition would choose between them.
+
+---
+
+**Row 6.78 — the neighbor dependency settled in two readings.**
+
+*Outgoing statement.* "Membership and the inherit/abstain test both need the neighbouring chords, which are this layer's own output — a chicken-and-egg, resolved in two readings." — §4, *The first and second readings* (locator: lines 226–227).
+
+*Derived statements that speak to it.* L2-S33.
+
+*Current-text axis.* L2-S33: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing dependency is *"resolved in two readings"*; L2-S33's elaboration term *"reads that adjacent span's candidate reading"* inside the one candidate score, the pair term carrying *"the elaborations that cross the boundary"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder run a first and a second reading, and what does the second change at the current commit?
+
+---
+
+**Row 6.79 — the first reading names each slice from its own pitches and the key alone.**
+
+*Outgoing statement.* "The **first reading** names each slice from its own pitches and the key preference **alone** (there are no decided neighbours yet, so neither the prevailing-chord preference nor the inheritance fallback applies)." — §4 (locator: lines 227–229).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.78.
+
+---
+
+**Row 6.80 — the second reading re-decides each slice with provisional neighbors on both sides.**
+
+*Outgoing statement.* "The **second reading** re-decides each slice using the now-available provisional neighbours on **both** sides — which is what passing-tone detection and the inheritance fallback need (a passing tone is defined by the chord it leaves *and* the chord it resolves to)." — §4 (locator: lines 229–231).
+
+*Derived statements that speak to it.* L2-S33.
+
+*Current-text axis.* L2-S33: **AGREES** — an elaboration whose anchor lies in an adjacent span is judged against that span's candidate reading.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.78.
+
+---
+
+**Row 6.81 — the prevailing-chord preference and the inheritance fallback act only on the second reading.**
+
+*Outgoing statement.* "The prevailing-chord preference and the "inherit on insufficiency" fallback therefore act **only on the second reading**; a phantom named on a thin slice in the first reading is corrected to the prevailing chord (or to "uncertain") in the second." — §4 (locator: lines 231–233).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.78.
+
+---
+
+**Row 6.82 — one refinement reading is the baseline; a bounded-window alternative is later.**
+
+*Outgoing statement.* "One refinement reading is the baseline; a more precise bounded-window alternative is a flagged later refinement (§15)." — §4 (locator: lines 233–234). Two claims: (i) one refinement reading is the baseline; (ii) a bounded-window alternative is a flagged later refinement.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 6.78. (ii) **HISTORICAL.**
+
+---
+
+**Row 6.83 — the neighbor chords as context, never a transition cost or a progression grammar.**
+
+*Outgoing statement.* "This stays inside the layer: it uses the neighbour chords *as context*, never a chord-to-chord transition cost or progression grammar (that is Architectural Layer 5)." — §4 (locator: lines 236–237).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing layer uses the neighbor chords *"never a chord-to-chord transition cost or progression grammar"*; L2-S34 carries *"Progression: a term on the pair of adjacent chords *read as degrees in their tonalities*"* whose weights are fitted.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder charge any cost between adjacent chords, and does anything on the production arm charge one?
+
+---
+
+**Row 6.84 — match every type at every root; credit present tones; a missing tone a mild shortfall; an extra note to the membership decision.**
+
+*Outgoing statement.* "**Listing the possible chords.** Match the sounding notes against each basic chord type at each root, producing the candidates the notes could express, each with a **fit score**: present chord tones credited, a chord tone absent from the slice counted as a *mild* shortfall (smaller than a wrong note, so an incomplete chord still matches its plausible completions rather than failing), and a sounding note not in the candidate carried to the membership decision rather than scored as a wrong pitch." — §5, item 1 (locator: lines 243–247). Three claims: (i) the sounding notes are matched against each basic type at each root; (ii) present chord tones are credited and an absent one is a mild shortfall, smaller than a wrong note; (iii) a sounding note not in the candidate goes to the membership decision rather than being scored as a wrong pitch.
+
+*Derived statements that speak to it.* (i) L2-S4. (ii) L2-S32. (iii) L2-S32.
+
+*Current-text axis.* (i) L2-S4: **AGREES** — as at Row 6.37. (ii) L2-S32: **AGREES** — *"The coverage part is a cost, never a requirement (L2-S10)."* (iii) L2-S32: **AGREES** — the span's events are rated *"under the reading's assignments"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S4). (ii) **ADOPTED — carried** (L2-S32). (iii) **ADOPTED — carried** (L2-S32).
+
+---
+
+**Row 6.85 — added notes are not candidate types; they come out of membership.**
+
+*Outgoing statement.* "Added notes (sixths, ninths) are not candidate types — they come out of membership." — §5, item 1 (locator: lines 247–248). Two claims: (i) added notes are not candidate types; (ii) they come out of the membership decision.
+
+*Derived statements that speak to it.* (i) L2-S4. (ii) L2-S4.
+
+*Current-text axis.* (i) L2-S4: **AGREES** — as at Row 6.39(i). (ii) L2-S4: **DIFFERS** — as at Row 6.33.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S4). (ii) **QUARANTINED**, travelling with Row 6.33.
+
+---
+
+**Row 6.86 — the key preference, and the prevailing-chord preference on the second reading.**
+
+*Outgoing statement.* "**The key and prevailing-chord preferences.** Adjust each candidate's score by the key (a lean toward diatonic chords *only* when the notes leave readings close; weaker when the key is itself "uncertain") and, on the second reading, by the prevailing chord (a lean toward continuing the current chord across a metrically weak slice)." — §5, item 2 (locator: lines 249–251). Three claims: (i) a lean toward diatonic chords only when the notes leave readings close; (ii) weaker when the key is itself uncertain; (iii) on the second reading, a lean toward continuing the current chord across a metrically weak slice.
+
+*Derived statements that speak to it.* (i) L2-S3. (ii) L2-S11. (iii) L2-S34.
+
+*Current-text axis.* (i) L2-S3: **AGREES** — as at Row 6.48(i). (ii) L2-S11: **DIFFERS** — as at Row 6.48(ii). (iii) L2-S34: **DIFFERS**.
+
+*The difference, in both texts' own words.* (iii) The outgoing preference is *"a lean toward continuing the current chord across a metrically weak slice"*; L2-S34 is falsified *"if any term rewards the previous root continuing"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S3). (ii) **QUARANTINED**, travelling with Row 6.14(i). (iii) **QUARANTINED.** *Audit question:* does the dormant decoder add a lean toward the prevailing chord, and does that lean reward the previous root continuing?
+
+---
+
+**Row 6.87 — each sounding note judged a chord tone or an embellishment from its melodic motion.**
+
+*Outgoing statement.* "The question for each sounding note is whether it behaves as a **chord tone** or as an **embellishment** (a non-chord tone), read from its melodic motion within the window." — §5, item 3 (locator: lines 253–255).
+
+*Derived statements that speak to it.* L2-S24.
+
+*Current-text axis.* L2-S24: **AGREES** — as at Row 6.28.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S24).
+
+---
+
+**Row 6.88 — stepwise structure decides, in three tiers, and metric weight enters only at the third.**
+
+*Outgoing statement.* "The decisive signal is **stepwise structure**, in three tiers — and metric weight enters **only** at the third:" — §5, item 3 (locator: lines 255–256).
+
+*Derived statements that speak to it.* L2-S25.
+
+*Current-text axis.* L2-S25: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing *"decisive signal is **stepwise structure**"*, metric weight entering *"**only** at the third"* tier; L2-S25 says *"Duration and metric position bear on an assignment as terms (covariates). Neither decides it"*, their weights measured.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* the three-tier membership rule, whose structure the same document records as fixed (its §15, O3), against L2-S25, where metric position bears on an assignment as a term of the candidate score and decides nothing; the two differ on whether a fixed rule or the fitted candidate score decides a note's membership, and choosing a disposition would choose between them.
+
+---
+
+**Row 6.89 — the first tier: a stepwise-embellishing note is a non-chord tone even on a strong beat.**
+
+*Outgoing statement.* "A note approached **and** left by step between chord tones (a passing or neighbour tone), or held over from the previous chord and resolving down by step into a chord tone (a suspension), is a non-chord tone — *even on a strong beat*." — §5, item 3, the first tier (locator: lines 257–259).
+
+*Derived statements that speak to it.* L2-S25.
+
+*Current-text axis.* L2-S25: **AGREES** — *"no duration cut and no metric position makes a note a chord tone or an elaboration"*, and the passing, neighbor and suspension relations are defined by approach and departure (L2-S24's defense).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S25).
+
+---
+
+**Row 6.90 — the second tier: a note reached and left by leap is a chord tone even when weak.**
+
+*Outgoing statement.* "A note reached **and** left by leap is a structural member — an arpeggiated chord tone — *even when metrically weak*." — §5, item 3, the second tier (locator: lines 261–262).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S8 lists the relations admitted and leaves appoggiatura and escape tone open, and says nothing of a note leapt to and from.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that a note reached and left by leap admit no elaboration relation, so that it is a chord tone of the span whatever its metric position.
+
+---
+
+**Row 6.91 — the third tier: the one-sided case decided by metric weight and the prevailing chord.**
+
+*Outgoing statement.* "An appoggiatura (leapt to, resolved by step), an escape tone (approached by step, left by leap), or an incomplete neighbour: a note foreign to a **clear prevailing chord** that is **metrically weak**, or that resolves by step into a chord tone, is a non-chord tone; a **metrically asserted** (strong or sustained) note consonant with the candidate is a chord-tone extension." — §5, item 3, the third tier (locator: lines 264–268).
+
+*Derived statements that speak to it.* L2-S8.
+
+*Current-text axis.* L2-S8: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text decides an appoggiatura or an escape tone by metric weight, a *"**metrically asserted**"* consonant note being *"a chord-tone extension"*; L2-S8 says whether *"appoggiatura, escape tone, pedal point, retardation, and an explicit "unclassified elaboration" are admitted as well is a ruling the charter's wording leaves to the user (OQ-L2-4 ★)"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 6.88. *What was read:* the third tier of the three-tier rule, against L2-S8's open question on those relations; as at Row 6.88.
+
+---
+
+**Row 6.92 — the thresholds are tunable; the three-tier rule is fixed.**
+
+*Outgoing statement.* "(What counts as "a step," "weak," and "a clear prevailing chord" are tunable thresholds; the three-tier rule itself is fixed.)" — §5, item 3 (locator: lines 271–272). Two claims: (i) what counts as a step, as weak and as a clear prevailing chord are tunable thresholds; (ii) the three-tier rule itself is fixed.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S25.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S25: **DIFFERS** — as at Row 6.88.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 6.65(v). (ii) **UNPLACED**, travelling with Row 6.88. *What was read:* as at Row 6.88.
+
+---
+
+**Row 6.93 — an extra note classified a chord tone simply is the extension.**
+
+*Outgoing statement.* "The added notes (6th/9th/…) fall out of this — an extra note classified a chord tone simply *is* the extension." — §5, item 3 (locator: lines 272–273).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **DIFFERS** — as at Row 6.33.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.33.
+
+---
+
+**Row 6.94 — the plausibility check: a template tone behaving as an embellishment makes the candidate implausible.**
+
+*Outgoing statement.* "A candidate's own chord tones are run through the identical classification: a template tone that behaves as an embellishment (tier 1, stepwise-embellishing) makes the candidate **implausible** — it is forcing a passing tone to be a chord member (the reading that hears the passing `D` of `C–E–G–D` as a chord tone of `Cadd9`, or the passing seventh of a triad as a real seventh)." — §5, item 3, *The same test applied to a required (template) tone is the plausibility check* (locator: lines 275–279).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing template tone that behaves as an embellishment *"makes the candidate **implausible**"*; L2-S10 says *"Membership does not imply chord tone, since a consonant elaboration is admitted"*, a chord member assigned elaboration not falsifying it.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder run its own chord tones through the membership test, and how does it penalize a candidate whose chord tone behaves as an embellishment?
+
+---
+
+**Row 6.95 — a candidate needing many implausible chord tones is penalized.**
+
+*Outgoing statement.* "A candidate needing many such implausible chord tones is penalised; this is the "**implausible chord tones**" penalty named in §4 step 2, and it is exactly what discriminates `C` from `Cadd9` and a triad from a spurious seventh." — §5, item 3 (locator: lines 279–281).
+
+*Derived statements that speak to it.* L2-S32.
+
+*Current-text axis.* L2-S32: **AGREES** — as at Row 6.74(ii).
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.94.
+
+---
+
+**Row 6.96 — sufficiency: at least three distinct chord-tone pitch classes.**
+
+*Outgoing statement.* "The one test: at least **three distinct pitch classes** that are chord tones of the candidate (doublings not counted), after the window has gathered and membership has removed the non-chord tones." — §5, item 4, *Sufficiency* (locator: lines 285–287).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **DIFFERS** — as at Row 6.77.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder's sufficiency test count three distinct chord-tone pitch classes after membership, and how often does it fail on annotated chords?
+
+---
+
+**Row 6.97 — margin: the chosen reading beats the best different reading by more than the certainty margin.**
+
+*Outgoing statement.* "**Margin** — does the chosen reading beat the best *different* (root, quality) reading by more than the certainty margin?" — §5, item 4 (locator: lines 288–289).
+
+*Derived statements that speak to it.* L2-S43 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S43: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing slice is committed only where the chosen reading beats *"the best *different* (root, quality) reading by more than the certainty margin"*; L2-S43 publishes equally scored readings *"with equal mass"*, the principal *"chosen between them by a declared, deterministic rule"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.76.
+
+---
+
+**Row 6.98 — a slice passing both conditions is committed.**
+
+*Outgoing statement.* "A slice that passes **both** is **committed**." — §5, item 4 (locator: line 290).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.76.
+
+---
+
+**Row 6.99 — a slice failing sufficiency but consistent with the prevailing chord inherits it.**
+
+*Outgoing statement.* "A slice that fails **sufficiency** but whose notes are all consistent with the prevailing chord (each sounding note is one of its chord tones or a stepwise embellishment of it) **inherits** the prevailing chord." — §5, item 4 (locator: lines 290–292).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.76.
+
+---
+
+**Row 6.100 — any other slice is marked uncertain, the open question named.**
+
+*Outgoing statement.* "Any other slice — failing sufficiency with no consistent prevailing chord, or passing sufficiency but failing margin — is marked **"uncertain,"** with the open question named (root, quality, or a specific note's membership) and the competing readings carried." — §5, item 4 (locator: lines 292–294).
+
+*Derived statements that speak to it.* L2-S44.
+
+*Current-text axis.* L2-S44: **DIFFERS** — as at Row 6.16.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.76.
+
+---
+
+**Row 6.101 — the notated spelling names a symmetric chord's root.**
+
+*Outgoing statement.* "A symmetric diminished-seventh or augmented chord has no pitch-class-defined root — every rotation is equally spaced — but the **notated spelling** usually names it: spelled `G♯–B–D–F` it is `G♯` diminished-seventh, spelled `A♯–C♯–E–G` it is `A♯`." — §5, *Symmetric sonorities* (locator: lines 296–299).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **AGREES** — membership is spelled, so the spelling separates the rotations.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S10).
+
+---
+
+**Row 6.102 — the root pinned from the spelling where it passes the stated test.**
+
+*Outgoing statement.* "So the layer reads the spelling and **pins the root from it** where the spelling passes the stated test (verified at the as-built decoder), all three parts required:" — §5 (locator: lines 299–300).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **AGREES** — as at Row 6.101.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the dormant decoder's spelling pin reachable, how often does it fire, and on which sonorities, at the current commit?
+
+---
+
+**Row 6.103 — the pin's first condition: every sounding tone carries a valid spelling.**
+
+*Outgoing statement.* "(1) **present** — every sounding tone of the rotation set carries a valid notated spelling;" — §5 (locator: line 301).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.102.
+
+---
+
+**Row 6.104 — the pin's second condition: no pitch class spelled two ways.**
+
+*Outgoing statement.* "(2) **internally consistent** — no two sounding notes of the same pitch class are spelled differently (a slice sounding both `G♯` and `A♭` fails);" — §5 (locator: lines 302–303).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.102.
+
+---
+
+**Row 6.105 — the pin's third condition: the spelled letters stack in thirds on exactly one member.**
+
+*Outgoing statement.* "(3) **a clean stack of thirds** — the spelled letters, sorted, form the stacked-thirds pattern on exactly one member, which is then the root." — §5 (locator: lines 304–305).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.102.
+
+---
+
+**Row 6.106 — the pin is deterministic.**
+
+*Outgoing statement.* "The pin is deterministic (the spelling does not move with the key, so no rotation churn arises)." — §5 (locator: line 306).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.102.
+
+---
+
+**Row 6.107 — failing the test, the root is deferred to the later function step.**
+
+*Outgoing statement.* "Failing **any** part of the test — a spelling absent, a same-pitch-class contradiction, or letters that do not stack in thirds on any member (that is what "contradicts the other evidence" means: the spelling contradicts *itself as a chord spelling*) — the layer defers: name the quality and bass, carry the rotations, mark "uncertain" (open question: the root), and leave the re-spelling judgment to the later function step." — §5 (locator: lines 306–311).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 6.21, the root left to *"the later function step"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.102.
+
+---
+
+**Row 6.108 — an incomplete chord named from the evidence the layer owns, in order.**
+
+*Outgoing statement.* "The layer names it from the evidence it owns, in this order: (1) **matching even when notes are missing** lists the chords the dyad could complete to (step 1's mild-shortfall scoring); (2) the **key preference** picks the likely quality from the root's scale degree when the sounding notes fit it; (3) on the second reading, the **inheritance fallback** (step 4) keeps a dyad that is really an embellishment of the prevailing chord from spawning a new symbol; (4) the **bass** anchors the inversion and the **metric weight** informs membership." — §5, *Incomplete chords* (locator: lines 314–318). Four claims: (i) matching lists the chords a dyad could complete to; (ii) the key preference picks the likely quality from the root's scale degree; (iii) the inheritance fallback, on the second reading, keeps an embellishing dyad from spawning a new symbol; (iv) the bass anchors the inversion and the metric weight informs membership.
+
+*Derived statements that speak to it.* (i) L2-S10. (ii) L2-S34. (iii) None. (iv) L2-S28 and L2-S25.
+
+*Current-text axis.* (i) L2-S10: **AGREES** — *"A chord is admissible over a span whose sounding set lacks its root, or lacks its third."* (ii) L2-S34: **AGREES** — its family (ii), *"The tonality–chord cost"*, rates a chord against the span's tonality. (iii) **THE DERIVATION IS SILENT**. (iv) L2-S28: **AGREES** — *"The candidate score has a term relating the figure to the lowest sounding pitch of each slice of the span"*; L2-S25: **AGREES** — metric position bears on an assignment as a covariate.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S10). (ii) **ADOPTED — carried** (L2-S34). (iii) **QUARANTINED**, travelling with Row 6.78. (iv) **ADOPTED — carried** (L2-S28, L2-S25).
+
+---
+
+**Row 6.109 — where these do not decide, the slice is marked uncertain.**
+
+*Outgoing statement.* "Where these decide, the chord is named or inherited; where they do not — a lone scale-degree pitch, or a bass-sharing pair whose reading turns on function (`iii`↔`I6`, `V6`↔`vii°`) — the slice is marked "uncertain" with the open question named." — §5 (locator: lines 318–321).
+
+*Derived statements that speak to it.* L2-S44.
+
+*Current-text axis.* L2-S44: **DIFFERS** — as at Row 6.16.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.76.
+
+---
+
+**Row 6.110 — no progression grammar or voice leading to complete an incomplete chord.**
+
+*Outgoing statement.* "The layer does **not** reach for chord-progression grammar or voice-leading to complete the chord (minimality, §2)." — §5 (locator: line 321).
+
+*Derived statements that speak to it.* L2-S30.
+
+*Current-text axis.* L2-S30: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing layer does *"not"* reach *"for chord-progression grammar or voice-leading to complete the chord"*; L2-S30's chord terms *"also read the neighbouring spans' readings (the progression), the assignments (which notes count), and the voice-leading evidence of L2-S24"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.83.
+
+---
+
+**Row 6.111 — an arpeggio: each note its own thin slice, the window gathering the figure; grouped later.**
+
+*Outgoing statement.* "When a chord is arpeggiated, each note is its own thin slice whose window (§2) gathers the figure's notes, so the chord emerges and each slice is named it or inherits it; Architectural Layer 6 later groups the consecutive same-chord slices." — §5, *Arpeggios* (locator: lines 323–325). Two claims: (i) each note of an arpeggio is its own slice, the window gathering the figure so that each slice is named the chord or inherits it; (ii) a later layer groups the consecutive same-chord slices.
+
+*Derived statements that speak to it.* (i) L2-S31 (NEAREST, §6.3 entry 1). (ii) L2-S14.
+
+*Current-text axis.* (i) L2-S31: **DIFFERS** — as at Row 6.50. (ii) L2-S14: **DIFFERS** — as at Row 6.25(ii).
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 6.50. (ii) **QUARANTINED**, travelling with Row 6.25(ii).
+
+---
+
+**Row 6.112 — the window's gathering is governed by the membership rule, never a pooled recompute.**
+
+*Outgoing statement.* "The window's gathering is **governed by the membership rule**, never a pooled recompute (§8): a run of notes forms a chord only when they are genuinely its chord tones — a melodic line with passing tones must not inflate into a richer chord (`C–E–G–B` is a `Cmaj7` arpeggio *or* a `C` triad with a passing `B`, decided by metric weight and the prevailing chord, and marked "uncertain" if neither decides)." — §5 (locator: lines 325–328). Three claims: (i) a run of notes forms a chord only when they are its chord tones, passing tones never inflating it; (ii) the gathering is never a pooled recompute; (iii) the arpeggio-or-passing-tone case is decided by metric weight and the prevailing chord, and marked uncertain if neither decides.
+
+*Derived statements that speak to it.* (i) L2-S32. (ii) L2-S31 (NEAREST, §6.3 entry 1). (iii) L2-S25.
+
+*Current-text axis.* (i) L2-S32: **AGREES** — the content term's figuration-controlled forms ignore the notes the reading assigns as elaborations. (ii) L2-S31: **DIFFERS** — as at Row 6.29. (iii) L2-S25: **DIFFERS**.
+
+*The difference, in both texts' own words.* (iii) The outgoing case is *"decided by metric weight and the prevailing chord"*; L2-S25 says of duration and metric position, *"Neither decides it"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S32). (ii) **UNPLACED**, travelling with Row 6.133. *What was read:* as at Row 6.29. (iii) **QUARANTINED.** *Audit question:* how does the dormant decoder decide between an arpeggiated seventh chord and a triad with a passing tone, and how often does it abstain there?
+
+---
+
+**Row 6.113 — a phrase-length prolongation is a reduction judgment beyond this layer.**
+
+*Outgoing statement.* "Only short figuration within the window is named here; a phrase-length prolongation of one harmony is a reduction judgment beyond this layer." — §5 (locator: lines 328–330).
+
+*Derived statements that speak to it.* L2-S31 — one §6.3 names as NEAREST to material met (entry 1).
+
+*Current-text axis.* L2-S31: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text places *"a phrase-length prolongation of one harmony"* in *"a reduction judgment beyond this layer"*; L2-S31 leaves whether *"a hierarchical model is needed"* to the charter's open DP-O, *"not foreclosed"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* the outgoing placement of prolongation outside this layer, against L2-S31's form, which leaves a hierarchical model open under DP-O; the same shape the file's earlier rows leave unplaced (§12, Rows 5.53(i), 5.303(v) and 5.342).
+
+---
+**Row 6.114 — scenario: a clear triad slice.**
+
+*Outgoing statement.* "**A clear triad slice:** the pitches fit one triad, all notes are chord tones → that symbol, committed, no non-chord tones." — §6, a runtime scenario (locator: lines 334–335).
+
+*Derived statements that speak to it.* L2-S32.
+
+*Current-text axis.* L2-S32: **AGREES** — every event assigned a chord tone of the chord it fits.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S32).
+
+---
+
+**Row 6.115 — scenario: a passing-tone slice.**
+
+*Outgoing statement.* "**A passing-tone slice:** `{C, E, G, D}` on a weak beat, `D` stepwise between `C` and `E`, the prevailing chord `C` → `C major` with `D` a non-chord tone (not `Cadd9`); the slice carries the neighbours' chord and groups away later." — §6 (locator: lines 336–337). Two claims: (i) the slice reads `C major` with `D` a non-chord tone, not `Cadd9`; (ii) the slice carries the neighbors' chord and is grouped away later.
+
+*Derived statements that speak to it.* (i) L2-S23. (ii) L2-S14.
+
+*Current-text axis.* (i) L2-S23: **AGREES** — the assignment is made relative to the candidate chord inside the one decision. (ii) L2-S14: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing slice *"groups away later"*; L2-S14 says *"A change in which notes are elaborations, with the chord unchanged, is not a boundary."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S23). (ii) **QUARANTINED**, travelling with Row 6.25(ii).
+
+---
+
+**Row 6.116 — scenario: a genuine seventh chord.**
+
+*Outgoing statement.* "**A genuine seventh chord:** `{G, B, D, F}` sustained, `F` on a strong beat → `G7`, committed." — §6 (locator: line 338).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — the dominant seventh is among its classes.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S4).
+
+---
+
+**Row 6.117 — scenario: a thin slice over a clear prevailing chord keeps that chord.**
+
+*Outgoing statement.* "**A thin slice (the phantom-root case):** a single sounding `C♯` over a passage whose prevailing chord is `A major` → the slice **inherits** `A major` (the `C♯` is its third), **not** a new `F♯` chord named from the lone note." — §6 (locator: lines 339–340).
+
+*Derived statements that speak to it.* L2-S30.
+
+*Current-text axis.* L2-S30: **AGREES** — the chord terms read the neighboring spans' readings, so a lone pitch inside a prevailing chord is read in it.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S30).
+
+---
+
+**Row 6.118 — scenario: a thin slice with no consistent prevailing chord is marked uncertain.**
+
+*Outgoing statement.* "**A thin slice with no consistent prevailing chord:** a lone pitch at a true harmonic boundary, neighbours themselves thin → marked **"uncertain"** (open question: the root), competing completions carried — never a guess." — §6 (locator: lines 341–342).
+
+*Derived statements that speak to it.* L2-S44.
+
+*Current-text axis.* L2-S44: **DIFFERS** — as at Row 6.16.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.76.
+
+---
+
+**Row 6.119 — scenario: a symmetric diminished seventh.**
+
+*Outgoing statement.* "**A symmetric diminished seventh:** root pinned from the notated spelling where present (`G♯–B–D–F` → `G♯` diminished-seventh); where the spelling is absent or contradicted, marked "uncertain" (open question: the root) with the rotations carried." — §6 (locator: lines 343–345). Two claims: (i) the root is pinned from the notated spelling where present; (ii) where the spelling is absent or contradicted, the slice is marked uncertain with the rotations carried.
+
+*Derived statements that speak to it.* (i) L2-S10. (ii) L2-S43 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* (i) L2-S10: **AGREES** — as at Row 6.101. (ii) L2-S43: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing slice is *"marked "uncertain" (open question: the root) with the rotations carried"*; L2-S43 publishes equally scored readings *"with equal mass"*, *"The principal is chosen between them by a declared, deterministic rule that the publication names, and the tie is flagged."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S10). (ii) **QUARANTINED**, travelling with Row 6.107.
+
+---
+
+**Row 6.120 — scenario: a function-dependent reading is marked uncertain for the function layer.**
+
+*Outgoing statement.* "**A function-dependent reading** (passing diminished versus real applied chord): marked "uncertain" (open question: the quality/function reading), competing readings carried for Architectural Layer 5." — §6 (locator: lines 346–347).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 6.21.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.20.
+
+---
+
+**Row 6.121 — what each slice's result holds.**
+
+*Outgoing statement.* "Each slice's result holds: the chosen **chord symbol** (root + quality + bass/inversion — the bass-versus-root distinction is part of the symbol and is what the home metric (§0 — the held-out chord-root + bass agreement of §10) scores); the **chord-tone set**; the **non-chord-tone set** (chord-tone-versus-not only; the type is a later annotation); the **competing readings**; a **confidence**; and the **"uncertain" mark with its open-question label** (root / quality / a named note's membership — so a downstream selector knows *what* to resolve, not merely that something is open)." — §7 (locator: lines 351–356). Five claims: (i) the chord symbol; (ii) the chord-tone set and the non-chord-tone set; (iii) the non-chord-tone type left to a later annotation; (iv) the competing readings and a confidence; (v) the uncertain mark with its open-question label.
+
+*Derived statements that speak to it.* (i) L2-S27. (ii) L2-S1. (iii) L2-S1. (iv) L2-S40. (v) L2-S44.
+
+*Current-text axis.* (i) L2-S27: **DIFFERS** — as at Row 6.12(i). (ii) L2-S1: **AGREES**. (iii) L2-S1: **DIFFERS** — as at Row 6.26. (iv) L2-S40: **DIFFERS** — as at Row 6.22(iv). (v) L2-S44: **DIFFERS** — as at Row 6.16.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 6.12(i). (ii) **ADOPTED — carried** (L2-S1). (iii) **QUARANTINED**, travelling with Row 6.26. (iv) **QUARANTINED**, travelling with Row 6.22(iv). (v) **QUARANTINED**, travelling with Row 6.16.
+
+---
+
+**Row 6.122 — the symbol carries the extension identity, read by the function layer without re-reading the notes.**
+
+*Outgoing statement.* "The chord symbol also carries the chord's **extension identity** — the seventh (minor / major / diminished), the upper 9/11/13 extensions, and the **augmented-sixth spelling markers** (♯13/♯11) — plus a natural-fifth-present flag, so Architectural Layer 5 reads the figured-bass seventh (V7, 65/43/42), the **applied-dominant trigger** (the `V7/x` rule of the function-layer spec §5.6), and the **German-versus-Italian augmented-sixth distinction** **from the carried symbol, not by re-reading the notes** (the Layer-4-to-Layer-5 carry correction, 2026-07-02)." — §7 (locator: lines 358–363). Two claims: (i) the symbol carries the seventh, the upper extensions, the augmented-sixth markers and a natural-fifth flag; (ii) the function layer reads the figured-bass seventh, the applied-dominant trigger and the augmented-sixth type from the carried symbol.
+
+*Derived statements that speak to it.* (i) L2-S1. (ii) L2-S18.
+
+*Current-text axis.* (i) L2-S1: **AGREES** — the chord's quality and figure carry the seventh and the augmented-sixth quality. (ii) L2-S18: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing applied chord is read from *"the **applied-dominant trigger** (the `V7/x` rule ...)"* on the carried symbol; L2-S18 decides which of the applied and the tonality-change readings is principal *"by the candidate score over the whole sequence, not by a rule"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* which fields does the dormant decoder carry on its chosen chord and on each alternative, at the current commit? (ii) **QUARANTINED.** *Audit question:* does the dormant function layer read the seventh, the applied-dominant trigger and the augmented-sixth type from the carried symbol without re-reading the notes?
+
+---
+
+**Row 6.123 — the honest carry: an alternative's extensions copied where produced, else unknown.**
+
+*Outgoing statement.* "The carry is **honest**: the committed (chosen) chord's extensions are a full extraction of its own tones (guaranteed present — a per-candidate `extensionsKnown` = true); a carried *alternative*'s extensions are copied from the scorer's own ranked result where that cell produced one, else left **honest-carry** (extensions = 0, `extensionsKnown` = **false** — the seventh is *unknown*, never asserted absent, and never synthesized)." — §7 (locator: lines 363–368).
+
+*Derived statements that speak to it.* L2-S41.
+
+*Current-text axis.* L2-S41: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing carried alternative may leave its seventh *"*unknown*, never asserted absent"*; L2-S41 publishes a rival *"with its extent (first and last position), its own spans and fields, and its whole-reading mass"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on how many carried alternatives is the extension identity unknown at the current commit, and what reads an alternative's seventh?
+
+---
+
+**Row 6.124 — a consumer reads the extensions only where they are known.**
+
+*Outgoing statement.* "A Layer-5 consumer reads the extensions only when `extensionsKnown`; on an honest-carried reading it stays triad-level." — §7 (locator: lines 368–369).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.123.
+
+---
+
+**Row 6.125 — the pedal-point flags are not carried.**
+
+*Outgoing statement.* "(The pedal-point flags are **not** carried — no Layer-5 §5 rule consumes them; identifiers: `isPedalPoint`/`pedalBassPc`.)" — §7 (locator: lines 369–370).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the pedal point is open at OQ-L2-18 and OQ-L2-4.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder compute a pedal-point flag, and does anything read it at the current commit?
+
+---
+
+**Row 6.126 — the confidence is composite: margin, sufficiency and membership cleanliness.**
+
+*Outgoing statement.* "The **confidence** is composite, combining: the **margin** to the best different reading; the **sufficiency** (how complete the committed chord is — a full seventh present versus a dyad completed by preference); and the **membership cleanliness** (few contested notes versus many)." — §7 (locator: lines 372–374).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS** — as at Row 6.22(iv).
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.22(iv).
+
+---
+
+**Row 6.127 — the composite is a declared margin-family class, vertical-fit only, compared only in declared frames.**
+
+*Outgoing statement.* "Under the cross-layer confidence contract (`cowork_confidence_contract.md`) this composite is declared **Class M (declared-composite)** — a margin-family quantity, not a calibrated probability, **vertical-fit only** by construction — and any cross-layer comparison of it happens only in the contract's declared frames (the §8 override rides frame F-B there)." — §7 (locator: lines 374–377). Three claims: (i) the composite is a margin-family quantity, not a calibrated probability; (ii) it is vertical-fit only by construction; (iii) any cross-layer comparison of it happens only in declared frames.
+
+*Derived statements that speak to it.* (i) L2-S40. (ii) L2-S40. (iii) L2-S40.
+
+*Current-text axis.* (i) L2-S40: **AGREES** — mass is *"a model quantity and not a calibrated probability"*, and *"within that class it behaves as a margin for the purpose of D-267"*. (ii) L2-S40: **DIFFERS** — mass is the marginal *"of all whole readings that contain that span"*, not a fit of one span alone. (iii) L2-S40: **AGREES** — a confidence may be compared *"only within one class and one declared frame"* (D-268, as L2-S40 relays it).
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S40). (ii) **QUARANTINED**, travelling with Row 6.22(iv). (iii) **RELOCATED** — to *the uncertainty surface* (NOT A LAYER). *(L2-S40 travels with it.)*
+
+---
+
+**Row 6.128 — a slice is uncertain for either reason; a wide margin does not rescue an insufficient slice.**
+
+*Outgoing statement.* "A slice is "uncertain" when confidence is low for **either** reason — low margin (ambiguity) **or** low sufficiency (insufficient evidence); these are independent, and a wide margin does not rescue an insufficient slice." — §7 (locator: lines 377–379).
+
+*Derived statements that speak to it.* L2-S44.
+
+*Current-text axis.* L2-S44: **DIFFERS** — as at Row 6.16.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.76.
+
+---
+
+**Row 6.129 — internally, the listed candidates with their scores and the per-note calls.**
+
+*Outgoing statement.* "Internally the decision uses, per slice, the listed candidates with their fit-plus-preference scores and the per-note membership calls." — §7 (locator: lines 381–382).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.66.
+
+---
+
+**Row 6.130 — the layer's settings are tunable values.**
+
+*Outgoing statement.* "The layer's settings — the recognized vocabulary (preset-dependent), the metric-weight and stepwise thresholds, the window's extent, the strength of the key and prevailing-chord preferences, the sufficiency count, and the certainty margin below which a slice is "uncertain" — are tunable values." — §7 (locator: lines 382–384).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.65(v).
+
+---
+
+**Row 6.131 — certainty and what is uncertain are part of the output; the function layer uses them.**
+
+*Outgoing statement.* "**Certainty, and what is uncertain, are part of the output** — every slice carries the competing readings, a composite confidence, and (when uncertain) the named open question; ambiguity is recorded, never hidden, and it is what Architectural Layer 5 uses when it resolves the carried readings at its gated entry (the entry conditions of the function-layer spec §5.5)." — §8 (locator: lines 388–391). Two claims: (i) every slice carries its competing readings and its certainty, ambiguity recorded and never hidden; (ii) the function layer uses them when it resolves the carried readings at its gated entry.
+
+*Derived statements that speak to it.* (i) L2-S40. (ii) L2-S11.
+
+*Current-text axis.* (i) L2-S40: **AGREES** — every span's rivals are published with their mass. (ii) L2-S11: **DIFFERS** — as at Row 6.21.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S40). (ii) **QUARANTINED**, travelling with Row 6.21.
+
+---
+
+**Row 6.132 — the layer annotates and does not transform; the competing readings are kept.**
+
+*Outgoing statement.* "**It annotates, it does not transform** — the slices and notes are unchanged; the chord and membership are added as annotations; the competing readings are kept so the decision can be revisited." — §8 (locator: lines 392–393). Two claims: (i) the slices and the notes are unchanged; (ii) the competing readings are kept so the decision can be revisited.
+
+*Derived statements that speak to it.* (i) L2-S47. (ii) L2-S43 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* (i) L2-S47: **AGREES** — as at Row 6.25(iii). (ii) L2-S43: **AGREES** — *"No reading is discarded before the whole working span, context included, has been scored."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S47). (ii) **ADOPTED — carried** (L2-S43).
+
+---
+
+**Row 6.133 — never a pooled recompute: membership judged per slice against the prevailing chord.** *WITHHELD — D-330.*
+
+*Outgoing statement.* "Membership is judged per slice against the prevailing chord; the layer never pools several slices' pitches into one bag and re-derives a chord from the bag — that over-reads, treating every passing note as a chord tone, and was the failure that motivated the rebuild (§13)." — §8, *Never a pooled recompute* (locator: lines 394–397). Two claims: (i) membership is judged per slice against the prevailing chord; (ii) the layer never pools several slices' pitches into one bag and re-derives a chord from it.
+
+*Derived statements that speak to it.* (i) L2-S23. (ii) L2-S31 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* (i) L2-S23: **DIFFERS**. (ii) L2-S31: **DIFFERS** — as at Row 6.29.
+
+*The difference, in both texts' own words.* (i) The outgoing membership is judged *"per slice against the prevailing chord"*; L2-S23 makes the assignments *"inside the candidate score, relative to each candidate reading's chord"*, and L2-S9 per event per span.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED.** *What was read:* the prohibition registered as a ruling (D-330, homed here), whose unit is the slice and whose reference is the prevailing chord, against L2-S23 and L2-S9, whose unit is the event within a span of the reading; choosing a disposition would choose between a ruled answer and a derived one. (ii) **UNPLACED.** *What was read:* as at Row 6.29.
+
+---
+
+**Row 6.134 — membership decided from the real notes, not a lossy aggregate.** *WITHHELD — D-330.*
+
+*Outgoing statement.* "The note model stays the lossless source so membership is decided from the real notes, not a lossy aggregate." — §8 (locator: lines 397–398).
+
+*Derived statements that speak to it.* L2-S9.
+
+*Current-text axis.* L2-S9: **AGREES** — *"An assignment is made per event per span, not per event"*, each event read as L1 publishes it.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S9).
+
+---
+
+**Row 6.135 — narrow context, forward from the key.**
+
+*Outgoing statement.* "**Narrow context, forward from key** — the window is small and bounded by the slice's own chord (§2); the wide phrase-length context lives in key (Architectural Layer 3) and feeds forward as a preference." — §8 (locator: lines 399–400).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 6.24.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.14(i).
+
+---
+
+**Row 6.136 — a chord influences the key only through the function layer.**
+
+*Outgoing statement.* "The only path by which a chord influences a key is Architectural Layer 5 — never a direct back-edge from this layer." — §8 (locator: lines 400–401).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 6.24.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.14(i).
+
+---
+
+**Row 6.137 — the undecidable slices carried, not forced; the function layer selects among them.**
+
+*Outgoing statement.* "**Forward-only resolution** — the genuinely undecidable slices are carried as competing readings plus "uncertain," not forced; Architectural Layer 5 *selects* among them, it does not re-enter this layer." — §8 (locator: lines 402–403). Two claims: (i) the undecidable slices are carried as competing readings, not forced; (ii) a later function layer selects among them without re-entering this layer.
+
+*Derived statements that speak to it.* (i) L2-S18. (ii) L2-S11.
+
+*Current-text axis.* (i) L2-S18: **AGREES** — where no term separates two readings, *"The two then receive near-equal mass, which is the honest publication."* (ii) L2-S11: **DIFFERS** — as at Row 6.21.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S18). (ii) **QUARANTINED**, travelling with Row 6.21.
+
+---
+
+**Row 6.138 — naming a slice is cheap; each reading cached; a sub-range re-named.**
+
+*Outgoing statement.* "**Speed and incremental editing** — naming a slice is cheap (a small pitch set against the catalogue); each slice's reading is cached; re-naming only a sub-range keeps editing responsive." — §8 (locator: lines 404–405).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.67.
+
+---
+
+**Row 6.139 — chosen: the symbol and the membership are one decision.**
+
+*Outgoing statement.* "Chosen: one decision — the symbol and the membership co-determine each other (you cannot separate `C` from `Cadd9` without deciding the ninth's membership), and splitting them forces each half to guess the other." — §9, *Chord symbol and chord-tone membership are ONE decision* (locator: lines 410–411).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **AGREES** — as at Row 6.13.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S23).
+
+---
+
+**Row 6.140 — chosen: match only the basic types, the diminished seventh and minor-major among them; the added notes off membership.**
+
+*Outgoing statement.* "Chosen: match only the basic types (with the diminished-seventh and minor-major as their own four-note types) and read the added notes off membership — a chord tone above the basic type simply *is* the added note." — §9, *Match only the basic chord type; the added notes come from membership* (locator: lines 413–415). Two claims: (i) only the basic types are matched, the diminished seventh and the minor-major among them; (ii) the added notes are read off the membership decision.
+
+*Derived statements that speak to it.* (i) L2-S4. (ii) L2-S4.
+
+*Current-text axis.* (i) L2-S4: **DIFFERS** — as at Row 6.32. (ii) L2-S4: **DIFFERS** — as at Row 6.33.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED.** *What was read:* a chosen design decision on the basic types, whose description is quarantined at Row 6.32, against L2-S4's classes; as a decision, choosing a disposition would choose between the two texts. (ii) **UNPLACED.** *What was read:* the same, for the added notes, described at Row 6.33.
+
+---
+
+**Row 6.141 — chosen: complete listing.**
+
+*Outgoing statement.* "Chosen: complete listing, because the measured residual is overwhelmingly "the right chord was never listed," not "the wrong one was picked."" — §9, *List completely, then select — completeness is the lever* (locator: lines 419–420).
+
+*Derived statements that speak to it.* L2-S2.
+
+*Current-text axis.* L2-S2: **AGREES** — as at Row 6.72(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S2).
+
+---
+
+**Row 6.142 — a learned re-scorer is later and never a substitute for complete listing.**
+
+*Outgoing statement.* "A learned re-scorer over the *complete* list is a later, secondary refinement (§11), never a substitute for listing completely." — §9 (locator: lines 420–421). Two claims: (i) a learned re-scorer is a later, secondary refinement; (ii) it is never a substitute for listing completely.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S2.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S2: **AGREES** — *"only the ceiling is the admission rule's to fix"*, and the ceiling is not the output.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **ADOPTED — carried** (L2-S2).
+
+---
+
+**Row 6.143 — chosen: a thin slice inherits or is marked uncertain; a new symbol only from enough notes.**
+
+*Outgoing statement.* "Chosen: a slice that cannot fix a chord from its own gathered notes either inherits the prevailing chord (when consistent) or is marked "uncertain" — a new symbol is committed only from enough notes (§5 step 4)." — §9, *Don't guess on thin evidence — gather, inherit, or abstain* (locator: lines 423–425).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **DIFFERS** — as at Row 6.77.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 6.77. *What was read:* as at Row 6.77.
+
+---
+
+**Row 6.144 — chosen: the key fed forward to the chord; the coupling handled by the function layer.**
+
+*Outgoing statement.* "Chosen: feed-forward (key → chord); the residual key↔chord coupling (relative major/minor, a passing-versus-real modulation) is handled by Architectural Layer 5, never folded in here." — §9, *The key is a preference, fed forward — not a joint decision* (locator: lines 428–429).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing decision is *"feed-forward (key → chord)"*, the coupling *"handled by Architectural Layer 5, never folded in here"*; L2-S11 decides the boundary *"together with the tonality, the chord and the assignments, in the one decision"*, *"never decided before the chord or after it"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a chosen design decision, weighed in its own section against the joint alternative it names, which orders the tonality before the chord, against L2-S11's one decision; choosing a disposition would choose between the two texts.
+
+---
+
+**Row 6.145 — chosen: pin the symmetric root from the spelling; defer only the remainder.**
+
+*Outgoing statement.* "Chosen: pin from the notated spelling where present and consistent, defer only the unspelled-or-contradicted remainder." — §9, *Symmetric-sonority roots: read the spelling; defer only the unfixable remainder* (locator: lines 433–434). Two claims: (i) the root is pinned from the notated spelling where present and consistent; (ii) the unspelled or contradicted remainder is deferred.
+
+*Derived statements that speak to it.* (i) L2-S10. (ii) L2-S43 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S10: **AGREES** — as at Row 6.101. (ii) L2-S43: **DIFFERS** — as at Row 6.119(ii).
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S10). (ii) **UNPLACED.** *What was read:* a chosen design decision to defer the undecidable symmetric root, against L2-S43, which publishes equally scored readings with equal mass and names a principal by a declared rule; choosing a disposition would choose between the two texts.
+
+---
+
+**Row 6.146 — chosen: only the chord-tone call here; the type a later annotation.**
+
+*Outgoing statement.* "Chosen: naming the chord needs only chord-tone-versus-not; the type is a separable later annotation." — §9, *Only the chord-tone/non-chord-tone call here; the non-chord-tone TYPE is deferred* (locator: lines 436–437).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **DIFFERS** — as at Row 6.26.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a chosen design decision to leave the elaboration relation to a later annotation, described at Row 6.26, against L2-S1, whose assignment carries the relation; choosing a disposition would choose between the two texts.
+
+---
+
+**Row 6.147 — the root and quality compared against published analyses on a held-out set.**
+
+*Outgoing statement.* "The chord root and quality are compared against published analyses on a **held-out set** the layer was not tuned on." — §10, *Compared against human analyses (the main judge)* (locator: lines 441–442).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — *"The fit is discriminative, on held-out folds"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). *(L2-S38 travels with it.)*
+
+---
+
+**Row 6.148 — the bar: full agreement where unambiguous; a defensible reading or a named uncertainty where ambiguous.**
+
+*Outgoing statement.* "The bar: full agreement where the analyses are unambiguous; on the genuinely ambiguous cases, either the answer is among the defensible readings or the slice was marked "uncertain" with the right open question named." — §10 (locator: lines 442–444).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 6.149 — the standing safety test: no functional root may become wrong; symmetric churn tolerated.**
+
+*Outgoing statement.* "The project's standing test requires that **no chord's functional root becomes wrong** (the meaningful errors never grow, on either tuning preset), while **tolerating churn among the symmetric sonorities** whose root pitch class cannot fix (a diminished-seventh's rotation is a coin-flip, not a quality measure)." — §10, *The standing safety test, in plain terms* (locator: lines 445–448).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 6.150 — the standing root-error set is mostly the work of the lower layers.**
+
+*Outgoing statement.* "The project's standing root-error set (the **bass-is-root = false** cases of the gate policy, §0) is mostly **Layer-1–4 work**, not what reaches Architectural Layer 5: a large majority is settled by the notated spelling (≈60% Baroque / ≈42% Jazz), and most of the rest by bass/inversion, local voice-leading, or is plain **over-segmentation grab** (a span stretching across two ground-truth chords — "over-grab", `cowork_layer2_slicing_design.md` §12) that the change-point slicing (`cowork_layer2_slicing_design.md`) removes by construction." — §10 (locator: lines 452–457).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the recorded apportionment of the standing root-error set reproduce at the current commit, given the recorded correction that over-grabbed segmentation corrupts the bass and so overstates the function-only share?
+
+---
+
+**Row 6.151 — the function-only remainder is small.**
+
+*Outgoing statement.* "The genuinely function-only remainder is **small** — pitch-class-identical share-tone chords on the chord side (for example Am6↔F♯ø7), and the whole note-identical key-disagreement class on the key side." — §10 (locator: lines 457–458).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.150.
+
+---
+
+**Row 6.152 — the set read as a budget of work; the layer's own number the decidable-root agreement.**
+
+*Outgoing statement.* "So this set is read as a *budget of work across Layers 1–5*, not as a measure of this layer's accuracy; the layer's own number is the decidable-root agreement above, with membership and uncertainty scored separately." — §10 (locator: lines 458–460).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 6.153 — membership measured in its own right against the human analyses' chord tones.**
+
+*Outgoing statement.* "Because the chord-tone/non-chord-tone call is the real lever (§11), its precision and recall against the human analyses' chord tones are scored separately, not folded into the chord-root number — chord-root alone would not reveal a membership regression." — §10, *Membership is measured in its own right* (locator: lines 461–463).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing membership is scored *"against the human analyses' chord tones"*; L2-S38's premise is that *"assignments are not annotated anywhere"*, so they *"are at best derived from the chord annotation, which makes their fit circular"* (OQ-L2-13).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). *(L2-S38 DIFFERS at the row; OQ-L2-13.)*
+
+---
+
+**Row 6.154 — the calibration of the uncertainty is measured.**
+
+*Outgoing statement.* "Whether the "uncertain" mark and the confidence land on the genuinely ambiguous and the genuinely insufficient slices, whether the named open question is correct, and whether the true chord is among the carried readings." — §10, *Calibration of uncertainty is measured* (locator: lines 464–466).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 6.155 — the behavior tests.**
+
+*Outgoing statement.* "**Behaviour tests** (independent of the corpus): a clean triad names one chord with no non-chord tones; a weak-beat passing note stays the neighbours' chord with the note flagged; a sustained strong-beat note above the triad is a chord tone (a sixth/ninth chord); a suspension is a non-chord tone; a thin slice over a clear prevailing chord **inherits** it; a thin slice with no consistent prevailing chord is **"uncertain"** (never a new symbol); a symmetric diminished seventh names quality+bass and is "uncertain" (root deferred) when the spelling is absent; a function-dependent reading is "uncertain."" — §10 (locator: lines 467–472).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 6.156 — the safety net: a hard stop on both presets and both suites.**
+
+*Outgoing statement.* "**Safety net (a hard stop):** the standing safety test above holds on both tuning presets; both automated test suites pass; pinned snapshots are refreshed only after a change is confirmed correct." — §10 (locator: lines 473–474).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 6.157 — the chord-root residual is a few percent; the membership call is the lever.**
+
+*Outgoing statement.* "Given good slices and a good key the chord-root residual is a few percent, so most remaining quality is in the membership call, whose cue combination (§5 step 3) and window (§2) are the main open tunables." — §11, *The chord axis is near its ceiling; the chord-tone/non-chord-tone call is the real lever* (locator: lines 481–483).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* at the current commit and given the production arm's slices and tonality, what is the chord-root residual, measured on which corpus, and what share of the remaining error lies in the membership call?
+
+---
+
+**Row 6.158 — the listing and its preset-dependent vocabulary complete before any re-scoring.**
+
+*Outgoing statement.* "A chord never listed can never be chosen; the listing (and its preset-dependent vocabulary) must be complete before any re-scoring is worth adding." — §11, *Complete listing is the priority risk* (locator: lines 484–485). Two claims: (i) the listing must be complete before any re-scoring is worth adding; (ii) the vocabulary is preset-dependent.
+
+*Derived statements that speak to it.* (i) L2-S2. (ii) None.
+
+*Current-text axis.* (i) L2-S2: **AGREES** — as at Row 6.72(i). (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S2). (ii) **QUARANTINED**, travelling with Row 6.62.
+
+---
+
+**Row 6.159 — the symmetric root deferred by design: quality and bass named, rotations carried.**
+
+*Outgoing statement.* "The layer names quality+bass and carries the rotations as "uncertain"; the spelled root is resolved later." — §11, *The unfixable symmetric root is deferred by design, not an open risk here* (locator: lines 486–487).
+
+*Derived statements that speak to it.* L2-S43 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S43: **DIFFERS** — as at Row 6.119(ii).
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.107.
+
+---
+
+**Row 6.160 — the rotation churn dissolved here and settled at the function layer.**
+
+*Outgoing statement.* "So the symmetric-rotation churn is *dissolved* here (no arbitrary root committed) and *resolved* at Architectural Layer 5." — §11 (locator: lines 487–488).
+
+*Derived statements that speak to it.* L2-S43 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S43: **DIFFERS** — as at Row 6.119(ii).
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.107.
+
+---
+
+**Row 6.161 — a learned re-scorer is deferred.**
+
+*Outgoing statement.* "**A learned re-scorer is deferred** — a small re-scorer over the complete list is a later, separately-gated refinement (§14), gated on the per-event metric with out-of-sample discipline." — §11 (locator: lines 489–490).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 6.162 — the accuracy numbers provisional; the layer judged by whether the genuine errors drop.**
+
+*Outgoing statement.* "**The accuracy numbers, and their definition, are provisional** until the full pipeline (through function and grouping) is rebuilt; the layer is judged by whether the genuine errors drop versus the replaced coarse-region path (§13) on the held-out set, not by a fixed target." — §11 (locator: lines 491–493).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+**Row 6.163 — glossary: the chord symbol.**
+
+*Outgoing statement.* "**Chord symbol** — a chord named by its root, quality, and bass/inversion (`Bm7`, `Gdim`, `C`), independent of key/function." — §12 (locator: lines 499–500).
+
+*Derived statements that speak to it.* L2-S27.
+
+*Current-text axis.* L2-S27: **AGREES** — the chord symbol, *"root pitch class, quality and bass note"*, is *"L3's read-off"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts* (the chord symbol). *(L2-S27 travels with it.)*
+
+---
+
+**Row 6.164 — glossary: a chord tone.**
+
+*Outgoing statement.* "**Chord tone** — a note of the slice that belongs to its chord." — §12 (locator: line 500).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **AGREES** — as at Row 6.12(ii).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S1).
+
+---
+
+**Row 6.165 — glossary: a non-chord tone and its four relations.**
+
+*Outgoing statement.* "**Non-chord tone** — a note sounding in the slice that is not part of its chord (passing, neighbour, suspension, anticipation)." — §12 (locator: lines 500–501).
+
+*Derived statements that speak to it.* L2-S8.
+
+*Current-text axis.* L2-S8: **AGREES** — *"The elaboration relations admitted are at least the charter's four (passing, neighbour, suspension, anticipation)."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S8).
+
+---
+
+**Row 6.166 — glossary: membership.**
+
+*Outgoing statement.* "**Membership** — the per-note chord-tone-versus-non-chord-tone call." — §12 (locator: lines 501–502).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **AGREES** — as at Row 6.12(ii).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S1).
+
+---
+
+**Row 6.167 — glossary: listing the possible chords.**
+
+*Outgoing statement.* "**Listing the possible chords** — producing the complete set of chord symbols a slice's pitches could express, before selection." — §12 (locator: lines 502–503).
+
+*Derived statements that speak to it.* L2-S2.
+
+*Current-text axis.* L2-S2: **AGREES** — as at Row 6.71(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S2).
+
+---
+
+**Row 6.168 — glossary: re-scoring, a later, secondary step.**
+
+*Outgoing statement.* "**Re-scoring** — re-ranking an already-listed set (a later, secondary step)." — §12 (locator: lines 503–504).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 6.169 — glossary: a rotation of a symmetric sonority.**
+
+*Outgoing statement.* "**Rotation** — for a symmetric sonority, one of the equally-spaced choices of which note is the root." — §12 (locator: line 504).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that L2's terms define a rotation of a symmetric sonority — one of the equally spaced choices of which member is the root — the unit in which L2-S43 publishes equally scored readings of such a sonority.
+
+---
+
+**Row 6.170 — glossary: the prevailing chord.**
+
+*Outgoing statement.* "**Prevailing chord** — the chord of the nearest preceding already-decided slice within the window." — §12 (locator: lines 505–506).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.78.
+
+---
+
+**Row 6.171 — glossary: to inherit.**
+
+*Outgoing statement.* "**Inherit** — to take the prevailing chord as a thin slice's own answer when the slice's notes are all consistent with it." — §12 (locator: lines 506–507).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.76.
+
+---
+
+**Row 6.172 — glossary: the key preference.**
+
+*Outgoing statement.* "**Key preference** — the lean toward chords belonging to the Architectural Layer 3 key, applied only when the notes leave readings close." — §12 (locator: lines 507–508). Two claims: (i) a lean toward chords belonging to the key, applied only when the notes leave readings close; (ii) the key is the separate key layer's.
+
+*Derived statements that speak to it.* (i) L2-S3. (ii) L2-S11.
+
+*Current-text axis.* (i) L2-S3: **AGREES** — as at Row 6.48(i). (ii) L2-S11: **DIFFERS** — as at Row 6.24.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S3). (ii) **QUARANTINED**, travelling with Row 6.14(i).
+
+---
+
+**Row 6.173 — glossary: the confidence.**
+
+*Outgoing statement.* "**Confidence** — the composite certainty number, combining the margin to the best different reading, the evidence sufficiency, and the membership cleanliness." — §12 (locator: lines 508–509).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS** — as at Row 6.22(iv).
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.22(iv).
+
+---
+
+**Row 6.174 — glossary: uncertain.**
+
+*Outgoing statement.* "**Uncertain** — a slice the layer does not commit; it carries the competing readings **and names which question is open** (the root, the quality, or a specific note's membership) so Architectural Layer 5 knows what to resolve." — §12 (locator: lines 509–511).
+
+*Derived statements that speak to it.* L2-S44.
+
+*Current-text axis.* L2-S44: **DIFFERS** — as at Row 6.16.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.16.
+
+---
+
+**Row 6.175 — what this layer replaces: the coarse-region chord path.**
+
+*Outgoing statement.* "**What it replaces:** the coarse-region chord path (pre-typology; "per-region" elsewhere in this document means this) — the template-based chord scorer run over coarse regions, followed by chord-dependent merge passes." — §13 (locator: lines 515–518).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 6.176 — the replaced path named a chord per coarse region.**
+
+*Outgoing statement.* "It named a chord per coarse region rather than per constant-sonority slice, from a region-level aggregate of the tones." — §13 (locator: lines 518–519).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 6.177 — the pooled over-reading, as an event.**
+
+*Outgoing statement.* "An earlier approach re-derived a chord from a pooled bag of a region's tones; passing and neighbour notes entered the bag and inflated the chord." — §13, *Correction — the pooled over-reading* (locator: lines 519–521).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 6.178 — the correction: per-slice, prevailing-chord-aware membership, never a pooled recompute.**
+
+*Outgoing statement.* "The correction is this layer's per-slice, prevailing-chord-aware membership decision — never a pooled recompute (§8)." — §13 (locator: line 521).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **DIFFERS** — as at Row 6.133(i).
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 6.133. *What was read:* as at Row 6.133(i).
+
+---
+
+**Row 6.179 — the correction that listing, not re-scoring, is the lever, as an event.**
+
+*Outgoing statement.* "An earlier lean toward a strong re-scorer was corrected by the measurement that the residual is mostly un-listed candidates, not mis-ranked ones." — §13, *Correction — listing, not re-scoring, is the lever* (locator: lines 522–523).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 6.180 — the chord is helped by the key, not the reverse.**
+
+*Outgoing statement.* "**On the key↔chord order:** chord is helped by key, not the reverse; naming the notes as a chord adds nothing the pitch content does not already carry for key-finding." — §13 (locator: lines 524–525).
+
+*Derived statements that speak to it.* L2-S20.
+
+*Current-text axis.* L2-S20: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text says *"naming the notes as a chord adds nothing the pitch content does not already carry for key-finding"*; L2-S20 says *"The tonality terms read the chords the reading proposes (degree, function, cadential progressions)"* and *"do not read a global pitch-class profile of the span"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a claim about the order of dependence between tonality and chord that the text records as settled, against L2-S20, whose tonality terms read the proposed chords; choosing a disposition would choose between the two texts.
+
+---
+
+**Row 6.181 — so the key is decided first and fed forward.**
+
+*Outgoing statement.* "So key is decided first and fed forward; the residual coupling lives in Architectural Layer 5." — §13 (locator: lines 525–526).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 6.144.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 6.144. *What was read:* as at Row 6.144.
+
+---
+
+**Row 6.182 — no chord-level root-proximity smoothing at this layer.**
+
+*Outgoing statement.* "We deliberately do **not** adopt Temperley's chord-level root-proximity smoothing here — that chord-sequence preference is a function-blind stand-in for progression, so by minimality it is deferred to Architectural Layer 5 (function)." — §14, *Incomplete-chord handling* (locator: lines 546–548).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **AGREES** — the progression term reads adjacent chords *"read as degrees in their tonalities"*, and is falsified *"if the progression term reads root intervals without the tonality"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S34).
+
+---
+
+**Row 6.183 — the function-dependent residual deferred here, not forced.**
+
+*Outgoing statement.* "The genuinely function-dependent residual (bass-sharing `iii`↔`I6`, `V6`↔`vii°`) is an engine-independent floor (~7%, Contrapunctus), deferred here, not forced." — §14 (locator: lines 548–549).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 6.21.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.20.
+
+---
+
+**Row 6.184 — a small learned re-scorer, deferred.**
+
+*Outgoing statement.* "**Deferred refinement — a small learned re-scorer** over the complete list (Contrapunctus reports a few points' gain), gated on the per-event metric with out-of-sample discipline — secondary, never a substitute for complete listing." — §14 (locator: lines 550–552).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 6.185 — considered and discarded: a pooled recompute, a joint key and chord order, a joint neural prediction.**
+
+*Outgoing statement.* "**Considered and discarded:** a pooled-region recompute (over-reads, §13); a chord-first or joint key+chord base order (chord is helped-by but not needed-for key; the coupling is Architectural Layer 5); joint neural key+chord prediction (deferred to Architectural Layer 5, not used in this decomposed layer)." — §14 (locator: lines 553–555). Three claims: (i) a pooled-region recompute is discarded; (ii) a chord-first or a joint key-and-chord order is discarded; (iii) a joint neural key-and-chord prediction is deferred.
+
+*Derived statements that speak to it.* (i) L2-S31 (NEAREST, §6.3 entry 1). (ii) L2-S11. (iii) None.
+
+*Current-text axis.* (i) L2-S31: **DIFFERS** — as at Row 6.29. (ii) L2-S11: **DIFFERS**. (iii) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (ii) The outgoing text discards *"a chord-first or joint key+chord base order"*; L2-S11 decides the boundary *"together with the tonality, the chord and the assignments, in the one decision"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 6.133. *What was read:* as at Row 6.29. (ii) **UNPLACED**, travelling with Row 6.144. *What was read:* as at Row 6.144. (iii) **HISTORICAL.**
+
+---
+
+**Row 6.186 — the corpora, the held-out split and the tuning presets.**
+
+*Outgoing statement.* "**Corpora:** the Roman-numeral analysis corpora (When-in-Rome, DCML) for the chord-root and quality metric, read at the human analysis's event grain; a fixed held-out split; the project's Bach and Jazz tuning presets." — §14 (locator: lines 556–557).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — a held-out split is part of what its fit needs.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). *(L2-S38 travels with it.)*
+
+---
+
+**Row 6.187 — O1: the step that settles an uncertain slice is the function layer itself.**
+
+*Outgoing statement.* "The step that resolves a slice marked "uncertain" — selecting among the carried readings on functional/cadential evidence — **is Architectural Layer 5 (function) itself**, performed at its gated entry; there is no distinct box between the note-layers and Layer 5." — §15, *O1 — the destination of "uncertain" (RESOLVED, user-ratified 2026-06-24)* (locator: lines 561–564).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 6.4.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 6.4. *What was read:* as at Row 6.4.
+
+---
+
+**Row 6.188 — O1b: a confident commit can be overturned by decisive function evidence.**
+
+*Outgoing statement.* "The ratified architecture-wide principle goes further: a slice this layer **confidently committed** can still be overturned by Layer 5 when its functional/cadential evidence is decisive (the fine-grain chord override — targeting **class-(b) transients**, §0: root errors at pitch-class-decidable sonorities, the error class the gate never tolerates growing)." — §15, *O1b — a confident commit is also overturnable* (locator: lines 571–574).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing commit *"can still be overturned by Layer 5 when its functional/cadential evidence is decisive"*; L2-S35 normalizes *"over whole readings"*, so that evidence after a span can change *"the total mass of a branch through it"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a principle the text records as ratified and architecture-wide (register entry D-339, homed at position 5), by which a later layer overturns a committed chord, against L2-S35's whole-reading normalization; the same shape the file's position-5 rows on that principle leave unplaced.
+
+---
+
+**Row 6.189 — a commit is not a final word.**
+
+*Outgoing statement.* "So a commit is the best reading on the notes-and-key evidence this layer had, **not a final word**." — §15, O1b (locator: lines 574–575).
+
+*Derived statements that speak to it.* L2-S43 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S43: **AGREES** — *"No reading is discarded before the whole working span, context included, has been scored."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S43).
+
+---
+
+**Row 6.190 — the carry on every decision, never pruned; the override selects among the carried readings.** *WITHHELD — D-331.*
+
+*Outgoing statement.* "Two facts make this safe and already-supported (VERIFIED at source): the layer carries its ranked `alternatives` (together with the prevailing chord) and its `confidenceModel` on **every** decision — Commit and Inherit included, filled before the trichotomy and never pruned — so Layer 5 overrides **by selecting among the readings this layer carried** (never by re-deriving), and the carried confidence is the quantity its override threshold scales against." — §15, O1b (locator: lines 575–579; the sentence opens one line before the home as the artifact cites it, 576–579, and the home lies wholly inside it). Four claims: (i) the layer carries its ranked alternatives and its confidence on every decision, commit and inherit included; (ii) the carry is never pruned; (iii) the function layer overrides by selecting among the carried readings, never by re-deriving; (iv) the carried confidence is the quantity the override threshold scales against.
+
+*Derived statements that speak to it.* (i) L2-S40. (ii) L2-S42 — one §6.3 names as NEAREST to material met (entry 4). (iii) L2-S35. (iv) None.
+
+*Current-text axis.* (i) L2-S40: **AGREES** — every span's rivals are published with their mass. (ii) L2-S42: **DIFFERS**. (iii) L2-S35: **DIFFERS** — as at Row 6.188. (iv) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (ii) The outgoing carry is *"never pruned"*; L2-S42 says *"L2 may withhold from publication rivals whose mass falls below a declared threshold, but only because every withheld rival is recomputable."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S40). (ii) **UNPLACED.** *What was read:* the ruled carry (D-331), never pruned, against L2-S42, which withholds a recomputable rival below a declared threshold; choosing a disposition would choose between a ruled answer and a derived one. (iii) **UNPLACED**, travelling with Row 6.188. *What was read:* as at Row 6.188. (iv) **QUARANTINED.** *Audit question:* against which carried quantity does the override threshold scale, and does any override run on the production arm?
+
+---
+
+**Row 6.191 — a correct reading never carried is a coverage miss, fixed inside this layer.**
+
+*Outgoing statement.* "Where the correct reading was never carried at all, that is a *coverage* miss fixed inside this layer, not by Layer 5." — §15, O1b (locator: lines 579–580).
+
+*Derived statements that speak to it.* L2-S2.
+
+*Current-text axis.* L2-S2: **AGREES** — a reading the search cannot reach is the admission rule's ceiling, and only the ceiling is the admission rule's to fix.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S2).
+
+---
+
+**Row 6.192 — the carried confidence is vertical-fit only; the alternatives capped and without the spelling-pinned siblings.**
+
+*Outgoing statement.* "Note: this layer's confidence is **vertical-fit only** by construction (no progression signal folded in — that is Layer 5's to supply), and the carried alternatives are capped at a fixed number of highest-ranked readings (a tunable; identifier `topK`) and exclude spelling-pinned symmetric siblings — calibration facts the Layer-5 override design accounts for, not defects here." — §15, O1b (locator: lines 581–584). Two claims: (i) the carried confidence is vertical-fit only; (ii) the carried alternatives are capped at a fixed number and exclude the spelling-pinned symmetric siblings.
+
+*Derived statements that speak to it.* (i) L2-S40. (ii) L2-S42 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S40: **DIFFERS** — as at Row 6.127(ii). (ii) L2-S42: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing alternatives are *"capped at a fixed number of highest-ranked readings"*; L2-S42 withholds a rival only below *"a declared threshold"*, *"The threshold's value, and the withheld total mass per span, are published with the rivals."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 6.22(iv). (ii) **QUARANTINED.** *Audit question:* how many alternatives does the dormant decoder carry, by what cap, and are the spelling-pinned symmetric siblings excluded at the current commit?
+
+---
+
+**Row 6.193 — the carry limits: the extension identity carried, an alternative's honest where not produced.**
+
+*Outgoing statement.* "The carried reading now includes the **extension identity** (§7) — the committed chord's seventh/9-11-13/aug6 markers + `naturalFifthPresent` are a full extraction of its own tones (`extensionsKnown` = true), and a carried *alternative* carries real extensions only where the scorer's ranked result already produced that cell, else **honest-carry** (`extensionsKnown` = false; extensions unknown, not asserted absent)." — §15, *Carry limits (updated 2026-07-02, the carry-fix)* (locator: lines 586–590).
+
+*Derived statements that speak to it.* L2-S41.
+
+*Current-text axis.* L2-S41: **DIFFERS** — as at Row 6.123.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.123.
+
+---
+
+**Row 6.194 — an override selecting a carried alternative reads its seventh only where obtainable.**
+
+*Outgoing statement.* "So a Layer-5 override that *selects a carried alternative* reads that alternative's seventh only when it was obtainable without re-derivation; otherwise the selected reading is triad-level (an honest coverage limit, not a guess)." — §15 (locator: lines 590–592).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.123.
+
+---
+
+**Row 6.195 — the baseline settles the neighbor dependency with the two-reading scheme.**
+
+*Outgoing statement.* "The baseline resolves the membership↔neighbour chicken-and-egg with the two-reading scheme (§4)." — §15, *O2 — a bounded-window joint resolution for the neighbour dependency (deferred)* (locator: lines 593–594).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.78.
+
+---
+
+**Row 6.196 — a bounded joint choice deferred; its evidence to stay note and membership, never progression grammar.**
+
+*Outgoing statement.* "A bounded joint choice — picking the chords and membership that best explain a few-slice window *together* — is potentially more precise but is deferred, because its window bound is delicate (too wide and it becomes the progression decode that belongs to Architectural Layer 5) and its evidence must stay note + membership, never progression grammar." — §15, O2 (locator: lines 594–597). Two claims: (i) a bounded joint choice over a few-slice window is deferred; (ii) its evidence must stay note and membership, never progression grammar.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S34.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S34: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing joint choice's evidence *"must stay note + membership, never progression grammar"*; L2-S34 carries *"Progression: a term on the pair of adjacent chords *read as degrees in their tonalities*"* in the one candidate score.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **UNPLACED.** *What was read:* a constraint the text sets on a deferred design, excluding progression evidence from a joint choice over chords and membership, against L2-S34, which scores the progression inside the one decision; the constraint governs a design not built, and choosing a disposition would choose between the two texts.
+
+---
+
+**Row 6.197 — the plan: measure the baseline, then adopt the joint version only within a note-bounded window.**
+
+*Outgoing statement.* "Once the two-reading baseline is built and measured, test whether its per-slice precision falls short of the joint optimum; adopt the joint version only with a strictly note-bounded window." — §15, O2 (locator: lines 597–599).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 6.198 — O3: the three-tier structure fixed; only the tier-three weighting calibrated per idiom.**
+
+*Outgoing statement.* "The three-tier **structure is fixed** (universality); only the tier-3 weighting is **idiom-calibrated** (the style-only-in-calibration contract, ARCHITECTURE.md §2.15) — record the threshold as a preset/idiom constant at the precision phase (§0), never a structural branch." — §15, *O3 — the one-sided membership tie-breaker is an idiom-calibrated constant* (locator: lines 605–607). Three claims: (i) the three-tier structure is fixed; (ii) only the tier-three weighting is calibrated per idiom, a constant and never a structural branch; (iii) the threshold is to be recorded as a preset or idiom constant at the precision phase.
+
+*Derived statements that speak to it.* (i) L2-S25. (ii) L2-S25. (iii) None.
+
+*Current-text axis.* (i) L2-S25: **DIFFERS** — as at Row 6.88. (ii) L2-S25: **AGREES** — metric position's bearing on an assignment is a term whose weight is *measured* rather than set. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 6.88. *What was read:* as at Row 6.88. (ii) **ADOPTED — carried** (L2-S25). (iii) **HISTORICAL.**
+
+---
+
+**Row 6.199 — O4: in common-practice theory a bare fifth is not a chord but an incomplete triad.**
+
+*Outgoing statement.* "The music-theory answer is itself style-split: in **common-practice theory a bare fifth `{0,7}` is NOT a chord** — a chord requires three distinct pitches (triadic construction); a root+fifth dyad is an *interval* or an *incomplete triad* whose missing third the context determines." — §15, *O4 — is the "power chord" an admissible chord category, and per which idiom?* (locator: lines 609–611).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **AGREES** — *"A chord is admissible over a span whose sounding set lacks its root, or lacks its third."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S10).
+
+---
+
+**Row 6.200 — in popular-music practice the power chord is a standard sonority label.**
+
+*Outgoing statement.* "In **popular-music practice the "power chord" (C5) IS an accepted, standard sonority label** (guitar practice, lead sheets; MusicXML carries `kind="power"`)." — §15, O4 (locator: lines 611–613).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation's scope is common-practice music.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that L2's scope statement name the power chord as a popular-music sonority outside the common-practice vocabulary, travelling with Row 5.336(ii)'s proposed scope statement.
+
+---
+
+**Row 6.201 — the power chord's legitimacy is idiom-dependent by the theory itself.**
+
+*Outgoing statement.* "So the template's legitimacy is **idiom-dependent by the theory itself**: idiom #4 (Triadic-modal, pop/rock) accepts the C5 reading as a final answer; idiom #2 (Chromatic-functional) reads `{0,7}` as an incomplete triad to be completed by context." — §15, O4 (locator: lines 613–615).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 6.200.
+
+---
+
+**Row 6.202 — the settled shape: the template stays; its competitiveness a per-idiom constant.**
+
+*Outgoing statement.* "**Resolution shape (per the §2.15 style-only-in-calibration contract):** the template STAYS in the array structurally (it is the honest quality-abstention reading for genuinely third-less textures — E-14 zero information loss), and its **competitiveness is an idiom-calibrated constant** (`kPowerChord3PcPenalty` — the Stage-5 manifest already declares it idiom-varying), never a structural per-idiom branch: a large idiom-#2 value effectively yields the dyad to context-completed triads, a small idiom-#4 value lets C5 stand." — §15, O4 (locator: lines 615–620). Two claims: (i) the power-chord template stays in the template array; (ii) its competitiveness is a constant calibrated per idiom, never a structural branch.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S38: **AGREES** — *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* is the power-chord template in the template array at the current commit, and on which path does its penalty act? (ii) **ADOPTED — carried** (L2-S38).
+
+---
+
+**Row 6.203 — the measured support for the power-chord penalty.**
+
+*Outgoing statement.* "**Measured support (Stage-5 Phase 2.1, `records/cc/reports/cc_stage5_phase2_1_report.md`):** the fit's feasible direction on idiom-#2 data RAISES the penalty (fewer bare-fifth readings in Bach — aligned with the theory answer), while the objective's blocked unconstrained direction (lowering it, +0.376 root) gains root agreement only because the root-only objective is quality-silent — it adds class-(b) functional errors, exactly the impoverished-reading trap the theory predicts." — §15, O4 (locator: lines 620–625).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the recorded fit of the power-chord penalty reproduce at the current commit, on which fit and objective?
+
+---
+
+**Row 6.204 — the constant is more load-bearing than its name implies.**
+
+*Outgoing statement.* "Also recorded there: the constant is more load-bearing across common-practice textures than its name implies (6/11 pipeline snapshots shift)." — §15, O4 (locator: lines 625–626).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.203.
+
+---
+
+**Row 6.205 — the open ends: a pop ground truth to fit the value; the power-chord label's display a presentation question.**
+
+*Outgoing statement.* "**Open ends:** (a) the idiom-#4 value is fittable only when a pop/rock ground-truth pool exists (fitter O-5); (b) whether the C5 LABEL is ever *displayed* in common-practice output is an L6/product presentation question (progressive disclosure), separate from the scorer's competitiveness constant." — §15, O4 (locator: lines 626–629). Two claims: (i) the popular-music value is fittable only when a popular-music ground-truth pool exists; (ii) whether the power-chord label is ever displayed is a presentation question.
+
+*Derived statements that speak to it.* (i) L2-S38 (NEAREST, §6.3 entry 6). (ii) L2-S27.
+
+*Current-text axis.* (i) L2-S38: **AGREES** — its fit *"needs annotated spans with tonality, chord, figure and applied target"*. (ii) L2-S27: **AGREES** — the chord symbol is L3's read-off.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S38). (ii) **RELOCATED** — to *L3 — The read-off facts* (the chord symbol). *(L2-S27 travels with it.)*
+
+---
+#### Not a statement — listed so the arithmetic closes (111)
+
+1. "**Status: SIGNED (user, 2026-06-24)** — the revision of the 2026-06-22 sign-off, approved after the spec review … and the language sweeps …" (3–5) — *provenance and a status of the document*.
+2. "It corrects three faults: the thin-evidence path was specified only by preference, not by rule … the prose reached into the source; and it carried invented vocabulary." (5–7) — *provenance of the revision*.
+3. "The build state and the mapping onto existing source live in the delivery plan, not here — this document reads the same whether or not anything has been built." (7–8) — *the document's account of itself*.
+4. "*(The increment IDs in this banner — G1–G6, C1/C2, §15-O2 — are the delivery plan's labels, §0.)*" (15–16) — *a terminology remark*.
+5. "Build state: `cowork_phase5b_l4_build_plan.md`." (17–18) — *a pointer*.
+6. "This document names it "Architectural Layer 5" throughout, identically with the Layer-3 spec." (22–23) — *a terminology remark*.
+7. "(Evidence: `cowork_uncertain_resolver_investigation.md` + the part-3 measurement, Cowork-verified at the score.)" (23–24) — *provenance and a pointer*.
+8. "*(Two template sections do not apply: "Deployment view" and "Human-interface design" — backend analysis code, no separate deployment, no user interface.)*" (26–27) — *the document's account of its own form*.
+9. "*Per the template standard (`cowork_design_doc_template.md`, defined-terms rule). The §12 glossary carries the fuller rows for this layer's own vocabulary; this table is the entry point.*" (30–31) — *the document's account of its own form*.
+10. "This layer's own vocabulary — full rows in §12; used from §1 onward with those §12 meanings." (36) — *a pointer*, the terms table's row *Prevailing chord / inherit / uncertain / carried (competing) readings*.
+11. "Built, compiled, and tested with **no production call site** — production output is unchanged by its existence. **Engage / the engage step** = the deliberate production switch …" (37) — *a definition of the project's build vocabulary*, the row *Dormant*.
+12. "Stored golden outputs a test compares exactly (refreshed only on verified change); a lock-in test is a unit test asserting carried fields exist and stay populated, so a carry cannot be silently dropped." (42) — *a definition of test vocabulary*, the row *Pinned analysis snapshots / lock-in test*.
+13. "The project's deferred numeric-calibration phase … the L5 spec calls the same split "the inference firewall")." (43) — *a definition of the project's vocabulary*, the row *Precision phase*.
+14. "Increment labels of the delivery plan `cowork_phase5b_l4_build_plan.md`, which defines them; used in the status banner only." (44) — *a label*, the row *The build-plan IDs*.
+15. "**What Architectural Layer 4 is.**" (48) — *a label*.
+16. "**What music it operates on.**" (54) — *a label*.
+17. "**Why it commits where it can and abstains where it cannot.**" (57) — *a label*.
+18. "A slice's sounding pitches are rarely all chord tones — a passing note, a neighbour, a suspension all sound *inside* a slice without belonging to its chord." (57–58) — *a defense* of Rows 6.15 and 6.16.
+19. "**The responsibility boundary.**" (65) — *a label*.
+20. "**What it explicitly does NOT do:**" (79) — *a label*.
+21. "This prohibition is stated once, authoritatively, in §8 ("Never a pooled recompute") and referenced thereafter." (93–94) — *a pointer*.
+22. "**Which chords it recognizes.**" (96) — *a label*.
+23. "A chord is named in three pieces:" (96) — *a lead-in to the three pieces, which are tabulated*.
+24. "The catalogue stays small and clean; the recognized vocabulary is far larger." (115) — *a remark summarizing Rows 6.37 to 6.39*.
+25. "**Which chords it does NOT recognize.**" (117) — *a label*.
+26. "**Minimality (the governing principle, stated once).**" (124) — *a label*.
+27. "**Maximal information — use the notated spelling, not bare pitch class.**" (128) — *a title whose claim the body states*, tabulated at Row 6.44.
+28. "**Chord symbol and chord-tone membership only.**" (133) — *a label*.
+29. "**The key is a preference, not a determinant.**" (137) — *a title whose claim the body states*, tabulated at Row 6.48.
+30. "**Its output states its own certainty, and what is uncertain.**" (140) — *a title whose claim the body states*, tabulated at Row 6.49.
+31. "**It reads each slice with a window that extends only as far as the slice's own chord.**" (143) — *a title whose claim the body states*, tabulated at Row 6.50.
+32. "The stop condition is stated here once and referenced in §4–§5." (148) — *a pointer*.
+33. "**Bounded context at the selection edge (`cowork_bounded_context_design.md`).**" (149) — *a label with a pointer*.
+34. "**A strong texture boundary truncates the window — an interior analogue of the score-boundary case (architectural note, recorded 2026-07-01; not built now).**" (156–157) — *a title with provenance, whose claim the body states*, tabulated at Rows 6.56 to 6.59.
+35. "The stop condition above is *harmonic* (the first slice inconsistent with the reading)." (157–158) — *a lead-in restating Row 6.50's condition*.
+36. "This mirrors the existing score-boundary truncation (the score edge is just the limiting case of a structural boundary)." (161–162) — *a defense* of Row 6.56.
+37. "**What it offers (operations other code calls):**" (186) — *a label*.
+38. "**Implementation locator** *(as-built; the decoder realising this spec is `chord/chordslicedecoder.{h,cpp}`, built dormant per the AS-BUILT header).* The legacy chord scorer and the per-slice chord decoder live under `src/composing/analysis/chord/` …" (200–202) — *code locators*.
+39. "For each slice, in two readings:" (206) — *a lead-in to the steps, which are tabulated*.
+40. "The fit measure is the one stated in §5 (present chord tones credited; absent ones a mild shortfall; extra notes carried to the membership decision, not penalised as wrong pitches)." (212–213) — *a pointer to §5 with its summary*, the content tabulated at Row 6.84.
+41. "**Commit, inherit, or abstain.**" (219) — *a label*.
+42. "**The first and second readings.**" (226) — *a label*.
+43. "The naming has four parts; the third and fourth carry the decision rules the review found missing." (241) — *a lead-in with provenance*.
+44. "**The membership decision — stepwise structure decides; metric weight is the tie-breaker, not a co-equal cue.**" (253) — *a title whose claim the body states*, tabulated at Row 6.88.
+45. "**Stepwise-embellishing → non-chord tone, *regardless of metric weight*.**" (257) — *a title whose claim the body states*, tabulated at Row 6.89.
+46. "This is the **accented passing tone**, which metric weight alone would misclassify as a chord tone; stepwise structure overrides the weight." (259–260) — *a gloss and a defense* of Row 6.89.
+47. "**No stepwise connection → chord-tone extension, *regardless of metric weight*.**" (261) — *a title whose claim the body states*, tabulated at Row 6.90.
+48. "This is the **weak leap**, which metric weight alone would wrongly call an embellishment." (262–263) — *a gloss and a defense* of Row 6.90.
+49. "**Stepwise on one side only → the boundary case, decided by metric weight and the prevailing chord.**" (264) — *a title whose claim the body states*, tabulated at Row 6.91.
+50. "So both-sides-stepwise and no-side-stepwise are settled by structure alone; metric weight adjudicates **only** the one-sided case." (270–271) — *a summary of Rows 6.89 to 6.91*.
+51. "**The same test applied to a *required* (template) tone is the plausibility check.**" (275) — *a title whose claim the body states*, tabulated at Row 6.94.
+52. "(Template tones are therefore **not** exempt from the behaviour test — testing them *is* the plausibility penalty.)" (281–282) — *a gloss on Rows 6.94 and 6.95*.
+53. "**Commit / inherit / abstain, and result assembly.** Apply the two certainty conditions:" (284) — *a label and a lead-in*.
+54. "**Sufficiency** — does the slice contain enough chord tones to fix a chord?" (285) — *a label and the question it names*, its test tabulated at Row 6.96.
+55. "Then assemble the per-slice result." (294) — *a procedural remark*.
+56. "**Symmetric sonorities — pin the root from the notated spelling; defer only the unfixable remainder.**" (296) — *a title whose claim the body states*, tabulated at Rows 6.101 to 6.107.
+57. "**Incomplete chords (too few notes to fix a chord).**" (313) — *a label*.
+58. "A slice may sound only two notes — an open fifth, or a third with no fifth." (313–314) — *a lead-in naming the case*.
+59. "**Arpeggios (a chord spelled one note at a time).**" (323) — *a label*.
+60. "**Never a pooled recompute** (the authoritative statement of this prohibition)." (394) — *a title and the document's account of its own structure*, inside the WITHHELD home of D-330.
+61. "**Chord symbol and chord-tone membership are ONE decision.**" (409) — *a title whose claim the body states*, tabulated at Row 6.139.
+62. "Alternative: name the symbol first, classify membership second." (409–410) — *a declined alternative*.
+63. "**Match only the basic chord type; the added notes come from membership.**" (412) — *a title whose claim the body states*, tabulated at Row 6.140.
+64. "Alternative (what the replaced code did): keep triads/sevenths as matched types and detect sixths/ninths as after-the-fact flags on the winner." (412–413) — *a declined alternative*.
+65. "This avoids a blow-up of "type × every combination of extras," and gives the diminished-seventh its own type (the replaced code mishandled it as a diminished triad plus a flag, with no place to pin its spelled root)." (415–417) — *a defense* of Row 6.140.
+66. "**List completely, then select — completeness is the lever.**" (418) — *a title whose claim the body states*, tabulated at Row 6.141.
+67. "Alternative: a strong re-scorer over a cheap, partial list." (418–419) — *a declined alternative*.
+68. "**Don't guess on thin evidence — gather, inherit, or abstain.**" (422) — *a title whose claim the body states*, tabulated at Row 6.143.
+69. "Alternative (what the implementation did): name the best-scoring chord on every slice regardless of how few notes support it." (422–423) — *a declined alternative*.
+70. "This is the rule whose absence produced the phantom-root defect." (425–426) — *provenance*.
+71. "**The key is a preference, fed forward — not a joint decision.**" (427) — *a title whose claim the body states*, tabulated at Row 6.144.
+72. "Alternative: decide key and chord together." (427) — *a declined alternative*.
+73. "**Symmetric-sonority roots: read the spelling; defer only the unfixable remainder.**" (430) — *a title whose claim the body states*, tabulated at Row 6.145.
+74. "Alternatives: pin the rotation by voice-leading/key cleverness (rejected — reaches for relational evidence this layer should not own); or treat the analysis as spelling-blind and defer *every* symmetric root (rejected — discards information the score provides)." (430–432) — *two declined alternatives*.
+75. "**Only the chord-tone/non-chord-tone call here; the non-chord-tone TYPE is deferred.**" (435) — *a title whose claim the body states*, tabulated at Row 6.146.
+76. "Alternative: classify passing/neighbour/suspension here." (435–436) — *a declined alternative*.
+77. "**Compared against human analyses (the main judge).**" (441) — *a label*.
+78. "**The standing safety test, in plain terms.**" (445) — *a label*.
+79. "This split falls out of the design: the layer commits a root only where the notes-plus-spelling decide it and defers the unfixable symmetric root, so the metric naturally divides into the decidable roots (held to no regression) and the deferred symmetric ones (resolved only once Architectural Layer 5 settles them)." (448–450) — *a defense* of Row 6.149.
+80. "**The standing root-error set is not the layer's residual — it overstates it several-fold (measured 2026-06-24).**" (451) — *a title with provenance, whose claim the body states*, tabulated at Rows 6.150 to 6.152.
+81. "**Membership is measured in its own right.**" (461) — *a title whose claim the body states*, tabulated at Row 6.153.
+82. "**Calibration of uncertainty is measured.**" (464) — *a title whose claim the body states*, tabulated at Row 6.154.
+83. "This backs the claim that the layer is honest about what it does not know." (466) — *a defense* of Row 6.154.
+84. "**Test locator** *(as-built; `decode_chord_tests.cpp` realises the decode tests).* The behaviour and decode tests live in the composing test suite; the held-out chord-root and membership grading runs through the read-only chord-decode diagnostic (`--decode-chords`)." (475–477) — *test locators*.
+85. "**The chord axis is near its ceiling; the chord-tone/non-chord-tone call is the real lever.**" (481) — *a title whose claim the body states*, tabulated at Row 6.157.
+86. "**Complete listing is the priority risk.**" (484) — *a title whose claim the body states*, tabulated at Row 6.158.
+87. "**The unfixable symmetric root is deferred by design, not an open risk here.**" (486) — *a title whose claim the body states*, tabulated at Rows 6.159 and 6.160.
+88. "*(Only terms used in a specific way — standard musical terms are assumed known.)*" (497) — *the document's account of its own glossary*.
+89. "**Correction — the pooled over-reading.**" (519) — *a title*.
+90. "**Correction — listing, not re-scoring, is the lever.**" (522) — *a title*.
+91. "**Chord and non-chord tones decided together** — Temperley/Melisma root-finding with ornamental-dissonance handling, and the joint chord-plus-per-note-membership formulation (JNMR 2024): naming the chord and classifying each note as one decision, the shape this layer takes." (530–532) — *related-work provenance*.
+92. "**Key-free chord identification** — Pardo & Birmingham: identifying chords from pitch content without committing to a key, supporting a symbol named from the notes with key only as a preference." (533–534) — *related-work provenance*.
+93. "**Label every event with context** — the Contrapunctus benchmark labels every beat (not coarse segments) with neighbour context and finds that, given the right key, the chord task is largely solved — which is why this layer is per-slice and neighbour-aware and treats the chord axis as near-ceiling with the membership call as the lever." (535–537) — *related-work provenance*.
+94. "**The catalogue holds types; the added notes are recovered, not stored** — template-based chord recognition … uses a small dictionary of chord *types* matched at every (root, type), inversion and order factored out. The explicit lesson (JNMR 2024, via Contrapunctus): added notes cannot be folded into the chord vocabulary without recognition degrading — so a small catalogue plus recovering the added notes afterward, which is this layer's membership decision." (538–542) — *related-work provenance*.
+95. "**Incomplete-chord handling** — Pardo & Birmingham's partial matching that credits present evidence and tolerates missing notes … which also separates root-finding from key-finding, mirroring our layer split." (543–546) — *related-work provenance*.
+96. "**O1 — the destination of "uncertain" (RESOLVED, user-ratified 2026-06-24).**" (561) — *a title with provenance*.
+97. "The reason is structural: the only single-slice note cues that exist (spelling, bass/inversion, metric weight, local voice-leading) are all already owned by Layers 1–4, so a case separable by a note cue is Layer-4 work and a case not so separable is function — leaving no third `(evidence × question)` for a separate box." (564–566) — *a defense* of Row 6.187.
+98. "The measured residual confirms it: function-only on the chord side (pc-identical share-tone chords such as Am6↔F♯ø7) and structural on the key side (the relative-major/minor and tonicization-vs-modulation classes are note-identical, so only the surrounding progression separates them)." (566–569) — *a defense resting on a measurement*.
+99. "Full evidence: `cowork_uncertain_resolver_investigation.md`." (569) — *a pointer*.
+100. "**O1b — a *confident* commit is also overturnable (the confidence-weighted override; user-ratified 2026-06-26).**" (570–571) — *a title with provenance*.
+101. "O1 covers the slices this layer *abstained* on." (571) — *a lead-in*.
+102. "A lock-in test pins the carry." (580–581) — *a remark on a test*.
+103. "Full mechanism: `cowork_layer5_function_design.md` §8/§9-D7; `cowork_target_architecture.md` control-flow contract." (584–585) — *a pointer*.
+104. "**Carry limits (updated 2026-07-02, the carry-fix).**" (586) — *a title with provenance*.
+105. "A lock-in test pins the extension carry alongside the alternatives/confidence carry." (592) — *a remark on a test*.
+106. "**O2 — a bounded-window joint resolution for the neighbour dependency (deferred).**" (593) — *a title*.
+107. "**O3 — the one-sided membership tie-breaker is an idiom-calibrated constant (review finding F-12, recorded 2026-07-02).**" (600–601) — *a title with provenance*.
+108. "The §5 membership rule's third tier (stepwise on one side only) is decided by metric weight and the prevailing chord." (601–602) — *a lead-in restating Row 6.91*.
+109. "That tie-direction encodes a **style convention**: in chorale-era textures a metrically asserted foreign note is usually a chord-tone extension, but in appoggiatura-normative styles … **long accented appoggiaturas are the norm**, and the same weight evidence should lean *non-chord-tone*." (602–605) — *a defense* of Row 6.198.
+110. "Source: `cowork_architecture_review_2026_07.md` §7 (F-12, A-10)." (607) — *a pointer*.
+111. "**O4 — is the "power chord" an admissible chord category, and per which idiom? (user question, 2026-07-05, raised at the Stage-5 Phase-2.1 fit).**" (608–609) — *a title with provenance*.
+
+#### The arithmetic at this member
+
+- Rows written: **205** (6.1 to 6.205).
+- Rows split into two claims, **+1 each**: 6.2, 6.7, 6.12, 6.14, 6.18, 6.39, 6.48, 6.53, 6.57, 6.61, 6.71, 6.72,
+  6.74, 6.82, 6.85, 6.92, 6.111, 6.115, 6.119, 6.122, 6.131, 6.132, 6.133, 6.137, 6.140, 6.142, 6.145, 6.158,
+  6.172, 6.192, 6.196, 6.202, 6.205 — thirty-three rows, **+33**. Rows split into three claims, **+2 each**: 6.6,
+  6.25, 6.84, 6.86, 6.112, 6.127, 6.185, 6.198 — eight rows, **+16**. Rows split into four claims, **+3 each**:
+  6.108, 6.190 — two rows, **+6**. Rows split into five claims, **+4 each**: 6.22, 6.65, 6.121 — three rows,
+  **+12**.
+- **Outgoing statements placed: 205 + 33 + 16 + 6 + 12 = 272.**
+- Listed under *not a statement*: **111**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 272 dispositions over
+  272 statements.
+- **UNPLACED at this member: 31** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 73 | 6.12(ii), 6.13, 6.14(ii), 6.15, 6.18(i), 6.18(ii), 6.22(ii), 6.22(iii), 6.25(i), 6.25(iii), 6.28, 6.37, 6.39(i), 6.44, 6.47, 6.48(i), 6.52, 6.53(i), 6.54, 6.55, 6.57(i), 6.61(i), 6.65(i), 6.65(iii), 6.69, 6.71(i), 6.71(ii), 6.72(i), 6.73, 6.74(i), 6.74(ii), 6.84(i), 6.84(ii), 6.84(iii), 6.85(i), 6.86(i), 6.87, 6.89, 6.101, 6.108(i), 6.108(ii), 6.108(iv), 6.112(i), 6.114, 6.115(i), 6.116, 6.117, 6.119(i), 6.121(ii), 6.127(i), 6.131(i), 6.132(i), 6.132(ii), 6.134, 6.137(i), 6.139, 6.141, 6.142(ii), 6.145(i), 6.158(i), 6.164, 6.165, 6.166, 6.167, 6.172(i), 6.182, 6.189, 6.190(i), 6.191, 6.198(ii), 6.199, 6.202(ii), 6.205(i) |
+| ADOPTED — proposed | 6 | 6.61(ii), 6.64, 6.90, 6.169, 6.200, 6.201 |
+| RELOCATED | 21 | 6.6(i), 6.7(i), 6.7(ii), 6.8, 6.9, 6.10, 6.27, 6.60, 6.127(iii), 6.147, 6.148, 6.149, 6.152, 6.153, 6.154, 6.155, 6.156, 6.162, 6.163, 6.186, 6.205(ii) |
+| QUARANTINED | 124 | 6.2(ii), 6.6(ii), 6.6(iii), 6.11, 6.12(i), 6.14(i), 6.16, 6.17, 6.19, 6.20, 6.21, 6.22(i), 6.22(iv), 6.22(v), 6.23, 6.24, 6.25(ii), 6.26, 6.30, 6.31, 6.32, 6.33, 6.34, 6.35, 6.36, 6.38, 6.39(ii), 6.40, 6.41, 6.42, 6.43, 6.46, 6.48(ii), 6.49, 6.50, 6.51, 6.53(ii), 6.57(ii), 6.62, 6.63, 6.65(ii), 6.65(iv), 6.65(v), 6.66, 6.67, 6.68, 6.70, 6.72(ii), 6.75, 6.76, 6.78, 6.79, 6.80, 6.81, 6.82(i), 6.83, 6.85(ii), 6.86(ii), 6.86(iii), 6.92(i), 6.93, 6.94, 6.95, 6.96, 6.97, 6.98, 6.99, 6.100, 6.102, 6.103, 6.104, 6.105, 6.106, 6.107, 6.108(iii), 6.109, 6.110, 6.111(i), 6.111(ii), 6.112(iii), 6.115(ii), 6.118, 6.119(ii), 6.120, 6.121(i), 6.121(iii), 6.121(iv), 6.121(v), 6.122(i), 6.122(ii), 6.123, 6.124, 6.125, 6.126, 6.127(ii), 6.128, 6.129, 6.130, 6.131(ii), 6.135, 6.136, 6.137(ii), 6.138, 6.150, 6.151, 6.157, 6.158(ii), 6.159, 6.160, 6.170, 6.171, 6.172(ii), 6.173, 6.174, 6.183, 6.190(iv), 6.192(i), 6.192(ii), 6.193, 6.194, 6.195, 6.202(i), 6.203, 6.204 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 17 | 6.1, 6.2(i), 6.3, 6.59, 6.82(ii), 6.142(i), 6.161, 6.168, 6.175, 6.176, 6.177, 6.179, 6.184, 6.185(iii), 6.196(i), 6.197, 6.198(iii) |
+| UNPLACED | 31 | 6.4, 6.5, 6.29, 6.45, 6.56, 6.58, 6.77, 6.88, 6.91, 6.92(ii), 6.112(ii), 6.113, 6.133(i), 6.133(ii), 6.140(i), 6.140(ii), 6.143, 6.144, 6.145(ii), 6.146, 6.178, 6.180, 6.181, 6.185(i), 6.185(ii), 6.187, 6.188, 6.190(ii), 6.190(iii), 6.196(ii), 6.198(i) |
+| **Total** | **272** | — |
+
+**The arithmetic closes at this member**: 73 + 6 + 21 + 124 + 0 + 17 + 31 = 272, against 272 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 84 |
+| DIFFERS | 112 |
+| THE DERIVATION IS SILENT | 77 |
+| **Total verdicts** | **273** |
+
+*(273 verdicts over 272 statements because one statement names two derived statements: 6.108(iv), L2-S28
+and L2-S25, both AGREES.)* DIFFERS: 6.4, 6.5, 6.6(ii), 6.6(iii), 6.11, 6.12(i), 6.14(i), 6.16, 6.17, 6.19, 6.20,
+6.21, 6.22(i), 6.22(iv), 6.22(v), 6.23, 6.24, 6.25(ii), 6.26, 6.29, 6.30, 6.31, 6.32, 6.33, 6.34, 6.35, 6.39(ii),
+6.40, 6.42, 6.45, 6.46, 6.48(ii), 6.49, 6.50, 6.51, 6.56, 6.57(ii), 6.58, 6.65(ii), 6.66, 6.68, 6.70, 6.75, 6.76,
+6.77, 6.78, 6.83, 6.85(ii), 6.86(ii), 6.86(iii), 6.88, 6.91, 6.92(ii), 6.93, 6.94, 6.96, 6.97, 6.100, 6.107, 6.109,
+6.110, 6.111(i), 6.111(ii), 6.112(ii), 6.112(iii), 6.113, 6.115(ii), 6.118, 6.119(ii), 6.120, 6.121(i), 6.121(iii),
+6.121(iv), 6.121(v), 6.122(ii), 6.123, 6.126, 6.127(ii), 6.128, 6.131(ii), 6.133(i), 6.133(ii), 6.135, 6.136,
+6.137(ii), 6.140(i), 6.140(ii), 6.143, 6.144, 6.145(ii), 6.146, 6.153, 6.159, 6.160, 6.172(ii), 6.173, 6.174,
+6.178, 6.180, 6.181, 6.183, 6.185(i), 6.185(ii), 6.187, 6.188, 6.190(ii), 6.190(iii), 6.192(i), 6.192(ii), 6.193,
+6.196(ii), 6.198(i).
+
+#### The marks at this member
+
+- **WITHHELD rows: 6.71 and 6.72 (D-329); 6.133 and 6.134 (D-330); 6.190 (D-331 — the one sentence that opens
+  a line before the home as cited and holds the whole of it).** **An AGREES stands on these WITHHELD
+  statements:** 6.71(i), 6.71(ii), 6.72(i), 6.134, 6.190(i).
+- **SEEN rows: none.** None of the eight identities 1(c) names — D-002, D-095, D-223, D-261, D-275, D-279,
+  D-322, D-393 — is among the identities the artifact places in position 6.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S22 (entry 4) — 6.52, 6.53,
+  6.54, 6.55; L2-S31 (entry 1) — 6.29, 6.46, 6.50, 6.111, 6.112, 6.113, 6.133, 6.185; L2-S38 (entry 6) — 6.147,
+  6.153, 6.186, 6.202, 6.205; L2-S42 (entry 4) — 6.190, 6.192; L2-S43 (entry 4) — 6.97, 6.119, 6.132, 6.145,
+  6.159, 6.160, 6.189; L2-S45 (entry 4) — 6.66. No row of this member names L2-S12 or L2-S17.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -9354,6 +12137,12 @@ the row says which.
   *(IC S-45 to S-47; L2-S37 travels with them.)*
 - Row 5.308 — that the phrase boundary is defined generally from the notated evidence — rests and
   structural boundaries — and never from cadential closure. *(IC S-39 and S-41; L2-S13 travels with it.)*
+- Row 6.6(i) — that the slices are the layer below's publication, the reading deciding over them. *(The
+  input contract defines the slice at its §0, as the derivation's §0 relays.)*
+- Row 6.7(i) — that the views derived from the notation — the bass, the spelling, the metric weight and the
+  phrase boundary — are facts published below the reading. *(The input contract carries the metric strength
+  class at IC S-35, the notated boundary evidence at IC S-39 and S-41, the lowest sounding pitch as a cue
+  anchor at IC S-44, and spelled pitch at IC S-3.)*
 
 **To *L3 — The read-off facts*.**
 
@@ -9390,11 +12179,17 @@ the row says which.
   translation as a display task.
 - Rows 5.348, 5.349 and 5.350 — the phrase-gate fallback for punctuation-poor textures, admission relaxed
   with the vote weight reduced in proportion to boundary strength.
+- Row 6.7(ii) — the texture strength profile, the phrase-boundary primitive's aggregated output. *(Read
+  beside the L0/L1 comparison's relocation of the graded phrase-boundary profile to L3, its §10, Ruling 48.)*
+- Row 6.8 — the grouping layer's span delimited by surface punctuation. *(L2-S49 travels with it.)*
+- Rows 6.163 and 6.205(ii) — the chord symbol, root, quality and bass, as a read-off of the decided chord,
+  and whether the power-chord label is ever displayed. *(L2-S27 travels with them.)*
 
 **To *the second axis — voice leading*.**
 
 - Row 5.75(ii) — that the melodic phrase is an object of the voice-leading axis and not a grouping unit of
   the harmonic spine.
+- Row 6.27 — the analysis of voice leading across the progression.
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -9402,6 +12197,8 @@ the row says which.
   it operates on a commensurable quantity. *(L2-S40 travels with it.)*
 - Row 5.218(i) — that every layer's inference carries a calibrated confidence. *(L2-S40 DIFFERS at the
   row.)*
+- Row 6.127(iii) — that a confidence is compared across layers only in the contract's declared frames.
+  *(L2-S40 travels with it.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -9430,9 +12227,26 @@ the row says which.
 - Row 5.273 — the validation gap of the phrase-boundary primitive's non-chorale markers.
 - Row 5.347 — the chromatic stress material as the measurement bed for key confirmation without a cadence,
   the shape Row 4.21 takes.
+- Rows 6.9 and 6.10 — the chord-root and bass agreement a layer is graded by, and the gate policy's two error
+  classes.
+- Row 6.60 — that a layer that changes the analysis output is judged by accuracy measurement, its pinned
+  snapshots refreshed only after a change is confirmed correct.
+- Rows 6.147 and 6.186 — the root and quality compared against published analyses on a held-out split.
+  *(L2-S38 travels with them.)*
+- Row 6.148 — the bar: full agreement where the analyses are unambiguous, a defensible reading or a named
+  uncertainty where they are not.
+- Row 6.149 — the standing safety test on functional roots, churn among the symmetric sonorities tolerated.
+- Row 6.152 — the standing root-error set read as a budget of work across layers, not as one layer's
+  accuracy.
+- Row 6.153 — membership scored separately against the human analyses' chord tones. *(L2-S38 DIFFERS at the
+  row; OQ-L2-13.)*
+- Row 6.154 — that the calibration of the uncertainty is measured.
+- Rows 6.155 and 6.156 — the behavior tests, and the hard stop on both presets and both test suites.
+- Row 6.162 — that the accuracy numbers are provisional during the rebuild, the layer judged by whether its
+  genuine errors drop.
 
 *(Member 2 relocates no row. Member 3 relocates one, Row 3.38, above. Member 5's relocations are the rows
-numbered 5.n above.)*
+numbered 5.n above, and member 6's the rows numbered 6.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -9649,6 +12463,88 @@ rows here, each with its audit question, in the commit that tabulates it.
   and is it gated off by default?
 - Row 5.334, with Row 5.335(ii) — does the as-built Roman-numeral vocabulary emit every relational label the
   DCML annotation standard defines?
+- Row 6.2(ii) — at the current commit, is the dormant decoder more accurate than the legacy path where it
+  commits, and what share of its abstentions is function-dependent?
+- Row 6.6(ii), with Rows 6.6(iii) and 6.70 — over what unit does the dormant decoder decide, and does it
+  decide any harmonic boundary?
+- Row 6.11 — does the fine-grain override exist on any arm, does it run, and which class of root error does
+  it change at the current commit?
+- Row 6.12(i), with Rows 6.22(i) and 6.121(i) — what does the dormant decoder publish per slice — a chord
+  symbol, a degree read against a tonality, or both?
+- Row 6.14(i), with Rows 6.24, 6.48(ii), 6.57(ii), 6.65(ii), 6.86(ii), 6.135, 6.136 and 6.172(ii) — does the
+  dormant decoder read a tonality committed by a separate key layer, and in what form?
+- Row 6.16, with Rows 6.17, 6.19, 6.22(v), 6.49, 6.76, 6.97, 6.98, 6.99, 6.100, 6.109, 6.118, 6.121(v), 6.128,
+  6.171 and 6.174 — when does the dormant decoder abstain, on what test, and what does it hand forward?
+- Row 6.20, with Rows 6.21, 6.120, 6.131(ii), 6.137(ii) and 6.183 — does the dormant decoder hand the symmetric
+  and the function-dependent cases forward as carried readings rather than deciding them, and what reads
+  them?
+- Row 6.22(iv), with Rows 6.121(iv), 6.126, 6.127(ii), 6.173 and 6.192(i) — what confidence does the dormant
+  decoder attach to a slice, and from which components is it computed?
+- Row 6.23 — does the dormant decoder produce any degree or numeral, or only a chord symbol that a later layer
+  reads in a key?
+- Row 6.25(ii), with Rows 6.68, 6.111(ii) and 6.115(ii) — does the dormant decoder emit adjacent slices with
+  the same chord, leaving their merging to a later layer?
+- Row 6.26, with Row 6.121(iii) — does the dormant decoder publish any elaboration relation, or only the
+  chord-tone call?
+- Row 6.30, with Rows 6.31 and 6.32 — which chord classes does the dormant decoder list, and does its list
+  include the augmented sixths and the Neapolitan?
+- Row 6.33, with Rows 6.34, 6.35, 6.39(ii), 6.75, 6.85(ii) and 6.93 — does the dormant decoder report a sounding
+  sixth, ninth or eleventh as a chord tone of an extended chord, and on what test?
+- Row 6.36, with Row 6.38 — what does the dormant decoder store as its candidate list, and how is it
+  enumerated?
+- Row 6.40, with Row 6.41 — does the dormant decoder admit any non-tertian sonority, and which annotated
+  readings of the grading repertoire does the exclusion reach?
+- Row 6.42, with Row 6.43 — which sub-problems does the dormant decoder leave to later layers, and which of
+  those does any later layer settle at the current commit?
+- Row 6.46 — which evidence does the dormant decoder read, and does it read L1's notated boundary evidence or
+  cadence cues at all?
+- Row 6.50, with Rows 6.51 and 6.111(i) — how does the dormant decoder bound the window it reads each slice
+  with, and on what stop test?
+- Row 6.53(ii) — does the dormant decoder request an extension at a selection edge, and of what size?
+- Row 6.62, with Rows 6.63, 6.65(iv) and 6.158(ii) — does the dormant decoder read the style preset, and does
+  any inference on the production arm read it?
+- Row 6.65(v), with Rows 6.92(i) and 6.130 — which of the dormant decoder's settings are hand-set and which are
+  fitted, at the current commit?
+- Row 6.66, with Row 6.129 — what record does the dormant decoder return, field by field, and what reads it?
+- Row 6.67, with Row 6.138 — does the dormant decoder offer a sub-range re-run, and does its result equal a
+  fresh run over the whole?
+- Row 6.72(ii) — at the current commit, is the dominant chord error of the production decoder an unlisted
+  candidate rather than a mis-ranked one, measured on which corpus?
+- Row 6.78, with Rows 6.79, 6.80, 6.81, 6.82(i), 6.108(iii), 6.170 and 6.195 — does the dormant decoder run a
+  first and a second reading, and what does the second change at the current commit?
+- Row 6.83, with Row 6.110 — does the dormant decoder charge any cost between adjacent chords, and does
+  anything on the production arm charge one?
+- Row 6.86(iii) — does the dormant decoder add a lean toward the prevailing chord, and does that lean reward
+  the previous root continuing?
+- Row 6.94, with Row 6.95 — does the dormant decoder run its own chord tones through the membership test, and
+  how does it penalize a candidate whose chord tone behaves as an embellishment?
+- Row 6.96 — does the dormant decoder's sufficiency test count three distinct chord-tone pitch classes after
+  membership, and how often does it fail on annotated chords?
+- Row 6.102, with Rows 6.103, 6.104, 6.105, 6.106, 6.107, 6.119(ii), 6.159 and 6.160 — is the dormant decoder's
+  spelling pin reachable, how often does it fire, and on which sonorities, at the current commit?
+- Row 6.112(iii) — how does the dormant decoder decide between an arpeggiated seventh chord and a triad with a
+  passing tone, and how often does it abstain there?
+- Row 6.122(i) — which fields does the dormant decoder carry on its chosen chord and on each alternative, at
+  the current commit?
+- Row 6.122(ii) — does the dormant function layer read the seventh, the applied-dominant trigger and the
+  augmented-sixth type from the carried symbol without re-reading the notes?
+- Row 6.123, with Rows 6.124, 6.193 and 6.194 — on how many carried alternatives is the extension identity
+  unknown at the current commit, and what reads an alternative's seventh?
+- Row 6.125 — does the dormant decoder compute a pedal-point flag, and does anything read it at the current
+  commit?
+- Row 6.150, with Row 6.151 — does the recorded apportionment of the standing root-error set reproduce at the
+  current commit, given the recorded correction that over-grabbed segmentation corrupts the bass and so
+  overstates the function-only share?
+- Row 6.157 — at the current commit and given the production arm's slices and tonality, what is the chord-root
+  residual, measured on which corpus, and what share of the remaining error lies in the membership call?
+- Row 6.190(iv) — against which carried quantity does the override threshold scale, and does any override
+  run on the production arm?
+- Row 6.192(ii) — how many alternatives does the dormant decoder carry, by what cap, and are the
+  spelling-pinned symmetric siblings excluded at the current commit?
+- Row 6.202(i) — is the power-chord template in the template array at the current commit, and on which path
+  does its penalty act?
+- Row 6.203, with Row 6.204 — does the recorded fit of the power-chord penalty reproduce at the current
+  commit, on which fit and objective?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -9686,6 +12582,16 @@ words.
 - Row 5.346 — travelling with Row 2.50(i): an enharmonic identity rule for a tonality span, one identity with
   a spelling frame chosen from the notated evidence, a respelling inside the span being a change of frame
   and not a modulation.
+- Row 6.61(ii) — that L2's structure — its admission rule and the forms of its terms — assume no style, style
+  entering only through fitted values.
+- Row 6.64 — that L2 not detect edits to the notated record, the decision that a published reading is stale
+  belonging to its caller.
+- Row 6.90 — that a note reached and left by leap admit no elaboration relation, so that it is a chord tone
+  of the span whatever its metric position.
+- Row 6.169 — that L2's terms define a rotation of a symmetric sonority, one of the equally spaced choices of
+  which member is the root.
+- Row 6.200, with Row 6.201 — travelling with Row 5.336(ii): that L2's scope statement name the power chord as
+  a popular-music sonority outside the common-practice vocabulary.
 
 **DIFFERS.**
 
@@ -9826,6 +12732,95 @@ words.
   the vocabulary is complete (OQ-L2-1)"*.
 - Row 5.344(ii) — the outgoing text takes transposition sequences as *"a natural input from the recognition
   consumer"*; L2-S49 says *"L2 consumes nothing L3 publishes"*.
+- Rows 6.4, 6.5, 6.6(iii), 6.14(i), 6.19, 6.20, 6.21, 6.24, 6.42, 6.48(ii), 6.57(ii), 6.65(ii), 6.86(ii), 6.107,
+  6.120, 6.131(ii), 6.135, 6.136, 6.137(ii), 6.144, 6.172(ii), 6.181, 6.183, 6.185(ii) and 6.187 — the outgoing
+  layer takes the key *"from Architectural Layer 3"* as a preference and hands what it cannot decide
+  *"forward"* to a later function layer; L2-S11 decides the boundary *"together with the tonality, the chord
+  and the assignments, in the one decision"*.
+- Rows 6.6(ii) and 6.70 — the outgoing layer decides *"per slice"*, reading *"the slices left to right"*;
+  L2-S1 says *"The search's unit is the whole reading, not a span."*
+- Rows 6.12(i), 6.22(i), 6.23, 6.31 and 6.121(i) — the outgoing layer *"names the **chord symbol**"*, its root
+  tried at *"each of the twelve pitch classes"* and its numeral left to a later layer; L2-S27 decides *"the
+  chord as degree, quality, figure and applied target, read against the span's tonality"* and *"publishes no
+  chord symbol"*.
+- Rows 6.11, 6.188 and 6.190(iii) — the outgoing text lets a later layer overturn a committed chord *"when
+  its functional/cadential evidence is decisive"*; L2-S35 normalizes *"over whole readings"*, so that
+  evidence after a span changes *"the total mass of a branch through it"*.
+- Rows 6.16, 6.22(v), 6.49, 6.76, 6.100, 6.109, 6.118, 6.121(v), 6.128 and 6.174 — the outgoing layer marks an
+  undecided slice *"uncertain"* and names the open question; L2-S44 leaves a sounding span's *"no chord"* to
+  the charter's open DP-Q, and L2-S43 publishes a principal reading with its rivals.
+- Rows 6.17, 6.22(iv), 6.121(iv), 6.126, 6.127(ii), 6.173 and 6.192(i) — the outgoing confidence is
+  *"composite"*, *"**vertical-fit only**"*, with the uncertain mark as the hand-off; L2-S40 publishes each
+  rival's mass as the marginal *"of all whole readings that contain that span"*.
+- Rows 6.25(ii), 6.68, 6.111(ii) and 6.115(ii) — the outgoing text leaves adjacent same-chord slices to be
+  grouped by a later layer; L2-S14 says *"Two adjacent spans never carry the same tonality and the same
+  chord"*.
+- Rows 6.26, 6.121(iii) and 6.146 — the outgoing text makes the non-chord-tone type *"a separable later
+  annotation"*; L2-S1's assignment is *"chord tone, or elaboration together with its relation"*.
+- Rows 6.30, 6.32, 6.33, 6.34, 6.35, 6.39(ii), 6.75, 6.85(ii), 6.93, 6.140(i) and 6.140(ii) — the outgoing
+  vocabulary is *"Any chord built by stacking thirds"*, six seventh qualities with the minor-major among them,
+  the added notes read *"off the membership decision"* as chord tones; L2-S4 names its classes *"at least"*,
+  five seventh qualities, the Neapolitan and the augmented sixths, the ninth and the eleventh reaching L2 *"as
+  elaboration assignments"*.
+- Rows 6.29, 6.112(ii), 6.133(ii) and 6.185(i) — the outgoing text never re-derives a chord *"from a
+  **pooled bag of several slices' notes**"*; L2-S31's span term reads the span's *"content (sounding set,
+  assignments, attachments)"* over a span that may hold several slices.
+- Row 6.46 — the outgoing evidence is the notes, *"the **key/mode** (a preference)"* and *"the **immediately
+  neighbouring chords**"*; L2-S31's terms also read *"the evidence at and inside it"* and *"the evidence at
+  their shared boundary"*.
+- Rows 6.50 and 6.111(i) — the outgoing window stops *"at the first slice whose notes are inconsistent with
+  that reading"*; L2-S31 says *"Span length is a variable of the reading, not a fixed grid"*.
+- Row 6.113 — the outgoing text places *"a phrase-length prolongation of one harmony"* beyond the layer;
+  L2-S31 leaves a hierarchical model to the charter's open DP-O, *"not foreclosed"*.
+- Row 6.40 — the outgoing text excludes *"anything not expressible as stacked thirds"* by construction; L2-S2
+  excludes a reading type an analyst writes *"only by a named ruling that carries the ceiling cost it
+  imposes"*.
+- Row 6.45 — the outgoing spelling *"is weighed, not trusted blindly"*; L2-S10 makes an event a chord tone
+  *"only if its spelled pitch class is a member of the span's chord, spelled"*.
+- Rows 6.77, 6.96 and 6.143 — the outgoing rule is *"A new symbol is never committed from too few notes"*,
+  with *"at least **three distinct pitch classes**"* as the test; L2-S10 says *"A chord is admissible over a
+  span whose sounding set lacks its root, or lacks its third."*
+- Row 6.94 — the outgoing template tone that behaves as an embellishment *"makes the candidate
+  **implausible**"*; L2-S10 says *"Membership does not imply chord tone, since a consonant elaboration is
+  admitted"*.
+- Rows 6.56 and 6.58 — the outgoing text holds that *"a neighbour slice *after* a phrase end is not context
+  for the chord *before* it"*, only texture-level boundaries qualifying; L2-S13 says *"No flag forces or
+  forbids a boundary"*.
+- Rows 6.51, 6.83 and 6.196(ii) — the outgoing layer uses the neighbor chords *"never a chord-to-chord
+  transition cost or progression grammar"*; L2-S34 carries *"Progression: a term on the pair of adjacent
+  chords *read as degrees in their tonalities*"*.
+- Row 6.86(iii) — the outgoing preference is *"a lean toward continuing the current chord across a
+  metrically weak slice"*; L2-S34 is falsified *"if any term rewards the previous root continuing"*.
+- Row 6.110 — the outgoing layer does not reach *"for chord-progression grammar or voice-leading to complete
+  the chord"*; L2-S30's chord terms read *"the neighbouring spans' readings (the progression)"* and *"the
+  voice-leading evidence of L2-S24"*.
+- Row 6.66 — the outgoing operation returns one result per slice with *"a confidence, and the "uncertain"
+  mark"*; L2-S45 publishes *"the segmentation, the tonality per span, the chord per span, the assignments per
+  event, and the rivals with their mass"*.
+- Row 6.78 — the outgoing dependency on the neighbor chords is *"resolved in two readings"*; L2-S33's
+  elaboration term *"reads that adjacent span's candidate reading"* inside the one candidate score.
+- Rows 6.88, 6.92(ii), 6.112(iii) and 6.198(i) — the outgoing *"decisive signal is **stepwise structure**"*
+  in a fixed three-tier rule, metric weight deciding the one-sided case; L2-S25 says of duration and metric
+  position, *"Neither decides it"*.
+- Row 6.91 — the outgoing third tier decides an appoggiatura or an escape tone by metric weight; L2-S8 leaves
+  whether those relations are admitted to *"a ruling the charter's wording leaves to the user (OQ-L2-4 ★)"*.
+- Rows 6.97, 6.119(ii), 6.145(ii), 6.159 and 6.160 — the outgoing layer commits only past a certainty margin
+  and defers an undecidable symmetric root with *"the rotations carried"*; L2-S43 publishes equally scored
+  readings *"with equal mass"*, the principal *"chosen between them by a declared, deterministic rule"*.
+- Row 6.122(ii) — the outgoing applied chord is read from *"the **applied-dominant trigger**"* on the carried
+  symbol; L2-S18 decides which reading is principal *"by the candidate score over the whole sequence, not by a
+  rule"*.
+- Rows 6.123 and 6.193 — a carried outgoing alternative may leave its seventh *"*unknown*, never asserted
+  absent"*; L2-S41 publishes a rival with *"its own spans and fields"*.
+- Rows 6.133(i) and 6.178 — the outgoing membership is judged *"per slice against the prevailing chord"*;
+  L2-S23 makes the assignments *"relative to each candidate reading's chord"*.
+- Row 6.153 — the outgoing membership is scored *"against the human analyses' chord tones"*; L2-S38's premise
+  is that *"assignments are not annotated anywhere"*.
+- Row 6.180 — the outgoing text says *"naming the notes as a chord adds nothing the pitch content does not
+  already carry for key-finding"*; L2-S20's tonality terms *"read the chords the reading proposes"*.
+- Rows 6.190(ii) and 6.192(ii) — the outgoing carry is *"never pruned"*, and its alternatives are *"capped at
+  a fixed number of highest-ranked readings"*; L2-S42 withholds a rival only below *"a declared threshold"*,
+  the threshold and the withheld mass published.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -9842,10 +12837,11 @@ own distribution table in §6.
 | 3 | 40 | 6 | 0 | 1 | 19 | 0 | 14 | 0 | 20 |
 | 4 | 36 | 11 | 2 | 10 | 10 | 0 | 1 | 2 | 16 |
 | 5 | 417 | 81 | 9 | 85 | 131 | 0 | 51 | 60 | 67 |
-| **Total** | **630** | **139** | **25** | **101** | **196** | **0** | **95** | **74** | **176** |
+| 6 | 272 | 73 | 6 | 21 | 124 | 0 | 17 | 31 | 111 |
+| **Total** | **902** | **212** | **31** | **122** | **320** | **0** | **112** | **105** | **287** |
 
-**The arithmetic check:** 139 + 25 + 101 + 196 + 0 + 95 + 74 = 630, against 630 statements placed (72 + 65
-+ 40 + 36 + 417).
+**The arithmetic check:** 212 + 31 + 122 + 320 + 0 + 112 + 105 = 902, against 902 statements placed (72 + 65
++ 40 + 36 + 417 + 272).
 
 **Current-text verdicts.**
 
@@ -9856,9 +12852,10 @@ own distribution table in §6.
 | 3 | 7 | 7 | 26 | 40 |
 | 4 | 19 | 5 | 14 | 38 |
 | 5 | 157 | 128 | 145 | 430 |
-| **Total** | **238** | **162** | **251** | **651** |
+| 6 | 84 | 112 | 77 | 273 |
+| **Total** | **322** | **274** | **328** | **924** |
 
-**The arithmetic check:** 238 + 162 + 251 = 651 (78 + 65 + 40 + 38 + 430).
+**The arithmetic check:** 322 + 274 + 328 = 924 (78 + 65 + 40 + 38 + 430 + 273).
 
 ## 14. The derivation's independence record, relayed
 
@@ -9889,4 +12886,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 5 are done, positions 6 to 62 are untouched.
+  untouched: positions 1 to 6 are done, positions 7 to 62 are untouched.
