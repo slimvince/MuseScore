@@ -282,8 +282,9 @@ against.**
 still lists row 14 as not opened. **This file does not touch it**; moving it is the act that follows
 this one, and until it is done the slice's count stands where it stood.
 
-**Owed and NOT done here: a second independent extraction**, on the centrality verdict at §9. See
-there.
+**Owed and NOT done here, but done since by a later sitting: a second independent extraction**, on the
+centrality verdict at §9. See there.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**Owed and NOT done here: a second independent extraction**, on the centrality verdict at §9. See there." True of this file's own act and overtaken as a status claim; the three refuting objects are named at §9's correction note of the same date.)*
 
 **NOT owed:** any amendment to `FRAMEWORK.md`, to `reading_pass/candidacy_upgrades.md`, to
 `cowork_l2_task_b_slice_derivation_2026_09_05.md`, to `reading_pass/population.md`, to
@@ -350,5 +351,5 @@ classifiers that might transfer; it is the training of the model L2's score woul
 weighs the absence of any `[FACT]` and the wholly non-musical content above that should read this
 NOT CENTRAL, and the grounds for doing so are above rather than in a session.**
 
-**Consequence: a second independent extraction is OWED**, on the same footing as rows 45, 48, 49, 50,
-52, 46, 15 and 12. **It flips to not owed if the user takes the NOT CENTRAL reading.**
+**Consequence: a second independent extraction was OWED unless the user took the NOT CENTRAL reading — and IT IS DONE**, performed by a later sitting, not by this file's.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**Consequence: a second independent extraction is OWED**, on the same footing as rows 45, 48, 49, 50, 52, 46, 15 and 12. **It flips to not owed if the user takes the NOT CENTRAL reading.**" That was true when written and was overtaken by three objects, each read in place on 2026-09-26: this file's own banner note of 2026-09-19 (its lines 15–22), which names the second extraction's cross-check and its file, so the file contradicted itself; the second-pass file `reading_pass/extracts_second_pass/sha-pereira-2003-shallow-parsing-with-conditional-random-fields.md`, on disk at 42,082 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 14's second-pass cell (the table's line 100), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. The "same footing" list of the former wording is preserved there and is not re-derived here. The CENTRAL verdict above is not touched and the NOT CENTRAL ground stands as stated.)*

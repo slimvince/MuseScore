@@ -419,7 +419,9 @@ challenge is easy to make:** the paper carries no musical content and no musical
 figure the record rests on is a cost statement already verified by the pass at `population.md` §3
 (V10), so this whole-paper read adds precisions and no new verification; and the musical instances of
 the formalism (rows 10 and 19) are the papers a detail specification would cite for what the machinery
-does on our input. **A second independent extraction is therefore OWED** on this verdict.
+does on our input. **A second independent extraction was therefore OWED** on this verdict — **and IT HAS
+BEEN PERFORMED**, by a later sitting, not by this extract's.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**A second independent extraction is therefore OWED** on this verdict." That sentence was true when written and was overtaken by two objects, each read in place on 2026-09-26: the second-pass file `reading_pass/extracts_second_pass/sarawagi-cohen-2004-semi-markov-conditional-random-fields.md`, on disk at 93,822 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 11's second-pass cell, which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. This extract's own banner carries no note of the second extraction, and no handoff entry was searched for the sitting that performed it. The verdict is not touched and stays challengeable at the progress record, as the sentence above says.)*
 
 ## What this extract does NOT do
 

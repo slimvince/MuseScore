@@ -529,8 +529,9 @@ stated, so the user can overrule it.**
 
 ## Centrality
 
-**CENTRAL, and a SECOND INDEPENDENT EXTRACTION IS OWED — stated with the ground on which the opposite
+**CENTRAL, and a SECOND INDEPENDENT EXTRACTION WAS OWED — and IT HAS BEEN PERFORMED**, by a later sitting, not by this extract's — **stated with the ground on which the opposite
 verdict could be taken, so the user can flip it.**
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**CENTRAL, and a SECOND INDEPENDENT EXTRACTION IS OWED — stated with the ground on which the opposite verdict could be taken, so the user can flip it.**" That was true when written and was overtaken by three objects, each read in place on 2026-09-26: this file's own banner notes of 2026-09-19 (its lines 100–117), which name the second independent extract under `reading_pass/extracts_second_pass/` and its §9, so the file contradicted itself; the second-pass file `reading_pass/extracts_second_pass/ju-conditschultz-arthur-fujinaga-2017-non-chord-tone-identification-using-deep-neural-networks.md`, on disk at 46,339 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 35's second-pass cell (the table's line 106), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. The verdict is not touched; the flip clause at the end of this section is corrected beside it.)*
 
 *The ground.* The load-bearing-claim route is PRESENT: a CHOSEN design point's exclusion ground — DP-D's,
 and DP4's in the sealed draft — rests on this paper's figure and on its sentence, `population.md` V11 is
@@ -555,8 +556,9 @@ rests the case for the second extraction, and finding (4) is exactly the kind of
 scope against a design point's clause — that a second reader should check independently, since this
 reader graded it a precision and a second reader might grade it a correction. Finding (5)'s inference is
 this reader's alone and should be re-derived from §2 by someone who has not read this extract. **The
-verdict flips to NOT CENTRAL, and the second extraction to not owed, if the user reads findings (4) and (5)
-as settled by this extract rather than as claims a second reader must test.**
+verdict flips to NOT CENTRAL if the user reads findings (4) and (5) as settled by this extract rather than
+as claims a second reader must test; the second extraction, having been performed, no longer turns on that.**
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22. FORMER WORDING, PRESERVED (#12): "**The verdict flips to NOT CENTRAL, and the second extraction to not owed, if the user reads findings (4) and (5) as settled by this extract rather than as claims a second reader must test.**" The three objects that overtook the "to not owed" half are named at this section's opening note of the same date. The flip of the verdict itself is untouched and stays the user's.)*
 
 ## What this extract does NOT do
 

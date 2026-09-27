@@ -397,7 +397,9 @@ for a modulation detector, and its distinctive object — Weber's table — is a
 criterion says is not itself an upgrade. The difference taken here from row 29's verdict is that this
 paper carries a measured outcome on a corpus of our input kind and row 29 carries none; and that its
 method's contribution is measured term by term (Table 2), which is what a detail specification would
-cite. **A second independent extraction is therefore OWED** on this verdict.
+cite. **A second independent extraction was therefore OWED** on this verdict — **and IT HAS BEEN
+PERFORMED**, by a later sitting, not by this extract's.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**A second independent extraction is therefore OWED** on this verdict." That sentence was true when written and was overtaken by two objects, each read in place on 2026-09-26: the second-pass file `reading_pass/extracts_second_pass/feisthauer-bigo-giraud-leve-2020-estimating-keys-and-modulations-in-musical-pieces.md`, on disk at 99,845 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 30's second-pass cell, which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. This extract's own banner carries no note of the second extraction, and no handoff entry was searched for the sitting that performed it. The verdict is not touched and stays challengeable at the progress record, as the sentence above says.)*
 
 ## What this extract does NOT do
 

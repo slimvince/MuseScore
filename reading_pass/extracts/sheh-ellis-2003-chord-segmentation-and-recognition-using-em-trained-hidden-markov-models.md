@@ -495,7 +495,8 @@ extract.**
 
 ## Centrality
 
-**CENTRAL, on a narrow ground, and a SECOND INDEPENDENT EXTRACTION IS OWED.**
+**CENTRAL, on a narrow ground, and a SECOND INDEPENDENT EXTRACTION WAS OWED — and IT HAS BEEN PERFORMED**, by a later sitting, not by this extract's.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**CENTRAL, on a narrow ground, and a SECOND INDEPENDENT EXTRACTION IS OWED.**" That sentence was true when written and was overtaken by two objects, each read in place on 2026-09-26: the second-pass file `reading_pass/extracts_second_pass/sheh-ellis-2003-chord-segmentation-and-recognition-using-em-trained-hidden-markov-models.md`, on disk at 101,376 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 18's second-pass cell (the table's line 76), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. This extract's own banner carries no note of the second extraction, and no handoff entry was searched for the sitting that performed it. The verdict is not touched; the "would be NOT CENTRAL with nothing owed" clause below states the other reading's consequence at the time of writing and is left as written.)*
 
 *The ground.* A ratified [FACT] rests on this paper at two places in `FRAMEWORK.md` (DP-C's ground at line
 693 and §S4(d)'s exclusion of *segment first, then label* at line 1595, with DP3 at line 1805 repeating

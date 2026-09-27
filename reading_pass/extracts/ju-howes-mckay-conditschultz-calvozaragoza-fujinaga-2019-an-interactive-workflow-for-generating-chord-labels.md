@@ -857,8 +857,8 @@ excludes.** **This side did not take that reading**, because the criterion's sec
 claims would be cited, not whether they would settle the question, and because DP-D's rival clause currently
 rests on a paper whose own extract records that it never tested the pipeline the clause is about.
 
-**Second independent extraction: OWED** by the CENTRAL verdict, under the original commission's §4. **It
-flips to not owed if the user takes the NOT CENTRAL reading above** — stated here so the choice is his.
+**Second independent extraction: DONE** — it was OWED by the CENTRAL verdict, under the original commission's §4, and it has been performed.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**Second independent extraction: OWED** by the CENTRAL verdict, under the original commission's §4. **It flips to not owed if the user takes the NOT CENTRAL reading above** — stated here so the choice is his." That was true when written and was overtaken by three objects, each read in place on 2026-09-26: this file's own banner note of 2026-09-19, which names the second extract and its cross-check; the second-pass file of the same name in `reading_pass/extracts_second_pass/`, on disk at 64,009 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 58's second-pass cell, which reads DONE, updated 2026-09-20. The CENTRAL verdict is not touched and stays challengeable above.)*
 
 ## What this extract does NOT do
 
@@ -870,8 +870,11 @@ flips to not owed if the user takes the NOT CENTRAL reading above** — stated h
   (4), (6) and (7) are data routed beside them and merged with none.
 - It **fetches nothing.** No work named in the reference list and not held was opened, and nothing is carried
   out of any of them.
-- It **runs no second pass.** The second independent extraction the CENTRAL verdict owes has not been
-  performed.
+- It **runs no second pass.** The second independent extraction the CENTRAL verdict owed was performed
+  later, by another sitting, as the banner's note of 2026-09-19 records. *(★ CORRECTED 2026-09-26 under
+  the user's standing licence of 2026-09-22. FORMER WORDING, PRESERVED (#12): "The second independent
+  extraction the CENTRAL verdict owes has not been performed." — true of this extract's own act, false
+  as a status claim; the refuting objects are named at the Centrality section's correction note.)*
 - It **claims nothing about the repository outside the staged tree.** The identity and figure sweeps ran
   over the **markdown** files staged into this session's container, **named here from a listing of that
   container rather than from memory of what was staged**: `CLAUDE.md`, `DECISIONS.md`, `FRAMEWORK.md`,

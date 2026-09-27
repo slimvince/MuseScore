@@ -684,7 +684,9 @@ Recorded because it is the one derivation in the paper this reader could close i
 because it establishes that Figure 5's boxes and §3.2's sentence are the same six labels. **The
 derivation is this reader's; the two printed values are the paper's.**
 
-## Centrality — CENTRAL, and a second independent extraction is OWED
+## Centrality — CENTRAL, and a second independent extraction was OWED and has been performed
+
+*(★ HEADING CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "## Centrality — CENTRAL, and a second independent extraction is OWED". The refuting objects are named at the note under *What follows* at the end of this section.)*
 
 **CENTRAL**, with the ground on which NOT CENTRAL could be argued stated in full so the verdict is
 challengeable at this row.
@@ -710,10 +712,9 @@ how the record characterises its source is exactly the class of claim a detail s
 **CENTRAL is chosen on the ratified-`[FACT]` ground, which is the ground the six rows named above
 were graded CENTRAL on.**
 
-*What follows.* **A second independent extraction is OWED**, by the original commission's §4 rule and
-by its two routes, joining the owed second passes the progress record's "What is NOT done" section
-names — rows 27, 28, 1, 8, 26, 30, 5, 10, 11, 19, 20 and 18, **twelve**, derived by counting that
-sentence's own list. The verdict is challengeable at the progress record.
+*What follows.* **A second independent extraction was OWED**, by the original commission's §4 rule and
+by its two routes — **and IT HAS BEEN PERFORMED**, by a later sitting, not by this extract's. The verdict is challengeable at the progress record.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**A second independent extraction is OWED**, by the original commission's §4 rule and by its two routes, joining the owed second passes the progress record's "What is NOT done" section names — rows 27, 28, 1, 8, 26, 30, 5, 10, 11, 19, 20 and 18, **twelve**, derived by counting that sentence's own list. The verdict is challengeable at the progress record." That sentence was true when written and was overtaken by two objects, each read in place on 2026-09-26: the second-pass file `reading_pass/extracts_second_pass/micchi-gotham-giraud-2020-not-all-roads-lead-to-rome-pitch-representation-and-model-architecture.md`, on disk at 117,072 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 45's second-pass cell (the table's line 80), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. The twelve-row list of the former wording was the progress record's "What is NOT done" section as it stood on 2026-09-06 and is not re-derived here. This extract's own banner carries no note of the second extraction, and no handoff entry was searched for the sitting that performed it. The verdict is not touched.)*
 
 ## What this extract does NOT do
 

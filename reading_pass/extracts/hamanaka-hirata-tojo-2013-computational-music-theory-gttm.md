@@ -283,11 +283,22 @@ row 19's state flips to read on this chapter, or the JNMR paper is still owed, i
 the user; the honest position is that the line's implementation account is now held at the strongest
 grade this environment offers.
 
-**A note on the second-pass obligation.** Row 19 is marked CENTRAL, which makes a second independent
-extraction owed. **This read is AT THE OBJECT**, a materially stronger footing than the doubled relayed
-reads the other central rows carry, and the double-pass exists to catch relay error. Whether that
-substitutes for a second pass is not decided here — it is stated so the next session does not assume
-either way.
+**A note on the second-pass obligation.** Row 19 is marked CENTRAL, which made a second independent
+extraction owed — **and IT HAS BEEN PERFORMED**, by a later sitting, not by this extract's. **This read
+is AT THE OBJECT**, a materially stronger footing than the doubled relayed reads the other central rows
+carry, and the double-pass exists to catch relay error.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed
+without asking. FORMER WORDING, PRESERVED (#12): "Row 19 is marked CENTRAL, which makes a second
+independent extraction owed. **This read is AT THE OBJECT**, a materially stronger footing than the
+doubled relayed reads the other central rows carry, and the double-pass exists to catch relay error.
+Whether that substitutes for a second pass is not decided here — it is stated so the next session does
+not assume either way." That passage was true when written and was overtaken by one object, read at
+its directory listing on 2026-09-26: the second-pass file
+`reading_pass/extracts_second_pass/hamanaka-hirata-tojo-2013-computational-music-theory-gttm.md`, on
+disk at 63,935 bytes. The question the former wording left open — whether an at-the-object read
+substitutes for a second pass — no longer arises, a second pass existing. Whether the two extracts have
+been cross-checked is not established by that listing and is not claimed here. Nothing else in this
+extract is touched.)*
 
 *Provenance: session 3 of the reading pass, 2026-08-31. Read at the object, thirty pages, from
 `external resarch summary/Computational Music Theory and Its.pdf`, staged through the bridge.

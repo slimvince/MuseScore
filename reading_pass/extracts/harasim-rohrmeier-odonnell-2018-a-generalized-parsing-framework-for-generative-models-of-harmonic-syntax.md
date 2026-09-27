@@ -1010,7 +1010,23 @@ tying and back-off are not exclusive.
   Harasim"*, and row 1 (Raphael & Stoddard 2003) is read, extracted and CENTRAL already.
 
 **If CENTRAL stands, a second independent extraction is OWED** under the original commission's §4, and
-none has been performed.
+**IT IS DONE.**
+
+*(★ CORRECTED 2026-09-22, at the sitting that judged this file whole, under the user's standing licence of
+that date that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "and none has been
+performed." **That was false at three objects, one of them this file's own banner.** The second extract is
+on disk at
+`reading_pass/extracts_second_pass/harasim-rohrmeier-odonnell-2018-a-generalized-parsing-framework-for-generative-models-of-harmonic-syntax.md`,
+**70,641 bytes** at a listing of that directory; **the progress record's row 21 cell reads DONE** — *"the
+second independent extract is on disk in `reading_pass/extracts_second_pass/`"* — updated **2026-09-20**
+with its own former **OWED** wording preserved (#12); and **the banner at the head of this file already
+names that second extract and records its cross-check of 2026-09-19** together with the user's ruling of
+that date. **So this file contradicted itself about a thousand lines apart, and the OWED-to-DONE flip of
+2026-09-20 had reached the progress record's cell and not this line.** **NO verdict, value or finding is
+changed by this correction:** the CENTRAL verdict stands and stays challengeable at the extract, the
+ground on which NOT CENTRAL could be argued is untouched, and the cross-check's own outcome is unmoved.
+**This is the failure this file's own whole-reading section names** — *"a correction is not made until
+every site that carries the claim has been looked at."*)*
 
 **★ A PRECISION on D-526's parenthetical, graded as a precision and not as a correction, with the other
 reading stated.** D-526 names the chord axis as *"a Roman numeral — **scale degree, quality,

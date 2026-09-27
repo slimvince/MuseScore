@@ -2,7 +2,15 @@
 
 > **Establishment bound:** read 2026-08-30 via two prompted extraction calls over an open mirror
 > of the full text (retrieval route and the register's wrong-URL finding in the fetched content
-> record). CENTRAL: second independent pass owed.
+> record). CENTRAL: second independent pass was owed and HAS BEEN PERFORMED.
+>
+> *(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed
+> without asking. FORMER WORDING, PRESERVED (#12): "CENTRAL: second independent pass owed." That
+> sentence was true when written and was overtaken by one object, read at its directory listing on
+> 2026-09-26: the second-pass file
+> `reading_pass/extracts_second_pass/humphrey-bello-2015-four-timely-insights-ace.md`, on disk at
+> 11,038 bytes. Whether the two extracts have been cross-checked is not established by that listing
+> and is not claimed here. Nothing else in this extract is touched.)*
 
 ## Claims, labeled
 

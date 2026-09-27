@@ -629,7 +629,8 @@ charter expressly leaves to the detail specification, and which a specification 
 criterion and the algorithm) or have to argue against (the capacity bound, the lost convexity, the
 metric-exploitation risk). **By the commission's own test — *"any paper whose claims would carry load in
 a detail specification or against a design point"* — both halves are satisfied. A SECOND INDEPENDENT
-EXTRACTION IS OWED.**
+EXTRACTION WAS OWED — and IT HAS BEEN PERFORMED**, by a later sitting, not by this extract's.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "A SECOND INDEPENDENT EXTRACTION IS OWED.**" That sentence was true when written and was overtaken by three objects, each read in place on 2026-09-26: this file's own banner note of 2026-09-16 (its lines 7–13), which names the second extraction's cross-check and its file, so the file contradicted itself; the second-pass file `reading_pass/extracts_second_pass/och-2003-minimum-error-rate-training-in-statistical-machine-translation.md`, on disk at 50,903 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 15's second-pass cell (the table's line 94), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. The verdict is not touched.)*
 
 **The ground on which NOT CENTRAL could be argued, stated so the verdict is challengeable here:**
 **DP-P is NOT A CHOSEN DESIGN POINT** — its own words are *"NOT DECIDED HERE"* — so no chosen point's

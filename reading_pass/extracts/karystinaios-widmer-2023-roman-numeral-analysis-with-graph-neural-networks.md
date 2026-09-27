@@ -589,7 +589,9 @@ different corpus. **Not comparable, not merged** — the same treatment row 48's
 STRUCTURAL CLAIM on a live recorded ground, so NO STOP of the remedial commission §5 class either.**
 Both ratified items resting on this paper are CONFIRMED at the paper's own text.
 
-## Centrality — CENTRAL, and a second independent extraction is OWED
+## Centrality — CENTRAL, and a second independent extraction was OWED and has been performed
+
+*(★ HEADING CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "## Centrality — CENTRAL, and a second independent extraction is OWED". The refuting objects are named at the note under the first paragraph of this section.)*
 
 **CENTRAL**, on the ground this slice has used throughout, and here it is doubled: **two ratified
 items rest on this paper** — DP-A's and §S4(a)'s **.462→.491 pair**, which is a measured FIGURE and
@@ -597,7 +599,8 @@ not only a description, and **V8's onset-level representation** — and this rea
 paper's own text. A detail specification arguing DP-A's chosen "no" will cite this system's pair,
 and findings (1) and (4) change what may be said when it does; an L1 detail specification writing
 the partition-point rule will meet finding (2)'s onset-only precision. **A second independent
-extraction is OWED.**
+extraction was OWED — and IT HAS BEEN PERFORMED**, by a later sitting, not by this extract's.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**A second independent extraction is OWED.**" That sentence was true when written and was overtaken by two objects, each read in place on 2026-09-26: the second-pass file `reading_pass/extracts_second_pass/karystinaios-widmer-2023-roman-numeral-analysis-with-graph-neural-networks-onset-wise-predictions.md` — named at the listing with the `-onset-wise-predictions` suffix this first extract's file name does not carry — on disk at 93,763 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 49's second-pass cell (the table's line 84), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. This extract's own banner carries no note of the second extraction, and no handoff entry was searched for the sitting that performed it. The verdict is not touched and stays challengeable here, as the paragraph below says; the "drop the second pass" clause of that paragraph is left as written, being a statement about a reader's choice at the time of writing.)*
 
 **The ground on which NOT CENTRAL could be argued, stated in full so the verdict is challengeable
 here.** Both items were already marked VERIFIED at V8 and V9, and this read confirms rather than

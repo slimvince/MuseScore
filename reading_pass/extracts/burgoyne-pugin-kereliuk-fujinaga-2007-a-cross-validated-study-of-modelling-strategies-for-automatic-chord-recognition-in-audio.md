@@ -586,8 +586,9 @@ claim, because no ratified text rests on this paper — row 12's and row 13's re
 
 ## Centrality
 
-**CENTRAL, on a narrow ground, and a SECOND INDEPENDENT EXTRACTION IS OWED — stated with the ground on
+**CENTRAL, on a narrow ground, and a SECOND INDEPENDENT EXTRACTION WAS OWED — and IT HAS BEEN PERFORMED**, by a later sitting, not by this extract's — **stated with the ground on
 which the opposite verdict could be taken, so the user can flip it.**
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**CENTRAL, on a narrow ground, and a SECOND INDEPENDENT EXTRACTION IS OWED — stated with the ground on which the opposite verdict could be taken, so the user can flip it.**" That was true when written and was overtaken by three objects, each read in place on 2026-09-26: this file's own banner notes of 2026-09-19 (its lines 66–83), which name the second extraction's cross-check and its file, so the file contradicted itself; the second-pass file `reading_pass/extracts_second_pass/burgoyne-pugin-kereliuk-fujinaga-2007-a-cross-validated-study-of-modelling-strategies-for-automatic-chord-recognition-in-audio.md`, on disk at 59,729 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 17's second-pass cell (the table's line 104), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. The verdict is not touched; the flip clause at the end of this section is corrected beside it.)*
 
 *The ground.* The load-bearing-claim route is ABSENT (finding (3)). The ground is the commission's other
 route — *"any paper whose claims would carry load in a detail specification or against a design point"* —
@@ -617,8 +618,9 @@ asserted — and a specification that carried either without this paper would be
 result (row 13) or a state-space design (D-526) alone, as far as this reader's reads go. A second reader should
 check both independently: each is a reading of one table against three prose sentences and a design
 decision of the record, and each is exactly the kind of claim the double extraction exists to catch if it
-is wrong. **The verdict flips to NOT CENTRAL, and the second extraction to not owed, if the user reads
-findings (4) and (5) as data rather than as claims a specification would cite.**
+is wrong. **The verdict flips to NOT CENTRAL if the user reads findings (4) and (5) as data rather than as
+claims a specification would cite; the second extraction, having been performed, no longer turns on that.**
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22. FORMER WORDING, PRESERVED (#12): "**The verdict flips to NOT CENTRAL, and the second extraction to not owed, if the user reads findings (4) and (5) as data rather than as claims a specification would cite.**" The three objects that overtook the "to not owed" half are named at this section's opening note of the same date. The flip of the verdict itself is untouched and stays the user's.)*
 
 ## What this extract does NOT do
 

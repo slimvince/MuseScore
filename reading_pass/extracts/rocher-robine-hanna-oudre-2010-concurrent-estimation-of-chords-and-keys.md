@@ -296,9 +296,10 @@ paper's own measured position, and the L2 charter's coupling clause is the paper
 **CENTRAL.** Its claims carry load against a design point (DP-B's measured ground) and in the L2
 charter itself (the coupling clause's quotation and both of its "signs"), and an L2 detail
 specification would adopt or argue against its joint-state shape, its un-fitted theory cost and its
-candidate-admission trade. **A second independent extraction is therefore owed** under the original
-commission's §4 central-source rule, by one of that commission's two routes. It has not been performed
-and is recorded here as owed.
+candidate-admission trade. **A second independent extraction was therefore owed** under the original
+commission's §4 central-source rule, by one of that commission's two routes — **and IT HAS BEEN
+PERFORMED**, by a later sitting, not by this extract's.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**A second independent extraction is therefore owed** under the original commission's §4 central-source rule, by one of that commission's two routes. It has not been performed and is recorded here as owed." That sentence was true when written and was overtaken by three objects, each read in place on 2026-09-26: the second-pass file `reading_pass/extracts_second_pass/rocher-robine-hanna-oudre-2010-concurrent-estimation-of-chords-and-keys.md`, on disk at 39,418 bytes at that directory's listing; `reading_pass/l2_slice_reading_progress.md` row 27's second-pass cell, which reads DONE, updated 2026-09-20 with its own former OWED wording preserved; and handoff entry 169 §4, which records that extraction and its cross-check on 2026-09-13. This extract's own banner carries no note of the second extraction, so the correction is made here at the claim alone. The verdict is not touched and stays challengeable here.)*
 
 ## What this extract does NOT do
 

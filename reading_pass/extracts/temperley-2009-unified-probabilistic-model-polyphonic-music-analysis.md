@@ -365,8 +365,9 @@ only, no tonality) keeps it out of the tonality-and-chord decision that gives gr
 second independent extraction under the original commission's §4 central-source rule is therefore
 **owed**; its decisive questions are finding (1) — whether any passage of the paper decides or labels a
 tonality, which this read says none does — and whether any value is attached anywhere to the cost of
-the tactus-only restriction or to the resolution penalty. It has not been performed and is recorded here
-as owed.
+the tactus-only restriction or to the resolution penalty. **IT HAS BEEN PERFORMED**, by a later sitting,
+not by this extract's; the word *owed* three sentences up is read as *was owed*.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "It has not been performed and is recorded here as owed." That sentence was true when written and was overtaken by two objects, each read in place on 2026-09-26: the second-pass file `reading_pass/extracts_second_pass/temperley-2009-unified-probabilistic-model-for-polyphonic-music-analysis.md` — its name carries the word *for* where this extract's name does not — on disk at 88,861 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 8's second-pass cell, which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. This extract's own banner carries no note of the second extraction, and no handoff entry was searched for the sitting that performed it. The verdict is not touched and stays challengeable here.)*
 
 ## What this extract does NOT do
 

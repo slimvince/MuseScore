@@ -4,7 +4,17 @@
 > calls over the full text at the author's open copy (see the fetched content record beside this
 > file for the retrieval method and its declared limits). Locations are given at section/table
 > granularity as the tool relayed them, not at page/line. CENTRAL: a second, independent pass
-> (fresh session, no consultation of this extract) is owed; disagreements resolve at the paper.
+> (fresh session, no consultation of this extract) was owed and HAS BEEN PERFORMED; disagreements
+> resolve at the paper.
+>
+> *(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed
+> without asking. FORMER WORDING, PRESERVED (#12): "CENTRAL: a second, independent pass (fresh
+> session, no consultation of this extract) is owed; disagreements resolve at the paper." That
+> sentence was true when written and was overtaken by one object, read at its directory listing on
+> 2026-09-26: the second-pass file
+> `reading_pass/extracts_second_pass/mcleod-rohrmeier-2021-modular-harmonic-analysis.md`, on disk at
+> 9,828 bytes. Whether the two extracts have been cross-checked is not established by that listing
+> and is not claimed here. Nothing else in this extract is touched.)*
 
 ## Claims, labeled
 

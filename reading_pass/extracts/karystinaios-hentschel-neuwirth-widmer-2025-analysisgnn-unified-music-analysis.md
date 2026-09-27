@@ -808,7 +808,9 @@ none**; **no count of that population is asserted**, the inherited record statin
 progress record's carried item (d) and naming two for row 47 elsewhere in the same file. **It is put
 to the user and applied nowhere.**
 
-## Centrality — CENTRAL, and a second independent extraction is OWED
+## Centrality — CENTRAL, and a second independent extraction was OWED and has been performed
+
+*(★ HEADING CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "## Centrality — CENTRAL, and a second independent extraction is OWED". The refuting objects are named at the note under the first paragraph of this section.)*
 
 **CENTRAL**, on fourteen places of the record bearing on this paper — **the fourteen are enumerated
 above and no comparison with any other row of the slice is asserted** — of which four are LIVE
@@ -816,7 +818,8 @@ framework text (§4.2, DP-A, DP-D, A.3), three carry `[FACT]` tags on figures th
 (§4.2 line 252, DP-A line 681, §S5 line 1641), and **five carry a claim this read corrects** (§4.2,
 §S5, DP-D, A.3, DP4). A detail specification arguing DP-A's chosen "no" will cite this system's pair, and
 DP-D's own ground names its measurement; findings (1) and (2) change what may be said at both. **A
-second independent extraction is OWED.**
+second independent extraction was OWED — and IT HAS BEEN PERFORMED**, by a later sitting, not by this extract's.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**A second independent extraction is OWED.**" That sentence was true when written and was overtaken by two objects, each read in place on 2026-09-26: the second-pass file `reading_pass/extracts_second_pass/karystinaios-hentschel-neuwirth-widmer-2025-analysisgnn-unified-music-analysis.md`, on disk at 107,449 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 52's second-pass cell (the table's line 88), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. This extract's own banner carries no note of the second extraction, and no handoff entry was searched for the sitting that performed it. The verdict is not touched and stays challengeable here, as the paragraph below says; the "drop the second pass" clause of that paragraph is left as written, being a statement about a reader's choice at the time of writing.)*
 
 **The ground on which NOT CENTRAL could be argued, stated in full so the verdict is challengeable
 here.** Both ratified figures are confirmed at their cells and no value moves; nothing in a

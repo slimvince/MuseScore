@@ -2,7 +2,15 @@
 
 > **Establishment bound:** read 2026-08-30 via three prompted extraction calls over the full
 > text at the author's open copy (method and limits in the fetched content record). CENTRAL:
-> second independent pass owed.
+> second independent pass was owed and HAS BEEN PERFORMED.
+>
+> *(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed
+> without asking. FORMER WORDING, PRESERVED (#12): "CENTRAL: second independent pass owed." That
+> sentence was true when written and was overtaken by one object, read at its directory listing on
+> 2026-09-26: the second-pass file
+> `reading_pass/extracts_second_pass/dehaas-magalhaes-wiering-veltkamp-2013-harmtrace-functional-analysis.md`,
+> on disk at 9,885 bytes. Whether the two extracts have been cross-checked is not established by
+> that listing and is not claimed here. Nothing else in this extract is touched.)*
 
 ## Claims, labeled
 

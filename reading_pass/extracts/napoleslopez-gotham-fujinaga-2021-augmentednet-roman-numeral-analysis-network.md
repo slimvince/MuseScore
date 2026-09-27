@@ -615,7 +615,9 @@ structural claim on any recorded ground, so no STOP of the remedial commission �
 The one ratified item resting on this paper is confirmed rather than corrected; findings (1) and (2)
 are wording and level-of-description precisions on sentences whose substance holds.
 
-## Centrality — CENTRAL, and a second independent extraction is OWED
+## Centrality — CENTRAL, and a second independent extraction was OWED and has been performed
+
+*(★ HEADING CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "## Centrality — CENTRAL, and a second independent extraction is OWED". The refuting objects are named at the note under the first paragraph of this section.)*
 
 **CENTRAL**, on the ground this slice has used throughout: **a ratified `[FACT]` rests on this
 paper** — DP-A's live ground states its re-fusion and §S4(a) names the system — and this read
@@ -624,8 +626,9 @@ two OTHER papers. **No claim is made about earlier sessions:** what is establish
 progress record's "What is NOT done" section lists row 48 among the rows not opened, quoted, counted
 or extracted, read at that file this session. A detail specification arguing DP-A's chosen "no" will
 quote this
-system, and finding (2) changes what may be said when it does. **A second independent extraction is
-OWED.**
+system, and finding (2) changes what may be said when it does. **A second independent extraction was
+OWED — and IT HAS BEEN PERFORMED**, by a later sitting, not by this extract's.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**A second independent extraction is OWED.**" That sentence was true when written and was overtaken by two objects, each read in place on 2026-09-26: the second-pass file `reading_pass/extracts_second_pass/napoleslopez-gotham-fujinaga-2021-augmentednet-roman-numeral-analysis-network.md`, on disk at 103,454 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 48's second-pass cell (the table's line 82), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. This extract's own banner carries no note of the second extraction, and no handoff entry was searched for the sitting that performed it. The verdict is not touched and stays challengeable here, as the paragraph below says; the "drop the second pass" clause of that paragraph is left as written, being a statement about a reader's choice at the time of writing.)*
 
 **The ground on which NOT CENTRAL could be argued, stated in full so the verdict is challengeable
 here.** The item was already marked VERIFIED at V9 through two other primaries, and this read

@@ -265,7 +265,9 @@ exhibited, the coupling is soft, the grid is the rival at DP-C and its author re
 axis and its per-tone category emission as precedents and argue against its fixed grid. A second
 independent extraction under the original commission's §4 central-source rule is therefore **owed**; its
 decisive questions are finding (1)'s wording and whether any measured value exists anywhere in the
-paper. It has not been performed and is recorded here as owed.
+paper. **IT HAS BEEN PERFORMED**, by a later sitting, not by this extract's; the word *owed* two sentences
+up is read as *was owed*.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "It has not been performed and is recorded here as owed." That sentence was true when written and was overtaken by two objects, each read in place on 2026-09-26: the second-pass file `reading_pass/extracts_second_pass/raphael-stoddard-2003-harmonic-analysis-with-probabilistic-graphical-models.md`, on disk at 82,348 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 1's second-pass cell (the table's line 64), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. This extract's own banner carries no note of the second extraction, and no handoff entry was searched for the sitting that performed it. The verdict is not touched.)*
 
 ## What this extract does NOT do
 

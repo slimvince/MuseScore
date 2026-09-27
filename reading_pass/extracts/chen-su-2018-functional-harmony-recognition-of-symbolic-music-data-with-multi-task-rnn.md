@@ -680,7 +680,9 @@ asks for. Routed to measurement design.
 **No falsifier of a chosen design point, so no STOP of the falsifier class. No corrected structural
 claim on any recorded ground, live or sealed, so no STOP of the remedial commission §5 class either.**
 
-## Centrality — CENTRAL on a narrow ground, and a second independent extraction is OWED
+## Centrality — CENTRAL on a narrow ground, and a second independent extraction was OWED and has been performed
+
+*(★ HEADING CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "## Centrality — CENTRAL on a narrow ground, and a second independent extraction is OWED". The refuting objects are named at the note at the end of this section.)*
 
 **CENTRAL**, on one ground stated narrowly: **`FRAMEWORK.md` §S4(a) names this paper — by author and
 year, and as the term its universal starts from — and a detail specification arguing DP-A's chosen "no"
@@ -702,8 +704,9 @@ out-of-range notes; and no figure carries a run count or uncertainty of any kind
 PRESERVED (#12): "every figure is a single run with no uncertainty of any kind".)* **The verdict is
 challengeable at the progress record.**
 
-**A SECOND INDEPENDENT EXTRACTION IS OWED** under the original commission's §4, and it has not been
-performed.
+**A SECOND INDEPENDENT EXTRACTION WAS OWED** under the original commission's §4 — **and IT HAS BEEN
+PERFORMED**, by a later sitting, not by this extract's.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**A SECOND INDEPENDENT EXTRACTION IS OWED** under the original commission's §4, and it has not been performed." That sentence was true when written and was overtaken by three objects, each read in place on 2026-09-26: this file's own banner note of 2026-09-16 (its line 69), which names the second extraction, its file and its §9.3, so the file contradicted itself; the second-pass file `reading_pass/extracts_second_pass/chen-su-2018-functional-harmony-recognition-of-symbolic-music-data-with-multi-task-rnn.md`, on disk at 61,096 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 46's second-pass cell (the table's line 90), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. The verdict is not touched and stays challengeable at the progress record, as the paragraph above says.)*
 
 ## What this extract does NOT do
 

@@ -771,7 +771,9 @@ All three ratified places resting on this paper are CONFIRMED at the paper's own
 is the one a reader might grade otherwise, and the grounds for both readings are stated at the
 verification target.**
 
-## Centrality — CENTRAL, and a second independent extraction is OWED
+## Centrality — CENTRAL, and a second independent extraction was OWED and has been performed
+
+*(★ HEADING CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "## Centrality — CENTRAL, and a second independent extraction is OWED". The refuting objects are named at the note under the first paragraph of this section.)*
 
 **CENTRAL**, on three live places of the record resting on this paper — **the three are named here
 and no comparison with any other row of the slice is asserted**: DP-A's and §S4(a)'s **.762→.859**
@@ -780,7 +782,9 @@ pair (a measured FIGURE), §S4(a)'s
 1642** (a `[FACT]` inside the argument that makes L2's four questions one decision) — and this read
 verifies all three at the paper's own text. A detail specification arguing DP-A's chosen "no" will
 cite this system's pair, and finding (1) changes what may be said when it does; the entanglement
-argument's own bullet rests on the same cells. **A second independent extraction is OWED.**
+argument's own bullet rests on the same cells. **A second independent extraction was OWED — and IT HAS
+BEEN PERFORMED**, by a later sitting, not by this extract's.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**A second independent extraction is OWED.**" That sentence was true when written and was overtaken by two objects, each read in place on 2026-09-26: the second-pass file `reading_pass/extracts_second_pass/sailor-2024-rnbert-fine-tuning-a-masked-language-model-for-roman-numeral-analysis.md`, on disk at 130,815 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 50's second-pass cell (the table's line 86), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. This extract's own banner carries no note of the second extraction, and no handoff entry was searched for the sitting that performed it. The verdict is not touched and stays challengeable here, as the paragraph below says; the "drop the second pass" clause of that paragraph is left as written, being a statement about a reader's choice at the time of writing.)*
 
 **The ground on which NOT CENTRAL could be argued, stated in full so the verdict is challengeable
 here.** All three items were already marked VERIFIED or were carried as sealed first-stage text, and

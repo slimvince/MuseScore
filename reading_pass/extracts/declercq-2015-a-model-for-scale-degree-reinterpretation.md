@@ -914,8 +914,8 @@ project's own measurements** until an external concordance the repository does n
 the narrower form, and the aggregate-to-aggregate caveat that goes with it, being stated at the
 cross-primary section above rather than restated here.
 
-**Second independent extraction: OWED** — flipping to *not owed* if the user takes the NOT CENTRAL
-reading, which is stated above in full so the choice is his.
+**Second independent extraction: DONE** — it was OWED by the CENTRAL verdict and it has been performed.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**Second independent extraction: OWED** — flipping to *not owed* if the user takes the NOT CENTRAL reading, which is stated above in full so the choice is his." That was true when written and was overtaken by three objects, each read in place on 2026-09-26: this file's own banner note of 2026-09-19, which names the second extract and its cross-check; the second-pass file `reading_pass/extracts_second_pass/declercq-2015-a-model-for-scale-degree-reinterpretation.md`, on disk at 72,089 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 40's second-pass cell, which reads DONE, updated 2026-09-20. The CENTRAL verdict is not touched and stays challengeable above.)*
 
 ---
 

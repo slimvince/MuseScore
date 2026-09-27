@@ -711,8 +711,9 @@ every measured figure is on synthetic data or English part-of-speech tagging; wh
 would actually instantiate is the segmental extension (row 11) and its musical instances (rows 10 and 19),
 of which this paper is the common ancestor rather than the thing adopted; the record cites it nowhere, which
 is row 51's situation and row 51 was graded NOT CENTRAL; and the paper prints no uncertainty on any figure.
-**A second independent extraction is therefore OWED on this verdict**, and the verdict itself is
-challengeable at `reading_pass/l2_slice_reading_progress.md`.
+**A second independent extraction was therefore OWED on this verdict — and IT HAS BEEN PERFORMED**, by a
+later sitting, not by this extract's; the verdict itself is challengeable at `reading_pass/l2_slice_reading_progress.md`.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**A second independent extraction is therefore OWED on this verdict**, and the verdict itself is challengeable at `reading_pass/l2_slice_reading_progress.md`." That sentence was true when written and was overtaken by three objects, each read in place on 2026-09-26: this file's own banner note of 2026-09-19 (its lines 7–14), which names the second extraction's cross-check and its file, so the file contradicted itself; the second-pass file `reading_pass/extracts_second_pass/lafferty-mccallum-pereira-2001-conditional-random-fields-probabilistic-models-for-segmenting-and-labeling-sequence-data.md` — named at the listing with `-probabilistic-models-` in its name where this first extract's file name has none — on disk at 40,212 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 12's second-pass cell (the table's line 96), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. The verdict is not touched.)*
 
 ## What this extract does NOT do
 

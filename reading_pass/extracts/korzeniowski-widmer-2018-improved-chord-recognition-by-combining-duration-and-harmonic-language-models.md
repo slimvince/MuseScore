@@ -521,7 +521,9 @@ of WCSR and the duration model's own share of it is not tabulated; and its chose
 its exact decode, so what a specification could adopt from it is the factorisation and the three-shape
 comparison rather than the system. Against that: rows 3 and 29 were NOT CENTRAL because every design
 element they exhibited had a primary or an owner elsewhere in the record — and the segment-length term
-has neither. **A second independent extraction is therefore OWED** on this verdict.
+has neither. **A second independent extraction was therefore OWED** on this verdict — **and IT HAS BEEN
+PERFORMED**, by a later sitting, not by this extract's.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**A second independent extraction is therefore OWED** on this verdict." That sentence was true when written and was overtaken by two objects, each read in place on 2026-09-26: the second-pass file `reading_pass/extracts_second_pass/korzeniowski-widmer-2018-improved-chord-recognition-by-combining-duration-and-harmonic-language-models.md`, on disk at 87,539 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 20's second-pass cell (the table's line 74), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. This extract's own banner carries no note of the second extraction, and no handoff entry was searched for the sitting that performed it. The verdict is not touched and stays challengeable at the progress record, as the sentence above says.)*
 
 ## What this extract does NOT do
 

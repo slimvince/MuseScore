@@ -4,7 +4,8 @@
 > as page images through the file tools over a bridge-staged copy, in calls covering pages 1–10, 11–24,
 > 25–44, 45–56, 57–76, 77–89, 90–99 and 100–107 — **named rather than counted, because a number on this
 > side's own acts is what cadence 5 forbids.** No page of the file was left unopened.
-> A second independent extraction is OWED if the verdict below is CENTRAL and the user does not flip it.
+> A second independent extraction was OWED if the verdict below stood CENTRAL and the user did not flip it — **and IT IS DONE.**
+> *(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "A second independent extraction is OWED if the verdict below is CENTRAL and the user does not flip it." That sentence was true when written and was overtaken by three objects, each read in place on 2026-09-26: this banner's own note of 2026-09-19 below, which names the second extract and its cross-check; the second-pass file `reading_pass/extracts_second_pass/rohrmeier-2006-towards-modelling-harmonic-movement-in-music.md`, on disk at 69,002 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 23's second-pass cell, which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. The verdict is not touched and stays challengeable at §10.)*
 >
 > **THE CLOSING SECTION — §11, what the whole reading of this extract found — WAS WRITTEN IN THE ACT
 > THAT RAN THAT READING AND NOT BEFORE.** This extract was written with §11 absent, nothing was landed,
@@ -590,7 +591,8 @@ particular style"*. **On that reading it is an interesting near neighbour whose 
 specification would have to argue against rather than adopt — which the criterion admits, but at a weight
 closer to a corroborating source than to a candidate architecture.**
 
-**A second independent extraction is OWED unless the user flips the verdict.**
+**A second independent extraction was OWED unless the user flipped the verdict — and IT IS DONE.**
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22. FORMER WORDING, PRESERVED (#12): "A second independent extraction is OWED unless the user flips the verdict." The three objects that overtook it are named at the banner's correction note of the same date: the banner's note of 2026-09-19, the second-pass file at 69,002 bytes, and the progress record's row 23 cell reading DONE. The CENTRAL verdict above is not touched by this correction and the NOT CENTRAL ground stands as stated.)*
 
 ---
 

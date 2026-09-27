@@ -522,7 +522,9 @@ be argued, stated so the challenge is easy to make:** the one figure the record 
 verified by the pass at `population.md` §3 (V10) and this read adds magnitudes and precisions, not a new
 verification; the system decides no tonality and discards spelling, so it measures a narrower decision
 than L2's; and its ablation differences are small and carry no stated uncertainty. **A second
-independent extraction is therefore OWED** on this verdict.
+independent extraction was therefore OWED** on this verdict — **and IT HAS BEEN PERFORMED**, by a later
+sitting, not by this extract's.
+*(★ CORRECTED 2026-09-26 under the user's standing licence of 2026-09-22 that staleness is fixed without asking. FORMER WORDING, PRESERVED (#12): "**A second independent extraction is therefore OWED** on this verdict." That sentence was true when written and was overtaken by two objects, each read in place on 2026-09-26: the second-pass file `reading_pass/extracts_second_pass/yang-cwitkowitz-duan-2023-harmonic-analysis-with-neural-semi-crf.md`, on disk at 92,745 bytes at that directory's listing; and `reading_pass/l2_slice_reading_progress.md` row 19's second-pass cell (the table's line 73), which reads DONE, updated 2026-09-20 with its own former OWED wording preserved. This extract's own banner carries no note of the second extraction, and no handoff entry was searched for the sitting that performed it. The verdict is not touched and stays challengeable at the progress record, as the paragraph says.)*
 
 ## What this extract does NOT do
 
