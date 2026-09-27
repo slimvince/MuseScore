@@ -35,6 +35,11 @@ WHAT IT DOES, AND NOTHING ELSE.  Every numbered item is a key of the artifact.
      reading file, located by heading text and NOT parsed; and one block of computed sizes a reader
      can read without the rest.  Every figure is computed; none is authored.
 
+  6. `the_tabulation_population` -- the population cut into the MEMBERS the comparison tabulates,
+     in its order, under the named-documents ruling of 2026-09-27 (Option B) and THE_PASSAGE_RULE;
+     with two further STOPs: item 2's derived names differing from the ruling's two lists, and a
+     hit line or an item-4 home not lying in exactly one member.
+
 ONE PATH PER CONCERN (#6; D-623 -- a capability is a parameter, never a sibling copy).  The
 section locator, the class reader, the specification-set reader, the term matcher and the text
 reader are IMPORTED from `gen_l0_l1_outgoing_population`; the forty-two terms from
@@ -55,7 +60,7 @@ tool's):
 
 WHAT IT DOES NOT DO.  It takes no disposition, orders no tabulation, grades nothing, compares
 nothing, and edits no outgoing text.  It does not open the blind derivation, its brief, or the
-boot pack's directory.  THE TABULATION'S UNIT, ORDER AND BATCHING ARE THE NEXT DISPATCH'S.
+boot pack's directory.  THE TABULATION'S ORDER IS PUBLISHED HERE; ITS UNIT IS THE TABULATING DISPATCH'S.
 
 Run:
     python tools/audit/gen_l2_outgoing_population.py           # write the artifact
@@ -142,9 +147,73 @@ THE_RESIDUE_STATEMENT = (
 )
 
 SIZE_STOP_STATEMENT = (
-    "THIS BATCH TABULATES NOTHING. The size stop is that the batch ends here; the tabulation's "
-    "unit, order and batching are written by the next dispatch after the writing side has read "
-    "this block."
+    "THE TABULATION RUNS IN THE ORDER OF `the_tabulation_population`, ONE MEMBER PER COMMIT, AND "
+    "MAY STOP AT ANY MEMBER BOUNDARY (D-672).  Its unit, the outgoing statement, is fixed by the "
+    "dispatch that tabulates, not by this tool."
+)
+
+# --------------------------------------------------------------------------------------------
+# THE NAMED-DOCUMENTS RULING -- which of item 2's documents are compared WHOLE.  User, 2026-09-27,
+# `records/cowork/rulings/cowork_rulings_2026_09_27_l2_named_documents_sitting.md` §1, Option B.
+# AUTHORED from the ruling's own lists; the union must equal item 2's derived names EXACTLY, in both
+# directions, or the run STOPs -- so a name entering or leaving the four spans halts it.
+# --------------------------------------------------------------------------------------------
+THE_NAMED_DOCUMENTS_RULING = {
+    "record": "records/cowork/rulings/cowork_rulings_2026_09_27_l2_named_documents_sitting.md",
+    "section": "§1 — Ruling — Option B",
+    "executed_by": "records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md, "
+                   "Task 1",
+}
+
+ITEM_2_WHOLE = [
+    "cowork_joint_estimator_factorization.md",
+    "cowork_layer3_keymode_design.md",
+    "cowork_layer4_chordsymbol_design.md",
+    "cowork_layer5_engagement_design.md",
+    "cowork_layer5_function_design.md",
+    "cowork_prefit_gates.md",
+    "cowork_score_census.md",
+    "cowork_stage5_fitter_design.md",
+    "cowork_engage_arc_plan.md",
+    "cowork_l1l4_review_charter.md",
+    "cowork_phase5b_l4_build_plan.md",
+    "docs/nct_detection_design.md",
+]
+
+ITEM_2_LISTED_NOT_WHOLE = [
+    "CLAUDE.md",
+    "OPEN_ITEMS.md",
+    "DEFECT_TYPES.md",
+    "open_items/OI-176.md",
+    "open_items/OI-177.md",
+    "records/cc/reports/cc_layer3_wiring_report.md",
+    "records/cc/reports/cc_tonicization_modulation_metric_dossier.md",
+    "records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md",
+]
+
+TOP_LEVEL = re.compile(r"^## ")
+
+THE_PASSAGE_RULE = (
+    "A passage is the block of lines holding one item-3 hit line, or spanning one item-4 home: "
+    "(a) a line inside a fenced code block takes the whole block, fence lines included; (b) any "
+    "other line takes the maximal run of consecutive non-blank lines around it, stopping at a blank "
+    "line or a fence line; (c) where that run is one heading line standing alone, it takes the "
+    "heading together with the block that follows it (blank lines skipped), unless the next "
+    "non-blank line is a heading or a fence.  An item-4 home spanning lines a..b takes the block "
+    "around a through the block around b.  Overlapping or touching passages of one document merge.  "
+    "In ARCHITECTURE.md every line inside the four item-1 spans is removed from the passages (those "
+    "spans are tabulated whole), and the passages are grouped by the nearest top-level `## ` heading "
+    "at or before them, the lines before the first such heading forming the opening block."
+)
+
+THE_ORDER = (
+    "1-4: the four item-1 sections, in ARCHITECTURE.md's order.  Then the twelve WHOLE item-2 "
+    "documents: the specification-set members first, then the others; within each group by "
+    "descending count of distinct item-3 hit lines, ties by path.  Then ARCHITECTURE.md's passages, "
+    "one member per top-level `## ` section, in the file's order.  Then every other document "
+    "carrying passages: the specification-set members by descending count of their distinct item-3 "
+    "hit lines, ties by path; then the documents reached by item 4 alone, by path.  Last: the L0/L1 "
+    "transfer input."
 )
 
 
@@ -186,6 +255,82 @@ def headings_by_line(lines):
 
 def norm(path):
     return os.path.normpath(path).replace("\\", "/")
+
+
+def fence_ranges(lines):
+    """1-based (first, last) of every fenced code block, fence lines included; an unclosed fence
+    runs to the end of the file.  The fence test is FENCE, the one `headings_by_line` uses."""
+    out = []
+    start = None
+    for number, line in enumerate(lines, 1):
+        if FENCE.match(line):
+            if start is None:
+                start = number
+            else:
+                out.append((start, number))
+                start = None
+    if start is not None:
+        out.append((start, len(lines)))
+    return out
+
+
+def block_around(lines, number, fences):
+    """THE PASSAGE RULE (THE_PASSAGE_RULE, (a) to (c)) for one 1-based line."""
+    for first, last in fences:
+        if first <= number <= last:
+            return first, last
+    fenced = set()
+    for first, last in fences:
+        fenced.update(range(first, last + 1))
+
+    def stops(n):
+        return lines[n - 1].strip() == "" or n in fenced
+
+    first = last = number
+    while first > 1 and not stops(first - 1):
+        first -= 1
+    while last < len(lines) and not stops(last + 1):
+        last += 1
+    if first == last and HEADING.match(lines[first - 1]):
+        following = last + 1
+        while following <= len(lines) and lines[following - 1].strip() == "":
+            following += 1
+        if (following <= len(lines) and following not in fenced
+                and not HEADING.match(lines[following - 1])):
+            last = block_around(lines, following, fences)[1]
+    return first, last
+
+
+def merge_ranges(ranges):
+    """The sorted union of 1-based inclusive ranges; overlapping or touching ranges merge."""
+    out = []
+    for first, last in sorted(ranges):
+        if out and first <= out[-1][1] + 1:
+            out[-1] = (out[-1][0], max(out[-1][1], last))
+        else:
+            out.append((first, last))
+    return out
+
+
+def subtract_spans(ranges, spans):
+    """`ranges` with every line inside any (first, last) of `spans` removed, a range split where a
+    span cuts it; the result merged."""
+    out = []
+    for first, last in ranges:
+        pieces = [(first, last)]
+        for s_first, s_last in spans:
+            kept = []
+            for a, b in pieces:
+                if b < s_first or a > s_last:
+                    kept.append((a, b))
+                    continue
+                if a < s_first:
+                    kept.append((a, s_first - 1))
+                if b > s_last:
+                    kept.append((s_last + 1, b))
+            pieces = kept
+        out.extend(pieces)
+    return merge_ranges(out)
 
 
 # --------------------------------------------------------------------------------------------
@@ -415,6 +560,156 @@ def derive():
     t_first, t_last = span_range(transfer_bounds)
     transfer_lines = file_lines(transfer_text)[t_first - 1:t_last]
 
+    # ---- THE TABULATION POPULATION (the named-documents ruling; THE_PASSAGE_RULE; THE_ORDER) -----
+    names_derived = {d["name_as_written"] for d in distinct_names}
+    ruled_whole = set(ITEM_2_WHOLE)
+    ruled_listed = set(ITEM_2_LISTED_NOT_WHOLE)
+    if len(ruled_whole) != len(ITEM_2_WHOLE) or len(ruled_listed) != len(ITEM_2_LISTED_NOT_WHOLE):
+        raise Stop("a name is listed twice in the named-documents ruling's lists")
+    if ruled_whole & ruled_listed:
+        raise Stop("ruled both WHOLE and LISTED: %s" % sorted(ruled_whole & ruled_listed))
+    if names_derived != ruled_whole | ruled_listed:
+        raise Stop("item 2's derived names disagree with the named-documents ruling: derived only "
+                   "%s; ruled only %s" % (sorted(names_derived - (ruled_whole | ruled_listed)),
+                                          sorted((ruled_whole | ruled_listed) - names_derived)))
+    for name in ITEM_2_WHOLE:
+        if not distinct[name]["resolves_at_the_path_as_written"]:
+            raise Stop("%s is ruled WHOLE and does not resolve at the path as written" % name)
+
+    cache = {ARCHITECTURE: arch_lines}
+
+    def lines_of(path):
+        if path not in cache:
+            cache[path] = file_lines(read_text(path))
+        return cache[path]
+
+    def hit_lines_of(path):
+        record = population.get(path) or residue.get(path)
+        return {h["line_number"] for h in record["hit_records"]} if record else set()
+
+    whole_norm = {norm(p) for p in ITEM_2_WHOLE}
+    arch_spans = [(first, last) for _, first, last in spans]
+    passage_ranges = {}
+    passage_hit_count = {}
+    for path, record in population.items():
+        if norm(path) in whole_norm:
+            continue
+        lines = lines_of(path)
+        fences = fence_ranges(lines)
+        hit_set = {h["line_number"] for h in record["hit_records"]}
+        if path == ARCHITECTURE:
+            hit_set = {n for n in hit_set if not item1_span_of(n)}
+        passage_hit_count[path] = len(hit_set)
+        passage_ranges.setdefault(path, []).extend(
+            block_around(lines, n, fences) for n in sorted(hit_set))
+    for p in passages:
+        where = p["where_it_falls"]
+        if where.startswith("inside item 1"):
+            continue
+        if where.startswith("in an item-2 document") and norm(p["document"]) in whole_norm:
+            continue
+        lines = lines_of(p["document"])
+        fences = fence_ranges(lines)
+        first = block_around(lines, p["span"]["first_line"], fences)[0]
+        last = block_around(lines, p["span"]["last_line"], fences)[1]
+        passage_ranges.setdefault(p["document"], []).append((first, last))
+    for path in list(passage_ranges):
+        merged = merge_ranges(passage_ranges[path])
+        if path == ARCHITECTURE:
+            merged = subtract_spans(merged, arch_spans)
+        passage_ranges[path] = merged
+
+    def make_member(kind, document, label, ranges):
+        lines = lines_of(document)
+        body = [lines[n - 1] for first, last in ranges for n in range(first, last + 1)]
+        return {
+            "kind": kind,
+            "document": document,
+            "label": label,
+            "ranges": [{"first_line_as_a_locator_only": first,
+                        "last_line_as_a_locator_only": last,
+                        "first_line_text": lines[first - 1],
+                        "last_line_text": lines[last - 1]} for first, last in ranges],
+            "lines": len(body),
+            "bytes": len(("\n".join(body) + "\n").encode("utf-8")) if body else 0,
+        }
+
+    members = []
+    for record in item1:
+        first, last = span_range(record["section"])
+        members.append(make_member("item 1 — a named section", ARCHITECTURE,
+                                   record["section"]["opening_heading_as_found"], [(first, last)]))
+    for path in sorted(ITEM_2_WHOLE, key=lambda p: (p not in spec_paths, -len(hit_lines_of(p)), p)):
+        members.append(make_member(
+            "item 2 — a whole document" + (" (a specification-set member)" if path in spec_paths
+                                           else " (not a specification-set member)"),
+            path, "the whole document", [(1, len(lines_of(path)))]))
+    if ARCHITECTURE in passage_ranges:
+        fences = fence_ranges(arch_lines)
+        fenced = set()
+        for first, last in fences:
+            fenced.update(range(first, last + 1))
+        heads = [n for n, line in enumerate(arch_lines, 1)
+                 if n not in fenced and TOP_LEVEL.match(line)]
+        groups = {}
+        for first, last in passage_ranges[ARCHITECTURE]:
+            x = first
+            while x <= last:
+                prior = [h for h in heads if h <= x]
+                later = [h for h in heads if h > x]
+                key = prior[-1] if prior else 0
+                end = min(last, later[0] - 1) if later else last
+                groups.setdefault(key, []).append((x, end))
+                x = end + 1
+        for key in sorted(groups):
+            label = (arch_lines[key - 1] if key
+                     else "the opening block, above the first `## ` heading")
+            members.append(make_member("items 3 and 4 — passages of a specification-set member",
+                                       ARCHITECTURE, label, merge_ranges(groups[key])))
+    others = [p for p in passage_ranges if p != ARCHITECTURE]
+    in_set = sorted((p for p in others if p in spec_paths),
+                    key=lambda p: (-passage_hit_count.get(p, 0), p))
+    alone = sorted(p for p in others if p not in spec_paths)
+    for path in in_set:
+        members.append(make_member("items 3 and 4 — passages of a specification-set member",
+                                   path, "the passages of the document", passage_ranges[path]))
+    for path in alone:
+        members.append(make_member("item 4 — passages reached by item 4 alone",
+                                   path, "the passages of the document", passage_ranges[path]))
+    members.append(make_member("the L0/L1 transfer input", TRANSFER_SOURCE,
+                               transfer_bounds["opening_heading_as_found"], [(t_first, t_last)]))
+    for position, member in enumerate(members, 1):
+        member["position"] = position
+        member["item_3_hit_lines_inside"] = 0
+        member["item_4_identities_inside"] = []
+
+    def members_holding(document, first, last):
+        return [m for m in members if norm(m["document"]) == norm(document) and any(
+            r["first_line_as_a_locator_only"] <= first and last <= r["last_line_as_a_locator_only"]
+            for r in m["ranges"])]
+
+    for path, record in population.items():
+        for n in sorted({h["line_number"] for h in record["hit_records"]}):
+            holding = members_holding(path, n, n)
+            if len(holding) != 1:
+                raise Stop("item-3 hit line %s:%d lies in %d tabulation members, not one"
+                           % (path, n, len(holding)))
+            holding[0]["item_3_hit_lines_inside"] += 1
+    for p in passages:
+        holding = members_holding(p["document"], p["span"]["first_line"], p["span"]["last_line"])
+        if len(holding) != 1:
+            raise Stop("%s's home %s lies wholly in %d tabulation members, not one"
+                       % (p["identity"], p["home_as_cited"], len(holding)))
+        holding[0]["item_4_identities_inside"].append(
+            {"identity": p["identity"], "home_as_cited": p["home_as_cited"]})
+    listed = [{"name": name, "bytes": distinct[name]["bytes"],
+               "inventory_class": distinct[name]["inventory_class"],
+               "in_the_residue": name in residue,
+               "the_statement": "named inside the four item-1 spans; LISTED and not compared "
+                                "whole under the named-documents ruling; the lines that name it "
+                                "are tabulated inside item 1"}
+              for name in ITEM_2_LISTED_NOT_WHOLE]
+
     # ---- THE MEASURED SIZE -------------------------------------------------------------------
     def falls_kind(where):
         return where.split(":")[0] if ":" in where else where.split(",")[0]
@@ -452,6 +747,17 @@ def derive():
         "item_4_passages_by_where_it_falls": dict(sorted(by_kind.items())),
         "item_4_passages_by_where_it_falls_exact_value": dict(sorted(by_value.items())),
         "the_transfer_span_lines": transfer_bounds["lines_in_the_span"],
+        "the_tabulation_population": {
+            "members": len(members),
+            "members_by_kind": {k: sum(1 for m in members if m["kind"] == k)
+                                for k in sorted({m["kind"] for m in members})},
+            "lines_by_kind": {k: sum(m["lines"] for m in members if m["kind"] == k)
+                              for k in sorted({m["kind"] for m in members})},
+            "bytes_by_kind": {k: sum(m["bytes"] for m in members if m["kind"] == k)
+                              for k in sorted({m["kind"] for m in members})},
+            "lines_total": sum(m["lines"] for m in members),
+            "bytes_total": sum(m["bytes"] for m in members),
+        },
     }
 
     reach_item3 = (
@@ -459,8 +765,8 @@ def derive():
         "SUBSTRING match (`tonic` matches inside *diatonic*, `grain` inside longer words), so the "
         "hit set OVER-REACHES in a known direction; and a passage about L2's subject that uses "
         "none of the terms is not found.  The hit set is therefore a LOWER BOUND on the relevant "
-        "text, never a census (D-673).  THE UNIT \"PASSAGE\" IS RECORDED HERE AS THE HIT LINE; the "
-        "tabulation's unit is fixed by the next dispatch, not by this tool."
+        "text, never a census (D-673).  The hit records here are LINES; the passages cut around "
+        "them are at `the_tabulation_population` under `the_passage_rule`."
     )
     spec_not_searched = sorted(m for m in spec_members if m not in class_of)
 
@@ -586,6 +892,22 @@ def derive():
             "lines_in_the_span_containing_the_string_L2": sum(1 for line in transfer_lines
                                                               if "L2" in line),
         },
+        "the_named_documents_ruling": THE_NAMED_DOCUMENTS_RULING,
+        "the_tabulation_population": {
+            "★_what_this_is": (
+                "The outgoing population cut into the MEMBERS the comparison tabulates, in the "
+                "order it tabulates them, under the ruling of 2026-09-27 (Option B), the "
+                "named-documents ruling of the same date (Option B) and the passage rule below.  "
+                "Every item-3 hit line of every specification-set member lies in exactly one "
+                "member, and every one of the 111 item-4 homes lies wholly in exactly one member; "
+                "either failing is a STOP, so this sentence records checks that passed.  It takes "
+                "no disposition and grades nothing."
+            ),
+            "the_passage_rule": THE_PASSAGE_RULE,
+            "the_order": THE_ORDER,
+            "item_2_listed_not_compared_whole": listed,
+            "the_members": members,
+        },
         "the_measured_size": measured,
     }
 
@@ -626,7 +948,9 @@ def main():
     for kind, n in size["item_4_passages_by_where_it_falls"].items():
         print("item 4: %s — %d" % (kind, n))
     print("transfer span: %d lines" % size["the_transfer_span_lines"])
-    print("THIS BATCH TABULATES NOTHING.")
+    tp = size["the_tabulation_population"]
+    print("tabulation population: %d members, %d lines, %d bytes"
+          % (tp["members"], tp["lines_total"], tp["bytes_total"]))
     print("wrote %s" % OUT)
     return 0
 
