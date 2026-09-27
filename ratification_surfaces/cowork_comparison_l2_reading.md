@@ -37,7 +37,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | Position | Member | State |
 |---|---|---|
 | 1 | `ARCHITECTURE.md` — *The joint estimator — the standing rules of the production inference layer* | **DONE** (§6.1) |
-| 2 | `ARCHITECTURE.md` — *Layer 3 — key/mode is the sequence decoder* | NOT YET TABULATED |
+| 2 | `ARCHITECTURE.md` — *Layer 3 — key/mode is the sequence decoder* | **DONE** (§6.2) |
 | 3 | `ARCHITECTURE.md` — *Layer 4 — the per-slice chord-symbol decoder* | NOT YET TABULATED |
 | 4 | `ARCHITECTURE.md` — *Layer 5 — the function/cadence layer* | NOT YET TABULATED |
 | 5 | `cowork_layer5_function_design.md`, whole | NOT YET TABULATED |
@@ -101,7 +101,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done so far: position 1.** The next member to tabulate is the first row above marked NOT YET
+each. **Done so far: positions 1 and 2.** The next member to tabulate is the first row above marked NOT YET
 TABULATED. **A member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation,
 not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -1461,6 +1461,993 @@ statements because six statements name two derived statements each: 1.9, 1.29(i)
   1.2, 1.5, 1.6(i), 1.7, 1.20, 1.21, 1.22(i), 1.45; L2-S31 (entry 1) at 1.9, 1.36; L2-S17 (entry 1) at
   1.29, 1.37, 1.38, 1.39, 1.50, 1.51.
 
+---
+
+### 6.2 — Member 2: `ARCHITECTURE.md`, the section *"#### Layer 3 — key/mode is the sequence decoder (Built+Dormant)"*
+
+> **Manifest for this member.** Position **2**. Kind: *item 1 — a named section*. Document:
+> `ARCHITECTURE.md`. Label: *"#### Layer 3 — key/mode is the sequence decoder (Built+Dormant)"*. Range,
+> as a locator only: lines 1728–1934, from that heading to the line before the next `#### ` heading.
+> Outgoing statements: **65** (rows 2.1 to 2.56; eight rows are split, so 56 rows carry 65 statements).
+> Listed under *not a statement*: **30**. Counted at this member by this session.
+>
+> **What kind of text this is.** The section opens with its own build-state correction: the
+> pipeline it describes *"no longer decides the key on either surface"*, and *"The description below
+> remains accurate for the dormant pipeline"*. Much of it therefore describes a mechanism that exists
+> and does not run, and those rows are QUARANTINED or HISTORICAL; the rules it states about what the
+> key decision may read are tabulated as rules.
+>
+> **The WITHHELD homes inside this member**, from the artifact: **D-306** (lines 1771–1773), **D-605**
+> (1866–1878), **D-616** (1879–1893), **D-622** (1894–1905), **D-575** (1917–1933). **No SEEN home lies
+> in this member.**
+
+---
+
+**Row 2.1 — Layer 3's decoder no longer decides the key on either surface.**
+
+*Outgoing statement.* "Layer 3's decoder no longer decides the key on either surface: the batch/corpus
+surface runs the joint estimator since the OI-178 adoption (2026-07-26) and the in-app notation surface
+since the notation switch (2026-07-27)." — the build-state correction (locator: lines 1730–1733).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 2.2 — every production call site of this pipeline sits in the disabled branch.**
+
+*Outgoing statement.* "Verified at the code: every production call site of this pipeline — … — sits in
+the `false` branch of `useJointNotationRecord`, whose default is `true` (`composingconfiguration.cpp:178`)."
+— the build-state correction (locator: lines 1733–1738).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is every production call site of the Layer 3
+pipeline in the branch the default configuration does not take?
+
+---
+
+**Row 2.3 — the remaining callers are development diagnostics, not shipped.**
+
+*Outgoing statement.* "The remaining callers are the `batch_analyze` diagnostics, which are development
+tools and are not shipped (§15)." — the build-state correction (locator: lines 1738–1739).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the only remaining callers of the Layer 3
+pipeline development diagnostics that do not ship?
+
+---
+
+**Row 2.4 — the description below is accurate for the dormant pipeline, not for what runs.**
+
+*Outgoing statement.* "**The description below remains accurate for the dormant pipeline** and is
+retained as the record of what that pipeline does; it is no longer a description of what runs." — the
+build-state correction (locator: lines 1739–1740).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status of the section's own content.
+
+---
+
+**Row 2.5 — tried and closed on this layer.**
+
+*Outgoing statement.* "**Tried and closed on this layer — do not retry; the register carries each with
+its evidence: D-287 (key-as-distribution, shelved), D-290 (the key-agnostic local cadence approach,
+falsified).**" — (locator: line 1744).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — two tried-and-closed lines, both marked LEGACY-SCOPED by the
+block that follows.
+
+---
+
+**Row 2.6 — do not revive carrying a ranked distribution of key candidates forward.**
+
+*Outgoing statement.* "**Do not revive carrying a ranked distribution of key candidates forward instead
+of one committed key.**" — the block *"★ WHAT THOSE TWO ARE"*, both marked LEGACY-SCOPED (locator:
+lines 1751–1752).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text says *"Do not revive carrying a ranked
+distribution of key candidates forward instead of one committed key"*; L2-S40 publishes, per span, the
+rivals' mass as *"the total mass of all whole readings that contain that span"*, over a
+*"whole-reading-normalised model"*.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a shelving the block scopes to this layer's dormant pipeline.
+
+---
+
+**Row 2.7 — the shelving names its own re-open condition.**
+
+*Outgoing statement.* "**The shelving names its own re-open condition** — a confirmed case with the
+correct key at rank one or two — so it is a shelving with a stated trigger, not a permanent exclusion."
+— the same block (locator: lines 1757–1759).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the status of a legacy shelving.
+
+---
+
+**Row 2.8 — the joint design carries a full posterior by construction.**
+
+*Outgoing statement.* "*For a reader arriving from the joint estimator:* that design carries a full
+posterior by construction, so the concern this shelving withdrew is met by a different design rather
+than by reviving this one." — the same block (locator: lines 1759–1761).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **AGREES** — *"the masses of all readings of the working span sum to
+one"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S35).
+
+---
+
+**Row 2.9 — do not retry deciding the key from cadences found without knowing the key, one at a time.**
+
+*Outgoing statement.* "**Do not retry deciding the key from cadences found without knowing the key, one
+cadence at a time.**" — the same block (locator: lines 1762–1763).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **AGREES** — *"confirmation is carried by the progression term over
+*proposed* chords, not by a separate detector"*.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a tried-and-closed line the block scopes to the dormant
+pipeline; the rule L2-S34 states in its own terms is carried there.
+
+---
+
+**Row 2.10 — the backward re-reading facility stays switched off in the shipped configuration.**
+*WITHHELD — D-306.*
+
+*Outgoing statement.* "**The backward re-reading facility stays SWITCHED OFF in the shipped
+configuration.**" — (locator: line 1771).
+
+*Derived statements that speak to it.* L2-S22 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text says the facility for re-reading an
+earlier stretch *"stays SWITCHED OFF in the shipped configuration"*; L2-S22 says *"L2 is the layer that
+asks for more music. It stops asking when its in-span publication stops changing between successive
+enlargements."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the Layer 3 backward re-reading facility
+off in the shipped configuration, and does anything on the production arm read before the start of the
+working span?
+
+---
+
+**Row 2.11 — the layer carries a facility for re-reading an earlier stretch.** *WITHHELD — D-306.*
+
+*Outgoing statement.* "This layer carries a facility for returning to an earlier stretch and re-reading
+it once later evidence has arrived (`ReachBackOptions`)." — (locator: lines 1771–1773).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the facility exist as described, and on
+which arm?
+
+---
+
+**Row 2.12 — built, off by default, reopened only on named evidence.**
+
+*Outgoing statement.* "It is built, and `enabled = false` is the shipped default; turning it on is
+reopened only on a named evidence follow-up, not on judgment." — (locator: lines 1773–1774). Two claims:
+(i) built and off by default; (ii) reopened only on a named evidence follow-up.
+
+*Derived statements that speak to it.* None. *Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii)
+**THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* is `enabled = false` the shipped default?
+(ii) **HISTORICAL** — the condition a past decision set for reopening itself.
+
+---
+
+**Row 2.13 — the hard bound and the score start are safety caps, never the amount of context needed.**
+
+*Outgoing statement.* "**The hard bound and the score start are SAFETY CAPS for a loop that never
+settles — never the amount of context this layer needed (D-624; re-homed into this specification
+2026-08-04 from the design document that formerly carried it — the register records which).**" —
+(locator: lines 1780–1782).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — *"a reading that never converges … The record edge (IC Ruling
+46 (vi)) ends the loop, and the record-edge mark says so"*, and it is *"Not falsified by: a stop at the
+record edge."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 2.14 — the backward loop's two stops that are not answers.**
+
+*Outgoing statement.* "The backward loop has two stops that are not answers: a maximum distance, and the
+beginning of the piece." — (locator: lines 1782–1783). Two claims: (i) the beginning of the piece is a
+stop and not an answer; (ii) a maximum distance is a stop and not an answer.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) None.
+
+*Current-text axis.* (i) L2-S22: **AGREES**. (ii) **THE DERIVATION IS SILENT** — L2-S22 names the record
+edge and no maximum distance.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22). (ii) **ADOPTED — proposed.** *Proposal:* that
+a maximum distance on L2's enlargement loop be stated as a safety stop that is never read as the amount
+of context L2 needed.
+
+---
+
+**Row 2.15 — a cap that fired may never be read as the discovered amount.**
+
+*Outgoing statement.* "Neither reports how much context the analysis required; each only terminates a
+loop that would otherwise not terminate, and a cap that fired may never be read as the discovered
+amount." — (locator: lines 1783–1785).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — *"the record-edge mark says so"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 2.16 — reach-back is a real requirement, masked by the whole-score load, and must land with
+selection-based loading.**
+
+*Outgoing statement.* "**Reach-back is a REAL product requirement, currently MASKED by the whole-score
+load — it must land WITH selection-based loading (D-635; re-homed into this specification 2026-08-04
+from the disposition record that formerly carried it).**" — (locator: lines 1789–1791). Three claims:
+(i) reach-back is a real requirement; (ii) it is currently masked by the whole-score load; (iii) it must
+land with selection-based loading.
+
+*Derived statements that speak to it.* (i) and (iii) L2-S22 (NEAREST, §6.3 entry 4). (ii) None.
+
+*Current-text axis.* (i) L2-S22: **AGREES** — *"At the edge of the working span, L2's tonality (and the
+rest of its reading) depends on music before and after the span."* (ii) **THE DERIVATION IS SILENT.**
+(iii) L2-S22: **AGREES** — *"L2 is the layer that asks for more music"* at the edge of the working span,
+so a load narrowed to the selection is enlarged by L2's own request.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22). (ii) **QUARANTINED.** *Audit question:* does
+the note model now load the whole score regardless of the selection, so that no enlargement is ever
+requested? (iii) **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 2.17 — the shipped program analyses the selected stretch; the whole-score path is for offline
+measurement.**
+
+*Outgoing statement.* "The shipped program analyses the stretch a user has selected; the whole-score path
+exists for offline measurement." — (locator: lines 1791–1792).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what stretch does the shipped program analyze,
+and on which path is the whole score analyzed?
+
+---
+
+**Row 2.18 — reading backwards is needed; its absence costs nothing only because the whole score is
+loaded.**
+
+*Outgoing statement.* "Reading backwards before the selection begins is therefore genuinely needed, and
+the only reason its absence costs nothing today is that the note model still loads the whole score
+anyway." — (locator: lines 1792–1794). Two claims: (i) reading backwards is needed; (ii) the note model
+loads the whole score.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) None.
+
+*Current-text axis.* (i) L2-S22: **AGREES**. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22). (ii) **QUARANTINED**, with Row 2.16(ii).
+
+---
+
+**Row 2.19 — narrowing the load without the backward facility breaks the key at every selection's
+start.**
+
+*Outgoing statement.* "**Narrowing Layer 1 to load only the selection WITHOUT also engaging this facility
+would break key inference at the start of every selection** — the two changes are one change." —
+(locator: lines 1794–1796).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — *"At the edge of the working span, L2's tonality (and the rest
+of its reading) depends on music before and after the span."* (L2-S20's premise names the same case — *"a
+long tonic prolongation opening the working span, with no earlier music loaded"* — and says L2-S22's edge
+rule is what supplies it.)
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 2.20 — a selection-aware capability is a parameter on the one orchestrator, never a sibling.**
+
+*Outgoing statement.* "**A selection-aware capability is a PARAMETER on the one orchestrator, never a
+sibling (D-623; re-homed into this specification 2026-08-04, from the same document as D-624).**" —
+(locator: lines 1801–1802).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a rule about how the code that drives the analysis
+is structured; it is not L2's subject, and none of the charters `FRAMEWORK.md` §5 names is the home of
+code structure, so no RELOCATED target can be named.
+
+---
+
+**Row 2.21 — the capability was built as an option on the existing driver.**
+
+*Outgoing statement.* "The capability was built as an option on the existing driver rather than as a
+second driver beside it, so there remains **one** path that builds the note model, slices it and
+decodes — the seam specified below." — (locator: lines 1802–1804).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is there one driver that builds, slices and
+decodes, with selection-awareness as an option on it?
+
+---
+
+**Row 2.22 — the option is off by default.**
+
+*Outgoing statement.* "The option is off by default, so shipped behaviour and every measurement are
+unchanged." — (locator: lines 1804–1805).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the selection-aware option off by default?
+
+---
+
+**Row 2.23 — the production region key/mode path is the decoder, not the per-region resolver.**
+
+*Outgoing statement.* "**The production region key/mode path is the decoder, not the per-region
+resolver.**" — (locator: line 1810).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on the dormant pipeline, which of the decoder
+and the per-region resolver produces the region key and mode? *(Row 2.4 records that this pipeline no
+longer runs.)*
+
+---
+
+**Row 2.24 — step-1 wiring replaced the per-region call with one whole-score decode.**
+
+*Outgoing statement.* "Step-1 wiring replaced the per-region `resolveKeyAndModeRanked` call with a single
+whole-score decode of `KeyModeSequenceDecoder` (`composing/analysis/key/keymodesequence.{h,cpp}`, the
+Layer-3 key/mode design — `cowork_layer3_keymode_design.md`)." — (locator: lines 1810–1813).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build event.
+
+---
+
+**Row 2.25 — the first rebuilt decision layer to go live, connecting Layer 2.**
+
+*Outgoing statement.* "This is the first rebuilt analysis **decision** layer to go **live** in the
+pipeline — and this wiring is what connected Layer 2: it consumes Layer 1's note model and Layer 2's
+slicer (`changePointSlices(noteModel)`), so neither is isolated any longer." — (locator: lines
+1813–1815).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build event.
+
+---
+
+**Row 2.26 — the as-wired data flow: the signature context once, one decode, each region served from
+it.**
+
+*Outgoing statement.* "Reusing the whole-score `noteModel`, the path computes the signature context
+**once** (`keySigCtx = resolveKeySignatureContext(...)`), runs `decode(changePointSlices(noteModel), …,
+keySigCtx.correctedFifths, keySigCtx.declaredMode, …, excludeStaves)` **once** before Pass-1, and then
+serves each region via `localKeyForRegion(rs, re)`:" — *"As-wired data flow"* (locator: lines
+1817–1821).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant path's data flow run as
+described?
+
+---
+
+**Row 2.27 — intra-region rule (b), duration majority.**
+
+*Outgoing statement.* "**Intra-region rule (b) — duration-majority** over the region's overlapping slice
+run (ties → lower representative slice index, deterministic), returning the representative slice's
+`chosen` key/mode (carrying its C1 `normalizedConfidence`)." — the first bullet (locator: lines
+1822–1824).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is a region's key chosen by duration majority
+over its slices, with the stated tie rule?
+
+---
+
+**Row 2.28 — seed S2: a region overlapping no decoded slice falls back to the segmentation seed.**
+
+*Outgoing statement.* "**Seed S2** — a region overlapping no decoded slice falls back to the
+segmentation seed (@521, unchanged)." — the second bullet (locator: lines 1825–1826).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a region with no decoded slice fall back
+to the segmentation seed?
+
+---
+
+**Row 2.29 — the coarse grid is byte-stable.**
+
+*Outgoing statement.* "The coarse grid (`greedyExpandSegmentation` boundaries) is therefore
+**byte-stable**; the only new sub-region ticks are Pass-2/2b sub-boundaries that ride on the
+(legitimately changed) chord analysis, not a coarse-grid change." — the second bullet (locator: lines
+1826–1828).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the coarse segmentation grid unchanged by
+the wiring, as stated?
+
+---
+
+**Row 2.30 — fidelity fix (1): the staff exclusions threaded through.**
+
+*Outgoing statement.* "(1) `excludeStaves` is threaded `decode()/redecodeRange() → buildLattice →
+buildSliceContext → pitchContextOverSpan` (was hardcoded `{}`); the default keeps every existing caller
+byte-identical." — (locator: lines 1830–1832).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the staff-exclusion set threaded through as
+listed?
+
+---
+
+**Row 2.31 — fidelity fix (2): one shared signature-context reader.**
+
+*Outgoing statement.* "(2) The signature read + declared-mode mapping + declared-gated Baroque
+`partialSignatureCorrection` was lifted verbatim into a shared public `resolveKeySignatureContext`,
+**called by both** the resolver and the wiring — so no signature/partial-correction logic is duplicated."
+— (locator: lines 1832–1835).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the signature reading, with its
+declared-mode mapping and partial-signature correction, one shared function called by both callers?
+
+---
+
+**Row 2.32 — fidelity fix (3): the emission confidence stamped on each slice's chosen key.**
+
+*Outgoing statement.* "(3) C1 emission confidence (`populateEmissionConfidence`) stamps each
+`SliceKeyMode.chosen.normalizedConfidence` with the `analyzeKeyMode` winner sigmoid re-expressed over the
+lattice's per-slice emission scores (≈0 when sequence smoothing overrode the local argmax — the safe
+direction)." — (locator: lines 1835–1838).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* how is the per-slice key confidence on the
+dormant path computed?
+
+---
+
+**Row 2.33 — retired from the production region path.**
+
+*Outgoing statement.* "**Retired from the production region path:** the per-region
+`resolveKeyAndModeRanked` call at the seam, its hysteresis, and the `prevKeyResult` threading
+(declaration + per-region update); `collectPitchContext` as the region builder." — (locator: lines
+1840–1842).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a retirement event.
+
+---
+
+**Row 2.34 — one key path and one builder on the production region path.**
+
+*Outgoing statement.* "The end-state on the production region path is **one key path (the decoder) + one
+builder (`pitchContextOverSpan`)**." — (locator: lines 1842–1843).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is there one key path and one builder on the
+dormant pipeline's region path?
+
+---
+
+**Row 2.35 — the tick-local path still uses the resolver.**
+
+*Outgoing statement.* "**P4 tick-local still uses `resolveKeyAndModeRanked` + `collectPitchContext`**
+(the ratified P4-defer)." — the first residual bullet (locator: lines 1846–1847).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the tick-local path still use the
+per-region resolver and the old builder?
+
+---
+
+**Row 2.36 — the resolver remains compiled only as seed and diagnostic baseline.**
+
+*Outgoing statement.* "The resolver and `collectPitchContext` remain compiled **only** as the
+segmentation seed (@521, S2) and the diagnostic/grading baseline (e.g. `batch_analyze --decode-keymode`);
+they no longer drive the production region key/mode." — the second residual bullet (locator: lines
+1849–1851).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* where is the resolver still reached, and does
+it drive any region's key or mode?
+
+---
+
+**Row 2.37 — the gate trade-off on record.**
+
+*Outgoing statement.* "**Gate trade-off on record.** BIR (case-identity): Baroque **53** (net −4), Jazz
+**24** (net +1), Default **53** (net −4); zero new class-(b) (functional) regressions — every new case is
+a class-(a) symmetric-dim7 / share-tone **rotation** ambiguity (root pitch-class-undecidable by
+construction)." — (locator: lines 1853–1856).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a measurement taken at a build step, under a gate since
+superseded.
+
+---
+
+**Row 2.38 — the Jazz +1 accepted, to retire when Layer 4 pins the rotation.**
+
+*Outgoing statement.* "The Jazz +1 is accepted under the two-tier BIR-gate amendment (CLAUDE.md, "Gate
+threshold and preset policy"); it retires when Layer 4 (function/cadence) pins the rotation." —
+(locator: lines 1856–1857).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the status of an accepted exception.
+
+---
+
+**Row 2.39 — a local-key hypothesis derives from key-agnostic signals only, and never from the key-area
+grouping.** *WITHHELD — D-605.*
+
+*Outgoing statement.* "**A local-key hypothesis derives from KEY-AGNOSTIC signals only, and NEVER from
+the key-area grouping — a hard design rule, not a preference.**" — the first of *"Four standing rules of
+this layer"* (locator: lines 1866–1867). Two claims: (i) from key-agnostic signals only; (ii) never from
+the key-area grouping.
+
+*Derived statements that speak to it.* (i) L2-S20. (ii) L2-S49.
+
+*Current-text axis.* (i) L2-S20: **DIFFERS**. (ii) L2-S49: **AGREES** — *"L2 consumes nothing L3
+publishes: no cadence type, phrase or section grouping"*.
+
+*The difference, in both texts' own words.* (i) The outgoing text derives a local-key hypothesis *"from
+KEY-AGNOSTIC signals only"*; L2-S20 says *"The tonality terms read the chords the reading proposes
+(degree, function, cadential progressions)"*, and L2-S18 decides between an applied chord and a change of
+tonality *"by the candidate score over the whole sequence"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED.** *What was read:* the rule is stated for a sequential pipeline in
+which a hypothesis is formed before the key path, and its own scope line says it *"binds any such
+decision on any arm"*; L2's tonality is decided jointly over proposed chords, so the two texts give
+different evidence to the same decision, and a disposition would choose between them. (ii) **ADOPTED —
+carried** (L2-S49).
+
+---
+
+**Row 2.40 — deciding a key change may use the key-agnostic cadence detector and the raw region
+structure.** *WITHHELD — D-605.*
+
+*Outgoing statement.* "Deciding that a passage has moved to another key may use the cadence detector,
+which is key-agnostic by construction, and the raw region structure — root motion, diatonic-collection
+consistency." — (locator: lines 1867–1870).
+
+*Derived statements that speak to it.* L2-S37.
+
+*Current-text axis.* L2-S37: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text permits *"the cadence detector, which is
+key-agnostic by construction"*; L2-S37 says *"The falling-fifth cue (IC S-45) and the fourth-and-seventh
+cue (IC S-47) … are *provisional*. No term of the fitted candidate score reads them until the window is
+established."*
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* the outgoing permission names a legacy detector as a
+whole, where L2-S37 admits each of L1's cues by its own establishment status; a disposition would choose
+between the two.
+
+---
+
+**Row 2.41 — it may not read the key-area grouping.** *WITHHELD — D-605.*
+
+*Outgoing statement.* "It may **not** read the key-area grouping, which is a downstream post-grouping of
+the already-resolved key." — (locator: lines 1870–1871).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — *"L3 → L2: Nothing. A read-off fact may not revise the
+decision it was read off"*, which L2-S49 cites.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S49).
+
+---
+
+**Row 2.42 — the flow stays strictly feed-forward.** *WITHHELD — D-605.*
+
+*Outgoing statement.* "The flow stays strictly feed-forward: chords → key-agnostic cadence → local-key
+hypothesis → re-keyed key path → key areas, rebuilt downstream." — (locator: lines 1871–1872).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text orders *"chords → key-agnostic cadence →
+local-key hypothesis → re-keyed key path"*; L2-S11 says the boundary is decided *"together with the
+tonality, the chord and the assignments, in the one decision. It is never decided before the chord or
+after it."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is this the order in which the dormant key
+path forms and applies a local-key hypothesis?
+
+---
+
+**Row 2.43 — a global tonic anchor enters at resolver or section scope, never as one more local term.**
+*WITHHELD — D-616.*
+
+*Outgoing statement.* "**A global tonic anchor enters key scoring at RESOLVER / SECTION scope — never as
+one more local term inside the window scorer. ⚠ LEGACY: both mechanisms it names are legacy-scoped.**" —
+the second standing rule (locator: lines 1879–1880).
+
+*Derived statements that speak to it.* L2-S31 — one §6.3 names as NEAREST to material met (entry 1).
+
+*Current-text axis.* L2-S31: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text places a global tonic anchor at
+*"RESOLVER / SECTION scope"*; L2-S31 composes the candidate score from span terms and pair terms and is
+*"falsified if some term reads three or more spans' fields"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* the mechanisms named are legacy, but Row 2.46 states
+that the rule about where such a prior is applied binds any prior the key axis later gains, and L2-S31's
+decomposition admits no section-scope term; a disposition would choose between them.
+
+---
+
+**Row 2.44 — section-level evidence applied where the section is decided, the per-window scoring left
+unchanged.** *WITHHELD — D-616.*
+
+*Outgoing statement.* "Evidence about which key a whole section or piece is in is applied where the
+section is decided — the scope the removed declared anchor occupied — gating the relative-major/minor
+choice; the per-window candidate scoring is left unchanged." — (locator: lines 1880–1883).
+
+*Derived statements that speak to it.* L2-S31 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* L2-S31: **DIFFERS** — as at Row 2.43.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the legacy mechanism the rule was written for, which the
+rule's own LEGACY mark scopes.
+
+---
+
+**Row 2.45 — the LEGACY mark follows a check at the code: neither named mechanism is on an arm that
+runs.** *WITHHELD — D-616.*
+
+*Outgoing statement.* "**The LEGACY mark follows a check at the code, not the decision's age:** the window
+scorer this rule excludes (`KeyModeAnalyzer::analyzeKeyMode`) is reached only through the legacy resolver
+and this layer's dormant sequence decoder, and the resolver is retired from the production region path —
+so neither named mechanism is on an arm that runs." — (locator: lines 1888–1892).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the window scorer reached only through the
+legacy resolver and the dormant decoder?
+
+---
+
+**Row 2.46 — the rule about where a section-scoped prior is applied binds any such prior.** *WITHHELD —
+D-616.*
+
+*Outgoing statement.* "The rule about WHERE a section-scoped prior is applied binds any such prior the key
+axis later gains." — (locator: lines 1892–1893).
+
+*Derived statements that speak to it.* L2-S31 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* L2-S31: **DIFFERS** — as at Row 2.43.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, with Row 2.43 and for the same reason.
+
+---
+
+**Row 2.47 — the reach-back convergence proxy measured false and dropped; the as-built tracks the
+leading-edge key.** *WITHHELD — D-622.*
+
+*Outgoing statement.* "**The reach-back convergence PROXY was measured FALSE and is dropped; the as-built
+tracks the leading-edge key itself and stops when that stops changing.**" — the third standing rule
+(locator: lines 1894–1895). Two claims: (i) the proxy was measured false and dropped; (ii) the as-built
+tracks the leading-edge key and stops when it stops changing.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing text's as-built *"tracks the leading-edge
+key itself and stops when that stops changing"*; L2-S22 *"stops asking when its in-span publication stops
+changing"*, and leaves open what *"stops changing"* means for the masses of the rivals (OQ-L2-6).
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a proposal measured and dropped. (ii) **QUARANTINED.** *Audit
+question:* what does the built reach-back facility track, and what is its stop test?
+
+---
+
+**Row 2.48 — one settled indication does not anchor the leading edge; a confident earlier key over a run
+does.** *WITHHELD — D-622.*
+
+*Outgoing statement.* "The cheaper stopping rule proposed in design — *a settled, stable prevailing key is
+in view in the reached-back region* — was measured and disproved: one settled indication of context does
+not anchor the leading edge, which flips only once a confident earlier key is established over a
+**run**." — (locator: lines 1895–1898).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — its defense: *"One settled indication does not fix the tonality
+at the edge of the music being read, while a tonality established over a stretch of earlier music does
+[FACT — ledger C43, the fact half]."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22). *(An AGREES on a WITHHELD row; the derived
+statement's defense cites the ledger's fact half for it, and §6.3 entry 4 names L2-S22 as nearest to
+material met.)*
+
+---
+
+**Row 2.49 — the facility uses the headline criterion directly, with no proxy.** *WITHHELD — D-622.*
+
+*Outgoing statement.* "So the facility uses the headline criterion directly and no proxy." — (locator:
+lines 1898–1899).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — the stop is when the publication stops changing, and no chosen
+amount.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the built facility stop on the headline
+criterion alone? *(With Row 2.47(ii).)*
+
+---
+
+**Row 2.50 — a key span needs an enharmonic-identity rule, and does not have one.**
+
+*Outgoing statement.* "**A key SPAN needs an enharmonic-identity rule, and it does not have one** (the
+Layer-3 half of the ratified cadence-less-confirmation amendment; the Layer-5 half is at that layer, and
+the two cross-point)." — the fourth standing rule (locator: lines 1906–1908). Two claims: (i) a key span
+needs such a rule; (ii) it does not have one.
+
+*Derived statements that speak to it.* None. *(OQ-L2-17 raises the case — an enharmonic modulation — and
+states that *"how a reading crosses it is not derived here"*.)*
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed.** *Proposal:* that L2 carry a rule deciding whether a
+tonality span is read in one spelling of a tonality or in its enharmonic twin — the question OQ-L2-17
+leaves open. (ii) **HISTORICAL** — a status.
+
+---
+
+**Row 2.51 — enharmonic reinterpretation is handled per chord only; the amendment requires a rule for key
+spans.**
+
+*Outgoing statement.* "Enharmonic reinterpretation is handled at the single-chord level; nothing decides
+whether a span is written in one spelling of a key or in its enharmonic twin, so the amendment requires
+such a rule for key spans." — (locator: lines 1908–1910). Two claims: (i) handled per chord, nothing
+decides per span; (ii) the amendment requires a rule for key spans.
+
+*Derived statements that speak to it.* None. *Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii)
+**THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* where is enharmonic reinterpretation
+handled, and does anything decide the spelling of a tonality span? (ii) **ADOPTED — proposed**,
+travelling with Row 2.50(i).
+
+---
+
+**Row 2.52 — the Baroque partial-signature convention is handled by detecting it, never by widening the
+candidate family for every score.** *WITHHELD — D-575.*
+
+*Outgoing statement.* "**★ THE BAROQUE PARTIAL-SIGNATURE CONVENTION IS HANDLED BY DETECTING IT AND
+REINTERPRETING THE SIGNATURE ONE STEP, NEVER BY WIDENING THE CANDIDATE FAMILY FOR EVERY SCORE**" —
+(locator: lines 1917–1918).
+
+*Derived statements that speak to it.* L2-S17 — one §6.3 names as NEAREST to material met (entry 1),
+where the deriving session records reading, in ledger entry C14, the not-admitted half naming this
+decision; L2-S17's own defense says it *"is flagged so the comparison can check it for contamination"*.
+
+*Current-text axis.* L2-S17: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text says *"NEVER BY WIDENING THE CANDIDATE
+FAMILY FOR EVERY SCORE"*; L2-S17 says *"The prior assigns non-trivial weight to the tonalities one
+accidental either side of the signature, as well as to the signature's own major and minor."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the block marks itself *"LEGACY, AND SUPERSEDED IN FACT"*.
+
+---
+
+**Row 2.53 — legacy and superseded in fact: applied inside the legacy resolver.** *WITHHELD — D-575.*
+
+*Outgoing statement.* "⚠ LEGACY, AND SUPERSEDED IN FACT: the correction is applied inside the legacy
+resolver, which the production arm no longer runs; no ruling superseded it, a later build replaced what
+it governs." — (locator: lines 1919–1922).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 2.54 — Baroque scores are often notated with one accidental fewer.** *WITHHELD — D-575.*
+
+*Outgoing statement.* "Baroque scores are often notated with one accidental fewer than the modern
+convention, so the sounding key sits one step to the sharp side of anything a signature-faithful reading
+could name." — (locator: lines 1922–1924).
+
+*Derived statements that speak to it.* L2-S17 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* L2-S17: **AGREES** — its defense: *"Baroque scores are often notated one accidental
+short of modern practice, so the signature under-determines the tonic [FACT — ledger C14, the admitted
+fact half]"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S17). *(An AGREES on a WITHHELD row, reached through
+the ledger's admitted fact half, which §6.3 entry 1 records the session reading.)*
+
+---
+
+**Row 2.55 — the adopted handling detects a pervasive flattened sixth degree and reinterprets the
+signature one step.** *WITHHELD — D-575.*
+
+*Outgoing statement.* "The adopted handling DETECTS that situation — the flattened sixth degree pervasive
+across the sounding weight and dominating its natural form — and reinterprets the written signature one
+step toward the missing accidental for the whole resolution." — (locator: lines 1924–1927).
+
+*Derived statements that speak to it.* L2-S17 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* L2-S17: **DIFFERS** — as at Row 2.52: a detected one-step reinterpretation against a
+prior spread to one accidental either side for every score.
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, with Row 2.52.
+
+---
+
+**Row 2.56 — the discriminator must test the specific degree, not the presence of any accidental.**
+*WITHHELD — D-575.*
+
+*Outgoing statement.* "**The discriminator must test the specific degree rather than the presence of any
+accidental** — in minor the leading note is always an accidental, so an accidental-counting test cannot
+separate the two cases." — (locator: lines 1931–1933).
+
+*Derived statements that speak to it.* None. *Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a rule of the superseded detector, with Row 2.52.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (30)
+
+1. The delegation pointer naming `cowork_layer3_keymode_design.md` as this layer's ratified contract
+   (1742) — *a pointer*; that document is population position 7.
+2. The block heading "**★ WHAT THOSE TWO ARE, re-homed into this specification 2026-08-08; both ⚠
+   LEGACY-SCOPED …**" with "Until now each lived ONLY in a session-handoff archive …" (1746–1749) — *a
+   label and provenance*.
+3. "*Why:* measured and cited in the record — the one failure it was designed to fix had already been
+   fixed another way …" (1752–1755) — *a defense* of Row 2.6.
+4. "A second reason rides with it and is structural: the confidence field it would have been weighted by
+   is **re-ranked without being recomputed** …" (1755–1757) — *a defense* of Row 2.6.
+5. "*Why:* measured to its limit with a byte-matched re-implementation … not a better local cadence
+   rule." (1763–1768) — *a defense* of Row 2.9.
+6. "**Its scope is stated with it:** measured on the Bach ground-truth corpus; other repertoires
+   unmeasured." (1768–1769) — *a scope remark*.
+7. "*Why:* measured and judged insufficient — an A/B run showed the designed effect is material …" (1774–1778)
+   — *a defense* of Row 2.10.
+8. "Decided by the user 2026-07-02." (1778) — *provenance*.
+9. "*Why:* the amount of context a layer needs is **discovered by convergence and never chosen** …"
+   (1785–1787) — *a defense* of Rows 2.13 to 2.15.
+10. "*Why:* derived rather than asserted — a selection is a subset in time …" (1796–1798) — *a defense* of
+    Row 2.19.
+11. "This corrects an earlier reading that called the requirement moot; that reading described the current
+    whole-score stopgap rather than the design." (1798–1799) — *provenance*.
+12. "*Why:* it is one-path-per-concern applied to orchestration …" (1805–1807) — *a defense* of Row 2.20.
+13. "Both admissible forms were stated, and the build's choice was gated on byte-identity plus an explicit
+    unification ledger, so the resolution is evidenced rather than asserted." (1807–1808) — *provenance*.
+14. "**Three fidelity fixes, no duplication.**" (1830) — *an introducing sentence*.
+15. "**Surfaced residuals (pre-existing, not introduced; named follow-ups):**" (1845) — *a label*.
+16. "Verified **byte-identical** this increment (the `tickLocal` snapshot section is unchanged in all 11
+    goldens) — no leak." (1847–1848) — *a test record*.
+17. "The named follow-up is **P4-redecode**." (1848) — *a pointer*.
+18. "`composing_tests` 596/596; the P1/P2/P3/keyAreas snapshot goldens were refreshed for the ratified key
+    moves with **P4 untouched**." (1858–1859) — *a test count*.
+19. "Full provenance: `records/cc/reports/cc_layer3_wiring_report.md` (HELD), `cowork_layer3_keymode_design.md`."
+    (1859–1860) — *a pointer*.
+20. "**Four standing rules of this layer, re-homed into this specification 2026-08-07 on the user's ruling.
+    Each states what the layer may READ and at what SCOPE …**" (1862–1864) — *narrative and provenance*.
+21. "*Why:* named in the decision as the load-bearing soundness property …" (1872–1876) — *a defense* of
+    Rows 2.39 to 2.42.
+22. "**Scope:** the mechanism this rule was written for sits on the legacy key path, but what it constrains
+    is *what evidence a modulation decision may read*, which binds any such decision on any arm." (1876–1878)
+    — *a scope remark*, read at Row 2.39(i).
+23. "*Why:* measured, at the attempt that failed — local reweighting was shown unable to carry the
+    relative-major/minor decision … show that the anchor reinforces the mode-present cases rather than
+    regressing them." (1883–1888) — *a defense* of Rows 2.43 and 2.44.
+24. "*Why:* measured at the build, and the methodological reading is recorded with the result …"
+    (1899–1902) — *a defense* of Rows 2.47 to 2.49.
+25. "This is the finding that supersedes the proxy clause of the bounded-context contract's convergence
+    item; … its headline rule — reach back until the answer stops changing, never by a chosen amount — is
+    unchanged." (1902–1905) — *provenance and a pointer*.
+26. "**Design-only: this records an obligation of this layer, not a mechanism it has.**" (1910–1911) — *a
+    status remark*.
+27. "*Why:* derived from the review's own stress simulation on resolution-denying music …" (1911–1915) —
+    *a defense* of Row 2.50.
+28. "Whether the joint estimator handles the convention AT ALL is NOT settled by this entry and is not
+    asserted here." (1922) — *a status remark*.
+29. "*Why this rather than the alternatives, which are recorded with their risks:* letting every score
+    choose between two signature families adds a rival to correctly-notated music as well and could
+    destabilize it; …" (1927–1931) — *a defense* of Row 2.52.
+30. "The thresholds themselves are not restated here (D-431)." (1933) — *a pointer*.
+
+#### The arithmetic at this member
+
+- Rows written: **56** (2.1 to 2.56).
+- Rows split into two claims, **+1 each**: 2.12, 2.14, 2.18, 2.39, 2.47, 2.50, 2.51 — seven rows, **+7**.
+  Rows split into three claims, **+2 each**: 2.16 — one row, **+2**.
+- **Outgoing statements placed: 56 + 7 + 2 = 65.**
+- Listed under *not a statement*: **30**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 65 dispositions
+  over 65 statements.
+- **UNPLACED rows at this member: 5** — 2.20, 2.39(i), 2.40, 2.43, 2.46.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 12 | 2.8, 2.13, 2.14(i), 2.15, 2.16(i), 2.16(iii), 2.18(i), 2.19, 2.39(ii), 2.41, 2.48, 2.54 |
+| ADOPTED — proposed | 3 | 2.14(ii), 2.50(i), 2.51(ii) |
+| RELOCATED | 0 | — |
+| QUARANTINED | 26 | 2.2, 2.3, 2.10, 2.11, 2.12(i), 2.16(ii), 2.17, 2.18(ii), 2.21, 2.22, 2.23, 2.26, 2.27, 2.28, 2.29, 2.30, 2.31, 2.32, 2.34, 2.35, 2.36, 2.42, 2.45, 2.47(ii), 2.49, 2.51(i) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 19 | 2.1, 2.4, 2.5, 2.6, 2.7, 2.9, 2.12(ii), 2.24, 2.25, 2.33, 2.37, 2.38, 2.44, 2.47(i), 2.50(ii), 2.52, 2.53, 2.55, 2.56 |
+| UNPLACED | 5 | 2.20, 2.39(i), 2.40, 2.43, 2.46 |
+| **Total** | **65** | — |
+
+**The arithmetic closes at this member**: 12 + 3 + 0 + 26 + 0 + 19 + 5 = 65, against 65 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 14 |
+| DIFFERS | 11 |
+| THE DERIVATION IS SILENT | 40 |
+| **Total verdicts** | **65** |
+
+*(No statement at this member names two derived statements, so the verdicts equal the statements.)*
+AGREES: 2.8, 2.9, 2.13, 2.14(i), 2.15, 2.16(i), 2.16(iii), 2.18(i), 2.19, 2.39(ii), 2.41, 2.48, 2.49, 2.54.
+DIFFERS: 2.6, 2.10, 2.39(i), 2.40, 2.42, 2.43, 2.44, 2.46, 2.47(ii), 2.52, 2.55.
+
+#### The marks at this member
+
+- **WITHHELD rows: 2.10, 2.11 (D-306); 2.39 to 2.42 (D-605); 2.43 to 2.46 (D-616); 2.47 to 2.49 (D-622);
+  2.52 to 2.56 (D-575).** **An AGREES stands on these WITHHELD statements:** 2.39(ii), 2.41, 2.48, 2.49,
+  2.54.
+- **SEEN rows: none.**
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S22 (entry 4) at 2.10,
+  2.13, 2.14(i), 2.15, 2.16(i), 2.16(iii), 2.18(i), 2.19, 2.47(ii), 2.48, 2.49; L2-S31 (entry 1) at 2.43,
+  2.44, 2.46; L2-S17 (entry 1) at 2.52, 2.54, 2.55.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -1496,6 +2483,8 @@ the row says which.
   travels with it.)*
 - Row 1.22(ii) — that music under a non-commercial licence or none may be used to validate and to check.
 
+*(Member 2 relocates no row.)*
+
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its QUARANTINED
@@ -1520,6 +2509,41 @@ rows here, each with its audit question, in the commit that tabulates it.
   frequency, as described?
 - Row 1.46 — are the shipped per-factor missing-tone values Bach-chorale counts, and is the scope limit
   declared on the artifact that carries them?
+- Row 2.2 — is every production call site of the Layer 3 pipeline in the branch the default
+  configuration does not take?
+- Row 2.3 — are the only remaining callers of the Layer 3 pipeline development diagnostics that do not
+  ship?
+- Row 2.10 — is the Layer 3 backward re-reading facility off in the shipped configuration, and does
+  anything on the production arm read before the start of the working span?
+- Row 2.11 — does the backward re-reading facility exist as described, and on which arm?
+- Row 2.12(i) — is `enabled = false` the shipped default?
+- Row 2.16(ii), with Row 2.18(ii) — does the note model now load the whole score regardless of the
+  selection, so that no enlargement is ever requested?
+- Row 2.17 — what stretch does the shipped program analyze, and on which path is the whole score
+  analyzed?
+- Row 2.21 — is there one driver that builds, slices and decodes, with selection-awareness as an option
+  on it?
+- Row 2.22 — is the selection-aware option off by default?
+- Row 2.23 — on the dormant pipeline, which of the decoder and the per-region resolver produces the
+  region key and mode?
+- Row 2.26 — does the dormant path's data flow run as described?
+- Row 2.27 — is a region's key chosen by duration majority over its slices, with the stated tie rule?
+- Row 2.28 — does a region with no decoded slice fall back to the segmentation seed?
+- Row 2.29 — is the coarse segmentation grid unchanged by the wiring, as stated?
+- Row 2.30 — is the staff-exclusion set threaded through as listed?
+- Row 2.31 — is the signature reading, with its declared-mode mapping and partial-signature correction,
+  one shared function called by both callers?
+- Row 2.32 — how is the per-slice key confidence on the dormant path computed?
+- Row 2.34 — is there one key path and one builder on the dormant pipeline's region path?
+- Row 2.35 — does the tick-local path still use the per-region resolver and the old builder?
+- Row 2.36 — where is the resolver still reached, and does it drive any region's key or mode?
+- Row 2.42 — is the feed-forward order stated the order in which the dormant key path forms and applies a
+  local-key hypothesis?
+- Row 2.45 — is the window scorer reached only through the legacy resolver and the dormant decoder?
+- Row 2.47(ii), with Row 2.49 — what does the built reach-back facility track, and does it stop on the
+  headline criterion alone?
+- Row 2.51(i) — where is enharmonic reinterpretation handled, and does anything decide the spelling of a
+  tonality span?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -1543,6 +2567,10 @@ words.
   the chord is in that mode, never evenly.
 - Row 1.55, with Row 1.56 — that the search over readings be independent of how the values of the
   candidate score's terms are produced.
+- Row 2.14(ii) — that a maximum distance on L2's enlargement loop be stated as a safety stop that is
+  never read as the amount of context L2 needed.
+- Row 2.50(i), with Row 2.51(ii) — that L2 carry a rule deciding whether a tonality span is read in one
+  spelling of a tonality or in its enharmonic twin, the question OQ-L2-17 leaves open.
 
 **DIFFERS.**
 
@@ -1564,6 +2592,23 @@ words.
   tonalities"*.
 - Row 1.45 — the outgoing text counts the fraction in which each chord factor sounds; L2-S38's fit is
   *"discriminative"*, its objective *"the graded measure, not likelihood alone"*.
+- Row 2.6 — the outgoing text says not to carry *"a ranked distribution of key candidates forward"*;
+  L2-S40 publishes each span-rival's mass over a whole-reading-normalized model.
+- Row 2.10 — the outgoing text keeps the backward re-reading facility *"SWITCHED OFF"*; L2-S22 says L2
+  *"is the layer that asks for more music"*.
+- Row 2.39(i) — the outgoing text derives a local-key hypothesis *"from KEY-AGNOSTIC signals only"*;
+  L2-S20's tonality terms *"read the chords the reading proposes"*.
+- Row 2.40 — the outgoing text permits *"the cadence detector"* as a whole; L2-S37 admits each L1 cue by
+  its own establishment status, two of the three not yet.
+- Row 2.42 — the outgoing text orders the key decision after the chords, through a hypothesis; L2-S11
+  says the boundary, tonality and chord are decided *"in the one decision"*.
+- Rows 2.43, 2.44 and 2.46 — the outgoing text places a global tonic anchor at *"RESOLVER / SECTION
+  scope"*; L2-S31 is *"falsified if some term reads three or more spans' fields"*.
+- Row 2.47(ii) — the outgoing text's as-built stops when *"the leading-edge key"* stops changing; L2-S22
+  stops when *"its in-span publication stops changing"*, the masses' rule left open.
+- Rows 2.52 and 2.55 — the outgoing text handles the partial-signature convention by detection and
+  reinterpretation, *"NEVER BY WIDENING THE CANDIDATE FAMILY FOR EVERY SCORE"*; L2-S17 spreads the prior
+  to *"the tonalities one accidental either side of the signature"*.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -1576,18 +2621,20 @@ own distribution table in §6.
 | Member | Statements | Adopted — carried | Adopted — proposed | Relocated | Quarantined | Discarded | Historical | Unplaced | Not a statement |
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | 72 | 29 | 11 | 5 | 10 | 0 | 10 | 7 | 43 |
-| **Total** | **72** | **29** | **11** | **5** | **10** | **0** | **10** | **7** | **43** |
+| 2 | 65 | 12 | 3 | 0 | 26 | 0 | 19 | 5 | 30 |
+| **Total** | **137** | **41** | **14** | **5** | **36** | **0** | **29** | **12** | **73** |
 
-**The arithmetic check:** 29 + 11 + 5 + 10 + 0 + 10 + 7 = 72, against 72 statements placed.
+**The arithmetic check:** 41 + 14 + 5 + 36 + 0 + 29 + 12 = 137, against 137 statements placed (72 + 65).
 
 **Current-text verdicts.**
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
 | 1 | 41 | 11 | 26 | 78 |
-| **Total** | **41** | **11** | **26** | **78** |
+| 2 | 14 | 11 | 40 | 65 |
+| **Total** | **55** | **22** | **66** | **143** |
 
-**The arithmetic check:** 41 + 11 + 26 = 78.
+**The arithmetic check:** 55 + 22 + 66 = 143 (78 + 65).
 
 ## 14. The derivation's independence record, relayed
 
