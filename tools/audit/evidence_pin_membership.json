@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 85,
+  "ruling_records_read": 97,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -30,12 +30,12 @@
    "document": "ratification_surfaces/cowork_artifact_inventory_ruling_surface.md",
    "generator": "tools/audit/gen_artifact_inventory_surface.py",
    "ruling_records_naming_it": [
-    "cowork_rulings_2026_08_15_inventory_sitting.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_15_inventory_sitting.md"
    ],
    "the_commit_a_record_states": "b1d48d6c87",
-   "where_the_record_states_it": "cowork_rulings_2026_08_15_inventory_sitting.md",
+   "where_the_record_states_it": "records/cowork/rulings/cowork_rulings_2026_08_15_inventory_sitting.md",
    "also_named_as_pinned_by": [
-    "cowork_rulings_2026_08_18_eleventh_stop.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_18_eleventh_stop.md"
    ],
    "pin_constants_the_generator_carries": {},
    "state": "NOT PINNED — a record states the commit; the pin is not applied"
@@ -45,12 +45,12 @@
    "document": "ratification_surfaces/cowork_claude_md_finer_split_2026_08_17.md",
    "generator": "tools/audit/gen_claude_md_finer_surface.py",
    "ruling_records_naming_it": [
-    "cowork_rulings_2026_08_17_seventh_return.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_17_seventh_return.md"
    ],
    "the_commit_a_record_states": "cfb69a7ecb",
-   "where_the_record_states_it": "cowork_rulings_2026_08_17_seventh_return.md",
+   "where_the_record_states_it": "records/cowork/rulings/cowork_rulings_2026_08_17_seventh_return.md",
    "also_named_as_pinned_by": [
-    "cowork_rulings_2026_08_17_ninth_return.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md"
    ],
    "pin_constants_the_generator_carries": {
     "SPANS_PINNED_AT": "cfb69a7ecb21351382b25206616a0349214e44f8"
@@ -62,10 +62,10 @@
    "document": "ratification_surfaces/cowork_discard_residue_surface_2026_08_16.md",
    "generator": "tools/audit/gen_ratified_document_check.py",
    "ruling_records_naming_it": [
-    "cowork_rulings_2026_08_17_residue_sitting.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_17_residue_sitting.md"
    ],
    "the_commit_a_record_states": "81e2ef1c23",
-   "where_the_record_states_it": "cowork_rulings_2026_08_17_residue_sitting.md",
+   "where_the_record_states_it": "records/cowork/rulings/cowork_rulings_2026_08_17_residue_sitting.md",
    "pin_constants_the_generator_carries": {
     "RULING_PINNED_AT": "81e2ef1c2376e4dc7a5c69c62b188676239091f1"
    },
@@ -76,10 +76,10 @@
    "document": "ratification_surfaces/cowork_governing_surface_split_2026_08_16.md",
    "generator": "tools/audit/gen_governing_surface_readers.py",
    "ruling_records_naming_it": [
-    "cowork_rulings_2026_08_17_governing_surface_split.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md"
    ],
    "the_commit_a_record_states": "9fb1ba01bf",
-   "where_the_record_states_it": "cowork_rulings_2026_08_17_governing_surface_split.md",
+   "where_the_record_states_it": "records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md",
    "pin_constants_the_generator_carries": {
     "SPANS_PINNED_AT": "9fb1ba01bf51014df1955ea558828868336e9ac6"
    },
@@ -90,10 +90,10 @@
    "document": "ratification_surfaces/cowork_rulings_sort_surface_2026_08_16.md",
    "generator": "tools/audit/gen_rulings_sort.py",
    "ruling_records_naming_it": [
-    "cowork_rulings_2026_08_17_rulings_sort_sitting.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_17_rulings_sort_sitting.md"
    ],
    "the_commit_a_record_states": "53e552296f",
-   "where_the_record_states_it": "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+   "where_the_record_states_it": "records/cowork/rulings/cowork_rulings_2026_08_17_rulings_sort_sitting.md",
    "pin_constants_the_generator_carries": {},
    "state": "NOT PINNED — a record states the commit; the pin is not applied"
   },
@@ -102,7 +102,7 @@
    "document": null,
    "generator": "tools/audit/gen_deciding_act_recovery.py",
    "ruling_records_naming_it": [
-    "cowork_rulings_2026_08_16_preparation_return.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md"
    ],
    "the_naming": [
     "(`gen_decisions_filter.py`, `gen_deciding_act_recovery.py`) **are PINNED**: their checks read"
@@ -119,7 +119,7 @@
    "document": null,
    "generator": "tools/audit/gen_decisions_filter.py",
    "ruling_records_naming_it": [
-    "cowork_rulings_2026_08_16_preparation_return.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md"
    ],
    "the_naming": [
     "(`gen_decisions_filter.py`, `gen_deciding_act_recovery.py`) **are PINNED**: their checks read"
@@ -142,110 +142,128 @@
   "cowork_rulings_sort_surface_2026_08_16.md": "tools/audit/gen_rulings_sort.py"
  },
  "ruling_records_read": [
-  "cowork_rulings_2026_08_08_pre_away.md",
-  "cowork_rulings_2026_08_09_eighth_stop.md",
-  "cowork_rulings_2026_08_09_fifth_stop.md",
-  "cowork_rulings_2026_08_09_fourth_stop.md",
-  "cowork_rulings_2026_08_09_ninth_stop.md",
-  "cowork_rulings_2026_08_09_return.md",
-  "cowork_rulings_2026_08_09_second_stop.md",
-  "cowork_rulings_2026_08_09_seventh_stop.md",
-  "cowork_rulings_2026_08_09_sixth_stop.md",
-  "cowork_rulings_2026_08_09_third_stop.md",
-  "cowork_rulings_2026_08_11_eleventh_stop.md",
-  "cowork_rulings_2026_08_11_fifteenth_stop.md",
-  "cowork_rulings_2026_08_11_fourteenth_stop.md",
-  "cowork_rulings_2026_08_11_sixteenth_stop.md",
-  "cowork_rulings_2026_08_11_tenth_stop.md",
-  "cowork_rulings_2026_08_11_thirteenth_stop.md",
-  "cowork_rulings_2026_08_11_twelfth_stop.md",
-  "cowork_rulings_2026_08_13_eighteenth_stop.md",
-  "cowork_rulings_2026_08_13_seventeenth_stop.md",
-  "cowork_rulings_2026_08_15_batch_return.md",
-  "cowork_rulings_2026_08_15_inventory_sitting.md",
-  "cowork_rulings_2026_08_15_method_directions.md",
-  "cowork_rulings_2026_08_15_period_start.md",
-  "cowork_rulings_2026_08_15_phase_definition_sitting.md",
-  "cowork_rulings_2026_08_15_session_length.md",
-  "cowork_rulings_2026_08_16_preparation_return.md",
-  "cowork_rulings_2026_08_17_callers_sitting.md",
-  "cowork_rulings_2026_08_17_eighth_return.md",
-  "cowork_rulings_2026_08_17_governing_surface_split.md",
-  "cowork_rulings_2026_08_17_ninth_return.md",
-  "cowork_rulings_2026_08_17_residue_sitting.md",
-  "cowork_rulings_2026_08_17_rulings_sort_sitting.md",
-  "cowork_rulings_2026_08_17_session_start_read_sitting.md",
-  "cowork_rulings_2026_08_17_seventh_return.md",
-  "cowork_rulings_2026_08_17_sixth_return.md",
-  "cowork_rulings_2026_08_18_eleventh_stop.md",
-  "cowork_rulings_2026_08_18_tenth_return.md",
-  "cowork_rulings_2026_08_19_eleventh_return.md",
-  "cowork_rulings_2026_08_19_thirteenth_return.md",
-  "cowork_rulings_2026_08_19_twelfth_return.md",
-  "cowork_rulings_2026_08_21_evaluation_brief_sitting.md",
-  "cowork_rulings_2026_08_21_successor_plan_sitting.md",
-  "cowork_rulings_2026_08_22_boot_list_sitting.md",
-  "cowork_rulings_2026_08_22_deriving_side_sitting.md",
-  "cowork_rulings_2026_08_22_dispatch_order_sitting.md",
-  "cowork_rulings_2026_08_22_member_two_leak_sitting.md",
-  "cowork_rulings_2026_08_22_pilot_order_sitting.md",
-  "cowork_rulings_2026_08_22_step_zero_return_sitting.md",
-  "cowork_rulings_2026_08_22_withheld_family_sitting.md",
-  "cowork_rulings_2026_08_23_brief_validation_sitting.md",
-  "cowork_rulings_2026_08_23_member_two_second_leak_sitting.md",
-  "cowork_rulings_2026_08_24_blind_return_sitting.md",
-  "cowork_rulings_2026_08_24_blinding_failure_sitting.md",
-  "cowork_rulings_2026_08_24_comparison_design_sitting.md",
-  "cowork_rulings_2026_08_24_method_ruling_sitting.md",
-  "cowork_rulings_2026_08_24_sizing_brief_sitting.md",
-  "cowork_rulings_2026_08_24_sizing_leak_list_sitting.md",
-  "cowork_rulings_2026_08_24_sizing_pilot_sitting.md",
-  "cowork_rulings_2026_08_25_cascade_sitting.md",
-  "cowork_rulings_2026_08_25_determination_route_sitting.md",
-  "cowork_rulings_2026_08_25_forward_fact_sitting.md",
-  "cowork_rulings_2026_08_25_landing_return_sitting.md",
-  "cowork_rulings_2026_08_25_method_voiding_sitting.md",
-  "cowork_rulings_2026_08_25_next_act_sitting.md",
-  "cowork_rulings_2026_08_25_regress_termination_sitting.md",
-  "cowork_rulings_2026_08_25_second_vector_sitting.md",
-  "cowork_rulings_2026_08_25_v1_sufficiency_sitting.md",
-  "cowork_rulings_2026_08_26_amendment_landing_sitting.md",
-  "cowork_rulings_2026_08_26_framework_opening_sitting.md",
-  "cowork_rulings_2026_08_26_ledger_dispositions_sitting.md",
-  "cowork_rulings_2026_08_26_ledger_form_sitting.md",
-  "cowork_rulings_2026_08_26_sizing_tests_sitting.md",
-  "cowork_rulings_2026_08_27_framework_authoring_sitting.md",
-  "cowork_rulings_2026_08_27_placement_sample_sitting.md",
-  "cowork_rulings_2026_08_27_redraw_findings_sitting.md",
-  "cowork_rulings_2026_08_27_stopped_strata_sitting.md",
-  "cowork_rulings_2026_08_28_framework_delta_sitting.md",
-  "cowork_rulings_2026_08_28_informed_brief_points_sitting.md",
-  "cowork_rulings_2026_08_28_informed_framework_sitting.md",
-  "cowork_rulings_2026_08_28_ledger_precondition_sitting.md",
-  "cowork_rulings_2026_08_28_unit_question_sitting.md",
-  "cowork_rulings_2026_08_29_ratification_sitting.md",
-  "cowork_rulings_2026_08_30_detail_phase_opening_sitting.md",
-  "cowork_rulings_2026_08_31_decision_surface_sitting.md",
-  "cowork_rulings_oi345_oi342_2026_08_07.md"
+  "records/cowork/rulings/cowork_rulings_2026_08_08_pre_away.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_09_eighth_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_09_fifth_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_09_fourth_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_09_ninth_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_09_return.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_09_seventh_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_09_sixth_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_09_third_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_11_eleventh_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_11_fifteenth_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_11_sixteenth_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_11_tenth_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_11_thirteenth_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_11_twelfth_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_13_eighteenth_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_13_seventeenth_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_15_batch_return.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_15_inventory_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_15_method_directions.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_15_period_start.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_15_phase_definition_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_15_session_length.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_16_preparation_return.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_17_callers_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_17_eighth_return.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_17_governing_surface_split.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_17_ninth_return.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_17_residue_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_17_rulings_sort_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_17_session_start_read_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_17_seventh_return.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_17_sixth_return.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_18_eleventh_stop.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_18_tenth_return.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_19_eleventh_return.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_19_thirteenth_return.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_19_twelfth_return.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_21_evaluation_brief_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_21_successor_plan_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_22_boot_list_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_22_deriving_side_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_22_dispatch_order_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_22_member_two_leak_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_22_pilot_order_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_22_step_zero_return_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_22_withheld_family_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_23_brief_validation_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_23_member_two_second_leak_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_24_blind_return_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_24_blinding_failure_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_24_comparison_design_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_24_method_ruling_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_24_sizing_brief_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_24_sizing_leak_list_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_24_sizing_pilot_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_25_cascade_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_25_determination_route_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_25_forward_fact_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_25_landing_return_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_25_method_voiding_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_25_next_act_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_25_regress_termination_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_25_second_vector_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_25_v1_sufficiency_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_26_amendment_landing_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_26_framework_opening_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_26_ledger_dispositions_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_26_ledger_form_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_26_sizing_tests_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_27_framework_authoring_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_27_placement_sample_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_27_redraw_findings_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_27_stopped_strata_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_28_framework_delta_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_28_informed_brief_points_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_28_informed_framework_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_28_ledger_precondition_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_28_unit_question_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_29_ratification_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_30_detail_phase_opening_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_08_31_decision_surface_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_05_l2_boot_list_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_05_l2_withheld_family_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_08_defense_satellite_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_08_extent_rule_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_11_satellite_arc_close.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_20_first_pass_extracts_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_20_l2_gate_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_21_decision_surface_form_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_21_l2_extracts_member_cutting_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_21_l2_staged_score_set_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_21_l2_withheld_documents_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_21_limb_a_method_sitting.md",
+  "records/cowork/rulings/cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
  "named_in_a_ruling_record_but_not_generated": {
   "what_this_is": "documents a ruling record states it was taken from that NO tool writes. The class rule reaches a GENERATED document only, so these are outside it — recorded rather than dropped (#12).",
   "documents": {
    "cowork_comparison_harmony_boundary_reading.md": [
-    "cowork_rulings_2026_08_24_method_ruling_sitting.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_24_method_ruling_sitting.md"
    ],
    "cowork_phase_definition_surface_2026_08_15.md": [
-    "cowork_rulings_2026_08_15_phase_definition_sitting.md",
-    "cowork_rulings_2026_08_22_pilot_order_sitting.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_15_phase_definition_sitting.md",
+    "records/cowork/rulings/cowork_rulings_2026_08_22_pilot_order_sitting.md"
+   ],
+   "cowork_pruning_and_satellites_surface_2026_09_08.md": [
+    "records/cowork/rulings/cowork_rulings_2026_09_08_defense_satellite_sitting.md"
    ],
    "cowork_restructuring_period_start_decision_surface.md": [
-    "cowork_rulings_2026_08_15_period_start.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_15_period_start.md"
    ],
    "cowork_sizing_pack_leak_list_reading.md": [
-    "cowork_rulings_2026_08_24_sizing_leak_list_sitting.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_24_sizing_leak_list_sitting.md"
    ],
    "cowork_withheld_family_harmony_boundary_reading.md": [
-    "cowork_rulings_2026_08_22_withheld_family_sitting.md"
+    "records/cowork/rulings/cowork_rulings_2026_08_22_withheld_family_sitting.md"
+   ],
+   "cowork_withheld_family_l2_reading.md": [
+    "records/cowork/rulings/cowork_rulings_2026_09_05_l2_withheld_family_sitting.md"
    ]
   }
  },

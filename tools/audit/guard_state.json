@@ -657,10 +657,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
+      "exit_code": 0,
+      "verdict": "PASS",
       "stdout": [
-        "STALE vs the derivation: l0_l1_outgoing_population.json does not re-derive"
+        "l0_l1_outgoing_population.json re-derives"
       ],
       "stderr": [],
       "what_it_checks": "the L0/L1 outgoing population re-derives from Ruling 32's named members, the term search over the three prose classes of the artifact inventory, and the cut to the ruled specification document set (Ruling 33). What it guards is not the term list, which is authored and says so, but that every named member is present at its path, that the searched population is the inventory's and not the file system's, that the cut reads the specification set as it stands, and that the residue is published whole — so a document moving under it, or a member leaving the specification set, halts the run rather than moving the population silently"
@@ -1040,7 +1040,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  entries moved: 1, 3,017 characters",
+        "  entries moved: 1, 3,545 characters",
         "  byte-present in the archive exactly once: True",
         "  absent from the must-read:                True"
       ],
@@ -1115,10 +1115,20 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
+      "exit_code": 0,
+      "verdict": "PASS",
       "stdout": [
-        "STALE vs the derivation: evidence_pin_membership.json does not re-derive"
+        "the evidence pin's class membership re-derives",
+        "  generated ratification documents 7; ruling records read 97",
+        "  members 7 — pinned 5, UNRESOLVED 0",
+        "  tools carrying a pin constant 8; outside this class 3",
+        "    tools/audit/gen_artifact_inventory_surface.py        NOT PINNED — a record states the commit; the pin is not applied",
+        "    tools/audit/gen_claude_md_finer_surface.py           PINNED — at the commit a ruling record states",
+        "    tools/audit/gen_ratified_document_check.py           PINNED — at the commit a ruling record states",
+        "    tools/audit/gen_governing_surface_readers.py         PINNED — at the commit a ruling record states",
+        "    tools/audit/gen_rulings_sort.py                      NOT PINNED — a record states the commit; the pin is not applied",
+        "    tools/audit/gen_deciding_act_recovery.py             PINNED — by the route the tool's own pin constant records",
+        "    tools/audit/gen_decisions_filter.py                  PINNED — by the route the tool's own pin constant records"
       ],
       "stderr": [],
       "what_it_checks": "who belongs to the evidence pin's ruled class, derived on every run from the ruling records themselves rather than listed: every ratification document a tool WRITES, every root-level ruling record, and what each record says in its own two structural blocks — its leading blockquote and its provenance paragraph — that it was taken from. Its live half is that the membership tracks the record: a ruling taken tomorrow from a generated document appears tomorrow, and a member the record stops naming leaves. Its STOPs are demands about the tree AS IT STANDS — a member this artifact records as PINNED whose generator no longer carries that commit in a pin constant, a tool carrying a pin constant the run does not account for in one of its two classes, and a generated ratification document with two writers (#6). ★ WHAT IT DOES NOT ASSERT: that a member SHOULD be pinned, or that an UNRESOLVED member has no discoverable commit — only that no record states one in the form the resolution uses, which is why an unresolved member is published to the user as data and never given a guessed pin"
@@ -1150,15 +1160,15 @@
         "    [conditional  ] VS Code extension — bash command rules                    3013",
         "  whole file 168350, the six session-start spans 104609, overstated by 63741",
         "    CLAUDE.md                                                                104609",
-        "    STATUS.md                                                                 12822",
+        "    STATUS.md                                                                 11984",
         "    DECISIONS.md                                                             127727",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids     2826",
-        "  total at the tree 247984",
+        "  total at the tree 247146",
         "  further spans of the same artifact, NOT counted into the read:",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows    62498",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one     4951",
-        "  vs 1760d9a4a8: 367121 [whole-file practice] -> 247984 [ruled membership]  (-119137, -32.45%)  <- CROSSES A REGIME BOUNDARY",
-        "  vs 594074e1e1: 296832 [whole-file practice] -> 247984 [ruled membership]  (-48848, -16.46%)  <- CROSSES A REGIME BOUNDARY"
+        "  vs 1760d9a4a8: 367121 [whole-file practice] -> 247146 [ruled membership]  (-119975, -32.68%)  <- CROSSES A REGIME BOUNDARY",
+        "  vs 594074e1e1: 296832 [whole-file practice] -> 247146 [ruled membership]  (-49686, -16.74%)  <- CROSSES A REGIME BOUNDARY"
       ],
       "stderr": [],
       "what_it_checks": "what an ordinary session reads at session start, in characters, measured at the tree and at the recorded earlier commit's git object. It is the arc's own subject made checkable: the pruning direction of 2026-08-16 is about this number, and every act in the arc has had to state what it saved. Its load-bearing STOP is a demand about the tree AS IT STANDS — rule (a)'s artifact-and-key pointer is PARSED FROM THE CLAUSE ITSELF and must RESOLVE in the artifact it names, so a pointer that has stopped resolving fails on the day it stops rather than being hidden inside a number. It goes red when a governing surface changes, which is the point: the session-start read moved and the record does not yet say so. ★ WHAT IT DOES NOT ASSERT: that the membership is complete — it is AUTHORED, and each member carries the clause that makes it one so the authored half is checkable by reading three clauses; and nothing about whether the read is small enough, which is [[OI-370]]'s own subject"
@@ -1184,7 +1194,7 @@
         "  TOTAL 12957 character(s) in 34 clause(s), at the AUTHORED ends",
         "    the ruled closing reading would attribute 51684; the literal paragraph reading 160906",
         "    of the six session-start spans (104609): 12.39%",
-        "    of the whole session-start read (247984): 5.22%",
+        "    of the whole session-start read (247146): 5.24%",
         "  THE VALUE IS A LOWER BOUND ON MARKED DEFENSE: the marker set's reach is UNMEASURED,",
         "  and the ends are AUTHORED (cowork_defense_clause_ends_2026_09_08.md)."
       ],
@@ -1497,7 +1507,7 @@
         "  CLAUDE.md            hits  5 (backlog 5, breach 0), near misses  3, pointers   9  <= enrolled scope",
         "  OPEN_ITEMS.md        hits  2 (backlog 2, breach 0), near misses  4, pointers 134",
         "  DECISIONS.md         hits  0 (backlog 0, breach 0), near misses  2, pointers   0",
-        "  STATUS.md            hits  0 (backlog 0, breach 0), near misses  0, pointers   2",
+        "  STATUS.md            hits  0 (backlog 0, breach 0), near misses  1, pointers   2",
         "  BUILD_AND_TEST.md    hits  0 (backlog 0, breach 0), near misses  0, pointers   8",
         "  CLAUDE.md: PASS — 0 breach(es) in the enrolled scope"
       ],
@@ -1532,8 +1542,8 @@
   ],
   "summary": {
     "run": 79,
-    "passing": 65,
-    "failing": 14,
+    "passing": 67,
+    "failing": 12,
     "failing_tools": [
       {
         "tool": "tools/audit/gen_phase3_gate_partition.py",
@@ -1543,12 +1553,6 @@
       },
       {
         "tool": "tools/audit/gen_filing_convention_application.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/gen_l0_l1_outgoing_population.py",
         "args": [
           "--check"
         ]
@@ -1585,12 +1589,6 @@
       },
       {
         "tool": "tools/audit/decisions/apply_residue_discard.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/gen_evidence_pin_membership.py",
         "args": [
           "--check"
         ]

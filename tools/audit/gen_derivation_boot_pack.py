@@ -238,6 +238,17 @@ VERDICTS_VOCABULARY = (VERDICT_IN, VERDICT_OUT, VERDICT_UNPLACED)
 
 DATE = "2026-08-22"
 
+# THE VERDICT DATE, PER SUBJECT.  `build_subject` stamps every verdict row with its subject's date
+# from this table.  `DATE` above is the pilot's authoring date and stays the harmony-boundary
+# subject's.  `l2`'s verdicts were authored and ruled on 2026-09-05 — every group block of
+# `VERDICTS["l2"]` says so in its heading, and the rulings are those of
+# `cowork_rulings_2026_09_05_l2_withheld_family_sitting.md`.  A subject whose verdict table is EMPTY
+# stamps no row and needs no date here; a subject with graded candidates and no date here STOPS.
+VERDICT_DATE: dict[str, str] = {
+    "harmony-boundary": DATE,
+    "l2": "2026-09-05",
+}
+
 # ══════════════════════════════════════════════════════════════════════════════════════════════
 # AUTHORED — the six ruled members, each span named by its own anchor text.
 #
@@ -475,6 +486,95 @@ DEFECT_COLUMNS_KEPT = 2
 # deleted, and a mark is an addition.  What was cut is disclosed to the session in the read-me
 # instead, which is where the design-intent member's own gaps are disclosed.
 # ══════════════════════════════════════════════════════════════════════════════════════════════
+# The charter member and the ledger member are ONE authored object each, shared by every subject
+# that carries them (Ruling 3 and Ruling 4 of
+# `records/cowork/rulings/cowork_rulings_2026_09_05_l2_boot_list_sitting.md`: "`l0-l1`'s member (7),
+# unchanged"; "the `l0-l1` member (9) shape, unchanged").  Named once here and listed in each
+# subject's EXTRAS below, so that the two subjects cannot drift apart (#6).
+CHARTER_MEMBER_7: dict = {
+    "number": 7,
+    "filename": "07_the_charter_the_layers_and_the_decisions.md",
+    "title": "The ratified charter — the layers, their contracts, and the architecture "
+             "decisions",
+    "source": "FRAMEWORK.md",
+    "rendered_from": "the file itself, quoted — §5 and §9 whole, with two passages removed",
+    "parts": [
+        {
+            "source": "FRAMEWORK.md",
+            "spans": [
+                {"kind": "heading-to-heading",
+                 "start": "## 5. Building-block view — the layers",
+                 "end": "## 6. Runtime view — scenarios"},
+                {"kind": "heading-to-heading",
+                 "start": "## 9. Architecture decisions",
+                 "end": "## 10. Quality and testing"},
+            ],
+            # Ruling 11 Decision 1 cuts every passage describing what this project
+            # currently has.  Ruling 16 carried Ruling 14's other half unchanged and
+            # named two: DP-N's and DP-Q's stage-two parentheticals.  Ruling 17(b) then
+            # widened the filter by ONE and no more, on the sweep the extension reported
+            # — §5's second-axis provenance parenthetical.  The filter is exactly these
+            # three; widening it further is the user's act, not this tool's.
+            #
+            # NOT REMOVED, and the exclusions are recorded because an excluded candidate
+            # is evidence about the filter (Ruling 17(b)): DP-N's two disagreeing
+            # analyses and DP-Q's three exemplar analyses DESCRIBE CORPUS MATERIAL rather
+            # than what this project's system does, so they do not breach
+            # implementation-blindness, and both are load-bearing EVIDENCE for their
+            # design points; and the two references to the ledger are MOOT, the pack
+            # carrying that document whole as member (9).
+            "removals": [
+                {"anchor": "This is adopted from this project's material",
+                 "opens_with": "*(",
+                 "closes_with": ")*",
+                 "why": ("§5's second-axis parenthetical.  Ruling 17(b) of "
+                         "`cowork_rulings_2026_08_31_decision_surface_sitting.md`: pure "
+                         "provenance — it tells the reader that this project's own "
+                         "material holds the decision — the same shape as the two "
+                         "anchors Ruling 16 carried, and its removal costs the deriving "
+                         "session nothing.")},
+                {"anchor": "Stage two established that this project's own layer "
+                           "specifications",
+                 "opens_with": "*(",
+                 "closes_with": ")*",
+                 "why": ("DP-N.  Ruling 16 of "
+                         "`cowork_rulings_2026_08_31_decision_surface_sitting.md`, "
+                         "carrying Ruling 14's unspent half: it states what this "
+                         "project's own layer specifications do and do not say about the "
+                         "cadential six-four, which is a description of what this project "
+                         "currently has.")},
+                {"anchor": "Stage two found the same question open in this project's own "
+                           "record",
+                 "opens_with": "*(",
+                 "closes_with": ")*",
+                 "why": ("DP-Q.  The same ruling: it states a rule this project's own "
+                         "record carries about abstention on the tonality axis, and that "
+                         "the record does not settle which governs.")},
+            ],
+            "cuts": [],
+        },
+    ],
+}
+
+LEDGER_MEMBER_9: dict = {
+    "number": 9,
+    "filename": "09_the_empirical_findings_ledger.md",
+    "title": "The admitted empirical findings",
+    "source": "EMPIRICAL_FINDINGS_LEDGER.md",
+    "rendered_from": "the file itself, quoted, whole and unfiltered",
+    "parts": [
+        # WHOLE AND UNFILTERED, by Ruling 12's correction of record: §3.4 of
+        # `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` names
+        # "the same independent sources and ledger as the framework phase" among this
+        # phase's inputs, so the ledger enters by the phase definition's own naming and
+        # not by any decision taken at that sitting.
+        {"source": "EMPIRICAL_FINDINGS_LEDGER.md",
+         "spans": [{"kind": "whole"}],
+         "removals": [],
+         "cuts": []},
+    ],
+}
+
 EXTRAS: dict[str, list[dict]] = {
     # EMPTY BY RULING for both existing subjects, and the emptiness is the proof the extension is
     # additive: their packs and their manifest entries must re-render byte-identical.
@@ -482,70 +582,7 @@ EXTRAS: dict[str, list[dict]] = {
     "scoring-model": [],
 
     "l0-l1": [
-        {
-            "number": 7,
-            "filename": "07_the_charter_the_layers_and_the_decisions.md",
-            "title": "The ratified charter — the layers, their contracts, and the architecture "
-                     "decisions",
-            "source": "FRAMEWORK.md",
-            "rendered_from": "the file itself, quoted — §5 and §9 whole, with two passages removed",
-            "parts": [
-                {
-                    "source": "FRAMEWORK.md",
-                    "spans": [
-                        {"kind": "heading-to-heading",
-                         "start": "## 5. Building-block view — the layers",
-                         "end": "## 6. Runtime view — scenarios"},
-                        {"kind": "heading-to-heading",
-                         "start": "## 9. Architecture decisions",
-                         "end": "## 10. Quality and testing"},
-                    ],
-                    # Ruling 11 Decision 1 cuts every passage describing what this project
-                    # currently has.  Ruling 16 carried Ruling 14's other half unchanged and
-                    # named two: DP-N's and DP-Q's stage-two parentheticals.  Ruling 17(b) then
-                    # widened the filter by ONE and no more, on the sweep the extension reported
-                    # — §5's second-axis provenance parenthetical.  The filter is exactly these
-                    # three; widening it further is the user's act, not this tool's.
-                    #
-                    # NOT REMOVED, and the exclusions are recorded because an excluded candidate
-                    # is evidence about the filter (Ruling 17(b)): DP-N's two disagreeing
-                    # analyses and DP-Q's three exemplar analyses DESCRIBE CORPUS MATERIAL rather
-                    # than what this project's system does, so they do not breach
-                    # implementation-blindness, and both are load-bearing EVIDENCE for their
-                    # design points; and the two references to the ledger are MOOT, the pack
-                    # carrying that document whole as member (9).
-                    "removals": [
-                        {"anchor": "This is adopted from this project's material",
-                         "opens_with": "*(",
-                         "closes_with": ")*",
-                         "why": ("§5's second-axis parenthetical.  Ruling 17(b) of "
-                                 "`cowork_rulings_2026_08_31_decision_surface_sitting.md`: pure "
-                                 "provenance — it tells the reader that this project's own "
-                                 "material holds the decision — the same shape as the two "
-                                 "anchors Ruling 16 carried, and its removal costs the deriving "
-                                 "session nothing.")},
-                        {"anchor": "Stage two established that this project's own layer "
-                                   "specifications",
-                         "opens_with": "*(",
-                         "closes_with": ")*",
-                         "why": ("DP-N.  Ruling 16 of "
-                                 "`cowork_rulings_2026_08_31_decision_surface_sitting.md`, "
-                                 "carrying Ruling 14's unspent half: it states what this "
-                                 "project's own layer specifications do and do not say about the "
-                                 "cadential six-four, which is a description of what this project "
-                                 "currently has.")},
-                        {"anchor": "Stage two found the same question open in this project's own "
-                                   "record",
-                         "opens_with": "*(",
-                         "closes_with": ")*",
-                         "why": ("DP-Q.  The same ruling: it states a rule this project's own "
-                                 "record carries about abstention on the tonality axis, and that "
-                                 "the record does not settle which governs.")},
-                    ],
-                    "cuts": [],
-                },
-            ],
-        },
+        CHARTER_MEMBER_7,
         {
             "number": 8,
             "filename": "08_the_five_research_extracts.md",
@@ -584,24 +621,2509 @@ EXTRAS: dict[str, list[dict]] = {
                 )
             ],
         },
+        LEDGER_MEMBER_9,
+    ],
+    "l2": [
+        CHARTER_MEMBER_7,
         {
-            "number": 9,
-            "filename": "09_the_empirical_findings_ledger.md",
-            "title": "The admitted empirical findings",
-            "source": "EMPIRICAL_FINDINGS_LEDGER.md",
-            "rendered_from": "the file itself, quoted, whole and unfiltered",
+            "number": 8,
+            "filename": "08_the_fifty_six_research_extracts.md",
+            "title": "Fifty-six published sources, read at the object — the L2 slice and the "
+                     "first-pass extracts that bear on it",
+            "source": "reading_pass/extracts/ — the forty-one extracts of the forty L2-slice rows "
+                      "named in `reading_pass/l2_slice_reading_progress.md`'s slice table, and the "
+                      "fifteen first-pass extracts admitted by Ruling 1 of "
+                      "`cowork_rulings_2026_09_20_first_pass_extracts_sitting.md`",
+            "rendered_from": "the fifty-six files themselves, quoted whole, each with the sections "
+                             "stating this project's own positions cut PER FILE by their own "
+                             "heading text (Ruling 1 of 2026-09-21, limb A), the two ruled shared "
+                             "cut strings unchanged, and the per-file removals of §6",
             "parts": [
-                # WHOLE AND UNFILTERED, by Ruling 12's correction of record: §3.4 of
-                # `ratification_surfaces/cowork_phase_definition_surface_2026_08_15.md` names
-                # "the same independent sources and ledger as the framework phase" among this
-                # phase's inputs, so the ledger enters by the phase definition's own naming and
-                # not by any decision taken at that sitting.
-                {"source": "EMPIRICAL_FINDINGS_LEDGER.md",
-                 "spans": [{"kind": "whole"}],
-                 "removals": [],
-                 "cuts": []},
+                {
+                    "source": "reading_pass/extracts/rocher-robine-hanna-oudre-2010-concurrent-estimation-of-chords-and-keys.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-05).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "written 2026-09-05 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "this project's own measurement is restated (#17f, D-431); every value above is the paper's own, quoted\nwith its printed page.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 1",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 1",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/catteau-martens-leman-2006-model-based-approach-to-scale-and-chord-estimation.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-05).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "written 2026-09-05 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "own, quoted with its printed page.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 2",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 2",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/raphael-stoddard-2003-harmonic-analysis-with-probabilistic-graphical-models.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-05).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "written 2026-09-05 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "value above is the paper's own.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 230 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 3",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 230 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 3",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/temperley-2009-unified-probabilistic-model-polyphonic-music-analysis.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-05).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "written 2026-09-05 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "D-431); every value above is the paper's own.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 4",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 4",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/ni-mcvicar-santosrodriguez-debie-2011-end-to-end-machine-learning-system-harmonic-analysis.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-05).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "— with one finding",
+                            "opens_with": " ",
+                            "closes_with": "finding",
+                            "why": "the `## Identity` heading's own trailing text, which states this project's identity finding about the row (entry 232 §5(2)'s trap: a body-only removal leaves it standing); the heading `## Identity` itself is kept",
+                        },
+                        {
+                            "anchor": "ni_mcvicar_santosrodriguez_debie_2012_taslp_end_to_end_harmonic_analysis.pdf",
+                            "opens_with": "**File:**",
+                            "closes_with": "(see finding (1) below).",
+                            "why": "the project-facing passage inside `## Identity` — the held-file paragraph recording a mismatch between this project's bibliography row and the held file, routed to the bibliography reconciliation (entry 231 §5(1); cut list position 5)",
+                        },
+                        {
+                            "anchor": "written 2026-09-05 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "own measurement is restated (#17f, D-431); every value above is the paper's own.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 5",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 5",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/noland-sandler-2006-key-estimation-using-a-hidden-markov-model.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-05).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "— confirmed, no finding",
+                            "opens_with": " ",
+                            "closes_with": "finding",
+                            "why": "the `## Identity` heading's own trailing text, which states this project's identity finding about the row (entry 232 §5(2)); the heading `## Identity` itself is kept; entry 231 records no passage in the body",
+                        },
+                        {
+                            "anchor": "written 2026-09-05 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "measurement is restated (#17f, D-431); every value above is the paper's own.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 6",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 6",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/chew-2002-spiral-array-algorithm-for-determining-key-boundaries.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-05).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "— with one finding",
+                            "opens_with": " ",
+                            "closes_with": "finding",
+                            "why": "the `## Identity` heading's own trailing text, which states this project's identity finding about the row (entry 232 §5(2)); the heading `## Identity` itself is kept",
+                        },
+                        {
+                            "anchor": "chew_2002_spiral_array_key_boundaries.pdf",
+                            "opens_with": "**File:**",
+                            "closes_with": "are noted there too.",
+                            "why": "the project-facing passage inside `## Identity` — the held-file paragraph recording the version question against this project's bibliography row, routed to the bibliography reconciliation (entry 231 §5(1); cut list position 7)",
+                        },
+                        {
+                            "anchor": "written 2026-09-05 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "value above is the paper's own.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 7",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 7",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/feisthauer-bigo-giraud-leve-2020-estimating-keys-and-modulations-in-musical-pieces.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-05).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "— no finding",
+                            "opens_with": " ",
+                            "closes_with": "finding",
+                            "why": "the `## Identity` heading's own trailing text, which states this project's identity finding about the row (entry 232 §5(2)); the heading `## Identity` itself is kept",
+                        },
+                        {
+                            "anchor": "feisthauer_bigo_giraud_leve_2020_smc_keys_modulations.pdf",
+                            "opens_with": "**File:**",
+                            "closes_with": "noted at finding (9).",
+                            "why": "the project-facing passage inside `## Identity` — the held-file paragraph recording a tier precision against this project's bibliography row (entry 231 §5(1); cut list position 8)",
+                        },
+                        {
+                            "anchor": "written 2026-09-05 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "project's own measurement is restated (#17f, D-431); every value above is the paper's own.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 8",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 8",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/temperley-2002-a-bayesian-approach-to-key-finding.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-05).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "— no finding",
+                            "opens_with": " ",
+                            "closes_with": "finding",
+                            "why": "the `## Identity` heading's own trailing text, which states this project's identity finding about the row (entry 232 §5(2)); the heading `## Identity` itself is kept; entry 231 records no passage in the body",
+                        },
+                        {
+                            "anchor": "written 2026-09-05 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "project's own measurement is restated (#17f, D-431); every value above is the paper's own.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 9",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 9",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/masada-bunescu-2019-chord-recognition-in-symbolic-music-a-segmental-crf-model.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "— a finding of the row-3 shape",
+                            "opens_with": " ",
+                            "closes_with": "shape",
+                            "why": "the `## Identity` heading's own trailing text, which states this project's identity finding about the row (entry 232 §5(2)); the heading `## Identity` itself is kept",
+                        },
+                        {
+                            "anchor": "line 24) names *TISMIR 2(1), 2019*",
+                            "opens_with": "The bibliography's row",
+                            "closes_with": "beside rows 28's, 3's and 29's findings.",
+                            "why": "the project-facing passage inside `## Identity` — the comparison against this project's bibliography row and its routing to the bibliography reconciliation (entry 231 §5(1); cut list position 10); the span also carries one clause about the held document (that no licence line is printed), which goes with it because the sentences are interleaved and the arXiv-version fact survives in the sentence before",
+                        },
+                        {
+                            "anchor": "written 2026-09-06 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "restated (#17f, D-431); every value above is the paper's own.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 10",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 10",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/sarawagi-cohen-2004-semi-markov-conditional-random-fields.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "— a finding of row 29's milder shape",
+                            "opens_with": " ",
+                            "closes_with": "shape",
+                            "why": "the `## Identity` heading's own trailing text, which states this project's identity finding about the row (entry 232 §5(2)); the heading `## Identity` itself is kept",
+                        },
+                        {
+                            "anchor": "line 25) names",
+                            "opens_with": "The bibliography's row",
+                            "closes_with": "(title a prefix match rather than a different title).",
+                            "why": "the project-facing passage inside `## Identity` — the comparison against this project's bibliography row and its routing to the bibliography reconciliation (entry 231 §5(1); cut list position 11); the span also carries the observation that the held document prints no venue, year, copyright or licence line, which goes with it because the sentences are interleaved",
+                        },
+                        {
+                            "anchor": "written 2026-09-06 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "restated (#17f, D-431); every value above is the paper's own.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 11",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 11",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/yang-cwitkowitz-duan-2023-harmonic-analysis-with-neural-semi-crf.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "— NO finding",
+                            "opens_with": " ",
+                            "closes_with": "finding",
+                            "why": "the `## Identity` heading's own trailing text, which states this project's identity finding about the row (entry 232 §5(2)); the heading `## Identity` itself is kept",
+                        },
+                        {
+                            "anchor": "characterisation of the paper is contradicted by its identity",
+                            "opens_with": "Nothing in the record's",
+                            "closes_with": "identity.",
+                            "why": "the project-facing passage inside `## Identity` — the single closing sentence stating that the record's characterisation of the paper is not contradicted (entry 231 §5(1); cut list position 12)",
+                        },
+                        {
+                            "anchor": "written 2026-09-06 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "value above is the paper's own, and every derived difference or sum is marked as this extract's\narithmetic.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 12",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 231 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 12",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/korzeniowski-widmer-2018-improved-chord-recognition-by-combining-duration-and-harmonic-language-models.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "written 2026-09-06 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "own, and every derived difference or sum is marked as this extract's arithmetic.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 232 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 13",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 232 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 13",
+                        },
+                        {
+                            "heading_contains": "Identity",
+                            "heading_level": "## ",
+                            "why": "the whole `## Identity` section, cut by this dispatch's authoring: entry 232 §4 and §5(2) record project-facing material in its heading line AND throughout its body (the comparison against this project's bibliography row, the carried question answered, the derivation's consequence (ii) applied), interleaved with the paper's identity so that no passage removal separates them; the paper's title, authors and venue survive in the title line the pack keeps; the same disposition the judging entries gave positions 17 to 34 (entry 246 §3(1) leaves the disposition to the dispatch); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 13",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/sheh-ellis-2003-chord-segmentation-and-recognition-using-em-trained-hidden-markov-models.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-06, the tenth reading session of L2's slice, booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "project's own measurement is restated (#17f, D-431).*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 232 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 14",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 232 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 14",
+                        },
+                        {
+                            "heading_contains": "Identity",
+                            "heading_level": "## ",
+                            "why": "the whole `## Identity` section, cut by this dispatch's authoring: entry 232 §4 and §5(2) record project-facing material in its heading line AND throughout its body (the comparison against this project's bibliography row, the carried question answered, the derivation's consequence (ii) applied), interleaved with the paper's identity so that no passage removal separates them; the paper's title, authors and venue survive in the title line the pack keeps; the same disposition the judging entries gave positions 17 to 34 (entry 246 §3(1) leaves the disposition to the dispatch); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 14",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/chen-su-2019-harmony-transformer-incorporating-chord-segmentation-into-harmony-recognition.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-06, the eleventh reading session of L2's slice, booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "shell read repository content. No figure of this project's own measurement is restated (#17f,\nD-431).*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 232 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 15",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 232 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 15",
+                        },
+                        {
+                            "heading_contains": "Identity",
+                            "heading_level": "## ",
+                            "why": "the whole `## Identity` section, cut by this dispatch's authoring: entry 232 §4 and §5(2) record project-facing material in its heading line AND throughout its body (the comparison against this project's bibliography row, the carried question answered, the derivation's consequence (ii) applied), interleaved with the paper's identity so that no passage removal separates them; the paper's title, authors and venue survive in the title line the pack keeps; the same disposition the judging entries gave positions 17 to 34 (entry 246 §3(1) leaves the disposition to the dispatch); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 15",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/chen-su-2021-attend-to-chords-improving-harmonic-analysis-of-symbolic-music.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-06, the eleventh reading session of L2's slice, booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "is derived from the cells transcribed in this file, with its sign convention stated.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 232 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 16",
+                        },
+                        {
+                            "heading_contains": "Centrality — stated ONCE for the ROW",
+                            "heading_level": "## ",
+                            "why": "named by entry 232 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 16",
+                        },
+                        {
+                            "heading_contains": "Identity",
+                            "heading_level": "## ",
+                            "why": "the whole `## Identity` section, cut by this dispatch's authoring: entry 232 §4 and §5(2) record project-facing material in its heading line AND throughout its body (the comparison against this project's bibliography row, the carried question answered, the derivation's consequence (ii) applied), interleaved with the paper's identity so that no passage removal separates them; the paper's title, authors and venue survive in the title line the pack keeps; the same disposition the judging entries gave positions 17 to 34 (entry 246 §3(1) leaves the disposition to the dispatch); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 16",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/micchi-gotham-giraud-2020-not-all-roads-lead-to-rome-pitch-representation-and-model-architecture.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-06, the twelfth reading session of L2's slice, booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "that it is this reader's and names the printed values it is derived from.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "★ The verification target — the ratified `[FACT]`, VERIFIED VERBATIM, with two precisions",
+                            "heading_level": "## ",
+                            "why": "named by entry 233 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 17",
+                        },
+                        {
+                            "heading_contains": "Identity — NO finding",
+                            "heading_level": "## ",
+                            "why": "named by entry 233 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 17",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 233 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 17",
+                        },
+                        {
+                            "heading_contains": "Centrality — CENTRAL, and a second independent extraction was OWED and has been performed",
+                            "heading_level": "## ",
+                            "why": "named by entry 233 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 17",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/napoleslopez-gotham-fujinaga-2021-augmentednet-roman-numeral-analysis-network.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-06, the thirteenth reading session of L2's slice, after the ordinary",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "paper's own printed objects or of this file's own rows, and each is derived where it is stated.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "★ The verification target — the ratified `[FACT]`, CONFIRMED at the primary, with three precisions and the paper's own figure",
+                            "heading_level": "## ",
+                            "why": "named by entry 233 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 18",
+                        },
+                        {
+                            "heading_contains": "Identity — NO finding",
+                            "heading_level": "## ",
+                            "why": "named by entry 233 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 18",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 233 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 18",
+                        },
+                        {
+                            "heading_contains": "Centrality — CENTRAL, and a second independent extraction was OWED and has been performed",
+                            "heading_level": "## ",
+                            "why": "named by entry 233 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 18",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/karystinaios-widmer-2023-roman-numeral-analysis-with-graph-neural-networks.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-06, the fourteenth reading session of L2's slice, after the ordinary",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "derived here from this paper's own table with the sign convention stated.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "★ The verification target (a) — the ratified FIGURE, CONFIRMED at the primary, with three precisions",
+                            "heading_level": "## ",
+                            "why": "named by entry 233 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 19",
+                        },
+                        {
+                            "heading_contains": "★ The verification target (b) — V8's onset-level representation, CONFIRMED",
+                            "heading_level": "## ",
+                            "why": "named by entry 233 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 19",
+                        },
+                        {
+                            "heading_contains": "Identity — a MILD finding, of a shape new to this slice",
+                            "heading_level": "## ",
+                            "why": "named by entry 233 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 19",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 233 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 19",
+                        },
+                        {
+                            "heading_contains": "Centrality — CENTRAL, and a second independent extraction was OWED and has been performed",
+                            "heading_level": "## ",
+                            "why": "named by entry 233 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 19",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/sailor-2024-rnbert-fine-tuning-a-masked-language-model-for-roman-numeral-analysis.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-06, the fifteenth reading session of L2's slice, after the ordinary",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "stated, or is cited to the row 49 extract where it is that paper's.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "★ The verification target (a) — the ratified FIGURE, CONFIRMED at the primary, with four precisions",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 20",
+                        },
+                        {
+                            "heading_contains": "★ The verification target (b) — §S4(a)'s decoherence claim, CONFIRMED, with three precisions",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 20",
+                        },
+                        {
+                            "heading_contains": "★ The verification target (c) — §S4's entanglement argument, a place the carried items do not name",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 20",
+                        },
+                        {
+                            "heading_contains": "★ The carried item (b) — ANSWERED: the \"replacing\" wording is RNBERT's own, verbatim",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 20",
+                        },
+                        {
+                            "heading_contains": "★ The carried item (g) — ANSWERED at a SECOND held primary: \"Micchi et al. 2021\" corroborated, still not held",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 20",
+                        },
+                        {
+                            "heading_contains": "★ The carried item (h) — ANSWERED: the lineage narrative is confirmed from ONE END ONLY, a third time",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 20",
+                        },
+                        {
+                            "heading_contains": "Identity — a MILD tier finding, and the row's short title MATCHES this time",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 20",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 20",
+                        },
+                        {
+                            "heading_contains": "Centrality — CENTRAL, and a second independent extraction was OWED and has been performed",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 20",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/karystinaios-hentschel-neuwirth-widmer-2025-analysisgnn-unified-music-analysis.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-06, the sixteenth reading session of L2's slice, after the ordinary",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "50 extract where it is that paper's.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Where the record bears on this paper — fourteen places, each read at its own line",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 21",
+                        },
+                        {
+                            "heading_contains": "★ The verification target (a) — V9's figure, CONFIRMED at its own cells, with three precisions",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 21",
+                        },
+                        {
+                            "heading_contains": "★★ The verification target (b) — V1's figures, CONFIRMED at their own cells; and THE CORRECTED STRUCTURAL CLAIM, which is in `FRAMEWORK.md` and NOT in V1",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 21",
+                        },
+                        {
+                            "heading_contains": "★ The carried item (g) — ANSWERED at a THIRD held primary, and the cross-head question answered too",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 21",
+                        },
+                        {
+                            "heading_contains": "★ The carried item (h) — ANSWERED: §S4(a)'s lineage narrative is confirmed from ONE END ONLY, a fourth time",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 21",
+                        },
+                        {
+                            "heading_contains": "★ The carried item (j) — the cross-primary check, run, and it lands",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 21",
+                        },
+                        {
+                            "heading_contains": "Identity — NO identity finding, and a tier precision",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 21",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 21",
+                        },
+                        {
+                            "heading_contains": "Centrality — CENTRAL, and a second independent extraction was OWED and has been performed",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 21",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/chen-su-2018-functional-harmony-recognition-of-symbolic-music-data-with-multi-task-rnn.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "value. They were made without re-opening the paper; the ground for each is at the second extraction's\n> §9.3.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-06, the seventeenth reading session of L2's slice, booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "of it. No figure of this project's own measurement is restated (#17f, D-431).*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Where the record bears on this paper — four places, each read at its own line",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 22",
+                        },
+                        {
+                            "heading_contains": "★ The verification target — §S4(a)'s universal AT ITS STARTING POINT: CONFIRMED, with three precisions",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 22",
+                        },
+                        {
+                            "heading_contains": "Identity — NO identity finding; ONE tier confirmation; the input is SYMBOLIC and UNSPELLED",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 22",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 22",
+                        },
+                        {
+                            "heading_contains": "Centrality — CENTRAL on a narrow ground, and a second independent extraction was OWED and has been performed",
+                            "heading_level": "## ",
+                            "why": "named by entry 234 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 22",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/wu-nakamura-yoshii-2020-variational-autoencoder-for-joint-chord-and-key-estimation.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-06, the eighteenth reading session of Task B's L2 slice, at tip",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "project's own measurement is restated (#17f, D-431).*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Where the record bears on this paper — three places, each read at its own line",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 23",
+                        },
+                        {
+                            "heading_contains": "★ The doubt default's own question, ANSWERED — the method IS a candidate for a decision inside L2's charter",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 23",
+                        },
+                        {
+                            "heading_contains": "Identity — NO title to match by construction; authors, venue and year all match; the input is AUDIO",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 23",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 23",
+                        },
+                        {
+                            "heading_contains": "Centrality — NOT CENTRAL, and the ground on which CENTRAL could be argued is stated in full",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 23",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/och-2003-minimum-error-rate-training-in-statistical-machine-translation.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-06, the nineteenth reading session of L2's slice, after the ordinary",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "measurement is restated (D-431).*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Where the record bears on this paper — eight places, each read at its own line",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "The verification target, ANSWERED — V13 CONFIRMED at its own cells, in both halves",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "Finding (1) — ★ THE PRECISION THIS READ MOST WANTS CARRIED: the pair the framework quotes is measured ON THE CORPUS THE WEIGHTS WERE FITTED ON, and the held-out pair is smaller",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "Finding (2) — the low number's arm carries a confound the authors state twice in their own words, and they say in terms that it could be better",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "Finding (3) — ★ the paper's own general rule does not hold on one column of the held-out table, and it fails in favour of the likelihood criterion",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "Finding (4) — ★ the paper's own warning about the method the candidacy row admits it for, which the record does not carry",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "Finding (5) — the method is established only for a SMALL weight vector, and the authors name the capacity question as open",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "Finding (6) — what the method trades away: a unique global optimum and a gradient",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "Finding (7) — the algorithm itself, which is what could be ADOPTED",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "Finding (8) — the candidate list is fitted against, and the paper's own remedy is an outer loop",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "Finding (9) — ★ this paper PRINTS UNCERTAINTY AND MARKS SIGNIFICANCE, and the ratified pair is far outside both",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "Identity — title and author match; NO venue, year, copyright, licence or pagination is printed anywhere",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "The cross-primary check — NOTHING TO RUN ON, established rather than assumed",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "The reference list, read against the population's own rows",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                        {
+                            "heading_contains": "Centrality — CENTRAL, and the ground on which NOT CENTRAL could be argued is stated in full",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 24",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/lafferty-mccallum-pereira-2001-conditional-random-fields-for-segmenting-and-labeling-sequence-data.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-06).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "written 2026-09-06 by the Cowork session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "value above is the paper's own.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Identity — a prefix title match, and no venue, year, copyright, licence or page number printed anywhere",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 25",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 25",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 235 §3 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 25",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/ng-jordan-2001-on-discriminative-vs-generative-classifiers.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-07).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "method for a charter decision or a general result is not settled by the row\"*. That question is\n> answered at finding (1).",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "The verification target — THERE IS NONE, and this is how that was established",
+                            "heading_level": "## ",
+                            "why": "named by entry 236 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 26",
+                        },
+                        {
+                            "heading_contains": "Identity — a prefix title match, and no venue, year, copyright, licence or page number printed anywhere",
+                            "heading_level": "## ",
+                            "why": "named by entry 236 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 26",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 236 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 26",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 236 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 26",
+                        },
+                        {
+                            "heading_contains": "★ Errors this side's own read-back of the landed copy found, and corrected in a guarded re-landing",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 236 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 26; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/sha-pereira-2003-shallow-parsing-with-conditional-random-fields.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**★★ STATUS: COMPLETE. The object read, the sweeps and the whole readings are all done, and the",
+                            "opens_with": "> ",
+                            "closes_with": "image. The ruling is for row 14 only; the class question for other rows is not ruled by it.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "DP-C's chosen option is measured AGAINST",
+                            "opens_with": "**It is the linear-chain baseline",
+                            "closes_with": "until the sweeps run.",
+                            "why": "the one-sentence passage in `## 4.` stating this project's position on the paper's relation to DP-C's chosen option (entry 230 §4 and §5(2); cut list position 27) — a PASSAGE, not a section cut",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "5a. ★ THE SWEEPS AND THE WHOLE READINGS — WHAT WAS RUN, OVER WHAT, AND WHAT THEY SETTLED",
+                            "heading_level": "## ",
+                            "why": "named by entry 230 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 27",
+                        },
+                        {
+                            "heading_contains": "6. The findings, each routed and none applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 230 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 27",
+                        },
+                        {
+                            "heading_contains": "9. ★ CENTRALITY — CENTRAL, on the commission's SECOND route only, and the other reading is stated",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 230 §4 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 27; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/sutton-mccallum-2006-an-introduction-to-conditional-random-fields-for-relational-learning.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-11).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-11, the session that booted on",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "is restated (#17f, `D-431`); every value above is the paper's own.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "The verification target — THERE IS NONE, and this is how that was established",
+                            "heading_level": "## ",
+                            "why": "named by entry 236 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 28",
+                        },
+                        {
+                            "heading_contains": "Identity — the title matches the bibliography IN FULL, the candidacy row's title is a prefix, and no venue, year, copyright or licence is printed anywhere",
+                            "heading_level": "## ",
+                            "why": "named by entry 236 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 28",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 236 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 28",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 236 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 28",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/burgoyne-pugin-kereliuk-fujinaga-2007-a-cross-validated-study-of-modelling-strategies-for-automatic-chord-recognition-in-audio.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-11).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "words *\"oracle\"* and *\"PERFECT key\"* were not among the wordings put to the user and stand as written.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-11, the session booted on `cowork_handoff_entry_one_hundred_and_fifty_three.md`",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "such numbers and marked derived.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Identity — a MILD finding on the title axis; the input is AUDIO",
+                            "heading_level": "## ",
+                            "why": "named by entry 237 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 29",
+                        },
+                        {
+                            "heading_contains": "Cross-primary check against row 18 (mandatory item (j)) — NOT COMPARABLE, and why",
+                            "heading_level": "## ",
+                            "why": "named by entry 237 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 29",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 237 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 29",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 237 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 29",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/ju-conditschultz-arthur-fujinaga-2017-non-chord-tone-identification-using-deep-neural-networks.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-11).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "standing rule, which still keeps for the user what touches a finding.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "Cowork, 2026-09-11, the session booted on `cowork_handoff_entry_one_hundred_and_fifty_four.md`",
+                            "opens_with": "---\n\n*Provenance:",
+                            "closes_with": "a quantity derived from such numbers and marked derived.*",
+                            "why": "the closing provenance paragraph after the last section, with the `---` rule above it — project-facing: it names this project's own documents read for the extract and the session that wrote it (entries 231 §5(2), 232 §5(4); cut list §3); the file's last `##` section is KEPT, so the paragraph is not reached by any cut; derived at the file",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Identity — a FULL title match; ONE venue printed of the two the bibliography names; a CC licence printed that the LINK tier understates; the input is SYMBOLIC",
+                            "heading_level": "## ",
+                            "why": "named by entry 237 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 30",
+                        },
+                        {
+                            "heading_contains": "Cross-primary check (mandatory item (j)) — NOTHING TO RUN ON, established",
+                            "heading_level": "## ",
+                            "why": "named by entry 237 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 30",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 237 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 30",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 237 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 30",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/conditschultz-ju-fujinaga-2018-a-flexible-approach-to-automated-harmonic-analysis.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-12).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "open-items row or decisions-register entry.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Identity — a PREFIX title match; venue, year, pagination and a CC BY 4.0 licence printed; the CC tier AGREES; the input is SYMBOLIC",
+                            "heading_level": "## ",
+                            "why": "named by entry 238 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 31",
+                        },
+                        {
+                            "heading_contains": "Cross-primary check (mandatory item (j)) — NOTHING TO RUN ON, established; and the row-35 link stated",
+                            "heading_level": "## ",
+                            "why": "named by entry 238 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 31",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 238 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 31",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 238 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 31",
+                        },
+                        {
+                            "heading_contains": "★ What the whole reading of this extract found — written after the reading, not before it",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 238 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 31; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/ju-howes-mckay-conditschultz-calvozaragoza-fujinaga-2019-an-interactive-workflow-for-generating-chord-labels.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT. NOTHING HERE IS RULED, AND NOTHING HERE IS",
+                            "opens_with": "> ",
+                            "closes_with": "pages, and whether the user looked at the two pages before ruling is not known to the writing side.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Identity — a PREFIX title match BY CONSTRUCTION, six printed authors where the row names one and *et al.*, and a printed CC BY 4.0 that the CC tier AGREES with",
+                            "heading_level": "## ",
+                            "why": "named by entry 238 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 32",
+                        },
+                        {
+                            "heading_contains": "Cross-primary check (mandatory item (j)) — a FIGURE sweep that returned NOTHING, and two comparisons that are NOT COMPARABLE, both established rather than assumed",
+                            "heading_level": "## ",
+                            "why": "named by entry 238 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 32",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and not applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 238 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 32",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 238 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 32",
+                        },
+                        {
+                            "heading_contains": "★ What the whole reading of this extract found — WRITTEN AFTER THE READING",
+                            "heading_level": "## ",
+                            "why": "named by entry 238 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 32",
+                        },
+                        {
+                            "heading_contains": "★★ THE SECOND FACT-CHECK, ORDERED BY THE USER AFTER THE FIRST LANDING — what it found",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 238 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 32; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/declercq-2015-a-model-for-scale-degree-reinterpretation.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (2026-09-12).** Written under",
+                            "opens_with": "> ",
+                            "closes_with": "(R-9), and neither names this paper.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Identity — a PREFIX title match BY CONSTRUCTION; the journal's own running head and pagination printed; ONE author, matching exactly; NO licence line printed; the input is a PRINTED EDITION read BY EAR",
+                            "heading_level": "## ",
+                            "why": "named by entry 239 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 33",
+                        },
+                        {
+                            "heading_contains": "★ Two arithmetic residues, DERIVED here and with their cause NOT established",
+                            "heading_level": "## ",
+                            "why": "named by entry 239 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 33",
+                        },
+                        {
+                            "heading_contains": "★ The placement question, DECIDED AT THE PAPER",
+                            "heading_level": "## ",
+                            "why": "named by entry 239 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 33",
+                        },
+                        {
+                            "heading_contains": "Cross-primary check (mandatory item (j)) — NOTHING TO RUN ON, established; three false positives named; and one corpus-identity finding",
+                            "heading_level": "## ",
+                            "why": "named by entry 239 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 33",
+                        },
+                        {
+                            "heading_contains": "Reference-list check (mandatory item (i)) — a THIRD outcome shape, and it is named rather than generalised",
+                            "heading_level": "## ",
+                            "why": "named by entry 239 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 33",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "★ Findings, routed and NOT applied",
+                            "heading_level": "## ",
+                            "why": "named by entry 239 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 33",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 239 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 33",
+                        },
+                        {
+                            "heading_contains": "★ What the whole reading of this extract found — written AFTER the reading, not before it",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 239 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 33; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/harasim-rohrmeier-odonnell-2018-a-generalized-parsing-framework-for-generative-models-of-harmonic-syntax.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**★ CORRECTED 2026-09-19 AT THE SECOND EXTRACT'S CROSS-CHECK, UNDER THE STANDING RULE OF HANDOFF",
+                            "opens_with": "> ",
+                            "closes_with": "where the record does and does not name this paper is bounded by the two lists above and is claimed\n> no wider.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Identity — a FULL-TITLE match on both registers; the proceedings running head, the pagination AND a CC BY 4.0 licence line all printed; three authors matching exactly; the input is a CHORD-SYMBOL SEQUENCE, narrower than a score",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "★ Arithmetic residues and textual residues, DERIVED here, with their cause NOT established",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "★ THE VERIFICATION — every figure the STAGED TREE attributes to this paper, checked at the paper; NO VALUE MOVED",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "★ FINDING (1) — A CORRECTED STRUCTURAL CLAIM CANDIDATE on DP-O's and DP15's live `[FACT]` text: the three figures do not measure the claim they are attached to",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "★ FINDING (2) — DP-O's FALSIFIER is NOT met by this paper, on four independent counts, and (e⁶) asks that this be said either way",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "★ FINDING (3) — DP-O's figures were NOT verification targets under the commission's own words, and the carried block says the opposite",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "★ FINDING (4) — An ADDITION CANDIDATE to D-526's ground: the record's transposition-pooling device, measured, by name, for the first time in this slice",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "★ FINDING (5) — An ADDITION CANDIDATE to the ground under L2's candidate-admission boundary condition and under R-5: the measured cost of a too-strict admission rule",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "★ FINDING (6) — A RIVAL SHAPE for DP-E that the record's rival list does not hold",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "★ FINDING (7) — The uncertainty practice (mandatory item (h)), and it is the one place the record's `[FACT]` is exposed",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "★ FINDING (8) — Fit and evaluation (principle #20), stated exactly rather than as a violation or as a clean split",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "★ FINDING (9) — The ground truth is the authors' own, and the paper says so",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "Cross-primary check (mandatory item (j)) — NOTHING TO RUN ON, established; two false-positive families named",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "Reference-list check (mandatory item (i)) — thirty-two works, EXACTLY ONE in this project's bibliography, NONE with an extract, and two Rohrmeier traps",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "Where this paper sits against the shapes the slice already holds (item (g))",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "detail specification could adopt, adapt, or must argue against",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Centrality",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "★ Findings about this project's own record, found by this row's sweeps, routed and applied nowhere",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched",
+                            "heading_level": "## ",
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34",
+                        },
+                        {
+                            "heading_contains": "★ What the whole reading of this extract found — written in the act that ran it",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 240 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 34; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/rohrmeier-2006-towards-modelling-harmonic-movement-in-music.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT.** All 107 pages of the held PDF were opened",
+                            "opens_with": "> ",
+                            "closes_with": "§9.4 and §7, which read each site at the page image. **The ruling is for row 23's four items only.**",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "1. Identity, established at the object",
+                            "heading_level": "## ",
+                            "why": "named by entry 241 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 35",
+                        },
+                        {
+                            "heading_contains": "2. The input and the repertoire, established at page 1 and at the paper's own data section (e⁷)",
+                            "heading_level": "## ",
+                            "why": "named by entry 241 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 35",
+                        },
+                        {
+                            "heading_contains": "4. The doubt default, ANSWERED — and the answer is neither limb of the row as written",
+                            "heading_level": "## ",
+                            "why": "named by entry 241 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 35",
+                        },
+                        {
+                            "heading_contains": "5. What the paper reports, and what each figure is a figure OF",
+                            "heading_level": "## ",
+                            "why": "named by entry 241 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 35",
+                        },
+                        {
+                            "heading_contains": "6. Where the record bears on row 23 — established by sweep and by reading this session, not relayed",
+                            "heading_level": "## ",
+                            "why": "named by entry 241 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 35",
+                        },
+                        {
+                            "heading_contains": "7. The findings, each with what it is a candidate for and what bounds it",
+                            "heading_level": "## ",
+                            "why": "named by entry 241 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 35",
+                        },
+                        {
+                            "heading_contains": "8. The reference-list result, because it reaches held rows",
+                            "heading_level": "## ",
+                            "why": "named by entry 241 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 35",
+                        },
+                        {
+                            "heading_contains": "10. Verdict",
+                            "heading_level": "## ",
+                            "why": "named by entry 241 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 35",
+                        },
+                        {
+                            "heading_contains": "11. What the whole reading of this extract found",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 241 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 35; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/tsushima-nakamura-itoyama-yoshii-2017-arxiv-generative-statistical-models-with-self-emergent-grammar-of-chord-sequences.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT.** All 22 pages of the held PDF were opened",
+                            "opens_with": "> ",
+                            "closes_with": "object in the course of the whole read, it says so.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "1. Identity, established at the object",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 36",
+                        },
+                        {
+                            "heading_contains": "2. The input and the repertoire, established at page 1 and at the paper's own data section (e⁸)",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 36",
+                        },
+                        {
+                            "heading_contains": "4. The record's three joined claims, each answered separately at the object (e⁸)",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 36",
+                        },
+                        {
+                            "heading_contains": "5. What the paper reports, and what each figure is a figure OF",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 36",
+                        },
+                        {
+                            "heading_contains": "6. Where the record bears on row 25 — established by sweep and by reading this sitting, not relayed",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 36",
+                        },
+                        {
+                            "heading_contains": "7. The findings, each with what it is a candidate for and what bounds it",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 36",
+                        },
+                        {
+                            "heading_contains": "8. Where the read leaves the row's own question",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 36",
+                        },
+                        {
+                            "heading_contains": "10. Verdict",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 36",
+                        },
+                        {
+                            "heading_contains": "11. What the whole reading of this extract found",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 36; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/rohrmeier-2011-towards-a-generative-syntax-of-tonal-harmony.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT.** All 20 pages of the held PDF",
+                            "opens_with": "> ",
+                            "closes_with": "membership and its gaps, which this extract follows and widens where it says so.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "1. Identity, established at the object",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 37",
+                        },
+                        {
+                            "heading_contains": "2. The input and the repertoire, established at page 1 and at the paper's own examples",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 37",
+                        },
+                        {
+                            "heading_contains": "4. What the record's *for* sentence takes from this paper, and what it does not — answered at the object",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 37",
+                        },
+                        {
+                            "heading_contains": "5. What the paper reports, and what each figure is a figure OF",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 37",
+                        },
+                        {
+                            "heading_contains": "6. Where the record bears on row 22 — established by sweep and by reading this sitting, not relayed",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 37",
+                        },
+                        {
+                            "heading_contains": "7. The findings, each with what it is a candidate for and what bounds it",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 37",
+                        },
+                        {
+                            "heading_contains": "8. The reference-list result, because it reaches held rows — with four traps",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 37",
+                        },
+                        {
+                            "heading_contains": "10. Verdict",
+                            "heading_level": "## ",
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 37",
+                        },
+                        {
+                            "heading_contains": "11. What the whole reading of this extract found — written in the act that ran it",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 242 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 37; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/granrothwilding-steedman-2012-statistical-parsing-for-harmonic-analysis-of-jazz-chord-sequences.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT.** All 8 pages of the held PDF",
+                            "opens_with": "> ",
+                            "closes_with": "this paper. Row 22's extract §6 names the sweep membership this extract follows and widens where it\n> says so.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "1. Identity, established at the object",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 38",
+                        },
+                        {
+                            "heading_contains": "2. The input, the output and the repertoire, established at page 1 and at the paper's own data section",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 38",
+                        },
+                        {
+                            "heading_contains": "4. What the record's DP-O takes from this paper, and what it does not — answered at the object",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 38",
+                        },
+                        {
+                            "heading_contains": "5. What the paper reports, and what each figure is a figure OF",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 38",
+                        },
+                        {
+                            "heading_contains": "6. Where the record bears on row 65 — established by sweep and by reading this sitting, not relayed",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 38",
+                        },
+                        {
+                            "heading_contains": "7. The findings, each with what it is a candidate for and what bounds it",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 38",
+                        },
+                        {
+                            "heading_contains": "8. The reference-list result, because it reaches held rows — with the traps",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 38",
+                        },
+                        {
+                            "heading_contains": "10. Verdict",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 38",
+                        },
+                        {
+                            "heading_contains": "11. What the whole reading of this extract found — written in the act that ran it",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 38; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/jacoby-tishby-tymoczko-2015-an-information-theoretic-approach-to-chord-categorization-and-functional-harmony.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT.** All 27 pages of the held PDF",
+                            "opens_with": "> ",
+                            "closes_with": "below where they reach this paper.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "1. Identity, established at the object",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 39",
+                        },
+                        {
+                            "heading_contains": "2. The input, the output and the repertoire — what the paper actually works on",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 39",
+                        },
+                        {
+                            "heading_contains": "4. What the record's DP-O takes from this paper, and what it does not — answered at the object",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 39",
+                        },
+                        {
+                            "heading_contains": "5. What the paper reports, and what each figure is a figure OF",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 39",
+                        },
+                        {
+                            "heading_contains": "6. Where the record bears on row 67 — established by sweep and by reading this sitting, not relayed",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 39",
+                        },
+                        {
+                            "heading_contains": "7. The findings, each with what it is a candidate for and what bounds it",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 39",
+                        },
+                        {
+                            "heading_contains": "8. The reference-list result, because it reaches held rows — with the traps",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 39",
+                        },
+                        {
+                            "heading_contains": "10. Verdict",
+                            "heading_level": "## ",
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 39",
+                        },
+                        {
+                            "heading_contains": "11. What the whole reading of this extract found — written in the act that ran it",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 243 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 39; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/illescas-rizo-inesta-2007-harmonic-melodic-and-functional-automatic-analysis.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT.** All 7 pages of the held PDF",
+                            "opens_with": "> ",
+                            "closes_with": "reach this paper. Row 65's extract §6 names the sweep membership its read followed; this extract's §6\n> names its own.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "1. Identity, established at the object",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 40",
+                        },
+                        {
+                            "heading_contains": "2. The input, the output and the repertoire, established at the pages",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 40",
+                        },
+                        {
+                            "heading_contains": "4. What the record's decision points take from this paper, and what they do not — answered at the object",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 40",
+                        },
+                        {
+                            "heading_contains": "5. What the paper reports, and what each figure is a figure OF — and the uncertainty practice",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 40",
+                        },
+                        {
+                            "heading_contains": "6. Where the record bears on row 34 — established by sweep and by reading this sitting, not relayed",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 40",
+                        },
+                        {
+                            "heading_contains": "7. The findings, each with what it is a candidate for and what bounds it",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 40",
+                        },
+                        {
+                            "heading_contains": "8. The reference-list result, because it reaches held rows — with the traps",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 40",
+                        },
+                        {
+                            "heading_contains": "10. The verdict, on the candidacy criterion as the record states it",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 40",
+                        },
+                        {
+                            "heading_contains": "11. What the whole reading of this extract found — written in the act that ran it, after §0–§10 and before any landing",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 40; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/granrothwilding-2013-harmonic-analysis-of-music-using-combinatory-categorial-grammar.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "It records what one session read at one object and what it did not read.",
+                            "opens_with": "**STATUS: a reading record.**",
+                            "closes_with": "is the file tool's own out-of-range report for a request for page 400: \"PDF has 183 pages\".*",
+                            "why": "the opening block above the first heading — in this file two plain paragraphs, a STATUS paragraph and a provenance paragraph, not a blockquote — project-facing (cut list §3); derived at the file from its lines 3 and 14",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "1. Identity, established at the object",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 41",
+                        },
+                        {
+                            "heading_contains": "2. The input, the output and the repertoire, established at the object",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 41",
+                        },
+                        {
+                            "heading_contains": "4. What this project's decision points take from it, and what they do not",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 41",
+                        },
+                        {
+                            "heading_contains": "5. What the thesis reports, and what each number is a number OF",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 41",
+                        },
+                        {
+                            "heading_contains": "6. Where this project's record bears on row 66 — established by sweep this sitting, not relayed",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 41",
+                        },
+                        {
+                            "heading_contains": "7. The findings, each with what it is a candidate for and what bounds it",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 41",
+                        },
+                        {
+                            "heading_contains": "8. The reference list, because it reaches held rows — with the traps",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 41",
+                        },
+                        {
+                            "heading_contains": "10. Verdict",
+                            "heading_level": "## ",
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 41",
+                        },
+                        {
+                            "heading_contains": "11. What the whole reading of this extract and the absolutes sweep found — written in the act that ran them",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 244 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, L2 position 41; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/mcleod-rohrmeier-2021-modular-harmonic-analysis.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**Establishment bound on every claim below:** read 2026-08-30 via three prompted extraction",
+                            "opens_with": "> ",
+                            "closes_with": "and is not claimed here. Nothing else in this extract is touched.)*",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched (population §3)",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 1; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/bachi-2026-boundary-aware-symbolic-chord-recognition.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**Establishment bound:** read 2026-08-30 via prompted extraction over the arXiv HTML full text",
+                            "opens_with": "> ",
+                            "closes_with": "(method and limits in the fetched content record). Authors not relayed; fill at any later pass.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 2; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/dehaas-magalhaes-wiering-veltkamp-2013-harmtrace-functional-analysis.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**Establishment bound:** read 2026-08-30 via three prompted extraction calls over the full",
+                            "opens_with": "> ",
+                            "closes_with": "that listing and is not claimed here. Nothing else in this extract is touched.)*",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 3; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/mcleod-rohrmeier-2024-chord-tone-alterations-suspensions.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**Establishment bound:** read 2026-08-30 via three prompted extraction calls over the full text",
+                            "opens_with": "> ",
+                            "closes_with": "that listing and is not claimed here. Nothing else in this extract is touched.)*",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 4; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/hu-arthur-2021-statistical-model-melody-reduction.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**Establishment bound:** read 2026-08-30 via one prompted extraction call over the arXiv full",
+                            "opens_with": "> ",
+                            "closes_with": "Arthur's laboratory — settled without the workbook.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 5; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/feisthauer-2021-lille-thesis-modulations-cadences-sonata-form.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**Establishment bound:** chapter-level structured read, 2026-08-30, three prompted extraction",
+                            "opens_with": "> ",
+                            "closes_with": "French text (declared in the fetched content record; a deeper read is its own slice if the\n> user orders it).",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 6; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/napoleslopez-feisthauer-leve-fujinaga-2020-local-keys-modulations-tonicizations.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**Establishment bound:** read 2026-08-30 via two prompted extraction calls over the author's",
+                            "opens_with": "> ",
+                            "closes_with": "none is carried below as an exact value.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 7; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/sapp-2005-visual-hierarchical-key-analysis.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**Establishment bound:** read 2026-08-30 via one prompted extraction call over the author's",
+                            "opens_with": "> ",
+                            "closes_with": "that listing and is not claimed here. Nothing else in this extract is touched.)*",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 8; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/viaccoz-harasim-moss-rohrmeier-2023-wavescapes.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**Establishment bound:** read 2026-08-30 via one prompted extraction call over the publisher's",
+                            "opens_with": "> ",
+                            "closes_with": "that listing and is not claimed here. Nothing else in this extract is touched.)*",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 9; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/humphrey-bello-2015-four-timely-insights-ace.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**Establishment bound:** read 2026-08-30 via two prompted extraction calls over an open mirror",
+                            "opens_with": "> ",
+                            "closes_with": "and is not claimed here. Nothing else in this extract is touched.)*",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 10; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/eerola-schutz-2025-relative-mode-continuum.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**Establishment bound:** read 2026-08-30 via two prompted extraction calls over the",
+                            "opens_with": "> ",
+                            "closes_with": "confirmed at the abstract's own wording.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 11; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/navarrocaceres-etal-irish-mode-detection-2024-2025.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**Establishment bound:** the 2025 paper read whole via one prompted extraction call (open",
+                            "opens_with": "> ",
+                            "closes_with": "average accuracy\" figure is carried at abstract grade and nothing else from it is carried.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 12; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/hentschel-moss-mcleod-neuwirth-rohrmeier-2021-unified-chord-model.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**Establishment bound:** read 2026-08-30 via two prompted extraction calls over the full text",
+                            "opens_with": "> ",
+                            "closes_with": "that listing and is not claimed here. Nothing else in this extract is touched.)*",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Verification targets touched",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 13; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/hamanaka-hirata-tojo-2013-computational-music-theory-gttm.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ WHOLE AT THE OBJECT (session 3 of the reading pass,",
+                            "opens_with": "> ",
+                            "closes_with": "fuller account of the same line by the same three authors**; see \"What this does and does not\n> close\" at the foot.",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "Bibliographic by-catch, routed here and written into no register",
+                            "heading_level": "## ",
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 14",
+                        },
+                        {
+                            "heading_contains": "What this does and does not close",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 14; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
+                {
+                    "source": "reading_pass/extracts/lazzari-2023-knowledge-based-chord-embeddings-modal-harmony-ontology.md",
+                    "spans": [{"kind": "whole"}],
+                    "removals": [
+                        {
+                            "anchor": "**STATUS: FIRST-PASS EXTRACT, READ AT THE OBJECT (session 3 of the reading pass, 2026-08-31).**",
+                            "opens_with": "> ",
+                            "closes_with": "methods and their own experiments). *A deeper read of ch. 5 is its own slice if ordered.*",
+                            "why": "the opening status block above the first heading — project-facing: it names the candidacy row's own words, the slice derivation, the governing rulings and the gate (entries 231 §5(2), 232 §5(4), 233 §4(4), 237 §3(2); cut list §3); derived at the file from the first and last lines of the block",
+                        },
+                        {
+                            "anchor": "— and the row is confirmed at the object, not inferred",
+                            "opens_with": " ",
+                            "closes_with": "inferred",
+                            "why": "the `## Identity` heading's own trailing text, which states this project's confirmation of the row (same shape as entry 232 §5(2)); the heading `## Identity` itself is kept",
+                        },
+                        {
+                            "anchor": "The pass's live lead was that row 7 might dissolve into row 6",
+                            "opens_with": "**★ AND IT IS A DISTINCT WORK FROM ROW 6",
+                            "closes_with": "dropped a real paper.**",
+                            "why": "the passage inside `## Identity` about the row's relation to another row of the pass (Ruling 1 §1.3 of 2026-09-20; entry 229 §3; entry 245 §2; cut list first-pass position 15)",
+                        },
+                    ],
+                    "cuts": [
+                        {
+                            "heading_contains": "Bearing",
+                            "heading_level": "## ",
+                            "why": "the ruled shared cut string, unchanged (Ruling 2 of 2026-09-05; Ruling 1 of 2026-09-20; Ruling 1 of 2026-09-21)",
+                        },
+                        {
+                            "heading_contains": "What this extract does NOT establish",
+                            "heading_level": "## ",
+                            "runs_to_end": True,
+                            "why": "named by entry 245 §2 as a section stating this project's own position (Ruling 1 of 2026-09-21, limb A); listed at reading_pass/l2_extracts_per_file_cut_list_2026_09_26.md, first-pass position 15; the file's LAST `##` section, so this cut RUNS TO THE END OF THE TEXT under this dispatch's amendment to `_cut_spans`",
+                        },
+                    ],
+                },
             ],
         },
+        LEDGER_MEMBER_9,
     ],
 }
 
@@ -614,6 +3136,36 @@ EXTRAS: dict[str, list[dict]] = {
 # `identities` is filled from the AUTHORED verdicts below: every candidate graded IN is withheld.
 # What is written here by hand is the ruling's own first identity and its documents and passages.
 # ══════════════════════════════════════════════════════════════════════════════════════════════
+# ── L2's withheld documents — the set the user CONFIRMED WHOLE on 2026-09-21 ──────────────────
+# Ruling 6 of `cowork_rulings_2026_09_05_l2_boot_list_sitting.md` orders the set DERIVED (the home
+# documents of the entries `VERDICTS["l2"]` grades IN), printed, and confirmed before it is
+# authored; Ruling 1 of `cowork_rulings_2026_09_21_l2_withheld_documents_sitting.md` confirms it.
+# The names are those of `tools/audit/l2_withheld_documents.json` → `documents`, in its order; the
+# identities homed in each are that artifact's and are not restated here (D-431).
+L2_WITHHELD_DOCUMENTS: tuple[str, ...] = (
+    "ARCHITECTURE.md",
+    "cowork_architecture_reassessment.md",
+    "cowork_architecture_review_2026_07.md",
+    "cowork_engage_arc_plan.md",
+    "cowork_evidence_inventory.md",
+    "cowork_factorization_desk_simulation.md",
+    "cowork_joint_estimator_architecture.md",
+    "cowork_joint_estimator_factorization.md",
+    "cowork_joint_key_chord_design.md",
+    "cowork_layer3_keymode_design.md",
+    "cowork_layer4_chordsymbol_design.md",
+    "cowork_layer5_engagement_design.md",
+    "cowork_layer5_function_design.md",
+    "cowork_notation_adoption_increment.md",
+    "cowork_notation_output_contract.md",
+    "cowork_prefit_gates.md",
+    "cowork_progression_schema_design.md",
+    "cowork_voiceleading_axis_design.md",
+    "docs/scoring_model.md",
+    "docs/stage4b_design.md",
+    "records/cowork/handoff/cowork_handoff_archive.md",
+)
+
 WITHHELD: dict[str, dict] = {
     "harmony-boundary": {
         "the_subject_in_plain_words":
@@ -741,6 +3293,154 @@ WITHHELD: dict[str, dict] = {
         "withheld_documents": {},
         "withheld_passages": [],
         # NO `the_identity_the_ruling_names`: none is named, the family being empty.
+    },
+
+    # ── L2, THE SECOND DERIVING SUBJECT OF THE DETAIL-SPECIFICATION PHASE ───────────────────────
+    # Ruling 10 of `cowork_rulings_2026_08_31_decision_surface_sitting.md` ("L0+L1 first, then
+    # L2"); the pack's members by Rulings 1 to 6 of `cowork_rulings_2026_09_05_l2_boot_list_sitting.md`.
+    #
+    # THE IDENTITIES ARE NOT WRITTEN HERE: `build_subject` withholds every candidate
+    # `VERDICTS["l2"]` grades IN — the family the three rulings of
+    # `cowork_rulings_2026_09_05_l2_withheld_family_sitting.md` fixed.
+    #
+    # EVERY `date` BELOW IS THE DATE OF THE RULING THAT DECIDED THAT RECORD, written as a literal on
+    # the precedent of the harmony-boundary subject's second passage ("2026-08-23"), and NOT the
+    # module constant `DATE`, which is false for this subject — the head of `VERDICTS["l2"]` says so
+    # in its own words — and is repaired separately (the `DATE` mechanism).
+    #
+    # NO `the_identity_the_ruling_names`: no ruling names an oracle passage or an identity for L2
+    # (§3 of `ratification_surfaces/cowork_withheld_family_l2_reading.md`).
+    "l2": {
+        # The question of the L2 block of `FRAMEWORK.md` (heading "L2 — The tonal reading. The one
+        # entangled decision."), verbatim from "over this music" to "each span?".
+        "the_subject_in_plain_words":
+            "L2, the tonal reading: over this music, what is the tonality at each moment, where "
+            "does each harmony give way to the next, which sounding notes belong to the harmony and "
+            "which elaborate it, and what chord is read over each span?",
+        "the_oracle_this_family_protects": (
+            "NO ORACLE PASSAGE IS NAMED FOR L2. §3 of "
+            "`ratification_surfaces/cowork_withheld_family_l2_reading.md`, the reading file the "
+            "three rulings of `cowork_rulings_2026_09_05_l2_withheld_family_sitting.md` were taken "
+            "on, records that no ruling names one, and that what the family protects is therefore "
+            "the entries themselves: the recorded current answers to the four limbs of L2's "
+            "question — the tonality at each moment, where one harmony gives way to the next, "
+            "which sounding notes are chord tones and which elaborate, and what chord is read over "
+            "each span — and, on the fifth ground of Ruling 1(a) of that record, the recorded way "
+            "this layer publishes its rival readings with their mass. Those are the identities "
+            "`VERDICTS[\"l2\"]` grades IN; the documents below are their homes."),
+        "withheld_documents": {
+            doc: {
+                "finding": (
+                    "A home document of entries the ruled L2 verdict table grades IN, derived "
+                    "under Ruling 6 of `cowork_rulings_2026_09_05_l2_boot_list_sitting.md`; the "
+                    f"identities homed in `{doc}` are listed at "
+                    "`tools/audit/l2_withheld_documents.json` -> `documents`."),
+                "date": "2026-09-21",
+                "reason": (
+                    "Confirmed whole by the user, Ruling 1 of "
+                    "`cowork_rulings_2026_09_21_l2_withheld_documents_sitting.md` (his word: "
+                    "\"confirmed\"). A deriving session that opened the document would read the "
+                    "ruled answers its IN entries carry, so its name becomes a leak string for "
+                    "members (5) and (6), and a design-intent entry whose own text names it is "
+                    "withheld with it."),
+            }
+            for doc in L2_WITHHELD_DOCUMENTS
+        },
+        "withheld_passages": [
+            {
+                "file": "CLAUDE.md",
+                "member": 2,
+                "scope_anchor": "**NEVER WORK FROM MEMORY INSTEAD OF DOCUMENTED FACTS",
+                "opens": "**Founding instance:** on 2026-07-28 Cowork reasoned",
+                "closes": "which is the general case, not the exception.",
+                "finding": ("Ruling 5(a) of `cowork_rulings_2026_09_05_l2_boot_list_sitting.md`: "
+                            "the founding-instance clause of the never-work-from-memory rule "
+                            "states the ruled evidence ranking — actual sounding notes the "
+                            "strongest evidence — which is the ruled answer to the first limb of "
+                            "L2's question (D-057, graded IN)."),
+                "date": "2026-09-05",
+                "reason": ("The pilot's first passage, with the pilot's anchors unchanged; the "
+                           "statement of the rule itself, above the clause, stays in the pack."),
+            },
+            {
+                "file": "CLAUDE.md",
+                "member": 2,
+                "scope_anchor": "**EVERY DESIGN DECISION CARRIES ITS DEFENSE AT ITS HOME",
+                "opens": "Founding instances of the gap:",
+                "closes": "each recorded with no derivation.",
+                "finding": ("Ruling 5(b) of `cowork_rulings_2026_09_05_l2_boot_list_sitting.md`: "
+                            "the sentence names the decode segment cap's value, an L2 value no "
+                            "verdict reaches because D-004 is not a candidate of the family."),
+                "date": "2026-09-05",
+                "reason": ("The pilot's second passage, with the pilot's anchors unchanged; the "
+                           "bullet's principle stays whole above the cut."),
+            },
+            {
+                "file": "CLAUDE.md",
+                "member": 2,
+                "scope_anchor": "**★ EVERY DESK-SIMULATION TRACE RUNS AT IDENTITY WEIGHTS",
+                "opens": "**★ EVERY DESK-SIMULATION TRACE RUNS AT IDENTITY WEIGHTS",
+                "closes": "would confound a structural verdict with a weighting one.",
+                "finding": ("Ruling 5(c) of `cowork_rulings_2026_09_05_l2_boot_list_sitting.md`: "
+                            "the block inside principle #17 states the ruled score shape — "
+                            "counted tables, fitted weights, an equal-weights ablation arm — "
+                            "which is D-525's content, graded IN."),
+                "date": "2026-09-05",
+                "reason": ("The whole block, from its bold opening to its last sentence; the "
+                           "desk-simulation rule it qualifies, and principle #17's own text, stay "
+                           "in the pack."),
+            },
+            {
+                "file": "CLAUDE.md",
+                "member": 2,
+                "scope_anchor": "**CANDIDATE ADMISSION IS COMPLETION, NOT REFINEMENT",
+                "opens": "**CANDIDATE ADMISSION IS COMPLETION, NOT REFINEMENT",
+                "closes": "which is per-case tuning and DT-2 forbids it.",
+                "finding": ("Ruling 5(d) of `cowork_rulings_2026_09_05_l2_boot_list_sitting.md`: "
+                            "the bullet states what this project's current candidate-admission "
+                            "rule is — unspecified, threshold-based — and names the joint decoder, "
+                            "which bears on the fourth limb of L2's question, what chord is read "
+                            "over each span."),
+                "date": "2026-09-05",
+                "reason": ("The WHOLE bullet: its heading and every sentence of its body are "
+                           "about that one rule, and no general principle stands in it that "
+                           "could be kept apart from it."),
+            },
+            {
+                "file": "CLAUDE.md",
+                "member": 2,
+                "scope_anchor": "**ONE FIX IS DESIGNED ONCE OVER THE WHOLE ENUMERATED FAMILY",
+                "opens": "The instance that produced the rule:",
+                "closes": "neither visible from the first symptom (OI-215).",
+                "finding": ("Ruling 5(e) of `cowork_rulings_2026_09_05_l2_boot_list_sitting.md`: "
+                            "the bullet states current failure behaviour of the decoder and its "
+                            "emission — the empty-decode cliff, its sibling at the other end of "
+                            "the density range, and its emission-side twin."),
+                "date": "2026-09-05",
+                "reason": ("ONLY the founding-instance sentence, which is where that failure "
+                           "behaviour is stated; the rule itself — one fix designed once over the "
+                           "whole enumerated family, at the layer that owns the cause — is a "
+                           "general method, carries no answer to any limb, and stays in the pack, "
+                           "on the shape of the pilot's second passage."),
+            },
+            {
+                "file": "CLAUDE.md",
+                "member": 2,
+                "scope_anchor": "**★ QUALIFICATION — PHASE 3 WAITS ON THE PHASE-2 ITEMS",
+                "opens": "For the struck-versus-sounding family",
+                "closes": "candidates are ADMITTED?**",
+                "finding": ("Ruling 5(f) of `cowork_rulings_2026_09_05_l2_boot_list_sitting.md`: "
+                            "the D-437 qualification's family sentence names the family and what "
+                            "the decoder and the emission READ — struck against sounding tones, "
+                            "note counting, pitch representation — and how candidates are "
+                            "admitted, which is the subject of L2's third limb."),
+                "date": "2026-09-05",
+                "reason": ("The whole sentence, from the words that name the family to the end "
+                           "of the question it poses, so that the family's name does not stand "
+                           "without its sentence; the qualification's general rule, before and "
+                           "after it, stays in the pack."),
+            },
+        ],
     },
 
     # THE `framework` SUBJECT IS ABSENT DELIBERATELY, not by oversight: its deriving session is
@@ -1335,13 +4035,19 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
     # same reason: an empty criterion returns no candidate, so there is nothing to grade.
     "l0-l1": {},
 
-    # ── L2, the next deriving subject under Ruling 10 — PROPOSALS, NOT A WITHHELD FAMILY ─────────
+    # ── L2, the next deriving subject under Ruling 10 — THE RULED WITHHELD FAMILY ───────────────
     # Ruling 81 (§3cj of `cowork_rulings_2026_08_31_decision_surface_sitting.md`): every candidate
-    # carries an authored verdict with its finding, its date and its reason; the lists go to the
-    # user one per turn; NO identity is withheld that he has not ruled.  So this table is a set of
-    # proposals.  `WITHHELD` carries no `l2` entry, `build()` iterates `WITHHELD`, and therefore
-    # NOTHING READS THIS TABLE TODAY: it is dormant by design, its consumer the `build_subject("l2")`
-    # run that happens when the user has ruled the lists and the family is authored — a separate act.
+    # carries an authored verdict with its finding, its date and its reason; the lists went to the
+    # user one per turn, and he ruled them on 2026-09-05 (Rulings 1 to 3 of
+    # `cowork_rulings_2026_09_05_l2_withheld_family_sitting.md`).  Since the L2 pack-build batch
+    # authored `WITHHELD["l2"]`, `build()` builds `l2` and `build_subject` withholds every entry this
+    # table grades IN.
+    # (FORMER WORDING, PRESERVED (#12): heading "… — PROPOSALS, NOT A WITHHELD FAMILY"; and "… the
+    # lists go to the user one per turn; NO identity is withheld that he has not ruled.  So this table
+    # is a set of proposals.  `WITHHELD` carries no `l2` entry, `build()` iterates `WITHHELD`, and
+    # therefore NOTHING READS THIS TABLE TODAY: it is dormant by design, its consumer the
+    # `build_subject("l2")` run that happens when the user has ruled the lists and the family is
+    # authored — a separate act.")
     #
     # THE TEST, from the pilot's Task 1(d) with L2's four-limbed charter question in place of the
     # pilot's one-limbed one (`FRAMEWORK.md` §5, the L2 block): IN — a deriving session that read
@@ -1351,11 +4057,13 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
     # OUT — the entry bears on another unit, and the reason says which; UNPLACED — the entry's own
     # text does not settle it, and the reason says what was read.  DEFAULT NOTHING.
     #
-    # THE DATE.  Ruling 81 requires each verdict to carry its date.  The renderer stamps every
-    # verdict with the module constant `DATE` (2026-08-22, the pilot's authoring date), which is
-    # false for this table and is recorded as OWED at the batch that builds L2's pack — see
-    # `cc_instruction_l2_verdict_pass_2026_09_05.md`.  Until the mechanism carries a per-subject
-    # date, the authoring date of each group block is stated in that block's own heading comment.
+    # THE DATE.  Ruling 81 requires each verdict to carry its date.  Every verdict below is stamped
+    # 2026-09-05 through `VERDICT_DATE`, the per-subject table the L2 pack-build batch added.
+    # (FORMER WORDING, PRESERVED (#12): "The renderer stamps every verdict with the module constant
+    # `DATE` (2026-08-22, the pilot's authoring date), which is false for this table and is recorded
+    # as OWED at the batch that builds L2's pack — see `cc_instruction_l2_verdict_pass_2026_09_05.md`.
+    # Until the mechanism carries a per-subject date, the authoring date of each group block is
+    # stated in that block's own heading comment.")
     #
     # ORDER: the register groups the ruled group term names first (A, C, D, E, F, G), then the
     # twelve groups reached only by the keyword or home-document terms (B, H, I, J, K, L, M, N, Q,
@@ -2983,7 +5691,12 @@ def _removal_spans(text: str, removals: list[dict], rel: str) -> list[dict]:
 
 
 def _cut_spans(text: str, cuts: list[dict], rel: str) -> list[dict]:
-    """The offsets of each authored section cut, located by what its HEADING contains."""
+    """The offsets of each authored section cut, located by what its HEADING contains.
+
+    A cut that declares `runs_to_end` may be the file's last section at its level, and runs to
+    the end of the text; an undeclared unterminated section is a STOP, and a declared one that is
+    terminated is a STOP too.
+    """
     lines = text.split("\n")
     starts, pos = [], 0
     for ln in lines:
@@ -2998,14 +5711,26 @@ def _cut_spans(text: str, cuts: list[dict], rel: str) -> list[dict]:
                        f"one")
         h = hits[0]
         nxt = next((j for j in range(h + 1, len(lines)) if lines[j].startswith(level)), None)
-        if nxt is None:
+        runs_to_end = bool(cut.get("runs_to_end", False))
+        if nxt is None and not runs_to_end:
             raise Stop(f"{rel}: the section {lines[h]!r} is not terminated by a further {level!r} "
-                       f"heading")
-        a, b = starts[h], starts[nxt]
-        spans.append({"kind": "cut", "heading": lines[h], "heading_contains": needle,
-                      "closes_before": lines[nxt], "why": cut["why"],
-                      "start": a, "end": b, "the_text_removed": text[a:b],
-                      "characters_removed": b - a})
+                       f"heading, and the cut does not declare runs_to_end")
+        if nxt is not None and runs_to_end:
+            raise Stop(f"{rel}: the section {lines[h]!r} declares runs_to_end, but a further "
+                       f"{level!r} heading follows it: {lines[nxt]!r}")
+        a = starts[h]
+        b = starts[nxt] if nxt is not None else len(text)
+        record = {"kind": "cut", "heading": lines[h], "heading_contains": needle,
+                  "closes_before": lines[nxt] if nxt is not None else "<the end of the text>",
+                  "why": cut["why"],
+                  "start": a, "end": b, "the_text_removed": text[a:b],
+                  "characters_removed": b - a}
+        if runs_to_end:
+            # Written into the record ONLY when declared, so that every cut authored before this
+            # key existed re-derives byte-identical (D-657: no member the defect's shape does not
+            # name may move).
+            record["runs_to_end"] = True
+        spans.append(record)
     return spans
 
 
@@ -3606,11 +6331,14 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
         if len(v) != 3 or not all(str(x).strip() for x in v):
             raise Stop(f"the verdict for {cid} lacks its verdict, its finding or its reason")
 
+    if cands and subject not in VERDICT_DATE:
+        raise Stop(f"subject {subject!r} has graded candidates and no authored date in "
+                   f"VERDICT_DATE — a verdict is never stamped with another subject's date")
     verdict_rows = []
     for c in cands:
         vd, finding, reason = graded[c["id"]]
         verdict_rows.append({**c, "verdict": vd, "finding": finding,
-                            "date": DATE, "reason": reason})
+                            "date": VERDICT_DATE[subject], "reason": reason})
     counted = {v: sum(1 for r in verdict_rows if r["verdict"] == v)
                for v in VERDICTS_VOCABULARY}
     if sum(counted.values()) != len(cands):
@@ -3731,10 +6459,34 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
     # ── the EXTRAS, rendered AFTER the ruled six ─────────────────────────────────────────────
     extras = EXTRAS[subject]
     extras_filtered = []
+    # LIMB B of Ruling 1 of `cowork_rulings_2026_09_21_l2_extracts_member_cutting_sitting.md`: the
+    # rendered text of every extra is scanned, line by line, for the same strings `leaks_in` looks
+    # for in members (5) and (6).  A hit is LISTED for the user and is not a STOP: the check exists
+    # to measure what the authored filters missed, and a quoted file cannot be struck from without
+    # an authored filter.  It runs only for a subject that is NOT FROZEN — a frozen subject's record
+    # describes a directory rendered before this check existed (D-657).
+    extras_leaks: list[dict] | None = None if subject in FROZEN else []
     for x in extras:
         text, rec = render_extra(x)
         files[x["filename"]] = text
         rec["characters"] = len(text)
+        if extras_leaks is not None:
+            for n, ln in enumerate(text.split("\n"), start=1):
+                hit = leaks_in({"line": ln}, strings)
+                if hit:
+                    extras_leaks.append({
+                        "member": x["number"], "file": x["filename"], "line": n,
+                        "matched": sorted({h["matched"] for h in hit}),
+                        "kinds": sorted({h["kind"] for h in hit}),
+                        "the_line": ln})
+            rec["leak_checked"] = True
+            rec.pop("leak_not_checked_because", None)
+            rec["leak_checked_how"] = (
+                "Every line of this rendered extra was scanned for the withheld identities, the "
+                "withheld document names, `ARCHITECTURE.md` and any `docs/` or `src/` path — the "
+                "strings members (5) and (6) are checked for. Hits are LISTED at `LEAKS_IN_THE_EXTRAS` "
+                "and are still in the rendered text: the list goes to the user, and no session boots "
+                "from this pack before he rules on it.")
         member_records.append(rec)
         extras_filtered.append({
             "filename": x["filename"],
@@ -3818,6 +6570,22 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
         },
         "the_members_as_rendered": member_records,
     }
+    if extras_leaks is not None:
+        record["LEAKS_IN_THE_EXTRAS"] = {
+            "★_what_this_is": (
+                "LIMB B of Ruling 1 of `cowork_rulings_2026_09_21_l2_extracts_member_cutting_sitting.md`: "
+                "every line of a rendered extra that carries a withheld identity, a withheld "
+                "document's name, `ARCHITECTURE.md` or a `docs/` or `src/` path. It measures what "
+                "the extras' authored filters (limb A) missed. These lines ARE in the pack as "
+                "rendered; the list goes to the user, who rules on it before any session boots."),
+            "★_what_it_cannot_catch, stated because a check that is not bounded reads as total": (
+                "It matches STRINGS. A passage that states a withheld decision's content without "
+                "naming its identity or its document passes it (§1.2 of that ruling record). A "
+                "document named in a shorter form than its withheld name — for instance the handoff "
+                "archive by its file name alone — passes it too."),
+            "entries": extras_leaks,
+        }
+        record["counted"]["extras_lines_with_a_leak_hit"] = len(extras_leaks)
     return record, files
 
 
@@ -3894,6 +6662,17 @@ def build() -> tuple[dict, dict[str, dict[str, str]], list[dict]]:
             "than re-rendered; (b) the filter widened by ONE named candidate and no more; (c) "
             "the four residuals repaired, the bar that forbade it relaxed for this purpose "
             "alone; (d) the what-was-cut section's derivation from the counts ratified.",
+            "Rulings 1 to 6 of `cowork_rulings_2026_09_05_l2_boot_list_sitting.md` — the `l2` "
+            "subject's pack: the extracts member over two populations, the charter member and the "
+            "ledger member as `l0-l1` carries them, six withheld passages of member (2), and "
+            "withheld documents derived and confirmed before being authored.",
+            "Rulings 1 to 3 of `cowork_rulings_2026_09_05_l2_withheld_family_sitting.md` — the "
+            "`l2` withheld family: every identity the authored verdicts grade IN is withheld.",
+            "Ruling 1 of `cowork_rulings_2026_09_21_l2_withheld_documents_sitting.md` — the derived "
+            "set of the `l2` withheld documents, confirmed whole.",
+            "Ruling 1 of `cowork_rulings_2026_09_21_l2_extracts_member_cutting_sitting.md` — the "
+            "`l2` extracts member cut per file by the text of each cut section's heading (limb A), "
+            "with a derived leak check over the extras beside it (limb B).",
         ],
         "★_it_boots_no_session": (
             "Rendering the pack is not opening it. Nothing here derives a specification "
@@ -3947,8 +6726,9 @@ def build() -> tuple[dict, dict[str, dict[str, str]], list[dict]]:
             "a subject with no authored EXTRAS entry — an empty list is authored so that a "
             "missing one cannot read as an empty one",
             "an EXTRA's removal anchor not found exactly once or not sitting inside its own "
-            "delimiter pair; an EXTRA's cut heading not found exactly once or not terminated by "
-            "a further heading at its own level; two of a part's filters overlapping; and EITHER "
+            "delimiter pair; an EXTRA's cut heading not found exactly once, or not terminated by "
+            "a further heading at its own level unless the cut declares `runs_to_end`, or "
+            "declaring it while one follows; two of a part's filters overlapping; and EITHER "
             "DIRECTION of the extras' verification failing — filtered text still present, or "
             "re-inserting what was removed not reproducing the source",
             "the ruled six not intact, in their ruled order, at the head of a subject's rendered "
@@ -3958,6 +6738,7 @@ def build() -> tuple[dict, dict[str, dict[str, str]], list[dict]]:
             "directions; a FROZEN entry naming a subject this tool does not build; a freeze "
             "record missing its finding, its date or its reason; and a FROZEN subject whose "
             "directory does not hold a file this tool renders for it",
+            "a subject with graded candidates and no authored date in `VERDICT_DATE`",
         ],
         # DERIVED PER SUBJECT (Ruling 17(c)), from the members actually rendered for it, so this
         # field can no longer name six files over a directory of ten.  It is derived from the
