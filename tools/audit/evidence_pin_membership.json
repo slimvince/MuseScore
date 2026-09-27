@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 97,
+  "ruling_records_read": 99,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -238,6 +238,8 @@
   "records/cowork/rulings/cowork_rulings_2026_09_21_l2_staged_score_set_sitting.md",
   "records/cowork/rulings/cowork_rulings_2026_09_21_l2_withheld_documents_sitting.md",
   "records/cowork/rulings/cowork_rulings_2026_09_21_limb_a_method_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_27_l2_brief_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_09_27_l2_leak_list_sitting.md",
   "records/cowork/rulings/cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
  "named_in_a_ruling_record_but_not_generated": {

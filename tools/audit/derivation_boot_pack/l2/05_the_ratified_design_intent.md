@@ -8,6 +8,72 @@ Entries are in identifier order. An identifier missing from the run is not an er
 
 ---
 
+## D-002 — The fitted tables and weights are compiled into the binary verbatim
+
+**As decided, in the words it was decided in:**
+
+```
+compiles the five committed artifacts + the selected weight vector
+> VERBATIM (JSON bytes, not a parsed-structure codegen) into the generated `jointembeddedartifacts.{h,cpp}`
+```
+
+**In plain words:** The numbers the estimator was trained on are built into the program at compile time rather than read from disk at run time, so a running copy cannot quietly disagree with the numbers we published.
+
+---
+
+## D-028 — The span typology - every layer names the span it operates on; bare 'region' is banned
+
+**As decided, in the words it was decided in:**
+
+```
+"Region" unqualified is **banned** as
+  ambiguous; every layer names the span it operates on.
+```
+
+**In plain words:** The word 'region' on its own is forbidden, because it hides which kind of stretch is meant. Each stretch has its own name: the chord-span, the key-span, the punctuation-span and so on.
+
+---
+
+## D-029 — The verifiability contract
+
+**As decided, in the words it was decided in:**
+
+```
+prefer what we can verify against ground truth (it is how we catch our own theory
+  errors); for sound theory we cannot verify against the current corpus, build it with an explicit
+  **alternative-confidence path** *and* an **"empirically-unvalidated" mark**, rather than refusing it
+```
+
+**In plain words:** Prefer what we can check against annotated music. Where the theory is sound but we have nothing to check it against, build it anyway - but mark it as unchecked and give it its own confidence path.
+
+---
+
+## D-030 — Bounded context - cost scales with the working span, not the whole score
+
+**As decided, in the words it was decided in:**
+
+```
+The binding scale requirements: **(R1)** cost scales with the working span, not the whole
+  score; **(R2)**
+  re-analysis is incremental over the dirty span plus a bounded margin; **(R3)** the working span is **extensible**
+```
+
+**In plain words:** Analysis runs on what the user has selected. The work must grow with the size of that selection, not with the size of the piece; re-analysis after an edit must only redo the changed part; and a layer that needs more music asks for it rather than reading everything.
+
+---
+
+## D-031 — Whole-score analysis is the degenerate case, not the design
+
+**As decided, in the words it was decided in:**
+
+```
+Whole-score analysis is the degenerate case (selection = score).
+```
+
+**In plain words:** Analysing the whole piece is what happens when the user has selected the whole piece. It is not the normal mode of operation.
+
+---
+
 ## D-032 — Every confidence crossing a layer boundary is in 0..1, class-declared, with its decision named
 
 **As decided, in the words it was decided in:**
@@ -19,6 +85,58 @@ confidence is **in [0,1], class-declared (a ranking margin or a calibrated proba
 ```
 
 **In plain words:** Inside a stage, a confidence can be on any scale. The moment another stage can read it, it must be a 0-to-1 number, labelled with what kind of confidence it is and what decision it belongs to.
+
+---
+
+## D-034 — A new layer or axis is admitted only through three co-equal gates
+
+**As decided, in the words it was decided in:**
+
+```
+**A new layer or axis is admitted only when it clears three co-equal gates,
+  all required:**
+```
+
+**In plain words:** A new stage is added only if it carries one distinct responsibility, can be validated somehow, and buys something we can actually check. Carrying a distinct responsibility is enough on its own, even with no immediate accuracy gain.
+
+---
+
+## D-035 — The effort setting - every cost-driving choice is a setting, never a hardcoded constant
+
+**As decided, in the words it was decided in:**
+
+```
+**(a)** every cost-driving choice is an
+explicit *setting*, never a hardcoded constant; **(b)** every optional expensive refinement is a cleanly separable on/off
+stage.
+```
+
+**In plain words:** Anything that makes the analysis slower must be something the user or the caller can turn down, not a number baked into the code; and any expensive extra step must be separable so it can be switched off.
+
+---
+
+## D-072 — The dependency rule - the analysis library knows nothing about the score format
+
+**As decided, in the words it was decided in:**
+
+```
+This dependency order is **enforced**. Any code that would invert it (e.g. a composing header forward-declaring `mu::engraving::Note`) must be moved to the notation bridge layer.
+```
+
+**In plain words:** The music-theory library must not know how MuseScore stores a score. Anything that needs both lives in a thin bridge layer in between.
+
+---
+
+## D-095 — The dual path during the joint-estimator build is a declared, bounded, pre-ratified migration state
+
+**As decided, in the words it was decided in:**
+
+```
+migration state (#23) is therefore CLOSED on both surfaces, and the legacy `region::analyzeRegions` →
+`analyzeSection` path is compiled and dormant, awaiting deletion at the OI-180 retirement map. The first
+```
+
+**In plain words:** Building the new estimator beside the old one temporarily breaks the rule that there is one way to do each thing. That was declared in advance, bounded, and given a retirement plan.
 
 ---
 
@@ -45,6 +163,40 @@ Any term that coincides even slightly with music theory is used
 ```
 
 **In plain words:** In this project a score is a piece of music, a key is a tonality, and a measure is a bar. Where a word is needed in its everyday computing sense, it must be qualified - candidate score, map key, measurement.
+
+---
+
+## D-131 — One shared style taxonomy, not two parallel vocabularies
+
+**As decided, in the words it was decided in:**
+
+```
+The style vocabulary the presets select on is **one shared taxonomy** — the **five idioms**: *Diatonic-functional* ·
+*Chromatic-functional* · *Seventh-functional* · *Triadic-modal* · *Chromatic-coloristic* — with **mode** (major/minor)
+and **chromaticism** (diatonic/chromatic) carried beside them as two **orthogonal cross-attributes**, not folded into
+the idiom names. Tags are **multi-valued**: one entry may carry several idioms. It is the **same** set the Harmonic
+Vocabulary (§7) tags its entries with, **not two parallel vocabularies** — that shared-set property is what this section
+exists to state, and it is unaffected by the 2026-06-30 replacement of the list itself.
+```
+
+**In plain words:** The list of style categories the presets choose from is the SAME list the harmonic vocabulary tags its entries with — one shared set, not two that can drift apart. That set is the five idioms (Diatonic-functional, Chromatic-functional, Seventh-functional, Triadic-modal, Chromatic-coloristic), with major/minor and diatonic/chromatic carried separately beside them; an entry may carry more than one idiom.
+
+---
+
+## D-132 — The remaining empirical grounding is the per-preset WEIGHTS alone; the clusters half is delivered by the ratified five-idiom set
+
+**As decided, in the words it was decided in:**
+
+```
+**What remains future work is the per-preset WEIGHTS, not the clusters.** Presets become named **idiom-weightings** over
+the five — a distribution over the idioms rather than a name picked from a list — and deriving those weights by
+clustering corpora is the committed work (`cowork_style_clustering_plan.md`); the weighting itself is a joint decision
+with the preset system and the recognition consumer's job, not the Harmonic Vocabulary's
+(`cowork_progression_schema_dictionary.md:317-330`). The **clusters half is delivered**: the clusters *are* the five
+idioms, discovered and encoded.
+```
+
+**In plain words:** Grounding the style system in data was recorded as two pieces of committed work: discovering the categories, and measuring how strongly each one weighs in each preset. The first is done — the five idioms were discovered from corpora, ratified and encoded. What is still owed is the second: a per-preset weighting over those five, derived by clustering corpora rather than asserted.
 
 ---
 
@@ -160,6 +312,30 @@ Any term that coincides even slightly with music theory is used
 
 ---
 
+## D-190 — The decision-neutrality corollary - what exists carries no weight in choosing a design
+
+**As decided, in the words it was decided in:**
+
+```
+*Decision-neutrality of the existing implementation (corollary to #4/#6/#19; user-ratified
+2026-07-26):* Designs are chosen from the principles and the ultimate objective — enabling the
+best possible inference — alone. In that choice: **(a)** the value of reusing existing code, and
+the cost of making existing code obsolete, are SECONDARY — they may break ties between designs
+equal under the principles and the objective, and reuse counts only as carried-forward
+establishment (#19), never as sunk cost or saved effort; **(b)** downstream implementation
+impact — whether and how many consumers must change — carries NO weight; **(c)**
+end-user-visible behavior change carries NO weight (the 2026-07-26 unshipped-scoping ruling),
+while every behavior change remains ratification-gated (#14) and verification-gated (#15/#19)
+exactly as before. The best-possible-inference design is chosen first; what exists then either
+serves it or retires. (This does not weaken #6 — one path per concern is an END-STATE structural
+principle, not a preservation claim for the existing path; nor #19 — establishment must still
+exist before trust.)
+```
+
+**In plain words:** A design is chosen on the principles and the goal of the best possible analysis, and on nothing else. What it would cost to make existing code obsolete is a secondary consideration that can only break a tie between designs already equal; how many places downstream would have to change counts for nothing; and a change in what the user sees counts for nothing either - though every such change still needs ratifying and verifying exactly as before. The best design is chosen first, and what exists then either serves it or is retired.
+
+---
+
 ## D-201 — Very large scores must be handled, and are expected to be more common than our corpora
 
 **As decided, in the words it was decided in:**
@@ -170,6 +346,19 @@ Wagner act or a symphony has to produce an analysis; the user expects such music
 ```
 
 **In plain words:** A Wagner act or a symphony must work. The user expects such scores to be a more common use than the chorales the system was fitted on. This is a standing requirement every later design is judged against, not a defect report.
+
+---
+
+## D-202 — The effort control is one setting with several dials, and it must bound the time taken
+
+**As decided, in the words it was decided in:**
+
+```
+**The effort control is ONE setting with several dials behind it, and among the quantities it must
+bound is the TIME the analysis takes. DEFERRED.** How hard the analysis works is a single user-facing
+```
+
+**In plain words:** How hard the analysis works is a single setting the user turns, not several. Behind it sit several dials, and among the things it must be able to bound is how long the analysis takes. It is too early to build: which pieces of the analysis have to be switchable is not yet known.
 
 ---
 
@@ -184,6 +373,98 @@ may reach it by any method they choose, **including** letting an automated triag
 ```
 
 **In plain words:** For music nobody has published an analysis of, the reference answer is a person's judgment. They may reach it however they like, including by letting an automated judge point them at the passages most likely to be wrong. That judge is guidance for the human, never a grader and never a number we report.
+
+---
+
+## D-206 — Intonation is held as a future feature, and is a declared future consumer of the analysis
+
+**As decided, in the words it was decided in:**
+
+```
+**Status of this whole section — HELD, and a declared future CONSUMER of the analysis (user-decided
+2026-07-13).** Intonation **is** a future feature: the six unbuilt items specified in §11.3a–g, together
+with the tie limitation recorded there, stay on the books as a deliberate long-horizon hold, revisited at a
+```
+
+**In plain words:** The six unbuilt pieces of the tuning design stay on the books as a deliberate long-horizon hold, revisited at a natural pause in the analysis work. The reason the hold is strategic rather than neglect: tuning will read the analysis - knowing the mode, the chord, its function and the progression is what lets a just-intonation decision be made, particularly the decision about staying in tune over time versus letting the pitch drift.
+
+---
+
+## D-223 — A gate that judges the pre-correction winner reads a snapshot, not the live result
+
+**As decided, in the words it was decided in:**
+
+```
+- **Pre-sort capture for original-winner gates.** Gates that compute against
+  the pre-correction winner must read `originalWinner*` snapshots, not the
+  live `results[0]` reference (Sub-9a lesson).
+```
+
+**In plain words:** Where a gate has to compare against whatever the analysis thought before a correction was applied, it reads a copy taken beforehand rather than the current top result, which the correction may already have changed.
+
+---
+
+## D-229 — The MuseScore-dependency rule - one general rule for what our code may depend on
+
+**As decided, in the words it was decided in:**
+
+```
+1. **The analysis library (`composing`) depends on no MuseScore or engraving types** — the
+   Dependency Rule above, unchanged.
+2. **The bridge layer reads the score model only through the established bridge pattern, and
+   never layout-derived state as analysis input.** The Layer-1 note model is the single
+   sanctioned reading surface for analysis facts; positions, spacing and other layout products
+   are presentation outputs, readable only for placing presentation artifacts, never as
+   inference evidence (a layout read entering analysis is the OI-98 class, judged against this
+   rule).
+3. **Editing MuseScore's own code is admissible only for a defect blocking our feature.** Each
+   instance is recorded in `CLAUDE.md`'s local-patches section with a do-not-revert note and an
+   explicit per-instance distribution disposition (upstreamable or fork-local), ratified by the
+   user. The recorded contribution intent (§1.2) governs our module as a whole; distribution is
+   decided per patch — the fork-local constraint on the MusicXML mode-import patch is such an
+   instance, not a contradiction of the intent.
+```
+
+**In plain words:** Three parts. The music-theory library uses no MuseScore code at all. The bridge code that connects analysis to the score reads the score only through the established bridge functions, and never uses layout results (positions, spacing) as analysis input - the note reader is the one sanctioned reading surface. And changing MuseScore's own code is allowed only to fix a defect blocking our feature, each change recorded, with its distribution (upstreamable or fork-only) decided and ratified case by case.
+
+---
+
+## D-260 — Analysis output covers exactly the selection; everything loaded beyond it is evidence, never a result
+
+**As decided, in the words it was decided in:**
+
+```
+**Invariant.** The analysis output covers **exactly the selection**; everything outside it is evidence, never a
+result.
+```
+
+**In plain words:** The user's selection is the output span: labels are emitted only for it. Music loaded from outside the selection is pulled in as evidence for judging the selection's edges and is never itself labelled.
+
+---
+
+## D-261 — A layer never guesses how much context it needs - the amount is discovered by convergence
+
+**As decided, in the words it was decided in:**
+
+```
+3. A layer must distinguish **"unavailable because not loaded"** (→ request extension) from **"unavailable because the
+   score starts/ends here"** (→ proceed, truncated). Architectural Layer 1 reports which.
+4. A layer **outputs analysis only for the selection**; extended context is evidence, never labelled.
+5. A layer **never guesses how much** more context it needs — guessing an amount is the un-knowledge-based move this
+   contract forbids. It knows *what* it needs, not how far away that is, so it **extends incrementally and stops on a
+   principled condition**; the amount is **discovered, not chosen**.
+6. The principled stop is **convergence**: extend until the layer's **in-selection output stops changing** with
+   further context. This is self-validating — you have enough context exactly when adding more does not change the
+   answer — and it is what keeps the result independent of the extension step size (the equivalence invariant, §4).
+   **A layer applies that criterion DIRECTLY, on the in-selection quantity the extension was requested for**: it
+   re-infers over the enlarged span, compares that quantity step against step, and stops when it repeats. The
+   as-built Architectural Layer 3 reach-back does exactly this — it tracks the **leading-edge settled key across
+   iterations and stops when it repeats**, which is the criterion itself and not a stand-in for it (the convergence
+   note above the reach-back loop in `regionanalyzer.cpp` states it in the code's own words). §7's safety caps are
+   the only other way out of the loop, and a cap that fired is never the discovered amount.
+```
+
+**In plain words:** A layer knows what evidence it needs but not how far away it is, so it never picks an amount. It extends the loaded span incrementally and stops on a principled condition: convergence, meaning its in-selection output stops changing as more context arrives. The layer applies that test directly, on the quantity it asked for more context about, and stops when that quantity repeats.
 
 ---
 
@@ -224,6 +505,23 @@ may reach it by any method they choose, **including** letting an automated triag
 
 ---
 
+## D-265 — Asking a lower layer for more notes is a data-supply call, not a backward inference edge
+
+**As decided, in the words it was decided in:**
+
+```
+- **The re-inference cascade IS the forward-only contract, not an exception to it.** The extension **request** is a
+  data-supply call **down** to Architectural Layer 1 (a higher layer using a lower layer's service — control, not
+  inference). The new notes and every re-inference then flow **forward** (Architectural Layer 1 → 2 → 3 → …), exactly
+  as on a first run. **Inference never flows backward** — a later layer re-inferring cannot alter an earlier layer's
+  result. So an extension is precisely *"ask down for more raw material, then infer forward again,"* with no backward
+  inference edge anywhere; this is what makes it consistent with the project's forward-only analysis contract.
+```
+
+**In plain words:** An extension request travels down the stack to the note supplier, and the new notes and every re-inference then flow forward through the layers exactly as on a first run. Inference never flows backward: a later layer re-inferring cannot alter an earlier layer's result. So extension is consistent with the forward-only contract rather than an exception to it.
+
+---
+
 ## D-267 — There are exactly two admissible confidence classes, and no layer may claim a calibrated probability until one is fitted
 
 **As decided, in the words it was decided in:**
@@ -245,6 +543,91 @@ Every published confidence declares exactly one **class**:
 
 ---
 
+## D-268 — A confidence attaches to a named decision, is compared only within its class and a declared frame, and keeps its identity downstream
+
+**As decided, in the words it was decided in:**
+
+```
+**Rules of use:**
+- **U1.** A confidence attaches to a **named decision** (key-of-slice, chord-of-slice, membership-of-note,
+  cadence-vote, boundary-strength, function-of-unit) — never to "the layer" in general.
+- **U2.** At a **layer boundary** (any value another layer may read), a confidence is **[0,1], class-declared, with
+  its decision named**. Unbounded internal scores are permitted *inside* a layer but must be squashed at the boundary.
+- **U3.** A consumer may compare two confidences **only within one class and one declared frame** (§4). Treating a
+  Class-M margin as a probability (or comparing two Class-M values produced by different scorers without a declared
+  conversion) is a contract violation.
+- **U4. Provenance.** A carried-forward confidence keeps its (source layer, decision, class) identity; no silent
+  re-interpretation downstream.
+- **U5. Abstention.** The "uncertain" mark ≡ the decision's confidence is below the layer's declared bar (a
+  precision-phase constant). Abstention semantics are therefore uniform: *low confidence in the declared class*, not
+  a separate ad-hoc judgment.
+```
+
+**In plain words:** Five rules of use. A confidence belongs to a named decision, never to a layer in general. At a layer boundary it is zero-to-one, class-declared and decision-named. A consumer may compare two confidences only within one class and one declared comparison frame. A carried-forward confidence keeps its source layer, decision and class, with no silent reinterpretation. An abstention means the decision's confidence is below that layer's declared bar - the same meaning everywhere, not a separate ad-hoc judgment.
+
+---
+
+## D-275 — Every published record carries its own instrument provenance; a provenance-less analysis cannot exist
+
+**As decided, in the words it was decided in:**
+
+```
+Every published record carries its instrument provenance: the embedded table set's source-artifact
+hashes and the selected weight-vector identity (both compiled in per Decision D1), plus the
+decoder's version. A consumer — and any future measurement — can always answer "which fitted
+values produced this analysis" from the record itself; a provenance-less analysis cannot exist.
+```
+
+**In plain words:** Each record published for the notation path carries the source-artifact hashes of the fitted table set, the identity of the selected weight vector, and the decoder's version. A consumer, or any later measurement, can always answer which fitted values produced a given analysis from the analysis itself.
+
+---
+
+## D-279 — The Stage-3 entry gate - seven conditions before any engagement wiring reaches production
+
+**As decided, in the words it was decided in:**
+
+```
+**★ STAGE-3 ENTRY GATE (ratified 2026-07-10 with #17–#19; evidence `cowork_l1_l5_premise_debt_audit.md`).**
+Before any E4/L5 engagement wiring can reach production:
+- **(EG-1) Tier-1 defusal is a PREREQUISITE, not an inventory item:** the resolver selection re-ordering
+  (arc #9 — the as-built `resolveAbstained` still selects progression-first at confidence 1.0, the channel
+```
+
+**In plain words:** Before the rebuilt path's wiring can reach production, seven conditions hold: the two measured-harmful mechanisms are defused or provably bypassed; the go/no-go measurement runs under the full Premise Gate with its measurement tool established first; the pedal reader waits on its underpowered premise being settled; the confidence-commensurability premise owes a ledger and a desk simulation before any threshold is fitted; the fit surface is completed; the Jazz preset's validation status is declared honestly; and no step opens until every layer it depends on has passed its audit.
+
+---
+
+## D-282 — Meta-finding: the oracle/tier metric, never a bare proxy - superseded by the robust-unit stop and the two-tier policy
+
+**As decided, in the words it was decided in:**
+
+```
+- **Oracle/tier metric, never a bare proxy** (BIR rewards wrong-root=bass). Make the dual metric standing.
+```
+
+**In plain words:** Never grade the analysis on the bare bass-is-root number, which rewards a wrong chord root that happens to be the bass; use the oracle-checked, tiered measurement. Its content became standing through the robust-unit regression stop and the two-tier class policy.
+
+---
+
+## D-286 — Whole-score interactive analysis was SHELVED WITH EVIDENCE; the bounded window is the ratified reading
+
+**As decided, in the words it was decided in:**
+
+```
+**★ ONE OF THE TWO AXES THE EFFORT CONTROL MUST BOUND ALREADY CARRIES A RECORDED RULING, AND THIS
+SECTION MUST NOT BE READ AS OPEN ON IT: WHOLE-SCORE INTERACTIVE ANALYSIS IS SHELVED WITH EVIDENCE
+(Cowork, 2026-06-12, at Stage 3.1b; written into this section 2026-08-09 on the user's ruling —
+register entry **D-286**).** The bullet above records the user's prediction that always reading the
+entire score will very likely not survive. That prediction is not the first word on the question. A
+**measured A/B** put a whole-score interactive analysis against a **bounded-window** one, graded
+against the published human annotations; **the bounded window won, the whole-score variant was
+SHELVED with evidence, and the bounded-window cache was adopted as the ratified reading**.
+```
+
+**In plain words:** At Stage 3.1b a measured A/B put a whole-score interactive analysis against a bounded-window one and the window won against the published annotations; the whole-score variant was withdrawn against that measurement and the bounded window adopted. The question of whether a per-note answer must match the whole-piece answer was parked, not settled.
+
+---
+
 ## D-292 — The fitting-pool licence constraint - values that ship are fitted only on freely-licensed music
 
 **As decided, in the words it was decided in:**
@@ -256,6 +639,20 @@ Every published confidence declares exactly one **class**:
 ```
 
 **In plain words:** Any number that is fitted and then shipped may be fitted only on public-domain or permissively-licensed music. Music under a non-commercial or unstated licence may be used to check and validate, never to fit a shipped value.
+
+---
+
+## D-295 — Zero information loss to the end user - every inferred object must be displayable
+
+**As decided, in the words it was decided in:**
+
+```
+**The governing requirement over everything in this section: ZERO INFORMATION LOSS TO THE END USER — every
+inferred object must be displayable.** Anything the analysis works out has to be capable of being shown.
+Revealing it gradually, so that a display is not overwhelming, is the intended design; leaving something the
+```
+
+**In plain words:** Anything the analysis works out must be capable of being shown to the user. Showing it gradually, so the display is not overwhelming, is fine; leaving something permanently unreachable because the interface has no place for it is not.
 
 ---
 
@@ -273,6 +670,71 @@ into the confidence semantics. (Contract R4/R5 monotonicity carries this.)
 
 ---
 
+## D-322 — Any change to optimization flags or to the order of the scoring arithmetic requires a full corpus A/B on both presets
+
+**As decided, in the words it was decided in:**
+
+```
+These could **flip** under any change that re-associates the floating-point arithmetic:
+different compiler / optimization flags (`-ffast-math`, `/fp:fast`, FMA contraction),
+a different platform's libm, or a reordering of the summation in the score expression
+`(basisIndep + bassDep) × complexityFactor × augFactor + wComplete + wSeq [+ wDim] [+ step]`.
+Treat the exact evaluation order as load-bearing: **any change to optimization flags or to
+the order of the scoring arithmetic requires a full corpus A/B on both presets** before it
+```
+
+**In plain words:** Because candidate scores are compared exactly, re-ordering the arithmetic or changing compiler optimization settings can flip a reading that was decided by a hair. Such a change is not trusted to leave the output unchanged until it has been checked against the whole corpus on both tuning presets.
+
+---
+
+## D-324 — Retirement of a post-scoring rule is global — a rule still doing work on any one preset is retained for all
+
+**As decided, in the words it was decided in:**
+
+```
+  Baroque but 18 load-bearing Jazz firing sites, §1.2). Retirement is global, so a rule live on ANY
+  carrier is retained.
+```
+
+**In plain words:** A correction rule is either removed everywhere or kept everywhere. If it still changes an answer under any one of the tuning presets, it stays.
+
+---
+
+## D-352 — The key/mode grading bar splits the cases first: agreement where the published analyses are unanimous, any recorded reading (or an uncertain mark) where they are not
+
+**As decided, in the words it was decided in:**
+
+```
+The bar, with its partition stated: a case counts as **unambiguous** when the ground-truth
+  annotation gives a single local key/mode there, records no alternative reading, and (where more than one published
+  analysis covers the piece) the analyses agree; every other case — a recorded alternative reading, disagreeing
+  published analyses, or a modal passage the major/minor-only ground truth cannot represent (§1) — counts as
+  **genuinely ambiguous**. On the unambiguous cases the bar is agreement with the single reading; on the ambiguous
+  cases the bar is met when the layer's answer equals **one of the recorded readings** (that is what "defensible"
+  means here) or the case is marked "uncertain."
+```
+
+**In plain words:** A case counts as unambiguous when the published human analysis gives one tonality there, records no alternative, and — where more than one published analysis covers the piece — the analyses agree. Everything else counts as genuinely ambiguous: a recorded alternative, disagreeing analyses, or a modal passage the major/minor-only human analysis cannot express. On the unambiguous cases the analysis must match the single reading; on the ambiguous ones it must match one of the recorded readings or declare itself unsure.
+
+---
+
+## D-353 — The key/mode layer is graded on two goals kept apart — agreement where the notes decide, and whether its own uncertainty lands on the genuinely ambiguous cases
+
+**As decided, in the words it was decided in:**
+
+```
+- **Two quality goals, measured separately.** (1) *Accuracy on the resolvable cases* — agreement with the human
+  analyses where the notes decide; and (2) *calibration of uncertainty* — whether the "uncertain" mark and the
+  confidence actually land on the genuinely ambiguous slices (a reliability curve over confidence; the precision and
+  recall of the "uncertain" mark on the error set; and whether the true key is carried among the alternatives). The
+  second goal is what backs the claim that Architectural Layer 3 is clearer about ambiguity than a single forced
+  label, so it is graded in its own right, not folded into accuracy.
+```
+
+**In plain words:** Two things are measured, and neither is folded into the other. First, does the tonality agree with the published human analysis where the notes settle it. Second, is the layer's own declared uncertainty honest — whether the unsure mark and the confidence actually fall on the genuinely ambiguous stretches, and whether the true tonality is among the runners-up it carried.
+
+---
+
 ## D-365 — A corpus search driven by the SUM of all needs is worth running, but it is step 3 of 3 — the needs list and the re-scoring of what is already enumerated come first
 
 **As decided, in the words it was decided in:**
@@ -286,6 +748,175 @@ containers — the dismissals were purpose-relative, made with harmonic-axis eye
 ```
 
 **In plain words:** Searching against everything the project needs at once is useful, but only after two cheaper steps. First the full list of needs has to exist as a written artifact. Then every collection already enumerated is re-scored against that list, without searching at all. Only what is still uncovered afterwards is searched for.
+
+---
+
+## D-388 — Texture is read primarily from HOW VOICES MOVE TOGETHER, not from how far each line leaps — the interval-led alternative was measured weaker and partly an encoding artifact
+
+**As decided, in the words it was decided in:**
+
+```
+- **D2 — motion-type-led features.** Measured (§4): the ablation is decisive, and the motion view is the
+  extraction-robust one (it never explodes chords; it grouped exploded chamber corpora with the chorales, ruling
+  out an encoding artifact). *Alternative rejected:* interval-profile-led (the pilot's view) — weaker (≤0.20) and
+  partly a chordal-density artifact by the study's own caveat.
+```
+
+**In plain words:** What separates one texture from another is the pattern of parallel, similar, contrary and oblique motion between pairs of lines. The rates of those four motion types alone recover the texture structure; the statistics of how far each single line moves do not, and are used only as a secondary description of melodic complexity.
+
+---
+
+## D-389 — A notated voice is a FACT and an inferred perceptual line is a JUDGMENT — the two are separate types and are never conflated
+
+**As decided, in the words it was decided in:**
+
+```
+- **D3 — two-tier voice model: notated voice = fact; stream = inference.** Never conflated; enforced by the §0
+  one-sense rule and the type system (VoiceLine vs Stream). *Alternative rejected:* a single "voice" concept with
+  a quality flag — exactly the silent fact/judgment mixing the universality principle forbids.
+```
+
+**In plain words:** The line the score actually writes and the line a listener hears are different things and are kept apart, in the words used and in the types the code carries. The written one is a fact taken from the score; the heard one is always called a stream, is always marked inferred, and carries its own confidence. Merging them into one idea with a quality flag was considered and rejected.
+
+---
+
+## D-390 — The first version classifies the WHOLE selection as one texture — classifying within a piece is deferred behind a measurement, because the evidence is per-piece
+
+**As decided, in the words it was decided in:**
+
+```
+- **D4 — texture classification is v1's only judgment, at whole-selection granularity.** The evidence is
+  per-piece; a per-span claim would be assumption-based code. The refinement is a named cheap measurement first
+  (§15-1). *Alternative rejected:* shipping windowed per-span classification now — knowledge-based-coding
+  violation.
+```
+
+**In plain words:** The study that established the texture classes measured whole pieces. Whether the same statistics, computed over a moving window, would find the places where the texture changes inside a piece has not been measured. So the first version gives the whole selection one texture, and finding several within it waits on that measurement. Shipping the windowed version now was considered and rejected as building on an assumption.
+
+---
+
+## D-392 — The later voice-leading components are CLAIMS WITH OWNERS, not builds — each clears its own design document and its own evidence before any instruction exists
+
+**As decided, in the words it was decided in:**
+
+```
+- **D5 — staged components behind design gates.** VL-D/E/F/G/H are claims with owners, not builds; each clears its
+  own design + footing before an instruction exists. This is the proportionality gate applied *inside* the axis —
+  no slot-filling (the Contrapunctus reminder). *Alternative rejected:* one monolithic axis build.
+```
+
+**In plain words:** Stream separation, phrase segmentation, pattern recognition, voicing analysis and part-writing advice are all named and assigned, but none is built. Each first needs its own design document and the evidence to stand on. Building the whole dimension in one go was considered and rejected.
+
+---
+
+## D-393 — Every voice-leading inference publishes the committed answer AND the FULL ranked list of all alternatives with their weights — nothing below the top is discarded
+
+**As decided, in the words it was decided in:**
+
+```
+- **Output — the committed class PLUS the full ranked alternative list (zero information loss; ratification
+  clarification, user 2026-07-03):** the span's voice-leading idiom from the four-class taxonomy (§0) is the
+  TOP of a **fully ranked list of ALL class fits, each carried with its weight** — nothing below the top is
+  discarded; a downstream consumer (and Stage-5 calibration) sees everything VL-C saw. This is the ARCH §2.15
+  minimality-plus-maximal-information contract applied here (the same carried-alternatives discipline as L4's
+  ranked chord readings).
+```
+
+**In plain words:** The texture stage does not publish only the class it chose. It publishes every class it considered, ranked, each with the weight it earned, so that anything reading it later — including the calibration step — sees exactly what the stage saw. Nothing below the winner is thrown away.
+
+---
+
+## D-394 — Reducing a chord-bearing voice to one line is a DECLARED parameter of the request, uniform across sources — never silent, never chosen per source; the first version offers exactly one rule
+
+**As decided, in the words it was decided in:**
+
+```
+- **Reduction is declared, uniform, and per-query — never silent, never per-source.** A consumer needing one line
+  from a chordal voice names a reduction rule (v1 provides exactly one: **top-note** — the highest sounding pitch
+  per event, the study's curated-branch rule). The rule is a parameter of the *query*, carried in the output's
+  provenance. This single uniform rule is what retires the study's per-source explosion asymmetry (its View-A
+  caveat) when the production extractor is built.
+```
+
+**In plain words:** Where a written voice carries chords rather than single notes, anything needing one line from it must name the rule that picks that line, and the rule travels with the answer as provenance. There is one rule in the first version: take the highest sounding pitch. It is applied the same way everywhere, which is what removes the uneven treatment the exploratory study had between its sources.
+
+---
+
+## D-395 — Three named floors govern abstention, and the FIT floor is the one that lets a passage resembling NO known texture decline rather than be forced to its nearest
+
+**As decided, in the words it was decided in:**
+
+```
+- **Honest marks — the three declared floors (named once here, used by these names everywhere):** the
+  **evidential floor** (minimum motion-sample count for a profile to support a decision), the **margin floor**
+  (minimum best-vs-second-best margin), and the **fit floor** (minimum absolute fit of the best class).
+  Abstention (uniform semantics, contract U5) fires when the margin is below the margin floor **or** the best fit
+  is below the fit floor — the second clause is what makes a span resembling *no* reference class abstain rather
+  than be forced to its nearest class (a relative margin alone cannot deliver that).
+```
+
+**In plain words:** The texture stage declines to answer under three named conditions: too few motion samples to support any decision, too small a lead of the best class over the second, or too poor an absolute fit of the best class. The third is the one that matters for music the taxonomy does not cover: without it, a passage unlike every known class would still be assigned to whichever class it least resembled, because a lead over the second-best says nothing about whether either fits.
+
+---
+
+## D-396 — The voice-leading dimension covers NOTATED music only, and its style coordinate is UNDEFINED — not zero — for sources that carry no voices
+
+**As decided, in the words it was decided in:**
+
+```
+- **Coverage declaration (honest, structural).** The axis analyses **notated music only** — lead-sheet sources
+  carry no voices, so the voice-leading coordinate of the 2-D style structure is simply *undefined* for them
+  (undefined, not zero, in every consumer). This is a representational fact, not a corpus accident.
+```
+
+**In plain words:** This dimension reads the lines a score writes, so a source that carries no lines at all, such as a lead sheet, has no voice-leading character to read. Every consumer must treat that coordinate as undefined rather than as zero, because a missing measurement is not a measurement of nothing.
+
+---
+
+## D-397 — The homeless analysis objects are ASSIGNED to named owners on the voice-leading dimension — the stock patterns, the melodic phrase, chord voicing, and part-writing advice — as claims, discharged only at each owner's own ratified design
+
+**As decided, in the words it was decided in:**
+
+```
+**★ FOUR ANALYSIS OBJECTS THAT HAD NO OWNER ARE OWNED BY THE VOICE-LEADING AXIS, AS CLAIMS (user-ratified
+  2026-07-03; written here 2026-08-09).** Growth by axis only works if every analysis object has a named owner, and
+  four did not. They are assigned here, and each is recorded **as a CLAIM with an owner rather than as work
+  started** — a claim is discharged only when that component's own design is ratified, never by this line.
+```
+
+**In plain words:** Four kinds of analysis object that previously had no owner are assigned here: the stock eighteenth-century patterns and the chromatic line cliché, which the chord dictionary already flags as belonging to this dimension; the melodic phrase; chord voicing and arrangement, which the dictionary explicitly excludes from its own scope; and checking and advising on part-writing. Each is recorded as a claim with an owner, not as work started, and the claim is settled only when that owner's own design is ratified.
+
+---
+
+## D-398 — Parallel motion is judged SEMITONE-EXACT, not by generic diatonic size — a same-direction move whose semitone interval changes counts as similar motion
+
+**As decided, in the words it was decided in:**
+
+```
+**★ "INTERVAL PRESERVED" IS SEMITONE-EXACT, NOT GENERIC DIATONIC SIZE — CLOSED AT BUILD, 2026-07-03.** Two lines
+  count as **parallel** only when they move the same direction AND the SIGNED SEMITONE distance between them is
+  unchanged; a same-direction move whose semitone interval changes is **similar**. So a pair moving from a major
+  third to a minor third is similar motion, not parallel, although both are thirds on the staff.
+```
+
+**In plain words:** Two lines count as moving in parallel only when they move the same way and the distance between them in semitones is unchanged. A pair moving the same way from a major third to a minor third is therefore similar motion, not parallel, even though both are thirds. The alternative — counting by the size of the interval as written on the staff, so that any third to any third is parallel — was the open question, and this is the answer.
+
+---
+
+## D-400 — A PER-VOICE span kind is admitted to the span typology — melodic phrases overlap across voices by construction and tile only within one voice
+
+**As decided, in the words it was decided in:**
+
+```
+**★ THE TYPOLOGY ADMITS A PER-VOICE SPAN KIND (user-ratified 2026-07-03; written here 2026-08-09).** Every span
+  kind listed above cuts across the whole texture at once — it is a segmentation of the music, and the members of
+  one kind tile it. **A MELODIC PHRASE DOES NOT.** In contrapuntal writing the voices' phrases run concurrently and
+  out of step with one another, as a fugue's staggered entries do, so phrase-spans **overlap across voices by
+  construction and tile only WITHIN one voice**. The typology therefore carries a second kind of member: a
+  **per-voice span**, whose tiling law is stated per voice rather than over the texture.
+```
+
+**In plain words:** Until now every kind of span the analysis produces cuts across all the music at once. The melodic phrase does not: in contrapuntal writing the voices' phrases run concurrently and out of step with one another, as a fugue's staggered entries do. So a per-voice kind of span is admitted to the catalogue of span kinds, which is what a phrase-segmentation design can then be written against.
 
 ---
 
@@ -311,6 +942,65 @@ containers — the dismissals were purpose-relative, made with harmonic-axis eye
 
 ---
 
+## D-421 — Idiom re-discovery rides every corpus wave, on research material only, and a changed cluster set is its own ratification event
+
+**As decided, in the words it was decided in:**
+
+```
+- **Idiom re-discovery RIDES EVERY CORPUS WAVE, on research material only, and a changed cluster
+  set is its own ratification event.** After each material corpus change the discovery pipeline is
+  re-run under the protocol above, on the **development set and outside research corpora only** —
+  held-out material excluded — asking first whether the five idioms **reproduce**. **A changed
+  cluster set is a ratified taxonomy-revision event**: it propagates to the style-tag values and to
+  the vocabulary's per-entry mapping, so once those tags are encoded it is a migration and not a
+  relabel. *Why:* the held-out exclusion is #20 applied to an unsupervised study — discovery
+  outputs become shipped parameters, so material used to discover them can never also measure them.
+  The re-run itself is the standing consequence of the finding this section rests on, that the
+  categories are empirical rather than asserted, which means new music can falsify them; the record
+  names the falsifiable edges in advance — whether the chromatic-coloristic idiom splits under new
+  chromatic mass, where the high-chromaticism composers land, and whether early modal material
+  separates or folds in — and naming them in advance is what makes the trigger a test rather than a
+  formality.
+```
+
+**In plain words:** Whenever the body of music the project holds changes materially, the study that discovered the five idioms is re-run under the same protocol, to ask whether the five reproduce. It is run only on the development set and outside research corpora, never on the music held back for evaluation, because what the study produces becomes a shipped parameter. If the clusters come out different, that is a taxonomy revision and needs its own ratification — it changes the tags on every catalog entry, so after the tags were encoded it is a migration, not a relabel.
+
+---
+
+## D-423 — The gate-retirement stage is the only sanctioned way the post-scoring gates change, and three do-not rules hold through every stage
+
+**As decided, in the words it was decided in:**
+
+```
+- **Three prohibitions hold through every stage, and the per-gate RETIREMENT STAGE is the only
+  sanctioned way these gates change:** no new gates, no threshold widening, no gating of the
+  root-continuity bonus. *Why:* each prohibition carries its own defense elsewhere — accumulating
+  gates are a warning sign and the answer is iteration rather than more gates; gate thresholds are
+  Baroque-calibrated and are not loosened for another style; gating the root-continuity bonus on a
+  sparse predecessor was measured a dead end (the bullet above). What this constraint adds is the
+  **single sanctioned channel** — the retirement stage's per-gate differential proof obligation —
+  which is what stops the gate layer changing by accretion.
+```
+
+**In plain words:** LEGACY (the chord analyzer awaiting deletion): three prohibitions hold for the whole programme — no new after-the-fact correction rules, no widening of a threshold, and no gating of the root-continuity bonus. The only sanctioned way any of those correction rules changes is the deliberate per-rule retirement stage, where a rule is removed only once the replacement reproduces the fixes it was pinned to.
+
+---
+
+## D-441 — Analysis and modification are phases of ONE conversation; a follow-up instruction re-uses the reasoning rather than re-analysing
+
+**As decided, in the words it was decided in:**
+
+```
+**Conversational continuity.** Analysis and modification occur in one
+conversation thread. When the LLM identifies problems in a QA query, "make
+the fixes you suggested" executes without re-analysis — the LLM reasons from
+its own conversation history.
+```
+
+**In plain words:** Asking about the music and then changing it happen in a single conversation. When the model has already worked out what is wrong, an instruction to fix it is carried out from what it already reasoned through, not by analysing the music again.
+
+---
+
 ## D-442 — A validation failure goes back to the language model as a tool-call error and is never shown to the user
 
 **As decided, in the words it was decided in:**
@@ -321,6 +1011,50 @@ The LLM corrects and retries. Only clean output reaches the score.
 ```
 
 **In plain words:** When the checks reject something the model proposed — a note outside an instrument's range, parallel fifths, a malformed bar — the rejection is returned to the model, which corrects itself and tries again. The user never sees the rejected attempt; only output that passed the checks reaches the music.
+
+---
+
+## D-443 — Tool use is the only capability the provider abstraction requires; a provider without it is read-only
+
+**As decided, in the words it was decided in:**
+
+```
+Users choose their LLM provider in MuseScore preferences. The abstraction
+requires only that a provider supports tool use (function calling). Providers
+without tool use support may be used for read-only analysis but cannot drive
+score modification.
+```
+
+**In plain words:** The user picks which language-model provider to use. The only thing the system demands of a provider is that it can call tools. One that cannot may still be used to answer questions about the music, but it may not be used to change the music.
+
+---
+
+## D-444 — The core access layer is a facade over interfaces that already exist, not a redesign
+
+**As decided, in the words it was decided in:**
+
+```
+family already covers almost everything the Core Access Layer needs. **The
+Core Access Layer is not a redesign — it is a facade over interfaces that
+already exist.**
+```
+
+**In plain words:** The shared foundation the language-model bridge and any future plugin interface both sit on is not new machinery. An audit of the existing internal interfaces found they already cover almost everything it needs, so the layer is a clean face over what is there.
+
+---
+
+## D-445 — A musical address does not identify a single note, so the note entity carries its own identifier
+
+**As decided, in the words it was decided in:**
+
+```
+**Address alone does not uniquely identify a Note.** Multiple notes in the same
+chord share an identical address (same part + staff + measure + beat + voice).
+A `NoteId` is required to unambiguously target a single note. `NoteId` must
+appear explicitly on the Note entity; it maps internally to the EID system.
+```
+
+**In plain words:** Several notes of one chord sit at exactly the same address — same part, staff, bar, beat and voice — so an address cannot name one note. The note therefore carries an identifier of its own, and that identifier is what a change is aimed at.
 
 ---
 
@@ -335,6 +1069,48 @@ it available as an LLM tool. No manual maintenance.
 ```
 
 **In plain words:** What the model is told it can do is derived from the operations themselves. Adding an operation makes it available to the model with no second list to keep in step.
+
+---
+
+## D-448 — The operation set is curated from observed use, not an exposure of every editing method
+
+**As decided, in the words it was decided in:**
+
+```
+~40 curated operations covering the high-value modification tasks. Not an
+attempt to expose every `INotationInteraction` method. Chosen by observing
+which operations Phase 1 and Phase 2 usage actually reaches for.
+```
+
+**In plain words:** The model gets a chosen set of about forty editing operations covering the changes that matter, rather than everything the editor can do. Which ones are chosen is decided by watching what the read-only phases actually reach for.
+
+---
+
+## D-451 — A desk simulation's table values are provisional, enter no fit, and a verdict that would flip inside a provisional value's plausible range is reported as a near-tie, never as a win
+
+**As decided, in the words it was decided in:**
+
+```
+    **★ WHAT A DESK SIMULATION'S TABLE VALUES ARE, AND WHAT THEY MAY NEVER BECOME (user-ratified
+    2026-07-19).** Every table value a desk simulation under (c) uses is **PROVISIONAL** — declared
+    before use, each labeled with its provenance class, and hand-declared stand-ins whose only job
+```
+
+**In plain words:** When a mechanism is traced by hand, the numbers used are stand-ins declared up front whose only job is to let the mechanism be followed. None of them may become a fitted value later. And if a trace's answer would change had a stand-in been chosen differently within its believable range, the trace reports a near-tie and names the deciding cell rather than claiming a winner.
+
+---
+
+## D-452 — Every desk-simulation trace runs at identity weights — the ratified ablation baseline — so the trace tests the structure and the tables, not the weighting
+
+**As decided, in the words it was decided in:**
+
+```
+    **★ EVERY DESK-SIMULATION TRACE RUNS AT IDENTITY WEIGHTS (user-ratified 2026-07-19).** A trace
+    under (c) runs the generative product with every weight at one — exactly the mandatory ablation
+    baseline the design already carries. The desk simulation therefore tests the structure and the
+```
+
+**In plain words:** Each hand trace is run with every weight set to one, which is the baseline the design already requires be measured. That way what the trace checks is whether the shape of the model and its tables behave, and not whether a weighting was chosen well.
 
 ---
 
@@ -490,6 +1266,426 @@ open mark is reported with the residual visible.
 
 ---
 
+## D-469 — The tick-local path is left OUTSIDE the unified pipeline by design — its point-in-time semantics would be distorted by one shared interface
+
+**As decided, in the words it was decided in:**
+
+```
+**The point-in-time (tick-local) path is left OUTSIDE this pipeline BY DESIGN — two modules with a
+documented relationship, not an unfinished unification.** This section's opening states the scope:
+single-note analysis is the foundation and region analysis extends it to a time range. Three of the
+four ways the program produces harmony were unified onto that region pipeline; the fourth — the one
+that answers *what chord is under this note, right here* — was **deliberately left parallel**.
+*Why:* stated with the decision — its point-in-time semantics differ too much from region-based
+analysis to force a single interface without distortion, so the cost of unifying here is a
+distorted interface rather than a saved duplication. **This is the pipeline's own scope statement
+and it is stated once, here**; §5.13, which tabulates the tick-local entry points, points at it and
+does not restate it (#6). Distinct from the two later decisions about that path — that it keeps the
+older resolver, and that its cold context is accepted: this is the prior decision that it stays a
+separate module at all.
+```
+
+**In plain words:** Three of the four ways the program produces harmony were merged into one shared pipeline. The fourth — the one that answers 'what chord is under this note, right here' — was deliberately left separate, because forcing it through a pipeline built around stretches of music would bend what it means.
+
+---
+
+## D-470 — The temporal-context extension fields are recorded during the pipeline's own analysis pass; no consumer re-runs the chord analysis to rebuild them
+
+**As decided, in the words it was decided in:**
+
+```
+- **The temporal-context EXTENSION FIELDS are recorded during the analysis pass that computes
+  them; a consumer READS what was recorded and never re-runs the chord analysis to rebuild them.**
+  The fields are populated on each analyzed region during the pipeline's own per-region analysis,
+  using the already-built region list as context; a consumer that needs them reads the field. *Why:*
+  stated with the decision — a second analysis run with a display-time context can populate the
+  same fields differently from what the annotation pass saw, so the two user-facing paths drift
+  apart. Recording once and reading the record removes the second computation instead of trying to
+  keep two computations in step, which is the fact-publication corollary applied here: the field is
+  published by its producer and consumers read, never re-derive. **This rule is stated at the
+  producing surface**, which is this section; the consumer sections point at it and do not restate
+```
+
+**In plain words:** What the chord analysis saw around each stretch of music is written down while the analysis runs. A consumer that needs it reads what was recorded, instead of analysing the passage a second time with a freshly built context — which is how the two paths used to disagree.
+
+---
+
+## D-471 — The sub-beat annotation duration gate is not retired on argument — it is kept or dropped on a measured observation run, with the verdict stated in advance
+
+**As decided, in the words it was decided in:**
+
+```
+**The sub-beat annotation duration gate is KEPT OR DROPPED ON A MEASURED OBSERVATION RUN, and the
+verdict is fixed in advance.** A gate hides very short chords from the Roman-numeral annotation
+while the chord track and the status bar still show them. Whether it survives is **not** settled by
+argument; the decision rule is written down before the measurement and is binding:
+
+- if the gate **measurably reduces clutter or false annotations without suppressing correct ones**
+  → it is KEPT, as a documented emitter option with its current default, settable;
+- if it **suppresses equally many correct and incorrect annotations** → it is RETIRED, the duration
+  parameter's default becomes *no gate*, and the option is removed in the follow-up cleanup.
+
+*Why:* stated with the rule — the question is whether the gate removes clutter or removes correct
+labels, which is a measurement and not a preference; and fixing the verdict **before** the
+measurement is what stops a live result from being argued into whichever reading suits it. It is
+the pre-declared-protocol discipline (#22) applied to a display gate, and it is the pattern the
+premise gate (#17b) later made general. **The gate is undischarged at HEAD:** the observation run
+has not been made, so neither branch has fired.
+```
+
+**In plain words:** A rule hides very short chords from the Roman-numeral annotation. Whether to keep it was not settled by opinion: the decision was written down in advance as a comparison — run the annotation with and without it on real scores, and keep it only if it removes clutter without also removing correct labels.
+
+---
+
+## D-472 — Key areas are grouped by a smoothing pass over regions whose key sequence has already been smoothed, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area
+
+**As decided, in the words it was decided in:**
+
+```
+**★ KEY AREAS ARE GROUPED BY A SMOOTHING PASS OVER REGIONS WHOSE KEY SEQUENCE HAS ALREADY BEEN
+SMOOTHED, AND A REGION THAT DISAGREES WITHOUT CLEARING THE CONFIDENCE TEST KEEPS ITS OWN KEY WHILE
+BEING GROUPED INTO THE ENCLOSING AREA (re-homed into this specification 2026-08-08 on the user's
+ruling — the owning layer in the target architecture, with §11.5 pointing; the PRECONDITION half of
+the wording corrected 2026-08-09 on the user's ruling, immediately below).** Neighbouring regions in
+the same key are collected into one key area. A key area opens at the first region and closes when
+the next region's key differs from the current area's **and** that region clears a confidence test; a
+region whose key disagrees but does not clear the test **keeps its own key reading** — so the status
+bar stays accurate for that region — while being grouped into the enclosing area, so the annotation
+emitter writes Roman numerals against the key that actually governs the passage rather than against a
+momentary wobble. *Why:* it is a grouping rule and not a second key analysis — it reads the key
+fields the earlier layers already published rather than re-deciding them, which is the same
+not-a-new-detector reasoning this layer's contract states for grouping generally.
+```
+
+**In plain words:** Neighbouring stretches in the same key are collected into one key area. A stretch that reads a different key but is not confident enough to open a new area keeps its own reading for display, yet is counted inside the surrounding area — so the Roman numerals are written against the key that actually governs the passage rather than against a momentary wobble.
+
+---
+
+## D-474 — No published study reports per-axis inter-annotator agreement for Roman-numeral analysis of Baroque/classical symbolic music — the ground-truth ceiling principle #21 demands is unmeasured by the entire field
+
+**As decided, in the words it was decided in:**
+
+```
+    **★ THE CEILING CANNOT BE CITED FROM THE LITERATURE; MEASURING IT HERE IS THE ONLY ROUTE
+    (recorded 2026-08-04 on the user's ruling with the read-wave-3 ratification; D-474).** A
+    dedicated search established a FACT-of-absence: no published study reports per-axis
+    inter-annotator agreement for Roman-numeral or key annotation of Baroque/classical symbolic
+    music. TAVERN released duplicate annotations but published no such number; ABC split its pieces
+    between annotators with no overlap by design; the Mozart-sonatas corpus is consensus-built, so
+    agreement cannot be recovered after the fact; *When in Rome* states in its own words that the
+    variance is unmeasured; Dilemmadata (2026) identifies dual-annotated pieces and computes
+    nothing. **So a session may not satisfy this principle by citation — there is nothing to cite.**
+    The obligation is tracked at `OPEN_ITEMS.md` OI-179, which is therefore not "a measurement not
+    yet built" among others but **the only available route to the quantity this principle demands**.
+```
+
+**In plain words:** Principle #21 says the accuracy of the human annotation is itself something to measure, so that an error we cannot fix is told apart from two experts simply disagreeing. Searching the literature found that nobody has published such a figure for this repertoire — so the ceiling cannot be cited from anywhere and would have to be measured here.
+
+---
+
+## D-475 — The BCMH chorale annotations are NOT established as an instrument: one named annotator with no independent second annotation, the annotations sit on a reduction, and they reached the repository through a machine translation
+
+**As decided, in the words it was decided in:**
+
+```
+content to any existing analysis). **Unestablished as an instrument (#19):** annotator count/identity
+and validation are UNKNOWN (the JEP:HPP Method section and the dataset zip's headers are the two places
+that would settle it — the zip is fetch-blocked in this environment but downloadable on the user's
+machine); the annotations sit on a homorhythmic REDUCTION (unit mismatch with our full-texture grading
+must be handled in the measurement design); they reached the repo through a machine translation into
+rntxt (Nápoles López), whose noise would be part of any measured disagreement. **Consequence:** the
+```
+
+**In plain words:** A second set of human chorale analyses is held, and it would be the natural way to measure how far two annotators disagree. It still cannot be trusted, and since 2026-08-11 one of the three grounds has changed rather than gone away: the annotating laboratory has now named its single annotator and stated that nothing was annotated independently, so there is no second reading inside this collection at all. The other two grounds are untouched — the analyses describe a simplified version of the music rather than the full texture, and they were converted automatically into our format, so the conversion's own errors would show up as disagreement.
+
+---
+
+## D-476 — The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it
+
+**As decided, in the words it was decided in:**
+
+```
+- **D1 — Owner: Architectural Layer 1.5 (the notation-derived views).** The primitive is a notation-derived view, the same
+  kind as the bass, top-voice, and spelling views, reading the same notated surface. *Rejected:* the Layer-1 note model
+  (deliberately narrow — it records notes, it does not derive phrase structure) and the function layer (it consumes phrase
+  boundaries; it cannot own them).
+```
+
+**In plain words:** Working out where a musical phrase ends is done by the same kind of component that reads the bass line or the written spelling off the page. It is not part of the plain record of the notes, and it is not part of the stage that detects cadences — because that stage uses phrase ends as input and cannot also produce them.
+
+---
+
+## D-477 — Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here
+
+**As decided, in the words it was decided in:**
+
+```
+- **Notation-only — key-, chord-, and function-agnostic.** A phrase boundary is read from the written surface (rests,
+  durations, pitch intervals, metric position, annotations, barlines), never from a resolved key, a chord reading, or a
+  cadence. This is structural: the function layer's cadence detection *consumes* phrase boundaries, so a boundary that
+  depended on cadence would be circular. Cadence-based phrase refinement therefore stays a **function-layer** concern,
+  downstream of this primitive (§6-D3). A known consequence (accepted): a surface-only primitive **systematically misses
+  boundaries marked only harmonically** — a cadence with no surface gap — which the function layer recovers downstream.
+```
+
+**In plain words:** Phrase ends are found from what is printed: rests, note lengths, leaps, metric position, marks and barlines. Nothing about the key or the chords may enter, because the stage that detects cadences uses phrase ends, so a phrase end that depended on a cadence would be circular. The cost is accepted and stated: a phrase that is marked only by its harmony, with no gap in the surface, is missed here and picked up later.
+
+---
+
+## D-478 — A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals
+
+**As decided, in the words it was decided in:**
+
+```
+- **D4 — A graded boundary-strength model, not a binary union (user-ratified 2026-06-26).** The boundary is a peak in a
+  continuous strength profile, not the OR of a few binary signals. *Rejected:* the binary union — a degenerate special
+  case that cannot express "a gap larger than its neighbours," inflates recall, and wrecks precision (per the research: a
+  weighted combination measurably beats any single cue and beats a naive union; the leading harmony-free models all
+  compute graded strength + peaks). The cost — per-cue normalisation, the weight vector, the peak threshold — is modest
+  and the constants are precision-phase.
+```
+
+**In plain words:** Rather than declaring a phrase end wherever any one signal fires, the program computes how strongly each moment is marked as an ending and then picks the peaks. The all-or-nothing version is the special case that cannot express 'a bigger gap than its neighbours', and it finds too many endings.
+
+---
+
+## D-479 — The boundary cues run per eligible voice and aggregate to the texture, and BOTH the per-voice and the texture boundaries are published
+
+**As decided, in the words it was decided in:**
+
+```
+- **D5 — Per-voice cues aggregated to the texture (both per-voice and polyphonic), not a top-voice/whole-texture
+  reduction.** The cues run **per eligible voice** and aggregate by **voice-coincidence** into the texture strength,
+  exposing **both** the per-voice boundaries and the texture boundaries (§4.3). *Rejected:* (a) a whole-texture reduction
+  with **top-voice-only pitch** — it discards every inner voice's pitch cue and yields no per-voice phrasing; (b) running
+  the cues on one arbitrary voice — ill-defined in polyphony. Per-voice-then-aggregate is the principled form (the
+  local-change cues are defined per line) and produces both outputs. Since the literature's cues are validated only
+  monophonically, the aggregation is validated on our own corpus (§7).
+```
+
+**In plain words:** The signals that mark a phrase end are properties of a single melodic line, so they are computed for every voice separately and then added up across the voices. Where many voices phrase together the total is high; where one inner voice alone pauses it is low. Both answers are published: each voice's own phrasing and the whole texture's.
+
+---
+
+## D-480 — The phrase-boundary primitive is NOT an accuracy requirement — a competitive reference engine does no phrase segmentation at all — so it is built right but kept proportionate
+
+**As decided, in the words it was decided in:**
+
+```
+- **★ Proportionality (scope discipline, user-ratified 2026-06-26).** The state-of-the-art-competitive reference
+  engine (Contrapunctus) does **no** explicit phrase segmentation or cadence detection and is still competitive at Roman-numeral
+  analysis (it captures phrase structure implicitly via stable key runs). So this primitive is **not** an accuracy
+  requirement — it is load-bearing for *our* cadence mechanism (a means to key/function), a deliberate bet for an
+  explainable, decomposed pipeline. **Build the graded model right, but keep it proportionate — do not let it balloon.**
+  If the explicit phrase/cadence path proves hard, there is a proven implicit fallback (phrase-alignment via stable key
+  runs). See `contrapunctus_findings.md` addendum and `cowork_phrase_boundary_methods.md`.
+```
+
+**In plain words:** A comparable system that performs as well as ours at Roman-numeral analysis has no phrase detection whatsoever; it picks up phrase structure indirectly. So this component is not what accuracy depends on. It is a deliberate bet on an explainable, decomposed design — worth building properly, not worth letting grow without limit, and there is a proven fallback if the explicit route proves hard.
+
+---
+
+## D-481 — The notated markers are emitted as boundaries unconditionally; only the surface-cue strength is peak-picked
+
+**As decided, in the words it was decided in:**
+
+```
+The picked-boundary set is **the surface-cue peaks UNION every notated marker** — because the §4.2 markers are
+**deterministic facts** (a fermata/barline/etc. *is* a phrase boundary), they are emitted **unconditionally**, not
+subjected to the threshold; only the **surface-cue** strength is peak-picked. *(As-built realisation, ratified 2026-06-26:
+the earlier wording "peak-pick the combined profile" put the markers through the local-maximum test, which a strict
+greater-than rule drops for two **adjacent equal-height markers** — e.g. a final fermata abutting the closing barline.
+Emitting markers directly is the faithful reading of their "deterministic / dominate wherever they occur" status.)*
+```
+
+**In plain words:** A fermata, a breath mark, a structural barline and the other written signs are facts, not evidence to be weighed — so each one is reported as a phrase end directly. Only the computed strength has to clear a local-maximum test and a threshold.
+
+---
+
+## D-482 — The two hand-synchronised copies of the fermata scan retire into one owned primitive, and that retirement changes no output
+
+**As decided, in the words it was decided in:**
+
+```
+- **D2 — One unified primitive replaces the two duplicated fermata scans.** The fermata logic exists today in two
+  hand-synchronised copies; they are retired into the single owned primitive and every consumer re-points at it. The
+  retirement is byte-identical.
+```
+
+**In plain words:** The same fermata-finding code existed twice, kept in step by hand. Both copies are replaced by the single owned component and every consumer re-pointed at it. Because the marker-only behaviour is unchanged, the swap produces identical results — the new behaviour is a separate, measured step.
+
+---
+
+## D-484 — The phrase-boundary primitive is a derived view: it inherits the loaded span, requests no extension of its own, and publishes a per-profile max-normalised boundary confidence
+
+**As decided, in the words it was decided in:**
+
+```
+- **A DERIVED VIEW: it inherits the loaded span and requests no extension of its own.** Where only a stretch of the
+  score is loaded, this primitive does **not** ask for more music. Its profile simply **ends where the loaded span
+  ends**. A consumer that wants boundary evidence beyond that stretch extends the span through **its own**
+  bounded-context obligation, and this primitive then **recomputes over the enlarged span** — the standard re-run.
+  *Why:* a derived view that reached for its own context would hold a second, independent extension policy beside its
+  consumers' (#6), and its answer would then depend on which consumer asked.
+- **Its published boundary strength is a per-profile MAX-NORMALISED confidence, comparable within ONE score's profile
+  only, and it participates in NO override frame.** The number on the wire is a boundary confidence in the cross-layer
+  contract's Class-M sense: it ranks ticks inside one score's own profile and says nothing across scores, and it never
+  overrides another layer's answer. *Why:* the strength is a max-normalised salience rather than a probability, so two
+  scores' values are not on one scale, and a quantity that cannot be compared across scores must not be given the
+  authority to overrule one that can.
+```
+
+**In plain words:** When only part of a score is loaded, this component does not ask for more music. Its profile simply ends where the loaded stretch ends; a consumer that wants boundary evidence further out asks for the extension itself and this component recomputes. Its published strength is comparable only within one score's own profile — it never overrides another layer's answer.
+
+---
+
+## D-485 — Each picked boundary should carry which cue fired and at what scope; the picked set is scope-blind today and the refinement waits for the inference phase
+
+**As decided, in the words it was decided in:**
+
+```
+**★ EVERY PICKED BOUNDARY CARRIES WHICH CUE OR MARKER FIRED, AND AT WHAT SCOPE — A REQUIREMENT ON THIS SECTION'S OUTPUT,
+STATED AS OWED AND EXPLICITLY NOT BUILT.** A picked boundary — texture **and** per-voice — carries its **provenance**:
+which cue or marker produced it, and whether it fired **globally** or **per voice** (and if per voice, which voices, and
+how many coincided). **The picked set is SCOPE-BLIND today**, which is the defect this requirement names: a marker
+written on one voice — a breath mark — is spiked onto the texture profile and thereafter reads exactly like a marker
+that applies to the whole ensemble, so a downstream consumer (the punctuation-span annotation) cannot tell a **local
+breath** from a **global barline**.
+```
+
+**In plain words:** The markers that produce a phrase end are of two kinds: some apply to the whole ensemble by notation (a structural barline), and some are written on one instrument (a breath mark). Today both are treated as whole-texture endings, so a local breath is promoted to a global boundary and the fact that it was local is lost. A boundary should record which signal produced it and at what scope — recorded as owed, and deliberately not built yet.
+
+---
+
+## D-495 — RATIFIED AMENDMENT A-5: when the phrase-boundary profile is flat, cadence admission relaxes with vote-weight scaling instead of starving
+
+**As decided, in the words it was decided in:**
+
+```
+- **Cadence admission needs a stated FALLBACK for a FEATURELESS phrase-boundary profile: relax admission
+  and scale the vote weight down, rather than starve.** Cadences are looked for at phrase ends,
+  which this layer reads as a published L1.5 fact — the graded phrase-boundary profile. In music
+  with almost no surface punctuation that profile goes featureless and everything gated on it gets nothing
+  to work with. The required fallback admits cadences more freely there and weights their votes
+  down by the graded strength the profile already carries. *Why:* derived from the review's stress
+  simulation — in a punctuation-poor texture the fermatas, rests and structural barlines are
+  deliberately absent, so the profile loses its contour and every phrase-gated consumer starves, while the
+  graded profile still carries the relative signal a scaled admission needs. **The obligation is
+  cadence admission's and therefore this layer's**; the profile it reads is the primitive's
+  published output and the primitive's own contract is unchanged by it.
+```
+
+**In plain words:** Cadences are only looked for at phrase ends. In music with almost no surface punctuation the phrase-end signal goes flat, and everything that depends on it gets nothing to work with. The amendment requires a specified fallback: admit cadences more freely there but weight their votes down, using the graded strength that is already computed.
+
+---
+
+## D-496 — RATIFIED AMENDMENT A-6: whether the pairwise progression grammar lives inside the harmonic vocabulary or stays a separate store is decided at the recognition-consumer build, explicitly
+
+**As decided, in the words it was decided in:**
+
+```
+- **Whether the pairwise progression grammar folds INTO this vocabulary or stays a SECOND store is
+  a decision that is OWED, and its trigger is the recognition-consumer build.** Knowledge about
+  which chord may follow which is currently held in two places — a pairwise rule set inside the
+  function layer, and this catalog of longer patterns. The choice between one store and two by
+  declared design **is not to be settled by drift**: it is made, explicitly, when the component
+  that queries this catalog is built. *Why:* the consumer design already asserts that this
+  vocabulary extends the pairwise grammar while the single-store-or-two decision is unmade, which
+  is a total-unification question (#6) and exactly the kind of coexistence the review's own
+  criterion says must be **decided** rather than tolerated. Stating the trigger rather than the
+  answer is the point: no section can yet state a rule here, and what is owed is the choice.
+```
+
+**In plain words:** Knowledge about which chord may follow which is held in two places: a pairwise rule set inside the function layer, and a catalog of longer patterns. Whether these become one store or stay two is not to be settled by drift — the amendment requires the choice to be made, and made when the component that queries the catalog is built.
+
+---
+
+## D-497 — RATIFIED AMENDMENT A-7: the empirically-unvalidated mark must be APPLIED to the Jazz preset constants and the unvalidated idioms, with the validation path named
+
+**As decided, in the words it was decided in:**
+
+```
+**Every style constant and every idiom that no ground truth has calibrated CARRIES THE
+EMPIRICALLY-UNVALIDATED MARK, and the corpus that would validate it is named beside it (re-homed
+into this specification 2026-08-07 on the user's ruling).** The verifiability contract already
+defines that mark; this states where it must appear and what must accompany it. It applies to the
+**Jazz preset constants** and to the **idioms of the §6.7 taxonomy for which no gate-grade ground
+truth exists**, and the mark is not decorative: beside each marked value the record names **the
+validation path** — the corpus class that would establish it. **Maintenance is part of the rule:**
+a value keeps the mark until an established corpus measures it, and it loses the mark only in the
+act that records that measurement, never by a value being changed or a preset being renamed.
+*Why:* measured by the architecture review — calibration and validation are Baroque- and
+Bach-heavy, the jazz preset and the non-classical idioms have no gate-grade ground truth, and the
+mark defined in the specification was found absent from exactly those constants and presets. The
+gap is therefore between a stated rule and its application, not in the rule, which is why what is
+written here is the rule and its maintenance rather than a new criterion.
+```
+
+**In plain words:** The rule that says an unvalidated value must be marked as such already exists. The review found it was not actually applied to the constants only Baroque data has ever calibrated. The amendment requires the mark to be put on them, and the corpus that would validate each to be named alongside.
+
+---
+
+## D-498 — RATIFIED AMENDMENT A-9: a product stance is owed for output that is mostly uncertain, and for music outside the tonal vocabulary altogether
+
+**As decided, in the words it was decided in:**
+
+```
+- **A-9 (from F-13, F-15). Write the product stance for dense abstention and out-of-domain input** (what the user
+  sees; when the system says "this is outside my tonal vocabulary"). Product-level, small, prevents the honest-marks
+  design from becoming a UX failure.
+```
+
+**In plain words:** The design deliberately says 'uncertain' rather than guessing. Nobody has decided what the user should see when most of a passage comes back uncertain, or what the program should say about music that is not tonal at all — where the right answer is to state that plainly rather than to produce a confident reading. The amendment requires that stance to be written.
+
+---
+
+## D-500 — The user ratified CORPUS EXPANSION at the architecture review: gate-grade jazz ground truth, chromatic material of the Wagner class, and more non-Bach, non-Baroque annotation generally
+
+**As decided, in the words it was decided in:**
+
+```
+**★ THE SCOPE THE TIERS ABOVE IMPLEMENT IS ITSELF A USER RATIFICATION, AND IT IS STATED HERE RATHER THAN LEFT TO BE
+INFERRED FROM THE LISTS.** At the 2026-07-02 architecture review the user ratified **CORPUS EXPANSION**: gate-grade
+**jazz** ground truth, **chromatic material of the Wagner class**, and, in general, **more non-Bach, non-Baroque
+annotated music**. That is what Tier G and Tier J are for. *Why:* the review's own findings F-7 and F-8 — calibration
+and validation are Baroque- and Bach-heavy, with no gate-grade ground truth for the jazz preset or for the
+non-classical idioms, and a chromatic stress corpus is named there as the measurement bed for the capability
+amendments. **The entry rule above is NOT weakened by it, and the two are read together:** material arriving under
+this ratification widens what the analysis is MEASURED against, it enters at research tier, and promotion of any of
+it into a gate is the separate, deliberate re-baseline event that rule already describes.
+```
+
+**In plain words:** At the same review the user approved widening the material the program is measured against: real ground truth for jazz, hard chromatic repertoire, and in general more annotated music that is neither Bach nor Baroque.
+
+---
+
+## D-502 — The span a recognised named progression covers is called the progression-schema-span — the bare word 'sequence' is reserved for the harmonic sequence and 'progression' for the whole committed chord stream
+
+**As decided, in the words it was decided in:**
+
+```
+- **D6 — what to NAME the span a recognised progression covers — RESOLVED BY PREFIXING (user direction, 2026-07-02):
+  `progression-schema-span`.** The prefix answers the last collision standing: bare "schema" reads as *data* schema
+  to any coder, while **"progression schema" is already this component family's own name** (this design and the
+```
+
+**In plain words:** The stretch of music covered by a recognised named progression needed a name. It is called the progression-schema-span. The two shorter names were rejected because each already means something else here: a *sequence* is a progression repeated at rising or falling transpositions, and *the progression* is the entire analysed chord stream.
+
+---
+
+## D-503 — The idiom mixture is DISCOVERED from the score and merely SEEDED by the user's preset, in three forward-only phases
+
+**As decided, in the words it was decided in:**
+
+```
+The consumer holds a weight vector `w` with one weight per idiom. **`w` is DISCOVERED from the score, seeded by the
+user's preference (user-ratified model, 2026-07-02), in three phases — forward-only, no loop:**
+```
+
+**In plain words:** How much weight each harmonic idiom carries is worked out from the music itself. The user's chosen preset only supplies the starting point, and the estimate moves away from it as recognised evidence accumulates. It runs in three passes that only ever feed forward, so nothing loops.
+
+---
+
 ## D-507 — A catalog entry defined by its melodic or bass lines is recognised by its chord skeleton alone and carries a 'chords-only' mark, with its prior strength reduced
 
 **As decided, in the words it was decided in:**
@@ -500,6 +1696,43 @@ open mark is reported with the residual visible.
 ```
 
 **In plain words:** Some named patterns are defined by their melody and bass lines as much as by their chords. This consumer can only see the chords, so it recognises such a pattern by its chord skeleton, marks the recognition as chords-only, and trusts it less. The mark comes off, per entry, when the voice-leading work supplies the other half.
+
+---
+
+## D-508 — The catalog/grammar consistency test ships scoped to the MEASURED containment — an explicit known-gap list — and tightens to a clean assertion when the grammar amendment lands
+
+**As decided, in the words it was decided in:**
+
+```
+  silently un-license legitimate grammar). The **consistency test** ships scoped to the TRUE containment: every
+  pair is licensed OR on the explicit 6-entry known-gap list (any 7th failure = red); when the grammar amendment
+  lands, the list empties and the test tightens to the clean assert.
+```
+
+**In plain words:** The premise that every adjacent chord pair inside every catalog entry is licensed by the analysis's own grammar was checked and turned out to be false: a handful of entries exercise musically correct motions the grammar did not license. The test therefore ships allowing exactly those, and any further failure is an error. When the grammar is completed the allowance list empties and the test becomes the plain assertion it was meant to be.
+
+---
+
+## D-512 — Gate A becomes removable only once the unified promotion reproduces its carry byte-for-byte — that reproduction IS the retirement condition, not the winner-inertness that preceded it
+
+**As decided, in the words it was decided in:**
+
+```
+- **The retirement condition for the separate Gate A rule is BYTE-FOR-BYTE REPRODUCTION OF ITS
+  CARRY — not the winner-inertness that preceded it.** Once the flip is one promotion call with
+  present-first branching, the former "partner present" and "partner absent" rules are two branches
+  of the same promotion and the separate rule — its enum member, its guard, its name-map entry and
+  its dedicated fixtures — is redundant. It is removable **because** the primitive reproduces the
+  swap byte-for-byte on the present branch, which leaves winner AND carry byte-identical. *Why:*
+  the condition is quoted from the earlier ruling it discharges — the rule retires when the
+  promotion machinery unifies into one path producing one carry — and the design shows why the
+  earlier winner-only inertness was **not** enough: the naive removal was inert on the winner
+  across the whole corpus while changing the carry on a named subset of scores. That gap is exactly
+  why this document's evidence rule is inertness on the **full** output surface, winner AND
+  alternatives, and never the winner alone (#15).
+```
+
+**In plain words:** The rule could not simply be deleted: deleting it left the winner unchanged but changed the alternatives on a number of scores. It is removable once the shared promotion produces exactly the same alternatives, at which point exactly one rule name survives for the flip.
 
 ---
 
@@ -555,6 +1788,20 @@ the next free number (numbers are in flight in the current CC session).
 ```
 
 **In plain words:** If the evidence behind each inference is published — which pitch classes drove the key, which cadence confirmed the change, how far ahead the winner was, why the analyzer declined to decide — then answering 'show me why' is a matter of displaying what is already there, not of analysing anything again.
+
+---
+
+## D-535 — The checking stage's verdict: the real counted tables overturn no desk-simulation verdict, but margins moved in both directions and one margin expectation was plainly wrong
+
+**As decided, in the words it was decided in:**
+
+```
+Across the three passages, no desk-simulation verdict is overturned by the real counted values, but
+margins moved by 1.5–3.5 (log difference) in both directions, and one margin expectation was
+plainly wrong. Catching exactly this — before any code exists — is what this checking stage is for.
+```
+
+**In plain words:** The three passages whose paper outcomes depended most on placeholder numbers were recomputed with the real counted ones. Every verdict held. The margins did not: they moved appreciably in both directions, and one prediction about a margin was simply wrong.
 
 ---
 
@@ -663,6 +1910,219 @@ proceeding.
 
 ---
 
+## D-569 — Collecting, filtering and weighting are THREE separate responsibilities; the collection layer collects and annotates, and does nothing else
+
+**As decided, in the words it was decided in:**
+
+```
+## §1 — Intended role (the single responsibility) — REVISED per user review 2026-06-21
+**Collect — and only collect — every sounding note in a region, annotated, losslessly, by ONE path.** It is the
+boundary between the engraving model (Score/Segment/Note) and the analysis types. It answers exactly one factual
+question: "for region `[startTick, endTick)`, what notes sound?" — and returns the **note set**, each note
+annotated with the facts needed downstream (pitch, tpc/spelling, staff, voice, onset, offset, in-region
+duration, `isGrace`, `plays`, `visible`, staff-eligibility). It must **NOT** filter (drop grace/non-playing/
+invisible), **NOT** weight or aggregate into pitch-class evidence, **NOT** select a bass, and **NOT** make any
+harmonic/segmentation/key decision. Those are *separate* responsibilities (see §5):
+- **Collection** (this layer): the facts — every sounding note, annotated, preserved, one path.
+- **Filtering** (a distinct, explicit decision): which annotated notes are eligible for harmonic analysis.
+- **Weighting** (a distinct derived layer): the pitch-class evidence + bass, computed as a *view* over the
+  collected notes — never replacing them.
+```
+
+**In plain words:** Finding out which notes sound in a stretch of music, deciding which of them the harmonic analysis should consider, and turning them into weighted evidence are three different jobs. The first is a matter of fact, the second a decision, the third an interpretation. The collection layer answers only the factual question and hands the notes on annotated with everything a later step could need.
+
+---
+
+## D-576 — The corpus root-agreement measurement UNDERSTATES the real-world quality impact of a wrong key, because root and bass are largely key-independent
+
+**As decided, in the words it was decided in:**
+
+```
+A chord's root and its bass note are **largely
+key-independent**: both can be named correctly while the key label is wrong. So the root-agreement
+percentage barely moves when the tonality is misread — while the chord's **quality**, its **Roman
+numeral** and some of its **inversions** are all corrupted by that same misreading. The corpus
+measurement therefore reports **less damage than a reader or listener would see**
+```
+
+**In plain words:** A chord's root and its lowest note can both be named correctly while the key is wrong. So a measurement built on root agreement barely moves when the tonality is misread — but the quality of the chord, its Roman numeral and some of its inversions are all corrupted. The measurement therefore reports less damage than a listener or reader would see.
+
+---
+
+## D-584 — The perfect/imperfect cadence call is made on the BASS-DERIVED inversion; the soprano arrival degree is demoted to a soft optional nudge and the tool never attempts melody identification
+
+**As decided, in the words it was decided in:**
+
+```
+- **The perfect/imperfect cadence call is made on the BASS-DERIVED INVERSION; the soprano arrival
+  degree is a soft optional nudge and this layer never attempts melody identification (D-584).**
+  Standard theory decides a full close from the melody note, and this layer may not: the highest
+  sounding voice is often a doubling, and in some textures the lead sits below the top, so the
+  structural melody the criterion needs is not reliably recoverable. The top voice may nudge the
+  confidence in a chordal texture; it never decides. *Why:* the constraint that forces it is the
+  unavailability of the structural melody — orchestral doubling and a lead below the top are the two
+  cited counter-cases — and the bass-derived inversion criterion is chosen because the catalog
+```
+
+**In plain words:** Whether a cadence is a full close or a weaker one is decided from the bass and the chord's inversion, not from which note the melody lands on. Standard theory uses the melody note, but the program cannot reliably tell which line is the melody: the highest sounding voice is often a doubling, and in some music the lead sits below the top. The top voice may nudge the confidence in a chordal texture; it never decides.
+
+---
+
+## D-587 — A user-facing preset presents as a familiar genre-era label plus exemplars the user knows — never as an idiom name or an obscure exemplar; genre names are LABELS over mixtures, never axes
+
+**As decided, in the words it was decided in:**
+
+```
+- **A preset presents as a familiar genre-era label plus exemplars the user knows — never as an
+  idiom name and never as an obscure exemplar; genre names are LABELS over mixtures, never axes.**
+  A preset is named after a period and style a user recognises, anchored by musicians they know
+  ("60s pop — The Beatles"); it is never named after one of the five idioms, and never after an
+  exemplar most people have not heard of. *Why:* the second half is measured and is §6.7's own
+  result — harmony is not organised by genre, and Baroque, galant and Classical share one idiom —
+  so a genre name cannot be an axis without asserting a structure the data denies. The exemplar half
+  is the user's own reason: an exemplar nobody recognises conveys nothing.
+```
+
+**In plain words:** What a user picks is named after a period and style they recognise, anchored by musicians they know. It is never named after one of the five structural idioms, and never after an exemplar most people have not heard of. The genre name is only a label for a blend of idioms — genre is not one of the things the analysis is organised by.
+
+---
+
+## D-588 — Preset coverage beyond the analysed corpora is three tiers with NO bare guessing — measured, editorially declared with a stated theory rationale, or self-correcting by detection
+
+**As decided, in the words it was decided in:**
+
+```
+- **Coverage beyond the analysed music is three tiers with NO bare guessing — measured, editorially
+  declared with a stated theory rationale, or self-correcting by detection.** A style we hold
+  annotated music for gets its mixture measured from that music. A style we hold none for gets a
+  mixture written down deliberately with its theory reason stated, and validated when data arrives.
+  Either way the analysis moves away from the starting mixture as it reads the actual music. *Why:*
+  the third tier is what licenses the second — because a preset is only a cold-start prior the music
+  itself refines, a declared mixture that is somewhat wrong degrades gracefully; without the
+  self-correction the declared tier would be an unvalidated shipped value (#19).
+```
+
+**In plain words:** A style we hold annotated music for gets its blend measured from that music. A style we hold none for gets a blend written down deliberately, with the theory reason for it stated, and checked when data arrives. Either way the analysis moves away from the starting blend as it reads the actual score, so a badly chosen preset degrades gently rather than being wrong throughout.
+
+---
+
+## D-589 — Every idiom mixture is selectable and the discovered cloud is the EVIDENCE MAP, not the boundary — each chosen point carries its evidence status
+
+**As decided, in the words it was decided in:**
+
+```
+- **Every idiom mixture is selectable, and the discovered cloud is the EVIDENCE MAP rather than the
+  boundary — each chosen point carries its evidence status.** Named presets are cluster centroids
+  for progressive disclosure; a custom selector admits any point in the mixture space. Where the
+  chosen point sits relative to the music actually measured decides what may be claimed about it:
+  inside a discovered cluster it is validated, between clusters it is an interpolation, outside the
+  cloud it is still selectable but marked empirically unvalidated. *Why:* two standing rules
+  combined — no information loss (#12), since restricting the user to the discovered centroids would
+  discard every point between them, and the empirically-unvalidated mark, which lets a value outside
+  the measured range be offered without being presented as established (#19).
+```
+
+**In plain words:** A user may set any blend of the five idioms, not only the named ones. Where the chosen blend sits relative to the music we actually measured decides what may be claimed about it: inside a measured cluster it is validated, between clusters it is an interpolation, and outside everything measured it is still selectable but is marked as never having been checked against real music.
+
+---
+
+## D-590 — The score's own metadata is the PRIMARY home of that score's idiom mixture, and a user-set mixture is never silently overwritten by re-detection
+
+**As decided, in the words it was decided in:**
+
+```
+- **The music's own metadata is the PRIMARY home of that piece's idiom mixture, and a user-set
+  mixture is never silently overwritten by re-detection.** The mixture is stored in the score's own
+  user-defined properties, the mechanism MuseScore already saves beside title and composer, so it
+  travels with the file and a later analysis starts warm rather than cold. The stored value records
+  its provenance — auto-detected, with the analyzer version and date, or user-set: a user-set
+  mixture is never silently replaced, an auto-detected one may be refreshed, and an edit after
+  detection marks the stored mixture refreshable. *Why:* storing it with the music removes the need
+  for a separate registry for per-piece behaviour and turns re-analysis into a warm start; the
+  no-silent-overwrite half is the no-surprise rule. **Two things are recorded rather than assumed
+  away:** custom properties survive the native format but their MusicXML round-trip is only partial
+  and needs its own check before the feature relies on it; and the property layout is an
+  implementation decision at build time. **This sits against §13.1's rule that our data lives in
+  separate files inside the archive and the score file is never touched** — the two are not in
+  conflict on their own terms, since this uses MuseScore's existing property mechanism rather than
+  extending the file's own schema, but a build must reconcile them explicitly and neither record
+  does.
+```
+
+**In plain words:** A piece's blend of idioms is stored inside the piece's own file, using the score properties MuseScore already saves beside title and composer. So it travels with the file and a later analysis starts warm instead of cold. The stored value records whether a person set it or the program detected it: a person's setting is never quietly replaced, a detected one may be refreshed, and editing the score marks it as due for refresh.
+
+---
+
+## D-591 — The licence split for the style system: the ANCHORS are the shipped licence-constrained fitted parameters, and the mixture weights are free user configuration
+
+**As decided, in the words it was decided in:**
+
+```
+- **The licence split: the ANCHORS are the shipped licence-constrained fitted parameters, and the
+  mixture weights are free user configuration.** The constraint that a value which SHIPS may be
+  fitted only on freely-licensed music reaches the per-idiom anchors, not the mixture a user chooses
+  over them; a user's own mixture carries no constraint at all, and only the mixtures we ship as
+  named preset defaults must be derived from a licensed pool or editorially declared. *Why:* it
+  follows from what each half is — an anchor is a fitted parameter compiled into the product, so the
+  fitting-pool constraint reaches it, while a mixture weight the user selects is configuration
+  derived from no corpus at all. This REFINES the fitting-pool constraint by saying which half of
+  the style system it reaches; it does not weaken it.
+```
+
+**In plain words:** The licensing rule that limits which music our shipped numbers may be fitted on applies to the per-idiom reference values, not to the blend a user chooses over them. A user's own blend carries no constraint at all; only the blends we ship as named defaults must come from freely-licensed music or be declared editorially.
+
+---
+
+## D-598 — The style taxonomy and the per-style weights are ONE data-derived object; VALIDATION is a separate third thing that needs annotated scores and is not delivered by the clustering
+
+**As decided, in the words it was decided in:**
+
+```
+- **The taxonomy and the per-style weights are ONE data-derived object; VALIDATION is a separate
+  third thing the clustering does not deliver.** Discovering which idioms exist and estimating how
+  strongly each one weighs are not two derivations: the clusters and their feature distributions
+  are the same object read two ways. Measuring whether the analysis actually improves when it uses
+  an idiom is a THIRD job, and it needs annotated music — notes together with a published human
+  analysis — which the clustering does not supply. *Why:* it follows from what a cluster is, so no
+  second derivation produces the weights; and the separation is forced by what validation measures,
+  the analysis's USE of an idiom, which cannot be observed without a human analysis to compare
+  against.
+```
+
+**In plain words:** Discovering which styles exist and measuring how strongly each one weighs are not two jobs — they are the clusters and their distributions, one result. Checking whether the analysis actually gets better when it uses a style is a third, separate job, and it needs music with both the notes and a published human analysis, which the clustering does not supply.
+
+---
+
+## D-601 — Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted constant CAN do so must itself pass a premise ledger and a desk simulation
+
+**As decided, in the words it was decided in:**
+
+```
+The `conversion`
+element of a frame is where two numbers on different scales are made comparable — one bounded, one an unbounded
+sum — and fitting the constants that perform it is **hard-gated**: the premise *"a fitted constant CAN make these
+scales commensurable"* is itself a load-bearing causal claim and goes through the #17 ledger and desk simulation
+BEFORE the fit, not as part of it.
+```
+
+**In plain words:** Two confidence numbers in the program are on different scales — one runs from zero to one, the other is an unbounded total — and a comparison between them treats them as the same kind of quantity. Fitting a conversion factor is not allowed to be the first move: the assumption that any single factor could make the two comparable has to be written down as a premise and traced by hand first, because the one attempt at such a calibration did not behave monotonically.
+
+---
+
+## D-613 — Ground truth for IMPLIED polyphony is confirmed ABSENT — do not re-search it
+
+**As decided, in the words it was decided in:**
+
+```
+**Negatives (do not re-search):** implied-polyphony GT over monophonic instruments — CONFIRMED ABSENT
+(VoiSe 2005 and Gray & Bunescu's perceptual-stream pop corpus were never released; VISA excerpt sets not
+public; Chew&Wu/Guiomard-Kagan reused notated voices).
+```
+
+**In plain words:** For music where several lines are implied by a single melodic instrument, no published collection of correct line assignments exists — every candidate was either never released or simply reuses the voices the engraver wrote. The absence is the finding, and the record says so rather than leaving the search open.
+
+---
+
 ## D-614 — Every real difficulty-grade label source is research-only or proprietary at origin — a commercial grading feature needs a licence path or its own labels
 
 **As decided, in the words it was decided in:**
@@ -703,6 +2163,28 @@ byte-identity plus an explicit unification ledger, so the resolution is evidence
 
 ---
 
+## D-625 — Spelling presence is tested with the validity predicate, never with a non-negative test — the flat side of the line of fifths is negative and a non-negative guard silently drops it
+
+**As decided, in the words it was decided in:**
+
+```
+- **Spelling presence is tested with the VALIDITY PREDICATE, never with a non-negative test.** The
+  shared line-of-fifths primitive the spelling-pin above reads — the one interpreter, not a
+  per-layer copy — represents a spelling as a signed position on the line of fifths, and its
+  presence test is `tpcIsValid()`, **never** `tpc >= 0` and never `tpc != -1`. *Why:* established
+  at the source rather than asserted — the flat side of the line of fifths is **negative** (down to
+  the triple-flat spellings), so a non-negative guard silently discards every heavily flattened
+  spelling; and the value a `!= -1` guard treats as absent is itself a **legitimate** spelling. The
+  honest bound is recorded with the rule: the validity test cannot tell a real flattest spelling
+  from a default-initialised field, and what actually keeps an absent value out is the build-path
+  invariant, not this predicate. §5.14, which specifies the enharmonic disambiguation this
+  primitive serves, points here and does not restate it (#6).
+```
+
+**In plain words:** How a note is spelt is stored as a position on the line of fifths, and that position is negative for the flattest spellings. Code that checks whether a spelling is present by testing for a non-negative number therefore throws away every heavily-flattened spelling — including one that happens to share its number with the field's empty value. The validity test is the correct check.
+
+---
+
 ## D-660 — A research-tied name is not renamed but is governed by a two-tier rule, and the terminology cleanup runs in a fixed order with no tree-wide rename
 
 **As decided, in the words it was decided in:**
@@ -723,5 +2205,19 @@ byte-identity plus an explicit unification ledger, so the resolution is evidence
 ```
 
 **In plain words:** A term borrowed from the published research that collides with this project's vocabulary is not renamed. Instead: where the research is actually discussed, the collision is explained and our own synonym stated; and every later use of the borrowed term outside our vocabulary carries a short inline note pointing at the research, so an unannotated repeat use is a flag. The wider terminology cleanup runs in a fixed order — the derived inventory first, then per-word batches the user rules, governing surfaces first — and there is no tree-wide rename.
+
+---
+
+## D-665 — What a voice/stream label set actually MEASURES is said at intake — the labels obtainable today come from engraved notation, not from a listener's judgment
+
+**As decided, in the words it was decided in:**
+
+```
+4. **What a voice/stream label set actually MEASURES is said at intake** (user-ruled 2026-08-09) — the
+   voice labels obtainable today are derived from **engraved notation**, not from a listener's
+   judgment about heard lines, and the intake record says so in those terms.
+```
+
+**In plain words:** When a collection of per-note voice labels is taken in, the record states where those labels came from: they are read off the way the music was written down, not off what a listener hears as separate lines. For keyboard music the two are close enough that the field works with the engraved version, and that acceptance is recorded too rather than left unsaid.
 
 ---

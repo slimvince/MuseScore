@@ -6031,16 +6031,28 @@ def criterion_block(subject: str) -> tuple[str, dict]:
     )
 
 
+# ── the fields the cross-reference rule searches ───────────────────────────────────────────────
+# Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_09_27_l2_leak_list_sitting.md`: for every
+# subject that is NOT FROZEN the rule searches only the fields member (5) renders besides the
+# identifier — `title`, `verbatim`, `plain`.  A FROZEN subject keeps the five-field search its pack
+# was built under, so that its manifest record — the record of what its session was given — does not
+# move; the same scoping as limb B's `extras_leaks` in `build_subject` (D-657).
+XREF_FIELDS_FROZEN = ("title", "verbatim", "plain", "rationale", "status_source")
+XREF_FIELDS = ("title", "verbatim", "plain")
+
+
 def cross_reference_additions(authored: set[str], docs: set[str],
-                              design_intent: list[dict], backbone: dict) -> list[dict]:
-    """Every DESIGN-INTENT entry that quotes or cross-references a withheld identity or document."""
+                              design_intent: list[dict], backbone: dict,
+                              searched: tuple[str, ...]) -> list[dict]:
+    """Every DESIGN-INTENT entry that quotes or cross-references a withheld identity or document,
+    in the fields `searched`."""
     adds = []
     for e in design_intent:
         eid = e["id"]
         if eid in authored:
             continue
         bb = backbone.get(eid, {})
-        fields = haystack(e, bb, ("title", "verbatim", "plain", "rationale", "status_source"))
+        fields = haystack(e, bb, searched)
         hits = []
         for field, value in fields.items():
             for other in sorted(authored):
@@ -6373,7 +6385,8 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
     docs = set(authored.get("withheld_documents", {}))
 
     # ── the derived cross-reference additions ────────────────────────────────────────────────
-    adds = cross_reference_additions(authored_ids, docs, design_intent, backbone)
+    adds = cross_reference_additions(authored_ids, docs, design_intent, backbone,
+                                     XREF_FIELDS_FROZEN if subject in FROZEN else XREF_FIELDS)
     withheld_ids = authored_ids | {a["id"] for a in adds}
 
     # ── member (5): the cut, then the leak check ─────────────────────────────────────────────
@@ -6547,7 +6560,16 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
                     "CROSS-REFERENCES a withheld identity or names a withheld document, added to "
                     "the withheld set by the derivation rather than by hand. The fields searched "
                     "include `rationale` and `status_source`, which the pack does not render — a "
-                    "cross-reference in either is still a route to the withheld material."),
+                    "cross-reference in either is still a route to the withheld material.")
+                if subject in FROZEN else (
+                    "Entries of the DESIGN-INTENT class whose own text QUOTES OR "
+                    "CROSS-REFERENCES a withheld identity or names a withheld document, added to "
+                    "the withheld set by the derivation rather than by hand. The fields searched "
+                    "are `title`, `verbatim` and `plain` — the fields member (5) renders besides "
+                    "the identifier (Ruling 1 of "
+                    "`cowork_rulings_2026_09_27_l2_leak_list_sitting.md`); `rationale` and "
+                    "`status_source`, which the pack does not render, are not searched for this "
+                    "subject."),
                 "★_the_bound": (
                     "ONE PASS, from the AUTHORED identities only. It is NOT transitive: an entry "
                     "that cross-references one of these additions rather than an authored "
@@ -6673,6 +6695,9 @@ def build() -> tuple[dict, dict[str, dict[str, str]], list[dict]]:
             "Ruling 1 of `cowork_rulings_2026_09_21_l2_extracts_member_cutting_sitting.md` — the "
             "`l2` extracts member cut per file by the text of each cut section's heading (limb A), "
             "with a derived leak check over the extras beside it (limb B).",
+            "Ruling 1 of `cowork_rulings_2026_09_27_l2_leak_list_sitting.md` — the cross-reference "
+            "rule searches only the fields member (5) renders, for every subject that is not "
+            "FROZEN.",
         ],
         "★_it_boots_no_session": (
             "Rendering the pack is not opening it. Nothing here derives a specification "

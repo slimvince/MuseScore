@@ -526,7 +526,33 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # tool can identify them** — a declared state and not a STOP, unchanged by this act. **NO COUNT OF
 # THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431): the membership is DERIVED from the entries'
 # own text at the base commit.
-BASE_COMMIT = "a84e2375301973b48cb2a0cc5a0fb13e6ec41c24"
+# ★ RE-AIMED 2026-09-27 by `cc_instruction_l2_brief_landing_2026_09_27.md` Task 5, at its 5(b), and
+# ALL FIVE authored inputs moved together, `PREVIOUS_AIMINGS` being appended to rather than replaced
+# (#12). The aiming it replaces is the L2-pack-build second half's, which is ALREADY the last row of
+# `PREVIOUS_AIMINGS` — that batch recorded its own aiming in its own act — so it is not appended a
+# second time, and this batch's aiming is appended instead. `BASE_COMMIT` was
+# `a84e2375301973b48cb2a0cc5a0fb13e6ec41c24` and is now
+# `9378e95a7d620fca6ebd28119d4d1bb6483f9d66`: this batch's Task 0 commit, the interim carriers. Task 0
+# commits no `STATUS.md`, so that commit's `STATUS.md` object is the one both refs carried when this
+# batch opened (`84ab3a5c404bf9953a568df7c0c57022dba06f8f`, read at the two ref FILES with the file
+# tools, D-253) — the same blob at both commits, established at `git ls-tree` of each — and it carries
+# the second-half batch's entry at the head of the dated entries.
+#
+# ★★ THE THEN-PREVIOUS BATCH IS THE L2-PACK-BUILD SECOND HALF. `PREVIOUS_BATCH_DISPATCH` was
+# `cc_instruction_decision_rules_consolidation_2026_09_21.md` and now names
+# `cc_instruction_l2_pack_build_second_half_2026_09_27.md`, whose entry names it. That batch's CLOSE
+# (`cc_instruction_l2_pack_build_close_2026_09_27.md`) wrote no `STATUS.md` entry of its own — it
+# corrected the second-half entry in place — so it selects nothing and is not named; the same shape
+# the aiming above records for the consolidation batch's close.
+#
+# **THE DECLARED PREFIX ADJUSTMENT IS EXPECTED TO FIRE**, that entry carrying the `Last updated: `
+# prefix at the base commit, which is why this batch's own entry was written into `STATUS.md` BEFORE
+# `--apply` ran. `ACT_DATE` and the executing dispatch's date AGREE here, both being 2026-09-27.
+# **The second writing's two nameless 2026-09-02 entries remain in `STATUS.md` and no aiming of this
+# tool can identify them** — a declared state and not a STOP, unchanged by this act. **NO COUNT OF
+# THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431): the membership is DERIVED from the entries'
+# own text at the base commit.
+BASE_COMMIT = "9378e95a7d620fca6ebd28119d4d1bb6483f9d66"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -536,7 +562,7 @@ BASE_COMMIT = "a84e2375301973b48cb2a0cc5a0fb13e6ec41c24"
 # 4's forward bound moves exactly these, in the act that writes this batch's own" until 2026-09-07,
 # correct while every aiming this tool had ever carried was an ordinary one; it is widened rather
 # than replaced, because the ordinary reading is still the one that governs an ordinary move — #12.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_decision_rules_consolidation_2026_09_21.md"
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_l2_pack_build_second_half_2026_09_27.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -548,9 +574,12 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_decision_rules_consolidation_2026_09_2
 # the move happens now, and the header says so.)* *(`ACT_DATE` read "2026-09-21" and `DISPATCH`
 # `cc_instruction_decision_rules_consolidation_2026_09_21.md` while that batch was the executing act;
 # both are re-stated here for `cc_instruction_l2_pack_build_second_half_2026_09_27.md`, dated
+# 2026-09-27, whose move ran on 2026-09-27, so the two dates agree.)* *(`ACT_DATE` read "2026-09-27"
+# and `DISPATCH` `cc_instruction_l2_pack_build_second_half_2026_09_27.md` while that batch was the
+# executing act; both are re-stated here for `cc_instruction_l2_brief_landing_2026_09_27.md`, dated
 # 2026-09-27, whose move ran on 2026-09-27, so the two dates agree.)*
 ACT_DATE = "2026-09-27"
-DISPATCH = "cc_instruction_l2_pack_build_second_half_2026_09_27.md"
+DISPATCH = "cc_instruction_l2_brief_landing_2026_09_27.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -595,8 +624,11 @@ DISPATCH = "cc_instruction_l2_pack_build_second_half_2026_09_27.md"
 # its 7(b) — inside its own Task 5, which that dispatch's §7 heading names in those words. It names
 # Task 10 while `cc_instruction_l2_pack_build_second_half_2026_09_27.md` is the executing act, that
 # dispatch ordering both halves of the close — this batch's own entry at its 12(a) and this move at
-# its 12(b) — inside its own Task 10, which that dispatch's §12 heading names in those words.)*
-TASK = "Task 10"
+# its 12(b) — inside its own Task 10, which that dispatch's §12 heading names in those words. It names
+# Task 5 while `cc_instruction_l2_brief_landing_2026_09_27.md` is the executing act, that dispatch
+# ordering both halves of the close — this batch's own entry at its 5(a) and this move at its 5(b) —
+# inside its own Task 5, which that dispatch's §7 heading names in those words.)*
+TASK = "Task 5"
 # ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
 #   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
 #                 moved in the same act that writes this batch's own entries.
@@ -984,6 +1016,10 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_l2_pack_build_second_half_2026_09_27.md, Task 10",
      "base_commit": "a84e2375301973b48cb2a0cc5a0fb13e6ec41c24",
      "the_then_previous_batch": "cc_instruction_decision_rules_consolidation_2026_09_21.md",
+     "the_kind_of_move": "ordinary"},
+    {"executing_act": "cc_instruction_l2_brief_landing_2026_09_27.md, Task 5",
+     "base_commit": "9378e95a7d620fca6ebd28119d4d1bb6483f9d66",
+     "the_then_previous_batch": "cc_instruction_l2_pack_build_second_half_2026_09_27.md",
      "the_kind_of_move": "ordinary"},
 ]
 

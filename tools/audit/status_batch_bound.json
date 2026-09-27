@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l2_pack_build_second_half_2026_09_27.md, Task 10",
+ "dispatch": "cc_instruction_l2_brief_landing_2026_09_27.md, Task 5",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -381,22 +381,28 @@
    "base_commit": "a84e2375301973b48cb2a0cc5a0fb13e6ec41c24",
    "the_then_previous_batch": "cc_instruction_decision_rules_consolidation_2026_09_21.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l2_brief_landing_2026_09_27.md, Task 5",
+   "base_commit": "9378e95a7d620fca6ebd28119d4d1bb6483f9d66",
+   "the_then_previous_batch": "cc_instruction_l2_pack_build_second_half_2026_09_27.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "a84e2375301973b48cb2a0cc5a0fb13e6ec41c24",
- "the_then_previous_batch": "cc_instruction_decision_rules_consolidation_2026_09_21.md",
+ "base_commit": "9378e95a7d620fca6ebd28119d4d1bb6483f9d66",
+ "the_then_previous_batch": "cc_instruction_l2_pack_build_second_half_2026_09_27.md",
  "the_kind_of_move": "ordinary",
  "entries_moved": 1,
- "characters_moved": 3545,
+ "characters_moved": 2707,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 3545,
-   "sha256": "ab7c466a7306eba17a6a165d063f1bd85d510e5db9fea83f62730af505a26bb7",
+   "characters": 2707,
+   "sha256": "5178765c14e8db18ed990c6c6084650aaea093bb50c5dc23b8131df26f7a8f43",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-09-21 (CC — `records/cc/instructions/cc_instruction_decision_rules_consolidation_2026_09_21.md`. **★★ THE DECISION-SURFACE RULES ARE CONSOLIDATE"
+   "opening": "*2026-09-27 (CC — `records/cc/instructions/cc_instruction_l2_pack_build_second_half_2026_09_27.md`. **★★ THE L2 SUBJECT IS ADDED TO THE DERIVATION BOO"
   }
  ],
  "reconciliation": {
