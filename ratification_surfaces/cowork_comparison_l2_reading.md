@@ -64,7 +64,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 21 | `ARCHITECTURE.md` passages — *2. Architectural Principles* | **DONE** (§6.21) |
 | 22 | `ARCHITECTURE.md` passages — *3. Directory Structure* | **DONE** (§6.22) |
 | 23 | `ARCHITECTURE.md` passages — *4. Existing Components — The Analysis Foundation* | **DONE** (§6.23) |
-| 24 | `ARCHITECTURE.md` passages — *5. Planned Analysis Extensions* | NOT YET TABULATED |
+| 24 | `ARCHITECTURE.md` passages — *5. Planned Analysis Extensions* | **DONE** (§6.24) |
 | 25 | `ARCHITECTURE.md` passages — *6. The Style System* | NOT YET TABULATED |
 | 26 | `ARCHITECTURE.md` passages — *7. The Knowledge Base* | NOT YET TABULATED |
 | 27 | `ARCHITECTURE.md` passages — *8. Planned Generation Components* | NOT YET TABULATED |
@@ -106,15 +106,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 23 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 24 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, and the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, and the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 23 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 24 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -136,9 +136,9 @@ to run, and was not opened. The fifth batch, under
 tabulated positions 17 to 22, each whole and in its own commit, and stopped at the member boundary after position 22 under that
 dispatch's capacity judgment (its Task 1(h)): position 23 was judged not finishable whole in the context that remained with the
 batch's close still to run, and was not opened. The sixth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md`, resumed at position 23 and tabulated it
-whole in one commit. **Positions 24 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 24**, `ARCHITECTURE.md` passages — *5. Planned Analysis Extensions*. §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md`, resumed at position 23 and tabulated
+positions 23 and 24, each whole and in its own commit. **Positions 25 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 25**, `ARCHITECTURE.md` passages — *6. The Style System*. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -38418,6 +38418,1952 @@ by which they would be validated.
   (entry 4) — 23.7, 23.198; L2-S12 (entry 5) — 23.61, 23.264; L2-S38 (entry 6) — 23.4, 23.20, 23.21, 23.22, 23.24,
   23.47, 23.48, 23.89, 23.90, 23.91, 23.92, 23.93, 23.184, 23.188. No row of this member names L2-S43.
 
+---
+
+### 6.24 — Member 24: `ARCHITECTURE.md`, passages — *5. Planned Analysis Extensions*
+
+> **Manifest for this member.** Position **24**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: *"## 5. Planned Analysis Extensions"*. **The forty-four published ranges**, each
+> as a locator only, by its first and last line as the artifact publishes them (**D-307**); where a boundary line is
+> too long to repeat, it is given by its opening and closing words:
+>
+> 1. lines 4270–4273, from *"**KeyModeAnalyzer calling code** (in `NotationComposingBridge`) fully populates all"* to
+>    *"time decay (0.7× per measure)."*;
+> 2. lines 4298–4314, from the line opening *"**★ ANNOTATION (2026-08-11, the"* and closing *"Ruling 63 of
+>    `records/cowork/rulings/cowork_rulings_2026_08_11_fourteenth_stop.md`,"* to *"priority anywhere."*;
+> 3. lines 4339–4348, from *"**Tried and closed on the declared mode's weight, and it is a SECOND removal at the same
+>    increment"* to *"declared mode's influence is only the small hint stated above, applied at every tick."*;
+> 4. lines 4350–4355, from *"The priority of evidence, which now has no PIECE-START exception, is (**corrected
+>    2026-08-11, the"* to *"insufficient-data fallback below is untouched by this correction and is not a piece-start
+>    rule**):"*;
+> 5. line 4357 — one line, *"**Priority of evidence:**"*;
+> 6. lines 4359–4364, from *"| Priority | Source | Description |"* to *"| Weakest | `KeyMode` enum | explicit
+>    major/minor tag (rare, only when user sets it) |"*;
+> 7. lines 4445–4450, from *"- Previous chord continuation bonus — V7 → I, ii7 → V7 get score bonuses"* to *"- Pattern
+>    completion — ii7 at previous position reinforces V7 at current position"*;
+> 8. lines 4462–4482, from *"- **No further PROGRESSION-LEVEL signal may be added to the single-step look-around
+>    structure; a"* to *"it (#6)."*;
+> 9. lines 4486–4488, from *"All 7 diatonic modes (Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian,"* to *"a
+>    frequency prior configurable via user preferences (mode tier weights)."*;
+> 10. lines 4506–4507, from *"Currently, non-diatonic chords show a borrowed source key label (e.g. "Bb min") when"*
+>     to *"an identifiable source is found. Explicit labeling of harmonic functions is backlogged:"*;
+> 11. lines 4509–4512, from *"**Classical chromatic vocabulary:**"* to *"- Common-tone diminished seventh"*;
+> 12. lines 4519–4521, from *"**Structural distinctions:**"* to *"- Chromatic mediants: major-third key
+>     relationships"*;
+> 13. lines 4573–4590, from *"1. remaining recurring texture fixes: broken-chord/pedal boundary handling,"* to *"into
+>     this decision. Both modes are needed; neither should remain undecided."*;
+> 14. lines 4628–4633, from *"When no root is present — common in jazz ensemble writing where the bass instrument"* to
+>     *"suppressing the bass root bonus when appropriate."*;
+> 15. line 4642 — one line, *"**Piano left-hand beat-1 pattern over-segmentation**"*;
+> 16. lines 4644–4649, from *"In piano music with a single bass note on beat 1 followed by a chord block on beats
+>     2–3"* to *"pitch-class sets for Jaccard boundary detection. Confirmed on Chopin BI16-1 measure 1."*;
+> 17. lines 4653–4655, from *"Score inspection across four corpora confirms a single root cause:"* to *"regardless of
+>     whether that note is actually the chord root."*;
+> 18. lines 4659–4666, from *"- Chopin mazurka: single bass note on beat 1 (root) isolated from chord block on beats"*
+>     to *"pattern as Corelli"*;
+> 19. lines 4668–4670, from *"All four cases share the same mechanism: the bass voice moves at a faster rate than
+>     the"* to *"overriding the correct root identification from the chord tones above."*;
+> 20. lines 4701–4709, from *"The remaining Chopin BI16-1 notation mismatch turned out to be separate from scoring:"*
+>     to *"`populateChordTrack()` instead of being left behind as visible rests."*;
+> 21. lines 4714–4730, from *"- **Dvorak op08n06: accepted ambiguity ceiling.** The chord-track output is musically"*
+>     to *"implode-bridge mode flag to distinguish harmonic summary from as-written output."*;
+> 22. lines 4741–4755, from *"- **A1 — shared same-chord merge semantics.** Batch and notation now collapse"* to
+>     *"regions do not emit key labels or Roman numerals while confident regions still do."*;
+> 23. lines 4778–4783, from *"**Key detection: relative major/minor ambiguity (confirmed 2026-04-13):**"* to *"music21
+>     ground truth — STATUS.md expectation corrected 2026-04-13)"*;
+> 24. lines 4794–4798, from *"**Modulation tracking — philosophy difference (confirmed 2026-04-13):**"* to
+>     *"accessible for general users. Not a bug — design choice."*;
+> 25. lines 4800–4804, from *"**Third-inversion dominant seventh ambiguity (confirmed 2026-04-13):**"* to
+>     *"passing-bass textures."*;
+> 26. lines 4806–4809, from *"**Roman numeral quality at minor tonic cadences (confirmed 2026-04-13):**"* to
+>     *"points."*;
+> 27. lines 4811–4815, from *"**Over-segmentation on dense piano texture (confirmed 2026-04-13):**"* to *"limitation —
+>     mixed texture orchestration would address this post-plateau."*;
+> 28. lines 4849–4854, from *"### §5.10 Tonicization Labels"* to *"annotation. Universal across all presets."*;
+> 29. lines 4858–4860, from *"Explicit It+6, Fr+6, Ger+6 labels in the annotate path Roman numeral layer."* to
+>     *"analyzer detects the specific augmented sixth interval pattern."*;
+> 30. lines 4873–4878, from *"**Status: Implemented (Session 18, master `fb9a27ce9a`).** **Superseded as a design by
+>     the"* to *"are left empty."*;
+> 31. lines 4880–4885, from *"When the lowest-pitched tone in a window is structurally lighter than the upper"* to
+>     *"resolves this."*;
+> 32. lines 4889–4891, from *"**Pass 1** runs normally on all voices. If the winning result's root is a chord"* to
+>     *"the chord (e.g. an inversion) and no pedal detection occurs."*;
+> 33. lines 4893–4896, from *"**Pass 2** is triggered only when the Pass 1 bass PC is NOT a chord tone of the"* to
+>     *"accepted:"*;
+> 34. lines 4924–4931, from *"- **Any extension (9th–13th) listed in the bitmask:** the corresponding interval"* to
+>     *"chord."*;
+> 35. lines 4941–4945, from *"When `isPedalPoint = true`, the annotate path (`addHarmonicAnnotationsToSelection`)"* to
+>     *"annotations are enabled."*;
+> 36. lines 5010–5012, from *"Because there is no Jazz path and no symbol-reading gate, order of annotation has no"*
+>     to *"change what any other path produces from the same notes."*;
+> 37. lines 5014–5015, from *"The `forceClassicalPath` flag that previously short-circuited Jazz boundary detection"*
+>     to *"has been removed (02e3733afb). The classical §4.1c Jaccard path is now the only path."*;
+> 38. lines 5017–5022, from *"#### Unknown-quality Roman numeral fallback"* to *"from the available tones."*;
+> 39. lines 5024–5028, from *"Both the annotation path (`addHarmonicAnnotationsToSelection`) and the chord-track"* to
+>     *"This ensures Roman numeral annotations are written even for bare-fifth regions."*;
+> 40. lines 5125–5129, from *"Sus4 templates (`ChordQuality::Suspended4`, intervals containing `5` = P4) were"* to
+>     *"not convincingly sus4."*;
+> 41. lines 5167–5171, from *"**Fix in `inferGapRegion`:** a `supportsCarry` lambda blocks carry when the gap has"* to
+>     *"because they confirm the chord quality through interval relationship."*;
+> 42. line 5226 — one line, *"Pass2b (bass-movement sub-boundary detection) is now iterative with
+>     `kMaxBassMovementPasses=8`:"*;
+> 43. lines 5245–5247, from *"Sharp-spelled chromatic notes (TPC ≥ 20, covering both MuseScore-internal and
+>     +1-offset"* to *"the sharp is not yet diatonic:"*;
+> 44. lines 5249–5256, from *"```cpp"* to *"```"*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside. **The lines between the ranges are outside the member** and are not tabulated, quoted or
+> listed. **Two lines inside the ranges are headings** — lines 4849 and 5017, each the first line of its range — and
+> under the first reading rule of §6 they are titles, neither tabulated nor listed. Outgoing statements: **130** (rows
+> 24.1 to 24.116; 11 of those rows carry two or more claims each and are split — the arithmetic is at the foot of this
+> member). Listed under *not a statement*: **40**. Counted at this member by this session; the counts appear here and
+> nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of §5's planned analysis
+> extensions: the legacy key analyzer's pitch weights; the key and mode inference section — the Ruling 63 annotation
+> on the ranking of evidence, the removed declared-mode promotion and the priority-of-evidence table; the
+> temporal-context specification's scoring modifications and its two standing rules; the modal extension; the backlog
+> of harmonic functions; the work planned before the confidence plateau; the known analyzer limitations and the dated
+> resolved-issue history beneath them; the tonicization and augmented-sixth labels; the two-pass pedal detector; the
+> order-of-annotation safety and the unknown-quality fallback; the suspended-fourth problem and the gap-carry fix; and
+> the bass-movement pass and the enharmonic normalization. **The placement readings are those of the earlier members,
+> applied unchanged**, member 23's code-line reading among them: a description of the implementation is QUARANTINED;
+> presentation code is QUARANTINED; a build state, a plan, a status, an estimate or a past measurement is HISTORICAL;
+> what the ground truth annotates and how the comparison tools grade go to *the measurement of the analysis*; a
+> rejected alternative named with its reasons is listed under *not a statement*; a label, a defense, a test record, a
+> definition of a term and the document's account of itself are listed under *not a statement*; and a later statement
+> of content an earlier row carries travels with the earliest row carrying it — the legacy key analyzer with Row 20.2,
+> the ranking of evidence with Row 1.29, the formatter with Row 20.3, the chord-staff writer with Row 20.5 and the
+> legacy pedal pass with Row 8.119.
+>
+> **Two readings are new at this member and are stated so they can be checked.** **(1) An item of a backlog or plan is
+> placed by what it names.** Where it names a chord class or a distinction a derived statement already carries — the
+> augmented sixths, the Neapolitan, the common-tone diminished seventh, tonicization against modulation — it is placed
+> by that content; where it names nothing a derived statement carries, it is HISTORICAL — a plan. **(2) The
+> resolved-issue history** — a subsection declaring itself, in a remark outside the ranges, a dated record retained
+> for provenance — is read by sentence like the other passages: a past observation, a count or a characterization
+> dated by its label is HISTORICAL, and a sentence describing in the present tense what the implementation does is
+> QUARANTINED as a description of the implementation anywhere else would be.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 24: **D-572**
+> at lines 4339–4348, which is range 3 whole, and **D-057** at line 4361, inside range 6. Rows 24.3 and 24.4 lie
+> inside D-572's home and are marked; the one item under *not a statement* inside it, its defense, carries no mark.
+> Row 24.6 is D-057's home line and is marked. No row opens inside a home and runs past it. A check at
+> `tools/audit/decisions/backbone_decisions.json` found three further decisions homed inside these ranges — D-464
+> (lines 4462–4471), D-470 (lines 4472–4481) and D-103 (lines 4893–4894) — none among the decisions ruled L2's own.
+> **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes lies in this member —
+> the two in `ARCHITECTURE.md`, D-002 and D-095, lie at lines 21–22 and 43–44.
+
+---
+
+**Row 24.1 — the legacy key analyzer's inputs: duration, beat weight, the bass and a decay per bar.**
+
+*Outgoing statement.* "**KeyModeAnalyzer calling code** (in `NotationComposingBridge`) fully populates all `PitchContext`
+fields: duration in quarter notes, beat-type weight from MuseScore's `BeatType` enum, bass identification via two-pass
+per-segment scan, and exponential time decay (0.7× per measure)." — §5.1 *Weight Population* (locator: lines 4270–4273).
+
+*Derived statements that speak to it.* L2-S20.
+
+*Current-text axis.* L2-S20: **DIFFERS** — as at Row 20.2.
+
+*The difference, in both texts' own words.* The outgoing pitches are weighted by *"duration in quarter notes, beat-type
+weight"* and an *"exponential time decay (0.7× per measure)"*; L2-S20's tonality terms *"do not read a global pitch-class
+profile of the span"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.2.
+
+---
+
+**Row 24.2 — the ranking of evidence binds every arm: sounding notes, temporal context, the signature, the declared tag
+weakest.**
+
+*Outgoing statement.* "That ranking — actual sounding notes strongest, then temporal context, then the notated key
+signature, the declared major/minor tag weakest — is ruled **CROSS-CUTTING**: it binds the production arm as it binds this
+one, and it is stated for the production arm at the joint estimator's own section, where the emission's evidential
+contract lives." — §5.2 *Key/Mode Inference*, the annotation of Ruling 63 (locator: lines 4302–4306). Two claims: (i) the
+sounding notes rank strongest, then temporal context, then the notated key signature, on every arm; (ii) the declared
+major/minor tag ranks weakest.
+
+*Derived statements that speak to it.* (i) L2-S17 — one §6.3 names as NEAREST to material met (entry 1) — and L2-S20.
+(ii) L2-S17.
+
+*Current-text axis.* (i) L2-S17: **AGREES** — as at Row 1.29(i). L2-S20: **AGREES** — as at Row 1.29(i). 
+(ii) L2-S17: **DIFFERS** — as at Row 1.29(ii).
+
+*The difference, in both texts' own words.* (ii) The outgoing ranks *"the declared major/minor tag weakest"*; L2-S17 says
+*"A tonality or mode tag the record file declares is not read at all."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S17, L2-S20). (ii) **UNPLACED**, with Row 1.29(ii).
+
+---
+
+**Row 24.3 — the hard declared-mode promotion removed outright, not kept gated; not to be retried.** *WITHHELD — D-572.*
+
+*Outgoing statement.* "**Tried and closed on the declared mode's weight, and it is a SECOND removal at the same increment
+— do not retry; the register carries it with its evidence: D-572 (the hard post-hoc "strong declared-mode prior"
+promotion, which moved the highest-ranked declared-compatible result to the front REGARDLESS of the candidate-score gap,
+REMOVED OUTRIGHT rather than kept in a gated form).**" — §5.2 *Key/Mode Inference* (locator: lines 4339–4342). Two claims:
+(i) the promotion that moved a declared-compatible result to the front whatever the candidate-score gap was removed
+outright, not kept in a gated form; (ii) it is not to be retried.
+
+*Derived statements that speak to it.* (i) L2-S17 — one §6.3 names as NEAREST to material met (entry 1). (ii) None.
+
+*Current-text axis.* (i) L2-S17: **AGREES** — *"It never constrains them."* (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S17). *(An AGREES on a WITHHELD row.)* (ii) **HISTORICAL** — a
+removal.
+
+---
+
+**Row 24.4 — what remains of the declared mode: a small hint at every tick.** *WITHHELD — D-572.*
+
+*Outgoing statement.* "What remains of the declared mode's influence is only the small hint stated above, applied at
+every tick." — §5.2 *Key/Mode Inference* (locator: lines 4347–4348).
+
+*Derived statements that speak to it.* L2-S17 — one §6.3 names as NEAREST to material met (entry 1).
+
+*Current-text axis.* L2-S17: **DIFFERS** — as at Row 1.29(ii).
+
+*The difference, in both texts' own words.* The outgoing keeps *"the small hint stated above, applied at every tick"*;
+L2-S17 says *"A tonality or mode tag the record file declares is not read at all."*
+
+*PROPOSED DISPOSITION.* **UNPLACED**, with Row 1.29(ii).
+
+---
+
+**Row 24.5 — the priority of evidence has no piece-start exception.**
+
+*Outgoing statement.* "The priority of evidence, which now has no PIECE-START exception, is" — §5.2 *Key/Mode Inference*
+(locator: line 4350).
+
+*Derived statements that speak to it.* L2-S17 — one §6.3 names as NEAREST to material met (entry 1).
+
+*Current-text axis.* L2-S17: **AGREES** — *"It never constrains them."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S17).
+
+---
+
+**Row 24.6 — the strongest evidence: the actual sounding notes.** *WITHHELD — D-057.*
+
+*Outgoing statement.* "| Strongest | Actual sounding notes | what is literally happening now |" — §5.2 *Key/Mode
+Inference*, the priority-of-evidence table (locator: line 4361).
+
+*Derived statements that speak to it.* L2-S17 — one §6.3 names as NEAREST to material met (entry 1) — and L2-S20.
+
+*Current-text axis.* L2-S17: **AGREES** — as at Row 1.29(i). L2-S20: **AGREES** — as at Row 1.29(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S17, L2-S20). *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 24.7 — strong evidence: the temporal context of the surrounding bars.**
+
+*Outgoing statement.* "| Strong | Temporal context | surrounding measures |" — §5.2 *Key/Mode Inference*, the
+priority-of-evidence table (locator: line 4362).
+
+*Derived statements that speak to it.* L2-S20.
+
+*Current-text axis.* L2-S20: **AGREES** — *"The tonality terms read the chords the reading proposes (degree,
+function, cadential progressions)"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S20).
+
+---
+
+**Row 24.8 — weak evidence: the notated key signature.**
+
+*Outgoing statement.* "| Weak | Notated key signature | `keySignatureFifths` (circle of fifths position) |" — §5.2
+*Key/Mode Inference*, the priority-of-evidence table (locator: line 4363).
+
+*Derived statements that speak to it.* L2-S17 — one §6.3 names as NEAREST to material met (entry 1).
+
+*Current-text axis.* L2-S17: **AGREES** — *"The written key signature enters as one term of the candidate score, a weak
+prior over the spans' tonalities."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S17).
+
+---
+
+**Row 24.9 — the weakest evidence: the declared major/minor tag.**
+
+*Outgoing statement.* "| Weakest | `KeyMode` enum | explicit major/minor tag (rare, only when user sets it) |" — §5.2
+*Key/Mode Inference*, the priority-of-evidence table (locator: line 4364).
+
+*Derived statements that speak to it.* L2-S17 — one §6.3 names as NEAREST to material met (entry 1).
+
+*Current-text axis.* L2-S17: **DIFFERS** — as at Row 1.29(ii).
+
+*The difference, in both texts' own words.* The outgoing admits the *"explicit major/minor tag"* as the weakest evidence;
+L2-S17 says *"A tonality or mode tag the record file declares is not read at all."*
+
+*PROPOSED DISPOSITION.* **UNPLACED**, with Row 1.29(ii).
+
+---
+
+**Row 24.10 — a bonus for the progression from the previous chord.**
+
+*Outgoing statement.* "Previous chord continuation bonus — V7 → I, ii7 → V7 get score bonuses" — §5.3 *TemporalContext —
+Full Specification*, how temporal context modifies the scoring (locator: line 4445).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **AGREES** — *"Progression: a term on the pair of adjacent chords read as degrees in their
+tonalities"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.84.
+
+---
+
+**Row 24.11 — a confident key reading strengthens the diatonic-root bonus.**
+
+*Outgoing statement.* "Key/mode confidence weighting — high-confidence key inference strengthens the diatonic root bonus
+beyond its flat default value" — §5.3 *TemporalContext — Full Specification*, how temporal context modifies the scoring
+(locator: lines 4446–4447).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.84.
+
+---
+
+**Row 24.12 — short events get higher thresholds for detecting extensions.**
+
+*Outgoing statement.* "Duration sensitivity — events shorter than half a beat get higher extension detection thresholds
+(passing chords flagged conservatively)" — §5.3 *TemporalContext — Full Specification*, how temporal context modifies the
+scoring (locator: lines 4448–4449).
+
+*Derived statements that speak to it.* L2-S25.
+
+*Current-text axis.* L2-S25: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing gives *"events shorter than half a beat"* *"higher extension
+detection thresholds"*; L2-S25 says *"no duration cut and no metric position makes a note a chord tone or an
+elaboration."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.84.
+
+---
+
+**Row 24.13 — a ii7 before reinforces a V7 now.**
+
+*Outgoing statement.* "Pattern completion — ii7 at previous position reinforces V7 at current position" — §5.3
+*TemporalContext — Full Specification*, how temporal context modifies the scoring (locator: line 4450).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **AGREES** — as at Row 24.10.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.84.
+
+---
+
+**Row 24.14 — no further progression-level signal enters the single-step look-around structure.**
+
+*Outgoing statement.* "**No further PROGRESSION-LEVEL signal may be added to the single-step look-around structure; a
+progression-level signal goes into the progression-level structure directly.**" — §5.3 *TemporalContext — Full
+Specification*, the two standing rules (locator: lines 4462–4463).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 24.16(i).
+
+---
+
+**Row 24.15 — the structure is a one-step look-around.**
+
+*Outgoing statement.* "The struct specified above is a one-step look-around — the immediate previous and next harmonic
+positions." — §5.3 *TemporalContext — Full Specification*, the two standing rules (locator: lines 4463–4464).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.84.
+
+---
+
+**Row 24.16 — four fields on the previous winner's competition were added there; their migration is planned.**
+
+*Outgoing statement.* "Four fields describing the previous winner's competition outcome were added to it that belong to
+the planned progression-level structure instead; **nothing further of that kind goes in**, and the migration of those four
+is planned **explicitly** when the progression analyzer's design begins, not left to happen." — §5.3 *TemporalContext —
+Full Specification*, the two standing rules (locator: lines 4465–4468). Three claims: (i) four fields describing the
+previous winner's competition outcome were added to the look-around structure; (ii) nothing further of that kind goes in;
+(iii) their migration is planned for when the progression analyzer's design begins.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.** (iii) **THE DERIVATION IS SILENT.**
+
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* which fields does the single-step temporal context carry at
+the current commit, which of them describe the previous winner's competition, and what reads them? (ii) **QUARANTINED**,
+travelling with Row 24.16(i). (iii) **HISTORICAL** — a plan.
+
+---
+
+**Row 24.17 — the extension fields are recorded by the pass that computes them; a consumer reads them.**
+
+*Outgoing statement.* "**The temporal-context EXTENSION FIELDS are recorded during the analysis pass that computes them; a
+consumer READS what was recorded and never re-runs the chord analysis to rebuild them.**" — §5.3 *TemporalContext — Full
+Specification*, the two standing rules (locator: lines 4472–4473).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the temporal-context extension fields filled once, during
+the per-region analysis, and does any consumer at the current commit run the chord analysis again to rebuild them?
+
+---
+
+**Row 24.18 — the fields are filled per analyzed region, with the region list as context.**
+
+*Outgoing statement.* "The fields are populated on each analyzed region during the pipeline's own per-region analysis,
+using the already-built region list as context; a consumer that needs them reads the field." — §5.3 *TemporalContext —
+Full Specification*, the two standing rules (locator: lines 4474–4475).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 24.17.
+
+---
+
+**Row 24.19 — the seven diatonic modes are rated.**
+
+*Outgoing statement.* "All 7 diatonic modes (Ionian, Dorian, Phrygian, Lydian, Mixolydian, Aeolian, Locrian) are now
+evaluated." — §5.4 *Modal Extension* (locator: lines 4486–4487).
+
+*Derived statements that speak to it.* L2-S6.
+
+*Current-text axis.* L2-S6: **DIFFERS** — as at Row 22.8.
+
+*The difference, in both texts' own words.* The outgoing rates *"All 7 diatonic modes"*; L2-S6 says *"A mode other than
+these is not admitted until the question is ruled (OQ-L2-2)."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.8.
+
+---
+
+**Row 24.20 — each mode's characteristic pitch and a frequency prior set in the preferences.**
+
+*Outgoing statement.* "Each mode has a characteristic pitch boost/penalty and a frequency prior configurable via user
+preferences (mode tier weights)." — §5.4 *Modal Extension* (locator: lines 4487–4488). Two claims: (i) each mode's
+characteristic pitch is boosted or penalized; (ii) each mode has a frequency prior set in the user's preferences, as tier
+weights.
+
+*Derived statements that speak to it.* (i) L2-S20. (ii) L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* (i) L2-S20: **DIFFERS** — as at Row 23.185. (ii) L2-S38: **DIFFERS** — as at Row 23.188.
+
+*The difference, in both texts' own words.* (i) The outgoing boosts or penalizes each mode's *"characteristic pitch"*;
+L2-S20's defense says a model that rates tonalities by the presence of those tones *"rates the true tonality lowest
+exactly when it is most strongly prolonged"*. (ii) The outgoing prior is *"configurable via user preferences"*; L2-S38
+says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 20.2. (ii) **QUARANTINED**, travelling with Row 23.188.
+
+---
+
+**Row 24.21 — a non-diatonic chord shows a borrowed source key when one is found.**
+
+*Outgoing statement.* "Currently, non-diatonic chords show a borrowed source key label (e.g. "Bb min") when an
+identifiable source is found." — §5.6 *Extended Harmonic Functions* (locator: lines 4506–4507).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.325.
+
+---
+
+**Row 24.22 — explicit labels for harmonic functions are backlogged.**
+
+*Outgoing statement.* "Explicit labeling of harmonic functions is backlogged:" — §5.6 *Extended Harmonic Functions*
+(locator: line 4507).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 24.23 — the augmented sixths, Italian, French and German, approaching V.**
+
+*Outgoing statement.* "Augmented sixth chords (Italian, French, German +6): approach chords to V" — §5.6 *Extended
+Harmonic Functions*, the classical chromatic vocabulary (locator: line 4510).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — *"the three augmented sixths"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S4).
+
+---
+
+**Row 24.24 — the Neapolitan, a major chord on the lowered second degree.**
+
+*Outgoing statement.* "Neapolitan chord (♭II, N6): flat-supertonic major" — §5.6 *Extended Harmonic Functions*, the
+classical chromatic vocabulary (locator: line 4511).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — *"the Neapolitan, as ♭II major"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S4).
+
+---
+
+**Row 24.25 — the common-tone diminished seventh.**
+
+*Outgoing statement.* "Common-tone diminished seventh" — §5.6 *Extended Harmonic Functions*, the classical chromatic
+vocabulary (locator: line 4512).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — *"the five seventh-chord qualities (dominant, major, minor, half-diminished, fully
+diminished) on every degree"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S4).
+
+---
+
+**Row 24.26 — tonicization against modulation: a brief applied dominant or a real change of key.**
+
+*Outgoing statement.* "Tonicization vs. modulation: brief secondary dominant vs. genuine key change" — §5.6 *Extended
+Harmonic Functions*, the structural distinctions (locator: line 4520).
+
+*Derived statements that speak to it.* L2-S18.
+
+*Current-text axis.* L2-S18: **AGREES** — *"Both readings are admitted, and both are carried as rivals with their mass."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S18).
+
+---
+
+**Row 24.27 — chromatic mediants: tonalities a major third apart.**
+
+*Outgoing statement.* "Chromatic mediants: major-third key relationships" — §5.6 *Extended Harmonic Functions*, the
+structural distinctions (locator: line 4521).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 24.28 — first on the plan: the recurring texture fixes.**
+
+*Outgoing statement.* "remaining recurring texture fixes: broken-chord/pedal boundary handling, Baroque passing-bass
+handling, and phrase-aware key look-ahead." — §5.7a *Confidence Interpretation*, the work before the plateau (locator:
+lines 4573–4574).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 24.29 — second: separate the tiers of the published quality reporting.**
+
+*Outgoing statement.* "evaluation tier separation: split published quality reporting into internal consistency,
+root-only/root+quality external agreement on full-texture corpora, and full harmonic correctness." — §5.7a *Confidence
+Interpretation*, the work before the plateau (locator: lines 4576–4578).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 24.30 — baselines stable before a held-out calibration means anything.**
+
+*Outgoing statement.* "Baselines must be stable before held-out calibration is meaningful." — §5.7a *Confidence
+Interpretation*, the work before the plateau (locator: lines 4578–4579).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis*.
+
+---
+
+**Row 24.31 — third: a normalized chord confidence, calibrated on held-out data.**
+
+*Outgoing statement.* "normalized chord confidence plus held-out calibration on stable baselines." — §5.7a *Confidence
+Interpretation*, the work before the plateau (locator: line 4580).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 24.32 — fourth: a second strategy for arpeggiated or single-line stretches.**
+
+*Outgoing statement.* "mixed-texture orchestration: add a lightweight second strategy for obviously arpeggiated or
+single-line spans." — §5.7a *Confidence Interpretation*, the work before the plateau (locator: lines 4582–4583).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 24.33 — the strategies compared by calibrated confidence; abstaining is a valid outcome.**
+
+*Outgoing statement.* "Compare calibrated confidence across strategies and treat abstention as a valid outcome." — §5.7a
+*Confidence Interpretation*, the work before the plateau (locator: lines 4585–4586). Two claims: (i) the strategies are
+compared by calibrated confidence; (ii) abstaining is a valid outcome.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S44.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S44: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing treats *"abstention as a valid outcome"*; L2-S44 says
+*"Whether a sounding span may be published with "no chord", as distinct from "no confident chord", is the charter's open
+DP-Q, and is not decided here."*
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a plan. (ii) **UNPLACED.** *What was read:* the outgoing makes abstaining a
+valid outcome of the analysis, and L2-S44 leaves whether a sounding span may carry no chord to the charter's open DP-Q; a
+disposition here would decide DP-Q.
+
+---
+
+**Row 24.34 — fifth: decide what a region's identity is keyed to.**
+
+*Outgoing statement.* "an explicit region-identity decision: preserve-all regions must be keyed to either `root +
+quality` (harmonic summary mode) or full sonority identity (as-written mode)." — §5.7a *Confidence Interpretation*, the
+work before the plateau (locator: lines 4587–4589).
+
+*Derived statements that speak to it.* L2-S14.
+
+*Current-text axis.* L2-S14: **DIFFERS** — as at Row 23.72.
+
+*The difference, in both texts' own words.* The outgoing identifies a region by *"either `root + quality`"* or *"full
+sonority identity"*; L2-S14 compares *"degree, quality, figure and applied target"*.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 24.35 — the octave-deduplication item folds into that decision.**
+
+*Outgoing statement.* "Fold the deferred chord-track octave-deduplication item into this decision." — §5.7a *Confidence
+Interpretation*, the work before the plateau (locator: lines 4589–4590).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 24.36 — both region identities are needed.**
+
+*Outgoing statement.* "Both modes are needed; neither should remain undecided." — §5.7a *Confidence Interpretation*, the
+work before the plateau (locator: line 4590).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.72.
+
+---
+**Row 24.37 — with no root sounding, the bass-root bonus misfires.**
+
+*Outgoing statement.* "When no root is present — common in jazz ensemble writing where the bass instrument provides the
+root — the analyzer's bass-note-root bonus misfires." — §5.8 *Known Analyzer Limitations*, *Rootless voicings* (locator:
+lines 4628–4629).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **AGREES** — *"A chord is admissible over a span whose sounding set lacks its root"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.41.
+
+---
+
+**Row 24.38 — the lowest sounding note is wrongly made the root.**
+
+*Outgoing statement.* "The lowest sounding note gets promoted to root status incorrectly." — §5.8 *Known Analyzer
+Limitations*, *Rootless voicings* (locator: lines 4629–4630).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.41.
+
+---
+
+**Row 24.39 — reading a rootless chord needs to know the bass instrument supplies the root.**
+
+*Outgoing statement.* "Correct handling requires knowing that a bass instrument is providing the root, which is context
+the current analyzer does not have." — §5.8 *Known Analyzer Limitations*, *Rootless voicings* (locator: lines 4630–4632).
+Two claims: (i) reading such a chord correctly requires knowing that a bass instrument supplies the root; (ii) the current
+analyzer does not have that knowledge.
+
+*Derived statements that speak to it.* (i) L2-S10. (ii) None.
+
+*Current-text axis.* (i) L2-S10: **DIFFERS**. (ii) **THE DERIVATION IS SILENT.**
+
+*The difference, in both texts' own words.* (i) The outgoing says *"Correct handling requires knowing that a bass
+instrument is providing the root"*; L2-S10 says *"A chord is admissible over a span whose sounding set lacks its root"*,
+with no such condition.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED.** *What was read:* the outgoing makes the role of an instrument in the ensemble a
+condition of reading a rootless chord; L2-S10 admits such a chord without it, and neither text names a layer that
+publishes which instrument supplies a root, so a disposition would decide whether L2 needs that fact.
+(ii) **QUARANTINED**, travelling with Row 23.41.
+
+---
+
+**Row 24.40 — planned: the temporal context to carry ensemble awareness.**
+
+*Outgoing statement.* "Planned resolution: the `TemporalContext` struct will carry ensemble awareness, suppressing the
+bass root bonus when appropriate." — §5.8 *Known Analyzer Limitations*, *Rootless voicings* (locator: lines 4632–4633).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 24.41 — a lone bass on the first beat and a chord block after it trip the overlap boundary detector.**
+
+*Outgoing statement.* "In piano music with a single bass note on beat 1 followed by a chord block on beats 2–3 (mazurka,
+waltz, and march accompaniment patterns), the Jaccard boundary detector fires between beat 1 `{bass pc}` and beats 2–3
+`{chord pcs}` because these are completely different pitch-class sets." — §5.8 *Known Analyzer Limitations*, *Piano
+left-hand beat-1 pattern over-segmentation* (locator: lines 4644–4647).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 23.64.
+
+*The difference, in both texts' own words.* The outgoing boundary is placed by *"the Jaccard boundary detector"* because
+two beats hold *"completely different pitch-class sets"*; L2-S11 says where the boundaries fall *"is decided together with
+the tonality, the chord and the assignments, in the one decision"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.64.
+
+---
+
+**Row 24.42 — under a pedal marking the three beats should form one set.**
+
+*Outgoing statement.* "Under a pedal marking, all three beats should accumulate to one pitch-class set." — §5.8 *Known
+Analyzer Limitations*, *Piano left-hand beat-1 pattern over-segmentation* (locator: lines 4647–4648).
+
+*Derived statements that speak to it.* L2-S47.
+
+*Current-text axis.* L2-S47: **AGREES** — *"a consumer that wants the pedal-extended sounding set builds it from the slices
+and the span in one step and decides what it means"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S47).
+
+---
+
+**Row 24.43 — the fix required: pedal-sustained notes in the per-beat sets.**
+
+*Outgoing statement.* "Fix required: include pedal-sustained notes when computing per-beat pitch-class sets for Jaccard
+boundary detection." — §5.8 *Known Analyzer Limitations*, *Piano left-hand beat-1 pattern over-segmentation* (locator:
+lines 4648–4649).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 24.44 — confirmed on the Chopin case.**
+
+*Outgoing statement.* "Confirmed on Chopin BI16-1 measure 1." — §5.8 *Known Analyzer Limitations*, *Piano left-hand
+beat-1 pattern over-segmentation* (locator: line 4649).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past observation.
+
+---
+
+**Row 24.45 — the single cause found: the bass-root bonus fired on every lowest note.**
+
+*Outgoing statement.* "Score inspection across four corpora confirms a single root cause: `bassNoteRootBonus` fires
+unconditionally on the lowest sounding note, regardless of whether that note is actually the chord root." — §5.8 *Known
+Analyzer Limitations*, *bassNoteRootBonus miscalibration* (locator: lines 4653–4655).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past characterization.
+
+---
+
+**Row 24.46 — the mazurka pattern.**
+
+*Outgoing statement.* "Chopin mazurka: single bass note on beat 1 (root) isolated from chord block on beats 2-3 — bass
+correctly identifies root but creates spurious boundary vs chord beats" — §5.8 *Known Analyzer Limitations*,
+*bassNoteRootBonus miscalibration*, the confirmed failure patterns (locator: lines 4659–4660).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past observation.
+
+---
+
+**Row 24.47 — the arpeggiated left hand.**
+
+*Outgoing statement.* "Mozart sonata: arpeggiated left hand (C→E→G) — each successive lowest note promoted to root,
+producing Em / Dm7 / Bdim instead of C" — §5.8 *Known Analyzer Limitations*, *bassNoteRootBonus miscalibration*, the
+confirmed failure patterns (locator: lines 4661–4662).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past observation.
+
+---
+
+**Row 24.48 — the walking bass.**
+
+*Outgoing statement.* "Corelli trio sonata: walking/stepping bass line — each bass step promoted to root, producing one
+chord per bass note instead of recognizing the underlying harmony" — §5.8 *Known Analyzer Limitations*,
+*bassNoteRootBonus miscalibration*, the confirmed failure patterns (locator: lines 4663–4664).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past observation.
+
+---
+
+**Row 24.49 — the cello in inversions and steps.**
+
+*Outgoing statement.* "Beethoven string quartet: cello moving in inversions and stepwise motion — same pattern as Corelli"
+— §5.8 *Known Analyzer Limitations*, *bassNoteRootBonus miscalibration*, the confirmed failure patterns (locator: lines
+4665–4666).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past observation.
+
+---
+
+**Row 24.50 — the shared mechanism: a bass moving faster than the harmony.**
+
+*Outgoing statement.* "All four cases share the same mechanism: the bass voice moves at a faster rate than the harmonic
+rhythm, and each bass note independently receives `bassNoteRootBonus`, overriding the correct root identification from
+the chord tones above." — §5.8 *Known Analyzer Limitations*, *bassNoteRootBonus miscalibration* (locator: lines
+4668–4670).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past characterization.
+
+---
+
+**Row 24.51 — the remaining Chopin mismatch lay outside the scoring: one path did not merge.**
+
+*Outgoing statement.* "The remaining Chopin BI16-1 notation mismatch turned out to be separate from scoring: the batch
+path already collapsed adjacent same-root/same-quality regions, but `analyzeHarmonicRhythm(..., PreserveAllChanges)` did
+not." — §5.8 *Known Analyzer Limitations*, *Implemented fix* (locator: lines
+4701–4703).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past finding.
+
+---
+
+**Row 24.52 — the notation path merges repeated slices of the same chord into one region.**
+
+*Outgoing statement.* "The notation bridge now uses the same collapse rule, so repeated slices that analyze to the same
+chord merge into one region even in preserve-all mode." — §5.8 *Known Analyzer Limitations*, *bassNoteRootBonus
+miscalibration*, after the implemented fix (locator: lines 4703–4705).
+
+*Derived statements that speak to it.* L2-S14.
+
+*Current-text axis.* L2-S14: **DIFFERS** — as at Row 23.73.
+
+*The difference, in both texts' own words.* The outgoing merges slices *"that analyze to the same chord"* by the collapse
+rule of adjacent *"same-root/same-quality regions"*; L2-S14 says a change of figure alone *"is a change of chord and may be
+a boundary"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.72.
+
+---
+
+**Row 24.53 — sparse spans inside a bar absorbed into the neighboring written regions.**
+
+*Outgoing statement.* "sparse unanalysable spans within a measure are now absorbed into neighboring written chord regions
+in `populateChordTrack()` instead of being left behind as visible rests." — §5.8 *Known Analyzer Limitations*, *Implemented
+fix* (locator: lines 4707–4709).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.317.
+
+---
+
+**Row 24.54 — the Dvořák movement: an accepted ceiling of ambiguity.**
+
+*Outgoing statement.* "**Dvorak op08n06: accepted ambiguity ceiling.** The chord-track output is musically plausible and
+the disagreement with DCML reflects genuine harmonic ambiguity in chromatic Romantic writing." — §5.8 *Known Analyzer
+Limitations*, the three remaining categories (locator: lines 4714–4716).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past characterization.
+
+---
+
+**Row 24.55 — no further scoring change planned for that movement.**
+
+*Outgoing statement.* "No follow-up scoring change is planned for this movement." — §5.8 *Known Analyzer Limitations*,
+the three remaining categories (locator: line 4716).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 24.56 — walking-bass passing tones still pull toward suspended or slash readings.**
+
+*Outgoing statement.* "**Corelli op01n08d: deferred Baroque passing-bass limitation.** Walking bass passing tones can still
+pull the output toward sus/slash-chord spellings rather than the underlying triadic harmony." — §5.8 *Known Analyzer
+Limitations*, the three remaining categories (locator: lines 4717–4719).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do walking-bass passing tones pull the legacy vertical scorer's
+winner toward suspended or slash-chord readings at the current commit, and does any production path run that scorer?
+
+---
+
+**Row 24.57 — the comparison tools grade chord identity by root and quality, or by root alone.**
+
+*Outgoing statement.* "**Schumann Kinderszenen: not a comparison artifact.** `tools/compare_analyses.py` classifies chord
+identity from root pitch class and quality, and the direct DCML runners compare root pitch class only." — §5.8 *Known
+Analyzer Limitations*, the three remaining categories (locator: lines 4721–4723).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis*.
+
+---
+
+**Row 24.58 — slash-chord spellings match when the root agrees, so the Schumann baseline stands.**
+
+*Outgoing statement.* "Slash-chord spellings such as `D7/C` already match inversional DCML spellings when the underlying
+root pitch class agrees, so the 58.7% Schumann baseline is accepted as genuine rather than a notation-mapping error." —
+§5.8 *Known Analyzer Limitations*, the three remaining categories (locator: lines 4723–4725). Two claims: (i) a slash-chord
+spelling matches the annotation's inversional spelling when the root agrees; (ii) the Schumann baseline was accepted as
+genuine.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis*, travelling with Row 24.57.
+(ii) **HISTORICAL** — a past measurement.
+
+---
+
+**Row 24.59 — the chord staff folds octave duplicates to one pitch class.**
+
+*Outgoing statement.* "**Chord track octave deduplication: deferred.** When imploding to chord track, octave duplicates
+are currently collapsed to a single pitch class." — §5.8 *Known Analyzer Limitations*, the three remaining categories
+(locator: lines 4726–4727).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.5.
+
+---
+
+**Row 24.60 — right for a harmonic summary, wrong for an as-written chord staff.**
+
+*Outgoing statement.* "That is correct for harmonic-summary analysis but incorrect for "as written" chord-track
+generation, where the original voicing should be preserved." — §5.8 *Known Analyzer Limitations*, the three remaining
+categories (locator: lines 4727–4729).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.5.
+
+---
+
+**Row 24.61 — the fix would need a separate flag on the implode bridge.**
+
+*Outgoing statement.* "Fixing this requires a separate implode-bridge mode flag to distinguish harmonic summary from
+as-written output." — §5.8 *Known Analyzer Limitations*, the three remaining categories (locator: lines 4729–4730).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 24.62 — the shared merge: same-root, same-quality slices united and their bass recomputed.**
+
+*Outgoing statement.* "**A1 — shared same-chord merge semantics.** Batch and notation now collapse adjacent
+same-root/same-quality slices by unioning tone sets and recomputing the bass from the merged tones." — §5.8, *Background —
+resolved-issue history* (locator: lines 4741–4743).
+
+*Derived statements that speak to it.* L2-S14.
+
+*Current-text axis.* L2-S14: **DIFFERS** — as at Row 23.73.
+
+*The difference, in both texts' own words.* The outgoing collapses *"adjacent same-root/same-quality slices"*; L2-S14 says
+a change of figure alone *"is a change of chord and may be a boundary"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.72.
+
+---
+
+**Row 24.63 — the merge's acceptance results.**
+
+*Outgoing statement.* "Acceptance is complete: `composing_tests.exe` passed 295/295, `notation_tests.exe` passed 19/19,
+`batch_analyze_regressions` passed, Bach WIR structural remains 52.3%, and Chopin remains 57.5%." — §5.8, *Background —
+resolved-issue history* (locator: lines 4743–4745).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 24.64 — the batch and notation paths made mechanically comparable.**
+
+*Outgoing statement.* "**A2 — mechanical batch/notation parity.** `batch_analyze` now supports `--dump-regions
+batch|notation|notation-premerge`, the notation bridge exposes pre/post-merge debug capture, and `tools/check_parity.py`
+compares both paths on one score." — §5.8, *Background — resolved-issue history* (locator: lines 4746–4749).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build event.
+
+---
+
+**Row 24.65 — the parity check's acceptance.**
+
+*Outgoing statement.* "Acceptance is complete: BWV 227.7 and Chopin BI16-1 now match exactly on region starts, spans,
+roots, qualities, and tone sets." — §5.8, *Background — resolved-issue history* (locator: lines 4749–4750).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 24.66 — the confidence and exposure cleanup, complete.**
+
+*Outgoing statement.* "**A3 — confidence/exposure cleanup.** Complete." — §5.8, *Background — resolved-issue history*
+(locator: line 4751).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 24.67 — the chord staff's tonality-dependent output gated on the key confidence.**
+
+*Outgoing statement.* "Key-dependent chord-track output is now confidence-gated: below 0.5 it is suppressed, from 0.5 to
+0.8 only the tentative key label survives, and at 0.8 or above the full key-dependent annotation set is allowed." — §5.8,
+*Background — resolved-issue history* (locator: lines 4751–4754).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.318.
+
+---
+
+**Row 24.68 — a first-inversion opening locked the key analyzer onto the relative tonality.**
+
+*Outgoing statement.* "When opening chord is in first inversion, the bass note matches the tonic of the relative key,
+causing the inferrer to lock onto the wrong member of the relative pair:" — §5.8, *Background — resolved-issue history*,
+*Key detection: relative major/minor ambiguity* (locator: lines 4779–4780).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past characterization.
+
+---
+
+**Row 24.69 — the E minor chorale read as G major.**
+
+*Outgoing statement.* "BWV 227/7 (E minor, 1♯): was reading as G major throughout" — §5.8, *Background — resolved-issue
+history*, *Key detection: relative major/minor ambiguity* (locator: line 4781).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past observation.
+
+---
+
+**Row 24.70 — the F-sharp minor chorale, and the expectation corrected.**
+
+*Outgoing statement.* "BWV 66.6 (F# minor, 3♯): was reading as A major (BWV 66.6 was already correct per music21 ground
+truth — STATUS.md expectation corrected 2026-04-13)" — §5.8, *Background — resolved-issue history*, *Key detection:
+relative major/minor ambiguity* (locator: lines 4782–4783).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past observation.
+
+---
+
+**Row 24.71 — the analyzer holds the home key and writes a borrowed chord as a chromatic degree.**
+
+*Outgoing statement.* "Our analyzer stays in the home key and labels borrowed chords with chromatic scale degrees (e.g.
+`♭VII`, `II` in C major)." — §5.8, *Background — resolved-issue history*, *Modulation tracking — philosophy difference*
+(locator: lines 4795–4796).
+
+*Derived statements that speak to it.* L2-S18.
+
+*Current-text axis.* L2-S18: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing analyzer *"stays in the home key and labels borrowed chords with
+chromatic scale degrees"*; L2-S18 says *"Both readings are admitted, and both are carried as rivals with their mass."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does any path at the current commit hold the home key and write
+a chord leaning to another degree as a chromatic degree, never as applied or as a change of tonality?
+
+---
+
+**Row 24.72 — the DCML annotation writes tonicizations.**
+
+*Outgoing statement.* "DCML reference uses tonicization notation (e.g. `V/IV`, `IV/III`)." — §5.8, *Background —
+resolved-issue history*, *Modulation tracking — philosophy difference* (locator: lines 4796–4797).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis*.
+
+---
+
+**Row 24.73 — both readings are valid analytical approaches.**
+
+*Outgoing statement.* "Both are valid analytical approaches." — §5.8, *Background — resolved-issue history*, *Modulation
+tracking — philosophy difference* (locator: line 4797).
+
+*Derived statements that speak to it.* L2-S18.
+
+*Current-text axis.* L2-S18: **AGREES** — *"Both readings are admitted, and both are carried as rivals with their mass."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S18).
+
+---
+
+**Row 24.74 — a third-inversion dominant seventh sometimes read as a minor triad over its seventh.**
+
+*Outgoing statement.* "G7/C (G dominant seventh, C in bass) is sometimes identified as Gm/C (G minor over C)." — §5.8,
+*Background — resolved-issue history*, *Third-inversion dominant seventh ambiguity* (locator: line 4801).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past observation.
+
+---
+
+**Row 24.75 — when the evidence for B natural is weak.**
+
+*Outgoing statement.* "Occurs when B natural evidence is weak and Bb reading is slightly preferred." — §5.8, *Background —
+resolved-issue history*, *Third-inversion dominant seventh ambiguity* (locator: line 4802).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past characterization.
+
+---
+
+**Row 24.76 — confirmed in Mozart and Chopin.**
+
+*Outgoing statement.* "Confirmed in Mozart K279 and Chopin Mazurkas." — §5.8, *Background — resolved-issue history*,
+*Third-inversion dominant seventh ambiguity* (locator: lines 4802–4803).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past observation.
+
+---
+
+**Row 24.77 — a known limitation of vertical template matching.**
+
+*Outgoing statement.* "Known limitation of vertical template matching on passing-bass textures." — §5.8, *Background —
+resolved-issue history*, *Third-inversion dominant seventh ambiguity* (locator: lines 4803–4804).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past characterization.
+
+---
+
+**Row 24.78 — at minor cadences a major I written where minor i is right.**
+
+*Outgoing statement.* "At minor key cadences, analyzer occasionally writes major `I` where minor `i` is correct." — §5.8,
+*Background — resolved-issue history*, *Roman numeral quality at minor tonic cadences* (locator: lines 4807–4808).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past observation.
+
+---
+
+**Row 24.79 — confirmed in Corelli.**
+
+*Outgoing statement.* "Confirmed in Corelli." — §5.8, *Background — resolved-issue history*, *Roman numeral quality at
+minor tonic cadences* (locator: line 4808).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past observation.
+
+---
+
+**Row 24.80 — probably a quality threshold at cadences.**
+
+*Outgoing statement.* "Likely a chord quality threshold issue at cadential points." — §5.8, *Background — resolved-issue
+history*, *Roman numeral quality at minor tonic cadences* (locator: lines 4808–4809).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an estimate.
+
+---
+
+**Row 24.81 — repeated identical labels on dense piano writing.**
+
+*Outgoing statement.* "Dvořák Silhouettes and Chopin Mazurkas show repeated identical chord labels (e.g. `Bb×8`,
+`Fsus×20`) from Jaccard boundary firing on dense arpeggiated texture." — §5.8, *Background — resolved-issue history*,
+*Over-segmentation on dense piano texture* (locator: lines 4812–4813).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past observation.
+
+---
+
+**Row 24.82 — the merge works, its threshold perhaps too fine.**
+
+*Outgoing statement.* "Same-chord merge logic is working but the merge threshold may be too fine." — §5.8, *Background —
+resolved-issue history*, *Over-segmentation on dense piano texture* (locator: line 4814).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an estimate.
+
+---
+
+**Row 24.83 — mixed-texture orchestration would address it after the plateau.**
+
+*Outgoing statement.* "Known limitation — mixed texture orchestration would address this post-plateau." — §5.8,
+*Background — resolved-issue history*, *Over-segmentation on dense piano texture* (locator: lines 4814–4815).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+**Row 24.84 — applied-dominant labels written in the annotate path's Roman numerals.**
+
+*Outgoing statement.* "Secondary dominant and other tonicization labels (V/V, vii°/V, V/ii etc.) exposed in the annotate
+path Roman numeral layer." — §5.10 *Tonicization Labels* (locator: lines 4851–4852).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 4.22(i).
+
+---
+
+**Row 24.85 — the analyzer detects tonicizations already; this writes them out.**
+
+*Outgoing statement.* "The analyzer already detects tonicizations internally; this exposes the conclusion as an
+annotation." — §5.10 *Tonicization Labels* (locator: lines 4852–4854).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 4.22(i).
+
+---
+
+**Row 24.86 — the same under every preset.**
+
+*Outgoing statement.* "Universal across all presets." — §5.10 *Tonicization Labels* (locator: line 4854).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 4.22(i).
+
+---
+
+**Row 24.87 — explicit augmented-sixth labels in the annotate path.**
+
+*Outgoing statement.* "Explicit It+6, Fr+6, Ger+6 labels in the annotate path Roman numeral layer." — §5.11 *Augmented
+Sixth Chord Labels* (locator: line 4858).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — *"the three augmented sixths"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.3.
+
+---
+
+**Row 24.88 — they replace the chromatic numeral when the interval pattern is detected.**
+
+*Outgoing statement.* "These replace the generic chromatic Roman numeral (e.g. ♭VI) when the analyzer detects the
+specific augmented sixth interval pattern." — §5.11 *Augmented Sixth Chord Labels* (locator: lines 4859–4860).
+
+*Derived statements that speak to it.* L2-S30.
+
+*Current-text axis.* L2-S30: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing label follows when *"the analyzer detects the specific augmented
+sixth interval pattern"*; L2-S30 says *"No chord term decides a chord from the pitch-class content of the span alone."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.3.
+
+---
+
+**Row 24.89 — the two-pass pedal detector: implemented.**
+
+*Outgoing statement.* "**Status: Implemented (Session 18, master `fb9a27ce9a`).**" — §5.12 *Pedal Point Detection —
+Two-Pass Analysis* (locator: line 4873).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 24.90 — superseded by a voice-independent pedal class in the ornament vocabulary.**
+
+*Outgoing statement.* "**Superseded as a design by the voice-independent pedal-point class of the ornament vocabulary
+(§7.4, user-ratified 2026-07-26):** the two-pass detector described below can only see the lowest voice, and it retires
+with the legacy analysis path." — §5.12 *Pedal Point Detection — Two-Pass Analysis* (locator: lines 4873–4876). Three
+claims: (i) the pedal point is a voice-independent class of the ornament vocabulary; (ii) the two-pass detector sees only
+the lowest voice; (iii) it retires with the legacy path.
+
+*Derived statements that speak to it.* (i) L2-S8. (ii) None. (iii) None.
+
+*Current-text axis.* (i) L2-S8: **DIFFERS**. (ii) **THE DERIVATION IS SILENT.** (iii) **THE DERIVATION IS SILENT.**
+
+*The difference, in both texts' own words.* (i) The outgoing makes the pedal point *"the voice-independent pedal-point
+class of the ornament vocabulary"*; L2-S8 says *"Whether appoggiatura, escape tone, pedal point, retardation, and an
+explicit "unclassified elaboration" are admitted as well is a ruling the charter's wording leaves to the user (OQ-L2-4
+★)."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED.** *What was read:* the outgoing records a ratified pedal-point class, and L2-S8
+leaves whether a pedal point is an admitted elaboration to the ★ question OQ-L2-4; a disposition here would answer that
+question. (ii) **QUARANTINED**, travelling with Row 8.119. (iii) **HISTORICAL** — a plan.
+
+---
+
+**Row 24.91 — the replacement deferred; the two-pass detector still runs on the legacy arm; the record path leaves the
+pedal fields empty.**
+
+*Outgoing statement.* "The ornament class that replaces it is DEFERRED to its own increment (`OPEN_ITEMS.md` OI-194), so
+the two-pass detector below is still the code on the legacy arm; on the production record path the pedal fields are left
+empty." — §5.12 *Pedal Point Detection — Two-Pass Analysis* (locator: lines 4876–4878). Three claims: (i) the replacing
+class is deferred to its own increment; (ii) the two-pass detector is still the code on the legacy arm; (iii) on the
+production record path the pedal fields are left empty.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.** (iii) **THE DERIVATION IS SILENT.**
+
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status. (ii) **QUARANTINED**, travelling with Row 8.119.
+(iii) **QUARANTINED**, travelling with Row 23.15(ii).
+
+---
+
+**Row 24.92 — a structurally lighter lowest tone may not belong to the upper voices' chord.**
+
+*Outgoing statement.* "When the lowest-pitched tone in a window is structurally lighter than the upper voices — as in a
+dominant or tonic organ point — it may not belong to the chord formed by the upper voices." — §5.12 *Pedal Point
+Detection — Two-Pass Analysis* (locator: lines 4880–4882).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **AGREES** — as at Row 8.134.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S23).
+
+---
+
+**Row 24.93 — two-pass analysis resolves it.**
+
+*Outgoing statement.* "Two-pass analysis resolves this." — §5.12 *Pedal Point Detection — Two-Pass Analysis* (locator:
+lines 4884–4885).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 24.94 — the first pass runs on all voices.**
+
+*Outgoing statement.* "**Pass 1** runs normally on all voices." — §5.12, *Algorithm* (locator: line 4889).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 24.95 — a bass that is a chord tone of the winner means no pedal detection.**
+
+*Outgoing statement.* "If the winning result's root is a chord tone of the detected quality (checked by
+`isBassChordTone()`), the bass is part of the chord (e.g. an inversion) and no pedal detection occurs." — §5.12,
+*Algorithm* (locator: lines 4889–4891).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 24.96 — the second pass only when the bass is not a chord tone of the winner.**
+
+*Outgoing statement.* "**Pass 2** is triggered only when the Pass 1 bass PC is NOT a chord tone of the winner." — §5.12,
+*Algorithm* (locator: lines 4893–4894).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 24.97 — the second pass analyzes the upper voices without the bass.**
+
+*Outgoing statement.* "It re-runs `analyzeChord()` on the upper voices only (the bass PC is removed from the tone list)."
+— §5.12, *Algorithm* (locator: lines 4894–4895).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 24.98 — two conditions before the pedal reading is accepted.**
+
+*Outgoing statement.* "Two conditions must both be met before the pedal reading is accepted:" — §5.12, *Algorithm*
+(locator: lines 4895–4896).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 24.99 — an extension in the chord's flags makes the bass a chord tone.**
+
+*Outgoing statement.* "**Any extension (9th–13th) listed in the bitmask:** the corresponding interval also marks the bass
+as a chord tone." — §5.12, *`isBassChordTone()` helper* (locator: lines 4924–4925).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which intervals above the root does the legacy helper that
+decides whether the bass is a chord tone accept at the current commit, and does any production path reach it?
+
+---
+
+**Row 24.100 — a perfect fourth in the bass under any seventh counts as a chord tone.**
+
+*Outgoing statement.* "**P4 with any seventh present:** if the chord has a min7, maj7, or dim7 detected (even at the lower
+`kSeventhThreshold = 0.12`) and the bass is a P4 above the root, it is treated as a chord tone." — §5.12,
+*`isBassChordTone()` helper* (locator: lines 4926–4928).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 24.99.
+
+---
+
+**Row 24.101 — a pedal reading written on the score as a short text.**
+
+*Outgoing statement.* "When `isPedalPoint = true`, the annotate path (`addHarmonicAnnotationsToSelection`) writes an
+additional `StaffText` at the same segment in the format `"X ped."` where `X` is the chord symbol of the pedal bass pitch
+class formatted as a simple major root name (e.g. `"G ped."`, `"C ped."`)." — §5.12, *Bridge annotation* (locator: lines
+4941–4944).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.5.
+
+---
+
+**Row 24.102 — only when Roman numerals are written.**
+
+*Outgoing statement.* "This is placed only when Roman numeral annotations are enabled." — §5.12, *Bridge annotation*
+(locator: lines 4944–4945).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.5.
+
+---
+
+**Row 24.103 — no style path and no gate reading written symbols, so the order of annotating leaves the boundaries unchanged.**
+
+*Outgoing statement.* "Because there is no Jazz path and no symbol-reading gate, order of annotation has no effect on
+region boundaries." — §5.13, *Order-of-annotation safety* (locator: lines 5010–5011). Two claims: (i) there is no Jazz
+path and no gate that reads written chord symbols; (ii) the order of annotation has no effect on region boundaries.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does any analysis path at the current commit read a chord
+symbol written in the score, or branch on a style path? (ii) **QUARANTINED**, travelling with Row 24.103(i).
+
+---
+
+**Row 24.104 — writing chord symbols by one path changes nothing another path produces.**
+
+*Outgoing statement.* "Writing chord symbols to the score via one path does not change what any other path produces from
+the same notes." — §5.13, *Order-of-annotation safety* (locator: lines 5011–5012).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 24.103(i).
+
+---
+
+**Row 24.105 — the flag forcing the classical path removed.**
+
+*Outgoing statement.* "The `forceClassicalPath` flag that previously short-circuited Jazz boundary detection has been
+removed (02e3733afb)." — §5.13, *Order-of-annotation safety* (locator: lines 5014–5015).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a removal.
+
+---
+
+**Row 24.106 — the overlap boundary path is the only path.**
+
+*Outgoing statement.* "The classical §4.1c Jaccard path is now the only path." — §5.13, *Order-of-annotation safety*
+(locator: line 5015).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 23.64.
+
+*The difference, in both texts' own words.* The outgoing's only path is *"The classical §4.1c Jaccard path"*; L2-S11 is
+falsified *"if the boundary set is computed by a pass that does not see candidate chords"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.64.
+
+---
+
+**Row 24.107 — the formatter writes no numeral for an unknown quality, as for a bare fifth.**
+
+*Outgoing statement.* "`ChordSymbolFormatter::formatRomanNumeral()` returns `""` when `ChordQuality::Unknown` — this
+occurs for bare fifths (no third detected) in Aeolian passages where the chord analyzer cannot determine major vs. minor
+quality from the available tones." — §5.13, *Unknown-quality Roman numeral fallback* (locator: lines 5019–5022). Two
+claims: (i) the formatter writes no numeral for an unknown quality; (ii) a bare fifth, with no third, leaves the chord
+analyzer unable to settle major or minor.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S10.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S10: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing analyzer *"cannot determine major vs. minor quality from the
+available tones"* for *"bare fifths (no third detected)"*; L2-S10 says *"A chord is admissible over a span whose sounding
+set lacks its root, or lacks its third."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 20.3. (ii) **QUARANTINED.** *Audit question:* does the
+legacy chord scorer return an unknown quality for a bare fifth at the current commit, and does any production path?
+
+---
+
+**Row 24.108 — after the analysis, an unknown quality replaced by the diatonic triad of the degree.**
+
+*Outgoing statement.* "Both the annotation path (`addHarmonicAnnotationsToSelection`) and the chord-track path
+(`populateChordTrack`) apply `forceChordTrackQualityFromKeyContext()` as a post-analysis fallback: when
+`formatRomanNumeral` returns empty and quality is Unknown, the diatonic triad shape for the current degree+mode is
+substituted." — §5.13, *Unknown-quality Roman numeral fallback* (locator: lines 5024–5027).
+
+*Derived statements that speak to it.* L2-S27.
+
+*Current-text axis.* L2-S27: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing quality is substituted *"as a post-analysis fallback"* from
+*"the diatonic triad shape for the current degree+mode"*; L2-S27 says *"L2 decides the chord as degree, quality, figure
+and applied target, read against the span's tonality."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the annotation and chord-staff paths replace an unknown
+quality with the diatonic triad after the analysis at the current commit, and on which arm?
+
+---
+
+**Row 24.109 — suspended-fourth templates won where the fourth was barely present.**
+
+*Outgoing statement.* "Sus4 templates (`ChordQuality::Suspended4`, intervals containing `5` = P4) were winning in regions
+where the perfect fourth was barely present — a weak passing tone or absent — yielding false Sus4 labels on chords that
+should be power, major, or minor." — §5.15, *Problem* (locator: lines 5125–5127).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past characterization.
+
+---
+
+**Row 24.110 — a one-note gap on the neighbor's root no longer carries its chord.**
+
+*Outgoing statement.* "**Fix in `inferGapRegion`:** a `supportsCarry` lambda blocks carry when the gap has exactly 1 pitch
+class AND that pitch class equals the adjacent region's root." — §5.15, *Root-only single-note gap carry fix* (locator:
+lines 5167–5168).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the legacy gap inference refuse to carry the neighboring
+chord into a gap holding only that chord's root at the current commit, and does any production path run it?
+
+---
+
+**Row 24.111 — a gap holding a non-root chord tone still carries.**
+
+*Outgoing statement.* "Non-root chord tones (e.g. G as the **third** of Em) continue to carry correctly, because they
+confirm the chord quality through interval relationship." — §5.15, *Root-only single-note gap carry fix* (locator: lines
+5170–5171).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 24.110.
+
+---
+
+**Row 24.112 — the bass-movement boundary pass made iterative, with a cap of eight passes.**
+
+*Outgoing statement.* "Pass2b (bass-movement sub-boundary detection) is now iterative with `kMaxBassMovementPasses=8`:" —
+§5.16.2 *Pass2b Iterative Bass-Movement Detection* (locator: line 5226).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing boundaries come from a *"bass-movement sub-boundary detection"*
+pass; L2-S11 says where the boundaries fall *"is decided together with the tonality, the chord and the assignments, in the
+one decision"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a bass-movement sub-boundary pass exist at the current
+commit, is it iterative and with what cap, and does any production path run it?
+
+---
+
+**Row 24.113 — sharp-spelled chromatic notes written as flats where the sharp is not yet diatonic.**
+
+*Outgoing statement.* "Sharp-spelled chromatic notes (TPC ≥ 20, covering both MuseScore-internal and +1-offset encodings)
+are normalized to their conventional flat chord-symbol spelling in keys where the sharp is not yet diatonic:" — §5.16.3
+*Enharmonic Normalization* (locator: lines 5245–5247).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.3.
+
+---
+
+**Row 24.114 — D-sharp written as E-flat below four sharps.**
+
+*Outgoing statement.* "if ((pc == 3 && keySignatureFifths < 4) // D# → Eb (diatonic at E major)" — §5.16.3 *Enharmonic
+Normalization*, the code block (locator: line 5251).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.3.
+
+---
+
+**Row 24.115 — G-sharp written as A-flat below three sharps.**
+
+*Outgoing statement.* "|| (pc == 8 && keySignatureFifths < 3) // G# → Ab (diatonic at A major)" — §5.16.3 *Enharmonic
+Normalization*, the code block (locator: line 5252).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.3.
+
+---
+
+**Row 24.116 — A-sharp written as B-flat below five sharps.**
+
+*Outgoing statement.* "|| (pc == 10 && keySignatureFifths < 5)) // A# → Bb (diatonic at B major)" — §5.16.3 *Enharmonic
+Normalization*, the code block (locator: line 5253).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.3.
+
+---
+
+---
+
+#### Not a statement — listed so the arithmetic closes (40)
+
+1. "**★ ANNOTATION (2026-08-11, the user's Ruling 63 of … how to read it beside a later ruling.**" (4298–4300) — *the
+   document's account of itself*: the annotation named with its ruling and the record it closes.
+2. "The sentence scopes the MECHANISM this section describes — which code path runs, through which helper, under which
+   flag." (4300–4302) — *the document's account of itself*: what its scoping sentence covers.
+3. "**It does NOT scope the EVIDENTIAL RANKING** the priority-of-evidence table below states." (4302) — *the
+   document's account of itself*.
+4. "So the two texts do not conflict and must not be read as conflicting: this section describes a dormant MECHANISM,
+   and the table inside it states a RULE that outlives the mechanism." (4306–4308) — *the document's account of
+   itself*: how its two texts are read together.
+5. "*Why an annotation rather than a re-worded note:* the sentence is true … recorded as written down neither way."
+   (4308–4311) — *a defense* of the annotation.
+6. "*The excluded reading, recorded at the ruling:* that the ranking is legacy-only … no stated evidential priority
+   anywhere." (4311–4314) — *a rejected alternative named with its reasons*.
+7. "*Why outright rather than gated,* the defense recorded with the change: … and was then vetoed here." (4343–4347) —
+   *a defense* of Row 24.3.
+8. "(**corrected 2026-08-11, the user's Ruling 63; … and is not a piece-start rule**):" (4350–4355) — *the document's
+   account of itself*, a correction record beside Row 24.5.
+9. "**Priority of evidence:**" (4357) — *a label*.
+10. "| Priority | Source | Description |" (4359) — *a table header*.
+11. "|---|---|---|" (4360) — *the table's separator row*.
+12. "*Why:* stated with the recommendation and grounded in … which is how a boundary disappears without a decision."
+    (4468–4471) — *a defense* of Row 24.14.
+13. "*Why:* stated with the decision — a second analysis run … consumers read, never re-derive." (4475–4480) — *a
+    defense* of Row 24.17.
+14. "**This rule is stated at the producing surface**, which is this section; the consumer sections point at it and do
+    not restate it (#6)." (4480–4482) — *the document's account of itself*: where the rule is homed.
+15. "**Classical chromatic vocabulary:**" (4509) — *a label*.
+16. "**Structural distinctions:**" (4519) — *a label*.
+17. "These address primary failure modes that confidence calibration cannot fix." (4574–4575) — *a defense* of Row
+    24.28.
+18. "This becomes useful only after the primary texture failure modes are reduced." (4581) — *a defense* of Row 24.31.
+19. ""Obviously arpeggiated" is defined as maximum simultaneous pitch-class count in any beat window <= 2."
+    (4583–4584) — *a definition of a term* within the plan at Row 24.32.
+20. "**Piano left-hand beat-1 pattern over-segmentation**" (4642) — *a label*.
+21. "A dedicated notation regression now checks that BI16-1 opening collapses to a single G-major region." (4705–4706)
+    — *a test record*.
+22. "A follow-up BI16 regression on the full populate path also guards against mixed chord/rest measures:" (4706–4707)
+    — *a test record*.
+23. "This is now documented as a known limitation of the current vertical scorer in Baroque stepwise bass textures."
+    (4719–4720) — *the document's account of itself*.
+24. "A Dvorak `op08n06` notation regression verifies that low-confidence regions do not emit key labels or Roman
+    numerals while confident regions still do." (4754–4755) — *a test record*.
+25. "**Key detection: relative major/minor ambiguity (confirmed 2026-04-13):**" (4778) — *a label*.
+26. "**Modulation tracking — philosophy difference (confirmed 2026-04-13):**" (4794) — *a label*.
+27. "Our approach is more accessible for general users." (4797–4798) — *a defense* of Row 24.71.
+28. "Not a bug — design choice." (4798) — *a defense* of Row 24.71.
+29. "**Third-inversion dominant seventh ambiguity (confirmed 2026-04-13):**" (4800) — *a label*.
+30. "**Roman numeral quality at minor tonic cadences (confirmed 2026-04-13):**" (4806) — *a label*.
+31. "**Over-segmentation on dense piano texture (confirmed 2026-04-13):**" (4811) — *a label*.
+32. "A single-pass template match will either (a) force a bass-root reading and suppress the upper-voice harmony, or
+    (b) return a slash chord with the wrong root identity if the template accidentally fits." (4882–4884) — *a
+    defense* of Row 24.93.
+33. "This handles slash chords like Cm7/F where the bass F is at exactly `kExtensionThreshold = 0.20` and therefore
+    NOT detected as `NaturalEleventh` by the extension scanner, yet is structurally part of the chord." (4928–4931) —
+    *a defense* of Row 24.100, by its case.
+34. "This ensures Roman numeral annotations are written even for bare-fifth regions." (5028) — *a defense* of Row
+    24.108.
+35. "The perfect fourth *is* the defining suspension tone of Sus4; without it the chord is not convincingly sus4."
+    (5128–5129) — *a defense* of the penalty the section states next, outside this member's ranges.
+36. "A root-alone gap carries no quality information; the diatonic key context is more reliable." (5168–5169) — *a
+    defense* of Row 24.110.
+37. "```cpp" (5249) — *the opening of a code block*.
+38. "if (tpc >= 20) {" (5250) — *a code line that carries no comment*.
+39. "return FLAT_NAMES[idx]; }" (5254–5255) — *code lines that carry no comment*.
+40. "```" (5256) — *the close of a code block*.
+
+#### The arithmetic at this member
+
+- Rows written: **116** (24.1 to 24.116).
+- Rows split into two claims, **+1 each**: 24.2, 24.3, 24.20, 24.33, 24.39, 24.58, 24.103, 24.107 — eight rows,
+  **+8**.
+- Rows split into three claims, **+2 each**: 24.16, 24.90, 24.91 — three rows, **+6**.
+- **Outgoing statements placed: 116 + 8 + 6 = 130.**
+- Listed under *not a statement*: **40**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 130 dispositions over 130
+  statements.
+- **UNPLACED at this member: 6** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 13 | 24.2(i), 24.3(i), 24.5, 24.6, 24.7, 24.8, 24.23, 24.24, 24.25, 24.26, 24.42, 24.73, 24.92 |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 4 | 24.30, 24.57, 24.58(i), 24.72 |
+| QUARANTINED | 60 | 24.1, 24.10, 24.11, 24.12, 24.13, 24.14, 24.15, 24.16(i), 24.16(ii), 24.17, 24.18, 24.19, 24.20(i), 24.20(ii), 24.21, 24.36, 24.37, 24.38, 24.39(ii), 24.41, 24.52, 24.53, 24.56, 24.59, 24.60, 24.62, 24.67, 24.71, 24.84, 24.85, 24.86, 24.87, 24.88, 24.90(ii), 24.91(ii), 24.91(iii), 24.93, 24.94, 24.95, 24.96, 24.97, 24.98, 24.99, 24.100, 24.101, 24.102, 24.103(i), 24.103(ii), 24.104, 24.106, 24.107(i), 24.107(ii), 24.108, 24.110, 24.111, 24.112, 24.113, 24.114, 24.115, 24.116 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 47 | 24.3(ii), 24.16(iii), 24.22, 24.27, 24.28, 24.29, 24.31, 24.32, 24.33(i), 24.34, 24.35, 24.40, 24.43, 24.44, 24.45, 24.46, 24.47, 24.48, 24.49, 24.50, 24.51, 24.54, 24.55, 24.58(ii), 24.61, 24.63, 24.64, 24.65, 24.66, 24.68, 24.69, 24.70, 24.74, 24.75, 24.76, 24.77, 24.78, 24.79, 24.80, 24.81, 24.82, 24.83, 24.89, 24.90(iii), 24.91(i), 24.105, 24.109 |
+| UNPLACED | 6 | 24.2(ii), 24.4, 24.9, 24.33(ii), 24.39(i), 24.90(i) |
+| **Total** | **130** | — |
+
+**The arithmetic closes at this member**: 13 + 0 + 4 + 60 + 0 + 47 + 6 = 130, against 130 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 19 |
+| DIFFERS | 21 |
+| THE DERIVATION IS SILENT | 92 |
+| **Total verdicts** | **132** |
+
+*(132 verdicts over 130 statements because 2 statements each name two derived statements: 24.2(i) and 24.6.)* DIFFERS:
+24.1, 24.2(ii), 24.4, 24.9, 24.12, 24.19, 24.20(i), 24.20(ii), 24.33(ii), 24.34, 24.39(i), 24.41, 24.52, 24.62, 24.71,
+24.88, 24.90(i), 24.106, 24.107(ii), 24.108, 24.112.
+
+#### The marks at this member
+
+- **WITHHELD rows: 24.3 and 24.4 (D-572) and 24.6 (D-057).** Rows 24.3 and 24.6 carry an AGREES and say so at the row
+  — a derived statement reaching a ruled answer the deriving session was not shown; Row 24.4 carries a DIFFERS. No row
+  is a boundary row.
+- **SEEN rows: none.** The check was made at the homes as the manifest states: none of the eight homes 1(c) names lies
+  in this member's ranges.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S17 (entry 1) — 24.2, 24.3, 24.4,
+  24.5, 24.6, 24.8, 24.9; L2-S38 (entry 6) — 24.20. No row of this member names L2-S31, L2-S22, L2-S42, L2-S43, L2-S45
+  or L2-S12.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -38822,14 +40768,18 @@ the row says which.
 - Rows 23.164, 23.165 and 23.166 — sub-beat boundaries misaligned with the annotation's beat positions, measurement noise
   that the time-overlap comparison absorbs.
 - Row 23.223(ii) — travelling with Row 22.24: a tool reads written symbols only to compare them with the analysis's output.
+- Row 24.30 — that baselines be stable before a held-out calibration means anything.
+- Rows 24.57 and 24.58(i) — the comparison tools grade chord identity by root pitch class and quality, or by root pitch
+  class alone, and a slash-chord spelling matches the annotation's inversional spelling when the root agrees.
+- Row 24.72 — what the DCML annotation writes: a tonicization as an applied chord.
 
 *(Member 1's relocations are the rows numbered 1.n above. Member 2 relocates no row. Member 3 relocates one, Row 3.38,
 above. Member 4's relocations are the rows numbered 4.n above. Member 5's relocations are the rows
 numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows numbered 7.n. Member 8 relocates
 no row. Member 9's relocations are the rows numbered 9.n above, member 10's the rows numbered 10.n, member 11's
 the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows numbered 13.n, member 14's the rows
-numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows numbered 17.n. Member 18 relocates no row. Member 19 relocates no row. Member 20 relocates no row, member 21's the rows numbered 21.n, member 22's the rows numbered 22.n, and member 23's the rows
-numbered 23.n.)*
+numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows numbered 17.n. Member 18 relocates no row. Member 19 relocates no row. Member 20 relocates no row, member 21's the rows numbered 21.n, member 22's the rows numbered 22.n, member 23's the rows
+numbered 23.n, and member 24's the rows numbered 24.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -39632,6 +41582,49 @@ rows here, each with its audit question, in the commit that tabulates it.
   numeral it shows for a selected note?
 - Rows 23.341, 23.342(i), 23.343, 23.344 and 23.345 — travelling with Row 7.56, and through it with Row 6.62: does the
   dormant decoder read the style preset, and does any inference on the production arm read it?
+- Rows 24.1 and 24.20(i) — travelling with Row 20.2: what does the dormant key decoder's per-slice fit read, over what
+  window, and does it read any proposed chord?
+- Row 24.19 — travelling with Row 22.8, and through it with Row 20.2: the same question.
+- Rows 24.10, 24.11, 24.12, 24.13 and 24.15 — travelling with Row 23.84, and through it with Rows 22.41 and 22.38(ii):
+  does the legacy weighted pitch-class view run on any production path at the current commit, and what reads it?
+- Row 24.16(i), with Rows 24.14 and 24.16(ii) — which fields does the single-step temporal context carry at the current
+  commit, which of them describe the previous winner's competition, and what reads them?
+- Row 24.17, with Row 24.18 — are the temporal-context extension fields filled once, during the per-region analysis, and
+  does any consumer at the current commit run the chord analysis again to rebuild them?
+- Row 24.20(ii) — travelling with Row 23.188: are the twenty-one mode priors read from the user's preferences at the
+  current commit, and does any production path read them?
+- Rows 24.21, 24.53, 24.59, 24.60, 24.67, 24.101 and 24.102 — travelling with Row 20.5 (Row 24.21 through Row 23.325,
+  Row 24.53 through Row 23.317, Row 24.67 through Row 23.318): what does the chord-staff writer write on the record arm
+  at the current commit, and from which published facts?
+- Rows 24.36, 24.52 and 24.62 — travelling with Row 23.72: which fields make two regions' readings the same on each path
+  at the current commit, and which path merges adjacent regions by them?
+- Rows 24.37, 24.38 and 24.39(ii) — travelling with Row 23.41: does the legacy chord scorer's bass-root bonus pull its
+  winner toward the bass as root at the current commit, and does any production path run it?
+- Rows 24.41 and 24.106 — travelling with Row 23.64: does a pitch-class-overlap boundary detector exist at the current
+  commit, and does any path decide harmonic boundaries with it before the chord?
+- Row 24.56 — do walking-bass passing tones pull the legacy vertical scorer's winner toward suspended or slash-chord
+  readings at the current commit, and does any production path run that scorer?
+- Row 24.71 — does any path at the current commit hold the home key and write a chord leaning to another degree as a
+  chromatic degree, never as applied or as a change of tonality?
+- Rows 24.84, 24.85 and 24.86 — travelling with Row 4.22(i): is the tonicization labeller present and unwired?
+- Rows 24.87, 24.88, 24.107(i), 24.113, 24.114, 24.115 and 24.116 — travelling with Row 20.3, and through it with Row
+  5.300: which labels does the Roman-numeral formatter emit at the current commit, and on which path?
+- Rows 24.90(ii), 24.91(ii), 24.93, 24.94, 24.95, 24.96, 24.97 and 24.98 — travelling with Row 8.119: does the legacy
+  pedal pass exist at the current commit, on which arm does it run, and what does it test to enter?
+- Row 24.91(iii) — travelling with Row 23.15(ii): is the pedal flag left empty on the record path at the current commit,
+  and does anything read it there?
+- Row 24.99, with Row 24.100 — which intervals above the root does the legacy helper that decides whether the bass is a
+  chord tone accept at the current commit, and does any production path reach it?
+- Row 24.103(i), with Rows 24.103(ii) and 24.104 — does any analysis path at the current commit read a chord symbol
+  written in the score, or branch on a style path?
+- Row 24.107(ii) — does the legacy chord scorer return an unknown quality for a bare fifth at the current commit, and
+  does any production path?
+- Row 24.108 — do the annotation and chord-staff paths replace an unknown quality with the diatonic triad after the
+  analysis at the current commit, and on which arm?
+- Row 24.110, with Row 24.111 — does the legacy gap inference refuse to carry the neighboring chord into a gap holding
+  only that chord's root at the current commit, and does any production path run it?
+- Row 24.112 — does a bass-movement sub-boundary pass exist at the current commit, is it iterative and with what cap, and
+  does any production path run it?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -40314,6 +42307,44 @@ words.
   it"*.
 - Row 23.336 — the outgoing traversal says grace notes are *"ornamental, not harmonic — always exclude from analysis"*;
   L2-S26 says grace notes *"are evidence for the assignment of their host and for the chord"*.
+- Row 24.1 — as at Row 20.2: the outgoing pitches are weighted by *"duration in quarter notes, beat-type weight"* and an
+  *"exponential time decay (0.7× per measure)"*; L2-S20's tonality terms *"do not read a global pitch-class profile of the
+  span"*.
+- Rows 24.2(ii), 24.4 and 24.9 — as at Row 1.29(ii): the outgoing keeps the declared major/minor tag as evidence, ranked
+  *"the declared major/minor tag weakest"* and kept as *"the small hint stated above, applied at every tick"*; L2-S17 says
+  *"A tonality or mode tag the record file declares is not read at all."*
+- Row 24.12 — the outgoing gives *"events shorter than half a beat"* *"higher extension detection thresholds"*; L2-S25
+  says *"no duration cut and no metric position makes a note a chord tone or an elaboration."*
+- Row 24.19 — as at Row 22.8: the outgoing rates *"All 7 diatonic modes"*; L2-S6 says *"A mode other than these is not
+  admitted until the question is ruled (OQ-L2-2)."*
+- Row 24.20(i) — as at Row 23.185: the outgoing boosts or penalizes each mode's *"characteristic pitch"*; L2-S20's defense
+  says a model that rates tonalities by the presence of those tones *"rates the true tonality lowest exactly when it is
+  most strongly prolonged"*.
+- Row 24.20(ii) — as at Row 23.188: the outgoing prior is *"configurable via user preferences"*; L2-S38 says *"Every
+  weight of the candidate score is fitted from annotated music, not set by hand."*
+- Row 24.33(ii) — the outgoing treats *"abstention as a valid outcome"*; L2-S44 leaves whether a sounding span may be
+  published with no chord to the charter's open DP-Q, *"and is not decided here"*.
+- Row 24.34 — as at Row 23.72: the outgoing identifies a region by *"either `root + quality`"* or *"full sonority identity"*;
+  L2-S14 compares *"degree, quality, figure and applied target"*.
+- Row 24.39(i) — the outgoing says *"Correct handling requires knowing that a bass instrument is providing the root"*;
+  L2-S10 says *"A chord is admissible over a span whose sounding set lacks its root"*, with no such condition.
+- Rows 24.41 and 24.106 — as at Row 23.64: the outgoing boundaries come from *"the Jaccard boundary detector"*, *"The
+  classical §4.1c Jaccard path"* being the only path; L2-S11 says where the boundaries fall *"is decided together with
+  the tonality, the chord and the assignments, in the one decision"*.
+- Rows 24.52 and 24.62 — as at Row 23.73: the outgoing merges adjacent *"same-root/same-quality"* slices and regions;
+  L2-S14 says a change of figure alone *"is a change of chord and may be a boundary"*.
+- Row 24.71 — the outgoing analyzer *"stays in the home key and labels borrowed chords with chromatic scale degrees"*;
+  L2-S18 says *"Both readings are admitted, and both are carried as rivals with their mass."*
+- Row 24.88 — the outgoing label follows when *"the analyzer detects the specific augmented sixth interval pattern"*;
+  L2-S30 says *"No chord term decides a chord from the pitch-class content of the span alone."*
+- Row 24.90(i) — the outgoing makes the pedal point *"the voice-independent pedal-point class of the ornament
+  vocabulary"*; L2-S8 leaves whether a pedal point is admitted as an elaboration to the ★ question OQ-L2-4.
+- Row 24.107(ii) — the outgoing analyzer *"cannot determine major vs. minor quality from the available tones"* for a bare
+  fifth; L2-S10 says *"A chord is admissible over a span whose sounding set lacks its root, or lacks its third."*
+- Row 24.108 — the outgoing quality is substituted *"as a post-analysis fallback"*; L2-S27 says *"L2 decides the chord as
+  degree, quality, figure and applied target, read against the span's tonality."*
+- Row 24.112 — the outgoing boundaries come from a *"bass-movement sub-boundary detection"* pass; L2-S11 says where the
+  boundaries fall *"is decided together with the tonality, the chord and the assignments, in the one decision"*.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -40348,10 +42379,11 @@ own distribution table in §6.
 | 21 | 111 | 29 | 11 | 25 | 12 | 0 | 22 | 12 | 80 |
 | 22 | 156 | 12 | 0 | 59 | 48 | 0 | 34 | 3 | 95 |
 | 23 | 373 | 1 | 1 | 25 | 198 | 0 | 145 | 3 | 125 |
-| **Total** | **3006** | **396** | **86** | **445** | **999** | **0** | **847** | **233** | **1357** |
+| 24 | 130 | 13 | 0 | 4 | 60 | 0 | 47 | 6 | 40 |
+| **Total** | **3136** | **409** | **86** | **449** | **1059** | **0** | **894** | **239** | **1397** |
 
-**The arithmetic check:** 396 + 86 + 445 + 999 + 0 + 847 + 233 = 3006, against 3006 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373).
+**The arithmetic check:** 409 + 86 + 449 + 1059 + 0 + 894 + 239 = 3136, against 3136 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130).
 
 **Current-text verdicts.**
 
@@ -40380,10 +42412,11 @@ own distribution table in §6.
 | 21 | 38 | 25 | 49 | 112 |
 | 22 | 18 | 7 | 131 | 156 |
 | 23 | 13 | 60 | 300 | 373 |
-| **Total** | **597** | **591** | **1864** | **3052** |
+| 24 | 19 | 21 | 92 | 132 |
+| **Total** | **616** | **612** | **1956** | **3184** |
 
-**The arithmetic check:** 597 + 591 + 1864 = 3052 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373).
+**The arithmetic check:** 616 + 612 + 1956 = 3184 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132).
 
 ## 14. The derivation's independence record, relayed
 
@@ -40414,4 +42447,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 23 are done, positions 24 to 62 are untouched.
+  untouched: positions 1 to 24 are done, positions 25 to 62 are untouched.
