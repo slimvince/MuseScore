@@ -67,7 +67,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 24 | `ARCHITECTURE.md` passages — *5. Planned Analysis Extensions* | **DONE** (§6.24) |
 | 25 | `ARCHITECTURE.md` passages — *6. The Style System* | **DONE** (§6.25) |
 | 26 | `ARCHITECTURE.md` passages — *7. The Knowledge Base* | **DONE** (§6.26) |
-| 27 | `ARCHITECTURE.md` passages — *8. Planned Generation Components* | NOT YET TABULATED |
+| 27 | `ARCHITECTURE.md` passages — *8. Planned Generation Components* | **DONE** (§6.27) |
 | 28 | `ARCHITECTURE.md` passages — *9. The Constraint System* | NOT YET TABULATED |
 | 29 | `ARCHITECTURE.md` passages — *10. Visualization* | NOT YET TABULATED |
 | 30 | `ARCHITECTURE.md` passages — *11. Intonation* | NOT YET TABULATED |
@@ -106,15 +106,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 26 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 27 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, and the `ARCHITECTURE.md` passages under *7. The Knowledge Base*.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, and the `ARCHITECTURE.md` passages under *8. Planned Generation Components*.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 26 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 27 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -137,8 +137,8 @@ tabulated positions 17 to 22, each whole and in its own commit, and stopped at t
 dispatch's capacity judgment (its Task 1(h)): position 23 was judged not finishable whole in the context that remained with the
 batch's close still to run, and was not opened. The sixth batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md`, resumed at position 23 and tabulated
-positions 23 to 26, each whole and in its own commit. **Positions 27 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 27**, `ARCHITECTURE.md` passages — *8. Planned Generation Components*. §7, §8,
+positions 23 to 27, each whole and in its own commit. **Positions 28 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 28**, `ARCHITECTURE.md` passages — *9. The Constraint System*. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -41612,6 +41612,330 @@ annotation is a declared gap.
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
   L2-S17, L2-S22, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
 
+---
+
+### 6.27 — Member 27: `ARCHITECTURE.md`, passages — *8. Planned Generation Components*
+
+> **Manifest for this member.** Position **27**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: *"## 8. Planned Generation Components"*. **The three published ranges**, each as
+> a locator only, by its first and last line as the artifact publishes them (**D-307**); where a boundary line is too
+> long to repeat, it is given by its opening and closing words:
+>
+> 1. lines 5851–5858, from *"*Tertian family — close position variants:*"* to *"Puerling's more elaborate
+>    arrangements."*;
+> 2. lines 5938–5943, from *"1. **Melodic analysis** — phrase structure, scale degrees, climax, chromatic notes"* to
+>    *"appropriate cadences"*;
+> 3. lines 5957–5960, from *"Generates style-idiomatic fills and decorative material:"* to *"- Chord animation —
+>    voices moving through chord tones (Poulenc technique)"*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside. **The lines between the ranges are outside the member** and are not tabulated, quoted or
+> listed. **No line inside the ranges is a heading.** Outgoing statements: **18** (rows 27.1 to 27.18; no row is
+> split). Listed under *not a statement*: **1**. Counted at this member by this session; the counts appear here and
+> nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of §8's planned generation
+> components: the close-position voicing variants of the voicing generator, the four steps of the rule-based
+> harmonizer, and the idiomatic-material generator's fills and riffs. **The placement readings are those of the
+> earlier members, applied unchanged**: a plan is HISTORICAL; a label is listed under *not a statement*; and a later
+> statement of content an earlier row carries travels with the earliest row carrying it — chord voicing with Row
+> 21.67, which relocates chord voicing and arrangement to *the second axis — voice leading*.
+>
+> **One reading is new at this member and is stated so it can be checked.** A voicing type the planned voicing
+> generator names — close position and the drop voicings, with what each is used for — is musical content the
+> voice-leading axis owns by Row 21.67, so its rows are RELOCATED there rather than read as the plan they sit in; the
+> harmonizer's steps and the idiomatic-material generator's list name what a planned component will do, and are
+> HISTORICAL — a plan.
+>
+> **The WITHHELD homes inside this member**: none — the artifact's `item_4_identities_inside` for position 27 is
+> empty, and a check at `tools/audit/decisions/backbone_decisions.json` found no decision homed in lines 5851–5960.
+> **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes lies in this member —
+> the two in `ARCHITECTURE.md`, D-002 and D-095, lie at lines 21–22 and 43–44.
+
+---
+
+**Row 27.1 — close position: every voice within one octave, the chord tones ascending.**
+
+*Outgoing statement.* "**Close position** — all voices within one octave, chord tones ascending." — §8.2
+*VoicingGenerator*, the close-position variants (locator: line 5852).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.67.
+
+---
+
+**Row 27.2 — close position is the baseline for every drop transformation.**
+
+*Outgoing statement.* "Baseline for all drop transformations." — §8.2 *VoicingGenerator*, the close-position variants
+(locator: lines 5852–5853).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.67.
+
+---
+
+**Row 27.3 — drop 2: the second voice from the top dropped an octave.**
+
+*Outgoing statement.* "**Drop 2** — second voice from top dropped an octave." — §8.2 *VoicingGenerator*, the
+close-position variants (locator: line 5854).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.67.
+
+---
+
+**Row 27.4 — drop 2 is the primary jazz vocal voicing.**
+
+*Outgoing statement.* "Primary jazz vocal voicing." — §8.2 *VoicingGenerator*, the close-position variants (locator:
+line 5854).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.67.
+
+---
+
+**Row 27.5 — drop 2 is Puerling's main tool.**
+
+*Outgoing statement.* "Puerling's main tool." — §8.2 *VoicingGenerator*, the close-position variants (locator: line
+5855).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.67.
+
+---
+
+**Row 27.6 — drop 3: the third voice from the top dropped an octave.**
+
+*Outgoing statement.* "**Drop 3** — third voice from top dropped an octave." — §8.2 *VoicingGenerator*, the
+close-position variants (locator: line 5856).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.67.
+
+---
+
+**Row 27.7 — drop 3 is less common and more open.**
+
+*Outgoing statement.* "Less common, more open sound." — §8.2 *VoicingGenerator*, the close-position variants (locator:
+line 5856).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.67.
+
+---
+
+**Row 27.8 — drop 2 and 4: the second and fourth voices from the top both dropped.**
+
+*Outgoing statement.* "**Drop 2 and 4** — second and fourth voices from top both dropped." — §8.2 *VoicingGenerator*,
+the close-position variants (locator: line 5857).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.67.
+
+---
+
+**Row 27.9 — drop 2 and 4 is very open.**
+
+*Outgoing statement.* "Very open." — §8.2 *VoicingGenerator*, the close-position variants (locator: line 5857).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.67.
+
+---
+
+**Row 27.10 — drop 2 and 4 in Puerling's more elaborate arrangements.**
+
+*Outgoing statement.* "Puerling's more elaborate arrangements." — §8.2 *VoicingGenerator*, the close-position variants
+(locator: line 5858).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.67.
+
+---
+
+**Row 27.11 — the harmonizer's first step: melodic analysis.**
+
+*Outgoing statement.* "**Melodic analysis** — phrase structure, scale degrees, climax, chromatic notes" — §8.4
+*RuleBasedHarmonizer* (locator: line 5938).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 27.12 — the second step: planning where the chords change.**
+
+*Outgoing statement.* "**Harmonic rhythm planning** — where chord changes occur" — §8.4 *RuleBasedHarmonizer* (locator:
+line 5939).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 27.13 — the third step: the most natural chord for each melody note.**
+
+*Outgoing statement.* "**Initial chord suggestion** — most natural chord for each melody note given style context and
+key" — §8.4 *RuleBasedHarmonizer* (locator: lines 5940–5941).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 27.14 — the fourth step: progression coherence.**
+
+*Outgoing statement.* "**Progression coherence** — ensure functional logic, complete ii-V-I patterns, appropriate
+cadences" — §8.4 *RuleBasedHarmonizer* (locator: lines 5942–5943).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 27.15 — the idiomatic-material generator: fills and decorative material.**
+
+*Outgoing statement.* "Generates style-idiomatic fills and decorative material:" — §8.6 *IdiomaticMaterialGenerator*
+(locator: line 5957).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 27.16 — brass fills and riffs.**
+
+*Outgoing statement.* "Brass fills and riffs (jazz big band, funk, soul)" — §8.6 *IdiomaticMaterialGenerator* (locator:
+line 5958).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 27.17 — guitar riffs.**
+
+*Outgoing statement.* "Guitar riffs (rock, funk)" — §8.6 *IdiomaticMaterialGenerator* (locator: line 5959).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 27.18 — chord animation: voices moving through the chord tones.**
+
+*Outgoing statement.* "Chord animation — voices moving through chord tones (Poulenc technique)" — §8.6
+*IdiomaticMaterialGenerator* (locator: line 5960).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+---
+
+#### Not a statement — listed so the arithmetic closes (1)
+
+1. "*Tertian family — close position variants:*" (5851) — *a label*.
+
+#### The arithmetic at this member
+
+- Rows written: **18** (27.1 to 27.18); no row is split.
+- **Outgoing statements placed: 18.**
+- Listed under *not a statement*: **1**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 18 dispositions over 18
+  statements.
+- **UNPLACED at this member: 0** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 10 | 27.1, 27.2, 27.3, 27.4, 27.5, 27.6, 27.7, 27.8, 27.9, 27.10 |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 8 | 27.11, 27.12, 27.13, 27.14, 27.15, 27.16, 27.17, 27.18 |
+| UNPLACED | 0 | — |
+| **Total** | **18** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 10 + 0 + 0 + 8 + 0 = 18, against 18 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 18 |
+| **Total verdicts** | **18** |
+
+*(18 verdicts over 18 statements; no statement names two derived statements.)* DIFFERS: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 27 is empty, and no decision is
+  homed in these lines.
+- **SEEN rows: none.** The check was made at the homes as the manifest states: none of the eight homes 1(c) names lies
+  in this member's ranges.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
+  L2-S17, L2-S22, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -41812,6 +42136,8 @@ the row says which.
   note model carries, its foundation built and dormant.
 - Row 26.4 — travelling with Row 22.100: the voice-leading dimension of the voice-leading-defined schemata, outside the
   Harmonic Vocabulary.
+- Rows 27.1 to 27.10 — travelling with Row 21.67: the close-position voicing and the drop voicings built from it,
+  drop 2, drop 3 and drop 2 and 4, with what each is used for.
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -42036,8 +42362,8 @@ numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows nu
 no row. Member 9's relocations are the rows numbered 9.n above, member 10's the rows numbered 10.n, member 11's
 the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows numbered 13.n, member 14's the rows
 numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows numbered 17.n. Member 18 relocates no row. Member 19 relocates no row. Member 20 relocates no row, member 21's the rows numbered 21.n, member 22's the rows numbered 22.n, member 23's the rows
-numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, and member 26's
-relocations are the rows numbered 26.n.)*
+numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
+relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -43644,10 +43970,11 @@ own distribution table in §6.
 | 24 | 130 | 13 | 0 | 4 | 60 | 0 | 47 | 6 | 40 |
 | 25 | 53 | 2 | 0 | 1 | 0 | 0 | 17 | 33 | 27 |
 | 26 | 24 | 0 | 0 | 14 | 1 | 0 | 7 | 2 | 6 |
-| **Total** | **3213** | **411** | **86** | **464** | **1060** | **0** | **918** | **274** | **1430** |
+| 27 | 18 | 0 | 0 | 10 | 0 | 0 | 8 | 0 | 1 |
+| **Total** | **3231** | **411** | **86** | **474** | **1060** | **0** | **926** | **274** | **1431** |
 
-**The arithmetic check:** 411 + 86 + 464 + 1060 + 0 + 918 + 274 = 3213, against 3213 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24).
+**The arithmetic check:** 411 + 86 + 474 + 1060 + 0 + 926 + 274 = 3231, against 3231 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18).
 
 **Current-text verdicts.**
 
@@ -43679,10 +44006,11 @@ own distribution table in §6.
 | 24 | 19 | 21 | 92 | 132 |
 | 25 | 2 | 0 | 51 | 53 |
 | 26 | 1 | 2 | 21 | 24 |
-| **Total** | **619** | **614** | **2028** | **3261** |
+| 27 | 0 | 0 | 18 | 18 |
+| **Total** | **619** | **614** | **2046** | **3279** |
 
-**The arithmetic check:** 619 + 614 + 2028 = 3261 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24).
+**The arithmetic check:** 619 + 614 + 2046 = 3279 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18).
 
 ## 14. The derivation's independence record, relayed
 
@@ -43713,4 +44041,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 26 are done, positions 27 to 62 are untouched.
+  untouched: positions 1 to 27 are done, positions 28 to 62 are untouched.
