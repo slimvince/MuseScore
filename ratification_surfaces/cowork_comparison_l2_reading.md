@@ -68,7 +68,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 25 | `ARCHITECTURE.md` passages — *6. The Style System* | **DONE** (§6.25) |
 | 26 | `ARCHITECTURE.md` passages — *7. The Knowledge Base* | **DONE** (§6.26) |
 | 27 | `ARCHITECTURE.md` passages — *8. Planned Generation Components* | **DONE** (§6.27) |
-| 28 | `ARCHITECTURE.md` passages — *9. The Constraint System* | NOT YET TABULATED |
+| 28 | `ARCHITECTURE.md` passages — *9. The Constraint System* | **DONE** (§6.28) |
 | 29 | `ARCHITECTURE.md` passages — *10. Visualization* | NOT YET TABULATED |
 | 30 | `ARCHITECTURE.md` passages — *11. Intonation* | NOT YET TABULATED |
 | 31 | `ARCHITECTURE.md` passages — *12. User Interface* | NOT YET TABULATED |
@@ -106,15 +106,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 27 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 28 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, and the `ARCHITECTURE.md` passages under *8. Planned Generation Components*.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, and the `ARCHITECTURE.md` passages under *9. The Constraint System*.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 27 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 28 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -137,8 +137,8 @@ tabulated positions 17 to 22, each whole and in its own commit, and stopped at t
 dispatch's capacity judgment (its Task 1(h)): position 23 was judged not finishable whole in the context that remained with the
 batch's close still to run, and was not opened. The sixth batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md`, resumed at position 23 and tabulated
-positions 23 to 27, each whole and in its own commit. **Positions 28 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 28**, `ARCHITECTURE.md` passages — *9. The Constraint System*. §7, §8,
+positions 23 to 28, each whole and in its own commit. **Positions 29 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 29**, `ARCHITECTURE.md` passages — *10. Visualization*. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -41936,6 +41936,116 @@ line 5958).
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
   L2-S17, L2-S22, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
 
+---
+
+### 6.28 — Member 28: `ARCHITECTURE.md`, passages — *9. The Constraint System*
+
+> **Manifest for this member.** Position **28**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: *"## 9. The Constraint System"*. **The one published range**, as a locator only,
+> by its first and last line as the artifact publishes them (**D-307**):
+>
+> 1. lines 5990–6004, from *"```cpp"* to *"```"*.
+>
+> **The range's first and last line matched the file** at the object this batch read, with no trailing carriage return
+> to set aside. **The lines outside the range are outside the member** and are not tabulated, quoted or listed. **No
+> line inside the range is a heading.** Outgoing statements: **2** (rows 28.1 and 28.2; no row is split). Listed under
+> *not a statement*: **5**. Counted at this member by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** One code block of §9.2, the constraint
+> store's interface. **The placement readings are those of the earlier members, applied unchanged**, member 23's
+> code-line reading among them: a code line that carries a comment saying what it is or does is a statement about the
+> implementation and is QUARANTINED; a run of code lines that carries no comment, and each fence line, is listed under
+> *not a statement*. **No reading is new at this member.**
+>
+> **The WITHHELD homes inside this member**: none — the artifact's `item_4_identities_inside` for position 28 is
+> empty, and a check at `tools/audit/decisions/backbone_decisions.json` found no decision homed in lines 5990–6004.
+> **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes lies in this member —
+> the two in `ARCHITECTURE.md`, D-002 and D-095, lie at lines 21–22 and 43–44.
+
+---
+
+**Row 28.1 — a fixed element propagates what fixing it implies.**
+
+*Outgoing statement.* "// Fixed elements propagate influence — compute what fixing X implies std::vector<Constraint>
+propagate(const ScoreElement* element) const;" — §9.2 *ConstraintStore*, the code block (locator: lines 5998–5999).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a constraint store keyed by element identity exist at the
+current commit, and does anything in the analysis read it?
+
+---
+
+**Row 28.2 — the fixed elements kept by MuseScore element identity.**
+
+*Outgoing statement.* "std::map<int, FixLevel> fixedElements; // keyed by MuseScore element ID" — §9.2 *ConstraintStore*,
+the code block (locator: line 6002).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 28.1.
+
+---
+
+---
+
+#### Not a statement — listed so the arithmetic closes (5)
+
+1. "```cpp" (5990) — *the opening of a code block*.
+2. "class ConstraintStore { public: … FixLevel fixLevel(const ScoreElement* element) const;" (5991–5996) — *code lines
+   that carry no comment*.
+3. "private:" (6001) — *a code line that carries no comment*.
+4. "};" (6003) — *a code line that carries no comment*.
+5. "```" (6004) — *the close of a code block*.
+
+#### The arithmetic at this member
+
+- Rows written: **2** (28.1 and 28.2); no row is split.
+- **Outgoing statements placed: 2.**
+- Listed under *not a statement*: **5**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 2 dispositions over 2
+  statements.
+- **UNPLACED at this member: 0** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 2 | 28.1, 28.2 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **2** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 0 + 2 + 0 + 0 + 0 = 2, against 2 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 2 |
+| **Total verdicts** | **2** |
+
+*(2 verdicts over 2 statements; no statement names two derived statements.)* DIFFERS: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 28 is empty, and no decision is
+  homed in these lines.
+- **SEEN rows: none.** The check was made at the homes as the manifest states: none of the eight homes 1(c) names lies
+  in this member's ranges.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
+  L2-S17, L2-S22, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -42363,7 +42473,7 @@ no row. Member 9's relocations are the rows numbered 9.n above, member 10's the 
 the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows numbered 13.n, member 14's the rows
 numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows numbered 17.n. Member 18 relocates no row. Member 19 relocates no row. Member 20 relocates no row, member 21's the rows numbered 21.n, member 22's the rows numbered 22.n, member 23's the rows
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
-relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n.)*
+relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -43211,6 +43321,8 @@ rows here, each with its audit question, in the commit that tabulates it.
   does any production path run it?
 - Row 26.21(ii) — travelling with Row 23.15(ii): is the pedal flag left empty on the record path at the current commit,
   and does anything read it there?
+- Row 28.1, with Row 28.2 — does a constraint store keyed by element identity exist at the current commit, and does
+  anything in the analysis read it?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -43971,10 +44083,11 @@ own distribution table in §6.
 | 25 | 53 | 2 | 0 | 1 | 0 | 0 | 17 | 33 | 27 |
 | 26 | 24 | 0 | 0 | 14 | 1 | 0 | 7 | 2 | 6 |
 | 27 | 18 | 0 | 0 | 10 | 0 | 0 | 8 | 0 | 1 |
-| **Total** | **3231** | **411** | **86** | **474** | **1060** | **0** | **926** | **274** | **1431** |
+| 28 | 2 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 5 |
+| **Total** | **3233** | **411** | **86** | **474** | **1062** | **0** | **926** | **274** | **1436** |
 
-**The arithmetic check:** 411 + 86 + 474 + 1060 + 0 + 926 + 274 = 3231, against 3231 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18).
+**The arithmetic check:** 411 + 86 + 474 + 1062 + 0 + 926 + 274 = 3233, against 3233 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2).
 
 **Current-text verdicts.**
 
@@ -44007,10 +44120,11 @@ own distribution table in §6.
 | 25 | 2 | 0 | 51 | 53 |
 | 26 | 1 | 2 | 21 | 24 |
 | 27 | 0 | 0 | 18 | 18 |
-| **Total** | **619** | **614** | **2046** | **3279** |
+| 28 | 0 | 0 | 2 | 2 |
+| **Total** | **619** | **614** | **2048** | **3281** |
 
-**The arithmetic check:** 619 + 614 + 2046 = 3279 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18).
+**The arithmetic check:** 619 + 614 + 2048 = 3281 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2).
 
 ## 14. The derivation's independence record, relayed
 
@@ -44041,4 +44155,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 27 are done, positions 28 to 62 are untouched.
+  untouched: positions 1 to 28 are done, positions 29 to 62 are untouched.
