@@ -24160,7 +24160,7 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
 | THE DERIVATION IS SILENT | 101 |
 | **Total verdicts** | **104** |
 
-*(104 verdicts over 104 statements because 0 statement each name two derived statements: .)* DIFFERS: .
+*(104 verdicts over 104 statements; no statement names two derived statements.)* DIFFERS: none.
 
 #### The marks at this member
 
@@ -24963,7 +24963,7 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
 | THE DERIVATION IS SILENT | 52 |
 | **Total verdicts** | **71** |
 
-*(71 verdicts over 71 statements because 0 statement each name two derived statements: .)* DIFFERS: 12.20, 12.24(i), 12.25, 12.43(iii).
+*(71 verdicts over 71 statements; no statement names two derived statements.)* DIFFERS: 12.20, 12.24(i), 12.25, 12.43(iii).
 
 #### The marks at this member
 
@@ -25684,7 +25684,7 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
 | THE DERIVATION IS SILENT | 34 |
 | **Total verdicts** | **50** |
 
-*(50 verdicts over 50 statements because 0 statement each name two derived statements: .)* DIFFERS: 13.37, 13.39, 13.41, 13.42, 13.43.
+*(50 verdicts over 50 statements; no statement names two derived statements.)* DIFFERS: 13.37, 13.39, 13.41, 13.42, 13.43.
 
 #### The marks at this member
 
@@ -26319,7 +26319,7 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
 | THE DERIVATION IS SILENT | 46 |
 | **Total verdicts** | **47** |
 
-*(47 verdicts over 47 statements because 0 statement each name two derived statements: .)* DIFFERS: 14.17(ii).
+*(47 verdicts over 47 statements; no statement names two derived statements.)* DIFFERS: 14.17(ii).
 
 #### The marks at this member
 
@@ -26364,8 +26364,12 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
 > **D-278** (lines 108–117). A row is marked WITHHELD where its statement lies inside that home. **No boundary
 > case reaches a row:** the sentence that opens a line before the home and ends on its first line, and the one
 > that opens inside it and runs past its last line, are both listed under *not a statement*, where no mark
-> applies. **No SEEN home lies in this member** — none of the eight identities 1(c) names (D-002, D-095, D-223,
-> D-261, D-275, D-279, D-322, D-393) is among the identities the artifact places in position 15.
+> applies. **The SEEN check, made at the homes** and not at the identities the artifact places in position 15,
+> which list none of the eight 1(c) names, **finds D-279's home, `cowork_engage_arc_plan.md:69-72`, inside this
+> member**: the STAGE-3 ENTRY GATE's heading at line 69, its lead-in sentence at line 70, and the opening of EG-1
+> at lines 71–72. It reaches one row, Row 15.19, whose sentence opens inside the home and runs past its last line,
+> and which is marked and says so; and two items listed under *not a statement*, the heading and the lead-in,
+> which carry no mark.
 ---
 
 **Row 15.1 — the legacy result-cap tangle is retired by the decoder engagement, never refactored alone.**
@@ -26584,9 +26588,10 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
 
 ---
 
-**Row 15.19 — EG-1: the tier-1 defusal lands, or is bypassed, before the function layer reaches production.**
+**Row 15.19 — EG-1: the tier-1 defusal lands, or is bypassed, before the function layer reaches production.** *SEEN —
+§6.3 entry 4 (D-279).*
 
-*Outgoing statement.* "**(EG-1) Tier-1 defusal is a PREREQUISITE, not an inventory item:** the resolver selection re-ordering (arc #9 — the as-built `resolveAbstained` still selects progression-first at confidence 1.0, the channel F-B measured uncorrelated with correctness) and the F-B override demotion (arc #11 — `attemptFineGrainOverride` runs unconditionally in `resolveCarriedReadings` Phase 2, measured −756) must land, or the wiring must provably bypass both, **before** L5 output reaches production." — the section *The stages*, the STAGE-3 ENTRY GATE, EG-1 (locator: lines 71–75). Two claims: (i) the resolver re-ordering and the override demotion must land, or be provably bypassed, before the function layer's output reaches production; (ii) as built, the resolver selects progression-first at full confidence and the fine-grain override runs unconditionally, with the measurements recorded.
+*Outgoing statement.* "**(EG-1) Tier-1 defusal is a PREREQUISITE, not an inventory item:** the resolver selection re-ordering (arc #9 — the as-built `resolveAbstained` still selects progression-first at confidence 1.0, the channel F-B measured uncorrelated with correctness) and the F-B override demotion (arc #11 — `attemptFineGrainOverride` runs unconditionally in `resolveCarriedReadings` Phase 2, measured −756) must land, or the wiring must provably bypass both, **before** L5 output reaches production." — the section *The stages*, the STAGE-3 ENTRY GATE, EG-1 (locator: lines 71–75; the sentence opens inside D-279's home as cited, 69–72, runs past its last line, and carries the opening of EG-1 that the decisions register quotes, so it is marked). Two claims: (i) the resolver re-ordering and the override demotion must land, or be provably bypassed, before the function layer's output reaches production; (ii) as built, the resolver selects progression-first at full confidence and the fine-grain override runs unconditionally, with the measurements recorded.
 
 *Derived statements that speak to it.* (i) None. (ii) None.
 
@@ -26944,7 +26949,7 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
 | THE DERIVATION IS SILENT | 43 |
 | **Total verdicts** | **45** |
 
-*(45 verdicts over 45 statements because 0 statement each name two derived statements: .)* DIFFERS: 15.39.
+*(45 verdicts over 45 statements; no statement names two derived statements.)* DIFFERS: 15.39.
 
 #### The marks at this member
 
@@ -26952,8 +26957,11 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
   opens a line before the home and ends on its first line, and the one that opens inside it and runs past its
   last line, are listed under *not a statement* and carry no mark. **No AGREES stands on a WITHHELD statement**:
   both rows read THE DERIVATION IS SILENT.
-- **SEEN rows: none.** None of the eight identities 1(c) names — D-002, D-095, D-223, D-261, D-275, D-279,
-  D-322, D-393 — is among the identities the artifact places in position 15.
+- **SEEN rows: 15.19 (D-279) — §6.3 entry 4.** The check was made at the homes, not at the identities the artifact
+  places in position 15, which list none of the eight 1(c) names. Row 15.19's sentence opens inside D-279's home
+  as cited, lines 69–72, and runs past its last line, and is marked, as the row says; the gate's heading and its
+  lead-in, inside the home, are listed under *not a statement* and carry no mark. **No AGREES stands on a SEEN
+  statement**: both claims of Row 15.19 read THE DERIVATION IS SILENT.
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S38 (entry 6) — 15.29, 15.39.
   No row of this member names L2-S12, L2-S17, L2-S22, L2-S31, L2-S42, L2-S43 or L2-S45.
 
@@ -27140,7 +27148,7 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
 | THE DERIVATION IS SILENT | 10 |
 | **Total verdicts** | **10** |
 
-*(10 verdicts over 10 statements because 0 statement each name two derived statements: .)* DIFFERS: .
+*(10 verdicts over 10 statements; no statement names two derived statements.)* DIFFERS: none.
 
 #### The marks at this member
 
