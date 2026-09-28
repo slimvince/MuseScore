@@ -51,7 +51,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 10 | `cowork_joint_estimator_factorization.md`, whole | **DONE** (§6.10) |
 | 11 | `cowork_score_census.md`, whole | **DONE** (§6.11) |
 | 12 | `cowork_prefit_gates.md`, whole | **DONE** (§6.12) |
-| 13 | `docs/nct_detection_design.md`, whole | NOT YET TABULATED |
+| 13 | `docs/nct_detection_design.md`, whole | **DONE** (§6.13) |
 | 14 | `cowork_phase5b_l4_build_plan.md`, whole | NOT YET TABULATED |
 | 15 | `cowork_engage_arc_plan.md`, whole | NOT YET TABULATED |
 | 16 | `cowork_l1l4_review_charter.md`, whole | NOT YET TABULATED |
@@ -104,13 +104,14 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 12 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 13 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
-`cowork_score_census.md`, whole, and `cowork_prefit_gates.md`, whole.**
+`cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole, and
+`docs/nct_detection_design.md`, whole.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 12 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 13 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -124,9 +125,9 @@ tabulated positions 6, 7 and 8, each whole and in its own commit, and stopped at
 position 8 under that dispatch's capacity judgment (its Task 1(h)): position 9 was judged not finishable whole
 in the context that remained, and was not opened. The fourth batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md`, resumed at position 9
-and tabulated positions 9, 10, 11 and 12, each whole and in its own commit. **Positions 13 to 62 are
+and tabulated positions 9, 10, 11, 12 and 13, each whole and in its own commit. **Positions 14 to 62 are
 UNTOUCHED**: not read for tabulation, not quoted, not counted and not placed, and nothing in them is partly
-worked. **The next writing resumes at position 13**, `docs/nct_detection_design.md`, whole. §7, §8, §9 and §14 stay NOT YET
+worked. **The next writing resumes at position 14**, `cowork_phase5b_l4_build_plan.md`, whole. §7, §8, §9 and §14 stay NOT YET
 WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -24967,6 +24968,722 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
   (entry 6) — 12.5, 12.6, 12.8, 12.9, 12.16, 12.18, 12.19, 12.21, 12.22, 12.24, 12.25, 12.40. No row of this
   member names L2-S12, L2-S22, L2-S31, L2-S42, L2-S43 or L2-S45.
 
+---
+
+### 6.13 — Member 13: `docs/nct_detection_design.md`, whole
+
+> **Manifest for this member.** Position **13**. Kind: *item 2 — a whole document (not a specification-set
+> member)*. Document: `docs/nct_detection_design.md`. Label: *the whole document*. Range, as a locator only:
+> lines 1–219, from its first line *"# Non-Chord-Tone Detection — Design Analysis"* to its last *"speculative
+> improvement into a targeted one."*, exactly as the artifact publishes it (**D-307**). Outgoing statements:
+> **50** (rows 13.1 to 13.47; 3 of those rows carry two or more claims each and are split — the
+> arithmetic is at the foot of this member). Listed under *not a statement*: **65**. Counted at this member by
+> this session; the counts appear here and nowhere else.
+>
+> **What the named-documents ruling's §2 records this document to be**
+> (`records/cowork/rulings/cowork_rulings_2026_09_27_l2_named_documents_sitting.md` §2, quoted): *"a design
+> analysis dated 2026-04-26, status* deferred*: what non-chord-tone detection requires (voice-leading tracking,
+> metric weighting, style awareness, probabilistic output), two architectural shapes (chord identification that
+> is aware of non-chord tones, adopted; an output-stripping layer, banned), and the voice-tracking problem on
+> piano scores. **Kind: design document.** Squarely on L2's subject — the chord-tone / non-chord-tone line — and
+> written before the joint estimator."*
+>
+> **What kind of text this member is, and which placement readings apply.** A deferred design analysis written
+> against the analyzer of its date. **The placement readings are those of the earlier members, applied
+> unchanged**: a description of the analyzer of its date is QUARANTINED, each with its audit question, and the
+> axis there is SILENT because the derivation states what L2 decides, not what an implementation did; an
+> estimate of what a deferred build would change, a step of its plan and a strategy it would follow are
+> HISTORICAL, and where a derived statement contradicts such a strategy the row says DIFFERS beside its
+> disposition; a statement of what the reading must do is placed on its own terms against the derived statements
+> that speak to it; a rejected alternative is listed under *not a statement* and the ban that rejects it is
+> tabulated; the reasons given for deferring are the defense of the deferral; and a worked example, a
+> restatement, a label, a lead-in, an open question and provenance are listed under *not a statement*.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 13:
+> **none** — that list is empty, so no row is marked WITHHELD. **No SEEN home lies in this member** — none of
+> the eight identities 1(c) names (D-002, D-095, D-223, D-261, D-275, D-279, D-322, D-393) is among the
+> identities the artifact places in position 13.
+---
+
+**Row 13.1 — deferred until the LLM-triage data shows which gaps the detection would address.**
+
+*Outgoing statement.* "Deferred until LLM-triage corpus data identifies which analyzer gaps NCT detection would actually address." — the opening lines (locator: lines 4–5).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.2 — a non-chord tone sounds in a chord region but does not belong to the chord's harmonic identity.**
+
+*Outgoing statement.* "A non-chord-tone (NCT) is a note that sounds during a chord region but isn't part of the chord's harmonic identity." — the section *What NCT detection would do* (locator: lines 9–10).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **AGREES** — per event, *"chord tone, or elaboration together with its relation"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S1).
+
+---
+
+**Row 13.3 — the common kinds of non-chord tone, named.**
+
+*Outgoing statement.* "Common types: passing tones (PT), neighbor tones (NT), suspensions (SUS), anticipations (ANT), appoggiaturas, escape tones, pedal tones, chromatic neighbors, cambiata, échappée." — the section *What NCT detection would do* (locator: lines 10–13).
+
+*Derived statements that speak to it.* L2-S8.
+
+*Current-text axis.* L2-S8: **AGREES** — on the four it admits, *"passing, neighbour, suspension, anticipation"*, leaving appoggiatura, escape tone and pedal point to the user's ruling.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a list of elaboration kinds wider than the four L2-S8 admits — appoggiatura, escape tone, pedal tone, chromatic neighbor, cambiata — and whether any kind beyond the four is admitted is OQ-L2-4, a ruling L2-S8 leaves to the user; placing the list would take that ruling.
+
+---
+
+**Row 13.4 — the analyzer of the document's date does not tell chord tones from non-chord tones.**
+
+*Outgoing statement.* "Today the analyzer doesn't distinguish chord tones from NCTs." — the section *What NCT detection would do* (locator: line 15).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation did.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the analysis at the current commit decide, for each sounding note, chord tone or elaboration, or does it count every sounding note in a span as belonging to the chord?
+
+---
+
+**Row 13.5 — it counts everything sounding in a region as belonging to the chord.**
+
+*Outgoing statement.* "It labels everything sounding during a region as part of the chord." — the section *What NCT detection would do* (locator: lines 15–16).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 13.4. *Audit question:* as at Row 13.4.
+
+---
+
+**Row 13.6 — that output is correct at the surface but can diverge from the convention of reading through passing material.**
+
+*Outgoing statement.* "This produces correct surface analysis (the chord literally contains those pitches) but can diverge from traditional analytical convention, which "reads through" passing material to identify the structural chord." — the section *What NCT detection would do* (locator: lines 17–20).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 13.4. *Audit question:* as at Row 13.4.
+
+---
+
+**Row 13.7 — most non-chord tones are identified by stepwise approach and resolution in one voice.**
+
+*Outgoing statement.* "Most NCTs are identified by stepwise approach AND stepwise resolution within a single voice line." — the section *What good NCT detection requires*, item 1 (locator: lines 36–38).
+
+*Derived statements that speak to it.* L2-S24.
+
+*Current-text axis.* L2-S24: **AGREES** — its defense: *"Passing, neighbour, suspension and anticipation are each defined by approach and departure in one line"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S24).
+
+---
+
+**Row 13.8 — the detection needs durable voice tracking across chord boundaries; the analyzer tracks no voices.**
+
+*Outgoing statement.* "Requires durable voice tracking across chord boundaries — the analyzer doesn't currently track voices as entities." — the section *What good NCT detection requires*, item 1 (locator: lines 38–40). Two claims: (i) the detection needs durable tracking of voices across chord boundaries; (ii) the analyzer does not track voices as entities.
+
+*Derived statements that speak to it.* (i) L2-S24. (ii) None.
+
+*Current-text axis.* (i) L2-S24: **AGREES** — the evidence is read from L1's per-voice relations, the following note *"read as the preceding-note relation published at the next onset in the same voice"*. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*. *(L1 publishes the per-voice relations L2-S24 reads, per the input contract beside S-39; L2-S24 travels with it.)* (ii) **QUARANTINED.** *Audit question:* does the analysis at the current commit read voice-leading evidence per notated voice from the published relations, or track no voice at all?
+
+---
+
+**Row 13.9 — non-chord tones typically on weak beats, chord tones on strong.**
+
+*Outgoing statement.* "NCTs typically fall on weak beats, chord tones on strong beats." — the section *What good NCT detection requires*, item 2 (locator: lines 41–42).
+
+*Derived statements that speak to it.* L2-S25.
+
+*Current-text axis.* L2-S25: **AGREES** — metric position bears on an assignment *"as terms (covariates)"* and never decides it.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S25).
+
+---
+
+**Row 13.10 — the analyzer does not consult metric position when scoring chord-tone candidates.**
+
+*Outgoing statement.* "The analyzer has time-signature data but doesn't currently consult metric position when scoring chord-tone candidates." — the section *What good NCT detection requires*, item 2 (locator: lines 42–44).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation did.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the shipped candidate score read metric position as a term on the chord-tone assignment?
+
+---
+
+**Row 13.11 — the detection must be aware of the idiom, a naive one misclassifying.**
+
+*Outgoing statement.* "Naive NCT detection misclassifies based on style." — the section *What good NCT detection requires*, item 3 (locator: line 47).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 1.25.
+
+---
+
+**Row 13.12 — reading the idiom may not use user-written analytical content; structural cues might serve.**
+
+*Outgoing statement.* "Style-aware detection conflicts with the chord-symbol-ban principle if it requires reading user-written analytical content; structural cues (instrumentation, tempo, key signature density) might be defensible signals." — the section *What good NCT detection requires*, item 3 (locator: lines 48–51). Two claims: (i) detecting the idiom may not read user-written analytical content; (ii) structural cues — instrumentation, tempo, key-signature density — might be defensible signals of the idiom.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract). *(The input contract carries it at IC S-2: a chord symbol or an analytical mark is annotation, and no layer may consume it as evidence about the music.)* (ii) **UNPLACED.** *What was read:* a conjecture, *"might be defensible signals"*, naming cues to the idiom; no derived statement speaks to reading the idiom from the notation, and the text does not assert it.
+
+---
+
+**Row 13.13 — the classification is confidence-weighted, not boolean.**
+
+*Outgoing statement.* "Boolean classification is brittle; confidence-weighted classification is what real analyzers (music21's various tools, the DCML team's analyses) use." — the section *What good NCT detection requires*, item 4 (locator: lines 53–55).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — *"A span-rival's mass is the marginal: the total mass of all whole readings that contain that span"*, each whole reading carrying its assignments.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S40).
+
+---
+
+**Row 13.14 — chord identification itself distinguishes chord tones from non-chord tones.**
+
+*Outgoing statement.* "The chord-ID logic itself becomes smarter about distinguishing chord tones from NCTs." — the section *Architectural fit* (locator: lines 61–62).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **AGREES** — the assignments *"are made inside the candidate score, relative to each candidate reading's chord"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S23).
+
+---
+
+**Row 13.15 — a post-analysis filter stripping the alterations read as non-chord tones is banned.**
+
+*Outgoing statement.* "**Banned** — violates the no-stripping-in-production principle (same category as extension stripping)." — the section *Architectural fit* (locator: lines 70–72).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 1.3.
+
+---
+
+**Row 13.16 — the chord identification aware of non-chord tones is the right fit.**
+
+*Outgoing statement.* "Shape A is the right architectural fit if NCT detection is pursued." — the section *Architectural fit* (locator: lines 74–75).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **AGREES** — *"never by a detector that runs first"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S23).
+
+---
+
+**Row 13.17 — the estimate for the synthetic test catalog: modest.**
+
+*Outgoing statement.* "**On the synthetic test catalog (composing_tests):** Modest." — the section *Quality impact estimate* (locator: line 79).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.18 — the catalog's remaining differences were mostly representational.**
+
+*Outgoing statement.* "The remaining RealDiff entries (post-stripping, post-viiø-fix, post-b9/#9-fix) are mostly representational gaps (special notations like `C7alt`, `CPhryg`, `CTristan`, `Cm9b5`) plus a couple of sus4/triad cases that might benefit from suspension detection." — the section *Quality impact estimate* (locator: lines 79–83).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.19 — at most about two catalog entries would shift.**
+
+*Outgoing statement.* "So at most ~2 entries shift." — the section *Quality impact estimate* (locator: lines 83–84).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.20 — the estimate against editorial Roman-numeral analysis: where the detection helps.**
+
+*Outgoing statement.* "**On real-music annotations against editorial Roman analysis:** Where NCT detection genuinely helps." — the section *Quality impact estimate* (locator: lines 86–87).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.21 — the analyzer over-labels such textures as chord-tone alterations.**
+
+*Outgoing statement.* "The current analyzer over-labels these as chord-tone alterations." — the section *Quality impact estimate* (locator: lines 89–90).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 13.4. *Audit question:* as at Row 13.4.
+
+---
+
+**Row 13.22 — the detection would bring the labels closer to the Roman-numeral convention.**
+
+*Outgoing statement.* "NCT detection would produce annotations closer to traditional Roman numeral conventions: `I — IV — V — I` instead of `I — I(add6) — IV(add#11) — V(add9) — I`-style strings." — the section *Quality impact estimate* (locator: lines 90–93).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.23 — the estimate for jazz and extended-harmony idioms: risk of regression.**
+
+*Outgoing statement.* "**On jazz / extended-harmony idioms:** Risk of regression." — the section *Quality impact estimate* (locator: line 95).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.24 — a naive detector tuned for common practice would strip genuine colorings on dominant chords.**
+
+*Outgoing statement.* "A naive CPE-tuned NCT detector would strip genuine `b9` and `#11` colorings on dominant chords." — the section *Quality impact estimate* (locator: lines 97–98).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.25 — the estimate for consistency of the chord: modest improvement.**
+
+*Outgoing statement.* "**On chord-ID consistency:** Modest improvement." — the section *Quality impact estimate* (locator: line 101).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.26 — the same music in different voicings should give the same chord.**
+
+*Outgoing statement.* "Same music in slightly different voicings should produce same chord ID; NCT detection stabilizes this if voice-leading context is consistent." — the section *Quality impact estimate* (locator: lines 101–103). Two claims: (i) the same music in slightly different voicings should produce the same chord; (ii) the detection stabilizes this where the voice-leading context is consistent.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED.** *What was read:* a desideratum stated in passing, *"should produce same chord ID"*; no derived statement speaks to it, and L2-S28 makes the figure a field of the chord, so which fields a change of voicing may move is not settled by either text. (ii) **HISTORICAL.**
+
+---
+
+**Row 13.27 — the estimate for the features downstream: indirect improvement.**
+
+*Outgoing statement.* "**On downstream features (cadence, pivot, key inference):** Indirect improvement." — the section *Quality impact estimate* (locator: lines 105–106).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.28 — cadence, pivot and tonality inference all consume the chord output.**
+
+*Outgoing statement.* "All consume chord-ID output; cleaner chord IDs propagate." — the section *Quality impact estimate* (locator: lines 106–107).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation did.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* at the current commit, do cadence, pivot and tonality inference read the chord after it is decided, or is the chord decided together with the tonality?
+
+---
+
+**Row 13.29 — suspension detection would clean up the cadence output.**
+
+*Outgoing statement.* "Cadence detection particularly — suspensions are NCT-by-construction, and proper suspension detection cleans up cadence output significantly." — the section *Quality impact estimate* (locator: lines 107–109).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.30 — step 1: the LLM-triage workflow reports the categories of gaps.**
+
+*Outgoing statement.* "LLM-triage workflow runs on real corpus, produces a "categories of analyzer gaps" report." — the section *Sequencing*, item 1 (locator: lines 134–135).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.31 — step 2: decide from that report whether the detection is the best next investment.**
+
+*Outgoing statement.* "From that report, decide whether NCT detection is the highest-leverage next investment vs. alternatives (better key inference for non-CPE styles, better extension recognition for jazz, better chromatic-harmony handling, etc.)." — the section *Sequencing*, item 2 (locator: lines 136–139).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.32 — step 3: voice tracking, metric weighting, simple detection, measurement, the wider vocabulary.**
+
+*Outgoing statement.* "If pursued: voice-tracking infrastructure → metric-weighting integration → simple PT/NT detection → measurement → broader NCT vocabulary." — the section *Sequencing*, item 3 (locator: lines 140–142).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.33 — an estimate of three to five sessions for a first version.**
+
+*Outgoing statement.* "Probably 3-5 CC sessions for v0." — the section *Sequencing*, item 3 (locator: line 142).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.34 — step 4: awareness of the idiom as a follow-up, starting from common practice.**
+
+*Outgoing statement.* "Style-awareness as a follow-up rather than v0 — start with CPE-tuned detection, observe behavior on jazz/extended corpus, add style configuration if regressions are real." — the section *Sequencing*, item 4 (locator: lines 143–145).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.35 — distinct instruments: a voice per instrument.**
+
+*Outgoing statement.* "Voice per instrument." — the section *Voice-leading detection — the piano problem*, case 1 (locator: lines 156–157).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.36 — where the voice slots are used correctly, the voices are explicit.**
+
+*Outgoing statement.* "If the composer used voice slots correctly, voices are explicit." — the section *Voice-leading detection — the piano problem*, case 2 (locator: lines 159–160).
+
+*Derived statements that speak to it.* L2-S24.
+
+*Current-text axis.* L2-S24: **AGREES** — its relations are *"per onset change point and notated voice"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 13.8(i). *(L2-S24 travels with it.)*
+
+---
+
+**Row 13.37 — in a single voice slot, voice membership must be inferred.**
+
+*Outgoing statement.* "Voice membership must be inferred from: stem direction, register, onset timing, beam grouping, rhythmic continuity, sustained-note tracking." — the section *Voice-leading detection — the piano problem*, case 3 (locator: lines 163–165).
+
+*Derived statements that speak to it.* L2-S24.
+
+*Current-text axis.* L2-S24: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text says *"Voice membership must be inferred from: stem direction, register, onset timing, beam grouping, rhythmic continuity, sustained-note tracking"*; L2-S24's defense says pairing members of two chords into lines *"is voice separation, which the analysis never infers"*.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a strategy of a deferred plan.
+
+---
+
+**Row 13.38 — use the voice-slot data when present.**
+
+*Outgoing statement.* "**Use voice-slot data when present.**" — the section *Voice-leading detection — the piano problem*, the hybrid strategy (locator: line 169).
+
+*Derived statements that speak to it.* L2-S24.
+
+*Current-text axis.* L2-S24: **AGREES** — as at Row 13.36.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 13.8(i). *(L2-S24 travels with it.)*
+
+---
+
+**Row 13.39 — use stem direction within the first voice slot.**
+
+*Outgoing statement.* "**Use stem direction within voice slot 1.**" — the section *Voice-leading detection — the piano problem*, the hybrid strategy (locator: line 173).
+
+*Derived statements that speak to it.* L2-S24.
+
+*Current-text axis.* L2-S24: **DIFFERS** — as at Row 13.37.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a strategy of a deferred plan.
+
+---
+
+**Row 13.40 — use the staff boundaries.**
+
+*Outgoing statement.* "**Use staff boundaries.**" — the section *Voice-leading detection — the piano problem*, the hybrid strategy (locator: line 176).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a strategy of a deferred plan.
+
+---
+
+**Row 13.41 — fall back to inference from register.**
+
+*Outgoing statement.* "**Fall back to register-based inference** when structural cues don't give clean separation." — the section *Voice-leading detection — the piano problem*, the hybrid strategy (locator: lines 179–180).
+
+*Derived statements that speak to it.* L2-S24.
+
+*Current-text axis.* L2-S24: **DIFFERS** — as at Row 13.37.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a strategy of a deferred plan.
+
+---
+
+**Row 13.42 — notes in similar register moving stepwise likely one voice.**
+
+*Outgoing statement.* "Notes in similar register moving stepwise → likely same voice." — the section *Voice-leading detection — the piano problem*, the hybrid strategy (locator: lines 180–181).
+
+*Derived statements that speak to it.* L2-S24.
+
+*Current-text axis.* L2-S24: **DIFFERS** — as at Row 13.37.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a strategy of a deferred plan.
+
+---
+
+**Row 13.43 — notes with aligned onsets likely a chord or one rhythmic group.**
+
+*Outgoing statement.* "Onset-aligned notes → likely chord or same-rhythm group." — the section *Voice-leading detection — the piano problem*, the hybrid strategy (locator: lines 181–182).
+
+*Derived statements that speak to it.* L2-S24.
+
+*Current-text axis.* L2-S24: **DIFFERS** — as at Row 13.37.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a strategy of a deferred plan.
+
+---
+
+**Row 13.44 — tied notes continue a voice.**
+
+*Outgoing statement.* "Tied notes → continue voice." — the section *Voice-leading detection — the piano problem*, the hybrid strategy (locator: line 182).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a strategy of a deferred plan.
+
+---
+
+**Row 13.45 — the module would consume the engraving's voice determinations, which must be reliable.**
+
+*Outgoing statement.* "The composing module would consume engraving's voice determinations — those need to be reliable." — the section *Open questions* (locator: lines 202–203).
+
+*Derived statements that speak to it.* L2-S24.
+
+*Current-text axis.* L2-S24: **AGREES** — its premise: *"Notated voice is a usable line."*
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract). *(The input contract carries notated voice with this proxy hazard as its premise, at IC S-13, as L2-S24 relays.)*
+
+---
+
+**Row 13.46 — the decision: deferred.**
+
+*Outgoing statement.* "Deferred." — the section *Decision* (locator: line 216).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 13.47 — revisit after the LLM-triage workflow has produced data on where the output diverges.**
+
+*Outgoing statement.* "Re-visit after LLM-triage workflow has produced empirical data on where the analyzer's real-world output diverges from expert analysis." — the section *Decision* (locator: lines 216–218).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+
+---
+#### Not a statement — listed so the arithmetic closes (65)
+
+1. "Date: 2026-04-26" (3) — *provenance*.
+2. "Status: Strategic discussion." (4) — *a status of the document*.
+3. "Concrete example surfaced during Phase 5b verification: K.279/1 m7 beat 1 has a trill ornament including D# above a C major chord region." (22–24) — *a worked example*, the defense of Row 13.6.
+4. "The analyzer labels this `Cadd#9`." (24) — *a worked example*, the defense of Row 13.6.
+5. "The score's editorial Roman numeral analysis labels the same chord `I(add#9)`." (24–25) — *a worked example*, the defense of Row 13.6.
+6. "So in this specific case, the analyzer matches expert editorial analysis." (25–27) — *a worked example*, the defense of Row 13.6.
+7. "But in many other Classical/Baroque passages, similar chromatic motion would be labeled by editors as a passing tone and rendered as plain `I` rather than `I(add#9)`." (27–29) — *a worked example*, the defense of Row 13.6.
+8. "The convention gap is real." (29–30) — *a restatement of Row 13.6*.
+9. "Real NCT detection isn't a small fix." (34) — *narrative*.
+10. "Four requirements:" (34) — *a lead-in to the four, each listed or tabulated below*.
+11. "**Voice-leading tracking.**" (36) — *a label*.
+12. "**Metric weighting.**" (41) — *a label*.
+13. "**Style awareness.**" (45) — *a label*.
+14. "A `#9` in Mozart is almost always passing/neighbor; a `#9` in bebop is structural altered-dominant tension." (45–47) — *a worked example*, the defense of Row 13.11.
+15. "**Probabilistic output.**" (52) — *a label*.
+16. "NCT identification is inherently uncertain." (52–53) — *a defense* of Row 13.13.
+17. "Two viable shapes:" (59) — *a lead-in to the two shapes*.
+18. "**Shape A — NCT-aware chord identification.**" (61) — *a label*.
+19. "Output is still "maximal" in the sense that it accurately reflects what the analyzer concludes — it just concludes differently because it's now better at the underlying classification." (63–65) — *a defense* of Row 13.14.
+20. "Consistent with the no-stripping-in-production principle: the analyzer produces what it sees, but it sees more accurately." (65–67) — *a defense* of Row 13.14.
+21. "**Shape B — NCT-based output smoothing layer.**" (69) — *a label*.
+22. "Post-analysis filter that strips alterations identified as NCTs." (69–70) — *a rejected alternative*, its rejection tabulated at Row 13.15.
+23. "Rejected for the same reasons." (72) — *a restatement of Row 13.15*.
+24. "Not transformational on this metric." (84) — *a restatement of Row 13.17*.
+25. "Most Classical/Baroque corpus contains NCT-rich textures (passing tones in voice leading, neighbor figures, suspensions at cadences)." (87–89) — *a defense* of Row 13.20.
+26. "What looks like a passing tone in Classical is often structural extension in jazz." (95–97) — *a defense* of Row 13.23.
+27. "Style-awareness becomes load-bearing." (98–99) — *a restatement of Row 13.11*.
+28. "Three reasons to defer until LLM-triage corpus data is available:" (113) — *a lead-in to the reasons, which are the defense of Row 13.46*.
+29. "**The current 5 remaining RealDiff entries don't depend on NCT detection.**" (115–116) — *a defense* of Row 13.46.
+30. "None of the 4 special notations are NCT-related; only the 2 sus4/triad cases might benefit." (116–117) — *a defense* of Row 13.46.
+31. "So NCT detection wouldn't move the composing_tests baseline meaningfully." (117–118) — *a defense* of Row 13.46.
+32. "**LLM-triage provides cheaper quality signal.**" (119) — *a defense* of Row 13.46.
+33. "LLMs have internalized enough music theory to recognize "this `Cadd#9` is just a trill ornament" patterns." (119–121) — *a defense* of Row 13.46.
+34. "Running LLM-triage on real corpus would surface *where* NCT detection would help — before we invest in implementing it." (121–123) — *a defense* of Row 13.46.
+35. "That data also tells us which style assumptions to bake into the detector." (123–124) — *a defense* of Row 13.46.
+36. "**The current state is already analytically valid.**" (125) — *a defense* of Row 13.46.
+37. "K.279/1 m7 verification showed the analyzer matching expert editorial Romans beat-for-beat." (125–127) — *a defense* of Row 13.46.
+38. "Without empirical data showing real-world over-labeling, we'd be implementing NCT detection on speculation." (127–129) — *a defense* of Row 13.46.
+39. "If/when NCT detection is pursued:" (133) — *a lead-in to the steps, each tabulated below*.
+40. "A specific complication for NCT detection in our actual use case: much user-facing analysis runs on piano scores where multiple voices are played by a single hand on a single staff." (149–151) — *narrative*.
+41. "Voice tracking is harder than in orchestra scores." (151–152) — *narrative*.
+42. "Cases ranked by tractability:" (154) — *a lead-in to the cases, each listed or tabulated below*.
+43. "**Distinct instruments (orchestra, string quartet).**" (156) — *a label*.
+44. "Trivial." (157) — *an assessment of Row 13.35*.
+45. "**Distinct MuseScore voice slots.**" (158) — *a label*.
+46. "MuseScore stores up to 4 voices per staff." (158–159) — *narrative*.
+47. "*But* many users put everything in voice 1, especially in piano scores." (160–161) — *narrative*.
+48. "**Single voice slot, polyphonic content (typical piano).**" (162) — *a label*.
+49. "All notes in one voice slot." (163) — *narrative*.
+50. "For the typical piano case, hybrid strategy:" (167) — *a lead-in to the strategy, each item listed or tabulated below*.
+51. "Voice slots are structural notational metadata (analogous to time signature), not analytical interpretation — reading them is consistent with the chord-symbol-ban principle." (169–172) — *a defense* of Row 13.38.
+52. "Up-stem vs. down-stem on the same staff often signals separate voice candidates." (173–175) — *a defense* of Row 13.39.
+53. "Bach chorale convention." (175) — *a defense* of Row 13.39.
+54. "Piano treble vs. bass staff are typically separate voices, with hand-crossing as a known exception." (176–178) — *a defense* of Row 13.40.
+55. "The structural-data approach is consistent with the analyzer's existing architecture: it consumes notes + structural metadata (key signature, time signature, ties, pedal) and infers analytical content." (184–187) — *a defense* of the strategy.
+56. "Voice slots and stem direction belong in the same "structural metadata" category — already in the score, not user-written analytical claims." (187–189) — *a defense* of the strategy.
+57. "Inference falls back to harder territory but isn't fundamentally different from existing inference work (boundary detection, key detection, etc.)." (191–193) — *a defense* of the strategy.
+58. "How accurate is voice-slot usage in real-world MuseScore scores?" (197) — *an open question*.
+59. "If most users don't use slots properly, the structural-data approach has limited reach." (198–199) — *the premise of the open question before it*.
+60. "How well does the engraving layer's existing voice/stem logic cope with edge cases (cross-staff playing, voice crossings)?" (200–201) — *an open question*.
+61. "For sparse textures (single line, lead sheets), voice tracking is trivial but NCT detection has weak evidence to work with." (204–205) — *the premise of the open question after it*.
+62. "How does NCT detection degrade gracefully when voice context is thin?" (206–207) — *an open question*.
+63. "Style detection without reading user-written analytical content is a real constraint." (208–209) — *a restatement of Row 13.12(i)*.
+64. "Instrumentation cues (lead sheet vs. full orchestral score), tempo markings, and key-signature density might be enough — but verification would need empirical work on real corpora across style boundaries." (209–212) — *a conjecture, restating Row 13.12(ii)*.
+65. "That data turns NCT detection from a speculative improvement into a targeted one." (218–219) — *a defense* of Row 13.46.
+
+#### The arithmetic at this member
+
+- Rows written: **47** (13.1 to 13.47).
+- Rows split into two claims, **+1 each**: 13.8, 13.12, 13.26 — three rows, **+3**.
+- **Outgoing statements placed: 47 + 3 = 50.**
+- Listed under *not a statement*: **65**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 50 dispositions over
+  50 statements.
+- **UNPLACED at this member: 3** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 6 | 13.2, 13.7, 13.9, 13.13, 13.14, 13.16 |
+| ADOPTED — proposed | 2 | 13.11, 13.15 |
+| RELOCATED | 5 | 13.8(i), 13.12(i), 13.36, 13.38, 13.45 |
+| QUARANTINED | 7 | 13.4, 13.5, 13.6, 13.8(ii), 13.10, 13.21, 13.28 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 27 | 13.1, 13.17, 13.18, 13.19, 13.20, 13.22, 13.23, 13.24, 13.25, 13.26(ii), 13.27, 13.29, 13.30, 13.31, 13.32, 13.33, 13.34, 13.35, 13.37, 13.39, 13.40, 13.41, 13.42, 13.43, 13.44, 13.46, 13.47 |
+| UNPLACED | 3 | 13.3, 13.12(ii), 13.26(i) |
+| **Total** | **50** | — |
+
+**The arithmetic closes at this member**: 6 + 2 + 5 + 7 + 0 + 27 + 3 = 50, against 50 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 11 |
+| DIFFERS | 5 |
+| THE DERIVATION IS SILENT | 34 |
+| **Total verdicts** | **50** |
+
+*(50 verdicts over 50 statements because 0 statement each name two derived statements: .)* DIFFERS: 13.37, 13.39, 13.41, 13.42, 13.43.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 13 is empty, so no home of a
+  decision ruled L2's own lies in this member.
+- **SEEN rows: none.** None of the eight identities 1(c) names — D-002, D-095, D-223, D-261, D-275, D-279,
+  D-322, D-393 — is among the identities the artifact places in position 13.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met: none.** No row of this member names
+  L2-S12, L2-S17, L2-S22, L2-S31, L2-S38, L2-S42, L2-S43 or L2-S45.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -24999,6 +25716,9 @@ the row says which.
 - Row 7.21 — the tonal pitch class, the notated spelling of a pitch, as carried losslessly. *(IC S-3.)*
 - Row 7.171 — travelling with Row 5.21: that one shared derived view reads the notated spelling for every
   layer that uses it. *(IC S-3.)*
+- Row 13.12(i) — that the idiom is not read from user-written analytical content. *(IC S-2.)*
+- Row 13.45 — that the notated voices the analysis reads must be reliable, the input contract's declared proxy
+  hazard. *(IC S-13; L2-S24 AGREES at the row.)*
 
 **To *L1 — Change points, candidates and notated evidence*.**
 
@@ -25026,6 +25746,10 @@ the row says which.
 - Row 7.55 — that the layers below the reading are facts and use no style preset.
 - Row 10.5 — travelling with Row 6.6(i): the event, the minimal stretch between consecutive onsets and releases, as
   the layer below's slice.
+- Row 13.8(i) — that the voice-leading evidence needs durable voice tracking across chord boundaries, published
+  below the reading as per-voice relations. *(The input contract beside S-39; L2-S24 travels with it.)*
+- Rows 13.36 and 13.38 — travelling with Row 13.8(i): where the voice slots are used correctly the voices are
+  explicit, and the voice-slot data is used when present. *(L2-S24 travels with them.)*
 
 **To *L3 — The read-off facts*.**
 
@@ -25249,7 +25973,7 @@ the row says which.
 *(Member 2 relocates no row. Member 3 relocates one, Row 3.38, above. Member 5's relocations are the rows
 numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows numbered 7.n. Member 8 relocates
 no row. Member 9's relocations are the rows numbered 9.n above, member 10's the rows numbered 10.n, member 11's
-the rows numbered 11.n, and member 12's the rows numbered 12.n.)*
+the rows numbered 11.n, member 12's the rows numbered 12.n, and member 13's the rows numbered 13.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -25772,6 +26496,14 @@ rows here, each with its audit question, in the commit that tabulates it.
   pieces, and does the shipped decoder resolve them by a declared order?
 - Row 12.26(i) — travelling with Row 1.28: is the shipped fitted set one Bach idiom fit, and through which presets
   is it delivered?
+- Row 13.4 — does the analysis at the current commit decide, for each sounding note, chord tone or elaboration,
+  or does it count every sounding note in a span as belonging to the chord?
+- Rows 13.5, 13.6 and 13.21 — travelling with Row 13.4: the same question.
+- Row 13.8(ii) — does the analysis at the current commit read voice-leading evidence per notated voice from the
+  published relations, or track no voice at all?
+- Row 13.10 — does the shipped candidate score read metric position as a term on the chord-tone assignment?
+- Row 13.28 — at the current commit, do cadence, pivot and tonality inference read the chord after it is decided,
+  or is the chord decided together with the tonality?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -25852,6 +26584,10 @@ words.
   to how common the chord is in that mode, never evenly.
 - Row 10.51(iii) — that L2's search factorize the transition between spans into a same-tonality block and a
   tonality-change block, staying exact at a lower cost per boundary.
+- Row 13.11 — travelling with Row 1.25: that L2's weights be fitted per idiom, since the same written alteration
+  is an elaboration in one idiom and a chord member in another.
+- Row 13.15 — travelling with Row 1.3: that no layer after the reading strip the alterations the reading takes as
+  elaborations.
 
 **DIFFERS.**
 
@@ -26251,6 +26987,10 @@ words.
   alone."*
 - Row 12.43(iii) — travelling with Row 1.29(ii): the outgoing module reads the *"signature and declared mode"*;
   L2-S17 says *"A tonality or mode tag the record file declares is not read at all."*
+- Rows 13.37, 13.39, 13.41, 13.42 and 13.43 — the outgoing strategy infers voice membership, *"Voice membership
+  must be inferred from: stem direction, register, onset timing, beam grouping, rhythmic continuity, sustained-note
+  tracking"*; L2-S24's defense says pairing members of two chords into lines *"is voice separation, which the
+  analysis never infers"*.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -26274,10 +27014,11 @@ own distribution table in §6.
 | 10 | 96 | 39 | 7 | 5 | 2 | 0 | 19 | 24 | 16 |
 | 11 | 104 | 1 | 0 | 58 | 0 | 0 | 45 | 0 | 87 |
 | 12 | 71 | 7 | 0 | 26 | 1 | 0 | 33 | 4 | 24 |
-| **Total** | **2080** | **341** | **67** | **306** | **650** | **0** | **506** | **210** | **866** |
+| 13 | 50 | 6 | 2 | 5 | 7 | 0 | 27 | 3 | 65 |
+| **Total** | **2130** | **347** | **69** | **311** | **657** | **0** | **533** | **213** | **931** |
 
-**The arithmetic check:** 341 + 67 + 306 + 650 + 0 + 506 + 210 = 2080, against 2080 statements placed (72 +
-65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71).
+**The arithmetic check:** 347 + 69 + 311 + 657 + 0 + 533 + 213 = 2130, against 2130 statements placed (72 +
+65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50).
 
 **Current-text verdicts.**
 
@@ -26295,10 +27036,11 @@ own distribution table in §6.
 | 10 | 51 | 24 | 30 | 105 |
 | 11 | 3 | 0 | 101 | 104 |
 | 12 | 15 | 4 | 52 | 71 |
-| **Total** | **493** | **472** | **1155** | **2120** |
+| 13 | 11 | 5 | 34 | 50 |
+| **Total** | **504** | **477** | **1189** | **2170** |
 
-**The arithmetic check:** 493 + 472 + 1155 = 2120 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 +
-104 + 71).
+**The arithmetic check:** 504 + 477 + 1189 = 2170 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 +
+104 + 71 + 50).
 
 ## 14. The derivation's independence record, relayed
 
@@ -26329,4 +27071,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 12 are done, positions 13 to 62 are untouched.
+  untouched: positions 1 to 13 are done, positions 14 to 62 are untouched.
