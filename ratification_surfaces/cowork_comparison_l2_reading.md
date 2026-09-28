@@ -57,7 +57,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 15 | `cowork_engage_arc_plan.md`, whole | **DONE** (§6.15) |
 | 16 | `cowork_l1l4_review_charter.md`, whole | **DONE** (§6.16) |
 | 17 | `ARCHITECTURE.md` passages — the opening block, above the first `## ` heading | **DONE** (§6.17) |
-| 18 | `ARCHITECTURE.md` passages — *Document governance and the standing architecture notes* | NOT YET TABULATED |
+| 18 | `ARCHITECTURE.md` passages — *Document governance and the standing architecture notes* | **DONE** (§6.18) |
 | 19 | `ARCHITECTURE.md` passages — *Table of Contents* | NOT YET TABULATED |
 | 20 | `ARCHITECTURE.md` passages — *1. Project Overview* | NOT YET TABULATED |
 | 21 | `ARCHITECTURE.md` passages — *2. Architectural Principles* | NOT YET TABULATED |
@@ -105,16 +105,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 17 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 18 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, and the `ARCHITECTURE.md` passages
-of the opening block, above the first `## ` heading.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, and the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 17 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 18 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -133,9 +132,8 @@ position 16 under that dispatch's capacity judgment (its Task 1(h)): position 17
 batch would have met, was judged not finishable whole in the context that remained with the batch's close still
 to run, and was not opened. The fifth batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifth_2026_09_28.md`, resumed at position 17 and
-tabulated it whole in its own commit. **Positions 18 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at
-position 18**, `ARCHITECTURE.md` passages — *Document governance and the standing architecture notes*. §7, §8,
+tabulated positions 17 to 18, each whole and in its own commit. **Positions 19 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 19**, `ARCHITECTURE.md` passages — *Table of Contents*. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -28651,6 +28649,153 @@ path retires on the retirement map; (ii) the agenda after the switch names four 
   L2-S17 (entry 1) — 17.24; L2-S42 (entry 4) — 17.5; L2-S43 (entry 4) — 17.4; L2-S45 (entry 4) — 17.9, 17.16,
   17.24, 17.26, 17.46, 17.58; L2-S38 (entry 6) — 17.4. No row of this member names L2-S12 or L2-S22.
 
+---
+
+### 6.18 — Member 18: `ARCHITECTURE.md`, passages — *Document governance and the standing architecture notes*
+
+> **Manifest for this member.** Position **18**. Kind: *items 3 and 4 — passages of a specification-set
+> member*. Document: `ARCHITECTURE.md`. Label: *"## Document governance and the standing architecture notes"*.
+> **The two published ranges**, each as a locator only, by its first and last line as the artifact publishes them
+> (**D-307**):
+>
+> 1. lines 558–566, from *"> **Doc governance (2026-06-29) — the hierarchy.** This is **THE canonical architecture
+>    doc**. The **per-layer /"* to *"> this one, this one wins, and a new ratified decision lands here first.**"*;
+> 2. lines 568–578, from *"> **★★ ARCHITECTURE NOTE (updated 2026-06-29 — the 2026-06-15 joint-inference
+>    investigation has LANDED).**"* to *"> `cowork_target_architecture.md` §2."*.
+>
+> **Both ranges' first and last lines matched the file** at the object this batch read, with no trailing carriage
+> return to set aside. **The line between the ranges — line 567, blank — is outside the member** and is not
+> tabulated, quoted or listed. Outgoing statements: **4** (rows 18.1 and 18.2; both rows carry two claims each and
+> are split — the arithmetic is at the foot of this member). Listed under *not a statement*: **8**. Counted at this
+> member by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Two standing paragraphs at the head of
+> the document. The first is **documentation governance** — which document is canonical, where the detail lives, which
+> document wins a disagreement — and each of its sentences is listed under *not a statement* as a rule of the
+> development process or a filing decision, as members 10 and 15 listed such rules. The second restates the
+> **forward-only architecture** that the governing decision at the head of the document (member 17, Row 17.1)
+> replaced with the joint estimator; its measured finding and its conclusion travel with Row 5.228, which placed
+> the same two claims, and its statement of the ratified architecture is placed HISTORICAL as a superseded plan,
+> the differences beside it stated.
+>
+> **The WITHHELD homes inside this member**: none — the artifact's `item_4_identities_inside` for position 18 is
+> empty. **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes lies in
+> this member — D-002 and D-095 are homed at `ARCHITECTURE.md:21-22` and `:43-44`, and the other six outside
+> `ARCHITECTURE.md`.
+
+---
+
+**Row 18.1 — a full joint cross-layer decode measured inert; the gain is soft evidence carried forward.**
+
+*Outgoing statement.* "The "constrained joint inference" investigation concluded: a **full joint cross-layer decode
+was measured INERT** — the realisable gain is soft-evidence *quality* carried forward (calibrated confidence + ranked
+alternatives), not global cycling." — the paragraph headed *ARCHITECTURE NOTE* (locator: lines 569–571). Two claims: (i) a full joint
+cross-layer decode was measured inert; (ii) the gain to be had is the quality of soft evidence carried forward, not
+global cycling.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) L2-S35.
+
+*Current-text axis.* (i) L2-S11: **DIFFERS** — as at Row 5.228(i). (ii) L2-S35: **DIFFERS** — as at Row 5.228(ii).
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 5.228(i). (ii) **UNPLACED**, travelling with Row
+5.228(ii). *What was read:* as at Row 5.228(ii).
+
+---
+
+**Row 18.2 — the ratified architecture a forward-only stack of layers, with two scoped escapes.**
+
+*Outgoing statement.* "The ratified back-half architecture is therefore **forward-only**: a feed-forward stack of
+single-responsibility layers (**L1** notes → **L2** slicing → **L3** key/mode → **L4** chord → **L5** function →
+**L6** grouping), each carrying **ranked alternatives + a confidence**, with two scoped escapes from pure
+feed-forward — a **gated, constrained joint step (Stage 5)** for the residual key↔chord coupling only, and the
+**confidence-weighted forward-override mechanism** (a confident inference overturned by decisive later evidence via
+a *localized forward recompute* — no back-edge, no global decode)." — the paragraph headed *ARCHITECTURE NOTE* (locator: lines
+571–576). Two claims: (i) the ratified architecture is a feed-forward stack of single-responsibility layers, each
+carrying ranked alternatives and a confidence; (ii) its two scoped escapes are a gated joint step for the residual
+coupling of tonality and chord, and a forward override by later evidence.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) L2-S35.
+
+*Current-text axis.* (i) L2-S11: **DIFFERS**. (ii) L2-S35: **DIFFERS**.
+
+*The difference, in both texts' own words.* (i) The outgoing architecture is *"a feed-forward stack of
+single-responsibility layers"*; L2-S11 says the boundary, the tonality, the chord and the assignments are decided
+*"in the one decision. It is never decided before the chord or after it."* (ii) The outgoing text overturns an
+earlier inference *"via a localized forward recompute — no back-edge, no global decode"*; L2-S35 says *"No span's
+alternatives are normalised against each other alone."*
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a superseded plan: the governing decision at the head of the same
+document (Row 17.1) makes the estimator joint. (ii) **HISTORICAL** — the same superseded plan.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (8)
+
+1. "**Doc governance (2026-06-29) — the hierarchy.**" (558) — *a label with its provenance*.
+2. "This is **THE canonical architecture doc**." (558) — *the document's account of itself*.
+3. "The **per-layer / per-component design docs** (`cowork_layer*_design.md`, `cowork_progression_schema_dictionary.md`,
+   `cowork_progression_schema_design.md`, the phrase-boundary design, …) are the **authoritative detail** for their
+   own scope — the rules, the mechanisms, the per-layer decisions-with-alternatives — and are **referenced** from
+   here." (558–561) — *a rule of the development process* — where the documentation's detail lives.
+4. "They are **not** rival architecture docs: a **cross-cutting contract is stated once, here (§2.15), and never
+   redefined in a layer doc** (a layer doc may *use* the span typology or the verifiability contract, not *redefine*
+   it)." (561–563) — *a rule of the development process*.
+5. "`cowork_target_architecture.md` is **demoted** to the detailed-rationale reference for those contracts (the
+   historical north-star, the full statements, the supporting evidence) — not a second canonical doc." (564–565) —
+   *a filing decision*.
+6. "**When any doc disagrees with this one, this one wins, and a new ratified decision lands here first.**"
+   (565–566) — *a rule of the development process*.
+7. "**★★ ARCHITECTURE NOTE (updated 2026-06-29 — the 2026-06-15 joint-inference investigation has LANDED).**" (568)
+   — *a label with its provenance*.
+8. "See §2.14 (the superseding reconciliation) and §2.15 (the cross-cutting contracts); full ratified statements:
+   `cowork_target_architecture.md` §2." (577–578) — *a pointer*.
+
+#### The arithmetic at this member
+
+- Rows written: **2** (18.1 and 18.2).
+- Rows split into two claims, **+1 each**: 18.1, 18.2 — two rows, **+2**.
+- **Outgoing statements placed: 2 + 2 = 4.**
+- Listed under *not a statement*: **8**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 4 dispositions over 4
+  statements.
+- **UNPLACED at this member: 1** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 1 | 18.1(i) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 2 | 18.2(i), 18.2(ii) |
+| UNPLACED | 1 | 18.1(ii) |
+| **Total** | **4** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 0 + 1 + 0 + 2 + 1 = 4, against 4 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 4 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **4** |
+
+*(4 verdicts over 4 statements; no statement names two derived statements.)* DIFFERS: 18.1(i), 18.1(ii), 18.2(i),
+18.2(ii).
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 18 is empty, so no home of a
+  decision ruled L2's own lies in this member.
+- **SEEN rows: none.** None of the eight homes 1(c) names — D-002, D-095, D-223, D-261, D-275, D-279, D-322, D-393
+  — lies in `ARCHITECTURE.md` lines 558–578, located with `tools/audit/decisions/backbone_decisions.json`.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met: none.** No row of this member names
+  L2-S12, L2-S17, L2-S22, L2-S31, L2-S38, L2-S42, L2-S43 or L2-S45.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -28968,8 +29113,7 @@ the row says which.
 numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows numbered 7.n. Member 8 relocates
 no row. Member 9's relocations are the rows numbered 9.n above, member 10's the rows numbered 10.n, member 11's
 the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows numbered 13.n, member 14's the rows
-numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows
-numbered 17.n.)*
+numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows numbered 17.n. Member 18 relocates no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -29607,6 +29751,8 @@ rows here, each with its audit question, in the commit that tabulates it.
 - Row 17.58(v) — are the temporal-extension and enclosing-key-area fields left empty, and does anything read them?
 - Row 17.59 — do the status display, the harmony write and the context menu all read the single-note context
   through the one builder?
+- Row 18.1(i) — travelling with Row 5.228(i): what did the recorded measurement of the joint cross-layer search
+  measure, on which system, and does its inertness bear on a joint decision over the charter's four fields?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -30127,6 +30273,12 @@ words.
 - Row 17.58(iii) — the outgoing key confidence is *"the RAW §3.3 key-axis gap in nats (a model-internal quantity,
   NO [0,1] remap)"*; L2-S45 says *"No term value, weight, partial candidate score or other intermediate quantity
   crosses."*
+- Row 18.1 — as at Row 5.228: the outgoing paragraph says a *"full joint cross-layer decode was measured INERT"* and that
+  *"the realisable gain is soft-evidence"* quality carried forward; L2-S11 decides them *"in the one decision"*, and
+  L2-S35 says *"The candidate score is normalised over whole readings"*.
+- Row 18.2 — the outgoing ratified architecture is *"a feed-forward stack of single-responsibility layers"* that
+  overturns an earlier inference by a *"localized forward recompute"*; L2-S11 says *"It is never decided before the
+  chord or after it"*, and L2-S35 says *"No span's alternatives are normalised against each other alone."*
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -30155,10 +30307,11 @@ own distribution table in §6.
 | 15 | 45 | 0 | 0 | 2 | 4 | 0 | 39 | 0 | 45 |
 | 16 | 10 | 0 | 0 | 1 | 1 | 0 | 8 | 0 | 17 |
 | 17 | 124 | 7 | 5 | 16 | 62 | 0 | 33 | 1 | 23 |
-| **Total** | **2356** | **354** | **74** | **336** | **734** | **0** | **644** | **214** | **1026** |
+| 18 | 4 | 0 | 0 | 0 | 1 | 0 | 2 | 1 | 8 |
+| **Total** | **2360** | **354** | **74** | **336** | **735** | **0** | **646** | **215** | **1034** |
 
-**The arithmetic check:** 354 + 74 + 336 + 734 + 0 + 644 + 214 = 2356, against 2356 statements placed (72 +
-65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124).
+**The arithmetic check:** 354 + 74 + 336 + 735 + 0 + 646 + 215 = 2360, against 2360 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4).
 
 **Current-text verdicts.**
 
@@ -30181,10 +30334,11 @@ own distribution table in §6.
 | 15 | 1 | 1 | 43 | 45 |
 | 16 | 0 | 0 | 10 | 10 |
 | 17 | 23 | 14 | 92 | 129 |
-| **Total** | **528** | **493** | **1380** | **2401** |
+| 18 | 0 | 4 | 0 | 4 |
+| **Total** | **528** | **497** | **1380** | **2405** |
 
-**The arithmetic check:** 528 + 493 + 1380 = 2401 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 +
-104 + 71 + 50 + 47 + 45 + 10 + 129).
+**The arithmetic check:** 528 + 497 + 1380 = 2405 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4).
 
 ## 14. The derivation's independence record, relayed
 
@@ -30215,4 +30369,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 17 are done, positions 18 to 62 are untouched.
+  untouched: positions 1 to 18 are done, positions 19 to 62 are untouched.
