@@ -66,7 +66,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 23 | `ARCHITECTURE.md` passages — *4. Existing Components — The Analysis Foundation* | **DONE** (§6.23) |
 | 24 | `ARCHITECTURE.md` passages — *5. Planned Analysis Extensions* | **DONE** (§6.24) |
 | 25 | `ARCHITECTURE.md` passages — *6. The Style System* | **DONE** (§6.25) |
-| 26 | `ARCHITECTURE.md` passages — *7. The Knowledge Base* | NOT YET TABULATED |
+| 26 | `ARCHITECTURE.md` passages — *7. The Knowledge Base* | **DONE** (§6.26) |
 | 27 | `ARCHITECTURE.md` passages — *8. Planned Generation Components* | NOT YET TABULATED |
 | 28 | `ARCHITECTURE.md` passages — *9. The Constraint System* | NOT YET TABULATED |
 | 29 | `ARCHITECTURE.md` passages — *10. Visualization* | NOT YET TABULATED |
@@ -106,15 +106,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 25 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 26 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, and the `ARCHITECTURE.md` passages under *6. The Style System*.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, and the `ARCHITECTURE.md` passages under *7. The Knowledge Base*.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 25 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 26 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -137,8 +137,8 @@ tabulated positions 17 to 22, each whole and in its own commit, and stopped at t
 dispatch's capacity judgment (its Task 1(h)): position 23 was judged not finishable whole in the context that remained with the
 batch's close still to run, and was not opened. The sixth batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md`, resumed at position 23 and tabulated
-positions 23 to 25, each whole and in its own commit. **Positions 26 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 26**, `ARCHITECTURE.md` passages — *7. The Knowledge Base*. §7, §8,
+positions 23 to 26, each whole and in its own commit. **Positions 27 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 27**, `ARCHITECTURE.md` passages — *8. Planned Generation Components*. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -41205,6 +41205,413 @@ or declared editorially.
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S38 (entry 6) — 25.47, 25.48. No row
   of this member names L2-S31, L2-S17, L2-S22, L2-S42, L2-S43, L2-S45 or L2-S12.
 
+---
+
+### 6.26 — Member 26: `ARCHITECTURE.md`, passages — *7. The Knowledge Base*
+
+> **Manifest for this member.** Position **26**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: *"## 7. The Knowledge Base"*. **The five published ranges**, each as a locator
+> only, by its first and last line as the artifact publishes them (**D-307**); where a boundary line is too long to
+> repeat, it is given by its opening and closing words:
+>
+> 1. lines 5686–5700, from the line opening *"**The Harmonic Vocabulary — the queried progression &"* and closing
+>    *"The Substitution Network (§7.3) and the"* to *"query surface, drawing on it as the underlying dictionary."*;
+> 2. lines 5757–5763, from *"For every chord type — defines available substitutions:"* to *"- Each substitution
+>    includes voice leading implications and style weights"*;
+> 3. lines 5765–5767, from *"### 7.4 Ornament Vocabulary"* to *"`resources/knowledge/ornament_vocabulary.json`"*;
+> 4. lines 5769–5772, from *"Style-specific ornament types:"* to *"- Classical: ornament table per period"*;
+> 5. lines 5774–5785, from *"**The pedal-point class is defined VOICE-INDEPENDENTLY (user-ratified 2026-07-26;
+>    DEFERRED to its own"* to *"declared gap. Tracked at `OPEN_ITEMS.md` OI-194."*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside. **The lines between the ranges are outside the member** and are not tabulated, quoted or
+> listed. **One line inside the ranges is a heading** — line 5765, the first line of range 3 — and under the first
+> reading rule of §6 it is a title, neither tabulated nor listed. Outgoing statements: **24** (rows 26.1 to 26.21; 3
+> of those rows carry two claims each and are split — the arithmetic is at the foot of this member). Listed under *not
+> a statement*: **6**. Counted at this member by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of §7's knowledge base: the
+> Harmonic Vocabulary as the queried component over the progressions and substitutions; the substitution network's
+> list; and the ornament vocabulary — its file, its style-specific ornament types and its pedal-point class with that
+> class's status. **The placement readings are those of the earlier members, applied unchanged**: the Harmonic
+> Vocabulary's statements travel with Row 5.91 to *L3 — The read-off facts*, and its voice-leading dimension with Row
+> 22.100 to *the second axis — voice leading*; the ornament vocabulary's content, a knowledge-base file the record
+> states as planned (Row 22.19), is HISTORICAL — a plan; the pedal-point class stands UNPLACED with Row 24.90(i),
+> which reaches the same ★ question; a status or a supersession is HISTORICAL; and a label, provenance, a defense and
+> a pointer are listed under *not a statement*.
+>
+> **One reading is new at this member and is stated so it can be checked.** The substitution network's list is placed
+> with the component that subsumes it by the document's own statement (Row 26.6), and so travels with that row, rather
+> than as the planned data file it also is.
+>
+> **The WITHHELD home inside this member**, from the artifact's `item_4_identities_inside` for position 26: **D-207**
+> at lines 5774–5777, inside range 5. Rows 26.17 and 26.18 lie inside it and are marked; Row 26.19 opens on its last
+> line and runs past it, and is not marked. A check at `tools/audit/decisions/backbone_decisions.json` found two
+> further decisions homed in this stretch of the document, D-419 (lines 5705–5715) and D-496 (lines 5716–5725), both
+> between the ranges and so outside the member. **The SEEN check, made at the homes as member 17's manifest states:**
+> none of the eight homes lies in this member — the two in `ARCHITECTURE.md`, D-002 and D-095, lie at lines 21–22 and
+> 43–44.
+
+---
+
+**Row 26.1 — the Harmonic Vocabulary: an independent component, a static catalog with a query interface, read both
+ways.**
+
+*Outgoing statement.* "The Substitution Network (§7.3) and the recurring progressions are formalised as an **independent
+knowledge-base component** with its own spec (`cowork_progression_schema_dictionary.md`): a static, curated,
+**style-tagged** catalog of progressions, schemas, and substitutions, with a **read-only query interface** (recognise =
+match a written progression to a pattern; suggest = propose a continuation, approach, or substitution; expand =
+instantiate the per-degree generative slots) returning **ranked** candidates, and **bidirectional** by design — read
+forward it serves analysis (the L5 progression-schema recognizer above), read predictively it serves a future
+chord-suggestion tool (§8)." — §7 *The Knowledge Base* (locator: lines 5686–5693). Two claims: (i) the progressions and
+substitutions form an independent knowledge-base component, a static curated catalog with a read-only query interface
+returning ranked candidates; (ii) it is read both ways, forward for the analysis's schema recognizer and predictively for
+a future suggestion tool.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S49.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.**
+(ii) L2-S49: **AGREES** — as at Row 5.91.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+(ii) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 26.2 — reference knowledge the layers query, not a pipeline layer.**
+
+*Outgoing statement.* "It is reference knowledge **queried** by the layers and by future tools, **not a pipeline
+layer**." — §7 *The Knowledge Base* (locator: lines 5693–5694).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 26.3 — its entries carry provenance, not a validation status.**
+
+*Outgoing statement.* "Entries carry **provenance** (established theory), not a ground-truth-validation status —
+validation is the *consumer's* concern (verifiability contract, §2.15)." — §7 *The Knowledge Base* (locator: lines
+5694–5695).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 26.4 — the voice-leading dimension of the schemata lies outside this component.**
+
+*Outgoing statement.* "The **voice-leading** dimension of voice-leading-defined schemata is **out of this component** (the
+separate future voice-leading layer)." — §7 *The Knowledge Base* (locator: lines 5695–5696).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 22.100.
+
+---
+
+**Row 26.5 — substitution operates on every functional family; only the tritone substitution is dominant-specific.**
+
+*Outgoing statement.* "Substitution is not dominant-only — it operates on every functional family (tonic, pre-dominant,
+dominant); only the tritone substitution is dominant-specific." — §7 *The Knowledge Base* (locator: lines 5696–5698).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 26.6 — the dictionaries are the data; the Harmonic Vocabulary is the queried component over them.**
+
+*Outgoing statement.* "**Relationship to §7.1–§7.3:** those dictionaries are the static *data*; the Harmonic Vocabulary is
+the *queried component* over the progression-and-substitution part of it — it subsumes §7.3's Substitution Network as the
+query surface, drawing on it as the underlying dictionary." — §7 *The Knowledge Base* (locator: lines 5698–5700).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 26.7 — the substitution network defines each chord type's substitutions.**
+
+*Outgoing statement.* "For every chord type — defines available substitutions:" — §7.3 *Substitution Network* (locator:
+line 5757).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.6.
+
+---
+
+**Row 26.8 — the tritone substitution.**
+
+*Outgoing statement.* "Tritone substitution (dominant chords — root moves tritone, guide tones exchange)" — §7.3
+*Substitution Network* (locator: line 5758).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.6.
+
+---
+
+**Row 26.9 — the secondary dominant.**
+
+*Outgoing statement.* "Secondary dominant (V7 of any diatonic chord)" — §7.3 *Substitution Network* (locator: line
+5759).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.6.
+
+---
+
+**Row 26.10 — the backdoor dominant.**
+
+*Outgoing statement.* "Backdoor dominant (bVII7 → I)" — §7.3 *Substitution Network* (locator: line 5760).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.6.
+
+---
+
+**Row 26.11 — modal interchange.**
+
+*Outgoing statement.* "Modal interchange (borrowed from parallel mode)" — §7.3 *Substitution Network* (locator: line
+5761).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.6.
+
+---
+
+**Row 26.12 — the relative substitution.**
+
+*Outgoing statement.* "Relative substitution (relative major/minor)" — §7.3 *Substitution Network* (locator: line 5762).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.6.
+
+---
+
+**Row 26.13 — each substitution carries its voice-leading implications and style weights.**
+
+*Outgoing statement.* "Each substitution includes voice leading implications and style weights" — §7.3 *Substitution
+Network* (locator: line 5763).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.6.
+
+---
+
+**Row 26.14 — the Baroque ornaments.**
+
+*Outgoing statement.* "Baroque: trill, mordent, turn, appoggiatura, acciaccatura, Schleifer" — §7.4 *Ornament
+Vocabulary*, the style-specific ornament types (locator: line 5770).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 26.15 — the jazz ornaments.**
+
+*Outgoing statement.* "Jazz: approach notes, encirclement, blues bend notation" — §7.4 *Ornament Vocabulary*, the
+style-specific ornament types (locator: line 5771).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 26.16 — the classical ornament table per period.**
+
+*Outgoing statement.* "Classical: ornament table per period" — §7.4 *Ornament Vocabulary*, the style-specific ornament
+types (locator: line 5772).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 26.17 — the pedal-point class defined independently of voice, and deferred.** *WITHHELD — D-207.*
+
+*Outgoing statement.* "**The pedal-point class is defined VOICE-INDEPENDENTLY (user-ratified 2026-07-26; DEFERRED to its
+own increment).**" — §7.4 *Ornament Vocabulary* (locator: lines 5774–5775). Two claims: (i) the pedal-point class is
+defined independently of voice; (ii) it is deferred to its own increment.
+
+*Derived statements that speak to it.* (i) L2-S8. (ii) None.
+
+*Current-text axis.* (i) L2-S8: **DIFFERS** — as at Row 24.90(i).
+(ii) **THE DERIVATION IS SILENT.**
+
+*The difference, in both texts' own words.* (i) The outgoing defines *"The pedal-point class"* *"VOICE-INDEPENDENTLY"*;
+L2-S8 says *"Whether appoggiatura, escape tone, pedal point, retardation, and an explicit "unclassified elaboration" are
+admitted as well is a ruling the charter's wording leaves to the user (OQ-L2-4 ★)."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, with Row 24.90(i).
+(ii) **HISTORICAL** — a status.
+
+---
+
+**Row 26.18 — the ornament vocabulary's pedal-point class: a tone held against changing harmony in any voice.**
+*WITHHELD — D-207.*
+
+*Outgoing statement.* "The ornament vocabulary carries a **pedal-point** class: a tone sustained — or continuously restruck
+— against changing harmony in **any** voice, sub-labeled by position as **bass**, **internal**, or **inverted**." — §7.4
+*Ornament Vocabulary* (locator: lines 5775–5777).
+
+*Derived statements that speak to it.* L2-S8.
+
+*Current-text axis.* L2-S8: **DIFFERS** — as at Row 24.90(i).
+
+*The difference, in both texts' own words.* The outgoing vocabulary *"carries a pedal-point class"*; L2-S8 leaves
+whether a pedal point is admitted to *"a ruling the charter's wording leaves to the user (OQ-L2-4 ★)"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, with Row 24.90(i).
+
+---
+
+**Row 26.19 — the class supersedes the legacy bass-only pedal facts.**
+
+*Outgoing statement.* "This class supersedes the legacy bass-only pair of published facts, `isPedalPoint` and
+`pedalBassPc`." — §7.4 *Ornament Vocabulary* (locator: lines 5777–5778). The sentence opens on the last line of D-207's
+home as cited and runs past it, so it is not marked.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a supersession.
+
+---
+
+**Row 26.20 — the class's status: deferred.**
+
+*Outgoing statement.* "**Status: DEFERRED.**" — §7.4 *Ornament Vocabulary* (locator: line 5783).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 26.21 — it lands with the ornament-label publication; until then the pedal fields stay empty.**
+
+*Outgoing statement.* "It lands with the ornament-label publication, an increment of its own after the notation switch;
+until then the record path leaves the pedal fields empty and the `"X ped."` annotation is a declared gap." — §7.4
+*Ornament Vocabulary* (locator: lines 5783–5785). Two claims: (i) the class lands with the ornament-label publication,
+its own increment after the notation switch; (ii) until then the record path leaves the pedal fields empty and the pedal
+annotation is a declared gap.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a plan.
+(ii) **QUARANTINED**, travelling with Row 23.15(ii).
+
+---
+
+---
+
+#### Not a statement — listed so the arithmetic closes (6)
+
+1. "**The Harmonic Vocabulary — the queried progression & substitution component.**" (5686) — *a label*.
+2. "`resources/knowledge/ornament_vocabulary.json`" (5767) — *a label*: the file the section names.
+3. "Style-specific ornament types:" (5769) — *a label*.
+4. "*Why:* the legacy facts are produced by an unestablished post-pass … which do not privilege the bass." (5778–5781)
+   — *a defense* of Rows 26.17 to 26.19.
+5. "Ratified at the pedal-point ruling of the notation-adoption increment (`cowork_notation_adoption_increment.md` §7
+   + §10)." (5781–5782) — *provenance*.
+6. "Tracked at `OPEN_ITEMS.md` OI-194." (5785) — *a pointer*.
+
+#### The arithmetic at this member
+
+- Rows written: **21** (26.1 to 26.21).
+- Rows split into two claims, **+1 each**: 26.1, 26.17, 26.21 — three rows, **+3**.
+- **Outgoing statements placed: 21 + 3 = 24.**
+- Listed under *not a statement*: **6**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 24 dispositions over 24
+  statements.
+- **UNPLACED at this member: 2** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 14 | 26.1(i), 26.1(ii), 26.2, 26.3, 26.4, 26.5, 26.6, 26.7, 26.8, 26.9, 26.10, 26.11, 26.12, 26.13 |
+| QUARANTINED | 1 | 26.21(ii) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 7 | 26.14, 26.15, 26.16, 26.17(ii), 26.19, 26.20, 26.21(i) |
+| UNPLACED | 2 | 26.17(i), 26.18 |
+| **Total** | **24** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 14 + 1 + 0 + 7 + 2 = 24, against 24 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 1 |
+| DIFFERS | 2 |
+| THE DERIVATION IS SILENT | 21 |
+| **Total verdicts** | **24** |
+
+*(24 verdicts over 24 statements; no statement names two derived statements.)* DIFFERS: 26.17(i), 26.18.
+
+#### The marks at this member
+
+- **WITHHELD rows: 26.17 and 26.18 (D-207).** No AGREES stands on either: each carries a DIFFERS against L2-S8. Row
+  26.19 opens on the home's last line and runs past it, and is not marked.
+- **SEEN rows: none.** The check was made at the homes as the manifest states: none of the eight homes 1(c) names lies
+  in this member's ranges.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
+  L2-S17, L2-S22, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -41382,6 +41789,11 @@ the row says which.
   it spelled against the signature, through the standard omission table, annotating every sounding pitch.
 - Row 23.340 — travelling with Row 17.44(ii): Roman and Nashville numerals as presentation choices over one result.
   *(L2-S27 travels with it.)*
+- Rows 26.1, 26.2, 26.3, 26.5 and 26.6 — travelling with Row 5.91: the Harmonic Vocabulary, a static knowledge-base
+  component the layers query and not a pipeline layer, its entries carrying provenance rather than a validation status,
+  substitution operating on every functional family, the dictionaries its data. *(L2-S49 AGREES at Row 26.1(ii).)*
+- Rows 26.7 to 26.13 — travelling with Row 26.6: the substitution network's list, the tritone, secondary-dominant,
+  backdoor, modal-interchange and relative substitutions, each with its voice-leading implications and style weights.
 
 **To *the second axis — voice leading*.**
 
@@ -41398,6 +41810,8 @@ the row says which.
   arrangement, and checking and advising on part-writing, owned by the voice-leading axis.
 - Rows 22.100, 22.101 and 22.102 — the voice-leading layer, the horizontal dimension reading the per-voice motion the
   note model carries, its foundation built and dormant.
+- Row 26.4 — travelling with Row 22.100: the voice-leading dimension of the voice-leading-defined schemata, outside the
+  Harmonic Vocabulary.
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -41622,7 +42036,8 @@ numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows nu
 no row. Member 9's relocations are the rows numbered 9.n above, member 10's the rows numbered 10.n, member 11's
 the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows numbered 13.n, member 14's the rows
 numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows numbered 17.n. Member 18 relocates no row. Member 19 relocates no row. Member 20 relocates no row, member 21's the rows numbered 21.n, member 22's the rows numbered 22.n, member 23's the rows
-numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above.)*
+numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, and member 26's
+relocations are the rows numbered 26.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -42468,6 +42883,8 @@ rows here, each with its audit question, in the commit that tabulates it.
   only that chord's root at the current commit, and does any production path run it?
 - Row 24.112 — does a bass-movement sub-boundary pass exist at the current commit, is it iterative and with what cap, and
   does any production path run it?
+- Row 26.21(ii) — travelling with Row 23.15(ii): is the pedal flag left empty on the record path at the current commit,
+  and does anything read it there?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -43188,6 +43605,8 @@ words.
   degree, quality, figure and applied target, read against the span's tonality."*
 - Row 24.112 — the outgoing boundaries come from a *"bass-movement sub-boundary detection"* pass; L2-S11 says where the
   boundaries fall *"is decided together with the tonality, the chord and the assignments, in the one decision"*.
+- Rows 26.17(i) and 26.18 — as at Row 24.90(i): the outgoing vocabulary *"carries a pedal-point class"*, defined
+  independently of voice; L2-S8 leaves whether a pedal point is admitted as an elaboration to the ★ question OQ-L2-4.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -43224,10 +43643,11 @@ own distribution table in §6.
 | 23 | 373 | 1 | 1 | 25 | 198 | 0 | 145 | 3 | 125 |
 | 24 | 130 | 13 | 0 | 4 | 60 | 0 | 47 | 6 | 40 |
 | 25 | 53 | 2 | 0 | 1 | 0 | 0 | 17 | 33 | 27 |
-| **Total** | **3189** | **411** | **86** | **450** | **1059** | **0** | **911** | **272** | **1424** |
+| 26 | 24 | 0 | 0 | 14 | 1 | 0 | 7 | 2 | 6 |
+| **Total** | **3213** | **411** | **86** | **464** | **1060** | **0** | **918** | **274** | **1430** |
 
-**The arithmetic check:** 411 + 86 + 450 + 1059 + 0 + 911 + 272 = 3189, against 3189 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53).
+**The arithmetic check:** 411 + 86 + 464 + 1060 + 0 + 918 + 274 = 3213, against 3213 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24).
 
 **Current-text verdicts.**
 
@@ -43258,10 +43678,11 @@ own distribution table in §6.
 | 23 | 13 | 60 | 300 | 373 |
 | 24 | 19 | 21 | 92 | 132 |
 | 25 | 2 | 0 | 51 | 53 |
-| **Total** | **618** | **612** | **2007** | **3237** |
+| 26 | 1 | 2 | 21 | 24 |
+| **Total** | **619** | **614** | **2028** | **3261** |
 
-**The arithmetic check:** 618 + 612 + 2007 = 3237 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53).
+**The arithmetic check:** 619 + 614 + 2028 = 3261 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24).
 
 ## 14. The derivation's independence record, relayed
 
@@ -43292,4 +43713,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 25 are done, positions 26 to 62 are untouched.
+  untouched: positions 1 to 26 are done, positions 27 to 62 are untouched.
