@@ -4,7 +4,8 @@
 > nothing, applies nothing, and rules on nothing.** Prepared by Claude Code, 2026-09-27, under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md` Task 2, and continued under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_second_2026_09_27.md` Task 1, and further under
-> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_third_2026_09_27.md` Task 1, executing
+> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_third_2026_09_27.md` Task 1, and further under
+> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md` Task 1, executing
 > the user's ruling of 2026-09-27, Option B
 > (`records/cowork/rulings/cowork_rulings_2026_09_27_l2_outgoing_population_sitting.md` §2), the
 > named-documents ruling of the same date, Option B
@@ -46,7 +47,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 6 | `cowork_layer4_chordsymbol_design.md`, whole | **DONE** (§6.6) |
 | 7 | `cowork_layer3_keymode_design.md`, whole | **DONE** (§6.7) |
 | 8 | `cowork_layer5_engagement_design.md`, whole | **DONE** (§6.8) |
-| 9 | `cowork_stage5_fitter_design.md`, whole | NOT YET TABULATED |
+| 9 | `cowork_stage5_fitter_design.md`, whole | **DONE** (§6.9) |
 | 10 | `cowork_joint_estimator_factorization.md`, whole | NOT YET TABULATED |
 | 11 | `cowork_score_census.md`, whole | NOT YET TABULATED |
 | 12 | `cowork_prefit_gates.md`, whole | NOT YET TABULATED |
@@ -103,11 +104,12 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 8 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 9 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
-`cowork_layer3_keymode_design.md`, whole, and `cowork_layer5_engagement_design.md`, whole.**
+`cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole, and
+`cowork_stage5_fitter_design.md`, whole.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 8 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 9 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -116,12 +118,16 @@ derived statement, each corrected before its member was committed. The second ba
 5, tabulated it whole in one commit, and stopped at the member boundary after it under that dispatch's
 capacity judgment (its Task 1(h)): position 6 was judged not finishable whole in the context that remained,
 and was not opened. The third batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_third_2026_09_27.md`, resumed at position 6
-and tabulated positions 6, 7 and 8, each whole and in its own commit. **Positions 9 to 62 are UNTOUCHED**: not
-read for tabulation, not quoted, not counted and not placed, and nothing in them is partly worked. **The next
-writing resumes at position 9**, `cowork_stage5_fitter_design.md`, whole. §7, §8, §9 and §14 stay NOT YET WRITTEN, being
-written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation,
-not quoted, not counted and not placed — **never partly worked** (**D-672**).
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_third_2026_09_27.md`, resumed at position 6,
+tabulated positions 6, 7 and 8, each whole and in its own commit, and stopped at the member boundary after
+position 8 under that dispatch's capacity judgment (its Task 1(h)): position 9 was judged not finishable whole
+in the context that remained, and was not opened. The fourth batch, under
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md`, resumed at position 9
+and tabulated it whole in one commit. **Positions 10 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at
+position 10**, `cowork_joint_estimator_factorization.md`, whole. §7, §8, §9 and §14 stay NOT YET WRITTEN,
+being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not read for
+tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
 ---
 
@@ -16997,6 +17003,5214 @@ L2-S31 and L2-S38 both DIFFERS; 8.82, L2-S34 and L2-S38 both DIFFERS; 8.94, L2-S
   8.60; L2-S43 (entry 4) — 8.68, 8.89, 8.156; L2-S45 (entry 4) — 8.94, 8.155, 8.161. No row of this member names
   L2-S17 or L2-S22.
 
+---
+
+### 6.9 — Member 9: `cowork_stage5_fitter_design.md`, whole
+
+> **Manifest for this member.** Position **9**. Kind: *item 2 — a whole document (a specification-set
+> member)*. Document: `cowork_stage5_fitter_design.md`. Label: *the whole document*. Range, as a locator
+> only: lines 1–1545, from its first line *"# Stage-5 Weight-Fitting ("the fitter") — Design"* to its last
+> *"joint-corpus counter-nuance).*"*, exactly as the artifact publishes it (**D-307**). Outgoing statements:
+> **471** (rows 9.1 to 9.403; 51 of those rows carry two or more claims each and are split — the
+> arithmetic is at the foot of this member). Listed under *not a statement*: **270**. Counted at this member
+> by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, read at its own banner.** The design of the Stage-5 weight-fitting arc,
+> marked *"SIGNED (user, 2026-07-04)"*: how the hand-chosen constants of the legacy chord scorer — its template
+> bonuses and penalties, its post-scoring correction rules, its confidence squash constants and its two override
+> factors — would be replaced by values fitted against a declared objective on freely licensed data, under the
+> regression stop of the time. Its §15 is a running log of that arc and of the engage arc that followed it, to
+> 2026-07-07: ratifications, deliveries, recorded measurements of the legacy and dormant paths, and owed builds.
+> **The placement readings are those of the earlier members, applied unchanged**: a description of the scoring
+> pipeline's or the dormant chain's mechanism, or a recorded measured result of either, is QUARANTINED; an event,
+> a ratification, a delivery, a build state, a plan, an owed build or an owed measurement is HISTORICAL; a metric,
+> a grading convention, a corpus, a split, a regression stop or a test is RELOCATED to *the measurement of the
+> analysis*, and a confidence class, a reliability map or a calibration rule to *the uncertainty surface*; a
+> design principle about fitting is placed on its own terms against the derived statements that speak to it; a
+> rule the text records as ruled that a derived statement contradicts is UNPLACED, and a later restatement of such
+> a rule outside its home travels with the home row; the terms table's rows are tabulated; and a bold label, a
+> restatement, a defense, a pointer, a remark on the document's own usage, a rejected or considered alternative,
+> provenance and the closing QA record are listed under *not a statement*. **One kind of text no earlier reading
+> decides:** the style-axis rows — the taxonomy of harmonic-progression idioms, its coordinates, and the
+> per-parameter style-table model. They are placed UNPLACED with what was read, at Row 9.30, and the rows that
+> restate them travel with it.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 9:
+> **none** — that list is empty, so no row is marked WITHHELD. Three decisions-register entries are homed in this
+> document — D-312, D-313 and D-314 (`DECISIONS.md`) — and none of them is among the decisions ruled L2's own.
+> **No SEEN home lies in this member** — none of the eight identities 1(c) names (D-002, D-095, D-223, D-261,
+> D-275, D-279, D-322, D-393) is among the identities the artifact places in position 9.
+
+---
+
+**Row 9.1 — the Jazz-carrier fit deferred; the idiom-#2 target fitted now.**
+
+*Outgoing statement.* "**A-3 RULED: defer the Jazz-carrier fit** — the idiom-#2 target (Baroque/Default carriers) is fitted now; the Jazz fit waits for a licensed jazz ground-truth conversion (D-5 option i)." — the status banner (locator: lines 4–6).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to which fit targets are fitted when.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.2 — glossary: the fitter.**
+
+*Outgoing statement.* "The Stage-5 component this document designs: the machinery that replaces hand-chosen numeric constants in the harmonic-analysis scoring pipeline with values optimized against the declared objective, under the declared constraints." — §0 TERMS, the terms table, row *the fitter* (locator: line 28).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S38).
+
+---
+
+**Row 9.3 — glossary: a constant is a hand-chosen value of the scoring pipeline.**
+
+*Outgoing statement.* "A numeric value in the scoring pipeline that was chosen by hand (a bonus, penalty, threshold, weight, squash constant, or override factor θ)." — §0 TERMS, the terms table, row *constant / parameter* (locator: line 29).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing constant is *"A numeric value in the scoring pipeline that was chosen by hand"*; L2-S38 is falsified *"if any weight is hand-set in the shipped model"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which numeric values of the scoring pipeline at the current commit were chosen by hand, of which kinds, and on which path are they read?
+
+---
+
+**Row 9.4 — glossary: the objective, one maximized quantity; root agreement on the robust unit.**
+
+*Outgoing statement.* "The single quantity the fitter maximizes: duration-weighted **root agreement** on the robust unit under variant (b), measured on the fitting split of the licensed pool." — §0 TERMS, the terms table, row *objective* (locator: line 30). Two claims: (i) the fitter maximizes one declared graded quantity; (ii) that quantity is duration-weighted root agreement on the robust unit under variant (b), on the fitting split of the licensed pool.
+
+*Derived statements that speak to it.* (i) and (ii) L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* (i) L2-S38: **AGREES** — *"Its objective is the graded measure, not likelihood alone."* (ii) L2-S38: **AGREES** — it leaves *"the graded measure fixed by the measurement-design stage"*, and the outgoing text names one.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S38). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). *(L2-S38 travels with it.)*
+
+---
+
+**Row 9.5 — glossary: the robust unit.**
+
+*Outgoing statement.* "The granularity-robust **union-of-boundaries cell**: overlay our region boundaries with the human-annotation row boundaries; each resulting half-open tick span is scored once and weighted by its duration." — §0 TERMS, the terms table, row *robust unit* (locator: line 31).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S38 leaves *"the graded measure"* to the measurement-design stage.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.6 — glossary: variant (b), the human annotation only.**
+
+*Outgoing statement.* "The adjudication rule "human annotation only, no music21 anywhere": each cell is scored directly against the WiR human annotation." — §0 TERMS, the terms table, row *variant (b)* (locator: line 32).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.7 — glossary: the WiR human annotations, the ground truth of variant (b).**
+
+*Outgoing statement.* "The When-in-Rome human harmonic analyses of the reference corpus's Bach chorales (Roman-numeral text files in the DCML annotation format), license CC-BY-SA. The ground truth of variant (b)." — §0 TERMS, the terms table, row *WiR human annotations* (locator: line 33).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.8 — glossary: the DLC, excluded from the fitting pool, validation-only.**
+
+*Outgoing statement.* "License class NC — **excluded from the fitting pool**, validation-only (§2 constraint 1)." — §0 TERMS, the terms table, row *DLC* (locator: line 35). Two claims: (i) a non-commercial-license corpus is excluded from the fitting pool; (ii) it is used for validation only.
+
+*Derived statements that speak to it.* (i) L2-S38 (NEAREST, §6.3 entry 6). (ii) None.
+
+*Current-text axis.* (i) L2-S38: **AGREES** — falsified *"if the fit pool contains music under a non-commercial or unstated licence"*. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S38). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), the shape of Row 1.22(ii).
+
+---
+
+**Row 9.9 — glossary: the reference corpus, the frozen regression corpus.**
+
+*Outgoing statement.* "The frozen 352-score Bach-chorale regression corpus (per-preset dirs under `tools/corpus/`, manifest-stamped)." — §0 TERMS, the terms table, row *the reference corpus* (locator: line 36).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.10 — glossary: the fitting pool, freely licensed classes only.**
+
+*Outgoing statement.* "The set of (score, ground-truth) sources whose data may shape ship-intended parameter values: the PD / CC0 / CC-BY(-SA) license classes only." — §0 TERMS, the terms table, row *fitting pool* (locator: line 37).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — *"It is fitted only on freely licensed music."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S38).
+
+---
+
+**Row 9.11 — glossary: the validation pool, never shaping a shipped value.**
+
+*Outgoing statement.* "Sources usable only for held-out validation, quality assurance, and statistics — never to shape a shipped parameter: all NC-class sources (the 40 DLC corpora, MCMA, Essen, …) and all no-license sources." — §0 TERMS, the terms table, row *validation pool* (locator: line 38).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — the fit pool excludes *"music under a non-commercial or unstated licence"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 1.22(ii). *(L2-S38 travels with it.)*
+
+---
+
+**Row 9.12 — glossary: the fitting split and the held-out split.**
+
+*Outgoing statement.* "The division *within* the fitting pool: parameters are optimized on the fitting split only; the held-out split is never optimized against and is scored only at declared checkpoints (§4.2 declares the one deliberate exception)." — §0 TERMS, the terms table, row *fitting split / held-out split* (locator: line 39). Two claims: (i) parameters are optimized on the fitting split only, the held-out split never optimized against; (ii) the held-out split is scored only at declared checkpoints, with one declared exception.
+
+*Derived statements that speak to it.* (i) L2-S38 (NEAREST, §6.3 entry 6). (ii) None.
+
+*Current-text axis.* (i) L2-S38: **AGREES** — *"The fit is discriminative, on held-out folds"*, falsified *"if the evaluation data overlap the fit data"*. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S38). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.13 — glossary: the batch stop, the then-current hard regression stop.**
+
+*Outgoing statement.* "The current hard regression stop: the batch-region BIR=false **case-identity sets** Baroque 53 / Jazz 24 / Default 53, with the two-tier class-(a)/(b) policy (CLAUDE.md)." — §0 TERMS, the terms table, row *the batch stop* (locator: line 40).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.14 — glossary: the BIR=false case class.**
+
+*Outgoing statement.* ""Bass-is-root" — the project's historical label for the batch metric's case class: a region where the analyzed bass is not the analyzed root and the analysis root disagrees with the adjudicated ground-truth root (the `bassIsRoot`=false half of the secondary metric's three-way split; CLAUDE.md)." — §0 TERMS, the terms table, row *BIR / BIR=false* (locator: line 41).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.15 — glossary: Gates A–L, post-scoring rank mutations of the chord scorer.**
+
+*Outgoing statement.* "One of the lettered post-scoring correction rules in the chord scorer (`docs/scoring_model.md` §6): rank-mutating swaps/pulls applied after template scoring." — §0 TERMS, the terms table, row *Gate A–L* (locator: line 42).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to corrections laid over a decided reading.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which post-scoring correction rules does the chord scorer carry at the current commit, and on which path are they reached?
+
+---
+
+**Row 9.16 — glossary: the live lettered gates, and three removed as dead code.**
+
+*Outgoing statement.* "**The live lettered set is A, E, F, the G-family (G-E/G-B/G-C/G-D), H, I, J, K, L — Gates B, C, D were removed at Stage 3.4b as provably dead code.**" — §0 TERMS, the terms table, row *Gate A–L* (locator: line 42). Two claims: (i) the live lettered set; (ii) Gates B, C and D removed at Stage 3.4b.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 9.15. (ii) **HISTORICAL.**
+
+---
+
+**Row 9.17 — glossary: the correction block's unlettered members, and the dissolution's scope.**
+
+*Outgoing statement.* "The §6 block also contains unlettered members (the bias correction, the FM2 fallback); the dissolution scope in §4.4 is the whole block, lettered or not." — §0 TERMS, the terms table, row *Gate A–L* (locator: line 42). Two claims: (i) the correction block contains unlettered members; (ii) the planned dissolution covers the whole block.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 9.15. (ii) **HISTORICAL.**
+
+---
+
+**Row 9.18 — glossary: Gate R, a scoring-time entry condition.**
+
+*Outgoing statement.* "The rcb bass-chord-tone guard inside template scoring (`docs/scoring_model.md` §4) — a scoring-time entry condition, not a post-scoring rank mutation." — §0 TERMS, the terms table, row *Gate R* (locator: line 43).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what does the bass-chord-tone guard test inside template scoring at the current commit, and on which path does it act?
+
+---
+
+**Row 9.19 — glossary: Gate R outside the dissolution, its coupling a roadmap item.**
+
+*Outgoing statement.* "Outside the §4.4 dissolution scope; its documented coupling to the temporal-signal migration is roadmap item 3.3." — §0 TERMS, the terms table, row *Gate R* (locator: line 43).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.20 — glossary: the engage criteria and the staged engage plan.**
+
+*Outgoing statement.* "The ratified criteria (G1–G6) and staged plan (E0 dormant measurement → E1 wire default-off → E2 measured A/B → E3 default-on, a user event → E4 retirements → E5 seal) for switching the dormant chain on (`docs/implementation_roadmap.md`, ENGAGE CRITERIA block)." — §0 TERMS, the terms table, row *engage criterion G1–G6 / engage step E0–E5* (locator: line 44).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.21 — glossary: the two-tier failure classes.**
+
+*Outgoing statement.* "The two-tier failure classes: class (a) = the sonority's root is pitch-class-undecidable by construction (symmetric or share-tone collections — a coin-flip between rotations); class (b) = the root is pitch-class-decidable and the analysis is functionally wrong." — §0 TERMS, the terms table, row *class (a) / class (b)* (locator: line 45).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.10.
+
+---
+
+**Row 9.22 — glossary: the two admissible confidence classes.**
+
+*Outgoing statement.* "The two admissible confidence classes of the confidence contract: Class M = a squashed decision margin (a rank statement); Class P = a calibrated probability (empirical correctness at that confidence)." — §0 TERMS, the terms table, row *Class M / Class P* (locator: line 46).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — it cites the contract's two classes, *"A decision margin"* that is *"a rank statement, not a probability"*, and *"a calibrated probability"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER). *(L2-S40 travels with it.)*
+
+---
+
+**Row 9.23 — glossary: the reliability map.**
+
+*Outgoing statement.* "The fitted monotone map from a layer's published Class-M confidence to empirical correctness, upgrading it to Class P." — §0 TERMS, the terms table, row *reliability map* (locator: line 47).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — *"Until a reliability map is fitted, mass is a model quantity and not a calibrated probability."*
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER). *(L2-S40 travels with it.)*
+
+---
+
+**Row 9.24 — glossary: the reliability maps land in this arc.**
+
+*Outgoing statement.* "The map is part of contract obligation **C1**'s deliverable (curves + fitted maps); the C1 measurement arc delivered the curves, and the maps land here." — §0 TERMS, the terms table, row *reliability map* (locator: line 47).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.25 — glossary: a frame and its override factor θ.**
+
+*Outgoing statement.* "A declared cross-layer comparison (incumbent confidence, contradiction strength, conversion) and its override factor: an override fires if and only if the contradiction strength exceeds θ times the incumbent confidence, expressed in one scale." — §0 TERMS, the terms table, row *frame / θ* (locator: line 48).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 6.11.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.190(iv). *Audit question:* as at Row 6.190(iv) — against which carried quantity does the override threshold scale, and does any override run on the production arm?
+
+---
+
+**Row 9.26 — glossary: re-expressing θ is obligation C2.**
+
+*Outgoing statement.* "Re-expressing θ against calibrated quantities is contract obligation **C2**." — §0 TERMS, the terms table, row *frame / θ* (locator: line 48).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.27 — glossary: the frames' undeclared value ranges.**
+
+*Outgoing statement.* "The contract §7 as-built delta "frame scales undeclared": the F-A/F-B contradiction quantities are unbounded while their incumbents are [0,1]." — §0 TERMS, the terms table, row *D-FS* (locator: line 49).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.213(i). *Audit question:* as at Row 5.213(i) — is the dormant function layer's internal combined value unbounded, and does the recorded observation reproduce?
+
+---
+
+**Row 9.28 — glossary: the frames' value ranges closed in this arc.**
+
+*Outgoing statement.* "Closed in this arc (§4.5)." — §0 TERMS, the terms table, row *D-FS* (locator: line 49).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.29 — glossary: the empirically-unvalidated mark.**
+
+*Outgoing statement.* "The ratified review amendment: a preset or idiom without empirical ground truth carries the "empirically-unvalidated" mark until its ground truth exists (roadmap AMENDMENTS block; contract C4)." — §0 TERMS, the terms table, row *A-7 mark* (locator: line 50).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S45 carries an establishment status on every published item, not on a style carrier.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that a value of L2 fitted for a style with no empirical ground truth be published marked empirically unvalidated until that ground truth exists.
+
+---
+
+**Row 9.30 — glossary: the five harmonic-progression idioms.**
+
+*Outgoing statement.* "One of the FIVE ratified harmonic-progression idioms (2026-06-30, empirically discovered and cap-robust): #1 Diatonic-functional, #2 Chromatic-functional, #3 Seventh-functional, #4 Triadic-modal, #5 Chromatic-coloristic, plus the two separate cross-attributes mode and chromaticism (`cowork_style_taxonomy_proposal.md`)." — §0 TERMS, the terms table, row *idiom* (locator: line 51).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a style taxonomy ratified from a measurement over corpora; it describes no mechanism of the implementation, records no event of L2's build, belongs to none of `FRAMEWORK.md` §5's charters, and the derivation names no style axis, so no one disposition can be defended in one sentence.
+
+---
+
+**Row 9.31 — glossary: the idiom is the style axis; genre and era are not.**
+
+*Outgoing statement.* "The idiom is the project's structural style axis — genre/era is NOT an axis (Baroque, galant and Classical share idiom #2)." — §0 TERMS, the terms table, row *idiom* (locator: line 51).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 9.32 — glossary: the preset, the legacy style carrier.**
+
+*Outgoing statement.* "A named configuration of scoring preferences (Baroque, Jazz, Default) — the LEGACY style carrier, predating the idiom taxonomy." — §0 TERMS, the terms table, row *preset* (locator: line 52).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.62. *Audit question:* as at Row 6.62 — does the dormant decoder read the style preset, and does any inference on the production arm read it?
+
+---
+
+**Row 9.33 — glossary: a preset as a named idiom-weighting.**
+
+*Outgoing statement.* "Under the ratified taxonomy a preset is a **named idiom-weighting** ("presets = idioms, for now": the user selects an idiom directly; genre-named mixtures are deferred)." — §0 TERMS, the terms table, row *preset* (locator: line 52).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 9.34 — glossary: presets deliver; the style identity of every fitted value is the idiom.**
+
+*Outgoing statement.* "In this arc presets remain the runtime delivery mechanism, but the style identity of every fitted value is the IDIOM (§9 D-10)." — §0 TERMS, the terms table, row *preset* (locator: line 52). Two claims: (i) presets remain the runtime delivery mechanism; (ii) the style identity of every fitted value is the idiom.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 9.32. (ii) **ADOPTED — proposed**, travelling with Row 1.25.
+
+---
+
+**Row 9.35 — glossary: a Baroque-tuned value is never widened to another style.**
+
+*Outgoing statement.* "Baroque-tuned values are never widened to cover another style (CLAUDE.md)." — §0 TERMS, the terms table, row *preset* (locator: line 52).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 1.25.
+
+---
+
+**Row 9.36 — glossary: the fit target, an idiom and ground-truth pool pair.**
+
+*Outgoing statement.* "The unit a style-varying fit is performed for: an (idiom, ground-truth pool) pair, delivered at runtime through the preset carrier(s) mapped to that idiom." — §0 TERMS, the terms table, row *fit target* (locator: line 53).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 1.25.
+
+---
+
+**Row 9.37 — glossary: the Bach-chorale fit is an idiom-#2 fit.**
+
+*Outgoing statement.* "The Bach-chorale fit is an idiom-#2 fit delivered via the Baroque and Default carriers (§9 D-10)." — §0 TERMS, the terms table, row *fit target* (locator: line 53).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.38 — glossary: the style coordinates.**
+
+*Outgoing statement.* "The full style position of a piece under the ratified taxonomy: its weighting over the five harmonic idioms (the mixture simplex — a preset is a named point in it) plus the two cross-attributes (mode, chromaticism), plus — for parameters whose evidence is textural rather than progression-based — the **axis-2 texture class** (measured orthogonal to the harmonic idioms, cross-ARI 0.030)." — §0 TERMS, the terms table, row *style coordinates* (locator: line 54).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 9.39 — glossary: which coordinates a parameter responds to is selected per parameter.**
+
+*Outgoing statement.* "Which coordinates a given parameter's value may respond to is selected per parameter (§9 D-11 iv)." — §0 TERMS, the terms table, row *style coordinates* (locator: line 54).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 9.40 — glossary: the stratum.**
+
+*Outgoing statement.* "A declared sub-population of a fit target's covered scores sharing a style coordinate — e.g. the major-mode vs minor-mode chorales within the idiom-#2 pool." — §0 TERMS, the terms table, row *stratum* (locator: line 55).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.41 — glossary: the style-response structure, three shapes.**
+
+*Outgoing statement.* "Per parameter: the measured shape of how its fitted optimum responds to the style coordinates — **invariant** (no response) / **discrete table** (per-idiom and/or cross-attribute-conditioned values with measured borders) / **continuous** (interpolated over idiom-mixture coordinates from fitted anchor values)." — §0 TERMS, the terms table, row *style-response structure* (locator: line 56).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 9.42 — glossary: the style-response structure decided by measurement.**
+
+*Outgoing statement.* "Decided by the §4.4a measurement, recorded in the manifest." — §0 TERMS, the terms table, row *style-response structure* (locator: line 56).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.43 — glossary: the production path at the time of writing.**
+
+*Outgoing statement.* "The analysis path that runs by default and writes the shipped output and the reference-corpus `.ours.json` today." — §0 TERMS, the terms table, row *production path* (locator: line 57).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 3.14. *Audit question:* as at Row 3.14 — which path produces the committed chord reading on each surface in the default configuration?
+
+---
+
+**Row 9.44 — glossary: production is the live rebuilt layers plus the legacy chord competition plus the correction block.**
+
+*Outgoing statement.* "Note it is NOT "legacy everywhere": the rebuilt L1–L3 are live in production; "production" = the current default composition (live rebuilt layers + the legacy chord competition + the post-scoring correction block)." — §0 TERMS, the terms table, row *production path* (locator: line 57).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.43.
+
+---
+
+**Row 9.45 — glossary: the dormant chain.**
+
+*Outgoing statement.* "The rebuilt L1→L2→L3→L4-decoder→L5 spine measured end-to-end by engage step E0: built, validated, default-off, awaiting the engage criteria." — §0 TERMS, the terms table, row *dormant chain* (locator: line 58).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.46 — glossary: the fit surface, established by measurement.**
+
+*Outgoing statement.* "The set of (parameter × consuming path) pairs the fitter may change — which constants, read by which paths (production / dormant chain / both). Established by measurement in Phase 0 (§4.1), not assumed." — §0 TERMS, the terms table, row *fit surface* (locator: line 59).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which constants of the scoring pipeline does each consuming path read at the current commit?
+
+---
+
+**Row 9.47 — glossary: the adoption event.**
+
+*Outgoing statement.* "The deliberate, user-ratified act of committing a fitted parameter set as the new behavior (each one a revertible commit with a measured before/after). No fitted value changes behavior without one." — §0 TERMS, the terms table, row *adoption event* (locator: line 60).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S38 says how a weight is fitted, not how a fitted value comes to change behavior.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that a fitted value of L2 change the published reading only through a user-ratified, revertible adoption event with a measured before and after.
+
+---
+
+**Row 9.48 — glossary: sensitivity.**
+
+*Outgoing statement.* "The measured change in the objective per unit perturbation of one parameter, all others held — the quantity that ranks parameters by leverage and detects dead constants." — §0 TERMS, the terms table, row *sensitivity* (locator: line 61).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.49 — the constants were all chosen by hand against small case sets.**
+
+*Outgoing statement.* "The scoring pipeline's numeric constants — template bonuses and penalties, the progression-signal weights, the post-scoring correction thresholds, the confidence squash constants, and the two override factors θ — were all chosen by hand against small case sets." — §1, *Introduction & purpose* (locator: lines 73–75).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 9.50 — the constants become parameters fitted against a declared objective on licensed data, under regression constraints, each adoption a user event.**
+
+*Outgoing statement.* "Stage 5 replaces hand-tuning with fitting: the constants become parameters optimized against a declared, ratified objective on licensed data, under hard regression constraints, with every adoption a deliberate user event." — §1 (locator: lines 75–77). Three claims: (i) the constants become parameters optimized against a declared objective on licensed data; (ii) under hard regression constraints; (iii) every adoption a deliberate user event.
+
+*Derived statements that speak to it.* (i) L2-S38 (NEAREST, §6.3 entry 6). (ii) None. (iii) None.
+
+*Current-text axis.* (i) L2-S38: **AGREES**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S38). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (iii) **ADOPTED — proposed**, travelling with Row 9.47.
+
+---
+
+**Row 9.51 — the correction block is dissolved into fitted weights; this arc discharges owed refactor #2.**
+
+*Outgoing statement.* "Dissolving it into fitted weights is **OWED refactor #2** (standing mandate 2026-06-14); this arc is its named discharge point (retirement map R1: "Gates A–L — E4, or Stage 5 if first")." — §1, item 2 (locator: lines 85–87). Two claims: (i) the post-scoring correction block is dissolved into fitted weights; (ii) this arc is that owed refactor's named discharge point.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — as at Row 1.3. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 1.3. (ii) **HISTORICAL.**
+
+---
+
+**Row 9.52 — the reliability maps, C2 and the C3 joint-step design assigned to this stage.**
+
+*Outgoing statement.* "C1's curves are measured (`records/cc/reports/cc_c1_reliability_report.md`) but C1's fitted reliability maps remain; C2 (θ re-expression) and the C3 joint-step design are assigned to Stage 5 (`cowork_confidence_contract.md` §6)." — §1, item 3 (locator: lines 88–90).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.53 — the dual-track holds until the fitter lands; at adoption the robust unit governs.**
+
+*Outgoing statement.* "The ratified A-8 dual-track holds "until the Stage-5 fitter lands"; at adoption, retirement item R10 fires and the robust unit becomes the governing regression stop." — §1, item 4 (locator: lines 91–92).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.54 — the values that ship are fitted only on the freely licensed pool.**
+
+*Outgoing statement.* "Parameter values intended to ship are fitted **only** on the fitting pool (PD / CC0 / CC-BY(-SA)): the reference chorales (PD scores) with their WiR human annotations (CC-BY-SA), and — when their ground truth is conversion-ready — CoCoPops, BCFB, GuitarSet, OpenEWLD, OpenScore." — §2, *Constraints*, item 1 (locator: lines 137–140). Two claims: (i) values that ship are fitted only on the freely licensed pool; (ii) the pool's members, named.
+
+*Derived statements that speak to it.* (i) L2-S38 (NEAREST, §6.3 entry 6). (ii) None.
+
+*Current-text axis.* (i) L2-S38: **AGREES** — *"It is fitted only on freely licensed music."* (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S38). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.55 — the validation pool may validate and never shapes a shipped value.**
+
+*Outgoing statement.* "The validation pool (all NC-class: the 40 DLC corpora, MCMA, Essen, Chordonomicon, NC ChoCo partitions; all no-license sources: Mikrokosmos, Batik, iRb, …) may validate, QA, and inform statistics but must never shape a shipped parameter." — §2, item 1 (locator: lines 140–142).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — as at Row 9.11.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.11. *(L2-S38 travels with it.)*
+
+---
+
+**Row 9.56 — measurement ground truth is not a shipped value.**
+
+*Outgoing statement.* "Measurement ground truth is not a shipped parameter — the A-8 metric may keep its adjudication sources." — §2, item 1 (locator: line 143).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.57 — the objective's basis is the robust unit, root governing.**
+
+*Outgoing statement.* "The objective's basis is the robust unit under variant (b), **root governs, RN and key always tracked beside it**." — §2, item 2 (locator: lines 149–150).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — as at Row 9.4(ii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.4(ii). *(L2-S38 travels with it.)*
+
+---
+
+**Row 9.58 — until the fitter lands, the batch stop is the hard stop.**
+
+*Outgoing statement.* "Until the fitter lands, the **batch stop is THE hard regression stop** (case-identity sets 53/24/53 + the two-tier policy, R10 unchanged)." — §2, item 2 (locator: lines 150–152).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.59 — when the robust unit governs, the hard stop is the class-(b) duration non-increase.**
+
+*Outgoing statement.* "When the robust unit governs (at R10), the hard stop becomes **class-(b) root-disagree duration non-increase per preset** plus a **mandatory explained per-run set-diff**." — §2, item 2 (locator: lines 152–153).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 5.261.
+
+---
+
+**Row 9.60 — the two-tier class policy carries over unchanged.**
+
+*Outgoing statement.* "**The two-tier class policy carries over unchanged** (CLAUDE.md): zero new class-(b) cases on any preset at any adoption event; class-(a) additions only under the five guardrails (score-verified per case, doubt defaults to class (b), class-(b) non-increasing, identities recorded, interim-only)." — §2, item 3 (locator: lines 154–156).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.149.
+
+---
+
+**Row 9.61 — the preset policy: presets fitted separately, no widening, a structural condition or an override for a cross-style problem.**
+
+*Outgoing statement.* "**Preset policy (CLAUDE.md):** presets are fitted separately; a Baroque-tuned value is never widened to accommodate another style; a cross-style problem is solved by a structural entry condition or a preset-specific override." — §2, item 4 (locator: lines 157–159). Three claims: (i) presets are fitted separately; (ii) a Baroque-tuned value is never widened to another style; (iii) a cross-style problem is solved by a structural entry condition or a preset-specific override.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED.** *What was read:* a policy for the scorer's per-preset values; the derivation names no preset, and the same document's item 4c rules one fit per idiom rather than per preset, so neither a proposal nor a quarantine can be defended in one sentence. (ii) **ADOPTED — proposed**, travelling with Row 1.25, as at Row 9.35. (iii) **UNPLACED**, travelling with (i). *What was read:* as at (i).
+
+---
+
+**Row 9.62 — style-varying values vary per idiom; the manifest classifies style scope; calibration per preset or idiom.**
+
+*Outgoing statement.* "Style-varying parameters vary **per idiom**, not per genre-named preset: every fitted value is idiom-labeled (§9 D-10), the manifest classifies each parameter's style scope (§4.1), and calibration is measured "per preset/idiom where the idiom changes the scorer's behavior" (contract §6 C4)." — §2, item 4b (locator: lines 161–163). Three claims: (i) style-varying values vary per idiom, each fitted value idiom-labeled; (ii) the manifest classifies each parameter's style scope; (iii) calibration is measured per preset or idiom where the idiom changes the scorer's behavior.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 1.25. (ii) **HISTORICAL.** (iii) **RELOCATED** — to *the uncertainty surface* (NOT A LAYER).
+
+---
+
+**Row 9.63 — a per-idiom fit only where licensed ground truth exists; otherwise the unvalidated mark.**
+
+*Outgoing statement.* "A per-idiom fit exists only where that idiom has licensed ground truth; idioms without it keep the A-7 mark (the taxonomy's own caveat: jazz/pop idioms are analysis-USE-unvalidated until their GT exists)." — §2, item 4b (locator: lines 163–165). Two claims: (i) a per-idiom fit exists only where that idiom has licensed ground truth; (ii) an idiom without it keeps the unvalidated mark.
+
+*Derived statements that speak to it.* (i) L2-S38 (NEAREST, §6.3 entry 6). (ii) None.
+
+*Current-text axis.* (i) L2-S38: **AGREES** — it is fitted *"from annotated music"* and *"only on freely licensed music"*. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S38). (ii) **ADOPTED — proposed**, travelling with Row 9.29.
+
+---
+
+**Row 9.64 — the objective is always an idiom's; a preset is never an optimization target.**
+
+*Outgoing statement.* "The fitting objective is always an idiom's objective (its ground-truth pool); a genre-named preset is NEVER an optimization target — presets enter evaluation exclusively as regression surfaces (the configurations users can select today must not change silently) and as delivery carriers of idiom-labeled fits." — §2, item 4c (locator: lines 167–170). Three claims: (i) the objective is always an idiom's and a preset is never an optimization target; (ii) presets enter evaluation as regression surfaces; (iii) presets are delivery carriers of idiom-labeled fits.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 1.25. (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (iii) **QUARANTINED**, travelling with Row 9.32.
+
+---
+
+**Row 9.65 — one fit per idiom, not one per carrier.**
+
+*Outgoing statement.* "There is consequently ONE fit per idiom, not one per carrier (D-4: the Baroque and Default carriers both deliver the single idiom-#2 fit; the Jazz carrier receives no fit until the idiom-#3 target exists)." — §2, item 4c (locator: lines 170–172). Two claims: (i) one fit per idiom, not one per carrier; (ii) the Baroque and Default carriers deliver the idiom-#2 fit and the Jazz carrier none yet.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 1.25. (ii) **HISTORICAL.**
+
+---
+
+**Row 9.66 — the end-user-facing preset question is a separate later product decision.**
+
+*Outgoing statement.* "What is END-USER-FACING (which presets exist, what they are named, how they weight idioms) is a SEPARATE, LATER product decision — the taxonomy's deferred preset→idiom-weighting migration — and nothing in this arc pre-empts it." — §2, item 4c (locator: lines 172–174).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.67 — the held-out split never optimized against; scored only at declared points; demotion only by recorded decision.**
+
+*Outgoing statement.* "the held-out split is never optimized against; it is scored only at adoption events and declared checkpoints; demotion of a held-out item happens only by recorded decision (registry `split` field)." — §2, item 6, *Held-out discipline (OQ-C1)* (locator: lines 179–181). Two claims: (i) the held-out split is never optimized against; (ii) it is scored only at adoption events and declared checkpoints, and an item is demoted only by recorded decision.
+
+*Derived statements that speak to it.* (i) L2-S38 (NEAREST, §6.3 entry 6). (ii) None.
+
+*Current-text axis.* (i) L2-S38: **AGREES** — as at Row 9.12(i). (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S38). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.12(ii).
+
+---
+
+**Row 9.68 — infrastructure increments byte-identical with proof; behavior changes only at ratified, revertible adoption events.**
+
+*Outgoing statement.* "infrastructure increments are byte-identical with proof (sandwich: the batch stop measured before and after, standard output byte-compared); behavior changes happen only at adoption events — each one revertible, measured per preset on both metric tracks, and user-ratified." — §2, item 7, *Adoption discipline / no surprises* (locator: lines 183–186). Two claims: (i) infrastructure increments are byte-identical with proof; (ii) behavior changes happen only at revertible, measured, user-ratified adoption events.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.60. (ii) **ADOPTED — proposed**, travelling with Row 9.47.
+
+---
+
+**Row 9.69 — calibration re-maps confidences and never prunes the alternatives.**
+
+*Outgoing statement.* "calibration re-scales confidences; it never prunes the ranked alternatives a layer publishes." — §2, item 8, *Zero information loss (E-14, user principle)* (locator: lines 187–188).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S40 leaves mass uncalibrated until a reliability map is fitted and says nothing of what calibration may remove.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER).
+
+---
+
+**Row 9.70 — a reliability map is a monotone re-labeling, not a filter.**
+
+*Outgoing statement.* "A reliability map is a monotone re-labeling, not a filter." — §2, item 8 (locator: line 188).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 9.69.
+
+---
+
+**Row 9.71 — the fitter reads its objective through the pinned measurement tools; increments report reuse and retirement.**
+
+*Outgoing statement.* "the fitter reuses the pinned measurement instruments (`tools/ a8_rebaseline_measure.py`, `tools/c1_reliability.py`, `characterise_bir_false.py`) as its objective and calibration reader — it must not re-implement scoring or comparison logic; every CC increment reports reuse-vs-new and what retires." — §2, item 10, *Total unification* (locator: lines 192–195). Two claims: (i) the fitter reads its objective and calibration through the pinned measurement tools and re-implements no scoring or comparison logic; (ii) every increment reports reuse against new and what retires.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 9.72 — the fitting pool's current entirety, the reference corpus with its annotations.**
+
+*Outgoing statement.* "**The reference corpus** (352 scores) and its **WiR human annotations** (326/352 coverage) — the fitting pool's current entirety (§3a below)." — §3, *Context & scope (external view)*, the list *Imports / consumed inputs* (locator: lines 204–205).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.73 — the pinned measurement tools as consumed inputs.**
+
+*Outgoing statement.* "**The pinned measurement instruments:** `tools/a8_rebaseline_measure.py` (the objective's measurement — self-validating against the pinned grid primitive on every piece), `tools/c1_reliability.py` (reliability curves), `tools/characterise_bir_false.py` (the batch stop; refuses unmanifested or contaminated dirs — a harness requirement, §4.3), `tools/run_bach_preset.py` (regen)." — §3, *Imports / consumed inputs* (locator: lines 206–209).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.74 — the recorded reliability curves as an input.**
+
+*Outgoing statement.* "**The C1 evidence** (`records/cc/reports/cc_c1_reliability_report.md`): per-(layer × decision × preset) reliability curves, the calibration facts its §5 recorded for this arc." — §3, *Imports / consumed inputs* (locator: lines 210–211).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.75 — where the parameters sit in the code.**
+
+*Outgoing statement.* "**The parameter sites** (inventory owed to Phase 0; the two known homes are the chord scorer `src/composing/analysis/chord/chordanalyzer.cpp` + `postscoringgates.cpp` and the preset definitions in `tools/batch_analyze.cpp`; the D-FS/θ sites are the contract §4 frame call sites; the L5 §15-13 site is the function resolver)." — §3, *Imports / consumed inputs* (locator: lines 212–215).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.46. *Audit question:* as at Row 9.46 — which constants of the scoring pipeline does each consuming path read at the current commit?
+
+---
+
+**Row 9.76 — the parameter manifest, every fitted or frozen constant with its license provenance.**
+
+*Outgoing statement.* "**The parameter manifest** (§7): the authoritative enumeration of every fitted or deliberately-frozen constant with site, family, preset scope, and license provenance." — §3, the list *Exports / products* (locator: lines 220–221).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 1.23.
+
+---
+
+**Row 9.77 — fitted sets per fit target, each at its own adoption event.**
+
+*Outgoing statement.* "**Fitted parameter sets per fit target** (idiom-labeled, delivered via the preset carriers), each adopted (or rejected) at its own adoption event." — §3, *Exports / products* (locator: lines 222–223).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.78 — reliability maps per layer, decision and preset.**
+
+*Outgoing statement.* "**Reliability maps** per (layer × decision × preset) — completing C1's deliverable." — §3, *Exports / products* (locator: line 224).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.79 — fitted θ and declared squash shapes for two frames.**
+
+*Outgoing statement.* "**Fitted θ + declared squash scales** for frames F-A and F-B (C2; closes D-FS)." — §3, *Exports / products* (locator: line 225).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.80 — per-rule differential reports and the retirement verdicts.**
+
+*Outgoing statement.* "**Per-rule differential reports** and the §6-block retirement verdicts (R1 discharge)." — §3, *Exports / products* (locator: line 226).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.81 — the R10 re-baseline decision surface.**
+
+*Outgoing statement.* "**The R10 re-baseline decision surface** — the measured material for the user's deliberate switch of the governing regression stop to the robust unit." — §3, *Exports / products* (locator: lines 227–228).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.82 — the consumers of the fitted values.**
+
+*Outgoing statement.* "**Consumers.** The production path (fitted scoring constants); the contract §4 override sites (fitted θ); the engage arc — engage criterion G2 compares the dormant chain against the legacy path on the robust unit, so a fitted dormant chain is G2's candidate; Stage 6 (consumes calibrated confidences); the C3 joint-step design (gated on calibrated quantities existing)." — §3 (locator: lines 230–233).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.83 — not depended on: music21 in the objective, the validation pool for a value, the engage decision.**
+
+*Outgoing statement.* "**Explicitly not depended on:** music21 as an adjudicator anywhere in the objective (variant (b) is the basis); the validation pool for any parameter value; the engage decision (the fitter measures both paths where the fit surface touches both — §9 D-9 — but never flips the default)." — §3 (locator: lines 235–237). Three claims: (i) music21 adjudicates nowhere in the objective; (ii) no parameter value depends on the validation pool; (iii) the fitter never flips the engage default.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S38 (NEAREST, §6.3 entry 6). (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S38: **AGREES** — as at Row 9.8(i). (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **ADOPTED — carried** (L2-S38). (iii) **HISTORICAL.**
+
+---
+
+**Row 9.84 — the source split: the fitting split shapes the values.**
+
+*Outgoing statement.* "**Objective (fitting split)** | The reference-corpus chorales WITH WiR annotations, fitting-split members only (split defined in Phase 1; registry `split` field) | scores PD; WiR annotations CC-BY-SA | shape parameter values" — §3a, *The declared objective-vs-validation source split*, the table's row *Objective (fitting split)* (locator: line 243).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — fitted *"from annotated music"*, *"only on freely licensed music"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). *(L2-S38 travels with it.)*
+
+---
+
+**Row 9.85 — the source split: the held-out split, scored only at declared points.**
+
+*Outgoing statement.* "**Objective (held-out split)** | The remaining WiR-annotated reference-corpus chorales | same | adoption-event and declared-checkpoint scoring only; never optimized against (§4.2 exception declared)" — §3a, the table's row *Objective (held-out split)* (locator: line 244).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — *"on held-out folds"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.12(ii). *(L2-S38 travels with it.)*
+
+---
+
+**Row 9.86 — the source split: the deferred objective candidates.**
+
+*Outgoing statement.* "**Deferred objective candidates** | CoCoPops, OpenEWLD, BCFB, GuitarSet, OpenScore sets — fitting-pool members whose ground truth is not yet conversion-ready | CC-BY / CC-BY-SA per census | none until a ratified conversion increment brings each in (per-source decision; Jazz-preset question §9 D-5)" — §3a, the table's row *Deferred objective candidates* (locator: line 245).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.87 — the source split: the validation pool never shapes a value.**
+
+*Outgoing statement.* "**Validation pool** | 40 DLC corpora, MCMA, Essen + all other NC; Mikrokosmos, Batik + all other no-license | NC / none | style-generalization checks, QA, statistics; never shapes a value" — §3a, the table's row *Validation pool* (locator: line 246).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — as at Row 9.11.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.11. *(L2-S38 travels with it.)*
+
+---
+
+**Row 9.88 — the source split: measurement-only adjudication.**
+
+*Outgoing statement.* "**Measurement-only adjudication** | WiR (doubles as measurement GT); music21 (variant (a) continuity diagnostics only) | — | metrics and diagnostics; variant (a) never enters the objective" — §3a, the table's row *Measurement-only adjudication* (locator: line 247).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.89 — the fundamental shape: inventory, harness, sensitivity, fits by family, correction rules retired, confidences calibrated last.**
+
+*Outgoing statement.* "The fundamental shape: **inventory the parameter space, build the evaluation harness, measure sensitivity through it, then fit family-by-family against one declared objective — retiring the post-scoring correction rules as the fitted weights reproduce their fixes, and calibrating the surviving confidences last — with the batch stop held as the tripwire throughout, and every behavior change a ratified adoption event.**" — §4, *Solution strategy* (locator: lines 256–260).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.90 — five phases, each gated on its predecessor's measurements.**
+
+*Outgoing statement.* "Five phases; each phase's *decisions* are gated on its predecessor's *measurements*." — §4 (locator: lines 260–261).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.91 — two ratification checkpoints.**
+
+*Outgoing statement.* "Two ratification checkpoints (after Phase 0 and after Phase 1's sensitivity screen) keep the user's hand on the decisions the measurements feed." — §4 (locator: lines 261–262).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.92 — the inventory: every hand-chosen constant of the scoring pipeline, enumerated at source.**
+
+*Outgoing statement.* "Enumerate at source every hand-chosen numeric constant in the scoring pipeline: the §4 bonus/penalty terms and §5 joint terms of `docs/scoring_model.md`, the §6-block entry thresholds and margins, the per-preset values in the preset definitions, the confidence squash constants, the two frame θ values, the layer abstention bars, and the L5 §15-13 site (the both-licensed fall-through — family 4's home)." — §4.1, *Phase 0 — inventory and cost*, item 1 (locator: lines 268–272).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.93 — what each inventory row records.**
+
+*Outgoing statement.* "Each row records: name, site, current value, the preset(s) it varies by, its **declared style scope** — style-invariant (a structural constant no idiom should move, with the rationale) vs **idiom-varying** (a value expected to differ by idiom — e.g. progression-signal weights; the A-10 rider already records the L4 membership tie-breaker as an idiom-calibrated constant) — the path(s) that read it (production / dormant chain / both — this establishes the **fit surface**), and any structural role that argues freezing it (§4.6)." — §4.1, item 1 (locator: lines 272–277).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.94 — the declared style scope is replaced by a measured structure.**
+
+*Outgoing statement.* "The style-scope column is a declared hypothesis at inventory time; the §4.4a style-response measurement replaces the declaration with a measured structure wherever strata exist (a "style-invariant" parameter whose per-stratum optima diverge is a flagged finding)." — §4.1, item 1 (locator: lines 277–280).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.95 — the inventory checks whether the fit surface touches the tuning bridge.**
+
+*Outgoing statement.* "This step also verifies at source whether the fit surface touches the tuning bridge (E-13); if it does, that site enters the retirement map at this edit." — §4.1, item 1 (locator: lines 282–283).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.96 — the cost of one objective evaluation, measured.**
+
+*Outgoing statement.* "Measure the wall-clock cost of one full objective evaluation per preset with the EXISTING machinery (corpus regen to a manifest-stamped scratch dir + robust-unit measurement + batch-stop check on that dir) — the number the harness design and the optimizer budget rest on." — §4.1, item 2 (locator: lines 284–287).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.97 — both the per-preset and the all-presets cost timed.**
+
+*Outgoing statement.* "Both the per-preset case and the all-presets case are timed (shared-scope parameters need the latter — §4.2)." — §4.1, item 2 (locator: lines 286–287).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.98 — checkpoint P0: the fit surface, the freeze list and the family homes.**
+
+*Outgoing statement.* "**Checkpoint P0 (ratification):** the fit surface, the freeze list, and the family homes — decided on the inventory." — §4.1 (locator: lines 289–290).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.99 — the optimizer and staging decisions sit at checkpoint P1.**
+
+*Outgoing statement.* "The optimizer and staging decisions therefore sit at checkpoint P1, not here.)" — §4.1 (locator: lines 290–291).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.100 — P0 ratified: the manifest's boundary, with the frozen-row verification rider.**
+
+*Outgoing statement.* "**★ P0 RATIFIED (user, 2026-07-04):** the Phase-0 manifest's boundary adopted — 61 rows tunable / 17 frozen — **with the FROZEN-ROW VERIFICATION RIDER:** the Phase-1b sensitivity screen also perturbs the 17 frozen rows (measurement only, nothing adopted), so a freeze that hides real accuracy surfaces as a finding with its number rather than staying a trusted rationale." — §4.1 (locator: lines 292–295).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.101 — Phase 0 is read-only.**
+
+*Outgoing statement.* "Phase 0 is read-only: source reads plus timing runs of existing tools against scratch copies; the reference corpus is never written; no parameter value changes anywhere." — §4.1 (locator: lines 297–298).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.102 — the objective, stated as a formula.**
+
+*Outgoing statement.* "**maximize** duration-weighted root agreement — Σ dur(cells where our root pitch class equals the WiR root pitch class) / Σ dur(scored cells) — over the **fitting split's covered cells**, on the robust unit, adjudicated by variant (b)." — §4.2, *The objective, precisely* (locator: lines 304–306).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — as at Row 9.4(ii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.4(ii). *(L2-S38 travels with it.)*
+
+---
+
+**Row 9.103 — no new class-(b) batch-stop case among fitting-split scores.**
+
+*Outgoing statement.* "**No new class-(b) batch-stop case among fitting-split scores** — the candidate's scratch output is checked against the fitting-split subset of the 53/24/53 case-identity sets, for the preset(s) the candidate touches." — §4.2, the list *Per-evaluation hard constraints* (locator: lines 310–312).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.104 — a shared-scope parameter evaluated on every preset that reads it.**
+
+*Outgoing statement.* "A parameter with shared preset scope is evaluated on every preset that reads it (the Phase-0 cost measurement priced this; family staging prefers preset-scoped parameters first)." — §4.2, *Per-evaluation hard constraints* (locator: lines 312–313).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.105 — class-(b) root-disagree duration non-increase on the fitting split.**
+
+*Outgoing statement.* "**Class-(b) root-disagree duration non-increase on the fitting split's covered cells**, same preset scope (the successor-stop semantics, tracked from day one so the R10 handover is continuous)." — §4.2, *Per-evaluation hard constraints* (locator: lines 314–315).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.59.
+
+---
+
+**Row 9.106 — every rate names its denominator; key-parse failures reported apart.**
+
+*Outgoing statement.* "Denominator scope declaration (the §2.1a lesson — every rate names its denominator): all per-evaluation quantities are over the fitting split's WiR-covered, parseable cells; key-parse-fail duration reported separately, never folded in." — §4.2, *Per-evaluation hard constraints* (locator: lines 316–318).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.107 — the per-adoption checks: the full-corpus batch stop, both tracks, the validation sweep.**
+
+*Outgoing statement.* "**Per-adoption checks** (and at named family checkpoints): the FULL-corpus batch stop, all three presets, sandwich form; the full-corpus robust-unit numbers on both tracks; the validation sweep (S-5)." — §4.2 (locator: lines 320–321).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.108 — the declared held-out exception at adoption.**
+
+*Outgoing statement.* "**Declared held-out exception:** these adoption-time checks necessarily read held-out-score outcomes — that is deliberate and accepted, because the hard regression stop outranks split hygiene (a candidate that breaks a held-out case must never ship, and discovering that only after shipping would be worse than the leakage)." — §4.2 (locator: lines 322–325).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing adoption-time checks *"necessarily read held-out-score outcomes"*, accepted as leakage; L2-S38 is falsified *"if the evaluation data overlap the fit data"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.109 — root, Roman numeral and key tracked beside each other, a sharp trade surfaced.**
+
+*Outgoing statement.* "**Tracked beside, never collapsed in (ratified respect semantics):** RN agreement (exact+partial) and key agreement on the same cells, reported for every candidate — a fit that trades RN/key sharply against a root improvement is surfaced to the user at the adoption event, not silently accepted." — §4.2 (locator: lines 329–331).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.110 — class-(a) cells stay in the objective at full weight.**
+
+*Outgoing statement.* "**Class-(a) cells stay in the objective at full weight** initially: they are ~3.5–3.9 % of root-failing duration under variant (b) (cell-count share ~3.6–4.0 %; both measured, `records/cc/reports/cc_a8_rebaseline_measure_report.md` §4.2), too small to distort the fit, and excluding them would hide a parameter change that destabilizes many symmetric sonorities at once (the two-tier policy's "large class-(a) net increase trips investigation" signal)." — §4.2 (locator: lines 333–337).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.111 — revisit only if class-(a) churn dominates a fit direction.**
+
+*Outgoing statement.* "Revisit only if Phase-2 fits show class-(a) churn dominating a fit direction (§15 O-2)." — §4.2 (locator: lines 337–338).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.112 — the baselines the fit starts from.**
+
+*Outgoing statement.* "**Baselines the fit starts from** (variant (b), root-agree, full 326/352 coverage): Baroque **63.32 %**, Jazz **62.37 %**, Default **63.22 %** (RN 44.56/42.40/44.40 %; key 68.11/64.43/67.50 %)." — §4.2 (locator: lines 340–341).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.113 — the fitting-split baseline, defined with the split.**
+
+*Outgoing statement.* "The fitting-split-level baseline is a different (narrower-denominator) number, defined when Phase 1 defines the split; both are recorded in the fit ledger from day one." — §4.2 (locator: lines 341–343).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.114 — the harness: a driver from a parameter vector to a logged objective.**
+
+*Outgoing statement.* "A driver that: takes a parameter vector, materializes it per D-6's declared shape (a flag-gated external override read by the analysis binary at startup — the shape is decided, §9 D-6; only its file format and exact plumbing are Phase-1 implementation details), regenerates the affected preset(s) to a manifest-stamped scratch dir that satisfies `characterise_bir_false.py`'s validation (fingerprints + the `.music21.json` substrate present), evaluates §4.2 via the pinned instruments, and logs (vector, objective, constraint status, tracked respects) to a reproducible fit ledger." — §4.3, *Phase 1 — the fitting harness + the sensitivity screen*, item 1a (locator: lines 347–353).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.115 — the harness is deterministic, sandwich-proven, and reuses the measurement tools.**
+
+*Outgoing statement.* "Requirements: deterministic (fixed seeds where the optimizer randomizes; two identical runs produce byte-identical ledgers), sandwich-proven (override absent ⇒ byte-identical behavior; reference corpus untouched — all evaluation to scratch), reusing the §3 instruments verbatim." — §4.3, item 1a (locator: lines 353–356). Three claims: (i) the fit is deterministic, two identical runs producing byte-identical ledgers; (ii) the harness is sandwich-proven, its absence leaving behavior byte-identical; (iii) it reuses the measurement tools verbatim.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — L2-S43 and L2-S48 make the search deterministic, not the fit. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed.** *Proposal:* that L2's fit be deterministic, two identical runs producing byte-identical fit records. (ii) **HISTORICAL.** (iii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.71(i).
+
+---
+
+**Row 9.116 — 1a also defines the split.**
+
+*Outgoing statement.* "**1a also defines the fitting/held-out split** (registry `split` field, recorded rationale)." — §4.3, item 1a (locator: lines 356–357).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.117 — the sensitivity screen perturbs each parameter one at a time.**
+
+*Outgoing statement.* "Perturb each inventoried parameter one-at-a-time (a small ± step around its current value) and measure the objective delta and the constraint status per preset." — §4.3, item 1b (locator: lines 359–361).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.118 — the frozen rows included in the screen, a leveraged frozen row reported.**
+
+*Outgoing statement.* "**Per the ratified P0 rider, the 17 frozen rows are included in the screen (read-only)** — a frozen row with material leverage is reported as a finding, never silently unfrozen." — §4.3, item 1b (locator: lines 361–363).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.119 — the screen's deliverables.**
+
+*Outgoing statement.* "Deliverables: the leverage ranking (which parameters move the objective at all), the dead list (candidates to "fit to zero"/retire, roadmap 5.2), the interaction warnings (parameters whose perturbation flips §6-block rule firings — these must be fitted jointly with the dissolution track, §4.4), and the frozen-row verification findings." — §4.3, item 1b (locator: lines 363–366).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.120 — checkpoint P1.**
+
+*Outgoing statement.* "**Checkpoint P1 (ratification):** the optimizer choice (§9 D-3, decided on the measured cost and sensitivity), the family staging order, the R-13 augmentation decision (§14), and the split definition — all on 1b's numbers." — §4.3 (locator: lines 368–370).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.121 — P1 ratified: the split, the optimizer, the staging, no augmentation, two rows kept frozen.**
+
+*Outgoing statement.* "**★ P1 RATIFIED (user, 2026-07-04, on the Phase-1 measured surface — `records/cc/reports/cc_stage5_phase1_report.md`):** (1) **the 261/65 mode-stratified fitting/held-out split RATIFIED** (`tools/stage5_split_registry.json`); (2) **optimizer = coordinate/pattern search** (D-3's default, confirmed budget-feasible at ~45 s/eval, ~35 live rows post-dead-pruning); (3) **staging adopted:** the clean lever (`kPowerChord3PcPenalty`, the one high-leverage row with zero batch-stop interaction) → the coupled continuous cluster (G1 tone factors + G2/G3 bass/root/inversion + G6) fitted JOINTLY with the §6-block dissolution track → the G7 gate margins by pinned-fixture replay (Δ=0 at the objective's resolution) → abstention bars last; (4) **R-13 augmentation SKIPPED** (the measured ceiling is coupling-limited, not data-limited); (5) **the two rider-flagged frozen rows STAY FROZEN with corrected rationales** — `kOtherToneFactor` = the tone-weight family's declared SCALE ANCHOR (a relative-weight system fixes one unit; its leverage shows the anchor is load-bearing, not that it should float), `maxTotalInversionContextBonus` = DELIBERATELY NON-BINDING at its current value (the individual bonuses are the tunable surface; a floating cap coupled to the bonuses it caps is a redundant degree of freedom)." — §4.3 (locator: lines 371–383). Five claims: (i) the mode-stratified split ratified; (ii) the optimizer chosen; (iii) the staging adopted; (iv) the augmentation skipped; (v) two rows kept frozen, one as the tone-weight family's reference unit and one as a cap non-binding at its value.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**. (iv) **THE DERIVATION IS SILENT**. (v) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **HISTORICAL.** (iii) **HISTORICAL.** (iv) **HISTORICAL.** (v) **QUARANTINED.** *Audit question:* does the tone-weight family fix one factor as the reference unit of its relative weights, and is the inversion-context cap non-binding at its value, at the current commit?
+
+---
+
+**Row 9.122 — the rationale corrections ride the next manifest edit.**
+
+*Outgoing statement.* "The rationale corrections ride the next manifest edit." — §4.3 (locator: lines 383–384).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.123 — the first fit: the power-chord penalty fitted in one dimension.**
+
+*Outgoing statement.* "**★ PHASE 2.1 — THE FIRST FIT DELIVERED as a CANDIDATE (CC, 2026-07-05, `records/cc/reports/cc_stage5_phase2_1_report.md`; awaiting Cowork verification):** the family-1 clean lever `kPowerChord3PcPenalty` fitted 1-D on the fitting split (261, Baroque carrier) → **candidate 0.6375** (best feasible; fitting root +0.073)." — §4.3 (locator: lines 385–388).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.203. *Audit question:* as at Row 6.203 — does the recorded fit of the power-chord penalty reproduce at the current commit, on which fit and objective?
+
+---
+
+**Row 9.124 — the power-chord penalty is constraint-bounded.**
+
+*Outgoing statement.* "The row is **constraint-bounded**: the unconstrained optimum (0.15, +0.376) is infeasible (adds class-(b) batch cases), so the feasible fit is a modest raise." — §4.3 (locator: lines 388–390).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.203.
+
+---
+
+**Row 9.125 — the first fit's decision surface: held-out regresses, full corpus improves.**
+
+*Outgoing statement.* "Decision surface: **held-out regresses −0.098 (overfit signal)**; full-corpus +0.0376/+0.0854/+0.055 with **batch sets unchanged ×3** and class-(b) duration down ×3; **D-4 Default adopt-with-Baroque eligible**; Jazz no regression; **S-5 candidate-scoring instrument gap recorded** (no validation runner threads `--param-override`); snapshot preview ≈6/11 goldens would refresh at adoption." — §4.3 (locator: lines 390–393).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.203.
+
+---
+
+**Row 9.126 — the candidate prepared, not applied; the adoption is the user's.**
+
+*Outgoing statement.* "**The candidate + adoption artifact are PREPARED, not applied — the adoption event (A-4/S-4) is the user's, separate from this fit.**" — §4.3 (locator: lines 393–394).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.127 — the P1 rationale corrections landed, values untouched.**
+
+*Outgoing statement.* "The P1 rationale corrections landed in that dispatch's manifest edit (`5c5d0aabdc`), values byte-untouched." — §4.3 (locator: lines 394–395).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.128 — style-varying families fitted per fit target, style-invariant ones once.**
+
+*Outgoing statement.* "Style-varying families are fitted per **fit target** (an idiom with licensed ground truth, delivered via its preset carrier(s) — §9 D-10); style-invariant families are fitted once, evaluated on every covered target." — §4.4, *Phase 2 — the fits, family by family, per fit target* (locator: lines 399–401).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 1.25.
+
+---
+
+**Row 9.129 — family 1: the continuous scoring constants.**
+
+*Outgoing statement.* "**Continuous scoring constants** (bonuses, penalties, joint-term weights): the classic fit; per fit target where idiom-varying, once where style-invariant (the manifest's style-scope column decides which, per §4.1)." — §4.4, item 1 (locator: lines 404–406).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.130 — family 2: the dissolution's scope, the whole correction block.**
+
+*Outgoing statement.* "Scope: the ENTIRE post-scoring correction block of `docs/scoring_model.md` §6 — the bias correction, the FM2 fallback, and the live lettered Gates (A, E, F, G-E/G-B/G-C/G-D, H, I, J, K, L; B/C/D are already gone, Stage 3.4b)." — §4.4, item 2 (locator: lines 407–409).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.131 — family 2: each rule's fixes as proof obligations, a fit with the rule disabled, and a differential report deciding.**
+
+*Outgoing statement.* "For each rule, in the roadmap-3.4 discipline: (i) its pinned fixes (the Stage-1.1 test fixtures) are the proof obligations; (ii) attempt the fit *with the rule disabled* — the question is whether fitted continuous weights reproduce the rule's corrections without its rank mutation; (iii) a **per-rule differential report** (which corpus decisions change, class split, pinned-fix status) decides: **retire** (fixes reproduced, no class-(b) regression), **retain as structural rule** (the rule encodes a structural fact a continuous weight cannot — the roadmap expects Gate J, structural and healthy, to survive longest among the post-scoring rules; scoring-time guards like Gate R are outside this scope entirely), or **defer with the blocking interaction named**." — §4.4, item 2 (locator: lines 409–417).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.132 — nothing retires by silence.**
+
+*Outgoing statement.* "Nothing retires by silence; each retirement is its own commit with the differential report." — §4.4, item 2 (locator: lines 417–418).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.133 — family 3: the abstention thresholds, fitted on correct-abstention rates.**
+
+*Outgoing statement.* "**Abstention bars** (the per-layer "uncertain" thresholds — contract U5): fitted against correct-abstention vs wrong-commit rates on the C1 curves (abstention scored separately, the G2 discipline)." — §4.4, item 3 (locator: lines 419–421).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S44 leaves a sounding span's *"no chord"* to the charter's open DP-Q and names no abstention threshold.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.134 — the style-response measurement: per-stratum optima, clustered, a verdict on the structure.**
+
+*Outgoing statement.* "For each parameter the sensitivity screen ranks as high-leverage, before its family fit is adopted: (i) **fit its optimum per stratum** — the strata available today are the cross-attributes within the idiom-#2 pool (major vs minor mode; a declared chromaticism split), and each new idiom target added by O-5 contributes its idiom stratum; (ii) **cluster the per-stratum optima** and test the clustering's stability (multi-seed, robustness across stratum re-definitions — the idiom-discovery study's own robustness discipline, reused); (iii) **verdict = the parameter's style-response structure**: the optima collapse to one value → invariant (its style dimensions drop away); they form stable clusters with clear border values → a discrete table conditioned on exactly the coordinates that separate the clusters (if the clusters cut ACROSS idioms — e.g. mode or texture is the real driver — that is a taxonomy-relevant finding, surfaced, not smoothed into the idiom table); the spread is even with no stable clusters → a continuous response, realized as interpolation over the style coordinates from the fitted anchor values (§9 D-11)." — §4.4a, *The style-response measurement* (locator: lines 423–434).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.135 — the two guards on the style-response measurement.**
+
+*Outgoing statement.* "Two declared guards: per-stratum optima are noisy estimates (each stratum is a smaller fit — the stability test, not the raw clustering, makes the verdict), and a stratum must meet a declared minimum covered-duration to produce an optimum at all (an under-sized stratum is reported as unmeasurable, never extrapolated)." — §4.4a (locator: lines 434–437).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.136 — family 4: the preference among licensed readings deferred to this arc.**
+
+*Outgoing statement.* "The 22b ruling deferred the resolver's preference order among multiple licensed progression readings "to Stage-5 weight fitting" (L5 §15-13); this arc owns it." — §4.4, item 4 (locator: lines 439–441).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.137 — family 4 gated on a count of its population first.**
+
+*Outgoing statement.* "Gated on its own cheap measurement first: count the both-licensed fall-through population on the reference corpus (decode-only); if the population is too small for a fit to be evidence-based (the count and its class split are the checkpoint material), the item returns to the user with the number and stays a recorded §15-13 open item — not silently dropped, not fitted on noise." — §4.4, item 4 (locator: lines 441–445).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.138 — the both-licensed population measured large.**
+
+*Outgoing statement.* "**MEASURED (Phase 2.3, 2026-07-06 — O-13 ii): the population is LARGE (Baroque 5544 / Jazz 5581 / Default 5544; ~16.5 % of scored duration; 351/352 scores) → size-viable, NOT noise-limited.**" — §4.4, item 4 (locator: lines 445–447).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the recorded population of slices on which both readings are licensed, where the dormant resolver falls through the licensing test, reproduce at the current commit?
+
+---
+
+**Row 9.139 — the population lives on the dormant resolver; the fit not runnable until engagement.**
+
+*Outgoing statement.* "**But it lives on the DORMANT resolver, whose output is not in today's a8 objective → the fit is not runnable until L5 engages (or a resolver-output objective is defined).**" — §4.4, item 4 (locator: lines 447–449).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.140 — returned to the user; the item stays open.**
+
+*Outgoing statement.* "**Returned to the user with the number; the §15-13 item stays open.**" — §4.4, item 4 (locator: lines 448–449).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.141 — each family its own adoption event.**
+
+*Outgoing statement.* "Each family lands as its own adoption event (or is rejected on its numbers)." — §4.4 (locator: line 451).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.142 — the calibration phase delivered: measurement and artifacts only, nothing wired.**
+
+*Outgoing statement.* "Measurement + committed artifacts only, NOTHING wired, NO behavior change, NO push." — §4.5, *Phase 3 — calibration*, the delivery remark (locator: lines 455–456).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.143 — the curves re-measured on the adopted corpus.**
+
+*Outgoing statement.* "Curves re-measured on the adopted corpus (ECE Δ≤0.001)." — §4.5, the delivery remark (locator: lines 456–457).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the recorded reliability curves and fitted maps of the dormant layers' confidences reproduce at the current commit, and does anything on the production arm read a map?
+
+---
+
+**Row 9.144 — two maps fitted and validated held-out.**
+
+*Outgoing statement.* "Maps 1 (L3 margin) + 2 (L4 composite) FITTED (isotonic, Baroque/Default carriers, Jazz A-7-unmapped), validated held-out (post-map ECE 0.017–0.041); L4 flat-band asserted+held (0.289)." — §4.5, the delivery remark (locator: lines 457–458).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.143.
+
+---
+
+**Row 9.145 — the three deferred rows re-verified.**
+
+*Outgoing statement.* "The three deferred rows re-verified (L5 non-monotone shape UNCHANGED → stands; tonicVote anti-monotone; L1.5 → Task B, which found the SURFACE population has usable monotone spread but a weak absolute signal, no map fitted)." — §4.5, the delivery remark (locator: lines 458–461).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.143.
+
+---
+
+**Row 9.146 — the frames' value ranges declared; the override's net harm confirmed.**
+
+*Outgoing statement.* "C2 §2: F-A/F-B scales declared + θ candidates recorded/unwired (F-B override net-harm CONFIRMED → best measurable θ disables it, an inference finding)." — §4.5, the delivery remark (locator: lines 461–462).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.18(i). *Audit question:* as at Row 8.18(i) — does the recorded count of the fine-grain override's corrections and harms reproduce at the current commit, on which decode?
+
+---
+
+**Row 9.147 — conformal prediction a complement to the maps, not a replacement.**
+
+*Outgoing statement.* "R-11 conformal = complement-not-replacement." — §4.5, the delivery remark (locator: line 462).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER).
+
+---
+
+**Row 9.148 — the joint-step design unblocked, not started.**
+
+*Outgoing statement.* "C3 remains design-only, unblocked-not-started." — §4.5, the delivery remark (locator: lines 462–463).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.149 — a monotone reliability map per layer, decision and fit target, its style identity the idiom.**
+
+*Outgoing statement.* "Per (layer × decision × fit target) — contract C4: calibration is measured per preset/idiom where the idiom changes the scorer's behavior, so the map's style identity is the idiom, like every other fitted value — fit a **monotone** map from published Class-M confidence to empirical correctness on the C1 substrate (isotonic regression as the default shape; Platt-style parametric where the curve is smooth; choice recorded per row)." — §4.5, item 1 (locator: lines 465–469).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — as at Row 9.23.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 9.23. *(L2-S40 travels with it.)*
+
+---
+
+**Row 9.150 — the L3 map rides the sequence margin.**
+
+*Outgoing statement.* "**L3 key:** the map rides the **sequence margin** (ECE 0.125–0.142; the emission sigmoid is demoted — D-L3a closed)." — §4.5, item 1 (locator: lines 471–472).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 7.13(i). *Audit question:* as at Row 7.13(i) — how does the dormant key decoder compute its sequence margin, and what reads it?
+
+---
+
+**Row 9.151 — the L4 composite, the strongest candidate, its constant low band mapped honestly.**
+
+*Outgoing statement.* "**L4 chord composite:** the strongest candidate (ECE 0.11, monotone above ~0.5); its flat low band is mapped honestly (a wide flat segment, not invented resolution)." — §4.5, item 1 (locator: lines 473–474).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.22(iv). *Audit question:* as at Row 6.22(iv) — what confidence does the dormant decoder attach to a slice, and from which components is it computed?
+
+---
+
+**Row 9.152 — the L5 combined boundary confidence is non-monotone.**
+
+*Outgoing statement.* "**L5 combinedBoundary:** **not Class-P-upgradable as-is** — non-monotone mid-range (the 0.6–0.8 band scores below the 0.5–0.6 band)." — §4.5, item 1 (locator: lines 475–476).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.212. *Audit question:* as at Row 5.212 — does the dormant function layer publish a boundary form of its confidence, and how is it computed?
+
+---
+
+**Row 9.153 — the calibration failure recorded, the map deferred; a non-monotone curve is an upstream finding.**
+
+*Outgoing statement.* "The fitter records the calibration failure and the map is deferred; the inversion is an upstream inference-quality finding (declared to the user at the Phase-3 checkpoint, not silently "fixed" by a non-monotone map)." — §4.5, item 1 (locator: lines 476–478). Two claims: (i) the calibration failure is recorded and the map deferred; (ii) the inversion is an upstream finding and is never fixed by a non-monotone map.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **RELOCATED** — to *the uncertainty surface* (NOT A LAYER).
+
+---
+
+**Row 9.154 — the cadence tonic vote is anti-monotone and not calibratable.**
+
+*Outgoing statement.* "**Cadence tonicVote:** anti-monotone with three distinct values — not calibratable; recorded as an upstream detection-quality item, out of this arc's scope (§11)." — §4.5, item 1 (locator: lines 479–480).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.59. *Audit question:* as at Row 5.59 — does the dormant cadence detector cast a weighted tonic vote per region, and what does the vote change?
+
+---
+
+**Row 9.155 — the texture strength has too little spread to map.**
+
+*Outgoing statement.* "**L1.5 texture strength:** 97.7 % mass in one bin — insufficient spread; the spike-vs-surface split is evaluated as a Phase-3 measurement before any map is attempted." — §4.5, item 1 (locator: lines 481–482).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* how is the texture strength profile distributed over the corpus at the current commit, and does anything read it?
+
+---
+
+**Row 9.156 — the frames' contradiction ranges declared, the squash shapes fixed, θ re-fitted as an odds ratio.**
+
+*Outgoing statement.* "Declare the F-A (`cadentialWeight`, observed [3.25, 9.35]) and F-B (`bestPlaus − committedPlaus`, observed [2.0, 3.0]) contradiction scales; fix each frame's squash shape; re-fit θ against the calibrated maps so it reads as an odds ratio." — §4.5, item 2 (locator: lines 483–485).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.157 — the override's measured net harm is the acceptance reference.**
+
+*Outgoing statement.* "The E0-measured override net-harm (968 fires / 45 corrections — recorded at contract §7 D-FS) is the acceptance reference: fitted θ must not score worse than the current constants on that same fires-vs-corrections measure." — §4.5, item 2 (locator: lines 485–487). Two claims: (i) the override's measured net harm; (ii) a fitted θ must not do worse than the current constants on that measurement.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 8.18(i). (ii) **HISTORICAL.**
+
+---
+
+**Row 9.158 — the joint-step design becomes writable.**
+
+*Outgoing statement.* "With calibrated quantities existing, the gated joint key↔chord step's *design document* becomes writable (its trigger is already defined, contract C3)." — §4.5, item 3 (locator: lines 488–489).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.159 — writing it is a later task.**
+
+*Outgoing statement.* "Writing it is a separate, later Cowork task — named here as unblocked, not started." — §4.5, item 3 (locator: lines 489–490).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.160 — what is not fitted: structural predicates, the licensed grammar, and values with a ratified structural rationale.**
+
+*Outgoing statement.* "Structural predicates (template interval definitions, the class-(a) structural test, §6-block entry *conditions* as opposed to their numeric thresholds, the outer-guard structure), the licensed-progression grammar itself (L5 §5.0 — spec-owned; family 4 fits a preference *among* licensed readings, it does not change what is licensed), and any value whose Phase-0 row names a ratified structural rationale." — §4.6, *What is deliberately NOT fitted* (locator: lines 494–497). Three claims: (i) structural predicates are not fitted; (ii) the licensed-progression grammar is not fitted; (iii) a value whose inventory row names a ratified structural rationale is not fitted.
+
+*Derived statements that speak to it.* (i) L2-S39. (ii) L2-S34. (iii) L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* (i) L2-S39: **AGREES** — a published form enters *"as a feature whose single weight is fitted"*, its internal constants *"not tuned"*. (ii) L2-S34: **DIFFERS**. (iii) L2-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing licensed-progression grammar is *"spec-owned"* and not fitted, a preference fitted only *"among licensed readings"*; L2-S34's progression term is *"a term on the pair of adjacent chords *read as degrees in their tonalities*"* whose *"weights are fitted"*. (iii) The outgoing text leaves unfitted *"any value whose Phase-0 row names a ratified structural rationale"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 1.1(i). (ii) **UNPLACED.** *What was read:* a grammar the text records as specification-owned and outside the fit, against L2-S34's fitted progression term; placing it would choose between them. (iii) **UNPLACED.** *What was read:* a freeze the text records as ratified, against L2-S38's rule that every weight is fitted; placing it would choose between them.
+
+---
+
+**Row 9.161 — the freeze list belongs to the manifest and to checkpoint P0.**
+
+*Outgoing statement.* "The freeze list is part of the manifest and part of checkpoint P0." — §4.6 (locator: lines 497–498).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.162 — the R10 decision surface assembled once the families are adopted.**
+
+*Outgoing statement.* "When the fitted families are adopted and the §6-block verdicts are in: assemble the **R10 decision surface** — per preset, both metric tracks, before/after, the robust-unit baselines to adopt as the new stop, the identity form (`stem@runStartTick`, the re-slice-stable form matching the ratified per-run set-diff semantics; the A-8 instrument emits both forms), and the successor stop semantics (constraint 2)." — §4.7, *Phase 4 — adoption and the R10 re-baseline* (locator: lines 502–505).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.163 — the user ratifies the switch; the batch stop retired into the robust-unit stop.**
+
+*Outgoing statement.* "The user ratifies the switch; the batch stop is retired **into** the robust-unit stop (case-identity + two-tier policy carrying over) as one deliberate re-baseline event." — §4.7 (locator: lines 506–507).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.164 — until then every increment holds the batch stop.**
+
+*Outgoing statement.* "Until that event, every increment of this arc holds the batch stop." — §4.7 (locator: lines 507–508).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.165 — R10-a: the decision surface built.**
+
+*Outgoing statement.* "The decision surface is built: the committed robust-unit reference (`tools/robust_stop/` — per-preset `stem@runStartTick` run enumerations + summaries + manifest), the old→new mapping (every 52/24/52 case still-failing under variant (b), 0 disappear), the runnable+timed successor sandwich (`tools/robust_stop_diff.py`; class-(b) duration non-increase + explained run-diff; ≈6 s), and the DRAFT CLAUDE.md gate-replacement text (report-only)." — §4.7, the remark *R10-a ASSEMBLED* (locator: lines 510–514).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.166 — R10-a: one finding rides to R10-b, the key column unreproducible.**
+
+*Outgoing statement.* "One declared finding rides to R10-b: the 2.2e KEY column is unreproducible (root/RN reproduce exactly; key = the prior 68.13/64.43/67.50, Jazz byte-identity proving 64.43) — its CLAUDE.md correction is an R10-b action." — §4.7, the remark *R10-a ASSEMBLED* (locator: lines 514–516).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.167 — R10-b remains the arc-closing event.**
+
+*Outgoing statement.* "**R10-b (the user's ratification + the handover commit) remains the arc-closing event.**" — §4.7, the remark *R10-a ASSEMBLED* (locator: lines 516–517).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.168 — R10-b: the handover made.**
+
+*Outgoing statement.* "The batch→robust handover is MADE." — §4.7, the remark *R10-b FIRED* (locator: line 520).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.169 — R10-b: the gate section's four blocks.**
+
+*Outgoing statement.* "The CLAUDE.md gate section is now: block (A) the robust-unit stop (class-(b) root-disagree DURATION non-increase per preset + mandatory explained run-diff; reference `tools/robust_stop/`; baselines root 63.36/62.37/63.25, RN 44.58/42.40/44.41, key 68.13/64.43/67.50) · block (B) the two-tier per-cell class policy preserved LIVE · block (C) the batch 52/24/52 sets relocated to history · block (D) caveats (cross-layer-budget LIVE, granularity ✅ RESOLVED)." — §4.7, the remark *R10-b FIRED* (locator: lines 520–524).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.170 — R10-b: the batch sets frozen in two places.**
+
+*Outgoing statement.* "The batch sets are frozen in BOTH CLAUDE.md history AND `tools/robust_stop/batch_stop_frozen_history.json` (set-equal to `characterise_bir_false.py` verified)." — §4.7, the remark *R10-b FIRED* (locator: lines 524–525).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.171 — R10-b: the key-column error corrected.**
+
+*Outgoing statement.* "The 2.2e KEY-column error is corrected (`68.19/64.52/67.77` → `68.13/64.43/67.50`) with the repo-wide occurrence list dispositioned (one historical design-log line annotated, not rewritten)." — §4.7, the remark *R10-b FIRED* (locator: lines 525–527).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.172 — R10-b: the batch diagnostic kept.**
+
+*Outgoing statement.* "`characterise_bir_false.py` → KEPT-AS-DIAGNOSTIC (R3 pattern; its `validate_corpus_dir` is imported by the a8 instrument, so it cannot bit-rot)." — §4.7, the remark *R10-b FIRED* (locator: lines 527–529).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.173 — R10-b: both stops green at close.**
+
+*Outgoing statement.* "Both stops green at close: batch `52/24/52` set-diff empty ×3, robust sandwich identity-PASS (+0/−0, class-(b) Δ=0 all presets)." — §4.7, the remark *R10-b FIRED* (locator: lines 529–530).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.174 — R10 fired; the Stage-5 arc closed.**
+
+*Outgoing statement.* "**Roadmap retirement item R10 is FIRED; the Stage-5 arc is CLOSED.**" — §4.7, the remark *R10-b FIRED* (locator: line 530).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.175 — the engage arc opens on the inherited dossier.**
+
+*Outgoing statement.* "The engage arc opens on the inherited dossier: **F-B redesign [1043/53/809, net-harmful override] · §15-13 [5544, parked — dormant-resolver objective] · θ/map wiring · L1.5 surface map · GateA unification · the L5 inversion · tonicVote.**" — §4.7, the remark *R10-b FIRED* (locator: lines 530–532).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.176 — building block: the parameter manifest.**
+
+*Outgoing statement.* "**Parameter manifest** | The single enumeration of fittable/frozen constants (§7 schema) | Phase-0 source reads | the fit surface; the freeze list" — §5, *Building-block view*, the table's row *Parameter manifest* (locator: line 540).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.177 — building block: the fitting harness.**
+
+*Outgoing statement.* "**Fitting harness** | Vector → materialized override → scratch regen (manifest-stamped) → objective + constraints → ledger | manifest, pinned instruments | fit ledger (reproducible); the split definition" — §5, the table's row *Fitting harness* (locator: line 541).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.178 — building block: the sensitivity screen.**
+
+*Outgoing statement.* "**Sensitivity screen** | One-at-a-time perturbation measurement (Phase 1b, through the harness) | manifest + harness | leverage ranking, dead list, interaction warnings" — §5, the table's row *Sensitivity screen* (locator: line 542).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.179 — building block: the optimizer.**
+
+*Outgoing statement.* "**Optimizer** | Proposes vectors (family-scoped) | ledger | candidate parameter sets" — §5, the table's row *Optimizer* (locator: line 543).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.180 — building block: the differential reporter.**
+
+*Outgoing statement.* "**Differential reporter** | Per-candidate and per-rule decision diffs: batch-stop set-diff (explained), robust-unit run diff, class split, pinned-fix status | harness outputs | adoption-event / retirement evidence" — §5, the table's row *Differential reporter* (locator: line 544).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.181 — building block: the calibration fitter.**
+
+*Outgoing statement.* "**Calibration fitter** | Reliability maps + θ/squash fits | C1 harness outputs | Class-P maps, fitted θ, D-FS declarations" — §5, the table's row *Calibration fitter* (locator: line 545).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.182 — building block: the validation runner, informative and never the objective.**
+
+*Outgoing statement.* "**Validation runner** | Scores adopted candidates on the validation pool (style generalization) | fitted sets, validation pool | per-style validation report (informative, never objective)" — §5, the table's row *Validation runner* (locator: line 546).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.183 — all blocks tools-side except one flag-gated override read in the binary.**
+
+*Outgoing statement.* "All blocks are tools-side (Python + existing dump flags) except the parameter-override read in the analysis binary (§9 D-6) — the one anticipated `src/` change, landing flag-gated + byte-identical (override absent) before any fit uses it." — §5 (locator: lines 548–550).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.184 — scenario S-1: one fit evaluation.**
+
+*Outgoing statement.* "**S-1 One fit evaluation.** Optimizer proposes **w** for a family scoped to preset *p* (or to the preset set reading a shared parameter) → harness materializes **w** → scratch regen of the affected preset(s) → objective + per-evaluation constraints (§4.2 scopes: fitting split only) via pinned instruments → ledger row." — §6, *Runtime view (scenarios)* (locator: lines 556–559).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.185 — scenario S-1: the reference corpus is never written.**
+
+*Outgoing statement.* "The reference corpus is never written." — §6, scenario S-1 (locator: line 559).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.186 — scenario S-2: a rule-retirement audit.**
+
+*Outgoing statement.* "**S-2 A rule-retirement audit (Phase 2, family 2).** Fit with rule X disabled → differential report: pinned fixtures replayed (pass/fail per case), corpus decision diff classified (a)/(b), robust-unit delta → verdict retire / retain / defer → if retire: the removal commit carries the report, the rule's tests convert to pinned-behavior-of-the-fitted-weights tests, `docs/scoring_model.md` §6 updates in the same commit." — §6 (locator: lines 561–565).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.187 — scenario S-3: a tripped candidate rejected in the ledger.**
+
+*Outgoing statement.* "**S-3 A tripwire trip.** A candidate's scratch output adds a fitting-split batch-stop case classed (b) → the candidate is rejected in the ledger (constraint violation), the fit continues elsewhere in the space; no stop-and-ask is needed because nothing was adopted." — §6 (locator: lines 567–569).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.188 — scenario S-3: a family whose best candidate trips goes to the user.**
+
+*Outgoing statement.* "If a *family's best* candidate trips it, that finding goes to the user as the family's result (the family may be unfittable under the constraint — itself knowledge)." — §6, scenario S-3 (locator: lines 569–571).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.189 — scenario S-4: an adoption event.**
+
+*Outgoing statement.* "**S-4 An adoption event.** Family fit complete → the §4.2 per-adoption checks (full-corpus batch stop ×3 sandwich, full robust-unit both tracks) + differential and validation reports assembled → user ratifies → one revertible commit (parameters + doc sync + report) → STATUS/handoff fold per standing practice." — §6 (locator: lines 573–575).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.190 — scenario S-5: the validation sweep reports per-style deltas.**
+
+*Outgoing statement.* "**S-5 Validation sweep.** After each adoption: score the adopted set on the validation pool per style family (DLC sub-corpora as style probes) → report per-style deltas (informative)." — §6 (locator: lines 577–578).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.11.
+
+---
+
+**Row 9.191 — a negative per-style delta surfaced as evidence for a structural condition, never fixed by widening a value.**
+
+*Outgoing statement.* "Any negative per-style root-agreement delta (against that source's own ground truth, duration-weighted on pc-decidable sonorities — the class-(b) analogue, so defined) is surfaced to the user as evidence for a structural entry condition (constraint 4's preferred fix), never fixed by widening a fitted value." — §6, scenario S-5 (locator: lines 578–581). Two claims: (i) a negative per-style delta is surfaced to the user; (ii) it is never fixed by widening a fitted value.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **ADOPTED — proposed**, travelling with Row 1.25, as at Row 9.35.
+
+---
+
+**Row 9.192 — no numeric threshold; every negative delta surfaced with its size.**
+
+*Outgoing statement.* "No numeric threshold is imposed: every negative delta is surfaced with its size; the user decides." — §6, scenario S-5 (locator: lines 581–582).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.191(i).
+
+---
+
+**Row 9.193 — the parameter manifest's row schema.**
+
+*Outgoing statement.* "**Parameter manifest row:** `name · site (file + anchor) · family (continuous / §6-block threshold / abstention / §15-13 / squash / θ) · current value · preset scope (shared | per-preset) · style scope (style-invariant + rationale | idiom-varying) · consuming path(s) (production | dormant | both) · status (fit | frozen + rationale) · license provenance (filled at first fitted value: which pool/split shaped it) · sensitivity (Phase-1b measurement)`." — §7, *Data design* (locator: lines 588–592).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.194 — the fit ledger's row schema.**
+
+*Outgoing statement.* "**Fit ledger row:** `run id · preset(s) · family · vector · objective (fitting-split) · tracked respects (RN, key) · constraint results (fitting-split batch set-diff summary, class-(b) duration delta) · timestamp · instrument versions`." — §7 (locator: lines 594–596).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.195 — the ledger committed as the fit's provenance; large enumerations regenerable.**
+
+*Outgoing statement.* "The ledger is committed (it is the fit's provenance); large per-cell enumerations stay regenerable scratch pinned by the driver, per the A-8 precedent." — §7 (locator: lines 596–597). Two claims: (i) the fit ledger is committed as the fit's provenance; (ii) large per-cell enumerations stay regenerable scratch.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — L2-S38 names *"the fit record"* as its observable and says nothing of keeping it. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 1.23. (ii) **HISTORICAL.**
+
+---
+
+**Row 9.196 — the fitted-set artifact carries its idiom, carriers, vector, ledger, adoption commit and license provenance.**
+
+*Outgoing statement.* "**Fitted-set artifact:** per fit target: the idiom label, the preset carrier(s) it is delivered through, the vector, its ledger reference, the adoption-event commit, and the license-provenance statement ("fitted on: reference-corpus fitting split (PD/CC-BY-SA), idiom #2 ground truth, only")." — §7 (locator: lines 599–601).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 1.23.
+
+---
+
+**Row 9.197 — the reliability-map artifact.**
+
+*Outgoing statement.* "**Reliability-map artifact:** per (layer × decision × preset): map type, knots/parameters, the C1 substrate reference, and the declared domain caveats (flat segments, deferred rows)." — §7 (locator: lines 603–604).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 9.23.
+
+---
+
+**Row 9.198 — the pipeline reads adopted values from its normal configuration sites; the manifest is no runtime dependency.**
+
+*Outgoing statement.* "Ownership: all artifacts are tools-side files under version control; the pipeline reads adopted values from its normal configuration sites (the adoption commit writes them there — the manifest cross-references, it does not become a runtime dependency)." — §7 (locator: lines 606–608).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.199 — regeneration proven deterministic; the harness adds seeds and double-run checks.**
+
+*Outgoing statement.* "Regen is proven deterministic (the M3 arc); the harness adds: fixed optimizer seeds, committed configurations, byte-identical double-run checks on the ledger." — §8, *Crosscutting concepts*, the item *Determinism & reproducibility* (locator: lines 614–616). Two claims: (i) the corpus regeneration is proven deterministic; (ii) the harness adds fixed seeds, committed configurations and double-run checks on the ledger.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* is the corpus regeneration deterministic at the current commit, on the production arm, and what establishes it? (ii) **ADOPTED — proposed**, travelling with Row 9.115(i).
+
+---
+
+**Row 9.200 — any nondeterminism is a stop; all comparisons exact.**
+
+*Outgoing statement.* "Any nondeterminism found is a stop-and-investigate, never noise to average over — all comparisons in this arc are exact." — §8, *Determinism & reproducibility* (locator: lines 616–617).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 9.115(i).
+
+---
+
+**Row 9.201 — every shipped value can answer what data shaped it.**
+
+*Outgoing statement.* "Every shipped parameter can answer "what data shaped you?" from the manifest + ledger." — §8, the item *License provenance as a first-class property* (locator: lines 618–619).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 1.23.
+
+---
+
+**Row 9.202 — the no-surprise sandwich wraps every increment.**
+
+*Outgoing statement.* "**The no-surprise sandwich** (batch stop before/after + byte-identity where claimed) wraps every increment, infrastructure and adoption alike." — §8 (locator: lines 621–622).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.68(i).
+
+---
+
+**Row 9.203 — uncovered cells unscored; key-parse failures reported apart.**
+
+*Outgoing statement.* "Cells without WiR coverage are unscored, never mis-bucketed (the A-8 rule); key-parse failures reported separately (the §2.1a denominator lesson — every reported rate names its denominator, and §4.2 does)." — §8, the item *Error/edge handling* (locator: lines 626–628).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.106.
+
+---
+
+**Row 9.204 — the harness is offline tooling; only parameter values change at runtime.**
+
+*Outgoing statement.* "The harness is offline tooling; the only runtime-relevant change is parameter *values*." — §8, the item *Performance* (locator: line 629).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.205 — no performance budget changes in this arc.**
+
+*Outgoing statement.* "No performance budget changes in this arc." — §8, *Performance* (locator: lines 629–630).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.206 — decision D-1: the objective is the robust unit, variant (b), root governing.**
+
+*Outgoing statement.* "**D-1 Objective = robust unit, variant (b), root governs; RN/key tracked.**" — §9, *Architecture decisions*, D-1 (locator: line 636).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — as at Row 9.4(ii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.4(ii). *(L2-S38 travels with it.)*
+
+---
+
+**Row 9.207 — D-1's consequence: no new metric definitions enter this arc.**
+
+*Outgoing statement.* "*Consequence:* the fit inherits the ratified metric exactly; no new metric definitions enter this arc." — §9, D-1 (locator: lines 640–641).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.208 — D-2's consequence: today's objective data is the annotated reference corpus.**
+
+*Outgoing statement.* "*Consequence:* today's effective objective data is the WiR-annotated reference corpus; broadening it is per-source ratified work (D-5)." — §9, D-2 (locator: lines 644–645).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.209 — D-3: the default optimizer, coordinate or pattern search.**
+
+*Outgoing statement.* "*Default:* **coordinate / pattern search** over family-scoped subspaces (derivative-free, constraint-friendly, trivially deterministic, easy to ledger) — feasible if and only if the Phase-0 cost measurement allows the implied evaluation budget." — §9, D-3 (locator: lines 648–651).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing default optimizer is *"**coordinate / pattern search** over family-scoped subspaces"*; L2-S38's defense names *"minimum error-rate training over a candidate list"* as *"The published method"* for a fit that *"is discriminative"*.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.210 — D-3: the choice made once, at P1.**
+
+*Outgoing statement.* "The choice is made once, at P1, on the cost + sensitivity numbers." — §9, D-3 (locator: lines 654–655).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.211 — D-4: style-varying families are independent fits per fit target.**
+
+*Outgoing statement.* "Style-varying families are independent fits per fit target (constraints 4/4b)." — §9, D-4 (locator: lines 658–659).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 1.25.
+
+---
+
+**Row 9.212 — D-4: Default's batch set differs by a two-case swap; both carriers deliver one fit.**
+
+*Outgoing statement.* "Default's batch-stop set differs from Baroque's by a two-case swap (four identities in the symmetric difference, CLAUDE.md), and both carriers deliver the same idiom-#2 fit under D-10." — §9, D-4 (locator: lines 659–660). Two claims: (i) the Default and Baroque batch sets differ by a two-case swap; (ii) both carriers deliver the same idiom-#2 fit.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **HISTORICAL.**
+
+---
+
+**Row 9.213 — D-4: Default adopts the idiom-#2 vector if it improves Default and trips nothing.**
+
+*Outgoing statement.* "The rule: evaluate the idiom-#2 fitted vector on the Default carrier; **Default adopts it if that evaluation improves Default's objective over Default's baseline and trips no constraint** (exact comparison — the evaluator is deterministic, there is no noise floor); a separate Default treatment runs only if the vector regresses Default or the user asks." — §9, D-4 (locator: lines 660–664).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.214 — D-5: the Jazz idioms carry the unvalidated mark; the only objective data is Bach chorales.**
+
+*Outgoing statement.* "The Jazz preset's idioms (#3 Seventh-functional, plus #5 for its chromatic-coloristic material) carry the A-7 mark: no licensed analysis ground truth exists for them yet, and the only objective data today is Bach chorales (idiom #2)." — §9, D-5 (locator: lines 668–670).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.215 — D-5 ruled: the Jazz-carrier fit deferred to the jazz ground-truth conversion.**
+
+*Outgoing statement.* "**★ A-3 RULED (user, 2026-07-04): option (i) — the Jazz-carrier fit is DEFERRED to the jazz-GT conversion increment (O-5's first instance); this arc fits the idiom-#2 target.**" — §9, D-5 (locator: lines 678–680).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 9.1.
+
+---
+
+**Row 9.216 — D-6: the shape, a default-off parameter override byte-identical when absent.**
+
+*Outgoing statement.* "*Shape:* a parameter-override input (file or command-line) to the analysis binary, default-off, byte-identical when absent — the same discipline as every dump flag." — §9, D-6 (locator: lines 684–685).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.217 — D-6: Phase 1 decides only the file format and plumbing.**
+
+*Outgoing statement.* "Phase 1 decides only file format and plumbing within this shape." — §9, D-6 (locator: lines 687–688).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.218 — D-8: a non-monotone curve is an upstream finding, not a mapping target.**
+
+*Outgoing statement.* "A non-monotone empirical curve (L5 combinedBoundary) is an upstream finding, not a mapping target — fitting a non-monotone map would launder an inference defect into the confidence semantics." — §9, D-8 (locator: lines 695–697).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 9.153(ii).
+
+---
+
+**Row 9.219 — D-9: the fit evaluated on production while the dormant chain is tracked.**
+
+*Outgoing statement.* "Where production and the dormant chain read the same constant (a Phase-0 fact per manifest row), the fit evaluates the objective on the **production path** (it is what the reference corpus and the stop measure) while the differential reporter *also* tracks the dormant chain's robust-unit numbers (the G2 quantity) — so fitting never silently degrades the engage candidate." — §9, D-9 (locator: lines 699–703).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.220 — D-9: a conflict against the dormant chain goes to the user.**
+
+*Outgoing statement.* "The surfacing test: if the best production value increases the dormant chain's class-(b) root-disagree duration on any preset, that conflict goes to the user (it is evidence about the paths' divergence, relevant to the E-steps)." — §9, D-9 (locator: lines 703–705).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.221 — D-10: every fitted set labeled by its idiom; the manifest classifies; a target only with licensed truth; mixtures deferred.**
+
+*Outgoing statement.* "Therefore: (i) every style-varying fitted set is **labeled by the idiom whose ground truth shaped it** — the Bach-chorale fit is an **idiom-#2 (Chromatic-functional)** fit (Baroque, galant and Classical share idiom #2, per the discovery study), delivered through the Baroque and Default preset carriers; (ii) the manifest classifies every parameter as style-invariant or idiom-varying (§4.1), so the fitter knows which values a future idiom multiplies and which it must not; (iii) a per-idiom fit target exists only where that idiom has licensed ground truth (today: idiom #2 only — the fitting-pool jazz/pop sources create targets for #3/#4 when conversion-ready, O-5); (iv) **mixture semantics are explicitly deferred**: how a preset that weights several idioms combines their fitted parameter sets — and the idiom auto-detection that would drive it at runtime — is the taxonomy's own deferred roadmap feature (an inference feature, after the architecture is complete, per its decision 4), NOT this arc's work; this arc delivers idiom-labeled sets 1:1 through the existing carriers so that later work composes them without refitting." — §9, D-10 (locator: lines 710–721). Four claims, marked (i) to (iv) in the text itself.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) L2-S38 (NEAREST, §6.3 entry 6). (iv) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) L2-S38: **AGREES** — as at Row 9.63(i). (iv) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 1.25. (ii) **HISTORICAL.** (iii) **ADOPTED — carried** (L2-S38). (iv) **HISTORICAL.**
+
+---
+
+**Row 9.222 — D-10's consequence: the stop stays keyed by preset carrier.**
+
+*Outgoing statement.* "*Consequence for the batch stop:* the corpus dirs and the 53/24/53 sets stay keyed by preset carrier (the instruments' existing shape); the idiom label lives in the manifest and the fitted-set artifacts, not in the stop's plumbing." — §9, D-10 (locator: lines 725–727).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.223 — the idiom is the fitting axis; the preset is the execution-and-regression axis.**
+
+*Outgoing statement.* "*The two axes, stated plainly (user question, 2026-07-04):* the **idiom is the FITTING axis** (what ground truth shaped a value; what a fitted set means) and the **preset is the EXECUTION-and-REGRESSION axis** (the only configurations the pipeline can run today, each a user-selectable surface that must not change silently — which is why evaluation and the stops stay preset-keyed even though the Jazz carrier's corpus numbers measure its *configuration* on idiom-#2 material, not "jazz")." — §9, D-10 (locator: lines 728–732). Two claims: (i) the idiom is the fitting axis; (ii) the preset is the execution-and-regression axis.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 1.25. (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.64(ii).
+
+---
+
+**Row 9.224 — the two axes merge at a future deliberate re-indexing of the measurement tools.**
+
+*Outgoing statement.* "The two merge at the taxonomy's own preset→idiom-weighting migration: a deliberate future re-key of the preset-keyed instruments (its own ratified re-baseline event, never drift)." — §9, D-10 (locator: lines 732–734).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.225 — with a second idiom, the evaluation is indexed by carrier and idiom.**
+
+*Outgoing statement.* "Once a second idiom's ground truth lands (O-5), the evaluation key generalizes to the pair (carrier × ground-truth idiom) — today that matrix has a single idiom-#2 column." — §9, D-10 (locator: lines 734–736).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.226 — D-11: a style-varying parameter is a function over the style coordinates.**
+
+*Outgoing statement.* "The general model: a style-varying parameter is a function over the style coordinates (the idiom-mixture simplex + the two cross-attributes) — in the worst case continuous, in the best case constant." — §9, D-11 (locator: lines 739–741).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 9.227 — D-11: three commitments — measured dimensionality, anchor-based estimation, measured borders.**
+
+*Outgoing statement.* "Three commitments: (i) **the dimensionality is measured per parameter, never assumed** — the §4.4a style-response measurement decides which coordinates a parameter responds to, so each parameter's table has exactly the dimensions its measured response needs (most are expected to need zero or one); (ii) **estimation is anchor-based** — fitted values at the idiom vertices (and at cross-attribute splits where §4.4a demands them), NEVER a dense table over continuous coordinates (unfillable by any data we will hold); the discrete-table case reads the anchors directly, and the continuous case is realized as a declared interpolation over them — **linear mixing of anchor values over the idiom weights is the recorded default hypothesis**, which makes the deferred mixture semantics (D-10 iv) the same machinery: anchors fitted now compose into mixtures later without refitting; (iii) **border values are measured, not designed** — where §4.4a finds stable clusters, the table's conditioning and its borders come from the cluster structure, with a cross-idiom cluster surfaced as a taxonomy finding rather than forced into the idiom axis." — §9, D-11 (locator: lines 741–752). Three claims, marked (i) to (iii) in the text itself.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 9.30. (ii) **UNPLACED**, travelling with Row 9.30. (iii) **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 9.228 — D-11: four refinements — coordinate selection, partial pooling, mixing validity, coordinates varying within a piece.**
+
+*Outgoing statement.* "Four refinements (folded 2026-07-04, second pass — the "how do the coordinates really relate to parameters" analysis): (iv) **coordinate selection is per parameter, and the candidate set includes the axis-2 texture class** — a parameter's optimum responds to style only THROUGH the distributional statistics its evidence weights (root-continuation rate, inversion prevalence, seventh prevalence, chromatic density…); the harmonic idioms quantize the *progression*-statistics space, but the inversion/bass/pedal parameter families weight *textural* evidence, and texture is measured orthogonal to the harmonic idioms — so those families' style coordinate is plausibly the axis-2 class, not the harmonic idiom (a §4.4a-testable hypothesis once texture strata exist; within the chorale pool they are thin — the chorales are ~98 % one texture class); (v) **estimation refinement: hierarchical shrinkage (partial pooling)** — the statistically standard treatment of "one parameter, several related strata, limited data per stratum" estimates per-stratum values shrunk toward the pooled value in proportion to stratum data; the §4.4a cluster verdict is its discrete approximation, and the "default to the simpler structure" guard is what shrinkage does continuously; whether the fit uses explicit shrinkage or the discrete verdict is a checkpoint-P1 decision on the measured stratum sizes; (vi) **mixing validity is parameter-family- dependent** — the template score is additive in the bonus/penalty magnitudes (given fixed structural conditions), so linear anchor mixing of THAT family equals linear score mixing (principled); threshold- family parameters sit inside indicator conditions, where an interpolated threshold is well-defined but is NOT a mixture of the anchor behaviors — the structure verdict records per family whether its anchors may be mixed continuously or only selected discretely; (vii) **the coordinates vary within a piece** — chromaticism (and the idiom mixture itself) is a per-passage quantity, and the taxonomy's ratified auto-detection decision already reads the mixture forward off committed progressions; the anchor model supports time-varying weights without refitting (the anchors are fixed; only the mixing weights move)." — §9, D-11 (locator: lines 752–773). Four claims, marked (iv) to (vii) in the text itself.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (iv) **THE DERIVATION IS SILENT**. (v) **THE DERIVATION IS SILENT**. (vi) **THE DERIVATION IS SILENT**. (vii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (iv) **UNPLACED**, travelling with Row 9.30. (v) **UNPLACED**, travelling with Row 9.30. (vi) **UNPLACED**, travelling with Row 9.30. (vii) **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 9.229 — D-11's consequence: the declared prior, its measured replacement, anchors stored per parameter.**
+
+*Outgoing statement.* "*Consequence:* the manifest's style-scope column is the declared prior; the style-response structure is its measured replacement; the fitted-set artifact stores anchors + the structure verdict (including mixability) per parameter." — §9, D-11 (locator: lines 778–780).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.230 — per-increment acceptance: the suites green, the sandwich, the reference corpus untouched.**
+
+*Outgoing statement.* "**Per-increment acceptance (all increments):** composing + notation suites green; snapshots no-refresh (or a refresh justified by an adopted behavior change); the sandwich (batch stop 53/24/53 case-identity set-diff empty ×3 before/after for infrastructure; explained and ratified diffs for adoptions); reference corpus byte-untouched by harness runs." — §10, *Quality & testing* (locator: lines 786–789).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.155.
+
+---
+
+**Row 9.231 — the harness's self-tests.**
+
+*Outgoing statement.* "**Harness self-tests:** the objective evaluation self-validates against the pinned A-8 instrument on every piece (the A-8 §0.2 discipline: the reused loop proves itself byte-identical to the pinned primitive); double-run ledger byte-identity; a known-vector fixture — the current constants, evaluated at FULL coverage, must reproduce the ratified §4.2 baselines exactly (the fixture is full-coverage by construction; the fitting-split baseline is recorded beside it once the split exists)." — §10 (locator: lines 790–794).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.232 — per-rule proof obligations replayed under the candidate weights.**
+
+*Outgoing statement.* "**Per-rule proof obligations:** the Stage-1.1 pinned fixture tests replayed under the candidate weights; the differential report's class split verified per the two-tier guardrails (score-verified class-(a) claims)." — §10 (locator: lines 795–797).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.230.
+
+---
+
+**Row 9.233 — the calibration tests.**
+
+*Outgoing statement.* "**Calibration tests:** map monotonicity asserted; reliability-map reproduction from the committed C1 substrate; θ acceptance vs the E0 override fires-vs-corrections reference (§4.5)." — §10 (locator: lines 798–799).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.230.
+
+---
+
+**Row 9.234 — the validation-pool checks at every adoption.**
+
+*Outgoing statement.* "**Validation-pool checks:** per-style deltas reported at every adoption per S-5's defined analogue test; every negative delta surfaced, user decides." — §10 (locator: lines 800–801).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.190.
+
+---
+
+**Row 9.235 — the overfitting risk's mitigations.**
+
+*Outgoing statement.* "Mitigations: the held-out split; the validation-pool style sweep at every adoption; R-13 transposition augmentation (decided at checkpoint P1, §14); the sensitivity screen's dead-list pruning (fewer live parameters, less variance)." — §11, *Risks & technical debt*, the item on overfitting (locator: lines 809–811).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.236 — until the pool broadens, fitted values are Bach-chorale-shaped.**
+
+*Outgoing statement.* "Residual risk is real and stated: until the fitting pool broadens (D-5 and successors), fitted values are Bach-chorale-shaped — exactly as the hand-tuned values already are, but now measurably so." — §11, the item on overfitting (locator: lines 811–813).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 1.28. *Audit question:* as at Row 1.28 — is the shipped fitted set one Bach idiom fit, and through which presets is it delivered?
+
+---
+
+**Row 9.237 — only idiom #2 has licensed ground truth; the others keep the mark.**
+
+*Outgoing statement.* "Only idiom #2 (Chromatic-functional) has licensed ground truth today; idioms #1/#3/#4/#5 have no fit target and keep the A-7 mark." — §11, the item on idiom coverage (locator: lines 814–815).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.238 — cross-idiom structure unmeasurable until a second idiom exists.**
+
+*Outgoing statement.* "Cross-IDIOM style-response structure is therefore unmeasurable until a second idiom's target exists (O-5); what IS measurable now is the cross-attribute response within idiom #2 (§4.4a — the mode/chromaticism strata)." — §11, the item on idiom coverage (locator: lines 815–817).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.239 — an unstable verdict defaults to the simpler structure.**
+
+*Outgoing statement.* "Mitigations are built into §4.4a (stability across seeds and stratum re-definitions; the minimum-covered-duration floor; unmeasurable strata reported, never extrapolated) — but the residual risk stands: an unstable verdict defaults to the SIMPLER structure (invariant over discrete, discrete over continuous), because a wrong extra dimension is fitted noise shipped as style." — §11, the item on clustering (locator: lines 821–824).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 9.240 — much of the batch residual is not reachable by weights.**
+
+*Outgoing statement.* "The cross-layer-budget caveat (CLAUDE.md): much BIR=false mass is spelling, bass/inversion, segmentation — not weight-reachable." — §11, the item on the objective's ceiling (locator: lines 825–826).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.150. *Audit question:* as at Row 6.150 — does the recorded apportionment of the standing root-error set reproduce at the current commit, given the recorded correction that over-grabbed segmentation corrupts the bass and so overstates the function-only share?
+
+---
+
+**Row 9.241 — the arc's success criterion is honest movement plus the structural deliverables.**
+
+*Outgoing statement.* "Phase-1b sensitivity bounds what fitting can move; the arc's success criterion is honest movement plus the structural deliverables (dissolution, calibration, R10), not a promised accuracy jump (the roadmap sized Stage-5 direct yield small: ~1.3 % batch / ~6–7 % section)." — §11, the item on the objective's ceiling (locator: lines 826–829).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.242 — the uncalibratable confidences, their fixes belonging to their layers and not to maps.**
+
+*Outgoing statement.* "**Uncalibratable confidences** (L5 mid-range inversion, tonicVote, L1.5 spread): recorded upstream findings; their fixes belong to their layers' own future increments, not to maps (D-8)." — §11 (locator: lines 830–831). Two claims: (i) three confidences recorded as uncalibratable upstream findings; (ii) their fixes belong to their layers and not to maps.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 9.143. (ii) **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 9.153(ii).
+
+---
+
+**Row 9.243 — class-(a) churn kept visible; a large net shift trips investigation.**
+
+*Outgoing statement.* "**Class-(a) churn under weight movement:** symmetric-rotation flips may wobble; the two-tier guardrails + the §4.2 full-weight decision keep it visible; a large net class-(a) shift trips investigation." — §11 (locator: lines 833–834).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.149.
+
+---
+
+**Row 9.244 — rule-disabled fits may need re-runs, budgeted as expected rework.**
+
+*Outgoing statement.* "**Interaction between dissolution and continuous fits:** rule-disabled fits may need family re-runs (Phase-1b interaction warnings size this); budgeted as expected rework, not a surprise." — §11 (locator: lines 835–836).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.245 — the deferred and gated items.**
+
+*Outgoing statement.* "**Deferred/gated:** the C3 joint-step design (unblocked at Phase 3, own document); the R9 file split (post-E4); template additions (post-fitting decision); Jazz objective data (D-5); the dormant-chain shared-constant conflict, if D-9's surfacing test fires (evidence for the E-steps, handled there)." — §11 (locator: lines 837–839).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.246 — conformal prediction: a complement for the abstention thresholds, not a replacement for the maps.**
+
+*Outgoing statement.* "*Disposition:* evaluate at Phase 3 as a complement for the abstention bars specifically (family 3); not a replacement for reliability maps (consumers need graded confidence, not only set-valued abstention)." — §14, *Related work & external sources*, the item *R-11 Conformal prediction* (locator: lines 879–881).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 9.147.
+
+---
+
+**Row 9.247 — multi-granularity self-consistency not commissioned.**
+
+*Outgoing statement.* "**R-12 Multi-granularity self-consistency** (lever register): a cheap uncertainty feature; *disposition:* a C1-follow-up measurement candidate, not commissioned in this arc (it adds a signal, and this arc adds no new signals — fitting existing decision structures, including family 4's, comes first)." — §14 (locator: lines 883–885).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.248 — transposition augmentation decided at P1; mode-mixture augmentation deferred.**
+
+*Outgoing statement.* "**R-13 Fitting-time transposition augmentation** (lever register): *disposition:* decided at checkpoint P1 — adopted for the Phase-2 fits if the sensitivity screen shows the fit is data-limited (the 326-score guard); mode-mixture augmentation deferred (it changes label semantics, not just key)." — §14 (locator: lines 886–888).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.249 — the sign-off asks all ratified; A-3 ruled to defer the Jazz fit.**
+
+*Outgoing statement.* "**Asks (the sign-off surface) — ★ ALL RATIFIED (user, 2026-07-04); A-3 ruled = defer the Jazz fit:**" — §15, *Open items & ratification asks* (locator: line 921).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 9.1.
+
+---
+
+**Row 9.250 — O-4 delivered: the joint-step design document.**
+
+*Outgoing statement.* "**✅ DELIVERED (2026-07-07, engage arc #10, `cowork_joint_key_chord_design.md`; observation O-26 below).**" — §15, open item O-4 (locator: lines 955–956).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.251 — O-4: architecture design only; the build a later event.**
+
+*Outgoing statement.* "Architecture design only (read-only / structure-only); the build (B1–B4) is a later, separately-ratified E4-adjacent event." — §15, O-4 (locator: lines 956–957).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.252 — O-5: broadening the fitting pool, each conversion its own increment.**
+
+*Outgoing statement.* "**O-5** Broadening the fitting pool (CoCoPops / OpenEWLD / BCFB / GuitarSet / OpenScore conversions): each a separate ratified increment; D-5's Jazz decision is the first instance." — §15, O-5 (locator: lines 958–959).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.253 — O-6 resolved: the tuning bridge reads no scoring parameter.**
+
+*Outgoing statement.* "*(Resolved at Phase 0: CLEAN — the tuning bridge reads no scoring parameter.)*" — §15, O-6 (locator: lines 961–962).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the tuning bridge read any parameter of the scoring pipeline at the current commit?
+
+---
+
+**Row 9.254 — O-7: the family-1 candidate parked, not adopted.**
+
+*Outgoing statement.* "**O-7 (Phase 2.1 closure, user-ruled 2026-07-05): the family-1 candidate is PARKED, not adopted.**" — §15, O-7 (locator: line 963).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.255 — O-7: the candidate improved the full corpus and regressed the held-out split.**
+
+*Outgoing statement.* "The fitted `kPowerChord3PcPenalty = 0.6375` candidate (full surface in `records/cc/reports/cc_stage5_phase2_1_report.md`) was feasible and improved the full corpus (+0.038/+0.085/+0.055) with class-(b) duration down ×3 and the batch sets untouched — but **regressed the held-out split (−0.098)**: the design's own overfit tell." — §15, O-7 (locator: lines 963–966).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.203.
+
+---
+
+**Row 9.256 — O-7's ruling: no value change; the lever re-enters at the joint fit.**
+
+*Outgoing statement.* "Ruling: no value change; the family closes "feasible, constraint-bounded, non-generalizing at held-out"; the lever re-enters at the family-2 joint fit (its constraint boundary is that fit's subject)." — §15, O-7 (locator: lines 967–968).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.257 — O-7: two structural findings banked.**
+
+*Outgoing statement.* "The two structural findings are banked: the fit is constraint-bounded (the unconstrained optimum lowers the penalty, +0.376, blocked by new class-(b) cases — the root-only objective is quality-silent there), and the 1b "clean at ±0.05" read does not extend to the full range." — §15, O-7 (locator: lines 968–971).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.203.
+
+---
+
+**Row 9.258 — O-7 resolved: the power-chord penalty does not move at the joint optimum.**
+
+*Outgoing statement.* "**O-7 RESOLVED at the family-2 joint fit (Phase 2.2b, CC 2026-07-05, `records/cc/reports/cc_stage5_phase2_2b_report.md`):** re-entered in the 8-row coupled cluster, `kPowerChord3PcPenalty` **does NOT move at the joint optimum** — at the coupled point (bassNoteRootBonus 0.775 / kWStepIn 0.125 / sameRootInversionBonus 0.475) its whole local ladder [0.20…0.40] is feasible yet every point scores below the current 0.30; its apparent standalone leverage (2.1's up-plateau; a fine-grid down-move to 0.225 the 2.1 coarse step-0.15 ladder skipped) is **subsumed by `bassNoteRootBonus`**, which the joint fit assigns the bass/root-tone correction to instead." — §15, O-7 (locator: lines 974–980).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.203.
+
+---
+
+**Row 9.259 — O-7: the parked lever inert, no adoption; the bass-root bonus the true lever and the source of the cost.**
+
+*Outgoing statement.* "The parked lever is inert at the joint optimum — no adoption; `bassNoteRootBonus` is the true lever (whose aggressive 0.775 value is itself the source of the candidate's held-out class-(b) + Jazz shared-scope cost — the joint fit's central decision-surface finding)." — §15, O-7 (locator: lines 980–982). Two claims: (i) the parked lever is inert at the joint optimum, and nothing is adopted; (ii) the bass-root bonus is the true lever and the source of the candidate's held-out and shared-scope cost.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **QUARANTINED.** *Audit question:* does the recorded joint fit of the coupled bass, root and inversion constants reproduce at the current commit, and which of its values ship, on which path?
+
+---
+
+**Row 9.260 — O-9: the joint candidate blocked by a held-out class-(b) case and a Jazz cost.**
+
+*Outgoing statement.* "**O-9 (the Phase-2.2b shared-scope finding — the design's own prediction landing, 2026-07-05):** the joint fit's best candidate is blocked by its shared `bassNoteRootBonus 0.775` (+ the `kWStepIn` bump): a held-out class-(b) case (`bwv392@17520`, R10 trip on Baroque/Default) and a Jazz duration cost (−0.6070, clsB +23120 — no Jazz batch trip)." — §15, O-9 (locator: lines 983–986).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.259(ii).
+
+---
+
+**Row 9.261 — O-9: the style-response measurement firing; the bass-root bonus idiom-varying, confirmed.**
+
+*Outgoing statement.* "**This is NOT a new design question — it is the §4.4a style-response measurement firing through the carrier strata:** the manifest declared `bassNoteRootBonus` idiom-varying at Phase 0 (rationale: the rock-vs-common-practice root-position statistics, §14), and the Jazz carrier just acted as the first cross-style stratum whose optimum diverges — the D-11 verdict is "idiom-varying, CONFIRMED by measurement."" — §15, O-9 (locator: lines 986–990).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.259(ii).
+
+---
+
+**Row 9.262 — the shape of O-9's remedy: per-carrier delivery, then re-selection under the hard stop.**
+
+*Outgoing statement.* "**Resolution shape (2.2c):** reclassify the diverging shared levers (`bassNoteRootBonus`, `kWStepIn`; others per the same test) to per-carrier delivery (the D-10 anchor model: Baroque/Default carriers deliver the idiom-#2 fitted value; the Jazz carrier keeps its current effective value — Jazz receives no fit, A-3/4c), then re-select the candidate under the full-corpus hard stop (the S-3 rejection loop: gentler `bassNoteRootBonus` points from the committed ledger, full surface re-measured; the `bwv392@17520` class score-verified per guardrail (2) before it is treated as final)." — §15, O-9 (locator: lines 990–996).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.263 — O-9 delivered: the per-carrier mechanism landed, values unchanged.**
+
+*Outgoing statement.* "**★ DELIVERED (2.2c, `records/cc/reports/cc_stage5_phase2_2c_report.md`):** the per-carrier scoping mechanism LANDED (`batch_analyze.cpp` `6a468f82ac`: `bassNoteRootBonus` per prefs-field, `kWStepIn` per preset via the registered-global writer written BEFORE the override load; values unchanged → byte-identical ×3)." — §15, O-9 (locator: lines 998–1000). Two claims: (i) the mechanism landed, values unchanged; (ii) how the two constants are delivered per carrier.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **QUARANTINED.** *Audit question:* does the batch tool deliver the bass-root bonus and the step weight per preset carrier at the current commit, and which carrier's values does the production path read?
+
+---
+
+**Row 9.264 — production has no preset-selection moment and delivers only the Default carrier.**
+
+*Outgoing statement.* "The **production-path plumbing question is REPORTED, not improvised**: production has no preset-selection moment, so it delivers only the Default carrier (via the `bassNoteRootBonus` struct default / the `kWStepIn` global initializer); a non-Default-carrier production delivery has no surface." — §15, O-9 (locator: lines 1000–1003).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.263(ii).
+
+---
+
+**Row 9.265 — the re-selection: not adoptable at any swept value.**
+
+*Outgoing statement.* "The candidate re-selection under the full-corpus hard stop returned **NOT ADOPTABLE AT ANY SWEPT VALUE**: bnrb {0.70…0.775} × (srib 0.475, kw 0.125), Jazz pinned byte-identical — low bnrb is fitting-infeasible (`bwv379@11520`, absorbed by 0.7375 — the 2.2b coupling), and every fitting-feasible bnrb (0.7375–0.775) is full-infeasible on the **score-verified class-(b) `bwv392@17520`** (Baroque AND Default; a Layer-2/4 segmentation over-grab — `Dm/F` iii6 across the WiR `Gm` vi boundary — driven by the srib/kw pair, not bnrb)." — §15, O-9 (locator: lines 1003–1009).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.259(ii).
+
+---
+
+**Row 9.266 — the per-carrier delivery built; the coupled candidate not adoptable.**
+
+*Outgoing statement.* "So O-9's per-carrier delivery is BUILT and byte-identical, but the specific coupled `bassNoteRootBonus/sameRootInversionBonus/kWStepIn` candidate is not adoptable: the fitting gain (+0.43…+0.51, batch 53→49) is real, but the single new class-(b) is a hard R10 stop." — §15, O-9 (locator: lines 1009–1011). Two claims: (i) the per-carrier delivery is built and byte-identical; (ii) the coupled candidate is not adoptable, its gain real and one new class-(b) case stopping it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **QUARANTINED**, travelling with Row 9.259(ii).
+
+---
+
+**Row 9.267 — the next-lever decision is the user's; nothing adopted.**
+
+*Outgoing statement.* "The next-lever decision (a gentler srib/kw that does not create bwv392 · a Layer-4 fix for the over-grab · a smaller uncoupled gain) is the user's — nothing adopted." — §15, O-9 (locator: lines 1011–1013).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.268 — O-11(i): the carried alternatives are inside the byte-identity acceptance contract.**
+
+*Outgoing statement.* "(i) **RULED: `alternatives[]` IS inside the byte-identity acceptance contract** — the carried alternatives are a load-bearing output surface (the L4 §15 O1b carry contract: L5 overrides select among carried readings; E-14 makes them user-visible), so "same winner, different alternatives" is a behavior change." — §15, O-11 (locator: lines 1014–1018).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S41 and L2-S45 publish the rivals, and no derived statement speaks to what a regression check treats as a change.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.60.
+
+---
+
+**Row 9.269 — O-11(i)'s consequence: Gate A's retirement held.**
+
+*Outgoing statement.* "Consequence: **GateA's retirement is HELD** (verdict amended RETIRE → DEFER): it is winner-inert everywhere but alternatives-active on 36 Baroque scores — its `std::swap` promotion and FM2's `push_back(buildResult)` promotion produce the same winner with different carry side-effects." — §15, O-11 (locator: lines 1018–1020). Two claims: (i) Gate A's retirement is held; (ii) Gate A is winner-inert and alternatives-active, its promotion and FM2's producing the same winner with different carry.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **QUARANTINED.** *Audit question:* is Gate A winner-inert and alternatives-active at the current commit, and do the two promotion idioms still differ in the carry they leave?
+
+---
+
+**Row 9.270 — Gate A retires when the promotion machinery unifies.**
+
+*Outgoing statement.* "**It retires when the promotion machinery unifies** (one promotion path producing one carry — a named total-unification item, claimable by the L4 carry work or a §6-block consolidation increment)." — §15, O-11 (locator: lines 1021–1022).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.271 — the evidence-method lesson: inertness is measured on the full output surface.**
+
+*Outgoing statement.* "Evidence-method lesson recorded: firing-site/inertness evidence must measure the FULL output surface (winner + alternatives), not the winner alone." — §15, O-11 (locator: lines 1023–1024).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.268.
+
+---
+
+**Row 9.272 — O-11(ii): family 2 closed not adoptable; the blocking case a segmentation over-grab.**
+
+*Outgoing statement.* "(ii) **Family 2 (the coupled continuous cluster) CLOSED NOT-ADOPTABLE at every swept value** (`records/cc/reports/cc_stage5_phase2_2c_report.md` Task 4): low `bassNoteRootBonus` is fitting-blocked (`bwv379@11520`), every fitting-feasible value is full-corpus-blocked by the Task-3-verified class-(b) `bwv392@17520` — which is driven by the `sameRootInversionBonus 0.475 + kWStepIn 0.125` PAIR (present even at bnrb 0.70), a **Layer-2/4 segmentation over-grab** (the candidate reads the RIGHT chord, Dm/F, but starts an eighth late and extends across the barline into the GT's Gm region — the weight fit relocates the boundary failure, it cannot remove it; the §11 "ceiling is upstream of weights" caveat, now measured at a single case)." — §15, O-11 (locator: lines 1024–1031). Two claims: (i) family 2 closed not adoptable at every swept value; (ii) the blocking case is a segmentation over-grab that the weight fit relocates and cannot remove.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **QUARANTINED**, travelling with Row 9.259(ii).
+
+---
+
+**Row 9.273 — O-11's open follow-up: a cheap sub-sweep; the Layer-4 fix deferred.**
+
+*Outgoing statement.* "Open follow-up: a cheap (srib, kw) sub-sweep below the blocking bump (investigate-by-default) may find a smaller feasible gain; the Layer-4/NCT fix (R-14) stays deferred to its proper turn." — §15, O-11 (locator: lines 1032–1033).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.274 — resolved: a feasible slice found; the arc's first adoption ratified.**
+
+*Outgoing statement.* "**★ RESOLVED (2.2d, 2026-07-05): the sub-sweep found a feasible slice — and the ARC'S FIRST ADOPTION IS USER-RATIFIED (2026-07-05): candidate (sameRootInversionBonus 0.40 [unchanged], kWStepIn 0.10→0.125), Baroque/Default carriers, Jazz pinned byte-identical.**" — §15, O-11 (locator: lines 1034–1036).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.275 — the adopted candidate's surface: it generalizes and adds no class-(b) case.**
+
+*Outgoing statement.* "Surface: fitting +0.0365, held-out +0.0280 (generalizes), full-corpus +0.0347 both carriers, fixes the canonical class-(b) `bwv244.32@5760`, ZERO new class-(b) anywhere, DLC net-positive." — §15, O-11 (locator: lines 1036–1038).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.259(ii).
+
+---
+
+**Row 9.276 — the tie-break ruled for the single-lever point.**
+
+*Outgoing statement.* "The tie-break vs (0.425, 0.125) ruled for the single-lever point (identical class-(b) win; the alternative's batch edge is class-(a) churn + a fragile coupling + struct-default leakage into unmeasured carriers)." — §15, O-11 (locator: lines 1038–1040).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.277 — the adoption event is its own dispatch.**
+
+*Outgoing statement.* "The adoption event = its own dispatch (`records/cc/instructions/cc_instruction_stage5_phase2_2e.md`): the value + provenance stamp (the FIRST §7 license-provenance fill) + goldens refresh + **the first deliberate frozen-corpus re-baseline** (expected 52/24/52, removal-only diff {bwv244.32@5760} ×Baroque/Default; CLAUDE.md sets re-stamped; A-8 baselines re-measured) + unmeasured carriers explicitly pinned (mandate 4c) + the O-10 retained-rule liveness re-measurement." — §15, O-11 (locator: lines 1040–1045).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.278 — the batch stop remains the hard stop.**
+
+*Outgoing statement.* "**The batch stop REMAINS the hard stop (dual-track unchanged — this is a set re-stamp within the policy, NOT the R10 dissolution).**" — §15, O-11 (locator: lines 1045–1046).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.279 — executed: the adoption landed as specified.**
+
+*Outgoing statement.* "**★ EXECUTED (2.2e, 2026-07-05, `records/cc/reports/cc_stage5_phase2_2e_report.md`; commit `c50002fee1` `feat(analysis):` + the corpus chore).**" — §15, O-11 (locator: lines 1047–1048).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.280 — the step weight's delivered values per carrier.**
+
+*Outgoing statement.* "Landed exactly as specified: kWStepIn 0.10→0.125 (Baroque/Default; production via the Default global initializer; Jazz + Standard/Modal/Contemporary pinned 0.10), sameRootInversionBonus 0.40 unchanged." — §15, O-11 (locator: lines 1048–1050).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.263(ii).
+
+---
+
+**Row 9.281 — the corpus re-baselined with a removal-only difference.**
+
+*Outgoing statement.* "**Corpus re-baselined 52/24/52**, set-diff = **removal-only `{bwv244.32@5760}`** on Baroque+Default, Jazz identical." — §15, O-11 (locator: lines 1050–1051).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.282 — the derived step budget is recomputed only by the file loader.**
+
+*Outgoing statement.* "`kStepBudget` is DERIVED (= kWStepIn+kWStepOut+0.01) and a single-key `applyGlobalOverride` does NOT recompute it — only the FILE loader does." — §15, O-11, the remark *Jazz byte-identity — a delivery finding* (locator: lines 1051–1053).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.263(ii).
+
+---
+
+**Row 9.283 — the new initializer would have leaked into the pinned carriers.**
+
+*Outgoing statement.* "So the new 0.235 *initializer* would have LEAKED into the carriers that pin kWStepIn back to 0.10 (Jazz + Standard/Modal/Contemporary) and broken Jazz byte-identity." — §15, O-11 (locator: lines 1053–1054).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.263(ii).
+
+---
+
+**Row 9.284 — the batch tool now re-derives the step budget per carrier.**
+
+*Outgoing statement.* "`batch_analyze` now RE-DERIVES kStepBudget per carrier after the single-key kWStepIn write (Jazz→0.21)." — §15, O-11 (locator: lines 1054–1055).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.263(ii).
+
+---
+
+**Row 9.285 — the fix proven load-bearing.**
+
+*Outgoing statement.* "Proven load-bearing: a forced-0.235 Jazz regen differs on **7** `.ours.json`; the fix restores 0 diff." — §15, O-11 (locator: lines 1055–1056).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.263(ii).
+
+---
+
+**Row 9.286 — the A-8 baselines re-measured; the snapshots and the liveness recorded.**
+
+*Outgoing statement.* "A-8 baselines re-measured (root 63.36/62.37/63.25, RN 44.58/42.40/44.41, key 68.19/64.52/67.77 **[R10-b correction, 2026-07-06: this key column is the non-reproducible 2.2e measurement-entry error; the reproducible key column is 68.13/64.43/67.50 — Jazz byte-identity proves 64.43; see O-15 and the block-(A) A-8 note in CLAUDE.md. Historical log line left as-recorded per the annotate-don't-rewrite rule.]**); CLAUDE.md re-stamped 52/24/52; goldens refreshed 11/11; O-10 liveness recorded (all four retained rules LIVE, counts near-prior; ledger `stage5_2_2e_liveness.jsonl`)." — §15, O-11 (locator: lines 1058–1063).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.287 — the 2.2d delivery: a feasible slice found.**
+
+*Outgoing statement.* "**★ DELIVERED (2.2d, `records/cc/reports/cc_stage5_phase2_2d_report.md`): the sub-sweep FOUND a feasible slice — the answer is YES.**" — §15, O-11 (locator: lines 1065–1066).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.288 — the 2-D grid yields three feasible points, two sharing the top gain.**
+
+*Outgoing statement.* "The 18-point 2-D grid (srib∈{0.40…0.4625}×kw∈{0.10,0.1125,0.125}, bnrb fixed 0.70, Jazz byte-identical by O-9 construction) yields **three full-feasible points**, all at high kw, with a **top-gain 2-point tie at fitting +0.0365**: **(srib 0.40, kw 0.125)** kw-only and **(srib 0.425, kw 0.125)** both-levers." — §15, O-11 (locator: lines 1066–1069).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.259(ii).
+
+---
+
+**Row 9.289 — both equal-gain points generalize and add no class-(b) case.**
+
+*Outgoing statement.* "Both: held-out +0.0280 (generalizes), Baroque root +0.0347 (identical), **newB=0 on all three carriers, D-4 Default eligible, Jazz byte-identical** (the O-9 per-carrier delivery removes the 2.2b shared-scope Jazz cost entirely), DLC flat-positive (mozart +0.7), snapshot 11/11." — §15, O-11 (locator: lines 1069–1072).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.259(ii).
+
+---
+
+**Row 9.290 — the two equal-gain points' meaningful improvement is identical; the batch gap is class-(a) churn.**
+
+*Outgoing statement.* "**★ The tie's *meaningful* improvement is IDENTICAL** — both remove exactly the same single class-(b) case `bwv244.32@5760`; the 53→52 vs 53→50 batch gap is entirely **class-(a) churn** (`bwv258@10560`+`bwv334@6720`, symmetric-rotation coin-flips)." — §15, O-11 (locator: lines 1072–1074).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.259(ii).
+
+---
+
+**Row 9.291 — the family-2 gain is a smaller slice reachable only with a gentle bump.**
+
+*Outgoing statement.* "So the family-2 gain was never "no feasible slice" — it was a **~14× smaller feasible slice reachable only with bnrb at 0.70 and the bump gentle** (bwv392 is absent from the whole srib=0.40 column; the srib bump is what creates it, and at (0.425,0.125) it is re-absorbed by the higher kw)." — §15, O-11 (locator: lines 1074–1077).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.259(ii).
+
+---
+
+**Row 9.292 — the recommendation of the single-lever point, and the trade the other would make.**
+
+*Outgoing statement.* "CC recommends **(0.40, 0.125)** (minimal/robust, single lever, no bwv392 exposure); (0.425,0.125) trades a bigger perturbation + class-(a) churn for better tracked-beside RN/key (+0.049/+0.032)." — §15, O-11 (locator: lines 1077–1079).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.293 — a prepared, unapplied adoption artifact with the step-budget remark.**
+
+*Outgoing statement.* "**Prepared-not-applied adoption artifact** with the kStepBudget note (kw 0.10→0.125 ⟹ kStepBudget 0.21→0.235; override loader recomputes at fit time, a baked adoption must ensure the same)." — §15, O-11 (locator: lines 1079–1081).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.294 — nothing adopted; family 2 re-opens as adoptable pending ratification.**
+
+*Outgoing statement.* "**NOTHING adopted; the candidate + the tie-break are the user's ratification event** (Family 2 re-opens as ADOPTABLE-PENDING-RATIFICATION, superseding the 2.2c not-adoptable closure)." — §15, O-11 (locator: lines 1081–1083).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.295 — the production path delivers only the Default carrier.**
+
+*Outgoing statement.* "(iii) **Production-path delivery fact (Task 2):** the production/notation path has NO preset-selection moment — it delivers ONLY the Default carrier (struct default + global initializer are its delivery surface); a future Default-carrier adoption ships to production through those; non-Default carriers are batch/fitting-path-only until a production preset moment exists (D-10 note)." — §15, O-11, item (iii) (locator: lines 1083–1087).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.263(ii).
+
+---
+
+**Row 9.296 — O-12: the frozen corpus is not under version control, so a clean git status proved nothing.**
+
+*Outgoing statement.* "**O-12 (process lesson from the 2.2e re-baseline, 2026-07-05): the frozen corpus is GITIGNORED — "git status clean" was always a VACUOUS byte-untouched check.**" — §15, O-12 (locator: lines 1088–1089).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.297 — O-12: the protection that held was the manifest's fingerprints and the refusing validation.**
+
+*Outgoing statement.* "`tools/corpus/` is not version-controlled (`.gitignore`), so every prior report line citing "git status tools/corpus/ = clean" proved nothing; the protection that actually held (and genuinely did — verified) is the manifest's per-score sha256 fingerprints + `characterise_bir_false.py`'s refuse-on-mismatch validation + the 2.2c frozen-vs-baseline regen comparison." — §15, O-12 (locator: lines 1089–1093).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.296.
+
+---
+
+**Row 9.298 — O-12's standing corrections: fingerprint validation, a snapshot before every re-baseline, the tracking question open.**
+
+*Outgoing statement.* "Standing corrections: (1) byte-untouched claims cite MANIFEST-FINGERPRINT VALIDATION (or an explicit regen-compare), never git status; (2) **every future corpus re-baseline SNAPSHOTS the outgoing frozen corpus before regenerating** (2.2e overwrote the old Jazz in place before copying; byte-identity was then proven by an explicit-override reconstruction — rigorous, but the snapshot makes it trivial); (3) whether the frozen corpus should become git-tracked (or snapshot-archived per re-baseline) is a user call, recorded as open." — §15, O-12 (locator: lines 1093–1099). Three claims, numbered (1) to (3) in the text itself, and cited here as (i) to (iii).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.296. (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.296. (iii) **HISTORICAL.**
+
+---
+
+**Row 9.299 — O-13: two cheap measurements, nothing adopted.**
+
+*Outgoing statement.* "Two cheap measurements; nothing adopted, no value change, no corpus write." — §15, O-13 (locator: line 1101).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.300 — O-13(i): the three surviving margins hold no fittable gain; each retained, hand-set.**
+
+*Outgoing statement.* "**(i) Staging step 3 — the three surviving §6-block margins hold NO fittable gain at full range → each RETAINED, constant stays hand-set (skip-with-record).**" — §15, O-13 (locator: lines 1102–1103). Two claims: (i) the three surviving margins hold no fittable gain at full range; (ii) each is retained, its constant staying hand-set.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing constant *"stays hand-set"*; L2-S38 is falsified *"if any weight is hand-set in the shipped model"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* do the recorded full-range ladders of the three surviving correction-block margins reproduce at the current commit, and on which path do those margins act? (ii) **HISTORICAL.**
+
+---
+
+**Row 9.301 — the full-range ladders: no feasible gain on any margin.**
+
+*Outgoing statement.* "Full-range 1-D ladders (Baroque carrier, fitting split, refine-0) on `kGateIMargin` [0,1.0], `kGateLMargin` [0,1.0], `kHalfDimFirstInversionBonus` [0,1.2]: **no feasible Δ>0 on any margin at any point** (best feasible = baseline, `ALREADY-OPTIMAL`)." — §15, O-13 (locator: lines 1103–1105).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.300(i).
+
+---
+
+**Row 9.302 — the full range refines the step-dead reading: one margin inert, two unchanging near their values and dropping at the extremes.**
+
+*Outgoing statement.* "The full range REFINES the ±step-dead 1b reading exactly as the 2.1 lesson warns: `kGateLMargin` is globally objective-inert on the Baroque root objective (Δ=0 across [0,1.0], even at 0 where Gate L never fires — consistent with its 2.2b Jazz-only liveness); `kGateIMargin` and `kHalfDimFirstInversionBonus` are locally flat around their current values but the objective DROPS at the extremes (Gate I at both ends — 0.0 stops it firing, 0.8/1.0 fires it on wider gaps, both class-(b)- infeasible; the FM2 bonus only when shrunk toward disabling its promotion)." — §15, O-13 (locator: lines 1105–1110).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.300(i).
+
+---
+
+**Row 9.303 — every non-zero change is a loss in an infeasible direction.**
+
+*Outgoing statement.* "Every non-zero Δ is a LOSS in an INFEASIBLE direction; the current hand-set values sit at/inside the objective-optimal feasible plateau." — §15, O-13 (locator: lines 1110–1111).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.300(i).
+
+---
+
+**Row 9.304 — the rules are load-bearing but hold no fit.**
+
+*Outgoing statement.* "So the rules are load-bearing (their RETAIN verdicts are re-confirmed by leverage) but hold no fit — a legitimate staging-step-3 closure." — §15, O-13 (locator: lines 1111–1113).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.300(i).
+
+---
+
+**Row 9.305 — the both-licensed population, counted by resolver telemetry.**
+
+*Outgoing statement.* "The both-licensed fall-through population (`bothLicensed` telemetry added to the resolver, read via `--dump-fullspine`; byte-identical on production, 0/352 ×3): **Baroque 5544 / Jazz 5581 / Default 5544** (Transition ≈3550, ShareTone ≈2000; outcome ≈52 % structural tie-break, ≈48 % honest open mark; **~16.5 % of scored duration**, present in 351/352 scores, max 87/score, median 15)." — §15, O-13, item (ii) (locator: lines 1115–1119).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.138.
+
+---
+
+**Row 9.306 — running the family-4 fit needs engagement or a resolver-output objective, a question returned to the user.**
+
+*Outgoing statement.* "Running it needs L5 engagement (the resolver output becomes what the objective grades) OR a dedicated resolver-output objective + GT — a design/sequencing question returned to the user." — §15, O-13, item (ii) (locator: lines 1123–1125).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.307 — no fit run either way.**
+
+*Outgoing statement.* "**No fit run either way (per the dispatch); the number + this substrate observation are the checkpoint material.**" — §15, O-13, item (ii) (locator: lines 1125–1126).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.308 — O-14(i): the adoption did not move the calibration.**
+
+*Outgoing statement.* "**(i) Curves re-measured** on the adopted corpus `c50002fee1` (predated 2.2e): every harmonic-row ECE Δ≤0.001 — the adoption did not move the calibration." — §15, O-14 (locator: lines 1128–1130).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.143.
+
+---
+
+**Row 9.309 — O-14(ii): the calibrated maps fitted, committed and validated held-out.**
+
+*Outgoing statement.* "**(ii) Class-P maps FITTED + COMMITTED** (`tools/calibration_maps/stage5_classP_{l3_key_margin, l4_chord_composite}_{baroque,default}.json`): isotonic on both rows (Platt rejected — iso-vs-Platt maxdiff 0.20–0.26, not near-logistic, and Platt held-out ECE worse); fit on the 261 fitting split, VALIDATED on the 65 held-out (post-map held-out ECE 0.017–0.041, 3–6× below pre-map); the L4 flat low band pools to a constant **0.289** (flat-band assertion held — no invented resolution); monotone by construction." — §15, O-14 (locator: lines 1130–1134).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.143.
+
+---
+
+**Row 9.310 — Jazz unmapped.**
+
+*Outgoing statement.* "Jazz UNMAPPED (A-7)." — §15, O-14 (locator: line 1134).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.143.
+
+---
+
+**Row 9.311 — O-14(iv): the texture strength's surface population has monotone spread; no map fitted.**
+
+*Outgoing statement.* "**(iv) Task B** (via the additive default-off `phraseNumVoices` dump field; spike-floor invariant confirmed exactly = 1.5·numVoices): the SURFACE population (98.4% of ticks), un-compressed from the spike-dominated per-profile max, has usable MONOTONE spread (0.13→0.46, mono-viol 2) → a per-population map is fittable IN PRINCIPLE at a later increment; the SPIKE population is a flat ~0.40 cluster (no usable spread); NO map fitted (weak absolute signal, tops at 0.46) — the C1 "insufficient spread" reading is REFINED (spread exists once un-compressed; the limit is the weak detection signal, upstream of calibration)." — §15, O-14 (locator: lines 1136–1142).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.155.
+
+---
+
+**Row 9.312 — O-14(v): the frames' contradiction ranges declared, θ candidates unwired, the override's net harm confirmed.**
+
+*Outgoing statement.* "**(v) Task C (θ):** F-A/F-B contradiction scales DECLARED (`x/(x+3.5)` cadentialWeight, `x/(x+2.0)` plaus-diff; R5, precision-phase; ranges re-confirmed [3.35,9.35] / [2.0,3.0]); θ candidates fitted RECORDED/UNWIRED (dormant chain, adoption rides engage) — **F-B fine-grain override net-harm CONFIRMED (1043 fires / 53 corrections / 809 harms → 78% of fires move an L4-correct root wrong); the corr−harm-maximizing measurable θ effectively DISABLES the override → declared to Cowork as an inference-quality finding (redesign, not a θ retune)**; F-A reduced candidate τ≈5.0 on cadentialWeight (corr−harm +6→+15 fit / +3→+5 hel) — full form deferred (the L3 incumbent key confidence is not in the `modulations[]` dump; the override θ is not `--param-override`-exposed, so candidates are one-sided/stricter-only, recorded)." — §15, O-14 (locator: lines 1142–1150).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.18(i).
+
+---
+
+**Row 9.313 — O-14(vi): conformal against the maps, measured; a complement, not a replacement.**
+
+*Outgoing statement.* "**(vi) Task D (R-11 conformal):** split-conformal vs map-implied abstention at targets {0.70,0.75,0.80} — conformal retains more at achievable targets (better efficiency, finite-sample-valid) but slips where the correctness ceiling nears the target → **complement, not replacement** (recorded for the Cowork disposition)." — §15, O-14 (locator: lines 1150–1152). Two claims: (i) the measured comparison of conformal and map-implied abstention; (ii) conformal prediction is a complement and not a replacement.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 9.143. (ii) **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 9.147.
+
+---
+
+**Row 9.314 — the wiring of the maps and θ is a later increment.**
+
+*Outgoing statement.* "The maps' + θ's WIRING into live boundaries is a separate, later engage-adjacent increment." — §15, O-14 (locator: lines 1155–1156).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.315 — O-27(a): pedal detection placed as a reader over the decoder's carry.**
+
+*Outgoing statement.* "**Fitter-relevant facts:** (a) **Pedal detection** placed as a **reader over the decoder's governed carry** (grep-confirmed the decoder has 0 pedal detection today), emitting a distinct pedal-annotated result — its confirmation margin **read from the carry's distinct-root ranking / the FQ-1 primitive**, NOT a re-computed scan (retires `chordpostpasses.cpp:209-281`'s clobber/re-scan/defensive-disable with the anchor at E4)." — §15, O-27 (locator: lines 1160–1163).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **DIFFERS** — as at Row 8.135.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.135. *What was read:* as at Row 8.135 — a later restatement, outside that home, of the ruled pedal home.
+
+---
+
+**Row 9.316 — the pedal reader adds no constant of its own; its confidence threshold stays a precision-phase constant.**
+
+*Outgoing statement.* "No new precision-phase constant of its own (it consumes the carry's confidences); the pedal-confidence bar remains a precision-phase constant." — §15, O-27 (locator: lines 1163–1165).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.317 — O-27(b): the override demoted to an annotation on the unified open mark.**
+
+*Outgoing statement.* "(b) **F-B demoted to an ANNOTATION on the UNIFIED open-mark** — the load-bearing #6 decision: reuse the existing open-mark carry (enriched with a reason/kind `Undecided` vs `FunctionContextContradiction`), NOT a parallel `functionContextContradiction` field (semantically wrong to overload the plain boolean; a parallel bool duplicates the channel)." — §15, O-27 (locator: lines 1165–1168).
+
+*Derived statements that speak to it.* L2-S45 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S45: **DIFFERS** — as at Row 8.155.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.155. *What was read:* as at Row 8.155 — a later restatement, outside that home, of the ruled open-mark vehicle.
+
+---
+
+**Row 9.318 — the contradiction carried as a margin-class uncertainty, the frame's pair as the open mark's payload.**
+
+*Outgoing statement.* "**New quantity to calibrate:** the F-B contradiction carried as **Class-M calibrated uncertainty** — the frame's `(C = L4 composite, S = plausibility diff ∈ {2,3})` become the open-mark payload, squashed (shape declared, constant precision-phase R5)." — §15, O-27 (locator: lines 1168–1170).
+
+*Derived statements that speak to it.* L2-S45 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S45: **DIFFERS** — as at Row 8.161.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.161. *Audit question:* as at Row 8.161 — what does the dormant function layer carry beside its open mark, and is any of it an internal scoring quantity?
+
+---
+
+**Row 9.319 — the reading stays the committed chord; only the modulation frame still consumes θ.**
+
+*Outgoing statement.* "The reading stays the L4 commit (`overrodeCommit` false) — **no override, no `forwardRecompute`**, so **F-B's override θ/scale (D-FS) leaves the critical path**; only the F-A modulation frame still consumes the contradiction-scale θ (a narrowed Stage-5 calibration dependency)." — §15, O-27 (locator: lines 1170–1173). Two claims: (i) the reading stays the committed chord, with no override and no recompute; (ii) only the modulation frame still consumes θ.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) None.
+
+*Current-text axis.* (i) L2-S11: **DIFFERS** — as at Row 8.84. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 8.84. (ii) **QUARANTINED**, travelling with Row 6.190(iv).
+
+---
+
+**Row 9.320 — O-27(c): three owed measurements flagged.**
+
+*Outgoing statement.* "(c) **Owed measurements flagged, not assumed (#5):** [owed-P1] the pedal reader's agreement with the current in-place detection · [owed-P2] the carried-margin vs the `pass2` sigmoid · [owed-FB1] F-B byte-identical today, must move class-(b) DURATION favorably at engage." — §15, O-27 (locator: lines 1173–1175).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.321 — the Layer-5 engagement design phase complete; Stage 3 the user's to open.**
+
+*Outgoing statement.* "**★ STAGE 2 (the Layer-5 engagement design phase) is COMPLETE** — carry+selection (O-25), the joint step (O-26), pedal home + F-B annotate (this) all designed, structure-only; Stage 3 (E4 / algorithmic completion) is the user's to open." — §15, O-27 (locator: lines 1175–1177).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.322 — O-26(a): the joint step completes the built key-axis coupling and adds a chord re-decode, a key-and-chord beam.**
+
+*Outgoing statement.* "**Fitter-relevant facts:** (a) The joint step is designed as a **total-unification completion (#6) of the built `decideJointKey`** (J-key-i/ii/iii) — its key-axis half (lattice + Viterbi + **key-transition prior** `transitionPenalty` + measured **coupled minority ~13.5%** + config-B chord→key `couplingScore`) is built; the design **adds the deferred chord re-decode axis** (`regionanalyzer.cpp:388-395` deferred it "to a faithful mechanism" = the engaged `ChordSliceDecoder`, a pure fn of (slices,key)) → a bidirectional (key,chord) beam." — §15, O-26 (locator: lines 1181–1186). Two claims: (i) the joint step's key-axis half is built; (ii) the design adds a chord re-decode axis, making a key-and-chord beam.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S36.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S36: **DIFFERS** — as at Row 8.113.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 5.327. *Audit question:* as at Row 5.327 — does the dormant joint re-key pass override the chosen key without updating the forward-carry, and is it gated off by default? (ii) **UNPLACED**, travelling with Row 8.113. *What was read:* as at Row 8.113.
+
+---
+
+**Row 9.323 — O-26(b): a bounded coupling step at the seam, not a unified hidden state.**
+
+*Outgoing statement.* "(b) **Placement = a BOUNDED coupling step** at the L3/L4→L5 seam, forward-only (no L3←L4 back-edge), **not a unified hidden state** (#7/#6 + magnitude realism)." — §15, O-26 (locator: lines 1186–1187).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.96.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.96 — a later restatement, outside that home, of the ruled separate joint step.
+
+---
+
+**Row 9.324 — O-26(c): a new joint-decision margin to calibrate.**
+
+*Outgoing statement.* "(c) **New confidence to calibrate:** a declared **Class-M joint-decision margin** (winning joint hyp vs best different-key-or-root hyp, squashed; shape declared, constant precision-phase R5) beside L3 `keyConfidence` and the L5 selection margin." — §15, O-26 (locator: lines 1187–1189).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS** — as at Row 8.86.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.86. *Audit question:* as at Row 8.86 — does the dormant function layer publish any margin of its selection against the best reading on a different root, and in what class?
+
+---
+
+**Row 9.325 — O-26(d): the joint candidate score's composition, all terms precision-phase.**
+
+*Outgoing statement.* "(d) **New composition to fit:** the joint score `keyEmissionFit + chordFit|k + couplingTerm + −keyTransitionCost` — all terms precision-phase (`transitionPenalty`, `couplingBonus`, beam width, trigger bar 1.0)." — §15, O-26 (locator: lines 1189–1191).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.326 — O-26(e): the trigger a two-stage gate, its exact half the owed build.**
+
+*Outgoing statement.* "(e) **The C3 trigger** is a two-stage gate: pre-filter `(a)` `keyConfidence` < seq-margin bar `∧ (a′)` chord-ambiguous, then exact `(b)` from the re-decode (why C3 is un-computable read-only — (b) IS the owed build)." — §15, O-26 (locator: lines 1191–1193).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.327 — O-26(f): six owed measurements flagged.**
+
+*Outgoing statement.* "(f) **Owed measurements flagged, not assumed (#5):** [owed-1] true C3 fire-rate (the ~13.5% `coupled` is a proxy) · [owed-2] coupling benefit on the robust-stop coupled set (the acceptance gate) · [owed-3] per-key flip-rate · [owed-4] beam width · [owed-5] the coupling term under re-decode · [owed-6] the precision-phase constants." — §15, O-26 (locator: lines 1193–1196).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.328 — the owed build enumerated and held until ratified.**
+
+*Outgoing statement.* "**Owed build B1–B4** (per-key re-decode driver / beam driver / trigger gate / production wiring) enumerated by layer, E4-adjacent, held until ratified (like J-key-iii's flag)." — §15, O-26 (locator: lines 1196–1198).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.329 — all constants precision-phase; no fit.**
+
+*Outgoing statement.* "All constants precision-phase (R5); no fit." — §15, O-26 (locator: line 1198).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.330 — O-25(a): the carry designed on distinct roots with the exclusion tail.**
+
+*Outgoing statement.* "**Fitter-relevant facts:** (a) the **carry contract** is designed on the **distinct-root axis** (not a top-N reading list) with the **exclusion tail carried (#12)** — the fitter's objective scores over this graded distinct-root distribution, incl. the ≥3rd-root minority (25/16/25 %)." — §15, O-25 (locator: lines 1202–1205).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS** — as at Row 8.48(i).
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.48(i). *What was read:* as at Row 8.48(i) — a later restatement, outside that home, of the ruled carry on distinct roots.
+
+---
+
+**Row 9.331 — O-25(b): the carry caps on voicings, not roots; a root-preserving carry is owed.**
+
+*Outgoing statement.* "(b) **The decoder's distinct-root guarantee is OWED**: `topK` caps on **voicings** (`sameChordVoicing`, default 6), NOT roots, so the ≥3rd root is not structurally guaranteed to survive — a distinct-root-preserving carry is an owed Layer-4/E4 change (fitting the cap depths is precision-phase)." — §15, O-25 (locator: lines 1205–1208). Two claims: (i) the carry caps on voicings and not on roots; (ii) a carry that preserves distinct roots is owed.
+
+*Derived statements that speak to it.* (i) L2-S40. (ii) L2-S40.
+
+*Current-text axis.* (i) L2-S40: **DIFFERS** — as at Row 8.41. (ii) L2-S40: **DIFFERS** — as at Row 8.58.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 8.41. *Audit question:* as at Row 8.41 — on what axis does the dormant chord decoder carry its alternatives, and are they deduplicated by root, by voicing or by neither? (ii) **UNPLACED**, travelling with Row 8.58. *What was read:* as at Row 8.58 — a later restatement, outside that home, of the ruled carry guarantee.
+
+---
+
+**Row 9.332 — O-25(c): selection re-ordered load-bearing-first, progression a tie-break; the as-built resolver leads with progression.**
+
+*Outgoing statement.* "(c) **Selection is re-ordered load-bearing-first** — bass/inversion + spelling + key-consistency + cadence decide; **licensed progression is demoted to a tie-break, NEVER an override lever** (the F-B net-harm finding + research §1 grounding), which **re-orders the as-built `resolveAbstained`** (it leads with the weak progression channel)." — §15, O-25 (locator: lines 1208–1211). Two claims: (i) the selection is ordered load-bearing-first, progression only a tie-break; (ii) the as-built resolver leads with the progression channel.
+
+*Derived statements that speak to it.* (i) L2-S31 (NEAREST, §6.3 entry 1); L2-S38 (NEAREST, §6.3 entry 6). (ii) None.
+
+*Current-text axis.* (i) L2-S31: **DIFFERS** — as at Row 8.77. L2-S38: **DIFFERS** — as at Row 8.77. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 8.77. *What was read:* as at Row 8.77 — a later restatement, outside that home, of the ruled channel ranking. (ii) **QUARANTINED**, travelling with Row 5.144. *Audit question:* as at Row 5.144 — does the dormant resolver decide a transition slice by the licensed-progression test, as described?
+
+---
+
+**Row 9.333 — O-25(d): the override reconciled as an annotation.**
+
+*Outgoing statement.* "(d) **F-B reconciled = annotate-not-override** (settled §3.D-1)." — §15, O-25 (locator: line 1211).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 8.79.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.79.
+
+---
+
+**Row 9.334 — O-25(e): a joint-consistency selection margin to calibrate.**
+
+*Outgoing statement.* "(e) **New confidence to calibrate:** a declared Class-M **joint-consistency selection margin** (squash shape declared, constant precision-phase) beside the built `combinedBoundary` (D-L5a)." — §15, O-25 (locator: lines 1211–1213).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS** — as at Row 8.86.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.86.
+
+---
+
+**Row 9.335 — O-25: all constants precision-phase; no fit.**
+
+*Outgoing statement.* "All constants precision-phase (R5); no fit." — §15, O-25 (locator: lines 1213–1214).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.336 — O-25: the downstream owner-decisions enumerated, not resolved.**
+
+*Outgoing statement.* "Downstream enumerated for follow-on Parts (FQ-2 quality-from-key owner, pedal detection's home, O-18/C3 joint step, F-B annotate mechanics) — not resolved." — §15, O-25 (locator: lines 1214–1215).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.337 — O-24: the uncapped above-threshold set measured with the real production context.**
+
+*Outgoing statement.* "The O-22 audit measured only the **capped floor** (append fires ~36 % Baroque/Default, 21.5 % Jazz); this measures the **uncapped above-threshold ranked set** the cap-of-3 truncates — `gateCtx.rawCandidates` filtered by `gateCtx.threshold`, captured with the **real production context** (the no-`src` paths are unfaithful: `--diagnose-measures` runs NULL context + no threshold; `--dump-fullspine` runs a different decoder)." — §15, O-24 (locator: lines 1219–1223).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.39. *Audit question:* as at Row 8.39 — does the recorded fan-out of the carried chord readings, their count and their count of distinct roots per slice, reproduce at the current commit, on which substrate?
+
+---
+
+**Row 9.338 — O-24: a default-off dump field, byte-identical.**
+
+*Outgoing statement.* "A minimal default-OFF `--dump-fanout` field, **1056/1056 `.ours.json` byte-identical** vs frozen `c50002fee1`, both stops green." — §15, O-24 (locator: lines 1223–1224).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.339 — O-24(a): the true above-threshold set is about twice the capped floor.**
+
+*Outgoing statement.* "**Fitter-relevant facts for the Stage-2 design (corpus `c50002fee1`, ×3 presets):** (a) the true above-threshold set is **~2× the capped floor** — median **5/4/5** readings, mean **6.35/6.15/6.32**, p99 **27/23/27**, max **49/46/49**; the cap-of-3 discards ≥1 above-threshold reading on **79.5/75.4/79.3 %** of slices." — §15, O-24 (locator: lines 1224–1227).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.39.
+
+---
+
+**Row 9.340 — O-24(b): the fan-out collapses to a small root set.**
+
+*Outgoing statement.* "(b) **BUT it collapses to a small root set** — distinct roots above threshold median **2/1/2**, mean **2.13/1.73/2.12**; the reading count is mostly template/voicing variants of ~2 roots (`fanoutTotal`=204 constant = 12 roots × 17 templates, the full scored grid — so the meaningful fan-out is strictly the above-threshold subset, ≈3.1 % of the grid)." — §15, O-24 (locator: lines 1227–1230).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.39.
+
+---
+
+**Row 9.341 — O-24(c): a third distinct root clears threshold on a large share of slices.**
+
+*Outgoing statement.* "(c) **The load-bearing exclusion tail (#12):** a **≥3rd distinct root** clears threshold on **25.1/16.1/24.9 %** of slices — roots the cap-of-3 + single diff-root append (winner + ≤1 alternate root) **cannot carry**; that is where the uncapped carry (E4's governed carry replacing the substrate) is load-bearing for the Layer-5 selection the fitter's objective scores over." — §15, O-24 (locator: lines 1231–1234).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.39.
+
+---
+
+**Row 9.342 — O-23: the pre-Layer-5 unifications landed byte-identically.**
+
+*Outgoing statement.* "The portable pre-L5 unification wins landed as three byte-identical revertible commits (FQ-5 `65764881d0`, FQ-7/S8 `56b06462db`, FQ-6 `5420e6e543`; each 0-diff `.ours.json` 352×3 + robust PASS + characterise 52/24/52 + suites 1101/53/11 no-refresh)." — §15, O-23 (locator: lines 1237–1239).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.343 — O-23(a): the key decoder's cost and window constants now read one shared source; the grid seed load-bearing.**
+
+*Outgoing statement.* "**Two fitter-relevant observations for the Stage-2 design:** (a) **FQ-7/S8 done** — the key-decoder's cost/window constants (`changeBaseCost`/`changePerFifthStep`/`relativePairExtraCost`/`decayRate`/ `lookaheadWeight`) now source from the resolver/scoreharvest shared symbols, so a Stage-5 fit of those magnitudes moves ONE source (the drift surface the fitter would otherwise have to track is closed); **S9 confirmed load-bearing** (the `resolveKeyAndModeRanked@585` grid seed is NOT droppable)." — §15, O-23 (locator: lines 1239–1244).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 7.111(ii). *Audit question:* as at Row 7.111(ii) — where do the dormant key decoder's change-cost amounts come from at the current commit, and have they been fitted?
+
+---
+
+**Row 9.344 — O-23(b): the best-different-root scan is not one decision; the temporal-context relocation folds into E4.**
+
+*Outgoing statement.* "(b) **FQ-1 + FQ-3 STOP-and-deferred** — FQ-1 ("best different-root" scan) is not one code-level decision (divergent predicate/type/use) so it is not a byte-identical Stage-1 unification; FQ-3 (`findTemporalContext` relocation) folds into the E4 temporal-context ownership move (decoder is the E4-decided owner)." — §15, O-23 (locator: lines 1245–1248). Two claims: (i) the best-different-root scans are not one decision at the code; (ii) the temporal-context relocation folds into the E4 ownership move.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 8.125. *Audit question:* as at Row 8.125 — how many separate computations of the best reading on a different root exist at the current commit, and where? (ii) **HISTORICAL.**
+
+---
+
+**Row 9.345 — O-23: both await adjudication.**
+
+*Outgoing statement.* "Both await Cowork adjudication before Stage-2." — §15, O-23 (locator: line 1248).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.346 — O-23: the correction-block and carry tangles remain owned by Stage 2 and E4.**
+
+*Outgoing statement.* "The §6-block / cap→append tangles (FQ-2, FQ-4) remain owned by Stage-2/E4 as planned — unchanged by this batch." — §15, O-23 (locator: lines 1248–1249).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.347 — O-22: the legacy carry substrate's cap and append; pedal detection clobbers and re-scans.**
+
+*Outgoing statement.* "The anchor (`results` carry substrate, Layer-4 legacy) is a genuine cap→workaround/concern-coupling tangle (cap-of-3 `harmonicfunctionlayer.cpp:521` + the diff-root append `:530-549`; **dissolution PROVEN at code** — an uncapped threshold-only build is a strict superset ⟹ the append dies; only Iter 91's below-threshold `kPromoteAppendOnly` pull is a legitimate targeted promotion that does NOT dissolve); pedal detection clobbers the shared vector + re-scans + defensively disables the append." — §15, O-22 (locator: lines 1254–1259). Two claims: (i) the legacy carry substrate's cap and diff-root append; (ii) pedal detection clobbers the shared vector, re-scans and disables the append.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 6.192(ii). *Audit question:* as at Row 6.192(ii) — how many alternatives does the dormant decoder carry, by what cap, and are the spelling-pinned symmetric siblings excluded at the current commit? (ii) **QUARANTINED**, travelling with Row 8.119. *Audit question:* as at Row 8.119 — does the legacy pedal pass exist at the current commit, on which arm does it run, and what does it test to enter?
+
+---
+
+**Row 9.348 — O-22: the clean target is built in the dormant decoder; the anchor folds into the legacy retirement.**
+
+*Outgoing statement.* "**Its clean-target is ALREADY BUILT in the dormant decoder** (`chordslicedecoder.cpp:746-789/927-930`), so the load-bearing sequencing verdict is: **the anchor FOLDS INTO the E4 legacy-path retirement, NOT a standalone pre-L5 refactor** — while three portable slices ARE pre-L5 wins (a shared different-root primitive; `findTemporalContext` relocation; the fact-layer dup + cap-view cleanups)." — §15, O-22 (locator: lines 1259–1262). Two claims: (i) the clean target is built in the dormant decoder; (ii) the sequencing verdict.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 6.192(ii). (ii) **HISTORICAL.**
+
+---
+
+**Row 9.349 — O-22's bearing on the arc: quality-from-key scattered; the confidence ranges incommensurable; the copied constants a drift risk.**
+
+*Outgoing statement.* "**Direct bearing on THIS arc:** (i) the §6-block dissolution (family 2 / R1) is where **FQ-2 gives quality-from-key its single owner** — the audit found it scattered across ≥4 sites/3 layers (sparse refinement, section stabilize, Gates L/G-E quality-from-key MUTATION, notation display fallback), and Gates L/G-E's quality mutation is a NEW facet of the "gates are functional reasoning in the oracle" debt the dissolution retires; (ii) the **F-1 confidence-scale incommensurability is pinned to code** (`functionresolver.cpp:460-468`, `functionoutput.h:90-98` — bounded `earlierConfidence` vs unbounded `contradictionStrength`/`combined`) as the Phase-3/C2 calibration item it already is, inherited at L5 engage; (iii) the S8 key-decoder cost/window constants copied-by-value from the resolver/harvest are a fit-surface drift risk (a fit of one drifts the other) the Phase-0 inventory should reconcile." — §15, O-22 (locator: lines 1262–1271). Three claims, marked (i) to (iii) in the text itself.
+
+*Derived statements that speak to it.* (i) L2-S27. (ii) None. (iii) None.
+
+*Current-text axis.* (i) L2-S27: **DIFFERS** — as at Row 8.107. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 8.107. *Audit question:* as at Row 8.107 — at how many sites, and in which layers, does the code at the current commit decide a chord's quality from the key? (ii) **QUARANTINED**, travelling with Row 5.213(i). (iii) **QUARANTINED**, travelling with Row 7.111(ii).
+
+---
+
+**Row 9.350 — O-22: the next steps per the sequencing call.**
+
+*Outgoing statement.* "Next per the sequencing call: the pre-L5 portable unifications (FQ-1/3/5/6), then §6-block dissolution owns FQ-2, then E4 owns the anchor (FQ-4), then R9 splits `chordanalyzer.cpp`." — §15, O-22 (locator: lines 1273–1275).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.351 — O-21: the ratified arc-#3 design built.**
+
+*Outgoing statement.* "The ratified arc-#3 design, built (Layer 4 only)." — §15, O-21 (locator: line 1278).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.352 — O-21: one promotion primitive owns all post-scoring promotion; Gate A removes byte-identically.**
+
+*Outgoing statement.* "One `promoteToWinner` primitive + one builder wrapper `buildResultFromGateCtx` now own all post-scoring promotion; the enharmonic Major-add6→Minor7 flip is one primitive call whose present branch (`presentHint = bestAltIdx`) reproduces Gate A's `std::swap` byte-for-byte and whose append branch reproduces FM2, so the separate `GateA` rule removes byte-identically." — §15, O-21 (locator: lines 1278–1281).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.269(ii).
+
+---
+
+**Row 9.353 — O-21: full-surface byte-identity proven; the Gate A retirement made.**
+
+*Outgoing statement.* "**Full-surface byte-identity PROVEN at objects** (winner AND `alternatives[]`, whole `.ours.json`): **0 diffs / 1056 files across all 352×3, including the 36** — `C_unified == C_HEAD` by construction, so the O-11 held-since-Stage-5 GateA retirement is now MADE and the **O-19 / L1 information-loss fix-queue item is DISCHARGED** (the correct carry — the distinct enharmonic partner kept, no winner near-duplicate — is what the unified primitive produces)." — §15, O-21 (locator: lines 1281–1286).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.354 — the correction block's rules down to nine; FM2 the surviving flip rule.**
+
+*Outgoing statement.* "§6 rules 10→9; FM2 the surviving flip rule." — §15, O-21 (locator: line 1288).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 9.355 — the dissolution continues from the unified surface.**
+
+*Outgoing statement.* "The Stage-5 §6-block dissolution continues from the unified surface." — §15, O-21 (locator: lines 1288–1289).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.356 — O-21: next, the remaining fix-queue and the unclear rows.**
+
+*Outgoing statement.* "Next: the remaining fix-queue (L2 spelling collapse) + the UNCLEAR rows (U1/U2/U3) per O-20." — §15, O-21 (locator: line 1289).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.357 — O-20's classification hinge: production runs the legacy path; the dormant layers' unconsumed signals are forward provision.**
+
+*Outgoing statement.* "**The classification hinge:** production runs the LEGACY `analyzeChord`+gates path while Layer 4 (`ChordSliceDecoder`) / Layer 5 (`functionoutput`) are Built+Dormant — so most not-yet-consumed signals are the dormant path's correct **forward-provisioning** (OK: K1 `SliceChord`, K2 `FunctionLayerOutput` "NO production consumer", K3 `HarmonicRegion.keyAlternatives/keyConfidence` "IN-MEMORY ONLY, no consumer yet … exists for Layer 5"), and the genuine LOST sites are on the legacy path's user-visible carry surface." — §15, O-20 (locator: lines 1297–1302).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 3.14. *Audit question:* as at Row 3.14 — which path produces the committed chord reading on each surface in the default configuration?
+
+---
+
+**Row 9.358 — O-20's first lost site: Gate A's swap against FM2's append.**
+
+*Outgoing statement.* "**The two DEFECT-LOST (the fix-queue, each a later ratified event):** (**L1**, HIGH, #4-relevant — already scoped as O-19) Gate A `std::swap` (preserves the distinct enharmonic partner) vs FM2 `push_back(buildResult)` (appends a winner near-duplicate, loses it), `postscoringgates.cpp:214-234`; consumer PRESENT (`notationcomposingbridge.cpp:298-300`, user-visible) + future L5." — §15, O-20 (locator: lines 1302–1305).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.269(ii).
+
+---
+
+**Row 9.359 — O-20's second lost site: the legacy spelling collapse.**
+
+*Outgoing statement.* "(**L2**, MEDIUM, #4-relevant, NEW) the legacy `mergeChordAnalysisTones`/`tpcForPc` spelling collapse (`analysisutils.h:175-180` + `chordanalyzer.cpp:1229-1240`) — same-pc different-TPC tones collapse to one spelling by **iteration order**, destroying a distinct enharmonic spelling; the rebuild L4 already reads per-note spelling correctly (shared `lineOfFifths`), so the fix is the named "**second tpc reader**" unification residual (adopt L4's reader on the live path — closes a #4 loss + a #6 duplication)." — §15, O-20 (locator: lines 1306–1310).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 3.27. *Audit question:* as at Row 3.27 — how many readers of the notated spelling are there in the code, and which run?
+
+---
+
+**Row 9.360 — O-20's three unclear sites.**
+
+*Outgoing statement.* "**The 3 UNCLEAR for user adjudication:** U1 (the `results.size()>=3` cap — which carry surface L5 binds to, legacy `results[]` or rebuild L4 full-cube), U2 (J-key-iii leaves the chord = R0, stale-under-new-key alt ranking — the canonical "key-then-chord truncation the owed joint step is meant to fix", `regionanalyzer.cpp:369-375`; O-18's still-owed joint step is the future consumer), U3 (coalesce bass re-derive — correction or loss, needs a score check)." — §15, O-20 (locator: lines 1312–1316).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* at the current commit, which carry surface would the function layer read, does the joint re-key pass leave the chord and its alternatives ranked under the old key, and does re-deriving the bass when regions coalesce lose information?
+
+---
+
+**Row 9.361 — O-20's two new forms: an honest unknown carried, and a recomputable collapse that loses nothing.**
+
+*Outgoing statement.* "**New taxonomy forms:** (+1) honest-unknown-carry (the positive counter-form — `extensionsKnown`/`openMark`/ `SliceDecision::Abstain`), (+2) recomputable-collapse (a hard value derived from a carried/regenerable source is lossless — guards against over-flagging; e.g. `SliceKeyMode.uncertain ≡ confidence<threshold`)." — §15, O-20 (locator: lines 1316–1318). Two claims: (i) carrying an honest unknown is a positive form, not a loss; (ii) a value derived from a carried or regenerable source is lossless.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S42 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S42: **AGREES** — *"A collapse is a loss only where the several values cannot be got back"*, the withheld rivals being *"recomputable"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the uncertainty surface* (NOT A LAYER). (ii) **ADOPTED — carried** (L2-S42).
+
+---
+
+**Row 9.362 — O-20: the fix-queue and the unclear rows go to the user, each fix its own event.**
+
+*Outgoing statement.* "**The fix-queue (L1/L2) + the UNCLEAR rows are the user-adjudication surface; each fix is its own later Gate-A-style ratified event.**" — §15, O-20 (locator: lines 1319–1320).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.363 — O-19 (design): a read-only restructuring design assembling the Gate A ratification surface.**
+
+*Outgoing statement.* "Read-only restructuring design (the order-of-operations first step) that assembles the ratification surface for the held-since-O-11 GateA retirement." — §15, O-19, the promotion-unification design pass (locator: lines 1322–1324).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.364 — the blast radius re-measured: 36 scores, alternatives only.**
+
+*Outgoing statement.* "**Blast radius re-measured at HEAD on the FULL surface** (HEAD-binary `disable_rule GateA` decode, scratch, frozen corpus read-not-written): **36 Baroque scores, 0 winner-diffs / 352, alternatives-only** — the 2.2c count reproduced and now **enumerated by name** (the 36 `bwv###` stems)." — §15, O-19, the design pass (locator: lines 1324–1326).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.269(ii).
+
+---
+
+**Row 9.365 — the carry delta: the enharmonic partner kept under one idiom, overwritten under the other.**
+
+*Outgoing statement.* "**Carry-delta content characterized:** on each slice a Minor7-slash winner's **enharmonic Major-add6 partner** is retained as an alternative under Gate A's swap (Idiom A) but **overwritten by a freshly-built near-duplicate of the winner** under FM2's append (Idiom B) — a §12 information-loss form (e.g. `bwv17.7@19680` `[A6,A6,A6]`→`[A6,A6,F#m7/A]`)." — §15, O-19, the design pass (locator: lines 1327–1330).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.269(ii).
+
+---
+
+**Row 9.366 — the source characterized: one builder, three wrappers, two promotion idioms.**
+
+*Outgoing statement.* "**Source characterization:** one real builder `buildChordResult` + **three** thin `buildResult` wrappers (two byte-identical gateCtx copies at `postscoringgates.cpp:65` / `chordpostpasses.cpp:129`, one WorkCand variant at `harmonicfunctionlayer.cpp:516`; the `chordpostpasses.cpp:128` "…/analyzeChord" comment is stale — analyzeChord delegates to `fn::applyHarmonicFunction`), and **two promotion idioms** (swap-existing vs append-built) with no shared primitive." — §15, O-19, the design pass (locator: lines 1331–1335).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.269(ii).
+
+---
+
+**Row 9.367 — the design: one promotion primitive, Gate A removing byte-identically.**
+
+*Outgoing statement.* "**Design:** one `promoteToWinner` primitive with a **present-first dedup guard** + one collapsed builder wrapper ⟹ Gate A + FM2 become the two internal branches of one promotion ⟹ the separate `GateA` rule removes **byte-identically** (winner AND carry), reproducing C_HEAD." — §15, O-19, the design pass (locator: lines 1335–1337).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.368 — the correct carry keeps the distinct partner, not a near-duplicate of the winner.**
+
+*Outgoing statement.* "**Correct carry = C_HEAD grounded at the O1b carry contract** (retain the distinct partner reading; the FM2-append form loses it — the same anti-pollution principle the Gate G-E phantom-pop already applies, `postscoringgates.cpp:388-392`), **not** chosen because Gate A sits at HEAD." — §15, O-19, the design pass (locator: lines 1338–1340).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S40 and L2-S41 publish rivals as distinct readings with their mass, and no derived statement speaks to a near-duplicate of the principal in the rival list.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that L2's rival list never carry a near-duplicate of the principal reading in place of a distinct alternative reading.
+
+---
+
+**Row 9.369 — the alternatives delta is the ratification surface for the build event.**
+
+*Outgoing statement.* "**The 36-score alternatives delta is the user-ratification surface** for the separate build event (winner+alternatives byte-diff ×3 expected identical everywhere; both stops green by construction; suites/snapshots unchanged)." — §15, O-19, the design pass (locator: lines 1341–1343).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.370 — the Gate A retirement condition now has its surface.**
+
+*Outgoing statement.* "**O-11 retirement condition now has its ratification surface.**" — §15, O-19, the design pass (locator: lines 1343–1344).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.371 — O-19 (measurement): Stage 3 opens measurement-first on the joint step's benefit.**
+
+*Outgoing statement.* "Stage 3 opens measurement-first (#1/#3/#5): the decisive fact the joint-step design (`cowork_joint_key_chord_design.md`) left as owed-2/3 — does re-deciding the chord under alternative CARRIED keys improve root-correctness? — measured BEFORE any build (the same guard O-17/O-18 applied to F-B)." — §15, O-19, the joint-step measurement (locator: lines 1347–1350).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.372 — the probe: the dormant decoder as a pure re-decode under the carried key menu.**
+
+*Outgoing statement.* "Instrument = default-OFF `--dump-joint-probe` (feat `689840d2ef`) exercising the EXISTING `ChordSliceDecoder` as a PURE re-decode fn (`chordslicedecoder.h:524`, "takes one key") under the production `HarmonicRegion`'s carried key menu (`keyModeResult ∪ keyAlternatives` + D-L3a `keyConfidence`) — NOT the production joint step (no beam/wiring/behavior change; the "faithful mechanism" §2.2 named, run as a probe)." — §15, O-19, the joint-step measurement (locator: lines 1350–1353).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.373 — the re-decode found un-computable read-only is now computed by a probe.**
+
+*Outgoing statement.* "This is exactly the per-key chord **re-decode O-18 found un-computable read-only** — now computed by the standalone probe over the pure decoder (O-18's un-computability was for *production telemetry*; a probe over the pure fn is a different, computable thing)." — §15, O-19, the joint-step measurement (locator: lines 1354–1356).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.374 — the go/no-go: a small net gain, harm most of the correction.**
+
+*Outgoing statement.* "**★ GO/NO-GO (corpus `c50002fee1`, ×3):** net corr−harm on the root FLIPS = **+9 / +3 / +10** over ~6200 DCML-scored regions/preset (**+0.05–0.16 pp**; oracle ceiling **+0.6 pp**); **harm = 75–90 % of correction** everywhere." — §15, O-19, the joint-step measurement (locator: lines 1357–1359).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.186(ii). *Audit question:* as at Row 8.186(ii) — does the recorded measurement of the shelved joint key-and-chord step reproduce at the current commit, and on which arm and corpus was it taken?
+
+---
+
+**Row 9.375 — on the coupled minority the net is zero to noise.**
+
+*Outgoing statement.* "On the **coupled minority** (the C3 population — key sequence margin < 1.0) net **0 / +5 / −2** on n=16/15/11 — zero-to-noise, one preset negative." — §15, O-19, the joint-step measurement (locator: lines 1359–1360).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.186(ii).
+
+---
+
+**Row 9.376 — the chord flips under a carried key rarely; the chord axis almost always key-stable.**
+
+*Outgoing statement.* "**Fire-rate (owed-1/3):** the chord flips under a carried key in **1.4–1.5 %** of committed regions (0.9–1.4 % coupled) — **~10× below** the 13.5 % `decideJointKey` `coupled` proxy; the chord axis is almost always KEY-STABLE (carried alts are diatonic-collection siblings ⇒ the diatonic prior barely shifts; fact-grounded #1)." — §15, O-19, the joint-step measurement (locator: lines 1361–1363).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.186(ii).
+
+---
+
+**Row 9.377 — width two captures every available correction.**
+
+*Outgoing statement.* "**Beam width (owed-4):** ~5 carried keys but width-2 captures EVERY available correction." — §15, O-19, the joint-step measurement (locator: line 1364).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.186(ii).
+
+---
+
+**Row 9.378 — three owed measurements settled, three build-gated.**
+
+*Outgoing statement.* "owed-1/2/3 settled read-only; owed-4-fixpoint/owed-5/owed-6 build-gated." — §15, O-19, the joint-step measurement (locator: lines 1364–1365).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.379 — the pedal agreement leans one way but is underpowered.**
+
+*Outgoing statement.* "**Pedal owed-P1:** carry-holds-pedal-root agreement 0.20/0.50/0.20 — leans to the §6.3 upper-voice-conditioned form, but UNDERPOWERED (n=2–5); flagged not decided." — §15, O-19, the joint-step measurement (locator: lines 1365–1366).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.183(ii). *Audit question:* as at Row 8.183(ii) — on which corpus, and at what size, was the agreement between the carried alternative and the upper-voice re-decode measured, and is that corpus established?
+
+---
+
+**Row 9.380 — the verdict handed up: the evidence does not support building the joint step.**
+
+*Outgoing statement.* "**Verdict handed up (#8):** the measured evidence does NOT support building the joint step as a precision lever — the build decision is Cowork's/the user's, on measured fact." — §15, O-19, the joint-step measurement (locator: lines 1368–1369).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.381 — O-18: the coupled-minority trigger is not computed anywhere.**
+
+*Outgoing statement.* "**VERDICT 3 — the C3 trigger is NOT computed anywhere**; it is un-computable read-only AND un-surfaceable by additive default-off telemetry." — §15, O-18 (locator: lines 1376–1377).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the trigger for the coupled key-and-chord minority computed anywhere at the current commit, and could either of its components be read from what is computed?
+
+---
+
+**Row 9.382 — the binding blocker is the per-key chord re-decode; the closest mechanism leaves the chord unchanged.**
+
+*Outgoing statement.* "Binding blocker = C3 component **(b)** ("a different carried KEY alternative flips the chord reading"): the per-key chord **re-decode** it needs is **the gated joint key-and-chord step the contract §6-C3 flags as "still owed at Stage 5"** (`keymodesequence.h:70-72`); even the closest mechanism — the J-key-iii joint re-key pass — **explicitly leaves the chord unchanged** ("the chord-axis side-effect … is DEFERRED to a faithful mechanism", `regionanalyzer.cpp:369-375`)." — §15, O-18 (locator: lines 1377–1381).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.327.
+
+---
+
+**Row 9.383 — component (a) likewise absent from the override chain.**
+
+*Outgoing statement.* "Component (a) is likewise absent from the F-B fullspine chain (`inferLocalKey(...)[0]` + a score-global `homeConf` sigmoid, not the per-slice L3 sequence margin — D-L3a's "no sequence-margin substrate on that path"; the bar itself is well-defined at source: sequence-margin `uncertainThreshold` 1.0 / annotate-gate 0.8, but the bar is not the blocker — (b) is)." — §15, O-18 (locator: lines 1382–1386).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.381.
+
+---
+
+**Row 9.384 — verdict 3 is a report, not a build.**
+
+*Outgoing statement.* "There is **no already-computed signal to surface**; producing (b) would mean **building** the joint step (forbidden #6/#7/#8) — so verdict 3 is a **report, not a build** (the dispatch's explicit branch)." — §15, O-18 (locator: lines 1386–1387).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.385 — the restriction option removed; the override frame collapses to annotation everywhere.**
+
+*Outgoing statement.* "**Load-bearing consequence:** §3.D-2 (C3-restrict) is **removed from the near-term option set** — it is joint-step-gated (a Stage-5+ successor), so the F-B frame collapses to **§3.D-1 (annotate-via-open-mark) EVERYWHERE**, floored by disable; recovering the 53 corrections is a **declared inference-quality question (#8)**." — §15, O-18 (locator: lines 1387–1390).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.386 — the earlier surprise explained: the override fires on a population never filtered for coupling.**
+
+*Outgoing statement.* "**#3 discharged:** the O-17 surprise (contradiction uncorrelated with correctness) is *explained* — F-B fires on any committed-slice-with-a- tidier-progression, a population **never filtered for key↔chord coupling**, so it is mis-scoped off the C3 minority by construction; no residual surprise." — §15, O-18 (locator: lines 1390–1393).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.74(i). *Audit question:* as at Row 8.74(i) — does the recorded finding that the licensed-progression signal is uncorrelated with root correctness reproduce at the current commit, on which decode?
+
+---
+
+**Row 9.387 — the population footing reproduced.**
+
+*Outgoing statement.* "Population footing reproduced (1043 = 53 corr + 809 harm + 181 neutral); complement = the whole population, fourth/fifth harm majority confirmed (472/809 = 58 %)." — §15, O-18 (locator: lines 1393–1394).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.18(i).
+
+---
+
+**Row 9.388 — a stale manifest on the measured dumps; re-manifest or validate.**
+
+*Outgoing statement.* "**Reproducibility finding surfaced (#16):** the `C:/tmp/c1/fs_*` corpus_manifest is STALE (git_hash `d1d4d3d7f0` + sha fingerprints are a Jul-4 leftover; the actual dumps are a Jul-6 `≥c50002fee1` regen the fs-driver never re-manifested; `theta_fit` globs directly so the measurement is on the real content) — the E0 fs dirs should be re-manifested or the taxonomy scripts should validate." — §15, O-18 (locator: lines 1395–1398).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.389 — O-18: the annotate decision surface goes to the user.**
+
+*Outgoing statement.* "On CC's report: Cowork verifies at objects → presents the **annotate(±C3)** build-event decision surface to the user (annotate-everywhere now; C3-restrict deferred to the joint step)." — §15, O-18 (locator: lines 1400–1401).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.390 — O-17: the override characterized at the source.**
+
+*Outgoing statement.* "**F-B characterized at the source** (`attemptFineGrainOverride`, `functionresolver.cpp:381`; incumbent = the L4 vertical-fit `SliceConfidence.composite` — code-truth via `chordslicedecoder.h:404`; contradiction = the coarse {0,1,2,3} progression-plausibility count; dormant — only `batch_analyze.cpp:3186`'s E0 harness runs it; NO implementation drift, ONE premise-invalidation: §15-2's \"θ accounts for the missing progression term\" is refuted)." — §15, O-17 (locator: lines 1406–1410).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 6.11.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.11. *Audit question:* as at Row 6.11 — does the fine-grain override exist on any arm, does it run, and which class of root error does it change at the current commit?
+
+---
+
+**Row 9.391 — O-17: the harm rate uniform across strata; no discriminator; the vertically fair comparison still harmful.**
+
+*Outgoing statement.* "**The 1043/53/809 decomposed at the measured data** (read-only over the existing `C:/tmp/c1/fs_*` dumps, `theta_fit`-join reproduced to the unit): the harm rate is **~uniform 71–86 % across every measured stratum** (highest harm at the highest L4 confidence ⟹ no θ can separate corrections from harms — the code-grounded proof of \"best θ disables it\"); fourth/fifth \"progression tidying\" moves = 55 % of fires / 58 % of harm; **the discriminator = NONE**; and — the key new result beyond Phase 3 — **the incumbent-repair premise is REFUTED at data: even where the selected alternative is vertically ≥ the commit (`g≤0`), harm is still 70.8 % (corr−harm −163)**, so making the comparison vertically-fair does not reach net-positive." — §15, O-17 (locator: lines 1411–1417).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.18(i).
+
+---
+
+**Row 9.392 — O-17: the lost corrections need a correctness-correlated signal, an inference question.**
+
+*Outgoing statement.* "**The 53 lost corrections need a correctness-correlated contradiction signal = an inference-quality question, declared to Cowork, out of this pass's scope.**" — §15, O-17 (locator: lines 1422–1424).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.393 — O-17: the build event's acceptance is the robust-unit stop.**
+
+*Outgoing statement.* "Acceptance for the (separately-ratified) build event = the robust-unit stop: class-(b) root-disagree DURATION non-increase per preset — dormant ⟹ identity today, must MOVE favorably at engage (the 809 harms are ~non-symmetric pitch-class-decidable roots = class-(b), so removing them reduces the class-(b) duration)." — §15, O-17 (locator: lines 1424–1427).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.394 — O-17: the redesign options go to the user.**
+
+*Outgoing statement.* "On CC's report: Cowork verifies at objects → presents the redesign-option decision surface to the user (annotate vs disable vs C3-restrict)." — §15, O-17 (locator: lines 1428–1429).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.395 — O-15(i): the committed robust-unit reference and its run enumerations.**
+
+*Outgoing statement.* "**(i) The committed robust-unit reference** lives at **`tools/robust_stop/`** (the diff base, the batch-stop's `stem@tick`-set analogue that lives as artifacts because it is ~6.9–7.0k failing runs/preset, not 52 lines): per-preset variant-(b) DCML-only root-failing RUN enumerations (`stem@runStartTick`, **6868/7036/6883** Baroque/Jazz/Default) + `summary.json` + `manifest.json` (corpus `git_hash c50002fee1` · instrument `a8_rebaseline_measure.py@c2914884af` · reproduce-status) + `README.md`; generated by the pinned a8 instrument (self-validated grid==oracle on all 326×3)." — §15, O-15 (locator: lines 1458–1464).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.396 — O-15(ii): root governs and holds; the key-column error declared for correction at the handover.**
+
+*Outgoing statement.* "Root — the governing metric + dispatch STOP anchor — holds; key is tracked-beside; the reproducible values are frozen in the reference and the **2.2e key-column error is a DECLARED finding for R10-b to correct** (the CLAUDE.md dual-track note's `68.19/64.52/67.77` → `68.13/64.43/67.50`; a normative change reserved for the handover)." — §15, O-15 (locator: lines 1470–1473).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.397 — the key discrepancy is a record discrepancy, not an inference problem.**
+
+*Outgoing statement.* "This is a *record* discrepancy in a tools-side metric column, not an inference/behavior problem (corpus fingerprint-pristine, instrument self-validating, root/RN exact)." — §15, O-15 (locator: lines 1473–1475).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.398 — O-15(iii): every batch case maps to a still-failing run.**
+
+*Outgoing statement.* "**(iii) The old→new mapping:** every **52/24/52** batch case (set-equal to `characterise_bir_false.py`) maps to a still-failing variant-(b) run — **0 disappear**, all presets (1 Baroque/Default overlap-only `bwv261@33840`, benign; the 2/1/2 variant-(a) disappearances are the known §3.2 alignment artifact)." — §15, O-15 (locator: lines 1475–1478).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 9.399 — O-15(iv): the successor check, runnable and timed; the hard stop's form.**
+
+*Outgoing statement.* "**(iv) The successor sandwich — runnable + timed:** new instrument **`tools/robust_stop_diff.py`** (thin orchestration over a8 outputs, constraint-10 — re-implements no scoring/comparison; the robust analogue of `characterise_bir_false.py`); the check = `a8_rebaseline_measure.py --out-dir <cand>` (**≈6 s**, dispatch predicted ~14 s) + `robust_stop_diff.py --candidate <cand>` (**<1 s**); **hard stop = class-(b) root-disagree DURATION non-increase per preset** (class-(b) ≈96.5 % of root-fail time — the §4.2 finding: the batch residual's ≈53 % class-(a) was a small-reachable-corner artifact) + a **mandatory explained run-level set-diff** + class-(a) duration tracked (INVESTIGATE flag, advisory)." — §15, O-15 (locator: lines 1478–1485).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.59.
+
+---
+
+**Row 9.400 — the successor check proven end to end.**
+
+*Outgoing statement.* "Proven end-to-end: identity self-compare PASS (empty diff, Δ=0), a synthetic perturbation proving the FAIL/diagnostic/INVESTIGATE paths (exit 1), and a raise-on-unmatched-line guard that fixed a real 96-run silent-drop bug (the hyphen stem `bwv248.33-3`)." — §15, O-15 (locator: lines 1485–1487).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.399.
+
+---
+
+**Row 9.401 — O-10: retained structural rules carry ongoing liveness evidence.**
+
+*Outgoing statement.* "**O-10 (lesson from the user's methodology challenge, 2026-07-05): RETAINED structural rules carry ongoing LIVENESS evidence.**" — §15, O-10 (locator: lines 1493–1494).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to correction rules kept beside the candidate score.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 9.402 — the four retained rules; their firing counts re-measured at every adoption.**
+
+*Outgoing statement.* "For the four RETAINED rules (GateI, FM2, GateJ, GateL): their firing-site counts (the 2.2b regen-diff method, or cheap telemetry if one is ever built) are re-measured at every adoption event's sandwich and recorded in the ledger, so a retained rule whose firing evidence collapses to zero surfaces as a finding at the next natural checkpoint instead of by archaeology." — §15, O-10 (locator: lines 1495–1499). Two claims: (i) four correction rules are retained; (ii) their firing counts are re-measured at every adoption and recorded.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 9.15. (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.401.
+
+---
+
+**Row 9.403 — O-8: the fit ledgers become committed; a validation runner gains the override.**
+
+*Outgoing statement.* "**O-8 (housekeeping, user-ruled 2026-07-05, both fixed at the next dispatch):** (1) **fit ledgers become committed artifacts** — the per-run ledger files move out of the gitignored `tools/reports/` to a committed path; §7's "the ledger is committed" holds for the compact per-run ledgers, while large per-cell enumerations stay regenerable scratch pinned by the driver (the A-8 precedent — §7 is amended by this sentence); (2) **one validation runner gains `--param-override`** (additive, default byte-identical) so the S-5 per-style generalization check CAN run on a candidate before any adoption — closing the recorded S-5 instrument gap." — §15, O-8 (locator: lines 1501–1507). Two claims, numbered (1) and (2) in the text itself, and cited here as (i) and (ii).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **HISTORICAL.**
+
+
+---
+#### Not a statement — listed so the arithmetic closes (270)
+
+1. "**Status: SIGNED (user, 2026-07-04).**" (3) — *a status of the document*.
+2. "The full §15 sign-off surface (A-1, A-2, A-4, A-5, A-6, A-7ask, A-8ask, A-9ask) ratified 2026-07-04 ("ok then, forward!" + the A-3 selection); **A-3 RULED: defer the Jazz-carrier fit** — the idiom-#2 target (Baroque/Default carriers) is fitted now; the Jazz fit waits for a licensed jazz ground-truth conversion (D-5 option i)." (3–6) — *provenance*, its ruling clause tabulated at Row 9.1.
+3. "Drafted, independently audit-folded (20 findings), and user-refined (idiom axis; style-table model; coordinate/estimation refinements) the same day." (6–8) — *provenance*.
+4. "The Stage-5 arc's design document, written per the handoff's NEXT directive (2026-07-04) under the two user-ratified binding constraints: the **fitting-pool license constraint** (census §8c, 2026-07-04) and the **A-8 dual-track** metric semantics (2026-07-03)." (8–11) — *provenance*; the two constraints are tabulated at §2.
+5. "Template: `cowork_design_doc_template.md` (all 14 sections; arc42 Deployment view and Human-interface design are N/A — backend analysis module, no deployment topology, no UI — stated once here)." (11–13) — *the document's account of its own form*.
+6. "No code accompanies this document; CC instructions are written just-in-time after ratification, one at a time." (13–14) — *the document's account of itself*.
+7. "**The first CC dispatch of this arc must also demand the acquisition-round fold-commit SHA (owed, never stated — the 22g precedent: a commit is verified at its object or its SHA is demanded).**" (14–16) — *a process instruction about dispatches*.
+8. "Every term below is either standard music theory in its standard sense, defined here, or cited to the document that defines it." (22–23) — *the document's account of its own form*.
+9. "Nothing is used before its row." (23) — *the document's account of its own form*.
+10. "Words with more than one plausible reading are pinned to ONE sense for this document." (23–24) — *the document's account of its own form*.
+11. ""Parameter" is used once the constant is under the fitter's management." (29) — *a remark on the document's own usage*.
+12. "Declared fully in §4.2, including the scope of every constraint attached to it." (30) — *a pointer*.
+13. "Defined and measured in `records/cc/reports/cc_a8_rebaseline_measure_report.md` §1.1." (31) — *a pointer*.
+14. "(Its ratified name elsewhere is "variant (b) DCML-only", where "DCML" names the *annotation format*; this document says "variant (b)" to avoid the corpus/format ambiguity — see the DCML row.) `records/cc/reports/cc_a8_rebaseline_measure_report.md` §1.3." (32) — *a remark on the document's own usage, and a pointer*.
+15. "Coverage: 326 of the 352 corpus scores." (33) — *a count*.
+16. "The Digital and Cognitive Musicology Lab. Used in TWO derived senses elsewhere in the project — (i) the *annotation format* the WiR analyses use, (ii) the lab's *Distant Listening Corpus*. In this document "DCML" appears only inside the fixed names "DCML annotation format" and the ratified variant name quoted above; the corpus is always called the DLC." (34) — *a remark on the document's own usage*, the terms table's row *DCML*.
+17. "The Distant Listening Corpus: the 40 DCML-lab corpora held as research material." (35) — *a definition of a corpus's name*; the row's license clause is tabulated at Row 9.8.
+18. "Its established project name is "the gate corpus"; this document says "reference corpus" because "gate" is pinned to a different sense here (see the Gate A–L row)." (36) — *a remark on the document's own usage*.
+19. "Census §8c." (37) — *a pointer*.
+20. "Census §8c." (38) — *a pointer*.
+21. "The split discipline is the ratified OQ-C1 rule (roadmap E2 line: dev/held-out, demotion only by recorded decision, registry `split` field)." (39) — *a pointer*.
+22. ""Stop" is used, not "gate", to keep this word distinct from the senses in the next two rows." (40) — *a remark on the document's own usage*.
+23. "Appears only inside "the batch stop"'s definition and reports." (41) — *a remark on the document's own usage*.
+24. "Always written with its letter or as "Gates A–L"." (42) — *a remark on the document's own usage*.
+25. "(Gate R is NOT in this set — it is a scoring-time guard, see its row.)" (42) — *a restatement of Row 9.18*.
+26. "Always written with the number." (44) — *a remark on the document's own usage*.
+27. "CLAUDE.md two-tier policy; per-cell test in `records/cc/reports/cc_a8_rebaseline_measure_report.md` §1.5." (45) — *a pointer*.
+28. "`cowork_confidence_contract.md` §2." (46) — *a pointer*.
+29. "`cowork_confidence_contract.md` §4." (48) — *a pointer*.
+30. "The unit of the style-response measurement (§4.4a)." (55) — *a pointer*.
+31. "Measured in Phase 1 (it requires the harness; §4.1/§4.3)." (61) — *a pointer to a plan*.
+32. "Used only in its ordinary English sense "conditional on X" (e.g. "flag-gated", "ratification-gated"). Never a noun sense." (62) — *a remark on the document's own usage*, the terms table's row *"gated on X"*.
+33. "Cross-document handles used with citation only (each expands at its source): **E-13/E-14** = binding items of `cowork_product_tool_register.md` (E-13: the tuning bridge is a consumer-migration site; E-14: zero information loss to the end user); **the 22b/22f/22g precedents** = STATUS.md session rulings cited where used." (64–67) — *a definition of the document's handles*.
+34. "**What this is.**" (73) — *a label*.
+35. "**Why it exists (the problems it solves).**" (79) — *a label*.
+36. "**Hand-tuning has stopped scaling.**" (80) — *a defense* of Row 9.50.
+37. "The scoring model's own record (`docs/scoring_model.md` §8) lists repeated failed hand-adjustment attempts; the roadmap froze template work "until Stage 5 (fitting makes template ambiguity tractable)"." (80–82) — *a defense* of Row 9.50.
+38. "**The post-scoring correction layer is structural debt.**" (83) — *a defense* of Row 9.51.
+39. "The `docs/scoring_model.md` §6 block (Gates A–L and its unlettered members) is a set of post-hoc rank mutations patching systematic scoring biases case-family by case-family." (83–85) — *a defense* of Row 9.51.
+40. "**The confidence contract's calibration obligations are due here.**" (88) — *a defense* of the arc, whose claim Row 9.52 states.
+41. "**The metric arc ends here.**" (91) — *a defense* of the arc, whose claim Row 9.53 states.
+42. "**Scope (in).** Parameter inventory; the fitting harness and sensitivity measurement; fits of the existing constants per fit target (idiom-labeled, preset-carried — §9 D-10) where style-varying and once where style-invariant; the one commissioned NEW parameter deferred to this arc by ratified record (the L5 §15-13 preference-among-licensed weight — §4.4 family 4); the §6-block dissolution audit; reliability maps (completing C1); θ re-expression + the D-FS scale declarations (C2); the R10 re-baseline decision surface." (94–99) — *the document's account of its own scope, whose items the body states*.
+43. "**Scope (out).** The C3 gated joint key↔chord step (its own design document, gated on this arc's calibrated quantities — §11); joint segmentation (deferred past Stage 5, roadmap); the `chordanalyzer.cpp` file split (OWED refactor #1 — **parked by ratified R9**: after the E4 removals, "split once"); new templates or new inference *signals* (template work becomes tractable after fitting; it is a separate later decision; the §15-13 weight is a fitted preference over an existing decision structure, not a new signal); candidate levers R-1…R-10 (none commissioned; §14 disposes R-11/R-12/R-13, the three Stage-5-neighborhood method levers); the engage decision itself (E3 is its own user event)." (101–107) — *the document's account of its own scope*.
+44. "**★ CORRECTION OF STATE — the scope-out line above ("the `chordanalyzer.cpp` file split (OWED refactor #1 — **parked by ratified R9**)") names an act that was already DELIVERED when this design was written** (annotation 2026-08-03, CC, on the user's ruling of that date; `OPEN_ITEMS.md` **OI-286**, register entry **D-427**)." (109–112) — *a correction of the record about a code refactor*.
+45. "The split was committed as `41f7c65f63` on **2026-06-17**, seventeen days before this design of 2026-07-04." (112–113) — *a commit identifier*.
+46. "**The scope-out itself is unaffected in substance:** what this arc excludes it still excludes, and the sentence is preserved unedited (#12)." (113–114) — *the document's account of itself*.
+47. "Two things a reader should carry forward." (114–115) — *a lead-in*.
+48. "**(i)** The **iteration-API renames** — the other half of OWED refactor #1 — are genuinely still owed (**D-428**), and their subject includes live Layer-1.5 code, so they are not disposed of by the retirement map." (115–117) — *a correction of the record about a code refactor*.
+49. "**(ii)** This arc's own §6-block dissolution IS OWED refactor #2 (**D-429**), and it is the half this document's scope-in list carries." (117–118) — *the document's account of its own scope*.
+50. "**★ CORRECTION REMARK, 2026-08-11 (`OPEN_ITEMS.md` OI-304) — CLAUSE (i) ABOVE ASSERTS THE OPPOSITE OF WHAT D-428 NOW RECORDS, AND THE ANNOTATION IS LEFT AS WRITTEN (#12).**" (120–121) — *a correction of the record about a code refactor*.
+51. "Clause (i) says the renames' subject *includes live Layer-1.5 code*, so they are not disposed of by the retirement map." (121–122) — *a correction of the record about a code refactor*.
+52. "**D-428 was corrected later the same day** — at phase 1n, against the premise and at the call sites — and now records that **every use sits on the legacy arm, so deleting that path discharges them.**" (123–124) — *a correction of the record about a code refactor*.
+53. "*Why the remark rather than an edit:* this is a dated annotation block, and its wording is the record of what was believed when it was written; editing it would destroy the evidence that the correction happened at all." (125–127) — *the document's account of its own filing*.
+54. "The correction reached the register entry and not the two documents that state the premise it refuted — the one-surface-corrected shape the row names — and this is the second of those two surfaces." (127–129) — *the document's account of its own filing*.
+55. "**Status.** DRAFT for sign-off." (131) — *a status of the document*.
+56. "No implementation exists; locators are deferred until built." (131) — *the document's account of itself*.
+57. "**★ The fitting-pool license constraint (user-ratified 2026-07-04; census §8c; binding).**" (137) — *a label with its provenance*.
+58. "**The census requires the design doc to declare its objective-vs-validation source split: §2 states the constraint and §3a carries the full declaration table** (placement note: the census wording says "§2/§6"; this document's data declaration lives in §3a and §7, which are its data-declaration homes — recorded so the deviation is deliberate, not drift)." (144–147) — *the document's account of its own form*.
+59. "The constraint also enters the roadmap Stage-5 block at this arc's first CC docs commit (census §8c ride)." (147–148) — *a documentation plan*.
+60. "**★ The A-8 dual-track (user-ratified 2026-07-03; binding).**" (149) — *a label with its provenance*.
+61. "**The idiom taxonomy governs the style axis of fitted values (ratified 2026-06-30; contract C4).**" (160) — *a title whose claim the body states*, tabulated at Row 9.62.
+62. "**★ OPTIMIZE FOR IDIOMS ONLY — NEVER FOR THE CURRENT USER SETTINGS (user mandate, 2026-07-04).**" (166) — *a title whose claim the body states*, tabulated at Row 9.64.
+63. "**Knowledge-based coding / measure-first:** every fitting decision is gated on a measurement that precedes it (Phase 0's inventory + cost numbers gate the harness design; Phase 1's sensitivity numbers gate the optimizer choice and family staging; a differential report gates each §6-block retirement)." (175–177) — *a rule of the development process*.
+64. "No production value changes on an assumption." (178) — *a rule of the development process*.
+65. "**Held-out discipline (OQ-C1):**" (179) — *a label*.
+66. "§4.2 declares the one deliberate, bounded exception (the adoption-time full-corpus batch-stop check) and why it is accepted." (181–182) — *a pointer*.
+67. "**Adoption discipline / no surprises:**" (183) — *a label*.
+68. "**Zero information loss (E-14, user principle):**" (187) — *a label*.
+69. "**Documentation in lockstep:** any commit touching a scoring term updates `docs/scoring_model.md` in the same commit (CLAUDE.md sync rule); the confidence contract's §3/§5 rows update when squashes or θ gain fitted values; this document flips to AS-BUILT status at landing." (189–191) — *a rule of the documentation process*.
+70. "**Total unification:**" (192) — *a label*.
+71. "**Full test coverage** of new fitter code paths at each increment (standing objective 2026-06-21)." (196) — *a rule of the development process*.
+72. "**Fork-only:** everything stays on `origin` (`slimvince/MuseScore`); never `upstream`." (197) — *a rule of the development process*.
+73. "**Imports / consumed inputs.**" (203) — *a label*.
+74. "**The confidence contract** (`cowork_confidence_contract.md`): class definitions, frames, squash rules, the C1–C4 obligations." (216–217) — *a pointer*.
+75. "**Exports / products.**" (219) — *a label*.
+76. "**§3a The declared objective-vs-validation source split (constraint 1's required declaration).**" (239) — *a label*.
+77. "**Locators.** Implementation and test locators are deferred (nothing is built); Phase 0's manifest becomes the parameter locator; harness locators are added at the AS-BUILT flip." (249–250) — *the document's account of itself*.
+78. "Phase 0 contains only work that needs no new machinery:" (266) — *a lead-in to the two items, which are tabulated*.
+79. "**Parameter inventory.**" (268) — *a label*.
+80. "The staleness check runs both ways: the inventory must reconcile with `docs/scoring_model.md` §2–§6, and discrepancies found are doc-drift defects fixed in the same arc." (280–282) — *a rule of the documentation process*.
+81. "**Objective-evaluation cost.**" (284) — *a label*.
+82. "(Sensitivity is NOT available yet; it needs Phase 1's harness." (290) — *a defense* of Row 9.99.
+83. "For preset *p* and candidate parameter vector **w**:" (302) — *a lead-in to the objective, which is tabulated*.
+84. "**Per-evaluation hard constraints** (checked on every candidate, scoped to keep the held-out split out of the optimization loop):" (308–309) — *a lead-in to the three items, which are tabulated*.
+85. "The leakage is bounded — it occurs only at the few user-ratified adoption events, each with its diff explained and recorded — and it is one-directional (a rejection sends the fit back to the fitting split; no held-out-derived gradient enters the loop)." (325–327) — *a defense* of Row 9.108.
+86. "**1a — the harness (infrastructure; byte-identical).**" (347) — *a label*.
+87. "**1b — the sensitivity screen (first use of the harness; decode-only, nothing adopted).**" (359) — *a label*.
+88. "Families in dependency order (checkpoint P1 may reorder on measured interactions; the order below is the default hypothesis, stated so deviation is a flagged decision):" (401–402) — *a lead-in to the four items, which are tabulated*.
+89. "**The §6-block dissolution (the R1 discharge).**" (407) — *a label*.
+90. "**§4.4a The style-response measurement (per high-leverage parameter; the table-dimensionality instrument).**" (422–423) — *a label*.
+91. "**The L5 §15-13 preference-among-licensed weight — the one commissioned new parameter.**" (439) — *a label*.
+92. "**★ DELIVERED (session 22x, 2026-07-06; `records/cc/reports/cc_stage5_phase3_report.md`; see O-14).**" (455) — *a label with its provenance*.
+93. "**Reliability maps (C1's remaining deliverable).**" (465) — *a label*.
+94. "The C1 report's §5 facts bound what is fittable now:" (469–470) — *a lead-in to the five items, which are tabulated*.
+95. "**θ re-expression + D-FS closure (C2).**" (483) — *a label*.
+96. "**C3 unblocking (design only).**" (488) — *a label*.
+97. "**★ R10-a ASSEMBLED (session 22z, 2026-07-06 — O-15).**" (510) — *a label with its provenance*.
+98. "**★ R10-b FIRED — the arc-closing ratification (session 23, 2026-07-06; `records/cc/reports/cc_stage5_r10b_ratification_report.md`).**" (519) — *a label with its provenance*.
+99. "**Determinism & reproducibility.**" (614) — *a label*.
+100. "**License provenance as a first-class property.**" (618) — *a label*.
+101. "This is the mechanism that keeps commercialization from silently inheriting an NC-derived value (census §8c's stated purpose)." (619–620) — *a defense* of Row 9.201.
+102. "**Honest failure reporting.** A family that cannot beat its baseline under the constraints, a rule that cannot be retired, a confidence that cannot be calibrated — each is a *finding*, reported with its evidence, never smoothed over (the C1 report's treatment of tonicVote is the model)." (623–625) — *a rule of the development process*.
+103. "**Error/edge handling.**" (626) — *a label*.
+104. "**Performance.**" (629) — *a label*.
+105. "*Alternatives:* multi-respect weighted objective (rejected for now: the respect weights would themselves be unratified hand-tuning — root-governs is the ratified semantics; RN/key visibility at adoption events covers the trade-off risk); variant (a) (rejected: music21 is an algorithm, not ground truth; discards ~82 % of human-adjudicated error time; root-only by construction)." (636–640) — *rejected alternatives, named with their reasons*.
+106. "**D-2 The pool split per §3a.**" (643) — *a title whose claim the body states*, at Rows 9.84 to 9.88.
+107. "*Alternative:* fit on everything and relicense later (rejected: the constraint exists precisely to prevent that path-dependence)." (643–644) — *a rejected alternative with its reason*.
+108. "**D-3 Optimizer: decided at checkpoint P1, with the decision structure declared now.**" (647) — *a title whose claim the body states*.
+109. "The pipeline is a discrete, non-differentiable decision cascade; the objective is evaluated by running it." (647–648) — *a defense* of Row 9.209.
+110. "*Considered:* structured-perceptron-style updates (roadmap 5.1's other name) — requires a per-cell decomposable loss and parameter-linear scores; adopted only if the budget forces it AND the score's parameter-linearity holds on the fit surface." (651–653) — *a considered alternative, named with its condition*.
+111. "*Considered and deferred:* CMA-ES/black-box global search (only if coordinate search stalls at a measured plateau)." (654–655) — *a considered alternative, named with its condition*.
+112. "**D-4 Style-varying fits are per fit target; Default's relationship to the idiom-#2 fit measured, not assumed.**" (657–658) — *a title whose claim the body states*.
+113. "*Alternative:* always fit every carrier independently (rejected: carriers mapped to the same idiom fitting the same data independently would differ only by optimizer path — a spurious divergence; the measurement, not the history, makes the adopt-or-not call per carrier)." (664–666) — *a rejected alternative with its reason*.
+114. "**D-5 The Jazz data question — surfaced, not decided here.**" (668) — *a title*.
+115. "Fitting Jazz-carrier weights against idiom-#2 data contradicts both the mark's honesty and D-10's idiom-labeling (the result would be an idiom-#2 fit mislabeled as a jazz style)." (671–672) — *a defense* of Row 9.215.
+116. "*Options for ratification:* (i) **defer the Jazz-carrier fit** until a fitting-pool jazz source (CoCoPops / OpenEWLD) is conversion-ready — its own ratified increment, which creates the idiom-#3 fit target — fitting the idiom-#2 target (Baroque/Default carriers) now; the design's recommendation, because it is the only option that is licensed, honest, and idiom-correct; (ii) fit the Jazz carrier on Bach anyway and keep the mark (records a number, changes little, mislabels the style axis); (iii) pull the jazz-GT conversion into this arc (scope growth; the conversion is corpus work, not fitter work)." (672–678) — *the options put for ratification*, the chosen one tabulated at Row 9.215.
+117. "**D-6 Parameter materialization: a flag-gated external override read at startup — the shape is decided now; only its details are Phase 1's.**" (682–683) — *a title whose claim the body states*.
+118. "The harness needs hundreds-to-thousands of evaluations; rebuild-per-vector is infeasible." (683–684) — *a defense* of Row 9.216.
+119. "*Alternative:* generated-header rebuilds (rejected on evaluation cost); direct Python re-implementation of scoring (rejected: violates one-path-per-concern — the C++ pipeline IS the scorer)." (686–687) — *rejected alternatives, named with their reasons*.
+120. "**D-7 §6-block dissolution is an audited per-rule verdict, not a bulk deletion.**" (690) — *a title whose claim the body states*, at Row 9.131.
+121. "Per §4.4; the roadmap-3.4 discipline with the Stage-1.1 pinned tests as proof obligations." (690–691) — *a pointer restating Row 9.131*.
+122. "*Alternative:* delete-and-refit-globally (rejected: loses the per-rule causal account, risks laundering a regression through aggregate numbers)." (691–693) — *a rejected alternative with its reason*.
+123. "**D-8 Calibration maps are monotone or deferred.**" (695) — *a title whose claim the body states*.
+124. "(Contract R4/R5 monotonicity carries this.)" (697) — *a pointer*.
+125. "**D-9 The fit surface includes both consuming paths where a constant is shared.**" (699) — *a title whose claim the body states*.
+126. "**D-10 The style identity of every fitted value is the IDIOM; presets are its delivery carriers.**" (707) — *a title whose claim the body states*.
+127. "The ratified taxonomy (2026-06-30) makes the five idioms the structural style axis and presets named idiom-weightings ("presets = idioms, for now"); fitting per genre-named preset would bake the retired genre axis into fitted constants at the very moment the taxonomy replaces it." (707–710) — *a defense* of Row 9.221.
+128. "*Alternatives:* fit per preset with no idiom labels (rejected: orphans the fitted artifacts the moment presets become weightings — the migration would not know what the values mean); fit per idiom with runtime mixture now (rejected: pulls the deferred auto-detection feature into a fitting arc, violating the standing inference-feature ordering and unneeded while each carrier maps to one idiom)." (721–725) — *rejected alternatives, named with their reasons*.
+129. "**D-11 A parameter's value lives in a per-parameter style table of MEASURED dimensionality, estimated anchor-first.**" (738–739) — *a title whose claim the body states*.
+130. "*Alternatives:* a fixed per-idiom table for every style-varying parameter (rejected: unmeasured dimensionality — pays five-way data cost for parameters that may respond to nothing, and hides cross-attribute structure inside idiom cells); a global continuous regression per parameter over style features (rejected for now: the current one-vertex data cannot support it, and it would dissolve the ratified discrete taxonomy without evidence)." (774–778) — *rejected alternatives, named with their reasons*.
+131. "**Coverage:** new harness/tooling paths covered per the standing objective; the parameter-override read path in the binary gets its own unit tests (override absent → byte-identical proof included)." (802–803) — *a rule of the development process*.
+132. "**Overfitting a ~326-score, single-composer fitting split.**" (809) — *a label naming a risk*.
+133. "**Idiom coverage of the fitting pool is one of five.**" (814) — *a title whose claim the body states*, at Row 9.237.
+134. "The risk is stated so a one-idiom fit is never mistaken for a style-general one." (818) — *the document's account of its own purpose*.
+135. "**Clustering noisy per-stratum optima can hallucinate structure.**" (819) — *a label naming a risk*.
+136. "Each stratum's optimum is an estimate from a smaller fit; a clustering verdict taken from raw optima would over-read noise as borders." (819–821) — *a defense* of Row 9.239.
+137. "**The objective's ceiling is upstream of weights.**" (825) — *a title whose claim the body states*, at Row 9.240.
+138. "Debt carried visibly in the contract §3 rows." (831–832) — *a pointer*.
+139. "§0 TERMS is this document's glossary (single home; no second table to drift)." (845) — *a pointer*.
+140. "The scoring constants accreted across the numbered-iteration era (which ran through at least Iter 98; the iteration-numbered bonus names are that history's residue); repeated hand-adjustment attempts failed against the invariant web (`docs/scoring_model.md` §8's dead-ends list — B1, B2 ×4, B3)." (851–853) — *narrative*.
+141. "The post-scoring §6 block grew as corrections to systematic biases (inversion over-fire, enharmonic flips, augmented rotations), was audited and pinned in Stage 1, partially retired where provably dead (Gates B/C/D, Stage 3.4b), and was scheduled to dissolve into fitted weights when the roadmap's review concluded hand-tuning had reached its limit." (853–857) — *narrative*.
+142. "The metric arc that makes fitting honest ran 2026-06→07: granularity bias quantified (~7× at section view, 15–56× at the robust unit), the music21 filter's ~82 % discard measured, the human-only variant ratified, reliability curves delivered (C1)." (857–859) — *narrative*.
+143. "This document is the point where those instruments turn from measurement into optimization." (859–860) — *the document's account of itself*.
+144. "Corrections on record affecting this arc: the 353→352 corpus count fix; the §2.1a denominator-scope lesson (every rate names its denominator); the D-L3a demotion of the emission sigmoid; the 22b ruling that parked the resolver's preference-among- licensed lever at L5 §15-13 for this arc (§4.4 family 4)." (860–863) — *narrative*.
+145. "**Duration-weighted chord-symbol recall** (MIREX audio-chord-estimation "weighted CSR" tradition): the robust unit's duration-weighting follows the same principle — segmentation-invariant time-weighted agreement." (869–871) — *a citation*, the defense of Row 9.5.
+146. "Adopted via the A-8 design; no external code." (871) — *provenance*.
+147. "**Structured perceptron** (Collins 2002) and **derivative-free/pattern search** (Hooke–Jeeves family; coordinate descent): the two optimizer families D-3 weighs; choice by measured evaluation cost, not fashion." (872–874) — *a citation*.
+148. "**CMA-ES** noted as the escalation option." (874) — *a citation*.
+149. "**Calibration methods:** isotonic regression (monotone, non-parametric — the default map shape) and Platt scaling (parametric sigmoid) for the Class-M→P maps; standard reliability-diagram/ECE methodology already instantiated by the C1 harness." (875–877) — *a citation*.
+150. "**R-11 Conformal prediction** (lever register): weighed here as the abstention-calibration alternative — distribution-free coverage guarantees using only the C1 data." (878–879) — *a citation*.
+151. "Decision recorded at the Phase-3 checkpoint." (881–882) — *a pointer*.
+152. "**Style-conditioned parameter tables — the direct precedents (verified 2026-07-04):** **key- and genre-dependent HMMs for chord transcription** (Lee & Slaney, IEEE TASLP 2008; Lee, CMMR 2008): 24 key-dependent models, and genre-specific simpler models outperforming genre-independent complex ones when the right genre is selected — the same architecture as D-10/D-11's anchor tables + the deferred idiom auto-detection (their genre selector)." (889–893) — *a citation*, the defense of Rows 9.221 and 9.227.
+153. "**Corpus statistics differ by style in exactly our parameter-relevant quantities** (de Clercq & Temperley, *Popular Music* 2011): rock ~94 % root-position chords vs ~60 % in common practice (the inversion-bonus family's driving statistic), and the pre-dominant→dominant→tonic norms largely absent in rock (the progression-weight family's driving statistic) — direct evidence those families are style-varying." (893–897) — *a citation*.
+154. "**Mode-conditioned parameter tables are canonical**: the Krumhansl–Kessler major/minor key profiles and their corpus-fitted successors (Temperley; Albrecht & Shanahan) are precisely a parameter table conditioned on the mode cross-attribute — four decades of standard practice." (897–900) — *a citation*.
+155. "**The estimation machinery is standard**: mixture-of-experts gating (Jacobs et al. 1991) for mixture-weighted combination; interpolated language models and MAP speaker adaptation in speech recognition for the anchor + shrinkage shape (D-11 v/vi)." (900–902) — *a citation*.
+156. "**Counter-nuance, honestly carried:** recent joint-corpus deep models report resisting style domain shift (AnalysisGNN, 2025 — minor degradation for Roman-numeral prediction across corpora); with large data and high-capacity models, style conditioning matters less." (903–905) — *a citation*.
+157. "Our regime is the opposite — a small licensed pool and an interpretable additive scorer — which is exactly where the conditioned-table approach is the established fit." (905–907) — *a defense* of Rows 9.221 and 9.227.
+158. "**Negative transfer under hard parameter sharing** (multi-task-learning literature; verified 2026-07-05): optimizing a shared parameter for one task/domain harming another is the canonical negative-transfer failure of hard sharing, and per-task/branched parameterization is the standard remedy — the external precedent for O-9's per-carrier reclassification of the shared bass/root levers (the Phase-2.2b Jazz cost under the Baroque-fitted `bassNoteRootBonus`)." (908–912) — *a citation*.
+159. "**Considered and rejected:** fitting on music21-adjudicated cells (variant (a)) — an algorithm as ground truth; neural proposal models (Stage 7, out of scope); global re-architecture of scoring (the review found no structural fault — this arc fits the existing architecture's constants)." (913–915) — *rejected alternatives, named with their reasons*.
+160. "**A-1** The five-phase shape (§4) with its TWO ratification checkpoints: P0 (fit surface + freeze list, on the inventory) and P1 (optimizer + staging + split + R-13, on the harness's sensitivity numbers)." (922–923) — *a restatement of Rows 9.90, 9.98 and 9.120*, as an ask put for ratification.
+161. "**A-2** The objective + constraint scoping exactly as §4.2 (root governs; per-evaluation constraints on the fitting split; full-corpus checks at adoption events with the declared, bounded held-out exception; class-(a) at full weight initially)." (924–926) — *a restatement of Rows 9.102 to 9.110*, as an ask.
+162. "**A-3** The Jazz-preset data decision (D-5): recommendation = defer the Jazz fit until a licensed jazz ground-truth source is conversion-ready; fit Baroque/Default now." (927–928) — *a restatement of Row 9.215*, as an ask.
+163. "**A-4** The adoption-event protocol (§4.7, S-4): every behavior change user-ratified, one revertible commit, both tracks measured." (929–930) — *a restatement of Rows 9.47 and 9.189*, as an ask.
+164. "**A-5** The §6-block dissolution verdict structure (D-7): retire / retain-as-structural / defer, per rule, with differential reports; retention is a legitimate outcome, not a failure." (931–932) — *a restatement of Row 9.131*, as an ask.
+165. "**A-6** D-6's parameter-override shape (flag-gated external override, default-off, byte-identical when absent) as the sanctioned `src/` touch of this arc." (933–934) — *a restatement of Row 9.216*, as an ask.
+166. "**A-7ask** Family 4 (the L5 §15-13 preference-among-licensed weight) commissioned as scoped in §4.4, gated on its population measurement." (935–936) — *a restatement of Rows 9.136 and 9.137*, as an ask.
+167. "*(Labelled "A-7ask" to avoid colliding with the A-7 mark, §0.)*" (936) — *a remark on the document's own usage*.
+168. "**A-8ask** The idiom axis (D-10 + constraint 4b): fitted values are idiom-labeled with presets as delivery carriers; the manifest carries a style-scope column; per-idiom fit targets are ground-truth gated; mixture semantics and idiom auto-detection stay deferred to the taxonomy's own roadmap feature." (937–939) — *a restatement of Row 9.221*, as an ask.
+169. "*(Same collision-avoidance labelling.)*" (940) — *a remark on the document's own usage*.
+170. "**A-9ask** The per-parameter style-table model (D-11 + §4.4a): dimensionality measured per parameter by clustering per-stratum fitted optima under stability guards; anchor-based estimation with linear mixing as the recorded default interpolation; unstable verdicts default to the simpler structure; the first style-response measurement runs on the mode/chromaticism strata inside the idiom-#2 pool." (941–944) — *a restatement of Rows 9.134, 9.227 and 9.239*, as an ask.
+171. "**Open items (tracked, not blocking sign-off):**" (946) — *a label*.
+172. "**O-1** The fold-SHA demand: the first CC dispatch of this arc demands the acquisition-round fold-commit SHA (owed, the 22g precedent) and carries the four uncommitted Cowork files named in the handoff top block (STATUS 22k tail · the handoff header · census §8c fitting-pool block · the union-record license fixes) plus this design document." (947–950) — *a process instruction about dispatches*.
+173. "**O-2** Class-(a) weighting revisit trigger: if Phase-2 fits show class-(a) churn dominating any fit direction, the weighting question returns to the user with the measurement." (951–952) — *a restatement of Row 9.111*.
+174. "**O-3** The roadmap Stage-5 block gains the fitting-pool license constraint at this arc's first CC docs commit (census §8c ride; also restated by this document's §2)." (953–954) — *a documentation plan*.
+175. "**O-4** The C3 joint-step design document: unblocked at Phase 3; its own Cowork task thereafter." (955) — *a restatement of Rows 9.158 and 9.159*.
+176. "**O-6** E-13 (product-tool register): Phase 0's inventory verifies whether the fit surface touches the tuning bridge; if so, it enters the retirement map at that edit (§4.1)." (960–961) — *a restatement of Row 9.95*.
+177. "The theory question the fit raised (is the power chord an accepted chord category?) is recorded at its proper layer: **L4 design §15 O4** (idiom-dependent by the theory itself; competitiveness stays an idiom-calibrated constant per §2.15)." (971–973) — *a pointer*.
+178. "External precedent: negative transfer under hard sharing, §14." (996–997) — *a pointer*.
+179. "**O-11 (the GateA byte-identity ruling + family-2 closure, 2026-07-05, Phase 2.2c).**" (1014) — *a label with its provenance*.
+180. "**★ Jazz byte-identity — a delivery finding (CC, LOAD-BEARING).**" (1051) — *a label*.
+181. "(The frozen corpus is gitignored, so byte-identity was proven by an explicit-override reconstruction of the pre-adoption Jazz, not `git diff` — a process note: snapshot the frozen corpus before a future re-baseline regen.)" (1056–1058) — *a process remark*.
+182. "Suites 1101/53/11 green." (1064) — *a test count*.
+183. "**O-13 (staging step 3 closure + the family-4 §15-13 population, 2026-07-06, Phase 2.3; `records/cc/reports/cc_stage5_phase2_3_report.md`).**" (1100–1101) — *a label with its provenance*.
+184. "Ledgers `tools/fit_ledgers/stage5_fit_<margin>.jsonl`." (1113) — *a pointer*.
+185. "**(ii) Family 4's §15-13 population is LARGE — size-viable per the gate, but its lever is on the dormant chain whose output is not in today's objective (a DECLARED finding, not a decision).**" (1114–1115) — *a restatement of Rows 9.138 and 9.139*.
+186. "By the design's stated SIZE gate this is **not too small — the fit is not noise-limited.**" (1119–1120) — *a restatement of Row 9.138*.
+187. "But the §15-13 weight acts on the DORMANT L5 resolver's output, which does NOT enter the current A-8 production/L4-root fitting objective (proven: the field is byte-identical on that path) — so the fit is size-viable yet **not runnable against today's objective** (it would move the fullspine L5 roots on those ~5544 slices while the a8 objective stays Δ=0 by construction)." (1120–1123) — *a restatement of Row 9.139*.
+188. "The §15-13 item stays open, now with its measured population." (1126) — *a restatement of Row 9.140*.
+189. "**O-14 (Phase 3 CALIBRATION delivered, 2026-07-06, session 22x; `records/cc/reports/cc_stage5_phase3_report.md`).**" (1127) — *a label with its provenance*.
+190. "Measurement + committed artifacts; NOTHING wired, NO behavior change, NO corpus write, NO push." (1127–1128) — *a restatement of Row 9.142*.
+191. "**(iii) Deferrals re-verified:** L5 combinedBoundary non-monotonicity shape UNCHANGED post-adoption (the STOP "shape changed" did NOT trigger — deferral STANDS); cadence tonicVote anti-monotone; L1.5 → Task B." (1135–1136) — *a restatement of Row 9.145*.
+192. "**(vii) Contract-§3 row changes listed for Cowork to apply** (report §1.4 — contract is Cowork-owned)." (1153) — *a documentation plan*.
+193. "Sandwich: gate 52/24/52 set-diff empty ×3, corpus fingerprint-validated untouched, standard `.ours.json` byte-identical (15/15), suites 1101 / 53+4skip / 11 no refresh." (1153–1155) — *test counts*.
+194. "Next: the arc-close checkpoint §4.7/R10." (1156) — *a pointer*.
+195. "**O-27 (ENGAGE ARC #11 — PEDAL detection's home + the F-B ANNOTATE mechanics, read-only / structure-only — ★ CLOSES STAGE 2, 2026-07-07; `cowork_layer5_engagement_design.md` Part 2 §6–§10 + report `records/cc/reports/cc_engage_l5_pedal_annotate_design_report.md`).**" (1157–1159) — *a label with its provenance*.
+196. "The last two Layer-5 engagement design pieces (Part 1's §4.3 hinges)." (1159–1160) — *provenance*.
+197. "No `src`/build/ corpus/fit; both stops green by construction (no code path touched); fork-only." (1177–1178) — *the document's account of itself*.
+198. "**O-26 (ENGAGE ARC #10 — the JOINT key-and-chord step ARCHITECTURE DESIGN, read-only / structure-only, 2026-07-07; `cowork_joint_key_chord_design.md` + report `records/cc/reports/cc_engage_joint_key_chord_design_report.md`).**" (1179–1180) — *a label with its provenance*.
+199. "The O-4 deliverable." (1180–1181) — *a pointer*.
+200. "No `src`/build/corpus; both stops green by construction (no code path touched); fork-only." (1198–1199) — *the document's account of itself*.
+201. "Closes O-4." (1199) — *a pointer*.
+202. "**O-25 (ENGAGE ARC #9 — Layer-5 engagement DESIGN Part 1: the carry + selection architecture, read-only / structure-only, 2026-07-07; `cowork_layer5_engagement_design.md` + report `records/cc/reports/cc_engage_l5_carry_selection_design_report.md`).**" (1200–1202) — *a label with its provenance*.
+203. "Stage 2 opened on the O-24 real fan-out." (1202) — *provenance*.
+204. "No `src`/build/corpus; both stops green by construction (no code path touched); fork-only." (1215–1216) — *the document's account of itself*.
+205. "**O-24 (ENGAGE ARC #8 — the TRUE untruncated Layer-5 fan-out MEASURED read-only, 2026-07-07; `records/cc/reports/cc_engage_fanout_measure_report.md` + data `cc_engage_fanout_measure_data.json`; instrument `tools/measure_fanout.py`).**" (1217–1219) — *a label with its provenance*.
+206. "Observation only (moratorium — no inference coding, no design decision); the numbers are for Cowork to open Stage 2 on the real distribution." (1234–1235) — *the document's account of itself*.
+207. "**O-23 (ENGAGE ARC #7 — STAGE 1 PRE-Layer-5 refactor batch DELIVERED, 2026-07-07; `records/cc/reports/cc_engage_pre_l5_refactor_report.md`).**" (1236–1237) — *a label with its provenance*.
+208. "**O-22 (ENGAGE ARC #6 — the STRUCTURAL-INTEGRITY audit, read-only grounded catalogue, ALL built layers, 2026-07-07; `cowork_structural_integrity_audit.md` + `records/cc/reports/cc_engage_structural_integrity_audit_report.md`).**" (1250–1251) — *a label with its provenance*.
+209. "Total-unification (#6) + layer-adherence (#7) + build-on-clean-theory (#1) made proactive — the structural analogue of the O-20 information-loss audit, swept systematically." (1252–1253) — *provenance*.
+210. "READ-ONLY: no `src`/corpus/build/fix; both stops untouched/green." (1253–1254) — *the document's account of itself*.
+211. "Sweep totals: 1 anchor + 20 sites (6 VIOLATION / 8 UNCLEAR / 6 OK-RESOLVED; 2 HIGH / 9 MED / 9 LOW); fan-out measured read-only (append fires on ~36% Baroque/Default regions)." (1271–1273) — *a count*.
+212. "7 UNCLEAR rows for user adjudication." (1273) — *a count*.
+213. "**O-21 (ENGAGE ARC #3b — the GateA promotion-unification BUILD event DELIVERED, 2026-07-06; `cowork_gateA_unification_design.md` + `records/cc/reports/cc_engage_gateA_unification_build_report.md`; feat `200681a855`).**" (1276–1277) — *a label with its provenance*.
+214. "Both stops green (batch 52/24/52 set-diff empty; robust sandwich identity-PASS, +0/-0, class-(b)&(a) dur Δ+0); suites 1101/53+4skip/11 (no golden refresh); committed corpus + robust-stop reference untouched (scratch)." (1286–1288) — *test counts*.
+215. "**O-20 (ENGAGE ARC #4 — the INFORMATION-LOSS audit, read-only grounded catalogue, 2026-07-06; `cowork_information_loss_audit.md` + `records/cc/reports/cc_engage_information_loss_audit_report.md`).**" (1290–1291) — *a label with its provenance*.
+216. "Principle #12 made systematic: a static sweep of the load-bearing surfaces (bass · spelling · distinct alternatives · preserved uncertainty, `cowork_functional_analysis_research_grounding.md`) for the a–i(+) loss forms, every hit grounded at code and classified on the user's central axis (OK-provisioned / DEFECT-lost / DEFECT-should-already / UNCLEAR; ambiguous consumer-status ⟹ UNCLEAR, never guessed, #1)." (1291–1295) — *an account of an audit's method*.
+217. "Four parallel read-only tracing passes, every candidate CC-verified at code." (1295–1296) — *an account of an audit's method*.
+218. "**11 catalogued sites: 2 DEFECT-LOST, 0 SHOULD-ALREADY, 7 OK-provisioned, 3 UNCLEAR** (+2 LIVE-path overwrite-on-recompute sites considered and ruled OK; +2 new taxonomy forms recorded)." (1296–1297) — *a count*.
+219. "**SHOULD-ALREADY empty** is itself informative (substrate cleanly provisioned, not mis-wired; the margin-vs-sigmoid gate is a ratified D-L3a deferral, not a gap)." (1310–1311) — *a count and its reading*.
+220. "READ-ONLY: no `src/`/corpus/build/fix; both stops green by construction; suites unchanged." (1318–1319) — *the document's account of itself*.
+221. "**O-19 (ENGAGE ARC #3 — the GateA promotion-unification design/scoping pass, 2026-07-06; `cowork_gateA_unification_design.md` + `records/cc/reports/cc_engage_gateA_unification_design_report.md`).**" (1321–1322) — *a label with its provenance*.
+222. "Snapshot reach = none (no overlap with the 11-stem snapshot corpus)." (1330) — *a count*.
+223. "All Layer 4, in-layer; nothing cross-layer." (1340–1341) — *the document's account of the design's scope*.
+224. "No `src`/corpus/build/push-of-behavior-change." (1343) — *the document's account of itself*.
+225. "**O-19 (ENGAGE ARC #12 — the joint key↔chord step's benefit MEASURED = it barely pays, and not at all on its scoped population, 2026-07-07, session 35; `records/cc/reports/cc_engage_stage3_joint_measure_report.md` + data `tools/reports/joint_probe_measure.json`).**" (1345–1347) — *a label with its provenance*.
+226. "Benefit vs the DCML root by the SHARED a8 substrate (`_dcml_time_spans`/`_active_index_at`), same as the robust stop (#1)." (1356–1357) — *an account of the measurement's method*.
+227. "**#3:** no new surprise — the design's owed-2 predicted "small"; the measurement sharpens it downward and grounds WHY." (1367–1368) — *the document's account of itself*.
+228. "Both stops green **by construction** (production byte-identical — 12/12 corpus stems reproduce committed `.ours.json`; no `src/`, no build of the joint step, no fit; no golden refresh)." (1369–1371) — *the document's account of itself*.
+229. "Pushed fork-only." (1371) — *provenance*.
+230. "**O-18 (ENGAGE ARC #2 — the C3 genuinely-coupled key↔chord population MEASURED = UN-COMPUTABLE, 2026-07-06, session 25; `records/cc/reports/cc_engage_c3_measurement_report.md` + `cowork_fb_redesign_design.md` §3.D-2).**" (1372–1373) — *a label with its provenance*.
+231. "The specific-research move (#5/#2) the O-17 surprise called for (#3): does F-B's override isolate a net-positive correction subpopulation on the C3 coupled minority?" (1373–1375) — *provenance, stating the question the pass asked*.
+232. "Read-only (no `src/`, no build, no telemetry, no corpus write, no θ retune)." (1375–1376) — *the document's account of itself*.
+233. "Both stops green **by construction** (zero `src/` touched ⟹ byte-identical to HEAD `712830210a` = batch 52/24/52 + robust sandwich identity-PASS)." (1398–1400) — *the document's account of itself*.
+234. "**O-17 (ENGAGE ARC #1 — the F-B fine-grain override REDESIGN design/scoping pass, 2026-07-06, session 24; `records/cc/reports/cc_engage_fb_redesign_design_report.md` + `cowork_fb_redesign_design.md`).**" (1402–1403) — *a label with its provenance*.
+235. "The engage arc's opener, read-only (no `src/`, no scoring value, no corpus write, no build, no θ retune — architectural design, moratorium-clear; NOT the D-FS θ closure, which Phase 3 already proved a dead end)." (1403–1405) — *provenance*.
+236. "**The ratified backlog pushed fork-only** (`ce509b0961..923f149561`, 76→0; `upstream` untouched)." (1405–1406) — *provenance, with commit identifiers*.
+237. "**Options** (each with layer/theory/projected-split/blast-radius/risk): disable-baseline (corr−harm 0, +756 recovery — the floor) · gate (degenerates to disable) · incumbent-repair (refuted, large surface) · **re-frame-annotate (§8 case-3 honest carry — 0 harm/0 corr + preserves the 1043 contradiction signals as uncertainty; CC's recommendation)** · re-frame-C3 (the correct long-run home = the §6-C3 joint-step minority; split UNKNOWN, needs a new measurement — flagged, not assumed)." (1418–1422) — *the options put for a ruling, named with their reasons*.
+238. "Both stops green (batch 52/24/52; robust sandwich identity-PASS; nothing here touches them)." (1427–1428) — *the document's account of itself*.
+239. "**O-16 (R10-b — the batch→robust stop handover MADE; STAGE-5 ARC CLOSED, 2026-07-06, session 23; `records/cc/reports/cc_stage5_r10b_ratification_report.md`).**" (1430–1431) — *a label with its provenance*.
+240. "The user's arc-closing ratification event on the R10-a surface." (1431) — *a restatement of Row 9.168*.
+241. "Docs + one-JSON-snapshot only — NO `src/`, NO scoring value, NO corpus write, NO build, NO push (outside the inference-fixing moratorium: this is regression-STOP infrastructure, not an analyzer change)." (1432–1433) — *the document's account of itself*.
+242. "**(i)** CLAUDE.md gate section rewritten to four blocks: (A) the robust-unit regression stop is now THE hard stop (granularity-robust union-of-boundaries, variant (b) DCML-only, duration-weighted; root governs, RN+key tracked; reference `tools/robust_stop/`; hard stop = class-(b) root-disagree DURATION non-increase per preset + mandatory explained run-diff; runnable `a8_rebaseline_measure.py`→`robust_stop_diff.py` ≈6 s; re-baseline discipline generalized from 2.2e); (B) the two-tier per-cell class policy preserved LIVE (all five guardrails + founding evidence `bwv272@4320`/`bwv289@20160`/`bwv291@17760`/`bwv387@10560` intact), now governing the robust unit's per-cell classification; (C) the batch 52/24/52 `stem@tick` sets + full L3-wiring/2.2e/corrected-parser history RELOCATED to a retrospective, marked superseded (under-counted true per-onset error ~15–56×); (D) caveats — cross-layer-budget (O1) kept LIVE, granularity caveat marked ✅ RESOLVED (R10-b delivers the mandated granularity-robust metric)." (1433–1442) — *a restatement of Row 9.169*.
+243. "**(ii)** The 2.2e KEY-column error corrected `68.19/64.52/67.77`→`68.13/64.43/67.50` in CLAUDE.md (block A) + the contradictory "reflects the a8 re-measure" sentence replaced with the byte-identity truth (Jazz key = the prior 64.43 exactly; identical inputs cannot move it)." (1443–1445) — *a restatement of Row 9.171*.
+244. "Repo-wide grep dispositioned: 1 live-normative corrected (CLAUDE.md), 1 historical design-log line annotated (this doc §2.2e-executed), the rest (O-15/STATUS logs, `tools/robust_stop/` README+manifest reproduce-status records, fit-ledger audit `key_pct` data, font-glyph false positives) left as history/data." (1445–1448) — *a restatement of Row 9.171, with a count*.
+245. "**(iii)** Batch sets frozen in BOTH forms: CLAUDE.md block (C) + machine-readable `tools/robust_stop/batch_stop_frozen_history.json` (set-equal to `characterise_bir_false.py` output AND to the CLAUDE.md sets, verified before write)." (1448–1450) — *a restatement of Row 9.170*.
+246. "**(iv)** `characterise_bir_false.py` → KEPT-AS-DIAGNOSTIC (R3)." (1450) — *a restatement of Row 9.172*.
+247. "**(v)** Both stops green at close (batch 52/24/52 set-diff empty ×3; robust sandwich identity-PASS +0/−0, class-(b) Δ=0 all presets)." (1450–1452) — *a restatement of Row 9.173*.
+248. "Corpus fingerprint-validated untouched (`c50002fee1`)." (1452) — *the document's account of itself*.
+249. "No src/corpus/build/push." (1452) — *the document's account of itself*.
+250. "**Roadmap R10 FIRED; §4.7 executed; the Stage-5 arc is CLOSED.**" (1452–1453) — *a restatement of Row 9.174*.
+251. "**The engage arc inherits: F-B redesign [1043/53/809] · §15-13 [5544, parked] · θ/map wiring · L1.5 surface map · GateA unification · the L5 inversion · tonicVote.**" (1453–1454) — *a restatement of Row 9.175*.
+252. "**O-15 (R10-a — the batch→robust stop handover surface ASSEMBLED, 2026-07-06, session 22z; `records/cc/reports/cc_stage5_r10_assembly_report.md`).**" (1455–1456) — *a label with its provenance*.
+253. "Measurement + draft only; NO normative doc change, NO committed value, NO corpus write, NO push — the §4.7 R10 decision surface is now assembled for the user's R10-b ratification (the handover itself: the CLAUDE.md gate rewrite, the batch-set freeze-as-history, firing roadmap R10)." (1456–1459) — *a restatement of Row 9.165, and the document's account of itself*.
+254. "**(ii) ★ THE KEY-COLUMN FINDING (CC-declared, user-ratified Option-1):** the a8 re-measure reproduces **root (63.36/62.37/63.25) and RN (44.58/42.40/44.41) EXACTLY**, but **key = 68.13/64.43/67.50 (the PRIOR baseline), NOT the 2.2e-recorded 68.19/64.52/67.77.**" (1464–1467) — *a restatement of Row 9.166*.
+255. "Jazz is the proof — byte-identical `.ours.json` (2.2e-proven) + WiR + git-unchanged key-path code since `c50002fee1` ⟹ Jazz key MUST equal 64.43 (measured 64.4321); the recorded 64.52 is unreproducible and self-contradictory ("an a8 re-measure over byte-identical inputs cannot move the figure")." (1467–1470) — *a defense* of Row 9.396.
+256. "**(v) `characterise_bir_false.py` → KEPT-AS-DIAGNOSTIC** (R3 pattern): its `validate_corpus_dir` is imported by the a8 instrument, so its load-bearing half cannot bit-rot into uselessness; only the per-region 52/24/52 enumeration freezes as history." (1488–1490) — *a restatement of Row 9.172*.
+257. "**(vi) The DRAFT CLAUDE.md gate-replacement text + the cost/practicality note** live in the report (report-only)." (1490–1491) — *a pointer*.
+258. "§4.7 R10 decision surface: ASSEMBLED; R10-b (the ratification + handover commit) is the remaining, arc-closing event." (1491–1492) — *a restatement of Rows 9.165 and 9.167*.
+259. "The Gate-K/Gate-L failure mode — a rule's founding cases silently absorbed upstream, leaving dead code undetected for weeks — existed because nothing measured rule liveness." (1494–1495) — *a defense* of Row 9.401.
+260. "(The per-gate a-priori question was empirical by nature — this item is the monitoring gap, which was not.)" (1499–1500) — *the document's account of itself*.
+261. "*QA record (runs on the full current text)." (1511) — *a label*.
+262. "(1) Self-QA against both writing-standard sections (qualified predicates; §0-before-use; one-sense-per-word) and against the sources read this session (A-8 report, C1 report, contract, census §8c, roadmap blocks, scoring model §1/§2/§4/§6, CLAUDE.md, lever register, L5 §15-13 via the audit)." (1511–1514) — *provenance*.
+263. "(2) An INDEPENDENT fresh-eyes adversarial audit (separate context, all sources re-verified at file level) — 20 findings: 2 HIGH (the Phase-0 sensitivity screen depended on the Phase-1 harness — fixed by moving sensitivity to Phase 1b and splitting the checkpoint into P0/P1; the held-out discipline contradicted the corpus-wide per-evaluation tripwire — fixed by scoping per-evaluation constraints to the fitting split and declaring the bounded adoption-time exception), 10 MED and 8 LOW (all folded: the class-(a) duration figures corrected to 3.5–3.9 % with the cell share stated separately; reliability maps re-attributed to C1 per the contract; Gate R excluded from the dissolution scope with its own §0 row; the "gate corpus" third sense renamed to "reference corpus"; Gates B/C/D's removal moved into the normative sections; the L5 §15-13 lever commissioned as family 4; D-4's noise-floor language replaced with an exact-comparison rule; the shared-scope evaluation cost declared; the production-path definition corrected to include the live rebuilt layers; insider handles given §0 rows or citations; the Default set-difference corrected to a two-case swap/four identities; the identity- form cite corrected to the ratified per-run semantics; the S-5 analogue test defined; the census §2/§6 placement deviation recorded)." (1514–1527) — *provenance*.
+264. "No audit finding was rejected." (1527) — *provenance*.
+265. "The audit's "verified clean" list covers every headline number against its source." (1527–1528) — *provenance*.
+266. "(3) A USER-CAUGHT gap folded after the audit (2026-07-04): the draft fitted per genre-named preset and never addressed the ratified idiom taxonomy — the style axis of fitted parameters." (1528–1530) — *provenance*.
+267. "Folded as constraint 4b + D-10 + the fit-target term (§0) + the manifest style-scope column (§4.1/§7) + the idiom-coverage risk (§11) + ask A-8ask; D-4/D-5 and §4.4/§4.5 re-expressed in fit-target terms; verified at source against `cowork_style_taxonomy_proposal.md` (RATIFIED 2026-06-30, StyleTag swap executed 2026-07-02) and contract §6 C4." (1530–1533) — *provenance*.
+268. "(4) A second USER refinement folded same day: the per-parameter style-TABLE model — parameter values as functions over the style coordinates with measured per-parameter dimensionality, decided by clustering per-stratum fitted optima (discrete borders where clusters are stable, continuous interpolation where the spread is even), anchor-based estimation." (1533–1536) — *provenance*.
+269. "Folded as D-11 + §4.4a + the three §0 rows (style coordinates / stratum / style-response structure) + the clustering-noise risk (§11) + ask A-9ask." (1536–1538) — *provenance*.
+270. "(5) A third USER-prompted pass (2026-07-04, "how do the coordinates really relate to the parameters — is the model supported by research?"): D-11 gained refinements iv–vii (per-parameter coordinate selection incl. the axis-2 texture class; hierarchical shrinkage as the estimation refinement; family-dependent mixing validity — additive weights mix linearly, thresholds do not; within-piece time-varying mixture weights), the §0 style-coordinates row was extended, and §14 gained the verified external precedents (key/genre-dependent chord-transcription HMMs; the rock-vs-common-practice corpus statistics; mode-conditioned key profiles; MoE/adaptation machinery; the joint-corpus counter-nuance).*" (1538–1545) — *provenance*.
+
+#### The arithmetic at this member
+
+- Rows written: **403** (9.1 to 9.403).
+- Rows split into two claims, **+1 each**: 9.4, 9.8, 9.12, 9.16, 9.17, 9.34, 9.51, 9.54, 9.63, 9.65, 9.67, 9.68, 9.71, 9.153, 9.157, 9.191, 9.195, 9.199, 9.212, 9.223, 9.242, 9.259, 9.263, 9.266, 9.269, 9.272, 9.300, 9.313, 9.319, 9.322, 9.331, 9.332, 9.344, 9.347, 9.348, 9.361, 9.402, 9.403 — thirty-eight rows, **+38**.
+- Rows split into three claims, **+2 each**: 9.50, 9.61, 9.62, 9.64, 9.83, 9.115, 9.160, 9.227, 9.298, 9.349 — ten rows, **+20**.
+- Rows split into four claims, **+3 each**: 9.221, 9.228 — two rows, **+6**.
+- Rows split into five claims, **+4 each**: 9.121 — one row, **+4**.
+- **Outgoing statements placed: 403 + 38 + 20 + 6 + 4 = 471.**
+- Listed under *not a statement*: **270**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 471 dispositions over
+  471 statements.
+- **UNPLACED at this member: 26** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 12 | 9.2, 9.4(i), 9.8(i), 9.10, 9.12(i), 9.50(i), 9.54(i), 9.63(i), 9.67(i), 9.83(ii), 9.221(iii), 9.361(ii) |
+| ADOPTED — proposed | 27 | 9.29, 9.34(ii), 9.35, 9.36, 9.47, 9.50(iii), 9.51(i), 9.61(ii), 9.62(i), 9.63(ii), 9.64(i), 9.65(i), 9.68(ii), 9.76, 9.115(i), 9.128, 9.160(i), 9.191(ii), 9.195(i), 9.196, 9.199(ii), 9.200, 9.201, 9.211, 9.221(i), 9.223(i), 9.368 |
+| RELOCATED | 75 | 9.4(ii), 9.5, 9.6, 9.7, 9.8(ii), 9.9, 9.11, 9.12(ii), 9.14, 9.21, 9.22, 9.23, 9.40, 9.48, 9.50(ii), 9.54(ii), 9.55, 9.56, 9.57, 9.59, 9.60, 9.62(iii), 9.64(ii), 9.67(ii), 9.68(i), 9.69, 9.70, 9.71(i), 9.73, 9.83(i), 9.84, 9.85, 9.87, 9.88, 9.102, 9.105, 9.106, 9.108, 9.109, 9.110, 9.115(iii), 9.147, 9.149, 9.153(ii), 9.190, 9.191(i), 9.192, 9.197, 9.202, 9.203, 9.206, 9.218, 9.223(ii), 9.230, 9.231, 9.232, 9.233, 9.234, 9.242(ii), 9.243, 9.246, 9.268, 9.271, 9.296, 9.297, 9.298(i), 9.298(ii), 9.313(ii), 9.361(i), 9.388, 9.395, 9.399, 9.400, 9.401, 9.402(ii) |
+| QUARANTINED | 113 | 9.3, 9.15, 9.16(i), 9.17(i), 9.18, 9.25, 9.27, 9.32, 9.34(i), 9.43, 9.44, 9.46, 9.49, 9.64(iii), 9.75, 9.121(v), 9.123, 9.124, 9.125, 9.138, 9.143, 9.144, 9.145, 9.146, 9.150, 9.151, 9.152, 9.154, 9.155, 9.157(i), 9.199(i), 9.236, 9.240, 9.242(i), 9.253, 9.255, 9.257, 9.258, 9.259(ii), 9.260, 9.261, 9.263(ii), 9.264, 9.265, 9.266(ii), 9.269(ii), 9.272(ii), 9.275, 9.280, 9.282, 9.283, 9.284, 9.285, 9.288, 9.289, 9.290, 9.291, 9.295, 9.300(i), 9.301, 9.302, 9.303, 9.304, 9.305, 9.308, 9.309, 9.310, 9.311, 9.312, 9.313(i), 9.318, 9.319(i), 9.319(ii), 9.322(i), 9.324, 9.331(i), 9.332(ii), 9.333, 9.334, 9.337, 9.339, 9.340, 9.341, 9.343, 9.344(i), 9.347(i), 9.347(ii), 9.348(i), 9.349(i), 9.349(ii), 9.349(iii), 9.352, 9.354, 9.357, 9.358, 9.359, 9.360, 9.364, 9.365, 9.366, 9.374, 9.375, 9.376, 9.377, 9.379, 9.381, 9.382, 9.383, 9.386, 9.387, 9.390, 9.391, 9.402(i) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 218 | 9.1, 9.13, 9.16(ii), 9.17(ii), 9.19, 9.20, 9.24, 9.26, 9.28, 9.37, 9.42, 9.45, 9.51(ii), 9.52, 9.53, 9.58, 9.62(ii), 9.65(ii), 9.66, 9.71(ii), 9.72, 9.74, 9.77, 9.78, 9.79, 9.80, 9.81, 9.82, 9.83(iii), 9.86, 9.89, 9.90, 9.91, 9.92, 9.93, 9.94, 9.95, 9.96, 9.97, 9.98, 9.99, 9.100, 9.101, 9.103, 9.104, 9.107, 9.111, 9.112, 9.113, 9.114, 9.115(ii), 9.116, 9.117, 9.118, 9.119, 9.120, 9.121(i), 9.121(ii), 9.121(iii), 9.121(iv), 9.122, 9.126, 9.127, 9.129, 9.130, 9.131, 9.132, 9.133, 9.134, 9.135, 9.136, 9.137, 9.139, 9.140, 9.141, 9.142, 9.148, 9.153(i), 9.156, 9.157(ii), 9.158, 9.159, 9.161, 9.162, 9.163, 9.164, 9.165, 9.166, 9.167, 9.168, 9.169, 9.170, 9.171, 9.172, 9.173, 9.174, 9.175, 9.176, 9.177, 9.178, 9.179, 9.180, 9.181, 9.182, 9.183, 9.184, 9.185, 9.186, 9.187, 9.188, 9.189, 9.193, 9.194, 9.195(ii), 9.198, 9.204, 9.205, 9.207, 9.208, 9.209, 9.210, 9.212(i), 9.212(ii), 9.213, 9.214, 9.215, 9.216, 9.217, 9.219, 9.220, 9.221(ii), 9.221(iv), 9.222, 9.224, 9.225, 9.229, 9.235, 9.237, 9.238, 9.241, 9.244, 9.245, 9.247, 9.248, 9.249, 9.250, 9.251, 9.252, 9.254, 9.256, 9.259(i), 9.262, 9.263(i), 9.266(i), 9.267, 9.269(i), 9.270, 9.272(i), 9.273, 9.274, 9.276, 9.277, 9.278, 9.279, 9.281, 9.286, 9.287, 9.292, 9.293, 9.294, 9.298(iii), 9.299, 9.300(ii), 9.306, 9.307, 9.314, 9.316, 9.320, 9.321, 9.325, 9.326, 9.327, 9.328, 9.329, 9.335, 9.336, 9.338, 9.342, 9.344(ii), 9.345, 9.346, 9.348(ii), 9.350, 9.351, 9.353, 9.355, 9.356, 9.362, 9.363, 9.367, 9.369, 9.370, 9.371, 9.372, 9.373, 9.378, 9.380, 9.384, 9.385, 9.389, 9.392, 9.393, 9.394, 9.396, 9.397, 9.398, 9.403(i), 9.403(ii) |
+| UNPLACED | 26 | 9.30, 9.31, 9.33, 9.38, 9.39, 9.41, 9.61(i), 9.61(iii), 9.160(ii), 9.160(iii), 9.226, 9.227(i), 9.227(ii), 9.227(iii), 9.228(iv), 9.228(v), 9.228(vi), 9.228(vii), 9.239, 9.315, 9.317, 9.322(ii), 9.323, 9.330, 9.331(ii), 9.332(i) |
+| **Total** | **471** | — |
+
+**The arithmetic closes at this member**: 12 + 27 + 75 + 113 + 0 + 218 + 26 = 471, against 471 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 25 |
+| DIFFERS | 24 |
+| THE DERIVATION IS SILENT | 423 |
+| **Total verdicts** | **472** |
+
+*(472 verdicts over 471 statements because one statement names two derived statements: 9.332(i),
+L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.160(iii), 9.209, 9.300(ii), 9.315, 9.317, 9.318, 9.319(i), 9.322(ii), 9.323, 9.324, 9.330, 9.331(i), 9.331(ii), 9.332(i), 9.333, 9.334, 9.349(i), 9.390.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 9 is empty, so no statement of
+  this member lies inside the home of a decision ruled L2's own.
+- **SEEN rows: none.** None of the eight identities 1(c) names — D-002, D-095, D-223, D-261, D-275, D-279,
+  D-322, D-393 — is among the identities the artifact places in position 9.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S31 (entry 1) — 9.332; L2-S38 (entry 6) — 9.2, 9.3, 9.4, 9.8, 9.10, 9.11, 9.12, 9.49, 9.50, 9.54, 9.55, 9.57, 9.63, 9.67, 9.83, 9.84, 9.85, 9.87, 9.102, 9.108, 9.160, 9.206, 9.209, 9.221, 9.300, 9.332; L2-S42 (entry 4) — 9.361; L2-S45 (entry 4) — 9.317, 9.318. No row of
+  this member names L2-S12, L2-S17, L2-S22 or L2-S43.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -17111,6 +22325,16 @@ the row says which.
   row.)*
 - Row 6.127(iii) — that a confidence is compared across layers only in the contract's declared frames.
   *(L2-S40 travels with it.)*
+- Rows 9.22 and 9.23, with Rows 9.149 and 9.197 — the two admissible confidence classes, and the reliability map: a
+  fitted monotone map from a margin-class confidence to empirical correctness, per layer, decision and fit target.
+  *(L2-S40 travels with Rows 9.22, 9.23 and 9.149.)*
+- Row 9.62(iii) — calibration measured per preset or idiom where the idiom changes the scorer's behavior.
+- Rows 9.69 and 9.70 — that calibration re-maps confidences and never prunes the alternatives, a reliability map being a
+  monotone re-labeling and not a filter.
+- Rows 9.147, 9.246 and 9.313(ii) — conformal prediction as a complement to the reliability maps, not a replacement.
+- Rows 9.153(ii), 9.218 and 9.242(ii) — that a non-monotone curve is an upstream finding and never a mapping target, its
+  fix belonging to its own layer.
+- Row 9.361(i) — that an honest unknown carried is information and not a loss.
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -17173,10 +22397,50 @@ the row says which.
 - Row 7.122 — travelling with Row 6.162: the layer judged by whether its genuine errors drop.
 - Row 7.123 — that a defensible modal reading the major/minor ground truth cannot represent is not an error to
   optimize away.
+- Rows 9.4(ii), 9.57, 9.102 and 9.206 — the fit's objective: duration-weighted root agreement on the robust unit
+  under variant (b), root governing. *(L2-S38 travels with them.)*
+- Rows 9.5, 9.6, 9.7 and 9.14 — the robust unit, variant (b), the human annotations as its ground truth, and the batch
+  metric's case class.
+- Rows 9.8(ii), 9.11, 9.55, 9.87, 9.190 and 9.234 — travelling with Row 1.22(ii): the validation pool, used to validate
+  and check and never to shape a shipped value, and the per-style validation sweep over it. *(L2-S38 travels with Rows
+  9.11, 9.55 and 9.87.)*
+- Row 9.9 — the frozen reference corpus.
+- Rows 9.12(ii), 9.67(ii) and 9.85 — the held-out split, scored only at declared checkpoints, an item demoted only by
+  recorded decision. *(L2-S38 travels with Row 9.85.)*
+- Row 9.21 — travelling with Row 6.10: the two-tier failure classes.
+- Rows 9.40 and 9.48 — the stratum, and the sensitivity measurement.
+- Row 9.50(ii) — that the fit runs under hard regression constraints.
+- Rows 9.54(ii) and 9.84 — the fitting pool's members, and the fitting split that shapes the values. *(L2-S38 travels
+  with Row 9.84.)*
+- Row 9.56 — that measurement ground truth is not a shipped value.
+- Rows 9.59, 9.105, 9.399 and 9.400 — travelling with Row 5.261: the class-(b) root-disagree duration non-increase as the
+  hard stop, with its explained run-level difference, and the successor check that runs it.
+- Rows 9.60 and 9.243 — travelling with Row 6.149: the two-tier class policy carried over, class-(a) churn kept visible.
+- Rows 9.64(ii) and 9.223(ii) — presets as regression surfaces, the execution-and-regression axis.
+- Rows 9.68(i) and 9.202 — travelling with Row 6.60: infrastructure increments byte-identical with proof, the sandwich
+  around every increment.
+- Rows 9.71(i), 9.73 and 9.115(iii) — the pinned measurement tools as the fit's objective and calibration reader,
+  re-implementing no scoring or comparison.
+- Rows 9.83(i) and 9.88 — music21 adjudicating nowhere in the objective, and the measurement-only adjudication.
+- Rows 9.106 and 9.203 — every rate naming its denominator, key-parse failures reported apart, uncovered cells unscored.
+- Row 9.108 — the declared held-out exception at adoption. *(L2-S38 DIFFERS at the row.)*
+- Row 9.109 — root, Roman numeral and key tracked beside each other, a sharp trade surfaced.
+- Row 9.110 — class-(a) cells kept in the objective at full weight.
+- Rows 9.191(i) and 9.192 — a negative per-style difference surfaced to the user with its size, no numeric threshold.
+- Rows 9.230, 9.231, 9.232 and 9.233 — travelling with Row 6.155: the per-increment acceptance, the harness's
+  self-tests, the per-rule proof obligations and the calibration tests.
+- Rows 9.268 and 9.271 — travelling with Row 6.60: the carried alternatives inside the byte-identity acceptance
+  contract, and inertness measured on the full output surface.
+- Rows 9.296, 9.297, 9.298(i) and 9.298(ii) — the frozen corpus outside version control, byte-untouched claims resting
+  on fingerprint validation, and a snapshot of the outgoing corpus before every re-baseline.
+- Row 9.388 — a stale manifest on measured dumps, to be re-manifested or validated.
+- Row 9.395 — the committed robust-unit reference and its run enumerations.
+- Rows 9.401 and 9.402(ii) — retained correction rules carrying liveness evidence, their firing counts re-measured at
+  every adoption.
 
 *(Member 2 relocates no row. Member 3 relocates one, Row 3.38, above. Member 5's relocations are the rows
 numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows numbered 7.n. Member 8 relocates
-no row.)*
+no row. Member 9's relocations are the rows numbered 9.n above.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -17600,6 +22864,99 @@ rows here, each with its audit question, in the commit that tabulates it.
   upper-voice re-decode measured, and is that corpus established?
 - Row 8.186(ii) — does the recorded measurement of the shelved joint key-and-chord step reproduce at the current
   commit, and on which arm and corpus was it taken?
+- Row 9.3, with Row 9.49 — which numeric values of the scoring pipeline at the current commit were chosen by hand, of
+  which kinds, and on which path are they read?
+- Row 9.15, with Rows 9.16(i), 9.17(i), 9.354 and 9.402(i) — which post-scoring correction rules does the chord scorer
+  carry at the current commit, and on which path are they reached?
+- Row 9.18 — what does the bass-chord-tone guard test inside template scoring at the current commit, and on which path
+  does it act?
+- Rows 9.25 and 9.319(ii) — travelling with Row 6.190(iv): against which carried quantity does the override threshold
+  scale, and does any override run on the production arm?
+- Rows 9.27 and 9.349(ii) — travelling with Row 5.213(i): is the dormant function layer's internal combined value
+  unbounded, and does the recorded observation reproduce?
+- Rows 9.32, 9.34(i) and 9.64(iii) — travelling with Row 6.62: does the dormant decoder read the style preset, and does
+  any inference on the production arm read it?
+- Rows 9.43, 9.44 and 9.357 — travelling with Row 3.14: which path produces the committed chord reading on each surface
+  in the default configuration?
+- Row 9.46, with Row 9.75 — which constants of the scoring pipeline does each consuming path read at the current
+  commit?
+- Row 9.121(v) — does the tone-weight family fix one factor as the reference unit of its relative weights, and is the
+  inversion-context cap non-binding at its value, at the current commit?
+- Rows 9.123, 9.124, 9.125, 9.255, 9.257 and 9.258 — travelling with Row 6.203: does the recorded fit of the power-chord
+  penalty reproduce at the current commit, on which fit and objective?
+- Row 9.138, with Row 9.305 — does the recorded population of slices on which both readings are licensed, where the
+  dormant resolver falls through the licensing test, reproduce at the current commit?
+- Row 9.143, with Rows 9.144, 9.145, 9.242(i), 9.308, 9.309, 9.310 and 9.313(i) — do the recorded reliability curves and
+  fitted maps of the dormant layers' confidences reproduce at the current commit, and does anything on the production
+  arm read a map?
+- Rows 9.146, 9.157(i), 9.312, 9.387 and 9.391 — travelling with Row 8.18(i): does the recorded count of the fine-grain
+  override's corrections and harms reproduce at the current commit, on which decode?
+- Row 9.150 — travelling with Row 7.13(i): how does the dormant key decoder compute its sequence margin, and what reads
+  it?
+- Row 9.151 — travelling with Row 6.22(iv): what confidence does the dormant decoder attach to a slice, and from which
+  components is it computed?
+- Row 9.152 — travelling with Row 5.212: does the dormant function layer publish a boundary form of its confidence, and
+  how is it computed?
+- Row 9.154 — travelling with Row 5.59: does the dormant cadence detector cast a weighted tonic vote per region, and
+  what does the vote change?
+- Row 9.155, with Row 9.311 — how is the texture strength profile distributed over the corpus at the current commit,
+  and does anything read it?
+- Row 9.199(i) — is the corpus regeneration deterministic at the current commit, on the production arm, and what
+  establishes it?
+- Row 9.236 — travelling with Row 1.28: is the shipped fitted set one Bach idiom fit, and through which presets is it
+  delivered?
+- Row 9.240 — travelling with Row 6.150: does the recorded apportionment of the standing root-error set reproduce at the
+  current commit, given the recorded correction that over-grabbed segmentation corrupts the bass and so overstates the
+  function-only share?
+- Row 9.253 — does the tuning bridge read any parameter of the scoring pipeline at the current commit?
+- Row 9.259(ii), with Rows 9.260, 9.261, 9.265, 9.266(ii), 9.272(ii), 9.275, 9.288, 9.289, 9.290 and 9.291 — does the
+  recorded joint fit of the coupled bass, root and inversion constants reproduce at the current commit, and which of its
+  values ship, on which path?
+- Row 9.263(ii), with Rows 9.264, 9.280, 9.282, 9.283, 9.284, 9.285 and 9.295 — does the batch tool deliver the
+  bass-root bonus and the step weight per preset carrier at the current commit, and which carrier's values does the
+  production path read?
+- Row 9.269(ii), with Rows 9.352, 9.358, 9.364, 9.365 and 9.366 — is Gate A winner-inert and alternatives-active at the
+  current commit, and do the two promotion idioms still differ in the carry they leave?
+- Row 9.300(i), with Rows 9.301, 9.302, 9.303 and 9.304 — do the recorded full-range ladders of the three surviving
+  correction-block margins reproduce at the current commit, and on which path do those margins act?
+- Row 9.318 — travelling with Row 8.161: what does the dormant function layer carry beside its open mark, and is any of
+  it an internal scoring quantity?
+- Rows 9.319(i) and 9.333 — travelling with Rows 8.84 and 8.79, and through them with Row 5.158: does the dormant
+  function layer override a confident Layer 4 commit through the selection machinery, and does it run?
+- Rows 9.322(i) and 9.382 — travelling with Row 5.327: does the dormant joint re-key pass override the chosen key
+  without updating the forward-carry, and is it gated off by default?
+- Rows 9.324 and 9.334 — travelling with Row 8.86: does the dormant function layer publish any margin of its selection
+  against the best reading on a different root, and in what class?
+- Row 9.331(i) — travelling with Row 8.41: on what axis does the dormant chord decoder carry its alternatives, and are
+  they deduplicated by root, by voicing or by neither?
+- Row 9.332(ii) — travelling with Row 5.144: does the dormant resolver decide a transition slice by the
+  licensed-progression test, as described?
+- Rows 9.337, 9.339, 9.340 and 9.341 — travelling with Row 8.39: does the recorded fan-out of the carried chord readings
+  — their count and their count of distinct roots per slice — reproduce at the current commit, on which substrate?
+- Rows 9.343 and 9.349(iii) — travelling with Row 7.111(ii): where do the dormant key decoder's change-cost amounts come
+  from at the current commit, and have they been fitted?
+- Row 9.344(i) — travelling with Row 8.125: how many separate computations of the best reading on a different root
+  exist at the current commit, and where?
+- Rows 9.347(i) and 9.348(i) — travelling with Row 6.192(ii): how many alternatives does the dormant decoder carry, by
+  what cap, and are the spelling-pinned symmetric siblings excluded at the current commit?
+- Row 9.347(ii) — travelling with Row 8.119: does the legacy pedal pass exist at the current commit, on which arm does
+  it run, and what does it test to enter?
+- Row 9.349(i) — travelling with Row 8.107: at how many sites, and in which layers, does the code at the current commit
+  decide a chord's quality from the key?
+- Row 9.359 — travelling with Row 3.27: how many readers of the notated spelling are there in the code, and which run?
+- Row 9.360 — at the current commit, which carry surface would the function layer read, does the joint re-key pass
+  leave the chord and its alternatives ranked under the old key, and does re-deriving the bass when regions coalesce
+  lose information?
+- Rows 9.374, 9.375, 9.376 and 9.377 — travelling with Row 8.186(ii): does the recorded measurement of the shelved joint
+  key-and-chord step reproduce at the current commit, and on which arm and corpus was it taken?
+- Row 9.379 — travelling with Row 8.183(ii): on which corpus, and at what size, was the agreement between the carried
+  alternative and the upper-voice re-decode measured, and is that corpus established?
+- Row 9.381, with Row 9.383 — is the trigger for the coupled key-and-chord minority computed anywhere at the current
+  commit, and could either of its components be read from what is computed?
+- Row 9.386 — travelling with Row 8.74(i): does the recorded finding that the licensed-progression signal is
+  uncorrelated with root correctness reproduce at the current commit, on which decode?
+- Row 9.390 — travelling with Row 6.11: does the fine-grain override exist on any arm, does it run, and which class of
+  root error does it change at the current commit?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -17651,6 +23008,21 @@ words.
   through fitted values.
 - Row 7.67 — travelling with Row 6.64: that L2 not detect edits to the notated record, staleness being its
   caller's decision.
+- Row 9.29, with Row 9.63(ii) — that a value of L2 fitted for a style with no empirical ground truth be published marked
+  empirically unvalidated until that ground truth exists.
+- Row 9.47, with Rows 9.50(iii) and 9.68(ii) — that a fitted value of L2 change the published reading only through a
+  user-ratified, revertible adoption event with a measured before and after.
+- Row 9.115(i), with Rows 9.199(ii) and 9.200 — that L2's fit be deterministic, two identical runs producing
+  byte-identical fit records.
+- Row 9.368 — that L2's rival list never carry a near-duplicate of the principal reading in place of a distinct
+  alternative reading.
+- Rows 9.34(ii), 9.35, 9.36, 9.61(ii), 9.62(i), 9.64(i), 9.65(i), 9.128, 9.191(ii), 9.211, 9.221(i) and 9.223(i) —
+  travelling with Row 1.25: that L2's weights be fitted per idiom and never adjusted for a named preset.
+- Rows 9.76, 9.195(i), 9.196 and 9.201 — travelling with Row 1.23: that L2's fit record state, for every fitted value,
+  which pool fitted it and which pool validated it.
+- Row 9.51(i) — travelling with Row 1.3: that no layer of after-the-fact corrections be laid over L2's decided reading.
+- Row 9.160(i) — travelling with Row 1.1(i): that every term's form be derived from established music theory or
+  published research before any value is attached to it.
 
 **DIFFERS.**
 
@@ -17972,6 +23344,45 @@ words.
   relative to each candidate reading's chord, and never by a detector that runs first."*
 - Row 8.107 — the outgoing quality is decided from the key at *"≥4 sites / 3 layers"*; L2-S27 says *"L2 decides
   the chord as degree, quality, figure and applied target, read against the span's tonality"*.
+- Rows 9.3, 9.49 and 9.300(ii) — the outgoing constant is *"A numeric value in the scoring pipeline that was chosen by
+  hand"*, and a surviving margin *"stays hand-set"*; L2-S38 is falsified *"if any weight is hand-set in the shipped
+  model"*.
+- Row 9.108 — the outgoing adoption-time checks *"necessarily read held-out-score outcomes"*; L2-S38 is falsified *"if
+  the evaluation data overlap the fit data"*.
+- Row 9.160(ii) — the outgoing licensed-progression grammar is *"spec-owned"*, a preference fitted only *"among
+  licensed readings"*; L2-S34's progression term is on adjacent chords *"read as degrees in their tonalities"*, and
+  *"Each family's weights are fitted"*.
+- Row 9.160(iii) — the outgoing text leaves unfitted *"any value whose Phase-0 row names a ratified structural
+  rationale"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+- Row 9.209 — the outgoing default optimizer is *"coordinate / pattern search"*; L2-S38's defense names *"minimum
+  error-rate training over a candidate list"* as *"The published method"*.
+- Rows 9.25 and 9.390 — travelling with Row 6.11: the outgoing override *"fires if and only if the contradiction
+  strength exceeds θ times the incumbent confidence"*; L2-S35 normalizes *"over whole readings"*.
+- Row 9.315 — travelling with Row 8.135: the outgoing pedal detection is *"a reader over the decoder's governed
+  carry"*; L2-S23 makes the assignments inside the candidate score, *"never by a detector that runs first"*.
+- Rows 9.317 and 9.318 — travelling with Rows 8.155 and 8.161: the outgoing annotation's pair of values *"become the
+  open-mark payload"*; L2-S45 says *"No term value, weight, partial candidate score or other intermediate quantity
+  crosses."*
+- Row 9.319(i) — travelling with Row 8.84: *"The reading stays the L4 commit"*; L2-S11 decides the chord *"in the one
+  decision"*.
+- Row 9.322(ii) — travelling with Row 8.113: the outgoing design adds *"a bidirectional (key,chord) beam"*; L2-S36 says
+  *"No beam that discards readings on partial candidate scores is admitted."*
+- Row 9.323 — travelling with Row 8.96: the outgoing joint step is *"a BOUNDED coupling step"*, *"not a unified hidden
+  state"*; L2-S11 says *"It is never decided before the chord or after it."*
+- Rows 9.324 and 9.334 — travelling with Row 8.86: the outgoing text calibrates *"a declared Class-M joint-decision
+  margin"* and a *"joint-consistency selection margin"*; L2-S40's mass is *"the probability the fitted,
+  whole-reading-normalised model (L2-S35) assigns"*.
+- Rows 9.330, 9.331(i) and 9.331(ii) — travelling with Rows 8.48(i), 8.41 and 8.58: the outgoing carry is on *"the
+  distinct-root axis"*, its cap on voicings and *"NOT roots"*; L2-S40's span-rival mass is *"the total mass of all whole
+  readings that contain that span, with that start, that end and that reading of it"*.
+- Row 9.332(i) — travelling with Row 8.77: *"bass/inversion + spelling + key-consistency + cadence decide"*, and
+  licensed progression *"is demoted to a tie-break"*; L2-S31's candidate score is *"a sum over its spans of span terms,
+  plus a sum over adjacent span pairs of pair terms"*, and L2-S38 says *"Every weight of the candidate score is fitted
+  from annotated music, not set by hand."*
+- Row 9.333 — travelling with Row 8.79: *"F-B reconciled = annotate-not-override"*; L2-S35 says *"No span's
+  alternatives are normalised against each other alone."*
+- Row 9.349(i) — travelling with Row 8.107: quality-from-key is *"scattered across ≥4 sites/3 layers"*; L2-S27 says *"L2
+  decides the chord as degree, quality, figure and applied target, read against the span's tonality"*.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -17991,10 +23402,11 @@ own distribution table in §6.
 | 6 | 272 | 73 | 6 | 21 | 124 | 0 | 17 | 31 | 111 |
 | 7 | 224 | 53 | 2 | 20 | 103 | 0 | 22 | 24 | 89 |
 | 8 | 212 | 17 | 0 | 0 | 111 | 0 | 57 | 27 | 93 |
-| **Total** | **1338** | **282** | **33** | **142** | **534** | **0** | **191** | **156** | **469** |
+| 9 | 471 | 12 | 27 | 75 | 113 | 0 | 218 | 26 | 270 |
+| **Total** | **1809** | **294** | **60** | **217** | **647** | **0** | **409** | **182** | **739** |
 
-**The arithmetic check:** 282 + 33 + 142 + 534 + 0 + 191 + 156 = 1338, against 1338 statements placed (72 +
-65 + 40 + 36 + 417 + 272 + 224 + 212).
+**The arithmetic check:** 294 + 60 + 217 + 647 + 0 + 409 + 182 = 1809, against 1809 statements placed (72 +
+65 + 40 + 36 + 417 + 272 + 224 + 212 + 471).
 
 **Current-text verdicts.**
 
@@ -18008,9 +23420,10 @@ own distribution table in §6.
 | 6 | 84 | 112 | 77 | 273 |
 | 7 | 58 | 87 | 80 | 225 |
 | 8 | 19 | 59 | 141 | 219 |
-| **Total** | **399** | **420** | **549** | **1368** |
+| 9 | 25 | 24 | 423 | 472 |
+| **Total** | **424** | **444** | **972** | **1840** |
 
-**The arithmetic check:** 399 + 420 + 549 = 1368 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219).
+**The arithmetic check:** 424 + 444 + 972 = 1840 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472).
 
 ## 14. The derivation's independence record, relayed
 
@@ -18041,4 +23454,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 8 are done, positions 9 to 62 are untouched.
+  untouched: positions 1 to 9 are done, positions 10 to 62 are untouched.
