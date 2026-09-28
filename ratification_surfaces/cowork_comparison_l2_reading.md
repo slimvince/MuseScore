@@ -50,7 +50,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 9 | `cowork_stage5_fitter_design.md`, whole | **DONE** (§6.9) |
 | 10 | `cowork_joint_estimator_factorization.md`, whole | **DONE** (§6.10) |
 | 11 | `cowork_score_census.md`, whole | **DONE** (§6.11) |
-| 12 | `cowork_prefit_gates.md`, whole | NOT YET TABULATED |
+| 12 | `cowork_prefit_gates.md`, whole | **DONE** (§6.12) |
 | 13 | `docs/nct_detection_design.md`, whole | NOT YET TABULATED |
 | 14 | `cowork_phase5b_l4_build_plan.md`, whole | NOT YET TABULATED |
 | 15 | `cowork_engage_arc_plan.md`, whole | NOT YET TABULATED |
@@ -104,13 +104,13 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 11 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 12 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
-`cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole, and
-`cowork_score_census.md`, whole.**
+`cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
+`cowork_score_census.md`, whole, and `cowork_prefit_gates.md`, whole.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 11 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 12 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -124,9 +124,9 @@ tabulated positions 6, 7 and 8, each whole and in its own commit, and stopped at
 position 8 under that dispatch's capacity judgment (its Task 1(h)): position 9 was judged not finishable whole
 in the context that remained, and was not opened. The fourth batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md`, resumed at position 9
-and tabulated positions 9, 10 and 11, each whole and in its own commit. **Positions 12 to 62 are UNTOUCHED**:
-not read for tabulation, not quoted, not counted and not placed, and nothing in them is partly worked. **The
-next writing resumes at position 12**, `cowork_prefit_gates.md`, whole. §7, §8, §9 and §14 stay NOT YET
+and tabulated positions 9, 10, 11 and 12, each whole and in its own commit. **Positions 13 to 62 are
+UNTOUCHED**: not read for tabulation, not quoted, not counted and not placed, and nothing in them is partly
+worked. **The next writing resumes at position 13**, `docs/nct_detection_design.md`, whole. §7, §8, §9 and §14 stay NOT YET
 WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -24159,6 +24159,814 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S38 (entry 6) — 11.48, 11.68,
   11.69. No row of this member names L2-S12, L2-S17, L2-S22, L2-S31, L2-S42, L2-S43 or L2-S45.
 
+---
+
+### 6.12 — Member 12: `cowork_prefit_gates.md`, whole
+
+> **Manifest for this member.** Position **12**. Kind: *item 2 — a whole document (a specification-set
+> member)*. Document: `cowork_prefit_gates.md`. Label: *the whole document*. Range, as a locator only: lines
+> 1–204, from its first line *"# The pre-fit gates for the joint estimator (OI-176 / OI-177 / OI-178 / OI-180) —
+> ★ USER-RATIFIED 2026-07-19"* to its last *"dispatches are written just-in-time per the standing rule.*"*, exactly
+> as the artifact publishes it (**D-307**). Outgoing statements: **71** (rows 12.1 to 12.58; 12 of
+> those rows carry two or more claims each and are split — the arithmetic is at the foot of this member). Listed
+> under *not a statement*: **24**. Counted at this member by this session; the counts appear here and nowhere
+> else.
+>
+> **What kind of text this member is, read at its own banner.** The four governance protocols ratified before
+> the joint estimator's fit and adoption, marked *"USER-RATIFIED 2026-07-19"*: the held-out evaluation protocol,
+> the capacity budget, the robust-stop protocol for the one architecture-adoption event, and the sanctioned dual
+> path with its retirement map. **The placement readings are those of the earlier members, applied unchanged**,
+> and the precedents they set for this subject are named so a reader can check them: the cross-validation
+> protocol and the capacity budget are RELOCATED to *the measurement of the analysis*, travelling with Rows 1.6(i)
+> and 1.7 as member 1 placed them; tables counted once and frozen travel UNPLACED with Row 1.45; the scope of the
+> fitted values travels QUARANTINED with Row 1.28, as Row 9.236 did; the protocol for the one adoption event it
+> governs is HISTORICAL, as member 9's per-adoption checks were (Rows 9.107 and 9.189); the dual path's sanction
+> terms and its retirement map, a build arc and its plan, are HISTORICAL; a rule of how code is structured or how
+> records are kept is listed under *not a statement* as a rule of the development process; and a defense, a
+> label, a lead-in, provenance and the document's account of itself are listed under *not a statement*.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 12:
+> **D-270** (lines 32–42) and **D-271** (lines 68–81). A row is marked WITHHELD where its statement lies inside
+> one of those homes. **One boundary case is marked and says so at the row:** the sentence that opens a line
+> before D-271's home as cited and carries that home's first claim (Row 12.18), marked as Row 7.76 was at member
+> 7. **No SEEN home lies in this member** — none of the eight identities 1(c) names (D-002, D-095, D-223, D-261,
+> D-275, D-279, D-322, D-393) is among the identities the artifact places in position 12.
+---
+
+**Row 12.1 — the four open-items register rows read ratified and pending; a protocol constant changes only by amendment.**
+
+*Outgoing statement.* "The OI-176/OI-177/OI-178/OI-180 rows read "protocol ratified — pending execution"; changing any protocol constant hereafter is a protocol amendment (#22), not a tuning act." — the opening block (locator: lines 4–6). Two claims: (i) the four open-items register rows read ratified and pending execution; (ii) changing a protocol constant afterwards is a protocol amendment, not a tuning act.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 12.2 — the funnel's next stage opens only under the four ratified protocols.**
+
+*Outgoing statement.* "**Ratifying this document ratifies the four protocols;** the rows then read "protocol ratified — pending execution," and the funnel's next stage (the read-only probe / build arc under OI-180's sanction) may open only under them." — the opening block (locator: lines 13–15).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.3 — the provisional protocol constants bind at ratification and are not fitted values.**
+
+*Outgoing statement.* "Provisional numeric choices inside the protocols (fold count, cell-count threshold, confidence level) are marked **[prov-ratify]** — they become binding at ratification but remain protocol constants, not fitted values; changing one later is a protocol amendment (#22), not a tuning act." — the opening block (locator: lines 17–19). Two claims: (i) the provisional numeric choices bind at ratification and remain protocol constants, not fitted values; (ii) changing one later is a protocol amendment, not a tuning act.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 12.1(ii).
+
+---
+
+**Row 12.4 — evaluation on the robust unit, root governing, the Roman numeral and both tonality columns beside it.**
+
+*Outgoing statement.* "Evaluation is on the robust unit (CLAUDE.md block (A)): duration-weighted union-of-boundaries cells, root governs, RN + key(home, local) tracked beside, DCML-only GT through `dcml_parser.load_wir_regions` (the OI-142-corrected substrate), all three presets." — the section *The held-out evaluation protocol*, item 1 (locator: lines 29–31).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 12.5 — five-fold cross-validation over the 326 covered pieces, grouped by analysis file.** *WITHHELD — D-270.*
+
+*Outgoing statement.* "**The split: 5-fold cross-validation [prov-ratify] over the 326 WiR-covered pieces, grouped by WiR analysis file.**" — the section *The held-out evaluation protocol*, item 2 (locator: lines 32–33).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — as at Row 1.6(i).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 1.6(i). *(L2-S38 travels with it.)*
+
+---
+
+**Row 12.6 — pieces sharing an analysis file share a fold.** *WITHHELD — D-270.*
+
+*Outgoing statement.* "The 326 pieces resolve to 324 distinct analysis files (`docs/score_inventory.md` — some chorales share an analysis); pieces sharing an analysis file share a fold (leakage guard)." — the section *The held-out evaluation protocol*, item 2 (locator: lines 33–34). Two claims: (i) the 326 pieces resolve to 324 distinct analysis files; (ii) pieces sharing an analysis file share a fold.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S38: **AGREES** — falsified *"if the evaluation data overlap the fit data"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 1.6(i). *(L2-S38 travels with it.)*
+
+---
+
+**Row 12.7 — the fold assignment generated once with a committed seed and never changed.** *WITHHELD — D-270.*
+
+*Outgoing statement.* "Fold assignment is generated once with a fixed, committed seed and committed as a stamped artifact (`tools/` + manifest, the #17f pattern); it never changes across fit events (a re-split is a protocol amendment)." — the section *The held-out evaluation protocol*, item 2 (locator: lines 35–37).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 12.8 — everything fitted is fitted inside the training folds only.** *WITHHELD — D-270.*
+
+*Outgoing statement.* "**Everything fitted is fitted inside the training folds only** — the generative tables, the combination weights, AND the fitted structure choices: the degree vocabulary's count threshold and pooling, the smoothing constants, the L2 penalty." — the section *The held-out evaluation protocol*, item 3 (locator: lines 38–40).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — as at Row 1.6(i).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 1.6(i). *(L2-S38 travels with it.)*
+
+---
+
+**Row 12.9 — model selection inside the training folds; the held-out fold touched once.** *WITHHELD — D-270.*
+
+*Outgoing statement.* "Model selection (λ, thresholds) uses inner validation within the training folds; the held-out fold is touched exactly once, by the final fitted model of that fold." — the section *The held-out evaluation protocol*, item 3 (locator: lines 40–42).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — its defense: *"No value is graded on data that helped fit it."*
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 1.6(i). *(L2-S38 travels with it.)*
+
+---
+
+**Row 12.10 — the headline is the pooled cross-validated number with a bootstrap uncertainty range.**
+
+*Outgoing statement.* "**The headline claim is the pooled cross-validated figure** (per axis, per preset), with a piece-level bootstrap 95 % confidence interval [prov-ratify] (#24)." — the section *The held-out evaluation protocol*, item 4 (locator: lines 43–44).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 1.6(ii).
+
+---
+
+**Row 12.11 — the comparison baseline is the current system on the same pieces.**
+
+*Outgoing statement.* "The comparison baseline is the current system's figure on the same pieces — noting for honesty that the current system was hand-tuned against this corpus over months, so the comparison is conservative against A, not for it." — the section *The held-out evaluation protocol*, item 4 (locator: lines 44–46).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 12.12 — the publishable model refit on all pieces, its full-corpus numbers reported beside the headline.**
+
+*Outgoing statement.* "**The publishable model** may then be refit on all 326 (same protocol constants); its full-corpus figures are reported BESIDE the CV headline, never in place of it." — the section *The held-out evaluation protocol*, item 5 (locator: lines 47–48). Two claims: (i) the publishable model may be refit on all 326 pieces under the same protocol constants; (ii) its full-corpus numbers are reported beside the cross-validated headline, never in its place.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 12.13 — the identity-weight ablation runs through the same folds.**
+
+*Outgoing statement.* "The identity-weight generative baseline (the ratified mandatory ablation) runs through the SAME folds and is reported beside." — the section *The held-out evaluation protocol*, item 5 (locator: lines 48–49).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 10.15.
+
+---
+
+**Row 12.14 — the BCMH overlap reserved as an independent validation set, not a cross-validation resource.**
+
+*Outgoing statement.* "**The BCMH overlap (87 stems, OI-179) is NOT a CV resource** — it is reserved as the independent establishment/validation set for the ornament/emission cells (§5a decision 4), used with its declared instrument status." — the section *The held-out evaluation protocol*, item 6 (locator: lines 50–52).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 12.15 — the anacrusis convention established before the boundary and metric tables are counted.**
+
+*Outgoing statement.* "**Precondition (dependency):** OI-184 (the WiR anacrusis beat-alignment convention) must be positively established (#19) before per-beat/boundary-table counts are drawn from anacrusis-bearing pieces — the emission and transition counts at region granularity are unaffected, so table fitting may begin while OI-184 is being settled, but the boundary/metric tables' counts wait for it." — the section *The held-out evaluation protocol*, item 7 (locator: lines 53–56).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.16 — the fit event's pass condition: provenance and uncertainty on every number; no fitted object saw its grading data.**
+
+*Outgoing statement.* "**Pass condition:** every figure reported from the fit event carries its fold provenance and CI, and no fitted object saw its grading data." — the section *The held-out evaluation protocol* (locator: lines 58–59). Two claims: (i) every number reported from the fit event carries its fold provenance and its uncertainty range; (ii) no fitted object saw its grading data.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S38: **AGREES** — its falsifier: *"if the evaluation data overlap the fit data"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **ADOPTED — carried** (L2-S38).
+
+---
+
+**Row 12.17 — the held-out protocol's open-items register row.**
+
+*Outgoing statement.* "**Register disposition:** OI-176 → "protocol ratified — pending the fit event."" — the section *The held-out evaluation protocol* (locator: lines 59–60).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.18 — the parameter inventory published before fitting as a generated artifact.** *WITHHELD — D-271.*
+
+*Outgoing statement.* "**The parameter inventory is published before fitting** as a generated artifact (#17f): every table, its dimensions, its raw cell-count histogram from the training data, and the resulting free parameter count." — the section *The capacity budget*, item 1 (locator: lines 67–69; the sentence opens a line before D-271's home as cited and carries that home's first claim, so it is marked).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — as at Row 1.7.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 1.7. *(L2-S38 travels with it.)*
+
+---
+
+**Row 12.19 — a cell keeps its own estimate only at a training count of twenty, otherwise pooled to its declared parent.** *WITHHELD — D-271.*
+
+*Outgoing statement.* "**Budget rule:** a table cell keeps its own maximum-likelihood estimate iff its training count ≥ 20 [prov-ratify]; below that it is pooled to its declared parent class (the pooling hierarchy declared per table in the artifact) under additive smoothing with a single declared α per table." — the section *The capacity budget*, item 2 (locator: lines 70–72).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — as at Row 1.7.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 1.7. *(L2-S38 travels with it.)*
+
+---
+
+**Row 12.20 — the degree vocabulary's rare-class pooling is the same rule applied to the state space.** *WITHHELD — D-271.*
+
+*Outgoing statement.* "The degree vocabulary's rare-class pooling (factorization §1) is the same rule applied to the state space itself." — the section *The capacity budget*, item 2 (locator: lines 73–74).
+
+*Derived statements that speak to it.* L2-S2.
+
+*Current-text axis.* L2-S2: **DIFFERS** — as at Row 10.10.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 10.10. *What was read:* as at Row 10.10.
+
+---
+
+**Row 12.21 — total free parameters at most one tenth of the training tokens.** *WITHHELD — D-271.*
+
+*Outgoing statement.* "**Global sanity bound:** total effective free parameters ≤ training tokens / 10 [prov-ratify], verified in the artifact." — the section *The capacity budget*, item 3 (locator: lines 75–76).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — as at Row 1.7.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 1.7. *(L2-S38 travels with it.)*
+
+---
+
+**Row 12.22 — the combination weights at most fourteen, penalized.** *WITHHELD — D-271.*
+
+*Outgoing statement.* "The combination-weight vector stays ≤ 14 weights, L2-penalized, per the ratified staged-fitting decision." — the section *The capacity budget*, item 3 (locator: lines 76–77).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — as at Row 1.7.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 1.7. *(L2-S38 travels with it.)*
+
+---
+
+**Row 12.23 — the named sensitive cells reported by name; the named desk-simulation cases re-checked at the first probe.**
+
+*Outgoing statement.* "**The desk-sim sensitive-cell record (`cowork_factorization_desk_simulation.md` §4.3) gets explicit treatment:** the artifact reports, by name, the raw count and own-MLE-vs-pooled disposition of the named cells (V6→viø7, viø7→IV, i→IV-raised-6, the applied retrogression cells vi→V/vi and V/x→(not x), V→vi, the incomplete-seventh missing-third penalty, the tactus-beat boundary probability) — and the named desk-sim cases (C2, C3, S5) are re-checked against the FITTED tables at the first probe, prediction-first (#17b/#17c)." — the section *The capacity budget*, item 4 (locator: lines 82–87). Two claims: (i) the artifact reports the named sensitive cells' raw counts and whether each keeps its own estimate or is pooled; (ii) the named desk-simulation cases are re-checked against the fitted tables at the first probe, prediction first.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 12.24 — tables from counts, once, frozen; only the combination weights move; nothing re-fit on a metric excursion.**
+
+*Outgoing statement.* "**Fit-scope declaration (the Noland lesson, already ratified at §5a(c)), restated as a gate item:** tables from counts, once, frozen; only the combination weights move in the discriminative stage; nothing is re-fit in response to a metric excursion (the DT-2 firewall)." — the section *The capacity budget*, item 5 (locator: lines 88–90). Two claims: (i) the tables come from counts, once, and are frozen, only the combination weights moving in the discriminative stage; (ii) nothing is re-fit in response to a metric excursion.
+
+*Derived statements that speak to it.* (i) L2-S38 (NEAREST, §6.3 entry 6). (ii) L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* (i) L2-S38: **DIFFERS** — as at Row 1.45. (ii) L2-S38: **AGREES** — *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 1.45. *What was read:* as at Row 1.45. (ii) **ADOPTED — carried** (L2-S38).
+
+---
+
+**Row 12.25 — the emission tables never re-fit blindly against the tonality axis.**
+
+*Outgoing statement.* "What may never be re-fit blindly: the emission tables against the key axis (Noland's measured 91 % → 18–28 % collapse)." — the section *The capacity budget*, item 5 (locator: lines 90–91).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 1.45.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 1.45. *What was read:* as at Row 1.45 — a rule that presupposes emission tables counted once and frozen.
+
+---
+
+**Row 12.26 — fitted values are Bach-chorale values; jazz correctness claims wait for jazz ground truth.**
+
+*Outgoing statement.* "**Scope of the values:** fitted values are Bach-chorale values; generalization claims stay de-scoped (the OI-7 pattern); Jazz-preset correctness claims remain gated on OI-7's jazz GT." — the section *The capacity budget*, item 6 (locator: lines 92–93). Two claims: (i) fitted values are Bach-chorale values and claims of generalization stay de-scoped; (ii) correctness claims for the Jazz preset stay gated on jazz ground truth.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 1.28. *Audit question:* as at Row 1.28 — is the shipped fitted set one Bach idiom fit, and through which presets is it delivered? (ii) **HISTORICAL.**
+
+---
+
+**Row 12.27 — the capacity budget's pass condition: a fit without the artifact is void.**
+
+*Outgoing statement.* "**Pass condition:** the fit event's artifact satisfies 1–3 and contains 4; a fit run without the artifact is void." — the section *The capacity budget* (locator: lines 95–96).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 12.28 — the capacity budget's open-items register row.**
+
+*Outgoing statement.* "**Register disposition:** OI-177 → "protocol ratified — pending the fit event."" — the section *The capacity budget* (locator: line 96).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.29 — A commits its most probable path with no abstention state; carry and abstention re-expressed as posterior mass.**
+
+*Outgoing statement.* "**Output mapping, declared now:** A commits its MAP (Viterbi) path — no abstention state on the committed surface (the old carry/abstention re-expresses as posterior mass, per the ratified decode plan)." — the section *The robust-stop architecture-adoption protocol*, item 1 (locator: lines 105–107). Two claims: (i) A commits its most probable path, with no abstention state on the committed surface; (ii) the old carry and abstention re-express as posterior mass.
+
+*Derived statements that speak to it.* (i) L2-S1. (ii) L2-S40.
+
+*Current-text axis.* (i) L2-S1: **AGREES** — every reading carries, per span, *"a tonality: a spelled tonic and a mode"*, and a chord. (ii) L2-S40: **AGREES** — as at Row 10.53.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S1). (ii) **ADOPTED — carried** (L2-S40).
+
+---
+
+**Row 12.30 — no abstain-reducibility on either axis; a nonzero abstention flag is a defect of the tooling.**
+
+*Outgoing statement.* "Under the OI-33 convention this means no abstain-reducibility on either axis: the root respect has no A-side abstained cells, and key-abstain is 0 by construction; `robust_stop_diff`'s abstention flag should read zero — a nonzero value is a harness defect, not a result." — the section *The robust-stop architecture-adoption protocol*, item 1 (locator: lines 107–109).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 12.31 — the adoption sequence.**
+
+*Outgoing statement.* "**Sequence:** (a) the OI-176/OI-177 protocols are satisfied and the CV headline + identity-weight ablation are in hand; (b) the written #17b adoption prediction is recorded BEFORE the full-corpus measurement — reflecting the ratified asymmetry (architecture doc §6 reservation 1): substantial improvement predicted on the key columns (home and especially LOCAL), modest-to-flat on root; a large root improvement would itself be a surprise to investigate (#3); (c) O-12 snapshot of the outgoing `tools/robust_stop/` reference; (d) the full-corpus a8 measurement, all three presets." — the section *The robust-stop architecture-adoption protocol*, item 2 (locator: lines 110–115).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.32 — adoption condition (i): the local tonality column improves beyond the uncertainty range; root and Roman numeral do not degrade.**
+
+*Outgoing statement.* "**(i) Held-out:** A's key-agree vs the LOCAL key exceeds the current baseline beyond the piece-bootstrap CI on every preset; root-agree and RN-agree do not degrade beyond the CI (#24 — a difference within the CI is not a finding, in either direction)." — the section *The robust-stop architecture-adoption protocol*, item 3 (locator: lines 117–119).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.33 — adoption condition (i-b): the modulation-rate guard.**
+
+*Outgoing statement.* "**(i-b) The modulation-rate guard:** A's key changes per piece sit within 0.75×–1.25× of the ground truth's rate." — the section *The robust-stop architecture-adoption protocol*, item 3 (locator: lines 119–120).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.34 — the home tonality column tracked with an explained decomposition against the ground truth's own ceiling.**
+
+*Outgoing statement.* "**The key-HOME column is TRACKED with a mandatory explained decomposition** against the computed GT self-agreement ceiling (the duration fraction where the ground truth's own local key equals its home key — the maximum any local-following decoder can score on that column)." — the section *The robust-stop architecture-adoption protocol*, item 3 (locator: lines 120–123).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.35 — adoption condition (ii): the class-(b) root-disagree duration decreases net on every preset.**
+
+*Outgoing statement.* "**(ii) Full-corpus aggregate criterion (replacing zero-new-case for this one event):** the class-(b) root-disagree DURATION shows a NET DECREASE on every preset." — the section *The robust-stop architecture-adoption protocol*, item 3 (locator: lines 130–131).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.36 — every added run enumerated, classified and, for class (b), diagnosed.**
+
+*Outgoing statement.* "Added (new-failing) runs are permitted inside the net decrease — but the mandatory explained diff sharpens: EVERY added run is enumerated, classified (a)/(b) per the two-tier policy (block (B), unchanged), and each added class-(b) run carries an individual diagnosis note (which factor mis-carried it)." — the section *The robust-stop architecture-adoption protocol*, item 3 (locator: lines 131–134).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.37 — an added class-(b) run that cannot be diagnosed is a stop.**
+
+*Outgoing statement.* "An added class-(b) run that cannot be diagnosed is a STOP (#13), not an acceptable loss." — the section *The robust-stop architecture-adoption protocol*, item 3 (locator: lines 134–135).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.38 — adoption condition (iii): class (a) tracked; the tonality and Roman-numeral columns non-degrading.**
+
+*Outgoing statement.* "**(iii)** Class-(a) tracked with the existing INVESTIGATE threshold; the key and RN columns non-degrading beyond declared uncertainty on the full corpus." — the section *The robust-stop architecture-adoption protocol*, item 3 (locator: lines 136–137).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.39 — adoption condition (iv): the whole record ratified as one revertible adoption commit that re-baselines the reference.**
+
+*Outgoing statement.* "**(iv) User ratification of the whole record as ONE revertible, provenance-stamped adoption commit (#14),** which re-baselines the `tools/robust_stop/` reference per the generalized 2.2e pattern (set-diff explained and ratified, manifest re-stamped, outgoing reference snapshotted)." — the section *The robust-stop architecture-adoption protocol*, item 3 (locator: lines 138–140).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.40 — on failure the diagnosis is structural, never a value tweak; the dual path persists or A retires.**
+
+*Outgoing statement.* "**On FAIL:** the diagnosis is structural (#3) — a factor's form or a premise P1–P8 — never a value tweak outside the ratified fitting protocol; the dual path persists un-adopted under OI-180's bounds, or A is retired by OI-180's reverse map." — the section *The robust-stop architecture-adoption protocol*, item 4 (locator: lines 141–143). Two claims: (i) on failure the diagnosis is structural — a factor's form or a premise — never a value tweak outside the ratified fitting protocol; (ii) the dual path then persists unadopted, or A is retired by the reverse map.
+
+*Derived statements that speak to it.* (i) L2-S38 (NEAREST, §6.3 entry 6). (ii) None.
+
+*Current-text axis.* (i) L2-S38: **AGREES** — *"Every weight of the candidate score is fitted from annotated music, not set by hand."* (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S38). (ii) **HISTORICAL.**
+
+---
+
+**Row 12.41 — the adoption protocol's open-items register row.**
+
+*Outgoing statement.* "**Register disposition:** OI-178 → "protocol ratified — pending A's adoption event."" — the section *The robust-stop architecture-adoption protocol* (locator: line 145).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.42 — the declared, bounded violation: A built beside the certified stack.**
+
+*Outgoing statement.* "**The declared, bounded violation:** building A beside the certified stack duplicates the key/mode/chord concern." — the section *The sanctioned dual path and the retirement map* (locator: lines 149–150).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.43 — A in its own module, reading only the published facts of the layers below, the declared mode among them.**
+
+*Outgoing statement.* "A lives in its own new module (physical name fixed at the build dispatch); it reads ONLY the L1/L1.5 published fact surface (notes, notated spellings/tpc, metric weights, fermatas, signature and declared mode) — never legacy L2/L3/L4 outputs." — the section *The sanctioned dual path and the retirement map*, item 1 (locator: lines 152–154). Three claims: (i) A lives in its own new module; (ii) it reads only the published facts of the layers below it, never the legacy layers' outputs; (iii) the facts it reads include the declared mode.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S47. (iii) L2-S17 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S47: **AGREES** — *"L2 never re-derives an L1 fact."* (iii) L2-S17: **DIFFERS** — as at Row 1.29(ii).
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **ADOPTED — carried** (L2-S47). (iii) **UNPLACED**, travelling with Row 1.29(ii). *What was read:* as at Row 1.29(ii).
+
+---
+
+**Row 12.44 — the build's sanction extended to additive publication on the fact layer's surface, under two proofs per commit.**
+
+*Outgoing statement.* "The sanctioned touchable set therefore ALSO includes ADDITIVE extension of the L1/L1.5 fact surface — publishing the missing notated-note facts (tie flags, unresolved notated notes and continuations, and kin) once, on the fact layer's output surface — under two proofs per commit: byte-identity for every existing consumer (both suites + pipeline snapshots untouched) and full test coverage of the new published paths." — the section *The sanctioned dual path and the retirement map*, item 1 (locator: lines 161–165).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.45 — A consumes the published facts and never re-reads the raw notation.**
+
+*Outgoing statement.* "A consumes the published facts; it never re-reads the raw score.)*" — the section *The sanctioned dual path and the retirement map*, item 1 (locator: lines 165–166).
+
+*Derived statements that speak to it.* L2-S47.
+
+*Current-text axis.* L2-S47: **AGREES** — *"L2 never re-derives an L1 fact."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S47).
+
+---
+
+**Row 12.46 — A behind a default-off driver; every increment byte-identical, no golden refresh before adoption.**
+
+*Outgoing statement.* "A runs only behind a default-OFF diagnostic driver (the fullspine pattern); every increment proves both suites + pipeline snapshots untouched; no golden refresh occurs on A's account before adoption." — the section *The sanctioned dual path and the retirement map*, item 2 (locator: lines 167–169). Two claims: (i) A runs only behind a default-off diagnostic driver; (ii) every increment proves both test suites and the pipeline snapshots untouched, with no golden refresh on A's account before adoption.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.60.
+
+---
+
+**Row 12.47 — side-by-side grading on the full output surface, never the winner alone.**
+
+*Outgoing statement.* "**Side-by-side grading on the full output surface (#15):** committed path AND posterior mass (the carry analogue), all three presets, through the retained OI-145 measurement chain — never the winner alone." — the section *The sanctioned dual path and the retirement map*, item 3 (locator: lines 170–172).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 12.48 — the retirement map executes only after the adoption ratification, each retirement its own increment.**
+
+*Outgoing statement.* "**The retirement map (executes ONLY after the OI-178 adoption ratification, each item its own verified increment):**" — the section *The sanctioned dual path and the retirement map*, item 4 (locator: lines 173–174).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.49 — retirement 1: the legacy segmenter's filter cascade and head-gap tonic prior.**
+
+*Outgoing statement.* "the L2 segmenter's filter cascade and the OI-175 head-gap tonic prior → superseded by the modeled semi-Markov segmentation;" — the section *The sanctioned dual path and the retirement map*, item 4.1 (locator: lines 175–176).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.50 — retirement 2: the legacy tonality emission and the hand-set change costs.**
+
+*Outgoing statement.* "the L3 key emission (21-mode vocabulary, OI-174/OI-147) and the key-mode decoder's hand-set change costs (OI-91/OI-97) → superseded by the two-mode joint state and fitted key factors;" — the section *The sanctioned dual path and the retirement map*, item 4.2 (locator: lines 177–178).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.51 — retirement 3: the legacy transition fragments.**
+
+*Outgoing statement.* "the L4 transition fragments (`wSeq` V→I, `resolutionBonus`, Gate J, root-continuity-as- self-transition) → superseded by the fitted chord-transition table (F5);" — the section *The sanctioned dual path and the retirement map*, item 4.3 (locator: lines 179–180).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.52 — retirement 4: the enharmonic-rotation gate block, each drop verified by liveness counts.**
+
+*Outgoing statement.* "the enharmonic-rotation gate block (FM2/H/G-D/G-E) → superseded by the in-model spelling factor (F3); each drop verified by retained-rule liveness counts (OI-36) before deletion;" — the section *The sanctioned dual path and the retirement map*, item 4.4 (locator: lines 181–182).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.53 — retirement 5: the post-hoc gate layer dissolved.**
+
+*Outgoing statement.* "the Gates A–L post-hoc layer dissolution — the standing deferred refactor #2 (CLAUDE.md) — is scheduled here, as fitted weights subsume the gate corrections;" — the section *The sanctioned dual path and the retirement map*, item 4.5 (locator: lines 183–184).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.54 — retirement 6: the hand-set constant mass.**
+
+*Outgoing statement.* "the OI-23 hand-set constant mass retires as the fitter's tables replace the terms carrying it." — the section *The sanctioned dual path and the retirement map*, item 4.6 (locator: line 185).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.55 — the reverse map, had A not been adopted.**
+
+*Outgoing statement.* "**The reverse map (if A is not adopted):** A's module is removed whole (one revertible commit), the fold/fit artifacts are kept as measurement history, and the retirement map is void — declared now so non-adoption has a lawful exit too." — the section *The sanctioned dual path and the retirement map*, item 5 (locator: lines 189–191).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.56 — the dual path's retiring gate is A's adoption event or the reverse map.**
+
+*Outgoing statement.* "**Bound and visibility (DT-13 guard):** the dual path's retiring gate is A's adoption event (or the reverse map)." — the section *The sanctioned dual path and the retirement map*, item 6 (locator: lines 192–193).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.57 — the dual path's open-items register row.**
+
+*Outgoing statement.* "**Register disposition:** OI-180 → "protocol ratified — sanction in force from the build dispatch on."" — the section *The sanctioned dual path and the retirement map* (locator: line 197).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 12.58 — after ratification the rows flip and the funnel's next stage is the probe and build arc.**
+
+*Outgoing statement.* "After ratification: the rows flip, and the funnel's next stage is the read-only probe / build arc under the OI-180 sanction — whose dispatches are written just-in-time per the standing rule.*" — the closing block (locator: lines 202–204).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+
+---
+#### Not a statement — listed so the arithmetic closes (24)
+
+1. "**Ratified by the user 2026-07-19, as asked:** the four protocols including the [prov-ratify] constants (5-fold; cell-count threshold 20; tokens/params ≥ 10; 95 % piece-bootstrap CI)." (3–4) — *a status of the document*.
+2. "**Author:** Cowork, 2026-07-19, at the user's direction — the funnel stage after the ratified desk simulation (`cowork_factorization_desk_simulation.md`; handoff 2026-07-19 block)." (8–9) — *provenance*.
+3. "**Nothing here is a build and nothing here fits a value** — these are the four governance protocols the plan amendments (`cowork_joint_estimator_architecture.md` §7 items 1, 2, 3, 5) require to be written and ratified BEFORE the estimator funnel advances (#20/#22/#23)." (9–12) — *the document's account of itself*.
+4. "Each gate states its pass conditions and its register-row disposition." (12–13) — *the document's account of itself*.
+5. "**What is being prevented:** a headline figure graded on data that helped fit it — including the subtle forms: a degree VOCABULARY derived from all-corpus counts, a smoothing constant chosen on the grading data, a threshold "checked" against the final metric." (25–27) — *a defense* of the protocol below.
+6. "**Unit and axes.**" (29) — *a label*.
+7. "**What is being prevented:** overfitting-in-one-shot on a 326-piece single-composer corpus, and silent hand-picking hidden inside "derived from counts."" (64–65) — *a defense* of the budget below.
+8. "No prose-only budget." (69) — *a restatement of Row 12.18*.
+9. "*(Amended ≤ 12 → ≤ 14 by user ratification 2026-07-19 at the weight-fit dispatch: the ratified factorization gives the four cadence features their own fitted weights, putting the enumerated vector at 12–13; the amendment is the lawful #22 path — capacity impact nil, thousands of training tokens per weight either way." (77–80) — *provenance* — the amendment of the weight cap, with its reason.
+10. "Original text: "≤ 12 weights (one per factor plus the declared-mode strength)".)*" (80–81) — *provenance* — the former wording.
+11. "**What is being prevented:** negotiating the hard stop on a live diff." (100) — *a defense* of the protocol below.
+12. "The class-(b) per-preset non-increase ratchet (CLAUDE.md block (A)) was written for incremental change; an architecture replacement moves runs in both directions by design." (100–102) — *a defense* of the protocol below.
+13. "This is the pre-declared exceptional-event variant, written while no diff exists." (102–103) — *the document's account of itself*.
+14. "**Adoption PASS requires ALL of:**" (116) — *a lead-in to the conditions, each tabulated below*.
+15. "*(Amended by user ratification 2026-07-20, BEFORE the adoption measurement ran (#22's lawful moment): the original condition demanded home-exceedance, which is impossible by construction for a correct modulation-follower — measured at the probe/CV stage (A home 56.46 vs baselines ~71 while matching the GT modulation rate 5.52 vs 5.28); the never-modulate failure the home condition guarded is guarded directly by (i-b)." (123–128) — *provenance* — the amendment of condition (i), with its measured reason.
+16. "Original text: "A's key-agree (local AND home) exceeds the current baseline beyond the piece-bootstrap CI on every preset".)*" (128–129) — *provenance* — the former wording.
+17. "Sanction terms:" (150) — *a lead-in to the terms, each listed or tabulated below*.
+18. "**Isolation.**" (152) — *a label*.
+19. "Insulation false-negative path, enumerated (#17e): shared utility primitives — permitted only for dependency-free pc/mask helpers (`normalizePc`, `diatonicMaskFromFifths` — the OI-173 shared-predicate leaf), the allowed list enumerated in the build dispatch; any other shared include is a violation surfaced at review." (154–157) — *a rule of the development process* — which shared helpers the new module's code may include.
+20. "*(Amended by user ratification 2026-07-20, at the module build's input-parity finding: the published note model is tie-resolved and lossy for A's needs, and a module-private raw score walk would be the raw-source-outside-the-fact-layer defect class the certification audits condemned." (158–160) — *provenance* — the amendment's occasion and its reason.
+21. "**Production byte-identity for the entire build arc.**" (167) — *a label*.
+22. "Each retirement flips its register row with provenance; ARCHITECTURE.md and the affected docs sync in the same increments (#10)." (187–188) — *a rule of the development process*.
+23. "The handoff's entry block carries the dual-path status line every session until one of the two exits executes; a session that finds the dual path stalled with neither exit in motion surfaces it as a register item." (193–195) — *a rule of the development process*.
+24. "*Ratification asked for: the four protocols as stated, including the [prov-ratify] constants (5-fold; cell-count threshold 20; tokens/params ≥ 10; 95 % piece-bootstrap CI)." (201–202) — *provenance*.
+
+#### The arithmetic at this member
+
+- Rows written: **58** (12.1 to 12.58).
+- Rows split into two claims, **+1 each**: 12.1, 12.3, 12.6, 12.12, 12.16, 12.23, 12.24, 12.26, 12.29, 12.40, 12.46 — eleven rows, **+11**.
+- Rows split into three claims, **+2 each**: 12.43 — one row, **+2**.
+- **Outgoing statements placed: 58 + 11 + 2 = 71.**
+- Listed under *not a statement*: **24**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 71 dispositions over
+  71 statements.
+- **UNPLACED at this member: 4** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 7 | 12.16(ii), 12.24(ii), 12.29(i), 12.29(ii), 12.40(i), 12.43(ii), 12.45 |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 26 | 12.1(ii), 12.3(i), 12.3(ii), 12.4, 12.5, 12.6(i), 12.6(ii), 12.7, 12.8, 12.9, 12.10, 12.11, 12.12(i), 12.12(ii), 12.13, 12.14, 12.16(i), 12.18, 12.19, 12.21, 12.22, 12.23(i), 12.27, 12.30, 12.46(ii), 12.47 |
+| QUARANTINED | 1 | 12.26(i) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 33 | 12.1(i), 12.2, 12.15, 12.17, 12.23(ii), 12.26(ii), 12.28, 12.31, 12.32, 12.33, 12.34, 12.35, 12.36, 12.37, 12.38, 12.39, 12.40(ii), 12.41, 12.42, 12.43(i), 12.44, 12.46(i), 12.48, 12.49, 12.50, 12.51, 12.52, 12.53, 12.54, 12.55, 12.56, 12.57, 12.58 |
+| UNPLACED | 4 | 12.20, 12.24(i), 12.25, 12.43(iii) |
+| **Total** | **71** | — |
+
+**The arithmetic closes at this member**: 7 + 0 + 26 + 1 + 0 + 33 + 4 = 71, against 71 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 15 |
+| DIFFERS | 4 |
+| THE DERIVATION IS SILENT | 52 |
+| **Total verdicts** | **71** |
+
+*(71 verdicts over 71 statements because 0 statement each name two derived statements: .)* DIFFERS: 12.20, 12.24(i), 12.25, 12.43(iii).
+
+#### The marks at this member
+
+- **WITHHELD rows: 12.5, 12.6, 12.7, 12.8 and 12.9 (D-270); 12.18, 12.19, 12.20, 12.21 and 12.22 (D-271).** One
+  boundary case is marked and says so at the row: Row 12.18's sentence opens a line before D-271's home as cited
+  and carries that home's first claim, marked as Row 7.76 was. Every other WITHHELD statement opens and closes
+  inside its home as cited; Row 12.4, the sentence before D-270's home, and Rows 12.10 and 12.23, the first
+  statements after each home, are not marked. **An AGREES stands on these WITHHELD statements:** 12.5, 12.6(ii),
+  12.8, 12.9, 12.18, 12.19, 12.21, 12.22. **A DIFFERS stands on one:** 12.20.
+- **SEEN rows: none.** None of the eight identities 1(c) names — D-002, D-095, D-223, D-261, D-275, D-279,
+  D-322, D-393 — is among the identities the artifact places in position 12.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S17 (entry 1) — 12.43; L2-S38
+  (entry 6) — 12.5, 12.6, 12.8, 12.9, 12.16, 12.18, 12.19, 12.21, 12.22, 12.24, 12.25, 12.40. No row of this
+  member names L2-S12, L2-S22, L2-S31, L2-S42, L2-S43 or L2-S45.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -24419,11 +25227,29 @@ the row says which.
   voice accepted for keyboard music.
 - Rows 11.74 and 11.75 — a cheap read-only re-validation against new material before any decision, asking whether
   it contradicts a conclusion or only enriches the validation.
+- Rows 12.1(ii), 12.3(i) and 12.3(ii) — the protocol constants bind at ratification, are not fitted values, and
+  change only by protocol amendment.
+- Rows 12.4, 12.11, 12.12(i), 12.12(ii) and 12.16(i) — the evaluation unit, the comparison baseline, the
+  publishable refit reported beside the headline, and provenance and uncertainty on every number.
+- Rows 12.5, 12.6(ii), 12.8 and 12.9 — travelling with Row 1.6(i): five-fold cross-validation grouped by analysis
+  file, pieces sharing a file sharing a fold, and fitting and model selection inside the training folds. *(L2-S38
+  travels with them.)*
+- Rows 12.6(i) and 12.7 — the 326 pieces resolving to 324 analysis files, and the fold assignment generated once
+  with a committed seed.
+- Row 12.10 — travelling with Row 1.6(ii): the pooled cross-validated headline with its bootstrap uncertainty range.
+- Row 12.13 — travelling with Row 10.15: the identity-weight ablation through the same folds.
+- Row 12.14 — the BCMH overlap reserved as an independent validation set.
+- Rows 12.18, 12.19, 12.21 and 12.22 — travelling with Row 1.7: the parameter inventory before fitting, the
+  per-cell count rule, the global bound and the weight cap. *(L2-S38 travels with them.)*
+- Rows 12.23(i) and 12.27 — the named sensitive cells reported by name, and a fit without its artifact void.
+- Row 12.30 — no abstain-reducibility on either axis, a nonzero abstention flag being a defect of the tooling.
+- Row 12.46(ii) — travelling with Row 6.60: every increment byte-identical, no golden refresh before adoption.
+- Row 12.47 — side-by-side grading on the full output surface, never the winner alone.
 
 *(Member 2 relocates no row. Member 3 relocates one, Row 3.38, above. Member 5's relocations are the rows
 numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows numbered 7.n. Member 8 relocates
-no row. Member 9's relocations are the rows numbered 9.n above, member 10's the rows numbered 10.n, and member
-11's the rows numbered 11.n.)*
+no row. Member 9's relocations are the rows numbered 9.n above, member 10's the rows numbered 10.n, member 11's
+the rows numbered 11.n, and member 12's the rows numbered 12.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -24944,6 +25770,8 @@ rows here, each with its audit question, in the commit that tabulates it.
   modulation rate does the fitted table imply?
 - Row 10.47(i) — are candidate readings with exactly equal candidate scores present at the current commit, on which
   pieces, and does the shipped decoder resolve them by a declared order?
+- Row 12.26(i) — travelling with Row 1.28: is the shipped fitted set one Bach idiom fit, and through which presets
+  is it delivered?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -25415,6 +26243,14 @@ words.
   the two readings as rivals, the third *"cannot be represented until DP-N is ruled"*.
 - Row 10.52(ii) — travelling with Row 1.10: the outgoing reserve is *"documented pruning"*; L2-S36 prunes *"only by a
   bound that provably cannot discard a reading whose final candidate score could exceed a kept reading's"*.
+- Row 12.20 — travelling with Row 10.10: the outgoing vocabulary pooling is *"the same rule applied to the state
+  space itself"*, a count threshold; L2-S2 requires that *"Every reading a published analysis writes for a passage
+  of the grading repertoire must be admissible"*.
+- Rows 12.24(i) and 12.25 — travelling with Row 1.45: the outgoing tables come *"from counts, once, frozen"*, and
+  *"only the combination weights move"*; L2-S38 says *"Its objective is the graded measure, not likelihood
+  alone."*
+- Row 12.43(iii) — travelling with Row 1.29(ii): the outgoing module reads the *"signature and declared mode"*;
+  L2-S17 says *"A tonality or mode tag the record file declares is not read at all."*
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -25437,10 +26273,11 @@ own distribution table in §6.
 | 9 | 471 | 12 | 27 | 75 | 113 | 0 | 218 | 26 | 270 |
 | 10 | 96 | 39 | 7 | 5 | 2 | 0 | 19 | 24 | 16 |
 | 11 | 104 | 1 | 0 | 58 | 0 | 0 | 45 | 0 | 87 |
-| **Total** | **2009** | **334** | **67** | **280** | **649** | **0** | **473** | **206** | **842** |
+| 12 | 71 | 7 | 0 | 26 | 1 | 0 | 33 | 4 | 24 |
+| **Total** | **2080** | **341** | **67** | **306** | **650** | **0** | **506** | **210** | **866** |
 
-**The arithmetic check:** 334 + 67 + 280 + 649 + 0 + 473 + 206 = 2009, against 2009 statements placed (72 +
-65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104).
+**The arithmetic check:** 341 + 67 + 306 + 650 + 0 + 506 + 210 = 2080, against 2080 statements placed (72 +
+65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71).
 
 **Current-text verdicts.**
 
@@ -25457,10 +26294,11 @@ own distribution table in §6.
 | 9 | 25 | 24 | 423 | 472 |
 | 10 | 51 | 24 | 30 | 105 |
 | 11 | 3 | 0 | 101 | 104 |
-| **Total** | **478** | **468** | **1103** | **2049** |
+| 12 | 15 | 4 | 52 | 71 |
+| **Total** | **493** | **472** | **1155** | **2120** |
 
-**The arithmetic check:** 478 + 468 + 1103 = 2049 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 +
-104).
+**The arithmetic check:** 493 + 472 + 1155 = 2120 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 +
+104 + 71).
 
 ## 14. The derivation's independence record, relayed
 
@@ -25491,4 +26329,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 11 are done, positions 12 to 62 are untouched.
+  untouched: positions 1 to 12 are done, positions 13 to 62 are untouched.
