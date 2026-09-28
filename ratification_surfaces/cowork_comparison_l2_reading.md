@@ -48,7 +48,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 7 | `cowork_layer3_keymode_design.md`, whole | **DONE** (§6.7) |
 | 8 | `cowork_layer5_engagement_design.md`, whole | **DONE** (§6.8) |
 | 9 | `cowork_stage5_fitter_design.md`, whole | **DONE** (§6.9) |
-| 10 | `cowork_joint_estimator_factorization.md`, whole | NOT YET TABULATED |
+| 10 | `cowork_joint_estimator_factorization.md`, whole | **DONE** (§6.10) |
 | 11 | `cowork_score_census.md`, whole | NOT YET TABULATED |
 | 12 | `cowork_prefit_gates.md`, whole | NOT YET TABULATED |
 | 13 | `docs/nct_detection_design.md`, whole | NOT YET TABULATED |
@@ -104,12 +104,12 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 9 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 10 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
-`cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole, and
-`cowork_stage5_fitter_design.md`, whole.**
+`cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
+`cowork_stage5_fitter_design.md`, whole, and `cowork_joint_estimator_factorization.md`, whole.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 9 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 10 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -123,9 +123,9 @@ tabulated positions 6, 7 and 8, each whole and in its own commit, and stopped at
 position 8 under that dispatch's capacity judgment (its Task 1(h)): position 9 was judged not finishable whole
 in the context that remained, and was not opened. The fourth batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md`, resumed at position 9
-and tabulated it whole in one commit. **Positions 10 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at
-position 10**, `cowork_joint_estimator_factorization.md`, whole. §7, §8, §9 and §14 stay NOT YET WRITTEN,
+and tabulated positions 9 and 10, each whole and in its own commit. **Positions 11 to 62 are UNTOUCHED**: not
+read for tabulation, not quoted, not counted and not placed, and nothing in them is partly worked. **The next
+writing resumes at position 11**, `cowork_score_census.md`, whole. §7, §8, §9 and §14 stay NOT YET WRITTEN,
 being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not read for
 tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -22211,6 +22211,883 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S31 (entry 1) — 9.332; L2-S38 (entry 6) — 9.2, 9.3, 9.4, 9.8, 9.10, 9.11, 9.12, 9.49, 9.50, 9.54, 9.55, 9.57, 9.63, 9.67, 9.83, 9.84, 9.85, 9.87, 9.102, 9.108, 9.160, 9.206, 9.209, 9.221, 9.300, 9.332; L2-S42 (entry 4) — 9.361; L2-S45 (entry 4) — 9.317, 9.318. No row of
   this member names L2-S12, L2-S17, L2-S22 or L2-S43.
 
+---
+
+### 6.10 — Member 10: `cowork_joint_estimator_factorization.md`, whole
+
+> **Manifest for this member.** Position **10**. Kind: *item 2 — a whole document (a specification-set
+> member)*. Document: `cowork_joint_estimator_factorization.md`. Label: *the whole document*. Range, as a
+> locator only: lines 1–214, from its first line *"# The joint estimator's factorization — structure-design
+> specification (★ USER-RATIFIED 2026-07-19)"* to its last *"premise ledger (§4), the decode plan (§5), and
+> the desk-simulation forms and case list (§6).*"*, exactly as the artifact publishes it (**D-307**). Outgoing
+> statements: **96** (rows 10.1 to 10.63; 22 of those rows carry two or more claims each and are split —
+> the arithmetic is at the foot of this member). Listed under *not a statement*: **16**. Counted at this member
+> by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, read at its own banner.** The joint estimator's structure-design
+> specification, marked *"USER-RATIFIED 2026-07-19"*: the random variables, the form of the candidate score, the
+> factor roster, the premise ledger, the decode plan and the desk-simulation forms. It is the ratified design of
+> the production inference layer, so most of its statements are rules about L2's own subject rather than
+> descriptions of a mechanism. **The placement readings are those of the earlier members, applied unchanged**: a
+> design rule is placed on its own terms against the derived statements that speak to it — carried where one
+> carries it, proposed where none speaks to it, and UNPLACED where a derived statement contradicts a rule the text
+> records as ratified; a later restatement of a rule homed in member 1 travels with its home row there, and
+> WITHHELD is marked only inside a home; the premise-ledger rows are tabulated; a status, an event or a plan is
+> HISTORICAL, the desk-simulation cases among them as a performed exercise with their verdicts recorded beside;
+> a measured property is QUARANTINED; a measurement requirement is RELOCATED to *the measurement of the
+> analysis*; and a defense, a label, a pointer and the document's account of itself are listed under *not a
+> statement*.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 10:
+> **D-565** (lines 149–157). A row is marked WITHHELD where its statement lies inside that home. **No SEEN home
+> lies in this member** — none of the eight identities 1(c) names (D-002, D-095, D-223, D-261, D-275, D-279,
+> D-322, D-393) is among the identities the artifact places in position 10.
+---
+
+**Row 10.1 — values remain unfit.**
+
+*Outgoing statement.* "Values remain unfit." — the opening block (locator: line 5).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 10.2 — the desk simulation has run; nine of ten traces pass; its amendments incorporated.**
+
+*Outgoing statement.* "**The §6 desk simulation has RUN and its findings are user-ratified (2026-07-19, same day — `cowork_factorization_desk_simulation.md`):** nine of ten traces pass as specified; the amendments it produced (the §2 factor-granularity rule and the §3.10 initial-state-only prior) are incorporated below with dated marks." — the opening block (locator: lines 5–8).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 10.3 — the funnel's next stage is the pre-fit gates.**
+
+*Outgoing statement.* "The funnel's next stage is the pre-fit gates (OI-176/OI-177/OI-178/OI-180)." — the opening block (locator: lines 8–9).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 10.4 — all values unfit, entering only through the ratified fitting protocol under its gates.**
+
+*Outgoing statement.* "**Ratifying this document ratifies the structure and the premise ledger; all VALUES remain unfit** and enter only through the ratified fitting protocol (§5a) under the OI-176/OI-177 gates." — the opening block (locator: lines 16–17). Two claims: (i) all values remain unfit; (ii) values enter only through the ratified fitting protocol, under its held-out and capacity gates.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S38: **AGREES** — *"The fit is discriminative, on held-out folds, with its capacity budget declared in advance."*
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **ADOPTED — carried** (L2-S38).
+
+---
+
+**Row 10.5 — a piece is a sequence of events between consecutive onsets and releases.**
+
+*Outgoing statement.* "A piece is a sequence of **events** — the minimal segments between consecutive note onsets/offsets (the Pardo & Birmingham partition, already the analyzer's slice unit)." — §1, *The random variables* (locator: lines 23–24).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation takes slices as the input contract defines them.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 6.6(i). *(The input contract defines the slice at its §0.)*
+
+---
+
+**Row 10.6 — the segmentation is decided, not given.**
+
+*Outgoing statement.* "**The segmentation** `S`: a partition of the event sequence into contiguous **harmonic segments** (semi-Markov: segment boundaries are decided, not given)." — §1 (locator: lines 26–27).
+
+*Derived statements that speak to it.* L2-S1; L2-S31 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* L2-S1: **AGREES** — *"An ordered partition of the span into harmonic spans"*. L2-S31: **AGREES** — *"Span length is a variable of the reading, not a fixed grid."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S1, L2-S31).
+
+---
+
+**Row 10.7 — per segment, the state is a key and a chord.**
+
+*Outgoing statement.* "**Per segment j, the state** `h_j = (k_j, c_j)`:" — §1 (locator: line 28).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **AGREES** — per span, *"a tonality"* and *"a chord"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S1).
+
+---
+
+**Row 10.8 — the key: a tonic among twelve pitch classes; a mode, major or minor.**
+
+*Outgoing statement.* "`k_j = (tonic, mode)` — tonic one of the twelve pitch classes; mode ∈ {major, minor} (ratified);" — §1 (locator: line 29). Two claims: (i) the tonic is one of the twelve pitch classes; (ii) the mode is major or minor.
+
+*Derived statements that speak to it.* (i) L2-S6. (ii) L2-S6.
+
+*Current-text axis.* (i) L2-S6: **DIFFERS**. (ii) L2-S6: **AGREES** — *"in two modes, major and minor"*.
+
+*The difference, in both texts' own words.* (i) The outgoing tonic is *"one of the twelve pitch classes"*; L2-S6's vocabulary is *"the spelled tonics (seven letters, each natural, sharp or flat)"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED.** *What was read:* a tonic the text records as ratified in twelve pitch classes, against L2-S6's spelled tonics; placing it would choose between them. (ii) **ADOPTED — carried** (L2-S6).
+
+---
+
+**Row 10.9 — the chord: degree class, quality, inversion; the classes admitted.**
+
+*Outgoing statement.* "`c_j = (degree class, quality, inversion)` — the Roman numeral (ratified): diatonic degrees, applied-degree classes (the secondary dominant and applied leading-tone chord per target), and the standard chromatic classes (Neapolitan sixth, augmented-sixth chords)." — §1 (locator: lines 30–32). Two claims: (i) the chord is a degree class, a quality and an inversion; (ii) the classes: diatonic, applied (the secondary dominant and applied leading-tone chord per target), Neapolitan and augmented sixths.
+
+*Derived statements that speak to it.* (i) L2-S27. (ii) L2-S4; L2-S5.
+
+*Current-text axis.* (i) L2-S27: **AGREES** — *"L2 decides the chord as degree, quality, figure and applied target"*. (ii) L2-S4: **AGREES** — its classes include *"the Neapolitan"* and *"the three augmented sixths"*. L2-S5: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing applied classes are *"the secondary dominant and applied leading-tone chord per target"*; L2-S5 says *"The applied target is a chain, not a single field"*, depth two admitted.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S27). (ii) **UNPLACED.** *What was read:* a ratified class list with one level of application, against L2-S5's chain of application; placing it would choose between them.
+
+---
+
+**Row 10.10 — the degree vocabulary derived from the ground truth, with a count threshold and one pooled rare class.**
+
+*Outgoing statement.* "**The degree vocabulary is derived from the ground truth, not invented:** the set of degree classes observed in the corpus annotations, with a count threshold and one pooled rare-class — the threshold set at fit time under the capacity budget (OI-177), the pooling declared, nothing hand-picked." — §1 (locator: lines 32–35).
+
+*Derived statements that speak to it.* L2-S2.
+
+*Current-text axis.* L2-S2: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing vocabulary is the observed classes *"with a count threshold and one pooled rare-class"*; L2-S2 requires *"Every reading a published analysis writes for a passage of the grading repertoire must be admissible"*, an exclusion carrying *"a named ruling"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a vocabulary rule the text records as ruled, against L2-S2's closure test; placing it would choose between them.
+
+---
+
+**Row 10.11 — a key change only at a segment boundary.**
+
+*Outgoing statement.* "A **key change is permitted only at a segment boundary** (a change of key without a change of harmony is not expressible in this label space — definitional, not an assumption)." — §1 (locator: lines 37–38).
+
+*Derived statements that speak to it.* L2-S16.
+
+*Current-text axis.* L2-S16: **AGREES** — *"the tonality can change only at a span boundary."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S16).
+
+---
+
+**Row 10.12 — the chord symbol is a derived fact: root = tonic + the degree's interval.**
+
+*Outgoing statement.* "The **chord symbol** (root pitch class, quality, bass) is the derived published fact: root = tonic + the degree's interval." — §1 (locator: lines 38–39).
+
+*Derived statements that speak to it.* L2-S27.
+
+*Current-text axis.* L2-S27: **AGREES** — it publishes *"no chord symbol (root pitch class, quality and bass note). That is L3's read-off."*
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 6.163. *(L2-S27 travels with it.)*
+
+---
+
+**Row 10.13 — the candidate score is a sum over segments of weighted factor terms, over frozen generative tables.**
+
+*Outgoing statement.* "Per the ratified staged fitting, the model is log-linear over frozen generative tables: the score of a candidate `(S, h)` given the notes is the sum over segments of weighted factor terms," — §2, *The joint score* (locator: lines 43–44). Two claims: (i) the candidate score is a sum over segments of weighted factor terms; (ii) the model is log-linear over frozen generative tables, per the staged fitting.
+
+*Derived statements that speak to it.* (i) L2-S31 (NEAREST, §6.3 entry 1). (ii) L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* (i) L2-S31: **AGREES** — *"a sum over its spans of span terms, plus a sum over adjacent span pairs of pair terms"*. (ii) L2-S38: **DIFFERS** — as at Row 1.45.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S31). (ii) **UNPLACED**, travelling with Row 1.45. *What was read:* as at Row 1.45.
+
+---
+
+**Row 10.14 — the joint candidate score, term by term.**
+
+*Outgoing statement.* "Score(S, h) = w_prior · log P_prior(k_1 | signature, declared mode) [once, at the start] + Σ_j w_emit · log P_emit(tones in segment j | k_j, c_j) [pitch emission] + Σ_j w_spell · log P_spell(spelled tones in j | k_j) [spelling emission] + Σ_j w_bass · log P_bass(bass degree of j | c_j) [bass/inversion] + Σ_j w_chord · log P_chord(c_j | c_{j-1}, mode_j) [same-key chord transition] + Σ_j w_key · log P_key(k_j | k_{j-1}) [key transition; = 1-cell if no change] + Σ_j w_entry · log P_entry(c_j | key change) [entry chord at a key change] + Σ_j w_bound · log P_bound(boundary at j | beat strength, fermata) [segmentation] + Σ_j w_cad · (cadence evidence features at j → k_j) [cadence factor]" — §2, the formula (locator: lines 46–56). Nine claims, one per term: (i) the prior, once at the start; (ii) the pitch emission; (iii) the spelling emission; (iv) the bass factor; (v) the same-key chord transition; (vi) the key transition; (vii) the entry chord at a key change; (viii) the boundary factor; (ix) the cadence factor.
+
+*Derived statements that speak to it.* (i) L2-S17 (NEAREST, §6.3 entry 1). (ii) L2-S32. (iii) L2-S20. (iv) L2-S28. (v) L2-S34. (vi) L2-S34. (vii) L2-S34. (viii) L2-S12 (NEAREST, §6.3 entry 5); L2-S13. (ix) L2-S37.
+
+*Current-text axis.* (i) L2-S17: **DIFFERS** — as at Row 1.37. (ii) L2-S32: **AGREES** — a content term rating how the span's events *"fit the chord in its spelled form"*. (iii) L2-S20: **DIFFERS**. (iv) L2-S28: **AGREES** — *"a term relating the figure to the lowest sounding pitch of each slice of the span"*. (v) L2-S34: **AGREES** — *"a term on the pair of adjacent chords *read as degrees in their tonalities*"*. (vi) L2-S34: **AGREES** — *"a cost for a tonality change"*. (vii) L2-S34: **DIFFERS**. (viii) L2-S12: **AGREES** — *"The metric strength class of a change point enters the candidate score as a term on reading a boundary there."* L2-S13: **AGREES** — L1's notated boundary evidence *"enters as terms on a boundary reading"*. (ix) L2-S37: **DIFFERS**.
+
+*The difference, in both texts' own words.* (iii) The outgoing spelling emission rates *"spelled tones in j"* given the key; L2-S20's tonality terms read *"a recency-weighted account of which spelled scale degrees have sounded"*. (vii) The outgoing entry chord is conditioned on the key change alone, *"P_entry(c_j | key change)"*; L2-S34's progression term is on *"the pair of adjacent chords"*. (ix) The outgoing cadence factor reads *"cadence evidence features at j"*; L2-S37 says *"No term of the fitted candidate score reads them until the window is established"* for two of the three cues.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 1.37. *What was read:* as at Row 1.37. (ii) **ADOPTED — carried** (L2-S32). (iii) **UNPLACED.** *What was read:* a ratified spelling emission scored per segment given the key, against L2-S20's recency-weighted degree evidence; placing it would choose between them. (iv) **ADOPTED — carried** (L2-S28). (v) **ADOPTED — carried** (L2-S34). (vi) **ADOPTED — carried** (L2-S34). (vii) **UNPLACED.** *What was read:* a ratified entry factor conditioned on the new key alone, against L2-S34's pair term over both adjacent chords; placing it would choose between them. (viii) **ADOPTED — carried** (L2-S12, L2-S13). (ix) **UNPLACED.** *What was read:* a ratified cadence factor, against L2-S37's rule that two of the three cues carry no load until their window is established; placing it would choose between them.
+
+---
+
+**Row 10.15 — the identity-weight setting is the generative product, the mandatory ablation baseline.**
+
+*Outgoing statement.* "with the identity-weight setting (all `w = 1`) being exactly the generative product — the mandatory ablation baseline (ratified)." — §2 (locator: lines 58–59).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 10.16 — one weight per factor, fit by convex conditional likelihood under the held-out gate.**
+
+*Outgoing statement.* "The weight vector is small (one weight per factor, roughly ten), fit by convex conditional likelihood under the held-out gate." — §2 (locator: lines 59–60). Three claims: (i) one weight per factor; (ii) fit by convex conditional likelihood; (iii) under the held-out gate.
+
+*Derived statements that speak to it.* (i) L2-S39. (ii) L2-S38 (NEAREST, §6.3 entry 6). (iii) L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* (i) L2-S39: **AGREES** — a feature *"whose single weight is fitted"*. (ii) L2-S38: **DIFFERS**. (iii) L2-S38: **AGREES** — *"on held-out folds"*.
+
+*The difference, in both texts' own words.* (ii) The outgoing weights are *"fit by convex conditional likelihood"*; L2-S38 says *"Its objective is the graded measure, not likelihood alone."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S39). (ii) **UNPLACED.** *What was read:* a fitting objective the text records as ratified, against L2-S38's objective of *"the graded measure, not likelihood alone"*; placing it would choose between them. (iii) **ADOPTED — carried** (L2-S38).
+
+---
+
+**Row 10.17 — the factor granularity: per tone, per event, per event of segment length, per boundary.**
+
+*Outgoing statement.* "the per-segment sums above are evaluated at these granularities — the pitch and spelling emissions **per tone**; the BASS factor **per event** (each event's sounding bass against the segment's chord — Ni's published per-frame form); the missing-template-tone penalty inside `P_emit` **normalized per event of segment length** (a segment missing a template tone pays in proportion to how long it fails to sound it); the chord-transition, key-transition, entry, and boundary factors **per boundary/event** (as written)." — §2, the amendment *Factor granularity* (locator: lines 63–69). Four claims: (i) the emissions per tone; (ii) the bass factor per event; (iii) the missing-tone penalty normalized per event of segment length; (iv) the transition, entry and boundary factors per boundary or event.
+
+*Derived statements that speak to it.* (i) L2-S32. (ii) L2-S28. (iii) L2-S32. (iv) L2-S31 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* (i) L2-S32: **AGREES** — as at Row 1.33. (ii) L2-S28: **AGREES** — as at Row 1.34. (iii) L2-S32: **AGREES** — as at Row 1.35. (iv) L2-S31: **AGREES** — as at Row 1.36.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S32). (ii) **ADOPTED — carried** (L2-S28). (iii) **ADOPTED — carried** (L2-S32). (iv) **ADOPTED — carried** (L2-S31).
+
+---
+
+**Row 10.18 — the pitch emission: each tone classified by category, conditioned on chord-independent covariates.**
+
+*Outgoing statement.* "**Pitch emission** `P_emit(tone | k, c; covariates)` — each tone classified into categories: chord member (root / third / fifth / seventh-or-tension per the degree class's template), within-collection non-chord tone, outside-collection tone; emission probability conditioned on the category AND the chord-independent covariates ratified in §5a: metric weakness, stepwise approach, stepwise departure, chromatic-neighbor motion, tied-over preparation." — §3, *The factors*, item 1 (locator: lines 75–79). Two claims: (i) each tone is classified as a chord member by factor, a non-chord tone within the collection, or one outside it; (ii) the emission is conditioned on the category and on chord-independent covariates — metric weakness, stepwise approach and departure, chromatic-neighbor motion, tied-over preparation.
+
+*Derived statements that speak to it.* (i) L2-S1. (ii) L2-S25; L2-S24.
+
+*Current-text axis.* (i) L2-S1: **DIFFERS**. (ii) L2-S25: **AGREES** — metric position bears *"on an assignment as terms (covariates)"*. L2-S24: **AGREES** — the voice-leading evidence is *"the spelled melodic interval from its preceding note"*, and the following note read at the next onset.
+
+*The difference, in both texts' own words.* (i) The outgoing categories are *"chord member"*, *"within-collection non-chord tone, outside-collection tone"*; L2-S1's assignment is *"chord tone, or elaboration together with its relation"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED.** *What was read:* ratified tone categories with no elaboration relation, against L2-S1's assignment carrying one; placing it would choose between them. (ii) **ADOPTED — carried** (L2-S25, L2-S24).
+
+---
+
+**Row 10.19 — the emission table pooled where counts are thin, the pooling declared at fit.**
+
+*Outgoing statement.* "Table: category × covariate cells, pooled where counts are thin (pooling declared at fit)." — §3, item 1 (locator: lines 79–80).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — *"with its capacity budget declared in advance"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S38).
+
+---
+
+**Row 10.20 — the minor mode's variable sixth and seventh degrees as emission variants.**
+
+*Outgoing statement.* "Provenance: Raphael-Stoddard category structure + Masada-Bunescu figuration covariates; the minor-mode variable sixth and seventh degrees are emission variants (ratified)." — §3, item 1 (locator: lines 80–82).
+
+*Derived statements that speak to it.* L2-S21.
+
+*Current-text axis.* L2-S21: **AGREES** — *"A reading in minor may use either form of each without a change of tonality."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S21).
+
+---
+
+**Row 10.21 — the emission fitted from counts; a reduction alignment as the ornament resource.**
+
+*Outgoing statement.* "Fit: counts from ground-truth-labeled segments; the BCMH reduction alignment (87 stems) is the independent fitting/validation resource for the ornament cells." — §3, item 1 (locator: lines 82–83). Two claims: (i) the emission is fitted from counts over ground-truth-labeled segments; (ii) a named reduction alignment is the fitting and validation resource for the ornament cells.
+
+*Derived statements that speak to it.* (i) L2-S38 (NEAREST, §6.3 entry 6). (ii) None.
+
+*Current-text axis.* (i) L2-S38: **DIFFERS** — as at Row 1.45. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 1.45. *What was read:* as at Row 1.45. (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 10.22 — the spelling emission: the spelled scale-degree relation to the key.**
+
+*Outgoing statement.* "**Spelling emission** `P_spell(spelled degree | k)` — the tonal-pitch-class term: the spelled note's scale-degree relation to the key, with the leading-tone/subtonic contrast in minor as the sharpest cell (Temperley's tonal-pitch-class profile form; his measured +3.6 points on key is the basis)." — §3, item 2 (locator: lines 84–86).
+
+*Derived statements that speak to it.* L2-S20.
+
+*Current-text axis.* L2-S20: **DIFFERS** — as at Row 10.14(iii).
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 10.14(iii). *What was read:* as at Row 10.14(iii).
+
+---
+
+**Row 10.23 — collection membership tested through the signature mask, no tonic in the test.**
+
+*Outgoing statement.* "Also carries the collection question through the signature mask (the OI-168 form) — no tonic in the membership test." — §3, item 2 (locator: lines 87–88).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that whether a pitch belongs to a tonality's collection be tested against the collection itself, never through the tonic.
+
+---
+
+**Row 10.24 — the bass factor: which chord factor sounds in the bass, given degree class and inversion.**
+
+*Outgoing statement.* "**Bass/inversion** `P_bass(bass chord-factor | c)` — categorical: which chord factor (root, third, fifth, seventh) sounds in the bass, given the degree class and inversion; the figured-bass tradition is the theory, Ni's bass-given-chord chain the published probabilistic analogue." — §3, item 3 (locator: lines 89–91).
+
+*Derived statements that speak to it.* L2-S28.
+
+*Current-text axis.* L2-S28: **AGREES** — *"The figure is decided in the reading. It is the chord member the reading takes as the span's structural bass"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S28).
+
+---
+
+**Row 10.25 — bass-motion continuity is not in the first structure.**
+
+*Outgoing statement.* "Bass-motion continuity across segments is NOT in the first structure (recorded as a possible later factor with its own ledger entry)." — §3, item 3 (locator: lines 92–94).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 10.26 — the chord transition: an asymmetric first-order degree table, shared across keys, fit per mode.**
+
+*Outgoing statement.* "**Same-key chord transition** `P_chord(c_j | c_{j-1}, mode)` — the asymmetric first-order degree table, transposition-tied across keys, **fit separately for major and minor** (Raphael & Stoddard assumed mode-independence and doubted it themselves; the corpus statistics — the strong affinity of minor to its relative major, the mediant's prominence in minor — say fit per mode; the tying still pools all twelve keys per mode)." — §3, item 4 (locator: lines 95–99). Two claims: (i) an asymmetric first-order table over degrees, shared across keys; (ii) fitted separately for major and minor.
+
+*Derived statements that speak to it.* (i) L2-S34. (ii) None.
+
+*Current-text axis.* (i) L2-S34: **AGREES** — a term on adjacent chords *"read as degrees in their tonalities"*. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S34). (ii) **ADOPTED — proposed.** *Proposal:* that the progression term's values be fitted separately for major and for minor, each shared across the twelve tonics.
+
+---
+
+**Row 10.27 — first-order declared an assumption; the harmonic-syntax grammar the recorded upgrade.**
+
+*Outgoing statement.* "First-order is a declared ASSUMPTION (P2); the harmonic-syntax grammar is the recorded future form upgrade for this one factor." — §3, item 4 (locator: lines 100–101). Two claims: (i) first-order dependence is a declared assumption; (ii) a harmonic-syntax grammar is the recorded future upgrade.
+
+*Derived statements that speak to it.* (i) L2-S31 (NEAREST, §6.3 entry 1). (ii) None.
+
+*Current-text axis.* (i) L2-S31: **AGREES** — its premise, *"Pairwise dependence between adjacent spans is enough"*, with DP-O *"not foreclosed"*. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S31). (ii) **HISTORICAL.**
+
+---
+
+**Row 10.28 — the key transition: a fitted, transposition-invariant table over fifths distance and mode pair.**
+
+*Outgoing statement.* "**Key transition** `P_key(k_j | k_{j-1})` — transposition-invariant small table over (circle-of- fifths distance between tonics, mode pair), with the relative and parallel relations as their own cells (the Noland/Rocher family; asymmetries permitted — the table is fit, not a symmetric curve)." — §3, item 5 (locator: lines 102–104).
+
+*Derived statements that speak to it.* L2-S34; L2-S39.
+
+*Current-text axis.* L2-S34: **AGREES** — *"a cost for a tonality change, graded by the distance between the two tonalities"*. L2-S39: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing table *"is fit, not a symmetric curve"*, its cells over *"circle-of- fifths distance between tonics, mode pair"*; L2-S39 says of a published distance, *"Its internal constants are the published ones, unchanged"*, its *"single weight"* fitted.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a ratified fitted table over tonal distance, against L2-S39's published distance with one fitted weight; placing it would choose between them.
+
+---
+
+**Row 10.29 — staying in the key is the most probable cell; the fitted balance is the modulation rate.**
+
+*Outgoing statement.* "Staying in the key is the overwhelmingly probable cell; the fitted stay/change balance is the modulation rate." — §3, item 5 (locator: lines 104–106). Two claims: (i) staying in the key is the overwhelmingly probable cell; (ii) the fitted balance of staying and changing is the modulation rate.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S34.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S34: **AGREES** — *"a cost for a tonality change"*, *"Each family's weights are fitted"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* is staying in the key the overwhelmingly probable cell of the shipped key-transition table, and what modulation rate does the fitted table imply? (ii) **ADOPTED — carried** (L2-S34).
+
+---
+
+**Row 10.30 — the entry chord: the first degree in a new key, fitted from the modulation points.**
+
+*Outgoing statement.* "**Entry chord at a key change** `P_entry(c | key change)` — the distribution of the first degree in a new key, fit from the ground truth's modulation points (replacing Raphael & Stoddard's uniform-entry device, which they themselves doubted)." — §3, item 6 (locator: lines 107–109).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS** — as at Row 10.14(vii).
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 10.14(vii). *What was read:* as at Row 10.14(vii).
+
+---
+
+**Row 10.31 — the boundary factor, conditioned on beat-strength class and the fermata.**
+
+*Outgoing statement.* "**Segmentation/boundary** `P_bound` — the probability of a segment boundary at an event, conditioned on beat-strength class (the Temperley 2009 change-on-strong-beat shape: above-tactus ≫ tactus ≫ sub-tactus; our values fit from the corpus) and on the fermata (below)." — §3, item 7 (locator: lines 110–112).
+
+*Derived statements that speak to it.* L2-S12 (NEAREST, §6.3 entry 5); L2-S13.
+
+*Current-text axis.* L2-S12: **AGREES** — *"Its weights are fitted per class"*. L2-S13: **AGREES** — L1's notated boundary evidence enters *"as terms on a boundary reading"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S12, L2-S13).
+
+---
+
+**Row 10.32 — segment duration implicit-geometric with a hard length cap; an explicit duration model future work.**
+
+*Outgoing statement.* "Segment duration is otherwise implicit-geometric with a hard length cap (the established semi-Markov default; an explicit harmonic-rhythm duration model is recorded as CONJECTURE-gated future work)." — §3, item 7 (locator: lines 113–114). Two claims: (i) segment duration carries no term of its own beyond a hard length cap; (ii) an explicit duration model is recorded future work.
+
+*Derived statements that speak to it.* (i) L2-S7. (ii) None.
+
+*Current-text axis.* (i) L2-S7: **AGREES** — *"If a maximum span length is imposed for tractability, it is an admission rule"*. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S7). (ii) **HISTORICAL.**
+
+---
+
+**Row 10.33 — the fermata: a boundary prior, and a cadence-location prior with the weak-beat displacement as a covariate.**
+
+*Outgoing statement.* "**Fermata** — enters `P_bound` as a boundary prior (the chorale phrase-end convention) and enters the cadence factor as a cadence-location prior, with de Clercq's weak-beat displacement (the cadential arrival may sit one strong beat before a metrically weak fermata) as a covariate, not an exception." — §3, item 8 (locator: lines 115–118). Two claims: (i) the fermata enters the boundary factor as a prior; (ii) it enters the cadence factor as a cadence-location prior, with the weak-beat displacement as a covariate.
+
+*Derived statements that speak to it.* (i) L2-S13. (ii) L2-S37.
+
+*Current-text axis.* (i) L2-S13: **AGREES** — *"the evidence bears on the likelihood of a boundary *near* the flag, not only at it"*. (ii) L2-S37: **DIFFERS** — as at Row 10.14(ix).
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S13). (ii) **UNPLACED**, travelling with Row 10.14(ix). *What was read:* as at Row 10.14(ix).
+
+---
+
+**Row 10.34 — the cadence factor: three key-axis features, each with a fitted weight.**
+
+*Outgoing statement.* "**Cadence factor** — key-axis evidence at candidate cadence sites: the leading-tone resolution (seventh degree rising to the tonic in candidate key k), the tritone pair (both the fourth and seventh degrees of k sounding in the approach), dominant-to-tonic bass motion (falling fifth / rising fourth), each a feature with a fitted weight (the Bigo feature forms + the Feisthauer beats-since-decay shape)." — §3, item 9 (locator: lines 119–123).
+
+*Derived statements that speak to it.* L2-S37; L2-S34.
+
+*Current-text axis.* L2-S37: **DIFFERS** — as at Row 10.14(ix). L2-S34: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing cadence factor carries *"each a feature with a fitted weight"*; L2-S34 says *"confirmation is carried by the progression term over *proposed* chords, not by a separate detector"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 10.14(ix). *What was read:* as at Row 10.14(ix), and L2-S34's placing of confirmation in the progression term.
+
+---
+
+**Row 10.35 — the cadence factor's known false positives as refinements; its weight respecting half-cadence weakness.**
+
+*Outgoing statement.* "The known false positives (the parallel major/minor of the same tonic; plagal motion misread) are carried as feature refinements, and the factor's weight must respect the measured weakness of half-cadence detection." — §3, item 9 (locator: lines 123–125). Two claims: (i) the known false positives are carried as feature refinements; (ii) the factor's weight must respect the measured weakness of half-cadence detection.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 10.14(ix). (ii) **UNPLACED**, travelling with Row 10.14(ix). *What was read:* details of the cadence factor whose placement is at Row 10.14(ix).
+
+---
+
+**Row 10.36 — the prior: a weak fitted table over signature and declared mode.**
+
+*Outgoing statement.* "**Signature/declared-mode prior** `P_prior(k_1 | signature, declared mode)` — the ratified weak fitted table." — §3, item 10 (locator: lines 126–127).
+
+*Derived statements that speak to it.* L2-S17 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* L2-S17: **DIFFERS** — as at Row 1.29(ii).
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 1.29(ii). *What was read:* as at Row 1.29(ii).
+
+---
+
+**Row 10.37 — the prior conditions the initial key only; the persistent pull rejected.**
+
+*Outgoing statement.* "**SETTLED (user-ratified 2026-07-19 at the desk simulation, its §4.2 — the S3/C5 traces): the prior conditions the INITIAL key state only, re-entering only at a notated mid-piece signature change (the OI-94(a) discharge moment); the persistent-pull variant is rejected** (a linearly growing tax on away-from-signature keys with no theory basis, softly re-introducing the OI-174 signature-pull bias)." — §3, item 10 (locator: lines 127–131). Two claims: (i) the prior conditions the initial key state only, re-entering at a notated signature change; (ii) the persistent pull is rejected.
+
+*Derived statements that speak to it.* (i) L2-S17 (NEAREST, §6.3 entry 1). (ii) L2-S17 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* (i) L2-S17: **DIFFERS** — as at Row 1.37. (ii) L2-S17: **DIFFERS** — as at Row 1.39.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 1.37. (ii) **UNPLACED**, travelling with Row 1.39. *What was read:* as at Rows 1.37 and 1.39 — a later restatement, outside its home, of the ruled prior.
+
+---
+
+**Row 10.38 — the signature's influence measured by ablation and published at every fit.**
+
+*Outgoing statement.* "The signature-influence rate is measured by ablation and published at every fit." — §3, item 10 (locator: lines 131–132).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 10.39 — P1: tones within a segment conditionally independent given the state and covariates.**
+
+*Outgoing statement.* "P1 | Tones within a segment are conditionally independent given (k, c) and their covariates | ASSUMPTION (Raphael-Stoddard's, flagged weak by them) | Voice-leading dependencies between simultaneous tones (parallel motion, doubling rules) are unmodeled; visible as systematic emission residual on specific voicings — diagnosed at the emission table, not patched by weights" — §4, *The premise ledger*, the table's row *P1* (locator: line 138).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that L2's specification declare, as a premise with its false-negative path, whether the events of a span are scored as independent given the reading and their covariates, voice leading between simultaneous tones being unmodeled.
+
+---
+
+**Row 10.40 — P2: the chord transition first-order Markov in the degree.**
+
+*Outgoing statement.* "P2 | The same-key chord transition is first-order Markov in the degree | ASSUMPTION | Long-range harmonic syntax (a preparation referring across intervening chords) invisible; visible as transition-table residual on sequential progressions; the grammar upgrade is the recorded remedy" — §4, the table's row *P2* (locator: line 139).
+
+*Derived statements that speak to it.* L2-S31 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* L2-S31: **AGREES** — as at Row 10.27(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S31).
+
+---
+
+**Row 10.41 — P3: chord transitions transposition-invariant within a mode.**
+
+*Outgoing statement.* "P3 | Chord transitions are transposition-invariant within a mode | THEORY (Raphael-Stoddard; Ni's tying; standard) | A key-specific idiom (unlikely in this repertoire) would smear; detectable by per-key residual split" — §4, the table's row *P3* (locator: line 140).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **AGREES** — the progression term reads adjacent chords *"read as degrees in their tonalities"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S34).
+
+---
+
+**Row 10.42 — P4: key changes transposition-invariant.**
+
+*Outgoing statement.* "P4 | Key changes are transposition-invariant (distance and mode pair only) | THEORY (same lineage) | Absolute-key preferences (choral tessitura effects) would smear; detectable by per-key residual split" — §4, the table's row *P4* (locator: line 141).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **AGREES** — a cost *"graded by the distance between the two tonalities in a published tonal space"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S34).
+
+---
+
+**Row 10.43 — P5: the entry chord depends only on the new key.**
+
+*Outgoing statement.* "P5 | The entry chord at a key change depends only on the new key | ASSUMPTION (weaker than Raphael-Stoddard's, which we replace) | Pivot-chord modulation says entry depends on the OLD key too (the pivot is diatonic in both); visible as entry-table residual at pivot modulations; remedy is a pivot-aware entry table, its own ledger entry" — §4, the table's row *P5* (locator: line 142).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS** — as at Row 10.14(vii).
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 10.14(vii). *What was read:* as at Row 10.14(vii).
+
+---
+
+**Row 10.44 — P6: the bass chord factor depends only on the chord; the cadential six-four as its own degree class.**
+
+*Outgoing statement.* "P6 | The bass chord-factor depends only on the chord (not the key) | ASSUMPTION (figured-bass theory adjacent) | Degree-specific inversion practice (the cadential six-four sits on scale degree five) crosses chord and key; NOTE: the cadential six-four is representable as its own degree class in the vocabulary, which discharges the sharpest case — declared here so the vocabulary decision covers it" — §4, the table's row *P6* (locator: line 143). Two claims: (i) the bass factor depends only on the chord, not the key; (ii) the cadential six-four is representable as its own degree class.
+
+*Derived statements that speak to it.* (i) L2-S28. (ii) L2-S29.
+
+*Current-text axis.* (i) L2-S28: **AGREES** — the term relates *"the figure to the lowest sounding pitch"*, the figure a field of the chord. (ii) L2-S29: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing six-four *"is representable as its own degree class in the vocabulary"*; L2-S29 says *"The charter's third candidate, the six-four "as its own category", cannot be represented until DP-N is ruled."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S28). (ii) **UNPLACED.** *What was read:* a ratified premise making the cadential six-four its own class, against L2-S29, which carries the two readings as rivals and leaves the third to the charter's open DP-N; placing it would choose between them.
+
+---
+
+**Row 10.45 — P7: segment boundaries depend on meter and fermatas, not on the key.**
+
+*Outgoing statement.* "P7 | Segment boundaries depend on meter and fermatas, not on the key | ASSUMPTION | Cadential closure influences segmentation beyond meter; partially covered by the cadence factor sitting at boundaries; visible as boundary residual at cadences" — §4, the table's row *P7* (locator: line 144).
+
+*Derived statements that speak to it.* L2-S12 (NEAREST, §6.3 entry 5); L2-S13.
+
+*Current-text axis.* L2-S12: **AGREES** — *"The term reads the class and its period as L1 publishes them."* L2-S13: **AGREES** — the flags, marks and per-voice relations enter *"as terms on a boundary reading"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S12, L2-S13).
+
+---
+
+**Row 10.46 — P8: factor overlap corrected by the weights, a structured overlap by a merge or split.**
+
+*Outgoing statement.* "P8 | Factor overlap (spelling ~ signature ~ collection; cadence ~ transition) is corrected by the combination weights, not by the tables | The ratified §5a structure | If a single weight cannot correct a structured overlap, the residual shows in the weight fit diagnostics; remedy is a factor merge/split, a structure change — never a value tweak" — §4, the table's row *P8* (locator: line 145).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that overlap between terms of the candidate score be absorbed by the fitted combination weights, a structured overlap being remedied by merging or splitting terms and never by adjusting a table's values.
+
+---
+
+**Row 10.47 — exactly equal candidate scores between decodes are real; unbroken, they make the output platform-dependent.** *WITHHELD — D-565.*
+
+*Outgoing statement.* "**The tie-break rule (user-ratified 2026-07-20 at the C++ module build's parity finding):** exact score ties between candidate decodes are real (proven at 8 corpus pieces — equal-score segmentations differing by one boundary on repeated-chord runs) and, unbroken, they make the committed output depend on the platform's floating-point library — unacceptable for the diff-based adoption measurement and regression stops (#16, reproducibility)." — §5, *The decode* (locator: lines 149–153). Two claims: (i) exactly equal candidate scores between decodes are real, measured at eight pieces; (ii) unbroken, they make the committed output depend on the platform, which reproducibility forbids.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S43 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S43: **AGREES** — a principal chosen silently between equal readings *"would make the published principal depend on evaluation order rather than on the music, and would not be reproducible"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* are candidate readings with exactly equal candidate scores present at the current commit, on which pieces, and does the shipped decoder resolve them by a declared order? (ii) **ADOPTED — carried** (L2-S43).
+
+---
+
+**Row 10.48 — candidates of equal candidate score resolve by a declared total order, implemented identically everywhere.** *WITHHELD — D-565.*
+
+*Outgoing statement.* "Equal-score candidates therefore resolve by a declared TOTAL order, implemented identically in every decoder of this specification: fewer segments first; then the earliest boundary-tick sequence (lexicographic); then the canonical class-key order of the state sequence." — §5 (locator: lines 153–156). Two claims: (i) equal-score candidates resolve by a declared total order, the same in every decoder; (ii) the order: fewer segments first, then the earliest boundary sequence, then the canonical order of the state sequence.
+
+*Derived statements that speak to it.* (i) L2-S43 (NEAREST, §6.3 entry 4). (ii) None.
+
+*Current-text axis.* (i) L2-S43: **AGREES** — *"The principal is chosen between them by a declared, deterministic rule that the publication names"*. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S43). *(An AGREES on a WITHHELD row: the derived statement reaches a ruled answer the deriving session was not shown.)* (ii) **ADOPTED — proposed.** *Proposal:* that L2's declared tie-break order equal readings by fewer spans first, then the earliest boundary sequence, then a canonical order of their states.
+
+---
+
+**Row 10.49 — no epsilon, no platform dependence: a pure order on paths.** *WITHHELD — D-565.*
+
+*Outgoing statement.* "No epsilon, no platform dependence — a pure order on paths." — §5 (locator: lines 156–157).
+
+*Derived statements that speak to it.* L2-S43 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S43: **AGREES** — *"A flagged tie with a named rule is reproducible and honest."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S43). *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 10.50 — a below-threshold continuation scored by the leftover in proportion to frequency, never evenly, never as zero.**
+
+*Outgoing statement.* "**The below-threshold scoring rule (user-ratified 2026-07-19 at the fitted-table probe, `cowork_sensitive_cell_probe.md` finding 2, option 2a):** where a fitted table row stores a pooled leftover probability for continuations below the count-reliability threshold, the decoder scores a specific such continuation as the row's leftover mass apportioned in proportion to that outcome class's overall frequency in the mode (the standard back-off construction) — never by even division and never as zero." — §5 (locator: lines 159–164). Two claims: (i) in proportion to the outcome class's overall frequency, never by even division; (ii) never as zero.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S3.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L2-S3: **AGREES** — as at Row 1.42(ii).
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 1.42(i). (ii) **ADOPTED — carried** (L2-S3).
+
+---
+
+**Row 10.51 — exact semi-Markov Viterbi over the joint state; twenty-four keys; a block-factorized transition.**
+
+*Outgoing statement.* "**Exact semi-Markov Viterbi over the joint state** is the target (the ratified architecture): states `(k, c)` — 24 keys × the degree vocabulary; the transition factorizes into the block structure (same-key: chord-transition table; key-change: key-transition × entry tables), which keeps the per-boundary cost far below the naive square of the state count." — §5 (locator: lines 166–169). Three claims: (i) the search is exact semi-Markov Viterbi over the joint state; (ii) the states are twenty-four keys by the degree vocabulary; (iii) the transition factorizes into a same-key block and a key-change block, keeping the cost per boundary low.
+
+*Derived statements that speak to it.* (i) L2-S36; L2-S31 (NEAREST, §6.3 entry 1). (ii) L2-S6. (iii) None.
+
+*Current-text axis.* (i) L2-S36: **AGREES** — *"The search is exact"*. L2-S31: **AGREES** — as at Row 1.9. (ii) L2-S6: **DIFFERS** — as at Row 10.8(i). (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S36, L2-S31). (ii) **UNPLACED**, travelling with Row 10.8(i). *What was read:* as at Row 10.8(i). (iii) **ADOPTED — proposed.** *Proposal:* that L2's search factorize the transition between spans into a same-tonality block and a tonality-change block, so that it stays exact at a lower cost per boundary.
+
+---
+
+**Row 10.52 — exact decode expected tractable; the reserve a documented prune with its own loss measurement.**
+
+*Outgoing statement.* "With chorale-scale event counts (roughly 60–150 events), the established segment cap, and the block factorization, exact decode is expected tractable; **if measurement shows otherwise, the reserve is documented pruning** (restricting key-change candidates to a fitted-mass neighborhood on the circle of fifths) — an inference technique requiring its own established-loss measurement, never a silent heuristic." — §5 (locator: lines 169–173). Two claims: (i) exact decode is expected tractable at the size of a chorale; (ii) the reserve is a documented prune with its own established-loss measurement.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S36.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — L2-S36 leaves tractability *"UNESTABLISHED"*. (ii) L2-S36: **DIFFERS** — as at Row 1.10.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **HISTORICAL**, travelling with Row 1.10.
+
+---
+
+**Row 10.53 — the full posterior retained for the published alternatives and the uncertainty surface.**
+
+*Outgoing statement.* "The full posterior (not only the best path) is retained for the published alternatives and the uncertainty surface (#12; the carry/abstention policies of the old architecture re-express as posterior mass, not as ad-hoc lists)." — §5 (locator: lines 173–175).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — *"A span-rival's mass is the marginal: the total mass of all whole readings that contain that span"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S40).
+
+---
+
+**Row 10.54 — the desk-simulation stage run and ratified.**
+
+*Outgoing statement.* "**STAGE RUN AND RATIFIED (2026-07-19):** the simulation below was executed on paper as specified — `cowork_factorization_desk_simulation.md`, user-ratified 2026-07-19." — §6, *The desk-simulation forms* (locator: lines 179–180).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 10.55 — its outcome: nine of ten traces pass; one under-determination amended; the prior question settled.**
+
+*Outgoing statement.* "Outcome: nine of ten traces pass; one specification under-determination found and amended (§2 factor granularity); the §5a prior question settled (initial-state-only, §3.10)." — §6 (locator: lines 180–182).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 10.56 — OI-181 discharged.**
+
+*Outgoing statement.* "OI-181 is discharged." — §6 (locator: line 182).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 10.57 — the synthetic cases, hand-computable, over a declared truncated state space.**
+
+*Outgoing statement.* "**(a) Small synthetic cases — hand-computable DP tables, state space truncated to a declared candidate set (the truncation is part of the exercise's record):**" — §6 (locator: lines 186–187).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 10.58 — synthetic case 1: a plain authentic cadence committed.**
+
+*Outgoing statement.* "a plain authentic cadence (dominant to tonic, eight events) — the mechanism must commit the obvious;" — §6, case (a)1 (locator: line 188).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 10.59 — synthetic case 2: a relative-pair ambiguity resolved exactly when the leading tone appears.**
+
+*Outgoing statement.* "a relative-pair ambiguity (a melody diatonic to one signature, no leading tone until late) — the prior and cadence factors must resolve it exactly when the leading tone appears, not before;" — §6, case (a)2 (locator: lines 189–190).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 10.60 — synthetic case 3: a Dorian-notated opening and the prior's fifth-away mass.**
+
+*Outgoing statement.* "a Dorian-notated opening (signature one flat short) — the prior's fifth-away mass must behave;" — §6, case (a)3 (locator: line 191).
+
+*Derived statements that speak to it.* L2-S17 (NEAREST, §6.3 entry 1).
+
+*Current-text axis.* L2-S17: **AGREES** — *"The prior assigns non-trivial weight to the tonalities one accidental either side of the signature"*.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 10.61 — synthetic case 4: the applied-degree class wins a tonicization by the transition economics, not by fiat.**
+
+*Outgoing statement.* "a tonicization (the dominant of the dominant, then the dominant) — the applied-degree class must win against the momentary-modulation reading by the transition economics, not by fiat;" — §6, case (a)4 (locator: lines 192–193).
+
+*Derived statements that speak to it.* L2-S18.
+
+*Current-text axis.* L2-S18: **AGREES** — *"Which one is principal is decided by the candidate score over the whole sequence, not by a rule."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 10.62 — synthetic case 5: a deceptive cadence and the asymmetric transition table.**
+
+*Outgoing statement.* "a deceptive cadence (dominant to submediant) — the asymmetric transition table's work." — §6, case (a)5 (locator: line 194).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **AGREES** — the progression term on adjacent chords read as degrees.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 10.63 — the single-piece traces on real failing cases, proposed.**
+
+*Outgoing statement.* "**(b) Single-piece traces on 3–5 real corpus cases from the known failing sets** (the #17c form: FIRST "does the mechanism fire?", THEN "which term moves, by how much?"), proposed: `bwv145.5@12960` (the altered-region chord flip the OI-168 fix corrected — the new structure must get it without the fix's special form), `bwv352@1440` (the share-tone Am6 vs F♯ø7 case — spelling and bass factors must carry it), `bwv10.7@36000` (the segmentation over-grab — the boundary factor's test), one relative-major/minor key-failure case drawn from the key-local residual, and one genuinely modal chorale (prior + emission variants)." — §6 (locator: lines 196–202).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+
+---
+#### Not a statement — listed so the arithmetic closes (16)
+
+1. "**Ratified by the user 2026-07-19** — the variable structure (§1), the score form (§2), the factor roster (§3), the premise ledger P1–P8 (§4), the decode plan (§5), and the desk-simulation forms and case list (§6) are the governing structure." (3–5) — *a status of the document*.
+2. "**Author:** Cowork, 2026-07-19, at the user's direction." (11) — *provenance*.
+3. "**Standing:** the structure-design step of `cowork_joint_estimator_architecture.md` §4 (step 2), building on the five ratified §5a decisions and the derived forms in `cowork_term_theory_grounding.md`." (11–13) — *provenance*.
+4. "**This is a specification, not a build** — the estimator funnel stays shut." (13–14) — *the document's account of itself*.
+5. "Every load-bearing conditional-independence claim is an explicit premise (P1–P8 below), labeled THEORY or ASSUMPTION per #17a, with its false-negative path named per #17e." (14–15) — *the document's account of its own form*.
+6. "The estimator chooses, jointly:" (24) — *a lead-in to the items, which are tabulated*.
+7. "**Factor granularity (amendment, user-ratified 2026-07-19 at the desk simulation — `cowork_factorization_desk_simulation.md` §4.1, the `bwv10.7@36000` length-bias finding):**" (62–64) — *a label with its provenance*.
+8. "Without this rule, per-segment factor instances give longer segments an evidence-free discount (the semi-Markov length bias) that the desk simulation measured deciding merge-vs-split against ground truth by ~6.6 nats on the named case." (69–71) — *a defense* of Row 10.17.
+9. "**Evaluated per event within the segment (the 2026-07-19 granularity amendment, §2).**" (91–92) — *a restatement of Row 10.17(ii)*.
+10. "Provenance: Ni's key-conditioned transition; Rohrmeier & Cross's measured asymmetries." (99–100) — *a citation*.
+11. "This is the OI-166 channel delivered as a factor." (125) — *provenance*.
+12. "Two declared forms, replacing the infeasible full hand-trace:" (184) — *a lead-in to the two forms, which are tabulated*.
+13. "The traces are run on paper against the specification BEFORE any code exists; a surprise at this stage is cheap and is the point." (202–203) — *a rule of the development process*.
+14. "The values of any table or weight (the fitting protocol and its gates: OI-176, OI-177); the robust-stop adoption protocol (OI-178) and the dual-path/retirement plan (OI-180) — separate documents; the jazz vocabulary and covariates (the OI-7 gate); the grammar upgrade of the chord-transition factor and the bass-motion continuity factor (recorded future ledger entries)." (207–210) — *the document's account of its own scope*.
+15. "*(The persistent-vs-initial signature prior, listed here as open at ratification, was settled by the desk simulation as forecast — see §3.10.)*" (210–211) — *a pointer restating Row 10.37*.
+16. "*Ratification asked for: the variable structure (§1), the score form (§2), the factor roster (§3), the premise ledger (§4), the decode plan (§5), and the desk-simulation forms and case list (§6).*" (213–214) — *provenance*.
+
+#### The arithmetic at this member
+
+- Rows written: **63** (10.1 to 10.63).
+- Rows split into two claims, **+1 each**: 10.4, 10.8, 10.9, 10.13, 10.18, 10.21, 10.26, 10.27, 10.29, 10.32, 10.33, 10.35, 10.37, 10.44, 10.47, 10.48, 10.50, 10.52 — eighteen rows, **+18**.
+- Rows split into three claims, **+2 each**: 10.16, 10.51 — two rows, **+4**.
+- Rows split into four claims, **+3 each**: 10.17 — one row, **+3**.
+- Rows split into nine claims, **+8 each**: 10.14 — one row, **+8**.
+- **Outgoing statements placed: 63 + 18 + 4 + 3 + 8 = 96.**
+- Listed under *not a statement*: **16**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 96 dispositions over
+  96 statements.
+- **UNPLACED at this member: 24** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 39 | 10.4(ii), 10.6, 10.7, 10.8(ii), 10.9(i), 10.11, 10.13(i), 10.14(ii), 10.14(iv), 10.14(v), 10.14(vi), 10.14(viii), 10.16(i), 10.16(iii), 10.17(i), 10.17(ii), 10.17(iii), 10.17(iv), 10.18(ii), 10.19, 10.20, 10.24, 10.26(i), 10.27(i), 10.29(ii), 10.31, 10.32(i), 10.33(i), 10.40, 10.41, 10.42, 10.44(i), 10.45, 10.47(ii), 10.48(i), 10.49, 10.50(ii), 10.51(i), 10.53 |
+| ADOPTED — proposed | 7 | 10.23, 10.26(ii), 10.39, 10.46, 10.48(ii), 10.50(i), 10.51(iii) |
+| RELOCATED | 5 | 10.5, 10.12, 10.15, 10.21(ii), 10.38 |
+| QUARANTINED | 2 | 10.29(i), 10.47(i) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 19 | 10.1, 10.2, 10.3, 10.4(i), 10.25, 10.27(ii), 10.32(ii), 10.52(i), 10.52(ii), 10.54, 10.55, 10.56, 10.57, 10.58, 10.59, 10.60, 10.61, 10.62, 10.63 |
+| UNPLACED | 24 | 10.8(i), 10.9(ii), 10.10, 10.13(ii), 10.14(i), 10.14(iii), 10.14(vii), 10.14(ix), 10.16(ii), 10.18(i), 10.21(i), 10.22, 10.28, 10.30, 10.33(ii), 10.34, 10.35(i), 10.35(ii), 10.36, 10.37(i), 10.37(ii), 10.43, 10.44(ii), 10.51(ii) |
+| **Total** | **96** | — |
+
+**The arithmetic closes at this member**: 39 + 7 + 5 + 2 + 0 + 19 + 24 = 96, against 96 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 51 |
+| DIFFERS | 24 |
+| THE DERIVATION IS SILENT | 30 |
+| **Total verdicts** | **105** |
+
+*(105 verdicts over 96 statements because nine statements each name two derived statements: 10.6; 10.9(ii); 10.14(viii); 10.18(ii); 10.28; 10.31; 10.34; 10.45; 10.51(i).)* DIFFERS: 10.8(i), 10.9(ii), 10.10, 10.13(ii), 10.14(i), 10.14(iii), 10.14(vii), 10.14(ix), 10.16(ii), 10.18(i), 10.21(i), 10.22, 10.28, 10.30, 10.33(ii), 10.34, 10.36, 10.37(i), 10.37(ii), 10.43, 10.44(ii), 10.51(ii), 10.52(ii).
+
+#### The marks at this member
+
+- **WITHHELD rows: 10.47, 10.48 and 10.49 (D-565).** No boundary case arises at this member: each WITHHELD
+  statement opens and closes inside the home as cited, and Row 10.50, the next sentence after it, is not marked.
+  **An AGREES stands on these WITHHELD statements:** 10.47(ii), 10.48(i), 10.49.
+- **SEEN rows: none.** None of the eight identities 1(c) names — D-002, D-095, D-223, D-261, D-275, D-279,
+  D-322, D-393 — is among the identities the artifact places in position 10.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S12 (entry 5) — 10.14, 10.31,
+  10.45; L2-S17 (entry 1) — 10.14, 10.36, 10.37, 10.60; L2-S31 (entry 1) — 10.6, 10.13, 10.17, 10.27, 10.40,
+  10.51; L2-S38 (entry 6) — 10.4, 10.13, 10.16, 10.19, 10.21; L2-S43 (entry 4) — 10.47, 10.48, 10.49. No row of
+  this member names L2-S22, L2-S42 or L2-S45.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -22268,6 +23145,8 @@ the row says which.
   anchor at IC S-44, and spelled pitch at IC S-3.)*
 - Rows 7.8 and 7.147 — travelling with Row 6.6(i): the slice as the layer below's publication.
 - Row 7.55 — that the layers below the reading are facts and use no style preset.
+- Row 10.5 — travelling with Row 6.6(i): the event, the minimal stretch between consecutive onsets and releases, as
+  the layer below's slice.
 
 **To *L3 — The read-off facts*.**
 
@@ -22310,6 +23189,8 @@ the row says which.
 - Rows 6.163 and 6.205(ii) — the chord symbol, root, quality and bass, as a read-off of the decided chord,
   and whether the power-chord label is ever displayed. *(L2-S27 travels with them.)*
 - Row 7.160(i) — that a cadence is decided after the tonality and the chord. *(L2-S49 travels with it.)*
+- Row 10.12 — travelling with Row 6.163: the chord symbol, its root the tonic transposed by the degree's interval, as a
+  derived fact. *(L2-S27 travels with it.)*
 
 **To *the second axis — voice leading*.**
 
@@ -22437,10 +23318,13 @@ the row says which.
 - Row 9.395 — the committed robust-unit reference and its run enumerations.
 - Rows 9.401 and 9.402(ii) — retained correction rules carrying liveness evidence, their firing counts re-measured at
   every adoption.
+- Rows 10.15 and 10.38 — the identity-weight ablation baseline, and the signature's influence measured by ablation and
+  published at every fit.
+- Row 10.21(ii) — a named reduction alignment as the fitting and validation resource for the ornament cells.
 
 *(Member 2 relocates no row. Member 3 relocates one, Row 3.38, above. Member 5's relocations are the rows
 numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows numbered 7.n. Member 8 relocates
-no row. Member 9's relocations are the rows numbered 9.n above.)*
+no row. Member 9's relocations are the rows numbered 9.n above, and member 10's the rows numbered 10.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -22957,6 +23841,10 @@ rows here, each with its audit question, in the commit that tabulates it.
   uncorrelated with root correctness reproduce at the current commit, on which decode?
 - Row 9.390 — travelling with Row 6.11: does the fine-grain override exist on any arm, does it run, and which class of
   root error does it change at the current commit?
+- Row 10.29(i) — is staying in the key the overwhelmingly probable cell of the shipped key-transition table, and what
+  modulation rate does the fitted table imply?
+- Row 10.47(i) — are candidate readings with exactly equal candidate scores present at the current commit, on which
+  pieces, and does the shipped decoder resolve them by a declared order?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -23023,6 +23911,20 @@ words.
 - Row 9.51(i) — travelling with Row 1.3: that no layer of after-the-fact corrections be laid over L2's decided reading.
 - Row 9.160(i) — travelling with Row 1.1(i): that every term's form be derived from established music theory or
   published research before any value is attached to it.
+- Row 10.23 — that whether a pitch belongs to a tonality's collection be tested against the collection itself, never
+  through the tonic.
+- Row 10.26(ii) — that the progression term's values be fitted separately for major and for minor, each shared across
+  the twelve tonics.
+- Row 10.39 — that L2's specification declare, as a premise with its false-negative path, whether the events of a span
+  are scored as independent given the reading and their covariates.
+- Row 10.46 — that overlap between terms of the candidate score be absorbed by the fitted combination weights, a
+  structured overlap remedied by merging or splitting terms and never by adjusting a table's values.
+- Row 10.48(ii) — that L2's declared tie-break order equal readings by fewer spans first, then the earliest boundary
+  sequence, then a canonical order of their states.
+- Row 10.50(i) — travelling with Row 1.42(i): that a progression too rare to have its own value be scored in proportion
+  to how common the chord is in that mode, never evenly.
+- Row 10.51(iii) — that L2's search factorize the transition between spans into a same-tonality block and a
+  tonality-change block, staying exact at a lower cost per boundary.
 
 **DIFFERS.**
 
@@ -23383,6 +24285,37 @@ words.
   alternatives are normalised against each other alone."*
 - Row 9.349(i) — travelling with Row 8.107: quality-from-key is *"scattered across ≥4 sites/3 layers"*; L2-S27 says *"L2
   decides the chord as degree, quality, figure and applied target, read against the span's tonality"*.
+- Rows 10.8(i) and 10.51(ii) — the outgoing tonic is *"one of the twelve pitch classes"*, the states *"24 keys × the
+  degree vocabulary"*; L2-S6's vocabulary is *"the spelled tonics (seven letters, each natural, sharp or flat)"*.
+- Row 10.9(ii) — the outgoing applied classes are *"the secondary dominant and applied leading-tone chord per target"*;
+  L2-S5 says *"The applied target is a chain, not a single field"*.
+- Row 10.10 — the outgoing vocabulary is the observed classes *"with a count threshold and one pooled rare-class"*; L2-S2
+  requires that *"Every reading a published analysis writes for a passage of the grading repertoire must be
+  admissible"*.
+- Rows 10.13(ii) and 10.21(i) — travelling with Row 1.45: the outgoing model is *"log-linear over frozen generative
+  tables"*, fitted from *"counts from ground-truth-labeled segments"*; L2-S38's fit *"is discriminative"*, its objective
+  *"the graded measure, not likelihood alone"*.
+- Rows 10.14(i), 10.37(i) and 10.37(ii) — travelling with Rows 1.37 and 1.39: the outgoing prior applies *"once, at the
+  start"*, the persistent pull *"rejected"*; L2-S17 is *"a weak prior over the spans' tonalities"*.
+- Rows 10.14(iii) and 10.22 — the outgoing spelling emission is *"the spelled note's scale-degree relation to the key"*;
+  L2-S20 reads *"a recency-weighted account of which spelled scale degrees have sounded"*.
+- Rows 10.14(vii), 10.30 and 10.43 — the outgoing entry chord *"depends only on the new key"*; L2-S34's progression term
+  is on *"the pair of adjacent chords"*.
+- Rows 10.14(ix), 10.33(ii) and 10.34 — the outgoing cadence factor carries *"each a feature with a fitted weight"*;
+  L2-S37 says *"No term of the fitted candidate score reads them until the window is established"*, and L2-S34 that
+  *"confirmation is carried by the progression term over *proposed* chords, not by a separate detector"*.
+- Row 10.16(ii) — the outgoing weights are *"fit by convex conditional likelihood"*; L2-S38 says *"Its objective is the
+  graded measure, not likelihood alone."*
+- Row 10.18(i) — the outgoing categories are *"chord member"*, *"within-collection non-chord tone, outside-collection
+  tone"*; L2-S1's assignment is *"chord tone, or elaboration together with its relation"*.
+- Row 10.28 — the outgoing key-transition table *"is fit, not a symmetric curve"*; L2-S39 says of a published distance,
+  *"Its internal constants are the published ones, unchanged"*.
+- Row 10.36 — travelling with Row 1.29(ii): the outgoing prior is conditioned on the *"declared mode"*; L2-S17 says *"A
+  tonality or mode tag the record file declares is not read at all."*
+- Row 10.44(ii) — the outgoing six-four *"is representable as its own degree class in the vocabulary"*; L2-S29 carries
+  the two readings as rivals, the third *"cannot be represented until DP-N is ruled"*.
+- Row 10.52(ii) — travelling with Row 1.10: the outgoing reserve is *"documented pruning"*; L2-S36 prunes *"only by a
+  bound that provably cannot discard a reading whose final candidate score could exceed a kept reading's"*.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -23403,10 +24336,11 @@ own distribution table in §6.
 | 7 | 224 | 53 | 2 | 20 | 103 | 0 | 22 | 24 | 89 |
 | 8 | 212 | 17 | 0 | 0 | 111 | 0 | 57 | 27 | 93 |
 | 9 | 471 | 12 | 27 | 75 | 113 | 0 | 218 | 26 | 270 |
-| **Total** | **1809** | **294** | **60** | **217** | **647** | **0** | **409** | **182** | **739** |
+| 10 | 96 | 39 | 7 | 5 | 2 | 0 | 19 | 24 | 16 |
+| **Total** | **1905** | **333** | **67** | **222** | **649** | **0** | **428** | **206** | **755** |
 
-**The arithmetic check:** 294 + 60 + 217 + 647 + 0 + 409 + 182 = 1809, against 1809 statements placed (72 +
-65 + 40 + 36 + 417 + 272 + 224 + 212 + 471).
+**The arithmetic check:** 333 + 67 + 222 + 649 + 0 + 428 + 206 = 1905, against 1905 statements placed (72 +
+65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96).
 
 **Current-text verdicts.**
 
@@ -23421,9 +24355,10 @@ own distribution table in §6.
 | 7 | 58 | 87 | 80 | 225 |
 | 8 | 19 | 59 | 141 | 219 |
 | 9 | 25 | 24 | 423 | 472 |
-| **Total** | **424** | **444** | **972** | **1840** |
+| 10 | 51 | 24 | 30 | 105 |
+| **Total** | **475** | **468** | **1002** | **1945** |
 
-**The arithmetic check:** 424 + 444 + 972 = 1840 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472).
+**The arithmetic check:** 475 + 468 + 1002 = 1945 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105).
 
 ## 14. The derivation's independence record, relayed
 
@@ -23454,4 +24389,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 9 are done, positions 10 to 62 are untouched.
+  untouched: positions 1 to 10 are done, positions 11 to 62 are untouched.
