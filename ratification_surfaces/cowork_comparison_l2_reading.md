@@ -59,7 +59,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 17 | `ARCHITECTURE.md` passages — the opening block, above the first `## ` heading | **DONE** (§6.17) |
 | 18 | `ARCHITECTURE.md` passages — *Document governance and the standing architecture notes* | **DONE** (§6.18) |
 | 19 | `ARCHITECTURE.md` passages — *Table of Contents* | **DONE** (§6.19) |
-| 20 | `ARCHITECTURE.md` passages — *1. Project Overview* | NOT YET TABULATED |
+| 20 | `ARCHITECTURE.md` passages — *1. Project Overview* | **DONE** (§6.20) |
 | 21 | `ARCHITECTURE.md` passages — *2. Architectural Principles* | NOT YET TABULATED |
 | 22 | `ARCHITECTURE.md` passages — *3. Directory Structure* | NOT YET TABULATED |
 | 23 | `ARCHITECTURE.md` passages — *4. Existing Components — The Analysis Foundation* | NOT YET TABULATED |
@@ -105,15 +105,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 19 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 20 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, and the `ARCHITECTURE.md` passages under *Table of Contents*.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, and the `ARCHITECTURE.md` passages under *1. Project Overview*.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 19 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 20 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -132,8 +132,8 @@ position 16 under that dispatch's capacity judgment (its Task 1(h)): position 17
 batch would have met, was judged not finishable whole in the context that remained with the batch's close still
 to run, and was not opened. The fifth batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifth_2026_09_28.md`, resumed at position 17 and
-tabulated positions 17 to 19, each whole and in its own commit. **Positions 20 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 20**, `ARCHITECTURE.md` passages — *1. Project Overview*. §7, §8,
+tabulated positions 17 to 20, each whole and in its own commit. **Positions 21 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 21**, `ARCHITECTURE.md` passages — *2. Architectural Principles*. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -28886,6 +28886,185 @@ document (Row 17.1) makes the estimator joint. (ii) **HISTORICAL** — the same 
   `tools/audit/decisions/backbone_decisions.json`.
 - **Rows naming a derived statement §6.3 names as NEAREST to material met: none** — the member has no row.
 
+---
+
+### 6.20 — Member 20: `ARCHITECTURE.md`, passages — *1. Project Overview*
+
+> **Manifest for this member.** Position **20**. Kind: *items 3 and 4 — passages of a specification-set
+> member*. Document: `ARCHITECTURE.md`. Label: *"## 1. Project Overview"*. **The one published range**, as a
+> locator only, by its first and last line as the artifact publishes them (**D-307**): lines 644–670, from *"-
+> **ChordAnalyzer** — identifies chord quality, extensions, inversions, diatonic"* to *"  page in Edit →
+> Preferences → Composing"*. **Both lines matched the file** at the object this batch read, with no trailing
+> carriage return to set aside; the member has one range, so no line lies between ranges. Outgoing statements:
+> **6** (rows 20.1 to 20.6; no row is split). Listed under *not a statement*: **3**. Counted at this member by this
+> session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** The list headed *1.4 Implemented
+> Components*: each bullet names a component of the program and what it does. **The placement readings are those of
+> the earlier members, applied unchanged**: a description of the implementation is QUARANTINED, with the verdict
+> given where a derived statement speaks to the same property; presentation code is QUARANTINED as the formatter
+> rows of member 5 were; a statement about a product tool outside the analysis — the intonation feature, the
+> preferences, the playback of the chord staff — is listed under *not a statement*; and a later statement of
+> content an earlier row already carries travels with the earliest row carrying it — the legacy chord analyzer
+> with Row 3.15, the legacy key analyzer with Row 7.10, the formatter with Row 5.300.
+>
+> **The WITHHELD homes inside this member**: none — the artifact's `item_4_identities_inside` for position 20 is
+> empty. **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes lies in
+> this member.
+
+---
+
+**Row 20.1 — the chord analyzer names the chord from a set of simultaneously sounding notes.**
+
+*Outgoing statement.* "**ChordAnalyzer** — identifies chord quality, extensions, inversions, diatonic degree, and
+chromatic (borrowed) Roman numerals from a set of simultaneously sounding notes" — §1.4 *Implemented Components*
+(locator: lines 644–646).
+
+*Derived statements that speak to it.* L2-S30.
+
+*Current-text axis.* L2-S30: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing component names the chord *"from a set of simultaneously
+sounding notes"*; L2-S30 says *"No chord term decides a chord from the pitch-class content of the span alone."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 3.15.
+
+---
+
+**Row 20.2 — the key analyzer infers the key from a weighted window of pitches.**
+
+*Outgoing statement.* "**KeyModeAnalyzer** — infers the most likely key and mode from a temporal window of pitch
+contexts with duration, beat, and bass weighting" — §1.4 *Implemented Components* (locator: lines 647–648).
+
+*Derived statements that speak to it.* L2-S20.
+
+*Current-text axis.* L2-S20: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing component infers the key *"from a temporal window of pitch
+contexts with duration, beat, and bass weighting"*; L2-S20's tonality terms *"read the chords the reading proposes
+(degree, function, cadential progressions) and a recency-weighted account of which spelled scale degrees have
+sounded"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 7.10.
+
+---
+
+**Row 20.3 — the formatter writes chord symbols and Roman numerals, chromatic numerals for non-diatonic chords.**
+
+*Outgoing statement.* "**ChordSymbolFormatter** — formats analysis results as chord symbols and Roman numerals;
+non-diatonic chords produce chromatic numerals (♭VII, ♭III, ♭VI etc.) rather than returning empty" — §1.4
+*Implemented Components* (locator: lines 649–651).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.300.
+
+---
+
+**Row 20.4 — the harmonic-rhythm component detects the harmonic boundaries over a stretch of the score.**
+
+*Outgoing statement.* "**HarmonicRhythm** — detects harmonic boundaries across a score range, drives chord staff
+population" — §1.4 *Implemented Components* (locator: lines 652–653).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what a component does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the harmonic-rhythm component run on any production
+path at the current commit, and does it decide where one harmony gives way to the next apart from the chord?
+
+---
+
+**Row 20.5 — the chord staff: a part the user adds, filled on demand with the harmonic reduction.**
+
+*Outgoing statement.* "**Chord staff** (also called the **chord track** elsewhere in this doc — the same object) — a
+grand-staff part added by the user that is populated on demand (an action called **implode**: write the harmonic
+reduction to the chord staff) with a harmonic reduction: chord symbols, Roman numerals, canonical or collected
+voicings, key/mode annotations, borrowed chord labels, pivot detection, and cadence markers." — §1.4 *Implemented
+Components* (locator: lines 654–658).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what does the chord-staff writer write on the record arm
+at the current commit, and from which published facts?
+
+---
+
+**Row 20.6 — the status display shows the chord, the key and the Roman numeral for a selected note.**
+
+*Outgoing statement.* "**Status bar integration** — displays chord, key/mode, and Roman numeral information when a
+note is selected" — §1.4 *Implemented Components* (locator: lines 660–661).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* from which surface does the status display take the
+chord, the key and the Roman numeral it shows for a selected note?
+
+---
+
+#### Not a statement — listed so the arithmetic closes (3)
+
+1. "Notes on the chord staff have `play = false` (annotation-only; they do not double the source staves in
+   playback)" (658–659) — *a statement about a product tool outside the analysis* — playback.
+2. "**Intonation** — per-note and region tuning via split-and-slur; tonic-anchored JI places each chord root at its
+   scale-degree position above the mode tonic rather than always at 0¢; optional minimize-retune shift and per-note
+   cent annotation in score; sustained-event rewriting is controlled by user preference, existing tie boundaries
+   may be converted to slurs when independent retuning is needed, and anchors protect the full written duration
+   from segmentation" (662–667) — *a statement about a product tool outside the analysis* — the intonation
+   feature.
+3. "**User preferences** — `IComposingAnalysisConfiguration` and `IComposingChordStaffConfiguration` expose analysis
+   and output settings; preferences page in Edit → Preferences → Composing" (668–670) — *a statement about a
+   product tool outside the analysis* — the preferences.
+
+#### The arithmetic at this member
+
+- Rows written: **6** (20.1 to 20.6); no row is split.
+- **Outgoing statements placed: 6.**
+- Listed under *not a statement*: **3**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 6 dispositions over 6
+  statements.
+- **UNPLACED at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 6 | 20.1, 20.2, 20.3, 20.4, 20.5, 20.6 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **6** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 0 + 6 + 0 + 0 + 0 = 6, against 6 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 2 |
+| THE DERIVATION IS SILENT | 4 |
+| **Total verdicts** | **6** |
+
+*(6 verdicts over 6 statements; no statement names two derived statements.)* DIFFERS: 20.1, 20.2.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 20 is empty.
+- **SEEN rows: none.** None of the eight homes 1(c) names lies in `ARCHITECTURE.md` lines 644–670, located with
+  `tools/audit/decisions/backbone_decisions.json`.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met: none.** No row of this member names
+  L2-S12, L2-S17, L2-S22, L2-S31, L2-S38, L2-S42, L2-S43 or L2-S45.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -29203,7 +29382,7 @@ the row says which.
 numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows numbered 7.n. Member 8 relocates
 no row. Member 9's relocations are the rows numbered 9.n above, member 10's the rows numbered 10.n, member 11's
 the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows numbered 13.n, member 14's the rows
-numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows numbered 17.n. Member 18 relocates no row. Member 19 relocates no row.)*
+numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows numbered 17.n. Member 18 relocates no row. Member 19 relocates no row. Member 20 relocates no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -29843,6 +30022,17 @@ rows here, each with its audit question, in the commit that tabulates it.
   through the one builder?
 - Row 18.1(i) — travelling with Row 5.228(i): what did the recorded measurement of the joint cross-layer search
   measure, on which system, and does its inertness bear on a joint decision over the charter's four fields?
+- Row 20.1 — travelling with Row 3.15: is the legacy chord path compiled and unreached on the production arm?
+- Row 20.2 — travelling with Row 7.10: what does the dormant key decoder's per-slice fit read, over what window, and
+  does it read any proposed chord?
+- Row 20.3 — travelling with Row 5.300: which labels does the Roman-numeral formatter emit at the current commit, and
+  on which path?
+- Row 20.4 — does the harmonic-rhythm component run on any production path at the current commit, and does it decide
+  where one harmony gives way to the next apart from the chord?
+- Row 20.5 — what does the chord-staff writer write on the record arm at the current commit, and from which published
+  facts?
+- Row 20.6 — from which surface does the status display take the chord, the key and the Roman numeral it shows for a
+  selected note?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -30369,6 +30559,10 @@ words.
 - Row 18.2 — the outgoing ratified architecture is *"a feed-forward stack of single-responsibility layers"* that
   overturns an earlier inference by a *"localized forward recompute"*; L2-S11 says *"It is never decided before the
   chord or after it"*, and L2-S35 says *"No span's alternatives are normalised against each other alone."*
+- Row 20.1 — the outgoing chord analyzer names the chord *"from a set of simultaneously sounding notes"*; L2-S30 says
+  *"No chord term decides a chord from the pitch-class content of the span alone."*
+- Row 20.2 — the outgoing key analyzer infers the key *"from a temporal window of pitch contexts with duration, beat,
+  and bass weighting"*; L2-S20's tonality terms *"read the chords the reading proposes"*.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -30399,10 +30593,11 @@ own distribution table in §6.
 | 17 | 124 | 7 | 5 | 16 | 62 | 0 | 33 | 1 | 23 |
 | 18 | 4 | 0 | 0 | 0 | 1 | 0 | 2 | 1 | 8 |
 | 19 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 20 |
-| **Total** | **2360** | **354** | **74** | **336** | **735** | **0** | **646** | **215** | **1054** |
+| 20 | 6 | 0 | 0 | 0 | 6 | 0 | 0 | 0 | 3 |
+| **Total** | **2366** | **354** | **74** | **336** | **741** | **0** | **646** | **215** | **1057** |
 
-**The arithmetic check:** 354 + 74 + 336 + 735 + 0 + 646 + 215 = 2360, against 2360 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0).
+**The arithmetic check:** 354 + 74 + 336 + 741 + 0 + 646 + 215 = 2366, against 2366 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6).
 
 **Current-text verdicts.**
 
@@ -30427,10 +30622,11 @@ own distribution table in §6.
 | 17 | 23 | 14 | 92 | 129 |
 | 18 | 0 | 4 | 0 | 4 |
 | 19 | 0 | 0 | 0 | 0 |
-| **Total** | **528** | **497** | **1380** | **2405** |
+| 20 | 0 | 2 | 4 | 6 |
+| **Total** | **528** | **499** | **1384** | **2411** |
 
-**The arithmetic check:** 528 + 497 + 1380 = 2405 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0).
+**The arithmetic check:** 528 + 499 + 1384 = 2411 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6).
 
 ## 14. The derivation's independence record, relayed
 
@@ -30461,4 +30657,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 19 are done, positions 20 to 62 are untouched.
+  untouched: positions 1 to 20 are done, positions 21 to 62 are untouched.
