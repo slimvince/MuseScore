@@ -49,7 +49,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 8 | `cowork_layer5_engagement_design.md`, whole | **DONE** (§6.8) |
 | 9 | `cowork_stage5_fitter_design.md`, whole | **DONE** (§6.9) |
 | 10 | `cowork_joint_estimator_factorization.md`, whole | **DONE** (§6.10) |
-| 11 | `cowork_score_census.md`, whole | NOT YET TABULATED |
+| 11 | `cowork_score_census.md`, whole | **DONE** (§6.11) |
 | 12 | `cowork_prefit_gates.md`, whole | NOT YET TABULATED |
 | 13 | `docs/nct_detection_design.md`, whole | NOT YET TABULATED |
 | 14 | `cowork_phase5b_l4_build_plan.md`, whole | NOT YET TABULATED |
@@ -104,12 +104,13 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 10 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 11 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
-`cowork_stage5_fitter_design.md`, whole, and `cowork_joint_estimator_factorization.md`, whole.**
+`cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole, and
+`cowork_score_census.md`, whole.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 10 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 11 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -123,11 +124,11 @@ tabulated positions 6, 7 and 8, each whole and in its own commit, and stopped at
 position 8 under that dispatch's capacity judgment (its Task 1(h)): position 9 was judged not finishable whole
 in the context that remained, and was not opened. The fourth batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md`, resumed at position 9
-and tabulated positions 9 and 10, each whole and in its own commit. **Positions 11 to 62 are UNTOUCHED**: not
-read for tabulation, not quoted, not counted and not placed, and nothing in them is partly worked. **The next
-writing resumes at position 11**, `cowork_score_census.md`, whole. §7, §8, §9 and §14 stay NOT YET WRITTEN,
-being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not read for
-tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
+and tabulated positions 9, 10 and 11, each whole and in its own commit. **Positions 12 to 62 are UNTOUCHED**:
+not read for tabulation, not quoted, not counted and not placed, and nothing in them is partly worked. **The
+next writing resumes at position 12**, `cowork_prefit_gates.md`, whole. §7, §8, §9 and §14 stay NOT YET
+WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
+read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
 ---
 
@@ -23088,6 +23089,1076 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
   10.51; L2-S38 (entry 6) — 10.4, 10.13, 10.16, 10.19, 10.21; L2-S43 (entry 4) — 10.47, 10.48, 10.49. No row of
   this member names L2-S22, L2-S42 or L2-S45.
 
+---
+
+### 6.11 — Member 11: `cowork_score_census.md`, whole
+
+> **Manifest for this member.** Position **11**. Kind: *item 2 — a whole document (a specification-set
+> member)*. Document: `cowork_score_census.md`. Label: *the whole document*. Range, as a locator only: lines
+> 1–355, from its first line *"# The score & corpus census — once-and-for-all, enumerated to closure"* to its
+> last *"deliberate ratification second, nothing reopened by silence.)"*, exactly as the artifact publishes it
+> (**D-307**). Outgoing statements: **104** (rows 11.1 to 11.75; 28 of those rows carry two or more
+> claims each and are split — the arithmetic is at the foot of this member). Listed under *not a statement*:
+> **87**. Counted at this member by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, read at its own banner.** The project's census of scores and
+> ground-truth corpora, marked *"v1 DELIVERED (Cowork, 2026-07-02)"*, with the later waves of acquisition
+> recorded into it. Its subject is not L2's own: it is the music the analysis is measured and fitted against,
+> and how the project finds and keeps that music. It meets L2 only where it bounds the fit of L2's weights.
+> **The placement readings are those of the earlier members, applied unchanged**, and three readings of this
+> member's own kind are stated here so a reader can challenge them at one place: **(1)** a statement of what a
+> corpus holds, of the role a corpus or a ground-truth class plays for a measurement or a fit, or of a rule
+> governing what the measurement may use or trust, is RELOCATED to *the measurement of the analysis*; **(2)** an
+> acquisition, an onboarding, an enumeration state, a ratified expansion or a plan is HISTORICAL; **(3)** a rule
+> of how the project searches for, records and tracks corpora — the sweeps, the audit, the needs-vector's
+> bookkeeping, the intake scoring, the supersession protocol's governance — is listed under *not a statement*
+> as a rule of the development process, as member 10 listed one, and so is the census's account of its own
+> reach. A statement about a product tool outside the analysis — the difficulty-grading tool, the tuning tools —
+> is listed under *not a statement* because it states nothing the analysis does. A defense, a restatement, a
+> label, a pointer and provenance are listed under *not a statement* as at every member.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 11:
+> **none** — that list is empty, so no row is marked WITHHELD. **No SEEN home lies in this member** — none of
+> the eight identities 1(c) names (D-002, D-095, D-223, D-261, D-275, D-279, D-322, D-393) is among the
+> identities the artifact places in position 11.
+---
+
+**Row 11.1 — a fact the census reports from a snippet only is re-verified before it bears load.**
+
+*Outgoing statement.* "Facts therein are marked **[verified]** (page fetched) vs **[reported]** (snippet-level; re-verify before load-bearing use), per the verify-at-source rule." — the status block at the head (locator: lines 10–11).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.2 — the DCMLab organization enumerated in full, its forty sub-corpora onboarded.**
+
+*Outgoing statement.* "DCMLab GitHub org — **127 repos**, incl. `distant_listening_corpus` (**40 submodules** — the census's original "41" was an overcount, corrected at Wave-1 onboarding from the live `.gitmodules`, 2026-07-02), `dcml_corpora` (12), `romantic_piano_corpus` (9); also `schema_annotation_data` (voice-leading-schema GT over Mozart sonatas) | **Fully enumerated** [verified; Wave-1 ONBOARDED — all 40 present, hash-pinned, registry v2 `tools/score_census_registry.json`] · [Wave-2 ONBOARDED the DCMLab-org `schema_annotation_data` **annotation bed** — see `records/cc/reports/cc_corpus_wave2_report.md`]" — §1, the table of container classes, row *DCMLab GitHub org* (locator: line 20).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.3 — the When-in-Rome component list enumerated in full.**
+
+*Outgoing statement.* "When-in-Rome meta-corpus — full component list | **Fully enumerated**" — §1, the table of container classes, row *When-in-Rome meta-corpus* (locator: line 21).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.4 — ChoCo's eighteen partner datasets enumerated in full.**
+
+*Outgoing statement.* "ChoCo — all 18 partner datasets | **Fully enumerated**" — §1, the table of container classes, row *ChoCo* (locator: line 22).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.5 — the dataset tables of the leading published systems harvested in full.**
+
+*Outgoing statement.* "SOTA-paper dataset tables (AugmentedNet / RNBert / AnalysisGNN / ChordGNN — the field's de-facto RN-GT census; AnalysisGNN's list = 1,719 pieces) | **Fully harvested** (AugmentedNet exact manifest partial)" — §1, the table of container classes, row *SOTA-paper dataset tables* (locator: line 23).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.6 — the OpenScore, KernScores, early-music and folk containers enumerated in full, with their later onboardings.**
+
+*Outgoing statement.* "OpenScore family, Mutopia, KernScores highlights, MuseData, early-music projects (JRP/CRIM/Tasso/Marenzio/CMME), Wikifonia→EWLD lineage, Lakh→MetaMIDI→GigaMIDI lineage, main folk containers (Essen, MTC, Nottingham) | **Fully enumerated** [Wave-2 ONBOARDED the Essen `ccarh/essen-folksong-collection` **phrase-boundary bed** (Humdrum kern) — see `records/cc/reports/cc_corpus_wave2_report.md`] · [Wave-3 ONBOARDED `OpenScore/Lieder` (1462 mxl, CC0) + `OpenScore/StringQuartets` (122 mscx, CC0) plain-score stress + `fosfrancesco/asap-dataset` (235 MusicXML); the KernScores/craigsapp mechanical partial CLOSED by enumerating `humdrum-tools/humdrum-data` = 71 repos/16 orgs (cloned nothing) — see `records/cc/reports/cc_corpus_wave3_report.md`]" — §1, the table of container classes, row *OpenScore family, Mutopia, …* (locator: line 24).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.7 — the algomus and Dezrann container enumerated, with its onboarded sets.**
+
+*Outgoing statement.* "**algomus / Dezrann** (algomus.fr GitLab org + dezrann.net) — symbolic-music analysis annotation datasets (texture, cadence, form) | **Enumerated** [Wave-2 ONBOARDED `symbolic-texture-dataset` (Couturier et al. ISMIR 2022) as an **annotation bed**; moved here from §7 residual risk — see `records/cc/reports/cc_corpus_wave2_report.md`] · [Wave-3 ONBOARDED `algomus.fr/algomus-data` monorepo: `quartets/mozart` (32 sonata-form ref.dez — the N16 candidate), `fugues/bach-wtc-i` (23 subject/CS/cadence/pedal ref.dez — N4/N18/N20; the 12 Shostakovich fugues are website-only, NOT in-repo), `jazz-arbres` treebank (1170; N11/N3) — see `records/cc/reports/cc_corpus_wave3_report.md`]" — §1, the table of container classes, row *algomus / Dezrann* (locator: line 25).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.8 — the jazz and pop analysis container enumerated, with its onboarded and access-gated sets.**
+
+*Outgoing statement.* "**Tier-J jazz/pop analysis GT** (CoCoPops, EWLD/OpenEWLD, HookTheory, Weimar Jazz Database, ChoCo jazz/weimar slices) | **Enumerated** [Wave-3: ONBOARDED `CoCoPops` (628 .hum, **harm+**kern), `00sapo/OpenEWLD` (486 PD .mxl), the native WJD SQLite (456 solos, ODbL, sha256-pinned), + INVENTORIED the ChoCo jazz-corpus (160 jams) / weimar (916 jams) slices; **GATED, access path recorded:** EWLD (Zenodo request-access), HookTheory full (HF academic gate) — see `records/cc/reports/cc_corpus_wave3_report.md`]" — §1, the table of container classes, row *Tier-J jazz/pop analysis GT* (locator: line 26).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.9 — the figured-bass and reduction-tree container enumerated, with its onboarded sets.**
+
+*Outgoing statement.* "**Figured-bass / trees-reduction GT** (BCFB, DCMLab/figured-bass, Kirlin Schenker41, GTTM, protovoice-annotations) | **Enumerated** [Wave-3: ONBOARDED `juyaolongpaul/Bach_chorale_FB` (BCFB, 139/143, N10) + `DCMLab/protovoice-annotations` (38 derivations — the N9 gating inspection); `pkirlin/schenker41` pinned but README-only (data at the dissertation page); GTTM located (no single artifact); **`DCMLab/figured-bass` WALKED = a realization SCRIPT, not a GT corpus** (§7→§1) — see `records/cc/reports/cc_corpus_wave3_report.md`]" — §1, the table of container classes, row *Figured-bass / trees-reduction GT* (locator: line 27).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.10 — the partial containers named and bounded.**
+
+*Outgoing statement.* "Partial: per-repo DLC piece counts; MuseScore.com beyond PDMX (ToS-unwalkable); CPDL/IMSLP symbolic subsets; craigsapp's ~100 kern repos (closure tool exists: `humdrum-tools/humdrum-data`); abcnotation.com long tail | **Named, bounded**" — §1, the table of container classes, row *Partial* (locator: line 28).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.11 — the thirty unused sub-corpora onboarded at the first wave, in the format the parser already reads.**
+
+*Outgoing statement.* "**The single biggest untapped asset requires zero new tooling** *(✅ EXECUTED, Wave 1, 2026-07-02)*: the project used **10** of the DLC's **40** DCML sub-corpora (plus the standalone `bach_chorales`, not a DLC member — Wave-1 correction); the **other 30** — now onboarded, 30/30 parse-clean — are format-identical to what `dcml_parser.py` already parses — including `beethoven_piano_sonatas` (all 32), `wagner_overtures`, `liszt_pelerinage`, `rachmaninoff_piano`, `scriabin`-era chromatic material, `monteverdi_madrigals`/`sweelinck_keyboard`/`peri_euridice` (pre-Baroque), `scarlatti_sonatas`, `bartok_bagatelles` (20th c.), and `schulhoff_suite_dansante_en_jazz` (a jazz-idiom art-music set — directly relevant to the Jazz preset)." — §2, *What the census found — the headline* (locator: lines 37–44). Two claims: (i) the thirty sub-corpora the project did not use were onboarded at the first wave; (ii) they are in the format the existing parser already reads, the named ones among them.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.12 — the onboarded sub-corpora span about 1600 to 1930 in one format.**
+
+*Outgoing statement.* "Style span extends from ~1600 to ~1930 in one format." — §2, *What the census found — the headline* (locator: line 44).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.13 — cadence and phrase ground truth exists and none is used; the sets named.**
+
+*Outgoing statement.* "**Cadence/phrase GT exists and we use none of it:** the algomus Bach WTC-I fugue cadences (36 fugues, 1,000+ labels), the algomus Mozart quartet sonata-form+cadence set, the Sears Haydn-quartet cadence set (dual annotators) — plus **cadence labels already inside the DCML Mozart-sonatas TSVs the project has cloned** (a free win; feeds the L5 §5.2 detector's validation and the L4 rotation-pinning)." — §2, *What the census found — the headline* (locator: lines 45–48). Two claims: (i) the project uses none of the cadence and phrase ground truth that exists; (ii) the sets named, the cadence labels inside the held Mozart-sonata tables among them, and what they would validate.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.14 — Roman-numeral ground truth with phrase and annotator-disagreement data, named.**
+
+*Outgoing statement.* "**RN-GT with phrase/annotator-disagreement data:** BPS-FH (Beethoven sonatas, RN + phrase boundaries), TAVERN (1,060 phrase-level analyses, **two annotators each** — the best calibration data for the A-1 Class-P reliability fitting and the tonicization-band evaluation policy), HaydnSun op.20." — §2, *What the census found — the headline* (locator: lines 49–51).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.15 — key and modulation ground truth aimed at the residual, named.**
+
+*Outgoing statement.* "**Key/modulation GT aimed at our exact residual:** KMT (Key Modulations & Tonicizations, textbook-authoritative local-key GT, inside When-in-Rome) — squarely the key-disagreement class (S1/S2)." — §2, *What the census found — the headline* (locator: lines 52–53).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.16 — jazz and pop harmony ground truth aligned with the music, named.**
+
+*Outgoing statement.* "**Pop/jazz harmony with score-side alignment (the gate-grade jazz want):** HookTheory/TheoryTab (tens of thousands of key-relative, RN-convertible crowd annotations), CoCoPops (RS200 + McGill unified into Humdrum `**harm`, 414 transcriptions), EWLD/OpenEWLD (502 PD lead sheets, native MusicXML + chords) + Charlie Parker Omnibook." — §2, *What the census found — the headline* (locator: lines 54–56).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.17 — unannotated music for stress testing, named.**
+
+*Outgoing statement.* "**Plain-score stress/soak material:** OpenScore Lieder (1,300+ late-romantic songs, CC0, proofread, mscx→MusicXML pipeline — the best chromatic stress bed), OpenScore String Quartets (CC0, texture gap between chorales and piano), KernScores/craigsapp classical sets, PDMX (250k PD MusicXML for scale testing, quality-filterable by its rating metadata)." — §2, *What the census found — the headline* (locator: lines 57–60).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.18 — two verified negatives: DCMLab's chorale set carries no harmony labels; DIAMM is image-only.**
+
+*Outgoing statement.* "**Two verified negatives worth recording:** DCMLab/`bach_chorales` (358 scores) carries **no harmony labels** — the Bach-chorale RN GT is the Tymoczko/WiR set the project already uses (consistent with `score_inventory.md`); DIAMM is image-only (closes the early-music class)." — §2, *What the census found — the headline* (locator: lines 61–63). Two claims: (i) DCMLab's chorale collection carries no harmony labels, the chorale Roman-numeral ground truth being the set already in use; (ii) DIAMM is image-only.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.19 — a source enters the registry only with five fields decided.**
+
+*Outgoing statement.* "A source enters the registry only with all five fields decided: **(a) GT type** (RN / chords / key / cadence / phrase / none); **(b) machine-readable score alignment** (symbolic score + annotation anchored to it — chords-only or audio-aligned sets are research-tier at best); **(c) format** (parseable today vs converter needed); **(d) license class** (PD/CC0/CC-BY committable; NC/unclear → hash-pin-only, the established mechanism); **(e) decision tier** (§5)." — §3, *Inclusion criteria* (locator: lines 67–70). Three claims: (i) a source enters the registry only with its five fields decided; (ii) a set whose annotation is not anchored to the symbolic music is research-tier at best; (iii) a freely licensed source may be committed, and a non-commercial or unclear one is hash-pinned only.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (iii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.20 — a registry's content summary is where a source came from, not evidence that a layer is present.**
+
+*Outgoing statement.* "**★ AND A REGISTRY `content` SUMMARY IS ENUMERATION PROVENANCE, NOT EVIDENCE THAT A LAYER IS PRESENT.**" — §3, *Inclusion criteria* (locator: line 72).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.21 — whether an annotation layer is present is measured per slice at the files.**
+
+*Outgoing statement.* "**Whether a given annotation layer is actually in it is a MEASUREMENT, made per slice at the files** — never inferred from the summary line that admitted the source." — §3, *Inclusion criteria* (locator: lines 73–75).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.22 — the containers re-encode the same works.**
+
+*Outgoing statement.* "The containers re-encode the same works (WiR↔DCML↔ChoCo; KernScores↔craigsapp↔music21↔MuseData; GigaMIDI absorbs Lakh/MetaMIDI)." — §4, *Overlap hazard* (locator: lines 83–84).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.23 — deduplication is by work; a work in the gate corpus is excluded as ground truth from every other container.**
+
+*Outgoing statement.* "**Dedupe by work, not by container** — the registry keys on (composer, work, movement), and a work entering the gate corpus from one container is excluded as GT from every other (the M3 contamination lesson, generalized)." — §4, *Overlap hazard* (locator: lines 84–86). Two claims: (i) deduplication is by work, the registry keyed on composer, work and movement; (ii) a work entering the gate corpus from one container is excluded as ground truth from every other.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.24 — a newly acquired annotation set whose works overlap the regression corpus is record-only.**
+
+*Outgoing statement.* "**★ AND THE SAME RULE READ FORWARD IN TIME, FOR MATERIAL THAT ARRIVES AFTER THE GATE CORPUS ALREADY EXISTS: A NEWLY ACQUIRED ANNOTATION SET WHOSE WORKS OVERLAP THE REGRESSION CORPUS IS RECORD-ONLY.**" — §4, *Overlap hazard* (locator: lines 88–89).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.25 — over the overlapping works such a set is not wired, compared or diffed.**
+
+*Outgoing statement.* "It is cloned, pinned and enumerated like any other acquisition, and over the overlapping works it may **not** be wired to the analysis, **not** be compared against the gate corpus, and **not** be bulk-diffed with it." — §4, *Overlap hazard* (locator: lines 89–91).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.26 — any use of it over those works is a user ruling.**
+
+*Outgoing statement.* "**Any use of it over those works is a USER RULING**, taken deliberately; a session does not take it." — §4, *Overlap hazard* (locator: lines 91–92).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.27 — the portion of such a set over other repertoire is outside the gate and unaffected.**
+
+*Outgoing statement.* "Whatever portion of such a set covers OTHER repertoire is outside the gate and is unaffected." — §4, *Overlap hazard* (locator: lines 92–93).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.28 — tier G: the gate-candidate ground truth, named.**
+
+*Outgoing statement.* "**Tier G (gate-candidate GT):** the unused DLC sub-corpora (chromatic/romantic first: beethoven_sonatas, wagner_overtures, liszt, rachmaninoff); KMT; BPS-FH; TAVERN." — §5, *Decision tiers* (locator: lines 100–101).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.29 — such material enters at research tier; promotion to any gate is its own ratified re-baseline.**
+
+*Outgoing statement.* "Enter as research-tier; promotion to any gate is its own ratified re-baseline event (engage-criteria discipline)." — §5, *Decision tiers* (locator: lines 101–102).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.30 — tier J: the jazz and pop ground-truth path.**
+
+*Outgoing statement.* "**Tier J (the jazz/pop GT path, per the 2026-07-02 ratification):** HookTheory (RN-convertible) + CoCoPops + OpenEWLD as the score-aligned core; JHT/iRealPro/McGill stay research-tier where alignment is weak." — §5, *Decision tiers* (locator: lines 103–104). Two claims: (i) HookTheory, CoCoPops and OpenEWLD form the jazz and pop core aligned with the music; (ii) JHT, iRealPro and McGill stay research-tier where alignment is weak.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.31 — tier C: cadence and phrase ground truth as validation beds.**
+
+*Outgoing statement.* "**Tier C (cadence/phrase GT):** the DCML Mozart cadence labels (already on disk!), algomus ×2, Sears — validation beds for L5 §5.2 and the L1.5 primitive." — §5, *Decision tiers* (locator: lines 105–106).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.32 — tier S: unannotated stress and soak material.**
+
+*Outgoing statement.* "**Tier S (plain-score stress/soak):** OpenScore Lieder + String Quartets, KernScores classical sets; PDMX for scale; the Tristan Prelude specifically via `wagner_overtures` (presence to confirm at clone time)." — §5, *Decision tiers* (locator: lines 107–108).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.33 — tier X: sets recorded and not pursued, with their reasons.**
+
+*Outgoing statement.* "**Tier X (recorded, not pursued):** performance-MIDI aggregates, image-only, audio-aligned-only sets — listed in the appendices with reasons, so they are never "re-discovered"." — §5, *Decision tiers* (locator: lines 109–110).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.34 — the user ratified corpus expansion.**
+
+*Outgoing statement.* "At the 2026-07-02 architecture review the user ratified **CORPUS EXPANSION**: gate-grade **jazz** ground truth, **chromatic material of the Wagner class**, and, in general, **more non-Bach, non-Baroque annotated music**." — §5, *Decision tiers* (locator: lines 113–115).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.35 — the jazz idiom's fit waits for converted jazz ground truth; only the classical idiom is fitted now.**
+
+*Outgoing statement.* "**★ AND TIER J GATES A FIT — stated here because that is what the tier is FOR: THE JAZZ FIT IS DEFERRED TO THE JAZZ-GROUND-TRUTH CONVERSION, and only the classical common-practice idiom is fitted now.**" — §5, *Decision tiers* (locator: lines 122–123). Two claims: (i) the fit of the jazz idiom is deferred until converted, aligned jazz ground truth exists; (ii) only the classical common-practice idiom is fitted now.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **HISTORICAL.**
+
+---
+
+**Row 11.36 — a plan: extend the registries to the census's schema.**
+
+*Outgoing statement.* "Extend `tools/corpus_registry.json`/`extra_scores_registry.json` to the §3 schema (one entry per census row, decision tier + license + alignment fields); the census appendices are the source of truth for v1 population." — §6, *Implementation*, item 1 (locator: lines 132–133).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.37 — a plan: the corpus-expansion instruction.**
+
+*Outgoing statement.* "The corpus-expansion CC instruction (roadmap block): clone + hash-pin the ratified Tier-G/J/C/S sets via the established REPRODUCIBILITY mechanism; confirm Tristan-Prelude presence in `wagner_overtures`; report per-corpus piece counts (closing the census's "?" cells)." — §6, *Implementation*, item 2 (locator: lines 134–136).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.38 — a plan: the yearly re-sweep added to the maintenance record.**
+
+*Outgoing statement.* "Add the yearly re-sweep to the maintenance notes (mirdata loaders + ismir/mir-datasets + new ISMIR proceedings)." — §6, *Implementation*, item 3 (locator: line 137).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.39 — the residual container classes not yet walked.**
+
+*Outgoing statement.* "Zenodo/university-hosted annotation sets without GitHub presence (more algomus/Dezrann material — the algomus/Dezrann container is now an **enumerated §1 row**, with `symbolic-texture-dataset` onboarded at Wave 2 **and the `algomus-data` monorepo (Mozart-quartet sonata-form + Bach-fugue) onboarded at Wave 3**; the Shostakovich fugues + any remaining cadence/form sets stay in this residual bucket), figured-bass corpora (**`DCMLab/figured-bass` WALKED at Wave 3 = a figured-bass REALIZATION SCRIPT, not a GT corpus — §7→§1 promoted with that finding; the actual figured-bass GT is BCFB, onboarded Wave 3, plus the parser-dropped DLC `figbass` column**), scattered Humdrum `**harm` spines on kern.ccarh.org (**now enumerated: the `humdrum-tools/humdrum-data` manifest = 71 repos/16 orgs, incl. `DDMAL/Flexible_harmonic_chorale_annotations` — Wave-3 closure, cloned nothing**), national-library MEI editions, the ABC long tail, non-Western symbolic sets (SymbTr, jingju), and 2025–26 releases (POP909-CL surfaced mid-census)." — §7, *Residual risk* (locator: lines 141–151).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.40 — each residual class is now on the §1 list and walked yearly.**
+
+*Outgoing statement.* "Each is a container-class now on the §1 list — the yearly re-sweep walks them; none is expected to hide gate-grade common-practice RN GT (that class is closed by the SOTA-paper harvest)." — §7, *Residual risk* (locator: lines 151–152).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.41 — non-Western symbolic sets are out of the analysis's scope by ruling.**
+
+*Outgoing statement.* "**Why some sources are deliberately not fully enumerated:** (a) **unwalkable** (MuseScore.com ToS beyond PDMX; IMSLP = PDF scans without a symbolic index) — cost exceeds value, content mostly non-machine-readable; (b) **mechanically closable later** (craigsapp via `humdrum-tools/humdrum-data`; DLC piece counts at clone time) — closure rides the acquisition instruction; (c) **snippet-verified rows** ([reported] marks) — a budget choice made visible, verified at acquisition; (d) **out of analytical scope by decision** (non-Western symbolic sets — the tonal model class does not cover them; review F-15) — closed by ruling, not enumeration." — §8, *The comprehensiveness claim, precisely stated* (locator: lines 163–168). Of its four items, (a) to (c) explain why some sources are not fully enumerated and are a defense; (d) states a ruling of its own — non-Western symbolic sets are outside the analysis's scope by decision — and that is the claim tabulated.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.42 — the pending additions from the sweeps.**
+
+*Outgoing statement.* "**Pending container/GT-layer additions from the 2026-07-03 sweeps (for the next census/registry edit — Wave-3 natural home):** BCFB (Bach Chorales Figured Bass, ISMIR 2020 — figured-bass GT on the gate repertoire); the **JHT hierarchical tree annotations** as a distinct GT layer (the JHT source is already held as research material; its trees are a separate annotation layer for lever R-7); `DCMLab/figured-bass` (already a §7 residual — promote to a walked row at Wave 3)." — §8b, *The recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger* (locator: lines 210–214).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.43 — the second-wave beds already onboarded.**
+
+*Outgoing statement.* "*(The Wave-2 beds are already onboarded/enumerated.)*" — §8b, *The recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger* (locator: line 214).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.44 — all three additions executed at the third wave.**
+
+*Outgoing statement.* "**★ ALL THREE EXECUTED AT WAVE 3 (2026-07-04, `records/cc/reports/cc_corpus_wave3_report.md`):** BCFB onboarded (`juyaolongpaul/Bach_chorale_FB`, 139 chorales / 143 files, MusicXML+kern+MEI — registry `wave3_sources.bcfb`, N10); the **JHT `syntax-tree` GT layer** was already registry-recorded (`other_sources.jazz_harmony_treebank.gt_layers = ["chords","syntax-tree"]`, N11) — this note records that fact (the census §1 prose never carried it; bookkeeping only); `DCMLab/figured-bass` **WALKED and §7→§1 promoted** — the walk found it is a figured-bass REALIZATION SCRIPT, **not a GT corpus** (registry `wave3_sources.dcmlab_figured_bass`, status=walked, N10-NEGATIVE)." — §8b, *The recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger* (locator: lines 216–221).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.45 — the audit's first run executed and disposed.**
+
+*Outgoing statement.* "**★ FIRST RUN EXECUTED + DISPOSED (2026-07-04):** the audit ran at Wave-3 scoping per this section — full record + per-row scoring: `cowork_census_full_needs_audit.md`." — §8c, *The FULL-NEEDS AUDIT* (locator: lines 232–233).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.46 — the user's rulings at the audit's disposition.**
+
+*Outgoing statement.* "User rulings at disposition: **N18/N19/N20 ADOPTED** (N20 rationale, user: improves inference precision AND no information loss), **N15 scope ruling RATIFIED**." — §8c, *The FULL-NEEDS AUDIT* (locator: lines 233–235).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.47 — the union search round's scope.**
+
+*Outgoing statement.* "The union search round (step 3) is scoped to **N9 (after the protovoice inspection), N13, N14, N12-realized-half, N19**; N16 needs no search (candidate already enumerated)." — §8c, *The FULL-NEEDS AUDIT* (locator: lines 235–236).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.48 — the need for common-practice Roman-numeral ground truth, for the gate and the fitter.**
+
+*Outgoing statement.* "N1 | common-practice RN/harmony GT, score-aligned, human | gate, Stage-5 fitter | well-covered (DLC/WiR)" — §8c, the needs-vector table, row *N1* (locator: line 259). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) L2-S38 (NEAREST, §6.3 entry 6). (ii) None.
+
+*Current-text axis.* (i) L2-S38: **AGREES** — *"Every weight of the candidate score is fitted from annotated music"*. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.49 — the need for data on annotator disagreement.**
+
+*Outgoing statement.* "N2 | dual/multi-annotator disagreement data | Class-P calibration (C1/C2) | *(Wave-3 MEASURED, corrects the audit)* the on-disk co-located dual set = **the 27 TAVERN A/B pairs** (Beethoven 17 + Mozart 10, verified at the WiR clone AND by Cowork glob). The audit's "Tymoczko-vs-DCML pairs" are NOT co-located: within WiR the two analyst sets sit on disjoint pieces (overlap **0**; DCML 988 / Tymoczko 419 analyses); CROSS-container pairs (WiR-Tymoczko × the separate `tools/dcml/` DCML corpora) remain possible but need identity work — recorded, not assumed. Sears (dual, cadence): **no public deposit** (access = authors). CASD (4×, audio) + RS200 (2×) unchanged. *(Wave-3 ADDENDUM, `records/cc/reports/cc_wave3_addendum_report.md`)* **NEW candidate: `DDMAL/Flexible_harmonic_chorale_annotations`** cloned+pinned+walked — 571 chorales (371 Bach + 200 Praetorius) with **permutational ('flexible') multi-reading** harmonic analyses (multiple valid readings per slice + filtering functions, vs single-reading RN) → a SECOND annotation layer over gate-class Bach chorales. ⚠ **RECORD-ONLY** (its 371 Bach chorales overlap the gate repertoire; any use over gate pieces is a future user ruling — census §4 dedupe). WALK caveat: the analysis GT ships as an R-package BINARY (kernData/ .krn are **kern-only)" — §8c, the needs-vector table, row *N2* (locator: line 260). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.50 — the need for jazz and pop analysis ground truth aligned with the music.**
+
+*Outgoing statement.* "N3 | jazz/pop analysis GT, score-aligned | A-7 mark retirement, idioms 3–5 | Tier J queued (Wave 3); *(audit)* walk-list adds: Jazz Corpus (function GT, 76), WJD native (phrase/form), Real Book (license-check)" — §8c, the needs-vector table, row *N3* (locator: line 261). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.51 — the need for cadence and phrase ground truth.**
+
+*Outgoing statement.* "N4 | cadence + punctuation/phrase GT | L5 §5.2, L1.5, L6 | rich (corpus-wide since 21k); *(audit)* jazz side = WJD native" — §8c, the needs-vector table, row *N4* (locator: line 262). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.52 — the need for key and modulation ground truth.**
+
+*Outgoing statement.* "N5 | key/modulation GT | L3, S1/S2 | *(Wave-3 MEASURED, corrects the audit)* **KMT is NOT present as analyses at the WiR pin** `aa7539f1` (Corpus/Textbooks = 201 scores / **0** analysis.txt — verified by CC AND by Cowork glob); KMT acquisition = the DDMAL `key_modulation_dataset` upstream (direct-acquisition candidate, next corpus increment). Sears pivots: no public deposit. SWD score-aligned local keys unchanged (ChoCo). WiR analyses still carry local keys generally (N5 partial). *(Wave-3 ADDENDUM, `records/cc/reports/cc_wave3_addendum_report.md`)* **★ KMT ACQUIRED:** `DDMAL/key_modulation_dataset` @ `6602ae6a` cloned+pinned+walked — **201 annotated Humdrum .krn** (aldwell 7 / kostka-payne 15 / reger 117 / rimsky-korsakov 37 / tchaikovsky 25), key/modulation as `*C:` key-designation tokens + inline `NEWKEY=>:RN` markers in the **text spine; CC-BY-SA scores / MIT code; held-out. The direct-acquisition candidate is now on disk (README checkbox list ~135 < actual 201 = living-repo growth, reported)" — §8c, the needs-vector table, row *N5* (locator: line 263). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.53 — the need for melodic-phrase ground truth.**
+
+*Outgoing statement.* "N6 | melodic-phrase GT (monophonic ok) | VL-E | Essen onboarded (Wave 2); *(audit)* depth reserves MTC/GTTM" — §8c, the needs-vector table, row *N6* (locator: line 264). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.54 — the need for texture ground truth.**
+
+*Outgoing statement.* "N7 | texture GT (per-bar / per-piece) | VL-C validation, §15-1 | algomus bed onboarded (Wave 2)" — §8c, the needs-vector table, row *N7* (locator: line 265). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.55 — the need for voice-leading schema ground truth.**
+
+*Outgoing statement.* "N8 | voice-leading schema GT | VL-F | schema bed onboarded (Wave 2)" — §8c, the needs-vector table, row *N8* (locator: line 266). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.56 — the need for stream and implied-polyphony ground truth.**
+
+*Outgoing statement.* "N9 | stream/implied-polyphony GT | VL-D target task | *(union search 2026-07-04 — `cowork_union_search_record.md` §1)* **notated-polyphony half now has real candidates:** piano_svsep (393 pieces, per-note voice+staff GT over DCML piano scores WE HOLD — the SOTA task set) + MCMA (~475, CC-BY, hand-exploded Baroque voices) + vocsep_ijcai2023 (1,054, notation-derived); **implied-polyphony half CONFIRMED ABSENT** (VoiSe/Gray-Bunescu never released; final). Held: protovoice (38, partial, reduction-encoded). *(ACQUISITION ROUND 2026-07-04, `records/cc/reports/cc_acquisition_round_report.md`)* **★ ALL THREE ACQUIRED + pinned + verified at the data:** piano_svsep @ `1462e7c2` (MIT code; GT graphs FETCHED AT RUNTIME from `fosfrancesco/piano_corpora_dcml` — PIN = the code repo, fetch path recorded, `jpop` confirmed non-public), MCMA @ `2bdb12e2` (475 .mxl, track split **153/239/83 VERIFIED**; ★ license = **CC-BY-NC-SA-4.0**, NOT the record's CC-BY — corrected), vocsep_ijcai2023 @ `82152a95` (~1,054 graphs BUILT AT RUNTIME from bach-370-chorales + Haydn/Mozart SQ + MCMA; ★ license = **MIT**, NOT the record's "unstated" — corrected). All held-out; the actual GT for the two runtime-built beds lives at their fetch/source paths (follow-on pin candidates). Implied-polyphony half stays the confirmed-final negative" — §8c, the needs-vector table, row *N9* (locator: line 267). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.57 — the need for figured-bass ground truth.**
+
+*Outgoing statement.* "N10 | figured-bass GT | L4 evidence channel (R-4) | *(Wave-3)* **BCFB OBTAINED** (139 chorales / 143 kern + MEI + MusicXML, CC-BY, pinned) — the gate repertoire's composer-stated harmony. **DCMLab/figured-bass WALKED = a realization SCRIPT, N10-NEGATIVE** (never re-mistake it for GT). Third source: the DLC `figbass` column (parser-dropped; exposure = the queued post-wave increment)" — §8c, the needs-vector table, row *N10* (locator: line 268). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.58 — the need for hierarchical harmony trees.**
+
+*Outgoing statement.* "N11 | hierarchical harmony trees | grammar lever (R-7) | *(Wave-3)* JHT trees held; **NEW: algomus `jazz-arbres` treebank obtained inside algomus-data (1,170 entries — ~8× the JHT)**; Kirlin Schenker41 = README-only repo, the 41 excerpts were never committed (access = dissertation page; 2024 successor arXiv 2408.07184); GTTM located (~300 pairs) but no single artifact + license unclear — access recorded, not mirrored" — §8c, the needs-vector table, row *N11* (locator: line 269). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.59 — the need for notated chord symbols aligned with realized music.**
+
+*Outgoing statement.* "N12 | notated chord symbols aligned with realized scores | E-8 symbols-as-input, T-17 QA | *(union search 2026-07-04, record §4)* leadsheet half rich (held). **Realized half: the big lever is ALREADY HELD — PDMX preserves MuseScore chord symbols (`<harmony>` in the shipped mxl, verified feasible); the symbol-bearing multi-voice subset is unmeasured → a cheap local read-only counting pass is the next step.** Small clean add: GuitarSet (360, CC-BY, instructed-chart vs performed comping). Open Hymnal verified symbol-less; no cleaner jazz set exists. *(ACQUISITION ROUND 2026-07-04, `records/cc/reports/cc_acquisition_round_report.md`)* **GuitarSet ACQUIRED** — annotation.zip sha256 `8daa02e6…`, **360 .jams verified**, CC-BY-4.0; the 4 audio zips (657 MB–3.61 GB) recorded, NOT downloaded. **★ PDMX counting pass ATTEMPTED + STOPPED, NOT measured:** the HELD form is METADATA-ONLY (`tools/pdmx/PDMX.csv` 250k-row index + `jazz_candidates.csv` + 5 spot-check .mxl) with **NO chord-symbol column** (`n_annotations`/`has_annotations` conflate all annotation types; `tracks`=instrument codes); the raw MXL (`mxl.tar.gz`) + per-score MusicRender JSON live ONLY in the Zenodo archive, not on disk → counting `<harmony>` needs a re-download/acquisition (a future user decision the read-only, do-not-re-download dispatch forbids). No proxy invented; the symbol-bearing multi-voice subset stays **UNMEASURED**" — §8c, the needs-vector table, row *N12* (locator: line 270). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.60 — the need for ornament-realization pairs.**
+
+*Outgoing statement.* "N13 | ornament-realization pairs | R-1 ornament expansion | *(union search 2026-07-04, record §2)* **negative CONFIRMED** — no symbol→realization dataset exists; nearest = Batik-plays-Mozart (trill realizations recoverable by heuristic, unlabeled; ★ multi-need: also carries harmony+cadence GT on 12 Mozart sonatas); R-1 ships rule-based/unvalidated as predicted; build-paths recorded" — §8c, the needs-vector table, row *N13* (locator: line 271). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.61 — the need for form and section ground truth.**
+
+*Outgoing statement.* "N16 | form/section GT (sonata form etc.) | L6 §9-D3 deferred, T-9 | *(Wave-3)* **algomus Mozart SQ OBTAINED** (32 ref.dez, Structure+Cadence+Harmony labels; caveat: onsets in SECONDS keyed to a reference score/recording — a tick-mapping step is owed before load-bearing use) + WJD native `sections` + CoCoPops `**form`; DCML TSV `form` column VERIFIED chord-morphology, NOT form GT" — §8c, the needs-vector table, row *N16* (locator: line 274). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.62 — the need for style and era metadata.**
+
+*Outgoing statement.* "N17 | style/era metadata | idiom lenses, calibration C4 | held (registry fields)" — §8c, the needs-vector table, row *N17* (locator: line 275). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.63 — the need for contrapuntal and imitative-structure ground truth.**
+
+*Outgoing statement.* "N18 | contrapuntal/imitative-structure GT (fugue subjects/answers/countersubjects, imitation points) | T-12, VL-F/VL-D neighborhood | **ADOPTED (user, 2026-07-04, audit §1).** *(Wave-3)* **algomus Bach fugues OBTAINED** (bach-wtc-i, 23 of 24 ref.dez; the 12 Shostakovich analyses are website-only, NOT in the repo — mismatch recorded); CRIM observations remain a candidate" — §8c, the needs-vector table, row *N18* (locator: line 276). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.64 — the need for part-writing error ground truth.**
+
+*Outgoing statement.* "N19 | part-writing error/exercise GT (marked errors in species/part-writing exercises) | VL-H, T-12 | **ADOPTED (user, 2026-07-04).** *(union search 2026-07-04, record §5)* **no public dataset exists — CONFIRMED build-not-download** (Harmonia/Artusi hold it commercially closed). Validation seeds found: the Dahn manuscript-checked 46 consecutive-5th/8ve instances in the Bach chorales + Fitsioris-Conklin 18 (real-music positives, small transcription job) + the synthetic-violation route. Construction owned by VL-H's design gate" — §8c, the needs-vector table, row *N19* (locator: line 277). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.65 — the need for pedal-point ground truth.**
+
+*Outgoing statement.* "N20 | pedal-point GT | pedal-point-span validation (its owning layer's design) | **ADOPTED (user, 2026-07-04):** covered — VERIFIED DLC `pedal` TSV column on every held corpus (parser-dropped) + algomus fugue pedals; exposure pending. Completes the §2.15 span-kind↔needs mapping" — §8c, the needs-vector table, row *N20* (locator: line 278). Two claims: (i) the ground-truth class needed and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **HISTORICAL.**
+
+---
+
+**Row 11.66 — the guess made before the audit superseded.**
+
+*Outgoing statement.* "The pre-audit guess "N9, N12, N13, N14, N16" is superseded: N16 came back covered-by-candidate.)*" — §8c, *The FULL-NEEDS AUDIT* (locator: lines 285–286).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.67 — the fitter's design declares its data pool per license class before fitting.**
+
+*Outgoing statement.* "**★ STAGE-5 FITTING-POOL LICENSE CONSTRAINT (user-ratified 2026-07-04 — binding on the fitter design):** the Stage-5 fitter's design doc must **declare its data pool explicitly, per license class**, before fitting:" — §8c, *The FULL-NEEDS AUDIT*, *STAGE-5 FITTING-POOL LICENSE CONSTRAINT* (locator: lines 291–292).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.68 — the values meant to ship are fitted only on the freely licensed pool.**
+
+*Outgoing statement.* "**Weights intended to SHIP (any future commercial distribution): fit only on the PD / CC0 / CC-BY(-SA) pool** (gate chorales PD · WiR analyses CC-BY-SA · CoCoPops · BCFB · GuitarSet · OpenEWLD · OpenScore…)." — §8c, *The FULL-NEEDS AUDIT*, the license constraint's first bullet (locator: lines 293–294). Two claims: (i) values meant to ship are fitted only on the freely licensed pool; (ii) the pool's members, named.
+
+*Derived statements that speak to it.* (i) L2-S38 (NEAREST, §6.3 entry 6). (ii) None.
+
+*Current-text axis.* (i) L2-S38: **AGREES** — *"It is fitted only on freely licensed music."* (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S38). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.69 — non-commercial and unlicensed sources validate and never shape a shipped value.**
+
+*Outgoing statement.* "**NC-class sources (all 40 DCML corpora, MCMA, Essen, Chordonomicon, NC ChoCo partitions) and no-license sources (Mikrokosmos, Batik, iRb…): held-out validation / QA / statistics ONLY** — they must not shape shipped parameters without a license arrangement." — §8c, *The FULL-NEEDS AUDIT*, the license constraint's second bullet (locator: lines 295–297).
+
+*Derived statements that speak to it.* L2-S38 (NEAREST, §6.3 entry 6).
+
+*Current-text axis.* L2-S38: **AGREES** — as at Row 9.11.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.11. *(L2-S38 travels with it.)*
+
+---
+
+**Row 11.70 — measurement ground truth is not a shipped value; the fitter's split states which sources feed which.**
+
+*Outgoing statement.* "The A-8 metric may keep DCML as its measurement GT (measurement ≠ shipped parameters), but the fitter's OBJECTIVE-vs-VALIDATION split must state which sources feed which." — §8c, *The FULL-NEEDS AUDIT*, the license constraint's third bullet (locator: lines 301–302). Two claims: (i) measurement ground truth is not a shipped value, so the metric may keep DCML; (ii) the fitter's split between its objective and its validation states which sources feed which.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.56. (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.71 — a plan: the constraint carried into the roadmap and restated in the fitter's design.**
+
+*Outgoing statement.* "Ride: the constraint enters `docs/implementation_roadmap.md`'s Stage-5 block at the next CC docs commit, and the fitter design doc restates it in its §2/§6 (data declaration) — not optional." — §8c, *The FULL-NEEDS AUDIT*, the license constraint's fourth bullet (locator: lines 304–305).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 11.72 — what a voice or stream label set measures is stated at intake; today's voice labels come from the engraving.**
+
+*Outgoing statement.* "**What a voice/stream label set actually MEASURES is said at intake** (user-ruled 2026-08-09) — the voice labels obtainable today are derived from **engraved notation**, not from a listener's judgment about heard lines, and the intake record says so in those terms." — §8c, *The FULL-NEEDS AUDIT*, *The intake rule*, item 4 (locator: lines 328–330). Two claims: (i) what a voice or stream label set measures is stated when it is admitted; (ii) the voice labels obtainable today are derived from engraved notation, not from a listener's judgment about heard lines.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.73 — for keyboard music the engraved voice is accepted, and the acceptance recorded.**
+
+*Outgoing statement.* "For keyboard music the engraved voice is close enough to the inference target that the field works with it, and that acceptance is itself recorded rather than left unsaid." — §8c, *The FULL-NEEDS AUDIT*, *The intake rule*, item 4 (locator: lines 330–332).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.74 — a cheap read-only re-validation against the new material comes before any decision.**
+
+*Outgoing statement.* "**Cheap impact measurement before any decision** (investigate-by-default): a read-only re-validation of the component's signed conclusions against the new material." — §8c, *The FULL-NEEDS AUDIT*, *The supersession decision protocol*, item 2 (locator: lines 344–345).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 11.75 — the re-validation asks whether the new material contradicts a conclusion or only enriches the validation.**
+
+*Outgoing statement.* "The question it answers: does the new bed **contradict** a conclusion the design rests on, or merely **enrich/extend** the validation?" — §8c, *The FULL-NEEDS AUDIT*, *The supersession decision protocol*, item 2 (locator: lines 345–346).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+
+---
+#### Not a statement — listed so the arithmetic closes (87)
+
+1. "**Status: v1 DELIVERED (Cowork, 2026-07-02); for user disposition of the acquisition tiers (§5).**" (3) — *a status of the document*.
+2. "The definitive census of obtainable symbolic scores and harmonic ground-truth corpora, built to end the recurring "we discovered another corpus" pattern (latest instance: DCML `wagner_overtures`, found only during the 2026-07-02 architecture review)." (4–6) — *the document's account of itself*.
+3. "Full evidence tables live in the two appendix drafts, produced by parallel deep-research agents 2026-07-02 and retained verbatim: **`cowork_score_census_gt_draft.md`** (annotated GT corpora — ~101 rows, ≈85 distinct after cross-container dedup) and **`cowork_score_census_plain_draft.md`** (plain-score collections — 54 rows, ≈52 collections)." (6–9) — *a pointer*.
+4. "Every previous hunt was **keyword-driven sampling**: search, take good hits, stop when the current question was answered." (15–16) — *narrative*.
+5. "That finds exemplars, never closure." (16) — *narrative*.
+6. "This census instead **enumerates containers to their end**:" (16) — *a rule of the development process* — the census's own method.
+7. "**The standing process rule this census institutes:** from now on, *"a new corpus was discovered" is a census defect* — the fix is to add its **container** to the table above and re-enumerate that container to closure, not to ingest one repo and move on." (30–32) — *a rule of the development process*.
+8. "**Re-sweep cadence: yearly** (new ISMIR proceedings + the `mirdata` loader list + the `ismir/mir-datasets` index are the mechanical catch-alls), and at any Stage-5/6 corpus decision." (32–33) — *a rule of the development process*.
+9. "Field (a) records what a source is *said* to carry, and that is a fact about where the source came from." (72–73) — *a restatement of Row 11.20*.
+10. "*Why:* two of this census's own claims were falsified by measurement in the same week, both by exactly that mistake — a supposed pair of overlapping annotation sets that turn out not to co-occur at all, and a textbook corpus that holds scores and no analyses at the pinned commit." (75–77) — *a defense* of Row 11.20 and Row 11.21.
+11. "Both were taken from a `content` field and treated as stronger than it was." (77–78) — *a defense* of Row 11.20 and Row 11.21.
+12. "It is #19 applied to corpus bookkeeping: **a layer is trusted after being positively established, never because a summary mentions it." (78–79) — *a defense* of Row 11.20 and Row 11.21.
+13. "*Why:* it is the dedupe rule above with time added — a work that is IN the regression corpus cannot also be a free-standing check ON it, because the two uses are not independent, which is the contamination lesson this section already generalizes." (93–95) — *a defense* of Row 11.24 to Row 11.27.
+14. "The recorded instance that produced the rule is a chorale annotation set whose Bach half re-encodes the gate repertoire while its remaining half does not." (95–96) — *provenance*.
+15. "**★ THE SCOPE THE TIERS ABOVE IMPLEMENT IS ITSELF A USER RATIFICATION, AND IT IS STATED HERE RATHER THAN LEFT TO BE INFERRED FROM THE LISTS.**" (112–113) — *the document's account of itself*.
+16. "That is what Tier G and Tier J are for." (115) — *a pointer*.
+17. "*Why:* the review's own findings F-7 and F-8 — calibration and validation are Baroque- and Bach-heavy, with no gate-grade ground truth for the jazz preset or for the non-classical idioms, and a chromatic stress corpus is named there as the measurement bed for the capability amendments." (115–118) — *a defense* of Row 11.34.
+18. "**The entry rule above is NOT weakened by it, and the two are read together:** material arriving under this ratification widens what the analysis is MEASURED against, it enters at research tier, and promotion of any of it into a gate is the separate, deliberate re-baseline event that rule already describes." (118–120) — *a restatement of Row 11.29*.
+19. "Until this path yields converted, score-aligned jazz ground truth, a fit of the jazz idiom has nothing to be evaluated against." (123–124) — *a defense* of Row 11.35.
+20. "*Why:* jazz accuracy is not measurable on the corpora held at all — the held jazz material is melody-and-chord-symbol transcription, with the bass and the piano voicings absent — so fitting the jazz idiom against it would be fitting without evaluation, which #20 forbids." (124–127) — *a defense* of Row 11.35.
+21. "The idiom that IS fitted now is the one the held annotated music covers, which is what the two non-jazz presets deliver." (127–128) — *a defense* of Row 11.35.
+22. "**What the census can prove:** closure **over the enumerated container classes** (§1)." (156) — *the document's account of its own reach*.
+23. "**The strong claim:** gate-grade common-practice RN/harmony GT is **citation-closed** — the field is small and cross-citing, so every serious GT corpus is used by a SOTA paper, aggregated by WiR/ChoCo, or indexed by mirdata/awesome-lists within ~a year of release; a corpus outside all of those is almost certainly not gate-grade." (156–159) — *the document's account of its own reach*.
+24. "**The bounded (not closed) claim:** plain-score collections and peripheral/niche GT — the risk lives in **unknown containers** (Zenodo-only deposits, national-library editions, non-English sources, brand-new releases), which no enumeration can prove absent." (159–161) — *the document's account of its own reach*.
+25. "**Mitigations (each cheap, each catching a different miss mode):**" (170) — *a lead-in to the mitigations, each listed below*.
+26. "**Citation-closure sweep** — harvest the dataset/related-work sections of the *citing* papers of the four SOTA systems (Semantic Scholar cited-by walk) + each new ISMIR/TISMIR proceedings; this is the mechanism that catches any GT corpus the moment the field first uses it." (171–173) — *a rule of the development process*.
+27. "**Index subscriptions** — the yearly re-sweep (§1) pinned to concrete indexes: the `mirdata` loader list, the `ismir/mir-datasets` repo, Zenodo/OSF keyword alerts ("Roman numeral annotation", "cadence dataset", "harmonic analysis corpus"), Hugging Face datasets search." (174–176) — *a rule of the development process*.
+28. "Catches index-only releases GitHub misses." (176) — *a defense* of the item before it.
+29. "**One community query round** — the WiR README maintains its own curated corpus list (a census to DIFF against, cheap cross-validation); a short ask to the DCML / When-in-Rome / music21 maintainers ("what exists that we missed?") catches private/in-progress sets no index has." (177–179) — *a rule of the development process*.
+30. "Highest catch-rate per unit effort for unknown unknowns." (179) — *a defense* of the item before it.
+31. "**Verification rides acquisition** — every [reported] row is verified at the moment it is cloned/pinned (the CC corpus-onboarding instruction), so the verification debt never needs a separate campaign." (180–181) — *a rule of the development process*.
+32. "**Close the mechanical partials** in the same instruction (craigsapp closure; DLC counts; AugmentedNet manifest from its repo)." (182–183) — *a rule of the development process*.
+33. "**Scope rulings recorded** — each class excluded by decision (non-Western; performance-MIDI; image-only) carries its reason in the appendix tables, so exclusion is auditable and reversible, never a silent omission." (184–185) — *a rule of the development process*.
+34. "**The observation (user):** several times we believed the corpus search was complete, and each time later work surfaced more — the pattern has repeated enough to be a process fact, not bad luck." (189–190) — *narrative*.
+35. "**Why it happens (diagnosed, two mechanisms — neither is a §8 failure, but §8 alone does not prevent them):**" (192) — *a lead-in to the diagnosis, which is the defense of the trigger below*.
+36. "**Containers are walked lazily by design.**" (193) — *a defense* of the trigger below.
+37. "Closure is over container CLASSES; the contents surface only when a wave walks the container (the Wave-2 beds all lived inside §1/§7 rows: `schema_annotation_data` inside the already-enumerated DCMLab org; the algomus texture set inside the §7 algomus/Dezrann residual; Essen inside the folk-containers row)." (193–196) — *a defense* of the trigger below.
+38. "These are census WALKS, not census misses — but they *feel* like discoveries." (196) — *a defense* of the trigger below.
+39. "**Topic-blind enumeration cannot see purpose-specific GT.**" (197) — *a defense* of the trigger below.
+40. "The census enumerated with the HARMONIC axis's questions in mind." (197–198) — *a defense* of the trigger below.
+41. "When a NEW purpose appeared (axis 2: texture / phrase / schema / stream GT; the lever sweep: figured bass, hierarchical trees), targeted per-duty searches immediately surfaced material the enumeration had no reason to rank (BCFB; the JHT's *tree* annotations as a distinct GT layer over an already-held source)." (198–201) — *a defense* of the trigger below.
+42. "A census is only as complete as the list of questions it was asked with." (201) — *a defense* of the trigger below.
+43. "**The standing trigger instituted (complements the yearly re-sweep + the wave triggers):** whenever a **new analysis purpose** enters the project — a new axis, a new component with a GT need, a new lever class — a **targeted, purpose-specific census sweep runs for that purpose** before its design doc is signed (the axis-2 §6b sweep is the founding precedent: three census-grade finds in one pass, two on corpora already held)." (203–206) — *a rule of the development process*.
+44. "The sweep's finds enter via the census as always; "we already enumerated the container" does not discharge the duty to ASK THE NEW QUESTION against it." (206–208) — *a rule of the development process*.
+45. "Each Wave-3 row is marked "entered at Wave 3, provenance `records/cc/reports/cc_corpus_wave3_report.md`" in the registry `wave3_sources` array." (221–222) — *provenance*.
+46. "**The question that created this section:** is a corpus search useful that is NOT driven by one architectural need — the "need" being the sum of all needs?" (226–227) — *provenance*.
+47. "**Answer: yes, but the search is step 3 of 3.**" (227) — *a rule of the development process*.
+48. "The sum of all needs must first exist as an artifact, and once it does, re-scoring the EXISTING enumeration against it is cheaper and likely higher-yield than new searching (the Wave-2 lesson: the finds were already inside enumerated containers — the dismissals were purpose-relative, made with harmonic-axis eyes only)." (227–230) — *a rule of the development process*.
+49. "State columns below carry the audit's updates, marked *(audit)*." (236–237) — *the document's account of itself*.
+50. "**The mechanism (run at natural checkpoints; first run = at Wave-3 scoping, BEFORE its disposition):**" (239) — *a rule of the development process*.
+51. "**The needs-vector (maintained here; §8b's trigger adds a row per new purpose):**" (240) — *a rule of the development process*.
+52. "**★ AND WHAT EARNS A ROW: A GROUND-TRUTH CLASS WITH A NAMED CONSUMER GETS ITS OWN ROW IN THIS VECTOR, NEVER A REMARK UNDER A NEIGHBOURING ROW** (user-ruled 2026-08-09)." (242–243) — *a rule of the development process* — how the needs-vector records a class.
+53. "A class the project can name a consumer for is tracked as a need in its own right; recording it as a remark inside the cell of some adjacent need does not track it." (243–245) — *a restatement of the item before it*.
+54. "*Why, in this section's own terms:* steps 2 and 3 below both operate on **columns** — the audit re-scores every enumerated row against the needs COLUMNS, and the union search round searches only for the columns still uncovered — so a need written as a remark inside a neighbour's cell is invisible to the two mechanisms that exist to find its material, and the enumeration silently stops being the union of needs it is named for." (245–249) — *a defense*.
+55. "The second half of the ground is the one the user gave when this was first decided for a single need: a row of its own can improve inference precision and nothing is lost by adding it, which is principle #12 applied to the tracking surface itself." (250–252) — *a defense*.
+56. "**The converse is not implied and is not ruled here:** a class with no consumer the project can name is not thereby excluded — what fixes the vector's membership is §8b's trigger and the audit, and this rule settles only how an admitted class is recorded." (252–255) — *a rule of the development process*.
+57. "N14 | difficulty/grading labels (syllabus, exam grades) | T-32 | *(union search 2026-07-04, record §3)* **found:** CIPI (652 pieces, Henle 1–9, MusicXML — Zenodo gated/research-only) + Mikrokosmos (147, open) + PSyllabus (7,901 exam-board-labeled recordings, no scores) + pianosyllabus.com (28k, website-only). No machine-readable ABRSM/RCM/Henle dumps exist. **T-32 caveat: all real label sources research-only/proprietary — commercial use needs a license path.** *(ACQUISITION ROUND 2026-07-04, `records/cc/reports/cc_acquisition_round_report.md`)* **Mikrokosmos ACQUIRED** @ `f77aebc1` (147 MusicXML verified, henle 3-class difficulty labels, **no LICENSE file** → hash-pin-only). **CIPI recorded GATED** (Zenodo 8037327 request-access; **USER ACTION: the access form still pending**). **PSyllabus recorded** (Zenodo 14794592; audio/MIDI only, no symbolic scores → N14-adj). The T-32 commercial-license caveat rides the product-tool register" (272) — *about a product tool outside the analysis* — the difficulty-grading tool.
+58. "N15 | performed-intonation reference material | T-21/T-24 | **★ SCOPE RULING RATIFIED (user, 2026-07-04):** audio-domain, out of corpus scope; T-21/T-24 validate by theory/listening" (273) — *about product tools outside the analysis* — the tuning tools.
+59. "**The audit:** re-score every enumerated census row (both appendices + registry) against the needs columns — offline, no searching; each row gains a needs-coverage note; multi-need rows get flagged (a container serving several needs outranks single-need alternatives that any one purpose-sweep would have preferred)." (280–282) — *a rule of the development process*.
+60. "**The union search round:** targeted searches ONLY for columns still uncovered/unassessed after the audit." (283) — *a rule of the development process*.
+61. "*(As scoped by the first-run audit + disposition, 2026-07-04: N9 — after the protovoice inspection —, N13, N14, N12-realized-half, N19." (284–285) — *a restatement of Row 11.47*.
+62. "Findings enter via the census as always." (286) — *a rule of the development process*.
+63. "**Relation to the other triggers:** §8b (purpose sweep at each new purpose) keeps the vector current; the yearly re-sweep catches new releases; the full-needs audit catches the CROSS-purpose and re-scoring misses both leave." (288–289) — *a rule of the development process*.
+64. "(Fitting on NC data for a shipped commercial product is the "trained on NC" gray zone; internal research use is unaffected — the current fork is private research, so nothing is violated today; this constraint exists so commercialization never silently inherits an NC-derived parameter set.)" (297–300) — *a defense* of Row 11.69.
+65. "T-32 (difficulty) already carries its own harder version of this caveat (no commercially usable label source exists at all)." (302–303) — *a pointer*.
+66. "**★ AND THE DIFFICULTY-GRADE CASE IS A DIFFERENT PROHIBITION FROM THE FOUR BULLETS ABOVE, STATED APART SO IT IS NOT READ AS THE SAME ONE.**" (307–308) — *the document's account of itself*.
+67. "Those restrict the pool a **shipped FITTED VALUE** may be estimated on." (308) — *a restatement of Row 11.68 and Row 11.69*.
+68. "This restricts a shipped **FEATURE** whose labels are somebody else's property." (308–309) — *about a product tool outside the analysis* — the difficulty-grading tool.
+69. "**Every real difficulty-grade label source is research-only or proprietary AT ORIGIN:** no machine-readable exam-syllabus dump exists in any form, the open sets carry no licence file at all, the gated one is request-access and research-use-only, and the largest carries a free-licence badge over research-use-only text." (309–312) — *about a product tool outside the analysis* — the difficulty-grading tool.
+70. "**So a COMMERCIAL grading feature needs a licence path or labels of our own** — the held material is enough to validate the idea as research and is not enough to ship it." (312–313) — *about a product tool outside the analysis* — the difficulty-grading tool.
+71. "*Why it is stated here and not only where it was found:* this is the section a fitter or a feature design reads before declaring its pool, and a designer who meets the fitted-value rule must also meet the case where the constraint bites on the feature instead." (313–316) — *a defense*.
+72. "**The intake rule (user, 2026-07-03 — the converse of step 2):** a find made FOR one need is **scored against the FULL needs-vector at intake**, never single-purpose-tagged." (318–319) — *a rule of the development process*.
+73. "Three consequences, each binding:" (319) — *a lead-in to the items, each listed or tabulated below*.
+74. "**Already-satisfied needs stay open to supersession** — a new find may serve a "passed" need better or cheaper than its current bed; the intake scoring records that even when no action follows." (320–321) — *a rule of the development process*.
+75. "**Future/inactive needs get pre-coverage** — a find's coverage of a not-yet-active column is recorded at intake, so when that purpose's §8b sweep eventually runs it starts non-empty." (322–323) — *a rule of the development process*.
+76. "**Every GT LAYER of a container is inventoried at intake, not just the layer that motivated the find** — the founding counter-example: the JHT entered for the harmonic idiom study and its hierarchical TREE annotations (a distinct GT layer, lever R-7's footing) went unrecorded until a different question was asked at it a week later." (324–327) — *a rule of the development process*.
+77. "The registry's per-row needs-coverage note (audit step 2) is where the intake scoring lands." (327) — *a rule of the development process*.
+78. "*Why:* the two are not the same quantity — a label taken from the engraving measures the engraver's decision, and a consumer that needs heard streams would be graded against something else without being told." (332–334) — *a defense* of Row 11.72 and Row 11.73.
+79. "It is principle #21 at the intake point: ground truth is itself a measurement tool, so what it measures is established before it bears load (#19), and the establishment status a published evidence fact must carry is exactly this kind of statement." (334–337) — *a defense* of Row 11.72 and Row 11.73.
+80. "**The supersession decision protocol (user, 2026-07-03 — what happens when a find serves an already-passed need):** a "go back and rework now" vs "postpone" question is NEVER decided by enthusiasm or by default silence." (339–340) — *a rule of the development process*.
+81. "The protocol, reusing the project's standing shapes:" (341) — *a lead-in to the items, each listed or tabulated below*.
+82. "**Record first:** the finding lands as an open item in the affected component's §15 (open items) + a STATUS plan line — it cannot get lost regardless of the decision." (342–343) — *a rule of the development process*.
+83. "**The fork, by measured outcome:**" (347) — *a lead-in to the two branches, each listed below*.
+84. "**Contradiction (a premise-invalidation):** surfaced IMMEDIATELY as a tripwire event (the D5-test pattern) — the user decides rework-now vs accept-with-recorded-caveat; downstream work that builds on the invalidated conclusion is named in the surfacing (the compounding cost of waiting is part of the decision material)." (348–350) — *a rule of the development process*.
+85. "**Enrichment only:** DEFAULT = postpone to the component's next natural touch (the §15 item carries it); pulling the rework forward is a user priority call, informed by the measurement." (351–352) — *a rule of the development process*.
+86. "**The decision is the user's in both branches** — the protocol fixes what is measured and what is recorded, never the outcome." (353–354) — *a rule of the development process*.
+87. "(This is the corpus-side analogue of the gate re-baseline discipline: evidence first, deliberate ratification second, nothing reopened by silence.)" (354–355) — *a defense* of the protocol.
+
+#### The arithmetic at this member
+
+- Rows written: **75** (11.1 to 11.75).
+- Rows split into two claims, **+1 each**: 11.11, 11.13, 11.18, 11.23, 11.30, 11.35, 11.48, 11.49, 11.50, 11.51, 11.52, 11.53, 11.54, 11.55, 11.56, 11.57, 11.58, 11.59, 11.60, 11.61, 11.62, 11.63, 11.64, 11.65, 11.68, 11.70, 11.72 — 27 rows, **+27**.
+- Rows split into three claims, **+2 each**: 11.19 — one row, **+2**.
+- **Outgoing statements placed: 75 + 27 + 2 = 104.**
+- Listed under *not a statement*: **87**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 104 dispositions over
+  104 statements.
+- **UNPLACED at this member: 0** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 1 | 11.68(i) |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 58 | 11.1, 11.11(ii), 11.12, 11.13(ii), 11.14, 11.15, 11.16, 11.17, 11.18(i), 11.18(ii), 11.19(i), 11.19(ii), 11.19(iii), 11.20, 11.21, 11.22, 11.23(i), 11.23(ii), 11.24, 11.25, 11.26, 11.27, 11.28, 11.29, 11.30(i), 11.30(ii), 11.31, 11.32, 11.33, 11.41, 11.48(i), 11.49(i), 11.50(i), 11.51(i), 11.52(i), 11.53(i), 11.54(i), 11.55(i), 11.56(i), 11.57(i), 11.58(i), 11.59(i), 11.60(i), 11.61(i), 11.62(i), 11.63(i), 11.64(i), 11.65(i), 11.67, 11.68(ii), 11.69, 11.70(i), 11.70(ii), 11.72(i), 11.72(ii), 11.73, 11.74, 11.75 |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 45 | 11.2, 11.3, 11.4, 11.5, 11.6, 11.7, 11.8, 11.9, 11.10, 11.11(i), 11.13(i), 11.34, 11.35(i), 11.35(ii), 11.36, 11.37, 11.38, 11.39, 11.40, 11.42, 11.43, 11.44, 11.45, 11.46, 11.47, 11.48(ii), 11.49(ii), 11.50(ii), 11.51(ii), 11.52(ii), 11.53(ii), 11.54(ii), 11.55(ii), 11.56(ii), 11.57(ii), 11.58(ii), 11.59(ii), 11.60(ii), 11.61(ii), 11.62(ii), 11.63(ii), 11.64(ii), 11.65(ii), 11.66, 11.71 |
+| UNPLACED | 0 | — |
+| **Total** | **104** | — |
+
+**The arithmetic closes at this member**: 1 + 0 + 58 + 0 + 0 + 45 + 0 = 104, against 104 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 3 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 101 |
+| **Total verdicts** | **104** |
+
+*(104 verdicts over 104 statements because 0 statement each name two derived statements: .)* DIFFERS: .
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 11 is empty, so no home of a
+  decision ruled L2's own lies in this member.
+- **SEEN rows: none.** None of the eight identities 1(c) names — D-002, D-095, D-223, D-261, D-275, D-279,
+  D-322, D-393 — is among the identities the artifact places in position 11.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S38 (entry 6) — 11.48, 11.68,
+  11.69. No row of this member names L2-S12, L2-S17, L2-S22, L2-S31, L2-S42, L2-S43 or L2-S45.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -23321,10 +24392,38 @@ the row says which.
 - Rows 10.15 and 10.38 — the identity-weight ablation baseline, and the signature's influence measured by ablation and
   published at every fit.
 - Row 10.21(ii) — a named reduction alignment as the fitting and validation resource for the ornament cells.
+- Row 11.1 — a fact the census reports from a snippet only, re-verified before it bears load.
+- Rows 11.11(ii), 11.12, 11.13(ii), 11.14, 11.15, 11.16, 11.17, 11.18(i) and 11.18(ii) — what the census found the
+  corpora to hold, and the measurement each would serve.
+- Rows 11.19(i), 11.19(ii) and 11.19(iii) — the five fields a source needs to enter the registry, research tier for
+  an annotation not anchored to the music, and the license classes.
+- Rows 11.20 and 11.21 — a content summary records where a source came from; whether an annotation layer is present
+  is measured at the files.
+- Rows 11.22, 11.23(i) and 11.23(ii) — the containers re-encoding the same works, deduplication by work, and a work in
+  the gate corpus excluded as ground truth from every other container.
+- Rows 11.24, 11.25, 11.26 and 11.27 — an annotation set overlapping the regression corpus is record-only over those
+  works.
+- Rows 11.28, 11.29, 11.30(i), 11.30(ii), 11.31, 11.32 and 11.33 — the decision tiers, entry at research tier, and
+  promotion to a gate as its own ratified re-baseline.
+- Row 11.41 — non-Western symbolic sets outside the analysis's scope by ruling.
+- Rows 11.48(i), 11.49(i), 11.50(i), 11.51(i), 11.52(i), 11.53(i), 11.54(i), 11.55(i), 11.56(i), 11.57(i), 11.58(i),
+  11.59(i), 11.60(i), 11.61(i), 11.62(i), 11.63(i), 11.64(i) and 11.65(i) — the needs-vector's ground-truth classes
+  and their consumers. *(L2-S38 AGREES at Row 11.48(i).)*
+- Rows 11.67 and 11.70(ii) — the fitter's data pool declared per license class before fitting, and its split stating
+  which sources feed which.
+- Row 11.68(ii) — the members of the freely licensed pool, named.
+- Row 11.69 — travelling with Row 9.11: non-commercial and unlicensed sources validate and never shape a shipped
+  value. *(L2-S38 travels with it.)*
+- Row 11.70(i) — travelling with Row 9.56: measurement ground truth is not a shipped value.
+- Rows 11.72(i), 11.72(ii) and 11.73 — what a voice or stream label set measures, stated at intake, and the engraved
+  voice accepted for keyboard music.
+- Rows 11.74 and 11.75 — a cheap read-only re-validation against new material before any decision, asking whether
+  it contradicts a conclusion or only enriches the validation.
 
 *(Member 2 relocates no row. Member 3 relocates one, Row 3.38, above. Member 5's relocations are the rows
 numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows numbered 7.n. Member 8 relocates
-no row. Member 9's relocations are the rows numbered 9.n above, and member 10's the rows numbered 10.n.)*
+no row. Member 9's relocations are the rows numbered 9.n above, member 10's the rows numbered 10.n, and member
+11's the rows numbered 11.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -24337,10 +25436,11 @@ own distribution table in §6.
 | 8 | 212 | 17 | 0 | 0 | 111 | 0 | 57 | 27 | 93 |
 | 9 | 471 | 12 | 27 | 75 | 113 | 0 | 218 | 26 | 270 |
 | 10 | 96 | 39 | 7 | 5 | 2 | 0 | 19 | 24 | 16 |
-| **Total** | **1905** | **333** | **67** | **222** | **649** | **0** | **428** | **206** | **755** |
+| 11 | 104 | 1 | 0 | 58 | 0 | 0 | 45 | 0 | 87 |
+| **Total** | **2009** | **334** | **67** | **280** | **649** | **0** | **473** | **206** | **842** |
 
-**The arithmetic check:** 333 + 67 + 222 + 649 + 0 + 428 + 206 = 1905, against 1905 statements placed (72 +
-65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96).
+**The arithmetic check:** 334 + 67 + 280 + 649 + 0 + 473 + 206 = 2009, against 2009 statements placed (72 +
+65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104).
 
 **Current-text verdicts.**
 
@@ -24356,9 +25456,11 @@ own distribution table in §6.
 | 8 | 19 | 59 | 141 | 219 |
 | 9 | 25 | 24 | 423 | 472 |
 | 10 | 51 | 24 | 30 | 105 |
-| **Total** | **475** | **468** | **1002** | **1945** |
+| 11 | 3 | 0 | 101 | 104 |
+| **Total** | **478** | **468** | **1103** | **2049** |
 
-**The arithmetic check:** 475 + 468 + 1002 = 1945 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105).
+**The arithmetic check:** 478 + 468 + 1103 = 2049 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 +
+104).
 
 ## 14. The derivation's independence record, relayed
 
@@ -24389,4 +25491,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 10 are done, positions 11 to 62 are untouched.
+  untouched: positions 1 to 11 are done, positions 12 to 62 are untouched.
