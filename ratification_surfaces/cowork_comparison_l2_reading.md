@@ -54,7 +54,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 13 | `docs/nct_detection_design.md`, whole | **DONE** (§6.13) |
 | 14 | `cowork_phase5b_l4_build_plan.md`, whole | **DONE** (§6.14) |
 | 15 | `cowork_engage_arc_plan.md`, whole | **DONE** (§6.15) |
-| 16 | `cowork_l1l4_review_charter.md`, whole | NOT YET TABULATED |
+| 16 | `cowork_l1l4_review_charter.md`, whole | **DONE** (§6.16) |
 | 17 | `ARCHITECTURE.md` passages — the opening block, above the first `## ` heading | NOT YET TABULATED |
 | 18 | `ARCHITECTURE.md` passages — *Document governance and the standing architecture notes* | NOT YET TABULATED |
 | 19 | `ARCHITECTURE.md` passages — *Table of Contents* | NOT YET TABULATED |
@@ -104,15 +104,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 15 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 16 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
-`docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole, and
-`cowork_engage_arc_plan.md`, whole.**
+`docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
+`cowork_engage_arc_plan.md`, whole, and `cowork_l1l4_review_charter.md`, whole.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 15 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 16 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -125,10 +125,13 @@ and was not opened. The third batch, under
 tabulated positions 6, 7 and 8, each whole and in its own commit, and stopped at the member boundary after
 position 8 under that dispatch's capacity judgment (its Task 1(h)): position 9 was judged not finishable whole
 in the context that remained, and was not opened. The fourth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md`, resumed at position 9
-and tabulated positions 9, 10, 11, 12, 13, 14 and 15, each whole and in its own commit. **Positions 16 to
-62 are UNTOUCHED**: not read for tabulation, not quoted, not counted and not placed, and nothing in them is partly
-worked. **The next writing resumes at position 16**, `cowork_l1l4_review_charter.md`, whole. §7, §8, §9 and §14 stay NOT YET
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md`, resumed at position 9,
+tabulated positions 9 to 16, each whole and in its own commit, and stopped at the member boundary after
+position 16 under that dispatch's capacity judgment (its Task 1(h)): position 17, the first passage member this
+batch would have met, was judged not finishable whole in the context that remained with the batch's close still
+to run, and was not opened. **Positions 17 to 62 are UNTOUCHED**: not read for tabulation, not quoted, not
+counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 17**,
+`ARCHITECTURE.md` passages — the opening block, above the first `## ` heading. §7, §8, §9 and §14 stay NOT YET
 WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -26947,6 +26950,200 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S38 (entry 6) — 15.29, 15.39.
   No row of this member names L2-S12, L2-S17, L2-S22, L2-S31, L2-S42, L2-S43 or L2-S45.
 
+---
+
+### 6.16 — Member 16: `cowork_l1l4_review_charter.md`, whole
+
+> **Manifest for this member.** Position **16**. Kind: *item 2 — a whole document (not a specification-set
+> member)*. Document: `cowork_l1l4_review_charter.md`. Label: *the whole document*. Range, as a locator only:
+> lines 1–52, from its first line *"# L1–L4 comprehensive review + tidy — charter (the step-3 QA gate, before L5)"* to
+> its last *"COMPLETE / nothing-left (modulo the joint-L5 engagement+retirement+seal)** sign-off → **then L5.**"*,
+> exactly as the artifact publishes it (**D-307**). Outgoing statements: **10** (rows 16.1 to 16.8;
+> 2 of those rows carry two or more claims each and are split — the arithmetic is at the foot of this
+> member). Listed under *not a statement*: **17**. Counted at this member by this session; the counts appear
+> here and nowhere else.
+>
+> **What the named-documents ruling's §2 records this document to be**
+> (`records/cowork/rulings/cowork_rulings_2026_09_27_l2_named_documents_sitting.md` §2, quoted): *"the June 2026
+> charter for the Layer 1–4 review-and-tidy pass: scope, tidy guardrails, division of work. **Kind: a process
+> charter; carries no L2 design reasoning** beyond the guardrail that the dormant new Layer-4 path is not dead
+> code."*
+>
+> **What kind of text this member is, and which placement readings apply.** The charter of a past review of the
+> first four layers. **The placement readings are those of the earlier members, applied unchanged**: a rule of
+> how the review works — its aims, its standards, its division of labor, what it may tidy — is listed under *not
+> a statement* as a rule of the development process, as member 10 listed one; the review's strategy, mandate,
+> scope and outputs, and the build state it records, are HISTORICAL; a measured result is QUARANTINED; the rule
+> that a behavioral change passes the two-tier gate is RELOCATED to *the measurement of the analysis*, travelling
+> with Row 14.4; and a lead-in and a question of the review are listed under *not a statement*.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 16:
+> **none** — that list is empty, so no row is marked WITHHELD. **No SEEN home lies in this member** — none of
+> the eight identities 1(c) names (D-002, D-095, D-223, D-261, D-275, D-279, D-322, D-393) is among the
+> identities the artifact places in position 16.
+---
+
+**Row 16.1 — the ratified strategy: the Layer-4 build complete, proven and dormant, its switch joint with Layer 5.**
+
+*Outgoing statement.* "**Context (ratified 2026-06-26).** **Engage-with-L5** is the ratified strategy: the **L4 build is COMPLETE and PROVEN** (G1, G2/G3, two-reading inherit, G6, spelling-pin — measured +5.5/+5.8 better where it commits; ~85% of its abstention is genuinely function-dependent → L5), but it is **dormant**, and the **production switch + legacy retirement + the coverage seal are joint with L5**." — the context block (locator: lines 3–6). Two claims: (i) the strategy and state: the Layer-4 build complete and dormant, its production switch, the legacy retirement and the coverage seal joint with Layer 5; (ii) the measured results: the gain where it commits, and the share of its abstention that depends on function.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation did.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **QUARANTINED.** *Audit question:* does the per-slice path's recorded gain where it commits, and the share of its abstention recorded as dependent on function, reproduce at the current commit?
+
+---
+
+**Row 16.2 — the user mandates a comprehensive review of the first four layers before Layer 5 opens.**
+
+*Outgoing statement.* "Before opening L5, the user mandates a **comprehensive review of L1–L4** with two aims:" — the context block (locator: lines 6–7).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 16.3 — the review's scope: the built layers with their tests, fixtures and documentation.**
+
+*Outgoing statement.* "**Scope:** the built layers **L1, L1.5, L2, L3, L4** (incl. the dormant new `chordslicedecoder` path) + their tests, fixtures, and docs." — the context block (locator: lines 11–12).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 16.4 — out of the review's scope: Layers 5 and 6, and the accuracy of the inference.**
+
+*Outgoing statement.* "**Out of scope:** L5/L6 (not built); inference *accuracy* (firewall — Phase B)." — the context block (locator: line 12).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 16.5 — a behavioral change goes under the two-tier gate, the suites and the snapshots; a correctness bug is fixed only as a ratified gated step.**
+
+*Outgoing statement.* "**Tidy only byte-identical or gated:** behavioural code changes go under the two-tier BIR gate + suites + snapshots; a genuine correctness bug (e.g. German-bass) is **flagged**, fixed only as a ratified gated step — not folded silently." — the section *Standards (apply to every finding)* (locator: lines 20–21).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 14.4.
+
+---
+
+**Row 16.6 — the review does not touch the accuracy of the inference, nor the dormant new Layer-4 path, which is not dead code.**
+
+*Outgoing statement.* "**MUST NOT touch:** inference accuracy (the leading-tone C→F gate, scoring tuning — firewall, Phase B); the **dormant new-L4 path and the staged scaffolding** (`chordslicedecoder`, `redecodeRange`, `tonicizationlabeler`, `DecodeQualityLevel`) — they are *deferred-engagement*, NOT dead-code-to-delete (their wire-or-remove verdict is the joint L4+L5 engagement)." — the section *Standards (apply to every finding)* (locator: lines 22–25). Two claims: (i) the review does not touch the accuracy of the inference; (ii) the dormant new Layer-4 path and its staged scaffolding are deferred engagement, not dead code, their fate decided at the joint engagement with Layer 5.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL.** (ii) **HISTORICAL.**
+
+---
+
+**Row 16.7 — each side writes a findings and tidy report.**
+
+*Outgoing statement.* "Each side writes a findings + tidy report (CC: `cc_l1l4_review_report.md`; Cowork: a consolidated review note)." — the section *Output & close* (locator: line 50).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+---
+
+**Row 16.8 — then the tidy commits land, the defects are tracked, and the first four layers are signed complete before Layer 5.**
+
+*Outgoing statement.* "Then: the tidy commits land (gated, by-sha-verified), the surfaced defects are a tracked list, and we reach the **✅ L1–L4 COMPLETE / nothing-left (modulo the joint-L5 engagement+retirement+seal)** sign-off → **then L5.**" — the section *Output & close* (locator: lines 50–52).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL.**
+
+
+---
+#### Not a statement — listed so the arithmetic closes (17)
+
+1. "**KNOW, don't assume** — every load-bearing claim verified at source (the standing "verified facts only" rule)." (8) — *a rule of the development process*.
+2. "**Tidy imperfections** — code, test cases, test data, documentation." (9) — *a rule of the development process*.
+3. "**Verified, not assumed:** cite file:line / commit-sha; mark VERIFIED vs INFERRED." (15) — *a rule of the development process*.
+4. "The mount-staleness rule holds — **Cowork uses the file tools, never bash for working-tree reads**; CC reads on Windows (authoritative)." (15–16) — *a rule of the development process*.
+5. "**Tidy guardrails — what may be fixed vs what must NOT:**" (17) — *a lead-in to the guardrails, each listed or tabulated below*.
+6. "**Freely tidy:** documentation (accuracy / consistency / staleness), orphaned test data + fixtures, stale/weak tests, stale code *comments*, dead-vocabulary names." (18–19) — *a rule of the development process*.
+7. "Removing them is a STOP." (25) — *a rule of the development process*.
+8. "**No inference-problem-fixing** anywhere (the firewall stands until the whole stack is built + tested)." (26) — *a rule of the development process*.
+9. "**Cowork (docs + architecture coherence) — file tools / agents, read-only + doc edits:**" (29) — *a rule of the development process*.
+10. "Every L1–L4 **design doc / spec** (the layer docs, the bounded-context / reach-back / tpc / L4 spec, the Phase-5b plan, the ledger) — accurate, complete, internally consistent, **synced to as-built** (the delta-check covered L1–L3 status; re-confirm + cover L4/the new path)." (30–32) — *a rule of the development process*.
+11. "`ARCHITECTURE.md`, `docs/scoring_model.md`, `STATUS.md`, `COWORK_HANDOFF.md`, the gate tables — current, accurate, non-contradictory (the doc-truth pass fixed 57/23→53/24; confirm nothing stale remains)." (33–34) — *a rule of the development process*.
+12. "**Architecture coherence:** does the *as-built* still realise the forward-only layered intent (no new back-edges from the L4 build; the L4→L5 abstain contract is clean; the tpc/spelling/types-leaf are where the design says)?" (35–36) — *a question of the review*.
+13. "**CC (code + tests + test data + the tidying) — on Windows, source + build/run:**" (38) — *a rule of the development process*.
+14. "**Code:** correctness vs spec (verified), unification (no new duplication from the L4 build; the deferred `analysisutils.h` relocation; the two-segmenter / two-pitch-context state), dead-vs-staged honesty, stale comments, dead-vocabulary names (e.g. `applyIter8691Pedal`)." (39–41) — *a rule of the development process*.
+15. "**Tests:** the suites green; oracle-quality (not echoing); the `DISABLED_`/xfail surfaced-defect ledger; stale/orphaned tests." (42–43) — *a rule of the development process*.
+16. "**Test data:** orphaned fixtures (the `chord_analysis_test` stubs etc. — re-verify whole-repo, then remove the confirmed orphans); fixture hygiene; corpus integrity." (44–45) — *a rule of the development process*.
+17. "**Tidy** the freely-tidyable imperfections (per the guardrails), each gated; **flag** (do not silently fix) anything behavioural or firewall-adjacent." (46–47) — *a rule of the development process*.
+
+#### The arithmetic at this member
+
+- Rows written: **8** (16.1 to 16.8).
+- Rows split into two claims, **+1 each**: 16.1, 16.6 — two rows, **+2**.
+- **Outgoing statements placed: 8 + 2 = 10.**
+- Listed under *not a statement*: **17**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 10 dispositions over
+  10 statements.
+- **UNPLACED at this member: 0** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 1 | 16.5 |
+| QUARANTINED | 1 | 16.1(ii) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 8 | 16.1(i), 16.2, 16.3, 16.4, 16.6(i), 16.6(ii), 16.7, 16.8 |
+| UNPLACED | 0 | — |
+| **Total** | **10** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 1 + 1 + 0 + 8 + 0 = 10, against 10 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 10 |
+| **Total verdicts** | **10** |
+
+*(10 verdicts over 10 statements because 0 statement each name two derived statements: .)* DIFFERS: .
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 16 is empty, so no home of a
+  decision ruled L2's own lies in this member.
+- **SEEN rows: none.** None of the eight identities 1(c) names — D-002, D-095, D-223, D-261, D-275, D-279,
+  D-322, D-393 — is among the identities the artifact places in position 16.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met: none.** No row of this member names
+  L2-S12, L2-S17, L2-S22, L2-S31, L2-S38, L2-S42, L2-S43 or L2-S45.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -27241,12 +27438,14 @@ the row says which.
   frozen corpus, any move re-baselined with its explanation.
 - Row 15.18 — travelling with Row 15.7: each stage-3 change a ratified behavior change proven on the full surface
   under the robust-unit stop.
+- Row 16.5 — travelling with Row 14.4: a behavioral change goes under the two-tier gate, the suites and the
+  snapshots, a correctness bug fixed only as a ratified gated step.
 
 *(Member 2 relocates no row. Member 3 relocates one, Row 3.38, above. Member 5's relocations are the rows
 numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows numbered 7.n. Member 8 relocates
 no row. Member 9's relocations are the rows numbered 9.n above, member 10's the rows numbered 10.n, member 11's
 the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows numbered 13.n, member 14's the rows
-numbered 14.n, and member 15's the rows numbered 15.n.)*
+numbered 14.n, member 15's the rows numbered 15.n, and member 16's the rows numbered 16.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -27797,6 +27996,8 @@ rows here, each with its audit question, in the commit that tabulates it.
   non-monotone at the current commit?
 - Row 15.30(ii) — does the recorded measurement of the legacy joint re-ranking step — its net gain, its harm share,
   its oracle ceiling and its fire rate — reproduce, and on which retired path did it run?
+- Row 16.1(ii) — does the per-slice path's recorded gain where it commits, and the share of its abstention recorded
+  as dependent on function, reproduce at the current commit?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -28314,10 +28515,11 @@ own distribution table in §6.
 | 13 | 50 | 6 | 2 | 5 | 7 | 0 | 27 | 3 | 65 |
 | 14 | 47 | 0 | 0 | 6 | 10 | 0 | 31 | 0 | 10 |
 | 15 | 45 | 0 | 0 | 2 | 4 | 0 | 39 | 0 | 45 |
-| **Total** | **2222** | **347** | **69** | **319** | **671** | **0** | **603** | **213** | **986** |
+| 16 | 10 | 0 | 0 | 1 | 1 | 0 | 8 | 0 | 17 |
+| **Total** | **2232** | **347** | **69** | **320** | **672** | **0** | **611** | **213** | **1003** |
 
-**The arithmetic check:** 347 + 69 + 319 + 671 + 0 + 603 + 213 = 2222, against 2222 statements placed (72 +
-65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45).
+**The arithmetic check:** 347 + 69 + 320 + 672 + 0 + 611 + 213 = 2232, against 2232 statements placed (72 +
+65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10).
 
 **Current-text verdicts.**
 
@@ -28338,10 +28540,11 @@ own distribution table in §6.
 | 13 | 11 | 5 | 34 | 50 |
 | 14 | 0 | 1 | 46 | 47 |
 | 15 | 1 | 1 | 43 | 45 |
-| **Total** | **505** | **479** | **1278** | **2262** |
+| 16 | 0 | 0 | 10 | 10 |
+| **Total** | **505** | **479** | **1288** | **2272** |
 
-**The arithmetic check:** 505 + 479 + 1278 = 2262 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 +
-104 + 71 + 50 + 47 + 45).
+**The arithmetic check:** 505 + 479 + 1288 = 2272 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 +
+104 + 71 + 50 + 47 + 45 + 10).
 
 ## 14. The derivation's independence record, relayed
 
@@ -28372,4 +28575,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 15 are done, positions 16 to 62 are untouched.
+  untouched: positions 1 to 16 are done, positions 17 to 62 are untouched.
