@@ -61,7 +61,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 19 | `ARCHITECTURE.md` passages — *Table of Contents* | **DONE** (§6.19) |
 | 20 | `ARCHITECTURE.md` passages — *1. Project Overview* | **DONE** (§6.20) |
 | 21 | `ARCHITECTURE.md` passages — *2. Architectural Principles* | **DONE** (§6.21) |
-| 22 | `ARCHITECTURE.md` passages — *3. Directory Structure* | NOT YET TABULATED |
+| 22 | `ARCHITECTURE.md` passages — *3. Directory Structure* | **DONE** (§6.22) |
 | 23 | `ARCHITECTURE.md` passages — *4. Existing Components — The Analysis Foundation* | NOT YET TABULATED |
 | 24 | `ARCHITECTURE.md` passages — *5. Planned Analysis Extensions* | NOT YET TABULATED |
 | 25 | `ARCHITECTURE.md` passages — *6. The Style System* | NOT YET TABULATED |
@@ -105,15 +105,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 21 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 22 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, and the `ARCHITECTURE.md` passages under *2. Architectural Principles*.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, and the `ARCHITECTURE.md` passages under *3. Directory Structure*.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 21 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 22 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -132,8 +132,8 @@ position 16 under that dispatch's capacity judgment (its Task 1(h)): position 17
 batch would have met, was judged not finishable whole in the context that remained with the batch's close still
 to run, and was not opened. The fifth batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifth_2026_09_28.md`, resumed at position 17 and
-tabulated positions 17 to 21, each whole and in its own commit. **Positions 22 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 22**, `ARCHITECTURE.md` passages — *3. Directory Structure*. §7, §8,
+tabulated positions 17 to 22, each whole and in its own commit. **Positions 23 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 23**, `ARCHITECTURE.md` passages — *4. Existing Components — The Analysis Foundation*. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -30681,6 +30681,2305 @@ exist on any path a user's result travels." — §2.15, the fullest-reading cont
   (entry 4) — 21.59, 21.60; L2-S42 (entry 4) — 21.72; L2-S43 (entry 4) — 21.19, 21.48, 21.72; L2-S45 (entry 4) —
   21.70, 21.71, 21.75; L2-S12 (entry 5) — 21.62; L2-S38 (entry 6) — 21.3. No row of this member names L2-S17.
 
+---
+
+### 6.22 — Member 22: `ARCHITECTURE.md`, passages — *3. Directory Structure*
+
+> **Manifest for this member.** Position **22**. Kind: *items 3 and 4 — passages of a specification-set
+> member*. Document: `ARCHITECTURE.md`. Label: *"## 3. Directory Structure"*. **The thirty-seven published
+> ranges**, each as a locator only, by its first and last line as the artifact publishes them (**D-307**); where a
+> boundary line is too long to repeat, it is given by its opening and closing words:
+>
+> 1. lines 1341–1419, from *"```"* to *"```"*;
+> 2. lines 1435–1437, from *"### 3.3 Module Boundaries and Bridge Architecture"* to *"> **Read this section before
+>    touching any code that crosses the composing ↔ notation boundary.**"*;
+> 3. lines 1485–1490, from *"*Why this rule: derived from the already-ratified scoped forms (the Dependency Rule, the
+>    bridge"* to *"and reconciles the §1.2 contribution intent with the fork-local patch constraint.*"*;
+> 4. lines 1492–1498, from *"#### The rendered form never crosses back — two boundary invariants that bind every
+>    reader"* to *"alike; other documents point at them and do not copy them (#6)."*;
+> 5. lines 1500–1514, from *"1. **A gate or scoring rule reads STRUCTURED FIELDS ONLY — never a chord-symbol string,
+>    never a"* to *"   with itself."*;
+> 6. lines 1539–1547, from *"| File | Declares/defines | Called by |"* to the line opening *"|
+>    `notationanalysisinternal.h` | `isChordTrackStaff()`"* and closing *"`notationtuningbridge.cpp`,
+>    `notationimplodebridge.cpp` |"*;
+> 7. lines 1554–1558, from *"**Two terms used throughout these layer docs.** **L1.5** is the thin *derived-view* layer
+>    over the L1 note model — the"* to *"case counts (e.g. `53/24/53`); the "class-(a)/(b)" split and the full
+>    definition live in the gate policy (CLAUDE.md)."*;
+> 8. lines 1562–1567, from *"The analysis pipeline is being rebuilt **upstream-first** onto the ratified 4-layer
+>    target"* to *"module (below) and is now **wired — L3 consumes the slicer** (`regionanalyzer.cpp:579`)."*;
+> 9. line 1571 — one line, opening *"**Delegation pointer for the Layer-1.5 phrase-boundary primitive"* and closing
+>    *"had more than one candidate in the tree.)*"*;
+> 10. lines 1573–1575, from *"| Module | Responsibility |"* to the line opening *"|
+>     `composing/analysis/notemodel/note_model.{h,cpp}` |"* and closing *"`notes()` and every existing consumer are
+>     byte-identical. |"*;
+> 11. lines 1577–1584, from *"**Derived views over the model (in `engravingbridge`).** The old note-reading is
+>     replaced by"* to *"  reading half); `buildTones` is now a trivial adapter; `findTemporalContext` takes the
+>     model."*;
+> 12. lines 1586–1591, from *"**Transitional, by design.** The segment-first analysis spine described below"* to *"to
+>     the note model; the slicing/scoring *logic* is frozen until its layers."*;
+> 13. lines 1593–1600, from *"**Ratified trade-off on record.** Layer 1 is a **behavior change**, not byte-identical:
+>     the"* to *"`records/cc/reports/cc_layer1_impl_report.md` / `records/cc/reports/cc_layer1_coverage_report.md`
+>     (HELD)."*;
+> 14. lines 1602–1610, from *"**The finest meaningful extension step is the CHANGE-POINT — a finer request loads no
+>     note and can"* to *"question the requesting layer owns."*;
+> 15. lines 1612–1624, from *"**Polyphonic phrase-boundary detection has NO validated deterministic rule set in the
+>     literature —"* to *"delegated two paragraphs above may claim; it does not change what that contract
+>     specifies.)"*;
+> 16. lines 1626–1636, from *"**★ VOICE SLOTS AND STEM DIRECTION ARE STRUCTURAL NOTATIONAL METADATA, NOT USER-WRITTEN
+>     ANALYTICAL"* to *"settles nothing about whether it is built, which is a separate deferral recorded at the
+>     chord layer."*;
+> 17. lines 1638–1644, from *"#### Layer 2 — the deterministic change-point slicer (Built+Live — consumed by L3)"* to
+>     *"the analysis movement came from **L3's consumption** of the slices, not from the slicer."*;
+> 18. lines 1646–1648, from *"| Module | Responsibility |"* to the line opening *"|
+>     `composing/analysis/slicing/slicer.{h,cpp}` |"* and closing *"consecutive boundaries form the slices. O(n log
+>     n). |"*;
+> 19. lines 1650–1656, from *"**Boundaries over layer-1's eligibility annotation — never re-decided.** A note
+>     participates in"* to *"unison/octave shrink is a real boundary though the PC set is unchanged)."*;
+> 20. lines 1658–1673, from *"**Covering / empty slices, clipped to the loaded span (bounded context).** The tiled
+>     domain is the"* to *"re-slice is Phase 2b (deferred, byte-identical)."*;
+> 21. lines 1675–1683, from *"**Zero interpretation.** No thresholds, min-gap, merge, or snapping; no notion of"* to
+>     *"which boundaries are real, layer N groups equal analyses."*;
+> 22. lines 1685–1693, from *"**Fully covered + byte-identical on the live path.** Built with `slicer_tests.cpp` (20
+>     tests: the"* to *"`records/cc/reports/cc_layer2_audit_dossier.md`."*;
+> 23. line 1695 — one line, opening *"**Delegation pointer (the fifth home case; written 2026-08-04 on the user's
+>     direction, the OI-327 write list).** The ratified contract for this layer is
+>     `cowork_layer2_slicing_design.md`"* and closing *"this paragraph supplements that line rather than replacing
+>     it.)*"*;
+> 24. lines 1697–1699, from *"**★ WHAT MAY BE ASSERTED ACROSS AN EXTENSION, AND WHAT A SLICE CARRIES (re-homed into
+>     this section"* to *"carried."*;
+> 25. lines 1701–1726, from *"- **The boundary at the loaded edge is ARTIFICIAL and VANISHES on extension, so the edge
+>     slice"* to *"  than passed over, and the minimal form was taken at the build."*;
+> 26. lines 2194–2204, from *"The grouping layer assembles the L5-labelled stream into the **flat** structure the
+>     ground truth annotates:"* to *"`cowork_layer6_grouping_design.md`."*;
+> 27. lines 2208–2220, from *"**★ KEY AREAS ARE GROUPED BY A SMOOTHING PASS OVER REGIONS WHOSE KEY SEQUENCE HAS
+>     ALREADY BEEN"* to *"not-a-new-detector reasoning this layer's contract states for grouping generally."*;
+> 28. lines 2222–2238, from *"**★ WHAT SUPPLIES THE SMOOTHED KEY SEQUENCE, AND WHY THE PRECONDITION IS NOT ONE NAMED
+>     PASS"* to *"otherwise cannot be the compliance standard (#10)."*;
+> 29. lines 2259–2270, from *"- **The progression-schema recognizer** — an L5 *consumer* (a prior + an annotation),
+>     not a new layer: it recognises"* to *"  and `cowork_voiceleading_axis_design.md`."*;
+> 30. lines 2280–2287, from *"| Module | Responsibility |"* to the line opening *"|
+>     `composing/analysis/types/analysistypes.h` |"* and closing *"so every existing includer gets the types
+>     transitively, unchanged. |"*;
+> 31. lines 2297–2302, from *"**Section-level analysis and the Pass-0 injection contract (Stage 2.1).**
+>     Section-level"* to *"notation and configuration layers."*;
+> 32. lines 2312–2318, from *"- **D1 — `excludeLookAheadOnDenseStart`** is **intentionally divergent and
+>     load-bearing.**"* to *"  batch path now admits sparse 1–2 PC Pass-1 slices exactly as the bridge always did."*;
+> 33. lines 2335–2340, from *"**Facts.** The P4 tick-local fallback (`analyzeHarmonicContextLocallyAtTick`) builds
+>     its"* to *"on P4 vs P3."*;
+> 34. lines 2354–2360, from *"**Facts.** `findTemporalContext` analyzes the backward predecessor (and forward
+>     successor) with"* to *"gates need."*;
+> 35. lines 2362–2366, from *"**Decision.** Same as D-P4: this is the **current contract**, documented. The
+>     forward-lookahead"* to *"provides. Do not build a bespoke pre-pass now."*;
+> 36. lines 2392–2403, from *"> **Re-baselined 2026-06-13 (corrected GT parser).** The figures in this paragraph are
+>     the"* to *"> the CLAUDE.md gate section for the authoritative identity sets."*;
+> 37. lines 2422–2427, from *"#### D-GAP — `inferGapRegion` analyzed gap slices with default prefs regardless of
+>     caller"* to *"hypothesized this leak as the likely cause of all 3 genuine Baroque A/B regressions."*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside. **The lines between the ranges are outside the member** and are not tabulated, quoted or
+> listed. Outgoing statements: **156** (rows 22.1 to 22.131; 17 of those rows carry two or
+> more claims each and are split — the arithmetic is at the foot of this member). Listed under *not a statement*:
+> **95**. Counted at this member by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of the directory structure
+> and the module-boundary section: a directory listing; the two boundary invariants that keep the rendered form out
+> of the analysis; the inventory of the notation-side bridges; the Layer-1 note model and its derived views; the
+> Layer-2 change-point slicer and what it may assert across an extension; the grouping layer's key-area rule and
+> what supplies its smoothed key sequence on each arm; the planned consumers beyond the layer stack; the legacy
+> region modules; and recorded path-divergence facts and decisions. **The placement readings are those of the
+> earlier members, applied unchanged**: a description of the implementation is QUARANTINED; presentation code is
+> QUARANTINED; a statement about a product tool outside the analysis — the tuning tools, the preferences, the menus
+> — is listed under *not a statement*; a build state, a plan, a status or a past measurement is HISTORICAL; a
+> statement whose subject is the notated record goes to *L0*, the slices and the views published below the reading
+> to *L1*, grouping over the decided reading to *L3*, and a rule of how a change is verified to *the measurement of
+> the analysis*; a label, a heading, a pointer, provenance, a defense, a test record, a definition of a term and the
+> document's account of itself are listed under *not a statement*. **One reading is new at this member and is
+> stated so it can be checked**: in the directory listing, the unit is the listing line; a line that names a file
+> or directory with a remark on it is a statement about that file, and a run of consecutive lines that name files
+> or directories and say nothing about them is listed as one item under *not a statement*.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 22:
+> **D-280** (lines 1500–1505) and **D-501** (1507–1514). **The SEEN check, made at the homes as member 17's manifest
+> states:** none of the eight homes lies in this member.
+
+---
+
+**Row 22.1 — the analysis module is pure music theory with no engraving dependency.**
+
+*Outgoing statement.* "composing/ ← NEW module — pure music theory, NO engraving dependency" — §3.1, the directory
+listing (locator: line 1343).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does any header of the analysis module include an
+engraving type at the current commit?
+
+---
+
+**Row 22.2 — the analysis directory existing and fully working.**
+
+*Outgoing statement.* "analysis/ ← existing, fully working" — §3.1, the directory listing (locator: line 1351).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 22.3 — the chord analyzer's interface.**
+
+*Outgoing statement.* "ichordanalyzer.h ← IChordAnalyzer interface" — §3.1, the directory listing (locator: line
+1353).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.1.
+
+---
+
+**Row 22.4 — the chord analyzer's factory.**
+
+*Outgoing statement.* "chordanalyzerfactory.h/.cpp ← ChordAnalyzerFactory" — §3.1, the directory listing (locator:
+line 1354).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.1.
+
+---
+
+**Row 22.5 — the rule-based chord analyzer's implementation.**
+
+*Outgoing statement.* "chordanalyzer.h/.cpp ← RuleBasedChordAnalyzer implementation" — §3.1, the directory listing
+(locator: line 1355).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.1.
+
+---
+
+**Row 22.6 — a default-off measurement scaffold over two tonality-consuming terms of the legacy chord scorer.**
+
+*Outgoing statement.* "keycollectionprobe.h/.cpp ← OI-168 measurement scaffolding: default-OFF branch counters +
+the default-OFF signature-mask A/B variant of the two key-consuming scoring terms." — §3.1, the directory listing
+(locator: lines 1356–1358).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the key-collection scaffold default-off at the current
+commit, and on which path do its counters and its variant run?
+
+---
+
+**Row 22.7 — the scaffold reads nothing the analyzer consumes and is removable in one revert.**
+
+*Outgoing statement.* "Reads nothing the analyzer consumes; removable in one revert." — §3.1, the directory listing
+(locator: lines 1358–1359).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.6.
+
+---
+
+**Row 22.8 — the legacy tonality analyzer, over all twenty-one modes.**
+
+*Outgoing statement.* "keymodeanalyzer.h/.cpp ← KeyModeAnalyzer, all 21 modes" — §3.1, the directory listing
+(locator: line 1361).
+
+*Derived statements that speak to it.* L2-S6.
+
+*Current-text axis.* L2-S6: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing analyzer covers *"all 21 modes"*; L2-S6's vocabulary is
+the spelled tonics *"in two modes, major and minor"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.2.
+
+---
+
+**Row 22.9 — the harmonic-region type.**
+
+*Outgoing statement.* "harmonicrhythm.h ← HarmonicRegion struct (types only)" — §3.1, the directory listing
+(locator: line 1363).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which paths read the legacy harmonic-region type at the
+current commit?
+
+---
+
+**Row 22.10 — shared pitch-class helpers.**
+
+*Outgoing statement.* "analysisutils.h ← pitch-class helpers shared across subdirectories" — §3.1, the directory
+listing (locator: line 1364).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which pitch-class helpers are shared across the analysis
+subdirectories, and does the production arm read any of them?
+
+---
+
+**Row 22.11 — the helpers shared between the bridges: chord-staff detection and staff eligibility.**
+
+*Outgoing statement.* "notationanalysisinternal.h ← internal helpers shared between bridges: isChordTrackStaff(),
+staffIsEligible()" — §3.1, the directory listing (locator: lines 1388–1389).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the record arm exclude the drum, hidden and chord
+staves through the same eligibility test, and is the chord staff still detected by its name?
+
+---
+
+**Row 22.12 — the notation bridge's three functions.**
+
+*Outgoing statement.* "notationcomposingbridge.h/.cpp ← BRIDGE: analyzeNoteHarmonicContext(),
+analyzeHarmonicRhythm(), harmonicAnnotation()" — §3.1, the directory listing (locator: lines 1390–1391).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the three legacy bridge functions run on the record
+arm at the current commit, or only when the record flag is off?
+
+---
+
+**Row 22.13 — the bridge declared and defined in the notation namespace.**
+
+*Outgoing statement.* "Declared AND defined in mu::notation namespace." — §3.1, the directory listing (locator: line
+1392).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.12.
+
+---
+
+**Row 22.14 — the implode bridge writes the chord track.**
+
+*Outgoing statement.* "notationimplodebridge.h/.cpp ← BRIDGE: populateChordTrack()" — §3.1, the directory listing
+(locator: line 1393).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.5.
+
+---
+
+**Row 22.15 — the interaction methods carrying the analysis operations.**
+
+*Outgoing statement.* "notationinteraction.cpp ← NotationInteraction methods incl. composing ops
+(implodeToChordTrack, tuneSelection, addAnalyzedTuning, addAnalyzedHarmony*)" — §3.1, the directory listing
+(locator: lines 1395–1397).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which of the interaction methods named here read the
+record arm's output at the current commit?
+
+---
+
+**Row 22.16 — the status display calls the bridge's annotation function.**
+
+*Outgoing statement.* "notationaccessibility.cpp ← status bar; calls harmonicAnnotation()" — §3.1, the directory
+listing (locator: line 1398).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.6.
+
+---
+
+**Row 22.17 — the context menu calls the single-note analysis through the bridge header.**
+
+*Outgoing statement.* "notationcontextmenumodel.cpp ← right-click menu; calls mu::notation::
+analyzeNoteHarmonicContext() via bridge header" — §3.1, the directory listing (locator: lines 1402–1403).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.6.
+
+---
+
+**Row 22.18 — style files planned.**
+
+*Outgoing statement.* "styles/ — style JSON files (planned)" — §3.1, the directory listing (locator: line 1417).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 22.19 — knowledge-base files planned.**
+
+*Outgoing statement.* "knowledge/ — knowledge base JSON files (planned)" — §3.1, the directory listing (locator:
+line 1418).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 22.20 — the boundary runs one way: the analysis produces structured facts, the presentation renders them.**
+
+*Outgoing statement.* "The boundary this section states runs one way: the analysis produces structured facts, and
+the presentation layer renders them." — §3.3 (locator: lines 1494–1495).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — *"The dependency is one-way: L3 reads L2."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S49).
+
+---
+
+**Row 22.21 — the rendered form never crosses back into the analysis.**
+
+*Outgoing statement.* "Two standing invariants keep the rendered form from crossing back into the analysis." — §3.3
+(locator: lines 1495–1496).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — *"L2 consumes nothing L3 publishes"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S49).
+
+---
+
+**Row 22.22 — a gate or scoring rule reads structured fields only, never a chord-symbol string or a Roman numeral.**
+*WITHHELD — D-280.*
+
+*Outgoing statement.* "**A gate or scoring rule reads STRUCTURED FIELDS ONLY — never a chord-symbol string, never a
+Roman numeral.**" — §3.3, the first invariant (locator: lines 1500–1501).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — L2 consumes no *"chord symbol"* L3 publishes, and *"it reads the L1
+evidence it is decided from instead"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S49). *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 22.23 — no chord-symbol parsing and no Roman-numeral inference in any gate or scoring term.** *WITHHELD —
+D-280.*
+
+*Outgoing statement.* "No chord-symbol string parsing and no Roman-numeral inference anywhere in a gate, a scoring
+term, or any future change to either." — §3.3, the first invariant (locator: lines 1501–1502).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 22.22.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S49), travelling with Row 22.22. *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 22.24 — a written chord symbol may be read only as a comparison or ground-truth label.** *WITHHELD — D-501.*
+
+*Outgoing statement.* "**A written chord symbol in the score may be read ONLY as a comparison or ground-truth
+label.**" — §3.3, the second invariant (locator: line 1507).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 22.25 — production paths never read a written chord symbol as input to the analysis.** *WITHHELD — D-501.*
+
+*Outgoing statement.* "**Production paths must not read them as input to analysis at all.**" — §3.3, the second
+invariant (locator: lines 1508–1509).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row
+13.12(i).
+
+---
+
+**Row 22.26 — a measurement tool may compare written symbols with the analysis, never let them influence it.**
+*WITHHELD — D-501.*
+
+*Outgoing statement.* "A measurement tool may set them beside the analysis to see how far the two agree, and may
+**never** let them influence what the analyzer computes." — §3.3, the second invariant (locator: lines 1509–1510).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row
+22.24.
+
+---
+
+**Row 22.27 — the bridge header's declarations and their callers.**
+
+*Outgoing statement.* "| `notationcomposingbridge.h` | Declares `harmonicAnnotation()`, `analyzeNoteHarmonicContext()`,
+`analyzeHarmonicRhythm()`, and `HarmonicRegionGranularity` | `notationaccessibility.cpp`, `notationinteraction.cpp`,
+`notationcontextmenumodel.cpp`, `notationimplodebridge.cpp`, `notationtuningbridge.cpp` |" — §3.3, the bridge file
+inventory (locator: line 1541).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.12.
+
+---
+
+**Row 22.28 — the status-display string and the single-note analysis.**
+
+*Outgoing statement.* "| `notationcomposingbridge.cpp` | `harmonicAnnotation()` — status bar
+string<br>`analyzeNoteHarmonicContext()` — single-note analysis | (implements declarations above) |" — §3.3, the
+bridge file inventory (locator: line 1542).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.6.
+
+---
+
+**Row 22.29 — the time-range harmonic scanner.**
+
+*Outgoing statement.* "| `notationharmonicrhythmbridge.cpp` | `analyzeHarmonicRhythm()` — time-range harmonic
+scanner | (implements declaration above) |" — §3.3, the bridge file inventory (locator: line 1543).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.4.
+
+---
+
+**Row 22.30 — the shared bridge helpers.**
+
+*Outgoing statement.* "| `notationcomposingbridgehelpers.h/.cpp` | Shared bridge helpers: `collectSoundingAt()`,
+`buildTones()`, `collectPitchContext()`, `resolveKeyAndMode()`, `findTemporalContext()`, … |
+`notationcomposingbridge.cpp`, `notationharmonicrhythmbridge.cpp` |" — §3.3, the bridge file inventory (locator: line
+1544).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the shared bridge helpers — note collection, the tonality
+resolver, temporal context — run on the record arm at the current commit?
+
+---
+
+**Row 22.31 — writing the harmonic reduction to the chord staff.**
+
+*Outgoing statement.* "| `notationimplodebridge.h/.cpp` | `populateChordTrack()` — write harmonic reduction to
+chord staff | `notationinteraction.cpp` (via `implodeToChordTrack()`) |" — §3.3, the bridge file inventory (locator:
+line 1545).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.5.
+
+---
+
+**Row 22.32 — chord-staff detection by name, and staff eligibility excluding drum, hidden and chord staves.**
+
+*Outgoing statement.* "| `notationanalysisinternal.h` | `isChordTrackStaff()` — name-based chord staff
+detection<br>`staffIsEligible()` — exclude drums/hidden/chord-staff staves | `notationcomposingbridgehelpers.cpp`,
+`notationtuningbridge.cpp`, `notationimplodebridge.cpp` |" — §3.3, the bridge file inventory (locator: line 1547).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.11.
+
+---
+
+**Row 22.33 — the half-tier: a derived view over the note model, not a judgment layer.**
+
+*Outgoing statement.* "**L1.5** is the thin *derived-view* layer over the L1 note model — the spelling /
+`engravingbridge` views (the shared `lineOfFifths` spelling interpreter, the phrase-boundary primitive); it is a
+view, not a judgment layer, which is why it is numbered 1.5." — §3.3 (locator: lines 1554–1556).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 6.7(i).
+
+---
+
+**Row 22.34 — the pipeline being rebuilt upstream-first onto the four-layer target.**
+
+*Outgoing statement.* "The analysis pipeline is being rebuilt **upstream-first** onto the ratified 4-layer target
+(`cowork_target_architecture.md`): **note model (L1, DONE) → change-point slicing (L2, BUILT — wired, consumed by
+L3) → per-slice analysis with context (L3) → grouping for display (LN).**" — Layer 1 (locator: lines 1562–1564).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a superseded plan.
+
+---
+
+**Row 22.35 — Layer 1 built and ratified.**
+
+*Outgoing statement.* "Layer 1 is built and ratified (commits `edd33901ed` standing oracle-root metric tool,
+`e30bb45a4f` the note model, `4055f89082` its coverage; pushed to the fork)." — Layer 1 (locator: lines
+1564–1566).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 22.36 — Layer 2 built and wired.**
+
+*Outgoing statement.* "Layer 2 is built as a fully-covered module (below) and is now **wired — L3 consumes the
+slicer** (`regionanalyzer.cpp:579`)." — Layer 1 (locator: lines 1566–1567).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 22.37 — the lossless, tie-resolved note model and what it carries.**
+
+*Outgoing statement.* "| `composing/analysis/notemodel/note_model.{h,cpp}` | **The lossless, tie-resolved NOTE
+MODEL — the single source of truth for "what sounds."** `NoteModel::build(score)` reads the score **once** into an
+annotated, tick-range-queryable set of sounding notes. Each `NoteEvent` carries 11 fields: `pitch, tpc, staff, voice,
+onset, release, duration, isGrace, plays, visible, staffEligible`. Tied groups are merged into **one** span/onset (via
+the DOM `firstTiedNote`/`lastTiedNote`/`playTicksFraction`); spans are true `[onset,release)` answered by **overlap
+with no horizon** (the old 4-whole-note backward cap is gone). Grace / non-playing / invisible / staff-ineligible
+notes are **kept and flagged, never dropped**. **Additive fact-surface extension (joint-estimator dual path,
+OI-180):** `notatedNotes()` republishes the tie-UNRESOLVED atoms — EVERY notated note incl. tie continuations, each
+with its OWN notated span, a `tieContinuation` flag, a `hasFermata` flag, and `resolvedIndex` linking to its
+tie-resolved `NoteEvent` — the facts the tie-resolved surface discards that the joint module's event lattice +
+emission covariates need. Purely additive: `notes()` and every existing consumer are byte-identical. |" — Layer 1,
+the module table (locator: line 1575). Six claims: (i) the lossless, tie-resolved note model is the single source of
+what sounds, reading the notated record once; (ii) each event carries eleven named fields; (iii) a tied group
+becomes one span, and spans are answered by overlap with no horizon; (iv) grace, non-playing, invisible and
+ineligible notes are kept and flagged, never dropped; (v) a second surface republishes every notated note unresolved
+for ties, with its own span and flags, for the joint module; (vi) the addition left every existing consumer
+byte-identical.
+
+*Derived statements that speak to it.* (i) to (vi) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.** (iii) **THE DERIVATION IS
+SILENT.** (iv) **THE DERIVATION IS SILENT.** (v) **THE DERIVATION IS SILENT.** (vi) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract). (ii) **RELOCATED** — to
+*L0 — The notated record*, travelling with (i). (iii) **RELOCATED** — to *L0 — The notated record*. (iv) **RELOCATED**
+— to *L0 — The notated record*. (v) **RELOCATED** — to *L0 — The notated record*. (vi) **HISTORICAL** — a build
+state.
+
+---
+
+**Row 22.38 — the old note reading replaced by the model; the old weighting kept as a derived view.**
+
+*Outgoing statement.* "The old note-reading is replaced by the model; the old *weighting* survives as a derived
+view:" — Layer 1 (locator: lines 1577–1578). Two claims: (i) the old note reading is replaced by the model; (ii) the
+old weighting survives as a derived view.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a build state. (ii) **QUARANTINED.** *Audit question:* does the legacy
+weighted pitch-class view run on any production path at the current commit, and what reads it?
+
+---
+
+**Row 22.39 — the weighted pitch-class view: the recomputed legacy weighting, one onset per tied group.**
+
+*Outgoing statement.* "`weightedPcView(noteModel, range, …)` — the recomputed `collectRegionTones` weighting
+(duration×beat, repetition, cross-voice, pedal, PC aggregation, bass pick), now counting **one onset per tied group**
+(tie **de-inflation**) and finding sustains by overlap." — Layer 1, the derived views (locator: lines 1579–1581).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.38(ii).
+
+---
+
+**Row 22.40 — the legacy collectors kept as build-once wrappers.**
+
+*Outgoing statement.* "`collectRegionTones`/`collectSoundingAt` are retained as thin **build-once Score wrappers**."
+— Layer 1, the derived views (locator: line 1582).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.38(ii).
+
+---
+
+**Row 22.41 — the point-in-time view, the trivial adapter and the temporal context over the model.**
+
+*Outgoing statement.* "`soundingAt(noteModel, tick, …)` — the point-in-time per-note view (replaces
+`collectSoundingAt`'s reading half); `buildTones` is now a trivial adapter; `findTemporalContext` takes the model." —
+Layer 1, the derived views (locator: lines 1583–1584).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.38(ii).
+
+---
+
+**Row 22.42 — the segment-first spine still drives all analysis.**
+
+*Outgoing statement.* "The segment-first analysis spine described below (`greedyExpandSegmentation`, the Pass-1/2/2b
+sub/merge machinery, `analyzeHarmonicRhythm`) **still runs and still drives all analysis** — it now consumes
+`weightedPcView` (unchanged weighting) instead of reading notes directly." — Layer 1 (locator: lines 1586–1589).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing spine is *"segment-first"*; L2-S11 says the boundary *"is
+never decided before the chord or after it"*.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status the joint estimator's adoption superseded.
+
+---
+
+**Row 22.43 — the spine retires only when Layers 2 and 3 are built.**
+
+*Outgoing statement.* "It retires only when **layer 2** (change-point slicing) and **layer 3** (per-slice analysis)
+are built." — Layer 1 (locator: lines 1589–1590).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 22.44 — note reading owned by the model; slicing and scoring logic frozen until its layers.**
+
+*Outgoing statement.* "The note-reading *ownership* has moved to the note model; the slicing/scoring *logic* is
+frozen until its layers." — Layer 1 (locator: lines 1590–1591).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 22.45 — Layer 1 a behavior change, with its recorded movement.**
+
+*Outgoing statement.* "Layer 1 is a **behavior change**, not byte-identical: the faithful tie de-inflation moved the
+per-event oracle-root metric **+3/+1/+1 charged** (Baroque/Jazz/Default), with the KEY tier flat, FLOOR byte-flat,
+and BIR **−2/+1/−2** (mostly improved)." — Layer 1 (locator: lines 1593–1596).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 22.46 — the movement a correct-upstream, frozen-downstream wobble, not an unexplained regression.**
+
+*Outgoing statement.* "This is a correct-**upstream** / frozen-**downstream** wobble (the old repetition-inflation
+happened to nudge a few borderline chords toward the oracle); it re-tunes at layer 3 and is **not** an unexplained
+regression (proven: a legacy reproduction mode reproduced the prior oracle set byte-exactly)." — Layer 1 (locator:
+lines 1596–1599).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement and its explanation.
+
+---
+
+**Row 22.47 — next, Layer 3.**
+
+*Outgoing statement.* "**Next: layer 3 (per-slice analysis).**" — Layer 1 (locator: line 1599).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 22.48 — the finest meaningful extension step is the change point.**
+
+*Outgoing statement.* "**The finest meaningful extension step is the CHANGE-POINT — a finer request loads no note and
+can move no answer (D-628; re-homed into this specification 2026-08-04 from the design document that formerly carried
+it — the register records which).**" — Layer 1 (locator: lines 1602–1604).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*.
+
+---
+
+**Row 22.49 — the smallest request worth making reaches the next change point.**
+
+*Outgoing statement.* "When a consumer asks this model to reach further into the score, the smallest request worth
+making is one that reaches the next change-point." — Layer 1 (locator: lines 1604–1605).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.48.
+
+---
+
+**Row 22.50 — polyphonic phrase-boundary detection has no validated rule set; the primitive is our own
+engineering.**
+
+*Outgoing statement.* "**Polyphonic phrase-boundary detection has NO validated deterministic rule set in the
+literature — the L1.5 primitive is our own engineering and may not be presented as established method (D-607;
+re-homed into this specification 2026-08-04 from the methods document that formerly carried it).**" — Layer 1 (locator:
+lines 1612–1614). Two claims: (i) no validated deterministic rule set for polyphonic phrase-boundary detection exists
+in the literature; (ii) the phrase-boundary primitive is our own engineering and may not be presented as established
+method.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 6.7(ii). (ii)
+**RELOCATED** — to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 22.51 — the carried-over cues validated against our own annotated corpus.**
+
+*Outgoing statement.* "Carrying the monophonic cues over to polyphony is therefore engineering of ours, and it is
+validated against our own annotated corpus rather than cited." — Layer 1 (locator: lines 1616–1618).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 22.50(ii).
+
+---
+
+**Row 22.52 — the gap cue transfers to polyphony; a value measured only on chorale texture is not to be trusted.**
+
+*Outgoing statement.* "What DOES transfer is named rather than assumed: the **gap cue** generalizes cleanly, because a
+phrase boundary in polyphony is a near-simultaneous rest or long note across all voices — which is what makes chorale
+texture an unusually favourable case and is a reason to distrust a figure measured only there." — Layer 1 (locator:
+lines 1620–1623). Two claims: (i) the gap cue generalizes to polyphony, a boundary there being a near-simultaneous
+rest or long note across all voices; (ii) chorale texture is an unusually favorable case, so a value measured only
+there is not to be trusted.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 22.50(ii). (ii)
+**RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 22.53 — voice slots and stem direction are notational metadata the analysis may read.**
+
+*Outgoing statement.* "**★ VOICE SLOTS AND STEM DIRECTION ARE STRUCTURAL NOTATIONAL METADATA, NOT USER-WRITTEN
+ANALYTICAL CLAIMS — SO THIS LAYER MAY READ THEM (re-homed into this specification 2026-08-08 on the user's
+ruling).**" — Layer 1 (locator: lines 1626–1628).
+
+*Derived statements that speak to it.* L2-S24.
+
+*Current-text axis.* L2-S24: **AGREES** — the voice-leading evidence *"is read from L1's per-voice relations"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row
+13.12(i). *(L2-S24 travels with it.)*
+
+---
+
+**Row 22.54 — voice and stem belong to how the music was written, like the key signature, the time signature, a tie
+or a pedal marking.**
+
+*Outgoing statement.* "Which voice a note was entered in, and which way its stem points, belong to how the music was
+written down — the same category as the key signature, the time signature, a tie or a pedal marking, all of which
+this layer already reads." — Layer 1 (locator: lines 1628–1630).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record*, travelling with Row 22.53.
+
+---
+
+**Row 22.55 — the slicer a deterministic fact read off the note model, not a judgment.**
+
+*Outgoing statement.* "A pure, deterministic FACT read off the layer-1 note model, **not** a judgment." — Layer 2
+(locator: lines 1640–1641).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 6.6(i).
+
+---
+
+**Row 22.56 — the slicer wired into the live pipeline, consumed by the legacy Layer 3.**
+
+*Outgoing statement.* "It **is** now wired into the live analysis pipeline: layer 3 consumes the slicer
+(`regionanalyzer.cpp:579` → `KeyModeSequenceDecoder`)." — Layer 2 (locator: lines 1641–1642).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 22.57 — the slicer's own output byte-identical on the live path; the movement came from Layer 3.**
+
+*Outgoing statement.* "The slicer's own output stays **byte-identical** on the whole-score live path (the clip is inert
+there); the analysis movement came from **L3's consumption** of the slices, not from the slicer." — Layer 2 (locator:
+lines 1642–1644).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 22.58 — the slices tile the domain; their boundaries are every onset and every release of the eligible
+notes.**
+
+*Outgoing statement.* "| `composing/analysis/slicing/slicer.{h,cpp}` | **Enumerate the change-point slices of a score
+from the note model.** `changePointSlices(noteModel)` returns an ordered, **covering, lossless** list of half-open
+`[start,end)` spans that **tile the domain with no gaps and no overlaps**. Boundaries = the sorted-unique union of
+every **onset AND every release** of the **eligible** notes; consecutive boundaries form the slices. O(n log n). |" —
+Layer 2, the module table (locator: line 1648). Two claims: (i) the slices are an ordered, covering, lossless list of
+half-open spans tiling the domain with no gaps and no overlaps; (ii) the boundaries are the union of every onset and
+every release of the eligible notes.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 10.5. (ii) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 10.5.
+
+---
+
+**Row 22.59 — boundaries follow the note model's eligibility annotation, never re-decided.**
+
+*Outgoing statement.* "**Boundaries over layer-1's eligibility annotation — never re-decided.**" — Layer 2 (locator:
+line 1650).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*.
+
+---
+
+**Row 22.60 — a note opens boundaries only if it plays, is visible and lies on an eligible staff.**
+
+*Outgoing statement.* "A note participates in boundary generation iff layer 1 flagged it `plays && visible &&
+staffEligible`." — Layer 2 (locator: lines 1650–1651).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.59.
+
+---
+
+**Row 22.61 — the slicer reads the flags and does not re-filter.**
+
+*Outgoing statement.* "The slicer **reads** those flags; it does not re-filter." — Layer 2 (locator: lines
+1651–1652).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.59.
+
+---
+
+**Row 22.62 — an ineligible note opens no boundary yet rides along in each slice.**
+
+*Outgoing statement.* "A muted / invisible / non-tonal-staff note opens **no** boundary, yet still rides along in each
+slice's `overlapping()` set (passed through, not dropped)." — Layer 2 (locator: lines 1652–1654).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.59.
+
+---
+
+**Row 22.63 — a slice is constant tonal sonority; ineligible notes are passenger metadata.**
+
+*Outgoing statement.* "A slice is therefore "constant **tonal** sonority"; non-eligible notes are passenger metadata."
+— Layer 2 (locator: lines 1654–1655).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.62.
+
+---
+
+**Row 22.64 — slice identity is the eligible sounding-note set, not the octave-folded pitch-class set.**
+
+*Outgoing statement.* "**Slice identity is the eligible sounding-NOTE set** (not the octave-folded PC set — a
+unison/octave shrink is a real boundary though the PC set is unchanged)." — Layer 2 (locator: lines 1655–1656).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*.
+
+---
+
+**Row 22.65 — the tiled domain is the eligible notes' span intersected with the loaded span.**
+
+*Outgoing statement.* "The tiled domain is the intersection of the eligible-notes span with the model's **loaded
+span**: `[max(loadedStart, firstEligibleOnset), min(loadedEnd, lastEligibleRelease))`." — Layer 2 (locator: lines
+1658–1660).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*.
+
+---
+
+**Row 22.66 — every tick of the domain in exactly one slice.**
+
+*Outgoing statement.* "Every tick in that domain lands in exactly one slice." — Layer 2 (locator: lines 1660–1661).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.58(i).
+
+---
+
+**Row 22.67 — notes sounding across the loaded edges are clipped; slicing never reaches outside the loaded span.**
+
+*Outgoing statement.* "A **sustained-in** note (onset `< loadedStart`) is clipped to start at `loadedStart`, a
+**sustained-out** note (release `> loadedEnd`) to end at `loadedEnd` — slicing never drags outside the loaded span
+(Phase 2; `cowork_layer2_reslice_design.md` §2)." — Layer 2 (locator: lines 1661–1663).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*.
+
+---
+
+**Row 22.68 — on a whole-piece model the clip is inert.**
+
+*Outgoing statement.* "On a **whole-score** model `loadedStart ≤ firstEligibleOnset` and `loadedEnd ≥
+lastEligibleRelease`, so the clip is **inert** and the domain is exactly `[firstEligibleOnset, lastEligibleRelease)` —
+byte-identical to before the clip." — Layer 2 (locator: lines 1663–1666).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.67.
+
+---
+
+**Row 22.69 — a stretch where every eligible voice is silent is an explicit empty slice, not a gap.**
+
+*Outgoing statement.* "An interior span where all eligible voices rest is an **explicit EMPTY slice** (empty eligible
+overlap set), not a gap — it falls out of the consecutive-boundary construction for free." — Layer 2 (locator: lines
+1666–1668).
+
+*Derived statements that speak to it.* L2-S44.
+
+*Current-text axis.* L2-S44: **AGREES** — *"a silence L1 publishes as a silent slice, not merged into a neighbour"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*. *(L2-S44 travels
+with it as how L2 reads such a slice.)*
+
+---
+
+**Row 22.70 — leading and trailing silence not sliced; silence outside the domain not invented.**
+
+*Outgoing statement.* "Leading/trailing silence within the loaded span is not sliced; silence outside the domain is
+not invented." — Layer 2 (locator: lines 1668–1669).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.69.
+
+---
+
+**Row 22.71 — re-slicing on extension equals a fresh slicing of the enlarged span.**
+
+*Outgoing statement.* "**Re-slice on extend** = re-call `changePointSlices` on the enlarged model (the slicer is a pure
+function of (notes, loaded span)): interior real change-points are stable, the edge slice abutting an *artificial* clip
+boundary extends into the new context, and the result equals a fresh slice over the enlarged span (re-slice
+equivalence)." — Layer 2 (locator: lines 1669–1672).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*.
+
+---
+
+**Row 22.72 — incremental re-slicing deferred.**
+
+*Outgoing statement.* "Incremental re-slice is Phase 2b (deferred, byte-identical)." — Layer 2 (locator: lines
+1672–1673).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 22.73 — the slicer has no thresholds and no notion of ornamental, passing or structural.**
+
+*Outgoing statement.* "No thresholds, min-gap, merge, or snapping; no notion of "ornamental/passing/structural"." —
+Layer 2 (locator: lines 1675–1676).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **AGREES** — the assignments are made *"never by a detector that runs first"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*. *(L2-S23 travels
+with it as where the assignment is made.)*
+
+---
+
+**Row 22.74 — no note kind is special-cased; grace and tuplet outcomes follow from the note model's spans.**
+
+*Outgoing statement.* "**No special-casing of any note kind** — grace and tuplet outcomes fall out of the note-model
+spans as facts (verified at source: a grace event carries onset = parent-chord tick and duration =
+`playTicksFraction()` = its nominal written value, so a grace genuinely opens/closes a boundary by its span; tuplet
+ticks are the model's real, un-snapped ticks)." — Layer 2 (locator: lines 1676–1680).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*.
+
+---
+
+**Row 22.75 — the slicer needs no grace or tuplet code.**
+
+*Outgoing statement.* "The slicer needs no grace/tuplet code." — Layer 2 (locator: line 1680).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.74.
+
+---
+
+**Row 22.76 — every chord change falls on a change point; the reading decides which are real; equal analyses are
+grouped.**
+
+*Outgoing statement.* "Boundaries are **necessary but not sufficient** for a chord change (the exhaustive candidate
+grid): a real chord change can never be missed (over-grab is structurally impossible), and the slicer never asserts a
+change — layer 3 decides which boundaries are real, layer N groups equal analyses." — Layer 2 (locator: lines
+1680–1683). Three claims: (i) every real chord change falls on a change point, so none can be missed; (ii) the slicer
+asserts no change, and the reading decides which change points are real boundaries; (iii) adjacent equal analyses are
+grouped together.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) L2-S7. (iii) L2-S14.
+
+*Current-text axis.* (i) L2-S11: **AGREES** — *"A boundary is one of L1's change points"*. (ii) L2-S7: **AGREES** —
+*"Any subset of L1's change points may be the boundary set of a reading."* (iii) L2-S14: **AGREES** — *"Two adjacent
+spans never carry the same tonality and the same chord"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S11). (ii) **ADOPTED — carried** (L2-S7). (iii) **ADOPTED —
+carried** (L2-S14).
+
+---
+
+**Row 22.77 — the slicer consumed on a whole-piece model, with every suite and the corpus byte-identical.**
+
+*Outgoing statement.* "`changePointSlices` is consumed by L3 on a **whole-score** model (`regionanalyzer.cpp` →
+`KeyModeSequenceDecoder`; `batch_analyze` key/chord decode), where the Phase-2 clip is inert — so composing / notation
+/ pipeline-snapshot / BIR / oracle are byte-identical (composing 631/631, notation 53/53, snapshots 11/11 with no
+golden refresh; corpus 0/353 `.ours.json` byte-diffs on Baroque/Jazz/Default, gate unchanged at 53/24/53)." — Layer 2
+(locator: lines 1688–1692).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state and a past measurement.
+
+---
+
+**Row 22.78 — the boundary at the loaded edge is artificial and vanishes on extension; old slices staying
+byte-identical is never to be asserted.**
+
+*Outgoing statement.* "**The boundary at the loaded edge is ARTIFICIAL and VANISHES on extension, so the edge slice
+GROWS — and an "old slices stay byte-identical" assertion is FALSE and must never be written as a test.**" — Layer 2,
+what may be asserted across an extension (locator: lines 1701–1703). Two claims: (i) the boundary at the loaded edge
+is artificial and vanishes on extension, so the edge slice grows; (ii) an assertion that old slices stay
+byte-identical is false and must never be written as a test.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*. (ii) **RELOCATED**
+— to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 22.79 — the clip injects a boundary that is no change point.**
+
+*Outgoing statement.* "The clip injects a boundary at the loaded start that is not a change-point at all: a
+sustained-in note sounds on both sides of it, and it exists only because the far side was not loaded." — Layer 2
+(locator: lines 1703–1705).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.78(i).
+
+---
+
+**Row 22.80 — extending earlier grows the edge slice outward.**
+
+*Outgoing statement.* "Extend earlier and it disappears, so the edge slice extends outward rather than being preserved
+with a new slice prepended." — Layer 2 (locator: lines 1705–1706).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.78(i).
+
+---
+
+**Row 22.81 — what holds across an extension: every real change point stable, the edge slice extended.**
+
+*Outgoing statement.* "**What does hold is two things: (a)** every *real* change-point inside the previously loaded
+region is byte-stable, because extending earlier can add only notes whose release is at or before the old start, so
+no new real boundary can appear inside it; **(b)** the edge slice abutting the clip extends into the newly loaded
+context, its content over the original span unchanged." — Layer 2 (locator: lines 1706–1710). Two claims: (i) every
+real change point inside the previously loaded stretch is stable; (ii) the edge slice extends into the new context,
+its content over the original span unchanged.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*. (ii)
+**RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.78(i).
+
+---
+
+**Row 22.82 — the same on extending later, at the trailing edge.**
+
+*Outgoing statement.* "Symmetric on extend-later, at the trailing edge." — Layer 2 (locator: line 1710).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.81.
+
+---
+
+**Row 22.83 — the reading infers afresh over the new slices, and the edge extension is what the convergence rule
+absorbs.**
+
+*Outgoing statement.* "**This breaks no correctness:** Layer 3 re-infers fresh over the new slices under the
+forward-only contract, and the edge extension is exactly the additional leading-edge context the bounded-context
+contract's convergence rule exists to absorb." — Layer 2 (locator: lines 1714–1717). Three claims: (i) the reading
+infers afresh over the new slices; (ii) it does so under the forward-only contract; (iii) the edge extension is the
+additional context the convergence rule exists to absorb.
+
+*Derived statements that speak to it.* (i) L2-S48. (ii) L2-S11. (iii) L2-S22 — one §6.3 names as NEAREST to material
+met (entry 4).
+
+*Current-text axis.* (i) L2-S48: **AGREES** — *"The result after any sequence of enlargements equals a single fresh
+run over the final loaded span."* (ii) L2-S11: **DIFFERS** — as at Row 18.2(i). (iii) L2-S22: **AGREES** — *"It stops
+asking when its in-span publication stops changing between successive enlargements."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S48). (ii) **HISTORICAL**, travelling with Row 18.2(i). (iii)
+**ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 22.84 — the slice carries start and end only; whether it lies in the selection is derived by the consumer.**
+
+*Outgoing statement.* "**The slice stays MINIMAL — it carries start and end and nothing else; whether a slice is
+inside the user's selection or is only surrounding context is derived by the consumer.**" — Layer 2 (locator: lines
+1718–1719). Two claims: (i) the slice carries its start and end and nothing else; (ii) whether a slice lies inside the
+selection or in the surrounding context is derived by the consumer.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S48.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S48: **AGREES** — *"L2's publication covers exactly
+the working span."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*. (ii) **ADOPTED —
+carried** (L2-S48).
+
+---
+
+**Row 22.85 — slices for the whole loaded span; those outside the selection are context and evidence.**
+
+*Outgoing statement.* "This layer produces slices for the whole loaded span while the OUTPUT is only the selection, so
+the slices outside it are context and evidence rather than output." — Layer 2 (locator: lines 1719–1721). Two claims:
+(i) the slices cover the whole loaded span; (ii) the slices outside the selection are context and evidence, not
+output.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S22: **AGREES** — L2's reading *"depends on music before
+and after the span"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.84(i). (ii) **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 22.86 — the selection distinction deliberately not stored on the slice.**
+
+*Outgoing statement.* "The distinction is a thin annotation and it is deliberately not stored here." — Layer 2
+(locator: lines 1721–1722).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with
+Row 22.84(i).
+
+---
+
+**Row 22.87 — the grouping layer assembles punctuation-spans, key-areas and cadence alignment, with no feedback into
+the reading.**
+
+*Outgoing statement.* "The grouping layer assembles the L5-labelled stream into the **flat** structure the ground truth
+annotates: **punctuation-spans** (from the L1.5 phrase-boundary primitive), **key-areas** (grouping the local-key
+track, which **cross-cuts** punctuation-spans — §2.15 span typology), and the **alignment of cadences to
+punctuation-span ends** — additive, read-only, no feedback into L5." — Layer 6 (locator: lines 2194–2197). Two claims:
+(i) the grouping layer assembles punctuation-spans, key-areas and the alignment of cadences to punctuation-span ends;
+(ii) it is additive and read-only, with no feedback into the reading.
+
+*Derived statements that speak to it.* (i) L2-S49. (ii) L2-S49.
+
+*Current-text axis.* (i) L2-S49: **AGREES** — as at Row 6.8. (ii) L2-S49: **AGREES** — *"L2 consumes nothing L3
+publishes"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 6.8. *(L2-S49 travels
+with it.)* (ii) **ADOPTED — carried** (L2-S49).
+
+---
+
+**Row 22.88 — the grouping layer the forward-only rebuild of the scattered live machinery.**
+
+*Outgoing statement.* "It is the forward-only rebuild of the scattered live `detectCadences`/`detectPivotChords`/`KeyArea`
+machinery." — Layer 6 (locator: lines 2201–2202).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 22.89 — hierarchy, periods and sentences, and prolongation outside the validatable core.**
+
+*Outgoing statement.* "Hierarchy, periods/sentences, and prolongation are out of the validatable core (verifiability
+contract, §2.15)." — Layer 6 (locator: lines 2202–2203).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*.
+
+---
+
+**Row 22.90 — key areas grouped over an already smoothed key sequence; a disagreeing region below the test keeps its
+own key.**
+
+*Outgoing statement.* "**★ KEY AREAS ARE GROUPED BY A SMOOTHING PASS OVER REGIONS WHOSE KEY SEQUENCE HAS ALREADY BEEN
+SMOOTHED, AND A REGION THAT DISAGREES WITHOUT CLEARING THE CONFIDENCE TEST KEEPS ITS OWN KEY WHILE BEING GROUPED INTO
+THE ENCLOSING AREA (re-homed into this specification 2026-08-08 on the user's ruling — the owning layer in the target
+architecture, with §11.5 pointing; the PRECONDITION half of the wording corrected 2026-08-09 on the user's ruling,
+immediately below).**" — Layer 6 (locator: lines 2208–2212). Two claims: (i) key areas are grouped over regions whose
+key sequence has already been smoothed; (ii) a region that disagrees without clearing the confidence test keeps its
+own key while being grouped into the enclosing area.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*. (ii) **RELOCATED** — to *L3 — The read-off
+facts*.
+
+---
+
+**Row 22.91 — neighboring regions in the same key collected into one key area.**
+
+*Outgoing statement.* "Neighbouring regions in the same key are collected into one key area." — Layer 6 (locator:
+lines 2212–2213).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 22.90(i).
+
+---
+
+**Row 22.92 — when a key area closes; the disagreeing region keeps its key for display; the Roman numerals written
+against the enclosing key.**
+
+*Outgoing statement.* "A key area opens at the first region and closes when the next region's key differs from the
+current area's **and** that region clears a confidence test; a region whose key disagrees but does not clear the test
+**keeps its own key reading** — so the status bar stays accurate for that region — while being grouped into the
+enclosing area, so the annotation emitter writes Roman numerals against the key that actually governs the passage
+rather than against a momentary wobble." — Layer 6 (locator: lines 2213–2218). Three claims: (i) a key area closes
+only when a region whose key differs clears a confidence test; (ii) a region that does not clear it keeps its own key
+reading, so the status display stays accurate for it; (iii) the Roman numerals for that region are written against
+the enclosing area's key rather than against its own.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) L2-S27.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.** (iii) L2-S27: **DIFFERS**.
+
+*The difference, in both texts' own words.* (iii) The outgoing emitter *"writes Roman numerals against the key that
+actually governs the passage rather than against a momentary wobble"*; L2-S27 says *"L2 decides the chord as degree,
+quality, figure and applied target, read against the span's tonality."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*. (ii) **RELOCATED** — to *L3 — The read-off
+facts*, travelling with Row 22.90(ii). (iii) **UNPLACED.** *What was read:* a rule re-homed on the user's ruling under
+which the Roman numeral shown for a region is read against the enclosing area's key, against L2-S27's degree decided
+against the span's own tonality; a disposition would choose between them.
+
+---
+
+**Row 22.93 — the rule requires a smoothed key sequence, not any one implementation of the smoothing.**
+
+*Outgoing statement.* "The rule above requires that the per-region key sequence it groups over has already been
+smoothed; it does NOT require that the smoothing be any one implementation of it." — Layer 6 (locator: lines
+2225–2227).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 22.90(i).
+
+---
+
+**Row 22.94 — two designs meet the requirement, one per arm.**
+
+*Outgoing statement.* "**Two designs meet the requirement, one per arm.**" — Layer 6 (locator: line 2227).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on each arm at the current commit, what supplies the
+per-region key sequence the key-area grouping reads, and is that sequence smoothed?
+
+---
+
+**Row 22.95 — on the record arm the per-region key is copied from the joint decode, whose tonality change pays
+against the content evidence.**
+
+*Outgoing statement.* "On the **production record arm** the per-region key is copied verbatim from the joint decoder's
+committed segment summaries, and those come from backtracking the best full-coverage path of a **global dynamic
+program whose state carries the tonality**, with an explicit key-transition term written as **separate stay and change
+branches** — so a key change must pay for itself against the content evidence, and the smoothing is reached by
+optimization rather than by a later corrective pass." — Layer 6 (locator: lines 2227–2232). Two claims: (i) on the
+record arm the per-region key is copied verbatim from the joint decoder's committed segment summaries; (ii) those come
+from a global dynamic-programming search whose state carries the tonality, with a key-transition term in stay and change
+branches, so a tonality change pays against the content evidence.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S34.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S34: **AGREES** — *"(i) Tonality persistence and
+distance: a cost for a tonality change"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 22.94. (ii) **QUARANTINED**, travelling with Row
+22.94.
+
+---
+
+**Row 22.96 — the record supplies the grouping's per-region fields natively.**
+
+*Outgoing statement.* "The derived per-region fields the grouping reads are supplied natively by the record rather
+than recomputed." — Layer 6 (locator: lines 2232–2234).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.94.
+
+---
+
+**Row 22.97 — on the legacy arm the requirement is met by that arm's own smoothing step.**
+
+*Outgoing statement.* "On the **legacy arm** the same requirement is met by that arm's own smoothing-and-stabilization
+step, whose single call site is inside it." — Layer 6 (locator: lines 2234–2235).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.94.
+
+---
+
+**Row 22.98 — the progression-schema recognizer: annotation over the committed progression, a prior, and the forward
+override.**
+
+*Outgoing statement.* "**The progression-schema recognizer** — an L5 *consumer* (a prior + an annotation), not a new
+layer: it recognises multi-chord patterns and substitutions from the **Harmonic Vocabulary** (§7) over the committed
+progression, disambiguates via the §2.14 forward-override, and annotates the recognised schema as an **L6
+sequence-span**." — planned analysis consumers (locator: lines 2259–2261). Three claims: (i) it recognizes
+multi-chord patterns and substitutions from the vocabulary over the committed progression and annotates them; (ii) it
+enters the function layer as a prior; (iii) it disambiguates through the forward override.
+
+*Derived statements that speak to it.* (i) L2-S49. (ii) L2-S49. (iii) L2-S35.
+
+*Current-text axis.* (i) L2-S49: **AGREES** — as at Row 5.91. (ii) L2-S49: **DIFFERS**. (iii) L2-S35: **DIFFERS** — as
+at Row 5.218(ii).
+
+*The difference, in both texts' own words.* (ii) The outgoing recognizer is *"an L5 *consumer* (a prior + an
+annotation)"*; L2-S49 says *"L2 consumes nothing L3 publishes"* and *"The dependency is one-way: L3 reads L2."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91. *(L2-S49 travels
+with it.)* (ii) **UNPLACED**, travelling with Row 4.20(ii). *What was read:* as at Row 4.20(ii). (iii) **UNPLACED**,
+travelling with Row 5.218(ii). *What was read:* as at Row 5.218(ii).
+
+---
+
+**Row 22.99 — the recognizer scaffolding-first and deferred.**
+
+*Outgoing statement.* "Scaffolding-first, deferred." — planned analysis consumers (locator: line 2262).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 22.100 — the voice-leading layer: the horizontal dimension, needed for the voice-leading-complete schemata.**
+
+*Outgoing statement.* "**The voice-leading layer** — the *horizontal* dimension (linear progressions, suspension
+chains, the voice-leading skeletons that complete the galant schemata); named so the dependency is explicit (the
+functional-harmonic schemas are L5-reachable without it; the voice-leading-complete ones require it)." — planned
+analysis consumers (locator: lines 2263–2265).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*.
+
+---
+
+**Row 22.101 — it reads the per-voice motion the note model carries.**
+
+*Outgoing statement.* "It reads the per-voice motion the L1 note model already carries losslessly." — planned analysis
+consumers (locator: lines 2265–2266).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 22.100.
+
+---
+
+**Row 22.102 — the voice-leading axis's foundation built and dormant.**
+
+*Outgoing statement.* "**Corrected 2026-08-02 (`OPEN_ITEMS.md` OI-232 item 4; this entry said "not built",
+contradicting §2.15 in the same document):** the axis-2 FOUNDATION is **BUILT and dormant** as of 2026-07-03 — VL-A the
+voice-linear view, VL-B motion and interval profiles (facts), VL-C texture classification — with VL-D…VL-H named and
+design-gated." — planned analysis consumers (locator: lines 2266–2269).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.64(ii).
+
+---
+
+**Row 22.103 — the region tone collector: the legacy derived views over the note model.**
+
+*Outgoing statement.* "| `composing/analysis/engravingbridge/regiontonecollector.{h,cpp}` (+ `regiontoneprimitives.cpp`)
+| The derived tone **views over the Layer-1 note model** — `weightedPcView` (recomputed `collectRegionTones`
+weighting, tie-de-inflated), `soundingAt`, `buildTones`, plus the retained build-once
+`collectRegionTones`/`collectSoundingAt` Score wrappers, `findTemporalContext`, and the still-live
+`detectOnsetSubBoundaries`/`detectBassMovementSubBoundaries`/`collectPitchContext` (slated for Layer 2/3). Note
+**reading** moved to `notemodel/` (above); this layer now derives over it. |" — the region-analysis module table
+(locator: line 2282).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.38(ii).
+
+---
+
+**Row 22.104 — the legacy tonality resolver no longer the production path; the shared signature read.**
+
+*Outgoing statement.* "| `composing/analysis/key/keyresolver.{h,cpp}` | `resolveKeyAndModeRanked` — supersedes the old
+`inferLocalKey` + `resolveKeyAndMode` pair. **No longer the production region key/mode path** (replaced by the Layer-3
+decoder, above); it now serves only the segmentation seed (S2), P4 tick-local (P4-defer), and the diagnostic/grading
+baseline. The shared `resolveKeySignatureContext` (signature read + declared-mode + Baroque
+`partialSignatureCorrection`) is called by both it and the wiring. |" — the region-analysis module table (locator:
+line 2283). Two claims: (i) the ranked tonality resolver is no longer the production path and serves only the
+segmentation seed, the tick-local path and the diagnostic baseline; (ii) the shared signature-context read — the
+signature, the declared mode and the Baroque partial-signature correction — is called by both it and the wiring.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* which callers of the ranked tonality resolver remain at
+the current commit, and does any lie on the production arm? (ii) **QUARANTINED.** *Audit question:* does the record
+arm read the signature context — the declared mode and the Baroque partial-signature correction — through the shared
+read, and does anything it computes reach the joint decode?
+
+---
+
+**Row 22.105 — the region analyzer: the whole legacy orchestration.**
+
+*Outgoing statement.* "| `composing/analysis/region/regionanalyzer.{h,cpp}` | `region::analyzeRegions()` — the whole
+orchestration: greedy-expand segmentation (Pass 1) → per-region `analyzeChord` → `absorbShortRegions` → Pass 2 / Pass
+2b sub-region splitting → merge. The single source of truth for region output. |" — the region-analysis module table
+(locator: line 2284).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 21.5.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 21.5.
+
+---
+
+**Row 22.106 — sparse-region refinement.**
+
+*Outgoing statement.* "| `composing/analysis/region/sparsechordrefinement.{h,cpp}` | Sparse-region post-refinement
+(tonic/diatonic priors on thin ≤2-PC slices) factored out of the orchestrator. |" — the region-analysis module table
+(locator: line 2285).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the sparse-region refinement run on any production path
+at the current commit?
+
+---
+
+**Row 22.107 — the section analyzer: stabilization, cadence and pivot detection.**
+
+*Outgoing statement.* "| `composing/analysis/section/sectionanalyzer.{h,cpp}` | Section-level unified analysis —
+`analyzeSection`, key/mode stabilization, cadence and pivot detection (`detectCadences`, `detectPivotChords`). Moved
+here in Stage 2.1 (Phase 4c). |" — the region-analysis module table (locator: line 2286).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which arm do the section analyzer's stabilization,
+cadence and pivot detection run at the current commit?
+
+---
+
+**Row 22.108 — the cross-layer value types in one dependency-free header.**
+
+*Outgoing statement.* "| `composing/analysis/types/analysistypes.h` | **The cross-layer value-types LEAF** — a
+dependency-free header (STL only; no `chord/`, `key/`, or engraving includes) holding the value types that cross the
+L1.5 / L3 / L4 boundaries: `ChordQuality`, `ChordAnalysisTone`, `ChordAnalyzerPreferences` (+ `kDefault`),
+`ChordTemporalContext`, `DecodeQualityLevel`, `function::ScoringPhase`, `ParameterBound`/`ParameterBoundsMap`,
+`KeySigMode`, `KeyModeAnalyzerPreferences` (+ `kDefault`), and the un-nested `PitchContext`. Each is a **pure
+relocation** from its former home (same name/namespace/layout). `chord/chordanalyzer.h` and `key/keymodeanalyzer.h`
+now `#include` this leaf, so every existing includer gets the types transitively, unchanged. |" — the region-analysis
+module table (locator: line 2287).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the value-types header dependency-free at the current
+commit, and which of its types does the record arm use?
+
+---
+
+**Row 22.109 — the section-level analysis's home.**
+
+*Outgoing statement.* "Section-level unified analysis — `analyzeSection`, key/mode stabilization, cadence and pivot
+detection — lives in `composing/analysis/section/`." — §3.3, the section-level analysis (locator: lines 2297–2299).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.107.
+
+---
+
+**Row 22.110 — the notation-side boundary detection injects its region stream into the section analysis.**
+
+*Outgoing statement.* "Pass-0 boundary detection (`analyzeHarmonicRhythm`) remains the notation-side configuration
+adapter and **injects** its `HarmonicRegion` stream into `analyzeSection` as a parameter, keeping `composing_analysis`
+independent of the notation and configuration layers." — §3.3, the section-level analysis (locator: lines
+2299–2302).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the legacy region stream still reach the section
+analysis on any path at the current commit, and through which parameter?
+
+---
+
+**Row 22.111 — the dense-start look-ahead flag intentionally divergent between the paths.**
+
+*Outgoing statement.* "**D1 — `excludeLookAheadOnDenseStart`** is **intentionally divergent and load-bearing.**" —
+§3.3, the configuration divergences (locator: line 2312).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dense-start look-ahead flag still differ between
+the legacy batch and notation paths, and does either path run at the current commit?
+
+---
+
+**Row 22.112 — the batch sites pass it on; the bridge leaves it off.**
+
+*Outgoing statement.* "The 4 batch call sites pass `true`; the bridge defaults to `false`." — §3.3, the configuration
+divergences (locator: line 2313).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.111.
+
+---
+
+**Row 22.113 — unifying it regresses the trio-sonata dominants.**
+
+*Outgoing statement.* "This is not an oversight: unifying it regresses the bridge/Corelli trio-sonata dominants." —
+§3.3, the configuration divergences (locator: lines 2313–2314).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 22.114 — it stays divergent by design, its contract documented at the flag.**
+
+*Outgoing statement.* "It stays divergent by design; the flag's contract is documented in `regionanalyzer.h`." —
+§3.3, the configuration divergences (locator: lines 2314–2315).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a decision about a legacy path.
+
+---
+
+**Row 22.115 — the minimum-distinct-pitch-class setting unified at one.**
+
+*Outgoing statement.* "**D2 — `pass1MinDistinctPcsForCandidate`** is **unified at `1`** on both paths (commit
+`4d881e7418`)." — §3.3, the configuration divergences (locator: lines 2316–2317).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a delivery.
+
+---
+
+**Row 22.116 — the last parameter divergence closed; sparse slices admitted on both paths.**
+
+*Outgoing statement.* "This was the last remaining batch/bridge parameter divergence; the batch path now admits sparse
+1–2 PC Pass-1 slices exactly as the bridge always did." — §3.3, the configuration divergences (locator: lines
+2317–2318).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a delivery.
+
+---
+
+**Row 22.117 — the tick-local fallback builds its temporal context cold.**
+
+*Outgoing statement.* "The P4 tick-local fallback (`analyzeHarmonicContextLocallyAtTick`) builds its
+`ChordTemporalContext` via `findTemporalContext`, which cold-analyzes the backward and forward neighbours with
+`nullptr` context and no accumulated rolling state [code]." — §3.3, D-P4 (locator: lines 2335–2337).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the legacy tick-local fallback exist and run at the
+current commit, and does it build its temporal context with no neighbor context?
+
+---
+
+**Row 22.118 — the fallback fires only when the regional path returns no region; its live frequency unmeasured.**
+
+*Outgoing statement.* "It fires only when the P3 regional path returns no region for the surrounding window —
+structurally rare; exact live frequency unmeasured [code]." — §3.3, D-P4 (locator: lines 2337–2339).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.117.
+
+---
+
+**Row 22.119 — the same chord may answer differently on the two paths.**
+
+*Outgoing statement.* "The same chord can therefore in principle answer differently on P4 vs P3." — §3.3, D-P4
+(locator: lines 2339–2340).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.117.
+
+---
+
+**Row 22.120 — the bridge analyzes its neighbors with no context.**
+
+*Outgoing statement.* "`findTemporalContext` analyzes the backward predecessor (and forward successor) with `nullptr`
+context [code]." — §3.3, D-BRIDGE (locator: lines 2354–2355).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.117.
+
+---
+
+**Row 22.121 — the predecessor-confidence fields never written on the bridge path.**
+
+*Outgoing statement.* "The Step-1/2 confidence fields (`previousWinnerScore/Margin/RootPcWeight`, `previousDistinctPcs`)
+are default-initialized (`-1.0`/`0.0`/`0`) and never written on the bridge path — only `advanceTemporalContext` (region
+commit sites) writes them [code]." — §3.3, D-BRIDGE (locator: lines 2355–2358).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the predecessor-confidence fields left at their defaults
+on the legacy bridge path, and does any gate read them there?
+
+---
+
+**Row 22.122 — so the predecessor-confidence signals are inert on the bridge path.**
+
+*Outgoing statement.* "So predecessor-confidence progression signals are inert on the bridge path; the bridge
+populates only the root/quality/bass neighbour fields the downstream gates need." — §3.3, D-BRIDGE (locator: lines
+2358–2360).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.121.
+
+---
+
+**Row 22.123 — the bridge's cold context accepted as the current contract.**
+
+*Outgoing statement.* "Same as D-P4: this is the **current contract**, documented." — §3.3, D-BRIDGE (locator: line
+2362).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a decision about a legacy path.
+
+---
+
+**Row 22.124 — the look-ahead gap closed; the remainder needs a global decode's product.**
+
+*Outgoing statement.* "The forward-lookahead gap that previously left `nextRootPc=-1` was already closed
+(`90a52b5fee`); the residual (Step-1/2 confidence fields) genuinely requires a committed competition result from the
+neighbour, i.e. a forward pre-pass over the score — exactly the global-decode product Stage 3 provides." — §3.3,
+D-BRIDGE (locator: lines 2362–2366).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a delivery and a plan.
+
+---
+
+**Row 22.125 — no bespoke pre-pass now.**
+
+*Outgoing statement.* "Do not build a bespoke pre-pass now." — §3.3, D-BRIDGE (locator: line 2366).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a decision about a legacy path.
+
+---
+
+**Row 22.126 — the corrected ground-truth parser moved the batch gate.**
+
+*Outgoing statement.* "The corrected `tools/dcml_parser.py` (applied-`/X` + minor-key leading-tone rooting) moves the
+gate to **Baroque 57 / Jazz 23 / Default 57** *(Superseded 2026-06-26: the live gate is now **53 / 24 / 53** — the
+L3-wiring delta moved 57/23/57 → 53/24/53; CLAUDE.md is authoritative for the current integers and `stem@tick`
+identity sets, which this paragraph's pre-delta figures and Default-swap detail do not reflect)* — a **strict
+superset** of the old 13/7/14 (0 lost, 100% oracle-correct roots; ~95% of the additions are legitimate ambiguity)." —
+§3.3, D-PASS0 (locator: lines 2393–2399).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 22.127 — an older three-way value stale.**
+
+*Outgoing statement.* "The `30/14` `analyze_inversion_errors` three-way figure is **stale pending re-measurement**." —
+§3.3, D-PASS0 (locator: lines 2399–2400).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status of a past measurement.
+
+---
+
+**Row 22.128 — the live configuration closest to Baroque; the preset chord scoring measurement-only.**
+
+*Outgoing statement.* "The qualitative finding is unchanged: the live config is closest to Baroque (Default-57 =
+Baroque-57 with `{bwv227.7@18120, bwv60.5@30960}` ↔ `{bwv187.7@19200, bwv227.7@18000}`), the preset chord-scoring
+system is measurement-only." — §3.3, D-PASS0 (locator: lines 2400–2402).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement of the legacy path.
+
+---
+
+**Row 22.129 — the gap inference hardcoded the default preferences.**
+
+*Outgoing statement.* "`analyzeSection`'s gap inference hardcoded `kDefaultChordAnalyzerPreferences`
+(`sectionanalyzer.cpp:607/614/617`) [code]." — §3.3, D-GAP (locator: lines 2424–2425).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past state of a legacy path.
+
+---
+
+**Row 22.130 — under a preset, the section diagnostic mixed two configurations.**
+
+*Outgoing statement.* "Under a preset, the section diagnostic mixed **preset Pass-0 + default gap analysis** —
+internally inconsistent." — §3.3, D-GAP (locator: lines 2425–2426).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 22.129.
+
+---
+
+**Row 22.131 — the leak hypothesized as the cause of three regressions.**
+
+*Outgoing statement.* "The 2.2-i dossier (§7.2) hypothesized this leak as the likely cause of all 3 genuine Baroque A/B
+regressions." — §3.3, D-GAP (locator: lines 2426–2427).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past hypothesis.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (95)
+
+1. "```" (1341) — *the opening of the directory listing*.
+2. "src/" (1342) — *a directory named in the listing*, with nothing said about it.
+3. "CMakeLists.txt" (1344) — *a file named in the listing*, with nothing said about it.
+4. "composingmodule.cpp/.h ← registers IComposingAnalysisConfiguration + composingconfiguration.cpp/.h
+   IComposingChordStaffConfiguration in IoC" (1345–1346) — *a statement about a product tool outside the analysis* —
+   the preferences.
+5. "icomposinganalysisconfiguration.h ← analysis+tuning prefs; IoC-registered" (1347) — *a statement about a product
+   tool outside the analysis* — the preferences.
+6. "icomposingchordstaffconfiguration.h← chord staff prefs; IoC-registered" (1348) — *a statement about a product tool
+   outside the analysis* — the preferences.
+7. "icomposingconfiguration.h ← composite base (NOT IoC-registered; see §3.3)" (1349) — *a statement about a product
+   tool outside the analysis* — the preferences.
+8. "chord/" (1352) — *a directory named in the listing*.
+9. "key/" (1360) — *a directory named in the listing*.
+10. "region/" (1362) — *a directory named in the listing*.
+11. "intonation/ ← existing, fully working" (1366) — *a statement about a product tool outside the analysis* — the
+    tuning tools.
+12. "tuning_system.h ← TuningSystem abstract base, TuningRegistry (no bridge decls — those are in notation/)"
+    (1367–1368) — *a statement about a product tool outside the analysis* — the tuning tools.
+13. "tuning_keys.h tuning_utils.h equal_temperament.h/.cpp just_intonation.h/.cpp pythagorean.h/.cpp
+    quarter_comma_meantone.h/.cpp werckmeister.h/.cpp kirnberger.h/.cpp" (1369–1376) — *files named in the listing*,
+    the tuning tools, with nothing said about them.
+14. "tests/ chordanalyzer_tests.cpp chordanalyzer_musicxml_tests.cpp keymodeanalyzer_tests.cpp" (1378–1381) — *test
+    files named in the listing*.
+15. "synthetic_tests.cpp ← P6 parametrized suite (root coverage, inversions, modes, round-trip)" (1382) — *a test
+    record*.
+16. "tuning_tests.cpp" (1383) — *a test file named in the listing*.
+17. "chord_mismatch_report.txt ← written by catalog test run" (1384) — *a test record*.
+18. "notation/ internal/" (1386–1387) — *directories named in the listing*.
+19. "notationtuningbridge.h/.cpp ← BRIDGE: applyTuningAtNote(), applyRegionTuning()" (1394) — *a statement about a
+    product tool outside the analysis* — the tuning tools.
+20. "notationscene/ qml/MuseScore/NotationScene/" (1400–1401) — *directories named in the listing*.
+21. "appshell/ qml/MuseScore/AppShell/" (1405–1406) — *directories named in the listing*.
+22. "appmenumodel.cpp/.h ← top bar "Tune as" and chord track menus; injects IComposingAnalysisConfiguration"
+    (1407–1408) — *a statement about a product tool outside the analysis* — the menus.
+23. "preferences/ qml/MuseScore/Preferences/" (1410–1411) — *directories named in the listing*.
+24. "composingpreferencesmodel.cpp/.h ← injects BOTH IComposingAnalysisConfiguration AND
+    IComposingChordStaffConfiguration" (1412–1413) — *a statement about a product tool outside the analysis* — the
+    preferences.
+25. "composing/ resources/" (1415–1416) — *directories named in the listing*.
+26. "```" (1419) — *the close of the directory listing*.
+27. "### 3.3 Module Boundaries and Bridge Architecture" (1435) — *a heading*.
+28. "**Read this section before touching any code that crosses the composing ↔ notation boundary.**" (1437) — *a rule
+    of the development process*.
+29. "*Why this rule: derived from the already-ratified scoped forms (the Dependency Rule, the bridge pattern, the
+    local-patches constraints) rather than invented (#1); one rule where practice-by-example governed (#6/#7); the
+    layout exclusion because layout is presentation downstream of the facts, and analysis consuming it is a layer
+    inversion and the self-feedback class the input-scoping work guarded against; the per-instance patch
+    ratification preserves #14 and reconciles the §1.2 contribution intent with the fork-local patch constraint.*"
+    (1485–1490) — *a defense* of a rule outside the member.
+30. "#### The rendered form never crosses back — two boundary invariants that bind every reader" (1492) — *a heading*.
+31. "They are stated **here**, at the boundary's own section, because they bind every reader on both sides of it — the
+    scorer, the gates, the bridges, and the measurement tools alike; other documents point at them and do not copy
+    them (#6)." (1496–1498) — *the document's account of itself*.
+32. "*Why:* stated with the rule — signals derived from a symbol or a Roman numeral are lossy and entangled with the
+    formatter, so they are not reliable inputs to chord classification; and reading the rendered form back in would
+    make the analysis depend on its own presentation layer, which is the one direction this boundary forbids."
+    (1502–1506) — *a defense* of Rows 22.22 and 22.23; it opens inside the WITHHELD home of D-280.
+33. "Symbols are instructions the user wrote, not analysis results." (1508) — *a defense* of Rows 22.24 to 22.26,
+    inside the WITHHELD home of D-501.
+34. "*Why:* stated with the principle — a symbol is user content and may be wrong, so reading it as input makes the
+    analysis agree with the user rather than with the music; and in a measurement tool it additionally destroys the
+    measurement, because the tool would then be comparing the annotation with itself." (1510–1514) — *a defense* of
+    Rows 22.24 to 22.26, inside the WITHHELD home of D-501.
+35. "| File | Declares/defines | Called by |" (1539) — *a table header*.
+36. "|------|-----------------|-----------|" (1540) — *the table's separator row*.
+37. "| `notationtuningbridge.h/.cpp` | `applyTuningAtNote()` — tune a single note's chord<br>`applyRegionTuning()` —
+    tune a time range | `notationinteraction.cpp` (via `addAnalyzedTuning()`, `tuneSelection()`) |" (1546) — *a
+    statement about a product tool outside the analysis* — the tuning tools.
+38. "**Two terms used throughout these layer docs.**" (1554) — *a label*.
+39. "**BIR** (bass-is-root) is the corpus gate metric: a BIR=false case is a *pitch-class-decidable* root the analysis
+    got wrong, and the gate is quoted as `Baroque/Jazz/Default` case counts (e.g. `53/24/53`); the "class-(a)/(b)"
+    split and the full definition live in the gate policy (CLAUDE.md)." (1556–1558) — *a definition of a term*, whose
+    home it names.
+40. "**Delegation pointer for the Layer-1.5 phrase-boundary primitive (the fifth home case; written 2026-08-04 on the
+    user's direction, the OI-327 write list).**" (1571) — *a label with its provenance*.
+41. "The ratified contract for the phrase-boundary primitive is `cowork_phrase_boundary_design.md` (SIGNED, user,
+    2026-06-26, `:3`) — D-476…D-485 — which this section points at and does not restate." (1571) — *a pointer* — a
+    delegation.
+42. "*(It is sited HERE, and the choice is stated rather than left to be inferred: this document defines L1.5 as "the
+    thin derived-view layer over the L1 note model" and carries no section of its own for it, so the layer the
+    primitive is a view OVER is the nearest owning section." (1571) — *the document's account of itself*.
+43. "The only other place the primitive is named is the Layer-6 section, which consumes it and does not own it — and
+    which D-266 prohibits building until the bounded-context design is coded and regression-tested for Layers 1–5, so
+    siting a contract pointer there would attach it to a question the user deliberately left open." (1571) — *the
+    document's account of itself*.
+44. "Naming the document by filename also closes the prose-reference question the write list carried: the
+    doc-governance clause's phrase "the phrase-boundary design" had more than one candidate in the tree.)*" (1571) —
+    *the document's account of itself*.
+45. "| Module | Responsibility |" (1573) — *a table header*.
+46. "|--------|----------------|" (1574) — *the table's separator row*.
+47. "**Derived views over the model (in `engravingbridge`).**" (1577) — *a label*.
+48. "**Transitional, by design.**" (1586) — *a label*.
+49. "**Ratified trade-off on record.**" (1593) — *a label*.
+50. "See `records/cc/reports/cc_layer1_impl_report.md` / `records/cc/reports/cc_layer1_coverage_report.md` (HELD)."
+    (1599–1600) — *a pointer*.
+51. "*Why:* it follows from what a Layer-2 slice **is** — the stretch over which the eligible sounding-note set is
+    constant — so a request that ends inside a slice is *provably* a no-op rather than merely a small one: no note
+    enters the model and no downstream answer can differ." (1605–1608) — *a defense* of Row 22.48.
+52. "That makes the granularity bound a **fact about the representation**, not a tuning choice, and it is what bounds
+    the step-size question the requesting layer owns." (1608–1610) — *a defense* of Row 22.48.
+53. "Almost all published work on locating phrase endings addresses a single melodic line; for several simultaneous
+    voices nothing comparable has been established." (1614–1616) — *a defense* of Row 22.50.
+54. "*Why:* a stated **fact of absence**, established by the survey behind the method catalog — the monophonic canon
+    has a benchmarked literature and the polyphonic case has no comparable validated rule set." (1618–1620) — *a
+    defense* of Row 22.50.
+55. "(This bounds what the primitive whose contract is delegated two paragraphs above may claim; it does not change
+    what that contract specifies.)" (1623–1624) — *the document's account of itself*.
+56. "They are not somebody's claim about the harmony." (1630–1631) — *a restatement* of Row 22.53.
+57. "**The analysis may therefore consume them.**" (1631) — *a restatement* of Row 22.53.
+58. "*Why:* it is the line the chord-symbol prohibition already draws, applied to a new pair of fields — the analysis
+    may read what the score IS and may not read what a user has CLAIMED about it — and voice slot and stem direction
+    fall on the first side." (1631–1634) — *a defense* of Row 22.53.
+59. "The rule binds any voice-tracking work whether or not the non-chord-tone detector that raised the question is ever
+    built; it decides what such a detector would be ALLOWED to read and settles nothing about whether it is built,
+    which is a separate deferral recorded at the chord layer." (1634–1636) — *the document's account of what it does
+    not settle*.
+60. "#### Layer 2 — the deterministic change-point slicer (Built+Live — consumed by L3)" (1638) — *a heading with a
+    status*.
+61. "The **constant-(tonal-)sonority slicer** — layer 2 of the rebuild." (1640) — *a label*.
+62. "| Module | Responsibility |" (1646) — *a table header*.
+63. "|--------|----------------|" (1647) — *the table's separator row*.
+64. "**Covering / empty slices, clipped to the loaded span (bounded context).**" (1658) — *a label*.
+65. "**Zero interpretation.**" (1675) — *a label*.
+66. "**Fully covered + byte-identical on the live path.**" (1685) — *a label*.
+67. "Built with `slicer_tests.cpp` (20 tests: the audit §3 functional set + edge/eligibility cases + the Phase-2
+    bounded-context set CP1–CP7 — degenerate clip-inertness, sustained-in/out clip correctness, seam-aware stability on
+    extend, re-slice equivalence)." (1685–1688) — *a test record*.
+68. "See `records/cc/reports/cc_layer2_impl_report.md` (HELD), `cowork_layer2_slicing_design.md`,
+    `records/cc/reports/cc_layer2_audit_dossier.md`." (1692–1693) — *a pointer*.
+69. "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).**"
+    (1695) — *a label with its provenance*.
+70. "The ratified contract for this layer is `cowork_layer2_slicing_design.md` (AS-BUILT — built, reviewed, accepted
+    and validated on the full test corpus, `:3`) — D-540…D-541 — which this section points at and does not restate."
+    (1695) — *a pointer* — a delegation.
+71. "*(The "See …" line above is a citation of three documents, two of them session reports; `CLAUDE.md` rule (i)
+    distinguishes a citation from a delegation, and this paragraph supplements that line rather than replacing it.)*"
+    (1695) — *the document's account of itself*.
+72. "**★ WHAT MAY BE ASSERTED ACROSS AN EXTENSION, AND WHAT A SLICE CARRIES (re-homed into this section 2026-08-08 on
+    the user's ruling).**" (1697–1698) — *a label with its provenance*.
+73. "Two decisions about this layer's output that no other home carried." (1698–1699) — *the document's account of
+    itself*.
+74. "*Why the prohibition is written as one:* the claim was corrected against a counterexample the design states in
+    full — a single eligible note spanning the loaded start, one slice before the extension and one after, with the
+    edge slice demonstrably grown — so the naive assertion is not merely imprecise, it is false, and it would pass by
+    accident on the cases that do not exercise the edge." (1710–1714) — *a defense* of Row 22.78(ii).
+75. "*Why:* this layer owns no selection semantics — cutting the music where the sounding set changes involves no
+    judgment about what the user selected — so a selection tag would keep another component's concern in this one's
+    output." (1722–1724) — *a defense* of Row 22.84.
+76. "The alternative, tagging each slice at the slicer from the model's selection span, was weighed and named rather
+    than passed over, and the minimal form was taken at the build." (1724–1726) — *provenance* — a declined
+    alternative.
+77. "**(Corrected 2026-08-11, `OPEN_ITEMS.md` OI-318 item (1): this paragraph used the word the ratified 2026-07-01
+    rename reserves for the accepted melodic phrase alone, and told a reader of the Layer-6 paragraph that the grouping
+    layer segments melodic phrases — the one thing the delegated design's terminology section exists to deny."
+    (2197–2200) — *provenance* — a correction.
+78. "FORMER WORDING, PRESERVED (#12): "**phrases** (from the L1.5 phrase-boundary primitive) … which **cross-cuts**
+    phrases … the **alignment of cadences to phrase ends**".)**" (2200–2201) — *provenance* — a former wording.
+79. "Full spec: `cowork_layer6_grouping_design.md`." (2203–2204) — *a pointer*.
+80. "*Why:* it is a grouping rule and not a second key analysis — it reads the key fields the earlier layers already
+    published rather than re-deciding them, which is the same not-a-new-detector reasoning this layer's contract
+    states for grouping generally." (2218–2220) — *a defense* of Row 22.90.
+81. "**★ WHAT SUPPLIES THE SMOOTHED KEY SEQUENCE, AND WHY THE PRECONDITION IS NOT ONE NAMED PASS (corrected 2026-08-09
+    on the user's ruling — Ruling 15 of `records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md` — after the
+    read-only probe the open-items register had reserved to the user established the answer at the code).**"
+    (2222–2225) — *a label with its provenance*.
+82. "*Why the wording had to change:* the former text named the legacy step as THE precondition, so it described an arm
+    that does not ship; the record arm meets the requirement by other means, and a specification that says otherwise
+    cannot be the compliance standard (#10)." (2235–2238) — *the document's account of itself*.
+83. "Spec: `cowork_progression_schema_design.md`." (2262) — *a pointer*.
+84. "The full status and the design are in §2.15 and `cowork_voiceleading_axis_design.md`." (2269–2270) — *a pointer*.
+85. "| Module | Responsibility |" (2280) — *a table header*.
+86. "|--------|----------------|" (2281) — *the table's separator row*.
+87. "**Section-level analysis and the Pass-0 injection contract (Stage 2.1).**" (2297) — *a label*.
+88. "**Facts.**" (2335) — *a label*.
+89. "**Facts.**" (2354) — *a label*.
+90. "**Decision.**" (2362) — *a label*.
+91. "**Re-baselined 2026-06-13 (corrected GT parser).**" (2392) — *a label*.
+92. "The figures in this paragraph are the pre-re-baseline Stage-2.4 values." (2392–2393) — *the document's account of
+    itself*.
+93. "See the CLAUDE.md gate section for the authoritative identity sets." (2402–2403) — *a pointer*.
+94. "#### D-GAP — `inferGapRegion` analyzed gap slices with default prefs regardless of caller" (2422) — *a heading*;
+    its claim is stated by Row 22.129.
+95. "**Facts.**" (2424) — *a label*.
+
+#### The arithmetic at this member
+
+- Rows written: **131** (22.1 to 22.131).
+- Rows split into two claims, **+1 each**: 22.38, 22.50, 22.52, 22.58, 22.78, 22.81, 22.84, 22.85, 22.87, 22.90,
+  22.95, 22.104 — twelve rows, **+12**.
+- Rows split into three claims, **+2 each**: 22.76, 22.83, 22.92, 22.98 — four rows, **+8**.
+- Rows split into six claims, **+5 each**: 22.37 — one row, **+5**.
+- **Outgoing statements placed: 131 + 12 + 8 + 5 = 156.**
+- Listed under *not a statement*: **95**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 156 dispositions over
+  156 statements.
+- **UNPLACED at this member: 3** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 12 | 22.20, 22.21, 22.22, 22.23, 22.76(i), 22.76(ii), 22.76(iii), 22.83(i), 22.83(iii), 22.84(ii), 22.85(ii), 22.87(ii) |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 59 | 22.24, 22.25, 22.26, 22.33, 22.37(i), 22.37(ii), 22.37(iii), 22.37(iv), 22.37(v), 22.48, 22.49, 22.50(i), 22.50(ii), 22.51, 22.52(i), 22.52(ii), 22.53, 22.54, 22.55, 22.58(i), 22.58(ii), 22.59, 22.60, 22.61, 22.62, 22.63, 22.64, 22.65, 22.66, 22.67, 22.68, 22.69, 22.70, 22.71, 22.73, 22.74, 22.75, 22.78(i), 22.78(ii), 22.79, 22.80, 22.81(i), 22.81(ii), 22.82, 22.84(i), 22.85(i), 22.86, 22.87(i), 22.89, 22.90(i), 22.90(ii), 22.91, 22.92(i), 22.92(ii), 22.93, 22.98(i), 22.100, 22.101, 22.102 |
+| QUARANTINED | 48 | 22.1, 22.3, 22.4, 22.5, 22.6, 22.7, 22.8, 22.9, 22.10, 22.11, 22.12, 22.13, 22.14, 22.15, 22.16, 22.17, 22.27, 22.28, 22.29, 22.30, 22.31, 22.32, 22.38(ii), 22.39, 22.40, 22.41, 22.94, 22.95(i), 22.95(ii), 22.96, 22.97, 22.103, 22.104(i), 22.104(ii), 22.105, 22.106, 22.107, 22.108, 22.109, 22.110, 22.111, 22.112, 22.117, 22.118, 22.119, 22.120, 22.121, 22.122 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 34 | 22.2, 22.18, 22.19, 22.34, 22.35, 22.36, 22.37(vi), 22.38(i), 22.42, 22.43, 22.44, 22.45, 22.46, 22.47, 22.56, 22.57, 22.72, 22.77, 22.83(ii), 22.88, 22.99, 22.113, 22.114, 22.115, 22.116, 22.123, 22.124, 22.125, 22.126, 22.127, 22.128, 22.129, 22.130, 22.131 |
+| UNPLACED | 3 | 22.92(iii), 22.98(ii), 22.98(iii) |
+| **Total** | **156** | — |
+
+**The arithmetic closes at this member**: 12 + 0 + 59 + 48 + 0 + 34 + 3 = 156, against 156 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 18 |
+| DIFFERS | 7 |
+| THE DERIVATION IS SILENT | 131 |
+| **Total verdicts** | **156** |
+
+*(156 verdicts over 156 statements; no statement names two derived statements.)* DIFFERS: 22.8, 22.42, 22.83(ii),
+22.92(iii), 22.98(ii), 22.98(iii), 22.105.
+
+#### The marks at this member
+
+- **WITHHELD rows: 22.22 and 22.23 (D-280); 22.24, 22.25 and 22.26 (D-501).** No boundary case is marked. Three
+  sentences inside WITHHELD homes are listed under *not a statement*, where no mark applies: item 32, which opens
+  inside D-280's home and runs one line past it, and items 33 and 34 (D-501). **An AGREES stands on these WITHHELD
+  statements:** 22.22, 22.23.
+- **SEEN rows: none.** The check was made at the homes as the manifest states: none of the eight homes 1(c) names
+  lies in this member's ranges.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S22 (entry 4) — 22.83, 22.85. No row
+  of this member names L2-S31, L2-S17, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -30719,6 +33018,15 @@ the row says which.
 - Row 17.36, with Row 17.37(ii) — that which staves' notes enter the analysis is selected where the notated
   record is read, before any layer reads it, so that the analysis's own written chords are never read back as
   input. *(No statement of the input contract was found, at its text, to carry staff exclusion.)*
+- Row 22.25 — travelling with Row 13.12(i): that production paths never read a written chord symbol as input to the
+  analysis.
+- Rows 22.37(i) to 22.37(v) — the lossless, tie-resolved note model as the single source of what sounds, read once:
+  its events and their fields, a tied group as one span answered by overlap with no horizon, grace, non-playing,
+  invisible and ineligible notes kept and flagged, and a second surface republishing every notated note unresolved for
+  ties.
+- Rows 22.53 and 22.54 — travelling with Row 13.12(i): voice slots and stem direction as notational metadata the
+  analysis may read, like the key signature, the time signature, a tie or a pedal marking. *(L2-S24 travels with Row
+  22.53.)*
 
 **To *L1 — Change points, candidates and notated evidence*.**
 
@@ -30752,6 +33060,22 @@ the row says which.
   explicit, and the voice-slot data is used when present. *(L2-S24 travels with them.)*
 - Row 21.42(i) — travelling with Row 6.6(i): the constant-sonority slice as the atomic unit, never the metric beat.
 - Row 21.43 — travelling with Row 7.55: that the note and slicing layers carry facts and never style.
+- Row 22.33 — travelling with Row 6.7(i): the half-tier as a derived view over the note model, not a judgment layer.
+- Rows 22.48 and 22.49 — the change point as the finest meaningful extension step.
+- Row 22.55 — travelling with Row 6.6(i): the slicer as a deterministic fact read off the note model, not a judgment.
+- Rows 22.58(i), 22.58(ii) and 22.66 — travelling with Row 10.5: slices tiling the domain with no gaps and no overlaps,
+  every tick in exactly one, their boundaries every onset and every release of the eligible notes.
+- Rows 22.59 to 22.64 — boundaries taken from the note model's eligibility annotation and never re-decided; an
+  ineligible note opening no boundary and riding along; slice identity as the eligible sounding-note set.
+- Rows 22.65, 22.67, 22.68, 22.70 and 22.71 — the tiled domain clipped to the loaded span and inert on a whole-piece
+  model, no silence invented outside it, and re-slicing on extension equal to a fresh slicing.
+- Row 22.69 — an interior silence as an explicit empty slice. *(L2-S44 travels with it.)*
+- Rows 22.73, 22.74 and 22.75 — no thresholds, no notion of ornamental, passing or structural, and no special-casing of
+  any note kind. *(L2-S23 travels with Row 22.73.)*
+- Rows 22.78(i), 22.79, 22.80, 22.81(i), 22.81(ii) and 22.82 — the artificial boundary at the loaded edge vanishing on
+  extension, the edge slice growing, and every real change point staying stable.
+- Rows 22.84(i), 22.85(i) and 22.86 — the slice carrying its start and end only, slices produced over the whole
+  loaded span, and the selection distinction not stored on the slice.
 
 **To *L3 — The read-off facts*.**
 
@@ -30813,6 +33137,17 @@ the row says which.
 - Row 21.50 — travelling with Row 6.7(ii): the cue delimiting a punctuation-span, supplied by the phrase-boundary
   primitive.
 - Row 21.64(iii) — grouping structure above the grouping layer — sections, periods, form — anticipated and deferred.
+- Rows 22.50(i), 22.50(ii), 22.51 and 22.52(i) — travelling with Row 6.7(ii): no validated rule set for polyphonic
+  phrase-boundary detection, the primitive our own engineering validated against our own annotated corpus, and the
+  gap cue transferring to polyphony.
+- Row 22.87(i) — travelling with Row 6.8: the grouping layer's punctuation-spans, key-areas and alignment of cadences
+  to punctuation-span ends. *(L2-S49 travels with it.)*
+- Row 22.89 — hierarchy, periods and sentences, and prolongation outside the validatable core.
+- Rows 22.90(i), 22.90(ii), 22.91, 22.92(i), 22.92(ii) and 22.93 — key areas grouped over an already smoothed key
+  sequence, closing only when a differing region clears a confidence test, a region below the test keeping its own
+  key. *(At Row 22.92(iii) the reading itself is UNPLACED.)*
+- Row 22.98(i) — travelling with Row 5.91: the progression-schema recognizer's annotation over the committed
+  progression. *(L2-S49 travels with it.)*
 
 **To *the second axis — voice leading*.**
 
@@ -30827,6 +33162,8 @@ the row says which.
   spine.
 - Rows 21.65, 21.67 and 21.68 — the stock eighteenth-century patterns and the chromatic line cliché, chord voicing and
   arrangement, and checking and advising on part-writing, owned by the voice-leading axis.
+- Rows 22.100, 22.101 and 22.102 — the voice-leading layer, the horizontal dimension reading the per-voice motion the
+  note model carries, its foundation built and dormant.
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -31020,12 +33357,18 @@ the row says which.
 - Row 21.58(i) — preferring what can be verified against ground truth.
 - Row 21.78 — that cutting a chord name back to a plainer one belongs only to grading against a published corpus, never
   to a path a user's result travels.
+- Rows 22.24 and 22.26 — a written chord symbol read only as a comparison or ground-truth label, a measurement tool
+  never letting it influence what the analysis computes.
+- Row 22.52(ii) — that a value measured only on chorale texture is not to be trusted, that texture being an unusually
+  favorable case.
+- Row 22.78(ii) — that an assertion that old slices stay byte-identical across an extension is never written as a
+  test.
 
 *(Member 2 relocates no row. Member 3 relocates one, Row 3.38, above. Member 5's relocations are the rows
 numbered 5.n above, member 6's the rows numbered 6.n, and member 7's the rows numbered 7.n. Member 8 relocates
 no row. Member 9's relocations are the rows numbered 9.n above, member 10's the rows numbered 10.n, member 11's
 the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows numbered 13.n, member 14's the rows
-numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows numbered 17.n. Member 18 relocates no row. Member 19 relocates no row. Member 20 relocates no row, and member 21's the rows numbered 21.n.)*
+numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows numbered 17.n. Member 18 relocates no row. Member 19 relocates no row. Member 20 relocates no row, member 21's the rows numbered 21.n, and member 22's the rows numbered 22.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -31698,6 +34041,52 @@ rows here, each with its audit question, in the commit that tabulates it.
   span, and what bounds it?
 - Row 21.71 — travelling with Row 17.58(iii): what quantity does the single-note context carry as its key confidence,
   and in what unit?
+- Row 22.1 — does any header of the analysis module include an engraving type at the current commit?
+- Rows 22.3, 22.4 and 22.5 — travelling with Row 20.1: is the legacy chord path compiled and unreached on the
+  production arm?
+- Row 22.6, with Row 22.7 — is the key-collection scaffold default-off at the current commit, and on which path do its
+  counters and its variant run?
+- Row 22.8 — travelling with Row 20.2: what does the dormant key decoder's per-slice fit read, over what window, and
+  does it read any proposed chord?
+- Row 22.9 — which paths read the legacy harmonic-region type at the current commit?
+- Row 22.10 — which pitch-class helpers are shared across the analysis subdirectories, and does the production arm
+  read any of them?
+- Row 22.11, with Row 22.32 — does the record arm exclude the drum, hidden and chord staves through the same
+  eligibility test, and is the chord staff still detected by its name?
+- Row 22.12, with Rows 22.13 and 22.27 — do the three legacy bridge functions run on the record arm at the current
+  commit, or only when the record flag is off?
+- Rows 22.14 and 22.31 — travelling with Row 20.5: what does the chord-staff writer write on the record arm at the
+  current commit, and from which published facts?
+- Row 22.15 — which of the interaction methods named here read the record arm's output at the current commit?
+- Rows 22.16, 22.17 and 22.28 — travelling with Row 20.6: from which surface does the status display take the chord,
+  the key and the Roman numeral it shows for a selected note?
+- Row 22.29 — travelling with Row 20.4: does the harmonic-rhythm component run on any production path at the current
+  commit, and does it decide where one harmony gives way to the next apart from the chord?
+- Row 22.30 — do the shared bridge helpers — note collection, the tonality resolver, temporal context — run on the
+  record arm at the current commit?
+- Row 22.38(ii), with Rows 22.39, 22.40, 22.41 and 22.103 — does the legacy weighted pitch-class view run on any
+  production path at the current commit, and what reads it?
+- Row 22.94, with Rows 22.95(i), 22.95(ii), 22.96 and 22.97 — on each arm at the current commit, what supplies the
+  per-region key sequence the key-area grouping reads, and is that sequence smoothed?
+- Row 22.104(i) — which callers of the ranked tonality resolver remain at the current commit, and does any lie on the
+  production arm?
+- Row 22.104(ii) — does the record arm read the signature context — the declared mode and the Baroque
+  partial-signature correction — through the shared read, and does anything it computes reach the joint decode?
+- Row 22.105 — travelling with Row 21.5: does the legacy region orchestration — segmentation, then scoring per region,
+  then merging and refinement — run on any production path at the current commit?
+- Row 22.106 — does the sparse-region refinement run on any production path at the current commit?
+- Row 22.107, with Row 22.109 — on which arm do the section analyzer's stabilization, cadence and pivot detection run
+  at the current commit?
+- Row 22.108 — is the value-types header dependency-free at the current commit, and which of its types does the
+  record arm use?
+- Row 22.110 — does the legacy region stream still reach the section analysis on any path at the current commit, and
+  through which parameter?
+- Row 22.111, with Row 22.112 — does the dense-start look-ahead flag still differ between the legacy batch and
+  notation paths, and does either path run at the current commit?
+- Row 22.117, with Rows 22.118, 22.119 and 22.120 — does the legacy tick-local fallback exist and run at the current
+  commit, and does it build its temporal context with no neighbor context?
+- Row 22.121, with Row 22.122 — are the predecessor-confidence fields left at their defaults on the legacy bridge
+  path, and does any gate read them there?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -32295,6 +34684,21 @@ words.
   *"L2 publishes to L3 exactly what the charter lists, and nothing else."*
 - Row 21.77 — the outgoing layer states *"everything it found, the added notes above the basic triad included"*;
   L2-S4's premise has ninths and elevenths *"reach L2 as elaboration assignments (L2-S8)"*.
+- Row 22.8 — the outgoing analyzer covers *"all 21 modes"*; L2-S6's vocabulary is the spelled tonics *"in two modes,
+  major and minor"*.
+- Row 22.42 — the outgoing spine is *"segment-first"* and *"still drives all analysis"*; L2-S11 says the boundary *"is
+  never decided before the chord or after it"*.
+- Row 22.83(ii) — as at Row 18.2: the outgoing reading re-infers over the new slices *"under the forward-only
+  contract"*; L2-S11 says *"It is never decided before the chord or after it."*
+- Row 22.92(iii) — the outgoing emitter *"writes Roman numerals against the key that actually governs the passage
+  rather than against a momentary wobble"*; L2-S27 says *"L2 decides the chord as degree, quality, figure and applied
+  target, read against the span's tonality."*
+- Row 22.98(ii) — as at Row 4.20(ii): the outgoing recognizer is an L5 consumer that is *"a prior + an annotation"*;
+  L2-S49 says *"L2 consumes nothing L3 publishes"* and *"The dependency is one-way: L3 reads L2."*
+- Row 22.98(iii) — as at Row 5.218(ii): the outgoing recognizer *"disambiguates via the §2.14 forward-override"*;
+  L2-S35 says *"The candidate score is normalised over whole readings"*.
+- Row 22.105 — as at Row 21.5: the outgoing orchestration runs *"greedy-expand segmentation (Pass 1)"* and then the
+  chord analysis per region; L2-S11 says the boundary *"is never decided before the chord or after it"*.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -32327,10 +34731,11 @@ own distribution table in §6.
 | 19 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 20 |
 | 20 | 6 | 0 | 0 | 0 | 6 | 0 | 0 | 0 | 3 |
 | 21 | 111 | 29 | 11 | 25 | 12 | 0 | 22 | 12 | 80 |
-| **Total** | **2477** | **383** | **85** | **361** | **753** | **0** | **668** | **227** | **1137** |
+| 22 | 156 | 12 | 0 | 59 | 48 | 0 | 34 | 3 | 95 |
+| **Total** | **2633** | **395** | **85** | **420** | **801** | **0** | **702** | **230** | **1232** |
 
-**The arithmetic check:** 383 + 85 + 361 + 753 + 0 + 668 + 227 = 2477, against 2477 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111).
+**The arithmetic check:** 395 + 85 + 420 + 801 + 0 + 702 + 230 = 2633, against 2633 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156).
 
 **Current-text verdicts.**
 
@@ -32357,10 +34762,11 @@ own distribution table in §6.
 | 19 | 0 | 0 | 0 | 0 |
 | 20 | 0 | 2 | 4 | 6 |
 | 21 | 38 | 25 | 49 | 112 |
-| **Total** | **566** | **524** | **1433** | **2523** |
+| 22 | 18 | 7 | 131 | 156 |
+| **Total** | **584** | **531** | **1564** | **2679** |
 
-**The arithmetic check:** 566 + 524 + 1433 = 2523 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112).
+**The arithmetic check:** 584 + 531 + 1564 = 2679 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156).
 
 ## 14. The derivation's independence record, relayed
 
@@ -32391,4 +34797,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 21 are done, positions 22 to 62 are untouched.
+  untouched: positions 1 to 22 are done, positions 23 to 62 are untouched.
