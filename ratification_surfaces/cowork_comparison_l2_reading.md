@@ -14195,7 +14195,7 @@ and L2-S25, both AGREES.)* DIFFERS: 6.4, 6.5, 6.6(ii), 6.6(iii), 6.11, 6.12(i), 
 
 *Derived statements that speak to it.* L2-S20.
 
-*Current-text axis.* L2-S20: **AGREES** — as at Row 7.167, the spelled degrees being among the tonality terms' evidence.
+*Current-text axis.* L2-S20: **AGREES** — the spelled degrees being among the tonality terms' evidence, in the words of L2-S20 that Row 7.167 quotes (*"which spelled scale degrees have sounded"*).
 
 *PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S20).
 
