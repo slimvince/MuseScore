@@ -78,7 +78,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 34 | `ARCHITECTURE.md` passages — *16. Scope Reference* | **DONE** (§6.34) |
 | 35 | `ARCHITECTURE.md` passages — *18. Contributing* | **DONE** (§6.35) |
 | 36 | `ARCHITECTURE.md` passages — *19. LLM Integration — Claude Composer* | **DONE** (§6.36) |
-| 37 | `ARCHITECTURE.md` passages — *Appendix A — Key Musical Concepts* | NOT YET TABULATED |
+| 37 | `ARCHITECTURE.md` passages — *Appendix A — Key Musical Concepts* | **DONE** (§6.37) |
 | 38 | `ARCHITECTURE.md` passages — *Appendix B — MuseScore Score Model Quick Reference* | NOT YET TABULATED |
 | 39 | `docs/scoring_model.md` passages | NOT YET TABULATED |
 | 40 | `cowork_phrase_boundary_design.md` passages | NOT YET TABULATED |
@@ -107,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 36 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 37 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, and the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, and the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 36 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 37 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -141,8 +141,8 @@ batch's close still to run, and was not opened. The sixth batch, under
 positions 23 to 28, each whole and in its own commit, and stopped at the member boundary after position 28 under that
 dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finishable together with the batch's close in
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 36, each whole and in its own commit. **Positions 37 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 37**, `ARCHITECTURE.md` passages — *Appendix A — Key Musical Concepts*. §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 37, each whole and in its own commit. **Positions 38 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 38**, `ARCHITECTURE.md` passages — *Appendix B — MuseScore Score Model Quick Reference*. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -45263,6 +45263,102 @@ own, and whether that boundary belongs to L2's specification or to the product c
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
   L2-S17, L2-S22, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
 
+---
+
+### 6.37 — Member 37: `ARCHITECTURE.md`, passages — *Appendix A — Key Musical Concepts*
+
+> **Manifest for this member.** Position **37**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: *"## Appendix A — Key Musical Concepts"*. **The three published ranges**, each as a
+> locator only, by its first and last line as the artifact publishes them (**D-307**):
+>
+> 1. lines 8210–8212, from *"**Tendency tone:** A pitch that has a strong gravitational pull toward a specific"* to
+>    *"The chordal 7th pulls downward by step."*;
+> 2. lines 8222–8224, from *"**Roman numeral analysis:** Labeling chords by their scale degree in a key. I = tonic,"*
+>    to *"= minor. Superscripts indicate extensions: V7 = dominant seventh."*;
+> 3. lines 8226–8229, from *"**ii-V-I:** The most fundamental jazz chord progression — minor seventh chord on"* to *"of
+>    V resolves to the 3rd of I."*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside. **The lines between the ranges are outside the member** and are not tabulated, quoted or
+> listed. **No line inside the ranges is a heading.** Outgoing statements: **0**. Listed under *not a statement*:
+> **9**. Counted at this member by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Three entries of the appendix's glossary of
+> musical concepts — the tendency tone, Roman-numeral analysis and the ii–V–I progression — each defining a term of
+> standard music theory. **The placement readings are those of the earlier members, applied unchanged**: a definition of
+> a term is listed under *not a statement*, the fifth batch's reading. **Where two earlier readings meet, stated so it can
+> be checked**: the second batch tabulated glossary entries as statements at member 5, whose glossary defined the
+> function layer's own terms and so said what the analysis does; these entries define standard music theory and say
+> nothing the analysis does, must do, may assume or must not do, so the fifth batch's reading places them, and the member
+> places no outgoing statement. **No reading is new at this member.**
+>
+> **The WITHHELD homes inside this member**: none — the artifact's `item_4_identities_inside` for position 37 is
+> empty, and a check at `tools/audit/decisions/backbone_decisions.json` found no decision homed in these ranges.
+> **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes lies in this member —
+> the two in `ARCHITECTURE.md`, D-002 and D-095, lie at lines 21–22 and 43–44.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (9)
+
+1. "**Tendency tone:** A pitch that has a strong gravitational pull toward a specific resolution." (8210–8211) — *a
+   definition of a term*.
+2. "The leading tone (major 7th of the scale) pulls upward to the tonic." (8211) — *a definition of a term*, the same
+   entry's.
+3. "The chordal 7th pulls downward by step." (8212) — *a definition of a term*, the same entry's.
+4. "**Roman numeral analysis:** Labeling chords by their scale degree in a key." (8222) — *a definition of a term*.
+5. "I = tonic, IV = subdominant, V = dominant, ii = supertonic, etc." (8222–8223) — *a definition of a term*, the same
+   entry's.
+6. "Upper case = major, lower case = minor." (8223–8224) — *a definition of a term*, the same entry's.
+7. "Superscripts indicate extensions: V7 = dominant seventh." (8224) — *a definition of a term*, the same entry's.
+8. "**ii-V-I:** The most fundamental jazz chord progression — minor seventh chord on scale degree 2, dominant seventh on
+   scale degree 5, major seventh on scale degree 1." (8226–8227) — *a definition of a term*.
+9. "The guide tones resolve by half step: the 7th of ii becomes the 3rd of V, the 7th of V resolves to the 3rd of I."
+   (8228–8229) — *a definition of a term*, the same entry's.
+
+#### The arithmetic at this member
+
+- Rows written: **0**.
+- **Outgoing statements placed: 0.**
+- Listed under *not a statement*: **9** — every sentence of the three ranges.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 0 dispositions over 0
+  statements.
+- **UNPLACED at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **0** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 0 + 0 + 0 + 0 + 0 = 0, against 0 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **0** |
+
+*(0 verdicts over 0 statements; no statement names two derived statements.)* DIFFERS: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 37 is empty, and no decision is
+  homed in these lines.
+- **SEEN rows: none.** The check was made at the homes as the manifest states: none of the eight homes 1(c) names lies
+  in this member's ranges.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** none; the member has no row.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -45711,7 +45807,7 @@ numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
 above. Member 31 relocates no row, and member 32's relocations are the rows numbered 32.n above. Member 33's relocations are the rows numbered 33.n
-above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above.)*
+above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -47412,10 +47508,11 @@ own distribution table in §6.
 | 34 | 4 | 0 | 0 | 0 | 0 | 0 | 2 | 2 | 0 |
 | 35 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 |
 | 36 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 8 |
-| **Total** | **3388** | **412** | **86** | **495** | **1145** | **0** | **974** | **276** | **1630** |
+| 37 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 |
+| **Total** | **3388** | **412** | **86** | **495** | **1145** | **0** | **974** | **276** | **1639** |
 
 **The arithmetic check:** 412 + 86 + 495 + 1145 + 0 + 974 + 276 = 3388, against 3388 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1).
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0).
 
 **Current-text verdicts.**
 
@@ -47457,10 +47554,11 @@ own distribution table in §6.
 | 34 | 0 | 1 | 3 | 4 |
 | 35 | 0 | 0 | 0 | 0 |
 | 36 | 1 | 0 | 0 | 1 |
+| 37 | 0 | 0 | 0 | 0 |
 | **Total** | **629** | **626** | **2181** | **3436** |
 
 **The arithmetic check:** 629 + 626 + 2181 = 3436 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1).
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0).
 
 ## 14. The derivation's independence record, relayed
 
@@ -47491,4 +47589,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 36 are done, positions 37 to 62 are untouched.
+  untouched: positions 1 to 37 are done, positions 38 to 62 are untouched.
