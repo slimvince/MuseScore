@@ -75,7 +75,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 31 | `ARCHITECTURE.md` passages — *12. User Interface* | **DONE** (§6.31) |
 | 32 | `ARCHITECTURE.md` passages — *14. ML Readiness* | **DONE** (§6.32) |
 | 33 | `ARCHITECTURE.md` passages — *15. Development Phases* | **DONE** (§6.33) |
-| 34 | `ARCHITECTURE.md` passages — *16. Scope Reference* | NOT YET TABULATED |
+| 34 | `ARCHITECTURE.md` passages — *16. Scope Reference* | **DONE** (§6.34) |
 | 35 | `ARCHITECTURE.md` passages — *18. Contributing* | NOT YET TABULATED |
 | 36 | `ARCHITECTURE.md` passages — *19. LLM Integration — Claude Composer* | NOT YET TABULATED |
 | 37 | `ARCHITECTURE.md` passages — *Appendix A — Key Musical Concepts* | NOT YET TABULATED |
@@ -107,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 33 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 34 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, and the `ARCHITECTURE.md` passages under *15. Development Phases*.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, and the `ARCHITECTURE.md` passages under *16. Scope Reference*.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 33 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 34 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -141,8 +141,8 @@ batch's close still to run, and was not opened. The sixth batch, under
 positions 23 to 28, each whole and in its own commit, and stopped at the member boundary after position 28 under that
 dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finishable together with the batch's close in
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 33, each whole and in its own commit. **Positions 34 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 34**, `ARCHITECTURE.md` passages — *16. Scope Reference*. §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 34, each whole and in its own commit. **Positions 35 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 35**, `ARCHITECTURE.md` passages — *18. Contributing*. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -44912,6 +44912,167 @@ Foundation* (locator: line 7874).
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
   L2-S17, L2-S22, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
 
+---
+
+### 6.34 — Member 34: `ARCHITECTURE.md`, passages — *16. Scope Reference*
+
+> **Manifest for this member.** Position **34**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: *"## 16. Scope Reference"*. **The four published ranges**, each as a locator only,
+> by its first and last line as the artifact publishes them (**D-307**):
+>
+> 1. lines 7934–7943, from *"Harmonic analysis (functional, modal, extended tonal, jazz), monophonic chord"* to
+>    *"MuseScore infrastructure), accessibility (via MuseScore infrastructure)."*;
+> 2. lines 7947–7954, from *"Full generative support for pop, rock, funk, soul, metal, progressive rock (phased"* to
+>    *"attribution metadata."*;
+> 3. lines 7958–7961, from *"Imitative counterpoint (fugue, canon), motivic tracking, through-composed large-scale"*
+>    to *"external tools, community knowledge base."*;
+> 4. lines 7965–7968, from *"Live and real-time operation, film synchronization, adaptive game music, non-Western"*
+>    to *"techniques as primary language."*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside. **The lines between the ranges are outside the member** and are not tabulated, quoted or listed;
+> the four headings that title the ranges lie between them. **No line inside the ranges is a heading.** Outgoing
+> statements: **4** (rows 34.1 to 34.4; no row is split). Listed under *not a statement*: **0**. Counted at this member
+> by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** The four paragraphs of §16, each one
+> sentence listing the product's scope: what must be implemented, what is planned for later phases, what the
+> architecture prepares for and defers, and what lies outside the scope. **The placement readings are those of the
+> earlier members, applied unchanged**: a plan is HISTORICAL; and a sentence for which no one disposition can be
+> defended at the two texts is UNPLACED with what was read, as a question the derivation leaves to the user is. The
+> core scope and the scope left out each mix product features outside the analysis with the analysis's own subject in
+> one sentence, and each is UNPLACED for that reason. **No reading is new at this member.**
+>
+> **The WITHHELD homes inside this member**: none — the artifact's `item_4_identities_inside` for position 34 is empty,
+> and a check at `tools/audit/decisions/backbone_decisions.json` found no decision homed in these ranges. **The SEEN
+> check, made at the homes as member 17's manifest states:** none of the eight homes lies in this member — the two in
+> `ARCHITECTURE.md`, D-002 and D-095, lie at lines 21–22 and 43–44.
+
+---
+
+**Row 34.1 — the core scope, modal and jazz harmony among it.**
+
+*Outgoing statement.* "Harmonic analysis (functional, modal, extended tonal, jazz), monophonic chord inference, analysis
+correction and ground truth override, voice leading analysis and optimization, tendency tone tracking, tuning system support,
+per-instrument tuning configuration, percussion exclusion, ornamentation (analysis and generation), variable voice count,
+transposing instruments, chord symbol input, MSCZ file persistence, undo/redo integration, incremental analysis cache,
+enharmonic spelling, score error detection, musical language detector and graceful degradation, extensible style system,
+initial five styles, ML interface design throughout, unified temporal representation, pickup bars and anacrusis,
+localization (English and Swedish via MuseScore infrastructure), accessibility (via MuseScore infrastructure)." — §16 *Scope
+Reference*, *Core — Must Be Implemented* (locator: lines 7934–7943).
+
+*Derived statements that speak to it.* L2-S6.
+
+*Current-text axis.* L2-S6: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing core scope names *"Harmonic analysis (functional, modal, extended
+tonal, jazz)"*; L2-S6 says *"A mode other than these is not admitted until the question is ruled (OQ-L2-2)."*
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* one sentence listing the whole product's core scope, most of it
+product features outside the analysis — the tuning tools, persistence, undo, localization — and some of it the analysis's
+own subject, among it modal harmony, which L2-S6 leaves to a question the derivation puts to the user; no one disposition
+covers the sentence.
+
+---
+
+**Row 34.2 — the scope planned for later phases.**
+
+*Outgoing statement.* "Full generative support for pop, rock, funk, soul, metal, progressive rock (phased by style), bass
+line generation, brass fills and idiomatic material, chord animation (Poulenc model), non-chord tone generation, doubling
+rules per style, variation generation, version branching, arrangement comparison, multiple expertise levels in UI, natural
+language instruction, education mode, figured bass input and output, performance markup suggestions, meter changes and
+mixed meter, drift prediction and management, comma pumping, historical tuning for fixed instruments, copyright and
+attribution metadata." — §16, *Important — Planned for Later Phases* (locator: lines 7947–7954).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 34.3 — the scope prepared for and deferred.**
+
+*Outgoing statement.* "Imitative counterpoint (fugue, canon), motivic tracking, through-composed large-scale planning,
+quartal and quintal harmony, polytonality, sacred and liturgical music, music theatre and opera, headless operation and
+batch processing, API access for external tools, community knowledge base." — §16, *Prepared — Architecture Ready,
+Implementation Deferred* (locator: lines 7958–7961).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 34.4 — outside the scope: post-tonal, serial and non-Western music, degrading gracefully at the boundary, among
+others.**
+
+*Outgoing statement.* "Live and real-time operation, film synchronization, adaptive game music, non-Western traditions
+(graceful degradation at boundary), post-tonal and serial music (graceful degradation at boundary), audio transcription from
+recording, spatial music, extended techniques as primary language." — §16, *Out of Scope* (locator: lines 7965–7968).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* one sentence listing what the product leaves out of scope, most of it
+product features — live operation, film, games, audio, spatial music — and some of it music the analysis would meet at its
+own boundary, post-tonal, serial and non-Western, with graceful degradation there; the derivation states no scope of its
+own, and whether that boundary belongs to L2's specification or to the product cannot be settled at the two texts.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (0)
+
+*None: every sentence inside the ranges is tabulated above.*
+
+#### The arithmetic at this member
+
+- Rows written: **4** (34.1 to 34.4); no row is split.
+- **Outgoing statements placed: 4.**
+- Listed under *not a statement*: **0**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 4 dispositions over 4
+  statements.
+- **UNPLACED at this member: 2** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 2 | 34.2, 34.3 |
+| UNPLACED | 2 | 34.1, 34.4 |
+| **Total** | **4** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 0 + 0 + 0 + 2 + 2 = 4, against 4 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 1 |
+| THE DERIVATION IS SILENT | 3 |
+| **Total verdicts** | **4** |
+
+*(4 verdicts over 4 statements; no statement names two derived statements.)* DIFFERS: 34.1.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 34 is empty, and no decision is
+  homed in these lines.
+- **SEEN rows: none.** The check was made at the homes as the manifest states: none of the eight homes 1(c) names lies
+  in this member's ranges.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
+  L2-S17, L2-S22, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -45358,7 +45519,7 @@ numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
 above. Member 31 relocates no row, and member 32's relocations are the rows numbered 32.n above. Member 33's relocations are the rows numbered 33.n
-above.)*
+above. Member 34 relocates no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -47010,6 +47171,8 @@ words.
   enlargements"*.
 - Row 33.15 — as at Row 23.182: the outgoing extends the key analyzer to *"21 modes total"*; L2-S6's tonalities are
   *"in two modes, major and minor"*.
+- Row 34.1 — the outgoing core scope names *"Harmonic analysis (functional, modal, extended tonal, jazz)"*; L2-S6 says
+  *"A mode other than these is not admitted until the question is ruled (OQ-L2-2)."*
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -47054,10 +47217,11 @@ own distribution table in §6.
 | 31 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 8 |
 | 32 | 12 | 0 | 0 | 5 | 3 | 0 | 4 | 0 | 2 |
 | 33 | 20 | 1 | 0 | 9 | 2 | 0 | 8 | 0 | 12 |
-| **Total** | **3383** | **412** | **86** | **494** | **1145** | **0** | **972** | **274** | **1619** |
+| 34 | 4 | 0 | 0 | 0 | 0 | 0 | 2 | 2 | 0 |
+| **Total** | **3387** | **412** | **86** | **494** | **1145** | **0** | **974** | **276** | **1619** |
 
-**The arithmetic check:** 412 + 86 + 494 + 1145 + 0 + 972 + 274 = 3383, against 3383 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20).
+**The arithmetic check:** 412 + 86 + 494 + 1145 + 0 + 974 + 276 = 3387, against 3387 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4).
 
 **Current-text verdicts.**
 
@@ -47096,10 +47260,11 @@ own distribution table in §6.
 | 31 | 0 | 0 | 0 | 0 |
 | 32 | 0 | 0 | 12 | 12 |
 | 33 | 1 | 1 | 18 | 20 |
-| **Total** | **628** | **625** | **2178** | **3431** |
+| 34 | 0 | 1 | 3 | 4 |
+| **Total** | **628** | **626** | **2181** | **3435** |
 
-**The arithmetic check:** 628 + 625 + 2178 = 3431 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20).
+**The arithmetic check:** 628 + 626 + 2181 = 3435 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4).
 
 ## 14. The derivation's independence record, relayed
 
@@ -47130,4 +47295,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 33 are done, positions 34 to 62 are untouched.
+  untouched: positions 1 to 34 are done, positions 35 to 62 are untouched.
