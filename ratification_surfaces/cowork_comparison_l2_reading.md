@@ -81,7 +81,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 37 | `ARCHITECTURE.md` passages — *Appendix A — Key Musical Concepts* | **DONE** (§6.37) |
 | 38 | `ARCHITECTURE.md` passages — *Appendix B — MuseScore Score Model Quick Reference* | **DONE** (§6.38) |
 | 39 | `docs/scoring_model.md` passages | **DONE** (§6.39) |
-| 40 | `cowork_phrase_boundary_design.md` passages | NOT YET TABULATED |
+| 40 | `cowork_phrase_boundary_design.md` passages | **DONE** (§6.40) |
 | 41 | `cowork_layer6_grouping_design.md` passages | NOT YET TABULATED |
 | 42 | `cowork_layer2_slicing_design.md` passages | NOT YET TABULATED |
 | 43 | `cowork_target_architecture.md` passages | NOT YET TABULATED |
@@ -107,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 39 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 40 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, and the `docs/scoring_model.md` passages.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, and the `cowork_phrase_boundary_design.md` passages.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 39 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 40 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -143,8 +143,8 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit; the writing stands at the member boundary after it. **Positions 40 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 40**, `cowork_phrase_boundary_design.md` passages. §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 40 whole in its own commit; the writing stands at the member boundary after position 40. **Positions 41 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 41**, `cowork_layer6_grouping_design.md` passages. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -50288,6 +50288,2115 @@ the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_
   in this member's ranges; the two in this document, D-322 and D-223, fall between ranges.
 - **Rows naming a derived statement §6.3 names as NEAREST to material met: 33** — 39.14, 39.16, 39.24, 39.47, 39.58, 39.59, 39.60, 39.61, 39.62, 39.63, 39.134, 39.135, 39.136, 39.137, 39.138, 39.139, 39.140, 39.141, 39.142, 39.143, 39.144, 39.145, 39.146, 39.147, 39.148, 39.149, 39.150, 39.151, 39.152, 39.153, 39.219, 39.310, 39.336. Each says so at the row.
 
+---
+
+### 6.40 — Member 40: `cowork_phrase_boundary_design.md`, passages
+
+> **Manifest for this member.** Position **40**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_phrase_boundary_design.md`. Label: *"the passages of the document"*. **The twenty-five published
+> ranges**, each as a locator only, by its first and last line as the artifact publishes them (**D-307**); where a
+> boundary line is too long to repeat, it is given by its opening and closing words:
+>
+> 1. lines 1–21, from *"# Phrase-boundary primitive (Architectural Layer 1.5) — Architecture & Design"* to *"> logic that consumes it."*;
+> 2. lines 23–31, from the line opening *"> **Bounded-context stance (added 2026-07-02, closing gap-analysis v2"* and closing *"gap-analysis v2 finding A-2, `records/cc/reports/cc_gap_analysis_v2_report.md` —"* to *"> closing gap A-3 of the same v2 report for this spec."*;
+> 3. lines 37–46, from *"| Term | Meaning (or citation) |"* to the line opening *"| **Pinned** | Fixed by ratified decision and"* and closing *"stored golden outputs compared exactly. |"*;
+> 4. lines 48–61, from *"## 1. Purpose"* to *"voice-leading-axis object this primitive does not model. Stated here at the definition, not only in §11-5.)*"*;
+> 5. lines 63–94, from *"## 2. Constraints"* to *"authority to overrule one that can."*;
+> 6. lines 96–105, from *"## 3. Context & scope (external view)"* to *"`cowork_layer5_function_design.md`.)*"*;
+> 7. lines 107–110, from the line opening *"**Produces:** the **per-voice boundary-strength profiles** (one per eligible"* and closing *"per eligible voice); the **texture boundary-strength"* to *"notation facts carrying no judgement of key, chord, or function."*;
+> 8. lines 115–117, from *"## 4. The model (the rules)"* to *"**peaks are picked**. Each part is a stated mechanism; the named numeric constants are precision-phase."*;
+> 9. lines 119–124, from *"### 4.1 The surface-cue core (a local-change boundary-strength model)"* to *"line** (computed per voice — see §4.3)."*;
+> 10. lines 126–134, from *"Each profile's per-onset strength is computed by the standard **local-change rule** — the boundary-strength"* to *"common [0,1] scale so they are comparable."*;
+> 11. lines 136–139, from the line opening *"The **combined surface strength** at a point is"* and closing *"three normalised profiles, with the **gap"* to *"the three local-change profiles) is fixed here."*;
+> 12. lines 141–164, from *"### 4.2 The deterministic notated-marker spikes"* to *"**minimum-silence constant**."*;
+> 13. lines 166–170, from *"### 4.3 Per-voice cues, aggregated to the texture (polyphony)"* to *"rests and lengthenings."*;
+> 14. lines 172–180, from the line opening *"The per-voice strengths are then **aggregated, per onset,"* and closing *"boundary-strength**: the texture strength at an"* to *"(boosting onsets where several voices peak at once beyond the plain sum) are precision-phase constants."*;
+> 15. lines 182–185, from the line opening *"The primitive **exposes both**: the **per-voice boundary strengths**"* and closing *"voice's own phrasing) and the **texture"* to *"markers of §4.2 spike the **texture** profile.)"*;
+> 16. lines 187–203, from *"### 4.4 Peak-picking"* to *"needed.)"*;
+> 17. lines 205–218, from the line opening *"**★ EVERY PICKED BOUNDARY CARRIES WHICH CUE OR"* and closing *"A REQUIREMENT ON THIS SECTION'S OUTPUT,"* to *"requirement that item binds a future build to."*;
+> 18. lines 220–228, from *"### 4.5 Explicitly excluded"* to *"but needs a trained statistical model). Both are §11 open items, not part of the first build."*;
+> 19. lines 230–247, from *"## 5. Runtime view (scenarios)"* to *"boundary there. The function layer recovers it from the cadence downstream (§2)."*;
+> 20. lines 249–275, from *"## 6. Architecture decisions (with the alternatives weighed)"* to *"chorale-scoped — contrary to its purpose)."*;
+> 21. lines 277–291, from *"## 7. Quality & testing"* to *"before treating the change as output-moving (§11-2, blocking)."*;
+> 22. lines 293–309, from *"## 8. Risks & technical debt"* to *"runs). See `contrapunctus_findings.md` addendum and `cowork_phrase_boundary_methods.md`."*;
+> 23. lines 311–357, from *"## 9. Glossary"* to *"thing."*;
+> 24. lines 359–368, from *"## 10. Background: what this replaces, and the as-built map (not needed to understand the primitive)"* to the line opening *"the concrete file map and the cue formulas"* and closing *"instruction and the methods catalog (`cowork_phrase_boundary_methods.md`)."*;
+> 25. lines 370–413, from *"## 11. Open items"* to *"built until the inference phase opens; validate on a non-chorale corpus (§8)."*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside — the document's blob carries no carriage return. **The lines between the ranges are outside the
+> member** and are not tabulated, quoted or listed. **Seventeen lines inside the ranges are headings** — lines 1, 48,
+> 63, 96, 115, 119, 141, 166, 187, 220, 230, 249, 277, 293, 311, 359 and 370, each the first line of its range — and
+> under the first reading rule of §6 they are titles, neither tabulated nor listed. Outgoing statements: **166** (rows
+> 40.1 to 40.162; 4 of those rows carry two claims each and are split — the arithmetic is at the foot of this member).
+> Listed under *not a statement*: **42**. Counted at this member by this session; the counts appear here and nowhere
+> else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of the signed design document
+> for the phrase-boundary primitive: its status block and bounded-context stance, its terms table, its purpose,
+> constraints, context and scope, its model — the surface-cue core, the notated-marker spikes, the per-voice cues and
+> their aggregation to the texture, peak-picking and the provenance requirement, the explicit exclusions — its runtime
+> scenarios, its architecture decisions with the alternatives weighed, its quality and testing, its risks, its
+> glossary, its account of what it replaces, and its open items. **The placement readings are those of the earlier
+> members, applied unchanged.** The L0/L1 comparison relocated the graded phrase-boundary profile to L3, as Row 5.37
+> records, so a statement of the primitive's model is RELOCATED to *L3 — The read-off facts*, travelling with Row
+> 6.7(ii) as Rows 21.50 and 22.50 do; a glossary entry saying what one of the model's terms means is tabulated, as
+> Rows 5.278 to 5.296 are, and placed with the model it belongs to. A statement that the boundary is read from the notation alone, never from a key, a
+> chord or a cadence, is RELOCATED to *L1 — Change points, candidates and notated evidence* with Row 5.308, and reads
+> L2-S13 as that row does. The voice-level eligibility test travels with Row 22.59; the margin-class confidence the
+> primitive publishes is RELOCATED to *the uncertainty surface* with Row 6.127(iii); the melodic phrase goes to *the
+> second axis — voice leading* with Row 5.75(ii); a rule of how the primitive is tested or validated is RELOCATED to
+> *the measurement of the analysis*. A description of what exists at the build — the two fermata-scan copies, the
+> consumers of the phrase-end flag, the scope-blind picked set, the marker refinements not yet applied — is
+> QUARANTINED with an audit question, as the second batch's third further reading places a description of a built,
+> dormant mechanism; a plan, a deferral, a build state and a superseded wording are HISTORICAL. A label, a pointer, a
+> defense, a rejected alternative, a rule of the development process, a definition of the project's own vocabulary and
+> the document's account of itself are listed; the terms table's header and separator rows are listed as §6.24 lists
+> them. On the axis, a statement about the primitive reads THE DERIVATION IS SILENT: the derivation states what L2
+> decides, and says nothing of how L3's phrase profile is computed. **No reading is new at this member.**
+>
+> **The WITHHELD homes inside this member**: none — the artifact's `item_4_identities_inside` for position 40 is empty.
+> The check at `tools/audit/decisions/backbone_decisions.json` found ten decisions homed inside these ranges, none
+> among the decisions ruled L2's own — D-477 (lines 64–69), D-484 (83–94), D-481 (188–193), D-485 (205–218), D-476
+> (250–253), D-482 (254–256), D-478 (260–265), D-479 (266–272), D-483 (281–285) and D-480 (303–309). **The SEEN
+> check, made at the homes as member 17's manifest states:** none of the eight homes lies in this member, and none of
+> them is homed in this document.
+
+---
+
+**Row 40.1 — a derived view that inherits the loaded span and requests no extension.**
+
+*Outgoing statement.* "**Bounded-context stance (added 2026-07-02, closing gap-analysis v2 finding A-2, `records/cc/reports/cc_gap_analysis_v2_report.md` — ruled by Cowork):** this primitive is a **derived view** over the Layer-1/Layer-2 outputs: it **inherits the loaded span and requests no extension of its own** (its profile simply ends where the loaded span ends; a consumer wanting boundary evidence beyond the loaded span extends via ITS own bounded-context obligation, and this primitive recomputes over the enlarged span — the standard re-run, per `cowork_bounded_context_design.md` §4)." — the bounded-context stance, above §0 (locator: lines 23–28).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.2 — its published strength a boundary confidence of the margin class.**
+
+*Outgoing statement.* "Its published boundary strength is a **Class-M boundary confidence** under the cross-layer confidence contract (`cowork_confidence_contract.md`: [0,1] per-profile max-normalised salience, comparable within one score's profile only; it participates in no override frame) — closing gap A-3 of the same v2 report for this spec." — the bounded-context stance, above §0 (locator: lines 28–31).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the uncertainty surface* (NOT A LAYER), travelling with Row 6.127(iii).
+
+---
+
+**Row 40.3 — the eligible voice: sounding, visible, on an analysis staff; muted and invisible notes excluded.**
+
+*Outgoing statement.* "| **Eligible voice** | A (staff, voice) line whose notes pass the eligibility test — verified at the as-built source: the note **sounds** (is not muted/silent), is **visible**, and lies on a **staff that takes part in tonal analysis** (Layer 1's staff-eligibility flag). Muted and invisible notes are **excluded** from every per-voice cue profile. "Eligible" everywhere below means exactly this three-flag test; Layer 1 defines the staff flag, this row states the voice-level combination Layer 1 does not. |" — §0 *Terms*, the terms table (locator: line 40).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.59.
+
+---
+
+**Row 40.4 — a phrase boundary: the tick where the surface marks a phrase end, the cue delimiting a punctuation-span.**
+
+*Outgoing statement.* "| **Phrase boundary / boundary tick** | A tick where the surface marks a phrase end (§1). Under the span typology (ARCHITECTURE.md §2.15) this primitive's picked boundary is the **cue that delimits Layer 6's punctuation-span** — the primitive keeps its "phrase-boundary" code name; the grouping *span* it delimits is the punctuation-span, and "phrase [MT]" is reserved for the melodic voice-leading object this primitive does not model. |" — §0 *Terms*, the terms table (locator: line 41).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 21.50.
+
+---
+
+**Row 40.5 — the boundary-strength profile: graded per onset, published as a margin-class confidence.**
+
+*Outgoing statement.* "| **Boundary-strength profile** | The graded per-onset measure of §4 (per-voice, and aggregated to the texture). Its published form is a **Class-M boundary confidence** under `cowork_confidence_contract.md`. |" — §0 *Terms*, the terms table (locator: line 42).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.6 — the cadence gate: a cadence candidate admitted only at a phrase boundary.**
+
+*Outgoing statement.* "| **The cadence gate** | The function layer's rule admitting a cadence candidate only at a phrase boundary (`cowork_layer5_function_design.md` §5.2/§11) — this primitive's main consumer. |" — §0 *Terms*, the terms table (locator: line 43).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 4.16.
+
+---
+
+**Row 40.7 — a phrase boundary is the tick where a phrase ends.**
+
+*Outgoing statement.* "A **phrase boundary** is a tick where a musical phrase **ends** (the next phrase begins at the following sounding onset, which this primitive does not separately mark)." — §1 *Purpose* (locator: lines 49–50).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.8 — from the notated surface alone, a graded profile, the picked ticks and a per-region flag.**
+
+*Outgoing statement.* "This primitive computes, from the notated surface alone, a **graded boundary-strength profile** over the score — a per-onset measure of how strongly the surface evidence marks a phrase end — and from it the **picked boundary ticks** and the derived per-region flag **"this region ends a phrase."**" — §1 *Purpose* (locator: lines 50–52).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.9 — a graded strength, so a consumer reads a boundary's confidence.**
+
+*Outgoing statement.* "It emits a *graded strength*, not only a yes/no, so a consumer can read the confidence of a boundary, not just its presence." — §1 *Purpose* (locator: lines 55–56).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.10 — computed per voice and aggregated to the texture.**
+
+*Outgoing statement.* "The strength is computed **per voice and aggregated to the whole texture** (§4.3), so the primitive yields **both** each voice's own phrasing and the texture-level phrase boundaries the cadence gate consumes." — §1 *Purpose* (locator: lines 56–58).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.11 — one owned primitive, for any instrumentation, replacing the scattered fermata-only computation.**
+
+*Outgoing statement.* "It replaces today's scattered, duplicated, fermata-only computation with one owned primitive that works for **any instrumentation**, not only chorales." — §1 *Purpose* (locator: lines 58–59). Two claims: (i) it replaces the scattered, duplicated computation; (ii) it works for any instrumentation, not only chorales.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a plan. (ii) **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.12 — the picked boundary delimits the punctuation-span; the melodic phrase belongs to the voice-leading axis.**
+
+*Outgoing statement.* "*(Typology role, §0: the picked boundary is the delimiting cue of Layer 6's **punctuation-span**; "phrase [MT]" — the melodic phrase — is a voice-leading-axis object this primitive does not model." — §1 *Purpose* (locator: lines 59–61). Two claims: (i) the picked boundary is the cue delimiting the punctuation-span; (ii) the melodic phrase is an object of the voice-leading axis, not modeled here.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L3 — The read-off facts*, travelling with Row 21.50. (ii) **RELOCATED** to *the second axis — voice leading*, travelling with Row 5.75(ii).
+
+---
+
+**Row 40.13 — notation only: a phrase boundary is read from the written surface, never from a key, a chord or a cadence.**
+
+*Outgoing statement.* "**Notation-only — key-, chord-, and function-agnostic.** A phrase boundary is read from the written surface (rests, durations, pitch intervals, metric position, annotations, barlines), never from a resolved key, a chord reading, or a cadence." — §2 *Constraints* (locator: lines 64–66).
+
+*Derived statements that speak to it.* L2-S13.
+
+*Current-text axis.* L2-S13: **AGREES** — as at Row 5.308.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L1 — Change points, candidates and notated evidence*, travelling with Row 5.308.
+
+---
+
+**Row 40.14 — cadence-based phrase refinement stays downstream.**
+
+*Outgoing statement.* "Cadence-based phrase refinement therefore stays a **function-layer** concern, downstream of this primitive (§6-D3)." — §2 *Constraints* (locator: lines 67–68).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts* — the phrase reading and the cadence are both L3's.
+
+---
+
+**Row 40.15 — a surface-only primitive misses boundaries marked only harmonically.**
+
+*Outgoing statement.* "A known consequence (accepted): a surface-only primitive **systematically misses boundaries marked only harmonically** — a cadence with no surface gap — which the function layer recovers downstream." — §2 *Constraints* (locator: lines 68–69).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.16 — the other markers and the surface cues extend the primitive beyond the chorale's fermata.**
+
+*Outgoing statement.* "The fermata is the reliable phrase marker *in chorales* but is not universal; the surface-cue model and the other notated markers extend the primitive to any texture." — §2 *Constraints* (locator: lines 70–72).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.17 — a small notation-only inference, not a pure fact.**
+
+*Outgoing statement.* "**Graded model with deferred constants (the firewall, §0).** The primitive is a small notation-only inference, not a pure deterministic fact." — §2 *Constraints* (locator: lines 73–74).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.18 — the markers are facts; the surface strength is a computed profile with deferred constants.**
+
+*Outgoing statement.* "Its two parts have different character, stated honestly: the **notated markers** (fermata, structural barline, all-voice rest) are **deterministic facts**; the **surface-cue boundary strength** is a **computed profile** whose combination weights and peak threshold are **precision-phase constants**." — §2 *Constraints* (locator: lines 74–76).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.19 — the mechanism fixed here, the constants tuned later.**
+
+*Outgoing statement.* "This document fixes the **mechanism** (which cues, how combined, how peaks are picked); the constants are tuned later." — §2 *Constraints* (locator: lines 76–77).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.20 — no key, chord or function ever enters.**
+
+*Outgoing statement.* "No key/chord/function ever enters." — §2 *Constraints* (locator: line 77).
+
+*Derived statements that speak to it.* L2-S13.
+
+*Current-text axis.* L2-S13: **AGREES** — as at Row 5.308.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L1 — Change points, candidates and notated evidence*, travelling with Row 5.308.
+
+---
+
+**Row 40.21 — one implementation, retiring the two copies.**
+
+*Outgoing statement.* "**One owner, no duplication.** Exactly one implementation, consumed everywhere; the de-duplication step retires the two hand-synced copies that exist today into it." — §2 *Constraints* (locator: lines 78–79).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.22 — retiring the duplicated scans changes no output.**
+
+*Outgoing statement.* "**The marker-only path is byte-identical; the graded model is gated.** Retiring the duplicated fermata scans into one primitive changes no output." — §2 *Constraints* (locator: lines 80–81).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build step's stated property.
+
+---
+
+**Row 40.23 — the graded step is measured against the corpus gate before it lands.**
+
+*Outgoing statement.* "Adding the surface-cue strength and the new notated markers *may* change which ticks are boundaries; that change is measured against the corpus two-tier BIR gate on both presets (§0) before it lands (§7)." — §2 *Constraints* (locator: lines 81–82).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.156.
+
+---
+
+**Row 40.24 — a derived view: it inherits the loaded span.**
+
+*Outgoing statement.* "**A DERIVED VIEW: it inherits the loaded span and requests no extension of its own.**" — §2 *Constraints* (locator: line 83).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.25 — it asks for no more music.**
+
+*Outgoing statement.* "Where only a stretch of the score is loaded, this primitive does **not** ask for more music." — §2 *Constraints* (locator: lines 83–84).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.26 — its profile ends where the loaded span ends.**
+
+*Outgoing statement.* "Its profile simply **ends where the loaded span ends**." — §2 *Constraints* (locator: lines 84–85).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.27 — a consumer wanting more extends the span, and the primitive recomputes.**
+
+*Outgoing statement.* "A consumer that wants boundary evidence beyond that stretch extends the span through **its own** bounded-context obligation, and this primitive then **recomputes over the enlarged span** — the standard re-run." — §2 *Constraints* (locator: lines 85–86).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.28 — the published strength is max-normalized, comparable within one piece's profile, in no override frame.**
+
+*Outgoing statement.* "**Its published boundary strength is a per-profile MAX-NORMALISED confidence, comparable within ONE score's profile only, and it participates in NO override frame.**" — §2 *Constraints* (locator: lines 89–90).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the uncertainty surface* (NOT A LAYER), travelling with Row 6.127(iii).
+
+---
+
+**Row 40.29 — it ranks ticks inside one piece and overrides no other layer.**
+
+*Outgoing statement.* "The number on the wire is a boundary confidence in the cross-layer contract's Class-M sense: it ranks ticks inside one score's own profile and says nothing across scores, and it never overrides another layer's answer." — §2 *Constraints* (locator: lines 90–92).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the uncertainty surface* (NOT A LAYER), travelling with Row 6.127(iii).
+
+---
+
+**Row 40.30 — what it consumes: the note model, the annotations, rests, barlines, marks, tempo markings and signature changes.**
+
+*Outgoing statement.* "**Consumes** (all notation, defined in earlier layers): from Layer 1, the note model — each note's **voice, pitch, onset, and duration** (a note's **offset** = onset + duration), and the **eligible** voices that take part in analysis; the score's **annotations** (fermatas), **rests**, and **barlines** as read from the engraved notation; the **breath marks** and **caesuras**; the **tempo markings** (sudden/subito tempo changes and written ritardandos); and **mid-score key-signature changes** (the *engraved signature event*, not the inferred key)." — §3 *Context & scope (external view)* (locator: lines 97–101).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.31 — and from the slicing, the empty slices.**
+
+*Outgoing statement.* "From Layer 2, the **empty slices** (maximal spans where every eligible voice rests) — the substrate of the all-voice-rest marker and the aggregation limiting case." — §3 *Context & scope (external view)* (locator: lines 101–102).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.32 — no top-voice primitive consumed.**
+
+*Outgoing statement.* "*(The pitch-interval cue runs per voice on each voice's own line — §4.3 — so this primitive does not consume any top-voice primitive." — §3 *Context & scope (external view)* (locator: lines 102–103).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.33 — the top voice at most an optional soft cue for the cadence test.**
+
+*Outgoing statement.* "The top voice is at most an *optional* soft cue for the function layer's cadence test — not a prerequisite (the highest voice is not reliably the melody) and not used here; see the function-layer spec, `cowork_layer5_function_design.md`.)*" — §3 *Context & scope (external view)* (locator: lines 103–105).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 4.10.
+
+---
+
+**Row 40.34 — what it produces: the per-voice and texture profiles, the picked ticks and the flag.**
+
+*Outgoing statement.* "**Produces:** the **per-voice boundary-strength profiles** (one per eligible voice); the **texture boundary-strength profile** (their per-onset aggregate); the **picked boundary ticks** (the peaks of the texture profile, selected per §4.4); and the derived **"ends a phrase"** flag for a region (true when a picked boundary tick falls within the region)." — §3 *Context & scope (external view)* (locator: lines 107–110).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.35 — all notation facts, with no judgment of key, chord or function.**
+
+*Outgoing statement.* "All are notation facts carrying no judgement of key, chord, or function." — §3 *Context & scope (external view)* (locator: lines 109–110).
+
+*Derived statements that speak to it.* L2-S13.
+
+*Current-text axis.* L2-S13: **AGREES** — as at Row 5.308.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L1 — Change points, candidates and notated evidence*, travelling with Row 5.308.
+
+---
+
+**Row 40.36 — a surface-cue core plus marker spikes, then peaks picked.**
+
+*Outgoing statement.* "The boundary-strength profile is built from a **surface-cue core** plus **deterministic notated-marker spikes**, then **peaks are picked**." — §4 *The model (the rules)* (locator: lines 116–117).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.37 — each component a stated mechanism, the constants deferred.**
+
+*Outgoing statement.* "Each part is a stated mechanism; the named numeric constants are precision-phase." — §4 *The model (the rules)* (locator: line 117).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.38 — three cue profiles over the piece.**
+
+*Outgoing statement.* "Three independent **cue profiles** are computed over the score, each yielding a per-onset strength:" — §4.1 *The surface-cue core* (locator: line 120).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.39 — the gap profile.**
+
+*Outgoing statement.* "the **gap profile** — the offset-to-onset interval (the silence/separation) between successive events;" — §4.1 *The surface-cue core* (locator: line 121).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.40 — the inter-onset profile.**
+
+*Outgoing statement.* "the **inter-onset profile** — the time between successive attacks;" — §4.1 *The surface-cue core* (locator: line 122).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.41 — the pitch-interval profile, per voice.**
+
+*Outgoing statement.* "the **pitch-interval profile** — the absolute interval (in semitones) between successive notes **of a single voice's line** (computed per voice — see §4.3)." — §4.1 *The surface-cue core* (locator: lines 123–124).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.42 — the local-change rule for each profile's strength.**
+
+*Outgoing statement.* "Each profile's per-onset strength is computed by the standard **local-change rule** — the boundary-strength formulation of Cambouropoulos's **Local Boundary Detection Model (LBDM)** family, per the methods catalog (`cowork_phrase_boundary_methods.md`): for a value `x` at a point with left neighbour `x_prev` and right neighbour `x_next`, define the two **change-ratios** — left `= |x_prev − x| / (x_prev + x)` and right `= |x − x_next| / (x + x_next)` — and the per-point strength is `x · (left + right)`." — §4.1 *The surface-cue core* (locator: lines 126–130).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.43 — the strength rises with the change and with the value's size.**
+
+*Outgoing statement.* "So the strength rises with **both** (a) the **degree of local change** (the value differing from its neighbours, captured by the change-ratios) **and** (b) the **size** of the value itself (the leading `x` — a large gap is a stronger boundary than a small one, even where both are local changes)." — §4.1 *The surface-cue core* (locator: lines 130–132).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.44 — each profile max-normalized to one common range.**
+
+*Outgoing statement.* "Each of the three profiles is then **normalised by dividing by its own per-score maximum** (max-normalisation), placing all three on a common [0,1] scale so they are comparable." — §4.1 *The surface-cue core* (locator: lines 132–134).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.45 — the combined strength a gap-dominant weighted sum.**
+
+*Outgoing statement.* "The **combined surface strength** at a point is the **weighted sum** of the three normalised profiles, with the **gap profile weighted highest** (the gap/rest is by far the most precise surface cue — the methods-catalog ranking, `cowork_phrase_boundary_methods.md`; the inter-onset next; the pitch-interval least)." — §4.1 *The surface-cue core* (locator: lines 136–138).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.46 — the three weights deferred, the mechanism fixed.**
+
+*Outgoing statement.* "The three weights are **precision-phase constants**; the mechanism (a normalised, gap-dominant weighted sum of the three local-change profiles) is fixed here." — §4.1 *The surface-cue core* (locator: lines 138–139).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.47 — each marker adds a fixed spike above any possible surface peak.**
+
+*Outgoing statement.* "The following are **deterministic, high-precision notated boundary signals**; each contributes — **after** the surface-cue core (§4.1) is combined and normalised — a **fixed additive spike to the combined profile at its tick, of a magnitude set above the maximum possible surface-cue strength** (the theoretical maximum — the number of eligible voices multiplied by the sum of the three cue weights, since every voice's every cue could peak at once; the spike default is **1.5× that**, a precision-phase constant — strictly above, so a *coincident* surface peak that reaches the max does not merely tie it), so the marker **exceeds any surface-cue peak** and dominates wherever it occurs:" — §4.2 *The deterministic notated-marker spikes* (locator: lines 142–147).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.48 — a fermata on an eligible voice.**
+
+*Outgoing statement.* "a **fermata** on an eligible voice;" — §4.2 *The deterministic notated-marker spikes* (locator: line 148).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.49 — a breath mark or a caesura on an eligible voice.**
+
+*Outgoing statement.* "a **breath mark** (the comma phrasing symbol) or a **caesura** (the "grand pause" / railroad-tracks symbol) on an eligible voice — explicit composer-notated phrase / break signals, the same kind of high-precision channel as the fermata;" — §4.2 *The deterministic notated-marker spikes* (locator: lines 149–151).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.50 — a double, final or repeat barline.**
+
+*Outgoing statement.* "a **double, final, or repeat barline** (a structural division — treated, for this primitive, as a phrase boundary);" — §4.2 *The deterministic notated-marker spikes* (locator: line 152).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.51 — a mid-piece key-signature change, read as the written signature.**
+
+*Outgoing statement.* "a **mid-score key-signature change** — read as the **engraved signature event** (a new set of accidentals written on the staff), a notational structural-boundary marker, **NOT the inferred key** (so it adds no key/harmony dependency and no cycle with the downstream key layer — the written signature is notation, not the key it implies)." — §4.2 *The deterministic notated-marker spikes* (locator: lines 153–156).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.52 — a sudden tempo change, or a written ritardando into an arrival.**
+
+*Outgoing statement.* "a **sudden (subito) tempo change** — a new tempo marking reached with **no gradual transition** (a structural section/phrase boundary, spiked at the change), or a **written ritardando / rallentando** — a notated slowing into an arrival (spiked at the arrival it leads to)." — §4.2 *The deterministic notated-marker spikes* (locator: lines 157–159).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.53 — limited to sudden or notated changes; rubato is no boundary.**
+
+*Outgoing statement.* "Limited to **sudden/notated** tempo changes; expressive mid-phrase rubato is not a boundary.)*" — §4.2 *The deterministic notated-marker spikes* (locator: lines 160–161).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.54 — the onset of a maximal all-voice rest at least a minimum length.**
+
+*Outgoing statement.* "the **onset of a maximal all-voice-rest span** — a span in which every eligible voice rests, that cannot be extended in either direction without an eligible voice sounding (a Layer-2 empty slice), whose duration is at least a precision-phase **minimum-silence constant**." — §4.2 *The deterministic notated-marker spikes* (locator: lines 162–164).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.55 — the cues are computed per eligible voice.**
+
+*Outgoing statement.* "The local-change cues (§4.1) are defined over a single melodic line, so they are computed **per eligible voice** — each voice gets its own **gap, inter-onset, and pitch-interval** profiles over that voice's own note sequence." — §4.3 *Per-voice cues, aggregated to the texture* (locator: lines 167–168).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.56 — so the pitch cue applies to every voice.**
+
+*Outgoing statement.* "So the **pitch-interval cue applies to every voice**, not only the top one, and the gap/inter-onset cues read each voice's own rests and lengthenings." — §4.3 *Per-voice cues, aggregated to the texture* (locator: lines 168–170).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.57 — the texture strength is the sum of the per-voice strengths per onset.**
+
+*Outgoing statement.* "The per-voice strengths are then **aggregated, per onset, into a texture boundary-strength**: the texture strength at an onset is the **sum of the per-voice strengths at that onset** — so a point where **many voices phrase together** (coincident rests, leaps, or lengthenings) scores high, because more voices contribute more terms, while a boundary in a single inner voice scores low." — §4.3 *Per-voice cues, aggregated to the texture* (locator: lines 172–175).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.58 — the all-voice rest is the limiting case.**
+
+*Outgoing statement.* "The whole-texture all-voice rest is the **limiting case** where every voice's gap profile peaks at once." — §4.3 *Per-voice cues, aggregated to the texture* (locator: lines 175–176).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.59 — voices' events merged within a coincidence window.**
+
+*Outgoing statement.* "Because voice onsets do not always align exactly, two voices' events are merged into the **same onset** for the sum when they fall within a **coincidence window `τ`** (a precision-phase constant absorbing notational near-alignment — in the chorale convention all voices reach the phrase-final note together, the easy case)." — §4.3 *Per-voice cues, aggregated to the texture* (locator: lines 176–178).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.60 — the mechanism fixed, the window and weight deferred.**
+
+*Outgoing statement.* "The mechanism — per-voice profiles summed per (τ-merged) onset — is fixed here; `τ` and an **optional explicit coincidence weight** (boosting onsets where several voices peak at once beyond the plain sum) are precision-phase constants." — §4.3 *Per-voice cues, aggregated to the texture* (locator: lines 178–180).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.61 — both the per-voice and the texture strengths exposed.**
+
+*Outgoing statement.* "The primitive **exposes both**: the **per-voice boundary strengths** (each voice's own phrasing) and the **texture boundary strength** (the aggregate)." — §4.3 *Per-voice cues, aggregated to the texture* (locator: lines 182–183).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.62 — peak-picking runs on the texture profile; the per-voice strengths are available.**
+
+*Outgoing statement.* "The peak-picking (§4.4) that feeds the function layer's cadence gate runs on the **texture** profile; the per-voice strengths are available for any consumer that wants per-line phrasing." — §4.3 *Per-voice cues, aggregated to the texture* (locator: lines 183–184).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.63 — the markers spike the texture profile.**
+
+*Outgoing statement.* "(The deterministic markers of §4.2 spike the **texture** profile.)" — §4.3 *Per-voice cues, aggregated to the texture* (locator: lines 184–185).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.64 — the picked set: the surface peaks together with every marker, unconditionally.**
+
+*Outgoing statement.* "The picked-boundary set is **the surface-cue peaks UNION every notated marker** — because the §4.2 markers are **deterministic facts** (a fermata/barline/etc. *is* a phrase boundary), they are emitted **unconditionally**, not subjected to the threshold; only the **surface-cue** strength is peak-picked." — §4.4 *Peak-picking* (locator: lines 188–190).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.65 — the earlier wording dropped two adjacent equal markers.**
+
+*Outgoing statement.* "*(As-built realisation, ratified 2026-06-26: the earlier wording "peak-pick the combined profile" put the markers through the local-maximum test, which a strict greater-than rule drops for two **adjacent equal-height markers** — e.g. a final fermata abutting the closing barline." — §4.4 *Peak-picking* (locator: lines 190–192).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a superseded design and its defect.
+
+---
+
+**Row 40.66 — a surface tick picked at a local maximum above the mean plus k deviations.**
+
+*Outgoing statement.* "**Surface peak-picking:** a surface tick is picked when its texture combined strength (§4.3) is **both** a **local maximum** (greater than its two immediate onset-neighbours) **and** above an **adaptive threshold** — the **mean of the whole score's texture combined strength profile plus `k` standard deviations** (the "Simple Picker" of the methods catalog, `cowork_phrase_boundary_methods.md`; whole profile, not a sliding window; `k` precision-phase)." — §4.4 *Peak-picking* (locator: lines 194–197).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.67 — the marker spikes still dominate the exposed profile.**
+
+*Outgoing statement.* "(The marker spikes still sit at/above any surface peak in the exposed strength profile, so a downstream consumer reading the strength sees them dominate; the *picking* just no longer gates them.)" — §4.4 *Peak-picking* (locator: lines 197–199).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.68 — the boundary tick is where the phrase's sounding ends.**
+
+*Outgoing statement.* "The **boundary tick** of a picked peak is the onset at which the phrase's sounding ends: the fermata or last-sounding note's tick, the structural-barline tick, or the onset of the all-voice-rest span." — §4.4 *Peak-picking* (locator: lines 199–200).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.69 — a region ends a phrase when a picked tick falls in its span.**
+
+*Outgoing statement.* "A region **ends a phrase** when a picked boundary tick falls within its half-open tick span." — §4.4 *Peak-picking* (locator: lines 200–201).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.70 — the last region ends a phrase automatically.**
+
+*Outgoing statement.* "(Because the final tick of the score carries an end-of-piece boundary — the score's last barline — the last region ends a phrase automatically; no separate last-region rule is needed.)" — §4.4 *Peak-picking* (locator: lines 201–203).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.71 — every picked boundary carries which cue fired, and at what scope.**
+
+*Outgoing statement.* "A picked boundary — texture **and** per-voice — carries its **provenance**: which cue or marker produced it, and whether it fired **globally** or **per voice** (and if per voice, which voices, and how many coincided)." — §4.4 *Peak-picking* (locator: lines 206–208).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.72 — the picked set is scope-blind today.**
+
+*Outgoing statement.* "**The picked set is SCOPE-BLIND today**, which is the defect this requirement names: a marker written on one voice — a breath mark — is spiked onto the texture profile and thereafter reads exactly like a marker that applies to the whole ensemble, so a downstream consumer (the punctuation-span annotation) cannot tell a **local breath** from a **global barline**." — §4.4 *Peak-picking* (locator: lines 208–211).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the phrase-boundary primitive's picked set record which cue or marker fired, and at what scope, at the current commit?
+
+---
+
+**Row 40.73 — a per-voice marker should reach the texture through the voice-coincidence aggregation.**
+
+*Outgoing statement.* "*Why it is a requirement rather than a preference:* dropping the scope is information loss (#12), and the principled form is already in this section — a per-voice marker should reach the texture profile through the **same voice-coincidence aggregation** the graded cues use (§4.3), not by being spiked onto it." — §4.4 *Peak-picking* (locator: lines 211–213).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.74 — chorale-inert by construction, and to be validated on orchestral and contrapuntal textures.**
+
+*Outgoing statement.* "It is **chorale-inert by construction** — in the chorale convention every voice holds together, so global and per-voice coincide — and it matters for orchestral and contrapuntal textures, where it is to be validated (§8)." — §4.4 *Peak-picking* (locator: lines 214–216). Two claims: (i) the requirement is inert on chorales by construction; (ii) it is to be validated on orchestral and contrapuntal textures.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii). (ii) **RELOCATED** to *the measurement of the analysis* (NOT A LAYER), travelling with Row 5.273.
+
+---
+
+**Row 40.75 — not built, until the inference phase opens.**
+
+*Outgoing statement.* "**It is NOT BUILT**, by the standing rule that a proper-layer refinement waits for the inference phase to open; §11 carries it as an open item and this is the requirement that item binds a future build to." — §4.4 *Peak-picking* (locator: lines 216–218).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 40.76 — not a boundary signal: cadential closure, harmonic-rhythm change, an inferred key change.**
+
+*Outgoing statement.* "**Not** a boundary signal here: **cadential closure** (a dominant-to-tonic arrival), harmonic-rhythm change, and any **inferred key change** (the modulation a later layer detects)." — §4.5 *Explicitly excluded* (locator: lines 221–222).
+
+*Derived statements that speak to it.* L2-S13.
+
+*Current-text axis.* L2-S13: **AGREES** — as at Row 5.308.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L1 — Change points, candidates and notated evidence*, travelling with Row 5.308.
+
+---
+
+**Row 40.77 — the written signature change admissible; the inferred key not.**
+
+*Outgoing statement.* "**This is distinct from the admissible §4.2 marker: a written *key-signature change* is a notational event read off the staff (notation **in**); the *inferred key* and its changes are **out**.**" — §4.5 *Explicitly excluded* (locator: lines 224–225).
+
+*Derived statements that speak to it.* L2-S13.
+
+*Current-text axis.* L2-S13: **AGREES** — as at Row 5.308.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L1 — Change points, candidates and notated evidence*, travelling with Row 5.308.
+
+---
+
+**Row 40.78 — the global regularizers and the surprisal cue deferred.**
+
+*Outgoing statement.* "**Deferred** (named, not built): the **global regularisers** — a phrase-length prior and metric-parallelism bias (they raise accuracy but add a corpus-specific constant and a whole-score optimisation pass), and the **information-content / surprisal** cue (it matches rule systems but needs a trained statistical model)." — §4.5 *Explicitly excluded* (locator: lines 225–228).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.79 — both open items, not the first build.**
+
+*Outgoing statement.* "Both are §11 open items, not part of the first build." — §4.5 *Explicitly excluded* (locator: line 228).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.80 — a chorale phrase end: a strong gap peak and the fermata spike.**
+
+*Outgoing statement.* "**A chorale phrase end.** All voices reach a fermata note together: the all-voice-rest/long-note gives a strong gap-profile peak *and* the fermata marker spikes — a high-strength picked boundary." — §5 *Runtime view (scenarios)* (locator: lines 231–232).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.81 — an instrumental phrase ended by a rest: a boundary without a fermata.**
+
+*Outgoing statement.* "**An instrumental phrase ended by a rest.** All eligible voices rest for a bar between phrases with no fermata: the all-voice-rest marker spikes and the gap profile peaks — a boundary, even absent a fermata." — §5 *Runtime view (scenarios)* (locator: lines 233–234).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.82 — a phrase end by lengthening: a moderate boundary.**
+
+*Outgoing statement.* "**A phrase end marked by lengthening, no rest.** The melody reaches a long note among shorter ones with no silence: the inter-onset profile peaks at the long note (agogic lengthening) — a moderate-strength boundary the binary-union model would have missed." — §5 *Runtime view (scenarios)* (locator: lines 235–237).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.83 — a section break: a double barline.**
+
+*Outgoing statement.* "**A section break.** A double barline spikes the profile — a boundary." — §5 *Runtime view (scenarios)* (locator: line 238).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.84 — a passing leap: no boundary.**
+
+*Outgoing statement.* "**A passing leap (non-boundary).** A single large melodic leap mid-phrase raises only the (low-weighted, noisy) pitch-interval profile and does not clear the adaptive threshold alone — no boundary." — §5 *Runtime view (scenarios)* (locator: lines 239–241).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.85 — one voice phrases while the others continue: a per-voice boundary, no texture boundary.**
+
+*Outgoing statement.* "**One voice phrases while the others continue (per-voice, not texture).** In a contrapuntal texture a single voice rests or leaps at a phrase end while the others play on: that voice's per-voice strength peaks, but the texture aggregate stays low (no coincidence) — a per-voice boundary is reported, the texture boundary is not." — §5 *Runtime view (scenarios)* (locator: lines 242–244).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.86 — the cadence gate sees no whole-texture phrase end there.**
+
+*Outgoing statement.* "The cadence gate, reading the texture profile, correctly sees no whole-texture phrase end there." — §5 *Runtime view (scenarios)* (locator: lines 244–245).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.87 — a purely harmonic cadence: no boundary, by design.**
+
+*Outgoing statement.* "**A purely harmonic cadence with no surface gap (a miss, by design).** No surface cue fires; the primitive emits no boundary there." — §5 *Runtime view (scenarios)* (locator: lines 246–247).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.88 — recovered from the cadence downstream.**
+
+*Outgoing statement.* "The function layer recovers it from the cadence downstream (§2)." — §5 *Runtime view (scenarios)* (locator: line 247).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.89 — owner: the notation-derived views.**
+
+*Outgoing statement.* "**D1 — Owner: Architectural Layer 1.5 (the notation-derived views).**" — §6 *Architecture decisions* (locator: line 250).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.90 — a notation-derived view like the bass, top-voice and spelling views.**
+
+*Outgoing statement.* "The primitive is a notation-derived view, the same kind as the bass, top-voice, and spelling views, reading the same notated surface." — §6 *Architecture decisions* (locator: lines 250–251).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.91 — one unified primitive replaces the two duplicated scans.**
+
+*Outgoing statement.* "**D2 — One unified primitive replaces the two duplicated fermata scans.**" — §6 *Architecture decisions* (locator: line 254).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.92 — the two copies retired into the owned primitive.**
+
+*Outgoing statement.* "The fermata logic exists today in two hand-synchronised copies; they are retired into the single owned primitive and every consumer re-points at it." — §6 *Architecture decisions* (locator: lines 254–256).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.93 — the retirement byte-identical.**
+
+*Outgoing statement.* "The retirement is byte-identical." — §6 *Architecture decisions* (locator: lines 255–256).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build step's stated property.
+
+---
+
+**Row 40.94 — notation only; cadential closure stays downstream.**
+
+*Outgoing statement.* "**D3 — Notation-only; cadential closure stays in the function layer.**" — §6 *Architecture decisions* (locator: line 257).
+
+*Derived statements that speak to it.* L2-S13.
+
+*Current-text axis.* L2-S13: **AGREES** — as at Row 5.308.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L1 — Change points, candidates and notated evidence*, travelling with Row 5.308.
+
+---
+
+**Row 40.95 — the primitive reads only the surface, to stay acyclic.**
+
+*Outgoing statement.* "To keep the dependency acyclic (cadence consumes phrase boundaries), the primitive reads only the surface, never cadence/function." — §6 *Architecture decisions* (locator: lines 257–258).
+
+*Derived statements that speak to it.* L2-S13.
+
+*Current-text axis.* L2-S13: **AGREES** — as at Row 5.308.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L1 — Change points, candidates and notated evidence*, travelling with Row 5.308.
+
+---
+
+**Row 40.96 — a function-level phrase refinement is a downstream combination.**
+
+*Outgoing statement.* "A function-level phrase refinement, if wanted, is a downstream combination in the function layer, not part of this primitive." — §6 *Architecture decisions* (locator: lines 258–259).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts* — the phrase reading and the cadence are both L3's.
+
+---
+
+**Row 40.97 — a graded model, not a binary union.**
+
+*Outgoing statement.* "**D4 — A graded boundary-strength model, not a binary union (user-ratified 2026-06-26).**" — §6 *Architecture decisions* (locator: line 260).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.98 — the boundary a peak in a continuous profile.**
+
+*Outgoing statement.* "The boundary is a peak in a continuous strength profile, not the OR of a few binary signals." — §6 *Architecture decisions* (locator: lines 260–261).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.99 — per-voice cues aggregated to the texture.**
+
+*Outgoing statement.* "**D5 — Per-voice cues aggregated to the texture (both per-voice and polyphonic), not a top-voice/whole-texture reduction.**" — §6 *Architecture decisions* (locator: lines 266–267).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.100 — the cues run per voice and aggregate by coincidence, exposing both.**
+
+*Outgoing statement.* "The cues run **per eligible voice** and aggregate by **voice-coincidence** into the texture strength, exposing **both** the per-voice boundaries and the texture boundaries (§4.3)." — §6 *Architecture decisions* (locator: lines 267–268).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.101 — the aggregation validated on the project's own corpus.**
+
+*Outgoing statement.* "Since the literature's cues are validated only monophonically, the aggregation is validated on our own corpus (§7)." — §6 *Architecture decisions* (locator: lines 271–272).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 22.50(ii).
+
+---
+
+**Row 40.102 — generalize beyond the fermata.**
+
+*Outgoing statement.* "**D6 — Generalise beyond the fermata.**" — §6 *Architecture decisions* (locator: line 273).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.103 — the surface cues and the rest and barline markers extend it to any instrumentation.**
+
+*Outgoing statement.* "The fermata alone is chorale-specific; the surface-cue model + the rest/barline markers extend the primitive to any instrumentation." — §6 *Architecture decisions* (locator: lines 273–274).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.104 — oracle tests of the cues and the picking on constructed cases.**
+
+*Outgoing statement.* "**Oracle tests** of the cues and the picking, on constructed cases: a rest yields a high-strength peak; a long note among short ones yields an inter-onset peak; a fermata and a double/final/repeat barline yield marker spikes; a single mid-phrase leap does **not** clear the threshold alone; a region containing a picked boundary reports "ends a phrase."" — §7 *Quality & testing* (locator: lines 278–280).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the measurement of the analysis* (NOT A LAYER), travelling with Row 5.260.
+
+---
+
+**Row 40.105 — validation against the analysts' own phrase marks, an independent ground truth.**
+
+*Outgoing statement.* "**Validation on the chorale corpus** (the per-voice aggregation, D5) — the picked texture boundaries are checked against the corpus's **analyst-annotated phrase markers** (the DCML corpora's `{}` / `phraseend` annotations, parsed corpus-wide since the TSV-oracle infrastructure landed) — an **independent** ground truth: the markers are supplied by the human analyst, not derived from fermatas, so validating the fermata marker against them is not circular." — §7 *Quality & testing* (locator: lines 281–285).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 40.106 — a fermata-derived phrase list is inadmissible as ground truth.**
+
+*Outgoing statement.* "A fermata-derived phrase list would be inadmissible as ground truth here, for exactly that circularity." — §7 *Quality & testing* (locator: lines 284–285).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 40.107 — a per-voice case is checked to yield a per-voice boundary but a low texture strength.**
+
+*Outgoing statement.* "A per-voice case (one voice phrasing while others continue) is checked to score a per-voice boundary but a low *texture* strength." — §7 *Quality & testing* (locator: lines 285–286).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 40.108 — the de-duplication step gated byte-identical.**
+
+*Outgoing statement.* "**The de-duplication step is gated byte-identical** (corpus and suites unchanged — it only unifies existing logic)." — §7 *Quality & testing* (locator: line 287).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.60.
+
+---
+
+**Row 40.109 — the graded step measured against the corpus gate on both presets.**
+
+*Outgoing statement.* "**The graded-model step is measured against the corpus two-tier gate on both presets.**" — §7 *Quality & testing* (locator: line 288).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.156.
+
+---
+
+**Row 40.110 — the live consumers enumerated before the change is treated as moving output.**
+
+*Outgoing statement.* "A caveat to verify at build: the existing "ends a phrase" consumers may all be dormant/gated, in which case the new strength is byte-identical on production *today* and becomes load-bearing only when the function layer engages; the build enumerates the live consumers before treating the change as output-moving (§11-2, blocking)." — §7 *Quality & testing* (locator: lines 288–291).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.111 — polyphony the weakest-supported area, to be validated on the project's corpus.**
+
+*Outgoing statement.* "**Polyphony is the weakest-supported area** — the cues are validated monophonically; the per-voice aggregation (D5) is engineering on top, and must be validated on our corpus, not assumed." — §8 *Risks & technical debt* (locator: lines 294–295).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 22.50(ii).
+
+---
+
+**Row 40.112 — a surface-only primitive misses purely harmonic boundaries.**
+
+*Outgoing statement.* "**A surface-only primitive misses purely-harmonic boundaries** — accepted by design (§2); the function layer recovers them." — §8 *Risks & technical debt* (locator: lines 296–297).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.113 — so it should not be expected to match systems that exploit tonal structure.**
+
+*Outgoing statement.* "So this primitive should not be expected to reach the accuracy of systems that exploit tonal structure." — §8 *Risks & technical debt* (locator: line 297).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.114 — the weights and threshold left at defaults until tuned.**
+
+*Outgoing statement.* "**The weights and the peak threshold are precision-phase constants** — until tuned, the build leaves them at stated defaults (gap-dominant weights; a peak threshold of mean + k·SD)." — §8 *Risks & technical debt* (locator: lines 298–299).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.115 — a small inference, the markers deterministic and the surface strength not.**
+
+*Outgoing statement.* "**The primitive is a small inference, not a pure fact** — a deliberate character change (§2); the notated markers stay deterministic, the surface strength does not." — §8 *Risks & technical debt* (locator: lines 300–301).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.116 — output movement at the graded step must clear the gate.**
+
+*Outgoing statement.* "**Output movement at the graded step** must clear the gate (or be shown byte-identical via dormant consumers, §11-2)." — §8 *Risks & technical debt* (locator: line 302).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.156.
+
+---
+
+**Row 40.117 — the primitive is not an accuracy requirement but load-bearing for the cadence mechanism.**
+
+*Outgoing statement.* "So this primitive is **not** an accuracy requirement — it is load-bearing for *our* cadence mechanism (a means to key/function), a deliberate bet for an explainable, decomposed pipeline." — §8 *Risks & technical debt* (locator: lines 305–307).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.118 — an implicit fallback if the explicit path proves hard.**
+
+*Outgoing statement.* "If the explicit phrase/cadence path proves hard, there is a proven implicit fallback (phrase-alignment via stable key runs)." — §8 *Risks & technical debt* (locator: lines 308–309).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.119 — glossary: a phrase boundary is a picked peak marking where a phrase ends.**
+
+*Outgoing statement.* "**Phrase boundary** — a tick marking where a phrase **ends**, picked as a peak of the boundary-strength profile; the next phrase's start is not separately marked." — §9 *Glossary* (locator: lines 312–313).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.120 — glossary: the per-voice profile.**
+
+*Outgoing statement.* "**Per-voice boundary-strength profile** — for one eligible voice, the weighted combination of that voice's three cue profiles; a per-onset measure of how strongly the surface marks a phrase end in that voice (§4.3)." — §9 *Glossary* (locator: lines 314–315).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.121 — glossary: the texture profile.**
+
+*Outgoing statement.* "**Texture boundary-strength profile** — the per-onset **sum** of the per-voice profiles (over τ-merged onsets), plus the §4.2 marker spikes; the profile the cadence gate consumes and that peak-picking runs on (§4.3, §4.4)." — §9 *Glossary* (locator: lines 316–317).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.122 — glossary: coincidence raises the texture profile; an explicit weight is optional.**
+
+*Outgoing statement.* "Coincidence raises it because more voices add more terms; an explicit coincidence weight beyond the plain sum is an optional precision-phase constant." — §9 *Glossary* (locator: lines 317–319).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.123 — glossary: voice-coincidence.**
+
+*Outgoing statement.* "**Voice-coincidence** — multiple voices contributing boundary strength at the same (τ-merged) onset; the plain sum already scores such a point high, so a point where many voices phrase together stands out." — §9 *Glossary* (locator: lines 320–321).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.124 — glossary: a cue profile.**
+
+*Outgoing statement.* "**Cue profile** — one of the three per-onset strength series (gap, inter-onset, pitch-interval) of a single voice, each from the local-change rule." — §9 *Glossary* (locator: lines 322–323).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.125 — glossary: the local-change rule.**
+
+*Outgoing statement.* "**Local-change rule** — the per-profile strength `x · (left change-ratio + right change-ratio)`, so strength rises with both the degree of local change and the size `x` of the value; each profile then max-normalised to [0,1] (§4.1)." — §9 *Glossary* (locator: lines 324–325).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.126 — glossary: the change-ratio.**
+
+*Outgoing statement.* "**Change-ratio** — the normalised difference between a value and a neighbour: left `= |x_prev − x|/(x_prev + x)`, right `= |x − x_next|/(x + x_next)`; a measure of local change in [0,1]." — §9 *Glossary* (locator: lines 327–328).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.127 — glossary: the offset.**
+
+*Outgoing statement.* "**Offset** — the tick at which a note ends (onset + duration); the gap cue reads the offset-to-onset interval." — §9 *Glossary* (locator: line 329).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.128 — glossary: the time between successive attacks.**
+
+*Outgoing statement.* "**Inter-onset interval** — the time between two successive note attacks." — §9 *Glossary* (locator: line 330).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.129 — glossary: the gap.**
+
+*Outgoing statement.* "**Gap (offset-to-onset)** — the time between one event ending and the next beginning (the silence/separation)." — §9 *Glossary* (locator: line 331).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.130 — glossary: agogic lengthening.**
+
+*Outgoing statement.* "**Agogic lengthening** — a note long relative to its neighbours (a phrase-final cue; it appears as an inter-onset peak)." — §9 *Glossary* (locator: line 332).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.131 — glossary: peak-picking.**
+
+*Outgoing statement.* "**Peak-picking** — selecting as boundaries the local maxima of the strength profile that exceed the adaptive threshold (the **whole-profile mean + k·SD** — the whole score's profile, **not** a sliding window; §4.4 pins this and this row matches it)." — §9 *Glossary* (locator: lines 333–335).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.132 — glossary: the notated-marker spike.**
+
+*Outgoing statement.* "**Notated-marker spike** — the large fixed strength added at a fermata, a breath mark/caesura, a structural barline, a mid-score key-signature change, a sudden tempo change or written ritardando, or an all-voice-rest onset (the deterministic, high-precision part)." — §9 *Glossary* (locator: lines 336–338).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.133 — glossary: the key-signature change as a marker.**
+
+*Outgoing statement.* "**Key-signature change (marker)** — a new key signature written mid-score (the engraved signature event, **not** the inferred key); a very sparse, section-level structural-boundary marker (§4.2)." — §9 *Glossary* (locator: lines 339–340).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.134 — glossary: the breath mark and the caesura.**
+
+*Outgoing statement.* "**Breath mark / caesura** — explicit composer-notated phrase / break symbols (the comma; the "grand pause" / railroad-tracks), read as deterministic marker spikes (§4.2)." — §9 *Glossary* (locator: lines 341–342).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.135 — glossary: the sudden tempo change and its gradual counterpart.**
+
+*Outgoing statement.* "**Sudden (subito) tempo change** — a new tempo marking reached with no gradual transition; a sparse, high-precision structural-boundary marker (§4.2). A written ritardando/rallentando into an arrival is the gradual counterpart." — §9 *Glossary* (locator: lines 343–344).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.136 — glossary: the maximal all-voice-rest span.**
+
+*Outgoing statement.* "**Maximal all-voice-rest span** — a span in which every eligible voice rests, not extendable in either direction without an eligible voice sounding (a Layer-2 empty slice)." — §9 *Glossary* (locator: lines 345–346).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.137 — glossary: the top voice, an optional cue not used here.**
+
+*Outgoing statement.* "**Top voice** — the highest sounding voice of the texture (an *optional* Layer-1.5 cue for the function layer, not a prerequisite and not used by this primitive — the highest voice is not reliably the melody; what cadence theory calls the "soprano," named generally because the tool analyses any instrumentation)." — §9 *Glossary* (locator: lines 347–349).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 4.10.
+
+---
+
+**Row 40.138 — glossary: the eligible voice.**
+
+*Outgoing statement.* "**Eligible voice** — a (staff, voice) line whose notes **sound**, are **visible**, and lie on an **analysis-eligible staff** (the exact three-flag test, §0; Layer 1 defines the staff flag, the voice-level combination is stated in this document because Layer 1 does not define voice eligibility)." — §9 *Glossary* (locator: lines 350–352).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L1 — Change points, candidates and notated evidence*, travelling with Row 40.3.
+
+---
+
+**Row 40.139 — glossary: the structural barline.**
+
+*Outgoing statement.* "**Structural barline** — a double, final, or repeat barline (a notational division)." — §9 *Glossary* (locator: line 353).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.140 — glossary: the cadence gate.**
+
+*Outgoing statement.* "**The cadence gate** — the function layer's rule admitting a cadence candidate only at a phrase boundary (§0; `cowork_layer5_function_design.md`); the consumer the texture profile and picked ticks feed." — §9 *Glossary* (locator: lines 354–355).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 4.16.
+
+---
+
+**Row 40.141 — the fermata scan in two copies, the phrase-end flag re-derived at each site.**
+
+*Outgoing statement.* "Today the fermata-boundary scan exists in **two byte-identical copies** kept in hand-sync (one on the production region path, one in the corpus diagnostic tool), and the per-region "ends a phrase" flag is re-derived inline at every consuming site (the exact set enumerated at build)." — §10 *Background* (locator: lines 360–362).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* how many copies of the fermata scan and of the per-region phrase-end flag exist at the current commit, and which paths read them?
+
+---
+
+**Row 40.142 — its known consumers are two dormant function-layer components.**
+
+*Outgoing statement.* "Its known consumers are the dormant **key-agnostic cadence anchor** (a built-but-unengaged cadence detector that anchors on the boundary without a resolved key) and the default-off **joint-key re-key pass** (a gated re-keying refinement) — both function-layer components, named in `cowork_layer5_function_design.md`; whether the production cadence/marker path also consumes it is enumerated at build." — §10 *Background* (locator: lines 362–365).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which paths read the phrase-boundary primitive's phrase-end flag at the current commit, and does any of them reach production output?
+
+---
+
+**Row 40.143 — the predecessor already named phrase boundaries as planned input.**
+
+*Outgoing statement.* "The function layer's predecessor already names phrase boundaries as planned input." — §10 *Background* (locator: lines 365–366).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past plan.
+
+---
+
+**Row 40.144 — this primitive unifies the scan and replaces the fermata-only definition.**
+
+*Outgoing statement.* "This primitive unifies the duplicated scan into one owned Layer-1.5 view and replaces the fermata-only definition with the graded surface-cue + marker model above; the concrete file map and the cue formulas are in the build instruction and the methods catalog (`cowork_phrase_boundary_methods.md`)." — §10 *Background* (locator: lines 366–368).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.145 — open item 1: the constants left at defaults, tuned later.**
+
+*Outgoing statement.* "The **precision-phase constants** — the three cue weights, the peak threshold `k`, the minimum-silence duration, the voice-coincidence window `τ` (§4.3), and the notated-marker spike magnitude (§4.2) — left at stated defaults by the build, tuned in the precision phase." — §11 *Open items* (locator: lines 371–373).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.146 — open item 2: the only consumer is the default-off re-key pass, so the primitive is unreachable in production.**
+
+*Outgoing statement.* "**Confirm the live consumers** of "ends a phrase" at build — ✅ **DONE 2026-06-26:** the only consumer is the default-off joint-key re-key pass (`applyJointKeyWiring`, gated on `jointKeyWiringEnabled()`), so the primitive is **unreachable in production** — byte-identical, built-dormant (verified at source)." — §11 *Open items* (locator: lines 374–376).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 40.142.
+
+---
+
+**Row 40.147 — it becomes load-bearing when the function layer engages it.**
+
+*Outgoing statement.* "It becomes load-bearing when the function layer engages it." — §11 *Open items* (locator: lines 376–377).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.148 — open item 2b: two as-built marker refinements deferred.**
+
+*Outgoing statement.* "**As-built marker refinements deferred (build, 2026-06-26) — pin when the function layer engages + non-chorale test cases land.**" — §11 *Open items* (locator: lines 378–379).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.149 — the eligible-voice qualifier not yet applied to the fermata and breath markers.**
+
+*Outgoing statement.* "(a) The **eligible-voice qualifier** on the fermata/breath markers is not yet applied — they fire at *any* fermata/breath (matching the retired byte-identical scan; harmless on chorales where all voices are eligible)." — §11 *Open items* (locator: lines 379–380).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the fermata, breath-mark and tempo markers of the phrase-boundary primitive fire only where this document says they fire, at the current commit?
+
+---
+
+**Row 40.150 — the tempo marker fires at any tempo text; it should fire on a genuine change only.**
+
+*Outgoing statement.* "(b) The **tempo marker** fires at any *discrete* tempo-text tick (incl. the opening tempo); it should fire on a genuine tempo **change** only, the way the key-signature marker already tracks change-only." — §11 *Open items* (locator: lines 380–382). Two claims: (i) the tempo marker fires at any tempo-text tick; (ii) it should fire on a genuine tempo change only.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 40.149. (ii) **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.151 — both first-cut simplifications, to be pinned with non-chorale cases.**
+
+*Outgoing statement.* "Both are proportionate first-cut simplifications, inert while dormant; pin them with non-chorale (orchestral / non-SATB) test cases." — §11 *Open items* (locator: lines 382–383).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.152 — open item 3: deferred cues built only if the corpus shows a need.**
+
+*Outgoing statement.* "**Deferred cues** — the global regularisers (phrase-length prior, metric parallelism) and the information-content / surprisal cue — named in the methods catalog, built only if the corpus shows a need (each adds a corpus-specific constant or a trained model)." — §11 *Open items* (locator: lines 384–386).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.153 — open item 4: articulation and dynamics cues deferred.**
+
+*Outgoing statement.* "**Articulation and dynamics cues** (slur ends, abrupt dynamic changes) — weak/auxiliary in the literature; admissible as additional low-weight surface profiles if measured to help, deferred from the first build." — §11 *Open items* (locator: lines 387–388).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 40.154 — the markers mix two scopes, and the current model spikes all onto the texture.**
+
+*Outgoing statement.* "The §4.2 deterministic markers mix two **scopes**, and the current model spikes all of them onto the **texture** profile and emits them unconditionally (§4.4) — which can promote a *local* event to a *global* boundary and lose the fact that it was local:" — §11 *Open items*, item 5 (locator: lines 389–392).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 40.72.
+
+---
+
+**Row 40.155 — the globally scoped markers legitimately spike the texture.**
+
+*Outgoing statement.* "**Globally-scoped (system-wide by notation):** the **structural barline**, the **mid-score key-signature change**, the **subito tempo change**, and the **all-voice-rest onset** — these apply to the whole texture and legitimately spike the texture profile." — §11 *Open items*, item 5 (locator: lines 393–395).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.156 — the per-part markers: breath mark, caesura and, strictly, the fermata.**
+
+*Outgoing statement.* "**Per-part-scoped (notated on one voice/staff):** the **breath mark**, the **caesura**, and — strictly — the **fermata**." — §11 *Open items*, item 5 (locator: lines 396–397).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.157 — a per-part marker should reach the texture only through voice-coincidence.**
+
+*Outgoing statement.* "The principled form is for a per-part marker to enter as a **per-voice** marker event and reach a **texture** boundary only through the same **voice-coincidence aggregation** as the graded cues (§4.3) — a lone breath then yields a **per-voice** boundary (already exposed by this primitive, and the raw material for the future voice-leading / melody-line axis, `cowork_idiom_discovery_findings.md`), not a forced global one." — §11 *Open items*, item 5 (locator: lines 398–402).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.158 — the fermata as the borderline case.**
+
+*Outgoing statement.* "(The fermata is the borderline case: *conventionally* an ensemble hold, but *notated* per staff — treating it as per-part-then-coincidence is inert on chorales, where all voices hold together, and more correct on orchestral scores.)" — §11 *Open items*, item 5 (locator: lines 402–404).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.159 — chorale-inert: the refinement matters only off the chorale texture.**
+
+*Outgoing statement.* "**Chorale-inert.** In the chorale convention all voices fermata/breathe together, so the texture boundary is unchanged; the refinement matters only for orchestral / contrapuntal (non-SATB) textures — consistent with the byte-identical-on-chorales discipline and adjacent to the §11-2b(a) eligible-voice qualifier (a related, narrower item)." — §11 *Open items*, item 5 (locator: lines 405–408).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.160 — each picked boundary should carry which cue fired and at what scope.**
+
+*Outgoing statement.* "**Provenance (the information-loss fix).** Each picked boundary — texture *and* per-voice — should carry **which cue/marker fired and at what scope** (global, or per-voice with which / how-many voices coincided), so a downstream consumer (Layer 6's punctuation-span annotation) does not lose that a boundary was a *local breath* versus a *global barline*." — §11 *Open items*, item 5 (locator: lines 409–412).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 6.7(ii).
+
+---
+
+**Row 40.161 — the picked set is scope-blind today.**
+
+*Outgoing statement.* "The picked set is scope-blind today." — §11 *Open items*, item 5 (locator: line 412).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 40.72.
+
+---
+
+**Row 40.162 — recorded as a refinement, not built until the inference phase opens.**
+
+*Outgoing statement.* "Recorded as a proper-layer refinement; per the standing rule, not built until the inference phase opens; validate on a non-chorale corpus (§8)." — §11 *Open items*, item 5 (locator: lines 412–413).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (42)
+
+1. "**Status: SIGNED (user, 2026-06-26) — build in progress (`records/cc/instructions/cc_instruction_phrase_boundary_build.md`).**" (3) — *the document's status banner*.
+2. "rev. 3 — graded + per-voice/aggregate. … the marker-spike ordering made decidable)." (3–12) — *the document's version history*, listed as one elided item.
+3. "The acyclicity argument (surface-only, no harmony) was verified airtight." (12–13) — *the document's account of its own review*.
+4. "A proper-layer design for the **phrase-boundary** primitive, the first of the three earlier-layer input prerequisites the signed function-layer spec (§15-0) surfaced." (13–14) — *the document's account of itself*.
+5. "**Revision 2** replaces the rev.-1 binary-union model with a **graded boundary-strength model**, … a binary union is a degenerate, lower-precision special case)." (15–17) — *the document's version history*.
+6. "Written to the design-doc standard: every rule is stated … and it uses standard music / music-cognition vocabulary (glossed in §9)." (17–20) — *the document's account of itself*.
+7. "Scope: this one primitive — *not* the cadence or function logic that consumes it." (20–21) — *the document's account of its own scope*.
+8. "| Term | Meaning (or citation) |" (37) — *a table header*.
+9. "|---|---|" (38) — *the table's separator row*.
+10. "| **Tick** | The absolute time-position in the score (the engraving time unit). … this document uses "tick" throughout. |" (39) — *a definition of the project's vocabulary*, the row *Tick*.
+11. "| **Precision-phase constants ("the firewall")** | Numeric values deferred to the project's later tuning phase … This document fixes mechanisms; the named constants are tuned there. |" (44) — *a definition of the project's vocabulary*, the row *Precision-phase constants*.
+12. "| **The corpus two-tier gate / both presets** | The project's two-tier **BIR (bass-is-root)** corpus regression gate, run on the Baroque and Jazz tuning presets (gate policy: CLAUDE.md). |" (45) — *a definition of the project's vocabulary*, the row *The corpus two-tier gate / both presets*.
+13. "| **Pinned** | Fixed by ratified decision and protected by a regression test (project usage); **pinned snapshots** are stored golden outputs compared exactly. |" (46) — *a definition of test vocabulary*, the row *Pinned*.
+14. "It exists because the layers above — the function layer's cadence detection (which admits a cadence candidate only at a phrase boundary) and its salience weighting — need phrase boundaries, and their **strength**, as an **input**, and the function layer must not define its own inputs." (52–55) — *a defense* of the primitive's existence.
+15. "Stated here at the definition, not only in §11-5.)*" (61) — *the document's account of itself*.
+16. "This is structural: the function layer's cadence detection *consumes* phrase boundaries, so a boundary that depended on cadence would be circular." (66–67) — *a defense* of Row 40.13's rule.
+17. "**General, not chorale-specific.**" (70) — *a label*.
+18. "The tool analyses scores of any instrumentation." (70) — *a defense* of Row 40.16's statement.
+19. "*Why:* a derived view that reached for its own context would hold a second, independent extension policy beside its consumers' (#6), and its answer would then depend on which consumer asked." (87–88) — *a defense* of Rows 40.24 to 40.27.
+20. "*Why:* the strength is a max-normalised salience rather than a probability, so two scores' values are not on one scale, and a quantity that cannot be compared across scores must not be given the authority to overrule one that can." (92–94) — *a defense* of Rows 40.28 and 40.29.
+21. "Composers re-notate the signature at major section / key-area seams, so it is a very sparse, section-level, high-precision marker;" (155–156) — *a defense* of Row 40.51's marker.
+22. "*(A **sparse** cue: absent from many scores — e.g. unmarked chorales — and it marks section seams more than every phrase, so it adds precision where present and is harmless where absent." (159–160) — *a defense* of Row 40.52's marker.
+23. "Emitting markers directly is the faithful reading of their "deterministic / dominate wherever they occur" status.)*" (193) — *a defense* of Row 40.64's rule.
+24. "**★ EVERY PICKED BOUNDARY CARRIES WHICH CUE OR MARKER FIRED, AND AT WHAT SCOPE — A REQUIREMENT ON THIS SECTION'S OUTPUT, STATED AS OWED AND EXPLICITLY NOT BUILT.**" (205–206) — *a label*; the requirement it names is Row 40.71's statement.
+25. "*What is deliberately NOT claimed:* that this changes anything on the gate repertoire." (214) — *the document's account of what it does not claim*.
+26. "They are musically real phrase signals but are *function/key-layer* judgements that consume this primitive; including them would make the primitive depend on a layer that depends on it (§2, §6-D3)." (222–224) — *a defense* of Row 40.76's exclusion.
+27. "(This is why the model is gap-dominant and threshold-gated, not an OR of cues.)" (240–241) — *a defense*.
+28. "*Rejected:* the Layer-1 note model (deliberately narrow — it records notes, it does not derive phrase structure) and the function layer (it consumes phrase boundaries; it cannot own them)." (251–253) — *a rejected alternative*, named with its reasons.
+29. "*Rejected:* the binary union — a degenerate special case that cannot express "a gap larger than its neighbours," inflates recall, and wrecks precision (per the research: a weighted combination measurably beats any single cue and beats a naive union; the leading harmony-free models all compute graded strength + peaks)." (261–264) — *a rejected alternative*, named with its reasons.
+30. "The cost — per-cue normalisation, the weight vector, the peak threshold — is modest and the constants are precision-phase." (264–265) — *a defense* of Row 40.97's choice.
+31. "*Rejected:* (a) a whole-texture reduction with **top-voice-only pitch** — it discards every inner voice's pitch cue and yields no per-voice phrasing; (b) running the cues on one arbitrary voice — ill-defined in polyphony." (268–270) — *rejected alternatives*, named with their reasons.
+32. "Per-voice-then-aggregate is the principled form (the local-change cues are defined per line) and produces both outputs." (270–271) — *a defense* of Row 40.99's choice.
+33. "*Rejected:* keeping it fermata-only (leaves the whole tool chorale-scoped — contrary to its purpose)." (274–275) — *a rejected alternative*, named with its reason.
+34. "The mechanism, not the tuning, is what this doc fixes." (299) — *the document's account of itself*.
+35. "**★ Proportionality (scope discipline, user-ratified 2026-06-26).**" (303) — *a label*.
+36. "The state-of-the-art-competitive reference engine (Contrapunctus) does **no** explicit phrase segmentation or cadence detection and is still competitive at Roman-numeral analysis (it captures phrase structure implicitly via stable key runs)." (303–305) — *a defense* of Row 40.117's statement.
+37. "**Build the graded model right, but keep it proportionate — do not let it balloon.**" (307) — *a rule of the development process*.
+38. "See `contrapunctus_findings.md` addendum and `cowork_phrase_boundary_methods.md`." (309) — *a pointer*.
+39. "(The standard surface boundary-strength formulation.)" (325–326) — *a citation remark*.
+40. "**Tick** — the absolute time-position in the score (§0); "time-position" in the sibling layer docs names the same thing." (356–357) — *a definition of the project's vocabulary*, the glossary's entry *Tick*.
+41. "**★ Marker scope — global vs per-part — and boundary provenance (recorded 2026-07-01, user-raised).**" (389) — *a label*.
+42. "A breath in one instrument does **not** mean the whole texture phrases there; spiking it unconditionally onto the texture profile discards that locality and over-segments non-chorale textures." (397–398) — *a defense* of Row 40.156's rule.
+
+#### The arithmetic at this member
+
+- Rows written: **162** (40.1 to 40.162); 4 of them carry two or three claims each and are split.
+- **Outgoing statements placed: 166.**
+- Listed under *not a statement*: **42**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 166 dispositions over 166
+  statements.
+- **UNPLACED at this member: 0** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 132 | 40.1, 40.2, 40.3, 40.4, 40.5, 40.6, 40.7, 40.8, 40.9, 40.10, 40.11(ii), 40.12(i), 40.12(ii), 40.13, 40.14, 40.15, 40.16, 40.17, 40.18, 40.20, 40.23, 40.24, 40.25, 40.26, 40.27, 40.28, 40.29, 40.30, 40.31, 40.32, 40.33, 40.34, 40.35, 40.36, 40.38, 40.39, 40.40, 40.41, 40.42, 40.43, 40.44, 40.45, 40.47, 40.48, 40.49, 40.50, 40.51, 40.52, 40.53, 40.54, 40.55, 40.56, 40.57, 40.58, 40.59, 40.61, 40.62, 40.63, 40.64, 40.66, 40.67, 40.68, 40.69, 40.70, 40.71, 40.73, 40.74(i), 40.74(ii), 40.76, 40.77, 40.80, 40.81, 40.82, 40.83, 40.84, 40.85, 40.86, 40.87, 40.88, 40.89, 40.90, 40.94, 40.95, 40.96, 40.97, 40.98, 40.99, 40.100, 40.101, 40.102, 40.103, 40.104, 40.105, 40.106, 40.107, 40.108, 40.109, 40.111, 40.112, 40.113, 40.115, 40.116, 40.117, 40.119, 40.120, 40.121, 40.122, 40.123, 40.124, 40.125, 40.126, 40.127, 40.128, 40.129, 40.130, 40.131, 40.132, 40.133, 40.134, 40.135, 40.136, 40.137, 40.138, 40.139, 40.140, 40.150(ii), 40.155, 40.156, 40.157, 40.158, 40.159, 40.160 |
+| QUARANTINED | 8 | 40.72, 40.141, 40.142, 40.146, 40.149, 40.150(i), 40.154, 40.161 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 26 | 40.11(i), 40.19, 40.21, 40.22, 40.37, 40.46, 40.60, 40.65, 40.75, 40.78, 40.79, 40.91, 40.92, 40.93, 40.110, 40.114, 40.118, 40.143, 40.144, 40.145, 40.147, 40.148, 40.151, 40.152, 40.153, 40.162 |
+| UNPLACED | 0 | — |
+| **Total** | **166** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 132 + 8 + 0 + 26 + 0 = 166, against 166 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 7 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 159 |
+| **Total verdicts** | **166** |
+
+*(166 verdicts over 166 statements; no statement names two derived statements.)* DIFFERS: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 40 is empty; the ten decisions homed
+  inside these ranges, D-476 to D-485, are none of them among the decisions ruled L2's own.
+- **SEEN rows: none.** The check was made at the homes as the manifest states: none of the eight homes 1(c) names lies
+  in this member's ranges; none of them is homed in this document.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
+  L2-S17, L2-S22, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -50389,6 +52498,12 @@ the row says which.
   extension, the edge slice growing, and every real change point staying stable.
 - Rows 22.84(i), 22.85(i) and 22.86 — the slice carrying its start and end only, slices produced over the whole
   loaded span, and the selection distinction not stored on the slice.
+- Row 40.3, with Row 40.138 — travelling with Row 22.59: the eligible voice, a line whose notes sound, are visible and
+  lie on a staff the analysis reads, muted and invisible notes excluded from every per-voice cue.
+- Rows 40.13, 40.20, 40.35, 40.76, 40.77, 40.94 and 40.95 — travelling with Row 5.308: the phrase boundary read from the
+  written surface alone, a written key-signature change among its markers, and never from an inferred key, a chord
+  reading, cadential closure or a change of harmonic rhythm, so that the dependency stays acyclic. *(L2-S13 AGREES at
+  the rows.)*
 
 **To *L3 — The read-off facts*.**
 
@@ -50478,6 +52593,42 @@ the row says which.
   again from the pitches. *(L2-S49 travels with it.)*
 - Row 39.325(i) — travelling with Row 5.9: cadence detection, planned for the dormant function layer. *(L2-S49 AGREES at
   the row.)*
+- Rows 40.1, 40.5, 40.7 to 40.10, 40.11(ii), 40.15 to 40.18, 40.24 to 40.27, 40.30 to 40.32 and 40.34 — travelling with
+  Row 6.7(ii): the phrase-boundary primitive as a derived view that inherits the loaded span and recomputes when a
+  consumer extends it; a graded per-onset boundary-strength profile, computed per voice and aggregated to the texture,
+  with the picked boundary ticks and the per-region phrase-end flag; what it consumes and what it produces; a small
+  inference whose markers are facts and whose surface strength is computed; and the boundaries marked only harmonically,
+  which it misses by design.
+- Rows 40.4 and 40.12(i) — travelling with Row 21.50: the picked boundary as the cue that delimits the punctuation-span.
+- Rows 40.6 and 40.140 — travelling with Row 4.16: the cadence gate, a cadence candidate admitted only at a phrase
+  boundary.
+- Rows 40.14 and 40.96 — cadence-based phrase refinement as a combination downstream of the primitive, the phrase
+  reading and the cadence both being L3's.
+- Rows 40.33 and 40.137 — travelling with Row 4.10: the top voice as at most an optional soft cue for the cadence test,
+  not used by the primitive.
+- Rows 40.36, 40.38 to 40.45, 40.47 to 40.59, 40.61 to 40.64, 40.66 to 40.71, 40.73 and 40.74(i) — travelling with Row
+  6.7(ii): the model — three local-change cue profiles, gap, inter-onset and pitch-interval, max-normalized and combined
+  in a gap-dominant weighted sum; the notated-marker spikes set above any surface peak, for a fermata, a breath mark or
+  caesura, a structural barline, a key-signature change, a sudden tempo change or written ritardando, and the onset of
+  an all-voice rest; per-voice cues summed per onset within a coincidence window; the surface cues peak-picked and every
+  marker emitted unconditionally; the boundary tick and the phrase-end flag; and the requirement that each picked
+  boundary carry which cue fired and at what scope, inert on chorales by construction.
+- Rows 40.80 to 40.88 — travelling with Row 6.7(ii): the runtime scenarios — a chorale phrase end, a phrase ended by a
+  rest, a phrase end by lengthening, a section break, a passing leap, one voice phrasing while the others continue, and
+  a purely harmonic cadence recovered downstream.
+- Rows 40.89, 40.90, 40.97 to 40.100, 40.102 and 40.103 — travelling with Row 6.7(ii): the architecture decisions — the
+  primitive owned by the notation-derived views, graded rather than a binary union, its cues run per voice and
+  aggregated to the texture, and generalized beyond the fermata.
+- Rows 40.101 and 40.111 — travelling with Row 22.50(ii): the per-voice aggregation, validated only on single lines in
+  the literature, to be validated on the project's own corpus.
+- Rows 40.112, 40.113, 40.115 and 40.117 — travelling with Row 6.7(ii): the risks accepted — boundaries marked only
+  harmonically missed, the primitive a small inference rather than a pure fact, and not an accuracy requirement but
+  load-bearing for the cadence mechanism.
+- Rows 40.119 to 40.136 and 40.139 — travelling with Row 6.7(ii): the glossary's entries for the primitive's vocabulary.
+- Rows 40.150(ii) and 40.155 to 40.160 — travelling with Row 6.7(ii): the scope of the markers — the tempo marker to fire
+  on a genuine change only; the globally scoped markers spiking the texture; the per-part markers reaching the texture
+  only through voice-coincidence, the fermata the borderline case; inert on chorales; and each picked boundary carrying
+  its cue and its scope.
 
 **To *the second axis — voice leading*.**
 
@@ -50501,6 +52652,8 @@ the row says which.
 - Row 30.24 — travelling with Row 21.67: an inferred voicing — drop 2, spread — replacing the chord staff's
   close-position default.
 - Row 32.7 — travelling with Row 21.67: a planned interface ranking voicing alternatives.
+- Row 40.12(ii) — travelling with Row 5.75(ii): the melodic phrase as an object of the voice-leading axis, which the
+  phrase-boundary primitive does not model.
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -50523,6 +52676,8 @@ the row says which.
 - Rows 21.47, 21.69 and 21.70 — travelling with Row 5.213(ii): a confidence at a layer boundary in [0,1], declared by
   class, stated with its decision and compared only in declared frames, unbounded candidate scores squashed at the
   boundary. *(L2-S40 travels with Rows 21.47 and 21.69, L2-S45 with Row 21.70.)*
+- Rows 40.2, 40.28 and 40.29 — travelling with Row 6.127(iii): the phrase-boundary strength published as a margin-class
+  boundary confidence, max-normalized per profile, comparable within one piece's profile only, and in no override frame.
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -50733,6 +52888,15 @@ the row says which.
 - Row 39.291 — travelling with Row 9.59: that counting only the cases a change fires on understates its effect, which is
   why the regression stop enumerates the added and removed runs rather than counting them.
 - Row 39.318 — travelling with Row 6.156: the regression check run on both presets before a change is committed.
+- Rows 40.23, 40.109 and 40.116 — travelling with Row 6.156: the graded step measured against the corpus gate on both
+  presets before it lands.
+- Row 40.74(ii) — travelling with Row 5.273: the scope requirement to be validated on orchestral and contrapuntal
+  textures.
+- Row 40.104 — travelling with Row 5.260: oracle tests of the cues and the picking on constructed cases.
+- Rows 40.105, 40.106 and 40.107 — the picked boundaries validated against the analysts' own phrase marks, an
+  independent ground truth; a fermata-derived phrase list inadmissible for its circularity; and a per-voice case checked
+  to give a per-voice boundary with a low texture strength.
+- Row 40.108 — travelling with Row 6.60: the de-duplication step gated byte-identical.
 
 *(Member 1's relocations are the rows numbered 1.n above. Member 2 relocates no row. Member 3 relocates one, Row 3.38,
 above. Member 4's relocations are the rows numbered 4.n above. Member 5's relocations are the rows
@@ -50743,7 +52907,7 @@ numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
 above. Member 31 relocates no row, and member 32's relocations are the rows numbered 32.n above. Member 33's relocations are the rows numbered 33.n
-above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above.)*
+above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, and member 40's the rows numbered 40.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -51718,6 +53882,13 @@ rows here, each with its audit question, in the commit that tabulates it.
 - Rows 39.320, 39.322 and 39.323 — travelling with Row 39.319: where does the dormant harmonic-function pass sit at the current commit, what does it read, and what does it decide?
 - Row 39.331 — which steps does the dormant competition pipeline run at the current commit, and in what order?
 - Rows 39.332, 39.333, 39.334, 39.335, 39.336, 39.337 and 39.338 — travelling with Row 39.331: which steps does the dormant competition pipeline run at the current commit, and in what order?
+- Row 40.72 — does the phrase-boundary primitive's picked set record which cue or marker fired, and at what scope, at the current commit?
+- Row 40.141 — how many copies of the fermata scan and of the per-region phrase-end flag exist at the current commit, and which paths read them?
+- Row 40.142 — which paths read the phrase-boundary primitive's phrase-end flag at the current commit, and does any of them reach production output?
+- Row 40.146 — travelling with Row 40.142: which paths read the phrase-boundary primitive's phrase-end flag at the current commit, and does any of them reach production output?
+- Row 40.149 — do the fermata, breath-mark and tempo markers of the phrase-boundary primitive fire only where this document says they fire, at the current commit?
+- Row 40.150(i) — travelling with Row 40.149: do the fermata, breath-mark and tempo markers of the phrase-boundary primitive fire only where this document says they fire, at the current commit?
+- Rows 40.154 and 40.161 — travelling with Row 40.72: does the phrase-boundary primitive's picked set record which cue or marker fired, and at what scope, at the current commit?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -52548,10 +54719,11 @@ own distribution table in §6.
 | 37 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 |
 | 38 | 4 | 0 | 0 | 0 | 4 | 0 | 0 | 0 | 16 |
 | 39 | 366 | 17 | 2 | 4 | 246 | 0 | 97 | 0 | 173 |
-| **Total** | **3758** | **429** | **88** | **499** | **1395** | **0** | **1071** | **276** | **1828** |
+| 40 | 166 | 0 | 0 | 132 | 8 | 0 | 26 | 0 | 42 |
+| **Total** | **3924** | **429** | **88** | **631** | **1403** | **0** | **1097** | **276** | **1870** |
 
-**The arithmetic check:** 429 + 88 + 499 + 1395 + 0 + 1071 + 276 = 3758, against 3758 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366).
+**The arithmetic check:** 429 + 88 + 631 + 1403 + 0 + 1097 + 276 = 3924, against 3924 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166).
 
 **Current-text verdicts.**
 
@@ -52596,10 +54768,11 @@ own distribution table in §6.
 | 37 | 0 | 0 | 0 | 0 |
 | 38 | 0 | 1 | 3 | 4 |
 | 39 | 36 | 46 | 286 | 368 |
-| **Total** | **665** | **673** | **2470** | **3808** |
+| 40 | 7 | 0 | 159 | 166 |
+| **Total** | **672** | **673** | **2629** | **3974** |
 
-**The arithmetic check:** 665 + 673 + 2470 = 3808 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368).
+**The arithmetic check:** 672 + 673 + 2629 = 3974 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166).
 
 ## 14. The derivation's independence record, relayed
 
@@ -52630,4 +54803,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 39 are done, positions 40 to 62 are untouched.
+  untouched: positions 1 to 40 are done, positions 41 to 62 are untouched.
