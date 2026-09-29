@@ -86,7 +86,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 42 | `cowork_layer2_slicing_design.md` passages | **DONE** (§6.42) |
 | 43 | `cowork_target_architecture.md` passages | **DONE** (§6.43) |
 | 44 | `cowork_evidence_inventory.md` passages | **DONE** (§6.44) |
-| 45 | `cowork_bounded_context_design.md` passages | NOT YET TABULATED |
+| 45 | `cowork_bounded_context_design.md` passages | **DONE** (§6.45) |
 | 46 | `cowork_voiceleading_axis_design.md` passages | NOT YET TABULATED |
 | 47 | `cowork_notation_adoption_increment.md` passages | NOT YET TABULATED |
 | 48 | `cowork_joint_estimator_architecture.md` passages | NOT YET TABULATED |
@@ -107,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 44 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 45 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, and the `cowork_evidence_inventory.md` passages.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, and the `cowork_bounded_context_design.md` passages.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 44 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 45 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -143,8 +143,8 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 44 whole in its own commit; the writing stands at the member boundary after position 44. **Positions 45 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 45**, `cowork_bounded_context_design.md` passages. §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit; the writing stands at the member boundary after position 45. **Positions 46 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 46**, `cowork_voiceleading_axis_design.md` passages. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -59126,6 +59126,1306 @@ the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_
   44.50(v), 44.50(x); L2-S42 (entry 4) — 44.34, 44.74(ii); L2-S45 (entry 4) — 44.36(i), 44.40, 44.51(i), 44.74(i),
   44.76(iv). No row of this member names L2-S31, L2-S22, L2-S43, L2-S12 or L2-S38. Each says so at the row.
 
+---
+
+### 6.45 — Member 45: `cowork_bounded_context_design.md`, passages
+
+> **Manifest for this member.** Position **45**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_bounded_context_design.md`. Label: *"the passages of the document"*. **The ten published ranges**,
+> each as a locator only, by its first and last line as the artifact publishes them (**D-307**); where a boundary line is
+> too long to repeat, it is given by its opening and closing words:
+>
+> 1. lines 21–26, from the line opening *"The shipped product analyses **the part of"* and closing *"never the whole score. (Reading a whole"* to *"That is the wrong foundation for the product, and the wrong thing to build on."*;
+> 2. lines 53–71, from *"1. A layer **never reads notes or slices outside the loaded span.**"* to *"the only other way out of the loop, and a cap that fired is never the discovered amount."*;
+> 3. lines 73–115, from *"> **★ Dated annotation (user ruling, 2026-08-07; register entry D-622 supersedes the struck clause).**"* to *"the requester never enumerates them to Architectural Layer 1."*;
+> 4. lines 119–147, from the line opening *"- **Request.** A layer asks Architectural"* and closing *"direction D (earlier / later in time)"* to *"with the existing *"re-analyse a sub-range"* capability."*;
+> 5. lines 151–185, from the line opening *"- **Architectural Layer 1 — the supplier.**"* and closing *"a selection* and *extend(direction,"* to *"provenance and the `extension-cue` tag (L6 §5.1 amendment, 2026-07-02)."*;
+> 6. lines 189–199, from the line opening *"- **Interior selection, key established earlier.**"* and closing *"20–40. Architectural Layer 3 finds the"* to *"decide membership → a one-harmony later extension, or truncation at the score end."*;
+> 7. lines 220–236, from the line opening *"- **The note-model index under extension"* and closing *"difficulty** (the genuinely non-trivial piece)."* to *"**by construction** — the standing proof obligation of the build.)"*;
+> 8. lines 240–248, from *"1. This design **ratified** (it was never signed; sign-off is now the first step)."* to *"4. Then the L6 track resumes (its TSV-oracle instruction un-parks, then the L6 dormant build)."*;
+> 9. lines 259–265, from the line opening *"**Selection span** — the user's selected"* and closing *"what Architectural Layer 1 currently"* to *"batch-testing path)."*;
+> 10. lines 269–281, from the line opening *"- **Architectural Layer 1:** *build over"* and closing *"bound)*; the loaded-vs-selection-span"* to *"edge is the likely future extension)."*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside — the document's blob carries no carriage return. **The lines between the ranges are outside the
+> member** and are not tabulated, quoted or listed. **No line inside the ranges is a heading.** Outgoing statements:
+> **132** (rows 45.1 to 45.94; 33 of those rows carry more than one claim and are split, 29 of them carrying two claims
+> each, 3 carrying three and 1 carrying four — the arithmetic is at the foot of this member). Listed under *not a
+> statement*: **37**. Counted at this member by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of the signed cross-layer design
+> of 2026-07-02 for analyzing a selection and extending the music loaded for it: its purpose; the contract every layer
+> obeys, with the dated annotation of 2026-08-07 that struck the convergence proxy; the protocol of request, supply and
+> recompute; the role of each layer of that date's stack; four scenarios; the risks; the acceptance list; the glossary;
+> and what the design changed in the layer specifications. **The placement readings are those of the earlier members,
+> applied unchanged.** The design's supplier of the events — its Architectural Layer 1 — is RELOCATED to *L0 — The
+> notated record*, as Row 43.75(ii) was; its slicing to *L1 — Change points, candidates and notated evidence*, as Rows
+> 22.71 and 22.85(i) were; its grouping layer — the Layer 6 whose track the acceptance list gates — to *L3 — The read-off
+> facts*, as Row 41.78 was; a required test to *the measurement of the analysis*. A description of the implementation of
+> the document's date is QUARANTINED. The acceptance list is HISTORICAL — a superseded plan: the dated annotation
+> immediately beneath it, outside these ranges, records the user's ruling of 2026-08-02 (**D-266**) that its four items
+> are deprecated. Content an earlier row carries travels with that row: the reasoning at the edge of the working span
+> with Rows 2.16(i), 6.52, 6.53(i) and 6.55; the safety caps with Rows 2.13, 2.14 and 2.15; the built reach-back and its
+> stop with Row 2.47(ii), and the proxy measured and dropped with Rows 2.47(i) and 2.48; the requester's ownership of the
+> increment and the stop with Row 7.61; output for the selection only with Row 21.59(i), and the extended music as
+> evidence with Row 22.85(ii); a fresh run over the enlarged span with Row 22.83(i); the whole-piece case with Row 21.61;
+> the cascade of tonality, then chord, then function with the superseded plan of Row 18.2(i); and the function layer's
+> decision-context extent with Rows 5.73 and 5.74. A label, a pointer, provenance, a former wording preserved and a
+> defense are listed. **Two kinds under *not a statement* are new at this member**, and neither changes a placement: the
+> setting of a scenario — the bars the user selects, which state nothing the analysis does — and an assessment of
+> implementation difficulty. **No placement reading is new at this member.**
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 45: **none** —
+> the field is empty, so no row carries the mark. A check at `tools/audit/decisions/backbone_decisions.json` found six
+> decisions homed inside these ranges, none of them among the decisions ruled L2's own: **D-261** (lines 57–71),
+> **D-262** (94–102), **D-263** (103–107), **D-265** (136–141), **D-264** (142–147) and **D-266** (238–242, of which
+> lines 240–242 fall inside range 8). **D-260** is homed at lines 43–44, outside the ranges.
+>
+> **The SEEN check, made at the homes as member 17's manifest states — and it finds one.** **D-261** is one of the eight
+> homes §5 names, and it is homed at `cowork_bounded_context_design.md:57-71`, inside range 2. Rows 45.7 to 45.15 lie
+> inside it and are marked *SEEN — §6.3 entry 4 (D-261)*; the one sentence inside it listed under *not a statement* is a
+> defense; the statement at Row 45.6 opens at line 54, before the home, and is not marked. Row 45.14 is the entry's
+> as-built sentence; the derivation's §6.3 entry 4 records that L2-S22 cites the entry's clauses 3 to 6 and explicitly
+> not that sentence. The other seven homes lie in other documents.
+
+---
+
+**Row 45.1 — the product analyzes the stretch of the piece the user selected, never the whole.**
+
+*Outgoing statement.* "The shipped product analyses **the part of the score the user has selected**, never the whole score." — §1 *Introduction & purpose* (locator: line 21).
+
+*Derived statements that speak to it.* L2-S48.
+
+*Current-text axis.* L2-S48: **AGREES** — as at Row 21.59(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S48), travelling with Row 21.59(i).
+
+---
+
+**Row 45.2 — reading the whole piece happens only in the offline batch-testing harness.**
+
+*Outgoing statement.* "(Reading a whole score start-to-end happens only in the offline batch-testing harness, which is not part of the product.)" — §1 *Introduction & purpose* (locator: lines 21–22).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 2.17.
+
+---
+
+**Row 45.3 — a layer needs music from outside the selection to judge the selection's edges.**
+
+*Outgoing statement.* "A selection is a **temporal subset** of the piece, and a layer often needs evidence from *outside* the selection to judge its edges correctly — the key established *before* the selection begins, a chord's neighbour just *past* the selection's end." — §1 *Introduction & purpose* (locator: lines 22–25).
+
+*Derived statements that speak to it.* L2-S22 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — *"At the edge of the working span, L2's tonality (and the rest of its reading) depends on music before and after the span."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 2.16(i).
+
+---
+
+**Row 45.4 — the code of that date loads the whole piece regardless.**
+
+*Outgoing statement.* "The current code sidesteps this by loading the whole score regardless, so all context is incidentally present." — §1 *Introduction & purpose* (locator: line 25).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 2.16(ii).
+
+---
+
+**Row 45.5 — a layer never reads events or slices outside the loaded span.**
+
+*Outgoing statement.* "A layer **never reads notes or slices outside the loaded span.**" — §3 *The bounded-context contract*, item 1 (locator: line 53).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S48 fixes what L2 publishes over and L2-S22 when L2 asks for more music; neither states that L2 reads nothing beyond what has been loaded.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that L2 read no event and no slice outside the music loaded for it.
+
+---
+
+**Row 45.6 — beyond the loaded span, request an extension or recognize the edge of the piece and proceed.**
+
+*Outgoing statement.* "When a layer's reasoning needs evidence beyond the loaded span, it either **(a) requests an extension** from Architectural Layer 1 in that direction, or **(b) recognises it has reached the score boundary** (nothing more exists) and proceeds with what it has." — §3 *The bounded-context contract*, item 2 (locator: lines 54–56).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 6.53(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 6.53(i).
+
+---
+
+**Row 45.7 — a layer tells "not loaded" apart from "the piece starts or ends here".** *SEEN — §6.3 entry 4 (D-261).*
+
+*Outgoing statement.* "A layer must distinguish **"unavailable because not loaded"** (→ request extension) from **"unavailable because the score starts/ends here"** (→ proceed, truncated)." — §3 *The bounded-context contract*, item 3 (locator: lines 57–58).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 6.53(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 6.53(i).
+
+---
+
+**Row 45.8 — the supplier of the events reports which of the two it is.** *SEEN — §6.3 entry 4 (D-261).*
+
+*Outgoing statement.* "Architectural Layer 1 reports which." — §3 *The bounded-context contract*, item 3 (locator: line 58).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract). *(The input contract gives the record edge at its Ruling 46 (vi), as L2-S22's premise relays.)*
+
+---
+
+**Row 45.9 — output only for the selection; the extended music is evidence, never labeled.** *SEEN — §6.3 entry 4 (D-261).*
+
+*Outgoing statement.* "A layer **outputs analysis only for the selection**; extended context is evidence, never labelled." — §3 *The bounded-context contract*, item 4 (locator: line 59). Two claims: (i) a layer outputs analysis only for the selection; (ii) the extended music is evidence and is never labeled.
+
+*Derived statements that speak to it.* (i) L2-S48. (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S48: **AGREES** — as at Row 21.59(i). (ii) L2-S22: **AGREES** — as at Row 22.85(ii).
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S48), travelling with Row 21.59(i). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 22.85(ii).
+
+---
+
+**Row 45.10 — a layer never guesses how much more music it needs.** *SEEN — §6.3 entry 4 (D-261).*
+
+*Outgoing statement.* "A layer **never guesses how much** more context it needs — guessing an amount is the un-knowledge-based move this contract forbids." — §3 *The bounded-context contract*, item 5 (locator: lines 60–61).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — L2 fixes no amount in advance: *"It stops asking when its in-span publication stops changing between successive enlargements."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 45.11 — extend step by step and stop on a principled condition; the amount discovered, not chosen.** *SEEN — §6.3 entry 4 (D-261).*
+
+*Outgoing statement.* "It knows *what* it needs, not how far away that is, so it **extends incrementally and stops on a principled condition**; the amount is **discovered, not chosen**." — §3 *The bounded-context contract*, item 5 (locator: lines 61–62). Two claims: (i) a layer extends step by step and stops on a principled condition; (ii) the amount of music is discovered, not chosen.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S22: **AGREES** — L2 asks for more music and *"stops asking when its in-span publication stops changing between successive enlargements"*. (ii) L2-S22: **AGREES** — as at Row 45.10.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 45.10.
+
+---
+
+**Row 45.12 — the principled stop is convergence: extend until the in-selection output stops changing.** *SEEN — §6.3 entry 4 (D-261).*
+
+*Outgoing statement.* "The principled stop is **convergence**: extend until the layer's **in-selection output stops changing** with further context." — §3 *The bounded-context contract*, item 6 (locator: lines 63–64).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — *"It stops asking when its in-span publication stops changing between successive enlargements."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 45.13 — the test applied directly to the quantity the extension was asked for; re-inference over the enlarged span.** *SEEN — §6.3 entry 4 (D-261).*
+
+*Outgoing statement.* "**A layer applies that criterion DIRECTLY, on the in-selection quantity the extension was requested for**: it re-infers over the enlarged span, compares that quantity step against step, and stops when it repeats." — §3 *The bounded-context contract*, item 6 (locator: lines 66–67). Two claims: (i) the convergence test is applied directly to the in-selection quantity the extension was asked for, compared step against step, stopping when it repeats; (ii) the layer infers afresh over the enlarged span.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) L2-S48.
+
+*Current-text axis.* (i) L2-S22: **DIFFERS**. (ii) L2-S48: **AGREES** — as at Row 22.83(i).
+
+*The difference, in both texts' own words.* (i) The outgoing layer compares *"the in-selection quantity the extension was requested for"* and stops *"when it repeats"*; L2-S22 stops *"when its in-span publication stops changing between successive enlargements"*, and is falsified *"if L2 stops while its principal in-span reading still changes"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED.** *What was read:* a clause of a recorded decision (D-261, homed here and met by the deriving session) that tests convergence on the one quantity a layer asked more music for, against L2-S22, which tests its whole in-span publication; a disposition would choose between a ruled answer and a derived one. (ii) **ADOPTED — carried** (L2-S48), travelling with Row 22.83(i).
+
+---
+
+**Row 45.14 — the built reach-back tracks the leading-edge settled tonality and stops when it repeats.** *SEEN — §6.3 entry 4 (D-261).*
+
+*Outgoing statement.* "The as-built Architectural Layer 3 reach-back does exactly this — it tracks the **leading-edge settled key across iterations and stops when it repeats**, which is the criterion itself and not a stand-in for it (the convergence note above the reach-back loop in `regionanalyzer.cpp` states it in the code's own words)." — §3 *The bounded-context contract*, item 6 (locator: lines 67–70).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4). *(The derivation's §6.3 entry 4 records that L2-S22 cites this entry's clauses 3 to 6 and explicitly not this as-built sentence, which its session saw.)*
+
+*Current-text axis.* L2-S22: **DIFFERS** — as at Row 2.47(ii).
+
+*The difference, in both texts' own words.* The outgoing reach-back *"tracks the leading-edge settled key across iterations and stops when it repeats"*; L2-S22 *"stops asking when its in-span publication stops changing between successive enlargements"*, and leaves open what *"stops changing"* means for the masses of the rivals (OQ-L2-6).
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 2.47(ii).
+
+---
+
+**Row 45.15 — the safety caps the only other way out of the loop; a cap that fired never the discovered amount.** *SEEN — §6.3 entry 4 (D-261).*
+
+*Outgoing statement.* "§7's safety caps are the only other way out of the loop, and a cap that fired is never the discovered amount." — §3 *The bounded-context contract*, item 6 (locator: lines 70–71). Two claims: (i) the safety caps are the only way out of the loop other than convergence; (ii) a cap that fired is never the amount of music discovered.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S22: **AGREES** — as at Row 2.13. (ii) L2-S22: **AGREES** — as at Row 2.15.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22), travelling with Row 2.13. (ii) **ADOPTED — carried** (L2-S22), travelling with Row 2.15.
+
+---
+
+**Row 45.16 — a cheaper proxy standing in for the convergence test, tried and closed.**
+
+*Outgoing statement.* "**TRIED AND CLOSED — a cheaper domain proxy standing in for the convergence test.**" — §3, the dated annotation to item 6 (locator: line 74).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 2.47(i).
+
+---
+
+**Row 45.17 — the clause licensing such a proxy struck.**
+
+*Outgoing statement.* "This item formerly ended with a clause licensing a layer to substitute such a proxy, and that clause is struck." — §3, the dated annotation to item 6 (locator: lines 74–75).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 2.47(i).
+
+---
+
+**Row 45.18 — measurement disproved the proxy the one time it was exercised.**
+
+*Outgoing statement.* "**The one time it was exercised, measurement disproved it.**" — §3, the dated annotation to item 6 (locator: line 80).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 2.47(i).
+
+---
+
+**Row 45.19 — one settled bar of context does not anchor the leading edge; a confident earlier tonality over a run does.**
+
+*Outgoing statement.* "The Phase-3 measurement found that one settled *context* measure does **not** anchor the leading edge: the leading-edge key flips only once a confident earlier key is established over a **run** — a V–I two measures back, say — so the proxy stops PREMATURELY." — §3, the dated annotation to item 6 (locator: lines 80–83).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 2.48.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 2.48.
+
+---
+
+**Row 45.20 — item 5's headline rule keeps its ratified status and is what the built facility implements.**
+
+*Outgoing statement.* "**What is UNCHANGED: item 5's headline rule** — a layer never guesses how much context it needs; the amount is discovered, not chosen — **which keeps its ratified status and is what the as-built implements.**" — §3, the dated annotation to item 6 (locator: lines 88–90). Two claims: (i) item 5's headline rule keeps its ratified status; (ii) it is what the built facility implements.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S22: **AGREES** — as at Row 2.49.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status. (ii) **QUARANTINED**, travelling with Row 2.49.
+
+---
+
+**Row 45.21 — a hard bound, the edge of the piece, safety caps and a guard against oscillation.**
+
+*Outgoing statement.* "Every extension also carries a **hard bound** (a maximum reach) and terminates at the **score boundary** — these are **safety caps for the pathological "never converges," not the needed amount**, with a no-oscillation guard." — §3 *The bounded-context contract*, item 7 (locator: lines 91–92). Four claims: (i) every extension carries a hard bound, a maximum reach; (ii) it ends at the edge of the piece; (iii) both are safety caps for a loop that never converges, not the amount needed; (iv) a guard against oscillation goes with them.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S22 (NEAREST, §6.3 entry 4). (iii) L2-S22 (NEAREST, §6.3 entry 4). (iv) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — L2-S22 names the record edge and no maximum reach. (ii) L2-S22: **AGREES** — as at Row 2.14(i). (iii) L2-S22: **AGREES** — as at Row 2.13. (iv) **THE DERIVATION IS SILENT** — L2-S22's premise names *"a reading that never converges, such as an oscillating pivot"* and ends it at the record edge; it names no guard.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 2.14(ii). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 2.14(i). (iii) **ADOPTED — carried** (L2-S22), travelling with Row 2.13. (iv) **ADOPTED — proposed.** *Proposal:* that L2's enlargement loop carry a guard against oscillation, stated as a safety stop and never read as the amount of music L2 needed.
+
+---
+
+**Row 45.22 — the increment chosen by the requesting layer; not fixed; not the supplier's to decide.**
+
+*Outgoing statement.* "The **increment size** — how much to load per step before re-checking convergence — is **chosen by the requesting layer; it is not fixed and not Architectural Layer 1's to decide.**" — §3 *The bounded-context contract*, item 8 (locator: lines 93–94). Two claims: (i) the increment is chosen by the requesting layer and not by the supplier of the events; (ii) the increment is not fixed.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) None.
+
+*Current-text axis.* (i) L2-S22: **AGREES** — as at Row 7.61. (ii) **THE DERIVATION IS SILENT** — L2-S22 names no increment.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22), travelling with Row 7.61. (ii) **ADOPTED — proposed.** *Proposal:* that the amount L2 asks for at each enlargement be chosen at each request and not fixed.
+
+---
+
+**Row 45.23 — the supplier blind to the analysis; the increment set to the smallest step that could change the output.**
+
+*Outgoing statement.* "Architectural Layer 1 is domain-blind, and no single size fits every layer (Architectural Layer 3 probes at phrase/measure scale, Architectural Layer 4 at harmony/slice scale), so the requester sets it to **its own natural inference scale** — the smallest step that could plausibly change its output (knowledge, not a guess)." — §3 *The bounded-context contract*, item 8 (locator: lines 94–97). Two claims: (i) the supplier of the events is blind to the analysis; (ii) the requester sets the increment to its own natural unit, the smallest step that could change its output.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT** — L2-S22 names no increment.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract). (ii) **ADOPTED — proposed.** *Proposal:* that L2 set each enlargement to the smallest step that could change its publication.
+
+---
+
+**Row 45.24 — the increment an efficiency setting only, never a different answer.**
+
+*Outgoing statement.* "It is an **efficiency knob only**: a larger increment means fewer round-trips (and perhaps a slightly larger final loaded span), never a different answer, because convergence (item 6) fixes the result." — §3 *The bounded-context contract*, item 8 (locator: lines 97–99).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S48 equates enlargements that reach the same final span; it says nothing of increments that reach different ones.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that L2's publication not depend on the size of the step by which it enlarges the music it reads.
+
+---
+
+**Row 45.25 — the requester owns the loop; the supplier executes one requested step and never tests convergence.**
+
+*Outgoing statement.* "Mechanically this is forced — the requester owns the *extend → re-infer → re-check* loop, and Architectural Layer 1's *extend* executes **exactly the one requested step and never evaluates convergence** (that would be inference, which it does not do), so the increment can only be a per-call parameter from the requester." — §3 *The bounded-context contract*, item 8 (locator: lines 99–102). Two claims: (i) the requester owns the loop of extending, inferring again and testing again; (ii) the supplier's extension executes exactly the one requested step and never tests convergence. The sentence closes on its own defense of the first claim.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) None.
+
+*Current-text axis.* (i) L2-S22: **AGREES** — as at Row 7.61. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22), travelling with Row 7.61. (ii) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 43.75(ii). *(The input contract gives the decision to enlarge, the increment and the stop test to the requester, never to L0 or L1, at its Ruling 46 (v), as L2-S22's defense relays.)*
+
+---
+
+**Row 45.26 — a refused extension: proceed on truncated evidence, and the output carries marks saying so.**
+
+*Outgoing statement.* "When an extension is refused (hard bound, score boundary at a *selection* edge with the stop condition unmet, or a driver-level safety cap), the layer proceeds on truncated evidence AND the affected output carries **`clipped-by-selection-edge`** provenance (+ `cue-denied` where a request was actually refused) — a truncated result is never presented as a complete one." — §3 *The bounded-context contract*, item 10 (locator: lines 103–106). Two claims: (i) where an extension is refused, the layer proceeds on truncated evidence; (ii) the affected output carries a mark that it was clipped at the selection edge, and a further mark where a request was refused, so that a truncated result is never presented as complete.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) None.
+
+*Current-text axis.* (i) L2-S22: **AGREES** — as at Row 6.53(i). (ii) **THE DERIVATION IS SILENT** — L2-S22's premise has *"the record-edge mark"* say so, a mark the input contract gives; it names none that L2 puts on its own publication.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22), travelling with Row 6.53(i). (ii) **ADOPTED — proposed.** *Proposal:* that an L2 publication decided on truncated evidence carry provenance naming the cap that stopped the enlargement, and a further mark where an enlargement L2 asked for was refused.
+
+---
+
+**Row 45.27 — the grouping layer surfaces those marks and the extension cue, and never acts on them.**
+
+*Outgoing statement.* "Layer 6 (when resumed) surfaces these marks and the `extension-cue` tag (its §5.1 amendment); it never acts on them." — §3 *The bounded-context contract*, item 10 (locator: line 107).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 41.78.
+
+---
+
+**Row 45.28 — the request to the supplier in ticks; the supplier blind to slices and bars.**
+
+*Outgoing statement.* "The request to Architectural Layer 1 is in **ticks** — it is unit-blind (it loads a time range, it knows nothing of slices or measures)." — §3 *The bounded-context contract*, item 9 (locator: lines 108–109).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract).
+
+---
+
+**Row 45.29 — the slice the finest unit at which an analysis can change; no request finer than a change point.**
+
+*Outgoing statement.* "The **fundamental quantum of meaning is the slice (change-point)**: the sounding set is constant within a slice, so no analysis can change at finer granularity — a **beat or sub-change-point step would load no new note and change nothing**, so requesters never reach finer than a change-point." — §3 *The bounded-context contract*, item 9 (locator: lines 109–111). Two claims: (i) the slice is the finest unit at which any analysis can change, its sounding set being constant within it; (ii) a requester never asks for less than one change point.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) None.
+
+*Current-text axis.* (i) L2-S11: **AGREES** — *"A boundary is one of L1's change points"*, so no reading changes inside a slice. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S11). (ii) **ADOPTED — proposed.** *Proposal:* that no enlargement L2 asks for be smaller than one change point.
+
+---
+
+**Row 45.30 — the requester steps in its own natural unit; the tonality layer in bars, the chord layer in slices.**
+
+*Outgoing statement.* "Above that floor, the requester steps in **its own natural unit** and converts to a tick target: Architectural Layer 3 reach-back in **measures** (a key's scale, and a notation boundary nameable before the earlier notes are loaded); Architectural Layer 4's window in **slices**." — §3 *The bounded-context contract*, item 9 (locator: lines 111–114). Two claims: (i) the requester steps in its own natural unit and converts it to a position in ticks; (ii) the separate tonality layer reaches back in bars and the separate chord layer's window steps in slices.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S11.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — L2-S22 names no increment. (ii) L2-S11: **DIFFERS** — as at Row 18.2(i).
+
+*The difference, in both texts' own words.* (ii) The outgoing text gives the tonality and the chord to two layers stepping in their own units — *"Architectural Layer 3 reach-back in measures … Architectural Layer 4's window in slices"*; L2-S11 decides the boundaries with the tonality and the chord *"in the one decision. It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 45.23(ii). (ii) **HISTORICAL**, travelling with Row 18.2(i).
+
+---
+
+**Row 45.31 — the new slices come from re-slicing; the requester never lists them to the supplier.**
+
+*Outgoing statement.* "The new slices then emerge from Architectural Layer 2 re-slicing the loaded region — the requester never enumerates them to Architectural Layer 1." — §3 *The bounded-context contract*, item 9 (locator: lines 114–115). Two claims: (i) the new slices come from re-slicing the loaded stretch; (ii) the requester never lists slices to the supplier of the events.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.71. (ii) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.28.
+
+---
+
+**Row 45.32 — the request: extend in one direction until the stop condition, the hard bound or the edge of the piece.**
+
+*Outgoing statement.* "A layer asks Architectural Layer 1: *"extend the loaded span in direction D (earlier / later in time) until my stop condition holds, or my hard bound is reached, or the score boundary is reached."*" — §4 *The protocol*, the request (locator: lines 119–120).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 21.59(ii).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 21.59(ii).
+
+---
+
+**Row 45.33 — the supply: appended events, a consistent index, the new span and whether the edge of the piece was hit.**
+
+*Outgoing statement.* "It loads the additional notes in that direction, **appends** them to the note model (never dropping already-loaded notes), keeps its look-up index consistent, and returns the **new loaded span** and **whether the score boundary was hit**." — §4 *The protocol*, the supply (locator: lines 121–123). Three claims: (i) the supplier loads the further events and appends them, never dropping any already loaded; (ii) it keeps its index consistent; (iii) it returns the new loaded span and whether the edge of the piece was hit.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.** (iii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 43.75(ii). (ii) **RELOCATED** — to *L0 — The notated record* (the input contract). (iii) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.8.
+
+---
+
+**Row 45.34 — asking again for music already loaded does nothing.**
+
+*Outgoing statement.* "Re-requesting an already-loaded span is a **no-op** (idempotent)." — §4 *The protocol*, the supply (locator: line 123).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract).
+
+---
+
+**Row 45.35 — a re-run infers afresh over the enlarged span, never patching its earlier output.**
+
+*Outgoing statement.* ""Re-run" means each affected layer **re-infers as if running for the first time** over the enlarged loaded span — never a local patch of its previous output." — §4 *The protocol*, the bounded recompute (locator: lines 124–125).
+
+*Derived statements that speak to it.* L2-S48.
+
+*Current-text axis.* L2-S48: **AGREES** — as at Row 22.83(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S48), travelling with Row 22.83(i).
+
+---
+
+**Row 45.36 — on re-slicing, the interior change points stable and the edge slice extended.**
+
+*Outgoing statement.* "Architectural Layer 2 re-slices over the enlarged span: its **interior** real change-points are stable, but the **edge slice abutting the old loaded boundary extends** into the newly-loaded context (the old clip boundary was artificial, not a real change-point — see `cowork_layer2_reslice_design.md` §3)." — §4 *The protocol*, the bounded recompute (locator: lines 126–128).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.71.
+
+---
+
+**Row 45.37 — re-slice equivalence guarantees correctness; convergence absorbs the extended edge.**
+
+*Outgoing statement.* "This is benign: what guarantees correctness is **re-slice equivalence** (the result equals a fresh slice over the enlarged span), and the edge extension is exactly the "more context at the leading edge" convergence (§3.6) absorbs." — §4 *The protocol*, the bounded recompute (locator: lines 128–130). Two claims: (i) re-slicing equals a fresh slicing of the enlarged span; (ii) the extended edge slice is more music at the leading edge, which the convergence test absorbs.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S22: **AGREES** — as at Row 22.83(iii).
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.71. (ii) **ADOPTED — carried** (L2-S22), travelling with Row 22.83(iii).
+
+---
+
+**Row 45.38 — the requester infers again, and its changed inference propagates through every later layer.**
+
+*Outgoing statement.* "The requesting layer then **re-infers** with the new context in view; and because more context can change *what it decides*, **its changed inference propagates forward** — every inferring layer **after** it re-infers in turn (a different leading-edge key changes the chord there, which changes the function, and so on)." — §4 *The protocol*, the bounded recompute (locator: lines 130–133). Two claims: (i) the requesting layer infers again with the new music in view; (ii) its changed inference propagates forward, every later layer inferring again in turn, a changed tonality changing the chord.
+
+*Derived statements that speak to it.* (i) L2-S48. (ii) L2-S11.
+
+*Current-text axis.* (i) L2-S48: **AGREES** — as at Row 22.83(i). (ii) L2-S11: **DIFFERS** — as at Row 18.2(i).
+
+*The difference, in both texts' own words.* (ii) In the outgoing cascade *"a different leading-edge key changes the chord there, which changes the function"*, the tonality decided before the chord; L2-S11 says *"It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S48), travelling with Row 22.83(i). (ii) **HISTORICAL**, travelling with Row 18.2(i).
+
+---
+
+**Row 45.39 — the requester tests its stop condition again and may extend again.**
+
+*Outgoing statement.* "The requesting layer re-tests its stop condition; if still unmet and neither the hard bound nor the score boundary is reached, it may extend again." — §4 *The protocol*, the bounded recompute (locator: lines 133–135).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — L2 keeps asking until *"its in-span publication stops changing between successive enlargements"*, and *"Not falsified by: a stop at the record edge."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 45.40 — the request a supply of data down the stack, not inference.**
+
+*Outgoing statement.* "The extension **request** is a data-supply call **down** to Architectural Layer 1 (a higher layer using a lower layer's service — control, not inference)." — §4 *The protocol*, the forward-only cascade (locator: lines 136–138).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 43.78.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 43.78.
+
+---
+
+**Row 45.41 — the new events and every re-inference flow forward, as on a first run.**
+
+*Outgoing statement.* "The new notes and every re-inference then flow **forward** (Architectural Layer 1 → 2 → 3 → …), exactly as on a first run." — §4 *The protocol*, the forward-only cascade (locator: lines 138–139).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 8.99(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S49), travelling with Row 8.99(i).
+
+---
+
+**Row 45.42 — inference never flows backward.**
+
+*Outgoing statement.* "**Inference never flows backward** — a later layer re-inferring cannot alter an earlier layer's result." — §4 *The protocol*, the forward-only cascade (locator: lines 139–140).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — *"The dependency is one-way: L3 reads L2."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S49), travelling with Row 8.99(i).
+
+---
+
+**Row 45.43 — any sequence of extensions equals one fresh run over the final loaded span.**
+
+*Outgoing statement.* "The result after **any** sequence of extensions must equal a **single fresh run over the final loaded span** — extension is an optimisation of *"load more, then run from scratch,"* never a different computation." — §4 *The protocol*, the equivalence invariant (locator: lines 142–144).
+
+*Derived statements that speak to it.* L2-S48.
+
+*Current-text axis.* L2-S48: **AGREES** — *"The result after any sequence of enlargements equals a single fresh run over the final loaded span."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S48).
+
+---
+
+**Row 45.44 — only the slices the new music reaches infer again; composed with the existing sub-range re-analysis.**
+
+*Outgoing statement.* "In practice the forward cascade is **bounded**: the new context changes inference only where it actually reaches (a carried-in key affects the leading-edge slices and decays inward), so only the affected slices re-infer — the same locality that makes the stop condition terminate, and which composes with the existing *"re-analyse a sub-range"* capability." — §4 *The protocol*, the equivalence invariant (locator: lines 144–147). Two claims: (i) the new music changes inference only where it reaches, so only the slices it reaches infer again; (ii) that locality composes with the existing capability of re-analyzing a sub-range.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 21.60(ii). (ii) **QUARANTINED**, travelling with Row 6.67.
+
+---
+
+**Row 45.45 — the supplier owns the loaded span and offers building over a selection and extending.**
+
+*Outgoing statement.* "Owns the loaded span; offers *build over a selection* and *extend(direction, stop, bound)*." — §5 *Per-layer roles*, Architectural Layer 1 (locator: lines 151–152).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 43.75(ii).
+
+---
+
+**Row 45.46 — extension append-only, the index consistent, clamped at the edges of the piece, reporting the edge.**
+
+*Outgoing statement.* "Extension is **append-only**, keeps the index consistent, **clamps at the score's start/end**, and **reports boundary-reached**." — §5 *Per-layer roles*, Architectural Layer 1 (locator: lines 152–153). Three claims: (i) extension is append-only; (ii) it keeps the index consistent; (iii) it clamps at the start and end of the piece and reports that the edge was reached.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.** (iii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.33(i). (ii) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.33(ii). (iii) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.8.
+
+---
+
+**Row 45.47 — the supplier holds no analysis knowledge; the decision to extend and the stop condition the requester's.**
+
+*Outgoing statement.* "It holds **no analysis knowledge** — it supplies notes; the *decision* to extend, and the stop condition, belong to the requesting layer (single responsibility)." — §5 *Per-layer roles*, Architectural Layer 1 (locator: lines 153–154). Two claims: (i) the supplier holds no analysis knowledge and supplies events; (ii) the decision to extend and the stop condition belong to the requesting layer.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S22: **AGREES** — as at Row 7.61.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.23(i). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 7.61.
+
+---
+
+**Row 45.48 — on growth of the loaded span, slices for the newly loaded stretch, coverage and identity preserved.**
+
+*Outgoing statement.* "When the loaded span grows, it produces the change-point slices for the **newly loaded region**, preserving complete coverage and slice identity over the larger span." — §5 *Per-layer roles*, Architectural Layer 2 (locator: lines 155–156).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.85(i).
+
+---
+
+**Row 45.49 — slices in the context span usable as evidence, never output.**
+
+*Outgoing statement.* "Slices that fall in the context span are usable as evidence but are **not** output." — §5 *Per-layer roles*, Architectural Layer 2 (locator: lines 156–157).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 22.85(ii).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 22.85(ii).
+
+---
+
+**Row 45.50 — reach-back an extension request: earlier, stopping when the leading-edge settled tonality repeats, with a maximum reach.**
+
+*Outgoing statement.* "Reach-back **is** an extension request: direction = earlier, stop = *"the leading-edge settled key repeats across iterations"*, bound = a maximum reach." — §5 *Per-layer roles*, Architectural Layer 3 (locator: lines 158–159).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **DIFFERS** — as at Row 2.47(ii).
+
+*The difference, in both texts' own words.* The outgoing stop is *"the leading-edge settled key repeats across iterations"*; L2-S22 *"stops asking when its in-span publication stops changing between successive enlargements"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 2.47(ii).
+
+---
+
+**Row 45.51 — the evidence window at the leading edge requests an extension or truncates at the start of the piece.**
+
+*Outgoing statement.* "Its per-slice evidence window (± a few beats) at the **leading edge** of the selection requests extension, or truncates at the score start." — §5 *Per-layer roles*, Architectural Layer 3 (locator: lines 163–165).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 6.53(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 6.53(i).
+
+---
+
+**Row 45.52 — the decode over selection and context slices; the context anchoring the carried-in tonality; output for the selection only.**
+
+*Outgoing statement.* "The whole-run decode then runs over selection slices **plus** context slices; the context slices **anchor the carried-in key**, and output is emitted only for the selection slices." — §5 *Per-layer roles*, Architectural Layer 3 (locator: lines 165–166). Three claims: (i) the decode runs over the selection's slices and the context slices together; (ii) the context slices anchor the tonality carried in; (iii) output is emitted only for the selection's slices.
+
+*Derived statements that speak to it.* (i) L2-S43 — one §6.3 names as NEAREST to material met (entry 4). (ii) L2-S22 (NEAREST, §6.3 entry 4). (iii) L2-S48.
+
+*Current-text axis.* (i) L2-S43: **AGREES** — *"No reading is discarded before the whole working span, context included, has been scored."* (ii) L2-S22: **AGREES** — as at Row 2.16(i). (iii) L2-S48: **AGREES** — as at Row 21.59(i).
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S43). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 2.16(i). (iii) **ADOPTED — carried** (L2-S48), travelling with Row 21.59(i).
+
+---
+
+**Row 45.53 — the chord layer's neighbor window at a selection edge: request or recognize the edge; never assume the neighbor.**
+
+*Outgoing statement.* "Its neighbour window (the slice ± a few neighbour slices, and the rewritten *"extend until the chord is in view, stop at the first inconsistent slice"* rule) must, at a **selection edge**, **request extension or recognise the score boundary** — never assume the neighbour slice exists." — §5 *Per-layer roles*, Architectural Layer 4 (locator: lines 167–170). Two claims: (i) at a selection edge the window requests an extension or recognizes the edge of the piece; (ii) it never assumes the neighbor slice exists.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S22: **AGREES** — as at Row 6.53(i). (ii) L2-S22: **AGREES** — as at Row 6.52.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22), travelling with Row 6.53(i). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 6.52.
+
+---
+
+**Row 45.54 — the chord layer built to the bounded contract, not to neighbors always being there.**
+
+*Outgoing statement.* "Designing this now is the whole point: Architectural Layer 4 is built to the bounded contract, not to "neighbours are always there."" — §5 *Per-layer roles*, Architectural Layer 4 (locator: lines 170–171).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 6.55.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 6.55.
+
+---
+
+**Row 45.55 — the request fires only where the truncation is decision-relevant: not already a full-margin commit.**
+
+*Outgoing statement.* "**Discovery sharpening (merged 2026-07-02):** the request fires only when the truncation is **decision-relevant** — the decision under the truncated window is not already a full-margin `Commit` (a truncated window whose evidence sufficed requests nothing)." — §5 *Per-layer roles*, Architectural Layer 4 (locator: lines 171–173).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing request *"fires only when the truncation is decision-relevant — the decision under the truncated window is not already a full-margin `Commit`"*; L2-S22 *"stops asking when its in-span publication stops changing between successive enlargements"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* a trigger in a signed design under which the chord layer asks for more music only when its decision under the truncated window does not already commit at full margin, against L2-S22, under which L2 asks until its in-span publication stops changing; a disposition would choose between them.
+
+---
+
+**Row 45.56 — as built, that request path uncoded; the window silently truncates.**
+
+*Outgoing statement.* "*(As-built status: this request path is UNCODED — the window silently truncates; gap-analysis item #5." — §5 *Per-layer roles*, Architectural Layer 4 (locator: lines 173–174).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.53(ii).
+
+---
+
+**Row 45.57 — the build item of this design.**
+
+*Outgoing statement.* "The build item of this design.)*" — §5 *Per-layer roles*, Architectural Layer 4 (locator: line 174).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 45.58 — the decision-context span extends until a cadence-anchored function, a punctuation boundary or the hard bound.**
+
+*Outgoing statement.* "A slice's **decision-context span** extends forward until the FIRST of: **(i)** a cadence-anchored function (a chord whose function a §5.2 cadence fixed), **(ii)** a punctuation boundary (the L1.5 primitive's picked tick), **(iii)** a hard bound of `K` slices / `B` beats (settings — the §3.7 safety cap)." — §5 *Per-layer roles*, Architectural Layer 5 (locator: lines 176–179).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **DIFFERS** — as at Row 5.73.
+
+*The difference, in both texts' own words.* The outgoing span *"extends forward until the FIRST of: (i) a cadence-anchored function … (ii) a punctuation boundary … (iii) a hard bound"*; L2-S22 *"stops asking when its in-span publication stops changing between successive enlargements"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 5.73. *What was read:* as at Row 5.73.
+
+---
+
+**Row 45.59 — a decision cut by the selection edge requests a forward extension, stopping at any of the three.**
+
+*Outgoing statement.* "**Discovery:** a §5.5 resolution, §5.2 vote aggregation, or §5.3 persistence decision whose span was cut by the **selection edge before any of (i)–(iii) held** requests a forward extension (stop = any of (i)–(iii); increment = its natural unit, slices)." — §5 *Per-layer roles*, Architectural Layer 5 (locator: lines 179–181). Two claims: (i) a decision whose span the selection edge cut requests a forward extension; (ii) that extension stops at any of the three, stepping in slices.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S22: **AGREES** — as at Row 5.74. (ii) L2-S22: **DIFFERS** — as at Row 5.73.
+
+*The difference, in both texts' own words.* (ii) The outgoing extension has *"stop = any of (i)–(iii)"*; L2-S22 *"stops asking when its in-span publication stops changing between successive enlargements"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22), travelling with Row 5.74. (ii) **UNPLACED**, travelling with Row 5.73. *What was read:* as at Row 5.73.
+
+---
+
+**Row 45.60 — re-runs flow forward; an extension may settle an open decision and never reopen a closed one.**
+
+*Outgoing statement.* "Extension re-runs flow forward under the §8 one-pass closure (an extension may finalize an open decision, never re-open a closed one — data supply, not a back-edge)." — §5 *Per-layer roles*, Architectural Layer 5 (locator: lines 181–183). Two claims: (i) the re-runs after an extension flow forward; (ii) an extension may settle a decision still open and never reopens one already closed.
+
+*Derived statements that speak to it.* (i) L2-S49. (ii) L2-S48.
+
+*Current-text axis.* (i) L2-S49: **AGREES** — as at Row 8.99(i). (ii) L2-S48: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) Under the outgoing closure *"an extension may finalize an open decision, never re-open a closed one"*; L2-S48 says *"The result after any sequence of enlargements equals a single fresh run over the final loaded span."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S49), travelling with Row 8.99(i). (ii) **UNPLACED.** *What was read:* a rule of a signed design under which an enlargement may settle an open decision and never reopen a closed one, against L2-S48, under which the publication after any sequence of enlargements equals a fresh run over the final loaded span; a disposition would choose between them.
+
+---
+
+**Row 45.61 — a refused extension: the decision settles on what it saw, with the provenance of item 10.**
+
+*Outgoing statement.* "Denied → the decision resolves on what it saw (or its honest open mark) + the item-10 provenance." — §5 *Per-layer roles*, Architectural Layer 5 (locator: line 183). Two claims: (i) where the extension is refused, the decision is taken on what it saw, or carries its open mark; (ii) it carries the provenance item 10 names.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) None.
+
+*Current-text axis.* (i) L2-S22: **AGREES** — as at Row 6.53(i). (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22), travelling with Row 6.53(i). (ii) **ADOPTED — proposed**, travelling with Row 45.26(ii).
+
+---
+
+**Row 45.62 — the grouping layer requests nothing and surfaces the provenance and the extension cue.**
+
+*Outgoing statement.* "L6 requests nothing (assembly); it surfaces the item-10 provenance and the `extension-cue` tag (L6 §5.1 amendment, 2026-07-02)." — §5 *Per-layer roles*, Architectural Layer 6 (locator: lines 184–185).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L3 — The read-off facts*, travelling with Row 41.78.
+
+---
+
+**Row 45.63 — scenario: an unsettled opening asks for earlier music, and the carried-in tonality anchors it.**
+
+*Outgoing statement.* "Architectural Layer 3 finds the opening has no settled key → requests an earlier extension; Architectural Layer 1 loads back to (say) measure 16; Architectural Layer 2 slices 16–20; Architectural Layer 3 re-decodes with the carried-in key now visible → the opening of the selection is anchored." — §6 *Runtime view*, the first scenario (locator: lines 189–192).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — *"At the edge of the working span, L2's tonality (and the rest of its reading) depends on music before and after the span. L2 is the layer that asks for more music."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 45.64 — scenario: output for the selected bars only; the earlier bars evidence.**
+
+*Outgoing statement.* "Output covers **only 20–40**; 16–20 was evidence." — §6 *Runtime view*, the first scenario (locator: line 192). Two claims: (i) the output covers the selected bars only; (ii) the bars loaded before them were evidence.
+
+*Derived statements that speak to it.* (i) L2-S48. (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S48: **AGREES** — as at Row 21.59(i). (ii) L2-S22: **AGREES** — as at Row 22.85(ii).
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S48), travelling with Row 21.59(i). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 22.85(ii).
+
+---
+
+**Row 45.65 — scenario: at the start of the piece the supplier reports the edge and the layer proceeds.**
+
+*Outgoing statement.* "Architectural Layer 3 requests an earlier extension; Architectural Layer 1 reports the **score boundary at measure 1** → Architectural Layer 3 proceeds with what exists (there is no earlier context to want)." — §6 *Runtime view*, the second scenario (locator: lines 193–195). Two claims: (i) the supplier reports the edge of the piece; (ii) the layer proceeds with what exists.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S22: **AGREES** — as at Row 6.53(i).
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.8. (ii) **ADOPTED — carried** (L2-S22), travelling with Row 6.53(i).
+
+---
+
+**Row 45.66 — scenario: the whole piece selected, no extension fires, behavior as on that date.**
+
+*Outgoing statement.* "No edge reasoning has anywhere to extend to → **no extension fires** → behaviour identical to today." — §6 *Runtime view*, the third scenario (locator: lines 196–197). Two claims: (i) with the whole piece selected no extension fires; (ii) the behavior is identical to that of the document's date.
+
+*Derived statements that speak to it.* (i) L2-S48. (ii) None.
+
+*Current-text axis.* (i) L2-S48: **AGREES** — as at Row 21.61. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S48), travelling with Row 21.61. (ii) **HISTORICAL** — a build state.
+
+---
+
+**Row 45.67 — scenario: the last slice needs its right-hand neighbor: one harmony more, or truncation at the end.**
+
+*Outgoing statement.* "The last slice of the selection needs a right-hand neighbour to decide membership → a one-harmony later extension, or truncation at the score end." — §6 *Runtime view*, the fourth scenario (locator: lines 198–199).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 6.53(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 6.53(i).
+
+---
+
+**Row 45.68 — the ordered list of events and its end-time structure extend consistently.**
+
+*Outgoing statement.* "The start-time-ordered list and the "latest end-time so far" structure must extend consistently — by append + re-index, or by an incremental structure." — §8 *Risks & the non-trivial parts* (locator: lines 221–222).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.33(ii).
+
+---
+
+**Row 45.69 — meanwhile the supplier may rebuild on each extension; every layer above written against the contract.**
+
+*Outgoing statement.* "**Interim:** until that is built, Architectural Layer 1 may *rebuild* over the enlarged span on each extension (correctness first, speed later) — but the *contract* (build-selection + extend) is what every layer above is written against, so the interim is invisible to them." — §8 *Risks & the non-trivial parts* (locator: lines 222–224). Two claims: (i) until then the supplier may rebuild over the enlarged span on each extension; (ii) every layer above is written against the contract of building over a selection and extending, so the interim is invisible to it.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S22: **AGREES** — as at Row 6.55.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 6.55.
+
+---
+
+**Row 45.70 — the cost per extension bounded by the stop condition and the hard bound.**
+
+*Outgoing statement.* "**Re-slice / re-decode cost per extension** — bounded by the stop condition and the hard bound; the hard bound prevents runaway reach-back." — §8 *Risks & the non-trivial parts* (locator: lines 225–226).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S22 names the record edge and no maximum reach.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.14(ii).
+
+---
+
+**Row 45.71 — the final analysis independent of how many steps reached a given loaded span.**
+
+*Outgoing statement.* "The final analysis must not depend on **how many** extension steps reached a given loaded span — extending in one big step or several small ones to the same span must give the same result." — §8 *Risks & the non-trivial parts* (locator: lines 227–229).
+
+*Derived statements that speak to it.* L2-S48.
+
+*Current-text axis.* L2-S48: **AGREES** — *"The result after any sequence of enlargements equals a single fresh run over the final loaded span."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S48).
+
+---
+
+**Row 45.72 — a required test.**
+
+*Outgoing statement.* "(A required test.)" — §8 *Risks & the non-trivial parts* (locator: line 229).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 7.119.
+
+---
+
+**Row 45.73 — the layers already offer re-analysis of a sub-range.**
+
+*Outgoing statement.* "The layers already offer "re-analyse a sub-range" (for score edits)." — §8 *Risks & the non-trivial parts* (locator: line 230).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 6.67.
+
+---
+
+**Row 45.74 — extension and re-analysis of an edited stretch compose cleanly.**
+
+*Outgoing statement.* "Extension (grow the loaded span) and re-analysis (re-run part of it) must compose cleanly — an edit *inside* the selection and an extension *outside* it are different operations on the same model." — §8 *Risks & the non-trivial parts* (locator: lines 231–232).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S48 speaks to enlargements and not to an edit.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that L2's enlargement and its re-reading of an edited stretch compose, each giving the result of a fresh run over the music it ends with.
+
+---
+
+**Row 45.75 — the whole-piece case byte-identical to that date's output.**
+
+*Outgoing statement.* "The degenerate case (selection = score) must stay **byte-identical** to today, or the corpus metrics move for the wrong reason." — §8 *Risks & the non-trivial parts* (locator: lines 233–234).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.60.
+
+---
+
+**Row 45.76 — with the whole piece selected no request fires, so the corpus gate byte-identical by construction.**
+
+*Outgoing statement.* "**(Gate-proof framing, merged 2026-07-02:** with selection = score no request ever fires, so the corpus gate 53/24/53 is byte-identical **by construction** — the standing proof obligation of the build.)" — §8 *Risks & the non-trivial parts* (locator: lines 234–236). Two claims: (i) with the whole piece selected no request ever fires; (ii) so the corpus gate of that date is byte-identical by construction, the build's standing proof obligation.
+
+*Derived statements that speak to it.* (i) L2-S48. (ii) None.
+
+*Current-text axis.* (i) L2-S48: **AGREES** — as at Row 21.61. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S48), travelling with Row 21.61. (ii) **HISTORICAL** — a superseded gate: the batch stop it names was superseded on 2026-07-06.
+
+---
+
+**Row 45.77 — acceptance item 1: this design ratified.**
+
+*Outgoing statement.* "This design **ratified** (it was never signed; sign-off is now the first step)." — §11 *Acceptance*, item 1 (locator: line 240).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a superseded plan: the dated annotation beneath the list, outside these ranges, records the user's ruling (D-266) that items 1 to 4 are deprecated.
+
+---
+
+**Row 45.78 — acceptance item 2: coded across the five layers.**
+
+*Outgoing statement.* "**Coded, L1–L5:** L1 build-selection + extend seam (interim rebuild allowed, §8); L2 re-slice-on-extend (done); L3 reach-back activated as this design's request (from gated-off) ; L4's request-or-truncate path (uncoded today, gap-analysis #5) + item-10 denial provenance; L5's pinned extent + discovery rule." — §11 *Acceptance*, item 2 (locator: lines 241–243).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 45.77.
+
+---
+
+**Row 45.79 — acceptance item 3: tested for regression per layer and as a system.**
+
+*Outgoing statement.* "**Regression-tested, per layer + system:** must-fire / must-not-fire fixtures per discovery rule; the §4 **equivalence invariant** (any extension sequence ≡ one fresh run over the final loaded span); step-size independence (§8); denial provenance; hard-bound/no-oscillation termination; determinism; and the degenerate-case **byte-identity with the corpus gate 53/24/53**." — §11 *Acceptance*, item 3 (locator: lines 244–247).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 45.77.
+
+---
+
+**Row 45.80 — acceptance item 4: then the grouping layer's track resumes.**
+
+*Outgoing statement.* "Then the L6 track resumes (its TSV-oracle instruction un-parks, then the L6 dormant build)." — §11 *Acceptance*, item 4 (locator: line 248).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 45.77.
+
+---
+
+**Row 45.81 — glossary: the selection span, the output span.**
+
+*Outgoing statement.* "**Selection span** — the user's selected range; the output span." — the glossary paragraph (locator: line 259).
+
+*Derived statements that speak to it.* L2-S48.
+
+*Current-text axis.* L2-S48: **AGREES** — as at Row 21.59(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S48), travelling with Row 21.59(i).
+
+---
+
+**Row 45.82 — glossary: the loaded span, what the supplier holds.**
+
+*Outgoing statement.* "**Loaded span** — what Architectural Layer 1 currently holds (selection ⊆ loaded ⊆ score)." — the glossary paragraph (locator: lines 259–260).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.45.
+
+---
+
+**Row 45.83 — glossary: the context span, used as evidence and never labeled.**
+
+*Outgoing statement.* "**Context / evidence span** — loaded minus selection; used as evidence, never labelled." — the glossary paragraph (locator: lines 260–261).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 22.85(ii).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 22.85(ii).
+
+---
+
+**Row 45.84 — glossary: an extension, a layer's request to grow the loaded span.**
+
+*Outgoing statement.* "**Extension** — a layer's request to grow the loaded span in a direction." — the glossary paragraph (locator: line 261).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 21.59(ii).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 21.59(ii).
+
+---
+
+**Row 45.85 — glossary: the stop condition, the requesting layer's test of enough music.**
+
+*Outgoing statement.* "**Stop condition** — the requesting layer's "enough context now" test." — the glossary paragraph (locator: lines 261–262).
+
+*Derived statements that speak to it.* L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 7.61.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 7.61.
+
+---
+
+**Row 45.86 — glossary: the hard bound, a maximum reach.**
+
+*Outgoing statement.* "**Hard bound** — a maximum reach on an extension." — the glossary paragraph (locator: line 262).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S22 names the record edge and no maximum reach.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 2.14(ii).
+
+---
+
+**Row 45.87 — glossary: the edge of the piece, where extension clamps.**
+
+*Outgoing statement.* "**Score boundary** — the start/end of the piece; extension clamps here." — the glossary paragraph (locator: lines 262–263).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.46(iii).
+
+---
+
+**Row 45.88 — glossary: the bounded recompute, re-running the affected layers over the enlarged span.**
+
+*Outgoing statement.* "**Bounded recompute** — re-running the affected layers over the enlarged loaded span after an extension." — the glossary paragraph (locator: lines 263–264).
+
+*Derived statements that speak to it.* L2-S48.
+
+*Current-text axis.* L2-S48: **AGREES** — as at Row 22.83(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S48), travelling with Row 22.83(i).
+
+---
+
+**Row 45.89 — glossary: the whole-piece case, where no extension fires.**
+
+*Outgoing statement.* "**Degenerate (whole-score) case** — selection = score, so no extension ever fires (the batch-testing path)." — the glossary paragraph (locator: lines 264–265).
+
+*Derived statements that speak to it.* L2-S48.
+
+*Current-text axis.* L2-S48: **AGREES** — as at Row 21.61.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S48), travelling with Row 21.61.
+
+---
+
+**Row 45.90 — what the design changes in the supplier's specification.**
+
+*Outgoing statement.* "**Architectural Layer 1:** *build over a selection* + *extend(direction, stop, bound)*; the loaded-vs-selection-span distinction; append-only, boundary-clamping, boundary-reporting; the §11 "reads the whole score" note becomes an explicit **interim** behind the build-selection + extend contract; the old "widen" operation is this *extend*, designed in full." — §10 *Spec propagation* (locator: lines 269–272).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.45.
+
+---
+
+**Row 45.91 — what it changes in the slicing layer's specification.**
+
+*Outgoing statement.* "**Architectural Layer 2:** re-slice the newly loaded region on extend; context slices are evidence, not output." — §10 *Spec propagation* (locator: line 273). Two claims: (i) the newly loaded stretch is sliced on extension; (ii) context slices are evidence, not output.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S22: **AGREES** — as at Row 22.85(ii).
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.85(i). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 22.85(ii).
+
+---
+
+**Row 45.92 — what it changes in the tonality layer's specification.**
+
+*Outgoing statement.* "**Architectural Layer 3:** reach-back framed as an extension request (direction = earlier, stop = the leading-edge settled key repeats across iterations, hard bound); leading-edge window behaviour (request-or-truncate)." — §10 *Spec propagation* (locator: lines 274–275). Two claims: (i) reach-back as an extension request, earlier, stopping when the leading-edge settled tonality repeats, with a hard bound; (ii) the window at the leading edge requests or truncates.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S22: **DIFFERS** — as at Row 2.47(ii). (ii) L2-S22: **AGREES** — as at Row 6.53(i).
+
+*The difference, in both texts' own words.* (i) The outgoing stop is *"the leading-edge settled key repeats across iterations"*; L2-S22 *"stops asking when its in-span publication stops changing between successive enlargements"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 2.47(ii). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 6.53(i).
+
+---
+
+**Row 45.93 — what it changes in the chord layer's specification.**
+
+*Outgoing statement.* "**Architectural Layer 4:** the window/edge contract — at a selection edge, request extension or recognise the score boundary; never assume the neighbour slice exists." — §10 *Spec propagation* (locator: lines 278–279). Two claims: (i) at a selection edge, request an extension or recognize the edge of the piece; (ii) never assume the neighbor slice exists.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S22: **AGREES** — as at Row 6.53(i). (ii) L2-S22: **AGREES** — as at Row 6.52.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22), travelling with Row 6.53(i). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 6.52.
+
+---
+
+**Row 45.94 — the function and grouping layers obey the same contract; functional context the likely future extension.**
+
+*Outgoing statement.* "**Architectural Layers 5–6:** a forward note that they obey the same contract (functional context at the selection edge is the likely future extension)." — §10 *Spec propagation* (locator: lines 280–281). Two claims: (i) the function and grouping layers obey the same contract; (ii) functional context at the selection edge is the likely future extension.
+
+*Derived statements that speak to it.* (i) L2-S22 (NEAREST, §6.3 entry 4). (ii) None.
+
+*Current-text axis.* (i) L2-S22: **AGREES** — as at Row 6.55. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22), travelling with Row 6.55. (ii) **HISTORICAL** — a plan.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (37)
+
+1. "That is the wrong foundation for the product, and the wrong thing to build on." (26) — *a defense*.
+2. "This is self-validating — you have enough context exactly when adding more does not change the answer — and it is what keeps the result independent of the extension step size (the equivalence invariant, §4)." (64–65) — *a defense*, inside D-261's home.
+3. "**★ Dated annotation (user ruling, 2026-08-07; register entry D-622 supersedes the struck clause).**" (73) — *provenance*.
+4. "It read, verbatim (#12): *"In practice a layer uses a **domain proxy that implies convergence** … to imply convergence."*" (75–80) — *provenance*, a former wording preserved.
+5. "Evidence: `cowork_layer3_reachback_design.md` §3 and the phase-3 report it cites; the as-built consequence is verified in the production source at the reach-back loop's own convergence note." (83–85) — *a pointer*.
+6. "**Why the strike reaches the general clause and not only its worked example:** the example was the clause's single exercise … and the establishment gap #19 exists against." (85–88) — *a defense*.
+7. "**Denial/truncation is honest, never silent (merged 2026-07-02).**" (103) — *a label*; the sentence after it states its rule.
+8. "**Units.**" (108) — *a label*.
+9. "**Request.**" (119) — *a label*.
+10. "**Supply (Architectural Layer 1).**" (121) — *a label*.
+11. "**Bounded recompute — a fresh forward re-inference, not a patch.**" (124) — *a label*; the sentence after it states its rule.
+12. "**The re-inference cascade IS the forward-only contract, not an exception to it.**" (136) — *a label*; the sentences after it state its rule.
+13. "So an extension is precisely *"ask down for more raw material, then infer forward again,"* with no backward inference edge anywhere; this is what makes it consistent with the project's forward-only analysis contract." (140–141) — *a defense*, summing up the two rules before it.
+14. "**Equivalence invariant (the correctness guard).**" (142) — *a label*.
+15. "**Architectural Layer 1 — the supplier.**" (151) — *a label*.
+16. "**Architectural Layer 2 — re-slice on extend.**" (155) — *a label*.
+17. "**Architectural Layer 3 — the main consumer today (reach-back).**" (158) — *a label*.
+18. "*(Struck with the §3 item-6 proxy clause on the same ruling, 2026-08-07, and for the same measurement: the stop formerly read "the prevailing key before the selection is in view" — the proxy, not the criterion." (159–161) — *provenance of a correction*, with the former wording.
+19. "It is corrected here rather than left standing, because a reader reaching §5 first would build the stop condition the strike exists to remove." (161–162) — *a defense*.
+20. "Former wording preserved (#12).)*" (163) — *provenance*.
+21. "**Architectural Layer 4 — forward-compatible (built later, but its contract is fixed here).**" (167) — *a label*.
+22. "**Architectural Layer 5 — discovery rule + the pinned decision-context extent (merged 2026-07-02; pins the L5 spec's §15-3, which deferred the extent to "engagement time").**" (175–176) — *a label*, with provenance.
+23. "**Architectural Layer 6 — consumer only (forward note).**" (184) — *a label*.
+24. "**Interior selection, key established earlier.**" (189) — *a label*.
+25. "The user selects measures 20–40." (189) — *the setting of a scenario*.
+26. "**Selection at the score start.**" (193) — *a label*.
+27. "The user selects measures 1–20." (193) — *the setting of a scenario*.
+28. "**Selection = whole score (batch testing).**" (196) — *a label*.
+29. "**Architectural Layer 4 edge slice (when built).**" (198) — *a label*.
+30. "**The note-model index under extension is the main implementation difficulty** (the genuinely non-trivial piece)." (220) — *an assessment of implementation difficulty*.
+31. "**Determinism independent of extension granularity.**" (227) — *a label*.
+32. "**Composition with incremental re-analysis.**" (230) — *a label*.
+33. "**Batch-path preservation.**" (233) — *a label*.
+34. "This is the regression guard for the whole change." (234) — *a defense*.
+35. "*(Same correction and same ruling as the §5 bullet, 2026-08-07: this line formerly read "stop = prevailing key in view"." (275–276) — *provenance of a correction*, with the former wording.
+36. "Former wording preserved (#12).)*" (277) — *provenance*.
+37. "(Added to the already-rewritten spec.)" (279) — *provenance*.
+
+#### The arithmetic at this member
+
+- Rows written: **94** (45.1 to 45.94); 33 of them carry more than one claim and are split — 29 carrying two claims each, 3 carrying three and 1 carrying four.
+- **Outgoing statements placed: 132.**
+- Listed under *not a statement*: **37**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 132 dispositions over 132
+  statements.
+- **UNPLACED at this member: 5** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 61 | 45.1, 45.3, 45.6, 45.7, 45.9(i), 45.9(ii), 45.10, 45.11(i), 45.11(ii), 45.12, 45.13(ii), 45.15(i), 45.15(ii), 45.19, 45.21(ii), 45.21(iii), 45.22(i), 45.25(i), 45.26(i), 45.29(i), 45.32, 45.35, 45.37(ii), 45.38(i), 45.39, 45.40, 45.41, 45.42, 45.43, 45.47(ii), 45.49, 45.51, 45.52(i), 45.52(ii), 45.52(iii), 45.53(i), 45.53(ii), 45.54, 45.59(i), 45.60(i), 45.61(i), 45.63, 45.64(i), 45.64(ii), 45.65(ii), 45.66(i), 45.67, 45.69(ii), 45.71, 45.76(i), 45.81, 45.83, 45.84, 45.85, 45.88, 45.89, 45.91(ii), 45.92(ii), 45.93(i), 45.93(ii), 45.94(i) |
+| ADOPTED — proposed | 14 | 45.5, 45.21(i), 45.21(iv), 45.22(ii), 45.23(ii), 45.24, 45.26(ii), 45.29(ii), 45.30(i), 45.44(i), 45.61(ii), 45.70, 45.74, 45.86 |
+| RELOCATED | 29 | 45.8, 45.23(i), 45.25(ii), 45.27, 45.28, 45.31(i), 45.31(ii), 45.33(i), 45.33(ii), 45.33(iii), 45.34, 45.36, 45.37(i), 45.45, 45.46(i), 45.46(ii), 45.46(iii), 45.47(i), 45.48, 45.62, 45.65(i), 45.68, 45.69(i), 45.72, 45.75, 45.82, 45.87, 45.90, 45.91(i) |
+| QUARANTINED | 9 | 45.2, 45.4, 45.14, 45.20(ii), 45.44(ii), 45.50, 45.56, 45.73, 45.92(i) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 14 | 45.16, 45.17, 45.18, 45.20(i), 45.30(ii), 45.38(ii), 45.57, 45.66(ii), 45.76(ii), 45.77, 45.78, 45.79, 45.80, 45.94(ii) |
+| UNPLACED | 5 | 45.13(i), 45.55, 45.58, 45.59(ii), 45.60(ii) |
+| **Total** | **132** | — |
+
+**The arithmetic closes at this member**: 61 + 14 + 29 + 9 + 0 + 14 + 5 = 132, against 132 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 62 |
+| DIFFERS | 10 |
+| THE DERIVATION IS SILENT | 60 |
+| **Total verdicts** | **132** |
+
+*(132 verdicts over 132 statements; no statement names two derived statements.)* DIFFERS: 45.13(i), 45.14, 45.30(ii), 45.38(ii), 45.50, 45.55, 45.58, 45.59(ii), 45.60(ii), 45.92(i).
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 45 is empty.
+- **SEEN rows: 45.7, 45.8, 45.9, 45.10, 45.11, 45.12, 45.13, 45.14 and 45.15**, inside D-261's home (lines 57–71), each
+  marked *SEEN — §6.3 entry 4 (D-261)*. Row 45.6 opens before the home and is not marked. The check was made at the homes
+  as the manifest states; the other seven homes lie in other documents.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S22 (entry 4) — 45.3, 45.6, 45.7,
+  45.9(ii), 45.10, 45.11(i), 45.11(ii), 45.12, 45.13(i), 45.14, 45.15(i), 45.15(ii), 45.19, 45.20(ii), 45.21(ii),
+  45.21(iii), 45.22(i), 45.25(i), 45.26(i), 45.32, 45.37(ii), 45.39, 45.40, 45.47(ii), 45.49, 45.50, 45.51, 45.52(ii),
+  45.53(i), 45.53(ii), 45.54, 45.55, 45.58, 45.59(i), 45.59(ii), 45.61(i), 45.63, 45.64(ii), 45.65(ii), 45.67, 45.69(ii),
+  45.83, 45.84, 45.85, 45.91(ii), 45.92(i), 45.92(ii), 45.93(i), 45.93(ii), 45.94(i); L2-S43 (entry 4) — 45.52(i). No row
+  of this member names L2-S31, L2-S17, L2-S42, L2-S45, L2-S12 or L2-S38. Each says so at the row.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -59194,6 +60494,21 @@ the row says which.
   instrument names the record carries.
 - Row 44.18 — travelling with Row 22.37(ii): the fields each note carries — pitch class, octave, onset, duration, tie
   state, voice and staff, spelled pitch.
+- Rows 45.8, 45.33(iii), 45.46(iii), 45.65(i) and 45.87 — the supplier of the events clamping at the start and end of
+  the piece and reporting whether an edge was reached. *(The input contract's Ruling 46 (vi), as L2-S22's premise
+  relays.)*
+- Rows 45.23(i) and 45.47(i) — the supplier blind to the analysis, holding no analysis knowledge.
+- Rows 45.25(ii), 45.33(i) and 45.45 — travelling with Row 43.75(ii): the supplier owning the loaded span, loading and
+  appending the events asked for, and executing exactly the one requested step. *(The input contract's Ruling 46 (v),
+  as L2-S22's defense relays.)*
+- Row 45.46(i) — travelling with Row 45.33(i): extension append-only.
+- Rows 45.33(ii), 45.46(ii) and 45.68 — the supplier's index kept consistent as events are appended.
+- Rows 45.28 and 45.31(ii) — the request to the supplier made in ticks, the supplier blind to slices and bars and
+  never given a list of slices.
+- Row 45.34 — asking again for music already loaded does nothing.
+- Row 45.69(i) — the supplier allowed, for the time being, to rebuild over the enlarged span on each extension.
+- Rows 45.82 and 45.90 — travelling with Row 45.45: the loaded span, and the supplier's specification of building
+  over a selection and extending.
 
 **To *L1 — Change points, candidates and notated evidence*.**
 
@@ -59299,6 +60614,10 @@ the row says which.
 - Row 44.31 — travelling with Row 10.5: the slices, their durations and the empty slices.
 - Row 44.44 — travelling with Row 5.93: the leading tone resolving, as a key-agnostic event aware of the voices.
   *(L2-S37 travels with it.)*
+- Rows 45.31(i), 45.36 and 45.37(i) — travelling with Row 22.71: re-slicing on extension, the interior change points
+  stable, the edge slice extended, and the result equal to a fresh slicing.
+- Rows 45.48 and 45.91(i) — travelling with Row 22.85(i): slices for the newly loaded stretch, coverage and identity
+  preserved.
 
 **To *L3 — The read-off facts*.**
 
@@ -59475,6 +60794,8 @@ the row says which.
 - Row 44.22(i) — the strength of the beat as evidence of where a cadence arrives.
 - Row 44.30(ii) — travelling with Row 4.10: the soprano's scale degree at phrase ends, constrained by the cadence
   formulas.
+- Rows 45.27 and 45.62 — travelling with Row 41.78: the grouping layer surfacing the truncation marks and the
+  extension cue, requesting nothing and never acting on them.
 
 **To *the second axis — voice leading*.**
 
@@ -59765,6 +61086,9 @@ the row says which.
 - Rows 43.160 and 43.161(i) — the slices finer than the grain of the annotation, several slices to one annotated event.
 - Rows 43.162 and 43.163 — the root metric grading at the annotation's event positions, and a disagreement among the slices
   of one annotated event a diagnostic.
+- Row 45.72 — travelling with Row 7.119: the test that the analysis does not depend on how many steps reached a
+  loaded span.
+- Row 45.75 — travelling with Row 6.60: the whole-piece case held byte-identical.
 
 *(Member 1's relocations are the rows numbered 1.n above. Member 2 relocates no row. Member 3 relocates one, Row 3.38,
 above. Member 4's relocations are the rows numbered 4.n above. Member 5's relocations are the rows
@@ -59775,7 +61099,7 @@ numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
 above. Member 31 relocates no row, and member 32's relocations are the rows numbered 32.n above. Member 33's relocations are the rows numbered 33.n
-above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, and member 44's the rows numbered 44.n.)*
+above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, and member 45's the rows numbered 45.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -60802,6 +62126,12 @@ rows here, each with its audit question, in the commit that tabulates it.
 - Row 44.48 — what does the dormant function layer produce at the current commit, and does any of it run on a production path?
 - Row 44.57 — travelling with Row 5.298: do two cadence detectors exist at the current commit, one key-dependent in production and one dormant and key-agnostic, and which runs?
 - Row 44.75(i) — which internal diagnostics carry the evidence behind an inference at the current commit, and does any of them reach a published surface?
+- Row 45.2 — travelling with Row 2.17: what stretch does the shipped program analyze, and on which path is the whole score analyzed?
+- Row 45.4 — travelling with Row 2.16(ii): does the note model load the whole score regardless of the selection, so that no enlargement is ever requested?
+- Rows 45.14, 45.50 and 45.92(i) — travelling with Row 2.47(ii): what does the built reach-back facility track, and what is its stop test?
+- Row 45.20(ii) — travelling with Row 2.49: does the built facility stop on the headline criterion alone?
+- Rows 45.44(ii) and 45.73 — travelling with Row 6.67: does the dormant decoder offer a sub-range re-run, and does its result equal a fresh run over the whole?
+- Row 45.56 — travelling with Row 6.53(ii): does the dormant decoder request an extension at a selection edge, and of what size?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -60921,6 +62251,21 @@ words.
   reading be a separable stage that can be switched off.
 - Row 44.77 — travelling with Row 21.76: that a fact L2 publishes and no consumer reads be declared dormant with its
   future consumer named, or removed.
+- Row 45.5 — that L2 read no event and no slice outside the music loaded for it.
+- Rows 45.21(i), 45.70 and 45.86 — travelling with Row 2.14(ii): that a maximum distance on L2's enlargement loop be
+  stated as a safety stop that is never read as the amount of context L2 needed.
+- Row 45.21(iv) — that L2's enlargement loop carry a guard against oscillation, stated as a safety stop and never read
+  as the amount of music L2 needed.
+- Row 45.22(ii) — that the amount L2 asks for at each enlargement be chosen at each request and not fixed.
+- Rows 45.23(ii) and 45.30(i) — that L2 set each enlargement to the smallest step that could change its publication.
+- Row 45.24 — that L2's publication not depend on the size of the step by which it enlarges the music it reads.
+- Rows 45.26(ii) and 45.61(ii) — that an L2 publication decided on truncated evidence carry provenance naming the cap
+  that stopped the enlargement, and a further mark where an enlargement L2 asked for was refused.
+- Row 45.29(ii) — that no enlargement L2 asks for be smaller than one change point.
+- Row 45.44(i) — travelling with Row 21.60(ii): that L2 re-read an edited stretch plus a bounded margin, its result
+  equal to a fresh run.
+- Row 45.74 — that L2's enlargement and its re-reading of an edited stretch compose, each giving the result of a fresh
+  run over the music it ends with.
 
 **DIFFERS.**
 
@@ -61678,6 +63023,20 @@ words.
   decides the tonality *"in the one decision"*.
 - Row 44.71(iii) — the outgoing law lays the dependency *"on a COARSER fact that is already stable (the collection, not
   the tonic)"*; L2-S11 says *"It is never decided before the chord or after it."*
+- Row 45.13(i) — the outgoing layer compares *"the in-selection quantity the extension was requested for"*; L2-S22
+  stops *"when its in-span publication stops changing between successive enlargements"*.
+- Rows 45.14, 45.50 and 45.92(i) — as at Row 2.47(ii): the outgoing reach-back stops when *"the leading-edge settled
+  key"* repeats; L2-S22 stops *"when its in-span publication stops changing between successive enlargements"*.
+- Rows 45.30(ii) and 45.38(ii) — as at Row 18.2(i): the outgoing gives the tonality and the chord to separate layers,
+  *"a different leading-edge key changes the chord there"*; L2-S11 says *"It is never decided before the chord or
+  after it."*
+- Row 45.55 — the outgoing request *"fires only when the truncation is decision-relevant"*; L2-S22 asks until its
+  in-span publication stops changing.
+- Rows 45.58 and 45.59(ii) — as at Row 5.73: the outgoing span *"extends forward until the FIRST of"* three stops;
+  L2-S22 *"stops asking when its in-span publication stops changing between successive enlargements"*.
+- Row 45.60(ii) — under the outgoing closure *"an extension may finalize an open decision, never re-open a closed
+  one"*; L2-S48 says *"The result after any sequence of enlargements equals a single fresh run over the final loaded
+  span."*
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -61733,10 +63092,11 @@ own distribution table in §6.
 | 42 | 101 | 6 | 0 | 68 | 5 | 0 | 22 | 0 | 30 |
 | 43 | 202 | 45 | 2 | 47 | 11 | 0 | 58 | 39 | 60 |
 | 44 | 122 | 33 | 1 | 21 | 25 | 0 | 18 | 24 | 17 |
-| **Total** | **4517** | **524** | **91** | **883** | **1456** | **0** | **1224** | **339** | **2033** |
+| 45 | 132 | 61 | 14 | 29 | 9 | 0 | 14 | 5 | 37 |
+| **Total** | **4649** | **585** | **105** | **912** | **1465** | **0** | **1238** | **344** | **2070** |
 
-**The arithmetic check:** 524 + 91 + 883 + 1456 + 0 + 1224 + 339 = 4517, against 4517 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122).
+**The arithmetic check:** 585 + 105 + 912 + 1465 + 0 + 1238 + 344 = 4649, against 4649 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132).
 
 **Current-text verdicts.**
 
@@ -61786,10 +63146,11 @@ own distribution table in §6.
 | 42 | 16 | 0 | 85 | 101 |
 | 43 | 52 | 68 | 85 | 205 |
 | 44 | 39 | 30 | 53 | 122 |
-| **Total** | **811** | **771** | **2988** | **4570** |
+| 45 | 62 | 10 | 60 | 132 |
+| **Total** | **873** | **781** | **3048** | **4702** |
 
-**The arithmetic check:** 811 + 771 + 2988 = 4570 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122).
+**The arithmetic check:** 873 + 781 + 3048 = 4702 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132).
 
 ## 14. The derivation's independence record, relayed
 
@@ -61820,4 +63181,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 44 are done, positions 45 to 62 are untouched.
+  untouched: positions 1 to 45 are done, positions 46 to 62 are untouched.
