@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md, Task 2",
+ "dispatch": "cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -447,22 +447,28 @@
    "base_commit": "b91c56971806e69af6bdccb10198a95d87fd5d05",
    "the_then_previous_batch": "cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md, Task 2",
+   "base_commit": "7ddb6c4ec618501685a4c9397ed2aaee5618a4f9",
+   "the_then_previous_batch": "cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "b91c56971806e69af6bdccb10198a95d87fd5d05",
- "the_then_previous_batch": "cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md",
+ "base_commit": "7ddb6c4ec618501685a4c9397ed2aaee5618a4f9",
+ "the_then_previous_batch": "cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md",
  "the_kind_of_move": "ordinary",
  "entries_moved": 1,
- "characters_moved": 2908,
+ "characters_moved": 2953,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2908,
-   "sha256": "71969d0d7cc1e903c1a6f25ca3baef26a910e87d51485de711038afe2bcbbe51",
+   "characters": 2953,
+   "sha256": "4e1e6bf80c08a642d17ad20794cee823fff1a15c8a9c4172623e8f53ef0cdb1a",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-09-28 (CC — `records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md`. **★★ THE L2 TABULATION CONTINUED FROM POSITIO"
+   "opening": "*2026-09-29 (CC — `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`. **★★ THE L2 TABULATION CONTINUED FROM POSIT"
   }
  ],
  "reconciliation": {
