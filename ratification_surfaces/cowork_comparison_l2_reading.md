@@ -7,7 +7,8 @@
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_third_2026_09_27.md` Task 1, and further under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md` Task 1, and further under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifth_2026_09_28.md` Task 1, and further under
-> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md` Task 1, executing
+> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md` Task 1, and further under
+> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md` Task 1, executing
 > the user's ruling of 2026-09-27, Option B
 > (`records/cowork/rulings/cowork_rulings_2026_09_27_l2_outgoing_population_sitting.md` §2), the
 > named-documents ruling of the same date, Option B
@@ -69,7 +70,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 26 | `ARCHITECTURE.md` passages — *7. The Knowledge Base* | **DONE** (§6.26) |
 | 27 | `ARCHITECTURE.md` passages — *8. Planned Generation Components* | **DONE** (§6.27) |
 | 28 | `ARCHITECTURE.md` passages — *9. The Constraint System* | **DONE** (§6.28) |
-| 29 | `ARCHITECTURE.md` passages — *10. Visualization* | NOT YET TABULATED |
+| 29 | `ARCHITECTURE.md` passages — *10. Visualization* | **DONE** (§6.29) |
 | 30 | `ARCHITECTURE.md` passages — *11. Intonation* | NOT YET TABULATED |
 | 31 | `ARCHITECTURE.md` passages — *12. User Interface* | NOT YET TABULATED |
 | 32 | `ARCHITECTURE.md` passages — *14. ML Readiness* | NOT YET TABULATED |
@@ -106,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 28 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 29 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, and the `ARCHITECTURE.md` passages under *9. The Constraint System*.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, and the `ARCHITECTURE.md` passages under *10. Visualization*.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 28 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 29 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -137,8 +138,11 @@ tabulated positions 17 to 22, each whole and in its own commit, and stopped at t
 dispatch's capacity judgment (its Task 1(h)): position 23 was judged not finishable whole in the context that remained with the
 batch's close still to run, and was not opened. The sixth batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md`, resumed at position 23 and tabulated
-positions 23 to 28, each whole and in its own commit. **Positions 29 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 29**, `ARCHITECTURE.md` passages — *10. Visualization*. §7, §8,
+positions 23 to 28, each whole and in its own commit, and stopped at the member boundary after position 28 under that
+dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finishable together with the batch's close in
+the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated position 29 whole in its own commit. **Positions 30 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 30**, `ARCHITECTURE.md` passages — *11. Intonation*. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -42054,6 +42058,519 @@ the code block (locator: line 6002).
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
   L2-S17, L2-S22, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
 
+---
+
+### 6.29 — Member 29: `ARCHITECTURE.md`, passages — *10. Visualization*
+
+> **Manifest for this member.** Position **29**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: *"## 10. Visualization"*. **The twelve published ranges**, each as a locator only,
+> by its first and last line as the artifact publishes them (**D-307**):
+>
+> 1. lines 6024–6027, from *"**Purpose:** Allow the developer to walk through `greedyExpandSegmentation()` one"* to
+>    *"through automated BIR metrics."*;
+> 2. lines 6036–6039, from *"- **Notes under consideration** — notes in the current candidate window are"* to
+>    *""passing — duration < floor", "excluded staff", "tied continuation", etc."*;
+> 3. lines 6041–6044, from *"- **Live chord symbols** — as each region is tentatively placed, a chord symbol"* to
+>    *"actual output of `analyzeChord` for that candidate."*;
+> 4. lines 6046–6049, from *"- **Revisions are visible** — if a later step overrides or removes a tentative"* to
+>    *"observer sees the algorithm "change its mind.""*;
+> 5. lines 6055–6059, from *"- **Inline reasoning labels** — small text annotations on or near each note or"* to
+>    *"or at high zoom."*;
+> 6. lines 6061–6063, from *"- **Temporal extension animation** — as the greedy window expands, the highlighted"* to
+>    *"expansion directly visible."*;
+> 7. lines 6082–6086, from *"`greedyExpandSegmentation()` is refactored to accept an optional"* to *"clicks "Step"."*;
+> 8. lines 6088–6103, from *"```cpp"* to *"```"*;
+> 9. lines 6105–6107, from *"**Prerequisites:** Bridge switch (§2.10) must be complete so the live annotation"* to
+>    *"produces live annotations."*;
+> 10. lines 6111–6117, from *"**Premise correction, 2026-08-02 (`OPEN_ITEMS.md` OI-232, dated-note item 1).** The
+>     prerequisite and"* to *"not settled here."*;
+> 11. lines 6126–6157, from *"```cpp"* to *"```"*;
+> 12. lines 6180–6182, from *"MTH Pro-style map based on Berklee chord-scale theory (Nettles, Levine). Positions"* to
+>     *"tensions. Our own visual design — not a reproduction of MTH Pro's specific layout."*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside. **The lines between the ranges are outside the member** and are not tabulated, quoted or
+> listed. **No line inside the ranges is a heading.** Outgoing statements: **31** (rows 29.1 to 29.28; 3 of those rows
+> carry two claims each and are split — the arithmetic is at the foot of this member). Listed under *not a statement*:
+> **13**. Counted at this member by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of §10: the developer's demo view
+> of §10.0, its step event and its prerequisite, with the premise correction dated 2026-08-02 beneath them; the
+> harmonic-map interface of §10.1; and the functional harmony map of §10.4. §10.0 and §10.4 describe tools the record
+> states as planned — §10.4 by its heading, §10.0 by its own correction, which says the section *"specifies a developer
+> tool for a code path that no longer runs"*. **The placement readings are those of the earlier members, applied
+> unchanged**: the design of a component the record states as planned is HISTORICAL — a plan, as the style file's
+> dimensions at member 25 and the harmonizer's steps at member 27 were; member 23's code-line reading governs the two
+> code blocks, and as at member 28 a code line that carries a comment saying what it is or does is QUARANTINED as a
+> statement about the implementation, a run of code lines that carries no comment and each fence line being listed; a
+> description of the implementation is QUARANTINED; a defense, a label and the document's account of itself are listed
+> under *not a statement*. **Member 24's first reading decides the demo view's items**: an item of a plan is placed by
+> what it names, so where one sentence of the demo view both describes what the view will show and states, as a fact,
+> what the legacy greedy segmentation does, the sentence carries two claims — the view, HISTORICAL — a plan, and the
+> segmentation, QUARANTINED as a description of the implementation. **No reading is new at this member.**
+>
+> **The WITHHELD homes inside this member**: none — the artifact's `item_4_identities_inside` for position 29 is
+> empty, and a check at `tools/audit/decisions/backbone_decisions.json` found no decision homed in these ranges.
+> **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes lies in this member —
+> the two in `ARCHITECTURE.md`, D-002 and D-095, lie at lines 21–22 and 43–44.
+
+---
+
+**Row 29.1 — the demo view lets a developer step through the legacy greedy segmentation.**
+
+*Outgoing statement.* "**Purpose:** Allow the developer to walk through `greedyExpandSegmentation()` one step at a time on a
+live score, observing every decision the algorithm makes." — §10.0 *Inference Demo Mode (Developer Tool)* (locator: lines
+6024–6025).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan: the developer's demo view, which the section's own correction says
+specifies a tool for a code path that no longer runs.
+
+---
+
+**Row 29.2 — the notes of the current candidate window are highlighted.**
+
+*Outgoing statement.* "**Notes under consideration** — notes in the current candidate window are highlighted (e.g.
+amber)." — §10.0 (locator: lines 6036–6037).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan: what the demo view shows.
+
+---
+
+**Row 29.3 — excluded notes shown with the reason, a duration floor among the reasons for passing.**
+
+*Outgoing statement.* "Notes excluded by staff eligibility or the non-chord-tone filter are highlighted in a distinct color
+(e.g. grey) with a small "why" label: "passing — duration < floor", "excluded staff", "tied continuation", etc." — §10.0
+(locator: lines 6037–6039). Two claims: (i) the demo view shows each excluded note in a distinct color with a label giving
+the reason; (ii) the legacy segmentation excludes notes by staff eligibility or by a non-chord-tone filter, one of its
+reasons being *"passing — duration < floor"*.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S25.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S25: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text names *"passing — duration < floor"* as a reason the
+non-chord-tone filter excludes a note; L2-S25 says *"Neither decides it: no duration cut and no metric position makes a note
+a chord tone or an elaboration."*
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a plan: what the demo view shows. (ii) **QUARANTINED.** *Audit question:* does
+the legacy greedy segmentation exclude notes by staff eligibility and by a non-chord-tone filter whose reasons include a
+duration floor, and does any production path run it at the current commit?
+
+---
+
+**Row 29.4 — the tentative region's chord symbol and Roman numeral shown above the staff.**
+
+*Outgoing statement.* "**Live chord symbols** — as each region is tentatively placed, a chord symbol (e.g. "G7") and Roman
+numeral (e.g. "V7") appear above the staff at the region's start tick, rendered in a distinct color (e.g. blue =
+tentative)." — §10.0 (locator: lines 6041–6043).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan: what the demo view shows.
+
+---
+
+**Row 29.5 — each candidate region read by the legacy chord analyzer as the segmentation places it.**
+
+*Outgoing statement.* "These are the actual output of `analyzeChord` for that candidate." — §10.0 (locator: lines
+6043–6044).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the legacy greedy segmentation place regions tentatively as
+it expands its window, reading each candidate with the legacy chord analyzer and letting a later round replace or absorb a
+region placed earlier, and does any production path run it at the current commit?
+
+---
+
+**Row 29.6 — a region placed earlier replaced or absorbed by a later step.**
+
+*Outgoing statement.* "**Revisions are visible** — if a later step overrides or removes a tentative region (Round 2 gap-fill
+replaces an R1 anchor, or a region is consumed by a neighbor), the chord symbol on the score changes or fades out in
+place." — §10.0 (locator: lines 6046–6048). Two claims: (i) the demo view changes or fades the chord symbol in place when a
+region is overridden or removed; (ii) the legacy segmentation lets a later step override or remove a tentative region — a
+second, gap-filling round replacing a region the first round anchored, or a neighbor consuming a region.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT** — it states what L2 decides, not
+what an implementation does.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a plan: what the demo view shows. (ii) **QUARANTINED**, travelling with Row
+29.5.
+
+---
+
+**Row 29.7 — inline labels explaining each inference step.**
+
+*Outgoing statement.* "**Inline reasoning labels** — small text annotations on or near each note or region explain the
+inference: "root: G (score 1.87)", "threshold: 1.34 (PC×2)", "bilateral: D7 ← | → Cm", "complexity penalty ×0.75 → Gm
+preferred over Gmadd9", "head-gap: tonic prior → Cm"." — §10.0 (locator: lines 6055–6058).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan: what the demo view shows, its labels given as examples.
+
+---
+
+**Row 29.8 — the labels readable on hover or at high zoom.**
+
+*Outgoing statement.* "These labels are unobtrusive but readable on hover or at high zoom." — §10.0 (locator: lines
+6058–6059).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan: what the demo view shows.
+
+---
+
+**Row 29.9 — the region boundary moving rightward as the greedy window expands.**
+
+*Outgoing statement.* "**Temporal extension animation** — as the greedy window expands, the highlighted region boundary
+moves rightward on the score, making the "greedy" nature of the expansion directly visible." — §10.0 (locator: lines
+6061–6063). Two claims: (i) the demo view moves the highlighted region boundary rightward as the window expands; (ii) the
+legacy segmentation expands its window greedily, forward in time.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT** — it states what L2 decides, not
+what an implementation does.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a plan: what the demo view shows. (ii) **QUARANTINED**, travelling with Row
+29.5.
+
+---
+
+**Row 29.10 — the legacy greedy segmentation to accept a step callback.**
+
+*Outgoing statement.* "`greedyExpandSegmentation()` is refactored to accept an optional `SegmentationStepCallback` — called
+after each candidate evaluation with the full decision state." — §10.0 (locator: lines 6082–6084).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan: the refactor the demo view needs.
+
+---
+
+**Row 29.11 — the callback null, and costing nothing, outside the demo.**
+
+*Outgoing statement.* "In normal (non-demo) operation the callback is null and incurs no overhead." — §10.0 (locator: lines
+6084–6085).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan, the same refactor as Row 29.10.
+
+---
+
+**Row 29.12 — while the demo runs, the callback updates the panel and waits for the user.**
+
+*Outgoing statement.* "In demo mode, the callback updates the panel UI and blocks until the user clicks "Step"." — §10.0
+(locator: lines 6085–6086).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan: the demo view's behavior.
+
+---
+
+**Row 29.13 — the step event records which round evaluated the candidate.**
+
+*Outgoing statement.* "int round; // 1 or 2" — §10.0, the code block (locator: line 6091).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a segmentation step event recording each candidate
+evaluation of the legacy greedy segmentation exist at the current commit, and does anything in the analysis read it?
+
+---
+
+**Row 29.14 — the step event carries the pitch classes collected in the window.**
+
+*Outgoing statement.* "std::vector<int> pitchClasses; // PCs collected in window" — §10.0, the code block (locator: line
+6092).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 29.13.
+
+---
+
+**Row 29.15 — the step event says whether the candidate was placed.**
+
+*Outgoing statement.* "bool passed; // accepted as placed region" — §10.0, the code block (locator: line 6096).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 29.13.
+
+---
+
+**Row 29.16 — the step event carries the reason a candidate was rejected.**
+
+*Outgoing statement.* "std::string rejectReason; // if !passed" — §10.0, the code block (locator: line 6097).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 29.13.
+
+---
+
+**Row 29.17 — the demo view's prerequisite: the live annotation path using the legacy segmentation.**
+
+*Outgoing statement.* "**Prerequisites:** Bridge switch (§2.10) must be complete so the live annotation path uses
+`greedyExpandSegmentation()`." — §10.0 (locator: lines 6105–6106).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a superseded plan: the demo view's entry condition, which the correction beneath it
+records as false.
+
+---
+
+**Row 29.18 — the demo view drives the code path of the live annotations.**
+
+*Outgoing statement.* "Demo mode drives the same code path that produces live annotations." — §10.0 (locator: lines
+6106–6107).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a superseded plan, the premise the correction beneath it records as false.
+
+---
+
+**Row 29.19 — the production annotation path is the joint estimator's record path, which never calls the legacy
+segmentation.**
+
+*Outgoing statement.* "The prerequisite and the whole premise above are false at HEAD: the production annotation path is the
+joint estimator's record path, which never calls `greedyExpandSegmentation()` (OI-175 records exactly that)." — §10.0, the
+premise correction (locator: lines 6111–6113).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the production annotation path at the current commit the joint
+estimator's record path, and does it call the legacy greedy segmentation anywhere?
+
+---
+
+**Row 29.20 — what the demo view should step through instead is open.**
+
+*Outgoing statement.* "**What the demo view should step through instead is OPEN** — it is a design question for the joint
+decoder, not a documentation fix, and it is not settled here." — §10.0, the premise correction (locator: lines 6115–6117).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status: the demo view's design left open.
+
+---
+
+**Row 29.21 — the harmonic map names the chord at a position on it.**
+
+*Outgoing statement.* "// What chord does this position on the map represent? virtual std::optional<ChordSymbol> chordAt(
+const MapPosition& position ) const = 0;" — §10.1 *IHarmonicMap Interface*, the code block (locator: lines 6131–6134).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a harmonic-map interface exist at the current commit, and does
+anything in the analysis read it?
+
+---
+
+**Row 29.22 — the harmonic map names the chords adjacent to a chord on it.**
+
+*Outgoing statement.* "// What chords are harmonically adjacent to this chord on this map? virtual std::vector<ChordSymbol>
+neighboringChords( const ChordSymbol& chord ) const = 0;" — §10.1, the code block (locator: lines 6136–6139).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 29.21.
+
+---
+
+**Row 29.23 — the harmonic map locates a chord on it.**
+
+*Outgoing statement.* "// Where on the map does this chord appear? virtual std::optional<MapPosition> positionOf( const
+ChordSymbol& chord ) const = 0;" — §10.1, the code block (locator: lines 6141–6144).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 29.21.
+
+---
+
+**Row 29.24 — the harmonic map highlights chords, substitutes and voice-leading targets among them.**
+
+*Outgoing statement.* "// Highlight these chords (substitutes, smooth voice leading targets, etc.) virtual void highlight(
+const std::vector<ChordSymbol>& chords, HighlightType type ) = 0;" — §10.1, the code block (locator: lines 6146–6150).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 29.21.
+
+---
+
+**Row 29.25 — the harmonic map shows the current position in the score.**
+
+*Outgoing statement.* "// Show the current score position on the map virtual void showCurrentPosition( const ChordSymbol&
+currentChord ) = 0;" — §10.1, the code block (locator: lines 6152–6155).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 29.21.
+
+---
+
+**Row 29.26 — the planned functional harmony map, after chord-scale theory.**
+
+*Outgoing statement.* "MTH Pro-style map based on Berklee chord-scale theory (Nettles, Levine)." — §10.4 *Planned —
+Functional Harmony Map* (locator: line 6180).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan: the functional harmony map.
+
+---
+
+**Row 29.27 — the map places chords by functional region and shows the available tensions.**
+
+*Outgoing statement.* "Positions chords by functional region (tonic, subdominant, dominant) and shows available tensions." —
+§10.4 (locator: lines 6180–6182).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan, the same map as Row 29.26.
+
+---
+
+**Row 29.28 — the map's visual design is this project's own.**
+
+*Outgoing statement.* "Our own visual design — not a reproduction of MTH Pro's specific layout." — §10.4 (locator: line 6182).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan, the same map as Row 29.26.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (13)
+
+1. "This makes it possible to verify musical correctness by ear and eye rather than purely through automated BIR metrics."
+   (6025–6027) — *a defense* of the demo view's purpose.
+2. "The observer sees the algorithm "change its mind."" (6048–6049) — *a defense* of the item before it.
+3. "```cpp" (6088) — *the opening of a code block*.
+4. "struct SegmentationStepEvent { int candidateTick;" (6089–6090) — *code lines that carry no comment*.
+5. "int winnerRoot; double winnerScore; double effectiveThreshold;" (6093–6095) — *code lines that carry no comment*.
+6. "std::vector<PlacedRegion> placedSoFar; }; using SegmentationStepCallback = std::function<void(const
+   SegmentationStepEvent&)>;" (6098–6102) — *code lines that carry no comment*.
+7. "```" (6103) — *the close of a code block*.
+8. "**Premise correction, 2026-08-02 (`OPEN_ITEMS.md` OI-232, dated-note item 1).**" (6111) — *a label, with its
+   provenance*.
+9. "So this section specifies a developer tool for a code path that no longer runs, and "the same code path that produces
+   live annotations" no longer names anything live." (6113–6115) — *the document's account of itself*.
+10. "```cpp" (6126) — *the opening of a code block*.
+11. "class IHarmonicMap { public: virtual ~IHarmonicMap() = default;" (6127–6129) — *code lines that carry no comment*.
+12. "};" (6156) — *a code line that carries no comment*.
+13. "```" (6157) — *the close of a code block*.
+
+#### The arithmetic at this member
+
+- Rows written: **28** (29.1 to 29.28).
+- Rows split into two claims, **+1 each**: 29.3, 29.6, 29.9 — three rows, **+3**.
+- **Outgoing statements placed: 28 + 3 = 31.**
+- Listed under *not a statement*: **13**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 31 dispositions over 31
+  statements.
+- **UNPLACED at this member: 0** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 14 | 29.3(ii), 29.5, 29.6(ii), 29.9(ii), 29.13, 29.14, 29.15, 29.16, 29.19, 29.21, 29.22, 29.23, 29.24, 29.25 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 17 | 29.1, 29.2, 29.3(i), 29.4, 29.6(i), 29.7, 29.8, 29.9(i), 29.10, 29.11, 29.12, 29.17, 29.18, 29.20, 29.26, 29.27, 29.28 |
+| UNPLACED | 0 | — |
+| **Total** | **31** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 0 + 14 + 0 + 17 + 0 = 31, against 31 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 1 |
+| THE DERIVATION IS SILENT | 30 |
+| **Total verdicts** | **31** |
+
+*(31 verdicts over 31 statements; no statement names two derived statements.)* DIFFERS: 29.3(ii).
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 29 is empty, and no decision is
+  homed in these lines.
+- **SEEN rows: none.** The check was made at the homes as the manifest states: none of the eight homes 1(c) names lies
+  in this member's ranges.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
+  L2-S17, L2-S22, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -42481,7 +42998,7 @@ no row. Member 9's relocations are the rows numbered 9.n above, member 10's the 
 the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows numbered 13.n, member 14's the rows
 numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows numbered 17.n. Member 18 relocates no row. Member 19 relocates no row. Member 20 relocates no row, member 21's the rows numbered 21.n, member 22's the rows numbered 22.n, member 23's the rows
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
-relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row.)*
+relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -43331,6 +43848,17 @@ rows here, each with its audit question, in the commit that tabulates it.
   and does anything read it there?
 - Row 28.1, with Row 28.2 — does a constraint store keyed by element identity exist at the current commit, and does
   anything in the analysis read it?
+- Row 29.3(ii) — does the legacy greedy segmentation exclude notes by staff eligibility and by a non-chord-tone filter
+  whose reasons include a duration floor, and does any production path run it at the current commit?
+- Row 29.5, with Rows 29.6(ii) and 29.9(ii) — does the legacy greedy segmentation place regions tentatively as it expands
+  its window, reading each candidate with the legacy chord analyzer and letting a later round replace or absorb a region
+  placed earlier, and does any production path run it at the current commit?
+- Row 29.13, with Rows 29.14, 29.15 and 29.16 — does a segmentation step event recording each candidate evaluation of
+  the legacy greedy segmentation exist at the current commit, and does anything in the analysis read it?
+- Row 29.19 — is the production annotation path at the current commit the joint estimator's record path, and does it
+  call the legacy greedy segmentation anywhere?
+- Row 29.21, with Rows 29.22, 29.23, 29.24 and 29.25 — does a harmonic-map interface exist at the current commit, and
+  does anything in the analysis read it?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -44053,6 +44581,9 @@ words.
   boundaries fall *"is decided together with the tonality, the chord and the assignments, in the one decision"*.
 - Rows 26.17(i) and 26.18 — as at Row 24.90(i): the outgoing vocabulary *"carries a pedal-point class"*, defined
   independently of voice; L2-S8 leaves whether a pedal point is admitted as an elaboration to the ★ question OQ-L2-4.
+- Row 29.3(ii) — the outgoing text names *"passing — duration < floor"* as a reason the non-chord-tone filter excludes a
+  note; L2-S25 says *"Neither decides it: no duration cut and no metric position makes a note a chord tone or an
+  elaboration."*
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -44092,10 +44623,11 @@ own distribution table in §6.
 | 26 | 24 | 0 | 0 | 14 | 1 | 0 | 7 | 2 | 6 |
 | 27 | 18 | 0 | 0 | 10 | 0 | 0 | 8 | 0 | 1 |
 | 28 | 2 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 5 |
-| **Total** | **3233** | **411** | **86** | **474** | **1062** | **0** | **926** | **274** | **1436** |
+| 29 | 31 | 0 | 0 | 0 | 14 | 0 | 17 | 0 | 13 |
+| **Total** | **3264** | **411** | **86** | **474** | **1076** | **0** | **943** | **274** | **1449** |
 
-**The arithmetic check:** 411 + 86 + 474 + 1062 + 0 + 926 + 274 = 3233, against 3233 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2).
+**The arithmetic check:** 411 + 86 + 474 + 1076 + 0 + 943 + 274 = 3264, against 3264 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31).
 
 **Current-text verdicts.**
 
@@ -44129,10 +44661,11 @@ own distribution table in §6.
 | 26 | 1 | 2 | 21 | 24 |
 | 27 | 0 | 0 | 18 | 18 |
 | 28 | 0 | 0 | 2 | 2 |
-| **Total** | **619** | **614** | **2048** | **3281** |
+| 29 | 0 | 1 | 30 | 31 |
+| **Total** | **619** | **615** | **2078** | **3312** |
 
-**The arithmetic check:** 619 + 614 + 2048 = 3281 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2).
+**The arithmetic check:** 619 + 615 + 2078 = 3312 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31).
 
 ## 14. The derivation's independence record, relayed
 
@@ -44163,4 +44696,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 28 are done, positions 29 to 62 are untouched.
+  untouched: positions 1 to 29 are done, positions 30 to 62 are untouched.
