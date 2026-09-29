@@ -52355,7 +52355,7 @@ the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_
 
 #### The arithmetic at this member
 
-- Rows written: **162** (40.1 to 40.162); 4 of them carry two or three claims each and are split.
+- Rows written: **162** (40.1 to 40.162); 4 of them carry two claims each and are split.
 - **Outgoing statements placed: 166.**
 - Listed under *not a statement*: **42**.
 - **Every outgoing statement carries exactly one disposition, and none carries two**: 166 dispositions over 166
