@@ -8,7 +8,7 @@
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md` Task 1, and further under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifth_2026_09_28.md` Task 1, and further under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md` Task 1, and further under
-> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md` Task 1, executing
+> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md` Task 1, executing
 > the user's ruling of 2026-09-27, Option B
 > (`records/cowork/rulings/cowork_rulings_2026_09_27_l2_outgoing_population_sitting.md` §2), the
 > named-documents ruling of the same date, Option B
@@ -80,7 +80,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 36 | `ARCHITECTURE.md` passages — *19. LLM Integration — Claude Composer* | **DONE** (§6.36) |
 | 37 | `ARCHITECTURE.md` passages — *Appendix A — Key Musical Concepts* | **DONE** (§6.37) |
 | 38 | `ARCHITECTURE.md` passages — *Appendix B — MuseScore Score Model Quick Reference* | **DONE** (§6.38) |
-| 39 | `docs/scoring_model.md` passages | NOT YET TABULATED |
+| 39 | `docs/scoring_model.md` passages | **DONE** (§6.39) |
 | 40 | `cowork_phrase_boundary_design.md` passages | NOT YET TABULATED |
 | 41 | `cowork_layer6_grouping_design.md` passages | NOT YET TABULATED |
 | 42 | `cowork_layer2_slicing_design.md` passages | NOT YET TABULATED |
@@ -107,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 38 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 39 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, and the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, and the `docs/scoring_model.md` passages.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 38 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 39 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -142,8 +142,9 @@ positions 23 to 28, each whole and in its own commit, and stopped at the member 
 dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finishable together with the batch's close in
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
-1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). **Positions 39 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 39**, `docs/scoring_model.md` passages. §7, §8,
+1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit; the writing stands at the member boundary after it. **Positions 40 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 40**, `cowork_phrase_boundary_design.md` passages. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -45536,6 +45537,4757 @@ evidence for the assignment of their host and for the chord"*.
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
   L2-S17, L2-S22, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
 
+---
+
+### 6.39 — Member 39: `docs/scoring_model.md`, passages
+
+> **Manifest for this member.** Position **39**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `docs/scoring_model.md`. Label: *"the passages of the document"*. **The ninety-eight published ranges**, each
+> as a locator only, by its first and last line as the artifact publishes them (**D-307**); where a boundary line is
+> too long to repeat, it is given by its opening and closing words:
+>
+> 1. lines 28–31, from *"This is a reference document for the rule-based chord analyzer's scoring"* to *"invariants that future changes must respect."*;
+> 2. lines 33–44, from *"> **File layout after refactor #1 (byte-identical layer split).** `chordanalyzer.cpp`"* to *"> (`function/harmonicfunctionlayer.cpp`). See `records/cc/reports/cc_refactor1_split_design_dossier.md`."*;
+> 3. lines 46–68, from *"> **★ CODE LOCATORS — EVERY RAW LINE-NUMBER ANCHOR IN THIS DOCUMENT WAS RE-AIMED TO A NAMED CODE"* to *"> locators only: no term, value, guard, gate or template is added, changed or removed by it.**"*;
+> 4. lines 74–93, from *"> **★ SCOPING SENTENCE — THE SCORER DESCRIBED BELOW IS DORMANT ON BOTH PRODUCTION SURFACES, AND THE"* to *"> is OI-274's second half — a governing-document question, and therefore the user's.*"*;
+> 5. lines 95–97, from *"`RuleBasedChordAnalyzer::analyzeChord` is a **bottom-up** vertical-sonority"* to *"reasoning (that lives in Phase E — secondary dominants, tonicization, etc.)."*;
+> 6. lines 101–128, from *"1. **Tone collection.** Build a 12-element pitch-class weight histogram from"* to *"replace with the Pass 2 result and flag `isPedalPoint`."*;
+> 7. lines 130–131, from *"The analyzer is purely bottom-up — it does not know about secondary dominants,"* to *"modulation, or progression context beyond a single chord's neighbours."*;
+> 8. lines 135–151, from *"Every hand-chosen numeric scoring constant documented in this file — the §4"* to *"by the default-off dormant chain and are Phase-2/3 fit targets, not Phase-1 ones."*;
+> 9. lines 164–182, from *"| # | Quality          | Intervals      | Represents                          | Notes |"* to the line opening *"| 16| Power | `{0,7}` | Power chord"* and closing *"0.30`); excluded from step bonuses. |"*;
+> 10. lines 190–196, from *"- Sus4♭5 (7) precedes HalfDim (8): the full interval sets differ (`{0,5,6,10}` vs"* to *"- Plain triads precede their 4-note extensions."*;
+> 11. lines 210–214, from *"- **`basisIndepMatrix[rootPc][tplIdx]`** — additive base score:"* to *"resolution bias)."*;
+> 12. lines 216–219, from *"- **`complexityFactorMatrix[rootPc][tplIdx]`** — *multiplicative* template-"* to *"away from 4-note templates when only 2 PCs are sounding."*;
+> 13. lines 232–239, from *"**Atomic update requirement.** Every template-sized array derives its extent from a single"* to *"check), referenced there as `analysis::kTemplateCount`."*;
+> 14. lines 265–278, from *"Winner selection compares candidate scores with **exact `double` comparisons — there is no"* to *"rather than resolve near-ties."*;
+> 15. lines 305–307, from *"1. The `dim7 PC` (rootPc + 9) is sounding above `extensionThreshold`."* to *"3. The dim7 PC is **non-diatonic** to the current key."*;
+> 16. lines 311–316, from *"All four enharmonic rotations of a dim7 chord share the same PC set"* to *"gets no bonus."*;
+> 17. lines 318–325, from *"**Do not suppress or bypass this bonus** without replacing the rotation"* to *"with an equivalent mechanism."*;
+> 18. lines 327–331, from *"**"Non-diatonic to the current key" — the key SIGNATURE's collection, never the tonic (OI-168,"* to *"not its tonic. Both therefore test"*;
+> 19. lines 333–335, from *"```"* to *"```"*;
+> 20. lines 337–339, from *"whose contract is *"Key-agnostic: depends ONLY on the notated signature, never a resolved mode."*"* to *"structural, not a cancellation that a future mode-table edit can silently undo."*;
+> 21. lines 341–354, from *"**Why it is written that way — the defect it replaced (OI-168).** Until 2026-07-14 both terms tested"* to *"the fix (the δ = 0 derivation, verified at runtime on 352 scores × 2 presets)."*;
+> 22. lines 356–360, from *"**⚠ Do not reintroduce `keyTonicPc + scale` for a membership test.** A scale-DEGREE is tonic-relative"* to *"carry the OI-168 defect — they are declared, not fixed (see `OPEN_ITEMS.md` OI-170)."*;
+> 23. lines 368–374, from *"- **ZERO committed chords move on any preset.** Gate I's two verdicts differed on exactly **one**"* to *"- The robust-stop hard gate is unmoved (run-diff +0/−0, class-(a) and class-(b) duration δ = 0)."*;
+> 24. lines 376–385, from *"**Reading for a future fix:** the collection question at all three sites can move to"* to *"own measurement, because it moves `degree`, hence Roman numerals, hence possibly those two gates."*;
+> 25. lines 398–403, from *"**Known dead end (Iter 98, 2026-05-23).** Gating this bonus off a sparse"* to *"without re-reading the Iter 98 dead-end section in `COWORK_HANDOFF.md`."*;
+> 26. lines 416–431, from *"**Condition.** The predicate `gateRZeroesRootContinuity()` encodes three **structural**"* to *"interval data the 17 TemplateDef entries are built from)."*;
+> 27. lines 433–438, from *"**Phase guard (separate from the predicate).** `rcbEdge()` zeroes rcb only when"* to *"once, inside `rcbEdge` at the Pass A call site."*;
+> 28. lines 440–454, from *"**Why the `basisDep <= 0` condition (refinement vs. the bare bass-foreign test).**"* to *"bare-root case, correctly gated.)"*;
+> 29. lines 456–476, from *"**Stage 3.3 redesign — reconstructed-credit (byte-identical).** When the four inversion"* to *"`docs/decoder_design.md` §6 amendment and `records/cc/reports/cc_stage3_3_report.md` §1."*;
+> 30. lines 478–490, from *"**★ THE DECISION, STATED AS SUCH — the RECONSTRUCTED-CREDIT read is the ratified form of this"* to *"it for the shipped behaviour."*;
+> 31. lines 492–501, from *"**Why the phase guard.** `rootContinuityBonus` is deliberately **not**"* to *"final-pass decisions and are unaffected by the guard."*;
+> 32. lines 503–509, from *"**Why it exists.** The vertical oracle already scores a non-chord-tone-bass"* to *"continuation that cannot harmonically hold its own bass."*;
+> 33. lines 511–517, from *"**The Δ=+7b mechanism it fixes.** Three Bach cases — bwv245.28 (B/G♯), bwv296"* to *"clean 1.90 vs 1.52 raw lead."*;
+> 34. lines 519–531, from *"**Safety.**"* to *"- *Conservative.* Out-of-range / unknown inputs return true (no gating)."*;
+> 35. lines 549–559, from *"**★ THE GUARD IS THE DECISION, AND IT IS STRUCTURAL RATHER THAN A THRESHOLD (re-homed into this"* to *"entry condition** rather than a widened threshold (`CLAUDE.md`, the gate and preset policy)."*;
+> 36. lines 581–586, from *"1. **`phase == ScoringPhase::Final`** (call-site gate) — suppresses the bonus inside"* to *"lives at the Pass B call site (`if (applyProgressionSignals) { applyStepBonusGuard… }`)."*;
+> 37. lines 588–592, from *"2. **`candBassPc == rootPc`** (root-position only) — the bonus rewards "this"* to *"Iter 94 Jazz bwv430 regression (BIR=false 14→15)."*;
+> 38. lines 594–600, from *"3. **First-inversion m7-family surgical guard (Pass B)** — suppresses the"* to *"viable first-inversion m7-family reading on identical pitch evidence."*;
+> 39. lines 602–605, from *"4. **Power-quality exclusion (Pass B)** — Power chords get no step bonus. A"* to *"regressions were `[Tonic]5` reads vs WiR `I` triads)."*;
+> 40. lines 616–622, from *"- `jointScoringEnabled`, `context` available,"* to *"(`(nextRootPc - candRootPc) mod 12 == 5`)."*;
+> 41. lines 624–627, from *"Reward: classic V → I descending-fifth root motion. This is a **chord-level**"* to *"(sequential root motion is about root identity, not bass)."*;
+> 42. lines 635–641, from *"- `jointScoringEnabled`, `context` available,"* to *"- candidate root sits one semitone below `nextRootPc` (leading-tone-of-next)."*;
+> 43. lines 697–700, from *"Set to `ScoringPhase::Segmentation` by `greedyExpandSegmentation` for internal"* to *"`applyHarmonicFunction(..., prefs.scoringPhase)`."*;
+> 44. lines 702–710, from *"`ScoringPhase::Segmentation` suppresses the progression signals that would otherwise bias"* to *"default `ScoringPhase::Final`."*;
+> 45. lines 717–738, from *"| Term                                  | Value         | What it does |"* to the line opening *"| `kForeignPenalty` | 0.45 | Non-template pc that"* and closing *"is neither extension nor contradiction. |"*;
+> 46. lines 740–754, from *"**`maxTotalInversionContextBonus` is currently inert (verified 2026-06-10).** No code"* to *"load-bearing per-preset value."*;
+> 47. lines 773–786, from *"| Constant | Acts at | Already described here by |"* to the line opening *"| `kAugThinEvidenceFactor` | the `augFactorMatrix` multiplier, applied at"* and closing *"the effect without the name |"*;
+> 48. lines 800–805, from *"- **Bug 1 (bwv103.6 m3 b2):** a passing eighth note that happens to be the"* to *"evidence on C had no way to flip the global ranking."*;
+> 49. lines 814–819, from *"- At least one candidate with `onsetAtRegionStart == true` AND at least one"* to *"G + B with bass continuo resting."*;
+> 50. lines 823–829, from *"**`hasStructuralBass`** (computed in `analyzeChord`, `chordanalyzer.cpp`). True when"* to *"bonuses (Corelli op01n08d m2 b3)."*;
+> 51. lines 831–841, from *"**Inversion-bonus computation (since Stage 3.3 — competition pipeline).** The four"* to *"default — see the §4 note)."*;
+> 52. lines 843–856, from *"**★ THE DECISION THIS SECTION RECORDS, STATED AS A RULE — the bass and the chord are chosen"* to *"decided together rather than one being committed early."*;
+> 53. lines 862–865, from *"These run after `results[]` is populated and the optional guaranteed-"* to *"`rawCandidates`."*;
+> 54. lines 867–872, from *"**★ POINTER — WHAT A GATE MAY READ IS FIXED AT THE INFERENCE/PRESENTATION BOUNDARY, NOT HERE (added"* to *"and does not restate it."*;
+> 55. lines 874–889, from *"**E3 (2026-06-06): execution location.** Gates A–L are implemented in"* to *"(the former `~Lxxxx` anchors predated refactor #1's move out of `chordanalyzer.cpp`)."*;
+> 56. lines 891–898, from *"**Outer guard — covers ALL of A–L, including the bias correction.** Everything in"* to *"`postscoringgates_tests.cpp`)."*;
+> 57. lines 936–965, from *"- **Which carry is correct is decided on the carry's PURPOSE, not on which code happened to be at"* to *"alternatives, and never the winner alone (#15)."*;
+> 58. lines 977–986, from *"| Gate | Location | Trigger | Effect | Why it exists |"* to the line opening *"| **J (vii° → V7 completion) — runs"* and closing *"root is, by construction, V6/5. |"*;
+> 59. lines 995–1002, from *"- **F (second-inversion → root-position Major, alt at `(rootPc+5)%12`)** — the whole gate."* to *"no longer touched by the rule (superseded upstream, 2.2b §1.3)."*;
+> 60. lines 1033–1046, from *"**`kHalfDimFirstInversionBonus` (= 0.55) — additive bonus inside the BIAS-CORRECTION"* to *"§6-block dissolution target (Stage-5 family 2)."*;
+> 61. lines 1048–1063, from the line opening *"*(★ Location corrected 2026-08-14 at `records/cc/instructions/cc_instruction_scoring_model_pass.md`, at the"* and closing *"2026-08-14 at `records/cc/instructions/cc_instruction_scoring_model_pass.md`, at the code"* to *"a defect this pass may re-specify.)*"*;
+> 62. lines 1067–1081, from *"- **Mixed live/captured winner reads in H/I/K/L** — the Sub-9a fix migrated only"* to *"is an artifact."*;
+> 63. lines 1085–1089, from *"## 7. Inversion correction"* to *"re-sorts via `std::stable_sort`:"*;
+> 64. lines 1134–1135, from *"- **`dim7CharacteristicBonus` is the dim7 rotation selector.** Do not"* to *"suppress without replacing the non-diatonic-♭♭7 mechanism (B3 lesson)."*;
+> 65. lines 1137–1139, from *"- **`rootContinuityBonus` sparse-predecessor gate is a dead end** (Iter 98)."* to *"mozart_k280-1 IV→V65 Alberti bass."*;
+> 66. lines 1141–1144, from *"- **`w_stepIn`/`w_stepOut` has four gates, each load-bearing** — the"* to *"a specific documented regression."*;
+> 67. lines 1146–1150, from *"- **`ScoringPhase::Segmentation` must suppress all context-dependent bonuses.** Step,"* to *"`ScoringPhase::Final` will cause segmentation regressions."*;
+> 68. lines 1152–1157, from *"- **Template arrays update atomically under `analysis::kTemplateCount`.** All"* to *"(Stage 2.3 removed the `kDiagTemplates` mirror — one fewer site to keep in sync.)"*;
+> 69. lines 1169–1170, from *"- **B2 aug7 guard requires BOTH M3 and aug5** (`||` not `&&`). M3-only was"* to *"tried and reverted (Schumann D-major, Corelli G-major snapshot flips)."*;
+> 70. lines 1177–1178, from *"- **`hasStructuralBass` gates inversion bonuses.** Sparse upper-register"* to *""bass" notes do not get inversion bonuses (Corelli op01n08d m2 b3)."*;
+> 71. lines 1180–1182, from *"- **Post-bonus winner quality guard for `w_dim`.** The bonus can rotate the"* to *"Dim/HalfDim, fall back to the without-wDim variant."*;
+> 72. lines 1188–1191, from *"- **Joint scoring requires regional accumulation.** `jointScoringEnabled`"* to *"Single-tick / status-bar / unit-test paths use the legacy single-bass path."*;
+> 73. lines 1198–1205, from *"- **A correction rule that can change a committed chord's IDENTITY is retired or folded in BEFORE"* to *"— was considered and not taken."*;
+> 74. lines 1207–1216, from *"- **A WIDER SEARCH CANNOT FIX THE ARPEGGIO ROOT FAILURE — the wrong reading IS the global optimum."* to *"they point here and the rule is published once (#6)."*;
+> 75. lines 1227–1236, from *"- **The temporal signals sitting inside the vertical scorer STAY WHERE THEY ARE, and the gate that"* to *"file."*;
+> 76. lines 1238–1250, from *"- **The policy for judging a PROPOSED post-scoring gate — three tests.** (1) If the proposal is"* to *"where test (2) comes from."*;
+> 77. lines 1252–1265, from *"- **Two of the post-scoring gates are PURELY-LOCAL VERTICAL refinements and must SURVIVE the"* to *"not perform the dissolution and does not discharge this constraint."*;
+> 78. lines 1267–1274, from the line opening *"### The fine-grain function override — falsified, its"* and closing *"a redesign recommended but NOT adopted"* to *"diagnostic dump flag and the test suites. Nothing below is running today."*;
+> 79. lines 1276–1312, from *"- **FALSIFIED — no threshold can make the override net-positive.** Whether a fire helps or hurts is"* to *"in view rather than netted away."*;
+> 80. lines 1316–1319, from *"**Re-homed into this section 2026-08-08 on the user's ruling; the shelving and its evidence are"* to *"is **not stated here and is not asserted.**"*;
+> 81. lines 1321–1346, from *"- **The information that disambiguates the third-above reading is NON-LOCAL, so no local"* to *"runs catches and a count does not."*;
+> 82. lines 1355–1365, from *"Two post-scoring passes change the chord quality the scorer committed and keep no record of what"* to *"oversight**, and it gates the dissolution."*;
+> 83. lines 1367–1373, from *"### Four measured dead ends of the segmentation-and-root path — do not retry any of them"* to *"decided live capability specified elsewhere."*;
+> 84. lines 1375–1399, from *"- **Do not retry the backward-walk boundary change.** Counting notes that stop exactly where a"* to *"and are not restated here (D-431)."*;
+> 85. lines 1413–1439, from *"- **Do not add a negative-margin guard.** A rule refusing to let a later correction step overturn"* to *"vertically and reading it by its role, **which is not an analyzer defect at all**."*;
+> 86. lines 1447–1455, from *"**Nearly every live scoring magnitude on this surface was hand-set, and the only check that ever"* to *"factor and the inert fraction are in the audit that measured them and are not restated (D-431)."*;
+> 87. lines 1466–1473, from *"2. **Identify interactions with bonus/penalty terms.** Does any existing"* to *"- `w_stepIn/Out/seq/dim` have explicit quality filters"*;
+> 88. lines 1526–1530, from *"7. **Run BIR for both presets before committing:**"* to *"- `python tools/analyze_inversion_errors.py`"*;
+> 89. lines 1544–1550, from *"A post-analysis pass that sits between `analyzeChord()` output and the final"* to *"`!prefs.explorationMode`-gated calls in `regionanalyzer.cpp`; see §11.)"*;
+> 90. lines 1552–1556, from *"`HarmonicFunctionContext` carries: `previousRootPc`, `nextRootPc` (plus the Step 1/2"* to *"fields were removed in Stage 0.2). Extended in E4 with phrase-boundary and cadence evidence."*;
+> 91. lines 1582–1583, from *"**E4 (planned):** Cadence detection, tonic confirmation, functional label"* to *"completeness (secondary dominants, borrowed chords, augmented sixths)."*;
+> 92. lines 1602–1611, from *"**`analyzeChord()` — the scoring oracle.** Computes only what depends on the raw"* to *"no progression signal.**"*;
+> 93. lines 1616–1630, from *"1. Re-score every cell with `rootContinuityBonus` (added into `basisIndep` before"* to *"`tones` and `keySigFifths` are set by the oracle, which has them directly."*;
+> 94. lines 1656–1658, from *"The atomic-update checklist (section 9) is unchanged by this redesign (no templates"* to *"the `kDiagTemplates` mirror."*;
+> 95. lines 1691–1709, from *"**Oracle temporal-signal migration (Stage 3.3).** The last five oracle-side progression"* to *"basisDep (reconstructed-credit, §4) — byte-identical, closing the cross-layer dependency."*;
+> 96. lines 1713–1723, from *"*Last updated: **2026-08-14** — the `docs/scoring_model.md` pass at"* to *"documentation pass over a document that describes them.*"*;
+> 97. lines 1725–1738, from *"*★ **The re-stamp itself closes the third thing OI-274 found.** This footer read "Last updated:"* to *"segmentation dead ends, the four archive-only dead ends, and the void validation basis).*"*;
+> 98. lines 1740–1755, from *"*Prior: 2026-06-12 — Stage 3.1: winner selection + commit chain now flow through the"* to *"`analyzeChord()`.*"*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside — the document's blob carries no carriage return. **The lines between the ranges are outside the
+> member** and are not tabulated, quoted or listed. **Three lines inside the ranges are headings** — lines 1085, 1267
+> and 1367, each the first line of its range — and under the first reading rule of §6 they are titles, neither
+> tabulated nor listed. Outgoing statements: **366** (rows 39.1 to 39.345; 20 of those rows carry two or three claims
+> each and are split — the arithmetic is at the foot of this member). Listed under *not a statement*: **173**. Counted
+> at this member by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of the reference document for
+> the rule-based chord scorer: its file layout and code-locator notes; the scoping sentence, which states that
+> everything the body describes is the LEGACY vertical scorer, dormant on both production surfaces, its present tense
+> a specification's tense; the scoring pipeline; the override mechanism for its constants; the template table and
+> its tie-break order; the candidate-score matrices and the *Floating-point tie policy*; the terms of §4 — the diminished-seventh
+> bonus and the paragraph on the signature's collection, root continuity, Gate R, the completeness, step, sequence and
+> leading-tone diminished bonuses, the scoring phase, the "other terms" table and the registered constants; §5's
+> joint bass-and-chord scoring; §6's gates and promotion primitive; §8's constraints, dead ends and shelvings;
+> §9's template checklist; §10's function layer; §11's oracle and pipeline; and the document's revision footers.
+> **The placement readings are those of the earlier members, applied unchanged.** Because the scoping sentence
+> makes the whole described scorer the dormant legacy path, the second batch's third further reading governs most
+> of the member: a description of a built, dormant layer's mechanism is QUARANTINED, and it travels with an earlier
+> row that already asks about the same mechanism — the legacy chord path with Row 3.15, what produces the
+> committed chord with Row 3.14, the hand-set constants with Row 9.3, the lettered post-scoring gates with Row
+> 9.15, Gate R with Row 9.18, the root-continuity bonus with Row 23.23, the completeness bonus with Row 23.89, the
+> scoring phase with Row 21.12, the pedal check with Row 8.119, the best-different-root copies with Row 8.125, the
+> bottom-up scorer with Row 20.1 and the late function override with Row 4.3(i). A tried-and-closed line, a dead
+> end and a finding about the legacy scorer are HISTORICAL, as Rows 1.13, 1.14, 1.15(i) and 2.9 are placed —
+> where a derived statement states the same rule in its own terms, the axis says so and the row reads as Row 2.9
+> does. A build state, an event, a plan, a status, a past measurement and a legacy work program are HISTORICAL. A
+> ruled rule a derived statement carries is ADOPTED — carried, as Rows 10.49 and 24.3(i) are placed. A rule of how
+> a change is verified is RELOCATED to *the measurement of the analysis*. A label, a pointer, a defense, a test
+> record, a rejected alternative, a rule of the development process and the document's account of itself are
+> listed; a table's header and separator rows are listed as §6.24 lists them; the one code block (lines 333–335)
+> sits inside a sentence, which is tabulated whole at Row 39.74 and whose fence lines are listed. On the axis, a
+> description of the implementation reads THE DERIVATION IS SILENT unless a derived statement's own words are
+> contradicted by the mechanism described, in which case it reads DIFFERS, as Rows 20.1 and 38.4 do. **No reading
+> is new at this member.** Two applications are stated so they can be checked: the two paragraphs headed *Why*
+> and the subsections headed *Why it exists*, *The Δ=+7b mechanism it fixes* and *Safety* are read as defenses of
+> the rule before them, and only a sentence stating a separate mechanism of its own is tabulated (Rows 39.106 and
+> 39.107); and the planned item at line 1582 is placed by what it names, the sixth batch's first reading at
+> position 24.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 39, each
+> located again at `tools/audit/decisions/backbone_decisions.json`: **D-321** (lines 265–278), **D-323** (356–360),
+> **D-327** (478–490), **D-537** (549–559), **D-536** (843–856), **D-510** (936–946), **D-511** (947–953), **D-220**
+> (1169–1170), **D-221** (1177–1178), **D-222** (1180–1182), **D-224** (1188–1191), **D-325** (1198–1205), **D-463**
+> (1227–1235), **D-465** (1238–1250), **D-580** (1252–1265), **D-490** (1276–1284), **D-491** (1285–1292), **D-493**
+> (1293–1301), **D-492** (1302–1312), **D-600** (1355–1365), **D-317** (1375–1381), **D-318** (1382–1385), **D-319**
+> (1386–1392) and **D-320** (1393–1399). A row is marked WITHHELD only where its statement lies inside one of those
+> homes; no row opens inside a home and runs past it, and the one listed item that straddles an edge — the defense
+> ending on line 1236, past D-463's home — carries no mark, as listed items do not. D-465's home holds no row: every
+> sentence in it is a label, a rule of the development process or a defense. The same check found seven further
+> decisions homed inside these ranges, none among the decisions ruled L2's own — D-215 (line 1137), D-512 (954–965),
+> D-328 (1207–1216), D-299 (1413–1417), D-300 (1418–1424), D-301 (1425–1430) and D-302 (1431–1439). **The SEEN
+> check, made at the homes as member 17's manifest states:** none of the eight homes lies in this member. Two of them
+> are in this document and fall **between** its ranges — D-322 at lines 286–291, between the ranges 265–278 and
+> 305–307, and D-223 at lines 1184–1186, between the ranges 1180–1182 and 1188–1191 — so a reader who expects them
+> inside the member will not find them; the other six are homed in other documents.
+
+---
+
+**Row 39.1 — the main scorer file keeps the vertical scorer.**
+
+*Outgoing statement.* "`chordanalyzer.cpp`
+retains the vertical **oracle** (scoring constants/helpers, `TemplateDef`, the
+`kTemplateCount`-derived `templates` array + score matrices, `detectExtensions`,
+`buildChordResult`, `analyzeChord`, the factory)." — the opening block, the file-layout remark (locator: lines 33–36).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which files hold the dormant vertical scorer's code at the current commit, and does the layout this document states still hold?
+
+---
+
+**Row 39.2 — five sibling files split out by pure code movement.**
+
+*Outgoing statement.* "Five single-responsibility sibling
+TUs were split out (pure code movement; no scoring/inference change):
+`postscoringgates.cpp` (the post-scoring gate layer A–L, `applyPostScoringGates`),
+`chordpostpasses.cpp` (the Iter-86/91/pedal tail, `applyIter8691Pedal`),
+`chordsymbolformatter.cpp` (`formatSymbol`/`formatRomanNumeral`/`formatNashvilleNumber`
++ their helpers), `chorddiagnose.cpp` (`diagnoseChord`), and `chordvoicing.cpp`
+(`chordTonePitchClasses`/`closePositionVoicing`)." — the opening block, the file-layout remark (locator: lines 36–42). Two claims: (i) the five files were split out by pure code movement, with no change to scoring or inference; (ii) each named file holds the named portion of the code.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a refactoring event. (ii) **QUARANTINED**, travelling with Row 39.1.
+
+---
+
+**Row 39.3 — the scorer's header unchanged, the stable integration boundary.**
+
+*Outgoing statement.* "`chordanalyzer.h` is unchanged — the
+stable integration boundary." — the opening block, the file-layout remark (locator: lines 42–43).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.1.
+
+---
+
+**Row 39.4 — the competition and function layer lives in its own file.**
+
+*Outgoing statement.* "The competition / function layer was already external
+(`function/harmonicfunctionlayer.cpp`)." — the opening block, the file-layout remark (locator: lines 43–44).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.1.
+
+---
+
+**Row 39.5 — everything below describes the legacy scorer, not the code that produces a committed chord today.**
+
+*Outgoing statement.* "Everything from here on — this section's pipeline, §2's templates, §3's matrices, §4's
+bonus and penalty terms, §5's joint scoring, §6's post-scoring gates and §7's inversion
+correction — **remains accurate for the LEGACY vertical scorer it describes, and is NOT a
+description of the code that produces a committed chord today.**" — §1 *Overview*, the scoping sentence (locator: lines 78–81).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 3.14.
+
+---
+
+**Row 39.6 — the joint estimator is the production layer on both surfaces; this path is selected only by an explicit switch.**
+
+*Outgoing statement.* "The production inference layer is
+the joint estimator: on the batch and corpus surface since 2026-07-26 (register entry **D-005**)
+and on the notation surface since 2026-07-27 (**D-010**), with this path compiled and selected
+only by an explicit `useJointNotationRecord = false`." — §1 *Overview*, the scoping sentence (locator: lines 81–84). Two claims: (i) the joint estimator is the production inference layer on both surfaces; (ii) this path is compiled and selected only by that explicit setting.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 3.14. (ii) **QUARANTINED**, travelling with Row 3.15.
+
+---
+
+**Row 39.7 — the scorer reads pitch-class evidence bottom-up to name a chord.**
+
+*Outgoing statement.* "`RuleBasedChordAnalyzer::analyzeChord` is a **bottom-up** vertical-sonority
+scorer: pitch-class evidence → chord identity." — §1 *Overview* (locator: lines 95–96).
+
+*Derived statements that speak to it.* L2-S30.
+
+*Current-text axis.* L2-S30: **DIFFERS** — as at Row 20.1.
+
+*The difference, in both texts' own words.* The outgoing scorer goes from *"pitch-class evidence → chord identity"*; L2-S30 says *"No chord term decides a chord from the pitch-class content of the span alone."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.1.
+
+---
+
+**Row 39.8 — the scorer performs no harmonic-function reasoning, which lives in a later phase.**
+
+*Outgoing statement.* "It performs no harmonic-function
+reasoning (that lives in Phase E — secondary dominants, tonicization, etc.)." — §1 *Overview* (locator: lines 96–97). Two claims: (i) the scorer performs no harmonic-function reasoning; (ii) that reasoning lives in a later phase.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 39.7. (ii) **HISTORICAL** — a plan.
+
+---
+
+**Row 39.9 — step 1: a pitch-class weight histogram, and bass candidates by lowest pitch and onset.**
+
+*Outgoing statement.* "**Tone collection.** Build a 12-element pitch-class weight histogram from
+   the input tones; pick bass candidate(s) by lowest pitch + onset evidence." — §1 *Overview*, the pipeline, step 1 (locator: lines 101–102). Two claims: (i) a twelve-element pitch-class weight histogram is built from the input tones; (ii) the bass candidates are picked by lowest pitch and onset evidence.
+
+*Derived statements that speak to it.* (i) L2-S32. (ii) None.
+
+*Current-text axis.* (i) L2-S32: **DIFFERS**. (ii) **THE DERIVATION IS SILENT** — it states what L2 decides, not how an implementation picks its candidates.
+
+*The difference, in both texts' own words.* (i) The outgoing builds *"a 12-element pitch-class weight histogram"*; L2-S32's content term rates how the events fit *"the chord in its spelled form"*, and is falsified *"if the term reads an unspelled pitch class where the spelled pitch is available"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* what does the dormant scorer collect from the sounding notes before it computes its candidate scores — pitch classes or spelled pitches — and with what weights? (ii) **QUARANTINED.** *Audit question:* how does the dormant scorer choose its bass candidates at the current commit?
+
+---
+
+**Row 39.10 — step 2: a candidate score per root, template and bass.**
+
+*Outgoing statement.* "**Template scoring.** For each `(rootPc, templateIdx, bassPc)` triple
+   (12 × 17 × |bassCandidates|), compute a score using:" — §1 *Overview*, the pipeline, step 2 (locator: lines 103–104).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing computes a candidate score *"For each `(rootPc, templateIdx, bassPc)` triple"* of one sonority; L2-S1 says *"The search's unit is the whole reading, not a span."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what unit does the dormant scorer attach a candidate score to, and over what stretch of music?
+
+---
+
+**Row 39.11 — the bass-independent base, root continuity among its terms.**
+
+*Outgoing statement.* "a bass-independent base (template-tone fit, extras, structural penalties,
+     TPC consistency, diatonic bonus, dim7 characteristic, root continuity,
+     resolution bias)," — §1 *Overview*, the pipeline, step 2 (locator: lines 105–107).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS** — as at Row 23.23.
+
+*The difference, in both texts' own words.* The outgoing base carries a *"root continuity"* term; L2-S34 says *"So no progression term may reward mere persistence of the root."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.23.
+
+---
+
+**Row 39.12 — the bass-dependent delta.**
+
+*Outgoing statement.* "a bass-dependent delta (bass-root bonus, inversion bonuses)," — §1 *Overview*, the pipeline, step 2 (locator: line 108).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.10.
+
+---
+
+**Row 39.13 — the joint terms.**
+
+*Outgoing statement.* "joint terms (`w_complete`, `w_stepIn`, `w_stepOut`, `w_seq`, `w_dim`)." — §1 *Overview*, the pipeline, step 2 (locator: line 109).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.10.
+
+---
+
+**Row 39.14 — step 3: rank by candidate score, then template order, then root.**
+
+*Outgoing statement.* "**Ranking.** Sort by score descending, then by template tie-priority, then
+   by `rootPc`." — §1 *Overview*, the pipeline, step 3 (locator: lines 110–111).
+
+*Derived statements that speak to it.* L2-S43 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S43: **AGREES** — *"The principal is chosen between them by a declared, deterministic rule that the publication names"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* by which sort keys does the dormant scorer rank its candidates at the current commit, and do two readings with equal candidate scores both stay published?
+
+---
+
+**Row 39.15 — the winner determines the working bass.**
+
+*Outgoing statement.* "The winner determines the working bass." — §1 *Overview*, the pipeline, step 3 (locator: line 111).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.14.
+
+---
+
+**Row 39.16 — step 4: up to three results, with the quality normalized afterwards.**
+
+*Outgoing statement.* "**Result building.** Build up to 3 `ChordAnalysisResult` entries, applying
+   post-scoring quality normalization (augmented root correction, Sus2→Sus4
+   upgrade, Sus→Major with `omitsThird`, extension detection, degree)." — §1 *Overview*, the pipeline, step 4 (locator: lines 112–114). Two claims: (i) up to three results are built; (ii) the quality is normalized after scoring.
+
+*Derived statements that speak to it.* (i) L2-S42 — one §6.3 names as NEAREST to material met (entry 4). (ii) None.
+
+*Current-text axis.* (i) L2-S42: **DIFFERS**. (ii) **THE DERIVATION IS SILENT.**
+
+*The difference, in both texts' own words.* (i) The outgoing builds *"up to 3 `ChordAnalysisResult` entries"*; L2-S42 withholds a rival only *"below a declared threshold"*, with *"The threshold's value, and the withheld total mass per span, are published with the rivals."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* how many readings does the dormant scorer keep per sonority at the current commit, and what becomes of the readings it does not keep? (ii) **QUARANTINED.** *Audit question:* which changes of quality does the dormant scorer make after scoring, and does it keep the reading it changed?
+
+---
+
+**Row 39.17 — step 5: a guaranteed alternative on a different root.**
+
+*Outgoing statement.* "**Guaranteed inversion alternative.** When the winner is bass-rooted and no
+   different-`rootPc` candidate made the top-3, append the next best one so
+   the post-ranking correction has something to work with." — §1 *Overview*, the pipeline, step 5 (locator: lines 115–117).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.125.
+
+---
+
+**Row 39.18 — step 6: the post-scoring gates.**
+
+*Outgoing statement.* "**Post-scoring gates.** Inversion correction, enharmonic
+   flips (Minor-add6 ↔ HalfDim7), augmented-rotation correction, Gate I
+   (first-inversion major over root-position minor), Gate J (vii° → V7),
+   Gate L (Major over augmented)." — §1 *Overview*, the pipeline, step 6 (locator: lines 118–121).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to corrections laid over a decided reading.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.19 — every promotion through one primitive.**
+
+*Outgoing statement.* "All promotions route through the one
+   `promoteToWinner()` primitive (§6a)." — §1 *Overview*, the pipeline, step 6 (locator: lines 121–122).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.125.
+
+---
+
+**Row 39.20 — gates retired and one unified.**
+
+*Outgoing statement.* "(Gates F/G-B/G-C/K retired Stage 5, 2026-07-05;
+   Gate A unified into `promoteToWinner`/FM2 — 2026-07-06.)" — §1 *Overview*, the pipeline, step 6 (locator: lines 122–123).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — two events of the legacy scorer's build.
+
+---
+
+**Row 39.21 — step 7: the late promotions.**
+
+*Outgoing statement.* "**Late promotions.** Iter 86 bass-b7 promotion, Iter 91 bass-as-root
+   promotion." — §1 *Overview*, the pipeline, step 7 (locator: lines 124–125).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the two late promotions run on any path at the current commit, and what do they change?
+
+---
+
+**Row 39.22 — step 8: the two-pass pedal check.**
+
+*Outgoing statement.* "**Pedal point check.** Two-pass: if the bass is not a chord tone of the
+   Pass 1 winner and the upper voices form a confident chord on their own,
+   replace with the Pass 2 result and flag `isPedalPoint`." — §1 *Overview*, the pipeline, step 8 (locator: lines 126–128).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 8.119.
+
+---
+
+**Row 39.23 — purely bottom-up: no secondary dominants, modulation or progression context beyond one chord's neighbors.**
+
+*Outgoing statement.* "The analyzer is purely bottom-up — it does not know about secondary dominants,
+modulation, or progression context beyond a single chord's neighbours." — §1 *Overview* (locator: lines 130–131).
+
+*Derived statements that speak to it.* L2-S18.
+
+*Current-text axis.* L2-S18: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing analyzer *"does not know about secondary dominants, modulation"*; L2-S18 says of the applied reading and the tonality-change reading *"Both readings are admitted, and both are carried as rivals with their mass."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.7.
+
+---
+
+**Row 39.24 — every hand-chosen scoring constant is a mutable global registered by name.**
+
+*Outgoing statement.* "Every hand-chosen numeric scoring constant documented in this file — the §4
+bonus/penalty terms and joint-term weights (`kContradictionPenalty`,
+`kExtensionFactor*`, `kNonBassPenalty`, the `kWSeq`/`kWDim`/`kWStepIn`/`kWStepOut`
+progression signals, `kWComplete`, …), the §6 gate margins (`kGateIMargin`,
+`kGateLMargin`, `kHalfDimFirstInversionBonus`; `kGateKMargin` retired with Gate K, Stage 5), and the
+`ChordAnalyzerPreferences` fields — is a **mutable global** (formerly `constexpr`),
+registered by name in `analysis/param/paramoverride.h`." — §1, *Scoring constants are readable from an optional override file (Stage-5 fitter)* (locator: lines 135–141).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing constants are *"hand-chosen"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.25 — the fitter may override these values by name from an optional file read at startup.**
+
+*Outgoing statement.* "The Stage-5 fitter (design
+`cowork_stage5_fitter_design.md` D-6) can override these values by name from an
+OPTIONAL external file, read once at analysis-binary startup
+(`batch_analyze --param-override <file>`)." — the same subsection (locator: lines 141–144).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* can the dormant scorer's constants be overridden from a file at the current commit, by which tool, and is an override in use anywhere?
+
+---
+
+**Row 39.26 — with no override file, the output is byte-identical to the scorer before the mechanism.**
+
+*Outgoing statement.* "**When no override file is passed the
+behavior and output are byte-identical** to the pre-mechanism scorer — the globals
+keep their literal initializers, are read exactly as before, and the override loader
+is the only writer (proven per-preset over the full corpus)." — the same subsection (locator: lines 144–147).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.25.
+
+---
+
+**Row 39.27 — the override loader is strict.**
+
+*Outgoing statement.* "The override loader is
+strict (an unknown name or malformed line aborts the run)." — the same subsection (locator: lines 147–148).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.25.
+
+---
+
+**Row 39.28 — the dormant chain's defaults are outside the mechanism, and are later fit targets.**
+
+*Outgoing statement.* "The dormant-chain
+struct-member defaults (Layer-5 confidence/resolver, phrase-boundary weights, the
+voice-leading axis) are NOT reachable through this mechanism — they are consumed only
+by the default-off dormant chain and are Phase-2/3 fit targets, not Phase-1 ones." — the same subsection (locator: lines 148–151). Two claims: (i) the dormant chain's defaults are not reachable through the override mechanism and are consumed only by that chain; (ii) they are fit targets of later phases.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 39.25. (ii) **HISTORICAL** — a plan.
+
+---
+
+**Row 39.29 — template 0: the major triad.**
+
+*Outgoing statement.* "| 0 | Major | `{0,4,7}` | Major triad (C) | |" — §2 *Templates*, the template table (locator: line 166).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — *"the four triad qualities on every diatonic and chromatically altered degree"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which templates does the dormant scorer carry at the current commit, and which chord classes of the derived vocabulary does it lack?
+
+---
+
+**Row 39.30 — template 1: the major seventh.**
+
+*Outgoing statement.* "| 1 | Major | `{0,4,7,11}` | Major 7th (CMaj7) | |" — §2 *Templates*, the template table (locator: line 167).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — *"the five seventh-chord qualities (dominant, major, minor, half-diminished, fully diminished) on every degree"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.31 — template 2: the dominant seventh.**
+
+*Outgoing statement.* "| 2 | Major | `{0,4,7,10}` | Dominant 7th (C7) | |" — §2 *Templates*, the template table (locator: line 168).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — as at Row 39.30.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.32 — template 3: the dominant seventh with lowered fifth, penalized without spelling confirmation.**
+
+*Outgoing statement.* "| 3 | Major | `{0,4,6,10}` | Dom7♭5 / Lydian dom (C7♭5 / C7♯11) | Penalised w/o TPC confirmation of ♭5 spelling; penalised when m7 absent (see §4 structural penalties). |" — §2 *Templates*, the template table (locator: line 169).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S4's vocabulary names this class neither in nor out.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.33 — template 4: the minor triad.**
+
+*Outgoing statement.* "| 4 | Minor | `{0,3,7}` | Minor triad (Cm) | |" — §2 *Templates*, the template table (locator: line 170).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — as at Row 39.29.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.34 — template 5: the minor seventh, with a penalty when the root is not the bass.**
+
+*Outgoing statement.* "| 5 | Minor | `{0,3,7,10}` | Minor 7th (Cm7) | Non-bass penalty `-kNonBassPenalty` (0.35) when root ≠ bass (waivable by full TPC match). |" — §2 *Templates*, the template table (locator: line 171).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — as at Row 39.30.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.35 — template 6: the diminished triad, with the diminished-seventh bonus selecting the rotation.**
+
+*Outgoing statement.* "| 6 | Diminished | `{0,3,6}` | Diminished triad (C°) | `dim7CharacteristicBonus` (+0.75) fires on the dim7 PC, gated on full triad evidence + non-diatonic ♭♭7. **Rotation-selection mechanism** — see §4. |" — §2 *Templates*, the template table (locator: line 172).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — as at Row 39.29.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.36 — template 7: the suspended fourth with lowered fifth, ahead of the half-diminished when their candidate scores are equal.**
+
+*Outgoing statement.* "| 7 | Suspended4 | `{0,5,6,10}` | Sus4♭5 (Csus4♭5) | Precedes HalfDim (tie-break): ties arise on their shared `{0,6,10}` subset when only those tones sound; the sus4 reading is preferred when the ♭5 is enharmonically ambiguous. Excluded from sus4-missing-P4 penalty (the tritone is the identifying interval). |" — §2 *Templates*, the template table (locator: line 173).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing carries a suspended chord as a template of its own, *"Sus4♭5 (Csus4♭5)"*; L2-S1 reads a suspension written into the chord label as one chord plus an elaboration — *"Under L1 these become one chord plus an elaboration assignment"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.37 — template 8: the half-diminished seventh.**
+
+*Outgoing statement.* "| 8 | HalfDiminished | `{0,3,6,10}` | Half-diminished 7th (Cø7) | Non-bass penalty (waivable by TPC); ties with Sus4♭5 on the shared `{0,6,10}` subset. |" — §2 *Templates*, the template table (locator: line 174).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — as at Row 39.30.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.38 — template 9: the augmented triad, halved on thin evidence.**
+
+*Outgoing statement.* "| 9 | Augmented | `{0,4,8}` | Augmented triad (C+) | Symmetric (3 enharmonic rotations); thin-evidence `augFactor` halves the score for sparse / bare-root cases. |" — §2 *Templates*, the template table (locator: line 175).
+
+*Derived statements that speak to it.* L2-S4.
+
+*Current-text axis.* L2-S4: **AGREES** — as at Row 39.29.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.39 — template 10: the augmented dominant seventh, both third and raised fifth required.**
+
+*Outgoing statement.* "| 10| Augmented | `{0,4,8,10}` | Augmented dom7 (C7♯5) | **B2 dual guard:** BOTH M3 (rootPc+4) AND aug5 (rootPc+8) must be present above `extensionThreshold`. Added 2026-06-05. |" — §2 *Templates*, the template table (locator: line 176).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S4's vocabulary names this class neither in nor out.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.40 — template 11: the suspended second, turned into a suspended fourth when the fourth sounds.**
+
+*Outgoing statement.* "| 11| Suspended2 | `{0,2,7}` | Sus2 (Csus2) | Upgraded to Sus4 in post-scoring when P4 is sounding. |" — §2 *Templates*, the template table (locator: line 177).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **DIFFERS** — as at Row 39.36.
+
+*The difference, in both texts' own words.* The outgoing carries *"Sus2 (Csus2)"* as a template of its own; L2-S1 reads a suspension written into the label as *"one chord plus an elaboration assignment"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.41 — template 12: the suspended fourth with minor seventh.**
+
+*Outgoing statement.* "| 12| Suspended4 | `{0,5,7,10}` | Sus4 + m7 (C7sus / C7sus4) | Penalised when defining P4 absent. |" — §2 *Templates*, the template table (locator: line 178).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **DIFFERS** — as at Row 39.36.
+
+*The difference, in both texts' own words.* The outgoing carries *"Sus4 + m7 (C7sus / C7sus4)"* as a template of its own; L2-S1 reads a suspension written into the label as *"one chord plus an elaboration assignment"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.42 — template 13: the suspended fourth with major seventh.**
+
+*Outgoing statement.* "| 13| Suspended4 | `{0,5,7,11}` | Sus4 + Maj7 (CMaj7sus) | Penalised when P5 absent. Often re-qualified to `Major + OmitsThird`. |" — §2 *Templates*, the template table (locator: line 179).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **DIFFERS** — as at Row 39.36.
+
+*The difference, in both texts' own words.* The outgoing carries *"Sus4 + Maj7 (CMaj7sus)"* as a template of its own; L2-S1 reads a suspension written into the label as *"one chord plus an elaboration assignment"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.43 — template 14: the suspended fourth with raised fifth.**
+
+*Outgoing statement.* "| 14| Suspended4 | `{0,5,8,10}` | Sus4♯5 (Csus♯5) | Sus4-variant: penalised when m7 absent. |" — §2 *Templates*, the template table (locator: line 180).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **DIFFERS** — as at Row 39.36.
+
+*The difference, in both texts' own words.* The outgoing carries *"Sus4♯5 (Csus♯5)"* as a template of its own; L2-S1 reads a suspension written into the label as *"one chord plus an elaboration assignment"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.44 — template 15: the suspended raised fourth, spelled as a raised fourth.**
+
+*Outgoing statement.* "| 15| Suspended4 | `{0,6,7}` | Sus♯4 (Csus♯4 / Lydian fragment) | TPC delta +6 = F♯ spelling, not G♭. |" — §2 *Templates*, the template table (locator: line 181).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **DIFFERS** — as at Row 39.36.
+
+*The difference, in both texts' own words.* The outgoing carries *"Sus♯4 (Csus♯4 / Lydian fragment)"* as a template of its own; L2-S1 reads a suspension written into the label as *"one chord plus an elaboration assignment"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.45 — template 16: the bare fifth, penalized when three pitch classes sound.**
+
+*Outgoing statement.* "| 16| Power | `{0,7}` | Power chord (C5) | Penalised when distinctPcs ≥ 3 (`kPowerChord3PcPenalty = 0.30`); excluded from step bonuses. |" — §2 *Templates*, the template table (locator: line 182).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L2-S4's vocabulary names this class neither in nor out.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.29.
+
+---
+
+**Row 39.46 — the two templates that share a three-tone subset earn equal candidate scores on it.**
+
+*Outgoing statement.* "Sus4♭5 (7) precedes HalfDim (8): the full interval sets differ (`{0,5,6,10}` vs
+  `{0,3,6,10}`), but both score identically when only their shared subset
+  `{0,6,10}` is sounding — the m3-vs-P4 discriminator is absent." — §2 *Templates*, the tie-break order (locator: lines 190–192).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.14.
+
+---
+
+**Row 39.47 — the suspended reading wins the tie-break at equal candidate scores.**
+
+*Outgoing statement.* "Sus4♭5 wins the
+  exact tie (Stage-1a finding F1, pinned in
+  `TiePolicy_ExactTie_LowerTiePriorityWins`)." — §2 *Templates*, the tie-break order (locator: lines 192–194).
+
+*Derived statements that speak to it.* L2-S43 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S43: **AGREES** — as at Row 39.14.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.14.
+
+---
+
+**Row 39.48 — the minor seventh after the minor triad and before the suspended templates.**
+
+*Outgoing statement.* "Min7 (5) follows Minor triad (4) and precedes Sus4 templates." — §2 *Templates*, the tie-break order (locator: line 195).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.14.
+
+---
+
+**Row 39.49 — plain triads before their four-note extensions.**
+
+*Outgoing statement.* "Plain triads precede their 4-note extensions." — §2 *Templates*, the tie-break order (locator: line 196).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.14.
+
+---
+
+**Row 39.50 — the bass-independent matrix: the additive base, with root continuity among its terms.**
+
+*Outgoing statement.* "**`basisIndepMatrix[rootPc][tplIdx]`** — additive base score:
+  `scoreTemplateTones + scoreExtraNotes + dim7CharacteristicBonus
+  + structuralPenalties + tpcConsistencyBonus
+  + bassIndependentContextualBonuses` (diatonic root, root continuity,
+  resolution bias)." — §3 *Score matrix structure* (locator: lines 210–214).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS** — as at Row 23.23.
+
+*The difference, in both texts' own words.* The outgoing base adds a *"root continuity"* bonus; L2-S34 says *"So no progression term may reward mere persistence of the root."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.23.
+
+---
+
+**Row 39.51 — the complexity matrix: a multiplicative preference among templates.**
+
+*Outgoing statement.* "**`complexityFactorMatrix[rootPc][tplIdx]`** — *multiplicative* template-complexity preference (Iter 74 Fix A)." — §3 *Score matrix structure* (locator: lines 216–217).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* how does the dormant scorer combine its candidate-score matrices at the current commit, and which of them multiply rather than add?
+
+---
+
+**Row 39.52 — a discount when fewer than half the template's tones sound.**
+
+*Outgoing statement.* "`evidenceRatio < 0.5` discounts the
+  score (0.5 + ratio); `≥ 0.5` leaves it unchanged." — §3 *Score matrix structure* (locator: lines 217–218).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.51.
+
+---
+
+**Row 39.53 — which pushes the scorer away from four-note templates over two pitch classes.**
+
+*Outgoing statement.* "This pushes the scorer
+  away from 4-note templates when only 2 PCs are sounding." — §3 *Score matrix structure* (locator: lines 218–219).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.51.
+
+---
+
+**Row 39.54 — every template-sized array sized by one constant.**
+
+*Outgoing statement.* "**Atomic update requirement.** Every template-sized array derives its extent from a single
+constant, `analysis::kTemplateCount` (`chordanalyzer.h`, `mu::composing::analysis`
+namespace, currently `17`)." — §3 *Score matrix structure* (locator: lines 232–234).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do all of the dormant scorer's template-sized arrays take their size from one constant at the current commit, and how many templates does it hold?
+
+---
+
+**Row 39.55 — the template array among them.**
+
+*Outgoing statement.* "the `analyzeChord` `templates` array," — §3 *Score matrix structure* (locator: line 235).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.54.
+
+---
+
+**Row 39.56 — the three candidate-score matrices among them.**
+
+*Outgoing statement.* "all three score matrices (`basisIndepMatrix` / `complexityFactorMatrix` /
+  `augFactorMatrix` — inner extent)," — §3 *Score matrix structure* (locator: lines 236–237).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.54.
+
+---
+
+**Row 39.57 — the derived interval-mask table among them.**
+
+*Outgoing statement.* "the derived `kMasks` table in `harmonicfunctionlayer.cpp` (and the `tiePriority` bounds
+  check), referenced there as `analysis::kTemplateCount`." — §3 *Score matrix structure* (locator: lines 238–239).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.54.
+
+---
+
+**Row 39.58 — exact comparisons, with no epsilon anywhere in the ranking.** *WITHHELD — D-321.*
+
+*Outgoing statement.* "Winner selection compares candidate scores with **exact `double` comparisons — there is no
+epsilon anywhere in the ranking.**" — §3, *Floating-point tie policy* (locator: lines 265–266).
+
+*Derived statements that speak to it.* L2-S43 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S43: **AGREES** — as at Row 10.49.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S43). *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 39.59 — first sort key: the higher candidate score wins, by exact inequality.** *WITHHELD — D-321.*
+
+*Outgoing statement.* "`a.score != b.score` → higher `score` wins (exact inequality on the raw `double`);" — §3, *Floating-point tie policy*, the comparator (locator: line 269).
+
+*Derived statements that speak to it.* L2-S43 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S43: **AGREES** — as at Row 10.49.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S43). *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 39.60 — second sort key: the lower template index wins.** *WITHHELD — D-321.*
+
+*Outgoing statement.* "else lower `tiePriority` wins (`tiePriority` is the template index — see §2 ordering);" — §3, *Floating-point tie policy*, the comparator (locator: line 270).
+
+*Derived statements that speak to it.* L2-S43 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S43: **AGREES** — as at Row 39.14.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S43). *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 39.61 — third sort key: the lower root wins.** *WITHHELD — D-321.*
+
+*Outgoing statement.* "else lower `rootPc` wins." — §3, *Floating-point tie policy*, the comparator (locator: line 271).
+
+*Derived statements that speak to it.* L2-S43 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S43: **AGREES** — as at Row 39.14.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S43). *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 39.62 — fully deterministic given identical floating-point evaluation.** *WITHHELD — D-321.*
+
+*Outgoing statement.* "This is fully deterministic **given identical floating-point evaluation**: the same inputs
+on the same build always produce the same winner." — §3, *Floating-point tie policy* (locator: lines 273–274).
+
+*Derived statements that speak to it.* L2-S43 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S43: **AGREES** — *"a tie decided silently by whichever reading the arithmetic happens to reach first would make the published principal depend on evaluation order rather than on the music, and would not be reproducible"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S43). *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 39.63 — the two tie-break sort keys resolve genuinely equal candidate scores across enharmonic templates.** *WITHHELD — D-321.*
+
+*Outgoing statement.* "The `tiePriority`-then-`rootPc` keys
+resolve genuine exact score ties (identical PC sets across enharmonic templates, e.g.
+Sus4♭5 ordered before HalfDim)." — §3, *Floating-point tie policy* (locator: lines 274–276).
+
+*Derived statements that speak to it.* L2-S43 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S43: **AGREES** — as at Row 39.14.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S43). *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 39.64 — the diminished-seventh bonus: the seventh sounds above the threshold.**
+
+*Outgoing statement.* "The `dim7 PC` (rootPc + 9) is sounding above `extensionThreshold`." — §4, *`dim7CharacteristicBonus`*, its first condition (locator: line 305).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on what conditions does the dormant scorer's diminished-seventh bonus fire at the current commit, and on which path is it read?
+
+---
+
+**Row 39.65 — the full diminished triad is present.**
+
+*Outgoing statement.* "The full diminished triad is present (root, ♭3, ♭5 all above threshold)." — §4, *`dim7CharacteristicBonus`*, its second condition (locator: line 306).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.64.
+
+---
+
+**Row 39.66 — the seventh is outside the prevailing tonality's collection.**
+
+*Outgoing statement.* "The dim7 PC is **non-diatonic** to the current key." — §4, *`dim7CharacteristicBonus`*, its third condition (locator: line 307).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.64.
+
+---
+
+**Row 39.67 — the check rewards the one rotation whose doubly flattened seventh is foreign to the tonality.**
+
+*Outgoing statement.* "The non-diatonic ♭♭7 check asymmetrically rewards the **correct** rotation:
+the ♭♭7 of the true rotation is non-diatonic in the current key, while the
+♭♭7 of the three spurious rotations coincides with a diatonic scale tone and
+gets no bonus." — §4, *`dim7CharacteristicBonus`* (locator: lines 313–316).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.64.
+
+---
+
+**Row 39.68 — do not suppress the bonus without replacing the rotation selection.**
+
+*Outgoing statement.* "**Do not suppress or bypass this bonus** without replacing the rotation
+selection." — §4, *`dim7CharacteristicBonus`* (locator: lines 318–319).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation addresses no legacy mechanism.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a tried-and-closed line about the legacy scorer, as Row 1.14 is placed.
+
+---
+
+**Row 39.69 — the attempt that suppressed it, and what it broke.**
+
+*Outgoing statement.* "The B3 attempt (2026-06-05) tried adding a dedicated 4-tone
+Diminished `{0,3,6,9}` template and suppressing this bonus to avoid double-scoring — result: 6 Jazz catalog dim7 rotations selected the wrong root, and
+a `bach_chorale_003` snapshot regression appeared as an indirect segmentation
+side effect." — §4, *`dim7CharacteristicBonus`* (locator: lines 319–323).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past attempt and its measured result.
+
+---
+
+**Row 39.70 — deferred.**
+
+*Outgoing statement.* "Deferred." — §4, *`dim7CharacteristicBonus`* (locator: line 323).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 39.71 — a future attempt must replicate the check or replace the bonus.**
+
+*Outgoing statement.* "Future attempts must either (a) replicate the non-diatonic-♭♭7 check inside the new template guard, or (b) replace the bonus
+with an equivalent mechanism." — §4, *`dim7CharacteristicBonus`* (locator: lines 323–325).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 39.68.
+
+---
+
+**Row 39.72 — the scorer's only two tests that read the tonality.**
+
+*Outgoing statement.* "Condition 3 above, and the identical condition in `diatonicRootContribution`
+(§4 "Other terms"), are the analyzer's only two key-consuming scoring tests." — §4, *`dim7CharacteristicBonus`* (locator: lines 328–329).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which of the dormant scorer's terms read the tonality or the key signature at the current commit, and what does each test?
+
+---
+
+**Row 39.73 — both ask whether a pitch class belongs to the tonality's collection.**
+
+*Outgoing statement.* "Both ask the same
+question — *is this pitch class in the key?* — and that is a question about the key's **collection**,
+not its tonic." — §4, *`dim7CharacteristicBonus`* (locator: lines 329–331).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.72.
+
+---
+
+**Row 39.74 — both test membership in the signature's diatonic collection, never a resolved mode.**
+
+*Outgoing statement.* "Both therefore test … whose contract is *"Key-agnostic: depends ONLY on the notated signature, never a resolved mode."*" — §4, *`dim7CharacteristicBonus`*, a sentence running through a one-line code block (locator: lines 331–337).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.72.
+
+---
+
+**Row 39.75 — neither term takes a tonic or a mode's scale.**
+
+*Outgoing statement.* "**Neither term takes a tonic or a mode scale.**" — §4, *`dim7CharacteristicBonus`* (locator: line 338).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.72.
+
+---
+
+**Row 39.76 — do not reintroduce the tonic-and-scale form for a membership test.** *WITHHELD — D-323.*
+
+*Outgoing statement.* "**⚠ Do not reintroduce `keyTonicPc + scale` for a membership test.**" — §4, *`dim7CharacteristicBonus`* (locator: line 356).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation addresses no legacy mechanism.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a tried-and-closed line about the legacy scorer, as Row 1.14 is placed.
+
+---
+
+**Row 39.77 — a scale degree is relative to the tonic; a membership question must not be.** *WITHHELD — D-323.*
+
+*Outgoing statement.* "A scale-DEGREE is tonic-relative
+by definition and legitimately uses that pair (`buildChordResult`); a membership question must not." — §4, *`dim7CharacteristicBonus`* (locator: lines 356–357). Two claims: (i) a scale degree is relative to the tonic by definition, and legitimately uses the tonic; (ii) a question whether a pitch belongs to the tonality must not use the tonic.
+
+*Derived statements that speak to it.* (i) L2-S1. (ii) None.
+
+*Current-text axis.* (i) L2-S1: **AGREES** — *"Degree: the scale step of the chord's root relative to the span's tonality"* is the derivation's own §0 term, and L2-S1's chord carries *"degree with alteration"*. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S1). *(An AGREES on a WITHHELD row.)* (ii) **ADOPTED — proposed.** *Proposal:* that any term of L2 asking whether a pitch belongs to a span's tonality ask it of the tonality's collection, never compute it from the tonic and a scale laid out from it.
+
+---
+
+**Row 39.78 — three further sites still answer the collection question through the tonic, declared and not fixed.** *WITHHELD — D-323.*
+
+*Outgoing statement.* "Note that `buildChordResult`'s `diatonicToKey` flag and the Gate I / Gate L `invRootIsDiatonic` checks
+(`postscoringgates.cpp`) still answer a *collection* question through the *tonic* pair and so still
+carry the OI-168 defect — they are declared, not fixed (see `OPEN_ITEMS.md` OI-170)." — §4, *`dim7CharacteristicBonus`* (locator: lines 358–360).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the dormant scorer's diatonicity flag and the two gates' diatonicity checks still test membership through the tonic at the current commit?
+
+---
+
+**Row 39.79 — no committed chord moves on any preset under the fix.**
+
+*Outgoing statement.* "**ZERO committed chords move on any preset.**" — §4, *`dim7CharacteristicBonus`*, the measured effect of moving the three sites (locator: line 368).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 39.80 — the two gates' verdicts under the fix.**
+
+*Outgoing statement.* "Gate I's two verdicts differed on exactly **one**
+  candidate across the whole Jazz corpus and the swap decision differed **0** times (another conjunct
+  blocked it either way); Gate L's verdicts never differed." — the same record (locator: lines 368–370).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 39.81 — the defect is live but inert at the two gates on this corpus.**
+
+*Outgoing statement.* "So neither gate's *swap* is reachable by
+  this defect on this corpus — the defect is live but, at these two gates, currently inert." — the same record (locator: lines 370–371).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 39.82 — only the published diatonicity flag moves.**
+
+*Outgoing statement.* "**Only the published `diatonicToKey` flag moves**: 22 flags on 9 Jazz files, every one
+  `false → true`, every one toward-correct; Baroque/Default byte-identical (δ = 0 at runtime again)." — the same record (locator: lines 372–373).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 39.83 — the hard regression stop unmoved.**
+
+*Outgoing statement.* "The robust-stop hard gate is unmoved (run-diff +0/−0, class-(a) and class-(b) duration δ = 0)." — the same record (locator: line 374).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 39.84 — a future fix could move the three sites with no committed-chord change.**
+
+*Outgoing statement.* "**Reading for a future fix:** the collection question at all three sites can move to
+`pcInMask(diatonicMaskFromFifths(fifths), pc)` with **no committed-chord change** — but that is *not*
+the whole tonic story in the scoring path." — §4, *`dim7CharacteristicBonus`* (locator: lines 376–378).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 39.85 — two live sites decide a committed chord from a degree.**
+
+*Outgoing statement.* "Two live sites decide a committed chord from a genuine
+**degree**, which no collection can answer and this primitive cannot replace: **Gate G-E** (58 winner
+swaps on Baroque) and `applyTonicPriorToSparseChord` (172/183/172 committed-*quality* overwrites —
+`OPEN_ITEMS.md` OI-172)." — §4, *`dim7CharacteristicBonus`* (locator: lines 378–381).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do Gate G-E and the sparse-chord tonic prior decide a committed chord from a degree at the current commit, on which path, and how often?
+
+---
+
+**Row 39.86 — a third site in the segmenter.**
+
+*Outgoing statement.* "A third lives outside this layer entirely, in the segmenter (OI-175)." — §4, *`dim7CharacteristicBonus`* (locator: line 381).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.85.
+
+---
+
+**Row 39.87 — two inequivalent definitions of the degree, whose correction is a separate change.**
+
+*Outgoing statement.* "See
+also OI-173: `degree` itself has **two** inequivalent definitions in the tree (the mode's diatonic
+**parent** scale here in `buildChordResult`, vs the mode's **own** scale in `diatonicDegreeForRootPc`),
+which differ for all 14 non-diatonic modes — correcting that basis is a **separate** change with its
+own measurement, because it moves `degree`, hence Roman numerals, hence possibly those two gates." — §4, *`dim7CharacteristicBonus`* (locator: lines 381–385). Two claims: (i) the degree has two inequivalent definitions in the code, which differ for the fourteen non-diatonic modes; (ii) correcting that basis is a separate change with its own measurement.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* how many definitions of a chord's degree does the code carry at the current commit, on which paths, and where do they disagree? (ii) **HISTORICAL** — a plan.
+
+---
+
+**Row 39.88 — gating the root-continuity bonus off a sparse predecessor was tried twice and regressed.**
+
+*Outgoing statement.* "**Known dead end (Iter 98, 2026-05-23).** Gating this bonus off a sparse
+predecessor (e.g. `previousRegion.distinctPcs <= 2`) was tried in two variants
+and both regressed `mozart_k280-1` IV→V65 in Alberti-bass contexts." — §4, *`rootContinuityBonus`* (locator: lines 398–400).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation addresses no legacy mechanism.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a tried-and-closed line about the legacy scorer, as Row 1.14 is placed.
+
+---
+
+**Row 39.89 — the root-continuity signal is load-bearing for sparse continuity.**
+
+*Outgoing statement.* "The signal
+is load-bearing for legitimate sparse continuity (broken-chord bass with held
+upper voices)." — §4, *`rootContinuityBonus`* (locator: lines 400–402).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS** — as at Row 23.23.
+
+*The difference, in both texts' own words.* The outgoing root-continuity signal *"is load-bearing for legitimate sparse continuity"*; L2-S34 says *"So no progression term may reward mere persistence of the root."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a finding about the legacy scorer, as Row 1.15(i) is placed.
+
+---
+
+**Row 39.90 — Gate R's predicate: three structural conditions, the phase applied apart.**
+
+*Outgoing statement.* "**Condition.** The predicate `gateRZeroesRootContinuity()` encodes three **structural**
+conditions (all required); the **phase** guard is applied separately inside `rcbEdge`
+(see below)." — §4, *Gate R — rcb bass-chord-tone guard* (locator: lines 416–418).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.18.
+
+---
+
+**Row 39.91 — the bonus zeroed for a cell when all three hold.**
+
+*Outgoing statement.* "Zero the bonus for a cell when all of these hold:" — §4, *Gate R* (locator: line 418).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.18.
+
+---
+
+**Row 39.92 — first: root continuity holds.**
+
+*Outgoing statement.* "`rcb > 0` (root continuity holds for this candidate), AND" — §4, *Gate R*, condition 1 (locator: line 419).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.18.
+
+---
+
+**Row 39.93 — second: the candidate earned no inversion credit.**
+
+*Outgoing statement.* "`basisDep <= 0` — the candidate earned **no inversion credit** (no inversion bonus
+   fired and no bass-root bonus applies)." — §4, *Gate R*, condition 2 (locator: lines 420–421).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.18.
+
+---
+
+**Row 39.94 — the credit read is the reconstructed one; before the redesign it was the scorer's own.**
+
+*Outgoing statement.* "**Since Stage 3.3** the pipeline passes the
+   *reconstructed* full basisDep (`cell.basisDep + fn::inversionContextBonus(...)`) to the
+   3-arg overload, because the inversion bonuses now live in the pipeline; pre-3.3 this
+   read the oracle's then-inversion-bearing `cell.basisDep` (a cross-layer dependency,
+   audit Finding 6, now closed — the read is intra-layer)." — §4, *Gate R*, condition 2 (locator: lines 421–425). Two claims: (i) the pipeline passes the reconstructed credit to the guard; (ii) before the redesign the guard read the scorer's own credit, a dependency across layers now closed.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 9.18. (ii) **HISTORICAL** — a superseded build state.
+
+---
+
+**Row 39.95 — the two reads are byte-identical.**
+
+*Outgoing statement.* "The two are byte-identical
+   (see the Stage 3.3 note below), AND" — §4, *Gate R*, condition 2 (locator: lines 425–426).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.18.
+
+---
+
+**Row 39.96 — third: the bass is foreign to the candidate's template.**
+
+*Outgoing statement.* "`bassIsTemplateChordTone(rootPc, tiePriority, bassPc) == false` — the bass is
+   foreign to the candidate's template." — §4, *Gate R*, condition 3 (locator: lines 427–428).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.18.
+
+---
+
+**Row 39.97 — the chord-tone test reads a mask table derived from the template intervals.**
+
+*Outgoing statement.* "`bassIsTemplateChordTone` returns true iff
+   `(bassPc - rootPc) mod 12` is a tone of the candidate's template (a static `kMasks`
+   interval-bitmask table **derived** from `analysis::kTemplateIntervals` — the same
+   interval data the 17 TemplateDef entries are built from)." — §4, *Gate R*, condition 3 (locator: lines 428–431).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.18.
+
+---
+
+**Row 39.98 — the phase guard: the bonus zeroed only when the predicate holds in the final pass.**
+
+*Outgoing statement.* "**Phase guard (separate from the predicate).** `rcbEdge()` zeroes rcb only when
+`gateRZeroesRootContinuity(...) && applyProgressionSignals` (where `applyProgressionSignals
+== (phase == ScoringPhase::Final)`)." — §4, *Gate R* (locator: lines 433–435).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.18.
+
+---
+
+**Row 39.99 — Gate R never fires during the segmentation search.**
+
+*Outgoing statement.* "Gate R is a **final-scoring correction only**; it never
+fires during segmentation exploration (`ScoringPhase::Segmentation`) — see "Why the phase
+guard" below." — §4, *Gate R* (locator: lines 435–437).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.18.
+
+---
+
+**Row 39.100 — the predicate is stateless; the phase is consulted once.**
+
+*Outgoing statement.* "The predicate itself is stateless (no phase parameter): the phase is consulted
+once, inside `rcbEdge` at the Pass A call site." — §4, *Gate R* (locator: lines 437–438).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.18.
+
+---
+
+**Row 39.101 — the scorer's inversion credit moved into the pipeline.**
+
+*Outgoing statement.* "When the four inversion
+bonuses migrated from the oracle into the competition pipeline (§11), the oracle's
+`cell.basisDep` stopped carrying the sounding-third signal." — §4, *Gate R*, the Stage 3.3 redesign (locator: lines 456–458).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event of the legacy scorer's build.
+
+---
+
+**Row 39.102 — the reconstructed-credit form ratified; Gate R reads the reconstructed credit.**
+
+*Outgoing statement.* "Cowork ratified the
+**reconstructed-credit** form: the pipeline reconstructs the full basisDep
+(`cell.basisDep + fn::inversionContextBonus(...)`) for the score anyway, and Gate R reads
+*that* value (`fullBasisDep <= 0`) — identical to the historical proxy on every input, with
+no cross-layer dependency." — §4, *Gate R*, the Stage 3.3 redesign (locator: lines 458–462). Two claims: (i) the form was ratified; (ii) Gate R reads the reconstructed credit, identical to the former read on every input.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a ratification event. (ii) **QUARANTINED**, travelling with Row 9.18.
+
+---
+
+**Row 39.103 — the reconstructed-credit read is the ratified form of the guard.** *WITHHELD — D-327.*
+
+*Outgoing statement.* "**★ THE DECISION, STATED AS SUCH — the RECONSTRUCTED-CREDIT read is the ratified form of this
+guard, and the originally designed literal sounding-third test is NOT what shipped (re-homed into
+this specification 2026-08-07 on the user's ruling).**" — §4, *Gate R* (locator: lines 478–480). Two claims: (i) the reconstructed-credit read is the ratified form of the guard; (ii) the originally designed direct test of the third is not what shipped.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 9.18. (ii) **HISTORICAL** — a design not built.
+
+---
+
+**Row 39.104 — the guard's scorer is dormant on both production surfaces.** *WITHHELD — D-327.*
+
+*Outgoing statement.* "**⚠ LEGACY subject — the vertical scorer this
+guard belongs to is dormant on both production surfaces.**" — §4, *Gate R* (locator: lines 480–481).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 3.15.
+
+---
+
+**Row 39.105 — Gate R asks whether any inversion credit was earned, not whether the third sounds.** *WITHHELD — D-327.*
+
+*Outgoing statement.* "Gate R asks whether the candidate earned
+**any inversion credit at all**; it does not test directly whether the candidate's third is
+sounding." — §4, *Gate R* (locator: lines 481–483).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.18.
+
+---
+
+**Row 39.106 — the mask table is derived from the template intervals, so a new template updates it.**
+
+*Outgoing statement.* "*Forward-compatible.* `kMasks` is **derived** from `analysis::kTemplateIntervals`
+  (`chordanalyzer.h`) — adding a template means adding its interval row there and the masks
+  update automatically (see §9)." — §4, *Gate R*, *Safety* (locator: lines 527–529).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.57.
+
+---
+
+**Row 39.107 — out-of-range inputs are not gated.**
+
+*Outgoing statement.* "*Conservative.* Out-of-range / unknown inputs return true (no gating)." — §4, *Gate R*, *Safety* (locator: line 531).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.18.
+
+---
+
+**Row 39.108 — the completeness bonus only for a root-position reading with all three triad tones.** *WITHHELD — D-537.*
+
+*Outgoing statement.* "The completeness bonus fires
+**only** for a **root-position** reading — the candidate bass IS the triad root — whose three triad
+tones are all present above the presence threshold." — §4, *`w_complete`* (locator: lines 550–552).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.89.
+
+---
+
+**Row 39.109 — so a genuine slash chord neither gains it nor loses to a rival that gains it wrongly.** *WITHHELD — D-537.*
+
+*Outgoing statement.* "A genuine slash chord therefore neither gains
+the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_complete`* (locator: lines 552–553).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.89.
+
+---
+
+**Row 39.110 — the step bonus suppressed outside the final scoring pass.**
+
+*Outgoing statement.* "**`phase == ScoringPhase::Final`** (call-site gate) — suppresses the bonus inside `greedyExpandSegmentation` boundary exploration, which runs in `ScoringPhase::Segmentation`." — §4, *`w_stepIn` / `w_stepOut`*, its first gate (locator: lines 581–583).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which guards restrict the dormant scorer's step bonuses at the current commit, and on which path are the bonuses read?
+
+---
+
+**Row 39.111 — the step helpers are stateless; the suppression lives at the call site.**
+
+*Outgoing statement.* "The `wStep*` helpers are stateless; the suppression lives at the Pass B call site (`if (applyProgressionSignals) { applyStepBonusGuard… }`)." — §4, *`w_stepIn` / `w_stepOut`*, its first gate (locator: lines 585–586).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.110.
+
+---
+
+**Row 39.112 — root position only: the bonus rewards the root moving smoothly in the bass.**
+
+*Outgoing statement.* "**`candBassPc == rootPc`** (root-position only) — the bonus rewards "this chord's root moves smoothly in the bass line," not "this slash-chord's bass happens to step."" — §4, *`w_stepIn` / `w_stepOut`*, its second gate (locator: lines 588–590).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.110.
+
+---
+
+**Row 39.113 — the first-inversion minor-seventh-family guard.**
+
+*Outgoing statement.* "**First-inversion m7-family surgical guard (Pass B)** — suppresses the bonus when a competitor of quality {HalfDiminished, Diminished, Minor7} sits a minor third below our bass and scores within `kStepBudget` (0.235 Baroque/Default, 0.21 Jazz/others — derived from `kWStepIn`) of our unbonused score." — §4, *`w_stepIn` / `w_stepOut`*, its third gate (locator: lines 594–598).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.110.
+
+---
+
+**Row 39.114 — no step bonus for the bare fifth.**
+
+*Outgoing statement.* "**Power-quality exclusion (Pass B)** — Power chords get no step bonus." — §4, *`w_stepIn` / `w_stepOut`*, its fourth gate (locator: line 602).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.110.
+
+---
+
+**Row 39.115 — the descending-fifth bonus: joint scoring on, context available.**
+
+*Outgoing statement.* "`jointScoringEnabled`, `context` available," — §4, *`w_seq`*, its firing conditions (locator: line 616).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on what conditions do the dormant scorer's descending-fifth and leading-tone bonuses fire at the current commit, and what do they read?
+
+---
+
+**Row 39.116 — only in the final scoring pass.**
+
+*Outgoing statement.* "the call site is in `ScoringPhase::Final` (the stateless `wSeqBonus` is simply not called in `ScoringPhase::Segmentation`)," — §4, *`w_seq`*, its firing conditions (locator: lines 617–618).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.115.
+
+---
+
+**Row 39.117 — a next root is known.**
+
+*Outgoing statement.* "`context->nextRootPc >= 0`," — §4, *`w_seq`*, its firing conditions (locator: line 619).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.115.
+
+---
+
+**Row 39.118 — at least four pitch classes sound.**
+
+*Outgoing statement.* "`distinctPcs >= 4`," — §4, *`w_seq`*, its firing conditions (locator: line 620).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.115.
+
+---
+
+**Row 39.119 — the next root a perfect fourth above the candidate's root.**
+
+*Outgoing statement.* "the next region's root sits a perfect fourth above the candidate root (`(nextRootPc - candRootPc) mod 12 == 5`)." — §4, *`w_seq`*, its firing conditions (locator: lines 621–622).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing condition tests the root interval alone, *"`(nextRootPc - candRootPc) mod 12 == 5`"*; L2-S34's progression term reads *"the pair of adjacent chords *read as degrees in their tonalities*"*, and is falsified *"if the progression term reads root intervals without the tonality"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.115.
+
+---
+
+**Row 39.120 — the reward: the classic descending-fifth root motion.**
+
+*Outgoing statement.* "Reward: classic V → I descending-fifth root motion." — §4, *`w_seq`* (locator: line 624).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS** — as at Row 39.119.
+
+*The difference, in both texts' own words.* The outgoing rewards a *"descending-fifth root motion"*; L2-S34 is falsified *"if the progression term reads root intervals without the tonality"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.115.
+
+---
+
+**Row 39.121 — a chord-level signal: any inversion qualifies, and the guard does not apply.**
+
+*Outgoing statement.* "This is a **chord-level** signal: any inversion of the candidate qualifies (the bonus does NOT require `candBassPc == candRootPc`), and the m7-family surgical guard does NOT apply (sequential root motion is about root identity, not bass)." — §4, *`w_seq`* (locator: lines 624–627). Two claims: (i) any inversion of the candidate qualifies; (ii) the minor-seventh-family guard does not apply.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 39.115. (ii) **QUARANTINED**, travelling with Row 39.115.
+
+---
+
+**Row 39.122 — the leading-tone diminished bonus: joint scoring on, context available.**
+
+*Outgoing statement.* "`jointScoringEnabled`, `context` available," — §4, *`w_dim`*, its firing conditions (locator: line 635).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.115.
+
+---
+
+**Row 39.123 — only in the final scoring pass.**
+
+*Outgoing statement.* "the call site is in `ScoringPhase::Final` (the stateless `wDimBonus` is simply not called in `ScoringPhase::Segmentation`)," — §4, *`w_dim`*, its firing conditions (locator: lines 636–637).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.115.
+
+---
+
+**Row 39.124 — a next root is known.**
+
+*Outgoing statement.* "`context->nextRootPc >= 0`," — §4, *`w_dim`*, its firing conditions (locator: line 638).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.115.
+
+---
+
+**Row 39.125 — the quality diminished or half-diminished.**
+
+*Outgoing statement.* "quality is `Diminished` or `HalfDiminished`," — §4, *`w_dim`*, its firing conditions (locator: line 639).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.115.
+
+---
+
+**Row 39.126 — at least four pitch classes sound.**
+
+*Outgoing statement.* "`distinctPcs >= 4`," — §4, *`w_dim`*, its firing conditions (locator: line 640).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.115.
+
+---
+
+**Row 39.127 — the candidate's root a semitone below the next root.**
+
+*Outgoing statement.* "candidate root sits one semitone below `nextRootPc` (leading-tone-of-next)." — §4, *`w_dim`*, its firing conditions (locator: line 641).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS** — as at Row 39.119.
+
+*The difference, in both texts' own words.* The outgoing condition is a root interval, the candidate root *"one semitone below `nextRootPc`"*; L2-S34 is falsified *"if the progression term reads root intervals without the tonality"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.115.
+
+---
+
+**Row 39.128 — the segmentation phase set for the segmenter's exploratory calls.**
+
+*Outgoing statement.* "Set to `ScoringPhase::Segmentation` by `greedyExpandSegmentation` for internal boundary-exploration `analyzeChord` calls (Round 1 head/tail synthesis + Round 2 region scoring in `harmonicsegmenter.cpp::fillGap`)." — §4, *`ScoringPhase` (ChordAnalyzerPreferences::scoringPhase)* (locator: lines 697–699).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 21.12.
+
+---
+
+**Row 39.129 — forwarded to the function layer.**
+
+*Outgoing statement.* "Forwarded by `analyzeChord` to `applyHarmonicFunction(..., prefs.scoringPhase)`." — §4, *`ScoringPhase` (ChordAnalyzerPreferences::scoringPhase)* (locator: lines 699–700).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 21.12.
+
+---
+
+**Row 39.130 — the segmentation phase suppresses the progression signals and Gate R.**
+
+*Outgoing statement.* "`ScoringPhase::Segmentation` suppresses the progression signals that would otherwise bias sub-region bass selection during segmentation, before the final per-region scoring pass runs: `w_stepIn`, `w_stepOut`, `w_seq`, `w_dim`, **and Gate R**." — §4, *`ScoringPhase` (ChordAnalyzerPreferences::scoringPhase)* (locator: lines 702–704).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 21.12.
+
+---
+
+**Row 39.131 — root continuity stays active in both phases.**
+
+*Outgoing statement.* "`rootContinuityBonus` stays active in both phases (segmentation depends on it)." — §4, *`ScoringPhase` (ChordAnalyzerPreferences::scoringPhase)* (locator: lines 704–705).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS** — as at Row 23.23.
+
+*The difference, in both texts' own words.* The outgoing keeps *"`rootContinuityBonus`"* active in both phases; L2-S34 says *"So no progression term may reward mere persistence of the root."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.23.
+
+---
+
+**Row 39.132 — the phase replaced a former flag; the bonus functions are stateless.**
+
+*Outgoing statement.* "This replaced the former per-function `explorationMode` flag: the bonus functions and Gate R predicate are now stateless, and the phase is consulted once inside `applyHarmonicFunction()` (`const bool applyProgressionSignals = (phase == ScoringPhase::Final)`)." — §4, *`ScoringPhase` (ChordAnalyzerPreferences::scoringPhase)* (locator: lines 705–708). Two claims: (i) the phase replaced a former flag; (ii) the bonus functions and Gate R's predicate are stateless, the phase consulted once.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a superseded build state. (ii) **QUARANTINED**, travelling with Row 21.12.
+
+---
+
+**Row 39.133 — the final per-region calls, after the segmentation returns its boundaries.**
+
+*Outgoing statement.* "Final per-region calls (bridge / batch_analyze callers, after segmentation returns boundaries) leave the default `ScoringPhase::Final`." — §4, *`ScoringPhase` (ChordAnalyzerPreferences::scoringPhase)* (locator: lines 708–710).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 23.314.
+
+*The difference, in both texts' own words.* The outgoing computes the chord's candidate score in final calls made *"after segmentation returns boundaries"*; L2-S11 says where the boundaries fall *"is never decided before the chord or after it"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 21.12.
+
+---
+
+**Row 39.134 — the bass-root bonus, scaled by how much of the triad sounds.**
+
+*Outgoing statement.* "| `bassNoteRootBonus` | 0.70 | Awarded when `rootPc == bassPc`, multiplied by `bassRootBonusMultiplier` (1.0 full triad, 0.3 third-only or root+5, 0.1 bass alone). |" — §4, *Other terms (briefly)*, the table (locator: line 719).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `bassNoteRootBonus` is hand-set at *"0.70"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.135 — the diatonic-root bonus, testing the signature's collection.**
+
+*Outgoing statement.* "| `diatonicRootBonus` | 0.30 | Awarded when the root is a member of the key SIGNATURE's diatonic collection — `pcInMask(diatonicMaskFromFifths(fifths), pc)`, in `diatonicRootContribution`. The term takes **no tonic and no mode scale**; it shares that membership test with `dim7CharacteristicBonus` (the analyzer's only other key-consuming term). Fixed at OI-168 (2026-07-14) — see §4 for the tonic-anchored form it replaced and why. |" — §4, *Other terms (briefly)*, the table (locator: line 720).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `diatonicRootBonus` is hand-set at *"0.30"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.136 — the per-tone spelling-consistency bonus.**
+
+*Outgoing statement.* "| `tpcConsistencyBonusPerTone` | 0.20 | Per non-root template tone whose authored TPC matches the expected delta. |" — §4, *Other terms (briefly)*, the table (locator: line 721).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `tpcConsistencyBonusPerTone` is hand-set at *"0.20"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.137 — the resolution bonus after a diminished, half-diminished or augmented chord.**
+
+*Outgoing statement.* "| `resolutionBonus` | 0.35 | Awarded on `prevDim→Maj/min` semitone-up, `prevHalfDim→Maj` P4-up, `prevAug→same-root`. |" — §4, *Other terms (briefly)*, the table (locator: line 722).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `resolutionBonus` is hand-set at *"0.35"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.138 — the inversion bonus for a bass stepping from the previous bass.**
+
+*Outgoing statement.* "| `stepwiseBassInversionBonus` | 0.50 | Inverted Maj/Min with bass stepwise from previous region's bass. |" — §4, *Other terms (briefly)*, the table (locator: line 723).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `stepwiseBassInversionBonus` is hand-set at *"0.50"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.139 — the inversion bonus for a bass stepping to the next bass.**
+
+*Outgoing statement.* "| `stepwiseBassLookaheadBonus` | 0.50 | Inverted Maj/Min with bass stepwise to next region's bass. |" — §4, *Other terms (briefly)*, the table (locator: line 724).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `stepwiseBassLookaheadBonus` is hand-set at *"0.50"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.140 — the inversion bonus for a complete three-tone triad.**
+
+*Outgoing statement.* "| `completeTriadInversionBonus` | 0.45 | All three triad tones present in a 3-PC texture; inverted reading. |" — §4, *Other terms (briefly)*, the table (locator: line 725).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `completeTriadInversionBonus` is hand-set at *"0.45"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.141 — the inversion bonus for keeping the previous root.**
+
+*Outgoing statement.* "| `sameRootInversionBonus` | 0.40 | Inverted candidate whose root matches the previous region's root. |" — §4, *Other terms (briefly)*, the table (locator: line 726).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6) — and L2-S34.
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3. L2-S34: **DIFFERS** — as at Row 23.23.
+
+*The difference, in both texts' own words.* The outgoing value of `sameRootInversionBonus` is hand-set at *"0.40"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."* And the bonus goes to a candidate *"whose root matches the previous region's root"*; L2-S34 says *"So no progression term may reward mere persistence of the root."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.142 — the cap on the four inversion bonuses, currently not binding.**
+
+*Outgoing statement.* "| `maxTotalInversionContextBonus` | 2.0 (no preset override — see note below) | Cap on the sum of the four inversion bonuses above; currently non-binding. |" — §4, *Other terms (briefly)*, the table (locator: line 727).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `maxTotalInversionContextBonus` is hand-set at *"2.0"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.143 — the penalty for a root that is not the bass.**
+
+*Outgoing statement.* "| `kNonBassPenalty` | 0.35 | Min7 / Sus4 / HalfDim with root ≠ bass; waived when every non-root TPC matches. |" — §4, *Other terms (briefly)*, the table (locator: line 728).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `kNonBassPenalty` is hand-set at *"0.35"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.144 — the suspended-fourth penalty when the fourth is missing.**
+
+*Outgoing statement.* "| `kSus4MissingFourth` | 0.70 | Sus4 (excluding Sus4♭5) without P4 above 0.50. |" — §4, *Other terms (briefly)*, the table (locator: line 729).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `kSus4MissingFourth` is hand-set at *"0.70"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.145 — the suspended-variant penalty when the seventh is missing.**
+
+*Outgoing statement.* "| `kSus4VariantMissing7th` | 0.70 | Sus4♭5 / Sus4♯5 without m7. |" — §4, *Other terms (briefly)*, the table (locator: line 730).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `kSus4VariantMissing7th` is hand-set at *"0.70"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.146 — the suspended-major-seventh penalty when the fifth is missing.**
+
+*Outgoing statement.* "| `kSus4Maj7MissingP5` | 0.50 | Sus4+Maj7 without P5. |" — §4, *Other terms (briefly)*, the table (locator: line 731).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `kSus4Maj7MissingP5` is hand-set at *"0.50"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.147 — the lowered-fifth penalty without the spelling's confirmation.**
+
+*Outgoing statement.* "| `kDom7FlatFiveTpcPenalty` | 0.55 | Dom7♭5 without explicit G♭ TPC confirmation. |" — §4, *Other terms (briefly)*, the table (locator: line 732).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `kDom7FlatFiveTpcPenalty` is hand-set at *"0.55"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.148 — the lowered-fifth penalty when the seventh is missing.**
+
+*Outgoing statement.* "| `kDom7FlatFiveMissing7th` | 0.50 | Dom7♭5 without m7. |" — §4, *Other terms (briefly)*, the table (locator: line 733).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `kDom7FlatFiveMissing7th` is hand-set at *"0.50"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.149 — the bare-fifth penalty over three pitch classes.**
+
+*Outgoing statement.* "| `kPowerChord3PcPenalty` | 0.30 | Power chord with `distinctPcs >= 3`. |" — §4, *Other terms (briefly)*, the table (locator: line 734).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `kPowerChord3PcPenalty` is hand-set at *"0.30"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.150 — the per-position weights of the template tones.**
+
+*Outgoing statement.* "| `kRootToneFactor / kSecondToneFactor / kOtherToneFactor` | 1.8 / 1.2 / 1.0 | Per-position weights in `scoreTemplateTones`. |" — §4, *Other terms (briefly)*, the table (locator: line 735).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `kRootToneFactor / kSecondToneFactor / kOtherToneFactor` is hand-set at *"1.8 / 1.2 / 1.0"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.151 — the extension weights.**
+
+*Outgoing statement.* "| `kExtensionFactor7th / Flat13 / Default` | 0.45 / 0.20 / 0.35 | Per-rel-interval extension weights in `scoreExtraNotes`. |" — §4, *Other terms (briefly)*, the table (locator: line 736).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `kExtensionFactor7th / Flat13 / Default` is hand-set at *"0.45 / 0.20 / 0.35"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.152 — the penalty for a pitch class that contradicts the quality.**
+
+*Outgoing statement.* "| `kContradictionPenalty` | 0.75 | Non-template pc that contradicts the template quality. |" — §4, *Other terms (briefly)*, the table (locator: line 737).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `kContradictionPenalty` is hand-set at *"0.75"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.153 — the penalty for a foreign pitch class.**
+
+*Outgoing statement.* "| `kForeignPenalty` | 0.45 | Non-template pc that is neither extension nor contradiction. |" — §4, *Other terms (briefly)*, the table (locator: line 738).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `kForeignPenalty` is hand-set at *"0.45"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.154 — the cap on the inversion bonuses is inert.**
+
+*Outgoing statement.* "**`maxTotalInversionContextBonus` is currently inert (verified 2026-06-10).**" — §4, *Other terms (briefly)*, the remark below the table (locator: line 740).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.142.
+
+---
+
+**Row 39.155 — no code path sets a value other than the default.**
+
+*Outgoing statement.* "No code path sets a non-default value: both presets inherit the 2.0 default — the `batch_analyze.cpp` preset builder sets neither, and the only other appearances are the `ChordAnalyzerPreferences` declaration (`analysis/types/analysistypes.h`), the optimizer range entry, and the two `std::min` clamp sites." — the same remark (locator: lines 740–744).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.142.
+
+---
+
+**Row 39.156 — the per-preset cap values once documented were never assigned.**
+
+*Outgoing statement.* "The previously documented "Baroque=2.5 / Jazz=0.6" values were aspirational: they entered the field's doc-comment at its introduction (`46c76ad67f`, 2026-05-05) as planned "Iteration 4" tuning that never happened, and a full-history pickaxe shows no commit ever assigned them (cap archaeology, 2026-06-10 doc pass; inventory in `records/cc/reports/cc_stage1b_report.md` §1.6)." — the same remark (locator: lines 744–749).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan never carried out, and the search that established it.
+
+---
+
+**Row 39.157 — the cap cannot bind at the present values.**
+
+*Outgoing statement.* "The cap cannot bind at current values: the four inversion bonuses sum to 1.85 (Baroque/default prefs) and 0.75 (Jazz), both below 2.0." — the same remark (locator: lines 749–750).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.142.
+
+---
+
+**Row 39.158 — the jazz preset's inversion behavior comes from reduced individual bonuses.**
+
+*Outgoing statement.* "Jazz's different inversion behavior comes from its **reduced individual bonuses** (0.20/0.20/0.15/0.20, set in `batch_analyze.cpp`), not from this cap." — the same remark (locator: lines 750–752).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.142.
+
+---
+
+**Row 39.159 — the clamp on each template tone's weight.**
+
+*Outgoing statement.* "| `kTemplateToneWeightCap` | `scoreTemplateTones` (`chordanalyzer.cpp`) — clamps each template tone's `pcWeight` before its per-position factor multiplies it | the `kRootToneFactor / kSecondToneFactor / kOtherToneFactor` cell names the factors, not the clamp |" — §4, *The registered scoring constants this document does not table above*, the table (locator: line 775).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the row states where a constant acts, and no value.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.160 — the same clamp for every pitch class outside the template.**
+
+*Outgoing statement.* "| `kExtraNoteWeightCap` | `scoreExtraNotes` — the same clamp for every NON-template pitch class, applied before the extension factor, the contradiction penalty or the foreign penalty | nothing above; the three terms it bounds each have a cell, the clamp has none |" — §4, *The registered scoring constants this document does not table above*, the table (locator: line 776).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the row states where a constant acts, and no value.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.161 — the extension weight at the lowered thirteenth.**
+
+*Outgoing statement.* "| `kExtensionFactorFlat13` | `scoreExtraNotes` — the extension weight at rel 8 (♭13 / ♯5) | the combined cell `kExtensionFactor7th / Flat13 / Default` |" — §4, *The registered scoring constants this document does not table above*, the table (locator: line 777).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the row states where a constant acts, and no value.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.162 — the extension weight for everything else.**
+
+*Outgoing statement.* "| `kExtensionFactorDefault` | `scoreExtraNotes` — the extension weight for everything else (9th, 11th, ♯11 …) | the same combined cell |" — §4, *The registered scoring constants this document does not table above*, the table (locator: line 778).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the row states where a constant acts, and no value.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.163 — a flat-spelled third suppresses the suspended reading.**
+
+*Outgoing statement.* "| `kSus4FlatThirdFactor` | `scoreExtraNotes` — REPLACES the extension factor at the m3/♯9 position when the note's TPC spells a **flat** third (E♭ over C: `noteTpc == rootTpc - 3`), i.e. minor intent, which suppresses the Sus4 reading | nothing above — the TPC-based sus4-vs-minor disambiguation is not otherwise described in this document |" — §4, *The registered scoring constants this document does not table above*, the table (locator: line 779).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the row states where a constant acts, and no value.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.164 — a sharp-spelled ninth is compatible with the suspended reading.**
+
+*Outgoing statement.* "| `kSus4SharpThirdFactor` | the same site, **sharp** spelling (D♯ over C: `noteTpc == rootTpc + 9`), i.e. ♯9 intent, which is compatible with Sus4 | as above — not otherwise described |" — §4, *The registered scoring constants this document does not table above*, the table (locator: line 780).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the row states where a constant acts, and no value.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.165 — the threshold the defining fourth must clear.**
+
+*Outgoing statement.* "| `kSus4StructuralFourthThreshold` | `structuralPenalties` — the `pcWeight` bar the defining P4 must clear before a Sus4 (excluding Sus4♭5) escapes `kSus4MissingFourth`; passing and ornamental fourths clear the general extension bar but rarely reach this one | the `kSus4MissingFourth` cell — its "without P4 above 0.50" **is** this threshold |" — §4, *The registered scoring constants this document does not table above*, the table (locator: line 781).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the row states where a constant acts, and no value.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.166 — the presence threshold behind the bass-root multiplier.**
+
+*Outgoing statement.* "| `kBassSupportPresenceThreshold` | `bassRootBonusMultiplier` — the `pcWeight` bar at which a pitch class counts as PRESENT when the bass-root bonus multiplier is chosen | the `bassNoteRootBonus` cell lists the multipliers (full triad / third-only or root+5 / bass alone); the presence bar behind them is unnamed |" — §4, *The registered scoring constants this document does not table above*, the table (locator: line 782).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the row states where a constant acts, and no value.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.167 — the lower presence threshold for a seventh.**
+
+*Outgoing statement.* "| `kSeventhThreshold` | `detectExtensions` — the separate, lower presence bar for a m7 (+10) or M7 (+11) to register as a seventh, because lightly-voiced sevenths sit below the general extension bar | nothing above |" — §4, *The registered scoring constants this document does not table above*, the table (locator: line 783).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the row states where a constant acts, and no value.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.168 — the default extension threshold, distinct from the preferences field.**
+
+*Outgoing statement.* "| `kExtensionThreshold` | the **default argument** of `detectExtensions` / `dim7CharacteristicBonus` / `structuralPenalties`. **Distinct from `prefs.extensionThreshold`**, the preferences field this document names throughout: every `analyzeChord` call site passes the prefs field explicitly, so this default binds only where a caller omits the parameter | nothing above; the body's `prefs.extensionThreshold` is the other thing |" — §4, *The registered scoring constants this document does not table above*, the table (locator: line 784).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the row states where a constant acts, and no value.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.169 — one constant as both the evidence threshold and the floor.**
+
+*Outgoing statement.* "| `kComplexityEvidenceFloor` | the `complexityFactorMatrix` shaping constant — it is BOTH the evidence-ratio threshold and the additive floor (one constant, two roles) | §3's `complexityFactorMatrix` bullet describes both roles with the value inline and no name |" — §4, *The registered scoring constants this document does not table above*, the table (locator: line 785).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the row states where a constant acts, and no value.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.170 — the augmented thin-evidence multiplier at both sites.**
+
+*Outgoing statement.* "| `kAugThinEvidenceFactor` | the `augFactorMatrix` multiplier, applied at BOTH thin-evidence sites — sparse bare-root augmented, and augmented with no third / fifth / seventh above the threshold | §3's `augFactorMatrix` bullet and §2's template-9 note, both describing the effect without the name |" — §4, *The registered scoring constants this document does not table above*, the table (locator: line 786).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the row states where a constant acts, and no value.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.171 — the first defect: a passing low note won the bass over the beat's bass.**
+
+*Outgoing statement.* "**Bug 1 (bwv103.6 m3 b2):** a passing eighth note that happens to be the absolute lowest pitch in the region won bass selection over the beat-onset bass a step above it." — §5 *Joint (bass, root, template) scoring*, the two defects that motivated it (locator: lines 800–802).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past defect of the legacy scorer.
+
+---
+
+**Row 39.172 — the second defect: a slash-chord reading outscored the root-position triad.**
+
+*Outgoing statement.* "**Bug 2 (bwv310 m8 b3):** a slash-chord reading (Em/C) outscored the root-position triad (C major) because the bass-root bonus + complete-triad evidence on C had no way to flip the global ranking." — §5 *Joint (bass, root, template) scoring*, the two defects that motivated it (locator: lines 803–805).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past defect of the legacy scorer.
+
+---
+
+**Row 39.173 — joint scoring on when onsets differ among the candidates.**
+
+*Outgoing statement.* "At least one candidate with `onsetAtRegionStart == true` AND at least one with `false` (distinguishes the bwv103.6 case from static SATB textures), **OR**" — §5 *Joint (bass, root, template) scoring*, when joint scoring is enabled (locator: lines 814–816).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* when does the dormant scorer turn on its joint bass-and-chord scoring at the current commit, and on which path?
+
+---
+
+**Row 39.174 — or in a sparse upper-register texture.**
+
+*Outgoing statement.* "`sparseUpperRegisterAmbiguous`: `distinctPcs <= 2`, ≥ 2 regional candidates, and `lowestPitch > 60` — Corelli op01n08d m2 b3 fallback for upper-register G + B with bass continuo resting." — §5 *Joint (bass, root, template) scoring*, when joint scoring is enabled (locator: lines 817–819).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.173.
+
+---
+
+**Row 39.175 — a structural bass: at or below middle C, or three pitch classes.**
+
+*Outgoing statement.* "**`hasStructuralBass`** (computed in `analyzeChord`, `chordanalyzer.cpp`). True when `lowestPitch <= 60` (middle C) OR `distinctPcs >= 3`." — §5 *Joint (bass, root, template) scoring* (locator: lines 823–825).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which lowest notes count as a structural bass for the dormant scorer at the current commit, and what does that test gate?
+
+---
+
+**Row 39.176 — the structural-bass test carried into the cell flags, so an upper-register low note earns no inversion bonus.**
+
+*Outgoing statement.* "Since Stage 3.3 the oracle ANDs it into the per-cell `supportsInversionBonuses` / `qualifiesCompleteTriad` flags it publishes on each `ScoringCell`, so the migrated inversion bonuses still respect it — sparse upper-register "bass" notes are not real bass voices and must not trigger inversion bonuses (Corelli op01n08d m2 b3)." — §5 *Joint (bass, root, template) scoring* (locator: lines 825–829). Two claims: (i) the scorer carries the test into two flags on each cell, which the moved inversion bonuses respect; (ii) sparse upper-register low notes are not real bass voices and must not trigger inversion bonuses.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S28.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S28: **AGREES** — the figure's structural bass is one *"which is not necessarily the lowest pitch sounding at the span's first slice"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 39.175. (ii) **QUARANTINED**, travelling with Row 39.175.
+
+---
+
+**Row 39.177 — the inversion bonuses computed in the pipeline, summed and capped.**
+
+*Outgoing statement.* "**Inversion-bonus computation (since Stage 3.3 — competition pipeline).** The four §4.1b inversion bonuses are computed by `fn::inversionContextBonus(cell, previousRootPc, bassIsStepwiseFromPrevious, bassIsStepwiseToNext, prefs)` in `harmonicfunctionlayer.cpp`, which returns `min(completeTriad + stepwiseInversion + stepwiseLookahead + sameRoot, maxTotalInversionContextBonus)` — the same term order and clamp the old oracle helper `bassDependentContextualBonuses` used." — §5 *Joint (bass, root, template) scoring* (locator: lines 831–836).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* where does the dormant path compute its inversion bonuses at the current commit, and how are they combined and capped?
+
+---
+
+**Row 39.178 — folded into the cell's bass-dependent portion before the multipliers.**
+
+*Outgoing statement.* "The pipeline folds it into the cell's basisDep (`fullBasisDep = cell.basisDep + inversionContextBonus`) before the cf × af multiply." — §5 *Joint (bass, root, template) scoring* (locator: lines 836–837).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.177.
+
+---
+
+**Row 39.179 — the scorer's own bass-dependent portion is now purely vertical.**
+
+*Outgoing statement.* "The oracle now sets `cell.basisDep = nonBassAdjustment + appliedBassBonus` (genuinely vertical) plus the two eligibility flags." — §5 *Joint (bass, root, template) scoring* (locator: lines 838–839).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.177.
+
+---
+
+**Row 39.180 — the cap a safety net, not binding at present values.**
+
+*Outgoing statement.* "The cap is a safety net against runaway stacking; it is non-binding at current values (bonus sums 1.85 / 0.75 Jazz vs the 2.0 default — see the §4 note)." — §5 *Joint (bass, root, template) scoring* (locator: lines 839–841).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.177.
+
+---
+
+**Row 39.181 — the bass and the chord chosen together, as one triple.** *WITHHELD — D-536.*
+
+*Outgoing statement.* "**★ THE DECISION THIS SECTION RECORDS, STATED AS A RULE — the bass and the chord are chosen TOGETHER, as one (bass, root, template) triple (re-homed into this specification 2026-08-07 on the user's ruling).**" — §5 *Joint (bass, root, template) scoring* (locator: lines 843–845).
+
+*Derived statements that speak to it.* L2-S28.
+
+*Current-text axis.* L2-S28: **AGREES** — *"The figure is decided in the reading."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S28). *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 39.182 — this scorer dormant on both production surfaces.** *WITHHELD — D-536.*
+
+*Outgoing statement.* "**⚠ LEGACY subject — this scorer is dormant on both production surfaces.**" — §5 *Joint (bass, root, template) scoring* (locator: line 845).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 3.15.
+
+---
+
+**Row 39.183 — no bass committed before the chords are scored.** *WITHHELD — D-536.*
+
+*Outgoing statement.* "The analyzer does **not** commit to a bass and then score chords against it." — §5 *Joint (bass, root, template) scoring* (locator: lines 845–846).
+
+*Derived statements that speak to it.* L2-S28.
+
+*Current-text axis.* L2-S28: **AGREES** — as at Row 39.181.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S28). *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 39.184 — the winner the best triple over every bass candidate and the whole grid.** *WITHHELD — D-536.*
+
+*Outgoing statement.* "It enumerates the plausible bass candidates and the whole root × template grid against each, and the winner is the best **(bass, root, template)** triple under the composite score." — §5 *Joint (bass, root, template) scoring* (locator: lines 846–848).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.10.
+
+---
+
+**Row 39.185 — coupled quantities decided together, not one committed early.** *WITHHELD — D-536.*
+
+*Outgoing statement.* "It is the same principle the production estimator carries on its own terms — coupled quantities are decided together rather than one being committed early." — §5 *Joint (bass, root, template) scoring* (locator: lines 854–856).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **AGREES** — *"It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S11). *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 39.186 — the gates run after the results and the guaranteed alternative.**
+
+*Outgoing statement.* "These run after `results[]` is populated and the optional guaranteed-inversion-alternative is appended." — §6 *Post-scoring gates (A–L)* (locator: lines 862–863).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.187 — the gates reorder, and never change the underlying candidate scores.**
+
+*Outgoing statement.* "They modify ranking via `std::swap` and `std::stable_sort` — they do not change the underlying scores in `rawCandidates`." — §6 *Post-scoring gates (A–L)* (locator: lines 863–865).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.188 — a gate or scoring rule reads structured fields only.**
+
+*Outgoing statement.* "A gate or scoring rule reads **structured fields only** — no chord-symbol string parsing and no Roman-numeral inference, in any gate, any scoring term, or any future change to either." — §6 *Post-scoring gates (A–L)* (locator: lines 869–870).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 22.22.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S49), travelling with Row 22.22.
+
+---
+
+**Row 39.189 — it binds every rule of the gates and the terms.**
+
+*Outgoing statement.* "It binds every rule in this section and every rule §4 documents." — §6 *Post-scoring gates (A–L)* (locator: lines 870–871).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 22.22.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S49), travelling with Row 22.22.
+
+---
+
+**Row 39.190 — the lettered gates implemented in one function in their own file.**
+
+*Outgoing statement.* "**E3 (2026-06-06): execution location.** Gates A–L are implemented in `applyPostScoringGates()` (declared in `chordanalyzer.h`, defined in `postscoringgates.cpp` since refactor #1; formerly `chordanalyzer.cpp`)." — §6 *Post-scoring gates (A–L)* (locator: lines 874–876).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.191 — the scorer publishes the gates' inputs instead of running them.**
+
+*Outgoing statement.* "`analyzeChord()` no longer runs them internally; instead it publishes the inputs the gates need (`pcWeight`, `tpcForPc`, `scale`, `keyTonicPc`, `keyMode`, `bassPc`, `bassTpc`, `distinctPcs`, `threshold`, `rawCandidates`) via the optional `PostScoringGateContext* gateCtxOut` out-parameter." — §6 *Post-scoring gates (A–L)* (locator: lines 877–881).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.192 — the production call sites run the gates after the function layer.**
+
+*Outgoing statement.* "Production call sites in `regionanalyzer.cpp` (Pass 1, Pass 2, Pass 2b), `harmonicsegmenter.cpp`, the notation bridges, and `inferNextRootPc()` call `applyPostScoringGates()` *after* `applyHarmonicFunction()`." — §6 *Post-scoring gates (A–L)* (locator: lines 881–883).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.193 — every gate implemented inside that one function.**
+
+*Outgoing statement.* "The table below identifies each gate by name; all are implemented inside `applyPostScoringGates()` (`postscoringgates.cpp`)." — §6 *Post-scoring gates (A–L)* (locator: lines 884–885).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.194 — the gate margins are constants at file scope.**
+
+*Outgoing statement.* "The gate margins are the file-scope constants `kGateIMargin` / `kGateLMargin` (`kGateKMargin` retired with Gate K, Stage 5; relocated to file scope for the Stage-5 override mechanism — see the §1 note); the "Location" column names the gate's code region rather than a line number (the former `~Lxxxx` anchors predated refactor #1's move out of `chordanalyzer.cpp`)." — §6 *Post-scoring gates (A–L)* (locator: lines 886–889).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the sentence's second clause is the document's account of its own table.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.195 — one outer guard over every gate.**
+
+*Outgoing statement.* "**Outer guard — covers ALL of A–L, including the bias correction.** Everything in `applyPostScoringGates` runs inside one block gated on `prefs.inversionSuspicionMargin > 0`, `prefs.inversionBonusReduction < 1`, `results.size() >= 2`, and `gateCtx.distinctPcs >= 3`." — §6 *Post-scoring gates (A–L)* (locator: lines 891–894).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.196 — so switching off the inversion correction switches off every gate.**
+
+*Outgoing statement.* "Consequences: setting `inversionSuspicionMargin = 0` to "disable the inversion correction" disables every gate — including the enharmonic flip (FM2) and Gate J — and sparse 2-PC regions get no gate corrections at all (Stage-1b findings F2/F3, pinned in the `OuterGuard_*` tests in `postscoringgates_tests.cpp`)." — §6 *Post-scoring gates (A–L)* (locator: lines 894–898).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.197 — the correct carry keeps the distinct alternative reading.** *WITHHELD — D-510.*
+
+*Outgoing statement.* "**Which carry is correct is decided on the carry's PURPOSE, not on which code happened to be at HEAD: the correct carry is the one that KEEPS the distinct alternative reading.**" — §6, *§6a. The unified promotion primitive `promoteToWinner()`* (locator: lines 936–937).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement says that a rival published beside the principal must differ from it.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that the rivals L2 publishes beside its principal reading be distinct readings, never a near-copy of the principal.
+
+---
+
+**Row 39.198 — two promotion idioms were in use.** *WITHHELD — D-510.*
+
+*Outgoing statement.* "Two promotion idioms were in use — one swaps a reading already carried in `results[]` to the front, leaving the displaced reading in place; the other builds a fresh copy and appends it." — §6, *§6a. The unified promotion primitive `promoteToWinner()`* (locator: lines 937–939).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a former build state.
+
+---
+
+**Row 39.199 — the swap idiom is correct.** *WITHHELD — D-510.*
+
+*Outgoing statement.* "The swap idiom is correct." — §6, *§6a. The unified promotion primitive `promoteToWinner()`* (locator: lines 939–940).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which promotion idiom does the dormant scorer use at the current commit, and does its carry keep the reading it displaces?
+
+---
+
+**Row 39.200 — one promotion primitive, the target swapped if present and appended only if absent.** *WITHHELD — D-511.*
+
+*Outgoing statement.* "**ONE promotion primitive, with a PRESENT-FIRST dedup guard — the append branch fires only when the target is genuinely absent.**" — §6, *§6a. The unified promotion primitive `promoteToWinner()`* (locator: lines 947–948).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.199.
+
+---
+
+**Row 39.201 — so no duplicate can enter.** *WITHHELD — D-511.*
+
+*Outgoing statement.* "The ordering is the whole fix: present-first makes an already-carried partner *swapped* rather than *appended*, so no duplicate can enter." — §6, *§6a. The unified promotion primitive `promoteToWinner()`* (locator: lines 948–949).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.199.
+
+---
+
+**Row 39.202 — the separate gate retires on byte-for-byte reproduction of its carry.**
+
+*Outgoing statement.* "**The retirement condition for the separate Gate A rule is BYTE-FOR-BYTE REPRODUCTION OF ITS CARRY — not the winner-inertness that preceded it.**" — §6, *§6a. The unified promotion primitive `promoteToWinner()`* (locator: lines 954–955).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the condition of a retirement since carried out, as Row 39.20 records.
+
+---
+
+**Row 39.203 — the present and absent rules become two branches of one promotion.**
+
+*Outgoing statement.* "Once the flip is one promotion call with present-first branching, the former "partner present" and "partner absent" rules are two branches of the same promotion and the separate rule — its enum member, its guard, its name-map entry and its dedicated fixtures — is redundant." — §6, *§6a. The unified promotion primitive `promoteToWinner()`* (locator: lines 955–958).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the reasoning of a retirement since carried out.
+
+---
+
+**Row 39.204 — removable because winner and carry stay byte-identical.**
+
+*Outgoing statement.* "It is removable **because** the primitive reproduces the swap byte-for-byte on the present branch, which leaves winner AND carry byte-identical." — §6, *§6a. The unified promotion primitive `promoteToWinner()`* (locator: lines 958–959).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the reasoning of a retirement since carried out.
+
+---
+
+**Row 39.205 — the evidence rule: inertness on the full output surface, never the winner alone.**
+
+*Outgoing statement.* "That gap is exactly why this document's evidence rule is inertness on the **full** output surface, winner AND alternatives, and never the winner alone (#15)." — §6, *§6a. The unified promotion primitive `promoteToWinner()`* (locator: lines 963–965).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.271.
+
+---
+
+**Row 39.206 — the bias correction.**
+
+*Outgoing statement.* "| **Bias correction** | bias correction | Winner is bass-root Maj/Min, margin to best Maj/Min alt < `inversionSuspicionMargin` (0.70), `distinctPcs >= 3`. Seventh-exempt. | Deducts the bass-root bonus from the winner, re-sorts. | Bass-root bonus systematically over-fires on inversions; the correction removes the bonus only when it is the sole deciding factor. |" — §6 *Post-scoring gates (A–L)*, the gate table (locator: line 979).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to corrections laid over a decided reading.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.207 — the enharmonic flip from major with added sixth to minor seventh.**
+
+*Outgoing statement.* "| **Enharmonic flip: Major-add6 → Minor7 (rule name FM2)** | flip region | `preferMinorOverMajorAdd6`, winner is Major+AddedSixth, target is Minor at `(rootPc+9)%12`. One `promoteToWinner()` call (`presentHint = bestAltIdx`, `stopBelowThreshold = true`): the present branch swaps the partner already carried at `bestAltIdx` (the former **Gate A**) and the append branch pulls it from `rawCandidates` above threshold (the former **FM2**). **Gates B/C/D removed (Stage 3.4b); Gate A unified into this one promotion (2026-07-06)** — the separate `GateA` rule retired, FM2 is the surviving rule name for the whole flip. | Swap the carried Minor partner, else build+append it from `rawCandidates`. | The two readings span identical PCs (e.g. Bb6 = Gm7/Bb); score cannot reliably distinguish in bass-heavy textures. Standard/Baroque prefer Minor. Present-first keeps the distinct partner as an alternative (no winner near-duplicate — §12 no information loss). |" — §6 *Post-scoring gates (A–L)*, the gate table (locator: line 980).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to corrections laid over a decided reading.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.208 — Gate E: first-inversion minor to major.**
+
+*Outgoing statement.* "| **E (first-inversion Minor → Major)** | Gate E | `preferMinorOverMajorAdd6`, winner Minor, alt Major at `(rootPc+8)%12`, stepwise bass present. | Swap. | F♯m winning when D/F♯ is correct (bass = M3 of actual root). |" — §6 *Post-scoring gates (A–L)*, the gate table (locator: line 981).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to corrections laid over a decided reading.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.209 — the G family: minor with added sixth against half-diminished seventh.**
+
+*Outgoing statement.* "| **G-E / G-D (Minor-add6 ↔ HalfDim7)** | G-family | `originalWinnerQuality == Minor && originalWinnerHasAddedSixth`, HalfDim7 at `(originalWinnerRootPc+9)%12`. G-E gates on key-function (viiø7/iiø7/iiiø7 — tested on the root, not the object); G-D on consecutive-stepwise temporal context (only when G-E does not fire). **(G-B and G-C RETIRED Stage 5, 2026-07-05.)** One `promoteToWinner()` call (`presentHint = kPromotePresentScan`, `stopBelowThreshold = false`) when G-E or G-D fires: present-scan swaps the carried HalfDim, else pulls it from `rawCandidates` (no threshold). The former "pull then pop if no sub-gate fires" is exactly the primitive's no-promotion path. | Swap the carried HalfDim, else build+append it from `rawCandidates`. | Sub-9a fix (`originalWinnerRootPc` capture). Cm6 vs Aø7/C is enharmonic; functional context selects the correct reading. |" — §6 *Post-scoring gates (A–L)*, the gate table (locator: line 982).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to corrections laid over a decided reading.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.210 — Gate H: the augmented rotation.**
+
+*Outgoing statement.* "| **H (augmented rotation)** | Gate H | Winner Augmented bass-root, `preferMinorOverMajorAdd6`, alt Augmented at `(rootPc+4)%12` or `(rootPc+8)%12`. Temporal gates. | Swap. | Augmented triads have 3 enharmonic rotations; context picks the correct one. |" — §6 *Post-scoring gates (A–L)*, the gate table (locator: line 983).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to corrections laid over a decided reading.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.211 — Gate I: first-inversion major over root-position minor.**
+
+*Outgoing statement.* "| **I (first-inversion Major over root-position Minor)** | `kGateIMargin` | Winner Minor bass-root, alt non-root-position chord with same bass, root at I4 interval below bass, root diatonic, margin ≤ 0.45. | Swap. | Em winning when C/E is correct. |" — §6 *Post-scoring gates (A–L)*, the gate table (locator: line 984).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to corrections laid over a decided reading.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.212 — Gate L: major over augmented on the same root.**
+
+*Outgoing statement.* "| **L (Major over Augmented same-root)** | `kGateLMargin` | Winner Augmented (no 7th), alt Major at same root AND same bass, diatonic, margin ≤ 0.35. | Swap. | TYPE-A quality fix: bwv144.6 B+ → B, bwv245.15 E+ → E, etc. |" — §6 *Post-scoring gates (A–L)*, the gate table (locator: line 985).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to corrections laid over a decided reading.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.213 — Gate J: the diminished triad completed to a dominant seventh, run last.**
+
+*Outgoing statement.* "| **J (vii° → V7 completion) — runs LAST** | Gate J (last) | Winner is root-position Diminished triad (no dim7), the M3-below PC is sounding above `extensionThreshold`, alt is Major+m7 rooted there. | Swap to the dominant-7th reading. | Four PCs `{R-4, R, R+3, R+6}` are exactly V7 — a root-position vii° voicing the dominant root is, by construction, V6/5. |" — §6 *Post-scoring gates (A–L)*, the gate table (locator: line 986).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to corrections laid over a decided reading.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.214 — Gate F retired whole.**
+
+*Outgoing statement.* "**F (second-inversion → root-position Major, alt at `(rootPc+5)%12`)** — the whole gate." — §6, the gates retired (locator: line 995).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a retired gate.
+
+---
+
+**Row 39.215 — G-B retired.**
+
+*Outgoing statement.* "**G-B (Minor-add6 ↔ HalfDim7 forward-evidence temporal fallback)** — one sub-gate of the G-family; G-E (key-function) and G-D (consecutive-stepwise) retained." — §6, the gates retired (locator: lines 996–997).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a retired gate.
+
+---
+
+**Row 39.216 — G-C retired.**
+
+*Outgoing statement.* "**G-C (Minor-add6 ↔ HalfDim7 recent-root + stepwise-from-previous fallback)** — a second G-family sub-gate; G-E and G-D retained." — §6, the gates retired (locator: lines 998–999).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a retired gate.
+
+---
+
+**Row 39.217 — Gate K retired with its margin constant.**
+
+*Outgoing statement.* "**K (first-inversion Augmented over root-position Augmented, `kGateKMargin` ≤ 0.20)** — the whole gate + its margin constant `kGateKMargin`." — §6, the gates retired (locator: lines 1000–1001).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a retired gate.
+
+---
+
+**Row 39.218 — Gate K's founding case no longer touched.**
+
+*Outgoing statement.* "Its founding case bwv40.6 (A+ → F♯5/A) is no longer touched by the rule (superseded upstream, 2.2b §1.3)." — §6, the gates retired (locator: lines 1001–1002).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past observation.
+
+---
+
+**Row 39.219 — a half-diminished bonus inside the bias correction.**
+
+*Outgoing statement.* "**`kHalfDimFirstInversionBonus` (= 0.55) — additive bonus inside the BIAS-CORRECTION block.**" — §6, *`kHalfDimFirstInversionBonus`* (locator: lines 1033–1034).
+
+*Derived statements that speak to it.* L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* L2-S38: **DIFFERS** — as at Row 9.3.
+
+*The difference, in both texts' own words.* The outgoing value of `kHalfDimFirstInversionBonus` is hand-set at *"0.55"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.3.
+
+---
+
+**Row 39.220 — it raises a complete half-diminished alternative whose chord tone is the winner's bass.**
+
+*Outgoing statement.* "When the bias correction's best-alternative scan has found a HalfDiminished reading with all four chord tones present whose root differs from the winner's and whose third, fifth or seventh IS the winner's bass, and `preferMinorOverMajorAdd6` is set, that alternative's score is raised by `kHalfDimFirstInversionBonus` **after the winner's bass-root deduction and before the bias re-sort** — so a genuine Cm6 reading outranks the enharmonic Aø7/C first-inversion (Iter-61 "Option B", which moved BIR=true 7→6)." — §6, *`kHalfDimFirstInversionBonus`* (locator: lines 1034–1039).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.219.
+
+---
+
+**Row 39.221 — where it sits, and the presets under which it fires.**
+
+*Outgoing statement.* "Located in `postscoringgates.cpp` (relocated to a file-scope constant for the Stage-5 override mechanism — see the §1 note); fires only under the `preferMinorOverMajorAdd6` flag (Baroque/Standard true, Jazz/Default false)." — §6, *`kHalfDimFirstInversionBonus`* (locator: lines 1041–1043).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.219.
+
+---
+
+**Row 39.222 — the bias-correction rule owns it, so disabling that rule suppresses it.**
+
+*Outgoing statement.* "**The `BiasCorrection` rule owns it** — `paramoverride.h`'s enum says so in terms, so `disable_rule BiasCorrection` suppresses this bonus along with the deduction." — §6, *`kHalfDimFirstInversionBonus`* (locator: lines 1043–1045).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.219.
+
+---
+
+**Row 39.223 — a target for dissolving the gate block.**
+
+*Outgoing statement.* "It is a §6-block dissolution target (Stage-5 family 2)." — §6, *`kHalfDimFirstInversionBonus`* (locator: lines 1045–1046).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 39.224 — the bonus sits in the bias correction's branch that runs only when the flip did not fire.**
+
+*Outgoing statement.* "The bonus is not in the enharmonic-flip block and not in the G-family region: it sits inside the bias correction's `!didEnharmonicFlip` branch, which by construction runs only when the flip did NOT fire." — §6, *`kHalfDimFirstInversionBonus`*, the location remark (locator: lines 1055–1057).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.219.
+
+---
+
+**Row 39.225 — mixed live and captured reads of the winner: only G-E moved to the snapshot.**
+
+*Outgoing statement.* "**Mixed live/captured winner reads in H/I/K/L** — the Sub-9a fix migrated only G-E to the captured `originalWinner*` snapshot." — §6, the known issues (locator: lines 1067–1068).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do Gates H, I and L read the winner live or from the captured snapshot at the current commit, and can the two refer to different candidates?
+
+---
+
+**Row 39.226 — Gate H and Gates I, K and L read the two inconsistently.**
+
+*Outgoing statement.* "Gate H requires live `winner.quality == Augmented` but captured `winnerBassIsRoot`; Gates I/K/L compare margins against the live (possibly bias-deducted) `winner.identity.score` while keying entry on `originalWinnerQuality`." — §6, the known issues (locator: lines 1068–1071).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.225.
+
+---
+
+**Row 39.227 — after a bias re-sort the two can name different candidates.**
+
+*Outgoing statement.* "After a bias re-sort these can refer to *different candidates*." — §6, the known issues (locator: lines 1071–1072).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.225.
+
+---
+
+**Row 39.228 — Gate F has no quality guard and no weight guard.**
+
+*Outgoing statement.* "**Gate F has no winner-quality and no pcWeight guard** (unlike Gate E): a Minor winner flips on a stepwise signal alone, and the promoted root does not need to be sounding." — §6, the known issues (locator: lines 1073–1075).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.229 — G-E's pull has no threshold check.**
+
+*Outgoing statement.* "**G-E's `rawCandidates` pull has no threshold check** (`promoteToWinner(..., stopBelowThreshold = false)` for the G-family; the FM2 flip passes `stopBelowThreshold = true` so its loop breaks at `gateCtx.threshold`)." — §6, the known issues (locator: lines 1076–1078).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.230 — both kept unchanged under the unified primitive.**
+
+*Outgoing statement.* "Both preserved verbatim under the unified primitive." — §6, the known issues (locator: line 1078).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.231 — gate swaps can leave the alternatives out of order.**
+
+*Outgoing statement.* "**Gate swaps can leave `results[]` unsorted** — after a G-E pull the alternatives list shown to users is not score-ordered." — §6, the known issues (locator: lines 1079–1080).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.232 — the winner correct, the tail's order an artifact.**
+
+*Outgoing statement.* "The winner is correct; the tail order is an artifact." — §6, the known issues (locator: lines 1080–1081).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.233 — the bias correction deducts the bass-root bonus and re-sorts.**
+
+*Outgoing statement.* "The "bias correction" entry above — the bias-correction block of `applyPostScoringGates` (`postscoringgates.cpp`) — deducts the bass-root bonus and re-sorts via `std::stable_sort`:" — §7 *Inversion correction* (locator: lines 1087–1089).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to corrections laid over a decided reading.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 9.15.
+
+---
+
+**Row 39.234 — the diminished-seventh bonus is the rotation selector.**
+
+*Outgoing statement.* "**`dim7CharacteristicBonus` is the dim7 rotation selector.**" — §8 *Known constraints and dead ends* (locator: line 1134).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.64.
+
+---
+
+**Row 39.235 — do not suppress it without replacing the mechanism.**
+
+*Outgoing statement.* "Do not suppress without replacing the non-diatonic-♭♭7 mechanism (B3 lesson)." — §8 *Known constraints and dead ends* (locator: lines 1134–1135).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 39.68 — a tried-and-closed line about the legacy scorer.
+
+---
+
+**Row 39.236 — the sparse-predecessor gate on root continuity is a dead end.**
+
+*Outgoing statement.* "**`rootContinuityBonus` sparse-predecessor gate is a dead end** (Iter 98)." — §8 *Known constraints and dead ends* (locator: line 1137).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 39.88 — a tried-and-closed line about the legacy scorer.
+
+---
+
+**Row 39.237 — both variants tried, both regressed.**
+
+*Outgoing statement.* "Both density-based and inversion-aware variants tried; both regress mozart_k280-1 IV→V65 Alberti bass." — §8 *Known constraints and dead ends* (locator: lines 1138–1139).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 39.88 — a past attempt and its measured result.
+
+---
+
+**Row 39.238 — the step bonuses have four gates, each load-bearing.**
+
+*Outgoing statement.* "**`w_stepIn`/`w_stepOut` has four gates, each load-bearing** — the `ScoringPhase::Final` call-site gate, root-position guard, first-inversion-m7-family surgical guard, power-quality exclusion." — §8 *Known constraints and dead ends* (locator: lines 1141–1143).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.110.
+
+---
+
+**Row 39.239 — the segmentation phase must suppress every context-dependent bonus.**
+
+*Outgoing statement.* "**`ScoringPhase::Segmentation` must suppress all context-dependent bonuses.**" — §8 *Known constraints and dead ends* (locator: line 1146).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 21.12.
+
+---
+
+**Row 39.240 — the step, sequence and diminished bonuses and Gate R skipped there, gated at the call site.**
+
+*Outgoing statement.* "Step, seq, and dim bonuses plus Gate R are all skipped in the Segmentation phase (gated at the `applyHarmonicFunction` call site, not inside the now-stateless bonus functions)." — §8 *Known constraints and dead ends* (locator: lines 1146–1148).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 21.12.
+
+---
+
+**Row 39.241 — an ungated new context bonus would cause segmentation regressions.**
+
+*Outgoing statement.* "Adding a new context bonus without gating it on `applyProgressionSignals` / `ScoringPhase::Final` will cause segmentation regressions." — §8 *Known constraints and dead ends* (locator: lines 1149–1150).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 21.12.
+
+---
+
+**Row 39.242 — the template arrays update together under one constant.**
+
+*Outgoing statement.* "**Template arrays update atomically under `analysis::kTemplateCount`.**" — §8 *Known constraints and dead ends* (locator: line 1152).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.54.
+
+---
+
+**Row 39.243 — every extent derives from the constant, so the compiler enforces the sizes.**
+
+*Outgoing statement.* "All array extents (template array, three score matrices, `kMasks`) derive from the constant since `a236a0ff21`, so the compiler enforces sizes." — §8 *Known constraints and dead ends* (locator: lines 1152–1154).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.54.
+
+---
+
+**Row 39.244 — the old silent overrun is closed.**
+
+*Outgoing statement.* "The historical silent stack-buffer overrun from a missed matrix size is closed." — §8 *Known constraints and dead ends* (locator: line 1156).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a defect since closed.
+
+---
+
+**Row 39.245 — a mirror array removed.**
+
+*Outgoing statement.* "(Stage 2.3 removed the `kDiagTemplates` mirror — one fewer site to keep in sync.)" — §8 *Known constraints and dead ends* (locator: line 1157).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event of the legacy scorer's build.
+
+---
+
+**Row 39.246 — the augmented-seventh guard requires both the third and the raised fifth.** *WITHHELD — D-220.*
+
+*Outgoing statement.* "**B2 aug7 guard requires BOTH M3 and aug5** (`||` not `&&`)." — §8 *Known constraints and dead ends* (locator: line 1169).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.39.
+
+---
+
+**Row 39.247 — the third alone was tried and reverted.** *WITHHELD — D-220.*
+
+*Outgoing statement.* "M3-only was tried and reverted (Schumann D-major, Corelli G-major snapshot flips)." — §8 *Known constraints and dead ends* (locator: lines 1169–1170).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a tried-and-closed line about the legacy scorer, as Row 1.14 is placed.
+
+---
+
+**Row 39.248 — the structural-bass test gates the inversion bonuses.** *WITHHELD — D-221.*
+
+*Outgoing statement.* "**`hasStructuralBass` gates inversion bonuses.**" — §8 *Known constraints and dead ends* (locator: line 1177).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.175.
+
+---
+
+**Row 39.249 — sparse upper-register low notes earn no inversion bonus.** *WITHHELD — D-221.*
+
+*Outgoing statement.* "Sparse upper-register "bass" notes do not get inversion bonuses (Corelli op01n08d m2 b3)." — §8 *Known constraints and dead ends* (locator: lines 1177–1178).
+
+*Derived statements that speak to it.* L2-S28.
+
+*Current-text axis.* L2-S28: **AGREES** — as at Row 39.176.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.175.
+
+---
+
+**Row 39.250 — the diminished bonus can rotate the winner; if the result is not diminished, the variant without it stands.** *WITHHELD — D-222.*
+
+*Outgoing statement.* "The bonus can rotate the global winner across bass candidates; if the post-bonus winner is not Dim/HalfDim, fall back to the without-wDim variant." — §8 *Known constraints and dead ends* (locator: lines 1180–1182). Two claims: (i) the diminished bonus can rotate the winner across bass candidates; (ii) where the winner after the bonus is not diminished or half-diminished, the variant without the bonus is used.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 39.122. (ii) **QUARANTINED**, travelling with Row 39.122.
+
+---
+
+**Row 39.251 — joint scoring requires regional accumulation.** *WITHHELD — D-224.*
+
+*Outgoing statement.* "**Joint scoring requires regional accumulation.**" — §8 *Known constraints and dead ends* (locator: line 1188).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.173.
+
+---
+
+**Row 39.252 — it fires only on tones collected over a region.** *WITHHELD — D-224.*
+
+*Outgoing statement.* "`jointScoringEnabled` fires only when at least one tone has `onsetAtRegionStart == true` or `distinctMetricPositions > 0` (i.e. came from `collectRegionTones`)." — §8 *Known constraints and dead ends* (locator: lines 1188–1190).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.173.
+
+---
+
+**Row 39.253 — the single-moment paths use the older single-bass path.** *WITHHELD — D-224.*
+
+*Outgoing statement.* "Single-tick / status-bar / unit-test paths use the legacy single-bass path." — §8 *Known constraints and dead ends* (locator: line 1191).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.173.
+
+---
+
+**Row 39.254 — a correction rule that can change a committed identity is retired before the search is widened.** *WITHHELD — D-325.*
+
+*Outgoing statement.* "**A correction rule that can change a committed chord's IDENTITY is retired or folded in BEFORE the search is widened past it.**" — §8 *Known constraints and dead ends* (locator: lines 1198–1199).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation addresses no legacy mechanism.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a legacy work program.
+
+---
+
+**Row 39.255 — such a rule is removed or absorbed first; only then may the search widen.** *WITHHELD — D-325.*
+
+*Outgoing statement.* "Where a later rule can change which root, quality or bass was committed, that rule is removed or absorbed into the scoring first; only then may the search be allowed to consider more alternatives." — §8 *Known constraints and dead ends* (locator: lines 1199–1201).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 39.254.
+
+---
+
+**Row 39.256 — a wider search cannot fix the arpeggio root failure; the wrong reading is the global optimum.**
+
+*Outgoing statement.* "**A WIDER SEARCH CANNOT FIX THE ARPEGGIO ROOT FAILURE — the wrong reading IS the global optimum." — §8 *Known constraints and dead ends* (locator: line 1207).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 1.15(i).
+
+---
+
+**Row 39.257 — a recorded dead end, not to be retried.**
+
+*Outgoing statement.* "Recorded dead end; do not retry.**" — §8 *Known constraints and dead ends* (locator: line 1208).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation addresses no legacy mechanism.
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 1.13.
+
+---
+
+**Row 39.258 — the wrong reading is the best-scoring node, so a broader search finds it again.**
+
+*Outgoing statement.* "On the arpeggiated-harmony failures the locally wrong reading is not a weak transient a broader search would discard: it is the best-scoring node, so a broader search finds exactly what the narrow one found." — §8 *Known constraints and dead ends* (locator: lines 1208–1210).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 1.15(i).
+
+---
+
+**Row 39.259 — only re-weighting or a different segmentation can reach it.**
+
+*Outgoing statement.* "Only **re-weighting** or a **different segmentation** can reach it." — §8 *Known constraints and dead ends* (locator: lines 1210–1211).
+
+*Derived statements that speak to it.* L2-S2.
+
+*Current-text axis.* L2-S2: **AGREES** — as at Row 1.15.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S2), travelling with Row 1.15(ii).
+
+---
+
+**Row 39.260 — the temporal signals inside the vertical scorer stay; the gate depending on one moves with them.** *WITHHELD — D-463.*
+
+*Outgoing statement.* "**The temporal signals sitting inside the vertical scorer STAY WHERE THEY ARE, and the gate that depends on one MOVES WITH THEM.**" — §8 *Known constraints and dead ends* (locator: lines 1227–1228).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation addresses no legacy mechanism.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a legacy work program.
+
+---
+
+**Row 39.261 — several signals that look backward or forward sit inside the portion meant to judge one moment.** *WITHHELD — D-463.*
+
+*Outgoing statement.* "Several signals that look backward or forward in time are computed inside the part of the scorer that is supposed to judge only what sounds at one moment." — §8 *Known constraints and dead ends* (locator: lines 1228–1229).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which signals that look backward or forward in time does the dormant vertical scorer compute at the current commit?
+
+---
+
+**Row 39.262 — known debt, not to be moved before stabilization; when moved, Gate R moves with them.** *WITHHELD — D-463.*
+
+*Outgoing statement.* "They are known, documented debt and are **not** to be moved before a scoring-stabilisation phase; when they do migrate, Gate R has to move or adapt **simultaneously**." — §8 *Known constraints and dead ends* (locator: lines 1230–1231).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 39.260.
+
+---
+
+**Row 39.263 — two gates are purely local vertical refinements that survive the dissolution; the others dissolve.** *WITHHELD — D-580.*
+
+*Outgoing statement.* "**Two of the post-scoring gates are PURELY-LOCAL VERTICAL refinements and must SURVIVE the dissolution; the others dissolve into the competition." — §8 *Known constraints and dead ends* (locator: lines 1252–1253). Two claims: (i) two of the gates are purely local vertical refinements; (ii) they must survive the gates' dissolution, and the others dissolve into the competition.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 9.15. (ii) **HISTORICAL** — a legacy work program.
+
+---
+
+**Row 39.264 — recorded deferred.** *WITHHELD — D-580.*
+
+*Outgoing statement.* "Recorded DEFERRED.**" — §8 *Known constraints and dead ends* (locator: line 1253).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 39.265 — most repair steps exist because the decision before them saw too little context.** *WITHHELD — D-580.*
+
+*Outgoing statement.* "Most of the after-the-fact repair steps exist only because the decision preceding them could not see enough context, and they disappear once that decision can." — §8 *Known constraints and dead ends* (locator: lines 1253–1255).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a finding about the legacy scorer, as Row 1.15(i) is placed.
+
+---
+
+**Row 39.266 — two refine from the notes alone and are carried across.** *WITHHELD — D-580.*
+
+*Outgoing statement.* "Two do not: they refine the reading from the notes alone and compensate for nothing, so they are carried across rather than deleted alongside the others." — §8 *Known constraints and dead ends* (locator: lines 1255–1257). Two claims: (i) two of the gates refine the reading from the notes alone and compensate for nothing; (ii) they are carried across rather than deleted with the others.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 9.15. (ii) **HISTORICAL** — a legacy work program.
+
+---
+
+**Row 39.267 — the dissolution was never executed on this path.** *WITHHELD — D-580.*
+
+*Outgoing statement.* "**The dissolution was never executed on this path** — the production estimator replaced the pipeline instead — so the constraint stands DEFERRED and what it says about those two gates is a fact about this code that the retirement map still has to dispose of (#12)." — §8 *Known constraints and dead ends* (locator: lines 1259–1262).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 39.268 — half of one named gate since unified into the promotion primitive.** *WITHHELD — D-580.*
+
+*Outgoing statement.* "One bookkeeping fact a reader needs: the *partner-present* half of one of the two named gates has since been unified into the single promotion primitive (§6a), so the surviving rule name for that flip is FM2; the unification did not perform the dissolution and does not discharge this constraint." — §8 *Known constraints and dead ends* (locator: lines 1262–1265).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event of the legacy scorer's build.
+
+---
+
+**Row 39.269 — the mechanism: a late pass overturning a committed chord when the progression argues against it.**
+
+*Outgoing statement.* "The mechanism is the late correction pass that overturns a committed chord when the surrounding progression argues against it." — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: lines 1270–1271).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 4.3.
+
+*The difference, in both texts' own words.* The outgoing pass *"overturns a committed chord when the surrounding progression argues against it"*; L2-S35 normalizes over whole readings, so that *"No span's alternatives are normalised against each other alone"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 4.3(i).
+
+---
+
+**Row 39.270 — it is reachable on no production surface, nor on the plain legacy batch path.**
+
+*Outgoing statement.* "⚠ **LEGACY subject, and narrower than "legacy" reads:** checked at the code, it is **not reachable on any production surface, and not on the plain legacy batch path either** — it survives behind a return-early diagnostic dump flag and the test suites." — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: lines 1271–1274).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 4.3(i).
+
+---
+
+**Row 39.271 — nothing below is running today.**
+
+*Outgoing statement.* "Nothing below is running today." — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: line 1274).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 4.3(i).
+
+---
+
+**Row 39.272 — falsified: no threshold makes the override net-positive.** *WITHHELD — D-490.*
+
+*Outgoing statement.* "**FALSIFIED — no threshold can make the override net-positive.**" — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: line 1276).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation addresses no legacy mechanism.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a finding about the legacy scorer, as Row 1.15(i) is placed.
+
+---
+
+**Row 39.273 — whether a fire helps is unrelated to its trigger's two quantities.** *WITHHELD — D-490.*
+
+*Outgoing statement.* "Whether a fire helps or hurts is unrelated to either quantity its trigger is built from: the incumbent reading's confidence and the strength of the progression contradiction." — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: lines 1276–1278).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a finding about the legacy scorer, as Row 1.15(i) is placed.
+
+---
+
+**Row 39.274 — no setting separates the cases fixed from the cases broken.** *WITHHELD — D-490.*
+
+*Outgoing statement.* "Since the only tunable knob scales the bar by that confidence, **no setting separates the cases it fixes from the cases it breaks**, and the best measurable setting simply switches the pass off." — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: lines 1278–1280).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a finding about the legacy scorer, as Row 1.15(i) is placed.
+
+---
+
+**Row 39.275 — refuted: a vertically fair comparison does not repair it.** *WITHHELD — D-491.*
+
+*Outgoing statement.* "**REFUTED — making the comparison vertically fair does not repair it.**" — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: line 1285).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a finding about the legacy scorer, as Row 1.15(i) is placed.
+
+---
+
+**Row 39.276 — that band is still overwhelmingly harmful.** *WITHHELD — D-491.*
+
+*Outgoing statement.* "Measured, that band is still overwhelmingly harmful." — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: line 1287).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a finding about the legacy scorer, as Row 1.15(i) is placed.
+
+---
+
+**Row 39.277 — the progression contradiction does not predict the correct root at these moments.** *WITHHELD — D-491.*
+
+*Outgoing statement.* "The problem is not that the comparison was unfair; it is that **the progression contradiction does not predict which root is correct at these moments**." — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: lines 1287–1289).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a finding about the legacy scorer, as Row 1.15(i) is placed.
+
+---
+
+**Row 39.278 — un-computable: the principled restriction cannot be built today.** *WITHHELD — D-493.*
+
+*Outgoing statement.* "**UN-COMPUTABLE, not merely unmeasured — the principled restriction cannot be built today.**" — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: line 1293).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 39.279 — its trigger is computed nowhere.** *WITHHELD — D-493.*
+
+*Outgoing statement.* "Restricting the override to the genuinely coupled key-and-chord minority is the principled form, and its trigger **is not computed anywhere**." — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: lines 1294–1295).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 39.280 — the blocker is a per-key chord re-decode, the joint step still owed.** *WITHHELD — D-493.*
+
+*Outgoing statement.* "The binding blocker is the component that asks whether a different carried KEY alternative flips the chord reading: that needs a per-key chord re-decode, which **is** the joint key-and-chord step the record says is still owed, and the closest existing mechanism explicitly leaves the chord unchanged." — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: lines 1295–1298).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 39.281 — un-computable, and a long-run successor rather than a near-term choice.** *WITHHELD — D-493.*
+
+*Outgoing statement.* "So the verdict is un-computable rather than unmeasured, and this option is a long-run successor rather than a near-term choice." — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: lines 1300–1301).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status and a plan.
+
+---
+
+**Row 39.282 — recommended and not adopted: demote the override to an annotation.** *WITHHELD — D-492.*
+
+*Outgoing statement.* "**RECOMMENDED AND NOT ADOPTED — demote the override to an ANNOTATION.**" — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: line 1302).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a recommendation not adopted.
+
+---
+
+**Row 39.283 — record that the progression disagrees and leave the chord alone.** *WITHHELD — D-492.*
+
+*Outgoing statement.* "The recommendation on the evidence above is to stop overturning the committed chord and instead **record that the surrounding progression disagrees**, leaving the chord alone — accuracy-equivalent to simply disabling the pass, while keeping the disagreement as calibrated uncertainty a later stage can use." — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: lines 1302–1306).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a recommendation not adopted.
+
+---
+
+**Row 39.284 — tightening the trigger and repairing the comparison both rejected.** *WITHHELD — D-492.*
+
+*Outgoing statement.* "Tightening the trigger and repairing the comparison are both rejected as measured net-negative." — §8, *The fine-grain function override — falsified, its repair refuted, its principled restriction un-computable, and a redesign recommended but NOT adopted* (locator: lines 1306–1307).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a finding about the legacy scorer, as Row 1.15(i) is placed.
+
+---
+
+**Row 39.285 — what separates the third-above reading is non-local; the approach is shelved, not the problem.**
+
+*Outgoing statement.* "**The information that disambiguates the third-above reading is NON-LOCAL, so no local discriminator can exist — the approach is shelved, the problem is not.**" — §8, *Bass-as-root promotion — SHELVED WITH EVIDENCE, and the cascade the attempt exposed* (locator: lines 1321–1322). Two claims: (i) the information that separates the third-above reading is not local, so no local discriminator can exist; (ii) the approach is shelved and the problem is not.
+
+*Derived statements that speak to it.* (i) L2-S30. (ii) None.
+
+*Current-text axis.* (i) L2-S30: **AGREES** — *"a sonority and the chord a third above it are separated only by the surrounding music"*. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S30). (ii) **HISTORICAL** — a status.
+
+---
+
+**Row 39.286 — nothing the scorer sees at the moment separates the two readings.**
+
+*Outgoing statement.* "Where C-E-G may be a C chord or an E-minor chord inside something larger, and A-C-E likewise, nothing this scorer can see at the moment of scoring — the sounding pitch classes, their weights, the templates, the key — separates the two readings." — §8, *Bass-as-root promotion — SHELVED WITH EVIDENCE, and the cascade the attempt exposed* (locator: lines 1322–1325).
+
+*Derived statements that speak to it.* L2-S30.
+
+*Current-text axis.* L2-S30: **AGREES** — as at Row 39.285.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a finding about the legacy scorer, as Row 1.15(i) is placed.
+
+---
+
+**Row 39.287 — the surrounding music separates them.**
+
+*Outgoing statement.* "What separates them is the surrounding music: the following chord's root, the preceding chord's identity, and whether the bass falls on a strong beat." — §8, *Bass-as-root promotion — SHELVED WITH EVIDENCE, and the cascade the attempt exposed* (locator: lines 1325–1326).
+
+*Derived statements that speak to it.* L2-S30.
+
+*Current-text axis.* L2-S30: **AGREES** — as at Row 39.285.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S30).
+
+---
+
+**Row 39.288 — the local-gate approach is shelved, not the problem.**
+
+*Outgoing statement.* "**What is shelved is the LOCAL-GATE approach, not the problem**; the two future angles the record names — a pass that reads the surrounding regions' roots, or a temporal-context gate keyed on the neighbouring roots — are neither scheduled nor endorsed here." — §8, *Bass-as-root promotion — SHELVED WITH EVIDENCE, and the cascade the attempt exposed* (locator: lines 1332–1335).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 39.289 — a chord-level change re-segments regions it never touched.**
+
+*Outgoing statement.* "**A chord-level change is NOT confined to the cases it fires on: chord identity drives boundary placement, so it produces downstream RE-SEGMENTATION artifacts in regions it never touched.**" — §8, *Bass-as-root promotion — SHELVED WITH EVIDENCE, and the cascade the attempt exposed* (locator: lines 1336–1337).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **AGREES** — *"where the boundaries fall is decided together with the tonality, the chord and the assignments, in the one decision"*.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a finding about the legacy scorer and its segmenter, which the block scopes so.
+
+---
+
+**Row 39.290 — changing one chord re-merges its neighbors.**
+
+*Outgoing statement.* "Where one region ends and the next begins depends partly on what the chords are, so changing one chord's identity — even changing it correctly — makes the adjacent regions re-merge differently, and readings that were right can become wrong where the change never looked." — §8, *Bass-as-root promotion — SHELVED WITH EVIDENCE, and the cascade the attempt exposed* (locator: lines 1338–1340).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **AGREES** — as at Row 39.289.
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 39.289.
+
+---
+
+**Row 39.291 — counting only the cases a change fires on understates its effect.**
+
+*Outgoing statement.* "**Counting only the cases a change fires on therefore understates its effect, and this is structural rather than a condition that can be tightened away.**" — §8, *Bass-as-root promotion — SHELVED WITH EVIDENCE, and the cascade the attempt exposed* (locator: lines 1340–1342).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the measurement of the analysis* (NOT A LAYER), travelling with Row 9.59.
+
+---
+
+**Row 39.292 — two passes overwrite the committed quality and keep no record.** *WITHHELD — D-600.*
+
+*Outgoing statement.* "Two post-scoring passes change the chord quality the scorer committed and keep no record of what they replaced, which is an information-loss violation (#12)." — §8, *The quality-overwrite information loss is TOLERATED until the gate-dissolution step — tolerated is not forgotten* (locator: lines 1355–1356).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.16(ii).
+
+---
+
+**Row 39.293 — the verdict: tolerate it until the dissolution, kept visible.** *WITHHELD — D-600.*
+
+*Outgoing statement.* "**The verdict is to TOLERATE it until the gate-dissolution step, with the violation kept VISIBLE in the open-items register — tolerated is not forgotten.**" — §8, *The quality-overwrite information loss is TOLERATED until the gate-dissolution step — tolerated is not forgotten* (locator: lines 1356–1358).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a legacy work program.
+
+---
+
+**Row 39.294 — do not retry the backward-walk boundary change.** *WITHHELD — D-317.*
+
+*Outgoing statement.* "**Do not retry the backward-walk boundary change.**" — §8, *Four measured dead ends of the segmentation-and-root path — do not retry any of them* (locator: line 1375).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation addresses no legacy mechanism.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a tried-and-closed line about the legacy scorer, as Row 1.14 is placed.
+
+---
+
+**Row 39.295 — counting notes that stop at a stretch's start as its own was tried.** *WITHHELD — D-317.*
+
+*Outgoing statement.* "Counting notes that stop exactly where a stretch begins as belonging to that stretch was tried, in the hope of recovering a missing chord root." — §8, *Four measured dead ends of the segmentation-and-root path — do not retry any of them* (locator: lines 1375–1377).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past attempt.
+
+---
+
+**Row 39.296 — a boundary-membership dead end only.** *WITHHELD — D-317.*
+
+*Outgoing statement.* "**This is a boundary-membership dead end ONLY.**" — §8, *Four measured dead ends of the segmentation-and-root path — do not retry any of them* (locator: lines 1380–1381).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 39.294.
+
+---
+
+**Row 39.297 — do not retry a short-region external merger.** *WITHHELD — D-318.*
+
+*Outgoing statement.* "**Do not retry a short-region external merger.**" — §8, *Four measured dead ends of the segmentation-and-root path — do not retry any of them* (locator: line 1382).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation addresses no legacy mechanism.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a tried-and-closed line about the legacy scorer, as Row 1.14 is placed.
+
+---
+
+**Row 39.298 — the merger was tried and closed.** *WITHHELD — D-318.*
+
+*Outgoing statement.* "A proposed after-the-fact pass merging very short neighbouring stretches was tried and closed." — §8, *Four measured dead ends of the segmentation-and-root path — do not retry any of them* (locator: lines 1382–1383).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past attempt.
+
+---
+
+**Row 39.299 — do not retry any tone-aggregation approach to the arpeggio root failure.** *WITHHELD — D-319.*
+
+*Outgoing statement.* "**Do not retry any tone-aggregation approach to the arpeggio root failure.**" — §8, *Four measured dead ends of the segmentation-and-root path — do not retry any of them* (locator: line 1386).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation addresses no legacy mechanism.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a tried-and-closed line about the legacy scorer, as Row 1.14 is placed.
+
+---
+
+**Row 39.300 — pooling an arpeggio's notes was built, measured and reverted.** *WITHHELD — D-319.*
+
+*Outgoing statement.* "Pooling an arpeggio's notes and re-reading the chord from the pool was implemented, measured and reverted." — §8, *Four measured dead ends of the segmentation-and-root path — do not retry any of them* (locator: lines 1386–1387).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past attempt.
+
+---
+
+**Row 39.301 — the evidence was never the problem; the predecessor signal is.** *WITHHELD — D-319.*
+
+*Outgoing statement.* "**The evidence was never the problem:** the vertical scorer already prefers the correct root over the stretch where that root actually sounds; what is wrong is the predecessor signal." — §8, *Four measured dead ends of the segmentation-and-root path — do not retry any of them* (locator: lines 1390–1392).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a finding about the legacy scorer, as Row 1.15(i) is placed.
+
+---
+
+**Row 39.302 — do not retry the absent-root guard.** *WITHHELD — D-320.*
+
+*Outgoing statement.* "**Do not retry the absent-root guard.**" — §8, *Four measured dead ends of the segmentation-and-root path — do not retry any of them* (locator: line 1393).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **AGREES** — *"A chord is admissible over a span whose sounding set lacks its root, or lacks its third."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a tried-and-closed line the block scopes to the dormant pipeline; the rule L2-S10 states in its own terms is carried there, as Row 2.9 is placed. *(An AGREES on a WITHHELD row.)*
+
+---
+
+**Row 39.303 — the guard was built, measured and reverted.** *WITHHELD — D-320.*
+
+*Outgoing statement.* "A rule rejecting any chord whose own root is not sounding was built, measured and reverted entirely." — §8, *Four measured dead ends of the segmentation-and-root path — do not retry any of them* (locator: lines 1393–1394).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past attempt.
+
+---
+
+**Row 39.304 — do not add a negative-margin guard.**
+
+*Outgoing statement.* "**Do not add a negative-margin guard.**" — §8, *Four archive-only dead ends of the chord-scoring path — do not retry any of them* (locator: line 1413).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation addresses no legacy mechanism.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a tried-and-closed line about the legacy scorer, as Row 1.14 is placed.
+
+---
+
+**Row 39.305 — a guard refusing a later overturn on a negative margin must not be added.**
+
+*Outgoing statement.* "A rule refusing to let a later correction step overturn the leading reading when the margin against it is negative must not be added." — §8, *Four archive-only dead ends of the chord-scoring path — do not retry any of them* (locator: lines 1413–1414).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 39.304.
+
+---
+
+**Row 39.306 — do not retry reading a minor chord as diminished on the same root.**
+
+*Outgoing statement.* "**Do not retry reading a minor chord as a diminished one on the same root** unless some new evidence becomes available while the music is being analysed." — §8, *Four archive-only dead ends of the chord-scoring path — do not retry any of them* (locator: lines 1418–1419).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation addresses no legacy mechanism.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a tried-and-closed line about the legacy scorer, as Row 1.14 is placed.
+
+---
+
+**Row 39.307 — do not retry reading a root-position major chord as a minor chord's first inversion without a model reading several stretches.**
+
+*Outgoing statement.* "**Do not retry reading a root-position major chord as the first inversion of a minor one** without a model that reads several stretches together." — §8, *Four archive-only dead ends of the chord-scoring path — do not retry any of them* (locator: lines 1425–1426).
+
+*Derived statements that speak to it.* L2-S30.
+
+*Current-text axis.* L2-S30: **AGREES** — *"The chord terms also read the neighbouring spans' readings (the progression)"*.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a tried-and-closed line the block scopes to the legacy scorer; the rule L2-S30 states in its own terms is carried there, as Row 2.9 is placed.
+
+---
+
+**Row 39.308 — no further local scoring fix for inversions.**
+
+*Outgoing statement.* "**Do not attempt any further LOCAL scoring fix for inversions.**" — §8, *Four archive-only dead ends of the chord-scoring path — do not retry any of them* (locator: line 1431).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation addresses no legacy mechanism.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a tried-and-closed line about the legacy scorer, as Row 1.14 is placed.
+
+---
+
+**Row 39.309 — adjusting one sonority's numbers to fix the root is closed as a line of work.**
+
+*Outgoing statement.* "Correcting which note of a chord is treated as its root by adjusting the numbers a single sonority earns in isolation is closed as a line of work." — §8, *Four archive-only dead ends of the chord-scoring path — do not retry any of them* (locator: lines 1431–1433).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 39.308.
+
+---
+
+**Row 39.310 — nearly every magnitude hand-set, and validated only by a gate later shown to under-count.**
+
+*Outgoing statement.* "**Nearly every live scoring magnitude on this surface was hand-set, and the only check that ever validated it was a regression gate later proven to under-count true per-onset root error by a large factor and to have been reading a then-buggy ground-truth parser." — §8, *The validation basis of every hand-set scoring magnitude on this surface is retroactively VOID* (locator: lines 1447–1449). Two claims: (i) nearly every live scoring magnitude on this surface was set by hand; (ii) the only check that validated them was a regression gate later shown to under-count and to have read a faulty ground-truth parser.
+
+*Derived statements that speak to it.* (i) L2-S38 — one §6.3 names as NEAREST to material met (entry 6). (ii) None.
+
+*Current-text axis.* (i) L2-S38: **DIFFERS** — as at Row 9.3. (ii) **THE DERIVATION IS SILENT.**
+
+*The difference, in both texts' own words.* (i) The outgoing magnitudes were *"hand-set"*; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 9.3. (ii) **HISTORICAL** — a past measurement.
+
+---
+
+**Row 39.311 — their validation basis is void: unfalsified, not established.**
+
+*Outgoing statement.* "Under #19 the validation basis of these values is therefore retroactively void: they are UNFALSIFIED, NOT ESTABLISHED.**" — §8, *The validation basis of every hand-set scoring magnitude on this surface is retroactively VOID* (locator: lines 1449–1450).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 39.312 — the diminished-seventh bonus is conditioned on the diminished quality.**
+
+*Outgoing statement.* "`dim7CharacteristicBonus` keys on `quality == Diminished`" — §9 *How to add a new template safely (checklist)*, step 2's examples (locator: line 1468).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which terms of the dormant scorer are conditioned on a template's quality at the current commit, and on which qualities?
+
+---
+
+**Row 39.313 — the non-bass adjustment is conditioned on three qualities.**
+
+*Outgoing statement.* "`nonBassAdjustment` keys on Min7 / Sus4 (4-note) / HalfDim" — §9 *How to add a new template safely (checklist)*, step 2's examples (locator: line 1469).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.312.
+
+---
+
+**Row 39.314 — the complete-triad inversion test is conditioned on five qualities.**
+
+*Outgoing statement.* "`qualifiesForCompleteTriadInversionBonus` keys on Maj/Min/Dim/Aug/HalfDim" — §9 *How to add a new template safely (checklist)*, step 2's examples (locator: line 1470).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.312.
+
+---
+
+**Row 39.315 — the contextual inversion test is conditioned on four qualities.**
+
+*Outgoing statement.* "`supportsContextualInversionBonuses` keys on Maj/Min/Aug/HalfDim" — §9 *How to add a new template safely (checklist)*, step 2's examples (locator: line 1471).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.312.
+
+---
+
+**Row 39.316 — the completeness bonus requires a plain triad quality.**
+
+*Outgoing statement.* "`w_complete` requires plain triad quality (Maj/Min/Dim/Aug)" — §9 *How to add a new template safely (checklist)*, step 2's examples (locator: line 1472).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.312.
+
+---
+
+**Row 39.317 — the step, sequence and diminished bonuses have quality filters.**
+
+*Outgoing statement.* "`w_stepIn/Out/seq/dim` have explicit quality filters" — §9 *How to add a new template safely (checklist)*, step 2's examples (locator: line 1473).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.312.
+
+---
+
+**Row 39.318 — run the regression check on both presets before committing.**
+
+*Outgoing statement.* "**Run BIR for both presets before committing:**" — §9 *How to add a new template safely (checklist)*, step 7 (locator: line 1526).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.156.
+
+---
+
+**Row 39.319 — a pass between the scorer's output and the final label.**
+
+*Outgoing statement.* "A post-analysis pass that sits between `analyzeChord()` output and the final chord label." — §10 *Harmonic function layer* (locator: lines 1544–1545).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* where does the dormant harmonic-function pass sit at the current commit, what does it read, and what does it decide?
+
+---
+
+**Row 39.320 — called from inside the scorer; the phase decides whether progression signals apply.**
+
+*Outgoing statement.* "Since E2d it is called from inside `analyzeChord()` itself as `applyHarmonicFunction(..., prefs.scoringPhase)`; the phase parameter — not a separate caller-side gate — decides whether the progression signals apply (`ScoringPhase::Segmentation` for `greedyExpandSegmentation`'s exploratory calls, `ScoringPhase::Final` otherwise)." — §10 *Harmonic function layer* (locator: lines 1545–1549).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.319.
+
+---
+
+**Row 39.321 — formerly three gated calls.**
+
+*Outgoing statement.* "(Historical: in E1/E2 this was three explicit `!prefs.explorationMode`-gated calls in `regionanalyzer.cpp`; see §11.)" — §10 *Harmonic function layer* (locator: lines 1549–1550).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a superseded build state.
+
+---
+
+**Row 39.322 — the function context carries the previous and next roots.**
+
+*Outgoing statement.* "`HarmonicFunctionContext` carries: `previousRootPc`, `nextRootPc` (plus the Step 1/2 predecessor channels)." — §10 *Harmonic function layer* (locator: lines 1552–1553).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.319.
+
+---
+
+**Row 39.323 — it carries no tonality fields; the tonality's influence is already frozen into the candidate score.**
+
+*Outgoing statement.* "It deliberately carries **no** key fields — key influence is already frozen into `ScoringCell::basisIndep` and reaches the gates via `ScoringSnapshot::{scale,keyTonicPc,keyMode}` (the former write-only `keyFifths`/`keyMode` fields were removed in Stage 0.2)." — §10 *Harmonic function layer* (locator: lines 1553–1556).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.319.
+
+---
+
+**Row 39.324 — extended with phrase-boundary and cadence evidence.**
+
+*Outgoing statement.* "Extended in E4 with phrase-boundary and cadence evidence." — §10 *Harmonic function layer* (locator: line 1556).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event of the legacy build.
+
+---
+
+**Row 39.325 — planned: cadence detection, tonic confirmation, and complete functional labels.**
+
+*Outgoing statement.* "**E4 (planned):** Cadence detection, tonic confirmation, functional label completeness (secondary dominants, borrowed chords, augmented sixths)." — §10 *Harmonic function layer* (locator: lines 1582–1583). Three claims: (i) cadence detection; (ii) tonic confirmation; (iii) complete functional labels — secondary dominants, borrowed chords, augmented sixths.
+
+*Derived statements that speak to it.* (i) L2-S49. (ii) L2-S34. (iii) L2-S4 and L2-S5.
+
+*Current-text axis.* (i) L2-S49: **AGREES** — as at Row 5.9. (ii) L2-S34: **AGREES** — *"including the cadential progressions that confirm a tonality"*. (iii) L2-S4: **AGREES** — *"the three augmented sixths"*. L2-S5: **AGREES** — *"The applied target is a chain, not a single field."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L3 — The read-off facts*, travelling with Row 5.9. (ii) **ADOPTED — carried** (L2-S34). (iii) **ADOPTED — carried** (L2-S4, L2-S5).
+
+---
+
+**Row 39.326 — the scoring oracle computes only what depends on the tones and the tonality.**
+
+*Outgoing statement.* "**`analyzeChord()` — the scoring oracle.** Computes only what depends on the raw tones and key." — §11 *Scoring oracle vs competition pipeline (E2d redesign)* (locator: lines 1602–1603).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.7.
+
+---
+
+**Row 39.327 — for every cell it evaluates the portions of the candidate score.**
+
+*Outgoing statement.* "For every `(bass, root, template)` cell it evaluates `basisIndep` (vertical pitch evidence, *without* any progression signal), `basisDep` (bass-dependent delta, including the section 4.1b inversion bonuses and `appliedBassBonus`), `complexityFactor`, `augFactor`, and `w_complete`." — §11 *Scoring oracle vs competition pipeline (E2d redesign)* (locator: lines 1603–1606).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.10.
+
+---
+
+**Row 39.328 — it computes the region metadata.**
+
+*Outgoing statement.* "It also computes the region metadata (`pcWeight`, `tpcForPc`, `scale`, `keyTonicPc`, `keyMode`, `distinctPcs`, `jointScoringEnabled`)." — §11 *Scoring oracle vs competition pipeline (E2d redesign)* (locator: lines 1606–1608).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.10.
+
+---
+
+**Row 39.329 — it packs a snapshot, builds the context, and calls the function layer.**
+
+*Outgoing statement.* "It packs all of this into a `fn::ScoringSnapshot`, builds a `fn::HarmonicFunctionContext` from the temporal context, and calls `applyHarmonicFunction()`." — §11 *Scoring oracle vs competition pipeline (E2d redesign)* (locator: lines 1608–1610).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.10.
+
+---
+
+**Row 39.330 — it selects no winner and applies no progression signal.**
+
+*Outgoing statement.* "**It selects no winner and applies no progression signal.**" — §11 *Scoring oracle vs competition pipeline (E2d redesign)* (locator: lines 1610–1611).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.10.
+
+---
+
+**Row 39.331 — the pipeline recomputes every cell's candidate score with root continuity and the sequence and diminished bonuses.**
+
+*Outgoing statement.* "Re-score every cell with `rootContinuityBonus` (added into `basisIndep` before the complexity x aug multiply), `w_seq`, and `w_dim`." — §11 *Scoring oracle vs competition pipeline (E2d redesign)*, the competition pipeline's steps (locator: lines 1616–1617).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS** — as at Row 23.23.
+
+*The difference, in both texts' own words.* The outgoing recomputes every cell's candidate score with *"`rootContinuityBonus`"*; L2-S34 says *"So no progression term may reward mere persistence of the root."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which steps does the dormant competition pipeline run at the current commit, and in what order?
+
+---
+
+**Row 39.332 — then the step bonuses with their guard, on both variants.**
+
+*Outgoing statement.* "Pass B — `w_stepIn`/`w_stepOut` with the surgical first-inversion-m7-family guard (`applyStepBonusGuard`), run independently on the with-wDim and without-wDim variants." — §11 *Scoring oracle vs competition pipeline (E2d redesign)*, the competition pipeline's steps (locator: lines 1618–1620).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.331.
+
+---
+
+**Row 39.333 — then the diminished bonus's quality guard.**
+
+*Outgoing statement.* "The wDim post-bonus quality guard (with-wDim accepted only if its global winner is Diminished/HalfDiminished, else fall back to without-wDim)." — §11 *Scoring oracle vs competition pipeline (E2d redesign)*, the competition pipeline's steps (locator: lines 1621–1622).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.331.
+
+---
+
+**Row 39.334 — then the winner across every bass.**
+
+*Outgoing statement.* "Cross-bass winner selection (the highest-scoring cell across all basses, no field patching)." — §11 *Scoring oracle vs competition pipeline (E2d redesign)*, the competition pipeline's steps (locator: lines 1623–1624).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.331.
+
+---
+
+**Row 39.335 — then the threshold with the bass bonus removed.**
+
+*Outgoing statement.* "The de-inflated threshold: `(winnerScore - winnerBassBonus) * kScoreThresholdRatio`." — §11 *Scoring oracle vs competition pipeline (E2d redesign)*, the competition pipeline's steps (locator: lines 1625–1626).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.331.
+
+---
+
+**Row 39.336 — then the results, capped at three with a different-root alternative appended.**
+
+*Outgoing statement.* "Build `results[]` (cap 3 + diff-root append) via `buildChordResult()`." — §11 *Scoring oracle vs competition pipeline (E2d redesign)*, the competition pipeline's steps (locator: line 1627).
+
+*Derived statements that speak to it.* L2-S42 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S42: **DIFFERS** — as at Row 39.16.
+
+*The difference, in both texts' own words.* The outgoing keeps a *"cap 3"*; L2-S42 withholds a rival only *"below a declared threshold"*, with *"The threshold's value, and the withheld total mass per span, are published with the rivals."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.331.
+
+---
+
+**Row 39.337 — then the gate context is filled.**
+
+*Outgoing statement.* "Fill the `PostScoringGateContext` (bass-independent metadata from the snapshot; `bassPc`/`bassTpc`/`threshold`/`rawCandidates` from the winner)." — §11 *Scoring oracle vs competition pipeline (E2d redesign)*, the competition pipeline's steps (locator: lines 1628–1629).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.331.
+
+---
+
+**Row 39.338 — the oracle sets the tones and the signature directly.**
+
+*Outgoing statement.* "`tones` and `keySigFifths` are set by the oracle, which has them directly." — §11 *Scoring oracle vs competition pipeline (E2d redesign)*, the competition pipeline's steps (locator: line 1630).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.331.
+
+---
+
+**Row 39.339 — a later stage shrank the checklist by removing a mirror.**
+
+*Outgoing statement.* "Stage 2.3 later shrank it from four scoring sites to three by removing the `kDiagTemplates` mirror." — §11 *Scoring oracle vs competition pipeline (E2d redesign)* (locator: lines 1657–1658).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 39.245.
+
+---
+
+**Row 39.340 — the last five progression signals migrated out of the scorer into the pipeline.**
+
+*Outgoing statement.* "**Oracle temporal-signal migration (Stage 3.3).** The last five oracle-side progression signals — `resolutionBonus` and the four §4.1b inversion bonuses (`stepwiseBassInversion`, `stepwiseBassLookahead`, `sameRootInversion`, `completeTriadInversion`) — have **migrated out of `analyzeChord` into the competition pipeline** (`fn::resolutionEdgeBonus` + `fn::inversionContextBonus`), joining `rootContinuityBonus` (moved at E2d) and `w_seq` / `w_dim` / step bonuses." — §11 *Scoring oracle vs competition pipeline (E2d redesign)* (locator: lines 1691–1696).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event of the legacy scorer's build.
+
+---
+
+**Row 39.341 — the oracle is now genuinely vertical.**
+
+*Outgoing statement.* "The oracle is now **genuinely vertical**: it applies NO progression signal (the chordanalyzer.h temporal debt / audit Finding 1 is cleared)." — §11 *Scoring oracle vs competition pipeline (E2d redesign)* (locator: lines 1696–1697).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.7.
+
+---
+
+**Row 39.342 — what each portion of the cell now carries.**
+
+*Outgoing statement.* "The oracle's `bassIndependentContextualBonuses` / `bassDependentContextualBonuses` helpers are gone; `bassIndep` carries only vertical + `diatonicRootBonus` (via `diatonicRootContribution`), `basisDep` carries only `nonBassAdjustment + appliedBassBonus`, and the vertical inversion-eligibility predicates ride along as two per-cell flags (`supportsInversionBonuses` / `qualifiesCompleteTriad`)." — §11 *Scoring oracle vs competition pipeline (E2d redesign)* (locator: lines 1697–1702).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.177.
+
+---
+
+**Row 39.343 — the pipeline reconstructs the candidate score in the same arithmetic positions.**
+
+*Outgoing statement.* "The pipeline reconstructs the score in the SAME arithmetic positions (`fullBasisIndep = basisIndep + resolution`, `fullBasisDep = basisDep + inversionContextBonus`, both inside the `(… + rcb + …) × cf × af` group)." — §11 *Scoring oracle vs competition pipeline (E2d redesign)* (locator: lines 1702–1705).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.177.
+
+---
+
+**Row 39.344 — byte-identical: one reconstruction exact, the other within one unit in the last place.**
+
+*Outgoing statement.* "**Byte-identical**: the basisDep reconstruction is bit-exact (the bass-root bonus and the inversion sum are mutually exclusive, so the reassociation has an always-zero middle term); the resolution reconstruction is a ≤1-ULP reassociation confined to non-tie Maj/Min cells." — §11 *Scoring oracle vs competition pipeline (E2d redesign)* (locator: lines 1705–1708).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 39.177.
+
+---
+
+**Row 39.345 — Gate R redesigned in the same commit.**
+
+*Outgoing statement.* "**Gate R** was redesigned in the same commit to read the reconstructed full basisDep (reconstructed-credit, §4) — byte-identical, closing the cross-layer dependency." — §11 *Scoring oracle vs competition pipeline (E2d redesign)* (locator: lines 1708–1709).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event of the legacy scorer's build.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (173)
+
+1. "This is a reference document for the rule-based chord analyzer's scoring pipeline." (28–29) — *the document's account of itself*.
+2. "It covers the templates, every additive bonus / penalty term, the post-scoring gates, the inversion-correction pass, and the load-bearing invariants that future changes must respect." (29–31) — *the document's account of itself*.
+3. "**File layout after refactor #1 (byte-identical layer split).**" (33) — *a label*.
+4. "See `records/cc/reports/cc_refactor1_split_design_dossier.md`." (44) — *a pointer to another document*.
+5. "**★ CODE LOCATORS — EVERY RAW LINE-NUMBER ANCHOR IN THIS DOCUMENT WAS RE-AIMED TO A NAMED CODE REGION (2026-08-14, at `records/cc/instructions/cc_instruction_scoring_model_pass.md`; `OPEN_ITEMS.md` OI-45).**" (46–47) — *the document's account of itself*.
+6. "A specification cites code **by function or by section anchor, never by a raw line number** (register entry **D-307**) — a coordinate goes stale the moment anything above it changes, and §6's Location column had already been converted on exactly that ground." (47–50) — *a rule of the development process*.
+7. "The eight raw anchors this document carried are gone from the body; **their former wordings are preserved verbatim here (#12)**, with the section each stood in:" (50–52) — *the document's account of itself*.
+8. "| § | Former wording | Now named as |" (54) — *a table header*.
+9. "|---|---|---|" (55) — *the table's separator row*.
+10. "| §2 | "the comparator at `~L2412` prefers lower values" | the winning-bass comparator in `applyHarmonicFunction` (`harmonicfunctionlayer.cpp`) |" (56) — *the document's account of itself*, a former wording preserved.
+11. "| §3 | "three 12 × 17 matrices declared at `~L2014–L2016`" | declared in `analyzeChord` (`chordanalyzer.cpp`) |" (57) — *the document's account of itself*, a former wording preserved.
+12. "| §4 | "In the `(rootPc, tplIdx)` loop at `chordanalyzer.cpp:~L2026`" | the `(rootPc, tplIdx)` scoring loop in `analyzeChord` (`chordanalyzer.cpp`) |" (58) — *the document's account of itself*, a former wording preserved.
+13. "| §4 | "the `ChordAnalyzerPreferences` declaration (`chordanalyzer.h:411`)" | the `ChordAnalyzerPreferences` declaration (`analysis/types/analysistypes.h`) — the file was wrong as well as the line |" (59) — *the document's account of itself*, a former wording preserved.
+14. "| §5 | "**`hasStructuralBass`** (`~L1935`)" | `hasStructuralBass`, computed in `analyzeChord` (`chordanalyzer.cpp`) |" (60) — *the document's account of itself*, a former wording preserved.
+15. "| §7 | "The "bias correction" entry above (`~L2867`)" | the bias-correction block of `applyPostScoringGates` (`postscoringgates.cpp`) |" (61) — *the document's account of itself*, a former wording preserved.
+16. "| §7 | "At `~L2647–L2651`, **before** the sort can run" | in that same block's outer guard, before the sort can run |" (62) — *the document's account of itself*, a former wording preserved.
+17. "| §7 | "Gate G-E (`~L2910`) reads" | Gate G-E (`postscoringgates.cpp`) reads |" (63) — *the document's account of itself*, a former wording preserved.
+18. "**Four of the eight had drifted across a FILE boundary and not merely down a file** — the §4 prefs declaration (now in `analysis/types/analysistypes.h`) and the three §7 anchors, which refactor #1 moved out of `chordanalyzer.cpp` into `postscoringgates.cpp`." (65–67) — *the document's account of itself*.
+19. "**This note records a re-aim of locators only: no term, value, guard, gate or template is added, changed or removed by it.**" (67–68) — *the document's account of itself*.
+20. "**★ SCOPING SENTENCE — THE SCORER DESCRIBED BELOW IS DORMANT ON BOTH PRODUCTION SURFACES, AND THE BODY'S PRESENT TENSE IS THE TENSE OF ITS SPECIFICATION RATHER THAN A STATEMENT ABOUT WHAT RUNS (added 2026-08-14 at `records/cc/instructions/cc_instruction_scoring_model_pass.md`; it discharges the first half of `OPEN_ITEMS.md` OI-274, and it is the same form OI-232 and OI-265 were resolved by, one document over).**" (74–78) — *a label*, the block's bold title, whose claims Rows 39.5 and 39.6 tabulate from the body.
+21. "**§8's constraints and dead ends remain in force regardless of that dormancy** — they bind what a future change may attempt, and they must not be retried; each carries its own ⚠ LEGACY-subject mark where its subject is this scorer." (86–88) — *the document's account of itself*.
+22. "*A reader who needs what RUNS reads the joint estimator's section of `ARCHITECTURE.md`." (90) — *a pointer to another document*.
+23. "**That pointer is a pointer and nothing more:** it does not amend `CLAUDE.md`'s mandatory-read instruction, and whether that instruction should also name the joint estimator's own specification is OI-274's second half — a governing-document question, and therefore the user's.*" (90–93) — *the document's account of itself*.
+24. "| # | Quality | Intervals | Represents | Notes |" (164) — *a table header*.
+25. "|---|------------------|----------------|-------------------------------------|-------|" (165) — *the table's separator row*.
+26. "The size-sync sites (since Stage 2.3 removed `kDiagTemplates`):" (234) — *a label*, introducing the list Rows 39.55 to 39.57 tabulate.
+27. "The final per-bass comparator (`harmonicfunctionlayer.cpp`, `applyHarmonicFunction`) is, in order:" (266–267) — *a label*, introducing the list Rows 39.59 to 39.61 tabulate.
+28. "The omission of an epsilon is intentional — an epsilon would make the order depend on a threshold that is itself uncalibrated, and would mask rather than resolve near-ties." (276–278) — *a defense* of Row 39.58's rule.
+29. "All four enharmonic rotations of a dim7 chord share the same PC set (C°7 = E♭°7 = G♭°7 = A°7)." (311–312) — *a defense*, its premise a statement of standard music theory.
+30. "Pure template scoring cannot distinguish them." (312) — *a defense* of the bonus Row 39.64 describes.
+31. "**"Non-diatonic to the current key" — the key SIGNATURE's collection, never the tonic (OI-168, fixed 2026-07-14).**" (327–328) — *a label*, the paragraph's bold title.
+32. "```" (333) — *the opening of a code block*, inside the sentence Row 39.74 tabulates.
+33. "```" (335) — *the close of a code block*, inside the same sentence.
+34. "That is the point: the tonic-independence is structural, not a cancellation that a future mode-table edit can silently undo." (338–339) — *a defense* of Row 39.75's statement.
+35. "**Why it is written that way — the defect it replaced (OI-168).**" (341) — *a label*.
+36. "Until 2026-07-14 both terms tested membership in **{ (keyTonicPc + scale[i]) mod 12 }**, where `scale` is the interval set of the mode's *diatonic parent* (`DIATONIC_PARENT_INDEX`) laid out from the **mode's own** tonic." (341–343) — *a defense*.
+37. "That set equals the key signature's diatonic collection **only when the mode's tonic offset equals its parent's** — true for 19 of the 21 `KeySigMode` values, **false for `Altered` and `AlteredDomBB7`**, whose tonic sits a semitone above their parent's." (343–346) — *a defense*.
+38. "For those two the set was the signature's collection **transposed up a semitone** (2 of 7 pitch classes shared), so both terms scored against the wrong collection." (346–348) — *a defense*.
+39. "It is not repairable by re-parenting: their tonic is not a member of any parent collection." (348–349) — *a defense*.
+40. "Measured magnitude (`records/cc/reports/cc_oi168_magnitude_report.md`) and adoption (`records/cc/reports/cc_oi168_fix_report.md`): `Altered` is emitted on Jazz only — 24 surviving regions, 49 scorer entries — and the corruption flipped exactly **one** committed chord (`bwv145.5@12960`: `Ebm` → `B/Eb`, correcting a class-(b) root failure against the DCML ground truth); on the other 22 regions it moved the score without moving the winner." (349–353) — *a defense*.
+41. "Baroque and Default regenerate **byte-identically** under the fix (the δ = 0 derivation, verified at runtime on 352 scores × 2 presets)." (353–354) — *a defense*.
+42. "Do not attempt a density-based or inversion-aware gate here without re-reading the Iter 98 dead-end section in `COWORK_HANDOFF.md`." (402–403) — *a rule of the development process*.
+43. "**Why the `basisDep <= 0` condition (refinement vs. the bare bass-foreign test).**" (440) — *a label*.
+44. "The bare bass-foreign test alone misfires on legitimate extended slash voicings." (441) — *a defense*.
+45. "Counterexample: `Cm7add11/F` (test `Cm7SlashF_StepwiseBassContext_IsCm7NotFsus`)." (442–443) — *a defense*.
+46. "F is interval 5 (P4/11th) from C — foreign to the bare Min7 template `{0,3,7,10}` — yet F is sounding as the 11th and the reading is correct." (443–445) — *a defense*.
+47. "The discriminator: a legitimate inverted/extended continuation has a **sounding third**, which makes it `isInvertedMajMin` and fires `sameRootInversionBonus` (and usually `stepwiseBassInversionBonus`), so its `basisDep > 0`." (445–448) — *a defense*.
+48. "A Δ=+7b bare-root continuation has **no sounding third**, fires no inversion bonus, and (being a slash) gets no bass-root bonus, so `basisDep == 0` (confirmed for all three cases in the diagnostic report Table 1)." (448–450) — *a defense*.
+49. "Requiring `basisDep <= 0` therefore restricts Gate R to genuine bare-root nonsense continuations and spares real extended chords." (450–452) — *a defense*.
+50. "(`basisDep` may be slightly negative when a `kNonBassPenalty` applies with no offsetting inversion credit — still a bare-root case, correctly gated.)" (452–454) — *a defense*.
+51. "**Stage 3.3 redesign — reconstructed-credit (byte-identical).**" (456) — *a label*.
+52. "The derivation behind the equivalence (and why the originally designed literal "sounding-third pcWeight test" was *not* adopted): … the old gate fires **⟺ `cappedInv == 0`** (no inversion bonus earned)." (462–467) — *a defense*.
+53. "The literal `pcWeight[third] ≤ 0.05` test matches this for Maj/Min/Aug/HalfDim … a temporal condition no vertical pcWeight test can capture." (467–472) — *a defense*.
+54. "A Dim continuation with foreign bass + sounding third but no stepwise bass earns no credit (old gate fires) yet has a sounding third (literal test would spare it) — a 0.40×cf×af output swing." (473–475) — *a defense*.
+55. "Reading the reconstructed credit avoids this gap entirely." (475) — *a defense*.
+56. "See `docs/decoder_design.md` §6 amendment and `records/cc/reports/cc_stage3_3_report.md` §1." (475–476) — *a pointer to other documents*.
+57. "*Why:* the derivation is the paragraph immediately above and is not repeated (#6) — … a temporal condition no vertical test can see." (483–486) — *a defense* of Row 39.103's rule.
+58. "Reading the pipeline's own reconstructed credit is therefore the faithful execution of the redesign's intent rather than a compromise, and it is what closes the cross-layer dependency the redesign set out to remove." (486–488) — *a defense*.
+59. "The originally designed mechanism text is retained above **for the record**, and a future reader must not mistake it for the shipped behaviour." (488–490) — *the document's account of itself*.
+60. "**Why the phase guard.**" (492) — *a label*.
+61. "`rootContinuityBonus` is deliberately **not** suppressed during `greedyExpandSegmentation` exploration (unlike `w_seq` / `w_dim` / step bonuses), so segmentation boundary selection already depends on rcb." (492–494) — *a defense* of the phase guard.
+62. "If Gate R were allowed to perturb rcb during exploration it would shift region boundaries: this was caught at … a new BIR=false error invisible to the within-region diagnostic." (494–498) — *a defense*.
+63. "Restricting Gate R to the final (non-exploratory) scoring pass keeps segmentation byte-identical to baseline while still correcting the final winner; the Δ=+7b fixes are all final-pass decisions and are unaffected by the guard." (498–501) — *a defense*.
+64. "**Why it exists.**" (503) — *a label*.
+65. "The vertical oracle already scores a non-chord-tone-bass ("nonsense slash") candidate lower than the correct reading, but `rcb` (+0.40) is strong enough to overturn that verdict." (503–505) — *a defense* of Gate R.
+66. "In the Δ=+7b cluster the correct first-inversion complete triad leads the continued/predecessor root by only 0.38 raw, so the +0.40 continuity bonus flips a clear vertical win into a 0.02 loss." (505–507) — *a defense*.
+67. "Gate R restores the oracle's priority by denying continuity credit to a continuation that cannot harmonically hold its own bass." (508–509) — *a defense*.
+68. "**The Δ=+7b mechanism it fixes.**" (511) — *a label*.
+69. "Three Bach cases — bwv245.28 (B/G♯), bwv296 (D/B), bwv320 (G/E) — all have `(bassPc - rootPc) mod 12 == 9` (a major sixth from the continued root), which appears in **none** of the 17 templates." (511–513) — *a defense*.
+70. "The bass is in fact the major third of the DCML-correct root (G♯ of E, B of G, E of C), i.e. a first-inversion complete triad of the correct chord." (513–515) — *a defense*.
+71. "Gate R fires on the wrong (continued-root) candidate, withholds its +0.40, and the correct triad wins on its clean 1.90 vs 1.52 raw lead." (515–517) — *a defense*.
+72. "**Safety.**" (519) — *a label*.
+73. "*Alberti-bass safe.* In Alberti / broken-chord continuity the dominant pedal is voiced over its own chord tones (C/E/G), so the bass is always a template tone and Gate R never fires there." (520–522) — *a defense* of Gate R.
+74. "This sidesteps the Iter-98 and predecessor-bass dead ends, which keyed on predecessor density / bass change and misfired on Alberti." (522–523) — *a defense*.
+75. "*mozart_k280-1 control passes unaffected.* The rcb-rewarded continued candidate there always has a chord-tone bass (G = P5 of C, E♭ = m3 of Cm), so Gate R leaves rcb intact and rcb still correctly reverses the raw winner." (524–526) — *a defense*.
+76. "A 0 mask is impossible by construction: every template includes interval 0 (the root)." (529–530) — *a defense* of Row 39.106's statement.
+77. "**★ THE GUARD IS THE DECISION, AND IT IS STRUCTURAL RATHER THAN A THRESHOLD (re-homed into this specification 2026-08-07 on the user's ruling). ⚠ LEGACY subject.**" (549–550) — *a label*, the block's bold title.
+78. "*Why:* derived from a measured failure rather than chosen." (553–554) — *a defense* of Row 39.108's rule.
+79. "The previous, unconditional version of the same idea caused large regressions in both directions because it promoted cases where the slash-chord reading was the correct one; the design works the guard through the exact case that failed and shows that a genuine slash chord with its own fifth present does not collect the root-position bonus for the rival reading." (554–558) — *a defense*.
+80. "It is an early instance of the standing rule that a correction is given a **structural entry condition** rather than a widened threshold (`CLAUDE.md`, the gate and preset policy)." (558–559) — *a defense*.
+81. "Without this, segmentation biases sub-region bass selection toward stepwise candidates and redirects segmentation before the final per-region scoring pass runs." (583–585) — *a defense* of Row 39.110's gate.
+82. "Without this guard a slash-chord bass (e.g. F♯ in G♯m7/F♯) that steps to a neighbouring bass gets credit it shouldn't — caused the Iter 94 Jazz bwv430 regression (BIR=false 14→15)." (590–592) — *a defense* of Row 39.112's gate.
+83. "Canonical case: Dm6 vs Bø7/D — the step bonus would otherwise tip a fragile m6 root-position reading over an equally viable first-inversion m7-family reading on identical pitch evidence." (598–600) — *a defense* of Row 39.113's gate.
+84. "A root+5-only template gaining +0.20 would tip past viable triads in sparse Jazz tonic-on-strong-beat contexts (5 of 6 corrected-guard Jazz BIR=true regressions were `[Tonic]5` reads vs WiR `I` triads)." (602–605) — *a defense* of Row 39.114's gate.
+85. "| Term | Value | What it does |" (717) — *a table header*.
+86. "|---------------------------------------|---------------|---|" (718) — *the table's separator row*.
+87. "The field stays documented because it exists in prefs and the optimizer range table — treat it as an untuned safety net, not a load-bearing per-preset value." (752–754) — *the document's account of itself*.
+88. "| Constant | Acts at | Already described here by |" (773) — *a table header*.
+89. "|---|---|---|" (774) — *the table's separator row*.
+90. "*Why:* both defects that forced it are diagnosed to the same cause and named with it — a passing note that happens to be the absolute lowest pitch wins bass selection over the beat-onset bass a step above it, flipping the chord root; and an incomplete slash-chord reading beats a complete root-position triad because root-position completeness earned no advantage." (848–852) — *a defense* of Row 39.181's rule.
+91. "**Neither is reachable while the bass is committed before the chord is scored**, which is what makes this a structural decision rather than a weighting one." (852–854) — *a defense*.
+92. "The cost is stated with it and judged acceptable: a few times the scoring loop." (854) — *a defense*.
+93. "**★ POINTER — WHAT A GATE MAY READ IS FIXED AT THE INFERENCE/PRESENTATION BOUNDARY, NOT HERE (added 2026-08-07 on the user's homing ruling; the rule is published once, at `ARCHITECTURE.md` §3.3, #6).**" (867–868) — *a pointer to another document*.
+94. "Read it at its home; this line points at it and does not restate it." (871–872) — *a pointer to another document*.
+95. "Tests use the `analyzeWithGates()` helper in `test_helpers.h`." (883–884) — *a test record*.
+96. "*Why:* argued from what the carry is FOR, and the design says so in terms — the alternatives exist so the later layer can select among the **distinct** readings, and a copy of the winner is not a distinct reading." (939–942) — *a defense* of Row 39.197's rule.
+97. "Measured on the full output surface across the whole corpus, the append idiom injects that near-copy and displaces the genuinely different partner, which is an information-loss regression under #12." (942–944) — *a defense*.
+98. "The same principle is already applied elsewhere in this layer, where a non-promoting raw pull is popped so it does not pollute the list." (944–946) — *a defense*.
+99. "This is explicitly **not** "prefer the idiom that is at HEAD"." (946) — *a defense*.
+100. "*Why:* the design shows the equivalence rather than claiming it — for the enharmonic flip the caller has already computed the in-`results[]` partner index, and the primitive swaps that exact index, so the produced permutation is byte-identical to the behaviour it replaces." (949–952) — *a defense* of Row 39.200's rule.
+101. "That is what makes retiring the separate rule a no-op on the output rather than a change to be argued about." (952–953) — *a defense*.
+102. "*Why:* the condition is quoted from the earlier ruling it discharges — the rule retires when the promotion machinery unifies into one path producing one carry — and the design shows why the earlier winner-only inertness was **not** enough: the naive removal was inert on the winner across the whole corpus while changing the carry on a named subset of scores." (959–963) — *a defense*.
+103. "| Gate | Location | Trigger | Effect | Why it exists |" (977) — *a table header*.
+104. "|------|----------|---------|--------|---------------|" (978) — *the table's separator row*.
+105. "The deduction alone does not flip it: the bass-root Minor/Major reading keeps residual scoring advantages (an AddedSixth extension fit, for one)." (1039–1041) — *a defense*.
+106. "*(★ Location corrected 2026-08-14 at `records/cc/instructions/cc_instruction_scoring_model_pass.md`, at the code (`OPEN_ITEMS.md` OI-45, whose own cell says this constant is "missing from §6 entirely" — at HEAD the entry EXISTS; what was wrong was where it said the bonus fires)." (1048–1050) — *the document's account of itself*.
+107. "**The former wording, preserved (#12), was:** "**`kHalfDimFirstInversionBonus` (= 0.55) — additive bonus inside the enharmonic-flip block.** … its score is raised by `kHalfDimFirstInversionBonus` before the re-sort…"." (1050–1055) — *the document's account of itself*, a former wording preserved.
+108. "**What this correction does NOT touch:** the value (0.55 — checked at the constant and unchanged), and the Iter-61 provenance, the preset gating and the dissolution-target status, which are carried over from the former wording and were not re-verified by this pass." (1057–1060) — *the document's account of itself*.
+109. "**One naming observation, declared and NOT acted on:** the constant's name says *first inversion* while the code admits the alt's third, fifth OR seventh in the bass — the code's own comment carries the same wording, so the name is inherited rather than a defect this pass may re-specify.)*" (1060–1063) — *the document's account of itself*.
+110. "Each prevents a specific documented regression." (1143–1144) — *a defense* of Row 39.238's statement.
+111. "Adding a template = bump the constant + add the template/mask entries in the same edit (§9 step 5)." (1154–1155) — *a rule of the development process*.
+112. "**Post-bonus winner quality guard for `w_dim`.**" (1180) — *a label*.
+113. "*Why:* stated with the decision — a rule that mutates root, quality or bass feeds the backward-looking evidence, so it cannot be cleanly separated from a wider-beam decode; a wider search would be reading a predecessor a later step is still going to change." (1201–1204) — *a defense* of Row 39.254's rule.
+114. "The alternative — searching against uncorrected identities with a documented re-decision — was considered and not taken." (1204–1205) — *a rejected alternative*, named with its reasons.
+115. "*Why:* derived from the search lattice and verified three times, including against an independent earlier derivation — on the founding score the continued-root path outscores the correct path, the gap being the root-continuity reward minus the margin, and the premise the earlier verdict rested on (that the transient scores low) is **measured false**." (1211–1214) — *a defense*.
+116. "This is the dead end the two *tried and closed — do not retry* lists in `ARCHITECTURE.md` name; they point here and the rule is published once (#6)." (1215–1216) — *the document's account of itself*.
+117. "*Why:* stated with the recommendation and grounded in the mechanism — Gate R's test uses a score component as a stand-in for *this candidate has a sounding third*, and it carries that meaning only because one of those signals is computed where it is." (1231–1234) — *a defense* of Row 39.260's rule.
+118. "Removing the debt without touching the gate would silently change what the gate tests: a cross-layer dependency invisible to anyone reading the gate's own file." (1234–1236) — *a defense*; it straddles the edge of D-463's home as cited (lines 1227–1235).
+119. "**The policy for judging a PROPOSED post-scoring gate — three tests.**" (1238) — *a label*.
+120. "(1) If the proposal is another variant of correcting the bass-as-root bias, first ask whether the bias itself can be reduced, or whether functional context would remove the ambiguity; add the gate only if the fix is genuinely local." (1238–1241) — *a rule of the development process*, a test for judging a proposed change.
+121. "(2) If it turns on a **structural** condition — pitch-class arithmetic plus a presence constraint, not temporal evidence — it is likely architecturally sound." (1241–1242) — *a rule of the development process*.
+122. "(3) If it needs the three-step cascade shape, that is a strong signal that the real problem is missing functional context, and the gate is the wrong answer." (1242–1244) — *a rule of the development process*.
+123. "*Why:* derived from a systematic read of the whole gate population — … signal an unresolved architectural problem." (1244–1248) — *a defense*.
+124. "The two gates that read came out architecturally healthier both turn on structural conditions rather than compensating for the bias, which is where test (2) comes from." (1248–1250) — *a defense*.
+125. "*Why:* measured at the code rather than assumed from the design — of the live gates, ten read context from beyond their own stretch and are compensation by construction, three were already dead code, and the two named ones read nothing outside the sonority." (1257–1259) — *a defense* of Row 39.263's rule.
+126. "**★ Four findings re-homed into this section 2026-08-07 on the user's ruling, kept together because they are one evidence record about one mechanism.**" (1269–1270) — *the document's account of itself*.
+127. "*Why:* measured and stratified rather than argued, … accounting for most of both the fires and the harms." (1280–1284) — *a defense*.
+128. "The obvious repair is to let the pass overturn a reading only when the replacement fits the sounding notes at least as well." (1285–1287) — *a rejected alternative*, named with its reasons in the sentences that follow.
+129. "*Why:* measured across bands of the vertical gap, every one net-negative, with the count and harm rate per band; the conclusion drawn is the one the numbers support and no more — the earlier layer's vertical commit is a better predictor of the annotated root than the progression re-pick, even where the alternative is its vertical equal." (1289–1292) — *a defense*.
+130. "*Why:* established at the code, both components separately; surfacing the trigger would mean **building** the joint step, which the standing sequencing rules forbid at this stage." (1298–1300) — *a defense*.
+131. "**This is a PROPOSAL, not a specification of this document: it is NOT adopted, and no reader may implement it from this paragraph.**" (1307–1308) — *the document's account of itself*.
+132. "It is recorded as an INPUT to the one prioritized fix plan, and the row that owns the demotion carries the cross-reference on the plan's side." (1308–1310) — *the document's account of itself*.
+133. "*Why:* every clause of the recommendation is measured and cited in the bullets above; the loss it accepts — a modest number of genuine corrections given up — is stated and kept in view rather than netted away." (1310–1312) — *a defense*.
+134. "**Re-homed into this section 2026-08-08 on the user's ruling; the shelving and its evidence are intact.**" (1316–1317) — *the document's account of itself*.
+135. "⚠ **LEGACY SUBJECT:** both statements are about this document's scoring surface and its greedy-expand segmenter." (1317–1318) — *the document's account of itself*.
+136. "Whether the joint estimator's modelled segmentation shows the same coupling is **not stated here and is not asserted.**" (1318–1319) — *the document's account of itself*.
+137. "*Why the shelving is with evidence rather than on argument:* two discriminators were built and both regressed — … with a sample of the regressions flipping one wrong answer into a different wrong answer." (1326–1332) — *a defense*.
+138. "No code change was committed." (1332) — *a defense*.
+139. "*Why it is stated here as a standing constraint:* it was measured at the attempt above, … an enumeration of added and removed runs catches and a count does not." (1342–1346) — *a defense* of Row 39.291's rule.
+140. "*Why, as a derivation from three principles rather than a preference:* removing the overwrites now would be a production behaviour change with no replacement owner, since no component yet owns deciding quality from the key — which is the cross-layer patch layer adherence forbids (#7); and #8 puts the structural work first." (1358–1361) — *a defense* of Row 39.293's verdict.
+141. "Deferring to the step that gives the concern a single home makes the removal ONE ratified, revertible change under the regression stop (#14/#15)." (1361–1362) — *a defense*.
+142. "The alternative — ripping the overwrites out now — was considered and rejected on exactly that ground." (1362–1363) — *a rejected alternative*, named with its reasons.
+143. "**The open-items register row is the mechanism that makes this an acceptance rather than an oversight**, and it gates the dissolution." (1364–1365) — *a rule of the development process*.
+144. "**Re-homed into this section 2026-08-08 on the user's ruling; every ⚠ LEGACY mark intact.**" (1369) — *the document's account of itself*.
+145. "⚠ **All four are LEGACY-SCOPED:** their subject is this document's scoring surface and the segmenter awaiting deletion." (1369–1371) — *the document's account of itself*.
+146. "Each was measured, and each is a prohibition on re-attempting a specific mechanism — **none of them says anything about extending the temporal context the analysis reads**, which is a decided live capability specified elsewhere." (1371–1373) — *the document's account of itself*.
+147. "*Why it is closed:* measured — the notes touching the boundary are OTHER chord tones and the root attacks later, so the change would add the wrong pitches and still not add the missing one; and the same backward walk serves a dozen call sites, several of them notation display, where excluding the previous chord's terminal notes is the correct behaviour." (1377–1380) — *a defense*.
+148. "*Why:* measured — the trigger never fires, because the same-root merge already inside the first pass has combined those stretches before any external pass could see them." (1383–1385) — *a defense*.
+149. "It was dead code." (1385) — *a defense*.
+150. "*Why:* pooling makes the answer worse — the aggregate is duration-weighted and the wrong pitch sounds longer than the right one, so the wrong root still wins the pooled reading, and the run regressed both presets." (1387–1390) — *a defense*.
+151. "*Why:* it fixed fewer cases than it broke, and two of the cases it broke are readings the published human analysis itself makes with an absent root — so **the premise "an absent root means a wrong reading" is false corpus-wide.**" (1394–1396) — *a defense*.
+152. "A second, structural reason rides with it: any guard that changes a committed root changes the predecessor every later stretch reads, so its effect cascades into regions it never judged." (1396–1398) — *a defense*.
+153. "The counts are in the record and are not restated here (D-431)." (1398–1399) — *the document's account of itself*.
+154. "*Why:* structural, and stated with the mechanism — the correction steps that exist promote a reading that was BEHIND on the raw candidate score, so a guard keyed on that margin removes their reason to exist." (1414–1416) — *a defense*.
+155. "It would disable every intentional backward-swap gate at once." (1416–1417) — *a defense*.
+156. "*Why:* measured — a handful of genuine cases against several times as many wrong firings, … the leading-tone hypothesis was tested and falsified on all of them." (1419–1423) — *a defense*.
+157. "The counts are in the archive that measured them and are not restated here (D-431)." (1423–1424) — *the document's account of itself*.
+158. "*Why:* measured and then diagnosed, which is what closes it rather than merely discouraging it — … tighter margin reduces the wrong firings." (1426–1430) — *a defense*.
+159. "*Why:* six weeks of investigation across four corpora and six attempts, with five stated conclusions — … vertically and reading it by its role, **which is not an analyzer defect at all**." (1433–1439) — *a defense*.
+160. "*Why the reading is "unestablished" rather than "wrong", which is a different claim and the record supports only the first:* the same audit measured a third of the reachable constants inert at the root objective, and both high-leverage re-fit candidates regressed held out." (1450–1453) — *a defense*.
+161. "So nothing here says the values are bad; what it says is that nothing in the record shows they are good." (1453–1454) — *a defense*.
+162. "The under-count factor and the inert fraction are in the audit that measured them and are not restated (D-431)." (1454–1455) — *the document's account of itself*.
+163. "**Identify interactions with bonus/penalty terms.**" (1466) — *a rule of the development process*, the checklist's step 2.
+164. "Does any existing bonus use the new template's quality+size as a key condition?" (1466–1467) — *a rule of the development process*, the step's question.
+165. "Examples:" (1467) — *a label*.
+166. "`python tools/run_bach_preset.py --preset Baroque --output-dir tools/corpus` … `python tools/run_bach_preset.py --preset Jazz --output-dir tools/corpus` `python tools/analyze_inversion_errors.py`" (1527–1530) — *four command lines* naming the check's commands and saying nothing about them, listed as one item.
+167. "The atomic-update checklist (section 9) is unchanged by this redesign (no templates added or removed)." (1656–1657) — *the document's account of itself*.
+168. "*Last updated: **2026-08-14** — the `docs/scoring_model.md` pass at … **twelve registered constants with no by-name mention given a §4 table**." (1713–1721) — *the document's account of itself*.
+169. "**No term, value, guard, gate or template was added, changed or removed** — the sync rule runs the other way, and this was a documentation pass over a document that describes them.*" (1721–1723) — *the document's account of itself*.
+170. "*★ **The re-stamp itself closes the third thing OI-274 found.**" (1725) — *the document's account of itself*.
+171. "This footer read "Last updated: 2026-06-12 — Stage 3.1" while the body already carried everything listed below, so a reader who trusted it under-read the document." (1725–1727) — *the document's account of itself*.
+172. "The acts the body carries that the stale stamp omitted, dated as the body dates them: **refactor #1**, … the four archive-only dead ends, and the void validation basis).*" (1727–1738) — *the document's account of itself*.
+173. "*Prior: 2026-06-12 — Stage 3.1: winner selection + commit chain now flow through the … Prior: E3 extracted `applyPostScoringGates()` from `analyzeChord()`.*" (1740–1755) — *the document's account of itself*, its revision history, listed as one item and its quotation elided in the middle as member 38's version history is.
+
+#### The arithmetic at this member
+
+- Rows written: **345** (39.1 to 39.345); 20 of them carry two or three claims each and are split.
+- **Outgoing statements placed: 366.**
+- Listed under *not a statement*: **173**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 366 dispositions over 366
+  statements.
+- **UNPLACED at this member: 0** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 17 | 39.58, 39.59, 39.60, 39.61, 39.62, 39.63, 39.77(i), 39.181, 39.183, 39.185, 39.188, 39.189, 39.259, 39.285(i), 39.287, 39.325(ii), 39.325(iii) |
+| ADOPTED — proposed | 2 | 39.77(ii), 39.197 |
+| RELOCATED | 4 | 39.205, 39.291, 39.318, 39.325(i) |
+| QUARANTINED | 246 | 39.1, 39.2(ii), 39.3, 39.4, 39.5, 39.6(i), 39.6(ii), 39.7, 39.8(i), 39.9(i), 39.9(ii), 39.10, 39.11, 39.12, 39.13, 39.14, 39.15, 39.16(i), 39.16(ii), 39.17, 39.18, 39.19, 39.21, 39.22, 39.23, 39.24, 39.25, 39.26, 39.27, 39.28(i), 39.29, 39.30, 39.31, 39.32, 39.33, 39.34, 39.35, 39.36, 39.37, 39.38, 39.39, 39.40, 39.41, 39.42, 39.43, 39.44, 39.45, 39.46, 39.47, 39.48, 39.49, 39.50, 39.51, 39.52, 39.53, 39.54, 39.55, 39.56, 39.57, 39.64, 39.65, 39.66, 39.67, 39.72, 39.73, 39.74, 39.75, 39.78, 39.85, 39.86, 39.87(i), 39.90, 39.91, 39.92, 39.93, 39.94(i), 39.95, 39.96, 39.97, 39.98, 39.99, 39.100, 39.102(ii), 39.103(i), 39.104, 39.105, 39.106, 39.107, 39.108, 39.109, 39.110, 39.111, 39.112, 39.113, 39.114, 39.115, 39.116, 39.117, 39.118, 39.119, 39.120, 39.121(i), 39.121(ii), 39.122, 39.123, 39.124, 39.125, 39.126, 39.127, 39.128, 39.129, 39.130, 39.131, 39.132(ii), 39.133, 39.134, 39.135, 39.136, 39.137, 39.138, 39.139, 39.140, 39.141, 39.142, 39.143, 39.144, 39.145, 39.146, 39.147, 39.148, 39.149, 39.150, 39.151, 39.152, 39.153, 39.154, 39.155, 39.157, 39.158, 39.159, 39.160, 39.161, 39.162, 39.163, 39.164, 39.165, 39.166, 39.167, 39.168, 39.169, 39.170, 39.173, 39.174, 39.175, 39.176(i), 39.176(ii), 39.177, 39.178, 39.179, 39.180, 39.182, 39.184, 39.186, 39.187, 39.190, 39.191, 39.192, 39.193, 39.194, 39.195, 39.196, 39.199, 39.200, 39.201, 39.206, 39.207, 39.208, 39.209, 39.210, 39.211, 39.212, 39.213, 39.219, 39.220, 39.221, 39.222, 39.224, 39.225, 39.226, 39.227, 39.228, 39.229, 39.230, 39.231, 39.232, 39.233, 39.234, 39.238, 39.239, 39.240, 39.241, 39.242, 39.243, 39.246, 39.248, 39.249, 39.250(i), 39.250(ii), 39.251, 39.252, 39.253, 39.261, 39.263(i), 39.266(i), 39.269, 39.270, 39.271, 39.292, 39.310(i), 39.312, 39.313, 39.314, 39.315, 39.316, 39.317, 39.319, 39.320, 39.322, 39.323, 39.326, 39.327, 39.328, 39.329, 39.330, 39.331, 39.332, 39.333, 39.334, 39.335, 39.336, 39.337, 39.338, 39.341, 39.342, 39.343, 39.344 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 97 | 39.2(i), 39.8(ii), 39.20, 39.28(ii), 39.68, 39.69, 39.70, 39.71, 39.76, 39.79, 39.80, 39.81, 39.82, 39.83, 39.84, 39.87(ii), 39.88, 39.89, 39.94(ii), 39.101, 39.102(i), 39.103(ii), 39.132(i), 39.156, 39.171, 39.172, 39.198, 39.202, 39.203, 39.204, 39.214, 39.215, 39.216, 39.217, 39.218, 39.223, 39.235, 39.236, 39.237, 39.244, 39.245, 39.247, 39.254, 39.255, 39.256, 39.257, 39.258, 39.260, 39.262, 39.263(ii), 39.264, 39.265, 39.266(ii), 39.267, 39.268, 39.272, 39.273, 39.274, 39.275, 39.276, 39.277, 39.278, 39.279, 39.280, 39.281, 39.282, 39.283, 39.284, 39.285(ii), 39.286, 39.288, 39.289, 39.290, 39.293, 39.294, 39.295, 39.296, 39.297, 39.298, 39.299, 39.300, 39.301, 39.302, 39.303, 39.304, 39.305, 39.306, 39.307, 39.308, 39.309, 39.310(ii), 39.311, 39.321, 39.324, 39.339, 39.340, 39.345 |
+| UNPLACED | 0 | — |
+| **Total** | **366** | — |
+
+**The arithmetic closes at this member**: 17 + 2 + 4 + 246 + 0 + 97 + 0 = 366, against 366 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 36 |
+| DIFFERS | 46 |
+| THE DERIVATION IS SILENT | 286 |
+| **Total verdicts** | **368** |
+
+*(368 verdicts over 366 statements: Row 39.141 names two derived statements, and so does the third claim of Row 39.325.)* DIFFERS: 39.7, 39.9(i), 39.10, 39.11, 39.16(i), 39.23, 39.24, 39.36, 39.40, 39.41, 39.42, 39.43, 39.44, 39.50, 39.89, 39.119, 39.120, 39.127, 39.131, 39.133, 39.134, 39.135, 39.136, 39.137, 39.138, 39.139, 39.140, 39.141, 39.142, 39.143, 39.144, 39.145, 39.146, 39.147, 39.148, 39.149, 39.150, 39.151, 39.152, 39.153, 39.219, 39.269, 39.310(i), 39.331, 39.336.
+
+#### The marks at this member
+
+- **WITHHELD rows: 68**, each inside a home the artifact's `item_4_identities_inside` for position 39 names — **D-321**: 39.58, 39.59, 39.60, 39.61, 39.62, 39.63; **D-323**: 39.76, 39.77, 39.78; **D-327**: 39.103, 39.104, 39.105; **D-537**: 39.108, 39.109; **D-536**: 39.181, 39.182, 39.183, 39.184, 39.185; **D-510**: 39.197, 39.198, 39.199; **D-511**: 39.200, 39.201; **D-220**: 39.246, 39.247; **D-221**: 39.248, 39.249; **D-222**: 39.250; **D-224**: 39.251, 39.252, 39.253; **D-325**: 39.254, 39.255; **D-463**: 39.260, 39.261, 39.262; **D-580**: 39.263, 39.264, 39.265, 39.266, 39.267, 39.268; **D-490**: 39.272, 39.273, 39.274; **D-491**: 39.275, 39.276, 39.277; **D-493**: 39.278, 39.279, 39.280, 39.281; **D-492**: 39.282, 39.283, 39.284; **D-600**: 39.292, 39.293; **D-317**: 39.294, 39.295, 39.296; **D-318**: 39.297, 39.298; **D-319**: 39.299, 39.300, 39.301; **D-320**: 39.302, 39.303. An AGREES on a WITHHELD row: 39.58, 39.59, 39.60, 39.61, 39.62, 39.63, 39.77, 39.181, 39.183, 39.185, 39.249, 39.302. **D-465's home (lines 1238–1250) holds no row**: its label, its three tests — rules of the development process — and its two defenses are listed under *not a statement*.
+- **SEEN rows: none.** The check was made at the homes as the manifest states: none of the eight homes 1(c) names lies
+  in this member's ranges; the two in this document, D-322 and D-223, fall between ranges.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met: 33** — 39.14, 39.16, 39.24, 39.47, 39.58, 39.59, 39.60, 39.61, 39.62, 39.63, 39.134, 39.135, 39.136, 39.137, 39.138, 39.139, 39.140, 39.141, 39.142, 39.143, 39.144, 39.145, 39.146, 39.147, 39.148, 39.149, 39.150, 39.151, 39.152, 39.153, 39.219, 39.310, 39.336. Each says so at the row.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -45724,6 +50476,8 @@ the row says which.
   marked above the chord staff. *(L2-S49 travels with them.)*
 - Row 36.1 — travelling with Row 17.23(ii): the language model receives the analysis and does not derive the harmony
   again from the pitches. *(L2-S49 travels with it.)*
+- Row 39.325(i) — travelling with Row 5.9: cadence detection, planned for the dormant function layer. *(L2-S49 AGREES at
+  the row.)*
 
 **To *the second axis — voice leading*.**
 
@@ -45974,6 +50728,11 @@ the row says which.
   categories, and music21's chord checked against the top two alternatives before a disagreement is declared.
 - Row 33.10 — travelling with Row 24.57: the chord-identity agreement rate, root and quality matching whatever the key,
   computed by hand.
+- Row 39.205 — travelling with Row 9.271: inertness judged on the full output surface, winner and alternatives, never the
+  winner alone.
+- Row 39.291 — travelling with Row 9.59: that counting only the cases a change fires on understates its effect, which is
+  why the regression stop enumerates the added and removed runs rather than counting them.
+- Row 39.318 — travelling with Row 6.156: the regression check run on both presets before a change is committed.
 
 *(Member 1's relocations are the rows numbered 1.n above. Member 2 relocates no row. Member 3 relocates one, Row 3.38,
 above. Member 4's relocations are the rows numbered 4.n above. Member 5's relocations are the rows
@@ -45984,7 +50743,7 @@ numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
 above. Member 31 relocates no row, and member 32's relocations are the rows numbered 32.n above. Member 33's relocations are the rows numbered 33.n
-above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row.)*
+above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -46892,6 +51651,73 @@ rows here, each with its audit question, in the commit that tabulates it.
 - Rows 38.1, 38.2, 38.3 and 38.4 — travelling with Row 23.334 (Rows 38.1 and 38.2 directly, Row 38.3 through Row
   23.337, Row 38.4 through Row 23.336): does the status-display path collect a tick's notes by this traversal at the
   current commit, and does its result reach the record arm?
+- Row 39.1 — which files hold the dormant vertical scorer's code at the current commit, and does the layout this document states still hold?
+- Rows 39.2(ii), 39.3 and 39.4 — travelling with Row 39.1: which files hold the dormant vertical scorer's code at the current commit, and does the layout this document states still hold?
+- Rows 39.5 and 39.6(i) — travelling with Row 3.14: which path produces the committed chord reading on each surface in the default configuration?
+- Rows 39.6(ii), 39.104 and 39.182 — travelling with Row 3.15: is the legacy chord path compiled and unreached on the production arm?
+- Row 39.7 — travelling with Row 20.1, and through it with Row 3.15: is the legacy chord path compiled and unreached on the production arm?
+- Rows 39.8(i), 39.23, 39.326 and 39.341 — travelling with Row 39.7, and through it with Row 20.1: is the legacy chord path compiled and unreached on the production arm?
+- Row 39.9(i) — what does the dormant scorer collect from the sounding notes before it computes its candidate scores — pitch classes or spelled pitches — and with what weights?
+- Row 39.9(ii) — how does the dormant scorer choose its bass candidates at the current commit?
+- Row 39.10 — what unit does the dormant scorer attach a candidate score to, and over what stretch of music?
+- Rows 39.11, 39.50 and 39.131 — travelling with Row 23.23, and through it with Row 9.3: which numeric values of the scoring pipeline at the current commit were chosen by hand, of which kinds, and on which path are they read?
+- Rows 39.12, 39.13, 39.184, 39.327, 39.328, 39.329 and 39.330 — travelling with Row 39.10: what unit does the dormant scorer attach a candidate score to, and over what stretch of music?
+- Row 39.14 — by which sort keys does the dormant scorer rank its candidates at the current commit, and do two readings with equal candidate scores both stay published?
+- Rows 39.15, 39.46, 39.47, 39.48 and 39.49 — travelling with Row 39.14: by which sort keys does the dormant scorer rank its candidates at the current commit, and do two readings with equal candidate scores both stay published?
+- Row 39.16(i) — how many readings does the dormant scorer keep per sonority at the current commit, and what becomes of the readings it does not keep?
+- Row 39.16(ii) — which changes of quality does the dormant scorer make after scoring, and does it keep the reading it changed?
+- Rows 39.17 and 39.19 — travelling with Row 8.125: how many separate computations of the best reading on a different root exist at the current commit, and where?
+- Rows 39.18, 39.186, 39.187, 39.190, 39.191, 39.192, 39.193, 39.195, 39.196, 39.206, 39.207, 39.208, 39.209, 39.210, 39.211, 39.212, 39.213, 39.228, 39.229, 39.230, 39.231, 39.232, 39.233, 39.263(i) and 39.266(i) — travelling with Row 9.15: which post-scoring correction rules does the chord scorer carry at the current commit, and on which path are they reached?
+- Row 39.21 — do the two late promotions run on any path at the current commit, and what do they change?
+- Row 39.22 — travelling with Row 8.119: does the legacy pedal pass exist at the current commit, on which arm does it run, and what does it test to enter?
+- Rows 39.24, 39.134, 39.135, 39.136, 39.137, 39.138, 39.139, 39.140, 39.141, 39.142, 39.143, 39.144, 39.145, 39.146, 39.147, 39.148, 39.149, 39.150, 39.151, 39.152, 39.153, 39.159, 39.160, 39.161, 39.162, 39.163, 39.164, 39.165, 39.166, 39.167, 39.168, 39.169, 39.170, 39.194, 39.219 and 39.310(i) — travelling with Row 9.3: which numeric values of the scoring pipeline at the current commit were chosen by hand, of which kinds, and on which path are they read?
+- Row 39.25 — can the dormant scorer's constants be overridden from a file at the current commit, by which tool, and is an override in use anywhere?
+- Rows 39.26, 39.27 and 39.28(i) — travelling with Row 39.25: can the dormant scorer's constants be overridden from a file at the current commit, by which tool, and is an override in use anywhere?
+- Row 39.29 — which templates does the dormant scorer carry at the current commit, and which chord classes of the derived vocabulary does it lack?
+- Rows 39.30, 39.31, 39.32, 39.33, 39.34, 39.35, 39.36, 39.37, 39.38, 39.39, 39.40, 39.41, 39.42, 39.43, 39.44 and 39.45 — travelling with Row 39.29: which templates does the dormant scorer carry at the current commit, and which chord classes of the derived vocabulary does it lack?
+- Row 39.51 — how does the dormant scorer combine its candidate-score matrices at the current commit, and which of them multiply rather than add?
+- Rows 39.52 and 39.53 — travelling with Row 39.51: how does the dormant scorer combine its candidate-score matrices at the current commit, and which of them multiply rather than add?
+- Row 39.54 — do all of the dormant scorer's template-sized arrays take their size from one constant at the current commit, and how many templates does it hold?
+- Rows 39.55, 39.56, 39.57, 39.242 and 39.243 — travelling with Row 39.54: do all of the dormant scorer's template-sized arrays take their size from one constant at the current commit, and how many templates does it hold?
+- Row 39.64 — on what conditions does the dormant scorer's diminished-seventh bonus fire at the current commit, and on which path is it read?
+- Rows 39.65, 39.66, 39.67 and 39.234 — travelling with Row 39.64: on what conditions does the dormant scorer's diminished-seventh bonus fire at the current commit, and on which path is it read?
+- Row 39.72 — which of the dormant scorer's terms read the tonality or the key signature at the current commit, and what does each test?
+- Rows 39.73, 39.74 and 39.75 — travelling with Row 39.72: which of the dormant scorer's terms read the tonality or the key signature at the current commit, and what does each test?
+- Row 39.78 — do the dormant scorer's diatonicity flag and the two gates' diatonicity checks still test membership through the tonic at the current commit?
+- Row 39.85 — do Gate G-E and the sparse-chord tonic prior decide a committed chord from a degree at the current commit, on which path, and how often?
+- Row 39.86 — travelling with Row 39.85: do Gate G-E and the sparse-chord tonic prior decide a committed chord from a degree at the current commit, on which path, and how often?
+- Row 39.87(i) — how many definitions of a chord's degree does the code carry at the current commit, on which paths, and where do they disagree?
+- Rows 39.90, 39.91, 39.92, 39.93, 39.94(i), 39.95, 39.96, 39.97, 39.98, 39.99, 39.100, 39.102(ii), 39.103(i), 39.105 and 39.107 — travelling with Row 9.18: what does the bass-chord-tone guard test inside template scoring at the current commit, and on which path does it act?
+- Row 39.106 — travelling with Row 39.57, and through it with Row 39.54: do all of the dormant scorer's template-sized arrays take their size from one constant at the current commit, and how many templates does it hold?
+- Rows 39.108 and 39.109 — travelling with Row 23.89, and through it with Row 9.3: which numeric values of the scoring pipeline at the current commit were chosen by hand, of which kinds, and on which path are they read?
+- Row 39.110 — which guards restrict the dormant scorer's step bonuses at the current commit, and on which path are the bonuses read?
+- Rows 39.111, 39.112, 39.113, 39.114 and 39.238 — travelling with Row 39.110: which guards restrict the dormant scorer's step bonuses at the current commit, and on which path are the bonuses read?
+- Row 39.115 — on what conditions do the dormant scorer's descending-fifth and leading-tone bonuses fire at the current commit, and what do they read?
+- Rows 39.116, 39.117, 39.118, 39.119, 39.120, 39.121(i), 39.121(ii), 39.122, 39.123, 39.124, 39.125, 39.126 and 39.127 — travelling with Row 39.115: on what conditions do the dormant scorer's descending-fifth and leading-tone bonuses fire at the current commit, and what do they read?
+- Rows 39.128, 39.129, 39.130, 39.132(ii), 39.133, 39.239, 39.240 and 39.241 — travelling with Row 21.12: does the legacy greedy segmentation run exploratory passes with the progression signals withheld, and does it run on any production path at the current commit?
+- Rows 39.154, 39.155, 39.157 and 39.158 — travelling with Row 39.142, and through it with Row 9.3: which numeric values of the scoring pipeline at the current commit were chosen by hand, of which kinds, and on which path are they read?
+- Row 39.173 — when does the dormant scorer turn on its joint bass-and-chord scoring at the current commit, and on which path?
+- Rows 39.174, 39.251, 39.252 and 39.253 — travelling with Row 39.173: when does the dormant scorer turn on its joint bass-and-chord scoring at the current commit, and on which path?
+- Row 39.175 — which lowest notes count as a structural bass for the dormant scorer at the current commit, and what does that test gate?
+- Rows 39.176(i), 39.176(ii), 39.248 and 39.249 — travelling with Row 39.175: which lowest notes count as a structural bass for the dormant scorer at the current commit, and what does that test gate?
+- Row 39.177 — where does the dormant path compute its inversion bonuses at the current commit, and how are they combined and capped?
+- Rows 39.178, 39.179, 39.180, 39.342, 39.343 and 39.344 — travelling with Row 39.177: where does the dormant path compute its inversion bonuses at the current commit, and how are they combined and capped?
+- Row 39.199 — which promotion idiom does the dormant scorer use at the current commit, and does its carry keep the reading it displaces?
+- Rows 39.200 and 39.201 — travelling with Row 39.199: which promotion idiom does the dormant scorer use at the current commit, and does its carry keep the reading it displaces?
+- Rows 39.220, 39.221, 39.222 and 39.224 — travelling with Row 39.219, and through it with Row 9.3: which numeric values of the scoring pipeline at the current commit were chosen by hand, of which kinds, and on which path are they read?
+- Row 39.225 — do Gates H, I and L read the winner live or from the captured snapshot at the current commit, and can the two refer to different candidates?
+- Rows 39.226 and 39.227 — travelling with Row 39.225: do Gates H, I and L read the winner live or from the captured snapshot at the current commit, and can the two refer to different candidates?
+- Row 39.246 — travelling with Row 39.39, and through it with Row 39.29: which templates does the dormant scorer carry at the current commit, and which chord classes of the derived vocabulary does it lack?
+- Rows 39.250(i) and 39.250(ii) — travelling with Row 39.122, and through it with Row 39.115: on what conditions do the dormant scorer's descending-fifth and leading-tone bonuses fire at the current commit, and what do they read?
+- Row 39.261 — which signals that look backward or forward in time does the dormant vertical scorer compute at the current commit?
+- Rows 39.269, 39.270 and 39.271 — travelling with Row 4.3(i): do the two override instances exist on the dormant function layer, and does either run?
+- Row 39.292 — travelling with Row 39.16(ii): which changes of quality does the dormant scorer make after scoring, and does it keep the reading it changed?
+- Row 39.312 — which terms of the dormant scorer are conditioned on a template's quality at the current commit, and on which qualities?
+- Rows 39.313, 39.314, 39.315, 39.316 and 39.317 — travelling with Row 39.312: which terms of the dormant scorer are conditioned on a template's quality at the current commit, and on which qualities?
+- Row 39.319 — where does the dormant harmonic-function pass sit at the current commit, what does it read, and what does it decide?
+- Rows 39.320, 39.322 and 39.323 — travelling with Row 39.319: where does the dormant harmonic-function pass sit at the current commit, what does it read, and what does it decide?
+- Row 39.331 — which steps does the dormant competition pipeline run at the current commit, and in what order?
+- Rows 39.332, 39.333, 39.334, 39.335, 39.336, 39.337 and 39.338 — travelling with Row 39.331: which steps does the dormant competition pipeline run at the current commit, and in what order?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -47002,6 +51828,10 @@ words.
   removed.
 - Row 23.38 — travelling with Row 9.35, and through it with Row 1.25: that L2's weights be fitted per idiom and never
   adjusted for a named preset.
+- Row 39.77(ii) — that any term of L2 asking whether a pitch belongs to a span's tonality ask it of the tonality's
+  collection, never compute it from the tonic and a scale laid out from it.
+- Row 39.197 — that the rivals L2 publishes beside its principal reading be distinct readings, never a near-copy of the
+  principal.
 
 **DIFFERS.**
 
@@ -47643,6 +52473,31 @@ words.
   *"A mode other than these is not admitted until the question is ruled (OQ-L2-2)."*
 - Row 38.4 — as at Row 23.336: the outgoing rule is *"Always exclude grace notes"*; L2-S26 says grace notes *"are evidence
   for the assignment of their host and for the chord"*.
+- Row 39.7 — as at Row 20.1: the outgoing scorer goes from *"pitch-class evidence → chord identity"*; L2-S30 says *"No
+  chord term decides a chord from the pitch-class content of the span alone."*
+- Row 39.9(i) — the outgoing builds *"a 12-element pitch-class weight histogram"*; L2-S32 rates how the events fit *"the
+  chord in its spelled form"*.
+- Row 39.10 — the outgoing computes a candidate score *"For each `(rootPc, templateIdx, bassPc)` triple"*; L2-S1 says
+  *"The search's unit is the whole reading, not a span."*
+- Rows 39.11, 39.50, 39.89, 39.131, 39.141 and 39.331 — as at Row 23.23: the outgoing rewards the root continuing — *"root
+  continuity"*, *"Inverted candidate whose root matches the previous region's root"*; L2-S34 says *"So no progression term
+  may reward mere persistence of the root."*
+- Rows 39.16(i) and 39.336 — the outgoing keeps *"up to 3 `ChordAnalysisResult` entries"*, a *"cap 3"*; L2-S42 withholds a
+  rival only *"below a declared threshold"*, the threshold and the withheld mass published with the rivals.
+- Row 39.23 — the outgoing analyzer *"does not know about secondary dominants, modulation"*; L2-S18 says *"Both readings are
+  admitted, and both are carried as rivals with their mass."*
+- Rows 39.24, 39.134 to 39.153, 39.219 and 39.310(i) — as at Row 9.3: the outgoing scoring constants are *"hand-chosen"*,
+  each value set by hand; L2-S38 says *"Every weight of the candidate score is fitted from annotated music, not set by
+  hand."*
+- Rows 39.36, 39.40, 39.41, 39.42, 39.43 and 39.44 — the outgoing carries suspended chords as templates of their own, such
+  as *"Sus4 + m7 (C7sus / C7sus4)"*; L2-S1 reads a suspension written into the chord label as *"one chord plus an
+  elaboration assignment"*.
+- Rows 39.119, 39.120 and 39.127 — the outgoing bonuses test root intervals alone, such as *"`(nextRootPc - candRootPc) mod
+  12 == 5`"*; L2-S34 is falsified *"if the progression term reads root intervals without the tonality"*.
+- Row 39.133 — as at Row 23.314: the outgoing computes the chord's candidate score in final calls made *"after segmentation
+  returns boundaries"*; L2-S11 says the boundary *"is never decided before the chord or after it"*.
+- Row 39.269 — as at Row 4.3: the outgoing pass *"overturns a committed chord when the surrounding progression argues
+  against it"*; L2-S35 says *"No span's alternatives are normalised against each other alone."*
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -47692,10 +52547,11 @@ own distribution table in §6.
 | 36 | 1 | 0 | 0 | 1 | 0 | 0 | 0 | 0 | 8 |
 | 37 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 9 |
 | 38 | 4 | 0 | 0 | 0 | 4 | 0 | 0 | 0 | 16 |
-| **Total** | **3392** | **412** | **86** | **495** | **1149** | **0** | **974** | **276** | **1655** |
+| 39 | 366 | 17 | 2 | 4 | 246 | 0 | 97 | 0 | 173 |
+| **Total** | **3758** | **429** | **88** | **499** | **1395** | **0** | **1071** | **276** | **1828** |
 
-**The arithmetic check:** 412 + 86 + 495 + 1149 + 0 + 974 + 276 = 3392, against 3392 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4).
+**The arithmetic check:** 429 + 88 + 499 + 1395 + 0 + 1071 + 276 = 3758, against 3758 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366).
 
 **Current-text verdicts.**
 
@@ -47739,10 +52595,11 @@ own distribution table in §6.
 | 36 | 1 | 0 | 0 | 1 |
 | 37 | 0 | 0 | 0 | 0 |
 | 38 | 0 | 1 | 3 | 4 |
-| **Total** | **629** | **627** | **2184** | **3440** |
+| 39 | 36 | 46 | 286 | 368 |
+| **Total** | **665** | **673** | **2470** | **3808** |
 
-**The arithmetic check:** 629 + 627 + 2184 = 3440 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4).
+**The arithmetic check:** 665 + 673 + 2470 = 3808 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368).
 
 ## 14. The derivation's independence record, relayed
 
@@ -47773,4 +52630,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 38 are done, positions 39 to 62 are untouched.
+  untouched: positions 1 to 39 are done, positions 40 to 62 are untouched.
