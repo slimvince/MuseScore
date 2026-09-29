@@ -27226,8 +27226,9 @@ L2-S31 and L2-S38 both DIFFERS.)* DIFFERS: 9.3, 9.25, 9.49, 9.108, 9.160(ii), 9.
 > `tools/audit/decisions/backbone_decisions.json`, and located that way **two of the eight lie in this member:
 > D-002, homed at `ARCHITECTURE.md:21-22`, and D-095, homed at `ARCHITECTURE.md:43-44`.** Both are marked below as
 > *SEEN — §6.3 entry 4*. The other six are homed outside `ARCHITECTURE.md`. *(The same located check places D-279's
-> home, `cowork_engage_arc_plan.md:69-72`, inside position 15, whose committed foot says no SEEN home lies there;
-> that member is not re-opened, and the report names it as a finding of this run.)*
+> home, `cowork_engage_arc_plan.md:69-72`, inside position 15. When this member was written, member 15's manifest and
+> foot said no SEEN home lies there; the sixth batch's correction commit `5aea89048e5d4f9f7812b4303b7f2247ce514618`
+> brought its manifest, its foot and Row 15.19 true, and re-opened nothing else of that member.)*
 
 ---
 
@@ -32946,6 +32947,12 @@ regressions." — §3.3, D-GAP (locator: lines 2426–2427).
 94. "#### D-GAP — `inferGapRegion` analyzed gap slices with default prefs regardless of caller" (2422) — *a heading*;
     its claim is stated by Row 22.129.
 95. "**Facts.**" (2424) — *a label*.
+
+*Items 27, 30, 60 and 94 are headings, listed here in departure from reading rule (1) at the head of §6, under which a
+heading is neither tabulated nor listed. They are kept, and counted in this list's 95, so that the item numbers the
+marks below cite stay as they are; no statement, disposition or verdict of this member depends on them. (The sixth
+batch's report, §7, finding 1, named three of them; the fourth was found at the file by the writing side of the
+seventh batch's dispatch.)*
 
 #### The arithmetic at this member
 
