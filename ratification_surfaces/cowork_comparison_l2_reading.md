@@ -72,7 +72,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 28 | `ARCHITECTURE.md` passages — *9. The Constraint System* | **DONE** (§6.28) |
 | 29 | `ARCHITECTURE.md` passages — *10. Visualization* | **DONE** (§6.29) |
 | 30 | `ARCHITECTURE.md` passages — *11. Intonation* | **DONE** (§6.30) |
-| 31 | `ARCHITECTURE.md` passages — *12. User Interface* | NOT YET TABULATED |
+| 31 | `ARCHITECTURE.md` passages — *12. User Interface* | **DONE** (§6.31) |
 | 32 | `ARCHITECTURE.md` passages — *14. ML Readiness* | NOT YET TABULATED |
 | 33 | `ARCHITECTURE.md` passages — *15. Development Phases* | NOT YET TABULATED |
 | 34 | `ARCHITECTURE.md` passages — *16. Scope Reference* | NOT YET TABULATED |
@@ -107,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 30 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 31 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, and the `ARCHITECTURE.md` passages under *11. Intonation*.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, and the `ARCHITECTURE.md` passages under *12. User Interface*.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 30 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 31 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -141,8 +141,8 @@ batch's close still to run, and was not opened. The sixth batch, under
 positions 23 to 28, each whole and in its own commit, and stopped at the member boundary after position 28 under that
 dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finishable together with the batch's close in
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 30, each whole and in its own commit. **Positions 31 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 31**, `ARCHITECTURE.md` passages — *12. User Interface*. §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 31, each whole and in its own commit. **Positions 32 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 32**, `ARCHITECTURE.md` passages — *14. ML Readiness*. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -44210,6 +44210,99 @@ at each boundary"*; L2-S11 says the boundary *"is never decided before the chord
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S22 (entry 4) — 30.75. No row of this
   member names L2-S31, L2-S17, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
 
+---
+
+### 6.31 — Member 31: `ARCHITECTURE.md`, passages — *12. User Interface*
+
+> **Manifest for this member.** Position **31**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: *"## 12. User Interface"*. **The one published range**, as a locator only, by its
+> first and last line as the artifact publishes them (**D-307**): lines 7544–7552, from *"| Action ID | Label | Registered
+> at | What it writes |"* to the line opening *"| `compose-tune-as` | *(one entry per analyzed reading, under a"* and
+> closing *"retunes the selected note's chord as the chosen reading |"*.
+>
+> **Both lines matched the file** at the object this batch read, with no trailing carriage return to set aside; the
+> member has one range, so no line lies between ranges. **No line inside the range is a heading.** Outgoing statements:
+> **0**. Listed under *not a statement*: **8**. Counted at this member by this session; the counts appear here and
+> nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** The table of §12.1b's menu actions: each
+> row names an action, its label, where it is registered and what it writes into the score — the analyzed chord symbol,
+> Roman numeral or Nashville number, singly or across a selection, and the retuning of the selected note's chord. **The
+> placement readings are those of the earlier members, applied unchanged**: a statement about a product tool outside the
+> analysis — here the menus — is listed under *not a statement*, the fifth batch's reading, and a table's header is
+> listed. No line states what the analysis does, must do, may assume or must not do, so the member places no outgoing
+> statement. **No reading is new at this member.**
+>
+> **The WITHHELD homes inside this member**: none — the artifact's `item_4_identities_inside` for position 31 is
+> empty, and a check at `tools/audit/decisions/backbone_decisions.json` found no decision homed in lines 7544–7552.
+> **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes lies in this member —
+> the two in `ARCHITECTURE.md`, D-002 and D-095, lie at lines 21–22 and 43–44.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (8)
+
+1. "| Action ID | Label | Registered at | What it writes | |---|---|---|---|" (7544–7545) — *a table header*.
+2. "| `add-chord-symbol-from-analysis` | Add chord symbol | `notationuiactions.cpp:1402` | the analyzed chord symbol at the
+   selected element |" (7546) — *a statement about a product tool outside the analysis* — the menus.
+3. "| `add-roman-numeral-from-analysis` | Add Roman numeral | `:1408` | the analyzed Roman numeral at the selected element |"
+   (7547) — *a statement about a product tool outside the analysis* — the menus.
+4. "| `add-nashville-number-from-analysis` | Add Nashville number | `:1414` | the analyzed Nashville number at the selected
+   element |" (7548) — *a statement about a product tool outside the analysis* — the menus.
+5. "| `add-chord-symbols-to-selection` | Add chord symbols to selection | `:1420` | chord symbols across the whole selection
+   |" (7549) — *a statement about a product tool outside the analysis* — the menus.
+6. "| `add-roman-numerals-to-selection` | Add Roman numerals to selection | `:1426` | Roman numerals across the whole
+   selection |" (7550) — *a statement about a product tool outside the analysis* — the menus.
+7. "| `add-nashville-numbers-to-selection` | Add Nashville numbers to selection | `:1432` | Nashville numbers across the
+   whole selection |" (7551) — *a statement about a product tool outside the analysis* — the menus.
+8. "| `compose-tune-as` | *(one entry per analyzed reading, under a "Tune as ⟨system⟩" submenu)* | built in
+   `notationcontextmenumodel.cpp:174`, handled at `notationactioncontroller.cpp:387` | retunes the selected note's chord
+   as the chosen reading |" (7552) — *a statement about a product tool outside the analysis* — the menus and the tuning
+   tools.
+
+#### The arithmetic at this member
+
+- Rows written: **0**.
+- **Outgoing statements placed: 0.**
+- Listed under *not a statement*: **8** — every line of the one range, the header's two lines as one item.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 0 dispositions over 0
+  statements.
+- **UNPLACED at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **0** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 0 + 0 + 0 + 0 + 0 = 0, against 0 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **0** |
+
+*(0 verdicts over 0 statements; no statement names two derived statements.)* DIFFERS: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 31 is empty, and no decision is
+  homed in these lines.
+- **SEEN rows: none.** The check was made at the homes as the manifest states: none of the eight homes 1(c) names lies
+  in this member's ranges.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** none; the member has no row.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -44644,7 +44737,7 @@ the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows
 numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows numbered 17.n. Member 18 relocates no row. Member 19 relocates no row. Member 20 relocates no row, member 21's the rows numbered 21.n, member 22's the rows numbered 22.n, member 23's the rows
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
-above.)*
+above. Member 31 relocates no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -46327,10 +46420,11 @@ own distribution table in §6.
 | 28 | 2 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 5 |
 | 29 | 31 | 0 | 0 | 0 | 14 | 0 | 17 | 0 | 13 |
 | 30 | 87 | 0 | 0 | 6 | 64 | 0 | 17 | 0 | 148 |
-| **Total** | **3351** | **411** | **86** | **480** | **1140** | **0** | **960** | **274** | **1597** |
+| 31 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 8 |
+| **Total** | **3351** | **411** | **86** | **480** | **1140** | **0** | **960** | **274** | **1605** |
 
 **The arithmetic check:** 411 + 86 + 480 + 1140 + 0 + 960 + 274 = 3351, against 3351 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87).
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0).
 
 **Current-text verdicts.**
 
@@ -46366,10 +46460,11 @@ own distribution table in §6.
 | 28 | 0 | 0 | 2 | 2 |
 | 29 | 0 | 1 | 30 | 31 |
 | 30 | 8 | 9 | 70 | 87 |
+| 31 | 0 | 0 | 0 | 0 |
 | **Total** | **627** | **624** | **2148** | **3399** |
 
 **The arithmetic check:** 627 + 624 + 2148 = 3399 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87).
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0).
 
 ## 14. The derivation's independence record, relayed
 
@@ -46400,4 +46495,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 30 are done, positions 31 to 62 are untouched.
+  untouched: positions 1 to 31 are done, positions 32 to 62 are untouched.
