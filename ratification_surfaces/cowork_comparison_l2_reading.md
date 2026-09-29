@@ -71,7 +71,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 27 | `ARCHITECTURE.md` passages — *8. Planned Generation Components* | **DONE** (§6.27) |
 | 28 | `ARCHITECTURE.md` passages — *9. The Constraint System* | **DONE** (§6.28) |
 | 29 | `ARCHITECTURE.md` passages — *10. Visualization* | **DONE** (§6.29) |
-| 30 | `ARCHITECTURE.md` passages — *11. Intonation* | NOT YET TABULATED |
+| 30 | `ARCHITECTURE.md` passages — *11. Intonation* | **DONE** (§6.30) |
 | 31 | `ARCHITECTURE.md` passages — *12. User Interface* | NOT YET TABULATED |
 | 32 | `ARCHITECTURE.md` passages — *14. ML Readiness* | NOT YET TABULATED |
 | 33 | `ARCHITECTURE.md` passages — *15. Development Phases* | NOT YET TABULATED |
@@ -107,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 29 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 30 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, and the `ARCHITECTURE.md` passages under *10. Visualization*.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, and the `ARCHITECTURE.md` passages under *11. Intonation*.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 29 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 30 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -141,8 +141,8 @@ batch's close still to run, and was not opened. The sixth batch, under
 positions 23 to 28, each whole and in its own commit, and stopped at the member boundary after position 28 under that
 dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finishable together with the batch's close in
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated position 29 whole in its own commit. **Positions 30 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 30**, `ARCHITECTURE.md` passages — *11. Intonation*. §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 30, each whole and in its own commit. **Positions 31 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 31**, `ARCHITECTURE.md` passages — *12. User Interface*. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -42571,6 +42571,1645 @@ Functional Harmony Map* (locator: line 6180).
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
   L2-S17, L2-S22, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
 
+---
+
+### 6.30 — Member 30: `ARCHITECTURE.md`, passages — *11. Intonation*
+
+> **Manifest for this member.** Position **30**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: *"## 11. Intonation"*. **The sixty-eight published ranges**, each as a locator only,
+> by its first and last line as the artifact publishes them (**D-307**); where a boundary line is too long to repeat, it
+> is given by its opening and closing words:
+>
+> 1. lines 6235–6242, from *"| System | Description | Primary use |"* to the line opening *"| Well temperament | All
+>    keys usable, each slightly different"* and closing *"Kirnberger, Werckmeister | Bach period |"*;
+> 2. lines 6284–6289, from *"**Tonic-anchored tuning** (`tonicAnchoredTuning`, default on): when enabled, each
+>    chord"* to *"by the bridge from `keyFifths` + `keyMode` using `keyModeTonicOffset()`."*;
+> 3. lines 6299–6309, from *"**Allow split/slurring of sustained events for retuning**"* to *"remains one tuning
+>    event in both modes."*;
+> 4. lines 6311–6315, from *"**Anchor override:** anchor expressions (`alt. rif.` and the other Italian forms)"* to
+>    *"tie chain, the chain remains one protected written-duration event."*;
+> 5. lines 6319–6324, from *"The current tuning implementation computes offsets independently per note against"* to
+>    *"pitch movement between successive chords)."*;
+> 6. lines 6342–6346, from *"The key design concept across all methods is **per-voice anchor weight**: outer"* to
+>    *"solved pitches — tying naturally into the harmonic rhythm regions."*;
+> 7. lines 6348–6352, from *"This would evolve the `TuningSystem` interface from independent per-note offsets"* to
+>    *"records the design space for future exploration."*;
+> 8. lines 6389–6393, from *"The drift manager:"* to *"- Respects a configurable drift budget per section"*;
+> 9. lines 6400–6403, from *"The current tuning implementation applies fixed offsets relative to a single reference"*
+>    to *"equals zero."*;
+> 10. lines 6420–6422, from *"**Implementation:** After computing raw just intonation offsets for all sounding
+>     voices,"* to *"offsets that sum to zero."*;
+> 11. lines 6458–6460, from *"**Bass weight by inversion:** The bass voice weight is further modified by the
+>     chord's"* to *"harmonic root:"*;
+> 12. lines 6462–6467, from *"| Inversion | Bass note | Anchor strength | Weight (example) |"* to *"| Third inversion
+>     | seventh in bass | very weak | very low (e.g. 0.8) |"*;
+> 13. lines 6469–6471, from *"In inverted chords, the acoustic anchor is the harmonic root even if it is not the
+>     lowest"* to *"just the bass note."*;
+> 14. lines 6473–6475, from *"**Pedal points** — a bass note sustained while harmony changes above it — receive
+>     maximum"* to *"musical context."*;
+> 15. lines 6483–6485, from *"Not all notes should be retuned equally freely. The system must respect that notes
+>     which"* to *"retuning them mid-sustain is audible as a wobble or portamento."*;
+> 16. lines 6487–6490, from *"Rather than discrete protection classes, the system uses a **maximum adjustment
+>     budget** —"* to *"musical context."*;
+> 17. lines 6508–6515, from *"- Note is an **avoid note** in the new harmony → increase budget by 50% (the
+>     dissonance"* to *"decrease budget by 70% (breaking a locked resonance is very audible)"*;
+> 18. lines 6519–6523, from *"**Sustained perfect fifth or octave pairs:** Two notes a perfect fifth or octave
+>     apart"* to *"note should be split; the new voices tune to them."*;
+> 19. lines 6540–6543, from *"**Unisons and octaves across voices:** Two or more notes sounding the same pitch
+>     class"* to *"both. Neither can be tuned independently."*;
+> 20. lines 6596–6605, from *"**Rules for anchor notes:**"* to *"on the same staff are not automatically anchored."*;
+> 21. lines 6614–6627, from *"**Implementation:**"* to *"future addition)"*;
+> 22. lines 6667–6668, from *"Putting the above together, the tuning algorithm for a harmonic region boundary
+>     proceeds as"* to *"follows:"*;
+> 23. lines 6670–6673, from *"**Step 1 — Classify all sounding notes by susceptibility**"* to *"(tied, unison pair,
+>     sustained fifth/octave pair)."*;
+> 24. lines 6683–6686, from *"**Step 4 — Apply weighted zero-sum centering**"* to *"calculation. Apply the correction
+>     so the sum of all non-anchor offsets equals zero."*;
+> 25. lines 6697–6704, from *"**Step 7 — Determine which notes need splits**"* to *"(§11.4) for all notes requiring
+>     independent playback events."*;
+> 26. lines 6713–6717, from *"**TonicAnchored (default):** Each harmonic region independently computes offsets"* to
+>     *"the correct offset for its region. Drift does not accumulate across regions."*;
+> 27. lines 6733–6738, from *"**`alt. rif.` anchor notes in FreeDrift:** Unlike in TonicAnchored mode (where"* to
+>     *"selection and annotated with a `*` suffix in cent annotations."*;
+> 28. lines 6740–6748, from *"**Key differences from TonicAnchored:**"* to *"as a fresh TonicAnchored computation
+>     without the rootOffset term)."*;
+> 29. lines 6750–6756, from *"**Drift boundary annotation (`annotateDriftAtBoundaries`, default off):**"* to
+>     *"intonation resets at structural boundaries."*;
+> 30. lines 6825–6851, from *"```cpp"* to *"```"*;
+> 31. lines 6861–6867, from *"```text"* to *"```"*;
+> 32. lines 6871–6875, from *"When `FullChordPurity` or `Automatic` is active, a second sub-preference becomes"* to
+>     *"independently:"*;
+> 33. lines 6877–6893, from *"```cpp"* to *"```"*;
+> 34. lines 6913–6920, from *"- Identify each note's harmonic function within the chord."* to *"target)."*;
+> 35. lines 6950–6955, from *"Applying a non-equal temperament writes cent deviations to individual notes via"* to
+>     *"from when it first attacked."*;
+> 36. lines 7027–7028, from *"Returns `false` when the selected note is invisible (no-op) or when fewer than 3"* to
+>     *"distinct pitch classes are sounding (insufficient data for chord identification)."*;
+> 37. lines 7032–7044, from *"**Status: Implemented, and running the RECORD path since the notation switch
+>     (2026-07-27).**"* to *"record of what that arm does."*;
+> 38. lines 7046–7049, from *"Single-note analysis (status bar display, single-chord tuning) is the foundation."* to
+>     *"passage."*;
+> 39. lines 7091–7096, from *"- **Grand staff** (e.g., piano, organ): root on the bass staff, upper-structure"* to
+>     *"structure combined.  The user's instrument choice drives the output."*;
+> 40. lines 7098–7103, from *"#### Harmonic rhythm detection"* to *"stops a note.  Each such tick is a potential
+>     chord boundary."*;
+> 41. lines 7105–7111, from *"Chord analysis runs at each boundary tick. In the default smoothed mode,"* to *"region
+>     start."*;
+> 42. lines 7113–7116, from *"The result is a sequence of harmonic regions, each with:"* to *"- Key/mode analysis
+>     result"*;
+> 43. lines 7122–7125, from *"**Treble clef (staff 1):** Upper-structure chord tones in close position, placed"* to
+>     *"close-position default."*;
+> 44. lines 7133–7138, from *"**Chord function notation** attached below the treble staff — either"* to *"redundant
+>     and legibility-destroying."*;
+> 45. lines 7140–7141, from *"**Key/mode annotations** written as staff text at key region boundaries —"* to
+>     *"controlled by the "Write key/mode annotations" preference."*;
+> 46. line 7148 — one line, *"Given a chord analysis result with root pitch class and chord tones:"*;
+> 47. lines 7169–7175, from *"1. **Grand staff separation** — root on the bass staff, upper structure on treble."* to
+>     *"voicing generator, but the analysis-first workflow is new."*;
+> 48. lines 7179–7184, from *"Single-note analysis requires a selected note as the anchor.  Region analysis does"* to
+>     *"ticks where the target staff has a rest."*;
+> 49. line 7210 — one line, *"**Non-diatonic chord highlighting** (ready to implement)"*;
+> 50. lines 7212–7216, from *"Chords where `ChordAnalysisResult.diatonicToKey` is `false` receive distinct visual"*
+>     to *"computed."*;
+> 51. lines 7223–7226, from *"- Same `keySignatureFifths`, different `isMajor` → "→ relative minor" / "→ relative
+>     major""* to *"- Other differences → circle of fifths distance stated: "→ mediant (E major)""*;
+> 52. lines 7228–7229, from *"All relationships are pure arithmetic on `keySignatureFifths`, `tonicPc`, and `isMajor`
+>     —"* to *"no additional analysis required."*;
+> 53. lines 7241–7243, from *"- Roman/Nashville function labels are written only when confidence is at least 0.5"* to
+>     *"and cadence markers are written only when confidence is at least 0.8"*;
+> 54. lines 7251–7255, from *"When a chord is non-diatonic to the current inferred key, a small annotation
+>     identifies"* to *"key. Requires the chord dictionary and scale/mode dictionary (§7.1, §7.2) to be populated."*;
+> 55. line 7259 — one line, *"Detected cadences annotated above the chord track staff at phrase boundaries:"*;
+> 56. lines 7261–7264, from *"- Authentic (V→I): Roman numeral sequence in the inferred key"* to *"- Plagal (IV→I):
+>     subdominant to tonic"*;
+> 57. lines 7266–7269, from *"Basic detection uses a heuristic: cadential chord pairs followed by a significant
+>     harmonic"* to *"harmonic rhythm regions already computed."*;
+> 58. line 7271 — one line, *"**Modulation path annotation** (basic version ready)"*;
+> 59. line 7273 — one line, *"At key region boundaries, annotate the pivot chord when one exists:"*;
+> 60. lines 7277–7281, from *"Implementation: the last chord before the key boundary that is diatonic to both the
+>     old"* to *"detection is a future refinement."*;
+> 61. lines 7283–7286, from *"### Annotate path annotation layers (Roman numeral mode)"* to *"numeral mode, the
+>     following layers are written as StaffText annotations:"*;
+> 62. lines 7288–7299, from *"- Chord symbols"* to *"requires standalone implementation first)"*;
+> 63. lines 7301–7302, from *"Nashville annotation mode emits chord symbols and Nashville numbers only."* to *"No
+>     cadence markers, no pivot labels, no tonicization labels."*;
+> 64. lines 7312–7320, from *"**Pivot detection** (`detectPivotChords`): scans for assertive key"* to *"numeral mode;
+>     no annotations written outside the selection boundary."*;
+> 65. lines 7337–7339, from *"**Tension curve strip** — a small graph below the chord track staff showing harmonic"*
+>     to *"to the tension curve editor (§12.4) when implemented."*;
+> 66. lines 7344–7345, from *"**Harmonic rhythm emphasis** — visual weight on chord blocks proportional to harmonic"*
+>     to *"rhythm density, making acceleration toward cadences immediately visible."*;
+> 67. lines 7401–7405, from *"- **Single note** — tune that note using the harmonic context at its tick (the"* to *"-
+>     **Whole staff or Ctrl+A** — same as range, applied to the full extent."*;
+> 68. lines 7417–7435, from *"1. **Harmonic rhythm detection** — same scan as §11.5: identify every tick in the"* to
+>     *"even when some members lie outside the selection."*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside. **The lines between the ranges are outside the member** and are not tabulated, quoted or listed.
+> **Two lines inside the ranges are headings** — lines 7098 and 7283, each the first line of its range — and under the
+> first reading rule of §6 they are titles, neither tabulated nor listed. Outgoing statements: **87** (rows 30.1 to
+> 30.81; 6 of those rows carry two or more claims each and are split — the arithmetic is at the foot of this member).
+> Listed under *not a statement*: **148**. Counted at this member by this session; the counts appear here and nowhere
+> else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of §11: the tuning systems, the
+> tuning preferences, the adaptive-tuning design space, drift management, zero-sum and weighted centering, retuning
+> susceptibility and the tuning anchors, the complete tuning algorithm, the drifting variant, harmonic priority in just
+> intonation, and the score mutation that applies a tuning, all of which is about the tuning tools; then §11.5, the
+> region analysis and the chord track — its status and the correction of 2026-08-02, the region machinery the text
+> retains as the record of the legacy arm, the chord track's output, the relation to MuseScore's own chord-symbol
+> realization, the analysis at a rest, the planned additional annotations of the chord track, and the annotate path's
+> layers with its pivot detection; and §11.6, the region tuning's scoping and algorithm. **The placement readings are
+> those of the earlier members, applied unchanged**: a statement about a product tool outside the analysis — here the
+> tuning tools and the preferences — is listed under *not a statement*, the fifth batch's reading; a description of the
+> implementation, and presentation code, are QUARANTINED, the chord-staff writer's rows travelling with Row 20.5 and
+> the harmonic-rhythm component's with Row 20.4; a build state, a plan or a status is HISTORICAL; an item of a plan is
+> placed by what it names, member 24's first reading — the cadence types by their content, RELOCATED to *L3 — The
+> read-off facts* with Row 5.9, and the inferred voicing by its content, RELOCATED to *the second axis — voice leading*
+> with Row 21.67; a table's header, a label, a defense and the document's account of itself are listed under *not a
+> statement*; and a later statement of content an earlier row carries travels with the earliest row carrying it. **One
+> reading is new at this member and is stated so it can be checked**: the two code blocks and the text block of §11.3g
+> declare the tuning tools' own types and display, and each of their lines is listed under *not a statement* as a
+> statement about a product tool outside the analysis — the tuning tools — the fifth batch's reading governing them, as
+> member 23's second reading listed the lines naming a preference; member 23's code-line reading, written for the
+> analysis's own code, is not applied to them.
+>
+> **The WITHHELD homes inside this member**: none — the artifact's `item_4_identities_inside` for position 30 is empty.
+> A check at `tools/audit/decisions/backbone_decisions.json` found one decision homed inside these ranges — D-248, at
+> lines 7294–7296, inside range 62, the home of Row 30.67 — which is not among the decisions ruled L2's own, so no row
+> is marked. **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes lies in this
+> member — the two in `ARCHITECTURE.md`, D-002 and D-095, lie at lines 21–22 and 43–44.
+
+---
+
+**Row 30.1 — the tuning bridge fills the key result's tonic and mode from the signature's fifths and a mode.**
+
+*Outgoing statement.* "`KeyModeAnalysisResult.tonicPc` and `.mode` are populated by the bridge from `keyFifths` + `keyMode` using
+`keyModeTonicOffset()`." — §11.2a *Tuning System Preference* (locator: lines 6288–6289).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* from what does the tuning bridge fill the key result's tonic and
+mode at the current commit — the signature's fifths with a mode, or the analysis's own tonality — and does any analysis read
+that result?
+
+---
+
+**Row 30.2 — the tuning path declines where fewer than three distinct pitch classes sound.**
+
+*Outgoing statement.* "Returns `false` when the selected note is invisible (no-op) or when fewer than 3 distinct pitch classes
+are sounding (insufficient data for chord identification)." — §11.4 *Score Mutation for Tuning Application*, *Bridge
+function* (locator: lines 7027–7028).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **DIFFERS** — as at Row 23.300(ii).
+
+*The difference, in both texts' own words.* The outgoing path returns nothing *"when fewer than 3 distinct pitch classes are
+sounding (insufficient data for chord identification)"*; L2-S10 says *"A chord is admissible over a span whose sounding set
+lacks its root, or lacks its third."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.300(ii).
+
+---
+
+**Row 30.3 — the region analysis implemented, and on the record path since the notation switch.**
+
+*Outgoing statement.* "**Status: Implemented, and running the RECORD path since the notation switch (2026-07-27).**" — §11.5
+*Region Analysis and the Chord Track* (locator: line 7032).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 30.4 — the chord-track writer's location, and the action that runs it.**
+
+*Outgoing statement.* "`populateChordTrack()` is declared and defined in `notation/internal/notationimplodebridge.h/.cpp`
+(`mu::notation` namespace) and is exposed as the "Implode to chord track" action in the Tools menu (see §12.1b)." — §11.5
+(locator: lines 7033–7035).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.14.
+
+---
+
+**Row 30.5 — the chord-track action runs the joint estimator's record path; the legacy boundary source sits behind the
+flag.**
+
+*Outgoing statement.* "**Corrected 2026-08-02 (`OPEN_ITEMS.md` OI-232, dated-note item 2):** what the action runs is the joint
+estimator's record path — `produceNotationRecord` → `analyzeSectionFromRecord` → `emitImplodedChordTrack`
+(`notationimplodebridge.cpp:1409-1431`) — not `analyzeHarmonicRhythm()`, which is now the legacy arm's boundary source behind
+`useJointNotationRecord == false` (`:1434-1441`)." — §11.5 (locator: lines 7035–7039).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.4.
+
+---
+
+**Row 30.6 — where the legacy harmonic-rhythm function is declared and where it is defined.**
+
+*Outgoing statement.* "A second, smaller correction of the same date: `analyzeHarmonicRhythm()` is DECLARED in
+`notation/internal/notationcomposingbridge.h:161` but DEFINED in `notation/internal/notationharmonicrhythmbridge.cpp:69`, not in
+`notationcomposingbridge.cpp`." — §11.5 (locator: lines 7039–7042).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.316.
+
+---
+
+**Row 30.7 — the single-note analysis is the foundation of the status display and single-chord tuning.**
+
+*Outgoing statement.* "Single-note analysis (status bar display, single-chord tuning) is the foundation." — §11.5 (locator: line
+7046).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.6.
+
+---
+
+**Row 30.8 — the region analysis: chord symbols, Roman numerals and a reduction over a passage.**
+
+*Outgoing statement.* "Region analysis extends this to a time range, producing a complete harmonic analysis with chord
+symbols, roman numerals, and an optional note reduction across an entire passage." — §11.5 (locator: lines 7047–7049).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.5.
+
+---
+
+**Row 30.9 — on a grand staff: the root below, the upper chord tones above, the symbols and numerals around them.**
+
+*Outgoing statement.* "**Grand staff** (e.g., piano, organ): root on the bass staff, upper-structure chord tones on the treble
+staff, chord symbols above, roman numerals below." — §11.5, *Adaptive output by staff type* (locator: lines 7091–7092).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.5.
+
+---
+
+**Row 30.10 — the grand-staff output is a full keyboard reduction.**
+
+*Outgoing statement.* "This is the richest output — a full keyboard reduction." — §11.5, *Adaptive output by staff type*
+(locator: line 7093).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.5.
+
+---
+
+**Row 30.11 — on a single staff: the symbols and numerals only, or a combined reduction.**
+
+*Outgoing statement.* "**Single staff** (e.g., treble clef sketch): chord symbols and roman numerals only (no note reduction),
+or a single-staff reduction with root and upper structure combined." — §11.5, *Adaptive output by staff type* (locator: lines
+7094–7096).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.5.
+
+---
+
+**Row 30.12 — the user's instrument decides the output.**
+
+*Outgoing statement.* "The user's instrument choice drives the output." — §11.5, *Adaptive output by staff type* (locator: line
+7096).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.5.
+
+---
+
+**Row 30.13 — the region analysis scans the tonal staves for every change of the sounding pitch-class set.**
+
+*Outgoing statement.* "The region analysis scans **all non-hidden tonal staves** (excluding the target staff) within the
+selected time range, left to right, to identify every tick where the sounding pitch-class set changes — i.e. where any
+instrument starts or stops a note." — §11.5, *Harmonic rhythm detection* (locator: lines 7100–7103).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.314.
+
+---
+
+**Row 30.14 — each such moment a potential boundary of a chord.**
+
+*Outgoing statement.* "Each such tick is a potential chord boundary." — §11.5, *Harmonic rhythm detection* (locator: line 7103).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **AGREES** — *"A boundary is one of L1's change points"*, every onset and every release being one.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.314.
+
+---
+
+**Row 30.15 — the chord analyzed at each boundary once the boundaries are found.**
+
+*Outgoing statement.* "Chord analysis runs at each boundary tick." — §11.5 (locator: line 7105).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 23.314.
+
+*The difference, in both texts' own words.* The outgoing analysis runs once the boundaries are identified — *"Chord analysis
+runs at each boundary tick"*; L2-S11 says the boundary *"is never decided before the chord or after it"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.314.
+
+---
+
+**Row 30.16 — the smoothed default: same root and quality collapsed, short fragments absorbed.**
+
+*Outgoing statement.* "In the default smoothed mode, consecutive boundaries that produce the **same root and quality** are
+collapsed into a single harmonic region, and sub-quarter-note fragments are absorbed so tuning and other range operations do
+not overreact to ornaments." — §11.5 (locator: lines 7105–7108). Two claims: (i) consecutive boundaries producing the same
+root and quality are collapsed into one region; (ii) fragments shorter than a quarter note are absorbed.
+
+*Derived statements that speak to it.* (i) L2-S14. (ii) L2-S7.
+
+*Current-text axis.* (i) L2-S14: **DIFFERS** — as at Row 23.72. (ii) L2-S7: **DIFFERS**.
+
+*The difference, in both texts' own words.* (i) The outgoing collapses boundaries producing the *"same root and quality"*;
+L2-S14 says *"A change of figure alone, such as V6 to V65, is a change of chord and may be a boundary."* (ii) The outgoing
+absorbs *"sub-quarter-note fragments"*; L2-S7 says *"No regularity of harmonic rhythm or segment length is an admission rule."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 23.72. (ii) **QUARANTINED**, travelling with Row 23.315.
+
+---
+
+**Row 30.17 — the chord staff keeps every event; notes held into a region count at its start.**
+
+*Outgoing statement.* "Chord-staff population uses the preserve-all mode instead: every detected harmonic event is kept, even
+when adjacent events share root and quality, and sustained carry-in notes still contribute at the new region start." — §11.5
+(locator: lines 7108–7111). Two claims: (i) the chord staff keeps every detected harmonic event, adjacent events sharing root
+and quality included; (ii) notes sustained into a region still count at the region's start.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S9.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S9: **AGREES** — *"An event that sounds across a span boundary
+receives one assignment in each span it sounds in."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 23.315. (ii) **QUARANTINED.** *Audit question:* does the
+chord-staff writer count the notes sustained into a region at the region's start at the current commit, and on which arm?
+
+---
+
+**Row 30.18 — the region analysis yields a sequence of harmonic regions.**
+
+*Outgoing statement.* "The result is a sequence of harmonic regions, each with:" — §11.5 (locator: line 7113).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.9.
+
+---
+
+**Row 30.19 — each region's start and end, the duration being the harmonic rhythm.**
+
+*Outgoing statement.* "Start tick and end tick (duration = harmonic rhythm)" — §11.5 (locator: line 7114).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.309.
+
+---
+
+**Row 30.20 — each region's chord result.**
+
+*Outgoing statement.* "Chord analysis result (root, quality, extensions)" — §11.5 (locator: line 7115).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.311.
+
+---
+
+**Row 30.21 — each region's key and mode result.**
+
+*Outgoing statement.* "Key/mode analysis result" — §11.5 (locator: line 7116).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.312.
+
+---
+
+**Row 30.22 — the treble staff: the upper chord tones in close position, from middle C upward.**
+
+*Outgoing statement.* "**Treble clef (staff 1):** Upper-structure chord tones in close position, placed in the C4–C5 range." —
+§11.5, *Chord track population (grand staff)* (locator: lines 7122–7123).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.322.
+
+---
+
+**Row 30.23 — the written duration matches the region.**
+
+*Outgoing statement.* "Duration matches the harmonic region." — §11.5, *Chord track population (grand staff)* (locator: line
+7123).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.322.
+
+---
+
+**Row 30.24 — an inferred voicing to replace the close-position default.**
+
+*Outgoing statement.* "When voicing analysis is available (future), the inferred voicing (drop 2, spread, etc.) replaces the
+close-position default." — §11.5, *Chord track population (grand staff)* (locator: lines 7123–7125).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.67.
+
+---
+
+**Row 30.25 — the chord-function numerals below the treble staff, Roman or Nashville by a preference.**
+
+*Outgoing statement.* "**Chord function notation** attached below the treble staff — either `HarmonyType::ROMAN` (Roman
+numerals) or `HarmonyType::NASHVILLE` (Nashville numbers), selected by the "Chord function notation" preference (None / Roman
+numerals / Nashville numbers)." — §11.5, *Chord track population (grand staff)* (locator: lines 7133–7136).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.321.
+
+---
+
+**Row 30.26 — Roman and Nashville never together on the staff, because they carry the same information.**
+
+*Outgoing statement.* "Roman and Nashville are mutually exclusive on the staff because they encode identical information;
+displaying both would be redundant and legibility-destroying." — §11.5, *Chord track population (grand staff)* (locator: lines
+7136–7138). Two claims: (i) the chord staff writes one of the two numeral forms, never both; (ii) the two encode identical
+information.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S27.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S27: **AGREES** — as at Row 23.340.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 23.321. (ii) **RELOCATED** — to *L3 — The read-off facts*,
+travelling with Row 23.340.
+
+---
+
+**Row 30.27 — the key and mode written as staff text at key-region boundaries, under a preference.**
+
+*Outgoing statement.* "**Key/mode annotations** written as staff text at key region boundaries — controlled by the "Write
+key/mode annotations" preference." — §11.5, *Chord track population (grand staff)* (locator: lines 7140–7141).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.318.
+
+---
+
+**Row 30.28 — the close-position reduction starts from the chord result's root and chord tones.**
+
+*Outgoing statement.* "Given a chord analysis result with root pitch class and chord tones:" — §11.5, *Close-position reduction
+algorithm* (locator: line 7148).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.304.
+
+---
+
+**Row 30.29 — the root on the bass staff, the upper structure on the treble.**
+
+*Outgoing statement.* "**Grand staff separation** — root on the bass staff, upper structure on treble." — §11.5, *Relationship to
+MuseScore's chord symbol realization* (locator: line 7169).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.323.
+
+---
+
+**Row 30.30 — this project's flow: the chord inferred from the sounding notes, then the reduction.**
+
+*Outgoing statement.* "Ours is notes → symbol → reduction-notes (system infers the chord from sounding notes, then produces the
+reduction)." — §11.5, *Relationship to MuseScore's chord symbol realization* (locator: lines 7172–7173).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.1.
+
+---
+
+**Row 30.31 — MuseScore's own voicing code may serve the planned voicing generator.**
+
+*Outgoing statement.* "The existing `RealizedHarmony` and `Voicing` infrastructure may be useful when building our voicing
+generator, but the analysis-first workflow is new." — §11.5, *Relationship to MuseScore's chord symbol realization* (locator:
+lines 7173–7175).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 30.32 — the single-note analysis needs a selected note.**
+
+*Outgoing statement.* "Single-note analysis requires a selected note as the anchor." — §11.5, *Rest analysis* (locator: line
+7179).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.6.
+
+---
+
+**Row 30.33 — the region analysis reads at arbitrary moments given by the harmonic rhythm.**
+
+*Outgoing statement.* "Region analysis does not — it analyzes at arbitrary ticks based on the harmonic rhythm." — §11.5, *Rest
+analysis* (locator: lines 7179–7180).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 20.4.
+
+---
+
+**Row 30.34 — an entry point that analyzes at a moment without a selected note.**
+
+*Outgoing statement.* "A new entry point `analyzeHarmonicContextAtTick(Score*, Fraction tick, ...)` provides analysis without
+requiring a note anchor." — §11.5, *Rest analysis* (locator: lines 7180–7182).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 17.56(i).
+
+---
+
+**Row 30.35 — the same collection and analysis, without the selected note.**
+
+*Outgoing statement.* "It uses the same collection and analysis logic, just without the "selected note" starting point." —
+§11.5, *Rest analysis* (locator: lines 7182–7183).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 17.56(i).
+
+---
+
+**Row 30.36 — annotation possible where the target staff rests.**
+
+*Outgoing statement.* "This also enables annotation at ticks where the target staff has a rest." — §11.5, *Rest analysis*
+(locator: lines 7183–7184).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 17.56(i).
+
+---
+
+**Row 30.37 — chords foreign to the tonality marked by a distinct color or border.**
+
+*Outgoing statement.* "Chords where `ChordAnalysisResult.diatonicToKey` is `false` receive distinct visual treatment — a
+different color or border on the chord block." — §11.5, *Additional Chord Track Annotations — Planned* (locator: lines
+7212–7213).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 30.38 — the flag the highlighting would read is already computed.**
+
+*Outgoing statement.* "No additional analysis required — the flag is already computed." — §11.5, *Additional Chord Track
+Annotations — Planned* (locator: lines 7215–7216).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.18.
+
+---
+
+**Row 30.39 — the relative-key label: the same signature, the other mode.**
+
+*Outgoing statement.* "Same `keySignatureFifths`, different `isMajor` → "→ relative minor" / "→ relative major"" — §11.5,
+*Additional Chord Track Annotations — Planned*, the key-relationship labels (locator: line 7223).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan: the key-relationship labels.
+
+---
+
+**Row 30.40 — the parallel-key label: the same tonic, the other mode.**
+
+*Outgoing statement.* "Same `tonicPc`, different `isMajor` → "→ parallel minor" / "→ parallel major"" — §11.5, the
+key-relationship labels (locator: line 7224).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan, the same labels as Row 30.39.
+
+---
+
+**Row 30.41 — the dominant- and subdominant-key labels: a signature one step away.**
+
+*Outgoing statement.* "`keySignatureFifths` differs by ±1 → "→ dominant key" / "→ subdominant key"" — §11.5, the key-relationship
+labels (locator: line 7225).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan, the same labels as Row 30.39.
+
+---
+
+**Row 30.42 — any other relationship stated as a distance on the circle of fifths.**
+
+*Outgoing statement.* "Other differences → circle of fifths distance stated: "→ mediant (E major)"" — §11.5, the
+key-relationship labels (locator: line 7226).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan, the same labels as Row 30.39.
+
+---
+
+**Row 30.43 — the relationships computed from the signature, the tonic and the mode alone.**
+
+*Outgoing statement.* "All relationships are pure arithmetic on `keySignatureFifths`, `tonicPc`, and `isMajor` — no additional
+analysis required." — §11.5, the key-relationship labels (locator: lines 7228–7229).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan, the same labels as Row 30.39.
+
+---
+
+**Row 30.44 — the chord-track writer writes the numerals only above one key-confidence threshold.**
+
+*Outgoing statement.* "Roman/Nashville function labels are written only when confidence is at least 0.5" — §11.5, the key
+stability indicator (locator: line 7241).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.321.
+
+---
+
+**Row 30.45 — and the key-dependent markings only above a higher one.**
+
+*Outgoing statement.* "Key signatures, modulation relationship labels, pivot labels, borrowed-chord markers, and cadence
+markers are written only when confidence is at least 0.8" — §11.5, the key stability indicator (locator: lines 7242–7243).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.320.
+
+---
+
+**Row 30.46 — a chord foreign to the tonality labeled with the nearby key it belongs to.**
+
+*Outgoing statement.* "When a chord is non-diatonic to the current inferred key, a small annotation identifies which nearby key
+it belongs to — making the borrowing relationship explicit." — §11.5, the key-distance and borrowed-chord annotation (locator:
+lines 7251–7252).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.325.
+
+---
+
+**Row 30.47 — the source key: the nearest, by the circle of fifths, of the keys containing the chord.**
+
+*Outgoing statement.* "Implementation: for each non-diatonic chord, compute which keys contain it as a diatonic chord, then
+select the closest key by circle-of-fifths distance to the current inferred key." — §11.5, the key-distance and
+borrowed-chord annotation (locator: lines 7253–7255).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.325.
+
+---
+
+**Row 30.48 — the chord and scale dictionaries needed first.**
+
+*Outgoing statement.* "Requires the chord dictionary and scale/mode dictionary (§7.1, §7.2) to be populated." — §11.5, the
+key-distance and borrowed-chord annotation (locator: line 7255).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan's prerequisite.
+
+---
+
+**Row 30.49 — detected cadences written above the chord staff at phrase boundaries.**
+
+*Outgoing statement.* "Detected cadences annotated above the chord track staff at phrase boundaries:" — §11.5, the cadence
+markers (locator: line 7259).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.320.
+
+---
+
+**Row 30.50 — the authentic cadence, V to I.**
+
+*Outgoing statement.* "Authentic (V→I): Roman numeral sequence in the inferred key" — §11.5, the cadence markers (locator: line
+7261).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 5.9.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.9.
+
+---
+
+**Row 30.51 — the half cadence, ending on the dominant.**
+
+*Outgoing statement.* "Half cadence (→V): ending on dominant" — §11.5, the cadence markers (locator: line 7262).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 5.9.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.9.
+
+---
+
+**Row 30.52 — the deceptive cadence, V to vi.**
+
+*Outgoing statement.* "Deceptive (V→vi): dominant resolving to submediant" — §11.5, the cadence markers (locator: line 7263).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 5.9.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.9.
+
+---
+
+**Row 30.53 — the plagal cadence, IV to I.**
+
+*Outgoing statement.* "Plagal (IV→I): subdominant to tonic" — §11.5, the cadence markers (locator: line 7264).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 5.9.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.9.
+
+---
+
+**Row 30.54 — the cadence heuristic: a cadential pair followed by a significant change.**
+
+*Outgoing statement.* "Basic detection uses a heuristic: cadential chord pairs followed by a significant harmonic change (new
+key region, long held chord, or rest)." — §11.5, the cadence markers (locator: lines 7266–7267).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.107.
+
+---
+
+**Row 30.55 — full accuracy needs a phrase analysis not yet built.**
+
+*Outgoing statement.* "Full accuracy requires phrase structure analysis (planned but not yet implemented)." — §11.5, the cadence
+markers (locator: lines 7267–7268).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 30.56 — the basic version buildable now from the regions already computed.**
+
+*Outgoing statement.* "Basic version is implementable now from the harmonic rhythm regions already computed." — §11.5, the
+cadence markers (locator: lines 7268–7269).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 30.57 — the pivot chord written at a key-region boundary.**
+
+*Outgoing statement.* "At key region boundaries, annotate the pivot chord when one exists:" — §11.5, the modulation-path
+annotation (locator: line 7273).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.320.
+
+---
+
+**Row 30.58 — the pivot: the last chord before the boundary diatonic to both keys.**
+
+*Outgoing statement.* "Implementation: the last chord before the key boundary that is diatonic to both the old and new key is
+the pivot." — §11.5, the modulation-path annotation (locator: lines 7277–7278).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.107.
+
+---
+
+**Row 30.59 — the numeral formatted twice, once in each key.**
+
+*Outgoing statement.* "`formatRomanNumeral()` is called twice — once with the old key context, once with the new — to produce
+both Roman numerals." — §11.5, the modulation-path annotation (locator: lines 7278–7279).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.107.
+
+---
+
+**Row 30.60 — a change of key with no pivot marked as direct.**
+
+*Outgoing statement.* "When no pivot chord exists (direct chromatic modulation), annotate as "direct modulation"." — §11.5, the
+modulation-path annotation (locator: lines 7279–7280).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.320.
+
+---
+
+**Row 30.61 — detecting an enharmonic reinterpretation left for later.**
+
+*Outgoing statement.* "Enharmonic reinterpretation detection is a future refinement." — §11.5, the modulation-path annotation
+(locator: lines 7280–7281).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 30.62 — the annotate path writes its layers as staff text in the Roman-numeral display.**
+
+*Outgoing statement.* "When the user selects a region and runs "Annotate to chord track" in Roman numeral mode, the following
+layers are written as StaffText annotations:" — *Annotate path annotation layers (Roman numeral mode)* (locator: lines
+7285–7286).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which layers does the annotate path write at the current commit in
+its Roman-numeral and its Nashville displays, from which published facts, and on which arm?
+
+---
+
+**Row 30.63 — the chord symbols.**
+
+*Outgoing statement.* "Chord symbols" — *Annotate path annotation layers (Roman numeral mode)* (locator: line 7288).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 30.62.
+
+---
+
+**Row 30.64 — the Roman numerals, with chromatic and borrowed labels.**
+
+*Outgoing statement.* "Roman numerals (with chromatic/borrowed labels: ♭VII, ♭III etc.)" — *Annotate path annotation layers
+(Roman numeral mode)* (locator: line 7289).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 30.62.
+
+---
+
+**Row 30.65 — the cadence markers, from the legacy cadence detector.**
+
+*Outgoing statement.* "Cadence markers (PAC, HC, DC, PC) — **implemented** (Session 14); uses `detectCadences()` in
+`notationcomposingbridgehelpers.cpp`" — *Annotate path annotation layers (Roman numeral mode)* (locator: lines 7290–7291).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 30.62.
+
+---
+
+**Row 30.66 — the pivot labels, from the legacy pivot detector.**
+
+*Outgoing statement.* "Pivot chord labels — **implemented** (Session 14); uses `detectPivotChords()` in
+`notationcomposingbridgehelpers.cpp`" — *Annotate path annotation layers (Roman numeral mode)* (locator: lines 7292–7293).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 30.62.
+
+---
+
+**Row 30.67 — the applied-dominant labels not built, the legacy result having no field for an applied target.**
+
+*Outgoing statement.* "Tonicization labels (V/V, V/ii, V/IV etc.) — **NOT YET IMPLEMENTED** (deferred; no
+`relativeRoot`/secondary-dominant field in `ChordFunction`; requires standalone implementation first)" — *Annotate path
+annotation layers (Roman numeral mode)* (locator: lines 7294–7296). Two claims: (i) the applied-dominant labels are not
+implemented, and deferred; (ii) the legacy chord result carries no field for the degree a chord is applied to.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S1.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S1: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing records *"no `relativeRoot`/secondary-dominant field in
+`ChordFunction`"*; L2-S1's chord carries *"an applied-target chain that may be empty"*.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status. (ii) **QUARANTINED**, travelling with Row 23.7.
+
+---
+
+**Row 30.68 — the augmented-sixth labels not built, no classifier for them existing.**
+
+*Outgoing statement.* "Augmented sixth chord labels (It+6, Fr+6, Ger+6) — **NOT YET IMPLEMENTED** (deferred; no aug-sixth
+classifier in composing module; requires standalone implementation first)" — *Annotate path annotation layers (Roman numeral
+mode)* (locator: lines 7297–7299). Two claims: (i) the augmented-sixth labels are not implemented, and deferred; (ii) the
+composing module has no classifier for the augmented sixths.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S4.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S4: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing records *"no aug-sixth classifier in composing module"*; L2-S4's
+vocabulary contains *"the three augmented sixths"*.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status. (ii) **QUARANTINED**, travelling with Row 24.87.
+
+---
+
+**Row 30.69 — the Nashville display writes the chord symbols and the Nashville numbers only.**
+
+*Outgoing statement.* "Nashville annotation mode emits chord symbols and Nashville numbers only." — *Annotate path annotation
+layers (Roman numeral mode)* (locator: line 7301).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 30.62.
+
+---
+
+**Row 30.70 — no cadence, pivot or applied-dominant markings in the Nashville display.**
+
+*Outgoing statement.* "No cadence markers, no pivot labels, no tonicization labels." — *Annotate path annotation layers (Roman
+numeral mode)* (locator: line 7302).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 30.62.
+
+---
+
+**Row 30.71 — the pivot detector looks for assertive changes of tonic or mode between regions.**
+
+*Outgoing statement.* "**Pivot detection** (`detectPivotChords`): scans for assertive key transitions (consecutive regions with
+different `keyTonicPc` or `keyMode`)." — *Annotate path annotation layers (Roman numeral mode)* (locator: lines 7312–7313).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.107.
+
+---
+
+**Row 30.72 — the new key confirmed by one more assertive region within eight past the boundary.**
+
+*Outgoing statement.* "The new key is confirmed by finding at least one additional assertive region within
+`kMaxPivotLookaheadRegions = 8` regions past the boundary." — *Annotate path annotation layers (Roman numeral mode)* (locator:
+lines 7314–7315).
+
+*Derived statements that speak to it.* L2-S18.
+
+*Current-text axis.* L2-S18: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing confirms a new key *"by finding at least one additional assertive
+region within `kMaxPivotLookaheadRegions = 8` regions past the boundary"*; L2-S18 says which reading is principal *"is decided
+by the candidate score over the whole sequence, not by a rule"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.107.
+
+---
+
+**Row 30.73 — the pivot: the last chord in the selection diatonic to both keys.**
+
+*Outgoing statement.* "The pivot chord is the last in-selection chord diatonic to both the old and new key." — *Annotate path
+annotation layers (Roman numeral mode)* (locator: lines 7315–7316).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.107.
+
+---
+
+**Row 30.74 — the pivot label's written form.**
+
+*Outgoing statement.* "The pivot label format is `vi → ii` (U+2192 RIGHT ARROW, no "pivot:" prefix, no key-name context)." —
+*Annotate path annotation layers (Roman numeral mode)* (locator: lines 7317–7318).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.320.
+
+---
+
+**Row 30.75 — the analysis read past the selection by a fixed amount; nothing written outside it.**
+
+*Outgoing statement.* "Analysis window extended by up to `kMaxPivotLookaheadRegions × 1 whole note` past `selectionEndTick` in
+Roman numeral mode; no annotations written outside the selection boundary." — *Annotate path annotation layers (Roman numeral
+mode)* (locator: lines 7318–7320). Two claims: (i) the analysis reads past the end of the selection by at most a fixed amount;
+(ii) nothing is written outside the selection.
+
+*Derived statements that speak to it.* (i) L2-S22 — one §6.3 names as NEAREST to material met (entry 4). (ii) L2-S48.
+
+*Current-text axis.* (i) L2-S22: **DIFFERS**. (ii) L2-S48: **AGREES** — *"L2's publication covers exactly the working span."*
+
+*The difference, in both texts' own words.* (i) The outgoing extends the analysis window *"by up to
+`kMaxPivotLookaheadRegions × 1 whole note` past `selectionEndTick`"*; L2-S22 *"stops asking when its in-span publication stops
+changing between successive enlargements"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 22.107. (ii) **QUARANTINED**, travelling with Row 22.107.
+
+---
+
+**Row 30.76 — a strip showing harmonic tension over time.**
+
+*Outgoing statement.* "**Tension curve strip** — a small graph below the chord track staff showing harmonic tension over time,
+derived from voice leading complexity and distance from tonic." — §11.5, *Future Extensions — Chord Track* (locator: lines
+7337–7338).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 30.77 — the strip connected to the planned tension editor.**
+
+*Outgoing statement.* "Connects to the tension curve editor (§12.4) when implemented." — §11.5, *Future Extensions — Chord Track*
+(locator: lines 7338–7339).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan, the same strip as Row 30.76.
+
+---
+
+**Row 30.78 — the chord blocks weighted by the density of the harmonic rhythm.**
+
+*Outgoing statement.* "**Harmonic rhythm emphasis** — visual weight on chord blocks proportional to harmonic rhythm density,
+making acceleration toward cadences immediately visible." — §11.5, *Future Extensions — Chord Track* (locator: lines 7344–7345).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 30.79 — the region tuning scans for the same changes of the sounding pitch-class set.**
+
+*Outgoing statement.* "**Harmonic rhythm detection** — same scan as §11.5: identify every tick in the selected time range where
+the sounding pitch-class set changes across all non-hidden tonal staves." — §11.6 *Region Intonation*, *Algorithm* (locator:
+lines 7417–7419).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — it states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.314.
+
+---
+
+**Row 30.80 — then the chord analyzed at each boundary.**
+
+*Outgoing statement.* "Run chord analysis at each boundary." — §11.6, *Algorithm* (locator: line 7419).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 23.314.
+
+*The difference, in both texts' own words.* The outgoing analyzes the chord once the boundaries are found — *"Run chord analysis
+at each boundary"*; L2-S11 says the boundary *"is never decided before the chord or after it"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.314.
+
+---
+
+**Row 30.81 — then consecutive regions of the same chord collapsed.**
+
+*Outgoing statement.* "Collapse consecutive same-chord regions." — §11.6, *Algorithm* (locator: lines 7419–7420).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 23.315.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (148)
+
+1. "| System | Description | Primary use | |--------|-------------|-------------|" (6235–6236) — *a table header*.
+2. "| Equal temperament | All semitones equal — modern standard | Default |" (6237) — *a statement about a product tool
+   outside the analysis* — the tuning tools.
+3. "| Just intonation | Pure mathematical ratios — maximum acoustic purity | A cappella choral |" (6238) — *a statement about
+   a product tool outside the analysis* — the tuning tools.
+4. "| Adaptive just | Pure intervals with managed pitch drift correction | A cappella with modulation |" (6239) — *a
+   statement about a product tool outside the analysis* — the tuning tools.
+5. "| Pythagorean | Pure fifths throughout — impure thirds | Medieval, Renaissance |" (6240) — *a statement about a product
+   tool outside the analysis* — the tuning tools.
+6. "| Quarter-comma meantone | Pure major thirds, slightly impure fifths | Renaissance, early Baroque |" (6241) — *a
+   statement about a product tool outside the analysis* — the tuning tools.
+7. "| Well temperament | All keys usable, each slightly different — Kirnberger, Werckmeister | Bach period |" (6242) — *a
+   statement about a product tool outside the analysis* — the tuning tools.
+8. "**Tonic-anchored tuning** (`tonicAnchoredTuning`, default on): when enabled, each chord root is placed at its pure JI
+   scale-degree position above the mode tonic rather than always at 0¢." (6284–6286) — *a statement about a product tool
+   outside the analysis* — the tuning tools.
+9. "This prevents syntonic-comma drift across a piece." (6286) — *a defense*.
+10. "Implemented as a virtual `rootOffset(keyMode, rootPc)` method on `TuningSystem` (default: 0.0¢; JI override uses the
+    mode-relative dev[] table)." (6286–6288) — *a statement about a product tool outside the analysis* — the tuning tools.
+11. "**Allow split/slurring of sustained events for retuning** (`allowSplitSlurOfSustainedEvents`, default on): lets region
+    tuning rewrite sustained events when a later harmonic region needs an independent playback event with a different
+    tuning." (6299–6302) — *a statement about a product tool outside the analysis* — the tuning tools.
+12. "In TonicAnchored mode this is the region-local retuning behavior already described above." (6302–6303) — *a statement
+    about a product tool outside the analysis* — the tuning tools.
+13. "In FreeDrift mode it means that a sustained event may be rewritten only when the continuation's target tuning differs
+    meaningfully from the carried tuning." (6303–6305) — *a statement about a product tool outside the analysis* — the
+    tuning tools.
+14. "For an untied sustained note this uses split-and-slur at the region boundary." (6305–6306) — *a statement about a
+    product tool outside the analysis* — the tuning tools.
+15. "For a tied chain, the bridge may reuse an existing tie boundary: the tie that crosses the region boundary is removed
+    and replaced with a slur so the later segment can carry its own tuning." (6306–6308) — *a statement about a product
+    tool outside the analysis* — the tuning tools.
+16. "If the preference is off, the whole sustained event remains one tuning event in both modes." (6308–6309) — *a
+    statement about a product tool outside the analysis* — the tuning tools.
+17. "**Anchor override:** anchor expressions (`alt. rif.` and the other Italian forms) protect the full written duration of
+    the sustained event." (6311–6312) — *a statement about a product tool outside the analysis* — the tuning tools.
+18. "An anchored sustained note is never split, and an anchored tied chain is never segmented at a tie boundary even when
+    `allowSplitSlurOfSustainedEvents` is enabled." (6312–6314) — *a statement about a product tool outside the analysis* —
+    the tuning tools.
+19. "If the anchor appears on any note in the tie chain, the chain remains one protected written-duration event."
+    (6314–6315) — *a statement about a product tool outside the analysis* — the tuning tools.
+20. "The current tuning implementation computes offsets independently per note against a fixed interval table."
+    (6319–6320) — *a statement about a product tool outside the analysis* — the tuning tools.
+21. "A more sophisticated approach would solve for optimal tuning offsets *simultaneously* across all sounding voices,
+    balancing three competing goals: harmonic purity (intervals close to JI), ET anchoring (notes not straying too far
+    from equal temperament), and temporal continuity (minimizing pitch movement between successive chords)." (6320–6324)
+    — *a statement about a product tool outside the analysis* — the tuning tools.
+22. "The key design concept across all methods is **per-voice anchor weight**: outer voices (bass, melody) get high anchor
+    stiffness so they stay close to ET, while inner voices absorb more of the harmonic adjustment." (6342–6344) — *a
+    statement about a product tool outside the analysis* — the tuning tools.
+23. "Temporal anchoring adds a penalty for pitch movement at chord boundaries, referencing the previous chord's solved
+    pitches — tying naturally into the harmonic rhythm regions." (6344–6346) — *a statement about a product tool outside
+    the analysis* — the tuning tools.
+24. "This would evolve the `TuningSystem` interface from independent per-note offsets to a simultaneous solve across all
+    voices at each harmonic region boundary." (6348–6349) — *a statement about a product tool outside the analysis* — the
+    tuning tools.
+25. "The `anchorPitch` flag in `InstrumentIntonationConfig` would become a continuous weight rather than a binary."
+    (6349–6351) — *a statement about a product tool outside the analysis* — the tuning tools.
+26. "No implementation is planned yet — this section records the design space for future exploration." (6351–6352) — *the
+    document's account of itself*.
+27. "The drift manager:" (6389) — *a label introducing a list*.
+28. "Tracks accumulated pitch drift continuously" (6390) — *a statement about a product tool outside the analysis* — the
+    tuning tools.
+29. "Identifies correction opportunities (repeated notes, unisons, rests, section boundaries)" (6391) — *a statement about
+    a product tool outside the analysis* — the tuning tools.
+30. "Distributes corrections across multiple voices to minimize audibility" (6392) — *a statement about a product tool
+    outside the analysis* — the tuning tools.
+31. "Respects a configurable drift budget per section" (6393) — *a statement about a product tool outside the analysis* —
+    the tuning tools.
+32. "The current tuning implementation applies fixed offsets relative to a single reference pitch." (6400–6401) — *a
+    statement about a product tool outside the analysis* — the tuning tools.
+33. "A more musically effective approach — used by Hermode Tuning — centers the deviations so that the sum of all tuning
+    offsets across simultaneously sounding voices equals zero." (6401–6403) — *a statement about a product tool outside
+    the analysis* — the tuning tools.
+34. "**Implementation:** After computing raw just intonation offsets for all sounding voices, compute the mean offset and
+    subtract it from each voice's offset." (6420–6421) — *a statement about a product tool outside the analysis* — the
+    tuning tools.
+35. "The result is a set of offsets that sum to zero." (6421–6422) — *a statement about a product tool outside the
+    analysis* — the tuning tools.
+36. "**Bass weight by inversion:** The bass voice weight is further modified by the chord's inversion, since the acoustic
+    anchor role of the bass depends on whether it is playing the harmonic root:" (6458–6460) — *a statement about a
+    product tool outside the analysis* — the tuning tools.
+37. "| Inversion | Bass note | Anchor strength | Weight (example) | |---|---|---|---|" (6462–6463) — *a table header*.
+38. "| Root position | root in bass | strong anchor | high (e.g. 2.5) |" (6464) — *a statement about a product tool outside
+    the analysis* — the tuning tools.
+39. "| First inversion | third in bass | moderate anchor | medium (e.g. 1.5) |" (6465) — *a statement about a product tool
+    outside the analysis* — the tuning tools.
+40. "| Second inversion | fifth in bass | weak anchor | low (e.g. 1.0) |" (6466) — *a statement about a product tool
+    outside the analysis* — the tuning tools.
+41. "| Third inversion | seventh in bass | very weak | very low (e.g. 0.8) |" (6467) — *a statement about a product tool
+    outside the analysis* — the tuning tools.
+42. "In inverted chords, the acoustic anchor is the harmonic root even if it is not the lowest sounding note." (6469–6470)
+    — *a statement about a product tool outside the analysis* — the tuning tools.
+43. "The tuning system anchors to the implied root when computing centering, not just the bass note." (6470–6471) — *a
+    statement about a product tool outside the analysis* — the tuning tools.
+44. "**Pedal points** — a bass note sustained while harmony changes above it — receive maximum anchor weight regardless of
+    inversion, since they are explicitly the fixed reference in the musical context." (6473–6475) — *a statement about a
+    product tool outside the analysis* — the tuning tools.
+45. "Not all notes should be retuned equally freely." (6483) — *a statement about a product tool outside the analysis* —
+    the tuning tools.
+46. "The system must respect that notes which have been sounding for some time have established a pitch in the listener's
+    ear, and retuning them mid-sustain is audible as a wobble or portamento." (6483–6485) — *a statement about a product
+    tool outside the analysis* — the tuning tools.
+47. "Rather than discrete protection classes, the system uses a **maximum adjustment budget** — a continuous value in cents
+    — that caps how much any note can be retuned at a harmonic boundary." (6487–6489) — *a statement about a product tool
+    outside the analysis* — the tuning tools.
+48. "This budget is determined by how long the note has been sounding, modified by musical context." (6489–6490) — *a
+    statement about a product tool outside the analysis* — the tuning tools.
+49. "Note is an **avoid note** in the new harmony → increase budget by 50% (the dissonance justifies more movement)"
+    (6508–6509) — *a statement about a product tool outside the analysis* — the tuning tools.
+50. "Note is a **leading tone or chordal seventh** in the new harmony → increase budget by 30% (tendency tone, movement is
+    musically expected)" (6510–6511) — *a statement about a product tool outside the analysis* — the tuning tools.
+51. "Note is still a **consonant chord tone** in the new harmony → decrease budget by 50% (no musical reason to move)"
+    (6512–6513) — *a statement about a product tool outside the analysis* — the tuning tools.
+52. "Note forms a **pure interval with another sustained note** (e.g. a perfect fifth) → decrease budget by 70% (breaking
+    a locked resonance is very audible)" (6514–6515) — *a statement about a product tool outside the analysis* — the
+    tuning tools.
+53. "**Sustained perfect fifth or octave pairs:** Two notes a perfect fifth or octave apart that have been sounding
+    together for more than ~200ms have established a locked acoustic resonance — their overtones are interlaced and beats
+    have disappeared." (6519–6521) — *a statement about a product tool outside the analysis* — the tuning tools.
+54. "Both notes receive near-zero budget and effectively become anchors for the new harmony to tune around." (6521–6522) —
+    *a statement about a product tool outside the analysis* — the tuning tools.
+55. "Neither note should be split; the new voices tune to them." (6522–6523) — *a statement about a product tool outside
+    the analysis* — the tuning tools.
+56. "**Unisons and octaves across voices:** Two or more notes sounding the same pitch class simultaneously (in unison or
+    octave relationship) must receive identical tuning offsets." (6540–6541) — *a statement about a product tool outside
+    the analysis* — the tuning tools.
+57. "They are treated as a linked pair — the offset is computed once for the pair and applied to both." (6542–6543) — *a
+    statement about a product tool outside the analysis* — the tuning tools.
+58. "Neither can be tuned independently." (6543) — *a statement about a product tool outside the analysis* — the tuning
+    tools.
+59. "**Rules for anchor notes:**" (6596) — *a label introducing a list*.
+60. "**Zero tuning offset** — the note is left exactly at 12-TET." (6597) — *a statement about a product tool outside the
+    analysis* — the tuning tools.
+61. "**Never split** — anchor notes are not divided at harmonic boundaries." (6598) — *a statement about a product tool
+    outside the analysis* — the tuning tools.
+62. "**Not a FreeDrift reference** — in FreeDrift mode the anchor note is excluded from the drift reference hierarchy
+    (P1/P2/P3); it sits at 0 ¢ and other notes accumulate drift around it." (6599–6601) — *a statement about a product
+    tool outside the analysis* — the tuning tools.
+63. "**Excluded from zero-sum centering** — other voices in the harmonic region absorb the full centering correction; the
+    anchor contributes zero." (6602–6603) — *a statement about a product tool outside the analysis* — the tuning tools.
+64. "Applies to the specific note carrying the Expression only — subsequent notes on the same staff are not automatically
+    anchored." (6604–6605) — *a statement about a product tool outside the analysis* — the tuning tools.
+65. "**Implementation:**" (6614) — *a label introducing a list*.
+66. "`kTuningAnchorKeywords` array (`std::array<const char*, 4>`) in `composing/intonation/tuning_system.h`" (6615–6616) —
+    *a statement about a product tool outside the analysis* — the tuning tools.
+67. "`trimAndLowercase(std::string_view)` — inline helper for normalization" (6617) — *a statement about a product tool
+    outside the analysis* — the tuning tools.
+68. "`isTuningAnchorText(std::string_view)` — pure function for testable keyword matching; iterates
+    `kTuningAnchorKeywords`" (6618–6619) — *a statement about a product tool outside the analysis* — the tuning tools.
+69. "`RetuningSusceptibility` enum in `tuning_system.h` with values `AbsolutelyProtected`, `Adjustable`, `Free`"
+    (6620–6621) — *a statement about a product tool outside the analysis* — the tuning tools.
+70. "`hasTuningAnchorExpression(const Note*)` — bridge function in `notationtuningbridge.cpp`; scans the note's segment
+    annotations for a matching Expression element on the same track" (6622–6624) — *a statement about a product tool
+    outside the analysis* — the tuning tools.
+71. "`computeSusceptibility(const Note*)` — returns `AbsolutelyProtected` for anchor notes; `Free` for all others
+    (duration-based classification is a future addition)" (6625–6627) — *a statement about a product tool outside the
+    analysis* — the tuning tools.
+72. "Putting the above together, the tuning algorithm for a harmonic region boundary proceeds as follows:" (6667–6668) —
+    *a statement about a product tool outside the analysis* — the tuning tools.
+73. "**Step 1 — Classify all sounding notes by susceptibility**" (6670) — *a label*.
+74. "For each sounding note, compute its maximum adjustment budget from: duration sounded, harmonic context in the new
+    chord, register, instrument sensitivity, and special cases (tied, unison pair, sustained fifth/octave pair)."
+    (6671–6673) — *a statement about a product tool outside the analysis* — the tuning tools.
+75. "**Step 4 — Apply weighted zero-sum centering**" (6683) — *a label*.
+76. "Compute the weighted centering correction for the non-anchor notes." (6684) — *a statement about a product tool
+    outside the analysis* — the tuning tools.
+77. "Voice role weights and bass inversion weight determine the distribution." (6684–6685) — *a statement about a product
+    tool outside the analysis* — the tuning tools.
+78. "Anchors are excluded from the centering calculation." (6685–6686) — *a statement about a product tool outside the
+    analysis* — the tuning tools.
+79. "Apply the correction so the sum of all non-anchor offsets equals zero." (6686) — *a statement about a product tool
+    outside the analysis* — the tuning tools.
+80. "**Step 7 — Determine which notes need splits**" (6697) — *a label*.
+81. "Notes with offsets exceeding `kEpsilonCents` (0.5 cents) and not protected by anchor semantics may need independent
+    playback events." (6698–6699) — *a statement about a product tool outside the analysis* — the tuning tools.
+82. "Untied sustained notes use the normal split-and-slur mechanism." (6699–6700) — *a statement about a product tool
+    outside the analysis* — the tuning tools.
+83. "For tied sustained events, existing tie boundaries may be reused as segmentation points when preference and harmonic
+    context allow; otherwise the tie chain remains one event and receives one chain-level tuning." (6700–6702) — *a
+    statement about a product tool outside the analysis* — the tuning tools.
+84. "Anchors override both cases and protect the full written duration from segmentation." (6702–6703) — *a statement
+    about a product tool outside the analysis* — the tuning tools.
+85. "Apply the split-and-slur mechanism (§11.4) for all notes requiring independent playback events." (6703–6704) — *a
+    statement about a product tool outside the analysis* — the tuning tools.
+86. "**TonicAnchored (default):** Each harmonic region independently computes offsets relative to the mode tonic."
+    (6713–6714) — *a statement about a product tool outside the analysis* — the tuning tools.
+87. "The chord root is placed at its JI scale-degree position; individual chord tones are offset relative to that root."
+    (6714–6715) — *a statement about a product tool outside the analysis* — the tuning tools.
+88. "Sustained notes crossing region boundaries are split-and-slurred so each segment receives the correct offset for its
+    region." (6715–6717) — *a statement about a product tool outside the analysis* — the tuning tools.
+89. "Drift does not accumulate across regions." (6717) — *a statement about a product tool outside the analysis* — the
+    tuning tools.
+90. "**`alt. rif.` anchor notes in FreeDrift:** Unlike in TonicAnchored mode (where an anchor forces all notes back to a 0
+    ¢ reference), in FreeDrift an anchor note is pitched *at the current drift level* — i.e. it receives
+    `finalOffset(pitch)` exactly like any other note." (6733–6736) — *a statement about a product tool outside the
+    analysis* — the tuning tools.
+91. "It "confirms where we have drifted to" without pulling other notes back to 12-TET." (6736–6737) — *a statement about
+    a product tool outside the analysis* — the tuning tools.
+92. "Anchor notes are excluded from P1 held-note selection and annotated with a `*` suffix in cent annotations."
+    (6737–6738) — *a statement about a product tool outside the analysis* — the tuning tools.
+93. "**Key differences from TonicAnchored:**" (6740) — *a label introducing a list*.
+94. "Held notes carry their existing tuning into the new region first, providing the drift baseline for other voices."
+    (6741–6742) — *a statement about a product tool outside the analysis* — the tuning tools.
+95. "If `allowSplitSlurOfSustainedEvents` is off, sustained events remain whole." (6743) — *a statement about a product
+    tool outside the analysis* — the tuning tools.
+96. "If `allowSplitSlurOfSustainedEvents` is on, a sustained event may be rewritten only when the continuation target
+    differs from the carried tuning." (6744–6745) — *a statement about a product tool outside the analysis* — the tuning
+    tools.
+97. "This applies to both untied sustained notes and tied chains at existing tie boundaries." (6745–6746) — *a statement
+    about a product tool outside the analysis* — the tuning tools.
+98. "When no held note exists (no P1 candidate), drift resets to 0.0 (same as a fresh TonicAnchored computation without
+    the rootOffset term)." (6747–6748) — *a statement about a product tool outside the analysis* — the tuning tools.
+99. "**Drift boundary annotation (`annotateDriftAtBoundaries`, default off):** When enabled together with FreeDrift, a
+    `StaffText` is inserted above the first eligible staff at each harmonic region boundary whenever |driftAdjustment| ≥
+    0.5 ¢, showing the accumulated pitch drift, e.g. `d=+3` or `d=-2`." (6750–6753) — *a statement about a product tool
+    outside the analysis* — the tuning tools.
+100. "This is independent of the per-note `annotateTuningOffsets` toggle." (6753–6754) — *a statement about a product tool
+     outside the analysis* — the tuning tools.
+101. "A future drift-reset marker (see `backlog_drift_reset.md`) will allow composers to insert deliberate intonation
+     resets at structural boundaries." (6754–6756) — *a statement about a product tool outside the analysis* — the tuning
+     tools.
+102. "```cpp" (6825) — *the opening of a code block*.
+103. "enum class HarmonicPriority {" (6826) — *a statement about a product tool outside the analysis* — the tuning tools.
+104. "/// Pure fifths only — Pythagorean ratios for all intervals. /// Bright, tense thirds. Historically appropriate for
+     medieval /// and Renaissance music. Mathematically equivalent to the /// Pythagorean tuning system. FifthsFirst,"
+     (6827–6831) — *a statement about a product tool outside the analysis* — the tuning tools.
+105. "/// Pure fifths and thirds — 5-limit just intonation. /// Warm, consonant triads. Standard for classical choral /// and
+     orchestral JI. Default. ThirdsAndFifths," (6833–6836) — *a statement about a product tool outside the analysis* — the
+     tuning tools.
+106. "/// Full chord purity — 7-limit harmonic series. /// All chord tones (including sevenths) derived from pure ///
+     harmonic partials. Seventh chords lock into zero-beat /// resonance. Appropriate for barbershop, close vocal harmony,
+     /// natural brass ensemble, some jazz vocal. FullChordPurity," (6838–6843) — *a statement about a product tool outside
+     the analysis* — the tuning tools.
+107. "/// Context-dependent — follows the active style preset. /// The style preset maps chord function to prime limit: ///
+     dominant seventh chords may use 7-limit while triads /// use 5-limit, etc. Automatic," (6845–6849) — *a statement
+     about a product tool outside the analysis* — the tuning tools.
+108. "};" (6850) — *a statement about a product tool outside the analysis* — the tuning tools.
+109. "```" (6851) — *the close of a code block*.
+110. "```text" (6861) — *the opening of a text block*.
+111. "Harmonic priority: (only shown for Just intonation) ○ Fifths first — pure fifths, Pythagorean thirds ● Thirds and
+     fifths — pure triads (standard) ○ Full chord purity — harmonic series, all chord tones pure ○ Automatic — follows
+     style preset" (6862–6866) — *a statement about a product tool outside the analysis* — the preferences.
+112. "```" (6867) — *the close of a text block*.
+113. "When `FullChordPurity` or `Automatic` is active, a second sub-preference becomes relevant." (6871–6872) — *a
+     statement about a product tool outside the analysis* — the preferences.
+114. "The minor seventh in a dominant seventh chord has a unique musical function — it is both a primary consonance
+     (7-limit) and a functional dissonance (resolution pull toward the tonic)." (6872–6874) — *a defense* of the
+     sub-preference.
+115. "The user may want to control this tension independently:" (6874–6875) — *a statement about a product tool outside
+     the analysis* — the preferences.
+116. "```cpp" (6877) — *the opening of a code block*.
+117. "enum class DominantSeventhCharacter {" (6878) — *a statement about a product tool outside the analysis* — the tuning
+     tools.
+118. "/// Wide seventh (9/5, +18¢) — maximum tension, strong /// resolution pull toward tonic. Appropriate for functional ///
+     harmony where V7 → I resolution is the goal. Tense," (6879–6882) — *a statement about a product tool outside the
+     analysis* — the tuning tools.
+119. "/// Pure harmonic seventh (7/4, -31¢) — zero-beat resonance, /// floating quality. Appropriate for static dominant
+     color, /// barbershop tag chords, natural brass sonority. Natural," (6884–6887) — *a statement about a product tool
+     outside the analysis* — the tuning tools.
+120. "/// Pythagorean seventh (16/9, -4¢) — close to equal temperament. /// Neutral character, minimal deviation from
+     12-TET. Neutral," (6889–6891) — *a statement about a product tool outside the analysis* — the tuning tools.
+121. "};" (6892) — *a statement about a product tool outside the analysis* — the tuning tools.
+122. "```" (6893) — *the close of a code block*.
+123. "Identify each note's harmonic function within the chord." (6913) — *a statement about a product tool outside the
+     analysis* — the tuning tools.
+124. "Select the prime limit based on `HarmonicPriority` and chord function." (6914) — *a statement about a product tool
+     outside the analysis* — the tuning tools.
+125. "Compute the canonical ratio via shortest lattice path (minimum Tenney height within the chosen prime limit)."
+     (6915–6916) — *a statement about a product tool outside the analysis* — the tuning tools.
+126. "Resolve conflicts between simultaneously sounding notes via the simultaneous optimizer." (6917–6918) — *a statement
+     about a product tool outside the analysis* — the tuning tools.
+127. "Apply context modifiers (dominant tension, leading-tone pull, resolution target)." (6919–6920) — *a statement about a
+     product tool outside the analysis* — the tuning tools.
+128. "Applying a non-equal temperament writes cent deviations to individual notes via `Note::undoChangeProperty(Pid::TUNING,
+     cents)`." (6950–6951) — *a statement about a product tool outside the analysis* — the tuning tools.
+129. "For notes that attack exactly at the target tick this is a direct property change." (6951–6952) — *a statement about
+     a product tool outside the analysis* — the tuning tools.
+130. "Sustained notes — notes that started before the target tick but are still sounding — require score mutation because
+     tuning is a single value per note and the note's harmonic role may differ from when it first attacked." (6952–6955)
+     — *a statement about a product tool outside the analysis* — the tuning tools.
+131. "**The description of the region machinery below remains accurate for the legacy arm** and is retained as the record
+     of what that arm does." (7042–7044) — *the document's account of itself*.
+132. "This matches standard lead-sheet layout and is more readable." (7170) — *a defense*.
+133. "**Analysis-derived** — their flow is symbol → notes (user typed the chord, system voices it)." (7171–7172) — *a
+     statement about a product tool outside the analysis* — MuseScore's own chord-symbol realization.
+134. "**Non-diatonic chord highlighting** (ready to implement)" (7210) — *a label, with its status*.
+135. "Makes borrowed chords, secondary dominants, and chromatic passing chords immediately visible without requiring the
+     user to read each Roman numeral." (7213–7215) — *a defense*.
+136. "**Modulation path annotation** (basic version ready)" (7271) — *a label, with its status*.
+137. "**Single note** — tune that note using the harmonic context at its tick (the existing single-note workflow from
+     §11.4)." (7401–7402) — *a statement about a product tool outside the analysis* — the tuning tools.
+138. "**Range on one or more staves** — detect harmonic rhythm within the range, compute a tuning plan per region, split
+     and tune all notes accordingly." (7403–7404) — *a statement about a product tool outside the analysis* — the tuning
+     tools.
+139. "**Whole staff or Ctrl+A** — same as range, applied to the full extent." (7405) — *a statement about a product tool
+     outside the analysis* — the tuning tools.
+140. "**Compute tuning plan** — for each harmonic region and each sounding note in the selected staves, compute the desired
+     tuning offset." (7421–7422) — *a statement about a product tool outside the analysis* — the tuning tools.
+141. "For non-partial tie chains, choose the chain authority note (earliest anchor-marked note, otherwise first note in the
+     chain), compute the offset once from that authority note's harmonic context, and reuse that same offset for every
+     note in the chain." (7422–7425) — *a statement about a product tool outside the analysis* — the tuning tools.
+142. "Compare against each note's current tuning." (7425–7426) — *a statement about a product tool outside the analysis* —
+     the tuning tools.
+143. "Record which notes need changes and which sustained untied notes need splits." (7426–7427) — *a statement about a
+     product tool outside the analysis* — the tuning tools.
+144. "**Execute splits** — because all boundaries are known upfront, the complete split plan is computed before any
+     mutations." (7428–7429) — *a statement about a product tool outside the analysis* — the tuning tools.
+145. "Each sustained note crossing a region boundary is split-and-slurred once (§11.4 mechanics)." (7429–7430) — *a
+     statement about a product tool outside the analysis* — the tuning tools.
+146. "No cascading splits." (7430–7431) — *a statement about a product tool outside the analysis* — the tuning tools.
+147. "**Apply tuning** — set cent offsets on all notes (attack and newly-split) via `undoChangeProperty(Pid::TUNING, ...)`."
+     (7432–7433) — *a statement about a product tool outside the analysis* — the tuning tools.
+148. "If a non-partial tie chain intersects the selected range, the final chain offset is written to every note in that
+     chain, even when some members lie outside the selection." (7433–7435) — *a statement about a product tool outside
+     the analysis* — the tuning tools.
+
+#### The arithmetic at this member
+
+- Rows written: **81** (30.1 to 30.81).
+- Rows split into two claims, **+1 each**: 30.16, 30.17, 30.26, 30.67, 30.68, 30.75 — six rows, **+6**.
+- **Outgoing statements placed: 81 + 6 = 87.**
+- Listed under *not a statement*: **148**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 87 dispositions over 87
+  statements.
+- **UNPLACED at this member: 0** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 6 | 30.24, 30.26(ii), 30.50, 30.51, 30.52, 30.53 |
+| QUARANTINED | 64 | 30.1, 30.2, 30.4, 30.5, 30.6, 30.7, 30.8, 30.9, 30.10, 30.11, 30.12, 30.13, 30.14, 30.15, 30.16(i), 30.16(ii), 30.17(i), 30.17(ii), 30.18, 30.19, 30.20, 30.21, 30.22, 30.23, 30.25, 30.26(i), 30.27, 30.28, 30.29, 30.30, 30.32, 30.33, 30.34, 30.35, 30.36, 30.38, 30.44, 30.45, 30.46, 30.47, 30.49, 30.54, 30.57, 30.58, 30.59, 30.60, 30.62, 30.63, 30.64, 30.65, 30.66, 30.67(ii), 30.68(ii), 30.69, 30.70, 30.71, 30.72, 30.73, 30.74, 30.75(i), 30.75(ii), 30.79, 30.80, 30.81 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 17 | 30.3, 30.31, 30.37, 30.39, 30.40, 30.41, 30.42, 30.43, 30.48, 30.55, 30.56, 30.61, 30.67(i), 30.68(i), 30.76, 30.77, 30.78 |
+| UNPLACED | 0 | — |
+| **Total** | **87** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 6 + 64 + 0 + 17 + 0 = 87, against 87 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 8 |
+| DIFFERS | 9 |
+| THE DERIVATION IS SILENT | 70 |
+| **Total verdicts** | **87** |
+
+*(87 verdicts over 87 statements; no statement names two derived statements.)* DIFFERS: 30.2, 30.15, 30.16(i), 30.16(ii), 30.67(ii), 30.68(ii), 30.72, 30.75(i), 30.80.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 30 is empty; the one decision homed in
+  these lines, D-248, is not among the decisions ruled L2's own.
+- **SEEN rows: none.** The check was made at the homes as the manifest states: none of the eight homes 1(c) names lies
+  in this member's ranges.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S22 (entry 4) — 30.75. No row of this
+  member names L2-S31, L2-S17, L2-S42, L2-S43, L2-S45, L2-S12 or L2-S38.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -42753,6 +44392,10 @@ the row says which.
   substitution operating on every functional family, the dictionaries its data. *(L2-S49 AGREES at Row 26.1(ii).)*
 - Rows 26.7 to 26.13 — travelling with Row 26.6: the substitution network's list, the tritone, secondary-dominant,
   backdoor, modal-interchange and relative substitutions, each with its voice-leading implications and style weights.
+- Row 30.26(ii) — travelling with Row 23.340: Roman and Nashville numerals encoding identical information. *(L2-S27
+  travels with it.)*
+- Rows 30.50, 30.51, 30.52 and 30.53 — travelling with Row 5.9: the authentic, half, deceptive and plagal cadences,
+  marked above the chord staff. *(L2-S49 travels with them.)*
 
 **To *the second axis — voice leading*.**
 
@@ -42773,6 +44416,8 @@ the row says which.
   Harmonic Vocabulary.
 - Rows 27.1 to 27.10 — travelling with Row 21.67: the close-position voicing and the drop voicings built from it,
   drop 2, drop 3 and drop 2 and 4, with what each is used for.
+- Row 30.24 — travelling with Row 21.67: an inferred voicing — drop 2, spread — replacing the chord staff's
+  close-position default.
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -42998,7 +44643,8 @@ no row. Member 9's relocations are the rows numbered 9.n above, member 10's the 
 the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows numbered 13.n, member 14's the rows
 numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows numbered 17.n. Member 18 relocates no row. Member 19 relocates no row. Member 20 relocates no row, member 21's the rows numbered 21.n, member 22's the rows numbered 22.n, member 23's the rows
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
-relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row.)*
+relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
+above.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -43859,6 +45505,42 @@ rows here, each with its audit question, in the commit that tabulates it.
   call the legacy greedy segmentation anywhere?
 - Row 29.21, with Rows 29.22, 29.23, 29.24 and 29.25 — does a harmonic-map interface exist at the current commit, and
   does anything in the analysis read it?
+- Row 30.1 — from what does the tuning bridge fill the key result's tonic and mode at the current commit — the
+  signature's fifths with a mode, or the analysis's own tonality — and does any analysis read that result?
+- Row 30.2 — travelling with Row 23.300(ii): does the legacy chord analyzer return no chord for a sonority of fewer than
+  three distinct pitch classes at the current commit, and on which path?
+- Rows 30.4, 30.8, 30.9, 30.10, 30.11, 30.12, 30.22, 30.23, 30.25, 30.26(i), 30.27, 30.28, 30.29, 30.44, 30.45, 30.46,
+  30.47, 30.49, 30.57, 30.60 and 30.74 — travelling with Row 20.5 (Row 30.4 through Row 22.14; Rows 30.22 and 30.23
+  through Row 23.322; Rows 30.25, 30.26(i) and 30.44 through Row 23.321; Row 30.27 through Row 23.318; Row 30.28 through
+  Row 23.304; Row 30.29 through Row 23.323; Rows 30.45, 30.49, 30.57, 30.60 and 30.74 through Row 23.320; Rows 30.46 and
+  30.47 through Row 23.325): what does the chord-staff writer write on the record arm at the current commit, and from
+  which published facts?
+- Rows 30.5, 30.13, 30.14, 30.15, 30.16(ii), 30.17(i), 30.33, 30.79, 30.80 and 30.81 — travelling with Row 20.4 (Rows
+  30.13, 30.14, 30.15, 30.79 and 30.80 through Row 23.314; Rows 30.16(ii), 30.17(i) and 30.81 through Row 23.315): does
+  the harmonic-rhythm component run on any production path at the current commit, and does it decide where one harmony
+  gives way to the next apart from the chord?
+- Row 30.6 — travelling with Row 23.316, and through it with Rows 22.13 and 22.12: do the three legacy bridge functions
+  run on the record arm at the current commit, or only when the record flag is off?
+- Rows 30.7 and 30.32 — travelling with Row 20.6: from which surface does the status display take the chord, the key
+  and the Roman numeral it shows for a selected note?
+- Row 30.16(i) — travelling with Row 23.72: which fields make two regions' readings the same on each path at the
+  current commit, and which path merges adjacent regions by them?
+- Row 30.17(ii) — does the chord-staff writer count the notes sustained into a region at the region's start at the
+  current commit, and on which arm?
+- Rows 30.18, 30.19, 30.20 and 30.21 — travelling with Row 22.9 (Rows 30.19, 30.20 and 30.21 through Rows 23.309,
+  23.311 and 23.312): which paths read the legacy harmonic-region type at the current commit?
+- Row 30.30 — travelling with Row 20.1, and through it with Row 3.15: is the legacy chord path compiled and unreached on
+  the production arm?
+- Rows 30.34, 30.35 and 30.36 — travelling with Row 17.56(i): does the single-note surface reach the record through one
+  funnel and one builder?
+- Rows 30.38 and 30.67(ii) — travelling with Row 23.7 (Row 30.38 through Row 23.18): what does the legacy chord result
+  carry, field by field, at the current commit, and what reads it?
+- Rows 30.54, 30.58, 30.59, 30.71, 30.72, 30.73, 30.75(i) and 30.75(ii) — travelling with Row 22.107: on which arm do the
+  section analyzer's stabilization, cadence and pivot detection run at the current commit?
+- Row 30.62, with Rows 30.63, 30.64, 30.65, 30.66, 30.69 and 30.70 — which layers does the annotate path write at the
+  current commit in its Roman-numeral and its Nashville displays, from which published facts, and on which arm?
+- Row 30.68(ii) — travelling with Row 24.87, and through it with Rows 20.3 and 5.300: which labels does the
+  Roman-numeral formatter emit at the current commit, and on which path?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -44584,6 +46266,26 @@ words.
 - Row 29.3(ii) — the outgoing text names *"passing — duration < floor"* as a reason the non-chord-tone filter excludes a
   note; L2-S25 says *"Neither decides it: no duration cut and no metric position makes a note a chord tone or an
   elaboration."*
+- Row 30.2 — as at Row 23.300(ii): the outgoing tuning path returns nothing *"when fewer than 3 distinct pitch classes
+  are sounding (insufficient data for chord identification)"*; L2-S10 says *"A chord is admissible over a span whose
+  sounding set lacks its root, or lacks its third."*
+- Rows 30.15 and 30.80 — as at Row 23.314: the outgoing analyzes the chord once the boundaries are found — *"Chord
+  analysis runs at each boundary tick"*, *"Run chord analysis at each boundary"*; L2-S11 says the boundary *"is never
+  decided before the chord or after it"*.
+- Row 30.16(i) — as at Row 23.72: the outgoing collapses boundaries producing the *"same root and quality"*; L2-S14 says
+  *"A change of figure alone, such as V6 to V65, is a change of chord and may be a boundary."*
+- Row 30.16(ii) — the outgoing absorbs *"sub-quarter-note fragments"*; L2-S7 says *"No regularity of harmonic rhythm or
+  segment length is an admission rule."*
+- Row 30.67(ii) — the outgoing records *"no `relativeRoot`/secondary-dominant field in `ChordFunction`"*; L2-S1's chord
+  carries *"an applied-target chain that may be empty"*.
+- Row 30.68(ii) — the outgoing records *"no aug-sixth classifier in composing module"*; L2-S4's vocabulary contains
+  *"the three augmented sixths"*.
+- Row 30.72 — the outgoing confirms a new key *"by finding at least one additional assertive region within
+  `kMaxPivotLookaheadRegions = 8` regions past the boundary"*; L2-S18 says which reading is principal *"is decided by the
+  candidate score over the whole sequence, not by a rule"*.
+- Row 30.75(i) — the outgoing extends the analysis window *"by up to `kMaxPivotLookaheadRegions × 1 whole note` past
+  `selectionEndTick`"*; L2-S22 *"stops asking when its in-span publication stops changing between successive
+  enlargements"*.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -44624,10 +46326,11 @@ own distribution table in §6.
 | 27 | 18 | 0 | 0 | 10 | 0 | 0 | 8 | 0 | 1 |
 | 28 | 2 | 0 | 0 | 0 | 2 | 0 | 0 | 0 | 5 |
 | 29 | 31 | 0 | 0 | 0 | 14 | 0 | 17 | 0 | 13 |
-| **Total** | **3264** | **411** | **86** | **474** | **1076** | **0** | **943** | **274** | **1449** |
+| 30 | 87 | 0 | 0 | 6 | 64 | 0 | 17 | 0 | 148 |
+| **Total** | **3351** | **411** | **86** | **480** | **1140** | **0** | **960** | **274** | **1597** |
 
-**The arithmetic check:** 411 + 86 + 474 + 1076 + 0 + 943 + 274 = 3264, against 3264 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31).
+**The arithmetic check:** 411 + 86 + 480 + 1140 + 0 + 960 + 274 = 3351, against 3351 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87).
 
 **Current-text verdicts.**
 
@@ -44662,10 +46365,11 @@ own distribution table in §6.
 | 27 | 0 | 0 | 18 | 18 |
 | 28 | 0 | 0 | 2 | 2 |
 | 29 | 0 | 1 | 30 | 31 |
-| **Total** | **619** | **615** | **2078** | **3312** |
+| 30 | 8 | 9 | 70 | 87 |
+| **Total** | **627** | **624** | **2148** | **3399** |
 
-**The arithmetic check:** 619 + 615 + 2078 = 3312 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31).
+**The arithmetic check:** 627 + 624 + 2148 = 3399 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87).
 
 ## 14. The derivation's independence record, relayed
 
@@ -44696,4 +46400,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 29 are done, positions 30 to 62 are untouched.
+  untouched: positions 1 to 30 are done, positions 31 to 62 are untouched.
