@@ -8,7 +8,7 @@
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md` Task 1, and further under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifth_2026_09_28.md` Task 1, and further under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md` Task 1, and further under
-> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md` Task 1, executing
+> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md` Task 1, executing
 > the user's ruling of 2026-09-27, Option B
 > (`records/cowork/rulings/cowork_rulings_2026_09_27_l2_outgoing_population_sitting.md` §2), the
 > named-documents ruling of the same date, Option B
@@ -84,7 +84,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 40 | `cowork_phrase_boundary_design.md` passages | **DONE** (§6.40) |
 | 41 | `cowork_layer6_grouping_design.md` passages | **DONE** (§6.41) |
 | 42 | `cowork_layer2_slicing_design.md` passages | **DONE** (§6.42) |
-| 43 | `cowork_target_architecture.md` passages | NOT YET TABULATED |
+| 43 | `cowork_target_architecture.md` passages | **DONE** (§6.43) |
 | 44 | `cowork_evidence_inventory.md` passages | NOT YET TABULATED |
 | 45 | `cowork_bounded_context_design.md` passages | NOT YET TABULATED |
 | 46 | `cowork_voiceleading_axis_design.md` passages | NOT YET TABULATED |
@@ -107,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 42 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 43 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, and the `cowork_layer2_slicing_design.md` passages.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, and the `cowork_target_architecture.md` passages.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 42 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 43 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -143,8 +143,8 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close; the writing stands at the member boundary after position 42. **Positions 43 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 43**, `cowork_target_architecture.md` passages. §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit; the writing stands at the member boundary after position 43. **Positions 44 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 44**, `cowork_evidence_inventory.md` passages. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -55751,6 +55751,2278 @@ the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S12 (entry 5) — 42.51, 42.52, 42.54; L2-S22
   (entry 4) — 42.60. No row of this member names L2-S31, L2-S17, L2-S42, L2-S43, L2-S45 or L2-S38. Each says so at the row.
 
+---
+
+### 6.43 — Member 43: `cowork_target_architecture.md`, passages
+
+> **Manifest for this member.** Position **43**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_target_architecture.md`. Label: *"the passages of the document"*. **The twenty-six published
+> ranges**, each as a locator only, by its first and last line as the artifact publishes them (**D-307**); where a
+> boundary line is too long to repeat, it is given by its opening and closing words:
+>
+> 1. lines 3–13, from the line opening *"> **★ Governance (2026-06-29): `ARCHITECTURE.md`"* and closing *"doc.** Its **§2.14** (the forward-only"* to *"> Existing-code descriptions here are verified at source (HEAD `edd33901ed`); the target is design."*;
+> 2. lines 17–27, from *"## 1. The core principle"* to *"*display grouping* (cosmetic)."*;
+> 3. lines 29–30, from the line opening *"This dissolves the largest measured error"* and closing *"construction*: with every slice analyzed"* to *"on its own, no unit ever spans two harmonies. Over-grab stops being a lever and becomes impossible."*;
+> 4. lines 48–58, from *"> **★ "Effort" preset — a planned future calibration knob (user, 2026-06-22).** Alongside the *style* preset"* to the line opening *"> cheaper *algorithm*, not just smaller settings,"* and closing *"revisit only if profiling shows it.)"*;
+> 5. lines 62–65, from the line opening *"**The analysis half is decomposed into single-responsibility"* and closing *"2026-06-21) — not one fat "analysis""* to *"evidence source's contribution to one question — not necessarily the final answer to that question.**"*;
+> 6. lines 67–76, from the line opening *"**★ Minimality / maximal separation (user-ratified"* and closing *"**as little as possible**: whatever"* to *"evidence, it is its own concern."*;
+> 7. lines 88–95, from *"| Layer | Name | Contract | Fact or Judgment? |"* to the line opening *"| **6** | **Grouping / display** | Merge"* and closing *"Cosmetic, reversible, downstream. | View |"*;
+> 8. lines 97–106, from the line opening *"**★ A future voice-leading layer (named,"* and closing *"1–6 analyse the **vertical/harmonic**"* to the line opening *"for complete-schema recognition or voice-leading"* and closing *"verification path (verifiability contract)."*;
+> 9. lines 108–117, from the line opening *"**★ The Harmonic Vocabulary — an independent"* and closing *"layer (user-ratified 2026-06-29).** The"* to *"detection) lives at the consumer."*;
+> 10. lines 119–137, from *"Sub-points:"* to *"chord-symbol layer (4), not a primitive and not a replacement for the notes."*;
+> 11. lines 139–173, from the line opening *"**Control flow — forward-only, no backward"* and closing *"The layers form an **acyclic forward"* to *"is the spine of the Stage-5 / gated-step design doc** when it is written."*;
+> 12. lines 175–191, from the line opening *"**What "single responsibility" actually means"* and closing *"question) contribution, NOT "one layer"* to *"owns the rest) stated explicitly.**"*;
+> 13. lines 201–212, from *"**★ Bounded context — the analysis works on the user's selection, and a layer asks for more (user-ratified"* to *"no extension fires) — which is what keeps the batch-testing path unchanged."*;
+> 14. lines 228–261, from the line opening *"**★ Spans are a typed family, not one "region""* and closing *"(user-ratified 2026-06-29).** A tonal"* to *"recognize, read predictively to suggest."*;
+> 15. lines 263–270, from *"**The relation between two span types is either NESTING or CROSS-CUTTING, and which it is must be stated.**"* to *"where the truth is cross-cutting (e.g. nesting key-areas inside punctuation-spans) is a modelling error."*;
+> 16. lines 279–288, from *"## 3. Why this is the target (the evidence)"* to *"wrong about, and one fewer coupled decision."*;
+> 17. lines 290–298, from *"## 4. How it differs from the existing code (the gap to close)"* to *"> The canonical `ARCHITECTURE.md` carries the authoritative as-built; this banner keeps the target doc honest."*;
+> 18. lines 300–303, from the line opening *"Existing (verified): a **segment-first**"* and closing *"(`harmonicsegmenter.greedyExpandSegmentation`,"* to *"Tone collection conflates note-reading with weighting/aggregation and discards the notes."*;
+> 19. lines 305–313, from *"Target mapping (synthesis, to refine per-layer):"* to *"set subsumes them. They may survive only as fast change-point enumeration helpers, if at all."*;
+> 20. line 315 — one line, *"This is a re-shape, not a tidy-up: the segment-first spine is replaced by slice → analyze → group."*;
+> 21. lines 317–326, from *"## 5. Implications for the upstream-first sweep"* to *"analysis-with-context carries the key + NCT levers)."*;
+> 22. lines 333–351, from *"### 6.1 Layer 2 — the change-point set (what defines a slice boundary)"* to *"(Equivalent to treating grace as a layer-1 annotation, not a layer-2 boundary.)"*;
+> 23. lines 353–382, from *"### 6.2 Layer 3 — the analysis (the only place judgment lives)"* to *"membership criterion and window — designed in the layer-3 doc."*;
+> 24. lines 384–398, from *"### 6.3 Layer N — grouping (cosmetic, but it IS the output structure)"* to *"of it."*;
+> 25. lines 400–406, from *"### 6.4 Performance (per-slice is more points than per-region)"* to *"viewport-incremental approach keeps the editor responsive). None is a blocker; size it in the layer-3 doc."*;
+> 26. lines 408–415, from *"### 6.5 Cross-cutting — slices vs oracle events (keep them aligned, not equal)"* to *"not a metric problem."*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside — the document's blob carries no carriage return. **The lines between the ranges are outside the
+> member** and are not tabulated, quoted or listed. **Nine lines inside the ranges are headings** — lines 17, 279, 290,
+> 317, 333, 353, 384, 400 and 408, each the first line of its range — and under the first reading rule of §6 they are
+> titles, neither tabulated nor listed. Outgoing statements: **202** (rows 43.1 to 43.163; 34 of those rows carry more
+> than one claim and are split, 29 of them carrying two claims each and 5 carrying three — the arithmetic is at the foot
+> of this member). Listed under *not a statement*: **60**. Counted at this member by this session; the counts appear
+> here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of the target-architecture
+> document, which its own opening block demotes to a detailed design-and-rationale reference beneath `ARCHITECTURE.md`
+> and marks historical, user-ratified on 2026-06-21: its governance and status banner; the core principle of analyzing
+> at the finest grain, with its two consequences; the effort preset; the layer model — single-responsibility layers,
+> minimality, the six-layer table, the future voice-leading layer, the Harmonic Vocabulary and the sub-points on the
+> order of the layers; the forward-only control flow, with its selection from a carried menu and its
+> confidence-weighted override; single responsibility as one evidence source's contribution to one question; bounded
+> context; the span family and how its members relate; the evidence for the target; the gap to the existing code and
+> the target mapping; the implications for the upstream-first sweep; and the open design questions on the change-point
+> set, the analysis, the grouping, performance, and slices against annotated events. **The placement readings are those
+> of the earlier members, applied unchanged.** Much of the member states, in an earlier form, the architecture that
+> `ARCHITECTURE.md` §2 and its document-governance section carry, and it travels with those rows: the forward stack of
+> layers, the tonality before the chord and the gated joint step as a later escape travel with the superseded plan Row
+> 18.2(i) places HISTORICAL, the governing decision at the head of `ARCHITECTURE.md` making the estimator joint; the
+> ruled principles a derived statement contradicts — the finest grain (Row 21.41), one contribution per layer (Row
+> 21.62(i)), the confidence-weighted override (Row 5.218(ii)), the joint step as a separate step (Row 8.96), the tonality
+> layer's ownership of its candidate space (Row 7.24) and the residual settled on functional evidence (Rows 7.26 and
+> 7.27) — are UNPLACED with those rows; the effort preset is HISTORICAL with Row 21.39 and its two rules are proposed with
+> Row 21.40; the bounded context is carried with Rows 21.59 to 21.61; the span family travels with Rows 21.48, 21.49 and
+> 21.52; the note model and the slice are RELOCATED with Rows 22.37, 6.6(i), 10.5, 22.55 and 22.73; and the Harmonic
+> Vocabulary and the voice-leading layer are RELOCATED with Rows 26.1, 5.91, 22.100 and 22.101. A description of the
+> implementation of the document's date is QUARANTINED; a build state, a status, a plan, an estimate and a past
+> measurement are HISTORICAL; how the slices relate to the annotated events and how the root metric grades go to *the
+> measurement of the analysis*; a label, a pointer, provenance, a defense — the whole of §3's evidence for the target
+> among them — reasoning on a question the text then settles, a rejected alternative named with its reasons, a rule of
+> the order of work, a rule of how a specification states a layer's responsibility, and the document's account of
+> itself are listed; the layer table's header and separator rows are listed as §6.24 lists them. **No reading is new at
+> this member**, and two places where earlier readings meet are stated so they can be checked: **(1)** a *lean* of §6 —
+> the document's own recommendation on a question it calls undecided — is placed by what it states, as member 24's first
+> reading places an item of a plan by what it names, so a lean contradicting a derived statement on the order of the
+> decisions travels with the superseded plan and a lean a derived statement carries is ADOPTED — carried; **(2)** the
+> worked example under minimality states what the layer naming the chord does, so it is tabulated as a statement and not
+> listed as a defense.
+>
+> **The WITHHELD homes inside this member**: none — the artifact's `item_4_identities_inside` for position 43 is empty,
+> and the check at `tools/audit/decisions/backbone_decisions.json` found no decision homed in this document. **The SEEN
+> check, made at the homes as member 17's manifest states:** none of the eight homes lies in this member, and none of
+> them is homed in this document.
+
+---
+
+**Row 43.1 — the core principle: analyze at the finest grain, and make everything coarser a derived view.**
+
+*Outgoing statement.* "**Analyze at the finest grain where harmony is well-defined; make everything coarser a derived view.**" — §1 *The core principle* (locator: line 18).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 21.41.
+
+*The difference, in both texts' own words.* The outgoing principle makes *"everything coarser a derived view"*; L2-S11 says where the boundaries fall *"is decided together with the tonality, the chord and the assignments, in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 21.41. *What was read:* as at Row 21.41.
+
+---
+
+**Row 43.2 — harmony changes only where the notes change; the atomic unit the constant-sonority slice, never the beat.**
+
+*Outgoing statement.* "Harmony is constant between note change-points and changes only when notes change, so the atomic unit of analysis is the **constant-sonority slice** (the span between consecutive note onsets/offsets) — never the metric beat." — §1 *The core principle* (locator: lines 18–20). Two claims: (i) harmony changes only when the sounding notes change, so no change of harmony falls between change points; (ii) the atomic unit of analysis is the constant-sonority slice, never the metric beat.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) None.
+
+*Current-text axis.* (i) L2-S11: **AGREES** — as at Row 22.76(i). (ii) **THE DERIVATION IS SILENT** — the derivation takes slices as the input contract defines them.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S11), travelling with Row 22.76(i). (ii) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 6.6(i).
+
+---
+
+**Row 43.3 — the notes the single lossless source of truth.**
+
+*Outgoing statement.* "**The score's notes are the single lossless source of truth.**" — §1 *The core principle*, the first consequence (locator: line 22).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(i).
+
+---
+
+**Row 43.4 — every later layer annotates or derives a view; nothing transforms or discards the notes.**
+
+*Outgoing statement.* "Every later layer *annotates* or *derives a view*; nothing transforms or discards the notes (annotate-A-with-B, never replace A)." — §1 *The core principle*, the first consequence (locator: lines 22–23).
+
+*Derived statements that speak to it.* L2-S47.
+
+*Current-text axis.* L2-S47: **AGREES** — as at Row 6.25(iii).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S47), travelling with Row 6.25(iii).
+
+---
+
+**Row 43.5 — where the slices fall is a deterministic fact, not a judgment.**
+
+*Outgoing statement.* "**"Where the slices are" is a deterministic FACT, not a judgment.**" — §1 *The core principle*, the second consequence (locator: line 24).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.55.
+
+---
+
+**Row 43.6 — the slices read off the notes.**
+
+*Outgoing statement.* "It is read off the notes." — §1 *The core principle*, the second consequence (locator: line 24).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.55.
+
+---
+
+**Row 43.7 — segmentation no longer a decision; nothing to get right or wrong about where the slices fall.**
+
+*Outgoing statement.* "This removes segmentation-as-a-decision entirely — there is nothing to get right or wrong about slice placement." — §1 *The core principle*, the second consequence (locator: lines 24–25). Two claims: (i) segmentation is no longer a decision at all; (ii) there is nothing to get right or wrong about where the slices fall.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) None.
+
+*Current-text axis.* (i) L2-S11: **DIFFERS** — as at Row 21.41. (ii) **THE DERIVATION IS SILENT.**
+
+*The difference, in both texts' own words.* (i) The outgoing text *"removes segmentation-as-a-decision entirely"*; L2-S11 says where the boundaries fall *"is decided together with the tonality, the chord and the assignments, in the one decision"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 21.41. *What was read:* as at Row 21.41. (ii) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.55.
+
+---
+
+**Row 43.8 — the only judgments inside the analysis, asked of each slice, and inside a cosmetic display grouping.**
+
+*Outgoing statement.* "The only judgments live inside *analysis* (is this slice a chord or a decoration? what key? what chord?) and inside *display grouping* (cosmetic)." — §1 *The core principle*, the second consequence (locator: lines 25–27). Two claims: (i) the judgments — whether a slice is a chord or a decoration, which tonality, which chord — live inside the analysis, asked of each slice; (ii) the grouping for display is cosmetic.
+
+*Derived statements that speak to it.* (i) L2-S1. (ii) L2-S14.
+
+*Current-text axis.* (i) L2-S1: **DIFFERS**. (ii) L2-S14: **AGREES** — as at Row 22.76(iii).
+
+*The difference, in both texts' own words.* (i) The outgoing analysis asks of each slice *"is this slice a chord or a decoration?"*; L2-S1 makes an assignment *"Per event sounding in the span"* and says *"The search's unit is the whole reading, not a span."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 21.41. *What was read:* the finest-grain principle of Row 21.41, under which the slice is the unit each judgment is taken over, against L2-S1's whole reading; a disposition would choose between them. (ii) **ADOPTED — carried** (L2-S14), travelling with Row 22.76(iii).
+
+---
+
+**Row 43.9 — over-grab dissolved by construction; the largest measured error class.**
+
+*Outgoing statement.* "This dissolves the largest measured error class (**over-grab, ~45%**) *by construction*: with every slice analyzed on its own, no unit ever spans two harmonies." — §1 *The core principle* (locator: lines 29–30). Two claims: (i) over-grab is dissolved by construction, no unit spanning two harmonies; (ii) over-grab was the largest measured error class, at about 45%.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.55. (ii) **HISTORICAL** — a past measurement.
+
+---
+
+**Row 43.10 — over-grab impossible.**
+
+*Outgoing statement.* "Over-grab stops being a lever and becomes impossible." — §1 *The core principle* (locator: line 30).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.55.
+
+---
+
+**Row 43.11 — a separate effort preset trading the quality of the analysis against response time.**
+
+*Outgoing statement.* "Alongside the *style* preset (Standard / Baroque / Jazz …), a separate **effort** preset (quick / normal / ambitious) will trade analysis quality against response time." — §1, the effort preset (locator: lines 48–50).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan, travelling with Row 21.39.
+
+---
+
+**Row 43.12 — the effort preset a calibration over each layer's cost settings and optional refinements, a beam count among them.**
+
+*Outgoing statement.* "It is **calibration, not structure**, so it is a *retrofit*: a named preset over each layer's cost-driving **settings** (beam/candidate count, scoring- and reach-back-window sizes, caps) and on/off switches for the **optional expensive refinements** (e.g. the keyscape multi-timescale check; the gated joint key-and-chord step)." — §1, the effort preset (locator: lines 50–53).
+
+*Derived statements that speak to it.* L2-S36.
+
+*Current-text axis.* L2-S36: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing preset sets a *"beam/candidate count"* as a cost-driving setting; L2-S36 says *"No beam that discards readings on partial candidate scores is admitted."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan, travelling with Row 21.39.
+
+---
+
+**Row 43.13 — the effort preset added after profiling.**
+
+*Outgoing statement.* "**It will be added after a real implementation can be profiled**, not guessed now." — §1, the effort preset (locator: line 53).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan, travelling with Row 21.39.
+
+---
+
+**Row 43.14 — every cost-driving choice a setting; every optional expensive refinement a separable stage.**
+
+*Outgoing statement.* "Two rules preserve the cheap retrofit, starting now: **(a)** every cost-driving choice is an explicit *setting*, never a hardcoded constant; **(b)** every optional expensive refinement is a cleanly *separable on/off stage*." — §1, the effort preset (locator: lines 53–55). Two claims: (i) every cost-driving choice is an explicit setting, never a constant fixed in code; (ii) every optional expensive refinement is a separable stage that can be switched off.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**, travelling with Row 21.40(i). (ii) **ADOPTED — proposed**, travelling with Row 21.40(ii).
+
+---
+
+**Row 43.15 — the performance floor correctness; effort reaches only the optional work above it.**
+
+*Outgoing statement.* "(The performance *floor* — e.g. routing per-slice scoring through the indexed note model — is correctness, not an effort dimension; effort scales only the optional work above that floor." — §1, the effort preset (locator: lines 55–57).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan, travelling with Row 21.39.
+
+---
+
+**Row 43.16 — a level needing a cheaper algorithm more than a setting.**
+
+*Outgoing statement.* "A level that needs a fundamentally cheaper *algorithm*, not just smaller settings, would be more than a knob — revisit only if profiling shows it.)" — §1, the effort preset (locator: lines 57–58).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan, travelling with Row 21.39.
+
+---
+
+**Row 43.17 — the analysis decomposed into single-responsibility layers.**
+
+*Outgoing statement.* "**The analysis half is decomposed into single-responsibility layers (user, 2026-06-21) — not one fat "analysis" layer.**" — §2 *The layer model* (locator: lines 62–63).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 18.2(i).
+
+*The difference, in both texts' own words.* The outgoing analysis *"is decomposed into single-responsibility layers"*; L2-S11 decides the boundary *"together with the tonality, the chord and the assignments, in the one decision"*.
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 18.2(i) — a superseded plan.
+
+---
+
+**Row 43.18 — each layer does one thing and annotates the slice; the order fixed by dependency.**
+
+*Outgoing statement.* "Each does ONE thing and annotates the slice; the order is fixed by dependency." — §2 *The layer model* (locator: line 63). Two claims: (i) each layer does one thing, annotating the slice; (ii) the order of the layers is fixed by dependency.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) L2-S11.
+
+*Current-text axis.* (i) L2-S11: **DIFFERS** — as at Row 18.2(i). (ii) L2-S11: **DIFFERS** — as at Row 18.2(i).
+
+*The difference, in both texts' own words.* (i) and (ii) The outgoing layer *"does ONE thing and annotates the slice; the order is fixed by dependency"*; L2-S11 says of the boundary *"It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL**, travelling with Row 18.2(i). (ii) **HISTORICAL**, travelling with Row 18.2(i).
+
+---
+
+**Row 43.19 — one layer owns one evidence source's contribution to one question.**
+
+*Outgoing statement.* "**What "one thing" means precisely is the *(evidence-source × question)* invariant in the control-flow contract below: a layer owns one evidence source's contribution to one question — not necessarily the final answer to that question.**" — §2 *The layer model* (locator: lines 63–65).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 21.62(i).
+
+*The difference, in both texts' own words.* The outgoing layer *"owns one evidence source's contribution to one question"*; L2-S11 decides the boundary, the tonality, the chord and the assignments *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 21.62(i). *What was read:* as at Row 21.62(i).
+
+---
+
+**Row 43.20 — minimality: each layer does as little as possible.**
+
+*Outgoing statement.* "Each layer does **as little as possible**: whatever *can* be a separate concern in a later layer **must** be." — §2 *The layer model*, minimality (locator: lines 67–68).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 21.62(ii).
+
+*The difference, in both texts' own words.* The outgoing layer *"does as little as possible"*, whatever can be a later concern being one; L2-S11 decides the four together *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 21.62(ii). *What was read:* as at Row 21.62(i).
+
+---
+
+**Row 43.21 — a layer settles only what its own evidence decides and defers the remainder, carried with an uncertain mark.**
+
+*Outgoing statement.* "A layer settles only the part of its question that **its own evidence** decides, and **defers** everything that needs evidence a later layer owns — handed forward as carried alternatives + an "uncertain" mark, never guessed." — §2 *The layer model*, minimality (locator: lines 68–70).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 21.62(ii).
+
+*The difference, in both texts' own words.* The outgoing layer *"defers everything that needs evidence a later layer owns"*; L2-S11 says where the boundaries fall *"is decided together with the tonality, the chord and the assignments, in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 21.62(ii). *What was read:* as at Row 21.62(i).
+
+---
+
+**Row 43.22 — a layer never reaches for a separable sub-problem.**
+
+*Outgoing statement.* "It never reaches for a separable sub-problem." — §2 *The layer model*, minimality (locator: line 70).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 21.62(ii).
+
+*The difference, in both texts' own words.* The outgoing layer *"never reaches for a separable sub-problem"*; L2-S11 takes the boundary, the tonality, the chord and the assignments *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 21.62(ii). *What was read:* as at Row 21.62(i).
+
+---
+
+**Row 43.23 — the worked example: the chord layer names quality and bass and defers a symmetric chord's root.**
+
+*Outgoing statement.* "*Worked example:* resolving a symmetric chord's spelled root (diminished-seventh / augmented) needs spelling + function — a later layer — so the chord layer names the *quality and bass* and **defers the root**, rather than pinning it by voice-leading or spelling cleverness it shouldn't own." — §2 *The layer model*, minimality (locator: lines 70–73).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing chord layer *"defers the root, rather than pinning it by voice-leading or spelling cleverness it shouldn't own"*; L2-S10 says *"An event is a chord tone of a span only if its spelled pitch class is a member of the span's chord, spelled."*
+
+*PROPOSED DISPOSITION.* **UNPLACED.** *What was read:* the ratified minimality rule's worked example, under which the layer naming the chord leaves a symmetric chord's root to a later layer, against L2-S10, under which the chord and its members are decided spelled inside the one reading; a disposition would choose between them.
+
+---
+
+**Row 43.24 — binary chord membership decided; the elaboration relation deferred.**
+
+*Outgoing statement.* "Likewise it decides *binary* chord-membership (needed to name the chord) but not the *non-chord-tone type* (passing/neighbour/suspension — separable, so deferred)." — §2 *The layer model*, minimality (locator: lines 73–74).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **DIFFERS** — as at Row 6.26.
+
+*The difference, in both texts' own words.* The outgoing layer decides *"binary chord-membership"* but *"not the non-chord-tone type"*; L2-S1 makes the assignment *"chord tone, or elaboration together with its relation"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 6.146. *What was read:* as at Row 6.146.
+
+---
+
+**Row 43.25 — the test for a layer's boundary: a sub-task with its own evidence is its own concern.**
+
+*Outgoing statement.* "This is the rule that keeps every layer thin and is the test applied when drawing a new layer's boundary: if a sub-task can stand alone with its own evidence, it is its own concern." — §2 *The layer model*, minimality (locator: lines 74–76).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 21.62(ii).
+
+*The difference, in both texts' own words.* The outgoing test makes *"a sub-task"* that *"can stand alone with its own evidence"* its own concern; L2-S11 takes the boundary, the tonality, the chord and the assignments *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 21.62(ii). *What was read:* as at Row 21.62(i).
+
+---
+
+**Row 43.26 — layer 1, the note model: the notated record read once, lossless, with no weighting.**
+
+*Outgoing statement.* "| **1** | **Note model** | Read the score once → the lossless, annotated set of sounding notes (pitch, tpc, staff, voice, onset, offset, duration, ties, `isGrace`, `plays`, `visible`, staff-eligibility). Preserved end-to-end. **No** weighting, filtering, or aggregation. ONE representation, ONE path. | Fact |" — §2 *The layer model*, the layer table, row *1* (locator: line 90).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(i).
+
+---
+
+**Row 43.27 — layer 2, change-point slicing: the constant-sonority slices, deterministic.**
+
+*Outgoing statement.* "| **2** | **Change-point slicing** | From the note model → the constant-sonority slices (spans between the union of note onsets/offsets). Deterministic; lossless; not a heuristic. | Fact |" — §2 *The layer model*, the layer table, row *2* (locator: line 91).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 10.5.
+
+---
+
+**Row 43.28 — layer 3: per slice the tonality, from the notes alone, needing no chord; the layer of the dominant error.**
+
+*Outgoing statement.* "| **3** | **Key/mode** | For each slice, the prevailing **key/mode** (`C-major`, `F-mixolydian`, `B-phrygian`) — as a **context-aware path** over the slice sequence, from the notes alone: **pitch-class content + tonic emphasis** (bass, metric weight, frequency, leading-tone presence) integrated by the path's transition penalty. **Needs NO chord symbols, functions, or cadence detection** (a cadence is a V→I = function-level; cadence-based key refinement is the gated Stage 5). This is the dominant-error layer. | Judgment |" — §2 *The layer model*, the layer table, row *3* (locator: line 92). Two claims: (i) per slice, the prevailing tonality — among modes such as Mixolydian and Phrygian — decided as a path over the slices from the notes alone, needing no chord, function or cadence; (ii) this layer carries the dominant error.
+
+*Derived statements that speak to it.* (i) L2-S11; L2-S6. (ii) None.
+
+*Current-text axis.* (i) L2-S11: **DIFFERS** — as at Row 18.2(i). L2-S6: **DIFFERS**. (ii) **THE DERIVATION IS SILENT.**
+
+*The difference, in both texts' own words.* (i) The outgoing tonality comes *"from the notes alone"* and *"Needs NO chord symbols, functions, or cadence detection"*, over modes such as *"`F-mixolydian`, `B-phrygian`"*; L2-S11 says *"It is never decided before the chord or after it"*, and L2-S6's tonalities are *"in two modes, major and minor"*.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL**, travelling with Row 18.2(i) — a superseded plan. (ii) **HISTORICAL** — a past measurement.
+
+---
+
+**Row 43.29 — layer 4: per slice the chord symbol and the non-chord tones, one job, the tonality a diatonic prior.**
+
+*Outgoing statement.* "| **4** | **Chord symbol (+ non-chord tones)** | For each slice, the key-independent **chord symbol** (`Bm7`, `Gdim`) AND which notes are **non-chord tones** (one job — you cannot name the symbol without deciding membership). Uses the notes + the layer-3 key/mode as a diatonic prior + context (the prevailing chord, so embellishment slices don't spawn spurious symbols). | Judgment |" — §2 *The layer model*, the layer table, row *4* (locator: line 93). Three claims: (i) per slice, the chord symbol, independent of the tonality; (ii) which notes are non-chord tones, decided in the same job as the chord; (iii) the tonality layer's reading used as a diatonic prior.
+
+*Derived statements that speak to it.* (i) L2-S27. (ii) L2-S23. (iii) L2-S11.
+
+*Current-text axis.* (i) L2-S27: **DIFFERS**. (ii) L2-S23: **AGREES** — *"The assignments are part of the one decision."* (iii) L2-S11: **DIFFERS** — as at Row 18.2(i).
+
+*The difference, in both texts' own words.* (i) The outgoing layer decides *"the key-independent chord symbol"*; L2-S27 says *"It publishes no chord symbol (root pitch class, quality and bass note). That is L3's read-off."* (iii) The outgoing chord uses *"the layer-3 key/mode as a diatonic prior"*; L2-S11 says *"It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL**, travelling with Row 18.2(i). (ii) **ADOPTED — carried** (L2-S23). (iii) **HISTORICAL**, travelling with Row 18.2(i).
+
+---
+
+**Row 43.30 — layer 5: the function, the chord symbol read in the tonality.**
+
+*Outgoing statement.* "| **5** | **Function** | For each chord, the **function** (`V/V`, `IV7`, Roman or Nashville) = the chord symbol read **in** the key/mode. Mostly a derivation once 3 + 4 are known. | Judgment (thin) |" — §2 *The layer model*, the layer table, row *5* (locator: line 94).
+
+*Derived statements that speak to it.* L2-S27.
+
+*Current-text axis.* L2-S27: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing function is *"the chord symbol read **in** the key/mode"*, derived once the tonality and the chord symbol are known; L2-S27 says *"L2 decides the chord as degree, quality, figure and applied target, read against the span's tonality"*, the chord symbol being read off it.
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 18.2(i).
+
+---
+
+**Row 43.31 — layer 6: adjacent slices with the same analysis merged for display.**
+
+*Outgoing statement.* "| **6** | **Grouping / display** | Merge adjacent slices carrying the same analysis into human-readable regions. Cosmetic, reversible, downstream. | View |" — §2 *The layer model*, the layer table, row *6* (locator: line 95).
+
+*Derived statements that speak to it.* L2-S14.
+
+*Current-text axis.* L2-S14: **AGREES** — as at Row 22.76(iii).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S14), travelling with Row 22.76(iii).
+
+---
+
+**Row 43.32 — layers 1 to 6 analyze the harmonic dimension, in the order notes, tonality, chord, function, grouping.**
+
+*Outgoing statement.* "Layers 1–6 analyse the **vertical/harmonic** dimension (notes → key → chord → function → grouping)." — §2 *The layer model*, the future voice-leading layer (locator: lines 97–98).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 18.2(i).
+
+*The difference, in both texts' own words.* The outgoing layers run in the order *"notes → key → chord → function → grouping"*; L2-S11 says *"It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 18.2(i).
+
+---
+
+**Row 43.33 — the horizontal dimension, voice leading, not built.**
+
+*Outgoing statement.* "The **horizontal/linear** dimension — voice-leading: linear progressions (Zugs), suspension/resolution chains, and the **voice-leading skeletons** that complete galant-schema recognition (Gjerdingen) and voice-leading-based slice resolution (L5 §11, currently disclaimed) require — is **not** built." — §2 *The layer model*, the future voice-leading layer (locator: lines 98–101). Two claims: (i) the horizontal dimension is voice leading — linear progressions, chains of suspension and resolution, and the skeletons that schema recognition needs; (ii) it is not built.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the second axis — voice leading*, travelling with Row 22.100. (ii) **HISTORICAL** — a build state.
+
+---
+
+**Row 43.34 — the voice-leading layer reads per-voice motion, beside the harmonic stack.**
+
+*Outgoing statement.* "It would read the per-voice motion the Layer-1 note model already carries losslessly, so it is a future layer over Layer 1, **parallel** to the harmonic stack, feeding Layer 5 (function/schema) and Layer 6 (grouping)." — §2 *The layer model*, the future voice-leading layer (locator: lines 101–102).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 22.101.
+
+---
+
+**Row 43.35 — schemata of the harmonic skeleton reachable without it; the voice-leading-complete schemata require it.**
+
+*Outgoing statement.* "Named here so the dependency is explicit: the **functional/harmonic-skeleton** progression-schemas (ii–V–I, turnarounds, the harmonic reduction of the galant schemata, the substitution map) are **L5-reachable without it**, but the **voice-leading-complete** schemata and any voice-leading-based resolution **require** it." — §2 *The layer model*, the future voice-leading layer (locator: lines 102–105). Two claims: (i) the progression schemata defined by their harmonic skeleton are reachable without the voice-leading layer; (ii) the schemata defined by their voice leading, and any settling of an ambiguity that rests on voice leading, require it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91. (ii) **RELOCATED** — to *the second axis — voice leading*, travelling with Row 22.100.
+
+---
+
+**Row 43.36 — out of scope; the trigger to build it.**
+
+*Outgoing statement.* "Out of current scope; the trigger to build it is a need for complete-schema recognition or voice-leading resolution *with* a verification path (verifiability contract)." — §2 *The layer model*, the future voice-leading layer (locator: lines 105–106).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 43.37 — the Harmonic Vocabulary a cross-cutting resource with a read-only query interface, not a layer.**
+
+*Outgoing statement.* "The curated catalog of progressions, schemas, and substitutions (`cowork_progression_schema_dictionary.md`, its own component spec) is a **cross-cutting resource**, a *sibling* to the L1–L6 pipeline, not a member of it: it has **no *(evidence-source × question)* contract** because it is **reference knowledge with a read-only query interface**, not a processing layer." — §2 *The layer model*, the Harmonic Vocabulary (locator: lines 108–111).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.1(i).
+
+---
+
+**Row 43.38 — the vocabulary read by the function and grouping layers, and built for a suggestion tool.**
+
+*Outgoing statement.* "It is **consumed** by Layer 5 (the progression prior / substitution-inversion) and Layer 6 (the progression-schema-span annotation), and is built **shareable** for a future chord-suggestion tool." — §2 *The layer model*, the Harmonic Vocabulary (locator: lines 111–114). Two claims: (i) it is read by the function layer and by the grouping layer; (ii) it is built shareable for a future chord-suggestion tool.
+
+*Derived statements that speak to it.* (i) L2-S49. (ii) None.
+
+*Current-text axis.* (i) L2-S49: **AGREES** — as at Row 5.91. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.1(ii). *(L2-S49 travels with it.)* (ii) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.1(ii).
+
+---
+
+**Row 43.39 — curated knowledge a component the layers query; genre labels in it, genre-aware behavior at its consumer.**
+
+*Outgoing statement.* "The pattern generalises: durable curated knowledge (this vocabulary; the chord templates; the key profiles) is a **component queried by the layers**, distinct from the layers' per-piece inference — and the genre *labels* live in the component while genre-aware *behavior* (selection, weights, detection) lives at the consumer." — §2 *The layer model*, the Harmonic Vocabulary (locator: lines 114–117). Two claims: (i) durable curated knowledge — the vocabulary, the chord templates, the tonality profiles — is a component the layers query, distinct from their inference over a piece; (ii) genre labels live in the component and genre-aware selection, weights and detection at the layer that reads it.
+
+*Derived statements that speak to it.* (i) L2-S39. (ii) None.
+
+*Current-text axis.* (i) L2-S39: **AGREES** — a published profile *"enters the candidate score as a feature whose single weight is fitted. Its internal constants are the published ones, unchanged"*. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S39). (ii) **UNPLACED.** *What was read:* a rule placing genre labels in the knowledge component and genre-aware behavior at the layer that reads it; the derivation names no genre or style axis and no charter of `FRAMEWORK.md` §5 names the style system, the case Row 9.30 records for the idiom taxonomy.
+
+---
+
+**Row 43.40 — the dependency order the spine: tonality, chord symbol, function, grouping.**
+
+*Outgoing statement.* "**The dependency order is the spine: key/mode → chord symbol → function → grouping.**" — §2 *The layer model*, the sub-points (locator: line 120).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 18.2(i).
+
+*The difference, in both texts' own words.* The outgoing spine orders *"key/mode → chord symbol → function → grouping"*; L2-S11 says *"It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 18.2(i).
+
+---
+
+**Row 43.41 — the tonality needs only the notes; the chord helped by the tonality, not the reverse; the function needs both.**
+
+*Outgoing statement.* "Established by dependency analysis: **key/mode needs only the notes** (pitch-class content + tonic emphasis — NOT chord symbols, functions, or cadence detection); **chord symbol is *helped* by key/mode** (diatonic prior) but key/mode is **not** helped by chord symbols (naming the notes "G7" adds nothing key-relevant beyond the pitch content already present); **function needs both.**" — §2 *The layer model*, the sub-points (locator: lines 120–124). Three claims: (i) the tonality needs only the notes, not chord symbols, functions or cadence detection; (ii) the chord is helped by the tonality and the tonality is not helped by the chord; (iii) the function needs both.
+
+*Derived statements that speak to it.* (i) L2-S20. (ii) L2-S20. (iii) L2-S27.
+
+*Current-text axis.* (i) L2-S20: **DIFFERS**. (ii) L2-S20: **DIFFERS**. (iii) L2-S27: **AGREES** — the chord is *"read against the span's tonality"*.
+
+*The difference, in both texts' own words.* (i) and (ii) The outgoing tonality *"needs only the notes"* and *"is **not** helped by chord symbols"*; L2-S20 says *"The tonality terms read the chords the reading proposes (degree, function, cadential progressions)"*.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL**, travelling with Row 18.2(i). (ii) **HISTORICAL**, travelling with Row 18.2(i). (iii) **ADOPTED — carried** (L2-S27).
+
+---
+
+**Row 43.42 — so the tonality goes first.**
+
+*Outgoing statement.* "So key/mode is the root and goes first." — §2 *The layer model*, the sub-points (locator: line 124).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 18.2(i).
+
+*The difference, in both texts' own words.* The outgoing tonality *"is the root and goes first"*; L2-S11 says *"It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 18.2(i).
+
+---
+
+**Row 43.43 — a cadence downstream; modulation from the path's change cost; the cadence-based refinement the gated step.**
+
+*Outgoing statement.* "A cadence is a V→I (function-level, downstream); modulation/passing-keys come from the key path's transition penalty, not cadence detection; the cadence/function-based key refinement is the gated Stage 5." — §2 *The layer model*, the sub-points (locator: lines 125–127). Three claims: (i) a cadence is function-level, downstream of the tonality; (ii) modulation and passing tonalities come from the tonality path's change cost, not from cadence detection; (iii) the refinement of the tonality from cadence and function is the gated later step.
+
+*Derived statements that speak to it.* (i) L2-S34. (ii) L2-S34. (iii) L2-S11.
+
+*Current-text axis.* (i) L2-S34: **DIFFERS**. (ii) L2-S34: **AGREES** — *"a cost for a tonality change, graded by the distance between the two tonalities"*, and confirmation *"not by a separate detector"*. (iii) L2-S11: **DIFFERS** — as at Row 8.96.
+
+*The difference, in both texts' own words.* (i) The outgoing cadence is *"function-level, downstream"*; L2-S34 carries in the one candidate score *"the cadential progressions that confirm a tonality"*. (iii) The outgoing refinement *"is the gated Stage 5"*; L2-S11 says *"It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL**, travelling with Row 18.2(i). (ii) **ADOPTED — carried** (L2-S34). (iii) **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.96.
+
+---
+
+**Row 43.44 — tonality and chord co-determine on the relative pair and modulation; a pure feed-forward order plateaus there.**
+
+*Outgoing statement.* "**The residual key↔chord coupling** (relative major/minor; modulation — the measured key floor) is where key and chords genuinely co-determine; pure key-first-**and-final** feed-forward plateaus there." — §2 *The layer model*, the sub-points (locator: lines 130–131). Two claims: (i) tonality and chord genuinely co-determine on the relative-pair and modulation cases; (ii) a pure feed-forward order plateaus there.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) None.
+
+*Current-text axis.* (i) L2-S11: **AGREES** — as at Row 21.8. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S11), travelling with Row 21.8. (ii) **HISTORICAL** — a past measurement.
+
+---
+
+**Row 43.45 — the escape: chords feed back to the tonality in a gated joint step, not in the base order.**
+
+*Outgoing statement.* "The escape is letting chords feed *back* to key for those few cases — the **gated joint step (Stage 5)**, NOT the base order." — §2 *The layer model*, the sub-points (locator: lines 131–132).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.96.
+
+*The difference, in both texts' own words.* The outgoing chords feed back to the tonality in *"the **gated joint step (Stage 5)**, NOT the base order"*; L2-S11 decides them *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.96.
+
+---
+
+**Row 43.46 — the chord symbol and the non-chord tones one layer.**
+
+*Outgoing statement.* "**Chord symbol + non-chord tones are ONE layer** (Temperley decides root and ornamental dissonance together; JNMR-2024 = chord + per-note membership)." — §2 *The layer model*, the sub-points (locator: lines 133–134).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **AGREES** — *"The assignments are part of the one decision."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S23).
+
+---
+
+**Row 43.47 — the embellishments judged with the chord, in context; never a recompute from a flattened union.**
+
+*Outgoing statement.* "Embellishment discrimination lives here with context, NOT a separate recompute (the anchor lesson: re-deriving a chord from a flattened union over-reads)." — §2 *The layer model*, the sub-points (locator: lines 134–135). Two claims: (i) telling the embellishments apart lives with the chord decision, in context; (ii) never a separate recompute of the chord from a flattened union of tones.
+
+*Derived statements that speak to it.* (i) L2-S23. (ii) L2-S31 — one §6.3 names as NEAREST to material met (entry 1).
+
+*Current-text axis.* (i) L2-S23: **AGREES** — the assignments are made *"inside the candidate score, relative to each candidate reading's chord"*. (ii) L2-S31: **DIFFERS** — as at Row 6.29.
+
+*The difference, in both texts' own words.* (ii) The outgoing text forbids *"re-deriving a chord from a flattened union"*; L2-S31's span term reads *"its content (sounding set, assignments, attachments)"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S23). (ii) **UNPLACED**, travelling with Row 6.29. *What was read:* as at Row 6.29.
+
+---
+
+**Row 43.48 — the pitch-class weighting a derived view read by the chord layer.**
+
+*Outgoing statement.* "**The pitch-class weighting** that today lives in `collectRegionTones` is a *derived view* used by the chord-symbol layer (4), not a primitive and not a replacement for the notes." — §2 *The layer model*, the sub-points (locator: lines 136–137).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.38(ii).
+
+---
+
+**Row 43.49 — the layers an acyclic forward dependency; an ambiguity never settled by re-entering an earlier layer.**
+
+*Outgoing statement.* "The layers form an **acyclic forward dependency**; ambiguity is **never** resolved by re-entering an earlier layer." — §2 *The layer model*, the control flow (locator: lines 139–140). Two claims: (i) the layers form an acyclic forward dependency; (ii) an ambiguity is never settled by re-entering an earlier layer.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) L2-S49.
+
+*Current-text axis.* (i) L2-S11: **DIFFERS** — as at Row 18.2(i). (ii) L2-S49: **AGREES** — as at Row 21.46(i).
+
+*The difference, in both texts' own words.* (i) The outgoing layers *"form an **acyclic forward dependency**"*; L2-S11 decides the boundary *"together with the tonality, the chord and the assignments, in the one decision"*.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL**, travelling with Row 18.2(i). (ii) **ADOPTED — carried** (L2-S49), travelling with Row 21.46(i).
+
+---
+
+**Row 43.50 — a layer runs once and hands its work forward.**
+
+*Outgoing statement.* "**A layer runs once and hands its work forward.**" — §2 *The layer model*, the control flow (locator: line 141).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 18.2(i).
+
+*The difference, in both texts' own words.* The outgoing layer *"runs once and hands its work forward"*; L2-S11 says *"It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 18.2(i).
+
+---
+
+**Row 43.51 — where a layer cannot decide it emits the chosen reading, the ranked alternatives and an uncertain mark.**
+
+*Outgoing statement.* "Where a layer cannot decide (the canonical case: key/mode at a relative-pair or modulation/tonicization seam), it does **not** emit a single forced answer — it emits the **chosen reading plus the ranked alternatives plus an "uncertain" mark** (a *prepared menu*, computed once, including the expensive part — e.g. the key path's whole-sequence decode)." — §2 *The layer model*, the control flow (locator: lines 141–144).
+
+*Derived statements that speak to it.* L2-S41.
+
+*Current-text axis.* L2-S41: **AGREES** — as at Row 21.35(ii).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S41), travelling with Row 21.35(ii).
+
+---
+
+**Row 43.52 — the later gated step selects from that menu and calls nothing upstream.**
+
+*Outgoing statement.* "**The later gated step SELECTS from that menu; it does not call back upstream.**" — §2 *The layer model*, the control flow (locator: line 145).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.96.
+
+*The difference, in both texts' own words.* The outgoing *"later gated step SELECTS from that menu"*; L2-S11 decides the tonality and the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.96.
+
+---
+
+**Row 43.53 — the gated joint step settles an uncertain region by choosing among the carried alternatives.**
+
+*Outgoing statement.* "The gated joint key-and-chord step (Stage 5) resolves an uncertain region by **choosing among the earlier layer's carried alternatives** using the evidence that layer was not allowed to use (chord identity, cadence, function)." — §2 *The layer model*, the control flow (locator: lines 145–147).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.96.
+
+*The difference, in both texts' own words.* The outgoing joint step *"resolves an uncertain region by **choosing among the earlier layer's carried alternatives**"*; L2-S11 decides the tonality and the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.96.
+
+---
+
+**Row 43.54 — a forward consumer picking from a menu, not a request back into an earlier inference.**
+
+*Outgoing statement.* "It is a *forward consumer picking from a menu*, not a request that travels back into the earlier layer's inference." — §2 *The layer model*, the control flow (locator: lines 147–148).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.96.
+
+*The difference, in both texts' own words.* The outgoing step is *"a *forward consumer picking from a menu*"*; L2-S11 decides the tonality and the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.96.
+
+---
+
+**Row 43.55 — settling an uncertain region triggers only a localized forward recompute.**
+
+*Outgoing statement.* "**Resolution triggers only a localized FORWARD recompute.**" — §2 *The layer model*, the control flow (locator: line 149).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 5.218(ii).
+
+*The difference, in both texts' own words.* The outgoing resolution triggers *"a localized FORWARD recompute"*; L2-S35 says *"No span's alternatives are normalised against each other alone."*
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 5.218(ii). *What was read:* as at Row 5.218(ii).
+
+---
+
+**Row 43.56 — only the dependent layers recomputed, for the affected region.**
+
+*Outgoing statement.* "When the selection differs from the earlier layer's tentative pick, only the layers that **depend on** that decision (chord, then function) are recomputed **for the affected region** — a bounded, region-scoped forward pass." — §2 *The layer model*, the control flow (locator: lines 149–151).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 5.218(ii).
+
+*The difference, in both texts' own words.* The outgoing text recomputes only the dependent layers *"for the affected region"*; L2-S35 says *"The candidate score is normalised over whole readings"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 5.218(ii). *What was read:* as at Row 5.218(ii).
+
+---
+
+**Row 43.57 — the earlier layer not re-run; its output replaced by a selection from its own list.**
+
+*Outgoing statement.* "The earlier layer's algorithm is **not** re-run; its output for that region is simply *replaced* by a selection from its own alternative list." — §2 *The layer model*, the control flow (locator: lines 151–152).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 5.218(ii).
+
+*The difference, in both texts' own words.* The outgoing earlier output is *"*replaced* by a selection from its own alternative list"*; L2-S35 says *"The candidate score is normalised over whole readings"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 5.218(ii). *What was read:* as at Row 5.218(ii).
+
+---
+
+**Row 43.58 — a confident earlier inference also overturnable, by the general confidence-weighted override.**
+
+*Outgoing statement.* "**A *confident* earlier inference is also overturnable — the general confidence-weighted override (user-ratified 2026-06-26).**" — §2 *The layer model*, the control flow (locator: lines 153–154).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 5.218(ii).
+
+*The difference, in both texts' own words.* The outgoing *"confident earlier inference is also overturnable"*; L2-S35 normalizes *"over whole readings"*, so no earlier inference is taken to be overturned.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 5.218(ii). *What was read:* as at Row 5.218(ii).
+
+---
+
+**Row 43.59 — the menu selection covers a layer that flagged its uncertainty.**
+
+*Outgoing statement.* "The menu-selection above covers a layer that *flagged* uncertainty." — §2 *The layer model*, the control flow (locator: line 154).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.96.
+
+*The difference, in both texts' own words.* The outgoing *"menu-selection"* covers *"a layer that *flagged* uncertainty"*; L2-S11 decides the tonality and the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.96.
+
+---
+
+**Row 43.60 — every later layer brings its evidence to bear on every earlier inference.**
+
+*Outgoing statement.* "The contract generalizes to every earlier inference, confident or not: each later layer brings its independent evidence to bear on all of them." — §2 *The layer model*, the control flow (locator: lines 154–155).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 5.218(ii).
+
+*The difference, in both texts' own words.* The outgoing later layer *"brings its independent evidence to bear on all of them"*; L2-S35 normalizes *"over whole readings"*, so there is no earlier inference to revisit.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 5.218(ii). *What was read:* as at Row 5.218(ii).
+
+---
+
+**Row 43.61 — agreement reinforces; a confident commit overturned only past a threshold that grows with its confidence.**
+
+*Outgoing statement.* "**Agreement reinforces** (raises joint confidence); a **confident** commit is **overturned only when the contradicting later evidence crosses a threshold scaled to the earlier layer's confidence** — a well-founded commit demands decisively stronger evidence than a borderline one, so confidence sets the *bar to overturn*, not an absolute veto." — §2 *The layer model*, the control flow (locator: lines 156–158). Two claims: (i) later evidence that agrees reinforces the earlier inference; (ii) a confident commit is overturned only when contradicting later evidence crosses a threshold that grows with the earlier layer's confidence.
+
+*Derived statements that speak to it.* (i) L2-S11. (ii) L2-S35.
+
+*Current-text axis.* (i) L2-S11: **DIFFERS** — as at Row 5.219. (ii) L2-S35: **DIFFERS** — as at Row 5.223.
+
+*The difference, in both texts' own words.* (i) The outgoing agreement *"raises joint confidence"* of an earlier commit; L2-S11 decides the four together *"in the one decision"*. (ii) The outgoing commit is overturned when evidence *"crosses a threshold scaled to the earlier layer's confidence"*; L2-S35 says *"No span's alternatives are normalised against each other alone."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 5.219. *What was read:* as at Row 5.218(ii). (ii) **UNPLACED**, travelling with Row 5.223. *What was read:* as at Row 5.218(ii).
+
+---
+
+**Row 43.62 — once the threshold is crossed the same localized recompute fires, the overturned decision closed for that pass.**
+
+*Outgoing statement.* "When the bar is crossed, the **same localized forward recompute** fires (the overturned decision is **closed for that pass** — the recompute does not re-open it, preserving the acyclic guarantee)." — §2 *The layer model*, the control flow (locator: lines 158–160).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 5.225.
+
+*The difference, in both texts' own words.* The outgoing overturned decision is *"closed for that pass"* after *"the **same localized forward recompute**"*; L2-S35 says *"The candidate score is normalised over whole readings"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 5.225. *What was read:* as at Row 5.218(ii).
+
+---
+
+**Row 43.63 — a confidently wrong commit kept recoverable; the per-channel thresholds precision-phase constants.**
+
+*Outgoing statement.* "This keeps a *confidently-wrong* commit recoverable instead of locked in — the lever the precision phase tunes (the per-channel thresholds are precision-phase constants; the mechanism and direction are fixed here)." — §2 *The layer model*, the control flow (locator: lines 160–162). Two claims: (i) the per-channel thresholds are constants of the precision phase; (ii) the mechanism and its direction are fixed here.
+
+*Derived statements that speak to it.* (i) L2-S38 — one §6.3 names as NEAREST to material met (entry 6). (ii) L2-S35.
+
+*Current-text axis.* (i) L2-S38: **AGREES** — as at Row 5.227. (ii) L2-S35: **DIFFERS** — as at Row 5.218(ii).
+
+*The difference, in both texts' own words.* (ii) The outgoing text fixes the override's *"mechanism and direction"*; L2-S35 says *"No span's alternatives are normalised against each other alone."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S38), travelling with Row 5.227. (ii) **UNPLACED**, travelling with Row 5.218(ii). *What was read:* as at Row 5.218(ii).
+
+---
+
+**Row 43.64 — the function layer's two instances: the cadence-confirmed modulation and the fine-grain chord override.**
+
+*Outgoing statement.* "The function layer's two instances are the **cadence-confirmed modulation** (a cadence overturning a confident key) and the **fine-grain chord override**." — §2 *The layer model*, the control flow (locator: lines 162–163).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.226.
+
+---
+
+**Row 43.65 — coverage failures stay in their layer.**
+
+*Outgoing statement.* "**Coverage failures stay in their layer.**" — §2 *The layer model*, the control flow (locator: line 167).
+
+*Derived statements that speak to it.* L2-S2.
+
+*Current-text axis.* L2-S2: **AGREES** — as at Row 6.191.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S2), travelling with Row 6.191.
+
+---
+
+**Row 43.66 — a reading never carried: the layer's candidate set widened inside it, never a backward edge.**
+
+*Outgoing statement.* "If the true reading was never even among the carried alternatives (a coverage miss, not a selection miss), the fix is to **widen that layer's candidate set inside that layer** — not to add a backward edge." — §2 *The layer model*, the control flow (locator: lines 167–169).
+
+*Derived statements that speak to it.* L2-S2.
+
+*Current-text axis.* L2-S2: **AGREES** — as at Row 6.191.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S2), travelling with Row 6.191.
+
+---
+
+**Row 43.67 — no single layer can own the final answer to a judgment.**
+
+*Outgoing statement.* "A judgment (key/mode, chord, function) can require evidence that only becomes available in a later layer, so **no single layer can own the *final answer* to it** — that was an overclaim." — §2 *The layer model*, single responsibility (locator: lines 176–177).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 21.62(i).
+
+*The difference, in both texts' own words.* The outgoing text holds that *"no single layer can own the *final answer*"* to a judgment; L2-S11 decides the boundary, the tonality, the chord and the assignments *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 21.62(i). *What was read:* as at Row 21.62(i).
+
+---
+
+**Row 43.68 — each layer owns exactly one evidence source's contribution to one question, once and forward.**
+
+*Outgoing statement.* "The invariant we hold is finer and more ambitious: **each layer owns the contribution of exactly one evidence source to one question, delivered once and forward.**" — §2 *The layer model*, single responsibility (locator: lines 178–179).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 21.62(i).
+
+*The difference, in both texts' own words.* The outgoing layer *"owns the contribution of exactly one evidence source to one question"*; L2-S11 decides four questions *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 21.62(i). *What was read:* as at Row 21.62(i).
+
+---
+
+**Row 43.69 — the tonality layer owns the candidate space of 252 tonalities and the note-fit model.**
+
+*Outgoing statement.* "**Layer 3 owns the *note-evidence* contribution to key/mode** — the candidate space (the 252 key/modes) and the note-fit model — and resolves everything the notes can resolve." — §2 *The layer model*, single responsibility (locator: lines 180–181). Two claims: (i) the tonality layer owns the candidate space of 252 tonalities; (ii) it owns the note-fit model and settles everything the notes can settle.
+
+*Derived statements that speak to it.* (i) L2-S6. (ii) L2-S11.
+
+*Current-text axis.* (i) L2-S6: **DIFFERS** — as at Row 7.24(i). (ii) L2-S11: **DIFFERS** — as at Row 7.24(ii).
+
+*The difference, in both texts' own words.* (i) The outgoing candidate space is *"the 252 key/modes"*; L2-S6's tonalities are *"the spelled tonics (seven letters, each natural, sharp or flat) in two modes, major and minor"*. (ii) The outgoing tonality layer owns *"the note-fit model"* and settles what the notes can; L2-S11 decides the tonality *"together with"* the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 7.24(i). *What was read:* as at Row 7.24(i). (ii) **UNPLACED**, travelling with Row 7.24(ii). *What was read:* as at Row 7.24(ii).
+
+---
+
+**Row 43.70 — its exclusive territory: no other layer generates or rescores tonality candidates from the notes.**
+
+*Outgoing statement.* "This is its sole, exclusive territory: no other layer generates or re-scores key/mode candidates from the notes." — §2 *The layer model*, single responsibility (locator: lines 181–182).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 7.24(ii).
+
+*The difference, in both texts' own words.* The outgoing tonality layer's territory is *"sole, exclusive"*; L2-S11 decides the tonality *"together with"* the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 7.24(ii). *What was read:* as at Row 7.24(ii).
+
+---
+
+**Row 43.71 — the gated step owns the functional evidence, selecting among the carried tonalities for the flagged residual only.**
+
+*Outgoing statement.* "**The gated Stage-5 step owns the *functional-evidence* contribution** (chord / cadence / function) that arbitrates **only** the residual Layer 3 flagged "uncertain", by **selecting among Layer 3's carried alternatives** — never generating a new candidate, never re-scoring from the notes (that note-evidence model has exactly one home)." — §2 *The layer model*, single responsibility (locator: lines 183–185).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 7.26.
+
+*The difference, in both texts' own words.* The outgoing step arbitrates *"**only** the residual Layer 3 flagged "uncertain""*; L2-S11 decides the tonality and the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 7.26. *What was read:* as at Row 7.26.
+
+---
+
+**Row 43.72 — a judgment such as mode built up across layers along an evidence boundary.**
+
+*Outgoing statement.* "So a judgment like "mode" is **built up across layers along an evidence boundary**, each layer's contribution disjoint and *final-for-its-evidence*." — §2 *The layer model*, single responsibility (locator: lines 186–187).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 7.27.
+
+*The difference, in both texts' own words.* The outgoing mode is *"built up across layers along an evidence boundary"*; L2-S11 decides the tonality *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 7.27. *What was read:* as at Row 7.26.
+
+---
+
+**Row 43.73 — the inference of mode reaching outside the tonality layer, as the intended factoring.**
+
+*Outgoing statement.* "Mode inference is therefore *legitimately* partly outside Layer 3 — and that is not a leak but the intended factoring, because the deciding evidence for the residual (function) cannot exist at Layer 3 by the dependency order." — §2 *The layer model*, single responsibility (locator: lines 187–189).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 7.27.
+
+*The difference, in both texts' own words.* The outgoing inference of mode is *"*legitimately* partly outside Layer 3"*; L2-S11 decides the tonality *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 7.27. *What was read:* as at Row 7.26.
+
+---
+
+**Row 43.74 — the product analyzes the user's selection, never the whole score.**
+
+*Outgoing statement.* "The product analyses the **user's selection**, never the whole score (whole-score is offline batch testing only)." — §2 *The layer model*, bounded context (locator: lines 203–204).
+
+*Derived statements that speak to it.* L2-S48.
+
+*Current-text axis.* L2-S48: **AGREES** — as at Row 21.59(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S48), travelling with Row 21.59(i).
+
+---
+
+**Row 43.75 — a layer needing more requests an extension; the supplier loads more notes; the requester carries the stop condition and a hard bound.**
+
+*Outgoing statement.* "A selection is a temporal subset, so a layer that needs evidence beyond it **requests an extension** from Architectural Layer 1 (the supplier), which loads more notes in the asked direction, append-only, clamping at — and reporting — the score boundary; the requesting layer carries the **stop condition** and a **hard bound**, so extension terminates." — §2 *The layer model*, bounded context (locator: lines 204–207). Three claims: (i) a layer that needs evidence beyond the selection requests an extension; (ii) the supplier loads more notes in the asked direction, append-only, stopping at and reporting the edge of the score; (iii) the requesting layer carries the stop condition and a hard bound, so the extension ends.
+
+*Derived statements that speak to it.* (i) L2-S22 — one §6.3 names as NEAREST to material met (entry 4). (ii) None. (iii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S22: **AGREES** — as at Row 21.59(ii). (ii) **THE DERIVATION IS SILENT.** (iii) L2-S22: **AGREES** — as at Row 21.60(iii).
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22), travelling with Row 21.59(ii). (ii) **RELOCATED** — to *L0 — The notated record* (the input contract). *(The input contract gives its own half of the enlargement at its Ruling 46, as L2-S22's defense relays.)* (iii) **ADOPTED — carried** (L2-S22), travelling with Row 21.60(iii).
+
+---
+
+**Row 43.76 — no layer may assume the whole score is loaded.**
+
+*Outgoing statement.* "**No layer may assume infinite context** ("the whole score is always loaded") — that assumption is the expensive-to-retrofit error this contract exists to forbid; it must be designed into each layer *before* the next is built on top." — §2 *The layer model*, bounded context (locator: lines 207–209).
+
+*Derived statements that speak to it.* L2-S22 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — *"L2 is the layer that asks for more music."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 43.77 — the output covers only the selection; the extended music is evidence.**
+
+*Outgoing statement.* "Output covers only the selection; extended music is **evidence**." — §2 *The layer model*, bounded context (locator: line 209). Two claims: (i) the output covers only the selection; (ii) the music loaded beyond it is evidence.
+
+*Derived statements that speak to it.* (i) L2-S48. (ii) L2-S22 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* (i) L2-S48: **AGREES** — as at Row 21.59(i). (ii) L2-S22: **AGREES** — as at Row 22.85(ii).
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S48), travelling with Row 21.59(i). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 22.85(ii).
+
+---
+
+**Row 43.78 — requesting notes a data-supply call down the stack, not an analysis back-edge.**
+
+*Outgoing statement.* "Requesting notes from a lower layer is a **data-supply call down the stack, not an analysis back-edge**, so it is consistent with the forward-only contract above." — §2 *The layer model*, bounded context (locator: lines 210–211).
+
+*Derived statements that speak to it.* L2-S22 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — its defense relays that *"the decision to enlarge, the increment and the stop test belong to the requester, never to L0 or L1"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22).
+
+---
+
+**Row 43.79 — the whole-score load the degenerate case.**
+
+*Outgoing statement.* "The whole-score load is the **degenerate case** (selection = score, no extension fires) — which is what keeps the batch-testing path unchanged." — §2 *The layer model*, bounded context (locator: lines 211–212).
+
+*Derived statements that speak to it.* L2-S48.
+
+*Current-text axis.* L2-S48: **AGREES** — as at Row 21.61.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S48), travelling with Row 21.61.
+
+---
+
+**Row 43.80 — a tonal stream segmented many ways at once.**
+
+*Outgoing statement.* "A tonal stream is segmented **many ways at once**, not one." — §2 *The layer model*, the span family (locator: lines 228–229).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 21.49(iii).
+
+---
+
+**Row 43.81 — each segmentation a span type defined by the event bounding it.**
+
+*Outgoing statement.* "Each segmentation is a distinct **span type**, defined by **what event bounds it** and serving **one analytical need**; the bare word "region" must name exactly one of them, never several." — §2 *The layer model*, the span family (locator: lines 229–230).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 21.49(iii).
+
+---
+
+**Row 43.82 — the harmonic region bounded by a change of harmony.**
+
+*Outgoing statement.* "**Harmonic region** — bounded by **harmony change** (the chord-rhythm slicer, Layer 2)." — §2 *The layer model*, the span family (locator: line 233).
+
+*Derived statements that speak to it.* L2-S14.
+
+*Current-text axis.* L2-S14: **AGREES** — as at Row 21.48(i).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S14), travelling with Row 21.48(i).
+
+---
+
+**Row 43.83 — the atomic unit: one committed chord and one local tonality.**
+
+*Outgoing statement.* "The **atomic** unit: one committed chord + one assigned local key." — §2 *The layer model*, the span family (locator: lines 233–234).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **AGREES** — a reading carries *"Per span, a tonality"* and *"Per span, a chord"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S1).
+
+---
+
+**Row 43.84 — the as-built type of the harmonic region, which the function layer calls a slice.**
+
+*Outgoing statement.* "(The as-built `HarmonicRegion`; Layer 5 calls it a *slice*.)" — §2 *The layer model*, the span family (locator: line 234).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which types carry the chord-span and the tonality span at the current commit, and which layers read them?
+
+---
+
+**Row 43.85 — the tonality span bounded by a change of tonality, established and confirmed by a cadence.**
+
+*Outgoing statement.* "**Key-span** — bounded by **key change** (establishment + cadence confirmation)." — §2 *The layer model*, the span family (locator: line 235).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 6.8.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 21.42(ii). *(L2-S49 travels with it.)*
+
+---
+
+**Row 43.86 — the local tonality area; the unit a modulation is read again over.**
+
+*Outgoing statement.* "The local key area; the modulation re-read unit." — §2 *The layer model*, the span family (locator: lines 235–236).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 21.42(ii).
+
+---
+
+**Row 43.87 — the as-built type of the tonality span, the grouping layer's key-area.**
+
+*Outgoing statement.* "(The as-built `LocalKeySpan`; Layer 6's key-area.)" — §2 *The layer model*, the span family (locator: line 236).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 43.84.
+
+---
+
+**Row 43.88 — the phrase bounded by the phrase markers of the notation-derived view.**
+
+*Outgoing statement.* "**Phrase** — bounded by **phrase markers** (fermata/breath/rest/structural barline — the Layer-1.5 primitive)." — §2 *The layer model*, the span family (locator: line 237).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 6.8.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 6.8. *(L2-S49 travels with it.)*
+
+---
+
+**Row 43.89 — the grouping and punctuation unit.**
+
+*Outgoing statement.* "The grouping/punctuation unit." — §2 *The layer model*, the span family (locator: lines 237–238).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 6.8.
+
+---
+
+**Row 43.90 — the decision-context span bounded by a look-ahead window.**
+
+*Outgoing statement.* "**Decision-context span** — bounded by a **look-ahead window** (≈ the phrase)." — §2 *The layer model*, the span family (locator: line 239).
+
+*Derived statements that speak to it.* L2-S43 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S43: **DIFFERS** — as at Row 5.71.
+
+*The difference, in both texts' own words.* The outgoing decision-context span is *"bounded by a **look-ahead window**"*; L2-S43 says *"No reading is discarded before the whole working span, context included, has been scored."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.71.
+
+---
+
+**Row 43.91 — the reach within which a deferred decision may find its evidence.**
+
+*Outgoing statement.* "The reach within which a deferred local decision may find disambiguating evidence (a later cadence)." — §2 *The layer model*, the span family (locator: lines 239–240).
+
+*Derived statements that speak to it.* L2-S43 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S43: **DIFFERS** — as at Row 5.71.
+
+*The difference, in both texts' own words.* The outgoing span is the reach within which *"a deferred local decision"* may find evidence; L2-S43 says *"No reading is discarded before the whole working span, context included, has been scored."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.71.
+
+---
+
+**Row 43.92 — a computational or perceptual bound, not a structural object.**
+
+*Outgoing statement.* "A computational/perceptual bound, not a structural object." — §2 *The layer model*, the span family (locator: line 240).
+
+*Derived statements that speak to it.* L2-S43 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* L2-S43: **DIFFERS** — as at Row 5.71.
+
+*The difference, in both texts' own words.* The outgoing span is *"A computational/perceptual bound"*; L2-S43 says *"No reading is discarded before the whole working span, context included, has been scored."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.71.
+
+---
+
+**Row 43.93 — the cadential scope: one detector feeds the phrase and the tonality.**
+
+*Outgoing statement.* "**Cadential scope** — the span a cadence **closes and confirms**: where a phrase span and a key-span are *jointly* articulated (a cadence marks both a phrase ending and a key confirmation — the reason one detector feeds both)." — §2 *The layer model*, the span family (locator: lines 241–242).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS** — as at Row 21.48(iv).
+
+*The difference, in both texts' own words.* The outgoing text has *"one detector feeds both"* the phrase and the tonality; L2-S34 says *"confirmation is carried by the progression term over *proposed* chords, not by a separate detector"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 21.48(iv).
+
+---
+
+**Row 43.94 — the latent spans named when needed; the gradients: tonicization, the pivot, the cadential approach.**
+
+*Outgoing statement.* "**Latent extension spans, theory-grounded, named when needed** *(names per the ratified 2026-07-02 family rename — … **voice-leading-span** (linear-progression/Zug); plus the gradients — tonicization (a proto-key-span that did not establish), the pivot (a modulatory overlap), the cadential approach (the pre-dominant→dominant→tonic formula)." — §2 *The layer model*, the span family (locator: lines 243–249). Two claims: (i) the latent spans — pedal point, progression schema, section, hypermeasure, prolongation and voice leading — named when needed; (ii) the gradients — tonicization as a tonality span that did not establish itself, the pivot as an overlap in a modulation, and the cadential approach.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S19.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S19: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing gradient is *"the pivot (a modulatory overlap)"*; L2-S19 says *"A pivot chord, read by an analyst in two tonalities at once, is published as one span with one tonality."*
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL**, travelling with Row 21.52. (ii) **HISTORICAL**, travelling with Row 21.52 — a status of spans named and not built.
+
+---
+
+**Row 43.95 — the progression-schema knowledge homed in the schema span and the cadential approach.**
+
+*Outgoing statement.* "The **progression-schema-span** and **cadential-approach span** are the home of multi-chord **progression-schema** knowledge (ii–V–I, turnarounds, circle-of-fifths sequences; the Baroque galant schemata — Prinner, Romanesca, Monte/Fonte/Ponte; pop loops)." — §2 *The layer model*, the span family, the forward note (locator: lines 250–252).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 43.96 — the catalog finite and specific to an idiom; progressions composed by the pairwise functional grammar.**
+
+*Outgoing statement.* "The catalog is **finite and idiom-specific** (the preset selects it); full progressions are *composed* from it by the pairwise functional grammar." — §2 *The layer model*, the span family, the forward note (locator: lines 252–253). Two claims: (i) the catalog is finite and specific to an idiom, the preset selecting it; (ii) full progressions are composed from it by the pairwise functional grammar.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S34.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S34: **AGREES** — its progression family is *"a term on the pair of adjacent chords *read as degrees in their tonalities*"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91. (ii) **ADOPTED — carried** (L2-S34).
+
+---
+
+**Row 43.97 — recognition additive over the committed progression; robust matching needs the substitution overlay.**
+
+*Outgoing statement.* "It belongs in **Layer 5 (function)**, additive over the committed progression — a **clean structural retrofit** (the progression is already there), with the **hard part being fuzzy prototype-matching**: schemas are prototypes with **substitutions** (a ii–V–I with a tritone-subbed V is still a ii–V–I) and variants, so robust matching *requires* the functional-substitution overlay (see below)." — §2 *The layer model*, the span family, the forward note (locator: lines 253–257). Two claims: (i) the recognition of schemata belongs additive over the committed progression; (ii) robust matching of schemata requires the overlay of functional substitutions.
+
+*Derived statements that speak to it.* (i) L2-S49. (ii) None.
+
+*Current-text axis.* (i) L2-S49: **AGREES** — as at Row 5.91. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91. *(L2-S49 travels with it.)* (ii) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.6.
+
+---
+
+**Row 43.98 — deferred for the analysis; core to a future suggestion tool.**
+
+*Outgoing statement.* "Deferred for the analysis mission (proportionality + firewall + the missing schema oracle, the verifiability contract) — but it is the one piece of knowledge that would be **core, not merely helpful, to a future chord-suggestion tool** (generation must predict *unseen* chords, where multi-chord knowledge is load-bearing and the idiom *is* the schema vocabulary)." — §2 *The layer model*, the span family, the forward note (locator: lines 257–260).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a deferral and a plan.
+
+---
+
+**Row 43.99 — the catalog a shared asset: read forward to recognize, read predictively to suggest.**
+
+*Outgoing statement.* "The same L5 catalog would be a **shared analyzer↔suggester asset** — read forward to recognize, read predictively to suggest." — §2 *The layer model*, the span family, the forward note (locator: lines 260–261).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.1(ii).
+
+---
+
+**Row 43.100 — nesting: chord-spans in tonality spans and in punctuation-spans; punctuation-spans in section-spans.**
+
+*Outgoing statement.* "**Nesting (containment):** chord-spans ⊂ key-spans; chord-spans ⊂ punctuation-spans; punctuation-spans ⊂ section-spans — the finer tiles the coarser." — §2 *The layer model*, how spans relate (locator: lines 264–266). Three claims: (i) chord-spans nest in tonality spans; (ii) chord-spans nest in punctuation-spans; (iii) punctuation-spans nest in section-spans.
+
+*Derived statements that speak to it.* (i) L2-S16. (ii) L2-S13. (iii) None.
+
+*Current-text axis.* (i) L2-S16: **AGREES** — as at Row 21.49(i). (ii) L2-S13: **DIFFERS** — as at Row 21.49(ii). (iii) **THE DERIVATION IS SILENT.**
+
+*The difference, in both texts' own words.* (ii) The outgoing typology nests *"chord-spans ⊂ punctuation-spans"*, so that every punctuation boundary is a chord boundary; L2-S13 says *"No flag forces or forbids a boundary."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S16), travelling with Row 21.49(i). (ii) **UNPLACED**, travelling with Row 21.49(ii). *What was read:* as at Row 21.49(ii). (iii) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 21.49(iii).
+
+---
+
+**Row 43.101 — cutting across: tonality spans and punctuation-spans two independent segmentations of one stream.**
+
+*Outgoing statement.* "**Cross-cutting (independent):** **key-spans and punctuation-spans cross-cut** — a key change may fall mid-span and a punctuation-span end need not change key, so they are **two independent segmentations of one stream, not a hierarchy**." — §2 *The layer model*, how spans relate (locator: lines 267–269).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 21.49(iii).
+
+---
+
+**Row 43.102 — asserting containment where the spans cut across a modeling error.**
+
+*Outgoing statement.* "Asserting containment where the truth is cross-cutting (e.g. nesting key-areas inside punctuation-spans) is a modelling error." — §2 *The layer model*, how spans relate (locator: lines 269–270).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 21.49(iii).
+
+---
+
+**Row 43.103 — layer 1 landed.**
+
+*Outgoing statement.* "**★ AS-BUILT STATUS (2026-06-21): Layer 1 has LANDED** (`e30bb45a4f`, ratified)." — §4 *How it differs from the existing code*, the as-built status (locator: line 291).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 43.104 — the note model a separate module; the weighting kept as a derived view read by the segment-first analyzer.**
+
+*Outgoing statement.* "What changed since: the **note model** (lossless, tie-resolved) now exists as a separate module (`composing/.../notemodel/note_model.{h,cpp}`), and `collectRegionTones`' note-reading half is replaced by it; the weighting half survives as a **derived view** (`weightedPcView`) consumed unchanged by the still-live segment-first analyzer." — §4 *How it differs from the existing code*, the as-built status (locator: lines 292–295). Two claims: (i) the note model exists as a separate module, replacing the collector's reading of the notes; (ii) the collector's weighting survives as a derived view, read by the segment-first analyzer.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a build state, travelling with Row 22.38(i). (ii) **QUARANTINED**, travelling with Row 22.38(ii).
+
+---
+
+**Row 43.105 — the coarse, sub-boundary and merge machinery still runs and drives the analysis.**
+
+*Outgoing statement.* "The coarse/sub/merge machinery below **still runs and still drives analysis** (it retires only when layer 3 consumes the slicer) — so §4 remains an accurate description of the *transitional* spine, with layer-1's note-reading the one piece already swapped." — §4 *How it differs from the existing code*, the as-built status (locator: lines 295–297).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 22.42.
+
+*The difference, in both texts' own words.* The outgoing *"coarse/sub/merge machinery below **still runs and still drives analysis**"*; L2-S11 says the boundary is *"never decided before the chord or after it"*.
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 22.42 — a status the joint estimator's adoption superseded.
+
+---
+
+**Row 43.106 — the existing segment-first pipeline: coarse boundaries, sub-boundaries, a chord per region, a merge that depends on the chord.**
+
+*Outgoing statement.* "Existing (verified): a **segment-first** pipeline — coarse boundaries (`harmonicsegmenter.greedyExpandSegmentation`, fed by `collectRegionTones`), sub-boundaries (`detectOnset/BassMovementSubBoundaries`), per-region tone collection + `analyzeChord`, then a chord-dependent **merge** (`coalesceShortSameRootRuns`/`absorbShortRegions`)." — §4 *How it differs from the existing code* (locator: lines 300–302).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 23.79.
+
+*The difference, in both texts' own words.* The outgoing pipeline is *"segment-first"*, coarse boundaries decided before the chord of each region; L2-S11 says the boundary is *"never decided before the chord or after it"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 21.12.
+
+---
+
+**Row 43.107 — the tone collection mixes reading the notes with weighting, and discards the notes.**
+
+*Outgoing statement.* "Tone collection conflates note-reading with weighting/aggregation and discards the notes." — §4 *How it differs from the existing code* (locator: line 303).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.38(ii).
+
+---
+
+**Row 43.108 — the boundary machinery and the merge retired into the grouping layer.**
+
+*Outgoing statement.* "The **coarse + sub boundary machinery and the merge** are *retired into* the cosmetic **grouping layer (N)** — they no longer drive analysis." — §4 *How it differs from the existing code*, the target mapping (locator: lines 306–307).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 43.109 — their splitting judgments unnecessary.**
+
+*Outgoing statement.* "Their "where to split" judgments become unnecessary (slicing is a fact)." — §4 *How it differs from the existing code*, the target mapping (locator: line 307).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 43.110 — the collector split between the note model and a derived view.**
+
+*Outgoing statement.* "**`collectRegionTones`** splits: the *note-reading* part → the **note model (layer 1)**; the *weighting* part → a **derived view consumed by layer-3 analysis**." — §4 *How it differs from the existing code*, the target mapping (locator: lines 308–309).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 43.111 — the chord and tonality analysis run per slice, with context.**
+
+*Outgoing statement.* "**`analyzeChord` / key resolution** → **layer-3 per-slice analysis**, now run per constant-sonority slice with context, instead of per coarse region." — §4 *How it differs from the existing code*, the target mapping (locator: lines 310–311).
+
+*Derived statements that speak to it.* L2-S1.
+
+*Current-text axis.* L2-S1: **DIFFERS** — as at Row 6.6(ii).
+
+*The difference, in both texts' own words.* The outgoing analysis is *"now run per constant-sonority slice with context"*; L2-S1 says *"The search's unit is the whole reading, not a span."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 43.112 — the sub-boundary detectors subsumed by the change-point set.**
+
+*Outgoing statement.* "The **sub-boundary detectors** (peer leaf primitives, verified) are not needed as *deciders*; the change-point set subsumes them." — §4 *How it differs from the existing code*, the target mapping (locator: lines 312–313).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 43.113 — they may survive as helpers for enumerating the change points.**
+
+*Outgoing statement.* "They may survive only as fast change-point enumeration helpers, if at all." — §4 *How it differs from the existing code*, the target mapping (locator: line 313).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 43.114 — a re-shape: the segment-first spine replaced by slice, analyze, group.**
+
+*Outgoing statement.* "This is a re-shape, not a tidy-up: the segment-first spine is replaced by slice → analyze → group." — §4 *How it differs from the existing code* (locator: line 315).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 43.115 — layer 1's design document re-anchored and as-built.**
+
+*Outgoing statement.* "**Layer 1's design doc was re-anchored and is now AS-BUILT (done 2026-06-21):** layer 1 is the **note model (lossless source of truth)**, *not* "tone collection."" — §5 *Implications for the upstream-first sweep* (locator: lines 321–322).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 43.116 — rewritten, signed, implemented and ratified.**
+
+*Outgoing statement.* "It was rewritten to `cowork_layer1_note_model_design.md`, signed, implemented (`e30bb45a4f`), branch-covered, and ratified — the tone-collection/weighting content demoted to the derived `weightedPcView`." — §5 *Implications for the upstream-first sweep* (locator: lines 322–324).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 43.117 — the as-built record for layer 1; slicing next.**
+
+*Outgoing statement.* "That design doc is the as-built record for layer 1; layer 2 (slicing) is next." — §5 *Implications for the upstream-first sweep* (locator: line 324).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 43.118 — the chord axis near its ceiling; the real work in the slicing and the analysis.**
+
+*Outgoing statement.* "The chord axis is confirmed near-ceiling (~2–3%); the real work is layer-2/3 (slicing makes over-grab moot; analysis-with-context carries the key + NCT levers)." — §5 *Implications for the upstream-first sweep* (locator: lines 325–326). Two claims: (i) the chord axis was confirmed near its ceiling; (ii) the real work lay in the slicing and in the analysis.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a past measurement. (ii) **HISTORICAL** — a plan.
+
+---
+
+**Row 43.119 — boundaries at every onset and every release.**
+
+*Outgoing statement.* "*RESOLVED (user, 2026-06-21):* **boundaries at every onset AND every release** — both change the sounding set, so both open a slice; this is what makes each slice a *genuine* constant-sonority span." — §6.1 *Layer 2 — the change-point set* (locator: lines 339–341).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 10.5.
+
+---
+
+**Row 43.120 — redundant release slices harmless, grouped away.**
+
+*Outgoing statement.* "Redundant same-harmony release-slices are harmless — layer N groups them away; it is fact, not judgment." — §6.1 *Layer 2 — the change-point set* (locator: lines 342–343).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.73.
+
+---
+
+**Row 43.121 — the handling of ties a concern of the note model, not of the slicer.**
+
+*Outgoing statement.* "**Tie resolution is a LAYER-1 concern, not layer 2.**" — §6.1 *Layer 2 — the change-point set* (locator: line 344).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iii).
+
+---
+
+**Row 43.122 — a tied note one sounding event; the continuation no new onset.**
+
+*Outgoing statement.* "A tied note is one sounding event from first attack to final release; the tie continuation is **not** a new onset." — §6.1 *Layer 2 — the change-point set* (locator: lines 344–345).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iii).
+
+---
+
+**Row 43.123 — a tied group one span in the note model, so no spurious change point.**
+
+*Outgoing statement.* "The note model must represent a tied group as a single sounding span (onset→release), so layer 2 never sees a spurious change-point at a tie." — §6.1 *Layer 2 — the change-point set* (locator: lines 345–346).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iii).
+
+---
+
+**Row 43.124 — the note model keeps the grace notes, flagged.**
+
+*Outgoing statement.* "Per "collect, don't drop," the note model keeps grace notes flagged `isGrace`." — §6.1 *Layer 2 — the change-point set*, grace notes (locator: line 348).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iv).
+
+---
+
+**Row 43.125 — a grace opens no slice; it is annotated onto the following slice as an ornament.**
+
+*Outgoing statement.* "*Lean:* **a grace does not open a slice of its own** — it is annotated onto the following slice as an ornament, so analysis sees the real harmony, not a one-grace vertical." — §6.1 *Layer 2 — the change-point set*, grace notes (locator: lines 349–350). Two claims: (i) a grace note opens no slice of its own; (ii) it is annotated onto the following slice as an ornament, so the analysis sees the real harmony.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S26.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S26: **AGREES** — grace notes *"are evidence for the assignment of their host and for the chord. They carry no assignment of their own"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 22.74. *(The input contract carries it at IC S-16, a grace note opening no change point, as L2-S26's defense relays.)* (ii) **ADOPTED — carried** (L2-S26).
+
+---
+
+**Row 43.126 — a grace an annotation of the note model, not a slicing boundary.**
+
+*Outgoing statement.* "(Equivalent to treating grace as a layer-1 annotation, not a layer-2 boundary.)" — §6.1 *Layer 2 — the change-point set*, grace notes (locator: line 351).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 43.125(i).
+
+---
+
+**Row 43.127 — the diagnostic: the ranking of chords leaned on the tie-inflation defect.**
+
+*Outgoing statement.* "**★ Diagnostic from layer 1 (recorded 2026-06-21, `records/cc/reports/cc_layer1_impl_report.md` §5.3):** the current scoring **leans on the tie-inflation bug** — a held (tied) note used to get a spurious repetition-boost that happened to push some ambiguous sonorities toward the oracle root (e.g. bwv154.8)." — §6.2 *Layer 3 — the analysis* (locator: lines 354–356).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 43.128 — the faithful note model removed the boost: a small wobble downstream.**
+
+*Outgoing statement.* "The faithful note model removed that boost, surfacing a small downstream wobble (+3/+1/+1 charged, KEY flat)." — §6.2 *Layer 3 — the analysis* (locator: lines 356–357).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 43.129 — never rely on the held-note repetition bonus; the few cases to recover under recalibration.**
+
+*Outgoing statement.* "**When layer-3 scoring is rebuilt/re-tuned, do NOT rely on the held-note repetition bonus**; those ~4 cases should recover under correct re-calibration." — §6.2 *Layer 3 — the analysis* (locator: lines 357–359). Two claims: (i) a rebuilt or re-tuned ranking of chords does not rely on the held-note repetition bonus; (ii) the few cases concerned should recover under correct recalibration.
+
+*Derived statements that speak to it.* (i) L2-S9. (ii) None.
+
+*Current-text axis.* (i) L2-S9: **AGREES** — as at Row 3.6. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S9), travelling with Row 3.6. (ii) **HISTORICAL** — an expectation of a plan.
+
+---
+
+**Row 43.130 — two different widths of context, likely two sub-steps.**
+
+*Outgoing statement.* "**Two different context scales — likely two sub-steps.**" — §6.2 *Layer 3 — the analysis* (locator: line 360).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 18.2(i).
+
+*The difference, in both texts' own words.* The outgoing analysis is *"likely two sub-steps"*; L2-S11 decides the boundary, the tonality and the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 18.2(i).
+
+---
+
+**Row 43.131 — telling chord tones from non-chord tones needs a narrow window: the neighbors and the metric strength.**
+
+*Outgoing statement.* "Chord/NCT discrimination needs a **narrow** window (the slice + its immediate neighbors + metric strength — enough to see "weak, stepwise, between two chord tones")." — §6.2 *Layer 3 — the analysis* (locator: lines 360–362).
+
+*Derived statements that speak to it.* L2-S33 and L2-S25.
+
+*Current-text axis.* L2-S33: **AGREES** — the elaboration term *"reads that adjacent span's candidate reading"*. L2-S25: **AGREES** — metric position bears on an assignment *"as terms (covariates)"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S33, L2-S25).
+
+---
+
+**Row 43.132 — the tonality needs a wide window; long runs of one tonality found to matter.**
+
+*Outgoing statement.* "Key needs a **wide** window — the re-assessment + Contrapunctus both found the **keychain structure** (long, phrase-aligned key runs) is what matters, not per-event key correctness." — §6.2 *Layer 3 — the analysis* (locator: lines 362–363). Two claims: (i) the tonality needs a wide window; (ii) two studies found that long runs of one tonality, aligned with the phrases, matter more than the tonality at each event.
+
+*Derived statements that speak to it.* (i) L2-S34. (ii) None.
+
+*Current-text axis.* (i) L2-S34: **AGREES** — its first family is *"a cost for a tonality change"*, weighing the tonality across the spans. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S34). (ii) **HISTORICAL** — a past measurement.
+
+---
+
+**Row 43.133 — the lean: the tonality over a wide window first, then the chord given it.**
+
+*Outgoing statement.* "So key and chord want different context scopes; *lean:* resolve the **keychain over a wide window first**, then chord/NCT per slice over a narrow window given the local key." — §6.2 *Layer 3 — the analysis* (locator: lines 363–365).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 18.2(i).
+
+*The difference, in both texts' own words.* The outgoing lean settles the tonality *"first, then chord/NCT per slice ... given the local key"*; L2-S11 says *"It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 18.2(i).
+
+---
+
+**Row 43.134 — the coupling of tonality and chord: feed-forward, not heavy joint.**
+
+*Outgoing statement.* "**Key↔chord coupling: feed-forward, not heavy joint.**" — §6.2 *Layer 3 — the analysis* (locator: line 366).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 18.2(i).
+
+*The difference, in both texts' own words.* The outgoing coupling is *"feed-forward, not heavy joint"*; L2-S11 decides the boundary, the tonality and the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 18.2(i).
+
+---
+
+**Row 43.135 — the two genuinely couple.**
+
+*Outgoing statement.* "The two genuinely couple (V→I cadences mark keys; keys interpret chords)." — §6.2 *Layer 3 — the analysis* (locator: lines 366–367).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **AGREES** — as at Row 21.8.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S11), travelling with Row 21.8.
+
+---
+
+**Row 43.136 — the joint search measured inert.**
+
+*Outgoing statement.* "But the re-assessment measured the **joint/lattice search inert** — the win is *soft-evidence quality*." — §6.2 *Layer 3 — the analysis* (locator: lines 367–368).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 5.228(i).
+
+*The difference, in both texts' own words.* The outgoing text measured *"the **joint/lattice search inert**"*; L2-S11 decides the boundary, the tonality and the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.228(i).
+
+---
+
+**Row 43.137 — the lean: feed-forward from the tonality to the chord symbol to the function, per slice.**
+
+*Outgoing statement.* "*Lean:* **feed-forward — key/mode (from pitch content + tonic emphasis; modulation via the path's transition penalty) → chord symbol → function per slice**." — §6.2 *Layer 3 — the analysis* (locator: lines 368–369).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 18.2(i).
+
+*The difference, in both texts' own words.* The outgoing lean is *"feed-forward — key/mode ... → chord symbol → function per slice"*; L2-S11 says *"It is never decided before the chord or after it."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 18.2(i).
+
+---
+
+**Row 43.138 — the refinement of the tonality from cadence and function a bounded gated step, never folded into the tonality layer.**
+
+*Outgoing statement.* "The cadence/function-based key refinement (which DOES couple — a V→I confirms a key) is a **bounded, gated Stage-5 step**, never a full joint lattice and never folded up into the key/mode layer (cadences are function-level, downstream — §2 layer 3)." — §6.2 *Layer 3 — the analysis* (locator: lines 369–371).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.96.
+
+*The difference, in both texts' own words.* The outgoing refinement is *"a **bounded, gated Stage-5 step**, never a full joint lattice"*; L2-S11 decides the tonality and the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.96.
+
+---
+
+**Row 43.139 — generation of candidates the lever, not re-ranking.**
+
+*Outgoing statement.* "**Candidate generation vs re-ranking — generation is the lever.**" — §6.2 *Layer 3 — the analysis* (locator: line 372).
+
+*Derived statements that speak to it.* L2-S2.
+
+*Current-text axis.* L2-S2: **AGREES** — as at Row 6.191.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S2), travelling with Row 6.191.
+
+---
+
+**Row 43.140 — the residual mostly a candidate never surfaced.**
+
+*Outgoing statement.* "Audit #6 found the residual is mostly "a candidate was never surfaced," not "the wrong candidate was picked" (pure re-rank ~1.7%)." — §6.2 *Layer 3 — the analysis* (locator: lines 372–373).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+**Row 43.141 — the chord step first generates complete candidates, then selects.**
+
+*Outgoing statement.* "So layer 3's chord step is first **complete candidate generation per slice**, then selection." — §6.2 *Layer 3 — the analysis* (locator: lines 373–374).
+
+*Derived statements that speak to it.* L2-S2.
+
+*Current-text axis.* L2-S2: **AGREES** — as at Row 6.191.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S2), travelling with Row 6.191.
+
+---
+
+**Row 43.142 — a small learned re-ranker a later, secondary addition.**
+
+*Outgoing statement.* "A **small learned re-ranker** (Contrapunctus's +7pp; LR over tonic-rotated windowed PC features) is a **Stage-5+, secondary** add-on that picks among *complete* candidates — not a substitute for getting the candidate set right, and gated on the oracle/tier metric + out-of-sample discipline." — §6.2 *Layer 3 — the analysis* (locator: lines 374–377).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL**, travelling with Row 6.184.
+
+---
+
+**Row 43.143 — embellishments judged chord-first, per slice, with the neighbors; never a union recompute.**
+
+*Outgoing statement.* "**NCT/embellishment discrimination is chord-first, per slice, with neighbors — never a union recompute.**" — §6.2 *Layer 3 — the analysis* (locator: line 378). Two claims: (i) telling the embellishments apart is chord-first, with the neighbors; (ii) never a recompute from a union of tones.
+
+*Derived statements that speak to it.* (i) L2-S23. (ii) L2-S31 — one §6.3 names as NEAREST to material met (entry 1).
+
+*Current-text axis.* (i) L2-S23: **AGREES** — the assignments are made *"relative to each candidate reading's chord"*. (ii) L2-S31: **DIFFERS** — as at Row 6.29.
+
+*The difference, in both texts' own words.* (ii) The outgoing text forbids *"a union recompute"*; L2-S31's span term reads *"its content (sounding set, assignments, attachments)"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S23). (ii) **UNPLACED**, travelling with Row 6.29. *What was read:* as at Row 6.29.
+
+---
+
+**Row 43.144 — hold a chord reading and judge each extra pitch by a membership test, with the metric position and the neighboring chords.**
+
+*Outgoing statement.* "The right shape (JNMR 2024 / Contrapunctus): hold a basic chord reading and judge each slice's "extra" pitches as chord-tone vs NCT using a per-note **chord-membership** test informed by metric position + the prev/next chord." — §6.2 *Layer 3 — the analysis* (locator: lines 379–381).
+
+*Derived statements that speak to it.* L2-S23 and L2-S33.
+
+*Current-text axis.* L2-S23: **AGREES** — the assignments are made *"relative to each candidate reading's chord"*. L2-S33: **AGREES** — the elaboration term *"reads that adjacent span's candidate reading"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S23, L2-S33).
+
+---
+
+**Row 43.145 — the exact membership criterion and window left open to a later document.**
+
+*Outgoing statement.* "*Open:* the exact membership criterion and window — designed in the layer-3 doc." — §6.2 *Layer 3 — the analysis* (locator: lines 381–382).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 43.146 — group on the full label, not the root alone.**
+
+*Outgoing statement.* "**Equality rule — group on the full label, not just the root.**" — §6.3 *Layer N — grouping* (locator: line 385).
+
+*Derived statements that speak to it.* L2-S14.
+
+*Current-text axis.* L2-S14: **AGREES** — two adjacent spans are one only where *"degree, quality, figure and applied target all equal"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S14).
+
+---
+
+**Row 43.147 — adjacent slices merge only if their analysis matches at the output's granularity.**
+
+*Outgoing statement.* "Two adjacent slices merge only if their *analysis* matches at the granularity the output shows." — §6.3 *Layer N — grouping* (locator: lines 385–386).
+
+*Derived statements that speak to it.* L2-S14.
+
+*Current-text axis.* L2-S14: **AGREES** — *"Two adjacent spans never carry the same tonality and the same chord"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S14).
+
+---
+
+**Row 43.148 — merge on the full Roman-numeral reading.**
+
+*Outgoing statement.* "*Lean:* **merge on the full Roman-numeral reading (root + quality + inversion + applied/secondary marking)**; anything finer than the output cares about is the right key." — §6.3 *Layer N — grouping* (locator: lines 387–389).
+
+*Derived statements that speak to it.* L2-S14.
+
+*Current-text axis.* L2-S14: **AGREES** — *"(degree, quality, figure and applied target all equal)"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S14).
+
+---
+
+**Row 43.149 — embellishments group automatically if the analysis did its job.**
+
+*Outgoing statement.* "**Embellishments group automatically — if layer 3 did its job.**" — §6.3 *Layer N — grouping* (locator: line 390).
+
+*Derived statements that speak to it.* L2-S14.
+
+*Current-text axis.* L2-S14: **AGREES** — *"A change in which notes are elaborations, with the chord unchanged, is not a boundary."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S14).
+
+---
+
+**Row 43.150 — a passing-tone slice carries the same chord analysis and merges.**
+
+*Outgoing statement.* "A passing-tone slice that layer 3 labels as "still chord X (with an NCT)" carries the *same chord analysis* as its neighbors, so grouping merges `[X][X+passing→X][X]` into one `X` region with the NCT annotated." — §6.3 *Layer N — grouping* (locator: lines 390–392).
+
+*Derived statements that speak to it.* L2-S14.
+
+*Current-text axis.* L2-S14: **AGREES** — *"A change in which notes are elaborations, with the chord unchanged, is not a boundary."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S14).
+
+---
+
+**Row 43.151 — the grouping needs no embellishment logic of its own.**
+
+*Outgoing statement.* "Grouping needs no embellishment logic of its own; it inherits the correctness of the layer-3 judgment." — §6.3 *Layer N — grouping* (locator: lines 392–393).
+
+*Derived statements that speak to it.* L2-S45 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S45: **AGREES** — L2 publishes to L3 *"the assignments per event"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 6.8. *(L2-S45 travels with it.)*
+
+---
+
+**Row 43.152 — the non-chord-tone decision lives in the analysis, not in the grouping.**
+
+*Outgoing statement.* "(This is why the NCT decision must live in layer 3, not here.)" — §6.3 *Layer N — grouping* (locator: lines 393–394).
+
+*Derived statements that speak to it.* L2-S23.
+
+*Current-text axis.* L2-S23: **AGREES** — *"The assignments are part of the one decision."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S23).
+
+---
+
+**Row 43.153 — the grouping never feeds back into the analysis.**
+
+*Outgoing statement.* "Grouping must **not** feed back into analysis (no re-analysis of grouped regions — that reintroduces the merge-then-stale-chord bug)." — §6.3 *Layer N — grouping* (locator: lines 395–396).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 22.87(ii).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S49), travelling with Row 22.87(ii).
+
+---
+
+**Row 43.154 — the grouping a derived view, the unit the Roman-numeral output is emitted in.**
+
+*Outgoing statement.* "It is a pure derived view that also happens to be the unit the RN output is emitted in." — §6.3 *Layer N — grouping* (locator: lines 396–397).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 6.8.
+
+---
+
+**Row 43.155 — the analysis per slice the source of truth; the region its presentation.**
+
+*Outgoing statement.* "The per-slice analysis remains the source of truth; the region is a presentation of it." — §6.3 *Layer N — grouping* (locator: lines 397–398). Two claims: (i) the analysis of each slice remains the source of truth; (ii) the region is a presentation of it.
+
+*Derived statements that speak to it.* (i) L2-S1. (ii) None.
+
+*Current-text axis.* (i) L2-S1: **DIFFERS**. (ii) **THE DERIVATION IS SILENT.**
+
+*The difference, in both texts' own words.* (i) The outgoing source of truth is *"The per-slice analysis"*; L2-S1 says *"The search's unit is the whole reading, not a span."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 21.41. *What was read:* the finest-grain principle of Row 21.41, under which the slice is the unit analyzed, against L2-S1's whole reading; a disposition would choose between them. (ii) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 6.8.
+
+---
+
+**Row 43.156 — the count of slices about the density of onsets.**
+
+*Outgoing statement.* "The slice count ≈ the **onset density** of the piece (dense homophony → many slices; a held chord with a melody over it → a slice per melody onset)." — §6.4 *Performance* (locator: lines 401–402).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an estimate.
+
+---
+
+**Row 43.157 — each slice's chord cheap; the cost the context and the tonality window.**
+
+*Outgoing statement.* "Each slice's chord-ID is cheap (a small pitch set); the cost is the context build and the key window." — §6.4 *Performance* (locator: lines 402–403).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an estimate.
+
+---
+
+**Row 43.158 — the mitigations: cache each slice, bound the window, analyze the visible range first.**
+
+*Outgoing statement.* "*Mitigations, all using machinery that already exists:* **cache** each slice's analysis (analyze once); **bound** the context/key window; analyze the **visible range first** then backfill (Contrapunctus's viewport-incremental approach keeps the editor responsive)." — §6.4 *Performance* (locator: lines 404–406).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 43.159 — none a blocker; the sizing left to a later document.**
+
+*Outgoing statement.* "None is a blocker; size it in the layer-3 doc." — §6.4 *Performance* (locator: line 406).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 43.160 — the slices finer than the grain of the annotation.**
+
+*Outgoing statement.* "Our slices are **finer** than the oracle's annotation grain (the oracle marks a harmonic event; we slice every onset)." — §6.5 *Cross-cutting — slices vs oracle events* (locator: lines 409–410).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 43.161 — several slices to one annotated event, all carrying the same analysis.**
+
+*Outgoing statement.* "So several slices map to one oracle event, and they should all carry the **same** analysis (or be NCT-flagged within the same chord)." — §6.5 *Cross-cutting — slices vs oracle events* (locator: lines 410–411). Two claims: (i) several slices map to one annotated harmonic event; (ii) those slices carry the same analysis, or an elaboration within the same chord.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S14.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S14: **AGREES** — *"A change in which notes are elaborations, with the chord unchanged, is not a boundary."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 43.160. (ii) **ADOPTED — carried** (L2-S14).
+
+---
+
+**Row 43.162 — the root metric graded at the annotation's event positions.**
+
+*Outgoing statement.* "The standing oracle-root metric scores at the **oracle's** event ticks, so a group of slices covering one oracle event is judged by its (shared) analysis — consistent by construction, and the reason the metric and the analysis grain compose cleanly." — §6.5 *Cross-cutting — slices vs oracle events* (locator: lines 411–413).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 43.163 — a disagreement among the slices of one annotated event a diagnostic.**
+
+*Outgoing statement.* "A *disagreement* among slices covering one oracle event is itself a signal (a real sub-event the oracle didn't annotate, or a spurious split) — a useful diagnostic, not a metric problem." — §6.5 *Cross-cutting — slices vs oracle events* (locator: lines 413–415).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+#### Not a statement — listed so the arithmetic closes (60)
+
+1. "**★ Governance (2026-06-29): `ARCHITECTURE.md` is THE canonical architecture doc.**" (3) — *the document's account of itself*.
+2. "Its **§2.14** (the forward-only … now carry the **ratified decisions** from this doc." (3–6) — *a pointer* to where the document's decisions now live.
+3. "This doc is **demoted to a detailed design & rationale reference** — it holds the *full* statements of the contracts, … which `ARCHITECTURE.md` summarises and points to." (6–8) — *the document's account of itself*.
+4. "**Do not treat this as a second canonical architecture**: when the two disagree, `ARCHITECTURE.md` wins, and any new ratified decision lands there first." (8–9) — *the document's account of itself*, a rule of how the project's documents rank.
+5. "**Status (historical): user-ratified 2026-06-21.**" (11) — *the document's status banner*.
+6. "This was the north-star the per-layer design docs implement and the upstream-first sweep builds toward; it superseded the loose "tone collection = layer 1 / segment-first" framing." (11–12) — *the document's account of itself*.
+7. "Existing-code descriptions here are verified at source (HEAD `edd33901ed`); the target is design." (13) — *provenance*.
+8. "Two consequences:" (20–21) — *a label*.
+9. "**★ "Effort" preset — a planned future calibration knob (user, 2026-06-22).**" (48) — *a label*.
+10. "**★ Minimality / maximal separation (user-ratified 2026-06-22).**" (67) — *a label*.
+11. "| Layer | Name | Contract | Fact or Judgment? |" (88) — *a table header*.
+12. "|---|---|---|---|" (89) — *the table's separator row*.
+13. "**★ A future voice-leading layer (named, not built — recorded 2026-06-29).**" (97) — *a label*.
+14. "**★ The Harmonic Vocabulary — an independent knowledge-base component, not a layer (user-ratified 2026-06-29).**" (108) — *a label*.
+15. "Sub-points:" (119) — *a label*.
+16. "(Corrections recorded 2026-06-21: an earlier draft floated *chord-symbol-first*, a later one imported *cadence detection* into key/mode — both wrong." (124–125) — *provenance*, the history of the document's drafts.
+17. "Matches Temperley key-from-pitch-profile, Contrapunctus key-first / "given the key the rest is largely solved", and today's key-then-chord code." (127–129) — *a defense*.
+18. "Full survey + sources in `cowork_layer3_keymode_design.md`.)" (129) — *a pointer*.
+19. "**Control flow — forward-only, no backward edges (user-ratified 2026-06-22).**" (139) — *a label*.
+20. "Concretely:" (140) — *a label*.
+21. "*Rejected:* a hard confidence-gate (locks confident-but-wrong commits); … (measured inert — the gain is soft-evidence quality carried forward)." (163–165) — *rejected alternatives*, named with their reasons.
+22. "Full treatment: `cowork_layer5_function_design.md` §8 / §9-D7." (165–166) — *a pointer*.
+23. "**Why:** this preserves the acyclic guarantee (no key←chord cycle), … (no iterate-to-fixpoint convergence question)." (170–172) — *a defense* of the control flow above.
+24. "**This contract is the spine of the Stage-5 / gated-step design doc** when it is written." (172–173) — *a pointer* to a planned document.
+25. "**What "single responsibility" actually means here — one (evidence-source × question) contribution, NOT "one layer owns the answer" (user-ratified 2026-06-22).**" (175–176) — *a label*.
+26. "Worked through for mode (the case that exposed this):" (179) — *a label*.
+27. "**Every layer's responsibility is to be stated this way — not "owns X", but "owns the [named evidence] contribution to X, delivered once, forward" — and the boundary (what it does NOT own, and which later layer owns the rest) stated explicitly.**" (189–191) — *a rule of how a specification states a layer's responsibility*.
+28. "**★ Bounded context — the analysis works on the user's selection, and a layer asks for more (user-ratified 2026-06-24).**" (201–202) — *a label*.
+29. "A governing cross-cutting contract, applying to **every** layer L1–L(n) (full design: `cowork_bounded_context_design.md`)." (202–203) — *a label*, with a pointer.
+30. "**★ Spans are a typed family, not one "region" — name each by its bounding criterion (user-ratified 2026-06-29).**" (228) — *a label*.
+31. "This is theory-grounded — tonal structure carries *independent* segmentations (the GTTM premise: grouping, metrical, time-span, and prolongational structures are separate), not a single hierarchy." (230–232) — *a defense*.
+32. "The named family:" (232) — *a label*.
+33. "(Layer 6's phrase.)" (238) — *a pointer*.
+34. "*(Forward note — the progression-schema layer, 2026-06-29.)*" (250) — *a label*.
+35. "**The relation between two span types is either NESTING or CROSS-CUTTING, and which it is must be stated.**" (263) — *a label*, and a rule of how the specification states the relation.
+36. "**Dissolves over-grab (~45%, the biggest lever)** by construction — no coarse unit spans two chords." (280) — *a defense* of the target, §3's evidence.
+37. "**Matches the metric we already built.**" (281) — *a defense* of the target, §3's evidence.
+38. "The standing oracle-root metric scores per oracle-event (per-slice); analyzing per-slice makes the optimized object and the measured object the same." (281–282) — *a defense* of the target, §3's evidence.
+39. "**Matches the SOTA.**" (283) — *a defense* of the target, §3's evidence.
+40. "Contrapunctus — which beats AugmentedNet/AnalysisGNN out-of-sample — labels *every beat* rather than coarse-segment-then-analyze; per-event analysis is the winning shape." (283–284) — *a defense* of the target, §3's evidence.
+41. "**Embodies annotate-don't-transform.**" (285) — *a defense* of the target, §3's evidence.
+42. "The note model stays the source of truth; the info-loss that caused the anchor failure (no note-level source to recompute from) cannot recur." (285–286) — *a defense* of the target, §3's evidence.
+43. "**Removes a whole class of judgment.**" (287) — *a defense* of the target, §3's evidence.
+44. "Slice placement becomes a fact, not a tunable heuristic — less to be wrong about, and one fewer coupled decision." (287–288) — *a defense* of the target, §3's evidence.
+45. "The §4 "Existing (verified)" snapshot below is the **pre-rebuild baseline**; it is preserved as the gap-to-close record." (291–292) — *the document's account of itself*.
+46. "The canonical `ARCHITECTURE.md` carries the authoritative as-built; this banner keeps the target doc honest." (298) — *the document's account of itself*.
+47. "Target mapping (synthesis, to refine per-layer):" (305) — *a label*.
+48. "The sweep order becomes: **Layer 1 (note model) → Layer 2 (slicing) → Layer 3 (analysis: key, then chord, with NCT context) → Layer N (grouping)**, each with its own signed design doc (current behavior + gaps + target), built upstream-first with downstream frozen and the tiered oracle metric as the per-layer done-signal." (318–320) — *a rule of the order of work*.
+49. "**Onsets only, or onsets + offsets?**" (334) — *a label*, the question put.
+50. "An **onset** (a note attacking) is the harmonically-primary event — a new pitch can change the harmony." (334–335) — *reasoning* on the question the resolution below answers.
+51. "An **offset** (a note releasing) shrinks the sounding set; usually the harmony persists (dropping a chord tone leaves the same, possibly incomplete, chord), occasionally it matters." (335–336) — *reasoning* on the question the resolution below answers.
+52. "Including offsets is *complete* but produces extra slices — some redundant (identical harmony before/after, which group away in layer N) and some **incomplete-chord** slices (only part of a chord still sounds) that lean hard on layer-3 context to carry the harmony." (337–339) — *reasoning* on the question the resolution below answers.
+53. "The earlier onsets-only lean broke that property (a chord tone releasing shrinks the set mid-span) and pushed incomplete-tail reasoning to layer 3." (341–342) — *a rejected alternative*, named with its reasons.
+54. "*(If layer 1 gets this wrong, every downstream slice is wrong — it is a correctness obligation for layer 1.)*" (346–347) — *a defense*.
+55. "**Grace notes.**" (348) — *a label*.
+56. "The question is whether a grace opens its own micro-slice." (348–349) — *a label*, the question put.
+57. "(This is the hidden-dependency the upstream-first sweep exists to surface.)" (359) — *a remark on the order of work*.
+58. "The anchor lesson: re-deriving a chord from a flattened tone union over-reads." (378–379) — *a defense*.
+59. "Grouping on root alone would merge `I` and `I6` (same root, different inversion) into one region, losing a real display distinction." (386–387) — *a defense*.
+60. "**Display-only feedback.**" (395) — *a label*.
+
+#### The arithmetic at this member
+
+- Rows written: **163** (43.1 to 43.163); 34 of them carry more than one claim and are split — 29 carrying two claims each and 5 carrying three.
+- **Outgoing statements placed: 202.**
+- Listed under *not a statement*: **60**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 202 dispositions over 202
+  statements.
+- **UNPLACED at this member: 39** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 45 | 43.2(i), 43.4, 43.8(ii), 43.29(ii), 43.31, 43.39(i), 43.41(iii), 43.43(ii), 43.44(i), 43.46, 43.47(i), 43.49(ii), 43.51, 43.63(i), 43.65, 43.66, 43.74, 43.75(i), 43.75(iii), 43.76, 43.77(i), 43.77(ii), 43.78, 43.79, 43.82, 43.83, 43.96(ii), 43.100(i), 43.125(ii), 43.129(i), 43.131, 43.132(i), 43.135, 43.139, 43.141, 43.143(i), 43.144, 43.146, 43.147, 43.148, 43.149, 43.150, 43.152, 43.153, 43.161(ii) |
+| ADOPTED — proposed | 2 | 43.14(i), 43.14(ii) |
+| RELOCATED | 47 | 43.2(ii), 43.3, 43.5, 43.6, 43.7(ii), 43.9(i), 43.10, 43.26, 43.27, 43.33(i), 43.34, 43.35(i), 43.35(ii), 43.37, 43.38(i), 43.38(ii), 43.75(ii), 43.80, 43.81, 43.85, 43.86, 43.88, 43.89, 43.93, 43.95, 43.96(i), 43.97(i), 43.97(ii), 43.99, 43.100(iii), 43.101, 43.102, 43.119, 43.120, 43.121, 43.122, 43.123, 43.124, 43.125(i), 43.126, 43.151, 43.154, 43.155(ii), 43.160, 43.161(i), 43.162, 43.163 |
+| QUARANTINED | 11 | 43.48, 43.64, 43.84, 43.87, 43.90, 43.91, 43.92, 43.104(ii), 43.106, 43.107, 43.136 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 58 | 43.9(ii), 43.11, 43.12, 43.13, 43.15, 43.16, 43.17, 43.18(i), 43.18(ii), 43.28(i), 43.28(ii), 43.29(i), 43.29(iii), 43.30, 43.32, 43.33(ii), 43.36, 43.40, 43.41(i), 43.41(ii), 43.42, 43.43(i), 43.44(ii), 43.49(i), 43.50, 43.94(i), 43.94(ii), 43.98, 43.103, 43.104(i), 43.105, 43.108, 43.109, 43.110, 43.111, 43.112, 43.113, 43.114, 43.115, 43.116, 43.117, 43.118(i), 43.118(ii), 43.127, 43.128, 43.129(ii), 43.130, 43.132(ii), 43.133, 43.134, 43.137, 43.140, 43.142, 43.145, 43.156, 43.157, 43.158, 43.159 |
+| UNPLACED | 39 | 43.1, 43.7(i), 43.8(i), 43.19, 43.20, 43.21, 43.22, 43.23, 43.24, 43.25, 43.39(ii), 43.43(iii), 43.45, 43.47(ii), 43.52, 43.53, 43.54, 43.55, 43.56, 43.57, 43.58, 43.59, 43.60, 43.61(i), 43.61(ii), 43.62, 43.63(ii), 43.67, 43.68, 43.69(i), 43.69(ii), 43.70, 43.71, 43.72, 43.73, 43.100(ii), 43.138, 43.143(ii), 43.155(i) |
+| **Total** | **202** | — |
+
+**The arithmetic closes at this member**: 45 + 2 + 47 + 11 + 0 + 58 + 39 = 202, against 202 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 52 |
+| DIFFERS | 68 |
+| THE DERIVATION IS SILENT | 85 |
+| **Total verdicts** | **205** |
+
+*(205 verdicts over 202 statements because three statements each name two derived statements: 43.28(i), L2-S11 and L2-S6 both DIFFERS; 43.131, L2-S33 and L2-S25 both AGREES; and 43.144, L2-S23 and L2-S33 both AGREES.)* DIFFERS: 43.1, 43.7(i), 43.8(i), 43.12, 43.17, 43.18(i), 43.18(ii), 43.19, 43.20, 43.21, 43.22, 43.23, 43.24, 43.25, 43.28(i), 43.29(i), 43.29(iii), 43.30, 43.32, 43.40, 43.41(i), 43.41(ii), 43.42, 43.43(i), 43.43(iii), 43.45, 43.47(ii), 43.49(i), 43.50, 43.52, 43.53, 43.54, 43.55, 43.56, 43.57, 43.58, 43.59, 43.60, 43.61(i), 43.61(ii), 43.62, 43.63(ii), 43.67, 43.68, 43.69(i), 43.69(ii), 43.70, 43.71, 43.72, 43.73, 43.90, 43.91, 43.92, 43.93, 43.94(ii), 43.100(ii), 43.105, 43.106, 43.111, 43.130, 43.133, 43.134, 43.136, 43.137, 43.138, 43.143(ii), 43.155(i).
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact's `item_4_identities_inside` for position 43 is empty, and no decision is
+  homed in this document.
+- **SEEN rows: none.** The check was made at the homes as the manifest states: none of the eight homes 1(c) names lies
+  in this member's ranges; none of them is homed in this document.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** L2-S31 (entry 1) — 43.47, 43.143; L2-S22
+  (entry 4) — 43.75, 43.76, 43.77, 43.78; L2-S43 (entry 4) — 43.90, 43.91, 43.92; L2-S45 (entry 4) — 43.151; L2-S38
+  (entry 6) — 43.63. No row of this member names L2-S17, L2-S42 or L2-S12. Each says so at the row.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -55803,6 +58075,14 @@ the row says which.
   L2-S17 AGREES at Row 23.214.)*
 - Row 23.215 — travelling with Row 22.54: notational metadata that states no harmonic reading, the key signature among it,
   remains admissible. *(L2-S17 AGREES at the row.)*
+- Rows 43.3 and 43.26 — travelling with Row 22.37(i): the notes as the single lossless source of truth, read once, with no
+  weighting, filtering or aggregation.
+- Rows 43.121, 43.122 and 43.123 — travelling with Row 22.37(iii): a tied group one sounding event, so that no change point
+  falls at a tie.
+- Row 43.124 — travelling with Row 22.37(iv): grace notes kept in the note model and flagged.
+- Row 43.75(ii) — the supplier of the notes loading more in the asked direction, append-only, stopping at and reporting the
+  edge of the score. *(The input contract gives its own half of the enlargement at its Ruling 46, as L2-S22's defense
+  relays.)*
 
 **To *L1 — Change points, candidates and notated evidence*.**
 
@@ -55892,6 +58172,15 @@ the row says which.
 - Rows 42.58 and 42.59 — travelling with Row 22.85(i): the slicer slicing whatever the note model holds, and the newly
   loaded span on extension.
 - Row 42.61 — travelling with Row 22.86: no selection-versus-context distinction made by the slicer.
+- Row 43.2(ii) — travelling with Row 6.6(i): the constant-sonority slice as the atomic unit of analysis, never the metric
+  beat.
+- Rows 43.5, 43.6, 43.7(ii), 43.9(i) and 43.10 — travelling with Row 22.55: where the slices fall a deterministic fact read
+  off the notes, over-grab removed by construction.
+- Rows 43.27 and 43.119 — travelling with Row 10.5: the constant-sonority slices, their boundaries at every onset and every
+  release.
+- Row 43.120 — travelling with Row 22.73: redundant release slices harmless, grouped away.
+- Row 43.125(i), with Row 43.126 — travelling with Row 22.74: a grace note opening no slice of its own. *(IC S-16; L2-S26
+  carries the host's reading at Row 43.125(ii).)*
 
 **To *L3 — The read-off facts*.**
 
@@ -56048,6 +58337,22 @@ the row says which.
   independent segmentations cutting across the punctuation-spans, not nested in them.
 - Row 41.116 — travelling with Row 5.204(i): the grouping merging the already corrected slices. *(L2-S49 travels with
   it.)*
+- Rows 43.35(i), 43.95, 43.96(i) and 43.97(i) — travelling with Row 5.91: the progression schemata of the harmonic skeleton,
+  homed in the schema span and the cadential approach, a catalog specific to an idiom, recognized additive over the
+  committed progression. *(L2-S49 travels with Row 43.97(i).)*
+- Rows 43.37, 43.38(i), 43.38(ii) and 43.99 — travelling with Row 26.1: the Harmonic Vocabulary a component with a read-only
+  query interface, read by the function and grouping layers and shared with a future suggestion tool. *(L2-S49 travels
+  with Row 43.38(i).)*
+- Row 43.97(ii) — travelling with Row 26.6: robust matching of schemata needing the overlay of functional substitutions.
+- Rows 43.85 and 43.86 — travelling with Row 21.42(ii): the tonality span, a grouping bounded by a change of tonality.
+  *(L2-S49 travels with Row 43.85.)*
+- Rows 43.88, 43.89, 43.151, 43.154 and 43.155(ii) — travelling with Row 6.8: the phrase as the grouping unit, and the
+  grouping as a derived view of the reading needing no embellishment logic of its own. *(L2-S49 travels with Row 43.88,
+  L2-S45 with Row 43.151.)*
+- Row 43.93 — travelling with Row 21.48(iv): the cadential scope, one detector feeding the phrase and the tonality.
+  *(L2-S34 DIFFERS at the row.)*
+- Rows 43.80, 43.81, 43.100(iii), 43.101 and 43.102 — travelling with Row 21.49(iii): the tonal stream segmented many ways at
+  once, punctuation-spans nesting in section-spans, and tonality spans and punctuation-spans cutting across one another.
 
 **To *the second axis — voice leading*.**
 
@@ -56077,6 +58382,9 @@ the row says which.
   by a cadence or a breath, as a construct of the voice-leading axis that the grouping does not segment.
 - Rows 41.12 and 41.50 — travelling with Row 21.54: the overlapping per-voice phrases of a contrapuntal texture as the
   voice-leading layer's object and not the grouping's input.
+- Rows 43.33(i) and 43.35(ii) — travelling with Row 22.100: the horizontal dimension, and the schemata defined by their voice
+  leading requiring it.
+- Row 43.34 — travelling with Row 22.101: the voice-leading layer reading the per-voice motion, beside the harmonic stack.
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -56329,6 +58637,9 @@ the row says which.
   independent, and the held-out beds untouched until engagement.
 - Row 42.69 — travelling with Row 5.260: behavior tests asserting the slices' exact positions and note sets.
 - Row 42.70(i) — the whole-corpus check of the slicer against an independent recomputation of the boundary moments.
+- Rows 43.160 and 43.161(i) — the slices finer than the grain of the annotation, several slices to one annotated event.
+- Rows 43.162 and 43.163 — the root metric grading at the annotation's event positions, and a disagreement among the slices
+  of one annotated event a diagnostic.
 
 *(Member 1's relocations are the rows numbered 1.n above. Member 2 relocates no row. Member 3 relocates one, Row 3.38,
 above. Member 4's relocations are the rows numbered 4.n above. Member 5's relocations are the rows
@@ -56339,7 +58650,7 @@ numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
 above. Member 31 relocates no row, and member 32's relocations are the rows numbered 32.n above. Member 33's relocations are the rows numbered 33.n
-above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, and member 42's the rows numbered 42.n.)*
+above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, and member 43's the rows numbered 43.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -57336,6 +59647,14 @@ rows here, each with its audit question, in the commit that tabulates it.
 - Row 42.75 — do the slicer's regression tests and the whole-corpus check exist and run at the current commit?
 - Row 42.88 — does the old segment-first machinery, with its boundary-moment computation and its threshold selection, still exist and run at the current commit?
 - Row 42.90(ii) — travelling with Row 42.88: does the old segment-first machinery, with its boundary-moment computation and its threshold selection, still exist and run at the current commit?
+- Row 43.48 — travelling with Row 22.38(ii): does the legacy weighted pitch-class view run on any production path at the current commit, and what reads it?
+- Row 43.64 — travelling with Row 5.226: are the modulation recompute and the fine-grain override built as instances of one mechanism, and does either run?
+- Row 43.84 — which types carry the chord-span and the tonality span at the current commit, and which layers read them?
+- Row 43.87 — travelling with Row 43.84: which types carry the chord-span and the tonality span at the current commit, and which layers read them?
+- Rows 43.90, 43.91 and 43.92 — travelling with Row 5.71: does the dormant function layer decide within a bounded decision-context span, and what bounds it?
+- Rows 43.104(ii) and 43.107 — travelling with Row 22.38(ii): does the legacy weighted pitch-class view run on any production path at the current commit, and what reads it?
+- Row 43.106 — travelling with Row 21.12: does the legacy greedy segmentation run exploratory passes with the progression signals withheld, and does it run on any production path at the current commit?
+- Row 43.136 — travelling with Row 5.228(i): what did the recorded measurement of the joint cross-layer search measure, on which system, and does its inertness bear on a joint decision over the charter's four fields?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -57450,6 +59769,9 @@ words.
   collection, never compute it from the tonic and a scale laid out from it.
 - Row 39.197 — that the rivals L2 publishes beside its principal reading be distinct readings, never a near-copy of the
   principal.
+- Rows 43.14(i) and 43.14(ii) — travelling with Rows 21.40(i) and 21.40(ii): that every choice L2 makes to bound its cost be
+  an explicit, declared setting and never a constant fixed in code, and that any optional expensive refinement of L2's
+  reading be a separable stage that can be switched off.
 
 **DIFFERS.**
 
@@ -58116,6 +60438,64 @@ words.
   returns boundaries"*; L2-S11 says the boundary *"is never decided before the chord or after it"*.
 - Row 39.269 — as at Row 4.3: the outgoing pass *"overturns a committed chord when the surrounding progression argues
   against it"*; L2-S35 says *"No span's alternatives are normalised against each other alone."*
+- Rows 43.1 and 43.7(i) — as at Row 21.41: the outgoing text makes *"everything coarser a derived view"* and *"removes
+  segmentation-as-a-decision entirely"*; L2-S11 says where the boundaries fall *"is decided together with the tonality, the
+  chord and the assignments, in the one decision"*.
+- Rows 43.8(i) and 43.155(i) — the outgoing analysis asks of each slice *"is this slice a chord or a decoration?"*, *"The
+  per-slice analysis"* its source of truth; L2-S1 says *"The search's unit is the whole reading, not a span."*
+- Row 43.12 — the outgoing effort preset sets a *"beam/candidate count"*; L2-S36 says *"No beam that discards readings on
+  partial candidate scores is admitted."*
+- Rows 43.17, 43.18(i), 43.18(ii), 43.28(i), 43.29(iii), 43.32, 43.40, 43.42, 43.49(i), 43.50, 43.130, 43.133, 43.134 and
+  43.137 — as at Row 18.2(i): the outgoing analysis is *"decomposed into single-responsibility layers"*, in the order
+  *"key/mode → chord symbol → function → grouping"*; L2-S11 says *"It is never decided before the chord or after it."*
+- Row 43.28(i) — the outgoing tonalities include modes such as *"`F-mixolydian`, `B-phrygian`"*; L2-S6's tonalities are *"in
+  two modes, major and minor"*.
+- Rows 43.19, 43.20, 43.21, 43.22, 43.25, 43.67 and 43.68 — as at Row 21.62(i): the outgoing layer *"owns one evidence
+  source's contribution to one question"* and *"defers everything that needs evidence a later layer owns"*; L2-S11 decides
+  the four *"in the one decision"*.
+- Row 43.23 — the outgoing chord layer *"defers the root, rather than pinning it by voice-leading or spelling cleverness it
+  shouldn't own"*; L2-S10 says *"An event is a chord tone of a span only if its spelled pitch class is a member of the
+  span's chord, spelled."*
+- Row 43.24 — as at Row 6.26: the outgoing layer decides *"binary chord-membership"* but *"not the non-chord-tone type"*;
+  L2-S1 assigns *"chord tone, or elaboration together with its relation"*.
+- Rows 43.29(i) and 43.30 — the outgoing layers decide *"the key-independent chord symbol"* and read the function from it;
+  L2-S27 says *"It publishes no chord symbol (root pitch class, quality and bass note). That is L3's read-off."*
+- Rows 43.41(i) and 43.41(ii) — the outgoing tonality *"needs only the notes"* and *"is **not** helped by chord symbols"*;
+  L2-S20 says *"The tonality terms read the chords the reading proposes (degree, function, cadential progressions)"*.
+- Row 43.43(i) — the outgoing cadence is *"function-level, downstream"*; L2-S34 carries in the one candidate score *"the
+  cadential progressions that confirm a tonality"*.
+- Rows 43.43(iii), 43.45, 43.52, 43.53, 43.54, 43.59 and 43.138 — as at Row 8.96: the outgoing refinement and resolution
+  are *"the gated Stage 5"*, a step that *"SELECTS from that menu"*; L2-S11 decides the tonality and the chord *"in the one
+  decision"*.
+- Rows 43.47(ii) and 43.143(ii) — as at Row 6.29: the outgoing text forbids *"re-deriving a chord from a flattened union"*;
+  L2-S31's span term reads *"its content (sounding set, assignments, attachments)"*.
+- Rows 43.55, 43.56, 43.57, 43.58, 43.60 and 43.63(ii) — as at Row 5.218(ii): the outgoing text overturns or replaces an
+  earlier inference by *"a localized FORWARD recompute"*; L2-S35 says *"No span's alternatives are normalised against each
+  other alone."*
+- Rows 43.61(ii) and 43.62 — as at Rows 5.223 and 5.225: the outgoing commit is overturned when evidence *"crosses a
+  threshold scaled to the earlier layer's confidence"*; L2-S35 says *"The candidate score is normalised over whole readings"*.
+- Row 43.61(i) — as at Row 5.219: the outgoing agreement *"raises joint confidence"* of an earlier commit; L2-S11 decides the
+  four *"in the one decision"*.
+- Row 43.69(i) — as at Row 7.24(i): the outgoing candidate space is *"the 252 key/modes"*; L2-S6's tonalities are *"the
+  spelled tonics (seven letters, each natural, sharp or flat) in two modes, major and minor"*.
+- Rows 43.69(ii) and 43.70 — as at Row 7.24(ii): the outgoing tonality layer owns *"the note-fit model"* as its *"sole,
+  exclusive territory"*; L2-S11 decides the tonality together with the chord *"in the one decision"*.
+- Rows 43.71, 43.72 and 43.73 — as at Rows 7.26 and 7.27: the outgoing mode is *"built up across layers along an evidence
+  boundary"*, the gated step arbitrating the residual; L2-S11 decides the tonality *"in the one decision"*.
+- Rows 43.90, 43.91 and 43.92 — as at Row 5.71: the outgoing decision-context span is *"bounded by a **look-ahead
+  window**"*; L2-S43 says *"No reading is discarded before the whole working span, context included, has been scored."*
+- Row 43.93 — as at Row 21.48(iv): the outgoing text has *"one detector feeds both"*; L2-S34 says confirmation is carried
+  *"not by a separate detector"*.
+- Row 43.94(ii) — the outgoing gradient is *"the pivot (a modulatory overlap)"*; L2-S19 publishes a pivot *"as one span
+  with one tonality"*.
+- Row 43.100(ii) — as at Row 21.49(ii): the outgoing typology nests *"chord-spans ⊂ punctuation-spans"*; L2-S13 says *"No
+  flag forces or forbids a boundary."*
+- Rows 43.105 and 43.106 — as at Rows 22.42 and 23.79: the outgoing machinery is *"segment-first"* and *"still drives
+  analysis"*; L2-S11 says the boundary is *"never decided before the chord or after it"*.
+- Row 43.111 — as at Row 6.6(ii): the outgoing analysis is *"now run per constant-sonority slice with context"*; L2-S1 says
+  *"The search's unit is the whole reading, not a span."*
+- Row 43.136 — as at Row 5.228(i): the outgoing text measured *"the **joint/lattice search inert**"*; L2-S11 decides the
+  tonality and the chord *"in the one decision"*.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -58169,10 +60549,11 @@ own distribution table in §6.
 | 40 | 166 | 0 | 0 | 132 | 8 | 0 | 26 | 0 | 42 |
 | 41 | 168 | 11 | 0 | 116 | 12 | 0 | 29 | 0 | 56 |
 | 42 | 101 | 6 | 0 | 68 | 5 | 0 | 22 | 0 | 30 |
-| **Total** | **4193** | **446** | **88** | **815** | **1420** | **0** | **1148** | **276** | **1956** |
+| 43 | 202 | 45 | 2 | 47 | 11 | 0 | 58 | 39 | 60 |
+| **Total** | **4395** | **491** | **90** | **862** | **1431** | **0** | **1206** | **315** | **2016** |
 
-**The arithmetic check:** 446 + 88 + 815 + 1420 + 0 + 1148 + 276 = 4193, against 4193 statements placed (72 + 65 +
-40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101).
+**The arithmetic check:** 491 + 90 + 862 + 1431 + 0 + 1206 + 315 = 4395, against 4395 statements placed (72 + 65 +
+40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202).
 
 **Current-text verdicts.**
 
@@ -58220,10 +60601,11 @@ own distribution table in §6.
 | 40 | 7 | 0 | 159 | 166 |
 | 41 | 32 | 0 | 136 | 168 |
 | 42 | 16 | 0 | 85 | 101 |
-| **Total** | **720** | **673** | **2850** | **4243** |
+| 43 | 52 | 68 | 85 | 205 |
+| **Total** | **772** | **741** | **2935** | **4448** |
 
-**The arithmetic check:** 720 + 673 + 2850 = 4243 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
-71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101).
+**The arithmetic check:** 772 + 741 + 2935 = 4448 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 +
+71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205).
 
 ## 14. The derivation's independence record, relayed
 
@@ -58254,4 +60636,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 42 are done, positions 43 to 62 are untouched.
+  untouched: positions 1 to 43 are done, positions 44 to 62 are untouched.
