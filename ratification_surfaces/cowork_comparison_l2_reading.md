@@ -95,7 +95,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 51 | `cowork_layer1_note_model_design.md` passages | **DONE** (§6.51) |
 | 52 | `cowork_confidence_contract.md` passages | **DONE** (§6.52) |
 | 53 | `cowork_progression_schema_design.md` passages | **DONE** (§6.53) |
-| 54 | `docs/llm_integration.md` passages | NOT YET TABULATED |
+| 54 | `docs/llm_integration.md` passages | **DONE** (§6.54) |
 | 55 | `cowork_idiom_entry_mapping.md` passages | NOT YET TABULATED |
 | 56 | `cowork_architecture_reassessment.md` passages (item 4 alone) | NOT YET TABULATED |
 | 57 | `cowork_architecture_review_2026_07.md` passages (item 4 alone) | NOT YET TABULATED |
@@ -107,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 53 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 54 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, the `cowork_notation_output_contract.md` passages, the `cowork_progression_schema_dictionary.md` passages, the `cowork_layer1_note_model_design.md` passages, the `cowork_confidence_contract.md` passages, and the `cowork_progression_schema_design.md` passages.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, the `cowork_notation_output_contract.md` passages, the `cowork_progression_schema_dictionary.md` passages, the `cowork_layer1_note_model_design.md` passages, the `cowork_confidence_contract.md` passages, the `cowork_progression_schema_design.md` passages, and the `docs/llm_integration.md` passages.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 53 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 54 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -143,8 +143,8 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit. **Positions 54 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 54**, `docs/llm_integration.md` passages. §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 54 whole in its own commit. **Positions 55 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 55**, `cowork_idiom_entry_mapping.md` passages. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -68702,6 +68702,191 @@ the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** none — no row of this member names L2-S31,
   L2-S17, L2-S22, L2-S42, L2-S45, L2-S43, L2-S12 or L2-S38.
 
+---
+
+### 6.54 — Member 54: `docs/llm_integration.md`, passages
+
+> **Manifest for this member.** Position **54**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `docs/llm_integration.md`. Label: *"the passages of the document"*. **The seven published ranges**, each
+> as a locator only, by its first and last line as the artifact publishes them (**D-307**):
+>
+> 1. lines 192–195, from *"The practical boundary: if a property is stored via the `Pid` property system"* to *"computed and should be excluded."*;
+> 2. lines 414–416, from *"**MusicalAddress as join key:** Harmony, Annotation, and Note at the same"* to *"a match on the composite key — equivalent to a SQL join."*;
+> 3. lines 485–490, from *"**Explicit markers stored in the score:**"* to *"- Double barlines and repeat signs"*;
+> 4. lines 575–593, from *"| Property | Include? | Notes |"* to *"| Staff line position | No | Computed |"*;
+> 5. lines 708–711, from *"- Chord symbols and Roman numeral analysis per measure"* to *"- Voice leading quality assessments (parallel motion, voice crossing)"*;
+> 6. lines 744–748, from *"- The LLM bridge is optional — users who do not want it do not ship it"* to *"- The integration can be updated independently of MuseScore releases"*;
+> 7. lines 765–767, from *"**Medium term:** Build the plugin API on top of the same Core Access Layer."* to *"it to run as a plugin is then straightforward."*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside — the document's blob carries no carriage return. **The lines between the ranges are outside the
+> member** and are not tabulated, quoted or listed. **No line inside the ranges is a heading**; the bold lead-ins are
+> labels. Outgoing statements: **5** (rows 54.1 to 54.5; no row carries more than one claim). Listed under *not a
+> statement*: **34**. Counted at this member by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of the design of the
+> language-model integration, a product tool outside the analysis: what the tool is shown and not shown, how it joins
+> its records, the markers by which a user names a passage to it, the table of what its view of the music includes,
+> the analysis it is handed as context, and its future as a plugin. **The placement readings are those of the earlier
+> members, applied unchanged.** A statement about a product tool outside the analysis is listed under *not a
+> statement*, the fifth batch's reading, and so is every row of the table of what the tool's view includes but one; a
+> table's header and separator rows are listed. Where a line names analysis the tool is handed — the chord symbols, the
+> Roman-numeral analysis, the tonality and mode, where the chords change — it is a consumer reading the decided reading,
+> and travels to *L3 — The read-off facts* with Row 17.23(ii), as Row 36.1 did; the voice-leading assessments it is
+> handed go to *the second axis — voice leading*. **No placement reading is new at this member.**
+>
+> **The WITHHELD homes inside this member:** none — the artifact's `item_4_identities_inside` for position 54 is
+> empty. A check at `tools/audit/decisions/backbone_decisions.json` found seven decisions homed in this document, none
+> inside the ranges and none among the decisions ruled L2's own: **D-448** (lines 286–288), **D-442** (lines 304–305),
+> **D-444** (lines 367–369), **D-445** (lines 418–421, just after range 2's last line, between ranges 2 and 3),
+> **D-446** (lines 518–521), **D-443** (lines 601–604) and **D-447** (lines 613–615).
+>
+> **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes §5 names lies in this
+> document.
+
+---
+
+**Row 54.1 — the chord symbols in the language model's view, taken from the analysis.**
+
+*Outgoing statement.* "| Chord symbols | Yes | From composing module analysis |" — §7.3, what the language model's view includes, row *Chord symbols* (locator: line 582).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 17.23(ii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 17.23(ii). *(L2-S49 travels with it.)*
+
+---
+
+**Row 54.2 — the chord symbols and the Roman-numeral analysis handed to the language model.**
+
+*Outgoing statement.* "Chord symbols and Roman numeral analysis per measure" — §8, the composing module as the language model's context provider (locator: line 708).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 17.23(ii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 17.23(ii). *(L2-S49 travels with it.)*
+
+---
+
+**Row 54.3 — the inferred tonality and mode handed to the language model.**
+
+*Outgoing statement.* "Key and mode inference" — §8, the composing module as the language model's context provider (locator: line 709).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 17.23(ii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 17.23(ii). *(L2-S49 travels with it.)*
+
+---
+
+**Row 54.4 — where the chords change handed to the language model.**
+
+*Outgoing statement.* "Harmonic rhythm (where chord changes occur)" — §8, the composing module as the language model's context provider (locator: line 710).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 17.23(ii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 17.23(ii). *(L2-S49 travels with it.)*
+
+---
+
+**Row 54.5 — the voice-leading assessments handed to the language model.**
+
+*Outgoing statement.* "Voice leading quality assessments (parallel motion, voice crossing)" — §8, the composing module as the language model's context provider (locator: line 711).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (34)
+
+1. "The practical boundary: if a property is stored via the `Pid` property system on an `EngravingObject`, it is intentional and belongs in the LLM's view." (192–193) — *a statement about a product tool outside the analysis*, what the language-model integration is shown.
+2. "If it lives in `LayoutData` and is regenerated on each layout pass, it is computed and should be excluded." (194–195) — *a statement about a product tool outside the analysis*, what the language-model integration is not shown.
+3. "**MusicalAddress as join key:** Harmony, Annotation, and Note at the same MusicalAddress are co-located." (414–415) — *a statement about a product tool outside the analysis*, how the language-model integration joins its records.
+4. ""What chord symbol is sounding at this note?" is a match on the composite key — equivalent to a SQL join." (415–416) — *a statement about a product tool outside the analysis*, how the language-model integration joins its records.
+5. "**Explicit markers stored in the score:**" (485) — *a label*.
+6. "Rehearsal marks: *"between C and D"*, *"from rehearsal mark 4"*" (486) — *a statement about a product tool outside the analysis*, a way a user names a passage to the language-model integration.
+7. "Tempo marks: *"from the Andante"*, *"where the Presto starts"*" (487) — *a statement about a product tool outside the analysis*, a way a user names a passage to the language-model integration.
+8. "Key changes: *"after the modulation to B flat"*, *"the second key change"*" (488) — *a statement about a product tool outside the analysis*, a way a user names a passage to the language-model integration.
+9. "Section labels if present: *"the bridge"*, *"verse 2"*" (489) — *a statement about a product tool outside the analysis*, a way a user names a passage to the language-model integration.
+10. "Double barlines and repeat signs" (490) — *a statement about a product tool outside the analysis*, a way a user names a passage to the language-model integration.
+11. "| Property | Include? | Notes |" (575) — *a table's header row*.
+12. "|----------|----------|-------|" (576) — *a table's separator row*.
+13. "| Pitch (concert) | Yes | Always concert pitch unless user requests written |" (577) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+14. "| Duration | Yes | As beat fraction or common name (quarter, half, etc.) |" (578) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+15. "| Voice | Yes | When multi-voice content is present |" (579) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+16. "| Dynamic | Yes | Only when explicitly marked |" (580) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+17. "| Articulation | Yes | staccato, tenuto, accent, etc. |" (581) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+18. "| Key | Yes | Per measure where it changes |" (583) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+19. "| Tempo | Yes | Per measure where it changes |" (584) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+20. "| Rehearsal marks | Yes | As measure annotations |" (585) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+21. "| Lyrics | Yes | With syllable boundaries |" (586) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+22. "| Note color | Yes | Semantically meaningful (user-set) |" (587) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+23. "| Visibility flag | Yes | Hidden notes affect LLM reasoning |" (588) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+24. "| Ties / slurs | Yes | As note properties ("tiedForward", "slurStart") |" (589) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+25. "| Stem direction | No | Computed by engraving engine |" (590) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+26. "| Beam type | No | Computed |" (591) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+27. "| Pixel positions | No | Computed |" (592) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+28. "| Staff line position | No | Computed |" (593) — *a statement about a product tool outside the analysis*, a row of what the language-model integration's view includes.
+29. "The LLM bridge is optional — users who do not want it do not ship it" (744) — *a statement about a product tool outside the analysis*, the integration as a plugin.
+30. "Multiple LLM integrations can coexist (different providers, different UX approaches, community-built alternatives)" (745–746) — *a statement about a product tool outside the analysis*, the integration as a plugin.
+31. "MuseScore core has no dependency on any specific LLM provider" (747) — *a statement about a product tool outside the analysis*, the integration as a plugin.
+32. "The integration can be updated independently of MuseScore releases" (748) — *a statement about a product tool outside the analysis*, the integration as a plugin.
+33. "**Medium term:** Build the plugin API on top of the same Core Access Layer." (765) — *a statement about a product tool outside the analysis*, its build strategy.
+34. "Since the LLM bridge already respects the Core Access Layer boundary, migrating it to run as a plugin is then straightforward." (766–767) — *a statement about a product tool outside the analysis*, its build strategy.
+
+#### The arithmetic at this member
+
+- Rows written: **5** (54.1 to 54.5); none carries more than one claim.
+- **Outgoing statements placed: 5.**
+- Listed under *not a statement*: **34**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 5 dispositions over 5
+  statements.
+- **UNPLACED at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 5 | 54.1, 54.2, 54.3, 54.4, 54.5 |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **5** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 5 + 0 + 0 + 0 + 0 = 5, against 5 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 4 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 1 |
+| **Total verdicts** | **5** |
+
+*(5 verdicts over 5 statements; no statement names two derived statements.)* DIFFERS: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact names no home of a decision ruled L2's own inside this member; the seven
+  decisions homed in this document, D-442 to D-448, lie outside the ranges and are none of them L2's own, as the
+  manifest states.
+- **SEEN rows: none.** None of the eight homes lies in this document; the check was made at the homes, as the manifest
+  states.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** none.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -69187,6 +69372,9 @@ the row says which.
 - Rows 53.61, 53.63, 53.64 and 53.79(i) — travelling with Row 50.9: the licensing grammar and the catalog not derived
   from each other, coupled one way by the consistency test, and a licensed pair in no entry not a gap of the catalog.
 - Row 53.65 — travelling with Row 50.8(i): one owner per item.
+- Rows 54.1, 54.2, 54.3 and 54.4 — travelling with Row 17.23(ii): the analysis the language-model integration is
+  handed — the chord symbols and the Roman-numeral analysis, the tonality and mode, and where the chords change.
+  *(L2-S49 travels with them.)*
 
 **To *the second axis — voice leading*.**
 
@@ -69266,6 +69454,7 @@ the row says which.
   governing abstention. *(Row 52.16(ii) travels with Row 46.6(i); Rows 52.27 and 52.28 with Row 52.16(i).)*
 - Row 53.81 — travelling with Row 22.100: the voice-leading layer, a prerequisite for the half of the line-defined
   entries their chords do not carry.
+- Row 54.5 — the voice-leading assessments the language-model integration is handed.
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -69598,7 +69787,7 @@ numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
 above. Member 31 relocates no row, and member 32's relocations are the rows numbered 32.n above. Member 33's relocations are the rows numbered 33.n
-above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 51's the rows numbered 51.n, member 52's the rows numbered 52.n, and member 53's the rows numbered 53.n.)*
+above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 51's the rows numbered 51.n, member 52's the rows numbered 52.n, member 53's the rows numbered 53.n, and member 54's the rows numbered 54.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -71786,9 +71975,10 @@ own distribution table in §6.
 | 51 | 91 | 6 | 0 | 62 | 14 | 0 | 9 | 0 | 17 |
 | 52 | 60 | 0 | 0 | 28 | 19 | 0 | 10 | 3 | 6 |
 | 53 | 96 | 0 | 0 | 56 | 10 | 0 | 15 | 15 | 36 |
-| **Total** | **5381** | **658** | **111** | **1307** | **1538** | **0** | **1365** | **402** | **2282** |
+| 54 | 5 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | 34 |
+| **Total** | **5386** | **658** | **111** | **1312** | **1538** | **0** | **1365** | **402** | **2316** |
 
-**The arithmetic check:** 658 + 111 + 1307 + 1538 + 0 + 1365 + 402 = 5381, against 5381 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70 + 85 + 91 + 60 + 96).
+**The arithmetic check:** 658 + 111 + 1312 + 1538 + 0 + 1365 + 402 = 5386, against 5386 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70 + 85 + 91 + 60 + 96 + 5).
 
 **Current-text verdicts.**
 
@@ -71847,9 +72037,10 @@ own distribution table in §6.
 | 51 | 6 | 2 | 83 | 91 |
 | 52 | 8 | 8 | 44 | 60 |
 | 53 | 12 | 17 | 67 | 96 |
-| **Total** | **989** | **845** | **3603** | **5437** |
+| 54 | 4 | 0 | 1 | 5 |
+| **Total** | **993** | **845** | **3604** | **5442** |
 
-**The arithmetic check:** 989 + 845 + 3603 = 5437 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72 + 85 + 91 + 60 + 96).
+**The arithmetic check:** 993 + 845 + 3604 = 5442 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72 + 85 + 91 + 60 + 96 + 5).
 
 ## 14. The derivation's independence record, relayed
 
@@ -71880,4 +72071,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 53 are done, positions 54 to 62 are untouched.
+  untouched: positions 1 to 54 are done, positions 55 to 62 are untouched.
