@@ -96,7 +96,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 52 | `cowork_confidence_contract.md` passages | **DONE** (§6.52) |
 | 53 | `cowork_progression_schema_design.md` passages | **DONE** (§6.53) |
 | 54 | `docs/llm_integration.md` passages | **DONE** (§6.54) |
-| 55 | `cowork_idiom_entry_mapping.md` passages | NOT YET TABULATED |
+| 55 | `cowork_idiom_entry_mapping.md` passages | **DONE** (§6.55) |
 | 56 | `cowork_architecture_reassessment.md` passages (item 4 alone) | NOT YET TABULATED |
 | 57 | `cowork_architecture_review_2026_07.md` passages (item 4 alone) | NOT YET TABULATED |
 | 58 | `cowork_factorization_desk_simulation.md` passages (item 4 alone) | NOT YET TABULATED |
@@ -107,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 54 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 55 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, the `cowork_notation_output_contract.md` passages, the `cowork_progression_schema_dictionary.md` passages, the `cowork_layer1_note_model_design.md` passages, the `cowork_confidence_contract.md` passages, the `cowork_progression_schema_design.md` passages, and the `docs/llm_integration.md` passages.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, the `cowork_notation_output_contract.md` passages, the `cowork_progression_schema_dictionary.md` passages, the `cowork_layer1_note_model_design.md` passages, the `cowork_confidence_contract.md` passages, the `cowork_progression_schema_design.md` passages, the `docs/llm_integration.md` passages, and the `cowork_idiom_entry_mapping.md` passages.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 54 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 55 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -143,8 +143,8 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 54 whole in its own commit. **Positions 55 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 55**, `cowork_idiom_entry_mapping.md` passages. §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 54 and 55, each whole in its own commit. **Positions 56 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 56**, `cowork_architecture_reassessment.md` passages (item 4 alone). §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -68887,6 +68887,361 @@ the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_
   states.
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** none.
 
+---
+
+### 6.55 — Member 55: `cowork_idiom_entry_mapping.md`, passages
+
+> **Manifest for this member.** Position **55**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_idiom_entry_mapping.md`. Label: *"the passages of the document"*. **The four published ranges**,
+> each as a locator only, by its first and last line as the artifact publishes them (**D-307**); where a boundary line
+> is too long to repeat, it is given by its opening words:
+>
+> 1. lines 3–9, from *"> **For the StyleTag implementation.** Each §5 entry of `cowork_progression_schema_dictionary.md` is tagged with its"* to *"> (diatonic↔chromatic)."*;
+> 2. lines 11–18, from *"## §5.1 — the function map (generative spine)"* to *"| Modal interchange (`iv, iiø, ♭VI, ♭III, ♭II`-Neapolitan, Picardy, minor `v`) | **2** |"* (a table row, given by its opening cells);
+> 3. lines 37–48, from *"## §5.3 — substitution operations"* to *"| Upper-structure / voicing substitution | **— (out)** |"* (a table row, given by its opening cells);
+> 4. lines 50–57, from *"## Notes for the re-tag"* to *"  (diatonic / chromatic), tagged independently of the idiom."*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside — the document's blob carries no carriage return. **The lines between the ranges are outside the
+> member** and are not tabulated, quoted or listed. **Three lines inside the ranges are headings** — lines 11, 37 and
+> 50, each the first line of its range — and under the first reading rule of §6 they are titles, neither tabulated nor
+> listed. Outgoing statements: **23** (rows 55.1 to 55.22; one of those rows carries two claims and is split — the
+> arithmetic is at the foot of this member). Listed under *not a statement*: **6**. Counted at this member by this
+> session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of the mapping of the catalog's
+> entries to the five ratified idioms: its opening block on the tags, the tables tagging the function map's entries and
+> the substitution operations, and its remarks for the re-tag. **The placement readings are those of the earlier
+> members, applied unchanged.** A table row tagging an entry with its idioms, and a statement of the taxonomy or of its
+> cross-attributes, travels UNPLACED with Row 9.30, as member 50's rows on the same taxonomy did; an entry defined by
+> its voice leading goes to *the second axis — voice leading*, travelling with Row 21.65, and a voicing with Row 21.67;
+> a placeholder tag is HISTORICAL, a status. A table's header and separator rows, a label and the document's account of
+> itself are listed. **No placement reading is new at this member.**
+>
+> **The WITHHELD homes inside this member:** none — the artifact's `item_4_identities_inside` for position 55 is
+> empty, and a check at `tools/audit/decisions/backbone_decisions.json` found no decision homed in this document.
+>
+> **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes §5 names lies in this
+> document.
+
+---
+
+**Row 55.1 — each catalog entry tagged with its idioms from the ratified set.**
+
+*Outgoing statement.* "Each §5 entry of `cowork_progression_schema_dictionary.md` is tagged with its idiom(s) from the ratified set." — the opening block (locator: lines 3–4).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.2 — the tags multi-valued: an entry may belong to several idioms.**
+
+*Outgoing statement.* "**Multi-valued** — an entry can legitimately belong to several idioms (e.g. a plain ii–V–I is Diatonic-functional; with sevenths it is Seventh-functional)." — the opening block (locator: lines 4–5).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.3 — the five idioms.**
+
+*Outgoing statement.* "Idioms: **1 Diatonic-functional · 2 Chromatic-functional · 3 Seventh-functional · 4 Triadic-modal · 5 Chromatic-coloristic**." — the opening block (locator: lines 7–8).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.4 — the two cross-attributes, mode and chromaticism, tagged separately per entry.**
+
+*Outgoing statement.* "Cross-attributes (tagged separately per entry): **mode** (major/minor), **chromaticism** (diatonic↔chromatic)." — the opening block (locator: lines 8–9).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.5 — the diatonic functions tagged with the first idiom.**
+
+*Outgoing statement.* "| Diatonic functions (T / SD / D; descending-fifth/third, ascending-second motions) | **1** | the functional backbone |" — §5.1, the function map (locator: line 14).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.6 — the applied dominant and applied leading-tone chord tagged with the second idiom.**
+
+*Outgoing statement.* "| Secondary dominant `V7/x`, secondary leading-tone `viio7/x` | **2** | applied chromaticism |" — §5.1, the function map (locator: line 15).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.7 — the applied supertonic–dominant tagged with the third idiom, and the second.**
+
+*Outgoing statement.* "| Applied ii–V (`IIm7/x → V7/x → x`) | **3** (+ **2**) | sevenths + applied |" — §5.1, the function map (locator: line 16).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.8 — the tritone-substitute dominant tagged with the fifth idiom; its German-sixth reading with the second.**
+
+*Outgoing statement.* "| Substitute dominant `subV7/x` (tritone sub) | **5** | (its enharmonic German-6th reading → **2**) |" — §5.1, the function map (locator: line 17).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.9 — modal interchange tagged with the second idiom; its triadic borrowings with the fourth.**
+
+*Outgoing statement.* "| Modal interchange (`iv, iiø, ♭VI, ♭III, ♭II`-Neapolitan, Picardy, minor `v`) | **2** | mixture; the **♭VII/♭VI triadic** borrowings also → **4** |" — §5.1, the function map (locator: line 18).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.10 — the secondary dominant and tonicization tagged with the second idiom.**
+
+*Outgoing statement.* "| Secondary dominant / tonicization | **2** | |" — §5.3, the substitution operations (locator: line 40).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.11 — the related supertonic–dominant tagged with the third idiom.**
+
+*Outgoing statement.* "| Related ii–V | **3** | |" — §5.3, the substitution operations (locator: line 41).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.12 — the tritone substitution tagged with the fifth idiom.**
+
+*Outgoing statement.* "| **Tritone substitution (subV)** | **5** | |" — §5.3, the substitution operations (locator: line 42).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.13 — the diatonic substitution tagged with the first idiom.**
+
+*Outgoing statement.* "| Diatonic (functional) substitution (`I↔iii↔vi`, `IV↔ii`, `V↔viio`) | **1** | |" — §5.3, the substitution operations (locator: line 43).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.14 — modal interchange tagged with the second idiom, its triadic borrowings with the fourth.**
+
+*Outgoing statement.* "| Modal interchange | **2** (+ **4** triadic borrowings) | |" — §5.3, the substitution operations (locator: line 44).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.15 — the diminished approach tagged with the second idiom.**
+
+*Outgoing statement.* "| Diminished approach (passing/auxiliary dim7) | **2** | |" — §5.3, the substitution operations (locator: line 45).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.16 — the deceptive resolution tagged with the second idiom.**
+
+*Outgoing statement.* "| Deceptive resolution (`V→vi/♭VI`) | **2** | |" — §5.3, the substitution operations (locator: line 46).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.17 — the line cliché tagged with the fifth idiom.**
+
+*Outgoing statement.* "| Line cliché (chromatic inner line) | **5** | voice-leading-adjacent |" — §5.3, the substitution operations (locator: line 47).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.18 — the voicing substitution outside the idioms, a voicing and not a function.**
+
+*Outgoing statement.* "| Upper-structure / voicing substitution | **— (out)** | a *voicing*, not a function-idiom (already out of scope, dictionary §5.3) |" — §5.3, the substitution operations (locator: line 48).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.67.
+
+---
+
+**Row 55.19 — several tags on one entry correct, the functional idioms overlapping by design.**
+
+*Outgoing statement.* "**Multi-tag is correct, not a defect** — the functional family (1/2/3) overlaps by design (same progression, richer vocabulary), so many entries carry two idiom tags." — the remarks for the re-tag (locator: lines 51–52).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 55.20 — the galant schemata and the line cliché defined by their voice leading.**
+
+*Outgoing statement.* "**The galant schemata and line cliché are voice-leading-defined** (Prinner, Romanesca, … ; the cliché's chromatic line)." — the remarks for the re-tag (locator: lines 53–54).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.65.
+
+---
+
+**Row 55.21 — their idiom tag a placeholder; their identity the voice-leading axis's, flagged for it.**
+
+*Outgoing statement.* "Their harmonic-idiom tag here is a placeholder; their **primary identity belongs to the voice-leading axis** (the spec's future voice-leading layer) — flag them so the future layer claims them." — the remarks for the re-tag (locator: lines 54–55). Two claims: (i) their harmonic-idiom tag here is a placeholder; (ii) their primary identity belongs to the voice-leading axis, and they are flagged so that its future layer claims them.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status. (ii) **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.65.
+
+---
+
+**Row 55.22 — each entry also tagged with mode and chromaticism, independently of the idiom.**
+
+*Outgoing statement.* "Each entry also gets the two cross-attributes: **mode** (major / minor / either) and **chromaticism** (diatonic / chromatic), tagged independently of the idiom." — the remarks for the re-tag (locator: lines 56–57).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (6)
+
+1. "**For the StyleTag implementation.**" (3) — *a label*.
+2. "Provisional, easy to revise." (5) — *the document's account of itself*.
+3. "| Entry | Idiom(s) | Note |" (12) — *a table's header row*.
+4. "|---|---|---|" (13) — *a table's separator row*.
+5. "| Entry | Idiom(s) | Note |" (38) — *a table's header row*.
+6. "|---|---|---|" (39) — *a table's separator row*.
+
+#### The arithmetic at this member
+
+- Rows written: **22** (55.1 to 55.22); one of them carries two claims and is split.
+- **Outgoing statements placed: 23.**
+- Listed under *not a statement*: **6**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 23 dispositions over 23
+  statements.
+- **UNPLACED at this member: 19** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 3 | 55.18, 55.20, 55.21(ii) |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 1 | 55.21(i) |
+| UNPLACED | 19 | 55.1, 55.2, 55.3, 55.4, 55.5, 55.6, 55.7, 55.8, 55.9, 55.10, 55.11, 55.12, 55.13, 55.14, 55.15, 55.16, 55.17, 55.19, 55.22 |
+| **Total** | **23** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 3 + 0 + 0 + 1 + 19 = 23, against 23 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 23 |
+| **Total verdicts** | **23** |
+
+*(23 verdicts over 23 statements; no statement names two derived statements.)* DIFFERS: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact names no home of a decision ruled L2's own inside this member, and no decision
+  is homed in this document, as the manifest states.
+- **SEEN rows: none.** None of the eight homes lies in this document; the check was made at the homes, as the manifest
+  states.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** none.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -69455,6 +69810,9 @@ the row says which.
 - Row 53.81 — travelling with Row 22.100: the voice-leading layer, a prerequisite for the half of the line-defined
   entries their chords do not carry.
 - Row 54.5 — the voice-leading assessments the language-model integration is handed.
+- Rows 55.18, 55.20 and 55.21(ii) — a voicing substitution outside the idioms, and the galant schemata and the line
+  cliché defined by their voice leading, their identity the voice-leading axis's. *(Row 55.18 travels with Row
+  21.67, Rows 55.20 and 55.21(ii) with Row 21.65.)*
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -69787,7 +70145,7 @@ numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
 above. Member 31 relocates no row, and member 32's relocations are the rows numbered 32.n above. Member 33's relocations are the rows numbered 33.n
-above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 51's the rows numbered 51.n, member 52's the rows numbered 52.n, member 53's the rows numbered 53.n, and member 54's the rows numbered 54.n.)*
+above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 51's the rows numbered 51.n, member 52's the rows numbered 52.n, member 53's the rows numbered 53.n, member 54's the rows numbered 54.n, and member 55's the rows numbered 55.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -71976,9 +72334,10 @@ own distribution table in §6.
 | 52 | 60 | 0 | 0 | 28 | 19 | 0 | 10 | 3 | 6 |
 | 53 | 96 | 0 | 0 | 56 | 10 | 0 | 15 | 15 | 36 |
 | 54 | 5 | 0 | 0 | 5 | 0 | 0 | 0 | 0 | 34 |
-| **Total** | **5386** | **658** | **111** | **1312** | **1538** | **0** | **1365** | **402** | **2316** |
+| 55 | 23 | 0 | 0 | 3 | 0 | 0 | 1 | 19 | 6 |
+| **Total** | **5409** | **658** | **111** | **1315** | **1538** | **0** | **1366** | **421** | **2322** |
 
-**The arithmetic check:** 658 + 111 + 1312 + 1538 + 0 + 1365 + 402 = 5386, against 5386 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70 + 85 + 91 + 60 + 96 + 5).
+**The arithmetic check:** 658 + 111 + 1315 + 1538 + 0 + 1366 + 421 = 5409, against 5409 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70 + 85 + 91 + 60 + 96 + 5 + 23).
 
 **Current-text verdicts.**
 
@@ -72038,9 +72397,10 @@ own distribution table in §6.
 | 52 | 8 | 8 | 44 | 60 |
 | 53 | 12 | 17 | 67 | 96 |
 | 54 | 4 | 0 | 1 | 5 |
-| **Total** | **993** | **845** | **3604** | **5442** |
+| 55 | 0 | 0 | 23 | 23 |
+| **Total** | **993** | **845** | **3627** | **5465** |
 
-**The arithmetic check:** 993 + 845 + 3604 = 5442 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72 + 85 + 91 + 60 + 96 + 5).
+**The arithmetic check:** 993 + 845 + 3627 = 5465 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72 + 85 + 91 + 60 + 96 + 5 + 23).
 
 ## 14. The derivation's independence record, relayed
 
@@ -72071,4 +72431,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 54 are done, positions 55 to 62 are untouched.
+  untouched: positions 1 to 55 are done, positions 56 to 62 are untouched.
