@@ -91,7 +91,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 47 | `cowork_notation_adoption_increment.md` passages | **DONE** (§6.47) |
 | 48 | `cowork_joint_estimator_architecture.md` passages | **DONE** (§6.48) |
 | 49 | `cowork_notation_output_contract.md` passages | **DONE** (§6.49) |
-| 50 | `cowork_progression_schema_dictionary.md` passages | NOT YET TABULATED |
+| 50 | `cowork_progression_schema_dictionary.md` passages | **DONE** (§6.50) |
 | 51 | `cowork_layer1_note_model_design.md` passages | NOT YET TABULATED |
 | 52 | `cowork_confidence_contract.md` passages | NOT YET TABULATED |
 | 53 | `cowork_progression_schema_design.md` passages | NOT YET TABULATED |
@@ -107,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 49 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 50 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, and the `cowork_notation_output_contract.md` passages.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, the `cowork_notation_output_contract.md` passages, and the `cowork_progression_schema_dictionary.md` passages.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 49 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 50 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -143,8 +143,8 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit. **Positions 50 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 50**, `cowork_progression_schema_dictionary.md` passages. §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. **Positions 51 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 51**, `cowork_layer1_note_model_design.md` passages. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -64840,6 +64840,1068 @@ the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_
   L2-S42 (entry 4) — 49.23(i), 49.23(ii). No row of this member names L2-S31, L2-S17, L2-S22, L2-S43, L2-S12 or
   L2-S38. Each says so at the row.
 
+---
+
+### 6.50 — Member 50: `cowork_progression_schema_dictionary.md`, passages
+
+> **Manifest for this member.** Position **50**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_progression_schema_dictionary.md`. Label: *"the passages of the document"*. **The ten published
+> ranges**, each as a locator only, by its first and last line as the artifact publishes them (**D-307**):
+>
+> 1. lines 11–19, from *"| Term | Meaning (or citation) |"* to *"| **Licensed (root motion)** | A term OWNED by the function layer's grammar (`cowork_layer5_function_design.md` §5.0, `isLicensedProgression`) — this catalog never defines or re-implements it (the D5 dependency map, §1). |"*;
+> 2. lines 35–46, from *"**The D5 dependency map (one owner per concern — restated here, mirrored in code).** Two places know about chord"* to *"the `isLicensedProgression` code increment is pending, after which the consistency test's known-gap list empties.)*"*;
+> 3. lines 93–112, from *"The four queries:"* to *"  `subV7/x`, and the tritone substitute's related supertonic — the `IIm7` that precedes a `subV7/x`, §5.1)."*;
+> 4. lines 141–166, from *"### 5.1 The function map — the systematic spine"* to *"  bVII, bIII, bII` Neapolitan, minor `v`, `viio7`); in minor, borrow from parallel major (Picardy `I`, raised `IV`)."*;
+> 5. lines 168–198, from *"### 5.2 Named progressions & schemas"* to *"- **Advanced jazz cycles** `[jazz]` — Coltrane changes (a major-thirds key cycle); backdoor `bVII7→I`."*;
+> 6. lines 200–222, from *"### 5.3 Substitution operations"* to *"  substitution)."*;
+> 7. lines 224–246, from *"## 6. Crosscutting concepts"* to *"  content change here; tuning how strongly an entry fires is a precision-phase change there."*;
+> 8. lines 286–305, from *"## 10. Glossary"* to *"  span to suggest what could follow, precede, or replace it)."*;
+> 9. lines 307–314, from *"## 11. Related work & sources"* to *"target-architecture §2."*;
+> 10. lines 316–326, from *"## 12. Open items"* to *"   per-preset weights by clustering corpora — is committed future work (`cowork_style_clustering_plan.md`)."*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside — the document's blob carries no carriage return. **The lines between the ranges are outside the
+> member** and are not tabulated, quoted or listed. **Seven lines inside the ranges are headings** — lines 141, 168,
+> 200, 224, 286, 307 and 316, each the first line of its range — and under the first reading rule of §6 they are
+> titles, neither tabulated nor listed. Outgoing statements: **85** (rows 50.1 to 50.78; 7 of those rows carry two
+> claims each and are split — the arithmetic is at the foot of this member). Listed under *not a statement*: **22**.
+> Counted at this member by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of the specification of the
+> Harmonic Vocabulary, the catalog of named progressions and substitutions: its terms table, the dependency map between
+> the catalog and the function layer's licensing grammar, the four queries, the function map, the named progressions
+> and schemata, the substitution operations, the crosscutting concepts, the glossary, the sources and the first open
+> item. **The placement readings are those of the earlier members, applied unchanged.** The catalog is the component
+> member 26 placed, so its content goes to *L3 — The read-off facts*, travelling with Row 5.91 — the substitution
+> family's general rule with Row 26.5, the two directions with Row 43.99, the three functional families with Row
+> 5.5(i) and the cadences with Row 5.9; the voice-leading dimension of a schema goes to *the second axis — voice
+> leading*, with Rows 26.4, 21.65 and 21.67; the licensed root motions travel UNPLACED with Row 5.83; a description of
+> the built code is QUARANTINED, travelling with Row 5.86 or Row 5.90 where it names what those rows ask about; the
+> style taxonomy travels UNPLACED with Row 9.30; a plan, a status, a supersession or a retirement is HISTORICAL. The
+> query bullets are read by bullet, each one statement; the *suggest* query serves a composition tool, so its bullet
+> and its three sub-bullets are listed as a statement about a product tool outside the analysis, the fifth batch's
+> reading. The glossary's and the terms table's entries define the catalog's own terms and are tabulated; a bold
+> lead-in is a label. **No placement reading is new at this member.**
+>
+> **The WITHHELD homes inside this member:** none — the artifact's `item_4_identities_inside` for position 50 is
+> empty. A check at `tools/audit/decisions/backbone_decisions.json` found nine decisions homed in this document, none
+> among the decisions ruled L2's own: **D-406** (lines 35–41, inside range 2), **D-410** (lines 102–106, inside range
+> 3), **D-412** (lines 179–181) and **D-411** (lines 185–188), inside range 5, and **D-413** (lines 220–222, inside
+> range 6); **D-407** (lines 53–54), **D-408** (lines 55–59), **D-409** (lines 121–124) and **D-414** (lines 255–257)
+> lie outside the ranges.
+>
+> **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes §5 names lies in this
+> document.
+
+---
+
+**Row 50.1 — an entry: one catalog record, a named convention, of two kinds.**
+
+*Outgoing statement.* "| **Entry / progression entry / substitution entry** | One catalog record — a named convention; the two kinds are defined in §3 and glossed in §10. |" — §0, the terms table, row *Entry* (locator: line 13).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.2 — the functional skeleton: a pattern of scale degrees and chord qualities relative to the tonality.**
+
+*Outgoing statement.* "| **Functional skeleton** | A progression entry's key-relative, degree-parameterised (scale-degree, chord-quality) sequence (§3/§10). |" — §0, the terms table, row *Functional skeleton* (locator: line 14).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.3 — the generative slot: a secondary or substitute function defined per target degree.**
+
+*Outgoing statement.* "| **Generative slot** | A secondary/substitute function defined per target degree `x` (`V7/x`, `subV7/x`, …), instantiated on demand (§5.1/§10). |" — §0, the terms table, row *Generative slot* (locator: line 15).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.4 — the span the catalog reads: a run of committed chords; a recognized entry's span hosted by the grouping layer.**
+
+*Outgoing statement.* "| **Span** | A contiguous run of one or more committed chords, each with its decided function and key (§4/§10); the typology note: a recognised entry's emitted span is the **progression-schema-span** hosted by Layer 6 (ARCHITECTURE.md §2.15; renamed from "sequence-span", D6). |" — §0, the terms table, row *Span* (locator: line 16).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.5 — the match and what it means for a span to realize an entry.**
+
+*Outgoing statement.* "| **Match score / realises** | The recognition semantics — decision structure stated in §4. |" — §0, the terms table, row *Match score / realises* (locator: line 17).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.6 — the Prinner: a named galant schema.**
+
+*Outgoing statement.* "| **Prinner** | A named galant schema (§5.2 row); named here so its §3 first mention is not undefined. |" — §0, the terms table, row *Prinner* (locator: line 18).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.7 — the licensed root motion owned by the function layer's grammar; the catalog never re-implements it.**
+
+*Outgoing statement.* "| **Licensed (root motion)** | A term OWNED by the function layer's grammar (`cowork_layer5_function_design.md` §5.0, `isLicensedProgression`) — this catalog never defines or re-implements it (the D5 dependency map, §1). |" — §0, the terms table, row *Licensed (root motion)* (locator: line 19).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.8 — the catalog owns the named progressions and substitutions; the function layer's code owns the pairwise licensing.**
+
+*Outgoing statement.* "Two places know about chord successions: **this component** owns the **named progressions and substitutions** (the catalog); **Layer 5's `functionprogression`** owns the **pairwise licensing grammar** (which root motions are licensed at all)." — §1 *What this component is*, the D5 dependency map (locator: lines 35–37). Two claims: (i) the catalog owns the named progressions and substitutions; (ii) a named module of the function layer owns the pairwise grammar of which root motions are licensed.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91. (ii) **QUARANTINED**, travelling with Row 5.90.
+
+---
+
+**Row 50.9 — the catalog and the grammar not derived from each other; one consistency test, one way.**
+
+*Outgoing statement.* "The two are **not derived from each other**; the **only coupling is the consistency test**, and it runs **one way (catalog → grammar)**." — §1 *What this component is*, the D5 dependency map (locator: lines 40–41).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.10 — the grammar gaps found at the consumer build.**
+
+*Outgoing statement.* "*(Ruled known grammar gaps found at the consumer build, 2026-07-02: 6 entries / 11 motions — plagal/ascending-fifth, descending-second, the diatonic diminished-fifth — musically correct, so grammar gaps, not catalog errors." — §1 *What this component is*, the D5 dependency map (locator: lines 43–45).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a dated finding, travelling with Row 5.84(i).
+
+---
+
+**Row 50.11 — the amendment closing the gaps ratified; the code increment pending.**
+
+*Outgoing statement.* "**The L5 §15-12 grammar-completion amendment closing them was RATIFIED 2026-07-03**; the `isLicensedProgression` code increment is pending, after which the consistency test's known-gap list empties.)*" — §1 *What this component is*, the D5 dependency map (locator: lines 45–46). Two claims: (i) the amendment closing the gaps was ratified; (ii) the code that would implement it is pending.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event, travelling with Row 5.84(i). (ii) **QUARANTINED**, travelling with Row 5.86.
+
+---
+
+**Row 50.12 — browse: every entry of the active styles.**
+
+*Outgoing statement.* "**Browse** — *input:* nothing beyond the style subset. *Output:* every entry in the active styles (used to load the active catalog)." — §4 *The query interface*, the four queries (locator: lines 94–95).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.13 — the query to recognize: a span in, the progression entries it realizes out.**
+
+*Outgoing statement.* "**Recognise** *(the analysis direction)* — *input:* a span. *Output:* the **progression entries** whose functional skeleton that span **realises**." — §4 *The query interface*, the four queries (locator: lines 96–97).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.14 — the test of realizing: in order and contiguous, degree and quality, or through a substitution's mapping.**
+
+*Outgoing statement.* ""Realises" has a stated test: the span's committed chords match the skeleton's members **in order and contiguously**, each chord matching its member's **scale degree and chord quality** (the skeleton is key-relative, so degrees are read in the span's decided key; a degree-parameterised slot matches at its instantiated target degree); a chord may instead match a member **through a substitution entry's mapping** (the surface chord stands for the member's function — e.g. `♭II7` realising a `V7/x` member via the tritone substitution), and the returned entry then carries that mapping for the substituted member." — §4 *The query interface*, the four queries (locator: lines 97–102).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.15 — as built the match exact and whole; the partial matcher deferred with its structure fixed.**
+
+*Outgoing statement.* "**As built (v1) the realisation is exact and whole** — every member matched, full length, no partial spans; the declared Stage-5 **partial matcher** relaxes this by crediting matched members with penalties for gaps and substitutions (that decision structure — credit per matched member, order preserved, length credited, substituted members admitted at a penalty — is fixed here; its constants are the consumer's precision-phase weights)." — §4 *The query interface*, the four queries (locator: lines 102–106). Two claims: (i) as built, a match is exact and whole; (ii) a partial matcher is deferred, its decision structure fixed and its constants left to the consumer.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the built recognizer of the catalog match only exact and whole realizations at the current commit? (ii) **HISTORICAL** — a deferred plan.
+
+---
+
+**Row 50.16 — expand: the generative slots for a degree.**
+
+*Outgoing statement.* "**Expand** — *input:* a scale degree `x`. *Output:* the generative slots for `x` (§5.1: `V7/x`, `viio7/x`, `IIm7/x`, `subV7/x`, and the tritone substitute's related supertonic — the `IIm7` that precedes a `subV7/x`, §5.1)." — §4 *The query interface*, the four queries (locator: lines 111–112).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.17 — the function map a generative spine, parameterized by target degree.**
+
+*Outgoing statement.* "The diatonic, secondary, and substitute functions form a **systematic, generative spine**: parameterised by a **target degree `x`**, the same slots instantiate per degree." — §5.1 *The function map* (locator: lines 142–143).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.18 — general tonal harmony, the tritone substitutes chiefly a jazz device.**
+
+*Outgoing statement.* "**This is general tonal harmony, not a style-specific vocabulary** — the diatonic and secondary functions underlie common-practice and jazz alike; only the tritone *substitute* dominants are chiefly a jazz device." — §5.1 *The function map* (locator: lines 143–145).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.19 — the diatonic functions in three families: tonic, pre-dominant, dominant.**
+
+*Outgoing statement.* "**Diatonic functions** `[all styles]` — Tonic family `I, vi, iii`; pre-dominant family `IV, ii (+ vi)`; dominant family `V, viio (+ iii)`." — §5.1 *The function map*, *Diatonic functions* (locator: lines 147–148).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.5(i).
+
+---
+
+**Row 50.20 — the functional flow and its primary root motions.**
+
+*Outgoing statement.* "The functional flow, written out: **tonic → (optionally another tonic-family chord) → pre-dominant → dominant → tonic** — the parenthesis permits a tonic-family interpolation (e.g. `I–vi` before the pre-dominant) and nothing else; the primary functional root motions are the descending fifth, the descending third, and the ascending second ("licensed" is the function layer's owned term, §0 — this sentence describes, it does not define)." — §5.1 *The function map*, *Diatonic functions* (locator: lines 148–152).
+
+*Derived statements that speak to it.* L2-S34.
+
+*Current-text axis.* L2-S34: **DIFFERS** — as at Row 5.83.
+
+*The difference, in both texts' own words.* The outgoing names *"the primary functional root motions"* of a fixed functional flow; L2-S34 has *"a term on the pair of adjacent chords *read as degrees in their tonalities*"* whose weights are fitted.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 5.83. *What was read:* as at Row 5.83.
+
+---
+
+**Row 50.21 — the licensing grammar owned by the function layer's code; the catalog owns only the named progressions.**
+
+*Outgoing statement.* "**(D5 owner note.)** This descriptive list is NOT a second implementation of the licensing test — the **pairwise licensing GRAMMAR is owned by Layer 5's `functionprogression` (`isLicensedProgression`)**, evaluated on every chord transition; this catalog owns only the **named** progressions (§5.2)." — §5.1 *The function map*, *Diatonic functions* (locator: lines 152–155).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.90.
+
+---
+
+**Row 50.22 — the two coupled one way by the consistency test.**
+
+*Outgoing statement.* "The two are coupled one-way by the consistency test (see §1)." — §5.1 *The function map*, *Diatonic functions* (locator: line 155).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.23 — the grammar as coded licenses three motions; the gaps closed in the specification, the code pending.**
+
+*Outgoing statement.* "*(The §5.0 grammar as coded licenses exactly this descending-fifth / descending-third / ascending-second set; the plagal / ascending-fifth, descending-second, and diatonic diminished-fifth motions that some §5.2 entries use were the ruled grammar gaps — closed at the spec level by the ratified L5 §15-12 amendment (2026-07-03), code increment pending — §1.)*" — §5.1 *The function map*, *Diatonic functions* (locator: lines 155–158).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.86.
+
+---
+
+**Row 50.24 — the secondary functions per degree: the applied dominant, the applied leading-tone chord, the related supertonic.**
+
+*Outgoing statement.* "**Secondary functions, per non-tonic diatonic `x`** `[common-practice + jazz]` — the secondary dominant `V7/x`; the secondary leading-tone `viio7/x` (or `viiø7/x`); the related ii `IIm7/x`, giving the applied ii–V `IIm7/x → V7/x → x`." — §5.1 *The function map* (locator: lines 159–160).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.25 — the substitute dominants per degree.**
+
+*Outgoing statement.* "**Substitute dominants, per `x`** `[chiefly jazz; the common-practice cousin is the German sixth]` — the tritone substitute `subV7/x` (in C, `subV7/I = bII7 = D♭7`, resolving down a semitone to `x`) and its related ii." — §5.1 *The function map* (locator: lines 161–162).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.26 — the tritone substitute of the tonic enharmonically the German sixth, told apart by spelling.**
+
+*Outgoing statement.* "*(The `subV7/I` is enharmonically the German sixth — the common-practice chord the analysis tool already separates by spelling, L5 §5.6.)*" — §5.1 *The function map* (locator: lines 162–164).
+
+*Derived statements that speak to it.* L2-S10.
+
+*Current-text axis.* L2-S10: **AGREES** — an event is a chord tone only if *"its spelled pitch class is a member of the span's chord, spelled"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S10).
+
+---
+
+**Row 50.27 — modal interchange: borrowing from the parallel mode.**
+
+*Outgoing statement.* "**Modal interchange (parallel-mode borrowing)** `[all styles]` — in major, borrow from parallel minor (`iv, iiø7, bVI, bVII, bIII, bII` Neapolitan, minor `v`, `viio7`); in minor, borrow from parallel major (Picardy `I`, raised `IV`)." — §5.1 *The function map* (locator: lines 165–166).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.28 — the cadential progressions.**
+
+*Outgoing statement.* "**Cadential** `[common-practice + jazz]` — authentic `V(7)→I` (perfect/imperfect by inversion), half (a phrase ending on `V`), deceptive `V→vi` (`→bVI` in minor), plagal `IV→I`, Phrygian half (minor, `iv6→V`)." — §5.2 *Named progressions & schemas* (locator: lines 169–171).
+
+*Derived statements that speak to it.* L2-S49.
+
+*Current-text axis.* L2-S49: **AGREES** — as at Row 5.9.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.9. *(L2-S49 travels with it.)*
+
+---
+
+**Row 50.29 — the cadences already detected by the cadence detector.**
+
+*Outgoing statement.* "*(Already detected by the function layer's cadence detector, `cowork_layer5_function_design.md` §5.2; listed for completeness.)*" — §5.2 *Named progressions & schemas* (locator: lines 171–173).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.9.
+
+---
+
+**Row 50.30 — the supertonic–dominant family.**
+
+*Outgoing statement.* "**The ii–V family** `[jazz + common-practice]` — `IIm7–V7–Imaj7`; minor `iiø7–V7–i`; the incomplete `ii–V` (no resolution) as its own unit." — §5.2 *Named progressions & schemas* (locator: lines 174–175).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.31 — the turnarounds.**
+
+*Outgoing statement.* "**Turnarounds** `[jazz]` — `I–vi–ii–V` (and the variant `I–VI7–ii–V`, with `VI7` as a secondary dominant of `ii`), `iii–vi–ii–V`, and the **rhythm-changes A-section** (the "I Got Rhythm" A-section turnaround — the `I–vi–ii–V` family cycled over the section, the jazz repertoire's most-reused frame)." — §5.2 *Named progressions & schemas* (locator: lines 176–178).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.32 — the sequences, with the entry-point and continuation rules.**
+
+*Outgoing statement.* "**Sequences** `[common-practice + jazz]` — circle-of-fifths (the full cycle `I–IV–viio–iii–vi–ii–V–I`; the common tail is its last members, `iii–vi–ii–V–I` — **entry-point rule:** the skeleton is the full cycle and a realisation may enter at any member, running contiguously to the final `I`); descending-thirds (`I–vi–IV–ii`, extendable by continuing the descending-third root pattern — the continuation rule, not an ellipsis); the stepwise galant Monte/Fonte skeletons (below)." — §5.2 *Named progressions & schemas* (locator: lines 179–183).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.33 — the bass-line and popular loops; the Axis loop one entry, matched as built in one rotation only.**
+
+*Outgoing statement.* "**Bass-line and pop loops** `[common-practice + pop]` — lament bass / descending tetrachord (minor `1̂–7̂–6̂–5̂`, chromatic variant `1̂–♭7̂–♭6̂–5̂`); Andalusian cadence `i–bVII–bVI–V`; doo-wop `I–vi–IV–V`; Axis `I–V–vi–IV` — **rotation rule (as built, verified at the catalog):** ONE entry, encoded in the canonical rotation `I–V–vi–IV` only; the v1 exact matcher therefore recognises only that order, and admitting the other three rotations (as rotation-tolerant matching on this one entry, never as three more entries) is a declared decision for the Stage-5 partial matcher; Pachelbel `I–V–vi–iii–IV–I–IV–V`." — §5.2 *Named progressions & schemas* (locator: lines 184–189). Two claims: (i) the catalog holds the bass-line and popular loops; (ii) as built, the Axis loop is one entry in one rotation and is matched in that order only.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91. (ii) **QUARANTINED.** *Audit question:* does the built catalog encode the Axis loop as one entry in one rotation, and does the built matcher recognize only that order?
+
+---
+
+**Row 50.34 — the galant schemata by their harmonic pattern.**
+
+*Outgoing statement.* "**Galant schemata — harmonic pattern only** `[galant]` — Prinner (melody `6̂–5̂–4̂–3̂` over bass `4̂–3̂–2̂–1̂`); Romanesca (descending bass, the skeleton `I–V–vi–iii` — a realisation may close there or continue the descending pattern; the entry is the four-member core); Monte (the **ascending-by-step chain of applied-dominant resolution pairs** — each pair a `V7/x → x` resolving a step higher than the last; the ascending counterpart of Fonte); Fonte (descending sequence of applied-resolution pairs); Ponte (a dominant pedal); Do-Re-Mi (opening, melody `1̂–2̂–3̂`); Quiescenza (a tonic-pedal closing schema)." — §5.2 *Named progressions & schemas* (locator: lines 190–195).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.35 — each galant schema defined by its voice leading; only the harmonic pattern held here.**
+
+*Outgoing statement.* "*(Each is conventionally defined by voice-leading and metric placement; this component holds only the harmonic pattern — see §2." — §5.2 *Named progressions & schemas* (locator: lines 195–196).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 26.4.
+
+---
+
+**Row 50.36 — the complete schema recognized by combining it with the voice-leading dimension.**
+
+*Outgoing statement.* "The complete schema is recognised by combining it with the voice-leading dimension held elsewhere.)*" — §5.2 *Named progressions & schemas* (locator: lines 196–197).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 26.4.
+
+---
+
+**Row 50.37 — the advanced jazz cycles.**
+
+*Outgoing statement.* "**Advanced jazz cycles** `[jazz]` — Coltrane changes (a major-thirds key cycle); backdoor `bVII7→I`." — §5.2 *Named progressions & schemas* (locator: line 198).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.38 — substitution operates on every functional family.**
+
+*Outgoing statement.* "**Substitution is not dominant-only — it operates on every functional family.**" — §5.3 *Substitution operations* (locator: line 201).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.5.
+
+---
+
+**Row 50.39 — each functional family has substitutes.**
+
+*Outgoing statement.* "The **tonic** (`I↔vi↔iii`, the deceptive `vi`, chromatic-mediant and modal-interchange tonics), the **pre-dominant** (`ii↔IV`, the borrowed `iv`/`iiø7`, the Neapolitan `bII`), and the **dominant** (the tritone sub, `viio7`, the backdoor) each have substitutes." — §5.3 *Substitution operations* (locator: lines 201–203).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.5.
+
+---
+
+**Row 50.40 — only the tritone substitution dominant-specific, applying to a dominant of any degree.**
+
+*Outgoing statement.* "Only the **tritone substitution** is *dominant-specific* (it exploits the dominant seventh's tritone) — and even it applies to a dominant of **any** degree (`subV/ii`, `subV/IV`, …), the per-degree "substitute dominants" slot of §5.1." — §5.3 *Substitution operations* (locator: lines 203–205).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 26.5.
+
+---
+
+**Row 50.41 — analysis inverts a substitution; composition offers it.**
+
+*Outgoing statement.* "Each operation below is over the skeleton — analysis *inverts* it (recognises the substituted surface as the underlying function); composition *offers* it (proposes the substituted form):" — §5.3 *Substitution operations* (locator: lines 205–207). Two claims: (i) the analysis recognizes a substituted surface as the function it stands for; (ii) the composition direction proposes the substituted form.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91. (ii) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 43.99.
+
+---
+
+**Row 50.42 — the secondary dominant: tonicizing any diatonic degree.**
+
+*Outgoing statement.* "**Secondary dominant / tonicization** `[common-practice + jazz]` — tonicize any diatonic `x` with `V7/x` or `viio7/x`." — §5.3 *Substitution operations* (locator: line 208).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.43 — the related supertonic–dominant.**
+
+*Outgoing statement.* "**Related ii–V** `[jazz]` — precede any `V7/x` (or `subV7/x`) with its `IIm7`." — §5.3 *Substitution operations* (locator: line 209).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.44 — the tritone substitution.**
+
+*Outgoing statement.* "**Tritone substitution (subV)** `[jazz]` — replace any dominant `V7/x` with `subV7/x` (a tritone away); canonical cases: the `V` in ii–V–I, the `VI7` in I–VI–ii–V, the `ii`." — §5.3 *Substitution operations* (locator: lines 210–211).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.45 — the diatonic substitution.**
+
+*Outgoing statement.* "**Diatonic (functional) substitution** `[common-practice + jazz]` — replace a chord with a same-function diatonic chord sharing tones (`I↔iii↔vi`, `IV↔ii`, `V↔viio`)." — §5.3 *Substitution operations* (locator: lines 212–213).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.46 — modal interchange as a substitution.**
+
+*Outgoing statement.* "**Modal interchange** `[all styles]` — substitute a parallel-mode chord (§5.1)." — §5.3 *Substitution operations* (locator: line 214).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.47 — the diminished approach.**
+
+*Outgoing statement.* "**Diminished approach** `[common-practice + jazz]` — insert a passing/auxiliary diminished seventh between diatonic chords (`I–#io7–ii`)." — §5.3 *Substitution operations* (locator: lines 215–216).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.48 — the deceptive resolution.**
+
+*Outgoing statement.* "**Deceptive resolution** `[common-practice + jazz]` — resolve a dominant to a non-tonic (`V→vi`, `V→bVI`)." — §5.3 *Substitution operations* (locator: line 217).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.49 — the line cliché held by its harmonic pattern; the line itself voice leading.**
+
+*Outgoing statement.* "**Line cliché** `[common-practice + jazz + pop]` — a chromatic inner line over a held chord (`i–i(maj7)–i7–i6`); the line itself is voice-leading and lives elsewhere (§2); held here by its harmonic pattern." — §5.3 *Substitution operations* (locator: lines 218–219). Two claims: (i) the catalog holds the line cliché by its harmonic pattern; (ii) the line itself is voice leading and is held elsewhere.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91. (ii) **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.65.
+
+---
+
+**Row 50.50 — a voicing substitution a voicing, outside the component.**
+
+*Outgoing statement.* "**Upper-structure / voicing substitution** `[jazz]` — a *voicing* device (rootless, upper-structure triads, sus); it is a voicing, not a function, so it is **outside this component** (noted only so it is not mistaken for a function-level substitution)." — §5.3 *Substitution operations* (locator: lines 220–222).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 21.67.
+
+---
+
+**Row 50.51 — every entry usable in both directions.**
+
+*Outgoing statement.* "Every entry is usable in both directions; the component privileges neither, and new entries are added with both readings in mind." — §6 *Crosscutting concepts*, *Bidirectionality* (locator: lines 225–226).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 43.99.
+
+---
+
+**Row 50.52 — the entries tagged from the one style vocabulary the presets select on.**
+
+*Outgoing statement.* "Entries tag from a **single style vocabulary** that the presets also select on — not a vocabulary private to this component (which would need a brittle preset→tag mapping)." — §6 *Crosscutting concepts*, *One canonical style taxonomy* (locator: lines 227–228).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 50.53 — the taxonomy the five ratified idioms, with mode and chromaticism beside them.**
+
+*Outgoing statement.* "The taxonomy is now the **ratified five-idiom set** (`cowork_style_taxonomy_proposal.md`, ratified 2026-06-30), each glossed once here with the proposal's own definitions: **Diatonic-functional** (simple cadential-functional, diatonic — folk and simple common-practice) · **Chromatic-functional** (functional plus tonicization — applied and secondary chords, the augmented sixth; classical common-practice) · **Seventh-functional** (functional harmony realized in seventh chords — the jazz ii7–V7–Imaj7 world) · **Triadic-modal** (diatonic triads, modal moves — pop/rock loops, planing, sus) · **Chromatic-coloristic** (non-functional chromatic and modal-static harmony — altered/backdoor dominants, planing sevenths; cross-cutting, no genre), with the two orthogonal cross-attributes **mode** and **chromaticism**." — §6 *Crosscutting concepts*, *One canonical style taxonomy* (locator: lines 228–237).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 50.54 — the tags multi-valued.**
+
+*Outgoing statement.* "Tags are **multi-valued** (an entry can carry several idioms)." — §6 *Crosscutting concepts*, *One canonical style taxonomy* (locator: line 237).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 50.55 — the presets weightings over the idioms.**
+
+*Outgoing statement.* "Presets are named **idiom-weightings** over this set (a consumer/preset joint decision, §12)." — §6 *Crosscutting concepts*, *One canonical style taxonomy* (locator: line 238).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 50.56 — the placeholder style tag retired.**
+
+*Outgoing statement.* "The former placeholder `{Baroque, Jazz, Default}` StyleTag is **retired**." — §6 *Crosscutting concepts*, *One canonical style taxonomy* (locator: lines 238–239).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a retirement.
+
+---
+
+**Row 50.57 — the style label the component's; the selection, the weighting and the threshold the consumer's.**
+
+*Outgoing statement.* "The component carries the style **label**; the **preset selects** the active subset, the **style weighting** (a graded prior — not a hard filter, since styles blend) and the **threshold** are the consumer's, and **style detection** is a future classifier." — §6 *Crosscutting concepts*, *Style behavior is the consumer's* (locator: lines 240–242).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.58 — one encyclopedia: a convention shared across styles a single entry.**
+
+*Outgoing statement.* "One encyclopedia, not per-style silos — a shared convention (`ii–V–I`; `subV` = the enharmonic German sixth) is a single entry, its cross-style links visible." — §6 *Crosscutting concepts*, *Style behavior is the consumer's* (locator: lines 242–243).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.59 — the component returns ranked structural matches; the weighting, threshold and decision at the consumer.**
+
+*Outgoing statement.* "The component holds **structural content** and returns **ranked structural matches**; the weighting, the threshold, and the decision are **precision-phase, at the consumer**." — §6 *Crosscutting concepts*, *The firewall line* (locator: lines 244–245).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.60 — glossary: the progression.**
+
+*Outgoing statement.* "**Progression** — an ordered succession of chords/functions." — §10 *Glossary* (locator: line 287).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.61 — glossary: the schema.**
+
+*Outgoing statement.* "**Schema** — a named, recurring multi-chord progression (a progression conventional enough to have a name)." — §10 *Glossary* (locator: line 288).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.62 — glossary: the substitution.**
+
+*Outgoing statement.* "**Substitution** — an operation replacing a chord with another that fills the same functional slot (e.g. a tritone sub for a dominant)." — §10 *Glossary* (locator: lines 289–290).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.63 — glossary: the entry and its two kinds.**
+
+*Outgoing statement.* "**Entry** — one catalog record: a single named convention. Two kinds — a **progression entry** (a schema, by its functional skeleton) and a **substitution entry** (an operation, by its substitution mapping)." — §10 *Glossary* (locator: lines 291–292).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.64 — glossary: the functional skeleton.**
+
+*Outgoing statement.* "**Functional skeleton** — a progression entry's key-relative, degree-parameterised (scale-degree, quality) sequence." — §10 *Glossary* (locator: line 293).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.65 — glossary: the substitution mapping.**
+
+*Outgoing statement.* "**Substitution mapping** — a substitution entry's rule mapping a substituted surface chord to the function it replaces." — §10 *Glossary* (locator: line 294).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.66 — glossary: the span.**
+
+*Outgoing statement.* "**Span** — a contiguous run of one or more committed chords (each with its function and key); the input to *recognise* and *suggest*." — §10 *Glossary* (locator: lines 295–296).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.67 — glossary: the idiom tag.**
+
+*Outgoing statement.* "**Idiom tag** — the idiom set on an entry, from the ratified five-idiom taxonomy (§6/§12.1, shared with the presets), **multi-valued**; plus the two orthogonal cross-attributes **mode** (major/minor/both) and **chromaticism** (diatonic/chromatic/both)." — §10 *Glossary* (locator: lines 297–299).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 50.68 — glossary: formerly the placeholder style tag.**
+
+*Outgoing statement.* "(Formerly the placeholder "style tag" — the retired `{Baroque, Jazz, Default}` StyleTag.)" — §10 *Glossary* (locator: line 299).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a retirement.
+
+---
+
+**Row 50.69 — glossary: the generative slot.**
+
+*Outgoing statement.* "**Generative slot** — a secondary/substitute function defined per target degree `x` (`V7/x`, `subV7/x`, …), instantiated on demand rather than enumerated." — §10 *Glossary* (locator: lines 300–301).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.70 — glossary: how well an input realizes an entry, the return ranked by it, the consumer thresholding and weighting it.**
+
+*Outgoing statement.* "**Match score** — the component's structural measure of how well a query input realises (or is realised by) an entry; the return is ranked by it and the consumer thresholds and weights it." — §10 *Glossary* (locator: lines 302–303).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.71 — glossary: the two directions.**
+
+*Outgoing statement.* "**The two directions** — *analysis* (read an existing progression to recognise/disambiguate) and *composition* (read a span to suggest what could follow, precede, or replace it)." — §10 *Glossary* (locator: lines 304–305).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 43.99.
+
+---
+
+**Row 50.72 — the style taxonomy ratified and encoded.**
+
+*Outgoing statement.* "**✅ The canonical style taxonomy — RATIFIED (2026-06-30) and ENCODED (the StyleTag swap).**" — §12 *Open items*, item 1 (locator: line 317).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 50.73 — the taxonomy the five discovered idioms, with mode and chromaticism.**
+
+*Outgoing statement.* "The taxonomy is the empirically-discovered **five-idiom set** — Diatonic-functional · Chromatic-functional · Seventh-functional · Triadic-modal · Chromatic-coloristic — with the two orthogonal cross-attributes **mode** and **chromaticism** (`cowork_style_taxonomy_proposal.md`)." — §12 *Open items*, item 1 (locator: lines 317–320).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 50.74 — it supersedes the hand-made genre taxonomy.**
+
+*Outgoing statement.* "It **supersedes** the hand-made genre taxonomy below (kept only as historical context)." — §12 *Open items*, item 1 (locator: lines 320–321).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a supersession.
+
+---
+
+**Row 50.75 — the tags multi-valued, an entry carrying several idioms.**
+
+*Outgoing statement.* "Tags are **multi-valued**; an entry can carry several idioms (a plain ii–V–I is Diatonic-functional; with sevenths it is Seventh-functional)." — §12 *Open items*, item 1 (locator: lines 321–322).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30.
+
+---
+
+**Row 50.76 — the presets weightings over the idioms; the weighting the recognizer's, not the catalog's.**
+
+*Outgoing statement.* "Presets become named **idiom-weightings** over this set — that weighting, and any user-facing genre-named grouping, remain a **joint decision with the preset system** and the recognition consumer's job (NOT the encyclopedia's)." — §12 *Open items*, item 1 (locator: lines 322–324). Two claims: (i) the presets become named weightings over the idiom set; (ii) that weighting is the recognition consumer's job and not the catalog's.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 9.30. *What was read:* as at Row 9.30. (ii) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 5.91.
+
+---
+
+**Row 50.77 — the idiom set encoded in the dormant component.**
+
+*Outgoing statement.* "The per-entry re-tag is `cowork_idiom_entry_mapping.md`; the encoded set now lives in the dormant `harmonicvocabulary` component (`enum class Idiom` + `IdiomSet`)." — §12 *Open items*, item 1 (locator: lines 324–325).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant catalog component encode the five idioms as a multi-valued set on each entry at the current commit?
+
+---
+
+**Row 50.78 — deriving the per-preset weights by clustering corpora committed future work.**
+
+*Outgoing statement.* "**Empirical grounding** — deriving the per-preset weights by clustering corpora — is committed future work (`cowork_style_clustering_plan.md`)." — §12 *Open items*, item 1 (locator: lines 325–326).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (22)
+
+1. "| Term | Meaning (or citation) |" (11) — *a table's header row*.
+2. "|---|---|" (12) — *a table's separator row*.
+3. "**The D5 dependency map (one owner per concern — restated here, mirrored in code).**" (35) — *a label*.
+4. "*Changing the catalog* → change this component only (the grammar never needs an edit; but a new entry must pass the **consistency test** — every adjacent chord pair licensed — or it is mis-encoded OR a genuine grammar gap)." (37–39) — *a rule of a development method*: how a change to the catalog is made and checked.
+5. "*Changing the grammar* → change `functionprogression` only." (39–40) — *a rule of a development method*.
+6. "Owner ruling: D5 (`cowork_progression_schema_design.md` §6), user-ratified 2026-07-02; the cross-referencing comment blocks live at `functionprogression.h` and `harmonicvocabulary.h`; the test is `progressionrecognizer_tests.cpp`." (41–43) — *provenance and pointers*.
+7. "The four queries:" (93) — *a label*.
+8. "**Suggest** *(the composition direction)* — *input:* a span from the score **and** a direction. *Output* by direction:" (107) — *a statement about a product tool outside the analysis*, the composition tool.
+9. "**follow** → **progression entries** that could continue *from* the span;" (108) — *a statement about a product tool outside the analysis*.
+10. "**precede** → **progression entries** that could lead *into* the span;" (109) — *a statement about a product tool outside the analysis*.
+11. "**replace** → **substitution entries** applicable to the span, plus same-function diatonic alternatives." (110) — *a statement about a product tool outside the analysis*.
+12. "(Its systematic *presentation* follows Ramos's *Mapping Tonal Harmony*, a teaching tool; the *content* is the shared functional system, not a jazz-only set.)" (145–146) — *provenance*.
+13. "**Bidirectionality (analysis ⇄ composition).**" (225) — *a label*.
+14. "**One canonical style taxonomy, shared with the presets.**" (227) — *a label*.
+15. "**Style behavior is the consumer's.**" (240) — *a label*.
+16. "**The firewall line.**" (244) — *a label*.
+17. "Adding or correcting an entry is a content change here; tuning how strongly an entry fires is a precision-phase change there." (245–246) — *a rule of a development method*.
+18. "Mapping Tonal Harmony (Ariel J. Ramos / mDecks — the systematic presentation of the function map: diatonic functions, secondary functions `V7/x · viio7/x · IIm7/x`, substitute dominants `subV7/x` + their related ii)." (308–310) — *provenance*.
+19. "Jazz reharmonization literature (tritone sub, modal interchange, diatonic sub, related ii–V, diminished approach, backdoor, Coltrane changes)." (309–310) — *provenance*.
+20. "Galant schemata — Gjerdingen, *Music in the Galant Style*; Katsiavalos (ISMIR 2019)." (311) — *provenance*.
+21. "Progression-as-language-model (the inference grounding the consumer relies on) — Korzeniowski & Widmer 2018; Sears et al.; Tymoczko." (311–312) — *provenance*.
+22. "Cross-refs: `cowork_progression_schema_design.md`, `cowork_layer6_grouping_research.md`, `contrapunctus_findings.md`, target-architecture §2." (312–314) — *pointers*.
+
+#### The arithmetic at this member
+
+- Rows written: **78** (50.1 to 50.78); 7 of them carry two claims each and are split.
+- **Outgoing statements placed: 85.**
+- Listed under *not a statement*: **22**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 85 dispositions over 85
+  statements.
+- **UNPLACED at this member: 9** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 1 | 50.26 |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 60 | 50.1, 50.2, 50.3, 50.4, 50.5, 50.6, 50.7, 50.8(i), 50.9, 50.12, 50.13, 50.14, 50.16, 50.17, 50.18, 50.19, 50.22, 50.24, 50.25, 50.27, 50.28, 50.29, 50.30, 50.31, 50.32, 50.33(i), 50.34, 50.35, 50.36, 50.37, 50.38, 50.39, 50.40, 50.41(i), 50.41(ii), 50.42, 50.43, 50.44, 50.45, 50.46, 50.47, 50.48, 50.49(i), 50.49(ii), 50.50, 50.51, 50.57, 50.58, 50.59, 50.60, 50.61, 50.62, 50.63, 50.64, 50.65, 50.66, 50.69, 50.70, 50.71, 50.76(ii) |
+| QUARANTINED | 7 | 50.8(ii), 50.11(ii), 50.15(i), 50.21, 50.23, 50.33(ii), 50.77 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 8 | 50.10, 50.11(i), 50.15(ii), 50.56, 50.68, 50.72, 50.74, 50.78 |
+| UNPLACED | 9 | 50.20, 50.52, 50.53, 50.54, 50.55, 50.67, 50.73, 50.75, 50.76(i) |
+| **Total** | **85** | — |
+
+**The arithmetic closes at this member**: 1 + 0 + 60 + 7 + 0 + 8 + 9 = 85, against 85 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 2 |
+| DIFFERS | 1 |
+| THE DERIVATION IS SILENT | 82 |
+| **Total verdicts** | **85** |
+
+*(85 verdicts over 85 statements; no statement names two derived statements.)* DIFFERS: 50.20.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact names no home of a decision ruled L2's own inside this member; the five
+  decisions homed inside its ranges are none of them L2's own, as the manifest states.
+- **SEEN rows: none.** None of the eight homes lies in this document; the check was made at the homes, as the manifest
+  states.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
+  L2-S17, L2-S22, L2-S42, L2-S45, L2-S43, L2-S12 or L2-S38.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -65248,6 +66310,19 @@ the row says which.
   tonality sequence.
 - Row 49.44 — travelling with Row 4.1(iii): the cadence labels the section layer's derivation over the record. *(L2-S49
   travels with it.)*
+- Rows 50.1 to 50.7, 50.8(i), 50.9, 50.12, 50.13, 50.14, 50.16, 50.17, 50.18, 50.22, 50.24, 50.25, 50.27, 50.30 to
+  50.32, 50.33(i), 50.34, 50.37, 50.41(i), 50.42 to 50.48, 50.49(i), 50.57 to 50.59, 50.60 to 50.66, 50.69, 50.70 and
+  50.76(ii) — travelling with Row 5.91: the Harmonic Vocabulary's terms, its ownership of the named progressions and
+  substitutions apart from the licensing grammar, its queries, its function map, its named progressions and schemata,
+  its substitution operations, the style label it carries with the weighting and the decision left to the consumer,
+  and its glossary.
+- Row 50.19 — travelling with Row 5.5(i): the diatonic functions in three families, tonic, pre-dominant and dominant.
+- Rows 50.28 and 50.29 — travelling with Row 5.9: the cadential progressions the catalog lists, already detected by the
+  cadence detector. *(L2-S49 travels with Row 50.28.)*
+- Rows 50.38, 50.39 and 50.40 — travelling with Row 26.5: substitution operating on every functional family, only the
+  tritone substitution specific to the dominant.
+- Rows 50.41(ii), 50.51 and 50.71 — travelling with Row 43.99: the catalog read in both directions, to recognize and
+  to suggest.
 
 **To *the second axis — voice leading*.**
 
@@ -65318,6 +66393,10 @@ the row says which.
   style through calibration only, the bounded-context contract, honest marks, the shared primitives reused and the
   phrase-boundary cues read rather than detected again, notated voices enough without stream separation, notated music
   only, and the second coordinate of the style structure.
+- Rows 50.35 and 50.36 — travelling with Row 26.4: a galant schema defined by its voice leading, the catalog holding its
+  harmonic pattern only and the complete schema recognized with the voice-leading dimension.
+- Row 50.49(ii) — travelling with Row 21.65: the line of the line cliché, voice leading held elsewhere.
+- Row 50.50 — travelling with Row 21.67: a voicing substitution, a voicing outside the catalog.
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -65619,7 +66698,7 @@ numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
 above. Member 31 relocates no row, and member 32's relocations are the rows numbered 32.n above. Member 33's relocations are the rows numbered 33.n
-above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, and member 49's the rows numbered 49.n.)*
+above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, and member 50's the rows numbered 50.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -66673,6 +67752,15 @@ rows here, each with its audit question, in the commit that tabulates it.
   value a partial candidate score rather than a mass?
 - Row 49.40 — travelling with Row 17.50(ii): what quantity does the record arm's key-display gate threshold, and in what
   unit are its two constants set?
+- Rows 50.8(ii) and 50.21 — travelling with Row 5.90: is the named licensing test the only place in the code that
+  decides which root motions are licensed?
+- Rows 50.11(ii) and 50.23 — travelling with Row 5.86: does the code implement the pre-amendment licensed set or the
+  amended one, at the current commit?
+- Row 50.15(i) — does the built recognizer of the catalog match only exact and whole realizations at the current commit?
+- Row 50.33(ii) — does the built catalog encode the Axis loop as one entry in one rotation, and does the built matcher
+  recognize only that order?
+- Row 50.77 — does the dormant catalog component encode the five idioms as a multi-valued set on each entry at the
+  current commit?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -67644,6 +68732,8 @@ words.
   withhold from publication rivals whose mass falls below a declared threshold"*.
 - Row 49.40 — as at Row 17.50(ii): the outgoing gates read *"§3.3 mass/gap"*; L2-S40 says *"Mass is the probability the
   fitted, whole-reading-normalised model (L2-S35) assigns."*
+- Row 50.20 — as at Row 5.83: the outgoing names *"the primary functional root motions"* of a fixed functional flow;
+  L2-S34 has *"a term on the pair of adjacent chords *read as degrees in their tonalities*"* whose weights are fitted.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -67704,9 +68794,10 @@ own distribution table in §6.
 | 47 | 59 | 16 | 0 | 4 | 11 | 0 | 21 | 7 | 26 |
 | 48 | 79 | 33 | 5 | 10 | 0 | 0 | 20 | 11 | 8 |
 | 49 | 70 | 14 | 1 | 32 | 6 | 0 | 10 | 7 | 10 |
-| **Total** | **5049** | **651** | **111** | **1101** | **1488** | **0** | **1323** | **375** | **2201** |
+| 50 | 85 | 1 | 0 | 60 | 7 | 0 | 8 | 9 | 22 |
+| **Total** | **5134** | **652** | **111** | **1161** | **1495** | **0** | **1331** | **384** | **2223** |
 
-**The arithmetic check:** 651 + 111 + 1101 + 1488 + 0 + 1323 + 375 = 5049, against 5049 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70).
+**The arithmetic check:** 652 + 111 + 1161 + 1495 + 0 + 1331 + 384 = 5134, against 5134 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70 + 85).
 
 **Current-text verdicts.**
 
@@ -67761,9 +68852,10 @@ own distribution table in §6.
 | 47 | 16 | 7 | 36 | 59 |
 | 48 | 36 | 12 | 32 | 80 |
 | 49 | 31 | 12 | 29 | 72 |
-| **Total** | **961** | **817** | **3327** | **5105** |
+| 50 | 2 | 1 | 82 | 85 |
+| **Total** | **963** | **818** | **3409** | **5190** |
 
-**The arithmetic check:** 961 + 817 + 3327 = 5105 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72).
+**The arithmetic check:** 963 + 818 + 3409 = 5190 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72 + 85).
 
 ## 14. The derivation's independence record, relayed
 
@@ -67794,4 +68886,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 49 are done, positions 50 to 62 are untouched.
+  untouched: positions 1 to 50 are done, positions 51 to 62 are untouched.
