@@ -102,20 +102,20 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 58 | `cowork_factorization_desk_simulation.md` passages (item 4 alone) | **DONE** (§6.58) |
 | 59 | `cowork_joint_key_chord_design.md` passages (item 4 alone) | **DONE** (§6.59) |
 | 60 | `docs/stage4b_design.md` passages (item 4 alone) | **DONE** (§6.60) |
-| 61 | `records/cowork/handoff/cowork_handoff_archive.md` passages (item 4 alone) | NOT YET TABULATED |
+| 61 | `records/cowork/handoff/cowork_handoff_archive.md` passages (item 4 alone) | **DONE** (§6.61) |
 | 62 | The L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 60 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 61 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, the `cowork_notation_output_contract.md` passages, the `cowork_progression_schema_dictionary.md` passages, the `cowork_layer1_note_model_design.md` passages, the `cowork_confidence_contract.md` passages, the `cowork_progression_schema_design.md` passages, the `docs/llm_integration.md` passages, the `cowork_idiom_entry_mapping.md` passages, the `cowork_architecture_reassessment.md` passages, the `cowork_architecture_review_2026_07.md` passages, the `cowork_factorization_desk_simulation.md` passages, the `cowork_joint_key_chord_design.md` passages, and the `docs/stage4b_design.md` passages.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, the `cowork_notation_output_contract.md` passages, the `cowork_progression_schema_dictionary.md` passages, the `cowork_layer1_note_model_design.md` passages, the `cowork_confidence_contract.md` passages, the `cowork_progression_schema_design.md` passages, the `docs/llm_integration.md` passages, the `cowork_idiom_entry_mapping.md` passages, the `cowork_architecture_reassessment.md` passages, the `cowork_architecture_review_2026_07.md` passages, the `cowork_factorization_desk_simulation.md` passages, the `cowork_joint_key_chord_design.md` passages, the `docs/stage4b_design.md` passages, and the `records/cowork/handoff/cowork_handoff_archive.md` passages.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 60 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 61 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -143,8 +143,8 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 54 to 60, each whole in its own commit. **Positions 61 and 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 61**, `records/cowork/handoff/cowork_handoff_archive.md` passages (item 4 alone). §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 54 to 61, each whole in its own commit, and stopped at the member boundary after position 61 because that dispatch bounded the batch there. **Position 62 is UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in it is partly worked. **The next writing resumes at position 62**, the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -70149,6 +70149,168 @@ the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** 60.2(i), 60.2(ii), 60.3, 60.4 and 60.7
   (L2-S17, entry 1), each so noted at its row.
 
+---
+
+### 6.61 — Member 61: `records/cowork/handoff/cowork_handoff_archive.md`, passages
+
+> **Manifest for this member.** Position **61**. Kind: *item 4 — passages reached by item 4 alone* — the passages of a
+> document outside the specification document set, reached only at the homes of decisions ruled L2's own and not
+> tabulated whole (the ruling's item 4). Document: `records/cowork/handoff/cowork_handoff_archive.md`. Label: *"the
+> passages of the document"*. **The one published range**, as a locator only, by its first and last line as the
+> artifact publishes them (**D-307**):
+>
+> 1. lines 3078–3087, from *"- **✅ Stage 4 design investigation COMPLETE — `docs/key_path_design.md` (HELD, staged"* to *"  HMM path deferred under the beam-style "revisit when search genuinely matters" trigger."*.
+>
+> **The range's first and last line matched the file** at the object this batch read, with no trailing carriage return
+> to set aside — the document's blob carries no carriage return. **The lines outside the range are outside the
+> member** and are not tabulated, quoted or listed. **No line inside the range is a heading.** Outgoing statements:
+> **8** (rows 61.1 to 61.6; two of those rows carry two claims each and are split — the arithmetic is at the foot of
+> this member). Listed under *not a statement*: **0**. Counted at this member by this session; the counts appear here
+> and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of a dated entry of an archived
+> handoff record: the close of a design investigation of the legacy tonality path, its recorded finding, a
+> meta-principle drawn from it, and the plan that followed. **The placement readings are those of the earlier members,
+> applied unchanged.** A status, an assessment shaping a plan, a decision of order and a deferral are HISTORICAL; a
+> recorded measurement of an implementation is QUARANTINED with its audit question. **How member 56's reading applies
+> here, stated so it can be checked:** the meta-principle's standing was read at `DECISIONS.md`, whose index records
+> D-289 superseded by D-284 — the decision member 56 met at Row 56.4 — and through it by D-036 with D-001 and D-010,
+> with D-288 and D-287; no earlier row carries the meta-principle's content, so it is HISTORICAL as a superseded
+> meta-finding was at member 56, and its row says so. **No placement reading is new at this member.**
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 61: **D-289**
+> at line 3082, one line. **Two rows touch it and neither lies wholly inside it.** Row 61.2 opens before the line and
+> its claim (ii) ends on it; Row 61.3 opens on the line and runs past it. Each carries the mark on the claim that lies
+> on the line, and each states its boundary mark. Row 61.3's boundary mark records that the decisions register's own
+> statement of D-289 is the content of that row's claim (ii), which lies past the line the home is cited at; the mark
+> follows the home as cited and is not moved. A check at `tools/audit/decisions/backbone_decisions.json` found no further
+> decision homed in this document.
+>
+> **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes §5 names lies in this
+> document.
+
+---
+
+**Row 61.1 — the design investigation complete, its document held and not committed.**
+
+*Outgoing statement.* "**✅ Stage 4 design investigation COMPLETE — `docs/key_path_design.md` (HELD, staged not committed — convention honored).**" — a dated handoff entry, the Stage 4 design investigation (locator: lines 3078–3079).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 61.2 — the finding: the path over tonalities recovers about a tenth of the measured set; most of the remainder emission error, unrecoverable by any path.** *WITHHELD — D-289, claim (ii).*
+
+*Outgoing statement.* "§3 finding (Cowork-verified: S2=1032 reproduces; bwv244.54 anchor rests on serialized runnerUp; logic airtight): **the key path fixes only ~10% of S2** (Class A spurious-flip); ~85% is Class B (emission prefers wrong key, correct key never rank-2 in 51.6% of S2) — unrecoverable by any path." — a dated handoff entry, the Stage 4 design investigation (locator: lines 3079–3082). Two claims: (i) the path over tonalities fixes only about a tenth of the measured disagreement set, the spurious flips; (ii) about eighty-five in a hundred is emission error, the correct tonality never ranked second in about half of the set, unrecoverable by any path. *Boundary mark:* the sentence opens on line 3079, before D-289's home as cited (line 3082), and its last clause, claim (ii), ends on that line; claim (ii) carries the mark, claim (i) lies before the home and does not.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation measured. (ii) **THE DERIVATION IS SILENT** — as (i).
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the recorded share of the legacy tonality path's disagreement set that the path itself recovers reproduce, and on which retired path and corpus was it taken? (ii) **QUARANTINED**, with (i). *Audit question:* as at (i), for the share recorded as emission error, and for the recorded share in which the correct tonality is never ranked second.
+
+---
+
+**Row 61.3 — a second structural fix falsified; the meta-principle: precision lives in the emission and the functional labeling, not in the search.** *WITHHELD — D-289, claim (i).*
+
+*Outgoing statement.* "**SECOND falsified structural fix → META-PRINCIPLE recorded in roadmap: precision lives in emission + functional labeling, NOT search/path.**" — a dated handoff entry, the Stage 4 design investigation (locator: lines 3082–3084). Two claims: (i) a second structural fix is falsified; (ii) the meta-principle recorded in the roadmap: precision lives in the emission and the functional labeling, not in the search or the path. *Boundary mark:* the sentence opens on line 3082, the one line D-289's home is cited at, and runs past it to line 3084; claim (i) opens on that line and carries its mark, claim (ii) lies past it and does not — though the decisions register's own statement of D-289 is claim (ii)'s content. The mark follows the home as cited, and this sentence records the mismatch rather than moving the mark.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT** — the derivation states how L2 decides, not where a dated assessment placed the analysis's precision.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status. (ii) **HISTORICAL** — a meta-principle of a dated handoff entry, which the decisions register records as superseded (D-289, by D-284 and through it D-036 with D-001 and D-010, with D-288 and D-287).
+
+---
+
+**Row 61.4 — the path the least valuable portion of the stage; the tonality spans and the emission fix what deliver.**
+
+*Outgoing statement.* "The HMM path is the least valuable part of Stage 4 (~10%); KeyArea spans + the key-EMISSION fix are what deliver." — a dated handoff entry, the Stage 4 design investigation (locator: lines 3084–3085).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an assessment shaping a dated stage's plan.
+
+---
+
+**Row 61.5 — the user's decision: investigate the emission's headroom before shaping the stage.**
+
+*Outgoing statement.* "**Decision (user): investigate the key-emission headroom before shaping Stage 4.**" — a dated handoff entry, the Stage 4 design investigation (locator: line 3086).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a dated decision of order, a plan.
+
+---
+
+**Row 61.6 — the path deferred until the search genuinely matters.**
+
+*Outgoing statement.* "HMM path deferred under the beam-style "revisit when search genuinely matters" trigger." — a dated handoff entry, the Stage 4 design investigation (locator: line 3087).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a deferral, a plan.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (0)
+
+*None: every sentence inside the range is tabulated above.*
+
+#### The arithmetic at this member
+
+- Rows written: **6** (61.1 to 61.6); two of them carry two claims each and are split.
+- **Outgoing statements placed: 8.**
+- Listed under *not a statement*: **0**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 8 dispositions over 8
+  statements.
+- **UNPLACED at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 2 | 61.2(i), 61.2(ii) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 6 | 61.1, 61.3(i), 61.3(ii), 61.4, 61.5, 61.6 |
+| UNPLACED | 0 | — |
+| **Total** | **8** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 0 + 2 + 0 + 6 + 0 = 8, against 8 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 8 |
+| **Total verdicts** | **8** |
+
+*(8 verdicts over 8 statements; no statement names two derived statements.)* DIFFERS: none.
+
+#### The marks at this member
+
+- **WITHHELD claims: 61.2(ii)**, *WITHHELD — D-289, claim (ii)*, and **61.3(i)**, *WITHHELD — D-289, claim (i)* (line
+  3082). Neither row lies wholly inside the home; Row 61.2 opens before it and Row 61.3 opens on it and runs past it,
+  each as its boundary mark states. No claim at either row carries an AGREES.
+- **SEEN rows: none.** None of the eight homes lies in this document; the check was made at the homes, as the manifest
+  states.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** none.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -71058,7 +71220,7 @@ numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
 above. Member 31 relocates no row, and member 32's relocations are the rows numbered 32.n above. Member 33's relocations are the rows numbered 33.n
-above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 51's the rows numbered 51.n, member 52's the rows numbered 52.n, member 53's the rows numbered 53.n, member 54's the rows numbered 54.n, and member 55's the rows numbered 55.n. Member 56 relocates no row, member 57's relocations are the rows numbered 57.n above, and members 58, 59 and 60 relocate no row.)*
+above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 51's the rows numbered 51.n, member 52's the rows numbered 52.n, member 53's the rows numbered 53.n, member 54's the rows numbered 54.n, and member 55's the rows numbered 55.n. Member 56 relocates no row, member 57's relocations are the rows numbered 57.n above, and members 58, 59, 60 and 61 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -72178,6 +72340,10 @@ rows here, each with its audit question, in the commit that tabulates it.
 - Row 59.4(ii) — travelling with Row 8.99(ii), and through it with Row 5.226: are the modulation recompute and the
   fine-grain override built as instances of one mechanism, and does either run?
 - Row 59.5 — travelling with Row 8.100(i), and through it with Row 5.226: as at Row 59.4(ii).
+- Row 61.2(i) — does the recorded share of the legacy tonality path's disagreement set that the path itself recovers
+  reproduce, and on which retired path and corpus was it taken?
+- Row 61.2(ii) — as at Row 61.2(i), for the share recorded as emission error, and for the recorded share in which the
+  correct tonality is never ranked second.
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -73282,9 +73448,10 @@ own distribution table in §6.
 | 58 | 12 | 5 | 0 | 0 | 0 | 0 | 6 | 1 | 0 |
 | 59 | 6 | 1 | 0 | 0 | 2 | 0 | 0 | 3 | 6 |
 | 60 | 8 | 0 | 0 | 0 | 0 | 0 | 3 | 5 | 0 |
-| **Total** | **5465** | **667** | **112** | **1320** | **1540** | **0** | **1394** | **432** | **2331** |
+| 61 | 8 | 0 | 0 | 0 | 2 | 0 | 6 | 0 | 0 |
+| **Total** | **5473** | **667** | **112** | **1320** | **1542** | **0** | **1400** | **432** | **2331** |
 
-**The arithmetic check:** 667 + 112 + 1320 + 1540 + 0 + 1394 + 432 = 5465, against 5465 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70 + 85 + 91 + 60 + 96 + 5 + 23 + 9 + 21 + 12 + 6 + 8).
+**The arithmetic check:** 667 + 112 + 1320 + 1542 + 0 + 1400 + 432 = 5473, against 5473 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70 + 85 + 91 + 60 + 96 + 5 + 23 + 9 + 21 + 12 + 6 + 8 + 8).
 
 **Current-text verdicts.**
 
@@ -73350,9 +73517,10 @@ own distribution table in §6.
 | 58 | 6 | 1 | 6 | 13 |
 | 59 | 1 | 4 | 1 | 6 |
 | 60 | 1 | 4 | 3 | 8 |
-| **Total** | **1006** | **858** | **3659** | **5523** |
+| 61 | 0 | 0 | 8 | 8 |
+| **Total** | **1006** | **858** | **3667** | **5531** |
 
-**The arithmetic check:** 1006 + 858 + 3659 = 5523 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72 + 85 + 91 + 60 + 96 + 5 + 23 + 9 + 22 + 13 + 6 + 8).
+**The arithmetic check:** 1006 + 858 + 3667 = 5531 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72 + 85 + 91 + 60 + 96 + 5 + 23 + 9 + 22 + 13 + 6 + 8 + 8).
 
 ## 14. The derivation's independence record, relayed
 
@@ -73383,4 +73551,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 60 are done, positions 61 to 62 are untouched.
+  untouched: positions 1 to 61 are done, position 62 is untouched.
