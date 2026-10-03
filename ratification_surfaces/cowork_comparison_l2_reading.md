@@ -8,7 +8,7 @@
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md` Task 1, and further under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifth_2026_09_28.md` Task 1, and further under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md` Task 1, and further under
-> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md` Task 1, executing
+> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md` Task 1, executing
 > the user's ruling of 2026-09-27, Option B
 > (`records/cowork/rulings/cowork_rulings_2026_09_27_l2_outgoing_population_sitting.md` §2), the
 > named-documents ruling of the same date, Option B
@@ -92,7 +92,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 48 | `cowork_joint_estimator_architecture.md` passages | **DONE** (§6.48) |
 | 49 | `cowork_notation_output_contract.md` passages | **DONE** (§6.49) |
 | 50 | `cowork_progression_schema_dictionary.md` passages | **DONE** (§6.50) |
-| 51 | `cowork_layer1_note_model_design.md` passages | NOT YET TABULATED |
+| 51 | `cowork_layer1_note_model_design.md` passages | **DONE** (§6.51) |
 | 52 | `cowork_confidence_contract.md` passages | NOT YET TABULATED |
 | 53 | `cowork_progression_schema_design.md` passages | NOT YET TABULATED |
 | 54 | `docs/llm_integration.md` passages | NOT YET TABULATED |
@@ -107,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 50 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 51 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, the `cowork_notation_output_contract.md` passages, and the `cowork_progression_schema_dictionary.md` passages.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, the `cowork_notation_output_contract.md` passages, the `cowork_progression_schema_dictionary.md` passages, and the `cowork_layer1_note_model_design.md` passages.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 50 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 51 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -143,8 +143,8 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. **Positions 51 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 51**, `cowork_layer1_note_model_design.md` passages. §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit. **Positions 52 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 52**, `cowork_confidence_contract.md` passages. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -65902,6 +65902,1012 @@ the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** none. No row of this member names L2-S31,
   L2-S17, L2-S22, L2-S42, L2-S45, L2-S43, L2-S12 or L2-S38.
 
+---
+
+### 6.51 — Member 51: `cowork_layer1_note_model_design.md`, passages
+
+> **Manifest for this member.** Position **51**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_layer1_note_model_design.md`. Label: *"the passages of the document"*. **The thirteen published
+> ranges**, each as a locator only, by its first and last line as the artifact publishes them (**D-307**); where a
+> boundary line is too long to repeat, it is given by its opening and closing words:
+>
+> 1. lines 15–24, from *"| Term | Meaning (or citation) |"* to *"| **The system check (§10)** | The project's per-event oracle-root corpus metric and the two automated suites"* … *"gate policy: CLAUDE.md). |"*;
+> 2. lines 42–54, from *"**Two ideas Architectural Layer 1 is built on:**"* to *"  reversible step done in a later architectural layer."*;
+> 3. lines 64–65, from *"**Scope — what Architectural Layer 1 does:** read the selected music once; resolve ties; record the per-note facts;"* to *"and answer the question "which notes are sounding during a given span of time?""*;
+> 4. lines 67–76, from *"**What Architectural Layer 1 explicitly does NOT do** (stated because each boundary matters):"* to *"  from a later architectural layer."*;
+> 5. lines 78–103, from *"## 2. Constraints"* to *"  permitted code changes are speed improvements that return *identical* results."*;
+> 6. lines 105–130, from *"## 3. Context & scope (external view)"* to *"beneath all musical judgement."*;
+> 7. lines 132–135, from *"**Implementation (source files):** the note model and its look-up index are in"* to *"(`weightedPcView`, `soundingAt`)."*;
+> 8. lines 145–158, from *"## 5. Building-block view (static / internal structure)"* to *"  with the lossless note model still underneath them."*;
+> 9. lines 160–172, from *"## 6. Runtime view (scenarios)"* to *"  the extra earlier music and adds those notes."*;
+> 10. lines 174–183, from *"## 7. Data design"* to *"outlive the note model), and the numeric look-up index."*;
+> 11. lines 221–238, from *"## 11. Risks & technical debt"* to *"  is written against, so the interim is invisible to them."*;
+> 12. lines 240–250, from *"## 12. Glossary"* to *"(drum/percussion staves, the chord-symbol track, and hidden staves are not staff-eligible)."*;
+> 13. lines 265–278, from *"## 14. Related work & external sources (what we borrowed, discarded, and why)"* to *"  that use them.)"*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside — the document's blob carries no carriage return. **The lines between the ranges are outside the
+> member** and are not tabulated, quoted or listed. **Eight lines inside the ranges are headings** — lines 78, 105,
+> 145, 160, 174, 221, 240 and 265, each the first line of its range — and under the first reading rule of §6 they are
+> titles, neither tabulated nor listed. Outgoing statements: **91** (rows 51.1 to 51.73; 15 of those rows carry two or
+> three claims each and are split — the arithmetic is at the foot of this member). Listed under *not a statement*:
+> **17**. Counted at this member by this session; the counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of the design of the note
+> model — the layer that reads the selected music once, resolves ties, records each note's facts and answers which
+> notes sound during a span: its terms table, its two founding ideas, its scope and what it does not do, its
+> constraints, its inputs, operations and consumers, its building blocks, its runtime scenarios, its data, its risks,
+> its glossary and its related work. **The placement readings are those of the earlier members, applied unchanged.**
+> The note model's content goes to *L0 — The notated record*, travelling with the rows that relocated the same content
+> earlier — the lossless, tie-resolved model with Row 22.37, the supplier of the further music with Row 43.75(ii), the
+> supplier's knowing nothing of the analysis with Row 45.23(i), building over a selection with Row 45.45, the loaded
+> span with Row 45.82 and the chord-symbol track with Row 17.36; cutting the music into spans goes to *L1 — Change
+> points, candidates and notated evidence* with Row 6.6(i), and the voice-level eligibility with Row 40.3; that the
+> requester decides when more music is needed travels ADOPTED with Row 7.61, and the requester's own stop condition
+> travels QUARANTINED with Row 2.47(ii); the whole-piece load travels QUARANTINED with Row 2.16(ii) and the offline
+> batch path with Row 2.17; the derived summary views travel QUARANTINED with Row 22.38(ii); a description of the
+> implementation of the document's date is QUARANTINED, its axis reading THE DERIVATION IS SILENT; a build state, a
+> plan, a removal, a supersession or a past measurement is HISTORICAL; a rule of how a change is verified goes to
+> *the measurement of the analysis*. The terms table's rows and the glossary's entries that define the note model's own
+> terms are tabulated, placed with the model, as the eighth batch placed a glossary of a primitive's own terms; the
+> terms table's rows of project vocabulary and its pointer row are listed; a bold lead-in is a label; the runtime
+> scenarios are tabulated, the second batch's reading; the implementation locator is listed as a pointer; in the
+> related-work section the ideas built on are listed as provenance and the alternative discarded with its reason is
+> listed, the third batch's reading. **No placement reading is new at this member.**
+>
+> **The WITHHELD homes inside this member:** none — the artifact's `item_4_identities_inside` for position 51 is
+> empty. A check at `tools/audit/decisions/backbone_decisions.json` found four decisions homed in this document, none
+> among the decisions ruled L2's own: **D-519** (lines 43–47, inside range 2) and **D-520** (lines 230–238, inside
+> range 11); **D-517** (lines 204–206) and **D-518** (lines 261–263) lie outside the ranges.
+>
+> **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes §5 names lies in this
+> document.
+
+**Row 51.1 — the selection, the loaded span and the context span.**
+
+*Outgoing statement.* "| **Selection / loaded span / context span** | The bounded-context contract's vocabulary (`cowork_bounded_context_design.md`): the **selection** is the music the user chose; the **loaded span** is the music this layer currently covers (selection plus any granted extensions); a requester's **context span** is the extra music it integrates over. This document's older phrases "the analysed span" and "widen the span" mean the **loaded span** and **extending the loaded span** — one thing, two vocabularies; the contract's names are canonical. |" — §0, the terms table, row *Selection / loaded span / context span* (locator: line 17).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.82.
+
+---
+
+**Row 51.2 — staff-eligible: the note's staff enters the tonal analysis.**
+
+*Outgoing statement.* "| **Staff-eligible** | The note's staff takes part in tonal analysis. Ineligible staves (verified at the shared predicate the build uses): **hidden** staves, **percussion (drumset)** staves, and the **chord-symbol track** (next row). |" — §0, the terms table, row *Staff-eligible* (locator: line 18).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iv).
+
+---
+
+**Row 51.3 — the chord-symbol track: the project's chord staff, its notes kept and marked ineligible.**
+
+*Outgoing statement.* "| **The chord-symbol track** | The project's dedicated chord staff — a staff marked as the chord track via its part/instrument long name or track name (the staff the tool's chord annotations are written to, not a sounding musical part). Detected by the shared staff-eligibility predicate; its notes are kept and marked ineligible. |" — §0, the terms table, row *The chord-symbol track* (locator: line 19).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 17.36.
+
+---
+
+**Row 51.4 — the per-note plays and visible flags; the voice-level eligibility the consumer's.**
+
+*Outgoing statement.* "| **Sounds / visible flags** | Per-note facts (§7): whether the note actually plays (false for muted notes and imported cue notes — §13 records why those two are one flag), and whether it is visible. Voice-level "eligibility" (the three-flag combination consumers use) is defined by the consuming spec (`cowork_phrase_boundary_design.md` §0); this layer defines the staff flag and the two per-note flags it is built from. |" — §0, the terms table, row *Sounds / visible flags* (locator: line 20). Two claims: (i) each note carries whether it plays, false for muted and imported cue notes, and whether it is visible; (ii) the voice-level eligibility is defined by the consuming specification, from this layer's staff flag and its two per-note flags.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iv). (ii) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 40.3.
+
+---
+
+**Row 51.5 — tie-resolved: a group of tied notes one held note.**
+
+*Outgoing statement.* "**Tie-resolved.** A group of tied notes is treated as **one single held note** — one start time and one end time — instead of as the several separate written notes it appears to be." — §1 *Introduction & purpose*, the two ideas (locator: lines 43–44).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iii).
+
+---
+
+**Row 51.6 — slurred notes not merged; each keeps its own start, end and duration.**
+
+*Outgoing statement.* "(Slurred notes are *not* merged this way: a slur marks phrasing, not one continuous sound, so slurred notes — whether of the same pitch or of different pitches — remain separate notes, each with its own start time, end time, and duration." — §1 *Introduction & purpose*, the two ideas (locator: lines 44–46).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract).
+
+---
+
+**Row 51.7 — only ties join written notes into one sounding note.**
+
+*Outgoing statement.* "Only ties join written notes into one sounding note; slurs do not.)" — §1 *Introduction & purpose*, the two ideas (locator: lines 46–47).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 51.6.
+
+---
+
+**Row 51.8 — lossless: every note and every fact kept, never discarded or summarized.**
+
+*Outgoing statement.* "**Lossless.** Architectural Layer 1 **keeps every note, and every fact about each note that any later step might need, and never discards any of it or reduces it to a summary.**" — §1 *Introduction & purpose*, the two ideas (locator: lines 48–49).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(i).
+
+---
+
+**Row 51.9 — the three things never lost: every note, its exact facts, and the separation of presence from decision.**
+
+*Outgoing statement.* "Specifically, the three things it refuses to lose are: (a) any note at all — even a note that will not feed tonal analysis is kept, only marked (see "what we keep but mark," below); (b) each note's exact pitch, voice, and timing — the real notes are never replaced by a count, an average, or a pitch histogram; (c) the separation between *which notes are present* and *what a later architectural layer decides about them* — deciding about the notes (keys, chords, function) is a separate, reversible step done in a later architectural layer." — §1 *Introduction & purpose*, the two ideas (locator: lines 49–54). Three claims: (i) every note is kept, one that will not feed the analysis only marked; (ii) each note's exact pitch, voice and timing is never replaced by a count, an average or a histogram; (iii) which notes are present is kept apart from what a later layer decides about them, the deciding a separate step taken later.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) L2-S47.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.** (iii) L2-S47: **AGREES** — as at Row 43.4.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iv). (ii) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(i). (iii) **ADOPTED — carried** (L2-S47), travelling with Row 43.4.
+
+---
+
+**Row 51.10 — the scope: read once, resolve ties, record the facts, answer which notes sound in a span.**
+
+*Outgoing statement.* "**Scope — what Architectural Layer 1 does:** read the selected music once; resolve ties; record the per-note facts; and answer the question "which notes are sounding during a given span of time?"" — §1 *Introduction & purpose*, the scope (locator: lines 64–65).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(i).
+
+---
+
+**Row 51.11 — no weighting or reduction to pitch evidence; that done by the summary views and later layers.**
+
+*Outgoing statement.* "It does **not** weight, average, or reduce notes to pitch evidence — that is done by the summary views, on top of it, and by later architectural layers." — §1 *Introduction & purpose*, what the layer does not do (locator: lines 68–69). Two claims: (i) the note model does not weight, average or reduce the notes to pitch evidence; (ii) that is done by the summary views on top of it and by later layers.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(i). (ii) **QUARANTINED**, travelling with Row 22.38(ii).
+
+---
+
+**Row 51.12 — no cutting into spans, and no tonality, chord or function judgement.**
+
+*Outgoing statement.* "It does **not** cut the music into spans (that is Architectural Layer 2) and makes **no** key, chord, or function judgement (that is Architectural Layer 3 and later)." — §1 *Introduction & purpose*, what the layer does not do (locator: lines 70–71). Two claims: (i) cutting the music into spans is the next layer's and not the note model's; (ii) the note model makes no judgment of tonality, chord or function.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 6.6(i). (ii) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.23(i).
+
+---
+
+**Row 51.13 — no note dropped; the ones that should not feed the analysis only marked.**
+
+*Outgoing statement.* "It does **not** drop any note — it keeps every note and only marks the ones that should not feed tonal analysis." — §1 *Introduction & purpose*, what the layer does not do (locator: line 72).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iv).
+
+---
+
+**Row 51.14 — the note model builds or widens only when its caller asks, and watches for no edit.**
+
+*Outgoing statement.* "It does **not** decide *when* to build or rebuild itself, and does **not** watch for score edits — it builds, or widens, only when the caller asks." — §1 *Introduction & purpose*, what the layer does not do (locator: lines 73–74).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract).
+
+---
+
+**Row 51.15 — the note model does not decide more music is needed; the request comes from a later layer.**
+
+*Outgoing statement.* "It does **not** decide that more music is needed — it supplies a widened span on request, but the request comes from a later architectural layer." — §1 *Introduction & purpose*, what the layer does not do (locator: lines 75–76). Two claims: (i) the note model does not decide that more music is needed and supplies a widened span on request; (ii) the request comes from a later layer.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S22 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S22: **AGREES** — as at Row 7.61.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 43.75(ii). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 7.61.
+
+---
+
+**Row 51.16 — lossless and read-only toward the music.**
+
+*Outgoing statement.* "**Lossless, and read-only toward the music:** keep every note, change no note, summarise no note." — §2 *Constraints* (locator: line 79).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(i).
+
+---
+
+**Row 51.17 — one reading for the whole analysis; no other code reads the score again.**
+
+*Outgoing statement.* "**One reading for the whole analysis system:** there is a single note model; no other code re-reads the raw score." — §2 *Constraints* (locator: line 80).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(i).
+
+---
+
+**Row 51.18 — no limit on how far back a query searches.**
+
+*Outgoing statement.* "**No limit on how far backwards in time a query searches:** when asked which notes sound during a span of time, the answer must include notes that started **earlier in time** than that span and are still sounding when it begins, no matter how much earlier they started." — §2 *Constraints* (locator: lines 81–83).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iii).
+
+---
+
+**Row 51.19 — any selection size and any style; a stated query cost; a speed measurement that checks it.**
+
+*Outgoing statement.* "**Operates on the user's selected part of the score, at any selection size and in any musical style** (it makes no assumption about style); it must stay fast even when the selected music is the entire piece — "fast" by the stated budget: a span-of-time query does work proportional to the **logarithm of the note count plus the notes returned** (the §9 look-up index), never a whole-list scan; the §10 speed measurement checks that bound's effect (index versus linear scan at scale), so the acceptance test has a criterion and cannot be written vacuously." — §2 *Constraints* (locator: lines 84–88). Three claims: (i) the note model works on the selection at any size and in any style, assuming no style; (ii) a query over a span of time does work in proportion to the logarithm of the number of notes plus the notes returned, never scanning the whole list; (iii) a speed measurement checks that bound, the index against a linear scan over a large piece, so the acceptance test has a criterion.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.** (iii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract). (ii) **RELOCATED** — to *L0 — The notated record* (the input contract). (iii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 51.20 — the loaded span widened on request.**
+
+*Outgoing statement.* "**The loaded span (§0 — this doc's older phrase: "the analysed span") can be widened on request.**" — §2 *Constraints* (locator: line 89).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 43.75(ii).
+
+---
+
+**Row 51.21 — a later layer needs music before the selection; its stop condition its own, the leading-edge settled tonality.**
+
+*Outgoing statement.* "A later architectural layer — Architectural Layer 3 (key/mode) in particular — sometimes needs more music than the user's selection, for example to see what key the music was in just **earlier in time than the point where the selection begins** (Layer 3's stop condition for that request is its own — the leading-edge settled key stops changing, `cowork_layer3_keymode_design.md` §2)." — §2 *Constraints* (locator: lines 89–93). Two claims: (i) a later layer sometimes needs more music than the selection, for example the tonality just before the selection begins; (ii) that layer's stop condition is its own: the leading-edge settled tonality stops changing.
+
+*Derived statements that speak to it.* (i) L2-S22 — one §6.3 names as NEAREST to material met (entry 4). (ii) L2-S22 (NEAREST, §6.3 entry 4).
+
+*Current-text axis.* (i) L2-S22: **AGREES** — as at Row 2.16(i). (ii) L2-S22: **DIFFERS** — as at Row 2.47(ii).
+
+*The difference, in both texts' own words.* (ii) The outgoing requester stops when *"the leading-edge settled key stops changing"*; L2-S22 *"stops asking when its in-span publication stops changing between successive enlargements"*, and leaves open what *"stops changing"* means for the masses of the rivals (OQ-L2-6).
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S22), travelling with Row 2.16(i). (ii) **QUARANTINED**, travelling with Row 2.47(ii).
+
+---
+
+**Row 51.22 — the note model can be asked to widen the music it covers and take in the further notes.**
+
+*Outgoing statement.* "Architectural Layer 1 can be asked to **widen the span of music it covers — earlier in time, later in time, or both — and to take in the extra notes.**" — §2 *Constraints* (locator: lines 93–95).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 43.75(ii).
+
+---
+
+**Row 51.23 — the note model the supplier; deciding more music is needed the requester's.**
+
+*Outgoing statement.* "Architectural Layer 1 is the *supplier* of the extra music; deciding that more music is needed is the requesting architectural layer's responsibility, not Architectural Layer 1's." — §2 *Constraints* (locator: lines 95–96). Two claims: (i) the note model is the supplier of the further music; (ii) deciding that more music is needed is the requesting layer's.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S22 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) L2-S22: **AGREES** — as at Row 7.61.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 43.75(ii). (ii) **ADOPTED — carried** (L2-S22), travelling with Row 7.61.
+
+---
+
+**Row 51.24 — the note model not responsible for noticing it is out of date.**
+
+*Outgoing statement.* "**Architectural Layer 1 is not responsible for noticing when its note model has become out of date.**" — §2 *Constraints* (locator: line 97).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 51.14.
+
+---
+
+**Row 51.25 — an edit of the score neither detected nor judged by the note model.**
+
+*Outgoing statement.* "When the user edits the score, Architectural Layer 1 does not detect the edit and does not decide that its note model is stale." — §2 *Constraints* (locator: lines 97–99).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 51.14.
+
+---
+
+**Row 51.26 — deciding on and requesting a rebuild the caller's.**
+
+*Outgoing statement.* "Deciding that the note model must be rebuilt, and requesting that rebuild, is the caller's responsibility (the score editor / integration code)." — §2 *Constraints* (locator: lines 99–100).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 51.14.
+
+---
+
+**Row 51.27 — the note model builds or widens only when told to.**
+
+*Outgoing statement.* "Architectural Layer 1 only builds the note model, or widens it, when it is told to." — §2 *Constraints* (locator: lines 100–101).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 51.14.
+
+---
+
+**Row 51.28 — the results fixed once built; only changes returning identical results permitted.**
+
+*Outgoing statement.* "**Fixed for the architectural layers above it:** once the note model is built, its results do not change; the only permitted code changes are speed improvements that return *identical* results." — §2 *Constraints* (locator: lines 102–103). Two claims: (i) once the note model is built its results do not change; (ii) the only permitted changes to its code are speed improvements returning identical results.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L0 — The notated record* (the input contract). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 51.29 — the inputs: the selected portion of the score and its tie information.**
+
+*Outgoing statement.* "**What Architectural Layer 1 reads (its inputs):** the user-selected portion of the MuseScore score, plus the notation system's tie information (which written notes are tied to which)." — §3 *Context & scope (external view)* (locator: lines 106–107).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(i).
+
+---
+
+**Row 51.30 — the operation to build the note model, reading the selection once.**
+
+*Outgoing statement.* "*Build the note model* from the selected music (reading it once)." — §3 *Context & scope (external view)*, the operations (locator: line 109).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(i).
+
+---
+
+**Row 51.31 — the operation to return every note, earliest start first.**
+
+*Outgoing statement.* "*Return every note in the note model*, in a fixed order — earliest start time first." — §3 *Context & scope (external view)*, the operations (locator: line 110).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract).
+
+---
+
+**Row 51.32 — the query for the notes sounding in a span, including notes begun earlier.**
+
+*Outgoing statement.* "*Which notes are sounding during the span of time from A to B?* — returns the notes whose own sounding span overlaps the span A-to-B, including notes that started **earlier in time** than A and are still sounding at A; there is no limit on how far **backwards in time** it searches." — §3 *Context & scope (external view)*, the operations (locator: lines 111–113).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iii).
+
+---
+
+**Row 51.33 — the query for the notes starting in a span.**
+
+*Outgoing statement.* "*Which notes start within the span of time from A to B?*" — §3 *Context & scope (external view)*, the operations (locator: line 114).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract).
+
+---
+
+**Row 51.34 — the operation to widen the covered music for a later layer that needs more.**
+
+*Outgoing statement.* "*Widen the covered span of music* — extend the analysed range **earlier in time and/or later in time** than the range first built, and take in the additional notes, for a later architectural layer that needs more musical context than the user's selection provided." — §3 *Context & scope (external view)*, the operations (locator: lines 115–117).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 43.75(ii).
+
+---
+
+**Row 51.35 — the extend operation of the bounded-context contract: build over a selection, extend on request.**
+
+*Outgoing statement.* "This is the **extend** operation of the bounded-context contract — designed in full in `cowork_bounded_context_design.md` (build over a selection, then extend on request; append-only; clamp at the score boundary and report it)." — §3 *Context & scope (external view)*, the operations (locator: lines 117–119).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.45.
+
+---
+
+**Row 51.36 — as built: the extension adds notes only, one increment per call, clamped and reported at the edge.**
+
+*Outgoing statement.* "**(Built — Phase-1a: `extend(Direction, int)`, `boundaryReached()`, and the loaded/selection-span accessors exist in `note_model.h` and behave to the contract — extensions only ever **add** notes (nothing already loaded changes); each call widens by **one increment** and returns, the requesting layer, not this one, deciding whether to ask again; a request past the score edge clamps at the boundary and reports it." — §3 *Context & scope (external view)*, the operations (locator: lines 119–122).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the built extension at the current commit only add notes, widen by one increment per call, and clamp and report at the edge of the piece?
+
+---
+
+**Row 51.37 — built decoupled from the whole-score fix; the interim re-walks the whole piece; the span-scoped walk deferred.**
+
+*Outgoing statement.* "It was built *decoupled* from the §11 whole-score-load fix: the interim implementation itself re-walks the whole score and re-filters to the enlarged loaded span (byte-identical to a fresh build over that span); the span-scoped walk is the deferred Phase-1b." — §3 *Context & scope (external view)*, the operations (locator: lines 122–124). Three claims: (i) the extension was built apart from the fix of the whole-score load; (ii) the interim implementation walks the whole piece again and filters to the enlarged span; (iii) the walk over the span alone is deferred.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.** (iii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a build state. (ii) **QUARANTINED**, travelling with Row 2.16(ii). (iii) **HISTORICAL** — a deferred plan.
+
+---
+
+**Row 51.38 — the key code's reach-back written against the extension.**
+
+*Outgoing statement.* "Architectural Layer 3's reach-back is written against it.)" — §3 *Context & scope (external view)*, the operations (locator: line 125).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the key code's built reach-back request its further music through the note model's extension at the current commit?
+
+---
+
+**Row 51.39 — the consumers: the two summary views, the slicer and the key code.**
+
+*Outgoing statement.* "**Who uses Architectural Layer 1 (its consumers):** the derived summary views that condense notes into pitch evidence for scoring (`weightedPcView` — the weighted **pitch-class** view — and `soundingAt`, the notes-sounding-at-an-instant view); the Architectural Layer 2 slicer; the Architectural Layer 3 key/mode code." — §3 *Context & scope (external view)* (locator: lines 126–129).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which code reads the note model at the current commit — the two summary views, the slicer and the key code — and on which paths?
+
+---
+
+**Row 51.40 — the note model knows nothing of tonalities, chords and function.**
+
+*Outgoing statement.* "**What Architectural Layer 1 deliberately knows nothing about:** keys, chords, and function — it sits beneath all musical judgement." — §3 *Context & scope (external view)* (locator: lines 129–130).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.23(i).
+
+---
+
+**Row 51.41 — a note record: one tie-resolved note with its facts.**
+
+*Outgoing statement.* "**A note record** — one tie-resolved note together with its facts (the eleven fields listed in Section 7)." — §5 *Building-block view* (locator: line 146).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(ii).
+
+---
+
+**Row 51.42 — the note model owns the ordered list, a reference to the score and the look-up index.**
+
+*Outgoing statement.* "**The note model** — owns the list of note records ordered by start time, a borrowed reference to the source MuseScore score, and a numeric look-up index." — §5 *Building-block view* (locator: lines 147–148).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract).
+
+---
+
+**Row 51.43 — building walks every staff, voice and position, resolves ties, records the facts and sorts.**
+
+*Outgoing statement.* "Building the note model walks every staff, every voice, and every time-position (including grace notes), resolves ties, records the per-note facts, and sorts the records by start time." — §5 *Building-block view* (locator: lines 148–150).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract).
+
+---
+
+**Row 51.44 — the look-up index answers the two span questions without a scan of the whole list.**
+
+*Outgoing statement.* "**The numeric look-up index** — a structure that lets the two span-of-time questions ("sounding during A-to-B", "starting within A-to-B") be answered quickly even when the selected music is large, instead of scanning the whole list of notes every time." — §5 *Building-block view* (locator: lines 151–153).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 51.19(ii).
+
+---
+
+**Row 51.45 — the index built once, holding numbers only.**
+
+*Outgoing statement.* "It is built once and stores only numbers (each note's start and end time-positions), so it copies cheaply together with the note model." — §5 *Building-block view* (locator: lines 153–154).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract).
+
+---
+
+**Row 51.46 — the derived summary views, a separate module: the weighted view and the point-in-time view.**
+
+*Outgoing statement.* "**Derived summary views (a separate module, not part of Architectural Layer 1's core):** `weightedPcView` condenses a span of notes into weighted pitch evidence for scoring; `soundingAt` reports the notes sounding at one instant in time." — §5 *Building-block view* (locator: lines 155–157).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.38(ii).
+
+---
+
+**Row 51.47 — the summary views lossy, the lossless model beneath them.**
+
+*Outgoing statement.* "These are read-only summaries built *on top of* the note model — deliberately lossy convenience views, with the lossless note model still underneath them." — §5 *Building-block view* (locator: lines 157–158).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.38(ii).
+
+---
+
+**Row 51.48 — scenario: building the note model once.**
+
+*Outgoing statement.* "**Building the note model:** given the user-selected music, produce the note model once (walk the music → resolve ties → record the per-note facts → sort by start time → build the look-up index)." — §6 *Runtime view (scenarios)* (locator: lines 161–162).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 51.43.
+
+---
+
+**Row 51.49 — scenario: a query over a span answered in start order.**
+
+*Outgoing statement.* "**A span-of-time query:** a later architectural layer asks "which notes sound between time-position A and time-position B?" and receives them ordered by start time." — §6 *Runtime view (scenarios)* (locator: lines 163–164).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iii).
+
+---
+
+**Row 51.50 — scenario: three tied quarters and a following note become two notes.**
+
+*Outgoing statement.* "**A held sound made of tied notes:** three tied quarter-notes followed by a different note become **two** notes — one long held note and the following note — not four notes, and the held note is not counted three times." — §6 *Runtime view (scenarios)* (locator: lines 165–166).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iii).
+
+---
+
+**Row 51.51 — scenario: a note begun before the span included.**
+
+*Outgoing statement.* "**A note carried in from earlier in time:** a note that started **earlier in time** than the queried span but is still sounding inside it is included in the answer (there is no backward-in-time search limit)." — §6 *Runtime view (scenarios)* (locator: lines 167–168).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iii).
+
+---
+
+**Row 51.52 — scenario: widening earlier by the requester's own stop condition; the note model adds the notes.**
+
+*Outgoing statement.* "**Widening the loaded span (§0):** Architectural Layer 3 (key/mode) asks Architectural Layer 1 to extend the covered music **earlier in time** than the selection, iterating by its own stop condition (the leading-edge settled key stops changing — Layer 3's operational test, `cowork_layer3_keymode_design.md` §2); Architectural Layer 1 reads the extra earlier music and adds those notes." — §6 *Runtime view (scenarios)* (locator: lines 169–172). Two claims: (i) the requesting layer asks for earlier music, iterating by its own stop condition, the leading-edge settled tonality stops changing; (ii) the note model reads the further earlier music and adds those notes.
+
+*Derived statements that speak to it.* (i) L2-S22 — one §6.3 names as NEAREST to material met (entry 4). (ii) None.
+
+*Current-text axis.* (i) L2-S22: **DIFFERS** — as at Row 2.47(ii). (ii) **THE DERIVATION IS SILENT.**
+
+*The difference, in both texts' own words.* (i) The outgoing requester stops when *"the leading-edge settled key stops changing"*; L2-S22 *"stops asking when its in-span publication stops changing between successive enlargements"*, and leaves open what *"stops changing"* means for the masses of the rivals (OQ-L2-6).
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 2.47(ii). (ii) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 43.75(ii).
+
+---
+
+**Row 51.53 — the eleven facts each note record carries.**
+
+*Outgoing statement.* "Each note record carries eleven facts: its **sounding pitch**; its **spelled pitch** (for example F♯ versus G♭); which **staff** and which **voice** it belongs to; its **start time-position**, its **end time-position**, and its **duration** (end time minus start time — the tie-resolved sounding length); and four yes/no facts — whether it is a **grace note**, whether it actually **sounds** (false for muted notes and for imported cue notes — an imported score carries no separate cue-note distinction, §13, so the one flag covers both), whether it is **visible**, and whether it is **staff-eligible** (§0/§12 — its staff takes part in tonal analysis; false for drum/percussion staves, the chord-symbol track (§0), and hidden staves)." — §7 *Data design* (locator: lines 175–181).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(ii).
+
+---
+
+**Row 51.54 — all times absolute positions in the piece.**
+
+*Outgoing statement.* "All times are absolute time-positions within the piece." — §7 *Data design* (locator: line 181).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(ii).
+
+---
+
+**Row 51.55 — the note model also holds the ordered list, a reference to the score and the index.**
+
+*Outgoing statement.* "The note model also holds the start-time-ordered list of note records, a borrowed pointer to the source MuseScore score (which must outlive the note model), and the numeric look-up index." — §7 *Data design* (locator: lines 181–183).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 51.42.
+
+---
+
+**Row 51.56 — the accepted shift in the accuracy metric, to be re-tuned at the key layer.**
+
+*Outgoing statement.* "**An accepted, fully-explained shift in the accuracy metric, caused by building Architectural Layer 1 correctly** — resolving ties and removing the backward-in-time search limit moved the project's accuracy metric by a small, fully-attributed amount — the per-preset deltas and their attribution are recorded in the Layer-1 acceptance entry of the project ledger (`STATUS.md`); this was accepted deliberately and is expected to be re-tuned when Architectural Layer 3 (key/mode) is rebuilt (detail in Section 13)." — §11 *Risks & technical debt* (locator: lines 222–226). Two claims: (i) resolving ties and removing the backward search limit moved the accuracy measurement by a recorded amount, accepted deliberately; (ii) it is expected to be re-tuned when the key layer is rebuilt.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a past measurement, travelling with Row 22.45. (ii) **HISTORICAL** — a plan, travelling with Row 22.46.
+
+---
+
+**Row 51.57 — grace-note timing to be confirmed; no special handling of grace notes.**
+
+*Outgoing statement.* "**Grace-note timing** — exactly how a grace note's start time, end time, and duration are recorded should be confirmed when Architectural Layer 3 begins using grace notes (there is deliberately no special grace-note handling in Architectural Layer 1)." — §11 *Risks & technical debt* (locator: lines 227–229). Two claims: (i) how a grace note's start, end and duration are recorded is to be confirmed when the key layer uses grace notes; (ii) the note model handles grace notes in no special way.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an owed check. (ii) **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iv).
+
+---
+
+**Row 51.58 — the build reads the whole piece even when only a stretch is asked about; an interim behavior.**
+
+*Outgoing statement.* "**The build currently reads the whole score even when only part of it is queried** — an **interim** behaviour, not the target." — §11 *Risks & technical debt* (locator: lines 230–231).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 2.16(ii).
+
+---
+
+**Row 51.59 — the product selection-based: build over the selection, extend on request.**
+
+*Outgoing statement.* "The product is selection-based (`cowork_bounded_context_design.md`): the target is *build over the selection, then extend on request*." — §11 *Risks & technical debt* (locator: lines 231–232).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 45.45.
+
+---
+
+**Row 51.60 — the whole-piece load the case where the selection is the piece; it keeps the batch path unchanged.**
+
+*Outgoing statement.* "Loading the whole score is the degenerate case (selection = score) and is what keeps the batch-testing path (the offline corpus harness, `batch_analyze`) unchanged." — §11 *Risks & technical debt* (locator: lines 232–233). Two claims: (i) loading the whole piece is the case where the selection is the piece; (ii) that load is what keeps the offline batch path unchanged.
+
+*Derived statements that speak to it.* (i) L2-S48. (ii) None.
+
+*Current-text axis.* (i) L2-S48: **AGREES** — as at Row 21.61. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S48), travelling with Row 21.61. (ii) **QUARANTINED**, travelling with Row 2.17.
+
+---
+
+**Row 51.61 — the extension now built; the interim re-walks the whole piece.**
+
+*Outgoing statement.* "The *extend* operation (§3) is **now built** (Phase-1a), so the whole-score build no longer masks a missing capability — it only means *extend*'s interim implementation re-walks the whole score rather than a span-scoped slice." — §11 *Risks & technical debt* (locator: lines 233–235). Two claims: (i) the extension is now built, so the whole-piece build no longer hides a missing capability; (ii) the extension's interim implementation walks the whole piece again rather than the span alone.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a build state. (ii) **QUARANTINED**, travelling with Row 2.16(ii).
+
+---
+
+**Row 51.62 — the framing of one coupled change superseded.**
+
+*Outgoing statement.* "The earlier framing that "fixing the whole-score build and building *extend* are one coupled change" is **superseded**: *extend* was built **decoupled** (Phase-1a, whole-score re-walk, byte-identical), with the span-scoped walk deferred to Phase-1b." — §11 *Risks & technical debt* (locator: lines 235–237).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a supersession.
+
+---
+
+**Row 51.63 — every layer above written against the contract, so the interim invisible to it.**
+
+*Outgoing statement.* "The build-selection + extend **contract** is what every layer above is written against, so the interim is invisible to them." — §11 *Risks & technical debt* (locator: lines 237–238).
+
+*Derived statements that speak to it.* L2-S22 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S22: **AGREES** — as at Row 6.55.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L2-S22), travelling with Row 6.55.
+
+---
+
+**Row 51.64 — glossary: the note model.**
+
+*Outgoing statement.* "**Note model** — the clean, complete, tie-resolved, start-time-ordered list of sounding notes for the user-selected music." — §12 *Glossary* (locator: lines 242–243).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(i).
+
+---
+
+**Row 51.65 — glossary: tie-resolved.**
+
+*Outgoing statement.* "**Tie-resolved** — a group of tied notes is treated as one single held note (one start time, one end time)." — §12 *Glossary* (locator: line 243).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iii).
+
+---
+
+**Row 51.66 — glossary: lossless.**
+
+*Outgoing statement.* "**Lossless** — keeping every note and its exact facts, never dropping or summarising them (Section 1)." — §12 *Glossary* (locator: line 244).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(i).
+
+---
+
+**Row 51.67 — glossary: a span of time and a time-position.**
+
+*Outgoing statement.* "**Span of time / time-position** — a stretch between two absolute positions in the piece; a query asks about notes within such a stretch." — §12 *Glossary* (locator: lines 244–246).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iii).
+
+---
+
+**Row 51.68 — glossary: widening the span.**
+
+*Outgoing statement.* "**Widen the span** — extend the analysed music earlier and/or later in time, on a later architectural layer's request." — §12 *Glossary* (locator: lines 246–247).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 43.75(ii).
+
+---
+
+**Row 51.69 — glossary: the backward search limit, removed.**
+
+*Outgoing statement.* "**Backward-in-time search limit** — an earlier, now-removed cap on how far earlier in time a query searched (it lost long-held notes)." — §12 *Glossary* (locator: lines 247–248).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a removal.
+
+---
+
+**Row 51.70 — glossary: the derived summary view.**
+
+*Outgoing statement.* "**Derived summary view** — a read-only summary built on top of the note model (for example `weightedPcView`, `soundingAt`)." — §12 *Glossary* (locator: lines 248–249).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 22.38(ii).
+
+---
+
+**Row 51.71 — glossary: staff-eligible.**
+
+*Outgoing statement.* "**Staff-eligible** — the note's staff takes part in tonal analysis (drum/percussion staves, the chord-symbol track, and hidden staves are not staff-eligible)." — §12 *Glossary* (locator: lines 249–250).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L0 — The notated record* (the input contract), travelling with Row 22.37(iv).
+
+---
+
+**Row 51.72 — tie and playback handling taken from MuseScore's own note model.**
+
+*Outgoing statement.* "**Tie and playback resolution** comes from MuseScore's own note model (`firstTiedNote`/`lastTiedNote`/`playTicksFraction`), not reinvented." — §14 *Related work & external sources* (locator: lines 271–272).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the note model take its handling of ties and playback from MuseScore's own note model at the current commit?
+
+---
+
+**Row 51.73 — the chorale set and a Corelli trio used to confirm the index on a large corpus.**
+
+*Outgoing statement.* "**Corpora used:** the **353-piece Bach chorale set (plus a Corelli trio)** — used to confirm the look-up index stays correct and fast at scale." — §14 *Related work & external sources* (locator: lines 276–277).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past measurement.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (17)
+
+1. "| Term | Meaning (or citation) |" (15) — *a table's header row*.
+2. "|---|---|" (16) — *a table's separator row*.
+3. "| **Tie-resolved / lossless** | §1's two founding ideas; fuller rows in §12. |" (21) — *a pointer*.
+4. "| **Byte-identical** | Output identical byte-for-byte to the previous behaviour on the pinned outputs (the project's regression discipline). |" (22) — *a definition of a term of the project's vocabulary*.
+5. "| **Phase-1a / Phase-1b** | The extend operation's delivery increments, defined in `cowork_layer1_extend_design.md` (1a = contract + interim whole-score re-walk; 1b = the span-scoped walk, byte-identical efficiency). |" (23) — *a definition of a term of the project's vocabulary, with a pointer*.
+6. "| **The system check (§10)** | The project's per-event oracle-root corpus metric and the two automated suites `composing_tests` and `notation_tests` (runbook: `build_and_test.md`; gate policy: CLAUDE.md). |" (24) — *a definition of a term of the project's vocabulary, with pointers*.
+7. "**Two ideas Architectural Layer 1 is built on:**" (42) — *a label*.
+8. "**What Architectural Layer 1 explicitly does NOT do** (stated because each boundary matters):" (67) — *a label*.
+9. "**What Architectural Layer 1 offers (the operations other code calls):**" (108) — *a label*.
+10. "**Implementation (source files):** the note model and its look-up index are in … (`weightedPcView`, `soundingAt`)." (132–135) — *pointers to the implementation's source files*.
+11. "*(Only terms we coined or use in a specific way — standard musical terms are assumed known.)*" (241) — *the document's account of itself*.
+12. "*The project's aim is to be the best harmonic inferrer it can be, so we take the best ideas from the field and say plainly which we rejected.*" (266–267) — *the document's account of itself*.
+13. "**Built on:** the idea of a **lossless symbolic-music event list** (as opposed to a reduced summary) — the same stance as music21's note/stream model and the MusicXML/MEI source formats; we keep the notes and summarise only in the derived views." (268–270) — *provenance*.
+14. "**Standard interval-query data structures** (interval trees / segment trees) for the fast "which notes sound between A and B" look-up." (270–271) — *provenance*.
+15. "**Discarded / not used:** **summarising notes to pitch classes at read time** — rejected here because it is lossy; summarising belongs in the derived views, on top of the lossless model." (273–274) — *a rejected alternative named with its reason*.
+16. "(The earlier per-consumer collectors are in Section 13.)" (274–275) — *a pointer*.
+17. "(The key/chord research corpora are referenced in the later architectural layers that use them.)" (277–278) — *a pointer*.
+
+#### The arithmetic at this member
+
+- Rows written: **73** (51.1 to 51.73); 15 of them carry two or three claims each and are split — 12 rows carry two
+  claims and 3 rows carry three.
+- **Outgoing statements placed: 91.**
+- Listed under *not a statement*: **17**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 91 dispositions over 91
+  statements.
+- **UNPLACED at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 6 | 51.9(iii), 51.15(ii), 51.21(i), 51.23(ii), 51.60(i), 51.63 |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 62 | 51.1, 51.2, 51.3, 51.4(i), 51.4(ii), 51.5, 51.6, 51.7, 51.8, 51.9(i), 51.9(ii), 51.10, 51.11(i), 51.12(i), 51.12(ii), 51.13, 51.14, 51.15(i), 51.16, 51.17, 51.18, 51.19(i), 51.19(ii), 51.19(iii), 51.20, 51.22, 51.23(i), 51.24, 51.25, 51.26, 51.27, 51.28(i), 51.28(ii), 51.29, 51.30, 51.31, 51.32, 51.33, 51.34, 51.35, 51.40, 51.41, 51.42, 51.43, 51.44, 51.45, 51.48, 51.49, 51.50, 51.51, 51.52(ii), 51.53, 51.54, 51.55, 51.57(ii), 51.59, 51.64, 51.65, 51.66, 51.67, 51.68, 51.71 |
+| QUARANTINED | 14 | 51.11(ii), 51.21(ii), 51.36, 51.37(ii), 51.38, 51.39, 51.46, 51.47, 51.52(i), 51.58, 51.60(ii), 51.61(ii), 51.70, 51.72 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 9 | 51.37(i), 51.37(iii), 51.56(i), 51.56(ii), 51.57(i), 51.61(i), 51.62, 51.69, 51.73 |
+| UNPLACED | 0 | — |
+| **Total** | **91** | — |
+
+**The arithmetic closes at this member**: 6 + 0 + 62 + 14 + 0 + 9 + 0 = 91, against 91 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 6 |
+| DIFFERS | 2 |
+| THE DERIVATION IS SILENT | 83 |
+| **Total verdicts** | **91** |
+
+*(91 verdicts over 91 statements; no statement names two derived statements.)* DIFFERS: 51.21(ii), 51.52(i).
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact names no home of a decision ruled L2's own inside this member; the two
+  decisions homed inside its ranges, D-519 and D-520, are none of them L2's own, as the manifest states.
+- **SEEN rows: none.** None of the eight homes lies in this document; the check was made at the homes, as the manifest
+  states.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** Rows 51.15(ii), 51.21(i), 51.21(ii),
+  51.23(ii), 51.52(i) and 51.63 name L2-S22, and each says so.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -65993,6 +66999,31 @@ the row says which.
 - Row 46.112(ii) — travelling with Row 43.75(ii): loading the supplier's.
 - Row 49.42 — travelling with Row 22.37(i): the consumers' sounding tones read from the published note surface, the raw
   facts.
+- Row 51.1 — travelling with Row 45.82: the selection, the loaded span and the context span.
+- Rows 51.2, 51.4(i), 51.9(i), 51.13, 51.57(ii) and 51.71 — travelling with Row 22.37(iv): every note kept, the ones
+  that should not feed the analysis only marked — the staff-eligibility and the per-note plays and visible flags among
+  the facts, grace notes handled in no special way.
+- Row 51.3 — travelling with Row 17.36: the chord-symbol track, a staff whose notes are kept and marked ineligible.
+- Rows 51.5, 51.18, 51.32, 51.49, 51.50, 51.51, 51.65 and 51.67 — travelling with Row 22.37(iii): a group of tied notes
+  one held note, and a query over a span answered by overlap with no limit on how far back it searches.
+- Rows 51.6 and 51.7 — only ties join written notes into one sounding note; slurred notes stay separate, each with its
+  own start, end and duration.
+- Rows 51.8, 51.9(ii), 51.10, 51.11(i), 51.16, 51.17, 51.29, 51.30, 51.64 and 51.66 — travelling with Row 22.37(i): the
+  lossless note model, reading the selected music once, the one reading for the whole analysis, never weighting,
+  averaging or summarizing a note.
+- Rows 51.12(ii) and 51.40 — travelling with Row 45.23(i): the note model knowing nothing of tonalities, chords and
+  function.
+- Rows 51.14, 51.24, 51.25, 51.26 and 51.27 — the note model building or widening only when its caller asks, neither
+  watching for an edit of the score nor deciding that it is out of date.
+- Rows 51.15(i), 51.20, 51.22, 51.23(i), 51.34, 51.52(ii) and 51.68 — travelling with Row 43.75(ii): the supplier
+  widening the loaded span earlier, later or both on request and taking in the further notes.
+- Rows 51.19(i), 51.19(ii), 51.28(i), 51.31, 51.33, 51.42, 51.43, 51.44, 51.45, 51.48 and 51.55 — the note model over a
+  selection of any size and style, its stated query cost through the look-up index, its results fixed once built, its
+  notes returned in start order and the query for the notes starting in a span, and how it is built and what it holds.
+  *(Row 51.44 travels with Row 51.19(ii), Row 51.48 with Row 51.43 and Row 51.55 with Row 51.42.)*
+- Rows 51.35 and 51.59 — travelling with Row 45.45: building over a selection, then extending on request.
+- Rows 51.41, 51.53 and 51.54 — travelling with Row 22.37(ii): the note record and the eleven facts it carries, at
+  absolute positions in the piece.
 
 **To *L1 — Change points, candidates and notated evidence*.**
 
@@ -66105,6 +67136,9 @@ the row says which.
 - Row 46.107 — travelling with Row 6.7(i): the metric weight not copied into an event of the voice-linear view, read on
   demand from the one shared machinery.
 - Row 48.16(i) — travelling with Row 4.4: the key-agnostic cadence scan built at the half-tier.
+- Row 51.4(ii) — travelling with Row 40.3: the voice-level eligibility, defined by the consuming specification from
+  the note model's staff flag and its two per-note flags.
+- Row 51.12(i) — travelling with Row 6.6(i): cutting the music into spans, which is not the note model's.
 
 **To *L3 — The read-off facts*.**
 
@@ -66688,6 +67722,9 @@ the row says which.
 - Rows 49.51, 49.52, 49.53, 49.54(i) and 49.55 — the establishment of the spelling derivation, of the augmented-sixth
   sub-type read, of the modal-reading counter, of the slice by parity with the probe, and of the formatter's continuity
   with the batch render.
+- Row 51.19(iii) — the speed measurement checking the note model's query cost, the index against a linear scan over
+  a large piece.
+- Row 51.28(ii) — the only permitted changes to the note model's code returning identical results.
 
 *(Member 1's relocations are the rows numbered 1.n above. Member 2 relocates no row. Member 3 relocates one, Row 3.38,
 above. Member 4's relocations are the rows numbered 4.n above. Member 5's relocations are the rows
@@ -66698,7 +67735,7 @@ numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
 above. Member 31 relocates no row, and member 32's relocations are the rows numbered 32.n above. Member 33's relocations are the rows numbered 33.n
-above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, and member 50's the rows numbered 50.n.)*
+above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, and member 51's the rows numbered 51.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -67761,6 +68798,22 @@ rows here, each with its audit question, in the commit that tabulates it.
   recognize only that order?
 - Row 50.77 — does the dormant catalog component encode the five idioms as a multi-valued set on each entry at the
   current commit?
+- Rows 51.11(ii), 51.46, 51.47 and 51.70 — travelling with Row 22.38(ii): does the legacy weighted pitch-class view run
+  on any production path at the current commit, and what reads it?
+- Rows 51.21(ii) and 51.52(i) — travelling with Row 2.47(ii): what does the built reach-back facility track, and what is
+  its stop test?
+- Row 51.36 — does the built extension at the current commit only add notes, widen by one increment per call, and clamp
+  and report at the edge of the piece?
+- Rows 51.37(ii), 51.58 and 51.61(ii) — travelling with Row 2.16(ii): does the note model now load the whole score
+  regardless of the selection, so that no enlargement is ever requested?
+- Row 51.38 — does the key code's built reach-back request its further music through the note model's extension at the
+  current commit?
+- Row 51.39 — which code reads the note model at the current commit — the two summary views, the slicer and the key
+  code — and on which paths?
+- Row 51.60(ii) — travelling with Row 2.17: what stretch does the shipped program analyze, and on which path is the whole
+  score analyzed?
+- Row 51.72 — does the note model take its handling of ties and playback from MuseScore's own note model at the
+  current commit?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -68734,6 +69787,9 @@ words.
   fitted, whole-reading-normalised model (L2-S35) assigns."*
 - Row 50.20 — as at Row 5.83: the outgoing names *"the primary functional root motions"* of a fixed functional flow;
   L2-S34 has *"a term on the pair of adjacent chords *read as degrees in their tonalities*"* whose weights are fitted.
+- Rows 51.21(ii) and 51.52(i) — as at Row 2.47(ii): the outgoing requester stops when *"the leading-edge settled key
+  stops changing"*; L2-S22 *"stops asking when its in-span publication stops changing between successive
+  enlargements"*.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -68795,9 +69851,10 @@ own distribution table in §6.
 | 48 | 79 | 33 | 5 | 10 | 0 | 0 | 20 | 11 | 8 |
 | 49 | 70 | 14 | 1 | 32 | 6 | 0 | 10 | 7 | 10 |
 | 50 | 85 | 1 | 0 | 60 | 7 | 0 | 8 | 9 | 22 |
-| **Total** | **5134** | **652** | **111** | **1161** | **1495** | **0** | **1331** | **384** | **2223** |
+| 51 | 91 | 6 | 0 | 62 | 14 | 0 | 9 | 0 | 17 |
+| **Total** | **5225** | **658** | **111** | **1223** | **1509** | **0** | **1340** | **384** | **2240** |
 
-**The arithmetic check:** 652 + 111 + 1161 + 1495 + 0 + 1331 + 384 = 5134, against 5134 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70 + 85).
+**The arithmetic check:** 658 + 111 + 1223 + 1509 + 0 + 1340 + 384 = 5225, against 5225 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70 + 85 + 91).
 
 **Current-text verdicts.**
 
@@ -68853,9 +69910,10 @@ own distribution table in §6.
 | 48 | 36 | 12 | 32 | 80 |
 | 49 | 31 | 12 | 29 | 72 |
 | 50 | 2 | 1 | 82 | 85 |
-| **Total** | **963** | **818** | **3409** | **5190** |
+| 51 | 6 | 2 | 83 | 91 |
+| **Total** | **969** | **820** | **3492** | **5281** |
 
-**The arithmetic check:** 963 + 818 + 3409 = 5190 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72 + 85).
+**The arithmetic check:** 969 + 820 + 3492 = 5281 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72 + 85 + 91).
 
 ## 14. The derivation's independence record, relayed
 
@@ -68886,4 +69944,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 50 are done, positions 51 to 62 are untouched.
+  untouched: positions 1 to 51 are done, positions 52 to 62 are untouched.
