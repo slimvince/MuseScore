@@ -93,7 +93,7 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 49 | `cowork_notation_output_contract.md` passages | **DONE** (§6.49) |
 | 50 | `cowork_progression_schema_dictionary.md` passages | **DONE** (§6.50) |
 | 51 | `cowork_layer1_note_model_design.md` passages | **DONE** (§6.51) |
-| 52 | `cowork_confidence_contract.md` passages | NOT YET TABULATED |
+| 52 | `cowork_confidence_contract.md` passages | **DONE** (§6.52) |
 | 53 | `cowork_progression_schema_design.md` passages | NOT YET TABULATED |
 | 54 | `docs/llm_integration.md` passages | NOT YET TABULATED |
 | 55 | `cowork_idiom_entry_mapping.md` passages | NOT YET TABULATED |
@@ -107,15 +107,15 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 51 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 52 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, the `cowork_notation_output_contract.md` passages, the `cowork_progression_schema_dictionary.md` passages, and the `cowork_layer1_note_model_design.md` passages.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, the `cowork_notation_output_contract.md` passages, the `cowork_progression_schema_dictionary.md` passages, the `cowork_layer1_note_model_design.md` passages, and the `cowork_confidence_contract.md` passages.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 51 (D-672).** The first batch, under
+**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 52 (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -143,8 +143,8 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit. **Positions 52 to 62 are UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 52**, `cowork_confidence_contract.md` passages. §7, §8,
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. **Positions 53 to 62 are UNTOUCHED**: not read for tabulation, not
+quoted, not counted and not placed, and nothing in them is partly worked. **The next writing resumes at position 53**, `cowork_progression_schema_design.md` passages. §7, §8,
 §9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
@@ -66908,6 +66908,621 @@ the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** Rows 51.15(ii), 51.21(i), 51.21(ii),
   51.23(ii), 51.52(i) and 51.63 name L2-S22, and each says so.
 
+---
+
+### 6.52 — Member 52: `cowork_confidence_contract.md`, passages
+
+> **Manifest for this member.** Position **52**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_confidence_contract.md`. Label: *"the passages of the document"*. **The seven published ranges**,
+> each as a locator only, by its first and last line as the artifact publishes them (**D-307**); where a boundary line
+> is too long to repeat, it is given by its opening and closing words:
+>
+> 1. lines 36–48, from *"**Rules of use:**"* to *"  a separate ad-hoc judgment."*;
+> 2. lines 52–61, from *"| Layer | Decision | Published confidence (boundary form) | Class | Notes / as-built deltas |"* to *"| **VL-C texture (axis 2)** | **texture-of-span** | the best-vs-second-best **fit** margin"* … *"(nothing compares a VL confidence against a harmonic one). |"*;
+> 3. lines 75–81, from *"- **Frame F-A — cadence-confirmed modulation recompute (L5 §5.4).** Incumbent: L3 key-of-span confidence (Class M,"* to *"  fit). Selection is restricted to carried alternatives / neighbouring committed harmony (never re-derivation)."*;
+> 4. lines 87–98, from *"**★ BEFORE ANY CONVERSION CONSTANT IS FITTED, THE PREMISE THAT A FITTED CONSTANT CAN MAKE TWO DIFFERENTLY-SCALED"* to *"at all, and it binds first."*;
+> 5. lines 102–112, from *"- **R4 (composites).** A composite confidence declares its components, each component's decision and class, and a"* to *"  declared frame (§4) — never ad hoc."*;
+> 6. lines 116–127, from *"- **C1.** Measure **reliability** per (layer × decision type): empirical correctness (against DCML/WiR, on the"* to *"  presets carry the **"empirically-unvalidated"** mark (review A-7) until their ground truth exists."*;
+> 7. lines 131–137, from *"| # | Delta | Home | Close-out |"* to *"| D-INV | exact formulas/ranges at source for every row of §3 | all | gap-analysis Rider 6 (confidence inventory) confirms or corrects §3 |"*.
+>
+> **Every range's first and last line matched the file** at the object this batch read, with no trailing carriage
+> return to set aside — the document's blob carries no carriage return. **The lines between the ranges are outside the
+> member** and are not tabulated, quoted or listed. **No line inside the ranges is a heading.** Outgoing statements:
+> **60** (rows 52.1 to 52.41; 12 of those rows carry two, three or four claims each and are split — the arithmetic is
+> at the foot of this member). Listed under *not a statement*: **6**. Counted at this member by this session; the
+> counts appear here and nowhere else.
+>
+> **What kind of text this member is, and which placement readings apply.** Passages of the cross-layer confidence
+> contract: its rules of use, its per-layer inventory of published confidences, its two built comparison frames, the
+> premise gate on the frames' conversion constants, its combination and squashing rules, its calibration obligations
+> and its table of as-built deltas. **The placement readings are those of the earlier members, applied unchanged.** A
+> rule of the contract goes to *the uncertainty surface*, travelling with the rows that relocated the same content
+> earlier — a confidence in [0,1] at a layer boundary, declared by class and attached to its decision, with Row
+> 5.213(ii); comparison only within one class and a declared frame with Row 6.127(iii); the reliability map with Row
+> 9.23; calibration per preset or idiom with Row 9.62(iii); the phrase-boundary strength with Row 40.2. The texture
+> confidence goes to *the second axis — voice leading*, and the facts of the lowest layers to *L1 — Change points,
+> candidates and notated evidence* with Row 6.7(i). An inventory row describing a dormant layer's confidence is
+> QUARANTINED, travelling with the row that asked about the same mechanism — the key decoder's sequence margin with Row
+> 7.13(i), the chord composite with Row 6.22(iv), the function confidence with Rows 5.212 and 5.213(i), the cadence vote
+> with Row 5.59, the fitted maps with Row 9.143; the tonality's boundary confidence named as the sequence margin travels
+> UNPLACED with Row 7.5(i); the two built frames travel QUARANTINED with Rows 5.16 and 5.158; the gated joint step
+> travels UNPLACED with Row 8.96; a closure, a status, a plan, an owed check or a past measurement is HISTORICAL; how a
+> confidence's reliability is measured goes to *the measurement of the analysis*. A table row is read by row, and a
+> row carrying several claims is split; a bullet of several sentences under one bold title — the two frames — is read
+> as one bullet; a sentence offered as the defense of the rule before it is listed, the second reading rule of §6.
+> **No placement reading is new at this member.**
+>
+> **The WITHHELD homes inside this member:** none — the artifact's `item_4_identities_inside` for position 52 is
+> empty. A check at `tools/audit/decisions/backbone_decisions.json` found four decisions homed in this document, none
+> among the decisions ruled L2's own: **D-268** (lines 36–48, which is range 1 whole) and **D-601** (lines 89–101,
+> which begins inside range 4 and runs past its end at line 98); **D-267** (lines 25–34) and **D-269** (lines 83–85)
+> lie outside the ranges.
+>
+> **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes §5 names lies in this
+> document.
+
+**Row 52.1 — U1: a confidence attaches to a named decision.**
+
+*Outgoing statement.* "**U1.** A confidence attaches to a **named decision** (key-of-slice, chord-of-slice, membership-of-note, cadence-vote, boundary-strength, function-of-unit) — never to "the layer" in general." — §2, the rules of use (locator: lines 37–38).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — as at Row 5.213(ii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 5.213(ii). *(L2-S40 travels with it.)*
+
+---
+
+**Row 52.2 — U2: at a layer boundary a confidence is in [0,1], class-declared, its decision named.**
+
+*Outgoing statement.* "**U2.** At a **layer boundary** (any value another layer may read), a confidence is **[0,1], class-declared, with its decision named**." — §2, the rules of use (locator: lines 39–40).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — as at Row 5.213(ii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 5.213(ii). *(L2-S40 travels with it.)*
+
+---
+
+**Row 52.3 — unbounded internal values permitted inside a layer, squashed at its boundary.**
+
+*Outgoing statement.* "Unbounded internal scores are permitted *inside* a layer but must be squashed at the boundary." — §2, the rules of use (locator: line 40).
+
+*Derived statements that speak to it.* L2-S45 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S45: **AGREES** — as at Row 21.70.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 5.213(ii).
+
+---
+
+**Row 52.4 — U3: two confidences compared only within one class and one declared frame.**
+
+*Outgoing statement.* "**U3.** A consumer may compare two confidences **only within one class and one declared frame** (§4)." — §2, the rules of use (locator: line 41).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — as at Row 6.127(iii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 6.127(iii). *(L2-S40 travels with it.)*
+
+---
+
+**Row 52.5 — a margin read as a probability, or margins of two scorers compared, a violation.**
+
+*Outgoing statement.* "Treating a Class-M margin as a probability (or comparing two Class-M values produced by different scorers without a declared conversion) is a contract violation." — §2, the rules of use (locator: lines 41–43).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — as at Row 6.127(iii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 6.127(iii). *(L2-S40 travels with it.)*
+
+---
+
+**Row 52.6 — U4: a carried-forward confidence keeps its identity downstream.**
+
+*Outgoing statement.* "**U4. Provenance.** A carried-forward confidence keeps its (source layer, decision, class) identity; no silent re-interpretation downstream." — §2, the rules of use (locator: lines 44–45).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER).
+
+---
+
+**Row 52.7 — U5: the uncertain mark a confidence below the layer's declared level.**
+
+*Outgoing statement.* "**U5. Abstention.** The "uncertain" mark ≡ the decision's confidence is below the layer's declared bar (a precision-phase constant)." — §2, the rules of use (locator: lines 46–47).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS** — as at Row 7.14.
+
+*The difference, in both texts' own words.* As at Row 7.14: the outgoing mark is set where *"the decision's confidence is below the layer's declared bar"*; L2-S40 publishes each rival's mass, which *"A consumer may compare"* within one working span's publication.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER).
+
+---
+
+**Row 52.8 — abstention uniform: low confidence in the declared class.**
+
+*Outgoing statement.* "Abstention semantics are therefore uniform: *low confidence in the declared class*, not a separate ad-hoc judgment." — §2, the rules of use (locator: lines 47–48).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 52.7.
+
+---
+
+**Row 52.9 — the two lowest layers publish facts, which carry no confidence.**
+
+*Outgoing statement.* "| L1 / L2 | none | — (facts carry no confidence) | — | By design. |" — §3, the per-layer inventory, row *L1 / L2* (locator: line 54).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, travelling with Row 6.7(i).
+
+---
+
+**Row 52.10 — the phrase-boundary strength: max-normalized, comparable within one piece; a measured split of its two populations.**
+
+*Outgoing statement.* "| L1.5 phrase-boundary | boundary-at-tick | graded boundary strength, max-normalised per profile → [0,1] | M (salience-margin variant) | Relative salience within the profile — **comparable within one score's profile only**; consumers (L5 phrase gate, L6) must not compare across scores. **Stage-5 Task-B spike-vs-surface split MEASURED (Phase 3, 2026-07-06): the SURFACE population alone (98.4 % of ticks), normalized within itself, has usable monotone spread (0.13→0.46 across deciles, mono-viol 2) — a per-population map is fittable in principle at a later increment; the SPIKE population (1.6 %) is a flat ~0.40 cluster. No map fitted now (weak absolute signal, tops at 0.46). The C1 "insufficient spread" reading is refined, not overturned: the spread exists in the surface cues once un-compressed from the spike-dominated per-profile max.** |" — §3, the per-layer inventory, row *L1.5 phrase-boundary* (locator: line 55). Two claims: (i) the phrase-boundary strength is a margin-class confidence, max-normalized per profile and comparable within one piece's profile only; (ii) a measurement split its two populations and fitted no map.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 40.2. (ii) **HISTORICAL** — a past measurement.
+
+---
+
+**Row 52.11 — the tonality's boundary confidence the sequence margin; the emission sigmoid demoted; a map fitted, unwired.**
+
+*Outgoing statement.* "| L3 key/mode | key/mode-of-slice | **sequence margin** (best total vs best total forced-different-at-this-slice, squashed) — THE declared boundary confidence (`HarmonicRegion.keyConfidence`) | M | The right definition (whole-sequence, not local top-2). **Delta D-L3a — ✅ CLOSED (2026-07-04):** the sequence margin (`HarmonicRegion.keyConfidence`) is THE Layer-3 boundary confidence; the C1 emission `normalizedConfidence` (sigmoid) that also rides the boundary is **demoted to an internal gate input** (the 0.8 KeyArea / cadence annotate gate) **+ diagnostic export** — it is not a boundary confidence. Decided by the C1 curves (margin ECE 0.125–0.142 vs sigmoid 0.38–0.44 — 2.8–3.1× better on every preset; `records/cc/reports/cc_c1_reliability_report.md` §3). A declaration-only close-out (comments/naming at the boundary types + gate sites), byte-identical on production and dormant. The deferred "sequence-margin confidence redesign" (L3 §status) is subsumed here; only the Stage-5 Class-M→P calibration of the margin remains. **Stage-5 Class-P map FITTED (Phase 3, 2026-07-06: isotonic, Baroque+Default carriers; held-out ECE 0.027/0.041), WIRING PENDING (engage-adjacent). Jazz carrier UNMAPPED (A-7 empirically-unvalidated). Artifacts: `tools/calibration_maps/stage5_classP_l3_key_margin_{baroque,default}.json`.** |" — §3, the per-layer inventory, row *L3 key/mode* (locator: line 56). Three claims: (i) the tonality's published boundary confidence is the sequence margin, the best total against the best total forced to differ at the slice; (ii) the emission sigmoid is demoted to an internal gate input and a diagnostic, decided by the reliability curves; (iii) a probability-class map is fitted, its wiring pending, one preset unmapped.
+
+*Derived statements that speak to it.* (i) L2-S40. (ii) None. (iii) None.
+
+*Current-text axis.* (i) L2-S40: **DIFFERS** — as at Row 7.5(i). (ii) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does. (iii) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*The difference, in both texts' own words.* (i) As at Row 7.5(i): the outgoing boundary confidence is the *"**sequence margin**"*; L2-S40 publishes *"Mass"*, *"the probability the fitted, whole-reading-normalised model (L2-S35) assigns"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED**, travelling with Row 7.5(i). *What was read:* as at Row 7.5(i). (ii) **QUARANTINED**, travelling with Row 7.13(i). (iii) **QUARANTINED**, travelling with Row 9.143.
+
+---
+
+**Row 52.12 — the chord confidence a squashed composite, vertical-fit only, its carry capped; a map fitted, unwired.**
+
+*Outgoing statement.* "| L4 chord | chord-of-slice (+ per-note membership) | composite: margin ⊕ sufficiency ⊕ membership-cleanliness, squashed | M (declared-composite) | Components + monotone combination declared (§5 R4). **Vertical-fit-only by construction** (no progression signal) — a declared property the L5 override frame (§4) must account for, not a defect. Alternatives capped (topK), spelling-pinned siblings excluded — declared carry limits. **Stage-5 Class-P map FITTED (Phase 3, 2026-07-06: isotonic, Baroque+Default; held-out ECE 0.017/0.016; low band pooled flat to 0.289 — no invented resolution), WIRING PENDING. Jazz UNMAPPED (A-7). Artifacts: `stage5_classP_l4_chord_composite_{baroque,default}.json`.** |" — §3, the per-layer inventory, row *L4 chord* (locator: line 57). Four claims: (i) the chord confidence is a squashed composite of margin, sufficiency and membership cleanliness, of the margin class; (ii) it is vertical-fit only by construction; (iii) the carried alternatives are capped and spelling-pinned siblings excluded; (iv) a probability-class map is fitted, its wiring pending.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None. (iv) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does. (ii) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does. (iii) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does. (iv) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 6.22(iv). (ii) **QUARANTINED**, travelling with Row 6.22(iv). (iii) **QUARANTINED.** *Audit question:* does the dormant chord decoder cap its carried alternatives and exclude spelling-pinned siblings at the current commit? (iv) **QUARANTINED**, travelling with Row 9.143.
+
+---
+
+**Row 52.13 — the function confidence a composite to be published squashed; unbounded as built; not upgradable to a probability.**
+
+*Outgoing statement.* "| L5 function | RN/function-of-unit; cadence; modulation | three fixed components (cadence-vote attribution, licensed-fit, resolver margin) combined at default weights — **must publish squashed [0,1]** | M (declared-composite) | **Delta D-L5a (= review F-1 / L5-close D3):** as built, `FunctionConfidence.combined` is an unbounded additive (observed up to ~5.0) while §8's `earlierConfidence` is [0,1] — the boundary squash required by U2 is missing. Fix at the D3 close-out: keep the additive internally, publish the squashed form. **Stage-5 calibration (Phase 3, 2026-07-06): combinedBoundary NOT Class-P-upgradable as-is — non-monotone mid-range re-confirmed on corpus `c50002fee1` (the 0.6–0.8 band below the 0.5–0.6 band, all presets); map DEFERRED; the inversion is an upstream inference-quality finding.** |" — §3, the per-layer inventory, row *L5 function* (locator: line 58). Three claims: (i) the function confidence combines three components and must be published squashed into [0,1]; (ii) as built its combined value is unbounded, the boundary squash missing until the close-out; (iii) its boundary form is not upgradable to a probability, being non-monotone, the map deferred.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does. (ii) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does. (iii) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 5.212. (ii) **QUARANTINED**, travelling with Row 5.213(i). (iii) **QUARANTINED**, travelling with Row 5.212.
+
+---
+
+**Row 52.14 — the cadence vote evidence, not a boundary confidence; not calibratable.**
+
+*Outgoing statement.* "| L5 cadence vote | tonic-of-span evidence | weighted vote (monotone sum of evidence + salience − type discount) | M (evidence weight) | Votes are **evidence**, not boundary confidences: they enter §4 frames as contradiction strengths. Their scale is fixed by the same squash discipline when compared against a key confidence (frame F-A below). **Stage-5 calibration (Phase 3, 2026-07-06): tonicVote NOT calibratable (anti-monotone, ~3 distinct values); recorded as an upstream detection-quality item (out of arc scope).** |" — §3, the per-layer inventory, row *L5 cadence vote* (locator: line 59). Two claims: (i) the cadence's weighted vote for a tonic is evidence entering the frames as a contradiction strength, not a boundary confidence; (ii) the vote is anti-monotone and not calibratable.
+
+*Derived statements that speak to it.* (i) L2-S34. (ii) None.
+
+*Current-text axis.* (i) L2-S34: **DIFFERS** — as at Row 5.59. (ii) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*The difference, in both texts' own words.* (i) As at Row 5.59: the outgoing cadence casts a *"weighted vote"* for the tonic; L2-S34 says *"confirmation is carried by the progression term over *proposed* chords, not by a separate detector"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 5.59. (ii) **QUARANTINED**, travelling with Row 5.59.
+
+---
+
+**Row 52.15 — the legacy confidence unreliable, with its sentinels; retires at engagement.**
+
+*Outgoing statement.* "| Legacy path | region key/chord | `normalizedConfidence` sigmoid + known sentinels (0.0 / 0.5 hard-coded — Stage-1c G4) | nominally M, unreliable | Documented unreliable (post-promotion re-rank without recompute). **Retires at engage** (the ENGAGE CRITERIA + RETIREMENT MAP block in `docs/implementation_roadmap.md`, R8); the contract does not attempt to repair it. |" — §3, the per-layer inventory, row *Legacy path* (locator: line 60). Two claims: (i) the legacy path's confidence is a sigmoid with hard-coded sentinel values, documented unreliable; (ii) it retires at engagement and is not repaired.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the legacy path's region confidence still carry hard-coded sentinel values at the current commit, and does anything read it? (ii) **HISTORICAL** — a plan.
+
+---
+
+**Row 52.16 — the texture confidence on the second axis: a fit margin, the full ranked list, three floors, no frame.**
+
+*Outgoing statement.* "| **VL-C texture (axis 2)** | **texture-of-span** | the best-vs-second-best **fit** margin, where fit = `exp(−distance/fitScale)` of the z-space (ABz) euclidean distance to a class centroid — already ∈ [0,1) | M | The **axis-2** first judgment component (`cowork_voiceleading_axis_design.md` §5.3; `textureclassifier.h`, DORMANT). The published confidence is the exp-fit margin; squash per **R5** below. The output also carries the **full ranked list of ALL class fits with weights** (zero information loss). Three declared floors — **evidential** (min motion samples), **margin**, **fit** — are precision-phase; abstention = margin < margin-floor OR best fit < fit-floor (contract U5), single-voice → *no-pair* abstention. No new §4 comparison frame (nothing compares a VL confidence against a harmonic one). |" — §3, the per-layer inventory, row *VL-C texture (axis 2)* (locator: line 61). Four claims: (i) the texture confidence is the margin between the best and second-best fits to a class centroid, in [0,1); (ii) the output carries the full ranked list of every class fit; (iii) three declared floors govern abstention; (iv) no new comparison frame is declared for it.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None. (iv) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.** (iii) **THE DERIVATION IS SILENT.** (iv) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the second axis — voice leading*. (ii) **RELOCATED** — to *the second axis — voice leading*, travelling with Row 46.6(i). (iii) **RELOCATED** — to *the second axis — voice leading*. (iv) **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 6.127(iii).
+
+---
+
+**Row 52.17 — frame F-A: the modulation recompute compares the tonality confidence with the cadential vote weight.**
+
+*Outgoing statement.* "**Frame F-A — cadence-confirmed modulation recompute (L5 §5.4).** Incumbent: L3 key-of-span confidence (Class M, squashed sequence margin). Contradiction: accumulated cadential vote weight in the candidate key (Class M evidence weight). Conversion: both mapped to the common [0,1] scale by their declared squashes before the θ-comparison." — §4 *The comparison frames*, the two built instances (locator: lines 75–77).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 5.16.
+
+*The difference, in both texts' own words.* As at Row 5.16: the outgoing frame compares an incumbent tonality confidence with a contradiction *"before the θ-comparison"* that recomputes the tonality; L2-S35 normalizes *"over whole readings"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.16.
+
+---
+
+**Row 52.18 — frame F-B: the fine-grain override compares the chord confidence with a plausibility value, selecting only carried readings.**
+
+*Outgoing statement.* "**Frame F-B — fine-grain chord override (L5 §5.5 case-4).** Incumbent: L4 composite confidence of a `Commit` (Class M; **vertical-fit-only** — the frame's θ accounts for the missing progression term, per L5 §15-2). Contradiction: the functional-plausibility score of the contradicting context (licensed-progression fit + cadential fit). Selection is restricted to carried alternatives / neighbouring committed harmony (never re-derivation)." — §4 *The comparison frames*, the two built instances (locator: lines 78–81).
+
+*Derived statements that speak to it.* L2-S35.
+
+*Current-text axis.* L2-S35: **DIFFERS** — as at Row 5.158.
+
+*The difference, in both texts' own words.* As at Row 5.158: the outgoing frame overrides an incumbent *"L4 composite confidence of a"* commit; L2-S35 normalizes *"over whole readings"*, with no commit made before later evidence is scored.
+
+*PROPOSED DISPOSITION.* **QUARANTINED**, travelling with Row 5.158.
+
+---
+
+**Row 52.19 — the premise that a fitted constant can make two differently ranged confidences comparable passes a ledger and a desk simulation first.**
+
+*Outgoing statement.* "**★ BEFORE ANY CONVERSION CONSTANT IS FITTED, THE PREMISE THAT A FITTED CONSTANT CAN MAKE TWO DIFFERENTLY-SCALED CONFIDENCES COMMENSURABLE MUST ITSELF PASS A PREMISE LEDGER AND A DESK SIMULATION (user-ratified 2026-07-10; re-homed into this section 2026-08-08 under a one-edit authorization for this act alone).**" — §4 *The comparison frames*, the premise gate on conversion constants (locator: lines 87–89).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER).
+
+---
+
+**Row 52.20 — fitting the conversion constants hard-gated on that premise, before the fit.**
+
+*Outgoing statement.* "The `conversion` element of a frame is where two numbers on different scales are made comparable — one bounded, one an unbounded sum — and fitting the constants that perform it is **hard-gated**: the premise *"a fitted constant CAN make these scales commensurable"* is itself a load-bearing causal claim and goes through the #17 ledger and desk simulation BEFORE the fit, not as part of it." — §4 *The comparison frames*, the premise gate on conversion constants (locator: lines 89–93).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 52.19.
+
+---
+
+**Row 52.21 — the premise gate binds before the calibration obligations.**
+
+*Outgoing statement.* "**Where this sits relative to §6:** the calibration obligations there say what must be re-expressed once the fitted maps exist; this says what must be established before anyone fits the conversion at all, and it binds first." — §4 *The comparison frames*, the premise gate on conversion constants (locator: lines 96–98).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 52.19.
+
+---
+
+**Row 52.22 — R4: a composite declares its components and a monotone combination.**
+
+*Outgoing statement.* "**R4 (composites).** A composite confidence declares its components, each component's decision and class, and a **monotone** combination." — §5 *Combination and squashing rules* (locator: lines 102–103).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER).
+
+---
+
+**Row 52.23 — components may be unbounded inside; the published form squashed.**
+
+*Outgoing statement.* "Components may be unbounded internally; the published form is squashed (U2)." — §5 *Combination and squashing rules* (locator: line 103).
+
+*Derived statements that speak to it.* L2-S45 — one §6.3 names as NEAREST to material met (entry 4).
+
+*Current-text axis.* L2-S45: **AGREES** — as at Row 21.70.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 5.213(ii).
+
+---
+
+**Row 52.24 — R5: each layer declares one fixed monotone squash for its boundary confidence.**
+
+*Outgoing statement.* "**R5 (squash maps).** Each layer declares one fixed monotone squash for its boundary confidence(s)." — §5 *Combination and squashing rules* (locator: line 104).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **DIFFERS** — as at Row 5.214.
+
+*The difference, in both texts' own words.* As at Row 5.214: the outgoing layer declares *"one fixed monotone squash for its boundary confidence"*; L2-S40's mass is *"the probability the fitted, whole-reading-normalised model (L2-S35) assigns"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER).
+
+---
+
+**Row 52.25 — the squash's shape structural, its constants precision-phase.**
+
+*Outgoing statement.* "The map's shape is structural (declared here); its constants are precision-phase." — §5 *Combination and squashing rules* (locator: lines 104–105).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 52.24.
+
+---
+
+**Row 52.26 — defaults hold until the constants are fitted.**
+
+*Outgoing statement.* "Until Stage 5 fits them, defaults hold — the point is *declared comparability*, not tuned optimality." — §5 *Combination and squashing rules* (locator: lines 105–106).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 52.27 — the texture squash: the difference of the two best fits.**
+
+*Outgoing statement.* "**VL-C texture-of-span (axis 2).** Squash = the **difference of the two best exp-fits**, `exp(−d₁/fitScale) − exp(−d₂/fitScale)`, where d₁ ≤ d₂ are the nearest and second-nearest z-space centroid distances." — §5 *Combination and squashing rules*, R5 (locator: lines 107–108).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 52.16(i).
+
+---
+
+**Row 52.28 — the texture squash monotone and bounded; its one constant precision-phase.**
+
+*Outgoing statement.* "Monotone in the distance margin and bounded in [0,1) by construction (the exp already squashes the unbounded distance); the single constant `fitScale` is precision-phase (default = the median nearest-centroid distance over the study fit set)." — §5 *Combination and squashing rules*, R5 (locator: lines 108–110).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the second axis — voice leading*, travelling with Row 52.16(i).
+
+---
+
+**Row 52.29 — R6: margins from different scorers compared only through a declared frame.**
+
+*Outgoing statement.* "**R6 (no cross-scorer margin mixing).** Two Class-M values from different scorers are comparable only through a declared frame (§4) — never ad hoc." — §5 *Combination and squashing rules* (locator: lines 111–112).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — as at Row 6.127(iii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 6.127(iii). *(L2-S40 travels with it.)*
+
+---
+
+**Row 52.30 — C1: reliability measured per layer and decision against the human annotation.**
+
+*Outgoing statement.* "**C1.** Measure **reliability** per (layer × decision type): empirical correctness (against DCML/WiR, on the granularity-robust unit — review A-8) as a function of published confidence." — §6 *Calibration obligations (Stage 5)* (locator: lines 116–117).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER), travelling with Row 6.154.
+
+---
+
+**Row 52.31 — the deliverable: reliability curves and maps upgrading each confidence to the probability class.**
+
+*Outgoing statement.* "Deliverable: reliability curves + fitted maps that upgrade each boundary confidence from Class M to Class P." — §6 *Calibration obligations (Stage 5)* (locator: lines 117–118).
+
+*Derived statements that speak to it.* L2-S40.
+
+*Current-text axis.* L2-S40: **AGREES** — as at Row 9.23.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 9.23. *(L2-S40 travels with it.)*
+
+---
+
+**Row 52.32 — C2: every frame's threshold re-expressed against calibrated quantities.**
+
+*Outgoing statement.* "**C2.** Re-express every frame's θ against calibrated quantities (the fitted maps make `θ` interpretable as an odds ratio rather than an arbitrary scale factor)." — §6 *Calibration obligations (Stage 5)* (locator: lines 119–120).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an owed obligation.
+
+---
+
+**Row 52.33 — C3: the gated joint step consumes only calibrated quantities.**
+
+*Outgoing statement.* "**C3.** **The gated joint step consumes only calibrated quantities.**" — §6 *Calibration obligations (Stage 5)* (locator: line 121).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.96.
+
+*The difference, in both texts' own words.* As at Row 8.96: the outgoing *"gated joint step"* is a step of its own beside a tonality chosen first; L2-S11 decides the tonality and the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.96.
+
+---
+
+**Row 52.34 — the joint step's trigger: a key confidence below its declared level and a chord sensitive to the carried keys.**
+
+*Outgoing statement.* "Its trigger — the "flagged minority" of genuinely-coupled key↔chord decisions — is *defined* in contract terms: slices where the L3 key confidence is below its bar **and** the L4 decision is sensitive to the carried key alternatives (i.e. a different carried key flips the chord reading)." — §6 *Calibration obligations (Stage 5)* (locator: lines 121–124).
+
+*Derived statements that speak to it.* L2-S11.
+
+*Current-text axis.* L2-S11: **DIFFERS** — as at Row 8.96.
+
+*The difference, in both texts' own words.* As at Row 8.96: the outgoing trigger fires on *"slices where the L3 key confidence is below its bar"*, beside a chord decided against carried keys; L2-S11 decides the tonality and the chord *"in the one decision"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 8.96. *What was read:* as at Row 8.96.
+
+---
+
+**Row 52.35 — the trigger closed at the definition level; the joint step's design still owed.**
+
+*Outgoing statement.* "This closes review F-16's "named but unspecified" trigger at the definition level; the joint step's own design doc is still owed at Stage 5." — §6 *Calibration obligations (Stage 5)* (locator: lines 124–125).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 52.36 — C4: calibration per preset or idiom; an uncalibrated preset carries the unvalidated mark.**
+
+*Outgoing statement.* "**C4.** Calibration is measured per preset/idiom where the idiom changes the scorer's behavior; uncalibrated presets carry the **"empirically-unvalidated"** mark (review A-7) until their ground truth exists." — §6 *Calibration obligations (Stage 5)* (locator: lines 126–127). Two claims: (i) calibration is measured per preset or idiom where the idiom changes the scorer's behavior; (ii) an uncalibrated preset carries the empirically-unvalidated mark until its ground truth exists.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), travelling with Row 9.62(iii). (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 52.37 — D-L5a: the function confidence's boundary form published; closed.**
+
+*Outgoing statement.* "| D-L5a | `FunctionConfidence.combined` unbounded at the boundary (D3) | L5 §7 | **✅ CLOSED (`0a88747e7f`, 2026-07-02, E0′-verified):** `combinedBoundary = combined/(combined+k)` published at the OUTPUT boundary (`functionoutput` — the §7 L5→L6 contract), observed ∈ [0, 0.9619] ⊂ [0,1) over the full E0 range; the §8 sites do NOT read `combined` (verified at source: incumbents are the F-A/F-B quantities below); internal additive unchanged |" — §7 *As-built deltas to close*, row *D-L5a* (locator: line 133). Two claims: (i) the function confidence's boundary form is published as a squash of the internal value, which no override site reads; (ii) the delta is closed.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 5.212. (ii) **HISTORICAL**, travelling with Row 8.29.
+
+---
+
+**Row 52.38 — D-FS: the frames' contradiction ranges undeclared, then declared; the fine-grain override's net harm confirmed.**
+
+*Outgoing statement.* "| D-FS | The FRAME CONTRADICTION scales are undeclared: F-B's `bestPlaus − committedPlaus` (plausibility diff) and F-A's `cadentialWeight` are unbounded/unsquashed while their incumbents are [0,1] — the live commensurability gap behind the E0 override net-harm (968 fires / 45 corrections) | §4 frames / `forwardoverride` call sites | declare both scales (observed ranges measured at E0′ #9 rider); squash-map shape + θ fitted at Stage-5 calibration (C2) — no behavior change before then. **Stage-5 Phase 3 (2026-07-06): scales DECLARED — F-A `cadentialWeight` squash `x/(x+3.5)`, F-B `bestPlaus−committedPlaus` squash `x/(x+2.0)` (R5; constants precision-phase; ranges re-confirmed on corpus `c50002fee1`). θ candidates FITTED, RECORDED, UNWIRED (dormant-chain sites; adoption rides the engage arc): F-A reduced candidate τ≈5.0 (corr−harm +6→+15 fit, +3→+5 held-out; full form deferred — the L3 incumbent is absent from the modulations dump); ★ F-B net-harm CONFIRMED + quantified — 1043 fires / 53 corrections / 809 harms (~78 % of fires move an L4-correct root wrong); the best measurable θ effectively DISABLES the override → a REDESIGN item for the engage arc (the contradiction quantity is too coarse {2,3} and the incumbent band too high), not a θ retune.** |" — §7 *As-built deltas to close*, row *D-FS* (locator: line 134). Three claims: (i) the frames' contradiction quantities are unbounded while their incumbents lie in [0,1]; (ii) the value ranges were declared with their squashes and the thresholds fitted, recorded and left unwired; (iii) the fine-grain override's net harm is confirmed, the best measurable threshold disabling it.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does. (ii) **THE DERIVATION IS SILENT.** (iii) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 5.213(i). (ii) **HISTORICAL** — a past measurement. (iii) **QUARANTINED**, travelling with Row 8.18(i).
+
+---
+
+**Row 52.39 — D-L3a: the sequence margin declared the boundary confidence; closed; two dormant sites with no margin to read.**
+
+*Outgoing statement.* "| D-L3a | two key confidences ride the boundary (sequence margin + C1 emission sigmoid) | L3 wiring | **✅ CLOSED (`f6f5137008`, 2026-07-04, C1-verified):** the sequence margin (`HarmonicRegion.keyConfidence`) declared THE Layer-3 boundary confidence; the emission sigmoid (`normalizedConfidence`) demoted to an internal gate input (the 0.8 annotate gate) + diagnostic. A **declaration-only** close-out — byte-identical on production AND dormant: no re-pointable D-L5a analogue exists (the two dormant sigmoid-stand-in sites — the joint re-key path `regionanalyzer.cpp` and the fullspine grouping dump `batch_analyze.cpp` — have **no sequence-margin substrate** on their path, so re-pointing would compute a non-existent value; recorded as a joint-key/Stage-5 gap, not this close-out). Evidence: margin ECE 0.125–0.142 vs sigmoid 0.38–0.44 (`records/cc/reports/cc_c1_reliability_report.md` §3). Full provenance: `records/cc/reports/cc_dl3a_closeout_report.md` |" — §7 *As-built deltas to close*, row *D-L3a* (locator: line 135). Two claims: (i) the delta is closed by a declaration only, byte-identical; (ii) two dormant sites that stand in the sigmoid have no sequence margin on their path.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT.** (ii) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a closure. (ii) **QUARANTINED**, travelling with Row 7.13(i).
+
+---
+
+**Row 52.40 — D-LEG: the legacy sentinels not repaired; they retire at engagement.**
+
+*Outgoing statement.* "| D-LEG | legacy sentinels (0.0/0.5) + post-promotion staleness | legacy resolver | no repair; retires at engage (A-2 map) |" — §7 *As-built deltas to close*, row *D-LEG* (locator: line 136). Two claims: (i) the legacy resolver carries sentinel values and stale confidences after promotion; (ii) it is not repaired and retires at engagement.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does. (ii) **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 52.15(i). (ii) **HISTORICAL** — a plan.
+
+---
+
+**Row 52.41 — D-INV: the inventory's formulas confirmed at source by a later rider.**
+
+*Outgoing statement.* "| D-INV | exact formulas/ranges at source for every row of §3 | all | gap-analysis Rider 6 (confidence inventory) confirms or corrects §3 |" — §7 *As-built deltas to close*, row *D-INV* (locator: line 137).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT.**
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an owed check.
+
+---
+
+#### Not a statement — listed so the arithmetic closes (6)
+
+1. "**Rules of use:**" (36) — *a label*.
+2. "| Layer | Decision | Published confidence (boundary form) | Class | Notes / as-built deltas |" (52) — *a table's header row*.
+3. "|---|---|---|---|---|" (53) — *a table's separator row*.
+4. "*Why the gate is on the PREMISE and not on the fit:* the one calibration attempted so far failed, and it failed **non-monotonically** — which is evidence against the premise itself rather than against the particular constant, since a monotone relationship is exactly what a single conversion factor would have to express." (93–96) — *a defense*.
+5. "| # | Delta | Home | Close-out |" (131) — *a table's header row*.
+6. "|---|---|---|---|" (132) — *a table's separator row*.
+
+#### The arithmetic at this member
+
+- Rows written: **41** (52.1 to 52.41); 12 of them carry two or more claims each and are split — 7 rows carry two
+  claims, 3 rows carry three and 2 rows carry four.
+- **Outgoing statements placed: 60.**
+- Listed under *not a statement*: **6**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 60 dispositions over 60
+  statements.
+- **UNPLACED at this member: 3** — listed in the distribution below.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 28 | 52.1, 52.2, 52.3, 52.4, 52.5, 52.6, 52.7, 52.8, 52.9, 52.10(i), 52.16(i), 52.16(ii), 52.16(iii), 52.16(iv), 52.19, 52.20, 52.21, 52.22, 52.23, 52.24, 52.25, 52.27, 52.28, 52.29, 52.30, 52.31, 52.36(i), 52.36(ii) |
+| QUARANTINED | 19 | 52.11(ii), 52.11(iii), 52.12(i), 52.12(ii), 52.12(iii), 52.12(iv), 52.13(i), 52.13(ii), 52.13(iii), 52.14(i), 52.14(ii), 52.15(i), 52.17, 52.18, 52.37(i), 52.38(i), 52.38(iii), 52.39(ii), 52.40(i) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 10 | 52.10(ii), 52.15(ii), 52.26, 52.32, 52.35, 52.37(ii), 52.38(ii), 52.39(i), 52.40(ii), 52.41 |
+| UNPLACED | 3 | 52.11(i), 52.33, 52.34 |
+| **Total** | **60** | — |
+
+**The arithmetic closes at this member**: 0 + 0 + 28 + 19 + 0 + 10 + 3 = 60, against 60 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 8 |
+| DIFFERS | 8 |
+| THE DERIVATION IS SILENT | 44 |
+| **Total verdicts** | **60** |
+
+*(60 verdicts over 60 statements; no statement names two derived statements.)* DIFFERS: 52.7, 52.11(i), 52.14(i), 52.17, 52.18, 52.24, 52.33, 52.34.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** The artifact names no home of a decision ruled L2's own inside this member; the two
+  decisions homed inside or across its ranges, D-268 and D-601, are none of them L2's own, as the manifest states.
+- **SEEN rows: none.** None of the eight homes lies in this document; the check was made at the homes, as the manifest
+  states.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** Rows 52.3 and 52.23 name L2-S45, and each
+  says so.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -67139,6 +67754,7 @@ the row says which.
 - Row 51.4(ii) — travelling with Row 40.3: the voice-level eligibility, defined by the consuming specification from
   the note model's staff flag and its two per-note flags.
 - Row 51.12(i) — travelling with Row 6.6(i): cutting the music into spans, which is not the note model's.
+- Row 52.9 — travelling with Row 6.7(i): the facts of the two lowest layers, which carry no confidence.
 
 **To *L3 — The read-off facts*.**
 
@@ -67431,6 +68047,9 @@ the row says which.
   harmonic pattern only and the complete schema recognized with the voice-leading dimension.
 - Row 50.49(ii) — travelling with Row 21.65: the line of the line cliché, voice leading held elsewhere.
 - Row 50.50 — travelling with Row 21.67: a voicing substitution, a voicing outside the catalog.
+- Rows 52.16(i), 52.16(ii), 52.16(iii), 52.27 and 52.28 — the texture confidence as the margin between the two best
+  fits to a class centroid, its squash and its one constant, the full ranked list of class fits, and three floors
+  governing abstention. *(Row 52.16(ii) travels with Row 46.6(i); Rows 52.27 and 52.28 with Row 52.16(i).)*
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -67461,6 +68080,26 @@ the row says which.
 - Rows 46.47(i), 46.47(ii) and 46.118 — travelling with Rows 5.213(ii) and 6.127(iii): every published confidence of the
   second axis in [0,1], declared by class and attached to a named decision, and no new comparison frame across layers
   until the contract declares one, the design declaring none.
+- Rows 52.1, 52.2, 52.3 and 52.23 — travelling with Row 5.213(ii): a confidence attached to a named decision, in
+  [0,1] at a layer boundary and declared by class, unbounded values squashed at the boundary. *(L2-S40 travels with
+  Rows 52.1 and 52.2.)*
+- Rows 52.4, 52.5, 52.16(iv) and 52.29 — travelling with Row 6.127(iii): confidences compared only within one class
+  and a declared frame, margins of different scorers never mixed ad hoc, no new frame for the texture confidence.
+  *(L2-S40 travels with Rows 52.4, 52.5 and 52.29.)*
+- Row 52.6 — a confidence carried forward keeping its source layer, decision and class.
+- Rows 52.7 and 52.8 — the uncertain mark as a confidence below the layer's declared level, abstention uniform.
+  *(L2-S40 DIFFERS at Row 52.7.)*
+- Row 52.10(i) — travelling with Row 40.2: the phrase-boundary strength, max-normalized and comparable within one
+  piece's profile only.
+- Rows 52.19, 52.20 and 52.21 — the premise that a fitted constant can make two differently ranged confidences comparable
+  passing a premise ledger and a desk simulation before any conversion constant is fitted, binding before the
+  calibration obligations.
+- Rows 52.22, 52.24 and 52.25 — a composite declaring its components and a monotone combination, each layer declaring
+  one fixed monotone squash, its shape structural and its constants precision-phase. *(L2-S40 DIFFERS at Row 52.24.)*
+- Row 52.31 — travelling with Row 9.23: reliability curves and fitted maps upgrading each boundary confidence to the
+  probability class. *(L2-S40 travels with it.)*
+- Row 52.36(i) — travelling with Row 9.62(iii): calibration measured per preset or idiom where the idiom changes the
+  scorer's behavior.
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -67725,6 +68364,9 @@ the row says which.
 - Row 51.19(iii) — the speed measurement checking the note model's query cost, the index against a linear scan over
   a large piece.
 - Row 51.28(ii) — the only permitted changes to the note model's code returning identical results.
+- Row 52.30 — travelling with Row 6.154: the reliability of each layer's published confidence measured against the
+  human annotation on the robust unit.
+- Row 52.36(ii) — the empirically-unvalidated mark carried by an uncalibrated preset until its ground truth exists.
 
 *(Member 1's relocations are the rows numbered 1.n above. Member 2 relocates no row. Member 3 relocates one, Row 3.38,
 above. Member 4's relocations are the rows numbered 4.n above. Member 5's relocations are the rows
@@ -67735,7 +68377,7 @@ numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
 above. Member 31 relocates no row, and member 32's relocations are the rows numbered 32.n above. Member 33's relocations are the rows numbered 33.n
-above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, and member 51's the rows numbered 51.n.)*
+above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 51's the rows numbered 51.n, and member 52's the rows numbered 52.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -68814,6 +69456,28 @@ rows here, each with its audit question, in the commit that tabulates it.
   score analyzed?
 - Row 51.72 — does the note model take its handling of ties and playback from MuseScore's own note model at the
   current commit?
+- Rows 52.11(ii) and 52.39(ii) — travelling with Row 7.13(i): how does the dormant key decoder compute its sequence
+  margin, and what reads it?
+- Rows 52.11(iii) and 52.12(iv) — travelling with Row 9.143: do the recorded reliability curves and fitted maps of the
+  dormant layers' confidences reproduce at the current commit, and does anything on the production arm read a map?
+- Rows 52.12(i) and 52.12(ii) — travelling with Row 6.22(iv): what confidence does the dormant decoder attach to a
+  slice, and from which components is it computed?
+- Row 52.12(iii) — does the dormant chord decoder cap its carried alternatives and exclude spelling-pinned siblings at
+  the current commit?
+- Rows 52.13(i), 52.13(iii) and 52.37(i) — travelling with Row 5.212: does the dormant function layer publish a
+  boundary form of its confidence, and how is it computed?
+- Rows 52.13(ii) and 52.38(i) — travelling with Row 5.213(i): is the dormant function layer's internal combined value
+  unbounded, and does the recorded observation reproduce?
+- Rows 52.14(i) and 52.14(ii) — travelling with Row 5.59: does the dormant cadence detector cast a weighted tonic vote
+  per region, and what does the vote change?
+- Rows 52.15(i) and 52.40(i) — does the legacy path's region confidence still carry hard-coded sentinel values at the
+  current commit, and does anything read it?
+- Row 52.17 — travelling with Row 5.16: does the dormant function layer's modulation recompute exist as described, and
+  does it run on any arm?
+- Row 52.18 — travelling with Row 5.158: does the dormant function layer override a confident Layer 4 commit through
+  the selection machinery, and does it run?
+- Row 52.38(iii) — travelling with Row 8.18(i): does the recorded count of the fine-grain override's corrections and
+  harms reproduce at the current commit, on which decode?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -69790,6 +70454,20 @@ words.
 - Rows 51.21(ii) and 51.52(i) — as at Row 2.47(ii): the outgoing requester stops when *"the leading-edge settled key
   stops changing"*; L2-S22 *"stops asking when its in-span publication stops changing between successive
   enlargements"*.
+- Row 52.7 — as at Row 7.14: the outgoing mark is set where *"the decision's confidence is below the layer's declared
+  bar"*; L2-S40 publishes each rival's mass, which *"A consumer may compare"* within one working span's publication.
+- Row 52.11(i) — as at Row 7.5(i): the outgoing boundary confidence is the *"sequence margin"*; L2-S40 publishes
+  *"Mass"*, *"the probability the fitted, whole-reading-normalised model (L2-S35) assigns"*.
+- Row 52.14(i) — as at Row 5.59: the outgoing cadence casts a *"weighted vote"* for the tonic; L2-S34 says
+  *"confirmation is carried by the progression term over proposed chords, not by a separate detector"*.
+- Row 52.17 — as at Row 5.16: the outgoing frame compares an incumbent tonality confidence with a contradiction
+  *"before the θ-comparison"*; L2-S35 normalizes *"over whole readings"*.
+- Row 52.18 — as at Row 5.158: the outgoing frame overrides an incumbent *"L4 composite confidence of a"* commit;
+  L2-S35 normalizes *"over whole readings"*.
+- Row 52.24 — as at Row 5.214: the outgoing layer declares *"one fixed monotone squash for its boundary
+  confidence"*; L2-S40's mass is *"the probability the fitted, whole-reading-normalised model (L2-S35) assigns"*.
+- Rows 52.33 and 52.34 — as at Row 8.96: the outgoing *"gated joint step"* stands beside a tonality chosen first;
+  L2-S11 decides the tonality and the chord *"in the one decision"*.
 
 ## 13. The distribution so far, counted at this file's own rows
 
@@ -69852,9 +70530,10 @@ own distribution table in §6.
 | 49 | 70 | 14 | 1 | 32 | 6 | 0 | 10 | 7 | 10 |
 | 50 | 85 | 1 | 0 | 60 | 7 | 0 | 8 | 9 | 22 |
 | 51 | 91 | 6 | 0 | 62 | 14 | 0 | 9 | 0 | 17 |
-| **Total** | **5225** | **658** | **111** | **1223** | **1509** | **0** | **1340** | **384** | **2240** |
+| 52 | 60 | 0 | 0 | 28 | 19 | 0 | 10 | 3 | 6 |
+| **Total** | **5285** | **658** | **111** | **1251** | **1528** | **0** | **1350** | **387** | **2246** |
 
-**The arithmetic check:** 658 + 111 + 1223 + 1509 + 0 + 1340 + 384 = 5225, against 5225 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70 + 85 + 91).
+**The arithmetic check:** 658 + 111 + 1251 + 1528 + 0 + 1350 + 387 = 5285, against 5285 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70 + 85 + 91 + 60).
 
 **Current-text verdicts.**
 
@@ -69911,9 +70590,10 @@ own distribution table in §6.
 | 49 | 31 | 12 | 29 | 72 |
 | 50 | 2 | 1 | 82 | 85 |
 | 51 | 6 | 2 | 83 | 91 |
-| **Total** | **969** | **820** | **3492** | **5281** |
+| 52 | 8 | 8 | 44 | 60 |
+| **Total** | **977** | **828** | **3536** | **5341** |
 
-**The arithmetic check:** 969 + 820 + 3492 = 5281 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72 + 85 + 91).
+**The arithmetic check:** 977 + 828 + 3536 = 5341 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72 + 85 + 91 + 60).
 
 ## 14. The derivation's independence record, relayed
 
@@ -69944,4 +70624,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 51 are done, positions 52 to 62 are untouched.
+  untouched: positions 1 to 52 are done, positions 53 to 62 are untouched.
