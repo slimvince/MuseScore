@@ -143,7 +143,7 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 54 to 61, each whole in its own commit, and stopped at the member boundary after position 61 because that dispatch bounded the batch there. The fourteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourteenth_2026_10_04.md`, opened with position 62 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, and stopped at the section boundary after position 62 because §7's generated reconciliation to §13 did not hold, which that dispatch's Task 1(e) made a STOP (the difference located by row in `records/cc/reports/cc_report_l2_comparison_tabulation_fourteenth_2026_10_04.md` §2.7). The fifteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifteenth_2026_10_04.md`, opened with §7 as that dispatch ordered (**D-670**) and wrote §7, §8 and §9, each whole in its own commit. §7, §8 and §9 are written; §14 stays NOT YET WRITTEN, to be written once each, in the order §7, §8, §9, §14. **A member marked NOT YET TABULATED is UNTOUCHED** — not
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 54 to 61, each whole in its own commit, and stopped at the member boundary after position 61 because that dispatch bounded the batch there. The fourteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourteenth_2026_10_04.md`, opened with position 62 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, and stopped at the section boundary after position 62 because §7's generated reconciliation to §13 did not hold, which that dispatch's Task 1(e) made a STOP (the difference located by row in `records/cc/reports/cc_report_l2_comparison_tabulation_fourteenth_2026_10_04.md` §2.7). The fifteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifteenth_2026_10_04.md`, opened with §7 as that dispatch ordered (**D-670**) and wrote §7, §8, §9 and §14, each whole in its own commit, so that the file's population and its once-written sections are complete. §7, §8, §9 and §14 are written. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
 ---
@@ -74727,11 +74727,222 @@ Member 62's 49 pointer rows and 3 flagged items are not counted in this table ei
 
 ## 14. The derivation's independence record, relayed
 
-**NOT YET WRITTEN.** Written once, after the last member: the derivation's §6.1 to §6.6 relayed whole,
-as facts, with no verdict word attached. **Stated now because it binds every row before then:** the
-wider check — whether an outgoing statement is the home of any design-intent entry the pack rendered in
-member 05 within the lines the deriving session read, other than the eight §5 names — is NOT made by
-this comparison.
+**Written once, after the last member.** The derivation's independence record — its §6.1 to §6.6 — is relayed
+below whole, verbatim from the derivation, in a block quote, each subsection under the derivation's own heading. It
+is relayed as facts: this file attaches no word of its own to it and says nothing about the deriving session beyond
+what the quotation itself says.
+
+> ### 6.1 What reached this session, and how
+>
+> - **Message one** carried the brief alone. The boot declaration inventoried every block in context by
+>   its opening line. Nothing outside the allow-list was present, and no project folder was connected.
+>   The user accepted the declaration.
+> - **Message two** attached eighteen files. The harness had already placed some of them in context,
+>   whole or in part, before the session's turn began. Two named files did not arrive: the input
+>   contract and `wq55n02a.mscx`. The session tried one direct path each for the contract and did not
+>   hunt. It stopped and asked.
+> - **Message three** attached the input contract and a file named **`wq55n05a.mscx`**, a different piece
+>   (C. P. E. Bach, Wq. 55/5, first movement). It was not on the brief's list. The harness pre-read it to
+>   its first 2,000 lines (the header and about nine bars of music). Those lines contained no `<Harmony>`
+>   and no `<StaffText>` element. The session stopped and reported.
+> - **Message four** attached `wq55n02a.mscx` without a written ruling on `wq55n05a.mscx` or on opening
+>   the input contract. **The session read the user's act as supplying the correct file in place of the
+>   wrong one, and proceeded. That reading is stated here so it can be overruled.** `wq55n05a.mscx` is
+>   treated as received in error: nothing from it enters any statement, and nothing further of it was
+>   read.
+> - **During message two's turn, tools reaching the user's computer ("louqe") became available.** None
+>   was called at any point. No folder was connected.
+> - **No shell touched project material.** The container shell was used only to read the clock and to
+>   assemble this file from the session's own scratch drafts.
+>
+> ### 6.2 Every file opened, with the extent read
+>
+> | File | How it reached context | Extent read |
+> |---|---|---|
+> | The brief | message one | whole |
+> | `00_READ_THIS_FIRST.md` | pre-read | whole |
+> | `01_the_phase_definitions.md` | pre-read | whole |
+> | `02_the_guiding_principles_and_the_conventions.md` | pre-read | whole |
+> | `03_the_writing_standards.md` | pre-read | whole |
+> | `04_the_dispatch_protocol.md` | opened by the session | lines 1–803 of 1,427; **stopped** (§6.3) |
+> | `05_the_ratified_design_intent.md` | opened by the session | lines 1–965 of 2,224; **stopped** (§6.3) |
+> | `06_the_defect_type_catalog.md` | pre-read | whole |
+> | `07_the_charter_the_layers_and_the_decisions.md` | pre-read | whole |
+> | `08_the_fifty_six_research_extracts.md` | opened by the session, source by source | see the list below |
+> | `09_the_empirical_findings_ledger.md` | pre-read | whole |
+> | The input contract | opened by the session | whole (lines 1–1,697) |
+> | Ex 1 `K545-1.mscx` | opened by the session | lines 1–60 (the style header), then a search returning the `<Harmony>` label names of staff 2 in bar order, with the bar markers. The music itself was not read. |
+> | Ex 2 `analysis_DT.txt` | pre-read | whole |
+> | Ex 3 `02_second_prelude.mscx` | pre-read to line 2,000 of a longer file, then a search returning the `<Harmony>` label names in bar order | music: bars 1 to about 12. Labels: all. |
+> | Ex 4 `011 Jesu, nun sei gepreiset.mscx` | pre-read to line 2,000 | music: staff 1 whole, staff 2 bars 1 to about 4. Nothing beyond line 2,000 was opened. |
+> | Ex 5 `analysis.txt` | pre-read | whole |
+> | Ex 6 `bwv1049_03_presto.mscx` | not pre-read | **contents unopened.** Only the element counts below were taken. |
+> | Ex 7 `wq55n02a.mscx` | attached in message four | **contents unopened.** Only the element counts below were taken. |
+> | `wq55n05a.mscx` (not on the list) | pre-read to line 2,000 | received in error; nothing used |
+>
+> **Member 08, source by source.** Read whole (every section of the source's extract):
+> - Rocher, Robine, Hanna & Oudre 2010
+> - Catteau, Martens & Leman
+> - Raphael & Stoddard 2003
+> - Temperley 2009
+> - Chew
+> - Feisthauer, Bigo, Giraud & Levé 2020
+> - Masada & Bunescu
+> - Yang, Cwitkowitz & Duan 2023 (Harana)
+> - Ju, Condit-Schultz, Arthur & Fujinaga
+> - Condit-Schultz, Ju & Fujinaga
+> - de Clercq
+> - McLeod & Rohrmeier 2021
+> - BACHI
+> - de Haas et al. (HarmTrace)
+> - McLeod & Rohrmeier 2024
+> - Hu & Arthur 2021
+> - Feisthauer 2021 (Lille thesis)
+> - Nápoles López et al. 2020
+> - Sapp 2005
+>
+> Read in part:
+> - Och (whole extract read; see §6.3 for a stop point inside it)
+> - Lafferty, McCallum & Pereira (the label-bias section only)
+> - Sarawagi & Cohen (identity lines only, met at a page boundary)
+>
+> Not read:
+> - Ni et al.
+> - Noland & Sandler
+> - Temperley 2002
+> - Korzeniowski & Widmer
+> - Sheh & Ellis
+> - Chen & Su (three papers)
+> - Micchi, Gotham & Giraud
+> - AugmentedNet
+> - ChordGNN
+> - RNBERT
+> - AnalysisGNN
+> - Wu et al.
+> - Ng & Jordan
+> - Sha & Pereira
+> - Sutton & McCallum
+> - Burgoyne et al.
+> - Ju et al. (interactive workflow)
+> - Harasim et al.
+> - Rohrmeier (both)
+> - Tsushima et al.
+> - Granroth-Wilding (both)
+> - Jacoby et al.
+> - Illescas et al.
+> - Viaccoz et al.
+> - Humphrey & Bello
+> - Eerola & Schutz
+> - the Irish mode pair
+> - Hentschel et al. 2021
+> - Hamanaka et al.
+> - Lazzari
+>
+> The heading list of the whole member was read once by search, to locate sources. **A source not read
+> yields no statement.** Where the charter or the input contract relays a figure from one of them, the
+> statement cites the charter or the contract, not the source.
+>
+> **Fetched research.** None. No paper was fetched and no primary was re-read. Every FACT label above
+> is relayed from member 08's extracts, and is marked so. The brief's reporting bound therefore has
+> nothing to report under "re-read and why".
+>
+> ### 6.3 The stop-on-meeting record
+>
+> Each entry gives the file, the place, how much was seen, and what the session did. Nothing below
+> enters any statement, and the statements that come nearest are named so the comparison can check
+> them.
+>
+> 1. **Member 09 (the ledger), pre-read whole.** Several entries name mechanisms of this project's
+>    implementation. At C44, the entry "does NOT bear on the fitted semi-Markov joint decode", which it
+>    calls "the production design". At C46, "the shape the production engine now has". At C9, C11 and
+>    C47, a named gate, "our carried menu" and "a carried key candidate list". At C14, the not-admitted
+>    half, "detect and reinterpret the signature one step", a design decision, D-575. Seen whole, because
+>    the file arrived pre-read. **Nearest statements.** L2-S31 (semi-Markov form) rests on the charter's
+>    DP-C and the published systems, not on C44's wording. L2-S17 (the key-signature prior's spread)
+>    rests on C14's admitted fact half, and is flagged in its own defense for the comparison to check.
+> 2. **Member 01, pre-read.** Line 73 names "the joint estimator decision (option A, 2026-07-17)", with
+>    no content. Nothing follows from it.
+> 3. **Member 04, opened by the session.** Lines 355–361 describe how a code path in the implementation
+>    behaves. It is not specifically L2's subject, but the pack's own stop clause is wider than the
+>    brief's. One Read call delivered lines 1–803 at once, so lines past 361 were seen too. The session
+>    stopped reading member 04 there. **No statement comes near it.**
+> 4. **Member 05, opened by the session.** One Read call delivered lines 1–965 at once, so the whole page
+>    was seen before a stop was possible. It contains statements about the current implementation, at:
+>    - D-002 (line 16): a compiled table set and a selected weight vector
+>    - D-095 (lines 135–136): a dormant legacy path
+>    - D-223 (lines 398–400)
+>    - D-261 (lines 460–464): an as-built reach-back that tracks a leading-edge settled tonality across
+>      iterations
+>    - D-275 (lines 577–578): a decoder version
+>    - D-279 (line 593)
+>    - D-322 (lines 678–684): a written candidate-score expression
+>    - D-393 (lines 821–822): "L4's ranked chord readings"
+>
+>    The session stopped reading member 05 at line 965, and lines 966–2,224 are unread. **Nearest
+>    statements.** L2-S22 cites D-261's ratified clauses 3 to 6 and explicitly not its as-built sentence.
+>    L2-S42 and L2-S45 cite D-275's rule that provenance travels with the record, not its mention of a
+>    decoder. An earlier draft of L2-S43 cited D-322 for tie handling. **That citation was removed before
+>    delivery and replaced by principle #16**, so that the entry carrying the written expression is not a
+>    ground for anything here.
+> 5. **The input contract, opened by the session.** In the page covering lines 708–1,207:
+>    - lines 1,031–1,034 name "the outgoing *derived on demand* clause and the `[0.5, 1.0]` number" as
+>      superseded, which describes an outgoing specification's metric weighting
+>    - lines 1,128–1,131 list the relocated phrase-boundary mechanism's parts (a graded profile, weights,
+>      thresholds, peak-picking)
+>
+>    The first concerns L1's outgoing text and an L2-adjacent weight. The second concerns L3. **The
+>    session did not stop.** It judged these to be the contract's own record of what it superseded or
+>    relocated, not a statement of L2's design, and the contract is the authority it must read whole.
+>    **That is a judgment, and it is recorded as one.** Lines 1,208–1,697 were read after it. **Nearest
+>    statement:** L2-S12, which sets no value and cites only the ratified ownership sentence (Ruling 47).
+> 6. **Member 08, opened by the session.** At lines 6,015–6,018, inside the Och extract, a reader's note
+>    says this project keeps "the robust unit as the fitting objective", which is a statement about how
+>    the project fits. It was read in a 120-line page, and the rest of that page was seen. **The session
+>    did not stop reading member 08 there.** Three further ranges were read afterwards: lines
+>    10,177–10,516 (in the same parallel call), 8,300–8,649 and 6,140–6,184. **This is a deviation from
+>    the brief's stop rule, and it is recorded as one.** Line 8,534 also mentions a project grading
+>    convention (D-211). **Nearest statement:** L2-S38 (fit to the graded measure). It rests on the
+>    charter's DP-P and on Och's own paper as extracted, and the phrase "robust unit" enters nothing.
+> 7. **The rest of the brief's own text and the charter** state L2's ratified charter, which the session
+>    is meant to read. That is not a meeting in the brief's sense.
+>
+> ### 6.4 `<Harmony>` and `<StaffText>` elements passed over in exemplars 4, 6 and 7
+>
+> Taken by an element count, without reading contents.
+>
+> | Exemplar | `<Harmony>` | `<StaffText>` | Note |
+> |---|---|---|---|
+> | 4 `011 Jesu, nun sei gepreiset.mscx` | 0 | 2 | Both staff texts lie inside the pre-read lines (85–89). Their text, the chorale's title and a catalogue line, was therefore seen. Nothing was derived from it. |
+> | 6 `bwv1049_03_presto.mscx` | 0 | 0 | — |
+> | 7 `wq55n02a.mscx` | 167 | 13 | Contents not read. |
+>
+> ### 6.5 Where a case or an L1 output was wanted and an open question was written instead
+>
+> - **L1 outputs:** successor links in a chordal voice (OQ-L2-9); lowest sounding pitch per slice
+>   (OQ-L2-11); an established cue window (OQ-L2-12).
+> - **Cases the staged set does not supply** (as read): an enharmonic modulation (OQ-L2-17); a pedal
+>   point under several spans (OQ-L2-18).
+> - **Alignment not established:** exemplar 5's bar numbers against exemplar 4's bars. The analysis's
+>   `m0` is assumed to be the score's opening one-quarter bar, so analysis bar *n* is the score's
+>   (*n*+1)-th bar element. This was checked only at the 3/4 change (analysis `m13`, the score's
+>   fourteenth bar element, marked 3/4). Around the repeat (`m8 I :|| b4 V`), the score's
+>   three-quarter bar before the repeat and the analysis's "b4" were not reconciled. No statement rests
+>   on bar positions in exemplar 5 beyond the labels quoted.
+>
+> ### 6.6 Exemplars as exemplars
+>
+> No count was taken from any exemplar as evidence, and no statement rests on a frequency in them. The
+> two readings of exemplar 1's piece are cited only to show that the readings differ, at named bars:
+> bar 4 (figure), bars 11 and 24 (the cadential six-four), bars 31–32 (where D minor begins), and bar 41
+> (pivot against direct change). The disagreements are not counted.
+
+**Where the record above names the passages its session met (its §6.3), the rows of this file that carry a SEEN mark**
+are Row 15.19, Row 17.5 (claim (i)), Row 17.14 and Rows 45.7 to 45.15, found by a scripted search of every member's
+foot for its *SEEN rows:* line and read at the three feet that name rows, §6.15's, §6.17's and §6.45's.
+
+**Stated here because it bound every row:** the wider check — whether an outgoing statement is the home of any
+design-intent entry the pack rendered in member 05 within the lines the deriving session read, other than the eight §5
+names — is NOT made by this comparison.
 
 ## 15. What the user is asked to rule in this file
 
@@ -74754,4 +74965,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is complete over its population**, and §0 says so: positions 1 to 62 are done, and no member is untouched. Its
-  once-written sections — §7, §8, §9 and §14 — stand as §0 says: §7, §8 and §9 are written; §14 is NOT YET WRITTEN.
+  once-written sections — §7, §8, §9 and §14 — stand as §0 says: §7, §8, §9 and §14 are written.
