@@ -143,7 +143,7 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 54 to 61, each whole in its own commit, and stopped at the member boundary after position 61 because that dispatch bounded the batch there. The fourteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourteenth_2026_10_04.md`, opened with position 62 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, and stopped at the section boundary after position 62 because §7's generated reconciliation to §13 did not hold, which that dispatch's Task 1(e) made a STOP (the difference located by row in `records/cc/reports/cc_report_l2_comparison_tabulation_fourteenth_2026_10_04.md` §2.7). The fifteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifteenth_2026_10_04.md`, opened with §7 as that dispatch ordered (**D-670**) and wrote it whole in its own commit. §7 is written; §8, §9 and §14 stay NOT YET WRITTEN, to be written once each, in the order §7, §8, §9, §14. **A member marked NOT YET TABULATED is UNTOUCHED** — not
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 54 to 61, each whole in its own commit, and stopped at the member boundary after position 61 because that dispatch bounded the batch there. The fourteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourteenth_2026_10_04.md`, opened with position 62 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, and stopped at the section boundary after position 62 because §7's generated reconciliation to §13 did not hold, which that dispatch's Task 1(e) made a STOP (the difference located by row in `records/cc/reports/cc_report_l2_comparison_tabulation_fourteenth_2026_10_04.md` §2.7). The fifteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifteenth_2026_10_04.md`, opened with §7 as that dispatch ordered (**D-670**) and wrote §7 and §8, each whole in its own commit. §7 and §8 are written; §9 and §14 stay NOT YET WRITTEN, to be written once each, in the order §7, §8, §9, §14. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
 ---
@@ -71305,9 +71305,174 @@ Each equation sets the count this section's entries give against §13's total as
 
 ## 8. The open questions OQ-L2-1 to OQ-L2-18
 
-**NOT YET WRITTEN.** Written once, after the last member: each listed ungraded with one sentence on what
-the outgoing text says, or that it says nothing. **The five ★ questions are listed exactly like the
-other thirteen and put to nobody.**
+**Written once, after the last member.** Each of the derivation's eighteen open questions is quoted from the
+derivation, whole, in a block quote, and is followed by ONE sentence on what the tabulated outgoing text says to it.
+That sentence names the rows of §6.1 to §6.62 whose outgoing statements speak to the question's subject — found by a
+search over those rows' *Outgoing statement.* quotations and read at the row — and quotes them in their own words;
+where the search finds nothing, the sentence says so and names what was searched for. **Nothing here is judged,
+recommended or answered**: a sentence reports what the rows carry, and says nothing about whether a question is
+settled, open or well put. The five questions the derivation marks as ones its session would put to the user
+carry that mark only inside their own quotation, are listed exactly like the other thirteen, and are put to
+nobody.
+
+**OQ-L2-1**
+
+> **OQ-L2-1 (face (a); L2-S2, S4, S5, S6, S10) — the closure measurement.** Convert every annotated
+> span of the grading corpora (both of exemplar 1's traditions, and exemplar 5's with its variants) into
+> L2's four fields, and list every annotated reading the admission rule does not reach. This decides
+> the vocabulary's completeness (ninth, added-sixth and eleventh classes; double-accidental tonics;
+> applied-chain depth; an enharmonic allowance for chord-tone membership). *A measurement, not a
+> ruling.* UNESTABLISHED.
+
+The tabulated outgoing text speaks to the vocabulary at Row 6.33, where the added notes — *"any sixth, ninth, eleventh, thirteenth, or altered tone above the basic quality"* — are *"read off the membership decision"*, and at Row 6.85, *"Added notes (sixths, ninths) are not candidate types"*, and to the admission rule at Row 1.8, *"what the decoder does narrow has no specified form"*; a search for a double sharp, a double flat or a double accidental, and for the chain or the depth of an applied chord, finds no row.
+
+**OQ-L2-2**
+
+> **OQ-L2-2 ★ (face (a), (c); L2-S6) — modes.** *Question for the user:* does L2 admit modal readings
+> (Dorian, Phrygian, Mixolydian) as tonalities, or read modal passages as major or minor with altered
+> degrees, as the grading ground truth does? The literature on chorale melodies is split (L2-S6).
+
+The tabulated outgoing text speaks to it at Row 7.42, a tonal center *"combined with one of 21 modes, giving 252 possible key/modes"*, at Row 7.48, *"Recognizing all 21 modes does not mean all 21 can be measured"*, at Row 48.29, *"The joint state's mode axis is {major, minor}"*, and at Row 49.31, *"No 21-value mode label is inferred or published anywhere"*.
+
+**OQ-L2-3**
+
+> **OQ-L2-3 (face (b), (c), (f); L2-S7, S12, S17, S20, S34) — the measured shapes and values.** The
+> maximum span length if any; the metric weights; the key-signature prior's spread and weight; the
+> recency form of the tonality degree evidence; the choice between Lerdahl's and Weber's tonal spaces.
+> *Measurements, held out.* UNESTABLISHED.
+
+The tabulated outgoing text speaks to the span-length bound at Row 10.32, *"Segment duration is otherwise implicit-geometric with a hard length cap"*, and at Row 17.10, *"seg_cap 4"*, to the metric weights at Row 48.13, *"beat strength / metric position → emission weighting"*, and to the signature's prior at Row 48.48, a *"weak, fitted, transposition-invariant soft prior on (tonic, mode)"*, and at Row 48.50, *"measured mass one fifth away in minor"*; a search for Lerdahl, Weber and recency finds no row.
+
+**OQ-L2-4**
+
+> **OQ-L2-4 ★ (face (a), (d); L2-S8) — the elaboration relations.** *Question for the user:* is the
+> charter's list (passing, neighbour, suspension, anticipation) exhaustive? Or are appoggiatura, escape
+> tone, pedal point, retardation, and an "unclassified elaboration" admitted as well?
+
+The tabulated outgoing text names more relations than the charter's four at Row 13.3, *"appoggiaturas, escape tones, pedal tones, chromatic neighbors, cambiata, échappée"*, and at Row 48.45, *"Ornament labels (passing tone, neighbor tone, suspension, appoggiatura, pedal point) are derived AFTER the decode"*, and treats two of them at Row 6.91, *"An appoggiatura (leapt to, resolved by step), an escape tone (approached by step, left by leap)"*; a search for retardation finds no row.
+
+**OQ-L2-5**
+
+> **OQ-L2-5 ★ (face (c); L2-S19) — pivot chords.** *Question for the user:* may L2 publish a span as a
+> pivot carrying two tonalities in its principal reading, or is the charter's "the tonality" per span
+> singular, so that a pivot is expressed only as two rivals?
+
+The tabulated outgoing text speaks to the pivot chord at Row 10.43, *"Pivot-chord modulation says entry depends on the OLD key too (the pivot is diatonic in both)"*, at Row 30.58, the *"last chord before the key boundary that is diatonic to both the old and new key is the pivot"*, and at Row 30.60, *"When no pivot chord exists (direct chromatic modulation)"*; of the twenty rows a search for pivot finds, none says whether one span's principal reading may carry two tonalities.
+
+**OQ-L2-6**
+
+> **OQ-L2-6 (face (c), (h); L2-S22) — convergence of masses.** When L2 enlarges its context, what counts
+> as its in-span publication "no longer changing": the principal reading only, the rival set, or the
+> masses within a bound? D-261 says "in-selection output", and the masses are real numbers.
+
+The tabulated outgoing text states the stop as convergence at Row 45.12, *"extend until the layer's in-selection output stops changing with further context"*, and the built test at Row 45.14, which *"tracks the leading-edge settled key across iterations and stops when it repeats"*, and at Row 2.47, where *"the as-built tracks the leading-edge key itself"*; these rows name the in-selection output and the leading-edge settled tonality as what is tracked.
+
+**OQ-L2-7**
+
+> **OQ-L2-7 (face (b); L2-S1, S14) — annotation boundaries inside one harmony.** Exemplar 3's tradition
+> writes a new label where a suspension resolves (`V7(4)/iv` then `V7/iv`). Exemplar 1's writes
+> `V2(4) … V43`. L2 publishes one span with a suspension assignment. *For the measurement-design stage:*
+> how boundary grading maps an annotation's retardation labels onto L2's span-plus-assignment. Also,
+> how a restatement after a phrase end (`|| b4 I`) is graded.
+
+The tabulated outgoing text places the cadential six-four as *"the dominant's accented suspension, not a tonic arrival"*, with the instruction to *"collapse the pair into a single dominant approach"* (Row 5.100), and says a passing-tone slice *"carries the same chord analysis as its neighbors"* (Row 43.150); a search for retardation finds no row, and the twenty rows a search pairing grading with boundary finds speak of the phrase-boundary profile, none of how an annotation's new label where a suspension resolves is matched against one span.
+
+**OQ-L2-8**
+
+> **OQ-L2-8 ★ (face (f), (g); L2-S23, S36) — tractability.** *First a measurement:* does exact (or
+> bound-safe) inference over the joint state fit on the scores the project must handle? Those include
+> very large scores [RULED — D-201]. *Then, if not, a question for the user:* narrow the admission rule
+> (with L2-S2's ceiling cost), or relax the charter's no-discarding rule, and by how much?
+
+The tabulated outgoing text states *"The decode is EXACT; the declared reserve prune was never adopted"* (Row 1.8), that the prune *"was never adopted: measured at the fitted weights its cost is worse than exact decode"* (Row 1.11), and that with *"chorale-scale event counts (roughly 60–150 events)"* the *"exact decode is expected tractable"* (Row 10.52); the six rows a search for very large, large scores and orchestral finds say nothing about the cost of the decode.
+
+**OQ-L2-9**
+
+> **OQ-L2-9 (face (d); L2-S24) — successor note in a chordal voice.** L1 publishes, per notated voice,
+> the relation to the preceding note and a chordal count. In a voice that sounds several pitches, no
+> note-to-note successor is published. *The input-contract statements concerned:* S-50's list, with
+> Rulings 49 and 61. Would L1 publish per-note predecessor and successor links within a chordal voice,
+> or is the elaboration term inactive there by design?
+
+The tabulated outgoing text records that *"A voice whose events are chords is recorded as a chordal voice (a fact)"* (Row 46.26) and that a consumer needing one line names a reduction rule, *"v1 provides exactly one: top-note — the highest sounding pitch per event"* (Row 46.75); of the seventeen rows a search for chordal voice, successor, following note and next note finds, none names a link from a pitch event to its successor inside a chordal voice.
+
+**OQ-L2-10**
+
+> **OQ-L2-10 (face (d); L2-S26) — relations for grace notes.** Does L2 publish an elaboration relation
+> for a grace attachment (such as "appoggiatura to host"), given D-295's "every inferred object must be
+> displayable"?
+
+The tabulated outgoing text says *"Grace notes are ornamental, not harmonic — always exclude from analysis"* (Row 23.336), that *"a grace does not open a slice of its own — it is annotated onto the following slice as an ornament"* (Row 43.125), and lists *"Grace notes (embellishment hints)"* among the notated evidence (Row 44.15); none of the sixteen rows a search for grace finds speaks of a relation published for a grace attachment.
+
+**OQ-L2-11**
+
+> **OQ-L2-11 (face (e); L2-S28) — lowest sounding pitch per slice.** L1 publishes the lowest sounding
+> pitch as a cue anchor at onset change points and in cue witnesses (IC S-44, S-49), not for every
+> slice. The figure term wants it for every slice. *The input-contract statements concerned:* S-44 and
+> S-50. Would S-50's list gain the lowest sounding pitch per slice?
+
+The tabulated outgoing text names the bass of each slice as *"the lowest sounding note"* (Row 5.32), the bass as the *"lowest sounding pitch"* (Row 23.292), and the bass factor as evaluated per event, *"each event's sounding bass against the segment's chord"* (Row 10.17, claim (ii)).
+
+**OQ-L2-12**
+
+> **OQ-L2-12 (face (f); L2-S37) — the cue window.** The measurement IC S-48 names ("owed to L2's
+> calibration"): the distribution of the distance from the last sounding of the fourth and seventh
+> degrees to the annotated arrival, and S-45's recall as a function of look-back. Until it runs, two of
+> the three cues cannot carry load in L2. UNESTABLISHED.
+
+The tabulated outgoing text names the cadence factor's features at Row 10.34, *"the tritone pair (both the fourth and seventh degrees of k sounding in the approach)"* among them, and the tritone resolution at Row 5.93, where *"the dominant's tritone (the fourth and seventh degrees) contracts or expands by step to the tonic's third and root"*; the three rows a search for cue window, look-back and the fourth and seventh degrees finds include Row 7.156's *"fixed look-back/look-ahead window"* of a replaced per-region selection, and none names a measurement of the window the question describes.
+
+**OQ-L2-13**
+
+> **OQ-L2-13 (face (d), (f); L2-S38) — ground truth for assignments.** No annotated corpus this
+> session knows of carries per-note chord-tone and elaboration labels made independently of the chord
+> labels. Fitting and grading the assignment half of the decision needs one, or a ruling that the
+> assignments are graded only through the chord.
+
+The tabulated outgoing text says *"Non-chord-tone detection waits for the annotated material it needs"* (Row 3.11) and records the detection as *"Deferred until LLM-triage corpus data identifies which analyzer gaps NCT detection would actually address"* (Row 13.1); none of the thirty-nine rows a search for NCT and for non-chord-tone ground truth, annotation and labels finds names a corpus of chord-tone and elaboration labels made apart from the chord labels.
+
+**OQ-L2-14**
+
+> **OQ-L2-14 (face (g); L2-S40) — naming mass against D-267.** Is the un-calibrated whole-reading
+> distribution declared as Class M (with its squash to 0..1 being the normalisation itself), or does
+> D-267 need a third named class? The session holds that it behaves as a margin for comparison purposes
+> and does not decide the naming.
+
+The tabulated outgoing text names the two confidence classes at Row 9.22, *"Class M = a squashed decision margin (a rank statement)"* among them, declares confidences of that class at Row 6.127, *"a margin-family quantity, not a calibrated probability"*, and at Row 7.13, *"Declared Class M (a margin, not a calibrated probability)"*, and publishes the uncertainty surface at Row 47.22 as *"per-span/state marginal mass from exact forward-backward over the decode lattice"*.
+
+**OQ-L2-15**
+
+> **OQ-L2-15 (face (g); L2-S41, S42) — how much is published.** The number of whole readings, and the
+> mass threshold below which a span-rival is withheld. *Measured* against what the consumers (L3, the
+> display) actually read. UNESTABLISHED.
+
+The tabulated outgoing text says *"No truncation constant exists anywhere in the publication"* (Row 49.23) and that *"both axes publish the FULL scoreable candidate lists"* (Row 49.22), while the chord layer's carried alternatives *"are capped at a fixed number of highest-ranked readings"* (Row 6.192).
+
+**OQ-L2-16**
+
+> **OQ-L2-16 ★ (face (h); L2-S46) — the graded order.** *Question for the user:* is the ground truth
+> this project grades against aligned to notated order or to unfolded order? Is the working span a
+> stretch of notated bars, or of the performed sequence? (This is the remainder of the input
+> contract's OQ-1.)
+
+A search for unfold, volta, notated order and performed order finds no row, and the twenty rows a search for repeat finds either name a repeat sign or barline as notated evidence, as Rows 5.39, 40.50 and 44.7 do, or speak of something repeated, none saying in which order the ground truth is aligned or which order is checked against it.
+
+**OQ-L2-17**
+
+> **OQ-L2-17 (face (a)–(e), a case the staged set does not supply).** An enharmonic modulation, such
+> as a German sixth reinterpreted as a dominant seventh. Spelled tonalities (L2-S1, S6) make the pivot a
+> respelling. None of the exemplars read carries one, so how a reading crosses it is not derived here.
+
+The tabulated outgoing text says *"A key SPAN needs an enharmonic-identity rule, and it does not have one"* (Row 2.50) and *"Enharmonic reinterpretation is handled at the single-chord level"* (Row 2.51), and names an enharmonic key-span identity rule for the case *"when two candidate keys are enharmonically equivalent"* (Row 5.346).
+
+**OQ-L2-18**
+
+> **OQ-L2-18 (face (e), a case the staged set does not supply).** A chord over a pedal point, where the
+> pedal is not a chord member for several spans. It is admitted as a relation only if OQ-L2-4 admits
+> "pedal point". The staged exemplars read here carry no clear instance (exemplar 6's music was not
+> read, §6).
+
+The tabulated outgoing text says a structurally lighter lowest tone *"may not belong to the chord formed by the upper voices"* (Row 24.92), that engaged Layer 5 *"needs pedal detection as a reader over the carry"* (Row 8.104), and that *"The pedal-point flags are not carried"* (Row 6.125).
 
 ## 9. The derivation's §7 — the five places the decomposition seemed wrong or incomplete
 
@@ -74547,4 +74712,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is complete over its population**, and §0 says so: positions 1 to 62 are done, and no member is untouched. Its
-  once-written sections — §7, §8, §9 and §14 — stand as §0 says: §7 is written; §8, §9 and §14 are NOT YET WRITTEN.
+  once-written sections — §7, §8, §9 and §14 — stand as §0 says: §7 and §8 are written; §9 and §14 are NOT YET WRITTEN.
