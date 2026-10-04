@@ -8,7 +8,7 @@
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md` Task 1, and further under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifth_2026_09_28.md` Task 1, and further under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md` Task 1, and further under
-> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourteenth_2026_10_04.md` Task 1, executing
+> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourteenth_2026_10_04.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifteenth_2026_10_04.md` Task 1, executing
 > the user's ruling of 2026-09-27, Option B
 > (`records/cowork/rulings/cowork_rulings_2026_09_27_l2_outgoing_population_sitting.md` §2), the
 > named-documents ruling of the same date, Option B
@@ -143,7 +143,7 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 54 to 61, each whole in its own commit, and stopped at the member boundary after position 61 because that dispatch bounded the batch there. The fourteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourteenth_2026_10_04.md`, opened with position 62 as that dispatch ordered (**D-670**) and tabulated it whole in one commit. §7, §8, §9 and §14 stay NOT YET WRITTEN, to be written once each, in the order §7, §8, §9, §14. **A member marked NOT YET TABULATED is UNTOUCHED** — not
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 54 to 61, each whole in its own commit, and stopped at the member boundary after position 61 because that dispatch bounded the batch there. The fourteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourteenth_2026_10_04.md`, opened with position 62 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, and stopped at the section boundary after position 62 because §7's generated reconciliation to §13 did not hold, which that dispatch's Task 1(e) made a STOP (the difference located by row in `records/cc/reports/cc_report_l2_comparison_tabulation_fourteenth_2026_10_04.md` §2.7). The fifteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifteenth_2026_10_04.md`, opened with §7 as that dispatch ordered (**D-670**) and wrote it whole in its own commit. §7 is written; §8, §9 and §14 stay NOT YET WRITTEN, to be written once each, in the order §7, §8, §9, §14. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
 ---
@@ -71031,9 +71031,277 @@ L2-S40; every other statement names one or none.)* DIFFERS: none.
 
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
-**NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
-statements that speak to it and their verdicts, or **THE OUTGOING TEXT IS SILENT**, and the two-way
-check stated as arithmetic.
+**Written once, after the last member, and GENERATED, not written by hand.** A script parsed every row of §6.1 to
+§6.62 at this file's committed blob — each row's heading, its claims where it is split, and its *Current-text axis.*
+paragraph — and gathered, for each derived statement in turn, the rows whose axis gives it each verdict, in file
+order. A row is cited by its number, with the claim where the row is split. A row naming two derived statements
+counts once for each. A verdict written once for a range or a list of claims — Row 17.29's *"(i) to (iv)"* and
+Row 17.52's *"(iii) to (v)"* — counts once for each claim it stands for, as those members' feet and §13 count it.
+Member 62's pointer rows and flagged items carry no axis and contribute nothing here: a pointer row's statement is
+counted at the row it names, and a flagged item is not placed.
+
+**Each entry opens with the derived statement's first sentence, quoted from the derivation.** The derivation gives
+its statements no separate titles, so that first sentence stands as the title. **No sentence of the outgoing text
+is restated here**: the rows carry them, and this section is the index from the derived side. Where no row names a
+statement under either verdict, the entry says **THE OUTGOING TEXT IS SILENT**. A verdict of THE DERIVATION IS
+SILENT names no derived statement, so it appears in no entry; it is counted in the fourth equation below.
+
+**L2-S1 — "A reading of the working span has exactly these parts."**
+
+- *AGREES* (31): Rows 5.20, 5.95, 5.194(i), 5.264(i), 6.12(ii), 6.22(ii), 6.121(ii), 6.122(i), 6.164, 6.166, 7.11, 7.22(iii), 7.108, 7.149, 10.6, 10.7, 12.29(i), 13.2, 21.53, 39.77(i), 41.17, 42.8, 42.76, 43.83, 44.45(i), 44.52, 47.15(ii), 48.1(i), 49.2, 49.14, 49.32(i).
+- *DIFFERS* (24): Rows 5.67(i), 6.6(ii), 6.26, 6.70, 6.121(iii), 6.146, 10.18(i), 23.17, 23.244, 23.250, 30.67(ii), 39.10, 39.36, 39.40, 39.41, 39.42, 39.43, 39.44, 43.8(i), 43.24, 43.111, 43.155(i), 48.43(i), 49.15(i).
+
+**L2-S2 — "The admission rule is specified as a closure test before it is specified as a list."**
+
+- *AGREES* (16): Rows 1.15(ii), 1.48, 5.40, 6.71(i), 6.72(i), 6.141, 6.142(ii), 6.158(i), 6.167, 6.191, 7.31(ii), 39.259, 43.65, 43.66, 43.139, 43.141.
+- *DIFFERS* (7): Rows 1.8(iii), 1.12, 5.17, 6.40, 10.10, 12.20, 17.10(i).
+
+**L2-S3 — "No chord is excluded under any tonality."**
+
+- *AGREES* (18): Rows 1.42(ii), 1.47(i), 1.48, 1.52(ii), 1.54, 4.11(ii), 4.12, 5.96(ii), 5.107(i), 5.195(i), 5.197(ii), 5.245(ii), 6.18(ii), 6.48(i), 6.86(i), 6.172(i), 8.72(i), 10.50(ii).
+- *DIFFERS* (0): none.
+
+**L2-S4 — "The chord vocabulary the admission rule ranges over contains at least these classes: (i) the four triad qualities on every diatonic and chromatically altered degree; (ii) the five seventh-chord qualities (dominant, major, minor, half-diminished, fully diminished) on every degree; (iii) the Neapolitan, as ♭II major; (iv) the three augmented sixths; (v) every figure of each: root position, the inversions, and for sevenths the three inversions with the seventh."**
+
+- *AGREES* (32): Rows 5.7(i), 5.40, 5.41, 5.42, 5.44, 5.45, 5.46, 5.47, 5.192, 5.193, 5.335(i), 5.336(i), 6.37, 6.39(i), 6.84(i), 6.85(i), 6.116, 10.9(ii), 24.23, 24.24, 24.25, 24.87, 39.29, 39.30, 39.31, 39.33, 39.34, 39.35, 39.37, 39.38, 39.325(iii), 48.41(i).
+- *DIFFERS* (17): Rows 5.334, 6.30, 6.32, 6.33, 6.34, 6.35, 6.39(ii), 6.75, 6.85(ii), 6.93, 6.140(i), 6.140(ii), 17.25(iii), 21.77, 30.68(ii), 49.18(i), 49.18(ii).
+
+**L2-S5 — "The applied target is a chain, not a single field."**
+
+- *AGREES* (4): Rows 5.47, 5.282, 33.19, 39.325(iii).
+- *DIFFERS* (1): Row 10.9(ii).
+
+**L2-S6 — "The tonality vocabulary is the spelled tonics (seven letters, each natural, sharp or flat) in two modes, major and minor."**
+
+- *AGREES* (14): Rows 7.46, 7.47, 10.8(ii), 17.58(ii), 47.25, 47.27(ii), 47.28(i), 47.28(iii), 48.29(i), 48.30(i), 48.30(iii), 48.33, 49.31, 49.35(ii).
+- *DIFFERS* (22): Rows 7.7, 7.24(i), 7.42, 7.43, 7.44, 7.45, 7.110, 7.146, 10.8(i), 10.51(ii), 17.10(i), 22.8, 23.19, 23.182, 23.192, 23.197, 23.269, 24.19, 33.15, 34.1, 43.28(i), 43.69(i).
+
+**L2-S7 — "Any subset of L1's change points may be the boundary set of a reading."**
+
+- *AGREES* (3): Rows 10.32(i), 22.76(ii), 48.12.
+- *DIFFERS* (2): Rows 5.137, 30.16(ii).
+
+**L2-S8 — "The elaboration relations admitted are at least the charter's four (passing, neighbour, suspension, anticipation)."**
+
+- *AGREES* (2): Rows 6.165, 13.3.
+- *DIFFERS* (8): Rows 6.91, 24.90(i), 26.17(i), 26.18, 47.41(i), 49.8(ii), 49.32(ii), 49.35(iv).
+
+**L2-S9 — "An assignment is made per event per span, not per event."**
+
+- *AGREES* (6): Rows 1.30, 3.6, 3.9, 6.134, 30.17(ii), 43.129(i).
+- *DIFFERS* (0): none.
+
+**L2-S10 — "An event is a chord tone of a span only if its spelled pitch class is a member of the span's chord, spelled."**
+
+- *AGREES* (17): Rows 1.31, 1.47(ii), 3.25, 5.32(i), 5.178, 6.101, 6.102, 6.108(i), 6.119(i), 6.145(i), 6.199, 8.130, 23.219, 23.242, 24.37, 39.302, 50.26.
+- *DIFFERS* (12): Rows 6.45, 6.77, 6.94, 6.96, 6.143, 14.17(ii), 23.221, 23.300(ii), 24.39(i), 24.107(ii), 30.2, 43.23.
+
+**L2-S11 — "A boundary is one of L1's change points, and where the boundaries fall is decided together with the tonality, the chord and the assignments, in the one decision."**
+
+- *AGREES* (23): Rows 4.5, 5.242(ii), 7.25, 7.165(i), 8.67, 17.1(i), 17.1(iv), 21.8, 21.10, 21.11(i), 21.11(ii), 21.31(i), 21.38(i), 22.76(i), 30.14, 39.185, 39.289, 39.290, 43.2(i), 43.44(i), 43.135, 45.29(i), 48.20(i).
+- *DIFFERS* (168): Rows 2.42, 4.1(ii), 5.7(ii), 5.8, 5.13, 5.15, 5.25, 5.30, 5.31, 5.56, 5.66, 5.97, 5.98, 5.182(ii), 5.207, 5.219, 5.220, 5.228(i), 5.243, 5.244, 5.253(iii), 5.303(iv), 6.4, 6.5, 6.6(iii), 6.14(i), 6.19, 6.20, 6.21, 6.24, 6.42, 6.48(ii), 6.57(ii), 6.65(ii), 6.86(ii), 6.107, 6.120, 6.131(ii), 6.135, 6.136, 6.137(ii), 6.144, 6.172(ii), 6.181, 6.183, 6.185(ii), 6.187, 7.9(ii), 7.15(ii), 7.22(i), 7.24(ii), 7.26, 7.27, 7.29, 7.31(i), 7.37, 7.40, 7.52, 7.72, 7.100(ii), 7.107, 7.113, 7.125, 7.127(ii), 7.128, 7.152(ii), 7.161, 8.9, 8.68(i), 8.84, 8.92, 8.94, 8.95(ii), 8.96, 8.97, 8.98, 8.100(i), 8.111, 8.140, 8.157, 8.167, 8.188, 9.319(i), 9.323, 18.1(i), 18.2(i), 21.5, 21.33(i), 21.34, 21.35(i), 21.37, 21.38(ii), 21.41, 21.62(i), 21.62(ii), 21.63, 22.42, 22.83(ii), 22.105, 23.64, 23.71(ii), 23.79, 23.80, 23.110, 23.177(ii), 23.247, 23.314, 24.41, 24.106, 24.112, 30.15, 30.80, 39.133, 43.1, 43.7(i), 43.17, 43.18(i), 43.18(ii), 43.19, 43.20, 43.21, 43.22, 43.25, 43.28(i), 43.29(iii), 43.32, 43.40, 43.42, 43.43(iii), 43.45, 43.49(i), 43.50, 43.52, 43.53, 43.54, 43.59, 43.61(i), 43.67, 43.68, 43.69(ii), 43.70, 43.71, 43.72, 43.73, 43.105, 43.106, 43.130, 43.133, 43.134, 43.136, 43.137, 43.138, 44.37, 44.59, 44.61, 44.62, 44.70(ii), 44.71(iii), 45.30(ii), 45.38(ii), 52.33, 52.34, 53.18(ii), 53.31, 59.1, 59.2, 59.3, 59.5.
+
+**L2-S12 — "The metric strength class of a change point enters the candidate score as a term on reading a boundary there."**
+
+- *AGREES* (13): Rows 5.33, 5.53(ii), 5.292, 8.75, 10.14(viii), 10.31, 10.45, 21.62(iii), 23.264, 42.51, 42.52, 42.54, 48.13.
+- *DIFFERS* (3): Rows 5.34, 5.306(i), 23.61.
+
+**L2-S13 — "L1's notated boundary evidence enters as terms on a boundary reading: the flags with their scope, the positioned marks and the per-voice relations."**
+
+- *AGREES* (25): Rows 5.53(ii), 5.70, 5.76, 5.77(ii), 5.308, 6.57(i), 10.14(viii), 10.31, 10.33(i), 10.45, 40.13, 40.20, 40.35, 40.76, 40.77, 40.94, 40.95, 44.8(iii), 44.9(i), 44.11, 44.12, 44.14(i), 44.50(i), 44.76(ii), 48.14.
+- *DIFFERS* (5): Rows 5.37, 6.56, 6.58, 21.49(ii), 43.100(ii).
+
+**L2-S14 — "Two adjacent spans never carry the same tonality and the same chord (degree, quality, figure and applied target all equal)."**
+
+- *AGREES* (12): Rows 5.67(ii), 21.48(i), 22.76(iii), 43.8(ii), 43.31, 43.82, 43.146, 43.147, 43.148, 43.149, 43.150, 43.161(ii).
+- *DIFFERS* (13): Rows 5.55(i), 6.25(ii), 6.68, 6.111(ii), 6.115(ii), 7.39(i), 23.72, 23.73, 23.74, 24.34, 24.52, 24.62, 30.16(i).
+
+**L2-S15 — "Rivals that differ only in where a boundary falls are carried as rivals, with their mass, exactly as rivals that differ in label are."**
+
+- *AGREES* (8): Rows 6.22(iii), 44.33(i), 44.39, 44.50(vii), 44.76(v), 49.27, 62.48(i), 62.48(ii).
+- *DIFFERS* (0): none.
+
+**L2-S16 — "Each span has exactly one tonality, and the tonality can change only at a span boundary."**
+
+- *AGREES* (11): Rows 1.17, 1.18(i), 4.1(i), 5.68(i), 5.72(ii), 5.206(i), 10.11, 21.49(i), 41.89(i), 43.100(i), 49.6.
+- *DIFFERS* (5): Rows 7.9(i), 7.35(i), 7.36, 7.88(i), 7.97(i).
+
+**L2-S17 — "The written key signature enters as one term of the candidate score, a weak prior over the spans' tonalities."**
+
+- *AGREES* (24): Rows 1.29(i), 1.38(ii), 1.50, 1.51, 2.54, 7.41(i), 7.68, 10.60, 23.187, 23.214, 23.215, 24.2(i), 24.3(i), 24.5, 24.6, 24.8, 44.50(v), 48.8(i), 48.48(i), 48.49, 48.50, 48.51, 58.3(ii), 60.7.
+- *DIFFERS* (25): Rows 1.29(ii), 1.37, 1.38(i), 1.39, 2.52, 2.55, 10.14(i), 10.36, 10.37(i), 10.37(ii), 12.43(iii), 17.24(i), 24.2(ii), 24.4, 24.9, 44.17, 44.50(iv), 44.50(x), 48.8(ii), 48.48(ii), 58.3(i), 60.2(i), 60.2(ii), 60.3, 60.4.
+
+**L2-S18 — "Wherever a span can be read as an applied chord in the prevailing tonality, it can also be read as a diatonic chord in a new tonality, and the reverse (V/V in C against V in G)."**
+
+- *AGREES* (21): Rows 4.22(ii), 4.23(ii), 4.26, 5.11, 5.12(ii), 5.50, 5.104, 5.105, 5.134(i), 5.179, 5.181, 5.242(i), 5.263(i), 5.280, 5.303(iii), 6.137(i), 7.77, 7.78, 10.61, 24.26, 24.73.
+- *DIFFERS* (21): Rows 5.60, 5.64, 5.68(ii), 5.129, 5.130, 5.131, 5.167, 5.169, 5.177, 5.190, 5.199, 5.200(i), 5.241, 5.281, 5.343, 5.345(ii), 6.122(ii), 7.129, 24.71, 30.72, 39.23.
+
+**L2-S19 — "A pivot chord, read by an analyst in two tonalities at once, is published as one span with one tonality."**
+
+- *AGREES* (0): none.
+- *DIFFERS* (1): Row 43.94(ii).
+
+**L2-S20 — "The tonality terms read the chords the reading proposes (degree, function, cadential progressions) and a recency-weighted account of which spelled scale degrees have sounded."**
+
+- *AGREES* (18): Rows 1.29(i), 4.19, 4.20(i), 5.135(i), 5.148, 5.344(i), 5.345(i), 7.164, 7.168, 21.9(ii), 24.2(i), 24.6, 24.7, 44.20(iii), 44.46, 44.50(iii), 57.6(i), 57.6(ii).
+- *DIFFERS* (32): Rows 2.39(i), 5.135(ii), 6.180, 7.10, 7.22(ii), 7.41(ii), 7.49, 7.50, 7.73, 7.74, 7.80(i), 7.148, 7.159, 7.162, 7.167, 7.176, 7.177, 7.178(i), 10.14(iii), 10.22, 20.2, 23.183, 23.185, 24.1, 24.20(i), 43.41(i), 43.41(ii), 44.24, 44.42, 44.43(ii), 44.50(ii), 48.9.
+
+**L2-S21 — "The minor mode is one mode whose sixth and seventh degrees may each be raised or not."**
+
+- *AGREES* (3): Rows 5.180, 10.20, 48.29(ii).
+- *DIFFERS* (0): none.
+
+**L2-S22 — "At the edge of the working span, L2's tonality (and the rest of its reading) depends on music before and after the span."**
+
+- *AGREES* (78): Rows 2.13, 2.14(i), 2.15, 2.16(i), 2.16(iii), 2.18(i), 2.19, 2.48, 2.49, 5.74, 6.52, 6.53(i), 6.54, 6.55, 7.16, 7.59, 7.60, 7.61, 7.103(i), 7.155, 21.59(ii), 21.60(iii), 22.83(iii), 22.85(ii), 23.255, 42.60, 43.75(i), 43.75(iii), 43.76, 43.77(ii), 43.78, 45.3, 45.6, 45.7, 45.9(ii), 45.10, 45.11(i), 45.11(ii), 45.12, 45.15(i), 45.15(ii), 45.19, 45.20(ii), 45.21(ii), 45.21(iii), 45.22(i), 45.25(i), 45.26(i), 45.32, 45.37(ii), 45.39, 45.40, 45.47(ii), 45.49, 45.51, 45.52(ii), 45.53(i), 45.53(ii), 45.54, 45.59(i), 45.61(i), 45.63, 45.64(ii), 45.65(ii), 45.67, 45.69(ii), 45.83, 45.84, 45.85, 45.91(ii), 45.92(ii), 45.93(i), 45.93(ii), 45.94(i), 51.15(ii), 51.21(i), 51.23(ii), 51.63.
+- *DIFFERS* (21): Rows 2.10, 2.47(ii), 5.72(i), 5.73, 7.62, 7.64, 7.89, 7.95, 23.243, 23.253, 23.254, 30.75(i), 45.13(i), 45.14, 45.50, 45.55, 45.58, 45.59(ii), 45.92(i), 51.21(ii), 51.52(i).
+
+**L2-S23 — "The assignments are part of the one decision."**
+
+- *AGREES* (31): Rows 1.31, 1.49, 3.10(ii), 3.12, 6.13, 6.73, 6.74(i), 6.115(i), 6.139, 8.134, 13.14, 13.16, 21.13, 22.73, 24.92, 42.12, 42.14, 42.30, 42.36, 42.64, 43.29(ii), 43.46, 43.47(i), 43.143(i), 43.144, 43.152, 44.65, 46.39(iii), 46.40(i), 48.42, 48.44.
+- *DIFFERS* (23): Rows 3.11, 5.79, 5.144, 5.288, 6.133(i), 6.178, 8.135, 8.136, 8.137, 8.138, 8.141, 8.165, 9.315, 21.23, 44.64, 44.66(i), 44.67, 47.15(i), 47.41(ii), 48.7(i), 48.45, 49.8(i), 56.5(i).
+
+**L2-S24 — "The voice-leading evidence an elaboration relation needs is read from L1's per-voice relations."**
+
+- *AGREES* (12): Rows 5.32(i), 6.28, 6.87, 10.18(ii), 13.7, 13.8(i), 13.36, 13.38, 13.45, 21.62(iii), 22.53, 48.43(ii).
+- *DIFFERS* (13): Rows 5.145, 5.147, 5.269, 13.37, 13.39, 13.41, 13.42, 13.43, 23.267, 46.39(iv), 46.59(i), 46.127(ii), 46.128(ii).
+
+**L2-S25 — "Duration and metric position bear on an assignment as terms (covariates)."**
+
+- *AGREES* (9): Rows 6.89, 6.108(iv), 6.198(ii), 10.18(ii), 13.9, 43.131, 44.22(ii), 48.43(ii), 57.13(i).
+- *DIFFERS* (7): Rows 6.88, 6.92(ii), 6.112(iii), 6.198(i), 23.28, 24.12, 29.3(ii).
+
+**L2-S26 — "Grace notes (published as ornamental attachments of a host event) and ornament signs (published as attributes of an event) are evidence for the assignment of their host and for the chord."**
+
+- *AGREES* (2): Rows 43.125(ii), 44.15(i).
+- *DIFFERS* (2): Rows 23.336, 38.4.
+
+**L2-S27 — "L2 decides the chord as degree, quality, figure and applied target, read against the span's tonality."**
+
+- *AGREES* (31): Rows 4.1(i), 4.13(i), 4.14(i), 5.4, 5.7(i), 5.26, 5.43, 5.44, 5.164, 5.205(i), 5.235(i), 5.278, 6.163, 6.205(ii), 8.67, 10.9(i), 10.12, 17.10(ii), 17.25(i), 17.44(ii), 17.52(ii), 21.74(i), 23.340, 30.26(ii), 43.41(iii), 48.38, 48.40(i), 49.16, 49.17(i), 49.20(ii), 49.38.
+- *DIFFERS* (21): Rows 3.17, 5.57, 5.96(i), 6.12(i), 6.22(i), 6.23, 6.31, 6.121(i), 8.107, 9.349(i), 22.92(iii), 23.8, 23.10, 23.103, 23.277, 23.286, 24.108, 43.29(i), 43.30, 47.17(iv), 47.18(i).
+
+**L2-S28 — "The figure is decided in the reading."**
+
+- *AGREES* (15): Rows 1.34, 1.52(ii), 6.108(iv), 8.70(i), 10.14(iv), 10.17(ii), 10.24, 10.44(i), 39.176(ii), 39.181, 39.183, 39.249, 44.20(i), 48.15, 58.2(i).
+- *DIFFERS* (2): Rows 5.32(ii), 8.70(ii).
+
+**L2-S29 — "The cadential six-four is admitted under at least the two readings the exemplars write: a tonic chord in second inversion, and a dominant with the sixth and fourth above its bass as elaborations."**
+
+- *AGREES* (1): Row 23.109(i).
+- *DIFFERS* (4): Rows 5.42, 5.100(i), 5.283, 10.44(ii).
+
+**L2-S30 — "No chord term decides a chord from the pitch-class content of the span alone."**
+
+- *AGREES* (18): Rows 4.7, 5.146, 5.151(ii), 5.152, 5.201, 5.221, 5.232, 6.15, 6.65(iii), 6.117, 21.14, 23.45, 23.105, 23.107, 39.285(i), 39.286, 39.287, 39.307.
+- *DIFFERS* (9): Rows 5.14, 5.18, 6.110, 20.1, 23.1, 23.102, 23.112, 24.88, 39.7.
+
+**L2-S31 — "The candidate score of a reading is a sum over its spans of span terms, plus a sum over adjacent span pairs of pair terms."**
+
+- *AGREES* (17): Rows 1.9, 1.36, 5.52, 7.75, 7.150(iii), 10.6, 10.13(i), 10.17(iv), 10.27(i), 10.40, 10.51(i), 17.1(ii), 17.10(iii), 48.1(ii), 48.3, 48.56, 58.2(iv).
+- *DIFFERS* (22): Rows 2.43, 2.44, 2.46, 5.53(i), 5.303(v), 5.342, 6.29, 6.46, 6.50, 6.111(i), 6.112(ii), 6.113, 6.133(ii), 6.185(i), 7.17, 8.77, 8.81, 9.332(i), 21.24, 23.248, 43.47(ii), 43.143(ii).
+
+**L2-S32 — "The span content term rates how the span's events, under the reading's assignments, fit the chord in its spelled form."**
+
+- *AGREES* (23): Rows 1.32, 1.33, 1.35, 1.44, 6.18(i), 6.44, 6.71(ii), 6.74(ii), 6.84(ii), 6.84(iii), 6.95, 6.112(i), 6.114, 8.71(i), 10.14(ii), 10.17(i), 10.17(iii), 44.45(ii), 44.50(viii), 44.76(i), 48.7(ii), 58.2(ii), 58.2(iii).
+- *DIFFERS* (8): Rows 5.19, 5.22, 5.194(ii), 5.229, 5.230(ii), 8.71(ii), 23.5, 39.9(i).
+
+**L2-S33 — "The elaboration term for an event whose anchor, the preparing or resolving note, lies in an adjacent span reads that adjacent span's candidate reading."**
+
+- *AGREES* (3): Rows 6.80, 43.131, 43.144.
+- *DIFFERS* (1): Row 6.78.
+
+**L2-S34 — "The candidate score carries three families of terms relating the four fields across spans."**
+
+- *AGREES* (43): Rows 1.36, 2.9, 4.19, 4.25(i), 5.89(i), 5.345(i), 5.354, 6.108(ii), 6.182, 7.12, 7.38(ii), 7.76(i), 7.85(i), 7.91, 7.93, 7.94, 7.150(i), 7.160(ii), 10.14(v), 10.14(vi), 10.26(i), 10.28, 10.29(ii), 10.41, 10.42, 10.62, 21.9(i), 22.95(ii), 24.10, 24.13, 39.325(ii), 43.43(ii), 43.96(ii), 43.132(i), 44.49(i), 44.50(ix), 44.68, 44.69, 44.70(i), 48.11, 48.39(ii), 57.6(i), 58.2(iv).
+- *DIFFERS* (60): Rows 3.23, 5.10, 5.59, 5.69(ii), 5.81, 5.83, 5.84(ii), 5.87, 5.89(ii), 5.106, 5.107(ii), 5.125, 5.128(ii), 5.132, 5.148, 5.166, 5.198(ii), 5.202, 5.238(ii), 5.289, 5.293, 6.51, 6.83, 6.86(iii), 6.196(ii), 7.76(ii), 7.76(iii), 7.85(ii), 7.92(i), 7.111(i), 7.150(ii), 7.160(iii), 7.178(ii), 8.73, 8.74(ii), 8.82, 9.160(ii), 10.14(vii), 10.30, 10.34, 10.43, 21.48(iv), 23.23, 23.49, 39.11, 39.50, 39.89, 39.119, 39.120, 39.127, 39.131, 39.141, 39.331, 43.43(i), 43.93, 50.20, 52.14(i), 53.5, 53.70, 56.3(ii).
+
+**L2-S35 — "The candidate score is normalised over whole readings: the masses of all readings of the working span sum to one."**
+
+- *AGREES* (3): Rows 2.8, 5.250(i), 21.32(i).
+- *DIFFERS* (54): Rows 4.3(i), 5.16, 5.61, 5.69(i), 5.138, 5.139, 5.140, 5.158, 5.159, 5.200(ii), 5.203, 5.218(ii), 5.222, 5.223, 5.224, 5.225, 5.228(ii), 5.250(ii), 5.251, 5.255(i), 5.315, 6.11, 6.188, 6.190(iii), 7.30, 8.17, 8.79, 8.83(i), 8.163, 9.25, 9.333, 9.390, 18.1(ii), 18.2(ii), 21.33(ii), 21.36, 21.45(i), 22.98(iii), 39.269, 43.55, 43.56, 43.57, 43.58, 43.60, 43.61(ii), 43.62, 43.63(ii), 44.63(i), 44.66(ii), 44.71(iv), 52.17, 52.18, 53.8, 53.30.
+
+**L2-S36 — "The search is exact, or it prunes only by a bound that provably cannot discard a reading whose final candidate score could exceed a kept reading's."**
+
+- *AGREES* (10): Rows 1.8(i), 1.9, 7.17, 7.79, 7.82, 7.86, 7.151, 10.51(i), 17.4(ii), 48.2(i).
+- *DIFFERS* (14): Rows 1.10, 1.14, 7.81, 7.84, 7.98, 7.104(i), 8.97, 8.113, 9.322(ii), 10.52(ii), 21.27, 21.73, 43.12, 48.2(ii).
+
+**L2-S37 — "L2 may read L1's cadence cues as evidence only as their establishment status allows."**
+
+- *AGREES* (14): Rows 4.4, 5.93, 5.94, 5.128(i), 5.238(i), 5.239(i), 5.239(ii), 5.290, 5.303(ii), 44.30(i), 44.44, 44.55, 44.71(ii), 48.17.
+- *DIFFERS* (6): Rows 2.40, 10.14(ix), 10.33(ii), 10.34, 48.10, 48.16(ii).
+
+**L2-S38 — "Every weight of the candidate score is fitted from annotated music, not set by hand."**
+
+- *AGREES* (73): Rows 1.1(ii), 1.2(iii), 1.5(i), 1.5(ii), 1.6(i), 1.7, 1.20, 1.21, 1.22(i), 5.23, 5.54, 5.150, 5.227, 5.234, 5.254, 5.354, 6.147, 6.186, 6.202(ii), 6.205(i), 7.115, 7.117, 7.166, 8.78(i), 8.90, 9.2, 9.4(i), 9.4(ii), 9.8(i), 9.10, 9.11, 9.12(i), 9.50(i), 9.54(i), 9.55, 9.57, 9.63(i), 9.67(i), 9.83(ii), 9.84, 9.85, 9.87, 9.102, 9.206, 9.221(iii), 10.4(ii), 10.16(iii), 10.19, 11.48(i), 11.68(i), 11.69, 12.5, 12.6(ii), 12.8, 12.9, 12.16(ii), 12.18, 12.19, 12.21, 12.22, 12.24(ii), 12.40(i), 15.29, 17.4(v), 21.3(ii), 25.47(i), 25.48(i), 43.63(i), 48.4(ii), 48.5, 48.21(i), 48.37(ii), 62.4(ii).
+- *DIFFERS* (65): Rows 1.2(ii), 1.45, 3.33, 3.34, 6.153, 8.74(ii), 8.77, 8.78(ii), 8.82, 9.3, 9.49, 9.108, 9.160(iii), 9.209, 9.300(ii), 9.332(i), 10.13(ii), 10.16(ii), 10.21(i), 12.24(i), 12.25, 15.39, 17.4(iv), 23.4, 23.20, 23.21, 23.22, 23.24, 23.47, 23.48, 23.89, 23.90, 23.91, 23.92, 23.93, 23.184, 23.188, 24.20(ii), 39.24, 39.134, 39.135, 39.136, 39.137, 39.138, 39.139, 39.140, 39.141, 39.142, 39.143, 39.144, 39.145, 39.146, 39.147, 39.148, 39.149, 39.150, 39.151, 39.152, 39.153, 39.219, 39.310(i), 48.35(i), 48.35(ii), 48.37(i), 56.3(i).
+
+**L2-S39 — "A distance or profile taken from published theory (Lerdahl's tonal pitch space, Weber's table, a scale-degree profile) enters the candidate score as a feature whose single weight is fitted."**
+
+- *AGREES* (8): Rows 1.1(i), 1.2(i), 9.160(i), 10.16(i), 17.1(iii), 21.1(i), 43.39(i), 48.4(i).
+- *DIFFERS* (1): Row 10.28.
+
+**L2-S40 — "*Mass* is the probability the fitted, whole-reading-normalised model (L2-S35) assigns."**
+
+- *AGREES* (52): Rows 5.213(ii), 6.127(i), 6.127(iii), 6.131(i), 6.190(i), 7.13(ii), 7.15(i), 7.33(i), 7.35(ii), 7.88(ii), 7.97(ii), 7.100(i), 7.112(ii), 7.152(i), 8.45, 8.68(ii), 8.91, 8.139, 8.143, 9.22, 9.23, 9.149, 10.53, 12.29(ii), 13.13, 21.18(i), 21.20, 21.47, 21.69, 41.92(i), 44.38, 44.47(i), 44.51(ii), 47.8, 47.19, 47.21, 47.22(i), 47.22(ii), 47.23(i), 47.24(ii), 49.3, 49.5, 49.25, 49.26, 52.1, 52.2, 52.4, 52.5, 52.29, 52.31, 62.48(i), 62.48(ii).
+- *DIFFERS* (65): Rows 2.6, 5.51, 5.153, 5.155, 5.205(ii), 5.205(iii), 5.212, 5.214, 5.218(i), 5.233, 5.270, 5.295, 5.296, 6.17, 6.22(iv), 6.121(iv), 6.126, 6.127(ii), 6.173, 6.192(i), 7.5(i), 7.13(i), 7.13(iii), 7.14, 7.23, 7.28, 7.35(iii), 7.35(iv), 7.51, 7.88(iii), 7.88(iv), 7.92(ii), 7.97(iii), 7.97(iv), 7.109, 7.112(i), 7.153, 7.154, 8.41, 8.42, 8.48(i), 8.58, 8.69, 8.86, 8.87, 8.131, 8.132, 9.324, 9.330, 9.331(i), 9.331(ii), 9.334, 17.16, 17.18(i), 17.26, 17.50(ii), 17.58(i), 21.18(ii), 23.199, 49.4, 49.22(i), 49.40, 52.7, 52.11(i), 52.24.
+
+**L2-S41 — "A rival that differs from the principal reading over several consecutive spans is published as one rival object, with its extent (first and last position), its own spans and fields, and its whole-reading mass."**
+
+- *AGREES* (6): Rows 3.35, 3.36, 8.61, 21.35(ii), 43.51, 47.22(iii).
+- *DIFFERS* (2): Rows 6.123, 6.193.
+
+**L2-S42 — "L2 may withhold from publication rivals whose mass falls below a declared threshold, but only because every withheld rival is recomputable."**
+
+- *AGREES* (8): Rows 5.231, 8.47, 9.361(ii), 17.5(ii), 21.72(ii), 44.74(ii), 47.17(iii), 49.23(ii).
+- *DIFFERS* (12): Rows 3.20, 5.319, 6.190(ii), 6.192(ii), 8.48(ii), 8.59, 8.60, 23.2, 39.16(i), 39.336, 44.34, 49.23(i).
+
+**L2-S43 — "No reading is discarded before the whole working span, context included, has been scored."**
+
+- *AGREES* (20): Rows 5.153, 5.253(ii), 6.132(ii), 6.189, 7.101(ii), 10.47(ii), 10.48(i), 10.49, 17.4(ii), 21.19, 21.72(i), 39.14, 39.47, 39.58, 39.59, 39.60, 39.61, 39.62, 39.63, 45.52(i).
+- *DIFFERS* (15): Rows 5.71, 5.133, 5.287, 6.97, 6.119(ii), 6.145(ii), 6.159, 6.160, 8.68(ii), 8.89, 8.156, 21.48(iii), 43.90, 43.91, 43.92.
+
+**L2-S44 — "Where a span's sounding set is empty (a silence L1 publishes as a silent slice, not merged into a neighbour), L2 either extends the neighbouring harmony through it or publishes the span with a chord field carrying a named reason ("silent")."**
+
+- *AGREES* (6): Rows 22.69, 42.15(ii), 42.34, 42.41, 42.63, 42.83.
+- *DIFFERS* (14): Rows 1.19, 3.21, 6.16, 6.22(v), 6.49, 6.76, 6.100, 6.109, 6.118, 6.121(v), 6.128, 6.174, 24.33(ii), 53.6.
+
+**L2-S45 — "L2 publishes to L3 exactly what the charter lists, and nothing else."**
+
+- *AGREES* (19): Rows 5.5(i), 5.6, 5.27, 5.65, 5.235(ii), 5.236, 5.284, 5.303(i), 17.9, 17.24(ii), 17.46(ii), 21.70, 21.75(ii), 43.151, 47.17(ii), 47.20(ii), 49.21, 52.3, 52.23.
+- *DIFFERS* (24): Rows 5.208, 6.66, 7.70, 8.94, 8.155, 8.161, 9.317, 9.318, 17.16, 17.26, 17.58(i), 17.58(iii), 21.71, 21.75(i), 23.7, 23.198, 44.36(i), 44.40, 44.51(i), 44.74(i), 44.76(iv), 47.17(i), 47.20(i), 49.22(i).
+
+**L2-S46 — "L2 works over the record's own positions, in notated order."**
+
+- *AGREES* (0): none.
+- *DIFFERS* (0): none.
+- **THE OUTGOING TEXT IS SILENT** — no row's current-text axis names this statement as AGREES or DIFFERS.
+
+**L2-S47 — "L2 never re-derives an L1 fact."**
+
+- *AGREES* (19): Rows 5.28, 5.305, 5.309, 6.25(iii), 6.65(i), 6.132(i), 7.39(ii), 7.69(i), 7.101(i), 8.95(i), 12.43(ii), 12.45, 17.4(i), 21.74(ii), 24.42, 43.4, 44.15(iii), 44.71(i), 51.9(iii).
+- *DIFFERS* (2): Rows 8.104(i), 8.109.
+
+**L2-S48 — "L2's publication covers exactly the working span."**
+
+- *AGREES* (29): Rows 6.14(ii), 6.61(i), 7.34, 7.54(i), 17.34(ii), 21.59(i), 21.61, 22.83(i), 22.84(ii), 30.75(ii), 43.74, 43.77(i), 43.79, 45.1, 45.9(i), 45.13(ii), 45.35, 45.38(i), 45.43, 45.52(iii), 45.64(i), 45.66(i), 45.71, 45.76(i), 45.81, 45.88, 45.89, 49.1(i), 51.60(i).
+- *DIFFERS* (1): Row 45.60(ii).
+
+**L2-S49 — "L2 consumes nothing L3 publishes: no cadence type, phrase or section grouping, chord symbol, figured bass or harmonic rhythm."**
+
+- *AGREES* (160): Rows 2.39(ii), 2.41, 4.1(iii), 4.8, 4.15, 5.1, 5.5(ii), 5.9, 5.10, 5.35, 5.38(ii), 5.39, 5.49, 5.55(ii), 5.58, 5.75(i), 5.77(i), 5.91, 5.99, 5.100(ii), 5.101, 5.102, 5.103, 5.108, 5.109, 5.110, 5.111, 5.112, 5.113, 5.114, 5.115, 5.117, 5.118, 5.119, 5.120, 5.121, 5.122, 5.123, 5.124, 5.198(i), 5.204(i), 5.204(ii), 5.206(ii), 5.240, 5.262, 5.274, 5.279, 5.311, 5.339, 5.340, 5.341, 5.348, 5.349, 5.350, 6.8, 6.25(i), 6.47, 6.69, 7.38(i), 7.160(i), 7.165(ii), 8.99(i), 17.23(ii), 17.39(i), 17.46(i), 17.56(ii), 21.42(ii), 21.46(i), 21.48(ii), 21.48(v), 22.20, 22.21, 22.22, 22.23, 22.87(i), 22.87(ii), 22.98(i), 23.116, 26.1(ii), 30.50, 30.51, 30.52, 30.53, 36.1, 39.188, 39.189, 39.325(i), 41.7(i), 41.13, 41.15, 41.18, 41.26, 41.33, 41.34, 41.36, 41.37, 41.38, 41.39, 41.41, 41.42, 41.52, 41.53, 41.56, 41.62, 41.63, 41.64, 41.72, 41.93(ii), 41.108, 41.109, 41.116, 41.118, 41.119, 41.120, 41.121, 41.127, 43.38(i), 43.49(ii), 43.85, 43.88, 43.97(i), 43.153, 45.41, 45.42, 45.60(i), 46.12, 46.24(i), 46.42(i), 49.1(ii), 49.9, 49.11, 49.12, 49.21, 49.23(iii), 49.36, 49.37, 49.39, 49.41, 49.44, 49.45, 49.49, 50.28, 53.15, 53.16, 53.19(ii), 53.21, 53.22(i), 53.22(ii), 53.23, 53.28, 53.35, 53.49, 53.56(ii), 53.59, 54.1, 54.2, 54.3, 54.4, 57.8, 59.4(i).
+- *DIFFERS* (24): Rows 4.16, 4.20(ii), 4.25(ii), 5.37, 5.344(ii), 21.46(ii), 22.98(ii), 44.27(ii), 44.33(ii), 44.49(ii), 44.50(vi), 44.76(iii), 46.42(ii), 53.18(i), 53.24, 53.25, 53.29(i), 53.48, 53.50(ii), 53.52, 53.53(i), 53.53(ii), 53.56(i), 57.6(iii).
+
+### The two-way check, stated as arithmetic
+
+Each equation sets the count this section's entries give against §13's total as §13 stands in the same blob.
+
+- **AGREES:** the AGREES entries summed over L2-S1 to L2-S49 = **1011**; §13's AGREES total = **1011**.
+- **DIFFERS:** the DIFFERS entries summed over L2-S1 to L2-S49 = **858**; §13's DIFFERS total = **858**.
+- **THE DERIVATION IS SILENT:** the claims whose axis reads THE DERIVATION IS SILENT = **3672**; §13's total = **3672**.
+- **All verdicts:** 1011 + 858 + 3672 = **5541**; §13's total verdicts = **5541**.
+
+**Derived statements no row names under either verdict:** L2-S46.
 
 ## 8. The open questions OQ-L2-1 to OQ-L2-18
 
@@ -74279,4 +74547,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is complete over its population**, and §0 says so: positions 1 to 62 are done, and no member is untouched. Its
-  once-written sections — §7, §8, §9 and §14 — stand as §0 says: §7, §8, §9 and §14 are NOT YET WRITTEN.
+  once-written sections — §7, §8, §9 and §14 — stand as §0 says: §7 is written; §8, §9 and §14 are NOT YET WRITTEN.
