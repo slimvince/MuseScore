@@ -143,7 +143,7 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 54 to 61, each whole in its own commit, and stopped at the member boundary after position 61 because that dispatch bounded the batch there. The fourteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourteenth_2026_10_04.md`, opened with position 62 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, and stopped at the section boundary after position 62 because §7's generated reconciliation to §13 did not hold, which that dispatch's Task 1(e) made a STOP (the difference located by row in `records/cc/reports/cc_report_l2_comparison_tabulation_fourteenth_2026_10_04.md` §2.7). The fifteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifteenth_2026_10_04.md`, opened with §7 as that dispatch ordered (**D-670**) and wrote §7 and §8, each whole in its own commit. §7 and §8 are written; §9 and §14 stay NOT YET WRITTEN, to be written once each, in the order §7, §8, §9, §14. **A member marked NOT YET TABULATED is UNTOUCHED** — not
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 54 to 61, each whole in its own commit, and stopped at the member boundary after position 61 because that dispatch bounded the batch there. The fourteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourteenth_2026_10_04.md`, opened with position 62 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, and stopped at the section boundary after position 62 because §7's generated reconciliation to §13 did not hold, which that dispatch's Task 1(e) made a STOP (the difference located by row in `records/cc/reports/cc_report_l2_comparison_tabulation_fourteenth_2026_10_04.md` §2.7). The fifteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifteenth_2026_10_04.md`, opened with §7 as that dispatch ordered (**D-670**) and wrote §7, §8 and §9, each whole in its own commit. §7, §8 and §9 are written; §14 stays NOT YET WRITTEN, to be written once each, in the order §7, §8, §9, §14. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
 ---
@@ -71476,8 +71476,50 @@ The tabulated outgoing text says a structurally lighter lowest tone *"may not be
 
 ## 9. The derivation's §7 — the five places the decomposition seemed wrong or incomplete
 
-**NOT YET WRITTEN.** Written once, after the last member: each of the five points with what the outgoing
-text says, and no verdict on whether §7 is right.
+**Written once, after the last member.** Each of the five points the derivation's §7 makes about the brief's
+decomposition is quoted from the derivation, whole, in a block quote, and is followed by ONE sentence on what the
+tabulated outgoing text says to it, built as §8's sentences are: the rows of §6.1 to §6.62 whose outgoing statements
+speak to the point, found by a search over those rows' *Outgoing statement.* quotations and read at the row, quoted in
+their own words, or the search that found nothing, named. **No verdict is given on whether the derivation's §7 is
+right.**
+
+**Point 1.**
+
+> **Faces (b) to (e) are four views of one object**, and the load-bearing specification is the
+> admission rule plus the candidate score's terms (faces (a) and (f)). Several terms read two or three
+> of the four fields at once, most clearly the elaboration term of L2-S33.
+
+The tabulated outgoing text says *"Chord identity and tone status are decided together in the one decode"* (Row 48.44), that every enumerated clue *"enters as an emission, transition, or prior term in the one decode"* (Row 48.3), and that *"coupled quantities are decided together rather than one being committed early"* (Row 39.185).
+
+**Point 2.**
+
+> **Inference is missing as a face.** The charter's no-discarding rule makes the search's exactness a
+> design point (L2-S35, L2-S36), and possibly the point on which the whole charter's feasibility turns
+> (OQ-L2-8 ★).
+
+The tabulated outgoing text states *"Exact semi-Markov Viterbi over the joint state is the ratified search"* (Row 1.9) and *"The decode is EXACT; the declared reserve prune was never adopted"* (Row 1.8), and closes a wider search with *"Do not retry widening the search to consider more candidate readings in parallel"* (Row 1.14).
+
+**Point 3.**
+
+> **The analysis's working order (notated or unfolded)** is handed to L2 by the input contract and
+> named by no face (L2-S46, OQ-L2-16 ★).
+
+A search for unfold and notated order finds no row, and each of the twenty rows a search for repeat finds either names a repeat sign or barline as notated evidence, as Rows 5.39, 40.50 and 44.7 do, or speaks of something repeated; none names the order the analysis works in, notated or unfolded.
+
+**Point 4.**
+
+> **Ground truth for the assignment half of the decision** is not a face and may not exist (OQ-L2-13).
+> Face (d) cannot be graded or fitted independently without it.
+
+The tabulated outgoing text says *"Non-chord-tone detection waits for the annotated material it needs"* (Row 3.11) and *"naming the chord needs only chord-tone-versus-not; the type is a separable later annotation"* (Row 6.146); none of the six rows a search pairing non-chord-tone or chord-tone with ground truth or annotation finds names ground truth for the chord-tone assignment made apart from the chord labels.
+
+**Point 5.**
+
+> **The measurement-design consequences of L2's publication form**, such as how a retardation label
+> or a restated chord in an annotation is graded against L2's one-span-plus-assignment, are outside
+> L2's scope. They are recorded (OQ-L2-7) because the exemplars show them immediately.
+
+The seventeen rows a search pairing grading with boundary or label, and for a retardation label or a restated chord, finds speak of the phrase-boundary profile and its strength — Row 40.9's *"It emits a graded strength, not only a yes/no"* among them — and none of how a retardation label or a restated chord in an annotation is matched against L2's one span with its assignments.
 
 ## 10. The TRANSFER LIST — every RELOCATED row, by target charter
 
@@ -74712,4 +74754,4 @@ derivation, about the method, or about any open question.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
 - **It is complete over its population**, and §0 says so: positions 1 to 62 are done, and no member is untouched. Its
-  once-written sections — §7, §8, §9 and §14 — stand as §0 says: §7 and §8 are written; §9 and §14 are NOT YET WRITTEN.
+  once-written sections — §7, §8, §9 and §14 — stand as §0 says: §7, §8 and §9 are written; §14 is NOT YET WRITTEN.
