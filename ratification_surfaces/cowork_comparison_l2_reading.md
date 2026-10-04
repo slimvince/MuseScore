@@ -8,7 +8,7 @@
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourth_2026_09_28.md` Task 1, and further under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fifth_2026_09_28.md` Task 1, and further under
 > `records/cc/instructions/cc_instruction_l2_comparison_tabulation_sixth_2026_09_28.md` Task 1, and further under
-> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md` Task 1, executing
+> `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md` Task 1, and further under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourteenth_2026_10_04.md` Task 1, executing
 > the user's ruling of 2026-09-27, Option B
 > (`records/cowork/rulings/cowork_rulings_2026_09_27_l2_outgoing_population_sitting.md` §2), the
 > named-documents ruling of the same date, Option B
@@ -103,19 +103,19 @@ The order is the artifact's: `tools/audit/l2_outgoing_population.json` → `the_
 | 59 | `cowork_joint_key_chord_design.md` passages (item 4 alone) | **DONE** (§6.59) |
 | 60 | `docs/stage4b_design.md` passages (item 4 alone) | **DONE** (§6.60) |
 | 61 | `records/cowork/handoff/cowork_handoff_archive.md` passages (item 4 alone) | **DONE** (§6.61) |
-| 62 | The L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10 | NOT YET TABULATED |
+| 62 | The L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10 | **DONE** (§6.62) |
 
 **Where this stops.** The file was opened with §0 to §5 written and §6 to §16 headed; members are then
 tabulated one per commit, in the order above, and this table is updated in the commit that tabulates
-each. **Done: positions 1 to 61 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
+each. **Done: positions 1 to 62 — the four `ARCHITECTURE.md` sections of the ruling's item 1, whole,
 `cowork_layer5_function_design.md`, whole, `cowork_layer4_chordsymbol_design.md`, whole,
 `cowork_layer3_keymode_design.md`, whole, `cowork_layer5_engagement_design.md`, whole,
 `cowork_stage5_fitter_design.md`, whole, `cowork_joint_estimator_factorization.md`, whole,
 `cowork_score_census.md`, whole, `cowork_prefit_gates.md`, whole,
 `docs/nct_detection_design.md`, whole, `cowork_phase5b_l4_build_plan.md`, whole,
-`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, the `cowork_notation_output_contract.md` passages, the `cowork_progression_schema_dictionary.md` passages, the `cowork_layer1_note_model_design.md` passages, the `cowork_confidence_contract.md` passages, the `cowork_progression_schema_design.md` passages, the `docs/llm_integration.md` passages, the `cowork_idiom_entry_mapping.md` passages, the `cowork_architecture_reassessment.md` passages, the `cowork_architecture_review_2026_07.md` passages, the `cowork_factorization_desk_simulation.md` passages, the `cowork_joint_key_chord_design.md` passages, the `docs/stage4b_design.md` passages, and the `records/cowork/handoff/cowork_handoff_archive.md` passages.**
+`cowork_engage_arc_plan.md`, whole, `cowork_l1l4_review_charter.md`, whole, the `ARCHITECTURE.md` passages of the opening block, above the first `## ` heading, the `ARCHITECTURE.md` passages under *Document governance and the standing architecture notes*, the `ARCHITECTURE.md` passages under *Table of Contents*, the `ARCHITECTURE.md` passages under *1. Project Overview*, the `ARCHITECTURE.md` passages under *2. Architectural Principles*, the `ARCHITECTURE.md` passages under *3. Directory Structure*, the `ARCHITECTURE.md` passages under *4. Existing Components — The Analysis Foundation*, the `ARCHITECTURE.md` passages under *5. Planned Analysis Extensions*, the `ARCHITECTURE.md` passages under *6. The Style System*, the `ARCHITECTURE.md` passages under *7. The Knowledge Base*, the `ARCHITECTURE.md` passages under *8. Planned Generation Components*, the `ARCHITECTURE.md` passages under *9. The Constraint System*, the `ARCHITECTURE.md` passages under *10. Visualization*, the `ARCHITECTURE.md` passages under *11. Intonation*, the `ARCHITECTURE.md` passages under *12. User Interface*, the `ARCHITECTURE.md` passages under *14. ML Readiness*, the `ARCHITECTURE.md` passages under *15. Development Phases*, the `ARCHITECTURE.md` passages under *16. Scope Reference*, the `ARCHITECTURE.md` passages under *18. Contributing*, the `ARCHITECTURE.md` passages under *19. LLM Integration — Claude Composer*, the `ARCHITECTURE.md` passages under *Appendix A — Key Musical Concepts*, the `ARCHITECTURE.md` passages under *Appendix B — MuseScore Score Model Quick Reference*, the `docs/scoring_model.md` passages, the `cowork_phrase_boundary_design.md` passages, the `cowork_layer6_grouping_design.md` passages, the `cowork_layer2_slicing_design.md` passages, the `cowork_target_architecture.md` passages, the `cowork_evidence_inventory.md` passages, the `cowork_bounded_context_design.md` passages, the `cowork_voiceleading_axis_design.md` passages, the `cowork_notation_adoption_increment.md` passages, the `cowork_joint_estimator_architecture.md` passages, the `cowork_notation_output_contract.md` passages, the `cowork_progression_schema_dictionary.md` passages, the `cowork_layer1_note_model_design.md` passages, the `cowork_confidence_contract.md` passages, the `cowork_progression_schema_design.md` passages, the `docs/llm_integration.md` passages, the `cowork_idiom_entry_mapping.md` passages, the `cowork_architecture_reassessment.md` passages, the `cowork_architecture_review_2026_07.md` passages, the `cowork_factorization_desk_simulation.md` passages, the `cowork_joint_key_chord_design.md` passages, the `docs/stage4b_design.md` passages, the `records/cowork/handoff/cowork_handoff_archive.md` passages, and the L0/L1 transfer input.**
 
-**★ THE WRITING STANDS AT THE MEMBER BOUNDARY AFTER POSITION 61 (D-672).** The first batch, under
+**★ THE TABULATION IS COMPLETE OVER ITS POPULATION: POSITION 62, THE LAST MEMBER, IS DONE (D-672).** The first batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_2026_09_27.md`, stopped at the member
 boundary after position 4 under that dispatch's context-degradation rule (its Task 2(g)): over positions 1
 to 4 that session caught, on re-reading its own rows, several quotations attributed to the wrong field of a
@@ -143,9 +143,7 @@ dispatch's capacity judgment (its Task 1(h)): position 29 was judged not finisha
 the context that remained, the context having been compacted once already, and was not opened. The seventh batch, under
 `records/cc/instructions/cc_instruction_l2_comparison_tabulation_seventh_2026_09_29.md`, resumed at position 29 and tabulated positions 29 to 38, each whole and in its own commit, and stopped at the member boundary after position 38 because that dispatch ended the batch there (its Task
 1(g)), so that position 39 opens the next batch with nothing in front of it (**D-670**). The eighth batch, under
-`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 54 to 61, each whole in its own commit, and stopped at the member boundary after position 61 because that dispatch bounded the batch there. **Position 62 is UNTOUCHED**: not read for tabulation, not
-quoted, not counted and not placed, and nothing in it is partly worked. **The next writing resumes at position 62**, the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10. §7, §8,
-§9 and §14 stay NOT YET WRITTEN, being written once after the last member. **A member marked NOT YET TABULATED is UNTOUCHED** — not
+`records/cc/instructions/cc_instruction_l2_comparison_tabulation_eighth_2026_09_29.md`, opened with position 39 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 40, 41 and 42, each whole in its own commit, and stopped by its own capacity judgment to leave room for the close. The ninth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_ninth_2026_09_29.md`, opened with position 43 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 44 and 45, each whole in its own commit, and stopped by its own capacity judgment, written before position 46 was opened, to leave room for its correction commit and its close. The tenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_tenth_2026_09_29.md`, opened with position 46 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 47 and 48, each whole in its own commit, and stopped by its own capacity judgment, written before position 49 was opened, to leave room for the close. The eleventh batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_eleventh_2026_10_03.md`, opened with position 49 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 50 whole in its own commit, and stopped by its own capacity judgment, written before position 51 was opened, to leave room for the close. The twelfth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_twelfth_2026_10_03.md`, opened with position 51 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated position 52 whole in its own commit, and stopped by its own capacity judgment, written before position 53 was opened, to leave room for the close. The thirteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_thirteenth_2026_10_03.md`, opened with position 53 as that dispatch ordered (**D-670**) and tabulated it whole in one commit, then tabulated positions 54 to 61, each whole in its own commit, and stopped at the member boundary after position 61 because that dispatch bounded the batch there. The fourteenth batch, under `records/cc/instructions/cc_instruction_l2_comparison_tabulation_fourteenth_2026_10_04.md`, opened with position 62 as that dispatch ordered (**D-670**) and tabulated it whole in one commit. §7, §8, §9 and §14 stay NOT YET WRITTEN, to be written once each, in the order §7, §8, §9, §14. **A member marked NOT YET TABULATED is UNTOUCHED** — not
 read for tabulation, not quoted, not counted and not placed — **never partly worked** (**D-672**).
 
 ---
@@ -70311,6 +70309,726 @@ the bonus nor is beaten by a rival reading that gains it wrongly." — §4, *`w_
   states.
 - **Rows naming a derived statement §6.3 names as NEAREST to material met:** none.
 
+---
+
+### 6.62 — Member 62: the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10
+
+> **Manifest for this member.** Position **62**, the last member. Kind: *the L0/L1 transfer input* — the rows the L0/L1
+> comparison relocated to L2, built under the dispatch's Task 1(d) and not under the passage rule. Document:
+> `ratification_surfaces/cowork_comparison_l0_l1_reading.md`. Label: *"## 10. The TRANSFER LIST — every RELOCATED row, by
+> target charter"*. **The one published range**, as a locator only, by its first and last line as the artifact publishes
+> them (**D-307**):
+>
+> 1. lines 14856–15142, from *"## 10. The TRANSFER LIST — every RELOCATED row, by target charter"* to the empty string — the range's last line is a blank line, the one before that file's `## 11.` heading.
+>
+> **The range is that file's §10, whole.** Its first and last line matched the file at the object this batch read (the
+> L0/L1 reading file's blob at this batch's Task 0 commit), with no trailing carriage return to set aside — that blob
+> carries no carriage return. **Three lines inside the range are headings** — lines 14856, 15084 and 15129 — and under
+> the first reading rule of §6 they are titles, neither tabulated nor listed. **The unit here is not a sentence of §10**
+> (Task 1(d)): one row per bullet of the first *To L2* block, one per bullet of the *To L2* block under *"★ ADDED BY THE
+> APPLICATION ACT"*, and one per item under *"★ Flagged to the L2 surface, not relocated, not decided"*, in the order they
+> stand; every other line of the range is listed under *not a statement*, one item per block. Counted at this member by
+> this session: **47** bullets in the first *To L2* block, **6** in the added *To L2* block and **3** flagged items —
+> **56 rows** (62.1 to 62.56): **49 pointer rows**, **4 full rows** and **3 flagged items**. The four full rows carry
+> **8** outgoing statements (each of the four carries two claims and is split — the arithmetic is at the foot of this
+> member). Listed under *not a statement*: **11**. Counted at this member by this session; the counts appear here and
+> nowhere else.
+>
+> **How each row was built, so it can be checked.** Every row quotes, first, its §10 entry with that entry's lines in the
+> L0/L1 file (*The L0/L1 entry.*), and second, the outgoing statement that L0/L1 row's own block in that file's §6 quotes,
+> with the document named in that block's `### 6.M` heading and the block's own locator (*The outgoing statement it
+> carries.*). An L0/L1 row is always written with the prefix *L0/L1*: its number is that comparison's own and has nothing to
+> do with this file's row numbers. Before any row was written, a scripted search took every *To L2* entry's outgoing
+> statement from the L0/L1 blob and searched this file's committed blob — every *Outgoing statement.* quotation of §6.1 to
+> §6.61 and every item under every *Not a statement* heading — and every candidate it printed was then read by eye at the
+> row. **A pointer row** names the row of §6.1 to §6.61 that tabulates the same sentence — or the same sentences, where the
+> L0/L1 quotation joins several sentences this file tabulates one by one — and repeats no disposition, no verdict and no
+> mark; the named row carries them. **A full row** is built where the sentence is tabulated nowhere in this file as a
+> statement, in the form of every other member's rows, from the statement as the L0/L1 row quotes it, with one further
+> paragraph, *At the source now.*, recording what the document's blob at this batch's Task 0 commit holds at the located
+> lines. **A flagged item** is listed with what the derivation says to it and is not placed. Many L0/L1 blocks label their
+> quotation *Statement.* rather than *Outgoing statement.*; the two labels hold the same thing, and both are quoted the
+> same way.
+>
+> **What kind of text this member is, and which placement readings apply.** A transfer list of another comparison:
+> one-line glosses of rows that comparison relocated to L2, each pointing at that comparison's own row. The placement
+> readings of the earlier members apply to the full rows alone, unchanged, the cross-member travelling reading first; a
+> pointer row applies none. **One placement reading met Task 1(d) in a way no earlier member met it, and it is stated
+> here:** the two sentences of full row 62.48 lie inside member 47's ranges but are listed there under *not a statement* —
+> the first within an option the decision surface weighed and did not choose (§6.47's item 20), the second within
+> the chosen option's advantages, disadvantages and ratings (its item 19), under the tenth batch's record at position 47;
+> Task 1(d) orders a full row for a relocated statement tabulated nowhere as a statement, so the row is built and each
+> sentence is placed on its content, travelling with the row that carries the same content at its publishing side (Row
+> 49.27).
+>
+> **The WITHHELD homes inside this member:** `item_4_identities_inside` for position 62 names **none**, so no row of §6.62
+> lies inside a home in §10. **The marks of the full rows, located at the backbone:** for each full row, the lines its
+> sentences occupy, as the L0/L1 row's own block locates them, were set against every home
+> `tools/audit/decisions/backbone_decisions.json` records in the same document — `cowork_layer1_tone_collection_design.md`
+> (Rows 62.3 and 62.4), `cowork_notation_adoption_increment.md` (Row 62.48) and `cowork_progression_schema_dictionary.md`
+> (Row 62.41). None lies inside the home of a decision ruled L2's own (the boot pack's withheld identities) — the one such
+> decision homed in those documents, D-425, is homed at a line neither of Row 62.48's sentences reaches — and none inside
+> one of the eight SEEN homes, so **no full row carries a mark**. The rows so checked are Rows 62.3, 62.4, 62.41 and 62.48.
+> A pointer row carries no mark of its own; the row it names carries whatever mark its member gave it.
+>
+> **The SEEN check, made at the homes as member 17's manifest states:** none of the eight homes §5 names lies in this
+> member's document, the L0/L1 reading file.
+
+---
+
+**Row 62.1 — L0/L1 Row 1.9: the weighted pitch-class view: duration×beat, repetition, cross-voice and pedal weighting, pitch-class aggregation, and a weighted bass pick.**
+
+*The L0/L1 entry.* "Row 1.9 — the weighted pitch-class view: duration×beat, repetition, cross-voice and pedal weighting, pitch-class aggregation, and a weighted bass pick." (locator: §10, lines 14890–14891).
+
+*The outgoing statement it carries.* "`weightedPcView(noteModel, range, …)` — the recomputed `collectRegionTones` weighting (duration×beat, repetition, cross-voice, pedal, PC aggregation, bass pick), now counting **one onset per tied group** (tie **de-inflation**) and finding sustains by overlap." — `ARCHITECTURE.md`, the section *"#### Layer 1 — the lossless note model"*, *Derived views over the model* (the L0/L1 row's own locator: line 1579).
+
+*Where this file tabulates it.* **Row 22.39** (§6.22).
+
+---
+
+**Row 62.2 — L0/L1 Row 3.46: the derived summary views as a class: deliberately lossy read-only summaries over the note model, the weighting and the bass pick among them.**
+
+*The L0/L1 entry.* "Row 3.46 — the derived summary views as a class: deliberately lossy read-only summaries over the note model, the weighting and the bass pick among them." (locator: §10, lines 14892–14893).
+
+*The outgoing statement it carries.* "**Derived summary views (a separate module, not part of Architectural Layer 1's core):** … read-only summaries built *on top of* the note model — deliberately lossy convenience views, with the lossless note model still underneath them." — `cowork_layer1_note_model_design.md`, §5 (the L0/L1 row's own locator: line 155).
+
+*Where this file tabulates it.* **Rows 51.46 and 51.47** (§6.51) — the quotation joins the bold lead of Row 51.46's sentence to the whole of Row 51.47's, eliding the remainder of Row 51.46; this file tabulates the two sentences one by one.
+
+---
+
+**Row 62.3 — L0/L1 Row 4.28: that the evidence weighting is a stack of unvalidated hardcoded constants that materially decide what counts as chord evidence.**
+
+*The L0/L1 entry.* "Row 4.28 — that the evidence weighting is a stack of unvalidated hardcoded constants that materially decide what counts as chord evidence." (locator: §10, lines 14894–14895).
+
+*The outgoing statement it carries.* "The repetition boost …, cross-voice boost …, the four `beatWeight` values, the pedal-tail multiplier, and the bass passing-tone floor are hardcoded constants that materially decide what counts as chord evidence …. None is validated against this layer's own oracle …; they are inherited heuristics, not measured choices." — `cowork_layer1_tone_collection_design.md`, §4.6 (the L0/L1 row's own locator: line 161). Two claims, one per sentence of the quotation: (i) the weighting's constants are hardcoded and materially decide what counts as chord evidence; (ii) none is validated against the layer's own oracle, the constants being inherited heuristics rather than measured choices.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — the derivation states what L2 decides, not what an implementation does. (ii) **THE DERIVATION IS SILENT** — as (i).
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 22.38(ii). (ii) **QUARANTINED**, travelling with Row 22.38(ii).
+
+*At the source now.* The two sentences stand at lines 161–165 of the document's blob at this batch's Task 0 commit, found as quoted; the elisions stand for the two boosts' values, a parenthesis on a long suspension's weight, and a section pointer. The document is not a member of this comparison's population: it is none of the twelve whole documents, and no member is made of its passages.
+
+---
+
+**Row 62.4 — L0/L1 Row 4.33: weighting as a separate derived layer: a view over the note set, never a replacement, with its heuristics becoming tunable parameters validated against an oracle.**
+
+*The L0/L1 entry.* "Row 4.33 — weighting as a separate derived layer: a view over the note set, never a replacement, with its heuristics becoming tunable parameters validated against an oracle." (locator: §10, lines 14896–14897).
+
+*The outgoing statement it carries.* "**WEIGHTING (a separate derived layer).** From the filtered notes, compute the pitch-class evidence, the weights …, and the bass — as a **view over the note set, never a replacement.** Its heuristics become tunable parameters validated against an oracle, not hardcoded magic." — `cowork_layer1_tone_collection_design.md`, §5 (the L0/L1 row's own locator: line 188). Two claims, one per sentence of the quotation: (i) the weighting is a separate derived layer that computes the pitch-class evidence, the weights and the bass from the filtered notes, as a view over the note set and never a replacement; (ii) its heuristics become tunable parameters validated against an oracle, not hardcoded.
+
+*Derived statements that speak to it.* (i) None. (ii) L2-S38 — one §6.3 names as NEAREST to material met (entry 6).
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — the derivation names no weighted view of the sounding notes. (ii) L2-S38: **AGREES** — *"Every weight of the candidate score is fitted from annotated music, not set by hand."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED**, travelling with Row 22.38(ii). (ii) **ADOPTED — carried** (L2-S38), travelling with Row 1.1(ii).
+
+*At the source now.* The two sentences stand at lines 188–190 of the document's blob at this batch's Task 0 commit, found as quoted; the elision stands for a parenthesis naming the kinds of weight. They are item 4 of the document's §5, a proposed target design. The document is not a member of this comparison's population, as Row 62.3 records.
+
+---
+
+**Row 62.5 — L0/L1 Row 11.3: the boundary factor: the probability of a segment boundary at an event, conditioned on beat strength and fermata. …**
+
+*The L0/L1 entry.* "Row 11.3 — the boundary factor: the probability of a segment boundary at an event, conditioned on beat strength and fermata. *(The two L1 facts it reads are carried at S-35 and S-39 and travel.)*" (locator: §10, lines 14898–14899).
+
+*The outgoing statement it carries.* "`+ Σ_j w_bound · log P_bound(boundary at j | beat strength, fermata) [segmentation]`" — `cowork_joint_estimator_factorization.md`, §2, the score (the L0/L1 row's own locator: line 54); with the granularity amendment, "the chord-transition, key-transition, entry, and boundary factors **per boundary/event**" (the L0/L1 row's own locator: line 68).
+
+*Where this file tabulates it.* **Row 10.14, claim (viii)** (§6.10), and, for the block's second quotation, **Row 10.17, claim (iv)** (§6.10). The search took each block's first quotation only; Row 10.17's claim (iv) was found by reading the second quotation against §6.10 at the row.
+
+---
+
+**Row 62.6 — L0/L1 Row 11.4: the cadence evidence entering the score as one weighted factor voting for the segment's key.**
+
+*The L0/L1 entry.* "Row 11.4 — the cadence evidence entering the score as one weighted factor voting for the segment's key." (locator: §10, lines 14900–14901).
+
+*The outgoing statement it carries.* "`+ Σ_j w_cad · (cadence evidence features at j → k_j) [cadence factor]`" — `cowork_joint_estimator_factorization.md`, §2, the score (the L0/L1 row's own locator: line 55).
+
+*Where this file tabulates it.* **Row 10.14, claim (ix)** (§6.10).
+
+---
+
+**Row 62.7 — L0/L1 Row 11.5: the bass factor evaluated per event, each event's sounding bass against the segment's chord. …**
+
+*The L0/L1 entry.* "Row 11.5 — the bass factor evaluated per event, each event's sounding bass against the segment's chord. *(S-44's definition of the bass travels with it.)*" (locator: §10, lines 14902–14903).
+
+*The outgoing statement it carries.* "the BASS factor **per event** (each event's sounding bass against the segment's chord — Ni's published per-frame form)" — `cowork_joint_estimator_factorization.md`, §2 (the L0/L1 row's own locator: line 65).
+
+*Where this file tabulates it.* **Row 10.17, claim (ii)** (§6.10).
+
+---
+
+**Row 62.8 — L0/L1 Row 11.6: the pitch emission conditioned on chord-independent covariates, among them metric weakness and tied-over preparation. …**
+
+*The L0/L1 entry.* "Row 11.6 — the pitch emission conditioned on chord-independent covariates, among them metric weakness and tied-over preparation. *(S-35's class and S-23's tie fact travel with it.)*" (locator: §10, lines 14904–14905).
+
+*The outgoing statement it carries.* "emission probability conditioned on the category AND the chord-independent covariates …: metric weakness, stepwise approach, stepwise departure, chromatic-neighbor motion, tied-over preparation." — `cowork_joint_estimator_factorization.md`, §3.1 (the L0/L1 row's own locator: line 78).
+
+*Where this file tabulates it.* **Row 10.18, claim (ii)** (§6.10).
+
+---
+
+**Row 62.9 — L0/L1 Row 11.7: the spelling emission over the spelled degree, carrying the collection question through the signature mask. …**
+
+*The L0/L1 entry.* "Row 11.7 — the spelling emission over the spelled degree, carrying the collection question through the signature mask. *(S-3's spelled pitch and S-6's signature travel with it.)*" (locator: §10, lines 14906–14907).
+
+*The outgoing statement it carries.* "**Spelling emission** `P_spell(spelled degree | k)` … Also carries the collection question through the signature mask (the OI-168 form) — no tonic in the membership test." — `cowork_joint_estimator_factorization.md`, §3.2 (the L0/L1 row's own locator: line 84).
+
+*Where this file tabulates it.* **Row 10.23** (§6.10), the sentence the quotation carries after its elision; the quotation opens with the bold lead of **Row 10.22**'s sentence (§6.10), which the search did not return because the quotation keeps that lead without the remainder of the sentence.
+
+---
+
+**Row 62.10 — L0/L1 Row 11.10: segment duration as implicit-geometric with a hard length cap.**
+
+*The L0/L1 entry.* "Row 11.10 — segment duration as implicit-geometric with a hard length cap." (locator: §10, line 14908).
+
+*The outgoing statement it carries.* "Segment duration is otherwise implicit-geometric with a hard length cap (the established semi-Markov default; an explicit harmonic-rhythm duration model is recorded as CONJECTURE-gated future work)." — `cowork_joint_estimator_factorization.md`, §3.7 (the L0/L1 row's own locator: line 113).
+
+*Where this file tabulates it.* **Row 10.32** (§6.10).
+
+---
+
+**Row 62.11 — L0/L1 Row 12.13: the weighted pitch-class collections per span, with their repetition and cross-voice boosts.**
+
+*The L0/L1 entry.* "Row 12.13 — the weighted pitch-class collections per span, with their repetition and cross-voice boosts." (locator: §10, lines 14909–14910).
+
+*The outgoing statement it carries.* "Weighted pitch-class collections per span (with repetition and cross-voice boosts — constants unfit, OI-87). PUBLISHED to the key path (its emission input)." — `cowork_evidence_inventory.md`, §3 (the L0/L1 row's own locator: line 67).
+
+*Where this file tabulates it.* **Rows 44.23 and 44.24** (§6.44) — the quotation is the two sentences this file tabulates one by one.
+
+---
+
+**Row 62.12 — L0/L1 Row 12.25: dominant-shape detection as a key vote: a dominant-seventh-shaped sonority implying a tonic a fifth below by its shape. …**
+
+*The L0/L1 entry.* "Row 12.25 — dominant-shape detection as a key vote: a dominant-seventh-shaped sonority implying a tonic a fifth below by its shape. *(The key-agnosticism it appeals to is carried at S-47 and S-51 and travels with it.)*" (locator: §10, lines 14911–14913).
+
+*The outgoing statement it carries.* "**Dominant-SHAPE detection as a key vote.** A dominant-seventh-shaped sonority implies a tonic a fifth below BY ITS SHAPE, before any key is known. … the strongest chord-derived key hint that needs NO key input." — `cowork_evidence_inventory.md`, §6 (the L0/L1 row's own locator: line 124).
+
+*Where this file tabulates it.* **Row 44.42** and **Row 44.43, claim (ii)** (§6.44) — the quotation joins the two sentences across an elision; its bold lead is §6.44's *not a statement* item 11, a label.
+
+---
+
+**Row 62.13 — L0/L1 Row 14.12: the pitch-class weighting as a derived view used by the chord layer, not a primitive and not a replacement for the notes. …**
+
+*The L0/L1 entry.* "Row 14.12 — the pitch-class weighting as a derived view used by the chord layer, not a primitive and not a replacement for the notes. *(The view-not-replacement half is carried at S-33 and travels.)*" (locator: §10, lines 14914–14915).
+
+*The outgoing statement it carries.* "**The pitch-class weighting** that today lives in `collectRegionTones` is a *derived view* used by the chord-symbol layer (4), not a primitive and not a replacement for the notes." — `cowork_target_architecture.md`, §2 (the L0/L1 row's own locator: line 136).
+
+*Where this file tabulates it.* **Row 43.48** (§6.43).
+
+---
+
+**Row 62.14 — L0/L1 Row 15.18: a dominant-shaped sonority as note-level key evidence, readable before and without any chord decision. …**
+
+*The L0/L1 entry.* "Row 15.18 — a dominant-shaped sonority as note-level key evidence, readable before and without any chord decision. *(The anchoring move is carried at S-47 and travels.)*" (locator: §10, lines 14916–14917).
+
+*The outgoing statement it carries.* "a sonority shaped like a dominant seventh or leading-tone seventh is strong **note-level** evidence for the key it implies (its tritone resolves into exactly one major and one minor tonic pair) — evidence readable from the notes alone, **before and without any chord decision**" — `cowork_layer3_keymode_design.md`, §15 (the L0/L1 row's own locator: line 525).
+
+*Where this file tabulates it.* **Row 7.178, claim (i)** (§6.7).
+
+---
+
+**Row 62.15 — L0/L1 Row 17.1: the pitch-class weight histogram built from the input tones, with bass candidates picked by lowest pitch plus onset evidence. …**
+
+*The L0/L1 entry.* "Row 17.1 — the pitch-class weight histogram built from the input tones, with bass candidates picked by lowest pitch plus onset evidence. *(S-33's and S-44's definitions travel with it.)*" (locator: §10, lines 14918–14919).
+
+*The outgoing statement it carries.* "**Tone collection.** Build a 12-element pitch-class weight histogram from the input tones; pick bass candidate(s) by lowest pitch + onset evidence." — `docs/scoring_model.md`, §1 (the L0/L1 row's own locator: line 101).
+
+*Where this file tabulates it.* **Row 39.9** (§6.39).
+
+---
+
+**Row 62.16 — L0/L1 Row 17.2: the two-pass pedal-point check that replaces the reading when the bass is not a chord tone and the upper voices form a confident chord on their own.**
+
+*The L0/L1 entry.* "Row 17.2 — the two-pass pedal-point check that replaces the reading when the bass is not a chord tone and the upper voices form a confident chord on their own." (locator: §10, lines 14920–14921).
+
+*The outgoing statement it carries.* "**Pedal point check.** Two-pass: if the bass is not a chord tone of the Pass 1 winner and the upper voices form a confident chord on their own, replace with the Pass 2 result and flag `isPedalPoint`." — `docs/scoring_model.md`, §1 (the L0/L1 row's own locator: line 126).
+
+*Where this file tabulates it.* **Row 39.22** (§6.39).
+
+---
+
+**Row 62.17 — L0/L1 Row 17.8: bass-candidate enumeration fired only where there is evidence the bass voice moves within the region.**
+
+*The L0/L1 entry.* "Row 17.8 — bass-candidate enumeration fired only where there is evidence the bass voice moves within the region." (locator: §10, lines 14922–14923).
+
+*The outgoing statement it carries.* "**Bass-candidate enumeration** fires only when there is musical evidence the bass voice moves within the region: At least one candidate with `onsetAtRegionStart == true` AND at least one with `false` …, **OR** `sparseUpperRegisterAmbiguous`" — `docs/scoring_model.md`, §5 (the L0/L1 row's own locator: line 811).
+
+*Where this file tabulates it.* **Rows 39.173 and 39.174** (§6.39), the two conditions the sentence's lead introduces; the lead itself, at line 811 of `docs/scoring_model.md`, lies outside member 39's published ranges and is tabulated nowhere in this file. The search returned Row 39.173; Row 39.174, which the quotation keeps only by the condition's name, was found by reading the quotation at the row.
+
+---
+
+**Row 62.18 — L0/L1 Row 17.10: the bass and the chord chosen together as one (bass, root, template) triple.**
+
+*The L0/L1 entry.* "Row 17.10 — the bass and the chord chosen together as one (bass, root, template) triple." (locator: §10, line 14924).
+
+*The outgoing statement it carries.* "The analyzer does **not** commit to a bass and then score chords against it. It enumerates the plausible bass candidates and the whole root × template grid against each, and the winner is the best **(bass, root, template)** triple" — `docs/scoring_model.md`, §5 (the L0/L1 row's own locator: line 846).
+
+*Where this file tabulates it.* **Rows 39.183 and 39.184** (§6.39) — the quotation is the two sentences this file tabulates one by one.
+
+---
+
+**Row 62.19 — L0/L1 Row 17.12: the condition under which joint scoring fires. …**
+
+*The L0/L1 entry.* "Row 17.12 — the condition under which joint scoring fires. *(S-28's onsets and S-35's metric class travel with it.)*" (locator: §10, lines 14925–14926).
+
+*The outgoing statement it carries.* "**Joint scoring requires regional accumulation.** `jointScoringEnabled` fires only when at least one tone has `onsetAtRegionStart == true` or `distinctMetricPositions > 0`" — `docs/scoring_model.md`, §8 (the L0/L1 row's own locator: line 1188).
+
+*Where this file tabulates it.* **Rows 39.251 and 39.252** (§6.39) — the bold lead and the sentence after it, which this file tabulates one by one.
+
+---
+
+**Row 62.20 — L0/L1 Row 17.14: that nothing visible at the moment of scoring separates a chord from its third-above reading, and that what separates them is the surrounding music.**
+
+*The L0/L1 entry.* "Row 17.14 — that nothing visible at the moment of scoring separates a chord from its third-above reading, and that what separates them is the surrounding music." (locator: §10, lines 14927–14928).
+
+*The outgoing statement it carries.* "nothing this scorer can see at the moment of scoring — the sounding pitch classes, their weights, the templates, the key — separates the two readings. What separates them is the surrounding music: the following chord's root, the preceding chord's identity, and whether the bass falls on a strong beat." — `docs/scoring_model.md`, §8 (the L0/L1 row's own locator: line 1322).
+
+*Where this file tabulates it.* **Rows 39.286 and 39.287** (§6.39) — the quotation opens inside Row 39.286's sentence and runs through Row 39.287's.
+
+---
+
+**Row 62.21 — L0/L1 Row 20.19: the analysis surface a downstream reader is handed: chord symbols and Roman numerals per bar, key and mode, and the harmonic rhythm — where the chord changes occur. …**
+
+*The L0/L1 entry.* "Row 20.19 — the analysis surface a downstream reader is handed: chord symbols and Roman numerals per bar, key and mode, and the harmonic rhythm — where the chord changes occur. *(Read beside Row 17.13: a boundary decided from a chord, which S-28's construction and S-51's no-chord-as-input test place outside the layer that publishes change points.)*" (locator: §10, lines 14929–14932).
+
+*The outgoing statement it carries.* "the composing module's analysis is included in every score section sent to the LLM: Chord symbols and Roman numeral analysis per measure; Key and mode inference; Harmonic rhythm (where chord changes occur)" — `docs/llm_integration.md`, §10 (the L0/L1 row's own locator: lines 704–711).
+
+*Where this file tabulates it.* **Rows 54.2, 54.3 and 54.4** (§6.54), the three items of the quoted list; the list's lead-in, lines 704–707 of `docs/llm_integration.md`, lies outside member 54's published ranges and is tabulated nowhere in this file. The search also returned Row 30.63, which is rejected: it quotes the words *"Chord symbols"* from `ARCHITECTURE.md`, a different document.
+
+---
+
+**Row 62.22 — L0/L1 Row 21.1: segmentation as a modeled variable inside the one decode, the provisional-key back-edge dissolved. …**
+
+*The L0/L1 entry.* "Row 21.1 — segmentation as a modeled variable inside the one decode, the provisional-key back-edge dissolved. *(S-53's forward-only rule and S-28's exhaustive candidates travel with it.)*" (locator: §10, lines 14933–14934).
+
+*The outgoing statement it carries.* "**State:** a joint `(tonic, mode, chord)` per unit, with **segmentation as a modeled (semi-Markov) variable**, not a fixed pre-pass a provisional key shaped" — `cowork_joint_estimator_architecture.md`, §1 (the L0/L1 row's own locator: lines 23–25); the consequence at §3, *"(provisional key → segmentation) — **superseded** by A's joint decode with segmentation as a modeled variable; the ad-hoc back-edge dissolves into the joint estimate"* (line 58).
+
+*Where this file tabulates it.* **Row 48.1** (§6.48), and, for the block's second quotation, **Row 48.20** (§6.48), found by reading that quotation against §6.48 at the row (the search took each block's first quotation only).
+
+---
+
+**Row 62.23 — L0/L1 Row 21.3: the spelling-conditioned emission and the mode disambiguation it supports. …**
+
+*The L0/L1 entry.* "Row 21.3 — the spelling-conditioned emission and the mode disambiguation it supports. *(S-3's spelled pitch travels with it.)*" (locator: §10, lines 14935–14936).
+
+*The outgoing statement it carries.* "**notated spelling + accidentals** → spelling-conditioned emission + mode disambiguation" — `cowork_joint_estimator_architecture.md`, §2 (the L0/L1 row's own locator: line 45).
+
+*Where this file tabulates it.* **Row 48.9** (§6.48).
+
+---
+
+**Row 62.24 — L0/L1 Row 21.5: harmonic rhythm, boundary strength, fermatas and phrase facts as the segment-duration model and the boundary and cadence-location priors. …**
+
+*The L0/L1 entry.* "Row 21.5 — harmonic rhythm, boundary strength, fermatas and phrase facts as the segment-duration model and the boundary and cadence-location priors. *(S-39's flags travel with it as the evidence; S-40's refusal to collapse travels as the open question about the form.)*" (locator: §10, lines 14937–14939).
+
+*The outgoing statement it carries.* "**harmonic rhythm + boundary strength** → the segmentation (semi-Markov segment-duration) model; … **fermatas + phrase facts** → segment-boundary and cadence-location priors" — `cowork_joint_estimator_architecture.md`, §2 (the L0/L1 row's own locator: lines 48, 50).
+
+*Where this file tabulates it.* **Rows 48.12 and 48.14** (§6.48) — the quotation joins the two roster lines across an elision.
+
+---
+
+**Row 62.25 — L0/L1 Row 21.6: beat strength and metric position as an emission weighting and a chord-change-on-strong-beat prior. …**
+
+*The L0/L1 entry.* "Row 21.6 — beat strength and metric position as an emission weighting and a chord-change-on-strong-beat prior. *(S-35's class travels with it.)*" (locator: §10, lines 14940–14941).
+
+*The outgoing statement it carries.* "**beat strength / metric position** → emission weighting + a chord-change-on-strong-beat prior" — `cowork_joint_estimator_architecture.md`, §2 (the L0/L1 row's own locator: line 49).
+
+*Where this file tabulates it.* **Row 48.13** (§6.48).
+
+---
+
+**Row 62.26 — L0/L1 Row 21.7: bass-motion skeletons as a bass and inversion emission. …**
+
+*The L0/L1 entry.* "Row 21.7 — bass-motion skeletons as a bass and inversion emission. *(S-44's definition of the bass travels with it.)*" (locator: §10, lines 14942–14943).
+
+*The outgoing statement it carries.* "**bass-motion skeletons** → a bass/inversion emission" — `cowork_joint_estimator_architecture.md`, §2 (the L0/L1 row's own locator: line 51).
+
+*Where this file tabulates it.* **Row 48.15** (§6.48).
+
+---
+
+**Row 62.27 — L0/L1 Row 21.8: the non-chord-tone-cleaned, metric-weighted tone collection entering the emission. …**
+
+*The L0/L1 entry.* "Row 21.8 — the non-chord-tone-cleaned, metric-weighted tone collection entering the emission. *(S-33's event-set identity travels with it; and the same document's §5a rules that no live cleaning stage exists.)*" (locator: §10, lines 14944–14946).
+
+*The outgoing statement it carries.* "NCT-cleaned **tone collections / pitch content** → emission `P(pitches | tonic, mode, chord)`, metric-weighted" — `cowork_joint_estimator_architecture.md`, §2 (the L0/L1 row's own locator: line 43).
+
+*Where this file tabulates it.* **Row 48.7** (§6.48).
+
+---
+
+**Row 62.28 — L0/L1 Row 22.8: the style preset as a bounded additive adjustment that clear note evidence overrides. …**
+
+*The L0/L1 entry.* "Row 22.8 — the style preset as a bounded additive adjustment that clear note evidence overrides. *(Read beside Row 21.12: the same shape as the key signature's weak prior, with no threshold and no conditional path.)*" (locator: §10, lines 14947–14949).
+
+*The outgoing statement it carries.* "the preference is a **bounded additive adjustment** to a candidate's §5 fit score …, so it can reorder only readings whose note-fit difference is **smaller than that bound** — that is the operational meaning of 'overridden by clear note evidence'" — `cowork_layer4_chordsymbol_design.md`, §2 (the L0/L1 row's own locator: lines 170–176).
+
+*Where this file tabulates it.* **Row 6.63** (§6.6).
+
+---
+
+**Row 62.29 — L0/L1 Row 22.11: the window extending across contiguous slices while they support one consistent chord reading, and stopping at the first inconsistent one. …**
+
+*The L0/L1 entry.* "Row 22.11 — the window extending across contiguous slices while they support one consistent chord reading, and stopping at the first inconsistent one. *(With Row 18.33; S-33's slice identity travels with it as what the window is made of.)*" (locator: §10, lines 14950–14952).
+
+*The outgoing statement it carries.* "The window starts at the slice and its immediate neighbours and extends across contiguous neighbouring slices **while they continue to support one consistent chord reading**, stopping at the first slice whose notes are inconsistent with that reading." — `cowork_layer4_chordsymbol_design.md`, §2 (the L0/L1 row's own locator: lines 143–148).
+
+*Where this file tabulates it.* **Row 6.50** (§6.6).
+
+---
+
+**Row 62.30 — L0/L1 Row 22.20: the chord decision's own confidence, vertical-fit only by construction with no progression signal folded in.**
+
+*The L0/L1 entry.* "Row 22.20 — the chord decision's own confidence, vertical-fit only by construction with no progression signal folded in." (locator: §10, lines 14953–14954).
+
+*The outgoing statement it carries.* "this layer's confidence is **vertical-fit only** by construction (no progression signal folded in — that is Layer 5's to supply)" — `cowork_layer4_chordsymbol_design.md`, §15 O1b (the L0/L1 row's own locator: line 581); the declaration at §7, *"a margin-family quantity, not a calibrated probability, **vertical-fit only** by construction"* (lines 374–377).
+
+*Where this file tabulates it.* **Row 6.192, claim (i)** (§6.6), and, for the block's second quotation, **Row 6.127, claims (i) and (ii)** (§6.6), found by reading that quotation against §6.6 at the row (the search took each block's first quotation only).
+
+---
+
+**Row 62.31 — L0/L1 Row 23.2: the committed surface carrying no abstention state, the carry and the abstention re-expressing as posterior mass. …**
+
+*The L0/L1 entry.* "Row 23.2 — the committed surface carrying no abstention state, the carry and the abstention re-expressing as posterior mass. *(Read beside Row 22.15's named open question: two forms of the same honesty.)*" (locator: §10, lines 14955–14957).
+
+*The outgoing statement it carries.* "**Output mapping, declared now:** A commits its MAP (Viterbi) path — no abstention state on the committed surface (the old carry/abstention re-expresses as posterior mass, per the ratified decode plan)." — `cowork_prefit_gates.md`, the adoption protocol (the L0/L1 row's own locator: lines 105–109).
+
+*Where this file tabulates it.* **Row 12.29** (§6.12).
+
+---
+
+**Row 62.32 — L0/L1 Row 24.3: the owed distinct-root-first carry: capped on distinct roots, each root's variant depth bounded, the exclusion tail carried below the primary set.**
+
+*The L0/L1 entry.* "Row 24.3 — the owed distinct-root-first carry: capped on distinct roots, each root's variant depth bounded, the exclusion tail carried below the primary set." (locator: §10, lines 14958–14959).
+
+*The outgoing statement it carries.* "The engaged carry must **preserve distinct roots explicitly**, not as a by-product of a voicing cap. The declared *shape*: a **distinct-root-first carry** — for each distinct root above threshold, carry its best voicing + its variant set + its confidence, and cap on **distinct roots** (with each root's own variant depth bounded) … The exclusion tail (#12) is carried as the low-confidence roots below the primary set." — `cowork_layer5_engagement_design.md`, §2.3 (the L0/L1 row's own locator: lines 164–172).
+
+*Where this file tabulates it.* **Rows 8.58, 8.59 and 8.60** (§6.8) — the quotation joins the three sentences across its elisions.
+
+---
+
+**Row 62.33 — L0/L1 Row 24.5: the bass and its inversion as a strong, semi-independent root-correctness signal. …**
+
+*The L0/L1 entry.* "Row 24.5 — the bass and its inversion as a strong, semi-independent root-correctness signal. *(S-44's definition of the bass travels with it.)*" (locator: §10, lines 14960–14961).
+
+*The outgoing statement it carries.* "**Bass / inversion** | **load-bearing** — a strong, semi-independent root-correctness signal. … | Vuvan et al. 2021 dissociate bass from pitch-class content; both independently drive expectation" — `cowork_layer5_engagement_design.md`, §3.2 (the L0/L1 row's own locator: line 205).
+
+*Where this file tabulates it.* **Row 8.70** (§6.8), which tabulates the table row's middle cell; the row's last cell, the source it cites, is §6.8's *not a statement* item 31, a defense, which the search also returned.
+
+---
+
+**Row 62.34 — L0/L1 Row 24.6: the notated spelling disambiguating enharmonic and symmetric roots, read only where the distinction is a spelling distinction. …**
+
+*The L0/L1 entry.* "Row 24.6 — the notated spelling disambiguating enharmonic and symmetric roots, read only where the distinction is a spelling distinction. *(S-3's spelled pitch and S-14's required spelling travel.)*" (locator: §10, lines 14962–14963).
+
+*The outgoing statement it carries.* "**Pitch spelling** | **load-bearing** — disambiguates enharmonic/symmetric roots pitch-class-blind fit cannot (the symmetric-rotation churn). Read only where the distinction *is* a spelling distinction" — `cowork_layer5_engagement_design.md`, §3.2 (the L0/L1 row's own locator: line 206).
+
+*Where this file tabulates it.* **Row 8.71** (§6.8). The search also returned Row 5.229, which is rejected: it is a sentence of `cowork_layer5_function_design.md`, a different document.
+
+---
+
+**Row 62.35 — L0/L1 Row 24.8: metric position and harmonic rhythm as supporting features rather than hand-weighted priors. …**
+
+*The L0/L1 entry.* "Row 24.8 — metric position and harmonic rhythm as supporting features rather than hand-weighted priors. *(S-35's class travels with it.)*" (locator: §10, lines 14964–14965).
+
+*The outgoing statement it carries.* "**Metric position / harmonic rhythm** | supporting feature (not a hand-weighted prior)." — `cowork_layer5_engagement_design.md`, §3.2 (the L0/L1 row's own locator: line 210).
+
+*Where this file tabulates it.* **Row 8.75** (§6.8), which tabulates the table row's second cell; the first cell names the table row, as Row 8.75's locator does.
+
+---
+
+**Row 62.36 — L0/L1 Row 24.19: the carry expressed as a distribution over distinct roots, each with its best voicing, its variant set and its carried confidence. …**
+
+*The L0/L1 entry.* "Row 24.19 — the carry expressed as a distribution over distinct roots, each with its best voicing, its variant set and its carried confidence. *(S-33's event-set identity travels with it.)*" (locator: §10, lines 14966–14967).
+
+*The outgoing statement it carries.* "the carry contract is best expressed on the **meaningful axis — distinct roots**. Per slice Layer 5 reads a **distribution over distinct roots**, each root carrying: its **best voicing/variant** …; its **variant set** …; its **carried confidence** — so a root's *rank and margin* survive, not just its presence." — `cowork_layer5_engagement_design.md`, §2.1 (the L0/L1 row's own locator: lines 126–133).
+
+*Where this file tabulates it.* **Rows 8.41 to 8.45** (§6.8) — the quotation runs through the five sentences, eliding inside Rows 8.43 and 8.44, which the search did not return because the quotation keeps only their opening words.
+
+---
+
+**Row 62.37 — L0/L1 Row 26.1: the substitute dominant and its enharmonic German-sixth reading assigned to different idioms on the notated spelling alone. …**
+
+*The L0/L1 entry.* "Row 26.1 — the substitute dominant and its enharmonic German-sixth reading assigned to different idioms on the notated spelling alone. *(S-3's spelled pitch and S-14's required spelling travel.)*" (locator: §10, lines 14968–14969).
+
+*The outgoing statement it carries.* "Substitute dominant `subV7/x` (tritone sub) | **5** | (its enharmonic German-6th reading → **2**)" — `cowork_idiom_entry_mapping.md`, §5.1 (the L0/L1 row's own locator: line 17).
+
+*Where this file tabulates it.* **Row 55.8** (§6.55).
+
+---
+
+**Row 62.38 — L0/L1 Row 26.3: the mode and the chromaticism carried as cross-attributes, tagged independently of the idiom.**
+
+*The L0/L1 entry.* "Row 26.3 — the mode and the chromaticism carried as cross-attributes, tagged independently of the idiom." (locator: §10, lines 14970–14971).
+
+*The outgoing statement it carries.* "Cross-attributes (tagged separately per entry): **mode** (major/minor), **chromaticism** (diatonic↔chromatic)." — `cowork_idiom_entry_mapping.md`, the banner (the L0/L1 row's own locator: lines 8–9); restated in the notes, *"Each entry also gets the two cross-attributes … tagged independently of the idiom."* (lines 56–57).
+
+*Where this file tabulates it.* **Row 55.4** (§6.55), and, for the block's second quotation, **Row 55.22** (§6.55), found by reading that quotation against §6.55 at the row (the search took each block's first quotation only).
+
+---
+
+**Row 62.39 — L0/L1 Row 27.7: the augmented-sixth sub-type derived from the sounding pitch classes rather than from the vocabulary class, the class having collapsed the family. …**
+
+*The L0/L1 entry.* "Row 27.7 — the augmented-sixth sub-type derived from the sounding pitch classes rather than from the vocabulary class, the class having collapsed the family. *(A worked case of #12's recomputable clause: the distinction survives because the sounding set is published.)*" (locator: §10, lines 14972–14974).
+
+*The outgoing statement it carries.* "derived from the SOUNDING pitch classes over the segment (presence of the fifth/added degrees), NOT from the vocabulary class — **correcting the audit's DERIVABLE note:** the fitted vocabulary collapsed the family to Italian pitch content …, so the class cannot carry the distinction; the sounding-content derivation is a presentation-layer read of L1 facts and can." — `cowork_notation_output_contract.md`, §3.2 (the L0/L1 row's own locator: lines 81–86).
+
+*Where this file tabulates it.* **Row 49.18** (§6.49).
+
+---
+
+**Row 62.40 — L0/L1 Row 28.9: the tritone substitute on the tonic as the enharmonic German sixth, separated by spelling. …**
+
+*The L0/L1 entry.* "Row 28.9 — the tritone substitute on the tonic as the enharmonic German sixth, separated by spelling. *(With Row 26.1; S-3's spelled pitch and S-14's required spelling travel.)*" (locator: §10, lines 14975–14976).
+
+*The outgoing statement it carries.* "*(The `subV7/I` is enharmonically the German sixth — the common-practice chord the analysis tool already separates **by spelling**, L5 §5.6.)*" — `cowork_progression_schema_dictionary.md`, §5.1 (the L0/L1 row's own locator: lines 162–164); the same pair at §6, *"a shared convention (`ii–V–I`; `subV` = the enharmonic German sixth) is a single entry, its cross-style links visible"* (lines 242–243).
+
+*Where this file tabulates it.* **Row 50.26** (§6.50), and, for the block's second quotation, **Row 50.58** (§6.50), found by reading that quotation against §6.50 at the row (the search took each block's first quotation only).
+
+---
+
+**Row 62.41 — L0/L1 Row 28.10: the key-relative, degree-parameterised functional skeleton that instantiates in every key. …**
+
+*The L0/L1 entry.* "Row 28.10 — the key-relative, degree-parameterised functional skeleton that instantiates in every key. *(S-9's bar on reading the key travels with it as why it sits above L1.)*" (locator: §10, lines 14977–14978).
+
+*The outgoing statement it carries.* "**Functional skeleton** (progression entries) — the pattern as a **key-relative** sequence of (scale-degree, chord-quality) pairs … Being key-relative, one entry instantiates in every key; being **degree-parameterised**, a generative slot instantiates at every target degree." — `cowork_progression_schema_dictionary.md`, §3 (the L0/L1 row's own locator: lines 77–79). Two claims, one per sentence of the quotation: (i) a progression entry's functional skeleton is a key-relative sequence of (scale-degree, chord-quality) pairs; (ii) being key-relative an entry instantiates in every key, and being degree-parameterised a generative slot instantiates at every target degree.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT** — the derivation names no catalog of named progressions. (ii) **THE DERIVATION IS SILENT** — as (i).
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 50.2. (ii) **RELOCATED** — to *L3 — The read-off facts*, travelling with Row 50.2.
+
+*At the source now.* The sentences stand at lines 77–79 of the document's blob at this batch's Task 0 commit, found as quoted; the elision stands for the clause on the bass-line and galant entries. The document is member 50's, and these lines lie outside its published ranges; this file tabulates the term's definitions in the document's terms table and glossary (Rows 50.2 and 50.64), which are other sentences and which the search did not return.
+
+---
+
+**Row 62.42 — L0/L1 Row 18.18(ii): which unit a requesting layer steps in when it asks for more music: the key layer in bars, the chord layer in slices. …**
+
+*The L0/L1 entry.* "Row 18.18(ii) — which unit a requesting layer steps in when it asks for more music: the key layer in bars, the chord layer in slices. *(S-34's bar level and S-33's slice travel with it.)*" (locator: §10, lines 14979–14980).
+
+*The outgoing statement it carries.* "Above that floor, the requester steps in **its own natural unit** and converts to a tick target: Architectural Layer 3 reach-back in **measures** …; Architectural Layer 4's window in **slices**." — `cowork_bounded_context_design.md`, §3 item 9 (the L0/L1 row's own locator: lines 111–114).
+
+*Where this file tabulates it.* **Row 45.30** (§6.45).
+
+---
+
+**Row 62.43 — L0/L1 Row 18.27: that the forward cascade is bounded because a carried-in key affects the leading-edge slices and decays inward.**
+
+*The L0/L1 entry.* "Row 18.27 — that the forward cascade is bounded because a carried-in key affects the leading-edge slices and decays inward." (locator: §10, lines 14981–14982).
+
+*The outgoing statement it carries.* "In practice the forward cascade is **bounded**: the new context changes inference only where it actually reaches (a carried-in key affects the leading-edge slices and decays inward), so only the affected slices re-infer — the same locality that makes the stop condition terminate." — `cowork_bounded_context_design.md`, §4 (the L0/L1 row's own locator: lines 144–147).
+
+*Where this file tabulates it.* **Row 45.44, claim (i)** (§6.45).
+
+---
+
+**Row 62.44 — L0/L1 Row 18.31: that reach-back IS an enlargement request, with its direction, its stop condition and its bound.**
+
+*The L0/L1 entry.* "Row 18.31 — that reach-back IS an enlargement request, with its direction, its stop condition and its bound." (locator: §10, lines 14983–14984).
+
+*The outgoing statement it carries.* "Reach-back **is** an extension request: direction = earlier, stop = *'the leading-edge settled key repeats across iterations'*, bound = a maximum reach." — `cowork_bounded_context_design.md`, §5, third bullet (the L0/L1 row's own locator: lines 158–160).
+
+*Where this file tabulates it.* **Row 45.50** (§6.45).
+
+---
+
+**Row 62.45 — L0/L1 Row 18.32: the leading-edge evidence window, and the context slices anchoring the carried-in key while output is emitted only for the selection slices. …**
+
+*The L0/L1 entry.* "Row 18.32 — the leading-edge evidence window, and the context slices anchoring the carried-in key while output is emitted only for the selection slices. *(S-32's span-edge marks travel with it.)*" (locator: §10, lines 14985–14986).
+
+*The outgoing statement it carries.* "Its per-slice evidence window (± a few beats) at the **leading edge** of the selection requests extension, or truncates at the score start. The whole-run decode then runs over selection slices **plus** context slices; the context slices **anchor the carried-in key**, and output is emitted only for the selection slices." — `cowork_bounded_context_design.md`, §5, third bullet (the L0/L1 row's own locator: lines 163–166).
+
+*Where this file tabulates it.* **Rows 45.51 and 45.52** (§6.45) — the quotation is the two sentences this file tabulates one by one.
+
+---
+
+**Row 62.46 — L0/L1 Row 18.33: that the chord window must, at a selection edge, request an enlargement or recognise the score boundary, and never assume the neighbour slice exists.**
+
+*The L0/L1 entry.* "Row 18.33 — that the chord window must, at a selection edge, request an enlargement or recognise the score boundary, and never assume the neighbour slice exists." (locator: §10, lines 14987–14988).
+
+*The outgoing statement it carries.* "Its neighbour window (the slice ± a few neighbour slices, and the rewritten *'extend until the chord is in view, stop at the first inconsistent slice'* rule) must, at a **selection edge**, **request extension or recognise the score boundary** — never assume the neighbour slice exists." — `cowork_bounded_context_design.md`, §5, fourth bullet (the L0/L1 row's own locator: lines 167–170).
+
+*Where this file tabulates it.* **Row 45.53** (§6.45). The search also returned Row 45.93, which is rejected: it is a later sentence of the same document, in its §10, restating the rule, and not the sentence quoted.
+
+---
+
+**Row 62.47 — L0/L1 Row 18.34: that the request fires only when the truncation is decision-relevant, a truncated window whose evidence sufficed requesting nothing.**
+
+*The L0/L1 entry.* "Row 18.34 — that the request fires only when the truncation is decision-relevant, a truncated window whose evidence sufficed requesting nothing." (locator: §10, lines 14989–14990).
+
+*The outgoing statement it carries.* "**Discovery sharpening…:** the request fires only when the truncation is **decision-relevant** — the decision under the truncated window is not already a full-margin `Commit` (a truncated window whose evidence sufficed requests nothing)." — `cowork_bounded_context_design.md`, §5, fourth bullet (the L0/L1 row's own locator: lines 171–174).
+
+*Where this file tabulates it.* **Row 45.55** (§6.45).
+
+---
+
+**Row 62.48 — L0/L1 Row 25.5: the decided segment boundary's marginal mass, *"L2's published uncertainty under the L2 → L3 contract"* (Ruling 48).**
+
+*The L0/L1 entry.* "Row 25.5 — the decided segment boundary's marginal mass, *"L2's published uncertainty under the L2 → L3 contract"* (Ruling 48)." (locator: §10, lines 15091–15092).
+
+*The outgoing statement it carries.* "the cross-segmentation blindness is a permanent, declared #12 loss (#17e names the false-negative path: a boundary-ambiguous passage looks artificially certain)" — `cowork_notation_adoption_increment.md`, §4, option B-slice's first con (the L0/L1 row's own locator: lines 268–271); the same point in B-full's first pro, *"no posterior mass invisible anywhere, including the cross-segmentation mass every local slice hides"* (lines 236–238). Two claims, one per quotation: (i) a local slice's blindness to the mass across segmentations is a permanent, declared loss, a passage whose boundary is ambiguous looking artificially certain; (ii) the full posterior leaves no mass invisible, the mass across segmentations every local slice hides included.
+
+*Derived statements that speak to it.* (i) L2-S15, L2-S40. (ii) L2-S15, L2-S40.
+
+*Current-text axis.* (i) L2-S15: **AGREES** — as at Row 49.27. L2-S40: **AGREES** — *"A span-rival's mass is the marginal: the total mass of all whole readings that contain that span, with that start, that end and that reading of it."* (ii) L2-S15: **AGREES** — as at Row 49.27. L2-S40: **AGREES** — as at (i).
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L2-S15), travelling with Row 49.27. (ii) **ADOPTED — carried** (L2-S15), travelling with Row 49.27.
+
+*At the source now.* The first quotation stands at lines 269–271 of the document's blob at this batch's Task 0 commit and the second at lines 236–238, both found as quoted. The document is member 47's and both lie inside its published ranges, but neither is tabulated there as a statement: the first belongs to the option the decision surface weighed and did not choose, which §6.47 lists whole as its *not a statement* item 20, and the second belongs to the chosen option's advantages, disadvantages and ratings, which §6.47 lists as one defense, its item 19. The manifest states how this row is placed.
+
+---
+
+**Row 62.49 — L0/L1 Row 27.10: the same, met at the publishing side (Ruling 48).**
+
+*The L0/L1 entry.* "Row 27.10 — the same, met at the publishing side (Ruling 48)." (locator: §10, line 15093).
+
+*The outgoing statement it carries.* "Boundary axis: per event, the marginal probability of a segment boundary (the cross-segmentation mass the slice cannot see — #17e's named limit, closed here)." — `cowork_notation_output_contract.md`, §3.3, group (ii) (the L0/L1 row's own locator: lines 125–126).
+
+*Where this file tabulates it.* **Row 49.27** (§6.49).
+
+---
+
+**Row 62.50 — L0/L1 Row 11.12: the fermata displacement, *"as the cadence factor's covariate"*, with the note that the L1 facts it needs are published already (Ruling 54).**
+
+*The L0/L1 entry.* "Row 11.12 — the fermata displacement, *"as the cadence factor's covariate"*, with the note that the L1 facts it needs are published already (Ruling 54)." (locator: §10, lines 15094–15095).
+
+*The outgoing statement it carries.* "with de Clercq's weak-beat displacement (the cadential arrival may sit one strong beat before a metrically weak fermata) as a covariate, not an exception." — `cowork_joint_estimator_factorization.md`, §3.8 (the L0/L1 row's own locator: line 116).
+
+*Where this file tabulates it.* **Row 10.33, claim (ii)** (§6.10).
+
+---
+
+**Row 62.51 — L0/L1 Row 22.12: the three-part root-pinning test, *"its L0/L1 halves noted at S-14 and beside S-3"* (Ruling 58).**
+
+*The L0/L1 entry.* "Row 22.12 — the three-part root-pinning test, *"its L0/L1 halves noted at S-14 and beside S-3"* (Ruling 58)." (locator: §10, lines 15096–15097).
+
+*The outgoing statement it carries.* "the layer reads the spelling and **pins the root from it** where the spelling passes the stated test …, all three parts required: (1) **present** — every sounding tone of the rotation set carries a valid notated spelling; (2) **internally consistent** — no two sounding notes of the same pitch class are spelled differently (a slice sounding both `G♯` and `A♭` fails); (3) **a clean stack of thirds** … Failing **any** part of the test … the layer defers: name the quality and bass, carry the rotations, mark 'uncertain' (open question: the root), and leave the re-spelling judgment to the later function step." — `cowork_layer4_chordsymbol_design.md`, §5 (the L0/L1 row's own locator: lines 296–311).
+
+*Where this file tabulates it.* **Rows 6.102, 6.103, 6.104, 6.105 and 6.107** (§6.6) — the quotation runs through the test's lead and its three requirements to its consequence, eliding the remainder of Row 6.105 and the whole of Row 6.106; the search did not return Row 6.105, which the quotation keeps only by its opening words.
+
+---
+
+**Row 62.52 — L0/L1 Row 22.16: the capped carry, *"with the no-cap principle attached for the L2 derivation"* (Ruling 60).**
+
+*The L0/L1 entry.* "Row 22.16 — the capped carry, *"with the no-cap principle attached for the L2 derivation"* (Ruling 60)." (locator: §10, lines 15098–15099).
+
+*The outgoing statement it carries.* "the carried alternatives are capped at a fixed number of highest-ranked readings (a tunable; identifier `topK`) and exclude spelling-pinned symmetric siblings — calibration facts the Layer-5 override design accounts for, not defects here." — `cowork_layer4_chordsymbol_design.md`, §15 O1b (the L0/L1 row's own locator: lines 582–584).
+
+*Where this file tabulates it.* **Row 6.192, claim (ii)** (§6.6).
+
+---
+
+**Row 62.53 — L0/L1 Row 11.8's L2 half: the row is *"carried by S-45, its L2 half to the L2 surface"* (Ruling 53).**
+
+*The L0/L1 entry.* "Row 11.8's L2 half — the row is *"carried by S-45, its L2 half to the L2 surface"* (Ruling 53)." (locator: §10, line 15100).
+
+*The outgoing statement it carries.* "Bass-motion continuity across segments is NOT in the first structure (recorded as a possible later factor with its own ledger entry)." — `cowork_joint_estimator_factorization.md`, §3.3 (the L0/L1 row's own locator: line 93).
+
+*Where this file tabulates it.* **Row 10.25** (§6.10).
+
+---
+
+**Row 62.54 — flagged item: Ruling 48 (§3bc) — Row 21.5.**
+
+*The L0/L1 entry.* "**Ruling 48 (§3bc) — Row 21.5**, *"FLAGGED for the L2 surface, its boundary-strength factor being an L2 read of an L3 product, which the L3 → L2 contract forbids."*" (locator: §10, lines 15134–15135).
+
+*What the derivation says to it.* L2-S49 — *"L2 consumes nothing L3 publishes: no cadence type, phrase or section grouping, chord symbol, figured bass or harmonic rhythm."* L2-S13 — *"L1's notated boundary evidence enters as terms on a boundary reading: the flags with their scope, the positioned marks and the per-voice relations."*
+
+*Not placed, as the L0/L1 file states of it.*
+
+---
+
+**Row 62.55 — flagged item: Ruling 57 (§3bl) — the declared-mode prior.**
+
+*The L0/L1 entry.* "**Ruling 57 (§3bl) — the declared-mode prior.** *"Flagged to L2's surface, not decided here: D-528's and D-450's declared-mode prior against `FRAMEWORK.md` §8.6 and C-2."*" (locator: §10, lines 15136–15137).
+
+*What the derivation says to it.* L2-S17 — *"The written key signature enters as one term of the candidate score, a weak prior over the spans' tonalities."* and *"A tonality or mode tag the record file declares is not read at all."* (L2-S17 is one §6.3 names as NEAREST to material met, entry 1.)
+
+*Not placed, as the L0/L1 file states of it.*
+
+---
+
+**Row 62.56 — flagged item: Ruling 60 (§3bo) — the no-cap principle, attached to Row 22.16.**
+
+*The L0/L1 entry.* "**Ruling 60 (§3bo) — the no-cap principle, attached to Row 22.16.** *"A published list of computed readings carries every reading computed, with its mass, a cap being a consumer's own view and never the publication"* — carried to L2 with that row *"where the L2 derivation meets Row 27.8's ratified contract and D-006."*" (locator: §10, lines 15138–15141).
+
+*What the derivation says to it.* L2-S42 — *"L2 may withhold from publication rivals whose mass falls below a declared threshold, but only because every withheld rival is recomputable."* (L2-S42 is one §6.3 names as NEAREST to material met, entry 4.) L2-S41 — *"Beside the per-span marginals of L2-S40, L2 publishes the best whole readings, ranked, down to the threshold of L2-S42."*
+
+*Not placed, as the L0/L1 file states of it.*
+
+---
+
+#### Not a statement — listed so the arithmetic closes (11)
+
+1. "**★ COMPLETE OVER THE POPULATION.** All 29 documents are … derived statement travels with it, the row says which." (14858–14860) — *the section's account of itself*: that file's statement that its transfer list is complete over its population.
+2. "**To L3 — *the read-off facts*.** … decision resolved on what it saw with its provenance." (14862–14886) — *the transfer list's rows addressed to another charter*: the block's heading and the bullets of L0/L1 Rows 1.21, 1.22, 1.23(i), 1.24(i), 8.1, 8.3, 9.3, 9.10, 18.36, 24.20, 27.18 and 18.37, addressed to *L3 — The read-off facts*.
+3. "**To L2 — *the tonal reading, the one entangled decision*.**" (14888) — *the section's account of itself*: the heading of the block whose bullets are Rows 62.1 to 62.47 above.
+4. "**To *the second axis — voice leading*.** … it is not mistaken for one. *(With Row 26.4.)*" (14992–15026) — *the transfer list's rows addressed to another charter*: the block's heading and the bullets of L0/L1 Rows 12.17, 14.11, 19.5, 19.6, 19.7, 19.14, 19.29, 20.20, 26.2, 26.4, 28.7 and 28.8, addressed to *the second axis — voice leading*.
+5. "**To *the measurement of the analysis* (NOT A LAYER).** … reported separately, and every reported rate names its denominator." (15028–15082) — *the transfer list's rows addressed to another charter*: the block's heading and the bullets of L0/L1 Rows 1.23(ii), 1.24(ii), 4.36, 4.38, 10.44, 10.48, 13.17, 13.18, 14.24, 15.20, 15.21, 18.42, 21.16, 23.1, 23.6, 23.9, 23.10, 24.4, 24.13, 24.14, 25.15, 28.13, 29.11, 29.12, 29.13 and 29.14, addressed to *the measurement of the analysis* (NOT A LAYER).
+6. "*Written 2026-09-03 under `cc_instruction_comparison_l0_l1_fifth_2026_09_03.md` Task 3(e). Additions … edited. Each entry names the ruling that relocated it.*" (15086–15087) — *the section's account of itself*: the added subsection's remark on when and how it was written.
+7. "**To L2 — *the tonal reading, the one entangled decision*.**" (15089) — *the section's account of itself*: the heading of the added block whose bullets are Rows 62.48 to 62.53 above.
+8. "**To L3 — *the read-off facts*.** … authored by the writing side under `cc_instruction_comparison_l0_l1_seventh_2026_09_03.md` Task 1)." (15102–15114) — *the transfer list's rows addressed to another charter*: the block's heading and the bullets of L0/L1 Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37 and 10.41, Rows 10.4 and 10.21, Row 13.14 and Row 10.31, addressed to *L3 — The read-off facts*.
+9. "**To *the second axis — voice leading*.** … second L1 unit; Row 18.17's claim stands at L1."*" (15116–15122) — *the transfer list's rows addressed to another charter*: the block's heading and the bullets of L0/L1 Row 16.2 and Rows 19.6, 19.7 and 19.14, addressed to *the second axis — voice leading*.
+10. "**To the reader outside the analysis.** … reader's (Ruling 57 (ii), D-522)"* (Ruling 62 item 11)." (15124–15127) — *the transfer list's rows addressed to another charter*: the block's heading and the bullet of L0/L1 Row 20.12, addressed to the reader outside the analysis.
+11. "*Three items the rulings FLAG rather than place. Each … a disposition, and none is decided by this act.*" (15131–15132) — *the section's account of itself*: the flagged subsection's remark that its three items are neither placed nor decided.
+
+#### The arithmetic at this member
+
+- Rows written: **56** (62.1 to 62.56): **49 pointer rows**, **4 full rows** and **3 flagged items** — pointer rows +
+  full rows + flagged items = 49 + 4 + 3 = 56, the rows of §6.62.
+- A pointer row's statement is counted at the row it names, and a flagged item is not placed: **neither is counted in
+  either table below.**
+- The four full rows — 62.3, 62.4, 62.41 and 62.48 — each carry two claims and are split.
+- **Outgoing statements placed (the full rows' statements): 8.**
+- Listed under *not a statement*: **11**.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 8 dispositions over 8 statements —
+  the full rows' statements equal the dispositions summed.
+- **UNPLACED at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+The 49 pointer rows are not counted here: each pointer row's statement is counted at the row it names. The 3 flagged
+items are not counted here: they are not placed.
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 3 | 62.4(ii), 62.48(i), 62.48(ii) |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 2 | 62.41(i), 62.41(ii) |
+| QUARANTINED | 3 | 62.3(i), 62.3(ii), 62.4(i) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **8** | — |
+
+**The arithmetic closes at this member**: 3 + 0 + 2 + 3 + 0 + 0 + 0 = 8, against 8 statements.
+
+#### The current-text axis at this member, counted at these rows
+
+The 49 pointer rows and the 3 flagged items are not counted here, for the reasons above.
+
+| Verdict | Count |
+|---|---|
+| AGREES | 5 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 5 |
+| **Total verdicts** | **10** |
+
+*(10 verdicts over 8 statements: two statements, 62.48(i) and 62.48(ii), each name two derived statements, L2-S15 and
+L2-S40; every other statement names one or none.)* DIFFERS: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none.** `item_4_identities_inside` for position 62 names no identity, and no full row's sentence lies
+  inside the home of a decision ruled L2's own, located at the backbone as the manifest states. A pointer row carries no
+  mark of its own.
+- **SEEN rows: none.** None of the eight homes lies in this member's document, and no full row's sentence lies inside one;
+  the check was made at the homes, as the manifest states.
+- **Rows naming a derived statement §6.3 names as NEAREST to material met:** Row 62.4, claim (ii) (L2-S38, entry 6); and
+  the flagged items Row 62.55 (L2-S17, entry 1) and Row 62.56 (L2-S42, entry 4), each saying so.
+
 ## 7. The derived side — one row per L2-S1 to L2-S49
 
 **NOT YET WRITTEN.** Written once, after the last member: each derived statement with the outgoing
@@ -70330,7 +71048,7 @@ text says, and no verdict on whether §7 is right.
 
 ## 10. The TRANSFER LIST — every RELOCATED row, by target charter
 
-**Over the members tabulated so far** (§0 names them). Each tabulated member appends its RELOCATED rows
+**Over every member of the population** (§0: positions 1 to 62 are done). Each tabulated member appends its RELOCATED rows
 here, by target charter, in the commit that tabulates it; where a derived statement travels with a row,
 the row says which.
 
@@ -70801,6 +71519,8 @@ the row says which.
   *(L2-S49 travels with them.)*
 - Row 57.8 — travelling with Row 4.15: the fallback admitting cadences at a featureless phrase-boundary profile.
   *(L2-S49 travels with it.)*
+- Rows 62.41(i) and 62.41(ii) — travelling with Row 50.2: a progression entry's functional skeleton, key-relative and
+  degree-parameterised, one entry instantiating in every key.
 
 **To *the second axis — voice leading*.**
 
@@ -71220,11 +71940,11 @@ numbered 14.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 numbered 23.n, and member 24's the rows numbered 24.n. Member 25 relocates one, Row 25.12(ii), above, member 26's
 relocations are the rows numbered 26.n, and member 27's the rows numbered 27.n. Member 28 relocates no row. Member 29 relocates no row, and member 30's relocations are the rows numbered 30.n
 above. Member 31 relocates no row, and member 32's relocations are the rows numbered 32.n above. Member 33's relocations are the rows numbered 33.n
-above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 51's the rows numbered 51.n, member 52's the rows numbered 52.n, member 53's the rows numbered 53.n, member 54's the rows numbered 54.n, and member 55's the rows numbered 55.n. Member 56 relocates no row, member 57's relocations are the rows numbered 57.n above, and members 58, 59, 60 and 61 relocate no row.)*
+above. Member 34 relocates no row. Member 35 relocates no row. Member 36 relocates one, Row 36.1, above. Member 37 relocates no row. Member 38 relocates no row. Member 39's relocations are the rows numbered 39.n above, member 40's the rows numbered 40.n, member 41's the rows numbered 41.n, member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 51's the rows numbered 51.n, member 52's the rows numbered 52.n, member 53's the rows numbered 53.n, member 54's the rows numbered 54.n, and member 55's the rows numbered 55.n. Member 56 relocates no row, member 57's relocations are the rows numbered 57.n above, and members 58, 59, 60 and 61 relocate no row. Member 62's relocations are its full rows' rows numbered 62.n above; its pointer rows relocate nothing of their own, the rows they name carrying their placements.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
-**Over the members tabulated so far** (§0 names them). Each tabulated member appends its QUARANTINED
+**Over every member of the population** (§0: positions 1 to 62 are done). Each tabulated member appends its QUARANTINED
 rows here, each with its audit question, in the commit that tabulates it.
 
 - Row 1.2(ii) — which corpus's labels were the shipped counted and fitted values estimated on, and does
@@ -72344,10 +73064,12 @@ rows here, each with its audit question, in the commit that tabulates it.
   reproduce, and on which retired path and corpus was it taken?
 - Row 61.2(ii) — as at Row 61.2(i), for the share recorded as emission error, and for the recorded share in which the
   correct tonality is never ranked second.
+- Rows 62.3(i), 62.3(ii) and 62.4(i) — travelling with Row 22.38(ii): does the legacy weighted pitch-class view run on any
+  production path at the current commit, and what reads it?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
-**Over the members tabulated so far** (§0 names them). Each tabulated member appends its ADOPTED —
+**Over every member of the population** (§0: positions 1 to 62 are done). Each tabulated member appends its ADOPTED —
 proposed rows and its DIFFERS rows here, each in one sentence, in the commit that tabulates it. **Nothing
 here is chosen**: a proposal is put for the user's ruling, and a difference is stated in both texts'
 words.
@@ -73380,7 +74102,7 @@ words.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**Over the members tabulated so far** (§0 names them). Each tabulated member adds its row here, and the
+**Over every member of the population** (§0: positions 1 to 62 are done). Each tabulated member adds its row here, and the
 arithmetic check is restated over the members done. The per-member statement lists are at each member's
 own distribution table in §6.
 
@@ -73449,9 +74171,12 @@ own distribution table in §6.
 | 59 | 6 | 1 | 0 | 0 | 2 | 0 | 0 | 3 | 6 |
 | 60 | 8 | 0 | 0 | 0 | 0 | 0 | 3 | 5 | 0 |
 | 61 | 8 | 0 | 0 | 0 | 2 | 0 | 6 | 0 | 0 |
-| **Total** | **5473** | **667** | **112** | **1320** | **1542** | **0** | **1400** | **432** | **2331** |
+| 62 | 8 | 3 | 0 | 2 | 3 | 0 | 0 | 0 | 11 |
+| **Total** | **5481** | **670** | **112** | **1322** | **1545** | **0** | **1400** | **432** | **2342** |
 
-**The arithmetic check:** 667 + 112 + 1320 + 1542 + 0 + 1400 + 432 = 5473, against 5473 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70 + 85 + 91 + 60 + 96 + 5 + 23 + 9 + 21 + 12 + 6 + 8 + 8).
+**The arithmetic check:** 670 + 112 + 1322 + 1545 + 0 + 1400 + 432 = 5481, against 5481 statements placed (72 + 65 + 40 + 36 + 417 + 272 + 224 + 212 + 471 + 96 + 104 + 71 + 50 + 47 + 45 + 10 + 124 + 4 + 0 + 6 + 111 + 156 + 373 + 130 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 366 + 166 + 168 + 101 + 202 + 122 + 132 + 192 + 59 + 79 + 70 + 85 + 91 + 60 + 96 + 5 + 23 + 9 + 21 + 12 + 6 + 8 + 8 + 8).
+
+Member 62's 49 pointer rows and 3 flagged items are not counted in this table: a pointer row's statement is counted at the row it names, and a flagged item is not placed.
 
 **Current-text verdicts.**
 
@@ -73518,9 +74243,12 @@ own distribution table in §6.
 | 59 | 1 | 4 | 1 | 6 |
 | 60 | 1 | 4 | 3 | 8 |
 | 61 | 0 | 0 | 8 | 8 |
-| **Total** | **1006** | **858** | **3667** | **5531** |
+| 62 | 5 | 0 | 5 | 10 |
+| **Total** | **1011** | **858** | **3672** | **5541** |
 
-**The arithmetic check:** 1006 + 858 + 3667 = 5531 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72 + 85 + 91 + 60 + 96 + 5 + 23 + 9 + 22 + 13 + 6 + 8 + 8).
+**The arithmetic check:** 1011 + 858 + 3672 = 5541 (78 + 65 + 40 + 38 + 430 + 273 + 225 + 219 + 472 + 105 + 104 + 71 + 50 + 47 + 45 + 10 + 129 + 4 + 0 + 6 + 112 + 156 + 373 + 132 + 53 + 24 + 18 + 2 + 31 + 87 + 0 + 12 + 20 + 4 + 0 + 1 + 0 + 4 + 368 + 166 + 168 + 101 + 205 + 122 + 132 + 192 + 59 + 80 + 72 + 85 + 91 + 60 + 96 + 5 + 23 + 9 + 22 + 13 + 6 + 8 + 8 + 10).
+
+Member 62's 49 pointer rows and 3 flagged items are not counted in this table either, for the same reasons.
 
 ## 14. The derivation's independence record, relayed
 
@@ -73550,5 +74278,5 @@ derivation, about the method, or about any open question.
   the comparison is textual throughout.
 - **It dispositions no residue file and none of the documents the named-documents ruling lists and does
   not compare whole.**
-- **It is not complete over its population**, and §0 says exactly which members are done and which are
-  untouched: positions 1 to 61 are done, position 62 is untouched.
+- **It is complete over its population**, and §0 says so: positions 1 to 62 are done, and no member is untouched. Its
+  once-written sections — §7, §8, §9 and §14 — stand as §0 says: §7, §8, §9 and §14 are NOT YET WRITTEN.
