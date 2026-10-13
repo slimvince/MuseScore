@@ -325,6 +325,8 @@ only for input this analysis does not take:**
   - the ordered, covering, gapless and non-overlapping list of **slices** — the stretches between
     consecutive change points, where a change point is every onset **and every release** of an
     eligible note;
+  - per slice, the **lowest sounding pitch** of its sounding set, published under that name (Ruling 2 of
+    the 2026-10-08 structural-bass record);
   - per change point, its **metric strength class**;
   - per change point, the **notated boundary evidence** at it: bar line, fermata, rest, repeat sign,
     double bar;
@@ -332,6 +334,21 @@ only for input this analysis does not take:**
     resolution, the sounding together of the fourth and seventh degrees of a candidate tonality in
     the approach.
 - **Decides nothing about the music.** It bounds the search and hands the next layer its covariates.
+
+**★ AMENDED 2026-10-13 ON THE USER'S RULING OF 2026-10-08, WITH THE FORMER WORDING PRESERVED IN PLACE
+(#12.)** Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_10_08_l2_structural_bass_sitting.md`, the
+user's word "A" — the L1 list gains the lowest sounding pitch per slice, written by the application act of
+`records/cc/instructions/cc_instruction_l2_application_2026_10_10.md` (Task 5). **THE FORMER WORDING WAS:**
+*"the ordered, covering, gapless and non-overlapping list of **slices** — the stretches between
+consecutive change points, where a change point is every onset **and every release** of an eligible note;
+per change point, its **metric strength class**; per change point, the **notated boundary evidence** at
+it: bar line, fermata, rest, repeat sign, double bar; the **local cadence cues**: a falling-fifth or
+rising-fourth bass motion, a leading-tone resolution, the sounding together of the fourth and seventh
+degrees of a candidate tonality in the approach."* — the list's four bullets, in order. *Why it was
+amended:* the ruling's ground as put — towards the objective (#4), the figure term gets its evidence at
+every slice; towards the principles, one producer per fact (#6, D-100), L1 decides nothing, the item named
+for what it is (Ruling 42); its cost accepted, one edit to a ratified L1 face and to the charter's list,
+by the application act.
 
 **Why a layer.** The alternative is a grid, and the ledger records what a grid does: a context window
 defined as a fixed number of beats does not respect harmonic or metrical boundaries, so evidence

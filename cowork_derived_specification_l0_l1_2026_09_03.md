@@ -75,8 +75,9 @@ pitch event, bare *tie* is the notated tie, bare *rest* is the notated silence.
   gives; never a decided tonality (§3.6, S-47). *(formerly "the bass pitch class" — Ruling 76, §3ce)*
 - **The lowest sounding pitch** — at a slice, the lowest sounding pitch of its sounding set; L1's
   anchor for the cadence cues (S-44); not a notated voice. The word *bass* is reserved for the chord's
-  bass note L3 decides and names no L1 object (Rulings 42, 74). *(Formerly the entry* Bass*, defined
-  as this anchor — Ruling 76, §3ce.)*
+  bass note, which L3 publishes, read off the figure L2 decides, and names no L1 object (Rulings 42,
+  74). *(formerly "the chord's bass note L3 decides" — Ruling 2 of the 2026-10-08 structural-bass
+  record)* *(Formerly the entry* Bass*, defined as this anchor — Ruling 76, §3ce.)*
 - **Witness** — the notes (by identity in the record file) that make a published predicate true.
   Every cue and flag is published with its witnesses so that L2 can weigh it (§3.7).
 - **Notated order** — the order of bars as written, repeats not unfolded. **Unfolded order** — the
@@ -1252,7 +1253,9 @@ signature enters L1 — as the *fact that it changed*, never as its value.**
 
 **S-44. Cues are computed at onset change points only (a release is never a cadential arrival), and
 every cue is defined over the *lowest sounding pitch of the slice's sounding set*, published under
-that name — not a notated voice. The word *bass* is reserved for the chord's bass note decided at L3.**
+that name — not a notated voice. The word *bass* is reserved for the chord's bass note, which L3
+publishes, read off the figure L2 decides.** (was: "The word *bass* is reserved for the chord's bass note
+decided at L3."; cowork_rulings_2026_10_08_l2_structural_bass_sitting.md, Ruling 2)
 - *Defense.* A cadence arrives on an attack [THEORY]. Bigo et al. compute their features at each beat
   for an arrival Z and anchor them on *"the bass of Z"*, finding the preparation by *"the latest beat
   before Y whose lowest sounding note has a different pitch (modulo octave) than the lowest note of
@@ -1280,6 +1283,13 @@ that name — not a notated voice. The word *bass* is reserved for the chord's b
   with fitted weights, are *"L2's cadence factor … a consumer reading L1's cues and its own state"*.
   **Not settled by that ruling:** the window's value (OQ-10, a measurement), and *"the keyboard voice
   proxy on which S-46's same-voice condition rests"*.
+- *Amended by Ruling 2 of cowork_rulings_2026_10_08_l2_structural_bass_sitting.md (the L2
+  structural-bass sitting, OQ-L2-11) — the bass-note wording.* "**Documentation, the wording correction
+  with it:** in L1's §0 entry *The lowest sounding pitch* and in S-44, "the chord's bass note L3 decides"
+  / "decided at L3" become "the chord's bass note, which L3 publishes, read off the figure L2 decides",
+  the former wordings kept in place (#12). The reservation of the word *bass* (Ruling 42 of the 2026-08-31
+  record) is unchanged. Ground: `FRAMEWORK.md` lines 441–442, the chord symbol "a view and not a
+  decision"; L2-S27 and chord-as-degree Ruling 1 of 2026-10-08."
 
 **S-45. LOWEST-PITCH-FALLS-A-FIFTH (equivalently rises a fourth): at onset change point Z, let Y be
 the latest earlier slice whose lowest sounding pitch class differs from Z's, searched back no further
@@ -1435,7 +1445,10 @@ slice's lowest sounding pitch — so that a consumer can read the motion of the 
 ### 3.7 Face (g) — the form of what is published, and the bar on deciding
 
 **S-50. L1 publishes exactly: the slice list (S-29–S-33) with each slice's sounding set by event
-identity; the span's two edges published as such, with a record-edge mark where an edge is the
+identity; per slice, the lowest sounding pitch of its sounding set, published under that name, with its
+witness (the note), its establishment status, its provenance and, where not computed, a named reason
+(Ruling 2 of the 2026-10-08 structural-bass record, OQ-L2-11); the span's two edges published as such,
+with a record-edge mark where an edge is the
 record's own start or end (S-32, Ruling 40, Ruling 46 (vi)), events marked *entered sounding* and *cut
 by the span* (S-32), and a tie cut by the span so marked (S-25); per change point, its metric strength
 class (S-35) and its boundary flag set (S-39), every flag with its scope (Ruling 48); the positioned
@@ -1448,7 +1461,23 @@ attachments and ornament attributes (S-16, S-17); the silent-notes and annotatio
 S-18); and the defect flags (S-10, S-24, S-25). Every predicate is published with its witnesses, its
 establishment status (S-52), its provenance — how it was arrived at (Ruling 62 item 9) — and, where it
 is not computed or is empty, a named reason (Ruling 62 item 7). No published field is named
-*boundary*, *cadence*, *phrase*, *chord*, *key*, *tonality*, *degree* or *function*.**
+*boundary*, *cadence*, *phrase*, *chord*, *key*, *tonality*, *degree* or *function*.** (was: "S-50. L1
+publishes exactly: the slice list (S-29–S-33) with each slice's sounding set by event identity; the
+span's two edges published as such, with a record-edge mark where an edge is the record's own start or
+end (S-32, Ruling 40, Ruling 46 (vi)), events marked *entered sounding* and *cut by the span* (S-32),
+and a tie cut by the span so marked (S-25); per change point, its metric strength class (S-35) and its
+boundary flag set (S-39), every flag with its scope (Ruling 48); the positioned marks list, complete
+over every notated mark of face (e), the flags referencing it by identity (S-41, Ruling 51); the
+junction adjacencies (S-27); per onset change point and per notated voice, the three relations to that
+voice's preceding event with their witnesses (Ruling 49) and the chordal count with its witnesses
+(Ruling 61); per onset change point, the cue flags (S-45–S-47) with the interval content (S-49); the
+PEDAL-HELD attribute on every change point inside a pedal span (S-54); the ornamental attachments and
+ornament attributes (S-16, S-17); the silent-notes and annotation carriers (S-2, S-18); and the defect
+flags (S-10, S-24, S-25). Every predicate is published with its witnesses, its establishment status
+(S-52), its provenance — how it was arrived at (Ruling 62 item 9) — and, where it is not computed or is
+empty, a named reason (Ruling 62 item 7). No published field is named *boundary*, *cadence*, *phrase*,
+*chord*, *key*, *tonality*, *degree* or *function*.";
+cowork_rulings_2026_10_08_l2_structural_bass_sitting.md, Ruling 2)
 - *Defense.* The charter's list, plus the additions each derived above [RULED for the list; derived
   for the additions, each flagged where it stands]. The naming bar operationalises *decides nothing*:
   a field's name is what a consumer will treat it as, and a flag named *cadence* would be consumed as
@@ -1480,6 +1509,15 @@ is not computed or is empty, a named reason (Ruling 62 item 7). No published fie
 - *Beside S-50's naming rule (Ruling 62, §3bq, item 9) — provenance on a published item.* *"A published
   item names how it was arrived at, and a value naming a mechanism is renamed when the mechanism is
   demoted or renamed."*
+- *Amended by Ruling 2 of cowork_rulings_2026_10_08_l2_structural_bass_sitting.md (the L2
+  structural-bass sitting, OQ-L2-11) — the lowest sounding pitch per slice.* "**Algorithm — L1's
+  publication, an amendment to a ratified L1 face and to the charter's L1 list:** at the application act,
+  S-50 of `cowork_derived_specification_l0_l1_2026_09_03.md` gains one item — *per slice, the lowest
+  sounding pitch of its sounding set, published under that name, with its witness (the note), its
+  establishment status, its provenance and, where not computed, a named reason* (the forms S-50 already
+  requires of every item). The derived list stands at the derivation; S-50's former wording is preserved
+  at its site (#12). **L2's algorithm as its statements define it is unchanged:** L2-S28's term already
+  wants exactly this." *The derived list stands at the derivation, S-50.*
 
 **S-51. The test for whether an L1 output is a *claim* the charter forbids: an output is a candidate or
 evidence, not a claim, if and only if it is computable from L0 facts with no tonality, chord or
