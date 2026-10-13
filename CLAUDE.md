@@ -1879,11 +1879,19 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
      our own system is checked before it carries load in a surface (#18), and one that cannot be
      checked is LABELLED a reading rather than stated as a fact. **Every pro and con names the
      principle, rule or gate it rests on (D-424).** Where the objective and the principles conflict,
-     the objective takes precedence — **and how far that reaches is an OPEN QUESTION the user has not
-     answered**: read at its widest it could be taken as licence to override #18, #19 or #20 by
-     asserting a benefit to the objective, and §3 of that same record states that the narrowing is
-     not a session's to take. Until he answers, it is applied as written, and any case where the wide
-     reading would change an outcome is flagged to him.
+     the objective takes precedence — **and how far that reaches is RULED (user-ruled 2026-10-07; the
+     ruling record is `records/cowork/rulings/cowork_rulings_2026_10_07_l2_chord_tone_membership_sitting.md`,
+     Ruling 6)**: the ultimate objective (maximum-precision inference, #4) is the prime objective and
+     outranks every design rule in the long run. **It acts through evidence:** a design rule holds while
+     there is no reason to suspect that breaking it would improve the inference; when there is such
+     reason, the departure is opened up for investigation and is investigated, tested and measured under
+     #18, #19 and #20 before it carries load. An asserted benefit by itself overrides nothing. The
+     backward edge (D-466) is the user's worked instance. The per-case flag the former wording required
+     is no longer owed. *(Former wording, preserved (#12): "**and how far that reaches is an OPEN
+     QUESTION the user has not answered**: read at its widest it could be taken as licence to override
+     #18, #19 or #20 by asserting a benefit to the objective, and §3 of that same record states that the
+     narrowing is not a session's to take. Until he answers, it is applied as written, and any case where
+     the wide reading would change an outcome is flagged to him.")*
   5. **THE SURFACE CARRIES A RECOMMENDATION, ALWAYS, EXPLAINED IN THOSE SAME THREE TERMS**
      (2026-09-21, clause 4). His words with the ruling: *"I cannot think of any example of decision
      surface that should exclude a recommendation."* **A recommendation given WITHOUT its
@@ -1911,9 +1919,13 @@ Build commands via `Start-Process` are isolated from these rules (exit code not 
   Conventions section; **D-424** in `cowork_notation_adoption_increment.md`; **D-599** in
   `cowork_adjudication_dossier.md`; **D-658** in `cowork_audit_protocol.md`. The per-sitting rulings
   of 2026-08-15, 2026-08-21, 2026-08-28, 2026-09-04 and 2026-09-21 live in their handoff entries and
-  ruling records and are cited here by their dates. **NO DECISIONS-REGISTER IDENTITY IS ALLOCATED for
-  the 2026-09-21 ruling or for this block** — that register cannot accept one while its rule (c) is
-  suspended, and `cowork_register_rule_c_suspension_2026_08_28.md` is the route.
+  ruling records, and the ruling of 2026-10-07 that step 4 cites lives in its ruling record; all are
+  cited here by their dates. **NO DECISIONS-REGISTER IDENTITY IS ALLOCATED for the 2026-09-21 ruling,
+  for the 2026-10-07 ruling or for this block** — that register cannot accept one while its rule (c)
+  is suspended, and `cowork_register_rule_c_suspension_2026_08_28.md` is the route. *(Former wording,
+  preserved (#12): "The per-sitting rulings of 2026-08-15, 2026-08-21, 2026-08-28, 2026-09-04 and
+  2026-09-21 live in their handoff entries and ruling records and are cited here by their dates. **NO
+  DECISIONS-REGISTER IDENTITY IS ALLOCATED for the 2026-09-21 ruling or for this block**")*
 
 - **WORKING-TREE FILES ARE READ WITH THE FILE TOOLS; SHELL ACCESS IS LIMITED TO GIT OBJECT QUERIES BY
   EXPLICIT HASH (user mandate 2026-06-21; homed here 2026-08-02 from `records/cowork/handoff/cowork_handoff.md`,
