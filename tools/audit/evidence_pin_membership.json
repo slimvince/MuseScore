@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 102,
+  "ruling_records_read": 145,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -243,6 +243,49 @@
   "records/cowork/rulings/cowork_rulings_2026_09_27_l2_leak_list_sitting.md",
   "records/cowork/rulings/cowork_rulings_2026_09_27_l2_named_documents_sitting.md",
   "records/cowork/rulings/cowork_rulings_2026_09_27_l2_outgoing_population_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_04_l2_route_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_04_l2_tonality_vocabulary_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_05_l2_assignment_evidence_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_05_l2_cadential_six_four_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_05_l2_chord_vocabulary_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_05_l2_elaboration_relations_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_05_l2_fit_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_05_l2_key_signature_prior_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_05_l2_no_early_discarding_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_05_l2_pivot_chord_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_05_l2_rival_publication_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_05_l2_silence_and_no_chord_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_05_l2_tractability_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_05_l2_weight_meaning_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_05_l2_working_order_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_06_l2_one_decision_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_06_l2_publication_to_next_layer_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_06_l2_tonality_and_progression_terms_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_06_l2_tonality_evidence_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_07_context_research_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_07_l2_adjacent_identical_spans_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_07_l2_any_boundary_set_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_07_l2_applied_or_new_tonality_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_07_l2_chord_tone_membership_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_07_l2_context_at_the_edge_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_07_l2_four_agreeing_statements_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_07_l2_metric_strength_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_07_l2_notated_boundary_evidence_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_07_l2_nothing_from_l3_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_07_l2_one_tonality_per_span_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_07_l2_reading_parts_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_07_l2_score_decomposition_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_08_l2_chord_as_degree_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_08_l2_structural_bass_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_09_l2_cadence_cues_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_09_l2_context_in_chord_terms_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_09_l2_crossing_elaborations_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_09_l2_never_re_derives_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_09_l2_published_theory_terms_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_09_l2_span_content_term_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_09_l2_working_span_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_10_l2_tail_scope_and_single_rows_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_10_l2_tail_style_and_idiom_sitting.md",
   "records/cowork/rulings/cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
  "named_in_a_ruling_record_but_not_generated": {
@@ -250,6 +293,42 @@
   "documents": {
    "cowork_comparison_harmony_boundary_reading.md": [
     "records/cowork/rulings/cowork_rulings_2026_08_24_method_ruling_sitting.md"
+   ],
+   "cowork_l2_adjacent_identical_spans_surface_2026_10_07.md": [
+    "records/cowork/rulings/cowork_rulings_2026_10_07_l2_adjacent_identical_spans_sitting.md"
+   ],
+   "cowork_l2_any_boundary_set_surface_2026_10_07.md": [
+    "records/cowork/rulings/cowork_rulings_2026_10_07_l2_any_boundary_set_sitting.md"
+   ],
+   "cowork_l2_applied_or_new_tonality_surface_2026_10_07.md": [
+    "records/cowork/rulings/cowork_rulings_2026_10_07_l2_applied_or_new_tonality_sitting.md"
+   ],
+   "cowork_l2_chord_tone_membership_surface_2026_10_07.md": [
+    "records/cowork/rulings/cowork_rulings_2026_10_07_l2_chord_tone_membership_sitting.md"
+   ],
+   "cowork_l2_context_at_the_edge_surface_2026_10_07.md": [
+    "records/cowork/rulings/cowork_rulings_2026_10_07_l2_context_at_the_edge_sitting.md"
+   ],
+   "cowork_l2_four_agreeing_statements_surface_2026_10_07.md": [
+    "records/cowork/rulings/cowork_rulings_2026_10_07_l2_four_agreeing_statements_sitting.md"
+   ],
+   "cowork_l2_metric_strength_surface_2026_10_07.md": [
+    "records/cowork/rulings/cowork_rulings_2026_10_07_l2_metric_strength_sitting.md"
+   ],
+   "cowork_l2_notated_boundary_evidence_surface_2026_10_07.md": [
+    "records/cowork/rulings/cowork_rulings_2026_10_07_l2_notated_boundary_evidence_sitting.md"
+   ],
+   "cowork_l2_nothing_from_l3_surface_2026_10_07.md": [
+    "records/cowork/rulings/cowork_rulings_2026_10_07_l2_nothing_from_l3_sitting.md"
+   ],
+   "cowork_l2_one_tonality_per_span_surface_2026_10_07.md": [
+    "records/cowork/rulings/cowork_rulings_2026_10_07_l2_one_tonality_per_span_sitting.md"
+   ],
+   "cowork_l2_reading_parts_surface_2026_10_07.md": [
+    "records/cowork/rulings/cowork_rulings_2026_10_07_l2_reading_parts_sitting.md"
+   ],
+   "cowork_l2_score_decomposition_surface_2026_10_06.md": [
+    "records/cowork/rulings/cowork_rulings_2026_10_07_l2_score_decomposition_sitting.md"
    ],
    "cowork_phase_definition_surface_2026_08_15.md": [
     "records/cowork/rulings/cowork_rulings_2026_08_15_phase_definition_sitting.md",
