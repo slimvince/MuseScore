@@ -1,5 +1,15 @@
 # The blind derivation of L2 — the tonal reading
 
+> **★ THIS IS THE RECORD OF THE BLIND ACT, AND ITS BODY IS NOT REWRITTEN (D-674, branch one; the L2 route
+> ruling of 2026-10-04, `records/cowork/rulings/cowork_rulings_2026_10_04_l2_route_sitting.md` §2 step
+> 2).** Written 2026-09-27 by an implementation-blind session; compared over 62 outgoing members in
+> `ratification_surfaces/cowork_comparison_l2_reading.md`; its statements and open questions dispositioned
+> by the forty-three L2 family ruling records of 2026-10-04 to 2026-10-10 in `records/cowork/rulings/`,
+> listed at `records/cc/instructions/cc_instruction_l2_application_2026_10_10.md` §L. **The derived L2
+> specification as amended by those rulings is `cowork_derived_specification_l2_2026_10_10.md`, and that
+> file, not this one, is the text the ratification act is put over.** Everything below this banner stands
+> as it was written at blob `d78ac530992860d38d1f605a77a2961d5440a2f6`.
+
 > **STATUS: DRAFT — BLIND DERIVATION, NOT COMPARED, NOT RATIFIED.**
 > Written 2026-09-27 by a fresh Cowork session with nothing mounted, under the brief *"BRIEF for the
 > blind deriving session — the L2 subject"* (released 2026-09-27). The file name carries the brief's
