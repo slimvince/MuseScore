@@ -23872,3 +23872,233 @@ taken; the two verdict tuples and the five edit sites at the files themselves; t
 the inherited failing set at the committed `guard_state.json`; the two new reds' causes at
 `artifact_inventory.json`, `l0_l1_outgoing_population.json`, `evidence_pin_membership.json` and
 `STATUS.md` itself.*
+
+---
+
+## THE L2 APPLICATION ACT: THE DERIVED SPECIFICATION AS AMENDED WRITTEN, THE DERIVATION BANNERED, THE RULED AND RECORDED ROWS RE-MARKED, TWO PASSAGES OF `CLAUDE.md`, THREE SITES OF THE L0/L1 SPECIFICATION AND THE CHARTER'S L1 LIST AMENDED UNDER THEIR RULINGS, NOTHING RATIFIED
+
+**★ THE HEADING IS THE DISPATCH'S ORDERED NAME.** This batch ran
+`records/cc/instructions/cc_instruction_l2_application_2026_10_10.md`: **Task 0** landed the forty-three
+L2 family records, their forty surfaces and two documents, handoff entries 278 to 375 and the dispatch;
+**Task 1** wrote the successor `cowork_derived_specification_l2_2026_10_10.md`; **Task 2** gave the
+derivation its D-674 top banner; **Task 3** re-marked the reading file's ruled and recorded rows and
+wrote the transfer list's additions, the §13 sentence, the new §13a and the four state sentences;
+**Task 4** amended two passages of `CLAUDE.md`; **Task 5** amended three sites of the derived L0/L1
+specification and the charter's L1 list; **Task 6** closed. **NOTHING WAS RATIFIED, NO RULING WAS TAKEN,
+NO POSITION WAS WEIGHED AND NO RECOMMENDATION APPEARS ANYWHERE.** No task stopped.
+
+### The commits, by explicit hash
+
+| Act | Commit | What it carries |
+|---|---|---|
+| the tree met | `f7ad51f8f347d6ef954a1c67ef25f6322475bf97` | the local tip; `origin/master` equal to it |
+| Task 0 | `f5ba76048d6045d3d8466ae9b862dae1b31f2435` | 184 landed paths and the regenerated `tools/audit/evidence_pin_membership.json` |
+| Task 1 | `314002b40716eef5bf92c503fbba54b1d4c42677` | `cowork_derived_specification_l2_2026_10_10.md`, new |
+| Task 2 | `61fe639feb4e31f23c6cef34f9cd975223e8786b` | the derivation's top banner — insertions only |
+| Task 3 | `86df5768fa4c07d5247bb78cd429bc79d61a29ec` | the reading file — insertions only |
+| Task 4 | `a5e997b042b0055fb32fa99d80468160d81cbac7` | `CLAUDE.md` — two passages |
+| Task 5 | `c9027834cd1f39f05a044711b9480000ba978e26` | `cowork_derived_specification_l0_l1_2026_09_03.md` and `FRAMEWORK.md` |
+| the close | this commit | `STATUS.md`, `STATUS_ARCHIVE.md`, `tools/audit/gen_status_batch_bound.py`, `tools/audit/status_batch_bound.json`, `tools/audit/session_start_read_size.json`, this section, the report |
+| the end state | the one further commit | the end-state guard run, which this section does not assert |
+
+**Every task commit was pushed and `origin/master` read at `.git/refs/remotes/origin/master` with the
+file tools after each push.** **THE DISPATCH WAS PINNED** at Task 0 to blob
+`174ca3ec270712b6d042822dabf12968db001676`, proven unmoved before staging and again at the close. The
+per-passage attribution tables of Tasks 1 to 5 are in the report,
+`records/cc/reports/cc_report_l2_application_2026_10_10.md`, §3.1 and §5 to §7, and are not restated here.
+
+### Both guard states
+
+**THE START STATE, run in check mode before the first edit: 80 guards run, 13 failing, 4 not run, 19
+historical, and ZERO STOPs** (the classification tool's standing four-name STOP and no other). The
+thirteen are the twelve the dispatch names plus `gen_evidence_pin_membership.py --check`, which the
+declared start state predicted PASS. **Its cause was measured, not assumed**: the tool lists ruling
+records from the working-tree folder, and the forty-three records Task 0 lands were already there,
+untracked — so the red is this batch's own subject, classed by cause on the first L2 tabulation report's
+precedent, and not a STOP. It cleared at Task 0's regeneration, whose membership movement was zero (A3).
+
+**THE STATE AT THE CLOSE'S TREE, run in check mode after the last edit and before the close commit:**
+**80 guards run, 17 failing, 4 not run, 19 historical; the classification tool reports
+its standing four-name STOP and no other.** The twelve named, plus five, **each classed by its measured
+cause — every one of them an act this dispatch orders, so none is a STOP under A2:**
+
+1. **`gen_l0_l1_outgoing_population.py --check` and `gen_l2_outgoing_population.py --check` — STALE.**
+   The `STATUS.md` entries moved term hits into the residue, and Task 4's insertion moved `CLAUDE.md`'s
+   hit line numbers and byte count. **Both were regenerated and compared field by field against the
+   committed blobs: NO member of either population moved** — what moved is hit counts, line numbers,
+   residue hit records and `CLAUDE.md`'s byte size. Committed with the end state, as A2 orders.
+2. **`gen_defense_share.py --check` — STALE.** Task 4 moved the line numbers of three published clauses
+   and the size of the Conventions span. Regenerated and committed with the end state, on the precedent
+   of the fifteenth tabulation close, which regenerated the same artifact at its own close.
+3. **`gen_derivation_boot_pack.py --check` — STALE, AND LEFT STANDING.** The `l2` pack's file 02 (the
+   principles and conventions, from `CLAUDE.md`) and file 07 (the charter, from `FRAMEWORK.md`) no longer
+   re-render after Tasks 4 and 5. The `l2` pack is not among the frozen packs, so its check compares it
+   with today's sources. **Re-rendering it would edit the pack, which this dispatch bars**, so it stands,
+   named for the writing side. (The three frozen packs' length notes are informational and set no exit
+   code.)
+4. **`decisions/gen_cluster_dispositions.py --verify` — LINE DRIFT, AND LEFT STANDING.** Three register
+   entries cite `CLAUDE.md` by line — **D-196**, **D-253** and **D-254** — and each now starts twelve
+   lines later, the length of Task 4's step-4 insertion. **The cited lines live in a register source,
+   which this dispatch bars editing**, so it stands, named for the writing side. Its `--check` and
+   `--producible` pass; every verbatim quote is still found at its cited home.
+
+**So the end state this batch can reach is the twelve plus these two.** E6's *"PLUS NONE"* is therefore
+**not met as written**, and the two are reported here and in E6 rather than repaired by an act the
+dispatch forbids.
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+### E0–E6, graded
+
+- **E0 — MET.** The named paths in one commit; `origin/master` at the commit; A3 measured (zero
+  membership movement, the artifact committed because its record count moved); A1's whole-tree check
+  reported with its enumeration below; every path of items 1 to 5 accounted for — all landed, none
+  already tracked, none absent.
+- **E1 — MET.** The successor at the root; §0–§4 carried and §5–§7 replaced by the pointer; every
+  amendment placed in the dispatch's forms, citing its record and ruling or recorded section; the nine
+  ANSWERED marks the banner names are the set the file carries; the banner as (b); the per-hunk table in
+  the report with every hunk attributed; no recommendation anywhere.
+- **E2 — MET.** One changed passage, at the head, insertions only, proven at the object.
+- **E3 — MET.** Every row-part in the ledger's tables carries its line; **no row is unplaced**. §10 is
+  complete over the ledger's relocations out of UNPLACED, with the seventh heading; §13a is derived from
+  the added lines and closes against 5481; the four state sentences are added with their former
+  wordings; the diff carries no deleted line and every added passage is attributed in the report; no
+  row's proposed paragraph was edited and no current-text axis was touched.
+- **E4 — MET.** Two changed passages, at step 4 and in the closing paragraph, each with its former
+  wording inside its replacement, proven at the object.
+- **E5 — MET.** Three sites in the L0/L1 specification and one passage in `FRAMEWORK.md`'s L1 section,
+  every former wording in place, proven at the object. The `FRAMEWORK.md` passage shows as two hunks of
+  one section — the bullet, and the preserved former list beneath the list — and is reported so.
+- **E6 — carried by the one further commit, and NOT MET AS WRITTEN by two reds this batch's ordered
+  acts cause and the dispatch bars repairing** (the `l2` boot pack and three register line citations;
+  see *Both guard states*).
+
+### A1–A5, graded
+
+- **A1 — HELD.** `tools/audit/changed_paths.py` at boot showed one tracked modification,
+  `tools/audit/claude_md_finer_archive.json`, whose working-copy hash through git's filters equals the
+  tip's blob — a file-stat marking, the same path in the same state the fifteenth tabulation batch's
+  report records. Every other named tracked input equalled its tip blob. Every landing path was untracked
+  and present. **No other tracked path was modified during the run except those this batch writes, each
+  after the task that writes it.** At the close, `tools/audit/changed_paths.py` shows exactly the close's own paths, the
+three regenerated artifacts of the guard section, and the same stat-only marking — nothing else.
+- **A2 — HELD WITH ONE CLASSED EXCEPTION.** The twelve named, zero STOPs, plus the membership check's
+  red, classed by its measured cause above and cleared by Task 0. At the close, five further reds were classed by cause, as the guard section above
+states; three were regenerated and two stand, each because its repair is an edit the dispatch bars.
+- **A3 — MEASURED BEFORE BEING ACCEPTED and HELD.** The membership moved by zero: members, pinned
+  members, generated documents, the pinned tools outside the class and the whole pin census equal before
+  and after. The artifact's movement is the ruling-records count (exactly the forty-three landed) and
+  twelve hand-written surfaces now listed as named in a ruling record but not generated, each named by
+  one of those records. No record's PINNED sentence was involved.
+- **A4 — HELD.** No tool added. The one tool source edited is `gen_status_batch_bound.py`: its five
+  authored constants, its `PREVIOUS_AIMINGS` list and the comments that describe the aiming. Population unchanged at **80**; the classification tool's standing STOP unchanged.
+- **A5 — HOLDS, with its stated exceptions and no other movement.** Measured at the objects: `git diff --name-status` from the boot tip to the Task 5 commit
+shows the 185 added paths (the 184 landed and the successor) and exactly six modified paths — `CLAUDE.md`,
+`FRAMEWORK.md`, `cowork_blind_derivation_l2_2026_09_27.md`,
+`cowork_derived_specification_l0_l1_2026_09_03.md`, the reading file and
+`tools/audit/evidence_pin_membership.json`. From the Task 0 commit to the Task 5 commit, no landed path
+changed. Each modified file's diff is the passage set its task orders and nothing else: the derivation's
+body untouched (insertions at the head only); the reading file's diff carries no deleted line; the two
+`CLAUDE.md` passages; the three L0/L1 sites; the one `FRAMEWORK.md` section. The brief, the pack, every
+outgoing text, the suspension file and every register source are untouched.
+
+### Rows the act could not place by identity
+
+**None.** Every row-part the ledger names carries its line.
+
+### Rows named by more than one record, by identity
+
+Row 1.52(ii) (§L.25, §L.34), Row 6.108(iv) (§L.4, §L.34), Row 10.18(ii) (§L.4 twice), Row 17.4(ii) (§L.12,
+§L.13, both recorded), **Row 39.141 (§L.11, §L.18)**, Row 48.43(ii) (§L.4 twice). Each carries both lines,
+and each pair agrees in its disposition. **Row 39.141 is not in the dispatch's list of such rows**; it is
+reported, not resolved.
+
+### The points the ledger noted *for the user before Task 0* — NOT YOURS, untouched
+
+They stand at §L.11, §L.13, §L.14, §L.15, §L.16 and §L.18 to §L.43 of the dispatch, and at the authored
+parts of Tasks 4 and 5. **None was acted on by this batch** beyond what the user settled on 2026-10-13
+before Task 0, as the dispatch's own *What this batch does NOT do* lists. They return on the writing
+side's decision surface over the successor.
+
+### What the user is asked to rule
+
+**NOTHING IN ANY FILE THIS BATCH WROTE, AND EACH SAYS SO.** The reading file's §15 still reads NOTHING;
+the successor's banner states that nothing in it is ratified. **This section recommends nothing** — not
+about any amendment, any disposition, any open question, the derivation, the method, or the deriving
+session's independence, to which no verdict word is attached.
+
+### The plan lines
+
+- **The check turn and the ratification act are the writing side's**: a decision surface over the
+  successor, where the points the ledger notes for the user return.
+- **The register statuses every record defers to the ratification act wait there.**
+- **The research iteration of §L.32 comes after the last layer's ratification.**
+
+### The plan's tell, in one sentence
+
+**Did this batch produce anything other than the landed records and entries, the successor, the
+derivation's banner, the reading file's added lines and sections, the `CLAUDE.md` passages, the three
+L0/L1 sites and the charter's bullet, the Task-6 files and the report?** **Yes, and it is named in
+full:** the charter's preserved former list beneath its L1 list, which Task 5 orders with the bullet;
+and `tools/audit/evidence_pin_membership.json`, regenerated at Task 0 as the dispatch orders; and, in
+the end-state commit, the three artifacts regenerated under A2's classing (the two populations and
+`tools/audit/defense_share.json`) beside `tools/audit/guard_state.json`. Nothing else.
+
+### Declared departures
+
+1. **The dispatch was read from the working tree before it was pinned** — P-2's fallback route, the
+   user's opening line having named only the dispatch file. Pinned at Task 0; blob proven unmoved.
+2. **The fifteenth tabulation dispatch and report were read at their bodies and their guard and close
+   parts, not at every appendix line.**
+3. **The read order's premise that `cowork_away_returns.md`'s last section is the fifteenth tabulation
+   close does not hold**: the file's last section before this one is the L2 ruling write-back close of
+   2026-09-05. Recorded as found.
+4. **`git diff --no-index`, ordered at Task 1(e), was denied by the shell-read guard**; the same check
+   was taken between two explicit blob hashes, the form the L0/L1 fifth writing declares.
+5. **Two working-tree copies went through the shell**: `STATUS.md` was copied to a scratch path with
+   `cp` so its long single-line entries could be measured by a scratch script, and the built files were
+   copied back into the repository with `cp` and Python's `shutil`. The guard admitted both. **The
+   copy-out is a shell read of a working-tree file, which the file-tools convention does not admit**;
+   declared here rather than left silent. Nothing rests on the copy alone: it is byte-exact by
+   construction, and the move tool then found the fifteenth batch's entry — read from the base commit's
+   own git object — verbatim in the file built from it.
+6. **The dispatch was also extracted once with `git show HEAD:<path>`** to list the ledger's
+   noted-for-the-user points; its blob was hashed in the same act and equals the pin, so nothing rests
+   on the branch-tip read.
+7. **Task 5's `FRAMEWORK.md` preserved former list** is its own paragraph after the line
+   `**Decides nothing about the music.**`, under an authored heading in the charter's ★ form, with a
+   *Why* clause taken from the ruling's own ground. The dispatch fixes the form (*THE FORMER WORDING
+   WAS:*) and the place (*beneath the list*), not the heading's words; the authored words are declared.
+8. **Task 5's S-50 `(was: …)` quotes the bold text without its two enclosing bold markers**, so the
+   quotation does not reopen bold inside the paragraph; the words are the bold text's own.
+9. **The tool comment for this aiming first said the commit `f7ad51f8…` wrote no `STATUS.md` entry;
+   that was false — it is the fifteenth batch's own close commit — and the sentence was corrected before
+   the move ran.**
+
+### The standing self-check (D-434) over this batch's own work
+
+1. *Principles touched.* **#12** — every proposed paragraph kept; every derived wording preserved at the
+   derivation or in the same field; the derivation's body untouched; §13 kept beside §13a; the four state
+   sentences, the `CLAUDE.md` passages, the L0/L1 sites and the charter's list each carry their former
+   wording; `PREVIOUS_AIMINGS` appended to. **#6** — §5–§7 of the derivation pointed at, not restated.
+   **#10** — the reading file's account of itself brought up to date. **#19** — the successor establishes
+   nothing and says so. **#13** — the start-state red, the two standing reds at the close and Row 39.141 named rather than
+   resolved.
+   **#17(f)/D-431** — §13a's figures are generated at the file; this section restates none. **#24** — no
+   comparison asserted. Conforms.
+2. *Conventions.* American English; no self-invented label; music-theory words in their musical sense in
+   this side's prose; no recommendation.
+3. *Figures and premises.* Every commit read from its own output and the ref file; every diff taken
+   against an explicit hash; A3 by regeneration and field-by-field comparison; the forward bound by
+   running the tool and reading its own output; §13a's figures summed by script at the file's own added
+   lines.
+4. *File-tools rule.* Repository reads through the file tools, save the two departures declared above.
+5. *Uncertainty.* None of this batch's checks rests on a sample; each is a whole-file comparison.
+
+*Provenance: CC, 2026-10-13, at boot tip `f7ad51f8f347d6ef954a1c67ef25f6322475bf97`, under
+`cc_instruction_l2_application_2026_10_10.md`, after the ordinary session-start read — `CLAUDE.md`, the
+`DECISIONS.md` INDEX, `STATUS.md` and the derived gating answer at
+`tools/audit/nongating_apparatus_rows.json` → `★_the_live_gating_answer` → `gating_ids` — and the
+dispatch's ordered first reads. Every commit identifier above was read from the commit output at the
+time each commit was taken and `origin/master` at its ref file after each push; the guard verdicts are
+this batch's own runs.*
