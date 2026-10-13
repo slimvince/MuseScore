@@ -76,8 +76,8 @@
   }
  ],
  "the_denominators_both_re_derived_through_the_imported_reader_at_this_tree": {
-  "the_six_session_start_spans": 104609,
-  "the_whole_ordinary_session_start_read": 246771,
+  "the_six_session_start_spans": 105876,
+  "the_whole_ordinary_session_start_read": 250559,
   "why_two": "the first says how much of what a session reads OF `CLAUDE.md` is marked defense; the second says how much of the WHOLE boot it is. A share quoted against one of them is not the share against the other."
  },
  "per_span": [
@@ -119,12 +119,12 @@
   },
   {
    "name": "Conventions",
-   "characters": 39804,
+   "characters": 41071,
    "marked_clauses": 10,
    "characters_those_clauses_hold": 3472,
    "characters_had_every_clause_been_closed_at_the_next_marked_clause": 22081,
    "characters_had_every_clause_run_to_its_paragraph_end": 33971,
-   "share_of_this_span": 8.72
+   "share_of_this_span": 8.45
   },
   {
    "name": "The self-check after every coding exercise",
@@ -141,8 +141,8 @@
   "characters_those_clauses_hold": 12957,
   "characters_had_every_clause_been_closed_at_the_next_marked_clause": 51684,
   "characters_had_every_clause_run_to_its_paragraph_end": 160906,
-  "share_of_the_six_session_start_spans": 12.39,
-  "share_of_the_whole_ordinary_session_start_read": 5.25
+  "share_of_the_six_session_start_spans": 12.24,
+  "share_of_the_whole_ordinary_session_start_read": 5.17
  },
  "every_clause_published_so_the_tables_reach_is_inspectable_rather_than_asserted": [
   {
@@ -552,39 +552,39 @@
    "the_span_it_stands_in": "Conventions",
    "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
    "emphasis": "italic",
-   "first_line": 1927,
+   "first_line": 1939,
    "the_marked_run_as_written": "Why:",
    "characters_had_it_been_closed_at_the_next_marked_clause": 2901,
    "it_would_have_been_closed_at_the_next_marked_clause": false,
    "characters_had_it_run_to_its_paragraph_end": 2901,
    "the_authored_end_anchor": "erroring loudly rather than returning silently-wrong content.",
-   "the_line_the_anchor_ends_on": 1930,
+   "the_line_the_anchor_ends_on": 1942,
    "characters": 319
   },
   {
    "the_span_it_stands_in": "Conventions",
    "the_marker_row_it_matched": "Why followed by a space, a colon or a comma",
    "emphasis": "italic",
-   "first_line": 1965,
+   "first_line": 1977,
    "the_marked_run_as_written": "Why:",
    "characters_had_it_been_closed_at_the_next_marked_clause": 318,
    "it_would_have_been_closed_at_the_next_marked_clause": false,
    "characters_had_it_run_to_its_paragraph_end": 318,
    "the_authored_end_anchor": "and it operationalizes principle #5 (investigate when facts may be scarce).",
-   "the_line_the_anchor_ends_on": 1968,
+   "the_line_the_anchor_ends_on": 1980,
    "characters": 318
   },
   {
    "the_span_it_stands_in": "Conventions",
    "the_marker_row_it_matched": "Evidence followed by a colon",
    "emphasis": "italic",
-   "first_line": 1974,
+   "first_line": 1986,
    "the_marked_run_as_written": "Evidence:",
    "characters_had_it_been_closed_at_the_next_marked_clause": 153,
    "it_would_have_been_closed_at_the_next_marked_clause": false,
    "characters_had_it_run_to_its_paragraph_end": 153,
    "the_authored_end_anchor": "the fifty-ninth performed it and counted one.",
-   "the_line_the_anchor_ends_on": 1975,
+   "the_line_the_anchor_ends_on": 1987,
    "characters": 153
   }
  ],

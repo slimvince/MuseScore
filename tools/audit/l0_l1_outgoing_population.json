@@ -225,7 +225,7 @@
     }
    },
    "hits_per_term": {
-    "slice": 1083,
+    "slice": 1084,
     "tie": 888,
     "fermata": 132,
     "MusicXML": 126,
@@ -2753,13 +2753,13 @@
       "line": "declaration, where that clause is stated once and is not repeated here (#6)."
      },
      {
-      "line_number": 1921,
+      "line_number": 1933,
       "term": "tie",
       "tier": "recorded",
       "line": "through the file tools (Read / Grep / Glob), never through shell text utilities — no `cat`, `wc`,"
      },
      {
-      "line_number": 1942,
+      "line_number": 1954,
       "term": "repeat",
       "tier": "recorded",
       "line": "2026-08-07/08, self-reported at the user's challenge after repeated use for row statuses,"
@@ -3308,6 +3308,23 @@
       "term": "slice",
       "tier": "recorded",
       "line": "| OI-73 | Membership verdict dies at the L4→L5 boundary | chordTonePcs/nonChordTonePcs are never copied onto FunctionSlice. | siloed facts / E4 surface | OPEN — E4 surface design | [detail](open_items/OI-73.md) |"
+     }
+    ]
+   },
+   "STATUS.md": {
+    "path": "STATUS.md",
+    "inventory_class": "governing-documents",
+    "is_a_named_member": false,
+    "in_the_specification_document_set": false,
+    "admitting_hit_count": 0,
+    "recorded_hit_count": 1,
+    "admitting_hits": [],
+    "recorded_hits": [
+     {
+      "line_number": 10,
+      "term": "slice",
+      "tier": "recorded",
+      "line": "*2026-10-13 (CC — Same dispatch, Task 5. **S-50 OF `cowork_derived_specification_l0_l1_2026_09_03.md` AND THE L1 LIST OF `FRAMEWORK.md` GAIN THE LOWEST SOUNDING PITCH PER SLICE**, and the bass-note wording is corrected at that specification's §0 entry *The lowest sounding pitch* and at S-44, under Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_10_08_l2_structural_bass_sitting.md`; every former wording kept in place, the sub-item quoting Ruling 42 beneath S-44 untouched, and the changed passages proven at the diff. **POINTER** — `records/cc/reports/cc_report_l2_application_2026_10_10.md` (**D-431**).)*"
      }
     ]
    },

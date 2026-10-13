@@ -24102,3 +24102,19 @@ the end-state commit, the three artifacts regenerated under A2's classing (the t
 dispatch's ordered first reads. Every commit identifier above was read from the commit output at the
 time each commit was taken and `origin/master` at its ref file after each push; the guard verdicts are
 this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `618bfccf850862baee824b90e25ddec87e77c244` left, appended in the one further commit
+
+**A fresh full guard run, in write mode, after the close commit and before this one: 80 guards run, 14
+failing, 4 not run, 19 historical.** The classification tool reports its standing four-name STOP and no
+other. The fourteen are **the twelve the dispatch names, plus the two this batch's ordered acts cause and
+the dispatch bars repairing** — `gen_derivation_boot_pack.py --check` (the `l2` pack's files 02 and 07,
+after Tasks 4 and 5) and `decisions/gen_cluster_dispositions.py --verify` (three register line citations
+into `CLAUDE.md`, after Task 4) — **exactly as the close predicted.** The two population tools and
+`gen_defense_share.py` pass at their regenerated artifacts, which this commit carries with
+`tools/audit/guard_state.json`; no member of either population moved. **E6 — NOT MET AS WRITTEN:** the
+failing set is the twelve plus two, not the twelve plus none, and both are named for the writing side.
+
+*Provenance: CC, 2026-10-13, appended in the one further commit after the close commit
+`618bfccf850862baee824b90e25ddec87e77c244`; the verdicts are this run's own output, read with the file
+tools.*

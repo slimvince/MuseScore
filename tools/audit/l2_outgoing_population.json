@@ -73,7 +73,7 @@
     "resolves_at_the_path_as_written": true,
     "in_the_specification_document_set": false,
     "inventory_class": "governing-documents",
-    "bytes": 169675
+    "bytes": 170942
    },
    {
     "name_as_written": "cowork_joint_estimator_factorization.md",
@@ -91,7 +91,7 @@
     "resolves_at_the_path_as_written": true,
     "in_the_specification_document_set": false,
     "inventory_class": "governing-documents",
-    "bytes": 169675
+    "bytes": 170942
    },
    {
     "name_as_written": "DEFECT_TYPES.md",
@@ -118,7 +118,7 @@
     "resolves_at_the_path_as_written": true,
     "in_the_specification_document_set": false,
     "inventory_class": "governing-documents",
-    "bytes": 169675
+    "bytes": 170942
    },
    {
     "name_as_written": "cowork_prefit_gates.md",
@@ -181,7 +181,7 @@
     "resolves_at_the_path_as_written": true,
     "in_the_specification_document_set": false,
     "inventory_class": "governing-documents",
-    "bytes": 169675
+    "bytes": 170942
    },
    {
     "name_as_written": "OPEN_ITEMS.md",
@@ -289,7 +289,7 @@
     "resolves_at_the_path_as_written": true,
     "in_the_specification_document_set": false,
     "inventory_class": "governing-documents",
-    "bytes": 169675
+    "bytes": 170942
    },
    {
     "name_as_written": "records/cc/reports/cc_layer3_wiring_report.md",
@@ -406,7 +406,7 @@
     "resolves_at_the_path_as_written": true,
     "in_the_specification_document_set": false,
     "inventory_class": "governing-documents",
-    "bytes": 169675
+    "bytes": 170942
    },
    {
     "name_as_written": "cowork_layer5_engagement_design.md",
@@ -451,7 +451,7 @@
     "resolves_at_the_path_as_written": true,
     "in_the_specification_document_set": false,
     "inventory_class": "governing-documents",
-    "bytes": 169675,
+    "bytes": 170942,
     "named_in_sections": [
      "## The joint estimator — the standing rules of the production inference layer",
      "#### Layer 3 — key/mode is the sequence decoder",
@@ -748,13 +748,13 @@
    "residue_files": 168,
    "paths_in_more_than_one_searched_class": [],
    "hits_per_term": {
-    "slice": 1083,
+    "slice": 1084,
     "tonic": 1043,
     "boundary": 1022,
     "segment": 795,
     "inversion": 518,
     "segmentation": 448,
-    "sounding": 422,
+    "sounding": 423,
     "modulation": 398,
     "boundaries": 330,
     "onset": 232,
@@ -38559,10 +38559,10 @@
        "line": "emission READS — struck versus sounding tones, note counting, pitch representation — or (b) how"
       },
       {
-       "line_number": 1916,
+       "line_number": 1925,
        "term": "suspension",
        "tier": "admitting",
-       "line": "suspended, and `cowork_register_rule_c_suspension_2026_08_28.md` is the route."
+       "line": "is suspended, and `cowork_register_rule_c_suspension_2026_08_28.md` is the route. *(Former wording,"
       }
      ]
     },
@@ -40130,12 +40130,24 @@
       "governing-documents"
      ],
      "in_the_specification_document_set": false,
-     "hit_lines_distinct": 1,
-     "hits": 1,
+     "hit_lines_distinct": 2,
+     "hits": 3,
      "the_statement": "hit, outside the specification document set, not dispositioned by this comparison; reachable by the mining map",
      "hit_records": [
       {
        "line_number": 10,
+       "term": "slice",
+       "tier": "admitting",
+       "line": "*2026-10-13 (CC — Same dispatch, Task 5. **S-50 OF `cowork_derived_specification_l0_l1_2026_09_03.md` AND THE L1 LIST OF `FRAMEWORK.md` GAIN THE LOWEST SOUNDING PITCH PER SLICE**, and the bass-note wording is corrected at that specification's §0 entry *The lowest sounding pitch* and at S-44, under Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_10_08_l2_structural_bass_sitting.md`; every former wording kept in place, the sub-item quoting Ruling 42 beneath S-44 untouched, and the changed passages proven at the diff. **POINTER** — `records/cc/reports/cc_report_l2_application_2026_10_10.md` (**D-431**).)*"
+      },
+      {
+       "line_number": 10,
+       "term": "sounding",
+       "tier": "admitting",
+       "line": "*2026-10-13 (CC — Same dispatch, Task 5. **S-50 OF `cowork_derived_specification_l0_l1_2026_09_03.md` AND THE L1 LIST OF `FRAMEWORK.md` GAIN THE LOWEST SOUNDING PITCH PER SLICE**, and the bass-note wording is corrected at that specification's §0 entry *The lowest sounding pitch* and at S-44, under Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_10_08_l2_structural_bass_sitting.md`; every former wording kept in place, the sub-item quoting Ruling 42 beneath S-44 untouched, and the changed passages proven at the diff. **POINTER** — `records/cc/reports/cc_report_l2_application_2026_10_10.md` (**D-431**).)*"
+      },
+      {
+       "line_number": 22,
        "term": "boundary",
        "tier": "admitting",
        "line": "*2026-09-02 (CC — **★★ THE L0/L1 COMPARISON IS OPEN AND SEVEN OF ITS TWENTY-NINE DOCUMENTS ARE TABULATED; THE READING FILE EXISTS.** `ratification_surfaces/cowork_comparison_l0_l1_reading.md` places **every statement of positions 1 to 7** — the two `ARCHITECTURE.md` sections and all five root design documents, which is the whole of Ruling 32's items 1 and 2 — under exactly one of the phase definition's five dispositions, with the current-text axis carried beside it. ★ **EVERY DISPOSITION IS A PROPOSAL AND NOTHING IS APPLIED**: no outgoing text is edited, the derivation is untouched, and the file states in terms that the user is asked to rule nothing in it. ★ **THE STOP IS AT A MEMBER BOUNDARY AND THE REMAINDER IS UNTOUCHED RATHER THAN PARTLY WORKED** (**D-672**): positions 8 to 29 have not been read for tabulation, quoted, counted or dispositioned, the file's own §0 says which are done and where the next dispatch resumes, and the three sections that can only be written once the population is complete are marked NOT YET WRITTEN rather than left to look empty. ★ **THE INDEPENDENCE RECORD IS RELAYED WHOLE, WITH NO VERDICT WORD ATTACHED** — and the two places where an outgoing statement of this comparison meets a passage the deriving session's own stop-on-meeting record says it SAW are named at the rows, which is a fact the user reads the AGREES verdicts against. ★ **THE ARITHMETIC CLOSES AT EVERY DOCUMENT** and is stated as a sum rather than asserted. Per the OI-222 pointer convention this entry is a **POINTER** — every row, every count and every proposal is the reading file — and no figure is restated here (**D-431**).)*"
@@ -72224,7 +72236,7 @@
   "item_2_listed_not_compared_whole": [
    {
     "name": "CLAUDE.md",
-    "bytes": 169675,
+    "bytes": 170942,
     "inventory_class": "governing-documents",
     "in_the_residue": true,
     "the_statement": "named inside the four item-1 spans; LISTED and not compared whole under the named-documents ruling; the lines that name it are tabulated inside item 1"
@@ -77644,7 +77656,7 @@
   "item_2": {
    "distinct_names": 20,
    "distinct_names_that_resolve": 20,
-   "summed_bytes_of_the_distinct_names_that_resolve": 1123671,
+   "summed_bytes_of_the_distinct_names_that_resolve": 1124938,
    "distinct_names_that_are_specification_set_members": 8
   },
   "item_3": {
