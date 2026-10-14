@@ -1,0 +1,173 @@
+{
+ "what_this_is": "THE CHECK THAT L3's RULED CANDIDATE CRITERION WAS WRITTEN INTO THE GENERATOR AS RULED. It reads the COMMITTED criterion table and calls the generator's own candidates() over it. It authors no verdict, withholds nothing, renders no pack and boots no session.",
+ "the_rulings_it_checks": [
+  "Rulings 1 and 2 of records/cowork/rulings/cowork_rulings_2026_10_14_l3_withheld_family_sitting.md - a withheld family, and every design-intent entry a candidate."
+ ],
+ "how_it_was_derived": "The generator's own candidates() over the committed CRITERION table, nothing injected (#6).",
+ "the_shape_of_the_table": [
+  {
+   "check": "KEYWORDS is still the pilot's eighteen",
+   "passed": true,
+   "saw": 18
+  },
+  {
+   "check": "L2_KEYWORDS still carries forty-two terms",
+   "passed": true,
+   "saw": 42
+  },
+  {
+   "check": "the l2 entry still reads L2_KEYWORDS and groups A, C, D, E, F, G",
+   "passed": true,
+   "saw": [
+    "A",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G"
+   ]
+  },
+  {
+   "check": "the l3 group term names every id of the register's groups table, in its order",
+   "passed": true,
+   "saw": {
+    "l3": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F",
+     "G",
+     "H",
+     "I",
+     "J",
+     "K",
+     "L",
+     "M",
+     "N",
+     "O",
+     "P",
+     "Q",
+     "S",
+     "T",
+     "U"
+    ],
+    "register": [
+     "A",
+     "B",
+     "C",
+     "D",
+     "E",
+     "F",
+     "G",
+     "H",
+     "I",
+     "J",
+     "K",
+     "L",
+     "M",
+     "N",
+     "O",
+     "P",
+     "Q",
+     "S",
+     "T",
+     "U"
+    ]
+   }
+  },
+  {
+   "check": "the l3 home-document, passage, keyword and named-identity terms are empty",
+   "passed": true,
+   "saw": null
+  },
+  {
+   "check": "no l3 withheld family",
+   "passed": true,
+   "saw": null
+  },
+  {
+   "check": "no l3 verdict table",
+   "passed": true,
+   "saw": null
+  },
+  {
+   "check": "no l3 extras list",
+   "passed": true,
+   "saw": null
+  },
+  {
+   "check": "no l3 freeze",
+   "passed": true,
+   "saw": null
+  }
+ ],
+ "the_arithmetic": [
+  {
+   "check": "the design-intent population is 244",
+   "passed": true,
+   "saw": 244
+  },
+  {
+   "check": "the group term picks 244",
+   "passed": true,
+   "saw": 244
+  },
+  {
+   "check": "the criterion picks 244 of 244",
+   "passed": true,
+   "saw": 244
+  },
+  {
+   "check": "no candidate is reached by any other term",
+   "passed": true,
+   "saw": []
+  },
+  {
+   "check": "no design-intent entry stands outside every register group",
+   "passed": true,
+   "saw": []
+  }
+ ],
+ "the_counts": {
+  "sort_entries_total": 411,
+  "design_intent_class": 244,
+  "candidates": 244,
+  "groups_present_among_the_design_intent_entries": [
+   "A",
+   "B",
+   "C",
+   "D",
+   "E",
+   "F",
+   "G",
+   "H",
+   "I",
+   "J",
+   "K",
+   "L",
+   "M",
+   "N",
+   "Q",
+   "S",
+   "T",
+   "U"
+  ]
+ },
+ "the_three_identities_the_ruling_left_unchecked": {
+  "D-584": {
+   "in_the_design_intent_class": true,
+   "a_candidate": true
+  },
+  "D-478": {
+   "in_the_design_intent_class": true,
+   "a_candidate": true
+  },
+  "D-526": {
+   "in_the_design_intent_class": true,
+   "a_candidate": true
+  }
+ },
+ "the_bound_on_this_check": "It establishes that the table matches the rulings and that the tool's own matcher picks the whole design-intent class. It establishes NOTHING about any entry's verdict, and the population is the sort artifact's, not the decisions register's whole membership (#24, D-661)."
+}

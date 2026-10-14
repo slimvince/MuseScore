@@ -3574,6 +3574,40 @@ CRITERION = {
         "keywords": L2_KEYWORDS,
         "always": (),
     },
+    # ── L3, the deriving subject after L2 (the next-subject ruling of 2026-10-14) ────────────────
+    # DORMANT BY DESIGN, AND THE DORMANCY IS DECLARED WITH ITS CONSUMER NAMED (the
+    # fact-publication corollary).  NOTHING REACHES THIS ENTRY TODAY: `build()` iterates `WITHHELD`,
+    # and no `l3` withheld family is authored, because L3's verdicts are ruled list by list at Cowork
+    # decision surfaces and no list exists yet.  Its consumer is `build_subject("l3", ...)`, which
+    # runs when that family lands — a separate act, not this one.
+    #
+    # THE RULINGS, both in `records/cowork/rulings/cowork_rulings_2026_10_14_l3_withheld_family_sitting.md`:
+    #   Ruling 1 — L3's boot pack carries a withheld family.
+    #   Ruling 2 — L3's candidate criterion "reaches the whole design-intent class" of
+    #              `tools/audit/rulings_sort_classification.json`; how the cut is expressed here is the
+    #              dispatch's business, and Ruling 88 of the 2026-08-31 record's note — a NAMING catches
+    #              later entries where a word list does not — applies to the choice.
+    #
+    # HOW THE WHOLE CLASS IS EXPRESSED, and why no tool code changed: `groups` names EVERY group of
+    # the decisions register's own `groups` table (the backbone's, twenty ids, P among them though
+    # no sort entry carries it today), so every design-intent entry of a registered group matches
+    # the group term, and an entry added later to any of them is caught by the naming.  The other
+    # four terms are EMPTY: a word list or a document list would only re-pick entries the group
+    # term already holds.  If the register ever gains a group, this tuple must gain it in the same
+    # act — the check artifact named below compares the two.
+    #
+    # WHAT THIS TABLE PICKS is proved at `tools/audit/l3_criterion_written_check.json`, the
+    # generator's own `candidates()` over this entry; no figure is restated here (D-431).
+    # THE BOUND (#24, D-661): the population is the sort artifact's, NOT the decisions register's
+    # whole membership; register entries outside the sort are out of every term's reach.
+    "l3": {
+        "groups": ("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P",
+                   "Q", "S", "T", "U"),
+        "home_documents": (),
+        "architecture_spans": (),
+        "keywords": (),
+        "always": (),
+    },
 }
 
 # ══════════════════════════════════════════════════════════════════════════════════════════════
