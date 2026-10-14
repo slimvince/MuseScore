@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 145,
+  "ruling_records_read": 155,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -286,6 +286,16 @@
   "records/cowork/rulings/cowork_rulings_2026_10_09_l2_working_span_sitting.md",
   "records/cowork/rulings/cowork_rulings_2026_10_10_l2_tail_scope_and_single_rows_sitting.md",
   "records/cowork/rulings/cowork_rulings_2026_10_10_l2_tail_style_and_idiom_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_13_l2_face_a_ratification_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_13_l2_face_b_ratification_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_13_l2_face_c_ratification_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_13_l2_face_d_ratification_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_13_l2_face_e_ratification_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_13_l2_face_f_ratification_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_13_l2_ratification_granularity_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_14_l2_face_g_ratification_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_14_l2_face_h_ratification_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_14_l2_ninth_surface_ratification_sitting.md",
   "records/cowork/rulings/cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
  "named_in_a_ruling_record_but_not_generated": {
