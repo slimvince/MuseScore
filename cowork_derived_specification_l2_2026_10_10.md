@@ -14,6 +14,21 @@
 > stand with their ANSWERED marks where a ruling answered them (OQ-L2-2, OQ-L2-4, OQ-L2-5, OQ-L2-6, OQ-L2-9,
 > OQ-L2-10, OQ-L2-11, OQ-L2-14, OQ-L2-16) and open otherwise. Nothing in this file is ratified; the
 > ratification act is the user's, on a decision surface over this text.
+>
+> **★ RATIFIED 2026-10-13 AND 2026-10-14, FACE BY FACE — added by
+> `records/cc/instructions/cc_instruction_l2_ratification_application_2026_10_14.md`, Task 1.** Every part of
+> this file — §0 to §5, L2-S1 to L2-S49 — has since been through a ratification act on the user's word, in
+> nine acts under `records/cowork/rulings/cowork_rulings_2026_10_13_l2_ratification_granularity_sitting.md`:
+> faces (a) to (h), and a ninth surface for §0, §1 and §4, with §2 and §5 ratified with it. The records are
+> `records/cowork/rulings/cowork_rulings_2026_10_13_l2_face_a_ratification_sitting.md` to
+> `…_face_f_ratification_sitting.md` (2026-10-13), and `…_2026_10_14_l2_face_g_ratification_sitting.md`,
+> `…_2026_10_14_l2_face_h_ratification_sitting.md` and `…_2026_10_14_l2_ninth_surface_ratification_sitting.md`
+> (2026-10-14). The corrections those records name are written in place by that dispatch, each line naming the
+> record that ordered it, every former wording kept (#12). None of the nine acts changed what L2 computes. The specification
+> set is ratified jointly again at the whole-architecture coherence review that ends the detail phase
+> (`records/cowork/rulings/cowork_rulings_2026_10_04_l2_route_sitting.md` §2). The sentences above that say
+> nothing in this file is ratified are kept as the record of the state before those acts and no longer
+> describe the file.
 
 ---
 
@@ -28,7 +43,7 @@ the metric unit. The numerical sense of "score" is always written *candidate sco
 | Term | Meaning in this file |
 |---|---|
 | **The analysis** | The harmonic-analysis software this project builds. |
-| **L0, L1, L2, L3** | The layers of the ratified charter (pack member 07). L0 is the notated record, the input contract. L1 publishes slices, metric strength, notated boundary evidence and cadence cues. L2 is this file's subject. L3 reads further facts off L2's settled reading. |
+| **L0, L1, L2, L3** | The layers of the ratified charter (pack member 07). L0 is the notated record, the input contract. L1 publishes slices, the lowest sounding pitch per slice, metric strength, notated boundary evidence and cadence cues. (was: "L1 publishes slices, metric strength, notated boundary evidence and cadence cues."; cowork_rulings_2026_10_08_l2_structural_bass_sitting.md, Ruling 2) L2 is this file's subject. L3 reads further facts off L2's settled reading. |
 | **The charter** | Pack member 07, the ratified statement of each layer's question, inputs and outputs. Given. |
 | **The input contract** | The ratified specification of L0 and L1, cut for this session. Its statements are cited as **IC S-n**. Given. |
 | **Event, onset, release, change point, slice, sounding set, silent slice** | As the input contract defines them (IC §0). An event is one sounding pitch from onset to release, with a tied group counting as one event. A change point is an onset or release of an eligible event. A slice is the half-open stretch between consecutive change points. The sounding set of a slice is the set of events sounding over it. |
@@ -37,15 +52,15 @@ the metric unit. The numerical sense of "score" is always written *candidate sco
 | **Boundary** | A change point that L2 decides is the start of a new harmonic span. By the charter, the boundaries are a subset of L1's change points, plus the two span edges. |
 | **Tonality** | Tonic, with its spelling, and mode. |
 | **Chord** (as L2 decides it) | Four fields, following the charter. **Degree**: the scale step of the chord's root relative to the span's tonality, with any chromatic alteration, such as ♭II or ♯IV. **Quality**: major, minor, diminished, augmented, and the seventh-chord and augmented-sixth qualities. **Figure**: which chord member is in the bass, together with the seventh or other added members. **Applied target**: for an applied chord (V/V, viiø7/ii), the degree it is applied to, possibly recursively (V7/IV/III). |
-| **Chord tone / elaboration** | A sounding event within a span is a chord tone of that span's chord or an elaboration. The charter's elaboration relations are passing, neighbour, suspension and anticipation. |
+| **Chord tone / elaboration** | A sounding event within a span is a chord tone of that span's chord or an elaboration. The elaboration relations L2 admits are passing, neighbour, suspension, anticipation, appoggiatura, escape tone, pedal point, and an explicit unclassified elaboration (L2-S8). (was: "The charter's elaboration relations are passing, neighbour, suspension and anticipation."; cowork_rulings_2026_10_05_l2_elaboration_relations_sitting.md, Ruling 1) |
 | **Assignment** | The chord-tone or elaboration decision for one event within one span, with its relation where it is an elaboration. |
 | **Reading** | One complete candidate answer for the working span. It consists of a segmentation into harmonic spans, and per span a tonality, a chord, and an assignment for every event sounding in it. |
 | **Admission rule** | The rule that decides which readings the search may consider at all (charter, L2). |
 | **Candidate score** | The number the analysis assigns to a reading. Higher means preferred. It is a sum of **terms**, each a function of the reading and the published evidence. |
-| **Term, weight** | A term is one component of the candidate score, such as "how well the span's notes fit the chord". A weight is the number a term is multiplied by. |
+| **Term, term weight** | A term is one component of the candidate score, such as "how well the span's notes fit the chord". A term weight is the number a term is multiplied by. (was: "**Term, weight** … A weight is the number a term is multiplied by."; written at the ratification of the ninth surface, cowork_rulings_2026_10_14_l2_ninth_surface_ratification_sitting.md, item 10) |
 | **Fit, held-out** | Fitting sets weights from annotated music. Held-out music is kept out of the fit and used only to measure. |
 | **Rival** | An alternative reading published beside the chosen one. |
-| **Mass** | The weight a rival carries in the publication. Its meaning is fixed at L2-S40. |
+| **Mass** | The share a rival carries in the publication. Its meaning is fixed at L2-S40. (was: "The weight a rival carries in the publication."; written at the ratification of the ninth surface, cowork_rulings_2026_10_14_l2_ninth_surface_ratification_sitting.md, item 10) |
 | **The ledger** | Pack member 09, the empirical findings ledger. Its entries are cited **C-n**. |
 | **Design-intent entry** | A ratified entry of pack member 05, cited **D-n**. |
 | **FACT / THEORY / CONJECTURE** | The brief's labels. **This session fetched no paper.** Every FACT below is therefore a *relayed* FACT: stated in pack member 08's extract, which records that it was read at the object and quotes the page. This matches the input contract's own definition of FACT (IC §0). It is weaker than a FACT this session read itself, and the label **FACT (relayed, 08)** says so wherever it is used. |
@@ -136,6 +151,13 @@ reading, not a span.**
 - *Ruled (cowork_rulings_2026_10_04_l2_tonality_vocabulary_sitting.md, Ruling 2).* Stands as derived. "L2's
   tonic is **spelled**: seven letters, each natural, sharp or flat — the 42 tonalities of L2-S6 with the two
   modes. L2-S1(ii) and L2-S6 stand as derived on this point."
+- *Ruled (cowork_rulings_2026_10_07_l2_reading_parts_sitting.md, Ruling 1).* "L2's algorithm as its statements
+  define it is unchanged; L2-S1's wording does not change."
+- *Pointer (written at the ratification of face (a), cowork_rulings_2026_10_13_l2_face_a_ratification_sitting.md,
+  C6).* The crossing-elaborations item under OQ-L2-3 in §4
+  (cowork_rulings_2026_10_09_l2_crossing_elaborations_sitting.md, Ruling 2) measures whether part (iv)'s
+  "elaboration together with its relation" is decided inside the candidate score or read off the decided
+  reading afterwards.
 
 **L2-S2. The admission rule is specified as a closure test before it is specified as a list. Every
 reading a published analysis writes for a passage of the grading repertoire must be admissible,
@@ -155,7 +177,9 @@ it imposes.**
   D-352]. A variant the search cannot reach can therefore never be matched.
 - *Source class.* Derived.
 - *Status.* Settled as the form of the rule. The list it implies is L2-S4 to L2-S8, and the
-  measurement that closes the list is OQ-L2-1.
+  measurement that closes the list is OQ-L2-1 (L2-S8's part settled by the elaboration-relations record's
+  Ruling 1). (was: "… and the measurement that closes the list is OQ-L2-1."; written at the ratification of
+  face (a), cowork_rulings_2026_10_13_l2_face_a_ratification_sitting.md, C8)
 - *Premise.* The grading repertoire's published analyses are the population the ceiling is defined
   over. **False-negative path:** a reading no published analysis writes, which a competent analyst
   would. The closure test cannot see it. It is recorded as the test's blind side, and principle #21's
@@ -200,6 +224,11 @@ tonality is admitted and costs more in the candidate score.**
 - *Falsifier.* CODE. **Observable:** the admitted set under a fixed tonality. **Decision rule:**
   falsified if any chord of the vocabulary is absent from it for some tonality, or if the
   tonality–chord cost is infinite for any pair. **Not falsified by:** a large finite cost.
+- *Ruled (cowork_rulings_2026_10_07_l2_four_agreeing_statements_sitting.md, Ruling 1).* "L2's algorithm as its
+  statements define it is unchanged; no wording of L2-S3, L2-S9, L2-S15 or L2-S21 is changed by this ruling."
+- *Pointer (written at the ratification of face (a), cowork_rulings_2026_10_13_l2_face_a_ratification_sitting.md,
+  C6).* The structural-bass item under OQ-L2-3 in §4 (cowork_rulings_2026_10_08_l2_structural_bass_sitting.md,
+  Ruling 3) records that the old bass-degree rule's "never a gate" survives under this statement.
 
 **L2-S4. The chord vocabulary the admission rule ranges over contains at least these classes:
 (i) the four triad qualities on every diatonic and chromatically altered degree; (ii) the five
@@ -301,8 +330,8 @@ fixes the chain's maximum depth as a ceiling decision under L2-S2.**
   ruling is quoted beside L2-S4 (#6).
 
 **L2-S6. The tonality vocabulary is the spelled tonics (seven letters, each natural, sharp or flat)
-in two modes, major and minor. A mode other than these is not admitted until the question is ruled
-(OQ-L2-2).**
+in two modes, major and composite minor. A mode other than these is not admitted until the named
+increment's gate is passed (beside this statement).**
 - *Defense.* Spelling, as in L2-S1. Two modes: the project's grading ground truth is major/minor only,
   and it counts "a modal passage the major/minor-only ground truth cannot represent" as a genuinely
   ambiguous case [RULED — D-352]. The published key finder uses the same 42 spelled tonalities [FACT
@@ -361,6 +390,13 @@ in two modes, major and minor. A mode other than these is not admitted until the
   which act Row 10.8's "(ratified)" names; OQ-L2-1 (double accidentals) and OQ-L2-17 (enharmonic
   modulation), which stay open as the derivation leaves them; D-494's "enharmonic-identity rule for key
   spans" (index line only, not opened)."
+- *Amended at the ratification of face (a) (cowork_rulings_2026_10_13_l2_face_a_ratification_sitting.md, C1).*
+  The statement's "major and minor" and "until the question is ruled (OQ-L2-2)" are replaced by the
+  tonality-vocabulary record's own words — "major and composite minor", and the named increment's gate, as its
+  Ruling 1 already replaced the parallel clause of the *Falsifier*
+  (cowork_rulings_2026_10_04_l2_tonality_vocabulary_sitting.md, Ruling 1). The statement read: "in two modes,
+  major and minor. A mode other than these is not admitted until the question is ruled (OQ-L2-2)." The derived
+  wording stands at the derivation, L2-S6.
 
 **L2-S7. Any subset of L1's change points may be the boundary set of a reading. No regularity of
 harmonic rhythm or segment length is an admission rule. Each such regularity is a term of the
@@ -387,6 +423,8 @@ the grading repertoire writes.**
 - *Beside L2-S7 (cowork_rulings_2026_10_07_l2_any_boundary_set_sitting.md, Ruling 2).* The item this ruling
   adds to OQ-L2-3's list of held-out measurements — the form of a chord's own length in the candidate score
   — which this statement's *Status* names, is quoted beneath OQ-L2-3 in §4.
+- *Ruled (cowork_rulings_2026_10_07_l2_any_boundary_set_sitting.md, Ruling 1).* "L2's algorithm as its
+  statements define it is unchanged; L2-S7's wording is unchanged."
 
 **L2-S8. The elaboration relations admitted are passing, neighbour, suspension, anticipation,
 appoggiatura, escape tone, pedal point, and an explicit unclassified elaboration. Retardation is a
@@ -403,9 +441,14 @@ suspension that resolves upward — a kind of suspension, not a name of its own.
 - *Status.* Settled: the ruled list (cowork_rulings_2026_10_05_l2_elaboration_relations_sitting.md, Ruling
   1). (was: "**Open** on the list beyond the four (OQ-L2-4 ★).";
   cowork_rulings_2026_10_05_l2_elaboration_relations_sitting.md, Ruling 1)
-- *Premise.* The four relations cover the elaborations the charter meant. **False-negative path:** an
-  appoggiatura or escape tone. It is either mislabelled or forced to be a chord tone, which then
-  changes the chord.
+- *Premise.* The eight relations, with the unclassified elaboration as the residue, are enough for every
+  elaboration an analysis of the repertoire writes for a single note. **False-negative path:** a figure named
+  over several notes, such as a cambiata, which the per-note assignment of L2-S9 cannot carry as one
+  relation; each of its notes then receives its own relation or the unclassified one. How often the
+  unclassified elaboration fires is unknown (OQ-L2-13). (was: "The four relations cover the elaborations the
+  charter meant. **False-negative path:** an appoggiatura or escape tone. It is either mislabelled or forced
+  to be a chord tone, which then changes the chord."; written at the ratification of face (a),
+  cowork_rulings_2026_10_13_l2_face_a_ratification_sitting.md, C2)
 - *Falsifier.* CODE: the relation set equals the ruled list. (was: "RESIDUAL until ruled. Thereafter CODE:
   the relation set equals the ruled list."; cowork_rulings_2026_10_05_l2_elaboration_relations_sitting.md,
   Ruling 1)
@@ -423,6 +466,10 @@ suspension that resolves upward — a kind of suspension, not a name of its own.
   surface's reading, not a fact; which of the two is L2-S33's family's question (surface §A.5(a)). (c) How
   often the unclassified elaboration fires is unknown; no annotated corpus with per-note elaboration labels
   is known to the derivation (OQ-L2-13)."
+- *Pointer beside the carried cost (b) above (written at the ratification of face (a),
+  cowork_rulings_2026_10_13_l2_face_a_ratification_sitting.md, C4).* Which of the two holds is now decided by
+  a held-out measurement: the crossing-elaborations item under OQ-L2-3 in §4
+  (cowork_rulings_2026_10_09_l2_crossing_elaborations_sitting.md, Ruling 2).
 
 **L2-S9. An assignment is made per event per span, not per event. An event that sounds across a
 span boundary receives one assignment in each span it sounds in. A suspension, for example, is a
@@ -444,6 +491,8 @@ chord tone in the span where it is prepared and a suspension in the span where i
   earlier span and a chord tone in a later one because it *became* consonant (as opposed to a new
   event). **Not falsified by:** a suspension resolving within the span into a chord tone, which is a
   new event in the resolving voice.
+- *Ruled (cowork_rulings_2026_10_07_l2_four_agreeing_statements_sitting.md, Ruling 1).* "L2's algorithm as its
+  statements define it is unchanged; no wording of L2-S3, L2-S9, L2-S15 or L2-S21 is changed by this ruling."
 
 **L2-S10. An event is a chord tone of a span only if its spelled pitch class is a member of the
 span's chord, spelled. Membership does not imply chord tone, since a consonant elaboration is admitted
@@ -526,15 +575,21 @@ as L1 publishes them. Its weights are fitted per class, and none is set here.**
 - *Source class.* Derived for the shape. *Measured* for the weights: the fit needs annotated boundaries
   on the grading corpora, with the class of each change point, and a held-out split. **UNESTABLISHED;
   no value.**
-- *Status.* Settled for the shape. **Open** for the values.
-- *Premise.* The three-level gradient holds on this repertoire. That is the input contract's own
-  unestablished premise, which it hands to "L2's calibration" [RULED — IC beside S-35, Ruling 47].
-  **False-negative path:** a repertoire whose gradient is flat (continuous Baroque textures). The
-  fitted weights would then be near equal, which the fit shows rather than hides.
+- *Status.* Settled for the shape. **Open** for the values (OQ-L2-3). (was: "Settled for the shape. **Open**
+  for the values."; written at the ratification of face (b),
+  cowork_rulings_2026_10_13_l2_face_b_ratification_sitting.md, correction 2)
+- *Premise.* The three-level gradient holds on this repertoire (tested under OQ-L2-3, as the metric-strength
+  record carries it). That is the input contract's own unestablished premise, which it hands to "L2's
+  calibration" [RULED — IC beside S-35, Ruling 47]. **False-negative path:** a repertoire whose gradient is
+  flat (continuous Baroque textures). The fitted weights would then be near equal, which the fit shows rather
+  than hides. (was: "The three-level gradient holds on this repertoire."; written at the ratification of face
+  (b), cowork_rulings_2026_10_13_l2_face_b_ratification_sitting.md, correction 2)
 - *Falsifier.* CODE. **Observable:** the admitted boundary sets and the boundary term. **Decision
   rule:** falsified if a boundary at an off-grid or lowest-level change point is inadmissible, or if
   the term reads anything other than L1's class and period. **Not falsified by:** a very low fitted
   weight on weak classes.
+- *Ruled (cowork_rulings_2026_10_07_l2_metric_strength_sitting.md, Ruling 1).* "L2's algorithm as its
+  statements define it is unchanged; no statement's wording changes."
 
 **L2-S13. L1's notated boundary evidence enters as terms on a boundary reading: the flags with their
 scope, the positioned marks and the per-voice relations. An absent flag is never read as an absent
@@ -559,7 +614,17 @@ boundary. No flag forces or forbids a boundary.**
   makes some reading inadmissible. **Not falsified by:** the candidate scores changing.
 - *Beside L2-S13 (cowork_rulings_2026_10_07_l2_notated_boundary_evidence_sitting.md, Ruling 2).* The item
   this ruling adds to OQ-L2-3's list of held-out measurements — whether a notated boundary flag, with its
-  scope, is a term on the elaborations that cross that boundary — is quoted beneath OQ-L2-3 in §4.
+  scope, is a term on the elaborations that cross that boundary — is quoted beneath OQ-L2-3 in §4. The flags'
+  weights are measured under OQ-L2-3 as well: the record carries forward "the flags' weights (OQ-L2-3)".
+  (Sentence added at the ratification of face (b), cowork_rulings_2026_10_13_l2_face_b_ratification_sitting.md,
+  correction 2.)
+- *Ruled (cowork_rulings_2026_10_07_l2_notated_boundary_evidence_sitting.md, Rulings 1 and 2;
+  cowork_rulings_2026_10_07_l2_nothing_from_l3_sitting.md, Ruling 4, stated with the question).* Ruling 1:
+  "L2's algorithm as its statements define it is unchanged; no statement's wording changes." Ruling 2: "L2's
+  algorithm as its statements define it is unchanged now; L2-S13's, L2-S31's and L2-S33's wordings are
+  unchanged." Nothing-from-L3 Ruling 4: "this confirmation changes nothing in L2's algorithm as its statements
+  define it (L2-S13 reads L1's boundary flags; L2-S49 reads nothing L3 publishes, harmonic rhythm included;
+  both wordings unchanged)".
 
 **L2-S14. Two adjacent spans never carry the same tonality and the same chord (degree, quality,
 figure and applied target all equal). A change of figure alone, such as V6 to V65, is a change of
@@ -587,6 +652,10 @@ not a boundary.**
 - *Falsifier.* CODE. **Observable:** consecutive spans. **Decision rule:** falsified if two adjacent
   published spans are identical in all five fields, or if a figure change is inadmissible as a
   boundary. **Not falsified by:** adjacent spans equal in chord and different in tonality.
+- *Ruled (cowork_rulings_2026_10_07_l2_adjacent_identical_spans_sitting.md, Ruling 1).* "L2's algorithm as its
+  statements define it is unchanged; L2-S14's wording does not change." Recorded with the ruling, as the
+  surface's reading and not ruled separately: "This side found no reason to suspect L2-S14 costs precision at
+  the two places looked at (§A.5 point 3), and proposes no open measurement."
 
 **L2-S15. Rivals that differ only in where a boundary falls are carried as rivals, with their mass,
 exactly as rivals that differ in label are.**
@@ -603,6 +672,8 @@ exactly as rivals that differ in label are.**
   cut-off the effort setting sets (L2-S42). (was: "the boundary rival falling below a publication threshold
   that obeys L2-S42."; cowork_rulings_2026_10_07_l2_four_agreeing_statements_sitting.md, recorded with
   Ruling 1, §A.4)
+- *Ruled (cowork_rulings_2026_10_07_l2_four_agreeing_statements_sitting.md, Ruling 1).* "L2's algorithm as its
+  statements define it is unchanged; no wording of L2-S3, L2-S9, L2-S15 or L2-S21 is changed by this ruling."
 
 ### 3c. Face (c) — the tonality at each moment
 
@@ -619,6 +690,8 @@ exactly as rivals that differ in label are.**
   tonality over the same span.
 - *Ruled (cowork_rulings_2026_10_05_l2_pivot_chord_sitting.md, Ruling 1).* Stands as derived. The ruling is
   quoted once, beside L2-S19 (#6); its last sentence names L2-S16.
+- *Ruled (cowork_rulings_2026_10_07_l2_one_tonality_per_span_sitting.md, Ruling 1).* "L2's algorithm as its
+  statements define it is unchanged; L2-S16's wording does not change."
 
 **L2-S17. The written key signature enters as one term of the candidate score, a weak prior over the
 spans' tonalities that acts at the start and at each notated signature change, and nowhere else. It
@@ -728,6 +801,8 @@ candidate score over the whole sequence, not by a rule.**
   ruling's ground restates as accepted on 2026-10-06 and not re-decided — a key change chosen with no
   cadence at all where the fit repays it — is quoted beside L2-S34
   (cowork_rulings_2026_10_06_l2_tonality_and_progression_terms_sitting.md, Ruling 2).
+- *Ruled (cowork_rulings_2026_10_07_l2_applied_or_new_tonality_sitting.md, Rulings 1, 2 and 3).* "L2's
+  algorithm as its statements define it is unchanged; L2-S18's wording does not change."
 
 **L2-S19. A pivot chord, read by an analyst in two tonalities at once, is published as one span
 with one tonality. The other tonality's reading of the same span is published as a rival with its
@@ -766,6 +841,10 @@ principal reading, is a question for the user (OQ-L2-5 ★).**
   that wants "this chord is a hinge" as one fact must compute it, and the masses of the two rivals express
   "either", not "both" (L2-S19's own premise). Which chord an analyst names the pivot is a judgment a fixed
   rule may not reproduce (the surface's reading)."
+- *Beside L2-S19's last sentence (cowork_rulings_2026_10_05_l2_pivot_chord_sitting.md, Ruling 1; written at the
+  ratification of face (c), cowork_rulings_2026_10_13_l2_face_c_ratification_sitting.md, correction 2(a)).*
+  The statement's last sentence states the question as the derivation left it. Ruling 1 has since answered it
+  (OQ-L2-5 ANSWERED). The derived wording stands.
 
 **L2-S20. The tonality terms read the chords the reading proposes (degree, function, cadential
 progressions) and a recency-weighted account of which spelled scale degrees have sounded. They do not
@@ -839,6 +918,8 @@ the major.**
 - *Falsifier.* CODE. **Observable:** the admitted degree set under a minor tonality. **Decision rule:**
   falsified if raised 6̂ or 7̂ chords, or the major tonic, are admissible only through a change of
   tonality. **Not falsified by:** a rival reading in the parallel major.
+- *Ruled (cowork_rulings_2026_10_07_l2_four_agreeing_statements_sitting.md, Ruling 1).* "L2's algorithm as its
+  statements define it is unchanged; no wording of L2-S3, L2-S9, L2-S15 or L2-S21 is changed by this ruling."
 
 **L2-S22. At the edge of the working span, L2's tonality (and the rest of its reading) depends on music
 before and after the span. L2 is the layer that asks for more music. It stops asking when its in-span
@@ -866,8 +947,12 @@ is then marked as truncated (D-263).**
   cowork_rulings_2026_10_07_l2_context_at_the_edge_sitting.md, Ruling 2; brought into line on the user's
   word of 2026-10-13 before Task 0)
 - *Premise.* Convergence happens within the score. **False-negative path:** a reading that never
-  converges, such as an oscillating pivot. The record edge (IC Ruling 46 (vi)) ends the loop, and the
-  record-edge mark says so.
+  converges, such as an oscillating pivot. The record edge (IC Ruling 46 (vi)) or the safety cap (D-624) ends
+  the loop, and the publication says so (the record-edge mark, or marked as truncated, D-263). (was: "a
+  reading that never converges, such as an oscillating pivot. The record edge (IC Ruling 46 (vi)) ends the
+  loop, and the record-edge mark says so."; cowork_rulings_2026_10_07_l2_context_at_the_edge_sitting.md,
+  Ruling 2; brought into line at the ratification of face (c),
+  cowork_rulings_2026_10_13_l2_face_c_ratification_sitting.md, correction 2(b))
 - *Falsifier.* CODE. **Observable:** the in-span publication after successive enlargements. **Decision
   rule:** falsified if, at the top setting, L2 stops while a reading, a span-rival or a mass still changes
   between enlargements; if, at any setting, it stops while its principal reading still changes; if, below
@@ -942,6 +1027,10 @@ relative to each candidate reading's chord, and never by a detector that runs fi
 - *Beside L2-S23 (cowork_rulings_2026_10_05_l2_elaboration_relations_sitting.md, Ruling 2) — carried, what
   it does not decide.* "When the *label* "pedal point" is written — that travels with Group H to L2-S33's
   family. What becomes of the measurement D-385's build is hard-gated on at OI-4 — not decided here."
+- *Pointer (written at the ratification of face (d), cowork_rulings_2026_10_13_l2_face_d_ratification_sitting.md,
+  correction 1).* The crossing-elaborations item under OQ-L2-3 in §4
+  (cowork_rulings_2026_10_09_l2_crossing_elaborations_sitting.md, Ruling 2), where that ruling's words on this
+  statement's wording and its measurement stand quoted.
 
 **L2-S24. The voice-leading evidence an elaboration relation needs is read from L1's per-voice
 relations. These are, per onset change point and notated voice, the silence before the onset, the
@@ -1045,6 +1134,16 @@ publishes a relation for a grace attachment, such as "appoggiatura to its host",
   publishing a relation (OQ-L2-10)" closes. OQ-L2-10 is answered no.** Whether a grace note clashes with the
   decided chord, and how it moves to its host, are facts L3 can read off L2's published chord and L1's
   published attachment if a consumer wants them."
+- *Beside L2-S26's last sentence (cowork_rulings_2026_10_05_l2_assignment_evidence_sitting.md, Ruling 3;
+  written at the ratification of face (d), cowork_rulings_2026_10_13_l2_face_d_ratification_sitting.md,
+  correction 2(a)).* The statement's last sentence states the question as the derivation left it. Ruling 3 has
+  since answered it (OQ-L2-10 ANSWERED: no). The derived wording stands.
+- *Beside L2-S26's Defense, last sentence (cowork_rulings_2026_10_05_l2_assignment_evidence_sitting.md, Ruling
+  3; written at the ratification of face (d), cowork_rulings_2026_10_13_l2_face_d_ratification_sitting.md,
+  correction 2(b)).* OQ-L2-10 has since been answered no (Ruling 3). The user's condition, that not publishing
+  such a relation does not break the rule against information loss, was checked at the record's §1c: the grace
+  note's pitch, form and host stay published by L1 and the chord by L2, so the relation can be recomputed. The
+  derived wording stands.
 
 ### 3e. Face (e) — the chord read over each span
 
@@ -1063,6 +1162,8 @@ read-off.**
 - *Premise.* The charter's.
 - *Falsifier.* CODE. **Observable:** L2's output schema. **Decision rule:** falsified if L2 publishes a
   root pitch class or a bass note as a field. **Not falsified by:** L3 publishing them.
+- *Ruled (cowork_rulings_2026_10_08_l2_chord_as_degree_sitting.md, Ruling 1).* "L2's algorithm as its
+  statements define it is unchanged; L2-S27's wording does not change."
 
 **L2-S28. The figure is decided in the reading. It is the chord member the reading takes as the
 span's structural bass, which is not necessarily the lowest pitch sounding at the span's first slice.
@@ -1113,6 +1214,8 @@ by L1 for every slice, which is OQ-L2-11, naming IC S-44 and S-50.**
 - *Beside L2-S28 (cowork_rulings_2026_10_08_l2_structural_bass_sitting.md, Ruling 3).* The item this ruling
   adds to OQ-L2-3's list of held-out measurements — the bass-scale-degree prior of D-585, after the Rule of
   the Octave — is quoted beneath OQ-L2-3 in §4.
+- *Ruled (cowork_rulings_2026_10_08_l2_structural_bass_sitting.md, Ruling 1).* "L2's algorithm as its
+  statements define it is unchanged; L2-S28's wording does not change."
 
 **L2-S29. The cadential six-four is admitted under at least the two readings the exemplars write: a
 tonic chord in second inversion, and a dominant with the sixth and fourth above its bass as
@@ -1168,6 +1271,11 @@ count), and the voice-leading evidence of L2-S24.**
 - *Falsifier.* CODE. **Observable:** the inputs of the chord terms. **Decision rule:** falsified if the
   candidate score's preference between two chords with identical span content is independent of the
   adjacent spans' readings. **Not falsified by:** the preference being weak.
+- *Ruled (cowork_rulings_2026_10_09_l2_context_in_chord_terms_sitting.md, Ruling 1).* "Algorithm: unchanged.
+  L2-S30's wording does not change; nothing is added to or taken from the candidate score."
+- *Beside L2-S30 (cowork_rulings_2026_10_09_l2_context_in_chord_terms_sitting.md, §2) — carried, not decided.*
+  "No source held measures the gain from context over content alone on the same data with its uncertainty
+  (surface §A.2); the size of that gain is what the fitted weights show (L2-S38)."
 
 ### 3f. Face (f) — the candidate score, and how its parts combine
 
@@ -1222,6 +1330,8 @@ reading, not a fixed grid.**
   nothing: L2-S31's wording and placement are unchanged, and DP-O stays open. *(The defense L2-S31 cites —
   that a decoded segment length buys "the expressive power of a high-order model" — is, in this side's
   reading, about how long a chord lasts and not about chord-to-chord syntax.)*"
+- *Ruled (cowork_rulings_2026_10_07_l2_score_decomposition_sitting.md, Rulings 1 and 3).* "L2-S31's wording
+  does not change."
 
 **L2-S32. The span content term rates how the span's events, under the reading's assignments, fit
 the chord in its spelled form. It counts both what sounds and does not belong (purity) and what
@@ -1247,6 +1357,12 @@ never a requirement (L2-S10).**
   adds to OQ-L2-3's held-out comparisons — the content term with an elaboration's contribution split by
   whether its spelled pitch lies in the span's spelled tonality's collection — is quoted beneath OQ-L2-3 in
   §4.
+- *Ruled (cowork_rulings_2026_10_09_l2_span_content_term_sitting.md, Ruling 1).* "Algorithm: unchanged.
+  L2-S32's wording does not change."
+- *Pointer (written at the ratification of face (f), cowork_rulings_2026_10_13_l2_face_f_ratification_sitting.md,
+  correction 2).* The observation recorded with score decomposition Ruling 3
+  (cowork_rulings_2026_10_07_l2_score_decomposition_sitting.md), quoted beside L2-S31, bears on this
+  statement's terms.
 
 **L2-S33. The elaboration term for an event whose anchor, the preparing or resolving note, lies in an
 adjacent span reads that adjacent span's candidate reading. The candidate score is therefore not the
@@ -1278,6 +1394,12 @@ term also carries the elaborations that cross the boundary.**
 - *Beside L2-S33 (cowork_rulings_2026_10_09_l2_crossing_elaborations_sitting.md, Ruling 2).* The item this
   ruling adds to OQ-L2-3's list of held-out measurements — whether an elaboration's relation is named inside
   the candidate score or derived from the decided reading afterwards — is quoted beneath OQ-L2-3 in §4.
+- *Ruled (cowork_rulings_2026_10_09_l2_crossing_elaborations_sitting.md, Ruling 1).* "Algorithm: unchanged.
+  L2-S33's wording does not change."
+- *Pointer (written at the ratification of face (f), cowork_rulings_2026_10_13_l2_face_f_ratification_sitting.md,
+  correction 2).* The notated-boundary-flag item under OQ-L2-3 in §4
+  (cowork_rulings_2026_10_07_l2_notated_boundary_evidence_sitting.md, Ruling 2) measures a term in this
+  statement's pair term.
 
 **L2-S34. The candidate score carries three families of terms relating the four fields across spans.
 (i) Tonality persistence and distance: a cost for a tonality change, graded by the distance between
@@ -1339,6 +1461,11 @@ the cadential progressions that confirm a tonality. Each family's weights are fi
   this ruling adds to the held-out comparison of tonal spaces for L2-S34 (i)'s cost — a counted,
   transposition-invariant table over the circle-of-fifths distance between the tonics and the pair of modes
   — is quoted beneath OQ-L2-3 in §4.
+- *Beside L2-S34's Source class (written at the ratification of face (f),
+  cowork_rulings_2026_10_13_l2_face_f_ratification_sitting.md, correction 3).* The comparison of tonal spaces
+  now holds four candidates: two added by the tonality-and-progression record's Ruling 3 (2026-10-06) and the
+  published-theory record's Ruling 2 (2026-10-09), both quoted beneath OQ-L2-3 in §4. The derived wording
+  stands.
 
 **L2-S35. The candidate score is normalised over whole readings: the masses of all readings of the
 working span sum to one. No span's alternatives are normalised against each other alone.**
@@ -1407,6 +1534,30 @@ is what must give way, and that is a ruling (OQ-L2-8 ★).**
   addition, written beside the statement and not into its bold text.* "A reading the admission rule never
   generates is not discarded (D-297; FRAMEWORK §8.4); what this statement bars is dropping a reading the
   search has begun to score."
+- *Recorded (ratification_surfaces/cowork_l2_search_sizing_2026_10_05.md, §8 and §C) — recorded as following
+  from the record and the user's word, not as a ruling; written at the ratification of face (f),
+  cowork_rulings_2026_10_13_l2_face_f_ratification_sitting.md, correction 4.* (a) §8: "The sizing cannot tell
+  whether exact search is affordable at D-201's sizes." (b) §C, *What it settles*: "§8's outcome ("whether a
+  code trial may run inside this phase comes to the user") is not put: no code trial and no timing measurement
+  is owed before L2's specification is ratified. What is owed instead is that the specification names clear
+  entry points where an effort setting applies. This is D-035 ("every cost-driving choice is a setting, never
+  a hardcoded constant") and D-202 (one setting, several dials, bounding time) applied to L2, so it is recorded
+  as following from the record and his word, not as a new ruling. Which dials exist, and their defaults, are
+  decided when the effort setting is built and measured (D-202 stays DEFERRED), not before ratification. The
+  tractability record's §1b item 2 sent the dials question to him "before this layer's specification is
+  ratified"; his word moves it to the build." (c) §C, *The entry points this sizing locates* (*my reading*, a
+  proposal for the application act, not ruled): "(a) the admitted chord vocabulary — which chords may be
+  applied and how deep (§3.3), and later the allowed modes under the modal increment, following a style
+  setting as he describes; (b) which terms and algorithms run — for instance the crossing-elaboration link
+  (§3.5), or a table-only chord reading at the lowest setting, as his example; (c) the context extension's
+  limit (D-261, under D-624's cap); (d) a stretch-length cap (§3.2); (e) any reduction of the readings kept.
+  Each is a setting the user turns, so none is the "quiet" reduction Ruling 1 (iv) of the tractability record
+  bars. The top setting is exact, as L2-S36 states." (d) §5, *Limit 1 — masses* (*my reading*, UNSETTLED; its
+  "second speed-up above" is that section's "A provably safe bound"): "A safe bound protects the principal
+  reading, not the masses: a reading dropped because it cannot win still carried some mass. The derivation's
+  falsifier for L2-S36 excuses only readings of zero mass. So the second speed-up above may be available for
+  the principal reading and not for the rivals' masses. This bears on OQ-L2-8 and L2-S35; it is recorded, not
+  decided." Section numbers inside these quotations are the sizing's.
 
 **L2-S37. L2 may read L1's cadence cues as evidence only as their establishment status allows. The
 leading-tone cue (IC S-46) is *computed* and may carry load. The falling-fifth cue (IC S-45) and the
@@ -1429,6 +1580,8 @@ fitted candidate score reads them until the window is established.**
 - *Beside L2-S37 (cowork_rulings_2026_10_09_l2_cadence_cues_sitting.md, Ruling 2).* The item this ruling
   adds to OQ-L2-3's list of held-out measurements — the candidate score with a cue term against the same
   score without it — is quoted beneath OQ-L2-3 in §4.
+- *Ruled (cowork_rulings_2026_10_09_l2_cadence_cues_sitting.md, Ruling 1).* "Algorithm: unchanged. L2-S37's
+  wording does not change."
 
 **L2-S38. Every weight of the candidate score is fitted from annotated music, not set by hand. The
 tables are counted from annotated music, once, and frozen; the short list of combination weights is
@@ -1522,6 +1675,12 @@ Its internal constants are the published ones, unchanged, and are not tuned on e
   not ruled.* "**Carried as a bound, not ruled:** a published space or profile entering under L2-S39 needs
   its primary fetched and read before its constants carry load (D-473; the tonality-vocabulary record's
   Ruling 1); neither Lerdahl's nor Weber's primary is held."
+- *Ruled (cowork_rulings_2026_10_09_l2_published_theory_terms_sitting.md, Ruling 1).* "Algorithm: unchanged.
+  L2-S39's wording does not change."
+- *Pointer (written at the ratification of face (f), cowork_rulings_2026_10_13_l2_face_f_ratification_sitting.md,
+  correction 2).* The bass-scale-degree item under OQ-L2-3 in §4
+  (cowork_rulings_2026_10_08_l2_structural_bass_sitting.md, Ruling 3) says a published form of the Rule of the
+  Octave would enter under this statement.
 
 ### 3g. Face (g) — the rivals, their mass, and the bar on early discarding
 
@@ -1555,8 +1714,9 @@ publication and may not read them as frequencies of being right.**
 - *Falsifier.* CODE. **Observable:** the published masses. **Decision rule:** falsified if a span's
   published rival masses exceed one in total, if a mass is labelled calibrated before a reliability
   map exists, or if a boundary rival and a label rival over the same stretch are merged into one mass.
-  **Not falsified by:** masses summing to less than one because some rivals fall below the publication
-  threshold (L2-S42).
+  **Not falsified by:** masses summing to less than one because some rivals fall below the cut-off the effort
+  setting sets (L2-S42). (was: "masses summing to less than one because some rivals fall below the publication
+  threshold (L2-S42)."; cowork_rulings_2026_10_05_l2_rival_publication_sitting.md, Ruling 1)
 - *Beside L2-S40 (cowork_rulings_2026_10_05_l2_weight_meaning_sitting.md, Ruling 1).* "A span-rival's weight
   (the derivation's *mass*, L2-S40) is declared to be neither a decision margin (Class M) nor a calibrated
   probability (Class P), but a **third kind: the model's own distribution** — each value a share in [0,1],
@@ -1694,6 +1854,17 @@ publication names, and the tie is flagged.**
   the earlier boundary sequence, then a fixed order of the readings' contents."
 - *Beside L2-S43 (cowork_rulings_2026_10_05_l2_no_early_discarding_sitting.md, §1b) — carried, left open.*
   "**Left for the application act:** stating that fixed order over the note assignments as well."
+- *Recorded (cowork_rulings_2026_10_14_l2_face_g_ratification_sitting.md, correction 2) — beside the carried
+  item above; this side's reading, not ruled; challengeable.* "Recorded at the ratification of face (g), as
+  this side's reading, not ruled: the successor's §0 defines a reading as including an assignment for every
+  event, so 'a fixed order of the readings' contents' already orders the assignments; D-565 requires the order
+  to be total. The order among assignments is the canonical order of the encoded reading, of the kind D-565's
+  third key names."
+- *Beside L2-S43's Defense sentence on near-ties (cowork_rulings_2026_10_05_l2_silence_and_no_chord_sitting.md,
+  Ruling 1; written at the ratification of face (g), cowork_rulings_2026_10_14_l2_face_g_ratification_sitting.md,
+  correction 3).* Read with the silence record's Ruling 1 (2026-10-05): a near-tie is reported by the two
+  readings' masses; no flag is published for it. The one flag is the exact-tie flag of the statement. The
+  derived wording stands.
 
 ### 3h. Face (h) — the boundaries of the layer
 
@@ -1765,7 +1936,9 @@ establishment status.**
   intermediate quantity of L2's own scoring" [RULED — charter, contract table]. Provenance on every
   record [RULED — D-275]. Establishment status on every evidence-class fact [RULED — D-100; principle
   #19]. A per-note or per-slice weight is a consumer's fitted derivative. This is said at L1 [RULED — IC
-  beside S-35, Ruling 47], and by the same reasoning L2's own weights stay inside L2.
+  beside S-35, Ruling 47], and by the same reasoning L2's own term weights stay inside L2. (was: "and by the
+  same reasoning L2's own weights stay inside L2."; cowork_rulings_2026_10_06_l2_publication_to_next_layer_sitting.md,
+  Ruling 1, the recorded "'weight' in L2-S45 is written 'term weight'")
 - *Source class.* Given — charter.
 - *Status.* Settled.
 - *Premise.* L3 needs nothing intermediate. **False-negative path:** L3's cadence-type reading wanting
@@ -1848,6 +2021,12 @@ order is graded, is a question for the user (OQ-L2-16 ★).**
   (measurement design, the same kind as OQ-L2-7); the declared rule combining a junction span's two
   neighbours' contributions (the candidate score's detail); whether a segno or coda sign belongs with the
   junction list (the L0/L1 record's own open reading at OQ-9's answer)."
+- *Beside L2-S46's last sentence (cowork_rulings_2026_10_05_l2_working_order_sitting.md, Ruling 1; written at
+  the ratification of face (h), cowork_rulings_2026_10_14_l2_face_h_ratification_sitting.md, correction 2).*
+  The statement's last sentence states the question as the derivation left it. The working-order record's
+  Ruling 1 has since answered OQ-L2-16: L2 decides over notated order, and the ground truth's alignment is not
+  a question for the user but a fact to be established per corpus at measurement design. The derived wording
+  stands.
 
 **L2-S47. L2 never re-derives an L1 fact. Where it wants something L1 does not publish in usable form,
 it writes an open question naming the input-contract statement that would change, and does without in
@@ -1882,6 +2061,8 @@ to the consumer.**
   stays open." OQ-L2-9 is marked ANSWERED in §4
   (cowork_rulings_2026_10_05_l2_assignment_evidence_sitting.md, Ruling 2), and so is OQ-L2-11
   (cowork_rulings_2026_10_08_l2_structural_bass_sitting.md, Ruling 2).
+- *Beside L2-S47 (cowork_rulings_2026_10_09_l2_never_re_derives_sitting.md, §3) — carried, not decided.* "no L2
+  statement says whether or how L2 uses the damper-pedal span or the PEDAL-HELD attribute."
 
 **L2-S48. L2's publication covers exactly the working span. The result after any sequence of
 enlargements equals a single fresh run over the final loaded span.**
@@ -1964,6 +2145,8 @@ evidence it is decided from instead. The dependency is one-way: L3 reads L2.**
 - *Beside L2-S49 (cowork_rulings_2026_10_07_l2_nothing_from_l3_sitting.md).* The record's note for whoever
   takes up DP-O, which names the sequence term carried under Ruling 1 and harmonic rhythm (Ruling 4) as
   candidates for the same measurement, is quoted beside L2-S31.
+- *Ruled (cowork_rulings_2026_10_07_l2_nothing_from_l3_sitting.md, Rulings 1 and 3).* "L2-S49's wording does
+  not change."
 
 ---
 
@@ -1972,6 +2155,11 @@ evidence it is decided from instead. The dependency is one-way: L3 reads L2.**
 Each names the face it belongs to and the statement that raises it. None is filled with a plausible
 reading. The ones marked ★ are those this session would put to the user for a ruling, with the
 question it would ask.
+
+*Further open points are carried beside the statements, where the ruling records placed them, and are not
+repeated here (#6): marked UNSETTLED beside L2-S6, L2-S17, L2-S19, L2-S24, L2-S38, L2-S44 and L2-S46, and
+carried, not decided, beside L2-S47 (the damper pedal). (Recorded at the ratification of the ninth surface,
+cowork_rulings_2026_10_14_l2_ninth_surface_ratification_sitting.md, item 2.)*
 
 - **OQ-L2-1 (face (a); L2-S2, S4, S5, S6, S10) — the closure measurement.** Convert every annotated
   span of the grading corpora (both of exemplar 1's traditions, and exemplar 5's with its variants) into
@@ -1992,7 +2180,10 @@ question it would ask.
   "**OQ-L2-2 is answered by this ruling**: L2 does not admit Dorian, Phrygian or Mixolydian as tonalities in
   the first specification; it reads modal passages as major or minor with the inflections counted and
   published; the church modes enter by the named increment under the #17 gate."
-- **OQ-L2-3 (face (b), (c), (f); L2-S7, S12, S17, S20, S34) — the measured shapes and values.** The
+- **OQ-L2-3 (face (a), (b), (c), (d), (f); L2-S1, S3, S7, S12, S13, S17, S20, S23, S31, S32, S33, S34, S37,
+  S39) — the measured shapes and values.** (was: "**OQ-L2-3 (face (b), (c), (f); L2-S7, S12, S17, S20, S34) —
+  the measured shapes and values.**"; recorded at the ratification of the ninth surface,
+  cowork_rulings_2026_10_14_l2_ninth_surface_ratification_sitting.md, item 1) The
   maximum span length if any; the metric weights; the key-signature prior's spread and weight; the
   recency form of the tonality degree evidence; the choice between Lerdahl's and Weber's tonal spaces.
   *Measurements, held out.* UNESTABLISHED.
@@ -2118,6 +2309,12 @@ question it would ask.
   ratified; if the sizing cannot tell, whether a code trial may run inside this phase comes to the user on
   its own surface. 3. Speed-ups that leave the result unchanged come first, the dials last (D-200). A dial
   the user rules and the end user turns is not the "quiet" reduction Ruling 1 (iv) bars."
+  *Since then (ratification_surfaces/cowork_l2_search_sizing_2026_10_05.md, §8 and §C, recorded there as
+  following from the record and the user's word, not as a ruling):* the sizing could not tell; no code trial or
+  timing measurement is owed before ratification; the specification names the entry points for the effort
+  setting (beside L2-S36); which dials exist and their defaults are decided when the effort setting is built
+  (D-202 DEFERRED). OQ-L2-8 stays open until then. *(Recorded at the ratification of the ninth surface,
+  cowork_rulings_2026_10_14_l2_ninth_surface_ratification_sitting.md, item 3.)*
 - **OQ-L2-9 (face (d); L2-S24) — successor note in a chordal voice.** L1 publishes, per notated voice,
   the relation to the preceding note and a chordal count. In a voice that sounds several pitches, no
   note-to-note successor is published. *The input-contract statements concerned:* S-50's list, with
@@ -2148,6 +2345,10 @@ question it would ask.
   calibration"): the distribution of the distance from the last sounding of the fourth and seventh
   degrees to the annotated arrival, and S-45's recall as a function of look-back. Until it runs, two of
   the three cues cannot carry load in L2. UNESTABLISHED.
+  *Pointer:* the cue-term measurement under OQ-L2-3 (cowork_rulings_2026_10_09_l2_cadence_cues_sitting.md,
+  Ruling 2) waits on this window for the falling-fifth and the fourth-and-seventh cues. *(Recorded at the
+  ratification of the ninth surface, cowork_rulings_2026_10_14_l2_ninth_surface_ratification_sitting.md, item
+  4.)*
 - **OQ-L2-13 (face (d), (f); L2-S38) — ground truth for assignments.** No annotated corpus this
   session knows of carries per-note chord-tone and elaboration labels made independently of the chord
   labels. Fitting and grading the assignment half of the decision needs one, or a ruling that the
@@ -2172,9 +2373,14 @@ question it would ask.
   each value a share in [0,1], the shares of one stretch's rivals summing to at most one, not calibrated,
   compared only within one working span's publication, never read as a frequency of being right, and turned
   into a calibrated probability only through a fitted reliability map."
-- **OQ-L2-15 (face (g); L2-S41, S42) — how much is published.** The number of whole readings, and the
-  mass threshold below which a span-rival is withheld. *Measured* against what the consumers (L3, the
-  display) actually read. UNESTABLISHED.
+- **OQ-L2-15 (face (g); L2-S41, S42) — how much is published.** The number of whole readings, and how deep
+  below the top setting the cut-off lies under which a span-rival is withheld (nothing is withheld at the top
+  setting); both decided at the effort setting's build. *Measured* against what the consumers (L3, the
+  display) actually read. UNESTABLISHED. (was: "The number of whole readings, and the mass threshold below
+  which a span-rival is withheld. *Measured* against what the consumers (L3, the display) actually read.
+  UNESTABLISHED."; cowork_rulings_2026_10_05_l2_rival_publication_sitting.md, Ruling 1; brought into line at
+  the ratification of the ninth surface, cowork_rulings_2026_10_14_l2_ninth_surface_ratification_sitting.md,
+  item 5)
 - **OQ-L2-16 ★ (face (h); L2-S46) — the graded order.** *Question for the user:* is the ground truth
   this project grades against aligned to notated order or to unfolded order? Is the working span a
   stretch of notated bars, or of the performed sequence? (This is the remainder of the input
@@ -2203,6 +2409,12 @@ question it would ask.
 (OQ-L2-2, 4, 5, 8, 16). DP-N and DP-Q, which L2-S29 and L2-S44 carry, are the charter's own open
 questions and are not counted here.
 
+*Since the derivation (recorded at the ratification of the ninth surface,
+cowork_rulings_2026_10_14_l2_ninth_surface_ratification_sitting.md, item 6):* OQ-L2-2, 4, 5 and 16 are
+ANSWERED (their marks above), and OQ-L2-8's question goes to the effort setting's build (the line beneath
+OQ-L2-8, resting on the sizing's §C, recorded there and not ruled). None of the five remains to be put before
+ratification.
+
 ---
 
 ## 5. The blind act's own record — where it stands
@@ -2210,5 +2422,9 @@ questions and are not counted here.
 *The measured-cost record, the independence record and the note on the brief's decomposition are the
 blind act's own and stand at the derivation, `cowork_blind_derivation_l2_2026_09_27.md` §5–§7, at blob
 `d78ac530992860d38d1f605a77a2961d5440a2f6`; they are not restated here (#6).*
+
+A reference in this file to §6 or §7 with no other document named means that section of the derivation.
+*(Recorded at the ratification of the ninth surface, cowork_rulings_2026_10_14_l2_ninth_surface_ratification_sitting.md,
+item 11.)*
 
 *End of file.*
