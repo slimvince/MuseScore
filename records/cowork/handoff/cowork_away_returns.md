@@ -24285,3 +24285,50 @@ or surface after landing, and not the suspension file, differs from the tip.
 
 *Provenance: CC, 2026-10-14, appended in the one further commit after the close commit
 `2062db2f8f5289b172c67e02584bf93214482b7e`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 CANDIDATE LIST AND VERDICT PASS: 244 CANDIDATES PUBLISHED, VERDICT PROPOSALS AUTHORED, NOTHING WITHHELD, NO PACK, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md`,
+pinned at Task 0 to blob `0c64e5c91832cb686ba100d49f49fdae26d46dfc`: **Task 0** landed the dispatch and
+handoff entry 399; **Task 1** corrected the two stale texts (the L2 outgoing-population tool's historical
+reason; the confidence contract's two section-kind notes in the register's data file); **Task 2** published
+`tools/audit/l3_candidate_list.json` whole; **Task 3** wrote one verdict PROPOSAL per candidate into
+`VERDICTS["l3"]`, every group complete, in the four ordered segments; **Task 4** closed. **THE PASS DID NOT
+STOP. NOTHING WAS WITHHELD, NO PACK WAS RENDERED, NO READING FILE WAS WRITTEN, NO SESSION WAS BOOTED, NO
+RULING WAS TAKEN, NO RECOMMENDATION ABOUT ANY LIST APPEARS ANYWHERE, AND NOTHING ANY LAYER COMPUTES CHANGED.**
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_candidate_list_and_verdict_pass_2026_10_14.md`, and is pointed at rather
+than copied (#6): the commit table (§1), the guard states (§2), A1 to A3 and E0 to E3 graded (§3), Task 0
+(§4), Task 1's before/after measurements (§5), Task 2's checks, the writing side's expectation disagreements
+and the comparison with L2's list, by citation to the artifact (§6), Task 3's groups, the per-group and total
+IN / OUT / UNPLACED counts from the check's last run, the identities proposed IN and UNPLACED, and how the
+test was applied (§7), the forward bound (§8), what the batch leaves to later acts (§9), the declared
+departures (§10), the observations (§11), what the batch did not do (§12), the plan's tell (§13) and the
+self-check (§14).
+
+### What needs the writing side, named rather than resolved
+
+1. **The verdicts are proposals to be checked at the published text** — `VERDICTS["l3"]` in
+   `tools/audit/gen_derivation_boot_pack.py`, written from `tools/audit/l3_candidate_list.json` →
+   `the_candidates` and nothing else (report §7).
+2. **Segment 4's commit also corrects verdict wording of segments 1–3** that used *part*, *scale* and *tie*
+   in their non-musical senses; no verdict word changed, and the whole generator difference from the commit
+   before the first verdict is still one pure insertion (report §10 item 3).
+3. **The ordered comment opening the `l3` block carries two reserved words in non-musical senses**, written
+   verbatim as ordered (report §11 item 1).
+4. **No expectation disagreement and no identity difference from L2's list of 2026-09-05** — both artifact
+   fields are empty (report §6).
+
+### The plan line
+
+- **The next act is the writing side's — the check of these verdicts at the published text, then the
+  reading-file batch (the reading-file tool gains an `l3` subject), then the lists put to the user one per
+  turn.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-14, at boot tip `ca1525944d1476db1017af6234edf899704e8b99`, under
+`cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md`, after the dispatch's ordered first reads.
+Every commit identifier in the report was read from the commit's own object and `origin/master` at its ref
+file after each push; the guard verdicts are this batch's own runs.*

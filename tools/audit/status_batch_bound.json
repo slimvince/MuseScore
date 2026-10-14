@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l3_criterion_write_2026_10_14.md, Task 5",
+ "dispatch": "cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md, Task 4",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -513,54 +513,68 @@
    "base_commit": "2d4f47520b05e62f4947b8a7984280c666273be8",
    "the_then_previous_batch": "cc_instruction_l2_ratification_application_2026_10_14.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md, Task 4",
+   "base_commit": "e47daa17bc7d7e1f0c190a1932283435964bca2b",
+   "the_then_previous_batch": "cc_instruction_l3_criterion_write_2026_10_14.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "2d4f47520b05e62f4947b8a7984280c666273be8",
- "the_then_previous_batch": "cc_instruction_l2_ratification_application_2026_10_14.md",
+ "base_commit": "e47daa17bc7d7e1f0c190a1932283435964bca2b",
+ "the_then_previous_batch": "cc_instruction_l3_criterion_write_2026_10_14.md",
  "the_kind_of_move": "ordinary",
- "entries_moved": 5,
- "characters_moved": 4085,
+ "entries_moved": 6,
+ "characters_moved": 4516,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1888,
-   "sha256": "89911211c95de9fa6a1657bcd76b09985c75df4986e8f9cc815715b400b0d4fa",
+   "characters": 2032,
+   "sha256": "6dbf9c281a7032a344cb9ed189d3621f9b0c7db4fae3423f4eef94d8913aff79",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-14 (CC — `records/cc/instructions/cc_instruction_l2_ratification_application_2026_10_14.md`, Task 4, the close. **★★ THE NINE L2 RATIFICATION"
+   "opening": "*2026-10-14 (CC — `records/cc/instructions/cc_instruction_l3_criterion_write_2026_10_14.md`, Task 5, the close. **★★ L3's RULED CANDIDATE CRITERION IS"
   },
   {
    "line_at_base": 10,
-   "characters": 549,
-   "sha256": "d16372727762f55f767cd82005d7737ea16028f26776355a987334cac0e4d95d",
+   "characters": 442,
+   "sha256": "65a6a196b7184282d7665baccc863764614b299779e3a0189432e755213ef5f8",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-14 (CC — Same dispatch, Task 3. **`cowork_confidence_contract.md` §2 GAINS THE THIRD ADMISSIBLE CONFIDENCE CLASS, THE MODEL'S OWN DISTRIBUTIO"
+   "opening": "*2026-10-14 (CC — Same dispatch, Task 4. **L3's READING SLICE IS CORRECTED IN `cowork_l2_task_b_slice_derivation_2026_09_05.md` AND ROW 36's FIRST PAS"
   },
   {
    "line_at_base": 12,
-   "characters": 594,
-   "sha256": "66350f2804c357f38115e3c9eef76eb83751bf84f1ee76a3b6a93629b7a8259a",
+   "characters": 773,
+   "sha256": "c4b4d9b12149aaea1ed64c3eee8f2f0a435193af8aebf775a1414d42db5f43e5",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-14 (CC — Same dispatch, Task 2. **`FRAMEWORK.md` IS AMENDED UNDER THE L2 RATIFICATION RECORDS** — the L2 charter's elaboration list to the ei"
+   "opening": "*2026-10-14 (CC — Same dispatch, Task 3. **`tools/audit/gen_l2_outgoing_population.py` LEAVES THE LIVE GUARD LIST AS A HISTORICAL RECORD** — one entry"
   },
   {
    "line_at_base": 14,
-   "characters": 639,
-   "sha256": "2723fcef956a27eec265b97ae39b4b42db4732760b0841ad84dc27104c35ff1e",
+   "characters": 393,
+   "sha256": "b28f35d6493d179983096b620d9c15b6450cedb569d0da3515861e55582e21c0",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-14 (CC — Same dispatch, Task 1. **THE NINE FACE RECORDS' CORRECTIONS ARE WRITTEN INTO `cowork_derived_specification_l2_2026_10_10.md`** — rul"
+   "opening": "*2026-10-14 (CC — Same dispatch, Task 2. **THE GENERATOR'S OWN `candidates()` PROVES L3's CRITERION WAS WRITTEN AS RULED**, at `tools/audit/l3_criteri"
   },
   {
    "line_at_base": 16,
-   "characters": 415,
-   "sha256": "369367006f67df15cd7f513462914d8d69f63ded8649f7a5b3eda755ef6dd8c9",
+   "characters": 443,
+   "sha256": "06659b24a2bef43e6b8671295f70c74250a174172aaa66618df0376ba5567ed9",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-14 (CC — Same dispatch, Task 0. **THE TEN L2 RATIFICATION RECORDS OF 2026-10-13 AND 2026-10-14 ARE LANDED**, with the nine face surfaces, han"
+   "opening": "*2026-10-14 (CC — Same dispatch, Task 1. **`CRITERION[\"l3\"]` IS WRITTEN INTO `tools/audit/gen_derivation_boot_pack.py`** as one pure insertion, dorman"
+  },
+  {
+   "line_at_base": 18,
+   "characters": 433,
+   "sha256": "3c8d1d93b0c5342855796919abd8412d9e59c1d51b50ce9ad9845015777446b5",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-10-14 (CC — Same dispatch, Task 0. **THE THREE 2026-10-14 RULING RECORDS, ROW 36's FIRST EXTRACT, HANDOFF ENTRIES 393 TO 398 AND THIS DISPATCH A"
   }
  ],
  "reconciliation": {
