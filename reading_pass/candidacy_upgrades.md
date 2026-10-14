@@ -331,6 +331,22 @@ independence-of-method-not-of-data precision on the charter's two-study citation
 **Not read: the whole of Task B outside this slice — the L2 and L3 groups, in the order this file
 proposes, headed by L2's entangled decision. The remainder is untouched.**
 
+## ★★ THE L3 SLICE — appended 2026-10-14
+
+**L3's slice, as put to the user by name** (`records/cowork/handoff/cowork_handoff_entry_three_hundred_and_ninety_four.md`
+§2; his next word "continue", read by that sitting as no challenge — a reading, not a ruling): rows **36, 37, 38,
+39**, with rows **34** and **40** carried from L2's slice for their noted L3 bearing. The derivation is that entry's
+and is not restated here (#6).
+
+| Row | Paper | Grade | Extract | Centrality | Second pass |
+|---|---|---|---|---|---|
+| 36 | Ju, Margot, McKay, Dahn & Fujinaga 2020, automatic figured bass annotation (BCFB) | **AT THE OBJECT**, whole, 7 pp., printed pp. 640–646 | `reading_pass/extracts/ju-margot-mckay-dahn-fujinaga-2020-automatic-figured-bass-annotation-bach-chorales-figured-bass-dataset.md` | **CENTRAL** | **OWED** |
+| 37, 38, 39 | (the L0+L1 table above) | read for L1 (the table above) | (the table above) | **not decided for L3** | (the table above) |
+
+*Row 36's cells are relayed from `records/cowork/handoff/cowork_handoff_entry_three_hundred_and_ninety_five.md`
+§1. Whether rows 37, 38 and 39 are CENTRAL for L3 is left to the first L3 act that needs it (entry 394 §4
+step 5).*
+
 ---
 
 *Provenance: written 2026-08-31 by the session opened on

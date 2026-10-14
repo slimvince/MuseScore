@@ -97,7 +97,7 @@ follows what is inside L2's charter, and a grammar is one way to answer it"*, so
 | 30 | Feisthauer et al. 2020, keys and modulations | **L2** | A modulation-deciding method on symbolic classical music — tonality per span. |
 | 34 | Illescas, Rizo & Iñesta 2007, harmonic, melodic and functional analysis | **L2**, with an L3 bearing | The row names both layers. The harmonic decision (chord as degree against tonality) is L2's; whatever it does with cadences or grouping is L3's and rides along when the paper is read. Placed with L2 because the method decides the reading first. |
 | 35 | Ju et al. 2017, non-chord-tone identification | **L2** | DP-D's excluded rival; DP-D is *"part of L2's one decision"*. |
-| 36 | Ju et al. 2020, automatic figured bass annotation | **L3** | The figured bass is an L3 publication (§5, L3); the row is admitted because *"L3 publishes the figured bass and the read set contains no producer for it"*. **The one L3 row.** |
+| 36 | Ju et al. 2020, automatic figured bass annotation | **L3** | The figured bass is an L3 publication (§5, L3); the row is admitted because *"L3 publishes the figured bass and the read set contains no producer for it"*. **The one L3 row** of this file's own population; L3's whole slice is at §5 *(★ corrected 2026-10-14; former wording, preserved (#12): "**The one L3 row.**")* |
 | 40 | de Clercq 2015, scale-degree reinterpretation | **L2**, with an L3 bearing | The row names *"DP-E's and L3's territory"*. DP-E is L2's (tonality decided with the chords, change located at a harmonic boundary), and the degree read against the tonality is L2's publication. What in it is L3's the row does not say; noted, not decided. |
 | 45 | Micchi, Gotham & Giraud 2020, "Not All Roads Lead to Rome" | **L2** | The lineage's baseline architecture; DP-A's evidence, read as a candidate scoring architecture for L2. |
 | 46 | Chen & Su 2018, BPS-FH | **L2** | Decides degree, quality and inversion over a score — the chord per span. |
@@ -116,7 +116,13 @@ follows what is inside L2's charter, and a grammar is one way to answer it"*, so
 ## 5. The count, and the checks made on it
 
 - **L2's slice: 40 rows** — 1, 3, 5, 8, 10–23, 25–30, 34, 35, 40, 45–52, 57, 58, 65–67.
-- **L3's slice: 1 row** — 36.
+- **L3's slice: 4 rows** — 36, 37, 38, 39; rows 34 and 40 carried for their noted L3 bearing and not
+  counted twice. *(★ CORRECTED 2026-10-14 under `records/cowork/handoff/cowork_handoff_entry_three_hundred_and_ninety_four.md`
+  §2, which tested rows 37, 38 and 39 against the L3 charter — §2 of this file removed them from its population as
+  L1 rows already read, so they were never tested here — and put the slice to the user by name; his next word was
+  "continue", read by that sitting as no challenge to any placement, a reading and not a ruling. Every placement
+  stays challengeable at its own row. **FORMER WORDING, PRESERVED (#12): "L3's slice: 1 row — 36."** The
+  "40 + 1 = 41" check below counts this file's own §2 population and is unchanged.)*
 - **40 + 1 = 41.** Every row of §2 appears exactly once in §4; no row of §4 is outside §2 (checked
   both ways at this file, 2026-09-12, after rows 65–67 were added).
 - *(★ RE-DERIVED AGAIN 2026-09-12 on the user's ruling adding rows 65, 66 and 67. **FORMER WORDING,
