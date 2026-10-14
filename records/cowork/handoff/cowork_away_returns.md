@@ -24254,3 +24254,34 @@ observations (§12), what the batch did not do (§13), the plan's tell (§14) an
 `cc_instruction_l3_criterion_write_2026_10_14.md`, after the dispatch's ordered first reads. Every commit
 identifier in the report was read from the commit's own object and `origin/master` at its ref file after each
 push; the guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `2062db2f8f5289b172c67e02584bf93214482b7e` left, appended in the one further commit
+
+**A fresh full guard run, written, after the close commit and before this one: 79 guards run, 14 failing, 4 not
+run, 20 historical** (`tools/audit/guard_state.json` → `summary`, which this commit carries). **E5 — MET, the A2
+prediction exactly:** the fourteen failing are the sixteen of the start declaration less
+`decisions/gen_retired_subject_moves.py` (cleared by Task 3(ii)) and less `gen_l2_outgoing_population.py` (no
+longer run; listed historical). **The A2 exceptions, handled as A2 says:** `gen_l0_l1_outgoing_population.py` and
+`gen_defense_share.py` were regenerated before the run and pass at the artifacts this commit carries; each was
+compared against the close commit's blob by explicit hash — in the L0/L1 population only one term's hit count
+and the `STATUS.md` residue record moved, **no member moved**; in the defense share, the whole-read denominator
+and the share derived from it moved, on the last batch's precedent. `gen_session_start_read_size.py --check` and
+`gen_status_batch_bound.py --check` pass.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_withheld_family_reading.py']"* — only the standing
+missing-verdict STOP remains, less `gen_l2_outgoing_population.py`.
+
+**A4, verified at the objects** (`git diff --name-status b6bceef7… 2062db2f…`): 26 paths — the twelve landed at
+Task 0, the report, and the ordered edits: the generator (its one insertion), the check artifact, the two guard
+tools (their two insertions), the backbone (its two values; **no anchor**), the slice derivation and the
+candidacy file (Task 4's edits), `STATUS.md`, `STATUS_ARCHIVE.md` (lines added only), this file (lines added
+only), the membership artifact, the re-aimed forward-bound tool and its two artifacts. The landed records,
+extract, entries and dispatch are unchanged since Task 0 (`git diff 92cde33e… 2062db2f…` over them is empty).
+No other governing document, no rendered decisions-register file, nothing under `tools/audit/derivation_boot_pack/`,
+neither `tools/audit/derivation_boot_pack.json` nor `tools/audit/l2_outgoing_population.json`, no ruling record
+or surface after landing, and not the suspension file, differs from the tip.
+
+*Provenance: CC, 2026-10-14, appended in the one further commit after the close commit
+`2062db2f8f5289b172c67e02584bf93214482b7e`; the verdicts are this run's own output, read with the file tools.*

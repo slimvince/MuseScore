@@ -174,6 +174,14 @@
         "what_it_checked": "where every span of Ruling 2's own population actually stands: the spans the ruled archivability test PLACES across the five mandatory-read files at this act's pin, the reading verdict authored for each, and — per file, in both directions — that every moved span is byte-present in its companion exactly once and absent from its parent, and that every span the reading LEFT AT SITE is still byte-present at site exactly once and in the companion not at all. The second direction is the load-bearing one here, because eighteen of the nineteen proposals stayed: a check that only proved the one move would be green at a tree where a refusal had been overridden. The population is DERIVED on every run from the imported span cut and recognizers, with three ruled exclusions each derived rather than listed — a span a previous act already archived, the six `CLAUDE.md` spans the two return sittings settled, and a span classified by text inside an archive pointer. A proposed span with no authored reading verdict, and an authored verdict naming a span the derivation does not carry, each STOP it. ★ WHAT IT DOES NOT ASSERT: that any span left at site is unarchivable; only what the imported reading test asks of each"
       },
       {
+        "tool": "tools/audit/gen_l2_outgoing_population.py",
+        "retired_invocation": [
+          "--check"
+        ],
+        "why": "HISTORICAL RECORD: the population the finished L2 comparison tabulated, numbered by position, and records cite members by those positions (member 52, the confidence contract). The tool re-derives the population from the live tree, so an ordered amendment of a member text renumbers members: the 2026-10-14 ratification application's ordered edit of `cowork_confidence_contract.md` would exchange positions 51 and 52. Re-deriving it would change what ratified records name. The artifact stays on disk as committed (#12, D-646).",
+        "what_it_checked": "the L2 outgoing population re-derives under the ruling of 2026-09-27 (Option B): the four named ARCHITECTURE.md sections located by heading text, the .md names inside them, the forty-two ruled terms read from their one home and searched over the three prose classes with the residue published whole, and the 111 confirmed decision passages read at their homes. Its STOPs are what make it a guard: a heading that moves, a term list that is not forty-two long, an identity count other than 111, a home of unreadable shape or past its file's end, or a grouping that disagrees with the confirmed withheld-document artifact halts it. WHAT IT DOES NOT ASSERT: that the term search reaches every passage about L2's subject — its reach is stated on the artifact as a lower bound"
+      },
+      {
         "tool": "tools/audit/decisions/gen_phase1n_reading_regime.py",
         "retired_invocation": [
           "--check"
@@ -906,12 +914,12 @@
       "args": [
         "--check"
       ],
-      "exit_code": 1,
-      "verdict": "FAIL",
-      "stdout": [],
-      "stderr": [
-        "cowork_confidence_contract.md:23: heading is '2. Definitions — the three admissible confidence classes', the authored kind judgment records '2. Definitions — the two admissible confidence classes'"
+      "exit_code": 0,
+      "verdict": "PASS",
+      "stdout": [
+        "the retired-subject move list re-derives, and every table agrees with it"
       ],
+      "stderr": [],
       "what_it_checks": "the ruled kind-2 move list re-derives, and every one of the five authored judgment tables agrees with it in BOTH directions. What it guards is which AUTHORED judgment watches a live subject and which has followed its subject into the decisions register's retired-entries block: a judgment in both sections halts it; a judgment whose subject the discard retired and which is still in a live table halts it; a retired judgment whose subject is LIVE again halts it, so a judgment cannot be resurrected without being re-read; a live judgment whose subject is neither live nor retired by this act halts it, because its membership cannot be derived and the ruling's instruction is a STOP to the user rather than a guess; a retired section-kind judgment carrying no subject reference halts it; and every sentence of the ruling that ordered the treatment must still be in its ruling record. The section-grain derivation is IMPORTED from the home classifier that owns it rather than restated (#6), so the move list and that tool's own STOP cannot disagree about which judgments move"
     },
     {
@@ -1041,7 +1049,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  entries moved: 7, 4,847 characters",
+        "  entries moved: 5, 4,085 characters",
         "  byte-present in the archive exactly once: True",
         "  absent from the must-read:                True"
       ],
@@ -1120,7 +1128,7 @@
       "verdict": "PASS",
       "stdout": [
         "the evidence pin's class membership re-derives",
-        "  generated ratification documents 7; ruling records read 155",
+        "  generated ratification documents 7; ruling records read 158",
         "  members 7 — pinned 5, UNRESOLVED 0",
         "  tools carrying a pin constant 8; outside this class 3",
         "    tools/audit/gen_artifact_inventory_surface.py        NOT PINNED — a record states the commit; the pin is not applied",
@@ -1161,15 +1169,15 @@
         "    [conditional  ] VS Code extension — bash command rules                    3013",
         "  whole file 169617, the six session-start spans 105876, overstated by 63741",
         "    CLAUDE.md                                                                105876",
-        "    STATUS.md                                                                 13366",
+        "    STATUS.md                                                                 13798",
         "    DECISIONS.md                                                             127727",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids     2826",
-        "  total at the tree 249795",
+        "  total at the tree 250227",
         "  further spans of the same artifact, NOT counted into the read:",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows    62498",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one     4951",
-        "  vs 1760d9a4a8: 367121 [whole-file practice] -> 249795 [ruled membership]  (-117326, -31.96%)  <- CROSSES A REGIME BOUNDARY",
-        "  vs 594074e1e1: 296832 [whole-file practice] -> 249795 [ruled membership]  (-47037, -15.85%)  <- CROSSES A REGIME BOUNDARY"
+        "  vs 1760d9a4a8: 367121 [whole-file practice] -> 250227 [ruled membership]  (-116894, -31.84%)  <- CROSSES A REGIME BOUNDARY",
+        "  vs 594074e1e1: 296832 [whole-file practice] -> 250227 [ruled membership]  (-46605, -15.70%)  <- CROSSES A REGIME BOUNDARY"
       ],
       "stderr": [],
       "what_it_checks": "what an ordinary session reads at session start, in characters, measured at the tree and at the recorded earlier commit's git object. It is the arc's own subject made checkable: the pruning direction of 2026-08-16 is about this number, and every act in the arc has had to state what it saved. Its load-bearing STOP is a demand about the tree AS IT STANDS — rule (a)'s artifact-and-key pointer is PARSED FROM THE CLAUSE ITSELF and must RESOLVE in the artifact it names, so a pointer that has stopped resolving fails on the day it stops rather than being hidden inside a number. It goes red when a governing surface changes, which is the point: the session-start read moved and the record does not yet say so. ★ WHAT IT DOES NOT ASSERT: that the membership is complete — it is AUTHORED, and each member carries the clause that makes it one so the authored half is checkable by reading three clauses; and nothing about whether the read is small enough, which is [[OI-370]]'s own subject"
@@ -1195,7 +1203,7 @@
         "  TOTAL 12957 character(s) in 34 clause(s), at the AUTHORED ends",
         "    the ruled closing reading would attribute 51684; the literal paragraph reading 160906",
         "    of the six session-start spans (105876): 12.24%",
-        "    of the whole session-start read (249795): 5.19%",
+        "    of the whole session-start read (250227): 5.18%",
         "  THE VALUE IS A LOWER BOUND ON MARKED DEFENSE: the marker set's reach is UNMEASURED,",
         "  and the ends are AUTHORED (cowork_defense_clause_ends_2026_09_08.md)."
       ],
@@ -1274,19 +1282,6 @@
       "what_it_checks": "the L2 withheld-document derivation still re-derives from the ruled verdict table and the register's data file — the set of home documents of the entries `VERDICTS[\"l2\"]` grades IN, read through that module's own VERDICT_IN token and never re-authored here (#6, D-431), over a backbone assembled exactly as the boot pack's own `build()` assembles it so the two derivations cannot disagree. Its four STOPs are what make it a guard rather than a print: an IN identity the register's data file does not carry halts it, so a verdict cannot outlive its entry; a home that is absent, empty, or whose leading token is not a document path halts it, so no document is ever taken from a home that has drifted and none is repaired by guess; either direction of the reconciliation failing halts it — every IN identity accounted to exactly one document, every listed document named by at least one — so neither a lost identity nor an orphan document can pass as a field; and an IN count other than the 111 the user ruled halts it, so the derivation can never run over a family he did not rule. ★ WHAT IT DOES NOT ASSERT: that any document in the set SHOULD be withheld — that judgment is the user's and Ruling 6 reserves it (D-661, #24) — or that any verdict in the table it reads is right. ★ AND IT AUTHORS NOTHING: not `WITHHELD`, not `EXTRAS`, not `VERDICTS`, not `CRITERION`, and no pack directory"
     },
     {
-      "tool": "tools/audit/gen_l2_outgoing_population.py",
-      "args": [
-        "--check"
-      ],
-      "exit_code": 1,
-      "verdict": "FAIL",
-      "stdout": [
-        "STALE vs the derivation: l2_outgoing_population.json does not re-derive"
-      ],
-      "stderr": [],
-      "what_it_checks": "the L2 outgoing population re-derives under the ruling of 2026-09-27 (Option B): the four named ARCHITECTURE.md sections located by heading text, the .md names inside them, the forty-two ruled terms read from their one home and searched over the three prose classes with the residue published whole, and the 111 confirmed decision passages read at their homes. Its STOPs are what make it a guard: a heading that moves, a term list that is not forty-two long, an identity count other than 111, a home of unreadable shape or past its file's end, or a grouping that disagrees with the confirmed withheld-document artifact halts it. WHAT IT DOES NOT ASSERT: that the term search reaches every passage about L2's subject — its reach is stated on the artifact as a lower bound"
-    },
-    {
       "tool": "tools/audit/decisions/gen_decisions_register.py",
       "args": [
         "--check"
@@ -1358,10 +1353,55 @@
       ],
       "exit_code": 1,
       "verdict": "FAIL",
-      "stdout": [],
-      "stderr": [
-        "cowork_confidence_contract.md:23: heading is '2. Definitions — the three admissible confidence classes', the authored kind judgment records '2. Definitions — the two admissible confidence classes'"
+      "stdout": [
+        "population: 146 entries / 34 documents",
+        "  before: {'contract-home': 70, 'gap': 76}",
+        "  after:  {'contract-home': 127, 'gap': 19}",
+        "  moved:  65  (to gap 4, to contract-home 61)",
+        "    cowork_architecture_reassessment.md: −4 / +0",
+        "    cowork_confidence_contract.md: −0 / +1",
+        "    cowork_engage_arc_plan.md: −0 / +3",
+        "    cowork_joint_estimator_architecture.md: −0 / +5",
+        "    cowork_joint_estimator_factorization.md: −0 / +1",
+        "    cowork_joint_key_chord_design.md: −0 / +1",
+        "    cowork_layer6_grouping_design.md: −0 / +9",
+        "    cowork_notation_adoption_increment.md: −0 / +3",
+        "    cowork_phrase_boundary_design.md: −0 / +10",
+        "    cowork_progression_schema_design.md: −0 / +8",
+        "    cowork_progression_schema_dictionary.md: −0 / +5",
+        "    cowork_score_census.md: −0 / +7",
+        "    cowork_structural_integrity_audit.md: −0 / +1",
+        "    docs/llm_integration.md: −0 / +7",
+        "  since phase 1q (the written delegations alone): 75 moved (to contract-home 75, to gap 0)",
+        "    cowork_confidence_contract.md: −0 / +1",
+        "    cowork_engage_arc_plan.md: −0 / +3",
+        "    cowork_joint_estimator_architecture.md: −0 / +5",
+        "    cowork_joint_estimator_factorization.md: −0 / +1",
+        "    cowork_joint_key_chord_design.md: −0 / +1",
+        "    cowork_layer5_function_design.md: −0 / +6",
+        "    cowork_layer6_grouping_design.md: −0 / +9",
+        "    cowork_notation_adoption_increment.md: −0 / +3",
+        "    cowork_notation_output_contract.md: −0 / +1",
+        "    cowork_phrase_boundary_design.md: −0 / +10",
+        "    cowork_prefit_gates.md: −0 / +5",
+        "    cowork_progression_schema_design.md: −0 / +8",
+        "    cowork_score_census.md: −0 / +7",
+        "    cowork_voiceleading_axis_design.md: −0 / +8",
+        "    docs/llm_integration.md: −0 / +7",
+        "  write-list documents still holding a `gap` entry: cowork_layer1_tone_collection_design.md",
+        "  since phase 1r (the 2026-08-08 apply): 23 moved (to contract-home 23, to gap 0)",
+        "STALE vs the files: 8 classification field(s) do not re-derive",
+        "   {\"id\": \"D-267\", \"what\": \"home_section\", \"to\": \"§2\"}",
+        "   {\"id\": \"D-268\", \"what\": \"home_section\", \"to\": \"§2\"}",
+        "   {\"id\": \"D-269\", \"what\": \"home_section\", \"to\": \"§4\"}",
+        "   {\"id\": \"D-321\", \"what\": \"home_section\", \"to\": \"“Floating-point tie policy”\"}",
+        "   {\"id\": \"D-322\", \"what\": \"home_section\", \"to\": \"“Floating-point tie policy”\"}",
+        "   {\"id\": \"D-323\", \"what\": \"home_section\", \"to\": \"“`dim7CharacteristicBonus`”\"}",
+        "   {\"id\": \"D-324\", \"what\": \"home_section\", \"to\": \"“§6a. The unified promotion primitive `promoteToWinner()`”\"}",
+        "   {\"id\": \"D-601\", \"what\": \"home_section\", \"to\": \"§4\"}",
+        "STALE vs the files: home_classification.json does not re-derive"
       ],
+      "stderr": [],
       "what_it_checks": "every home-section field re-derives from the documents' own headings"
     },
     {
@@ -1492,7 +1532,7 @@
         "  CLAUDE.md            hits  5 (backlog 5, breach 0), near misses  3, pointers   9  <= enrolled scope",
         "  OPEN_ITEMS.md        hits  2 (backlog 2, breach 0), near misses  4, pointers 134",
         "  DECISIONS.md         hits  0 (backlog 0, breach 0), near misses  2, pointers   0",
-        "  STATUS.md            hits  0 (backlog 0, breach 0), near misses  4, pointers   2",
+        "  STATUS.md            hits  0 (backlog 0, breach 0), near misses  2, pointers   2",
         "  BUILD_AND_TEST.md    hits  0 (backlog 0, breach 0), near misses  0, pointers   8",
         "  CLAUDE.md: PASS — 0 breach(es) in the enrolled scope"
       ],
@@ -1526,9 +1566,9 @@
     }
   ],
   "summary": {
-    "run": 80,
-    "passing": 64,
-    "failing": 16,
+    "run": 79,
+    "passing": 65,
+    "failing": 14,
     "failing_tools": [
       {
         "tool": "tools/audit/gen_phase3_gate_partition.py",
@@ -1579,12 +1619,6 @@
         ]
       },
       {
-        "tool": "tools/audit/decisions/gen_retired_subject_moves.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
         "tool": "tools/audit/gen_epoch_write_path.py",
         "args": [
           "--check"
@@ -1598,12 +1632,6 @@
       },
       {
         "tool": "tools/audit/gen_recognizer_establishment_sort.py",
-        "args": [
-          "--check"
-        ]
-      },
-      {
-        "tool": "tools/audit/gen_l2_outgoing_population.py",
         "args": [
           "--check"
         ]
@@ -1628,6 +1656,6 @@
       }
     ],
     "not_run": 4,
-    "historical_records": 19
+    "historical_records": 20
   }
 }
