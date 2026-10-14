@@ -5717,11 +5717,11 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "It is a checking-stage verdict on the estimator's tables, which are L2's, and states "
                   "nothing about L3's read-offs."),
         "D-565": (VERDICT_OUT,
-                  "Its verbatim breaks exact ties between candidate decodes by a declared total order: "
+                  "Its verbatim resolves exactly equal candidate decodes by a declared total order: "
                   "fewer segments first, then the earliest boundary sequence, then the canonical "
                   "ordering of the state sequence.",
-                  "It decides which segmentation and reading the decode commits under a tie, which is "
-                  "L2's decision."),
+                  "It decides which segmentation and reading the decode commits when two are exactly "
+                  "equal, which is L2's decision."),
 
         # ── group B — The notation output surface and the record path — 4 candidates — authored 2026-10-14 ──
         "D-010": (VERDICT_OUT,
@@ -5751,7 +5751,7 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "Its verbatim rules analysis at the finest grain where harmony is well-defined, with "
                   "everything coarser a derived view; its plain says phrases, key areas and sections "
                   "are read off that and never analysed directly.",
-                  "It states part of the ruled answer to how phrase and section grouping is obtained — "
+                  "It states a portion of the ruled answer tohow phrase and section grouping is obtained — "
                   "read off the finest grain as a derived view, never analysed directly."),
         "D-023": (VERDICT_OUT,
                   "Its verbatim names the atomic analysis unit the constant-sonority slice, never the "
@@ -5788,13 +5788,13 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "It is a cross-cutting verification contract, not a rule for reading off any of L3's "
                   "facts."),
         "D-030": (VERDICT_OUT,
-                  "Its verbatim sets the scale requirements: cost scales with the working span, "
+                  "Its verbatim sets the binding size requirements: cost grows with the working span, "
                   "re-analysis is incremental, and the working span is extensible.",
                   "It is the bounded-context contract and says nothing about L3's five facts."),
         "D-031": (VERDICT_OUT,
                   "Its verbatim reads 'Whole-score analysis is the degenerate case (selection = "
                   "score)'.",
-                  "It is part of the bounded-context contract, not a rule for any of L3's facts."),
+                  "It belongs to thebounded-context contract, not a rule for any of L3's facts."),
         "D-032": (VERDICT_OUT,
                   "Its verbatim rules every confidence crossing a layer boundary bounded in [0,1], "
                   "class-declared and named to its decision.",
@@ -5830,8 +5830,8 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "until its in-selection output converges.",
                   "It is the bounded-context contract, not a rule for reading off any of L3's facts."),
         "D-262": (VERDICT_OUT,
-                  "Its verbatim rules the extension increment set by the requesting layer at its own "
-                  "natural inference scale.",
+                  "Its verbatim rules the extension increment set by the requesting layer, at the step "
+                  "size natural to its own inference.",
                   "It is the bounded-context contract's extension mechanics and names none of L3's "
                   "facts."),
         "D-264": (VERDICT_OUT,
@@ -5875,14 +5875,14 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "Its verbatim records the meta-principle that precision lives in emission and "
                   "functional labeling, not search; its plain records the entry superseded.",
                   "It bears on where the tonal reading's accuracy comes from, which is L2's, and its "
-                  "plain says every part is stated elsewhere."),
+                  "plain says every clause of it is stated elsewhere."),
         "D-293": (VERDICT_OUT,
                   "Its verbatim rules values fitted per IDIOM, never for a user preset.",
                   "It is a fitting rule tied to the style system and names none of L3's five facts."),
         "D-313": (VERDICT_OUT,
                   "Its verbatim rules calibration maps monotone or deferred, a non-monotone curve being "
                   "an upstream finding.",
-                  "It is part of the confidence contract and states no rule for reading off any of "
+                  "It belongs to theconfidence contract and states no rule for reading off any of "
                   "L3's facts."),
         "D-339": (VERDICT_OUT,
                   "Its verbatim rules that a confident earlier inference can be overturned by decisive "
@@ -5942,7 +5942,7 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
         "D-601": (VERDICT_OUT,
                   "Its verbatim hard-gates fitting a frame's conversion constant behind a premise "
                   "ledger and a desk simulation.",
-                  "It is part of the confidence contract and names none of L3's facts."),
+                  "It belongs to theconfidence contract and names none of L3's facts."),
         "D-656": (VERDICT_OUT,
                   "Its verbatim forbids amending the crediting rule to count a tonicization label as "
                   "agreeing with the annotator's modulated numeral.",
@@ -6107,8 +6107,8 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "means a wrong reading being false corpus-wide.",
                   "It bears on how the chord over a span is read, which is L2's."),
         "D-321": (VERDICT_OUT,
-                  "Its verbatim compares candidate scores exactly, with no epsilon, exact ties broken "
-                  "by template index and then root pitch class.",
+                  "Its verbatim compares candidate scores exactly, with no epsilon, exactly equal "
+                  "candidates ordered by template index and then root pitch class.",
                   "It bears on the legacy chord ranking behind L2's reading."),
         "D-322": (VERDICT_OUT,
                   "Its verbatim requires a full corpus A/B on both presets for any change to "
@@ -6229,7 +6229,7 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "Its verbatim rules cadence detection key-agnostic, voting for the key rather than "
                   "reading a resolved one, by an event-pair feature test with a phrase gate, and "
                   "rejects a detector that conflates the perfect with the imperfect cadence.",
-                  "It states part of the ruled answer to how a cadence at a phrase end is detected, "
+                  "It states a portion of the ruled answer tohow a cadence at a phrase end is detected, "
                   "which is one of L3's five facts."),
         "D-337": (VERDICT_OUT,
                   "Its verbatim makes tonicization the default and modulation require cadence "
@@ -6321,60 +6321,60 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "Its verbatim rules that Layer 6 defines no detection of its own and assembles "
                   "punctuation-span segmentation, key-area grouping and cadence alignment from earlier "
                   "layers.",
-                  "It states part of the ruled answer to how phrase grouping and its cadence alignment "
+                  "It states a portion of the ruled answer tohow phrase grouping and its cadence alignment "
                   "are read off — assembled from earlier facts, with no detection of its own."),
         "D-455": (VERDICT_IN,
                   "Its verbatim aligns cadences to punctuation-spans asymmetrically, an off-boundary "
                   "cadence surfaced and never snapped to the nearest boundary.",
-                  "It states part of the ruled answer to how a cadence relates to a phrase end, which "
+                  "It states a portion of the ruled answer tohow a cadence relates to a phrase end, which "
                   "belongs to L3's cadence and phrase facts."),
         "D-456": (VERDICT_IN,
                   "Its verbatim keeps sections, periods and sentences out of the grouping core for "
                   "proportionality, buildable later through an alternative-confidence path.",
-                  "It states part of the ruled answer to how section grouping is treated, which is one "
+                  "It states a portion of the ruled answer tohow section grouping is treated, which is one "
                   "of L3's five facts."),
         "D-457": (VERDICT_IN,
                   "Its verbatim marks an edge group clipped-by-selection-edge and gives an edge span "
                   "with no closing boundary and no cadence an extension-cue tag the grouping only "
                   "surfaces.",
-                  "It states part of the ruled answer to how a phrase group at the selection edge is "
+                  "It states a portion of the ruled answer tohow a phrase group at the selection edge is "
                   "published, which belongs to L3's phrase grouping."),
         "D-459": (VERDICT_UNPLACED,
                   "Its verbatim makes any confidence the grouping layer publishes — the key-area "
                   "confidence, a span-level aggregate — a Class M boundary confidence whose input is "
                   "the declared key confidence.",
                   "It was read as about key areas and a span aggregate, and the published text does not "
-                  "settle whether key-area grouping is part of L3's section grouping or a view of L2's "
+                  "settle whether key-area grouping belongs to L3's section grouping or a view of L2's "
                   "tonality."),
         "D-460": (VERDICT_IN,
                   "Its verbatim surfaces a unit's open mark on the punctuation-span containing it and "
                   "reports a span fully resolved exactly when none of its units carries one, with no "
                   "confidence threshold.",
-                  "It states part of the ruled answer to how a phrase group is published with respect "
+                  "It states a portion of the ruled answer tohow a phrase group is published with respect "
                   "to unresolved readings, which belongs to L3's phrase grouping."),
         "D-461": (VERDICT_IN,
                   "Its verbatim makes Layer 6 a thin explainability assembly layer, not an accuracy "
                   "requirement, noting that grouping falls out of stable key runs in the competitive "
                   "reference.",
-                  "It states part of the ruled answer to how phrase and section grouping is read off — "
+                  "It states a portion of the ruled answer tohow phrase and section grouping is read off — "
                   "a thin assembly with no detection of its own."),
         "D-462": (VERDICT_IN,
                   "Its verbatim scopes cadence validation to LOCATION because cadence type is "
                   "harmony-dependent and only partially attributable.",
                   "It states that a cadence's type depends on the decided harmony while its location "
-                  "does not, which is part of the ruled answer to where the cadence type is read."),
+                  "does not, which is a portion of the ruled answer to where the cadence type is read."),
         "D-472": (VERDICT_UNPLACED,
                   "Its verbatim groups neighboring regions in the same key into a key area by a "
                   "smoothing pass, a disagreeing region below the confidence test keeping its own key.",
                   "It was read as a grouping rule over key areas, and the published text does not "
-                  "settle whether key-area grouping is part of L3's section grouping or a view of L2's "
+                  "settle whether key-area grouping belongs to L3's section grouping or a view of L2's "
                   "tonality."),
         "D-476": (VERDICT_IN,
                   "Its verbatim makes the phrase-boundary primitive a notation-derived view owned by "
                   "Architectural Layer 1.5, rejecting the note model and the function layer, which "
                   "consumes phrase boundaries.",
                   "It states where a phrase end is decided — at a notation-derived view upstream of the "
-                  "cadence detection that consumes it — which is part of the ruled answer to where a "
+                  "cadence detection that consumes it — which is a portion of the ruled answer to where a "
                   "phrase ends."),
         "D-477": (VERDICT_IN,
                   "Its verbatim reads a phrase boundary from the written surface alone, never from a "
@@ -6390,13 +6390,13 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
         "D-479": (VERDICT_IN,
                   "Its verbatim runs the boundary cues per eligible voice, aggregates them by "
                   "voice-coincidence, and exposes both the per-voice and the texture boundaries.",
-                  "It states part of the ruled answer to which phrase ends are published and at what "
+                  "It states a portion of the ruled answer towhich phrase ends are published and at what "
                   "scope, which is one of L3's five facts."),
         "D-480": (VERDICT_IN,
                   "Its verbatim rules the phrase-boundary primitive not an accuracy requirement and "
                   "kept proportionate, with phrase alignment via stable key runs as the proven "
                   "fallback.",
-                  "It states part of the ruled answer to how phrase ends are obtained, the ruled "
+                  "It states a portion of the ruled answer tohow phrase ends are obtained, the ruled "
                   "fallback included, which is one of L3's five facts."),
         "D-481": (VERDICT_IN,
                   "Its verbatim makes the picked boundary set the surface-cue peaks union every "
@@ -6410,13 +6410,13 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
         "D-484": (VERDICT_OUT,
                   "Its verbatim makes the phrase-boundary profile inherit the loaded span and publish a "
                   "per-profile max-normalized Class M strength that overrides nothing.",
-                  "Its subject is the boundary-strength evidence's span and scale, which is L1's "
+                  "Its subject is the boundary-strength evidence's span and range, which is L1's "
                   "notated evidence by DP-I, and it states no rule for which strengths are phrase "
                   "ends."),
         "D-485": (VERDICT_IN,
                   "Its verbatim requires every picked boundary to carry which cue or marker fired and "
                   "at what scope, the picked set being scope-blind today.",
-                  "It states part of the ruled answer to how a phrase end is published — with its cue "
+                  "It states a portion of the ruled answer tohow a phrase end is published — with its cue "
                   "and its scope, a local breath told apart from a global barline."),
         "D-490": (VERDICT_OUT,
                   "Its verbatim records that no threshold can make the fine-grain function override "
@@ -6435,9 +6435,9 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "minority is un-computable today.",
                   "It bears on coupling the tonality and the chord, which is L2's decision."),
         "D-495": (VERDICT_IN,
-                  "Its verbatim requires cadence admission to relax and scale the vote weight down when "
+                  "Its verbatim requires cadence admission to relax, with the vote weight reduced, when "
                   "the phrase-boundary profile is featureless, rather than starve.",
-                  "It states part of the ruled answer to how a cadence is admitted at a phrase end, "
+                  "It states a portion of the ruled answer tohow a cadence is admitted at a phrase end, "
                   "which is one of L3's five facts."),
         "D-629": (VERDICT_OUT,
                   "Its verbatim makes the function layer itself the resolver of carried uncertain "
@@ -6451,7 +6451,7 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "notation bridge layer.",
                   "It is code structure, not a rule for any of L3's facts."),
         "D-229": (VERDICT_OUT,
-                  "Its verbatim states the MuseScore-dependency rule in three parts: no engraving types "
+                  "Its verbatim states the MuseScore-dependency rule in three clauses: no engraving types "
                   "in the analysis library, the bridge reading only through the bridge pattern, edits "
                   "to MuseScore's own code only for a blocking defect.",
                   "It is code structure and the bridge's reading surface, not a rule for any of L3's "
@@ -6516,6 +6516,211 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "Its verbatim records every difficulty-grade label source research-only or "
                   "proprietary at origin.",
                   "It is licensing."),
+
+        # ── group M — The style system and the knowledge base — 17 candidates — authored 2026-10-14 ──
+        "D-131": (VERDICT_OUT,
+                  "Its verbatim makes the style vocabulary one shared taxonomy of five idioms, with mode "
+                  "and chromaticism carried as cross-attributes.",
+                  "It bears on the style system, not on any of L3's five facts."),
+        "D-132": (VERDICT_OUT,
+                  "Its verbatim leaves the per-preset weights as future work, the clusters being the "
+                  "five idioms already discovered.",
+                  "It bears on the style system."),
+        "D-406": (VERDICT_OUT,
+                  "Its verbatim gives the catalog the named progressions and substitutions and the "
+                  "function layer the pairwise licensing grammar, coupled only by a one-way consistency "
+                  "test.",
+                  "It bears on the knowledge base and the progression grammar behind the chord reading, "
+                  "not on L3's five facts."),
+        "D-421": (VERDICT_OUT,
+                  "Its verbatim re-runs idiom discovery at every corpus wave on research material only, "
+                  "a changed cluster set being its own ratification event.",
+                  "It bears on the style taxonomy's method."),
+        "D-496": (VERDICT_OUT,
+                  "Its verbatim leaves owed whether the pairwise grammar folds into the harmonic "
+                  "vocabulary, to be decided at the recognition-consumer build.",
+                  "It bears on how the knowledge base is stored."),
+        "D-502": (VERDICT_OUT,
+                  "Its verbatim names the span a recognized progression covers the "
+                  "progression-schema-span.",
+                  "It is knowledge-base vocabulary, not a rule for any of L3's facts."),
+        "D-503": (VERDICT_OUT,
+                  "Its verbatim discovers the idiom weight vector from the music, seeded by the user's "
+                  "preference, in three forward-only phases.",
+                  "It bears on the style system."),
+        "D-504": (VERDICT_OUT,
+                  "Its verbatim always emits a recognized harmonic sequence as evidence of local key "
+                  "motion, corroborating a cadence and substituting for it only where no authentic "
+                  "cadence confirms the candidate key.",
+                  "It bears on evidence for the tonality, which is L2's decision; it states no rule for "
+                  "how a cadence is read off."),
+        "D-505": (VERDICT_OUT,
+                  "Its verbatim requires at least two transposed statements of the same recognized "
+                  "entry for a harmonic sequence.",
+                  "It bears on the knowledge base's recognition of sequences."),
+        "D-506": (VERDICT_OUT,
+                  "Its verbatim makes progression recognition additive, the literal Roman numeral never "
+                  "rewritten.",
+                  "It bears on the knowledge base's annotation and on L2's committed numeral, not on "
+                  "L3's five facts."),
+        "D-507": (VERDICT_OUT,
+                  "Its verbatim gives line-defined catalog entries a chords-only mark.",
+                  "It bears on the knowledge base."),
+        "D-508": (VERDICT_OUT,
+                  "Its verbatim ships the catalog/grammar consistency test scoped to the measured "
+                  "containment, with an explicit known-gap list.",
+                  "It bears on the knowledge base's tests."),
+        "D-509": (VERDICT_OUT,
+                  "Its verbatim lets a recognized progression correct a committed chord only through "
+                  "the existing override frame, selecting an already-carried reading.",
+                  "It bears on correcting the committed chord, which is L2's reading."),
+        "D-542": (VERDICT_OUT,
+                  "Its verbatim orders idiom discovery discover-then-name, theory features and genre "
+                  "labels serving only as interpretation lenses.",
+                  "It bears on the style taxonomy's method."),
+        "D-543": (VERDICT_OUT,
+                  "Its verbatim encodes key-normalized tonal-pitch-class transitions, run as two "
+                  "complementary views.",
+                  "It bears on the style taxonomy's method."),
+        "D-544": (VERDICT_OUT,
+                  "Its verbatim makes confound control a first-class validity gate decided by the "
+                  "source-leakage test.",
+                  "It bears on the style taxonomy's method."),
+        "D-545": (VERDICT_OUT,
+                  "Its verbatim uses the external library as the uniform extractor, our own key, chord "
+                  "and function inference never touching it.",
+                  "It bears on the style taxonomy's method."),
+
+        # ── group N — Generation, constraints, visualization, and the LLM integration — 8 candidates — authored 2026-10-14 ──
+        "D-440": (VERDICT_OUT,
+                  "Its verbatim builds the language-model integration as a focused module that does not "
+                  "wait for the plugin API reform.",
+                  "It bears on the language-model integration, not on any of L3's facts."),
+        "D-441": (VERDICT_OUT,
+                  "Its verbatim holds analysis and modification in one conversation, a follow-up "
+                  "instruction reusing the model's reasoning.",
+                  "It bears on the language-model integration."),
+        "D-442": (VERDICT_OUT,
+                  "Its verbatim feeds a validation failure back to the language model as a tool-call "
+                  "error, never shown to the user.",
+                  "It bears on the language-model integration."),
+        "D-443": (VERDICT_OUT,
+                  "Its verbatim requires only tool use of a provider, one without it limited to "
+                  "read-only analysis.",
+                  "It bears on the language-model integration."),
+        "D-444": (VERDICT_OUT,
+                  "Its verbatim makes the core access layer a facade over interfaces that already "
+                  "exist.",
+                  "It bears on the language-model integration."),
+        "D-445": (VERDICT_OUT,
+                  "Its verbatim gives the note entity its own identifier because an address does not "
+                  "identify a single note.",
+                  "It bears on the language-model integration's addressing."),
+        "D-447": (VERDICT_OUT,
+                  "Its verbatim generates the model's tool definitions from the operation set schemas.",
+                  "It bears on the language-model integration."),
+        "D-448": (VERDICT_OUT,
+                  "Its verbatim curates about forty operations chosen from observed use.",
+                  "It bears on the language-model integration."),
+
+        # ── group Q — Scope and the development toolchain — 5 candidates — authored 2026-10-14 ──
+        "D-365": (VERDICT_OUT,
+                  "Its verbatim makes a corpus search driven by the sum of all needs step 3 of 3, after "
+                  "the needs artifact exists and the existing enumeration is re-assessed against it.",
+                  "It bears on corpus acquisition, not on L3's facts."),
+        "D-514": (VERDICT_OUT,
+                  "Its verbatim makes a newly acquired annotation set whose works overlap the regression "
+                  "corpus record-only.",
+                  "It bears on corpus governance."),
+        "D-516": (VERDICT_OUT,
+                  "Its verbatim records two ground-truth classes adopted: contrapuntal/imitative "
+                  "structure and part-writing errors.",
+                  "It bears on the corpus needs list."),
+        "D-613": (VERDICT_OUT,
+                  "Its verbatim records ground truth for implied polyphony confirmed absent.",
+                  "It bears on corpus search."),
+        "D-665": (VERDICT_OUT,
+                  "Its verbatim requires an intake record to say that voice labels come from engraved "
+                  "notation, not from a listener's judgment.",
+                  "It bears on corpus intake for the voice-leading axis."),
+
+        # ── group S — The guiding principles — 12 candidates — authored 2026-10-14 ──
+        "D-168": (VERDICT_OUT,
+                  "Its verbatim states principle #4: the long-term goal is maximum-precision "
+                  "inference.",
+                  "It is a guiding principle and states no rule for any of L3's facts."),
+        "D-170": (VERDICT_OUT,
+                  "Its verbatim states principle #6: total unification, one path per concern.",
+                  "It is a guiding principle and states no rule for how any one of L3's facts is read "
+                  "off."),
+        "D-171": (VERDICT_OUT,
+                  "Its verbatim states principle #7: enhance a layer only with methods that belong to "
+                  "it.",
+                  "It is a guiding principle."),
+        "D-172": (VERDICT_OUT,
+                  "Its verbatim states principle #8: no inference-problem-driven coding until the "
+                  "refactoring, the architectural design and the algorithmic completion are done.",
+                  "It is a guiding principle on the order of work."),
+        "D-180": (VERDICT_OUT,
+                  "Its verbatim states principle #17, the Premise Gate: a premise ledger, written "
+                  "predictions, a desk simulation and the further clauses before any inference-affecting "
+                  "design is built.",
+                  "It is a guiding principle on how designs are built."),
+        "D-182": (VERDICT_OUT,
+                  "Its verbatim states principle #19: a measurement tool, corpus, gate or recorded value "
+                  "is trusted only after being positively established.",
+                  "It is a guiding principle on establishment."),
+        "D-185": (VERDICT_OUT,
+                  "Its verbatim states principle #22: every hard gate carries a pre-declared protocol "
+                  "for the largest change it will face.",
+                  "It is a guiding principle on gates."),
+        "D-190": (VERDICT_OUT,
+                  "Its verbatim states the decision-neutrality corollary: designs are chosen from the "
+                  "principles and the objective alone.",
+                  "It is a guiding principle on choosing designs."),
+        "D-201": (VERDICT_OUT,
+                  "Its verbatim requires very large scores to be handled, expected to be a more common "
+                  "use than the corpora.",
+                  "It is a standing size requirement, not a rule for any of L3's facts."),
+        "D-202": (VERDICT_OUT,
+                  "Its verbatim makes the effort control one setting with several dials that must "
+                  "bound the time taken; deferred.",
+                  "It is the effort control."),
+        "D-205": (VERDICT_OUT,
+                  "Its verbatim makes a human the ground truth where no formal ground truth exists.",
+                  "It bears on the measurement of the analysis."),
+        "D-206": (VERDICT_OUT,
+                  "Its verbatim holds intonation as a future feature and a declared future consumer of "
+                  "the analysis.",
+                  "It bears on intonation, a consumer of the analysis, not on L3's facts."),
+
+        # ── group T — Standing process rules and local patches — 1 candidate — authored 2026-10-14 ──
+        "D-279": (VERDICT_OUT,
+                  "Its verbatim sets the Stage-3 entry gate's conditions before any engagement wiring "
+                  "reaches production.",
+                  "It is a process gate, not a rule for any of L3's facts."),
+
+        # ── group U — The standing decision-bearing surfaces — 5 candidates — authored 2026-10-14 ──
+        "D-220": (VERDICT_OUT,
+                  "Its verbatim requires both the major third and the augmented fifth for the aug7 "
+                  "guard.",
+                  "It bears on the legacy chord scoring behind L2's reading."),
+        "D-221": (VERDICT_OUT,
+                  "Its verbatim lets `hasStructuralBass` gate the inversion bonuses, a sparse "
+                  "upper-register lowest pitch earning none.",
+                  "It bears on the legacy chord scoring behind L2's reading."),
+        "D-222": (VERDICT_OUT,
+                  "Its verbatim falls back to the without-wDim variant when that bonus rotates the "
+                  "winner to a non-diminished chord.",
+                  "It bears on the legacy chord scoring behind L2's reading."),
+        "D-223": (VERDICT_OUT,
+                  "Its verbatim has original-winner gates read pre-correction snapshots, not the live "
+                  "result.",
+                  "It bears on the legacy chord correction behind L2's reading."),
+        "D-224": (VERDICT_OUT,
+                  "Its verbatim switches joint bass-and-chord scoring on only for regionally accumulated "
+                  "tones.",
+                  "It bears on the legacy chord scoring behind L2's reading."),
     },
 }
 
