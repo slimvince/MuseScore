@@ -5947,6 +5947,272 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "Its verbatim forbids amending the crediting rule to count a tonicization label as "
                   "agreeing with the annotator's modulated numeral.",
                   "It bears on the measurement of the analysis, not on L3's five facts."),
+
+        # ── group D — Layer 1 — the note model — 2 candidates — authored 2026-10-14 ──
+        "D-569": (VERDICT_OUT,
+                  "Its verbatim rules that the collection layer collects every sounding note in a "
+                  "region, annotated, losslessly, by one path, and does not filter, weight, select a "
+                  "bass or make any harmonic decision.",
+                  "It bears on how the notated record's notes are collected for analysis (L0), not on "
+                  "any of L3's five facts."),
+        "D-625": (VERDICT_OUT,
+                  "Its verbatim rules spelling presence tested with the validity predicate "
+                  "`tpcIsValid()`, never with a non-negative test.",
+                  "It bears on the note reader's spelling primitive (L0), not on how any of L3's facts "
+                  "is read off."),
+
+        # ── group E — Layer 2 — the slicer — 1 candidate — authored 2026-10-14 ──
+        "D-605": (VERDICT_OUT,
+                  "Its verbatim rules that a local-key hypothesis derives from key-agnostic signals "
+                  "only — the cadence detector and the raw region structure — and never from the "
+                  "key-area grouping.",
+                  "Its subject is what evidence a modulation decision may read, which is L2's tonality "
+                  "decision; it names the cadence detector key-agnostic without stating how a cadence "
+                  "is read off."),
+
+        # ── group F — Layer 3 — key and mode — 24 candidates — authored 2026-10-14 ──
+        "D-057": (VERDICT_OUT,
+                  "Its verbatim is the priority-of-evidence row 'Actual sounding notes | what is "
+                  "literally happening now', ranked strongest in deciding the key.",
+                  "It ranks the evidence for the tonality, which is L2's decision."),
+        "D-306": (VERDICT_OUT,
+                  "Its verbatim keeps the key layer's backward re-reading facility switched off in the "
+                  "shipped configuration.",
+                  "It bears on the tonality decision, which is L2's."),
+        "D-323": (VERDICT_OUT,
+                  "Its verbatim forbids the tonic-plus-scale form for a membership test, a scale degree "
+                  "alone legitimately using the tonic.",
+                  "It bears on how pitch membership in the tonality is tested inside the chord reading, "
+                  "which is L2's."),
+        "D-343": (VERDICT_OUT,
+                  "Its verbatim gives the key/mode layer the candidate space and the note-evidence "
+                  "model outright, the residual settled by selecting among its carried alternatives.",
+                  "It states who decides the tonality, which is L2's decision."),
+        "D-344": (VERDICT_OUT,
+                  "Its verbatim reports a scale outside the 21 recognized modes as the best-fitting "
+                  "recognized mode, never as the unrecognized scale.",
+                  "It bears on the tonality decision's vocabulary, which is L2's."),
+        "D-345": (VERDICT_OUT,
+                  "Its verbatim says the style preset first enters at the key/mode layer as a weak "
+                  "prior over the modes, and is used again in later layers for chord symbols and "
+                  "function.",
+                  "Its ruled content is where the preset enters the tonality decision, which is L2's; "
+                  "its passing mention of chord symbols states no rule for how a chord symbol is read "
+                  "off."),
+        "D-347": (VERDICT_OUT,
+                  "Its verbatim sets the change cost as cheap-to-stay plus a term growing with key "
+                  "distance plus a large relative-pair penalty.",
+                  "It shapes the tonality decision, which is L2's."),
+        "D-348": (VERDICT_OUT,
+                  "Its verbatim measures tonal distance in the change cost as circle-of-fifths "
+                  "distance, with no duration threshold for brief versus sustained.",
+                  "It shapes the tonality decision, which is L2's."),
+        "D-349": (VERDICT_OUT,
+                  "Its verbatim defines the key confidence as how much better the winning sequence is "
+                  "than the best different-key sequence at that slice.",
+                  "It is the tonality decision's confidence, which is L2's."),
+        "D-351": (VERDICT_OUT,
+                  "Its verbatim chooses a dedicated best-sequence decoder for key/mode over reusing the "
+                  "chord decoder.",
+                  "It bears on how the tonality is decoded, which is L2's."),
+        "D-352": (VERDICT_OUT,
+                  "Its verbatim splits key/mode grading into unambiguous and genuinely ambiguous cases, "
+                  "with a bar for each.",
+                  "It bears on the measurement of L2's tonality, not on any of L3's facts."),
+        "D-353": (VERDICT_OUT,
+                  "Its verbatim grades the key/mode layer on accuracy on the resolvable cases and on "
+                  "the calibration of its uncertainty, measured separately.",
+                  "It bears on the measurement of L2's tonality, not on L3's read-offs."),
+        "D-494": (VERDICT_OUT,
+                  "Its verbatim requires key-confirmation channels that do not require a cadence — "
+                  "sustained dominant emphasis and recognized transposition sequences.",
+                  "Its subject is how a change of tonality is confirmed, which is L2's decision; it "
+                  "states no rule for how a cadence is read off."),
+        "D-571": (VERDICT_OUT,
+                  "Its verbatim makes the declared-mode influence a small additive hint, smallness "
+                  "being the gate.",
+                  "It bears on the tonality decision's evidence, which is L2's."),
+        "D-572": (VERDICT_OUT,
+                  "Its verbatim records the hard post-hoc declared-mode promotion REMOVED OUTRIGHT "
+                  "rather than kept in a gated form.",
+                  "It bears on the tonality decision, which is L2's."),
+        "D-575": (VERDICT_OUT,
+                  "Its verbatim handles the Baroque partial-signature convention by detecting it and "
+                  "reinterpreting the signature one step.",
+                  "It bears on the tonality decision's reading of the signature, which is L2's."),
+        "D-587": (VERDICT_OUT,
+                  "Its verbatim presents a user-facing preset as a familiar genre-era label plus "
+                  "exemplars the user knows, never an idiom name.",
+                  "It bears on the style system's preset presentation, not on L3's facts."),
+        "D-588": (VERDICT_OUT,
+                  "Its verbatim sets preset coverage in three tiers — measured, editorially declared, "
+                  "or self-correcting by detection.",
+                  "It bears on the style system, not on L3's five facts."),
+        "D-589": (VERDICT_OUT,
+                  "Its verbatim makes every idiom mixture selectable, the discovered cloud being the "
+                  "evidence map rather than the boundary.",
+                  "It bears on the style system, not on L3's five facts."),
+        "D-590": (VERDICT_OUT,
+                  "Its verbatim stores a piece's idiom mixture in the score's own metadata, a user-set "
+                  "mixture never silently overwritten by re-detection.",
+                  "It bears on where the style system stores its setting, not on L3's facts."),
+        "D-591": (VERDICT_OUT,
+                  "Its verbatim puts the licence constraint on the per-idiom anchors and leaves the "
+                  "mixture weights free user configuration.",
+                  "It bears on licensing within the style system, not on L3's facts."),
+        "D-598": (VERDICT_OUT,
+                  "Its verbatim makes the taxonomy and the per-style weights one data-derived object, "
+                  "with validation a separate third thing.",
+                  "It bears on the style taxonomy's method, not on L3's five facts."),
+        "D-616": (VERDICT_OUT,
+                  "Its verbatim applies a global tonic anchor at resolver or section scope, never as a "
+                  "local term inside the window scorer.",
+                  "It bears on the tonality decision, which is L2's."),
+        "D-622": (VERDICT_OUT,
+                  "Its verbatim records the reach-back convergence proxy measured false and dropped, "
+                  "the as-built tracking the leading-edge key until it stops changing.",
+                  "It bears on the tonality decision's context extension, which is L2's and the "
+                  "bounded context's."),
+
+        # ── group G — Layer 4 — chord identity — 33 candidates — authored 2026-10-14 ──
+        "D-207": (VERDICT_OUT,
+                  "Its verbatim defines the pedal-point class voice-independently — a tone sustained or "
+                  "restruck against changing harmony in any voice, labelled bass, internal or "
+                  "inverted.",
+                  "It defines one of the elaboration relations L2 publishes per sounding note."),
+        "D-280": (VERDICT_OUT,
+                  "Its verbatim rules that a gate or scoring rule reads structured fields only — never "
+                  "a chord-symbol string, never a Roman numeral.",
+                  "Its subject is what chord classification may take as input, which is L2's decision; "
+                  "it states no rule for how a chord symbol's root, quality and bass are read off."),
+        "D-284": (VERDICT_OUT,
+                  "Its verbatim records selection and competition saturated — stop adding re-ranking "
+                  "heuristics and gates.",
+                  "It bears on the legacy chord selection behind L2's reading."),
+        "D-317": (VERDICT_OUT,
+                  "Its verbatim forbids retrying the backward-walk boundary change; its plain marks it "
+                  "legacy and a boundary-membership dead end only.",
+                  "It bears on which pitches belong to a stretch at its boundary, which is L2's "
+                  "segmentation and chord reading."),
+        "D-318": (VERDICT_OUT,
+                  "Its verbatim forbids retrying a short-region external merger, its trigger measured "
+                  "never to fire.",
+                  "It bears on the legacy segmentation behind L2's harmonic boundaries."),
+        "D-319": (VERDICT_OUT,
+                  "Its verbatim forbids retrying any tone-aggregation approach to the arpeggio root "
+                  "failure.",
+                  "It bears on how the chord over a span is read, which is L2's."),
+        "D-320": (VERDICT_OUT,
+                  "Its verbatim forbids retrying the absent-root guard, the premise that an absent root "
+                  "means a wrong reading being false corpus-wide.",
+                  "It bears on how the chord over a span is read, which is L2's."),
+        "D-321": (VERDICT_OUT,
+                  "Its verbatim compares candidate scores exactly, with no epsilon, exact ties broken "
+                  "by template index and then root pitch class.",
+                  "It bears on the legacy chord ranking behind L2's reading."),
+        "D-322": (VERDICT_OUT,
+                  "Its verbatim requires a full corpus A/B on both presets for any change to "
+                  "optimization flags or to the order of the scoring arithmetic.",
+                  "It bears on legacy chord-scoring reproducibility, not on L3's facts."),
+        "D-324": (VERDICT_OUT,
+                  "Its verbatim rules the retirement of a post-scoring rule global — a rule live on any "
+                  "carrier is retained.",
+                  "It bears on the legacy chord correction rules behind L2's reading."),
+        "D-325": (VERDICT_OUT,
+                  "Its verbatim retires or folds in a rule that can change a committed chord's identity "
+                  "before the search is widened past it.",
+                  "It bears on how the chord over a span is decided, which is L2's."),
+        "D-326": (VERDICT_OUT,
+                  "Its verbatim has the chord-path search emit the whole path with every stretch's "
+                  "alternatives and margins; it is marked legacy and dormant.",
+                  "It bears on what the chord search hands forward, which is L2's reading and its "
+                  "rivals."),
+        "D-327": (VERDICT_OUT,
+                  "Its verbatim rules that Gate R reads the reconstructed inversion credit rather than "
+                  "testing a sounding third; legacy subject.",
+                  "It bears on the legacy chord scoring behind L2's reading."),
+        "D-329": (VERDICT_OUT,
+                  "Its verbatim makes completeness of the chord candidate list the priority — a chord "
+                  "never listed can never be chosen.",
+                  "It bears on candidate admission for the chord reading, which is L2's."),
+        "D-330": (VERDICT_OUT,
+                  "Its verbatim forbids a pooled recompute: membership is judged per slice against the "
+                  "prevailing chord.",
+                  "It bears on the chord-tone assignment and the chord reading, which are L2's."),
+        "D-331": (VERDICT_OUT,
+                  "Its verbatim rules that every chord decision carries its ranked alternatives and its "
+                  "confidence, never pruned.",
+                  "It bears on the chord reading and its rivals, which L2 publishes."),
+        "D-380": (VERDICT_OUT,
+                  "Its verbatim rules that the carry keeps every above-threshold distinct root at its "
+                  "graded confidence.",
+                  "It bears on the chord reading's rivals, which are L2's."),
+        "D-381": (VERDICT_OUT,
+                  "Its verbatim requires the carry to cap on distinct roots, not on voicings.",
+                  "It bears on the chord reading's rivals, which are L2's."),
+        "D-385": (VERDICT_OUT,
+                  "Its verbatim homes pedal-point detection as a reader over the chord layer's carry "
+                  "that annotates a carried reading; its plain says the pedalled pitch can be in any "
+                  "voice.",
+                  "It bears on the pedal-point elaboration relation, which L2 publishes."),
+        "D-386": (VERDICT_OUT,
+                  "Its verbatim has the pedal reader consume the carry's own distinct-root margin, "
+                  "adding no further scan.",
+                  "It bears on the pedal-point elaboration relation, which L2 publishes."),
+        "D-423": (VERDICT_OUT,
+                  "Its verbatim names the per-gate retirement stage the only sanctioned way the "
+                  "post-scoring gates change, with three standing prohibitions.",
+                  "It bears on the legacy chord correction gates behind L2's reading."),
+        "D-463": (VERDICT_OUT,
+                  "Its verbatim leaves the temporal signals inside the vertical scorer where they are, "
+                  "the dependent gate moving with them.",
+                  "It bears on the legacy chord scoring behind L2's reading."),
+        "D-464": (VERDICT_OUT,
+                  "Its verbatim forbids adding progression-level signals to the single-step "
+                  "look-around structure.",
+                  "It bears on the chord-context structure behind L2's reading."),
+        "D-465": (VERDICT_OUT,
+                  "Its verbatim sets three tests for judging a proposed post-scoring gate.",
+                  "It bears on the legacy chord correction gates behind L2's reading."),
+        "D-467": (VERDICT_OUT,
+                  "Its verbatim forbids a rebuilt or re-tuned chord scoring from relying on the "
+                  "held-note repetition bonus the faithful note model removed.",
+                  "It bears on how the chord over a span is weighed, which is L2's."),
+        "D-501": (VERDICT_OUT,
+                  "Its verbatim rules that a written chord symbol in the music may be read ONLY as a "
+                  "comparison or ground-truth label, never as input to analysis.",
+                  "Its subject is the written chord symbol as input to the analysis (L0's notated "
+                  "record), not the derived chord symbol L3 reads off."),
+        "D-510": (VERDICT_OUT,
+                  "Its verbatim rules the correct carry the one that keeps the distinct alternative "
+                  "reading — the swap idiom, not the append idiom.",
+                  "It bears on the chord reading's rivals, which are L2's."),
+        "D-511": (VERDICT_OUT,
+                  "Its verbatim replaces the two promotion idioms with one primitive carrying a "
+                  "present-first dedup guard.",
+                  "It bears on the legacy chord promotion behind L2's reading."),
+        "D-512": (VERDICT_OUT,
+                  "Its verbatim makes Gate A removable only once the unified promotion reproduces its "
+                  "carry byte-for-byte.",
+                  "It bears on the legacy chord correction behind L2's reading."),
+        "D-536": (VERDICT_OUT,
+                  "Its verbatim chooses the bass and the chord together as one (bass, root, template) "
+                  "triple; legacy subject.",
+                  "It bears on how the chord and its bass are decided, which is L2's decision; it "
+                  "states no rule for reading a chord symbol's bass off a decided chord."),
+        "D-537": (VERDICT_OUT,
+                  "Its verbatim fires the completeness bonus only for a root-position reading whose "
+                  "three triad tones are all present; legacy subject.",
+                  "It bears on the legacy chord scoring behind L2's reading."),
+        "D-538": (VERDICT_OUT,
+                  "Its verbatim lands a multi-signal scoring change one step at a time, the corpus "
+                  "check re-run after each.",
+                  "It is a process rule for legacy chord-scoring changes, not a rule for any of L3's "
+                  "facts."),
+        "D-580": (VERDICT_OUT,
+                  "Its verbatim carries two purely-local vertical gates through the dissolution while "
+                  "the other ten dissolve; recorded deferred.",
+                  "It bears on the legacy chord correction gates behind L2's reading."),
     },
 }
 
