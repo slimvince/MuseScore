@@ -24118,3 +24118,61 @@ failing set is the twelve plus two, not the twelve plus none, and both are named
 *Provenance: CC, 2026-10-13, appended in the one further commit after the close commit
 `618bfccf850862baee824b90e25ddec87e77c244`; the verdicts are this run's own output, read with the file
 tools.*
+
+---
+
+## THE L2 RATIFICATION APPLICATION: THE NINE FACE RECORDS' CORRECTIONS WRITTEN, THE CHARTER'S LIST, THE TERM TONALITY AND THE CONFIDENCE SENTENCES AMENDED, NO ALGORITHM CHANGED
+
+**★ THE HEADING IS THE DISPATCH'S ORDERED NAME.** This batch ran
+`records/cc/instructions/cc_instruction_l2_ratification_application_2026_10_14.md`, pinned at Task 0 to blob
+`876f75d141b8e92efcb71cc5939003f3e809f4df`: **Task 0** landed the ten L2 ratification records of 2026-10-13 and
+2026-10-14, the nine face surfaces, handoff entries 376 to 392 and the dispatch; **Task 1** wrote the nine
+face records' corrections into `cowork_derived_specification_l2_2026_10_10.md`; **Task 2** amended
+`FRAMEWORK.md` at the L2 charter's list, the term *Tonality*, §7's confidence bullet, B9 and R-4; **Task 3**
+gave `cowork_confidence_contract.md` §2 its third class; **Task 4** closed. **NO RULING WAS TAKEN, NO POSITION
+WAS WEIGHED, NO RECOMMENDATION APPEARS ANYWHERE, AND NOTHING L2 COMPUTES CHANGED.**
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l2_ratification_application_2026_10_14.md`, and is pointed at rather than copied
+(#6): the commit table (§1), both guard states with every red classed by its measured cause (§2), A1 to A5
+graded (§3), the per-edit table of E-0 to E-n11 with each validation (§5), the per-edit table of F-1 to F-5
+(§7), Task 3 (§8), the forward bound (§9), the declared departures (§10), the waiting list of register items
+(§11), what the batch did not do (§12), the plan's tell (§13) and the self-check (§14).
+
+### What needs the writing side, named rather than resolved
+
+1. **THE ONE STOP — the L2 outgoing population's member positions** (report §6). Task 3's ordered edit raises
+   `cowork_confidence_contract.md`'s distinct term-hit count, and under `gen_l2_outgoing_population.py`'s
+   ordering rule it would move from position 52 — *member 52*, as the dispatch and the records name it — to 51,
+   exchanging places with `cowork_layer1_note_model_design.md`. The member set is unchanged. A2 makes a member
+   moving a STOP-and-report, so the regeneration was undone and `gen_l2_outgoing_population.py --check` stands
+   red. Whether the order takes the new position, and what becomes of the records that cite *member 52*, is
+   the writing side's.
+2. **A second red caused by an ordered act and left standing**: `decisions/gen_retired_subject_moves.py
+   --check`, whose authored kind judgment — held in `tools/audit/decisions/backbone_decisions.json`, a
+   register source the dispatch bars editing — records the contract's §2 heading as it read before Task 3.
+3. **F-1's validation said the amendment heading occurs once; it occurs three times**, F-3 and F-4 carrying
+   the same heading verbatim as ordered (report §7). The edits are as ordered; the validation's wording is
+   what differs.
+4. **E4's *"PLUS NONE"* is therefore not reachable as written**: the end state this batch can reach is the
+   fourteen named plus the two above, each caused by an edit the dispatch orders and each named here.
+
+### The register items
+
+**They are NOT written.** The whole waiting list the dispatch's ledger carries is copied into the report's
+§11; every item waits on the register route, `cowork_register_rule_c_suspension_2026_08_28.md`, into which
+this batch wrote nothing.
+
+### The plan lines
+
+- **The next-subject decision — which specification is derived after L2 — is the writing side's, after this
+  dispatch has closed** (entry 391 §4 step 6).
+- **The register items wait on the register route.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-14, at boot tip `ff623489c5eac543bea32982e2e8249525771220`, under
+`cc_instruction_l2_ratification_application_2026_10_14.md`, after the ordinary session-start read and the
+dispatch's ordered first reads. Every commit identifier in the report was read from the commit output at the
+time each commit was taken and `origin/master` at its ref file after each push; the guard verdicts are this
+batch's own runs.*
