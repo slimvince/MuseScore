@@ -906,12 +906,12 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
-      "stdout": [
-        "the retired-subject move list re-derives, and every table agrees with it"
+      "exit_code": 1,
+      "verdict": "FAIL",
+      "stdout": [],
+      "stderr": [
+        "cowork_confidence_contract.md:23: heading is '2. Definitions — the three admissible confidence classes', the authored kind judgment records '2. Definitions — the two admissible confidence classes'"
       ],
-      "stderr": [],
       "what_it_checks": "the ruled kind-2 move list re-derives, and every one of the five authored judgment tables agrees with it in BOTH directions. What it guards is which AUTHORED judgment watches a live subject and which has followed its subject into the decisions register's retired-entries block: a judgment in both sections halts it; a judgment whose subject the discard retired and which is still in a live table halts it; a retired judgment whose subject is LIVE again halts it, so a judgment cannot be resurrected without being re-read; a live judgment whose subject is neither live nor retired by this act halts it, because its membership cannot be derived and the ruling's instruction is a STOP to the user rather than a guess; a retired section-kind judgment carrying no subject reference halts it; and every sentence of the ruling that ordered the treatment must still be in its ruling record. The section-grain derivation is IMPORTED from the home classifier that owns it rather than restated (#6), so the move list and that tool's own STOP cannot disagree about which judgments move"
     },
     {
@@ -1041,7 +1041,7 @@
       "exit_code": 0,
       "verdict": "PASS",
       "stdout": [
-        "  entries moved: 1, 2,332 characters",
+        "  entries moved: 7, 4,847 characters",
         "  byte-present in the archive exactly once: True",
         "  absent from the must-read:                True"
       ],
@@ -1120,7 +1120,7 @@
       "verdict": "PASS",
       "stdout": [
         "the evidence pin's class membership re-derives",
-        "  generated ratification documents 7; ruling records read 145",
+        "  generated ratification documents 7; ruling records read 155",
         "  members 7 — pinned 5, UNRESOLVED 0",
         "  tools carrying a pin constant 8; outside this class 3",
         "    tools/audit/gen_artifact_inventory_surface.py        NOT PINNED — a record states the commit; the pin is not applied",
@@ -1161,15 +1161,15 @@
         "    [conditional  ] VS Code extension — bash command rules                    3013",
         "  whole file 169617, the six session-start spans 105876, overstated by 63741",
         "    CLAUDE.md                                                                105876",
-        "    STATUS.md                                                                 14130",
+        "    STATUS.md                                                                 13366",
         "    DECISIONS.md                                                             127727",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids     2826",
-        "  total at the tree 250559",
+        "  total at the tree 249795",
         "  further spans of the same artifact, NOT counted into the read:",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows    62498",
         "    tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → ★_the_frozen_enumeration_measured_against_this_one     4951",
-        "  vs 1760d9a4a8: 367121 [whole-file practice] -> 250559 [ruled membership]  (-116562, -31.75%)  <- CROSSES A REGIME BOUNDARY",
-        "  vs 594074e1e1: 296832 [whole-file practice] -> 250559 [ruled membership]  (-46273, -15.59%)  <- CROSSES A REGIME BOUNDARY"
+        "  vs 1760d9a4a8: 367121 [whole-file practice] -> 249795 [ruled membership]  (-117326, -31.96%)  <- CROSSES A REGIME BOUNDARY",
+        "  vs 594074e1e1: 296832 [whole-file practice] -> 249795 [ruled membership]  (-47037, -15.85%)  <- CROSSES A REGIME BOUNDARY"
       ],
       "stderr": [],
       "what_it_checks": "what an ordinary session reads at session start, in characters, measured at the tree and at the recorded earlier commit's git object. It is the arc's own subject made checkable: the pruning direction of 2026-08-16 is about this number, and every act in the arc has had to state what it saved. Its load-bearing STOP is a demand about the tree AS IT STANDS — rule (a)'s artifact-and-key pointer is PARSED FROM THE CLAUSE ITSELF and must RESOLVE in the artifact it names, so a pointer that has stopped resolving fails on the day it stops rather than being hidden inside a number. It goes red when a governing surface changes, which is the point: the session-start read moved and the record does not yet say so. ★ WHAT IT DOES NOT ASSERT: that the membership is complete — it is AUTHORED, and each member carries the clause that makes it one so the authored half is checkable by reading three clauses; and nothing about whether the read is small enough, which is [[OI-370]]'s own subject"
@@ -1195,7 +1195,7 @@
         "  TOTAL 12957 character(s) in 34 clause(s), at the AUTHORED ends",
         "    the ruled closing reading would attribute 51684; the literal paragraph reading 160906",
         "    of the six session-start spans (105876): 12.24%",
-        "    of the whole session-start read (250559): 5.17%",
+        "    of the whole session-start read (249795): 5.19%",
         "  THE VALUE IS A LOWER BOUND ON MARKED DEFENSE: the marker set's reach is UNMEASURED,",
         "  and the ends are AUTHORED (cowork_defense_clause_ends_2026_09_08.md)."
       ],
@@ -1232,7 +1232,7 @@
         "  - l0-l1/03_the_writing_standards.md: the directory holds 15002 characters; today's sources would render 15048",
         "  - l0-l1/04_the_dispatch_protocol.md: the directory holds 103431 characters; today's sources would render 108389",
         "  - l0-l1/05_the_ratified_design_intent.md: the directory holds 295073 characters; today's sources would render 295142",
-        "  - l0-l1/07_the_charter_the_layers_and_the_decisions.md: the directory holds 29031 characters; today's sources would render 34590",
+        "  - l0-l1/07_the_charter_the_layers_and_the_decisions.md: the directory holds 29031 characters; today's sources would render 36208",
         "  - l0-l1/08_the_five_research_extracts.md: the directory holds 76722 characters; today's sources would render 99171",
         "  - l0-l1/09_the_empirical_findings_ledger.md: the directory holds 50666 characters; today's sources would render 50963",
         "  - scoring-model/02_the_guiding_principles_and_the_conventions.md: the directory holds 60536 characters; today's sources would render 68743",
@@ -1278,10 +1278,10 @@
       "args": [
         "--check"
       ],
-      "exit_code": 0,
-      "verdict": "PASS",
+      "exit_code": 1,
+      "verdict": "FAIL",
       "stdout": [
-        "l2_outgoing_population.json re-derives"
+        "STALE vs the derivation: l2_outgoing_population.json does not re-derive"
       ],
       "stderr": [],
       "what_it_checks": "the L2 outgoing population re-derives under the ruling of 2026-09-27 (Option B): the four named ARCHITECTURE.md sections located by heading text, the .md names inside them, the forty-two ruled terms read from their one home and searched over the three prose classes with the residue published whole, and the 111 confirmed decision passages read at their homes. Its STOPs are what make it a guard: a heading that moves, a term list that is not forty-two long, an identity count other than 111, a home of unreadable shape or past its file's end, or a grouping that disagrees with the confirmed withheld-document artifact halts it. WHAT IT DOES NOT ASSERT: that the term search reaches every passage about L2's subject — its reach is stated on the artifact as a lower bound"
@@ -1310,10 +1310,13 @@
         "backbone decisions: 477",
         "cross-references resolving: ALL",
         "verbatim quotes found at their cited home: 477/477",
-        "cited line numbers correct: 468/471   (6 cited to a file with no line number, by design)",
+        "cited line numbers correct: 465/471   (6 cited to a file with no line number, by design)",
         "  LINE DRIFT D-196: cited CLAUDE.md:1979, actually starts at line 1991",
         "  LINE DRIFT D-253: cited CLAUDE.md:1918-1936, actually starts at line 1930",
-        "  LINE DRIFT D-254: cited CLAUDE.md:1961-1968, actually starts at line 1973"
+        "  LINE DRIFT D-254: cited CLAUDE.md:1961-1968, actually starts at line 1973",
+        "  LINE DRIFT D-268: cited cowork_confidence_contract.md:36-48, actually starts at line 54",
+        "  LINE DRIFT D-269: cited cowork_confidence_contract.md:83-85, actually starts at line 101",
+        "  LINE DRIFT D-601: cited cowork_confidence_contract.md:89-101, actually starts at line 107"
       ],
       "stderr": [],
       "what_it_checks": "every register entry's verbatim quote and cited line is found at its home"
@@ -1355,51 +1358,10 @@
       ],
       "exit_code": 1,
       "verdict": "FAIL",
-      "stdout": [
-        "population: 146 entries / 34 documents",
-        "  before: {'contract-home': 70, 'gap': 76}",
-        "  after:  {'contract-home': 127, 'gap': 19}",
-        "  moved:  65  (to gap 4, to contract-home 61)",
-        "    cowork_architecture_reassessment.md: −4 / +0",
-        "    cowork_confidence_contract.md: −0 / +1",
-        "    cowork_engage_arc_plan.md: −0 / +3",
-        "    cowork_joint_estimator_architecture.md: −0 / +5",
-        "    cowork_joint_estimator_factorization.md: −0 / +1",
-        "    cowork_joint_key_chord_design.md: −0 / +1",
-        "    cowork_layer6_grouping_design.md: −0 / +9",
-        "    cowork_notation_adoption_increment.md: −0 / +3",
-        "    cowork_phrase_boundary_design.md: −0 / +10",
-        "    cowork_progression_schema_design.md: −0 / +8",
-        "    cowork_progression_schema_dictionary.md: −0 / +5",
-        "    cowork_score_census.md: −0 / +7",
-        "    cowork_structural_integrity_audit.md: −0 / +1",
-        "    docs/llm_integration.md: −0 / +7",
-        "  since phase 1q (the written delegations alone): 75 moved (to contract-home 75, to gap 0)",
-        "    cowork_confidence_contract.md: −0 / +1",
-        "    cowork_engage_arc_plan.md: −0 / +3",
-        "    cowork_joint_estimator_architecture.md: −0 / +5",
-        "    cowork_joint_estimator_factorization.md: −0 / +1",
-        "    cowork_joint_key_chord_design.md: −0 / +1",
-        "    cowork_layer5_function_design.md: −0 / +6",
-        "    cowork_layer6_grouping_design.md: −0 / +9",
-        "    cowork_notation_adoption_increment.md: −0 / +3",
-        "    cowork_notation_output_contract.md: −0 / +1",
-        "    cowork_phrase_boundary_design.md: −0 / +10",
-        "    cowork_prefit_gates.md: −0 / +5",
-        "    cowork_progression_schema_design.md: −0 / +8",
-        "    cowork_score_census.md: −0 / +7",
-        "    cowork_voiceleading_axis_design.md: −0 / +8",
-        "    docs/llm_integration.md: −0 / +7",
-        "  write-list documents still holding a `gap` entry: cowork_layer1_tone_collection_design.md",
-        "  since phase 1r (the 2026-08-08 apply): 23 moved (to contract-home 23, to gap 0)",
-        "STALE vs the files: 4 classification field(s) do not re-derive",
-        "   {\"id\": \"D-321\", \"what\": \"home_section\", \"to\": \"“Floating-point tie policy”\"}",
-        "   {\"id\": \"D-322\", \"what\": \"home_section\", \"to\": \"“Floating-point tie policy”\"}",
-        "   {\"id\": \"D-323\", \"what\": \"home_section\", \"to\": \"“`dim7CharacteristicBonus`”\"}",
-        "   {\"id\": \"D-324\", \"what\": \"home_section\", \"to\": \"“§6a. The unified promotion primitive `promoteToWinner()`”\"}",
-        "STALE vs the files: home_classification.json does not re-derive"
+      "stdout": [],
+      "stderr": [
+        "cowork_confidence_contract.md:23: heading is '2. Definitions — the three admissible confidence classes', the authored kind judgment records '2. Definitions — the two admissible confidence classes'"
       ],
-      "stderr": [],
       "what_it_checks": "every home-section field re-derives from the documents' own headings"
     },
     {
@@ -1472,7 +1434,10 @@
         "  D-196: CLAUDE.md:1979 -> CLAUDE.md:1991   (drift +12)",
         "  D-253: CLAUDE.md:1918-1936 -> CLAUDE.md:1930-1948   (drift +12)",
         "  D-254: CLAUDE.md:1961-1968 -> CLAUDE.md:1973-1980   (drift +12)",
-        "anchors drifted: 3"
+        "  D-268: cowork_confidence_contract.md:36-48 -> cowork_confidence_contract.md:54-66   (drift +18)",
+        "  D-269: cowork_confidence_contract.md:83-85 -> cowork_confidence_contract.md:101-103   (drift +18)",
+        "  D-601: cowork_confidence_contract.md:89-101 -> cowork_confidence_contract.md:107-119   (drift +18)",
+        "anchors drifted: 6"
       ],
       "stderr": [],
       "what_it_checks": "no register home anchor has drifted"
@@ -1527,9 +1492,8 @@
         "  CLAUDE.md            hits  5 (backlog 5, breach 0), near misses  3, pointers   9  <= enrolled scope",
         "  OPEN_ITEMS.md        hits  2 (backlog 2, breach 0), near misses  4, pointers 134",
         "  DECISIONS.md         hits  0 (backlog 0, breach 0), near misses  2, pointers   0",
-        "  STATUS.md            hits  1 (backlog 0, breach 1), near misses  3, pointers   2",
+        "  STATUS.md            hits  0 (backlog 0, breach 0), near misses  4, pointers   2",
         "  BUILD_AND_TEST.md    hits  0 (backlog 0, breach 0), near misses  0, pointers   8",
-        "  REPORTED, not acted on — breaches outside the enrolled scope: {'STATUS.md': 1}",
         "  CLAUDE.md: PASS — 0 breach(es) in the enrolled scope"
       ],
       "stderr": [],
@@ -1563,8 +1527,8 @@
   ],
   "summary": {
     "run": 80,
-    "passing": 66,
-    "failing": 14,
+    "passing": 64,
+    "failing": 16,
     "failing_tools": [
       {
         "tool": "tools/audit/gen_phase3_gate_partition.py",
@@ -1615,6 +1579,12 @@
         ]
       },
       {
+        "tool": "tools/audit/decisions/gen_retired_subject_moves.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
         "tool": "tools/audit/gen_epoch_write_path.py",
         "args": [
           "--check"
@@ -1628,6 +1598,12 @@
       },
       {
         "tool": "tools/audit/gen_recognizer_establishment_sort.py",
+        "args": [
+          "--check"
+        ]
+      },
+      {
+        "tool": "tools/audit/gen_l2_outgoing_population.py",
         "args": [
           "--check"
         ]

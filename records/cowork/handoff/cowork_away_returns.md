@@ -24176,3 +24176,26 @@ this batch wrote nothing.
 dispatch's ordered first reads. Every commit identifier in the report was read from the commit output at the
 time each commit was taken and `origin/master` at its ref file after each push; the guard verdicts are this
 batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `2d51f7a8122e2c1bb24984aa1b801595a6f881c0` left, appended in the one further commit
+
+**A fresh full guard run, in write mode, after the close commit and before this one: 80 guards run, 16
+failing, 4 not run, 19 historical** (`tools/audit/guard_state.json` → `summary`, which this commit carries).
+The classification tool reports its standing four-name STOP and no other. The sixteen are **the fourteen the
+dispatch names, plus the two the close named** — `gen_l2_outgoing_population.py --check` (the member-position
+STOP) and `decisions/gen_retired_subject_moves.py --check` (the contract heading held in a register source) —
+**exactly as the close predicted.** `gen_l0_l1_outgoing_population.py` and `gen_defense_share.py` pass at
+their regenerated artifacts, which this commit carries; no member of the l0/l1 population moved, and
+`gen_evidence_pin_membership.py` passes since Task 0. **E4 — NOT MET AS WRITTEN:** the failing set is the
+fourteen plus two, not the fourteen plus none, and both are named for the writing side.
+
+**A5, verified at the objects** (`git diff --name-status ff623489… 2d51f7a8…`): 38 added paths (the 37 landed
+and the report), 10 modified — the successor, `FRAMEWORK.md`, the contract, `STATUS.md`,
+`STATUS_ARCHIVE.md`, this file, the membership artifact, the re-aimed tool and its two artifacts — and none
+deleted. The landed paths are unchanged since Task 0; `STATUS_ARCHIVE.md` and this file gained lines only;
+each other diff is the passages its task names (report §5, §7, §8). The derivation, the reading file, every
+ruling record and surface after landing, the suspension file and every register source are untouched.
+
+*Provenance: CC, 2026-10-14, appended in the one further commit after the close commit
+`2d51f7a8122e2c1bb24984aa1b801595a6f881c0`; the verdicts are this run's own output, read with the file
+tools.*

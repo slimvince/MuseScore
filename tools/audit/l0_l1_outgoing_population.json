@@ -225,8 +225,8 @@
     }
    },
    "hits_per_term": {
-    "slice": 1084,
-    "tie": 888,
+    "slice": 1083,
+    "tie": 889,
     "fermata": 132,
     "MusicXML": 126,
     "leading-tone": 112,
@@ -3311,23 +3311,6 @@
      }
     ]
    },
-   "STATUS.md": {
-    "path": "STATUS.md",
-    "inventory_class": "governing-documents",
-    "is_a_named_member": false,
-    "in_the_specification_document_set": false,
-    "admitting_hit_count": 0,
-    "recorded_hit_count": 1,
-    "admitting_hits": [],
-    "recorded_hits": [
-     {
-      "line_number": 10,
-      "term": "slice",
-      "tier": "recorded",
-      "line": "*2026-10-13 (CC — Same dispatch, Task 5. **S-50 OF `cowork_derived_specification_l0_l1_2026_09_03.md` AND THE L1 LIST OF `FRAMEWORK.md` GAIN THE LOWEST SOUNDING PITCH PER SLICE**, and the bass-note wording is corrected at that specification's §0 entry *The lowest sounding pitch* and at S-44, under Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_10_08_l2_structural_bass_sitting.md`; every former wording kept in place, the sub-item quoting Ruling 42 beneath S-44 untouched, and the changed passages proven at the diff. **POINTER** — `records/cc/reports/cc_report_l2_application_2026_10_10.md` (**D-431**).)*"
-     }
-    ]
-   },
    "cowork_adjudication_dossier.md": {
     "path": "cowork_adjudication_dossier.md",
     "inventory_class": "writing-side-design-documents",
@@ -5759,7 +5742,7 @@
     "is_a_named_member": false,
     "in_the_specification_document_set": true,
     "admitting_hit_count": 0,
-    "recorded_hit_count": 13,
+    "recorded_hit_count": 14,
     "admitting_hits": [],
     "recorded_hits": [
      {
@@ -5793,49 +5776,55 @@
       "line": "operate on declared, comparable quantities."
      },
      {
-      "line_number": 37,
+      "line_number": 50,
+      "term": "tie",
+      "tier": "recorded",
+      "line": "the name is true (#10); it carries the words of the option D-425 adopted, \"model probabilities … NOT"
+     },
+     {
+      "line_number": 55,
       "term": "slice",
       "tier": "recorded",
       "line": "- **U1.** A confidence attaches to a **named decision** (key-of-slice, chord-of-slice, membership-of-note,"
      },
      {
-      "line_number": 56,
+      "line_number": 74,
       "term": "slice",
       "tier": "recorded",
       "line": "| L3 key/mode | key/mode-of-slice | **sequence margin** (best total vs best total forced-different-at-this-slice, squashed) — THE declared boundary confidence (`HarmonicRegion.keyConfidence`) | M | The right definition (whole-sequence, not local top-2). **Delta D-L3a — ✅ CLOSED (2026-07-04):** the sequence margin (`HarmonicRegion.keyConfidence`) is THE Layer-3 boundary confidence; the C1 emission `normalizedConfidence` (sigmoid) that also rides the boundary is **demoted to an internal gate input** (the 0.8 KeyArea / cadence annotate gate) **+ diagnostic export** — it is not a boundary confidence. Decided by the C1 curves (margin ECE 0.125–0.142 vs sigmoid 0.38–0.44 — 2.8–3.1× better on every preset; `records/cc/reports/cc_c1_reliability_report.md` §3). A declaration-only close-out (comments/naming at the boundary types + gate sites), byte-identical on production and dormant. The deferred \"sequence-margin confidence redesign\" (L3 §status) is subsumed here; only the Stage-5 Class-M→P calibration of the margin remains. **Stage-5 Class-P map FITTED (Phase 3, 2026-07-06: isotonic, Baroque+Default carriers; held-out ECE 0.027/0.041), WIRING PENDING (engage-adjacent). Jazz carrier UNMAPPED (A-7 empirically-unvalidated). Artifacts: `tools/calibration_maps/stage5_classP_l3_key_margin_{baroque,default}.json`.** |"
      },
      {
-      "line_number": 57,
+      "line_number": 75,
       "term": "slice",
       "tier": "recorded",
       "line": "| L4 chord | chord-of-slice (+ per-note membership) | composite: margin ⊕ sufficiency ⊕ membership-cleanliness, squashed | M (declared-composite) | Components + monotone combination declared (§5 R4). **Vertical-fit-only by construction** (no progression signal) — a declared property the L5 override frame (§4) must account for, not a defect. Alternatives capped (topK), spelling-pinned siblings excluded — declared carry limits. **Stage-5 Class-P map FITTED (Phase 3, 2026-07-06: isotonic, Baroque+Default; held-out ECE 0.017/0.016; low band pooled flat to 0.289 — no invented resolution), WIRING PENDING. Jazz UNMAPPED (A-7). Artifacts: `stage5_classP_l4_chord_composite_{baroque,default}.json`.** |"
      },
      {
-      "line_number": 69,
+      "line_number": 87,
       "term": "tie",
       "tier": "recorded",
       "line": "> class and scale** per the frame's declared conversion, `θ` a precision-phase constant, and the tie"
      },
      {
-      "line_number": 119,
+      "line_number": 137,
       "term": "tie",
       "tier": "recorded",
       "line": "- **C2.** Re-express every frame's θ against calibrated quantities (the fitted maps make `θ` interpretable as an"
      },
      {
-      "line_number": 121,
+      "line_number": 139,
       "term": "tie",
       "tier": "recorded",
       "line": "- **C3.** **The gated joint step consumes only calibrated quantities.** Its trigger — the \"flagged minority\" of"
      },
      {
-      "line_number": 122,
+      "line_number": 140,
       "term": "slice",
       "tier": "recorded",
       "line": "genuinely-coupled key↔chord decisions — is *defined* in contract terms: slices where the L3 key confidence is below"
      },
      {
-      "line_number": 133,
+      "line_number": 151,
       "term": "tie",
       "tier": "recorded",
       "line": "| D-L5a | `FunctionConfidence.combined` unbounded at the boundary (D3) | L5 §7 | **✅ CLOSED (`0a88747e7f`, 2026-07-02, E0′-verified):** `combinedBoundary = combined/(combined+k)` published at the OUTPUT boundary (`functionoutput` — the §7 L5→L6 contract), observed ∈ [0, 0.9619] ⊂ [0,1) over the full E0 range; the §8 sites do NOT read `combined` (verified at source: incumbents are the F-A/F-B quantities below); internal additive unchanged |"
