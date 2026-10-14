@@ -194,12 +194,12 @@
         "section_kind": [
           {
             "heading_line": 23,
-            "heading_text": "2. Definitions — the two admissible confidence classes",
+            "heading_text": "2. Definitions — the three admissible confidence classes",
             "states_rules": true,
             "why": "Defines the two admissible classes and states five numbered rules of use. Read :23-49."
           },
           {
-            "heading_line": 63,
+            "heading_line": 81,
             "heading_text": "4. The comparison frames (the §8 override arithmetic, stated once)",
             "states_rules": true,
             "why": "States the override arithmetic once, the two built frames, and the rule that a new frame must be declared here before build. Read :63-86."
