@@ -20,7 +20,7 @@ comparison between quantities with undefined semantics — it would only bury th
 contract defines the semantics once, so every override bar, resolver tie-break, and the future gated joint step
 operate on declared, comparable quantities.
 
-## 2. Definitions — the two admissible confidence classes
+## 2. Definitions — the three admissible confidence classes
 
 Every published confidence declares exactly one **class**:
 
@@ -32,6 +32,24 @@ Every published confidence declares exactly one **class**:
 - **Class P — calibrated probability.** "With what empirical frequency is a decision at this confidence correct,
   measured against ground truth?" Class P is the **Stage-5 target**: a fitted reliability map per (layer × decision
   type) converts the Class-M value into Class P. Until fitted, no layer may claim Class P.
+- **The model's own distribution.** Neither a decision margin (Class M) nor a calibrated probability (Class P):
+  each value a share in [0,1], the shares of one stretch's rivals summing to at most one, not calibrated,
+  compared only within one working span's publication, never read as a frequency of being right, and turned
+  into a calibrated probability only through a fitted reliability map. L2 publishes its rivals' masses in this
+  class (L2-S40 of `cowork_derived_specification_l2_2026_10_10.md`).
+
+**★ AMENDED 2026-10-14 ON THE USER'S RULING OF 2026-10-05, WITH THE FORMER WORDING PRESERVED IN PLACE (#12.)** Ruling
+1 of `records/cowork/rulings/cowork_rulings_2026_10_05_l2_weight_meaning_sitting.md`, the user's word "b": a
+span-rival's weight is declared a third kind, the model's own distribution, in the words of the bullet above;
+"U1 to U5 of the contract are unchanged". The ruling orders this section amended (its wording not ruled
+there); the ratification of face (g)
+(`records/cowork/rulings/cowork_rulings_2026_10_14_l2_face_g_ratification_sitting.md`, the user's word "Yes")
+carried it to `records/cc/instructions/cc_instruction_l2_ratification_application_2026_10_14.md` (Task 3).
+**THE FORMER WORDING WAS:** the heading *"Definitions — the two admissible confidence classes"*, and two
+bullets only, Class M and Class P. *Why it was amended:* the ruling's ground as put — no reading changes (#4);
+the name is true (#10); it carries the words of the option D-425 adopted, "model probabilities … NOT
+calibrated", and does what that option said the contract owed ("the #19 guard … must be explicit in the
+contract"). D-267's register status waits on the register route.
 
 **Rules of use:**
 - **U1.** A confidence attaches to a **named decision** (key-of-slice, chord-of-slice, membership-of-note,
