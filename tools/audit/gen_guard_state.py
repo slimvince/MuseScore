@@ -1255,7 +1255,7 @@ HISTORICAL: dict[str, str] = {
         "tool re-derives the population from the live tree, so an ordered amendment of a member text "
         "renumbers members: the 2026-10-14 ratification application's ordered edit of "
         "`cowork_confidence_contract.md` would exchange positions 51 and 52. Re-deriving it would change "
-        "what ratified records name. The artifact stays on disk as committed (#12, D-646).",
+        "what those records name. The artifact stays on disk as committed (#12, D-646).",
 }
 
 
