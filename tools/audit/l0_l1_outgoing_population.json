@@ -225,7 +225,7 @@
     }
    },
    "hits_per_term": {
-    "slice": 1085,
+    "slice": 1083,
     "tie": 889,
     "fermata": 132,
     "MusicXML": 126,
@@ -3308,29 +3308,6 @@
       "term": "slice",
       "tier": "recorded",
       "line": "| OI-73 | Membership verdict dies at the L4→L5 boundary | chordTonePcs/nonChordTonePcs are never copied onto FunctionSlice. | siloed facts / E4 surface | OPEN — E4 surface design | [detail](open_items/OI-73.md) |"
-     }
-    ]
-   },
-   "STATUS.md": {
-    "path": "STATUS.md",
-    "inventory_class": "governing-documents",
-    "is_a_named_member": false,
-    "in_the_specification_document_set": false,
-    "admitting_hit_count": 0,
-    "recorded_hit_count": 2,
-    "admitting_hits": [],
-    "recorded_hits": [
-     {
-      "line_number": 8,
-      "term": "slice",
-      "tier": "recorded",
-      "line": "*Last updated: 2026-10-14 (CC — `records/cc/instructions/cc_instruction_l3_criterion_write_2026_10_14.md`, Task 5, the close. **★★ L3's RULED CANDIDATE CRITERION IS IN THE BOOT-PACK GENERATOR, DORMANT; NO VERDICT, NOTHING WITHHELD, NO PACK, NO ALGORITHM CHANGED.** ★ **`CRITERION[\"l3\"]` names every group of the decisions register's own groups table**, the other terms empty, and the generator's own matcher proves it reaches the whole design-intent class of the rulings sort. ★ **`tools/audit/gen_l2_outgoing_population.py` IS A HISTORICAL RECORD** on the user's ruling of 2026-10-14, its artifact kept as committed, after a reader enumeration that found no live reader. ★ **The confidence contract's two authored section-kind values in the register's data file are re-aimed** to its amended headings, which clears the retired-subject move check. ★ **L3's reading slice is corrected** in the slice derivation and **row 36's first pass is recorded** in the candidacy file, every former wording kept. ★ This close moved the L2 ratification application batch's entries to `STATUS_ARCHIVE.md` by `tools/audit/gen_status_batch_bound.py`, re-aimed, and regenerated the session-start read size. ★★ **TWO THINGS DID NOT GO AS THE DISPATCH PREDICTED, both named in the report:** the start-state guard run carried one red more than the dispatch declared — the evidence-pin membership check, caused by this batch's own untracked ruling records and cleared by Task 0's regeneration; and the anchor tool reported more drifted register anchors than the three the dispatch predicted, so, as the dispatch orders for that case, **no anchor was written**. No session booted; no ruling taken; no open-items row created, flipped or discarded; no decisions-register identity allocated; no `src/` file, build, test, golden, corpus of scores or measurement of the analysis. Per the OI-222 pointer convention this entry is a **POINTER** — the whole of it is `records/cc/reports/cc_report_l3_criterion_write_2026_10_14.md` — and no count is restated here (**D-431**).)*"
-     },
-     {
-      "line_number": 10,
-      "term": "slice",
-      "tier": "recorded",
-      "line": "*2026-10-14 (CC — Same dispatch, Task 4. **L3's READING SLICE IS CORRECTED IN `cowork_l2_task_b_slice_derivation_2026_09_05.md` AND ROW 36's FIRST PASS IS RECORDED IN `reading_pass/candidacy_upgrades.md`**, under handoff entries 394 §2 and 395 §1, every former wording kept; documentation only, the diff of each file showing only the ordered edits. **POINTER** — `records/cc/reports/cc_report_l3_criterion_write_2026_10_14.md` (**D-431**).)*"
      }
     ]
    },

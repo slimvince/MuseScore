@@ -24332,3 +24332,35 @@ self-check (§14).
 `cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md`, after the dispatch's ordered first reads.
 Every commit identifier in the report was read from the commit's own object and `origin/master` at its ref
 file after each push; the guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `e95282f9f5cd3938d7d93fcfe2f4d519eac26631` left, appended in the one further commit
+
+**A fresh full guard run, written, after the close commit and before this one: 79 guards run, 14 failing, 4 not
+run, 20 historical** (`tools/audit/guard_state.json` → `summary`, which this commit carries). **E4 — MET, the A2
+prediction exactly:** the fourteen failing are the fourteen A2 names. **The A2 exceptions, handled as A2 says:**
+`gen_l0_l1_outgoing_population.py` and `gen_defense_share.py` were regenerated before the run and pass at the
+artifacts this commit carries; each was compared against the close commit's blob by explicit hash — in the L0/L1
+population only one term's hit count moved and the `STATUS.md` residue record dropped (the moved entries quoted
+the term), **no member moved**; in the defense share, the whole-read denominator and the share derived from it
+moved, on the last two batches' precedent. `guard_state.json` now carries Task 1(a)'s corrected sentence.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_withheld_family_reading.py']"* — the standing STOP
+naming the same three tools, as predicted.
+
+**A3, verified at the objects** (`git diff --name-status ca152594… e95282f9…`): thirteen paths — the two landed
+at Task 0, the report, and the ordered edits: the generator (**1,169 lines inserted, none removed** — the one
+insertion), `gen_guard_state.py` (one line), the backbone (two values), the candidate list, `STATUS.md`,
+`STATUS_ARCHIVE.md` and this file (lines added only), the re-aimed forward-bound tool and its two artifacts. The
+landed dispatch and entry 399 are unchanged since Task 0. No other governing document, no rendered
+decisions-register file, nothing under `tools/audit/derivation_boot_pack/`, not
+`tools/audit/derivation_boot_pack.json`, no ruling record, surface, extract, `FRAMEWORK.md` or the suspension
+file differs from the tip.
+
+**One further departure, declared here because it happened after the report was committed:** one shell `grep -c`
+was run on the working-tree `tools/audit/guard_state.json` to confirm the corrected sentence, outside the
+file-tools rule (D-253); it read nothing the file tools could not and decides nothing.
+
+*Provenance: CC, 2026-10-14, appended in the one further commit after the close commit
+`e95282f9f5cd3938d7d93fcfe2f4d519eac26631`; the verdicts are this run's own output, read with the file tools.*
