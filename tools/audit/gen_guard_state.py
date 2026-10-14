@@ -1245,6 +1245,17 @@ HISTORICAL: dict[str, str] = {
         "live `CLAUDE.md`, so it fails on a renamed path or an ordinary amendment as surely as on an archiving "
         "act; the 2026-09-17 root records move turned it red on renamed paths. The artifact stays on disk as "
         "committed (#12).",
+    # ── THE FINISHED L2 COMPARISON'S OUTGOING POPULATION ──────────────────────────────────────
+    # RECLASSIFIED 2026-10-14 by `cc_instruction_l3_criterion_write_2026_10_14.md` Task 3(i), on the
+    # user's Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_10_14_l2_outgoing_population_check_sitting.md`
+    # (his word "C"), after the reader enumeration that ruling orders came back with no live reader.
+    "tools/audit/gen_l2_outgoing_population.py":
+        "HISTORICAL RECORD: the population the finished L2 comparison tabulated, numbered by position, "
+        "and records cite members by those positions (member 52, the confidence contract). The "
+        "tool re-derives the population from the live tree, so an ordered amendment of a member text "
+        "renumbers members: the 2026-10-14 ratification application's ordered edit of "
+        "`cowork_confidence_contract.md` would exchange positions 51 and 52. Re-deriving it would change "
+        "what ratified records name. The artifact stays on disk as committed (#12, D-646).",
 }
 
 

@@ -163,6 +163,16 @@ VERDICTS: dict[str, tuple[str, str, str]] = {
         "It PARSES `OPEN_ITEMS.md` on every run for the row population and which rows are open, and "
         "STOPS if any candidate has no authored verdict or any verdict names a row the index no "
         "longer carries open. Both stops are about the register as it stands today."),
+    "tools/audit/gen_l2_outgoing_population.py": (
+        POINT, "gen_l2_outgoing_population.py:4-10, :38-41; "
+               "records/cowork/rulings/cowork_rulings_2026_10_14_l2_outgoing_population_check_sitting.md §1",
+        "★ CLASSIFIED 2026-10-14, ON THE USER'S RULING (his word \"C\"). Its artifact numbers the members "
+        "the finished L2 comparison tabulated, and records cite members by position; the tool "
+        "re-derives from the live tree, so an ordered amendment of a member text renumbers them — the "
+        "2026-10-14 edit of the confidence contract would exchange positions 51 and 52. That is a record "
+        "of a completed act, R4's point-in-time side. The reader enumeration the ruling orders found no "
+        "live reader (cc_report_l3_criterion_write_2026_10_14.md). Before this date the tool carried NO "
+        "verdict in this table."),
     "tools/audit/gen_phase1_completion_inventory.py": (
         POINT, "gen_phase1_completion_inventory.py:11-26; "
                "cowork_rulings_2026_08_16_preparation_return.md §4",
