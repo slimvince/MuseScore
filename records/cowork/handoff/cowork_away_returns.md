@@ -24199,3 +24199,58 @@ ruling record and surface after landing, the suspension file and every register 
 *Provenance: CC, 2026-10-14, appended in the one further commit after the close commit
 `2d51f7a8122e2c1bb24984aa1b801595a6f881c0`; the verdicts are this run's own output, read with the file
 tools.*
+
+## THE L3 CRITERION WRITE: L3's CANDIDATE CRITERION IN THE GENERATOR, THE TWO RATIFICATION-APPLICATION REDS CLEARED, NO VERDICT, NO PACK, NO ALGORITHM CHANGED
+
+**★ THE HEADING IS THE DISPATCH'S ORDERED NAME, AND ONE HALF OF IT IS QUALIFIED HERE RATHER THAN LEFT TO BE
+READ AS WRITTEN:** both reds are cleared from the failing set — `gen_l2_outgoing_population.py` by becoming a
+historical record, `decisions/gen_retired_subject_moves.py` by the backbone's two values — but **the three
+drifted confidence-contract anchors were NOT re-aimed**, the anchor tool having reported six drifts where the
+dispatch predicted three (report §7). This batch ran
+`records/cc/instructions/cc_instruction_l3_criterion_write_2026_10_14.md`, pinned at Task 0 to blob
+`7367156f941ab9c4000aeace2d934558f331ed0c`: **Task 0** landed the three 2026-10-14 ruling records, row 36's
+first extract, handoff entries 393 to 398 and the dispatch; **Task 1** wrote `CRITERION["l3"]` into
+`tools/audit/gen_derivation_boot_pack.py`; **Task 2** proved it at the generator's own matcher; **Task 3** made
+the L2 outgoing-population tool a historical record and re-aimed the contract's two authored section-kind
+values; **Task 4** corrected the slice derivation and recorded row 36's first pass; **Task 5** closed. **NO
+VERDICT WAS AUTHORED, NOTHING WAS WITHHELD, NO PACK WAS RENDERED, NO SESSION WAS BOOTED, NO RULING WAS TAKEN, NO
+RECOMMENDATION APPEARS ANYWHERE, AND NOTHING ANY LAYER COMPUTES CHANGED.**
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_criterion_write_2026_10_14.md`, and is pointed at rather than copied (#6): the
+commit table (§1), the guard states with every red classed by its measured cause (§2), A1 to A4 and E0 to E4
+graded (§3), Task 1's before/after comparison (§5), Task 2's result by citation to
+`tools/audit/l3_criterion_written_check.json` (§6), Task 3(i)'s reader enumeration whole and the classification
+tool's message (§7), Task 3(ii)'s anchor list and the before/after text of the register checks (§7), Task 4
+(§8), the forward bound (§9), the `criterion_block()` finding (§10), the declared departures (§11), the
+observations (§12), what the batch did not do (§13), the plan's tell (§14) and the self-check (§15).
+
+### What needs the writing side, named rather than resolved
+
+1. **The start-state guard run carried one red more than the dispatch declared** — `gen_evidence_pin_membership.py
+   --check`, caused by this batch's own three untracked ruling records already on disk; cleared by Task 0's
+   regeneration, classed by cause and not treated as a STOP (report §2, §11 item 3).
+2. **The anchor tool reported six drifts, not three**: the three predicted confidence-contract anchors, and
+   D-196, D-253 and D-254 in `CLAUDE.md` at +12 — the standing cause of `gen_cluster_dispositions.py
+   --verify`'s red. As the dispatch orders for that case, **no anchor was written** (report §7). What moved
+   `CLAUDE.md`'s lines was not established here.
+3. **Task 3(ii)'s commit subject was changed**, its last clause replaced, because the ordered clause states
+   anchors moved that did not move (report §7 item (e), §11 item 4).
+4. **`gen_home_classification.py --check` now runs to the end and reports eight stale derived `home_section`
+   blocks**, four of them in `docs/scoring_model.md` (D-321 to D-324) rather than the confidence contract; left
+   for that classifier's own write run, as the dispatch orders (report §7, §12).
+5. **The `criterion_block()` finding — found, inert for `l3`, unrepaired, owed before an `l3` pack is
+   rendered** (report §10).
+6. **`gen_l2_outgoing_population.py` was one of the four names of the classification tool's standing STOP** —
+   the dispatch's UNSETTLED item, settled at the objects (report §2); the STOP now names the other three.
+
+### The plan line
+
+- **The next act is the writing side's — L3's candidate list and verdict pass, as for L2.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-14, at boot tip `b6bceef7009f92e89a97c8a79465e5e462e1f49a`, under
+`cc_instruction_l3_criterion_write_2026_10_14.md`, after the dispatch's ordered first reads. Every commit
+identifier in the report was read from the commit's own object and `origin/master` at its ref file after each
+push; the guard verdicts are this batch's own runs.*

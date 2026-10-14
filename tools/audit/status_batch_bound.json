@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l2_ratification_application_2026_10_14.md, Task 4",
+ "dispatch": "cc_instruction_l3_criterion_write_2026_10_14.md, Task 5",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -507,70 +507,60 @@
    "base_commit": "942a8bf79da53064b8afedbe7186edd295ca740d",
    "the_then_previous_batch": "cc_instruction_l2_application_2026_10_10.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_criterion_write_2026_10_14.md, Task 5",
+   "base_commit": "2d4f47520b05e62f4947b8a7984280c666273be8",
+   "the_then_previous_batch": "cc_instruction_l2_ratification_application_2026_10_14.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "942a8bf79da53064b8afedbe7186edd295ca740d",
- "the_then_previous_batch": "cc_instruction_l2_application_2026_10_10.md",
+ "base_commit": "2d4f47520b05e62f4947b8a7984280c666273be8",
+ "the_then_previous_batch": "cc_instruction_l2_ratification_application_2026_10_14.md",
  "the_kind_of_move": "ordinary",
- "entries_moved": 7,
- "characters_moved": 4847,
+ "entries_moved": 5,
+ "characters_moved": 4085,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1731,
-   "sha256": "ad99092d81a7c9d5025c82237039062b37e54b141c7ab95d99ad38e48283c25c",
+   "characters": 1888,
+   "sha256": "89911211c95de9fa6a1657bcd76b09985c75df4986e8f9cc815715b400b0d4fa",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-13 (CC — `records/cc/instructions/cc_instruction_l2_application_2026_10_10.md`, Task 6, the close. **★★ THE L2 APPLICATION ACT IS DONE, AND N"
+   "opening": "*2026-10-14 (CC — `records/cc/instructions/cc_instruction_l2_ratification_application_2026_10_14.md`, Task 4, the close. **★★ THE NINE L2 RATIFICATION"
   },
   {
    "line_at_base": 10,
-   "characters": 618,
-   "sha256": "8c460bd34596d4a17fb9fcf62b8c5411e024b51458075db5f0000808a27cdadb",
+   "characters": 549,
+   "sha256": "d16372727762f55f767cd82005d7737ea16028f26776355a987334cac0e4d95d",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-13 (CC — Same dispatch, Task 5. **S-50 OF `cowork_derived_specification_l0_l1_2026_09_03.md` AND THE L1 LIST OF `FRAMEWORK.md` GAIN THE LOWES"
+   "opening": "*2026-10-14 (CC — Same dispatch, Task 3. **`cowork_confidence_contract.md` §2 GAINS THE THIRD ADMISSIBLE CONFIDENCE CLASS, THE MODEL'S OWN DISTRIBUTIO"
   },
   {
    "line_at_base": 12,
-   "characters": 549,
-   "sha256": "ceab9ca8f0c12a1b920a53f96bd5b363c5adb0ff75a7f6089da90dc1f63d65b6",
+   "characters": 594,
+   "sha256": "66350f2804c357f38115e3c9eef76eb83751bf84f1ee76a3b6a93629b7a8259a",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-13 (CC — Same dispatch, Task 4. **`CLAUDE.md` CONVENTIONS, *How a decision surface is written*, STEP 4: THE OPEN-QUESTION CLAUSE IS REPLACED "
+   "opening": "*2026-10-14 (CC — Same dispatch, Task 2. **`FRAMEWORK.md` IS AMENDED UNDER THE L2 RATIFICATION RECORDS** — the L2 charter's elaboration list to the ei"
   },
   {
    "line_at_base": 14,
-   "characters": 778,
-   "sha256": "8d265b8214fb8bebf822539f4f8b7bd1ba0717ab6734baa465a6ba2924a23de0",
+   "characters": 639,
+   "sha256": "2723fcef956a27eec265b97ae39b4b42db4732760b0841ad84dc27104c35ff1e",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-13 (CC — Same dispatch, Task 3. **THE RULED AND RECORDED ROWS OF `ratification_surfaces/cowork_comparison_l2_reading.md` ARE RE-MARKED** unde"
+   "opening": "*2026-10-14 (CC — Same dispatch, Task 1. **THE NINE FACE RECORDS' CORRECTIONS ARE WRITTEN INTO `cowork_derived_specification_l2_2026_10_10.md`** — rul"
   },
   {
    "line_at_base": 16,
-   "characters": 312,
-   "sha256": "66f1fffcc7569dbeb5369be09151de95ed45f676cc2d5ddde569c3dbb51b900e",
+   "characters": 415,
+   "sha256": "369367006f67df15cd7f513462914d8d69f63ded8649f7a5b3eda755ef6dd8c9",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-13 (CC — Same dispatch, Task 2. **THE BLIND DERIVATION `cowork_blind_derivation_l2_2026_09_27.md` IS RE-BANNERED** as the record of the blind"
-  },
-  {
-   "line_at_base": 18,
-   "characters": 481,
-   "sha256": "cb95367156b5f09b8b63c915d2c254b5f28463d348477b97f14c009642c5a004",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-13 (CC — Same dispatch, Task 1. **THE DERIVED SPECIFICATION AS AMENDED IS WRITTEN BESIDE THE DERIVATION**, at `cowork_derived_specification_l"
-  },
-  {
-   "line_at_base": 20,
-   "characters": 378,
-   "sha256": "1879941e2dbdb7aeef92610295413a97407e17d65322e1c1ce62620500a1265c",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-13 (CC — Same dispatch, Task 0. **THE FORTY-THREE L2 FAMILY RECORDS OF 2026-10-04 TO 2026-10-10 ARE LANDED**, with their surfaces and documen"
+   "opening": "*2026-10-14 (CC — Same dispatch, Task 0. **THE TEN L2 RATIFICATION RECORDS OF 2026-10-13 AND 2026-10-14 ARE LANDED**, with the nine face surfaces, han"
   }
  ],
  "reconciliation": {
