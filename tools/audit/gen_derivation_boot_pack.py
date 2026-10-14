@@ -6213,6 +6213,309 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "Its verbatim carries two purely-local vertical gates through the dissolution while "
                   "the other ten dissolve; recorded deferred.",
                   "It bears on the legacy chord correction gates behind L2's reading."),
+
+        # ── group H — Layer 5 and Layer 6 — function, cadence, grouping — 47 candidates — authored 2026-10-14 ──
+        "D-291": (VERDICT_OUT,
+                  "Its verbatim leaves the applied-chord tonicization labeller deliberately unwired, "
+                  "the real lever being at the key layer.",
+                  "It bears on how an applied chord's numeral relates to the tonality, which is L2's "
+                  "chord and tonality reading."),
+        "D-335": (VERDICT_OUT,
+                  "Its verbatim outputs the Roman numeral and makes the tonic/subdominant/dominant "
+                  "summary a derived read-out, never a stored output.",
+                  "The Roman numeral is L2's chord reading, and the three-role summary is none of L3's "
+                  "five facts."),
+        "D-336": (VERDICT_IN,
+                  "Its verbatim rules cadence detection key-agnostic, voting for the key rather than "
+                  "reading a resolved one, by an event-pair feature test with a phrase gate, and "
+                  "rejects a detector that conflates the perfect with the imperfect cadence.",
+                  "It states part of the ruled answer to how a cadence at a phrase end is detected, "
+                  "which is one of L3's five facts."),
+        "D-337": (VERDICT_OUT,
+                  "Its verbatim makes tonicization the default and modulation require cadence "
+                  "confirmation plus persistence, as a change-cost.",
+                  "Its subject is when the tonality changes, which is L2's decision; it states no rule "
+                  "for how a cadence is read off."),
+        "D-338": (VERDICT_OUT,
+                  "Its verbatim has the function layer select among Layer 4's carried readings and "
+                  "never re-derive.",
+                  "It bears on how the chord over a span is settled, which is L2's."),
+        "D-341": (VERDICT_OUT,
+                  "Its verbatim adds the ascending fifth, the descending second and the diatonic "
+                  "diminished fifth to the licensed root-motion set.",
+                  "It shapes the progression evidence behind the chord reading, which is L2's."),
+        "D-382": (VERDICT_OUT,
+                  "Its verbatim selects by joint consistency across key, root, inversion and bass, not "
+                  "by maximizing any one quantity.",
+                  "It bears on how the chord over a span is chosen, which is L2's."),
+        "D-383": (VERDICT_OUT,
+                  "Its verbatim makes bass and inversion, spelling and key-consistency the deciding "
+                  "channels, with progression only a tie-break.",
+                  "It bears on how the chord over a span is chosen, which is L2's."),
+        "D-384": (VERDICT_OUT,
+                  "Its verbatim makes re-ranking the key under chord evidence a step distinct from "
+                  "function-layer selection, which reasons within a fixed key.",
+                  "It bears on coupling the tonality and the chord, which is L2's decision."),
+        "D-387": (VERDICT_OUT,
+                  "Its verbatim surfaces a function-context contradiction on the one open mark, "
+                  "enriched with a reason, the committed chord left unchanged.",
+                  "It bears on how the chord reading's uncertainty is carried, which is L2's reading "
+                  "and the uncertainty surface."),
+        "D-388": (VERDICT_OUT,
+                  "Its verbatim leads texture features by motion type, the interval-profile alternative "
+                  "rejected.",
+                  "It belongs to the voice-leading axis, not to any of L3's five facts."),
+        "D-389": (VERDICT_OUT,
+                  "Its verbatim keeps a notated voice a fact and a stream an inference, never "
+                  "conflated.",
+                  "It belongs to the voice-leading axis."),
+        "D-390": (VERDICT_OUT,
+                  "Its verbatim makes texture classification the first version's only judgment, at "
+                  "whole-selection granularity.",
+                  "It belongs to the voice-leading axis."),
+        "D-391": (VERDICT_OUT,
+                  "Its verbatim admits cross-axis reads only where the combined two-axis dependency "
+                  "graph stays acyclic.",
+                  "It is the contract between the harmonic spine and the voice-leading axis and states "
+                  "no rule for reading off any of L3's facts."),
+        "D-392": (VERDICT_OUT,
+                  "Its verbatim makes the later voice-leading components claims with owners, each "
+                  "clearing its own design before any instruction exists.",
+                  "It belongs to the voice-leading axis."),
+        "D-393": (VERDICT_OUT,
+                  "Its verbatim has every voice-leading inference publish the committed class plus the "
+                  "full ranked list of class fits with their weights.",
+                  "It belongs to the voice-leading axis."),
+        "D-394": (VERDICT_OUT,
+                  "Its verbatim makes reducing a chordal voice to one line a declared per-query rule, "
+                  "the first version offering top-note only.",
+                  "It belongs to the voice-leading axis."),
+        "D-395": (VERDICT_OUT,
+                  "Its verbatim names the evidential, margin and fit floors that govern texture "
+                  "abstention.",
+                  "It belongs to the voice-leading axis."),
+        "D-396": (VERDICT_OUT,
+                  "Its verbatim restricts the voice-leading axis to notated music, its coordinate "
+                  "undefined for sources that carry no voices.",
+                  "It belongs to the voice-leading axis."),
+        "D-397": (VERDICT_OUT,
+                  "Its verbatim assigns the stock patterns, the melodic phrase, chord voicing and "
+                  "part-writing advice to the voice-leading axis as claims with owners.",
+                  "It assigns those objects, the melodic phrase among them, to the voice-leading axis "
+                  "and states no rule for how L3 reads off a phrase end on the harmonic spine."),
+        "D-398": (VERDICT_OUT,
+                  "Its verbatim judges parallel motion semitone-exact, a same-direction move whose "
+                  "semitone interval changes counting as similar motion.",
+                  "It belongs to the voice-leading axis."),
+        "D-400": (VERDICT_OUT,
+                  "Its verbatim admits a per-voice span kind because melodic phrases overlap across "
+                  "voices and tile only within one voice.",
+                  "It belongs to the voice-leading axis's melodic phrase and states no rule for how L3 "
+                  "reads off a phrase end or a section."),
+        "D-419": (VERDICT_OUT,
+                  "Its verbatim keeps the function layer from touching the harmonic vocabulary until "
+                  "the recognition consumer is built.",
+                  "It bears on the knowledge base's connection to the analysis, not on L3's five "
+                  "facts."),
+        "D-454": (VERDICT_IN,
+                  "Its verbatim rules that Layer 6 defines no detection of its own and assembles "
+                  "punctuation-span segmentation, key-area grouping and cadence alignment from earlier "
+                  "layers.",
+                  "It states part of the ruled answer to how phrase grouping and its cadence alignment "
+                  "are read off — assembled from earlier facts, with no detection of its own."),
+        "D-455": (VERDICT_IN,
+                  "Its verbatim aligns cadences to punctuation-spans asymmetrically, an off-boundary "
+                  "cadence surfaced and never snapped to the nearest boundary.",
+                  "It states part of the ruled answer to how a cadence relates to a phrase end, which "
+                  "belongs to L3's cadence and phrase facts."),
+        "D-456": (VERDICT_IN,
+                  "Its verbatim keeps sections, periods and sentences out of the grouping core for "
+                  "proportionality, buildable later through an alternative-confidence path.",
+                  "It states part of the ruled answer to how section grouping is treated, which is one "
+                  "of L3's five facts."),
+        "D-457": (VERDICT_IN,
+                  "Its verbatim marks an edge group clipped-by-selection-edge and gives an edge span "
+                  "with no closing boundary and no cadence an extension-cue tag the grouping only "
+                  "surfaces.",
+                  "It states part of the ruled answer to how a phrase group at the selection edge is "
+                  "published, which belongs to L3's phrase grouping."),
+        "D-459": (VERDICT_UNPLACED,
+                  "Its verbatim makes any confidence the grouping layer publishes — the key-area "
+                  "confidence, a span-level aggregate — a Class M boundary confidence whose input is "
+                  "the declared key confidence.",
+                  "It was read as about key areas and a span aggregate, and the published text does not "
+                  "settle whether key-area grouping is part of L3's section grouping or a view of L2's "
+                  "tonality."),
+        "D-460": (VERDICT_IN,
+                  "Its verbatim surfaces a unit's open mark on the punctuation-span containing it and "
+                  "reports a span fully resolved exactly when none of its units carries one, with no "
+                  "confidence threshold.",
+                  "It states part of the ruled answer to how a phrase group is published with respect "
+                  "to unresolved readings, which belongs to L3's phrase grouping."),
+        "D-461": (VERDICT_IN,
+                  "Its verbatim makes Layer 6 a thin explainability assembly layer, not an accuracy "
+                  "requirement, noting that grouping falls out of stable key runs in the competitive "
+                  "reference.",
+                  "It states part of the ruled answer to how phrase and section grouping is read off — "
+                  "a thin assembly with no detection of its own."),
+        "D-462": (VERDICT_IN,
+                  "Its verbatim scopes cadence validation to LOCATION because cadence type is "
+                  "harmony-dependent and only partially attributable.",
+                  "It states that a cadence's type depends on the decided harmony while its location "
+                  "does not, which is part of the ruled answer to where the cadence type is read."),
+        "D-472": (VERDICT_UNPLACED,
+                  "Its verbatim groups neighboring regions in the same key into a key area by a "
+                  "smoothing pass, a disagreeing region below the confidence test keeping its own key.",
+                  "It was read as a grouping rule over key areas, and the published text does not "
+                  "settle whether key-area grouping is part of L3's section grouping or a view of L2's "
+                  "tonality."),
+        "D-476": (VERDICT_IN,
+                  "Its verbatim makes the phrase-boundary primitive a notation-derived view owned by "
+                  "Architectural Layer 1.5, rejecting the note model and the function layer, which "
+                  "consumes phrase boundaries.",
+                  "It states where a phrase end is decided — at a notation-derived view upstream of the "
+                  "cadence detection that consumes it — which is part of the ruled answer to where a "
+                  "phrase ends."),
+        "D-477": (VERDICT_IN,
+                  "Its verbatim reads a phrase boundary from the written surface alone, never from a "
+                  "resolved key, chord or cadence, accepting that boundaries marked only harmonically "
+                  "are missed there.",
+                  "It states the ruled answer to what evidence decides a phrase end, which is one of "
+                  "L3's five facts."),
+        "D-478": (VERDICT_IN,
+                  "Its verbatim rules that a phrase boundary is a peak in a continuous boundary-strength "
+                  "profile, not the OR of a few binary signals.",
+                  "It states the ruled answer to how a phrase end is picked, which is one of L3's five "
+                  "facts."),
+        "D-479": (VERDICT_IN,
+                  "Its verbatim runs the boundary cues per eligible voice, aggregates them by "
+                  "voice-coincidence, and exposes both the per-voice and the texture boundaries.",
+                  "It states part of the ruled answer to which phrase ends are published and at what "
+                  "scope, which is one of L3's five facts."),
+        "D-480": (VERDICT_IN,
+                  "Its verbatim rules the phrase-boundary primitive not an accuracy requirement and "
+                  "kept proportionate, with phrase alignment via stable key runs as the proven "
+                  "fallback.",
+                  "It states part of the ruled answer to how phrase ends are obtained, the ruled "
+                  "fallback included, which is one of L3's five facts."),
+        "D-481": (VERDICT_IN,
+                  "Its verbatim makes the picked boundary set the surface-cue peaks union every "
+                  "notated marker, the markers emitted unconditionally as phrase boundaries.",
+                  "It states which notated evidence marks a phrase end — every notated marker, "
+                  "unconditionally — which DP-I places at L3."),
+        "D-482": (VERDICT_OUT,
+                  "Its verbatim retires the two hand-synchronized fermata scans into one owned "
+                  "primitive, byte-identically.",
+                  "It bears on computing the notated fermata cue, which is L1's evidence by DP-I."),
+        "D-484": (VERDICT_OUT,
+                  "Its verbatim makes the phrase-boundary profile inherit the loaded span and publish a "
+                  "per-profile max-normalized Class M strength that overrides nothing.",
+                  "Its subject is the boundary-strength evidence's span and scale, which is L1's "
+                  "notated evidence by DP-I, and it states no rule for which strengths are phrase "
+                  "ends."),
+        "D-485": (VERDICT_IN,
+                  "Its verbatim requires every picked boundary to carry which cue or marker fired and "
+                  "at what scope, the picked set being scope-blind today.",
+                  "It states part of the ruled answer to how a phrase end is published — with its cue "
+                  "and its scope, a local breath told apart from a global barline."),
+        "D-490": (VERDICT_OUT,
+                  "Its verbatim records that no threshold can make the fine-grain function override "
+                  "net-positive.",
+                  "It bears on overriding the committed chord, which is L2's reading."),
+        "D-491": (VERDICT_OUT,
+                  "Its verbatim records that making the override's comparison vertically fair does not "
+                  "repair it.",
+                  "It bears on overriding the committed chord, which is L2's reading."),
+        "D-492": (VERDICT_OUT,
+                  "Its verbatim recommends, without adopting, demoting the override to an annotation "
+                  "that leaves the committed chord alone.",
+                  "It bears on the committed chord, which is L2's reading."),
+        "D-493": (VERDICT_OUT,
+                  "Its verbatim records that restricting the override to the coupled key-and-chord "
+                  "minority is un-computable today.",
+                  "It bears on coupling the tonality and the chord, which is L2's decision."),
+        "D-495": (VERDICT_IN,
+                  "Its verbatim requires cadence admission to relax and scale the vote weight down when "
+                  "the phrase-boundary profile is featureless, rather than starve.",
+                  "It states part of the ruled answer to how a cadence is admitted at a phrase end, "
+                  "which is one of L3's five facts."),
+        "D-629": (VERDICT_OUT,
+                  "Its verbatim makes the function layer itself the resolver of carried uncertain "
+                  "readings, with no distinct gated box.",
+                  "It bears on how carried key and chord readings are settled, which is L2's "
+                  "decision."),
+
+        # ── group I — Module boundaries and code structure — 6 candidates — authored 2026-10-14 ──
+        "D-072": (VERDICT_OUT,
+                  "Its verbatim enforces the dependency order, code that would invert it moving to the "
+                  "notation bridge layer.",
+                  "It is code structure, not a rule for any of L3's facts."),
+        "D-229": (VERDICT_OUT,
+                  "Its verbatim states the MuseScore-dependency rule in three parts: no engraving types "
+                  "in the analysis library, the bridge reading only through the bridge pattern, edits "
+                  "to MuseScore's own code only for a blocking defect.",
+                  "It is code structure and the bridge's reading surface, not a rule for any of L3's "
+                  "facts."),
+        "D-296": (VERDICT_OUT,
+                  "Its verbatim allows reading and calling MuseScore's engraving code from anywhere we "
+                  "may edit, forbidding only editing that source.",
+                  "It is code structure."),
+        "D-469": (VERDICT_OUT,
+                  "Its verbatim leaves the point-in-time path outside the region pipeline by design.",
+                  "It is code structure."),
+        "D-470": (VERDICT_OUT,
+                  "Its verbatim records the temporal-context extension fields during the analysis pass, "
+                  "consumers reading them and never re-running the chord analysis.",
+                  "It is code structure for the chord analysis's context fields, not a rule for L3's "
+                  "facts."),
+        "D-623": (VERDICT_OUT,
+                  "Its verbatim makes a selection-aware capability a parameter on the one orchestrator, "
+                  "never a sibling.",
+                  "It is code structure."),
+
+        # ── group J — Presentation and output conventions — 4 candidates — authored 2026-10-14 ──
+        "D-295": (VERDICT_OUT,
+                  "Its verbatim requires zero information loss to the end user — every inferred object "
+                  "displayable.",
+                  "It bears on the notation output surface's display, not on how any of L3's facts is "
+                  "read off."),
+        "D-471": (VERDICT_OUT,
+                  "Its verbatim keeps or drops the sub-beat annotation duration gate on a measured "
+                  "observation run, the verdict fixed in advance.",
+                  "It bears on the notation output surface's annotation display, not on L3's facts."),
+        "D-498": (VERDICT_OUT,
+                  "Its verbatim requires a product stance for dense abstention and out-of-domain "
+                  "input.",
+                  "It bears on the product's presentation, not on L3's facts."),
+        "D-584": (VERDICT_IN,
+                  "Its verbatim makes the perfect/imperfect cadence call on the bass-derived inversion, "
+                  "the soprano arrival degree only a soft optional nudge, with no melody "
+                  "identification.",
+                  "It states the ruled answer to how a cadence's type is decided, which is one of L3's "
+                  "five facts."),
+
+        # ── group K — Documentation governance — 3 candidates — authored 2026-10-14 ──
+        "D-113": (VERDICT_OUT,
+                  "Its verbatim reserves any term coinciding with music theory for its musical sense.",
+                  "It is documentation governance."),
+        "D-499": (VERDICT_OUT,
+                  "Its verbatim lists four documentation riders: an L1.5 ownership page, the membership "
+                  "tie-breaker recorded as idiom-calibrated, B-swap readiness pinned, and a STATUS "
+                  "entry header schema.",
+                  "It is documentation governance."),
+        "D-660": (VERDICT_OUT,
+                  "Its verbatim governs a research-tied name by a two-tier annotation rule, with no "
+                  "tree-wide rename.",
+                  "It is documentation governance."),
+
+        # ── group L — Licensing, contribution, and coding standards — 2 candidates — authored 2026-10-14 ──
+        "D-292": (VERDICT_OUT,
+                  "Its verbatim allows a value that ships to be fitted only on freely-licensed music.",
+                  "It is licensing, not a rule for any of L3's facts."),
+        "D-614": (VERDICT_OUT,
+                  "Its verbatim records every difficulty-grade label source research-only or "
+                  "proprietary at origin.",
+                  "It is licensing."),
     },
 }
 
