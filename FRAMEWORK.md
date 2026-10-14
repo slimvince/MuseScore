@@ -83,7 +83,7 @@ in full as *measurement instrument*.
 | Term | Definition |
 |---|---|
 | **The analysis** | The software this project builds: given a notated score it decides the tonality, the chords, and the moments at which one chord gives way to the next, and writes the result into the score. |
-| **Tonality** | A tonic pitch class together with a mode. |
+| **Tonality** | A tonic, spelled — one of seven letters, each natural, sharp or flat — together with a mode. |
 | **Onset** | A time point at which some note begins. **Release** — a time point at which some note ends. |
 | **Change point** | An onset or a release: a moment at which the set of sounding notes changes. |
 | **Slice** | The stretch between two consecutive change points. Over a slice, the set of sounding notes does not change at all. A slice is a fact read off the notation; deciding it involves no judgment. |
@@ -106,6 +106,19 @@ in full as *measurement instrument*.
 | **Rival** | A reading the analysis considered and did not commit to, published with its mass. A rival may differ from the committed reading in its labels, in where its boundaries fall, or in both. |
 | **Establishment status** | How well a claim is supported. Carried on every published evidence fact. |
 | **FACT / THEORY / CONJECTURE** | The three labels this document puts on every load-bearing claim. **FACT** — a source actually read states or measures it. **THEORY** — established published theory. **CONJECTURE** — neither. |
+
+**★ AMENDED 2026-10-14 ON THE USER'S RULING OF 2026-10-04, WITH THE FORMER WORDING PRESERVED IN PLACE (#12.)** The
+term *Tonality* in the table above. Ruling 2 of
+`records/cowork/rulings/cowork_rulings_2026_10_04_l2_tonality_vocabulary_sitting.md` — "L2's tonic is
+**spelled**: seven letters, each natural, sharp or flat" — names this term's amendment as a cost; the
+ratification of the ninth surface
+(`records/cowork/rulings/cowork_rulings_2026_10_14_l2_ninth_surface_ratification_sitting.md`, item 7, the
+user's word "yes") carried it to the applying dispatch,
+`records/cc/instructions/cc_instruction_l2_ratification_application_2026_10_14.md` (Task 2). **THE FORMER
+WORDING WAS:** *"A tonic pitch class together with a mode."* *Why it was amended:* a spelled tonality
+distinguishes readings the notation distinguishes (C♯ major against D♭ major), and the term as written named
+the pitch class only (#10). Whether Ruling 2 of 2026-08-29 reaches this section's term definitions is left
+UNSETTLED by the record; the amendment is the same act either way. Appendix B's copy of the term is not touched.
 
 ---
 
@@ -412,13 +425,31 @@ circular.
   - per span, the **tonality** as tonic and mode;
   - per span, the **chord** as degree, quality, figure and applied target, read against that tonality;
   - per sounding note, the **chord-tone assignment**, and where the reading has one, the **elaboration
-    relation** — passing, neighbour, suspension, anticipation;
+    relation** — passing, neighbour, suspension, anticipation, appoggiatura, escape tone, pedal point, and an
+    explicit unclassified elaboration;
   - per span, the **rivals** with their mass — **including rivals that differ in where the boundaries
     fall and not only in the label**.
 - **May not:** answer a question outside that sentence; consume a fact no layer has published; or
   discard a rival before the whole sequence of spans has been scored. The last is C45's first reading
   made operational — a wrong reading can be a local optimum, so a decision taken at a moment on
   locally-optimal grounds is unsafe by construction.
+
+**★ AMENDED 2026-10-14 ON THE USER'S RULING OF 2026-10-05, WITH THE FORMER WORDING PRESERVED IN PLACE (#12.)**
+Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_10_05_l2_elaboration_relations_sitting.md`, the user's
+words "I agree with your recommendation position two" — the elaboration relations L2 admits are passing,
+neighbour, suspension, anticipation, appoggiatura, escape tone, pedal point, and an explicit unclassified
+elaboration. That record's cost (a) says the amendment of this list "is made at the ratification act, not by
+this ruling"; the ratification of face (a)
+(`records/cowork/rulings/cowork_rulings_2026_10_13_l2_face_a_ratification_sitting.md`, the user's word
+"ratified") carried it to the applying dispatch,
+`records/cc/instructions/cc_instruction_l2_ratification_application_2026_10_14.md` (Task 2). **THE FORMER
+WORDING WAS:** *"per sounding note, the **chord-tone assignment**, and where the reading has one, the
+**elaboration relation** — passing, neighbour, suspension, anticipation;"*. *Why it was amended:* the ruling's
+ground as put — it closes the named false-negative path, an appoggiatura or escape tone mislabelled or forced
+to be a chord tone, "which then changes the chord", without giving one relation two names (#4); the residual
+class carries a note's foreignness rather than dropping it (#12); the charter's list, D-527's label list and
+D-207's class become one vocabulary (#6); standard names, each defined by approach and departure, or by a tone
+held against changing harmony (#1).
 
 **Not decided here, and deliberately:** how the score over candidate readings is formed, what its terms
 are, what tables they read, and how any weight is fitted. Those are this layer's **detail
@@ -579,13 +610,26 @@ The shapes this document fixes:
   [FACT — read at the object.] A rival set whose members must share the principal reading's boundaries
   cannot express that.
 - **Every confidence that crosses a layer boundary** is bounded to the unit interval, is declared to be
-  either a ranking margin or a calibrated probability, and is stated together with the decision it is
+  a ranking margin, a calibrated probability, or the model's own distribution (a share in the unit interval,
+  not calibrated, compared only within one publication), and is stated together with the decision it is
   the confidence of. Unbounded scores are permitted inside a layer and are squashed at the boundary.
   *Why:* an unbounded score in one layer and a margin in another are not comparable quantities, and a
   design that compares them has no defined meaning; fitting constants over the comparison would bury
   the incoherence rather than repair it.
 - **Every published evidence fact carries its establishment status**, because a consumer may not put an
   unestablished fact under load (C-7).
+
+**★ AMENDED 2026-10-14 ON THE USER'S RULING OF 2026-10-05, WITH THE FORMER WORDING PRESERVED IN PLACE (#12.)** The
+confidence bullet above. Ruling 1 of
+`records/cowork/rulings/cowork_rulings_2026_10_05_l2_weight_meaning_sitting.md`, the user's word "b" — a
+span-rival's weight is a third kind, the model's own distribution, neither a decision margin nor a calibrated
+probability; the ruling orders this sentence amended (its wording not ruled there), and the ratification of
+face (g) (`records/cowork/rulings/cowork_rulings_2026_10_14_l2_face_g_ratification_sitting.md`, the user's word
+"Yes") carried it to the applying dispatch,
+`records/cc/instructions/cc_instruction_l2_ratification_application_2026_10_14.md` (Task 2). **THE FORMER
+WORDING WAS:** *"is declared to be either a ranking margin or a calibrated probability,"*. *Why it was
+amended:* the ruling's ground as put — a consumer is told what the weight is (#10), in the words of the option
+D-425 adopted, "model probabilities … NOT calibrated"; no reading changes (#4).
 
 ---
 
@@ -932,8 +976,13 @@ empty slice and not a gap.
 **B9 — Every confidence crossing a layer boundary is bounded, class-declared and named to its
 decision.**
 *Observable:* each value another layer may read. *Decision rule:* in the unit interval; declared a
-margin or a calibrated probability; stated with the decision it is the confidence of. *Not falsified
+margin, a calibrated probability, or the model's own distribution; stated with the decision it is the
+confidence of. *Not falsified
 by:* an unbounded score used inside a layer and squashed at the boundary.
+
+**★ AMENDED 2026-10-14 ON THE USER'S RULING OF 2026-10-05, WITH THE FORMER WORDING PRESERVED IN PLACE (#12.)** B9's
+decision rule, by the same ruling and the same carrying record as the confidence bullet of §7 (see the
+amendment there). **THE FORMER WORDING WAS:** *"declared a margin or a calibrated probability;"*.
 
 ### 10.3 How the decomposition itself is tested
 
@@ -971,11 +1020,17 @@ resolved, because the alternative — permitting a comparison whose meaning is u
 forbids.
 
 **R-4 — One analysis object this document gives an owner is currently unowned.** The **type** of an
-elaboration — passing, neighbour, suspension, anticipation — is assigned here to L2, published beside
+elaboration — passing, neighbour, suspension, anticipation, appoggiatura, escape tone, pedal point, or an
+explicit unclassified elaboration, as the L2 charter's list now reads — is assigned here to L2, published beside
 the chord-tone assignment it depends on. Stage two established that no current layer charter claims it:
 the chord layer explicitly does not own it, the function layer does not claim it, and the publication of
 such labels stands as an open increment. **An unowned object is how one concern gets built twice**
 (§8.2), so the assignment is made rather than left. *It is a claim with an owner, not work started.*
+
+**★ AMENDED 2026-10-14, WITH THE FORMER WORDING PRESERVED IN PLACE (#12.)** R-4's list of elaboration types,
+brought into line with the L2 charter's amended publication list (see the amendment in the L2 section) by
+`records/cc/instructions/cc_instruction_l2_ratification_application_2026_10_14.md` (Task 2), on the user's word
+of 2026-10-14. **THE FORMER WORDING WAS:** *"passing, neighbour, suspension, anticipation"*.
 
 **R-5 — The reachability of the search bounds every ceiling claim.** A rule that decides which readings
 a span may consider is part of L2's specification and carries its own defense (§5, L2). Where such a
