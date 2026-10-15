@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l3_reading_file_2026_10_15.md, Task 3",
+ "dispatch": "cc_instruction_l3_ruling_writeback_2026_10_15.md, Task 3",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -525,54 +525,52 @@
    "base_commit": "c0259e6898cb0879e856e5cbd62230d9608752b0",
    "the_then_previous_batch": "cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_ruling_writeback_2026_10_15.md, Task 3",
+   "base_commit": "d6157746f4d098222b03dd5119080b3de275bb2d",
+   "the_then_previous_batch": "cc_instruction_l3_reading_file_2026_10_15.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "c0259e6898cb0879e856e5cbd62230d9608752b0",
- "the_then_previous_batch": "cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md",
+ "base_commit": "d6157746f4d098222b03dd5119080b3de275bb2d",
+ "the_then_previous_batch": "cc_instruction_l3_reading_file_2026_10_15.md",
  "the_kind_of_move": "ordinary",
- "entries_moved": 5,
- "characters_moved": 3827,
+ "entries_moved": 4,
+ "characters_moved": 3051,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1950,
-   "sha256": "973159ebb05366723d7c99e6f2523a03660a7e26170cc143bced374ce68e65be",
+   "characters": 1805,
+   "sha256": "f50482ab15883e58d12c64f401636a3943434c7a8ab35f71893adfc6e551e0cc",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-14 (CC — `records/cc/instructions/cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md`, Task 4, the close. **★★ L3's CANDIDATE LI"
+   "opening": "*2026-10-15 (CC — `records/cc/instructions/cc_instruction_l3_reading_file_2026_10_15.md`, Task 3, the close. **★★ L3's WITHHELD-FAMILY READING FILE IS"
   },
   {
    "line_at_base": 10,
-   "characters": 590,
-   "sha256": "c4a5fbd318949895cd97fab1543643d4235dc27450aea028b4d177157b83de8b",
+   "characters": 565,
+   "sha256": "9acd94381a3828c23e1d8315fe4a34e751fb3b2d0b4f0aef6c470cfa9f881915",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-14 (CC — Same dispatch, Task 3. **`VERDICTS[\"l3\"]` IS WRITTEN INTO `tools/audit/gen_derivation_boot_pack.py` AS PROPOSALS**, one per candidat"
+   "opening": "*2026-10-15 (CC — Same dispatch, Task 2. **THE READING-FILE TOOL GAINS AN `l3` SUBJECT AND L3's READING FILE IS RENDERED**: the tool's L2-only sentenc"
   },
   {
    "line_at_base": 12,
-   "characters": 429,
-   "sha256": "c874518f46c3a2871329dbd17eafc62f99fb13143644c14e9470940c0db53741",
+   "characters": 416,
+   "sha256": "3db96786bc27387b5d163988176ed85d40f1f42cfa8fbc365c0024fe1aed19da",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-14 (CC — Same dispatch, Task 2. **L3's CANDIDATE LIST IS PUBLISHED WHOLE AT `tools/audit/l3_candidate_list.json`**, by a script outside the r"
+   "opening": "*2026-10-15 (CC — Same dispatch, Task 1. **THE MISSING SPACES IN `VERDICTS[\"l3\"]`'s REASONS ARE RESTORED** in `tools/audit/gen_derivation_boot_pack.py"
   },
   {
    "line_at_base": 14,
-   "characters": 574,
-   "sha256": "08488faad0291ec3bda3dff136bd24a87e86bacf965e44eea93dc288c0937eed",
+   "characters": 265,
+   "sha256": "65da2de901ed7666777db5aa2bc13daf46d589d4d41ae8219e810fe08392dfa0",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-14 (CC — Same dispatch, Task 1. **TWO STALE TEXTS ARE CORRECTED**: the historical reason for the L2 outgoing-population tool in `tools/audit/"
-  },
-  {
-   "line_at_base": 16,
-   "characters": 284,
-   "sha256": "49aa90467f68a63840154e49226137f11308aa00b5aee921aee9be36063b0bbb",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-14 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRY 399 ARE LANDED**, as they stood, the dispatch pinned to its blob and proven"
+   "opening": "*2026-10-15 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRY 400 ARE LANDED**, as they stood, the dispatch pinned to its blob and proven"
   }
  ],
  "reconciliation": {

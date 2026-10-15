@@ -1167,7 +1167,32 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # aiming of this tool can identify them** — a declared state and not a STOP, unchanged by this act.
 # **NO COUNT OF THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431): the membership is DERIVED from
 # the entries' own text at the base commit.
-BASE_COMMIT = "c0259e6898cb0879e856e5cbd62230d9608752b0"
+# ★ RE-AIMED 2026-10-15 by `cc_instruction_l3_ruling_writeback_2026_10_15.md` Task 3, at its 1(b), and
+# ALL FIVE authored inputs moved together, `PREVIOUS_AIMINGS` being appended to rather than replaced
+# (#12) and `MOVE_KIND` staying at the value it already carried, which is the value this move takes.
+# The aiming it replaces is the L3 reading-file batch's, which is ALREADY the last row of
+# `PREVIOUS_AIMINGS` — that batch recorded its own aiming in its own act — so it is not appended a
+# second time, and this batch's aiming is appended instead. `BASE_COMMIT` was
+# `c0259e6898cb0879e856e5cbd62230d9608752b0` and is now
+# `d6157746f4d098222b03dd5119080b3de275bb2d`: this batch's LAST TASK COMMIT — Task 2, L3's reading
+# file re-rendered as RULED with the tool's per-subject sentences — as the executing dispatch orders.
+# None of this batch's task commits commits `STATUS.md`, so that commit's `STATUS.md` object carries
+# the L3 reading-file batch's entries at the head of the dated entries.
+#
+# ★★ THE THEN-PREVIOUS BATCH IS THE L3 READING FILE. `PREVIOUS_BATCH_DISPATCH` was
+# `cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md` and now names
+# `cc_instruction_l3_reading_file_2026_10_15.md`, whose close entry names it and whose entries below it
+# say `Same dispatch`; that batch wrote its entries and its move inside its own Task 3, landed in its
+# close commit `0de5b66a…`, and no close ran between it and this batch writing an entry of its own.
+#
+# **THE DECLARED PREFIX ADJUSTMENT IS EXPECTED TO FIRE**, that batch's close entry carrying the
+# `Last updated: ` prefix at the base commit, which is why this batch's own entries were written into
+# `STATUS.md` BEFORE `--apply` ran. `ACT_DATE` and the executing dispatch's date AGREE here, both being
+# 2026-10-15. **The second writing's two nameless 2026-09-02 entries remain in `STATUS.md` and no
+# aiming of this tool can identify them** — a declared state and not a STOP, unchanged by this act.
+# **NO COUNT OF THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431): the membership is DERIVED from
+# the entries' own text at the base commit.
+BASE_COMMIT = "d6157746f4d098222b03dd5119080b3de275bb2d"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -1256,7 +1281,10 @@ BASE_COMMIT = "c0259e6898cb0879e856e5cbd62230d9608752b0"
 # `cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md` was the executing act; it is
 # re-stated here for `cc_instruction_l3_reading_file_2026_10_15.md`, whose then-previous batch is that
 # one.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md"
+# *(`PREVIOUS_BATCH_DISPATCH` read "cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md" while
+# `cc_instruction_l3_reading_file_2026_10_15.md` was the executing act; it is re-stated here for
+# `cc_instruction_l3_ruling_writeback_2026_10_15.md`, whose then-previous batch is that one.)*
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_l3_reading_file_2026_10_15.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -1355,8 +1383,12 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_l3_candidate_list_and_verdict_pass_202
 # while that batch was the executing act; both are re-stated here for
 # `cc_instruction_l3_reading_file_2026_10_15.md`, dated 2026-10-15, whose move ran on 2026-10-15, so
 # the two dates agree.)*
+# *(`ACT_DATE` read "2026-10-15" and `DISPATCH` `cc_instruction_l3_reading_file_2026_10_15.md`
+# while that batch was the executing act; both are re-stated here for
+# `cc_instruction_l3_ruling_writeback_2026_10_15.md`, dated 2026-10-15, whose move ran on 2026-10-15, so
+# the two dates agree and `ACT_DATE` keeps its value.)*
 ACT_DATE = "2026-10-15"
-DISPATCH = "cc_instruction_l3_reading_file_2026_10_15.md"
+DISPATCH = "cc_instruction_l3_ruling_writeback_2026_10_15.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -1482,7 +1514,10 @@ DISPATCH = "cc_instruction_l3_reading_file_2026_10_15.md"
 # words. It names Task 3 while `cc_instruction_l3_reading_file_2026_10_15.md` is the executing act,
 # that dispatch ordering both halves of the close — this batch's own entries at its 1(a) and this move
 # at its 1(b) and 1(c) — inside its own Task 3, which that dispatch's heading *"Task 3 — the close"*
-# names in those words.)*
+# names in those words. It names Task 3 again while `cc_instruction_l3_ruling_writeback_2026_10_15.md`
+# is the executing act, that dispatch ordering both halves of the close — this batch's own entries at
+# its 1(a) and this move at its 1(b) and 1(c) — inside its own Task 3, which that dispatch's heading
+# *"Task 3 — the close"* names in those words.)*
 TASK = "Task 3"
 # ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
 #   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
@@ -1967,6 +2002,10 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_l3_reading_file_2026_10_15.md, Task 3",
      "base_commit": "c0259e6898cb0879e856e5cbd62230d9608752b0",
      "the_then_previous_batch": "cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md",
+     "the_kind_of_move": "ordinary"},
+    {"executing_act": "cc_instruction_l3_ruling_writeback_2026_10_15.md, Task 3",
+     "base_commit": "d6157746f4d098222b03dd5119080b3de275bb2d",
+     "the_then_previous_batch": "cc_instruction_l3_reading_file_2026_10_15.md",
      "the_kind_of_move": "ordinary"},
 ]
 

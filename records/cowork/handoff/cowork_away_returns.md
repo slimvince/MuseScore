@@ -24433,3 +24433,48 @@ or extract after landing, not `FRAMEWORK.md` and not the suspension file differs
 
 *Provenance: CC, 2026-10-15, appended in the one further commit after the close commit
 `0de5b66a2af0569c9cce7fa0b003c8e9e7c0aad7`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 RULING WRITE-BACK: THE THREE RULINGS IN THE VERDICT TABLE, L3's READING FILE RE-RENDERED AS RULED, NOTHING WITHHELD, NO PACK, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_l3_ruling_writeback_2026_10_15.md`, pinned at Task 0 to
+blob `cafb39e1f0294fcc26dcab19684d94462aa5ff8f`: **Task 0** landed the dispatch, handoff entry 401 and the
+2026-10-15 L3 lists ruling record, with the evidence-pin membership artifact regenerated for that record;
+**Task 1** wrote the user's three rulings back to `VERDICTS["l3"]` — D-605 from OUT, and D-459 and D-472 from
+UNPLACED, all to IN, findings byte-unchanged — the generator's red `--check` output byte-identical before and
+after; **Task 2** gave the reading-file tool's `l3` subject its `ruling` block, moved the shared sentences that
+read wrongly for L3 into `SUBJECTS["l2"]` unchanged (L2's ruled file byte-unchanged and not re-rendered) and
+gave L3 its own, made the ruling block's test note optional, and re-rendered
+`ratification_surfaces/cowork_withheld_family_l3_reading.md` as RULED; **Task 3** closed. **NOTHING WAS
+WITHHELD, NO PACK WAS RENDERED, NO SESSION WAS BOOTED, NO RULING WAS TAKEN, NO QUESTION OR RECOMMENDATION WAS
+PUT TO THE USER, AND NOTHING ANY LAYER COMPUTES CHANGED.**
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_ruling_writeback_2026_10_15.md`, and is pointed at rather than copied (#6): the
+commit table (§1), the guard states (§2), A1 to A3 and E0 to E2 graded (§3), Task 0 and the membership
+artifact (§4), Task 1's three tuples, the byte-identity and the expected FAIL (§5), Task 2's (a) to (g) with
+every confirmation of the rendered file and the check against the ruling record (§6), the forward bound (§7),
+what the batch leaves to later acts (§8), the declared departures (§9), the observations (§10), what the
+batch did not do (§11), the plan's tell (§12) and the self-check (§13).
+
+### What needs the writing side, named rather than resolved
+
+1. **The start run carried a fifteenth red the dispatch's A2 does not name** —
+   `gen_evidence_pin_membership.py --check`, caused by this dispatch's own untracked ruling record. Task 0's
+   act (2) carried its remedy, and the measured movement was exactly the permitted one (report §3, §4, §9).
+2. **Two notes of the L3 ruling block condense the ruling record** — a clause of Ruling 1's note and one
+   sentence of Ruling 2's bound are omitted; nothing in them disagrees with the record, so nothing was changed
+   (report §6(f)).
+3. **The rendered file is the object to check** — `ratification_surfaces/cowork_withheld_family_l3_reading.md`,
+   generated from `VERDICTS["l3"]` and `tools/audit/l3_candidate_list.json`; its `--check` passes.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects, then L3's boot-list
+  members (a separate ruling).**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-15, at boot tip `a191a380b3c4b9621bb2628e754582376faf2bf6`, under
+`cc_instruction_l3_ruling_writeback_2026_10_15.md`, after the dispatch's ordered first reads. Every commit
+identifier in the report was read from the commit's own object and `origin/master` at its ref file after each
+push; the guard verdicts are this batch's own runs.*
