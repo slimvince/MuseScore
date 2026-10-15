@@ -870,6 +870,16 @@ AUTHORED = [
      "withheld — that judgment is the user's and Ruling 6 reserves it (D-661, #24) — or that any "
      "verdict in the table it reads is right. ★ AND IT AUTHORS NOTHING: not `WITHHELD`, not "
      "`EXTRAS`, not `VERDICTS`, not `CRITERION`, and no pack directory"),
+    # ---- AUTHORED 2026-10-15, cc_instruction_l3_pack_build_first_half_2026_10_15.md Task 3 -----
+    # The same tool's second subject, registered in the act that gives the tool that subject.  One
+    # run per derived artifact, on the precedent of `gen_withheld_family_reading.py`'s per-subject
+    # runs above, so each set the user confirms from is guarded.
+    ("tools/audit/gen_l2_withheld_documents.py", ["--subject", "l3", "--check"],
+     "the L3 withheld-document derivation re-derives: the home documents of the entries the ruled "
+     "L3 verdict table grades IN, under Ruling 5 of the 2026-10-15 L3 boot-list record, printed for "
+     "the user's confirmation and authored into nothing; it STOPs on a count other than 22, an IN "
+     "identity the backbone lacks, a home that is not a document path, or a reconciliation failing "
+     "in either direction"),
 
     # ---- AUTHORED 2026-09-27, cc_instruction_l2_outgoing_population_2026_09_27.md Task 1 -------
     # THE L2 COMPARISON'S OUTGOING POPULATION, registered in the act that creates the tool — the

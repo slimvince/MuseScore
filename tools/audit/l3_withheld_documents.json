@@ -1,0 +1,107 @@
+{
+  "what_this_is": "The set of home documents of the entries the ruled L3 verdict table grades IN, derived under Ruling 5 of `records/cowork/rulings/cowork_rulings_2026_10_15_l3_boot_list_sitting.md`, printed for the user's confirmation and authored into nothing.",
+  "generator": "tools/audit/gen_l2_withheld_documents.py",
+  "the_ruling_it_executes": {
+    "ruling": "Ruling 5 of `records/cowork/rulings/cowork_rulings_2026_10_15_l3_boot_list_sitting.md`",
+    "verbatim": "the pack-build dispatch derives, from the register's data file (`tools/audit/decisions/backbone_decisions.json`) and the ruled `VERDICTS[\"l3\"]`, the set of home documents of the 22 IN entries; prints it; and **STOPs for the user's confirmation before the set is authored into `WITHHELD[\"l3\"][\"withheld_documents\"]`**, each document with its finding, date and reason."
+  },
+  "where_it_reads_from": {
+    "the_verdict_table": "gen_derivation_boot_pack.VERDICTS[\"l3\"], with that module's own VERDICT_IN token. The identity list is not re-authored here (#6, D-431).",
+    "the_homes": "tools/audit/decisions/backbone_decisions.json, assembled exactly as gen_derivation_boot_pack.build() assembles it — the decisions array keyed by id, then each retired entry's `the_entry` added under its own id where it carries a truthy id and that id is not already present.",
+    "how_a_document_is_taken_from_a_home": "the substring before the first `:` in the entry's `home` string, whitespace stripped, which must then match `^[^\\s:]+\\.md$`. A home that is absent, empty or whose leading token does not match STOPS the run, naming the entry and its home string. Nothing is guessed and no home is repaired."
+  },
+  "in_entries": [
+    "D-022",
+    "D-336",
+    "D-454",
+    "D-455",
+    "D-456",
+    "D-457",
+    "D-459",
+    "D-460",
+    "D-461",
+    "D-462",
+    "D-472",
+    "D-476",
+    "D-477",
+    "D-478",
+    "D-479",
+    "D-480",
+    "D-481",
+    "D-485",
+    "D-495",
+    "D-526",
+    "D-584",
+    "D-605"
+  ],
+  "documents": [
+    {
+      "document": "ARCHITECTURE.md",
+      "in_entries_homed_here": [
+        "D-022",
+        "D-472",
+        "D-495",
+        "D-584",
+        "D-605"
+      ],
+      "how_many": 5
+    },
+    {
+      "document": "cowork_joint_estimator_architecture.md",
+      "in_entries_homed_here": [
+        "D-526"
+      ],
+      "how_many": 1
+    },
+    {
+      "document": "cowork_layer5_function_design.md",
+      "in_entries_homed_here": [
+        "D-336"
+      ],
+      "how_many": 1
+    },
+    {
+      "document": "cowork_layer6_grouping_design.md",
+      "in_entries_homed_here": [
+        "D-454",
+        "D-455",
+        "D-456",
+        "D-457",
+        "D-459",
+        "D-460",
+        "D-461",
+        "D-462"
+      ],
+      "how_many": 8
+    },
+    {
+      "document": "cowork_phrase_boundary_design.md",
+      "in_entries_homed_here": [
+        "D-476",
+        "D-477",
+        "D-478",
+        "D-479",
+        "D-480",
+        "D-481",
+        "D-485"
+      ],
+      "how_many": 7
+    }
+  ],
+  "counted": {
+    "in_entries": 22,
+    "documents": 5,
+    "sum_of_the_per_document_identity_counts": 22
+  },
+  "★_the_reconciliation_taken_in_both_directions": {
+    "every_IN_identity_accounted_to_exactly_one_document": true,
+    "every_listed_document_named_by_at_least_one_IN_identity": true,
+    "the_sum_of_the_per_document_counts_equals_the_IN_count": true,
+    "a_failure_of_either_direction_is_a_STOP_not_a_field": "Each of the three is proved before this artifact is built; a failure raises and ends the run, so a `true` here is a record of a check that passed and never a claim made in place of one."
+  },
+  "★_the_bound": {
+    "what_this_derivation_reaches": "The entries of the ruled L3 verdict table and nothing wider. An entry the table does not grade is not reached, whatever its subject.",
+    "what_a_document's_presence_here_is_not": "It is NOT a judgment that the document should be withheld. That judgment is the user's, and Ruling 5 reserves it: the set is printed and STOPs for his confirmation before anything is authored (D-661, #24).",
+    "what_this_run_authored": "Nothing. No `WITHHELD`, no `EXTRAS`, no `VERDICTS`, no `CRITERION`, no pack directory."
+  }
+}
