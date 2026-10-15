@@ -17,7 +17,7 @@
  },
  "counts": {
   "generated_ratification_documents": 7,
-  "ruling_records_read": 158,
+  "ruling_records_read": 159,
   "members": 7,
   "members_pinned": 5,
   "members_unresolved": 0,
@@ -299,6 +299,7 @@
   "records/cowork/rulings/cowork_rulings_2026_10_14_l2_outgoing_population_check_sitting.md",
   "records/cowork/rulings/cowork_rulings_2026_10_14_l3_withheld_family_sitting.md",
   "records/cowork/rulings/cowork_rulings_2026_10_14_next_subject_sitting.md",
+  "records/cowork/rulings/cowork_rulings_2026_10_15_l3_withheld_family_lists_sitting.md",
   "records/cowork/rulings/cowork_rulings_oi345_oi342_2026_08_07.md"
  ],
  "named_in_a_ruling_record_but_not_generated": {
