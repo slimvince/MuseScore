@@ -24478,3 +24478,34 @@ batch did not do (§11), the plan's tell (§12) and the self-check (§13).
 `cc_instruction_l3_ruling_writeback_2026_10_15.md`, after the dispatch's ordered first reads. Every commit
 identifier in the report was read from the commit's own object and `origin/master` at its ref file after each
 push; the guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `d39db492b2c540bbaa20cb1e9e00f93421ed777f` left, appended in the one further commit
+
+**A fresh full guard run, written, after the close commit and before this one: 80 guards run, 14 failing, 4 not
+run, 20 historical** (`tools/audit/guard_state.json` → `summary`, which this commit carries). **E3 — MET, the A2
+prediction exactly:** the fourteen failing are the fourteen A2 names, and both reading-file runs,
+`gen_withheld_family_reading.py --subject l2 --check` and `--subject l3 --check`, pass. **The A2 exceptions,
+handled as A2 says:** `gen_defense_share.py --check` was red at the close's tree and was regenerated before the
+run; compared against the close commit's blob by explicit hash, only the whole-read denominator and the share
+derived from it moved, on the last batches' precedent — **no member moved** — and it passes at the artifact
+this commit carries. `gen_l0_l1_outgoing_population.py --check` and `gen_session_start_read_size.py --check`
+were green at the close's tree, so neither was regenerated.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_withheld_family_reading.py']"* — the standing STOP
+naming the same three tools, as predicted.
+
+**A3, verified at the objects** (`git diff --name-status a191a380… d39db492…`): fourteen paths — the three landed
+at Task 0, the membership artifact Task 0's act (2) regenerated, the report, L3's rendered reading file, and the
+ordered edits: the generator (the three tuples' verdict words and reasons only), the reading-file tool (the
+thirteen ordered edits), `STATUS.md`, `STATUS_ARCHIVE.md` and this file (lines added only to the last two), the
+re-aimed forward-bound tool and its two artifacts. The three landed files are unchanged since Task 0
+(`git diff --stat 9448eb53… d39db492…` over them is empty). No other governing document, no rendered
+decisions-register file, nothing under `tools/audit/derivation_boot_pack/`, not
+`tools/audit/derivation_boot_pack.json`, neither candidate list, not L2's reading file, no ruling record after
+landing, no surface or extract, not `FRAMEWORK.md` and not the suspension file differs from the tip. No further
+handoff entry or ruling record appeared in the working tree during the run.
+
+*Provenance: CC, 2026-10-15, appended in the one further commit after the close commit
+`d39db492b2c540bbaa20cb1e9e00f93421ed777f`; the verdicts are this run's own output, read with the file tools.*
