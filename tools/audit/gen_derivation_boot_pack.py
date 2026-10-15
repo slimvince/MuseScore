@@ -5751,7 +5751,7 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "Its verbatim rules analysis at the finest grain where harmony is well-defined, with "
                   "everything coarser a derived view; its plain says phrases, key areas and sections "
                   "are read off that and never analysed directly.",
-                  "It states a portion of the ruled answer tohow phrase and section grouping is obtained — "
+                  "It states a portion of the ruled answer to how phrase and section grouping is obtained — "
                   "read off the finest grain as a derived view, never analysed directly."),
         "D-023": (VERDICT_OUT,
                   "Its verbatim names the atomic analysis unit the constant-sonority slice, never the "
@@ -5794,7 +5794,7 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
         "D-031": (VERDICT_OUT,
                   "Its verbatim reads 'Whole-score analysis is the degenerate case (selection = "
                   "score)'.",
-                  "It belongs to thebounded-context contract, not a rule for any of L3's facts."),
+                  "It belongs to the bounded-context contract, not a rule for any of L3's facts."),
         "D-032": (VERDICT_OUT,
                   "Its verbatim rules every confidence crossing a layer boundary bounded in [0,1], "
                   "class-declared and named to its decision.",
@@ -5882,7 +5882,7 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
         "D-313": (VERDICT_OUT,
                   "Its verbatim rules calibration maps monotone or deferred, a non-monotone curve being "
                   "an upstream finding.",
-                  "It belongs to theconfidence contract and states no rule for reading off any of "
+                  "It belongs to the confidence contract and states no rule for reading off any of "
                   "L3's facts."),
         "D-339": (VERDICT_OUT,
                   "Its verbatim rules that a confident earlier inference can be overturned by decisive "
@@ -5942,7 +5942,7 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
         "D-601": (VERDICT_OUT,
                   "Its verbatim hard-gates fitting a frame's conversion constant behind a premise "
                   "ledger and a desk simulation.",
-                  "It belongs to theconfidence contract and names none of L3's facts."),
+                  "It belongs to the confidence contract and names none of L3's facts."),
         "D-656": (VERDICT_OUT,
                   "Its verbatim forbids amending the crediting rule to count a tonicization label as "
                   "agreeing with the annotator's modulated numeral.",
@@ -6229,7 +6229,7 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "Its verbatim rules cadence detection key-agnostic, voting for the key rather than "
                   "reading a resolved one, by an event-pair feature test with a phrase gate, and "
                   "rejects a detector that conflates the perfect with the imperfect cadence.",
-                  "It states a portion of the ruled answer tohow a cadence at a phrase end is detected, "
+                  "It states a portion of the ruled answer to how a cadence at a phrase end is detected, "
                   "which is one of L3's five facts."),
         "D-337": (VERDICT_OUT,
                   "Its verbatim makes tonicization the default and modulation require cadence "
@@ -6321,23 +6321,23 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "Its verbatim rules that Layer 6 defines no detection of its own and assembles "
                   "punctuation-span segmentation, key-area grouping and cadence alignment from earlier "
                   "layers.",
-                  "It states a portion of the ruled answer tohow phrase grouping and its cadence alignment "
+                  "It states a portion of the ruled answer to how phrase grouping and its cadence alignment "
                   "are read off — assembled from earlier facts, with no detection of its own."),
         "D-455": (VERDICT_IN,
                   "Its verbatim aligns cadences to punctuation-spans asymmetrically, an off-boundary "
                   "cadence surfaced and never snapped to the nearest boundary.",
-                  "It states a portion of the ruled answer tohow a cadence relates to a phrase end, which "
+                  "It states a portion of the ruled answer to how a cadence relates to a phrase end, which "
                   "belongs to L3's cadence and phrase facts."),
         "D-456": (VERDICT_IN,
                   "Its verbatim keeps sections, periods and sentences out of the grouping core for "
                   "proportionality, buildable later through an alternative-confidence path.",
-                  "It states a portion of the ruled answer tohow section grouping is treated, which is one "
+                  "It states a portion of the ruled answer to how section grouping is treated, which is one "
                   "of L3's five facts."),
         "D-457": (VERDICT_IN,
                   "Its verbatim marks an edge group clipped-by-selection-edge and gives an edge span "
                   "with no closing boundary and no cadence an extension-cue tag the grouping only "
                   "surfaces.",
-                  "It states a portion of the ruled answer tohow a phrase group at the selection edge is "
+                  "It states a portion of the ruled answer to how a phrase group at the selection edge is "
                   "published, which belongs to L3's phrase grouping."),
         "D-459": (VERDICT_UNPLACED,
                   "Its verbatim makes any confidence the grouping layer publishes — the key-area "
@@ -6350,13 +6350,13 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "Its verbatim surfaces a unit's open mark on the punctuation-span containing it and "
                   "reports a span fully resolved exactly when none of its units carries one, with no "
                   "confidence threshold.",
-                  "It states a portion of the ruled answer tohow a phrase group is published with respect "
+                  "It states a portion of the ruled answer to how a phrase group is published with respect "
                   "to unresolved readings, which belongs to L3's phrase grouping."),
         "D-461": (VERDICT_IN,
                   "Its verbatim makes Layer 6 a thin explainability assembly layer, not an accuracy "
                   "requirement, noting that grouping falls out of stable key runs in the competitive "
                   "reference.",
-                  "It states a portion of the ruled answer tohow phrase and section grouping is read off — "
+                  "It states a portion of the ruled answer to how phrase and section grouping is read off — "
                   "a thin assembly with no detection of its own."),
         "D-462": (VERDICT_IN,
                   "Its verbatim scopes cadence validation to LOCATION because cadence type is "
@@ -6390,13 +6390,13 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
         "D-479": (VERDICT_IN,
                   "Its verbatim runs the boundary cues per eligible voice, aggregates them by "
                   "voice-coincidence, and exposes both the per-voice and the texture boundaries.",
-                  "It states a portion of the ruled answer towhich phrase ends are published and at what "
+                  "It states a portion of the ruled answer to which phrase ends are published and at what "
                   "scope, which is one of L3's five facts."),
         "D-480": (VERDICT_IN,
                   "Its verbatim rules the phrase-boundary primitive not an accuracy requirement and "
                   "kept proportionate, with phrase alignment via stable key runs as the proven "
                   "fallback.",
-                  "It states a portion of the ruled answer tohow phrase ends are obtained, the ruled "
+                  "It states a portion of the ruled answer to how phrase ends are obtained, the ruled "
                   "fallback included, which is one of L3's five facts."),
         "D-481": (VERDICT_IN,
                   "Its verbatim makes the picked boundary set the surface-cue peaks union every "
@@ -6416,7 +6416,7 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
         "D-485": (VERDICT_IN,
                   "Its verbatim requires every picked boundary to carry which cue or marker fired and "
                   "at what scope, the picked set being scope-blind today.",
-                  "It states a portion of the ruled answer tohow a phrase end is published — with its cue "
+                  "It states a portion of the ruled answer to how a phrase end is published — with its cue "
                   "and its scope, a local breath told apart from a global barline."),
         "D-490": (VERDICT_OUT,
                   "Its verbatim records that no threshold can make the fine-grain function override "
@@ -6437,7 +6437,7 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
         "D-495": (VERDICT_IN,
                   "Its verbatim requires cadence admission to relax, with the vote weight reduced, when "
                   "the phrase-boundary profile is featureless, rather than starve.",
-                  "It states a portion of the ruled answer tohow a cadence is admitted at a phrase end, "
+                  "It states a portion of the ruled answer to how a cadence is admitted at a phrase end, "
                   "which is one of L3's five facts."),
         "D-629": (VERDICT_OUT,
                   "Its verbatim makes the function layer itself the resolver of carried uncertain "
