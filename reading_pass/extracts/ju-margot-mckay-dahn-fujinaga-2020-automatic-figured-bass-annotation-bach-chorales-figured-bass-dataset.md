@@ -75,8 +75,9 @@ figured bass annotation.)
 
 **[FACT, §3.1]** 120 of the 139 chorales were used to train and test. Excluded: 12 chorales with
 *"elaborate instrumental interludes between phrases"*, five *"that are barely figured"*, and BWV 8.06 and
-BWV 161.06 *"because they feature irregular textures, such as having an obligato continuo and/or
-instrumental part"* (642).
+BWV 161.06 *"because they feature irregular textures, such as having an obbligato continuo and/or
+instrumental part"* (642). *(★ CORRECTED 2026-10-15 at the cross-check against the second extract, at the
+page: the printed word is "obbligato". Former wording, preserved (#12): "obligato".)*
 
 **★ [FACT, §3.2.1] The unit of analysis is the note-onset slice.** *"First, the music is segmented into
 a series of note onset slices [8,9]. A new slice is formed whenever a new note onset occurs in any musical
@@ -125,8 +126,12 @@ the notes above the bass that are sounding in the current slice"*. The interval 
 the bass to the upper voice, ranging 0 to 11 (footnote 21). Where a figure does not specify the exact
 interval (a "6" could be major or minor), *"we rely on the score to determine the exact interval using
 heuristics-based post-processing"*; the score's pitch spelling is likewise used to convert vectors back
-to figures (e.g. 3 semitones as "♭3" or "♯2"; "2" versus "9" decided by whether the note is an octave or
-more above the bass, footnote 22).
+to figures (e.g. 3 semitones as "♭3" or "♯2"; "2" versus "9" decided by finding the actual note above the
+bass and comparing its pitch with the bass's: *"If they are one octave apart, the generated figure will
+be "9", and "2" otherwise"*, footnote 22). *(★ CORRECTED 2026-10-15 at the cross-check against the second
+extract, at the footnote: the paper says "one octave apart", not "an octave or more". Former wording,
+preserved (#12): ""2" versus "9" decided by whether the note is an octave or more above the bass, footnote
+22".)*
 
 **[FACT, §3.3.2]** Input per slice: three binary vectors — interval classes (12), onsets (12: which notes
 above the bass have onsets in this slice rather than being held), metrical context (3: downbeat, another
@@ -309,6 +314,14 @@ measurement "needs" the equivalence rules; now "would need", with the 3% to 64.5
 sentence called the method a reader of "notes only" while it also reads metrical position and spelling;
 now "everything it reads is in the notated score". The independence note's "read FRAMEWORK.md nowhere"
 became "had not opened".
+
+## The cross-check against the second extract (2026-10-15)
+
+The second independent extraction is at
+`reading_pass/extracts_second_pass/ju-margot-mckay-dahn-fujinaga-2020-automatic-figured-bass-annotation-bach-chorales-figured-bass-dataset.md`;
+its own cross-check section records the comparison. Two defects of this file were resolved at the paper
+and corrected above at their sites, former wordings preserved: a misspelled quotation ("obligato", p. 642)
+and a paraphrase of footnote 22 wider than its words. No value in this file was changed.
 
 ---
 

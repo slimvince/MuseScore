@@ -14,13 +14,29 @@
 >
 > **This extract derives no specification statement, amends no document, opens no code and writes no
 > open-items row or decisions-register entry.**
+>
+> **★ CORRECTED 2026-10-15 AT THE CROSS-CHECK** against the second extraction
+> (`reading_pass/extracts_second_pass/sears-pearce-caplin-mcadams-2018-simulating-expectations-for-tonal-cadences.md`),
+> each disagreement resolved at the paper. Four corrections are made below at their sites, each with its
+> former wording preserved in place (#12): the Identity line; the claim that `csd` and `csdc` carry every
+> harmonic result; an absolute about the paper's contents; and finding (1)'s quotation, which lacked the
+> viewpoint bound the paper's own Table 5 sets. Two further additions: a staleness note under Centrality
+> (row 39's centrality has since been decided) and one provenance sentence. Nothing else in this file was
+> changed.
 
 ## Identity
 
 David R. W. Sears, Marcus T. Pearce, William E. Caplin & Stephen McAdams, "Simulating melodic and
-harmonic expectations for tonal cadences using probabilistic models", *Journal of New Music Research*
-**47:1** (2018), pp. 29–52. Published online 22 November 2017, DOI 10.1080/09298215.2017.1367010.
-McGill University; Queen Mary University of London.
+harmonic expectations for tonal cadences using probabilistic models", *Journal of New Music Research*,
+DOI 10.1080/09298215.2017.1367010. McGill University; Queen Mary University of London. **The held file
+is the journal's online version: its pages are numbered 1–24, the first page's header reads
+*"JOURNAL OF NEW MUSIC RESEARCH, 2017"*, and no volume, issue or print page range is printed on it; the
+date 22 November 2017 on its margin is a download stamp (*"Downloaded by [Queen Mary University of
+London] at 02:52 22 November 2017"*), not a publication date.** *(★ CORRECTED 2026-10-15 at the
+cross-check. FORMER WORDING, PRESERVED (#12): "*Journal of New Music Research* **47:1** (2018), pp. 29–52.
+Published online 22 November 2017, DOI 10.1080/09298215.2017.1367010." The volume, issue and page range
+are met nowhere in the file's pages as read at the cross-check; where they came from is not recorded, so
+they are not established at this object. The "published online" date matches the download stamp.)*
 
 **File:** `docs/research_papers/sears_pearce_caplin_mcadams_2018_jnmr_cadence_expectations.pdf`.
 
@@ -32,14 +48,21 @@ of them would:
 
 1. **It does not detect cadences. It consumes them.** The cadence collection is **annotated by hand**
    under Caplin's typology and supplied to the analysis; the study then measures how *predictable* the
-   annotated terminal events are. There is no detection task, no classifier, no precision and no recall
-   anywhere in the paper.
+   annotated terminal events are. A detection task, a classifier, a precision or a recall is met nowhere
+   in the paper's pages as read. *(★ CORRECTED 2026-10-15 at the cross-check, as an absolute narrowed to
+   what a read establishes. FORMER WORDING, PRESERVED (#12): "There is no detection task, no classifier,
+   no precision and no recall anywhere in the paper." Both reads found none; the fact is unchanged.)*
 2. **★ Its harmonic viewpoints require a hand-annotated tonality.** [FACT, §5.2] *"to relate `cpitch`
    to a referential tonic pitch class for every event in the corpus, we manually annotated the key,
    mode, modulations and pivot boundaries for each movement."* **The scale-degree viewpoints `csd` and
-   `csdc` — the ones carrying every harmonic result in the paper — are computed from a key that a human
-   supplied.** A method that consumes a decided tonality cannot produce an L1 cue, L1 being the layer
-   that decides nothing and runs before any tonality exists.
+   `csdc` are computed from a key that a human supplied; the third harmonic viewpoint, `vintcc`, is not —
+   it encodes intervals above the lowest part, modulo 12 (§5.2.2, p. 10) — and it carries results in
+   Tables 4 to 7 beside `csdc`.** *(★ CORRECTED 2026-10-15 at the cross-check. FORMER WORDING, PRESERVED
+   (#12): "**The scale-degree viewpoints `csd` and `csdc` — the ones carrying every harmonic result in the
+   paper — are computed from a key that a human supplied.**" `vintcc` is a harmonic viewpoint that needs
+   no key.)* A method that consumes a decided tonality cannot produce an L1 cue, L1 being the layer
+   that decides nothing and runs before any tonality exists. *(The conclusion still holds through `csd`,
+   `csdc`, `composite` and the hand-annotated cadence collection of item 1.)*
 3. **The authors name their own object of study, in the paper's last sentence.** [FACT, §7] *"the
    schematic expectations formed by listeners for cadences and other recurrent temporal patterns amount
    to these sorts of probabilistic inferences requires an entirely different approach, one in which the
@@ -115,7 +138,13 @@ for non-cadential successions like 1̂–1̂, 2̂–1̂, or 7̂–1̂."*
 **★ [FACT, §6.1.3] The half cadence, measured by a third method.** *"half-cadential contexts generally
 failed to elicit lower mean IC estimates compared to non-cadential root-position dominants. Thus,
 according to IDyOM, the terminal events from the HC level are no more (or less) predictable than any
-other instance of root-position dominant harmony selected at random from the corpus."*
+other instance of root-position dominant harmony selected at random from the corpus."* **★ The bound the
+paper's own Table 5 (p. 14) sets on that sentence, added 2026-10-15 at the cross-check:** HC against
+random root-position dominants is not significant for every cello viewpoint and for `vintcc`, `csdc` and
+`composite`; **for the first violin it IS significant under `cpitch` (p .024), `melint` (.007) and
+`selection` (.008)** — the HC terminal events there being more predictable — and not under `csd`. The
+text at p. 12 says the same. The paper's *"generally"* is its own hedge; the *"Thus …"* sentence is wider
+than its table.
 
 **Experiment 2 — do the IC estimates order the cadence categories as a typology predicts?** The
 *Prospective Schemas* ordering PAC→IAC→HC→DC→EV fits better than the *1-Schema* ordering
@@ -178,6 +207,15 @@ dominant harmony selected at random from the corpus."* **Detection and predictab
 measurements, and they agree.** This strengthens DP-I's recorded ground — cues at L1, type at L3 —
 beyond what the charter currently cites. **Routed as an addition candidate to DP-I's defense; not
 applied, an amendment being the user's act on a surface.**
+*(★ BOUND ADDED 2026-10-15 AT THE CROSS-CHECK; the wording above is left as written (#12). At the paper
+(Table 5, p. 14; p. 12) the quoted sentence holds for the cello and the three chord viewpoints and does
+NOT hold for the first violin under `cpitch`, `melint` and `selection`, where the half cadence's terminal
+events were significantly more predictable than random root-position dominants. So a citation of it
+carries that viewpoint bound. And the paper measures group-mean predictability from preceding context,
+not separability: a classification of half cadences against other dominants is met nowhere in its pages
+as read. Whether the finding therefore strengthens DP-I's ground, as written above, or bears on it only
+indirectly, as the second extraction reads it, is a difference of reading the two extracts do not
+resolve; it is left to the L3 specification's author.)*
 
 **(2) ★ A PRECISION ABOUT THE "TWO INDEPENDENT STUDIES", worth carrying because a later reader will lean
 on it.** The L1 charter cites rows 37 and 38 as two independent studies. **They are independent in
@@ -221,6 +259,8 @@ doubt-default question answered above. **Its findings (1), (3) and (4) do carry 
 defense, the L2 detail specification, and the phrase-boundary primitive — so **whether a second
 extraction is owed is a question for the sessions that take up those subjects, and is deliberately not
 decided here.** Recorded rather than assumed either way.
+*(★ Overtaken 2026-10-15: entry 405 §1 recorded row 39 CENTRAL for L3, and the second extraction named
+in the status block above was then written and cross-checked.)*
 
 ## What this extract does NOT do
 
@@ -235,4 +275,5 @@ re-open DP-I; finding (1) is an addition candidate put to the user, not an amend
 at the object as page images, all twenty-four pages. Read beside it for findings (1) and (2): this
 session's own row-37 and row-38 extracts. No shell command was run on the repository or on any staged
 copy of it for content or for listings; the container copy used for writing this file is declared. Every
-value above is the paper's own (#17f, D-431).*
+value above is the paper's own (#17f, D-431).* *Corrections of 2026-10-15: the Cowork session booted on
+entry 405, at the cross-check against the second extraction, each resolved at the paper's page images.*
