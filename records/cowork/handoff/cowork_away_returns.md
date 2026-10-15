@@ -24509,3 +24509,56 @@ handoff entry or ruling record appeared in the working tree during the run.
 
 *Provenance: CC, 2026-10-15, appended in the one further commit after the close commit
 `d39db492b2c540bbaa20cb1e9e00f93421ed777f`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 PACK BUILD, FIRST HALF: L3's WITHHELD DOCUMENTS DERIVED AND PRINTED — STOPPED FOR THE USER'S CONFIRMATION; THE INPUT-CONTRACT COPIES CUT; TASK 1 (L2's FREEZE) STOPPED AND TASK 2 NOT PERFORMED; NOTHING WITHHELD, NO PACK, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_l3_pack_build_first_half_2026_10_15.md`, pinned at Task 0 to
+blob `53145d47647a8b4080e2605385589da033895476`: **Task 0** landed the dispatch, handoff entries 402 to 409, the four
+2026-10-15 L3 ruling records, the cut-list document, rows 36 and 39's second extractions and their two corrected first
+extracts, with the evidence-pin membership artifact regenerated for the newly present ruling records; **Task 1
+STOPPED at its own condition with nothing committed** — L2's pack is NOT frozen; **Task 2 was NOT PERFORMED**, it
+depending on Task 1; **Task 3** gave `tools/audit/gen_l2_withheld_documents.py` a `--subject` parameter (L2's output and
+artifact proven byte-identical), derived and printed L3's withheld documents to `tools/audit/l3_withheld_documents.json`
+and enrolled the check; **Task 4** wrote the two cut input-contract copies under `tools/audit/derivation_exemplars/l3/`
+and ran the search over them, which cut nothing; **Task 5** closed. **NOTHING WAS WITHHELD, NO PACK WAS RENDERED, NO
+PACK DIRECTORY WAS WRITTEN, NO SESSION WAS BOOTED, NO RULING WAS TAKEN, NO QUESTION OR RECOMMENDATION WAS PUT TO THE
+USER, AND NOTHING ANY LAYER COMPUTES CHANGED.**
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_pack_build_first_half_2026_10_15.md`, and is pointed at rather than copied (#6): the
+derived document set, printed whole as the run printed it and compared with Ruling 5's expectation, at its head; the
+commit table (§1), the guard states (§2), A1 to A3 and E0 to E5 graded (§3), Task 0 (§4), Task 1's ten digests, its
+STOP and the measured cause (§5), why Task 2 was not performed (§6), Task 3 (§7), Task 4's two scripts, every expected
+end and the search's hits whole (§8), the declared departures (§9), the observations (§10), what the batch did not do
+(§11), the plan's tell (§12) and the self-check (§13).
+
+### What needs the writing side, named rather than resolved
+
+1. **THE DERIVED DOCUMENT SET, for the user's confirmation under Ruling 5** — report, its head. It agrees in full with
+   the expectation Ruling 5 states, document by document and identity by identity.
+2. **TASK 1's STOP — a finding that bears on the record of what L2's deriving session was given.** Under the generator
+   as it stands, freezing `l2` switches `build_subject`'s cross-reference search to the five-field form and drops the
+   extras leak list, because those two branches key on `FROZEN` membership — scopings written for the packs rendered
+   before the 2026-09-21 and 2026-09-27 rulings, while L2's pack was rendered under them. Measured in memory without
+   editing any file: the other three subjects' records unchanged, `l2`'s withheld set, counts, leak lists and
+   additions wording moved (report §5). The cause is established at the code; the fix is a change to the generator's
+   mechanism and is the user's (D-657, D-669). Until it is ruled, `l2` stays live, `gen_derivation_boot_pack.py
+   --check` stays red, and Task 2's three generator edits and `VERDICT_DATE["l3"]` stay owed.
+3. **THE SEARCH'S ONE HIT** — a `docs/` path in the L2 copy, kind (3) only (report §8(b)); no withheld identity and no
+   derived document hit either copy.
+4. **Ruling 5's quoted verbatim in the new artifact omits the record's opening clause**, as the dispatch quoted it
+   (report §10 item 2).
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects, then the derived document
+  set put to the user for confirmation, then the second half of the pack build.** Before that second half, the
+  question Task 1's STOP raises — how `l2` is frozen without its record moving — is the user's, and the freeze and
+  Task 2 are re-dispatched after it.
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-15, at boot tip `5499f3e2521c2bf4478469f30f3b9fb18f0af655`, under
+`cc_instruction_l3_pack_build_first_half_2026_10_15.md`, after the dispatch's ordered first reads. Every commit
+identifier in the report was read from the commit's own object and `origin/master` at its ref file after each push;
+the guard verdicts are this batch's own runs.*
