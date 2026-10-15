@@ -24364,3 +24364,43 @@ file-tools rule (D-253); it read nothing the file tools could not and decides no
 
 *Provenance: CC, 2026-10-14, appended in the one further commit after the close commit
 `e95282f9f5cd3938d7d93fcfe2f4d519eac26631`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 READING FILE: RENDERED FROM THE VERDICT TABLE FOR THE USER TO RULE, NOTHING WITHHELD, NO PACK, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_l3_reading_file_2026_10_15.md`, pinned at Task 0 to
+blob `00079037eb71b1ec678cd7e7fecdf9935609c254`: **Task 0** landed the dispatch and handoff entry 400;
+**Task 1** restored the missing spaces in `VERDICTS["l3"]`'s reasons, the generator's red `--check` output
+byte-identical before and after; **Task 2** moved the reading-file tool's L2-only prose, unchanged, into its
+`l2` subject entry (L2's ruled file byte-unchanged and not re-rendered), gave the tool an `l3` subject,
+rendered `ratification_surfaces/cowork_withheld_family_l3_reading.md` and enrolled `--subject l3 --check` in
+the guard set; **Task 3** closed. **NOTHING WAS WITHHELD, NO PACK WAS RENDERED, NO SESSION WAS BOOTED, NO
+RULING WAS TAKEN, NO RECOMMENDATION ABOUT ANY LIST APPEARS ANYWHERE, AND NOTHING ANY LAYER COMPUTES CHANGED.**
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_reading_file_2026_10_15.md`, and is pointed at rather than copied (#6): the
+commit table (§1), the guard states (§2), A1 to A3 and E0 to E2 graded (§3), Task 0 (§4), Task 1's four counts
+and the byte-identity (§5), Task 2's (a) to (g) with every confirmation of the rendered file (§6), the forward
+bound (§7), what the batch leaves to later acts (§8), the declared departures (§9), the observations (§10),
+what the batch did not do (§11), the plan's tell (§12) and the self-check (§13).
+
+### What needs the writing side, named rather than resolved
+
+1. **The rendered file is the object to check** — `ratification_surfaces/cowork_withheld_family_l3_reading.md`,
+   generated from `VERDICTS["l3"]` and `tools/audit/l3_candidate_list.json`; its `--check` passes.
+2. **LIST THREE carries no group-A row**, so the dispatch's "group A first inside each" holds for LIST ONE and
+   LIST TWO only (report §6(e)).
+3. **Three sentences of the shared rendering read imprecisely for L3** and were left as rendered, because no
+   ordered edit reaches them: §8's pointer at §4 about an unmeasured reach, the banner's citation of Ruling 81
+   rather than L3's own Ruling 2, and §5's claim about what the verdict pass's report states (report §10).
+
+### The plan line
+
+- **The next act is the writing side's — the check of the rendered file, then the three lists put to the user
+  one per turn.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-15, at boot tip `44b22bee63b7ecdd1e6496d15f73ea570216fbf2`, under
+`cc_instruction_l3_reading_file_2026_10_15.md`, after the dispatch's ordered first reads. Every commit
+identifier in the report was read from the commit's own object and `origin/master` at its ref file after each
+push; the guard verdicts are this batch's own runs.*
