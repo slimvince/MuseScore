@@ -226,7 +226,7 @@
    },
    "hits_per_term": {
     "slice": 1083,
-    "tie": 889,
+    "tie": 890,
     "fermata": 132,
     "MusicXML": 126,
     "leading-tone": 112,
@@ -3308,6 +3308,23 @@
       "term": "slice",
       "tier": "recorded",
       "line": "| OI-73 | Membership verdict dies at the L4→L5 boundary | chordTonePcs/nonChordTonePcs are never copied onto FunctionSlice. | siloed facts / E4 surface | OPEN — E4 surface design | [detail](open_items/OI-73.md) |"
+     }
+    ]
+   },
+   "STATUS.md": {
+    "path": "STATUS.md",
+    "inventory_class": "governing-documents",
+    "is_a_named_member": false,
+    "in_the_specification_document_set": false,
+    "admitting_hit_count": 0,
+    "recorded_hit_count": 1,
+    "admitting_hits": [],
+    "recorded_hits": [
+     {
+      "line_number": 10,
+      "term": "tie",
+      "tier": "recorded",
+      "line": "*2026-10-15 (CC — Same dispatch, Task 4. **THE TWO INPUT-CONTRACT COPIES ARE WRITTEN** under `tools/audit/derivation_exemplars/l3/` by a script kept outside the repository, every ruled passage found exactly once by its quoted text and removed where it stood, each copy headed by a pointer to its source; the search over them for L3's withheld identities, its derived documents and path strings cut nothing. **POINTER** — `records/cc/reports/cc_report_l3_pack_build_first_half_2026_10_15.md` (**D-431**).)*"
      }
     ]
    },

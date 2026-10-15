@@ -24562,3 +24562,36 @@ end and the search's hits whole (§8), the declared departures (§9), the observ
 `cc_instruction_l3_pack_build_first_half_2026_10_15.md`, after the dispatch's ordered first reads. Every commit
 identifier in the report was read from the commit's own object and `origin/master` at its ref file after each push;
 the guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `1b28d5d7030a7f281fb43e4025430d0f3bbfab0d` left, appended in the one further commit
+
+**A fresh full guard run, written, after the close commit and before this one: 81 guards run, 14 failing, 4 not run,
+20 historical** (`tools/audit/guard_state.json` → `summary`, which this commit carries). **E5 — the fourteen failing
+are A2's fourteen by name**, `gen_derivation_boot_pack.py --check` among them — A2 left open whether it would go green
+after Task 1, and Task 1 STOPPED, so it stays red. `gen_l2_withheld_documents.py --check` and `--subject l3 --check`
+both pass. **The A2 exceptions, handled as A2 says:** `gen_l0_l1_outgoing_population.py --check` and
+`gen_defense_share.py --check` were red at the close's tree and were regenerated before the run; compared against the
+close commit's blobs by explicit hash — the defense share moved only the whole-read denominator and the share derived
+from it, on the last batches' precedent; the outgoing population moved only `hits_per_term` for `tie` and one new
+RECORDED-tier residue record for `STATUS.md`, the term matching inside the word *identities* in this batch's Task 4
+entry, with no admitting hit — **no member moved in either**, the population in comparison order, the named members and
+the specification-set reading all unchanged. `gen_session_start_read_size.py --check` was green at the close's tree
+and was not regenerated.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_withheld_family_reading.py']"* — the standing STOP naming
+the same three tools, as predicted.
+
+**A3, verified at the objects** (`git diff --name-status 5499f3e2… 1b28d5d7…`): thirty-one paths — the nineteen landed
+at Task 0 with the membership artifact its act (2) regenerated, Task 3's three, Task 4's two, and the close's seven
+(`STATUS.md`, `STATUS_ARCHIVE.md`, the re-aimed forward-bound tool and its artifact, the read-size artifact, the report
+and this file, lines added only to the last). The landed files are unchanged since Task 0 (`git diff --stat 4d7b8dd1…
+1b28d5d7…` over them is empty). **Nothing under `tools/audit/derivation_boot_pack/`, not
+`tools/audit/derivation_boot_pack.json`, not `tools/audit/gen_derivation_boot_pack.py`, not
+`tools/audit/l2_withheld_documents.json`, neither source specification, no ruling record or extract after landing, not
+`FRAMEWORK.md`, no rendered decisions-register file and neither reading file differs from the tip.** No further
+handoff entry or ruling record appeared in the working tree during the run.
+
+*Provenance: CC, 2026-10-15, appended in the one further commit after the close commit
+`1b28d5d7030a7f281fb43e4025430d0f3bbfab0d`; the verdicts are this run's own output, read with the file tools.*
