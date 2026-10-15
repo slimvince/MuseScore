@@ -49,6 +49,70 @@ SUBJECTS = {
         "candidate_list": "tools/audit/l2_candidate_list.json",
         "out": "ratification_surfaces/cowork_withheld_family_l2_reading.md",
         "title": "The WITHHELD FAMILY for the L2 subject — put to the user for a ruling",
+        "subject_name": "L2",
+        # ── THE SUBJECT-SPECIFIC PROSE.  Moved here from render() on 2026-10-15 by
+        #    `cc_instruction_l3_reading_file_2026_10_15.md` Task 2, so that a second subject can carry
+        #    its own.  Every string below is the text render() wrote for L2 before the move, byte for
+        #    byte; the proof is that `--subject l2 --check` passes before and after the move.
+        "words_boot_pack": (
+            "- **The boot pack** — the self-contained directory such a session opens at boot, and nothing",
+            "  else.  L2's pack does not exist yet; its members are a later ruling.",
+        ),
+        "words_register_group": (
+            "- **The register group** — the letter under which `DECISIONS.md` lists an entry.  It is a",
+            "  property of the entry and decided no verdict.  Note that register group **E** is titled",
+            "  *Layer 2 — the slicer* while this subject is called **L2**: they are different units in two",
+            "  different numbering schemes (`ARCHITECTURE.md`'s Layer 1–6 and the framework's L0/L1/L2).",
+        ),
+        "charter_gloss": (
+            "and it asks FOUR things at once: the",
+            "tonality at each moment; where one harmony ends and the next begins; which sounding notes are",
+            "chord tones and which elaborate; and what chord is read over each span.  The pilot subject asked",
+            "only the second of these.  A verdict here is IN if the entry discloses the ruled answer to ANY of",
+            "the four, in whole or in part.",
+        ),
+        "section_3": (
+            "## 3. What this family protects, and what is not ruled for L2",
+            "",
+            "For the pilot, a separate ruling named one oracle passage the family protected.  **No ruling",
+            "names an oracle passage for L2.** Ruling 81's own record states that the record was searched",
+            "before it was taken and that no ruling reached L2's family; Ruling 81 rules that the pack",
+            "carries a family derived over a criterion built from the charter, and stops there; and none of",
+            "Rulings 82 to 89, which fix the criterion's terms, names one.  What the family protects is",
+            "therefore the entries themselves: the recorded current answers to the four limbs, which are the",
+            "IN rows below.  This file does not restate any of those answers beyond the one-sentence finding",
+            "each row carries, and it does not invent an oracle.",
+        ),
+        "empty_terms_line": (
+            "- the `ARCHITECTURE.md` passage term is **EMPTY** by ruling, and no identity is named by any "
+            "ruling for this subject, so the named-identity term is **EMPTY**."),
+        "bound_tail": (
+            "  The keyword term is a plain substring match whose reach is UNMEASURED; an entry bearing on this "
+            "subject in words none of the terms carry does not appear here at all, and the candidate list "
+            "says so on itself.  A keyword can match inside a longer word; every such match is published "
+            "with its context at `tools/audit/l2_candidate_list.json` → `the_candidates` → `matched_by`, and no "
+            "keyword match was treated as a reason for IN."),
+        "sizing_by_term": True,
+        "test_intro": "From the pilot's own dispatch, with L2's four-limbed question in place of the pilot's one:",
+        "test_in": (
+            "- **IN** — a deriving session that read this entry would know, in whole or in part, what the",
+            "  ruled answer to the charter question is.",
+        ),
+        "not_yet": (
+            "- **No leak list.** The pilot's fourth list named entries the pack's generated members could not",
+            "  render because their text pointed into the implementation.  A leak is found when a pack is",
+            "  rendered, and L2's pack is not rendered until the family is ruled and its members are ruled.",
+            "- **No derived cross-reference additions.** When a pack is built, every entry whose own text",
+            "  quotes or cross-references a withheld identity is withheld with it, derived and published whole",
+            "  and not ruled.  Ruling 84 (§3cm) bounds that derivation: it may ADD a withholding to an entry",
+            "  you have not ruled on, and may NOT overturn a verdict you have ruled.  None exists for L2 yet.",
+            "- **No withheld passages.** A passage is a cut inside a member the boot list quotes WHOLE.  L2's",
+            "  boot list is not ruled, so there is no member to cut.",
+            "- **The date each verdict carries.** Ruling 81 requires it.  The generator stamps every verdict",
+            "  with one module constant at render time, which is the pilot's authoring date and would be false",
+            "  for these; the gap is recorded as owed to the batch that builds L2's pack, and the authoring date",
+            "  of every group block stands in the table's own heading comments meanwhile.",
+        ),
         "subject_in_plain_words": (
             "The tonal reading: over this music, what is the tonality at each moment, where does "
             "each harmony give way to the next, which sounding notes belong to the harmony and "
@@ -123,6 +187,112 @@ SUBJECTS = {
                 "being stated in full by the withheld D-525.",
             ),
         },
+    },
+    # ── L3, added 2026-10-15 by `cc_instruction_l3_reading_file_2026_10_15.md` Task 2 ─────────────
+    # Ruling 2 of `cowork_rulings_2026_10_14_l3_withheld_family_sitting.md`: the lists are ruled one
+    # per turn, as for L2, from a surface rendered from the table.  No `ruling` block: the lists are
+    # not ruled, so the file renders as a reading surface FOR RULING.
+    "l3": {
+        "candidate_list": "tools/audit/l3_candidate_list.json",
+        "out": "ratification_surfaces/cowork_withheld_family_l3_reading.md",
+        "title": "The WITHHELD FAMILY for the L3 subject — put to the user for a ruling",
+        "subject_name": "L3",
+        "subject_in_plain_words": (
+            "The read-off facts: given a settled tonal reading, where does each phrase end and how do "
+            "phrases group into sections, what cadence stands at each phrase end and of what type, what "
+            "is the chord symbol, what is the figured bass, and what is the harmonic rhythm?"),
+        # Located on every run, as for L2.  L3's block labels its question `**Question:**` (L2's
+        # carries `**Question, in one sentence:**`); the bold form occurs once, an italic restatement
+        # later in the file does not match it.
+        "charter_file": "FRAMEWORK.md",
+        "charter_label": "**Question:** ",
+        "charter_sentence": "given a settled tonal reading, what else does a harmonic analysis of this music say?",
+        "charter_heading": "### L3 — The read-off facts",
+        "criterion_rulings": (
+            "Ruling 2 of `cowork_rulings_2026_10_14_l3_withheld_family_sitting.md` ruled that it reaches "
+            "the whole design-intent class, and `cc_instruction_l3_criterion_write_2026_10_14.md` wrote it "
+            "as a group term naming every group of the decisions register's own table."),
+        "verdicts_authored": (
+            "by Claude Code on 2026-10-14 under "
+            "`cc_instruction_l3_candidate_list_and_verdict_pass_2026_10_14.md` Task 3, at each entry's own "
+            "published verbatim and plain restatement in the candidate list, in the decisions register's "
+            "own group order"),
+        # The verdict pass wrote L3's groups in the register's own order; the lists keep it.
+        "group_order": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "Q", "S",
+                        "T", "U"],
+        "words_boot_pack": (
+            "- **The boot pack** — the self-contained directory such a session opens at boot, and nothing",
+            "  else.  L3's pack does not exist yet; its members are a later ruling.",
+        ),
+        "words_register_group": (
+            "- **The register group** — the letter under which `DECISIONS.md` lists an entry.  It is a",
+            "  property of the entry and decided no verdict.  Note that register group **F** is titled",
+            "  *Layer 3 — key and mode* while this subject is called **L3**, and that register group **H**,",
+            "  *Layer 5 and Layer 6 — function, cadence, grouping*, carries much of what the framework puts",
+            "  at L3: they are different units in two different numbering schemes (`ARCHITECTURE.md`'s",
+            "  Layer 1–6 and the framework's L0 to L3).",
+        ),
+        "charter_gloss": (
+            "and the same block's **Publishes** line names the FIVE",
+            "facts this layer reads off that settled reading: the cadence at each phrase end, with its type;",
+            "the phrase and section grouping; the chord symbol — root pitch class, quality and bass note; the",
+            "figured bass; and the harmonic rhythm.  L3 may not revise L2: the tonality, where one harmony",
+            "gives way to the next, which sounding notes are chord tones, and the chord read over each span",
+            "reach it settled.  A verdict here is IN if the entry discloses the ruled answer to how L3 reads",
+            "off ANY of the five, in whole or in part.",
+        ),
+        "section_3": (
+            "## 3. What this family protects, and what is not ruled for L3",
+            "",
+            "For the pilot, a separate ruling named one oracle passage the family protected.  **No ruling",
+            "names an oracle passage for L3.** Ruling 1 of `cowork_rulings_2026_10_14_l3_withheld_family_sitting.md`",
+            "rules that L3's pack carries a withheld family, and Ruling 2 that every design-intent entry is a",
+            "candidate; neither names one.  What the family protects is therefore the entries themselves: the",
+            "recorded current answers to how L3 reads off its five facts, which are the IN rows below.  This",
+            "file does not restate any of those answers beyond the one-sentence finding each row carries, and",
+            "it does not invent an oracle.",
+        ),
+        "empty_terms_line": (
+            "- the home-document, keyword and `ARCHITECTURE.md` passage terms are **EMPTY**, and no identity "
+            "is named by any ruling for this subject, so the named-identity term is **EMPTY**: the group term "
+            "names every group of the decisions register's own table, so it alone reaches the whole "
+            "design-intent class (Ruling 2)."),
+        "bound_tail": (
+            "  Every design-intent entry of the sort is a candidate, so none of that class is missing here; "
+            "the rulings recorded only in a ruling record since the register's rule (c) was suspended are "
+            "outside the sort as well, and the candidate list states that bound on itself."),
+        "sizing_by_term": False,
+        "test_intro": "From the pilot's own dispatch, with L3's five published facts (§2) in place of the pilot's one question:",
+        "test_in": (
+            "- **IN** — a deriving session that read this entry would know, in whole or in part, the ruled",
+            "  answer to how L3 reads off ANY of its five facts (§2).",
+        ),
+        "not_yet": (
+            "- **No leak list.** The pilot's fourth list named entries the pack's generated members could not",
+            "  render because their text pointed into the implementation.  A leak is found when a pack is",
+            "  rendered, and L3's pack is not rendered until the family is ruled and its members are ruled.",
+            "- **No derived cross-reference additions.** When a pack is built, every entry whose own text",
+            "  quotes or cross-references a withheld identity is withheld with it, derived and published whole",
+            "  and not ruled.  Ruling 84 (§3cm of `cowork_rulings_2026_08_31_decision_surface_sitting.md`)",
+            "  binds L3 as written (§2 of the L3 sitting record): an addition that would withhold an entry you",
+            "  have ruled admitted is put to you as its own list rather than standing.  None exists for L3 yet.",
+            "- **No withheld passages.** A passage is a cut inside a member the boot list quotes WHOLE.  L3's",
+            "  boot list is not ruled, so there is no member to cut.",
+            "- **The date each verdict carries.** Ruling 2 of the L3 sitting record requires it.  The",
+            "  generator's per-subject verdict-date table carries no `l3` entry, and the generator STOPs when",
+            "  it builds a subject with graded candidates and no date there; the date is owed to the batch that",
+            "  builds L3's pack, and the authoring date of every group block (2026-10-14) stands in the table's",
+            "  own heading comments meanwhile.",
+        ),
+        # The UNPLACED list's heading, corrected for this subject.  The shared heading cites D-658 for
+        # making no recommendation; that requirement of D-658 is superseded (`CLAUDE.md`, Conventions,
+        # the order of a decision surface's rules, step 8).  L2's ruled file keeps the shared heading.
+        "unplaced_gloss": (
+            "These could not be defended either way in one sentence at the entry's own verbatim, so "
+            "they were not guessed.  Each row says what was read.  This file makes no recommendation on "
+            "any of them; a recommendation, with its grounds, comes on the decision surface that puts this "
+            "list to you (`CLAUDE.md`, Conventions, the order in which a decision surface's rules apply, "
+            "step 5)."),
     },
 }
 
@@ -213,8 +383,9 @@ def render(subject: str) -> str:
         g = by_id[cid]["register_group"]
         per_group.setdefault(g, {vv: 0 for vv in boot_pack.VERDICTS_VOCABULARY})
         per_group[g][v] += 1
-    groups_present = [g for g in GROUP_ORDER if g in per_group]
-    unknown_groups = sorted(set(per_group) - set(GROUP_ORDER))
+    order = spec.get("group_order", GROUP_ORDER)
+    groups_present = [g for g in order if g in per_group]
+    unknown_groups = sorted(set(per_group) - set(order))
     if unknown_groups:
         raise Stop(f"candidate(s) in register group(s) not in the fixed order: {unknown_groups}")
 
@@ -235,7 +406,7 @@ def render(subject: str) -> str:
         w(f"> **STATUS: RULED {ruling['date']} — the lists below are the RULED lists.** The ruling record is")
         w(f"> `{ruling['record']}`, three rulings, one per list.  Every verdict below is carried in")
         w("> `tools/audit/gen_derivation_boot_pack.py` → `VERDICTS[\"" + subject + "\"]` as ruled.  **No identity is")
-        w("> withheld yet and no pack exists**: the withheld family is authored from LIST ONE only after L2's")
+        w(f"> withheld yet and no pack exists**: the withheld family is authored from LIST ONE only after {spec['subject_name']}'s")
         w("> boot-list members are ruled, which is a separate decision (Ruling 81, §3cj of")
         w("> `cowork_rulings_2026_08_31_decision_surface_sitting.md`: *no identity is withheld that the user")
         w("> has not ruled*).")
@@ -259,8 +430,8 @@ def render(subject: str) -> str:
     w("- **A deriving session** — a session that writes what the analysis *should* do for one unit,")
     w("  from the domain and from your ratified design intent, without reading what the current code or")
     w("  the current specifications say it *does*.")
-    w("- **The boot pack** — the self-contained directory such a session opens at boot, and nothing")
-    w("  else.  L2's pack does not exist yet; its members are a later ruling.")
+    for line in spec["words_boot_pack"]:
+        w(line)
     w("- **The withheld family** — the recorded decisions, documents and passages cut out of that pack")
     w("  for one subject, so that the answer the session is chartered to derive does not reach it.")
     w("- **A candidate** — a decisions-register entry the ruled criterion picked as possibly disclosing")
@@ -268,35 +439,23 @@ def render(subject: str) -> str:
     w("- **A verdict** — one of three words written against one candidate: **IN** (withhold it), **OUT**")
     w("  (admit it), **UNPLACED** (the entry's own text does not settle it).  Each carries a *finding* —")
     w("  what the entry's own text says — and a *reason* — why that makes it IN, OUT or UNPLACED.")
-    w("- **The register group** — the letter under which `DECISIONS.md` lists an entry.  It is a")
-    w("  property of the entry and decided no verdict.  Note that register group **E** is titled")
-    w("  *Layer 2 — the slicer* while this subject is called **L2**: they are different units in two")
-    w("  different numbering schemes (`ARCHITECTURE.md`'s Layer 1–6 and the framework's L0/L1/L2).")
+    for line in spec["words_register_group"]:
+        w(line)
     w("")
     w("## 2. The subject the deriving session will derive, stated from scratch")
     w("")
     w(f"> **{spec['subject_in_plain_words']}**")
     w("")
-    w(f"That is L2's charter question, located on this run at `{spec['charter_file']}` under the heading")
-    w(f"`{spec['charter_heading']}` — *\"{charter_one_line}\"* — and it asks FOUR things at once: the")
-    w("tonality at each moment; where one harmony ends and the next begins; which sounding notes are")
-    w("chord tones and which elaborate; and what chord is read over each span.  The pilot subject asked")
-    w("only the second of these.  A verdict here is IN if the entry discloses the ruled answer to ANY of")
-    w("the four, in whole or in part.")
+    w(f"That is {spec['subject_name']}'s charter question, located on this run at `{spec['charter_file']}` under the heading")
+    w(f"`{spec['charter_heading']}` — *\"{charter_one_line}\"* — {spec['charter_gloss'][0]}")
+    for line in spec["charter_gloss"][1:]:
+        w(line)
     if ruling:
         w("")
         w(ruling["test_note"])
     w("")
-    w("## 3. What this family protects, and what is not ruled for L2")
-    w("")
-    w("For the pilot, a separate ruling named one oracle passage the family protected.  **No ruling")
-    w("names an oracle passage for L2.** Ruling 81's own record states that the record was searched")
-    w("before it was taken and that no ruling reached L2's family; Ruling 81 rules that the pack")
-    w("carries a family derived over a criterion built from the charter, and stops there; and none of")
-    w("Rulings 82 to 89, which fix the criterion's terms, names one.  What the family protects is")
-    w("therefore the entries themselves: the recorded current answers to the four limbs, which are the")
-    w("IN rows below.  This file does not restate any of those answers beyond the one-sentence finding")
-    w("each row carries, and it does not invent an oracle.")
+    for line in spec["section_3"]:
+        w(line)
     w("")
     w("## 4. How the candidate list was derived, and the bound on it")
     w("")
@@ -308,46 +467,67 @@ def render(subject: str) -> str:
     groups = criterion["groups"]
     w("- **its register group is one of** " + ", ".join(
         f"**{g}** ({boot_pack.group_title(g)})" for g in groups) + ";")
-    w("- **its recorded home is one of these documents:** " + ", ".join(
-        f"`{d}`" for d in criterion["home_documents"]) + ";")
-    w("- **any of its title, verbatim, plain restatement or search patterns contains one of these "
-      f"{len(criterion['keywords'])} words or phrases:** " + ", ".join(
-        f"*{k}*" for k in criterion["keywords"]) + ";")
-    w("- the `ARCHITECTURE.md` passage term is **EMPTY** by ruling, and no identity is named by any "
-      "ruling for this subject, so the named-identity term is **EMPTY**.")
+    if criterion["home_documents"]:
+        w("- **its recorded home is one of these documents:** " + ", ".join(
+            f"`{d}`" for d in criterion["home_documents"]) + ";")
+    if criterion["keywords"]:
+        w("- **any of its title, verbatim, plain restatement or search patterns contains one of these "
+          f"{len(criterion['keywords'])} words or phrases:** " + ", ".join(
+            f"*{k}*" for k in criterion["keywords"]) + ";")
+    # The authored line below states the passage and named-identity terms EMPTY; a criterion that
+    # carries either would make it false, so that is a STOP rather than a silently wrong sentence.
+    if criterion["architecture_spans"] or criterion["always"]:
+        raise Stop(f"CRITERION[{subject!r}] carries a passage or a named-identity term, which the "
+                   f"authored empty-terms line does not describe")
+    w(spec["empty_terms_line"])
     w("")
     pop = art["the_population"]
     w(f"**The population and the bound.** The class walked holds **{pop['design_intent_class']}** "
       f"design-intent entries of the sort artifact's **{pop['sort_entries_total']}**; the criterion "
       f"returned **{pop['candidates']}** candidates.  The population is the sort artifact's and NOT the "
-      "decisions register's, so register entries outside it are reached by no term (D-661, #24).  The "
-      "keyword term is a plain substring match whose reach is UNMEASURED; an entry bearing on this "
-      "subject in words none of the terms carry does not appear here at all, and the candidate list "
-      "says so on itself.  A keyword can match inside a longer word; every such match is published "
-      f"with its context at `{spec['candidate_list']}` → `the_candidates` → `matched_by`, and no "
-      "keyword match was treated as a reason for IN.")
+      "decisions register's, so register entries outside it are reached by no term (D-661, #24)."
+      + spec["bound_tail"])
     w("")
-    sizing = art["the_sizing"]["by_register_group_and_term"]
+    total = sum(counted.values())
     w("**The candidates by register group, and the verdicts proposed in each:**")
     w("")
-    w("| group | register-group title | candidates | reached by the group term | by a keyword | by a home document | IN | OUT | UNPLACED |")
-    w("|---|---|---|---|---|---|---|---|---|")
-    for g in groups_present:
-        s = sizing.get(g, {})
-        n = sum(per_group[g].values())
-        w(f"| {g} | {cell(boot_pack.group_title(g))} | {n} | {s.get('group', 0)} | {s.get('keyword', 0)} | "
-          f"{s.get('home-document', 0)} | {per_group[g][boot_pack.VERDICT_IN]} | "
-          f"{per_group[g][boot_pack.VERDICT_OUT]} | {per_group[g][boot_pack.VERDICT_UNPLACED]} |")
-    total = sum(counted.values())
-    w(f"| **all** | | **{total}** | | | | **{counted[boot_pack.VERDICT_IN]}** | "
-      f"**{counted[boot_pack.VERDICT_OUT]}** | **{counted[boot_pack.VERDICT_UNPLACED]}** |")
+    if spec["sizing_by_term"]:
+        sizing = art["the_sizing"]["by_register_group_and_term"]
+        w("| group | register-group title | candidates | reached by the group term | by a keyword | by a home document | IN | OUT | UNPLACED |")
+        w("|---|---|---|---|---|---|---|---|---|")
+        for g in groups_present:
+            s = sizing.get(g, {})
+            n = sum(per_group[g].values())
+            w(f"| {g} | {cell(boot_pack.group_title(g))} | {n} | {s.get('group', 0)} | {s.get('keyword', 0)} | "
+              f"{s.get('home-document', 0)} | {per_group[g][boot_pack.VERDICT_IN]} | "
+              f"{per_group[g][boot_pack.VERDICT_OUT]} | {per_group[g][boot_pack.VERDICT_UNPLACED]} |")
+        w(f"| **all** | | **{total}** | | | | **{counted[boot_pack.VERDICT_IN]}** | "
+          f"**{counted[boot_pack.VERDICT_OUT]}** | **{counted[boot_pack.VERDICT_UNPLACED]}** |")
+    else:
+        # One term only, so the candidate list sizes by group alone; its count must equal the
+        # table's own, group by group, or the file would show the user two numbers for one thing.
+        sizing = art["the_sizing"]["by_register_group"]
+        if set(sizing) != set(per_group):
+            raise Stop(f"the candidate list sizes groups {sorted(sizing)}, the verdict table grades "
+                       f"groups {sorted(per_group)}")
+        w("| group | register-group title | candidates | IN | OUT | UNPLACED |")
+        w("|---|---|---|---|---|---|")
+        for g in groups_present:
+            n = sum(per_group[g].values())
+            if sizing[g] != n:
+                raise Stop(f"register group {g}: the candidate list's sizing says {sizing[g]}, the "
+                           f"verdict table grades {n}")
+            w(f"| {g} | {cell(boot_pack.group_title(g))} | {n} | {per_group[g][boot_pack.VERDICT_IN]} | "
+              f"{per_group[g][boot_pack.VERDICT_OUT]} | {per_group[g][boot_pack.VERDICT_UNPLACED]} |")
+        w(f"| **all** | | **{total}** | **{counted[boot_pack.VERDICT_IN]}** | "
+          f"**{counted[boot_pack.VERDICT_OUT]}** | **{counted[boot_pack.VERDICT_UNPLACED]}** |")
     w("")
     w("## 5. The test each verdict was made against")
     w("")
-    w("From the pilot's own dispatch, with L2's four-limbed question in place of the pilot's one:")
+    w(spec["test_intro"])
     w("")
-    w("- **IN** — a deriving session that read this entry would know, in whole or in part, what the")
-    w("  ruled answer to the charter question is.")
+    for line in spec["test_in"]:
+        w(line)
     w("- **OUT** — the entry bears on another unit, and reading it tells the session nothing about that")
     w("  answer.  The reason says what it bears on instead.")
     w("- **UNPLACED** — the entry's own published text does not settle it.  The reason says what was read.")
@@ -363,6 +543,8 @@ def render(subject: str) -> str:
     w("")
     for verdict in (boot_pack.VERDICT_IN, boot_pack.VERDICT_OUT, boot_pack.VERDICT_UNPLACED):
         heading, gloss = LIST_HEADINGS[verdict]
+        if verdict == boot_pack.VERDICT_UNPLACED and "unplaced_gloss" in spec:
+            gloss = spec["unplaced_gloss"]
         w("---")
         w("")
         w(f"## {heading}")
@@ -383,19 +565,8 @@ def render(subject: str) -> str:
     w("")
     w("## 6. What is NOT in this file yet, and why")
     w("")
-    w("- **No leak list.** The pilot's fourth list named entries the pack's generated members could not")
-    w("  render because their text pointed into the implementation.  A leak is found when a pack is")
-    w("  rendered, and L2's pack is not rendered until the family is ruled and its members are ruled.")
-    w("- **No derived cross-reference additions.** When a pack is built, every entry whose own text")
-    w("  quotes or cross-references a withheld identity is withheld with it, derived and published whole")
-    w("  and not ruled.  Ruling 84 (§3cm) bounds that derivation: it may ADD a withholding to an entry")
-    w("  you have not ruled on, and may NOT overturn a verdict you have ruled.  None exists for L2 yet.")
-    w("- **No withheld passages.** A passage is a cut inside a member the boot list quotes WHOLE.  L2's")
-    w("  boot list is not ruled, so there is no member to cut.")
-    w("- **The date each verdict carries.** Ruling 81 requires it.  The generator stamps every verdict")
-    w("  with one module constant at render time, which is the pilot's authoring date and would be false")
-    w("  for these; the gap is recorded as owed to the batch that builds L2's pack, and the authoring date")
-    w("  of every group block stands in the table's own heading comments meanwhile.")
+    for line in spec["not_yet"]:
+        w(line)
     w("")
     if ruling:
         w("## 7. What was ruled")
@@ -410,7 +581,7 @@ def render(subject: str) -> str:
         for n in ruling["notes"]:
             w(f"- {n}")
         w("")
-        w("**The withheld family itself is authored from LIST ONE in a later act**, together with L2's")
+        w(f"**The withheld family itself is authored from LIST ONE in a later act**, together with {spec['subject_name']}'s")
         w("pack members, which are a separate ruling not yet taken.")
         w("")
     else:
@@ -422,7 +593,7 @@ def render(subject: str) -> str:
         w("before any family is authored, and this file recommends neither for either.  Each ruling is")
         w("recorded in a ruling record, and the ruled lists are then written back to the generator's table")
         w("by a dispatch; **the withheld family itself is authored from the ruled IN list in a later act**,")
-        w("together with L2's pack members, which are a separate ruling.")
+        w(f"together with {spec['subject_name']}'s pack members, which are a separate ruling.")
         w("")
     w("## 8. What the ruling does NOT do")
     w("")
@@ -430,7 +601,7 @@ def render(subject: str) -> str:
     w("- **It moves no register entry and no status.** Withholding an entry from one pack says nothing")
     w("  about that entry's standing in `DECISIONS.md`.")
     w("- **It edits no governing document** and closes no open item.")
-    w("- **It does not settle who derives**, nor L2's boot-list members, nor the date mechanism.")
+    w(f"- **It does not settle who derives**, nor {spec['subject_name']}'s boot-list members, nor the date mechanism.")
     w("- **It does not claim the candidate list is complete.** The criterion's reach is unmeasured, and")
     w("  §4 says so.")
     w("")

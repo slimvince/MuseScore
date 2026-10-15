@@ -245,6 +245,17 @@ AUTHORED = [
      "computed — so an edit to the table without a re-render, a hand edit to the file, or a "
      "candidate list that no longer matches the table turns this red rather than leaving the user "
      "reading a surface that has drifted from its source"),
+    # ---- AUTHORED 2026-10-15, cc_instruction_l3_reading_file_2026_10_15.md Task 2 ---------------
+    # The same tool's second subject, registered in the act that gives the tool that subject.  One
+    # run per rendered surface, on the precedent of the per-pair runs of
+    # `gen_governing_surface_split.py` below, so each surface the user rules from is guarded.
+    ("tools/audit/gen_withheld_family_reading.py", ["--subject", "l3", "--check"],
+     "L3's withheld-family reading file re-renders from the boot-pack generator's own authored "
+     "verdict table and L3's published candidate list, with L3's charter sentence located at "
+     "FRAMEWORK.md and the candidate list's per-group sizing required to equal the table's own "
+     "counts. What it guards is that the file the user rules L3's lists from is what the table says, "
+     "so an edit to the table without a re-render, a hand edit to the file, or a candidate list that "
+     "no longer matches the table turns this red"),
     # ---- AUTHORED 2026-08-15, cc_instruction_artifact_inventory.md ---------------------------
     # Registered in the act that creates it, for the reason stated three entries above.
     ("tools/audit/gen_artifact_inventory.py", ["--check"],
