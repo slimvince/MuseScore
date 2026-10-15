@@ -5962,13 +5962,17 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "is read off."),
 
         # ── group E — Layer 2 — the slicer — 1 candidate — authored 2026-10-14 ──
-        "D-605": (VERDICT_OUT,
+        "D-605": (VERDICT_IN,
                   "Its verbatim rules that a local-key hypothesis derives from key-agnostic signals "
                   "only — the cadence detector and the raw region structure — and never from the "
                   "key-area grouping.",
-                  "Its subject is what evidence a modulation decision may read, which is L2's tonality "
-                  "decision; it names the cadence detector key-agnostic without stating how a cadence "
-                  "is read off."),
+                  "Ruled IN 2026-10-15 from OUT (Ruling 2 of "
+                  "`cowork_rulings_2026_10_15_l3_withheld_family_lists_sitting.md`): its subject is "
+                  "L2's decision, but its published text states in passing that cadences are detected "
+                  "without the key and from the decided chords, which is the core of D-336, withheld by "
+                  "Ruling 1; admitted beside it, this entry would carry that answer into the pack "
+                  "without citing D-336, and withholding it costs the deriving session nothing it needs, "
+                  "L3 receiving the tonality settled."),
 
         # ── group F — Layer 3 — key and mode — 24 candidates — authored 2026-10-14 ──
         "D-057": (VERDICT_OUT,
@@ -6339,13 +6343,16 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "surfaces.",
                   "It states a portion of the ruled answer to how a phrase group at the selection edge is "
                   "published, which belongs to L3's phrase grouping."),
-        "D-459": (VERDICT_UNPLACED,
+        "D-459": (VERDICT_IN,
                   "Its verbatim makes any confidence the grouping layer publishes — the key-area "
                   "confidence, a span-level aggregate — a Class M boundary confidence whose input is "
                   "the declared key confidence.",
-                  "It was read as about key areas and a span aggregate, and the published text does not "
-                  "settle whether key-area grouping belongs to L3's section grouping or a view of L2's "
-                  "tonality."),
+                  "Ruled IN 2026-10-15 from UNPLACED (Ruling 3 of the same record): D-454, withheld by "
+                  "Ruling 1, names key-area grouping among the three things the grouping layer "
+                  "assembles, so key areas belong to the grouping L3 derives; this entry states how "
+                  "that grouping's confidence is formed, and the general confidence rules it applies "
+                  "(D-032, D-267, D-268) are admitted by Ruling 2, so withholding it costs the deriving "
+                  "session nothing it needs."),
         "D-460": (VERDICT_IN,
                   "Its verbatim surfaces a unit's open mark on the punctuation-span containing it and "
                   "reports a span fully resolved exactly when none of its units carries one, with no "
@@ -6363,12 +6370,15 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "harmony-dependent and only partially attributable.",
                   "It states that a cadence's type depends on the decided harmony while its location "
                   "does not, which is a portion of the ruled answer to where the cadence type is read."),
-        "D-472": (VERDICT_UNPLACED,
+        "D-472": (VERDICT_IN,
                   "Its verbatim groups neighboring regions in the same key into a key area by a "
                   "smoothing pass, a disagreeing region below the confidence test keeping its own key.",
-                  "It was read as a grouping rule over key areas, and the published text does not "
-                  "settle whether key-area grouping belongs to L3's section grouping or a view of L2's "
-                  "tonality."),
+                  "Ruled IN 2026-10-15 from UNPLACED (Ruling 3 of the same record): D-454, withheld by "
+                  "Ruling 1, names key-area grouping among the three things the grouping layer "
+                  "assembles, and this entry's own text calls it a grouping rule that reads the key "
+                  "fields earlier layers published and re-decides none of them; it states how spans are "
+                  "grouped by key, a rule L3 derives itself, so admitting it would hand the deriving "
+                  "session that answer."),
         "D-476": (VERDICT_IN,
                   "Its verbatim makes the phrase-boundary primitive a notation-derived view owned by "
                   "Architectural Layer 1.5, rejecting the note model and the function layer, which "
