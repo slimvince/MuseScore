@@ -1,10 +1,12 @@
 # The WITHHELD FAMILY for the L3 subject — put to the user for a ruling
 
-> **STATUS: READING SURFACE — FOR RULING. NOTHING BELOW IS APPLIED.** Every verdict in this
-> file is a PROPOSAL carried in `tools/audit/gen_derivation_boot_pack.py` → `VERDICTS["l3"]`.
-> No identity is withheld, no pack is rendered and no session is booted until you have ruled the
-> lists (Ruling 81, §3cj of `cowork_rulings_2026_08_31_decision_surface_sitting.md`: *no identity
-> is withheld that the user has not ruled*).
+> **STATUS: RULED 2026-10-15 — the lists below are the RULED lists.** The ruling record is
+> `records/cowork/rulings/cowork_rulings_2026_10_15_l3_withheld_family_lists_sitting.md`, three rulings, one per list.  Every verdict below is carried in
+> `tools/audit/gen_derivation_boot_pack.py` → `VERDICTS["l3"]` as ruled.  **No identity is
+> withheld yet and no pack exists**: the withheld family is authored from LIST ONE only after L3's
+> boot-list members are ruled, which is a separate decision (Ruling 2 of
+> `records/cowork/rulings/cowork_rulings_2026_10_14_l3_withheld_family_sitting.md`: *No identity is
+> withheld that the user has not ruled.*)
 >
 > **GENERATED FILE — do not hand-edit.** Rendered by `tools/audit/gen_withheld_family_reading.py`
 > from that verdict table and from `tools/audit/l3_candidate_list.json`; its `--check` re-renders and
@@ -70,7 +72,7 @@ generator's committed table on this run:
 
 **The population and the bound.** The class walked holds **244** design-intent entries of the sort artifact's **411**; the criterion returned **244** candidates.  The population is the sort artifact's and NOT the decisions register's, so register entries outside it are reached by no term (D-661, #24).  Every design-intent entry of the sort is a candidate, so none of that class is missing here; the rulings recorded only in a ruling record since the register's rule (c) was suspended are outside the sort as well, and the candidate list states that bound on itself.
 
-**The candidates by register group, and the verdicts proposed in each:**
+**The candidates by register group, and the verdicts ruled in each:**
 
 | group | register-group title | candidates | IN | OUT | UNPLACED |
 |---|---|---|---|---|---|
@@ -78,10 +80,10 @@ generator's committed table on this run:
 | B | The notation output surface and the record path | 4 | 0 | 4 | 0 |
 | C | Cross-cutting analysis contracts | 43 | 1 | 42 | 0 |
 | D | Layer 1 — the note model | 2 | 0 | 2 | 0 |
-| E | Layer 2 — the slicer | 1 | 0 | 1 | 0 |
+| E | Layer 2 — the slicer | 1 | 1 | 0 | 0 |
 | F | Layer 3 — key and mode | 24 | 0 | 24 | 0 |
 | G | Layer 4 — chord identity | 33 | 0 | 33 | 0 |
-| H | Layer 5 and Layer 6 — function, cadence, grouping | 47 | 16 | 29 | 2 |
+| H | Layer 5 and Layer 6 — function, cadence, grouping | 47 | 18 | 29 | 0 |
 | I | Module boundaries and code structure | 6 | 0 | 6 | 0 |
 | J | Presentation and output conventions | 4 | 1 | 3 | 0 |
 | K | Documentation governance | 3 | 0 | 3 | 0 |
@@ -92,7 +94,7 @@ generator's committed table on this run:
 | S | The guiding principles | 12 | 0 | 12 | 0 |
 | T | Standing process rules and local patches | 1 | 0 | 1 | 0 |
 | U | The standing decision-bearing surfaces | 5 | 0 | 5 | 0 |
-| **all** | | **244** | **19** | **223** | **2** |
+| **all** | | **244** | **22** | **222** | **0** |
 
 ## 5. The test each verdict was made against
 
@@ -107,27 +109,31 @@ From the pilot's own dispatch, with L3's five published facts (§2) in place of 
 **Default nothing:** a verdict that could not be defended in one sentence at the entry's own
 verbatim was recorded UNPLACED rather than guessed.  **Every verdict was written at the published
 text** — the entry's verbatim and plain restatement in the candidate list — and no entry's home
-document was opened to decide one; the register group and the LEGACY mark were forbidden to
-decide anything, and the executing side's report states that they did not.
+document was opened to decide one.  The executing side's report
+(`records/cc/reports/cc_report_l3_candidate_list_and_verdict_pass_2026_10_14.md` §7) states that
+every verdict was written at the entry's verbatim and plain restatement *"and nothing else"*.
 
 ---
 
-## LIST ONE — IN: proposed to be WITHHELD from the pack
+## LIST ONE — IN: ruled to be WITHHELD from the pack
 
-*A deriving session that read one of these would know, in whole or in part, what the ruled answer to the charter question is.  Each row says what in the entry's own text discloses it.*  **19 entries.**
+*A deriving session that read one of these would know, in whole or in part, what the ruled answer to the charter question is.  Each row says what in the entry's own text discloses it.*  **22 entries.**
 
 | ID | group | Title | Finding — what the entry's own text says | Reason |
 |---|---|---|---|---|
 | D-526 | A | The joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the chord symbol is a DERIVED fact published once | Its verbatim rules the chord axis scale-degree-valued and states that 'The chord symbol (root pitch class, quality, bass) is a DERIVED fact, published once (root = tonic + the degree's interval)'. | It states the ruled answer to how the chord symbol is read off — derived from the decided degree, not decided — which is one of L3's five facts. |
 | D-022 | C | The founding principle - analyse at the finest grain, coarser views are derived | Its verbatim rules analysis at the finest grain where harmony is well-defined, with everything coarser a derived view; its plain says phrases, key areas and sections are read off that and never analysed directly. | It states a portion of the ruled answer to how phrase and section grouping is obtained — read off the finest grain as a derived view, never analysed directly. |
+| D-605 | E | The local-key hypothesis derives from key-agnostic signals ONLY and never from the key-area grouping, which is a post-grouping of the resolved key — a hard design rule, not a preference | Its verbatim rules that a local-key hypothesis derives from key-agnostic signals only — the cadence detector and the raw region structure — and never from the key-area grouping. | Ruled IN 2026-10-15 from OUT (Ruling 2 of `cowork_rulings_2026_10_15_l3_withheld_family_lists_sitting.md`): its subject is L2's decision, but its published text states in passing that cadences are detected without the key and from the decided chords, which is the core of D-336, withheld by Ruling 1; admitted beside it, this entry would carry that answer into the pack without citing D-336, and withholding it costs the deriving session nothing it needs, L3 receiving the tonality settled. |
 | D-336 | H | Cadence detection is key-agnostic and votes for the key rather than reading one | Its verbatim rules cadence detection key-agnostic, voting for the key rather than reading a resolved one, by an event-pair feature test with a phrase gate, and rejects a detector that conflates the perfect with the imperfect cadence. | It states a portion of the ruled answer to how a cadence at a phrase end is detected, which is one of L3's five facts. |
 | D-454 | H | The grouping layer detects nothing — it assembles what earlier layers decided, and pressure to add detection means the work belongs elsewhere | Its verbatim rules that Layer 6 defines no detection of its own and assembles punctuation-span segmentation, key-area grouping and cadence alignment from earlier layers. | It states a portion of the ruled answer to how phrase grouping and its cadence alignment are read off — assembled from earlier facts, with no detection of its own. |
 | D-455 | H | A cadence away from a grouping boundary is surfaced as internal, never snapped to the nearest boundary and never discarded | Its verbatim aligns cadences to punctuation-spans asymmetrically, an off-boundary cadence surfaced and never snapped to the nearest boundary. | It states a portion of the ruled answer to how a cadence relates to a phrase end, which belongs to L3's cadence and phrase facts. |
 | D-456 | H | Sections, periods and sentences are out of the grouping layer's core for PROPORTIONALITY — not disqualified for lacking an oracle | Its verbatim keeps sections, periods and sentences out of the grouping core for proportionality, buildable later through an alternative-confidence path. | It states a portion of the ruled answer to how section grouping is treated, which is one of L3's five facts. |
 | D-457 | H | A group truncated by the selection edge is marked as truncated, and a group that runs off the edge unclosed carries an extension cue the grouping layer only surfaces | Its verbatim marks an edge group clipped-by-selection-edge and gives an edge span with no closing boundary and no cadence an extension-cue tag the grouping only surfaces. | It states a portion of the ruled answer to how a phrase group at the selection edge is published, which belongs to L3's phrase grouping. |
+| D-459 | H | The key-area confidence is a declared margin-class boundary confidence, and its input is the declared key confidence — never the grading diagnostics' sigmoid | Its verbatim makes any confidence the grouping layer publishes — the key-area confidence, a span-level aggregate — a Class M boundary confidence whose input is the declared key confidence. | Ruled IN 2026-10-15 from UNPLACED (Ruling 3 of the same record): D-454, withheld by Ruling 1, names key-area grouping among the three things the grouping layer assembles, so key areas belong to the grouping L3 derives; this entry states how that grouping's confidence is formed, and the general confidence rules it applies (D-032, D-267, D-268) are admitted by Ruling 2, so withholding it costs the deriving session nothing it needs. |
 | D-460 | H | A group counts as fully resolved exactly when no unit in it carries an unresolved mark — no confidence threshold enters the test | Its verbatim surfaces a unit's open mark on the punctuation-span containing it and reports a span fully resolved exactly when none of its units carries one, with no confidence threshold. | It states a portion of the ruled answer to how a phrase group is published with respect to unresolved readings, which belongs to L3's phrase grouping. |
 | D-461 | H | The grouping layer is an explainability layer, not an accuracy requirement, and is deliberately kept thin | Its verbatim makes Layer 6 a thin explainability assembly layer, not an accuracy requirement, noting that grouping falls out of stable key runs in the competitive reference. | It states a portion of the ruled answer to how phrase and section grouping is read off — a thin assembly with no detection of its own. |
 | D-462 | H | Cadence validation is scoped to LOCATION; cadence TYPE is only partially attributable and is never a clean gate | Its verbatim scopes cadence validation to LOCATION because cadence type is harmony-dependent and only partially attributable. | It states that a cadence's type depends on the decided harmony while its location does not, which is a portion of the ruled answer to where the cadence type is read. |
+| D-472 | H | Key areas are grouped by a smoothing pass over regions whose key sequence has already been smoothed, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area | Its verbatim groups neighboring regions in the same key into a key area by a smoothing pass, a disagreeing region below the confidence test keeping its own key. | Ruled IN 2026-10-15 from UNPLACED (Ruling 3 of the same record): D-454, withheld by Ruling 1, names key-area grouping among the three things the grouping layer assembles, and this entry's own text calls it a grouping rule that reads the key fields earlier layers published and re-decides none of them; it states how spans are grouped by key, a rule L3 derives itself, so admitting it would hand the deriving session that answer. |
 | D-476 | H | The phrase-boundary primitive is owned by the notation-derived view layer — not by the note model, and not by the function layer that consumes it | Its verbatim makes the phrase-boundary primitive a notation-derived view owned by Architectural Layer 1.5, rejecting the note model and the function layer, which consumes phrase boundaries. | It states where a phrase end is decided — at a notation-derived view upstream of the cadence detection that consumes it — which is a portion of the ruled answer to where a phrase ends. |
 | D-477 | H | Phrase boundaries are read from the written surface alone — never from a resolved key, chord or cadence — and the boundaries this misses are accepted, not recovered here | Its verbatim reads a phrase boundary from the written surface alone, never from a resolved key, chord or cadence, accepting that boundaries marked only harmonically are missed there. | It states the ruled answer to what evidence decides a phrase end, which is one of L3's five facts. |
 | D-478 | H | A phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals | Its verbatim rules that a phrase boundary is a peak in a continuous boundary-strength profile, not the OR of a few binary signals. | It states the ruled answer to how a phrase end is picked, which is one of L3's five facts. |
@@ -140,9 +146,9 @@ decide anything, and the executing side's report states that they did not.
 
 ---
 
-## LIST TWO — OUT: proposed to be ADMITTED to the pack
+## LIST TWO — OUT: ruled to be ADMITTED to the pack
 
-*These reached the candidate list, were read, and bear on another unit.  Each row says what the entry bears on instead.*  **223 entries.**
+*These reached the candidate list, were read, and bear on another unit.  Each row says what the entry bears on instead.*  **222 entries.**
 
 | ID | group | Title | Finding — what the entry's own text says | Reason |
 |---|---|---|---|---|
@@ -220,7 +226,6 @@ decide anything, and the executing side's report states that they did not.
 | D-656 | C | The crediting rule is NOT amended to count a tonicization label as agreeing with the annotator's modulated numeral; only a diagnostic partial-sub-split is defensible | Its verbatim forbids amending the crediting rule to count a tonicization label as agreeing with the annotator's modulated numeral. | It bears on the measurement of the analysis, not on L3's five facts. |
 | D-569 | D | Collecting, filtering and weighting are THREE separate responsibilities; the collection layer collects and annotates, and does nothing else | Its verbatim rules that the collection layer collects every sounding note in a region, annotated, losslessly, by one path, and does not filter, weight, select a bass or make any harmonic decision. | It bears on how the notated record's notes are collected for analysis (L0), not on any of L3's five facts. |
 | D-625 | D | Spelling presence is tested with the validity predicate, never with a non-negative test — the flat side of the line of fifths is negative and a non-negative guard silently drops it | Its verbatim rules spelling presence tested with the validity predicate `tpcIsValid()`, never with a non-negative test. | It bears on the note reader's spelling primitive (L0), not on how any of L3's facts is read off. |
-| D-605 | E | The local-key hypothesis derives from key-agnostic signals ONLY and never from the key-area grouping, which is a post-grouping of the resolved key — a hard design rule, not a preference | Its verbatim rules that a local-key hypothesis derives from key-agnostic signals only — the cadence detector and the raw region structure — and never from the key-area grouping. | Its subject is what evidence a modulation decision may read, which is L2's tonality decision; it names the cadence detector key-agnostic without stating how a cadence is read off. |
 | D-057 | F | The priority of evidence - actual sounding notes are the strongest evidence | Its verbatim is the priority-of-evidence row 'Actual sounding notes \| what is literally happening now', ranked strongest in deciding the key. | It ranks the evidence for the tonality, which is L2's decision. |
 | D-306 | F | The key layer's backward re-reading stays switched off in the shipped configuration | Its verbatim keeps the key layer's backward re-reading facility switched off in the shipped configuration. | It bears on the tonality decision, which is L2's. |
 | D-323 | F | Asking whether a pitch belongs to the key is a question about the collection, never about the tonic — the tonic-anchored form must not return | Its verbatim forbids the tonic-plus-scale form for a membership test, a scale degree alone legitimately using the tonic. | It bears on how pitch membership in the tonality is tested inside the chord reading, which is L2's. |
@@ -374,12 +379,9 @@ decide anything, and the executing side's report states that they did not.
 
 ## LIST THREE — UNPLACED: the entry's own published text does not settle it
 
-*These could not be defended either way in one sentence at the entry's own verbatim, so they were not guessed.  Each row says what was read.  This file makes no recommendation on any of them; a recommendation, with its grounds, comes on the decision surface that puts this list to you (`CLAUDE.md`, Conventions, the order in which a decision surface's rules apply, step 5).*  **2 entries.**
+*These could not be defended either way in one sentence at the entry's own verbatim, so they were not guessed.  The verdict pass placed two entries here; they were put to you on a decision surface carrying a recommendation with its grounds (`CLAUDE.md`, Conventions, the order in which a decision surface's rules apply, step 5), and both were ruled IN (§7, Ruling 3), so the list is empty.*  **0 entries.**
 
-| ID | group | Title | Finding — what the entry's own text says | Reason |
-|---|---|---|---|---|
-| D-459 | H | The key-area confidence is a declared margin-class boundary confidence, and its input is the declared key confidence — never the grading diagnostics' sigmoid | Its verbatim makes any confidence the grouping layer publishes — the key-area confidence, a span-level aggregate — a Class M boundary confidence whose input is the declared key confidence. | It was read as about key areas and a span aggregate, and the published text does not settle whether key-area grouping belongs to L3's section grouping or a view of L2's tonality. |
-| D-472 | H | Key areas are grouped by a smoothing pass over regions whose key sequence has already been smoothed, and a region that disagrees without clearing the confidence test keeps its own key while being grouped into the enclosing area | Its verbatim groups neighboring regions in the same key into a key area by a smoothing pass, a disagreeing region below the confidence test keeping its own key. | It was read as a grouping rule over key areas, and the published text does not settle whether key-area grouping belongs to L3's section grouping or a view of L2's tonality. |
+*The list is empty on this run.  The heading stays because the value stays in the generator's closed three-value vocabulary.*
 
 ---
 
@@ -387,7 +389,8 @@ decide anything, and the executing side's report states that they did not.
 
 - **No leak list.** The pilot's fourth list named entries the pack's generated members could not
   render because their text pointed into the implementation.  A leak is found when a pack is
-  rendered, and L3's pack is not rendered until the family is ruled and its members are ruled.
+  rendered, and L3's pack is not rendered until its members are ruled; the family's three lists
+  are ruled (§7).
 - **No derived cross-reference additions.** When a pack is built, every entry whose own text
   quotes or cross-references a withheld identity is withheld with it, derived and published whole
   and not ruled.  Ruling 84 (§3cm of `cowork_rulings_2026_08_31_decision_surface_sitting.md`)
@@ -401,15 +404,24 @@ decide anything, and the executing side's report states that they did not.
   builds L3's pack, and the authoring date of every group block (2026-10-14) stands in the table's
   own heading comments meanwhile.
 
-## 7. What you are asked to rule
+## 7. What was ruled
 
-**Three lists, one per turn, in the order above**, as the pilot's were ruled: LIST ONE (IN),
-LIST TWO (OUT), LIST THREE (UNPLACED).  For each list you may take it as authored, or move named
-entries between lists, or return a list for re-reading.  An UNPLACED entry must end IN or OUT
-before any family is authored, and this file recommends neither for either.  Each ruling is
-recorded in a ruling record, and the ruled lists are then written back to the generator's table
-by a dispatch; **the withheld family itself is authored from the ruled IN list in a later act**,
-together with L3's pack members, which are a separate ruling.
+**2026-10-15, one list per turn, in the order above.  The record is `records/cowork/rulings/cowork_rulings_2026_10_15_l3_withheld_family_lists_sitting.md`.**
+
+1. **Ruling 1 — LIST ONE stands as authored: all 19 IN entries are withheld** (the user's word: "A").
+2. **Ruling 2 — LIST TWO: 222 of the 223 OUT entries are admitted; D-605 moves to IN (withheld)** (the user's word: "B").
+3. **Ruling 3 — LIST THREE: D-459 and D-472 are both IN (withheld)** (the user's words: "A, both IN").  The list is now empty; the three moved verdicts were written back to the table by `cc_instruction_l3_ruling_writeback_2026_10_15.md`, and the lists below are the ruled lists.
+
+**Recorded beside the rulings in the ruling record:**
+
+- **Ruling 1, the overlap with the charter.** Some IN entries state what L3's own charter block in `FRAMEWORK.md` §5 already states: D-526 (the root is the tonic transposed by the degree's interval), and parts of D-477 and D-455 (the notated phrase evidence read at L1; a phrase span's boundaries come from the notated cues and the cadence is aligned to them).  Where the charter is in L3's pack, withholding these hides nothing the session will not read there; they are kept IN and the overlap is recorded as harmless.  Whether the charter is in L3's pack is UNSETTLED: L3's boot-list members are a later ruling.
+- **Ruling 1, also recorded.** D-022, D-336 and D-526 are also IN in L2's ruled family; they bear on both layers.
+- **Ruling 2.** D-605's subject is L2's decision, but its published text states in passing that cadences are detected without the key and from the decided chords, which is the core of D-336, withheld by Ruling 1; admitted beside a withheld D-336 it would carry that answer into the pack, and Ruling 84's automatic cross-reference addition does not reach it, because it does not cite D-336.  D-605 is also IN in L2's ruled family.  D-484 was considered and kept OUT: it describes the form of the evidence the layer below publishes, which L3 consumes, and does not say how phrase ends are picked.
+- **Ruling 2, the bound on the check behind it.** Every one of the 223 OUT rows was read in the rendered file; the full published text was read in the candidate list for D-268, D-471, D-482, D-484 and D-605 only.  A further restatement of a withheld entry elsewhere in LIST TWO is not excluded by that read.
+- **Ruling 3.** D-454, withheld by Ruling 1, names key-area grouping among the three things the grouping layer assembles, and D-472's own text says it reads the key fields earlier layers published and re-decides none of them; so key-area grouping is placed with the grouping L3 derives.  The general confidence rules D-459 applies (D-032, D-267, D-268) are admitted by Ruling 2.  `FRAMEWORK.md` does not define "section", so whether key areas are "section grouping" in its sense is UNSETTLED; the ruling rests on the record's placement of key-area grouping in the grouping layer, not on that definition.
+
+**The withheld family itself is authored from LIST ONE in a later act**, together with L3's
+pack members, which are a separate ruling not yet taken.
 
 ## 8. What the ruling does NOT do
 
@@ -418,8 +430,9 @@ together with L3's pack members, which are a separate ruling.
   about that entry's standing in `DECISIONS.md`.
 - **It edits no governing document** and closes no open item.
 - **It does not settle who derives**, nor L3's boot-list members, nor the date mechanism.
-- **It does not claim the candidate list is complete.** The criterion's reach is unmeasured, and
-  §4 says so.
+- **It does not claim the candidate list is complete.** Every design-intent entry of the sort is a
+  candidate, but decisions-register entries outside the sort, and rulings recorded only in a ruling
+  record, are reached by no term; §4 states that bound.
 
 ---
 
