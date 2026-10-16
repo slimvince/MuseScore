@@ -634,9 +634,16 @@ frozen shape. Both new lines are in member (7), the charter member (`FRAMEWORK.m
 `CHARTER_MEMBER_7`), and each names an identity of L2's withheld family. **This is the risk the freeze derivation named
 in advance** (`records/cowork/rulings/cowork_rulings_2026_10_15_l2_freeze_derivation_sitting.md` §2): a frozen subject is
 still built from today's sources, `frozen_from_disk` re-points member sizes at the directory but not the extras' leak
-list, and L2's charter source has changed since L2's pack was rendered. *Read at the rendered line text and not
-otherwise established:* the two lines' wording is consistent with the 2026-10-14 amendment to L2's block of
-`FRAMEWORK.md` §5 that the `FROZEN["l2"]` finding names; `FRAMEWORK.md` was not opened by this batch.
+list, and L2's charter source has changed since L2's pack was rendered. **Established at the objects after the close commit:** both lines stand in L2's block of `FRAMEWORK.md` §5
+(`FRAMEWORK.md:450–451`, inside the heading *"L2 — The tonal reading. The one entangled decision."*), as part of the
+stated ground of the elaboration-list amendment that
+`records/cc/instructions/cc_instruction_l2_ratification_application_2026_10_14.md` (Task 2) carried — the amendment the
+`FROZEN["l2"]` finding names — and neither occurs in `tools/audit/derivation_boot_pack/l2/07_the_charter_the_layers_and_the_decisions.md`
+(a search of that file for both lines' phrases and for *appoggiatura* matches nothing). *(★ CORRECTED in the end-state
+commit; FORMER WORDING, PRESERVED (#12): "*Read at the rendered line text and not otherwise established:* the two lines'
+wording is consistent with the 2026-10-14 amendment to L2's block of `FRAMEWORK.md` §5 that the `FROZEN["l2"]` finding
+names; `FRAMEWORK.md` was not opened by this batch." — true when the close was written, and made false by the check run
+after it.)*
 
 **The acts the dispatch orders on this STOP, done.** The generator was restored with `git checkout
 a01e9402fbaf034fe0d357214b67c06a8294309c -- tools/audit/gen_derivation_boot_pack.py` (exit 0); the tracked file's

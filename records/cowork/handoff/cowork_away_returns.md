@@ -24639,3 +24639,42 @@ tell (§10) and the self-check (§11).
 `cc_instruction_l3_pack_build_second_half_2026_10_16.md`, after the dispatch's ordered first reads. Every commit
 identifier in the report was read from the commit's own object and `origin/master` at its ref file after each push;
 the guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `a2a9d128446cf4b05a4828abd4ef498e204370f9` left, appended in the one further commit
+
+**A fresh full guard run, written, after the close commit and before this one: 81 guards run, 14 failing, 4 not run,
+20 historical** (`tools/audit/guard_state.json` → `summary`, which this commit carries). **E5 — the fourteen failing are
+the start state's fourteen by name** (the start run's fifteenth, `gen_evidence_pin_membership.py --check`, having been
+cleared at Task 0), `gen_derivation_boot_pack.py --check` among them: A2 predicted it green only after Task 4's render,
+and Task 1 STOPPED, so it stays red. **The A2 exceptions, handled as A2 says:** `gen_l0_l1_outgoing_population.py
+--check` and `gen_defense_share.py --check` were red at the close's tree and were regenerated before the run; compared
+against the close commit's blobs by explicit hash — the defense share moved only the whole-read denominator and the
+share derived from it; the outgoing population moved only the line number and text of its one RECORDED-tier `tie`
+residue record for `STATUS.md`, which now stands at this batch's close entry, with no admitting hit — **no member moved
+in either.** `gen_session_start_read_size.py --check` was green at the close's tree and was not regenerated.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_withheld_family_reading.py']"* — the standing STOP naming
+the same three tools, unchanged.
+
+**A3, verified at the objects** (`git diff --name-status a01e9402… a2a9d128…`): sixteen paths — the nine landed at
+Task 0 with the membership artifact its act (2) regenerated, and the close's seven (`STATUS.md`, `STATUS_ARCHIVE.md`, the
+re-aimed forward-bound tool and its artifact, the read-size artifact, the report and this file, lines added only to the
+last). The landed files are unchanged since Task 0 (`git diff --stat c60fb31d… a2a9d128…` over them is empty).
+**Nothing under `tools/audit/derivation_boot_pack/`, not `tools/audit/derivation_boot_pack.json`, not
+`tools/audit/gen_derivation_boot_pack.py`, not `tools/audit/l2_withheld_documents.json` or
+`tools/audit/l3_withheld_documents.json`, not `tools/audit/gen_l2_withheld_documents.py`, neither input-contract copy, no
+ruling record, the cut list or any extract after landing, not `FRAMEWORK.md`, not `EMPIRICAL_FINDINGS_LEDGER.md`, no
+rendered decisions-register file and no governing document other than `STATUS.md` and `STATUS_ARCHIVE.md` differs from
+the tip.** No further handoff entry or ruling record appeared in the working tree during the run.
+
+**One correction of record, carried in this commit.** The report's head section said the two new leak lines' source was
+*"read at the rendered line text and not otherwise established"*. After the close it was established at the objects —
+both lines stand at `FRAMEWORK.md:450–451` in L2's block of §5, part of the stated ground of the amendment the 2026-10-14
+ratification-application dispatch carried, and neither is in L2's rendered charter file — and the report's sentence is
+corrected in place with its former wording preserved (#12, #10). The `STATUS.md` close entry, which states the
+attribution, is therefore true as written.
+
+*Provenance: CC, 2026-10-16, appended in the one further commit after the close commit
+`a2a9d128446cf4b05a4828abd4ef498e204370f9`; the verdicts are this run's own output, read with the file tools.*
