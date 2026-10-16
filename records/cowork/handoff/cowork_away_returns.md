@@ -24595,3 +24595,47 @@ handoff entry or ruling record appeared in the working tree during the run.
 
 *Provenance: CC, 2026-10-15, appended in the one further commit after the close commit
 `1b28d5d7030a7f281fb43e4025430d0f3bbfab0d`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 PACK BUILD, SECOND HALF: TASK 1 STOPPED — THE L2 FREEZE MOVES L2's RECORD BEYOND THE FROZEN SHAPE; L2 NOT FROZEN, AND TASKS 2 TO 4 NOT DONE — NO VERDICT DATE, NO CRITERION BULLET, NO `l3` ENTRIES, NO RENDER, NO LISTS; NO SESSION, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_l3_pack_build_second_half_2026_10_16.md`, pinned at Task 0 to
+blob `d17ee82b68fc84148e1130150d6e57b554bb11f3`: **Task 0** landed the dispatch, handoff entries 410 to 413, the
+confirmation and freeze-derivation ruling records and the L3 extracts cut list, with the evidence-pin membership artifact
+regenerated for the two newly present ruling records; **Task 1 STOPPED at its (g)** — the five repair edits were made and
+proven inert before the freeze, the `FROZEN["l2"]` entry was added, and the D-657 comparison against the committed
+manifest came back non-empty for `l2`: **the risk the freeze derivation named in advance fired**, today's re-render of the
+shared charter member carrying two extras leak lines the committed record does not, each naming an L2 withheld identity;
+the generator was restored to its committed blob, proven at the object, and nothing of Task 1 was committed; **Tasks 2, 3
+and 4 were NOT performed**, the dispatch sending the batch from that STOP to its close; **Task 5** closed. **L2's PACK IS
+NOT FROZEN, L3's PACK IS NOT RENDERED, NO LIST WAS ASSEMBLED, NO SESSION WAS BOOTED, NO BRIEF WAS WRITTEN, NO SCORE WAS
+STAGED, NO RULING WAS TAKEN, NO QUESTION OR RECOMMENDATION WAS PUT TO THE USER, AND NOTHING ANY LAYER COMPUTES
+CHANGED.**
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_pack_build_second_half_2026_10_16.md`, and is pointed at rather than copied (#6): the
+whole (g) diff and the diagnosis of its shape, at its head under the heading Task 1(g) names; the commit table (§1), the
+guard states (§2), A1 to A3 and E0 to E5 graded (§3), the ten digests (§4), Task 1's edits, comparisons and restore (§5),
+every script whole (§6), the declared departures (§7), the observations (§8), what the batch did not do (§9), the plan's
+tell (§10) and the self-check (§11).
+
+### What needs the writing side, named rather than resolved
+
+1. **TASK 1's STOP — the D-657 comparison's `l2` diff.** Measured, at the head of the report: the movement is exactly two
+   entries inserted into `l2`'s `LEAKS_IN_THE_EXTRAS` list (both in member (7), the charter), with the count moving with
+   them, nothing removed and the committed entries in the same order; with those two removed the record equals the frozen
+   shape. Under the derivation's own bound, what the repair is now is the user's (D-436, D-657). No fix was taken.
+2. **Everything Tasks 2 to 4 would have done stays owed**: `VERDICT_DATE["l3"]` and the criterion bullet; `WITHHELD["l3"]`
+   with the five confirmed documents; `EXTRAS["l3"]` from the cut list; the render; the lists for the user.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects, then Task 1's STOP put to the
+  user; the freeze, Task 2, the `l3` entries and the render are re-dispatched only after his ruling on it, and the brief
+  and the boot come only after his rulings on the lists that render produces.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-16, at boot tip `a01e9402fbaf034fe0d357214b67c06a8294309c`, under
+`cc_instruction_l3_pack_build_second_half_2026_10_16.md`, after the dispatch's ordered first reads. Every commit
+identifier in the report was read from the commit's own object and `origin/master` at its ref file after each push;
+the guard verdicts are this batch's own runs.*

@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l3_pack_build_first_half_2026_10_15.md, Task 5",
+ "dispatch": "cc_instruction_l3_pack_build_second_half_2026_10_16.md, Task 5",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -537,46 +537,52 @@
    "base_commit": "a753601449d5642f4cd2734c2f07f9406a213fbf",
    "the_then_previous_batch": "cc_instruction_l3_ruling_writeback_2026_10_15.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_pack_build_second_half_2026_10_16.md, Task 5",
+   "base_commit": "c60fb31d50ad371942ae8276cf05055b89cb2c4b",
+   "the_then_previous_batch": "cc_instruction_l3_pack_build_first_half_2026_10_15.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "a753601449d5642f4cd2734c2f07f9406a213fbf",
- "the_then_previous_batch": "cc_instruction_l3_ruling_writeback_2026_10_15.md",
+ "base_commit": "c60fb31d50ad371942ae8276cf05055b89cb2c4b",
+ "the_then_previous_batch": "cc_instruction_l3_pack_build_first_half_2026_10_15.md",
  "the_kind_of_move": "ordinary",
  "entries_moved": 4,
- "characters_moved": 3627,
+ "characters_moved": 4099,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2133,
-   "sha256": "907dc1b1833743ebb3e9bbd0683f00af4989b0e286fa652f27967585cf5527d5",
+   "characters": 2607,
+   "sha256": "fd8244bfabf7896f070a915d17ac536c0ffc0b2ed011673c4ad55940397f779b",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-15 (CC — `records/cc/instructions/cc_instruction_l3_ruling_writeback_2026_10_15.md`, Task 3, the close. **★★ L3's THREE VERDICT LISTS STAND R"
+   "opening": "*2026-10-15 (CC — `records/cc/instructions/cc_instruction_l3_pack_build_first_half_2026_10_15.md`, Task 5, the close. **★★ L3's WITHHELD DOCUMENTS ARE"
   },
   {
    "line_at_base": 10,
-   "characters": 627,
-   "sha256": "89abaa158fbee56d8584b9046563fa5a2eb2423e5fe3dbccbdc8f04f04441428",
+   "characters": 506,
+   "sha256": "f97f792b5ac51456519ce8fcc01a32182cebc98ae1e726f416cf659b4506e4f8",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-15 (CC — Same dispatch, Task 2. **L3's READING FILE IS RE-RENDERED AS RULED**: `SUBJECTS[\"l3\"]` in `tools/audit/gen_withheld_family_reading.p"
+   "opening": "*2026-10-15 (CC — Same dispatch, Task 4. **THE TWO INPUT-CONTRACT COPIES ARE WRITTEN** under `tools/audit/derivation_exemplars/l3/` by a script kept o"
   },
   {
    "line_at_base": 12,
-   "characters": 468,
-   "sha256": "9ec95fd3423a21b6b03ed8d0af836758dfd92f27892ec0a790e87fbb95b81d88",
+   "characters": 522,
+   "sha256": "9da2c0e389ff07bad887c074ccbf4fbc517d1ea4548177d71335923b1b67e355",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-15 (CC — Same dispatch, Task 1. **THE THREE RULED VERDICTS ARE WRITTEN BACK TO `VERDICTS[\"l3\"]`** in `tools/audit/gen_derivation_boot_pack.py"
+   "opening": "*2026-10-15 (CC — Same dispatch, Task 3. **L3's WITHHELD DOCUMENTS ARE DERIVED AND PRINTED, AUTHORED INTO NOTHING**: `tools/audit/gen_l2_withheld_docu"
   },
   {
    "line_at_base": 14,
-   "characters": 399,
-   "sha256": "d9e9d5f3910d37d55ebb85c5a5f3f7a1a046d731b8e0fe302b1ac0ebc7831bef",
+   "characters": 464,
+   "sha256": "222f4ad5f3774b4b4eeada6ccea46cf61c2d7d94bbed79f3202d881bf3bd19eb",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-15 (CC — Same dispatch, Task 0. **THIS DISPATCH, HANDOFF ENTRY 401 AND THE 2026-10-15 L3 LISTS RULING RECORD ARE LANDED**, as they stood, the"
+   "opening": "*2026-10-15 (CC — Same dispatch, Task 0. **THIS DISPATCH, HANDOFF ENTRIES 402 TO 409, THE FOUR 2026-10-15 L3 RULING RECORDS, THE CUT-LIST DOCUMENT AND"
   }
  ],
  "reconciliation": {
