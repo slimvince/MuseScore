@@ -24833,3 +24833,42 @@ appeared in the working tree during the run.
 
 *Provenance: CC, 2026-10-17, appended in the one further commit after the close commit
 `6b5d20f0763d9d3d61f7f0bc71e642f0004fa153`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 BLIND DERIVATION COMMITTED: THE DERIVATION, THE RELEASED BRIEF AND ITS ENTRIES IN GIT — NO COMPARISON, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_l3_derivation_commit_2026_10_17.md`, pinned at Task 0 to blob
+`8c30a0cee131a5bd73bf60d6291db1b53792d8f2`: **Task 0** proved the released brief unchanged since its release, checked
+the derivation at its size and its three lines, and landed this dispatch, `cowork_blind_derivation_l3_2026_10_17.md`,
+the released `cowork_blind_session_brief_l3.md` and handoff entries 419 and 420 as they stood (`96a24b01…`); **Task 1**
+closed. No task stopped. **NO COMPARISON OF THE DERIVATION WITH ANYTHING WAS MADE, NO SESSION WAS BOOTED, NO SCORE WAS
+STAGED, NO PACK WAS RENDERED, NO FILE TASK 0 COMMITTED WAS EDITED, NO RULING WAS TAKEN, NO QUESTION OR RECOMMENDATION
+WAS PUT TO THE USER, NO `D-NNN` WAS ALLOCATED, NO OPEN-ITEMS ROW WAS TOUCHED, AND NOTHING ANY LAYER COMPUTES CHANGED.**
+
+**Everything this section would restate is in the report**, `records/cc/reports/cc_report_l3_derivation_commit_2026_10_17.md`,
+and is pointed at rather than copied (#6): **Task 0 acts (2) and (3), whole, at its head** under *THE BRIEF AND THE
+DERIVATION, AS LANDED* — both sizes, the brief's banner line, its changed lines against `9fb7601f…` with the
+in-the-banner verdict, the derivation's three line checks, entry 419's size and entry 420's size; the commits (§1), the
+guard states (§2), A1 to A3 and E0 to E1 graded (§3), the forward bound's aiming, `--apply` and `--check` with the
+entries moved by name (§4), the regenerations (§5), the declared departures (§6), the scripts whole (§7), the
+observations (§8), what the batch did not do (§9), the plan's tell (§10) and the self-check (§11).
+
+### What needs the writing side, named rather than resolved
+
+1. **The brief's changed lines** (report head): every one lies in the banner block at the head of the file — the
+   RELEASED banner and the preserved former banner. Reported, not a STOP; the writing side reads it.
+2. **Two declared departures worth reading** (report §6 items 2 and 3): the brief was opened at its first 26 lines to
+   place the changed lines the verdict is about; and two shell commands the guard denied did not run, the last-bytes
+   check being taken with the file tools and re-measured at the committed objects instead.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects; then the commissioning of
+  the L3 comparison, as the L2 precedent orders. The five questions the derivation marks for the user are not put
+  before that.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-17, at boot tip `01f965ccd3f9e9dfa4fbeaa773ad2edbaeb00d54`, under
+`cc_instruction_l3_derivation_commit_2026_10_17.md`, after the dispatch's ordered first reads. Every commit identifier
+here was read from the commit's own object and `origin/master` at its ref file after each push; the guard verdicts are
+this batch's own runs.*
