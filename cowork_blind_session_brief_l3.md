@@ -1,12 +1,26 @@
 # BRIEF for the blind deriving session — the L3 subject (the detail-specification phase's third derivation)
 
-> **STATUS: DRAFT — WRITTEN 2026-10-17, NOT YET RELEASED.** It is released by the Cowork writing side once
-> (i) its check at its sources has been run in a turn of its own and its corrections made, and (ii) it has
-> been landed in git at the next Claude Code dispatch's Task 0. The L3 counterparts of the two conditions
-> the L2 brief waited on are met on disk: the two cut input-contract files exist at their paths (§9), and
-> the user ruled their cut list (Ruling 1 of the 2026-10-15 cut-lists record). **Whether those two files
-> are committed in git was not checked by the writing side.** **The user opens the deriving session when the user chooses**; the writing side writes
+> **STATUS: RELEASED — 2026-10-17, by the Cowork writing side.** Both release conditions are met.
+> (i) Its check at its sources ran in a turn of its own and its corrections were made (§9.1). (ii) It was
+> landed in git at Task 0 of `records/cc/instructions/cc_instruction_l3_brief_landing_2026_10_17.md`, commit
+> `9fb7601f4da4e28b1070bbaa0c3b9de007b8ddcc`. That batch's report
+> (`records/cc/reports/cc_report_l3_brief_landing_2026_10_17.md`, the table at its head) records that the two
+> cut input-contract files and the ten pack files are in that commit, and that the three exemplar sources §9
+> names are not, because git ignores the whole `tools/dcml/` folder by design (`.gitignore`, line 24) — all
+> three are present on disk. The writing side read that report whole and did not re-run the check itself.
+> The L3 counterparts of the two conditions the L2 brief waited on are met: the two cut input-contract files
+> exist at their paths and are committed (§9), and the user ruled their cut list (Ruling 1 of the 2026-10-15
+> cut-lists record). **The user opens the deriving session when the user chooses**; the writing side writes
 > instructions to disk and never starts the sessions that run them.
+>
+> *(FORMER BANNER, PRESERVED (#12): "**STATUS: DRAFT — WRITTEN 2026-10-17, NOT YET RELEASED.** It is
+> released by the Cowork writing side once (i) its check at its sources has been run in a turn of its own and
+> its corrections made, and (ii) it has been landed in git at the next Claude Code dispatch's Task 0. The L3
+> counterparts of the two conditions the L2 brief waited on are met on disk: the two cut input-contract files
+> exist at their paths (§9), and the user ruled their cut list (Ruling 1 of the 2026-10-15 cut-lists
+> record). **Whether those two files are committed in git was not checked by the writing side.** **The user
+> opens the deriving session when the user chooses**; the writing side writes instructions to disk and never
+> starts the sessions that run them.")*
 >
 > **Who reads this file, and when.** The deriving session reads it FIRST and ALONE, in the first message
 > it is sent (§3a). Everything else the session may read arrives later and is named in §3. **The
