@@ -233,7 +233,7 @@
     ".mscx": 100,
     "repeat": 98,
     "eligible": 96,
-    "release": 74,
+    "release": 75,
     "change-point": 72,
     "key signature": 72,
     "leading tone": 66,
@@ -3317,14 +3317,20 @@
     "is_a_named_member": false,
     "in_the_specification_document_set": false,
     "admitting_hit_count": 0,
-    "recorded_hit_count": 1,
+    "recorded_hit_count": 2,
     "admitting_hits": [],
     "recorded_hits": [
      {
       "line_number": 8,
       "term": "release",
       "tier": "recorded",
-      "line": "*Last updated: 2026-10-17 (CC — `records/cc/instructions/cc_instruction_l3_brief_landing_2026_10_17.md`, Task 2, the close. **★★ L3's BRIEF IS IN GIT AND THE STALE `VERDICTS[\"l3\"]` COMMENT IS CORRECTED — NO SESSION, NO ALGORITHM CHANGED.** ★ The brief `cowork_blind_session_brief_l3.md`, handoff entries 416, 417 and 418, the 2026-10-17 L3 lists ruling record and this dispatch are landed as they stood, the dispatch pinned to its blob and proven unmoved before staging, with the evidence-pin membership artifact regenerated for the one newly present ruling record. ★ **What the deriving session will be given, checked at the Task 0 commit:** the ten files of `tools/audit/derivation_boot_pack/l3/` and the two input-contract copies under `tools/audit/derivation_exemplars/l3/` are committed; the brief's three exemplar sources are NOT in git — they are ignored by design (`.gitignore`, `/tools/dcml/`) and present on disk, and nothing was landed for them. ★ The stale opening comment of `VERDICTS[\"l3\"]` in `tools/audit/gen_derivation_boot_pack.py` is corrected on the shape `VERDICTS[\"l2\"]`'s comment carries, its former wording preserved (#12), under §3 of `records/cowork/rulings/cowork_rulings_2026_10_17_l3_lists_sitting.md`; **the edit moved no output** — the generator's build dumped before and after is byte-identical, its `--check` output identical and green, and the manifest and every pack file unchanged at the objects. **The brief's banner is untouched (DRAFT — NOT YET RELEASED); setting it to RELEASED is the writing side's act after it checks this return.** No session booted, no score copied or staged, no pack rendered, no ruling taken and no question or recommendation put to the user, no open-items row created, flipped or discarded, no decisions-register entry and no `D-NNN` allocated; no `src/` file, build, test, golden, corpus of scores or measurement of the analysis. Per the OI-222 pointer convention this entry is a **POINTER** — the whole of it is `records/cc/reports/cc_report_l3_brief_landing_2026_10_17.md` — and no count is restated here (**D-431**).)*"
+      "line": "*Last updated: 2026-10-17 (CC — `records/cc/instructions/cc_instruction_l3_derivation_commit_2026_10_17.md`, Task 1, the close. **★★ THE BLIND DERIVATION OF L3 IS IN GIT AS IT STANDS — NOT COMPARED, NOT RATIFIED — AND THE RELEASED L3 BRIEF IS IN GIT, PROVED UNCHANGED SINCE ITS RELEASE; NO ALGORITHM CHANGED.** ★ `cowork_blind_derivation_l3_2026_10_17.md` is committed exactly as the deriving session delivered it, its DRAFT banner intact; before staging, its size, its first line, its single DRAFT banner line and its last line were checked against what the writing side recorded, and nothing in it was read beyond those checks. ★ `cowork_blind_session_brief_l3.md` is committed with its RELEASED banner, after its size and its banner line were proved equal to what the writing side recorded at release; every line it changed since its DRAFT commit lies in the banner block at its head. ★ Handoff entries 419 and 420 and this dispatch are committed as they stood, the dispatch pinned to its blob and proved unmoved before staging. **No comparison of the derivation with anything was made**; no session booted, no score copied or staged, no pack rendered, no file Task 0 committed was edited, no ruling taken and no question or recommendation put to the user, no open-items row created, flipped or discarded, no decisions-register entry and no `D-NNN` allocated; no `src/` file, build, test, golden, corpus of scores or measurement of the analysis. Per the OI-222 pointer convention this entry is a **POINTER** — the whole of it is `records/cc/reports/cc_report_l3_derivation_commit_2026_10_17.md` — and no count is restated here (**D-431**).)*"
+     },
+     {
+      "line_number": 10,
+      "term": "release",
+      "tier": "recorded",
+      "line": "*2026-10-17 (CC — Same dispatch, Task 0. **THIS DISPATCH, THE BLIND DERIVATION OF L3, THE RELEASED L3 BRIEF AND HANDOFF ENTRIES 419 AND 420 ARE LANDED**, as they stood: the brief proved unchanged since its release, the derivation checked at its size and its three lines, and the dispatch pinned to its blob and proved unmoved, each before staging. **POINTER** — `records/cc/reports/cc_report_l3_derivation_commit_2026_10_17.md` (**D-431**).)*"
      }
     ]
    },

@@ -24872,3 +24872,35 @@ observations (§8), what the batch did not do (§9), the plan's tell (§10) and 
 `cc_instruction_l3_derivation_commit_2026_10_17.md`, after the dispatch's ordered first reads. Every commit identifier
 here was read from the commit's own object and `origin/master` at its ref file after each push; the guard verdicts are
 this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `ca9c9c428d718c2ef5570718ecc1f8db781403a4` left, appended in the one further commit
+
+**A fresh full guard run, written, after the close commit and before this one: see `tools/audit/guard_state.json` →
+`summary`, which this commit carries. E1 — MET, AS A2 PREDICTED: the failing set is exactly the thirteen of the premise
+ledger**, `gen_evidence_pin_membership.py --check` and `gen_session_start_read_size.py --check` green. **The A2
+exceptions, handled as A2 says:** a first writing run at the close's tree measured
+`gen_l0_l1_outgoing_population.py --check` and `gen_defense_share.py --check` red, both caused by this batch's
+`STATUS.md` entries. Both were regenerated and compared against the close commit's blobs by explicit hash
+(`git diff ca9c9c42… -- <artifact>`): the defense share moved only the whole-read denominator and the share derived from
+it; the outgoing population moved only its `release` hit count and `STATUS.md`'s RECORDED-tier per-file record — its
+line-8 hit now carries this batch's close entry, and it gained one hit at line 10, this batch's Task 0 entry — with no
+admitting hit, the word being *release* in both entries. **No member moved in either**, and the population and residue
+lists are unchanged. The guard was then re-run in writing form, giving the state this commit carries.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_withheld_family_reading.py']"* — the same message as the
+run before the close, unchanged.
+
+**A3, verified at the objects** (`git diff --name-status 01f965cc… ca9c9c42…`): twelve paths — the five records of
+Task 0, and the close's seven (`STATUS.md`, `STATUS_ARCHIVE.md`, the re-aimed forward-bound tool and its artifact, the
+read-size artifact, the report, and this file, lines added only). The landed records are unchanged since Task 0
+(`git diff --stat 96a24b01… ca9c9c42…` over them is empty). **Nothing under `tools/audit/derivation_boot_pack/` or
+`tools/audit/derivation_exemplars/`, not `tools/audit/derivation_boot_pack.json`, no other tool source, no ruling
+record, no other handoff entry, not `FRAMEWORK.md`, no rendered decisions-register file and no governing document other
+than `STATUS.md` and `STATUS_ARCHIVE.md` differs from the tip.** This commit adds only the guard run's artifact and the
+two A2 regenerations, plus this part. No further handoff entry or ruling record appeared in the working tree during the
+run.
+
+*Provenance: CC, 2026-10-17, appended in the one further commit after the close commit
+`ca9c9c428d718c2ef5570718ecc1f8db781403a4`; the verdicts are this run's own output, read with the file tools.*
