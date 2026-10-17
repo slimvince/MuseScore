@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l3_pack_build_second_half_2026_10_16.md, Task 5",
+ "dispatch": "cc_instruction_l3_pack_build_second_half_resumed_2026_10_16.md, Task 5",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -543,46 +543,36 @@
    "base_commit": "c60fb31d50ad371942ae8276cf05055b89cb2c4b",
    "the_then_previous_batch": "cc_instruction_l3_pack_build_first_half_2026_10_15.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_pack_build_second_half_resumed_2026_10_16.md, Task 5",
+   "base_commit": "ca55115f81ee99cc057f04a75747f51a93a43073",
+   "the_then_previous_batch": "cc_instruction_l3_pack_build_second_half_2026_10_16.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "c60fb31d50ad371942ae8276cf05055b89cb2c4b",
- "the_then_previous_batch": "cc_instruction_l3_pack_build_first_half_2026_10_15.md",
+ "base_commit": "ca55115f81ee99cc057f04a75747f51a93a43073",
+ "the_then_previous_batch": "cc_instruction_l3_pack_build_second_half_2026_10_16.md",
  "the_kind_of_move": "ordinary",
- "entries_moved": 4,
- "characters_moved": 4099,
+ "entries_moved": 2,
+ "characters_moved": 2674,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2607,
-   "sha256": "fd8244bfabf7896f070a915d17ac536c0ffc0b2ed011673c4ad55940397f779b",
+   "characters": 2217,
+   "sha256": "44610cfada2365b99dd53497613ea59438bbe236d873484516f08880195a13a8",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-15 (CC — `records/cc/instructions/cc_instruction_l3_pack_build_first_half_2026_10_15.md`, Task 5, the close. **★★ L3's WITHHELD DOCUMENTS ARE"
+   "opening": "*2026-10-16 (CC — `records/cc/instructions/cc_instruction_l3_pack_build_second_half_2026_10_16.md`, Task 5, the close. **★★ TASK 1 STOPPED AT ITS OWN "
   },
   {
    "line_at_base": 10,
-   "characters": 506,
-   "sha256": "f97f792b5ac51456519ce8fcc01a32182cebc98ae1e726f416cf659b4506e4f8",
+   "characters": 457,
+   "sha256": "58542638508c95d9305c16fccf106e64f2f4639acbe4862138e16a10b9603dde",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-15 (CC — Same dispatch, Task 4. **THE TWO INPUT-CONTRACT COPIES ARE WRITTEN** under `tools/audit/derivation_exemplars/l3/` by a script kept o"
-  },
-  {
-   "line_at_base": 12,
-   "characters": 522,
-   "sha256": "9da2c0e389ff07bad887c074ccbf4fbc517d1ea4548177d71335923b1b67e355",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-15 (CC — Same dispatch, Task 3. **L3's WITHHELD DOCUMENTS ARE DERIVED AND PRINTED, AUTHORED INTO NOTHING**: `tools/audit/gen_l2_withheld_docu"
-  },
-  {
-   "line_at_base": 14,
-   "characters": 464,
-   "sha256": "222f4ad5f3774b4b4eeada6ccea46cf61c2d7d94bbed79f3202d881bf3bd19eb",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-15 (CC — Same dispatch, Task 0. **THIS DISPATCH, HANDOFF ENTRIES 402 TO 409, THE FOUR 2026-10-15 L3 RULING RECORDS, THE CUT-LIST DOCUMENT AND"
+   "opening": "*2026-10-16 (CC — Same dispatch, Task 0. **THIS DISPATCH, HANDOFF ENTRIES 410 TO 413, THE CONFIRMATION AND FREEZE-DERIVATION RULING RECORDS AND THE L3"
   }
  ],
  "reconciliation": {

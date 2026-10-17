@@ -24678,3 +24678,51 @@ attribution, is therefore true as written.
 
 *Provenance: CC, 2026-10-16, appended in the one further commit after the close commit
 `a2a9d128446cf4b05a4828abd4ef498e204370f9`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 PACK BUILD, SECOND HALF, RESUMED: L2 FROZEN, L3's PACK RENDERED — THE LISTS GO TO THE USER BEFORE ANY BOOT; NO SESSION, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_l3_pack_build_second_half_resumed_2026_10_16.md`, pinned at Task 0
+to blob `4e8629290f9c6ff3bcfd7349397b44e792d20c91`: **Task 0** landed the dispatch, handoff entries 414 and 415 and the
+2026-10-16 freeze leak-list ruling record, with the evidence-pin membership artifact regenerated for the one newly present
+ruling record (`c1b68098…`); **Task 1** keyed the pre-scoping-rulings test on its own authored list, made a FROZEN
+subject's extras leak scan read the files its pack directory holds (Ruling 1 of
+`records/cowork/rulings/cowork_rulings_2026_10_16_l2_freeze_leak_list_sitting.md`), proved the repair inert, and froze
+`l2` — **the D-657 comparison against the committed manifest at an explicit hash came back EMPTY, `l2`'s extras leak list
+equal to the committed one entry for entry: the prediction the ruling record named HELD** (`ebdff3bb…`); **Task 2**
+wrote `VERDICT_DATE["l3"]` and the criterion group bullet (`c150443e…`); **Tasks 3 and 4** authored `WITHHELD["l3"]`
+and `EXTRAS["l3"]`, checked them against their authority, and RENDERED L3's pack, the four frozen subjects proved
+unmoved and `--check` green (`ca55115f…`); **Task 5** closed. **NO SESSION WAS BOOTED, NO BRIEF WAS WRITTEN, NO SCORE WAS
+STAGED, NO LIST WAS ACTED ON, NO RULING WAS TAKEN, NO QUESTION OR RECOMMENDATION WAS PUT TO THE USER, AND NOTHING ANY
+LAYER COMPUTES CHANGED.**
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_pack_build_second_half_resumed_2026_10_16.md`, and is pointed at rather than copied
+(#6): **the lists for the user, whole, at its head** under *THE LISTS FOR THE USER — BEFORE ANY SESSION BOOTS*; the
+commit table and the task commits' whole footprint (§1), the guard states (§2), A1 to A3 and E0 to E5 graded (§3), the
+ten digests (§4), every task's acts and comparison outputs (§5), every script whole (§6), the declared departures (§7),
+the observations (§8), what the batch did not do (§9), the plan's tell (§10) and the self-check (§11).
+
+### What needs the writing side, named rather than resolved
+
+1. **THE LISTS OF TASK 4(e)** — the derived cross-reference additions with the **Ruling 84 sub-list, which is NOT
+   empty** (one addition whose identity the authored verdicts grade OUT), the leaks of members (5) and (6), the extras'
+   leak lines, member (8)'s title lines and the search of member (2). At the report's head; decided by nobody.
+2. **A STALE SENTENCE THIS BATCH'S OWN ACT CREATED** (report §8 item 2): the first block of `VERDICTS["l3"]`'s opening
+   comment still says `WITHHELD` carries no `l3` entry and nothing reads the table — false since Task 3. **Not corrected
+   and not rowed**, because the bars hold the generator byte-unchanged outside the quoted edits and forbid an open-items
+   row; the precedent shape for its correction is `VERDICTS["l2"]`'s equivalent comment. Documentation of a tool only.
+3. **One declared departure worth reading** (report §7 item 2): `EXTRAS["l3"]` was inserted by a scratch script that
+   copies L2's twelve parts from the generator's own text, not by the file-editing tool; Task 3(e) proved it against
+   the authority.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects, then the lists put to the
+  user; the brief and the boot come only after his rulings on them.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-17, at boot tip `5324b94388bdda6c242ff937ace781cbe62d9c2d`, under
+`cc_instruction_l3_pack_build_second_half_resumed_2026_10_16.md`, after the dispatch's ordered first reads. Every commit
+identifier here was read from the commit's own object and `origin/master` at its ref file after each push; the guard
+verdicts are this batch's own runs.*
