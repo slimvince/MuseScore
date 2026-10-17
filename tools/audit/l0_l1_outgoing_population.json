@@ -233,7 +233,7 @@
     ".mscx": 100,
     "repeat": 98,
     "eligible": 96,
-    "release": 75,
+    "release": 73,
     "change-point": 72,
     "key signature": 72,
     "leading tone": 66,
@@ -3308,29 +3308,6 @@
       "term": "slice",
       "tier": "recorded",
       "line": "| OI-73 | Membership verdict dies at the L4→L5 boundary | chordTonePcs/nonChordTonePcs are never copied onto FunctionSlice. | siloed facts / E4 surface | OPEN — E4 surface design | [detail](open_items/OI-73.md) |"
-     }
-    ]
-   },
-   "STATUS.md": {
-    "path": "STATUS.md",
-    "inventory_class": "governing-documents",
-    "is_a_named_member": false,
-    "in_the_specification_document_set": false,
-    "admitting_hit_count": 0,
-    "recorded_hit_count": 2,
-    "admitting_hits": [],
-    "recorded_hits": [
-     {
-      "line_number": 8,
-      "term": "release",
-      "tier": "recorded",
-      "line": "*Last updated: 2026-10-17 (CC — `records/cc/instructions/cc_instruction_l3_derivation_commit_2026_10_17.md`, Task 1, the close. **★★ THE BLIND DERIVATION OF L3 IS IN GIT AS IT STANDS — NOT COMPARED, NOT RATIFIED — AND THE RELEASED L3 BRIEF IS IN GIT, PROVED UNCHANGED SINCE ITS RELEASE; NO ALGORITHM CHANGED.** ★ `cowork_blind_derivation_l3_2026_10_17.md` is committed exactly as the deriving session delivered it, its DRAFT banner intact; before staging, its size, its first line, its single DRAFT banner line and its last line were checked against what the writing side recorded, and nothing in it was read beyond those checks. ★ `cowork_blind_session_brief_l3.md` is committed with its RELEASED banner, after its size and its banner line were proved equal to what the writing side recorded at release; every line it changed since its DRAFT commit lies in the banner block at its head. ★ Handoff entries 419 and 420 and this dispatch are committed as they stood, the dispatch pinned to its blob and proved unmoved before staging. **No comparison of the derivation with anything was made**; no session booted, no score copied or staged, no pack rendered, no file Task 0 committed was edited, no ruling taken and no question or recommendation put to the user, no open-items row created, flipped or discarded, no decisions-register entry and no `D-NNN` allocated; no `src/` file, build, test, golden, corpus of scores or measurement of the analysis. Per the OI-222 pointer convention this entry is a **POINTER** — the whole of it is `records/cc/reports/cc_report_l3_derivation_commit_2026_10_17.md` — and no count is restated here (**D-431**).)*"
-     },
-     {
-      "line_number": 10,
-      "term": "release",
-      "tier": "recorded",
-      "line": "*2026-10-17 (CC — Same dispatch, Task 0. **THIS DISPATCH, THE BLIND DERIVATION OF L3, THE RELEASED L3 BRIEF AND HANDOFF ENTRIES 419 AND 420 ARE LANDED**, as they stood: the brief proved unchanged since its release, the derivation checked at its size and its three lines, and the dispatch pinned to its blob and proved unmoved, each before staging. **POINTER** — `records/cc/reports/cc_report_l3_derivation_commit_2026_10_17.md` (**D-431**).)*"
      }
     ]
    },

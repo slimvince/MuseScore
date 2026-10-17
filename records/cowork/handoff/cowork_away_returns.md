@@ -24904,3 +24904,49 @@ run.
 
 *Provenance: CC, 2026-10-17, appended in the one further commit after the close commit
 `ca9c9c428d718c2ef5570718ecc1f8db781403a4`; the verdicts are this run's own output, read with the file tools.*
+
+## THE DRAFT L3 KEYWORD LIST COUNTED: ONE READ-ONLY ARTIFACT, THE RULING RECORD AND ITS ENTRIES IN GIT — NO POPULATION, NO RULING, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_l3_keyword_count_2026_10_17.md`, pinned at Task 0 to blob
+`208961216e5b912f0bb37464c459f38e2c1017e8`: **Task 0** checked the ruling record at its size, its first line and its
+last bytes, entries 421 and 422 at their sizes and last bytes, and landed this dispatch, the 2026-10-17 L3
+outgoing-population ruling record and handoff entries 421 and 422 as they stood (`102e701c…`); **Task 1** counted the
+draft L3 keyword list read-only, with a scratch script outside the repository — proved identical to the dispatch's own
+text — that imports the L0/L1 population tool's matcher and loaders, and committed its one artifact,
+`tools/audit/l3_keyword_count_measurement.json`, alone, after the dispatch's four checks over it held (`9c4e3296…`);
+**Task 2** closed. No task stopped. **THE DRAFTED WORDS ARE THE WRITING SIDE'S MEASUREMENT INPUTS AND NOT A RULING. NO
+OUTGOING POPULATION WAS DERIVED, NOTHING WAS TABULATED, COMPARED, DISPOSITIONED OR GRADED, NO WORD'S SENSE WAS JUDGED
+AND NO POSITION WAS TAKEN ON WHICH WORDS BELONG IN THE LIST; THE BLIND DERIVATION AND THE L3 BRIEF WERE NOT OPENED; NO
+SESSION WAS BOOTED, NO SCORE WAS STAGED, NO PACK WAS RENDERED; NO RULING WAS TAKEN AND NO QUESTION OR RECOMMENDATION WAS
+PUT TO THE USER; NO `D-NNN` WAS ALLOCATED, NO OPEN-ITEMS ROW WAS TOUCHED, AND NOTHING ANY LAYER COMPUTES CHANGED.**
+
+**Everything this section would restate is in the report**, `records/cc/reports/cc_report_l3_keyword_count_2026_10_17.md`,
+and is pointed at rather than copied (#6): **the count, as taken, whole, at its head** under *THE COUNT, AS TAKEN* —
+the measuring script, its printed output with its exit code, the checks script and its output, the four checks graded,
+and where in the artifact the per-word counts and what each counted-in-context word adds beyond the core words are
+read (`per_term`; `what_each_COUNTED_IN_CONTEXT_word_adds_beyond_CORE`); Task 0's sizes, first-line check and the
+commits (§1), the guard states (§2), A1 to A3 and E0 to E2 graded (§3), the forward bound's aiming, `--apply` and
+`--check` with the entries moved by name (§4), the regenerations and the members they changed (§5), the declared
+departures (§6), the scripts whole (§7), the observations (§8), what the batch did not do (§9), the plan's tell (§10)
+and the self-check (§11).
+
+### What needs the writing side, named rather than resolved
+
+1. **The count itself** — the artifact named above, read at its own fields; no per-word value is restated here or in
+   the report (D-431).
+2. **Two declared departures worth reading** (report §6 items 2 and 3): the calendar date changed during the run, so
+   this batch's `STATUS.md` entries and the forward bound's `ACT_DATE` carry 2026-10-18 while the dispatch is dated
+   2026-10-17; and one read-only check beyond the dispatch's own proved the measuring script identical to the
+   dispatch's text before it ran.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects; then the L3 keyword list's
+  membership, put to the user as its own decision on the counted facts; then the population dispatch.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-17 to 2026-10-18, at boot tip `79499c21ec70bcf5e0a817050ade5bc1268d6a51`, under
+`cc_instruction_l3_keyword_count_2026_10_17.md`, after the dispatch's ordered first reads. Every commit identifier here
+was read from the commit's own object and `origin/master` at its ref file after each push; the guard verdicts are this
+batch's own runs.*
