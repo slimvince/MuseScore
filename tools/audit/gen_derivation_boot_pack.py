@@ -169,7 +169,9 @@ THE STOPS, so this cannot silently stop being a derivation:
      build STOPS it; a freeze record missing its finding, its date or its reason STOPS it, on the
      same demand every other authored input here answers; and a FROZEN subject whose directory
      does not hold a file this tool renders for it STOPS it, because the manifest cannot describe
-     a file that is not there.
+     a file that is not there;
+ 13. an entry of `RENDERED_BEFORE_THE_SCOPING_RULINGS` naming a subject that is not FROZEN, or
+     lacking its finding, its date or its reason, STOPS it (the 2026-10-15 derivation).
 
 THE FOUR RESIDUALS THE EXTENSION CAUSED ARE REPAIRED (user, Ruling 17(c) of
 `cowork_rulings_2026_08_31_decision_surface_sitting.md`).  When the extras dimension landed,
@@ -434,6 +436,90 @@ FROZEN: dict[str, dict] = {
     # DELIBERATELY, and its absence is what makes it LIVE: its deriving session has not run, so
     # its pack is still an input and must stay current with its sources."  True when written, and
     # made false by that session's run.
+    "l2": {
+        "finding": ("Its deriving session has RUN (Ruling 1 of "
+                    "`records/cowork/rulings/cowork_rulings_2026_10_15_l3_boot_list_sitting.md`, "
+                    "noted), and the specification it produced, "
+                    "`cowork_derived_specification_l2_2026_10_10.md`, was ratified face by face on "
+                    "2026-10-13 and 2026-10-14. The pack is STALE against today's sources — its "
+                    "rendered charter member lacks the 2026-10-14 amendment to L2's block of "
+                    "`FRAMEWORK.md` §5 — so the digests recorded here are those of the files on "
+                    "disk, proved equal to their committed blobs: what the session was given, and "
+                    "not a re-render."),
+        "date": "2026-10-15",
+        "reason": ("A spent subject's pack is the record of what its session was given rather "
+                   "than an input to be kept current (Ruling 17(a); D-646). Left live it would "
+                   "re-render the charter member with an amendment ruled after the session ran, "
+                   "and so back-date into a completed derivation's record a text its session never "
+                   "read (#12); and L3's pack shares the charter member with it "
+                   "(`CHARTER_MEMBER_7`), so it must be frozen before L3's is built (the boot-list "
+                   "record's Ruling 1, noted). Frozen at the blobs it carries, with the hash STOP."),
+        "digests": {
+            "00_READ_THIS_FIRST.md": "fd27dee7a4b6bca3454d12c659aa34a96cd1abc1",
+            "01_the_phase_definitions.md": "518b1e50d60af2b4e2ddcd8978623832eb071899",
+            "02_the_guiding_principles_and_the_conventions.md":
+                "41288e7375faca980c566ca0367fca1c7de760e8",
+            "03_the_writing_standards.md": "a41983018cb27ed4a47d24ff8bb9e95181ed0572",
+            "04_the_dispatch_protocol.md": "72b8a1fb58ed50a2fbdc65a08ff4ec68e863e9da",
+            "05_the_ratified_design_intent.md": "6ae0b1d8c9a830cfc3f2021f37460f05fad23547",
+            "06_the_defect_type_catalog.md": "1dec7621dc48d89242cacaf79b3048cd965d6a19",
+            "07_the_charter_the_layers_and_the_decisions.md":
+                "5796c2d1bda0520b067ccde300e25336b9606884",
+            "08_the_fifty_six_research_extracts.md": "69404bace220b25589e78edc7c89c513ae5a0e2e",
+            "09_the_empirical_findings_ledger.md": "925c458e6a77b728bc9815ac75fb8c8a6c1bc0f6",
+        },
+    },
+    # `l2` IS FROZEN ABOVE, ITS DERIVING SESSION HAVING RUN; its own ground is in its own entry and is
+    # not restated here (#6).  Frozen by the resumed second half of L3's pack build, after the test for
+    # a pack rendered before the scoping rulings was keyed on its own authored list below, and with its
+    # extras leak list scanned from these files on disk (`build_subject`; Ruling 1 of
+    # `cowork_rulings_2026_10_16_l2_freeze_leak_list_sitting.md`).
+}
+
+# ══════════════════════════════════════════════════════════════════════════════════════════════
+# AUTHORED — WHICH PACKS WERE RENDERED BEFORE THE 2026-09-21 AND 2026-09-27 SCOPING RULINGS.
+#
+# Two rulings changed how a pack is built: limb B of Ruling 1 of
+# `records/cowork/rulings/cowork_rulings_2026_09_21_l2_extracts_member_cutting_sitting.md` (the leak
+# check over the rendered extras) and Ruling 1 of
+# `records/cowork/rulings/cowork_rulings_2026_09_27_l2_leak_list_sitting.md` (the cross-reference
+# rule searches `title`, `verbatim` and `plain` only).  A pack rendered BEFORE them keeps, in its
+# manifest record, the shape it was built under — the five-field search and no limb-B list — so
+# that the record of what its session was given does not move (the 2026-09-27 ruling's own scope
+# note; D-646).  Until 2026-10-15 this tool tested that as "is in `FROZEN`", which was exact while
+# the three packs frozen below were the only packs rendered before those rulings.  `l2`'s pack was
+# rendered UNDER both rulings and is frozen too, so the two tests come apart, and the test is keyed
+# here instead (the derivation recorded at
+# `records/cowork/rulings/cowork_rulings_2026_10_15_l2_freeze_derivation_sitting.md`, §2).  Every
+# subject named here must be in `FROZEN` — a pack cannot be rendered after its subject is frozen,
+# `write_all` writing nothing into a frozen directory — and each entry carries its finding, its
+# date and its reason, or the tool STOPS.
+# ══════════════════════════════════════════════════════════════════════════════════════════════
+RENDERED_BEFORE_THE_SCOPING_RULINGS: dict[str, dict] = {
+    "harmony-boundary": {
+        "finding": ("Frozen on 2026-08-31 (its `FROZEN` entry), so its pack was rendered before the "
+                    "2026-09-21 and 2026-09-27 rulings."),
+        "date": "2026-10-15",
+        "reason": ("Its manifest record keeps the shape its pack was built under, so that the record "
+                   "of what its session was given does not move (Ruling 1 of "
+                   "`cowork_rulings_2026_09_27_l2_leak_list_sitting.md`, its scope note; D-646)."),
+    },
+    "scoring-model": {
+        "finding": ("Frozen on 2026-08-31 (its `FROZEN` entry), so its pack was rendered before the "
+                    "2026-09-21 and 2026-09-27 rulings."),
+        "date": "2026-10-15",
+        "reason": ("Its manifest record keeps the shape its pack was built under, so that the record "
+                   "of what its session was given does not move (Ruling 1 of "
+                   "`cowork_rulings_2026_09_27_l2_leak_list_sitting.md`, its scope note; D-646)."),
+    },
+    "l0-l1": {
+        "finding": ("Frozen on 2026-09-04 (its `FROZEN` entry), so its pack was rendered before the "
+                    "2026-09-21 and 2026-09-27 rulings."),
+        "date": "2026-10-15",
+        "reason": ("Its manifest record keeps the shape its pack was built under, so that the record "
+                   "of what its session was given does not move (Ruling 1 of "
+                   "`cowork_rulings_2026_09_27_l2_leak_list_sitting.md`, its scope note; D-646)."),
+    },
 }
 
 # The header row of `DEFECT_TYPES.md`'s catalog table, matched exactly once.  Amendment (a3)
@@ -7246,10 +7332,16 @@ def criterion_block(subject: str) -> tuple[str, dict]:
 
 # ── the fields the cross-reference rule searches ───────────────────────────────────────────────
 # Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_09_27_l2_leak_list_sitting.md`: for every
-# subject that is NOT FROZEN the rule searches only the fields member (5) renders besides the
-# identifier — `title`, `verbatim`, `plain`.  A FROZEN subject keeps the five-field search its pack
-# was built under, so that its manifest record — the record of what its session was given — does not
-# move; the same scoping as limb B's `extras_leaks` in `build_subject` (D-657).
+# subject whose pack is built under that ruling the rule searches only the fields member (5) renders
+# besides the identifier — `title`, `verbatim`, `plain`.  A subject named in
+# `RENDERED_BEFORE_THE_SCOPING_RULINGS` keeps the five-field search its pack was built under, so that
+# its manifest record — the record of what its session was given — does not move; the same scoping
+# as limb B's `extras_leaks` in `build_subject` (D-657).  ★ CORRECTED by the second half of L3's
+# pack build, under the 2026-10-15 derivation at
+# `records/cowork/rulings/cowork_rulings_2026_10_15_l2_freeze_derivation_sitting.md`; FORMER
+# WORDING, PRESERVED (#12): "for every subject that is NOT FROZEN the rule searches only the fields
+# member (5) renders besides the identifier — `title`, `verbatim`, `plain`.  A FROZEN subject keeps
+# the five-field search its pack was built under".
 XREF_FIELDS_FROZEN = ("title", "verbatim", "plain", "rationale", "status_source")
 XREF_FIELDS = ("title", "verbatim", "plain")
 
@@ -7599,7 +7691,9 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
 
     # ── the derived cross-reference additions ────────────────────────────────────────────────
     adds = cross_reference_additions(authored_ids, docs, design_intent, backbone,
-                                     XREF_FIELDS_FROZEN if subject in FROZEN else XREF_FIELDS)
+                                     XREF_FIELDS_FROZEN
+                                     if subject in RENDERED_BEFORE_THE_SCOPING_RULINGS
+                                     else XREF_FIELDS)
     withheld_ids = authored_ids | {a["id"] for a in adds}
 
     # ── member (5): the cut, then the leak check ─────────────────────────────────────────────
@@ -7689,15 +7783,37 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
     # rendered text of every extra is scanned, line by line, for the same strings `leaks_in` looks
     # for in members (5) and (6).  A hit is LISTED for the user and is not a STOP: the check exists
     # to measure what the authored filters missed, and a quoted file cannot be struck from without
-    # an authored filter.  It runs only for a subject that is NOT FROZEN — a frozen subject's record
-    # describes a directory rendered before this check existed (D-657).
-    extras_leaks: list[dict] | None = None if subject in FROZEN else []
+    # an authored filter.  It runs for every subject not named in
+    # `RENDERED_BEFORE_THE_SCOPING_RULINGS` — a subject named there has a record describing a
+    # directory rendered before this check existed (D-657).  ★ CORRECTED by the second half of L3's
+    # pack build, under the 2026-10-15 derivation at
+    # `records/cowork/rulings/cowork_rulings_2026_10_15_l2_freeze_derivation_sitting.md`; FORMER
+    # WORDING, PRESERVED (#12): "It runs only for a subject that is NOT FROZEN — a frozen subject's
+    # record describes a directory rendered before this check existed (D-657)."
+    extras_leaks: list[dict] | None = (
+        None if subject in RENDERED_BEFORE_THE_SCOPING_RULINGS else [])
     for x in extras:
         text, rec = render_extra(x)
         files[x["filename"]] = text
         rec["characters"] = len(text)
         if extras_leaks is not None:
-            for n, ln in enumerate(text.split("\n"), start=1):
+            # Ruling 1 of `records/cowork/rulings/cowork_rulings_2026_10_16_l2_freeze_leak_list_sitting.md`:
+            # for a FROZEN subject the lines scanned are those of the file its pack directory holds —
+            # the file its session was given, pinned by the hash STOP (`verify_frozen`) — and not the
+            # re-render above, so that the record of what that session was given does not move when a
+            # source of the extra changes after the freeze (#12; D-646).  A subject that is not FROZEN
+            # is scanned at the rendered text, as before.  The file is read as `frozen_from_disk`
+            # reads it, `write_all` having written it with `newline=""`.
+            if subject in FROZEN:
+                frozen_file = os.path.join(pack_dir(subject), x["filename"])
+                if not os.path.exists(frozen_file):
+                    raise Stop(f"{subject} is FROZEN and its directory does not hold "
+                               f"{x['filename']}, which this tool renders for it — its extras "
+                               f"leak list cannot be taken from a file that is not there")
+                scanned = open(frozen_file, encoding="utf-8", newline="").read()
+            else:
+                scanned = text
+            for n, ln in enumerate(scanned.split("\n"), start=1):
                 hit = leaks_in({"line": ln}, strings)
                 if hit:
                     extras_leaks.append({
@@ -7774,7 +7890,7 @@ def build_subject(subject: str, sort_entries: list[dict], backbone: dict) -> tup
                     "the withheld set by the derivation rather than by hand. The fields searched "
                     "include `rationale` and `status_source`, which the pack does not render — a "
                     "cross-reference in either is still a route to the withheld material.")
-                if subject in FROZEN else (
+                if subject in RENDERED_BEFORE_THE_SCOPING_RULINGS else (
                     "Entries of the DESIGN-INTENT class whose own text QUOTES OR "
                     "CROSS-REFERENCES a withheld identity or names a withheld document, added to "
                     "the withheld set by the derivation rather than by hand. The fields searched "
@@ -7840,6 +7956,17 @@ def build() -> tuple[dict, dict[str, dict[str, str]], list[dict]]:
     orphan_freeze = sorted(set(FROZEN) - set(WITHHELD))
     if orphan_freeze:
         raise Stop(f"FROZEN names subject(s) this tool does not build: {orphan_freeze}")
+    # STOP 13: the authored list of packs rendered before the scoping rulings names only FROZEN
+    # subjects, and each entry carries its finding, its date and its reason (the 2026-10-15
+    # derivation).
+    not_frozen = sorted(set(RENDERED_BEFORE_THE_SCOPING_RULINGS) - set(FROZEN))
+    if not_frozen:
+        raise Stop(f"RENDERED_BEFORE_THE_SCOPING_RULINGS names subject(s) that are not FROZEN: "
+                   f"{not_frozen}")
+    for s, r in sorted(RENDERED_BEFORE_THE_SCOPING_RULINGS.items()):
+        for f in ("finding", "date", "reason"):
+            if not r.get(f):
+                raise Stop(f"the entry for {s!r} in RENDERED_BEFORE_THE_SCOPING_RULINGS lacks its {f}")
 
     # EVERY SUBJECT IS STILL BUILT IN FULL, frozen or not, and that is deliberate: this tool's own
     # STOPs — an anchor no longer found exactly once, a withheld passage that no longer matches, a
@@ -7911,6 +8038,16 @@ def build() -> tuple[dict, dict[str, dict[str, str]], list[dict]]:
             "Ruling 1 of `cowork_rulings_2026_09_27_l2_leak_list_sitting.md` — the cross-reference "
             "rule searches only the fields member (5) renders, for every subject that is not "
             "FROZEN.",
+            "The derivation recorded at "
+            "`records/cowork/rulings/cowork_rulings_2026_10_15_l2_freeze_derivation_sitting.md`, "
+            "applying Ruling 1 of `cowork_rulings_2026_09_27_l2_leak_list_sitting.md` as ruled — the "
+            "field choice, limb B and the additions' wording keyed on the authored list "
+            "`RENDERED_BEFORE_THE_SCOPING_RULINGS` rather than on FROZEN membership; Ruling 1 of "
+            "`cowork_rulings_2026_10_16_l2_freeze_leak_list_sitting.md` — a FROZEN subject's extras "
+            "leak list and its count taken from the files its pack directory holds, not from a "
+            "re-render; and the freeze "
+            "of the spent `l2` pack (Ruling 1 of `cowork_rulings_2026_10_15_l3_boot_list_sitting.md`, "
+            "noted).",
         ],
         "★_it_boots_no_session": (
             "Rendering the pack is not opening it. Nothing here derives a specification "
@@ -7977,6 +8114,8 @@ def build() -> tuple[dict, dict[str, dict[str, str]], list[dict]]:
             "record missing its finding, its date or its reason; and a FROZEN subject whose "
             "directory does not hold a file this tool renders for it",
             "a subject with graded candidates and no authored date in `VERDICT_DATE`",
+            "an entry of `RENDERED_BEFORE_THE_SCOPING_RULINGS` naming a subject that is not FROZEN, "
+            "or lacking its finding, its date or its reason",
         ],
         # DERIVED PER SUBJECT (Ruling 17(c)), from the members actually rendered for it, so this
         # field can no longer name six files over a directory of ten.  It is derived from the
