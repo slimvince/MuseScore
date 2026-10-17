@@ -24950,3 +24950,36 @@ and the self-check (§11).
 `cc_instruction_l3_keyword_count_2026_10_17.md`, after the dispatch's ordered first reads. Every commit identifier here
 was read from the commit's own object and `origin/master` at its ref file after each push; the guard verdicts are this
 batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `49a3ce5813981324011897d6a6a7119eb6d8642d` left, appended in the one further commit
+
+**A fresh full guard run, written, after the close commit and before this one: see `tools/audit/guard_state.json` →
+`summary`, which this commit carries. E2 — MET, AS A2 PREDICTED: the failing set is exactly the thirteen of the premise
+ledger**; `gen_evidence_pin_membership.py --check`, `gen_l0_l1_outgoing_population.py --check`,
+`gen_defense_share.py --check` and `gen_session_start_read_size.py --check` are green. **The A2 exceptions, handled as
+A2 says, were all met inside the close rather than after it:** each of the four was red after the close's `STATUS.md`
+edits and the forward-bound move, each was regenerated and compared against the Task 1 commit's blob by explicit hash
+(report §5) — the evidence-pin membership gained only the landed ruling record; the outgoing population lost only
+`STATUS.md`'s two RECORDED-tier `release` hits, which left with the two entries the move took to the archive, with no
+admitting hit and **no member moved**, the population and residue lists unchanged; the defense share moved only its
+whole-read denominator and the share derived from it — and all four were re-checked green after the report and this
+file's close section were written, before the close was committed. So this run regenerated nothing beyond its own
+artifact. `gen_l2_outgoing_population.py` was not run in any operating mode.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_withheld_family_reading.py']"* — the same message as the
+run before the close and as the previous batch's, unchanged.
+
+**A3, verified at the objects** (`git diff --name-status 79499c21… 49a3ce58…`): fifteen paths — the four records of
+Task 0, the one artifact of Task 1, and the close's ten (`STATUS.md`, `STATUS_ARCHIVE.md`, the re-aimed forward-bound
+tool and its artifact, the three A2 regenerations, the read-size artifact, the report, and this file, lines added
+only). The landed records are unchanged since Task 0 (`git diff --stat 102e701c… 49a3ce58…` over them is empty), and the
+artifact unchanged since Task 1 (`git diff --stat 9c4e3296… 49a3ce58…` over it is empty). **No other tool source, no
+ruling record, no other handoff entry, not `FRAMEWORK.md`, not the blind derivation or the L3 brief, no rendered
+decisions-register file and no governing document other than `STATUS.md` and `STATUS_ARCHIVE.md` differs from the
+tip.** This commit adds only the guard run's artifact, plus this portion. No further handoff entry or ruling record
+appeared in the working tree during the run.
+
+*Provenance: CC, 2026-10-18, appended in the one further commit after the close commit
+`49a3ce5813981324011897d6a6a7119eb6d8642d`; the verdicts are this run's own output, read with the file tools.*
