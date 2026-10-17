@@ -6658,14 +6658,20 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
                   "which is part of the fourth limb's ruled answer."),
     },
 
-    # ── L3, the deriving subject after L2 — PROPOSALS, NOT A WITHHELD FAMILY ─────────────────────
+    # ── L3, the deriving subject after L2 — THE RULED WITHHELD FAMILY ─────────────────────
     # Ruling 2 of `records/cowork/rulings/cowork_rulings_2026_10_14_l3_withheld_family_sitting.md`:
     # every candidate carries an authored verdict with its finding, its date and its reason; the
+    # lists went to the user, and he ruled them (Rulings 1 to 3 of
+    # `records/cowork/rulings/cowork_rulings_2026_10_15_l3_withheld_family_lists_sitting.md`).  Since
+    # the resumed second half of L3's pack build authored `WITHHELD["l3"]`, `build()` builds `l3` and
+    # `build_subject` withholds every entry this table grades IN.  ★ CORRECTED by the L3 brief-landing
+    # batch, under §3 of `records/cowork/rulings/cowork_rulings_2026_10_17_l3_lists_sitting.md`.
+    # (FORMER WORDING, PRESERVED (#12): heading "… — PROPOSALS, NOT A WITHHELD FAMILY"; and "… the
     # lists go to the user one per turn; NO identity is withheld that he has not ruled.  So this
     # table is a set of proposals.  `WITHHELD` carries no `l3` entry, `build()` iterates `WITHHELD`,
     # and therefore NOTHING READS THIS TABLE TODAY: it is dormant by design, its consumer the
     # `build_subject("l3", ...)` run that happens when the user has ruled the lists and the family is
-    # authored — a separate act.
+    # authored — a separate act.")
     #
     # THE TEST, from the pilot's Task 1(d) with L3's five published facts in place of the pilot's one
     # question (`FRAMEWORK.md` §5, the L3 block, and DP-I): IN — a deriving session that read this
