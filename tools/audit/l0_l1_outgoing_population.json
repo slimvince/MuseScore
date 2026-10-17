@@ -226,7 +226,7 @@
    },
    "hits_per_term": {
     "slice": 1083,
-    "tie": 890,
+    "tie": 889,
     "fermata": 132,
     "MusicXML": 126,
     "leading-tone": 112,
@@ -3308,23 +3308,6 @@
       "term": "slice",
       "tier": "recorded",
       "line": "| OI-73 | Membership verdict dies at the L4→L5 boundary | chordTonePcs/nonChordTonePcs are never copied onto FunctionSlice. | siloed facts / E4 surface | OPEN — E4 surface design | [detail](open_items/OI-73.md) |"
-     }
-    ]
-   },
-   "STATUS.md": {
-    "path": "STATUS.md",
-    "inventory_class": "governing-documents",
-    "is_a_named_member": false,
-    "in_the_specification_document_set": false,
-    "admitting_hit_count": 0,
-    "recorded_hit_count": 1,
-    "admitting_hits": [],
-    "recorded_hits": [
-     {
-      "line_number": 8,
-      "term": "tie",
-      "tier": "recorded",
-      "line": "*Last updated: 2026-10-16 (CC — `records/cc/instructions/cc_instruction_l3_pack_build_second_half_2026_10_16.md`, Task 5, the close. **★★ TASK 1 STOPPED AT ITS OWN CONDITION WITH NOTHING COMMITTED, SO L2's PACK IS STILL NOT FROZEN AND NOTHING AFTER TASK 1 WAS DONE — L3's pack is not built while L2's is live.** ★ **Task 0** landed this dispatch (pinned to its blob and proven unmoved before staging), handoff entries 410 to 413, the confirmation and freeze-derivation ruling records and the L3 extracts cut list, with the evidence-pin membership artifact regenerated for the two newly present ruling records. ★ **Task 1**: the ten `l2` pack files were proven equal to their committed blobs and their digests taken twice and agreeing; the repair keying the three pre-scoping-rulings tests on an authored list was made and proven INERT before the freeze; the `FROZEN[\"l2\"]` entry was then added, and the D-657 comparison against the committed manifest at an explicit hash came back NON-EMPTY for `l2` alone — **the risk the freeze derivation named in advance fired**: today's re-render of the shared charter member carries two more extras leak lines than the committed record, both on lines of the 2026-10-14 amendment to L2's block of `FRAMEWORK.md` §5 and both naming L2 withheld identities, and with exactly those two removed the record equals the frozen shape. The generator was restored to its committed blob, proven at the object, and nothing of Task 1 was committed; what the repair is now is the user's (D-436, D-657), and no fix was taken. ★ **Tasks 2, 3 and 4 were NOT performed**: no `VERDICT_DATE[\"l3\"]`, no criterion bullet, no `WITHHELD[\"l3\"]` or `EXTRAS[\"l3\"]`, no render, no lists. No session booted, no brief written, no score staged, no ruling taken and no question or recommendation put to the user, no open-items row created, flipped or discarded, no decisions-register entry and no `D-NNN` allocated; no `src/` file, build, test, golden, corpus of scores or measurement of the analysis. Per the OI-222 pointer convention this entry is a **POINTER** — the whole of it, the diff at its head, is `records/cc/reports/cc_report_l3_pack_build_second_half_2026_10_16.md` — and no count is restated here (**D-431**).)*"
      }
     ]
    },
