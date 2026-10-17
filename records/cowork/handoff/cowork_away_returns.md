@@ -24760,3 +24760,44 @@ ruling record appeared in the working tree during the run.
 
 *Provenance: CC, 2026-10-17, appended in the one further commit after the close commit
 `635f1b10b975d8c8a0937305b3f1862327af55d2`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 BRIEF LANDED: THE BRIEF AND ITS RECORDS IN GIT, THE STALE COMMENT CORRECTED — NO SESSION, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_l3_brief_landing_2026_10_17.md`, pinned at Task 0 to blob
+`08a308f933cc61c0736fdbe363edf091efcbc2ac`: **Task 0** landed the dispatch, the brief `cowork_blind_session_brief_l3.md`,
+handoff entries 416, 417 and 418 and the 2026-10-17 L3 lists ruling record as they stood, with the evidence-pin
+membership artifact regenerated for the one newly present ruling record, and checked read-only what the deriving
+session will be given (`9fb7601f…`); **Task 1** corrected the stale opening comment of `VERDICTS["l3"]` in
+`tools/audit/gen_derivation_boot_pack.py` on the shape `VERDICTS["l2"]`'s comment carries, its former wording preserved,
+and proved it moved no output — the build dumps byte-identical, `--check` identical and green, the manifest and every
+pack file unchanged at the objects (`eae1d742…`); **Task 2** closed. No task stopped. **NO SESSION WAS BOOTED, NO SCORE
+WAS STAGED, NO PACK WAS RENDERED, THE BRIEF WAS NOT EDITED, NO RULING WAS TAKEN, NO QUESTION OR RECOMMENDATION WAS PUT
+TO THE USER, NO `D-NNN` WAS ALLOCATED, NO OPEN-ITEMS ROW WAS TOUCHED, AND NOTHING ANY LAYER COMPUTES CHANGED.**
+
+**Everything this section would restate is in the report**, `records/cc/reports/cc_report_l3_brief_landing_2026_10_17.md`,
+and is pointed at rather than copied (#6): **Task 0(5)'s table, whole, at its head** under *WHAT THE DERIVING SESSION
+WILL BE GIVEN — COMMITTED OR NOT*; the commits (§1), the guard states (§2), A1 to A3 and E0 to E2 graded (§3), Task 1's
+`--check` outputs, dump comparison and deleted-line enumeration (§4), the forward-bound move (§5), the declared
+departures (§6), the scripts whole (§7), the observations (§8), what the batch did not do (§9), the plan's tell (§10)
+and the self-check (§11).
+
+### What needs the writing side, named rather than resolved
+
+1. **TASK 0(5)'s ANSWER** (report head): the ten `l3` pack files and the two input-contract copies are in git at the
+   Task 0 commit; **the brief's three exemplar sources are NOT** — `git check-ignore -v` attributes all three to
+   `.gitignore:24` (`/tools/dcml/`), and all three are present on disk. Ignored by design, not missing; whether that
+   is enough is the writing side's call.
+2. **A declared departure worth reading** (report §6 item 2): sizes were read as file metadata through PowerShell,
+   because the file tools give no size without opening content the dispatch forbids opening.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects, then the brief's banner set
+  to RELEASED, landed at the next batch's Task 0; the user boots the deriving session only after that.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-17, at boot tip `55326cc1727e0cba76939eab99c7cc84ae8389ca`, under
+`cc_instruction_l3_brief_landing_2026_10_17.md`, after the dispatch's ordered first reads. Every commit identifier here
+was read from the commit's own object and `origin/master` at its ref file after each push; the guard verdicts are this
+batch's own runs.*
