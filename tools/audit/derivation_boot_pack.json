@@ -3119,7 +3119,7 @@
       "★_the_bound_on_the_candidate_criterion": "The candidate criterion is a PATTERN MATCH over the rulings sort and the decisions register's own text. ITS REACH IS UNMEASURED (#19): an entry that bears on this subject in words none of the criterion's terms carry would not appear here, and an empty match would be evidence of nothing. The bound is stated rather than a detection measurement being owed, under D-673, and the test that clause fixes is met: NO ANALYSIS DECISION CONSUMES THIS ENUMERATION — the user rules it at the reading file this dispatch delivers.",
       "the_candidate_criterion": {
         "a candidate is every DESIGN-INTENT entry meeting ANY of": [
-          "its `group` is E — Layer 2, the slicer",
+          "its `group` is one of the register groups listed under `the_groups` below",
           "its `home` document is one of the withheld-document candidates",
           "its `home` is `ARCHITECTURE.md` at a line inside one of the oracle spans below",
           "any of `title`, `verbatim`, `plain`, `patterns` contains one of the keywords",

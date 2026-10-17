@@ -249,6 +249,12 @@ DATE = "2026-08-22"
 VERDICT_DATE: dict[str, str] = {
     "harmony-boundary": DATE,
     "l2": "2026-09-05",
+    # `l3`'s verdicts were authored on 2026-10-14 (each group block's own heading carries its authoring
+    # date) and RULED on 2026-10-15 (`cowork_rulings_2026_10_15_l3_withheld_family_lists_sitting.md`,
+    # three rulings; three verdicts written back that day).  The date stamped is the ruling's: a verdict
+    # becomes a withholding only when the user has ruled it (Ruling 2 of
+    # `cowork_rulings_2026_10_14_l3_withheld_family_sitting.md`).  For `l2` the two dates coincide.
+    "l3": "2026-10-15",
 }
 
 # ══════════════════════════════════════════════════════════════════════════════════════════════
@@ -5659,9 +5665,12 @@ VERDICTS: dict[str, dict[str, tuple[str, str, str]]] = {
     # reason says what was read.  DEFAULT NOTHING.  Written at each entry's published verbatim and
     # plain restatement in `tools/audit/l3_candidate_list.json`, and at nothing else.
     #
-    # THE DATE.  Ruling 2 requires each verdict to carry its date.  `VERDICT_DATE` carries no `l3`
-    # entry yet and `build_subject` STOPs without one; it is OWED to the batch that builds L3's pack.
-    # Meanwhile each group block's authoring date stands in its own heading comment.
+    # THE DATE.  Ruling 2 requires each verdict to carry its date.  `VERDICT_DATE["l3"]` carries it —
+    # the ruling's date, with the ground stated there; each group block's authoring date still stands
+    # in its own heading comment.  ★ CORRECTED by the second half of L3's pack build; FORMER
+    # WORDING, PRESERVED (#12): "`VERDICT_DATE` carries no `l3` entry yet and `build_subject` STOPs
+    # without one; it is OWED to the batch that builds L3's pack.  Meanwhile each group block's
+    # authoring date stands in its own heading comment."
     #
     # ORDER: register groups in the register's own order (A, B, C, D, E, F, G, H, I, J, K, L, M, N,
     # Q, S, T, U — no design-intent entry carries O or P); inside a group, ascending entry number.  A
@@ -7309,6 +7318,17 @@ def criterion_block(subject: str) -> tuple[str, dict]:
                 **terms,
             },
         )
+    # ★ THE GROUP BULLET IS DERIVED FROM THE AUTHORED `groups` TERM (the second half of L3's
+    # pack build; owed since entry 398 §2).  FORMER WORDING, PRESERVED (#12): the bullet was the fixed
+    # string "its `group` is E — Layer 2, the slicer" for every subject — true of `harmony-boundary`,
+    # whose criterion names group E alone, and false of `l2` (six groups) and `l3` (twenty).  A
+    # criterion naming exactly group E keeps that exact string, so the frozen `harmony-boundary`
+    # record does not move; `group_title("E")` is NOT used for it, its punctuation differing.
+    if tuple(spec["groups"]) == ("E",):
+        group_bullet = "its `group` is E — Layer 2, the slicer"
+    else:
+        group_bullet = ("its `group` is one of the register groups listed under `the_groups` "
+                        "below")
     return (
         "The candidate criterion is a PATTERN MATCH over the rulings sort and the decisions "
         "register's own text. ITS REACH IS UNMEASURED (#19): an entry that bears on this "
@@ -7319,7 +7339,7 @@ def criterion_block(subject: str) -> tuple[str, dict]:
         "reading file this dispatch delivers.",
         {
             "a candidate is every DESIGN-INTENT entry meeting ANY of": [
-                "its `group` is E — Layer 2, the slicer",
+                group_bullet,
                 "its `home` document is one of the withheld-document candidates",
                 "its `home` is `ARCHITECTURE.md` at a line inside one of the oracle spans below",
                 "any of `title`, `verbatim`, `plain`, `patterns` contains one of the keywords",
