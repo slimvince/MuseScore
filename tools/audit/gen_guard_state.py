@@ -896,6 +896,24 @@ AUTHORED = [
      "it. WHAT IT DOES NOT ASSERT: that the term search reaches every passage about L2's subject — "
      "its reach is stated on the artifact as a lower bound"),
 
+    # ---- AUTHORED 2026-10-18, cc_instruction_l3_outgoing_population_2026_10_18.md Task 1 -------
+    # THE L3 COMPARISON'S OUTGOING POPULATION, registered in the act that creates the tool — the
+    # standing new-tool rule. `--check` and never the bare invocation, for the ordinary reason: a bare
+    # run REWRITES its committed artifact. It IMPORTS helpers from the historical L2 population tool
+    # above and never runs it.
+    ("tools/audit/gen_l3_outgoing_population.py", ["--check"],
+     "the L3 outgoing population re-derives under the rulings of 2026-10-17 (Option B, four items) "
+     "and 2026-10-18 (Option B, the 26-term keyword list): the six named ARCHITECTURE.md places "
+     "located by heading text, the .md names inside them, the 26 ruled terms read from their one "
+     "home in the tool and searched over the three prose classes with the residue published whole, "
+     "and the 22 confirmed decision passages read at their homes. Its STOPs are what make it a "
+     "guard: a heading that moves, two spans overlapping, a term list that is not 26 long or that "
+     "carries an excluded term, an identity count other than 22, a home of unreadable shape or past "
+     "its file's end, or a grouping that disagrees with the confirmed withheld-document artifact "
+     "halts it. WHAT IT DOES NOT ASSERT: that the term search reaches every passage about L3's "
+     "subject — its reach is stated on the artifact as a lower bound; nor which of item 2's "
+     "documents are compared whole, a later ruling"),
+
     ("tools/audit/gen_ratification_surface_set.py", None,
      "NOT RUN: it has no verify-only mode, so running it OVERWRITES a committed artifact. Its "
      "census counts files in the tree, so any wave that adds a file changes it by construction "
