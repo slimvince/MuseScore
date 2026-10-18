@@ -25031,3 +25031,40 @@ do (§9), the plan's tell (§10) and the self-check (§11).
 `cc_instruction_l3_outgoing_population_2026_10_18.md`, after the dispatch's ordered first reads. Every commit identifier
 here was read from the commit's own object and `origin/master` at its ref file after each push; the guard verdicts are
 this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `affc956bc169dcdc5746603a2d8c9883d2a9f905` left, appended in the one further commit
+
+**A fresh full guard run, written, after the close commit and before this one: see `tools/audit/guard_state.json` →
+`summary`, which this commit carries. E2 — MET, AS A2 PREDICTED: the run count is the prediction's, with the new
+tool enrolled; the failing set is exactly the thirteen of the premise ledger; and
+`tools/audit/gen_l3_outgoing_population.py --check` PASSES.** `gen_evidence_pin_membership.py --check`,
+`gen_l0_l1_outgoing_population.py --check`, `gen_defense_share.py --check`, `gen_session_start_read_size.py --check` and
+`gen_status_batch_bound.py --check` are green. **The A2 exceptions, handled as A2 says, were all met inside the close
+rather than after it:** the evidence-pin membership, the defense share and the session-start read size were red after
+the close's `STATUS.md` edits and the forward-bound move, were regenerated and compared against the Task 1 commit's blob
+by explicit hash (report §5) — the evidence-pin membership gained only the landed ruling record; the defense share and
+the read size moved only with `STATUS.md` — and the L0/L1 population and the new tool stayed green throughout, the one
+`STATUS.md` residue record of the new artifact standing at the same line and text after the move as before it, **no
+member, residue record or item-4 passage moving**. All were re-checked green after the report and this file's close
+section were written, before the close was committed, so this run regenerated nothing beyond its own artifact.
+`gen_l2_outgoing_population.py` was not run in any operating mode.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_l3_outgoing_population.py',
+'tools/audit/gen_withheld_family_reading.py']"* — the three names the previous batch's report quotes plus
+`tools/audit/gen_l3_outgoing_population.py`, exactly as the dispatch's Task 2 item 7 predicts; no other name added.
+
+**A3, verified at the objects** (`git diff --name-status 986b9663… affc956b…`): sixteen paths — the four records of
+Task 0, the three files of Task 1 (the new tool, its artifact and `tools/audit/gen_guard_state.py`), and the close's
+nine (`STATUS.md`, `STATUS_ARCHIVE.md`, the re-aimed forward-bound tool and its artifact, the evidence-pin membership,
+the defense share, the read-size artifact, the report, and this file, lines added only). The landed records are
+unchanged since Task 0 (`git diff --stat 50df6b5f… affc956b…` over them is empty), and the Task 1 files unchanged since
+Task 1 (`git diff --stat a4604507… affc956b…` over them is empty). **No other tool source, no ruling record, no other
+handoff entry, not `FRAMEWORK.md`, not `ARCHITECTURE.md`, not the blind derivation or the L3 brief, not
+`tools/audit/gen_l2_outgoing_population.py` or its artifact, no rendered decisions-register file and no governing
+document other than `STATUS.md` and `STATUS_ARCHIVE.md` differs from the tip.** This commit adds only the guard run's
+artifact, plus this portion. No further handoff entry or ruling record appeared in the working tree during the run.
+
+*Provenance: CC, 2026-10-18, appended in the one further commit after the close commit
+`affc956bc169dcdc5746603a2d8c9883d2a9f905`; the verdicts are this run's own output, read with the file tools.*
