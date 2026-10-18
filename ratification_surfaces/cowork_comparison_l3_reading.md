@@ -35,7 +35,7 @@ its own entry there.
 | 1 | `ARCHITECTURE.md` — *Layer 4 — the per-slice chord-symbol decoder* | **DONE** (§6.1) |
 | 2 | `ARCHITECTURE.md` — *Layer 5 — the function/cadence layer* | **DONE** (§6.2) |
 | 3 | `ARCHITECTURE.md` — *Layer 6 — the grouping layer* | **DONE** (§6.3) |
-| 4 | `ARCHITECTURE.md` — *4.3 ChordSymbolFormatter* | NOT YET TABULATED |
+| 4 | `ARCHITECTURE.md` — *4.3 ChordSymbolFormatter* | **DONE** (§6.4) |
 | 5 | `ARCHITECTURE.md` — *4.3b HarmonicRhythm* | NOT YET TABULATED |
 | 6 | `ARCHITECTURE.md` — *Harmonic rhythm detection* | NOT YET TABULATED |
 | 7 | `cowork_layer5_function_design.md`, whole | NOT YET TABULATED |
@@ -91,8 +91,9 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 3 — the `ARCHITECTURE.md` sections *Layer 4 — the per-slice chord-symbol decoder*,
-*Layer 5 — the function/cadence layer* and *Layer 6 — the grouping layer*.** **Not done: positions 4 to 57.** **A member
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 4 — the `ARCHITECTURE.md` sections *Layer 4 — the per-slice chord-symbol decoder*,
+*Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer* and *4.3 ChordSymbolFormatter*.** **Not done:
+positions 5 to 57.** **A member
 marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed — **never
 partly worked** (**D-672**).
 
@@ -1937,6 +1938,564 @@ counting.
 
 ---
 
+### 6.4 — Member 4: `ARCHITECTURE.md`, the section *"### 4.3 ChordSymbolFormatter"*
+
+> **Manifest for this member.** Position **4**. Kind: *item 1 — a named place*. Document: `ARCHITECTURE.md`. Label:
+> *"### 4.3 ChordSymbolFormatter"*. Range, as a locator only: lines 3804–3918, from that heading to the line before the
+> next `### ` heading, its two `####` subsections included, exactly as the artifact publishes it (**D-307**). Outgoing
+> statements: **34** (rows 4.1 to 4.31; three of those rows carry two claims each and are split, so 31 rows carry 34
+> statements — the arithmetic is at the foot of this member). Listed under *not a statement*: **7**. Counted at this
+> member by this session; the counts appear here and nowhere else.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 4: **none**.
+> **No SEEN home lies in this member.**
+>
+> **What this member is, read whole before any row was written.** The section describes the formatter that turns an
+> analysis result into display strings — the chord symbol, the Roman numeral and the Nashville number — and closes with
+> a note sketching an algorithm for figured bass. The display rows concern how a published fact is written for a reader,
+> which no charter of `FRAMEWORK.md` §5 names as a layer; where no disposition is defensible in one sentence for such a
+> row, it is UNPLACED with what was read.
+
+---
+
+**Row 4.1 — the formatter turns an analysis result into display strings.**
+
+*Outgoing statement.* "**Purpose:** Formats `ChordAnalysisResult` into display strings." — the section's purpose
+paragraph (locator: line 3813).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which strings does the formatter produce, from which fields of
+the analysis result, and which display reads them?
+
+---
+
+**Row 4.2 — kept separate so the analysis stays display-agnostic.**
+
+*Outgoing statement.* "Kept separate from `ChordAnalyzer` so the analysis layer remains display-agnostic." — the purpose
+paragraph (locator: lines 3813–3814).
+
+*Derived statements that speak to it.* L3-S5.
+
+*Current-text axis.* L3-S5: **AGREES** — its premise leaves a display convention to *"a display act"* that *"never
+publishes it back into the analysis"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that every display string be produced outside the analysis,
+from published facts, and that the analysis carry no display convention — L3-S5 carries this for the chord symbol's
+root only.
+
+---
+
+**Row 4.3 — the separation maintained throughout: analysis produces data, formatters produce strings.**
+
+*Outgoing statement.* "This separation must be maintained throughout the codebase — analysis produces data, formatters
+produce strings." — the purpose paragraph (locator: lines 3814–3815).
+
+*Derived statements that speak to it.* L3-S5.
+
+*Current-text axis.* L3-S5: **AGREES**, as at Row 4.2.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 4.2.
+
+---
+
+**Row 4.4 — the formatter's interface, as listed.**
+
+*Outgoing statement.* The code listing of `namespace ChordSymbolFormatter` — the `NoteSpelling` enumeration, the
+`Options` structure and its default, `formatSymbol` (*"Cmaj7", "Fm7/Ab", "Bdim7" etc.*) and `formatRomanNumeral`
+(*"IM7", "ii7", "V7/3", "viiø7" etc.*, with chromatic numerals for non-diatonic roots and an empty string *"only when the
+root cannot be mapped at all"*). — the fenced block (locator: lines 3817–3841), tabulated as one unit, as a table row
+is.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the declarations in `chordanalyzer.h` match the listing, and
+does `formatRomanNumeral` return an empty string only when the root cannot be mapped?
+
+---
+
+**Row 4.5 — display options live in the formatter, not in the analyzer's preferences.**
+
+*Outgoing statement.* "Display options (`Options`) live in `ChordSymbolFormatter`, not in `ChordAnalyzerPreferences`,
+enforcing the analysis/display separation (principle 2.3)." — after the listing (locator: lines 3843–3844).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is every display option defined in the formatter and none in
+the analyzer's preferences?
+
+---
+
+**Row 4.6 — the chord symbol's note names follow the score's spelling preference.**
+
+*Outgoing statement.* "**Note naming convention:** Root and bass note names in chord symbol output respect the score's
+chord symbol spelling preference (Format → Style → Chord Symbols)." — the note-naming paragraph (locator: lines
+3846–3848).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the derivation publishes the spelled root (L3-S2) and leaves how its
+name is written to a display.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: the outgoing sentence and L3-S5's premise; it is a display convention, no
+charter of `FRAMEWORK.md` §5 is a display layer, and none of the five dispositions is defensible in one sentence.
+
+---
+
+**Row 4.7 — the analysis layer's own note-spelling enumeration.**
+
+*Outgoing statement.* "The analysis layer implements a self-contained `NoteSpelling` enum `{Standard, German,
+GermanPure}` — defined in `chordanalyzer.h`, mirroring `NoteSpellingType` in `src/engraving/types/types.h`." — the same
+paragraph (locator: lines 3848–3850).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the enumeration defined in `chordanalyzer.h` and does it
+mirror the engraving type?
+
+---
+
+**Row 4.8 — the bridge reads the score style's spelling and maps it to the options.**
+
+*Outgoing statement.* "The bridge reads `Sid::chordSymbolSpelling` from the score style via `scoreNoteSpelling()`
+(defined in `notationcomposingbridgehelpers.cpp`) and maps it to `ChordSymbolFormatter::Options::spelling`." — the same
+paragraph (locator: lines 3850–3853).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `scoreNoteSpelling()` read that style setting and map it
+to the formatter's spelling option?
+
+---
+
+**Row 4.9 — the German mapping: B natural as H, B flat as B.**
+
+*Outgoing statement.* "German mapping mirrors `tpc2name()` GERMAN case (`pitchspelling.cpp:343-356`): B natural → "H",
+Bb → "B"." — the same paragraph (locator: lines 3853–3855).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the formatter's German mapping agree with the engraving's
+for every spelling?
+
+---
+
+**Row 4.10 — all other note names unchanged.**
+
+*Outgoing statement.* "All other note names are unchanged." — the same paragraph (locator: line 3855).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 4.9.
+
+---
+
+**Row 4.11 — solfeggio and French map to Standard.**
+
+*Outgoing statement.* "Solfeggio and French map to Standard (not yet supported in chord symbol output)." — the same
+paragraph (locator: lines 3855–3856).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the solfeggio and French settings fall back to the standard
+names?
+
+---
+
+**Row 4.12 — Roman numerals and Nashville numbers unaffected by the spelling setting.**
+
+*Outgoing statement.* "Roman numerals and Nashville numbers do not use note names — they use degree integers and
+accidental tokens — so the spelling setting does not affect them." — the same paragraph (locator: lines 3856–3858).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the Roman-numeral and Nashville strings identical under
+every spelling setting?
+
+---
+
+**Row 4.13 — the formatter emits Roman numerals at the seventh level and above.**
+
+*Outgoing statement.* "**Roman numeral scope (corrected 2026-08-02, `OPEN_ITEMS.md` OI-112(b) — this paragraph said
+extensions beyond the 7th are "not yet emitted", which the corpus contradicts):** the formatter emits Roman numerals at
+the 7th level (e.g. `I7`, `IM7`, `iø7`) **and above** — `csfDiatonicRoman` appends `b9`/`#9`/`#11`/`b13` alterations when
+a seventh is present, and the `(add9)` / `(add11)` / `(add13)` forms when none is (`chordsymbolformatter.cpp:590-616`);
+the corpus counts are in the OI-112 row." — the Roman-numeral scope paragraph (locator: lines 3860–3865).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which extension forms does `csfDiatonicRoman` append, and under
+which conditions?
+
+---
+
+**Row 4.14 — chromatic numerals from the semitone distance to the tonic, preferring flats.**
+
+*Outgoing statement.* "Non-diatonic roots produce chromatic numerals by computing semitone distance from the mode tonic
+and prefixing with ♭ or ♯ as appropriate (preferring flat names)." — the same paragraph (locator: lines 3865–3867).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — the Roman numeral is L2's chord field, and no derived statement speaks
+to how it is written.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the formatter derive a chromatic numeral's accidental from
+the semitone distance rather than from the chord's own degree and alteration?
+
+---
+
+**Row 4.15 — the quality and extension suffix reused from the diatonic path.**
+
+*Outgoing statement.* "The quality/extension suffix is reused from the diatonic path." — the same paragraph (locator:
+line 3867).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the chromatic and diatonic paths share one suffix routine?
+
+---
+
+**Row 4.16 — the formatter to become a substitutable interface.**
+
+*Outgoing statement.* "`ChordSymbolFormatter` will eventually become a substitutable interface, orthogonal to
+`IChordAnalyzer` (Section 14.1)." — the subsection *Planned Trajectory — IChordSymbolFormatter* (locator: lines
+3872–3873).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: the outgoing sentence; it is a plan for the code's interfaces, neither
+superseded nor describing what runs, and no charter holds code structure, so none of the five is defensible in one
+sentence.
+
+---
+
+**Row 4.17 — the planned notation conventions: lead sheet, Nashville, Roman numeral, figured bass.**
+
+*Outgoing statement.* "*Notation convention:* lead sheet ("Cmaj7"), Nashville ("1maj7"), Roman numeral ("IM7"), figured
+bass (for baroque contexts — see note below)" — the list of planned substitution points (locator: lines 3883–3884).
+
+*Derived statements that speak to it.* L3-S25.
+
+*Current-text axis.* L3-S25: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text lists *"figured bass (for baroque contexts …)"* as a
+notation convention a formatter writes; L3-S25 says *"The figured bass L3 publishes describes the harmony L2 decided"*,
+a published fact of L3.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above.
+
+---
+
+**Row 4.18 — the planned spelling conventions.**
+
+*Outgoing statement.* "*Spelling conventions:* American ("maj7", "m7b5"), German/Nordic (H/B naming), Berklee/jazz ("Δ7",
+"ø7"), classical (augmented sixth notation)" — the same list (locator: lines 3885–3886).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L3-S5 (i) leaves how a display writes an augmented sixth open
+(OQ-L3-9), and speaks to no other convention.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: the outgoing bullet and L3-S5 (i); a display convention, as at Row 4.6.
+
+---
+
+**Row 4.19 — the planned symbol vocabulary.**
+
+*Outgoing statement.* "*Symbol vocabulary:* half-diminished ø vs "m7b5" vs "ø7"; major seventh Δ vs "maj7" vs "M7";
+augmented "+" vs "aug"" — the same list (locator: lines 3887–3888).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L3-S3 is not falsified by a quality written in another notation, and
+does not speak to the choice.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: the outgoing bullet and L3-S3; a display convention, as at Row 4.6.
+
+---
+
+**Row 4.20 — the options become the interface's configuration.**
+
+*Outgoing statement.* "When `IChordSymbolFormatter` is introduced, `ChordSymbolFormatter::Options` becomes its
+configuration struct — the migration path is already established." — the same subsection (locator: lines 3890–3891).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED**, travelling with Row 4.16.
+
+---
+
+**Row 4.21 — figured bass is interval notation above a bass, not a chord name.**
+
+*Outgoing statement.* "Figured bass (basso continuo) is interval notation above a bass note rather than a chord name — e.g.
+"6" = first inversion triad, "6/4" = second inversion, "7" = root position seventh." — the subsection *Note on figured
+bass* (locator: lines 3895–3897).
+
+*Derived statements that speak to it.* L3-S25.
+
+*Current-text axis.* L3-S25: **AGREES** — *"A thoroughbass figure names the intervals above the bass"* (its defense) and
+*"5/3, 6/3, 6/4, 7, 6/5, 4/3, 4/2"* (the statement).
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S25).
+
+---
+
+**Row 4.22 — figured bass requires no root detection.**
+
+*Outgoing statement.* "It is architecturally simpler than chord symbols in one critical respect: **it requires no root
+detection**." — the same subsection (locator: lines 3897–3898).
+
+*Derived statements that speak to it.* L3-S25.
+
+*Current-text axis.* L3-S25: **AGREES** — *"A thoroughbass figure is written above the bass and names no root."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S25).
+
+---
+
+**Row 4.23 — step 1: the bass is the lowest sounding pitch, already available.**
+
+*Outgoing statement.* "Identify the bass note (lowest sounding pitch — already `ChordAnalysisTone::isBass`)." — the
+algorithm's step 1 (locator: line 3900). Two claims: (i) the figures' bass is the lowest sounding pitch; (ii) it is
+already available as `ChordAnalysisTone::isBass`.
+
+*Derived statements that speak to it.* (i) L3-S25. (ii) None.
+
+*Current-text axis.* (i) L3-S25: **DIFFERS**. (ii) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (i) The outgoing text takes the bass as the *"lowest sounding pitch"*; L3-S25
+figures *"the spelled intervals above the structural bass"*, and takes the lowest sounding pitch as the figures' bass
+only *"Where the lowest sounding pitch of a slice (IC-L1 S-50) has as its witness an event L2 assigns as a pedal
+point"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read: the two texts above, and L3-S4 on the structural bass. *(§6 item 2 of
+the derivation flags L3-S4 as coinciding with a ruled sentence the L0/L1 input contract carries, for the comparison to
+check.)* (ii) **QUARANTINED.** *Audit question:* what does `ChordAnalysisTone::isBass` mark, and is it the lowest
+sounding pitch?
+
+---
+
+**Row 4.24 — step 2: each upper tone's interval above the bass, reduced within the octave.**
+
+*Outgoing statement.* "Compute each upper tone's interval above the bass, reduced to within one octave." — step 2
+(locator: line 3901). Two claims: (i) each upper tone's interval above the bass is computed; (ii) it is reduced to within
+one octave.
+
+*Derived statements that speak to it.* (i) L3-S25. (ii) L3-S27.
+
+*Current-text axis.* (i) L3-S25: **AGREES** — the figure is the intervals above the bass. (ii) L3-S27: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing text reduces each interval *"to within one octave"*; L3-S27
+says *"The full figure (every spelled interval of L3-S25) is the published fact"*, and treats deciding *"2 against 9"* as
+*"a second convention choice, which the declared convention fixes"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S25). (ii) **UNPLACED** — read: the two texts above.
+
+---
+
+**Row 4.25 — step 3: diatonic numbers from the spelling and the key signature.**
+
+*Outgoing statement.* "Convert to diatonic scale degrees using TPC spelling and `keySignatureFifths`." — step 3
+(locator: line 3902).
+
+*Derived statements that speak to it.* L3-S25.
+
+*Current-text axis.* L3-S25: **AGREES** — the figure's intervals are *"spelled"*, read from L0's spellings.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S25).
+
+---
+
+**Row 4.26 — step 4: the standard omission table applied.**
+
+*Outgoing statement.* "Apply the standard omission table (root position triad → nothing; first inversion → "6"; second
+inversion → "6/4"; root position seventh → "7"; etc.)." — step 4 (locator: lines 3903–3904).
+
+*Derived statements that speak to it.* L3-S27.
+
+*Current-text axis.* L3-S27: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing algorithm applies *"the standard omission table"* as a step of
+computing the figure; L3-S27 says *"An abbreviated figure in the conventional short forms is a view of it under a
+declared convention, which a consumer names when it asks for one"*, and is falsified *"if L3 publishes only an
+abbreviated figure"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above.
+
+---
+
+**Row 4.27 — step 5: accidentals where a tone departs from the key signature.**
+
+*Outgoing statement.* "Prefix accidentals (♭ ♯ ♮) where a tone deviates from the key signature." — step 5 (locator: line
+3905).
+
+*Derived statements that speak to it.* L3-S26.
+
+*Current-text axis.* L3-S26: **AGREES** — *"An accidental is written where a figured interval's spelled pitch differs
+from what the signature gives."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S26).
+
+---
+
+**Row 4.28 — derivable from the raw tones; the analysis result not required.**
+
+*Outgoing statement.* "This can be derived directly from the raw `ChordAnalysisTone` input — `ChordAnalysisResult` is not
+required." — the same subsection (locator: lines 3907–3908).
+
+*Derived statements that speak to it.* L3-S25.
+
+*Current-text axis.* L3-S25: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text derives the figures *"directly from the raw
+`ChordAnalysisTone` input"*, the analysis result *"not required"*; L3-S25 says the figured bass *"describes the harmony L2
+decided"*, the chord, its figure and the assignments being L2's.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above.
+
+---
+
+**Row 4.29 — figured bass annotates every sounding pitch, suspensions and passing tones included.**
+
+*Outgoing statement.* "Importantly, figured bass annotates *all* sounding pitches including suspensions and passing tones,
+which is actually easier than chord symbol analysis (no need to distinguish chord tones from non-chord tones)." — the
+same subsection (locator: lines 3908–3910).
+
+*Derived statements that speak to it.* L3-S25.
+
+*Current-text axis.* L3-S25: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text figures *"*all* sounding pitches including suspensions and
+passing tones"*; L3-S25 figures the chord members and the suspensions and appoggiaturas L2 assigns, says *"Elaborations
+of the other relations are not figured"*, and is falsified *"if a passing note is figured"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above, and L3-S28 on the continuo grain.
+
+---
+
+**Row 4.30 — feasible with the current infrastructure; works below three pitch classes.**
+
+*Outgoing statement.* "Figured bass generation is feasible with the current analysis infrastructure and would work even
+for sonorities with fewer than 3 distinct pitch classes (where chord symbol analysis returns empty)." — the same
+subsection (locator: lines 3914–3916). Two claims: (i) it is feasible with the current analysis infrastructure; (ii) it
+would work for sonorities with fewer than three distinct pitch classes, where chord symbol analysis returns empty.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) and (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the current code carry every input the sketched
+algorithm reads? (ii) **QUARANTINED.** *Audit question:* does the chord-symbol path return an empty result below three
+distinct pitch classes?
+
+---
+
+**Row 4.31 — figured bass not currently planned.**
+
+*Outgoing statement.* "It is not currently planned but is noted here because the prerequisite data is already present." —
+the same subsection (locator: lines 3916–3917).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+#### Not a statement, at this member
+
+1. "**Files:** declared in `src/composing/analysis/chord/chordanalyzer.h` (namespace within); implemented in
+   `src/composing/analysis/chord/chordsymbolformatter.cpp`." (3806–3807) — *an implementation locator*.
+2. "(Corrected 2026-08-02, `OPEN_ITEMS.md` OI-112(a): the single "File:" line predated refactor-1, … The backlog item in
+   §4.1i that proposes creating one is annotated there.)" (3807–3811) — *provenance*.
+3. "The test catalog covers the 7th level only; extending it is a natural future increment." (3867–3868) — *a test
+   locator and a plan*.
+4. "The two axes vary independently:" and the diagram that follows it (3873–3879) — *a lead and a diagram*, the plan they
+   illustrate tabulated at Row 4.16.
+5. "**Planned substitution points for IChordSymbolFormatter:**" (3881) — *a lead*, its bullets tabulated at Rows 4.17
+   to 4.19.
+6. "The algorithm is:" (3898) — *a lead*, its steps tabulated at Rows 4.23 to 4.27.
+7. "The only tricky parts are the omission convention table and enharmonically-correct accidental spelling, both of which
+   are straightforward given TPC data and `keySignatureFifths`." (3910–3912) — *an assessment of difficulty*.
+
+#### The arithmetic at this member
+
+- Rows written: **31** (4.1 to 4.31).
+- Rows split into two claims, **+1 each**: 4.23, 4.24, 4.30 — three rows, **+3**.
+- **Outgoing statements placed: 31 + 3 = 34.**
+- Listed under *not a statement*: **7**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row: 34 dispositions over 34 statements.
+- **UNPLACED rows at this member: 11** — 4.6, 4.16, 4.17, 4.18, 4.19, 4.20, 4.23(i), 4.24(ii), 4.26, 4.28, 4.29.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 5 | 4.21, 4.22, 4.24(i), 4.25, 4.27 |
+| ADOPTED — proposed | 2 | 4.2, 4.3 |
+| RELOCATED | 0 | — |
+| QUARANTINED | 15 | 4.1, 4.4, 4.5, 4.7, 4.8, 4.9, 4.10, 4.11, 4.12, 4.13, 4.14, 4.15, 4.23(ii), 4.30(i), 4.30(ii) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 1 | 4.31 |
+| UNPLACED | 11 | 4.6, 4.16, 4.17, 4.18, 4.19, 4.20, 4.23(i), 4.24(ii), 4.26, 4.28, 4.29 |
+| **Total** | **34** | — |
+
+**The column sums to 34, against 34 statements, so the arithmetic closes at this member**: 5 + 2 + 0 + 15 + 0 + 1 + 11
+= 34. **The statement lists in the right-hand column are the record**, and the integers are re-derivable from them by
+counting.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 7 |
+| DIFFERS | 6 |
+| THE DERIVATION IS SILENT | 21 |
+| **Total verdicts** | **34** |
+
+*(Counted per named derived statement per statement; no statement here names more than one.)* The AGREES statements are
+4.2, 4.3 (L3-S5), 4.21, 4.22, 4.24(i), 4.25 (L3-S25) and 4.27 (L3-S26). The DIFFERS statements are 4.17, 4.23(i), 4.28,
+4.29 (L3-S25), 4.24(ii) and 4.26 (L3-S27).
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — no withheld home lies in this member.
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none** as a derived statement that speaks to a row; Row 4.23 (i) cites L3-S4 among what was read.
+  **§6 item 2 of the derivation flags L3-S4 as coinciding with a ruled sentence the L0/L1 input contract carries** —
+  *"the chord's bass note, which L3 publishes, read off the figure L2 decides"* — for the comparison to check; it is
+  recorded here because L3-S4 is named at that row.
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -2001,7 +2560,7 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   comparison placed the same statement here, at its Row 4.21.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, and member 3's the rows
-numbered 3.n.)*
+numbered 3.n. Member 4 relocates no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -2055,6 +2614,26 @@ commit that tabulates it, each with the audit question its row writes.
 - Row 3.12 — does the legacy step overwrite every one-region key island whose successor disagrees with it?
 - Row 3.13 — does a one-region island survive on the record arm exactly where its content evidence outweighs two key
   changes?
+
+**Member 4 — `ARCHITECTURE.md`, *4.3 ChordSymbolFormatter*.**
+
+- Row 4.1 — which strings does the formatter produce, from which fields of the analysis result, and which display reads
+  them?
+- Row 4.4 — do the declarations in `chordanalyzer.h` match the listing, and does `formatRomanNumeral` return an empty
+  string only when the root cannot be mapped?
+- Row 4.5 — is every display option defined in the formatter and none in the analyzer's preferences?
+- Row 4.7 — is the note-spelling enumeration defined in `chordanalyzer.h`, mirroring the engraving type?
+- Row 4.8 — does `scoreNoteSpelling()` read the style's chord-symbol spelling and map it to the formatter's option?
+- Row 4.9, with Row 4.10 — does the formatter's German mapping agree with the engraving's for every spelling?
+- Row 4.11 — do the solfeggio and French settings fall back to the standard names?
+- Row 4.12 — are the Roman-numeral and Nashville strings identical under every spelling setting?
+- Row 4.13 — which extension forms does `csfDiatonicRoman` append, and under which conditions?
+- Row 4.14 — does the formatter derive a chromatic numeral's accidental from the semitone distance rather than from the
+  chord's own degree and alteration?
+- Row 4.15 — do the chromatic and diatonic paths share one suffix routine?
+- Row 4.23(ii) — what does `ChordAnalysisTone::isBass` mark, and is it the lowest sounding pitch?
+- Row 4.30(i) — does the current code carry every input the sketched figured-bass algorithm reads?
+- Row 4.30(ii) — does the chord-symbol path return an empty result below three distinct pitch classes?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -2115,6 +2694,24 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 3.3 (L3-S22):** the outgoing text puts *"Hierarchy"* out of the validatable core, where L3-S22 publishes
   a nested grouping with rivals and their mass.
 
+**Member 4.**
+
+- **ADOPTED — proposed — Row 4.2, with Row 4.3:** that every display string be produced outside the analysis, from
+  published facts, the analysis carrying no display convention (L3-S5 carries this for the chord symbol's root only).
+- **DIFFERS — Row 4.17 (L3-S25):** the outgoing text lists *"figured bass"* as a notation convention a formatter writes,
+  where L3-S25 makes the figured bass a published fact of L3 describing *"the harmony L2 decided"*.
+- **DIFFERS — Row 4.23(i) (L3-S25):** the outgoing text takes the figures' bass as the *"lowest sounding pitch"*, where
+  L3-S25 figures *"the spelled intervals above the structural bass"*, the lowest sounding pitch serving only where its
+  witness is a pedal point.
+- **DIFFERS — Row 4.24(ii) (L3-S27):** the outgoing text reduces each interval *"to within one octave"*, where L3-S27
+  publishes *"The full figure (every spelled interval of L3-S25)"* and leaves 2 against 9 to a declared convention.
+- **DIFFERS — Row 4.26 (L3-S27):** the outgoing algorithm applies *"the standard omission table"* in computing the figure,
+  where L3-S27 makes an abbreviated figure *"a view of it under a declared convention"*.
+- **DIFFERS — Row 4.28 (L3-S25):** the outgoing text derives the figures *"directly from the raw `ChordAnalysisTone`
+  input"*, where L3-S25 says the figured bass *"describes the harmony L2 decided"*.
+- **DIFFERS — Row 4.29 (L3-S25):** the outgoing text figures *"*all* sounding pitches including suspensions and passing
+  tones"*, where L3-S25 says *"Elaborations of the other relations are not figured"*.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -2125,16 +2722,18 @@ are at its own foot, and the integers below are re-derivable from them.
 | 1 | 43 | 0 | 0 | 7 | 21 | 0 | 15 | 0 | 27 |
 | 2 | 34 | 3 | 1 | 15 | 5 | 0 | 3 | 7 | 25 |
 | 3 | 21 | 2 | 5 | 1 | 8 | 0 | 1 | 4 | 15 |
-| **Total** | **98** | **5** | **6** | **23** | **34** | **0** | **19** | **11** | **67** |
+| 4 | 34 | 5 | 2 | 0 | 15 | 0 | 1 | 11 | 7 |
+| **Total** | **132** | **10** | **8** | **23** | **49** | **0** | **20** | **22** | **74** |
 
-**The arithmetic check:** 5 + 6 + 23 + 34 + 0 + 19 + 11 = 98, against 98 statements placed (43 + 34 + 21).
+**The arithmetic check:** 10 + 8 + 23 + 49 + 0 + 20 + 22 = 132, against 132 statements placed (43 + 34 + 21 + 34).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
 | 1 | 0 | 2 | 41 | 43 |
 | 2 | 3 | 12 | 20 | 35 |
 | 3 | 4 | 3 | 14 | 21 |
-| **Total** | **7** | **17** | **75** | **99** |
+| 4 | 7 | 6 | 21 | 34 |
+| **Total** | **14** | **23** | **96** | **133** |
 
 ## 14. The derivation's independence record, relayed
 
