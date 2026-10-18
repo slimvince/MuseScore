@@ -36,7 +36,7 @@ its own entry there.
 | 2 | `ARCHITECTURE.md` — *Layer 5 — the function/cadence layer* | **DONE** (§6.2) |
 | 3 | `ARCHITECTURE.md` — *Layer 6 — the grouping layer* | **DONE** (§6.3) |
 | 4 | `ARCHITECTURE.md` — *4.3 ChordSymbolFormatter* | **DONE** (§6.4) |
-| 5 | `ARCHITECTURE.md` — *4.3b HarmonicRhythm* | NOT YET TABULATED |
+| 5 | `ARCHITECTURE.md` — *4.3b HarmonicRhythm* | **DONE** (§6.5) |
 | 6 | `ARCHITECTURE.md` — *Harmonic rhythm detection* | NOT YET TABULATED |
 | 7 | `cowork_layer5_function_design.md`, whole | NOT YET TABULATED |
 | 8 | `cowork_layer6_grouping_design.md`, whole | NOT YET TABULATED |
@@ -91,9 +91,9 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 4 — the `ARCHITECTURE.md` sections *Layer 4 — the per-slice chord-symbol decoder*,
-*Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer* and *4.3 ChordSymbolFormatter*.** **Not done:
-positions 5 to 57.** **A member
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 5 — the `ARCHITECTURE.md` sections *Layer 4 — the per-slice chord-symbol decoder*,
+*Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3 ChordSymbolFormatter* and *4.3b
+HarmonicRhythm*.** **Not done: positions 6 to 57.** **A member
 marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed — **never
 partly worked** (**D-672**).
 
@@ -2496,6 +2496,333 @@ counting.
 
 ---
 
+### 6.5 — Member 5: `ARCHITECTURE.md`, the section *"### 4.3b HarmonicRhythm"*
+
+> **Manifest for this member.** Position **5**. Kind: *item 1 — a named place*. Document: `ARCHITECTURE.md`. Label:
+> *"### 4.3b HarmonicRhythm"*. Range, as a locator only: lines 3945–4025, from that heading to the line before the next
+> `### ` heading, exactly as the artifact publishes it (**D-307**). Outgoing statements: **19** (rows 5.1 to 5.17; two of
+> those rows carry two claims each and are split, so 17 rows carry 19 statements — the arithmetic is at the foot of this
+> member). Listed under *not a statement*: **4**. Counted at this member by this session; the counts appear here and
+> nowhere else.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 5: **none**.
+> **No SEEN home lies in this member.**
+>
+> **What this member is, read whole before any row was written.** Despite its name the section describes the
+> implementation of the per-region analysis function and of the chord-staff writer that displays its result; it does not
+> state what the harmonic rhythm is as a published fact. Every statement in it describes how that implementation works,
+> and each is placed QUARANTINED with its audit question.
+
+---
+
+**Row 5.1 — the region type in the composing module; the score-reading functions are bridge functions.**
+
+*Outgoing statement.* "The `HarmonicRegion` struct lives in the composing module (no engraving include needed); the
+functions that consume `Score*` / `Fraction` are bridge functions in `mu::notation`:" — the section's body (locator: line
+3953).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is `HarmonicRegion` free of engraving includes, and are the
+functions that read the score in the notation module?
+
+---
+
+**Row 5.2 — the region type and the two bridge functions, as listed.**
+
+*Outgoing statement.* The code listing of `struct HarmonicRegion` (its start and end ticks, its chord result, its key and
+mode result and its sounding tones), `analyzeHarmonicRhythm(score, startTick, endTick, excludeStaves)` and
+`populateChordTrack(score, startTick, endTick, trebleStaffIdx, useCollectedTones)`. — the fenced block (locator: lines
+3955–3985), tabulated as one unit, as a table row is.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the declarations in the named headers match the listing?
+
+---
+
+**Row 5.3 — the function detects harmonic boundaries where the pitch-class set changes, and analyses a chord at each.**
+
+*Outgoing statement.* "`analyzeHarmonicRhythm()` scans all eligible staves, detects harmonic boundaries (ticks where the
+sounding pitch-class set changes), and runs chord analysis at each boundary." — the body after the listing (locator:
+lines 3987–3989). Two claims: (i) it detects harmonic boundaries at the ticks where the sounding pitch-class set changes;
+(ii) it runs chord analysis at each boundary.
+
+*Derived statements that speak to it.* (i) L3-S30. (ii) None.
+
+*Current-text axis.* (i) L3-S30: **DIFFERS**. (ii) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (i) The outgoing function *"detects harmonic boundaries (ticks where the
+sounding pitch-class set changes)"*; L3-S30 publishes *"the list of L2's harmonic boundaries inside it, each referenced by
+identity"*, and says *"It does not republish the segmentation."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* where does `analyzeHarmonicRhythm()` place its boundaries,
+and is that function reached at the current commit? (ii) **QUARANTINED.** *Audit question:* which chord analysis runs at
+each boundary, and on which arm?
+
+---
+
+**Row 5.4 — the default smoothed mode, and the mode that keeps every change.**
+
+*Outgoing statement.* "In its default smoothed mode it collapses consecutive same-chord regions and absorbs short
+regions; callers may instead request `HarmonicRegionGranularity::PreserveAllChanges` when every detected harmonic event
+must survive into output (the chord-staff populate path now does this)." — the same paragraph (locator: lines
+3989–3992). Two claims: (i) by default it collapses consecutive same-chord regions and absorbs short regions; (ii) a
+caller may request that every detected change be kept, which the chord-staff path does.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) and (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* what does the default mode collapse and absorb, and under
+which length? (ii) **QUARANTINED.** *Audit question:* does the chord-staff path request the mode that keeps every change?
+
+---
+
+**Row 5.5 — the chord-staff writer clears its region and writes a harmonic reduction.**
+
+*Outgoing statement.* "`populateChordTrack()` clears the target grand-staff region and writes a harmonic reduction with the
+following layout:" — the body (locator: lines 3995–3996).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `populateChordTrack()` clear the target region before
+writing, and what does it write?
+
+---
+
+**Row 5.6 — gaps inside a bar absorbed before writing.**
+
+*Outgoing statement.* "Before writing notes, the populate path normalizes measure-local gaps between analyzed regions: if
+sparse spans inside a measure produced no chord result, the first and last written region in that measure are extended
+to the measure boundaries and any internal gap is absorbed into the preceding written region." — the body (locator:
+lines 3998–4001).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the populate path extend the first and last written
+region of a bar to the bar's boundaries and absorb an internal gap into the region before it?
+
+---
+
+**Row 5.7 — the layout table: the key and mode label above the first staff.**
+
+*Outgoing statement.* The table row "| Above first stave | Key/mode label (e.g. "C maj", "D Dor?") only when key
+confidence is at least 0.5; confidence 0.5–0.8 appends "?" |" — the layout table (locator: line 4007).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the label's two confidence thresholds as stated, and which
+confidence do they read?
+
+---
+
+**Row 5.8 — the layout table: the key-relationship annotation below the first staff.**
+
+*Outgoing statement.* The table row "| Below first stave | Key relationship annotation (e.g. "(→ relative min)", "(→
+dominant key)") only on assertive key changes (confidence at least 0.8) |" — the layout table (locator: line 4008).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the annotation written only at key changes whose confidence
+is at least the stated value?
+
+---
+
+**Row 5.9 — the layout table: borrowed-chord star, pivot label and cadence marker above the second staff.**
+
+*Outgoing statement.* The table row "| Above second stave | Borrowed chord star ★ + source key (e.g. "Bb min") when a
+non-diatonic chord has an identifiable diatonic source, plus pivot label (e.g. "pivot: IV → I in G maj") at modulation
+boundaries and cadence marker (PAC, HC, DC, PC); these are written only when key confidence is at least 0.8 |" — the
+layout table (locator: line 4009).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L3-S7 publishes no pivot label at L3 and carries whether one is shown
+to OQ-L3-8, and L3-S17 leaves the principal cadence vocabulary to OQ-L3-2; neither speaks to what this display writes.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which source computes the star, the pivot label and the cadence
+marker the chord staff writes, and under which confidence threshold?
+
+---
+
+**Row 5.10 — the layout table: the Roman numeral below the second staff.**
+
+*Outgoing statement.* The table row "| Below second stave | Roman numeral (e.g. "IM7", "V7") only when key confidence is
+at least 0.5 |" — the layout table (locator: line 4010).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the Roman numeral written only at the stated confidence?
+
+---
+
+**Row 5.11 — the layout table: the upper chord tones on the treble staff.**
+
+*Outgoing statement.* The table row "| Treble stave notes | Upper chord tones (canonical or collected) |" — the layout
+table (locator: line 4011).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which tones does the treble staff receive under each setting?
+
+---
+
+**Row 5.12 — the layout table: the root on the bass staff.**
+
+*Outgoing statement.* The table row "| Bass stave notes | Root |" — the layout table (locator: line 4012).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the bass staff receive the chord's root rather than its
+bass?
+
+---
+
+**Row 5.13 — the layout table: the chord symbol above the treble staff.**
+
+*Outgoing statement.* The table row "| Above treble stave | Chord symbol (e.g. "Cmaj7", "F#m7/A") |" — the layout table
+(locator: line 4013).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which field of the analysis result supplies the chord symbol
+the chord staff writes?
+
+---
+
+**Row 5.14 — the borrowed-chord rule: a star only where a source key is found.**
+
+*Outgoing statement.* "**Borrowed chord rule:** The star ★ and source key are written only when a source key is found
+(chord tones all diatonic to some other key within ±7 fifths)." — the paragraph after the table (locator: lines
+4015–4016).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* how is the source key searched, and over which range of
+fifths?
+
+---
+
+**Row 5.15 — a purely chromatic chord receives no marker.**
+
+*Outgoing statement.* "Purely chromatic chords that fit no diatonic scale receive no marker." — the same paragraph
+(locator: lines 4016–4017).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 5.14.
+
+---
+
+**Row 5.16 — the setting that chooses the treble staff's tones.**
+
+*Outgoing statement.* "The `useCollectedTones` flag controls whether the treble staff uses the original sounding tones
+(preserving voicing color) or canonical chord tones." — the body (locator: lines 4019–4020).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 5.11.
+
+---
+
+**Row 5.17 — tick values kept as raw integers for the module's independence.**
+
+*Outgoing statement.* "Tick values in `HarmonicRegion` are raw integers rather than `Fraction` objects, keeping the header
+free of the engraving module's `Fraction` include and preserving `composing_analysis`'s module independence." — the
+body (locator: lines 4022–4024).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the header carry the tick values as integers with no
+engraving include?
+
+---
+
+#### Not a statement, at this member
+
+1. The "**Files:**" list and its four bullets (3947–3951) — *implementation locators*.
+2. "Declared and defined in `mu::notation` (bridge pattern — requires engraving types `Score*`, `Fraction`)."
+   (3992–3993) — *an implementation locator*.
+3. "This keeps the chord track from serializing mixed chord/rest measures when the analyzer intentionally skips
+   thin-texture subspans." (4001–4003) — *a defense* of Row 5.6.
+4. The table's header row "| Position | Content |" and its rule line (4005–4006) — *a table header*.
+
+#### The arithmetic at this member
+
+- Rows written: **17** (5.1 to 5.17).
+- Rows split into two claims, **+1 each**: 5.3, 5.4 — two rows, **+2**.
+- **Outgoing statements placed: 17 + 2 = 19.**
+- Listed under *not a statement*: **4**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row: 19 dispositions over 19 statements.
+- **UNPLACED rows at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 19 | 5.1, 5.2, 5.3(i), 5.3(ii), 5.4(i), 5.4(ii), 5.5, 5.6, 5.7, 5.8, 5.9, 5.10, 5.11, 5.12, 5.13, 5.14, 5.15, 5.16, 5.17 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **19** | — |
+
+**The column sums to 19, against 19 statements, so the arithmetic closes at this member**: 0 + 0 + 0 + 19 + 0 + 0 + 0
+= 19. **The statement lists in the right-hand column are the record**, and the integers are re-derivable from them by
+counting.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 1 |
+| THE DERIVATION IS SILENT | 18 |
+| **Total verdicts** | **19** |
+
+*(Counted per named derived statement per statement; no statement here names more than one.)* The DIFFERS statement is
+5.3(i), naming L3-S30.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — no withheld home lies in this member.
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -2560,7 +2887,7 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   comparison placed the same statement here, at its Row 4.21.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, and member 3's the rows
-numbered 3.n. Member 4 relocates no row.)*
+numbered 3.n. Members 4 and 5 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -2634,6 +2961,31 @@ commit that tabulates it, each with the audit question its row writes.
 - Row 4.23(ii) — what does `ChordAnalysisTone::isBass` mark, and is it the lowest sounding pitch?
 - Row 4.30(i) — does the current code carry every input the sketched figured-bass algorithm reads?
 - Row 4.30(ii) — does the chord-symbol path return an empty result below three distinct pitch classes?
+
+**Member 5 — `ARCHITECTURE.md`, *4.3b HarmonicRhythm*.**
+
+- Row 5.1 — is `HarmonicRegion` free of engraving includes, and are the functions that read the score in the notation
+  module?
+- Row 5.2 — do the declarations in the named headers match the listing?
+- Row 5.3(i) — where does `analyzeHarmonicRhythm()` place its boundaries, and is that function reached at the current
+  commit?
+- Row 5.3(ii) — which chord analysis runs at each boundary, and on which arm?
+- Row 5.4(i) — what does the default mode collapse and absorb, and under which length?
+- Row 5.4(ii) — does the chord-staff path request the mode that keeps every change?
+- Row 5.5 — does `populateChordTrack()` clear the target region before writing, and what does it write?
+- Row 5.6 — does the populate path extend the first and last written region of a bar to the bar's boundaries and absorb
+  an internal gap into the region before it?
+- Row 5.7 — are the key and mode label's two confidence thresholds as stated, and which confidence do they read?
+- Row 5.8 — is the key-relationship annotation written only at key changes whose confidence is at least the stated
+  value?
+- Row 5.9 — which source computes the borrowed-chord star, the pivot label and the cadence marker the chord staff writes,
+  and under which threshold?
+- Row 5.10 — is the Roman numeral written only at the stated confidence?
+- Row 5.11, with Row 5.16 — which tones does the treble staff receive under each setting?
+- Row 5.12 — does the bass staff receive the chord's root rather than its bass?
+- Row 5.13 — which field of the analysis result supplies the chord symbol the chord staff writes?
+- Row 5.14, with Row 5.15 — how is the borrowed chord's source key searched, and over which range of fifths?
+- Row 5.17 — does the region header carry the tick values as integers with no engraving include?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -2712,6 +3064,12 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 4.29 (L3-S25):** the outgoing text figures *"*all* sounding pitches including suspensions and passing
   tones"*, where L3-S25 says *"Elaborations of the other relations are not figured"*.
 
+**Member 5.** No ADOPTED — proposed row.
+
+- **DIFFERS — Row 5.3(i) (L3-S30):** the outgoing function *"detects harmonic boundaries (ticks where the sounding
+  pitch-class set changes)"*, where L3-S30 lists *"L2's harmonic boundaries … each referenced by identity"* and *"does not
+  republish the segmentation"*.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -2723,9 +3081,10 @@ are at its own foot, and the integers below are re-derivable from them.
 | 2 | 34 | 3 | 1 | 15 | 5 | 0 | 3 | 7 | 25 |
 | 3 | 21 | 2 | 5 | 1 | 8 | 0 | 1 | 4 | 15 |
 | 4 | 34 | 5 | 2 | 0 | 15 | 0 | 1 | 11 | 7 |
-| **Total** | **132** | **10** | **8** | **23** | **49** | **0** | **20** | **22** | **74** |
+| 5 | 19 | 0 | 0 | 0 | 19 | 0 | 0 | 0 | 4 |
+| **Total** | **151** | **10** | **8** | **23** | **68** | **0** | **20** | **22** | **78** |
 
-**The arithmetic check:** 10 + 8 + 23 + 49 + 0 + 20 + 22 = 132, against 132 statements placed (43 + 34 + 21 + 34).
+**The arithmetic check:** 10 + 8 + 23 + 68 + 0 + 20 + 22 = 151, against 151 statements placed (43 + 34 + 21 + 34 + 19).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -2733,7 +3092,8 @@ are at its own foot, and the integers below are re-derivable from them.
 | 2 | 3 | 12 | 20 | 35 |
 | 3 | 4 | 3 | 14 | 21 |
 | 4 | 7 | 6 | 21 | 34 |
-| **Total** | **14** | **23** | **96** | **133** |
+| 5 | 0 | 1 | 18 | 19 |
+| **Total** | **14** | **24** | **114** | **152** |
 
 ## 14. The derivation's independence record, relayed
 
