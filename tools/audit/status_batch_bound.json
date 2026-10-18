@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l3_keyword_count_2026_10_17.md, Task 2",
+ "dispatch": "cc_instruction_l3_outgoing_population_2026_10_18.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -567,30 +567,44 @@
    "base_commit": "9c4e3296794b9291ee6d7cb879aab8046ea8e0ae",
    "the_then_previous_batch": "cc_instruction_l3_derivation_commit_2026_10_17.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_outgoing_population_2026_10_18.md, Task 2",
+   "base_commit": "a4604507486c392b63882e4446a41fdf80ef7e65",
+   "the_then_previous_batch": "cc_instruction_l3_keyword_count_2026_10_17.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "9c4e3296794b9291ee6d7cb879aab8046ea8e0ae",
- "the_then_previous_batch": "cc_instruction_l3_derivation_commit_2026_10_17.md",
+ "base_commit": "a4604507486c392b63882e4446a41fdf80ef7e65",
+ "the_then_previous_batch": "cc_instruction_l3_keyword_count_2026_10_17.md",
  "the_kind_of_move": "ordinary",
- "entries_moved": 2,
- "characters_moved": 2074,
+ "entries_moved": 3,
+ "characters_moved": 2557,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1631,
-   "sha256": "f5bf2436eca4b1bb8115f322d473a972c59391184f486ec302991370870506dd",
+   "characters": 1688,
+   "sha256": "996361061d5ee517f84b2c2a94b595aab79e40e601c4648c077bc50338857849",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-17 (CC — `records/cc/instructions/cc_instruction_l3_derivation_commit_2026_10_17.md`, Task 1, the close. **★★ THE BLIND DERIVATION OF L3 IS I"
+   "opening": "*2026-10-18 (CC — `records/cc/instructions/cc_instruction_l3_keyword_count_2026_10_17.md`, Task 2, the close. **★★ THE DRAFT L3 KEYWORD LIST IS COUNTE"
   },
   {
    "line_at_base": 10,
-   "characters": 443,
-   "sha256": "55e9670c9967fde92c3ad6534a25b9f325f3d655c907a9b44639705080d55d08",
+   "characters": 460,
+   "sha256": "1ef11a971475430fea81cc356fbf854ccc7fe8da3d5d2b861cba35b7dab517fa",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-17 (CC — Same dispatch, Task 0. **THIS DISPATCH, THE BLIND DERIVATION OF L3, THE RELEASED L3 BRIEF AND HANDOFF ENTRIES 419 AND 420 ARE LANDED"
+   "opening": "*2026-10-18 (CC — Same dispatch, Task 1. **THE DRAFT L3 KEYWORD LIST COUNTED, READ-ONLY**: one scratch script outside the repository, proved identical"
+  },
+  {
+   "line_at_base": 12,
+   "characters": 409,
+   "sha256": "a8d84d1632c5a338bd8cbeb078f7305a5d3500c0fd1d88e9e50a09ef450b392f",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-10-18 (CC — Same dispatch, Task 0. **THIS DISPATCH, THE L3 OUTGOING-POPULATION RULING RECORD AND HANDOFF ENTRIES 421 AND 422 ARE LANDED**, as th"
   }
  ],
  "reconciliation": {

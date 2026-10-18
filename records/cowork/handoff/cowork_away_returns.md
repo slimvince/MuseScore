@@ -24983,3 +24983,51 @@ appeared in the working tree during the run.
 
 *Provenance: CC, 2026-10-18, appended in the one further commit after the close commit
 `49a3ce5813981324011897d6a6a7119eb6d8642d`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 OUTGOING POPULATION DERIVED AND MEASURED: ONE NEW TOOL AND ITS ARTIFACT IN GIT, THE KEYWORD-LIST RULING RECORD AND ITS ENTRIES IN GIT — NOTHING TABULATED, NO DOCUMENT GRADED, NO ALGORITHM CHANGED
+
+This batch ran `records/cc/instructions/cc_instruction_l3_outgoing_population_2026_10_18.md`, pinned at Task 0 to blob
+`ca823ef9b88710be5cb6ea84b32d100f3891e079`: **Task 0** checked the 2026-10-18 keyword-list ruling record at its size,
+its first line and its last bytes, entries 423 and 424 at their sizes and last bytes, and landed this dispatch, the
+ruling record and handoff entries 423 and 424 as they stood (`50df6b5f…`); **Task 1** wrote ONE new tool,
+`tools/audit/gen_l3_outgoing_population.py`, from the dispatch's own text — proved identical to it at the pinned blob
+before it ran — ran it and its `--check` (exit 0 both), held the dispatch's six checks over its artifact
+`tools/audit/l3_outgoing_population.json`, enrolled it in the guard runner with one inserted tuple, and committed the
+three files together (`a4604507…`); **Task 2** closed. No task stopped. **NOTHING WAS TABULATED, COMPARED, DISPOSITIONED
+OR GRADED; NO TABULATION UNIT, ORDER OR BATCHING WAS FIXED; NO DOCUMENT THE NAMED SECTIONS CITE WAS GRADED WHOLE OR
+LISTED; THE BLIND DERIVATION AND THE L3 BRIEF WERE NOT OPENED; NO OUTGOING TEXT WAS EDITED; NO SESSION WAS BOOTED, NO
+SCORE WAS STAGED, NO PACK WAS RENDERED; THE HISTORICAL L2 POPULATION TOOL WAS IMPORTED AND NEVER RUN; NO RULING WAS TAKEN
+AND NO QUESTION OR RECOMMENDATION WAS PUT TO THE USER; NO `D-NNN` WAS ALLOCATED, NO OPEN-ITEMS ROW WAS TOUCHED, AND
+NOTHING ANY LAYER COMPUTES CHANGED.**
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_outgoing_population_2026_10_18.md`, and is pointed at rather than copied (#6): **the
+population, as derived and measured, whole, at its head** under *THE POPULATION, AS DERIVED AND MEASURED* — the identity
+script and its output, the tool's two runs' printed output with their exit codes, the checks script and its output, the
+six checks graded, the ceiling of 1(d) graded, and where in the artifact the measurement is read (`the_measured_size`;
+`item_2_the_documents_the_sections_name.the_distinct_names`; `the_transfer_input`); Task 0's sizes, first-line check
+and the commits (§1), the guard-runner insertion and the guard states (§2), A1 to A3 and E0 to E2 graded (§3), the
+forward bound's aiming, `--apply` and `--check` with the entries moved by name (§4), the regenerations and the members
+they changed (§5), the declared departures (§6), the scripts whole (§7), the observations (§8), what the batch did not
+do (§9), the plan's tell (§10) and the self-check (§11).
+
+### What needs the writing side, named rather than resolved
+
+1. **The measurement itself** — the artifact's `the_measured_size`, read at its own fields, and item 2's derived names at
+   `item_2_the_documents_the_sections_name.the_distinct_names`; no value is restated here or in the report's prose
+   (D-431).
+2. **The classification tool's message now names four tools without an authored verdict**, the new tool among them, as
+   the dispatch's Task 2 item 7 predicts (report §2); authoring one was not this batch's act.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects; then, having read
+  `the_measured_size` and item 2's derived names, the L3 tabulation dispatch, preceded by the named-documents question to
+  the user where item 2 raises one (the 2026-10-17 ruling, item 2).**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-18, at boot tip `986b9663085c4ab21c6a4d3f3957b3fbe9d45b23`, under
+`cc_instruction_l3_outgoing_population_2026_10_18.md`, after the dispatch's ordered first reads. Every commit identifier
+here was read from the commit's own object and `origin/master` at its ref file after each push; the guard verdicts are
+this batch's own runs.*
