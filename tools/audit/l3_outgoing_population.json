@@ -1,6 +1,6 @@
 {
- "★_what_this_artifact_is": "The outgoing population for the L3 comparison, derived and MEASURED under the user's rulings of 2026-10-17 (Option B, four items) and 2026-10-18 (Option B, the 26-term keyword list).  It fixes which current-text passages the comparison covers, in the ruling's four items, and states how large each is.  It takes no disposition, orders no tabulation and grades nothing.",
- "★_what_it_does_not_do": "It does not compare, dispose, adopt, relocate, quarantine, discard or grade anything; it orders no tabulation and fixes no tabulation unit; it grades none of item 2's documents whole or listed; it edits no outgoing text; and it does not open the blind L3 derivation, its brief, or the boot pack's directory.",
+ "★_what_this_artifact_is": "The outgoing population for the L3 comparison, derived and MEASURED under the user's rulings of 2026-10-17 (Option B, four items) and 2026-10-18 (Option B, the 26-term keyword list).  It fixes which current-text passages the comparison covers, in the ruling's four items, and states how large each is; `the_tabulation_population` cuts it into the members the comparison tabulates, in their order.  It takes no disposition and grades nothing.",
+ "★_what_it_does_not_do": "It does not compare, dispose, adopt, relocate, quarantine, discard or grade anything; it fixes no tabulation unit; which of item 2's documents are compared whole it carries as the writing side's derivation, not as a ruling; it edits no outgoing text; and it does not open the blind L3 derivation, its brief, or the boot pack's directory.",
  "the_ruling": {
   "record": "records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md",
   "section": "§2 — Ruling — Option B",
@@ -12,7 +12,7 @@
   "what_it_rules": "L3's keyword list is these 26 terms, and no others; continuo, sentence and bass are excluded; phrase grouping, thoroughbass and read-off are kept although the count found no hit for them (a term that matches nothing costs nothing)."
  },
  "generator": "tools/audit/gen_l3_outgoing_population.py",
- "one_path_per_concern": "Imported by name and never copied (#6, D-623): `locate_section`, `load_classes`, `load_specification_document_set`, `search_terms`, `read_text` and `SEARCH_CLASSES` from gen_l0_l1_outgoing_population; `file_lines`, `span_range`, `headings_by_line`, `norm`, `MD_NAME`, `HOME_SHAPE` and `THE_RESIDUE_STATEMENT` from gen_l2_outgoing_population (a historical record: imported, never run); `read_backbone` and `entry_number` from gen_l2_withheld_documents.",
+ "one_path_per_concern": "Imported by name and never copied (#6, D-623): `locate_section`, `load_classes`, `load_specification_document_set`, `search_terms`, `read_text` and `SEARCH_CLASSES` from gen_l0_l1_outgoing_population; `file_lines`, `span_range`, `headings_by_line`, `norm`, `MD_NAME`, `HOME_SHAPE`, `THE_RESIDUE_STATEMENT`, `TOP_LEVEL`, `fence_ranges`, `block_around`, `merge_ranges` and `subtract_spans` from gen_l2_outgoing_population (a historical record: imported, never run); `read_backbone` and `entry_number` from gen_l2_withheld_documents.",
  "item_1_the_named_sections": {
   "located_in": "ARCHITECTURE.md",
   "the_sections": [
@@ -93,7 +93,7 @@
  },
  "item_2_the_documents_the_sections_name": {
   "the_pattern": "[A-Za-z0-9_./-]+\\.md\\b",
-  "no_grading_of_form": "Every match inside the six spans is recorded, whether the naming is a delegation, a citation or a passing mention.  Which documents are compared whole is a later question (the 2026-10-17 ruling, item 2).",
+  "no_grading_of_form": "Every match inside the six spans is recorded, whether the naming is a delegation, a citation or a passing mention.  Which documents are compared whole is graded at `the_tabulation_population` under `the_named_documents_derivation`.",
   "the_occurrences": [
    {
     "name_as_written": "OPEN_ITEMS.md",
@@ -32548,7 +32548,7 @@
     "in_the_specification_document_set": false
    }
   ],
-  "the_reach_stated": "The 26 terms are RULED (2026-10-18), but the matcher is a case-insensitive SUBSTRING match (`period` matches inside *periodic*, `grouping` inside *regrouping*, `phrase` inside *paraphrase*), so the hit set OVER-REACHES in a known direction; and a passage about L3's subject that uses none of the terms is not found.  The hit set is therefore a LOWER BOUND on the relevant text, never a census (D-673).  The hit records here are LINES; the passages cut around them are the next dispatch's.",
+  "the_reach_stated": "The 26 terms are RULED (2026-10-18), but the matcher is a case-insensitive SUBSTRING match (`period` matches inside *periodic*, `grouping` inside *regrouping*, `phrase` inside *paraphrase*), so the hit set OVER-REACHES in a known direction; and a passage about L3's subject that uses none of the terms is not found.  The hit set is therefore a LOWER BOUND on the relevant text, never a census (D-673).  The hit records here are LINES; the passages cut around them are at `the_tabulation_population` under `the_passage_rule`.",
   "specification_set_members_not_in_the_searched_classes": []
  },
  "item_4_the_decision_passages": {
@@ -33022,8 +33022,3380 @@
    }
   ]
  },
+ "the_named_documents_derivation": {
+  "derived_by": "records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md, the section THE NAMED-DOCUMENTS DERIVATION, applying the classes of records/cowork/rulings/cowork_rulings_2026_09_27_l2_named_documents_sitting.md §1 under item 2 of the 2026-10-17 ruling",
+  "what_it_is": "a derivation by the writing side, not a ruling; no question was raised that the record does not answer, so none was put to the user",
+  "executed_by": "records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md, Task 1"
+ },
+ "the_tabulation_population": {
+  "★_what_this_is": "The outgoing population cut into the MEMBERS the comparison tabulates, in the order it tabulates them, under the rulings of 2026-10-17 (Option B) and 2026-10-18 (Option B), the named-documents derivation and the passage rule below.  Every item-3 hit line of every specification-set member lies in exactly one member, and every one of the 22 item-4 homes lies wholly in exactly one member; either failing is a STOP, so this sentence records checks that passed.  It takes no disposition and grades nothing.",
+  "the_passage_rule": "A passage is the block of lines holding one item-3 hit line, or spanning one item-4 home: (a) a line inside a fenced code block takes the whole block, fence lines included; (b) any other line takes the maximal run of consecutive non-blank lines around it, stopping at a blank line or a fence line; (c) where that run is one heading line standing alone, it takes the heading together with the block that follows it (blank lines skipped), unless the next non-blank line is a heading or a fence.  An item-4 home spanning lines a..b takes the block around a through the block around b.  Overlapping or touching passages of one document merge.  In ARCHITECTURE.md every line inside the six item-1 spans is removed from the passages (those spans are tabulated whole), and the passages are grouped by the nearest top-level `## ` heading at or before them, the lines before the first such heading forming the opening block.  The rule and the four functions that implement it are the L2 comparison's, imported from gen_l2_outgoing_population and not copied.",
+  "the_order": "1-6: the six item-1 places, in ARCHITECTURE.md's order.  Then the eight WHOLE item-2 documents: the specification-set members first, then the others; within each group by descending count of distinct item-3 hit lines, ties by path.  Then ARCHITECTURE.md's passages, one member per top-level `## ` section, in the file's order.  Then every other document carrying passages: the specification-set members by descending count of their distinct item-3 hit lines, ties by path; then the documents reached by item 4 alone, by path.  Last: the two transfer inputs, the L0/L1 comparison's section 10 span and then the L2 comparison's.",
+  "item_2_listed_not_compared_whole": [
+   {
+    "name": "CLAUDE.md",
+    "bytes": 170942,
+    "inventory_class": "governing-documents",
+    "in_the_residue": true,
+    "the_statement": "named inside the six item-1 spans; LISTED and not compared whole under the named-documents derivation; the lines that name it are tabulated inside item 1"
+   },
+   {
+    "name": "OPEN_ITEMS.md",
+    "bytes": 365718,
+    "inventory_class": "governing-documents",
+    "in_the_residue": true,
+    "the_statement": "named inside the six item-1 spans; LISTED and not compared whole under the named-documents derivation; the lines that name it are tabulated inside item 1"
+   },
+   {
+    "name": "records/cc/reports/cc_tonicization_modulation_metric_dossier.md",
+    "bytes": 14611,
+    "inventory_class": null,
+    "in_the_residue": false,
+    "the_statement": "named inside the six item-1 spans; LISTED and not compared whole under the named-documents derivation; the lines that name it are tabulated inside item 1"
+   },
+   {
+    "name": "records/cowork/rulings/cowork_rulings_2026_08_09_second_stop.md",
+    "bytes": 4834,
+    "inventory_class": null,
+    "in_the_residue": false,
+    "the_statement": "named inside the six item-1 spans; LISTED and not compared whole under the named-documents derivation; the lines that name it are tabulated inside item 1"
+   }
+  ],
+  "the_members": [
+   {
+    "kind": "item 1 — a named place",
+    "document": "ARCHITECTURE.md",
+    "label": "#### Layer 4 — the per-slice chord-symbol decoder (Built+Dormant — not wired)",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 1935,
+      "last_line_as_a_locator_only": 2074,
+      "first_line_text": "#### Layer 4 — the per-slice chord-symbol decoder (Built+Dormant — not wired)",
+      "last_line_text": ""
+     }
+    ],
+    "lines": 140,
+    "bytes": 11984,
+    "position": 1,
+    "item_3_hit_lines_inside": 6,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "item 1 — a named place",
+    "document": "ARCHITECTURE.md",
+    "label": "#### Layer 5 — the function/cadence layer (Built+Dormant — design ratified; consumed by L6)",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 2075,
+      "last_line_as_a_locator_only": 2191,
+      "first_line_text": "#### Layer 5 — the function/cadence layer (Built+Dormant — design ratified; consumed by L6)",
+      "last_line_text": ""
+     }
+    ],
+    "lines": 117,
+    "bytes": 11005,
+    "position": 2,
+    "item_3_hit_lines_inside": 21,
+    "item_4_identities_inside": [
+     {
+      "identity": "D-495",
+      "home_as_cited": "ARCHITECTURE.md:2143-2153"
+     },
+     {
+      "identity": "D-584",
+      "home_as_cited": "ARCHITECTURE.md:2111-2118"
+     }
+    ]
+   },
+   {
+    "kind": "item 1 — a named place",
+    "document": "ARCHITECTURE.md",
+    "label": "#### Layer 6 — the grouping layer (Design-only — v1 spec)",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 2192,
+      "last_line_as_a_locator_only": 2256,
+      "first_line_text": "#### Layer 6 — the grouping layer (Design-only — v1 spec)",
+      "last_line_text": ""
+     }
+    ],
+    "lines": 65,
+    "bytes": 7075,
+    "position": 3,
+    "item_3_hit_lines_inside": 17,
+    "item_4_identities_inside": [
+     {
+      "identity": "D-472",
+      "home_as_cited": "ARCHITECTURE.md:2208-2220"
+     }
+    ]
+   },
+   {
+    "kind": "item 1 — a named place",
+    "document": "ARCHITECTURE.md",
+    "label": "### 4.3 ChordSymbolFormatter",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 3804,
+      "last_line_as_a_locator_only": 3918,
+      "first_line_text": "### 4.3 ChordSymbolFormatter",
+      "last_line_text": ""
+     }
+    ],
+    "lines": 115,
+    "bytes": 6415,
+    "position": 4,
+    "item_3_hit_lines_inside": 29,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "item 1 — a named place",
+    "document": "ARCHITECTURE.md",
+    "label": "### 4.3b HarmonicRhythm",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 3945,
+      "last_line_as_a_locator_only": 4025,
+      "first_line_text": "### 4.3b HarmonicRhythm",
+      "last_line_text": ""
+     }
+    ],
+    "lines": 81,
+    "bytes": 4558,
+    "position": 5,
+    "item_3_hit_lines_inside": 8,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "item 1 — a named place",
+    "document": "ARCHITECTURE.md",
+    "label": "#### Harmonic rhythm detection",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 7098,
+      "last_line_as_a_locator_only": 7117,
+      "first_line_text": "#### Harmonic rhythm detection",
+      "last_line_text": ""
+     }
+    ],
+    "lines": 20,
+    "bytes": 1042,
+    "position": 6,
+    "item_3_hit_lines_inside": 2,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "item 2 — a whole document (a specification-set member)",
+    "document": "cowork_layer5_function_design.md",
+    "label": "the whole document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 1,
+      "last_line_as_a_locator_only": 915,
+      "first_line_text": "# Architectural Layer 5 — FUNCTION (Roman numeral, cadence, tonicization) — Architecture & Design",
+      "last_line_text": "    taken early or forgotten."
+     }
+    ],
+    "lines": 915,
+    "bytes": 91121,
+    "position": 7,
+    "item_3_hit_lines_inside": 189,
+    "item_4_identities_inside": [
+     {
+      "identity": "D-336",
+      "home_as_cited": "cowork_layer5_function_design.md:627-631"
+     }
+    ]
+   },
+   {
+    "kind": "item 2 — a whole document (a specification-set member)",
+    "document": "cowork_layer6_grouping_design.md",
+    "label": "the whole document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 1,
+      "last_line_as_a_locator_only": 469,
+      "first_line_text": "# Layer 6 — Grouping (design)",
+      "last_line_text": "   a Layer-6 vocabulary change."
+     }
+    ],
+    "lines": 469,
+    "bytes": 44322,
+    "position": 8,
+    "item_3_hit_lines_inside": 149,
+    "item_4_identities_inside": [
+     {
+      "identity": "D-454",
+      "home_as_cited": "cowork_layer6_grouping_design.md:307-311"
+     },
+     {
+      "identity": "D-455",
+      "home_as_cited": "cowork_layer6_grouping_design.md:355-357"
+     },
+     {
+      "identity": "D-456",
+      "home_as_cited": "cowork_layer6_grouping_design.md:348-354"
+     },
+     {
+      "identity": "D-457",
+      "home_as_cited": "cowork_layer6_grouping_design.md:214-222"
+     },
+     {
+      "identity": "D-459",
+      "home_as_cited": "cowork_layer6_grouping_design.md:254-261"
+     },
+     {
+      "identity": "D-460",
+      "home_as_cited": "cowork_layer6_grouping_design.md:292-296"
+     },
+     {
+      "identity": "D-461",
+      "home_as_cited": "cowork_layer6_grouping_design.md:324-326"
+     },
+     {
+      "identity": "D-462",
+      "home_as_cited": "cowork_layer6_grouping_design.md:369-371"
+     }
+    ]
+   },
+   {
+    "kind": "item 2 — a whole document (a specification-set member)",
+    "document": "cowork_layer5_engagement_design.md",
+    "label": "the whole document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 1,
+      "last_line_as_a_locator_only": 659,
+      "first_line_text": "# Layer-5 engagement design — Part 1: the CARRY and the SELECTION architecture",
+      "last_line_text": "Both regression stops untouched/green (no `src/`, no build). Fork-only; `upstream` untouched.*"
+     }
+    ],
+    "lines": 659,
+    "bytes": 55597,
+    "position": 9,
+    "item_3_hit_lines_inside": 41,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "item 2 — a whole document (a specification-set member)",
+    "document": "cowork_layer4_chordsymbol_design.md",
+    "label": "the whole document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 1,
+      "last_line_as_a_locator_only": 629,
+      "first_line_text": "# Architectural Layer 4 — CHORD SYMBOL (with NON-CHORD TONES) — Architecture & Design",
+      "last_line_text": "  scorer's competitiveness constant."
+     }
+    ],
+    "lines": 629,
+    "bytes": 59128,
+    "position": 10,
+    "item_3_hit_lines_inside": 35,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "item 2 — a whole document (not a specification-set member)",
+    "document": "docs/nct_detection_design.md",
+    "label": "the whole document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 1,
+      "last_line_as_a_locator_only": 219,
+      "first_line_text": "# Non-Chord-Tone Detection — Design Analysis",
+      "last_line_text": "speculative improvement into a targeted one."
+     }
+    ],
+    "lines": 219,
+    "bytes": 10148,
+    "position": 11,
+    "item_3_hit_lines_inside": 0,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "item 2 — a whole document (not a specification-set member)",
+    "document": "cowork_engage_arc_plan.md",
+    "label": "the whole document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 1,
+      "last_line_as_a_locator_only": 185,
+      "first_line_text": "# The Engage-Arc Path Forward — ratified, principle-grounded",
+      "last_line_text": ""
+     }
+    ],
+    "lines": 185,
+    "bytes": 16074,
+    "position": 12,
+    "item_3_hit_lines_inside": 0,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "item 2 — a whole document (not a specification-set member)",
+    "document": "cowork_phase5b_l4_build_plan.md",
+    "label": "the whole document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 1,
+      "last_line_as_a_locator_only": 84,
+      "first_line_text": "# Phase 5b — incremental L4 build + engagement (investigate-each-step) — plan",
+      "last_line_text": "**First action: Step 0 — the read-only grounding investigation.** Everything after it is provisional on its findings."
+     }
+    ],
+    "lines": 84,
+    "bytes": 7421,
+    "position": 13,
+    "item_3_hit_lines_inside": 0,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "item 2 — a whole document (not a specification-set member)",
+    "document": "cowork_l1l4_review_charter.md",
+    "label": "the whole document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 1,
+      "last_line_as_a_locator_only": 52,
+      "first_line_text": "# L1–L4 comprehensive review + tidy — charter (the step-3 QA gate, before L5)",
+      "last_line_text": "COMPLETE / nothing-left (modulo the joint-L5 engagement+retirement+seal)** sign-off → **then L5.**"
+     }
+    ],
+    "lines": 52,
+    "bytes": 4286,
+    "position": 14,
+    "item_3_hit_lines_inside": 0,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "the opening block, above the first `## ` heading",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 11,
+      "last_line_as_a_locator_only": 153,
+      "first_line_text": "> **★★ AS-BUILT (the OI-178 adoption, user-ratified 2026-07-26, option 1 — STAGED SCOPE): the joint estimator",
+      "last_line_text": "> way round, saying the legacy pipeline was still live on the notation path.)"
+     },
+     {
+      "first_line_as_a_locator_only": 155,
+      "last_line_as_a_locator_only": 174,
+      "first_line_text": "> **(2) The section adapter + the span-annotation consumer + the inference↔presentation boundary.**",
+      "last_line_text": "> additions, and they are presentation."
+     },
+     {
+      "first_line_as_a_locator_only": 176,
+      "last_line_as_a_locator_only": 199,
+      "first_line_text": "> **(3) The implode + tuning span-seam consumers + the exposure-bucket unification.**",
+      "last_line_text": "> at the record surface** (the §4.1 presentation-gate disposition — every exposure/annotation constant's declared site)."
+     },
+     {
+      "first_line_as_a_locator_only": 201,
+      "last_line_as_a_locator_only": 223,
+      "first_line_text": "> **(4) The note-seam re-plumb (status bar + harmony write + right-click menu) on `noteView`.**",
+      "last_line_text": "> expanding-window path byte-identical. After this unit the whole audited note seam is dual-arm."
+     },
+     {
+      "first_line_as_a_locator_only": 225,
+      "last_line_as_a_locator_only": 263,
+      "first_line_text": "> **(5) The dual-arm classified-comparison instrument (measurement-only, opt-in; the switch evidence).**",
+      "last_line_text": "> display-symbol completeness gap)."
+     }
+    ],
+    "lines": 249,
+    "bytes": 27088,
+    "position": 15,
+    "item_3_hit_lines_inside": 16,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## The joint estimator — the standing rules of the production inference layer",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 267,
+      "last_line_as_a_locator_only": 383,
+      "first_line_text": "> **★★ THE JOINT ESTIMATOR'S STANDING RULES — fitting, held-out evaluation, the search, the key axis, and",
+      "last_line_text": "> this document). Ratified by the user; the record does not date the mandate."
+     },
+     {
+      "first_line_as_a_locator_only": 512,
+      "last_line_as_a_locator_only": 549,
+      "first_line_text": "- **Over-claiming a constraint as HARD re-creates the override failure in reverse, and a sounding",
+      "last_line_text": "  the machinery."
+     }
+    ],
+    "lines": 155,
+    "bytes": 15123,
+    "position": 16,
+    "item_3_hit_lines_inside": 2,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## Document governance and the standing architecture notes",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 558,
+      "last_line_as_a_locator_only": 566,
+      "first_line_text": "> **Doc governance (2026-06-29) — the hierarchy.** This is **THE canonical architecture doc**. The **per-layer /",
+      "last_line_text": "> this one, this one wins, and a new ratified decision lands here first.**"
+     },
+     {
+      "first_line_as_a_locator_only": 568,
+      "last_line_as_a_locator_only": 578,
+      "first_line_text": "> **★★ ARCHITECTURE NOTE (updated 2026-06-29 — the 2026-06-15 joint-inference investigation has LANDED).**",
+      "last_line_text": "> `cowork_target_architecture.md` §2."
+     }
+    ],
+    "lines": 20,
+    "bytes": 2157,
+    "position": 17,
+    "item_3_hit_lines_inside": 2,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 1. Project Overview",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 644,
+      "last_line_as_a_locator_only": 670,
+      "first_line_text": "- **ChordAnalyzer** — identifies chord quality, extensions, inversions, diatonic",
+      "last_line_text": "  page in Edit → Preferences → Composing"
+     }
+    ],
+    "lines": 27,
+    "bytes": 1961,
+    "position": 18,
+    "item_3_hit_lines_inside": 5,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 2. Architectural Principles",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 750,
+      "last_line_as_a_locator_only": 752,
+      "first_line_text": "Analysis components produce structured data — they never produce display strings.",
+      "last_line_text": "established by `ChordSymbolFormatter` and must be maintained throughout."
+     },
+     {
+      "first_line_as_a_locator_only": 794,
+      "last_line_as_a_locator_only": 799,
+      "first_line_text": "The system presents analytical findings and suggestions. It never modifies the main score",
+      "last_line_text": "standard MuseScore editing."
+     },
+     {
+      "first_line_as_a_locator_only": 823,
+      "last_line_as_a_locator_only": 834,
+      "first_line_text": "**RESOLVED (Iter 97, commits `16b5bdfa57` Phases 2+3 / `045cb54e0d` Phase 4).** The two",
+      "last_line_text": "removed in Iter 81). See §3.3 \"Region Analysis — Canonical Modules\" for the full module map."
+     },
+     {
+      "first_line_as_a_locator_only": 845,
+      "last_line_as_a_locator_only": 851,
+      "first_line_text": "- What is the actual texture? (SATB, Alberti bass, walking bass, running passages,",
+      "last_line_text": "- Is the harmonic rhythm fast or slow relative to what our region count implies?"
+     },
+     {
+      "first_line_as_a_locator_only": 877,
+      "last_line_as_a_locator_only": 881,
+      "first_line_text": "| Score | File | Key passages |",
+      "last_line_text": "| Dvořák op08n06 | `tools/dcml/dvorak_silhouettes/MS3/op08n06.mscx` | Early slow section, chromatic middle |"
+     },
+     {
+      "first_line_as_a_locator_only": 937,
+      "last_line_as_a_locator_only": 937,
+      "first_line_text": "When our formatter produces a chord symbol string, it must be valid according to `chords_std.xml` only. Do not add chord symbol strings that exist only in `chords.xml` — they will fail to parse correctly under the Standard chord style and may produce corrupted output.",
+      "last_line_text": "When our formatter produces a chord symbol string, it must be valid according to `chords_std.xml` only. Do not add chord symbol strings that exist only in `chords.xml` — they will fail to parse correctly under the Standard chord style and may produce corrupted output."
+     },
+     {
+      "first_line_as_a_locator_only": 941,
+      "last_line_as_a_locator_only": 941,
+      "first_line_text": "When adding new chord symbol formats, always verify against `chords_std.xml` first, not `chords.xml`.",
+      "last_line_text": "When adding new chord symbol formats, always verify against `chords_std.xml` first, not `chords.xml`."
+     },
+     {
+      "first_line_as_a_locator_only": 1016,
+      "last_line_as_a_locator_only": 1019,
+      "first_line_text": "**Phase E is the first iteration loop**, not just a new layer. Cadence detection creates",
+      "last_line_text": "Phase E as a bidirectional interface, not a unidirectional gate addition."
+     },
+     {
+      "first_line_as_a_locator_only": 1053,
+      "last_line_as_a_locator_only": 1073,
+      "first_line_text": "The 2026-06-10 \"joint inference over a hypothesis lattice / global Viterbi–beam decode\" above named the right",
+      "last_line_text": "history."
+     },
+     {
+      "first_line_as_a_locator_only": 1077,
+      "last_line_as_a_locator_only": 1082,
+      "first_line_text": "**The founding principle: analyze at the finest grain where harmony is well-defined, and make everything coarser a",
+      "last_line_text": "contracts below all serve this principle. Their detailed statements live in the target-architecture doc."
+     },
+     {
+      "first_line_as_a_locator_only": 1084,
+      "last_line_as_a_locator_only": 1274,
+      "first_line_text": "- **Universality in the fact layers; style only in calibration.** L1 (notes) and L2 (slicing) are **style-agnostic and",
+      "last_line_text": "  record states neither a date nor a ratifier for the rule itself."
+     },
+     {
+      "first_line_as_a_locator_only": 1316,
+      "last_line_as_a_locator_only": 1329,
+      "first_line_text": "> **⚠ THE IMPLEMENTATION AT HEAD CONTRADICTS THIS SHELVING, AND THE CONTRADICTION IS STATED HERE",
+      "last_line_text": "> without ever meeting it. A ruling nobody can find is a ruling nobody applies."
+     }
+    ],
+    "lines": 271,
+    "bytes": 27528,
+    "position": 19,
+    "item_3_hit_lines_inside": 43,
+    "item_4_identities_inside": [
+     {
+      "identity": "D-022",
+      "home_as_cited": "ARCHITECTURE.md:1077-1078"
+     }
+    ]
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 3. Directory Structure",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 1341,
+      "last_line_as_a_locator_only": 1419,
+      "first_line_text": "```",
+      "last_line_text": "```"
+     },
+     {
+      "first_line_as_a_locator_only": 1425,
+      "last_line_as_a_locator_only": 1431,
+      "first_line_text": "| Namespace | Where it lives | What goes here |",
+      "last_line_text": "| `mu::notation::internal` | `src/notation/internal/` | Internal notation helpers (isChordTrackStaff, staffIsEligible) |"
+     },
+     {
+      "first_line_as_a_locator_only": 1460,
+      "last_line_as_a_locator_only": 1483,
+      "first_line_text": "1. **The analysis library (`composing`) depends on no MuseScore or engraving types** — the",
+      "last_line_text": "   state is never inference evidence."
+     },
+     {
+      "first_line_as_a_locator_only": 1485,
+      "last_line_as_a_locator_only": 1490,
+      "first_line_text": "*Why this rule: derived from the already-ratified scoped forms (the Dependency Rule, the bridge",
+      "last_line_text": "and reconciles the §1.2 contribution intent with the fork-local patch constraint.*"
+     },
+     {
+      "first_line_as_a_locator_only": 1500,
+      "last_line_as_a_locator_only": 1514,
+      "first_line_text": "1. **A gate or scoring rule reads STRUCTURED FIELDS ONLY — never a chord-symbol string, never a",
+      "last_line_text": "   with itself."
+     },
+     {
+      "first_line_as_a_locator_only": 1539,
+      "last_line_as_a_locator_only": 1547,
+      "first_line_text": "| File | Declares/defines | Called by |",
+      "last_line_text": "| `notationanalysisinternal.h` | `isChordTrackStaff()` — name-based chord staff detection<br>`staffIsEligible()` — exclude drums/hidden/chord-staff staves | `notationcomposingbridgehelpers.cpp`, `notationtuningbridge.cpp`, `notationimplodebridge.cpp` |"
+     },
+     {
+      "first_line_as_a_locator_only": 1554,
+      "last_line_as_a_locator_only": 1558,
+      "first_line_text": "**Two terms used throughout these layer docs.** **L1.5** is the thin *derived-view* layer over the L1 note model — the",
+      "last_line_text": "case counts (e.g. `53/24/53`); the \"class-(a)/(b)\" split and the full definition live in the gate policy (CLAUDE.md)."
+     },
+     {
+      "first_line_as_a_locator_only": 1562,
+      "last_line_as_a_locator_only": 1567,
+      "first_line_text": "The analysis pipeline is being rebuilt **upstream-first** onto the ratified 4-layer target",
+      "last_line_text": "module (below) and is now **wired — L3 consumes the slicer** (`regionanalyzer.cpp:579`)."
+     },
+     {
+      "first_line_as_a_locator_only": 1571,
+      "last_line_as_a_locator_only": 1571,
+      "first_line_text": "**Delegation pointer for the Layer-1.5 phrase-boundary primitive (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for the phrase-boundary primitive is `cowork_phrase_boundary_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-476…D-485 — which this section points at and does not restate. *(It is sited HERE, and the choice is stated rather than left to be inferred: this document defines L1.5 as \"the thin derived-view layer over the L1 note model\" and carries no section of its own for it, so the layer the primitive is a view OVER is the nearest owning section. The only other place the primitive is named is the Layer-6 section, which consumes it and does not own it — and which D-266 prohibits building until the bounded-context design is coded and regression-tested for Layers 1–5, so siting a contract pointer there would attach it to a question the user deliberately left open. Naming the document by filename also closes the prose-reference question the write list carried: the doc-governance clause's phrase \"the phrase-boundary design\" had more than one candidate in the tree.)*",
+      "last_line_text": "**Delegation pointer for the Layer-1.5 phrase-boundary primitive (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The ratified contract for the phrase-boundary primitive is `cowork_phrase_boundary_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-476…D-485 — which this section points at and does not restate. *(It is sited HERE, and the choice is stated rather than left to be inferred: this document defines L1.5 as \"the thin derived-view layer over the L1 note model\" and carries no section of its own for it, so the layer the primitive is a view OVER is the nearest owning section. The only other place the primitive is named is the Layer-6 section, which consumes it and does not own it — and which D-266 prohibits building until the bounded-context design is coded and regression-tested for Layers 1–5, so siting a contract pointer there would attach it to a question the user deliberately left open. Naming the document by filename also closes the prose-reference question the write list carried: the doc-governance clause's phrase \"the phrase-boundary design\" had more than one candidate in the tree.)*"
+     },
+     {
+      "first_line_as_a_locator_only": 1586,
+      "last_line_as_a_locator_only": 1591,
+      "first_line_text": "**Transitional, by design.** The segment-first analysis spine described below",
+      "last_line_text": "to the note model; the slicing/scoring *logic* is frozen until its layers."
+     },
+     {
+      "first_line_as_a_locator_only": 1612,
+      "last_line_as_a_locator_only": 1624,
+      "first_line_text": "**Polyphonic phrase-boundary detection has NO validated deterministic rule set in the literature —",
+      "last_line_text": "delegated two paragraphs above may claim; it does not change what that contract specifies.)"
+     },
+     {
+      "first_line_as_a_locator_only": 1626,
+      "last_line_as_a_locator_only": 1636,
+      "first_line_text": "**★ VOICE SLOTS AND STEM DIRECTION ARE STRUCTURAL NOTATIONAL METADATA, NOT USER-WRITTEN ANALYTICAL",
+      "last_line_text": "settles nothing about whether it is built, which is a separate deferral recorded at the chord layer."
+     },
+     {
+      "first_line_as_a_locator_only": 1744,
+      "last_line_as_a_locator_only": 1744,
+      "first_line_text": "**Tried and closed on this layer — do not retry; the register carries each with its evidence: D-287 (key-as-distribution, shelved), D-290 (the key-agnostic local cadence approach, falsified).**",
+      "last_line_text": "**Tried and closed on this layer — do not retry; the register carries each with its evidence: D-287 (key-as-distribution, shelved), D-290 (the key-agnostic local cadence approach, falsified).**"
+     },
+     {
+      "first_line_as_a_locator_only": 1751,
+      "last_line_as_a_locator_only": 1769,
+      "first_line_text": "- **Do not revive carrying a ranked distribution of key candidates forward instead of one committed",
+      "last_line_text": "  with it:** measured on the Bach ground-truth corpus; other repertoires unmeasured."
+     },
+     {
+      "first_line_as_a_locator_only": 1853,
+      "last_line_as_a_locator_only": 1860,
+      "first_line_text": "**Gate trade-off on record.** BIR (case-identity): Baroque **53** (net −4), Jazz **24** (net +1),",
+      "last_line_text": "`cowork_layer3_keymode_design.md`."
+     },
+     {
+      "first_line_as_a_locator_only": 1866,
+      "last_line_as_a_locator_only": 1915,
+      "first_line_text": "- **A local-key hypothesis derives from KEY-AGNOSTIC signals only, and NEVER from the key-area",
+      "last_line_text": "  channels."
+     },
+     {
+      "first_line_as_a_locator_only": 1917,
+      "last_line_as_a_locator_only": 1933,
+      "first_line_text": "**★ THE BAROQUE PARTIAL-SIGNATURE CONVENTION IS HANDLED BY DETECTING IT AND REINTERPRETING THE",
+      "last_line_text": "cannot separate the two cases. The thresholds themselves are not restated here (D-431)."
+     },
+     {
+      "first_line_as_a_locator_only": 2274,
+      "last_line_as_a_locator_only": 2278,
+      "first_line_text": "The harmonic-rhythm region pipeline used to exist as two near-duplicate copies (one in",
+      "last_line_text": "abstraction the callers populate):"
+     },
+     {
+      "first_line_as_a_locator_only": 2280,
+      "last_line_as_a_locator_only": 2287,
+      "first_line_text": "| Module | Responsibility |",
+      "last_line_text": "| `composing/analysis/types/analysistypes.h` | **The cross-layer value-types LEAF** — a dependency-free header (STL only; no `chord/`, `key/`, or engraving includes) holding the value types that cross the L1.5 / L3 / L4 boundaries: `ChordQuality`, `ChordAnalysisTone`, `ChordAnalyzerPreferences` (+ `kDefault`), `ChordTemporalContext`, `DecodeQualityLevel`, `function::ScoringPhase`, `ParameterBound`/`ParameterBoundsMap`, `KeySigMode`, `KeyModeAnalyzerPreferences` (+ `kDefault`), and the un-nested `PitchContext`. Each is a **pure relocation** from its former home (same name/namespace/layout). `chord/chordanalyzer.h` and `key/keymodeanalyzer.h` now `#include` this leaf, so every existing includer gets the types transitively, unchanged. |"
+     },
+     {
+      "first_line_as_a_locator_only": 2297,
+      "last_line_as_a_locator_only": 2302,
+      "first_line_text": "**Section-level analysis and the Pass-0 injection contract (Stage 2.1).** Section-level",
+      "last_line_text": "notation and configuration layers."
+     },
+     {
+      "first_line_as_a_locator_only": 2304,
+      "last_line_as_a_locator_only": 2308,
+      "first_line_text": "**Bridge and batch are thin wrappers.** `analyzeHarmonicRhythm()` (notation bridge) and",
+      "last_line_text": "behavior that BIR and the pipeline snapshots measure — lives in `regionanalyzer`."
+     },
+     {
+      "first_line_as_a_locator_only": 2392,
+      "last_line_as_a_locator_only": 2403,
+      "first_line_text": "> **Re-baselined 2026-06-13 (corrected GT parser).** The figures in this paragraph are the",
+      "last_line_text": "> the CLAUDE.md gate section for the authoritative identity sets."
+     }
+    ],
+    "lines": 313,
+    "bytes": 29535,
+    "position": 20,
+    "item_3_hit_lines_inside": 38,
+    "item_4_identities_inside": [
+     {
+      "identity": "D-605",
+      "home_as_cited": "ARCHITECTURE.md:1866-1878"
+     }
+    ]
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 4. Existing Components — The Analysis Foundation",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 2490,
+      "last_line_as_a_locator_only": 2492,
+      "first_line_text": "**Purpose:** Identifies the chord quality, extensions, inversions, and diatonic",
+      "last_line_text": "candidates, allowing downstream consumers to consider alternatives."
+     },
+     {
+      "first_line_as_a_locator_only": 2525,
+      "last_line_as_a_locator_only": 2578,
+      "first_line_text": "```cpp",
+      "last_line_text": "```"
+     },
+     {
+      "first_line_as_a_locator_only": 2598,
+      "last_line_as_a_locator_only": 2629,
+      "first_line_text": "```cpp",
+      "last_line_text": "```"
+     },
+     {
+      "first_line_as_a_locator_only": 2635,
+      "last_line_as_a_locator_only": 2648,
+      "first_line_text": "**★ ⚠ THE JAZZ PRESET'S CHORD-SCORING CONSTANTS ARE EMPIRICALLY UNVALIDATED — the §6.6 rule applied,",
+      "last_line_text": "restated here (#6)."
+     },
+     {
+      "first_line_as_a_locator_only": 2650,
+      "last_line_as_a_locator_only": 2658,
+      "first_line_text": "**Gate threshold policy**: the inversion-preference gate thresholds in",
+      "last_line_text": "any gate change is committed."
+     },
+     {
+      "first_line_as_a_locator_only": 2707,
+      "last_line_as_a_locator_only": 2707,
+      "first_line_text": "All notation bridge files (`notationcomposingbridge.cpp`, `notationcomposingbridgehelpers.cpp`, `notationharmonicrhythmbridge.cpp`) use `ChordAnalyzerFactory::create()` so the analyzer type is resolved through the factory rather than hard-coded at each call site. Tests that need a direct instance may use `RuleBasedChordAnalyzer{}` on the stack.",
+      "last_line_text": "All notation bridge files (`notationcomposingbridge.cpp`, `notationcomposingbridgehelpers.cpp`, `notationharmonicrhythmbridge.cpp`) use `ChordAnalyzerFactory::create()` so the analyzer type is resolved through the factory rather than hard-coded at each call site. Tests that need a direct instance may use `RuleBasedChordAnalyzer{}` on the stack."
+     },
+     {
+      "first_line_as_a_locator_only": 2709,
+      "last_line_as_a_locator_only": 2716,
+      "first_line_text": "#### §4.1b — Contextual Inversion Resolution",
+      "last_line_text": "inversions consistently regress (see three-attempt history in Section 6)."
+     },
+     {
+      "first_line_as_a_locator_only": 2724,
+      "last_line_as_a_locator_only": 2728,
+      "first_line_text": "| Bonus | Condition | Default |",
+      "last_line_text": "| `sameRootInversionBonus` | Candidate root matches previous chord's root | 0.4 |"
+     },
+     {
+      "first_line_as_a_locator_only": 2730,
+      "last_line_as_a_locator_only": 2733,
+      "first_line_text": "**Safety constraints (lesson from three-attempt history) — ⚠ SUPERSEDED BY ITER 46, see §4.1g.** As",
+      "last_line_text": "`inversionBonusReduction` mechanism is left unchanged."
+     },
+     {
+      "first_line_as_a_locator_only": 2742,
+      "last_line_as_a_locator_only": 2746,
+      "first_line_text": "- `supportsContextualInversionBonuses` (`chordanalyzer.cpp:855-870`) admits **Major, Minor, Augmented,",
+      "last_line_text": "  Diminished, Augmented, HalfDiminished**; only **Suspended** is still excluded."
+     },
+     {
+      "first_line_as_a_locator_only": 2765,
+      "last_line_as_a_locator_only": 2767,
+      "first_line_text": "`isDiatonicStep(pc1, pc2)` helper declared in `notationcomposingbridgehelpers.h` (inline).",
+      "last_line_text": "`previousBassPc` and compute `bassIsStepwiseFromPrevious` before each analysis call."
+     },
+     {
+      "first_line_as_a_locator_only": 2829,
+      "last_line_as_a_locator_only": 2831,
+      "first_line_text": "**Harmonic summary mode** (status bar, analysis, tuning): region identity = root pitch",
+      "last_line_text": "inversions, and slash chord bass notes are secondary metadata, not identity keys."
+     },
+     {
+      "first_line_as_a_locator_only": 2833,
+      "last_line_as_a_locator_only": 2835,
+      "first_line_text": "**As-written mode** (chord track \"as written\"): region identity = full sonority including",
+      "last_line_text": "only when the full sonority matches."
+     },
+     {
+      "first_line_as_a_locator_only": 2851,
+      "last_line_as_a_locator_only": 2853,
+      "first_line_text": "**Bridge wiring:** `notationharmonicrhythmbridge.cpp` branches on `useRegionalAccumulation`:",
+      "last_line_text": "- Legacy path: per-tick PC bitset comparison (unchanged)"
+     },
+     {
+      "first_line_as_a_locator_only": 2866,
+      "last_line_as_a_locator_only": 2871,
+      "first_line_text": "`ChordTemporalContext` carries the **immediately preceding chord's** root, quality, and",
+      "last_line_text": "names distinct."
+     },
+     {
+      "first_line_as_a_locator_only": 2884,
+      "last_line_as_a_locator_only": 2890,
+      "first_line_text": "| Bonus | Lambda | Value | Quality gate | Extra gates | Iter |",
+      "last_line_text": "| `w_dim` | `wDimBonus` | +0.15 | Diminished or HalfDiminished only | `nextRootPc >= 0`; `((nextRootPc - rootPc + 12) % 12) == 1` (semitone resolution = leading-tone); `distinctPcs >= 4` | 96 |"
+     },
+     {
+      "first_line_as_a_locator_only": 2896,
+      "last_line_as_a_locator_only": 2903,
+      "first_line_text": "1. *First-inversion-m7-family guard* — if any competitor in the same `perBass`",
+      "last_line_text": "   Bø7/D) on identical pitch evidence."
+     },
+     {
+      "first_line_as_a_locator_only": 2911,
+      "last_line_as_a_locator_only": 2917,
+      "first_line_text": "Bridge Pass 2 / Pass 2b in `notationharmonicrhythmbridge.cpp` and the main",
+      "last_line_text": "boolean correct. The same pattern was applied to `nextRootPc` in Iter 95 Step 2."
+     },
+     {
+      "first_line_as_a_locator_only": 2958,
+      "last_line_as_a_locator_only": 2962,
+      "first_line_text": "`RuleBasedChordAnalyzer` is a **vertical sonority analyzer**: it identifies what chord",
+      "last_line_text": "chord plays in the surrounding progression)."
+     },
+     {
+      "first_line_as_a_locator_only": 2970,
+      "last_line_as_a_locator_only": 2976,
+      "first_line_text": "- **3-note triads in inversion** (bass ≠ functional root): DCML annotates the",
+      "last_line_text": "  analysis identifies the sounding notes independently."
+     },
+     {
+      "first_line_as_a_locator_only": 2978,
+      "last_line_as_a_locator_only": 2982,
+      "first_line_text": "Improving beyond ~84% requires a **contextual harmony layer** (Phase 2) that consumes",
+      "last_line_text": "that embed contextual assumptions — keep the vertical/contextual boundary clean."
+     },
+     {
+      "first_line_as_a_locator_only": 3008,
+      "last_line_as_a_locator_only": 3013,
+      "first_line_text": "Gates fire in `analyzeChord()` after the initial scoring pass, before results",
+      "last_line_text": "the gate was introduced or last modified."
+     },
+     {
+      "first_line_as_a_locator_only": 3015,
+      "last_line_as_a_locator_only": 3030,
+      "first_line_text": "| Gate | Iter | Condition (winner → preferred alt) | Effect at introduction |",
+      "last_line_text": "| **HalfDim first-inversion bonus** | 61 (`a34dba041e`), 65 (`af785da463`) | Same structural check as kCleanQualities; bass PC exempt from `extensionThreshold` in `allTonesPresent` (Iter 65: bass is sounding by definition); score bonus applied to HalfDim candidate, gated on `preferMinorOverMajorAdd6` | BIR=true 7→6; BIR=false 132→125 (bonus eliminated 7 false-positive Power/Minor inversions) |"
+     },
+     {
+      "first_line_as_a_locator_only": 3034,
+      "last_line_as_a_locator_only": 3042,
+      "first_line_text": "`supportsContextualInversionBonuses()` and `qualifiesForCompleteTriadInversionBonus()`",
+      "last_line_text": "HalfDiminished inversion candidates on equal footing with Major/Minor."
+     },
+     {
+      "first_line_as_a_locator_only": 3064,
+      "last_line_as_a_locator_only": 3076,
+      "first_line_text": "- **Fixed quarter-note window** (`Constants::DIVISION`) — wrong for non-4/4",
+      "last_line_text": "  inferred chord identities."
+     },
+     {
+      "first_line_as_a_locator_only": 3096,
+      "last_line_as_a_locator_only": 3101,
+      "first_line_text": "| Cluster | Count (Path 1) | Pattern | Why blocked at Path 1 close |",
+      "last_line_text": "| **Edge cases** | 2–3 | Individually examined; no shared pattern | No viable gate. |"
+     },
+     {
+      "first_line_as_a_locator_only": 3105,
+      "last_line_as_a_locator_only": 3107,
+      "first_line_text": "The 128 BIR=false residual was not separately re-characterised in path 1;",
+      "last_line_text": "change the region boundaries on which inversion analysis runs."
+     },
+     {
+      "first_line_as_a_locator_only": 3142,
+      "last_line_as_a_locator_only": 3149,
+      "first_line_text": "- **Iter 55** — Baseline update + pipeline snapshot goldens refresh after greedy-expand switch.",
+      "last_line_text": "- **Iter 65** (`af785da463`) — Bass-PC exemption in `allTonesPresent` for HalfDim inversion check (bass is sounding by definition; was falsely failing threshold). BIR=true 6→5."
+     },
+     {
+      "first_line_as_a_locator_only": 3153,
+      "last_line_as_a_locator_only": 3159,
+      "first_line_text": "| Case | Cluster | Pattern | Status |",
+      "last_line_text": "| bwv43.11 m=3 b=2.0 | Scoring gap / absent | {D,E,A}=Dsus2; Dsus2 not in results[] (cap-3 A-rooted); results-cap issue | Target of Iter 66 sus2 P5-inversion bonus |"
+     },
+     {
+      "first_line_as_a_locator_only": 3195,
+      "last_line_as_a_locator_only": 3204,
+      "first_line_text": "- **`ChordSymbolFormatter` in `chordanalyzer.h`** — a display-layer class declared",
+      "last_line_text": "  at the head of this document)."
+     },
+     {
+      "first_line_as_a_locator_only": 3208,
+      "last_line_as_a_locator_only": 3212,
+      "first_line_text": "- **Split `ChordAnalyzerPreferences`** — the struct conflates chord-scoring weights,",
+      "last_line_text": "  after a scoring stabilisation phase, not during active iteration."
+     },
+     {
+      "first_line_as_a_locator_only": 3231,
+      "last_line_as_a_locator_only": 3236,
+      "first_line_text": "- **`useExistingChordSymbols`, `useRomanNumeralAnnotations`,",
+      "last_line_text": "  feature-abandonment decision."
+     },
+     {
+      "first_line_as_a_locator_only": 3287,
+      "last_line_as_a_locator_only": 3294,
+      "first_line_text": "```cpp",
+      "last_line_text": "```"
+     },
+     {
+      "first_line_as_a_locator_only": 3346,
+      "last_line_as_a_locator_only": 3361,
+      "first_line_text": "- **Note weight caps** — `noteWeightCap`, `bassMultiplier`",
+      "last_line_text": "- **Beat-type weights** — `beatWeightDownbeat` through `beatWeightSubbeat`"
+     },
+     {
+      "first_line_as_a_locator_only": 3376,
+      "last_line_as_a_locator_only": 3378,
+      "first_line_text": "#### §4.1c Part 2 — Jazz Mode (chord-symbol-driven boundaries)",
+      "last_line_text": "**Status: Retired** — production analysis paths in commit 02e3733afb, tool-side surfaces in 69716deead. Chord symbols are no longer read by any analysis or tool path. See §4.1f for the future per-symbol trust-mode design."
+     },
+     {
+      "first_line_as_a_locator_only": 3380,
+      "last_line_as_a_locator_only": 3383,
+      "first_line_text": "**2026-04-08 follow-up:** Temporary jazz-specific scoring experiments were evaluated",
+      "last_line_text": "jazz-only scoring adjustments remain in the analyzer."
+     },
+     {
+      "first_line_as_a_locator_only": 3390,
+      "last_line_as_a_locator_only": 3393,
+      "first_line_text": "Experiment: `batch_analyze --inject-written-root` adds a synthetic bass tone at the",
+      "last_line_text": "horn-section scores."
+     },
+     {
+      "first_line_as_a_locator_only": 3409,
+      "last_line_as_a_locator_only": 3411,
+      "first_line_text": "The `--inject-written-root` flag in `batch_analyze` provides a diagnostic upper bound.",
+      "last_line_text": "production because they are user content and may be incorrect."
+     },
+     {
+      "first_line_as_a_locator_only": 3413,
+      "last_line_as_a_locator_only": 3421,
+      "first_line_text": "**The ban is decided by WHAT AN ANNOTATION SAYS, not by how the score stores it.** No harmonic",
+      "last_line_text": "stored in a different element type. The record states neither a date nor a ratifier."
+     },
+     {
+      "first_line_as_a_locator_only": 3427,
+      "last_line_as_a_locator_only": 3438,
+      "first_line_text": "**The standing consequence: jazz accuracy is NOT MEASURABLE on the corpora we hold, and no",
+      "last_line_text": "in exactly this situation."
+     },
+     {
+      "first_line_as_a_locator_only": 3445,
+      "last_line_as_a_locator_only": 3454,
+      "first_line_text": "1. Jazz scores already contain explicit harmonic annotations — the written chord symbols",
+      "last_line_text": "   classes required by the current 3-PC minimum."
+     },
+     {
+      "first_line_as_a_locator_only": 3458,
+      "last_line_as_a_locator_only": 3471,
+      "first_line_text": "- **Reason 1 (redundancy)** was a value judgment, not structural. Jaccard boundaries",
+      "last_line_text": "  analyzer output produced from notes."
+     },
+     {
+      "first_line_as_a_locator_only": 3473,
+      "last_line_as_a_locator_only": 3475,
+      "first_line_text": "### §4.1f — Future: Authoritative Chord Symbol Mode",
+      "last_line_text": "**Status:** Designed, not implemented. No current timeline."
+     },
+     {
+      "first_line_as_a_locator_only": 3479,
+      "last_line_as_a_locator_only": 3480,
+      "first_line_text": "Chord symbols, Roman numerals, and Nashville numbers already present in a score may",
+      "last_line_text": "carry different levels of authority depending on context:"
+     },
+     {
+      "first_line_as_a_locator_only": 3482,
+      "last_line_as_a_locator_only": 3487,
+      "first_line_text": "- **As-is analysis:** The current analyzer reads notes and infers what chord they",
+      "last_line_text": "  bass is tacet)."
+     },
+     {
+      "first_line_as_a_locator_only": 3489,
+      "last_line_as_a_locator_only": 3491,
+      "first_line_text": "In the to-be case, the written chord symbol is the ground truth — not the notes.",
+      "last_line_text": "annotate what the composer declared.\""
+     },
+     {
+      "first_line_as_a_locator_only": 3524,
+      "last_line_as_a_locator_only": 3527,
+      "first_line_text": "**Status:** provisional design note, updated after Phase 1a validation.",
+      "last_line_text": "Result: **4454/4454 comparable regions = 100.0% root agreement**."
+     },
+     {
+      "first_line_as_a_locator_only": 3529,
+      "last_line_as_a_locator_only": 3534,
+      "first_line_text": "This validates the existing §4.1c chord-symbol-driven path, not independent",
+      "last_line_text": "- jazz mode fires reliably on monophonic saxophone scores"
+     },
+     {
+      "first_line_as_a_locator_only": 3541,
+      "last_line_as_a_locator_only": 3546,
+      "first_line_text": "Implication for Phase 1b: saxophone solos in this validation set provide at",
+      "last_line_text": "design necessary, not optional."
+     },
+     {
+      "first_line_as_a_locator_only": 3575,
+      "last_line_as_a_locator_only": 3578,
+      "first_line_text": "**Score metadata:**",
+      "last_line_text": "regardless of which analysis engine produced the winning harmonic result."
+     },
+     {
+      "first_line_as_a_locator_only": 3580,
+      "last_line_as_a_locator_only": 3582,
+      "first_line_text": "### Phase 1a — Validate Existing Chord-Symbol-Driven Path",
+      "last_line_text": "Phase 1a is now complete."
+     },
+     {
+      "first_line_as_a_locator_only": 3586,
+      "last_line_as_a_locator_only": 3592,
+      "first_line_text": "Run result:",
+      "last_line_text": "- 0 zero-region solos"
+     },
+     {
+      "first_line_as_a_locator_only": 3594,
+      "last_line_as_a_locator_only": 3601,
+      "first_line_text": "Interpretation:",
+      "last_line_text": "  assumption that boundary-correct regional accumulation is enough on its own"
+     },
+     {
+      "first_line_as_a_locator_only": 3603,
+      "last_line_as_a_locator_only": 3609,
+      "first_line_text": "The corrected Phase 1a note-count evidence is:",
+      "last_line_text": "  3-6 distinct pitch classes, yet agreement is still only 18.0%"
+     },
+     {
+      "first_line_as_a_locator_only": 3621,
+      "last_line_as_a_locator_only": 3625,
+      "first_line_text": "### Phase 1b — Minimal Monophonic Fallback Without Chord Symbols",
+      "last_line_text": "arpeggiated passages."
+     },
+     {
+      "first_line_as_a_locator_only": 3637,
+      "last_line_as_a_locator_only": 3642,
+      "first_line_text": "Use:",
+      "last_line_text": "   harmonic-rhythm contexts"
+     },
+     {
+      "first_line_as_a_locator_only": 3698,
+      "last_line_as_a_locator_only": 3705,
+      "first_line_text": "The full engine should add:",
+      "last_line_text": "- explicit confidence calibration against the vertical engine"
+     },
+     {
+      "first_line_as_a_locator_only": 3707,
+      "last_line_as_a_locator_only": 3708,
+      "first_line_text": "The local grouping problem is intentionally deferred to Phase 2 because it is",
+      "last_line_text": "the hardest part of monophonic inference."
+     },
+     {
+      "first_line_as_a_locator_only": 3750,
+      "last_line_as_a_locator_only": 3756,
+      "first_line_text": "The monophonic path should reuse the same broad contextual ideas already used by",
+      "last_line_text": "- continuity bonuses where musically justified"
+     },
+     {
+      "first_line_as_a_locator_only": 4104,
+      "last_line_as_a_locator_only": 4104,
+      "first_line_text": "Chord symbol, key/mode, and Roman numeral are all appended.",
+      "last_line_text": "Chord symbol, key/mode, and Roman numeral are all appended."
+     },
+     {
+      "first_line_as_a_locator_only": 4136,
+      "last_line_as_a_locator_only": 4146,
+      "first_line_text": "**Analysis section:**",
+      "last_line_text": "  both the status bar and the context menu (replaces former per-type counts)"
+     },
+     {
+      "first_line_as_a_locator_only": 4207,
+      "last_line_as_a_locator_only": 4220,
+      "first_line_text": "**★ THE MARK ON THE JAZZ ROW IS THE §6.6 RULE APPLIED, AND IT IS NOT DECORATIVE (2026-08-11;",
+      "last_line_text": "— never by a value being changed or a preset renamed."
+     },
+     {
+      "first_line_as_a_locator_only": 4234,
+      "last_line_as_a_locator_only": 4236,
+      "first_line_text": "The bridge reads these at analysis time and populates `KeyModeAnalyzerPreferences`",
+      "last_line_text": "and the internal +0.2 Ionian offset are replaced by these 21 independent priors."
+     },
+     {
+      "first_line_as_a_locator_only": 4238,
+      "last_line_as_a_locator_only": 4242,
+      "first_line_text": "**Status bar section** (boolean checkboxes; each enabled only when its analysis is on):",
+      "last_line_text": "- `showKeyModeInStatusBar` (bool, default true) — requires `inferKeyMode`"
+     },
+     {
+      "first_line_as_a_locator_only": 4249,
+      "last_line_as_a_locator_only": 4258,
+      "first_line_text": "**Chord staff section** (controls what \"Implode to chord staff\" writes — planned):",
+      "last_line_text": "  region boundaries; requires `inferKeyMode`"
+     }
+    ],
+    "lines": 495,
+    "bytes": 37279,
+    "position": 21,
+    "item_3_hit_lines_inside": 105,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 5. Planned Analysis Extensions",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 4416,
+      "last_line_as_a_locator_only": 4441,
+      "first_line_text": "```cpp",
+      "last_line_text": "```"
+     },
+     {
+      "first_line_as_a_locator_only": 4573,
+      "last_line_as_a_locator_only": 4590,
+      "first_line_text": "1. remaining recurring texture fixes: broken-chord/pedal boundary handling,",
+      "last_line_text": "  into this decision. Both modes are needed; neither should remain undecided."
+     },
+     {
+      "first_line_as_a_locator_only": 4644,
+      "last_line_as_a_locator_only": 4649,
+      "first_line_text": "In piano music with a single bass note on beat 1 followed by a chord block on beats 2–3",
+      "last_line_text": "pitch-class sets for Jaccard boundary detection. Confirmed on Chopin BI16-1 measure 1."
+     },
+     {
+      "first_line_as_a_locator_only": 4659,
+      "last_line_as_a_locator_only": 4666,
+      "first_line_text": "- Chopin mazurka: single bass note on beat 1 (root) isolated from chord block on beats",
+      "last_line_text": "  pattern as Corelli"
+     },
+     {
+      "first_line_as_a_locator_only": 4668,
+      "last_line_as_a_locator_only": 4670,
+      "first_line_text": "All four cases share the same mechanism: the bass voice moves at a faster rate than the",
+      "last_line_text": "overriding the correct root identification from the chord tones above."
+     },
+     {
+      "first_line_as_a_locator_only": 4701,
+      "last_line_as_a_locator_only": 4709,
+      "first_line_text": "The remaining Chopin BI16-1 notation mismatch turned out to be separate from scoring:",
+      "last_line_text": "`populateChordTrack()` instead of being left behind as visible rests."
+     },
+     {
+      "first_line_as_a_locator_only": 4714,
+      "last_line_as_a_locator_only": 4730,
+      "first_line_text": "- **Dvorak op08n06: accepted ambiguity ceiling.** The chord-track output is musically",
+      "last_line_text": "  implode-bridge mode flag to distinguish harmonic summary from as-written output."
+     },
+     {
+      "first_line_as_a_locator_only": 4760,
+      "last_line_as_a_locator_only": 4762,
+      "first_line_text": "- Bach BWV 227.7: bars 1–2, 8–10, final cadence",
+      "last_line_text": "- Dvorak op08n06: early slow section, chromatic middle, late modal stretch"
+     },
+     {
+      "first_line_as_a_locator_only": 4764,
+      "last_line_as_a_locator_only": 4770,
+      "first_line_text": "**Formatter: double quality prefix (confirmed 2026-04-13):**",
+      "last_line_text": "**Fixed 2026-04-13** — commit `4c35da17`."
+     },
+     {
+      "first_line_as_a_locator_only": 4772,
+      "last_line_as_a_locator_only": 4776,
+      "first_line_text": "**Formatter: invalid bass note name `/p` (confirmed 2026-04-13):**",
+      "last_line_text": "**Fixed 2026-04-13** — commit `4c35da17`."
+     },
+     {
+      "first_line_as_a_locator_only": 4778,
+      "last_line_as_a_locator_only": 4783,
+      "first_line_text": "**Key detection: relative major/minor ambiguity (confirmed 2026-04-13):**",
+      "last_line_text": "  music21 ground truth — STATUS.md expectation corrected 2026-04-13)"
+     },
+     {
+      "first_line_as_a_locator_only": 4800,
+      "last_line_as_a_locator_only": 4804,
+      "first_line_text": "**Third-inversion dominant seventh ambiguity (confirmed 2026-04-13):**",
+      "last_line_text": "passing-bass textures."
+     },
+     {
+      "first_line_as_a_locator_only": 4806,
+      "last_line_as_a_locator_only": 4809,
+      "first_line_text": "**Roman numeral quality at minor tonic cadences (confirmed 2026-04-13):**",
+      "last_line_text": "points."
+     },
+     {
+      "first_line_as_a_locator_only": 4822,
+      "last_line_as_a_locator_only": 4831,
+      "first_line_text": "**Campania font rendering artifact (`Dsdim`, `Fsdim` etc.) — MuseScore core issue, not our bug (confirmed 2026-04-17):**",
+      "last_line_text": "scope of this module."
+     },
+     {
+      "first_line_as_a_locator_only": 4862,
+      "last_line_as_a_locator_only": 4869,
+      "first_line_text": "**Preset gating is NOT implemented — corrected 2026-08-02 (`OPEN_ITEMS.md` OI-112(c); this section",
+      "last_line_text": "preset must first be threaded through the formatter."
+     },
+     {
+      "first_line_as_a_locator_only": 4880,
+      "last_line_as_a_locator_only": 4885,
+      "first_line_text": "When the lowest-pitched tone in a window is structurally lighter than the upper",
+      "last_line_text": "resolves this."
+     },
+     {
+      "first_line_as_a_locator_only": 4889,
+      "last_line_as_a_locator_only": 4891,
+      "first_line_text": "**Pass 1** runs normally on all voices. If the winning result's root is a chord",
+      "last_line_text": "the chord (e.g. an inversion) and no pedal detection occurs."
+     },
+     {
+      "first_line_as_a_locator_only": 4924,
+      "last_line_as_a_locator_only": 4931,
+      "first_line_text": "- **Any extension (9th–13th) listed in the bitmask:** the corresponding interval",
+      "last_line_text": "  chord."
+     },
+     {
+      "first_line_as_a_locator_only": 4941,
+      "last_line_as_a_locator_only": 4945,
+      "first_line_text": "When `isPedalPoint = true`, the annotate path (`addHarmonicAnnotationsToSelection`)",
+      "last_line_text": "annotations are enabled."
+     },
+     {
+      "first_line_as_a_locator_only": 4954,
+      "last_line_as_a_locator_only": 4964,
+      "first_line_text": "**★ Table re-synced 2026-08-02 (`OPEN_ITEMS.md` OI-238 and its dated note).** The paragraph above",
+      "last_line_text": "`populateChordTrack` does **not** re-analyze each stretch through `analyzeHarmonicContextAtTick`."
+     },
+     {
+      "first_line_as_a_locator_only": 4971,
+      "last_line_as_a_locator_only": 4981,
+      "first_line_text": "| Entry point | File | Caller | Notes |",
+      "last_line_text": "| `applyRegionTuning(…)` | `notationtuningbridge.cpp` | `notationinteraction.cpp` (tune-selection action) | Record arm derives the tuning stretches from the record; legacy arm calls `analyzeHarmonicRhythm` (`:794`). |"
+     },
+     {
+      "first_line_as_a_locator_only": 4983,
+      "last_line_as_a_locator_only": 4989,
+      "first_line_text": "**What a tick query reads, and what it costs.** On the legacy arm a tick query analysed a bounded",
+      "last_line_text": "OI-212 tracks on the span seams; the cost consequence is OI-203/OI-206 and the §12.1a correction."
+     },
+     {
+      "first_line_as_a_locator_only": 5010,
+      "last_line_as_a_locator_only": 5012,
+      "first_line_text": "Because there is no Jazz path and no symbol-reading gate, order of annotation has no",
+      "last_line_text": "change what any other path produces from the same notes."
+     },
+     {
+      "first_line_as_a_locator_only": 5019,
+      "last_line_as_a_locator_only": 5022,
+      "first_line_text": "`ChordSymbolFormatter::formatRomanNumeral()` returns `\"\"` when",
+      "last_line_text": "from the available tones."
+     },
+     {
+      "first_line_as_a_locator_only": 5070,
+      "last_line_as_a_locator_only": 5084,
+      "first_line_text": "```cpp",
+      "last_line_text": "```"
+     },
+     {
+      "first_line_as_a_locator_only": 5102,
+      "last_line_as_a_locator_only": 5103,
+      "first_line_text": "Corpus baselines (Corelli, Bach, Beethoven) unchanged — fix affects chord symbol",
+      "last_line_text": "display strings only, not rootPc detection used by corpus comparators."
+     },
+     {
+      "first_line_as_a_locator_only": 5224,
+      "last_line_as_a_locator_only": 5224,
+      "first_line_text": "**File:** `notationharmonicrhythmbridge.cpp` — Pass2b loop in `prepareUserFacingHarmonicRegions()`",
+      "last_line_text": "**File:** `notationharmonicrhythmbridge.cpp` — Pass2b loop in `prepareUserFacingHarmonicRegions()`"
+     },
+     {
+      "first_line_as_a_locator_only": 5245,
+      "last_line_as_a_locator_only": 5247,
+      "first_line_text": "Sharp-spelled chromatic notes (TPC ≥ 20, covering both MuseScore-internal and +1-offset",
+      "last_line_text": "the sharp is not yet diatonic:"
+     },
+     {
+      "first_line_as_a_locator_only": 5269,
+      "last_line_as_a_locator_only": 5271,
+      "first_line_text": "The existing Harmony element removal loop now checks `ann->track() == cr->track()` before",
+      "last_line_text": "staves selected."
+     }
+    ],
+    "lines": 217,
+    "bytes": 16858,
+    "position": 22,
+    "item_3_hit_lines_inside": 44,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 6. The Style System",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 5327,
+      "last_line_as_a_locator_only": 5339,
+      "first_line_text": "**Dimensions:**",
+      "last_line_text": "- `analysis` — what the analyzer flags as problems vs features"
+     },
+     {
+      "first_line_as_a_locator_only": 5438,
+      "last_line_as_a_locator_only": 5455,
+      "first_line_text": "**★ HOW FAR THE APPLICATION HAS GOT, corrected 2026-08-11 (`OPEN_ITEMS.md` OI-346). The clause above",
+      "last_line_text": "named, is owed work and is tracked in the open-items register.\"*"
+     },
+     {
+      "first_line_as_a_locator_only": 5518,
+      "last_line_as_a_locator_only": 5577,
+      "first_line_text": "- **The governing order is DISCOVER, THEN NAME.** Structure is learned on a **low-level encoding",
+      "last_line_text": "  formality."
+     },
+     {
+      "first_line_as_a_locator_only": 5586,
+      "last_line_as_a_locator_only": 5619,
+      "first_line_text": "- **The taxonomy and the per-style weights are ONE data-derived object; VALIDATION is a separate",
+      "last_line_text": "  that had been given the texture label would of course recover it."
+     },
+     {
+      "first_line_as_a_locator_only": 5628,
+      "last_line_as_a_locator_only": 5677,
+      "first_line_text": "- **A preset presents as a familiar genre-era label plus exemplars the user knows — never as an",
+      "last_line_text": "  the style system it reaches; it does not weaken it."
+     }
+    ],
+    "lines": 175,
+    "bytes": 15965,
+    "position": 23,
+    "item_3_hit_lines_inside": 12,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 7. The Knowledge Base",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 5705,
+      "last_line_as_a_locator_only": 5725,
+      "first_line_text": "- **Until the RECOGNITION CONSUMER is built, the function layer does not touch this vocabulary —",
+      "last_line_text": "  answer is the point: no section can yet state a rule here, and what is owed is the choice."
+     },
+     {
+      "first_line_as_a_locator_only": 5745,
+      "last_line_as_a_locator_only": 5751,
+      "first_line_text": "For every scale and mode — defines:",
+      "last_line_text": "- Historical period and style associations"
+     },
+     {
+      "first_line_as_a_locator_only": 5769,
+      "last_line_as_a_locator_only": 5772,
+      "first_line_text": "Style-specific ornament types:",
+      "last_line_text": "- Classical: ornament table per period"
+     }
+    ],
+    "lines": 32,
+    "bytes": 2475,
+    "position": 24,
+    "item_3_hit_lines_inside": 4,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 8. Planned Generation Components",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 5826,
+      "last_line_as_a_locator_only": 5832,
+      "first_line_text": "Given a chord symbol and context, generates specific voicings appropriate to the",
+      "last_line_text": "does not change."
+     },
+     {
+      "first_line_as_a_locator_only": 5834,
+      "last_line_as_a_locator_only": 5847,
+      "first_line_text": "```cpp",
+      "last_line_text": "```"
+     },
+     {
+      "first_line_as_a_locator_only": 5882,
+      "last_line_as_a_locator_only": 5888,
+      "first_line_text": "*Extended tertian:*",
+      "last_line_text": "  effect. In Prepared scope."
+     },
+     {
+      "first_line_as_a_locator_only": 5938,
+      "last_line_as_a_locator_only": 5943,
+      "first_line_text": "1. **Melodic analysis** — phrase structure, scale degrees, climax, chromatic notes",
+      "last_line_text": "   appropriate cadences"
+     }
+    ],
+    "lines": 34,
+    "bytes": 1809,
+    "position": 25,
+    "item_3_hit_lines_inside": 6,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 9. The Constraint System",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 5981,
+      "last_line_as_a_locator_only": 5986,
+      "first_line_text": "Fixing can be applied at multiple granularities:",
+      "last_line_text": "- Parameter (fix a characteristic rather than specific notes)"
+     }
+    ],
+    "lines": 6,
+    "bytes": 362,
+    "position": 26,
+    "item_3_hit_lines_inside": 1,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 10. Visualization",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 6041,
+      "last_line_as_a_locator_only": 6044,
+      "first_line_text": "- **Live chord symbols** — as each region is tentatively placed, a chord symbol",
+      "last_line_text": "  actual output of `analyzeChord` for that candidate."
+     },
+     {
+      "first_line_as_a_locator_only": 6046,
+      "last_line_as_a_locator_only": 6049,
+      "first_line_text": "- **Revisions are visible** — if a later step overrides or removes a tentative",
+      "last_line_text": "  observer sees the algorithm \"change its mind.\""
+     },
+     {
+      "first_line_as_a_locator_only": 6051,
+      "last_line_as_a_locator_only": 6053,
+      "first_line_text": "- **Anchor promotion** — when a region is promoted to anchor status (Round 1,",
+      "last_line_text": "  When rejected, it briefly appears in red then disappears."
+     },
+     {
+      "first_line_as_a_locator_only": 6126,
+      "last_line_as_a_locator_only": 6157,
+      "first_line_text": "```cpp",
+      "last_line_text": "```"
+     },
+     {
+      "first_line_as_a_locator_only": 6188,
+      "last_line_as_a_locator_only": 6209,
+      "first_line_text": "```cpp",
+      "last_line_text": "```"
+     }
+    ],
+    "lines": 65,
+    "bytes": 2336,
+    "position": 27,
+    "item_3_hit_lines_inside": 11,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 11. Intonation",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 6235,
+      "last_line_as_a_locator_only": 6242,
+      "first_line_text": "| System | Description | Primary use |",
+      "last_line_text": "| Well temperament | All keys usable, each slightly different — Kirnberger, Werckmeister | Bach period |"
+     },
+     {
+      "first_line_as_a_locator_only": 6342,
+      "last_line_as_a_locator_only": 6346,
+      "first_line_text": "The key design concept across all methods is **per-voice anchor weight**: outer",
+      "last_line_text": "solved pitches — tying naturally into the harmonic rhythm regions."
+     },
+     {
+      "first_line_as_a_locator_only": 6458,
+      "last_line_as_a_locator_only": 6460,
+      "first_line_text": "**Bass weight by inversion:** The bass voice weight is further modified by the chord's",
+      "last_line_text": "harmonic root:"
+     },
+     {
+      "first_line_as_a_locator_only": 6462,
+      "last_line_as_a_locator_only": 6467,
+      "first_line_text": "| Inversion | Bass note | Anchor strength | Weight (example) |",
+      "last_line_text": "| Third inversion | seventh in bass | very weak | very low (e.g. 0.8) |"
+     },
+     {
+      "first_line_as_a_locator_only": 6469,
+      "last_line_as_a_locator_only": 6471,
+      "first_line_text": "In inverted chords, the acoustic anchor is the harmonic root even if it is not the lowest",
+      "last_line_text": "just the bass note."
+     },
+     {
+      "first_line_as_a_locator_only": 6473,
+      "last_line_as_a_locator_only": 6475,
+      "first_line_text": "**Pedal points** — a bass note sustained while harmony changes above it — receive maximum",
+      "last_line_text": "musical context."
+     },
+     {
+      "first_line_as_a_locator_only": 6683,
+      "last_line_as_a_locator_only": 6686,
+      "first_line_text": "**Step 4 — Apply weighted zero-sum centering**",
+      "last_line_text": "calculation. Apply the correction so the sum of all non-anchor offsets equals zero."
+     },
+     {
+      "first_line_as_a_locator_only": 6722,
+      "last_line_as_a_locator_only": 6725,
+      "first_line_text": "| Priority | Source | Meaning |",
+      "last_line_text": "| P2/P3 | Bass note / analyzer root | No prior drift — fresh baseline (adjustment = 0) |"
+     },
+     {
+      "first_line_as_a_locator_only": 7023,
+      "last_line_as_a_locator_only": 7025,
+      "first_line_text": "The caller is responsible for undo grouping (`startCmd`/`endCmd` or the",
+      "last_line_text": "its own undo scope."
+     },
+     {
+      "first_line_as_a_locator_only": 7032,
+      "last_line_as_a_locator_only": 7044,
+      "first_line_text": "**Status: Implemented, and running the RECORD path since the notation switch (2026-07-27).**",
+      "last_line_text": "record of what that arm does."
+     },
+     {
+      "first_line_as_a_locator_only": 7046,
+      "last_line_as_a_locator_only": 7049,
+      "first_line_text": "Single-note analysis (status bar display, single-chord tuning) is the foundation.",
+      "last_line_text": "passage."
+     },
+     {
+      "first_line_as_a_locator_only": 7091,
+      "last_line_as_a_locator_only": 7096,
+      "first_line_text": "- **Grand staff** (e.g., piano, organ): root on the bass staff, upper-structure",
+      "last_line_text": "  structure combined.  The user's instrument choice drives the output."
+     },
+     {
+      "first_line_as_a_locator_only": 7130,
+      "last_line_as_a_locator_only": 7131,
+      "first_line_text": "**Chord symbols** (`HarmonyType::STANDARD`) attached above the treble staff —",
+      "last_line_text": "controlled by the \"Write chord symbols to staff\" preference."
+     },
+     {
+      "first_line_as_a_locator_only": 7148,
+      "last_line_as_a_locator_only": 7148,
+      "first_line_text": "Given a chord analysis result with root pitch class and chord tones:",
+      "last_line_text": "Given a chord analysis result with root pitch class and chord tones:"
+     },
+     {
+      "first_line_as_a_locator_only": 7161,
+      "last_line_as_a_locator_only": 7165,
+      "first_line_text": "#### Relationship to MuseScore's chord symbol realization",
+      "last_line_text": "4-note, 6-note) but places all notes including the bass on one staff."
+     },
+     {
+      "first_line_as_a_locator_only": 7179,
+      "last_line_as_a_locator_only": 7184,
+      "first_line_text": "Single-note analysis requires a selected note as the anchor.  Region analysis does",
+      "last_line_text": "ticks where the target staff has a rest."
+     },
+     {
+      "first_line_as_a_locator_only": 7191,
+      "last_line_as_a_locator_only": 7197,
+      "first_line_text": "| | Chord track (\"Implode to chord track\") | Intonation |",
+      "last_line_text": "| **Score impact** | Overwrites target region with reduction | Split-and-slur on sustained notes only |"
+     },
+     {
+      "first_line_as_a_locator_only": 7241,
+      "last_line_as_a_locator_only": 7243,
+      "first_line_text": "- Roman/Nashville function labels are written only when confidence is at least 0.5",
+      "last_line_text": "  and cadence markers are written only when confidence is at least 0.8"
+     },
+     {
+      "first_line_as_a_locator_only": 7257,
+      "last_line_as_a_locator_only": 7257,
+      "first_line_text": "**Cadence markers** (basic version ready, improved with phrase analysis)",
+      "last_line_text": "**Cadence markers** (basic version ready, improved with phrase analysis)"
+     },
+     {
+      "first_line_as_a_locator_only": 7259,
+      "last_line_as_a_locator_only": 7259,
+      "first_line_text": "Detected cadences annotated above the chord track staff at phrase boundaries:",
+      "last_line_text": "Detected cadences annotated above the chord track staff at phrase boundaries:"
+     },
+     {
+      "first_line_as_a_locator_only": 7261,
+      "last_line_as_a_locator_only": 7264,
+      "first_line_text": "- Authentic (V→I): Roman numeral sequence in the inferred key",
+      "last_line_text": "- Plagal (IV→I): subdominant to tonic"
+     },
+     {
+      "first_line_as_a_locator_only": 7266,
+      "last_line_as_a_locator_only": 7269,
+      "first_line_text": "Basic detection uses a heuristic: cadential chord pairs followed by a significant harmonic",
+      "last_line_text": "harmonic rhythm regions already computed."
+     },
+     {
+      "first_line_as_a_locator_only": 7288,
+      "last_line_as_a_locator_only": 7299,
+      "first_line_text": "- Chord symbols",
+      "last_line_text": "  requires standalone implementation first)"
+     },
+     {
+      "first_line_as_a_locator_only": 7301,
+      "last_line_as_a_locator_only": 7302,
+      "first_line_text": "Nashville annotation mode emits chord symbols and Nashville numbers only.",
+      "last_line_text": "No cadence markers, no pivot labels, no tonicization labels."
+     },
+     {
+      "first_line_as_a_locator_only": 7304,
+      "last_line_as_a_locator_only": 7310,
+      "first_line_text": "**Cadence detection** (`detectCadences`): pairs of consecutive in-selection",
+      "last_line_text": "read-only lookahead is used."
+     },
+     {
+      "first_line_as_a_locator_only": 7341,
+      "last_line_as_a_locator_only": 7342,
+      "first_line_text": "**Phrase structure markers** — bracket notation showing detected phrase beginnings and",
+      "last_line_text": "endings. Requires phrase structure analysis component."
+     },
+     {
+      "first_line_as_a_locator_only": 7344,
+      "last_line_as_a_locator_only": 7345,
+      "first_line_text": "**Harmonic rhythm emphasis** — visual weight on chord blocks proportional to harmonic",
+      "last_line_text": "rhythm density, making acceleration toward cadences immediately visible."
+     },
+     {
+      "first_line_as_a_locator_only": 7401,
+      "last_line_as_a_locator_only": 7405,
+      "first_line_text": "- **Single note** — tune that note using the harmonic context at its tick (the",
+      "last_line_text": "- **Whole staff or Ctrl+A** — same as range, applied to the full extent."
+     },
+     {
+      "first_line_as_a_locator_only": 7417,
+      "last_line_as_a_locator_only": 7435,
+      "first_line_text": "1. **Harmonic rhythm detection** — same scan as §11.5: identify every tick in the",
+      "last_line_text": "  even when some members lie outside the selection."
+     }
+    ],
+    "lines": 145,
+    "bytes": 10297,
+    "position": 28,
+    "item_3_hit_lines_inside": 48,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 12. User Interface",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 7544,
+      "last_line_as_a_locator_only": 7552,
+      "first_line_text": "| Action ID | Label | Registered at | What it writes |",
+      "last_line_text": "| `compose-tune-as` | *(one entry per analyzed reading, under a \"Tune as ⟨system⟩\" submenu)* | built in `notationcontextmenumodel.cpp:174`, handled at `notationactioncontroller.cpp:387` | retunes the selected note's chord as the chosen reading |"
+     }
+    ],
+    "lines": 9,
+    "bytes": 1097,
+    "position": 29,
+    "item_3_hit_lines_inside": 2,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 14. ML Readiness",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 7653,
+      "last_line_as_a_locator_only": 7662,
+      "first_line_text": "Components with ML substitution interfaces planned:",
+      "last_line_text": "- `IVoicingRanker` — ranking voicing alternatives"
+     },
+     {
+      "first_line_as_a_locator_only": 7671,
+      "last_line_as_a_locator_only": 7681,
+      "first_line_text": "```cpp",
+      "last_line_text": "```"
+     },
+     {
+      "first_line_as_a_locator_only": 7710,
+      "last_line_as_a_locator_only": 7718,
+      "first_line_text": "**LLM triage pipeline (implemented, `llm-triage` branch):**",
+      "last_line_text": "to stay compatible with the current analyzer output format."
+     },
+     {
+      "first_line_as_a_locator_only": 7731,
+      "last_line_as_a_locator_only": 7736,
+      "first_line_text": "**Pipeline boundary:**",
+      "last_line_text": "criterion when both are present in the same score file."
+     }
+    ],
+    "lines": 36,
+    "bytes": 2042,
+    "position": 30,
+    "item_3_hit_lines_inside": 5,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 15. Development Phases",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 7777,
+      "last_line_as_a_locator_only": 7787,
+      "first_line_text": "**`tools/compare_analyses.py`** — three-level comparison of our analysis against",
+      "last_line_text": "regions.  Adding this as an explicit script output is a planned improvement."
+     },
+     {
+      "first_line_as_a_locator_only": 7820,
+      "last_line_as_a_locator_only": 7835,
+      "first_line_text": "2b2 — Complete-voicing jazz transcription QA (2026-04-17): My Funny Valentine",
+      "last_line_text": "  correct via edit dialog."
+     },
+     {
+      "first_line_as_a_locator_only": 7837,
+      "last_line_as_a_locator_only": 7840,
+      "first_line_text": "2c — Benchmark set Rule 12 sign-off: PASSED 2026-04-14.",
+      "last_line_text": "  Dvořák op08n06: Bb major context, cadence detection, confident opening ✓"
+     },
+     {
+      "first_line_as_a_locator_only": 7888,
+      "last_line_as_a_locator_only": 7892,
+      "first_line_text": "- `VoicingGenerator` — style-aware voicing from chord symbols",
+      "last_line_text": "- `BassLineGenerator` — walking bass for jazz style"
+     },
+     {
+      "first_line_as_a_locator_only": 7911,
+      "last_line_as_a_locator_only": 7915,
+      "first_line_text": "- `TuningCalculator` — tuning systems in `composing/intonation/` (JI, Pythagorean, meantone, well temperaments)",
+      "last_line_text": "- Region tuning — \"Tune selection\" in Tools menu; harmonic rhythm analysis + split-and-slur"
+     }
+    ],
+    "lines": 41,
+    "bytes": 3099,
+    "position": 31,
+    "item_3_hit_lines_inside": 6,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 16. Scope Reference",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 7934,
+      "last_line_as_a_locator_only": 7943,
+      "first_line_text": "Harmonic analysis (functional, modal, extended tonal, jazz), monophonic chord",
+      "last_line_text": "MuseScore infrastructure), accessibility (via MuseScore infrastructure)."
+     },
+     {
+      "first_line_as_a_locator_only": 7947,
+      "last_line_as_a_locator_only": 7954,
+      "first_line_text": "Full generative support for pop, rock, funk, soul, metal, progressive rock (phased",
+      "last_line_text": "attribution metadata."
+     }
+    ],
+    "lines": 18,
+    "bytes": 1411,
+    "position": 32,
+    "item_3_hit_lines_inside": 2,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## 19. LLM Integration — Claude Composer",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 8142,
+      "last_line_as_a_locator_only": 8146,
+      "first_line_text": "The composing module (`src/composing/`) is the LLM's context provider. Its",
+      "last_line_text": "musical context."
+     }
+    ],
+    "lines": 5,
+    "bytes": 317,
+    "position": 33,
+    "item_3_hit_lines_inside": 2,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "ARCHITECTURE.md",
+    "label": "## Appendix B — MuseScore Score Model Quick Reference",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 8264,
+      "last_line_as_a_locator_only": 8266,
+      "first_line_text": "*Document version: 3.34 — May 2026: §4.1g gate table extended with kCleanQualities guard (Iter 60) and HalfDim first-inversion bonus (Iters 61/65); Task #62 segmentation replacement marked IMPLEMENTED (batch path, Iter 54); Genuine-21 residual section updated to reflect Path 1 history only; §4.1h added with Path 2 current state (BIR=true=5, BIR=false=125, Jazz=12, tests 407/407 + 53/53), Genuine-5 breakdown, Path 2 fix log, and pending Iter 64 performance work. previous: 3.33 — Session 26: D#/G#/A#→Eb/Ab/Bb enharmonic normalization in `pitchClassNameFromTpc()` for sharp TPC (≥20) in keys below diatonic threshold (block placed before `keySignatureFifths==0` early-return); status-bar alternatives sorted by `normalizedConfidence` (positions 1+ only, position 0 fixed); declared-mode hard override in `resolveKeyAndMode()` from key-signature Mode property; Pass2b iterative bass-movement detection (`kMaxBassMovementPasses=8`); track-specific annotation removal in `addAnalyzedHarmony`; REST context-menu harmonic inference (`analyzeRestHarmonicContextDetails`); §5.16 added; 3 new `Composing_EnharmonicSpellingTests`; corpus: Corelli 70.9%, Bach 75.2%, Beethoven 65.2%. Composing tests: 381/381 (master). Notation tests: 51/51 (master). previous: 3.32 — Session 25: `kSus4MissingFourth = 0.70` penalty added to `structuralPenalties()` in `chordanalyzer.cpp`; fires when Sus4 template lacks detectable P4 (pcWeight < extThreshold), excludes Sus4b5; root-only single-note gap carry blocked in `inferGapRegion` (notationcomposingbridgehelpers.cpp); §5.15 \"Sus4 Structural Penalty\" added; 2 new `Composing_Sus4RequiresFourthTests` + 3 new `Composing_EnharmonicSpellingTests`; corpus: Corelli 70.9%, Bach 75.2%, Beethoven 65.18% (all improved). Composing tests: 378/378 (master), 320/320 (submission-phase1). Notation tests: 51/51 (master). previous: 3.31 — Session 24: `pitchClassNameFromTpc()` added to `chordanalyzer.cpp`; TPC consulted only when `keyFifths==0` (C major/A minor); `ChordIdentity.rootTpc` field added; `formatSymbol()`/`formatRomanNumeral()` pass rootTpc through; 7 new `Composing_EnharmonicSpellingTests` unit tests; §5.14 \"Enharmonic Root Spelling\" added. Composing tests: 373/373 (master), 315/315 (submission-phase1). Notation tests: 51/51 (master). previous: 3.30 — Session 20: `ChordAnalyzerPreferences` gains `extensionThreshold = 0.20`; Jazz preset uses 0.12 (`kSeventhThreshold`) to detect lightly-voiced ninths; Standard/Baroque keep 0.20 to suppress counterpoint passing tones; documented in §4.6 `ChordAnalyzerPreferences`. previous: 3.29 — Session 19 (continued): order-of-annotation violation fix (`forceClassicalPath=true` in `addHarmonicAnnotationsToSelection`); Unknown quality Roman numeral fallback added to annotation path (`notationcomposingbridge.cpp`); §5.13 \"Analyze-at-Tick Path Table\" added; new test `AnnotationOrderDoesNotAffectRomanNumeralOutput`; notation test count 50/50 (all passing). previous: 3.28 — Session 19 (continued): two further chord-track annotation fixes bringing notation tests to 49/49 (all passing): (1) `forceChordTrackQualityFromKeyContext()` helper (in `notationcomposingbridgehelpers.cpp`) re-derives diatonic quality from degree+mode when `formatRomanNumeral` returns empty because quality is `ChordQuality::Unknown` — occurs for lone Aeolian tonic/dominant bare fifths; (2) `kSameChordReannotationGap = 2 * Constants::DIVISION` (960 ticks = 2 quarter notes) threshold in the coalescing pass: consecutive same-chord sub-regions are re-annotated when their gap from the previous annotation equals or exceeds the threshold, enabling the Corelli m24 beat-3 Fm re-annotation (gap=960 ≥ 960 → keep) while preserving the sustained-support merge (gap=480 < 960 → merge). previous: 3.27 — Session 19: two §5.12 regressions resolved: (1) `populateChordTrack()` now runs a post-populate cleanup pass that removes Rest segments sitting inside a Chord's stored time span (artefact of `makeGap`'s \"removed too much\" restore path on triplet Fractions); (2) `populateChordTrack()` now coalesces consecutive regions with the same user-facing chord identity before the populate loop, preventing over-segmentation when tied-note continuations create extra inference ticks within a single display region. Notation test count: 47/49 (up from 45/49). previous: 3.26 — Campania font rendering artifact (`Dsdim`/`Fsdim`) documented as MuseScore core issue in §5.8; complete-voicing jazz QA evidence added (MFV 185-measure three-layer comparison, 75–80% agreement); `isValidBassNoteName` guard added to `formatSymbol` suppressing slash chord when bass name is not a plain note name; chord name in bass field bug documented and fixed; RFC draft at `docs/rfc_musescore_forum_post.md`; chordlist.cpp upstream bug report draft at `docs/chordlist_bug_report.md`; previous: 3.25 — cadence markers (PAC/HC/DC/PC) and pivot chord labels (vi → ii format, U+2192) wired into annotate path via `detectCadences()`/`detectPivotChords()` helpers; tonicization and augmented sixth labels deferred (no classifier implemented); pivot annotation format updated from verbose \"pivot: vi in C → ii in G\" to concise \"vi → ii\"; `kMaxPivotLookaheadRegions = 8` lookahead for pivot confirmation; 13 new notation unit tests (45/49 passing, 4 deferred); previous: 3.24 — B/H naming convention fix for German locale chord names in jazz path; previous: 3.23 — annotation color policy documented (black for human use, red for headless pipeline); auto_review.py three-mode design and report format requirements added; previous: 3.22 — annotate path Roman numeral layer extended to include cadence markers, pivot labels, tonicization labels, and augmented sixth chord labels (Standard/Baroque presets only); automated annotation review tool design recorded; Session 5 jazz QA outcomes documented; previous: 3.21 — the plateau target is now qualified for full-texture tonal corpora only, the highest-ROI roadmap is reordered so texture fixes precede evaluation separation and confidence calibration, Rule 12 adds a permanent benchmark score set for visual review, region identity modes are now decided conceptually (harmonic summary vs as-written), and the Mozart 26.7% direct-DCML figure is explicitly marked as a thin-texture/non-comparable case; previous: 3.20 — confidence interpretation is now documented explicitly as heuristic rather than probabilistic, a reasonable \"good enough\" plateau is defined for the current vertical tertian engine, the highest-ROI pre-plateau roadmap is recorded, and the stale Mozart `59.4%` agreement reference is corrected to the current 26.7% direct-DCML root-agreement figure; previous: 3.19 — `batch_analyze` now skips forced post-load layout in headless mode because analysis uses logical score data only; this avoids the legacy native MSCX cache-overflow crash on Mozart `K533-3` while preserving JSON output parity with the mirrored `score.mxl` path; previous: 3.18 — same-key-signature key-mode selection now uses tonal-center comparison with a diatonic raw-score guard, preventing the Mozart `K279-1` opening from flipping to spurious `F Lydian`, while Roman/Nashville analysis annotations are excluded from chord-symbol-driven path activation; previous: 3.17 — Milestone A3 confidence gating is implemented for chord-track exposure, the key-confidence thresholds now suppress low-confidence key-dependent annotations, and the Dvorak `op08n06` regression locks that behavior in; previous: 3.16 — Milestone A benchmark passages are recorded, the reusable batch/notation parity harness is documented, and BWV 227.7 plus Chopin BI16-1 now pass exact parity gates; previous: 3.15 — final post-`bassNoteRootBonus` corpus baselines are recorded, Schumann slash-chord spellings are confirmed not to be a comparator artifact, Dvorak op08n06 is accepted as genuine ambiguity, and Corelli walking-bass sus/slash artifacts are documented as a deferred limitation; previous: 3.14 — `populateChordTrack()` now absorbs sparse intra-measure gaps into neighboring written regions so BI16-style chord-track generation does not leave mixed chord/rest measures; previous: 3.13 — `bassNoteRootBonus` conditioning is now implemented with tiered support checks, corpus validation results are recorded, and the Chopin BI16-1 notation mismatch is resolved by aligning `PreserveAllChanges` collapse semantics with the batch path; previous: 3.12 — `bassNoteRootBonus` conditioning is now implemented with tiered support checks, corpus validation results are recorded, and the remaining Chopin BI16-1 boundary issue is separated from the root-scoring fix; previous: 3.11 — four-corpus score inspection now documents the shared `bassNoteRootBonus` failure mechanism and a concrete conditioning strategy for the fix; previous: 3.10 — 2026-04-09 score inspection confirms `bassNoteRootBonus` as the primary cross-corpus failure mode and the highest-priority next action; previous: 3.9 — removed the false pedal-marking analyzer limitation after Rule 11 score inspection confirmed sparse texture rather than analyzer failure; previous: 3.8 — Rule 11 added: representative MuseScore Studio score inspection is required before diagnosis when corpus statistics are anomalous or a texture-specific failure mode is suspected; previous: 3.6 — §5.8 now records two next-session analyzer limitations: pedal-aware Jaccard boundary detection for piano beat-1 accompaniment patterns and the cross-corpus `bassNoteRootBonus` miscalibration signal; previous: 3.5 — Rule 10 added: shared note collection, boundary detection, key/mode resolution, and chord-scoring logic must live in `src/composing/` whenever bridge and batch_analyze must agree; §4.1c duplicate-path technical debt now references Rule 10 explicitly; Bach baseline corrected to 50.0% WIR structural (2026-04-09), superseding the older 83.7% onset-only/music21 figure; previous: 3.4 — §4.1c batch classical path now uses Jaccard boundaries plus smoothed regional accumulation, reducing note-collection divergence from three active paths to two duplicate regional collectors; previous: 3.3 — §4.1c duplicate note-collection-path technical debt documented, including the batch_analyze jazz-path duplicate regional collector and the onset-only classical batch path that bypasses regional accumulation; previous: 3.2 — §4.1c piano pedal-sustain gap documented as the remaining Romantic-piano accumulator limitation; previous: 3.1 — §4.1c Part 2 Jazz Mode implemented: status updated from \"design complete\" to \"implemented\"; `analyzeHarmonicRhythmJazz()` / `analyzeScoreJazz()` / `scoreHasChordSymbols()` / `collectChordSymbolBoundaries()` documented; `HarmonicRegion` `fromChordSymbol` + `writtenRootPc` fields noted; FiloSax/FiloBass unblocked; previous: 3.0 — §4.1c Part 2 Jazz Mode design added (chord-symbol-driven boundaries, Harmony element traversal, quality mapping, integration point, open questions); corpus roadmap updated with deferred status for C.P.E. Bach/Handel/Bach Suites/Debussy/Liszt/Bartók; previous: 2.9 — §4.1c Regional Note Accumulation added: collectRegionTones() + detectHarmonicBoundariesJaccard() + useRegionalAccumulation preference documented; §4.2 KeyModeAnalyzer known limitation (dominant seventh / Mixolydian ambiguity) added from Grieg corpus modal diagnostic; previous: 2.8 — §4.1b Contextual Inversion Resolution added: ChordTemporalContext extended with previousBassPc/previousChordAge/nextRootPc/nextBassPc/bassIsStepwiseFromPrevious/bassIsStepwiseToNext; three new scoring parameters (stepwiseBassInversionBonus, stepwiseBassLookaheadBonus, sameRootInversionBonus) added to ChordAnalyzerPreferences; isDiatonicStep() helper added to bridge helpers header; §4.1b temporal context section updated; validation: 83.7% chord identity (up from 83.4%), 661 disagree (down from 673) in the now-retired onset-only/music21 Bach workflow; previous: 2.6 — §4.2 harmonic major modes deferred note added after KeySigMode enum; §15 compare_analyses.py description extended with chord identity agreement rate note; previous: 2.5 — §4.5 \"Remaining Gap\" subsection removed (bypass no longer exists); §5.2 rewritten to reflect actual piece-start shortcut instead of claimed full bypass; §11.3a status note added (basic zero-sum centering implemented as minimizeTuningDeviation; weighted variant still planned); §3.1 file tree updated with synthetic_tests.cpp; factory/direct-use guidance updated; preset system (ModePriorPreset, modePriorPresets(), applyModePriorPreset, currentModePriorPreset) documented under §4.6 mode detection weights; previous: 2.4 — §4.6 mode detection weights updated to 21 independent priors with 5 presets; §4.5 key decision logic updated; §4.3b bridge location corrected; §3.1 analysis/ subdirectory structure updated*",
+      "last_line_text": "*Maintainer: Update this document whenever architectural decisions change*"
+     }
+    ],
+    "lines": 3,
+    "bytes": 12975,
+    "position": 34,
+    "item_3_hit_lines_inside": 1,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "docs/scoring_model.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 28,
+      "last_line_as_a_locator_only": 31,
+      "first_line_text": "This is a reference document for the rule-based chord analyzer's scoring",
+      "last_line_text": "invariants that future changes must respect."
+     },
+     {
+      "first_line_as_a_locator_only": 33,
+      "last_line_as_a_locator_only": 44,
+      "first_line_text": "> **File layout after refactor #1 (byte-identical layer split).** `chordanalyzer.cpp`",
+      "last_line_text": "> (`function/harmonicfunctionlayer.cpp`). See `records/cc/reports/cc_refactor1_split_design_dossier.md`."
+     },
+     {
+      "first_line_as_a_locator_only": 74,
+      "last_line_as_a_locator_only": 93,
+      "first_line_text": "> **★ SCOPING SENTENCE — THE SCORER DESCRIBED BELOW IS DORMANT ON BOTH PRODUCTION SURFACES, AND THE",
+      "last_line_text": "> is OI-274's second half — a governing-document question, and therefore the user's.*"
+     },
+     {
+      "first_line_as_a_locator_only": 101,
+      "last_line_as_a_locator_only": 128,
+      "first_line_text": "1. **Tone collection.** Build a 12-element pitch-class weight histogram from",
+      "last_line_text": "   replace with the Pass 2 result and flag `isPedalPoint`."
+     },
+     {
+      "first_line_as_a_locator_only": 135,
+      "last_line_as_a_locator_only": 151,
+      "first_line_text": "Every hand-chosen numeric scoring constant documented in this file — the §4",
+      "last_line_text": "by the default-off dormant chain and are Phase-2/3 fit targets, not Phase-1 ones."
+     },
+     {
+      "first_line_as_a_locator_only": 398,
+      "last_line_as_a_locator_only": 403,
+      "first_line_text": "**Known dead end (Iter 98, 2026-05-23).** Gating this bonus off a sparse",
+      "last_line_text": "without re-reading the Iter 98 dead-end section in `COWORK_HANDOFF.md`."
+     },
+     {
+      "first_line_as_a_locator_only": 416,
+      "last_line_as_a_locator_only": 431,
+      "first_line_text": "**Condition.** The predicate `gateRZeroesRootContinuity()` encodes three **structural**",
+      "last_line_text": "   interval data the 17 TemplateDef entries are built from)."
+     },
+     {
+      "first_line_as_a_locator_only": 440,
+      "last_line_as_a_locator_only": 454,
+      "first_line_text": "**Why the `basisDep <= 0` condition (refinement vs. the bare bass-foreign test).**",
+      "last_line_text": "bare-root case, correctly gated.)"
+     },
+     {
+      "first_line_as_a_locator_only": 456,
+      "last_line_as_a_locator_only": 476,
+      "first_line_text": "**Stage 3.3 redesign — reconstructed-credit (byte-identical).** When the four inversion",
+      "last_line_text": "`docs/decoder_design.md` §6 amendment and `records/cc/reports/cc_stage3_3_report.md` §1."
+     },
+     {
+      "first_line_as_a_locator_only": 478,
+      "last_line_as_a_locator_only": 490,
+      "first_line_text": "**★ THE DECISION, STATED AS SUCH — the RECONSTRUCTED-CREDIT read is the ratified form of this",
+      "last_line_text": "it for the shipped behaviour."
+     },
+     {
+      "first_line_as_a_locator_only": 503,
+      "last_line_as_a_locator_only": 509,
+      "first_line_text": "**Why it exists.** The vertical oracle already scores a non-chord-tone-bass",
+      "last_line_text": "continuation that cannot harmonically hold its own bass."
+     },
+     {
+      "first_line_as_a_locator_only": 511,
+      "last_line_as_a_locator_only": 517,
+      "first_line_text": "**The Δ=+7b mechanism it fixes.** Three Bach cases — bwv245.28 (B/G♯), bwv296",
+      "last_line_text": "clean 1.90 vs 1.52 raw lead."
+     },
+     {
+      "first_line_as_a_locator_only": 544,
+      "last_line_as_a_locator_only": 547,
+      "first_line_text": "Reward: root-position complete triads outrank slash-chord readings of the",
+      "last_line_text": "absent tone has `pcWeight == 0` which fails the presence check."
+     },
+     {
+      "first_line_as_a_locator_only": 549,
+      "last_line_as_a_locator_only": 559,
+      "first_line_text": "**★ THE GUARD IS THE DECISION, AND IT IS STRUCTURAL RATHER THAN A THRESHOLD (re-homed into this",
+      "last_line_text": "entry condition** rather than a widened threshold (`CLAUDE.md`, the gate and preset policy)."
+     },
+     {
+      "first_line_as_a_locator_only": 594,
+      "last_line_as_a_locator_only": 600,
+      "first_line_text": "3. **First-inversion m7-family surgical guard (Pass B)** — suppresses the",
+      "last_line_text": "   viable first-inversion m7-family reading on identical pitch evidence."
+     },
+     {
+      "first_line_as_a_locator_only": 624,
+      "last_line_as_a_locator_only": 627,
+      "first_line_text": "Reward: classic V → I descending-fifth root motion. This is a **chord-level**",
+      "last_line_text": "(sequential root motion is about root identity, not bass)."
+     },
+     {
+      "first_line_as_a_locator_only": 717,
+      "last_line_as_a_locator_only": 738,
+      "first_line_text": "| Term                                  | Value         | What it does |",
+      "last_line_text": "| `kForeignPenalty`                    | 0.45          | Non-template pc that is neither extension nor contradiction. |"
+     },
+     {
+      "first_line_as_a_locator_only": 740,
+      "last_line_as_a_locator_only": 754,
+      "first_line_text": "**`maxTotalInversionContextBonus` is currently inert (verified 2026-06-10).** No code",
+      "last_line_text": "load-bearing per-preset value."
+     },
+     {
+      "first_line_as_a_locator_only": 773,
+      "last_line_as_a_locator_only": 786,
+      "first_line_text": "| Constant | Acts at | Already described here by |",
+      "last_line_text": "| `kAugThinEvidenceFactor` | the `augFactorMatrix` multiplier, applied at BOTH thin-evidence sites — sparse bare-root augmented, and augmented with no third / fifth / seventh above the threshold | §3's `augFactorMatrix` bullet and §2's template-9 note, both describing the effect without the name |"
+     },
+     {
+      "first_line_as_a_locator_only": 823,
+      "last_line_as_a_locator_only": 829,
+      "first_line_text": "**`hasStructuralBass`** (computed in `analyzeChord`, `chordanalyzer.cpp`). True when",
+      "last_line_text": "bonuses (Corelli op01n08d m2 b3)."
+     },
+     {
+      "first_line_as_a_locator_only": 831,
+      "last_line_as_a_locator_only": 841,
+      "first_line_text": "**Inversion-bonus computation (since Stage 3.3 — competition pipeline).** The four",
+      "last_line_text": "default — see the §4 note)."
+     },
+     {
+      "first_line_as_a_locator_only": 862,
+      "last_line_as_a_locator_only": 865,
+      "first_line_text": "These run after `results[]` is populated and the optional guaranteed-",
+      "last_line_text": "`rawCandidates`."
+     },
+     {
+      "first_line_as_a_locator_only": 867,
+      "last_line_as_a_locator_only": 872,
+      "first_line_text": "**★ POINTER — WHAT A GATE MAY READ IS FIXED AT THE INFERENCE/PRESENTATION BOUNDARY, NOT HERE (added",
+      "last_line_text": "and does not restate it."
+     },
+     {
+      "first_line_as_a_locator_only": 891,
+      "last_line_as_a_locator_only": 898,
+      "first_line_text": "**Outer guard — covers ALL of A–L, including the bias correction.** Everything in",
+      "last_line_text": "`postscoringgates_tests.cpp`)."
+     },
+     {
+      "first_line_as_a_locator_only": 977,
+      "last_line_as_a_locator_only": 986,
+      "first_line_text": "| Gate | Location | Trigger | Effect | Why it exists |",
+      "last_line_text": "| **J (vii° → V7 completion) — runs LAST** | Gate J (last) | Winner is root-position Diminished triad (no dim7), the M3-below PC is sounding above `extensionThreshold`, alt is Major+m7 rooted there. | Swap to the dominant-7th reading. | Four PCs `{R-4, R, R+3, R+6}` are exactly V7 — a root-position vii° voicing the dominant root is, by construction, V6/5. |"
+     },
+     {
+      "first_line_as_a_locator_only": 995,
+      "last_line_as_a_locator_only": 1002,
+      "first_line_text": "- **F (second-inversion → root-position Major, alt at `(rootPc+5)%12`)** — the whole gate.",
+      "last_line_text": "  no longer touched by the rule (superseded upstream, 2.2b §1.3)."
+     },
+     {
+      "first_line_as_a_locator_only": 1033,
+      "last_line_as_a_locator_only": 1046,
+      "first_line_text": "**`kHalfDimFirstInversionBonus` (= 0.55) — additive bonus inside the BIAS-CORRECTION",
+      "last_line_text": "§6-block dissolution target (Stage-5 family 2)."
+     },
+     {
+      "first_line_as_a_locator_only": 1048,
+      "last_line_as_a_locator_only": 1063,
+      "first_line_text": "*(★ Location corrected 2026-08-14 at `records/cc/instructions/cc_instruction_scoring_model_pass.md`, at the code",
+      "last_line_text": "a defect this pass may re-specify.)*"
+     },
+     {
+      "first_line_as_a_locator_only": 1085,
+      "last_line_as_a_locator_only": 1089,
+      "first_line_text": "## 7. Inversion correction",
+      "last_line_text": "re-sorts via `std::stable_sort`:"
+     },
+     {
+      "first_line_as_a_locator_only": 1137,
+      "last_line_as_a_locator_only": 1139,
+      "first_line_text": "- **`rootContinuityBonus` sparse-predecessor gate is a dead end** (Iter 98).",
+      "last_line_text": "  mozart_k280-1 IV→V65 Alberti bass."
+     },
+     {
+      "first_line_as_a_locator_only": 1141,
+      "last_line_as_a_locator_only": 1144,
+      "first_line_text": "- **`w_stepIn`/`w_stepOut` has four gates, each load-bearing** — the",
+      "last_line_text": "  a specific documented regression."
+     },
+     {
+      "first_line_as_a_locator_only": 1177,
+      "last_line_as_a_locator_only": 1178,
+      "first_line_text": "- **`hasStructuralBass` gates inversion bonuses.** Sparse upper-register",
+      "last_line_text": "  \"bass\" notes do not get inversion bonuses (Corelli op01n08d m2 b3)."
+     },
+     {
+      "first_line_as_a_locator_only": 1276,
+      "last_line_as_a_locator_only": 1312,
+      "first_line_text": "- **FALSIFIED — no threshold can make the override net-positive.** Whether a fire helps or hurts is",
+      "last_line_text": "  in view rather than netted away."
+     },
+     {
+      "first_line_as_a_locator_only": 1413,
+      "last_line_as_a_locator_only": 1439,
+      "first_line_text": "- **Do not add a negative-margin guard.** A rule refusing to let a later correction step overturn",
+      "last_line_text": "  vertically and reading it by its role, **which is not an analyzer defect at all**."
+     },
+     {
+      "first_line_as_a_locator_only": 1466,
+      "last_line_as_a_locator_only": 1473,
+      "first_line_text": "2. **Identify interactions with bonus/penalty terms.** Does any existing",
+      "last_line_text": "   - `w_stepIn/Out/seq/dim` have explicit quality filters"
+     },
+     {
+      "first_line_as_a_locator_only": 1526,
+      "last_line_as_a_locator_only": 1530,
+      "first_line_text": "7. **Run BIR for both presets before committing:**",
+      "last_line_text": "   - `python tools/analyze_inversion_errors.py`"
+     },
+     {
+      "first_line_as_a_locator_only": 1552,
+      "last_line_as_a_locator_only": 1556,
+      "first_line_text": "`HarmonicFunctionContext` carries: `previousRootPc`, `nextRootPc` (plus the Step 1/2",
+      "last_line_text": "fields were removed in Stage 0.2). Extended in E4 with phrase-boundary and cadence evidence."
+     },
+     {
+      "first_line_as_a_locator_only": 1582,
+      "last_line_as_a_locator_only": 1583,
+      "first_line_text": "**E4 (planned):** Cadence detection, tonic confirmation, functional label",
+      "last_line_text": "completeness (secondary dominants, borrowed chords, augmented sixths)."
+     },
+     {
+      "first_line_as_a_locator_only": 1602,
+      "last_line_as_a_locator_only": 1611,
+      "first_line_text": "**`analyzeChord()` — the scoring oracle.** Computes only what depends on the raw",
+      "last_line_text": "no progression signal.**"
+     },
+     {
+      "first_line_as_a_locator_only": 1616,
+      "last_line_as_a_locator_only": 1630,
+      "first_line_text": "1. Re-score every cell with `rootContinuityBonus` (added into `basisIndep` before",
+      "last_line_text": "   `tones` and `keySigFifths` are set by the oracle, which has them directly."
+     },
+     {
+      "first_line_as_a_locator_only": 1691,
+      "last_line_as_a_locator_only": 1709,
+      "first_line_text": "**Oracle temporal-signal migration (Stage 3.3).** The last five oracle-side progression",
+      "last_line_text": "basisDep (reconstructed-credit, §4) — byte-identical, closing the cross-layer dependency."
+     },
+     {
+      "first_line_as_a_locator_only": 1713,
+      "last_line_as_a_locator_only": 1723,
+      "first_line_text": "*Last updated: **2026-08-14** — the `docs/scoring_model.md` pass at",
+      "last_line_text": "documentation pass over a document that describes them.*"
+     }
+    ],
+    "lines": 480,
+    "bytes": 45088,
+    "position": 35,
+    "item_3_hit_lines_inside": 93,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_phrase_boundary_design.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 1,
+      "last_line_as_a_locator_only": 21,
+      "first_line_text": "# Phrase-boundary primitive (Architectural Layer 1.5) — Architecture & Design",
+      "last_line_text": "> logic that consumes it."
+     },
+     {
+      "first_line_as_a_locator_only": 37,
+      "last_line_as_a_locator_only": 46,
+      "first_line_text": "| Term | Meaning (or citation) |",
+      "last_line_text": "| **Pinned** | Fixed by ratified decision and protected by a regression test (project usage); **pinned snapshots** are stored golden outputs compared exactly. |"
+     },
+     {
+      "first_line_as_a_locator_only": 48,
+      "last_line_as_a_locator_only": 61,
+      "first_line_text": "## 1. Purpose",
+      "last_line_text": "voice-leading-axis object this primitive does not model. Stated here at the definition, not only in §11-5.)*"
+     },
+     {
+      "first_line_as_a_locator_only": 63,
+      "last_line_as_a_locator_only": 94,
+      "first_line_text": "## 2. Constraints",
+      "last_line_text": "  authority to overrule one that can."
+     },
+     {
+      "first_line_as_a_locator_only": 96,
+      "last_line_as_a_locator_only": 105,
+      "first_line_text": "## 3. Context & scope (external view)",
+      "last_line_text": "`cowork_layer5_function_design.md`.)*"
+     },
+     {
+      "first_line_as_a_locator_only": 107,
+      "last_line_as_a_locator_only": 110,
+      "first_line_text": "**Produces:** the **per-voice boundary-strength profiles** (one per eligible voice); the **texture boundary-strength",
+      "last_line_text": "notation facts carrying no judgement of key, chord, or function."
+     },
+     {
+      "first_line_as_a_locator_only": 112,
+      "last_line_as_a_locator_only": 113,
+      "first_line_text": "**Does not do:** detect cadences, weight cadential salience, or read any resolved key/chord/function (all downstream);",
+      "last_line_text": "apply phrase *grouping* or reduction (a later concern). It marks where phrases end, and how strongly."
+     },
+     {
+      "first_line_as_a_locator_only": 126,
+      "last_line_as_a_locator_only": 134,
+      "first_line_text": "Each profile's per-onset strength is computed by the standard **local-change rule** — the boundary-strength",
+      "last_line_text": "common [0,1] scale so they are comparable."
+     },
+     {
+      "first_line_as_a_locator_only": 136,
+      "last_line_as_a_locator_only": 139,
+      "first_line_text": "The **combined surface strength** at a point is the **weighted sum** of the three normalised profiles, with the **gap",
+      "last_line_text": "the three local-change profiles) is fixed here."
+     },
+     {
+      "first_line_as_a_locator_only": 141,
+      "last_line_as_a_locator_only": 164,
+      "first_line_text": "### 4.2 The deterministic notated-marker spikes",
+      "last_line_text": "  **minimum-silence constant**."
+     },
+     {
+      "first_line_as_a_locator_only": 172,
+      "last_line_as_a_locator_only": 180,
+      "first_line_text": "The per-voice strengths are then **aggregated, per onset, into a texture boundary-strength**: the texture strength at an",
+      "last_line_text": "(boosting onsets where several voices peak at once beyond the plain sum) are precision-phase constants."
+     },
+     {
+      "first_line_as_a_locator_only": 182,
+      "last_line_as_a_locator_only": 185,
+      "first_line_text": "The primitive **exposes both**: the **per-voice boundary strengths** (each voice's own phrasing) and the **texture",
+      "last_line_text": "markers of §4.2 spike the **texture** profile.)"
+     },
+     {
+      "first_line_as_a_locator_only": 187,
+      "last_line_as_a_locator_only": 203,
+      "first_line_text": "### 4.4 Peak-picking",
+      "last_line_text": "needed.)"
+     },
+     {
+      "first_line_as_a_locator_only": 205,
+      "last_line_as_a_locator_only": 218,
+      "first_line_text": "**★ EVERY PICKED BOUNDARY CARRIES WHICH CUE OR MARKER FIRED, AND AT WHAT SCOPE — A REQUIREMENT ON THIS SECTION'S OUTPUT,",
+      "last_line_text": "requirement that item binds a future build to."
+     },
+     {
+      "first_line_as_a_locator_only": 220,
+      "last_line_as_a_locator_only": 228,
+      "first_line_text": "### 4.5 Explicitly excluded",
+      "last_line_text": "but needs a trained statistical model). Both are §11 open items, not part of the first build."
+     },
+     {
+      "first_line_as_a_locator_only": 230,
+      "last_line_as_a_locator_only": 247,
+      "first_line_text": "## 5. Runtime view (scenarios)",
+      "last_line_text": "  boundary there. The function layer recovers it from the cadence downstream (§2)."
+     },
+     {
+      "first_line_as_a_locator_only": 249,
+      "last_line_as_a_locator_only": 275,
+      "first_line_text": "## 6. Architecture decisions (with the alternatives weighed)",
+      "last_line_text": "  chorale-scoped — contrary to its purpose)."
+     },
+     {
+      "first_line_as_a_locator_only": 277,
+      "last_line_as_a_locator_only": 291,
+      "first_line_text": "## 7. Quality & testing",
+      "last_line_text": "  before treating the change as output-moving (§11-2, blocking)."
+     },
+     {
+      "first_line_as_a_locator_only": 293,
+      "last_line_as_a_locator_only": 309,
+      "first_line_text": "## 8. Risks & technical debt",
+      "last_line_text": "  runs). See `contrapunctus_findings.md` addendum and `cowork_phrase_boundary_methods.md`."
+     },
+     {
+      "first_line_as_a_locator_only": 311,
+      "last_line_as_a_locator_only": 357,
+      "first_line_text": "## 9. Glossary",
+      "last_line_text": "  thing."
+     },
+     {
+      "first_line_as_a_locator_only": 359,
+      "last_line_as_a_locator_only": 368,
+      "first_line_text": "## 10. Background: what this replaces, and the as-built map (not needed to understand the primitive)",
+      "last_line_text": "the concrete file map and the cue formulas are in the build instruction and the methods catalog (`cowork_phrase_boundary_methods.md`)."
+     },
+     {
+      "first_line_as_a_locator_only": 370,
+      "last_line_as_a_locator_only": 413,
+      "first_line_text": "## 11. Open items",
+      "last_line_text": "     built until the inference phase opens; validate on a non-chorale corpus (§8)."
+     }
+    ],
+    "lines": 361,
+    "bytes": 39176,
+    "position": 36,
+    "item_3_hit_lines_inside": 82,
+    "item_4_identities_inside": [
+     {
+      "identity": "D-476",
+      "home_as_cited": "cowork_phrase_boundary_design.md:250-253"
+     },
+     {
+      "identity": "D-477",
+      "home_as_cited": "cowork_phrase_boundary_design.md:64-69"
+     },
+     {
+      "identity": "D-478",
+      "home_as_cited": "cowork_phrase_boundary_design.md:260-265"
+     },
+     {
+      "identity": "D-479",
+      "home_as_cited": "cowork_phrase_boundary_design.md:266-272"
+     },
+     {
+      "identity": "D-480",
+      "home_as_cited": "cowork_phrase_boundary_design.md:303-309"
+     },
+     {
+      "identity": "D-481",
+      "home_as_cited": "cowork_phrase_boundary_design.md:188-193"
+     },
+     {
+      "identity": "D-485",
+      "home_as_cited": "cowork_phrase_boundary_design.md:205-218"
+     }
+    ]
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_voiceleading_axis_design.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 3,
+      "last_line_as_a_locator_only": 51,
+      "first_line_text": "> **★ Status: AS-BUILT (VL-A/B/C foundation, 2026-07-03 — `records/cc/reports/cc_vl_foundation_build_report.md`).** The dormant",
+      "last_line_text": "> module, no deployment topology, no UI. Stated once here.)*"
+     },
+     {
+      "first_line_as_a_locator_only": 61,
+      "last_line_as_a_locator_only": 74,
+      "first_line_text": "- **\"voice\"** is used in this document ONLY for the **notated voice** — the (staff, voice) line the score writes",
+      "last_line_text": "  sense), never in the sense \"edge / borderline\"."
+     },
+     {
+      "first_line_as_a_locator_only": 101,
+      "last_line_as_a_locator_only": 143,
+      "first_line_text": "- **Voice leading [MT].** How simultaneous musical lines move from sonority to sonority — the linear, horizontal",
+      "last_line_text": "- **Cadence [MT].** As in the harmonic spine (L5 detects; this axis does not re-detect cadences — §3)."
+     },
+     {
+      "first_line_as_a_locator_only": 147,
+      "last_line_as_a_locator_only": 180,
+      "first_line_text": "- **The voice-linear view [VL] (component VL-A).** The representation that reorganizes the L1 note model into",
+      "last_line_text": "  this design."
+     },
+     {
+      "first_line_as_a_locator_only": 184,
+      "last_line_as_a_locator_only": 190,
+      "first_line_text": "**What this is.** The architecture of the **voice-leading axis** — the second analysis dimension of the composing",
+      "last_line_text": "design document (and, where required, its own measurement) before any build (§5.4, §9-D5)."
+     },
+     {
+      "first_line_as_a_locator_only": 192,
+      "last_line_as_a_locator_only": 203,
+      "first_line_text": "**Why it exists (the problem).** The harmonic spine answers \"what are the chords, keys, functions?\" It is",
+      "last_line_text": "dominated by non-chord tones read as chord extensions."
+     },
+     {
+      "first_line_as_a_locator_only": 217,
+      "last_line_as_a_locator_only": 244,
+      "first_line_text": "- **Forward-only analysis.** Inference flows forward within the axis; cross-axis reads obey the acyclicity rule of",
+      "last_line_text": "  (the VL-C per-span question has a named exploratory study — §5.3, §15-1)."
+     },
+     {
+      "first_line_as_a_locator_only": 248,
+      "last_line_as_a_locator_only": 259,
+      "first_line_text": "**Imports / dependencies.**",
+      "last_line_text": "  (v1 reads nothing from them)."
+     },
+     {
+      "first_line_as_a_locator_only": 261,
+      "last_line_as_a_locator_only": 266,
+      "first_line_text": "**Exports / public API (design-level).**",
+      "last_line_text": "  schemata (VL-F), voicing/arrangement descriptors (VL-G)."
+     },
+     {
+      "first_line_as_a_locator_only": 268,
+      "last_line_as_a_locator_only": 286,
+      "first_line_text": "**Consumers (who reads the axis, and for what).**",
+      "last_line_text": "   like the rest of the dormant stack."
+     },
+     {
+      "first_line_as_a_locator_only": 293,
+      "last_line_as_a_locator_only": 304,
+      "first_line_text": "**Mirror the harmonic spine's discipline on the linear dimension, and build only what the evidence has already",
+      "last_line_text": "behind its own measurement or design gate."
+     },
+     {
+      "first_line_as_a_locator_only": 342,
+      "last_line_as_a_locator_only": 362,
+      "first_line_text": "Rules:",
+      "last_line_text": "  cross-check (§10)."
+     },
+     {
+      "first_line_as_a_locator_only": 414,
+      "last_line_as_a_locator_only": 463,
+      "first_line_text": "- **VL-D — stream separation (inference).** Recover streams from implied polyphony / compound melody, so keyboard",
+      "last_line_text": "  nothing upstream of itself."
+     },
+     {
+      "first_line_as_a_locator_only": 474,
+      "last_line_as_a_locator_only": 489,
+      "first_line_text": "1. **Chorale (four notated voices).** VL-A yields four monophonic series; VL-B's motion profile is",
+      "last_line_text": "   denied, the output abstains with truncation provenance)."
+     },
+     {
+      "first_line_as_a_locator_only": 495,
+      "last_line_as_a_locator_only": 505,
+      "first_line_text": "- **VoiceLine** — voice identity (staff, voice), ordered events (onset, duration, pitches, spelling, chordal",
+      "last_line_text": "- *(Design-gated types sketched, not fixed: Stream + membership confidences; PhraseSpan per voice; SchemaMatch.)*"
+     },
+     {
+      "first_line_as_a_locator_only": 536,
+      "last_line_as_a_locator_only": 570,
+      "first_line_text": "- **D1 — an axis, not a seventh spine layer.** The three co-equal admission gates (ARCHITECTURE §2.15): **(1)",
+      "last_line_text": "  reference set, not a parallel new rig."
+     },
+     {
+      "first_line_as_a_locator_only": 601,
+      "last_line_as_a_locator_only": 614,
+      "first_line_text": "- **Ground-truth scarcity** for texture (per-piece), phrases, and schemata — the axis's inference components lean",
+      "last_line_text": "  the guard — nothing builds without its own doc + footing."
+     },
+     {
+      "first_line_as_a_locator_only": 622,
+      "last_line_as_a_locator_only": 628,
+      "first_line_text": "The axis was **predicted** (chorale \"Baroque-ness\" lives in voice-leading, not chords — the v1/v1.1 finding that",
+      "last_line_text": "§2.15 named the axis, the voice-leading-span, and the melodic-phrase/voicing homes before this design existed)."
+     },
+     {
+      "first_line_as_a_locator_only": 632,
+      "last_line_as_a_locator_only": 644,
+      "first_line_text": "**Borrowed / built on:** the motion-type and interval feature definitions and the texture taxonomy",
+      "last_line_text": "`cowork_polyphony_phrase_harmony_research.md` §7."
+     },
+     {
+      "first_line_as_a_locator_only": 656,
+      "last_line_as_a_locator_only": 708,
+      "first_line_text": "1. **The per-span texture measurement (gates the §5.3 refinement).** Exploratory, read-only: windowed motion",
+      "last_line_text": "    Tooling precedents recorded: music21 theoryAnalyzer, FuxCP, Palestrina Pal, the Check-Fux plugin."
+     },
+     {
+      "first_line_as_a_locator_only": 712,
+      "last_line_as_a_locator_only": 727,
+      "first_line_text": "- **A1 — admit the axis** with the §5 decomposition and the three co-equal gates as argued (§9-D1).",
+      "last_line_text": "- **A8 — the cross-axis dependency rule** (acyclicity by declaration, re-checked per wiring) (§9-D6)."
+     }
+    ],
+    "lines": 472,
+    "bytes": 47074,
+    "position": 37,
+    "item_3_hit_lines_inside": 49,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_target_architecture.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 17,
+      "last_line_as_a_locator_only": 27,
+      "first_line_text": "## 1. The core principle",
+      "last_line_text": "  *display grouping* (cosmetic)."
+     },
+     {
+      "first_line_as_a_locator_only": 88,
+      "last_line_as_a_locator_only": 95,
+      "first_line_text": "| Layer | Name | Contract | Fact or Judgment? |",
+      "last_line_text": "| **6** | **Grouping / display** | Merge adjacent slices carrying the same analysis into human-readable regions. Cosmetic, reversible, downstream. | View |"
+     },
+     {
+      "first_line_as_a_locator_only": 97,
+      "last_line_as_a_locator_only": 106,
+      "first_line_text": "**★ A future voice-leading layer (named, not built — recorded 2026-06-29).** Layers 1–6 analyse the **vertical/harmonic**",
+      "last_line_text": "for complete-schema recognition or voice-leading resolution *with* a verification path (verifiability contract)."
+     },
+     {
+      "first_line_as_a_locator_only": 108,
+      "last_line_as_a_locator_only": 117,
+      "first_line_text": "**★ The Harmonic Vocabulary — an independent knowledge-base component, not a layer (user-ratified 2026-06-29).** The",
+      "last_line_text": "detection) lives at the consumer."
+     },
+     {
+      "first_line_as_a_locator_only": 119,
+      "last_line_as_a_locator_only": 137,
+      "first_line_text": "Sub-points:",
+      "last_line_text": "  chord-symbol layer (4), not a primitive and not a replacement for the notes."
+     },
+     {
+      "first_line_as_a_locator_only": 139,
+      "last_line_as_a_locator_only": 173,
+      "first_line_text": "**Control flow — forward-only, no backward edges (user-ratified 2026-06-22).** The layers form an **acyclic forward",
+      "last_line_text": "  is the spine of the Stage-5 / gated-step design doc** when it is written."
+     },
+     {
+      "first_line_as_a_locator_only": 175,
+      "last_line_as_a_locator_only": 191,
+      "first_line_text": "**What \"single responsibility\" actually means here — one (evidence-source × question) contribution, NOT \"one layer",
+      "last_line_text": "owns the rest) stated explicitly.**"
+     },
+     {
+      "first_line_as_a_locator_only": 214,
+      "last_line_as_a_locator_only": 226,
+      "first_line_text": "**★ Verifiability is a risk posture, not a permission gate — build sound theory with an explicit confidence path",
+      "last_line_text": "corpus-absence."
+     },
+     {
+      "first_line_as_a_locator_only": 228,
+      "last_line_as_a_locator_only": 261,
+      "first_line_text": "**★ Spans are a typed family, not one \"region\" — name each by its bounding criterion (user-ratified 2026-06-29).** A tonal",
+      "last_line_text": "    recognize, read predictively to suggest."
+     },
+     {
+      "first_line_as_a_locator_only": 272,
+      "last_line_as_a_locator_only": 277,
+      "first_line_text": "**Naming discipline (the contract):** every layer names the span it operates on by its type — \"chord-span\",",
+      "last_line_text": "ARCHITECTURE.md §2.15 is canonical.)*"
+     },
+     {
+      "first_line_as_a_locator_only": 305,
+      "last_line_as_a_locator_only": 313,
+      "first_line_text": "Target mapping (synthesis, to refine per-layer):",
+      "last_line_text": "  set subsumes them. They may survive only as fast change-point enumeration helpers, if at all."
+     },
+     {
+      "first_line_as_a_locator_only": 317,
+      "last_line_as_a_locator_only": 326,
+      "first_line_text": "## 5. Implications for the upstream-first sweep",
+      "last_line_text": "  analysis-with-context carries the key + NCT levers)."
+     },
+     {
+      "first_line_as_a_locator_only": 353,
+      "last_line_as_a_locator_only": 382,
+      "first_line_text": "### 6.2 Layer 3 — the analysis (the only place judgment lives)",
+      "last_line_text": "  membership criterion and window — designed in the layer-3 doc."
+     },
+     {
+      "first_line_as_a_locator_only": 384,
+      "last_line_as_a_locator_only": 398,
+      "first_line_text": "### 6.3 Layer N — grouping (cosmetic, but it IS the output structure)",
+      "last_line_text": "  of it."
+     }
+    ],
+    "lines": 227,
+    "bytes": 24607,
+    "position": 38,
+    "item_3_hit_lines_inside": 47,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_stage5_fitter_design.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 26,
+      "last_line_as_a_locator_only": 62,
+      "first_line_text": "| term | sense in this document |",
+      "last_line_text": "| **\"gated on X\" (participle)** | Used only in its ordinary English sense \"conditional on X\" (e.g. \"flag-gated\", \"ratification-gated\"). Never a noun sense. |"
+     },
+     {
+      "first_line_as_a_locator_only": 304,
+      "last_line_as_a_locator_only": 306,
+      "first_line_text": "> **maximize** duration-weighted root agreement — Σ dur(cells where our root pitch class equals the WiR",
+      "last_line_text": "> unit, adjudicated by variant (b)."
+     },
+     {
+      "first_line_as_a_locator_only": 368,
+      "last_line_as_a_locator_only": 395,
+      "first_line_text": "**Checkpoint P1 (ratification):** the optimizer choice (§9 D-3, decided on the measured cost and",
+      "last_line_text": "that dispatch's manifest edit (`5c5d0aabdc`), values byte-untouched."
+     },
+     {
+      "first_line_as_a_locator_only": 465,
+      "last_line_as_a_locator_only": 490,
+      "first_line_text": "1. **Reliability maps (C1's remaining deliverable).** Per (layer × decision × fit target) — contract C4:",
+      "last_line_text": "   separate, later Cowork task — named here as unblocked, not started."
+     },
+     {
+      "first_line_as_a_locator_only": 519,
+      "last_line_as_a_locator_only": 532,
+      "first_line_text": "**★ R10-b FIRED — the arc-closing ratification (session 23, 2026-07-06; `records/cc/reports/cc_stage5_r10b_ratification_report.md`).**",
+      "last_line_text": "dormant-resolver objective] · θ/map wiring · L1.5 surface map · GateA unification · the L5 inversion · tonicVote.**"
+     },
+     {
+      "first_line_as_a_locator_only": 738,
+      "last_line_as_a_locator_only": 780,
+      "first_line_text": "**D-11 A parameter's value lives in a per-parameter style table of MEASURED dimensionality, estimated",
+      "last_line_text": "anchors + the structure verdict (including mixability) per parameter."
+     },
+     {
+      "first_line_as_a_locator_only": 809,
+      "last_line_as_a_locator_only": 839,
+      "first_line_text": "- **Overfitting a ~326-score, single-composer fitting split.** Mitigations: the held-out split; the",
+      "last_line_text": "  shared-constant conflict, if D-9's surfacing test fires (evidence for the E-steps, handled there)."
+     },
+     {
+      "first_line_as_a_locator_only": 851,
+      "last_line_as_a_locator_only": 863,
+      "first_line_text": "The scoring constants accreted across the numbered-iteration era (which ran through at least Iter 98; the",
+      "last_line_text": "licensed lever at L5 §15-13 for this arc (§4.4 family 4)."
+     },
+     {
+      "first_line_as_a_locator_only": 869,
+      "last_line_as_a_locator_only": 915,
+      "first_line_text": "- **Duration-weighted chord-symbol recall** (MIREX audio-chord-estimation \"weighted CSR\" tradition): the",
+      "last_line_text": "  (the review found no structural fault — this arc fits the existing architecture's constants)."
+     },
+     {
+      "first_line_as_a_locator_only": 946,
+      "last_line_as_a_locator_only": 1507,
+      "first_line_text": "**Open items (tracked, not blocking sign-off):**",
+      "last_line_text": "  closing the recorded S-5 instrument gap."
+     }
+    ],
+    "lines": 804,
+    "bytes": 90870,
+    "position": 39,
+    "item_3_hit_lines_inside": 41,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_evidence_inventory.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 17,
+      "last_line_as_a_locator_only": 47,
+      "first_line_text": "- Notated pitches with SPELLING (tonal pitch classes — F♯ vs G♭ as the composer wrote",
+      "last_line_text": "  analysis ignores entirely."
+     },
+     {
+      "first_line_as_a_locator_only": 64,
+      "last_line_as_a_locator_only": 81,
+      "first_line_text": "- Metric weights: region-level weights PUBLISHED; **per-note beat weight",
+      "last_line_text": "  built in the dormant axis)."
+     },
+     {
+      "first_line_as_a_locator_only": 85,
+      "last_line_as_a_locator_only": 92,
+      "first_line_text": "- Slices (change-point boundaries), slice durations, explicit empty slices.",
+      "last_line_text": "  theory, computable purely from slice durations); anacrusis/pickup detection."
+     },
+     {
+      "first_line_as_a_locator_only": 96,
+      "last_line_as_a_locator_only": 115,
+      "first_line_text": "- Produced today: per-region key+mode; the alternatives list (top-4, margins",
+      "last_line_text": "    explaining and for spotting emission pathologies)."
+     },
+     {
+      "first_line_as_a_locator_only": 119,
+      "last_line_as_a_locator_only": 135,
+      "first_line_text": "- Produced today: the committed identity (root/quality/inversion/bass/extensions);",
+      "last_line_text": "    truncated at the carry)."
+     },
+     {
+      "first_line_as_a_locator_only": 139,
+      "last_line_as_a_locator_only": 147,
+      "first_line_text": "- Produced (dormant, certified): functional labels; **cadence detections WITH a",
+      "last_line_text": "  research-flavored)."
+     },
+     {
+      "first_line_as_a_locator_only": 151,
+      "last_line_as_a_locator_only": 159,
+      "first_line_text": "**The key layer's shopping list, from the inventory above:** fermatas + phrase-end",
+      "last_line_text": "the ambiguity and boundary margins) — published for downstream honesty."
+     },
+     {
+      "first_line_as_a_locator_only": 164,
+      "last_line_as_a_locator_only": 194,
+      "first_line_text": "1. **Key ↔ spelling — NOT CIRCULAR FOR US.** Temperley worried spelling might need",
+      "last_line_text": "   the key layer already carries."
+     },
+     {
+      "first_line_as_a_locator_only": 215,
+      "last_line_as_a_locator_only": 224,
+      "first_line_text": "**Explainability (user, 2026-07-13): the end user may want to know HOW a mode, chord,",
+      "last_line_text": "the next free number (numbers are in flight in the current CC session)."
+     },
+     {
+      "first_line_as_a_locator_only": 252,
+      "last_line_as_a_locator_only": 261,
+      "first_line_text": "The design opening's decisions gain a concrete evidence menu: the emission decision",
+      "last_line_text": "conversation orders from."
+     },
+     {
+      "first_line_as_a_locator_only": 263,
+      "last_line_as_a_locator_only": 267,
+      "first_line_text": "*Cross-references: OI-72/OI-73/OI-74/OI-75/OI-78/OI-80/OI-81/OI-82 (the silo rows",
+      "last_line_text": "(the decisions this feeds), `cowork_key_drift_research_grounding.md` §2–§3.*"
+     }
+    ],
+    "lines": 168,
+    "bytes": 12668,
+    "position": 40,
+    "item_3_hit_lines_inside": 34,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_score_census.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 18,
+      "last_line_as_a_locator_only": 28,
+      "first_line_text": "| Container class | Closure state (v1) |",
+      "last_line_text": "| Partial: per-repo DLC piece counts; MuseScore.com beyond PDMX (ToS-unwalkable); CPDL/IMSLP symbolic subsets; craigsapp's ~100 kern repos (closure tool exists: `humdrum-tools/humdrum-data`); abcnotation.com long tail | **Named, bounded** |"
+     },
+     {
+      "first_line_as_a_locator_only": 30,
+      "last_line_as_a_locator_only": 33,
+      "first_line_text": "**The standing process rule this census institutes:** from now on, *\"a new corpus was discovered\" is a census",
+      "last_line_text": "`ismir/mir-datasets` index are the mechanical catch-alls), and at any Stage-5/6 corpus decision."
+     },
+     {
+      "first_line_as_a_locator_only": 37,
+      "last_line_as_a_locator_only": 63,
+      "first_line_text": "- **The single biggest untapped asset requires zero new tooling** *(✅ EXECUTED, Wave 1, 2026-07-02)*: the project",
+      "last_line_text": "  is image-only (closes the early-music class)."
+     },
+     {
+      "first_line_as_a_locator_only": 67,
+      "last_line_as_a_locator_only": 70,
+      "first_line_text": "A source enters the registry only with all five fields decided: **(a) GT type** (RN / chords / key / cadence /",
+      "last_line_text": "class** (PD/CC0/CC-BY committable; NC/unclear → hash-pin-only, the established mechanism); **(e) decision tier** (§5)."
+     },
+     {
+      "first_line_as_a_locator_only": 100,
+      "last_line_as_a_locator_only": 110,
+      "first_line_text": "- **Tier G (gate-candidate GT):** the unused DLC sub-corpora (chromatic/romantic first: beethoven_sonatas,",
+      "last_line_text": "  the appendices with reasons, so they are never \"re-discovered\"."
+     },
+     {
+      "first_line_as_a_locator_only": 122,
+      "last_line_as_a_locator_only": 128,
+      "first_line_text": "**★ AND TIER J GATES A FIT — stated here because that is what the tier is FOR: THE JAZZ FIT IS DEFERRED TO THE",
+      "last_line_text": "is what the two non-jazz presets deliver."
+     },
+     {
+      "first_line_as_a_locator_only": 141,
+      "last_line_as_a_locator_only": 152,
+      "first_line_text": "Zenodo/university-hosted annotation sets without GitHub presence (more algomus/Dezrann material — the algomus/Dezrann",
+      "last_line_text": "gate-grade common-practice RN GT (that class is closed by the SOTA-paper harvest)."
+     },
+     {
+      "first_line_as_a_locator_only": 170,
+      "last_line_as_a_locator_only": 185,
+      "first_line_text": "**Mitigations (each cheap, each catching a different miss mode):**",
+      "last_line_text": "   its reason in the appendix tables, so exclusion is auditable and reversible, never a silent omission."
+     },
+     {
+      "first_line_as_a_locator_only": 192,
+      "last_line_as_a_locator_only": 201,
+      "first_line_text": "**Why it happens (diagnosed, two mechanisms — neither is a §8 failure, but §8 alone does not prevent them):**",
+      "last_line_text": "   already-held source). A census is only as complete as the list of questions it was asked with."
+     },
+     {
+      "first_line_as_a_locator_only": 210,
+      "last_line_as_a_locator_only": 214,
+      "first_line_text": "**Pending container/GT-layer additions from the 2026-07-03 sweeps (for the next census/registry edit — Wave-3",
+      "last_line_text": "residual — promote to a walked row at Wave 3). *(The Wave-2 beds are already onboarded/enumerated.)*"
+     },
+     {
+      "first_line_as_a_locator_only": 216,
+      "last_line_as_a_locator_only": 222,
+      "first_line_text": "**★ ALL THREE EXECUTED AT WAVE 3 (2026-07-04, `records/cc/reports/cc_corpus_wave3_report.md`):** BCFB onboarded (`juyaolongpaul/Bach_chorale_FB`,",
+      "last_line_text": "registry `wave3_sources` array."
+     },
+     {
+      "first_line_as_a_locator_only": 257,
+      "last_line_as_a_locator_only": 278,
+      "first_line_text": "| # | need (GT/material class) | consumer | state (2026-07-03; *(audit)* = updated 2026-07-04) |",
+      "last_line_text": "| N20 | pedal-point GT | pedal-point-span validation (its owning layer's design) | **ADOPTED (user, 2026-07-04):** covered — VERIFIED DLC `pedal` TSV column on every held corpus (parser-dropped) + algomus fugue pedals; exposure pending. Completes the §2.15 span-kind↔needs mapping |"
+     },
+     {
+      "first_line_as_a_locator_only": 339,
+      "last_line_as_a_locator_only": 355,
+      "first_line_text": "**The supersession decision protocol (user, 2026-07-03 — what happens when a find serves an already-passed",
+      "last_line_text": "   deliberate ratification second, nothing reopened by silence.)"
+     }
+    ],
+    "lines": 153,
+    "bytes": 26063,
+    "position": 41,
+    "item_3_hit_lines_inside": 32,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_joint_estimator_factorization.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 26,
+      "last_line_as_a_locator_only": 35,
+      "first_line_text": "- **The segmentation** `S`: a partition of the event sequence into contiguous **harmonic segments**",
+      "last_line_text": "    the capacity budget (OI-177), the pooling declared, nothing hand-picked."
+     },
+     {
+      "first_line_as_a_locator_only": 37,
+      "last_line_as_a_locator_only": 39,
+      "first_line_text": "A **key change is permitted only at a segment boundary** (a change of key without a change of harmony",
+      "last_line_text": "pitch class, quality, bass) is the derived published fact: root = tonic + the degree's interval."
+     },
+     {
+      "first_line_as_a_locator_only": 46,
+      "last_line_as_a_locator_only": 56,
+      "first_line_text": "```",
+      "last_line_text": "```"
+     },
+     {
+      "first_line_as_a_locator_only": 75,
+      "last_line_as_a_locator_only": 132,
+      "first_line_text": "1. **Pitch emission** `P_emit(tone | k, c; covariates)` — each tone classified into categories:",
+      "last_line_text": "    every fit."
+     },
+     {
+      "first_line_as_a_locator_only": 136,
+      "last_line_as_a_locator_only": 145,
+      "first_line_text": "| # | Premise | Label | False-negative path (what would break it, and how we would see it) |",
+      "last_line_text": "| P8 | Factor overlap (spelling ~ signature ~ collection; cadence ~ transition) is corrected by the combination weights, not by the tables | The ratified §5a structure | If a single weight cannot correct a structured overlap, the residual shows in the weight fit diagnostics; remedy is a factor merge/split, a structure change — never a value tweak |"
+     },
+     {
+      "first_line_as_a_locator_only": 186,
+      "last_line_as_a_locator_only": 194,
+      "first_line_text": "**(a) Small synthetic cases — hand-computable DP tables, state space truncated to a declared candidate",
+      "last_line_text": "5. a deceptive cadence (dominant to submediant) — the asymmetric transition table's work."
+     }
+    ],
+    "lines": 101,
+    "bytes": 10850,
+    "position": 42,
+    "item_3_hit_lines_inside": 19,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_layer3_keymode_design.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 47,
+      "last_line_as_a_locator_only": 66,
+      "first_line_text": "| Term | Meaning (or citation) |",
+      "last_line_text": "| **The inference firewall** | The project rule splitting mechanism/structure changes (allowed now) from inference-quality tuning (deferred to the precision phase, Phase B of `cowork_l1l3_stabilization_plan.md`). |"
+     },
+     {
+      "first_line_as_a_locator_only": 75,
+      "last_line_as_a_locator_only": 92,
+      "first_line_text": "**The responsibility boundary — stated precisely (because Architectural Layer 3 is NOT the final mode authority for",
+      "last_line_text": "`cowork_uncertain_resolver_investigation.md`.)*"
+     },
+     {
+      "first_line_as_a_locator_only": 94,
+      "last_line_as_a_locator_only": 106,
+      "first_line_text": "**A *confident* key is also overturnable (the confidence-weighted override; user-ratified 2026-06-26).** The hand-off",
+      "last_line_text": "close-out: `records/cc/instructions/cc_instruction_l3_keyalt_forwardcarry.md`."
+     },
+     {
+      "first_line_as_a_locator_only": 124,
+      "last_line_as_a_locator_only": 133,
+      "first_line_text": "**What Architectural Layer 3 explicitly does NOT do** (stated because each boundary matters):",
+      "last_line_text": "  chord, function, or already-decided key."
+     },
+     {
+      "first_line_as_a_locator_only": 154,
+      "last_line_as_a_locator_only": 196,
+      "first_line_text": "## 2. Constraints",
+      "last_line_text": "  primarily from the notes."
+     },
+     {
+      "first_line_as_a_locator_only": 198,
+      "last_line_as_a_locator_only": 212,
+      "first_line_text": "## 3. Context & scope (external view)",
+      "last_line_text": "key fed back to it."
+     },
+     {
+      "first_line_as_a_locator_only": 311,
+      "last_line_as_a_locator_only": 331,
+      "first_line_text": "## 9. Architecture decisions (with the alternatives we weighed)",
+      "last_line_text": "  Chosen: a dedicated one — the existing decoder is specific to chords and cannot be reused."
+     },
+     {
+      "first_line_as_a_locator_only": 365,
+      "last_line_as_a_locator_only": 434,
+      "first_line_text": "## 11. Risks & technical debt",
+      "last_line_text": "  magnitude is a wiring-time calibration; only its direction is validated so far)."
+     },
+     {
+      "first_line_as_a_locator_only": 452,
+      "last_line_as_a_locator_only": 466,
+      "first_line_text": "## 13. Background: what Architectural Layer 3 replaces, and corrections on record (NOT needed to understand the layer)",
+      "last_line_text": "  is in the delivery plan, not in this architecture document."
+     },
+     {
+      "first_line_as_a_locator_only": 468,
+      "last_line_as_a_locator_only": 494,
+      "first_line_text": "## 14. Related work & external sources (what we borrowed, discarded, and why)",
+      "last_line_text": "  fixed **held-out split** so the metric is out-of-sample; and the project's **Bach** and **Jazz** tuning presets."
+     },
+     {
+      "first_line_as_a_locator_only": 496,
+      "last_line_as_a_locator_only": 536,
+      "first_line_text": "## 15. To do — deferred enhancements (this layer is built; these are revisions on record)",
+      "last_line_text": "  `cowork_architecture_review_2026_07.md` §7/§9 (F-10, A-3)."
+     }
+    ],
+    "lines": 293,
+    "bytes": 31673,
+    "position": 43,
+    "item_3_hit_lines_inside": 19,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_progression_schema_design.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 21,
+      "last_line_as_a_locator_only": 68,
+      "first_line_text": "- **Named progression** — a chord progression with a conventional name and a catalog entry in the Harmonic",
+      "last_line_text": "  person or element generally; **substitution** — always the chord-for-chord sense above, never text replacement.)"
+     },
+     {
+      "first_line_as_a_locator_only": 80,
+      "last_line_as_a_locator_only": 89,
+      "first_line_text": "## 2. Placement — no new layer",
+      "last_line_text": "- **The catalog → the Harmonic Vocabulary**, queried, not owned (D5)."
+     },
+     {
+      "first_line_as_a_locator_only": 117,
+      "last_line_as_a_locator_only": 128,
+      "first_line_text": "### 4.3 The evidence contribution (both conditions fully stated)",
+      "last_line_text": "  the notes. No new comparison frame is introduced."
+     },
+     {
+      "first_line_as_a_locator_only": 161,
+      "last_line_as_a_locator_only": 178,
+      "first_line_text": "### 4.6 Harmonic sequences as evidence of the local key (the Layer-5 §5.3 channel; review A-4)",
+      "last_line_text": "§5.3 wiring is built. The consumer's own build (the annotation + the §5.5 feature) does not need it."
+     },
+     {
+      "first_line_as_a_locator_only": 180,
+      "last_line_as_a_locator_only": 184,
+      "first_line_text": "## 5. Where the idiom behavior lives *(post-swap, `0e155154fc`)*",
+      "last_line_text": "a coloristic analysis — the empirical study found genre organizes harmony only weakly)."
+     },
+     {
+      "first_line_as_a_locator_only": 186,
+      "last_line_as_a_locator_only": 273,
+      "first_line_text": "## 6. Architecture decisions (with the alternatives weighed)",
+      "last_line_text": "  path; the mark retires per entry when the voice-leading layer supplies the other half."
+     },
+     {
+      "first_line_as_a_locator_only": 275,
+      "last_line_as_a_locator_only": 283,
+      "first_line_text": "## 7. Quality & validation",
+      "last_line_text": "  construction."
+     },
+     {
+      "first_line_as_a_locator_only": 312,
+      "last_line_as_a_locator_only": 332,
+      "first_line_text": "## 10. QA record (the prescribed audits — Cowork, 2026-07-02; re-run on the v4 rewrite)",
+      "last_line_text": "criteria unaffected — G1 excludes the consumer)."
+     }
+    ],
+    "lines": 211,
+    "bytes": 21486,
+    "position": 44,
+    "item_3_hit_lines_inside": 17,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_confidence_contract.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 14,
+      "last_line_as_a_locator_only": 21,
+      "first_line_text": "Every decision layer publishes \"a confidence\", and the architecture's signature control-flow mechanism — the",
+      "last_line_text": "operate on declared, comparable quantities."
+     },
+     {
+      "first_line_as_a_locator_only": 54,
+      "last_line_as_a_locator_only": 66,
+      "first_line_text": "**Rules of use:**",
+      "last_line_text": "  a separate ad-hoc judgment."
+     },
+     {
+      "first_line_as_a_locator_only": 70,
+      "last_line_as_a_locator_only": 79,
+      "first_line_text": "| Layer | Decision | Published confidence (boundary form) | Class | Notes / as-built deltas |",
+      "last_line_text": "| **VL-C texture (axis 2)** | **texture-of-span** | the best-vs-second-best **fit** margin, where fit = `exp(−distance/fitScale)` of the z-space (ABz) euclidean distance to a class centroid — already ∈ [0,1) | M | The **axis-2** first judgment component (`cowork_voiceleading_axis_design.md` §5.3; `textureclassifier.h`, DORMANT). The published confidence is the exp-fit margin; squash per **R5** below. The output also carries the **full ranked list of ALL class fits with weights** (zero information loss). Three declared floors — **evidential** (min motion samples), **margin**, **fit** — are precision-phase; abstention = margin < margin-floor OR best fit < fit-floor (contract U5), single-voice → *no-pair* abstention. No new §4 comparison frame (nothing compares a VL confidence against a harmonic one). |"
+     },
+     {
+      "first_line_as_a_locator_only": 83,
+      "last_line_as_a_locator_only": 84,
+      "first_line_text": "A **frame** is a declared triple *(incumbent confidence, contradiction-strength measure, conversion)* under which one",
+      "last_line_text": "comparison is defined. The general §8 rule, stated once for all instances:"
+     },
+     {
+      "first_line_as_a_locator_only": 93,
+      "last_line_as_a_locator_only": 99,
+      "first_line_text": "- **Frame F-A — cadence-confirmed modulation recompute (L5 §5.4).** Incumbent: L3 key-of-span confidence (Class M,",
+      "last_line_text": "  fit). Selection is restricted to carried alternatives / neighbouring committed harmony (never re-derivation)."
+     },
+     {
+      "first_line_as_a_locator_only": 101,
+      "last_line_as_a_locator_only": 103,
+      "first_line_text": "**New frames require declaration here.** Any future override site (e.g. the A-4 cadence-less confirmation channels;",
+      "last_line_text": "frame row to this section before build — an undeclared cross-layer comparison is a contract violation."
+     },
+     {
+      "first_line_as_a_locator_only": 149,
+      "last_line_as_a_locator_only": 155,
+      "first_line_text": "| # | Delta | Home | Close-out |",
+      "last_line_text": "| D-INV | exact formulas/ranges at source for every row of §3 | all | gap-analysis Rider 6 (confidence inventory) confirms or corrects §3 |"
+     }
+    ],
+    "lines": 50,
+    "bytes": 12001,
+    "position": 45,
+    "item_3_hit_lines_inside": 14,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_progression_schema_dictionary.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 35,
+      "last_line_as_a_locator_only": 46,
+      "first_line_text": "**The D5 dependency map (one owner per concern — restated here, mirrored in code).** Two places know about chord",
+      "last_line_text": "the `isLicensedProgression` code increment is pending, after which the consistency test's known-gap list empties.)*"
+     },
+     {
+      "first_line_as_a_locator_only": 141,
+      "last_line_as_a_locator_only": 166,
+      "first_line_text": "### 5.1 The function map — the systematic spine",
+      "last_line_text": "  bVII, bIII, bII` Neapolitan, minor `v`, `viio7`); in minor, borrow from parallel major (Picardy `I`, raised `IV`)."
+     },
+     {
+      "first_line_as_a_locator_only": 168,
+      "last_line_as_a_locator_only": 198,
+      "first_line_text": "### 5.2 Named progressions & schemas",
+      "last_line_text": "- **Advanced jazz cycles** `[jazz]` — Coltrane changes (a major-thirds key cycle); backdoor `bVII7→I`."
+     },
+     {
+      "first_line_as_a_locator_only": 200,
+      "last_line_as_a_locator_only": 222,
+      "first_line_text": "### 5.3 Substitution operations",
+      "last_line_text": "  substitution)."
+     },
+     {
+      "first_line_as_a_locator_only": 224,
+      "last_line_as_a_locator_only": 246,
+      "first_line_text": "## 6. Crosscutting concepts",
+      "last_line_text": "  content change here; tuning how strongly an entry fires is a precision-phase change there."
+     },
+     {
+      "first_line_as_a_locator_only": 307,
+      "last_line_as_a_locator_only": 314,
+      "first_line_text": "## 11. Related work & sources",
+      "last_line_text": "target-architecture §2."
+     },
+     {
+      "first_line_as_a_locator_only": 316,
+      "last_line_as_a_locator_only": 326,
+      "first_line_text": "## 12. Open items",
+      "last_line_text": "   per-preset weights by clustering corpora — is committed future work (`cowork_style_clustering_plan.md`)."
+     }
+    ],
+    "lines": 134,
+    "bytes": 13878,
+    "position": 46,
+    "item_3_hit_lines_inside": 12,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_layer2_slicing_design.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 13,
+      "last_line_as_a_locator_only": 22,
+      "first_line_text": "| Term | Meaning (or citation) |",
+      "last_line_text": "| **Pass-2/2b** | The old segment-first pipeline's internal pass numbering (the greedy boundary-expander and its merge step, §13); named here only as history. |"
+     },
+     {
+      "first_line_as_a_locator_only": 69,
+      "last_line_as_a_locator_only": 79,
+      "first_line_text": "## 3. Context & scope (external view)",
+      "last_line_text": "function."
+     },
+     {
+      "first_line_as_a_locator_only": 101,
+      "last_line_as_a_locator_only": 111,
+      "first_line_text": "## 6. Runtime view (scenarios)",
+      "last_line_text": "  useful later, for example as a phrase boundary)."
+     },
+     {
+      "first_line_as_a_locator_only": 121,
+      "last_line_as_a_locator_only": 155,
+      "first_line_text": "## 8. Crosscutting concepts",
+      "last_line_text": "  evidence boundary is the consuming layer's concern."
+     },
+     {
+      "first_line_as_a_locator_only": 157,
+      "last_line_as_a_locator_only": 171,
+      "first_line_text": "## 9. Architecture decisions (with the alternatives we weighed)",
+      "last_line_text": "  build-time decision, superseded by the Layer-3 wiring exactly as this decision anticipated.)*"
+     },
+     {
+      "first_line_as_a_locator_only": 188,
+      "last_line_as_a_locator_only": 196,
+      "first_line_text": "## 11. Risks & technical debt",
+      "last_line_text": "  the old machinery during that transition is described in Section 13."
+     },
+     {
+      "first_line_as_a_locator_only": 207,
+      "last_line_as_a_locator_only": 221,
+      "first_line_text": "## 13. Background: what Architectural Layer 2 replaces, and corrections on record (NOT needed to understand the layer)",
+      "last_line_text": "  transition, and deciding what of it moves to the grouping layer (L6) versus is deleted is scoped as L6 is built."
+     }
+    ],
+    "lines": 106,
+    "bytes": 11425,
+    "position": 47,
+    "item_3_hit_lines_inside": 9,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_notation_output_contract.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 36,
+      "last_line_as_a_locator_only": 46,
+      "first_line_text": "1. **The span seam** (today `analyzeHarmonicRhythm` → `HarmonicRegion` vector): the caller names",
+      "last_line_text": "   status-bar/accessibility formatter chain."
+     },
+     {
+      "first_line_as_a_locator_only": 69,
+      "last_line_as_a_locator_only": 86,
+      "first_line_text": "- Span: `startTick`, `endTick`.",
+      "last_line_text": "  sounding-content derivation is a presentation-layer read of L1 facts and can (§5.3)."
+     },
+     {
+      "first_line_as_a_locator_only": 98,
+      "last_line_as_a_locator_only": 106,
+      "first_line_text": "**★ Amendment (user-ratified 2026-07-26, at the P3a findings — display renderings are",
+      "last_line_text": "D2 ruling; the OI-199 review carries the thorough axis)."
+     },
+     {
+      "first_line_as_a_locator_only": 167,
+      "last_line_as_a_locator_only": 182,
+      "first_line_text": "| audited cluster (rows) | legacy form | contract source |",
+      "last_line_text": "| accessibility (1) | formatted annotation string | unchanged: downstream of the composing-bridge formatter, which reads this record |"
+     },
+     {
+      "first_line_as_a_locator_only": 186,
+      "last_line_as_a_locator_only": 192,
+      "first_line_text": "The legacy exposure/annotation gates keep their FUNCTION (whether to expose a key run, coalesce",
+      "last_line_text": "unchanged in role."
+     },
+     {
+      "first_line_as_a_locator_only": 196,
+      "last_line_as_a_locator_only": 212,
+      "first_line_text": "1. **The decode equality:** the in-app record's inference fields on the 326 covered corpus",
+      "last_line_text": "   the batch render's forms on the shared cases (the same derivation, one path, #6)."
+     }
+    ],
+    "lines": 78,
+    "bytes": 7501,
+    "position": 48,
+    "item_3_hit_lines_inside": 9,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_joint_estimator_architecture.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 43,
+      "last_line_as_a_locator_only": 51,
+      "first_line_text": "- NCT-cleaned **tone collections / pitch content** → emission `P(pitches | tonic, mode, chord)`, metric-weighted;",
+      "last_line_text": "- **bass-motion skeletons** → a bass/inversion emission."
+     },
+     {
+      "first_line_as_a_locator_only": 55,
+      "last_line_as_a_locator_only": 60,
+      "first_line_text": "- **OI-166** (key-agnostic cadence pre-scan) — still built, at L1.5; it is now the **cadence factor** of A, not a forward vote. Its precision probe still gates whether/how strongly the factor is weighted.",
+      "last_line_text": "- **The measurement chain (OI-145 wave 1)** — **retained in full**: A is graded against DCML ground truth through the same robust unit; the hardening we did is what lets A be measured honestly."
+     },
+     {
+      "first_line_as_a_locator_only": 105,
+      "last_line_as_a_locator_only": 123,
+      "first_line_text": "**Fitting parameterization (user-ratified 2026-07-19).** The staged form: **the factor TABLES are fit",
+      "last_line_text": "weights measurably disagree with the reported metric."
+     },
+     {
+      "first_line_as_a_locator_only": 125,
+      "last_line_as_a_locator_only": 144,
+      "first_line_text": "**Chord state is scale-degree-valued (user-ratified 2026-07-19).** The joint state's chord axis is a",
+      "last_line_text": "the ground truth's labeling convention)."
+     }
+    ],
+    "lines": 54,
+    "bytes": 5909,
+    "position": 49,
+    "item_3_hit_lines_inside": 8,
+    "item_4_identities_inside": [
+     {
+      "identity": "D-526",
+      "home_as_cited": "cowork_joint_estimator_architecture.md:125-144"
+     }
+    ]
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_layer1_note_model_design.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 15,
+      "last_line_as_a_locator_only": 24,
+      "first_line_text": "| Term | Meaning (or citation) |",
+      "last_line_text": "| **The system check (§10)** | The project's per-event oracle-root corpus metric and the two automated suites `composing_tests` and `notation_tests` (runbook: `build_and_test.md`; gate policy: CLAUDE.md). |"
+     },
+     {
+      "first_line_as_a_locator_only": 56,
+      "last_line_as_a_locator_only": 62,
+      "first_line_text": "**What Architectural Layer 1 keeps but marks (not every note in a score should feed tonal analysis).** Three kinds",
+      "last_line_text": "architectural layer can still see that they were present."
+     },
+     {
+      "first_line_as_a_locator_only": 78,
+      "last_line_as_a_locator_only": 103,
+      "first_line_text": "## 2. Constraints",
+      "last_line_text": "  permitted code changes are speed improvements that return *identical* results."
+     },
+     {
+      "first_line_as_a_locator_only": 174,
+      "last_line_as_a_locator_only": 183,
+      "first_line_text": "## 7. Data design",
+      "last_line_text": "outlive the note model), and the numeric look-up index."
+     },
+     {
+      "first_line_as_a_locator_only": 240,
+      "last_line_as_a_locator_only": 250,
+      "first_line_text": "## 12. Glossary",
+      "last_line_text": "(drum/percussion staves, the chord-symbol track, and hidden staves are not staff-eligible)."
+     }
+    ],
+    "lines": 64,
+    "bytes": 7744,
+    "position": 50,
+    "item_3_hit_lines_inside": 8,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "docs/llm_integration.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 110,
+      "last_line_as_a_locator_only": 115,
+      "first_line_text": "- Parallel fifths and octaves highlighted as the user edits",
+      "last_line_text": "  instrument range status"
+     },
+     {
+      "first_line_as_a_locator_only": 182,
+      "last_line_as_a_locator_only": 186,
+      "first_line_text": "**Visible to LLM:** pitch, duration, voice, dynamics, articulation, note",
+      "last_line_text": "slurs, hairpins)."
+     },
+     {
+      "first_line_as_a_locator_only": 414,
+      "last_line_as_a_locator_only": 416,
+      "first_line_text": "**MusicalAddress as join key:** Harmony, Annotation, and Note at the same",
+      "last_line_text": "a match on the composite key — equivalent to a SQL join."
+     },
+     {
+      "first_line_as_a_locator_only": 539,
+      "last_line_as_a_locator_only": 541,
+      "first_line_text": "**Musically annotated.** Include chord symbols and harmonic analysis from",
+      "last_line_text": "re-derive harmony from raw pitch data."
+     },
+     {
+      "first_line_as_a_locator_only": 575,
+      "last_line_as_a_locator_only": 593,
+      "first_line_text": "| Property | Include? | Notes |",
+      "last_line_text": "| Staff line position | No | Computed |"
+     },
+     {
+      "first_line_as_a_locator_only": 673,
+      "last_line_as_a_locator_only": 678,
+      "first_line_text": "**Deliverables:**",
+      "last_line_text": "- Accept / reject flow"
+     },
+     {
+      "first_line_as_a_locator_only": 708,
+      "last_line_as_a_locator_only": 711,
+      "first_line_text": "- Chord symbols and Roman numeral analysis per measure",
+      "last_line_text": "- Voice leading quality assessments (parallel motion, voice crossing)"
+     }
+    ],
+    "lines": 46,
+    "bytes": 2432,
+    "position": 51,
+    "item_3_hit_lines_inside": 8,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_notation_adoption_increment.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 50,
+      "last_line_as_a_locator_only": 57,
+      "first_line_text": "**The notation seam.** The in-app analysis enters through ONE function:",
+      "last_line_text": "snapshot tests and the implode tests consume the same seam."
+     },
+     {
+      "first_line_as_a_locator_only": 59,
+      "last_line_as_a_locator_only": 64,
+      "first_line_text": "**The consumed record.** `HarmonicRegion` (`src/composing/analysis/region/harmonicrhythm.h:78`)",
+      "last_line_text": "sequence-margin confidence, D-L3a)."
+     },
+     {
+      "first_line_as_a_locator_only": 66,
+      "last_line_as_a_locator_only": 74,
+      "first_line_text": "**What the joint module publishes today.** The C++ decoder's `DecodeResult`",
+      "last_line_text": "carry/abstention policies of the old architecture re-express as posterior mass).\""
+     },
+     {
+      "first_line_as_a_locator_only": 486,
+      "last_line_as_a_locator_only": 502,
+      "first_line_text": "**The §8.1 audit is DELIVERED and Cowork-verified at the objects** (ratification commit",
+      "last_line_text": "root/bass-spelling derivation from (key, degree) as an instrument to establish at build (#19)."
+     }
+    ],
+    "lines": 40,
+    "bytes": 3611,
+    "position": 52,
+    "item_3_hit_lines_inside": 5,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_idiom_entry_mapping.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 20,
+      "last_line_as_a_locator_only": 35,
+      "first_line_text": "## §5.2 — named progressions & schemas",
+      "last_line_text": "| Advanced jazz — **Coltrane changes**, **backdoor** `♭VII7→I` | **5** | |"
+     },
+     {
+      "first_line_as_a_locator_only": 37,
+      "last_line_as_a_locator_only": 48,
+      "first_line_text": "## §5.3 — substitution operations",
+      "last_line_text": "| Upper-structure / voicing substitution | **— (out)** | a *voicing*, not a function-idiom (already out of scope, dictionary §5.3) |"
+     }
+    ],
+    "lines": 28,
+    "bytes": 2157,
+    "position": 53,
+    "item_3_hit_lines_inside": 3,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_bounded_context_design.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 73,
+      "last_line_as_a_locator_only": 115,
+      "first_line_text": "   > **★ Dated annotation (user ruling, 2026-08-07; register entry D-622 supersedes the struck clause).**",
+      "last_line_text": "   the requester never enumerates them to Architectural Layer 1."
+     },
+     {
+      "first_line_as_a_locator_only": 151,
+      "last_line_as_a_locator_only": 185,
+      "first_line_text": "- **Architectural Layer 1 — the supplier.** Owns the loaded span; offers *build over a selection* and *extend(direction,",
+      "last_line_text": "  provenance and the `extension-cue` tag (L6 §5.1 amendment, 2026-07-02)."
+     }
+    ],
+    "lines": 78,
+    "bytes": 8537,
+    "position": 54,
+    "item_3_hit_lines_inside": 2,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "items 3 and 4 — passages of a specification-set member",
+    "document": "cowork_prefit_gates.md",
+    "label": "the passages of the document",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 67,
+      "last_line_as_a_locator_only": 93,
+      "first_line_text": "1. **The parameter inventory is published before fitting** as a generated artifact (#17f): every",
+      "last_line_text": "   de-scoped (the OI-7 pattern); Jazz-preset correctness claims remain gated on OI-7's jazz GT."
+     }
+    ],
+    "lines": 27,
+    "bytes": 2486,
+    "position": 55,
+    "item_3_hit_lines_inside": 1,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "the transfer input — a section 10 span of an earlier comparison's reading file",
+    "document": "ratification_surfaces/cowork_comparison_l0_l1_reading.md",
+    "label": "## 10. The TRANSFER LIST — every RELOCATED row, by target charter",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 14856,
+      "last_line_as_a_locator_only": 15142,
+      "first_line_text": "## 10. The TRANSFER LIST — every RELOCATED row, by target charter",
+      "last_line_text": ""
+     }
+    ],
+    "lines": 287,
+    "bytes": 21436,
+    "position": 56,
+    "item_3_hit_lines_inside": 0,
+    "item_4_identities_inside": []
+   },
+   {
+    "kind": "the transfer input — a section 10 span of an earlier comparison's reading file",
+    "document": "ratification_surfaces/cowork_comparison_l2_reading.md",
+    "label": "## 10. The TRANSFER LIST — every RELOCATED row, by target charter",
+    "ranges": [
+     {
+      "first_line_as_a_locator_only": 75368,
+      "last_line_as_a_locator_only": 76315,
+      "first_line_text": "## 10. The TRANSFER LIST — every RELOCATED row, by target charter",
+      "last_line_text": ""
+     }
+    ],
+    "lines": 948,
+    "bytes": 85398,
+    "position": 57,
+    "item_3_hit_lines_inside": 0,
+    "item_4_identities_inside": []
+   }
+  ]
+ },
  "the_measured_size": {
-  "★_the_size_stop": "THIS BATCH TABULATES NOTHING.  The size stop is that the batch ends here; the tabulation's unit, order and batching, and which of item 2's documents are compared whole, are written by the next dispatch after the writing side has read this block.",
+  "★_the_size_stop": "THE TABULATION RUNS IN THE ORDER OF `the_tabulation_population`, ONE MEMBER PER COMMIT, AND MAY STOP AT ANY MEMBER BOUNDARY (D-672).  Its unit, the outgoing statement, is fixed by the dispatch that tabulates, not by this tool.",
   "item_1_lines_per_span": {
    "#### Layer 4 — the per-slice chord-symbol decoder": 140,
    "#### Layer 5 — the function/cadence layer": 117,
@@ -33065,6 +36437,32 @@
   "the_transfer_spans_lines": {
    "ratification_surfaces/cowork_comparison_l0_l1_reading.md": 287,
    "ratification_surfaces/cowork_comparison_l2_reading.md": 948
+  },
+  "the_tabulation_population": {
+   "members": 57,
+   "members_by_kind": {
+    "item 1 — a named place": 6,
+    "item 2 — a whole document (a specification-set member)": 4,
+    "item 2 — a whole document (not a specification-set member)": 4,
+    "items 3 and 4 — passages of a specification-set member": 41,
+    "the transfer input — a section 10 span of an earlier comparison's reading file": 2
+   },
+   "lines_by_kind": {
+    "item 1 — a named place": 538,
+    "item 2 — a whole document (a specification-set member)": 2672,
+    "item 2 — a whole document (not a specification-set member)": 540,
+    "items 3 and 4 — passages of a specification-set member": 6291,
+    "the transfer input — a section 10 span of an earlier comparison's reading file": 1235
+   },
+   "bytes_by_kind": {
+    "item 1 — a named place": 42079,
+    "item 2 — a whole document (a specification-set member)": 250168,
+    "item 2 — a whole document (not a specification-set member)": 37929,
+    "items 3 and 4 — passages of a specification-set member": 638950,
+    "the transfer input — a section 10 span of an earlier comparison's reading file": 106834
+   },
+   "lines_total": 11276,
+   "bytes_total": 1075960
   }
  }
 }
