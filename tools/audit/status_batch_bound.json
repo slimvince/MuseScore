@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l3_outgoing_population_2026_10_18.md, Task 2",
+ "dispatch": "cc_instruction_l3_comparison_tabulation_2026_10_18.md, Task 3",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -573,38 +573,44 @@
    "base_commit": "a4604507486c392b63882e4446a41fdf80ef7e65",
    "the_then_previous_batch": "cc_instruction_l3_keyword_count_2026_10_17.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_comparison_tabulation_2026_10_18.md, Task 3",
+   "base_commit": "1dc893cfdc43f35a1ec7a9711f5a27b9c843d57c",
+   "the_then_previous_batch": "cc_instruction_l3_outgoing_population_2026_10_18.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "a4604507486c392b63882e4446a41fdf80ef7e65",
- "the_then_previous_batch": "cc_instruction_l3_keyword_count_2026_10_17.md",
+ "base_commit": "1dc893cfdc43f35a1ec7a9711f5a27b9c843d57c",
+ "the_then_previous_batch": "cc_instruction_l3_outgoing_population_2026_10_18.md",
  "the_kind_of_move": "ordinary",
  "entries_moved": 3,
- "characters_moved": 2557,
+ "characters_moved": 2820,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1688,
-   "sha256": "996361061d5ee517f84b2c2a94b595aab79e40e601c4648c077bc50338857849",
+   "characters": 1871,
+   "sha256": "c20050cb429b31aa01774d18b0c19f0d71c7db8d859943d62ef67b54d951ad01",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-18 (CC — `records/cc/instructions/cc_instruction_l3_keyword_count_2026_10_17.md`, Task 2, the close. **★★ THE DRAFT L3 KEYWORD LIST IS COUNTE"
+   "opening": "*2026-10-18 (CC — `records/cc/instructions/cc_instruction_l3_outgoing_population_2026_10_18.md`, Task 2, the close. **★★ THE L3 OUTGOING POPULATION IS"
   },
   {
    "line_at_base": 10,
-   "characters": 460,
-   "sha256": "1ef11a971475430fea81cc356fbf854ccc7fe8da3d5d2b861cba35b7dab517fa",
+   "characters": 541,
+   "sha256": "2c3b65b75e6da44c637f429c31a24c9e0b1cc586e9b4267ab390c0151d43cf2b",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-18 (CC — Same dispatch, Task 1. **THE DRAFT L3 KEYWORD LIST COUNTED, READ-ONLY**: one scratch script outside the repository, proved identical"
+   "opening": "*2026-10-18 (CC — Same dispatch, Task 1. **THE L3 OUTGOING POPULATION DERIVED AND MEASURED**: one new tool, `tools/audit/gen_l3_outgoing_population.py"
   },
   {
    "line_at_base": 12,
-   "characters": 409,
-   "sha256": "a8d84d1632c5a338bd8cbeb078f7305a5d3500c0fd1d88e9e50a09ef450b392f",
+   "characters": 408,
+   "sha256": "3dfa37b41cea2d9a18658905217a7dda2ee8ddb727638fca3deed3c16cc918ef",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-18 (CC — Same dispatch, Task 0. **THIS DISPATCH, THE L3 OUTGOING-POPULATION RULING RECORD AND HANDOFF ENTRIES 421 AND 422 ARE LANDED**, as th"
+   "opening": "*2026-10-18 (CC — Same dispatch, Task 0. **THIS DISPATCH, THE L3 KEYWORD-LIST RULING RECORD AND HANDOFF ENTRIES 423 AND 424 ARE LANDED**, as they stoo"
   }
  ],
  "reconciliation": {

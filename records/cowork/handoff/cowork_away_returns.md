@@ -25068,3 +25068,64 @@ artifact, plus this portion. No further handoff entry or ruling record appeared 
 
 *Provenance: CC, 2026-10-18, appended in the one further commit after the close commit
 `affc956bc169dcdc5746603a2d8c9883d2a9f905`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 TABULATION POPULATION PUBLISHED IN ITS ORDER, AND THE TABULATION OPENED — MEMBERS 1 TO 6 TABULATED, PROPOSALS ONLY, NOTHING DECIDED, NO ALGORITHM CHANGED — TASK 2 STOPPED AT THE MEMBER BOUNDARY AFTER POSITION 6, POSITIONS 7 TO 57 NOT DONE
+
+This batch ran `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`, pinned at Task 0 to blob
+`db7afc92d1dbd4e7b76a297ed1c1c6070a839f64`:
+
+- **Task 0** checked this dispatch and handoff entry 425 at their last bytes at their blobs, landed both as they stood
+  (`b11054f2…`), and took the opening guard capture: as A2 predicted, the thirteen and nothing else, with the evidence
+  pin green.
+- **Task 1** amended `tools/audit/gen_l3_outgoing_population.py` by the dispatch's six edits. The four imported passage
+  functions were checked on synthetic lines first. The tool and its `--check` exit 0. The unchanged part of its artifact
+  was proved unchanged between two explicit blobs, and the published order was checked against the dispatch. The two
+  files were committed together (`966786b8…`).
+- **Task 2** opened `ratification_surfaces/cowork_comparison_l3_reading.md` (`13380cf1…`) and tabulated **positions 1 to
+  6 — the six `ARCHITECTURE.md` places of the ruling's item 1** — one member per commit (`69b3c439…` to `1dc893cf…`).
+  It **STOPPED at the member boundary after position 6** by the capacity judgment the dispatch's 2(g) orders, written
+  before position 7 was opened: position 7, `cowork_layer5_function_design.md`, whole, the largest WHOLE member, was
+  judged not finishable whole together with the close. **Positions 7 to 57 are UNTOUCHED, not partly worked**
+  (**D-672**), and §0 of the reading file says so.
+- **Task 3** closed.
+
+**NOTHING WAS DECIDED; NO DISPOSITION WAS APPLIED; EVERY PLACEMENT IS A PROPOSAL.** No outgoing text was edited. The
+derivation, the brief, the pack and the two earlier reading files were not edited. No session was booted. No measurement
+of the analysis was made. No open-items row and no `D-NNN`. No ruling was taken, no recommendation was made, and nothing
+was put to the user. The five ★ questions were not put. Nothing any layer computes changed.
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_comparison_tabulation_2026_10_18.md`, and is pointed at rather than copied (#6):
+
+- the members done and not done, with the capacity judgment, at its head;
+- Task 0, with the refs, the chain, A1, the last bytes, the commit and the opening capture whole (§1);
+- Task 1, with the tool's diff, the synthetic checks, the run and the check, the unchanged-part property and the order
+  check (§2);
+- Task 2's commits and how the marks were placed (§3);
+- Task 3, with the `STATUS.md` entries, the forward bound's aiming, `--apply` and `--check` with the three entries moved
+  by name, and the regenerations with what each moved (§4);
+- A1 to A5 (§5), the declared departures (§6), the scripts (§7), the observations (§8), what the batch did not do (§9),
+  the plan's tell (§10) and the self-check (§11).
+
+### What needs the writing side, named rather than resolved
+
+1. **A finding in the dispatch's 3(a)**: its suggested `STATUS.md` wording *"the read-off facts"* carries `read-off`, one
+   of the 26 ruled terms. Writing it would have added a residue hit and moved the population tool's `--check`. It was not
+   used (report §4, §8).
+2. **The ordered first read was breached for one file.** `STATUS.md` was read in the same parallel call as the dispatch's
+   first page, before the derivation (report §6, item 1).
+3. **The classification tool's message still names four tools without an authored verdict**, unchanged. Authoring one
+   was not this batch's act.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects, then the next tabulation
+  dispatch resuming at the member boundary §0 of the reading file records: position 7, `cowork_layer5_function_design.md`,
+  whole.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-18, at boot tip `6e127d7a94d4e3f4dbdd7858bd39fef54992b712`, under
+`cc_instruction_l3_comparison_tabulation_2026_10_18.md`, after the dispatch's ordered first reads. Every commit identifier
+here was read from the commit's own object and `origin/master` at its ref file after each push; the guard verdicts are
+this batch's own runs.*
