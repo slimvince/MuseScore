@@ -32,7 +32,7 @@ its own entry there.
 
 | Position | Member | State |
 |---|---|---|
-| 1 | `ARCHITECTURE.md` — *Layer 4 — the per-slice chord-symbol decoder* | NOT YET TABULATED |
+| 1 | `ARCHITECTURE.md` — *Layer 4 — the per-slice chord-symbol decoder* | **DONE** (§6.1) |
 | 2 | `ARCHITECTURE.md` — *Layer 5 — the function/cadence layer* | NOT YET TABULATED |
 | 3 | `ARCHITECTURE.md` — *Layer 6 — the grouping layer* | NOT YET TABULATED |
 | 4 | `ARCHITECTURE.md` — *4.3 ChordSymbolFormatter* | NOT YET TABULATED |
@@ -91,7 +91,8 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: none yet.** **A member
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: position 1 — the `ARCHITECTURE.md` section *Layer 4 — the per-slice chord-symbol decoder*.** **Not
+done: positions 2 to 57.** **A member
 marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed — **never
 partly worked** (**D-672**).
 
@@ -316,6 +317,717 @@ statement*, and where a heading carries a claim, the body sentence that states t
 does; the rule it defends is tabulated. Where a defense sentence also states a separate rule of its own, that rule is
 tabulated.
 
+### 6.1 — Member 1: `ARCHITECTURE.md`, the section *"#### Layer 4 — the per-slice chord-symbol decoder (Built+Dormant — not wired)"*
+
+> **Manifest for this member.** Position **1**. Kind: *item 1 — a named place*. Document: `ARCHITECTURE.md`. Label:
+> *"#### Layer 4 — the per-slice chord-symbol decoder (Built+Dormant — not wired)"*. Range, as a locator only: lines
+> 1935–2074, from that heading to the line before the next `#### ` heading, exactly as the artifact publishes it
+> (**D-307**). Outgoing statements: **43** (rows 1.1 to 1.39; four of those rows carry two claims each and are split,
+> so 39 rows carry 43 statements — the arithmetic is at the foot of this member). Listed under *not a statement*:
+> **27**. Counted at this member by this session; the counts appear here and nowhere else.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 1: **none**.
+> **No SEEN home lies in this member** — none of the homes §5 names is in `ARCHITECTURE.md`.
+>
+> **What this member is, read whole before any row was written.** The section describes the dormant chord decoder of
+> the earlier layer stack, which decides a chord per slice. Under the ratified charter that decision is L2's, and L3
+> reads the chord symbol off it as a view; so most of the section's statements are about another charter's subject,
+> about how that dormant implementation works, or about its build state, and they are placed accordingly.
+
+---
+
+**Row 1.1 — the switch "joint with Layer 5" as the plan of 2026-06-26.**
+
+*Outgoing statement.* "The "joint with Layer 5" production switch described below was the plan ratified 2026-06-26."
+— the section's opening plan-correction paragraph (locator: lines 1937–1939).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a superseded plan.
+
+---
+
+**Row 1.2 — the plan overtaken by the joint estimator, a supersession in fact.**
+
+*Outgoing statement.* "It was overtaken by the joint estimator, which became the production inference layer on the
+batch/corpus surface (2026-07-26) and on the notation surface (2026-07-27) without any ruling that names the
+engage-with-L5 plan — a supersession in fact, not by decision (register entry D-051 records the same shape on Layer
+3)." — the plan-correction paragraph (locator: lines 1939–1942).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event.
+
+---
+
+**Row 1.3 — the build state, Built+Dormant.**
+
+*Outgoing statement.* "The build state itself is unchanged and correct: Built+Dormant." — the plan-correction
+paragraph (locator: line 1942).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 1.4 — what becomes of this decoder is open.**
+
+*Outgoing statement.* "**What becomes of this decoder is OPEN** — it is neither retired by a ruling nor scheduled; see
+the OI-180 retirement map." — the plan-correction paragraph (locator: lines 1943–1944).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 1.5 — the chord layer's tried-and-closed lines, not to be retried.**
+
+*Outgoing statement.* "**Tried and closed on the chord layer — do not retry; the register carries each with its
+measurement: D-215, D-299, D-300, D-301, D-302, D-317, D-318, D-319, D-320, D-328.**" — the section's body (locator:
+line 1948).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to how a chord is scored.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***: the lines it
+closes are lines of chord scoring, and the chord per span is L2's (`FRAMEWORK.md` §5, L2 *Publishes*).
+
+---
+
+**Row 1.6 — a tied note formerly counted more than once.**
+
+*Outgoing statement.* "Before the note reader was rebuilt, a note held across a tie was counted more than once, and
+that spurious extra weight happened to push a handful of ambiguous sonorities toward the correct root." — the ★ block
+on the held-note repetition bonus (locator: lines 1951–1953).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a past state of the implementation.
+
+---
+
+**Row 1.7 — the faithful note model removed the duplication.**
+
+*Outgoing statement.* "The faithful note model removed the duplication." — the same block (locator: lines 1953–1954).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event.
+
+---
+
+**Row 1.8 — a rebuilt chord scoring must not lean on the removed boost.**
+
+*Outgoing statement.* "**Whatever replaces or re-tunes this layer's scoring must not lean on that boost to get those
+cases right.**" — the same block (locator: lines 1954–1955).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — no derived statement speaks to how a chord is scored.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose candidate
+score decides the chord.
+
+---
+
+**Row 1.9 — deciding the non-chord tones deferred, and its shape when built.**
+
+*Outgoing statement.* "**Deciding which sounding notes do not belong to the chord is DEFERRED — and when it is built,
+the knowledge enters the chord decision itself, never a removal afterwards.**" — the section's body (locator: lines
+1963–1964). Two claims: (i) the decision is deferred; (ii) when built, the knowledge enters the chord decision itself,
+never a removal afterwards.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) and (ii) **THE DERIVATION IS SILENT** — L3-S5 (ii) reads elaborations as L2 assigns them and
+does not speak to how they are decided.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status. (ii) **RELOCATED** — to ***L2 — The tonal reading. The one
+entangled decision.***, which publishes, per sounding note, the chord-tone assignment and the elaboration relation
+(`FRAMEWORK.md` §5; the derivation's §0 cites L2-S8 for it).
+
+---
+
+**Row 1.10 — non-chord-tone detection waits for annotated material.**
+
+*Outgoing statement.* "Non-chord-tone detection waits for the annotated material it needs." — the same paragraph
+(locator: lines 1964–1965).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 1.11 — chord identification aware of non-chord tones, never a strip-out pass.**
+
+*Outgoing statement.* "Its shape is constrained in advance: chord identification that knows about non-chord tones, not
+a pass that names a chord and then strips notes out of the answer." — the same paragraph (locator: lines 1965–1966).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with
+Row 1.9 (ii).
+
+---
+
+**Row 1.12 — what runs: the joint estimator produces the committed chord reading on both surfaces.**
+
+*Outgoing statement.* "It carries one sentence about what runs — that production chord analysis still runs the legacy
+`analyzeChord` + post-scoring gates (§4.1) — which was true when written and is **false at HEAD**: the joint estimator
+produces the committed chord reading on the batch/corpus surface since the OI-178 adoption (2026-07-26) and on the
+in-app notation surface since the notation switch (2026-07-27), where `useJointNotationRecord` defaults to `true`
+(`composingconfiguration.cpp:178`)." — the scope paragraph (locator: lines 1973–1978).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* at the current commit, does the joint estimator produce
+the committed chord reading on both the batch/corpus and the in-app notation surfaces, with the record flag on by
+default?
+
+---
+
+**Row 1.13 — the legacy chord path compiled and dormant, retiring at the retirement map.**
+
+*Outgoing statement.* "The legacy `analyzeChord` path is compiled and dormant beside this decoder, and retires with it
+at the OI-180 map." — the scope paragraph (locator: lines 1978–1979).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state and a plan.
+
+---
+
+**Row 1.14 — built, tested and graded, not wired.**
+
+*Outgoing statement.* "**Built, unit-tested, and graded — but NOT wired into the live pipeline.**" — the description
+(locator: line 1982).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 1.15 — the decoder: a per-slice chord-symbol decoder over the slices.**
+
+*Outgoing statement.* "Layer 4 of the rebuild is `ChordSliceDecoder` (`composing/analysis/chord/chordslicedecoder.{h,cpp}`):
+a per-slice chord-symbol decoder over the Layer-2 slices, mirroring the Layer-3 key/mode decoder's shape." — the
+description (locator: lines 1982–1984).
+
+*Derived statements that speak to it.* L3-S1.
+
+*Current-text axis.* L3-S1: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text names the chord symbol's producer *"a per-slice
+chord-symbol decoder over the Layer-2 slices"*; L3-S1 says the chord symbol *"is a view of L2's chord … Nothing is
+decided in computing it, and it reads no sounding note."*
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what does `ChordSliceDecoder` compute per slice, from which
+inputs, and does any code path that runs at the current commit consume its output?
+
+---
+
+**Row 1.16 — production runs the legacy path; the decoder runs only under a diagnostic.**
+
+*Outgoing statement.* "Production chord analysis still runs the **legacy** `analyzeChord` + post-scoring gates (§4.1);
+the decoder runs only under the read-only `batch_analyze --decode-chords` diagnostic (which returns before
+`analyzeScore`), so production output is **byte-identical**." — the description (locator: lines 1984–1987). Two claims:
+(i) production chord analysis runs the legacy path; (ii) the decoder runs only under the read-only diagnostic, so
+production output is byte-identical.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) and (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* at the current commit, which path produces the
+committed chord reading — the section's own scope paragraph (Row 1.12) says this claim is false at that commit? (ii)
+**QUARANTINED.** *Audit question:* is the decoder reached only from the `--decode-chords` diagnostic, and does that
+diagnostic return before any analysis whose output is published?
+
+---
+
+**Row 1.17 — the switch, the retirement and the coverage seal joint with Layer 5.**
+
+*Outgoing statement.* "The production switch, legacy retirement, and coverage seal are **joint with Layer 5**
+(engage-with-L5, ratified 2026-06-26)." — the description (locator: lines 1987–1988).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the superseded plan Rows 1.1 and 1.2 record.
+
+---
+
+**Row 1.18 — the module table: decode a chord symbol per slice.**
+
+*Outgoing statement.* The table row "| `composing/analysis/chord/chordslicedecoder.{h,cpp}` | **Decode a chord symbol per
+Layer-2 slice.** `decideSlice` (scorer-independent) selects from a candidate cube, computes the confidence margin to
+the best DIFFERENT chord, ranks/caps the alternatives, carries the prevailing (∪) union, and marks "uncertain". `decode`
+runs the full pipeline over a Layer-1 note model + `changePointSlices`; `redecodeRange` re-decodes a sub-range under the
+same incremental contract. |" — the module table (locator: line 1992).
+
+*Derived statements that speak to it.* L3-S1.
+
+*Current-text axis.* L3-S1: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text says the module's responsibility is to *"Decode a chord
+symbol per Layer-2 slice"*, selecting *"from a candidate cube"*; L3-S1 says the chord symbol is *"the deterministic
+function of that span's four chord fields and its tonality"* and that *"Nothing is decided in computing it"*.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do `decideSlice`, `decode` and `redecodeRange` do what the row
+says, and is any of them reached at the current commit?
+
+---
+
+**Row 1.19 — G1: commit, inherit or abstain per slice, with a sufficiency gate.**
+
+*Outgoing statement.* "**G1 — commit / inherit / abstain + sufficiency gate** (`f21273ce3b`): per slice, commit a chord,
+inherit the prevailing chain, or abstain when the slice is insufficient." — the decision-ladder list (locator: lines
+1995–1996).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — how a chord is decided is L2's, and no derived statement speaks to
+it.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder commit, inherit or abstain per slice
+as described, under a sufficiency gate?
+
+---
+
+**Row 1.20 — G2/G3: the three-tier membership ladder and the plausibility check.**
+
+*Outgoing statement.* "**G2/G3 — three-tier membership ladder + plausibility check** (`1b7fee1cd5`; the ladder is kept
+by the Step-2 correction `d52cfd0847`)." — the decision-ladder list (locator: lines 1997–1998).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder carry a three-tier membership ladder
+and a plausibility check, and is the ladder the one the Step-2 correction kept?
+
+---
+
+**Row 1.21 — the two-reading inherit: a look-ahead that disclaims any transition cost.**
+
+*Outgoing statement.* "**Two-reading both-sides inherit — continuation vs transition** (`4aa88452cd`): a slice's
+look-ahead consumes `nextChord` (a Layer-4 result) but explicitly disclaims any transition *cost* ("that is Layer 5") —
+the forward-only contract holds, no back-edge." — the decision-ladder list (locator: lines 1999–2001).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder's look-ahead read only the next
+slice's chord result and charge no transition cost?
+
+---
+
+**Row 1.22 — G6: the open-question label declares the competing readings and resolves nothing.**
+
+*Outgoing statement.* "**G6 — confidence model + open-question label (the L4→L5 abstain contract)** (`c74fe98ff5`):
+`OpenQuestionLabel` *declares* the open question + the competing readings; Layer 4 does **not** resolve it
+(representational only — the `SliceDecision` is unchanged by G6)." — the decision-ladder list (locator: lines
+2002–2004).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `OpenQuestionLabel` leave every `SliceDecision`
+unchanged?
+
+---
+
+**Row 1.23 — G4/C1: the symmetric-root spelling pin, through the shared spelling reader.**
+
+*Outgoing statement.* "**G4/C1 — symmetric-root spelling-pin** (`1e74f21ea4`): for a pitch-class-undecidable symmetric
+root (dim7 / augmented / share-tone), pins the spelling-correct rotation from each focal note's notated `tpc`, read
+through the **shared** `engravingbridge::lineOfFifths` primitive (the Layer-1.5 spelling view) — one interpreter, not a
+per-layer tpc copy." — the decision-ladder list (locator: lines 2005–2008).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L3-S2 spells the root from L2's decided tonic and degree, and does
+not speak to how a symmetric sonority's root is chosen.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the pin read each focal note's notated spelling through
+the one shared line-of-fifths reader and no other?
+
+---
+
+**Row 1.24 — the graded result: better where it commits, its abstention mostly function-dependent.**
+
+*Outgoing statement.* "Per the L4-build grading reported in the engage-with-L5 ratification
+(`cowork_l1l4_review_charter.md`): the decoder is materially better than legacy where it commits (+5.5 / +5.8 in the
+graded measure), and ≈**85%** of its abstention is genuinely function-dependent → resolvable only by Layer 5
+(function/cadence)." — the body under *Proven where it commits* (locator: lines 2010–2013). Two claims: (i) better than
+the legacy path where it commits; (ii) most of its abstention function-dependent, resolvable only by Layer 5.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) and (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* is the reported gain where the decoder commits
+reproducible at the current commit, on which corpus, under which measure? (ii) **QUARANTINED.** *Audit question:* how
+was "genuinely function-dependent" established for the decoder's abstentions, and does it reproduce?
+
+---
+
+**Row 1.25 — a second spelling reader coexists in the legacy scorer.**
+
+*Outgoing statement.* "The spelling-pin reads the shared spelling primitive, but the live legacy scorer
+(`chordanalyzer.cpp`) still interprets `tpc` through its own inline cluster (`tpcForPc` / `tpcConsistencyBonus` /
+`tpcSpellsAsSharp` / `countTpcMatches`), so a **second tpc reader coexists** until the legacy path retires (the tpc-fold
+the tpc-capability spec §3 owes — deferred, not done)." — the body under *Unification residual* (locator: lines
+2016–2020).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* at the current commit, how many readers of the notated
+spelling exist in the compiled code, and which of them run?
+
+---
+
+**Row 1.26 — three pieces of built-but-inert staging.**
+
+*Outgoing statement.* "Likewise `redecodeRange`, `tonicizationlabeler`, and `DecodeQualityLevel::Normal/Deep` are
+built-but-inert staging, each comment-accurate about its dormancy." — the same paragraph (locator: lines 2020–2022).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 1.27 — the spelling pin's entry premise false; the remedy enumerated and not decided.**
+
+*Outgoing statement.* "**The G4/C1 symmetric-root spelling-pin's ENTRY PREMISE is false — it is effectively
+unreachable, and the remedy is enumerated and NOT decided (D-608).**" — the first bullet under *Two premises this
+decoder carries were MEASURED* (locator: lines 2030–2031). Two claims: (i) the entry premise is false and the pin
+effectively unreachable; (ii) the remedy is enumerated and not decided.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) and (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* on the corpus, how often does the scorer call a
+diminished-seventh sonority diminished, so that the pin can run? (ii) **HISTORICAL** — a status.
+
+---
+
+**Row 1.28 — the pin runs only once the scorer has called the sonority diminished.**
+
+*Outgoing statement.* "The pin only runs once the scorer has already called the sonority diminished." — the same bullet
+(locator: lines 2031–2032).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the pin's entry condition the scorer's diminished
+quality, and nothing else?
+
+---
+
+**Row 1.29 — the mechanism almost never fires.**
+
+*Outgoing statement.* "On the great majority of diminished-seventh sonorities it has not: the scorer either declines to
+commit or names the chord something else, so the mechanism almost never fires." — the same bullet (locator: lines
+2032–2034).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 1.27 (i), its fire rate taken on the corpus.
+
+---
+
+**Row 1.30 — the four-note diminished-seventh type deferred.**
+
+*Outgoing statement.* "A contributing fact is recorded with it: the four-note diminished-seventh type is deferred, so the
+diminished reading competes as a triad-plus-bonus against complete triads with bass support." — the same bullet
+(locator: lines 2037–2039).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the dormant decoder's candidate set lack the four-note
+diminished-seventh type, so that the diminished reading competes as a triad with a bonus?
+
+---
+
+**Row 1.31 — the abstention rate rides on a never-fitted seed constant.**
+
+*Outgoing statement.* "**The abstention rate rides on an arbitrary, never-fitted SEED CONSTANT (D-609).**" — the second
+bullet (locator: line 2040).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which constant governs G1's abstention, and was it ever
+fitted?
+
+---
+
+**Row 1.32 — every quantity downstream of the ladder depends on an unestablished value.**
+
+*Outgoing statement.* "How often G1 declines to commit is governed by one number set by hand as a starting value and
+never fitted, so every quantity measured downstream of the ladder depends on an unestablished value (#19)." — the second
+bullet (locator: lines 2040–2042).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 1.31, with which downstream measurements
+read the ladder's output.
+
+---
+
+**Row 1.33 — the chord-path search emits the whole path with alternatives and margins.**
+
+*Outgoing statement.* "**The chord-path search emits the WHOLE PATH with every stretch's alternatives and its margins —
+not the committed reading alone.**" — the first bullet under *Two further decisions of this layer* (locator: lines
+2052–2053).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — L3-S6 reads chord-symbol rivals off the rivals L2 publishes, and does
+not speak to what the chord search publishes.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which publishes,
+per span, the rivals with their mass (`FRAMEWORK.md` §5; the derivation's §0 cites L2-S40 to L2-S42 for the rival
+forms).
+
+---
+
+**Row 1.34 — the rule marked legacy and dormant.**
+
+*Outgoing statement.* "⚠ LEGACY / DORMANT, and the dormancy is stated with the rule rather than left to be inferred." —
+the same bullet (locator: lines 2053–2054).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 1.35 — the search hands forward the readings it beat, and by how much.**
+
+*Outgoing statement.* "The search hands forward, per node, the chosen reading together with the readings it beat and by
+how much." — the same bullet (locator: lines 2054–2055).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with
+Row 1.33.
+
+---
+
+**Row 1.36 — the mechanism is the dormant staging; the search is not wired.**
+
+*Outgoing statement.* "**The mechanism it governs is the dormant staging described above** — the search is not wired,
+and what becomes of this decoder is open at the retirement map." — the same bullet (locator: lines 2059–2060).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state and a status.
+
+---
+
+**Row 1.37 — spelling presence tested with the validity predicate, never a non-negative test.**
+
+*Outgoing statement.* "**Spelling presence is tested with the VALIDITY PREDICATE, never with a non-negative test.**" —
+the second bullet under *Two further decisions of this layer* (locator: line 2063).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), whose given facts include
+spelled pitch (`FRAMEWORK.md` §5, L0). *(The L2 comparison placed the same rule RELOCATED to L0, at its Row 3.38.)*
+
+---
+
+**Row 1.38 — the line-of-fifths reader's presence test.**
+
+*Outgoing statement.* "The shared line-of-fifths primitive the spelling-pin above reads — the one interpreter, not a
+per-layer copy — represents a spelling as a signed position on the line of fifths, and its presence test is
+`tpcIsValid()`, **never** `tpc >= 0` and never `tpc != -1`." — the same bullet (locator: lines 2063–2066).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does every presence test of a notated spelling in the code use
+the validity predicate?
+
+---
+
+**Row 1.39 — the validity test's honest bound.**
+
+*Outgoing statement.* "The honest bound is recorded with the rule: the validity test cannot tell a real flattest
+spelling from a default-initialised field, and what actually keeps an absent value out is the build-path invariant, not
+this predicate." — the same bullet (locator: lines 2070–2072).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which build-path invariant keeps an absent spelling out of the
+reader's input, and is it tested?
+
+---
+
+#### Not a statement, at this member
+
+1. "**Plan correction, 2026-08-02 (`OPEN_ITEMS.md` OI-232 item 3; the heading read "engages with L5", which no longer
+   describes anything scheduled).**" (1937–1938) — *provenance*.
+2. "**Delegation pointer (the fifth home case, user-ratified 2026-08-02).** The ratified contract for this layer is
+   `cowork_layer4_chordsymbol_design.md` (SIGNED, user, 2026-06-24) — D-329…D-334 — which this section points at and
+   does not restate." (1946) — *a pointer*.
+3. "**★ A REBUILT OR RE-TUNED CHORD SCORING MUST NOT RELY ON THE HELD-NOTE REPETITION BONUS THE FAITHFUL NOTE MODEL
+   REMOVED (re-homed into this specification 2026-08-08 on the user's ruling).**" (1950–1951) — *a title with
+   provenance*, its rule tabulated at Row 1.8.
+4. "*Why:* measured when it surfaced — removing the inflation moved a small number of cases the wrong way while the key
+   axis stayed flat, …; a correct re-calibration is expected to recover them on real evidence." (1955–1958) — *a
+   defense* of Row 1.8.
+5. "It is exactly the hidden dependency the upstream-first rebuild exists to surface." (1958–1959) — *a defense*.
+6. "**Whether those cases have since recovered is NOT stated here and was not checked** — the constraint binds
+   regardless, because it forbids leaning on the artifact rather than asserting anything about the current count."
+   (1959–1961) — *a scope remark*.
+7. "*Why:* **derivation not recorded** — the record states the constraint without giving the reason for it." (1966–1967)
+   — *a defense gap stated*.
+8. "It is load-bearing now: the non-chord-tone filter is the named lever at `OPEN_ITEMS.md` OI-55 and OI-68, and
+   `docs/nct_detection_design.md` exists." (1967–1969) — *a pointer*.
+9. "The record states neither a date nor a ratifier." (1969) — *provenance*.
+10. "**Scope of the description below, 2026-08-02 (`OPEN_ITEMS.md` OI-265).** As on Layer 3, **the description below
+    remains accurate for the dormant decoder** and is retained as the record of what that decoder does; it is not a
+    description of what runs." (1971–1973) — *a scope remark about this document*.
+11. "Read that sentence as the legacy pipeline's own frame at the time the decoder was built, not as a statement about
+    today." (1979–1980) — *a reading instruction*.
+12. The table's header row "| Module | Responsibility |" and its rule line (1990–1991) — *a table header*.
+13. "**The decision ladder (G1–G6 + spelling-pin), built incrementally, all dormant:**" (1994) — *a lead*, its bullets
+    tabulated at Rows 1.19 to 1.23.
+14. "**Proven where it commits; abstains where function decides.**" (2010) — *a title*, its claim tabulated at Row 1.24.
+15. "That is the evidence for opening L5 on a clean L1–L4 foundation." (2013–2014) — *a defense*.
+16. "**Unification residual (scheduled for engage-with-L5).**" (2016) — *a title*.
+17. "Built with `decode_chord_tests.cpp` (scorer-independent + note-model tiers)." (2022) — *a test locator*.
+18. "Full provenance: `cowork_layer4_chordsymbol_design.md`, `cowork_phase5b_l4_build_plan.md`, the Phase-5b commits
+    `f21273ce3b`..`1e74f21ea4`." (2022–2024) — *provenance*.
+19. "**Two premises this decoder carries were MEASURED, and both came back against it. Recorded here because this section
+    is what specifies the two mechanisms (re-homed into this specification 2026-08-04 from the premise-check record that
+    formerly carried them).**" (2026–2028) — *a lead and provenance*, its bullets tabulated at Rows 1.27 to 1.32.
+20. "That it would fire was an assumption and was never written down as one." (2034) — *narrative*.
+21. "*Why:* measured at the probe and traced at the code — of the diminished-seventh sonorities in the primary corpus most
+    abstain, and of those that commit the scorer chooses major or minor far more often than diminished." (2035–2037) —
+    *a defense* of Rows 1.27 to 1.29.
+22. "*Why:* established at the code — the constant is a seed in the decoder's own header, … a substantial share of scored
+    duration abstaining under it." (2042–2046) — *a defense* of Rows 1.31 and 1.32.
+23. "**Two further decisions of this layer, re-homed into this specification 2026-08-07 on the user's ruling — one the
+    search's output-surface contract, one the shared spelling primitive's presence test.**" (2048–2050) — *a lead and
+    provenance*.
+24. "*Why:* it is the evidence-forwarding principle applied to the search's own output surface — the function layer
+    above **consumes the alternatives**, …; the committed reading is the first element of the path by construction, so
+    nothing is lost by publishing the rest." (2055–2059) — *a defense* of Rows 1.33 and 1.35.
+25. "The rule is recorded here because this section specifies the carry the search would publish into, and a shelved
+    mechanism's rules still belong at the section that owns the mechanism." (2060–2062) — *a filing remark*.
+26. "*Why:* established at the source rather than asserted — the flat side of the line of fifths is **negative** (down
+    to the triple-flat spellings), …; and the value a `!= -1` guard treats as absent is itself a **legitimate**
+    spelling." (2066–2070) — *a defense* of Rows 1.37 and 1.38.
+27. "§5.14, which specifies the enharmonic disambiguation this primitive serves, points here and does not restate it
+    (#6)." (2072–2073) — *a pointer*.
+
+#### The arithmetic at this member
+
+- Rows written: **39** (1.1 to 1.39).
+- Rows split into two claims, **+1 each**: 1.9, 1.16, 1.24, 1.27 — four rows, **+4**.
+- **Outgoing statements placed: 39 + 4 = 43.**
+- Listed under *not a statement*: **27**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row: 43 dispositions over 43 statements.
+- **UNPLACED rows at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 7 | 1.5, 1.8, 1.9(ii), 1.11, 1.33, 1.35, 1.37 |
+| QUARANTINED | 21 | 1.12, 1.15, 1.16(i), 1.16(ii), 1.18, 1.19, 1.20, 1.21, 1.22, 1.23, 1.24(i), 1.24(ii), 1.25, 1.27(i), 1.28, 1.29, 1.30, 1.31, 1.32, 1.38, 1.39 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 15 | 1.1, 1.2, 1.3, 1.4, 1.6, 1.7, 1.9(i), 1.10, 1.13, 1.14, 1.17, 1.26, 1.27(ii), 1.34, 1.36 |
+| UNPLACED | 0 | — |
+| **Total** | **43** | — |
+
+**The column sums to 43, against 43 statements, so the arithmetic closes at this member**: 0 + 0 + 7 + 21 + 0 + 15 + 0
+= 43. **The statement lists in the right-hand column are the record**, and the integers are re-derivable from them by
+counting.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 2 |
+| THE DERIVATION IS SILENT | 41 |
+| **Total verdicts** | **43** |
+
+*(Counted per named derived statement per statement, so a statement naming two derived statements contributes two
+verdicts and a statement naming none contributes one SILENT. 43 verdicts over 43 statements because no statement here
+names more than one derived statement.)* The DIFFERS statements are 1.15 and 1.18, both naming L3-S1.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — no withheld home lies in this member.
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -331,23 +1043,91 @@ and put to nobody.
 
 ## 10. The TRANSFER LIST — every RELOCATED row, by target charter
 
-**No member is tabulated yet, so no row is relocated yet.** Each tabulated member appends its RELOCATED rows here, by
-target charter, in the commit that tabulates it.
+**Over the members tabulated so far** (§0 names them). Each tabulated member appends its RELOCATED rows here, by target
+charter, in the commit that tabulates it; where a row travels with another, the row says which.
+
+**To *L0 — The notated record* (the input contract).**
+
+- Row 1.37 — that the presence of a notated spelling is tested with the validity predicate, never a non-negative test.
+  *(The L0 block gives spelled pitch; the L2 comparison placed the same rule here, at its Row 3.38.)*
+
+**To *L2 — The tonal reading. The one entangled decision.***
+
+- Row 1.5 — the chord layer's tried-and-closed lines, each in the decisions register with its measurement, not to be
+  retried.
+- Row 1.8 — that a rebuilt or re-tuned chord scoring must not lean on the held-note repetition boost the faithful note
+  model removed.
+- Row 1.9(ii), with Row 1.11 — that the knowledge of which sounding notes do not belong to the chord enters the chord
+  decision itself, never a removal afterwards. *(L2 publishes the chord-tone assignment and elaboration relation per
+  sounding note; the derivation's §0 cites L2-S8 for it.)*
+- Row 1.33, with Row 1.35 — that the chord search publishes, per stretch, the readings it beat and by how much, not the
+  committed reading alone. *(L2 publishes rivals with their mass; the derivation's §0 cites L2-S40 to L2-S42 for the
+  rival forms.)*
+
+*(Member 1's relocations are the rows numbered 1.n above.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
-**No member is tabulated yet, so no audit question is written yet.** Each tabulated member appends its QUARANTINED
-rows here, in the commit that tabulates it.
+**Over the members tabulated so far** (§0 names them). Each tabulated member appends its QUARANTINED rows here, in the
+commit that tabulates it, each with the audit question its row writes.
+
+**Member 1 — `ARCHITECTURE.md`, *Layer 4 — the per-slice chord-symbol decoder*.**
+
+- Row 1.12 — does the joint estimator produce the committed chord reading on both the batch/corpus and the in-app
+  notation surfaces, with the record flag on by default?
+- Row 1.15 — what does `ChordSliceDecoder` compute per slice, from which inputs, and does any code path that runs at the
+  current commit consume its output?
+- Row 1.16(i) — which path produces the committed chord reading at the current commit?
+- Row 1.16(ii) — is the decoder reached only from the `--decode-chords` diagnostic, and does that diagnostic return before
+  any analysis whose output is published?
+- Row 1.18 — do `decideSlice`, `decode` and `redecodeRange` do what the module row says, and is any of them reached?
+- Row 1.19 — does the dormant decoder commit, inherit or abstain per slice as described, under a sufficiency gate?
+- Row 1.20 — does it carry a three-tier membership ladder and a plausibility check?
+- Row 1.21 — does its look-ahead read only the next slice's chord result and charge no transition cost?
+- Row 1.22 — does `OpenQuestionLabel` leave every `SliceDecision` unchanged?
+- Row 1.23 — does the spelling pin read each focal note's notated spelling through the one shared line-of-fifths reader
+  and no other?
+- Row 1.24(i) — is the reported gain where the decoder commits reproducible, on which corpus, under which measure?
+- Row 1.24(ii) — how was "genuinely function-dependent" established for its abstentions, and does it reproduce?
+- Row 1.25 — how many readers of the notated spelling exist in the compiled code, and which of them run?
+- Row 1.27(i), with Rows 1.28 and 1.29 — how often does the scorer call a diminished-seventh sonority diminished, so
+  that the pin can run, and is that its only entry condition?
+- Row 1.30 — does the dormant decoder's candidate set lack the four-note diminished-seventh type?
+- Row 1.31, with Row 1.32 — which constant governs G1's abstention, was it ever fitted, and which measurements read the
+  ladder's output?
+- Row 1.38 — does every presence test of a notated spelling in the code use the validity predicate?
+- Row 1.39 — which build-path invariant keeps an absent spelling out of the reader's input, and is it tested?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
-**No member is tabulated yet, so no proposal and no difference is written yet.** Each tabulated member appends its
-rows here, in the commit that tabulates it.
+**Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
+tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference and decides nothing.
+
+**Member 1.** No ADOPTED — proposed row.
+
+- **DIFFERS — Row 1.15 (L3-S1):** the outgoing text calls the chord symbol's producer *"a per-slice chord-symbol decoder
+  over the Layer-2 slices"*, where L3-S1 says the chord symbol is *"a view of L2's chord"* and that *"Nothing is decided
+  in computing it"*.
+- **DIFFERS — Row 1.18 (L3-S1):** the outgoing text gives the module the responsibility to *"Decode a chord symbol per
+  Layer-2 slice"* by selecting *"from a candidate cube"*, where L3-S1 says the chord symbol is *"the deterministic
+  function of that span's four chord fields and its tonality"*.
 
 ## 13. The distribution so far, counted at this file's own rows
 
-**No member is tabulated yet.** The distribution of dispositions and current-text verdicts is counted at this file's
-own rows, per member and in total, with the arithmetic check, in the commit that tabulates each member.
+**Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
+are at its own foot, and the integers below are re-derivable from them.
+
+| Member | Statements | ADOPTED — carried | ADOPTED — proposed | RELOCATED | QUARANTINED | DISCARDED | HISTORICAL | UNPLACED | Not a statement |
+|---|---|---|---|---|---|---|---|---|---|
+| 1 | 43 | 0 | 0 | 7 | 21 | 0 | 15 | 0 | 27 |
+| **Total** | **43** | **0** | **0** | **7** | **21** | **0** | **15** | **0** | **27** |
+
+**The arithmetic check:** 0 + 0 + 7 + 21 + 0 + 15 + 0 = 43, against 43 statements placed.
+
+| Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
+|---|---|---|---|---|
+| 1 | 0 | 2 | 41 | 43 |
+| **Total** | **0** | **2** | **41** | **43** |
 
 ## 14. The derivation's independence record, relayed
 
