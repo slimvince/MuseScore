@@ -25129,3 +25129,64 @@ was put to the user. The five ★ questions were not put. Nothing any layer comp
 `cc_instruction_l3_comparison_tabulation_2026_10_18.md`, after the dispatch's ordered first reads. Every commit identifier
 here was read from the commit's own object and `origin/master` at its ref file after each push; the guard verdicts are
 this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `a72d50eeea12038cefbf4e88a521ea1f4d1172f1` left, appended in the one further commit
+
+**A fresh full guard run in write mode, after the close commit and before this one.** Its result is at
+`tools/audit/guard_state.json` → `summary`, which this commit carries. **E3 and E4 — MET, AS A2 PREDICTED:**
+
+- the run count is the premise ledger's;
+- zero STOPs in the runner;
+- the failing set is exactly the thirteen of the premise ledger, none added;
+- `tools/audit/gen_l3_outgoing_population.py --check` PASSES;
+- the NOT RUN and HISTORICAL lines are identical to the opening capture's.
+
+`gen_evidence_pin_membership.py --check`, `gen_l0_l1_outgoing_population.py --check`, `gen_defense_share.py --check`,
+`gen_session_start_read_size.py --check` and `gen_status_batch_bound.py --check` are green.
+
+**The A2 exceptions, handled as A2 says, were all met inside the close rather than after it.** The defense share, the
+session-start read size and the L3 population went red after the close's `STATUS.md` edits and the forward-bound move.
+Each was regenerated and compared against the Task 1 commit's blob by explicit hash (report §4, 3(c)):
+
+- the L3 population moved only `STATUS.md`'s one residue hit record, two lines down;
+- the defense share and the read size moved only with `STATUS.md`.
+
+**No population member, no item-4 passage and no member of the tabulation population moved.** The evidence-pin membership
+and the L0/L1 population stayed green throughout. All were re-checked green after the report and the close section were
+written, before the close was committed, so this run regenerated nothing beyond its own artifact.
+`gen_l2_outgoing_population.py` was not run in any operating mode.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_l3_outgoing_population.py',
+'tools/audit/gen_withheld_family_reading.py']"* — exactly the four tools of the dispatch's FACT; no fifth name.
+
+**A3 to A5, verified at the objects.** `git diff --name-status 6e127d7a… a72d50ee…` shows thirteen paths:
+
+- the two records of Task 0;
+- the two files of Task 1, the amended tool and its artifact;
+- the reading file of Task 2;
+- the close's eight: `STATUS.md`, `STATUS_ARCHIVE.md`, the re-aimed forward-bound tool and its artifact, the defense
+  share, the read-size artifact, the report, and this file.
+
+`git diff --numstat` shows `STATUS_ARCHIVE.md` and this file with lines added only. The derivation and the brief stand at
+blobs `c01793f9…` and `6abb5333…`, the ones the premise ledger names. The landed records are unchanged since Task 0, the
+amended tool since Task 1, and the reading file since its last member commit `1dc893cf…`: `git diff --stat` over each,
+between those commits and the close, is empty.
+
+**Nothing else differs from the tip:**
+
+- no other tool source, `tools/audit/gen_guard_state.py` included;
+- no file under the pack directory `tools/audit/derivation_boot_pack/l3/`, and not `tools/audit/derivation_boot_pack.json`;
+- not the two input-contract files, and not the L0/L1 or L2 reading file;
+- no outgoing text, and not `FRAMEWORK.md` or `ARCHITECTURE.md`;
+- not `tools/audit/gen_l0_l1_outgoing_population.py`, `tools/audit/gen_l2_outgoing_population.py` or its artifact,
+  `tools/audit/gen_l2_withheld_documents.py` or `tools/audit/gen_derivation_boot_pack.py`;
+- no register source and no rendered decisions-register file;
+- no governing document other than `STATUS.md` and `STATUS_ARCHIVE.md`.
+
+This commit adds only the guard run's artifact and this portion. No further handoff entry or ruling record appeared in
+the working tree during the run.
+
+*Provenance: CC, 2026-10-18, appended in the one further commit after the close commit
+`a72d50eeea12038cefbf4e88a521ea1f4d1172f1`; the verdicts are this run's own output, read with the file tools.*
