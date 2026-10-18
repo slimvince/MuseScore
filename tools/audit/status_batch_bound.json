@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l3_comparison_tabulation_2026_10_18.md, Task 3",
+ "dispatch": "cc_instruction_l3_comparison_tabulation_second_2026_10_18.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -579,38 +579,52 @@
    "base_commit": "1dc893cfdc43f35a1ec7a9711f5a27b9c843d57c",
    "the_then_previous_batch": "cc_instruction_l3_outgoing_population_2026_10_18.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_comparison_tabulation_second_2026_10_18.md, Task 2",
+   "base_commit": "d211cfd85459764e8fb201b80f5904b9881f4143",
+   "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_2026_10_18.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "1dc893cfdc43f35a1ec7a9711f5a27b9c843d57c",
- "the_then_previous_batch": "cc_instruction_l3_outgoing_population_2026_10_18.md",
+ "base_commit": "d211cfd85459764e8fb201b80f5904b9881f4143",
+ "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_2026_10_18.md",
  "the_kind_of_move": "ordinary",
- "entries_moved": 3,
- "characters_moved": 2820,
+ "entries_moved": 4,
+ "characters_moved": 3030,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1871,
-   "sha256": "c20050cb429b31aa01774d18b0c19f0d71c7db8d859943d62ef67b54d951ad01",
+   "characters": 1670,
+   "sha256": "b8fc9fdcdbaf97a14780b1e490aa4308347d5b15635999690db4af3aeb4e52ad",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-18 (CC — `records/cc/instructions/cc_instruction_l3_outgoing_population_2026_10_18.md`, Task 2, the close. **★★ THE L3 OUTGOING POPULATION IS"
+   "opening": "*2026-10-18 (CC — `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`, Task 3, the close. **★★ THE L3 TABULATION POPULATIO"
   },
   {
    "line_at_base": 10,
-   "characters": 541,
-   "sha256": "2c3b65b75e6da44c637f429c31a24c9e0b1cc586e9b4267ab390c0151d43cf2b",
+   "characters": 525,
+   "sha256": "52023c77f6fcd3fad12e0331bb92848f4f23b0d5f1d04763344dc25b0f45fe02",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-18 (CC — Same dispatch, Task 1. **THE L3 OUTGOING POPULATION DERIVED AND MEASURED**: one new tool, `tools/audit/gen_l3_outgoing_population.py"
+   "opening": "*2026-10-18 (CC — Same dispatch, Task 2. **THE READING FILE OPENED AND POSITIONS 1 TO 6 TABULATED**: the skeleton committed with its population, unit "
   },
   {
    "line_at_base": 12,
-   "characters": 408,
-   "sha256": "3dfa37b41cea2d9a18658905217a7dda2ee8ddb727638fca3deed3c16cc918ef",
+   "characters": 517,
+   "sha256": "e9fec52585a57be152d725d9054a4872a3ab66947a31ae0ae3ad41bd60b661da",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-18 (CC — Same dispatch, Task 0. **THIS DISPATCH, THE L3 KEYWORD-LIST RULING RECORD AND HANDOFF ENTRIES 423 AND 424 ARE LANDED**, as they stoo"
+   "opening": "*2026-10-18 (CC — Same dispatch, Task 1. **THE L3 TABULATION POPULATION PUBLISHED**: the population tool amended by the dispatch's six edits, the four"
+  },
+  {
+   "line_at_base": 14,
+   "characters": 318,
+   "sha256": "cfc622e65ee7159554cfefc9effd908c5d2d47c13fd375a71d536a0f4c4a824b",
+   "membership": "says `Same dispatch`, in the run below the entry that names it",
+   "the_one_declared_adjustment_applied": false,
+   "opening": "*2026-10-18 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRY 425 ARE LANDED**, as they stood: each checked at its last bytes at its blob"
   }
  ],
  "reconciliation": {
