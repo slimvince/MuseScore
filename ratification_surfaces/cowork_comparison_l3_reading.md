@@ -34,7 +34,7 @@ its own entry there.
 |---|---|---|
 | 1 | `ARCHITECTURE.md` — *Layer 4 — the per-slice chord-symbol decoder* | **DONE** (§6.1) |
 | 2 | `ARCHITECTURE.md` — *Layer 5 — the function/cadence layer* | **DONE** (§6.2) |
-| 3 | `ARCHITECTURE.md` — *Layer 6 — the grouping layer* | NOT YET TABULATED |
+| 3 | `ARCHITECTURE.md` — *Layer 6 — the grouping layer* | **DONE** (§6.3) |
 | 4 | `ARCHITECTURE.md` — *4.3 ChordSymbolFormatter* | NOT YET TABULATED |
 | 5 | `ARCHITECTURE.md` — *4.3b HarmonicRhythm* | NOT YET TABULATED |
 | 6 | `ARCHITECTURE.md` — *Harmonic rhythm detection* | NOT YET TABULATED |
@@ -91,8 +91,8 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 and 2 — the `ARCHITECTURE.md` sections *Layer 4 — the per-slice chord-symbol decoder* and
-*Layer 5 — the function/cadence layer*.** **Not done: positions 3 to 57.** **A member
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 3 — the `ARCHITECTURE.md` sections *Layer 4 — the per-slice chord-symbol decoder*,
+*Layer 5 — the function/cadence layer* and *Layer 6 — the grouping layer*.** **Not done: positions 4 to 57.** **A member
 marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed — **never
 partly worked** (**D-672**).
 
@@ -1594,6 +1594,349 @@ two derived statements: 2.6.)* The AGREES statements are 2.1(ii), 2.1(iv) and 2.
 
 ---
 
+### 6.3 — Member 3: `ARCHITECTURE.md`, the section *"#### Layer 6 — the grouping layer (Design-only — v1 spec)"*
+
+> **Manifest for this member.** Position **3**. Kind: *item 1 — a named place*. Document: `ARCHITECTURE.md`. Label:
+> *"#### Layer 6 — the grouping layer (Design-only — v1 spec)"*. Range, as a locator only: lines 2192–2256, from that
+> heading to the line before the next `#### ` heading, exactly as the artifact publishes it (**D-307**). Outgoing
+> statements: **21** (rows 3.1 to 3.15; two of those rows carry three or five claims each and are split, so 15 rows carry
+> 21 statements — the arithmetic is at the foot of this member). Listed under *not a statement*: **15**. Counted at this
+> member by this session; the counts appear here and nowhere else.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 3: **D-472**
+> (lines 2208–2220). A row is marked WITHHELD only where its statement lies inside that home. **No SEEN home lies in
+> this member.**
+
+---
+
+**Row 3.1 — the grouping layer assembles a flat structure: punctuation-spans, key-areas and the cadence alignment;
+additive and read-only.**
+
+*Outgoing statement.* "The grouping layer assembles the L5-labelled stream into the **flat** structure the ground truth
+annotates: **punctuation-spans** (from the L1.5 phrase-boundary primitive), **key-areas** (grouping the local-key track,
+which **cross-cuts** punctuation-spans — §2.15 span typology), and the **alignment of cadences to punctuation-span ends**
+— additive, read-only, no feedback into L5." — the section's opening paragraph (locator: lines 2194–2197). Five claims:
+(i) it assembles a flat structure; (ii) the punctuation-spans come from the phrase-boundary primitive of the layer
+beneath; (iii) it groups the local-key track into key-areas, which cross-cut the punctuation-spans; (iv) it aligns
+cadences to punctuation-span ends; (v) it is additive and read-only, with no feedback.
+
+*Derived statements that speak to it.* (i) L3-S22. (ii) L3-S8. (iii) None. (iv) L3-S10. (v) L3-S38.
+
+*Current-text axis.* (i) L3-S22: **DIFFERS**. (ii) L3-S8: **DIFFERS**. (iii) **THE DERIVATION IS SILENT** — the derivation
+publishes no key-area grouping. (iv) L3-S10: **AGREES** — *"The cadence is aligned to the phrase, never the phrase to the
+cadence."* (v) L3-S38: **AGREES** — *"No L3 fact may change an L2 fact, a rival or a mass."*
+
+*The difference, in both texts' own words.* (i) The outgoing text assembles *"the **flat** structure the ground truth
+annotates"*; L3-S22 says *"It is a nested grouping over the units of the phrase reading … sections at one level tile the
+level above"*. (ii) The outgoing text takes the punctuation-spans *"from the L1.5 phrase-boundary primitive"*; L3-S8 says
+*"The phrase reading is an L3 decision."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read: the two texts above. (ii) **UNPLACED** — read: the two texts above, and
+the L2 comparison's record that the L0/L1 comparison relocated the graded phrase-boundary profile to L3. (iii) **ADOPTED
+— proposed.** *Proposal:* that L3 publish key areas — runs of the local tonality — as a grouping that may cut across the
+phrase units. (iv) **ADOPTED — carried** (L3-S10). (v) **ADOPTED — carried** (L3-S38).
+
+---
+
+**Row 3.2 — the forward-only rebuild of the scattered live machinery.**
+
+*Outgoing statement.* "It is the forward-only rebuild of the scattered live `detectCadences`/`detectPivotChords`/`KeyArea`
+machinery." — the opening paragraph (locator: lines 2201–2202).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the layer's provenance as a planned rebuild.
+
+---
+
+**Row 3.3 — hierarchy, periods and sentences, and prolongation outside the validatable core.**
+
+*Outgoing statement.* "Hierarchy, periods/sentences, and prolongation are out of the validatable core (verifiability
+contract, §2.15)." — the opening paragraph (locator: lines 2202–2203).
+
+*Derived statements that speak to it.* L3-S22.
+
+*Current-text axis.* L3-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text puts *"Hierarchy"* out of the validatable core; L3-S22
+says *"It is a nested grouping over the units of the phrase reading"*, published *"with rivals and their mass"*, and the
+derivation's §0 term for a section says *"Sections may nest."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: the two texts above, and L3-S24, which publishes no form-function names.
+
+---
+
+**Row 3.4 — neighbouring regions in one key collected into one key area.** *WITHHELD — D-472.*
+
+*Outgoing statement.* "Neighbouring regions in the same key are collected into one key area." — the ★ block on key areas
+(locator: lines 2212–2213).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 3.1 (iii). *Proposal:* that a key area be a run of
+consecutive spans sharing one tonality.
+
+---
+
+**Row 3.5 — a key area's opening and closing; a region below the confidence test keeps its own key; Roman numerals
+against the governing key.** *WITHHELD — D-472.*
+
+*Outgoing statement.* "A key area opens at the first region and closes when the next region's key differs from the
+current area's **and** that region clears a confidence test; a region whose key disagrees but does not clear the test
+**keeps its own key reading** — so the status bar stays accurate for that region — while being grouped into the
+enclosing area, so the annotation emitter writes Roman numerals against the key that actually governs the passage rather
+than against a momentary wobble." — the same block (locator: lines 2213–2218). Three claims: (i) a key area opens at the
+first region and closes when the next region's key differs and that region clears a confidence test; (ii) a region whose
+key disagrees but does not clear the test keeps its own key reading while being grouped into the enclosing area; (iii) the
+annotation emitter writes Roman numerals against the key that governs the passage.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S38. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S38: **AGREES** — as to the region keeping its own key,
+L3 changing no L2 fact; the grouping half is not spoken to. (iii) **THE DERIVATION IS SILENT** — L3-S7 declines to publish
+a re-expression of a decided chord in another tonality for the pivot case, and no derived statement speaks to Roman
+numerals written against a key area.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed.** *Proposal:* that a key area close only where the next span's tonality
+differs and that span's tonality clears a declared confidence test. (ii) **ADOPTED — proposed.** *Proposal:* that a span
+whose tonality differs without clearing the test keep its own tonality while being grouped into the enclosing key area —
+L3-S38 carries the first half only. (iii) **UNPLACED** — read: the outgoing sentence, L3-S7, and the L2 comparison's
+§10, which relocates the same clause to L3 (its Row 22.92(iii), placed from UNPLACED by ruling).
+
+---
+
+**Row 3.6 — the rule requires a smoothed key sequence, by no one implementation.**
+
+*Outgoing statement.* "The rule above requires that the per-region key sequence it groups over has already been smoothed;
+it does NOT require that the smoothing be any one implementation of it." — the ★ block on what supplies the smoothed key
+sequence (locator: lines 2225–2227).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose tonality per
+span is the sequence grouped.
+
+---
+
+**Row 3.7 — two designs meet the requirement, one per arm.**
+
+*Outgoing statement.* "**Two designs meet the requirement, one per arm.**" — the same block (locator: line 2227).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* how many code paths produce the per-region key sequence the
+grouping reads, and which of them runs?
+
+---
+
+**Row 3.8 — on the record arm the per-region key comes from the joint decoder's global path.**
+
+*Outgoing statement.* "On the **production record arm** the per-region key is copied verbatim from the joint decoder's
+committed segment summaries, and those come from backtracking the best full-coverage path of a **global dynamic program
+whose state carries the tonality**, with an explicit key-transition term written as **separate stay and change
+branches** — so a key change must pay for itself against the content evidence, and the smoothing is reached by
+optimization rather than by a later corrective pass." — the same block (locator: lines 2228–2232).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the record arm's per-region key copied verbatim from the
+joint decoder's committed segments, which come from a global path with separate stay and change branches?
+
+---
+
+**Row 3.9 — the derived per-region fields supplied natively by the record.**
+
+*Outgoing statement.* "The derived per-region fields the grouping reads are supplied natively by the record rather than
+recomputed." — the same block (locator: lines 2232–2234).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the per-region fields the grouping reads supplied by the
+record and not recomputed?
+
+---
+
+**Row 3.10 — on the legacy arm, its own smoothing-and-stabilization step.**
+
+*Outgoing statement.* "On the **legacy arm** the same requirement is met by that arm's own smoothing-and-stabilization
+step, whose single call site is inside it." — the same block (locator: lines 2234–2235).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the legacy arm's smoothing-and-stabilization step have a
+single call site inside it?
+
+---
+
+**Row 3.11 — the two designs produce different key sequences.**
+
+*Outgoing statement.* "They do not produce identical per-region key sequences." — the ⚠ block on the two designs
+(locator: lines 2241–2242).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on the corpus, where do the two arms' per-region key sequences
+differ?
+
+---
+
+**Row 3.12 — the legacy step erases a one-region key island.**
+
+*Outgoing statement.* "The legacy step **ERASES** a one-region key island unconditionally — a region whose key differs
+from the running stable key, and whose successor does not agree with it, is overwritten." — the same block (locator:
+lines 2242–2244).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the legacy step overwrite every one-region key island
+whose successor disagrees with it?
+
+---
+
+**Row 3.13 — the decoder's transition term only makes such an island expensive.**
+
+*Outgoing statement.* "The decoder's key-transition term only makes such an island **EXPENSIVE**, so an island SURVIVES
+where the content evidence outweighs two key changes." — the same block (locator: lines 2244–2245).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a one-region island survive on the record arm exactly
+where its content evidence outweighs two key changes?
+
+---
+
+**Row 3.14 — the behavioural difference is real and unmeasured.**
+
+*Outgoing statement.* "**This is a real behavioural difference between the arms and it is UNMEASURED** — no corpus
+comparison of the two key sequences has been taken, and none is implied by the correction above; nothing here claims
+either sequence is the better one." — the same block (locator: lines 2245–2248).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 3.11, the comparison being the one this row
+says was never taken.
+
+---
+
+**Row 3.15 — a surviving island below the test is grouped into the enclosing area and keeps its own key.**
+
+*Outgoing statement.* "What the difference does not do is leave the grouping un-preconditioned: a surviving island that
+does not clear the confidence test is grouped into the enclosing area and keeps its own key for display, which is this
+rule's stated intent." — the same block (locator: lines 2248–2250).
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **AGREES** — as to the island keeping its own key; the grouping half is not spoken to.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed**, travelling with Row 3.5 (ii).
+
+---
+
+#### Not a statement, at this member
+
+1. "**(Corrected 2026-08-11, `OPEN_ITEMS.md` OI-318 item (1): … FORMER WORDING, PRESERVED (#12): "**phrases** (from the
+   L1.5 phrase-boundary primitive) … which **cross-cuts** phrases … the **alignment of cadences to phrase ends**".)**"
+   (2197–2201) — *provenance*.
+2. "Full spec: `cowork_layer6_grouping_design.md`." (2203–2204) — *a pointer*.
+3. "**Delegation pointer (the fifth home case; written 2026-08-04 on the user's direction, the OI-327 write list).** The
+   ratified contract for this layer is `cowork_layer6_grouping_design.md` … *(The "Full spec:" line above is a citation,
+   not a delegation; …)*" (2206) — *a pointer*.
+4. "**★ WHY A CONTRACT HOME IS COHERENT FOR A LAYER THAT MAY NOT BE BUILT — the question this clause was withheld over on
+   2026-08-04 and which the user has now answered.**" (2206) — *a title*.
+5. "**D-611** establishes that the dormant path and its staged scaffolding are **deferred-engagement, not dead code**: …
+   removing them is a STOP." (2206) — *a governance rule on dormant code, cited*.
+6. "Deferred work is therefore a state the record keeps decisions for, not an absence of them, … which is why **D-266**'s
+   prohibition does not forbid this pointer." (2206) — *a filing argument*.
+7. "**D-266 IS UNTOUCHED:** Layer 6 may not be BUILT until the bounded-context design is coded and regression-tested for
+   Layers 1–5." (2206) — *a build-sequencing rule, cited*; it governs when the layer may be built, not what it does.
+8. "This clause records where the layer's design decisions live; it authorizes no build, no wiring, and no change to what
+   the analysis computes." (2206) — *a scope remark*.
+9. "**★ KEY AREAS ARE GROUPED BY A SMOOTHING PASS OVER REGIONS WHOSE KEY SEQUENCE HAS ALREADY BEEN SMOOTHED, … (re-homed
+   into this specification 2026-08-08 on the user's ruling — …).**" (2208–2212) — *a title with provenance*, its claims
+   tabulated at Rows 3.4 and 3.5.
+10. "*Why:* it is a grouping rule and not a second key analysis — it reads the key fields the earlier layers already
+    published rather than re-deciding them, …" (2218–2220) — *a defense* of Rows 3.4 and 3.5.
+11. "**★ WHAT SUPPLIES THE SMOOTHED KEY SEQUENCE, AND WHY THE PRECONDITION IS NOT ONE NAMED PASS (corrected 2026-08-09 on
+    the user's ruling — …).**" (2222–2225) — *a title with provenance*.
+12. "*Why the wording had to change:* the former text named the legacy step as THE precondition, … (#10)." (2235–2238) —
+    *a defense and provenance*.
+13. "**⚠ THE TWO DESIGNS ARE NOT EQUIVALENT, AND THE DIFFERENCE IS STATED RATHER THAN WORDED AWAY (recorded with the
+    correction above; #12, #24).**" (2240–2241) — *a title*.
+14. "**The former wording, preserved (#12):** the heading read *"OVER STABILIZED REGIONS"* and a paragraph here stated as
+    an **OPEN QUESTION** … (**D-431**)." (2250–2255) — *provenance*.
+15. "Nothing in this paragraph changes what the analysis computes." (2255) — *a scope remark*.
+
+#### The arithmetic at this member
+
+- Rows written: **15** (3.1 to 3.15).
+- Rows split into three claims, **+2 each**: 3.5 — one row, **+2**. Rows split into five claims, **+4 each**: 3.1 — one
+  row, **+4**.
+- **Outgoing statements placed: 15 + 2 + 4 = 21.**
+- Listed under *not a statement*: **15**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row: 21 dispositions over 21 statements.
+- **UNPLACED rows at this member: 4** — 3.1(i), 3.1(ii), 3.3, 3.5(iii).
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 2 | 3.1(iv), 3.1(v) |
+| ADOPTED — proposed | 5 | 3.1(iii), 3.4, 3.5(i), 3.5(ii), 3.15 |
+| RELOCATED | 1 | 3.6 |
+| QUARANTINED | 8 | 3.7, 3.8, 3.9, 3.10, 3.11, 3.12, 3.13, 3.14 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 1 | 3.2 |
+| UNPLACED | 4 | 3.1(i), 3.1(ii), 3.3, 3.5(iii) |
+| **Total** | **21** | — |
+
+**The column sums to 21, against 21 statements, so the arithmetic closes at this member**: 2 + 5 + 1 + 8 + 0 + 1 + 4
+= 21. **The statement lists in the right-hand column are the record**, and the integers are re-derivable from them by
+counting.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 4 |
+| DIFFERS | 3 |
+| THE DERIVATION IS SILENT | 14 |
+| **Total verdicts** | **21** |
+
+*(Counted per named derived statement per statement; no statement here names more than one.)* The AGREES statements are
+3.1(iv), 3.1(v), 3.5(ii) and 3.15. The DIFFERS statements are 3.1(i), 3.1(ii) and 3.3.
+
+#### The marks at this member
+
+- **WITHHELD rows: 3.4, 3.5 (D-472).** **An AGREES stands on this WITHHELD statement:** 3.5(ii) — as to the region
+  keeping its own key. It is a derived statement reaching a ruled answer the deriving session was not shown.
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -1650,13 +1993,15 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   predicate kept for the genuinely brief residue.
 - Row 2.24 — the local-modulation / key-area detector at the key layer, consuming the cadence and key-area facts the
   layers above publish. *(L3-S38 DIFFERS at the row.)*
+- Row 3.6 — that the per-span key sequence the key areas group over has already been smoothed, by no one implementation.
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
 - Row 2.21 — the measurement bed for key confirmation without a cadence is a resolution-denying repertoire. *(The L2
   comparison placed the same statement here, at its Row 4.21.)*
 
-*(Member 1's relocations are the rows numbered 1.n above, and member 2's the rows numbered 2.n.)*
+*(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, and member 3's the rows
+numbered 3.n.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -1698,6 +2043,18 @@ commit that tabulates it, each with the audit question its row writes.
 - Row 2.22(i) — does a working applied-chord labeller exist in the code, and is it reached?
 - Row 2.23 — on the affected cases, is the annotator's reading a cadence-confirmed change of key of substantial length,
   as `records/cc/reports/cc_tonicization_modulation_metric_dossier.md` records?
+
+**Member 3 — `ARCHITECTURE.md`, *Layer 6 — the grouping layer*.**
+
+- Row 3.7 — how many code paths produce the per-region key sequence the grouping reads, and which of them runs?
+- Row 3.8 — is the record arm's per-region key copied verbatim from the joint decoder's committed segments, which come
+  from a global path with separate stay and change branches?
+- Row 3.9 — are the per-region fields the grouping reads supplied by the record and not recomputed?
+- Row 3.10 — does the legacy arm's smoothing-and-stabilization step have a single call site inside it?
+- Row 3.11, with Row 3.14 — on the corpus, where do the two arms' per-region key sequences differ?
+- Row 3.12 — does the legacy step overwrite every one-region key island whose successor disagrees with it?
+- Row 3.13 — does a one-region island survive on the record arm exactly where its content evidence outweighs two key
+  changes?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -1743,6 +2100,21 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 2.24 (L3-S38):** the outgoing text has the key layer *"consuming the cadence and key-area facts this
   layer and the grouping layer already publish"*, where L3-S38 says *"L2 reads nothing L3 publishes."*
 
+**Member 3.**
+
+- **ADOPTED — proposed — Row 3.1(iii), with Row 3.4:** that L3 publish key areas — runs of consecutive spans sharing one
+  tonality — as a grouping that may cut across the phrase units.
+- **ADOPTED — proposed — Row 3.5(i):** that a key area close only where the next span's tonality differs and that span's
+  tonality clears a declared confidence test.
+- **ADOPTED — proposed — Row 3.5(ii), with Row 3.15:** that a span whose tonality differs without clearing the test keep
+  its own tonality while being grouped into the enclosing key area (L3-S38 carries the first half only).
+- **DIFFERS — Row 3.1(i) (L3-S22):** the outgoing text assembles *"the **flat** structure the ground truth annotates"*,
+  where L3-S22 says *"It is a nested grouping over the units of the phrase reading"*.
+- **DIFFERS — Row 3.1(ii) (L3-S8):** the outgoing text takes the punctuation-spans *"from the L1.5 phrase-boundary
+  primitive"*, where L3-S8 says *"The phrase reading is an L3 decision."*
+- **DIFFERS — Row 3.3 (L3-S22):** the outgoing text puts *"Hierarchy"* out of the validatable core, where L3-S22 publishes
+  a nested grouping with rivals and their mass.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -1752,15 +2124,17 @@ are at its own foot, and the integers below are re-derivable from them.
 |---|---|---|---|---|---|---|---|---|---|
 | 1 | 43 | 0 | 0 | 7 | 21 | 0 | 15 | 0 | 27 |
 | 2 | 34 | 3 | 1 | 15 | 5 | 0 | 3 | 7 | 25 |
-| **Total** | **77** | **3** | **1** | **22** | **26** | **0** | **18** | **7** | **52** |
+| 3 | 21 | 2 | 5 | 1 | 8 | 0 | 1 | 4 | 15 |
+| **Total** | **98** | **5** | **6** | **23** | **34** | **0** | **19** | **11** | **67** |
 
-**The arithmetic check:** 3 + 1 + 22 + 26 + 0 + 18 + 7 = 77, against 77 statements placed (43 + 34).
+**The arithmetic check:** 5 + 6 + 23 + 34 + 0 + 19 + 11 = 98, against 98 statements placed (43 + 34 + 21).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
 | 1 | 0 | 2 | 41 | 43 |
 | 2 | 3 | 12 | 20 | 35 |
-| **Total** | **3** | **14** | **61** | **78** |
+| 3 | 4 | 3 | 14 | 21 |
+| **Total** | **7** | **17** | **75** | **99** |
 
 ## 14. The derivation's independence record, relayed
 
