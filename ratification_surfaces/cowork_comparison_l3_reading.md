@@ -37,7 +37,7 @@ its own entry there.
 | 3 | `ARCHITECTURE.md` — *Layer 6 — the grouping layer* | **DONE** (§6.3) |
 | 4 | `ARCHITECTURE.md` — *4.3 ChordSymbolFormatter* | **DONE** (§6.4) |
 | 5 | `ARCHITECTURE.md` — *4.3b HarmonicRhythm* | **DONE** (§6.5) |
-| 6 | `ARCHITECTURE.md` — *Harmonic rhythm detection* | NOT YET TABULATED |
+| 6 | `ARCHITECTURE.md` — *Harmonic rhythm detection* | **DONE** (§6.6) |
 | 7 | `cowork_layer5_function_design.md`, whole | NOT YET TABULATED |
 | 8 | `cowork_layer6_grouping_design.md`, whole | NOT YET TABULATED |
 | 9 | `cowork_layer5_engagement_design.md`, whole | NOT YET TABULATED |
@@ -91,9 +91,10 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 5 — the `ARCHITECTURE.md` sections *Layer 4 — the per-slice chord-symbol decoder*,
-*Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3 ChordSymbolFormatter* and *4.3b
-HarmonicRhythm*.** **Not done: positions 6 to 57.** **A member
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 6 — the six `ARCHITECTURE.md` places of the ruling's item 1: the sections *Layer 4 —
+the per-slice chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
+ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*.** **Not done: positions 7
+to 57.** **A member
 marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed — **never
 partly worked** (**D-672**).
 
@@ -2823,6 +2824,192 @@ counting.
 
 ---
 
+### 6.6 — Member 6: `ARCHITECTURE.md`, the passage *"#### Harmonic rhythm detection"* (inside §11.5)
+
+> **Manifest for this member.** Position **6**. Kind: *item 1 — a named place*. Document: `ARCHITECTURE.md`. Label:
+> *"#### Harmonic rhythm detection"*. Range, as a locator only: lines 7098–7117, from that heading to the line before the
+> next heading of level four or higher, exactly as the artifact publishes it (**D-307**). Outgoing statements: **10**
+> (rows 6.1 to 6.8; two of those rows carry two claims each and are split, so 8 rows carry 10 statements — the
+> arithmetic is at the foot of this member). Listed under *not a statement*: **1**. Counted at this member by this
+> session; the counts appear here and nowhere else.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 6: **none**.
+> **No SEEN home lies in this member.**
+
+---
+
+**Row 6.1 — the region analysis scans every visible tonal staff for each change of the pitch-class set.**
+
+*Outgoing statement.* "The region analysis scans **all non-hidden tonal staves** (excluding the target staff) within the
+selected time range, left to right, to identify every tick where the sounding pitch-class set changes — i.e. where any
+instrument starts or stops a note." — the passage (locator: lines 7100–7103).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which staves does the region analysis read, and does it mark
+a tick at every start and stop of a note or only where the pitch-class set changes?
+
+---
+
+**Row 6.2 — each such tick a potential chord boundary.**
+
+*Outgoing statement.* "Each such tick is a potential chord boundary." — the passage (locator: line 7103).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is every such tick a candidate boundary of the region analysis,
+and no other tick?
+
+---
+
+**Row 6.3 — chord analysis at each boundary tick.**
+
+*Outgoing statement.* "Chord analysis runs at each boundary tick." — the passage (locator: line 7105).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 5.3 (ii).
+
+---
+
+**Row 6.4 — the default mode collapses same root and quality, and absorbs sub-quarter fragments.**
+
+*Outgoing statement.* "In the default smoothed mode, consecutive boundaries that produce the **same root and quality**
+are collapsed into a single harmonic region, and sub-quarter-note fragments are absorbed so tuning and other range
+operations do not overreact to ornaments." — the passage (locator: lines 7105–7108). Two claims: (i) consecutive
+boundaries with the same root and quality are collapsed into one region; (ii) fragments shorter than a quarter note are
+absorbed.
+
+*Derived statements that speak to it.* (i) L3-S30. (ii) None.
+
+*Current-text axis.* (i) L3-S30: **DIFFERS**. (ii) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (i) The outgoing default collapses consecutive boundaries with *"the **same
+root and quality**"* into one region; L3-S30 publishes at each of L2's boundaries *"the classes of what changed across it:
+root, quality, figure, applied target, tonality"*, because *"A single count would choose one definition."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* the same as Row 5.4 (i), with whether a change of figure
+alone survives the default mode. (ii) **QUARANTINED.** *Audit question:* the same as Row 5.4 (i).
+
+---
+
+**Row 6.5 — the chord staff keeps every detected event, with carry-in notes.**
+
+*Outgoing statement.* "Chord-staff population uses the preserve-all mode instead: every detected harmonic event is kept,
+even when adjacent events share root and quality, and sustained carry-in notes still contribute at the new region
+start." — the passage (locator: lines 7108–7111). Two claims: (i) the chord staff keeps every detected harmonic event;
+(ii) sustained carry-in notes contribute at the new region start.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* (i) and (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* the same as Row 5.4 (ii). (ii) **QUARANTINED.** *Audit
+question:* do notes sounding into a region from before its start enter that region's analysis?
+
+---
+
+**Row 6.6 — each region's start and end tick, its duration the harmonic rhythm.**
+
+*Outgoing statement.* The bullet "Start tick and end tick (duration = harmonic rhythm)" — the list of what each region
+carries (locator: line 7114).
+
+*Derived statements that speak to it.* L3-S30.
+
+*Current-text axis.* L3-S30: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text equates the harmonic rhythm with a region's *"duration"*;
+L3-S30 publishes, per bar and per phrase unit, *"the list of L2's harmonic boundaries inside it, each referenced by
+identity and carrying its metric strength class and period (IC-L1 S-35) and the classes of what changed across it"*,
+with *"the series of its span durations in beats of the notated meter"* per phrase unit.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what does each region carry, and is any harmonic-rhythm value
+computed beyond the region's start and end?
+
+---
+
+**Row 6.7 — each region's chord analysis result.**
+
+*Outgoing statement.* The bullet "Chord analysis result (root, quality, extensions)" — the same list (locator: line 7115).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 6.6.
+
+---
+
+**Row 6.8 — each region's key and mode result.**
+
+*Outgoing statement.* The bullet "Key/mode analysis result" — the same list (locator: line 7116).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 6.6.
+
+---
+
+#### Not a statement, at this member
+
+1. "The result is a sequence of harmonic regions, each with:" (7113) — *a lead*, its bullets tabulated at Rows 6.6 to
+   6.8.
+
+#### The arithmetic at this member
+
+- Rows written: **8** (6.1 to 6.8).
+- Rows split into two claims, **+1 each**: 6.4, 6.5 — two rows, **+2**.
+- **Outgoing statements placed: 8 + 2 = 10.**
+- Listed under *not a statement*: **1**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row: 10 dispositions over 10 statements.
+- **UNPLACED rows at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 10 | 6.1, 6.2, 6.3, 6.4(i), 6.4(ii), 6.5(i), 6.5(ii), 6.6, 6.7, 6.8 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **10** | — |
+
+**The column sums to 10, against 10 statements, so the arithmetic closes at this member**: 0 + 0 + 0 + 10 + 0 + 0 + 0
+= 10. **The statement lists in the right-hand column are the record**, and the integers are re-derivable from them by
+counting.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 2 |
+| THE DERIVATION IS SILENT | 8 |
+| **Total verdicts** | **10** |
+
+*(Counted per named derived statement per statement; no statement here names more than one.)* The DIFFERS statements are
+6.4(i) and 6.6, both naming L3-S30.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — no withheld home lies in this member.
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -2887,7 +3074,7 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   comparison placed the same statement here, at its Row 4.21.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, and member 3's the rows
-numbered 3.n. Members 4 and 5 relocate no row.)*
+numbered 3.n. Members 4, 5 and 6 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -2987,6 +3174,19 @@ commit that tabulates it, each with the audit question its row writes.
 - Row 5.14, with Row 5.15 — how is the borrowed chord's source key searched, and over which range of fifths?
 - Row 5.17 — does the region header carry the tick values as integers with no engraving include?
 
+**Member 6 — `ARCHITECTURE.md`, *Harmonic rhythm detection*.**
+
+- Row 6.1 — which staves does the region analysis read, and does it mark a tick at every start and stop of a note or
+  only where the pitch-class set changes?
+- Row 6.2 — is every such tick a candidate boundary of the region analysis, and no other tick?
+- Row 6.3 — which chord analysis runs at each boundary tick, and on which arm (as Row 5.3(ii))?
+- Row 6.4(i) — does a change of figure alone survive the default mode's collapsing of same root and quality?
+- Row 6.4(ii) — under which length are fragments absorbed (as Row 5.4(i))?
+- Row 6.5(i) — does the chord staff request the mode that keeps every change (as Row 5.4(ii))?
+- Row 6.5(ii) — do notes sounding into a region from before its start enter that region's analysis?
+- Row 6.6, with Rows 6.7 and 6.8 — what does each region carry, and is any harmonic-rhythm value computed beyond the
+  region's start and end?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -3070,6 +3270,15 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
   pitch-class set changes)"*, where L3-S30 lists *"L2's harmonic boundaries … each referenced by identity"* and *"does not
   republish the segmentation"*.
 
+**Member 6.** No ADOPTED — proposed row.
+
+- **DIFFERS — Row 6.4(i) (L3-S30):** the outgoing default collapses consecutive boundaries with *"the **same root and
+  quality**"*, where L3-S30 publishes at each boundary *"the classes of what changed across it: root, quality, figure,
+  applied target, tonality"*.
+- **DIFFERS — Row 6.6 (L3-S30):** the outgoing text equates the harmonic rhythm with a region's *"duration"*, where
+  L3-S30 publishes per bar and per phrase unit L2's boundaries with their metric strength class and change classes, and
+  per phrase unit the series of span durations in beats.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -3082,9 +3291,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 3 | 21 | 2 | 5 | 1 | 8 | 0 | 1 | 4 | 15 |
 | 4 | 34 | 5 | 2 | 0 | 15 | 0 | 1 | 11 | 7 |
 | 5 | 19 | 0 | 0 | 0 | 19 | 0 | 0 | 0 | 4 |
-| **Total** | **151** | **10** | **8** | **23** | **68** | **0** | **20** | **22** | **78** |
+| 6 | 10 | 0 | 0 | 0 | 10 | 0 | 0 | 0 | 1 |
+| **Total** | **161** | **10** | **8** | **23** | **78** | **0** | **20** | **22** | **79** |
 
-**The arithmetic check:** 10 + 8 + 23 + 68 + 0 + 20 + 22 = 151, against 151 statements placed (43 + 34 + 21 + 34 + 19).
+**The arithmetic check:** 10 + 8 + 23 + 78 + 0 + 20 + 22 = 161, against 161 statements placed (43 + 34 + 21 + 34 + 19 +
+10).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -3093,7 +3304,8 @@ are at its own foot, and the integers below are re-derivable from them.
 | 3 | 4 | 3 | 14 | 21 |
 | 4 | 7 | 6 | 21 | 34 |
 | 5 | 0 | 1 | 18 | 19 |
-| **Total** | **14** | **24** | **114** | **152** |
+| 6 | 0 | 2 | 8 | 10 |
+| **Total** | **14** | **26** | **122** | **162** |
 
 ## 14. The derivation's independence record, relayed
 
