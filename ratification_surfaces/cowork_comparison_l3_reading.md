@@ -56,7 +56,7 @@ its own entry there.
 | 15 | `ARCHITECTURE.md` passages — the opening block, above the first `## ` heading | **DONE** (§6.15) |
 | 16 | `ARCHITECTURE.md` passages — *The joint estimator — the standing rules of the production inference layer* | **DONE** (§6.16) |
 | 17 | `ARCHITECTURE.md` passages — *Document governance and the standing architecture notes* | **DONE** (§6.17) |
-| 18 | `ARCHITECTURE.md` passages — *1. Project Overview* | NOT YET TABULATED |
+| 18 | `ARCHITECTURE.md` passages — *1. Project Overview* | **DONE** (§6.18) |
 | 19 | `ARCHITECTURE.md` passages — *2. Architectural Principles* | NOT YET TABULATED |
 | 20 | `ARCHITECTURE.md` passages — *3. Directory Structure* | NOT YET TABULATED |
 | 21 | `ARCHITECTURE.md` passages — *4. Existing Components — The Analysis Foundation* | NOT YET TABULATED |
@@ -98,7 +98,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 17 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 18 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -107,8 +107,8 @@ ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhyth
 `cowork_phase5b_l4_build_plan.md` and `cowork_l1l4_review_charter.md`, each whole, position 15,
 `ARCHITECTURE.md`'s passages in the opening block above its first `## ` heading, the first passage member, position 16,
 `ARCHITECTURE.md`'s passages under its top-level heading *The joint estimator — the standing rules of the production
-inference layer*, the second, and position 17, its passages under *Document governance and the standing architecture
-notes*.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
+inference layer*, the second, position 17, its passages under *Document governance and the standing architecture
+notes*, and position 18, its passages under *1. Project Overview*.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
 boundary after position 7, by its own capacity judgment; position 8 was tabulated under
@@ -121,9 +121,9 @@ boundary after position 11, by its own capacity judgment; positions 12 to 14 wer
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_sixth_2026_10_19.md`, which stopped at the member
 boundary after position 14, by its own capacity judgment; position 15 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md`, which stopped at the member
-boundary after position 15, by its own capacity judgment; positions 16 and 17 were tabulated under
+boundary after position 15, by its own capacity judgment; positions 16 to 18 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighth_2026_10_19.md`.** **The writing now stands at
-the member boundary after position 17: not done, positions 18 to 57, and the next writing resumes at position 18.** **A
+the member boundary after position 18: not done, positions 19 to 57, and the next writing resumes at position 19.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -23346,6 +23346,268 @@ verdict, RELOCATED.
 
 ---
 
+### 6.18 — Member 18: `ARCHITECTURE.md`, the passages under *1. Project Overview*
+
+> **Manifest for this member.** Position **18**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: `## 1. Project Overview`, exactly as the artifact spells it. One range, as a
+> locator only (**D-307**), with its first and last line texts exactly as the artifact publishes them:
+>
+> - lines 644–670, from *"- **ChordAnalyzer** — identifies chord quality, extensions, inversions, diatonic"* to *"  page
+>   in Edit → Preferences → Composing"*.
+>
+> **Both line texts were compared with the line at its locator** in `ARCHITECTURE.md`, read by this session at the file
+> and at its blob at the commit that landed this batch's dispatch, **and both match.** The range is the bullet list under
+> the sub-heading *1.4 Implemented Components* (line 642). The top-level heading the label names stands at line 607, and
+> the next top-level heading, *2. Architectural Principles*, at line 683. **The section's lines 608 to 643 and 671 to 682
+> lie in no range**: the sub-sections *1.1 Vision and Purpose*, *1.2 Relationship to MuseScore Studio* and *1.3
+> Licensing* with their paragraphs, the sub-heading *1.4 Implemented Components* itself, the paragraph after the list on
+> the bridge layer that connects the analysis module to the engraving model (lines 672–676), an italic pointer to
+> `STATUS.md` (lines 678–679) and a separator. No other member of the artifact covers them — the passage rule's cut,
+> recorded here as at §6.15 to §6.17, and not repaired. Outgoing statements: **12** (rows 18.1 to 18.9; three rows carry
+> two claims, each split — the arithmetic is at the foot of this member). Listed under *not a statement*: **0**. Counted
+> at this member by this session; the counts appear here and at §13, and nowhere else.
+>
+> **WITHHELD homes inside this member: none** — the artifact's `item_4_identities_inside` for position 18 is empty.
+> **No decision of the decisions register's data file is homed inside this member's range**, found by this session's
+> walk of `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit
+> hash) for every `home` naming `ARCHITECTURE.md` with a line range overlapping the range, the retired block included.
+> *(The same walk over the cut lines finds four homes there, and therefore in no member: **D-118** at line 636 and
+> **D-119** at line 639, both LIVE in the decisions register, and the retired entries **D-116** at line 626 and **D-117**
+> at line 630 — none of them withheld.)* **No SEEN home lies in this member**, agreeing with §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied at
+> §6.8 to §6.17, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation join
+> and the blockquote-marker reading were applied unchanged at this member.** **The blockquote-marker reading:** no line
+> of the range carries the quotation-block marker, so the reading has nothing to drop here; a quotation from one of the
+> bullets drops its `- ` list marker, which is the document's formatting and not its words. **How the bold leads were
+> read:** each bullet opens with a component's name in bold followed by a dash and its description, so the name stands
+> inside the bullet's sentence and is quoted with it. The bullet led *Chord staff* holds two sentences, tabulated as two
+> rows (Rows 18.5 and 18.6). **This member has no glossary and no status table.** **The quotation join found nothing to
+> join at this member**: no line of it breaks a hyphenated compound at its end.
+>
+> **What this member is, read whole before any row was written.** The range is the document's inventory of implemented
+> components: the chord analyzer, the key and mode analyzer, the chord-symbol formatter, the harmonic-rhythm component,
+> the chord staff, the status bar, the tuning and the user preferences, each described by what it does at the time of
+> writing. **Three placements are stated for challenge.** (a) Every bullet states what an implemented component does, so
+> every statement is **QUARANTINED** with its audit question — the display consumers among them (the chord staff, the
+> status bar, the tuning and the preferences) as §6.15 placed the notation consumers. (b) The harmonic-rhythm
+> component's boundary detection (Row 18.4 (i)) carries **L3-S30 DIFFERS**, as Row 5.3 (i) placed the same claim. (c) The
+> chord staff's pivot detection and cadence markers (Row 18.5 (ii)) are **SILENT**, as Row 5.9 placed what the chord staff
+> writes: L3-S7 and L3-S17 speak to what L3 publishes, not to what a display writes.
+
+---
+
+**Row 18.1 — the chord analyzer identifies the chord from the simultaneously sounding notes.**
+
+*Outgoing statement.* "**ChordAnalyzer** — identifies chord quality, extensions, inversions, diatonic degree, and
+chromatic (borrowed) Roman numerals from a set of simultaneously sounding notes" — the section *1. Project Overview*,
+sub-section *1.4 Implemented Components*, the bullet led *ChordAnalyzer* (locator: lines 644–646).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what does `ChordAnalyzer` identify, from which input, and does
+the analysis that runs at the current commit reach it?
+
+---
+
+**Row 18.2 — the key and mode analyzer infers the key and mode from a weighted window.**
+
+*Outgoing statement.* "**KeyModeAnalyzer** — infers the most likely key and mode from a temporal window of pitch contexts
+with duration, beat, and bass weighting" — the section *1. Project Overview*, sub-section *1.4 Implemented Components*,
+the bullet led *KeyModeAnalyzer* (locator: lines 647–648).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `KeyModeAnalyzer` infer the key and mode from a window of
+pitch contexts weighted by duration, beat and bass, and does the analysis that runs at the current commit reach it?
+
+---
+
+**Row 18.3 — the formatter writes chord symbols and Roman numerals, a chromatic numeral for a non-diatonic chord.**
+
+*Outgoing statement.* "**ChordSymbolFormatter** — formats analysis results as chord symbols and Roman numerals;
+non-diatonic chords produce chromatic numerals (♭VII, ♭III, ♭VI etc.) rather than returning empty" — the section *1.
+Project Overview*, sub-section *1.4 Implemented Components*, the bullet led *ChordSymbolFormatter* (locator: lines
+649–651). Two claims: (i) the formatter formats analysis results as chord symbols and Roman numerals; (ii) a
+non-diatonic chord produces a chromatic numeral rather than an empty result.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* which strings does the formatter produce, from which
+fields of the analysis result (as Row 4.1)? (ii) **QUARANTINED.** *Audit question:* does the formatter return a chromatic
+numeral for every non-diatonic chord, and never an empty result?
+
+---
+
+**Row 18.4 — the harmonic-rhythm component detects harmonic boundaries and drives the chord staff.**
+
+*Outgoing statement.* "**HarmonicRhythm** — detects harmonic boundaries across a score range, drives chord staff
+population" — the section *1. Project Overview*, sub-section *1.4 Implemented Components*, the bullet led
+*HarmonicRhythm* (locator: lines 652–653). Two claims: (i) the component detects harmonic boundaries across a stretch of
+the score; (ii) it drives the population of the chord staff.
+
+*Derived statements that speak to it.* (i) L3-S30. (ii) None.
+
+*Current-text axis.* (i) L3-S30: **DIFFERS**. (ii) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (i) The outgoing component *"detects harmonic boundaries across a score
+range"*; L3-S30 publishes *"the list of L2's harmonic boundaries inside it, each referenced by identity"*, and says *"It
+does not republish the segmentation."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* where does the harmonic-rhythm component place its
+boundaries, and is it reached at the current commit (as Row 5.3 (i))? (ii) **QUARANTINED.** *Audit question:* does the
+chord staff's population read the boundaries this component detects?
+
+---
+
+**Row 18.5 — the chord staff: a part the user adds, written on demand with a harmonic reduction.**
+
+*Outgoing statement.* "**Chord staff** (also called the **chord track** elsewhere in this doc — the same object) — a
+grand-staff part added by the user that is populated on demand (an action called **implode**: write the harmonic
+reduction to the chord staff) with a harmonic reduction: chord symbols, Roman numerals, canonical or collected voicings,
+key/mode annotations, borrowed chord labels, pivot detection, and cadence markers." — the section *1. Project
+Overview*, sub-section *1.4 Implemented Components*, the bullet led *Chord staff* (locator: lines 654–658). Two claims:
+(i) the chord staff is a grand-staff part the user adds, written on demand by the action called implode; (ii) it carries
+a harmonic reduction of chord symbols, Roman numerals, voicings, key and mode annotations, borrowed chord labels, pivot
+detection and cadence markers.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT** — L3-S7 publishes no pivot label
+at L3 and carries whether one is shown to OQ-L3-8, and L3-S17 leaves the principal cadence vocabulary to OQ-L3-2; neither
+speaks to what this display writes, as at Row 5.9.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* is the chord staff a grand-staff part the user adds,
+written only when implode is invoked? (ii) **QUARANTINED.** *Audit question:* which source computes each item the chord
+staff writes — the chord symbol, the Roman numeral, the voicing, the key and mode, the borrowed-chord label, the pivot
+and the cadence marker?
+
+---
+
+**Row 18.6 — the chord staff's notes marked not to play.**
+
+*Outgoing statement.* "Notes on the chord staff have `play = false` (annotation-only; they do not double the source
+staves in playback)" — the section *1. Project Overview*, sub-section *1.4 Implemented Components*, the bullet led
+*Chord staff* (locator: lines 658–659).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the notes the chord staff writes marked not to play, so
+that playback does not double the source staves?
+
+---
+
+**Row 18.7 — the status bar shows the chord, the key and mode, and the Roman numeral.**
+
+*Outgoing statement.* "**Status bar integration** — displays chord, key/mode, and Roman numeral information when a note
+is selected" — the section *1. Project Overview*, sub-section *1.4 Implemented Components*, the bullet led *Status bar
+integration* (locator: lines 660–661).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the status bar show the chord, the key and mode, and the
+Roman numeral when a note is selected, and from which surface does it read them?
+
+---
+
+**Row 18.8 — the tuning: per note and per region, each chord root anchored above the mode's tonic.**
+
+*Outgoing statement.* "**Intonation** — per-note and region tuning via split-and-slur; tonic-anchored JI places each
+chord root at its scale-degree position above the mode tonic rather than always at 0¢; optional minimize-retune shift
+and per-note cent annotation in score; sustained-event rewriting is controlled by user preference, existing tie
+boundaries may be converted to slurs when independent retuning is needed, and anchors protect the full written duration
+from segmentation" — the section *1. Project Overview*, sub-section *1.4 Implemented Components*, the bullet led
+*Intonation* (locator: lines 662–667).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the tuning tune per note and per region by
+split-and-slur, place each chord root at its scale-degree position above the mode's tonic, and treat the retune shift,
+the cent annotation, sustained events, existing ties and anchors as stated?
+
+---
+
+**Row 18.9 — the two configuration interfaces and the preferences page.**
+
+*Outgoing statement.* "**User preferences** — `IComposingAnalysisConfiguration` and `IComposingChordStaffConfiguration`
+expose analysis and output settings; preferences page in Edit → Preferences → Composing" — the section *1. Project
+Overview*, sub-section *1.4 Implemented Components*, the bullet led *User preferences* (locator: lines 668–670).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the two configuration interfaces expose the analysis and
+output settings, shown on the Composing preferences page?
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+*None: every sentence of the range is a row.*
+
+#### The arithmetic at this member
+
+- Rows written: **9** (18.1 to 18.9).
+- Rows split into two claims, **+1 each**: 18.3, 18.4, 18.5 — three rows, **+3**.
+- **Outgoing statements placed: 9 + 3 = 12.**
+- Listed under *not a statement*: **0**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row against its claims: 12 dispositions over 12 statements.
+- **UNPLACED statements at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 12 | 18.1, 18.2, 18.3(i), 18.3(ii), 18.4(i), 18.4(ii), 18.5(i), 18.5(ii), 18.6, 18.7, 18.8, 18.9 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **12** | — |
+
+**The column sums to 12, against 12 statements, so the arithmetic closes at this member**: 0 + 0 + 0 + 12 + 0 + 0 + 0 =
+12. **The statement lists in the right-hand column are the record**, and the integers are re-derivable from them by
+counting.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 1 |
+| THE DERIVATION IS SILENT | 11 |
+| **Total verdicts** | **12** |
+
+*(Counted per named derived statement per statement. No statement names more than one derived statement, so the
+verdicts total 12 over 12 statements.)* The DIFFERS statements are 18.4(i) (L3-S30) — one statement carrying one verdict,
+QUARANTINED.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 18 is empty.
+- **In homes that are not withheld, carrying no mark:** none — no decision is homed inside this member's range.
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -23641,7 +23903,7 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
 the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows
 numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, and member 17's the rows
-numbered 17.n. Members 4, 5, 6 and 14 relocate no row.)*
+numbered 17.n. Members 4, 5, 6, 14 and 18 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -24192,6 +24454,30 @@ inference layer*.**
 - Row 17.1 (i) — on which pipeline and run was the full joint cross-layer decode measured inert, and does the result hold
   for the analysis that runs at the current commit?
 
+**Member 18 — `ARCHITECTURE.md`, the passages under *1. Project Overview*.**
+
+- Row 18.1 — what does `ChordAnalyzer` identify, from which input, and does the analysis that runs at the current commit
+  reach it?
+- Row 18.2 — does `KeyModeAnalyzer` infer the key and mode from a window of pitch contexts weighted by duration, beat and
+  bass, and does the analysis that runs at the current commit reach it?
+- Row 18.3 (i) — which strings does the formatter produce, from which fields of the analysis result (as Row 4.1)?
+- Row 18.3 (ii) — does the formatter return a chromatic numeral for every non-diatonic chord, and never an empty result?
+- Row 18.4 (i) — where does the harmonic-rhythm component place its boundaries, and is it reached at the current commit
+  (as Row 5.3 (i))?
+- Row 18.4 (ii) — does the chord staff's population read the boundaries this component detects?
+- Row 18.5 (i) — is the chord staff a grand-staff part the user adds, written only when implode is invoked?
+- Row 18.5 (ii) — which source computes each item the chord staff writes — the chord symbol, the Roman numeral, the
+  voicing, the key and mode, the borrowed-chord label, the pivot and the cadence marker?
+- Row 18.6 — are the notes the chord staff writes marked not to play, so that playback does not double the source
+  staves?
+- Row 18.7 — does the status bar show the chord, the key and mode, and the Roman numeral when a note is selected, and from
+  which surface does it read them?
+- Row 18.8 — does the tuning tune per note and per region by split-and-slur, place each chord root at its scale-degree
+  position above the mode's tonic, and treat the retune shift, the cent annotation, sustained events, existing ties and
+  anchors as stated?
+- Row 18.9 — do the two configuration interfaces expose the analysis and output settings, shown on the Composing
+  preferences page?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -24703,6 +24989,11 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
   later evidence"* through a localized forward recompute, where L3-S38 says *"No L3 fact may change an L2 fact, a rival
   or a mass."*
 
+**Member 18.** No ADOPTED — proposed row.
+
+- **DIFFERS — Row 18.4 (i) (L3-S30):** the outgoing component *"detects harmonic boundaries across a score range"*, where
+  L3-S30 lists *"L2's harmonic boundaries … each referenced by identity"* and *"does not republish the segmentation"*.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -24727,10 +25018,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 15 | 95 | 1 | 1 | 5 | 73 | 0 | 15 | 0 | 8 |
 | 16 | 63 | 0 | 0 | 43 | 11 | 0 | 9 | 0 | 38 |
 | 17 | 5 | 0 | 0 | 1 | 1 | 0 | 3 | 0 | 6 |
-| **Total** | **1602** | **110** | **55** | **663** | **358** | **0** | **285** | **131** | **516** |
+| 18 | 12 | 0 | 0 | 0 | 12 | 0 | 0 | 0 | 0 |
+| **Total** | **1614** | **110** | **55** | **663** | **370** | **0** | **285** | **131** | **516** |
 
-**The arithmetic check:** 110 + 55 + 663 + 358 + 0 + 285 + 131 = 1602, against 1602 statements placed (43 + 34 + 21 + 34
-+ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5).
+**The arithmetic check:** 110 + 55 + 663 + 370 + 0 + 285 + 131 = 1614, against 1614 statements placed (43 + 34 + 21 + 34
++ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -24751,10 +25043,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 15 | 7 | 4 | 85 | 96 |
 | 16 | 9 | 0 | 54 | 63 |
 | 17 | 0 | 1 | 4 | 5 |
-| **Total** | **148** | **202** | **1256** | **1606** |
+| 18 | 0 | 1 | 11 | 12 |
+| **Total** | **148** | **203** | **1267** | **1618** |
 
-**The arithmetic check of the verdicts:** 148 + 202 + 1256 = 1606, against the members' verdict totals (43 + 35 + 21 + 34 +
-19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5).
+**The arithmetic check of the verdicts:** 148 + 203 + 1267 = 1618, against the members' verdict totals (43 + 35 + 21 + 34 +
+19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12).
 
 ## 14. The derivation's independence record, relayed
 
