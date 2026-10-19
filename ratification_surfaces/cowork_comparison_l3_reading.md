@@ -8,7 +8,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fourth_2026_10_19.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fifth_2026_10_19.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_sixth_2026_10_19.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighth_2026_10_19.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -53,7 +54,7 @@ its own entry there.
 | 13 | `cowork_phase5b_l4_build_plan.md`, whole | **DONE** (§6.13) |
 | 14 | `cowork_l1l4_review_charter.md`, whole | **DONE** (§6.14) |
 | 15 | `ARCHITECTURE.md` passages — the opening block, above the first `## ` heading | **DONE** (§6.15) |
-| 16 | `ARCHITECTURE.md` passages — *The joint estimator — the standing rules of the production inference layer* | NOT YET TABULATED |
+| 16 | `ARCHITECTURE.md` passages — *The joint estimator — the standing rules of the production inference layer* | **DONE** (§6.16) |
 | 17 | `ARCHITECTURE.md` passages — *Document governance and the standing architecture notes* | NOT YET TABULATED |
 | 18 | `ARCHITECTURE.md` passages — *1. Project Overview* | NOT YET TABULATED |
 | 19 | `ARCHITECTURE.md` passages — *2. Architectural Principles* | NOT YET TABULATED |
@@ -97,14 +98,16 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 15 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 16 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
 `cowork_layer5_function_design.md`, `cowork_layer6_grouping_design.md`, `cowork_layer5_engagement_design.md`,
 `cowork_layer4_chordsymbol_design.md`, `docs/nct_detection_design.md`, `cowork_engage_arc_plan.md`,
-`cowork_phase5b_l4_build_plan.md` and `cowork_l1l4_review_charter.md`, each whole, and position 15,
-`ARCHITECTURE.md`'s passages in the opening block above its first `## ` heading, the first passage member.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
+`cowork_phase5b_l4_build_plan.md` and `cowork_l1l4_review_charter.md`, each whole, position 15,
+`ARCHITECTURE.md`'s passages in the opening block above its first `## ` heading, the first passage member, and position
+16, `ARCHITECTURE.md`'s passages under its top-level heading *The joint estimator — the standing rules of the production
+inference layer*, the second.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
 boundary after position 7, by its own capacity judgment; position 8 was tabulated under
@@ -116,8 +119,10 @@ boundary after position 9, by its own capacity judgment; positions 10 and 11 wer
 boundary after position 11, by its own capacity judgment; positions 12 to 14 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_sixth_2026_10_19.md`, which stopped at the member
 boundary after position 14, by its own capacity judgment; position 15 was tabulated under
-`records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md`.** **The writing now stands at
-the member boundary after position 15: not done, positions 16 to 57, and the next writing resumes at position 16.** **A
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md`, which stopped at the member
+boundary after position 15, by its own capacity judgment; position 16 was tabulated under
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighth_2026_10_19.md`.** **The writing now stands at
+the member boundary after position 16: not done, positions 17 to 57, and the next writing resumes at position 17.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -22327,6 +22332,845 @@ four QUARANTINED but the first, which is RELOCATED.
 
 ---
 
+### 6.16 — Member 16: `ARCHITECTURE.md`, the passages under *The joint estimator — the standing rules of the production inference layer*
+
+> **Manifest for this member.** Position **16**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: `## The joint estimator — the standing rules of the production inference layer`,
+> exactly as the artifact spells it. **The second member of this comparison made of passages.** Two ranges, each as a
+> locator only (**D-307**), with its first and last line texts exactly as the artifact publishes them:
+>
+> - lines 267–383, from *"> **★★ THE JOINT ESTIMATOR'S STANDING RULES — fitting, held-out evaluation, the search, the
+>   key axis, and"* to *"> this document). Ratified by the user; the record does not date the mandate."*;
+> - lines 512–549, from *"- **Over-claiming a constraint as HARD re-creates the override failure in reverse, and a
+>   sounding"* to *"  the machinery."*.
+>
+> **Each of the four line texts was compared with the line at its locator** in `ARCHITECTURE.md`, read by this session
+> at the file and at its blob at the commit that landed this batch's dispatch, **and every one matches.** The top-level
+> heading the label names stands at line 265, and lines 266, 384 and 550 are empty lines belonging to no range; the
+> next top-level heading stands at line 551. **The section's lines 385 to 511 lie in no range**: they hold three `### `
+> sub-headings — line 385, *The evidential priority the emission is scored under — ACTUAL SOUNDING NOTES ARE THE
+> STRONGEST EVIDENCE, …*; line 427, *The decode's own counted quantities — factor granularity, the signature prior,
+> transition pooling, the leftover back-off, and the missing-tone penalty*; and line 501, *The hard/soft line the
+> evidence classification rests on, and where the hand-built/learned choice lives* — with the paragraphs under each,
+> the last of them the lead paragraph that introduces the four bullets of this member's second range. No other member
+> of the artifact covers them — the passage rule's cut, recorded here as the document's lines 1 to 10 were recorded at
+> §6.15, and not repaired. Outgoing statements: **63** (rows 16.1 to 16.37; fifteen rows carry two claims, four rows
+> three and one row four, each split — the arithmetic is at the foot of this member). Listed under *not a statement*:
+> **38**. Counted at this member by this session; the counts appear here and at §13, and nowhere else.
+>
+> **WITHHELD homes inside this member: none** — the artifact's `item_4_identities_inside` for position 16 is empty.
+> **Eleven decisions of the decisions register's data file are homed inside this member's ranges and none is
+> withheld**, found by this session's walk of `tools/audit/decisions/backbone_decisions.json` (taken at the commit that
+> landed this dispatch, by explicit hash) for every `home` naming `ARCHITECTURE.md` with a line range overlapping one of
+> the two ranges — the walk reaching the data file's retired block too — each home lying wholly inside one range: in
+> the decisions register's list, all seven in the first range, **D-096** at lines 280–281 (rule *(a)*), **D-097** at
+> 289–290 (rule *(b)*), **D-098** at 303–304 (rule *(c)*), **D-288** at 320–324 (the block led *WHAT D-288 IS*),
+> **D-114** at 331–332 (rule *(d)*), **D-292** at 340–342 (rule *(e)*) and **D-293** at 376–378 (rule *(f)*); and
+> **four RETIRED entries** the decisions register's INDEX does not show, one for each bullet of the second range and
+> together covering it — **D-619** at 512–520, **D-618** at 521–530, **D-620** at 531–540 and **D-621** at 541–549 —
+> each retired from the decisions register's list on 2026-08-16 and kept in that file's retired block with the ruled
+> clause every retired record carries, *"a provenance verdict, not a judgment on soundness or usefulness; the statement
+> stands at its home and is met by the derivation"*, as D-007 to D-018 at §6.15. **The walk agrees with the eleven the
+> dispatch read**, no identity beyond them and none of them missing. The decisions register records all seven live
+> entries as LIVE, and marks **D-288** LEGACY at its INDEX — the member's own text says of that block *"⚠ LEGACY-SCOPED
+> (its subject is the segmenter and scorer awaiting deletion)"*; these are its statements of those decisions' standing,
+> relayed here as facts beside their homes and moving no disposition. None of the eleven is withheld, so none carries a
+> mark; the rows inside their homes are named at the foot. *(The same walk over the cut lines 385 to 511 finds five
+> live decisions homed there and therefore in no member — **D-449** at 434–445, **D-450** at 447–456, **D-532** at
+> 458–472, **D-533** at 474–484 and **D-534** at 486–499 — none of them withheld.)* **No SEEN home lies in this
+> member**, agreeing with §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied at
+> §6.8 to §6.15, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation join
+> and the blockquote-marker reading were applied unchanged at this member.** **The blockquote-marker reading, by
+> range:** at the first range every one of its 117 lines opens with the quotation-block marker `> ` or is that marker
+> alone, checked line by line at the blob, so **every quotation from the first range drops it**, as the decisions
+> register's own convention drops it from a verbatim quote, and the quotation check masks it the same way; at the
+> second range **none of its 38 lines carries the marker, so the reading has nothing to drop there** — a quotation from
+> one of its bullets drops the bullet's `- ` list marker instead, which is likewise the document's formatting and not
+> its words. **How the bold and italic leads were read:** the first range's lead, *"★★ THE JOINT ESTIMATOR'S STANDING
+> RULES — …"*, the italic *"Delegation pointer (…)"* that opens the paragraph after it, and *"★ WHAT D-288 IS, re-homed
+> into this specification 2026-08-08; ⚠ LEGACY-SCOPED (…)"* are noun-phrase labels, read as titles, with the provenance
+> inside them; the six lettered leads *(a)* to *(f)* are complete sentences stating rules and are tabulated (Rows 16.1,
+> 16.5, 16.8, 16.16, 16.18 and 16.23), as is *"Do not retry widening the search …"* (Row 16.14) and each bullet's lead
+> in the second range (Rows 16.27, 16.30, 16.32 and 16.35). Where a bold lead stands inside the sentence it opens —
+> *"This bounds a mechanism, not an evidence surface"*, *"This separation survives the supersession"* — the sentence is
+> quoted with it (Rows 16.15 and 16.37); where it opens a sentence that is not a statement — *"★ THAT POINTER IS
+> WIDENED …"*, a complete sentence about this document's own pointer, *"This sits in tension with the abstention rule at
+> §5.7a"*, *"The wrong reading is the highest-scoring one"* — the sentence is listed (items 23, 17 and 14). A lead
+> ending in a colon is tabulated where it carries a claim of its own — *"The capacity budget is a pre-fit parameter
+> inventory:"* (Row 16.7 (i)), *"It was never adopted:"* (Row 16.11 (i)), *"Which class the 326-chorale ground truth
+> actually falls in is NOT settled:"* (Row 16.22 (i)), *"Whether a sounding pitch belongs to the chord is therefore never
+> a raw fact:"* (Row 16.29) — and quoted with its sentence where it only introduces it: *"Pointer, not a seventh rule
+> (…):"* (Row 16.3). The two scope leads are treated by what their sentences carry: the sentence after *"Scope, stated
+> because it decides how the finding is read:"* is a remark on how a measured finding is read and is listed (item 35);
+> the sentence after *"⚠ LEGACY SCOPE:"* opens with the same kind of remark and then states a separate rule, so it is
+> tabulated for that rule (Row 16.34) — the second reading rule's own case of a sentence that also states a rule. **This
+> member has no glossary and no status table.** **The quotation join found nothing to join at this member**: no line of
+> it breaks a hyphenated compound at its end.
+>
+> **What this member is, read whole before any row was written.** The first range states the joint estimator's six
+> standing rules — how its values are fitted (forms from theory, values fitted once against ground truth, the held-out
+> protocol and the capacity budget declared before the fit, a freely licensed fitting pool, one fit per idiom), how it
+> searches (an exact decode, a reserve prune declared and never adopted, the widenings tried and closed), and what it
+> commits on the key axis — between delegation pointers to the factorization contract, the fitter's design and the
+> corpus census. The second range is four bullets on the hard/soft line the evidence classification rests on: chord
+> membership decided inside the analysis, the key signature soft, three reading-shaped producers measured to pin wrong,
+> and hand-built against learned a question of the emission. Nothing in it states what L3 publishes; it is the
+> estimator's, which under the charter is the tonal reading's. **Six placements are stated for challenge.** (a) The
+> rules on how the estimator's values are fitted, searched and pooled, and the hard/soft evidence rules, are
+> **RELOCATED** to *L2 — The tonal reading. The one entangled decision.* by the section's own subject — in its own
+> words, *"The six rules below govern how the estimator's values are fitted, evaluated and searched"* — as Rows 15.8 (i),
+> 15.8 (iii) and 15.9 placed the estimator's state, segmentation and preset independence. (b) The derivation's L3-S14
+> states the same fitting discipline for L3's own phrase model; it is named, **AGREES**, at the statements whose words
+> are general — values fitted against ground truth and never set by hand, any value, a value that ships — and not at
+> those naming the estimator's own ground truth, protocol or constants, where the derivation is SILENT (Rows 16.1 (ii),
+> 16.5 (i), 16.5 (ii), 16.18, 16.19 and 16.20 (ii)). (c) The held-out evaluation's protocol, its headline number and the
+> use of non-commercial music to validate are **RELOCATED** to *the measurement of the analysis*, as Row 8.138 placed
+> validation on held-out beds there; the fitting procedure's own constraints stay with the tonal reading. (d) The key
+> signature's evidential standing (Rows 16.30 (i) and 16.31 (ii)) is **RELOCATED** to *L0 — The notated record*, whose
+> block says the key signature is a weak prior and never a fact about the tonality; the home key's derivation from the
+> notes stays with the tonal reading. (e) Rule *(d)* — the decoder commits its maximum-a-posteriori path on the key axis
+> and never abstains — is **QUARANTINED** rather than relocated, because the member's own text says *"this rule states
+> what the shipped decoder does on the key axis"*; the measured claims and the as-built narrowing are QUARANTINED as at
+> position 15. (f) The legacy-scoped closure of search widening (Row 16.14) is **RELOCATED** to the tonal reading with
+> the tried-and-closed line before it (Row 16.13), as Row 1.5 placed the chord layer's tried-and-closed lines; its LEGACY
+> scope stays with it. **No statement of this member DIFFERS from a derived statement.**
+
+---
+
+**Row 16.1 — the estimator's factor forms from theory, its values fitted once and never tuned per case.**
+
+*Outgoing statement.* "**(a) Factor FORMS come from theory; factor VALUES are fit ONCE against ground truth and are never
+tuned per case.**" — the section *The joint estimator — the standing rules of the production inference layer*, rule
+*(a)*, its lead (locator: lines 280–281). Two claims: (i) the estimator's factor forms come from theory; (ii) its factor
+values are fitted once against ground truth and never tuned per case.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S14.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S14: **AGREES** — *"Every weight of the phrase model is
+fitted from annotated phrase boundaries"*, its falsifier met *"if any weight is set by hand in a shipped model"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.* (ii) **RELOCATED** to
+*L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 16.2 — each factor's shape derived before its numbers, the numbers estimated in one fit event and never adjusted
+afterwards.**
+
+*Outgoing statement.* "Every factor's shape is derived from established music theory before any number is attached to
+it, and the numbers are then estimated in one fit event against the DCML ground truth — never adjusted afterwards to
+make a particular passage come out right." — the section *The joint estimator — the standing rules of the production
+inference layer*, rule *(a)* (locator: lines 281–283). Two claims: (i) every factor's shape is derived from established
+music theory before any number is attached to it; (ii) the numbers are estimated in one fit event against the DCML
+ground truth, never adjusted afterwards to make a passage come out right.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.* (ii) **RELOCATED** to
+*L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 16.3 — a correction belonging in a factor's fitted value, never in a correction layer laid over the decode.**
+
+*Outgoing statement.* "*Pointer, not a seventh rule (added 2026-08-03 on the user's D-416 ruling; register entry
+**D-429**): the standing mandate of 2026-06-14 to dissolve the legacy post-hoc gate-correction layer into fitted weights
+carries a principle for THIS estimator — a correction belongs in a factor's fitted value, never in a layer of
+after-the-fact corrections laid over the decode." — the section *The joint estimator — the standing rules of the
+production inference layer*, the italic pointer under rule *(a)* (locator: line 287).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 16.4 — the post-hoc correction layer: specified nowhere for the estimator, the legacy one retiring, the mandate not
+discharged.**
+
+*Outgoing statement.* "Nothing in this architecture specifies a post-hoc correction layer for the estimator, and the
+legacy Gates A–L layer the mandate names retires at the retirement map's R1 (**D-418**) — but neither fact discharges
+the mandate, and it is not treated as discharged." — the section *The joint estimator — the standing rules of the
+production inference layer*, the italic pointer under rule *(a)* (locator: line 287). Three claims: (i) nothing in this
+architecture specifies a post-hoc correction layer for the estimator; (ii) the legacy gate layer the mandate names
+retires at the retirement map's R1; (iii) neither fact discharges the mandate, which is not treated as discharged.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS
+SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status of the specification. (ii) **HISTORICAL** — a plan. (iii)
+**HISTORICAL** — a status.
+
+---
+
+**Row 16.5 — the held-out split and the capacity budget declared before any value is fitted; the headline the held-out
+number.**
+
+*Outgoing statement.* "**(b) The held-out split and the capacity budget are declared BEFORE any value is fit, and the
+headline number is the held-out one.**" — the section *The joint estimator — the standing rules of the production
+inference layer*, rule *(b)*, its lead (locator: lines 289–290). Two claims: (i) the held-out split and the capacity
+budget are declared before any value is fit; (ii) the headline number is the held-out one.
+
+*Derived statements that speak to it.* (i) L3-S14. (ii) L3-S14.
+
+*Current-text axis.* (i) L3-S14: **AGREES** — *"held out by piece, with its capacity declared before the fit"*. (ii)
+L3-S14: **AGREES** — its defense, *"No value is graded on data that helped fit it"*, and its falsifier, met *"if
+evaluation and fit data overlap"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, the derivation's
+L3-S14 citing L2-S38 for principle #20. (ii) **RELOCATED** to *the measurement of the analysis*.
+
+---
+
+**Row 16.6 — the five-fold cross-validation, every fitted object on training folds only, the pooled headline with its
+uncertainty range.**
+
+*Outgoing statement.* "The ratified protocol is five-fold cross-validation grouped by the shared *When in Rome* analysis
+file, with every fitted object — vocabulary threshold, smoothing, regularization strength included — estimated on
+training folds only; the headline is the pooled cross-validation number with a piece-bootstrap 95 % uncertainty range."
+— the section *The joint estimator — the standing rules of the production inference layer*, rule *(b)* (locator: lines
+290–293). Three claims: (i) the ratified evaluation protocol is five-fold cross-validation grouped by the shared
+analysis file; (ii) every fitted object is estimated on training folds only; (iii) the headline is the pooled
+cross-validation number with a piece-bootstrap uncertainty range.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS
+SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *the measurement of the analysis*. (ii) **RELOCATED** to *L2 — The tonal
+reading. The one entangled decision.* (iii) **RELOCATED** to *the measurement of the analysis*.
+
+---
+
+**Row 16.7 — the capacity budget and its three bounds.**
+
+*Outgoing statement.* "The capacity budget is a pre-fit parameter inventory: a cell receives its own maximum-likelihood
+estimate only at a count of at least 20 and otherwise pools to a declared parent, free parameters stay at or below one
+tenth of the token count, and the weight vector holds at most 12 weights." — the section *The joint estimator — the
+standing rules of the production inference layer*, rule *(b)* (locator: lines 293–296). Four claims: (i) the capacity
+budget is a pre-fit parameter inventory; (ii) a cell receives its own maximum-likelihood estimate only at the stated
+count and otherwise pools to a declared parent; (iii) the free parameters stay within the stated share of the token
+count; (iv) the weight vector holds at most the stated number of weights.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None. (iv) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS
+SILENT**. (iv) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.* (ii) **RELOCATED** to
+*L2 — The tonal reading. The one entangled decision.* (iii) **RELOCATED** to *L2 — The tonal reading. The one entangled
+decision.* (iv) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 16.8 — the decode exact, the reserve prune never adopted, the decoder's narrowing without a specified form.**
+
+*Outgoing statement.* "**(c) The decode is EXACT; the declared reserve prune was never adopted, and what the decoder does
+narrow has no specified form.**" — the section *The joint estimator — the standing rules of the production inference
+layer*, rule *(c)*, its lead (locator: lines 303–304). Three claims: (i) the decode is exact; (ii) the declared reserve
+prune was never adopted; (iii) what the decoder does narrow has no specified form.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS
+SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.* (ii) **HISTORICAL** — a
+status. (iii) **HISTORICAL** — a status of the specification.
+
+---
+
+**Row 16.9 — exact semi-Markov Viterbi the ratified search.**
+
+*Outgoing statement.* "Exact semi-Markov Viterbi over the joint state is the ratified search." — the section *The joint
+estimator — the standing rules of the production inference layer*, rule *(c)* (locator: line 304).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 16.10 — the reserve prune and the conditions on its use.**
+
+*Outgoing statement.* "A prune was declared in reserve — restricting key-change candidates to a fitted-mass neighborhood
+on the circle of fifths — to be used only if measurement showed exact decode intractable, and only with its own
+established-loss measurement, never as a silent heuristic (`cowork_joint_estimator_factorization.md:170-173`)." — the
+section *The joint estimator — the standing rules of the production inference layer*, rule *(c)* (locator: lines
+304–308).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 16.11 — the prune never adopted, its cost measured worse than the exact decode.**
+
+*Outgoing statement.* "It was never adopted: measured at the fitted weights its cost is worse than exact decode." — the
+section *The joint estimator — the standing rules of the production inference layer*, rule *(c)* (locator: lines
+308–309). Two claims: (i) the prune was never adopted; (ii) measured at the fitted weights, its cost is worse than the
+exact decode.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event. (ii) **QUARANTINED.** *Audit question:* on which run, at which
+weights, was the prune's cost measured worse than the exact decode, and does it reproduce?
+
+---
+
+**Row 16.12 — the shipped decoder's narrowing: the candidate-admission rule, with no specified form.**
+
+*Outgoing statement.* "What the shipped decoder DOES narrow — the candidate-admission rule that decides which chord
+classes a segment may even consider — has no specified form anywhere in this architecture and no recorded basis." —
+the section *The joint estimator — the standing rules of the production inference layer*, rule *(c)* (locator: lines
+309–311). Two claims: (i) the shipped decoder narrows by a candidate-admission rule deciding which chord classes a
+segment may consider; (ii) that rule has no specified form anywhere in this architecture and no recorded basis.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* which candidate-admission rule does the shipped decoder
+apply, where in the code, and which chord classes does it let a segment consider? (ii) **HISTORICAL** — a status of the
+specification.
+
+---
+
+**Row 16.13 — the search widenings tried and closed.**
+
+*Outgoing statement.* "*Tried and closed on the search — do not retry; the register carries each with its measurement:
+D-288 (beam widening, shelved), D-328 (a wider search over the same scoring, refuted), D-278 (the joint key-and-chord
+step over the two legacy decoders, shelved).*" — the section *The joint estimator — the standing rules of the
+production inference layer*, the italic line after rule *(c)* (locator: line 315).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, as Row 1.5.
+
+---
+
+**Row 16.14 — no retry of widening the search to more candidate readings.**
+
+*Outgoing statement.* "**Do not retry widening the search to consider more candidate readings in parallel.**" — the
+section *The joint estimator — the standing rules of the production inference layer*, the ★ block led *WHAT D-288 IS*
+(locator: line 320).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, with Row 16.13; the
+member marks the block LEGACY-scoped.
+
+---
+
+**Row 16.15 — the closure bounding the search mechanism and not the evidence surface.**
+
+*Outgoing statement.* "**This bounds a mechanism, not an evidence surface** — see (c) above, where the same lesson is
+stated from the other side: a later measurement re-grounded "search is about zero" as having been measured over a FIXED
+NARROW evidence surface, which is why broad-evidence integration is the joint estimator's value and is not what this
+closes." — the section *The joint estimator — the standing rules of the production inference layer*, the ★ block led
+*WHAT D-288 IS* (locator: lines 326–329). Three claims: (i) the closure bounds the search mechanism, not an evidence
+surface; (ii) the search's measured contribution near zero was re-grounded as measured over a fixed narrow evidence
+surface; (iii) broad-evidence integration is the joint estimator's value and is not what the closure closes.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS
+SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.* (ii)
+**QUARANTINED.** *Audit question:* on which evidence surface and run was the search's contribution measured near zero,
+and does it reproduce? (iii) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 16.16 — on the key axis, the maximum-a-posteriori path committed and no abstention.**
+
+*Outgoing statement.* "**(d) On the key axis the decoder commits its maximum-a-posteriori path; it never abstains.**" —
+the section *The joint estimator — the standing rules of the production inference layer*, rule *(d)*, its lead
+(locator: line 331).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the shipped decoder commit its maximum-a-posteriori path
+on the key axis, never abstaining?
+
+---
+
+**Row 16.17 — a key named for every committed segment; the abstention counter at zero.**
+
+*Outgoing statement.* "The estimator always names a key for every committed segment, so the abstention counter the
+regression stop reads is zero on the production arm." — the section *The joint estimator — the standing rules of the
+production inference layer*, rule *(d)* (locator: lines 331–333). Two claims: (i) the estimator names a key for every
+committed segment; (ii) the abstention counter the regression stop reads is zero on the production arm.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the estimator name a key for every committed segment
+at the current commit? (ii) **QUARANTINED.** *Audit question:* does the abstention counter the regression stop reads
+stand at zero on the production arm at the current commit?
+
+---
+
+**Row 16.18 — a shipped value fitted only on freely licensed music.**
+
+*Outgoing statement.* "**(e) A value that SHIPS may be fitted only on freely-licensed music.**" — the section *The joint
+estimator — the standing rules of the production inference layer*, rule *(e)*, its lead (locator: line 340).
+
+*Derived statements that speak to it.* L3-S14.
+
+*Current-text axis.* L3-S14: **AGREES** — *"on licence-clear music only"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, the derivation's L3-S14
+citing L2-S38 for it.
+
+---
+
+**Row 16.19 — the fitting pool restricted to public-domain, CC0 and CC-BY sources.**
+
+*Outgoing statement.* "The pool a ship-intended weight or table is estimated on is restricted to public-domain, CC0 and
+CC-BY sources." — the section *The joint estimator — the standing rules of the production inference layer*, rule *(e)*
+(locator: lines 340–341).
+
+*Derived statements that speak to it.* L3-S14.
+
+*Current-text axis.* L3-S14: **AGREES** — its defense, *"A value that ships is fitted only on public-domain, CC0 and CC-BY
+music"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, as Row 16.18.
+
+---
+
+**Row 16.20 — music under a non-commercial licence or none used to validate, never to fit.**
+
+*Outgoing statement.* "Music carrying a non-commercial licence or no stated licence — the record names the DCML corpora,
+MCMA and Essen — may be used to validate and to check, never to fit a value that is distributed." — the section *The
+joint estimator — the standing rules of the production inference layer*, rule *(e)* (locator: lines 341–343). Two
+claims: (i) music under a non-commercial licence or none stated may be used to validate and to check; (ii) it is never
+used to fit a value that is distributed.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S14.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S14: **AGREES** — its falsifier, met *"if the fit pool
+holds music under a non-commercial or unstated licence"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *the measurement of the analysis*. (ii) **RELOCATED** to *L2 — The tonal
+reading. The one entangled decision.*, as Row 16.18.
+
+---
+
+**Row 16.21 — the fitting design stating its two source pools.**
+
+*Outgoing statement.* "The fitting design states its objective-source and its validation-source split explicitly, so which
+pool produced which number is readable rather than reconstructed." — the section *The joint estimator — the standing
+rules of the production inference layer*, rule *(e)* (locator: lines 343–345).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 16.22 — the licence class of the chorale ground truth not settled.**
+
+*Outgoing statement.* "**Which class the 326-chorale ground truth actually falls in is NOT settled:** the licence-class
+verification of 2026-08-02 established that the *When in Rome* analyses this fit reads are not a DCML-lab corpus and are
+therefore not the non-commercial class the constraint assumed, and did not establish CC-BY-SA either; the narrowed
+question is open at OI-271." — the section *The joint estimator — the standing rules of the production inference
+layer*, rule *(e)* (locator: lines 349–353). Two claims: (i) which licence class the chorale ground truth falls in is
+not settled; (ii) the verification established that the analyses the fit reads are not a DCML-lab corpus, not the
+non-commercial class assumed, and did not establish CC-BY-SA either.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status. (ii) **QUARANTINED.** *Audit question:* which ground-truth
+analyses does the fit read, and under which licence are they published?
+
+---
+
+**Row 16.23 — values fitted per idiom, never for a user preset.**
+
+*Outgoing statement.* "**(f) Values are fitted per IDIOM, never for a user preset.**" — the section *The joint estimator —
+the standing rules of the production inference layer*, rule *(f)*, its lead (locator: line 376).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, as Row 15.9.
+
+---
+
+**Row 16.24 — one fit event per idiom, no value adjusted for a named preset.**
+
+*Outgoing statement.* "One fit event per musical idiom — a body of repertoire sharing a practice — and no value is ever
+adjusted to make a named preset come out right." — the section *The joint estimator — the standing rules of the
+production inference layer*, rule *(f)* (locator: lines 376–377). Two claims: (i) one fit event per musical idiom; (ii)
+no value is ever adjusted to make a named preset come out right.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.* (ii) **RELOCATED** to
+*L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 16.25 — a preset a regression surface and a carrier; which presets a user sees decided later.**
+
+*Outgoing statement.* "A preset is a regression surface and a carrier for delivering a fitted set; which presets an end
+user should see is a separate product question, decided later and not by the fitting event." — the section *The joint
+estimator — the standing rules of the production inference layer*, rule *(f)* (locator: lines 377–379). Two claims: (i)
+a preset is a regression surface and a carrier for delivering a fitted set; (ii) which presets an end user should see
+is a separate product question, decided later and not by the fitting event.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, as Row 15.9. (ii)
+**HISTORICAL** — a deferred product question.
+
+---
+
+**Row 16.26 — the Bach fit delivered through more than one carrier.**
+
+*Outgoing statement.* "The Bach fit is an idiom fit delivered through more than one carrier." — the section *The joint
+estimator — the standing rules of the production inference layer*, rule *(f)* (locator: lines 379–380).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the Bach fit one fitted set delivered through more than one
+preset, the values the same in each?
+
+---
+
+**Row 16.27 — over-claiming a constraint as hard; a sounding tone not automatically a chord tone.**
+
+*Outgoing statement.* "**Over-claiming a constraint as HARD re-creates the override failure in reverse, and a sounding
+tone is not automatically a chord tone.**" — the section *The joint estimator — the standing rules of the production
+inference layer*, the bullet led *Over-claiming a constraint as HARD …* (locator: lines 512–513). Two claims: (i)
+over-claiming a constraint as hard re-creates the override failure in reverse; (ii) a sounding tone is not
+automatically a chord tone.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S5.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S5: **AGREES** — *"suspensions, retardations and sounding
+ninths, which L2 holds as assignments and not in the chord"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.* (ii) **RELOCATED** to
+*L2 — The tonal reading. The one entangled decision.*, which publishes the chord-tone assignment, the derivation's §0
+citing L2-S8 for it.
+
+---
+
+**Row 16.28 — evidence split into constraints that rule readings out and evidence that only leans.**
+
+*Outgoing statement.* "Evidence splits into constraints that disqualify readings outright and scores that only lean." —
+the section *The joint estimator — the standing rules of the production inference layer*, the bullet led
+*Over-claiming a constraint as HARD …* (locator: lines 513–514).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 16.29 — chord membership never a raw fact, decided inside the analysis.**
+
+*Outgoing statement.* "Whether a sounding pitch belongs to the chord is therefore never a raw fact: the same four
+sounding pitches may be one chord with an added fourth or a chord with a suspension that resolves away, so chord
+membership is decided inside the analysis rather than before it." — the section *The joint estimator — the standing
+rules of the production inference layer*, the bullet led *Over-claiming a constraint as HARD …* (locator: lines
+516–519).
+
+*Derived statements that speak to it.* L3-S5.
+
+*Current-text axis.* L3-S5: **AGREES** — *"suspensions, retardations and sounding ninths, which L2 holds as assignments
+and not in the chord"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, as Row 16.27 (ii).
+
+---
+
+**Row 16.30 — the key signature not a hard fact; the home key derived from the notes.**
+
+*Outgoing statement.* "**The notated key signature is NOT a hard fact, so the home key is derived from the notes and is
+never signature-pinned.**" — the section *The joint estimator — the standing rules of the production inference layer*,
+the bullet led *The notated key signature is NOT a hard fact …* (locator: lines 521–522). Two claims: (i) the notated
+key signature is not a hard fact; (ii) the home key is derived from the notes and never pinned by the signature.
+
+*Derived statements that speak to it.* (i) L3-S26. (ii) None.
+
+*Current-text axis.* (i) L3-S26: **AGREES** — *"read as a sign of the notation and not as a tonality"*. (ii) **THE
+DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L0 — The notated record*, whose block says the key signature is a weak
+prior and never a fact about the tonality. (ii) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 16.31 — the signature's fifths measured against the home key; the signature soft evidence.**
+
+*Outgoing statement.* "The signature's fifths were measured against the true home key and pin the wrong one on a
+substantial minority of the material, concentrated in modal and partial signatures; the signature is therefore soft
+evidence that leans." — the section *The joint estimator — the standing rules of the production inference layer*, the
+bullet led *The notated key signature is NOT a hard fact …* (locator: lines 522–524). Two claims: (i) the signature's
+fifths were measured against the true home key and pin the wrong one on a substantial minority of the material,
+concentrated in modal and partial signatures; (ii) the signature is therefore soft evidence that leans.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* on which material and run were the signature's fifths
+measured against the home key, and does the share that pins wrong reproduce? (ii) **RELOCATED** to *L0 — The notated
+record*, as Row 16.30 (i).
+
+---
+
+**Row 16.32 — three producers measured to pin wrong and kept soft.**
+
+*Outgoing statement.* "**Three reading-shaped producers were each measured to pin WRONG and must stay SOFT: a
+cadence-based tonic anchor, a modulation detector, and the rule that the lowest sounding pitch is the chord's root.**" —
+the section *The joint estimator — the standing rules of the production inference layer*, the bullet led *Three
+reading-shaped producers …* (locator: lines 531–533). Two claims: (i) a tonic anchor drawn from cadences, a modulation
+detector and the rule that the lowest sounding pitch is the root were each measured to pin wrong; (ii) each must stay
+soft.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* on which corpus and run were the three producers measured
+to pin wrong, and do the measurements reproduce? (ii) **RELOCATED** to *L2 — The tonal reading. The one entangled
+decision.*
+
+---
+
+**Row 16.33 — each producer's forced reading tested, the error rates disqualifying.**
+
+*Outgoing statement.* "Each was tested for how often the reading it would force is the wrong one, and all three came back
+with error rates that disqualify them from ruling anything out." — the section *The joint estimator — the standing
+rules of the production inference layer*, the bullet led *Three reading-shaped producers …* (locator: lines 533–535).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* how was each producer's forced reading tested against the
+ground truth, and does each of the three error rates reproduce?
+
+---
+
+**Row 16.34 — a reading-shaped producer soft evidence and never a constraint.**
+
+*Outgoing statement.* "**⚠ LEGACY SCOPE:** the three producers named are legacy-era mechanisms, so the measurements are
+of those producers and are not claims about the estimator specified above; what carries forward is the verdict that a
+reading-shaped producer is a score and never a constraint." — the section *The joint estimator — the standing rules of
+the production inference layer*, the bullet led *Three reading-shaped producers …*, its *LEGACY SCOPE* remark (locator:
+lines 538–540). One claim: what carries forward is the verdict that a reading-shaped producer is soft evidence and never
+a constraint; the sentence's opening, that the three producers are legacy-era and the measurements are of them and not
+of the estimator, is a remark on how the measurements are read.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, whose block states in its
+own words that *"a reading-shaped evidence producer is a score and never a constraint"*.
+
+---
+
+**Row 16.35 — hand-built against learned a question of the emission alone; the decoding structure decided.**
+
+*Outgoing statement.* "**Hand-built versus learned is a question about the EMISSION alone; the decoding structure is
+decided and accommodates either.**" — the section *The joint estimator — the standing rules of the production inference
+layer*, the bullet led *Hand-built versus learned …* (locator: lines 541–542). Two claims: (i) hand-built versus learned
+is a question about the emission alone; (ii) the decoding structure is decided and accommodates either.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.* (ii) **RELOCATED** to
+*L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 16.36 — the search machinery indifferent to how its inputs were produced.**
+
+*Outgoing statement.* "The machinery that searches for the best reading consumes scores and constraints and is
+indifferent to how they were produced, so a learned scorer could replace a hand-built one without rebuilding anything
+around it." — the section *The joint estimator — the standing rules of the production inference layer*, the bullet led
+*Hand-built versus learned …* (locator: lines 542–544).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 16.37 — the separation the ratified estimator makes, its factors the emission and its exact decode the
+machinery.**
+
+*Outgoing statement.* "**This separation survives the supersession** and is the one the ratified estimator makes in its
+own terms, its factors being the emission and its exact decode the machinery." — the section *The joint estimator — the
+standing rules of the production inference layer*, the bullet led *Hand-built versus learned …* (locator: lines
+547–549).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. "Six rules govern the estimator described above." (269) — about the document, an introduction to the rules that
+   follow.
+2. "Each was ratified on the date given; …" (269–271) — provenance, and why the rules are stated here.
+3. "**The ratified contract for the estimator's factor structure — …" (274–276) — a delegation pointer to another
+   document, which it says it does not restate.
+4. "*The six rules below govern how the estimator's values are fitted, evaluated and searched; …" (276–278) — about the
+   document, the scope of the rules that follow.
+5. "*Why:* a value tuned to one passage …" (283–284) — a defense.
+6. "Ratified by the user 2026-07-17, …" (284–285) — provenance.
+7. "It is not restated as a rule here because …" (287) — about the document, why the pointer is not a rule.
+8. "*Why:* `CLAUDE.md` #20 — …" (296–297) — a defense.
+9. "Protocols ratified 2026-07-19 …" (297–299) — provenance.
+10. "*Delegation pointer (the fifth home case, user-ratified 2026-08-02): the fitting event's own design contract is …"
+    (301) — a delegation pointer to another document.
+11. "Both facts are open and are tracked at …" (311–313) — a pointer to the open-items register's rows.
+12. "Until now it lived ONLY in a session-handoff archive, …" (318–320) — provenance.
+13. "*Why:* derived and then cross-checked …" (320–322) — a defense.
+14. "**The wrong reading is the highest-scoring one**, …" (322–324) — the defense continued.
+15. "A consequence was recorded with it and is what closed the build …" (324–326) — the defense continued.
+16. "Recorded at the OI-178 adoption, …" (333–334) — provenance, with the record's statement that it gives no reason.
+17. "**This sits in tension with the abstention rule at §5.7a** …" (335–337) — about the document, a cross-reference to
+    another of its statements.
+18. "The two statements are both in force in the record: …" (337–338) — about the document.
+19. "Which governs is **not settled here**." (338) — about the document.
+20. "*Why:* a fitted value inherits the licence terms …" (345–347) — a defense.
+21. "Ratified by the user 2026-07-04 as binding on the fitter design; …" (347–348) — provenance.
+22. "The constraint's own detailed block, …" (348–349) — a pointer to another document.
+23. "**★ THAT POINTER IS WIDENED TO THE SECTIONS HOLDING THE CENSUS'S OWN STANDING RULES …" (355–356) — about the
+    document, the widening of a delegation pointer.
+24. "Beside the licence-pool block §8c, …" (357–362) — about another document, what it states.
+25. "**The ratified contract for the corpus census and its admission rules is …" (362–364) — a delegation pointer to
+    another document.
+26. "*What the widening settles, and what it does not:* …" (364–366) — about the document.
+27. "Whether each named section STATES RULES rather than records findings …" (366–368) — about the decisions register's
+    classification of the sections named.
+28. "*The ratified home for corpus-content, corpus-tier and corpus-acquisition decisions is …" (370–374) — a delegation
+    pointer to another document.
+29. "*Why:* a user mandate, …" (380–383) — a defense.
+30. "Ratified by the user; the record does not date the mandate." (383) — provenance.
+31. "A hard constraint is safe precisely because …" (514–516) — reasoning offered for the rule before it, a defense.
+32. "*Why:* it follows from what the split is FOR, …" (519–520) — a defense.
+33. "*Why:* this is the rule above working …" (524–526) — a defense.
+34. "The measured rate is in the record that produced it …" (526–527) — a pointer to the record of a measurement.
+35. "**Scope, stated because it decides how the finding is read:** …" (527–530) — a remark on how the finding above is
+    read, with a pointer to where its case is recorded.
+36. "*Why:* the classification of an evidence source …" (535–537) — a defense.
+37. "The rates are in the record that measured them (D-431)." (537) — a pointer to the record of a measurement.
+38. "*Why:* it follows from where the two halves sit — …" (544–547) — a defense.
+
+#### The arithmetic at this member
+
+- Rows written: **37** (16.1 to 16.37).
+- Rows split into two claims, **+1 each**: 16.1, 16.2, 16.5, 16.11, 16.12, 16.17, 16.20, 16.22, 16.24, 16.25, 16.27,
+  16.30, 16.31, 16.32, 16.35 — fifteen rows, **+15**.
+- Rows split into three claims, **+2 each**: 16.4, 16.6, 16.8, 16.15 — four rows, **+8**.
+- Rows split into four claims, **+3 each**: 16.7 — one row, **+3**.
+- **Outgoing statements placed: 37 + 15 + 8 + 3 = 63.**
+- Listed under *not a statement*: **38**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row against its claims: 63 dispositions over 63 statements.
+- **UNPLACED statements at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 43 | To L0 (2): 16.30(i), 16.31(ii); to L2 (37): 16.1(i), 16.1(ii), 16.2(i), 16.2(ii), 16.3, 16.5(i), 16.6(ii), 16.7(i), 16.7(ii), 16.7(iii), 16.7(iv), 16.8(i), 16.9, 16.10, 16.13, 16.14, 16.15(i), 16.15(iii), 16.18, 16.19, 16.20(ii), 16.21, 16.23, 16.24(i), 16.24(ii), 16.25(i), 16.27(i), 16.27(ii), 16.28, 16.29, 16.30(ii), 16.32(ii), 16.34, 16.35(i), 16.35(ii), 16.36, 16.37; to the measurement of the analysis (4): 16.5(ii), 16.6(i), 16.6(iii), 16.20(i) |
+| QUARANTINED | 11 | 16.11(ii), 16.12(i), 16.15(ii), 16.16, 16.17(i), 16.17(ii), 16.22(ii), 16.26, 16.31(i), 16.32(i), 16.33 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 9 | 16.4(i), 16.4(ii), 16.4(iii), 16.8(ii), 16.8(iii), 16.11(i), 16.12(ii), 16.22(i), 16.25(ii) |
+| UNPLACED | 0 | — |
+| **Total** | **63** | — |
+
+**The column sums to 63, against 63 statements, so the arithmetic closes at this member**: 0 + 0 + 43 + 11 + 0 + 9 + 0 =
+63. **The statement lists in the right-hand column are the record**, and the integers are re-derivable from them by
+counting; the RELOCATED count is its three charter lists, 2 + 37 + 4.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 9 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 54 |
+| **Total verdicts** | **63** |
+
+*(Counted per named derived statement per statement. No statement names more than one derived statement, so the
+verdicts total 63 over 63 statements.)* The AGREES verdicts are 16.1(ii), 16.5(i), 16.5(ii), 16.18, 16.19 and 16.20(ii)
+(L3-S14), 16.27(ii) and 16.29 (L3-S5), and 16.30(i) (L3-S26) — none of them on a statement placed ADOPTED, each statement
+being the estimator's or the notated record's, as the manifest header states. No statement of this member DIFFERS from a
+derived statement.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 16 is empty.
+- **In homes that are not withheld, carrying no mark:** D-096 (Rows 16.1 and 16.2); D-097 (Rows 16.5 and 16.6); D-098
+  (Rows 16.8, 16.9 and 16.10); D-288 (Row 16.14); D-114 (Rows 16.16 and 16.17); D-292 (Rows 16.18, 16.19 and 16.20);
+  D-293 (Rows 16.23, 16.24 and 16.25); the retired entry D-619 (Rows 16.27, 16.28 and 16.29); the retired entry D-618
+  (Rows 16.30 and 16.31); the retired entry D-620 (Rows 16.32, 16.33 and 16.34); the retired entry D-621 (Rows 16.35,
+  16.36 and 16.37).
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -22355,6 +23199,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   gives it — a voice per instrument, the voice slots of a staff — and analysis written into the score never read as input
   to the analysis. *(The L0 block gives voice membership; IC-L1 S-2 and S-8 make a chord symbol or figure written in the
   notation annotation.)*
+- Rows 16.30 (i) and 16.31 (ii) — that the notated key signature is not a hard fact but soft evidence that leans. *(The
+  L0 block says the key signature is a weak prior and never a fact about the tonality; L3-S26 AGREES at Row 16.30 (i).)*
 
 **To *L1 — Change points, candidates and notated evidence*.**
 
@@ -22530,6 +23376,31 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   the chord valued by scale degree, the segmentation a modeled semi-Markov variable with a segment cap, and the
   inference independent of the style preset. *(The charter makes the tonality and the chord one entangled decision, and
   the segmentation is L2's to publish.)*
+- Rows 16.1 (i), 16.1 (ii), 16.2 (i), 16.2 (ii), 16.3, 16.5 (i), 16.6 (ii), 16.7 (i), 16.7 (ii), 16.7 (iii) and
+  16.7 (iv) — the estimator's factor forms taken from theory and its values fitted once against ground truth, never
+  tuned per case and never corrected in a layer laid over the decode, the held-out split and the capacity budget
+  declared before any value is fit, every fitted object estimated on training folds only, and the capacity budget's
+  bounds. *(The L2 block leaves how any weight is fitted to the layer's detail specification; L3-S14 AGREES at Rows
+  16.1 (ii) and 16.5 (i), stating the same discipline for L3's own phrase model, and cites L2-S38 for principle #20.)*
+- Rows 16.8 (i), 16.9, 16.10, 16.13, 16.14, 16.15 (i) and 16.15 (iii) — the exact decode as the ratified search, the
+  conditions on the reserve prune, the widenings of the search tried and closed, and the closure bounding the search
+  mechanism and not the evidence the estimator integrates. *(Rows 16.13 and 16.14 as Row 1.5; the member marks the
+  block of Row 16.14 LEGACY-scoped.)*
+- Rows 16.18, 16.19, 16.20 (ii) and 16.21 — a value that ships fitted only on freely licensed music, the pool restricted
+  to public-domain, CC0 and CC-BY sources and never drawn from music under a non-commercial licence or none, the fitting
+  design stating its two source pools. *(The derivation's L3-S14 cites L2-S38 for the licence rule; L3-S14 AGREES at
+  Rows 16.18, 16.19 and 16.20 (ii).)*
+- Rows 16.23, 16.24 (i), 16.24 (ii) and 16.25 (i) — values fitted per idiom and never for a preset, the preset a
+  regression surface and a carrier of a fitted set. *(As Row 15.9.)*
+- Rows 16.27 (i), 16.27 (ii), 16.28, 16.29, 16.30 (ii), 16.32 (ii) and 16.34 — evidence split into constraints that rule
+  readings out and evidence that only leans, chord membership decided inside the analysis and never a raw fact, the
+  home key derived from the notes and never pinned by the signature, and a reading-shaped producer soft evidence and
+  never a constraint. *(The L2 block states that a reading-shaped evidence producer is never a constraint; L2
+  publishes the chord-tone assignment, the derivation's §0 citing L2-S8 for it; L3-S5 AGREES at Rows 16.27 (ii) and
+  16.29.)*
+- Rows 16.35 (i), 16.35 (ii), 16.36 and 16.37 — hand-built against learned a question of the emission alone, the
+  decoding machinery indifferent to how the evidence it consumes was produced. *(The L2 block leaves how its candidate
+  readings are evaluated, and from which tables, to the layer's detail specification.)*
 
 **To *the second axis — voice leading*.**
 
@@ -22585,11 +23456,15 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   each step judged on coverage-matched accuracy and correct abstention, never on raw coverage.
 - Row 15.67 — that the tool comparing the two arms invents no value and favours neither arm, a difference classified and
   never patched.
+- Rows 16.5 (ii), 16.6 (i), 16.6 (iii) and 16.20 (i) — the headline number the held-out one, the five-fold
+  cross-validation grouped by analysis file with its pooled number and its bootstrap range, and music under a
+  non-commercial licence or none used to validate and to check. *(As Row 8.138; L3-S14 AGREES at Row 16.5 (ii).)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
 the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows
-numbered 13.n, and member 15's the rows numbered 15.n. Members 4, 5, 6 and 14 relocate no row.)*
+numbered 13.n, member 15's the rows numbered 15.n, and member 16's the rows numbered 16.n. Members 4, 5, 6 and 14
+relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -23113,6 +23988,28 @@ commit that tabulates it, each with the audit question its row writes.
 - Row 15.71 — did the batch surface and the regression reference stay unmoved by the switch, and does the batch
   regression test pass at the current commit?
 
+**Member 16 — `ARCHITECTURE.md`, the passages under *The joint estimator — the standing rules of the production
+inference layer*.**
+
+- Row 16.11 (ii) — on which run, at which weights, was the prune's cost measured worse than the exact decode, and does it
+  reproduce?
+- Row 16.12 (i) — which candidate-admission rule does the shipped decoder apply, where in the code, and which chord
+  classes does it let a segment consider?
+- Row 16.15 (ii) — on which evidence surface and run was the search's contribution measured near zero, and does it
+  reproduce?
+- Row 16.16 — does the shipped decoder commit its maximum-a-posteriori path on the key axis, never abstaining?
+- Row 16.17 (i) — does the estimator name a key for every committed segment at the current commit?
+- Row 16.17 (ii) — does the abstention counter the regression stop reads stand at zero on the production arm at the
+  current commit?
+- Row 16.22 (ii) — which ground-truth analyses does the fit read, and under which licence are they published?
+- Row 16.26 — is the Bach fit one fitted set delivered through more than one preset, the values the same in each?
+- Row 16.31 (i) — on which material and run were the signature's fifths measured against the home key, and does the
+  share that pins wrong reproduce?
+- Row 16.32 (i) — on which corpus and run were the three producers measured to pin wrong, and do the measurements
+  reproduce?
+- Row 16.33 — how was each producer's forced reading tested against the ground truth, and does each of the three error
+  rates reproduce?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -23616,6 +24513,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 15.50 (ii) (L3-S5):** the outgoing *"a rootless class writes no symbol"*, where L3-S5 says *"the root
   field carries a named reason"* while quality and bass are published.
 
+**Member 16.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -23638,10 +24537,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 13 | 52 | 0 | 0 | 6 | 9 | 0 | 37 | 0 | 6 |
 | 14 | 23 | 0 | 0 | 0 | 1 | 0 | 22 | 0 | 5 |
 | 15 | 95 | 1 | 1 | 5 | 73 | 0 | 15 | 0 | 8 |
-| **Total** | **1534** | **110** | **55** | **619** | **346** | **0** | **273** | **131** | **472** |
+| 16 | 63 | 0 | 0 | 43 | 11 | 0 | 9 | 0 | 38 |
+| **Total** | **1597** | **110** | **55** | **662** | **357** | **0** | **282** | **131** | **510** |
 
-**The arithmetic check:** 110 + 55 + 619 + 346 + 0 + 273 + 131 = 1534, against 1534 statements placed (43 + 34 + 21 + 34
-+ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95).
+**The arithmetic check:** 110 + 55 + 662 + 357 + 0 + 282 + 131 = 1597, against 1597 statements placed (43 + 34 + 21 + 34
++ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -23660,10 +24560,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 13 | 0 | 2 | 50 | 52 |
 | 14 | 0 | 0 | 23 | 23 |
 | 15 | 7 | 4 | 85 | 96 |
-| **Total** | **139** | **201** | **1198** | **1538** |
+| 16 | 9 | 0 | 54 | 63 |
+| **Total** | **148** | **201** | **1252** | **1601** |
 
-**The arithmetic check of the verdicts:** 139 + 201 + 1198 = 1538, against the members' verdict totals (43 + 35 + 21 + 34 +
-19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96).
+**The arithmetic check of the verdicts:** 148 + 201 + 1252 = 1601, against the members' verdict totals (43 + 35 + 21 + 34 +
+19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63).
 
 ## 14. The derivation's independence record, relayed
 
