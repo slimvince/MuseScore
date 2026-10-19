@@ -49,7 +49,7 @@ its own entry there.
 | 10 | `cowork_layer4_chordsymbol_design.md`, whole | **DONE** (§6.10) |
 | 11 | `docs/nct_detection_design.md`, whole | **DONE** (§6.11) |
 | 12 | `cowork_engage_arc_plan.md`, whole | **DONE** (§6.12) |
-| 13 | `cowork_phase5b_l4_build_plan.md`, whole | NOT YET TABULATED |
+| 13 | `cowork_phase5b_l4_build_plan.md`, whole | **DONE** (§6.13) |
 | 14 | `cowork_l1l4_review_charter.md`, whole | NOT YET TABULATED |
 | 15 | `ARCHITECTURE.md` passages — the opening block, above the first `## ` heading | NOT YET TABULATED |
 | 16 | `ARCHITECTURE.md` passages — *The joint estimator — the standing rules of the production inference layer* | NOT YET TABULATED |
@@ -96,12 +96,13 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 12 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 13 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
-ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), and positions 7 to 12,
+ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), and positions 7 to 13,
 `cowork_layer5_function_design.md`, `cowork_layer6_grouping_design.md`, `cowork_layer5_engagement_design.md`,
-`cowork_layer4_chordsymbol_design.md`, `docs/nct_detection_design.md` and `cowork_engage_arc_plan.md`, each whole.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
+`cowork_layer4_chordsymbol_design.md`, `docs/nct_detection_design.md`, `cowork_engage_arc_plan.md` and
+`cowork_phase5b_l4_build_plan.md`, each whole.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
 boundary after position 7, by its own capacity judgment; position 8 was tabulated under
@@ -110,9 +111,9 @@ boundary after position 8, by its own capacity judgment; position 9 was tabulate
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fourth_2026_10_19.md`, which stopped at the member
 boundary after position 9, by its own capacity judgment; positions 10 and 11 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fifth_2026_10_19.md`, which stopped at the member
-boundary after position 11, by its own capacity judgment; position 12 was tabulated under
+boundary after position 11, by its own capacity judgment; positions 12 and 13 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_sixth_2026_10_19.md`.** **The writing now stands at
-the member boundary after position 12: not done, positions 13 to 57, and the next writing resumes at position 13.** **A
+the member boundary after position 13: not done, positions 14 to 57, and the next writing resumes at position 14.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -19776,6 +19777,744 @@ are 12.13(ii) (L3-S38) — one statement carrying one verdict, HISTORICAL.
 
 ---
 
+### 6.13 — Member 13: `cowork_phase5b_l4_build_plan.md`, whole
+
+> **Manifest for this member.** Position **13**. Kind: *item 2 — a whole document (not a specification-set member)*.
+> Document: `cowork_phase5b_l4_build_plan.md`. Label: *"the whole document"*. Range, as a locator only: lines 1–84,
+> from its title line to its last line, exactly as the artifact publishes it (**D-307**). Outgoing statements: **52**
+> (rows 13.1 to 13.45; seven rows carry two claims, each split — the arithmetic is at the foot of this member). Listed
+> under *not a statement*: **6**. Counted at this member by this session; the counts appear here and at §13, and nowhere
+> else.
+>
+> **What the L2 named-documents ruling records of this document** (`records/cowork/rulings/cowork_rulings_2026_09_27_l2_named_documents_sitting.md`
+> §2, carried as the ordered first read (3) directs): "the June 2026 incremental build plan for the legacy-era Layer-4
+> per-slice decoder, carrying its measured step results (the commit / inherit / abstain mechanism, the three-chord-tone
+> sufficiency gate, the three-tier membership ladder, the per-step gate on coverage-matched accuracy and correct
+> abstention). **Kind: a design document recording a design for something to be built, with report content inside
+> it.** Carries L2-relevant design reasoning."
+>
+> **WITHHELD homes inside this member: none** — the artifact's `item_4_identities_inside` for position 13 is empty.
+> **No decision on the decisions register's list is homed in this member**: the decisions register's INDEX shows none
+> naming it. **The data file homes two RETIRED entries here**, found by this session's walk of
+> `tools/audit/decisions/backbone_decisions.json` (its `home` fields, the retired block included): **D-636** at lines
+> 8–10 (the banner, above the first section heading) and **D-637** at lines 18–21 (the section *The incremental
+> shape*), each retired from the decisions register's list on 2026-08-16 and kept in that file's retired block with its
+> retirement recorded as *"a provenance verdict, not a judgment on soundness or usefulness; the statement stands at its
+> home and is met by the derivation"* — the same record D-332 carries at §6.10. Neither is withheld, so neither carries a
+> mark; the rows inside their homes are named at the foot. **No SEEN home lies in this member**, agreeing with §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied at
+> §6.8 to §6.12, the colon-lead reading and the status-table reading stated at §6.9's manifest header, and the quotation
+> join were applied unchanged at this member.** Bold run-in leads that are noun-phrase labels are read as titles:
+> *"Goal."* and the four step leads with their status marks (*"Step 1 — … — ✅ DONE."*, *"Step 2 — … — ✅ DONE &
+> ACCEPTED"* with the commit identifiers after it, *"Step 3 — … — ✅ DONE."* and *"Step 4 — … — ✅ DONE."*), whose
+> bodies are tabulated. Leads that are complete sentences stating a rule are tabulated: Rows 13.24 and 13.37. Where a
+> lead stands inside the sentence it opens — *Method per step (non-negotiable):*, *Standing constraints:*, the four item
+> leads of *Step 0*, *Split Increment-C:*, *★ Per-step gate (…):*, *Decision gate:* and *First action:* — the sentence
+> is quoted with it, as at §6.10 to §6.12. A lead ending in a colon is tabulated where it carries a claim of its own
+> (Row 13.19) and listed as a lead where it only introduces its items (item 2). **This member has no glossary and no
+> status table.** **The quotation join found nothing to join at this member**: no line of it breaks a hyphenated
+> compound at its end.
+>
+> **What this member is, read whole before any row was written.** The document is the June 2026 plan for building the
+> earlier layer stack's per-slice chord decoder beside the legacy chord path and switching production to it: its method
+> per step, its standing constraints, a grounding step, four build increments with their measured results, a per-step
+> gate, a go/no-go measurement, the switch, the legacy path's retirement and a closing coverage gate. The decoder's design
+> is the signed design of member 10, tabulated there. **Four placements are stated for challenge.** (a) As at member 12,
+> the plan's steps, gates and constraints are placed **HISTORICAL** as a plan, a build event or a build state — among
+> them *"build-it-right only — no inference-quality tuning (the firewall …)"* (Row 13.6): Row 7.20 placed the function
+> design's own *"Build it right, do not tune it"* against L3-S14 as ADOPTED — carried, and here the same words stand as
+> a constraint of a build plan for the legacy chord path, placed as member 12 placed the plan's governing rules. (b) The
+> conditions on which a change is graded — no new class-(b) error with class-(a) churn verified, the movement of the
+> corpus output as the behaviour change gated, and each step judged on coverage-matched accuracy and correct abstention
+> rather than raw coverage — are **RELOCATED** to *the measurement of the analysis*, as member 10's grading conventions
+> and its gate policy's two error classes were. (c) The step results carrying measured values, and the two
+> descriptions of the paths at the code, are **QUARANTINED**. (d) Two step summaries that hand the chord layer's
+> undecided readings to the function layer name L3-S38, **DIFFERS** (Rows 13.23 (ii) and 13.25), as §6.10 placed the
+> same content, and are placed **HISTORICAL** as build states, as Row 12.13 (ii) was.
+
+---
+
+**Row 13.1 — the goal: build the signed chord decoder, switch production to it, retire the legacy path, step by step.**
+
+*Outgoing statement.* "Build the clean L4 the signed spec (`cowork_layer4_chordsymbol_design.md`) describes and **engage**
+it, retiring the legacy `analyzeChord`/`ChordPathDecoder` chord path — **incrementally**, with a **CC investigation/check
+at every step** so each finding can amend the *next* steps (or, worst case, flag that the **layer architecture** needs
+amendment) before we are committed." — the banner, after its *Goal* label (locator: lines 3–6).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.2 — the two-tier gate restored.**
+
+*Outgoing statement.* "The two-tier BIR gate is now restored (`5357f5a7ed`)." — the banner (locator: line 6).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event.
+
+---
+
+**Row 13.3 — the method per step: investigate, build, verify, assess for amendment.**
+
+*Outgoing statement.* "**Method per step (non-negotiable):** **INVESTIGATE (CC, read-only) → BUILD → VERIFY (Cowork,
+by-sha + source) → ASSESS-FOR-AMENDMENT.**" — the banner (locator: lines 8–9).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the method of a plan of work.
+
+---
+
+**Row 13.4 — no step before the prior step's assessment.**
+
+*Outgoing statement.* "No step starts before the prior step's assessment is in." — the banner (locator: line 9).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a gate on planned work.
+
+---
+
+**Row 13.5 — a surprising finding pauses the sequence.**
+
+*Outgoing statement.* "A surprising finding pauses the sequence and re-plans — that is the point of going incremental." —
+the banner (locator: lines 9–10).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a standing habit of a plan of work.
+
+---
+
+**Row 13.6 — the standing constraint: build it right, no tuning of the inference.**
+
+*Outgoing statement.* "**Standing constraints:** build-it-right only — **no inference-quality tuning** (the firewall; the
+leading-tone C→F stays untouched)." — the banner (locator: lines 12–13).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a standing constraint of a plan of work.
+
+---
+
+**Row 13.7 — the new path built beside the old, dormant, until proven.**
+
+*Outgoing statement.* "The new path is built **alongside, dormant (byte-identical)** until *proven*, then engaged behind
+the gate." — the banner (locator: lines 13–14).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.8 — the switch changes behaviour, so no new class-(b) error and only verified class-(a) churn.**
+
+*Outgoing statement.* "Whole engagement is behaviour-changing → **zero class-(b) regressions ever; class-(a) symmetric
+churn only, every case verified.**" — the banner (locator: lines 14–15). Two claims: (i) the whole switch changes
+behaviour; (ii) it may bring no class-(b) regression, and only class-(a) symmetric churn with every case verified.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — the expectation of a plan. (ii) **RELOCATED** — to *the measurement of
+the analysis*: the two classes of error and the stop on the first are how a change is graded.
+
+---
+
+**Row 13.9 — the legacy path per region.**
+
+*Outgoing statement.* "The legacy path is **per-region** (`greedyExpandSegmentation` + `analyzeChord` +
+`ChordPathDecoder`)." — the section *The incremental shape* (locator: line 18).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED** — *Audit question:* is the legacy chord path per region — `greedyExpandSegmentation`,
+`analyzeChord` and `ChordPathDecoder` — and which path produces the committed chord reading at the current commit (as Row
+1.12)?
+
+---
+
+**Row 13.10 — the new path per slice.**
+
+*Outgoing statement.* "The new path is **per-slice** (`changePointSlices` + `chordslicedecoder`)." — the same section
+(locator: lines 18–19).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED** — *Audit question:* is the per-slice path `changePointSlices` with
+`chordslicedecoder`, and is it reached by any path that runs at the current commit (as Row 10.2 (i))?
+
+---
+
+**Row 13.11 — different decompositions: the corpus output will move, and that movement is the change gated.**
+
+*Outgoing statement.* "They are *different decompositions*, so engaging the new path **will move the corpus output** —
+that movement is the behaviour change we gate, not a byte-identity violation." — the same section (locator: lines
+19–20). Two claims: (i) the two paths decompose the music differently, so the switch will move the corpus output; (ii)
+that movement is the behaviour change the gate judges, not a broken byte-identity.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — the expectation of a plan. (ii) **RELOCATED** — to *the measurement of the
+analysis*: what the regression gate judges a movement of the corpus output to be.
+
+---
+
+**Row 13.12 — the new path proven before any switch.**
+
+*Outgoing statement.* "We build and prove the new path **before** any switch." — the same section (locator: lines 20–21).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.13 — the grounding step's first item: what the decoder is against what the design requires.**
+
+*Outgoing statement.* "**What `chordslicedecoder` already is** (Increment-A naming, Increment-B membership/twoPass) vs
+**what the spec requires** (commit/inherit/**abstain**, the three-tier membership rule, the symmetric-root
+**spelling-pin** = unbuilt Increment-C)." — the section *Step 0*, its first item (locator: lines 25–27).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.14 — the grounding step's second item: the new path compared with the legacy path today.**
+
+*Outgoing statement.* "**How the new path compares to legacy *today*** — run `chordslicedecoder` over the corpus
+diagnostically (NOT engaged) and compare its chord identity to the legacy/GT (the BIR metric)." — the same section, its
+second item (locator: lines 28–29).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.15 — the grounding step's third item: any friction with the architecture.**
+
+*Outgoing statement.* "**Any architecture friction** surfaced (per-slice vs the L2 slicer granularity; how L3 key + the
+section layer would interact with a per-slice chord path; whether the spec's decomposition still fits the as-built
+L1–L3)." — the same section, its third item (locator: lines 30–31).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.16 — the grounding step's output: the increment sequence and a first go/no-go read.**
+
+*Outgoing statement.* "**Output:** the grounded **increment sequence** (which sub-builds, in what order) + a first
+GO/NO-GO read on whether the new path is plausibly equivalent-or-better, or whether the architecture needs a rethink." —
+the same section, its fourth item (locator: lines 32–33).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.17 — the grounding step's finding: the new path behind, all of it in the unbuilt mechanism.**
+
+*Outgoing statement.* "Step 0 measured the new path **−15 vs legacy** (58 vs 74% chord-root), and **all of it is the
+unbuilt commit/inherit/abstain mechanism (G1)** — architecture sound (per-slice fits the slicer + L3 spine, no
+amendment)." — the section *Steps 1..n* (locator: lines 37–38). Two claims: (i) the new path was measured behind the
+legacy path on chord root; (ii) the whole deficit lay in the unbuilt commit, inherit and abstain mechanism, the
+architecture found sound.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED** — *Audit question:* on which corpus and run was the per-slice path measured
+behind the legacy path on chord root, and does it reproduce? (ii) **QUARANTINED** — *Audit question:* on which run was
+the whole deficit located in the unbuilt commit, inherit and abstain mechanism, and the architecture found sound?
+
+---
+
+**Row 13.18 — the order re-ordered to attack that mechanism first.**
+
+*Outgoing statement.* "So the order is **re-ordered to attack the lever first.**" — the same section (locator: lines
+38–39).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.19 — each increment byte-identical, the decoder dormant, each followed by a re-measurement.**
+
+*Outgoing statement.* "Each increment is **byte-identical** (decoder production-dead, dormant — corpus 53/24/53
+unchanged), and each ends with a **re-measure** of the new-vs-legacy delta:" — the same section, the lead of its list
+(locator: lines 39–40). Two claims: (i) each increment is byte-identical, the decoder dormant in production; (ii) each
+ends with a re-measurement of the difference between the new path and the legacy path.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a build state. (ii) **HISTORICAL** — a plan.
+
+---
+
+**Row 13.20 — where the deficit lay: phantom roots and thin slices committed to.**
+
+*Outgoing statement.* "The −15 lived here (41% phantom roots + 42% thin slices = over-commit to noise — no abstain, no
+sufficiency gate)." — the same list, the *Step 1* item (locator: lines 41–42).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED** — *Audit question:* on which run were the deficit's phantom roots and thin slices
+counted, and does the count reproduce?
+
+---
+
+**Row 13.21 — the first increment built, closing most of the deficit.**
+
+*Outgoing statement.* "Built per the spec (`enableCommitDecision`/`applyCommitDecision`); closed most of the deficit and
+confirmed the sequence holds." — the same item (locator: lines 42–43). Two claims: (i) the increment was built per the
+design; (ii) it closed most of the deficit.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a build event. (ii) **QUARANTINED** — *Audit question:* on which run was
+most of the deficit found closed by the commit, inherit and abstain build, and does it reproduce?
+
+---
+
+**Row 13.22 — the membership tiers and the two-reading inherit, measured.**
+
+*Outgoing statement.* "G2/G3 accuracy-neutral/correct; the two-reading inherit is the **best variant** (coverage-matched
+68.0%, fewest misses 573, thin-slice misses 300→61)." — the same list, the *Step 2* item (locator: lines 45–46). Two
+claims: (i) the membership tiers were found neutral or correct on accuracy; (ii) the two-reading inherit was found the
+best variant.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED** — *Audit question:* on which run were the membership tiers found neutral or
+correct on accuracy, and does it reproduce? (ii) **QUARANTINED** — *Audit question:* on which run was the two-reading
+inherit found the best variant, with the coverage-matched accuracy and the misses the member gives, and does it
+reproduce?
+
+---
+
+**Row 13.23 — the higher abstention, by design: transitional slices declined to the function layer.**
+
+*Outgoing statement.* "Its abstain is *higher* (58.2%) **by design** — it correctly declines TRANSITION slices → L5
+(spec-faithful)." — the same item (locator: lines 46–47). Two claims: (i) the increment's abstention was measured
+higher; (ii) by design it declines transitional slices to the function layer.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S38.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing build *"correctly declines TRANSITION slices → L5"*; L3-S38
+says *"No L3 fact may change an L2 fact, a rival or a mass."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED** — *Audit question:* on which run was the decoder's abstention rate measured,
+and does it reproduce? (ii) **HISTORICAL** — a build state, its design tabulated at member 10.
+
+---
+
+**Row 13.24 — the bounded-window joint step unlocked and deferred to the go/no-go measurement.**
+
+*Outgoing statement.* "**§15-O2 (bounded-window joint) is now UNLOCKED but DEFERRED to Step M** (adopt only if the engage
+coverage-matched assessment shows the two-reading falls short; its window bound is delicate — must not cross into L5
+progression grammar)." — the same item (locator: lines 47–49).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a deferred plan.
+
+---
+
+**Row 13.25 — the third increment: the open question named and competing readings carried for the function layer.**
+
+*Outgoing statement.* "Beyond margin-only; names the open question on abstain + carries competing readings for L5 (the
+*representation*, not threshold-tuning — Phase B)." — the same list, the *Step 3* item (locator: lines 50–51).
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing step *"carries competing readings for L5"*; L3-S38 says *"No L3
+fact may change an L2 fact, a rival or a mass."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state, its design tabulated at member 10.
+
+---
+
+**Row 13.26 — the fourth increment: the symmetric root from the spelling view.**
+
+*Outgoing statement.* "Symmetric-root via `spellingview`." — the same list, the *Step 4* item (locator: line 52).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 13.27 — the spelling pin built dormant, the new four-note types deferred.**
+
+*Outgoing statement.* "**Split Increment-C: C1 spelling-pin (dormant, byte-identical) built + C2 new four-note dim7/mMaj7
+types (G5, gated → engage) deferred** so new types don't move legacy output (Step-0 F-4)." — the same item (locator:
+lines 52–54).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state and a deferred plan.
+
+---
+
+**Row 13.28 — what is left to the switch.**
+
+*Outgoing statement.* "New types (G5) / bounded-context (G7) / **section-grouping integration (F-3)** + the **§15-O2
+decision** → the **engage** step (Step M)." — the same list, its fifth item (locator: lines 55–56).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.29 — each step judged on coverage-matched accuracy and correct abstention, not raw coverage.**
+
+*Outgoing statement.* "**★ Per-step gate (CORRECTED — the §F mis-framing fix):** re-measure new-vs-legacy and judge by
+**coverage-matched accuracy + *correct* abstention** (declining genuinely-ambiguous slices → L5 is RIGHT), **NOT raw
+coverage**." — the same list, its last item (locator: lines 57–58).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis*: how a change is graded.
+
+---
+
+**Row 13.30 — a step that improves coverage-matched accuracy while abstaining correctly passes.**
+
+*Outgoing statement.* "An increment that improves coverage-matched accuracy while abstaining correctly is a GO even if
+raw committed-fraction drops." — the same item (locator: lines 58–60).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis*, travelling with Row 13.29.
+
+---
+
+**Row 13.31 — stop only on a loss of coverage-matched accuracy or a class-(b) error.**
+
+*Outgoing statement.* "STOP/amend only if coverage-matched accuracy regresses or a *class-(b)* error appears." — the same
+item (locator: line 60).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis*, travelling with Row 13.29.
+
+---
+
+**Row 13.32 — the go/no-go: the full comparison of the two paths on the corpus.**
+
+*Outgoing statement.* "With the new path complete, the full diagnostic comparison on the corpus (both presets): the new
+per-slice path's BIR vs the legacy's, case by case." — the section *Step M* (locator: lines 63–64).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.33 — switch only if the new path is equivalent or better: no new class-(b) error.**
+
+*Outgoing statement.* "**Decision gate:** engage only if the new path is **equivalent-or-better** — **zero new class-(b)
+regressions**, class-(a) churn understood." — the same section (locator: lines 64–65).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis*, travelling with Row 13.8 (ii).
+
+---
+
+**Row 13.34 — a class-(b) regression stops the plan for amendment.**
+
+*Outgoing statement.* "If it regresses class-(b), STOP and re-plan (the spec or a prior increment needs amendment —
+exactly what incremental + investigate-each-step exists to catch)." — the same section (locator: lines 65–66).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.35 — the switch of the region analyzer onto the new spine.**
+
+*Outgoing statement.* "Switch `regionanalyzer.cpp` onto the new L1→L4 spine (the bounded-context engagement + the new
+chord path), per the parameter form already in place." — the section *Step E* (locator: lines 69–70).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.36 — the switch's difference investigated, the goldens refreshed only if verified correct.**
+
+*Outgoing statement.* "Investigate the engagement delta (BIR + snapshots); the snapshot goldens refresh **only** if the
+change is verified-correct." — the same section (locator: lines 70–71).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.37 — the German bass-naming fix folded into the switch.**
+
+*Outgoing statement.* "**Fold in the German-bass correctness fix here** (it's an L4 formatter fix)." — the same section
+(locator: line 71).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.38 — the dense-start alignment decided at the switch.**
+
+*Outgoing statement.* "The F17 dense-start config alignment is decided here too (now that the gate runs)." — the same
+section (locator: lines 71–72).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.39 — the legacy path retired after the switch is proven.**
+
+*Outgoing statement.* "Retire the legacy per-region path: `greedyExpandSegmentation`, the legacy `ChordPathDecoder` commit
+chain, the second pitch-context builder, and resolve the staged scaffolding (audit Q1/Q5)." — the section *Step R*
+(locator: lines 75–76).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.40 — each retirement its own gated step.**
+
+*Outgoing statement.* "Each its own gated step." — the same section (locator: line 76).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.41 — the unification of the first four layers then complete.**
+
+*Outgoing statement.* "**→ L1–L4 unification complete.**" — the same section (locator: lines 76–77).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the outcome of a plan.
+
+---
+
+**Row 13.42 — the closing coverage gate.**
+
+*Outgoing statement.* "With the L4 path final, the moving-~600 branch triage closes, the defensive-exclusion +
+covered-but-uncredited ledgers are applied, and the union reachable-branch seal is measured." — the section *Then — the
+coverage seal* (locator: lines 80–81).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.43 — the first four layers complete, then the function layer.**
+
+*Outgoing statement.* "→ **✅ L1–L4 COMPLETE (nothing left)** → L5." — the same section (locator: line 81).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the outcome of a plan.
+
+---
+
+**Row 13.44 — the first action: the grounding step.**
+
+*Outgoing statement.* "**First action: Step 0 — the read-only grounding investigation.**" — the closing line (locator: line
+84).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+---
+
+**Row 13.45 — everything after it provisional on its findings.**
+
+*Outgoing statement.* "Everything after it is provisional on its findings." — the closing line (locator: line 84).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the status of a plan.
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. "`upstream` never." (15) — a rule about this project's repository, not about the analysis.
+2. "Before any build, CC establishes, at source + by measurement:" (24) — a lead, its items tabulated at Rows 13.13 to
+   13.16.
+3. "The exact gap." (27) — a restatement of Row 13.13.
+4. "Where do they agree / differ, and by how much?" (29) — a question, the item's own.
+5. "(This step can rewrite Steps 1–n.)" (33–34) — about the document's own steps.
+6. "The L4→L5 contract." (51) — about the document, a name for the step.
+
+#### The arithmetic at this member
+
+- Rows written: **45** (13.1 to 13.45).
+- Rows split into two claims, **+1 each**: 13.8, 13.11, 13.17, 13.19, 13.21, 13.22, 13.23 — seven rows, **+7**.
+- **Outgoing statements placed: 45 + 7 = 52.**
+- Listed under *not a statement*: **6**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row against its claims: 52 dispositions over 52 statements.
+- **UNPLACED statements at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 6 | To the measurement of the analysis (6): 13.8(ii), 13.11(ii), 13.29, 13.30, 13.31, 13.33 |
+| QUARANTINED | 9 | 13.9, 13.10, 13.17(i), 13.17(ii), 13.20, 13.21(ii), 13.22(i), 13.22(ii), 13.23(i) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 37 | 13.1, 13.2, 13.3, 13.4, 13.5, 13.6, 13.7, 13.8(i), 13.11(i), 13.12, 13.13, 13.14, 13.15, 13.16, 13.18, 13.19(i), 13.19(ii), 13.21(i), 13.23(ii), 13.24, 13.25, 13.26, 13.27, 13.28, 13.32, 13.34, 13.35, 13.36, 13.37, 13.38, 13.39, 13.40, 13.41, 13.42, 13.43, 13.44, 13.45 |
+| UNPLACED | 0 | — |
+| **Total** | **52** | — |
+
+**The column sums to 52, against 52 statements, so the arithmetic closes at this member**: 0 + 0 + 6 + 9 + 0 + 37 + 0 =
+52. **The statement lists in the right-hand column are the record**, and the integers are re-derivable from them by
+counting; the RELOCATED count is its one charter list, 6.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 2 |
+| THE DERIVATION IS SILENT | 50 |
+| **Total verdicts** | **52** |
+
+*(Counted per named derived statement per statement. No statement names two derived statements, so the verdicts total 52
+over 52 statements.)* No statement carries AGREES. The DIFFERS statements are 13.23(ii) and 13.25 (L3-S38) — two
+statements carrying two verdicts, both HISTORICAL.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 13 is empty.
+- **In homes that are not withheld, carrying no mark:** the retired entry D-636 (Rows 13.3, 13.4 and 13.5); and the
+  retired entry D-637 (Rows 13.9, 13.10, 13.11 and 13.12).
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -20023,11 +20762,14 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   judgment while the pipeline is rebuilt.
 - Rows 12.40 and 12.42 — an error slice decomposed into the share a structural lever reaches, the share the fitted step
   owns and the share the ceiling holds, before anything is built for it, the decomposition derived and never asserted.
+- Rows 13.8 (ii), 13.11 (ii), 13.29, 13.30, 13.31 and 13.33 — the gate on switching to the per-slice path: no new
+  class-(b) error with class-(a) churn verified, the corpus output's movement the behaviour change the gate judges, and
+  each step judged on coverage-matched accuracy and correct abstention, never on raw coverage.
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
-the rows numbered 10.n, member 11's the rows numbered 11.n, and member 12's the rows numbered 12.n. Members 4, 5 and 6
-relocate no row.)*
+the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows numbered 12.n, and member 13's the rows
+numbered 13.n. Members 4, 5 and 6 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -20413,6 +21155,24 @@ commit that tabulates it, each with the audit question its row writes.
 - Row 12.35 (ii) — on which run was the difference under an alternative key found to be chance, and does it reproduce?
 - Row 12.49 — on which corpus and run was neither the chord axis nor the key axis found improved by a wider search, and
   does that hold of the analysis that runs at the current commit?
+
+**Member 13 — `cowork_phase5b_l4_build_plan.md`, whole.**
+
+- Row 13.9 — is the legacy chord path per region — `greedyExpandSegmentation`, `analyzeChord` and `ChordPathDecoder` — and
+  which path produces the committed chord reading at the current commit (as Row 1.12)?
+- Row 13.10 — is the per-slice path `changePointSlices` with `chordslicedecoder`, and is it reached by any path that runs
+  at the current commit (as Row 10.2 (i))?
+- Row 13.17 (i) — on which corpus and run was the per-slice path measured behind the legacy path on chord root, and does
+  it reproduce?
+- Row 13.17 (ii) — on which run was the whole deficit located in the unbuilt commit, inherit and abstain mechanism, and
+  the architecture found sound?
+- Row 13.20 — on which run were the deficit's phantom roots and thin slices counted, and does the count reproduce?
+- Row 13.21 (ii) — on which run was most of the deficit found closed by the commit, inherit and abstain build, and does
+  it reproduce?
+- Row 13.22 (i) — on which run were the membership tiers found neutral or correct on accuracy, and does it reproduce?
+- Row 13.22 (ii) — on which run was the two-reading inherit found the best variant, with the coverage-matched accuracy and
+  the misses the member gives, and does it reproduce?
+- Row 13.23 (i) — on which run was the decoder's abstention rate measured, and does it reproduce?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -20895,6 +21655,13 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 12.13 (ii) (L3-S38):** the outgoing Layer-5 engagement design delivered *"selection-by-joint-consistency"*
   among the carried readings, where L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
+**Member 13.** No ADOPTED — proposed row.
+
+- **DIFFERS — Row 13.23 (ii) (L3-S38):** the outgoing chord layer *"correctly declines TRANSITION slices → L5"*, where
+  L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
+- **DIFFERS — Row 13.25 (L3-S38):** the outgoing step *"carries competing readings for L5"*, where L3-S38 says no L3 fact
+  may change an L2 fact.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -20914,10 +21681,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 10 | 247 | 5 | 0 | 214 | 17 | 0 | 10 | 1 | 69 |
 | 11 | 68 | 0 | 0 | 33 | 17 | 0 | 18 | 0 | 35 |
 | 12 | 70 | 0 | 0 | 4 | 11 | 0 | 54 | 1 | 28 |
-| **Total** | **1364** | **109** | **54** | **608** | **263** | **0** | **199** | **131** | **453** |
+| 13 | 52 | 0 | 0 | 6 | 9 | 0 | 37 | 0 | 6 |
+| **Total** | **1416** | **109** | **54** | **614** | **272** | **0** | **236** | **131** | **459** |
 
-**The arithmetic check:** 109 + 54 + 608 + 263 + 0 + 199 + 131 = 1364, against 1364 statements placed (43 + 34 + 21 + 34
-+ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70).
+**The arithmetic check:** 109 + 54 + 614 + 272 + 0 + 236 + 131 = 1416, against 1416 statements placed (43 + 34 + 21 + 34
++ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -20933,10 +21701,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 10 | 10 | 27 | 210 | 247 |
 | 11 | 0 | 0 | 68 | 68 |
 | 12 | 1 | 1 | 68 | 70 |
-| **Total** | **132** | **195** | **1040** | **1367** |
+| 13 | 0 | 2 | 50 | 52 |
+| **Total** | **132** | **197** | **1090** | **1419** |
 
-**The arithmetic check of the verdicts:** 132 + 195 + 1040 = 1367, against the members' verdict totals (43 + 35 + 21 + 34 +
-19 + 10 + 391 + 197 + 232 + 247 + 68 + 70).
+**The arithmetic check of the verdicts:** 132 + 197 + 1090 = 1419, against the members' verdict totals (43 + 35 + 21 + 34 +
+19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52).
 
 ## 14. The derivation's independence record, relayed
 
