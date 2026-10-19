@@ -176,11 +176,11 @@
   },
   "characters_per_member": {
    "CLAUDE.md": 105876,
-   "STATUS.md": 11752,
+   "STATUS.md": 11751,
    "DECISIONS.md": 127727,
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → gating_ids": 2826
   },
-  "total_characters": 248181,
+  "total_characters": 248180,
   "further_spans_of_the_same_artifact_NOT_counted_into_the_read": {
    "tools/audit/nongating_apparatus_rows.json → ★_the_live_gating_answer → the_gating_rows": {
     "characters": 62498,
@@ -276,9 +276,9 @@
    "from_commit": "1760d9a4a87f82a6bdbc7cb17e99ccdd8ae4c433",
    "from_total": 367121,
    "from_regime": "whole-file practice",
-   "to_total": 248181,
+   "to_total": 248180,
    "to_regime": "ruled membership",
-   "change_in_characters": -118940,
+   "change_in_characters": -118941,
    "change_percent": -32.4,
    "★_this_comparison_crosses_a_regime_boundary": true,
    "what_that_means_here": "the two sides answer DIFFERENT questions — one side counts the whole of `CLAUDE.md` because that was the practice there, the other counts only the spans the ruled membership names — so the change is not a saving one act made, and must not be read as one"
@@ -287,9 +287,9 @@
    "from_commit": "594074e1e1900079e449d2b79a38920d21bca6e6",
    "from_total": 296832,
    "from_regime": "whole-file practice",
-   "to_total": 248181,
+   "to_total": 248180,
    "to_regime": "ruled membership",
-   "change_in_characters": -48651,
+   "change_in_characters": -48652,
    "change_percent": -16.39,
    "★_this_comparison_crosses_a_regime_boundary": true,
    "what_that_means_here": "the two sides answer DIFFERENT questions — one side counts the whole of `CLAUDE.md` because that was the practice there, the other counts only the spans the ruled membership names — so the change is not a saving one act made, and must not be read as one"
