@@ -25318,3 +25318,64 @@ the working tree during the run.
 
 *Provenance: CC, 2026-10-19, appended in the one further commit after the close commit
 `797a96a99807952cb504583abb34085108a55a55`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 COMPARISON CONTINUED FROM POSITION 8 — MEMBERS 8 TO 8 TABULATED, PROPOSALS ONLY, NOTHING DECIDED, NO ALGORITHM CHANGED — TASK 1 STOPPED AT THE MEMBER BOUNDARY AFTER POSITION 8, POSITIONS 9 TO 57 NOT DONE
+
+This batch ran `records/cc/instructions/cc_instruction_l3_comparison_tabulation_third_2026_10_19.md`, pinned at Task 0
+to blob `89b1a0c18508299f8efc997224784ec4e928a208`:
+
+- **Task 0** checked this dispatch and handoff entry 427 at their last bytes at their blobs, landed both as they stood
+  (`309048d4…`), took the opening guard capture — as A2 predicted, the thirteen and nothing else, with the evidence pin
+  green — and verified the derivation and the brief at their blobs before Task 1 opened.
+- **Task 1** extended `ratification_surfaces/cowork_comparison_l3_reading.md` with **position 8,
+  `cowork_layer6_grouping_design.md`, whole**, in one commit (`98a0efc2…`), with §0, §10 to §13 and the one banner edit
+  in the same commit. The capacity judgment was stated before the member was opened, and the member was finished whole;
+  the first-member rule did not fire. Every quotation of an outgoing statement was checked against the member's text at
+  the objects before the commit, and §6.1 to §6.7 were compared byte-identical before it. It **STOPPED at the member
+  boundary after position 8** by the capacity judgment 1(h) orders, written before position 9 was opened. **Positions 9
+  to 57 are UNTOUCHED, not partly worked** (**D-672**), and §0 of the reading file says so.
+- **Task 2** closed.
+
+**NOTHING WAS DECIDED; NO DISPOSITION WAS APPLIED; EVERY PLACEMENT IS A PROPOSAL.** No outgoing text was edited. The
+derivation, the brief, the pack and the two earlier reading files were not edited, and §6.1 to §6.7 of the reading file
+were not touched. No session was booted. No measurement of the analysis was made. No open-items row and no `D-NNN`. No
+ruling was taken, no recommendation was made, and nothing was put to the user. The five ★ questions were not put. Nothing
+any layer computes changed.
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_comparison_tabulation_third_2026_10_19.md`, and is pointed at rather than copied (#6):
+
+- the members done and not done, with both capacity judgments, at its head;
+- the ordered first read (§0);
+- Task 0, with the refs, the chain, A1, the last bytes, the commit, the opening capture whole and the two blobs (§1);
+- Task 1's commit, the four-way re-read before it and the slips it caught, and how the marks were placed (§2);
+- Task 2, with the `STATUS.md` entries and the substring search, the forward bound's aiming, `--apply` and `--check` with
+  the three entries moved by name, and the checks with what each regenerated artifact moved (§3);
+- A1 to A5 (§4), the findings and observations (§5), the declared departures (§6), the scripts (§7), what the batch did
+  not do (§8), the plan's tell (§9) and the self-check (§10).
+
+### What needs the writing side, named rather than resolved
+
+1. **Placements stated for challenge at position 8** (report §5, items 1 and 3): the document's §0 tabulated as its
+   glossary, the *"Does not do"* noun-phrase bullets read under their lead, and the ten recognised-schema statements left
+   UNPLACED because no charter names their subject.
+2. **Two withheld homes' cited line ranges end on a line where a new sentence begins** (D-457, D-454); the mark followed
+   the recorded verbatim (report §5, item 2).
+3. **Reserved words in earlier members' text** — bare *measure* in the gauging sense at Rows 1.24 (i), 7.11 and 7.22 and
+   their §11 questions, and *flat* in the non-musical sense in the titles of Rows 3.1 and 7.336 — recorded, not acted on;
+   §6.1 to §6.7 are frozen for a continuing batch (report §5, item 4).
+4. **The classification tool's message still names four tools without an authored verdict**, unchanged. Authoring one
+   was not this batch's act.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects, then the next tabulation
+  dispatch resuming at the member boundary §0 of the reading file records: position 9, `cowork_layer5_engagement_design.md`,
+  whole.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-19, at boot tip `b4994034289b01490c69983b25a458abb36797f8`, under
+`cc_instruction_l3_comparison_tabulation_third_2026_10_19.md`, after the dispatch's ordered first reads. Every commit
+identifier here was read from the commit's own object and `origin/master` at its ref file after each push; the guard
+verdicts are this batch's own runs.*

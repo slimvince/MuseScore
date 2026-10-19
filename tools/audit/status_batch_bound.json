@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l3_comparison_tabulation_second_2026_10_18.md, Task 2",
+ "dispatch": "cc_instruction_l3_comparison_tabulation_third_2026_10_19.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -585,46 +585,44 @@
    "base_commit": "d211cfd85459764e8fb201b80f5904b9881f4143",
    "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_2026_10_18.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_comparison_tabulation_third_2026_10_19.md, Task 2",
+   "base_commit": "98a0efc2f4033dd1e596e83aa720b64377654fc5",
+   "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_second_2026_10_18.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "d211cfd85459764e8fb201b80f5904b9881f4143",
- "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_2026_10_18.md",
+ "base_commit": "98a0efc2f4033dd1e596e83aa720b64377654fc5",
+ "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_second_2026_10_18.md",
  "the_kind_of_move": "ordinary",
- "entries_moved": 4,
- "characters_moved": 3030,
+ "entries_moved": 3,
+ "characters_moved": 2353,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 1670,
-   "sha256": "b8fc9fdcdbaf97a14780b1e490aa4308347d5b15635999690db4af3aeb4e52ad",
+   "characters": 1395,
+   "sha256": "1a9df3db9ca4686859713add765954ff9860e701c59c29cd1e65f1ac63b6a9eb",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-18 (CC — `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`, Task 3, the close. **★★ THE L3 TABULATION POPULATIO"
+   "opening": "*2026-10-19 (CC — `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, Task 2, the close. **★★ THE L3 COMPARISON CO"
   },
   {
    "line_at_base": 10,
-   "characters": 525,
-   "sha256": "52023c77f6fcd3fad12e0331bb92848f4f23b0d5f1d04763344dc25b0f45fe02",
+   "characters": 565,
+   "sha256": "c78b965b636098a06b77443160991173b5d8c91ebf722902d382440ee71af8e1",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-18 (CC — Same dispatch, Task 2. **THE READING FILE OPENED AND POSITIONS 1 TO 6 TABULATED**: the skeleton committed with its population, unit "
+   "opening": "*2026-10-19 (CC — Same dispatch, Task 1. **THE L3 COMPARISON CONTINUED: POSITION 7 TABULATED**: the capacity judgment stated before the member was ope"
   },
   {
    "line_at_base": 12,
-   "characters": 517,
-   "sha256": "e9fec52585a57be152d725d9054a4872a3ab66947a31ae0ae3ad41bd60b661da",
+   "characters": 393,
+   "sha256": "fa1cc7d2993a25e1ea755d7309ef58f3d7719a388c7a92ee9e2b4e1ef56c21bc",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-18 (CC — Same dispatch, Task 1. **THE L3 TABULATION POPULATION PUBLISHED**: the population tool amended by the dispatch's six edits, the four"
-  },
-  {
-   "line_at_base": 14,
-   "characters": 318,
-   "sha256": "cfc622e65ee7159554cfefc9effd908c5d2d47c13fd375a71d536a0f4c4a824b",
-   "membership": "says `Same dispatch`, in the run below the entry that names it",
-   "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-18 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRY 425 ARE LANDED**, as they stood: each checked at its last bytes at its blob"
+   "opening": "*2026-10-19 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRY 426 ARE LANDED**, as they stood: each checked at its last bytes at its blob"
   }
  ],
  "reconciliation": {
