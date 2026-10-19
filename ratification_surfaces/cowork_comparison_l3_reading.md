@@ -3,7 +3,8 @@
 > **STATUS: READING FILE — a tabulation delivered to the user. It recommends nothing, establishes
 > nothing, applies nothing, and rules on nothing.** Prepared by Claude Code, 2026-10-18, under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md` Task 2, and continued under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_third_2026_10_19.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -40,7 +41,7 @@ its own entry there.
 | 5 | `ARCHITECTURE.md` — *4.3b HarmonicRhythm* | **DONE** (§6.5) |
 | 6 | `ARCHITECTURE.md` — *Harmonic rhythm detection* | **DONE** (§6.6) |
 | 7 | `cowork_layer5_function_design.md`, whole | **DONE** (§6.7) |
-| 8 | `cowork_layer6_grouping_design.md`, whole | NOT YET TABULATED |
+| 8 | `cowork_layer6_grouping_design.md`, whole | **DONE** (§6.8) |
 | 9 | `cowork_layer5_engagement_design.md`, whole | NOT YET TABULATED |
 | 10 | `cowork_layer4_chordsymbol_design.md`, whole | NOT YET TABULATED |
 | 11 | `docs/nct_detection_design.md`, whole | NOT YET TABULATED |
@@ -94,12 +95,15 @@ its own entry there.
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
 commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 7 — the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 —
 the per-slice chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
-ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), and position 7,
-`cowork_layer5_function_design.md` whole.** **The first batch, under
+ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), and positions 7 and 8,
+`cowork_layer5_function_design.md` and `cowork_layer6_grouping_design.md`, each whole.** **The first batch, under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`, stopped at the member boundary after
 position 6, by its own capacity judgment; position 7 was tabulated under
-`records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`.** **The writing now stands at
-the member boundary after position 7: not done, positions 8 to 57, and the next writing resumes at position 8.** **A
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
+boundary after position 7, by its own capacity judgment; position 8 was tabulated under
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_third_2026_10_19.md`, which stopped at the member
+boundary after position 8, by its own capacity judgment.** **The writing now stands at the member boundary after
+position 8: not done, positions 9 to 57, and the next writing resumes at position 9.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -8508,6 +8512,2633 @@ are UNPLACED and 44 RELOCATED.
 
 ---
 
+### 6.8 — Member 8: `cowork_layer6_grouping_design.md`, whole
+
+> **Manifest for this member.** Position **8**. Kind: *item 2 — a whole document (a specification-set member)*.
+> Document: `cowork_layer6_grouping_design.md`. Label: *"the whole document"*. Range, as a locator only: lines 1–469,
+> from its title line to its last line, exactly as the artifact publishes it (**D-307**). Outgoing statements:
+> **195** (rows 8.1 to 8.147; thirty-six rows carry two claims and six rows three, each split — the arithmetic is at
+> the foot of this member). Listed under *not a statement*: **48**. Counted at this member by this session; the counts
+> appear here and at §13, and nowhere else.
+>
+> **The WITHHELD homes inside this member**, from the artifact's `item_4_identities_inside` for position 8, each
+> re-located by this session at `tools/audit/decisions/backbone_decisions.json` (its `home` field) and agreeing with the
+> artifact: **D-457** at lines 214–222 (§5.1, the edge-truncation amendment); **D-459** at lines 254–261 (§5.2, the
+> contract-compliance parenthesis); **D-460** at lines 292–296 (§5.4); **D-454** at lines 307–311 (§6); **D-461** at
+> lines 324–326 (§7, *Proportionality*); **D-456** at lines 348–354 (§9, D3); **D-455** at lines 355–357 (§9, D4); and
+> **D-462** at lines 369–371 (§10, the cadence-alignment oracle). The extent of each home is its recorded verbatim, which
+> this session read at the decisions register's data file: D-457's ends at *"never L6's."* and D-454's at *"not a new Layer-6
+> mechanism."*, so the sentences that begin on those homes' last lines lie outside them. **A ninth decision is homed in
+> this member and is not withheld:** D-458, at lines 234–237 (§5.1-a, the canonical codetta reading), which carries no
+> mark. **No SEEN home lies in this member**: none of the identities §5 of this file names is homed here, agreeing with
+> §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header, and the
+> quotation join were applied unchanged at this member.** Bold run-in leads that are noun-phrase labels (*"Does:"*,
+> *"Does not do:"*, *"Proportionality."*, *"The firewall."*, *"Additive and read-only over Layer 5."*, *"D1 — Flat
+> grouping, not hierarchical."*, *"D2 — Assembly, not detection."*, the status-labelled heads of the open items, and the
+> like) are read as titles; leads that are complete sentences stating a rule (*"Grouping is assembly, not detection."*,
+> *"Reuse, do not duplicate."*, the D3, D4 and D5 leads) are tabulated. Where a lead stands inside the sentence it opens,
+> the sentence is quoted with it. The document's §0 is its glossary (its §12 says so), and its entries — and the two
+> further entries of §12 — are tabulated one row per entry, each placed by its subject, with the entry's distinct claims
+> marked (i), (ii) and so on. **The quotation join found nothing to join at this member**: no line of it breaks a
+> hyphenated compound at its end.
+>
+> **What this member is, read whole before any row was written.** The document is the signed design of the earlier
+> layer stack's grouping layer, built dormant: it assembles, from facts earlier layers decided, a non-nested partition
+> into *punctuation-spans* delimited by a separate phrase-boundary primitive, a non-nested partition into key areas, the
+> alignment of the function layer's cadences to the span endings (an off-boundary cadence surfaced as *internal*), the
+> carried unresolved marks, and the hosted progression-schema spans; it declines hierarchical grouping, sections and
+> formal functions from its core. Under the ratified charter the phrase reading and the section grouping are L3
+> *decisions* and the cadence is read at a decided phrase end, so most rules on the grouping's own subject meet a
+> derived statement that differs; the key areas meet a silent derivation; and the build-state, validation and
+> measurement passages are HISTORICAL, QUARANTINED or RELOCATED to *the measurement of the analysis*.
+
+---
+
+**Row 8.1 — the layer as built, dormant and validated.**
+
+*Outgoing statement.* "**Status: AS-BUILT (2026-07-02) — built dormant + oracle-validated after the extension gate
+passed.**" — the status block above §0 (locator: line 3).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 8.2 — the build implements §5.1 to §5.5, and its step-1 validation passed the no-added-detection guard.**
+
+*Outgoing statement.* "`analysis/grouping/groupinglayer.{h,cpp}` (commits `da06242dd2`/`73b2a5a791`/`b17abc9e71`; report
+`records/cc/reports/cc_l6_build_report.md`, Cowork-ratified): §5.1–§5.5 exactly, over plain-data input structures a test
+can construct by hand; 18 oracle-asserted tests (bringing the composing suite to 1033 tests total); the §10 step-1
+validation on the 16 **dev beds** (the development-split sub-corpora of the corpus registry, used as test beds —
+held-out beds untouched) with the **no-added-detection guard PASS** (boundaries added by L6 = 0; interior span
+boundaries exactly matched, 718 of 718 — assembly proven, §6)." — the status block (locator: lines 4–10). Two claims:
+(i) the code implements §5.1 to §5.5 exactly, over plain-data inputs; (ii) the step-1 validation on the development
+beds passed the no-added-detection guard. The test count inside the sentence is not a separate claim.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED** — *Audit question:* does `analysis/grouping/groupinglayer` implement §5.1 to
+§5.5 exactly over plain-data inputs, and does any path that runs at the current commit reach it? (ii) **QUARANTINED** —
+*Audit question:* on which beds and run did the no-added-detection guard pass, with no boundary added and every
+interior span boundary matched, and does it reproduce?
+
+---
+
+**Row 8.3 — the key-area recall is bound upstream; the cadence alignment against the ground truth.**
+
+*Outgoing statement.* "Key-area recall (0.1%) is upstream-bound (the dormant L5 §5.4 modulation substrate — surfaced,
+not L6's); cadence alignment 387 closes / 6 internal vs the GT 91.5% cadence-at-phraseend rate." — the status block
+(locator: lines 10–12). Two claims: (i) the key-area recall is bound by the dormant modulation step upstream; (ii) the
+cadence alignment's closes and internal cadences against the ground truth's rate of cadences at phrase ends.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED** — *Audit question:* on which beds and run was the key-area recall measured,
+and is what bounds it the dormant modulation step upstream? (ii) **QUARANTINED** — *Audit question:* on which beds and
+run were the closing and internal cadences counted against the ground truth's rate of cadences at phrase ends, and does
+the count reproduce?
+
+---
+
+**Row 8.4 — the codetta reading ruled canonical, and inert under default settings.**
+
+*Outgoing statement.* "**§5.1-a codetta interpretation RULED (Cowork, at ratification):** the as-built tiling reading
+(keep the strong-peak cut, drop the weak cut, record `codettaEndTick` as an annexe) is canonical — it is the only
+reading preserving the §5.1 flat/total partition law; inert under default settings (changes no output unless explicitly
+enabled)." — the status block (locator: lines 12–15). Two claims: (i) the reading that keeps the strong cut, drops the
+weak one and records the codetta's end as an annexe is canonical; (ii) it is inert under default settings. The clause
+after the first dash is the defense of (i).
+
+*Derived statements that speak to it.* (i) L3-S12. (ii) None.
+
+*Current-text axis.* (i) L3-S12: **DIFFERS**. (ii) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (i) The outgoing text keeps no unit for the codetta and records
+*"`codettaEndTick` as an annexe"*; L3-S12's units are *"phrases and the stretches that lie between phrases (a
+post-cadential codetta, an introduction before the first phrase)"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above. (ii) **QUARANTINED** — *Audit question:* is the codetta refinement switched off by default, so that it
+changes no output unless enabled?
+
+---
+
+**Row 8.5 — the cue and scope fields carried, and unknown.**
+
+*Outgoing statement.* "Provenance cue/scope fields carried but `Unknown` until the engage-time L1.5 per-tick exposure."
+— the status block (locator: lines 15–16).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED** — *Audit question:* does the as-built carry the cue and scope fields, and do they
+read `Unknown` at the current commit?
+
+---
+
+**Row 8.6 — dormant, and the batch gate unchanged.**
+
+*Outgoing statement.* "Dormancy proven by source search (no production call site); the corpus gate unchanged on all
+three presets (Baroque 53 / Jazz 24 / Default 53) exactly." — the status block (locator: lines 16–18). Two claims: (i)
+no production path calls the grouping layer; (ii) the batch gate was unchanged on all three presets.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED** — *Audit question:* does any production path call the grouping layer at the
+current commit? (ii) **QUARANTINED** — *Audit question:* was the batch gate unchanged on all three presets at the build,
+and on which corpus and run?
+
+---
+
+**Row 8.7 — the build was held until the extension behaviour passed.**
+
+*Outgoing statement.* "*(Earlier gate history: build was prohibited pending the L1–L5 extension behavior —
+`cowork_bounded_context_design.md` §11 — which passed 2026-07-02.)*" — the status block (locator: lines 18–19).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a gate on the build, recorded as passed.
+
+---
+
+**Row 8.8 — the grouping unit renamed; the accepted melodic phrase not segmented here.**
+
+*Outgoing statement.* "The **2026-07-01 pass** (user-directed): the grouping unit L6 segments is renamed **phrase →
+punctuation-span** — the flat, surface-punctuation-delimited DCML `{}` grouping span — so the word "phrase" is
+**reserved for the accepted melodic phrase [MT]** (monophonic/linear, text-coinciding when sung), which L6 does *not*
+segment and which is deferred to the future voice-leading/melody-line layer." — the status block (locator: lines
+22–26). Two claims: (i) the grouping unit was renamed; (ii) the accepted melodic phrase is not segmented by this layer
+and is deferred to the voice-leading layer. What the renamed unit is, is tabulated at Row 8.14; the reservation of the
+word is about the document's vocabulary, and the derivation uses the word *phrase* for L3's own grouping unit.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S42.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S42: **AGREES** — *"The accepted melodic phrase, which
+overlaps across voices, is the axis's, and L3 reads no fact of the axis in this specification."*
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a renaming event. (ii) **ADOPTED — carried** (L3-S42).
+
+---
+
+**Row 8.9 — built dormant, validated against the oracles, engagement deferred.**
+
+*Outgoing statement.* "Build **dormant + byte-identical**, validate against the oracles in §10, engagement deferred
+indefinitely (production out of scope)." — the status block (locator: lines 33–34).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build plan.
+
+---
+
+**Row 8.10 — the glossary entry *Phrase [MT]*: the melodic phrase, not segmented here.**
+
+*Outgoing statement.* "**Phrase [MT] — the accepted term, and NOT what this layer segments.** In music theory a phrase
+is a broadly *melodic / linear* unit: essentially **monophonic in conception** (in homophonic or polyphonic textures it
+is still carried by a leading line), conventionally closed by a **cadence** (Caplin makes the cadence definitional) or
+by a breath/gesture, and — when sung — usually **coinciding with a text phrase**. **This is a construct of the melodic
+/ voice-leading dimension, not of harmonic grouping, so L6 does not segment it.** Identifying the accepted phrase — and
+the **concurrent, overlapping, out-of-phase per-voice phrases** of a contrapuntal texture (e.g. a fugue's staggered
+subject entries) — belongs to the **future voice-leading / melody-line layer** (the confirmed second axis,
+`cowork_idiom_discovery_findings.md`); the method foundation to lean on is recorded in
+`cowork_polyphony_phrase_harmony_research.md`. What L6 actually groups is a *different* object — the
+**punctuation-span**, defined under [L6] below. *(Ref: Caplin 1998 for the cadence-defined phrase; the melodic-grouping
+and voice-separation literature for the linear one.)*" — §0 *Terminology*, the first entry (locator: lines 45–55). Three
+claims: (i) the accepted phrase is a melodic, linear unit closed by a cadence or a breath; (ii) it is the melodic
+dimension's construct, and this layer does not segment it; (iii) identifying it, and the per-voice phrases of a
+contrapuntal texture, belongs to the voice-leading layer.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S42. (iii) L3-S42.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S42: **AGREES** — L3's phrase is *"the harmonic spine's
+phrase, which tiles"*, and *"The accepted melodic phrase, which overlaps across voices, is the axis's"*. (iii) L3-S42:
+**AGREES** — the same sentence.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the second axis — voice leading*, whose objects include *"the accepted
+melodic phrase"* (`FRAMEWORK.md` §5). (ii) **ADOPTED — carried** (L3-S42). (iii) **RELOCATED** — to *the second axis —
+voice leading*, as (i).
+
+---
+
+**Row 8.11 — the glossary entry *Cadence [MT]*: the standard typology, detected upstream and read here.**
+
+*Outgoing statement.* "**Cadence [MT].** A conventional harmonic-melodic closing formula marking a point of repose, in
+the standard typology: **perfect/imperfect authentic** (PAC/IAC), **half**, **plagal**, **deceptive**, **Phrygian
+half**. Detected upstream by Layer 5 (its §5.2 event-pair detector); **L6 reads L5's cadences — it does not define or
+re-detect them.**" — §0, the second entry (locator: lines 56–58). Two claims: (i) the cadence is classified in one
+standard typology; (ii) cadences are detected by the function layer's event-pair detector, and the grouping reads them
+and neither defines nor re-detects them.
+
+*Derived statements that speak to it.* (i) L3-S17. (ii) L3-S15.
+
+*Current-text axis.* (i) L3-S17: **DIFFERS**. (ii) L3-S15: **DIFFERS**.
+
+*The difference, in both texts' own words.* (i) The outgoing text classifies the cadence *"in the standard typology"*
+it lists; L3-S17 says *"Which vocabulary is principal is not decided here (OQ-L3-2 ★)."* (ii) The outgoing cadence is
+*"Detected upstream by Layer 5 (its §5.2 event-pair detector)"* and read by the grouping; L3-S15 says *"A cadence is
+published only at a phrase end L3 has decided"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above and OQ-L3-2. (ii) **UNPLACED** — the same; read: the two texts above.
+
+---
+
+**Row 8.12 — the glossary entry *Key-area [MT]*: a maximal run sharing one local key.**
+
+*Outgoing statement.* "**Key-area [MT].** A maximal passage governed by a single (local) key — the standard analytic
+term (e.g. the sonata-form "second key area"). Operationally here: a maximal run of adjacent **slices** sharing one
+local key." — §0, the third entry (locator: lines 59–60).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that L3 publish key areas — maximal runs of consecutive spans
+of L2's segmentation sharing one tonality, each closing at a change of tonality — as a grouping of its own.
+
+---
+
+**Row 8.13 — the glossary entry *Modulation / local key [MT]*: the local key is committed upstream.**
+
+*Outgoing statement.* "**Modulation / local key [MT].** Standard senses; the local key at each point is what Layers 3/5
+commit." — §0, the fourth entry (locator: line 61).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*: L2 publishes the
+tonality per span (the derivation's §0 cites IC-L2 §0 for it).
+
+---
+
+**Row 8.14 — the glossary entry *Punctuation-span [L6]*: a non-nested unit delimited by the notated punctuation.**
+
+*Outgoing statement.* "**Punctuation-span [L6] — the harmonic-grouping span L6 segments (the DCML `{}` unit).** What
+this layer segments is **not** the accepted melodic phrase [MT] above; it is the flat, **non-hierarchical** grouping
+span of the DCML / When-in-Rome annotation standard — the `{ }` unit whose boundaries are the score's *notated
+punctuation* (fermatas, rests, double barlines, key-signature changes, …), **which is what it is named for**. Its
+boundaries are delimited by those **surface cues** via the phrase-boundary primitive (§5.1), **not** by requiring a
+cadence (defining a span by its cadence and then aligning cadences to it in §5.3 would be circular). The DCML standard
+happens to label this `{}` unit "phrase," but it is a **harmonic / annotation grouping construct** — blind to melody and
+voice — and it **diverges** from the accepted melodic phrase [MT]; this design therefore calls it the
+**punctuation-span** and never "phrase." **★ Naming convention: the word "phrase" appears in this document only as
+"phrase [MT]" (the accepted melodic unit, out of scope); the harmonic-grouping object L6 produces is always the
+"punctuation-span."** In chorales the two coincide (a fermata marks both a punctuation-span edge and a cadence); in
+general they need not. The cadence↔span relation is *checked* in §5.3, never assumed in the definition. *(Ref: the
+DCML annotation standard.)*" — §0, the first operational entry (locator: lines 64–75). Three claims: (i) the grouping
+unit is a non-nested span, with no hierarchy; (ii) its boundaries are the notated punctuation, delimited through the
+phrase-boundary primitive, and are not fixed by requiring a cadence; (iii) it is a harmonic grouping construct, blind
+to melody and voice, distinct from the melodic phrase. The naming convention is about the document's vocabulary.
+
+*Derived statements that speak to it.* (i) L3-S12. (ii) L3-S8 and L3-S10. (iii) L3-S42.
+
+*Current-text axis.* (i) L3-S12: **AGREES** — *"The phrase reading tiles the working span."* (ii) L3-S8: **DIFFERS**;
+L3-S10: **AGREES** — *"The cadence is aligned to the phrase, never the phrase to the cadence."* (iii) L3-S42: **AGREES**
+— *"L3's phrase is the harmonic spine's phrase, which tiles."*
+
+*The difference, in both texts' own words.* (ii) The outgoing boundaries *"are delimited by those **surface cues** via
+the phrase-boundary primitive"*; L3-S8 says *"The phrase reading is an L3 decision"* and *"Every change point and both
+span edges are candidate phrase ends."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S12). (ii) **UNPLACED** — a rule on L3's own subject that one
+derived statement differs from and another agrees with; read: the texts above and OQ-L3-3. (iii) **ADOPTED — carried**
+(L3-S42).
+
+---
+
+**Row 8.15 — the glossary entry *Slice [L6]*: the constant-sonority atom, the finest unit grouped.**
+
+*Outgoing statement.* "**Slice [L6].** The atomic analysis unit — one chord-rhythm segment from Layer 2 (the
+target-architecture §2.15 span typology's constant-sonority atom; maximal same-chord runs of slices form the typology's
+**chord-span**, formerly "harmonic region"). The finest unit L6 groups." — §0, the second operational entry (locator:
+lines 76–78). Two claims: (i) the slice is the constant-sonority atom, and maximal same-chord runs of slices form the
+chord-span; (ii) the slice is the finest unit the grouping groups.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S8.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S8: **AGREES** — *"Every change point and both span
+edges are candidate phrase ends."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L1 — Change points, candidates and notated evidence*, which publishes the
+slices; the chord-span is L2's segmentation. (ii) **ADOPTED — carried** (L3-S8).
+
+---
+
+**Row 8.16 — the glossary entry *Boundary [L6]*: the primitive's picked peaks, chosen upstream.**
+
+*Outgoing statement.* "**Boundary [L6].** A tick where the **phrase-boundary primitive** places a picked peak — a
+surface-cue location (fermata / breath / rest / structural barline / key-signature change / subito tempo). Our
+operational proxy for a punctuation-span edge; **choosing which ticks are boundaries is the primitive's job upstream,
+not L6's.**" — §0, the third operational entry (locator: lines 79–81). Two claims: (i) a boundary is a tick where the
+primitive places a picked peak at a surface cue; (ii) choosing which ticks are boundaries is the primitive's job,
+upstream of the grouping.
+
+*Derived statements that speak to it.* (i) L3-S8. (ii) L3-S8.
+
+*Current-text axis.* (i) L3-S8: **DIFFERS**. (ii) L3-S8: **DIFFERS**.
+
+*The difference, in both texts' own words.* (i) The outgoing boundary is *"A tick where the **phrase-boundary
+primitive** places a picked peak"*; L3-S8 says *"Every change point and both span edges are candidate phrase ends. No
+item of evidence forces or forbids a phrase end"*. (ii) The outgoing text says *"choosing which ticks are boundaries is
+the primitive's job upstream, not L6's"*; L3-S8 says *"The phrase reading is an L3 decision."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above. (ii) **UNPLACED** — the same.
+
+---
+
+**Row 8.17 — the glossary entry *Key-span [L6]*.**
+
+*Outgoing statement.* "**Key-span [L6].** The §2.15 span-typology name for a key-area (used interchangeably below)." —
+§0, the fourth operational entry (locator: line 82).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.12.
+
+---
+
+**Row 8.18 — the glossary entry *Progression-schema-span [L6]*: a recognised schema's span, hosted here.**
+
+*Outgoing statement.* "**Progression-schema-span [L6].** A recognised-schema span emitted by the recognition consumer
+and *hosted* by L6 (§5.5). *(Renamed from "sequence-span" per the ratified span-family rename (D6, 2026-07-02) —
+"sequence" is reserved for the harmonic device; the consumer doc carries the same rename.)*" — §0, the fifth
+operational entry (locator: lines 83–85).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: the derivation names no recognised progression schema, and none of
+`FRAMEWORK.md` §5's charters names the recognition of one or the span it covers.
+
+---
+
+**Row 8.19 — the glossary entry *Open mark [L6]*: the function layer's unresolved reading, surfaced and never resolved.**
+
+*Outgoing statement.* "**Open mark [L6].** Layer 5's carried honest residual — a slice whose reading L5 left
+unresolved; L6 surfaces it, never resolves it." — §0, the sixth operational entry (locator: lines 86–87). Two claims:
+(i) an open mark is a slice whose reading the function layer left unresolved; (ii) the grouping surfaces it and never
+resolves it.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S38.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S38: **AGREES** — *"No L3 fact may change an L2 fact, a
+rival or a mass."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*: L2 publishes, per
+span, the rivals with their mass (the derivation's §0 cites L2-S40 to L2-S42 for the rival forms). (ii) **ADOPTED —
+carried** (L3-S38).
+
+---
+
+**Row 8.20 — the glossary entry *Flat partition*.**
+
+*Outgoing statement.* "**Flat partition.** A division of a span into consecutive, non-overlapping segments that tile the
+whole with **no nesting** — no segment contains another and there are no sub-segments (cutting a line into adjacent
+pieces). The opposite of *hierarchical*." — §0, *Other terms used below, defined*, the first entry (locator: lines
+90–92).
+
+*Derived statements that speak to it.* L3-S12.
+
+*Current-text axis.* L3-S12: **AGREES** — *"The phrase reading tiles the working span."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S12).
+
+---
+
+**Row 8.21 — the glossary entry *Hierarchical grouping*: the nesting this layer does not build.**
+
+*Outgoing statement.* "**Hierarchical grouping.** Nesting groups inside groups — motifs inside phrases inside
+themes/periods inside sections inside movements: a **tree** over the piece, not one flat row of segments. (Here
+"phrases" is the accepted melodic sense [MT] — this illustrates the nesting L6 does **not** build.)" — §0, the second
+entry of *Other terms* (locator: lines 93–95).
+
+*Derived statements that speak to it.* L3-S22.
+
+*Current-text axis.* L3-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text names nesting as what *"L6 does **not** build"*; L3-S22
+says the section grouping *"is a nested grouping over the units of the phrase reading"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.22 — the glossary entry *GTTM*: no such trees built.**
+
+*Outgoing statement.* "**GTTM.** *A Generative Theory of Tonal Music* (Lerdahl & Jackendoff, 1983) — a formal theory
+that parses a piece into **nested tree structures** (grouping, metre, time-span reduction, prolongational reduction). L6
+builds **no** such trees." — §0, the third entry of *Other terms* (locator: lines 96–97).
+
+*Derived statements that speak to it.* L3-S22.
+
+*Current-text axis.* L3-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text says *"L6 builds **no** such trees"*; L3-S22 publishes *"a
+nested grouping over the units of the phrase reading"*, defended by *"Lerdahl & Jackendoff's grouping well-formedness"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.23 — the glossary entry *Caplinian formal functions*: out of this layer's scope.**
+
+*Outgoing statement.* "**Caplinian formal functions [MT — out of L6's scope].** William Caplin's theory of classical
+form (*Classical Form*, 1998), which defines formal units by their temporal **function** (beginning / middle / end). Its
+two core themes: the **sentence** (a *presentation* — a basic idea plus its repetition — then a *continuation*, then a
+*cadence*) and the **period** (an *antecedent* phrase [MT] closing on a weaker cadence, e.g. a half cadence, answered by
+a *consequent* phrase [MT] closing on a stronger one, e.g. a PAC). These are **hierarchical** constructs *above* the
+melodic phrase — a larger structure than L6's flat grouping; §2 and §9-D3 state why they sit outside L6's core and on
+what terms they could be built." — §0, the fourth entry of *Other terms* (locator: lines 98–104).
+
+*Derived statements that speak to it.* L3-S24.
+
+*Current-text axis.* L3-S24: **AGREES** — *"L3 publishes the grouping (boundaries, nesting and rivals) and not
+form-function names"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S24).
+
+---
+
+**Row 8.24 — grouping is assembly, not detection.**
+
+*Outgoing statement.* "**Grouping is assembly, not detection.**" — §1 *The core principle* (locator: line 107).
+
+*Derived statements that speak to it.* L3-S8 and L3-S22.
+
+*Current-text axis.* L3-S8: **DIFFERS**. L3-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing grouping is *"assembly, not detection"*; L3-S8 says *"The
+phrase reading is an L3 decision"* and L3-S22 *"The section grouping is an L3 decision."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that two derived statements differ from; read: the
+texts above.
+
+---
+
+**Row 8.25 — the grouping assembled into one non-nested structure.**
+
+*Outgoing statement.* "Layer 6 **assembles** these into the flat grouping structure the ground truth annotates:
+**punctuation-spans**, **key-areas**, and the **alignment of cadences to punctuation-span endings**." — §1 (locator:
+lines 109–110).
+
+*Derived statements that speak to it.* L3-S22.
+
+*Current-text axis.* L3-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing grouping is *"the flat grouping structure the ground truth
+annotates"*; L3-S22 says *"It is a nested grouping over the units of the phrase reading"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.26 — the grouping detects nothing new and re-derives nothing.**
+
+*Outgoing statement.* "It detects nothing new and re-derives nothing; it reads the upstream outputs and segments/labels
+the stream into groups." — §1 (locator: line 111). Two claims: (i) it detects nothing new; (ii) it re-derives nothing.
+
+*Derived statements that speak to it.* (i) L3-S8. (ii) L3-S39.
+
+*Current-text axis.* (i) L3-S8: **DIFFERS**. (ii) L3-S39: **AGREES** — *"L3 never re-derives a fact a layer beneath it
+publishes"*.
+
+*The difference, in both texts' own words.* (i) The outgoing grouping *"detects nothing new"*; L3-S8 says *"The phrase
+reading is an L3 decision."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above. (ii) **ADOPTED — carried** (L3-S39).
+
+---
+
+**Row 8.27 — the grouping changes no Roman numeral, key or cadence.**
+
+*Outgoing statement.* "It is the cosmetic-but-structural top of the pipeline: it does not change any Roman numeral, key,
+or cadence — it **organises** them (structural but non-analytical)." — §1 (locator: lines 112–113).
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **AGREES** — *"No L3 fact may change an L2 fact, a rival or a mass."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S38).
+
+---
+
+**Row 8.28 — the span partitioned into contiguous punctuation-spans delimited by the primitive.**
+
+*Outgoing statement.* "**Punctuation-span segmentation** — partition the analysed span into contiguous
+**punctuation-spans** delimited by the phrase-boundary primitive (§5.1)." — §2 *The layer model*, under *Does*
+(locator: lines 117–118). Two claims: (i) the analysed span is partitioned into contiguous spans; (ii) delimited by the
+phrase-boundary primitive.
+
+*Derived statements that speak to it.* (i) L3-S12. (ii) L3-S8.
+
+*Current-text axis.* (i) L3-S12: **AGREES** — *"The phrase reading tiles the working span."* (ii) L3-S8: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing spans are *"delimited by the phrase-boundary primitive"*;
+L3-S8 says *"The phrase reading is an L3 decision."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S12). (ii) **UNPLACED** — a rule on L3's own subject that a
+derived statement differs from; read: the two texts above.
+
+---
+
+**Row 8.29 — key-area grouping.**
+
+*Outgoing statement.* "**Key-area grouping** — group maximal runs of same-local-key **slices** into **key-areas**
+(key-spans) (§5.2)." — §2, under *Does* (locator: line 119).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.12.
+
+---
+
+**Row 8.30 — each cadence aligned to the span it closes; a span may end without one.**
+
+*Outgoing statement.* "**Cadence-to-punctuation-span alignment** — associate each Layer-5 cadence with the
+punctuation-span it closes, honouring the asymmetric cadence↔span relation (a cadence implies a span ending; a
+punctuation-span may end without a cadence) (§5.3)." — §2, under *Does* (locator: lines 120–122). Two claims: (i) each
+cadence is associated with the span it closes, a cadence implying a span ending; (ii) a span may end without a cadence.
+
+*Derived statements that speak to it.* (i) L3-S15. (ii) L3-S18.
+
+*Current-text axis.* (i) L3-S15: **AGREES** — *"A cadence is published only at a phrase end L3 has decided"*. (ii)
+L3-S18: **AGREES** — *"At a phrase end where no type of the declared vocabulary applies, the cadence field is published
+as *no cadence* with its reason."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S15). (ii) **ADOPTED — carried** (L3-S18).
+
+---
+
+**Row 8.31 — the unresolved marks passed through; the grouping does not resolve them.**
+
+*Outgoing statement.* "**Carry the honest residual** — Layer-5 open marks pass through to the grouped output unchanged;
+L6 groups *around* uncertainty, it does not resolve it (§5.4)." — §2, under *Does* (locator: lines 123–124). Two
+claims: (i) the function layer's unresolved marks pass through to the grouped output unchanged; (ii) the grouping does
+not resolve them.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S38.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S38: **AGREES** — *"No L3 fact may change an L2 fact, a
+rival or a mass."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed.** *Proposal:* that a grouping unit containing a span whose L2 reading
+is left unresolved carry that mark visibly at that location, unchanged. (ii) **ADOPTED — carried** (L3-S38).
+
+---
+
+**Row 8.32 — the recognised-schema spans hosted as cross-cutting labels.**
+
+*Outgoing statement.* "**Host the recognised-schema annotations** — when the recognition consumer (the Harmonic
+Vocabulary's L5/L6 consumer, `cowork_progression_schema_design.md`) is present, its recognised-schema
+**progression-schema-spans** are carried as read-only, additive, **cross-cutting** labels (§5.5)." — §2, under *Does*
+(locator: lines 125–127).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18.
+
+---
+
+**Row 8.33 — the grouping is the schemas' annotation home and recognises none.**
+
+*Outgoing statement.* "L6 is their annotation home; it does **not** recognise schemas itself (the consumer does)." — §2,
+under *Does* (locator: lines 127–128).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18.
+
+---
+
+**Row 8.34 — no hierarchical grouping.**
+
+*Outgoing statement.* "**Hierarchical grouping** (nested trees / GTTM reductions — §0)." — §2, under *Does not do*
+(locator: line 131). Read under its lead: the layer does not do hierarchical grouping.
+
+*Derived statements that speak to it.* L3-S22.
+
+*Current-text axis.* L3-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing layer does not do *"**Hierarchical grouping** (nested trees /
+GTTM reductions — §0)"*; L3-S22 says *"It is a nested grouping over the units of the phrase reading"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.35 — no formal functions and no multi-span sections.**
+
+*Outgoing statement.* "**Caplinian formal functions** (sentence, period, … — §0) and multi-span **sections**." — §2,
+under *Does not do* (locator: line 135). Read under its lead, two claims: (i) the layer does not do Caplin's formal
+functions; (ii) it does not do multi-span sections.
+
+*Derived statements that speak to it.* (i) L3-S24. (ii) L3-S22.
+
+*Current-text axis.* (i) L3-S24: **AGREES** — *"L3 publishes the grouping (boundaries, nesting and rivals) and not
+form-function names"*. (ii) L3-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing layer does not do *"multi-span **sections**"*; L3-S22 says
+*"The section grouping is an L3 decision."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S24). (ii) **UNPLACED** — a rule on L3's own subject that a
+derived statement differs from; read: the two texts above.
+
+---
+
+**Row 8.36 — forms and sections kept out of the core, buildable later with an unvalidated mark.**
+
+*Outgoing statement.* "They are kept out of **L6's thin core for proportionality** (L6 assembles the *flat* grouping;
+forms/sections are a larger structure that properly belongs to a *higher* layer), and are **buildable via an
+alternative-confidence path** (a form-annotated corpus, or theory-rules-as-oracle) with an "empirically-unvalidated" mark
+**whenever a need arises** (§9-D3)." — §2, under *Does not do* (locator: lines 137–140). Two claims: (i) forms and
+sections are kept out of the core, belonging to a higher layer; (ii) they are buildable later through another route to
+confidence, carrying a mark that they are empirically unvalidated.
+
+*Derived statements that speak to it.* (i) L3-S22. (ii) L3-S33.
+
+*Current-text axis.* (i) L3-S22: **DIFFERS**. (ii) L3-S33: **AGREES** — *"*Provisional* is carried by anything resting on
+an unfitted weight, a stand-in value or a provisional input."*
+
+*The difference, in both texts' own words.* (i) The outgoing sections are *"a larger structure that properly belongs to a
+*higher* layer"*; L3-S22 says *"The section grouping is an L3 decision."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above. (ii) **ADOPTED — carried** (L3-S33).
+
+---
+
+**Row 8.37 — melody identification, voice leading and the melodic phrase are not this layer's.**
+
+*Outgoing statement.* "**Melody / structural-line identification, voice-leading, and the accepted (melodic) phrase
+[MT]** — separate dimensions, not L6's." — §2, under *Does not do* (locator: lines 141–142). Two claims: (i)
+identifying a melody or structural line is not this layer's; (ii) voice leading and the accepted melodic phrase are
+separate dimensions, not this layer's.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S42.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S42: **AGREES** — *"The accepted melodic phrase, which
+overlaps across voices, is the axis's, and L3 reads no fact of the axis in this specification."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed.** *Proposal:* that L3 never attempt to identify a melody or structural
+line among the voices. (ii) **ADOPTED — carried** (L3-S42).
+
+---
+
+**Row 8.38 — melody out across the architecture; voice leading the second axis; the melodic phrase that axis's.**
+
+*Outgoing statement.* "Melody/structural-line is out across the architecture; **voice-leading is the confirmed second
+axis, its own future layer** (`cowork_idiom_discovery_findings.md`); and the **accepted music-theory phrase [MT] (§0)**
+— the melodic, often text-coinciding unit — is a construct of that axis, **not** the punctuation-span L6 segments." —
+§2, under *Does not do* (locator: lines 142–145). Three claims: (i) identifying a melody or structural line is out
+across the architecture; (ii) voice leading is the second axis, a layer of its own; (iii) the accepted phrase is that
+axis's construct, not the grouping unit this layer segments.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S42. (iii) L3-S42.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S42: **AGREES** — *"L3's phrase is the harmonic spine's
+phrase, which tiles."* (iii) L3-S42: **AGREES** — the same statement's *"The accepted melodic phrase, which overlaps
+across voices, is the axis's"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed** — travelling with Row 8.37 (i). (ii) **RELOCATED** — to *the second
+axis — voice leading*. (iii) **ADOPTED — carried** (L3-S42).
+
+---
+
+**Row 8.39 — the per-voice phrases of a contrapuntal texture are not this layer's input.**
+
+*Outgoing statement.* "In particular the **concurrent, overlapping, out-of-phase per-voice phrases** of a contrapuntal
+texture (a fugue's staggered subject entries) are **not** L6's input: the deep search found **no published system that
+models overlapping per-voice phrases for harmonic analysis** — harmony is universally analysed at the **onset /
+verticality level** (ChordGNN onset-wise; music21 `chordify`), so keeping L6's grouping flat omits no standard
+technique (`cowork_polyphony_phrase_harmony_research.md`)." — §2, under *Does not do* (locator: lines 145–149). The
+clause after the colon is the defense.
+
+*Derived statements that speak to it.* L3-S42.
+
+*Current-text axis.* L3-S42: **AGREES** — *"L3 reads no fact of the axis in this specification."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S42).
+
+---
+
+**Row 8.40 — the perfect/imperfect call on the bass-derived inversion, not the top voice.**
+
+*Outgoing statement.* "(The perfect/imperfect cadence call is Layer-5's, on bass-derived inversion, not the top voice.)"
+— §2, under *Does not do* (locator: lines 149–150). Two claims: (i) the call is made on the bass-derived inversion; (ii)
+not on the top voice.
+
+*Derived statements that speak to it.* (i) L3-S17. (ii) L3-S16.
+
+*Current-text axis.* (i) L3-S17: **DIFFERS**. (ii) L3-S16: **DIFFERS**.
+
+*The difference, in both texts' own words.* (i) The outgoing call is made *"on bass-derived inversion"*; L3-S17 says
+*"Feature (6) blocks the PAC/IAC split in every vocabulary until OQ-L3-4 is ruled."* (ii) The outgoing call is made
+*"not the top voice"*; L3-S16 lists *"the scale degree of the highest sounding pitch at the arrival"* among the cadence's
+defining features.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above and OQ-L3-4. (ii) **UNPLACED** — the same; read: the two texts above.
+
+---
+
+**Row 8.41 — no change to the Roman numeral, key or cadence decided upstream.**
+
+*Outgoing statement.* "**Any change to the Roman numeral, key, or cadence** decided upstream — L6 is additive and
+read-only over Layer 5." — §2, under *Does not do* (locator: line 151).
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **AGREES** — *"No L3 fact may change an L2 fact, a rival or a mass."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S38).
+
+---
+
+**Row 8.42 — what the grouping consumes from the function layer.**
+
+*Outgoing statement.* "**The Layer-5 output** (`FunctionLayerOutput`, §7 of the L5 design) — per analysis unit: the
+Roman numeral, the function confidence, the open mark, the committed identity; per key-span: the local key (possibly
+modulated); and the Layer-5 cadence markers (type, location, salience)." — §3 *Inputs and outputs*, under *Consumes*
+(locator: lines 155–157).
+
+*Derived statements that speak to it.* L3-S37.
+
+*Current-text axis.* L3-S37: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing grouping consumes *"the function confidence, the open mark,
+the committed identity"* and *"the Layer-5 cadence markers (type, location, salience)"* from the layer below it; L3-S37
+consumes from L2 *"the charter's list and its rivals (L2-S45)"*, and the cadence is L3's own fact (L3-S15).
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.43 — the primitive's boundary ticks and strengths consumed.**
+
+*Outgoing statement.* "**The phrase-boundary primitive** (`phraseBoundaryView` — `phraseBoundaryTicks()` and the graded
+`PhraseBoundaryProfile`): the boundary ticks and their strengths (fermata / breath / rest / barline / key-signature /
+tempo cues — strengths scaled to the strongest cue, local maxima selected as boundaries; the primitive's
+max-normalisation and peak-picking, `cowork_phrase_boundary_design.md` §4)." — §3, under *Consumes* (locator: lines
+158–161).
+
+*Derived statements that speak to it.* L3-S8.
+
+*Current-text axis.* L3-S8: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing grouping consumes *"the boundary ticks and their strengths"*,
+*"local maxima selected as boundaries"* by the primitive; L3-S8 says *"The phrase reading is an L3 decision"* and *"No
+item of evidence forces or forbids a phrase end"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.44 — the local-key spans consumed.**
+
+*Outgoing statement.* "**The Layer-3 local-key spans** (the per-region `keyModeResult`, surfaced through the Layer-5
+per-region local key)." — §3, under *Consumes* (locator: line 162).
+
+*Derived statements that speak to it.* L3-S37.
+
+*Current-text axis.* L3-S37: **AGREES** — *"L3 consumes what L0, L1 and L2 publish, and nothing else."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S37).
+
+---
+
+**Row 8.45 — the punctuation-spans produced: a contiguous partition, each with its provenance and its closing cadence.**
+
+*Outgoing statement.* "**Punctuation-spans** — an ordered, contiguous partition of the analysed span; each
+punctuation-span a `[startTick, endTick)` span with the units it contains, the boundary strength **and the provenance**
+(which cue fired and its **scope** — global/system-wide vs per-part — carried through from the Layer-1.5 primitive,
+`cowork_phrase_boundary_design.md` §11-5) that opened/closed it, and the cadence (if any) that closes it." — §3, under
+*Produces* (locator: lines 166–169). Three claims: (i) an ordered, contiguous partition; (ii) each span carries the
+boundary strength and the provenance — the cue that fired and its scope — that opened and closed it; (iii) each carries
+the cadence, if any, that closes it.
+
+*Derived statements that speak to it.* (i) L3-S12. (ii) None. (iii) L3-S15.
+
+*Current-text axis.* (i) L3-S12: **AGREES** — *"The phrase reading tiles the working span."* (ii) **THE DERIVATION IS
+SILENT**. (iii) L3-S15: **AGREES** — a cadence *"only at a phrase end L3 has decided, an elided one included, and at
+most one per phrase end"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S12). (ii) **ADOPTED — proposed.** *Proposal:* that each phrase
+unit carry the notated evidence that opened and closed it, with that evidence's scope — the whole texture or one part —
+so that a local boundary is never presented as a global one. (iii) **ADOPTED — carried** (L3-S15).
+
+---
+
+**Row 8.46 — the key areas produced.**
+
+*Outgoing statement.* "**Key-areas** — an ordered, contiguous partition into local-key spans; each `[startTick,
+endTick)` with its local tonic/mode and confidence." — §3, under *Produces* (locator: lines 172–173).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.12.
+
+---
+
+**Row 8.47 — each cadence tagged with the span it closes, or flagged internal.**
+
+*Outgoing statement.* "**Cadence-to-punctuation-span alignments** — each Layer-5 cadence tagged with the
+punctuation-span it closes (or flagged *internal* if it falls mid-span — §5.3), carrying its Layer-5 type and
+salience." — §3, under *Produces* (locator: lines 174–175). Two claims: (i) each cadence is tagged with the span it
+closes, carrying its type and salience; (ii) a cadence falling mid-span is flagged internal.
+
+*Derived statements that speak to it.* (i) L3-S15. (ii) L3-S15.
+
+*Current-text axis.* (i) L3-S15: **AGREES** — *"A cadence is published only at a phrase end L3 has decided"*. (ii)
+L3-S15: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing cadence is *"flagged *internal* if it falls mid-span"*;
+L3-S15 publishes such evidence *"as an evidence-class fact named for the pattern (never *cadence*)"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S15). (ii) **UNPLACED** — a rule on L3's own subject that a derived
+statement differs from; read: the two texts above.
+
+---
+
+**Row 8.48 — the unresolved marks produced, surfaced and never resolved.**
+
+*Outgoing statement.* "**The carried open marks** — Layer-5's honest residuals, surfaced in the grouped view, never
+resolved here." — §3, under *Produces* (locator: line 176). Two claims: (i) surfaced in the grouped view; (ii) never
+resolved here.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S38.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S38: **AGREES** — *"No L3 fact may change an L2 fact, a
+rival or a mass."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed** — travelling with Row 8.31 (i). (ii) **ADOPTED — carried** (L3-S38).
+
+---
+
+**Row 8.49 — the recognised-schema spans produced.**
+
+*Outgoing statement.* "**Recognised-schema progression-schema-spans** (present only when the recognition consumer is) —
+each a `[startTick, endTick)` span carrying the matched schema's name, its style/idiom tag, the match score, and the
+underlying-function read-out for any substituted member (e.g. "`♭II7` here = `subV7/I`")." — §3, under *Produces*
+(locator: lines 177–179).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18.
+
+---
+
+**Row 8.50 — a schema span cuts across the punctuation-spans.**
+
+*Outgoing statement.* "**Cross-cutting** — a schema may straddle a punctuation-span boundary and a punctuation-span may
+hold several schemas." — §3, under *Produces* (locator: lines 179–180).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18.
+
+---
+
+**Row 8.51 — the schema spans read-only and additive, hosted here and produced by the consumer.**
+
+*Outgoing statement.* "Read-only and additive; L6 is the annotation home, the consumer is the producer
+(`cowork_progression_schema_design.md` §2/§4.4)." — §3, under *Produces* (locator: lines 180–181).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18.
+
+---
+
+**Row 8.52 — the punctuation-spans non-nested; the key spans and schema spans cutting across them.**
+
+*Outgoing statement.* "Punctuation-spans are a flat partition; **key-spans and recognised-schema spans are independent,
+cross-cutting segmentations of the same stream** (the target-architecture §2.15 span typology): a key-span may cover
+several punctuation-spans and — rarely — a punctuation-span may straddle a key change; a schema span may straddle a
+punctuation-span boundary." — §3, the paragraph after *Produces* (locator: lines 183–186). Three claims: (i) the
+punctuation-spans are a non-nested partition; (ii) the key spans are an independent segmentation cutting across them, so that
+a punctuation-span may straddle a key change; (iii) a schema span may straddle a punctuation-span boundary.
+
+*Derived statements that speak to it.* (i) L3-S12. (ii) None. (iii) None.
+
+*Current-text axis.* (i) L3-S12: **AGREES** — *"The phrase reading tiles the working span."* (ii) **THE DERIVATION IS
+SILENT**. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S12). (ii) **ADOPTED — proposed.** *Proposal:* that a change of
+tonality may fall inside a phrase unit, the key areas cutting across the phrase units and neither nested in the other.
+(iii) **UNPLACED** — read as at Row 8.18.
+
+---
+
+**Row 8.53 — not nested.**
+
+*Outgoing statement.* "They are **not** nested." — §3 (locator: line 186).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.52 (ii).
+
+---
+
+**Row 8.54 — the structure is the contract to the display, with one producer.**
+
+*Outgoing statement.* "The contract to the display layer above is this structure; L6 is its only producer." — §3
+(locator: lines 186–187).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that the grouping have L3 as its only producer, and be the
+surface a display reads.
+
+---
+
+**Row 8.55 — grouping already in production, scattered and key-dependent.**
+
+*Outgoing statement.* "Grouping already exists in production, **scattered and key-dependent**: `detectCadences()`
+(PAC/PC/DC/HC text markers) and `detectPivotChords()` in `section/sectioncadencedetection`, both using the old
+key-dependent `ChordFunction::degree` logic; and the `KeyArea` grouping in `analyzeSection` / `analyzed_section.h`." —
+§4 *As-built starting point* (locator: lines 190–192).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED** — *Audit question:* do `detectCadences()`, `detectPivotChords()` and the
+`KeyArea` grouping exist, do they read the key-dependent degree logic, and does any of them run at the current commit?
+
+---
+
+**Row 8.56 — the grouping layer as the rebuild that unifies them.**
+
+*Outgoing statement.* "Layer 6 is the **forward-only rebuild** that unifies these into one clean layer consuming the
+Layer-5 output + the phrase-boundary primitive + the Layer-3 spans — exactly as Layer 5 unified the scattered function
+machinery." — §4 (locator: lines 192–194).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a rebuild plan.
+
+---
+
+**Row 8.57 — the old paths live; the layer built dormant beside them.**
+
+*Outgoing statement.* "The old paths stay live until the joint engagement (deferred); L6 is built dormant and
+byte-identical beside them." — §4 (locator: lines 194–195). Two claims: (i) the old paths stay live; (ii) the layer is
+built dormant beside them.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED** — *Audit question:* which of the old grouping paths run at the current
+commit, and on which arm? (ii) **HISTORICAL** — a build state.
+
+---
+
+**Row 8.58 — a punctuation-span runs between two adjacent boundaries, tiling the span.**
+
+*Outgoing statement.* "The one construction detail §0 leaves to here: a **punctuation-span** is the maximal
+`[startTick, endTick)` **flat** span between two adjacent boundaries (the first boundary at/after the span start opens
+it, the next closes it), tiling the analysed span with no gaps or overlap (§5.1)." — §5.0 *Definitions* (locator:
+lines 203–205).
+
+*Derived statements that speak to it.* L3-S12.
+
+*Current-text axis.* L3-S12: **AGREES** — *"The phrase reading tiles the working span."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S12).
+
+---
+
+**Row 8.59 — the cadence read carries a type from a fixed set, read and not re-detected.**
+
+*Outgoing statement.* "The cadence L6 reads is Layer-5's `FunctionalCadence` (type ∈ {PAC, IAC, Half, PhrygianHalf,
+Deceptive, Plagal, Evaded}, an approach→arrival tick pair, a salience weight) — **read, not re-detected.**" — §5.0
+(locator: lines 205–207). Two claims: (i) the cadence carries a type from one fixed set, a pair of positions and a
+weight; (ii) the grouping reads it and does not re-detect it.
+
+*Derived statements that speak to it.* (i) L3-S17. (ii) L3-S15.
+
+*Current-text axis.* (i) L3-S17: **DIFFERS**. (ii) L3-S15: **DIFFERS**.
+
+*The difference, in both texts' own words.* (i) The outgoing type is drawn from one fixed set, *"type ∈ {PAC, IAC, Half,
+PhrygianHalf, Deceptive, Plagal, Evaded}"*; L3-S17 says *"Which vocabulary is principal is not decided here (OQ-L3-2
+★)."* (ii) The outgoing cadence is *"Layer-5's"*, *"read, not re-detected"*; L3-S15 says *"A cadence is published only
+at a phrase end L3 has decided"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above and OQ-L3-2. (ii) **UNPLACED** — the same; read: the two texts above.
+
+---
+
+**Row 8.60 — the span partitioned at the primitive's ticks, each span half-open.**
+
+*Outgoing statement.* "Partition the analysed span at the boundary ticks supplied by the primitive: each
+punctuation-span runs from one boundary (inclusive) to the next (exclusive)." — §5.1 *Punctuation-span segmentation*
+(locator: lines 210–211). Two claims: (i) the span is partitioned at the primitive's boundary ticks; (ii) each span
+runs from one boundary, inclusive, to the next, exclusive.
+
+*Derived statements that speak to it.* (i) L3-S8. (ii) L3-S12.
+
+*Current-text axis.* (i) L3-S8: **DIFFERS**. (ii) L3-S12: **AGREES** — *"The phrase reading tiles the working span."*
+
+*The difference, in both texts' own words.* (i) The outgoing span is partitioned *"at the boundary ticks supplied by the
+primitive"*; L3-S8 says *"The phrase reading is an L3 decision."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above. (ii) **ADOPTED — carried** (L3-S12).
+
+---
+
+**Row 8.61 — the partition total and non-nested.**
+
+*Outgoing statement.* "The partition is **total** (covers the whole span) and **flat** (no nesting)." — §5.1 (locator:
+lines 211–212).
+
+*Derived statements that speak to it.* L3-S12.
+
+*Current-text axis.* L3-S12: **AGREES** — *"The phrase reading tiles the working span."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S12).
+
+---
+
+**Row 8.62 — the first span opens at the span start, the last closes at its end.**
+
+*Outgoing statement.* "The first punctuation-span opens at the span start even if no boundary marker sits there; the last
+punctuation-span closes at the span end." — §5.1 (locator: lines 212–213).
+
+*Derived statements that speak to it.* L3-S12.
+
+*Current-text axis.* L3-S12: **AGREES** — *"The phrase reading tiles the working span."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S12).
+
+---
+
+**Row 8.63 — a group clipped by the selection edge is marked so.** *WITHHELD — D-457.*
+
+*Outgoing statement.* "An edge group whose opening/closing tick is the **selection edge rather than a musical boundary**
+carries the provenance `clipped-by-selection-edge` (the same principle as the §3 marker-scope provenance and L2's
+artificial-clip-boundary distinction) — a truncated group is never presented as a complete one; the same mark applies to
+an edge **key-area** (§5.2)." — §5.1, the post-sign-off amendment (locator: lines 214–217). Two claims: (i) a group
+whose edge is the selection edge carries a mark saying so, and is never presented as complete; (ii) the same mark
+applies to an edge key area.
+
+*Derived statements that speak to it.* (i) L3-S40. (ii) None.
+
+*Current-text axis.* (i) L3-S40: **AGREES** — *"A phrase unit or section that crosses a span edge is published with a
+mark saying it is cut by the span."* **An AGREES on a row inside a withheld home: a derived statement reaching a ruled
+answer the deriving session was not shown.** (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S40). (ii) **ADOPTED — proposed** — travelling with Row 8.12.
+
+---
+
+**Row 8.64 — an unclosed edge span surfaced with an extension cue.** *WITHHELD — D-457.*
+
+*Outgoing statement.* "And an edge span that reaches the selection edge with **no closing boundary and no cadence** is
+surfaced with an `extension-cue` tag — the signal that widening the selection would complete it." — §5.1, the
+amendment (locator: lines 217–218).
+
+*Derived statements that speak to it.* L3-S40.
+
+*Current-text axis.* L3-S40: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing edge span *"is surfaced with an `extension-cue` tag"*; L3-S40
+says *"Where they do, L3 asks for a larger span from the caller, as L2 does."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above and OQ-L3-10.
+
+---
+
+**Row 8.65 — the cue only surfaced; acting on it is the orchestrator's, never the grouping's.** *WITHHELD — D-457.*
+
+*Outgoing statement.* "Per the forward-only contract L6 only **surfaces** the cue (like the §5.3 internal-cadence tension
+tag); acting on it — invoking L1's `extend` and re-running — is the decision of the **orchestrator** (the pipeline
+driver that sequences the layers — the region analyzer of the bounded-context contract,
+`cowork_bounded_context_design.md` §6) under the §2.15 bounded-context contract (stop condition + hard bound), never
+L6's." — §5.1, the amendment (locator: lines 218–222).
+
+*Derived statements that speak to it.* L3-S40.
+
+*Current-text axis.* L3-S40: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text makes acting on the cue *"the decision of the
+**orchestrator** … never L6's"*; L3-S40 says *"L3 asks for a larger span from the caller, as L2 does"*, with whether it
+may do so put to the user (*"OQ-L3-10 ★"*).
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above and OQ-L3-10.
+
+---
+
+**Row 8.66 — the primitive's picked peaks consumed as they are.**
+
+*Outgoing statement.* "**L6 consumes the primitive's picked-peak set as-is — it does not re-threshold or re-detect
+boundaries** (peak selection is the primitive's owned job, §5.1 of the phrase-boundary primitive design); choosing
+*which* ticks are boundaries is upstream, and how they *group into punctuation-spans* is the rule here." — §5.1
+(locator: lines 222–224). The sentence begins on the last line of D-457's home and lies outside that home's recorded
+verbatim.
+
+*Derived statements that speak to it.* L3-S8.
+
+*Current-text axis.* L3-S8: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing grouping *"consumes the primitive's picked-peak set as-is"*,
+choosing which ticks are boundaries being *"upstream"*; L3-S8 says *"The phrase reading is an L3 decision"* and *"Every
+change point and both span edges are candidate phrase ends."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.67 — an interlocking boundary serves both spans, with no gap.**
+
+*Outgoing statement.* "**Span interlocking** (`}{`): where a boundary is simultaneously one punctuation-span's
+structural end and the next span's start, the single boundary tick serves both — there is no gap." — §5.1 (locator:
+lines 225–226).
+
+*Derived statements that speak to it.* L3-S11.
+
+*Current-text axis.* L3-S11: **AGREES** — *"An elided phrase boundary is published as one position that is both the
+arrival of the closing phrase's cadence and the beginning of the next phrase."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S11).
+
+---
+
+**Row 8.68 — the base partition places the span end at the single boundary tick, codetta or not.**
+
+*Outgoing statement.* "**Codetta / annexe** (the DCML refinement that the *structural* end can precede the literal next
+span start): the primitive supplies a single boundary tick, so the base partition places the span end there." — §5.1
+(locator: lines 227–228).
+
+*Derived statements that speak to it.* L3-S12.
+
+*Current-text axis.* L3-S12: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing base partition *"places the span end"* at the single boundary
+tick, with no unit for a codetta; L3-S12's units are *"phrases and the stretches that lie between phrases (a
+post-cadential codetta, an introduction before the first phrase)"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.69 — telling a structural end from a codetta is a refinement, not required.**
+
+*Outgoing statement.* "Distinguishing a structural end from a trailing codetta is a **graded-strength refinement** (the
+structural end is the stronger peak) — specified as a refinement (§5.1-a), not required for the flat partition." —
+§5.1 (locator: lines 228–230).
+
+*Derived statements that speak to it.* L3-S12.
+
+*Current-text axis.* L3-S12: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing distinction is *"not required for the flat partition"*; L3-S12
+says *"Each unit carries which of the two it is."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.70 — of two close boundaries, the stronger is the structural end and the weaker opens nothing.**
+
+*Outgoing statement.* "**(§5.1-a, refinement)** Where two boundaries fall close together (a strong structural peak
+followed by a weak one), the **stronger** peak is the punctuation-span's structural end and the span between them is
+its codetta; the weaker peak does not open a new punctuation-span." — §5.1-a (locator: lines 231–233).
+
+*Derived statements that speak to it.* L3-S12.
+
+*Current-text axis.* L3-S12: **DIFFERS**.
+
+*The difference, in both texts' own words.* In the outgoing refinement *"the weaker peak does not open a new
+punctuation-span"*, the codetta having no unit of its own; L3-S12 gives the between-phrase stretch a unit, *"a
+post-cadential codetta"* among its examples.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.71 — the closeness window and strength margin are constants of the precision phase.**
+
+*Outgoing statement.* "The closeness window and the strength margin are precision-phase constants." — §5.1-a (locator:
+line 233).
+
+*Derived statements that speak to it.* L3-S14.
+
+*Current-text axis.* L3-S14: **AGREES** — *"Every weight of the phrase model is fitted from annotated phrase boundaries,
+held out by piece, with its capacity declared before the fit, on licence-clear music only. No value is given here."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S14).
+
+---
+
+**Row 8.72 — the canonical reading: keep the strong cut, drop the weak, record the codetta end as an annexe.**
+
+*Outgoing statement.* "The refinement above admits more than one reading of what to do with the second boundary, and
+one of them is fixed: **keep the strong-peak cut, drop the weak cut, and record the codetta's end as an ANNEXE** — the
+`codettaEndTick` field — rather than as a span boundary." — §5.1-a, the canonical reading (locator: lines 234–237). Its
+bold parenthetical lead is read as a title. The sentence lies in D-458's home, which is not withheld and carries no
+mark.
+
+*Derived statements that speak to it.* L3-S12.
+
+*Current-text axis.* L3-S12: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing reading records *"the codetta's end as an ANNEXE … rather than
+as a span boundary"*; L3-S12's units include *"a post-cadential codetta"*, each carrying *"which of the two it is"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.73 — the reading inert under default settings.**
+
+*Outgoing statement.* "It is **inert under default settings** and changes no output unless the refinement is explicitly
+enabled, so it fixes what the refinement means before anything depends on it rather than after." — §5.1-a (locator:
+lines 240–242). The sentence stands inside the canonical reading's defense and states a separate claim about the
+implementation.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED** — *Audit question:* is the codetta refinement switched off by default, so that it
+changes no output unless enabled (as Row 8.4 (ii))?
+
+---
+
+**Row 8.74 — a key area is a maximal span of constant local key.**
+
+*Outgoing statement.* "A **key-area** is a maximal span of constant local key." — §5.2 *Key-area grouping* (locator:
+line 246).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.12.
+
+---
+
+**Row 8.75 — a key area opened at the first unit, extended while the key holds, closed at each change.**
+
+*Outgoing statement.* "Read the upstream **local-key track** (the local tonic and mode carried per analysis unit by
+Layers 3/5) in order; open a key-area at the first unit; extend it while the local key is unchanged; **close it and open
+a new one at each local-key change**." — §5.2 (locator: lines 246–248).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.12.
+
+---
+
+**Row 8.76 — a key change may fall within a punctuation-span; key areas not nested in them.**
+
+*Outgoing statement.* "The granularity at which a key change can fall is the granularity at which the local key is
+carried upstream — the chord-rhythm analysis unit, which is **finer than a punctuation-span** — so a key change may fall
+**within** a punctuation-span; key-areas are therefore an **independent** flat segmentation, **not** nested in
+punctuation-spans (§3, §9-D5)." — §5.2 (locator: lines 248–251).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.52 (ii).
+
+---
+
+**Row 8.77 — a key area's confidence, non-increasing in its weakest unit's.**
+
+*Outgoing statement.* "Each key-area carries its local tonic and mode and a **confidence that is non-increasing in its
+weakest unit's key confidence** (the exact combiner — for example the duration-weighted mean — is precision-phase; this
+direction is fixed here)." — §5.2 (locator: lines 251–253).
+
+*Derived statements that speak to it.* L3-S34.
+
+*Current-text axis.* L3-S34: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing key area carries *"a **confidence that is non-increasing in its
+weakest unit's key confidence**"*; L3-S34 says *"The mass of a view is the total mass of the L2 readings that give
+it."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.78 — any confidence the grouping publishes: a bounded margin, not a calibrated probability, from the declared key confidence.** *WITHHELD — D-459.*
+
+*Outgoing statement.* "*(Contract compliance, added at sign-off review 2026-07-02: any confidence L6 publishes — the
+key-area confidence, a span-level aggregate — is a **boundary confidence under the cross-layer confidence contract**
+(`cowork_confidence_contract.md` U2): [0,1], declared in the contract's **Class M** (a margin-family quantity, not a
+calibrated probability), with its combiner and inputs named; and its **input** is each unit's DECLARED boundary key
+confidence per that contract — i.e. once the **D-L3a close-out** (the Layer-3 boundary-confidence declaration item of
+`cowork_confidence_contract.md` §3) lands, the one declared L3/L5 number, not the **diagnostic sigmoid** (the Layer-3
+emission-scale confidence squash used by the grading diagnostics, named in the Layer-3 spec banner as the C1 fidelity
+fix).)*" — §5.2 (locator: lines 254–261). Two claims: (i) any confidence the grouping publishes lies in [0,1], is
+declared a margin and not a calibrated probability, and names its combiner and inputs; (ii) its input is each unit's
+declared key confidence, not a quantity of the grading diagnostics.
+
+*Derived statements that speak to it.* (i) L3-S32. (ii) L3-S37.
+
+*Current-text axis.* (i) L3-S32: **DIFFERS**. (ii) L3-S37: **AGREES** — L3 consumes from L2 *"the charter's list and its
+rivals (L2-S45), never a term value, term weight, partial candidate score or other intermediate quantity of L2's
+scoring."* **An AGREES on a row inside a withheld home: a derived statement reaching a ruled answer the deriving session
+was not shown.**
+
+*The difference, in both texts' own words.* (i) The outgoing confidence is *"[0,1], declared in the contract's **Class
+M** (a margin-family quantity, not a calibrated probability)"*; L3-S32 says *"L3's mass is of the same class as L2's:
+the model's own distribution, not calibrated, comparable only within one working span's publication"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to *the uncertainty surface* (NOT A LAYER), whose charter is that every
+published fact carries its own mass and its own establishment status. (ii) **ADOPTED — carried** (L3-S37).
+
+---
+
+**Row 8.79 — a key-area boundary falls where the committed key changes; the modulation not re-decided.**
+
+*Outgoing statement.* "**A confirmed Layer-5 modulation** (§5.4 of the L5 design) is already reflected in the local-key
+track it commits, so a key-area boundary falls exactly where the modulation recompute committed the new key — L6 reads
+that; it does not re-decide the modulation." — §5.2 (locator: lines 262–264). Two claims: (i) a key-area boundary falls
+where the committed local key changes; (ii) the grouping does not re-decide the modulation.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S38.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S38: **AGREES** — *"No L3 fact may change an L2 fact, a
+rival or a mass."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed** — travelling with Row 8.12. (ii) **ADOPTED — carried** (L3-S38).
+
+---
+
+**Row 8.80 — the as-built carries the local key below the span.**
+
+*Outgoing statement.* "The **as-built** carries the local key at **chord-rhythm** (sub-span) granularity, which **does**
+permit a mid-span key change, as the ground truth annotates." — §5.2, the proper-layer flag (locator: lines 267–268).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED** — *Audit question:* at what granularity does the as-built carry the local key,
+and does it permit a key change inside a punctuation-span?
+
+---
+
+**Row 8.81 — the tension is the function and key layers' to reconcile.**
+
+*Outgoing statement.* "This terminological tension is **L5/L2's to reconcile** (the proper layer): clarify the §5.0
+"region" wording to the chord-rhythm sense, or state the local-key carry granularity explicitly." — §5.2, the
+proper-layer flag (locator: lines 268–270).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a review finding the document's §15 item 6 records as resolved.
+
+---
+
+**Row 8.82 — the local key consumed at its producer's granularity, finer than the span.**
+
+*Outgoing statement.* "L6 consumes the local-key track at whatever granularity the reconciled definition fixes; this
+design assumes the sub-span (as-built) granularity (**reconciled — §15-6 RESOLVED**: the §2.15 span typology + the L5
+§5.0 disambiguation fixed the term; key-areas group the **key-span**, which cross-cuts punctuation-spans)." — §5.2, the
+proper-layer flag (locator: lines 270–273).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.52 (ii).
+
+---
+
+**Row 8.83 — each cadence associated with a span, under the asymmetric relation.**
+
+*Outgoing statement.* "Associate each Layer-5 cadence with a punctuation-span, honouring the **asymmetric** relation
+(ground truth: a cadence almost always coincides with a span ending; many punctuation-spans end with no cadence):" —
+§5.3 *Cadence-to-punctuation-span alignment* (locator: lines 276–277). Its parenthesis is the defense; its bullets are
+Rows 8.84 to 8.88.
+
+*Derived statements that speak to it.* L3-S15.
+
+*Current-text axis.* L3-S15: **AGREES** — *"A cadence is published only at a phrase end L3 has decided, an elided one
+included, and at most one per phrase end."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S15).
+
+---
+
+**Row 8.84 — a cadence closes the span ending at its arrival or within a window after it.**
+
+*Outgoing statement.* "A cadence **closes** the punctuation-span whose **ending boundary lies at the cadence's arrival
+tick, or within the alignment window after it** (a cadence's arrival may slightly precede the notated span end — for
+example a suspended resolution; the window's width is a precision-phase constant, its existence fixed here)." — §5.3
+(locator: lines 278–281). Two claims: (i) a cadence closes the span whose ending boundary lies at its arrival or within
+a window after it; (ii) the window's width is a constant of the precision phase.
+
+*Derived statements that speak to it.* (i) L3-S10. (ii) L3-S14.
+
+*Current-text axis.* (i) L3-S10: **DIFFERS**. (ii) L3-S14: **AGREES** — *"No value is given here."*
+
+*The difference, in both texts' own words.* (i) The outgoing span end lies *"at the cadence's arrival tick, or within the
+alignment window after it"*; L3-S10 says *"The arrival lies at or before the phrase end, and the two may be bars apart
+when the final harmony is prolonged."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above. (ii) **ADOPTED — carried** (L3-S14).
+
+---
+
+**Row 8.85 — a span with no cadence ends without one, and is not forced to carry one.**
+
+*Outgoing statement.* "A punctuation-span with **no** cadence arriving within the window before its ending boundary ends
+**without a cadence** — a valid, common case; it is not forced to carry one." — §5.3 (locator: lines 282–283).
+
+*Derived statements that speak to it.* L3-S18.
+
+*Current-text axis.* L3-S18: **AGREES** — *"A phrase end without a cadence is a positive reading of the music."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S18).
+
+---
+
+**Row 8.86 — a cadence near no boundary tagged internal, neither snapped nor discarded.**
+
+*Outgoing statement.* "A cadence whose arrival lies **within the alignment window of no punctuation-span boundary** is
+tagged **internal** (mid-span) and surfaced as such — **not** snapped to a distant boundary and **not** discarded." —
+§5.3 (locator: lines 284–285).
+
+*Derived statements that speak to it.* L3-S15.
+
+*Current-text axis.* L3-S15: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing cadence *"is tagged **internal** (mid-span) and surfaced as
+such"*; L3-S15 publishes cadential evidence at other positions *"as an evidence-class fact named for the pattern (never
+*cadence*)"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.87 — an internal cadence recorded, not resolved, since the boundary and the cadence are decided upstream.**
+
+*Outgoing statement.* "An internal cadence is a *diagnostic signal* (it means either a missed boundary or an over-eager
+cadence); L6 records it rather than resolving it — resolving it would require re-deciding the boundary or the cadence,
+both upstream and not L6's to override (§8)." — §5.3 (locator: lines 285–287).
+
+*Derived statements that speak to it.* L3-S8.
+
+*Current-text axis.* L3-S8: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing boundary is *"upstream and not L6's to override"*; L3-S8 says
+*"The phrase reading is an L3 decision."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.88 — the perfect/imperfect and other type distinctions carried verbatim; the cadence only positioned here.**
+
+*Outgoing statement.* "The **perfect/imperfect** and other type distinctions are Layer-5's (carried verbatim); L6 only
+positions the cadence in the punctuation-span structure." — §5.3 (locator: lines 288–289). Two claims: (i) the
+perfect/imperfect and other type distinctions are made by the function layer and carried verbatim; (ii) the grouping
+only positions the cadence.
+
+*Derived statements that speak to it.* (i) L3-S17. (ii) L3-S15.
+
+*Current-text axis.* (i) L3-S17: **DIFFERS**. (ii) L3-S15: **AGREES** — *"A cadence is published only at a phrase end L3
+has decided"*.
+
+*The difference, in both texts' own words.* (i) The outgoing text carries a made *"**perfect/imperfect**"* distinction;
+L3-S17 says *"Feature (6) blocks the PAC/IAC split in every vocabulary until OQ-L3-4 is ruled."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above and OQ-L3-4. (ii) **ADOPTED — carried** (L3-S15).
+
+---
+
+**Row 8.89 — an unresolved mark surfaced on the groups that contain it.** *WITHHELD — D-460.*
+
+*Outgoing statement.* "A Layer-5 open mark on a unit is surfaced on the punctuation-span and key-area that contain that
+unit (the group is reported as carrying an unresolved reading at that location)." — §5.4 *Carrying the residual*
+(locator: lines 292–293).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.31 (i).
+
+---
+
+**Row 8.90 — the grouping never resolves an unresolved mark.** *WITHHELD — D-460.*
+
+*Outgoing statement.* "L6 **never** resolves an open mark — it has no evidence Layer 5 lacked." — §5.4 (locator: lines
+293–294). Its second clause is the defense.
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **AGREES** — *"No L3 fact may change an L2 fact, a rival or a mass."* **An AGREES on a row
+inside a withheld home: a derived statement reaching a ruled answer the deriving session was not shown.**
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S38).
+
+---
+
+**Row 8.91 — a span fully resolved exactly when none of its units carries a mark, with no threshold.** *WITHHELD — D-460.*
+
+*Outgoing statement.* "A punctuation-span composed entirely of units carrying **no open mark** (that is the whole test —
+no confidence threshold is involved) is reported as fully resolved; one containing an open mark is reported with the
+residual visible." — §5.4 (locator: lines 294–296).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.31 (i): a unit reported fully resolved exactly
+when none of its spans carries the mark, no confidence threshold entering the test.
+
+---
+
+**Row 8.92 — each recognised schema span carried verbatim and exposed as a cross-cutting label.**
+
+*Outgoing statement.* "When the recognition consumer (`cowork_progression_schema_design.md`) is present, each
+recognised-schema **progression-schema-span** it emits is carried verbatim: L6 places the span in the grouped output and
+exposes it as a cross-cutting label alongside the punctuation-spans and key-spans it overlaps." — §5.5 *Hosting the
+recognised-schema annotations* (locator: lines 299–301).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18.
+
+---
+
+**Row 8.93 — the grouping recognises no schema; it hosts the result.**
+
+*Outgoing statement.* "L6 **does not recognise schemas, score matches, or apply substitutions** — the consumer does; L6
+only hosts the result, the same reuse-not-duplicate discipline as the punctuation-span / cadence / key carries." — §5.5
+(locator: lines 301–303).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18.
+
+---
+
+**Row 8.94 — absent the consumer, the schema output is empty.**
+
+*Outgoing statement.* "Absent the consumer (the current dormant state), this output is simply empty and the four core
+rules (§5.1–§5.4) stand alone — so hosting the annotation adds no detection to L6." — §5.5 (locator: lines 303–304).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18.
+
+---
+
+**Row 8.95 — no detection of its own: assembly and read-through carries.** *WITHHELD — D-454.*
+
+*Outgoing statement.* "Layer 6 defines **no detection of its own**: it assembles §5.1–§5.3 (punctuation-span
+segmentation, key-area grouping, cadence alignment) and hosts the **read-through carries** — §5.4 the Layer-5 residual
+and §5.5 the consumer's schema annotations, both carried verbatim, neither *detected* here." — §6 *The layer is exactly
+its assembly rules* (locator: lines 307–309).
+
+*Derived statements that speak to it.* L3-S8.
+
+*Current-text axis.* L3-S8: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing layer *"defines **no detection of its own**"*; L3-S8 says *"The
+phrase reading is an L3 decision."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.96 — no further detection rule, and no hierarchy.** *WITHHELD — D-454.*
+
+*Outgoing statement.* "There is no additional *detection* rule and no hierarchy." — §6 (locator: line 309). Two claims:
+(i) no further detection rule; (ii) no hierarchy.
+
+*Derived statements that speak to it.* (i) L3-S8. (ii) L3-S22.
+
+*Current-text axis.* (i) L3-S8: **DIFFERS**. (ii) L3-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* (i) The outgoing text has *"no additional *detection* rule"*; L3-S8 says *"The
+phrase reading is an L3 decision."* (ii) The outgoing text has *"no hierarchy"*; L3-S22 says *"It is a nested grouping
+over the units of the phrase reading"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above. (ii) **UNPLACED** — the same.
+
+---
+
+**Row 8.97 — pressure to add detection points to an earlier layer or out of scope.** *WITHHELD — D-454.*
+
+*Outgoing statement.* "Pressure to add detection is a signal to check whether the work belongs in an **earlier** layer (a
+detection that should be a primitive) or is an **out-of-scope extension** (§9-D3) — not a new Layer-6 mechanism." — §6
+(locator: lines 310–311).
+
+*Derived statements that speak to it.* L3-S8.
+
+*Current-text axis.* L3-S8: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing detection belongs *"in an **earlier** layer"* or out of scope,
+*"not a new Layer-6 mechanism"*; L3-S8 says *"The phrase reading is an L3 decision."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.98 — the grouping changes no upstream decision.**
+
+*Outgoing statement.* "L6 changes no upstream decision; it segments and labels." — §7 *Crosscutting concepts* (locator:
+line 315).
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **AGREES** — *"No L3 fact may change an L2 fact, a rival or a mass."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S38).
+
+---
+
+**Row 8.99 — downstream, with no feedback.**
+
+*Outgoing statement.* "This is the no-feedback half of the forward-only contract (§8 of the target architecture):
+grouping is **downstream** of Layer-5's resolution and override, and does not feed back into them." — §7 (locator: lines
+315–317).
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **AGREES** — *"L3 never revises L2, and L2 reads nothing L3 publishes."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S38).
+
+---
+
+**Row 8.100 — reuse, do not duplicate.**
+
+*Outgoing statement.* "**Reuse, do not duplicate.**" — §7 (locator: line 318).
+
+*Derived statements that speak to it.* L3-S39.
+
+*Current-text axis.* L3-S39: **AGREES** — *"L3 never re-derives a fact a layer beneath it publishes"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S39).
+
+---
+
+**Row 8.101 — the boundaries, cadences, Roman numerals and keys each from their one source.**
+
+*Outgoing statement.* "Punctuation-span boundaries come from the one phrase-boundary primitive; cadences and Roman
+numerals from the one Layer-5 output; local keys from the one Layer-3 carry." — §7 (locator: lines 318–319). Three
+claims: (i) the boundaries come from the phrase-boundary primitive; (ii) the cadences come from the function layer's
+output; (iii) the Roman numerals and the local keys each come from their one producer.
+
+*Derived statements that speak to it.* (i) L3-S8. (ii) L3-S15. (iii) L3-S37.
+
+*Current-text axis.* (i) L3-S8: **DIFFERS**. (ii) L3-S15: **DIFFERS**. (iii) L3-S37: **AGREES** — *"L3 consumes what L0,
+L1 and L2 publish, and nothing else."*
+
+*The difference, in both texts' own words.* (i) The outgoing boundaries *"come from the one phrase-boundary primitive"*;
+L3-S8 says *"The phrase reading is an L3 decision."* (ii) The outgoing cadences come *"from the one Layer-5 output"*;
+L3-S15 says *"A cadence is published only at a phrase end L3 has decided"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above. (ii) **UNPLACED** — the same. (iii) **ADOPTED — carried** (L3-S37).
+
+---
+
+**Row 8.102 — no second boundary detector, cadence detector or key segmenter.**
+
+*Outgoing statement.* "L6 adds **no** second boundary detector, cadence detector, or key segmenter." — §7 (locator:
+lines 319–320).
+
+*Derived statements that speak to it.* L3-S39.
+
+*Current-text axis.* L3-S39: **AGREES** — *"L3 never re-derives a fact a layer beneath it publishes"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S39).
+
+---
+
+**Row 8.103 — the scattered paths retired into the layer at engagement.**
+
+*Outgoing statement.* "It **retires** the scattered `detectCadences`/`detectPivotChords`/`KeyArea` paths into itself at
+engagement." — §7 (locator: lines 320–321).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a migration plan.
+
+---
+
+**Row 8.104 — the alignment window, the codetta constants and the confidence combiner are constants of the precision phase.**
+
+*Outgoing statement.* "The alignment window, the codetta closeness/margin, and the key-area confidence combiner are
+precision-phase constants; this document fixes the rules and their direction, not the numbers." — §7 (locator: lines
+322–323).
+
+*Derived statements that speak to it.* L3-S14.
+
+*Current-text axis.* L3-S14: **AGREES** — *"No value is given here."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S14).
+
+---
+
+**Row 8.105 — an explanatory layer, not an accuracy requirement, kept thin.** *WITHHELD — D-461.*
+
+*Outgoing statement.* "L6 is a deliberate **explainability** layer, not an accuracy requirement; it stays the thin
+assembly layer specified here and does not grow detection of its own." — §7 (locator: lines 325–326). Two claims: (i)
+the grouping is an explanatory layer, not an accuracy requirement; (ii) it stays a thin assembly and grows no detection
+of its own.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S8.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S8: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing layer *"does not grow detection of its own"*; L3-S8 says
+*"The phrase reading is an L3 decision."*
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed.** *Proposal:* that the phrase and section grouping be held as an
+explanatory output of the analysis, not as an accuracy requirement on it. (ii) **UNPLACED** — a rule on L3's own subject
+that a derived statement differs from; read: the two texts above.
+
+---
+
+**Row 8.106 — the function layer owns the fine-grain reading and the override of a confident commit.**
+
+*Outgoing statement.* "Layer 5 owns the **fine-grain reading** of each slice and the **class-(b) override** of a
+confidently-wrong commit (§5.5/§10 of the L5 design): it *corrects* labels." — §8 *The Layer-5-override ↔ Layer-6-merge
+division* (locator: lines 329–330).
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing function layer *"*corrects* labels"* through *"the
+**class-(b) override** of a confidently-wrong commit"*; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a
+mass."*
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*: deciding and correcting
+the chord read over each span is L2's.
+
+---
+
+**Row 8.107 — the grouping groups the already-corrected stream.**
+
+*Outgoing statement.* "Layer 6 owns the **grouping of the already-corrected stream**: once Layer 5 has resolved/over­ridden
+a slice, L6 **merges** the now-consistent slices into punctuation-spans and key-areas." — §8 (locator: lines 330–331).
+
+*Derived statements that speak to it.* L3-S37.
+
+*Current-text axis.* L3-S37: **AGREES** — *"L3 consumes what L0, L1 and L2 publish, and nothing else."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S37).
+
+---
+
+**Row 8.108 — correction is the function layer's, by selection among carried readings.**
+
+*Outgoing statement.* "Correction (changing a slice's reading) is **Layer 5's**, by selection among carried readings,
+fired by the §8 override mechanism." — §8 (locator: lines 333–334).
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing correction, *"changing a slice's reading"*, is *"fired by the §8
+override mechanism"*; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, as Row 8.106.
+
+---
+
+**Row 8.109 — the grouping sees only the corrected result.**
+
+*Outgoing statement.* "L6 sees only the corrected result." — §8 (locator: line 334).
+
+*Derived statements that speak to it.* L3-S37.
+
+*Current-text axis.* L3-S37: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing grouping *"sees only the corrected result"*; L3-S37 consumes
+from L2 *"the charter's list and its rivals (L2-S45)"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.110 — grouping never feeds back to request a different correction.**
+
+*Outgoing statement.* "Grouping (segmenting the corrected stream) is **Layer 6's**, and it **never feeds back** to
+request a different correction." — §8 (locator: lines 335–336).
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **AGREES** — *"L3 never revises L2, and L2 reads nothing L3 publishes."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S38).
+
+---
+
+**Row 8.111 — a tension the grouping meets is surfaced, not acted on.**
+
+*Outgoing statement.* "An internal cadence or a same-key merge that *looks* like it wants a different upstream reading is
+**surfaced (§5.3 internal tag)**, not acted on — the forward-only contract forbids the back-edge." — §8 (locator: lines
+336–337).
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **AGREES** — *"Where the music suggests that an L3 reading would improve L2's (a phrase
+symmetry that would move a key change), that is not acted on in L3."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S38).
+
+---
+
+**Row 8.112 — D2: the upstream primitives reused, nothing detected.**
+
+*Outgoing statement.* "L6 reuses the upstream primitives and detects nothing." — §9 *Architecture decisions*, D2
+(locator: line 345). Its lead, *"D2 — Assembly, not detection."*, is read as a title.
+
+*Derived statements that speak to it.* L3-S8.
+
+*Current-text axis.* L3-S8: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing layer *"detects nothing"*; L3-S8 says *"The phrase reading is an
+L3 decision."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.113 — D3: sections, periods and sentences out of the core for proportionality.** *WITHHELD — D-456.*
+
+*Outgoing statement.* "**D3 — Sections / periods / sentences are out of L6's *core* for PROPORTIONALITY — NOT
+disqualified for lack of an oracle (user-ratified verifiability contract, 2026-06-29).**" — §9, D3 (locator: lines
+348–349). Two claims: (i) sections are out of the grouping's core; (ii) periods and sentences are out of it.
+
+*Derived statements that speak to it.* (i) L3-S22. (ii) L3-S24.
+
+*Current-text axis.* (i) L3-S22: **DIFFERS**. (ii) L3-S24: **AGREES** — *"L3 publishes the grouping (boundaries, nesting
+and rivals) and not form-function names"*. **An AGREES on a row inside a withheld home: a derived statement reaching a
+ruled answer the deriving session was not shown.**
+
+*The difference, in both texts' own words.* (i) The outgoing sections are *"out of L6's *core* for PROPORTIONALITY"*;
+L3-S22 says *"The section grouping is an L3 decision."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above. (ii) **ADOPTED — carried** (L3-S24).
+
+---
+
+**Row 8.114 — forms and sections a higher layer's, buildable with an unvalidated mark.** *WITHHELD — D-456.*
+
+*Outgoing statement.* "They stay out of the thin core because L6 is the *flat-grouping assembly* layer and
+forms/sections are a larger, *higher*-layer structure — and they are **buildable via a chosen alternative-confidence
+path** (a form-annotated corpus, or theory-rules-as-oracle) with an "empirically-unvalidated" mark, when a need
+arises." — §9, D3 (locator: lines 351–353). Two claims: (i) forms and sections are a larger structure belonging to a
+higher layer; (ii) they are buildable later, carrying a mark that they are empirically unvalidated.
+
+*Derived statements that speak to it.* (i) L3-S22. (ii) L3-S33.
+
+*Current-text axis.* (i) L3-S22: **DIFFERS**. (ii) L3-S33: **AGREES** — *"*Provisional* is carried by anything resting on
+an unfitted weight, a stand-in value or a provisional input."* **An AGREES on a row inside a withheld home: a derived
+statement reaching a ruled answer the deriving session was not shown.**
+
+*The difference, in both texts' own words.* (i) The outgoing sections are *"a larger, *higher*-layer structure"*; L3-S22
+says *"The section grouping is an L3 decision."*
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above. (ii) **ADOPTED — carried** (L3-S33).
+
+---
+
+**Row 8.115 — the core's four outputs.** *WITHHELD — D-456.*
+
+*Outgoing statement.* "The core is punctuation-spans + key-areas + cadence alignment + the hosted schema spans." — §9,
+D3 (locator: lines 353–354).
+
+*Derived statements that speak to it.* L3-S22.
+
+*Current-text axis.* L3-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing core is *"punctuation-spans + key-areas + cadence alignment +
+the hosted schema spans"*, without sections; L3-S22 says *"The section grouping is an L3 decision."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.116 — D4: cadences aligned asymmetrically; an off-boundary cadence surfaced, not snapped.** *WITHHELD — D-455.*
+
+*Outgoing statement.* "**D4 — Cadences align to punctuation-spans, asymmetrically; an off-boundary cadence is surfaced,
+not snapped (§5.3).**" — §9, D4 (locator: line 355). Two claims: (i) cadences align to the spans asymmetrically; (ii)
+an off-boundary cadence is surfaced and not snapped.
+
+*Derived statements that speak to it.* (i) L3-S15. (ii) L3-S15.
+
+*Current-text axis.* (i) L3-S15: **AGREES** — *"A cadence is published only at a phrase end L3 has decided"*. **An AGREES
+on a row inside a withheld home: a derived statement reaching a ruled answer the deriving session was not shown.** (ii)
+L3-S15: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing off-boundary cadence *"is surfaced, not snapped"*; L3-S15
+publishes cadential evidence at other positions *"as an evidence-class fact named for the pattern (never *cadence*)"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S15). (ii) **UNPLACED** — a rule on L3's own subject that a derived
+statement differs from; read: the two texts above.
+
+---
+
+**Row 8.117 — D5: punctuation-spans and key areas independent, not nested.**
+
+*Outgoing statement.* "**D5 — Punctuation-spans and key-areas are independent flat segmentations, not nested.**" — §9,
+D5 (locator: line 358).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.52 (ii).
+
+---
+
+**Row 8.118 — the key areas validated against the chorales' annotated local keys.**
+
+*Outgoing statement.* "**Key-areas → directly validatable** against the chorale ground-truth local keys (When-in-Rome
+`Key:` tokens, 326/353 human + music21)." — §10 *Quality & testing* (locator: lines 364–365).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 8.119 — the punctuation-spans validated against two oracles.**
+
+*Outgoing statement.* "**Punctuation-spans → two oracles:** the chorale **fermatas** (351/353 — the chorale grouping
+marker the primitive also consumes, so a strong but not fully independent check) **and**, once the DCML-TSV corpora are
+brought in, the **`{}` annotations** (DCML's punctuation-span markers; an independent oracle on that repertoire)." —
+§10 (locator: lines 366–368).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 8.120 — the cadence alignment validated by location only.** *WITHHELD — D-462.*
+
+*Outgoing statement.* "**Cadence alignment → the DCML-TSV `|cadence` oracle, scoped to LOCATION** (robust to
+Roman-numeral errors; cadence *type* is harmony-dependent and only partially attributable on the harder repertoire —
+measured, caveated, not a clean gate)." — §10 (locator: lines 369–371).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 8.121 — the metrics.**
+
+*Outgoing statement.* "**Metrics:** punctuation-span-boundary and cadence-location **precision/recall** against the marker
+ticks; key-area accuracy as the **agreement of key-area boundary ticks with the ground-truth local-key change ticks**
+(plus the per-area tonic/mode match); the residual-honesty principle the lower layers established (a correctly carried
+open mark beats a guessed group)." — §10 (locator: lines 372–375).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 8.122 — the two-step validation plan.**
+
+*Outgoing statement.* "**Two-step plan:** (1) now — the narrow TSV oracle for punctuation-span + cadence-location (and
+the chorale fermatas for punctuation-spans); (2) later, at the pre-inference boundary (just before the roadmap's
+inference-improvement phase opens) — the wide full-pipeline generalisation baseline on the DCML-TSV corpora
+(`cowork_layer6_grouping_research.md` §6)." — §10 (locator: lines 376–379).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 8.123 — dormant until engagement; the gate unmoved by construction; no production consumer.**
+
+*Outgoing statement.* "**Dormant + byte-identical** until engagement (deferred): the corpus gate stays 53/24/53 by
+construction; L6 has no production consumer." — §10 (locator: lines 380–381). Two claims: (i) the layer stays dormant
+until engagement; (ii) the batch gate is unmoved by construction and the layer has no production consumer.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a build state. (ii) **QUARANTINED** — *Audit question:* does any production
+path consume the grouping layer at the current commit (as Row 8.6 (i))?
+
+---
+
+**Row 8.124 — the fermata oracle partly the primitive's own input.**
+
+*Outgoing statement.* "**The punctuation-span oracle is partly the phrase-boundary primitive's own input** (fermatas) —
+independent validation needs the TSV `{}` oracle; weight the fermata check accordingly." — §11 *Risks & technical
+debt* (locator: lines 384–385).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 8.125 — the cadence type unvalidated, carried with an explicit mark.**
+
+*Outgoing statement.* "**Cadence-type is unvalidated on chorales and only partially attributable on the TSV repertoire**
+— carried under the verifiability contract with an explicit mark until a cleaner oracle exists." — §11 (locator: lines
+386–387). Two claims: (i) the cadence type is unvalidated on the chorales and only partly attributable on the other
+repertoire; (ii) it is carried with an explicit mark until a cleaner oracle exists.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S33.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S33: **AGREES** — *"*Provisional* is carried by anything
+resting on an unfitted weight, a stand-in value or a provisional input."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED** — *Audit question:* on which corpora, under which measurement, was the
+cadence type found unvalidated on the chorales and only partly attributable on the other repertoire? (ii) **ADOPTED —
+carried** (L3-S33).
+
+---
+
+**Row 8.126 — the other repertoire harder for the lower layers; the step-1 scope as the mitigation.**
+
+*Outgoing statement.* "**The non-chorale TSV repertoire is harder for the chorale-tuned lower layers** — confounds
+cadence/key measurement; mitigated by scoping step 1 to punctuation-span + cadence-**location**." — §11 (locator: lines
+388–389). Two claims: (i) the other repertoire is harder for the lower layers tuned on the chorales; (ii) the
+mitigation is to scope the first validation step to span and cadence location.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED** — *Audit question:* on which corpora and under which measurement are the
+lower layers found weaker outside the chorales, and does it reproduce? (ii) **RELOCATED** — to *the measurement of the analysis* (NOT A
+LAYER).
+
+---
+
+**Row 8.127 — one chorale without a fermata.**
+
+*Outgoing statement.* "**`bwv112.5` has no fermata** — a single-score edge case for the fermata punctuation-span oracle
+(handle in the metric, e.g. fall back to its graded boundary, or exclude from the fermata-recall denominator — a §10
+metric detail, not a layer rule)." — §11 (locator: lines 390–392).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 8.128 — the scattered live paths are migration debt, retired at engagement.**
+
+*Outgoing statement.* "**The scattered live paths** (`detectCadences`/`detectPivotChords`/`KeyArea`) are migration debt
+— owned and retired by L6 only at the deferred engagement." — §11 (locator: lines 393–394).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a migration plan.
+
+---
+
+**Row 8.129 — the glossary entry *Cadence alignment [L6]*.**
+
+*Outgoing statement.* "**Cadence alignment [L6]** — the association of a Layer-5 cadence with the punctuation-span it
+closes (or an *internal* tag when it falls mid-span)." — §12 *Glossary*, the first entry (locator: lines 402–403). Two
+claims: (i) a cadence is associated with the span it closes; (ii) a cadence falling mid-span carries an internal tag.
+
+*Derived statements that speak to it.* (i) L3-S15. (ii) L3-S15.
+
+*Current-text axis.* (i) L3-S15: **AGREES** — *"A cadence is published only at a phrase end L3 has decided"*. (ii)
+L3-S15: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing cadence falling mid-span carries *"an *internal* tag"*;
+L3-S15 publishes such evidence *"as an evidence-class fact named for the pattern (never *cadence*)"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S15). (ii) **UNPLACED** — a rule on L3's own subject that a derived
+statement differs from; read: the two texts above.
+
+---
+
+**Row 8.130 — the glossary entry *Internal cadence [L6]*.**
+
+*Outgoing statement.* "**Internal cadence [L6]** — a detected cadence not at a punctuation-span boundary; surfaced as a
+tension signal, not snapped or discarded." — §12, the second entry (locator: lines 404–405).
+
+*Derived statements that speak to it.* L3-S15.
+
+*Current-text axis.* L3-S15: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing *"detected cadence not at a punctuation-span boundary"* is
+surfaced as one; L3-S15 says *"A cadence is published only at a phrase end L3 has decided"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.131 — the code units to reuse or retire.**
+
+*Outgoing statement.* "The phrase-boundary primitive (`engravingbridge/phraseboundaryview`), the Layer-5 output
+(`function/functionoutput`), the Layer-3 local-key carry, and the scattered live `section/` grouping paths are the
+concrete reuse/retire targets; the full reuse map is `cowork_layer6_grouping_research.md` §2." — §13 *Background: the
+as-built mapping* (locator: lines 408–410).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED** — *Audit question:* do `engravingbridge/phraseboundaryview`,
+`function/functionoutput`, the local-key carry and the `section/` grouping paths exist, and which of them run at the
+current commit?
+
+---
+
+**Row 8.132 — the non-chord-tone filter is the chord layer's lever, not the grouping's.**
+
+*Outgoing statement.* "Confirms the consensus this layer relies on: the field analyses harmony at the
+**onset/verticality level** (ChordGNN, `chordify`), models phrase/cadence as **one texture-wide layer, not per-voice**
+(AnalysisGNN, the cadence-GNN), treats **voice separation** as a *separate* task (Chew & Wu contig-mapping, VISA,
+Temperley, the link-prediction GNN — the foundation for the future voice-leading axis), and absorbs the counterpoint /
+implied-harmony difficulty via an explicit **non-chord-tone filter** (AnalysisGNN's non-chord-tone module;
+Contrapunctus) — a future **Layer-4 (emission)** lever, **not** L6's." — §14 *Related work*, the polyphony paragraph
+(locator: lines 421–425). The sentence summarises the research and is a defense; the separate rule it states, and the
+claim tabulated here, is that handling the non-chord tones is the chord layer's and not the grouping's.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *L2 — The tonal reading. The one entangled decision.*, which publishes the
+chord-tone assignment and the elaboration relation per sounding note (the derivation's §0 cites L2-S8 for it).
+
+---
+
+**Row 8.133 — the corpus-oracle gap resolved.**
+
+*Outgoing statement.* "**The corpus-oracle gap is resolved** (the two-step TSV plan, §10)." — §15 *Open items*, item 1
+(locator: line 431).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 8.134 — the corpora on disk, carrying the cadence and phrase-end columns.**
+
+*Outgoing statement.* "**Update (2026-06-30): the corpora are now on disk** (`tools/dcml/` + the `corpora/expl/dcml_*`
+clones), and their `harmonies/*.tsv` **already carry the `cadence` and `phraseend` columns** (the DCML TSV column names
+— unchanged, they are the data's own field names) — so "bring the corpora" is **done**." — §15, item 1 (locator: lines
+431–434).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 8.135 — what remains of the oracle infrastructure.**
+
+*Outgoing statement.* "The remaining **TSV-oracle infrastructure** is only: extend `dcml_parser` to read those two
+columns + build the punctuation-span/cadence-location metrics — a build prerequisite for L6 validation, to be specified
+after this design is signed." — §15, item 1 (locator: lines 434–436).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 8.136 — the oracle measured at scale; the parser drops the columns.**
+
+*Outgoing statement.* "**★ Update (2026-07-02, corpus Wave 1 — the oracle is now MEASURED, at scale):** the full
+**DLC** container — the DCML **Distant Listening Corpus**, all 40 of its 40 member corpora — is onboarded and
+inventoried (`records/cc/reports/cc_corpus_wave1_report.md` §4; registry `layer_label_counts`): **9,662 cadence labels in
+921 of 1,284 files** (PAC 4,667 / HC 2,614 / IAC 1,616 / EC 279 / DC 195 / PC 86 + HC sub-types) and **24,436
+`phraseend` markers** — and `dcml_parser.py` currently **drops all three columns**, so the §10 oracles are a purely
+additive parser extension away." — §15, item 1 (locator: lines 437–442).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 8.137 — the coverage limits of the oracle.**
+
+*Outgoing statement.* "Known coverage limits, for the §10 metrics: **12 sub-corpora carry the column but 0 cadence
+labels** (incl. `wagner_overtures`, `monteverdi_madrigals`, `schubert_winterreise` — cadence-location validation is
+unavailable there; punctuation-span validation via `phraseend` mostly remains); the richest cadence beds are beethoven
+/ mozart / corelli / cpe_bach / scarlatti / couperin_concerts." — §15, item 1 (locator: lines 442–446).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 8.138 — validation on the development beds, the held-out beds untouched.**
+
+*Outgoing statement.* "The dev/held-out split (registry `split` field) applies: the §10 step-1 validation runs on the dev
+beds; held-out stays untouched per the E2 discipline of the engage criteria (the ENGAGE CRITERIA block in
+`docs/implementation_roadmap.md`: held-out data is not consulted until engagement)." — §15, item 1 (locator: lines
+446–448).
+
+*Derived statements that speak to it.* L3-S14.
+
+*Current-text axis.* L3-S14: **AGREES** — every weight of the phrase model is fitted from annotated phrase boundaries,
+*"held out by piece"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 8.139 — the codetta refinement and the alignment window to be confirmed at build.**
+
+*Outgoing statement.* "**The §5.1-a codetta refinement** and the **§5.3 alignment window** — confirm the exact rule
+shapes at build (the constants are precision-phase regardless)." — §15, item 2 (locator: lines 449–450).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an open item of the build plan.
+
+---
+
+**Row 8.140 — sections and form as a deferred extension.**
+
+*Outgoing statement.* "**Sections / form** — the verifiability-gated extension (§9-D3); decide the verification strategy
+*if and when* a need and an oracle are identified." — §15, item 3 (locator: lines 451–452).
+
+*Derived statements that speak to it.* L3-S22.
+
+*Current-text axis.* L3-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing sections are *"the verifiability-gated extension (§9-D3)"*;
+L3-S22 says *"The section grouping is an L3 decision."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.141 — sections out by default.**
+
+*Outgoing statement.* "Default out." — §15, item 3 (locator: line 452).
+
+*Derived statements that speak to it.* L3-S22.
+
+*Current-text axis.* L3-S22: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing sections are *"Default out."*; L3-S22 says *"The section
+grouping is an L3 decision."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the two
+texts above.
+
+---
+
+**Row 8.142 — the corpus hygiene, handled elsewhere.**
+
+*Outgoing statement.* "**The corpus hygiene** (stray `corelli.xml`; `bwv112.5` no fermata) — handled in the parallel
+hygiene step; the `bwv112.5` metric treatment is a §10 detail." — §15, item 4 (locator: lines 453–454).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to *the measurement of the analysis* (NOT A LAYER).
+
+---
+
+**Row 8.143 — engagement deferred indefinitely.**
+
+*Outgoing statement.* "**Engagement** (retiring the scattered live paths into L6) — deferred indefinitely with the rest of
+the architecture; production out of scope." — §15, item 5 (locator: lines 455–456).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a deferred plan.
+
+---
+
+**Row 8.144 — the region definition fixed by the span typology and the disambiguation.**
+
+*Outgoing statement.* "Fixed by (a) the **architecture span-typology contract** (target-architecture §2 — the named span
+family, with the nesting-vs-cross-cutting rule and "region" unqualified banned), and (b) the **L5 §5.0
+disambiguation** into slice / key-span / decision-context span / punctuation-span." — §15, item 6 (locator: lines
+459–461). Its lead, the status-labelled title of the item, is read as a title.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event.
+
+---
+
+**Row 8.145 — the key areas group the key spans, cutting across the punctuation-spans.**
+
+*Outgoing statement.* "L6's key-areas group the **key-span**, which **cross-cuts** punctuation-spans — now grounded in the
+clarified L5." — §15, item 6 (locator: lines 461–462).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed** — travelling with Row 8.52 (ii).
+
+---
+
+**Row 8.146 — the prerequisite closed.**
+
+*Outgoing statement.* "Prerequisite closed." — §15, item 6 (locator: line 462).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 8.147 — the rename propagated.**
+
+*Outgoing statement.* "The `phrase → punctuation-span` rename reached the architecture §2.15 span-typology contract and
+the L5 §5.0 disambiguation, and the ratified sibling rename (D6, 2026-07-02) — **sequence-span →
+progression-schema-span** — is executed in this spec (§0) and propagated with the wider confirmed family rename
+(harmonic region → **chord-span**; pedal → **pedal-point-span**; cadential scope kept as the stated exception)." — §15,
+item 7 (locator: lines 463–467). Its lead, the status-labelled title of the item, is read as a title.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event.
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. "Sign-off history: reviewed + language-passed (Cowork, 2026-06-30); …" (19–22) — provenance.
+2. "§2/§14 fold the polyphony deep search (`cowork_polyphony_phrase_harmony_research.md`) — …" (26–28) — about the
+   document.
+3. "The v1 draft (2026-06-29) went through the Cowork review + language-mechanical pass — …" (28–32) — provenance.
+4. "Research foundation: `cowork_layer6_grouping_research.md`." (32) — a pointer.
+5. "Specified by **rule and direction**; numeric calibration is the later precision phase (the firewall)." (33) — about
+   the document; the rule it names is tabulated at Row 8.104.
+6. "This layer builds on established music-theory concepts." (37) — narrative.
+7. "To keep them trustworthy, every term is marked **[MT]** …" (37–39) — about the document.
+8. "Where our operational use of an [MT] term differs from the textbook concept, the difference is stated." (39–40) —
+   about the document.
+9. "An [MT] term may also be defined here **precisely to mark it out of scope** — …" (40–42) — about the document.
+10. "Nothing below is used before it is defined here." (42) — about the document.
+11. "Every signal Layer 6 needs has already been computed by an earlier layer — …" (107–109) — a defense of Row 8.24.
+12. "Out for a *precise* reason: **the validatable grouping annotation (the DCML `{}`) is itself flat** — …" (131–134) —
+    a defense of Row 8.34.
+13. "This is **not** a "no-oracle" deferral; the oracle is flat (§9-D1)." (134) — a defense of Row 8.34.
+14. "Sound theory that *does* lack an oracle in our corpus — but **per the verifiability contract, lack of ground truth
+    does NOT disqualify them.**" (135–137) — a defense of Row 8.35.
+15. "Out of the *core*, **not** disqualified." (140) — narrative, a summary of Rows 8.35 and 8.36.
+16. "**Consumes** (all already produced, no new computation):" (154) — a lead, its items tabulated at Rows 8.42 to 8.44.
+17. "**Produces** — the flat grouping structure, **additive over Layer 5** (…):" (164–165) — a lead, its items tabulated
+    at Rows 8.45 to 8.51; the flatness and the additivity it names are tabulated at Rows 8.25 and 8.41.
+18. "Carrying the scope is what keeps the annotation from silently presenting a **local** boundary …" (169–171) — a
+    defense of Row 8.45 (ii).
+19. "All terms (…) are defined once in **§0**; the rules below use them and add no new vocabulary." (200–203) — about
+    the document.
+20. "**(Post-sign-off amendment, user-ratified 2026-07-02 — edge-truncation provenance + the extension cue.)**" (213) —
+    provenance; it stands before D-457's home.
+21. "*Why this reading and not another:* it is **the only one that preserves the flat/total partition law …**"
+    (237–238) — a defense of Row 8.72.
+22. "A weak cut that opened a punctuation-span of its own would give the analysed stretch a group …" (238–240) — a
+    defense of Row 8.72.
+23. "*What the reading costs today:* nothing." (240) — a defense of Row 8.72.
+24. "*(Homed here 2026-08-11 from the document's own status banner, …)*" (242–243) — provenance.
+25. "The rule that a key change starts a new area is fixed here." (253–254) — about the document; the rule is tabulated
+    at Row 8.75.
+26. "L5 §5.0 defines *region* as "a maximal run of slices between two adjacent phrase boundaries, …" (265–267) —
+    narrative, a review finding about another document.
+27. "That cadence is the punctuation-span's **closing cadence**." (281) — about the document's vocabulary.
+28. "The proportionality discipline (§7) holds the layer to the assembly + the carries." (311–312) — a pointer; it begins
+    on the last line of D-454's home and lies outside that home's recorded verbatim.
+29. "The SOTA reaches competitive Roman-numeral accuracy with **no** explicit grouping layer (…)." (324–325) — a defense
+    of Row 8.105. *It lies inside D-461's home (the WITHHELD mark).*
+30. "The boundary is clean and forward-only:" (331–332) — a lead, its items tabulated at Rows 8.108 to 8.111.
+31. "So there is no overlap and no cycle: Layer 5 decides *what each slice is*; Layer 6 decides *how the slices group*."
+    (338) — narrative, a summary of the division tabulated at Rows 8.106 to 8.111.
+32. "The ground-truth grouping annotation (the DCML `{}`) is explicitly non-hierarchical …" (341–342) — a defense of D1,
+    whose lead is read as a title; the rule it states is tabulated at Row 8.34.
+33. "*Rejected:* a grouping tree (GTTM-style, §0) — …" (343–344) — a defense, the declined alternatives.
+34. "*Rejected:* an independent L6 punctuation-span/cadence/key detector — …" (346–347) — a defense, the declined
+    alternatives.
+35. "They are sound theory and *do* lack an oracle in our corpus, but …" (349–351) — a defense of Row 8.113. *It lies
+    inside D-456's home (the WITHHELD mark).*
+36. "*Rejected:* forcing every punctuation-span to end with a cadence …" (356–357) — a defense, the declined
+    alternatives. *It lies inside D-455's home (the WITHHELD mark).*
+37. "*Rejected:* nesting key-areas inside punctuation-spans or vice-versa — …" (358–360) — a defense, the declined
+    alternatives.
+38. "L6's three outputs have three oracle situations (per the corpus-oracle check):" (363) — a lead, its items tabulated
+    at Rows 8.118 to 8.120.
+39. "The primary terms — … — are defined once in **§0**, the single source (…)." (397–400) — about the document.
+40. "Two operational terms specific to §5.3:" (400–401) — a lead, its entries tabulated at Rows 8.129 and 8.130.
+41. "See §4." (408) — a pointer.
+42. "**Borrowed:** the flat punctuation-span + cadence + key-area target …" (413–416) — provenance.
+43. "**Discarded:** hierarchical / GTTM grouping and prolongational reduction (…); a standalone L6 detector (duplicates
+    upstream)." (416–418) — a defense, the declined alternatives.
+44. "Full scan: `cowork_layer6_grouping_research.md` §3." (418) — a pointer.
+45. "No located system models concurrent overlapping per-voice phrases for harmonic analysis, which is why L6's grouping
+    is flat." (426) — a defense.
+46. "(In that literature "phrase/cadence detection" is the field's own term for the texture-wide task; …)" (427–428) —
+    about the document's vocabulary.
+47. "L5 §5.0 read *region* as span-bounded and single-key; verified at the as-built, that conflated three distinct spans."
+    (458–459) — narrative, a history.
+48. "The upstream **phrase-boundary primitive** keeps its code name (`phraseBoundaryView` etc.) — …" (467–469) — about the
+    naming of a code identifier.
+
+#### The arithmetic at this member
+
+- Rows written: **147** (8.1 to 8.147).
+- Rows split into two claims, **+1 each**: 8.2, 8.3, 8.4, 8.6, 8.8, 8.11, 8.15, 8.16, 8.19, 8.26, 8.28, 8.30, 8.31, 8.35,
+  8.36, 8.37, 8.40, 8.47, 8.48, 8.57, 8.59, 8.60, 8.63, 8.78, 8.79, 8.84, 8.88, 8.96, 8.105, 8.113, 8.114, 8.116, 8.123,
+  8.125, 8.126, 8.129 — thirty-six rows, **+36**.
+- Rows split into three claims, **+2 each**: 8.10, 8.14, 8.38, 8.45, 8.52, 8.101 — **+12**.
+- **Outgoing statements placed: 147 + 36 + 12 = 195.**
+- Listed under *not a statement*: **48**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row against its claims: 195 dispositions over 195 statements.
+- **UNPLACED statements at this member: 62** — listed in the table below, each with what was read at its row.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 54 | 8.8(ii), 8.10(ii), 8.14(i), 8.14(iii), 8.15(ii), 8.19(ii), 8.20, 8.23, 8.26(ii), 8.27, 8.28(i), 8.30(i), 8.30(ii), 8.31(ii), 8.35(i), 8.36(ii), 8.37(ii), 8.38(iii), 8.39, 8.41, 8.44, 8.45(i), 8.45(iii), 8.47(i), 8.48(ii), 8.52(i), 8.58, 8.60(ii), 8.61, 8.62, 8.63(i), 8.67, 8.71, 8.78(ii), 8.79(ii), 8.83, 8.84(ii), 8.85, 8.88(ii), 8.90, 8.98, 8.99, 8.100, 8.101(iii), 8.102, 8.104, 8.107, 8.110, 8.111, 8.113(ii), 8.114(ii), 8.116(i), 8.125(ii), 8.129(i) |
+| ADOPTED — proposed | 23 | 8.12, 8.17, 8.29, 8.31(i), 8.37(i), 8.38(i), 8.45(ii), 8.46, 8.48(i), 8.52(ii), 8.53, 8.54, 8.63(ii), 8.74, 8.75, 8.76, 8.79(i), 8.82, 8.89, 8.91, 8.105(i), 8.117, 8.145 |
+| RELOCATED | 23 | to L1 (1): 8.15(i). To L2 (5): 8.13, 8.19(i), 8.106, 8.108, 8.132. To the second axis (3): 8.10(i), 8.10(iii), 8.38(ii). To the uncertainty surface (1): 8.78(i). To the measurement of the analysis (13): 8.118, 8.119, 8.120, 8.121, 8.122, 8.124, 8.126(ii), 8.127, 8.135, 8.136, 8.137, 8.138, 8.142 |
+| QUARANTINED | 16 | 8.2(i), 8.2(ii), 8.3(i), 8.3(ii), 8.4(ii), 8.5, 8.6(i), 8.6(ii), 8.55, 8.57(i), 8.73, 8.80, 8.123(ii), 8.125(i), 8.126(i), 8.131 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 17 | 8.1, 8.7, 8.8(i), 8.9, 8.56, 8.57(ii), 8.81, 8.103, 8.123(i), 8.128, 8.133, 8.134, 8.139, 8.143, 8.144, 8.146, 8.147 |
+| UNPLACED | 62 | 8.4(i), 8.11(i), 8.11(ii), 8.14(ii), 8.16(i), 8.16(ii), 8.18, 8.21, 8.22, 8.24, 8.25, 8.26(i), 8.28(ii), 8.32, 8.33, 8.34, 8.35(ii), 8.36(i), 8.40(i), 8.40(ii), 8.42, 8.43, 8.47(ii), 8.49, 8.50, 8.51, 8.52(iii), 8.59(i), 8.59(ii), 8.60(i), 8.64, 8.65, 8.66, 8.68, 8.69, 8.70, 8.72, 8.77, 8.84(i), 8.86, 8.87, 8.88(i), 8.92, 8.93, 8.94, 8.95, 8.96(i), 8.96(ii), 8.97, 8.101(i), 8.101(ii), 8.105(ii), 8.109, 8.112, 8.113(i), 8.114(i), 8.115, 8.116(ii), 8.129(ii), 8.130, 8.140, 8.141 |
+| **Total** | **195** | — |
+
+**The column sums to 195, against 195 statements, so the arithmetic closes at this member**: 54 + 23 + 23 + 16 + 0 + 17
++ 62 = 195. **The statement lists in the right-hand column are the record**, and the integers are re-derivable from them
+by counting; the RELOCATED count is the sum of its five charter lists, 1 + 5 + 3 + 1 + 13 = 23. Of the UNPLACED
+statements, ten are the recognised-schema statements, placed so because no charter names their subject (Row 8.18), and
+the other fifty-two are rules on L3's own subject that a derived statement differs from.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 58 |
+| DIFFERS | 56 |
+| THE DERIVATION IS SILENT | 83 |
+| **Total verdicts** | **197** |
+
+*(Counted per named derived statement per statement. Two statements name two derived statements each — 8.14 (ii), where
+L3-S8 DIFFERS and L3-S10 AGREES, and 8.24, where L3-S8 and L3-S22 both DIFFER — so the verdicts total 197 over 195
+statements.)* The AGREES verdicts are those of the fifty-four ADOPTED — carried statements and four others: 8.10 (iii)
+and 8.38 (ii) (L3-S42) and 8.138 (L3-S14), all RELOCATED, and L3-S10's at 8.14 (ii), UNPLACED. The DIFFERS statements
+are 8.4(i), 8.11(i), 8.11(ii), 8.14(ii), 8.16(i), 8.16(ii), 8.21, 8.22, 8.24, 8.25, 8.26(i), 8.28(ii), 8.34, 8.35(ii),
+8.36(i), 8.40(i), 8.40(ii), 8.42, 8.43, 8.47(ii), 8.59(i), 8.59(ii), 8.60(i), 8.64, 8.65, 8.66, 8.68, 8.69, 8.70, 8.72,
+8.77, 8.78(i), 8.84(i), 8.86, 8.87, 8.88(i), 8.95, 8.96(i), 8.96(ii), 8.97, 8.101(i), 8.101(ii), 8.105(ii), 8.106, 8.108,
+8.109, 8.112, 8.113(i), 8.114(i), 8.115, 8.116(ii), 8.129(ii), 8.130, 8.140 and 8.141 — fifty-five statements carrying
+fifty-six verdicts, of them 52 UNPLACED and 3 RELOCATED.
+
+#### The marks at this member
+
+- **WITHHELD rows: 8.63, 8.64 and 8.65 (D-457); 8.78 (D-459); 8.89, 8.90 and 8.91 (D-460); 8.95, 8.96 and 8.97 (D-454);
+  8.105 (D-461); 8.113, 8.114 and 8.115 (D-456); 8.116 (D-455); 8.120 (D-462)** — every statement of the eight homes.
+  *Not a statement* items 29 (D-461), 35 (D-456) and 36 (D-455) lie in the same homes. **Six statements carry an AGREES
+  inside a withheld home** — 8.63 (i) (L3-S40), 8.78 (ii) (L3-S37), 8.90 (L3-S38), 8.113 (ii) (L3-S24), 8.114 (ii)
+  (L3-S33) and 8.116 (i) (L3-S15): a derived statement reaching a ruled answer the deriving session was not shown. The
+  rest of the withheld statements DIFFER, or the derivation is silent, as their rows say.
+- **Outside the homes, though beginning on a home's last line:** Row 8.66 (D-457's line 222) and *not a statement* item
+  28 (D-454's line 311). **In a home that is not withheld:** Row 8.72, in D-458's home, which carries no mark.
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -8546,6 +11177,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Row 7.264 (ii), with Row 7.298 (i) — that the notated phrase-boundary evidence covers rests and structural score
   boundaries as well as fermatas, and carries each marker's scope. *(L3-S9 AGREES at both.)*
 - Row 7.283 — the metric weight of a slice. *(The L1 block publishes the metric strength class per change point.)*
+- Row 8.15 (i) — the slice as the atom of constant sounding content, maximal same-chord runs of slices forming the
+  chord-span. *(The L1 block publishes the slices; the chord-span is L2's segmentation.)*
 
 **To *L2 — The tonal reading. The one entangled decision.***
 
@@ -8615,11 +11248,26 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   derivation's L3-S10 cites L2-S14 for the merging.)*
 - Row 7.264 (i) — the chord decision reading the phrase-boundary primitive as a window-truncation prior.
 - Row 7.294 (iv) — that key and chord are not predicted jointly in one step.
+- Rows 8.13 and 8.19 (i) — the local key committed at each point upstream, and a slice whose reading the function layer
+  left unresolved. *(L2 publishes the tonality per span, and the rivals with their mass; the derivation's §0 cites IC-L2
+  §0 and L2-S40 to L2-S42 for them.)*
+- Rows 8.106 and 8.108 — the function layer's fine-grain reading of each slice, and the override that corrects a
+  confidently-wrong commit by selection among carried readings. *(L3-S38 DIFFERS at both.)*
+- Row 8.132 — that handling the non-chord tones is the chord layer's lever, not the grouping's. *(L2 publishes the
+  chord-tone assignment and elaboration relation per sounding note; the derivation's §0 cites L2-S8 for it.)*
+
+**To *the second axis — voice leading*.**
+
+- Rows 8.10 (i) and 8.10 (iii), with Row 8.38 (ii) — the accepted melodic phrase as a melodic, linear unit; identifying
+  it, and the per-voice phrases of a contrapuntal texture, belonging to the voice-leading layer; and voice leading as the
+  second axis, a layer of its own. *(L3-S42 AGREES at Rows 8.10 (iii) and 8.38 (ii).)*
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
 - Rows 7.204 (ii) and 7.209 (i) — that a confidence crossing a layer boundary is bounded in [0,1], and that every
   layer's inference carries a calibrated confidence. *(L3-S32 DIFFERS at Row 7.209 (i).)*
+- Row 8.78 (i) — that any confidence the grouping publishes lies in [0,1] and is declared a margin, not a calibrated
+  probability, naming its combiner and inputs. *(L3-S32 DIFFERS at the row; Row 8.78 is WITHHELD — D-459.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -8630,9 +11278,17 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 7.126 and 7.250 — that a tonicization-versus-modulation disagreement inside the break-even band is not counted
   against the analyzer.
 - Row 7.182 (ii) — that each divergence between two labelling paths is measured against the human annotation.
+- Rows 8.118, 8.119, 8.120, 8.121 and 8.122 — the grouping's validation: the key areas against the chorales' annotated
+  local keys, the grouping spans against the fermatas and against the annotations' phrase marks, the cadence alignment by
+  location only, the metrics, and the two-step plan. *(Row 8.120 is WITHHELD — D-462.)*
+- Rows 8.124, 8.126 (ii), 8.127 and 8.142 — the fermata oracle's dependence on the primitive's own input, the scoping of
+  the first validation step, and the corpus hygiene.
+- Rows 8.135, 8.136, 8.137 and 8.138 — the annotated corpora's cadence and phrase-end columns, the parser that drops
+  them, the coverage limits, and validation on the development beds with the held-out beds untouched. *(L3-S14 AGREES
+  at Row 8.138.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
-3.n, and member 7's the rows numbered 7.n. Members 4, 5 and 6 relocate no row.)*
+3.n, member 7's the rows numbered 7.n, and member 8's the rows numbered 8.n. Members 4, 5 and 6 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -8804,6 +11460,33 @@ commit that tabulates it, each with the audit question its row writes.
 - Row 7.337 — does the built phrase-boundary profile carry a graded boundary strength a consumer could scale a weight by?
 - Row 7.342 — does the built resolver select by licensed-progression uniqueness with structural tie-breaks, and do the
   dormant tests pin the both-licensed case?
+
+**Member 8 — `cowork_layer6_grouping_design.md`, whole.**
+
+- Row 8.2 (i) — does `analysis/grouping/groupinglayer` implement §5.1 to §5.5 exactly over plain-data inputs, and does
+  any path that runs at the current commit reach it?
+- Row 8.2 (ii) — on which beds and run did the no-added-detection guard pass, with no boundary added and every interior
+  span boundary matched, and does it reproduce?
+- Row 8.3 (i) — on which beds and run was the key-area recall measured, and is what bounds it the dormant modulation step
+  upstream?
+- Row 8.3 (ii) — on which beds and run were the closing and internal cadences counted against the ground truth's rate of
+  cadences at phrase ends, and does the count reproduce?
+- Row 8.4 (ii), with Row 8.73 — is the codetta refinement switched off by default, so that it changes no output unless
+  enabled?
+- Row 8.5 — does the as-built carry the cue and scope fields, and do they read `Unknown` at the current commit?
+- Row 8.6 (i), with Row 8.123 (ii) — does any production path call or consume the grouping layer at the current commit?
+- Row 8.6 (ii) — was the batch gate unchanged on all three presets at the build, and on which corpus and run?
+- Row 8.55 — do `detectCadences()`, `detectPivotChords()` and the `KeyArea` grouping exist, do they read the
+  key-dependent degree logic, and does any of them run at the current commit?
+- Row 8.57 (i) — which of the old grouping paths run at the current commit, and on which arm?
+- Row 8.80 — at what granularity does the as-built carry the local key, and does it permit a key change inside a
+  punctuation-span?
+- Row 8.125 (i) — on which corpora, under which measurement, was the cadence type found unvalidated on the chorales and
+  only partly attributable on the other repertoire?
+- Row 8.126 (i) — on which corpora and under which measurement are the lower layers found weaker outside the chorales,
+  and does it reproduce?
+- Row 8.131 — do `engravingbridge/phraseboundaryview`, `function/functionoutput`, the local-key carry and the `section/`
+  grouping paths exist, and which of them run at the current commit?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -9075,6 +11758,137 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 7.336 (L3-S8):** where the profile is flat the outgoing gate is to *"**relax admission with
   vote-weight scaling by boundary strength**"*, where L3-S8 makes every change point a candidate phrase end.
 
+**Member 8.**
+
+- **ADOPTED — proposed — Row 8.12, with Rows 8.17, 8.29, 8.46, 8.63 (ii), 8.74, 8.75 and 8.79 (i):** that L3 publish key
+  areas — maximal runs of consecutive spans of L2's segmentation sharing one tonality, each closing at a change of
+  tonality — as a grouping of its own.
+- **ADOPTED — proposed — Row 8.31 (i), with Rows 8.48 (i), 8.89 and 8.91:** that a grouping unit containing a span whose
+  L2 reading is left unresolved carry that mark visibly at that location, unchanged, and be reported fully resolved
+  exactly when none of its spans carries one, no confidence threshold entering the test.
+- **ADOPTED — proposed — Row 8.37 (i), with Row 8.38 (i):** that L3 never attempt to identify a melody or structural
+  line among the voices.
+- **ADOPTED — proposed — Row 8.45 (ii):** that each phrase unit carry the notated evidence that opened and closed it,
+  with that evidence's scope — the whole texture or one part — so that a local boundary is never presented as a global
+  one.
+- **ADOPTED — proposed — Row 8.52 (ii), with Rows 8.53, 8.76, 8.82, 8.117 and 8.145:** that a change of tonality may
+  fall inside a phrase unit, the key areas cutting across the phrase units and neither nested in the other.
+- **ADOPTED — proposed — Row 8.54:** that the grouping have L3 as its only producer, and be the surface a display reads.
+- **ADOPTED — proposed — Row 8.105 (i):** that the phrase and section grouping be held as an explanatory output of the
+  analysis, not as an accuracy requirement on it.
+- **DIFFERS — Row 8.4 (i) (L3-S12):** the outgoing codetta has no unit and its end is recorded *"as an annexe"*, where
+  L3-S12's units include *"a post-cadential codetta"*.
+- **DIFFERS — Row 8.11 (i) (L3-S17):** the outgoing cadence is classified *"in the standard typology"*, where L3-S17
+  says *"Which vocabulary is principal is not decided here"*.
+- **DIFFERS — Row 8.11 (ii) (L3-S15):** the outgoing cadence is *"Detected upstream by Layer 5"* and read by the
+  grouping, where L3-S15 publishes a cadence *"only at a phrase end L3 has decided"*.
+- **DIFFERS — Row 8.14 (ii) (L3-S8):** the outgoing boundaries *"are delimited by those **surface cues** via the
+  phrase-boundary primitive"*, where L3-S8 says *"The phrase reading is an L3 decision"* (L3-S10 AGREES at the same
+  statement that the cadence is aligned to the phrase).
+- **DIFFERS — Row 8.16 (i) (L3-S8):** the outgoing boundary is *"A tick where the **phrase-boundary primitive** places a
+  picked peak"*, where L3-S8 makes every change point a candidate phrase end, no item of evidence forcing or forbidding
+  one.
+- **DIFFERS — Row 8.16 (ii) (L3-S8):** choosing the boundaries is *"the primitive's job upstream, not L6's"*, where L3-S8
+  says *"The phrase reading is an L3 decision."*
+- **DIFFERS — Row 8.21 (L3-S22):** nesting is what *"L6 does **not** build"*, where L3-S22 publishes *"a nested grouping
+  over the units of the phrase reading"*.
+- **DIFFERS — Row 8.22 (L3-S22):** *"L6 builds **no** such trees"*, where L3-S22 publishes a nested grouping defended by
+  Lerdahl and Jackendoff's grouping well-formedness.
+- **DIFFERS — Row 8.24 (L3-S8, L3-S22):** grouping is *"assembly, not detection"*, where L3-S8 and L3-S22 make the phrase
+  reading and the section grouping L3 decisions.
+- **DIFFERS — Row 8.25 (L3-S22):** the outgoing grouping is *"the flat grouping structure the ground truth annotates"*,
+  where L3-S22 says *"It is a nested grouping over the units of the phrase reading"*.
+- **DIFFERS — Row 8.26 (i) (L3-S8):** the outgoing grouping *"detects nothing new"*, where L3-S8 says *"The phrase reading
+  is an L3 decision."*
+- **DIFFERS — Row 8.28 (ii) (L3-S8):** the outgoing spans are *"delimited by the phrase-boundary primitive"*, where L3-S8
+  says *"The phrase reading is an L3 decision."*
+- **DIFFERS — Row 8.34 (L3-S22):** the outgoing layer does not do hierarchical grouping, where L3-S22 publishes a nested
+  grouping.
+- **DIFFERS — Row 8.35 (ii) (L3-S22):** the outgoing layer does not do *"multi-span **sections**"*, where L3-S22 says
+  *"The section grouping is an L3 decision."*
+- **DIFFERS — Row 8.36 (i) (L3-S22):** the outgoing sections belong to *"a *higher* layer"*, where L3-S22 says *"The
+  section grouping is an L3 decision."*
+- **DIFFERS — Row 8.40 (i) (L3-S17):** the outgoing call is made *"on bass-derived inversion"*, where L3-S17 says feature
+  (6) *"blocks the PAC/IAC split in every vocabulary until OQ-L3-4 is ruled"*.
+- **DIFFERS — Row 8.40 (ii) (L3-S16):** the outgoing call is made *"not the top voice"*, where L3-S16 lists the highest
+  sounding pitch's degree among the cadence's defining features.
+- **DIFFERS — Row 8.42 (L3-S37):** the outgoing grouping consumes the function layer's *"cadence markers (type, location,
+  salience)"*, function confidence and open mark, where L3-S37 consumes from L2 *"the charter's list and its rivals"*.
+- **DIFFERS — Row 8.43 (L3-S8):** the outgoing grouping consumes the primitive's boundary ticks, *"local maxima selected
+  as boundaries"*, where L3-S8 says *"No item of evidence forces or forbids a phrase end"*.
+- **DIFFERS — Row 8.47 (ii) (L3-S15):** a mid-span cadence is *"flagged *internal*"*, where L3-S15 publishes such
+  evidence *"as an evidence-class fact named for the pattern (never *cadence*)"*.
+- **DIFFERS — Row 8.59 (i) (L3-S17):** the outgoing type is drawn from one fixed set, where L3-S17 leaves the principal
+  vocabulary undecided.
+- **DIFFERS — Row 8.59 (ii) (L3-S15):** the outgoing cadence is the function layer's, *"read, not re-detected"*, where
+  L3-S15 publishes a cadence only at a phrase end L3 has decided.
+- **DIFFERS — Row 8.60 (i) (L3-S8):** the span is partitioned *"at the boundary ticks supplied by the primitive"*, where
+  L3-S8 says *"The phrase reading is an L3 decision."*
+- **DIFFERS — Row 8.64 (L3-S40):** an unclosed edge span *"is surfaced with an `extension-cue` tag"*, where L3-S40 says
+  *"L3 asks for a larger span from the caller, as L2 does"*.
+- **DIFFERS — Row 8.65 (L3-S40):** acting on the cue is *"the decision of the **orchestrator**"*, never the grouping's,
+  where L3-S40 has L3 ask the caller for a larger span, whether it may do so being put to the user.
+- **DIFFERS — Row 8.66 (L3-S8):** the outgoing grouping *"consumes the primitive's picked-peak set as-is"*, where L3-S8
+  says *"The phrase reading is an L3 decision."*
+- **DIFFERS — Row 8.68 (L3-S12):** the base partition *"places the span end"* at the single boundary tick, with no unit
+  for a codetta, where L3-S12's units include *"a post-cadential codetta"*.
+- **DIFFERS — Row 8.69 (L3-S12):** telling a structural end from a codetta is *"not required for the flat partition"*,
+  where L3-S12 says *"Each unit carries which of the two it is."*
+- **DIFFERS — Row 8.70 (L3-S12):** *"the weaker peak does not open a new punctuation-span"*, the codetta having no unit,
+  where L3-S12 gives the between-phrase stretch a unit.
+- **DIFFERS — Row 8.72 (L3-S12):** the canonical reading records the codetta's end *"rather than as a span boundary"*,
+  where L3-S12's units include *"a post-cadential codetta"*.
+- **DIFFERS — Row 8.77 (L3-S34):** a key area's confidence is *"non-increasing in its weakest unit's key confidence"*,
+  where L3-S34 says *"The mass of a view is the total mass of the L2 readings that give it."*
+- **DIFFERS — Row 8.78 (i) (L3-S32):** the outgoing confidence is *"[0,1], declared in the contract's **Class M** (a
+  margin-family quantity, not a calibrated probability)"*, where L3-S32 makes L3's mass *"the model's own distribution,
+  not calibrated"*.
+- **DIFFERS — Row 8.84 (i) (L3-S10):** the outgoing span end lies *"at the cadence's arrival tick, or within the
+  alignment window after it"*, where L3-S10 says the arrival and the phrase end *"may be bars apart when the final
+  harmony is prolonged"*.
+- **DIFFERS — Row 8.86 (L3-S15):** a cadence near no boundary *"is tagged **internal** (mid-span) and surfaced as
+  such"*, where L3-S15 names such evidence for the pattern and never *cadence*.
+- **DIFFERS — Row 8.87 (L3-S8):** the outgoing boundary is *"upstream and not L6's to override"*, where L3-S8 says *"The
+  phrase reading is an L3 decision."*
+- **DIFFERS — Row 8.88 (i) (L3-S17):** the outgoing text carries a made perfect/imperfect distinction, where L3-S17
+  blocks the split until OQ-L3-4 is ruled.
+- **DIFFERS — Row 8.95 (L3-S8):** the outgoing layer *"defines **no detection of its own**"*, where L3-S8 says *"The
+  phrase reading is an L3 decision."*
+- **DIFFERS — Row 8.96 (i) (L3-S8):** there is *"no additional *detection* rule"*, where L3-S8 makes the phrase reading
+  an L3 decision.
+- **DIFFERS — Row 8.96 (ii) (L3-S22):** there is *"no hierarchy"*, where L3-S22 publishes a nested grouping.
+- **DIFFERS — Row 8.97 (L3-S8):** added detection belongs *"in an **earlier** layer"* or out of scope, where L3-S8 makes
+  the phrase reading an L3 decision.
+- **DIFFERS — Row 8.101 (i) (L3-S8):** the boundaries *"come from the one phrase-boundary primitive"*, where L3-S8 says
+  *"The phrase reading is an L3 decision."*
+- **DIFFERS — Row 8.101 (ii) (L3-S15):** the cadences come *"from the one Layer-5 output"*, where L3-S15 publishes a
+  cadence only at a phrase end L3 has decided.
+- **DIFFERS — Row 8.105 (ii) (L3-S8):** the outgoing layer *"does not grow detection of its own"*, where L3-S8 makes the
+  phrase reading an L3 decision.
+- **DIFFERS — Row 8.106 (L3-S38):** the function layer *"*corrects* labels"* through the override of a
+  confidently-wrong commit, where L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
+- **DIFFERS — Row 8.108 (L3-S38):** correction, *"changing a slice's reading"*, is fired by the override mechanism, where
+  L3-S38 says no L3 fact may change an L2 fact.
+- **DIFFERS — Row 8.109 (L3-S37):** the outgoing grouping *"sees only the corrected result"*, where L3-S37 consumes from
+  L2 *"the charter's list and its rivals (L2-S45)"*.
+- **DIFFERS — Row 8.112 (L3-S8):** the outgoing layer *"detects nothing"*, where L3-S8 says *"The phrase reading is an L3
+  decision."*
+- **DIFFERS — Row 8.113 (i) (L3-S22):** sections are *"out of L6's *core* for PROPORTIONALITY"*, where L3-S22 says *"The
+  section grouping is an L3 decision."*
+- **DIFFERS — Row 8.114 (i) (L3-S22):** sections are *"a larger, *higher*-layer structure"*, where L3-S22 makes them an
+  L3 decision.
+- **DIFFERS — Row 8.115 (L3-S22):** the outgoing core has no sections, where L3-S22 says *"The section grouping is an L3
+  decision."*
+- **DIFFERS — Row 8.116 (ii) (L3-S15):** an off-boundary cadence *"is surfaced, not snapped"*, where L3-S15 names such
+  evidence for the pattern and never *cadence*.
+- **DIFFERS — Row 8.129 (ii) (L3-S15):** a mid-span cadence carries *"an *internal* tag"*, where L3-S15 names such
+  evidence for the pattern and never *cadence*.
+- **DIFFERS — Row 8.130 (L3-S15):** the outgoing *"detected cadence not at a punctuation-span boundary"* is surfaced as
+  one, where L3-S15 publishes a cadence only at a phrase end L3 has decided.
+- **DIFFERS — Row 8.140 (L3-S22):** sections are *"the verifiability-gated extension (§9-D3)"*, where L3-S22 says *"The
+  section grouping is an L3 decision."*
+- **DIFFERS — Row 8.141 (L3-S22):** sections are *"Default out."*, where L3-S22 makes them an L3 decision.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -9089,10 +11903,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 5 | 19 | 0 | 0 | 0 | 19 | 0 | 0 | 0 | 4 |
 | 6 | 10 | 0 | 0 | 0 | 10 | 0 | 0 | 0 | 1 |
 | 7 | 391 | 38 | 23 | 202 | 44 | 0 | 40 | 44 | 88 |
-| **Total** | **552** | **48** | **31** | **225** | **122** | **0** | **60** | **66** | **167** |
+| 8 | 195 | 54 | 23 | 23 | 16 | 0 | 17 | 62 | 48 |
+| **Total** | **747** | **102** | **54** | **248** | **138** | **0** | **77** | **128** | **215** |
 
-**The arithmetic check:** 48 + 31 + 225 + 122 + 0 + 60 + 66 = 552, against 552 statements placed (43 + 34 + 21 + 34 + 19
-+ 10 + 391).
+**The arithmetic check:** 102 + 54 + 248 + 138 + 0 + 77 + 128 = 747, against 747 statements placed (43 + 34 + 21 + 34 +
+19 + 10 + 391 + 195).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -9103,10 +11918,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 5 | 0 | 1 | 18 | 19 |
 | 6 | 0 | 2 | 8 | 10 |
 | 7 | 43 | 80 | 268 | 391 |
-| **Total** | **57** | **106** | **390** | **553** |
+| 8 | 58 | 56 | 83 | 197 |
+| **Total** | **115** | **162** | **473** | **750** |
 
-**The arithmetic check of the verdicts:** 57 + 106 + 390 = 553, against the members' verdict totals (43 + 35 + 21 + 34 +
-19 + 10 + 391).
+**The arithmetic check of the verdicts:** 115 + 162 + 473 = 750, against the members' verdict totals (43 + 35 + 21 + 34 +
+19 + 10 + 391 + 197).
 
 ## 14. The derivation's independence record, relayed
 
