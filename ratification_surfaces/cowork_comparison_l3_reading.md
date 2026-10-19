@@ -7,7 +7,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_third_2026_10_19.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fourth_2026_10_19.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fifth_2026_10_19.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_sixth_2026_10_19.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_sixth_2026_10_19.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -51,7 +52,7 @@ its own entry there.
 | 12 | `cowork_engage_arc_plan.md`, whole | **DONE** (§6.12) |
 | 13 | `cowork_phase5b_l4_build_plan.md`, whole | **DONE** (§6.13) |
 | 14 | `cowork_l1l4_review_charter.md`, whole | **DONE** (§6.14) |
-| 15 | `ARCHITECTURE.md` passages — the opening block, above the first `## ` heading | NOT YET TABULATED |
+| 15 | `ARCHITECTURE.md` passages — the opening block, above the first `## ` heading | **DONE** (§6.15) |
 | 16 | `ARCHITECTURE.md` passages — *The joint estimator — the standing rules of the production inference layer* | NOT YET TABULATED |
 | 17 | `ARCHITECTURE.md` passages — *Document governance and the standing architecture notes* | NOT YET TABULATED |
 | 18 | `ARCHITECTURE.md` passages — *1. Project Overview* | NOT YET TABULATED |
@@ -96,13 +97,14 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 14 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 15 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
-ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), and positions 7 to 14,
+ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
 `cowork_layer5_function_design.md`, `cowork_layer6_grouping_design.md`, `cowork_layer5_engagement_design.md`,
 `cowork_layer4_chordsymbol_design.md`, `docs/nct_detection_design.md`, `cowork_engage_arc_plan.md`,
-`cowork_phase5b_l4_build_plan.md` and `cowork_l1l4_review_charter.md`, each whole.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
+`cowork_phase5b_l4_build_plan.md` and `cowork_l1l4_review_charter.md`, each whole, and position 15,
+`ARCHITECTURE.md`'s passages in the opening block above its first `## ` heading, the first passage member.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
 boundary after position 7, by its own capacity judgment; position 8 was tabulated under
@@ -112,8 +114,10 @@ boundary after position 8, by its own capacity judgment; position 9 was tabulate
 boundary after position 9, by its own capacity judgment; positions 10 and 11 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fifth_2026_10_19.md`, which stopped at the member
 boundary after position 11, by its own capacity judgment; positions 12 to 14 were tabulated under
-`records/cc/instructions/cc_instruction_l3_comparison_tabulation_sixth_2026_10_19.md`.** **The writing now stands at
-the member boundary after position 14: not done, positions 15 to 57, and the next writing resumes at position 15.** **A
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_sixth_2026_10_19.md`, which stopped at the member
+boundary after position 14, by its own capacity judgment; position 15 was tabulated under
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md`.** **The writing now stands at
+the member boundary after position 15: not done, positions 16 to 57, and the next writing resumes at position 16.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -20906,6 +20910,1423 @@ layer stack, not anything L3 does.
 
 ---
 
+### 6.15 — Member 15: `ARCHITECTURE.md`, the opening block, above the first `## ` heading
+
+> **Manifest for this member.** Position **15**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: *"the opening block, above the first `## ` heading"*. **The first member of this
+> comparison made of passages rather than a whole document.** Five ranges, each as a locator only (**D-307**), with its
+> first and last line texts exactly as the artifact publishes them:
+>
+> - lines 11–153, from *"> **★★ AS-BUILT (the OI-178 adoption, user-ratified 2026-07-26, option 1 — STAGED SCOPE): the
+>   joint estimator"* to *"> way round, saying the legacy pipeline was still live on the notation path.)"*;
+> - lines 155–174, from *"> **(2) The section adapter + the span-annotation consumer + the inference↔presentation
+>   boundary.**"* to *"> additions, and they are presentation."*;
+> - lines 176–199, from *"> **(3) The implode + tuning span-seam consumers + the exposure-bucket unification.**"* to
+>   *"> at the record surface** (the §4.1 presentation-gate disposition — every exposure/annotation constant's declared
+>   site)."*;
+> - lines 201–223, from *"> **(4) The note-seam re-plumb (status bar + harmony write + right-click menu) on
+>   `noteView`.**"* to *"> expanding-window path byte-identical. After this unit the whole audited note seam is
+>   dual-arm."*;
+> - lines 225–263, from *"> **(5) The dual-arm classified-comparison instrument (measurement-only, opt-in; the switch
+>   evidence).**"* to *"> display-symbol completeness gap)."*.
+>
+> **Each of the ten line texts was compared with the line at its locator** in `ARCHITECTURE.md`, read by this session
+> at the file and at its blob at the commit that landed this batch's dispatch, **and every one matches.** The lines
+> between the ranges — 154, 175, 200 and 224 — are empty lines and belong to no range; the document's lines 1 to 10, its
+> title and its governing-decision banner, lie outside this member and are not tabulated here, and no other member of
+> the artifact covers them — the passage rule's cut, recorded and not repaired here. Outgoing statements: **95** (rows
+> 15.1 to 15.72; seven rows carry two claims, five rows three and two rows four, each split — the arithmetic is at the
+> foot of this member). Listed under *not a statement*: **8**. Counted at this member by this session; the counts
+> appear here and at §13, and nowhere else.
+>
+> **WITHHELD homes inside this member: none** — the artifact's `item_4_identities_inside` for position 15 is empty.
+> **Twenty-one decisions of the decisions register's data file are homed inside this member's ranges and none is
+> withheld**, found by this session's walk of `tools/audit/decisions/backbone_decisions.json` (taken at the commit that
+> landed this dispatch, by explicit hash) for every `home` naming `ARCHITECTURE.md` with a line range overlapping one of
+> the five ranges — the walk reaching the data file's retired block too — each home lying wholly inside one range: in
+> the decisions register's list, **D-005** at lines 11–12, **D-002** at 21–22, **D-004** at 31–33, **D-003** at 33–34
+> and **D-095** at 43–44 (the *AS-BUILT* paragraph), **D-006** at 58–60 and **D-008** at 66 (the *POSTERIOR SLICE*
+> paragraph), **D-009** at 82–84 (the *NOTATION OUTPUT-SURFACE RECORD* paragraph), **D-011** at 126–127, **D-013** at
+> 131–133 and **D-014** at 137 (subsection *(1)*), **D-019** at 212–213, **D-021** at 213 and **D-020** at 220–222
+> (subsection *(4)*), and **D-010** at 250 (subsection *(6)*); and **six RETIRED entries** the decisions register's INDEX
+> does not show — **D-007** at 65–66 and **D-012** at 129, **D-015** at 140–141, **D-016** at 162, **D-017** at 167–168
+> and **D-018** at 185 — each retired from the decisions register's list on 2026-08-16 and kept in that file's retired
+> block with the ruled clause every retired record carries, *"a provenance verdict, not a judgment on soundness or
+> usefulness; the statement stands at its home and is met by the derivation"*, as D-636 and D-637 at §6.13 and D-332
+> at §6.10. **The walk agrees with the twenty-one the dispatch read**, no identity beyond them and none of them missing.
+> The decisions register records D-008 and D-021 as DEFERRED, D-095 as SUPERSEDED IN FACT, and the other twelve live
+> entries as LIVE, none of the fifteen marked LEGACY — its statements of those decisions' standing, relayed here as facts
+> beside their homes and moving no disposition. None of the twenty-one is withheld, so none carries a mark; the rows
+> inside their homes are named at the foot. *(The governing-decision banner above the member homes D-001 at its lines
+> 4–6, outside every range.)* **No SEEN home lies in this member**, agreeing with §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied at
+> §6.8 to §6.14, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation join
+> and the blockquote-marker reading were applied unchanged at this member.** *The blockquote-marker reading* is the
+> dispatch's reading for this member, stated for challenge and not ruled: every one of the 249 lines inside the five
+> ranges opens with the quotation-block marker `> ` (or is that marker alone), checked line by line at the blob; the
+> marker is the document's formatting and not its words, so **every quotation at every row of this member drops it**,
+> as the decisions register's own convention drops it from a verbatim quote, and the quotation check masks it the same
+> way. **How the five ranges' bold leads were read:** the first range's lead, *"★★ AS-BUILT (…): the joint estimator is
+> now the PRODUCTION inference layer on the batch/corpus surface."*, carries a complete sentence after its colon and is
+> tabulated (Row 15.1); the leads of the other four ranges — *"(2) The section adapter …"*, *"(3) The implode …"*,
+> *"(4) The note-seam re-plumb …"* and *"(5) The dual-arm classified-comparison instrument …"* — are noun-phrase labels,
+> read as titles. Read as titles likewise: *"STAGED SCOPE — CLOSED AT THE NOTATION SWITCH, 2026-07-27 (…)"*,
+> *"Delegation pointer (…)"*, *"POSTERIOR SLICE — …"*, *"NOTATION OUTPUT-SURFACE RECORD — …"*, *"THE RECORD PATH — …"*,
+> *"(1) The producer + the two seam views (…)"* and *"(6) THE SWITCH — the migration posture is CLOSED (…)"*, each a
+> label naming its paragraph, with the provenance inside its parentheses, the body tabulated. Leads that are complete
+> sentences are tabulated: Rows 15.1, 15.44, 15.48 and 15.54. Where a lead stands inside the sentence it opens —
+> *Table/weight delivery*, *Wiring:*, *Reference oracle + parity:*, the six section leads *§3.1* to *§3.6*,
+> *Establishment:*, *Input-scoping (OI-204):*, *The implode chord-track record path*, *The tuning region record path*,
+> *Consumers:* and *Per note:* — the sentence is quoted with it, as at §6.10 to §6.14. A lead ending in a colon is
+> tabulated where it carries a claim of its own (Row 15.48) and quoted with its sentence where it only introduces it;
+> the two leads *Suites:* and *Coverage:* open sentences that point at tests and are listed (items 4 and 6). **This
+> member has no glossary and no status table.** **The quotation join found nothing to join at this member**: no line of
+> it breaks a hyphenated compound at its end.
+>
+> **What this member is, read whole before any row was written.** The block above the document's first section heading
+> is an as-built account, in five quotation-block passages, of the joint estimator's adoption as the production
+> inference on the batch surface and its switch onto the in-app notation surface: the estimator's module, its embedded
+> tables and weights, its state space, its posterior slice, the notation output-surface record and how it is
+> established, the record path's producer and its two views, and the notation consumers re-plumbed onto it — the span
+> annotation, the implode, the tuning and the single-note surface — with the comparison tool that classified what the
+> switch changed and the switch itself. Very little of it states what L3 does; where it touches L3's subject it is the
+> chord symbol. **Five placements are stated for challenge.** (a) **A sentence that describes the as-built code —
+> naming its functions, files, flags or measured values — is placed QUARANTINED even where it also states the rule the
+> code follows**, as members 1 and 4 placed their as-built rows; the decisions register's standing of the twenty-one
+> homed decisions moves no disposition. (b) Sentences that state a rule in general terms are placed by their subject:
+> the joint state, the segmentation and the preset independence (Rows 15.8 (i), 15.8 (iii) and 15.9) are **RELOCATED**
+> to *L2 — The tonal reading. The one entangled decision.*; the class of the published candidate scores (Row 15.16 (i))
+> to *the uncertainty surface*; the comparison tool's rule against patching (Row 15.67) to *the measurement of the
+> analysis*. (c) The chord symbol as the derived published fact from the tonality and the degree (Row 15.8 (ii)) is
+> **ADOPTED — carried** by L3-S1, and the rule that display renderings are presentation while facts are published (Row
+> 15.42 (iii)) is **ADOPTED — proposed**, the proposal of Row 4.2. (d) **DIFFERS** at Row 15.16 (i) (L3-S32), Row 15.23
+> (iii) (L3-S3), and Rows 15.43 (ii) and 15.50 (ii) (L3-S5). (e) Events and statuses are **HISTORICAL**, among them two
+> statuses the member's own later text overtakes — *"DORMANT (no src/ consumer yet)"* (Row 15.28) and *"DORMANT on
+> production until the switch"* (Row 15.38).
+
+---
+
+**Row 15.1 — the joint estimator the production inference on the batch surface.**
+
+*Outgoing statement.* "**★★ AS-BUILT (the OI-178 adoption, user-ratified 2026-07-26, option 1 — STAGED SCOPE): the
+joint estimator is now the PRODUCTION inference layer on the batch/corpus surface.**" — the opening block under the
+document's title, the *AS-BUILT* lead (locator: lines 11–12).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* at the current commit, does the batch/corpus surface produce
+its output from the joint estimator (as Row 1.12)?
+
+---
+
+**Row 15.2 — the estimator's module and its five components.**
+
+*Outgoing statement.* "As-built module `src/composing/analysis/joint/`: the **L1 fact adapter** (`jointfactadapter` —
+score → `Piece` from the published `notemodel::notatedNotes()` tie-unresolved surface + the score's structural facts,
+per the OI-180 sanction: no module-private raw-note walk); the **event lattice + exact block-factorized semi-Markov
+Viterbi decoder** (`jointdecoder`) with the ratified **§5 total-order tie-break**; the **factor log-probability
+provider** (`jointadapter` — the ten-factor log-linear score, Katz leftover option 2a); the frozen generative **tables**
+(`jointtables` — the committed all-326 `tables_all.json` / `note_tables_all.json` / `factor_presence_all.json` /
+`fermata_boundary_addendum.json`); and the **weight vector** (`jointweights` — the direct-metric SELECTED vector,
+identity `random07`)." — the opening block under the document's title, the *AS-BUILT* paragraph (locator: lines
+12–19).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `src/composing/analysis/joint/` hold the five components
+named, each in the role given?
+
+---
+
+**Row 15.3 — the fitted tables and weights compiled into the binary.**
+
+*Outgoing statement.* "**Table/weight delivery — EMBEDDED (ratified Decision D1):** a provenance-stamped code-generation
+step (`tools/joint_estimator/gen_embedded_tables.py`) compiles the five committed artifacts + the selected weight vector
+VERBATIM (JSON bytes, not a parsed-structure codegen) into the generated `jointembeddedartifacts.{h,cpp}`, so the
+running binary's fitted values are **provenance-locked at BUILD time** (#16/#19) and cannot silently drift." — the
+opening block under the document's title, the *AS-BUILT* paragraph (locator: lines 20–23).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `gen_embedded_tables.py` compile the five committed
+artifacts and the selected weight vector byte for byte into `jointembeddedartifacts.{h,cpp}`?
+
+---
+
+**Row 15.4 — the embedded loaders the production source, through one parser.**
+
+*Outgoing statement.* "`JointTables::loadEmbedded` / `FittedAdapter::loadEmbedded` / `selectedWeights()` are the
+PRODUCTION source; they parse the embedded bytes through the SAME parser as the filesystem loaders (#6, one parse
+path)." — the opening block under the document's title, the *AS-BUILT* paragraph (locator: lines 24–25).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the embedded loaders the production source, and do they
+parse through the same parser as the filesystem loaders?
+
+---
+
+**Row 15.5 — the filesystem loaders kept for the tests.**
+
+*Outgoing statement.* "The filesystem `JointTables::load` / `FittedAdapter::load` stay for the tests/diagnostics that
+establish the embedded data." — the opening block under the document's title, the *AS-BUILT* paragraph (locator: lines
+25–26).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the filesystem loaders reached only by the tests and the
+diagnostics?
+
+---
+
+**Row 15.6 — regenerating the embedded source at every re-fit, and the drift guard.**
+
+*Outgoing statement.* "Regenerating the embedded source is the **new mechanical step of any table re-fit**; the
+`joint_embedded_tests` drift guard (embedded bytes byte-identical to the committed files; the weight vector value-exact
+to `decode_parity_ref.json`) is the standing guard against divergence." — the opening block under the document's title,
+the *AS-BUILT* paragraph (locator: lines 27–29).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `joint_embedded_tests` assert the embedded bytes
+identical to the committed files and the weight vector value-exact to `decode_parity_ref.json`?
+
+---
+
+**Row 15.7 — the provenance constants published by the generated file.**
+
+*Outgoing statement.* "The generated file publishes the §2 output-surface-contract provenance constants (artifact
+sha256s, the weight-vector identity, a decoder-version string) as declared dormancy — consumer: the notation record
+build." — the opening block under the document's title, the *AS-BUILT* paragraph (locator: lines 29–31).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the generated file publish those provenance constants,
+and which code reads them?
+
+---
+
+**Row 15.8 — the joint state, the chord valued by scale degree with the chord symbol derived, the segmentation.**
+
+*Outgoing statement.* "State = `24 keys × a ground-truth-derived Roman-numeral vocabulary`, chord = scale-degree-valued
+(the chord symbol is the derived published fact from (key, degree)), segmentation is a modeled semi-Markov variable,
+seg_cap 4." — the opening block under the document's title, the *AS-BUILT* paragraph (locator: lines 31–33). Three
+claims: (i) the joint state is the twenty-four keys crossed with a Roman-numeral vocabulary taken from the ground truth,
+the chord valued by scale degree; (ii) the chord symbol is the derived published fact from the tonality and the degree;
+(iii) the segmentation is a modeled semi-Markov variable, with a segment cap of 4.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S1. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S1: **AGREES** — *"The chord symbol is a view of L2's
+chord"*, *"the deterministic function of that span's four chord fields and its tonality"*. (iii) **THE DERIVATION IS
+SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.* (ii) **ADOPTED —
+carried** (L3-S1). (iii) **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 15.9 — the inference independent of the style preset.**
+
+*Outgoing statement.* "Inference is **preset-independent** (presets are presentation concerns)." — the opening block
+under the document's title, the *AS-BUILT* paragraph (locator: lines 33–34).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*
+
+---
+
+**Row 15.10 — the batch tool's flag, the corpus regeneration and the graded reference.**
+
+*Outgoing statement.* "**Wiring:** `tools/batch_analyze.cpp --joint-inference <dir>` (default-OFF) produces each
+`.ours.json` from the decode at the EMBEDDED tables/weights (the `<dir>` is no longer read for fitted values) instead of
+the legacy `analyzeScore` pipeline; `tools/run_bach_preset.py --joint-inference` regenerates the corpus; the committed
+regression reference `tools/robust_stop/` is graded on it (root 77.03 / RN 64.12 / key-home 56.14 / key-local 78.42 %,
+class-(b) hard-stop 1,817,280 ticks per preset)." — the opening block under the document's title, the *AS-BUILT*
+paragraph (locator: lines 34–38). Three claims: (i) the batch tool's default-off flag produces each output from the
+decode at the embedded tables and weights; (ii) the corpus regeneration script regenerates the corpus through it; (iii)
+the committed regression reference is graded on it, at the values given.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS
+SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does `batch_analyze --joint-inference` produce each
+`.ours.json` from the decode at the embedded tables and weights, reading no fitted value from the directory? (ii)
+**QUARANTINED.** *Audit question:* does `run_bach_preset.py --joint-inference` regenerate the corpus through the decode?
+(iii) **QUARANTINED.** *Audit question:* on which corpus and run were the graded values measured, and do they reproduce at
+the current commit?
+
+---
+
+**Row 15.11 — the adoption on the batch surface, then the switch onto the notation surface.**
+
+*Outgoing statement.* "The adoption above put the joint estimator on the batch/corpus surface only; **the notation
+switch put it on the in-app NOTATION surface too** (`useJointNotationRecord` defaults ON — `composingconfiguration.cpp:178`)."
+— the opening block under the document's title, the *AS-BUILT* paragraph, after its *STAGED SCOPE* label (locator: lines
+40–42). Two claims: (i) the adoption put the joint estimator on the batch surface and the switch put it on the notation
+surface; (ii) the record flag defaults on, at the site cited.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — two events. (ii) **QUARANTINED.** *Audit question:* does
+`useJointNotationRecord` default to on at the site cited?
+
+---
+
+**Row 15.12 — the migration state closed, the legacy region path compiled and dormant.**
+
+*Outgoing statement.* "The declared migration state (#23) is therefore CLOSED on both surfaces, and the legacy
+`region::analyzeRegions` → `analyzeSection` path is compiled and dormant, awaiting deletion at the OI-180 retirement
+map." — the opening block under the document's title, the *AS-BUILT* paragraph (locator: lines 42–44). Two claims: (i)
+the declared migration state is closed on both surfaces; (ii) the legacy region path is compiled and dormant, awaiting
+deletion.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status. (ii) **QUARANTINED.** *Audit question:* is the legacy region path
+compiled and reached by no default path at the current commit?
+
+---
+
+**Row 15.13 — the first increment delivered.**
+
+*Outgoing statement.* "The first increment named here — carrying the notation output-surface contract (from A's
+posterior — alternatives, exposure/confidence, cadences, key areas) and the fitted-table packaging to the in-app runtime
+— is DELIVERED; see "THE RECORD PATH" below, subsections (1)–(6)." — the opening block under the document's title, the
+*AS-BUILT* paragraph (locator: lines 44–47).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 15.14 — the posterior slice: two full candidate lists per committed segment.**
+
+*Outgoing statement.* "`jointdecoder::computePosteriorSlice(piece, segments, adapter, vocab, cache)` publishes, per
+committed segment, the ESTABLISHED content-score uncertainty surface as two full candidate lists (no truncation
+constant): a **KEY axis** — the committed chord class re-scored under every scoreable candidate key (all 24, KEYS_24
+order: tonic 0..11, major before minor) — and a **CHORD axis** — every scoreable vocabulary class re-scored under the
+committed key (sorted class-key order); each entry is (label, weighted within-segment content score) with the committed
+reading flagged by index." — the opening block under the document's title, the *POSTERIOR SLICE* paragraph (locator:
+lines 58–63).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT** — what L2 publishes as its rivals is L2's, and no derived statement
+speaks to this form of it.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `computePosteriorSlice` publish, per committed segment,
+the two full candidate lists in the orders stated, untruncated?
+
+---
+
+**Row 15.15 — the slice computed after the decode, and what is scoreable.**
+
+*Outgoing statement.* "It is computed POST-decode by re-scoring the held span with `segmentContentScore`, so it inherits
+the established Neumaier bit-parity; "scoreable" = root defined AND finite content score
+(probe_decoder._segment_posterior's filter)." — the opening block under the document's title, the *POSTERIOR SLICE*
+paragraph (locator: lines 63–65).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the slice computed after the decode, each content score
+computed again with `segmentContentScore`, under the scoreable filter stated?
+
+---
+
+**Row 15.16 — the slice's candidate scores log content scores, not probabilities; the marginals not delivered.**
+
+*Outgoing statement.* "The scores are LOG-scores, NOT probabilities, and gaps are score differences; **GROUP (ii)
+forward-backward marginals are NOT delivered here — OI-193's later step.**" — the opening block under the document's
+title, the *POSTERIOR SLICE* paragraph (locator: lines 65–66). Two claims: (i) the slice's candidate scores are log
+content scores, not probabilities, and its gaps are differences of content score; (ii) the forward-backward marginals are
+not delivered, a later step.
+
+*Derived statements that speak to it.* (i) L3-S32. (ii) None.
+
+*Current-text axis.* (i) L3-S32: **DIFFERS**. (ii) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (i) The outgoing text says of the published candidate scores *"The scores
+are LOG-scores, NOT probabilities, and gaps are score differences"*; L3-S32 says *"L3's mass is of the same class as
+L2's: the model's own distribution, not calibrated"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** to *the uncertainty surface*. (ii) **HISTORICAL** — a deferred step.
+
+---
+
+**Row 15.17 — the batch render unchanged; the slice's consumer the later record.**
+
+*Outgoing statement.* "The batch `.ours.json` render is UNCHANGED (the a8 grading schema keeps `"alternatives": []`, the
+pinned grading form); the slice's consumer is the later notation record build." — the opening block under the
+document's title, the *POSTERIOR SLICE* paragraph (locator: lines 66–68). Two claims: (i) the batch render is unchanged,
+its alternatives list empty; (ii) the slice's consumer is the later notation record build.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the batch `.ours.json` render carry an empty
+alternatives list at the current commit? (ii) **HISTORICAL** — a plan, overtaken by Row 15.24.
+
+---
+
+**Row 15.18 — the reference slice written by the Python tool.**
+
+*Outgoing statement.* "**Reference oracle + parity:** the Python `tools/joint_estimator/gen_posterior_slice.py` writes
+`posterior_slice_ref.json` — the SELECTED-arm slice, full precision, in shared-label form (the scoreable sets are
+span-INDEPENDENT on this corpus: exactly one 24-key list and one 104-class list across all 13,063 committed segments,
+so the labels are published once at top level and each segment stores only its scores + committed index; lossless, not
+truncation)." — the opening block under the document's title, the *POSTERIOR SLICE* paragraph (locator: lines 68–72).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `gen_posterior_slice.py` write the reference slice in
+shared-label form, and are the scoreable sets independent of the span on the corpus, as stated?
+
+---
+
+**Row 15.19 — the slice established in two halves.**
+
+*Outgoing statement.* "It is established two-halved: (a) the identity-arm key-axis runner-up/gap reproduces the
+committed `probe_corpus_decode.json` EXACTLY on the 325 §5-unaffected pieces (bwv362 the sole §5 equal-score exception,
+enumerated), (b) the selected-arm committed segments equal `decode_parity_ref.json` on all 326." — the opening block
+under the document's title, the *POSTERIOR SLICE* paragraph (locator: lines 72–75).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run were the two halves of the slice's
+establishment measured, and do they reproduce?
+
+---
+
+**Row 15.20 — the driver verifying the C++ slice bit for bit.**
+
+*Outgoing statement.* "The default-OFF `batch_analyze --joint-posterior-slice <dir>` driver verifies the C++ slice
+BIT-IDENTICALLY against it (every piece × segment × candidate × both axes; a near-miss is a defect, not a tolerance)." —
+the opening block under the document's title, the *POSTERIOR SLICE* paragraph (locator: lines 75–77).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the `--joint-posterior-slice` driver verify the C++
+slice bit-identically against the reference, and does it pass at the current commit?
+
+---
+
+**Row 15.21 — the record assembled from the decode's outputs, never re-decoding.**
+
+*Outgoing statement.* "`joint::assembleNotationRecord(piece, result, sigFifths, declaredMode, adapter, vocab, cache)`
+(`jointnotationrecord`) assembles the ONE surface the in-app notation path will read (Decision A2), from the decode
+outputs + the decode's prior inputs + the compiled-in provenance — it NEVER re-decodes and never reads the score." — the
+opening block under the document's title, the *NOTATION OUTPUT-SURFACE RECORD* paragraph (locator: lines 81–84).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `assembleNotationRecord` read only the decode's outputs,
+its prior inputs and the compiled-in provenance, never re-decoding and never reading the score?
+
+---
+
+**Row 15.22 — the record's piece block.**
+
+*Outgoing statement.* "**§3.1** the piece block: analyzed span, the signature-fifths/declared-mode INPUT ECHO (the
+adapter exposes only the initial signature — no mid-piece re-anchor points, so that list is empty), and the §2
+provenance block read from the D1 embedded constants (`kTableArtifacts` hashes, `kWeightVectorIdentity`,
+`kDecoderVersion`, `kCorpusGitHash` — **their declared dormancy is discharged**: the record is their consumer)." — the
+opening block under the document's title, the *NOTATION OUTPUT-SURFACE RECORD* paragraph (locator: lines 84–87).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the record's piece block carry the analyzed span, the
+input echo with an empty list of re-anchor points, and the provenance block read from the embedded constants?
+
+---
+
+**Row 15.23 — per committed segment, the derived chord facts computed once.**
+
+*Outgoing statement.* "**§3.2** per committed segment: the native fields verbatim + the derived chord facts computed ONCE
+(the render primitives are single-sourced in `jointrender` — `jointOursQuality`/`jointChordSymbol`/`jointRenderRn`,
+shared with the batch render for §5.6 formatter continuity, #6): `keySignatureFifths`, root/bass tonal **spellings**
+(line-of-fifths; `jointprimitives::rootSpellingLof`/`factorSpellingLof`), member pcs with factor roles, the class-native
+`diatonicToKey` (a structural read, not a collection recompute — OI-173's lesson), the per-event bass factor role, and
+the augmented-sixth Italian/German/French sub-type derived from the SOUNDING content (the vocabulary collapsed the family
+to Italian)." — the opening block under the document's title, the *NOTATION OUTPUT-SURFACE RECORD* paragraph (locator:
+lines 87–94). Three claims: (i) per committed segment the record carries the native fields and the derived chord facts,
+computed once from shared render primitives; (ii) the root and the bass are spelled on the line of fifths; (iii) the
+augmented sixth's Italian, German or French sub-type is derived from the sounding content.
+
+*Derived statements that speak to it.* (i) L3-S1. (ii) L3-S2 and L3-S4. (iii) L3-S3.
+
+*Current-text axis.* (i) L3-S1: **AGREES** — *"Nothing is decided in computing it"*, published per span of the principal
+reading. (ii) L3-S2: **AGREES** — *"The root is spelled."* L3-S4: **AGREES** — the bass is *"the chord member that L2's
+figure names, spelled from the root and quality"*, and the outgoing spelling is a factor's spelling; the per-event bass
+factor role is not spoken to. (iii) L3-S3: **DIFFERS**.
+
+*The difference, in both texts' own words.* (iii) The outgoing text derives the augmented sixth's sub-type *"from the
+SOUNDING content"*; L3-S3 says *"Nothing in the quality is re-read from the sounding notes."*
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the record carry, per committed segment, the native
+fields and the derived chord facts computed once from the shared render primitives? (ii) **QUARANTINED.** *Audit
+question:* are the root and bass spellings derived on the line of fifths from the committed reading's chord factors, and
+which bass do they spell? *(§6 item 2 of the derivation flags L3-S4 as coinciding with a ruled sentence the L0/L1 input
+contract carries, for the comparison to check.)* (iii) **QUARANTINED.** *Audit question:* from which input is the
+augmented sixth's sub-type derived, and does it read the sounding notes?
+
+---
+
+**Row 15.24 — the posterior slice attached to the record.**
+
+*Outgoing statement.* "**§3.3** the established posterior slice attached." — the opening block under the document's
+title, the *NOTATION OUTPUT-SURFACE RECORD* paragraph (locator: line 94).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the posterior slice attached to the record, per committed
+segment?
+
+---
+
+**Row 15.25 — the unrounded modal reading per key run.**
+
+*Outgoing statement.* "**§3.4** the un-rounded modal reading (`computeModalReading`) per key run: for each scale degree
+1..7, the sounding duration + onset count of every chromatic inflection (degree from the notated spelling, inflection by
+pc offset) — counted, un-rounded, no label (C1)." — the opening block under the document's title, the *NOTATION
+OUTPUT-SURFACE RECORD* paragraph (locator: lines 94–97).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `computeModalReading` count, per key run and scale
+degree, the sounding duration and the onsets of each chromatic inflection, unrounded and unlabelled?
+
+---
+
+**Row 15.26 — the ornament fields reserved and absent, the excluded fields absent.**
+
+*Outgoing statement.* "**§3.5** ornament fields RESERVED-absent (OI-194's own increment); **§3.6** excluded fields simply
+absent." — the opening block under the document's title, the *NOTATION OUTPUT-SURFACE RECORD* paragraph (locator: line
+97).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the record carry no ornament field and none of the
+excluded fields at the current commit?
+
+---
+
+**Row 15.27 — how the record's components are established.**
+
+*Outgoing statement.* "**Establishment:** the key-signature-fifths mapping duplicates the legacy
+`keymodeanalyzer::keySignatureFifthsForKey` module-locally (L1-only isolation, #7/OI-180 — unifies at the legacy
+retirement); the spelling derivation is established by `tools/joint_estimator/gen_spelling_establishment.py` →
+`spelling_establishment.json` (root 13061/13063 = 99.985 % agreement with the notated tpc where the root sounds, 0
+unmappable/pc-mismatch; the four divergences are enharmonic re-spellings, the OI-168 convention class); **the C++
+spelling mapping (`jointprimitives::rootSpellingLof`/`factorSpellingLof` — the one the switch publishes) is established
+lof-EXACT against that Python derivation on all 13,063 committed segments — 0 divergences, root 13,063 + bass 11,182
+cells reconciling to the establishment (OI-197 RESOLVED; the default-OFF `batch_analyze --joint-spelling-parity` dump +
+`gen_spelling_establishment.py --cpp-parity` → the generated `cpp_parity` block, with a negative-control check that a
+perturbed lof STOPs)**; the modal counter by the bwv254 hand-check (D-minor degree-6 all ♭6, degree-7
+♭7+leading-tone)." — the opening block under the document's title, the *NOTATION OUTPUT-SURFACE RECORD* paragraph
+(locator: lines 98–108). Four claims: (i) the key-signature mapping duplicates the legacy one module-locally, to unify
+at the legacy retirement; (ii) the spelling derivation is established at the agreement given; (iii) the C++ spelling
+mapping reproduces that derivation exactly; (iv) the modal counter is established by a hand-check.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None. (iv) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS
+SILENT**. (iv) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the key-signature mapping duplicate the legacy
+function module-locally, and is its unification on the retirement map? (ii) **QUARANTINED.** *Audit question:* on which
+corpus and run was the spelling derivation's agreement with the notated spelling measured, and does it reproduce? (iii)
+**QUARANTINED.** *Audit question:* does the C++ spelling mapping reproduce the Python derivation exactly on the
+committed segments, its negative control firing? (iv) **QUARANTINED.** *Audit question:* what establishes the modal
+counter at the current commit, beyond the one hand-checked piece?
+
+---
+
+**Row 15.28 — the record's consumers, dormant then.**
+
+*Outgoing statement.* "Consumers: the RECORD PRODUCER + the two seam VIEWS (next paragraph) read this record — DORMANT
+(no src/ consumer yet)." — the opening block under the document's title, the *NOTATION OUTPUT-SURFACE RECORD* paragraph
+(locator: lines 108–109).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status, which the member's own Rows 15.29 and 15.68 overtake.
+
+---
+
+**Row 15.29 — at the switch, the record path the notation analysis; the legacy path dormant.**
+
+*Outgoing statement.* "At the switch the migration posture **CLOSED**: the record path is now THE in-app notation
+analysis; the legacy `analyzeHarmonicRhythm`/`analyzeChord` path remains COMPILED and DORMANT, selected only by an
+explicit `useJointNotationRecord = false`, awaiting deletion at the **OI-180 retirement map (now fully live)**." — the
+opening block under the document's title, the *THE RECORD PATH* paragraph (locator: lines 115–118). Two claims: (i) at
+the switch the migration posture closed and the record path became the in-app notation analysis; (ii) the legacy path
+remains compiled and dormant, selected only by setting the flag false.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event and a status. (ii) **QUARANTINED.** *Audit question:* is the legacy
+notation path compiled and reached only when the flag is set false?
+
+---
+
+**Row 15.30 — the flag held off through the build, then the switch.**
+
+*Outgoing statement.* "Through the whole P0-P7 build the flag stayed OFF and the legacy path ran byte-identically (proven
+per delivery unit); the switch flipped the default and refreshed the pipeline-snapshot goldens against the record arm,
+every diff reconciled to the P6 classified evidence (see **(6) the switch**, below)." — the opening block under the
+document's title, the *THE RECORD PATH* paragraph (locator: lines 118–120).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — build events.
+
+---
+
+**Row 15.31 — the producer's one call, from the score to the record.**
+
+*Outgoing statement.* "`joint::produceNotationRecord(score, stem)` is the ONE-call score->record entry:
+`buildAdapterFacts` (the L1 published-fact surface — the only score read, no raw-DOM walk) -> the compiled-in EMBEDDED
+tables/adapter + the SELECTED weight vector (Decision D1) -> `decodePiece` (§5 total order, seg_cap 4) ->
+`assembleNotationRecord` (which attaches the §3.3 slice)." — the opening block under the document's title, subsection
+*(1)* (locator: lines 123–126).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `produceNotationRecord` run the chain stated,
+`buildAdapterFacts` being its only read of the score?
+
+---
+
+**Row 15.32 — the whole score decoded once, deterministically, with no cache.**
+
+*Outgoing statement.* "WHOLE-score decode ONCE; deterministic; NO caching (a later, measured concern — #17's funnel, not
+built speculatively)." — the opening block under the document's title, subsection *(1)* (locator: lines 126–127).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the producer decode the whole score once,
+deterministically, with no cache?
+
+---
+
+**Row 15.33 — the full record or an unambiguous failure, never a partial record.**
+
+*Outgoing statement.* "It returns a `NotationRecordResult` — either the full record or an UNAMBIGUOUS failure (`ok=false`,
+`error` set, empty record) when the fact adapter cannot extract the score (`AdapterFacts.ok == false`, e.g. a null
+score): never a partial record, never a silent fallback (#13)." — the opening block under the document's title,
+subsection *(1)* (locator: lines 127–129).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `produceNotationRecord` return either the full record or
+an unambiguous failure, never a partial record and never a fallback?
+
+---
+
+**Row 15.34 — which staves feed the analysis, decided at the fact adapter.**
+
+*Outgoing statement.* "**Input-scoping (OI-204):** `produceNotationRecord(score, stem, excludeStaves = {})` forwards
+`excludeStaves` to `buildAdapterFacts`, which skips any notated note whose owning staff is in the set — INPUT selection
+at the fact adapter (the layer that owns its input surface, #7), before the note enters the L1 fact view the decode
+reads; NOT a consumer-side post-filter, NOT an inference change (the empty default skips nothing → byte-identical
+extraction)." — the opening block under the document's title, subsection *(1)* (locator: lines 130–133).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `buildAdapterFacts` skip every notated note whose staff
+is in the exclude set, the empty set extracting byte-identically?
+
+---
+
+**Row 15.35 — the chord track's own notes never fed back.**
+
+*Outgoing statement.* "Each record-arm seam threads the SAME chord-track exclude set its legacy arm passes (arm-for-arm
+input parity), so a populated chord track's own notes are never fed back into a re-analysis (the self-feedback hazard)."
+— the opening block under the document's title, subsection *(1)* (locator: lines 133–135).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does every record-arm seam pass the same chord-track exclude
+set its legacy arm passes?
+
+---
+
+**Row 15.36 — the producer core, the establishment seam.**
+
+*Outgoing statement.* "A `produceNotationRecord(piece, sigFifths, declaredMode)` core (the same minus
+`buildAdapterFacts`) is the establishment seam." — the opening block under the document's title, subsection *(1)*
+(locator: lines 135–137).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the producer core that takes a piece the seam the
+establishment tests call?
+
+---
+
+**Row 15.37 — the two seams read the record as views; the span view and the note view.**
+
+*Outgoing statement.* "The two §1 seams READ this record as pure VIEWS (#6, no recompute): **the span view**
+`spanViewSegments(rec, startTick, endTick)` returns the segment indices OVERLAPPING [startTick, endTick)
+(`seg.startTick < endTick && seg.endTick > startTick`; an empty/inverted span selects nothing); **the note view**
+`noteView(rec, tick)` returns the segment CONTAINING `tick` (`seg.startTick <= tick < seg.endTick` — a boundary tick
+belongs to the segment it STARTS), resolving the committed reading + derived facts (`segment`) + the §3.3 slice
+(`slice`), or `found=false` outside the analyzed span (the §3.1 piece block is the record's own fields)." — the opening
+block under the document's title, subsection *(1)* (locator: lines 137–142).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do `spanViewSegments` and `noteView` select the segments as
+stated, a boundary tick going to the segment it starts?
+
+---
+
+**Row 15.38 — the seams' record-arm branches, dormant until the switch.**
+
+*Outgoing statement.* "Consumers: the record-arm branches of the re-plumbed notation seams — subsections (2)-(5) below
+(behind the default-OFF flag; DORMANT on production until the switch)." — the opening block under the document's title,
+subsection *(1)* (locator: lines 143–144).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status, which the member's own Row 15.68 overtakes.
+
+---
+
+**Row 15.39 — the producer composes established components, inferring nothing.**
+
+*Outgoing statement.* "It composes only already-established parts; no inference, no new derivation." — the opening block
+under the document's title, subsection *(1)* (locator: lines 144–145).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the producer add no inference and no derivation of its
+own to the components it composes?
+
+---
+
+**Row 15.40 — the legacy pipeline dormant and compiled on both surfaces.**
+
+*Outgoing statement.* "The layer sections (L1–L6) below remain the accurate description of the LEGACY pipeline, which
+since the notation switch is **dormant-compiled on BOTH surfaces** — the batch/corpus surface and the in-app notation
+surface alike." — the opening block under the document's title, subsection *(1)* (locator: lines 150–151).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the legacy pipeline compiled and reached by no default path
+on either surface at the current commit?
+
+---
+
+**Row 15.41 — the section derived from the record through one converter.**
+
+*Outgoing statement.* "The section layer's record path `analyzeSectionFromRecord` (`sectionrecordadapter`) derives the
+shared `AnalyzedSection` from the record (1:1 segment→region) via the ONE record-segment→`ChordAnalysisResult` converter
+`chordResultFromRecordSegment` (#6; the section layer and the presentation layer both read its result)." — the opening
+block under the document's title, the paragraph led *(2) The section adapter …* (locator: lines 156–158).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `analyzeSectionFromRecord` derive the section one region
+per segment through the one converter `chordResultFromRecordSegment`?
+
+---
+
+**Row 15.42 — the span annotation: the Roman numeral a published fact, the display symbols presentation.**
+
+*Outgoing statement.* "The span-path emitter's record arm (`emitHarmonicAnnotations`, `notationcomposingbridge`) writes,
+per region: the **Roman numeral** as the record's PUBLISHED derived fact (`rs->romanNumeral`, the jointRender form); and
+the **display chord symbol** + **Nashville number** as PRESENTATION DERIVATIONS (Decision D2 + the contract §3.3
+amendment — display renderings are presentation, facts are published) rendered by the REUSED `ChordSymbolFormatter`
+(`formatSymbol` / `formatNashvilleNumber`, via the shared `formatChordResultForStatusBar`) from the record's committed
+reading — NOT the record's grading-form `chordSymbol` ("GDom7"), which stays on the record for batch/a8 continuity." —
+the opening block under the document's title, the paragraph led *(2) The section adapter …* (locator: lines 158–165).
+Three claims: (i) the span annotation writes the Roman numeral as the record's published derived fact; (ii) it renders
+the display chord symbol and the Nashville number with the formatter from the committed reading, not from the record's
+grading-form chord symbol; (iii) display renderings are presentation, and facts are published.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S5. (iii) L3-S5.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S5: **AGREES** — its premise leaves a display's
+convention to *"a display act"* that *"never publishes it back into the analysis"*. (iii) L3-S5: **AGREES**, as at (ii).
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the span annotation's record arm write the record's
+published Roman numeral, not re-formatted? (ii) **QUARANTINED.** *Audit question:* does the span annotation render the
+display chord symbol and the Nashville number with the formatter from the committed reading, and not from the record's
+grading-form symbol? (iii) **ADOPTED — proposed** — the proposal of Row 4.2 at §12: every display string produced
+outside the analysis, from published facts.
+
+---
+
+**Row 15.43 — the seventh carried into the display; a class with no root rendered as no symbol.**
+
+*Outgoing statement.* "The carriage is COMPLETE: the converter carries the FINE class quality's seventh-ness into
+`ChordIdentity.extensions` (the coarse `ChordQuality` drops it), so the formatter renders "G7"/"Am7"/"Bdim7"; a rootless
+chromatic class renders no symbol (matching the batch rootless "" from `jointChordSymbol`)." — the opening block under
+the document's title, the paragraph led *(2) The section adapter …* (locator: lines 165–167). Two claims: (i) the
+converter carries the class quality's seventh so that the formatter renders it; (ii) a chromatic class with no root
+renders no symbol, matching the batch's empty symbol.
+
+*Derived statements that speak to it.* (i) L3-S3. (ii) L3-S5.
+
+*Current-text axis.* (i) L3-S3: **AGREES** — the quality is *"L2's quality field, carried unchanged into the
+chord-symbol vocabulary"*, the five seventh qualities among it. (ii) L3-S5: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing text says a rootless chromatic class *"renders no symbol"*,
+*"matching the batch rootless"* empty symbol; L3-S5 says of the augmented sixths that *"the root field carries a named
+reason"* *"while quality and bass are published"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the converter carry the class quality's seventh into
+the extensions, so that the formatter renders the seventh? (ii) **QUARANTINED.** *Audit question:* for a class with no
+root, what does the record publish and what does the display render?
+
+---
+
+**Row 15.44 — the boundary between inference and presentation guarded both ways.**
+
+*Outgoing statement.* "**THE BOUNDARY IS PERMANENTLY GUARDED both ways** by a mechanical include-closure test
+(`inference_presentation_boundary_tests`): the joint estimator's inference module (every file under `analysis/joint/`)
+includes NO presentation formatter (`chordanalyzer.h` / `chordsymbolformatter`; the shared pitch leaf `analysisutils.h`
+is exempt), and the presentation formatter (`chordsymbolformatter.cpp`) includes NO joint inference internal — it
+consumes only the published record/adapter output surface (a `ChordAnalysisResult`)." — the opening block under the
+document's title, the paragraph led *(2) The section adapter …* (locator: lines 167–172).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `inference_presentation_boundary_tests` assert the
+include closure in both directions, and does it pass at the current commit?
+
+---
+
+**Row 15.45 — the guard's negative control.**
+
+*Outgoing statement.* "The guard carries a negative control (it fires on a perturbed include, both directions)." — the
+opening block under the document's title, the paragraph led *(2) The section adapter …* (locator: lines 172–173).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the boundary test fire on a perturbed include in both
+directions?
+
+---
+
+**Row 15.46 — no inference change on the span-annotation path.**
+
+*Outgoing statement.* "No inference change on this path; the display renderings are the only additions, and they are
+presentation." — the opening block under the document's title, the paragraph led *(2) The section adapter …* (locator:
+lines 173–174).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the span annotation's record path add only display
+renderings, changing no inferred value?
+
+---
+
+**Row 15.47 — the last two span-seam consumers moved onto the record path.**
+
+*Outgoing statement.* "The last two span-seam consumers are re-plumbed onto the record path." — the opening block under
+the document's title, the paragraph led *(3) The implode …* (locator: lines 177–178).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build event.
+
+---
+
+**Row 15.48 — the key-exposure bucket stored once per region on each arm.**
+
+*Outgoing statement.* "**The key-exposure BUCKET is unified (the P2a pattern completed):** the tentative/assertive bucket
+the implode formerly re-thresholded at 0.5/0.8 is now a STORED per-arm result on `AnalyzedRegion` (`keyExposureBucket`,
+0=below-tentative / 1=tentative / 2=assertive), set ONCE at the section-layer set site beside `hasAssertiveExposure` —
+legacy arm from `normalizedConfidence >= 0.5/0.8` (`sectionanalyzer.cpp::legacyKeyExposureBucket`, legacy-arm-only),
+record arm from the raw §3.3 key-axis gap (nats) at `kTentativeKeyExposureGap=0.975911` /
+`kAssertiveKeyExposureGap=1.055757` (`sectionrecordadapter.cpp`, the P1 constants from
+`tools/notation_seams/exposure_constants.json`; the record's confidence field carries nats, never compared to the [0,1]
+literals)." — the opening block under the document's title, the paragraph led *(3) The implode …* (locator: lines
+178–185).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the key-exposure bucket stored once per region on each arm,
+the record arm reading the raw key-axis gap against the two named constants?
+
+---
+
+**Row 15.49 — the implode reads the stored bucket.**
+
+*Outgoing statement.* "The implode reads the stored bucket (#6 — one thresholding site per gate)." — the opening block
+under the document's title, the paragraph led *(3) The implode …* (locator: line 185).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the implode read the stored bucket and apply no
+threshold of its own?
+
+---
+
+**Row 15.50 — the implode's chord track: the published Roman numeral, the display symbols, the gates.**
+
+*Outgoing statement.* "**The implode chord-track record path** (`notationimplodebridge.cpp`, `populateChordTrack` behind
+the flag → `produceNotationRecord` → `analyzeSectionFromRecord` → the SAME `emitImplodedChordTrack` with the record)
+writes, per region: the **Roman numeral** as the record's PUBLISHED `romanNumeral` (a fact, looked up by `noteView` at
+the region's start tick, NOT re-formatted from `ChordIdentity`); the **display chord symbol** + **Nashville** as
+PRESENTATION derivations (`ChordSymbolFormatter::formatSymbol`/`formatNashvilleNumber`; a rootless class writes no
+symbol); exposure gates read the stored bucket; the borrowed-key source-key search is restricted to the C1 two modes (the
+exotic-mode enumeration + the 0.35 mode-suffix gate are legacy-arm-only, inert on the record arm by two-mode
+construction); `kSameChordReannotationGap` (960) is a declared presentation-timing constant." — the opening block under
+the document's title, the paragraph led *(3) The implode …* (locator: lines 185–193). Three claims: (i) the implode
+writes the record's published Roman numeral, looked up at the region's start; (ii) it writes the display chord symbol
+and the Nashville number as presentation derivations, a class with no root writing no symbol; (iii) its exposure gates
+read the stored bucket, its borrowed-key search is restricted to the two modes, and its re-annotation gap is a declared
+presentation constant.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S5. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S5: **DIFFERS**; the presentation half agrees with it as
+at Row 15.42 (ii). (iii) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (ii) The outgoing text says *"a rootless class writes no symbol"*; L3-S5 says
+of the augmented sixths that *"the root field carries a named reason"* *"while quality and bass are published"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the implode's record path write the record's
+published Roman numeral, looked up at the region's start? (ii) **QUARANTINED.** *Audit question:* what does the implode
+write for a class with no root, and are its symbols rendered by the formatter? (iii) **QUARANTINED.** *Audit question:*
+on the record arm, do the exposure gates, the two-mode source-key search and the re-annotation constant stand as stated?
+
+---
+
+**Row 15.51 — the tuning regions derived from the record.**
+
+*Outgoing statement.* "**The tuning region record path** (`notationtuningbridge.cpp`, `applyRegionTuning` behind the
+flag) derives the tuning regions from the record and maps each to the `(span, chordResult, keyModeResult)` the tuning
+loop reads — the inputs are FACTS the record carries (`rootPc`, `quality`, and `keyModeResult.tonicPc`, the only
+`KeyModeAnalysisResult` field any `TuningSystem` reads — `JustIntonation::rootOffset`); no consumed fact the record
+lacks." — the opening block under the document's title, the paragraph led *(3) The implode …* (locator: lines
+193–197).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the tuning record path read only the root, the quality
+and the tonic from the record?
+
+---
+
+**Row 15.52 — a produce failure writes and tunes nothing.**
+
+*Outgoing statement.* "A produce failure writes/tunes NOTHING on either path (the record IS the surface, A2/#13 — no
+legacy fallback)." — the opening block under the document's title, the paragraph led *(3) The implode …* (locator:
+lines 197–198).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a produce failure leave the score unwritten and untuned
+on both paths, with no fallback?
+
+---
+
+**Row 15.53 — with the flag off, both paths unchanged.**
+
+*Outgoing statement.* "Flag OFF → both paths byte-identical." — the opening block under the document's title, the
+paragraph led *(3) The implode …* (locator: line 198).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* with the flag off, are the implode and tuning paths
+byte-identical to their legacy behaviour?
+
+---
+
+**Row 15.54 — the presentation-gate disposition carried out at the record surface.**
+
+*Outgoing statement.* "**OI-182 EXECUTED at the record surface** (the §4.1 presentation-gate disposition — every
+exposure/annotation constant's declared site)." — the opening block under the document's title, the paragraph led *(3)
+The implode …* (locator: lines 198–199).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event.
+
+---
+
+**Row 15.55 — the single-note surface reaches the record through one funnel and one builder.**
+
+*Outgoing statement.* "The single-note surface (`analyzeNoteHarmonicContext[Details]`, and through them
+`harmonicAnnotation`) gains its record arm at the ONE funnel `analyzeHarmonicContextAtTick` (`notationcomposingbridge`):
+flag ON → `produceNotationRecord` (whole-score, once) → `noteView(rec, tick)` → the ONE builder
+`buildNoteContextFromRecord` fills `NoteHarmonicContext` from the record's published facts (contract §1 **seam 2** — a
+VIEW into the record, NOT a second computation, #6)." — the opening block under the document's title, the paragraph led
+*(4) The note-seam re-plumb …* (locator: lines 202–206).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the single-note surface reach the record through the one
+funnel and the one builder, computing nothing of its own?
+
+---
+
+**Row 15.56 — the shared per-segment mapping.**
+
+*Outgoing statement.* "The builder reuses the SHARED per-segment mapping `regionFromRecordSegment`
+(`sectionrecordadapter`, EXTRACTED so the span seam `analyzeSectionFromRecord` and the note seam derive the committed
+reading + two-mode key + §3.3 alternatives in ONE place — the span loop then adds only `tones`, which the note view
+carries none of)." — the opening block under the document's title, the paragraph led *(4) The note-seam re-plumb …*
+(locator: lines 206–209).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `regionFromRecordSegment` serve both the span seam and
+the note seam?
+
+---
+
+**Row 15.57 — what the note context carries, field by field.**
+
+*Outgoing statement.* "Per note: `chordResults[0]` = the committed reading via `chordResultFromRecordSegment`;
+`chordResults[1..]` = the §3.3 chord-axis alternatives (`recordAlternatives`), committed-first then descending content
+score, each carrying its §3.3 content score as `identity.score` (the "(%.2f)" suffix); `keyFifths`/`keyMode` = the C1
+two-mode key; `keyConfidence` = the RAW §3.3 key-axis gap in nats (a model-internal quantity, NO [0,1] remap); the pedal
+fields stay false/-1 (suspended, OI-194); `temporalExtensions` default (audited: no in-tree reader); `enclosingKeyArea`
+nullopt (the single-segment view has no section key-area grouping)." — the opening block under the document's title,
+the paragraph led *(4) The note-seam re-plumb …* (locator: lines 209–215). Four claims: (i) the note context carries the
+committed reading first and the chord-axis alternatives after it, each with its content score, and the two-mode key;
+(ii) its key confidence is the raw key-axis gap, unremapped; (iii) its pedal fields stay unset, suspended; (iv) its
+temporal extensions are defaulted and its enclosing key area empty.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None. (iv) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS
+SILENT**. (iv) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the note context carry the committed reading first
+and the chord-axis alternatives after it in the order stated, each with its content score, and the two-mode key? (ii)
+**QUARANTINED.** *Audit question:* does the note context's key confidence carry the raw key-axis gap with no remapping?
+(iii) **QUARANTINED.** *Audit question:* are the pedal fields constant on the record arm at the current commit? (iv)
+**QUARANTINED.** *Audit question:* are the temporal extensions defaulted with no reader, and the enclosing key area empty
+on the note view?
+
+---
+
+**Row 15.58 — the three note-seam consumers through one builder, with no consumer change.**
+
+*Outgoing statement.* "The THREE audited note-seam consumers — the **status bar** (`harmonicAnnotation` → the
+accessibility chain), the **harmony write** (`notationinteraction`), and the **right-click menu**
+(`notationcontextmenumodel`) — all route through `analyzeNoteHarmonicContext[Details]`, so the ONE builder carries all
+three; each renders via the SAME shared P-strings formatters (`formatChordResultForStatusBar` / `ChordSymbolFormatter`)
+reading the carriage — **NO consumer code change**." — the opening block under the document's title, the paragraph led
+*(4) The note-seam re-plumb …* (locator: lines 215–219).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the three note-seam consumers route through the one
+context function and render with the shared formatters?
+
+---
+
+**Row 15.59 — an out-of-span tick or a failure yields an empty context.**
+
+*Outgoing statement.* "An out-of-span tick or a produce failure yields an EMPTY context (nothing written, no partial
+output, no legacy fallback — the record IS the surface, A2/#13)." — the opening block under the document's title, the
+paragraph led *(4) The note-seam re-plumb …* (locator: lines 219–220).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does an out-of-span tick or a produce failure yield an empty
+context, with no fallback?
+
+---
+
+**Row 15.60 — the window cache bypassed on the record arm.**
+
+*Outgoing statement.* "The bounded-window decode cache is BYPASSED on the record arm (a whole-score produce per
+invocation, the P3a/P4 pattern; a record cache is a later measured concern — the interactive-frequency cost is noted,
+not a structural incompatibility)." — the opening block under the document's title, the paragraph led *(4) The
+note-seam re-plumb …* (locator: lines 220–222).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the bounded-window decode cache bypassed on the record
+arm, a whole-score produce running at every invocation?
+
+---
+
+**Row 15.61 — with the flag off, the legacy window path unchanged.**
+
+*Outgoing statement.* "Flag OFF → the legacy expanding-window path byte-identical." — the opening block under the
+document's title, the paragraph led *(4) The note-seam re-plumb …* (locator: lines 222–223).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* with the flag off, is the legacy expanding-window path
+byte-identical to its behaviour before the record arm?
+
+---
+
+**Row 15.62 — the whole note seam on both arms.**
+
+*Outgoing statement.* "After this unit the whole audited note seam is dual-arm." — the opening block under the
+document's title, the paragraph led *(4) The note-seam re-plumb …* (locator: line 223).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 15.63 — the capture: the whole notation output, run on both arms.**
+
+*Outgoing statement.* "A CAPTURE (`pipeline_snapshot_tests` `DISABLED_DualArmClassifiedCapture`, opt-in — the golden
+sweep and byte-identity untouched) runs the FULL notation output surface TWICE per snapshot-corpus score over the
+16-measure window — arm "legacy" (`useJointNotationRecord` OFF) and arm "record" (ON) — and serializes both:
+`annotation` (the span-seam write: display symbols / Roman / key brackets / Nashville / pedal + cadence StaffText),
+`implode` (the chord-track write: treble symbols, bass Roman/Nashville, imploded voicing pitches, key/cadence text),
+`tuning` (per-note offsets under a fixed Just-Intonation tonic-anchored config — a downstream read of the committed
+root+key), and `noteSeam` (the committed reading + rendered symbol/roman/nashville + §3.3 alternatives at EVERY measure
+downbeat)." — the opening block under the document's title, the paragraph led *(5) The dual-arm classified-comparison
+instrument …* (locator: lines 227–234).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the disabled capture test run the four surfaces on both
+arms over the stated window and serialize them?
+
+---
+
+**Row 15.64 — the capture public, restoring the flag, deterministic.**
+
+*Outgoing statement.* "It calls only public production entry points; the flag is restored OFF by RAII per surface; each
+surface array is sorted by a stable key so the artifact `tools/notation_seams/dualarm_capture.json` is deterministic
+run-to-run." — the opening block under the document's title, the paragraph led *(5) The dual-arm classified-comparison
+instrument …* (locator: lines 234–236).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the capture call only public entry points, restore the
+flag after each surface, and write a deterministic artifact?
+
+---
+
+**Row 15.65 — the classifier's four classes.**
+
+*Outgoing statement.* "A CLASSIFIER (`tools/notation_seams/classify_dualarm.py`, #17f) aligns the two arms per surface
+and classifies EVERY non-identical item into: **inference-driven** (the record's committed reading differs — the
+adoption's expected differences, both readings cited); **presentation-rule** (a ratified rule accounts for it, cited: C1
+two-mode display / the §4.1 exposure gates / OI-194 pedal suspension / §3.3 alternatives ordering / D2
+grading-vs-display / OI-201 aug-sixth coarseness / the applied-chord Nashville "?" convention); **input-scoping** (the
+OI-204 class — structurally ZERO on this chord-track-free corpus); and **UNEXPLAINED** (the headline — every entry
+investigated to a mechanism before delivery, else a STOP)." — the opening block under the document's title, the
+paragraph led *(5) The dual-arm classified-comparison instrument …* (locator: lines 236–242).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `classify_dualarm.py` place every non-identical item in
+one of the four classes, as stated?
+
+---
+
+**Row 15.66 — the classifier's two outputs.**
+
+*Outgoing statement.* "It emits `dualarm_classified_report.json` + `dualarm_classified_summary.txt`." — the opening block
+under the document's title, the paragraph led *(5) The dual-arm classified-comparison instrument …* (locator: lines
+242–243).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the classifier write the two files named?
+
+---
+
+**Row 15.67 — the comparison tool invents no value and patches no difference.**
+
+*Outgoing statement.* "The instrument invents no value and bends nothing toward either arm — a difference is CLASSIFIED,
+never patched." — the opening block under the document's title, the paragraph led *(5) The dual-arm
+classified-comparison instrument …* (locator: lines 243–244).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** to *the measurement of the analysis*.
+
+---
+
+**Row 15.68 — the seams work closed out, and the switch made.**
+
+*Outgoing statement.* "The seams partition (P0-P7) was closed out and completeness-verified
+(`tools/notation_seams/partition_completeness.json` — every consumer's record branch cited, every ruling checked, every
+seams-era register row in state, the flag OFF everywhere, the three suites green; NO finding), and the switch — ONE
+revertible, user-ratified commit (dispatch `records/cc/instructions/cc_instruction_notation_switch.md`) — flipped
+`useJointNotationRecord`'s default to **ON**." — the opening block under the document's title, the paragraph led *(5)
+The dual-arm classified-comparison instrument …*, after its *(6) THE SWITCH* label (locator: lines 246–250).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — events.
+
+---
+
+**Row 15.69 — both surfaces produced by the joint estimator.**
+
+*Outgoing statement.* "The batch/corpus output is A's (the OI-178 adoption); the in-app notation analysis is now **A's
+record path** too." — the opening block under the document's title, the paragraph led *(5) The dual-arm
+classified-comparison instrument …*, after its *(6) THE SWITCH* label (locator: lines 250–251).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* at the current commit, do both the batch output and the in-app
+notation analysis come from the joint estimator (as Row 1.12)?
+
+---
+
+**Row 15.70 — the goldens refreshed at the switch, and their differences reconciled.**
+
+*Outgoing statement.* "The switch refreshed the pipeline-snapshot goldens against the established record arm (cited
+preconditions: the P6 classified report `dualarm_classified_report.json` + the OI-178 adoption record), and every
+legacy→record golden diff was reconciled to the P6 taxonomy by `tools/notation_seams/reconcile_switch_goldens.py` →
+`switch_golden_reconciliation.json`: **0 unexplained, 0 input-scoping, the non-flag-gated surfaces (implode / keyAreas /
+tickLocal) byte-identical** — the diff is inference-driven (the record's committed-reading / segmentation / voicing
+moves), §3.3 alternatives-ordering presentation, and a production-INERT auxiliary class (the note-seam carriage's
+`temporalExtensions`/`wasRegional`, which no consumer reads)." — the opening block under the document's title, the
+paragraph led *(5) The dual-arm classified-comparison instrument …*, after its *(6) THE SWITCH* label (locator: lines
+251–258). Two claims: (i) the switch refreshed the pipeline-snapshot goldens against the record arm; (ii) every golden
+difference was reconciled to the classified evidence, none unexplained and none of input scoping.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event. (ii) **QUARANTINED.** *Audit question:* does the reconciliation of
+the switch's golden differences reproduce, with no unexplained and no input-scoping difference?
+
+---
+
+**Row 15.71 — the batch surface and the regression reference unmoved by the switch.**
+
+*Outgoing statement.* "The batch/corpus surface and `tools/robust_stop/` did not move (the flag is notation-side;
+`test_batch_analyze_regressions` passes)." — the opening block under the document's title, the paragraph led *(5) The
+dual-arm classified-comparison instrument …*, after its *(6) THE SWITCH* label (locator: lines 258–259).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* did the batch surface and the regression reference stay
+unmoved by the switch, and does the batch regression test pass at the current commit?
+
+---
+
+**Row 15.72 — the legacy path retiring on the retirement map; the agenda after the switch.**
+
+*Outgoing statement.* "The legacy `ChordAnalysisResult`/`NoteHarmonicContext`/`HarmonicRegion` path and the per-arm
+legacy branches now RETIRE on the **OI-180 retirement map** (post-switch, fully live); the post-switch agenda includes
+OI-193 (the marginal-posterior completion), OI-194 (the ornament-label / voice-independent pedal-class publication),
+OI-203 (the record-cache increment — the latency is now on the default path), and OI-201 (the aug-sixth display-symbol
+completeness gap)." — the opening block under the document's title, the paragraph led *(5) The dual-arm
+classified-comparison instrument …*, after its *(6) THE SWITCH* label (locator: lines 259–263).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan.
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. "Full spec: `cowork_joint_estimator_architecture.md`, …" (47–49) — a pointer to other documents.
+2. "The ratified contract for the PRE-FIT PROTOCOLS this estimator's fitting must satisfy — …" (52–54) — a delegation
+   pointer to another document, which it says it does not restate.
+3. "*(The naming above is a citation inside a list; …" (54–55) — a remark on the document's own wording.
+4. "Suites: unit coverage in …" (109–110) — a pointer to tests.
+5. "This is the consolidated, forward end-to-end record …" (113–115) — about the document, a description of its own
+   paragraph.
+6. "Coverage: `joint_producer_tests` …" (146–149) — a pointer to tests.
+7. "(Corrected 2026-08-02, `OPEN_ITEMS.md` OI-232 item 2; …" (152–153) — provenance of a correction.
+8. "The §8.4 switch-ratification evidence: …" (226–227) — about the document, a label for what its subsection
+   records.
+
+#### The arithmetic at this member
+
+- Rows written: **72** (15.1 to 15.72).
+- Rows split into two claims, **+1 each**: 15.11, 15.12, 15.16, 15.17, 15.29, 15.43, 15.70 — seven rows, **+7**.
+- Rows split into three claims, **+2 each**: 15.8, 15.10, 15.23, 15.42, 15.50 — five rows, **+10**.
+- Rows split into four claims, **+3 each**: 15.27, 15.57 — two rows, **+6**.
+- **Outgoing statements placed: 72 + 7 + 10 + 6 = 95.**
+- Listed under *not a statement*: **8**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row against its claims: 95 dispositions over 95 statements.
+- **UNPLACED statements at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 1 | 15.8(ii) |
+| ADOPTED — proposed | 1 | 15.42(iii) |
+| RELOCATED | 5 | To L2 (3): 15.8(i), 15.8(iii), 15.9; to the uncertainty surface (1): 15.16(i); to the measurement of the analysis (1): 15.67 |
+| QUARANTINED | 73 | 15.1, 15.2, 15.3, 15.4, 15.5, 15.6, 15.7, 15.10(i), 15.10(ii), 15.10(iii), 15.11(ii), 15.12(ii), 15.14, 15.15, 15.17(i), 15.18, 15.19, 15.20, 15.21, 15.22, 15.23(i), 15.23(ii), 15.23(iii), 15.24, 15.25, 15.26, 15.27(i), 15.27(ii), 15.27(iii), 15.27(iv), 15.29(ii), 15.31, 15.32, 15.33, 15.34, 15.35, 15.36, 15.37, 15.39, 15.40, 15.41, 15.42(i), 15.42(ii), 15.43(i), 15.43(ii), 15.44, 15.45, 15.46, 15.48, 15.49, 15.50(i), 15.50(ii), 15.50(iii), 15.51, 15.52, 15.53, 15.55, 15.56, 15.57(i), 15.57(ii), 15.57(iii), 15.57(iv), 15.58, 15.59, 15.60, 15.61, 15.63, 15.64, 15.65, 15.66, 15.69, 15.70(ii), 15.71 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 15 | 15.11(i), 15.12(i), 15.13, 15.16(ii), 15.17(ii), 15.28, 15.29(i), 15.30, 15.38, 15.47, 15.54, 15.62, 15.68, 15.70(i), 15.72 |
+| UNPLACED | 0 | — |
+| **Total** | **95** | — |
+
+**The column sums to 95, against 95 statements, so the arithmetic closes at this member**: 1 + 1 + 5 + 73 + 0 + 15 + 0 =
+95. **The statement lists in the right-hand column are the record**, and the integers are re-derivable from them by
+counting; the RELOCATED count is its three charter lists, 3 + 1 + 1.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 7 |
+| DIFFERS | 4 |
+| THE DERIVATION IS SILENT | 85 |
+| **Total verdicts** | **96** |
+
+*(Counted per named derived statement per statement. One statement names two derived statements — 15.23(ii), L3-S2 and
+L3-S4 — so the verdicts total 96 over 95 statements.)* The AGREES verdicts are 15.8(ii) (L3-S1), 15.23(i) (L3-S1),
+15.23(ii) (L3-S2 and L3-S4), 15.42(ii) and 15.42(iii) (L3-S5), and 15.43(i) (L3-S3). The DIFFERS statements are
+15.16(i) (L3-S32), 15.23(iii) (L3-S3), and 15.43(ii) and 15.50(ii) (L3-S5) — four statements carrying four verdicts, all
+four QUARANTINED but the first, which is RELOCATED.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 15 is empty.
+- **In homes that are not withheld, carrying no mark:** D-005 (Row 15.1); D-002 (Row 15.3); D-004 (Row 15.8); D-003 (Row
+  15.9); D-095 (Row 15.12); D-006 (Row 15.14); the retired entry D-007, and D-008 (Row 15.16); D-009 (Row 15.21); D-011
+  (Row 15.32); the retired entry D-012 (Row 15.33); D-013 (Row 15.34); D-014, and the retired entry D-015 (Row 15.37);
+  the retired entry D-016 (Row 15.42); the retired entry D-017 (Row 15.44); the retired entry D-018 (Row 15.49); D-019
+  and D-021 (Row 15.57); D-020 (Row 15.60); D-010 (Row 15.68).
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: 15.23 (ii).** **§6 item 2 of the derivation flags L3-S4 as coinciding with a ruled sentence the
+  L0/L1 input contract carries** — *"the chord's bass note, which L3 publishes, read off the figure L2 decides"* — for
+  the comparison to check; it is recorded here because L3-S4 is named at that row.
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -21105,6 +22526,10 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   included. *(L2 publishes per span the rivals with their mass; the derivation's §0 cites L2-S40 to L2-S42.)*
 - Row 12.39 (ii) — the joint estimator as one generative decode over a joint state space, not a re-ranking of legacy
   candidates. *(The charter makes the tonality and the chord one entangled decision.)*
+- Rows 15.8 (i), 15.8 (iii) and 15.9 — the joint state of the twenty-four keys crossed with a Roman-numeral vocabulary,
+  the chord valued by scale degree, the segmentation a modeled semi-Markov variable with a segment cap, and the
+  inference independent of the style preset. *(The charter makes the tonality and the chord one entangled decision, and
+  the segmentation is L2's to publish.)*
 
 **To *the second axis — voice leading*.**
 
@@ -21123,6 +22548,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   probability, naming its combiner and inputs. *(L3-S32 DIFFERS at the row; Row 8.78 is WITHHELD — D-459.)*
 - Row 10.137 — that the chord decision's composite confidence is declared a margin-family quantity, not a calibrated
   probability, and compared only in the contract's declared frames.
+- Row 15.16 (i) — that the published candidate scores are log content scores, not probabilities, and their gaps
+  differences of content score. *(L3-S32 DIFFERS at the row.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -21156,11 +22583,13 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 13.8 (ii), 13.11 (ii), 13.29, 13.30, 13.31 and 13.33 — the gate on switching to the per-slice path: no new
   class-(b) error with class-(a) churn verified, the corpus output's movement the behaviour change the gate judges, and
   each step judged on coverage-matched accuracy and correct abstention, never on raw coverage.
+- Row 15.67 — that the tool comparing the two arms invents no value and favours neither arm, a difference classified and
+  never patched.
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
-the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows numbered 12.n, and member 13's the rows
-numbered 13.n. Members 4, 5, 6 and 14 relocate no row.)*
+the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows
+numbered 13.n, and member 15's the rows numbered 15.n. Members 4, 5, 6 and 14 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -21569,6 +22998,120 @@ commit that tabulates it, each with the audit question its row writes.
 
 - Row 14.1 (ii) — on which corpus and run was the decoder measured better where it commits and its abstention found
   mostly function-dependent, and does it reproduce (as Row 10.2 (iii))?
+
+**Member 15 — `ARCHITECTURE.md`, the opening block, above the first `## ` heading.**
+
+- Row 15.1 — at the current commit, does the batch/corpus surface produce its output from the joint estimator (as Row
+  1.12)?
+- Row 15.2 — does `src/composing/analysis/joint/` hold the five components named, each in the role given?
+- Row 15.3 — does `gen_embedded_tables.py` compile the five committed artifacts and the selected weight vector byte for
+  byte into `jointembeddedartifacts.{h,cpp}`?
+- Row 15.4 — are the embedded loaders the production source, and do they parse through the same parser as the
+  filesystem loaders?
+- Row 15.5 — are the filesystem loaders reached only by the tests and the diagnostics?
+- Row 15.6 — does `joint_embedded_tests` assert the embedded bytes identical to the committed files and the weight vector
+  value-exact to `decode_parity_ref.json`?
+- Row 15.7 — does the generated file publish those provenance constants, and which code reads them?
+- Row 15.10 (i) — does `batch_analyze --joint-inference` produce each `.ours.json` from the decode at the embedded tables
+  and weights, reading no fitted value from the directory?
+- Row 15.10 (ii) — does `run_bach_preset.py --joint-inference` regenerate the corpus through the decode?
+- Row 15.10 (iii) — on which corpus and run were the graded values measured, and do they reproduce at the current commit?
+- Row 15.11 (ii) — does `useJointNotationRecord` default to on at the site cited?
+- Row 15.12 (ii) — is the legacy region path compiled and reached by no default path at the current commit?
+- Row 15.14 — does `computePosteriorSlice` publish, per committed segment, the two full candidate lists in the orders
+  stated, untruncated?
+- Row 15.15 — is the slice computed after the decode, each content score computed again with `segmentContentScore`,
+  under the scoreable filter stated?
+- Row 15.17 (i) — does the batch `.ours.json` render carry an empty alternatives list at the current commit?
+- Row 15.18 — does `gen_posterior_slice.py` write the reference slice in shared-label form, and are the scoreable sets
+  independent of the span on the corpus, as stated?
+- Row 15.19 — on which run were the two halves of the slice's establishment measured, and do they reproduce?
+- Row 15.20 — does the `--joint-posterior-slice` driver verify the C++ slice bit-identically against the reference, and
+  does it pass at the current commit?
+- Row 15.21 — does `assembleNotationRecord` read only the decode's outputs, its prior inputs and the compiled-in
+  provenance, never re-decoding and never reading the score?
+- Row 15.22 — does the record's piece block carry the analyzed span, the input echo with an empty list of re-anchor
+  points, and the provenance block read from the embedded constants?
+- Row 15.23 (i) — does the record carry, per committed segment, the native fields and the derived chord facts computed
+  once from the shared render primitives?
+- Row 15.23 (ii) — are the root and bass spellings derived on the line of fifths from the committed reading's chord
+  factors, and which bass do they spell?
+- Row 15.23 (iii) — from which input is the augmented sixth's sub-type derived, and does it read the sounding notes?
+- Row 15.24 — is the posterior slice attached to the record, per committed segment?
+- Row 15.25 — does `computeModalReading` count, per key run and scale degree, the sounding duration and the onsets of
+  each chromatic inflection, unrounded and unlabelled?
+- Row 15.26 — does the record carry no ornament field and none of the excluded fields at the current commit?
+- Row 15.27 (i) — does the key-signature mapping duplicate the legacy function module-locally, and is its unification on
+  the retirement map?
+- Row 15.27 (ii) — on which corpus and run was the spelling derivation's agreement with the notated spelling measured,
+  and does it reproduce?
+- Row 15.27 (iii) — does the C++ spelling mapping reproduce the Python derivation exactly on the committed segments, its
+  negative control firing?
+- Row 15.27 (iv) — what establishes the modal counter at the current commit, beyond the one hand-checked piece?
+- Row 15.29 (ii) — is the legacy notation path compiled and reached only when the flag is set false?
+- Row 15.31 — does `produceNotationRecord` run the chain stated, `buildAdapterFacts` being its only read of the score?
+- Row 15.32 — does the producer decode the whole score once, deterministically, with no cache?
+- Row 15.33 — does `produceNotationRecord` return either the full record or an unambiguous failure, never a partial
+  record and never a fallback?
+- Row 15.34 — does `buildAdapterFacts` skip every notated note whose staff is in the exclude set, the empty set
+  extracting byte-identically?
+- Row 15.35 — does every record-arm seam pass the same chord-track exclude set its legacy arm passes?
+- Row 15.36 — is the producer core that takes a piece the seam the establishment tests call?
+- Row 15.37 — do `spanViewSegments` and `noteView` select the segments as stated, a boundary tick going to the segment it
+  starts?
+- Row 15.39 — does the producer add no inference and no derivation of its own to the components it composes?
+- Row 15.40 — is the legacy pipeline compiled and reached by no default path on either surface at the current commit?
+- Row 15.41 — does `analyzeSectionFromRecord` derive the section one region per segment through the one converter
+  `chordResultFromRecordSegment`?
+- Row 15.42 (i) — does the span annotation's record arm write the record's published Roman numeral, not re-formatted?
+- Row 15.42 (ii) — does the span annotation render the display chord symbol and the Nashville number with the formatter
+  from the committed reading, and not from the record's grading-form symbol?
+- Row 15.43 (i) — does the converter carry the class quality's seventh into the extensions, so that the formatter renders
+  the seventh?
+- Row 15.43 (ii) — for a class with no root, what does the record publish and what does the display render?
+- Row 15.44 — does `inference_presentation_boundary_tests` assert the include closure in both directions, and does it
+  pass at the current commit?
+- Row 15.45 — does the boundary test fire on a perturbed include in both directions?
+- Row 15.46 — does the span annotation's record path add only display renderings, changing no inferred value?
+- Row 15.48 — is the key-exposure bucket stored once per region on each arm, the record arm reading the raw key-axis gap
+  against the two named constants?
+- Row 15.49 — does the implode read the stored bucket and apply no threshold of its own?
+- Row 15.50 (i) — does the implode's record path write the record's published Roman numeral, looked up at the region's
+  start?
+- Row 15.50 (ii) — what does the implode write for a class with no root, and are its symbols rendered by the formatter?
+- Row 15.50 (iii) — on the record arm, do the exposure gates, the two-mode source-key search and the re-annotation
+  constant stand as stated?
+- Row 15.51 — does the tuning record path read only the root, the quality and the tonic from the record?
+- Row 15.52 — does a produce failure leave the score unwritten and untuned on both paths, with no fallback?
+- Row 15.53 — with the flag off, are the implode and tuning paths byte-identical to their legacy behaviour?
+- Row 15.55 — does the single-note surface reach the record through the one funnel and the one builder, computing nothing
+  of its own?
+- Row 15.56 — does `regionFromRecordSegment` serve both the span seam and the note seam?
+- Row 15.57 (i) — does the note context carry the committed reading first and the chord-axis alternatives after it in
+  the order stated, each with its content score, and the two-mode key?
+- Row 15.57 (ii) — does the note context's key confidence carry the raw key-axis gap with no remapping?
+- Row 15.57 (iii) — are the pedal fields constant on the record arm at the current commit?
+- Row 15.57 (iv) — are the temporal extensions defaulted with no reader, and the enclosing key area empty on the note
+  view?
+- Row 15.58 — do the three note-seam consumers route through the one context function and render with the shared
+  formatters?
+- Row 15.59 — does an out-of-span tick or a produce failure yield an empty context, with no fallback?
+- Row 15.60 — is the bounded-window decode cache bypassed on the record arm, a whole-score produce running at every
+  invocation?
+- Row 15.61 — with the flag off, is the legacy expanding-window path byte-identical to its behaviour before the record
+  arm?
+- Row 15.63 — does the disabled capture test run the four surfaces on both arms over the stated window and serialize
+  them?
+- Row 15.64 — does the capture call only public entry points, restore the flag after each surface, and write a
+  deterministic artifact?
+- Row 15.65 — does `classify_dualarm.py` place every non-identical item in one of the four classes, as stated?
+- Row 15.66 — does the classifier write the two files named?
+- Row 15.69 — at the current commit, do both the batch output and the in-app notation analysis come from the joint
+  estimator (as Row 1.12)?
+- Row 15.70 (ii) — does the reconciliation of the switch's golden differences reproduce, with no unexplained and no
+  input-scoping difference?
+- Row 15.71 — did the batch surface and the regression reference stay unmoved by the switch, and does the batch
+  regression test pass at the current commit?
 
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
@@ -22060,6 +23603,19 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 
 **Member 14.** No ADOPTED — proposed row, and no DIFFERS.
 
+**Member 15.**
+
+- **ADOPTED — proposed — Row 15.42 (iii):** that every display rendering be produced as presentation from the published
+  facts and never be published as a fact (the proposal of Row 4.2).
+- **DIFFERS — Row 15.16 (i) (L3-S32):** the outgoing published candidate scores *"are LOG-scores, NOT probabilities"*,
+  where L3-S32 says L3's mass is of the same class as L2's, *"the model's own distribution"*.
+- **DIFFERS — Row 15.23 (iii) (L3-S3):** the outgoing augmented sixth's sub-type is derived *"from the SOUNDING
+  content"*, where L3-S3 says *"Nothing in the quality is re-read from the sounding notes."*
+- **DIFFERS — Row 15.43 (ii) (L3-S5):** the outgoing rootless chromatic class *"renders no symbol"*, where L3-S5 says
+  *"the root field carries a named reason"* while quality and bass are published.
+- **DIFFERS — Row 15.50 (ii) (L3-S5):** the outgoing *"a rootless class writes no symbol"*, where L3-S5 says *"the root
+  field carries a named reason"* while quality and bass are published.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -22081,10 +23637,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 12 | 70 | 0 | 0 | 4 | 11 | 0 | 54 | 1 | 28 |
 | 13 | 52 | 0 | 0 | 6 | 9 | 0 | 37 | 0 | 6 |
 | 14 | 23 | 0 | 0 | 0 | 1 | 0 | 22 | 0 | 5 |
-| **Total** | **1439** | **109** | **54** | **614** | **273** | **0** | **258** | **131** | **464** |
+| 15 | 95 | 1 | 1 | 5 | 73 | 0 | 15 | 0 | 8 |
+| **Total** | **1534** | **110** | **55** | **619** | **346** | **0** | **273** | **131** | **472** |
 
-**The arithmetic check:** 109 + 54 + 614 + 273 + 0 + 258 + 131 = 1439, against 1439 statements placed (43 + 34 + 21 + 34
-+ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23).
+**The arithmetic check:** 110 + 55 + 619 + 346 + 0 + 273 + 131 = 1534, against 1534 statements placed (43 + 34 + 21 + 34
++ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -22102,10 +23659,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 12 | 1 | 1 | 68 | 70 |
 | 13 | 0 | 2 | 50 | 52 |
 | 14 | 0 | 0 | 23 | 23 |
-| **Total** | **132** | **197** | **1113** | **1442** |
+| 15 | 7 | 4 | 85 | 96 |
+| **Total** | **139** | **201** | **1198** | **1538** |
 
-**The arithmetic check of the verdicts:** 132 + 197 + 1113 = 1442, against the members' verdict totals (43 + 35 + 21 + 34 +
-19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23).
+**The arithmetic check of the verdicts:** 139 + 201 + 1198 = 1538, against the members' verdict totals (43 + 35 + 21 + 34 +
+19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96).
 
 ## 14. The derivation's independence record, relayed
 
