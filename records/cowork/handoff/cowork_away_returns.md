@@ -25446,3 +25446,69 @@ the working tree during the run.
 
 *Provenance: CC, 2026-10-19, appended in the one further commit after the close commit
 `5eb99af8a7dca79a35bcaf24f5d14780e762cc83`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 COMPARISON CONTINUED FROM POSITION 9 — MEMBERS 9 TO 9 TABULATED, PROPOSALS ONLY, NOTHING DECIDED, NO ALGORITHM CHANGED — TASK 1 STOPPED AT THE MEMBER BOUNDARY AFTER POSITION 9, POSITIONS 10 TO 57 NOT DONE
+
+This batch ran `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fourth_2026_10_19.md`, pinned at Task 0
+to blob `06fd1540a8b14f5f05a9f94277cee827fb5d4f2a`:
+
+- **Task 0** checked this dispatch and handoff entry 428 at their last bytes at their blobs, landed both as they stood
+  (`c3499d99…`), took the opening guard capture — as A2 predicted, the thirteen and nothing else, with the evidence pin
+  green — and verified the derivation and the brief at their blobs before Task 1 opened.
+- **Task 1** extended `ratification_surfaces/cowork_comparison_l3_reading.md` with **position 9,
+  `cowork_layer5_engagement_design.md`, whole**, in one commit (`4453a8a3…`), with §0 (its stale head corrected), §10 to
+  §13 and the one banner edit in the same commit. The capacity judgment was stated before the member was opened, and the
+  member was finished whole; the first-member rule did not fire. Every quotation of an outgoing statement was checked
+  against the member's text at the objects before the commit, and §6.1 to §6.8 were compared byte-identical before it. It
+  **STOPPED at the member boundary after position 9** by the capacity judgment 1(h) orders, written before position 10
+  was opened. **Positions 10 to 57 are UNTOUCHED, not partly worked** (**D-672**), and §0 of the reading file says so.
+- **Task 2** closed.
+
+**NOTHING WAS DECIDED; NO DISPOSITION WAS APPLIED; EVERY PLACEMENT IS A PROPOSAL.** No outgoing text was edited. The
+derivation, the brief, the pack and the two earlier reading files were not edited, and §6.1 to §6.8 of the reading file
+were not touched. No session was booted. No measurement of the analysis was made. No open-items row and no `D-NNN`. No
+ruling was taken, no recommendation was made, and nothing was put to the user. The five ★ questions were not put. Nothing
+any layer computes changed.
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_comparison_tabulation_fourth_2026_10_19.md`, and is pointed at rather than copied (#6):
+
+- the members done and not done, with both capacity judgments, at its head;
+- the ordered first read (§0);
+- Task 0, with the refs, the chain, A1, the last bytes, the commit, the opening capture whole and the two blobs (§1);
+- Task 1's commit, how the member was placed, the re-read before the commit with the slips it caught and the scratch
+  tally's two limits, and how the marks were placed (§2);
+- Task 2, with the `STATUS.md` entries and the substring search, the forward bound's aiming, `--apply` and `--check` with
+  the three entries moved by name, and the checks with what each regenerated artifact moved (§3);
+- A1 to A5 (§4), the findings and observations (§5), the declared departures (§6), the scripts (§7), what the batch did
+  not do (§8), the plan's tell (§9) and the self-check (§10).
+
+### What needs the writing side, named rather than resolved
+
+1. **Placements stated for challenge at position 9** (report §5, item 1): the function layer's relation to the chord
+   layer placed as §6.7 placed it (L3-S38 named where the selecting layer chooses among, overrides or leaves unchanged the
+   chord layer's readings; L3-S37 and L3-S39 where it reads the layer beneath and never re-derives from the notes; L3-S15
+   where it produces the cadence markers); pedal-point detection RELOCATED to *L2 — The tonal reading*; the note on L3-S31
+   at Row 9.73; leads ending in a colon tabulated where they carry a claim of their own; the member's §9.1 table rows
+   listed under *not a statement*.
+2. **Ordered read (10) not met at §12's member-2 to member-7 blocks** (report §6, departure 4) — recorded as a departure;
+   the member-9 additions were placed after the member-8 block without touching what lies between.
+3. **Reserved words in earlier members' text** — bare *measure* in the gauging sense at Rows 1.24 (i), 7.11 and 7.22 and
+   their §11 questions, *flat* in the non-musical sense in the titles of Rows 3.1 and 7.336, and the earlier §10 text's
+   *completeness bar* and *cadence measure* — recorded, not acted on; §6.1 to §6.8 are frozen for a continuing batch
+   (report §5, item 3).
+4. **The classification tool's message still names four tools without an authored verdict**, unchanged. Authoring one
+   was not this batch's act.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects, then the next tabulation
+  dispatch resuming at the member boundary §0 of the reading file records: position 10,
+  `cowork_layer4_chordsymbol_design.md`, whole.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-19, at boot tip `58d15bd175ee235954a8379fda2814f9226e2168`, under
+`cc_instruction_l3_comparison_tabulation_fourth_2026_10_19.md`, after the dispatch's ordered first reads. Every commit
+identifier here was read from the commit's own object and `origin/master` at its ref file after each push; the guard
+verdicts are this batch's own runs.*
