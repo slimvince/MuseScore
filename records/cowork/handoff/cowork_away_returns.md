@@ -25579,3 +25579,73 @@ the working tree during the run.
 
 *Provenance: CC, 2026-10-19, appended in the one further commit after the close commit
 `0db1aeefb23e21d3a2d5db65ee5ecd918ccefc95`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 COMPARISON CONTINUED FROM POSITION 10 — MEMBERS 10 TO 11 TABULATED, PROPOSALS ONLY, NOTHING DECIDED, NO ALGORITHM CHANGED — TASK 1 STOPPED AT THE MEMBER BOUNDARY AFTER POSITION 11, POSITIONS 12 TO 57 NOT DONE
+
+This batch ran `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fifth_2026_10_19.md`, pinned at Task 0
+to blob `755286baab45dd75d0868c3b7e20e5fef32ccf3b`:
+
+- **Task 0** checked this dispatch and handoff entry 429 at their last bytes at their blobs, landed both as they stood
+  (`2dffe2cd…`), took the opening guard capture — as A2 predicted, the thirteen and nothing else, with the evidence pin
+  green — and verified the derivation and the brief at their blobs before Task 1 opened.
+- **Task 1** extended `ratification_surfaces/cowork_comparison_l3_reading.md` with **position 10,
+  `cowork_layer4_chordsymbol_design.md`, whole** (`d377cc2d…`), and **position 11, `docs/nct_detection_design.md`,
+  whole** (`57663fa9…`), one commit each, with §0 (the previous batch's stop stated as its own clause), §10 to §13 and the
+  one banner edit in the same commits. The capacity judgment was stated before each member was opened, and each was
+  finished whole; the first-member rule did not fire. Every quotation of an outgoing statement and every *not a
+  statement* opening was checked against the member's text at the objects before each commit, and §6.1 to §6.9, then
+  §6.1 to §6.10, were compared byte-identical before them. It **STOPPED at the member boundary after position 11** by
+  the capacity judgment 1(h) orders, written before position 12 was opened. **Positions 12 to 57 are UNTOUCHED, not
+  partly worked** (**D-672**), and §0 of the reading file says so.
+- **Task 2** closed.
+
+**NOTHING WAS DECIDED; NO DISPOSITION WAS APPLIED; EVERY PLACEMENT IS A PROPOSAL.** No outgoing text was edited. The
+derivation, the brief, the pack and the two earlier reading files were not edited, and §6.1 to §6.9 of the reading file
+were not touched. No session was booted. No measurement of the analysis was made. No open-items row and no `D-NNN`. No
+ruling was taken, no recommendation was made, and nothing was put to the user. The five ★ questions were not put. Nothing
+any layer computes changed.
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_comparison_tabulation_fifth_2026_10_19.md`, and is pointed at rather than copied (#6):
+
+- the members done and not done, with the three capacity judgments, at its head;
+- the ordered first read (§0);
+- Task 0, with the refs, the chain, A1, the last bytes, the commit, the opening capture whole and the two blobs (§1);
+- Task 1's two commits, how each member was placed, the re-read before each commit with the slips it caught and the
+  scratch scripts' three limits, and how the marks were placed (§2);
+- Task 2, with the `STATUS.md` entries and the substring search, the forward bound's aiming, `--apply` and `--check` with
+  the three entries moved by name, and the checks with what each regenerated artifact moved (§3);
+- A1 to A5 (§4), the findings and observations (§5), the declared departures (§6), the scripts (§7), what the batch did
+  not do (§8), the plan's tell (§9) and the self-check (§10).
+
+### What needs the writing side, named rather than resolved
+
+1. **Placements stated for challenge at position 10** (report §5, item 1): the chord symbol made a decision of the chord
+   layer, RELOCATED to *L2 — The tonal reading. The one entangled decision.* with L3-S1 DIFFERS; the function layer's
+   settling and overriding of the chord layer's readings, RELOCATED to L2 with L3-S38 DIFFERS, as §6.7 and §6.9 placed
+   them; the *Punctuation-span* entry UNPLACED as Row 8.14 (ii); the difference on the count of seventh qualities at Row
+   10.34.
+2. **Placements stated for challenge at position 11** (report §5, item 2): voice membership and analysis written into the
+   score RELOCATED to *L0 — The notated record*; inferring a line where the notation gives none RELOCATED to *the second
+   axis — voice leading*; the questions under the member's *Open questions* listed under *not a statement*.
+3. **D-332, an entry the decisions register retired from its list, is homed in position 10's document** and is named in
+   §6.10's manifest header beside the five live entries the INDEX shows (report §2 and §5, item 3).
+4. **Reserved words in earlier members' text** — bare *measure* in the gauging sense at Rows 1.24 (i), 7.11 and 7.22 and
+   their §11 questions, *flat* in the non-musical sense in the titles of Rows 3.1 and 7.336, and the earlier §10 text's
+   *completeness bar* and *cadence measure* — recorded, not acted on; §6.1 to §6.9 are frozen for a continuing batch
+   (report §5, item 5).
+5. **The classification tool's message still names four tools without an authored verdict**, unchanged. Authoring one
+   was not this batch's act.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects, then the next tabulation
+  dispatch resuming at the member boundary §0 of the reading file records: position 12, `cowork_engage_arc_plan.md`,
+  whole.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-19, at boot tip `fc2ab74a2694f32628f8c4d31d05e91cefd661c0`, under
+`cc_instruction_l3_comparison_tabulation_fifth_2026_10_19.md`, after the dispatch's ordered first reads. Every commit
+identifier here was read from the commit's own object and `origin/master` at its ref file after each push; the guard
+verdicts are this batch's own runs.*
