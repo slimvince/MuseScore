@@ -26593,3 +26593,85 @@ the working tree during the run.
 
 *Provenance: CC, 2026-10-20, appended in the one further commit after the close commit
 `a23f352429049db7fa5c096e1b8ed64c53b1c35d`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 COMPARISON CONTINUED FROM POSITION 27 — MEMBERS 27 TO 34 TABULATED, PROPOSALS ONLY, NOTHING DECIDED, NO ALGORITHM CHANGED — TASK 1 STOPPED AT THE MEMBER BOUNDARY AFTER POSITION 34, BY THE DISPATCH'S OWN LIMIT, POSITIONS 35 TO 57 NOT DONE
+
+This batch ran `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twelfth_2026_10_20.md`, pinned at
+Task 0 to blob `87dd34ecb7d1d026cf434f0558b577b607a056b3`:
+
+- **Task 0** checked this dispatch and handoff entry 436 at their last bytes at their blobs, landed both as they stood
+  (`532971b1…`), took the opening guard capture — as A2 predicted, the thirteen and nothing else, with the evidence pin
+  green and the header *"the guard state re-derives"* — and verified the derivation and the brief at their blobs before
+  Task 1 opened.
+- **Task 1** extended `ratification_surfaces/cowork_comparison_l3_reading.md` with **positions 27 to 34**, each
+  `ARCHITECTURE.md`'s passages under one top-level heading — *10. Visualization* (`800fe266…`, with §0's clause on the
+  previous batch's stop and the one banner edit), *11. Intonation* (`f9ba0d9c…`), *12. User Interface* (`777e6d5e…`),
+  *14. ML Readiness* (`917d2f6c…`), *15. Development Phases* (`8f025665…`), *16. Scope Reference* (`b836986f…`), *19.
+  LLM Integration — Claude Composer* (`c305fc02…`) and *Appendix B — MuseScore Score Model Quick Reference*
+  (`f85ed740…`) — one commit each, with §0 and §10 to §13 updated in each. **A capacity-judgment file was written in the
+  scratch folder before each member was opened, the first included**, and each is quoted whole at the head of the
+  report; every judgment was that the member could be finished whole, and every member was. Every published range line
+  text matched the line at its locator; no range carries the quotation-block marker; at position 28, position 6's lines
+  inside the section were excluded from the cut as that member's. Every quotation of an outgoing statement and every
+  *not a statement* opening was checked against the member's text at the objects before each commit, and §6.1 to the
+  previous member compared byte-identical each time. Positions 33 and 34 place no statement, each with its reading
+  stated for challenge at its manifest header; position 28 carries the batch's only DIFFERS, four of them, each with
+  its one-sentence difference and nothing chosen. **A usage-limit pause fell inside position 28 before its rows were
+  written, and the session's context was summarized once, after position 34's checks ran and before its commit.** It
+  **STOPPED at the member boundary after position 34 under the dispatch's 1(g)**, not by a capacity judgment. **Positions
+  35 to 57 are UNTOUCHED, not partly worked** (**D-672**), and §0 of the reading file says so.
+- **Task 2** closed: the three `STATUS.md` entries written first, the 26 ruled terms searched with the one standing
+  hit, the forward bound re-aimed and moved exactly the eleventh batch's three entries, and the two reds A2 provides
+  for regenerated, `gen_session_start_read_size.py` last. No entry was corrected after the move.
+
+**NOTHING WAS DECIDED; NO DISPOSITION WAS APPLIED; EVERY PLACEMENT IS A PROPOSAL.** No outgoing text was edited —
+`ARCHITECTURE.md` was read, never edited. The derivation, the brief, the pack and the two earlier reading files were not
+edited, and §6.1 to §6.26 of the reading file were not touched. No session was booted. No measurement of the analysis was
+made. No open-items row and no `D-NNN`. No ruling was taken, no recommendation was made, and nothing was put to the user.
+The five ★ questions were not put. Nothing any layer computes changed.
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_comparison_tabulation_twelfth_2026_10_20.md`, and is pointed at rather than copied
+(#6):
+
+- the two interruptions, the members done and not done, the eight capacity-judgment files quoted whole and position
+  35's size, at its head;
+- the ordered first read, with the derivation's counts taken at the read and the reads that fell short (§0);
+- Task 0, with the refs, the chain, A1, the last bytes, the commit, the opening capture whole and the two blobs (§1);
+- Task 1's eight commits, how the scripts took each member's text, each member's ranges check, the inside control, the
+  walks by range overlap, the three checks on the committed blob, the words read by hand, and the slips each re-read
+  caught (§2);
+- Task 2, with the `STATUS.md` entries and the substring search, the forward bound's aiming, `--apply` and `--check`
+  with the three entries moved by name, and the checks with what each regenerated artifact moved (§3);
+- A1 to A5 (§4), the findings and observations (§5), the declared departures (§6), the scripts and the limits they met
+  (§7), what the batch did not do (§8), the plan's tell (§9) and the self-check (§10).
+
+### What needs the writing side, named rather than resolved
+
+1. **Placements and readings stated for challenge** at §6.27 to §6.34's manifest headers — three at position 27 (among
+   them Row 27.2 graded THE DERIVATION IS SILENT where Row 1.15 graded a named producer of the chord symbol DIFFERS), six
+   at 28, three at 30, four at 31, two at 32, the reading most open to challenge at 33 and the alternatives at 34 — and
+   the one UNPLACED statement, at position 32. The four DIFFERS at position 28 are at §12.
+2. **The passage rule's cuts at positions 27 to 34 are recorded, not repaired**, with every decision home in a cut named
+   at its member's manifest header — among them the deferred D-206 and the live D-469 and D-471 at position 28, the live
+   D-295 at 29, the live D-205 at 32 and the deferred D-440 and D-441 at 33.
+3. **Position 35 is 480 lines and 45,088 bytes** at the artifact, fewer lines than position 21 (495) and about a fifth
+   more bytes (against 37,279), and the first member cut from `docs/scoring_model.md` (report head).
+4. **The dispatch's first page was again read beside `STATUS.md`** rather than alone (report §6, departure 1), and four
+   manifest headers and §11 and §12 of the reading file were read short of whole (departure 3) — recorded so the next
+   dispatch's ordered read can be judged against it.
+5. **The classification tool's message still names four tools without an authored verdict**, unchanged. Authoring one
+   was not this batch's act.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects, then the next tabulation
+  dispatch resuming at the member boundary §0 of the reading file records: position 35, `docs/scoring_model.md`'s
+  passages.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-20, at boot tip `95bdd1357f75ab3cb09530a7a5ba2ad0379c819d`, under
+`cc_instruction_l3_comparison_tabulation_twelfth_2026_10_20.md`, after the dispatch's ordered first reads. Every commit
+identifier here was read from the commit's own object and `origin/master` at its ref file after each push; the guard
+verdicts are this batch's own runs.*
