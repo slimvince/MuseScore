@@ -71,7 +71,7 @@ its own entry there.
 | 26 | `ARCHITECTURE.md` passages — *9. The Constraint System* | **DONE** (§6.26) |
 | 27 | `ARCHITECTURE.md` passages — *10. Visualization* | **DONE** (§6.27) |
 | 28 | `ARCHITECTURE.md` passages — *11. Intonation* | **DONE** (§6.28) |
-| 29 | `ARCHITECTURE.md` passages — *12. User Interface* | NOT YET TABULATED |
+| 29 | `ARCHITECTURE.md` passages — *12. User Interface* | **DONE** (§6.29) |
 | 30 | `ARCHITECTURE.md` passages — *14. ML Readiness* | NOT YET TABULATED |
 | 31 | `ARCHITECTURE.md` passages — *15. Development Phases* | NOT YET TABULATED |
 | 32 | `ARCHITECTURE.md` passages — *16. Scope Reference* | NOT YET TABULATED |
@@ -102,7 +102,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 28 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 29 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -117,7 +117,8 @@ Principles*, position 20, its passages under *3. Directory Structure*, position 
 Components — The Analysis Foundation*, position 22, its passages under *5. Planned Analysis Extensions*, position 23,
 its passages under *6. The Style System*, position 24, its passages under *7. The Knowledge Base*, position 25, its
 passages under *8. Planned Generation Components*, position 26, its passages under *9. The Constraint System*,
-position 27, its passages under *10. Visualization*, and position 28, its passages under *11. Intonation*.**
+position 27, its passages under *10. Visualization*, position 28, its passages under *11. Intonation*, and position
+29, its passages under *12. User Interface*.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -139,9 +140,9 @@ boundary after position 20, by its own capacity judgment; positions 21 and 22 we
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md`, which stopped at the member
 boundary after position 22, by its own capacity judgment; positions 23 to 26 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md`, which stopped at the member
-boundary after position 26, by its own capacity judgment; positions 27 and 28 were tabulated under
+boundary after position 26, by its own capacity judgment; positions 27 to 29 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twelfth_2026_10_20.md`.** **The writing now stands at
-the member boundary after position 28: not done, positions 29 to 57, and the next writing resumes at position 29.** **A
+the member boundary after position 29: not done, positions 30 to 57, and the next writing resumes at position 30.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -35079,6 +35080,214 @@ The DIFFERS statements: 28.35 (L3-S15), 28.47 (L3-S17), 28.50 (L3-S15) and 28.58
 
 ---
 
+### 6.29 — Member 29: `ARCHITECTURE.md`, the passages under *12. User Interface*
+
+> **Manifest for this member.** Position **29**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: `## 12. User Interface`, exactly as the artifact spells it. **The fifteenth member
+> of this comparison made of passages.** One range, as a locator only (**D-307**), with its first and last line texts
+> exactly as the artifact publishes them (wrapped here for width):
+>
+> - lines 7544–7552, from *"| Action ID | Label | Registered at | What it writes |"* to *"| `compose-tune-as` | *(one
+>   entry per analyzed reading, under a "Tune as ⟨system⟩" submenu)* | built in `notationcontextmenumodel.cpp:174`,
+>   handled at `notationactioncontroller.cpp:387` | retunes the selected note's chord as the chosen reading |"*.
+>
+> **Both line texts were compared with the line at its locator** in `ARCHITECTURE.md`, read by this session at the file
+> and at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at that commit,
+> **and both match**. The top-level heading the label names stands at line 7473, and the next top-level heading, *13.
+> File Persistence*, at line 7599. **No other member of the artifact lies inside this top-level section** — this
+> session's script, run over lines 7473 to 7599, found no range of any other `ARCHITECTURE.md` member there — so
+> nothing is excluded from the cut. The section's other lines lie in no range — lines 7474–7543 and 7553–7598, as this
+> session's script lists them. They hold, by the lines this session read: the section's governing requirement, zero
+> information loss to the end user, every inferred object displayable; *12.1 MuseScore Panel Integration* whole;
+> *12.1a Harmonic Analysis Display Preference* whole, with its correction that the analysis behind the status bar is
+> not negligible in cost on the production path and that suppressing the display would skip it; under *12.1b Menu
+> Actions (Implemented)*, its completion remark, the table of the two Tools-menu actions, the sentence on their gating
+> and the lead of this member's table; after the range, the right-click chord anchor and its open question, and the
+> paragraph on the rebuilt submenu; *12.2 Harmony Navigator*, *12.3 Voicing Alternatives Panel*, *12.4 Tension Curve
+> Editor* and *12.5 Style Editor*, each whole; and the separator before *13.* No other member of the artifact covers
+> them — the passage rule's cut, recorded here as at §6.15 to §6.28, and not repaired. Outgoing statements: **7** (rows
+> 29.1 to 29.7). Listed under *not a statement*: **1**. Counted at this member by this session; the counts appear here
+> and at §13, and nowhere else.
+>
+> **WITHHELD homes inside this member: none** — the artifact's `item_4_identities_inside` for position 29 is empty.
+> **No decision of the decisions register's data file is homed inside this member's range**, found by this session's
+> walk of `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit
+> hash) for every `home` naming `ARCHITECTURE.md` with a line range overlapping the range, the retired block included.
+> *(The same walk over the cut spans finds five homes there, and therefore in no member: in the decisions register's
+> list, **D-295** at 7475–7477, the section's governing requirement, recorded LIVE at the INDEX (group J); and four
+> RETIRED entries the decisions register's INDEX does not show, kept in its data file's retired block with the clause
+> §6.27 quotes — **D-154** at 7485, its own status field reading deferred, and **D-155** at 7489, **D-156** at 7492 and
+> **D-157** at 7497–7499, each reading live — none of them withheld.)* **No SEEN home lies in this member**, agreeing
+> with §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.28, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation
+> join, the blockquote-marker reading, the fenced-block reading and the reading of a range that opens with a heading
+> line were applied unchanged at this member.** **The blockquote-marker reading has nothing to drop at the range**:
+> every line of it was checked at the blob, and none opens with the quotation-block marker; a table row is quoted as
+> written. **The fenced-block reading has no instance**: the range holds no fenced block. **A range that opens with a
+> heading line: none.** **The table** is a table of menu actions, not a status table of design documents, so the
+> status-table reading does not reach it: its header row with its rule line is listed (item 1), and each of its seven
+> body rows is a row. **This member has no glossary and no former wording preserved inside it.** **The quotation join
+> found nothing to join at this member.**
+>
+> **What this member is, read whole before any row was written, and how its subjects were placed.** The range is the
+> table of seven actions that write what the analysis produced into the music — the chord symbol, the Roman numeral and
+> the Nashville number at one element or across a selection — and a context-menu entry that retunes the selected note's
+> chord as a chosen reading; its sub-section's heading calls them implemented. **Each row states what a built display
+> action does, so each is QUARANTINED** with its audit question, as §6.18 placed the chord staff and the status bar and
+> §6.28 the annotate path; **each is graded THE DERIVATION IS SILENT**, as Rows 18.5 (ii) and 5.9 graded what a display
+> writes — the derived statements speak to what L3 publishes, not to what an action writes into the music. **No
+> statement of this member DIFFERS from a derived statement, and none is ADOPTED, RELOCATED, HISTORICAL or UNPLACED.**
+
+---
+
+**Row 29.1 — an action adding the analyzed chord symbol at the selected element.**
+
+*Outgoing statement.* "| `add-chord-symbol-from-analysis` | Add chord symbol | `notationuiactions.cpp:1402` | the
+analyzed chord symbol at the selected element |" — the section *12. User Interface*, sub-section *12.1b Menu Actions
+(Implemented)*, its second table (locator: line 7546).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is `add-chord-symbol-from-analysis` registered where named and
+does it write the analyzed chord symbol at the selected element, read from which surface, at the current commit?
+
+---
+
+**Row 29.2 — an action adding the analyzed Roman numeral at the selected element.**
+
+*Outgoing statement.* "| `add-roman-numeral-from-analysis` | Add Roman numeral | `:1408` | the analyzed Roman numeral at
+the selected element |" — the same table (locator: line 7547).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 29.1, for the Roman numeral.
+
+---
+
+**Row 29.3 — an action adding the analyzed Nashville number at the selected element.**
+
+*Outgoing statement.* "| `add-nashville-number-from-analysis` | Add Nashville number | `:1414` | the analyzed Nashville
+number at the selected element |" — the same table (locator: line 7548).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 29.1, for the Nashville number.
+
+---
+
+**Row 29.4 — an action adding chord symbols across the selection.**
+
+*Outgoing statement.* "| `add-chord-symbols-to-selection` | Add chord symbols to selection | `:1420` | chord symbols
+across the whole selection |" — the same table (locator: line 7549).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is `add-chord-symbols-to-selection` registered where named and
+does it write chord symbols across the whole selection, read from which surface, at the current commit?
+
+---
+
+**Row 29.5 — an action adding Roman numerals across the selection.**
+
+*Outgoing statement.* "| `add-roman-numerals-to-selection` | Add Roman numerals to selection | `:1426` | Roman numerals
+across the whole selection |" — the same table (locator: line 7550).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 29.4, for Roman numerals.
+
+---
+
+**Row 29.6 — an action adding Nashville numbers across the selection.**
+
+*Outgoing statement.* "| `add-nashville-numbers-to-selection` | Add Nashville numbers to selection | `:1432` | Nashville
+numbers across the whole selection |" — the same table (locator: line 7551).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 29.4, for Nashville numbers.
+
+---
+
+**Row 29.7 — a context-menu entry retuning the selected note's chord as a chosen reading.**
+
+*Outgoing statement.* "| `compose-tune-as` | *(one entry per analyzed reading, under a "Tune as ⟨system⟩" submenu)* |
+built in `notationcontextmenumodel.cpp:174`, handled at `notationactioncontroller.cpp:387` | retunes the selected note's
+chord as the chosen reading |" — the same table (locator: line 7552).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the context menu offer one tuning entry per analyzed
+reading, built and handled where named, and does it retune the selected note's chord as the chosen reading, at the
+current commit?
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. "| Action ID | Label | Registered at | What it writes |" (7544–7545) — the table's header row with its rule line.
+
+#### The arithmetic at this member
+
+- Rows written: **7**.
+- **Outgoing statements placed: 7.**
+- Listed under *not a statement*: **1**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: none.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 7 | 29.1, 29.2, 29.3, 29.4, 29.5, 29.6, 29.7 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **7** | — |
+
+**The column sums to 7, against 7 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 7 |
+| **Total verdicts** | **7** |
+
+The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 29 is empty.
+- **In homes that are not withheld, carrying no mark: none** — no home lies in the range; the five homes of the cut lie
+  in no member.
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -35533,7 +35742,7 @@ the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows
 numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, member 17's the rows numbered
 17.n, member 19's the rows numbered 19.n, member 20's the rows numbered 20.n, member 21's the rows numbered 21.n,
 member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, and member 24's the rows numbered 24.n. Members
-4, 5, 6, 14, 18, 25, 26, 27 and 28 relocate no row.)*
+4, 5, 6, 14, 18, 25, 26, 27, 28 and 29 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -36654,6 +36863,19 @@ No QUARANTINED row: the member places no statement (§6.26's manifest header).
 - Row 28.67 — does the region tuning write the chain offset to every note of a tie chain that meets the selection, at
   the current commit?
 
+**Member 29 — `ARCHITECTURE.md`, the passages under *12. User Interface*.**
+
+- Row 29.1 — is `add-chord-symbol-from-analysis` registered where named and does it write the analyzed chord symbol at
+  the selected element, read from which surface, at the current commit?
+- Row 29.2 — the same as Row 29.1, for the Roman numeral.
+- Row 29.3 — the same as Row 29.1, for the Nashville number.
+- Row 29.4 — is `add-chord-symbols-to-selection` registered where named and does it write chord symbols across the whole
+  selection, read from which surface, at the current commit?
+- Row 29.5 — the same as Row 29.4, for Roman numerals.
+- Row 29.6 — the same as Row 29.4, for Nashville numbers.
+- Row 29.7 — does the context menu offer one tuning entry per analyzed reading, built and handled where named, and does
+  it retune the selected note's chord as the chosen reading, at the current commit?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -37330,6 +37552,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 28.58 (L3-S30):** the outgoing tuning *"Collapse consecutive same-chord regions"*, where L3-S30 *"does
   not republish the segmentation"*.
 
+**Member 29.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -37365,11 +37589,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 26 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 |
 | 27 | 4 | 0 | 0 | 0 | 4 | 0 | 0 | 0 | 4 |
 | 28 | 72 | 1 | 0 | 0 | 65 | 0 | 6 | 0 | 31 |
-| **Total** | **2314** | **132** | **78** | **864** | **676** | **0** | **398** | **166** | **783** |
+| 29 | 7 | 0 | 0 | 0 | 7 | 0 | 0 | 0 | 1 |
+| **Total** | **2321** | **132** | **78** | **864** | **683** | **0** | **398** | **166** | **784** |
 
-**The arithmetic check:** 132 + 78 + 864 + 676 + 0 + 398 + 166 = 2314, against 2314 statements placed (43 + 34 + 21 + 34
+**The arithmetic check:** 132 + 78 + 864 + 683 + 0 + 398 + 166 = 2321, against 2321 statements placed (43 + 34 + 21 + 34
 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4 +
-72).
+72 + 7).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -37401,10 +37626,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 26 | 0 | 0 | 0 | 0 |
 | 27 | 0 | 0 | 4 | 4 |
 | 28 | 1 | 4 | 67 | 72 |
-| **Total** | **215** | **251** | **1856** | **2322** |
+| 29 | 0 | 0 | 7 | 7 |
+| **Total** | **215** | **251** | **1863** | **2329** |
 
-**The arithmetic check of the verdicts:** 215 + 251 + 1856 = 2322, against the members' verdict totals (43 + 35 + 21 + 34 +
-19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4 + 72).
+**The arithmetic check of the verdicts:** 215 + 251 + 1863 = 2329, against the members' verdict totals (43 + 35 + 21 + 34 +
+19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4 + 72
++ 7).
 
 ## 14. The derivation's independence record, relayed
 
