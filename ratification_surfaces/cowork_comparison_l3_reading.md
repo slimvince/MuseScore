@@ -9,7 +9,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fifth_2026_10_19.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_sixth_2026_10_19.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighth_2026_10_19.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighth_2026_10_19.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -58,7 +59,7 @@ its own entry there.
 | 17 | `ARCHITECTURE.md` passages — *Document governance and the standing architecture notes* | **DONE** (§6.17) |
 | 18 | `ARCHITECTURE.md` passages — *1. Project Overview* | **DONE** (§6.18) |
 | 19 | `ARCHITECTURE.md` passages — *2. Architectural Principles* | **DONE** (§6.19) |
-| 20 | `ARCHITECTURE.md` passages — *3. Directory Structure* | NOT YET TABULATED |
+| 20 | `ARCHITECTURE.md` passages — *3. Directory Structure* | **DONE** (§6.20) |
 | 21 | `ARCHITECTURE.md` passages — *4. Existing Components — The Analysis Foundation* | NOT YET TABULATED |
 | 22 | `ARCHITECTURE.md` passages — *5. Planned Analysis Extensions* | NOT YET TABULATED |
 | 23 | `ARCHITECTURE.md` passages — *6. The Style System* | NOT YET TABULATED |
@@ -98,7 +99,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 19 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 20 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -108,8 +109,8 @@ ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhyth
 `ARCHITECTURE.md`'s passages in the opening block above its first `## ` heading, the first passage member, position 16,
 `ARCHITECTURE.md`'s passages under its top-level heading *The joint estimator — the standing rules of the production
 inference layer*, the second, position 17, its passages under *Document governance and the standing architecture
-notes*, position 18, its passages under *1. Project Overview*, and position 19, its passages under *2. Architectural
-Principles*.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
+notes*, position 18, its passages under *1. Project Overview*, position 19, its passages under *2. Architectural
+Principles*, and position 20, its passages under *3. Directory Structure*.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
 boundary after position 7, by its own capacity judgment; position 8 was tabulated under
@@ -123,8 +124,10 @@ boundary after position 11, by its own capacity judgment; positions 12 to 14 wer
 boundary after position 14, by its own capacity judgment; position 15 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md`, which stopped at the member
 boundary after position 15, by its own capacity judgment; positions 16 to 19 were tabulated under
-`records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighth_2026_10_19.md`.** **The writing now stands at
-the member boundary after position 19: not done, positions 20 to 57, and the next writing resumes at position 20.** **A
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighth_2026_10_19.md`, which stopped at the member
+boundary after position 19, by its own capacity judgment; position 20 was tabulated under
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md`.** **The writing now stands at
+the member boundary after position 20: not done, positions 21 to 57, and the next writing resumes at position 21.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -25343,6 +25346,1683 @@ are 19.19(i), 19.19(ii), 19.20, 19.25, 19.27(iv), 19.34(i), 19.34(ii) and 19.38(
 
 ---
 
+### 6.20 — Member 20: `ARCHITECTURE.md`, the passages under *3. Directory Structure*
+
+> **Manifest for this member.** Position **20**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: `## 3. Directory Structure`, exactly as the artifact spells it. **The sixth member
+> of this comparison made of passages.** Twenty-two ranges, each as a locator only (**D-307**), with its first and last
+> line texts exactly as the artifact publishes them:
+>
+> - lines 1341–1419, from *"```"* to *"```"*;
+> - lines 1425–1431, from *"| Namespace | Where it lives | What goes here |"* to *"| `mu::notation::internal` |
+>   `src/notation/internal/` | Internal notation helpers (isChordTrackStaff, staffIsEligible) |"*;
+> - lines 1460–1483, from *"1. **The analysis library (`composing`) depends on no MuseScore or engraving types** —
+>   the"* to *"   state is never inference evidence."*;
+> - lines 1485–1490, from *"*Why this rule: derived from the already-ratified scoped forms (the Dependency Rule, the
+>   bridge"* to *"and reconciles the §1.2 contribution intent with the fork-local patch constraint.*"*;
+> - lines 1500–1514, from *"1. **A gate or scoring rule reads STRUCTURED FIELDS ONLY — never a chord-symbol string,
+>   never a"* to *"   with itself."*;
+> - lines 1539–1547, from *"| File | Declares/defines | Called by |"* to *"| `notationanalysisinternal.h` |
+>   `isChordTrackStaff()` — name-based chord staff detection<br>…"*;
+> - lines 1554–1558, from *"**Two terms used throughout these layer docs.** **L1.5** is the thin *derived-view*
+>   layer over the L1 note model — the"* to *"case counts (e.g. `53/24/53`); the "class-(a)/(b)" split and the full
+>   definition live in the gate policy (CLAUDE.md)."*;
+> - lines 1562–1567, from *"The analysis pipeline is being rebuilt **upstream-first** onto the ratified 4-layer
+>   target"* to *"module (below) and is now **wired — L3 consumes the slicer** (`regionanalyzer.cpp:579`)."*;
+> - line 1571, *"**Delegation pointer for the Layer-1.5 phrase-boundary primitive (the fifth home case; written
+>   2026-08-04 on the user's direction, the OI-327 write list).** …"*;
+> - lines 1586–1591, from *"**Transitional, by design.** The segment-first analysis spine described below"* to *"to
+>   the note model; the slicing/scoring *logic* is frozen until its layers."*;
+> - lines 1612–1624, from *"**Polyphonic phrase-boundary detection has NO validated deterministic rule set in the
+>   literature —"* to *"delegated two paragraphs above may claim; it does not change what that contract specifies.)"*;
+> - lines 1626–1636, from *"**★ VOICE SLOTS AND STEM DIRECTION ARE STRUCTURAL NOTATIONAL METADATA, NOT USER-WRITTEN
+>   ANALYTICAL"* to *"settles nothing about whether it is built, which is a separate deferral recorded at the chord
+>   layer."*;
+> - line 1744, *"**Tried and closed on this layer — do not retry; the register carries each with its evidence: D-287
+>   (key-as-distribution, shelved), D-290 (the key-agnostic local cadence approach, falsified).**"*;
+> - lines 1751–1769, from *"- **Do not revive carrying a ranked distribution of key candidates forward instead of
+>   one committed"* to *"  with it:** measured on the Bach ground-truth corpus; other repertoires unmeasured."*;
+> - lines 1853–1860, from *"**Gate trade-off on record.** BIR (case-identity): Baroque **53** (net −4), Jazz **24**
+>   (net +1),"* to *"`cowork_layer3_keymode_design.md`."*;
+> - lines 1866–1915, from *"- **A local-key hypothesis derives from KEY-AGNOSTIC signals only, and NEVER from the
+>   key-area"* to *"  channels."*;
+> - lines 1917–1933, from *"**★ THE BAROQUE PARTIAL-SIGNATURE CONVENTION IS HANDLED BY DETECTING IT AND
+>   REINTERPRETING THE"* to *"cannot separate the two cases. The thresholds themselves are not restated here
+>   (D-431)."*;
+> - lines 2274–2278, from *"The harmonic-rhythm region pipeline used to exist as two near-duplicate copies (one in"*
+>   to *"abstraction the callers populate):"*;
+> - lines 2280–2287, from *"| Module | Responsibility |"* to *"| `composing/analysis/types/analysistypes.h` | **The
+>   cross-layer value-types LEAF** — …"*;
+> - lines 2297–2302, from *"**Section-level analysis and the Pass-0 injection contract (Stage 2.1).**
+>   Section-level"* to *"notation and configuration layers."*;
+> - lines 2304–2308, from *"**Bridge and batch are thin wrappers.** `analyzeHarmonicRhythm()` (notation bridge)
+>   and"* to *"behavior that BIR and the pipeline snapshots measure — lives in `regionanalyzer`."*;
+> - lines 2392–2403, from *"> **Re-baselined 2026-06-13 (corrected GT parser).** The figures in this paragraph are
+>   the"* to *"> the CLAUDE.md gate section for the authoritative identity sets."*.
+>
+> **Each of the forty-four line texts was compared with the line at its locator** in `ARCHITECTURE.md`, read by this
+> session at the file and at its blob at the commit that landed this batch's dispatch, **and every one matches.** The
+> top-level heading the label names stands at line 1333, and the next top-level heading, *4. Existing Components — The
+> Analysis Foundation*, at line 2484. **The sections *Layer 4 — the per-slice chord-symbol decoder*, *Layer 5 — the
+> function/cadence layer* and *Layer 6 — the grouping layer*, at lines 1935 to 2256, lie inside this top-level section
+> and are positions 1 to 3, tabulated at §6.1 to §6.3; they are neither this member's nor the passage rule's cut.** The
+> section's other lines lie in no range — lines 1334–1340, 1420–1424, 1432–1459, 1484, 1491–1499, 1515–1538,
+> 1548–1553, 1559–1561, 1568–1570, 1572–1585, 1592–1611, 1625, 1637–1743, 1745–1750, 1770–1852, 1861–1865, 1916, 1934,
+> 2257–2273, 2279, 2288–2296, 2303, 2309–2391 and 2404–2483, as this session's script lists them with lines 1935 to 2256
+> excluded. They hold: the opening sentence of *3.1 Module Layout* and the line on the planned subdirectories after the
+> block; the namespace table's *Critical rule*; the opening of *3.3 Module Boundaries and Bridge Architecture*, *The
+> Dependency Rule* with its fenced block and the sentence enforcing it, and the lead of *The MuseScore-Dependency Rule*;
+> the opening and closing paragraphs of *The rendered form never crosses back*; *Why This Matters*, *The Bridge
+> Pattern* and the sentence on its callers; the layer status legend; under *Layer 1 — the lossless note model
+> (Built+Live)*, its heading, its delegation pointer to `cowork_layer1_note_model_design.md`, its module table, its
+> derived views, its *Ratified trade-off on record* and its paragraph on the finest meaningful extension step; the
+> whole of *Layer 2 — the deterministic change-point slicer (Built+Live — consumed by L3)*; under *Layer 3 — key/mode is
+> the sequence decoder (Built+Dormant)*, its heading, its build-state correction, its delegation pointer, the ★ block
+> naming D-287 and D-290, its paragraphs on the switched-off backward re-reading, the safety caps, reach-back, the
+> selection-aware parameter, the production key path, its data flow, fidelity fixes, retirements and residuals, and the
+> lead paragraph of the four standing rules; *Planned analysis consumers beyond the layer stack*; the heading of *Region
+> Analysis — Canonical Modules (…)* and its paragraph on the cross-layer types leaf; the paragraph on the two audited
+> configuration divergences; *Path divergence decisions (Stage 2.4)* with its four *D-…* blocks, except this member's
+> quotation block; *The `IComposingConfiguration` Split*, *`KeySigMode` Disambiguation* and *Adding New Bridge Functions
+> — Checklist*; and the empty lines between the ranges. No other member of the artifact covers them — the passage
+> rule's cut, recorded here as at §6.15 to §6.19, and not repaired. Outgoing statements: **113** (rows 20.1 to 20.82;
+> twenty-nine rows carry two claims and one row three, each split — the arithmetic is at the foot of this member).
+> Listed under *not a statement*: **43**. Counted at this member by this session; the counts appear here and at §13,
+> and nowhere else.
+>
+> **WITHHELD homes inside this member: one** — the artifact's `item_4_identities_inside` for position 20 names
+> **D-605**, with its home as the artifact cites it, `ARCHITECTURE.md:1866-1878`, the first of the four standing rules
+> under *Layer 3*; re-located by this session at `tools/audit/decisions/backbone_decisions.json` before any row was
+> written, its `home` field reading the same. Its rows, 20.45 to 20.49, carry the mark, and the two defense sentences
+> listed inside it (items 29 and 30) name it. **Thirteen decisions of the decisions register's data file are homed
+> inside this member's ranges**, found by this session's walk of that file (taken at the commit that landed this
+> dispatch, by explicit hash) for every `home` naming `ARCHITECTURE.md` with a line range overlapping one of the
+> twenty-two ranges, the retired block included: **D-605**, the withheld one; in the decisions register's list,
+> **D-229** at 1460–1473, **D-296** at 1474–1476, **D-280** at 1500–1505, **D-501** at 1507–1514, **D-607** at
+> 1612–1624, **D-287** at 1751–1755, **D-290** at 1762–1766, **D-616** at 1879–1893, **D-622** at 1894–1905 and
+> **D-575** at 1917–1933; and **two RETIRED entries** the decisions register's INDEX does not show, kept in its data
+> file's retired block with the clause every retired record carries, *"a provenance verdict, not a judgment on soundness
+> or usefulness; the statement stands at its home and is met by the derivation"* (read by this session at D-560's
+> record, retired 2026-08-16), as at §6.15, §6.16 and §6.19 — **D-560** at 1626–1637 and **D-078** at 2287. **D-560's
+> home straddles this member's edge**: it runs one line past the range 1626–1636 to line 1637, which is an empty line;
+> its rows here are 20.34 to 20.37. Every other home lies wholly inside one range. **The walk agrees with the thirteen
+> the dispatch read**, no identity beyond them and none of them missing. The decisions register's INDEX records D-229,
+> D-296, D-280, D-501, D-607, D-605, D-616 and D-622 as LIVE; D-287 and D-290 as LIVE and LEGACY-marked — the member's
+> own text in the cut above their bullets says *"both ⚠ LEGACY-SCOPED (their subject is this layer's dormant
+> pipeline)"*; and D-575 as SUPERSEDED IN FACT and LEGACY-marked, as the member's own words at its range say. These are
+> its statements of those decisions' standing, relayed here as facts beside their homes and moving no disposition. None
+> of the twelve beside D-605 is withheld, so none carries a mark; the rows inside their homes are named at the foot.
+> *(The pack's leak list, `tools/audit/derivation_boot_pack.json` → `LEAKS`, names D-296 among the entries not rendered
+> into the deriving session's pack; that is a fact of the pack, not a mark.)* *(The same walk over the cut lines finds
+> thirty-three homes there — D-560, counted above, and thirty-two in no member: in the decisions register's list,
+> **D-037** and **D-040** at 1575, **D-072** at 1453, **D-084** at 2259 (recorded DEFERRED), **D-306** at 1771–1773
+> (LEGACY-marked), **D-623** at 1801–1808, **D-624** at 1780–1787, **D-628** at 1602–1610 and **D-635** at 1789–1799;
+> and the retired **D-038** and **D-039** at 1575, **D-041** and **D-042** at 1648, **D-043** at 1655–1656, **D-044**
+> at 1652–1654, **D-045** at 1650, **D-046** at 1675–1677, **D-047** at 1676–1678, **D-048** at 1680–1682, **D-049** at
+> 1666–1668, **D-050** at 1663, **D-051** at 1810, **D-052** at 1832–1835, **D-053** at 1846–1847, **D-063** at
+> 2342–2344, **D-064** at 2405–2408, **D-065** at 2312, **D-077** at 2453, **D-094** at 1549–1551, **D-228** at 1529,
+> **D-631** at 1701–1717 and **D-632** at 1718–1726 — none of them withheld.)* **No SEEN home lies in this member**,
+> agreeing with §5. The delegation pointer at line 1571 names D-476 to D-485 by range; naming an identity in a pointer
+> is not its home, and D-482's and D-484's homes lie inside member 36, as §5 records.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.19, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation
+> join, the blockquote-marker reading and the fenced-block reading were applied unchanged at this member.** **The
+> blockquote-marker reading, by range:** at the last range, lines 2392 to 2403, every one of its 12 lines opens with the
+> quotation-block marker `> `, checked line by line at the blob, so every quotation from it drops the marker, as the
+> decisions register's own convention drops it from a verbatim quote, and the quotation check masks it the same way; at
+> the other twenty-one ranges no line carries it, so the reading has nothing to drop there — a quotation from a
+> numbered item or a bullet drops its `1. ` or `- ` list marker instead, and a table row is quoted as written. **The
+> fenced-block reading, at range 1:** the module layout, lines 1341 to 1419, is one fenced code block and is tabulated
+> **as one unit, as a table row is** (Row 20.1), as the first batch tabulated the formatter's interface listing at Row
+> 4.4, its content named in the row with the `←` annotations quoted as the block writes them. One unit carries the
+> block's claims under one disposition: every annotation describes the tree as built — which file holds what, which
+> module is existing or planned, that the measurement scaffolding is off by default and read by nothing the analyzer
+> consumes — and the one annotation that reads as a rule, *"NO engraving dependency"*, is stated as a rule by the
+> MuseScore-Dependency Rule's item 1, where it is tabulated (Row 20.7); so the block was not split. **How the bold
+> leads were read:** the noun-phrase labels *"Two terms used throughout these layer docs."*, *"Delegation pointer for the
+> Layer-1.5 phrase-boundary primitive (…)."*, *"Transitional, by design."*, *"Gate trade-off on record."*,
+> *"Section-level analysis and the Pass-0 injection contract (Stage 2.1)."* and *"Re-baselined 2026-06-13 (corrected GT
+> parser)."* are read as titles. The bold leads that are complete sentences stating rules are tabulated: the
+> MuseScore-Dependency Rule's items 1 and 2 (Rows 20.7 and 20.8), the two boundary invariants (Rows 20.10 and 20.12),
+> the polyphonic phrase-boundary method (Row 20.31), the ★ rule on voice slots and stem direction (Row 20.34), the
+> tried-and-closed line (Row 20.38), the two bullets' leads (Rows 20.39 and 20.42), the four standing rules' leads (Rows
+> 20.45, 20.50, 20.55 and 20.58), the ★ partial-signature lead (Row 20.60) and *"Bridge and batch are thin wrappers."*
+> (Row 20.76); the leads of the MuseScore-Dependency Rule's items 3 and 4 are complete sentences on the project's
+> development conduct and are listed with their sentences (items 2 and 5). Where a bold lead stands inside the sentence
+> it opens, the sentence is quoted with it: *"Production paths must not read them as input to analysis at all."* (Row
+> 20.14), *"The analysis may therefore consume them."* (Row 20.37), *"The shelving names its own re-open condition"* (Row
+> 20.40) and *"The discriminator must test the specific degree rather than the presence of any accidental"* (Row 20.64).
+> Where one bold run carries several sentences — the ★ partial-signature lead, whose bold runs on through the sentences
+> of Row 20.61 and item 38, and the second standing rule's lead, whose bold carries *"⚠ LEGACY: both mechanisms it names
+> are legacy-scoped."* (item 31) — each sentence is quoted without the enclosing markers, so that no quotation carries a
+> marker without its partner. A lead ending in a colon is tabulated with its sentence where it carries a claim of its
+> own — *"The flow stays strictly feed-forward:"* (Row 20.48), *"The design attaches a proof obligation to the rule:"*
+> (Row 20.52), *"Four new modules carry it, all with zero engraving dependency (…):"* (Row 20.67) and *"The qualitative
+> finding is unchanged:"* (Row 20.82) — and quoted with its sentence where it only introduces it: *"What DOES transfer is
+> named rather than assumed:"* (Row 20.33) and *"The LEGACY mark follows a check at the code, not the decision's age:"*
+> (Row 20.53), the latter a remark on the document's own mark before the as-built sentence it introduces. The scope and
+> status leads are treated by what their sentences carry: *"Its scope is stated with it:"* and *"Design-only:"* open a
+> remark on the scope of a measured finding and on what a bullet records, and are listed (items 26 and 36); the sentence
+> after *"Scope:"* in D-605's bullet states the rule's reach to every arm and is tabulated for it (Row 20.49), the second
+> reading rule's own case of a sentence that also states a rule; the sentence after *"⚠ LEGACY, AND SUPERSEDED IN
+> FACT:"* is tabulated for its as-built and status claims (Row 20.61). The *Why:* sentences, and the sentences that
+> continue their reasoning, are listed under the second reading rule. **The glossary:** range 7's two terms are this
+> member's glossary and are tabulated one row per entry, each placed by its subject (Rows 20.23 and 20.24). **The three
+> tables** — the namespace table, the bridge file inventory and the canonical-modules table — are none of them a status
+> table of design documents, so the status-table reading does not reach them: each header row with its rule line is
+> listed (items 1, 12 and 41) and each body row is a row (Rows 20.2 to 20.6, 20.16 to 20.22 and 20.68 to 20.73). **The
+> quotation join found nothing to join at this member**: no line inside its ranges breaks a hyphenated compound at its
+> end.
+>
+> **What this member is, read whole before any row was written.** The ranges are this document's statements of the
+> code's layout and its boundaries that the population's passage rule reached: the module layout and the namespace
+> table; the MuseScore-Dependency Rule and its defense; the two invariants that keep the rendered form from crossing
+> back; the bridge file inventory; the two terms *L1.5* and *BIR*; from the Layer 1 section its opening, its pointer to
+> the phrase-boundary contract, the transitional spine, the standing of the polyphonic phrase-boundary method and the
+> rule on voice slots and stem direction; from the Layer 3 section its tried-and-closed line and the two bullets
+> explaining it, its gate trade-off, its four standing rules and the partial-signature convention; the opening of
+> *Region Analysis — Canonical Modules*, its module table, the section-level analysis and the thin wrappers; and the
+> re-baselined quotation block under *D-PASS0*. Little of it states what L3 publishes; it touches L3's subject at the
+> phrase-boundary method, at what a gate may read of a chord symbol, and at the key areas. **Eight placements are
+> stated for challenge.** (a) **A rule on the software's structure that binds L3's own code** — the analysis library
+> depending on no type of the score editor — is **ADOPTED — proposed** (Row 20.7), as Rows 19.1 and 19.29 placed the
+> display separation and the explicit settings; **the rules on when the host application's code may be edited,
+> consulted and called** — the MuseScore-Dependency Rule's items 3 and 4 — are **listed under *not a statement*** as the
+> project's development conduct and not the analysis (items 2 to 6). (b) **What the analysis may read from the
+> notation** — the note model as the one reading surface, layout never as evidence, voice slots and stem direction as
+> notation, a written chord symbol never as input — is **RELOCATED** to *L0 — The notated record*, as the rows of member
+> 11 at §10 and Rows 16.30 (i) and 16.31 (ii) placed the notation's standing; the derivation's L3-S29, which applies the
+> same rule to the composer's figures and cites IC-L1 S-8 for both, **AGREES** at the chord-symbol rows; a measurement
+> tool's use of a written symbol is **RELOCATED** to *the measurement of the analysis*, as Row 19.85. (c) **What a gate or
+> a term of the candidate scoring may read** is **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*,
+> with **L3-S38 AGREES** at its chord-symbol-string half. (d) **The code as built** — the module layout taken as one
+> unit, the namespace, bridge and module tables, the thin wrappers, the transitional spine — is **QUARANTINED**; build
+> states, superseded plans and the gate values the member marks superseded are **HISTORICAL**. (e) **The key layer's
+> tried-and-closed lines and standing rules** are **RELOCATED** to L2, as Rows 1.5 and 16.13 placed tried-and-closed
+> lines; the key-agnostic cadence detector is **RELOCATED** to *L1 — Change points, candidates and notated evidence*
+> with **L3-S16 DIFFERS**, as Row 2.4; the key-area grouping as a post-grouping of the decided tonality is **ADOPTED —
+> proposed** travelling with Row 8.12; the gate exception that retires when the function/cadence layer pins a chord's
+> root rotation is **RELOCATED** to L2 with **L3-S38 DIFFERS**, as Row 7.13 (i). (f) **The phrase-boundary method's
+> standing** (D-607): that it may not be presented as established method is **ADOPTED — carried** by L3-S33, the gap cue
+> that transfers to polyphony by L3-S9, and its validation against annotated music is **RELOCATED** to the measurement
+> with **L3-S14 AGREES**, as Row 8.138. (g) **Reach-back:** the dropped proxy is a tried-and-closed line of the tonal
+> reading's own request for more music and is **RELOCATED** to L2, while the headline rule — reach back until the answer
+> stops changing — is **ADOPTED — carried** by L3-S40, as §6.19 placed bounded context. (h) **The two terms:** *L1.5*,
+> the derived-view layer over the note model, is **RELOCATED** to L1, and *BIR*, the corpus gate metric, to the
+> measurement. **No statement of this member is UNPLACED.**
+
+---
+
+**Row 20.1 — the module layout, as listed.**
+
+*Outgoing statement.* The fenced block of the module layout — the directory tree under `src/` naming the `composing`
+module's files and subdirectories, the notation, notation-scene, application-shell and preferences files that touch it,
+and the planned resource directories, each with its `←` annotation as the block writes it, among them "← NEW module —
+pure music theory, NO engraving dependency", "← existing, fully working", "← OI-168 measurement scaffolding:
+default-OFF branch" with "Reads nothing the analyzer consumes; removable in one revert.", "← BRIDGE:
+populateChordTrack()" and "— style JSON files (planned)" — the section *3. Directory Structure*, sub-section *3.1
+Module Layout* (locator: lines 1341–1419), tabulated as one unit, as a table row is.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the source tree at the current commit hold the files
+the block lists, each in the role its annotation gives — the analysis and intonation modules carrying no engraving
+dependency, the measurement scaffolding off by default and read by nothing the analyzer consumes, the planned
+directories absent?
+
+---
+
+**Row 20.2 — the analysis namespace and what it holds.**
+
+*Outgoing statement.* The table row "| `mu::composing::analysis` | `src/composing/analysis/` | Pure analysis types and
+algorithms (ChordAnalyzer, KeyModeAnalyzer, ChordSymbolFormatter, HarmonicRegion struct, …) |" — the section *3.
+Directory Structure*, sub-section *3.2 Namespace*, its table (locator: line 1427).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `src/composing/analysis/` hold the analysis types and
+algorithms the row names, in the namespace `mu::composing::analysis`, at the current commit?
+
+---
+
+**Row 20.3 — the intonation namespace and what it holds.**
+
+*Outgoing statement.* The table row "| `mu::composing::intonation` | `src/composing/intonation/` | Tuning systems
+(TuningSystem, TuningRegistry, concrete systems) |" — the same table (locator: line 1428).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the tuning systems live in `src/composing/intonation/`,
+in the namespace `mu::composing::intonation`, at the current commit?
+
+---
+
+**Row 20.4 — the configuration namespace and what it holds.**
+
+*Outgoing statement.* The table row "| `mu::composing` | `src/composing/` | Configuration interfaces
+(IComposingAnalysisConfiguration, IComposingChordStaffConfiguration) |" — the same table (locator: line 1429).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the two configuration interfaces live in
+`src/composing/`, in the namespace `mu::composing`, at the current commit?
+
+---
+
+**Row 20.5 — every bridge function in the notation namespace, none in the composing one.**
+
+*Outgoing statement.* The table row "| `mu::notation` | `src/notation/` | **All bridge functions** — functions that
+require engraving access but produce composing-domain results live here, not in `mu::composing`. This is the primary
+rule of the bridge layer. See §3.3. |" — the same table (locator: line 1430).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does every function that takes engraving types and returns
+composing-domain results live in `mu::notation` at the current commit, and none in `mu::composing`?
+
+---
+
+**Row 20.6 — the internal notation helpers.**
+
+*Outgoing statement.* The table row "| `mu::notation::internal` | `src/notation/internal/` | Internal notation helpers
+(isChordTrackStaff, staffIsEligible) |" — the same table (locator: line 1431).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do `isChordTrackStaff` and `staffIsEligible` live in
+`src/notation/internal/`, in the namespace `mu::notation::internal`, at the current commit?
+
+---
+
+**Row 20.7 — the analysis library depends on no type of the score editor.**
+
+*Outgoing statement.* "**The analysis library (`composing`) depends on no MuseScore or engraving types** — the
+Dependency Rule above, unchanged." — the section *3. Directory Structure*, sub-section *3.3 Module Boundaries and
+Bridge Architecture*, *The MuseScore-Dependency Rule*, its item 1 (locator: lines 1460–1461).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that the code computing L3's facts depend on no type of
+the score editor.
+
+---
+
+**Row 20.8 — the bridge layer reads the score model only through the bridge pattern, never layout.**
+
+*Outgoing statement.* "**The bridge layer reads the score model only through the established bridge pattern, and never
+layout-derived state as analysis input.**" — the same rule, its item 2 (locator: lines 1462–1463). Two claims: (i) the
+bridge layer reads the score model only through the established bridge pattern; (ii) it never reads layout-derived
+state as analysis input.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L0 — The notated record*** (the input contract), whose subject is how
+the notated record reaches the analysis. (ii) **RELOCATED** — to ***L0 — The notated record*** (the input contract),
+whose given facts include no layout.
+
+---
+
+**Row 20.9 — the note model the one reading surface; layout products never inference evidence.**
+
+*Outgoing statement.* "The Layer-1 note model is the single sanctioned reading surface for analysis facts; positions,
+spacing and other layout products are presentation outputs, readable only for placing presentation artifacts, never as
+inference evidence (a layout read entering analysis is the OI-98 class, judged against this rule)." — the same item
+(locator: lines 1463–1467). Two claims: (i) the note model is the single sanctioned reading surface for analysis facts;
+(ii) layout products are presentation outputs, readable only for placing presentation artifacts and never as inference
+evidence.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 20.8. (ii)
+**RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 20.8.
+
+---
+
+**Row 20.10 — a gate or a candidate-scoring rule reads structured fields only.**
+
+*Outgoing statement.* "**A gate or scoring rule reads STRUCTURED FIELDS ONLY — never a chord-symbol string, never a
+Roman numeral.**" — the section *3. Directory Structure*, sub-section *3.3*, *The rendered form never crosses back — two
+boundary invariants that bind every reader*, its item 1 (locator: lines 1500–1501). Two claims: (i) a gate or a rule of
+the candidate scoring reads structured fields only, never a chord-symbol string; (ii) it never reads a Roman numeral.
+
+*Derived statements that speak to it.* (i) L3-S38. (ii) None.
+
+*Current-text axis.* (i) L3-S38: **AGREES** — the chord symbol is L3's publication, and L3-S38 says *"L2 reads nothing
+L3 publishes"*. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose
+candidate scoring this rule bounds. (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***,
+as claim (i).
+
+---
+
+**Row 20.11 — no chord-symbol string parsing and no Roman-numeral inference in a gate or a candidate-scoring term.**
+
+*Outgoing statement.* "No chord-symbol string parsing and no Roman-numeral inference anywhere in a gate, a scoring term,
+or any future change to either." — the same item (locator: lines 1501–1502). Two claims: (i) no chord-symbol string is
+parsed anywhere in a gate, a term of the candidate scoring or a future change to either; (ii) no Roman numeral is
+inferred anywhere there.
+
+*Derived statements that speak to it.* (i) L3-S38. (ii) None.
+
+*Current-text axis.* (i) L3-S38: **AGREES**, as at Row 20.10 (i). (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.10.
+(ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.10.
+
+---
+
+**Row 20.12 — a written chord symbol read only as a comparison or ground-truth label.**
+
+*Outgoing statement.* "**A written chord symbol in the score may be read ONLY as a comparison or ground-truth
+label.**" — the same sub-section, its item 2 (locator: line 1507).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **AGREES** — it states for the composer's figures the rule this sentence states for a
+written chord symbol, citing IC-L1 S-8, under which both are annotation, *"usable by a measurement layer as a reference
+and never as analysis input"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), where IC-L1 S-2 and S-8
+make a chord symbol written in the notation annotation and never analysis input.
+
+---
+
+**Row 20.13 — a written symbol the user's instruction, not an analysis result.**
+
+*Outgoing statement.* "Symbols are instructions the user wrote, not analysis results." — the same item (locator: line
+1508).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **AGREES**, as at Row 20.12.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 20.12.
+
+---
+
+**Row 20.14 — production paths never read a written symbol as input.**
+
+*Outgoing statement.* "**Production paths must not read them as input to analysis at all.**" — the same item
+(locator: lines 1508–1509).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **AGREES** — it is falsified *"if any L3 output changes when every `<FiguredBass>` element
+is removed"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 20.12.
+
+---
+
+**Row 20.15 — a measurement tool may set written symbols beside the analysis, never let them influence it.**
+
+*Outgoing statement.* "A measurement tool may set them beside the analysis to see how far the two agree, and may
+**never** let them influence what the analyzer computes." — the same item (locator: lines 1509–1510). Two claims: (i) a
+measurement tool may set a written chord symbol beside the analysis to see how far the two agree; (ii) it may never let
+the symbol influence what the analysis computes.
+
+*Derived statements that speak to it.* (i) L3-S29. (ii) L3-S29.
+
+*Current-text axis.* (i) L3-S29: **AGREES** — *"A comparison is the measurement layer's act or a display's."* (ii)
+L3-S29: **AGREES**, as at Row 20.14.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, as Row 19.85. (ii) **RELOCATED** —
+to ***the measurement of the analysis***, as claim (i).
+
+---
+
+**Row 20.16 — the composing bridge header and its callers.**
+
+*Outgoing statement.* The table row "| `notationcomposingbridge.h` | Declares `harmonicAnnotation()`,
+`analyzeNoteHarmonicContext()`, `analyzeHarmonicRhythm()`, and `HarmonicRegionGranularity` |
+`notationaccessibility.cpp`, `notationinteraction.cpp`, `notationcontextmenumodel.cpp`, `notationimplodebridge.cpp`,
+`notationtuningbridge.cpp` |" — the section *3. Directory Structure*, sub-section *3.3*, *Bridge File Inventory*, its
+table (locator: line 1541).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `notationcomposingbridge.h` declare the four names the
+row lists, and do the five named files call them, at the current commit?
+
+---
+
+**Row 20.17 — the composing bridge's status-bar string and single-note analysis.**
+
+*Outgoing statement.* The table row "| `notationcomposingbridge.cpp` | `harmonicAnnotation()` — status bar
+string<br>`analyzeNoteHarmonicContext()` — single-note analysis | (implements declarations above) |" — the same table
+(locator: line 1542).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `notationcomposingbridge.cpp` define the status-bar
+string and the single-note analysis, and on which arm does each run at the current commit?
+
+---
+
+**Row 20.18 — the harmonic-rhythm bridge's time-range scanner.**
+
+*Outgoing statement.* The table row "| `notationharmonicrhythmbridge.cpp` | `analyzeHarmonicRhythm()` — time-range
+harmonic scanner | (implements declaration above) |" — the same table (locator: line 1543).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `notationharmonicrhythmbridge.cpp` define the
+time-range scanner, and is it reached at the current commit (as Row 5.3 (i))?
+
+---
+
+**Row 20.19 — the shared bridge helpers and their callers.**
+
+*Outgoing statement.* The table row "| `notationcomposingbridgehelpers.h/.cpp` | Shared bridge helpers:
+`collectSoundingAt()`, `buildTones()`, `collectPitchContext()`, `resolveKeyAndMode()`, `findTemporalContext()`, … |
+`notationcomposingbridge.cpp`, `notationharmonicrhythmbridge.cpp` |" — the same table (locator: line 1544).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the named helpers live in
+`notationcomposingbridgehelpers.h/.cpp`, and which files call them at the current commit?
+
+---
+
+**Row 20.20 — the implode bridge writing the harmonic reduction to the chord staff.**
+
+*Outgoing statement.* The table row "| `notationimplodebridge.h/.cpp` | `populateChordTrack()` — write harmonic
+reduction to chord staff | `notationinteraction.cpp` (via `implodeToChordTrack()`) |" — the same table (locator: line
+1545).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `populateChordTrack()` write the harmonic reduction to
+the chord staff, called through `implodeToChordTrack()`, at the current commit (as Row 5.5)?
+
+---
+
+**Row 20.21 — the tuning bridge tuning a note's chord and a time range.**
+
+*Outgoing statement.* The table row "| `notationtuningbridge.h/.cpp` | `applyTuningAtNote()` — tune a single note's
+chord<br>`applyRegionTuning()` — tune a time range | `notationinteraction.cpp` (via `addAnalyzedTuning()`,
+`tuneSelection()`) |" — the same table (locator: line 1546).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the two tuning functions exist as the row lists, called
+through the two named functions, at the current commit?
+
+---
+
+**Row 20.22 — the internal helpers detecting the chord staff and the eligible staves.**
+
+*Outgoing statement.* The table row "| `notationanalysisinternal.h` | `isChordTrackStaff()` — name-based chord staff
+detection<br>`staffIsEligible()` — exclude drums/hidden/chord-staff staves | `notationcomposingbridgehelpers.cpp`,
+`notationtuningbridge.cpp`, `notationimplodebridge.cpp` |" — the same table (locator: line 1547).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `isChordTrackStaff()` detect the chord staff by name,
+and does `staffIsEligible()` exclude the drum, hidden and chord-staff staves, at the current commit?
+
+---
+
+**Row 20.23 — L1.5, the derived-view layer over the note model.**
+
+*Outgoing statement.* "**L1.5** is the thin *derived-view* layer over the L1 note model — the spelling /
+`engravingbridge` views (the shared `lineOfFifths` spelling interpreter, the phrase-boundary primitive); it is a view,
+not a judgment layer, which is why it is numbered 1.5." — the section *3. Directory Structure*, sub-section *3.3*,
+after *Bridge File Inventory*, the paragraph led *Two terms used throughout these layer docs.*, its first term
+(locator: lines 1554–1556). Two claims: (i) L1.5 is the thin derived-view layer over the note model, holding the
+spelling views — the shared spelling interpreter — and the phrase-boundary primitive; (ii) it is a view, not a layer of
+judgment.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which
+computes from the notation and *"Decides nothing about the music"*. (ii) **RELOCATED** — to ***L1 — Change points,
+candidates and notated evidence***, as claim (i).
+
+---
+
+**Row 20.24 — BIR, the corpus gate metric.**
+
+*Outgoing statement.* "**BIR** (bass-is-root) is the corpus gate metric: a BIR=false case is a *pitch-class-decidable*
+root the analysis got wrong, and the gate is quoted as `Baroque/Jazz/Default` case counts (e.g. `53/24/53`); the
+"class-(a)/(b)" split and the full definition live in the gate policy (CLAUDE.md)." — the same paragraph, its second
+term (locator: lines 1556–1558). Two claims: (i) BIR is the corpus gate metric, a BIR=false case being a root decidable
+by pitch class that the analysis got wrong; (ii) the gate is quoted as per-preset case counts, its class split and full
+definition living in the gate policy.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose metric definitions are its
+own design content. (ii) **RELOCATED** — to ***the measurement of the analysis***, as claim (i).
+
+---
+
+**Row 20.25 — the rebuild upstream-first onto the four-layer target.**
+
+*Outgoing statement.* "The analysis pipeline is being rebuilt **upstream-first** onto the ratified 4-layer target
+(`cowork_target_architecture.md`): **note model (L1, DONE) → change-point slicing (L2, BUILT — wired, consumed by L3) →
+per-slice analysis with context (L3) → grouping for display (LN).**" — the section *3. Directory Structure*, *Layer 1 —
+the lossless note model (Built+Live)*, its opening paragraph (locator: lines 1562–1564).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan of the rebuild and the build state of its layers.
+
+---
+
+**Row 20.26 — Layer 1 built and ratified, with its commits.**
+
+*Outgoing statement.* "Layer 1 is built and ratified (commits `edd33901ed` standing oracle-root metric tool,
+`e30bb45a4f` the note model, `4055f89082` its coverage; pushed to the fork)." — the same paragraph (locator: lines
+1564–1566).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state.
+
+---
+
+**Row 20.27 — Layer 2 built, and wired with the key layer consuming it.**
+
+*Outgoing statement.* "Layer 2 is built as a fully-covered module (below) and is now **wired — L3 consumes the slicer**
+(`regionanalyzer.cpp:579`)." — the same paragraph (locator: lines 1566–1567). Two claims: (i) the member's Layer 2 is
+built as a fully covered module; (ii) it is now wired, the member's Layer 3 — key and mode — consuming the slicer.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a build state. (ii) **QUARANTINED.** *Audit question:* does the key
+layer's decoder consume the slicer at the site named at the current commit, and does that decoder run on a production
+arm?
+
+---
+
+**Row 20.28 — the segment-first spine still runs and drives all analysis.**
+
+*Outgoing statement.* "The segment-first analysis spine described below (`greedyExpandSegmentation`, the Pass-1/2/2b
+sub/merge machinery, `analyzeHarmonicRhythm`) **still runs and still drives all analysis** — it now consumes
+`weightedPcView` (unchanged weighting) instead of reading notes directly." — the same section, the paragraph led
+*Transitional, by design.* (locator: lines 1586–1589). Two claims: (i) the segment-first spine still runs and drives all
+analysis; (ii) it takes its pitch content from `weightedPcView` instead of reading the notes directly.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* which path drives the analysis at the current commit on
+the batch and the notation surfaces, and does the segment-first spine drive either (as Row 1.12)? (ii) **QUARANTINED.**
+*Audit question:* does the segment-first spine read its pitch content through `weightedPcView`, and not from the notes
+directly, at the current commit?
+
+---
+
+**Row 20.29 — the spine retires when layers 2 and 3 are built.**
+
+*Outgoing statement.* "It retires only when **layer 2** (change-point slicing) and **layer 3** (per-slice analysis) are
+built." — the same paragraph (locator: lines 1589–1590).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the retirement plan of the legacy spine.
+
+---
+
+**Row 20.30 — the reading of the notes moved to the note model; the slicing logic frozen.**
+
+*Outgoing statement.* "The note-reading *ownership* has moved to the note model; the slicing/scoring *logic* is frozen
+until its layers." — the same paragraph (locator: lines 1590–1591). Two claims: (i) the ownership of reading the notes
+has moved to the note model; (ii) the logic of the slicing and of the candidate scoring is frozen until its layers are
+built.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a build event. (ii) **HISTORICAL** — the state of a plan.
+
+---
+
+**Row 20.31 — no validated rule set for phrase boundaries in polyphony; the method not presented as established.**
+
+*Outgoing statement.* "**Polyphonic phrase-boundary detection has NO validated deterministic rule set in the literature
+— the L1.5 primitive is our own engineering and may not be presented as established method (D-607; re-homed into this
+specification 2026-08-04 from the methods document that formerly carried it).**" — the same section, its paragraph on
+the polyphonic phrase-boundary method (locator: lines 1612–1614). Two claims: (i) polyphonic phrase-boundary detection
+has no validated deterministic rule set in the published literature; (ii) the primitive is this project's own
+engineering and may not be presented as established method.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S33.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S33: **AGREES** — it makes every L3 decision, the phrase
+reading among them, *"provisional"* until its model is fitted and established on held-out music.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed.** *Proposal:* that L3's specification record, as a fact of the
+published literature, that no validated deterministic rule set places phrase boundaries in polyphonic music, its
+phrase model resting on fitted terms instead. (ii) **ADOPTED — carried** by L3-S33.
+
+---
+
+**Row 20.32 — the monophonic cues carried to polyphony are this project's engineering, validated on its annotated
+music.**
+
+*Outgoing statement.* "Carrying the monophonic cues over to polyphony is therefore engineering of ours, and it is
+validated against our own annotated corpus rather than cited." — the same paragraph (locator: lines 1616–1618). Two
+claims: (i) carrying the monophonic cues over to polyphony is this project's own engineering; (ii) it is validated
+against the project's own annotated music rather than cited.
+
+*Derived statements that speak to it.* (i) L3-S33. (ii) L3-S14.
+
+*Current-text axis.* (i) L3-S33: **AGREES**, as at Row 20.31 (ii). (ii) L3-S14: **AGREES** — it fits the phrase
+model's weights *"from annotated phrase boundaries, held out by piece"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** by L3-S33, travelling with Row 20.31 (ii). (ii) **RELOCATED** — to
+***the measurement of the analysis***, as Row 8.138.
+
+---
+
+**Row 20.33 — the gap cue transfers to polyphony; a value measured only on chorales distrusted.**
+
+*Outgoing statement.* "What DOES transfer is named rather than assumed: the **gap cue** generalizes cleanly, because a
+phrase boundary in polyphony is a near-simultaneous rest or long note across all voices — which is what makes chorale
+texture an unusually favourable case and is a reason to distrust a figure measured only there." — the same paragraph
+(locator: lines 1620–1623). Two claims: (i) the gap cue generalizes cleanly to polyphony, a phrase boundary there being
+a near-simultaneous rest or long note across all voices; (ii) chorale texture is an unusually favourable case, so a
+value measured only there is to be distrusted.
+
+*Derived statements that speak to it.* (i) L3-S9. (ii) None.
+
+*Current-text axis.* (i) L3-S9: **AGREES** — its first family of evidence holds the rest beginning by voice, the
+all-silent flag and, per voice, the silence before an onset and the time since that voice's preceding attack. (ii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** by L3-S9. (ii) **RELOCATED** — to ***the measurement of the
+analysis***, whose grading conventions decide where a value is measured.
+
+---
+
+**Row 20.34 — voice slots and stem direction are notation, so this layer may read them.**
+
+*Outgoing statement.* "**★ VOICE SLOTS AND STEM DIRECTION ARE STRUCTURAL NOTATIONAL METADATA, NOT USER-WRITTEN
+ANALYTICAL CLAIMS — SO THIS LAYER MAY READ THEM (re-homed into this specification 2026-08-08 on the user's ruling).**"
+— the same section, its ★ paragraph (locator: lines 1626–1628). Two claims: (i) voice slots and stem direction are
+structural notational metadata, not analytical claims a user wrote; (ii) the note model's layer may therefore read
+them.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L0 — The notated record*** (the input contract), which gives voice
+membership. (ii) **RELOCATED** — to ***L0 — The notated record*** (the input contract), as claim (i).
+
+---
+
+**Row 20.35 — voice and stem belong to how the music was written down; this layer already reads such notation.**
+
+*Outgoing statement.* "Which voice a note was entered in, and which way its stem points, belong to how the music was
+written down — the same category as the key signature, the time signature, a tie or a pedal marking, all of which this
+layer already reads." — the same paragraph (locator: lines 1628–1630). Two claims: (i) the voice a note was entered in
+and the way its stem points belong to how the music was written down, with the key signature, the time signature, a tie
+and a pedal marking; (ii) the note model's layer already reads all of those.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 20.34. (ii)
+**QUARANTINED.** *Audit question:* does the note model read the key signature, the time signature, ties and pedal
+markings at the current commit, and does it read the voice slot and the stem direction?
+
+---
+
+**Row 20.36 — not somebody's claim about the harmony.**
+
+*Outgoing statement.* "They are not somebody's claim about the harmony." — the same paragraph (locator: lines
+1630–1631).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 20.34.
+
+---
+
+**Row 20.37 — the analysis may consume them.**
+
+*Outgoing statement.* "**The analysis may therefore consume them.**" — the same paragraph (locator: line 1631).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 20.34.
+
+---
+
+**Row 20.38 — the key layer's tried-and-closed lines.**
+
+*Outgoing statement.* "**Tried and closed on this layer — do not retry; the register carries each with its evidence:
+D-287 (key-as-distribution, shelved), D-290 (the key-agnostic local cadence approach, falsified).**" — the section *3.
+Directory Structure*, *Layer 3 — key/mode is the sequence decoder (Built+Dormant)* (locator: line 1744).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 1.5
+placed the chord layer's tried-and-closed lines.
+
+---
+
+**Row 20.39 — no ranked distribution of key candidates carried instead of one committed key.**
+
+*Outgoing statement.* "**Do not revive carrying a ranked distribution of key candidates forward instead of one committed
+key.**" — the same section, the first of the two bullets after the ★ block naming D-287 and D-290 (locator: lines
+1751–1752).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.38.
+
+---
+
+**Row 20.40 — the shelving's own re-open condition.**
+
+*Outgoing statement.* "**The shelving names its own re-open condition** — a confirmed case with the correct key at rank
+one or two — so it is a shelving with a stated trigger, not a permanent exclusion." — the same bullet (locator: lines
+1757–1759).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with
+Row 20.39.
+
+---
+
+**Row 20.41 — the joint estimator carries a full posterior by construction.**
+
+*Outgoing statement.* "*For a reader arriving from the joint estimator:* that design carries a full posterior by
+construction, so the concern this shelving withdrew is met by a different design rather than by reviving this one." —
+the same bullet (locator: lines 1759–1761).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the joint estimator carry a full posterior on the key
+axis at the current commit, and on which surface is it published?
+
+---
+
+**Row 20.42 — the key not decided from cadences found without knowing it, one at a time.**
+
+*Outgoing statement.* "**Do not retry deciding the key from cadences found without knowing the key, one cadence at a
+time.**" — the same section, the second bullet (locator: lines 1762–1763).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.38.
+
+---
+
+**Row 20.43 — the gate's case counts at the key layer's wiring.**
+
+*Outgoing statement.* "BIR (case-identity): Baroque **53** (net −4), Jazz **24** (net +1), Default **53** (net −4); zero
+new class-(b) (functional) regressions — every new case is a class-(a) symmetric-dim7 / share-tone **rotation**
+ambiguity (root pitch-class-undecidable by construction)." — the same section, the paragraph led *Gate trade-off on
+record.* (locator: lines 1853–1856). Two claims: (i) the gate's case counts per preset, with their net changes; (ii) no
+new functional regression, every new case being a rotation ambiguity whose root no pitch class decides.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* on which corpus and run were these counts taken at the
+key layer's wiring, and do they reproduce? (ii) **QUARANTINED.** *Audit question:* is every case the wiring added a
+symmetric or share-tone rotation, verified at the music, and does that hold on a re-run?
+
+---
+
+**Row 20.44 — the Jazz increase accepted; it retires when the function/cadence layer pins the rotation.**
+
+*Outgoing statement.* "The Jazz +1 is accepted under the two-tier BIR-gate amendment (CLAUDE.md, "Gate threshold and
+preset policy"); it retires when Layer 4 (function/cadence) pins the rotation." — the same paragraph (locator: lines
+1856–1857). Two claims: (i) the Jazz increase of one case is accepted under the two-tier amendment of the gate; (ii) the
+exception retires when the function/cadence layer pins the chord's root rotation.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S38.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing text has the exception retire when *"Layer 4
+(function/cadence) pins the rotation"*, a function or cadence fact fixing a chord's root; L3-S38 says *"No L3 fact may
+change an L2 fact, a rival or a mass."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose gate policy accepts the case.
+(ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 7.13 (i).
+
+---
+
+**Row 20.45 — the local-key hypothesis from key-agnostic signals only, never from the key-area grouping.** *WITHHELD —
+D-605.*
+
+*Outgoing statement.* "**A local-key hypothesis derives from KEY-AGNOSTIC signals only, and NEVER from the key-area
+grouping — a hard design rule, not a preference.**" — the same section, the first of the four standing rules (locator:
+lines 1866–1867). Two claims: (i) a local-key hypothesis derives from key-agnostic signals only; (ii) it never derives
+from the key-area grouping, a hard rule and not a preference.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S38.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S38: **AGREES** — the key-area grouping is read off the
+decided tonality (as Row 8.12 proposes it for L3), and L3-S38 says *"L2 reads nothing L3 publishes"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose
+decision of the tonality this rule bounds. (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled
+decision.***, as claim (i).
+
+---
+
+**Row 20.46 — a modulation decision may use the cadence detector and the region structure.** *WITHHELD — D-605.*
+
+*Outgoing statement.* "Deciding that a passage has moved to another key may use the cadence detector, which is
+key-agnostic by construction, and the raw region structure — root motion, diatonic-collection consistency." — the same
+bullet (locator: lines 1867–1869). Two claims: (i) deciding that the music has moved to another tonality may use the
+cadence detector and the raw structure of the regions — root motion and the consistency of the diatonic collection;
+(ii) the cadence detector is key-agnostic by construction.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S16.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S16: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing cadence detector is *"key-agnostic by construction"*;
+L3-S16 reads the cadence's chords *"in the arrival span's tonality"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.45.
+(ii) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which publishes the key-agnostic
+local cadence cues, as Row 2.4.
+
+---
+
+**Row 20.47 — the key-area grouping not read, a post-grouping of the decided tonality.** *WITHHELD — D-605.*
+
+*Outgoing statement.* "It may **not** read the key-area grouping, which is a downstream post-grouping of the
+already-resolved key." — the same bullet (locator: lines 1869–1870). Two claims: (i) the decision may not read the
+key-area grouping; (ii) the key-area grouping is a downstream post-grouping of the tonality already decided.
+
+*Derived statements that speak to it.* (i) L3-S38. (ii) None.
+
+*Current-text axis.* (i) L3-S38: **AGREES**, as at Row 20.45 (ii). (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.45.
+(ii) **ADOPTED — proposed**, travelling with Row 8.12.
+
+---
+
+**Row 20.48 — the flow strictly feed-forward, from chords through the cadence to the key areas.** *WITHHELD — D-605.*
+
+*Outgoing statement.* "The flow stays strictly feed-forward: chords → key-agnostic cadence → local-key hypothesis →
+re-keyed key path → key areas, rebuilt downstream." — the same bullet (locator: lines 1870–1872).
+
+*Derived statements that speak to it.* L3-S16.
+
+*Current-text axis.* L3-S16: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing flow runs *"chords → key-agnostic cadence → local-key
+hypothesis"*, the cadence taken before the tonality it bears on; L3-S16 reads the cadence's chords *"in the arrival
+span's tonality"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.45.
+
+---
+
+**Row 20.49 — the rule binds what evidence any modulation decision may read, on any arm.** *WITHHELD — D-605.*
+
+*Outgoing statement.* "**Scope:** the mechanism this rule was written for sits on the legacy key path, but what it
+constrains is *what evidence a modulation decision may read*, which binds any such decision on any arm." — the same
+bullet (locator: lines 1876–1878). Two claims: (i) the mechanism the rule was written for sits on the legacy key path;
+(ii) the rule constrains what evidence a modulation decision may read, and binds every such decision on any arm.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the mechanism this rule was written for sit on the
+legacy key path alone at the current commit? (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled
+decision.***, as Row 20.45.
+
+---
+
+**Row 20.50 — a global tonic anchor at resolver or section scope, never a local term.**
+
+*Outgoing statement.* "A global tonic anchor enters key scoring at RESOLVER / SECTION scope — never as one more local
+term inside the window scorer." — the same section, the second of the four standing rules, its bold lead (locator:
+lines 1879–1880).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose candidate
+scoring of the tonality this rule places.
+
+---
+
+**Row 20.51 — evidence of a whole section's tonality applied where the section is decided; the window's candidate
+scoring unchanged.**
+
+*Outgoing statement.* "Evidence about which key a whole section or piece is in is applied where the section is decided
+— the scope the removed declared anchor occupied — gating the relative-major/minor choice; the per-window candidate
+scoring is left unchanged." — the same bullet (locator: lines 1881–1883). Two claims: (i) evidence about the tonality of
+a whole section or piece is applied where the section is decided, gating the choice between relative major and minor;
+(ii) the per-window candidate scoring is left unchanged.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.50.
+(ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.50.
+
+---
+
+**Row 20.52 — a proof obligation on the anchor.**
+
+*Outgoing statement.* "The design attaches a proof obligation to the rule: show that the anchor reinforces the
+mode-present cases rather than regressing them." — the same bullet (locator: lines 1887–1888).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose tests decide whether a change
+reinforces or regresses the cases it touches.
+
+---
+
+**Row 20.53 — the window scorer reached only through the legacy resolver and the dormant decoder.**
+
+*Outgoing statement.* "**The LEGACY mark follows a check at the code, not the decision's age:** the window scorer this
+rule excludes (`KeyModeAnalyzer::analyzeKeyMode`) is reached only through the legacy resolver and this layer's dormant
+sequence decoder, and the resolver is retired from the production region path — so neither named mechanism is on an arm
+that runs." — the same bullet (locator: lines 1888–1892). Two claims: (i) the window scorer is reached only through the
+legacy resolver and the key layer's dormant sequence decoder; (ii) the resolver is retired from the production region
+path, so neither named mechanism is on an arm that runs.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* is `KeyModeAnalyzer::analyzeKeyMode` reached only through
+the legacy resolver and the dormant sequence decoder at the current commit? (ii) **QUARANTINED.** *Audit question:* is
+the resolver retired from the production region path, so that neither mechanism runs on a production arm at the current
+commit?
+
+---
+
+**Row 20.54 — the rule binds any section-scoped prior the key axis later gains.**
+
+*Outgoing statement.* "The rule about WHERE a section-scoped prior is applied binds any such prior the key axis later
+gains." — the same bullet (locator: lines 1892–1893).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.50.
+
+---
+
+**Row 20.55 — the reach-back proxy measured false and dropped; the as-built stops when the leading-edge key stops
+changing.**
+
+*Outgoing statement.* "**The reach-back convergence PROXY was measured FALSE and is dropped; the as-built tracks the
+leading-edge key itself and stops when that stops changing.**" — the same section, the third of the four standing rules
+(locator: lines 1894–1895). Two claims: (i) the convergence proxy for reaching back was measured false and is dropped;
+(ii) the as-built tracks the tonality at the leading edge itself and stops when that stops changing.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S40.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S40: **AGREES** — L3 *"stops when its in-span
+publication stops changing"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, a
+tried-and-closed line of the tonal reading's own request for more music, L2-S22 making L2 the layer that asks, as the
+derivation cites it. (ii) **QUARANTINED.** *Audit question:* does the key layer's reach-back track the tonality at the
+leading edge and stop when it stops changing, at the current commit?
+
+---
+
+**Row 20.56 — the facility uses the headline criterion and no proxy.**
+
+*Outgoing statement.* "So the facility uses the headline criterion directly and no proxy." — the same bullet (locator:
+lines 1898–1899).
+
+*Derived statements that speak to it.* L3-S40.
+
+*Current-text axis.* L3-S40: **AGREES**, as at Row 20.55 (ii).
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the reach-back facility test the convergence of its own
+answer directly, with no proxy, at the current commit?
+
+---
+
+**Row 20.57 — the proxy clause superseded; the headline rule unchanged.**
+
+*Outgoing statement.* "This is the finding that supersedes the proxy clause of the bounded-context contract's
+convergence item; that contract now records the clause as tried and closed, and its headline rule — reach back until
+the answer stops changing, never by a chosen amount — is unchanged." — the same bullet (locator: lines 1902–1905). Two
+claims: (i) the finding supersedes the proxy clause of the bounded-context contract's convergence item, which that
+contract now records as tried and closed; (ii) the headline rule — reach back until the answer stops changing, never by a
+chosen amount — is unchanged.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S40.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S40: **AGREES** — L3 asks for a larger span and *"stops
+when its in-span publication stops changing"*, under a safety cap.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a change in the standing of another document's clause. (ii) **ADOPTED —
+carried** by L3-S40.
+
+---
+
+**Row 20.58 — a key span needs an enharmonic-identity rule and has none.**
+
+*Outgoing statement.* "**A key SPAN needs an enharmonic-identity rule, and it does not have one (the Layer-3 half of the
+ratified cadence-less-confirmation amendment; the Layer-5 half is at that layer, and the two cross-point).**" — the same
+section, the fourth of the four standing rules (locator: lines 1906–1908). Two claims: (i) a key span needs an
+enharmonic-identity rule; (ii) it has none.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which
+publishes the spelled tonality per span. (ii) **QUARANTINED.** *Audit question:* does any rule at the current commit
+decide whether a key span is written in one spelling of a key or in its enharmonic twin?
+
+---
+
+**Row 20.59 — enharmonic reinterpretation at the single chord only; the amendment requires the span rule.**
+
+*Outgoing statement.* "Enharmonic reinterpretation is handled at the single-chord level; nothing decides whether a span
+is written in one spelling of a key or in its enharmonic twin, so the amendment requires such a rule for key spans." —
+the same bullet (locator: lines 1908–1910). Three claims: (i) enharmonic reinterpretation is handled at the level of the
+single chord; (ii) nothing decides whether a span is written in one spelling of a key or in its enharmonic twin; (iii)
+the amendment requires such a rule for key spans.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS
+SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* where does the analysis at the current commit reinterpret
+a chord enharmonically, and on which arm? (ii) **QUARANTINED.** *Audit question:* as Row 20.58 (ii). (iii) **RELOCATED**
+— to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.58 (i).
+
+---
+
+**Row 20.60 — the partial-signature convention handled by detection and a one-step reinterpretation.**
+
+*Outgoing statement.* "★ THE BAROQUE PARTIAL-SIGNATURE CONVENTION IS HANDLED BY DETECTING IT AND REINTERPRETING THE
+SIGNATURE ONE STEP, NEVER BY WIDENING THE CANDIDATE FAMILY FOR EVERY SCORE (re-homed into this specification 2026-08-08
+on the user's ruling)." — the same section, its ★ paragraph on the partial-signature convention, the first sentence of
+its bold lead (locator: lines 1917–1919).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose decision of
+the tonality reads the signature as a prior.
+
+---
+
+**Row 20.61 — legacy, and superseded in fact.**
+
+*Outgoing statement.* "⚠ LEGACY, AND SUPERSEDED IN FACT: the correction is applied inside the legacy resolver, which the
+production arm no longer runs; no ruling superseded it, a later build replaced what it governs." — the same lead, its
+second sentence (locator: lines 1919–1921). Two claims: (i) the correction is applied inside the legacy resolver, which
+the production arm no longer runs; (ii) no ruling superseded it, a later build having replaced what it governs.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* is the partial-signature correction applied only inside
+the legacy resolver, and does the production arm run that resolver at the current commit? (ii) **HISTORICAL** — the
+standing of a decision.
+
+---
+
+**Row 20.62 — Baroque music often notated with one accidental fewer than the modern convention.**
+
+*Outgoing statement.* "Baroque scores are often notated with one accidental fewer than the modern convention, so the
+sounding key sits one step to the sharp side of anything a signature-faithful reading could name." — the same paragraph
+(locator: lines 1922–1924).
+
+*Derived statements that speak to it.* L3-S26.
+
+*Current-text axis.* L3-S26: **AGREES** — its defense states that *"Baroque scores are often notated one accidental
+short of modern practice"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), whose block says the key
+signature is a weak prior and never a fact about the tonality, as Rows 16.30 (i) and 16.31 (ii).
+
+---
+
+**Row 20.63 — the handling detects the convention at its sixth degree and reinterprets the signature.**
+
+*Outgoing statement.* "The adopted handling DETECTS that situation — the flattened sixth degree pervasive across the
+sounding weight and dominating its natural form — and reinterprets the written signature one step toward the missing
+accidental for the whole resolution." — the same paragraph (locator: lines 1924–1927).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.60.
+
+---
+
+**Row 20.64 — the discriminator tests the specific degree, not any accidental.**
+
+*Outgoing statement.* "**The discriminator must test the specific degree rather than the presence of any accidental** —
+in minor the leading note is always an accidental, so an accidental-counting test cannot separate the two cases." — the
+same paragraph (locator: lines 1931–1933).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 20.60.
+
+---
+
+**Row 20.65 — the region pipeline once two near-duplicate copies.**
+
+*Outgoing statement.* "The harmonic-rhythm region pipeline used to exist as two near-duplicate copies (one in the
+notation bridge, one in `batch_analyze.cpp`)." — the section *3. Directory Structure*, *Region Analysis — Canonical
+Modules (Iter 97, complete; …)*, its opening paragraph (locator: lines 2274–2275).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a former state of the code.
+
+---
+
+**Row 20.66 — the two copies collapsed into one implementation.**
+
+*Outgoing statement.* "Iter 97's duplication-remediation work collapsed both into a single canonical implementation
+inside the `composing` module." — the same paragraph (locator: lines 2275–2276).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build event.
+
+---
+
+**Row 20.67 — the modules carrying the pipeline have no engraving dependency.**
+
+*Outgoing statement.* "Four new modules carry it, all with **zero engraving dependency** (they consume a tone/region
+abstraction the callers populate):" — the same paragraph (locator: lines 2276–2278).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the modules carrying the region pipeline have no engraving
+dependency at the current commit, consuming only a tone and region abstraction their callers fill?
+
+---
+
+**Row 20.68 — the region tone collector's derived views over the note model.**
+
+*Outgoing statement.* The table row "| `composing/analysis/engravingbridge/regiontonecollector.{h,cpp}` (+
+`regiontoneprimitives.cpp`) | The derived tone **views over the Layer-1 note model** — `weightedPcView` (recomputed
+`collectRegionTones` weighting, tie-de-inflated), `soundingAt`, `buildTones`, plus the retained build-once
+`collectRegionTones`/`collectSoundingAt` Score wrappers, `findTemporalContext`, and the still-live
+`detectOnsetSubBoundaries`/`detectBassMovementSubBoundaries`/`collectPitchContext` (slated for Layer 2/3). Note
+**reading** moved to `notemodel/` (above); this layer now derives over it. |" — the same sub-section, its table
+(locator: line 2282).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the region tone collector hold the derived views the row
+names over the note model, and which of them are reached at the current commit?
+
+---
+
+**Row 20.69 — the key resolver no longer the production key path.**
+
+*Outgoing statement.* The table row "| `composing/analysis/key/keyresolver.{h,cpp}` | `resolveKeyAndModeRanked` —
+supersedes the old `inferLocalKey` + `resolveKeyAndMode` pair. **No longer the production region key/mode path**
+(replaced by the Layer-3 decoder, above); it now serves only the segmentation seed (S2), P4 tick-local (P4-defer), and
+the diagnostic/grading baseline. The shared `resolveKeySignatureContext` (signature read + declared-mode + Baroque
+`partialSignatureCorrection`) is called by both it and the wiring. |" — the same table (locator: line 2283).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `resolveKeyAndModeRanked` serve only the segmentation
+seed, the tick-local path and the diagnostic baseline at the current commit, and which path produces the production
+tonality?
+
+---
+
+**Row 20.70 — the region analyzer, the whole orchestration.**
+
+*Outgoing statement.* The table row "| `composing/analysis/region/regionanalyzer.{h,cpp}` | `region::analyzeRegions()`
+— the whole orchestration: greedy-expand segmentation (Pass 1) → per-region `analyzeChord` → `absorbShortRegions` →
+Pass 2 / Pass 2b sub-region splitting → merge. The single source of truth for region output. |" — the same table
+(locator: line 2284).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `region::analyzeRegions()` carry the orchestration the
+row lists, and does a running arm take its region output from it at the current commit?
+
+---
+
+**Row 20.71 — the sparse-region refinement.**
+
+*Outgoing statement.* The table row "| `composing/analysis/region/sparsechordrefinement.{h,cpp}` | Sparse-region
+post-refinement (tonic/diatonic priors on thin ≤2-PC slices) factored out of the orchestrator. |" — the same table
+(locator: line 2285).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the sparse-region refinement apply tonic and diatonic
+priors to slices of two pitch classes or fewer, and is it reached at the current commit?
+
+---
+
+**Row 20.72 — the section analyzer with its cadence and pivot detection.**
+
+*Outgoing statement.* The table row "| `composing/analysis/section/sectionanalyzer.{h,cpp}` | Section-level unified
+analysis — `analyzeSection`, key/mode stabilization, cadence and pivot detection (`detectCadences`,
+`detectPivotChords`). Moved here in Stage 2.1 (Phase 4c). |" — the same table (locator: line 2286).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the section module hold `analyzeSection`, the key and
+mode stabilization and the cadence and pivot detection, and is any of them reached at the current commit (as Row 8.55)?
+
+---
+
+**Row 20.73 — the cross-layer value-types leaf.**
+
+*Outgoing statement.* The table row "| `composing/analysis/types/analysistypes.h` | **The cross-layer value-types
+LEAF** — a dependency-free header (STL only; no `chord/`, `key/`, or engraving includes) holding the value types that
+cross the L1.5 / L3 / L4 boundaries: `ChordQuality`, `ChordAnalysisTone`, `ChordAnalyzerPreferences` (+ `kDefault`),
+`ChordTemporalContext`, `DecodeQualityLevel`, `function::ScoringPhase`, `ParameterBound`/`ParameterBoundsMap`,
+`KeySigMode`, `KeyModeAnalyzerPreferences` (+ `kDefault`), and the un-nested `PitchContext`. Each is a **pure
+relocation** from its former home (same name/namespace/layout). `chord/chordanalyzer.h` and `key/keymodeanalyzer.h`
+now `#include` this leaf, so every existing includer gets the types transitively, unchanged. |" — the same table
+(locator: line 2287).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is `analysistypes.h` free of chord, key and engraving
+includes at the current commit, holding the listed value types as pure relocations?
+
+---
+
+**Row 20.74 — the section-level analysis lives in the section module.**
+
+*Outgoing statement.* "Section-level unified analysis — `analyzeSection`, key/mode stabilization, cadence and pivot
+detection — lives in `composing/analysis/section/`." — the same sub-section, the paragraph led *Section-level analysis
+and the Pass-0 injection contract (Stage 2.1).* (locator: lines 2297–2299).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* as Row 20.72.
+
+---
+
+**Row 20.75 — Pass-0 injects its region stream into the section analysis.**
+
+*Outgoing statement.* "Pass-0 boundary detection (`analyzeHarmonicRhythm`) remains the notation-side configuration
+adapter and **injects** its `HarmonicRegion` stream into `analyzeSection` as a parameter, keeping `composing_analysis`
+independent of the notation and configuration layers." — the same paragraph (locator: lines 2299–2302).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `analyzeHarmonicRhythm` pass its region stream to
+`analyzeSection` as a parameter at the current commit, so that the analysis library includes nothing of the notation
+or configuration layers?
+
+---
+
+**Row 20.76 — bridge and batch are thin wrappers.**
+
+*Outgoing statement.* "**Bridge and batch are thin wrappers.**" — the same sub-section (locator: line 2304).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* as Row 19.11.
+
+---
+
+**Row 20.77 — the two wrappers hold only the tone adaptation and one call.**
+
+*Outgoing statement.* "`analyzeHarmonicRhythm()` (notation bridge) and `analyzeScore()` (`batch_analyze.cpp`) now
+contain only the engraving→tone adaptation and a single call to `region::analyzeRegions()`." — the same paragraph
+(locator: lines 2304–2306).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the two functions contain only the adaptation to tones and
+one call to `region::analyzeRegions()` at the current commit?
+
+---
+
+**Row 20.78 — the deletions removed the duplicated orchestration.**
+
+*Outgoing statement.* "The −968 / −399 line deletions in those two files (Phase 4) removed the duplicated
+orchestration." — the same paragraph (locator: lines 2306–2307).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build event.
+
+---
+
+**Row 20.79 — all orchestration lives in the region analyzer.**
+
+*Outgoing statement.* "All orchestration logic — and therefore the behavior that BIR and the pipeline snapshots measure
+— lives in `regionanalyzer`." — the same paragraph (locator: lines 2307–2308).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does all the orchestration of the region output live in
+`regionanalyzer` at the current commit, and which arm's behavior do the batch gate and the pipeline snapshots measure?
+
+---
+
+**Row 20.80 — the corrected parser moved the gate; the new set a strict superset of the old.**
+
+*Outgoing statement.* "The corrected `tools/dcml_parser.py` (applied-`/X` + minor-key leading-tone rooting) moves the
+gate to **Baroque 57 / Jazz 23 / Default 57** *(Superseded 2026-06-26: the live gate is now **53 / 24 / 53** — the
+L3-wiring delta moved 57/23/57 → 53/24/53; CLAUDE.md is authoritative for the current integers and `stem@tick` identity
+sets, which this paragraph's pre-delta figures and Default-swap detail do not reflect)* — a **strict superset** of the
+old 13/7/14 (0 lost, 100% oracle-correct roots; ~95% of the additions are legitimate ambiguity)." — the section *3.
+Directory Structure*, *D-PASS0 — notation Pass-0 uses default prefs + `excludeLookAheadOnDenseStart=false`; …*, its
+quotation block led *Re-baselined 2026-06-13 (corrected GT parser).* (locator: lines 2393–2399). Two claims: (i) the
+corrected parser moved the gate to the per-preset counts the sentence gives, which its own parenthesis marks superseded
+by later counts; (ii) the re-baselined set is a strict superset of the old one, none lost, its roots correct against
+the oracle and most of the additions legitimate ambiguity.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a gate value the member marks superseded. (ii) **QUARANTINED.** *Audit
+question:* on which run was the re-baselined set found a strict superset of the old one, every root correct against the
+oracle, and does that reproduce?
+
+---
+
+**Row 20.81 — the three-way value stale.**
+
+*Outgoing statement.* "The `30/14` `analyze_inversion_errors` three-way figure is **stale pending re-measurement**." —
+the same block (locator: lines 2399–2400).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the standing of a measured value.
+
+---
+
+**Row 20.82 — the product's configuration closest to Baroque; the presets' candidate-scoring preferences
+measurement-only.**
+
+*Outgoing statement.* "The qualitative finding is unchanged: the live config is closest to Baroque (Default-57 =
+Baroque-57 with `{bwv227.7@18120, bwv60.5@30960}` ↔ `{bwv187.7@19200, bwv227.7@18000}`), the preset chord-scoring system
+is measurement-only." — the same block (locator: lines 2400–2402). Two claims: (i) the configuration the product runs is
+closest to the Baroque preset, its case set the Baroque one with two cases exchanged; (ii) the presets' preferences for
+the chord's candidate scoring serve measurement only.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* on which run was the product's configuration found
+closest to the Baroque preset, and does that reproduce? (ii) **QUARANTINED.** *Audit question:* do the presets'
+preferences for the chord's candidate scoring reach any product path at the current commit, or only the batch
+measurement tool?
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. The namespace table's header row "| Namespace | Where it lives | What goes here |" and its rule line (1425–1426) — *a
+   table header*.
+2. "**Editing MuseScore's own code is admissible only for a defect blocking our feature.**" (1468) — a rule on when the
+   host application's code may be edited: the project's development conduct, not the analysis.
+3. "Each instance is recorded in `CLAUDE.md`'s local-patches section with a do-not-revert note and an explicit
+   per-instance distribution disposition (upstreamable or fork-local), ratified by the user." (1468–1471) — how such an
+   edit is recorded and ratified: development conduct.
+4. "The recorded contribution intent (§1.2) governs our module as a whole; …" (1471–1473) — how such an edit is
+   distributed: development conduct and licensing.
+5. "**READING and CALLING MuseScore's engraving code is allowed from anywhere we may edit; …" (1474–1475) — a rule on
+   which of the host application's code the project's code may consult, call and edit: development conduct, correcting
+   the reach of item 2.
+6. "Clause 3's prohibition is on changing `src/notation` and `src/engraving` code, not on consulting it: …"
+   (1475–1477) — the same rule's reach: development conduct.
+7. "*Why:* a user correction, 2026-06-14, of an over-statement that had conflated the two, …" (1477–1481) — a defense,
+   with its worked case.
+8. "Clause 2 above is the narrower rule that still governs what such a read may be used FOR: …" (1481–1483) — a
+   cross-reference to item 2 of the rule, restating what Rows 20.8 and 20.9 carry.
+9. "*Why this rule: derived from the already-ratified scoped forms (the Dependency Rule, the bridge pattern, the
+   local-patches constraints) rather than invented (#1); …" (1485–1490) — a defense of the rule's four items.
+10. "*Why:* stated with the rule — signals derived from a symbol or a Roman numeral are lossy and entangled with the
+    formatter, …" (1502–1506) — a defense.
+11. "*Why:* stated with the principle — a symbol is user content and may be wrong, …" (1510–1514) — a defense.
+12. The bridge file inventory's header row "| File | Declares/defines | Called by |" and its rule line (1539–1540) — *a
+    table header*.
+13. "**Delegation pointer for the Layer-1.5 phrase-boundary primitive (…).** The ratified contract for the
+    phrase-boundary primitive is `cowork_phrase_boundary_design.md` (SIGNED, user, 2026-06-26, `:3`) — D-476…D-485 —
+    which this section points at and does not restate." (1571) — a delegation pointer to another document; it names
+    D-476 to D-485 by range and is the home of none of them.
+14. "*(It is sited HERE, and the choice is stated rather than left to be inferred: …" (1571) — about the document, where
+    the pointer is sited.
+15. "The only other place the primitive is named is the Layer-6 section, …" (1571) — about the document, why the
+    pointer is not sited there.
+16. "Naming the document by filename also closes the prose-reference question the write list carried: …" (1571) —
+    about the document.
+17. "Almost all published work on locating phrase endings addresses a single melodic line; …" (1614–1616) — reasoning
+    offered for Row 20.31's rule, a defense.
+18. "*Why:* a stated **fact of absence**, established by the survey behind the method catalog — …" (1618–1620) — a
+    defense.
+19. "(This bounds what the primitive whose contract is delegated two paragraphs above may claim; …" (1623–1624) — about
+    the document, how the paragraph relates to the delegated contract.
+20. "*Why:* it is the line the chord-symbol prohibition already draws, applied to a new pair of fields — …" (1631–1634)
+    — a defense.
+21. "The rule binds any voice-tracking work whether or not the non-chord-tone detector that raised the question is ever
+    built; …" (1634–1636) — about the rule's own reach and its separation from a deferral recorded elsewhere.
+22. "*Why:* measured and cited in the record — …" (1752–1755) — a defense.
+23. "A second reason rides with it and is structural: …" (1755–1757) — a defense, its second reason.
+24. "*Why:* measured to its limit with a byte-matched re-implementation, …" (1763–1766) — a defense.
+25. "The approach sits below the bar the wiring step required, …" (1766–1768) — the defense's conclusion.
+26. "**Its scope is stated with it:** measured on the Bach ground-truth corpus; other repertoires unmeasured."
+    (1768–1769) — a remark on the scope of a measured finding.
+27. "`composing_tests` 596/596; the P1/P2/P3/keyAreas snapshot goldens were refreshed for the ratified key moves with
+    **P4 untouched**." (1858–1859) — a test count, and a record of which regression snapshots were refreshed:
+    provenance of the wiring.
+28. "Full provenance: `records/cc/reports/cc_layer3_wiring_report.md` (HELD), `cowork_layer3_keymode_design.md`."
+    (1859–1860) — a pointer to other documents.
+29. "*Why:* named in the decision as the load-bearing soundness property, …" (1872–1875) — a defense, inside D-605's
+    withheld home.
+30. "It is the same discipline that made the cadence detector usable, …" (1875–1876) — the defense's close, inside
+    D-605's withheld home.
+31. "⚠ LEGACY: both mechanisms it names are legacy-scoped." (1880) — a mark on the scope of the rule's named mechanisms.
+32. "*Why:* measured, at the attempt that failed — …" (1883–1886) — a defense.
+33. "Adding the anchor as one more local term re-enters exactly that coupling." (1886–1887) — the defense's close.
+34. "The cheaper stopping rule proposed in design — *a settled, stable prevailing key is in view in the reached-back
+    region* — was measured and disproved: …" (1895–1898) — the reason the proxy was dropped, a defense.
+35. "*Why:* measured at the build, and the methodological reading is recorded with the result — …" (1899–1902) — a
+    defense.
+36. "**Design-only: this records an obligation of this layer, not a mechanism it has.**" (1910–1911) — about the
+    document, what the bullet records.
+37. "*Why:* derived from the review's own stress simulation on resolution-denying music, …" (1911–1915) — a defense.
+38. "Whether the joint estimator handles the convention AT ALL is NOT settled by this entry and is not asserted here."
+    (1921–1922) — about the document, what the entry does not settle.
+39. "*Why this rather than the alternatives, which are recorded with their risks:* …" (1927–1931) — a defense.
+40. "The thresholds themselves are not restated here (D-431)." (1933) — about the document.
+41. The canonical-modules table's header row "| Module | Responsibility |" and its rule line (2280–2281) — *a table
+    header*.
+42. "The figures in this paragraph are the pre-re-baseline Stage-2.4 values." (2392–2393) — about the document, which
+    values the paragraph holds.
+43. "See the CLAUDE.md gate section for the authoritative identity sets." (2402–2403) — a pointer to another document.
+
+#### The arithmetic at this member
+
+- Rows written: **82** (20.1 to 20.82).
+- Rows split into two claims, **+1 each**: 20.8, 20.9, 20.10, 20.11, 20.15, 20.23, 20.24, 20.27, 20.28, 20.30, 20.31,
+  20.32, 20.33, 20.34, 20.35, 20.43, 20.44, 20.45, 20.46, 20.47, 20.49, 20.51, 20.53, 20.55, 20.57, 20.58, 20.61,
+  20.80, 20.82 — twenty-nine rows, **+29**.
+- Rows split into three claims, **+2 each**: 20.59 — one row, **+2**.
+- **Outgoing statements placed: 82 + 29 + 2 = 113.**
+- Listed under *not a statement*: **43**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row against its claims: 113 dispositions over 113 statements.
+- **UNPLACED statements at this member: none.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 4 | 20.31(ii), 20.32(i), 20.33(i), 20.57(ii) |
+| ADOPTED — proposed | 3 | 20.7, 20.31(i), 20.47(ii) |
+| RELOCATED | 49 | To L0 (13): 20.8(i), 20.8(ii), 20.9(i), 20.9(ii), 20.12, 20.13, 20.14, 20.34(i), 20.34(ii), 20.35(i), 20.36, 20.37, 20.62; to L1 (3): 20.23(i), 20.23(ii), 20.46(ii); to L2 (25): 20.10(i), 20.10(ii), 20.11(i), 20.11(ii), 20.38, 20.39, 20.40, 20.42, 20.44(ii), 20.45(i), 20.45(ii), 20.46(i), 20.47(i), 20.48, 20.49(ii), 20.50, 20.51(i), 20.51(ii), 20.54, 20.55(i), 20.58(i), 20.59(iii), 20.60, 20.63, 20.64; to the measurement of the analysis (8): 20.15(i), 20.15(ii), 20.24(i), 20.24(ii), 20.32(ii), 20.33(ii), 20.44(i), 20.52 |
+| QUARANTINED | 44 | 20.1, 20.2, 20.3, 20.4, 20.5, 20.6, 20.16, 20.17, 20.18, 20.19, 20.20, 20.21, 20.22, 20.27(ii), 20.28(i), 20.28(ii), 20.35(ii), 20.41, 20.43(i), 20.43(ii), 20.49(i), 20.53(i), 20.53(ii), 20.55(ii), 20.56, 20.58(ii), 20.59(i), 20.59(ii), 20.61(i), 20.67, 20.68, 20.69, 20.70, 20.71, 20.72, 20.73, 20.74, 20.75, 20.76, 20.77, 20.79, 20.80(ii), 20.82(i), 20.82(ii) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 13 | 20.25, 20.26, 20.27(i), 20.29, 20.30(i), 20.30(ii), 20.57(i), 20.61(ii), 20.65, 20.66, 20.78, 20.80(i), 20.81 |
+| UNPLACED | 0 | — |
+| **Total** | **113** | — |
+
+**The column sums to 113, against 113 statements, so the arithmetic closes at this member**: 4 + 3 + 49 + 44 + 0 + 13
++ 0 = 113. **The statement lists in the right-hand column are the record**, and the integers are re-derivable from them
+by counting; the RELOCATED count is its four charter lists, 13 + 3 + 25 + 8.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 17 |
+| DIFFERS | 3 |
+| THE DERIVATION IS SILENT | 93 |
+| **Total verdicts** | **113** |
+
+*(Counted per named derived statement per statement. No statement of this member names two derived statements, so the
+verdicts total 113 over 113 statements.)* The AGREES verdicts are those of the four ADOPTED — carried statements and
+thirteen others: 20.10(i) and 20.11(i) (L3-S38), RELOCATED to L2; 20.12, 20.13, 20.14 (L3-S29), RELOCATED to L0, and
+20.15(i) and 20.15(ii) (L3-S29), RELOCATED to the measurement; 20.32(ii) (L3-S14), RELOCATED to the measurement;
+20.45(ii) and 20.47(i) (L3-S38), RELOCATED to L2; 20.55(ii) and 20.56 (L3-S40), QUARANTINED; and 20.62 (L3-S26),
+RELOCATED to L0. The DIFFERS statements are 20.44(ii) (L3-S38), and 20.46(ii) and 20.48 (L3-S16) — three statements
+carrying three verdicts.
+
+#### The marks at this member
+
+- **WITHHELD rows:** 20.45, 20.46, 20.47, 20.48 and 20.49 — **D-605**, the one identity the artifact's
+  `item_4_identities_inside` names for position 20. Two of their statements carry an AGREES — 20.45(ii) and 20.47(i),
+  where L3-S38 reaches the rule that the decision of the tonality never reads the key-area grouping — **a derived
+  statement reaching a ruled answer the deriving session was not shown**; two carry a DIFFERS, 20.46(ii) and 20.48, with
+  L3-S16. The two defense sentences listed inside the home are items 29 and 30.
+- **In homes that are not withheld, carrying no mark** — the rows named are those the home's quoted first and last
+  texts fall in, where a home's first or last line is shared with a neighbouring sentence: D-229 (Rows 20.7, 20.8 and
+  20.9, and items 2, 3 and 4); D-296 (items 5 and 6); D-280 (Rows 20.10 and 20.11, and item 10); D-501 (Rows 20.12 to
+  20.15, and item 11); D-607 (Rows 20.31 to 20.33, and items 17 to 19); the retired entry D-560 (Rows 20.34 to 20.37,
+  and items 20 and 21, its home straddling the member's edge); D-287 (Row 20.39, and items 22 and 23); D-290 (Row 20.42,
+  and items 24 and 25); D-616 (Rows 20.50 to 20.54, and items 31 to 33); D-622 (Rows 20.55 to 20.57, and items 34 and
+  35); D-575 (Rows 20.60 to 20.64, and items 38 to 40); the retired entry D-078 (Row 20.73).
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -25373,6 +27053,18 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   notation annotation.)*
 - Rows 16.30 (i) and 16.31 (ii) — that the notated key signature is not a hard fact but soft evidence that leans. *(The
   L0 block says the key signature is a weak prior and never a fact about the tonality; L3-S26 AGREES at Row 16.30 (i).)*
+- Rows 20.8 (i), 20.8 (ii), 20.9 (i) and 20.9 (ii) — the score model read into the analysis only through the bridge,
+  the note model the one reading surface for analysis facts, and layout never inference evidence. *(The L0 block gives
+  what the notated record holds, and says it is what the notation says and nothing more.)*
+- Rows 20.12, 20.13 and 20.14 — a chord symbol written in the notation read only as a comparison or ground-truth
+  label, never as input to the analysis. *(IC-L1 S-2 and S-8 make a chord symbol or figure written in the notation
+  annotation; L3-S29 AGREES at each, stating the same of the composer's figures.)*
+- Rows 20.34 (i), 20.34 (ii), 20.35 (i), 20.36 and 20.37 — voice slots and stem direction as how the music was written
+  down, not a claim about the harmony, which the analysis may read. *(The L0 block gives voice membership; as the rows
+  of member 11 above.)*
+- Row 20.62 — that Baroque music is often notated with one accidental fewer than the modern convention, the sounding
+  tonality one step to the sharp side of a reading faithful to the signature. *(As Rows 16.30 (i) and 16.31 (ii);
+  L3-S26 AGREES at the row, stating the same convention.)*
 
 **To *L1 — Change points, candidates and notated evidence*.**
 
@@ -25397,6 +27089,11 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   constant-sonority slice as the atom of analysis and never the metric beat, the notes and the slicing carrying facts
   and never style, and the representation layers making no harmonic decision. *(As Row 8.15 (i); Rows 19.30 (i) and
   19.31 (i) are WITHHELD — D-022.)*
+- Rows 20.23 (i) and 20.23 (ii) — L1.5, the derived-view layer over the note model holding the spelling views and the
+  phrase-boundary primitive, a view and not a layer of judgment. *(The L1 block publishes what is computed from the
+  notation and decides nothing about the music.)*
+- Row 20.46 (ii) — that the cadence detector is key-agnostic by construction. *(As Row 2.4; L3-S16 DIFFERS at the
+  row, which is WITHHELD — D-605.)*
 
 **To *L2 — The tonal reading. The one entangled decision.***
 
@@ -25586,6 +27283,26 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   found, the added notes included. *(L3-S5 DIFFERS at Row 19.84.)*
 - Rows 19.38 (i), 19.38 (ii), 19.38 (iv), 19.39 (i) and 19.58 (ii) — the chord-span, the key-span and the
   decision-context span, the chord-span nested in the key-span, and the decision layers beneath the grouping.
+- Rows 20.10 (i), 20.10 (ii), 20.11 (i) and 20.11 (ii) — a gate or a term of the candidate scoring reading structured
+  fields only, never a chord-symbol string and never a Roman numeral. *(L3-S38 AGREES at Rows 20.10 (i) and 20.11 (i).)*
+- Rows 20.38, 20.39, 20.40 and 20.42 — the key layer's tried-and-closed lines: no ranked distribution of candidate
+  tonalities carried instead of one committed tonality, its re-open condition, and no tonality decided from cadences
+  found one at a time without it. *(As Row 1.5; the member marks both lines LEGACY-scoped.)*
+- Row 20.44 (ii) — the gate exception retiring when the function/cadence layer pins a chord's root rotation. *(As Row
+  7.13 (i); L3-S38 DIFFERS at the row.)*
+- Rows 20.45 (i), 20.45 (ii), 20.46 (i), 20.47 (i), 20.48 and 20.49 (ii) — a local-key hypothesis derived from
+  key-agnostic signals only and never from the key-area grouping, the evidence a modulation decision may use, and the
+  feed-forward flow, binding every such decision on any arm. *(All WITHHELD — D-605; L3-S38 AGREES at Rows 20.45 (ii)
+  and 20.47 (i); L3-S16 DIFFERS at Row 20.48.)*
+- Rows 20.50, 20.51 (i), 20.51 (ii) and 20.54 — a global tonic anchor applied at the scope where a section's tonality is
+  decided, never as a local term of the window's candidate scoring, the rule binding any such prior. *(The member marks
+  both named mechanisms LEGACY.)*
+- Row 20.55 (i) — the convergence proxy for reaching back measured false and dropped. *(The derivation's L3-S40 cites
+  L2-S22 for L2 as the layer that asks for more music.)*
+- Rows 20.58 (i) and 20.59 (iii) — a key span requiring an enharmonic-identity rule.
+- Rows 20.60, 20.63 and 20.64 — the Baroque partial-signature convention detected at its flattened sixth degree and the
+  signature reinterpreted one step, never the candidate family widened for every piece, the discriminator testing the
+  specific degree. *(The member marks the rule LEGACY and superseded in fact.)*
 
 **To *the second axis — voice leading*.**
 
@@ -25657,12 +27374,21 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 19.13, 19.14 and 19.15 — the three benchmark passages every change is checked against.
 - Rows 19.51 (i), 19.83 (ii) and 19.85 — the preference for what can be verified against ground truth, and the
   simplification of a reading an act of the comparison against a published corpus only, never of the product.
+- Rows 20.15 (i) and 20.15 (ii) — that a measurement tool may set a written chord symbol beside the analysis to see how
+  far the two agree, and never let it influence what the analysis computes. *(L3-S29 AGREES at both.)*
+- Rows 20.24 (i) and 20.24 (ii) — the corpus gate metric BIR and how its counts are quoted.
+- Rows 20.32 (ii) and 20.33 (ii) — the polyphonic phrase-boundary method validated against the project's own annotated
+  music, and a value measured only on chorale texture distrusted. *(As Row 8.138; L3-S14 AGREES at Row 20.32 (ii).)*
+- Row 20.44 (i) — the Jazz increase of one case accepted under the two-tier amendment of the gate.
+- Row 20.52 — the obligation to show that the tonic anchor reinforces the cases with the mode present rather than
+  regressing them.
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
 the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows
 numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, member 17's the rows numbered
-17.n, and member 19's the rows numbered 19.n. Members 4, 5, 6, 14 and 18 relocate no row.)*
+17.n, member 19's the rows numbered 19.n, and member 20's the rows numbered 20.n. Members 4, 5, 6, 14 and 18 relocate no
+row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -26267,6 +27993,85 @@ inference layer*.**
 - Row 19.88 (i) — does every seam of the record arm analyze the whole score and narrow to the requested span afterward,
   at the current commit?
 
+**Member 20 — `ARCHITECTURE.md`, the passages under *3. Directory Structure*.**
+
+- Row 20.1 — does the source tree at the current commit hold the files the module layout lists, each in the role its
+  annotation gives — the analysis and intonation modules carrying no engraving dependency, the measurement scaffolding
+  off by default and read by nothing the analyzer consumes, the planned directories absent?
+- Row 20.2 — does `src/composing/analysis/` hold the analysis types and algorithms the row names, in the namespace
+  `mu::composing::analysis`, at the current commit?
+- Row 20.3 — do the tuning systems live in `src/composing/intonation/`, in the namespace `mu::composing::intonation`?
+- Row 20.4 — do the two configuration interfaces live in `src/composing/`, in the namespace `mu::composing`?
+- Row 20.5 — does every function that takes engraving types and returns composing-domain results live in
+  `mu::notation`, and none in `mu::composing`?
+- Row 20.6 — do `isChordTrackStaff` and `staffIsEligible` live in `src/notation/internal/`, in the namespace
+  `mu::notation::internal`?
+- Row 20.16 — does `notationcomposingbridge.h` declare the four names the row lists, and do the five named files call
+  them?
+- Row 20.17 — does `notationcomposingbridge.cpp` define the status-bar string and the single-note analysis, and on which
+  arm does each run?
+- Row 20.18 — does `notationharmonicrhythmbridge.cpp` define the time-range scanner, and is it reached (as Row 5.3 (i))?
+- Row 20.19 — do the named helpers live in `notationcomposingbridgehelpers.h/.cpp`, and which files call them?
+- Row 20.20 — does `populateChordTrack()` write the harmonic reduction to the chord staff, called through
+  `implodeToChordTrack()` (as Row 5.5)?
+- Row 20.21 — do the two tuning functions exist as listed, called through the two named functions?
+- Row 20.22 — does `isChordTrackStaff()` detect the chord staff by name, and does `staffIsEligible()` exclude the drum,
+  hidden and chord-staff staves?
+- Row 20.27 (ii) — does the key layer's decoder consume the slicer at the site named, and does that decoder run on a
+  production arm at the current commit?
+- Row 20.28 (i) — which path drives the analysis at the current commit on the batch and the notation surfaces, and does
+  the segment-first spine drive either (as Row 1.12)?
+- Row 20.28 (ii) — does the segment-first spine read its pitch content through `weightedPcView`, and not from the notes
+  directly?
+- Row 20.35 (ii) — does the note model read the key signature, the time signature, ties and pedal markings, and does it
+  read the voice slot and the stem direction, at the current commit?
+- Row 20.41 — does the joint estimator carry a full posterior on the key axis at the current commit, and on which surface
+  is it published?
+- Row 20.43 (i) — on which corpus and run were the gate's counts taken at the key layer's wiring, and do they reproduce?
+- Row 20.43 (ii) — is every case the wiring added a symmetric or share-tone rotation, verified at the music, and does
+  that hold on a re-run?
+- Row 20.49 (i) — does the mechanism the rule on the local-key hypothesis was written for sit on the legacy key path
+  alone at the current commit?
+- Row 20.53 (i) — is `KeyModeAnalyzer::analyzeKeyMode` reached only through the legacy resolver and the dormant sequence
+  decoder at the current commit?
+- Row 20.53 (ii) — is the resolver retired from the production region path, so that neither mechanism runs on a
+  production arm?
+- Row 20.55 (ii) — does the key layer's reach-back track the tonality at the leading edge and stop when it stops
+  changing, at the current commit?
+- Row 20.56 — does the reach-back facility test the convergence of its own answer directly, with no proxy?
+- Row 20.58 (ii) — does any rule at the current commit decide whether a key span is written in one spelling of a key or
+  in its enharmonic twin?
+- Row 20.59 (i) — where does the analysis at the current commit reinterpret a chord enharmonically, and on which arm?
+- Row 20.59 (ii) — as Row 20.58 (ii).
+- Row 20.61 (i) — is the partial-signature correction applied only inside the legacy resolver, and does the production
+  arm run that resolver at the current commit?
+- Row 20.67 — do the modules carrying the region pipeline have no engraving dependency, consuming only a tone and region
+  abstraction their callers fill?
+- Row 20.68 — does the region tone collector hold the derived views the row names over the note model, and which of them
+  are reached?
+- Row 20.69 — does `resolveKeyAndModeRanked` serve only the segmentation seed, the tick-local path and the diagnostic
+  baseline, and which path produces the production tonality?
+- Row 20.70 — does `region::analyzeRegions()` carry the orchestration the row lists, and does a running arm take its
+  region output from it?
+- Row 20.71 — does the sparse-region refinement apply tonic and diatonic priors to slices of two pitch classes or fewer,
+  and is it reached?
+- Row 20.72, with Row 20.74 — does the section module hold `analyzeSection`, the key and mode stabilization and the
+  cadence and pivot detection, and is any of them reached at the current commit (as Row 8.55)?
+- Row 20.73 — is `analysistypes.h` free of chord, key and engraving includes, holding the listed value types as pure
+  relocations?
+- Row 20.75 — does `analyzeHarmonicRhythm` pass its region stream to `analyzeSection` as a parameter, so that the
+  analysis library includes nothing of the notation or configuration layers?
+- Row 20.76 — are `analyzeHarmonicRhythm` and `analyzeScore` thin wrappers at the current commit (as Row 19.11)?
+- Row 20.77 — do the two functions contain only the adaptation to tones and one call to `region::analyzeRegions()`?
+- Row 20.79 — does all the orchestration of the region output live in `regionanalyzer`, and which arm's behavior do the
+  batch gate and the pipeline snapshots measure?
+- Row 20.80 (ii) — on which run was the re-baselined set found a strict superset of the old one, every root correct
+  against the oracle, and does that reproduce?
+- Row 20.82 (i) — on which run was the product's configuration found closest to the Baroque preset, and does that
+  reproduce?
+- Row 20.82 (ii) — do the presets' preferences for the chord's candidate scoring reach any product path at the current
+  commit, or only the batch measurement tool?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -26851,6 +28656,23 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 19.84 (L3-S5):** the outgoing chord name states *"everything it found, the added notes above the basic
   triad included"*, where L3-S5 says sounding ninths *"are not written into the chord symbol"*.
 
+**Member 20.**
+
+- **ADOPTED — proposed — Row 20.7:** that the code computing L3's facts depend on no type of the score editor.
+- **ADOPTED — proposed — Row 20.31 (i):** that L3's specification record, as a fact of the published literature, that no
+  validated deterministic rule set places phrase boundaries in polyphonic music, its phrase model resting on fitted terms
+  instead.
+- **ADOPTED — proposed — Row 20.47 (ii):** that L3's key areas be a grouping read off L2's decided tonality, downstream
+  of it (the proposal of Row 8.12).
+- **DIFFERS — Row 20.44 (ii) (L3-S38):** the outgoing gate exception retires when *"Layer 4 (function/cadence) pins the
+  rotation"*, a function or cadence fact fixing a chord's root, where L3-S38 says *"No L3 fact may change an L2 fact, a
+  rival or a mass."*
+- **DIFFERS — Row 20.46 (ii) (L3-S16):** the outgoing cadence detector is *"key-agnostic by construction"*, where L3-S16
+  reads the cadence's chords *"in the arrival span's tonality"*.
+- **DIFFERS — Row 20.48 (L3-S16):** the outgoing flow runs *"chords → key-agnostic cadence → local-key hypothesis"*, the
+  cadence taken before the tonality it bears on, where L3-S16 reads the cadence's chords *"in the arrival span's
+  tonality"*.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -26877,10 +28699,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 17 | 5 | 0 | 0 | 1 | 1 | 0 | 3 | 0 | 6 |
 | 18 | 12 | 0 | 0 | 0 | 12 | 0 | 0 | 0 | 0 |
 | 19 | 132 | 17 | 18 | 43 | 14 | 0 | 19 | 21 | 52 |
-| **Total** | **1746** | **127** | **73** | **706** | **384** | **0** | **304** | **152** | **568** |
+| 20 | 113 | 4 | 3 | 49 | 44 | 0 | 13 | 0 | 43 |
+| **Total** | **1859** | **131** | **76** | **755** | **428** | **0** | **317** | **152** | **611** |
 
-**The arithmetic check:** 127 + 73 + 706 + 384 + 0 + 304 + 152 = 1746, against 1746 statements placed (43 + 34 + 21 + 34
-+ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132).
+**The arithmetic check:** 131 + 76 + 755 + 428 + 0 + 317 + 152 = 1859, against 1859 statements placed (43 + 34 + 21 + 34
++ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -26903,10 +28726,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 17 | 0 | 1 | 4 | 5 |
 | 18 | 0 | 1 | 11 | 12 |
 | 19 | 29 | 24 | 83 | 136 |
-| **Total** | **177** | **227** | **1350** | **1754** |
+| 20 | 17 | 3 | 93 | 113 |
+| **Total** | **194** | **230** | **1443** | **1867** |
 
-**The arithmetic check of the verdicts:** 177 + 227 + 1350 = 1754, against the members' verdict totals (43 + 35 + 21 + 34 +
-19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136).
+**The arithmetic check of the verdicts:** 194 + 230 + 1443 = 1867, against the members' verdict totals (43 + 35 + 21 + 34 +
+19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113).
 
 ## 14. The derivation's independence record, relayed
 
