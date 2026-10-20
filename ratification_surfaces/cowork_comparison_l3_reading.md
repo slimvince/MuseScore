@@ -73,7 +73,7 @@ its own entry there.
 | 28 | `ARCHITECTURE.md` passages — *11. Intonation* | **DONE** (§6.28) |
 | 29 | `ARCHITECTURE.md` passages — *12. User Interface* | **DONE** (§6.29) |
 | 30 | `ARCHITECTURE.md` passages — *14. ML Readiness* | **DONE** (§6.30) |
-| 31 | `ARCHITECTURE.md` passages — *15. Development Phases* | NOT YET TABULATED |
+| 31 | `ARCHITECTURE.md` passages — *15. Development Phases* | **DONE** (§6.31) |
 | 32 | `ARCHITECTURE.md` passages — *16. Scope Reference* | NOT YET TABULATED |
 | 33 | `ARCHITECTURE.md` passages — *19. LLM Integration — Claude Composer* | NOT YET TABULATED |
 | 34 | `ARCHITECTURE.md` passages — *Appendix B — MuseScore Score Model Quick Reference* | NOT YET TABULATED |
@@ -102,7 +102,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 30 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 31 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -118,7 +118,8 @@ Components — The Analysis Foundation*, position 22, its passages under *5. Pla
 its passages under *6. The Style System*, position 24, its passages under *7. The Knowledge Base*, position 25, its
 passages under *8. Planned Generation Components*, position 26, its passages under *9. The Constraint System*,
 position 27, its passages under *10. Visualization*, position 28, its passages under *11. Intonation*, position 29,
-its passages under *12. User Interface*, and position 30, its passages under *14. ML Readiness*.**
+its passages under *12. User Interface*, position 30, its passages under *14. ML Readiness*, and position 31, its
+passages under *15. Development Phases*.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -140,9 +141,9 @@ boundary after position 20, by its own capacity judgment; positions 21 and 22 we
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md`, which stopped at the member
 boundary after position 22, by its own capacity judgment; positions 23 to 26 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md`, which stopped at the member
-boundary after position 26, by its own capacity judgment; positions 27 to 30 were tabulated under
+boundary after position 26, by its own capacity judgment; positions 27 to 31 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twelfth_2026_10_20.md`.** **The writing now stands at
-the member boundary after position 30: not done, positions 31 to 57, and the next writing resumes at position 31.** **A
+the member boundary after position 31: not done, positions 32 to 57, and the next writing resumes at position 32.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -35541,6 +35542,417 @@ The DIFFERS statements: none.
 
 ---
 
+### 6.31 — Member 31: `ARCHITECTURE.md`, the passages under *15. Development Phases*
+
+> **Manifest for this member.** Position **31**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: `## 15. Development Phases`, exactly as the artifact spells it. **The seventeenth
+> member of this comparison made of passages.** Five ranges, each as a locator only (**D-307**), with its first and last
+> line texts exactly as the artifact publishes them (wrapped here for width):
+>
+> - lines 7777–7787, from *"**`tools/compare_analyses.py`** — three-level comparison of our analysis against"* to
+>   *"regions.  Adding this as an explicit script output is a planned improvement."*;
+> - lines 7820–7835, from *"2b2 — Complete-voicing jazz transcription QA (2026-04-17): My Funny Valentine"* to *"
+>   correct via edit dialog."*;
+> - lines 7837–7840, from *"2c — Benchmark set Rule 12 sign-off: PASSED 2026-04-14."* to *"  Dvořák op08n06: Bb major
+>   context, cadence detection, confident opening ✓"*;
+> - lines 7888–7892, from *"- `VoicingGenerator` — style-aware voicing from chord symbols"* to *"- `BassLineGenerator` —
+>   walking bass for jazz style"*;
+> - lines 7911–7915, from *"- `TuningCalculator` — tuning systems in `composing/intonation/` (JI, Pythagorean, meantone,
+>   well temperaments)"* to *"- Region tuning — "Tune selection" in Tools menu; harmonic rhythm analysis +
+>   split-and-slur"*.
+>
+> **Each of the ten line texts was compared with the line at its locator** in `ARCHITECTURE.md`, read by this session
+> at the file and at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at that
+> commit, **and every one matches**. The top-level heading the label names stands at line 7740, and the next top-level
+> heading, *16. Scope Reference*, at line 7919. **No other member of the artifact lies inside this top-level section** —
+> this session's script, run over lines 7740 to 7919, found no range of any other `ARCHITECTURE.md` member there — so
+> nothing is excluded from the cut. The section's other lines lie in no range — lines 7741–7776, 7788–7819, 7836,
+> 7841–7887, 7893–7910 and 7916–7918, as this session's script lists them. They hold, by the lines this session read:
+> the italic pointer to `STATUS.md`; under *Development Tools*, its opening that the tools stand outside the shipping
+> product, the batch analysis tool, the music21 export tool and the injection tool, and after range 1 the validation
+> orchestrator with its fenced command examples (whose two comment lines the script lists among the headings); under
+> *Submission Roadmap (pre-PR phases)*, its opening, *Phase 1 — Analysis foundation (complete)*, the lines 2a and 2b of
+> *Phase 2 — Inferrer stabilization*, after range 3 its lines 2d and 2e, and *Phase 3 — Submission fork preparation
+> (not started; NOT the next thing)* with its correction; under *Long-term project phases (post-submission)*, *Phase 1
+> — Analysis Foundation* and *Phase 2 — Knowledge Base and Style System* with their bullets, the heading of *Phase 3 —
+> Generation Engine*, *Phase 4 — UI Panels*, *Phase 5 — Visualization and Preview* and the heading of *Phase 6 —
+> Intonation Module*; and the separator before *16.* No other member of the artifact covers them — the passage rule's
+> cut, recorded here as at §6.15 to §6.30, and not repaired. Outgoing statements: **20** (rows 31.1 to 31.20). Listed
+> under *not a statement*: **11**. Counted at this member by this session; the counts appear here and at §13, and
+> nowhere else.
+>
+> **WITHHELD homes inside this member: none** — the artifact's `item_4_identities_inside` for position 31 is empty.
+> **No decision of the decisions register's data file is homed inside this member's ranges**, found by this session's
+> walk of `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit
+> hash) for every `home` naming `ARCHITECTURE.md` with a line range overlapping one of the five ranges, the retired
+> block included. *(The same walk over the cut spans finds two homes there, and therefore in no member, each a RETIRED
+> entry the decisions register's INDEX does not show, kept in its data file's retired block with the clause §6.27
+> quotes: **D-162** at 7746, the development tools outside the shipping product, and **D-163** at 7755, the batch
+> analysis tool needing no notation module, each record's own status field reading live — none of them withheld.)* **No
+> SEEN home lies in this member**, agreeing with §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.30, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation
+> join, the blockquote-marker reading, the fenced-block reading and the reading of a range that opens with a heading
+> line were applied unchanged at this member.** **The blockquote-marker reading has nothing to drop at any of the five
+> ranges**: every range was checked line by line at the blob, and no line of any of them opens with the
+> quotation-block marker; a quotation from a bullet drops its `- ` list marker instead. **The fenced-block reading has no
+> instance**: no range holds a fenced block. **A range that opens with a heading line: none.** **This member has no
+> table, no status table, no glossary and no former wording preserved inside it.** **How the leads were read:** range
+> 1's bold code-span lead names the tool and stands inside the sentence it opens, so the sentence is quoted with it;
+> the leads *"2b2 — …"* and *"2c — …"* of the roadmap's lines open sentences that carry claims and are quoted with
+> them; range 3's three indented lines are each a unit, quoted as written. **The quotation join found nothing to join at
+> this member.**
+>
+> **What this member is, read whole before any row was written, and how its subjects were placed.** The ranges are this
+> document's account of a comparison tool, two records of checks run on named pieces, and two lists of the long-term
+> project phases. **Four placements are stated for challenge.** (a) **The comparison tool's statements** — what it
+> compares, its levels, its categories, its check against the top two alternatives, how the agreement rate is computed
+> — are **RELOCATED** to *the measurement of the analysis*, as Row 22.26 placed the comparison tools; the planned
+> improvement beside them is **HISTORICAL**. (b) **The two records of checks run on named pieces** — the jazz
+> transcription check of 2026-04-17 and the benchmark sign-off of 2026-04-14 — are **HISTORICAL** where they record the
+> event and **QUARANTINED** where they report a measured or observed result, each with the audit question whether it
+> reproduces, as Rows 21.81 to 21.84 placed the measured residuals; the citation of the figures in a request for
+> comments is listed. (c) **The long-term phases for the generation engine and the tuning** are listed as plans of
+> planned or held components, as §6.25 listed the generation components and §6.28 the held tuning sub-sections; the
+> tuning phase's *"harmonic rhythm analysis"* meets L3's words but names what the region tuning would read, and it is
+> listed for that reason, the alternative — tabulating it UNPLACED — stated and not taken. (d) **The derivation is
+> silent on every statement of this member.** **No statement of this member DIFFERS from a derived statement, and none
+> is ADOPTED or UNPLACED.**
+
+---
+
+**Row 31.1 — a comparison tool setting our analysis beside music21's.**
+
+*Outgoing statement.* "**`tools/compare_analyses.py`** — three-level comparison of our analysis against music21's." —
+the section *15. Development Phases*, sub-section *Development Tools* (locator: lines 7777–7778).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, as Row 22.26 placed the comparison
+tools.
+
+---
+
+**Row 31.2 — the comparison's three levels.**
+
+*Outgoing statement.* "Levels: chord identity (key-independent), key context, Roman numeral string." — the same
+paragraph (locator: lines 7778–7779).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, as Row 31.1.
+
+---
+
+**Row 31.3 — the comparison's six categories of disagreement.**
+
+*Outgoing statement.* "Classifies disagreements into `full_agree`, `near_agree`, `chord_agree_rn_differs`,
+`chord_agree_key_differs`, `chord_disagree`, `unaligned`." — the same paragraph (locator: lines 7779–7780).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, as Row 31.1.
+
+---
+
+**Row 31.4 — a near agreement where music21's chord is among our top two.**
+
+*Outgoing statement.* "Also checks music21's chord against our top-2 alternatives before declaring `chord_disagree`,
+classifying such cases as `near_agree`." — the same paragraph (locator: lines 7781–7782).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, as Row 31.1.
+
+---
+
+**Row 31.5 — all six categories reported.**
+
+*Outgoing statement.* "The script reports all six comparison categories." — the same paragraph (locator: line 7783).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, as Row 31.1.
+
+---
+
+**Row 31.6 — the chord identity agreement rate computed by hand.**
+
+*Outgoing statement.* "Chord identity agreement rate — the most diagnostically meaningful figure, counting cases where
+root pitch class and quality match regardless of key context — must currently be computed manually as (full_agree +
+chord_agree_rn_differs + chord_agree_key_differs) / total aligned regions." — the same paragraph (locator: lines
+7783–7787).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, as Row 31.1.
+
+---
+
+**Row 31.7 — the rate as an explicit output, a planned improvement.**
+
+*Outgoing statement.* "Adding this as an explicit script output is a planned improvement." — the same paragraph
+(locator: line 7787).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan for a tool.
+
+---
+
+**Row 31.8 — the jazz transcription check of 2026-04-17.**
+
+*Outgoing statement.* "2b2 — Complete-voicing jazz transcription QA (2026-04-17): My Funny Valentine (Bill Evans, Some
+Other Time 1968, Felix B. transcription) — 185-measure three-layer comparison (our annotations vs human analyst
+transcription vs third-party plugin)." — the same section, sub-section *Submission Roadmap (pre-PR phases)*, under
+*Phase 2 — Inferrer stabilization* (locator: lines 7820–7823).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event.
+
+---
+
+**Row 31.9 — about three quarters agreement with the human transcription.**
+
+*Outgoing statement.* "Agreement with human transcription: approximately 75–80% exact or near-exact chord symbol
+match." — the same paragraph (locator: lines 7823–7824).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run, against which transcription and under which
+rule of near-exact match was the agreement measured, and does it reproduce at the current commit?
+
+---
+
+**Row 31.10 — stretches of agreement bar by bar.**
+
+*Outgoing statement.* "Extended runs of perfect measure-by-measure agreement: m.82–102, m.151–185, Coda (m.179–185)." —
+the same paragraph (locator: lines 7824–7825).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 31.9, for the bars named.
+
+---
+
+**Row 31.11 — complex extended chords identified.**
+
+*Outgoing statement.* "Complex extended chords correctly identified: AbΔ7#11, F-13, G7(#9b13), EbMaj7add13/Ab,
+AbMaj7add13(no3)/Gm7/F, GbMaj7b9b5, GbMaj7add13, FmMaj7, CmMaj9, Asus(add9b5), Eb7sus#5/B, G7sus#5#11, and many
+others." — the same paragraph (locator: lines 7825–7828).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 31.9, for the chords named.
+
+---
+
+**Row 31.12 — the bass solo's ostinato held.**
+
+*Outgoing statement.* "Bass solo ostinato (F13/Eb, m.106–142): correctly held across 36 measures." — the same paragraph
+(locator: lines 7828–7829).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 31.9, for the ostinato.
+
+---
+
+**Row 31.13 — the pedal point labelled.**
+
+*Outgoing statement.* "Pedal point (Bb pedal, m.106): correctly labelled." — the same paragraph (locator: line 7829).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* the same as Row 31.9, for the pedal point.
+
+---
+
+**Row 31.14 — the gap between the two figures put down to sparse voicing.**
+
+*Outgoing statement.* "The 75–80% figure on complete voicings vs 64.6% weighted corpus figure reflects the
+sparse-voicing limitation: the vertical analyzer performs substantially better when bass notes and complete chord
+voicings are present." — the same paragraph (locator: lines 7830–7832).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which runs were the two figures measured, and has the
+vertical analyzer's advantage on complete voicings been measured as such, with its uncertainty?
+
+---
+
+**Row 31.15 — two rendering artifacts put down to the font.**
+
+*Outgoing statement.* "Note: `Dsdim`/`Fsdim` visual artifacts in screenshots are Campania font rendering artifacts
+(§5.8), not formatter output bugs." — the same paragraph (locator: lines 7833–7835).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the formatter emit the correct strings where those
+renderings appear, at the current commit?
+
+---
+
+**Row 31.16 — the strings confirmed through the edit dialog.**
+
+*Outgoing statement.* "Internal strings confirmed correct via edit dialog." — the same paragraph (locator: line 7835).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event.
+
+---
+
+**Row 31.17 — the benchmark set signed off on 2026-04-14.**
+
+*Outgoing statement.* "2c — Benchmark set Rule 12 sign-off: PASSED 2026-04-14." — the same sub-section, under *Phase 2
+— Inferrer stabilization* (locator: line 7837).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event.
+
+---
+
+**Row 31.18 — BWV 227/7 read in E minor, its Roman numerals correct.**
+
+*Outgoing statement.* "BWV 227/7: E minor key annotation, correct Roman numerals ✓" — the same lines (locator: line
+7838).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the analysis read BWV 227/7 in E minor with the Roman
+numerals the sign-off checked, at the current commit?
+
+---
+
+**Row 31.19 — Chopin's BI16-1 one region of G major at its first bar.**
+
+*Outgoing statement.* "Chopin BI16-1: single G major region at measure 1 ✓" — the same lines (locator: line 7839).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the analysis read the first bar of BI16-1 as one region
+of G major at the current commit?
+
+---
+
+**Row 31.20 — Dvořák's op08n06: B flat major, the cadence detection, a confident opening.**
+
+*Outgoing statement.* "Dvořák op08n06: Bb major context, cadence detection, confident opening ✓" — the same lines
+(locator: line 7840).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the analysis read op08n06 in B flat major, detect its
+cadences and open with a confident reading, at the current commit, and on which arm?
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. "Both figures are cited in the RFC with this context." (7832–7833) — provenance, where the figures were cited.
+2. "`VoicingGenerator` — style-aware voicing from chord symbols" (7888) — a phase of the long-term plan for a planned
+   generation component, not the analysis.
+3. "`VoiceLeadingOptimizer` — Viterbi algorithm over voicing graph" (7889) — the same kind.
+4. "`RuleBasedHarmonizer` — complete harmonization from melody" (7890) — the same kind.
+5. "`ConstraintStore` — full fixing system" (7891) — the same kind.
+6. "`BassLineGenerator` — walking bass for jazz style" (7892) — the same kind.
+7. "`TuningCalculator` — tuning systems in `composing/intonation/` (JI, Pythagorean, meantone, well temperaments)"
+   (7911) — a phase of the long-term plan for the tuning feature, not the analysis.
+8. "Per-instrument configuration" (7912) — the same kind.
+9. "`DriftManager` — drift prediction and correction" (7913) — the same kind.
+10. "Tuning system selector (equal, just, meantone, well temperament, Pythagorean) — user preference in Preferences →
+    Composing" (7914) — the same kind.
+11. "Region tuning — "Tune selection" in Tools menu; harmonic rhythm analysis + split-and-slur" (7915) — the same kind.
+
+#### The arithmetic at this member
+
+- Rows written: **20**.
+- **Outgoing statements placed: 20.**
+- Listed under *not a statement*: **11**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: none.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 6 | 31.1, 31.2, 31.3, 31.4, 31.5, 31.6 |
+| QUARANTINED | 10 | 31.9, 31.10, 31.11, 31.12, 31.13, 31.14, 31.15, 31.18, 31.19, 31.20 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 4 | 31.7, 31.8, 31.16, 31.17 |
+| UNPLACED | 0 | — |
+| **Total** | **20** | — |
+
+**The column sums to 20 (6 + 10 + 4), against 20 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 20 |
+| **Total verdicts** | **20** |
+
+The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 31 is empty.
+- **In homes that are not withheld, carrying no mark: none** — no home lies in the ranges; the retired D-162 and D-163
+  lie in the cut, in no member.
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -35992,14 +36404,18 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   reading, the human annotation and the chord symbols written in the score, kept in the tools and reading the batch
   tool's output, the written and inferred symbols in separate fields and told apart by color. *(L3-S29 AGREES at Row
   30.7, as Row 20.15.)*
+- Rows 31.1, 31.2, 31.3, 31.4, 31.5 and 31.6 — a tool comparing our analysis with music21's at three levels, its six
+  categories of disagreement, a near agreement where music21's chord is among our top two, and the chord identity
+  agreement rate computed by hand. *(As Row 22.26.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
 the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows
 numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, member 17's the rows numbered
 17.n, member 19's the rows numbered 19.n, member 20's the rows numbered 20.n, member 21's the rows numbered 21.n,
-member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 24's the rows numbered 24.n, and member
-30's the rows numbered 30.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28 and 29 relocate no row.)*
+member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 24's the rows numbered 24.n, member 30's
+the rows numbered 30.n, and member 31's the rows numbered 31.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28 and 29 relocate
+no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -37139,6 +37555,23 @@ No QUARANTINED row: the member places no statement (§6.26's manifest header).
   behind?
 - Row 30.2 — does `ChordSymbolFormatter` read only `ChordAnalysisResult`, whatever produced it, at the current commit?
 
+**Member 31 — `ARCHITECTURE.md`, the passages under *15. Development Phases*.**
+
+- Row 31.9 — on which run, against which transcription and under which rule of near-exact match was the agreement
+  measured, and does it reproduce at the current commit?
+- Row 31.10 — the same as Row 31.9, for the bars named.
+- Row 31.11 — the same as Row 31.9, for the chords named.
+- Row 31.12 — the same as Row 31.9, for the ostinato.
+- Row 31.13 — the same as Row 31.9, for the pedal point.
+- Row 31.14 — on which runs were the two figures measured, and has the vertical analyzer's advantage on complete
+  voicings been measured as such, with its uncertainty?
+- Row 31.15 — does the formatter emit the correct strings where those renderings appear, at the current commit?
+- Row 31.18 — does the analysis read BWV 227/7 in E minor with the Roman numerals the sign-off checked, at the current
+  commit?
+- Row 31.19 — does the analysis read the first bar of BI16-1 as one region of G major at the current commit?
+- Row 31.20 — does the analysis read op08n06 in B flat major, detect its cadences and open with a confident reading, at
+  the current commit, and on which arm?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -37819,6 +38252,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 
 **Member 30.** No ADOPTED — proposed row, and no DIFFERS.
 
+**Member 31.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -37856,11 +38291,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 28 | 72 | 1 | 0 | 0 | 65 | 0 | 6 | 0 | 31 |
 | 29 | 7 | 0 | 0 | 0 | 7 | 0 | 0 | 0 | 1 |
 | 30 | 8 | 0 | 0 | 5 | 2 | 0 | 1 | 0 | 11 |
-| **Total** | **2329** | **132** | **78** | **869** | **685** | **0** | **399** | **166** | **795** |
+| 31 | 20 | 0 | 0 | 6 | 10 | 0 | 4 | 0 | 11 |
+| **Total** | **2349** | **132** | **78** | **875** | **695** | **0** | **403** | **166** | **806** |
 
-**The arithmetic check:** 132 + 78 + 869 + 685 + 0 + 399 + 166 = 2329, against 2329 statements placed (43 + 34 + 21 + 34
+**The arithmetic check:** 132 + 78 + 875 + 695 + 0 + 403 + 166 = 2349, against 2349 statements placed (43 + 34 + 21 + 34
 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4 +
-72 + 7 + 8).
+72 + 7 + 8 + 20).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -37894,11 +38330,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 28 | 1 | 4 | 67 | 72 |
 | 29 | 0 | 0 | 7 | 7 |
 | 30 | 1 | 0 | 7 | 8 |
-| **Total** | **216** | **251** | **1870** | **2337** |
+| 31 | 0 | 0 | 20 | 20 |
+| **Total** | **216** | **251** | **1890** | **2357** |
 
-**The arithmetic check of the verdicts:** 216 + 251 + 1870 = 2337, against the members' verdict totals (43 + 35 + 21 + 34 +
+**The arithmetic check of the verdicts:** 216 + 251 + 1890 = 2357, against the members' verdict totals (43 + 35 + 21 + 34 +
 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4 + 72
-+ 7 + 8).
++ 7 + 8 + 20).
 
 ## 14. The derivation's independence record, relayed
 
