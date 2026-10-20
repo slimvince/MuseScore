@@ -65,7 +65,7 @@ its own entry there.
 | 21 | `ARCHITECTURE.md` passages — *4. Existing Components — The Analysis Foundation* | **DONE** (§6.21) |
 | 22 | `ARCHITECTURE.md` passages — *5. Planned Analysis Extensions* | **DONE** (§6.22) |
 | 23 | `ARCHITECTURE.md` passages — *6. The Style System* | **DONE** (§6.23) |
-| 24 | `ARCHITECTURE.md` passages — *7. The Knowledge Base* | NOT YET TABULATED |
+| 24 | `ARCHITECTURE.md` passages — *7. The Knowledge Base* | **DONE** (§6.24) |
 | 25 | `ARCHITECTURE.md` passages — *8. Planned Generation Components* | NOT YET TABULATED |
 | 26 | `ARCHITECTURE.md` passages — *9. The Constraint System* | NOT YET TABULATED |
 | 27 | `ARCHITECTURE.md` passages — *10. Visualization* | NOT YET TABULATED |
@@ -101,7 +101,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 23 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 24 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -113,8 +113,9 @@ ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhyth
 inference layer*, the second, position 17, its passages under *Document governance and the standing architecture
 notes*, position 18, its passages under *1. Project Overview*, position 19, its passages under *2. Architectural
 Principles*, position 20, its passages under *3. Directory Structure*, position 21, its passages under *4. Existing
-Components — The Analysis Foundation*, position 22, its passages under *5. Planned Analysis Extensions*, and position
-23, its passages under *6. The Style System*.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
+Components — The Analysis Foundation*, position 22, its passages under *5. Planned Analysis Extensions*, position 23,
+its passages under *6. The Style System*, and position 24, its passages under *7. The Knowledge Base*.** **The first
+batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
 boundary after position 7, by its own capacity judgment; position 8 was tabulated under
@@ -133,9 +134,9 @@ boundary after position 19, by its own capacity judgment; position 20 was tabula
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md`, which stopped at the member
 boundary after position 20, by its own capacity judgment; positions 21 and 22 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md`, which stopped at the member
-boundary after position 22, by its own capacity judgment; position 23 was tabulated under
+boundary after position 22, by its own capacity judgment; positions 23 and 24 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md`.** **The writing now stands at
-the member boundary after position 23: not done, positions 24 to 57, and the next writing resumes at position 24.** **A
+the member boundary after position 24: not done, positions 25 to 57, and the next writing resumes at position 25.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -33050,6 +33051,303 @@ carried, this member carrying none: 23.36(ii) and 23.38 (L3-S33), RELOCATED to t
 
 ---
 
+### 6.24 — Member 24: `ARCHITECTURE.md`, the passages under *7. The Knowledge Base*
+
+> **Manifest for this member.** Position **24**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: `## 7. The Knowledge Base`, exactly as the artifact spells it. **The tenth member
+> of this comparison made of passages.** Three ranges, each as a locator only (**D-307**), with its first and last line
+> texts exactly as the artifact publishes them (wrapped here for width):
+>
+> - lines 5705–5725, from *"- **Until the RECOGNITION CONSUMER is built, the function layer does not touch this
+>   vocabulary —"* to *"  answer is the point: no section can yet state a rule here, and what is owed is the choice."*;
+> - lines 5745–5751, from *"For every scale and mode — defines:"* to *"- Historical period and style associations"*;
+> - lines 5769–5772, from *"Style-specific ornament types:"* to *"- Classical: ornament table per period"*.
+>
+> **Each of the six line texts was compared with the line at its locator** in `ARCHITECTURE.md`, read by this session at
+> the file and at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at that
+> commit, **and every one matches**. The top-level heading the label names stands at line 5681, and the next top-level
+> heading, *8. Planned Generation Components*, at line 5789. **No other member of the artifact lies inside this
+> top-level section** — this session's script, run over lines 5681 to 5789, found no range of any other
+> `ARCHITECTURE.md` member there — so nothing is excluded from the cut. The section's other lines lie in no range —
+> lines 5682–5704, 5726–5744, 5752–5768 and 5773–5788, as this session's script lists them. They hold, by the lines this
+> session read: the section's opening paragraph — the knowledge base as musical theory encoded as structured data,
+> shared across all styles; the paragraph on the Harmonic Vocabulary, the queried component of progressions and
+> substitutions with its own specification, serving analysis read forward and a future suggestion tool read
+> predictively; the ★ lead of range 1's two bullets; *7.1 Chord Dictionary* whole, its file line and its eight fields;
+> the heading and file line of *7.2 Scale and Mode Dictionary*; *7.3 Substitution Network* whole, its file line, its
+> lead and its six substitutions; the heading and file line of *7.4 Ornament Vocabulary*; the paragraph after range 3,
+> that the pedal-point class is defined voice-independently and is deferred to its own increment; the separator before
+> *8.*; and the empty lines between the ranges. No other member of the artifact covers them — the passage rule's cut,
+> recorded here as at §6.15 to §6.23, and not repaired. Outgoing statements: **9** (rows 24.1 to 24.9; no row is split
+> — the arithmetic is at the foot of this member). Listed under *not a statement*: **12**. Counted at this member by
+> this session; the counts appear here and at §13, and nowhere else.
+>
+> **WITHHELD homes inside this member: none** — the artifact's `item_4_identities_inside` for position 24 is empty.
+> **Two decisions of the decisions register's data file are homed inside this member's ranges, one for each bullet of
+> range 1, and neither is withheld**, found by this session's walk of `tools/audit/decisions/backbone_decisions.json`
+> (taken at the commit that landed this dispatch, by explicit hash) for every `home` naming `ARCHITECTURE.md` with a line
+> range overlapping one of the three ranges, the retired block included — each home lying wholly inside range 1: in the
+> decisions register's list, **D-419** at 5705–5715, *"Until the recognition consumer is built, the function layer does
+> not touch the harmonic vocabulary"*, recorded LIVE at the INDEX (group H), and **D-496** at 5716–5725, *"RATIFIED
+> AMENDMENT A-6: whether the pairwise progression grammar lives inside the harmonic vocabulary or stays a separate store
+> is decided at the recognition-consumer build, explicitly"*, recorded LIVE (group M), neither LEGACY-marked — facts of
+> the decisions register, relayed and moving no disposition. No retired entry of the data file is homed inside the
+> ranges. Neither is withheld, so neither carries a mark, and the rows inside their homes are named at the foot. *(The
+> same walk over the cut spans finds two homes there, and therefore in no member: in the decisions register's list,
+> **D-207** at 5774–5777, the voice-independent pedal-point class, recorded DEFERRED at the INDEX (group G); and the
+> retired **D-133** at 5693, kept in the data file's retired block with the clause §6.23 quotes, its own `status` field
+> reading *live* — neither withheld.)* **No SEEN home lies in this member**, agreeing with §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.23, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation
+> join, the blockquote-marker reading, the fenced-block reading and the reading of a range that opens with a heading
+> line were applied unchanged at this member.** **The blockquote-marker reading has nothing to drop at any of the three
+> ranges**: every range was checked line by line at the blob, and no line of any of them opens with the quotation-block
+> marker; a quotation from a bullet drops its `- ` list marker instead. **The fenced-block reading has no instance at
+> this member**: no range holds a fenced block. **A range that opens with a heading line: none at this member** — no line
+> inside the three ranges is a heading. **This member has no table, no status table and no glossary.** **How the bold
+> leads were read:** the leads of range 1's two bullets are complete sentences stating rules and are tabulated (Rows 24.1
+> and 24.4), and each bullet's other sentences are tabulated sentence by sentence; where a bold run stands inside the
+> sentence it opens — *"is not to be settled by drift"* — the sentence is quoted with it (Row 24.6). **A lead ending in
+> a colon:** range 2's *"For every scale and mode — defines:"* and range 3's *"Style-specific ornament types:"* only
+> introduce their items and are listed as leads (items 5 and 12). The *Why:* sentences, and the sentences that continue
+> their reasoning, are listed under the second reading rule. **The quotation join found nothing to join at this
+> member**: no line inside its ranges breaks a hyphenated compound at its end.
+>
+> **Ranges 2 and 3, read by the unit's own test, as position 23's range 1 was read.** Each range is a lead and a list of
+> nouns with no verb, the fields of a planned knowledge-base file. **Range 2's six bullets** — the fields the scale and
+> mode dictionary defines — are **listed under *not a statement*** (items 6 to 11): the member names no reader of that
+> dictionary, its opening paragraph outside the range saying only that the knowledge base is shared across styles, and
+> the one portion of it the member says the analysis reads is the Harmonic Vocabulary of progressions and substitutions.
+> **Range 3's three bullets** — the ornament types per style — are **tabulated** (Rows 24.7 to 24.9), because the
+> member's own paragraph after the range draws this vocabulary's pedal-point class from *"the joint estimator's own
+> non-chord-tone emission categories"*, so the ornament vocabulary names what the analysis publishes of its
+> elaborations. The two readings differ on that ground alone, and it is stated so that each can be challenged at one
+> place.
+>
+> **What this member is, read whole before any row was written.** The ranges are this document's account of its
+> knowledge base that the population's passage rule reached: two rules on the Harmonic Vocabulary — that the function
+> layer does not touch it until its recognition consumer is built, and that whether the pairwise progression grammar
+> folds into it is a decision owed at that build — with the state each records; the fields of the scale and mode
+> dictionary; and the ornament types per style. Nothing in it states what L3 publishes. **Three placements are stated
+> for challenge.** (a) **The Harmonic Vocabulary's rules** — its dormancy until its recognition consumer is built, what
+> that consumer would make of it, and the decision owed between one store and two — are **UNPLACED** (four statements):
+> no charter of `FRAMEWORK.md` §5 names the vocabulary or its recognition consumer, as Row 8.18 and §6.8's
+> recognized-schema statements found for the span that consumer would emit; the pairwise grammar itself was placed with
+> *L2 — The tonal reading. The one entangled decision.* at Rows 7.73 to 7.84, the alternative named at Row 24.4. The
+> state each rule records — no use of the catalog at present, two stores at present — is **QUARANTINED**. (b) **Range 2**
+> is listed and **range 3** tabulated, as the paragraph above states. (c) **The ornament types** are **RELOCATED** to
+> *L2 — The tonal reading. The one entangled decision.*, which publishes the elaboration relation per sounding note.
+> **No statement of this member DIFFERS from a derived statement, and none is ADOPTED.**
+
+---
+
+**Row 24.1 — the function layer not touching the vocabulary until its recognition consumer is built.**
+
+*Outgoing statement.* "**Until the RECOGNITION CONSUMER is built, the function layer does not touch this vocabulary —
+and the connection is absent, not partial.**" — the section *7. The Knowledge Base*, the first of the two bullets under
+the ★ lead *★ THE VOCABULARY'S DORMANCY IS DECLARED, …*, which stands outside every range at lines 5702 to 5703
+(locator: lines 5705–5706).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: a rule on when the earlier architecture's function layer may use the
+Harmonic Vocabulary, the catalog of progressions and substitutions; no charter of `FRAMEWORK.md` §5 names that
+vocabulary or its recognition consumer, as Row 8.18 found for the span that consumer would emit, and no derived statement
+speaks to a progression catalog; the bullet and the section around it are the whole of what was read.
+
+---
+
+**Row 24.2 — the recognition consumer the work that would make the catalog a prior and an annotation.**
+
+*Outgoing statement.* "The consumer is the separate, named piece of work that makes this catalog the function layer's
+multi-chord disambiguation prior and the grouping layer's sequence-span annotation; it is also where the §6.7 idioms
+first do any work, by weighting which entries count." — the same bullet (locator: lines 5706–5709).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: as Row 24.1, what the recognition consumer would make of the catalog; no
+charter of `FRAMEWORK.md` §5 names it, and no derived statement speaks to a progression catalog.
+
+---
+
+**Row 24.3 — the function layer making no use of the catalog at present.**
+
+*Outgoing statement.* "Until it exists the function layer makes **no** use of the catalog at all." — the same bullet
+(locator: lines 5709–5710).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does any code of the function layer make use of the
+progression catalog at the current commit?
+
+---
+
+**Row 24.4 — whether the pairwise grammar folds into the vocabulary a decision owed, its trigger the consumer's build.**
+
+*Outgoing statement.* "**Whether the pairwise progression grammar folds INTO this vocabulary or stays a SECOND store is a
+decision that is OWED, and its trigger is the recognition-consumer build.**" — the second bullet (locator: lines
+5716–5717).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: an owed decision whether the rules of which chord may follow which and the
+catalog of longer patterns are one store or two; the pairwise grammar was placed with ***L2 — The tonal reading. The one
+entangled decision.*** at Rows 7.73 to 7.84, but the vocabulary it might fold into has no charter in `FRAMEWORK.md` §5,
+as Row 24.1 found, and no derived statement speaks to either store; the bullet and the section around it are the whole
+of what was read.
+
+---
+
+**Row 24.5 — two stores at present: a pairwise rule set in the function layer and the catalog.**
+
+*Outgoing statement.* "Knowledge about which chord may follow which is currently held in two places — a pairwise rule set
+inside the function layer, and this catalog of longer patterns." — the same bullet (locator: lines 5717–5719).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* at the current commit, is the knowledge of which chord may
+follow which held in two places, a pairwise rule set inside the function layer and the catalog of longer patterns?
+
+---
+
+**Row 24.6 — the choice made explicitly at the consumer's build, never settled by drift.**
+
+*Outgoing statement.* "The choice between one store and two by declared design **is not to be settled by drift**: it is
+made, explicitly, when the component that queries this catalog is built." — the same bullet (locator: lines 5719–5721).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: as Row 24.4, the decision between one store and two; no charter of
+`FRAMEWORK.md` §5 names the vocabulary, and no derived statement speaks to either store.
+
+---
+
+**Row 24.7 — the Baroque ornament types.**
+
+*Outgoing statement.* "Baroque: trill, mordent, turn, appoggiatura, acciaccatura, Schleifer" — the same section,
+sub-section *7.4 Ornament Vocabulary*, the first bullet under the lead *Style-specific ornament types:* (locator: line
+5770).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which publishes the
+elaboration relation per sounding note that the ornament types would name, the member's own paragraph after the range
+drawing this vocabulary's pedal-point class from the joint estimator's non-chord-tone categories.
+
+---
+
+**Row 24.8 — the jazz ornament types.**
+
+*Outgoing statement.* "Jazz: approach notes, encirclement, blues bend notation" — the same list (locator: line 5771).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+24.7.
+
+---
+
+**Row 24.9 — the classical ornament types, a table per era.**
+
+*Outgoing statement.* "Classical: ornament table per period" — the same list (locator: line 5772).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+24.7.
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. "*Why:* it follows from the ratified build order — vocabulary, then the grouping layer, then wire the consumer — …"
+   (5710–5713) — a defense of Rows 24.1 to 24.3.
+2. "This is the declared-dormancy form the fact-publication corollary requires: …" (5713–5715) — the defense's
+   continuation, naming the rule it applies.
+3. "*Why:* the consumer design already asserts that this vocabulary extends the pairwise grammar while the
+   single-store-or-two decision is unmade, …" (5721–5724) — a defense of Rows 24.4 to 24.6.
+4. "Stating the trigger rather than the answer is the point: …" (5724–5725) — about the document, what its own clause
+   states and why.
+5. "For every scale and mode — defines:" (5745) — a lead ending in a colon that only introduces its items, listed under
+   the colon-lead reading.
+6. "Interval structure" (5746) — a field of the planned scale and mode dictionary, not a statement of the analysis.
+7. "Available tensions (can be added without clashing)" (5747) — the same kind.
+8. "Avoid notes (create unresolvable dissonance)" (5748) — the same kind.
+9. "Characteristic chord types" (5749) — the same kind.
+10. "Connection to chord types (chord-scale relationships)" (5750) — the same kind.
+11. "Historical period and style associations" (5751) — the same kind.
+12. "Style-specific ornament types:" (5769) — a lead ending in a colon that only introduces its items, listed under the
+    colon-lead reading.
+
+#### The arithmetic at this member
+
+- Rows written: **9** (24.1 to 24.9).
+- No row is split into claims.
+- **Outgoing statements placed: 9.**
+- Listed under *not a statement*: **12**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row: 9 dispositions over 9 statements.
+- **UNPLACED statements at this member: four** — 24.1, 24.2, 24.4 and 24.6, each with what was read.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 3 | To L2 (3): 24.7, 24.8, 24.9 |
+| QUARANTINED | 2 | 24.3, 24.5 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 4 | 24.1, 24.2, 24.4, 24.6 |
+| **Total** | **9** | — |
+
+**The column sums to 9, against 9 statements, so the arithmetic closes at this member**: 0 + 0 + 3 + 2 + 0 + 0 + 4 = 9.
+**The statement lists in the right-hand column are the record**, and the integers are re-derivable from them by
+counting; the RELOCATED count is its one charter list, 3.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 9 |
+| **Total verdicts** | **9** |
+
+*(Counted per named derived statement per statement. No statement of this member names a derived statement, so the
+verdicts total 9 over 9 statements, every one THE DERIVATION IS SILENT.)* The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 24 is empty.
+- **In homes that are not withheld, carrying no mark** — the rows named being those the home's quoted text falls in: in
+  the decisions register's list, D-419 (Rows 24.1 to 24.3) and D-496 (Rows 24.4 to 24.6).
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -33386,6 +33684,9 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 23.43 and 23.44 — the licence split: the per-idiom anchors licence-constrained, a user's own mixture free, the
   shipped preset defaults from a licensed pool or declared. *(As Rows 16.18, 16.19, 16.20 (ii) and 16.21; L3-S14 AGREES
   at Row 23.44.)*
+- Rows 24.7, 24.8 and 24.9 — the ornament types per style the ornament vocabulary carries. *(L2 publishes the
+  elaboration relation per sounding note; the member draws this vocabulary's pedal-point class from the joint
+  estimator's non-chord-tone categories.)*
 
 **To *the second axis — voice leading*.**
 
@@ -33500,8 +33801,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows
 numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, member 17's the rows numbered
 17.n, member 19's the rows numbered 19.n, member 20's the rows numbered 20.n, member 21's the rows numbered 21.n,
-member 22's the rows numbered 22.n, and member 23's the rows numbered 23.n. Members 4, 5, 6, 14 and 18 relocate no
-row.)*
+member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, and member 24's the rows numbered 24.n. Members
+4, 5, 6, 14 and 18 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -34494,6 +34795,12 @@ inference layer*.**
 - Row 23.42 — do the custom properties of a score survive the native format and only partly a MusicXML round trip at the
   current commit, and has any property layout for a piece's mixture been decided?
 
+**Member 24 — `ARCHITECTURE.md`, the passages under *7. The Knowledge Base*.**
+
+- Row 24.3 — does any code of the function layer make use of the progression catalog at the current commit?
+- Row 24.5 — at the current commit, is the knowledge of which chord may follow which held in two places, a pairwise rule
+  set inside the function layer and the catalog of longer patterns?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -35149,6 +35456,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 
 **Member 23.** No ADOPTED — proposed row, and no DIFFERS.
 
+**Member 24.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -35179,10 +35488,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 21 | 223 | 0 | 2 | 51 | 126 | 0 | 43 | 1 | 44 |
 | 22 | 98 | 0 | 0 | 20 | 45 | 0 | 32 | 1 | 18 |
 | 23 | 49 | 0 | 0 | 35 | 6 | 0 | 0 | 8 | 40 |
-| **Total** | **2229** | **131** | **78** | **861** | **605** | **0** | **392** | **162** | **713** |
+| 24 | 9 | 0 | 0 | 3 | 2 | 0 | 0 | 4 | 12 |
+| **Total** | **2238** | **131** | **78** | **864** | **607** | **0** | **392** | **166** | **725** |
 
-**The arithmetic check:** 131 + 78 + 861 + 605 + 0 + 392 + 162 = 2229, against 2229 statements placed (43 + 34 + 21 + 34
-+ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49).
+**The arithmetic check:** 131 + 78 + 864 + 607 + 0 + 392 + 166 = 2238, against 2238 statements placed (43 + 34 + 21 + 34
++ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -35209,10 +35519,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 21 | 14 | 10 | 199 | 223 |
 | 22 | 3 | 7 | 88 | 98 |
 | 23 | 3 | 0 | 46 | 49 |
-| **Total** | **214** | **247** | **1776** | **2237** |
+| 24 | 0 | 0 | 9 | 9 |
+| **Total** | **214** | **247** | **1785** | **2246** |
 
-**The arithmetic check of the verdicts:** 214 + 247 + 1776 = 2237, against the members' verdict totals (43 + 35 + 21 + 34 +
-19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49).
+**The arithmetic check of the verdicts:** 214 + 247 + 1785 = 2246, against the members' verdict totals (43 + 35 + 21 + 34 +
+19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9).
 
 ## 14. The derivation's independence record, relayed
 
