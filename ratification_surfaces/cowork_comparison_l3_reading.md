@@ -10,7 +10,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_sixth_2026_10_19.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighth_2026_10_19.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -60,7 +61,7 @@ its own entry there.
 | 18 | `ARCHITECTURE.md` passages — *1. Project Overview* | **DONE** (§6.18) |
 | 19 | `ARCHITECTURE.md` passages — *2. Architectural Principles* | **DONE** (§6.19) |
 | 20 | `ARCHITECTURE.md` passages — *3. Directory Structure* | **DONE** (§6.20) |
-| 21 | `ARCHITECTURE.md` passages — *4. Existing Components — The Analysis Foundation* | NOT YET TABULATED |
+| 21 | `ARCHITECTURE.md` passages — *4. Existing Components — The Analysis Foundation* | **DONE** (§6.21) |
 | 22 | `ARCHITECTURE.md` passages — *5. Planned Analysis Extensions* | NOT YET TABULATED |
 | 23 | `ARCHITECTURE.md` passages — *6. The Style System* | NOT YET TABULATED |
 | 24 | `ARCHITECTURE.md` passages — *7. The Knowledge Base* | NOT YET TABULATED |
@@ -99,7 +100,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 20 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 21 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -110,7 +111,8 @@ ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhyth
 `ARCHITECTURE.md`'s passages under its top-level heading *The joint estimator — the standing rules of the production
 inference layer*, the second, position 17, its passages under *Document governance and the standing architecture
 notes*, position 18, its passages under *1. Project Overview*, position 19, its passages under *2. Architectural
-Principles*, and position 20, its passages under *3. Directory Structure*.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
+Principles*, position 20, its passages under *3. Directory Structure*, and position 21, its passages under *4. Existing
+Components — The Analysis Foundation*.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
 boundary after position 7, by its own capacity judgment; position 8 was tabulated under
@@ -126,8 +128,10 @@ boundary after position 14, by its own capacity judgment; position 15 was tabula
 boundary after position 15, by its own capacity judgment; positions 16 to 19 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighth_2026_10_19.md`, which stopped at the member
 boundary after position 19, by its own capacity judgment; position 20 was tabulated under
-`records/cc/instructions/cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md`.** **The writing now stands at
-the member boundary after position 20: not done, positions 21 to 57, and the next writing resumes at position 21.** **A
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md`, which stopped at the member
+boundary after position 20, by its own capacity judgment; position 21 was tabulated under
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md`.** **The writing now stands at
+the member boundary after position 21: not done, positions 22 to 57, and the next writing resumes at position 22.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -27023,6 +27027,3458 @@ carrying three verdicts.
 
 ---
 
+### 6.21 — Member 21: `ARCHITECTURE.md`, the passages under *4. Existing Components — The Analysis Foundation*
+
+> **Manifest for this member.** Position **21**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: `## 4. Existing Components — The Analysis Foundation`, exactly as the artifact
+> spells it. **The seventh member of this comparison made of passages.** Sixty-five ranges, each as a locator only
+> (**D-307**), with its first and last line texts exactly as the artifact publishes them (wrapped here for width):
+>
+> - lines 2490–2492, from *"**Purpose:** Identifies the chord quality, extensions, inversions, and diatonic"* to
+>   *"candidates, allowing downstream consumers to consider alternatives."*;
+> - lines 2525–2578, from *"```cpp"* to *"```"*;
+> - lines 2598–2629, from *"```cpp"* to *"```"*;
+> - lines 2635–2648, from *"**★ ⚠ THE JAZZ PRESET'S CHORD-SCORING CONSTANTS ARE EMPIRICALLY UNVALIDATED — the §6.6 rule
+>   applied,"* to *"restated here (#6)."*;
+> - lines 2650–2658, from *"**Gate threshold policy**: the inversion-preference gate thresholds in"* to *"any gate
+>   change is committed."*;
+> - line 2707, *"All notation bridge files (`notationcomposingbridge.cpp`, `notationcomposingbridgehelpers.cpp`,
+>   `notationharmonicrhythmbridge.cpp`) use `ChordAnalyzerFactory::create()` so the analyzer type is resolved through
+>   the factory rather than hard-coded at each call site. Tests that need a direct instance may use
+>   `RuleBasedChordAnalyzer{}` on the stack."*;
+> - lines 2709–2716, from *"#### §4.1b — Contextual Inversion Resolution"* to *"inversions consistently regress (see
+>   three-attempt history in Section 6)."*;
+> - lines 2724–2728, from *"| Bonus | Condition | Default |"* to *"| `sameRootInversionBonus` | Candidate root matches
+>   previous chord's root | 0.4 |"*;
+> - lines 2730–2733, from *"**Safety constraints (lesson from three-attempt history) — ⚠ SUPERSEDED BY ITER 46, see
+>   §4.1g.** As"* to *"`inversionBonusReduction` mechanism is left unchanged."*;
+> - lines 2742–2746, from *"- `supportsContextualInversionBonuses` (`chordanalyzer.cpp:855-870`) admits **Major, Minor,
+>   Augmented,"* to *"  Diminished, Augmented, HalfDiminished**; only **Suspended** is still excluded."*;
+> - lines 2765–2767, from *"`isDiatonicStep(pc1, pc2)` helper declared in `notationcomposingbridgehelpers.h` (inline)."*
+>   to *"`previousBassPc` and compute `bassIsStepwiseFromPrevious` before each analysis call."*;
+> - lines 2829–2831, from *"**Harmonic summary mode** (status bar, analysis, tuning): region identity = root pitch"* to
+>   *"inversions, and slash chord bass notes are secondary metadata, not identity keys."*;
+> - lines 2833–2835, from *"**As-written mode** (chord track "as written"): region identity = full sonority including"*
+>   to *"only when the full sonority matches."*;
+> - lines 2851–2853, from *"**Bridge wiring:** `notationharmonicrhythmbridge.cpp` branches on
+>   `useRegionalAccumulation`:"* to *"- Legacy path: per-tick PC bitset comparison (unchanged)"*;
+> - lines 2866–2871, from *"`ChordTemporalContext` carries the **immediately preceding chord's** root, quality, and"* to
+>   *"names distinct."*;
+> - lines 2884–2890, from *"| Bonus | Lambda | Value | Quality gate | Extra gates | Iter |"* to *"| `w_dim` |
+>   `wDimBonus` | +0.15 | Diminished or HalfDiminished only | `nextRootPc >= 0`; `((nextRootPc - rootPc + 12) % 12) ==
+>   1` (semitone resolution = leading-tone); `distinctPcs >= 4` | 96 |"*;
+> - lines 2896–2903, from *"1. *First-inversion-m7-family guard* — if any competitor in the same `perBass`"* to *"
+>   Bø7/D) on identical pitch evidence."*;
+> - lines 2911–2917, from *"Bridge Pass 2 / Pass 2b in `notationharmonicrhythmbridge.cpp` and the main"* to *"boolean
+>   correct. The same pattern was applied to `nextRootPc` in Iter 95 Step 2."*;
+> - lines 2958–2962, from *"`RuleBasedChordAnalyzer` is a **vertical sonority analyzer**: it identifies what chord"* to
+>   *"chord plays in the surrounding progression)."*;
+> - lines 2970–2976, from *"- **3-note triads in inversion** (bass ≠ functional root): DCML annotates the"* to *"
+>   analysis identifies the sounding notes independently."*;
+> - lines 2978–2982, from *"Improving beyond ~84% requires a **contextual harmony layer** (Phase 2) that consumes"* to
+>   *"that embed contextual assumptions — keep the vertical/contextual boundary clean."*;
+> - lines 3008–3013, from *"Gates fire in `analyzeChord()` after the initial scoring pass, before results"* to *"the
+>   gate was introduced or last modified."*;
+> - lines 3015–3030, from *"| Gate | Iter | Condition (winner → preferred alt) | Effect at introduction |"* to *"|
+>   **HalfDim first-inversion bonus** | 61 (`a34dba041e`), 65 (`af785da463`) | Same structural check as kCleanQualities;
+>   bass PC exempt from `extensionThreshold` in `allTonesPresent` (Iter 65: bass is sounding by definition); score bonus
+>   applied to HalfDim candidate, gated on `preferMinorOverMajorAdd6` | BIR=true 7→6; BIR=false 132→125 (bonus
+>   eliminated 7 false-positive Power/Minor inversions) |"*;
+> - lines 3034–3042, from *"`supportsContextualInversionBonuses()` and `qualifiesForCompleteTriadInversionBonus()`"* to
+>   *"HalfDiminished inversion candidates on equal footing with Major/Minor."*;
+> - lines 3064–3076, from *"- **Fixed quarter-note window** (`Constants::DIVISION`) — wrong for non-4/4"* to *"
+>   inferred chord identities."*;
+> - lines 3096–3101, from *"| Cluster | Count (Path 1) | Pattern | Why blocked at Path 1 close |"* to *"| **Edge cases**
+>   | 2–3 | Individually examined; no shared pattern | No viable gate. |"*;
+> - lines 3105–3107, from *"The 128 BIR=false residual was not separately re-characterised in path 1;"* to *"change the
+>   region boundaries on which inversion analysis runs."*;
+> - lines 3142–3149, from *"- **Iter 55** — Baseline update + pipeline snapshot goldens refresh after greedy-expand
+>   switch."* to *"- **Iter 65** (`af785da463`) — Bass-PC exemption in `allTonesPresent` for HalfDim inversion check
+>   (bass is sounding by definition; was falsely failing threshold). BIR=true 6→5."*;
+> - lines 3153–3159, from *"| Case | Cluster | Pattern | Status |"* to *"| bwv43.11 m=3 b=2.0 | Scoring gap / absent |
+>   {D,E,A}=Dsus2; Dsus2 not in results[] (cap-3 A-rooted); results-cap issue | Target of Iter 66 sus2 P5-inversion
+>   bonus |"*;
+> - lines 3195–3204, from *"- **`ChordSymbolFormatter` in `chordanalyzer.h`** — a display-layer class declared"* to *"
+>   at the head of this document)."*;
+> - lines 3208–3212, from *"- **Split `ChordAnalyzerPreferences`** — the struct conflates chord-scoring weights,"* to *"
+>   after a scoring stabilisation phase, not during active iteration."*;
+> - lines 3231–3236, from *"- **`useExistingChordSymbols`, `useRomanNumeralAnnotations`,"* to *"  feature-abandonment
+>   decision."*;
+> - lines 3287–3294, from *"```cpp"* to *"```"*;
+> - lines 3346–3361, from *"- **Note weight caps** — `noteWeightCap`, `bassMultiplier`"* to *"- **Beat-type weights** —
+>   `beatWeightDownbeat` through `beatWeightSubbeat`"*;
+> - lines 3376–3378, from *"#### §4.1c Part 2 — Jazz Mode (chord-symbol-driven boundaries)"* to *"**Status: Retired** —
+>   production analysis paths in commit 02e3733afb, tool-side surfaces in 69716deead. Chord symbols are no longer read
+>   by any analysis or tool path. See §4.1f for the future per-symbol trust-mode design."*;
+> - lines 3380–3383, from *"**2026-04-08 follow-up:** Temporary jazz-specific scoring experiments were evaluated"* to
+>   *"jazz-only scoring adjustments remain in the analyzer."*;
+> - lines 3390–3393, from *"Experiment: `batch_analyze --inject-written-root` adds a synthetic bass tone at the"* to
+>   *"horn-section scores."*;
+> - lines 3409–3411, from *"The `--inject-written-root` flag in `batch_analyze` provides a diagnostic upper bound."* to
+>   *"production because they are user content and may be incorrect."*;
+> - lines 3413–3421, from *"**The ban is decided by WHAT AN ANNOTATION SAYS, not by how the score stores it.** No
+>   harmonic"* to *"stored in a different element type. The record states neither a date nor a ratifier."*;
+> - lines 3427–3438, from *"**The standing consequence: jazz accuracy is NOT MEASURABLE on the corpora we hold, and no"*
+>   to *"in exactly this situation."*;
+> - lines 3445–3454, from *"1. Jazz scores already contain explicit harmonic annotations — the written chord symbols"*
+>   to *"   classes required by the current 3-PC minimum."*;
+> - lines 3458–3471, from *"- **Reason 1 (redundancy)** was a value judgment, not structural. Jaccard boundaries"* to *"
+>   analyzer output produced from notes."*;
+> - lines 3473–3475, from *"### §4.1f — Future: Authoritative Chord Symbol Mode"* to *"**Status:** Designed, not
+>   implemented. No current timeline."*;
+> - lines 3479–3480, from *"Chord symbols, Roman numerals, and Nashville numbers already present in a score may"* to
+>   *"carry different levels of authority depending on context:"*;
+> - lines 3482–3487, from *"- **As-is analysis:** The current analyzer reads notes and infers what chord they"* to *"
+>   bass is tacet)."*;
+> - lines 3489–3491, from *"In the to-be case, the written chord symbol is the ground truth — not the notes."* to
+>   *"annotate what the composer declared.""*;
+> - lines 3524–3527, from *"**Status:** provisional design note, updated after Phase 1a validation."* to *"Result:
+>   **4454/4454 comparable regions = 100.0% root agreement**."*;
+> - lines 3529–3534, from *"This validates the existing §4.1c chord-symbol-driven path, not independent"* to *"- jazz
+>   mode fires reliably on monophonic saxophone scores"*;
+> - lines 3541–3546, from *"Implication for Phase 1b: saxophone solos in this validation set provide at"* to *"design
+>   necessary, not optional."*;
+> - lines 3575–3578, from *"**Score metadata:**"* to *"regardless of which analysis engine produced the winning harmonic
+>   result."*;
+> - lines 3580–3582, from *"### Phase 1a — Validate Existing Chord-Symbol-Driven Path"* to *"Phase 1a is now
+>   complete."*;
+> - lines 3586–3592, from *"Run result:"* to *"- 0 zero-region solos"*;
+> - lines 3594–3601, from *"Interpretation:"* to *"  assumption that boundary-correct regional accumulation is enough on
+>   its own"*;
+> - lines 3603–3609, from *"The corrected Phase 1a note-count evidence is:"* to *"  3-6 distinct pitch classes, yet
+>   agreement is still only 18.0%"*;
+> - lines 3621–3625, from *"### Phase 1b — Minimal Monophonic Fallback Without Chord Symbols"* to *"arpeggiated
+>   passages."*;
+> - lines 3637–3642, from *"Use:"* to *"   harmonic-rhythm contexts"*;
+> - lines 3698–3705, from *"The full engine should add:"* to *"- explicit confidence calibration against the vertical
+>   engine"*;
+> - lines 3707–3708, from *"The local grouping problem is intentionally deferred to Phase 2 because it is"* to *"the
+>   hardest part of monophonic inference."*;
+> - lines 3750–3756, from *"The monophonic path should reuse the same broad contextual ideas already used by"* to *"-
+>   continuity bonuses where musically justified"*;
+> - line 4104, *"Chord symbol, key/mode, and Roman numeral are all appended."*;
+> - lines 4136–4146, from *"**Analysis section:**"* to *"  both the status bar and the context menu (replaces former
+>   per-type counts)"*;
+> - lines 4207–4220, from *"**★ THE MARK ON THE JAZZ ROW IS THE §6.6 RULE APPLIED, AND IT IS NOT DECORATIVE
+>   (2026-08-11;"* to *"— never by a value being changed or a preset renamed."*;
+> - lines 4234–4236, from *"The bridge reads these at analysis time and populates `KeyModeAnalyzerPreferences`"* to
+>   *"and the internal +0.2 Ionian offset are replaced by these 21 independent priors."*;
+> - lines 4238–4242, from *"**Status bar section** (boolean checkboxes; each enabled only when its analysis is on):"* to
+>   *"- `showKeyModeInStatusBar` (bool, default true) — requires `inferKeyMode`"*;
+> - lines 4249–4258, from *"**Chord staff section** (controls what "Implode to chord staff" writes — planned):"* to *"
+>   region boundaries; requires `inferKeyMode`"*.
+>
+> **Each of the one hundred and thirty line texts was compared with the line at its locator** in `ARCHITECTURE.md`,
+> read by this session at the file and at its blob at the commit that landed this batch's dispatch, by a script reading
+> the artifact at that commit, **and every one matches** — the comparison the writing side named as the first. The
+> top-level heading the label names stands at line 2484, and the next top-level heading, *5. Planned Analysis
+> Extensions*, at line 4262. **The sections *4.3 ChordSymbolFormatter*, at lines 3804 to 3918, and *4.3b
+> HarmonicRhythm*, at lines 3945 to 4025, lie inside this top-level section and are positions 4 and 5, tabulated at
+> §6.4 and §6.5; they are neither this member's nor the passage rule's cut.** The section's other lines lie in no
+> range — lines 2485–2489, 2493–2524, 2579–2597, 2630–2634, 2649, 2659–2706, 2708, 2717–2723, 2729, 2734–2741,
+> 2747–2764, 2768–2828, 2832, 2836–2850, 2854–2865, 2872–2883, 2891–2895, 2904–2910, 2918–2957, 2963–2969, 2977,
+> 2983–3007, 3014, 3031–3033, 3043–3063, 3077–3095, 3102–3104, 3108–3141, 3150–3152, 3160–3194, 3205–3207, 3213–3230,
+> 3237–3286, 3295–3345, 3362–3375, 3379, 3384–3389, 3394–3408, 3412, 3422–3426, 3439–3444, 3455–3457, 3472,
+> 3476–3478, 3481, 3488, 3492–3523, 3528, 3535–3540, 3547–3574, 3579, 3583–3585, 3593, 3602, 3610–3620, 3626–3636,
+> 3643–3697, 3706, 3709–3749, 3757–3803, 3919–3944, 4026–4103, 4105–4135, 4147–4206, 4221–4233, 4237, 4243–4248 and
+> 4259–4261, as this session's script lists them with lines 3804 to 3918 and 3945 to 4025 excluded; the list is the
+> one the dispatch computed, span for span. They hold, by the headings the script lists among them and the lines this
+> session read: under *4.1 ChordAnalyzer*, its heading, *File:* line and *Algorithm:* paragraph, *Input —
+> `ChordAnalysisTone`* with its fenced block and its *Important:* paragraph, the opening of *Output —
+> `ChordAnalysisResult`* with its two bullets, *Chord Quality Enum* with its fenced block, the heading of *Tunable
+> Parameters*, the paragraph on the planned `StylePrior` connection, the *Two corrections, 2026-08-02* paragraph,
+> *Public Interface* with its fenced block and its paragraph on the three-pitch-class minimum, and *Factory* with its
+> fenced block; under *§4.1b*, its *Solution:* paragraph, its *Correction, 2026-08-02* paragraph, its closing remark
+> that no code change is owed, the `ChordTemporalContext` fields table and the validation table; *§4.1c — Regional Note
+> Accumulation (Classical Mode)* whole, with *Duplicate note collection paths — RESOLVED (Iter 97)*; the heading and
+> opening line of *Region identity modes*, its *Current implementation* paragraph, its *New API:* bullets and its
+> validation table; the heading of *Temporal context*; under *§4.1d — Joint (bass, chord) scoring bonuses*, its opening
+> paragraph, the lead of its surgical guards, its *Power exclusion* item, and its paragraphs on `ScoringPhase`, on the
+> `w_dim` gate and on the dim7-completeness guard with Gate J; the second paragraph of *Design boundary*; under *§4.1g*,
+> its opening, its table of final baselines with their explanation, the lead of *Active gates*, the lead and the effect
+> of the Iter 46 extension, the Iter 36 counting methodology, the lead, tuning and replacement paragraphs of the Jaccard
+> deprecation, the lead of the Path-1 residual, and its pending tasks; under *§4.1h*, its opening, its baselines table,
+> the lead of its fix list and of its residual table, its pending performance work and pending tasks, and its
+> paragraph on sub-beat boundaries; under *§4.1i*, its opening, the *Act now* item on the duplicated spelling arrays,
+> the *Defer* items on the coupling of segmentation to the candidate scoring and on a mode definition table, the *Do not
+> remove:* line and the *Ongoing concern* item; *4.2 KeyModeAnalyzer* above its input block, its *Relocation* and
+> *Important* paragraphs, its *Output — `KeyModeAnalysisResult`* block with its paragraphs, the opening of its *Tunable
+> Parameters* and its *Public Interface*; under *§4.1c Part 2*, the opening, results, conclusion and benchmark
+> paragraphs of *Jazz validation findings*, its *Known gap* paragraph, and the headings and leads of *Original problem
+> statement* and *Retirement rationale*; under *§4.1f*, the heading *Motivation*, *Design* and *Diagnostic evidence*;
+> under *§4.1d Monophonic Chord Inference*, its heading, its `noteCount` finding, its paragraph on the remaining
+> monophonic problem, *End-state architecture:* and *Shared context:*; under *Phase 1a*, its corpus line and its
+> paragraphs on the dominant mismatch pattern and on the next monophonic step; under *Phase 1b*, its modest-scope list,
+> its boundary-source lead and closing line, and its paragraphs on subset-based matching, bounded expansion and
+> lightweight smoothing with the calibration parameters; the heading and opening of *Phase 2 — Full Monophonic
+> Engine*; *Unified Orchestration Layer* and *Confidence and Abstention* whole; the heading and closing paragraph of
+> *Interaction with Existing Temporal Context*; *Implementation Priority* with *Known limitation — dominant seventh /
+> Mixolydian ambiguity*; *4.3a Voicing Helpers* and *4.4 AnalysisUtils* whole; *4.5 Current Status Bar Integration*
+> except line 4104; under *4.6 User Preferences — Configuration Interface Split*, its file list, interface table and
+> injection paragraphs, its *Intonation section*, the mode-detection weights and the preset table, its paragraphs on
+> `ModePriorPreset` and on the preferences page, and its status-bar format line; and the empty lines between the ranges.
+> *(The bodies at lines 2794 to 2819, 3763 to 3803, 3919 to 3944 and 4026 to 4097 were not read by this session; what
+> stands there is named by the headings the script lists.)* No other member of the artifact covers them — the passage
+> rule's cut, recorded here as at §6.15 to §6.20, and not repaired. Outgoing statements: **223** (rows 21.1 to 21.206;
+> fifteen rows carry two claims and one row three, each split — the arithmetic is at the foot of this member). Listed
+> under *not a statement*: **44**. Counted at this member by this session; the counts appear here and at §13, and
+> nowhere else.
+>
+> **WITHHELD homes inside this member: none** — the artifact's `item_4_identities_inside` for position 21 is empty.
+> **Eleven decisions of the decisions register's data file are homed inside this member's ranges, every one of them a
+> RETIRED entry, and no live entry is homed there**, found by this session's walk of
+> `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit hash) for
+> every `home` naming `ARCHITECTURE.md` with a line range overlapping one of the sixty-five ranges, the retired block
+> included — each home lying wholly inside one range: **D-061** at 2652–2656, **D-101** at 2730–2732, **D-069** at
+> 2829–2830, **D-060** at 2980–2982, **D-102** at 3041–3042, **D-067** at 3378, **D-066** at 3410–3411, **D-305** at
+> 3413–3415, **D-310** at 3427–3429, **D-241** at 3707–3708 and **D-086** at 4142–4143. The decisions register's INDEX
+> does not show them; each is kept in its data file's retired block with the clause every retired record carries, *"a
+> provenance verdict, not a judgment on soundness or usefulness; the statement stands at its home and is met by the
+> derivation"* (read by this session at D-060's record, retired 2026-08-16), as at §6.15, §6.16, §6.19 and §6.20. Each
+> retired record's own `status` field reads *live*, except D-101's, which reads *superseded-by*, and D-069's and
+> D-241's, which read *deferred* — facts of the data file, relayed and moving no disposition. **The walk agrees with
+> the eleven the dispatch read**, no identity beyond them and none of them missing; none is withheld, so none carries a
+> mark, and the rows inside their homes are named at the foot. *(The same walk over the cut spans — never over lines
+> 3804 to 3918 or 3945 to 4025, which are positions 4 and 5's and whose homes those members named — finds eleven homes
+> there, and therefore in no member: in the decisions register's list, **D-055** at 3271–3272 and **D-068** at 2691,
+> both recorded LIVE and LEGACY-marked at the INDEX; and the retired **D-062** at 2879–2882, **D-235** at 3277–3281,
+> **D-054** at 3323–3325, **D-236** at 3495–3497, **D-237** at 3506–3510, **D-238** at 3651–3655, **D-239** at
+> 3660–3667, **D-240** at 3677–3678 and **D-242** at 3735–3737 — none of them withheld.)* **No SEEN home lies in this
+> member**, agreeing with §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.20, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation
+> join, the blockquote-marker reading, the fenced-block reading and the reading of a range that opens with a heading
+> line were applied unchanged at this member.** **The blockquote-marker reading has nothing to drop at any of the
+> sixty-five ranges**: every range was checked line by line at the blob, and no line of any of them opens with the
+> quotation-block marker; a quotation from a bullet drops its `- ` list marker and from a numbered item its `1. `
+> marker instead, and a table row is quoted as written. **The fenced-block reading, at ranges 2, 3 and 33:** the
+> output structures (lines 2525 to 2578), the chord identifier's preferences (lines 2598 to 2629) and the key/mode
+> identifier's input structure (lines 3287 to 3294) are each tabulated **as one unit, as a table row is** (Rows 21.3,
+> 21.4 and 21.103), as the first batch tabulated the formatter's interface listing at Row 4.4 and the previous batch the
+> module layout at Row 20.1, each block's content named in its row with its comment lines quoted as the block writes
+> them, each fragment taken inside one line so that no quotation carries a comment marker. **None of the three was
+> split**: every comment line describes the code as declared — the bit order corrected against the header, the field
+> list re-synced, each field's meaning, the bass-root bonus's corrected default, the planned fields, the extension
+> threshold under each preset with its stated reason, the weighting of a bass note — so one disposition carries each
+> block; the establishment of the Jazz preset's values, which a comment of range 3 states, is tabulated on its own at
+> Rows 21.5 and 21.6 from range 4's sentences. **A range that opens with a heading line:** ranges 7, 35, 43, 51 and
+> 55 open at the headings *§4.1b — Contextual Inversion Resolution*, *§4.1c Part 2 — Jazz Mode (chord-symbol-driven
+> boundaries)*, *§4.1f — Future: Authoritative Chord Symbol Mode*, *Phase 1a — Validate Existing Chord-Symbol-Driven
+> Path* and *Phase 1b — Minimal Monophonic Fallback Without Chord Symbols*; under the first reading rule each heading
+> line is a title, listed under *not a statement* (items 5, 23, 38, 40 and 41), and each range's other lines are
+> tabulated as any other. **How the bold leads were read:** the noun-phrase labels are read as titles — *"Gate
+> threshold policy"*, *"Safety constraints (…) — ⚠ SUPERSEDED BY ITER 46, see §4.1g."*, *"Harmonic summary mode"*,
+> *"As-written mode"*, the italic *"First-inversion-m7-family guard"*, *"3-note triads in inversion"*, *"Functional
+> prolongation"*, *"Fixed quarter-note window"*, *"Running accumulation"*, *"Single-pass with no revision"*, the eight
+> *"Iter …"* leads, the code-span lead of range 30 and its *"PARTLY DONE — status corrected 2026-08-02 (…)."*, *"Split
+> `ChordAnalyzerPreferences`"*, the code-span lead of range 32, the eleven group labels of range 34, *"Status:
+> Retired"*, the three *"Reason …"* labels, *"Tool-side retirement"*, *"Score metadata:"*, *"Analysis section:"*,
+> *"Status bar section (…)"* and *"Chord staff section (…)"* — and where a label stands inside the sentence it opens,
+> the sentence is quoted with it. The bold leads that are complete sentences are tabulated: range 4's ★ lead (Row
+> 21.5), *"★ AND THE ONE THING A READER COULD MISTAKE FOR VALIDATION IS NAMED: …"* (Row 21.8), *"Jaccard measures
+> pitch-class overlap, not harmonic function"* quoted with its sentence (Row 21.78), *"The ban is decided by WHAT AN
+> ANNOTATION SAYS, …"* (Row 21.122), *"The standing consequence: …"* (Row 21.125) and *"The mark is lost only in the act
+> that records the measurement"* quoted with its sentence (Row 21.196); range 62's ★ lead is a complete sentence about
+> this document's own mark and is listed (item 42), as are the leads *"The establishment is the record's own:"*, *"The
+> establishment for these six values is the record's own, …:"* and *"What the mark does NOT say:"*, which open a
+> defense or a remark on the document (items 1, 43 and 44). **A lead ending in a colon** is tabulated with its sentence
+> where it carries a claim of its own — *"Purpose:"* (Row 21.1), *"Validation path:"* (Row 21.7), *"Problem:"* (Row
+> 21.14), *"Bridge wiring:"* (Row 21.33), the *"Status:"* lines of ranges 43 and 47 (Rows 21.137 and 21.145),
+> *"2026-04-08 follow-up:"* (Row 21.117), *"Experiment:"* (Row 21.119), *"Implication for Phase 1b:"* (Row 21.153),
+> *"As-is analysis:"* and *"To-be annotation:"* (Rows 21.140 and 21.142), *"Core principle:"* (Row 21.134) and range 44's
+> sentence ending in its colon (Row 21.139) — and quoted with its items where it only introduces them: *"The result
+> confirms:"*, *"Run result:"*, *"Interpretation:"*, *"The corrected Phase 1a note-count evidence is:"*, *"Use:"*, *"The
+> full engine should add:"* and *"The monophonic path should reuse the same broad contextual ideas already used by the
+> vertical path:"*. The *Why:* sentences, and the sentences that continue their reasoning, are listed under the second
+> reading rule. **The five tables** — the three contextual inversion bonuses, the five joint bonuses, the active gates,
+> the Path-1 clusters and the genuine-5 residual — are none of them a status table of design documents (range 29's
+> *Status* column runs over five corpus cases), so the status-table reading does not reach them: each header row with
+> its rule line is listed (items 6, 8, 11, 12 and 14) and each body row is a row (Rows 21.18 to 21.20, 21.39 to 21.43,
+> 21.60 to 21.73, 21.81 to 21.84 and 21.93 to 21.97). **A bullet or numbered item of two or more sentences** is
+> tabulated sentence by sentence, and a bullet of the path-2 fix list whose change and measured effect are two sentences
+> is one row with two claims. **This member has no glossary.** **The quotation join found nothing to join at this
+> member**: no line inside its ranges breaks a hyphenated compound at its end.
+>
+> **What this member is, read whole before any row was written.** The ranges are this document's account of the
+> earlier analysis foundation that the population's passage rule reached: the chord identifier's purpose, its output and
+> preference structures, the unvalidated Jazz constants and the gate threshold policy, the factory, the contextual
+> inversion bonuses and their history, the identity of a merged region in its two operating modes, the bridge wiring,
+> the temporal context, the joint bonuses and their guards, the vertical-sonority boundary and its prohibition, the
+> active gates and the iteration record of two paths, the refactor backlog, the key/mode identifier's input and its
+> weights, the retired jazz path with the ban on reading a written harmonic annotation as input and the standing
+> consequence for jazz accuracy, the authoritative-symbol operating mode designed and not built, the monophonic plan
+> with its validation runs, the status-bar output and the user preferences. Little of it states what L3 publishes; it
+> touches L3's subject at the chord symbol written in the score, at the merging of regions that the harmonic rhythm
+> reads, and at the Roman numeral and the Nashville number as presentation. **Eight placements are stated for
+> challenge.** (a) **The earlier chord and key/mode identifiers as built** — their structures, preferences, bonuses,
+> gates, wiring, settings and measured runs — are **QUARANTINED**, as Rows 18.1 and 18.2 placed the same components;
+> their iteration histories, superseded constraints, the retired jazz path and its original problem statement, and the
+> status lines of the designed and the completed plans are **HISTORICAL**, and a fix-list bullet's change is
+> **HISTORICAL** while its measured effect is **QUARANTINED**. (b) **Rules on the chord decision and its candidate
+> scoring** — that the gate thresholds are not loosened, the two admissible fixes, the vertical/contextual boundary, the
+> merging of regions in the operating modes, the monophonic plan's chord inference, its boundary sources and its
+> contextual ideas — are **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, with **L3-S30 DIFFERS**
+> at the harmonic-summary merging, as Row 6.4 (i), and **L3-S38 DIFFERS** at a future context carrying cadence history,
+> as Row 2.24; the Phase 2 contextual layer over the identifier's output is **HISTORICAL**, with **L3-S38 DIFFERS**.
+> (c) **What may be read from the notation** — a written chord symbol never input, the ban decided by what an
+> annotation says, the key signature admissible, chord symbols as instructions written by the user, the output a
+> function of the notes, the key signature and the preferences — is **RELOCATED** to *L0 — The notated record*, as
+> Rows 20.12 to 20.14, with **L3-S29 AGREES** (and **L3-S26** at the key signature); **the authoritative-symbol
+> operating mode's design** — symbols carrying authority, the written symbol as the truth, the analysis confirming what
+> the composer declared, written symbols as a source of boundaries — is placed the same way with **L3-S29 DIFFERS**.
+> (d) **Measurement rules** — the validation path for the Jazz values, the regression check not being that validation,
+> both presets passing before a gate change, jazz accuracy not measurable, what the annotators write, tools reading a
+> written symbol only to compare — are **RELOCATED** to *the measurement of the analysis*, as Row 20.15. (e) **The
+> empirically-unvalidated mark's rule** is **RELOCATED** to *the uncertainty surface*, whose content is that every
+> published value carries its own establishment status, with **L3-S33 AGREES**, as Rows 19.71 and 7.209 (i) placed the
+> confidence contract; the naming of the validating corpus goes to the measurement. (f) **The Roman numeral and the
+> Nashville number as presentation choices of one result** are **ADOPTED — proposed**, travelling with Row 4.2, and the
+> setting for chord-symbol analysis that needs no inference of the tonality is **QUARANTINED** with **L3-S1 DIFFERS**.
+> (g) **Compound melody** goes to *the second axis — voice leading*, and the calibration of the engines' confidences to
+> *the uncertainty surface*. (h) **One statement is UNPLACED**: the planned orchestration layer's duty to carry the
+> score's own fields through, which no charter of `FRAMEWORK.md` §5 names. **The development conduct** — how tests
+> instantiate the identifier, how code types are named, the refactor plans and their costs, the assessment of technical
+> debt, the removal of placeholder fields, a measurement tool's run time — is listed under *not a statement*, as the
+> MuseScore-Dependency Rule's items 3 and 4 were at §6.20.
+
+---
+
+**Row 21.1 — the chord identifier identifies quality, extensions, inversion and degree from simultaneous notes.**
+
+*Outgoing statement.* "**Purpose:** Identifies the chord quality, extensions, inversions, and diatonic degree from a set
+of simultaneously sounding notes." — the section *4. Existing Components — The Analysis Foundation*, sub-section *4.1
+ChordAnalyzer*, its *Purpose:* paragraph (locator: lines 2490–2491).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what does `ChordAnalyzer` identify from the notes sounding
+together, and does the analysis that runs at the current commit reach it (as Row 18.1)?
+
+---
+
+**Row 21.2 — up to three ranked candidates returned.**
+
+*Outgoing statement.* "Returns up to three ranked candidates, allowing downstream consumers to consider alternatives." —
+the same paragraph (locator: lines 2491–2492).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `analyzeChord` return at most three ranked candidates at
+the current commit, and which consumer reads the candidates after the first?
+
+---
+
+**Row 21.3 — the output structures, as listed.**
+
+*Outgoing statement.* The fenced block of the output structures — the `Extension` bitmask enumeration of sixteen flags,
+with the comment lines "Extension bitmask (P8b) — replaces 17 individual boolean fields.", "Bit order corrected
+2026-08-02 (OPEN_ITEMS.md OI-107(b)): bits 4/5, 9/10 and 14/15" and "but a reader deriving a mask from this listing
+would be wrong."; the `ChordIdentity` structure, re-synced by the comment "Field list re-synced 2026-08-02
+(OPEN_ITEMS.md OI-107(d)): naturalFifthPresent,", its fields each with its comment, among them "Raw template-match
+score. Higher is better. Ranking only.", "Root pitch class (0-11, C=0)", "Bass pitch class (0-11)", "P5 above root
+sounds; separates Ger+6 from It+6 (§5.11)" and "Bass is a structural pedal point (§5.12; empty on the record"; the
+`ChordFunction` structure, among its comments "Diatonic degree 0-6; -1 if non-diatonic" and "True if all sounding
+pitches are diatonic"; and `ChordAnalysisResult`, holding the two — the section *4. Existing Components — The Analysis
+Foundation*, sub-section *4.1 ChordAnalyzer*, *Output — `ChordAnalysisResult`* (locator: lines 2525–2578), tabulated as
+one unit, as a table row is.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the structures declared at the current commit match the
+listing — the extension bits in the order given, every field named, the template-match value used for ranking only,
+and the pedal-point fields empty on the record path?
+
+---
+
+**Row 21.4 — the chord identifier's preferences, as listed.**
+
+*Outgoing statement.* The fenced block of `ChordAnalyzerPreferences` — its five bonuses with their defaults and
+comments, "Bonus when candidate root == bass note" (with the correction "documented 0.65, code default 0.70 at"),
+"Bonus when root is in the current key", "Bonus per correctly-spelled chord tone", "Bonus for same root as preceding
+chord" and "Bonus for typical harmonic resolution target"; the three fields under "Planned — not yet implemented"; the
+commented-out style prior under "Planned style prior — not yet implemented"; the extension threshold at 0.20, with the
+comments "Jazz preset uses 0.12 (= kSeventhThreshold) to detect lightly-voiced ninths", "Standard and Baroque keep 0.20
+to suppress ornamental" and "passing tones in counterpoint textures."; and `bounds()` under "P8c: optimization
+readiness", returning "parameter name → {min, max, isManual}" — the same sub-section, *Tunable Parameters —
+`ChordAnalyzerPreferences`* (locator: lines 2598–2629), tabulated as one unit, as a table row is.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `ChordAnalyzerPreferences` declare at the current commit
+the fields and defaults the listing gives — the bass-root bonus at 0.70, the three planned fields unread, the extension
+threshold at 0.20 by default and 0.12 under the Jazz preset — and does `bounds()` return a range for each parameter?
+
+---
+
+**Row 21.5 — the Jazz preset's constants for the chord's candidate scoring empirically unvalidated.**
+
+*Outgoing statement.* "**★ ⚠ THE JAZZ PRESET'S CHORD-SCORING CONSTANTS ARE EMPIRICALLY UNVALIDATED — the §6.6 rule
+applied, 2026-08-11 (`OPEN_ITEMS.md` OI-346, the application half of D-497).**" — the same sub-section, its ★ paragraph
+(locator: lines 2635–2636).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* has any jazz ground truth measured the Jazz preset's extension
+threshold or its reduced inversion bonuses at the current commit?
+
+---
+
+**Row 21.6 — the affected values and where they are set.**
+
+*Outgoing statement.* "The affected values are the Jazz **extension threshold** (0.12, against the 0.20 the header
+declares as the default and Standard and Baroque keep — the comment above states it) and the Jazz **reduced individual
+inversion bonuses**, which are set in `tools/batch_analyze.cpp` and are where the preset's inversion behaviour actually
+comes from." — the same paragraph (locator: lines 2636–2640).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the Jazz extension threshold and the reduced individual
+inversion bonuses set in `tools/batch_analyze.cpp` at the current commit, and is that where the preset's inversion
+behaviour comes from?
+
+---
+
+**Row 21.7 — the validation path for those values.**
+
+*Outgoing statement.* "**Validation path:** jazz ground truth carrying written-out bass and piano voicings, converted and
+score-aligned (§4.1c; `cowork_score_census.md` Tier J)." — the same paragraph (locator: lines 2640–2641).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose content is the ground truth a
+value is graded against.
+
+---
+
+**Row 21.8 — the Jazz regression check is not that validation.**
+
+*Outgoing statement.* "**★ AND THE ONE THING A READER COULD MISTAKE FOR VALIDATION IS NAMED: the Jazz BIR regression
+check is not it.**" — the same paragraph (locator: lines 2643–2644).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose content is what a check run over
+the music of another repertoire establishes.
+
+---
+
+**Row 21.9 — the gate thresholds calibrated against the Baroque corpus.**
+
+*Outgoing statement.* "**Gate threshold policy**: the inversion-preference gate thresholds in `postscoringgates.cpp`
+(Gate I: 0.45, Gate L: 0.35, etc.) are empirically calibrated against the Baroque corpus and are Baroque-specific." —
+the same sub-section, the paragraph under the label *Gate threshold policy* (locator: lines 2650–2652).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the inversion-preference gate thresholds stand in
+`postscoringgates.cpp` at the values named, and on which corpus and run were they calibrated?
+
+---
+
+**Row 21.10 — the thresholds not loosened for other styles.**
+
+*Outgoing statement.* "They must not be loosened to accommodate other styles." — the same paragraph (locator: lines
+2652–2653).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose candidate
+scoring the gates belong to.
+
+---
+
+**Row 21.11 — the two admissible fixes when a gate regresses another preset.**
+
+*Outgoing statement.* "When a gate causes regressions in a non-Baroque preset, the fix is either (a) a tighter structural
+entry condition that excludes the problematic chord type in all styles, or (b) a preset-specific threshold value passed
+through `ChordAnalyzerPreferences` — leaving the Baroque-tuned default unchanged." — the same paragraph (locator: lines
+2653–2656). *(The two lettered alternatives are one rule, the fix being either one, and the sentence is not split.)*
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.10.
+
+---
+
+**Row 21.12 — both presets pass the regression check before a gate change.**
+
+*Outgoing statement.* "Both corpus presets (Baroque and Jazz) must pass BIR=false regression checks before any gate change
+is committed." — the same paragraph (locator: lines 2657–2658).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose content is the check a change
+must pass.
+
+---
+
+**Row 21.13 — the bridge files obtain the identifier through the factory.**
+
+*Outgoing statement.* "All notation bridge files (`notationcomposingbridge.cpp`, `notationcomposingbridgehelpers.cpp`,
+`notationharmonicrhythmbridge.cpp`) use `ChordAnalyzerFactory::create()` so the analyzer type is resolved through the
+factory rather than hard-coded at each call site." — the same section, sub-section *4.1 ChordAnalyzer*, *Factory —
+`ChordAnalyzerFactory` (P4b)* (locator: line 2707).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the three bridge files obtain the chord identifier through
+`ChordAnalyzerFactory::create()` at the current commit?
+
+---
+
+**Row 21.14 — the bass-root bonus biases the identifier toward the bass as root.**
+
+*Outgoing statement.* "**Problem:** The `bassNoteRootBonus` (0.70 — corrected 2026-08-02, OI-107(a); this read 0.65)
+biases vertical analysis toward choosing the bass note as the chord root." — the same section, *§4.1b — Contextual
+Inversion Resolution*, its *Problem:* paragraph (locator: lines 2711–2712).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is `bassNoteRootBonus` 0.70 at the current commit, and does it
+bias the vertical identifier toward taking the bass as the root?
+
+---
+
+**Row 21.15 — those readings of inverted chords disagree with music21's functional notation.**
+
+*Outgoing statement.* "For inverted chords (e.g. `Gm/Bb` with Bb in bass) this produces correct bass-root readings that
+disagree with music21's functional notation." — the same paragraph (locator: lines 2713–2714).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which corpus and run do the identifier's readings of
+inverted chords with the bass as root disagree with music21's functional notation, and does that reproduce?
+
+---
+
+**Row 21.16 — the measured share of disagreements with the bass as root.**
+
+*Outgoing statement.* "74.3% of corpus disagreements have `bassIsRoot=true`." — the same paragraph (locator: line
+2715).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which corpus and run was the share of disagreements with
+the bass taken as root measured, and does it reproduce?
+
+---
+
+**Row 21.17 — local fixes for three-note inversions regress.**
+
+*Outgoing statement.* "Local scoring fixes for 3-note inversions consistently regress (see three-attempt history in
+Section 6)." — the same paragraph (locator: lines 2715–2716).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which runs did local changes to the candidate scoring for
+three-note inversions regress, and does the regression reproduce?
+
+---
+
+**Row 21.18 — the stepwise-bass inversion bonus.**
+
+*Outgoing statement.* The table row "| `stepwiseBassInversionBonus` | Bass moves by diatonic step FROM previous region |
+0.5 |" — the same sub-section, its table of three bonuses (locator: line 2726).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the candidate scoring at the current commit carry
+`stepwiseBassInversionBonus` at 0.5 under that condition, and on which arm?
+
+---
+
+**Row 21.19 — the stepwise-bass look-ahead bonus.**
+
+*Outgoing statement.* The table row "| `stepwiseBassLookaheadBonus` | Bass moves by diatonic step TO next region
+(deferred) | 0.5 |" — the same table (locator: line 2727).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is `stepwiseBassLookaheadBonus` built, or deferred as the row
+says, at the current commit?
+
+---
+
+**Row 21.20 — the same-root inversion bonus.**
+
+*Outgoing statement.* The table row "| `sameRootInversionBonus` | Candidate root matches previous chord's root | 0.4 |"
+— the same table (locator: line 2728).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the candidate scoring carry `sameRootInversionBonus` at
+0.4 under that condition at the current commit?
+
+---
+
+**Row 21.21 — as originally written, the bonuses only for major and minor candidates.**
+
+*Outgoing statement.* "As originally written: bonuses never fire for Diminished, HalfDiminished, Augmented, or Suspended
+candidates — only Major and Minor." — the same sub-section, its paragraph under the label *Safety constraints (lesson
+from three-attempt history) — ⚠ SUPERSEDED BY ITER 46, see §4.1g.* (locator: lines 2730–2732).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a superseded constraint, the member's own label marking it superseded.
+
+---
+
+**Row 21.22 — as originally written, the suspicion margin left unchanged.**
+
+*Outgoing statement.* "The existing `inversionSuspicionMargin` / `inversionBonusReduction` mechanism is left unchanged." —
+the same paragraph (locator: lines 2732–2733).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a clause of the superseded constraint as originally written.
+
+---
+
+**Row 21.23 — the qualities admitted to the three contextual inversion bonuses.**
+
+*Outgoing statement.* "`supportsContextualInversionBonuses` (`chordanalyzer.cpp:855-870`) admits **Major, Minor,
+Augmented, HalfDiminished**; **Diminished and Suspended candidates still never receive** the three contextual inversion
+bonuses." — the same sub-section, the first bullet under its correction of 2026-08-02 (locator: lines 2742–2744).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `supportsContextualInversionBonuses` admit exactly those
+four qualities at the current commit?
+
+---
+
+**Row 21.24 — the qualities admitted to the complete-triad inversion bonus.**
+
+*Outgoing statement.* "`qualifiesForCompleteTriadInversionBonus` (`chordanalyzer.cpp:829-853`) admits **Major, Minor,
+Diminished, Augmented, HalfDiminished**; only **Suspended** is still excluded." — the same correction, its second bullet
+(locator: lines 2745–2746).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `qualifiesForCompleteTriadInversionBonus` admit exactly
+those five qualities at the current commit?
+
+---
+
+**Row 21.25 — the diatonic-step helper.**
+
+*Outgoing statement.* "`isDiatonicStep(pc1, pc2)` helper declared in `notationcomposingbridgehelpers.h` (inline)." — the
+same sub-section, the paragraph after its fields table (locator: line 2765).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is `isDiatonicStep` declared inline in
+`notationcomposingbridgehelpers.h` at the current commit, and which code calls it?
+
+---
+
+**Row 21.26 — both bridges set the previous bass and its stepwise motion before each call.**
+
+*Outgoing statement.* "Both bridges (`notationcomposingbridge.cpp` and `notationharmonicrhythmbridge.cpp`) populate
+`previousBassPc` and compute `bassIsStepwiseFromPrevious` before each analysis call." — the same paragraph (locator:
+lines 2766–2767).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do both bridges set those two fields before each call at the
+current commit, and on which arm do they run?
+
+---
+
+**Row 21.27 — in the harmonic-summary operating mode, a region's identity is its root and quality.**
+
+*Outgoing statement.* "**Harmonic summary mode** (status bar, analysis, tuning): region identity = root pitch class +
+quality." — the same section, *Region identity modes (decided 2026-04-11)* (locator: lines 2829–2830).
+
+*Derived statements that speak to it.* L3-S30.
+
+*Current-text axis.* L3-S30: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text makes a region's identity *"root pitch class + quality"*,
+where L3-S30 publishes at each of L2's boundaries *"the classes of what changed across it: root, quality, figure, applied
+target, tonality"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose segmentation
+decides where one span gives way to the next.
+
+---
+
+**Row 21.28 — adjacent regions of the same root and quality merged.**
+
+*Outgoing statement.* "Adjacent regions with the same root and quality are merged." — the same paragraph (locator: line
+2830).
+
+*Derived statements that speak to it.* L3-S30.
+
+*Current-text axis.* L3-S30: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text merges adjacent regions *"with the same root and
+quality"*, where L3-S30 *"does not republish the segmentation"* and lists each of L2's boundaries with its change
+classes.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.27.
+
+---
+
+**Row 21.29 — extensions, inversions and slash-chord bass notes secondary, not identity.**
+
+*Outgoing statement.* "Extensions, inversions, and slash chord bass notes are secondary metadata, not identity keys." —
+the same paragraph (locator: lines 2830–2831).
+
+*Derived statements that speak to it.* L3-S30.
+
+*Current-text axis.* L3-S30: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing text makes inversions and slash-chord bass notes *"not identity
+keys"*, where L3-S30 counts a change of figure among *"the classes of what changed"* at a boundary.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.27.
+
+---
+
+**Row 21.30 — in the as-written operating mode, a region's identity is its full sonority.**
+
+*Outgoing statement.* "**As-written mode** (chord track "as written"): region identity = full sonority including
+extensions and bass note." — the same sub-section (locator: lines 2833–2834).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.27.
+
+---
+
+**Row 21.31 — in the as-written operating mode, octave doublings preserved.**
+
+*Outgoing statement.* "Octave doublings are preserved." — the same paragraph (locator: line 2834).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.27.
+
+---
+
+**Row 21.32 — in the as-written operating mode, regions merged only on the same full sonority.**
+
+*Outgoing statement.* "Adjacent regions are merged only when the full sonority matches." — the same paragraph (locator:
+lines 2834–2835).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.27.
+
+---
+
+**Row 21.33 — the bridge branches on the regional-accumulation setting.**
+
+*Outgoing statement.* "**Bridge wiring:** `notationharmonicrhythmbridge.cpp` branches on `useRegionalAccumulation`:" —
+the same sub-section, its *Bridge wiring:* lead (locator: line 2851).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `notationharmonicrhythmbridge.cpp` branch on
+`useRegionalAccumulation` at the current commit, and which branch runs by default?
+
+---
+
+**Row 21.34 — the regional path's chain.**
+
+*Outgoing statement.* "Bridge wiring:" with its first bullet, "Regional path: `detectHarmonicBoundariesJaccard` →
+`collectRegionTones` → `analyzeChord`" — the same lead (locator: line 2852).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the regional path at the current commit run that chain,
+the Jaccard boundary detector included?
+
+---
+
+**Row 21.35 — the legacy path's per-tick comparison.**
+
+*Outgoing statement.* "Bridge wiring:" with its second bullet, "Legacy path: per-tick PC bitset comparison (unchanged)"
+— the same lead (locator: line 2853).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the legacy branch compare the pitch-class sets tick by
+tick at the current commit, and is it reached?
+
+---
+
+**Row 21.36 — the temporal context carries the preceding chord.**
+
+*Outgoing statement.* "`ChordTemporalContext` carries the **immediately preceding chord's** root, quality, and bass, plus
+stepwise-motion flags — sufficient for root-continuity, resolution-bias, and contextual inversion scoring (§4.1b)." —
+the same section, *Temporal context — `ChordTemporalContext` vs future `TemporalContext` (P4b)* (locator: lines
+2866–2868).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `ChordTemporalContext` carry the preceding chord's root,
+quality and bass with the stepwise-motion flags at the current commit, and which terms of the candidate scoring read
+them?
+
+---
+
+**Row 21.37 — the temporal context not a full progression context.**
+
+*Outgoing statement.* "It is **not** a full progression context." — the same paragraph (locator: line 2868).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `ChordTemporalContext` carry anything beyond the preceding
+chord and the neighbouring bass and root fields at the current commit?
+
+---
+
+**Row 21.38 — a future context to carry the progression, the cadence history among it.**
+
+*Outgoing statement.* "A future `TemporalContext` will carry the full recent progression (chord sequence, cadence
+history, secondary dominants) once secondary dominant analysis (§5.6) is implemented." — the same paragraph (locator:
+lines 2868–2870).
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing context for the chord's candidate scoring is to carry *"cadence
+history"*, where L3-S38 says *"L2 reads nothing L3 publishes."*
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose chord
+decision that context would serve, as Row 2.24.
+
+---
+
+**Row 21.39 — the completeness bonus.**
+
+*Outgoing statement.* The table row "| `w_complete` | `wCompleteBonus` | +0.50 | root-position only (`bassPc == rootPc`)
+| `distinctPcs >= 3`, all three triad tones present above `extensionThreshold` | 92 |" — the same section, *§4.1d —
+Joint (bass, chord) scoring bonuses (Iters 92–96)*, its table of five bonuses (locator: line 2886).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the candidate scoring at the current commit carry
+`wCompleteBonus` at +0.50 under those gates, and on which arm?
+
+---
+
+**Row 21.40 — the step-in bonus.**
+
+*Outgoing statement.* The table row "| `w_stepIn` | `wStepInBonus` | +0.10 | root-position only | `previousBassPc` moves
+≤2 semitones to bass; not Power quality; m7-family guard | 94 |" — the same table (locator: line 2887).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the candidate scoring carry `wStepInBonus` at +0.10 under
+those gates at the current commit?
+
+---
+
+**Row 21.41 — the step-out bonus.**
+
+*Outgoing statement.* The table row "| `w_stepOut` | `wStepOutBonus` | +0.10 | root-position only | bass moves ≤2
+semitones to `nextBassPc`; same guards as `w_stepIn` | 94 |" — the same table (locator: line 2888).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the candidate scoring carry `wStepOutBonus` at +0.10
+under those gates at the current commit?
+
+---
+
+**Row 21.42 — the descending-fifth sequence bonus.**
+
+*Outgoing statement.* The table row "| `w_seq` | `wSeqBonus` | +0.20 | any inversion | `nextRootPc >= 0`;
+`((nextRootPc - rootPc + 12) % 12) == 5` (P4-below = descending-fifth); `distinctPcs >= 4` | 95 |" — the same table
+(locator: line 2889).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the candidate scoring carry `wSeqBonus` at +0.20 under
+those gates at the current commit?
+
+---
+
+**Row 21.43 — the diminished leading-tone bonus.**
+
+*Outgoing statement.* The table row "| `w_dim` | `wDimBonus` | +0.15 | Diminished or HalfDiminished only | `nextRootPc >=
+0`; `((nextRootPc - rootPc + 12) % 12) == 1` (semitone resolution = leading-tone); `distinctPcs >= 4` | 96 |" — the same
+table (locator: line 2890).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the candidate scoring carry `wDimBonus` at +0.15 under
+those gates at the current commit?
+
+---
+
+**Row 21.44 — the first-inversion seventh-family guard on the step bonuses.**
+
+*Outgoing statement.* "*First-inversion-m7-family guard* — if any competitor in the same `perBass` block with quality in
+{HalfDiminished, Diminished, Minor7} sits at `(candBassPc − 3) mod 12` (minor third below our bass = first-inversion
+shape) AND scores within `kStepBudget = kWStepIn + kWStepOut + 0.01` of the candidate's unbonused score, both step
+bonuses are suppressed." — the same sub-section, the first of its two guards (locator: lines 2896–2900).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the candidate scoring suppress both step bonuses under
+that condition at the current commit?
+
+---
+
+**Row 21.45 — the parent region's bass supplied to each sub-region call.**
+
+*Outgoing statement.* "Bridge Pass 2 / Pass 2b in `notationharmonicrhythmbridge.cpp` and the main analysis loop in
+`tools/batch_analyze.cpp` compute the predecessor / successor PARENT region's bass PC and override
+`subCtx.previousBassPc` / `subCtx.nextBassPc` for each sub-region call." — the same sub-section, *Parent-scope context
+plumbing (Iter 94)* (locator: lines 2911–2914).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the bridge's Pass 2 and 2b and the batch tool's loop
+override those two fields with the parent region's bass at the current commit, and on which arm?
+
+---
+
+**Row 21.46 — the order of that override and its restore.**
+
+*Outgoing statement.* "The override happens AFTER the stepwise booleans (which remain sub-region-scope for
+passing-tone/inversion signals) and BEFORE the `analyzeChord` call; a post-call restore keeps the next iteration's
+stepwise boolean correct." — the same paragraph (locator: lines 2914–2917).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the code override the fields after the stepwise booleans
+and before the call, and restore them after it, at the current commit?
+
+---
+
+**Row 21.47 — the same override for the next root.**
+
+*Outgoing statement.* "The same pattern was applied to `nextRootPc` in Iter 95 Step 2." — the same paragraph (locator:
+line 2917).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is `nextRootPc` overridden from the parent region in the same
+way at the current commit?
+
+---
+
+**Row 21.48 — the identifier reads the notes sounding together at one point in time.**
+
+*Outgoing statement.* "`RuleBasedChordAnalyzer` is a **vertical sonority analyzer**: it identifies what chord is implied
+by the set of simultaneously sounding notes at a single point in time." — the same section, *Design boundary — vertical
+sonority vs functional/contextual harmony* (locator: lines 2958–2959).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `RuleBasedChordAnalyzer` read only the notes sounding
+together at one point at the current commit, given the contextual bonuses of §4.1b and §4.1d?
+
+---
+
+**Row 21.49 — the identifier performs no functional analysis.**
+
+*Outgoing statement.* "It does not perform functional harmonic analysis (Roman-numeral reductions, cadence detection,
+tonicization, secondary dominants) or contextual annotation (what role this chord plays in the surrounding
+progression)." — the same paragraph (locator: lines 2959–2962).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `RuleBasedChordAnalyzer` perform none of the functional
+analysis listed at the current commit?
+
+---
+
+**Row 21.50 — the annotators write the functional root; the identifier takes the bass as root.**
+
+*Outgoing statement.* "**3-note triads in inversion** (bass ≠ functional root): DCML annotates the functional root;
+vertical analysis defaults to bass=root." — the same sub-section, the first bullet of its list of divergences (locator:
+lines 2970–2971). Two claims: (i) the DCML annotation writes the functional root of a three-note triad in inversion;
+(ii) the vertical identifier takes the bass as the root by default.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose content is what the ground
+truth writes. (ii) **QUARANTINED.** *Audit question:* does the vertical identifier take the bass as the root of a
+three-note triad in inversion by default at the current commit?
+
+---
+
+**Row 21.51 — a bare triad's root not resolvable from the local notes alone.**
+
+*Outgoing statement.* "For bare triads this cannot be resolved from local note content alone." — the same bullet
+(locator: lines 2971–2972).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose chord
+decision is taken over the whole sequence of spans.
+
+---
+
+**Row 21.52 — the measured share of three-note triads among the disagreements.**
+
+*Outgoing statement.* "95.8% of all disagreements with BIR (bass-is-root) errors are 3-note triads." — the same bullet
+(locator: lines 2972–2973).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which corpora and run was that share of three-note triads
+measured, and does it reproduce?
+
+---
+
+**Row 21.53 — the annotators may fold a passing chord into a broader region; the identifier reads the notes
+independently.**
+
+*Outgoing statement.* "**Functional prolongation**: DCML may annotate a passing or neighboring chord as part of a broader
+harmonic region (e.g. a cadential 6-4 as dominant), while vertical analysis identifies the sounding notes
+independently." — the same list, its second bullet (locator: lines 2974–2976). Two claims: (i) the DCML annotation may
+write a passing or neighbouring chord inside a broader harmonic region, the cadential six-four as the dominant;
+(ii) the vertical identifier identifies the sounding notes independently.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, as Row 21.50 (i). (ii)
+**QUARANTINED.** *Audit question:* does the vertical identifier read each sounding stretch on its own, with no
+prolongation, at the current commit?
+
+---
+
+**Row 21.54 — a contextual harmony layer over the identifier's output, planned for Phase 2.**
+
+*Outgoing statement.* "Improving beyond ~84% requires a **contextual harmony layer** (Phase 2) that consumes a sequence
+of `ChordAnalysisResult` outputs and applies voice-leading, cadence, and harmonic-sequence reasoning." — the same
+sub-section, its closing paragraph (locator: lines 2978–2980).
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing layer *"consumes a sequence of `ChordAnalysisResult` outputs and
+applies … cadence … reasoning"* to improve the chords' agreement, where L3-S38 says *"No L3 fact may change an L2 fact,
+a rival or a mass."*
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan of the earlier layer stack for its Phase 2.
+
+---
+
+**Row 21.55 — that layer out of Phase 1's scope.**
+
+*Outgoing statement.* "That layer is explicitly out of Phase 1 scope." — the same paragraph (locator: line 2980).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the scope of a phase of the earlier plan.
+
+---
+
+**Row 21.56 — no contextual heuristics added to the vertical identifier.**
+
+*Outgoing statement.* "Do not attempt to improve corpus agreement by adding heuristics to `RuleBasedChordAnalyzer` that
+embed contextual assumptions — keep the vertical/contextual boundary clean." — the same paragraph (locator: lines
+2980–2982).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose chord
+decision the rule bounds.
+
+---
+
+**Row 21.57 — the gates fire after the first pass of the candidate scoring.**
+
+*Outgoing statement.* "Gates fire in `analyzeChord()` after the initial scoring pass, before results are returned." — the
+same section, *§4.1g — Iteration Path 1 Close (final state)*, its *Active gates* (locator: lines 3008–3009).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the gates fire after the first pass of the candidate
+scoring and before the results are returned, at the current commit and on which arm?
+
+---
+
+**Row 21.58 — each gate reads structured fields only.**
+
+*Outgoing statement.* "Each operates on **structured fields only** (rootPc, bassPc, quality, extensions, key tonic, scale,
+score margin) — no chord-symbol string parsing, no Roman-numeral inference." — the same paragraph (locator: lines
+3009–3011). Two claims: (i) each gate reads structured fields only, parsing no chord-symbol string; (ii) it infers no
+Roman numeral.
+
+*Derived statements that speak to it.* (i) L3-S38. (ii) None.
+
+*Current-text axis.* (i) L3-S38: **AGREES** — the chord symbol is L3's publication, and L3-S38 says *"L2 reads nothing L3
+publishes"*, as at Row 20.10 (i). (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does every gate applied after the candidate scoring read
+only the structured fields listed, parsing no chord-symbol string, at the current commit? (ii) **QUARANTINED.** *Audit question:* does any
+gate infer a Roman numeral at the current commit?
+
+---
+
+**Row 21.59 — the gates' conditions on the winner and a runner-up.**
+
+*Outgoing statement.* "Conditions are pre-conditions on `winner` and a candidate runner-up `inv`/`alt`." — the same
+paragraph (locator: lines 3011–3012).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the gates' conditions tests on the winner and one
+runner-up at the current commit?
+
+---
+
+**Row 21.60 — Gate A.**
+
+*Outgoing statement.* The table row "| **A** (winnerCorrection enharmonic flip) | 2–3 | MajorAdd6 ↔ Minor7 inversion
+enharmonic pair; bestAlt at expectedAltRoot in results[] | Foundational; pre-path-1 |" — the same section, its table of
+active gates (locator: line 3017).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does Gate A stand among the gates applied after the candidate
+scoring at the current commit, under the condition the row gives?
+
+---
+
+**Row 21.61 — Gate B.**
+
+*Outgoing statement.* The table row "| **B** | 3 | + context.nextRootPc == altRoot && bassIsStepwiseToNext | Foundational
+|" — the same table (locator: line 3018).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does Gate B stand under that condition at the current commit?
+
+---
+
+**Row 21.62 — Gate C.**
+
+*Outgoing statement.* The table row "| **C** | 3 | + altRoot in recentRootPcs && bassIsStepwiseFromPrevious |
+Foundational |" — the same table (locator: line 3019).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does Gate C stand under that condition at the current commit?
+
+---
+
+**Row 21.63 — Gate D.**
+
+*Outgoing statement.* The table row "| **D** | 3 | + consecutiveBassStepwiseCount ≥ 2 | Foundational |" — the same table
+(locator: line 3020).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does Gate D stand under that condition at the current commit?
+
+---
+
+**Row 21.64 — Gate E, first inversion.**
+
+*Outgoing statement.* The table row "| **E** (first-inversion) | 4 | Minor winner; bestAlt.rootPc == (winner.rootPc + 8)
+% 12; stepwise bass | Foundational |" — the same table (locator: line 3021).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does Gate E stand under that condition at the current commit?
+
+---
+
+**Row 21.65 — Gate F, second inversion.**
+
+*Outgoing statement.* The table row "| **F** (second-inversion) | 4 | Major bestAlt; altRoot == (winner.rootPc + 5) % 12;
+stepwise bass | Foundational |" — the same table (locator: line 3022).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does Gate F stand under that condition at the current commit?
+
+---
+
+**Row 21.66 — Gate G-E, the key context.**
+
+*Outgoing statement.* The table row "| **G-E** (key-context) | 12, 21 | Minor+Add6 winner; HalfDim7 alt rooted on
+leading-tone, supertonic, or mediant of key; rawCandidates fallback (Iter 21) when HalfDim suppressed by temporal
+context | 27 BIR=true |" — the same table (locator: line 3023).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does Gate G-E stand under that condition at the current
+commit, and on which run was its effect measured?
+
+---
+
+**Row 21.67 — Gates G-B, G-C and G-D.**
+
+*Outgoing statement.* The table row "| **G-B / G-C / G-D** | 12 | Temporal fallbacks for MinorAdd6 → HalfDim7 (analogous
+to B/C/D) | (part of Iter 12 / 21) |" — the same table (locator: line 3024).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the three temporal fallbacks stand at the current commit?
+
+---
+
+**Row 21.68 — Gate H, the augmented root.**
+
+*Outgoing statement.* The table row "| **H** | 7C | Augmented winner; alt rooted at winner.rootPc + 4 or +8
+(root-symmetry); + temporal evidence (H-B/H-C/H-D) | Augmented root-disambiguation |" — the same table (locator: line
+3025).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does Gate H stand under that condition at the current commit?
+
+---
+
+**Row 21.69 — Gate I.**
+
+*Outgoing statement.* The table row "| **I** | 25 | Minor winner, bassIsRoot=true; alt with same bass, non-root-position,
+root a major-third below bass (I4 interval), diatonic; score margin ≤ 0.45 | 18 BIR=true |" — the same table (locator:
+line 3026).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does Gate I stand under that condition and that margin at the
+current commit, and on which run was its effect measured?
+
+---
+
+**Row 21.70 — Gate K.**
+
+*Outgoing statement.* The table row "| **K** | 30 | Augmented winner, bassIsRoot=true; alt same bass, non-root-position,
+root a major-third below bass; quality Augmented or Major+SharpFifth; diatonic; margin ≤ 0.20 | 1 BIR=true |" — the
+same table (locator: line 3027).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does Gate K stand at the current commit, or is it retired as
+the member's correction of 2026-08-02, in the cut, says?
+
+---
+
+**Row 21.71 — Gate L.**
+
+*Outgoing statement.* The table row "| **L** | 32 | Plain Augmented winner (no 7th), bassIsRoot=true; alt has same root
+AND same bass (root-position), Major quality, diatonic; margin ≤ 0.35 | 4 BIR=true |" — the same table (locator: line
+3028).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does Gate L stand under that condition and that margin at the
+current commit, and on which run was its effect measured?
+
+---
+
+**Row 21.72 — the clean-qualities guard.**
+
+*Outgoing statement.* The table row "| **kCleanQualities guard** | 60 (`381b401add`) | Minor or Minor+AddedSixth winner;
+HalfDim alt where all 4 tones confirmed (root, root+3, root+6, root+10 mod 12); bass is m3/b5/m7 of HalfDim alt root;
+gate: `preferMinorOverMajorAdd6` → deduction on winner score | Enables HalfDim inversion bonus to fire; part of Iter
+60+61 composite fix |" — the same table (locator: line 3029).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the clean-qualities guard stand under that condition at
+the current commit?
+
+---
+
+**Row 21.73 — the half-diminished first-inversion bonus.**
+
+*Outgoing statement.* The table row "| **HalfDim first-inversion bonus** | 61 (`a34dba041e`), 65 (`af785da463`) | Same
+structural check as kCleanQualities; bass PC exempt from `extensionThreshold` in `allTonesPresent` (Iter 65: bass is
+sounding by definition); score bonus applied to HalfDim candidate, gated on `preferMinorOverMajorAdd6` | BIR=true 7→6;
+BIR=false 132→125 (bonus eliminated 7 false-positive Power/Minor inversions) |" — the same table (locator: line 3030).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the bonus stand under that check at the current commit,
+and on which run was its effect measured?
+
+---
+
+**Row 21.74 — the two predicates extended to augmented and half-diminished candidates.**
+
+*Outgoing statement.* "`supportsContextualInversionBonuses()` and `qualifiesForCompleteTriadInversionBonus()` in
+`chordanalyzer.cpp` were extended to include `Augmented` and `HalfDiminished` in addition to the original
+`Major`/`Minor` (and `Diminished` for the latter)." — the same section, *Active scoring extensions — Iter 46
+(`36bf4738a8`)* (locator: lines 3034–3036).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event of iteration path 1.
+
+---
+
+**Row 21.75 — before that extension, the correct inverted readings unreachable.**
+
+*Outgoing statement.* "Before Iter 46, Augmented and HalfDiminished inversion candidates received neither
+`stepwiseBassInversionBonus` (+0.50), `stepwiseBassLookaheadBonus` (+0.50), `sameRootInversionBonus` (+0.40), nor
+`completeTriadInversionBonus` (+0.45) — so correct inverted readings (e.g. `C+/E`, `Yø7/X`) fell below the `results[]`
+cutoff entirely and were unreachable by Gate H/Q." — the same paragraph (locator: lines 3036–3041).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state before Iter 46.
+
+---
+
+**Row 21.76 — augmented and half-diminished inversion candidates on equal footing.**
+
+*Outgoing statement.* "Extending these gates put Augmented and HalfDiminished inversion candidates on equal footing with
+Major/Minor." — the same paragraph (locator: lines 3041–3042).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do augmented and half-diminished inversion candidates receive
+the same contextual inversion bonuses as major and minor ones at the current commit?
+
+---
+
+**Row 21.77 — the deprecated detector's fixed quarter-note window.**
+
+*Outgoing statement.* "**Fixed quarter-note window** (`Constants::DIVISION`) — wrong for non-4/4 meters, swing-eighth
+feel, or any meter where the harmonic rhythm does not align with the quarter-note grid." — the same section, the first
+bullet of the reasons the Jaccard boundary detector is deprecated (locator: lines 3064–3066).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a defect of the deprecated detector, recorded as a reason for its deprecation.
+
+---
+
+**Row 21.78 — the deprecated detector measured overlap of pitch classes, not harmonic function.**
+
+*Outgoing statement.* "**Jaccard measures pitch-class overlap, not harmonic function** — two regions sharing 70 % of
+their pitch classes can still be functionally distinct (a IV–V motion has high pitch overlap if the bass moves
+diatonically), and two regions with low overlap can be the same chord under embellishment." — the same list, its
+second bullet (locator: lines 3067–3070).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — as Row 21.77.
+
+---
+
+**Row 21.79 — the deprecated detector's running accumulation.**
+
+*Outgoing statement.* "**Running accumulation** suppresses subsequent boundaries within a region (`prevBits = unionBits`
+on non-boundary windows), so a gradual harmonic shift never fires a boundary even when the shift is complete." — the
+same list, its third bullet (locator: lines 3071–3073).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — as Row 21.77.
+
+---
+
+**Row 21.80 — the deprecated detector's single pass with no revision.**
+
+*Outgoing statement.* "**Single-pass with no revision** — once a boundary is missed or spuriously fired, there is no later
+pass that re-evaluates segmentation in light of the inferred chord identities." — the same list, its fourth bullet
+(locator: lines 3074–3076).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — as Row 21.77.
+
+---
+
+**Row 21.81 — the Gate M cluster of the Path-1 residual.**
+
+*Outgoing statement.* The table row "| **Gate M cluster** | 7 | Winner = Minor (root-position); correct = Diminished or
+HalfDiminished at same bass | No temporal signal reliably separates genuine from false-positive at any viable threshold.
+|" — the same section, its table of the Path-1 residual, under *Genuine-21 residual — Path 1 floor (for historical
+reference)* (locator: line 3098).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the Path-1 characterization, kept for historical reference, as the member's own
+heading says.
+
+---
+
+**Row 21.82 — Cluster A of the Path-1 residual.**
+
+*Outgoing statement.* The table row "| **Cluster A** (Minor6 ↔ HalfDim 1st-inv) | 7 | Winner = Minor6 root-position;
+correct = HalfDiminished 1st inversion at same bass (`Xm6 ≡ Yø7/X`) | 5/7: correct alternative absent from `results[]`
+— candidate-generation gap. 2/7: FP rate 9:2. |" — the same table (locator: line 3099).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — as Row 21.81.
+
+---
+
+**Row 21.83 — the power and suspended cluster of the Path-1 residual.**
+
+*Outgoing statement.* The table row "| **Power / Suspended** | 4 | Winner = Power or Suspended quality at root-position |
+Not fully diagnosed at Path 1 close. |" — the same table (locator: line 3100).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — as Row 21.81.
+
+---
+
+**Row 21.84 — the edge cases of the Path-1 residual.**
+
+*Outgoing statement.* The table row "| **Edge cases** | 2–3 | Individually examined; no shared pattern | No viable gate. |"
+— the same table (locator: line 3101).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — as Row 21.81.
+
+---
+
+**Row 21.85 — the bass-not-root residual left to the replacement detector.**
+
+*Outgoing statement.* "The 128 BIR=false residual was not separately re-characterised in path 1; remediation is expected
+from the Task #62 replacement algorithm, which will change the region boundaries on which inversion analysis runs." —
+the same section, after *Current residual — see §4.1h for the live Genuine-5 breakdown.* (locator: lines 3105–3107).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status of iteration path 1 and its expected remedy.
+
+---
+
+**Row 21.86 — Iter 55.**
+
+*Outgoing statement.* "**Iter 55** — Baseline update + pipeline snapshot goldens refresh after greedy-expand switch." —
+the same section, *§4.1h — Iteration Path 2 — Current State (May 2026)*, the first bullet of its fixes applied (locator:
+line 3142).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event of iteration path 2.
+
+---
+
+**Row 21.87 — Iter 56 and 57.**
+
+*Outgoing statement.* "**Iter 56/57** — Re-characterize genuine-14; identify 4 BIR=false regressions from
+Jaccard→greedy-expand." — the same list (locator: line 3143). Two claims: (i) the genuine residual was re-characterized;
+(ii) four regressions with the bass not the root were found from the switch of detector.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event of iteration path 2. (ii) **QUARANTINED.** *Audit question:* on
+which run were those four regressions found, and does it reproduce?
+
+---
+
+**Row 21.88 — Iter 58 and 59.**
+
+*Outgoing statement.* "**Iter 58–59** — Blocker C investigation: HalfDim candidates are enumerated for all 12×16
+root×template combinations; real issue is scoring/penalty imbalance." — the same list (locator: line 3144). Two claims:
+(i) an investigation was made; (ii) half-diminished candidates are enumerated for every combination of root and
+template, the issue being a balance of terms in the candidate scoring.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event of iteration path 2. (ii) **QUARANTINED.** *Audit question:* are
+half-diminished candidates enumerated for all twelve roots and all templates at the current commit?
+
+---
+
+**Row 21.89 — Iter 60.**
+
+*Outgoing statement.* "**Iter 60** (`381b401add`) — kCleanQualities guard (HalfDim inversion deduction on Minor/Minor6
+winner) + alternative cap raised 2→3. BIR=true 14→7." — the same list (locator: line 3145). Two claims: (i) the guard
+was added and the cap of alternatives raised from two to three; (ii) the measured effect.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event of iteration path 2. (ii) **QUARANTINED.** *Audit question:* on
+which run was the effect of Iter 60 measured, and does it reproduce?
+
+---
+
+**Row 21.90 — Iter 61.**
+
+*Outgoing statement.* "**Iter 61** (`a34dba041e`) — HalfDim first-inversion score bonus (Option B), gated on
+`preferMinorOverMajorAdd6`. BIR=true 7→6, BIR=false 132→125." — the same list (locator: line 3146). Two claims: (i) the
+bonus was added under that gate; (ii) the measured effect.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event of iteration path 2. (ii) **QUARANTINED.** *Audit question:* on
+which run was the effect of Iter 61 measured, and does it reproduce?
+
+---
+
+**Row 21.91 — Iter 63.**
+
+*Outgoing statement.* "**Iter 63** (`cd6a61e6a0`) — Baseline enumeration (BIR=true=6, BIR=false=125); fresh
+characterization of all 6 genuine cases saved to `tools/iter63_genuine6_characterization.txt`." — the same list
+(locator: line 3148). Two claims: (i) the baseline was enumerated and the genuine cases characterized; (ii) the counts.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event of iteration path 2. (ii) **QUARANTINED.** *Audit question:* on
+which run were those counts taken, and do they reproduce?
+
+---
+
+**Row 21.92 — Iter 65.**
+
+*Outgoing statement.* "**Iter 65** (`af785da463`) — Bass-PC exemption in `allTonesPresent` for HalfDim inversion check
+(bass is sounding by definition; was falsely failing threshold). BIR=true 6→5." — the same list (locator: line 3149).
+Two claims: (i) the bass pitch class was exempted from the threshold in the half-diminished inversion check; (ii) the
+measured effect.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event of iteration path 2. (ii) **QUARANTINED.** *Audit question:* on
+which run was the effect of Iter 65 measured, and does it reproduce?
+
+---
+
+**Row 21.93 — the genuine-5 residual: bwv184.5 at bar 13, beat 3.**
+
+*Outgoing statement.* The table row "| bwv184.5 m=13 b=3.0 | Scoring gap | Winner A5 (2.05) vs Dsus2/A (1.98); gap 0.07
+| Target of Iter 66 sus2 P5-inversion bonus |" — the same section, its table of the genuine-5 residual (locator: line
+3155).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run was that case characterized, and does the
+reading and its margin reproduce?
+
+---
+
+**Row 21.94 — the genuine-5 residual: bwv184.5 at bar 13, beat 4.**
+
+*Outgoing statement.* The table row "| bwv184.5 m=13 b=4.0 | Hypothesis A | 6 PCs: over-merged A7→D cadence; boundary
+split | Segmentation fix needed; deferred to Iter 66+ |" — the same table (locator: line 3156).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run was that case characterized as an over-merged
+stretch, and does it reproduce?
+
+---
+
+**Row 21.95 — the genuine-5 residual: bwv371 at bar 35.**
+
+*Outgoing statement.* The table row "| bwv371 m=35 b=2.5 | Correct | Annotation disagreement; our analysis likely correct
+| No fix needed |" — the same table (locator: line 3157).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run was that case read as an annotation disagreement,
+and does the reading hold at the music?
+
+---
+
+**Row 21.96 — the genuine-5 residual: bwv372 at bar 10.**
+
+*Outgoing statement.* The table row "| bwv372 m=10 b=1.5 | Hypothesis A | {C,G,A}: Bb missing from region; adjacent
+regions Bb-rooted | Segmentation fix needed; deferred to Iter 66+ |" — the same table (locator: line 3158).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run was that case characterized as a stretch missing
+its B♭, and does it reproduce?
+
+---
+
+**Row 21.97 — the genuine-5 residual: bwv43.11 at bar 3.**
+
+*Outgoing statement.* The table row "| bwv43.11 m=3 b=2.0 | Scoring gap / absent | {D,E,A}=Dsus2; Dsus2 not in results[]
+(cap-3 A-rooted); results-cap issue | Target of Iter 66 sus2 P5-inversion bonus |" — the same table (locator: line
+3159).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run was that case characterized as a reading absent
+from the capped results, and does it reproduce?
+
+---
+
+**Row 21.98 — the formatter declared beside the analysis types.**
+
+*Outgoing statement.* "**`ChordSymbolFormatter` in `chordanalyzer.h`** — a display-layer class declared alongside
+analysis types." — the same section, *§4.1i — Technical Debt and Refactor Backlog (reviewed 2026-05-22)*, the second
+bullet of its *Act now* items (locator: lines 3195–3196).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the formatter declared in `chordanalyzer.h` beside the
+analysis types at the current commit?
+
+---
+
+**Row 21.99 — the formatter's implementation moved, its declarations left.**
+
+*Outgoing statement.* "Refactor-1 moved the IMPLEMENTATION to `analysis/chord/chordsymbolformatter.cpp`; the
+DECLARATIONS were intentionally left in `chordanalyzer.h` and no `chordsymbolformatter.h` exists." — the same bullet,
+after its label *PARTLY DONE — status corrected 2026-08-02 (…)* (locator: lines 3199–3201).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the implementation live in `chordsymbolformatter.cpp` with
+the declarations in `chordanalyzer.h` and no `chordsymbolformatter.h`, at the current commit?
+
+---
+
+**Row 21.100 — the boundary enforced by the inference/presentation tests.**
+
+*Outgoing statement.* "The header half is the residue; it is tracked as OI-108(b), and the boundary the item was written
+to protect is now enforced mechanically both ways by `inference_presentation_boundary_tests` (see the record-path
+section at the head of this document)." — the same bullet (locator: lines 3201–3204).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do `inference_presentation_boundary_tests` assert the include
+closure in both directions and pass at the current commit (as Row 15.44)?
+
+---
+
+**Row 21.101 — the chord identifier's preferences structure conflates four concerns.**
+
+*Outgoing statement.* "**Split `ChordAnalyzerPreferences`** — the struct conflates chord-scoring weights, inversion
+heuristics, harmonic-boundary thresholds, and pedal-tail weight." — the same sub-section, the first of its *Defer
+until scoring stabilises* items (locator: lines 3208–3209).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `ChordAnalyzerPreferences` hold the weights of the
+chord's candidate scoring, the inversion heuristics, the boundary thresholds and the pedal-tail weight together at the
+current commit?
+
+---
+
+**Row 21.102 — the three placeholder fields for planned features.**
+
+*Outgoing statement.* "**`useExistingChordSymbols`, `useRomanNumeralAnnotations`, `useNashvilleAnnotations`** in
+`ChordAnalyzerPreferences` — these are placeholder fields for planned features, not dead code." — the same
+sub-section, under its *Do not remove:* line (locator: lines 3231–3233).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the three fields exist at the current commit, and does any
+code read them?
+
+---
+
+**Row 21.103 — the key/mode identifier's input structure, as listed.**
+
+*Outgoing statement.* The fenced block of the `PitchContext` structure — four fields, each with its comment as the block
+writes it: "MIDI pitch number", "Duration in quarter notes — longer notes have more influence", "1.0 = downbeat, ~0.2 =
+offbeat" and "Bass notes weighted 2× in analysis" — the same section, sub-section *4.2 KeyModeAnalyzer*, *Input —
+`PitchContext`* (locator: lines 3287–3294), tabulated as one unit, as a table row is.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `PitchContext` declare those four fields at the current
+commit, and does the key/mode identifier weight a bass note twice?
+
+---
+
+**Row 21.104 — the note weight caps.**
+
+*Outgoing statement.* "**Note weight caps** — `noteWeightCap`, `bassMultiplier`" — the same sub-section, *Tunable
+Parameters — `KeyModeAnalyzerPreferences`*, the first of its groups of weights (locator: line 3346).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `KeyModeAnalyzerPreferences` hold those two weights at the
+current commit, and does the analysis that runs reach them?
+
+---
+
+**Row 21.105 — the scale-membership weights.**
+
+*Outgoing statement.* "**Scale membership** — four case weights (`scaleScoreInBoth`, etc.)" — the same list (locator:
+line 3347).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `KeyModeAnalyzerPreferences` hold four case weights for
+scale membership at the current commit?
+
+---
+
+**Row 21.106 — the tonal-centre weights.**
+
+*Outgoing statement.* "**Tonal centre** — per-tone weights and bonus/penalty for complete triad" — the same list
+(locator: line 3348).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `KeyModeAnalyzerPreferences` hold per-tone weights and a
+complete-triad bonus and penalty at the current commit?
+
+---
+
+**Row 21.107 — the characteristic-pitch weights.**
+
+*Outgoing statement.* "**Characteristic pitch** — `characteristicPitchBoost`, `characteristicPitchPenalty`" — the same
+list (locator: line 3349).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `KeyModeAnalyzerPreferences` hold those two weights at the
+current commit?
+
+---
+
+**Row 21.108 — the true leading-tone weight.**
+
+*Outgoing statement.* "**True leading tone** — `trueLeadingToneBoost`" — the same list (locator: line 3350).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `KeyModeAnalyzerPreferences` hold `trueLeadingToneBoost`
+at the current commit?
+
+---
+
+**Row 21.109 — the twenty-one mode priors, populated from the user's preferences.**
+
+*Outgoing statement.* "**Mode priors** — `modePriorIonian` through `modePriorAlteredDomBB7` (21 independent priors);
+populated from user preferences via `IComposingAnalysisConfiguration::modePrior*()` in the bridge; replaces former
+4-tier grouping" — the same list (locator: lines 3351–3353).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `KeyModeAnalyzerPreferences` hold twenty-one mode priors
+filled from the user's preferences by the bridge at the current commit, and does the analysis that runs read them?
+
+---
+
+**Row 21.110 — the tonal-centre comparison and its raw-candidate guard.**
+
+*Outgoing statement.* "**Tonal-centre comparison** — independent weights for the same-key-signature family decision
+(`tonalCenter*`); diatonic family selection also applies a raw-score guard before tonal-centre can overturn the current
+raw winner" — the same list (locator: lines 3354–3356).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the same-signature family decision use its own weights,
+and does the diatonic family selection guard the raw winner, at the current commit?
+
+---
+
+**Row 21.111 — the key-signature proximity weight.**
+
+*Outgoing statement.* "**Key-signature proximity** — `keySignatureDistancePenalty`" — the same list (locator: line
+3357).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `KeyModeAnalyzerPreferences` hold
+`keySignatureDistancePenalty` at the current commit?
+
+---
+
+**Row 21.112 — the disambiguation weights.**
+
+*Outgoing statement.* "**Disambiguation** — `disambiguationTriadBonus`, `disambiguationTriadCost`,
+`disambiguationTonicBonus`" — the same list (locator: lines 3358–3359).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `KeyModeAnalyzerPreferences` hold those three weights at
+the current commit?
+
+---
+
+**Row 21.113 — the confidence sigmoid's constants.**
+
+*Outgoing statement.* "**Confidence sigmoid** — `confidenceSigmoidMidpoint`, `confidenceSigmoidSteepness`" — the same
+list (locator: line 3360).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `KeyModeAnalyzerPreferences` hold the sigmoid's midpoint
+and steepness at the current commit, and which confidence do they shape?
+
+---
+
+**Row 21.114 — the beat-type weights.**
+
+*Outgoing statement.* "**Beat-type weights** — `beatWeightDownbeat` through `beatWeightSubbeat`" — the same list
+(locator: line 3361).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `KeyModeAnalyzerPreferences` hold the beat-type weights
+from the downbeat to the sub-beat at the current commit?
+
+---
+
+**Row 21.115 — the jazz path retired.**
+
+*Outgoing statement.* "**Status: Retired** — production analysis paths in commit 02e3733afb, tool-side surfaces in
+69716deead." — the same section, *§4.1c Part 2 — Jazz Mode (chord-symbol-driven boundaries)* (locator: line 3378).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the status of a retired path.
+
+---
+
+**Row 21.116 — chord symbols no longer read by any analysis or tool path.**
+
+*Outgoing statement.* "Chord symbols are no longer read by any analysis or tool path." — the same line (locator: line
+3378).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **AGREES** — it says *"L3 never reads the composer's figures"*, citing IC-L1 S-8, under which
+*"Figured bass and chord symbols written by the composer are annotation"*, as at Row 20.12.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does any analysis or tool path read a chord symbol written in
+the score at the current commit?
+
+---
+
+**Row 21.117 — the jazz-specific experiments reverted.**
+
+*Outgoing statement.* "**2026-04-08 follow-up:** Temporary jazz-specific scoring experiments were evaluated and then
+reverted." — the same sub-section (locator: lines 3380–3381).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event.
+
+---
+
+**Row 21.118 — the jazz flag kept as a context flag; no jazz-only adjustment remains.**
+
+*Outgoing statement.* "`ChordTemporalContext::jazzMode` is retained only as a context flag for chord-symbol-driven
+analysis paths and future diagnostics; no accepted jazz-only scoring adjustments remain in the analyzer." — the same
+paragraph (locator: lines 3381–3383). Two claims: (i) the jazz flag is retained only as a context flag; (ii) no
+accepted adjustment of the candidate scoring for jazz alone remains in the identifier.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does `ChordTemporalContext` carry `jazzMode` at the current
+commit, the member's fields table recording it removed? (ii) **QUARANTINED.** *Audit question:* does any adjustment of
+the candidate scoring for jazz alone remain in the identifier at the current commit?
+
+---
+
+**Row 21.119 — the bass-injection experiment.**
+
+*Outgoing statement.* "Experiment: `batch_analyze --inject-written-root` adds a synthetic bass tone at the written chord
+symbol root before calling `analyzeChord()`." — the same sub-section, *Jazz validation findings (2026-04-08)* (locator:
+lines 3390–3391).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an experiment of a measurement tool whose flag the member records as retired.
+
+---
+
+**Row 21.120 — the injection flag a diagnostic upper bound.**
+
+*Outgoing statement.* "The `--inject-written-root` flag in `batch_analyze` provides a diagnostic upper bound." — the same
+sub-section (locator: line 3409).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `batch_analyze` carry the `--inject-written-root` flag at
+the current commit?
+
+---
+
+**Row 21.121 — not a production path; chord symbols never input to the analysis.**
+
+*Outgoing statement.* "It is not a production path: chord symbols must never be used as analyzer input in production
+because they are user content and may be incorrect." — the same paragraph (locator: lines 3410–3411). Two claims: (i)
+the flag is not a production path; (ii) a chord symbol written in the score is never input to the analysis in
+production, being content the user wrote and possibly wrong.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S29.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S29: **AGREES**, as at Row 21.116.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* is the flag reached by no production path at the current
+commit? (ii) **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Rows 20.12 to 20.14; IC-L1 S-2
+and S-8 carry it.
+
+---
+
+**Row 21.122 — the ban decided by what an annotation says.**
+
+*Outgoing statement.* "**The ban is decided by WHAT AN ANNOTATION SAYS, not by how the score stores it.**" — the same
+sub-section (locator: line 3413).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 21.121 (ii).
+
+---
+
+**Row 21.123 — no harmonic annotation written in the score read as input.**
+
+*Outgoing statement.* "No harmonic annotation already written in a score may be read as analyzer input — not a chord
+symbol, not a Roman numeral, not a function, cadence or key label — whatever kind of score object happens to carry it."
+— the same paragraph (locator: lines 3413–3416).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **AGREES**, as at Row 21.116.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 21.121 (ii).
+
+---
+
+**Row 21.124 — notational metadata stating no harmonic reading admissible, the key signature among it.**
+
+*Outgoing statement.* "Ordinary notational metadata that states no harmonic reading, the key signature among it, remains
+admissible." — the same paragraph (locator: lines 3416–3417).
+
+*Derived statements that speak to it.* L3-S26.
+
+*Current-text axis.* L3-S26: **AGREES** — it reads the key signature's value as a sign of the notation, saying *"reading
+the signature's value is not reading it as the tonality"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), whose given facts include
+the key signature, as Rows 16.30 (i) and 16.31 (ii).
+
+---
+
+**Row 21.125 — jazz accuracy not measurable on the corpora held; no jazz-specific work planned.**
+
+*Outgoing statement.* "**The standing consequence: jazz accuracy is NOT MEASURABLE on the corpora we hold, and no
+jazz-specific scoring work is planned on them.**" — the same sub-section (locator: lines 3427–3428). Two claims: (i)
+the accuracy of the analysis on jazz cannot be measured on the corpora held; (ii) no work on the candidate scoring for
+jazz is planned on them.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose content is which corpora a
+measurement may be taken on. (ii) **HISTORICAL** — a status of planned work.
+
+---
+
+**Row 21.126 — the low agreement on jazz a property of the material, not of the identifier.**
+
+*Outgoing statement.* "The low agreement on the jazz material in the project is a property of the material —
+melody-and-chord-symbol transcriptions with the bass and the piano chords left out — not of the scoring model." — the
+same paragraph (locator: lines 3428–3430).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which corpora and run was the low agreement on jazz traced
+to the absent bass and piano parts, and does it reproduce?
+
+---
+
+**Row 21.127 — no jazz-specific change remains; none planned until the missing parts are available.**
+
+*Outgoing statement.* "No accepted jazz-specific scoring change remains in the analyzer, and none is planned until scores
+carrying the missing parts are available." — the same paragraph (locator: lines 3430–3432). Two claims: (i) no accepted
+change of the candidate scoring for jazz alone remains in the identifier; (ii) none is planned until music carrying the
+missing parts is available.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* as Row 21.118 (ii). (ii) **HISTORICAL** — a status of
+planned work.
+
+---
+
+**Row 21.128 — the original claim: jazz scores already carry harmonic annotations.**
+
+*Outgoing statement.* "Jazz scores already contain explicit harmonic annotations — the written chord symbols (e.g.
+`Dm7`, `G7`, `CMaj7`) are useful boundary hints and comparison metadata." — the same sub-section, *Original problem
+statement (historical record)*, its first numbered item (locator: lines 3445–3446).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the original motivation of a retired path, recorded by the member as a historical
+record.
+
+---
+
+**Row 21.129 — the original claim: those symbols not the analysis result.**
+
+*Outgoing statement.* "They are not the analysis result." — the same item (locator: line 3447).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — as Row 21.128.
+
+---
+
+**Row 21.130 — the original claim: boundaries from pitch-class distance redundant where symbols mark them.**
+
+*Outgoing statement.* "Inferring region boundaries from pitch-class Jaccard distance is often redundant and error-prone
+when explicit chord-symbol boundaries are already present." — the same item (locator: lines 3447–3449).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — as Row 21.128.
+
+---
+
+**Row 21.131 — the original claim: the written root often absent from jazz voicings.**
+
+*Outgoing statement.* "Jazz harmony uses voicings where the written root is frequently absent from the sounding notes
+(shell voicings: root + 3rd + 7th only; rootless voicings)." — the same list, its second item (locator: lines
+3450–3451).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — as Row 21.128.
+
+---
+
+**Row 21.132 — the original claim: the vertical approach misidentifies those voicings.**
+
+*Outgoing statement.* "The vertical note-set approach systematically misidentifies these." — the same item (locator:
+lines 3451–3452).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — as Row 21.128.
+
+---
+
+**Row 21.133 — the original claim: single melodic lines cannot give three pitch classes at once.**
+
+*Outgoing statement.* "Monophonic melodic lines (saxophone, bass) cannot produce the 3 simultaneous pitch classes
+required by the current 3-PC minimum." — the same list, its third item (locator: lines 3453–3454).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — as Row 21.128.
+
+---
+
+**Row 21.134 — chord symbols are instructions the user wrote, not analysis results.**
+
+*Outgoing statement.* "**Core principle:** chord symbols are user-written instructions, not analysis results." — the same
+sub-section, *Retirement rationale*, its fourth bullet (locator: line 3467).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **AGREES**, as at Row 21.116.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 21.121 (ii).
+
+---
+
+**Row 21.135 — the output a function of the notes, the key signature and the preferences.**
+
+*Outgoing statement.* "Analyzer output is a pure function of notes + key signature + preferences." — the same bullet
+(locator: line 3468).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **AGREES** — its falsifier is that an L3 output changes *"when every `<FiguredBass>` element
+is removed"*, the written annotation being no input.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), whose subject is what the
+analysis reads, as Row 21.121 (ii).
+
+---
+
+**Row 21.136 — the tool-side retirement; tools read a written symbol only to compare.**
+
+*Outgoing statement.* "**Tool-side retirement** (`analyzeScoreJazz`, `--inject-written-root`, `jazzMode` flag) completed
+the principle — tools may read symbols only to compare against analyzer output produced from notes." — the same list,
+its fifth bullet (locator: lines 3469–3471). Two claims: (i) the three tool-side surfaces were retired; (ii) a tool may
+read a written symbol only to compare it with the output the analysis produced from the notes.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S29.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S29: **AGREES** — it says *"A comparison is the
+measurement layer's act or a display's."*
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event. (ii) **RELOCATED** — to ***the measurement of the analysis***, as
+Row 20.15.
+
+---
+
+**Row 21.137 — the authoritative-symbol operating mode designed, not built.**
+
+*Outgoing statement.* "**Status:** Designed, not implemented." — the same section, *§4.1f — Future: Authoritative Chord
+Symbol Mode* (locator: line 3475).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 21.138 — no timeline for it.**
+
+*Outgoing statement.* "No current timeline." — the same line (locator: line 3475).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 21.139 — symbols already present in a score may carry different levels of authority.**
+
+*Outgoing statement.* "Chord symbols, Roman numerals, and Nashville numbers already present in a score may carry
+different levels of authority depending on context:" — the same section, its *Motivation* (locator: lines 3479–3480).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing symbols already present in a score *"may carry different levels
+of authority depending on context"*, where L3-S29 holds the composer's figures and chord symbols *"usable by a
+measurement layer as a reference and never as analysis input"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), whose subject is the
+standing of what the score carries, as Row 21.121 (ii).
+
+---
+
+**Row 21.140 — as the analysis stands, the identifier infers the chord from the notes.**
+
+*Outgoing statement.* "**As-is analysis:** The current analyzer reads notes and infers what chord they imply." — the
+same *Motivation*, its first bullet (locator: lines 3482–3483).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the analysis that runs at the current commit infer the
+chord from the notes alone?
+
+---
+
+**Row 21.141 — written chord symbols comparison metadata only.**
+
+*Outgoing statement.* "Written chord symbols are comparison metadata only." — the same bullet (locator: line 3483).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **AGREES** — it holds them *"usable by a measurement layer as a reference and never as
+analysis input"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 21.121 (ii).
+
+---
+
+**Row 21.142 — written symbols may state an intended harmony the notes only partly realize.**
+
+*Outgoing statement.* "**To-be annotation:** A composer or arranger may enter chord symbols representing the intended
+harmony, which the written notes may only partially realize (e.g. a lead sheet where the pianist improvises the
+voicing, or an arrangement where the bass is tacet)." — the same *Motivation*, its second bullet (locator: lines
+3484–3487).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **AGREES** — its premise records that *"where a continuo part's upper voices are not written
+out, the notes under-determine the harmony and the figures are its only record"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 21.139.
+
+---
+
+**Row 21.143 — in the to-be case, the written symbol the truth, not the notes.**
+
+*Outgoing statement.* "In the to-be case, the written chord symbol is the ground truth — not the notes." — the same
+*Motivation* (locator: line 3489).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing written chord symbol *"is the ground truth — not the notes"*,
+where L3-S29 says *"L3 never reads the composer's figures"*, the figures and chord symbols the composer wrote being
+*"usable by a measurement layer as a reference and never as analysis input"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 21.139.
+
+---
+
+**Row 21.144 — the analysis to confirm or annotate what the composer declared.**
+
+*Outgoing statement.* "The analyzer's job shifts from "identify what the notes imply" to "confirm or annotate what the
+composer declared."" — the same paragraph (locator: lines 3490–3491).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing analysis would *"confirm or annotate what the composer
+declared"*, where L3-S29 *"publishes no comparison between its figured bass and them"* and says *"A comparison is the
+measurement layer's act or a display's."*
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 21.139.
+
+---
+
+**Row 21.145 — the monophonic plan provisional, updated after its first validation.**
+
+*Outgoing statement.* "**Status:** provisional design note, updated after Phase 1a validation." — the same section,
+*§4.1d Monophonic Chord Inference — Provisional Phased Plan* (locator: line 3524).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 21.146 — the Phase 1a validation completed.**
+
+*Outgoing statement.* "Phase 1a validation completed 2026-04-07, git `0587ec27e1`, on the Charlie Parker Omnibook (50
+public LORIA MusicXML solos with embedded chord symbols)." — the same paragraph (locator: lines 3525–3526).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an event.
+
+---
+
+**Row 21.147 — its result: full root agreement on the comparable regions.**
+
+*Outgoing statement.* "Result: **4454/4454 comparable regions = 100.0% root agreement**." — the same paragraph (locator:
+line 3527).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run was that agreement measured, on which path, and
+does it reproduce?
+
+---
+
+**Row 21.148 — that result validates the symbol-driven path, not monophonic inference.**
+
+*Outgoing statement.* "This validates the existing §4.1c chord-symbol-driven path, not independent monophonic
+inference." — the same sub-section (locator: lines 3529–3530).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* which path did that run measure, and does its result bear on
+inference from the melody notes?
+
+---
+
+**Row 21.149 — in Phase 1a, the written root read from the symbols.**
+
+*Outgoing statement.* "In Phase 1a the written root is read directly from the embedded chord symbols, not inferred from
+melody notes." — the same paragraph (locator: lines 3530–3531).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build state of the retired symbol-driven path.
+
+---
+
+**Row 21.150 — the result confirms the boundaries detected in all fifty solos.**
+
+*Outgoing statement.* "The result confirms:" with its first bullet, "chord-symbol boundaries are detected correctly in all
+50 solos" — the same paragraph (locator: line 3532).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run were the boundaries found correct in all fifty
+solos, and does it reproduce?
+
+---
+
+**Row 21.151 — the result confirms the symbol elements parsed.**
+
+*Outgoing statement.* "The result confirms:" with its second bullet, "`Harmony` elements are parsed correctly from the
+MusicXML files" — the same paragraph (locator: line 3533).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the `Harmony` elements of those files parsed correctly at
+the current commit?
+
+---
+
+**Row 21.152 — the result confirms the jazz path firing on monophonic saxophone music.**
+
+*Outgoing statement.* "The result confirms:" with its third bullet, "jazz mode fires reliably on monophonic saxophone
+scores" — the same paragraph (locator: line 3534).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run was the retired jazz path found to fire on those
+solos?
+
+---
+
+**Row 21.153 — at most one sounded note per symbol region in that set.**
+
+*Outgoing statement.* "Implication for Phase 1b: saxophone solos in this validation set provide at most one sounded note
+per chord-symbol region." — the same sub-section (locator: lines 3541–3542).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run was the count of sounded notes per region taken,
+given the corrected count Row 21.168 records?
+
+---
+
+**Row 21.154 — chord inference from isolated single-note regions not viable.**
+
+*Outgoing statement.* "Independent chord inference from isolated single-note regions is therefore not viable." — the
+same paragraph (locator: lines 3542–3543).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose chord
+decision a single-line texture tests.
+
+---
+
+**Row 21.155 — bounded group expansion across consecutive regions.**
+
+*Outgoing statement.* "Phase 1b must use bounded group expansion across multiple consecutive regions, rather than
+attempting to resolve chords from one-note local windows." — the same paragraph (locator: lines 3543–3545).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.154.
+
+---
+
+**Row 21.156 — the fields taken from a written symbol are the score's own, not the engine's.**
+
+*Outgoing statement.* "Fields such as `fromChordSymbol` and `writtenRootPc` are score metadata rather than engine
+metadata." — the same sub-section, under its label *Score metadata:* (locator: line 3576).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **AGREES** — it holds what the composer wrote to be annotation, *"usable by a measurement
+layer as a reference and never as analysis input"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 21.121 (ii).
+
+---
+
+**Row 21.157 — the orchestration layer to carry those fields through.**
+
+*Outgoing statement.* "The unified orchestration layer must preserve them regardless of which analysis engine produced
+the winning harmonic result." — the same paragraph (locator: lines 3577–3578).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: a rule binding a planned orchestration layer, which no charter of
+`FRAMEWORK.md` §5 names, to carry the fields taken from a written symbol through whichever engine produced the result;
+the derivation is silent, and the outgoing sentence is the whole of what was read.
+
+---
+
+**Row 21.158 — Phase 1a complete.**
+
+*Outgoing statement.* "Phase 1a is now complete." — the same section, *Phase 1a — Validate Existing Chord-Symbol-Driven
+Path* (locator: line 3582).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status.
+
+---
+
+**Row 21.159 — the run loaded every file.**
+
+*Outgoing statement.* "Run result:" with its first bullet, "50/50 files loaded successfully" — the same sub-section
+(locator: line 3587).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run were the fifty files loaded, and does it
+reproduce?
+
+---
+
+**Row 21.160 — the run's count of regions.**
+
+*Outgoing statement.* "Run result:" with its second bullet, "4464 total regions" — the same list (locator: line 3588).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a re-run of that measurement give the same count of
+regions?
+
+---
+
+**Row 21.161 — the run's comparable regions with an analyzed chord.**
+
+*Outgoing statement.* "Run result:" with its third bullet, "3361 comparable `fromChordSymbol` regions with an analyzed
+chord" — the same list (locator: line 3589).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a re-run give the same count of comparable regions?
+
+---
+
+**Row 21.162 — the run's agreement of the written root with the analyzed root.**
+
+*Outgoing statement.* "Run result:" with its fourth bullet, "605/3361 written-root vs analyzed-root agreement =
+**18.0%**" — the same list (locator: line 3590).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a re-run on the corrected path give the same agreement?
+
+---
+
+**Row 21.163 — the run's regions with no analyzed chord.**
+
+*Outgoing statement.* "Run result:" with its fifth bullet, "1103 `fromChordSymbol` regions produced no analyzed chord
+(`hasAnalyzedChord=false`)" — the same list (locator: line 3591).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a re-run give the same count of regions without an
+analyzed chord?
+
+---
+
+**Row 21.164 — the run had no solo without a region.**
+
+*Outgoing statement.* "Run result:" with its sixth bullet, "0 zero-region solos" — the same list (locator: line 3592).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a re-run give no solo without a region?
+
+---
+
+**Row 21.165 — the earlier full agreement invalid, the old path having copied the written root.**
+
+*Outgoing statement.* "Interpretation:" with its first bullet, "the previous 100% Omnibook result was invalid because the
+old jazz path copied the written chord-symbol root into the analysis result" — the same sub-section (locator: lines
+3595–3596).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* did the path that gave the earlier result copy the written root
+into the analysis result, and on which run was that established?
+
+---
+
+**Row 21.166 — on the corrected path, the vertical identifier does not solve the annotated monophonic case.**
+
+*Outgoing statement.* "Interpretation:" with its second bullet, "with the corrected non-circular path, the current
+vertical chord analyzer does **not** solve the annotated monophonic jazz case, even when the written chord symbols
+supply exact region boundaries" — the same list (locator: lines 3597–3599).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run was that established, and does it reproduce?
+
+---
+
+**Row 21.167 — the run validates parsing and regions but falsifies boundary-correct accumulation as enough.**
+
+*Outgoing statement.* "Interpretation:" with its third bullet, "this run validates `Harmony` parsing and regionization,
+but it falsifies the assumption that boundary-correct regional accumulation is enough on its own" — the same list
+(locator: lines 3600–3601).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run was that assumption found false, and does it
+reproduce?
+
+---
+
+**Row 21.168 — the corrected count of notes per region.**
+
+*Outgoing statement.* "The corrected Phase 1a note-count evidence is:" with its first bullet, "all `fromChordSymbol`
+regions: `0: 268`, `1: 349`, `2: 476`, `3: 691`, `4: 1088`, `5: 610`, `6: 496`, `7: 341`, `8: 110`, `9: 25`, `10: 5`,
+`11: 5`" — the same sub-section (locator: lines 3604–3605).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a re-run give the same distribution of notes per region?
+
+---
+
+**Row 21.169 — the regions with fewer than three pitch classes unanalyzable.**
+
+*Outgoing statement.* "The corrected Phase 1a note-count evidence is:" with its second bullet, "1103 regions (24.7%)
+remain unanalyzable by the current vertical analyzer because they produce fewer than 3 distinct pitch classes" — the
+same list (locator: lines 3606–3607).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the vertical identifier decline every region of fewer than
+three distinct pitch classes at the current commit, and does the count reproduce?
+
+---
+
+**Row 21.170 — the comparable regions not sparse, yet the agreement low.**
+
+*Outgoing statement.* "The corrected Phase 1a note-count evidence is:" with its third bullet, "the comparable subset is
+not especially sparse: most analyzable regions contain 3-6 distinct pitch classes, yet agreement is still only 18.0%"
+— the same list (locator: lines 3608–3609).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a re-run give that distribution of pitch classes over the
+comparable regions, and that agreement?
+
+---
+
+**Row 21.171 — a minimal monophonic fallback, should Phase 1a show the annotated case handled.**
+
+*Outgoing statement.* "If Phase 1a shows that annotated monophonic material is largely handled, the next step is a
+minimal monophonic fallback for unannotated single-line or arpeggiated passages." — the same section, *Phase 1b —
+Minimal Monophonic Fallback Without Chord Symbols* (locator: lines 3623–3625).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.154.
+
+---
+
+**Row 21.172 — written chord symbols a source of boundaries.**
+
+*Outgoing statement.* "Use:" with its first item, "written chord symbols when present" — the same sub-section, its
+*Boundary-source selection* (locator: line 3638).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing fallback takes its boundaries from *"written chord symbols when
+present"*, where L3-S29 holds them *"usable by a measurement layer as a reference and never as analysis input"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record*** (the input contract), as Row 21.139.
+
+---
+
+**Row 21.173 — a fine-grained boundary detector for fast harmonic rhythm.**
+
+*Outgoing statement.* "Use:" with its second item, "fine-grained Jaccard-style harmonic-boundary detection for faster
+harmonic rhythm or classical material" — the same list (locator: lines 3639–3640).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose segmentation
+decides where one span gives way to the next.
+
+---
+
+**Row 21.174 — beat- or bar-quantized boundaries as the slower fallback.**
+
+*Outgoing statement.* "Use:" with its third item, "beat- or bar-quantized boundaries only as a simpler fallback for slower
+harmonic-rhythm contexts" — the same list (locator: lines 3641–3642).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.173.
+
+---
+
+**Row 21.175 — the full engine's harmonic grouping from melodic structure.**
+
+*Outgoing statement.* "The full engine should add:" with its first bullet, "dedicated harmonic grouping from melodic
+structure" — the same section, *Phase 2 — Full Monophonic Engine* (locator: line 3699).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.173.
+
+---
+
+**Row 21.176 — the full engine's boundary evidence.**
+
+*Outgoing statement.* "The full engine should add:" with its second bullet, "boundary scoring from duration, metric
+stress, rests, leaps, register shifts, and pitch-class novelty" — the same list (locator: lines 3700–3701).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.173.
+
+---
+
+**Row 21.177 — the full engine's chord inference from weighted subsets.**
+
+*Outgoing statement.* "The full engine should add:" with its third bullet, "chord inference from weighted subsets rather
+than vertical simultaneity" — the same list (locator: line 3702).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.154.
+
+---
+
+**Row 21.178 — the full engine's smoothing over the sequence.**
+
+*Outgoing statement.* "The full engine should add:" with its fourth bullet, "sequence-level smoothing across neighboring
+groups" — the same list (locator: line 3703).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.154.
+
+---
+
+**Row 21.179 — the full engine's handling of compound melody.**
+
+*Outgoing statement.* "The full engine should add:" with its fifth bullet, "compound-melody handling for implied multiple
+voices in one line" — the same list (locator: line 3704).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose objects are the lines the voices
+draw.
+
+---
+
+**Row 21.180 — the full engine's confidences calibrated against the vertical engine.**
+
+*Outgoing statement.* "The full engine should add:" with its sixth bullet, "explicit confidence calibration against the
+vertical engine" — the same list (locator: line 3705).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, as Row 7.209 (i).
+
+---
+
+**Row 21.181 — the local grouping problem deferred to Phase 2.**
+
+*Outgoing statement.* "The local grouping problem is intentionally deferred to Phase 2 because it is the hardest part of
+monophonic inference." — the same section (locator: lines 3707–3708).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status of the plan.
+
+---
+
+**Row 21.182 — the monophonic path to reuse harmonic continuation.**
+
+*Outgoing statement.* "The monophonic path should reuse the same broad contextual ideas already used by the vertical
+path:" with its first bullet, "harmonic continuation" — the same section, *Interaction with Existing Temporal Context*
+(locator: line 3752).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.154.
+
+---
+
+**Row 21.183 — the monophonic path to reuse local stability against change.**
+
+*Outgoing statement.* The same lead with its second bullet, "local stability versus change" — the same list (locator: line
+3753).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.154.
+
+---
+
+**Row 21.184 — the monophonic path to reuse a cadence-like expectation.**
+
+*Outgoing statement.* The same lead with its third bullet, "cadence-like expectation" — the same list (locator: line
+3754).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.154.
+
+---
+
+**Row 21.185 — the monophonic path to reuse compatibility with the tonality.**
+
+*Outgoing statement.* The same lead with its fourth bullet, "key/mode compatibility" — the same list (locator: line
+3755).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.154.
+
+---
+
+**Row 21.186 — the monophonic path to reuse continuity bonuses.**
+
+*Outgoing statement.* The same lead with its fifth bullet, "continuity bonuses where musically justified" — the same list
+(locator: line 3756).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 21.154.
+
+---
+
+**Row 21.187 — the status bar appends the chord symbol, the tonality and the Roman numeral.**
+
+*Outgoing statement.* "Chord symbol, key/mode, and Roman numeral are all appended." — the same section, sub-section *4.5
+Current Status Bar Integration*, *Current Status Bar Output Format* (locator: line 4104).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the status bar's string append the chord symbol, the
+tonality and the Roman numeral at the current commit, and from which surface does it read them (as Row 18.7)?
+
+---
+
+**Row 21.188 — the setting for chord-symbol analysis, needing no inference of the tonality.**
+
+*Outgoing statement.* "`analyzeForChordSymbols` (bool, default true) — pitch-structure analysis only; does not require
+key/mode inference" — the same section, sub-section *4.6 User Preferences — Configuration Interface Split*, the first
+bullet under its label *Analysis section:* (locator: lines 4137–4138). Two claims: (i) the setting exists, on by
+default; (ii) the analysis it enables reads the pitch structure only and needs no inference of the tonality.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S1.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S1: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing chord-symbol analysis *"does not require key/mode
+inference"*, where L3-S1 makes the chord symbol *"the deterministic function of that span's four chord fields and its
+tonality"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does `analyzeForChordSymbols` exist, on by default, at the
+current commit? (ii) **QUARANTINED.** *Audit question:* does the chord-symbol analysis that setting enables run without
+any inference of the tonality at the current commit, and on which arm?
+
+---
+
+**Row 21.189 — the setting for the chord's degree, feeding Roman numerals and Nashville numbers.**
+
+*Outgoing statement.* "`analyzeForChordFunction` (bool, default false) — key/mode-aware degree analysis; single toggle
+that feeds both Roman-numeral and Nashville-number display." — the same list, its second bullet (locator: lines
+4139–4140).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `analyzeForChordFunction` exist, off by default, at the
+current commit, and does it feed both displays?
+
+---
+
+**Row 21.190 — that setting replaced two former ones.**
+
+*Outgoing statement.* "Replaces the former separate `analyzeForRomanNumerals` / `analyzeForNashvilleNumbers` toggles." —
+the same bullet (locator: lines 4141–4142).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a supersession of settings.
+
+---
+
+**Row 21.191 — Roman numerals and Nashville numbers presentation choices of one result.**
+
+*Outgoing statement.* "Roman numerals and Nashville numbers are **presentation choices**, not separate analyses — they
+are alternative formatters on the same `ChordAnalysisResult`." — the same bullet (locator: lines 4142–4143).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* that the Roman numeral and the Nashville number be two display
+renderings of the one decided chord, never two analyses (the proposal of Row 4.2).
+
+---
+
+**Row 21.192 — the setting for inferring the tonality.**
+
+*Outgoing statement.* "`inferKeyMode` (bool, forced on when `analyzeForChordFunction` is active)" — the same list, its
+third bullet (locator: line 4144).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is `inferKeyMode` forced on whenever `analyzeForChordFunction`
+is on, at the current commit?
+
+---
+
+**Row 21.193 — one count of alternatives for the status bar and the context menu.**
+
+*Outgoing statement.* "`analysisAlternatives` (int 1–3, default 3) — single universal count applied to both the status
+bar and the context menu (replaces former per-type counts)" — the same list, its fourth bullet (locator: lines
+4145–4146).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does one count, from one to three with three by default,
+govern the alternatives both the status bar and the context menu show, at the current commit?
+
+---
+
+**Row 21.194 — the rule the mark applies: an uncalibrated constant marked, its corpus named, the mark kept until measured.**
+
+*Outgoing statement.* "§6.6 states the rule and is not restated here (#6): a style constant no ground truth has
+calibrated carries the empirically-unvalidated mark, the corpus that would validate it is named beside it, and the mark
+is maintained until an established corpus measures the value." — the same sub-section, its ★ paragraph after the preset
+table (locator: lines 4208–4211). Three claims: (i) a style constant no ground truth has calibrated carries the mark;
+(ii) the corpus that would validate it is named beside it; (iii) the mark stays until an established corpus measures the
+value.
+
+*Derived statements that speak to it.* (i) L3-S33. (ii) None. (iii) L3-S33.
+
+*Current-text axis.* (i) L3-S33: **AGREES** — it marks *"Provisional"* anything *"resting on an unfitted weight, a
+stand-in value or a provisional input"*. (ii) **THE DERIVATION IS SILENT**. (iii) L3-S33: **AGREES** — *"Decided"* is
+carried only by a decision *"whose model is fitted and established on held-out music"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, whose content is that every published value
+carries its own establishment status, as Row 19.71. (ii) **RELOCATED** — to ***the measurement of the analysis***, as Row
+21.7. (iii) **RELOCATED** — to ***the uncertainty surface***, as claim (i).
+
+---
+
+**Row 21.195 — the six Jazz priors a user-selectable prior on the legacy key path.**
+
+*Outgoing statement.* "They are a user-selectable prior on the legacy key path; what changes is what a reader of them is
+told about how far they are established." — the same paragraph (locator: lines 4217–4219). *(Its second half is a remark
+on what the mark tells a reader and is carried with the sentence, not as a claim of its own.)*
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the Jazz preset's six mode priors a setting the user selects
+that only the legacy key path reads, at the current commit?
+
+---
+
+**Row 21.196 — the mark lost only in the act that records the measurement.**
+
+*Outgoing statement.* "**The mark is lost only in the act that records the measurement** — never by a value being changed
+or a preset renamed." — the same paragraph (locator: lines 4219–4220).
+
+*Derived statements that speak to it.* L3-S33.
+
+*Current-text axis.* L3-S33: **AGREES**, as at Row 21.194 (iii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, as Row 21.194 (i).
+
+---
+
+**Row 21.197 — the bridge fills the key/mode preferences from the priors.**
+
+*Outgoing statement.* "The bridge reads these at analysis time and populates `KeyModeAnalyzerPreferences` before calling
+`analyzeKeyMode()`." — the same sub-section (locator: lines 4234–4235).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the bridge fill `KeyModeAnalyzerPreferences` from the
+twenty-one priors before calling `analyzeKeyMode()` at the current commit, and on which arm?
+
+---
+
+**Row 21.198 — the twenty-one priors replace the former grouping and offset.**
+
+*Outgoing statement.* "The former 4-tier grouping (`modeTierWeight1`–`modeTierWeight4`) and the internal +0.2 Ionian
+offset are replaced by these 21 independent priors." — the same paragraph (locator: lines 4235–4236).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a supersession of settings.
+
+---
+
+**Row 21.199 — the status bar's chord-symbol checkbox.**
+
+*Outgoing statement.* "`showChordSymbolsInStatusBar` (bool, default true) — requires `analyzeForChordSymbols`" — the same
+sub-section, the first bullet under its label *Status bar section (…)* (locator: line 4239).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does this setting exist, on by default and enabled only with
+`analyzeForChordSymbols`, at the current commit?
+
+---
+
+**Row 21.200 — the status bar's Roman-numeral checkbox.**
+
+*Outgoing statement.* "`showRomanNumeralsInStatusBar` (bool, default false) — requires `analyzeForChordFunction`" — the
+same list (locator: line 4240).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does this setting exist, off by default and enabled only with
+`analyzeForChordFunction`, at the current commit?
+
+---
+
+**Row 21.201 — the status bar's Nashville-number checkbox.**
+
+*Outgoing statement.* "`showNashvilleNumbersInStatusBar` (bool, default false) — requires `analyzeForChordFunction`" — the
+same list (locator: line 4241).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* as Row 21.200, for this setting.
+
+---
+
+**Row 21.202 — the status bar's tonality checkbox.**
+
+*Outgoing statement.* "`showKeyModeInStatusBar` (bool, default true) — requires `inferKeyMode`" — the same list (locator:
+line 4242).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does this setting exist, on by default and enabled only with
+`inferKeyMode`, at the current commit?
+
+---
+
+**Row 21.203 — the chord staff's chord-symbol setting.**
+
+*Outgoing statement.* "`chordStaffWriteChordSymbols` (bool, default true) — write `HarmonyType::STANDARD` annotations above
+the treble staff; requires `analyzeForChordSymbols`" — the same sub-section, the first bullet under its label *Chord staff
+section (…)* (locator: lines 4250–4251).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does this setting exist at the current commit, its label
+calling it planned, and does the chord staff write standard chord symbols above the treble staff under it?
+
+---
+
+**Row 21.204 — the chord staff's setting for the function notation.**
+
+*Outgoing statement.* "`chordStaffFunctionNotation` (enum: None / Roman numerals / Nashville numbers, default Roman
+numerals) — write either `HarmonyType::ROMAN` or `HarmonyType::NASHVILLE` below the treble staff; requires
+`analyzeForChordFunction`." — the same list, its second bullet (locator: lines 4252–4254).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does this setting exist at the current commit, and does the
+chord staff write the Roman numeral or the Nashville number below the treble staff under it?
+
+---
+
+**Row 21.205 — on the chord staff, the Roman numeral and the Nashville number exclusive, encoding the same information.**
+
+*Outgoing statement.* "Roman and Nashville are mutually exclusive here — they encode the same information and displaying
+both would clutter the staff with redundant text." — the same bullet (locator: lines 4255–4256).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **ADOPTED — proposed.** *Proposal:* as Row 21.191, travelling with it: the Roman numeral and the
+Nashville number encode the same decided information.
+
+---
+
+**Row 21.206 — the chord staff's setting for the tonality's annotations.**
+
+*Outgoing statement.* "`chordStaffWriteKeyAnnotations` (bool, default true) — write key/mode staff text at region
+boundaries; requires `inferKeyMode`" — the same list, its third bullet (locator: lines 4257–4258).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does this setting exist at the current commit, and does the
+chord staff write the tonality's staff text at region boundaries under it?
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. "**The establishment is the record's own:** §4.1c records that jazz accuracy is not measurable on the corpora held, …"
+   (2641–2643) — a defense of the mark at Row 21.5.
+2. "That check runs the Jazz preset over the **Bach chorale** corpus — …" (2644–2647) — a defense of Row 21.8.
+3. "§6.6 states the rule and its maintenance and is not restated here (#6)." (2647–2648) — a pointer to another section.
+4. "Tests that need a direct instance may use `RuleBasedChordAnalyzer{}` on the stack." (2707) — how tests may instantiate
+   the identifier: development conduct, not the analysis.
+5. The heading line "#### §4.1b — Contextual Inversion Resolution" (2709) — *a heading*, the first line of range 7, a
+   title under the first reading rule.
+6. The bonuses table's header row "| Bonus | Condition | Default |" and its rule line (2724–2725) — *a table header*.
+7. "Keep the names distinct." (2870–2871) — a rule on naming the code's types: development conduct.
+8. The joint bonuses table's header row "| Bonus | Lambda | Value | Quality gate | Extra gates | Iter |" and its rule line
+   (2884–2885) — *a table header*.
+9. "Prevents `w_stepIn`/`w_stepOut` from tipping a fragile m6 root-position reading (e.g. Dm6) over …" (2900–2903) — the
+   guard's purpose, a defense.
+10. "Iteration number is the path-1 iteration in which the gate was introduced or last modified." (3012–3013) — about the
+    document, how the table's column is read.
+11. The gates table's header row "| Gate | Iter | Condition (winner → preferred alt) | Effect at introduction |" and its
+    rule line (3015–3016) — *a table header*.
+12. The Path-1 residual table's header row "| Cluster | Count (Path 1) | Pattern | Why blocked at Path 1 close |" and its
+    rule line (3096–3097) — *a table header*.
+13. "**Iter 62** (`ee337aeca4`) — Parallel corpus regen: `run_bach_preset.py` now uses
+    `ProcessPoolExecutor(max_workers=24)`. …" (3147) — a measurement tool's parallel regeneration and its run time:
+    provenance of tooling, not the analysis.
+14. The genuine-5 residual table's header row "| Case | Cluster | Pattern | Status |" and its rule line (3153–3154) — *a
+    table header*.
+15. "Violates the analysis-is-display-agnostic principle (§2.3)." (3196–3197) — the defense of the fix that follows it.
+16. "**Fix:** move to its own `chordsymbolformatter.{h,cpp}` pair." (3197) — a refactor plan for the code's files:
+    development conduct.
+17. "Low risk, low effort — a file move with no logic change." (3197–3198) — the refactor's cost: development conduct.
+18. "Valid technical debt (several fields are self-described as such)." (3210) — an assessment of technical debt:
+    development conduct.
+19. "However, splitting the struct mid-iteration requires updating all callers twice." (3211) — the refactor's cost:
+    development conduct.
+20. "Revisit after a scoring stabilisation phase, not during active iteration." (3211–3212) — when to revisit a refactor:
+    development conduct.
+21. "The LLM integration design (`docs/llm_integration.md`) and the Authoritative Chord Symbol Mode (§4.1f) depend on
+    `useExistingChordSymbols`." (3233–3235) — the defense of keeping the fields of Row 21.102.
+22. "Removing them would require an explicit feature-abandonment decision." (3235–3236) — a rule on removing fields of the
+    code: development conduct.
+23. The heading line "#### §4.1c Part 2 — Jazz Mode (chord-symbol-driven boundaries)" (3376) — *a heading*, the first line
+    of range 35.
+24. "See §4.1f for the future per-symbol trust-mode design." (3378) — a pointer to another section.
+25. "This simulates the bass player's root note that is present in performance but absent from lead-sheet and
+    horn-section scores." (3391–3393) — the experiment's purpose, an explanation.
+26. "*Why:* **derivation not recorded** — the record states the generalization without giving the reason for widening
+    it." (3417–3418) — a defense, stating its own gap.
+27. "It sharpens the chord-symbol ban above from one annotation kind to a content test over all of them, …" (3418–3421)
+    — the defense's continuation.
+28. "The record states neither a date nor a ratifier." (3421) — provenance.
+29. "*Why:* measured, by the bass-injection experiment above — …" (3432–3434) — a defense.
+30. "Decided 2026-04-08; the record does not name the ratifier." (3434–3435) — provenance.
+31. "This is the standing evidence behind `OPEN_ITEMS.md` OI-7 …" (3435–3438) — a pointer to an open-items row and to
+    another section.
+32. "**Reason 1 (redundancy)** was a value judgment, not structural." (3458) — the first sentence of the defense of the
+    retirement at Row 21.115.
+33. "Jaccard boundaries can still be computed; the question is whether symbol-boundary output is *better* than
+    note-boundary output, not whether it is *possible*." (3458–3460) — the same defense.
+34. "**Reason 2 (rootless voicings)** concerned identity, not boundaries, so it does not justify symbol-driven
+    boundaries." (3461–3462) — the same defense.
+35. "The vertical analyzer's identity problem on rootless voicings exists regardless of how regions are delimited."
+    (3462–3463) — the same defense.
+36. "**Reason 3 (monophonic / sparse voicings)** was load-bearing only if identity inference from sparse notes also
+    succeeded — it does not." (3464–3465) — the same defense.
+37. "Boundaries without usable identity produce symbol-echoed output, not analysis." (3465–3466) — the same defense.
+38. The heading line "### §4.1f — Future: Authoritative Chord Symbol Mode" (3473) — *a heading*, the first line of range
+    43.
+39. "This makes the bounded-expansion design necessary, not optional." (3545–3546) — the conclusion of the reasoning at
+    Rows 21.153 to 21.155.
+40. The heading line "### Phase 1a — Validate Existing Chord-Symbol-Driven Path" (3580) — *a heading*, the first line of
+    range 51.
+41. The heading line "### Phase 1b — Minimal Monophonic Fallback Without Chord Symbols" (3621) — *a heading*, the first
+    line of range 55.
+42. "**★ THE MARK ON THE JAZZ ROW IS THE §6.6 RULE APPLIED, AND IT IS NOT DECORATIVE (2026-08-11; `OPEN_ITEMS.md` OI-346,
+    the application half of D-497).**" (4207–4208) — about the document, what its own mark on the preset table is.
+43. "**The establishment for these six values is the record's own, read at its objects rather than assumed:** §4.1c
+    records …" (4211–4216) — a defense of the mark.
+44. "**What the mark does NOT say:** that the six values are wrong, or that anything about the analysis moves."
+    (4216–4217) — about the document, what its mark does not say.
+
+#### The arithmetic at this member
+
+- Rows written: **206** (21.1 to 21.206).
+- Rows split into two claims, **+1 each**: 21.50, 21.53, 21.58, 21.87, 21.88, 21.89, 21.90, 21.91, 21.92, 21.118,
+  21.121, 21.125, 21.127, 21.136, 21.188 — fifteen rows, **+15**.
+- Rows split into three claims, **+2 each**: 21.194 — one row, **+2**.
+- **Outgoing statements placed: 206 + 15 + 2 = 223.**
+- Listed under *not a statement*: **44**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row against its claims: 223 dispositions over 223 statements.
+- **UNPLACED statements at this member: one** — 21.157, with what was read.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 2 | 21.191, 21.205 |
+| RELOCATED | 51 | To L0 (13): 21.121(ii), 21.122, 21.123, 21.124, 21.134, 21.135, 21.139, 21.141, 21.142, 21.143, 21.144, 21.156, 21.172; to L2 (25): 21.10, 21.11, 21.27, 21.28, 21.29, 21.30, 21.31, 21.32, 21.38, 21.51, 21.56, 21.154, 21.155, 21.171, 21.173, 21.174, 21.175, 21.176, 21.177, 21.178, 21.182, 21.183, 21.184, 21.185, 21.186; to the second axis — voice leading (1): 21.179; to the uncertainty surface (4): 21.180, 21.194(i), 21.194(iii), 21.196; to the measurement of the analysis (8): 21.7, 21.8, 21.12, 21.50(i), 21.53(i), 21.125(i), 21.136(ii), 21.194(ii) |
+| QUARANTINED | 126 | 21.1, 21.2, 21.3, 21.4, 21.5, 21.6, 21.9, 21.13, 21.14, 21.15, 21.16, 21.17, 21.18, 21.19, 21.20, 21.23, 21.24, 21.25, 21.26, 21.33, 21.34, 21.35, 21.36, 21.37, 21.39, 21.40, 21.41, 21.42, 21.43, 21.44, 21.45, 21.46, 21.47, 21.48, 21.49, 21.50(ii), 21.52, 21.53(ii), 21.57, 21.58(i), 21.58(ii), 21.59, 21.60, 21.61, 21.62, 21.63, 21.64, 21.65, 21.66, 21.67, 21.68, 21.69, 21.70, 21.71, 21.72, 21.73, 21.76, 21.87(ii), 21.88(ii), 21.89(ii), 21.90(ii), 21.91(ii), 21.92(ii), 21.93, 21.94, 21.95, 21.96, 21.97, 21.98, 21.99, 21.100, 21.101, 21.102, 21.103, 21.104, 21.105, 21.106, 21.107, 21.108, 21.109, 21.110, 21.111, 21.112, 21.113, 21.114, 21.116, 21.118(i), 21.118(ii), 21.120, 21.121(i), 21.126, 21.127(i), 21.140, 21.147, 21.148, 21.150, 21.151, 21.152, 21.153, 21.159, 21.160, 21.161, 21.162, 21.163, 21.164, 21.165, 21.166, 21.167, 21.168, 21.169, 21.170, 21.187, 21.188(i), 21.188(ii), 21.189, 21.192, 21.193, 21.195, 21.197, 21.199, 21.200, 21.201, 21.202, 21.203, 21.204, 21.206 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 43 | 21.21, 21.22, 21.54, 21.55, 21.74, 21.75, 21.77, 21.78, 21.79, 21.80, 21.81, 21.82, 21.83, 21.84, 21.85, 21.86, 21.87(i), 21.88(i), 21.89(i), 21.90(i), 21.91(i), 21.92(i), 21.115, 21.117, 21.119, 21.125(ii), 21.127(ii), 21.128, 21.129, 21.130, 21.131, 21.132, 21.133, 21.136(i), 21.137, 21.138, 21.145, 21.146, 21.149, 21.158, 21.181, 21.190, 21.198 |
+| UNPLACED | 1 | 21.157 |
+| **Total** | **223** | — |
+
+**The column sums to 223, against 223 statements, so the arithmetic closes at this member**: 0 + 2 + 51 + 126 + 0 + 43
++ 1 = 223. **The statement lists in the right-hand column are the record**, and the integers are re-derivable from them
+by counting; the RELOCATED count is its five charter lists, 13 + 25 + 1 + 4 + 8.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 14 |
+| DIFFERS | 10 |
+| THE DERIVATION IS SILENT | 199 |
+| **Total verdicts** | **223** |
+
+*(Counted per named derived statement per statement. No statement of this member names two derived statements, so the
+verdicts total 223 over 223 statements.)* The AGREES verdicts are all on statements placed otherwise than ADOPTED —
+carried, this member carrying none: 21.58(i) (L3-S38) and 21.116 (L3-S29), QUARANTINED; 21.121(ii), 21.123, 21.134,
+21.135, 21.141, 21.142 and 21.156 (L3-S29), and 21.124 (L3-S26), RELOCATED to L0; 21.136(ii) (L3-S29), RELOCATED to the
+measurement; and 21.194(i), 21.194(iii) and 21.196 (L3-S33), RELOCATED to the uncertainty surface. The DIFFERS
+statements are 21.27, 21.28 and 21.29 (L3-S30), RELOCATED to L2; 21.38 (L3-S38), RELOCATED to L2; 21.54 (L3-S38),
+HISTORICAL; 21.139, 21.143, 21.144 and 21.172 (L3-S29), RELOCATED to L0; and 21.188(ii) (L3-S1), QUARANTINED — ten
+statements carrying ten verdicts.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 21 is empty.
+- **In homes that are not withheld, carrying no mark** — every one of them a retired entry of the decisions register's
+  data file, the rows named being those the home's quoted text falls in: D-061 (Rows 21.10 and 21.11); D-101 (Rows 21.21
+  and 21.22, the label before them read as a title); D-069 (Row 21.27); D-060 (Row 21.56); D-102 (Row 21.76); D-067
+  (Rows 21.115 and 21.116); D-066 (Row 21.121); D-305 (Rows 21.122 and 21.123); D-310 (Rows 21.125 and 21.126); D-241
+  (Row 21.181); D-086 (Row 21.191).
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -27065,6 +30521,18 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Row 20.62 — that Baroque music is often notated with one accidental fewer than the modern convention, the sounding
   tonality one step to the sharp side of a reading faithful to the signature. *(As Rows 16.30 (i) and 16.31 (ii);
   L3-S26 AGREES at the row, stating the same convention.)*
+- Rows 21.121 (ii), 21.123, 21.134, 21.135, 21.141 and 21.156 — a chord symbol written in the score never input to the
+  analysis, no harmonic annotation written in the score read as input whatever kind of object stores it, chord symbols
+  as instructions the user wrote and not analysis results, the output a function of the notes, the key signature and
+  the preferences, written symbols comparison metadata only, and the fields taken from a written symbol the score's
+  own. *(As Rows 20.12 to 20.14; IC-L1 S-2 and S-8 carry it; L3-S29 AGREES at each.)*
+- Row 21.122 — the ban decided by what an annotation says, not by how the score stores it. *(As Row 21.121 (ii).)*
+- Row 21.124 — notational metadata stating no harmonic reading admissible, the key signature among it. *(As Rows
+  16.30 (i) and 16.31 (ii); L3-S26 AGREES at the row.)*
+- Rows 21.139, 21.142, 21.143, 21.144 and 21.172 — the authoritative-symbol operating mode's design: symbols in the
+  score carrying different levels of authority, an intended harmony the notes only partly realize, the written symbol
+  as the truth, the analysis confirming what the composer declared, and written symbols as a source of boundaries.
+  *(L3-S29 DIFFERS at Rows 21.139, 21.143, 21.144 and 21.172, and AGREES at Row 21.142.)*
 
 **To *L1 — Change points, candidates and notated evidence*.**
 
@@ -27303,6 +30771,18 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 20.60, 20.63 and 20.64 — the Baroque partial-signature convention detected at its flattened sixth degree and the
   signature reinterpreted one step, never the candidate family widened for every piece, the discriminator testing the
   specific degree. *(The member marks the rule LEGACY and superseded in fact.)*
+- Rows 21.10 and 21.11 — the gate thresholds not loosened for other styles, and the two admissible fixes when a gate
+  regresses another preset.
+- Rows 21.27, 21.28, 21.29, 21.30, 21.31 and 21.32 — the identity of a merged region in the harmonic-summary and the
+  as-written operating modes. *(L3-S30 DIFFERS at Rows 21.27, 21.28 and 21.29.)*
+- Row 21.38 — a future context for the chord's candidate scoring carrying the progression, the cadence history among
+  it. *(As Row 2.24; L3-S38 DIFFERS at the row.)*
+- Rows 21.51 and 21.56 — a bare triad's root not resolvable from the local notes alone, and no contextual heuristic
+  added to the vertical identifier.
+- Rows 21.154, 21.155, 21.171, 21.173, 21.174, 21.175, 21.176, 21.177, 21.178, 21.182, 21.183, 21.184, 21.185 and 21.186 —
+  the monophonic plan's chord inference: none from isolated single-note regions, bounded expansion across regions, a
+  minimal fallback, its sources of boundaries, the full engine's grouping, boundary evidence, inference from weighted
+  subsets and smoothing, and the contextual ideas reused from the vertical path.
 
 **To *the second axis — voice leading*.**
 
@@ -27317,6 +30797,7 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   voices and tiling only within one, the axis's own layers, and the four objects the axis owns as claims: the stock
   patterns, the melodic phrase, chord voicing and arrangement, and part-writing advice. *(L3-S42 AGREES at Rows 19.44,
   19.46, 19.47, 19.48, 19.50, 19.59 (ii) and 19.62 (i).)*
+- Row 21.179 — compound melody, the implied voices of one line.
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -27333,6 +30814,11 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   confidence contract: bounded, class-declared as a margin or a calibrated probability, named to its decision, unbounded
   values squashed at the boundary. *(L3-S32 AGREES at Rows 19.24 (ii), 19.56 (ii) and 19.71, and DIFFERS at Rows 19.36
   and 19.72.)*
+- Row 21.180 — the confidences of the monophonic and the vertical engines calibrated against each other. *(As Row
+  7.209 (i).)*
+- Rows 21.194 (i), 21.194 (iii) and 21.196 — a style constant no ground truth has calibrated carrying the
+  empirically-unvalidated mark until an established corpus measures it, and the mark lost only in the act that records
+  the measurement. *(L3-S33 AGREES at each.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -27382,13 +30868,22 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Row 20.44 (i) — the Jazz increase of one case accepted under the two-tier amendment of the gate.
 - Row 20.52 — the obligation to show that the tonic anchor reinforces the cases with the mode present rather than
   regressing them.
+- Rows 21.7 and 21.8 — the validation path for the Jazz preset's values, and the Jazz regression check over the
+  chorales not that validation.
+- Row 21.12 — both corpus presets passing the regression check before any gate change is committed.
+- Rows 21.50 (i) and 21.53 (i) — what the DCML annotation writes: the functional root of a three-note triad in
+  inversion, and a passing or neighbouring chord inside a broader region.
+- Row 21.125 (i) — the accuracy of the analysis on jazz not measurable on the corpora held.
+- Row 21.136 (ii) — a tool reading a written symbol only to compare it with the output produced from the notes. *(As
+  Row 20.15; L3-S29 AGREES at the row.)*
+- Row 21.194 (ii) — the corpus that would validate an uncalibrated style constant named beside it.
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
 the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows
 numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, member 17's the rows numbered
-17.n, member 19's the rows numbered 19.n, and member 20's the rows numbered 20.n. Members 4, 5, 6, 14 and 18 relocate no
-row.)*
+17.n, member 19's the rows numbered 19.n, member 20's the rows numbered 20.n, and member 21's the rows numbered 21.n.
+Members 4, 5, 6, 14 and 18 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -28072,6 +31567,213 @@ inference layer*.**
 - Row 20.82 (ii) — do the presets' preferences for the chord's candidate scoring reach any product path at the current
   commit, or only the batch measurement tool?
 
+**Member 21 — `ARCHITECTURE.md`, the passages under *4. Existing Components — The Analysis Foundation*.**
+
+- Row 21.1 — what does `ChordAnalyzer` identify from the notes sounding together, and does the analysis that runs at the
+  current commit reach it (as Row 18.1)?
+- Row 21.2 — does `analyzeChord` return at most three ranked candidates at the current commit, and which consumer reads
+  the candidates after the first?
+- Row 21.3 — do the output structures declared at the current commit match the listing — the extension bits in the
+  order given, every field named, the template-match value used for ranking only, and the pedal-point fields empty on
+  the record path?
+- Row 21.4 — does `ChordAnalyzerPreferences` declare at the current commit the fields and defaults the listing gives —
+  the bass-root bonus at 0.70, the three planned fields unread, the extension threshold at 0.20 by default and 0.12
+  under the Jazz preset — and does `bounds()` return a range for each parameter?
+- Row 21.5 — has any jazz ground truth measured the Jazz preset's extension threshold or its reduced inversion bonuses
+  at the current commit?
+- Row 21.6 — are the Jazz extension threshold and the reduced individual inversion bonuses set in
+  `tools/batch_analyze.cpp` at the current commit, and is that where the preset's inversion behaviour comes from?
+- Row 21.9 — do the inversion-preference gate thresholds stand in `postscoringgates.cpp` at the values named, and on
+  which corpus and run were they calibrated?
+- Row 21.13 — do the three bridge files obtain the chord identifier through `ChordAnalyzerFactory::create()` at the
+  current commit?
+- Row 21.14 — is `bassNoteRootBonus` 0.70 at the current commit, and does it bias the vertical identifier toward taking
+  the bass as the root?
+- Row 21.15 — on which corpus and run do the identifier's readings of inverted chords with the bass as root disagree
+  with music21's functional notation, and does that reproduce?
+- Row 21.16 — on which corpus and run was the share of disagreements with the bass taken as root measured, and does it
+  reproduce?
+- Row 21.17 — on which runs did local changes to the candidate scoring for three-note inversions regress, and does the
+  regression reproduce?
+- Row 21.18 — does the candidate scoring at the current commit carry `stepwiseBassInversionBonus` at 0.5 under its
+  condition, and on which arm?
+- Row 21.19 — is `stepwiseBassLookaheadBonus` built, or deferred as the row says, at the current commit?
+- Row 21.20 — does the candidate scoring carry `sameRootInversionBonus` at 0.4 under its condition at the current
+  commit?
+- Row 21.23 — does `supportsContextualInversionBonuses` admit exactly major, minor, augmented and half-diminished
+  candidates at the current commit?
+- Row 21.24 — does `qualifiesForCompleteTriadInversionBonus` admit exactly major, minor, diminished, augmented and
+  half-diminished candidates at the current commit?
+- Row 21.25 — is `isDiatonicStep` declared inline in `notationcomposingbridgehelpers.h` at the current commit, and which
+  code calls it?
+- Row 21.26 — do both bridges set `previousBassPc` and `bassIsStepwiseFromPrevious` before each call at the current
+  commit, and on which arm do they run?
+- Row 21.33 — does `notationharmonicrhythmbridge.cpp` branch on `useRegionalAccumulation` at the current commit, and
+  which branch runs by default?
+- Row 21.34 — does the regional path at the current commit run the chain the bullet names, the Jaccard boundary detector
+  included?
+- Row 21.35 — does the legacy branch compare the pitch-class sets tick by tick at the current commit, and is it reached?
+- Row 21.36 — does `ChordTemporalContext` carry the preceding chord's root, quality and bass with the stepwise-motion
+  flags at the current commit, and which terms of the candidate scoring read them?
+- Row 21.37 — does `ChordTemporalContext` carry anything beyond the preceding chord and the neighbouring bass and root
+  fields at the current commit?
+- Row 21.39 — does the candidate scoring at the current commit carry `wCompleteBonus` at +0.50 under its gates, and on
+  which arm?
+- Row 21.40 — does the candidate scoring carry `wStepInBonus` at +0.10 under its gates at the current commit?
+- Row 21.41 — does the candidate scoring carry `wStepOutBonus` at +0.10 under its gates at the current commit?
+- Row 21.42 — does the candidate scoring carry `wSeqBonus` at +0.20 under its gates at the current commit?
+- Row 21.43 — does the candidate scoring carry `wDimBonus` at +0.15 under its gates at the current commit?
+- Row 21.44 — does the candidate scoring suppress both step bonuses under the first-inversion seventh-family condition at
+  the current commit?
+- Row 21.45 — do the bridge's Pass 2 and 2b and the batch tool's loop override the previous and next bass with the
+  parent region's at the current commit, and on which arm?
+- Row 21.46 — does the code override those fields after the stepwise booleans and before the call, and restore them
+  after it, at the current commit?
+- Row 21.47 — is `nextRootPc` overridden from the parent region in the same way at the current commit?
+- Row 21.48 — does `RuleBasedChordAnalyzer` read only the notes sounding together at one point at the current commit,
+  given the contextual bonuses of §4.1b and §4.1d?
+- Row 21.49 — does `RuleBasedChordAnalyzer` perform none of the functional analysis listed at the current commit?
+- Row 21.50 (ii) — does the vertical identifier take the bass as the root of a three-note triad in inversion by default
+  at the current commit?
+- Row 21.52 — on which corpora and run was the share of three-note triads among the disagreements measured, and does it
+  reproduce?
+- Row 21.53 (ii) — does the vertical identifier read each sounding stretch on its own, with no prolongation, at the
+  current commit?
+- Row 21.57 — do the gates fire after the first pass of the candidate scoring and before the results are returned, at
+  the current commit and on which arm?
+- Row 21.58 (i) — does every gate applied after the candidate scoring read only the structured fields listed, parsing no
+  chord-symbol string, at the current commit?
+- Row 21.58 (ii) — does any gate infer a Roman numeral at the current commit?
+- Row 21.59 — are the gates' conditions tests on the winner and one runner-up at the current commit?
+- Row 21.60 — does Gate A stand among the gates applied after the candidate scoring at the current commit, under the
+  condition the row gives?
+- Row 21.61 — does Gate B stand under its condition at the current commit?
+- Row 21.62 — does Gate C stand under its condition at the current commit?
+- Row 21.63 — does Gate D stand under its condition at the current commit?
+- Row 21.64 — does Gate E stand under its condition at the current commit?
+- Row 21.65 — does Gate F stand under its condition at the current commit?
+- Row 21.66 — does Gate G-E stand under its condition at the current commit, and on which run was its effect measured?
+- Row 21.67 — do the three temporal fallbacks G-B, G-C and G-D stand at the current commit?
+- Row 21.68 — does Gate H stand under its condition at the current commit?
+- Row 21.69 — does Gate I stand under its condition and margin at the current commit, and on which run was its effect
+  measured?
+- Row 21.70 — does Gate K stand at the current commit, or is it retired as the member's correction of 2026-08-02, in
+  the cut, says?
+- Row 21.71 — does Gate L stand under its condition and margin at the current commit, and on which run was its effect
+  measured?
+- Row 21.72 — does the clean-qualities guard stand under its condition at the current commit?
+- Row 21.73 — does the half-diminished first-inversion bonus stand under its check at the current commit, and on which
+  run was its effect measured?
+- Row 21.76 — do augmented and half-diminished inversion candidates receive the same contextual inversion bonuses as
+  major and minor ones at the current commit?
+- Row 21.87 (ii) — on which run were the four regressions of Iter 56 and 57 found, and does it reproduce?
+- Row 21.88 (ii) — are half-diminished candidates enumerated for all twelve roots and all templates at the current
+  commit?
+- Row 21.89 (ii) — on which run was the effect of Iter 60 measured, and does it reproduce?
+- Row 21.90 (ii) — on which run was the effect of Iter 61 measured, and does it reproduce?
+- Row 21.91 (ii) — on which run were the counts of Iter 63 taken, and do they reproduce?
+- Row 21.92 (ii) — on which run was the effect of Iter 65 measured, and does it reproduce?
+- Row 21.93 — on which run was the case at bwv184.5, bar 13, beat 3, characterized, and does the reading and its margin
+  reproduce?
+- Row 21.94 — on which run was the case at bwv184.5, bar 13, beat 4, characterized as an over-merged stretch, and does
+  it reproduce?
+- Row 21.95 — on which run was the case at bwv371, bar 35, read as an annotation disagreement, and does the reading hold
+  at the music?
+- Row 21.96 — on which run was the case at bwv372, bar 10, characterized as a stretch missing its B♭, and does it
+  reproduce?
+- Row 21.97 — on which run was the case at bwv43.11, bar 3, characterized as a reading absent from the capped results,
+  and does it reproduce?
+- Row 21.98 — is the formatter declared in `chordanalyzer.h` beside the analysis types at the current commit?
+- Row 21.99 — does the formatter's implementation live in `chordsymbolformatter.cpp` with its declarations in
+  `chordanalyzer.h` and no `chordsymbolformatter.h`, at the current commit?
+- Row 21.100 — do `inference_presentation_boundary_tests` assert the include closure in both directions and pass at the
+  current commit (as Row 15.44)?
+- Row 21.101 — does `ChordAnalyzerPreferences` hold the weights of the chord's candidate scoring, the inversion
+  heuristics, the boundary thresholds and the pedal-tail weight together at the current commit?
+- Row 21.102 — do `useExistingChordSymbols`, `useRomanNumeralAnnotations` and `useNashvilleAnnotations` exist at the
+  current commit, and does any code read them?
+- Row 21.103 — does `PitchContext` declare its four fields at the current commit, and does the key/mode identifier weight
+  a bass note twice?
+- Row 21.104 — does `KeyModeAnalyzerPreferences` hold the note weight caps at the current commit, and does the analysis
+  that runs reach them?
+- Row 21.105 — does `KeyModeAnalyzerPreferences` hold four case weights for scale membership at the current commit?
+- Row 21.106 — does `KeyModeAnalyzerPreferences` hold per-tone weights and a complete-triad bonus and penalty at the
+  current commit?
+- Row 21.107 — does `KeyModeAnalyzerPreferences` hold the two characteristic-pitch weights at the current commit?
+- Row 21.108 — does `KeyModeAnalyzerPreferences` hold `trueLeadingToneBoost` at the current commit?
+- Row 21.109 — does `KeyModeAnalyzerPreferences` hold twenty-one mode priors filled from the user's preferences by the
+  bridge at the current commit, and does the analysis that runs read them?
+- Row 21.110 — does the same-signature family decision use its own weights, and does the diatonic family selection guard
+  the raw winner, at the current commit?
+- Row 21.111 — does `KeyModeAnalyzerPreferences` hold `keySignatureDistancePenalty` at the current commit?
+- Row 21.112 — does `KeyModeAnalyzerPreferences` hold the three disambiguation weights at the current commit?
+- Row 21.113 — does `KeyModeAnalyzerPreferences` hold the sigmoid's midpoint and steepness at the current commit, and
+  which confidence do they shape?
+- Row 21.114 — does `KeyModeAnalyzerPreferences` hold the beat-type weights from the downbeat to the sub-beat at the
+  current commit?
+- Row 21.116 — does any analysis or tool path read a chord symbol written in the score at the current commit?
+- Row 21.118 (i) — does `ChordTemporalContext` carry `jazzMode` at the current commit, the member's fields table
+  recording it removed?
+- Row 21.118 (ii) — does any adjustment of the candidate scoring for jazz alone remain in the identifier at the current
+  commit?
+- Row 21.120 — does `batch_analyze` carry the `--inject-written-root` flag at the current commit?
+- Row 21.121 (i) — is that flag reached by no production path at the current commit?
+- Row 21.126 — on which corpora and run was the low agreement on jazz traced to the absent bass and piano parts, and
+  does it reproduce?
+- Row 21.127 (i) — as Row 21.118 (ii).
+- Row 21.140 — does the analysis that runs at the current commit infer the chord from the notes alone?
+- Row 21.147 — on which run was the full root agreement of Phase 1a measured, on which path, and does it reproduce?
+- Row 21.148 — which path did that run measure, and does its result bear on inference from the melody notes?
+- Row 21.150 — on which run were the boundaries found correct in all fifty solos, and does it reproduce?
+- Row 21.151 — are the `Harmony` elements of those files parsed correctly at the current commit?
+- Row 21.152 — on which run was the retired jazz path found to fire on those solos?
+- Row 21.153 — on which run was the count of sounded notes per region taken, given the corrected count Row 21.168
+  records?
+- Row 21.159 — on which run were the fifty files loaded, and does it reproduce?
+- Row 21.160 — does a re-run of that measurement give the same count of regions?
+- Row 21.161 — does a re-run give the same count of comparable regions?
+- Row 21.162 — does a re-run on the corrected path give the same agreement of the written root with the analyzed root?
+- Row 21.163 — does a re-run give the same count of regions without an analyzed chord?
+- Row 21.164 — does a re-run give no solo without a region?
+- Row 21.165 — did the path that gave the earlier result copy the written root into the analysis result, and on which
+  run was that established?
+- Row 21.166 — on which run was the vertical identifier found not to solve the annotated monophonic case, and does it
+  reproduce?
+- Row 21.167 — on which run was the assumption that boundary-correct accumulation suffices found false, and does it
+  reproduce?
+- Row 21.168 — does a re-run give the same distribution of notes per region?
+- Row 21.169 — does the vertical identifier decline every region of fewer than three distinct pitch classes at the
+  current commit, and does the count reproduce?
+- Row 21.170 — does a re-run give that distribution of pitch classes over the comparable regions, and that agreement?
+- Row 21.187 — does the status bar's string append the chord symbol, the tonality and the Roman numeral at the current
+  commit, and from which surface does it read them (as Row 18.7)?
+- Row 21.188 (i) — does `analyzeForChordSymbols` exist, on by default, at the current commit?
+- Row 21.188 (ii) — does the chord-symbol analysis that setting enables run without any inference of the tonality at the
+  current commit, and on which arm?
+- Row 21.189 — does `analyzeForChordFunction` exist, off by default, at the current commit, and does it feed both
+  displays?
+- Row 21.192 — is `inferKeyMode` forced on whenever `analyzeForChordFunction` is on, at the current commit?
+- Row 21.193 — does one count, from one to three with three by default, govern the alternatives both the status bar and
+  the context menu show, at the current commit?
+- Row 21.195 — are the Jazz preset's six mode priors a setting the user selects that only the legacy key path reads, at
+  the current commit?
+- Row 21.197 — does the bridge fill `KeyModeAnalyzerPreferences` from the twenty-one priors before calling
+  `analyzeKeyMode()` at the current commit, and on which arm?
+- Row 21.199 — does `showChordSymbolsInStatusBar` exist, on by default and enabled only with `analyzeForChordSymbols`,
+  at the current commit?
+- Row 21.200 — does `showRomanNumeralsInStatusBar` exist, off by default and enabled only with
+  `analyzeForChordFunction`, at the current commit?
+- Row 21.201 — does `showNashvilleNumbersInStatusBar` exist, off by default and enabled only with
+  `analyzeForChordFunction`, at the current commit?
+- Row 21.202 — does `showKeyModeInStatusBar` exist, on by default and enabled only with `inferKeyMode`, at the current
+  commit?
+- Row 21.203 — does `chordStaffWriteChordSymbols` exist at the current commit, its label calling it planned, and does the
+  chord staff write standard chord symbols above the treble staff under it?
+- Row 21.204 — does `chordStaffFunctionNotation` exist at the current commit, and does the chord staff write the Roman
+  numeral or the Nashville number below the treble staff under it?
+- Row 21.206 — does `chordStaffWriteKeyAnnotations` exist at the current commit, and does the chord staff write the
+  tonality's staff text at region boundaries under it?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -28673,6 +32375,35 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
   cadence taken before the tonality it bears on, where L3-S16 reads the cadence's chords *"in the arrival span's
   tonality"*.
 
+**Member 21.**
+
+- **ADOPTED — proposed — Row 21.191, with Row 21.205:** that the Roman numeral and the Nashville number be two display
+  renderings of the one decided chord, never two analyses (the proposal of Row 4.2).
+- **DIFFERS — Row 21.27 (L3-S30):** the outgoing text makes a region's identity *"root pitch class + quality"*, where
+  L3-S30 publishes at each of L2's boundaries *"the classes of what changed across it: root, quality, figure, applied
+  target, tonality"*.
+- **DIFFERS — Row 21.28 (L3-S30):** the outgoing text merges adjacent regions *"with the same root and quality"*, where
+  L3-S30 *"does not republish the segmentation"*.
+- **DIFFERS — Row 21.29 (L3-S30):** the outgoing inversions and slash-chord bass notes are *"not identity keys"*, where
+  L3-S30 counts a change of figure among *"the classes of what changed"* at a boundary.
+- **DIFFERS — Row 21.38 (L3-S38):** the outgoing future context for the chord's candidate scoring carries *"cadence
+  history"*, where L3-S38 says *"L2 reads nothing L3 publishes."*
+- **DIFFERS — Row 21.54 (L3-S38):** the outgoing contextual layer *"consumes a sequence of `ChordAnalysisResult` outputs
+  and applies … cadence … reasoning"* to improve the chords' agreement, where L3-S38 says *"No L3 fact may change an L2
+  fact, a rival or a mass."*
+- **DIFFERS — Row 21.139 (L3-S29):** the outgoing symbols already present in a score *"may carry different levels of
+  authority depending on context"*, where L3-S29 holds them *"usable by a measurement layer as a reference and never as
+  analysis input"*.
+- **DIFFERS — Row 21.143 (L3-S29):** the outgoing written chord symbol *"is the ground truth — not the notes"*, where
+  L3-S29 says *"L3 never reads the composer's figures"*.
+- **DIFFERS — Row 21.144 (L3-S29):** the outgoing analysis would *"confirm or annotate what the composer declared"*,
+  where L3-S29 says *"A comparison is the measurement layer's act or a display's."*
+- **DIFFERS — Row 21.172 (L3-S29):** the outgoing fallback takes its boundaries from *"written chord symbols when
+  present"*, where L3-S29 holds them *"usable by a measurement layer as a reference and never as analysis input"*.
+- **DIFFERS — Row 21.188 (ii) (L3-S1):** the outgoing chord-symbol analysis *"does not require key/mode inference"*,
+  where L3-S1 makes the chord symbol *"the deterministic function of that span's four chord fields and its
+  tonality"*.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -28700,10 +32431,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 18 | 12 | 0 | 0 | 0 | 12 | 0 | 0 | 0 | 0 |
 | 19 | 132 | 17 | 18 | 43 | 14 | 0 | 19 | 21 | 52 |
 | 20 | 113 | 4 | 3 | 49 | 44 | 0 | 13 | 0 | 43 |
-| **Total** | **1859** | **131** | **76** | **755** | **428** | **0** | **317** | **152** | **611** |
+| 21 | 223 | 0 | 2 | 51 | 126 | 0 | 43 | 1 | 44 |
+| **Total** | **2082** | **131** | **78** | **806** | **554** | **0** | **360** | **153** | **655** |
 
-**The arithmetic check:** 131 + 76 + 755 + 428 + 0 + 317 + 152 = 1859, against 1859 statements placed (43 + 34 + 21 + 34
-+ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113).
+**The arithmetic check:** 131 + 78 + 806 + 554 + 0 + 360 + 153 = 2082, against 2082 statements placed (43 + 34 + 21 + 34
++ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -28727,10 +32459,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 18 | 0 | 1 | 11 | 12 |
 | 19 | 29 | 24 | 83 | 136 |
 | 20 | 17 | 3 | 93 | 113 |
-| **Total** | **194** | **230** | **1443** | **1867** |
+| 21 | 14 | 10 | 199 | 223 |
+| **Total** | **208** | **240** | **1642** | **2090** |
 
-**The arithmetic check of the verdicts:** 194 + 230 + 1443 = 1867, against the members' verdict totals (43 + 35 + 21 + 34 +
-19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113).
+**The arithmetic check of the verdicts:** 208 + 240 + 1642 = 2090, against the members' verdict totals (43 + 35 + 21 + 34 +
+19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223).
 
 ## 14. The derivation's independence record, relayed
 
