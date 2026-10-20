@@ -26298,3 +26298,75 @@ the working tree during the run.
 
 *Provenance: CC, 2026-10-20, appended in the one further commit after the close commit
 `01ef1c3eca380b663ddf589a7483d9b0d1b781ef`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 COMPARISON CONTINUED FROM POSITION 21 — MEMBERS 21 TO 22 TABULATED, PROPOSALS ONLY, NOTHING DECIDED, NO ALGORITHM CHANGED — TASK 1 STOPPED AT THE MEMBER BOUNDARY AFTER POSITION 22, POSITIONS 23 TO 57 NOT DONE
+
+This batch ran `records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md`, pinned at Task 0
+to blob `342917690aa8377bf07d7b12ef97b2e955e18b76`:
+
+- **Task 0** checked this dispatch and handoff entry 434 at their last bytes at their blobs, landed both as they stood
+  (`fe36a79b…`), took the opening guard capture — as A2 predicted, the thirteen and nothing else, with the evidence pin
+  green — and verified the derivation and the brief at their blobs before Task 1 opened.
+- **Task 1** extended `ratification_surfaces/cowork_comparison_l3_reading.md` with **position 21 — `ARCHITECTURE.md`'s
+  passages under *4. Existing Components — The Analysis Foundation*** (`bf875b9a…`, with §0's clause on the previous
+  batch's stop and the one banner edit) and **position 22 — its passages under *5. Planned Analysis Extensions***
+  (`13c4cdf8…`), one commit each, with §0 and §10 to §13 updated in each. Every published range line text matched the
+  line at its locator; no range carries the quotation-block marker; positions 4 and 5's lines were excluded from
+  position 21's cut, and no other member lies inside position 22's section. The walks of the decisions register's data
+  file by range overlap agreed with the dispatch at position 21 — eleven retired homes inside the ranges, the two live
+  and nine retired ones the premise ledger names in the cut — and established position 22's: one home inside its ranges,
+  D-106, and fourteen in its cut, none withheld. The fenced blocks were taken as one unit each, as Row 4.4 precedes
+  them. Every quotation of an outgoing statement and every *not a statement* opening was checked against the member's
+  text at the objects before each commit, and §6.1 to the previous member compared byte-identical each time. Position 21
+  was finished whole; **no capacity judgment was written out before it was opened**, a departure the report declares
+  rather than reconstructs. The judgment before position 22 was written and it was finished whole. **The session's
+  context was summarized once**, after position 21's rows were written and before its commit. It **STOPPED at the member
+  boundary after position 22** by the capacity judgment 1(h) orders, written before position 23 was opened. **Positions
+  23 to 57 are UNTOUCHED, not partly worked** (**D-672**), and §0 of the reading file says so.
+- **Task 2** closed.
+
+**NOTHING WAS DECIDED; NO DISPOSITION WAS APPLIED; EVERY PLACEMENT IS A PROPOSAL.** No outgoing text was edited —
+`ARCHITECTURE.md` was read, never edited. The derivation, the brief, the pack and the two earlier reading files were not
+edited, and §6.1 to §6.20 of the reading file were not touched. No session was booted. No measurement of the analysis was
+made. No open-items row and no `D-NNN`. No ruling was taken, no recommendation was made, and nothing was put to the user.
+The five ★ questions were not put. Nothing any layer computes changed.
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_comparison_tabulation_tenth_2026_10_20.md`, and is pointed at rather than copied (#6):
+
+- the members done and not done, with the capacity judgments and the summary of the context, at its head;
+- the ordered first read, with the derivation's counts (§0);
+- Task 0, with the refs, the chain, A1, the last bytes, the commit, the opening capture whole and the two blobs (§1);
+- Task 1's two commits, each member's ranges check, the walks by range overlap, how each member was placed, and the
+  re-read before each commit with the slips it caught and the scratch scripts' limits (§2);
+- Task 2, with the `STATUS.md` entries and the substring search, the forward bound's aiming, `--apply` and `--check` with
+  the three entries moved by name, and the checks with what each regenerated artifact moved (§3);
+- A1 to A5 (§4), the findings and observations (§5), the declared departures (§6), the scripts (§7), what the batch did
+  not do (§8), the plan's tell (§9) and the self-check (§10).
+
+### What needs the writing side, named rather than resolved
+
+1. **Placements stated for challenge** at §6.21's manifest header (eight) and §6.22's (seven) — among them, at position
+   22, the three benchmark passages placed HISTORICAL inside the block the document declares history, departing from
+   Rows 19.13 to 19.15; and two statements UNPLACED, Rows 21.157 and 22.58 (i). Every DIFFERS is at §12.
+2. **The passage rule's cuts at positions 21 and 22 are recorded, not repaired**, with the decision homes in no member
+   named at §6.21 and §6.22.
+3. **A tension inside position 22's own text** — Row 22.68 (i) records a function as gone from the production tree and
+   Row 22.85 places a loop in it — named in Row 22.85's audit question, nothing decided.
+4. **The capacity judgment before position 21 was not written out** (report §6, departure 1) — recorded so the shape of
+   the next dispatch's 1(h) can be judged against it.
+5. **The classification tool's message still names four tools without an authored verdict**, unchanged. Authoring one
+   was not this batch's act.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects, then the next tabulation
+  dispatch resuming at the member boundary §0 of the reading file records: position 23, `ARCHITECTURE.md`'s passages
+  under *6. The Style System*.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-20, at boot tip `a434253fa0a68b869ae44494ba1f374ff10d5f49`, under
+`cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md`, after the dispatch's ordered first reads. Every commit
+identifier here was read from the commit's own object and `origin/master` at its ref file after each push; the guard
+verdicts are this batch's own runs.*
