@@ -26522,3 +26522,74 @@ The five ★ questions were not put. Nothing any layer computes changed.
 `cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md`, after the dispatch's ordered first reads. Every commit
 identifier here was read from the commit's own object and `origin/master` at its ref file after each push; the guard
 verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `a23f352429049db7fa5c096e1b8ed64c53b1c35d` left, appended in the one further commit
+
+**A fresh full guard run in write mode (`python tools/audit/gen_guard_state.py`, the mode named), after the close commit
+and before this one.** Its result is at `tools/audit/guard_state.json` → `summary`, which this commit carries. Its first
+line, verbatim: *"wrote tools\audit\guard_state.json"*; its last line, verbatim: *"82 guard(s) run, 13 failing, 4 not
+run, 20 historical record(s)"*. **E2 and E3 — MET, AS A2 PREDICTED:**
+
+- the run count is the premise ledger's;
+- zero STOPs in the runner;
+- the failing set is exactly the thirteen of the premise ledger, none added;
+- `tools/audit/gen_l3_outgoing_population.py --check` PASSES;
+- the NOT RUN and HISTORICAL lines are identical to the opening capture's — indeed every verdict line after the header
+  is identical to the opening capture's, compared line by line by the scratch script `t3_compare.py`, which printed
+  *"verdict lines identical (all after the header): True"* and *"failing at the end state: 13"*.
+
+`gen_evidence_pin_membership.py --check`, `gen_l0_l1_outgoing_population.py --check`, `gen_defense_share.py --check`,
+`gen_session_start_read_size.py --check` and `gen_status_batch_bound.py --check` are green.
+
+**The A2 exceptions, handled as A2 says, were all met inside the close rather than after it.** The defense share and the
+session-start read size went red after the close's `STATUS.md` edits and the forward-bound move. Each was regenerated —
+twice, the second time after the in-place correction of this batch's own `STATUS.md` entries the report declares — and
+compared against the blob at `517e6e06…` by explicit hash (report §3, 2(c)); each moved only with `STATUS.md`. **The L3
+population stayed green throughout and was not regenerated**: the *paraphrase* residue line returned to its own line.
+**No population member, no item-4 passage, no member of the tabulation population and no residue record moved.** The
+evidence-pin membership and the L0/L1 population stayed green throughout. All were re-checked green after the report and
+the close section were written, before the close was committed, so this run regenerated nothing beyond its own
+artifact. `gen_l2_outgoing_population.py` was not run in any operating mode.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_l3_outgoing_population.py',
+'tools/audit/gen_withheld_family_reading.py']"* — exactly the four tools of the dispatch's FACT; no fifth name.
+
+**A3 to A5, verified at the objects.** `git diff --name-status 517e6e06e1e7b22d310e20ff5ffcd33b3e503402 a23f3524…` shows
+eleven paths, every one accounted for, and **`ARCHITECTURE.md` is absent from it**:
+
+- the two records of Task 0;
+- the reading file of Task 1;
+- the close's eight: `STATUS.md`, `STATUS_ARCHIVE.md`, the re-aimed forward-bound tool and its artifact, the defense
+  share, the read-size artifact, the report, and this file.
+
+`git diff --numstat` between the member commit `256a5d19…` and the close shows `STATUS_ARCHIVE.md`, the report and this
+file with lines added only. At the close, `git ls-tree` shows the derivation and the brief at blobs `c01793f9…` and
+`6abb5333…`, the ones the premise ledger names; `ARCHITECTURE.md` at `1ce6176c…`, the blob positions 23 to 26 were read
+from; the reading file at `7425dc3a…`, unchanged since the member-26 commit; and the L3 and L0/L1 population artifacts at
+`13d1750b…` and `bf3664bc…`, the boot commit's blobs.
+
+**§6.1 to §6.22 of the reading file are byte-identical**, compared as A5 orders: the span from the heading *"### 6.1 —
+Member 1:"* to the line before *"## 7."* in the blob at `517e6e06…` (`175a5f26…`), and the span from the same heading to
+the line before *"### 6.23 — Member 23:"* in the close's blob (`7425dc3a…`), both read from the object store by explicit
+hash, compare equal. The comparison was made by the scratch script `t3_span.py`, which reads blobs only, and printed
+*"6.1-6.22 span identical: True  lengths 1577793 1577793"*.
+
+**Nothing else differs from the boot commit:**
+
+- no other tool source, `tools/audit/gen_guard_state.py` and `tools/audit/gen_l3_outgoing_population.py` included;
+- no file under the pack directory `tools/audit/derivation_boot_pack/l3/`, and not `tools/audit/derivation_boot_pack.json`;
+- not the two input-contract files, and not the L0/L1 or L2 reading file;
+- no outgoing text, and not `FRAMEWORK.md` or `ARCHITECTURE.md`;
+- not `tools/audit/gen_l0_l1_outgoing_population.py`, `tools/audit/gen_l2_outgoing_population.py` or its artifact,
+  `tools/audit/gen_l2_withheld_documents.py` or `tools/audit/gen_derivation_boot_pack.py`;
+- not the L3 population artifact;
+- no source of the decisions register and no rendered decisions-register file;
+- no governing document other than `STATUS.md` and `STATUS_ARCHIVE.md`.
+
+This commit adds only the guard run's artifact and this portion. No further handoff entry or ruling record appeared in
+the working tree during the run.
+
+*Provenance: CC, 2026-10-20, appended in the one further commit after the close commit
+`a23f352429049db7fa5c096e1b8ed64c53b1c35d`; the verdicts are this run's own output, read with the file tools.*
