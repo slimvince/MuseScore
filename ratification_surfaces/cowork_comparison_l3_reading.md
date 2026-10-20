@@ -11,7 +11,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventh_2026_10_19.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighth_2026_10_19.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -63,7 +64,7 @@ its own entry there.
 | 20 | `ARCHITECTURE.md` passages — *3. Directory Structure* | **DONE** (§6.20) |
 | 21 | `ARCHITECTURE.md` passages — *4. Existing Components — The Analysis Foundation* | **DONE** (§6.21) |
 | 22 | `ARCHITECTURE.md` passages — *5. Planned Analysis Extensions* | **DONE** (§6.22) |
-| 23 | `ARCHITECTURE.md` passages — *6. The Style System* | NOT YET TABULATED |
+| 23 | `ARCHITECTURE.md` passages — *6. The Style System* | **DONE** (§6.23) |
 | 24 | `ARCHITECTURE.md` passages — *7. The Knowledge Base* | NOT YET TABULATED |
 | 25 | `ARCHITECTURE.md` passages — *8. Planned Generation Components* | NOT YET TABULATED |
 | 26 | `ARCHITECTURE.md` passages — *9. The Constraint System* | NOT YET TABULATED |
@@ -100,7 +101,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 22 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 23 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -112,7 +113,8 @@ ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhyth
 inference layer*, the second, position 17, its passages under *Document governance and the standing architecture
 notes*, position 18, its passages under *1. Project Overview*, position 19, its passages under *2. Architectural
 Principles*, position 20, its passages under *3. Directory Structure*, position 21, its passages under *4. Existing
-Components — The Analysis Foundation*, and position 22, its passages under *5. Planned Analysis Extensions*.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
+Components — The Analysis Foundation*, position 22, its passages under *5. Planned Analysis Extensions*, and position
+23, its passages under *6. The Style System*.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
 boundary after position 7, by its own capacity judgment; position 8 was tabulated under
@@ -130,8 +132,10 @@ boundary after position 15, by its own capacity judgment; positions 16 to 19 wer
 boundary after position 19, by its own capacity judgment; position 20 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md`, which stopped at the member
 boundary after position 20, by its own capacity judgment; positions 21 and 22 were tabulated under
-`records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md`.** **The writing now stands at
-the member boundary after position 22: not done, positions 23 to 57, and the next writing resumes at position 23.** **A
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md`, which stopped at the member
+boundary after position 22, by its own capacity judgment; position 23 was tabulated under
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md`.** **The writing now stands at
+the member boundary after position 23: not done, positions 24 to 57, and the next writing resumes at position 24.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -32083,6 +32087,969 @@ QUARANTINED; and 22.83, 22.84(ii) and 22.86 (L3-S2), QUARANTINED — seven state
 
 ---
 
+### 6.23 — Member 23: `ARCHITECTURE.md`, the passages under *6. The Style System*
+
+> **Manifest for this member.** Position **23**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: `## 6. The Style System`, exactly as the artifact spells it. **The ninth member of
+> this comparison made of passages.** Five ranges, each as a locator only (**D-307**), with its first and last line texts
+> exactly as the artifact publishes them (wrapped here for width):
+>
+> - lines 5327–5339, from *"**Dimensions:**"* to *"- `analysis` — what the analyzer flags as problems vs features"*;
+> - lines 5438–5455, from *"**★ HOW FAR THE APPLICATION HAS GOT, corrected 2026-08-11 (`OPEN_ITEMS.md` OI-346). The
+>   clause above"* to *"named, is owed work and is tracked in the open-items register."*"*;
+> - lines 5518–5577, from *"- **The governing order is DISCOVER, THEN NAME.** Structure is learned on a **low-level
+>   encoding"* to *"  formality."*;
+> - lines 5586–5619, from *"- **The taxonomy and the per-style weights are ONE data-derived object; VALIDATION is a
+>   separate"* to *"  that had been given the texture label would of course recover it."*;
+> - lines 5628–5677, from *"- **A preset presents as a familiar genre-era label plus exemplars the user knows — never as
+>   an"* to *"  the style system it reaches; it does not weaken it."*.
+>
+> **Each of the ten line texts was compared with the line at its locator** in `ARCHITECTURE.md`, read by this session at
+> the file and at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at that
+> commit, **and every one matches**. The top-level heading the label names stands at line 5293, and the next top-level
+> heading, *7. The Knowledge Base*, at line 5681. **No other member of the artifact lies inside this top-level section**
+> — this session's script, run over lines 5293 to 5681, found no range of any other `ARCHITECTURE.md` member there — so
+> nothing is excluded from the cut. The section's other lines lie in no range — lines 5294–5326, 5340–5437, 5456–5517,
+> 5578–5585, 5620–5627 and 5678–5680, as this session's script lists them. They hold, by the lines this session read:
+> *6.1 Overview* whole — styles defined entirely in data files, the code implementing the mechanisms of generation, and
+> no code change needed to add a style; under *6.2 Mixin Architecture*, its opening paragraph, its fenced example of a
+> style file and, after range 1, the lead *Conflict resolution priority:* with its three numbered items; *6.3 Style File
+> Naming and Location* whole, a fenced directory listing; *6.4 Style Loader* whole, its paragraph and its fenced
+> interface; *6.5 Initial Styles* whole, its terminology remark, its paragraph and its table of five styles; under *6.6
+> Connection to ChordAnalyzerPreferences*, its first two paragraphs — the planned connection of a style to the
+> analyzer's preferences, and the rule itself that every style constant and idiom no ground truth has calibrated
+> carries the empirically-unvalidated mark with its validation path named, with its maintenance and its *Why:*, the
+> paragraph range 2 calls *"The clause above"*; under *6.7 The canonical style taxonomy (shared with the Harmonic
+> Vocabulary)*, its opening down to range 3 — the one shared taxonomy of five idioms with two cross-attributes, its
+> ratification and encoding, the idioms' empirical discovery, the admission basis, the per-preset weights as future
+> work, the superseded genre taxonomy, the pointer to the full proposal and the ★ lead of the method's five rules — and
+> the ★ lead of the four further statements between ranges 3 and 4; under *6.8 The user-facing preset layer — naming,
+> coverage, the mixture contract and the licence split*, its heading and its paragraph *Status: RECORDED and DEFERRED
+> product work*, which says *"Nothing here is built at HEAD"*; and the separator before *7.* and the empty lines between
+> the ranges. No other member of the artifact covers them — the passage rule's cut, recorded here as at §6.15 to §6.22,
+> and not repaired. Outgoing statements: **49** (rows 23.1 to 23.44; five rows carry two claims, each split — the
+> arithmetic is at the foot of this member). Listed under *not a statement*: **40**. Counted at this member by this
+> session; the counts appear here and at §13, and nowhere else.
+>
+> **WITHHELD homes inside this member: none** — the artifact's `item_4_identities_inside` for position 23 is empty.
+> **Fourteen decisions of the decisions register's data file are homed inside this member's ranges, one for each bullet
+> of ranges 3 to 5, and none is withheld**, found by this session's walk of
+> `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit hash) for
+> every `home` naming `ARCHITECTURE.md` with a line range overlapping one of the five ranges, the retired block included
+> — each home lying wholly inside one range: in the decisions register's list, **D-542** at 5518–5525, **D-543** at
+> 5526–5536, **D-544** at 5537–5549, **D-545** at 5550–5563 and **D-421** at 5564–5577 (range 3), **D-598** at
+> 5586–5594 (range 4), and **D-587** at 5628–5635, **D-588** at 5636–5643, **D-589** at 5644–5652, **D-590** at
+> 5653–5668 and **D-591** at 5669–5677 (range 5); and **three RETIRED entries** the decisions register's INDEX does not
+> show, kept in its data file's retired block with the clause every retired record carries, *"a provenance verdict, not
+> a judgment on soundness or usefulness; the statement stands at its home and is met by the derivation"* (read by this
+> session at D-554's record, retired 2026-08-16), as at §6.15, §6.16, §6.19, §6.20 and §6.21 — **D-554** at 5595–5603,
+> **D-555** at 5604–5613 and **D-556** at 5614–5619 (range 4), each retired record's own `status` field reading *live*.
+> The decisions register's INDEX records D-421 (group M), D-598 and D-587 to D-591 (group F) as LIVE, and D-542 to D-545
+> (group M) as NOT STATED, none of them LEGACY-marked — facts of the decisions register, relayed and moving no
+> disposition. **The
+> walk agrees with the fourteen the dispatch read**, no identity beyond them and none of them missing; none is withheld,
+> so none carries a mark, and the rows inside their homes are named at the foot. Ranges 1 and 2 home none. *(The same
+> walk over the cut spans finds six homes there, and therefore in no member: in the decisions register's list,
+> **D-497** at 5423–5436 — the rule of *6.6* that range 2 continues — recorded LIVE at the INDEX (group C), **D-131** at
+> 5459, recorded LIVE (group M), and **D-132** at 5494, recorded DEFERRED (group M); and the retired **D-128** at 5297,
+> **D-129** at 5341 and **D-130** at 5377 — none of them withheld.)* **No SEEN home lies in this member**, agreeing with
+> §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.22, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation
+> join, the blockquote-marker reading, the fenced-block reading and the reading of a range that opens with a heading
+> line were applied unchanged at this member.** **The blockquote-marker reading has nothing to drop at any of the five
+> ranges**: every range was checked line by line at the blob, and no line of any of them opens with the quotation-block
+> marker; a quotation from a bullet drops its `- ` list marker instead. **The fenced-block reading has no instance at
+> this member**: no range holds a fenced block — the section's three blocks, the style file's example, the directory
+> listing and the style loader's interface, all lie in the cut. **A range that opens with a heading line: none at this
+> member** — no line inside the five ranges is a heading. **This member has no table, no status table and no
+> glossary.** **How the bold leads were read:** the leads of the fourteen bullets of ranges 3 to 5 are complete
+> sentences stating rules and are tabulated (Rows 23.5, 23.7, 23.9, 23.14, 23.16, 23.19, 23.22, 23.25, 23.28, 23.30,
+> 23.32, 23.36, 23.39 and 23.43), and each bullet's other sentences are tabulated sentence by sentence, as at §6.21 and
+> §6.22; where a bold run stands inside the sentence it opens — *"The source-leakage test is mandatory:"*, *"If the
+> clusters approximate the source, the study found bookkeeping and not idiom"*, *"A changed cluster set is a ratified
+> taxonomy-revision event"* and *"Two things are recorded rather than assumed away:"* — the sentence is quoted with it
+> (Rows 23.11, 23.12, 23.18 and 23.42). Range 2's two bold clauses that are complete sentences, *"THE JAZZ PRESET
+> CONSTANTS ARE MARKED"* and *"THE IDIOM HALF IS NOT APPLIED AND IS HELD RATHER THAN GUESSED"*, are tabulated with their
+> sentences (Rows 23.3 and 23.4). Range 2's ★ lead is two sentences inside one bold run: its first, *"★ HOW FAR THE
+> APPLICATION HAS GOT, corrected 2026-08-11 (`OPEN_ITEMS.md` OI-346)."*, is a noun-phrase label with its provenance,
+> read as a title; its second is a complete sentence about this document's own clause and is listed (item 12), as
+> §6.21 listed range 62's ★ lead about the document's own mark (item 42) — **which departs in kind from Row 21.5**,
+> where §6.21 tabulated range 4's ★ lead because that lead stated the constants' unvalidated state; this lead states only
+> what the document's clause formerly said. **A lead ending in a colon:** range 1's *"Dimensions:"* only introduces its
+> items and is listed as a lead (item 1); *"The source-leakage test is mandatory:"* and *"Two things are recorded rather
+> than assumed away:"* open sentences that carry claims of their own and are tabulated with them. The *Why:* sentences,
+> and the sentences that continue their reasoning, are listed under the second reading rule, as is the reasoning offered
+> for the gate before the controls of Row 23.10 (item 20). **The quotation join found nothing to join at this member**:
+> no line inside its ranges breaks a hyphenated compound at its end. **The former wording preserved inside the member** —
+> range 2's closing lines, 5453 to 5455, the paragraph's own superseded sentence under the bold label *"FORMER WORDING,
+> PRESERVED (#12):"*, in italics and quotation marks with a bold run-in lead of its own — is listed as *provenance* (item
+> 15), **following §6.3's items 1 and 14**, which listed their member's preserved former wordings the same way; the
+> superseded sentence inside it is taken with that one item and is not tabulated, being the record of a sentence no
+> longer standing rather than a statement of the member.
+>
+> **Range 1's twelve code-span bullets, read by the unit's own test.** Each bullet names a dimension of a style file and
+> lists, with no verb, what that dimension carries. The member's own account of a style file stands outside the range:
+> *6.1* says that the code implements the mechanisms — *"voice leading optimization, chord generation, voicing rules"* —
+> while the style files define their parameters, and *6.6* says that a style, once active, would populate the
+> analyzer's preferences, *"affecting which chord types are considered idiomatic, what extensions are expected, and how
+> scoring weights are adjusted"*. Read against that account, **two bullets state what the analysis may be given** and
+> are tabulated: `harmonic_language`, the chords, progressions and substitutions a style makes available (Row 23.1), and
+> `analysis`, what the analyzer flags as a problem or a feature (Row 23.2). **The other ten** — `voice_leading`,
+> `voicing`, `rhythmic_feel`, `form`, `bass_line`, `melodic`, `idiomatic_material`, `ensemble`, `generation`, and
+> `tuning` for the tuning feature — **are listed under *not a statement* as parameters of the generation mechanisms or of
+> the tuning feature, not of the analysis** (items 2 to 11). **This departs from the nearest precedent**, §6.21's range
+> 34, where every bullet naming a group of weights was a row, because those weights were the key and mode identifier's
+> own; and **the reading most open to challenge** is at `form` and `rhythmic_feel`, whose words — *"phrase structure,
+> cadence types, section characteristics"* and *"harmonic rhythm patterns"* — coincide with L3's own subjects: read as a
+> generator's parameters they are listed, and read as a declaration L3 would take they would be tabulated, the
+> alternative this file states rather than takes.
+>
+> **What this member is, read whole before any row was written.** The ranges are this document's account of its style
+> system that the population's passage rule reached: the dimensions a style file declares; the state of applying the
+> empirically-unvalidated mark — the Jazz preset's constants marked, the idioms held — with the clause it replaced; the
+> five rules of the method that discovers the style taxonomy and re-discovers it at every corpus wave; four statements
+> on what the taxonomy and its weights are as one object and on the voice-leading axis the discovery study found; and
+> the five rules of the user-facing preset layer, which the sub-section's own status line, outside the range, records as
+> deferred product work, *"Nothing here is built at HEAD"*. Nothing in it states what L3 publishes; it meets L3's words
+> only in two style dimensions, `form` and `rhythmic_feel`. **Six placements are stated for challenge.** (a) Range 1 is
+> read as the paragraph above states: two rows and ten items. (b) **Range 2's application states** — the Jazz preset's
+> constants carrying the mark, the idioms not marked and held — are **QUARANTINED**, as Row 21.5 placed the same
+> constants' unvalidated state, and the validation path named for them is **RELOCATED** to *the measurement of the
+> analysis*, as Row 21.7. (c) **The taxonomy, its weights and the method that discovers them** — discover then name, the
+> encoding, the confound gate, the external extractor, re-discovery on research material only, the taxonomy and its
+> weights as one object, genre names as labels over mixtures — are **RELOCATED** to *L2 — The tonal reading. The one
+> entangled decision.*, whose values are fitted per idiom and carried by a preset, as Rows 16.23, 16.24 (i), 16.24 (ii)
+> and 16.25 (i) placed them; no row at §6.15 to §6.22 places a rule of the style taxonomy's own discovery, so this
+> placement has no nearer precedent, and Row 19.33's proposal — that any style-specific behavior of L3 live only in its
+> model's fitted values — stands beside it; whether the analysis improves when it uses an idiom is **RELOCATED** to *the
+> measurement of the analysis*. (d) **The second axis's measured independence** and the confound gate's run are
+> **QUARANTINED**, as Row 19.59 (iii) asked of the same measurement; the axis's features, its coverage, its covariates
+> and the voice-leading idiom as a dimension of style are **RELOCATED** to *the second axis — voice leading*, as Rows
+> 19.42 to 19.64 placed the axis's objects. (e) **The preset layer's mixtures** — their three tiers of coverage, the
+> analysis moving away from the starting mixture, and the licence split — are **RELOCATED** to L2, the licence split as
+> Rows 16.18 to 16.21 placed the fitting pool, with **L3-S14 AGREES** at Row 23.44, whose words are general, as at Rows
+> 16.18 to 16.20 (ii); **the evidence status of a chosen mixture** is **RELOCATED** to *the uncertainty surface* with
+> **L3-S33 AGREES**, as Row 21.194 (i); and the MusicXML round trip of a stored mixture is **QUARANTINED**. (f) **Eight
+> statements are UNPLACED**: how the product names a preset to its user, what a user may select and how the presets and
+> the selector are offered, and where and how a piece's chosen mixture is stored — no charter of `FRAMEWORK.md` §5 names
+> the user-facing preset layer or the product's storage of its configuration, and no derived statement speaks to a
+> preset; for the stored mixture the nearest charter, *L0 — The notated record*, gives what the notation says and names
+> no stored configuration, the alternative reading named at Row 23.39. **The tension the member names between two of its
+> own sub-sections** (item 38) and its remark on what its licence rule does to another rule (item 40) are listed under
+> *not a statement*. **No statement of this member DIFFERS from a derived statement, and none is ADOPTED.**
+
+---
+
+**Row 23.1 — the chords, progressions and substitutions a style's harmonic-language dimension makes available.**
+
+*Outgoing statement.* "`harmonic_language` — available chords, progressions, substitutions" — the section *6. The Style
+System*, sub-section *6.2 Mixin Architecture*, the first bullet under the lead *Dimensions:* (locator: line 5328).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose chord
+decision the chord types a style holds idiomatic would bear on, as *6.6*'s paragraph outside the range says a style
+would populate the analyzer's preferences; as Row 16.23 placed the values fitted per idiom.
+
+---
+
+**Row 23.2 — a style's analysis dimension: what the analyzer flags as a problem or as a feature.**
+
+*Outgoing statement.* "`analysis` — what the analyzer flags as problems vs features" — the same list, its last bullet
+(locator: line 5339).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: a dimension of the planned style file naming which findings the analyzer
+reports as problems and which as features of the style; no charter of `FRAMEWORK.md` §5 names such flagging — the
+nearest is the part-writing advice the second axis owns as a claim, at Row 19.60 — and no derived statement speaks to a
+style; the bullet and the sub-section around it are the whole of what was read.
+
+---
+
+**Row 23.3 — the Jazz preset's constants carrying the mark, the validation path named beside each.**
+
+*Outgoing statement.* "**THE JAZZ PRESET CONSTANTS ARE MARKED** — the six mode-prior overrides at the preset table in
+§4.6, and the Jazz chord-scoring constants (the extension threshold and the reduced inversion bonuses) beside the
+preferences structure — each with the same validation path named: jazz ground truth carrying written-out bass and piano
+voicings, converted and score-aligned (§4.1c; `cowork_score_census.md` Tier J)." — the same section, sub-section *6.6
+Connection to ChordAnalyzerPreferences*, its ★ paragraph after the lead *★ HOW FAR THE APPLICATION HAS GOT, …*
+(locator: lines 5440–5444). Two claims: (i) the Jazz preset's six mode-prior overrides and its constants for the chord's
+candidate scoring carry the empirically-unvalidated mark at their sites; (ii) the validation path named beside each is
+jazz ground truth carrying written-out bass and piano voicings, converted and aligned to the score.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* are the Jazz preset's six mode-prior overrides, its
+extension threshold and its reduced inversion bonuses measured by no jazz ground truth at the current commit, and does
+each carry the empirically-unvalidated mark at its site in this document?
+(ii) **RELOCATED** — to ***the measurement of the analysis***, whose content is the ground truth a value is graded
+against, as Row 21.7.
+
+---
+
+**Row 23.4 — the mark not applied to the idioms and held, with the record's reasons.**
+
+*Outgoing statement.* "**THE IDIOM HALF IS NOT APPLIED AND IS HELD RATHER THAN GUESSED**, with the reason stated so that
+it is not mistaken for an oversight: the record establishes that only the **classical common-practice** idiom is covered
+by held annotated music and that the jazz fit is deferred, but **no surface maps the five §6.7 idiom names onto a
+per-idiom ground-truth verdict** — and the one mapping §6.7 does supply is complicated by the discovery study's own
+finding that the gate corpus's chorales form no distinct chord-idiom and scatter across clusters." — the same paragraph
+(locator: lines 5444–5449).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* at the current commit, is the mark applied to no idiom, is
+only the classical common-practice idiom covered by held annotated music, does any surface map the five idioms onto a
+per-idiom ground-truth verdict, and on which run were the gate corpus's chorales found to form no distinct chord-idiom?
+
+---
+
+**Row 23.5 — discover first, then name.**
+
+*Outgoing statement.* "**The governing order is DISCOVER, THEN NAME.**" — the same section, sub-section *6.7 The
+canonical style taxonomy (shared with the Harmonic Vocabulary)*, the first of the five rules under the ★ lead *★ THE
+METHOD THAT PRODUCES AND RE-PRODUCES THIS TAXONOMY LIVES HERE TOO …*, which stands outside every range at lines 5511 to
+5516 (locator: line 5518).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose values are
+fitted per idiom, as Row 16.23 placed them, the idioms being what this method discovers.
+
+---
+
+**Row 23.6 — structure learned on a low-level encoding; theory and genre labels lenses applied afterwards.**
+
+*Outgoing statement.* "Structure is learned on a **low-level encoding carrying no theory and no genre labels**; only
+afterwards is the emergent structure held up against theory features **and** genre labels, both as **interpretation
+lenses, never as clustering input**." — the same bullet (locator: lines 5518–5521).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.5.
+
+---
+
+**Row 23.7 — the encoding: transitions normalized to a common tonic, spelled where reliable, in two views.**
+
+*Outgoing statement.* "**The encoding is KEY-NORMALIZED TONAL-PITCH-CLASS TRANSITIONS — spelled where spelling is
+reliable, plain pitch classes only where no spelling exists — run as TWO complementary views.**" — the second rule
+(locator: lines 5526–5527).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.5.
+
+---
+
+**Row 23.8 — each piece transposed to a common tonic as chord-to-chord moves, with an order-free view beside it.**
+
+*Outgoing statement.* "Every piece is transposed to a common tonic and encoded as chord-to-chord moves, using the written
+note names wherever the source spells them (classical scores and trusted lead-sheet symbols); a second, order-free
+vocabulary view of the same material runs alongside as a cross-check." — the same bullet (locator: lines 5528–5531).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.5.
+
+---
+
+**Row 23.9 — confound control a validity gate; the source-leakage test decides.**
+
+*Outgoing statement.* "**Confound control is a FIRST-CLASS VALIDITY GATE, and the source-leakage test decides
+validity.**" — the third rule (locator: lines 5537–5538).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.5.
+
+---
+
+**Row 23.10 — the controls mandatory, each matched to a failure.**
+
+*Outgoing statement.* "So the controls are mandatory and matched to it one by one: key-normalize, length-normalize,
+balance and stratify sources, de-duplicate, exclude melody-only sources, audit extraction noise on a labelled subset." —
+the same bullet (locator: lines 5540–5542).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.5.
+
+---
+
+**Row 23.11 — the source-leakage test mandatory.**
+
+*Outgoing statement.* "**The source-leakage test is mandatory:** hold out the source label and test whether the clusters
+are explained by source, key or length." — the same bullet (locator: lines 5542–5543).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.5.
+
+---
+
+**Row 23.12 — clusters that approximate the source found to be bookkeeping, not idiom.**
+
+*Outgoing statement.* "**If the clusters approximate the source, the study found bookkeeping and not idiom** — back to the
+encoding." — the same bullet (locator: lines 5544–5545).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.5.
+
+---
+
+**Row 23.13 — the word idiom earned only after the controls.**
+
+*Outgoing statement.* "A discovered structure earns the word *idiom* only after surviving these." — the same bullet
+(locator: line 5545).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.5.
+
+---
+
+**Row 23.14 — the external library the extractor; our own inference never touching the extraction.**
+
+*Outgoing statement.* "**The uniform mechanical extractor is the EXTERNAL library, and extraction stops at the
+note-and-slice front: OUR OWN key/chord/function inference never touches it.**" — the fourth rule (locator: lines
+5550–5551).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.5.
+
+---
+
+**Row 23.15 — one external tool applied identically; our analyzer not used for the extraction, its trust banked.**
+
+*Outgoing statement.* "One external tool (music21) is applied identically to every source, and only as far as reading
+notes and cutting them into simultaneities; our own analyzer is deliberately not used for the extraction, and its trust
+is **banked rather than assumed** — a shared subset is run through both and the streams compared." — the same bullet
+(locator: lines 5551–5555).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.5.
+
+---
+
+**Row 23.16 — re-discovery at every corpus wave, on research material only; a changed cluster set its own ratification
+event.**
+
+*Outgoing statement.* "**Idiom re-discovery RIDES EVERY CORPUS WAVE, on research material only, and a changed cluster set
+is its own ratification event.**" — the fifth rule (locator: lines 5564–5565).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.5.
+
+---
+
+**Row 23.17 — the pipeline re-run after each corpus change, held-out material excluded.**
+
+*Outgoing statement.* "After each material corpus change the discovery pipeline is re-run under the protocol above, on
+the **development set and outside research corpora only** — held-out material excluded — asking first whether the five
+idioms **reproduce**." — the same bullet (locator: lines 5565–5567).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.5.
+
+---
+
+**Row 23.18 — a changed cluster set a ratified revision, propagating to the style tags.**
+
+*Outgoing statement.* "**A changed cluster set is a ratified taxonomy-revision event**: it propagates to the style-tag
+values and to the vocabulary's per-entry mapping, so once those tags are encoded it is a migration and not a relabel." —
+the same bullet (locator: lines 5567–5570).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.5.
+
+---
+
+**Row 23.19 — the taxonomy and its weights one object; validation a third thing.**
+
+*Outgoing statement.* "**The taxonomy and the per-style weights are ONE data-derived object; VALIDATION is a separate
+third thing the clustering does not deliver.**" — the same sub-section, the first of the four statements under the ★
+lead *★ WHAT THE TAXONOMY AND ITS WEIGHTS ARE AS AN OBJECT, …*, which stands outside every range at lines 5579 to 5584
+(locator: lines 5586–5587). Two claims: (i) the taxonomy and the per-style weights are one data-derived object; (ii)
+validation is a separate third thing the clustering does not deliver.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with
+Row 23.5. (ii) **RELOCATED** — to ***the measurement of the analysis***, whose content is whether the analysis agrees with
+a published human analysis.
+
+---
+
+**Row 23.20 — discovering the idioms and estimating their weight one derivation.**
+
+*Outgoing statement.* "Discovering which idioms exist and estimating how strongly each one weighs are not two
+derivations: the clusters and their feature distributions are the same object read two ways." — the same bullet
+(locator: lines 5587–5589).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.19 (i).
+
+---
+
+**Row 23.21 — whether the analysis improves when it uses an idiom, a third job needing annotated music.**
+
+*Outgoing statement.* "Measuring whether the analysis actually improves when it uses an idiom is a THIRD job, and it
+needs annotated music — notes together with a published human analysis — which the clustering does not supply." — the
+same bullet (locator: lines 5589–5591).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, travelling with Row 23.19 (ii).
+
+---
+
+**Row 23.22 — the voice-leading axis's independence from the harmonic axis measured.**
+
+*Outgoing statement.* "**The voice-leading axis's independence from the harmonic axis is MEASURED, not assumed.**" — the
+second statement (locator: line 5595).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which pieces and run was the independence of the
+voice-leading axis from the harmonic axis measured, and does it reproduce (as Row 19.59 (iii) asks)?
+
+---
+
+**Row 23.23 — the two groupings agreeing at the level of statistical independence.**
+
+*Outgoing statement.* "On the pieces carrying both views the two groupings agree at the level of statistical independence
+— the joint table is close to the product of its margins — with the harmonic groupings barely tracking texture while the
+voice-leading groupings do." — the same bullet (locator: lines 5595–5598).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run did the two groupings agree at the level of
+statistical independence, the harmonic groupings barely tracking texture and the voice-leading groupings tracking it,
+and does it reproduce?
+
+---
+
+**Row 23.24 — the style structure at least two-dimensional.**
+
+*Outgoing statement.* "The full style structure is therefore at least two-dimensional: harmonic idiom and voice-leading
+idiom, with the two cross-attributes beside them." — the same bullet (locator: lines 5598–5600).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own layers the voice-leading idiom
+belongs to, beside the harmonic spine.
+
+---
+
+**Row 23.25 — the voice-leading features led by motion type, the interval profile secondary, notated music only.**
+
+*Outgoing statement.* "**The voice-leading layer's feature set is MOTION-TYPE-LED, the interval profile is a secondary
+descriptor, and its coverage is notated music only.**" — the third statement (locator: lines 5604–5605).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose feature set it is.
+
+---
+
+**Row 23.26 — how the voices move together the discriminator, over a texture taxonomy.**
+
+*Outgoing statement.* "What discriminates one way of writing voices from another is how the voices move together —
+parallel, similar, contrary, oblique — with the size-of-leap profile kept as a secondary description of melodic
+complexity, over a texture taxonomy of contrapuntal, homophonic-classical, homophonic-pianistic and mixed." — the same
+bullet (locator: lines 5605–5608).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, travelling with Row 23.25.
+
+---
+
+**Row 23.27 — the axis for music notated in voices only.**
+
+*Outgoing statement.* "The axis applies only to music notated in voices: a lead sheet has none to compare." — the same
+bullet (locator: lines 5608–5609).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, travelling with Row 23.25.
+
+---
+
+**Row 23.28 — the texture and era covariates declared per source and read only after the grouping exists.**
+
+*Outgoing statement.* "**The texture and era covariates are declared PER SOURCE and read only after the grouping
+exists.**" — the fourth statement (locator: line 5614).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose grouping the covariates are read
+against.
+
+---
+
+**Row 23.29 — the lens labels attached per source in advance; the confound gate run against voice count and source.**
+
+*Outgoing statement.* "This is the discover-then-name bullet above applied to the second axis, and it is not restated
+(#6): what is added is that the lens labels are attached per source in advance, and that the confound gate was run
+against voice count and against source and the grouping tracks neither." — the same bullet (locator: lines 5615–5617).
+Two claims: (i) the lens labels are attached per source in advance; (ii) the confound gate was run against voice count
+and against source, and the grouping tracks neither.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, travelling with Row 23.28. (ii)
+**QUARANTINED.** *Audit question:* on which run was the confound gate run against voice count and against source with
+the grouping tracking neither, and does it reproduce?
+
+---
+
+**Row 23.30 — a preset named by a familiar genre and era with known exemplars; genre names labels over mixtures.**
+
+*Outgoing statement.* "**A preset presents as a familiar genre-era label plus exemplars the user knows — never as an idiom
+name and never as an obscure exemplar; genre names are LABELS over mixtures, never axes.**" — the same section,
+sub-section *6.8 The user-facing preset layer — naming, coverage, the mixture contract and the licence split*, the first
+of its five bullets, below its status line *Status: RECORDED and DEFERRED product work*, which stands outside every
+range at lines 5623 to 5626 (locator: lines 5628–5629). Two claims: (i) a preset is presented to its user as a familiar
+genre-era label with exemplars the user knows, never as an idiom name or an obscure exemplar; (ii) genre names are labels
+over mixtures of idioms, never axes of the style structure.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read: a rule on how the product names a preset to its user; no charter of
+`FRAMEWORK.md` §5 names the user-facing preset layer, whose sub-section's own status line, outside the range, records it
+as deferred product work, and no derived statement speaks to a preset; the bullet and the sub-section around it are the
+whole of what was read. (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling
+with Row 23.19 (i), the structure over whose idioms its values are fitted.
+
+---
+
+**Row 23.31 — a preset named after a recognized era and known musicians, never after an idiom or an obscure exemplar.**
+
+*Outgoing statement.* "A preset is named after a period and style a user recognises, anchored by musicians they know
+("60s pop — The Beatles"); it is never named after one of the five idioms, and never after an exemplar most people have
+not heard of." — the same bullet (locator: lines 5630–5632).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: as Row 23.30 (i), the naming of a preset to its user; no charter of
+`FRAMEWORK.md` §5 names it, and no derived statement speaks to a preset.
+
+---
+
+**Row 23.32 — coverage beyond the analyzed music in three tiers, none a bare guess.**
+
+*Outgoing statement.* "**Coverage beyond the analysed music is three tiers with NO bare guessing — measured, editorially
+declared with a stated theory rationale, or self-correcting by detection.**" — the second bullet (locator: lines
+5636–5637).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose values are
+fitted per idiom and carried by a preset, as Rows 16.24 (i) and 16.25 (i) placed the preset as a carrier of a fitted
+set, a preset's mixture weighting them.
+
+---
+
+**Row 23.33 — a mixture measured from annotated music where it is held.**
+
+*Outgoing statement.* "A style we hold annotated music for gets its mixture measured from that music." — the same bullet
+(locator: lines 5637–5638).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.32.
+
+---
+
+**Row 23.34 — a mixture declared with its theory reason where no annotated music is held, validated when data arrives.**
+
+*Outgoing statement.* "A style we hold none for gets a mixture written down deliberately with its theory reason stated,
+and validated when data arrives." — the same bullet (locator: lines 5638–5639).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.32.
+
+---
+
+**Row 23.35 — the analysis moving away from the starting mixture as it reads the music.**
+
+*Outgoing statement.* "Either way the analysis moves away from the starting mixture as it reads the actual music." — the
+same bullet (locator: line 5640).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose reading of
+the music the starting mixture is only a prior for, travelling with Row 23.32.
+
+---
+
+**Row 23.36 — every mixture selectable; each chosen point carrying its evidence status.**
+
+*Outgoing statement.* "**Every idiom mixture is selectable, and the discovered cloud is the EVIDENCE MAP rather than the
+boundary — each chosen point carries its evidence status.**" — the third bullet (locator: lines 5644–5645). Two claims:
+(i) every idiom mixture is selectable, the discovered cloud being the map of the evidence rather than the boundary of
+what may be chosen; (ii) each chosen point carries its evidence status.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S33.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S33: **AGREES** — the outgoing chosen point *"carries its
+evidence status"*, and L3-S33 gives L3's establishment statuses, *"Provisional"* among them, carried by *"anything
+resting on an unfitted weight, a stand-in value or a provisional input"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read: a rule on what a user may select; no charter of `FRAMEWORK.md` §5 names
+the product's configuration by its user, and no derived statement speaks to a preset; the bullet and the sub-section
+around it are the whole of what was read. (ii) **RELOCATED** — to ***the uncertainty surface***, whose content is that
+every published value carries its own establishment status, as Row 21.194 (i).
+
+---
+
+**Row 23.37 — named presets cluster centroids; a custom selector admitting any point.**
+
+*Outgoing statement.* "Named presets are cluster centroids for progressive disclosure; a custom selector admits any point
+in the mixture space." — the same bullet (locator: lines 5645–5646).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: as Row 23.36 (i), the presets named and the selector offered being the
+product's configuration offered to its user; no charter of `FRAMEWORK.md` §5 names it, and no derived statement speaks to
+a preset.
+
+---
+
+**Row 23.38 — what may be claimed of a chosen point decided by where it sits.**
+
+*Outgoing statement.* "Where the chosen point sits relative to the music actually measured decides what may be claimed
+about it: inside a discovered cluster it is validated, between clusters it is an interpolation, outside the cloud it is
+still selectable but marked empirically unvalidated." — the same bullet (locator: lines 5646–5649).
+
+*Derived statements that speak to it.* L3-S33.
+
+*Current-text axis.* L3-S33: **AGREES** — the outgoing point *"outside the cloud it is still selectable but marked
+empirically unvalidated"*, and L3-S33 makes *"Provisional"* the status of *"anything resting on an unfitted weight, a
+stand-in value or a provisional input"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, travelling with Row 23.36 (ii).
+
+---
+
+**Row 23.39 — the piece's own metadata the primary home of its mixture; a user-set mixture never silently
+overwritten.**
+
+*Outgoing statement.* "**The music's own metadata is the PRIMARY home of that piece's idiom mixture, and a user-set mixture
+is never silently overwritten by re-detection.**" — the fourth bullet (locator: lines 5653–5654).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: where a piece's chosen mixture is stored and when a stored one may be
+replaced; no charter of `FRAMEWORK.md` §5 names the product's storage of its configuration — the nearest, *L0 — The
+notated record*, gives what the notation says and names no stored configuration — and no derived statement speaks to a
+preset; the bullet and the sub-section around it are the whole of what was read.
+
+---
+
+**Row 23.40 — the mixture stored in the score's own user-defined properties.**
+
+*Outgoing statement.* "The mixture is stored in the score's own user-defined properties, the mechanism MuseScore already
+saves beside title and composer, so it travels with the file and a later analysis starts warm rather than cold." — the
+same bullet (locator: lines 5654–5656).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: as Row 23.39, the storage of a piece's chosen mixture; no charter of
+`FRAMEWORK.md` §5 names it, and no derived statement speaks to a preset.
+
+---
+
+**Row 23.41 — the stored value recording its provenance, and when it may be refreshed.**
+
+*Outgoing statement.* "The stored value records its provenance — auto-detected, with the analyzer version and date, or
+user-set: a user-set mixture is never silently replaced, an auto-detected one may be refreshed, and an edit after
+detection marks the stored mixture refreshable." — the same bullet (locator: lines 5656–5659).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: as Row 23.39, the storage of a piece's chosen mixture and when it is
+replaced; no charter of `FRAMEWORK.md` §5 names it, and no derived statement speaks to a preset.
+
+---
+
+**Row 23.42 — the custom properties' MusicXML round trip only partial; the property layout a decision at build.**
+
+*Outgoing statement.* "**Two things are recorded rather than assumed away:** custom properties survive the native format
+but their MusicXML round-trip is only partial and needs its own check before the feature relies on it; and the property
+layout is an implementation decision at build time." — the same bullet (locator: lines 5661–5664).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the custom properties of a score survive the native format
+and only partly a MusicXML round trip at the current commit, and has any property layout for a piece's mixture been
+decided?
+
+---
+
+**Row 23.43 — the licence split: the anchors licence-constrained, the mixture weights free.**
+
+*Outgoing statement.* "**The licence split: the ANCHORS are the shipped licence-constrained fitted parameters, and the
+mixture weights are free user configuration.**" — the fifth bullet (locator: lines 5669–5670).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose fitting pool
+the licence constraint governs, as Rows 16.18 to 16.21.
+
+---
+
+**Row 23.44 — the constraint reaching the anchors, not a user's mixture.**
+
+*Outgoing statement.* "The constraint that a value which SHIPS may be fitted only on freely-licensed music reaches the
+per-idiom anchors, not the mixture a user chooses over them; a user's own mixture carries no constraint at all, and only
+the mixtures we ship as named preset defaults must be derived from a licensed pool or editorially declared." — the same
+bullet (locator: lines 5670–5673).
+
+*Derived statements that speak to it.* L3-S14.
+
+*Current-text axis.* L3-S14: **AGREES** — the outgoing *"a value which SHIPS may be fitted only on freely-licensed
+music"*, and L3-S14 fits its weights *"on licence-clear music only"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row
+23.43.
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. "**Dimensions:**" (5327) — a lead ending in a colon that only introduces its items, listed under the colon-lead
+   reading.
+2. "`voice_leading` — motion type preferences, parallel interval tolerance" (5329) — a parameter dimension of the style
+   file for the generation mechanisms *6.1* names, not of the analysis.
+3. "`voicing` — drop voicing technique, lead voice position, spread constraints" (5330) — the same kind.
+4. "`rhythmic_feel` — meter, groove, harmonic rhythm patterns" (5331) — the same kind.
+5. "`form` — phrase structure, cadence types, section characteristics" (5332) — the same kind.
+6. "`bass_line` — walking bass, funk bass, melodic bass character" (5333) — the same kind.
+7. "`melodic` — scales, ornaments, approach notes" (5334) — the same kind.
+8. "`idiomatic_material` — fills, riffs, characteristic textures" (5335) — the same kind.
+9. "`ensemble` — voice count, ranges, blend characteristics" (5336) — the same kind.
+10. "`tuning` — which tuning system applies" (5337) — a parameter dimension of the style file for the tuning feature, not
+    of the analysis.
+11. "`generation` — creativity level, substitution frequency, complexity target" (5338) — a parameter dimension of the
+    style file for the generation mechanisms, not of the analysis.
+12. "The clause above formerly closed by saying the mark was not applied at all; half of that is no longer true, so the
+    sentence is replaced here and its wording preserved (#12)." (5438–5440) — about the document, what its own clause
+    formerly said and why it was replaced, as item 42 at §6.21.
+13. "Marking an idiom under those conditions would be marking by assertion, which #19 forbids in either direction: …"
+    (5449–5452) — a defense of Row 23.4.
+14. "The remaining act is tracked in the open-items register." (5452) — a pointer to the open-items register.
+15. "**FORMER WORDING, PRESERVED (#12):** *"**What this clause does NOT claim:** that the mark is applied at HEAD. …"*"
+    (5453–5455) — *provenance*: the paragraph's own superseded sentence, preserved, as §6.3's items 1 and 14 listed
+    theirs.
+16. "*Why:* stated as a refusal rather than a preference — there is no zero-prejudice method, …" (5521–5523) — a defense
+    of Rows 23.5 and 23.6.
+17. "Feeding theory features in could only rediscover the priors already encoded, …" (5523–5525) — the defense's
+    continuation.
+18. "*Why:* grounded in the prior art the design adopts — …" (5531–5533) — a defense of Rows 23.7 and 23.8.
+19. "Three alternatives are rejected with their reasons: …" (5533–5536) — the defense's continuation.
+20. "The dominant failure mode of this kind of study is discovering **which corpus a piece came from**, …" (5538–5540) —
+    the reasoning offered for the gate of Row 23.9, a defense.
+21. "*Why:* stated as a gate rather than a footnote precisely because the alternative — naive clustering — …" (5545–5549)
+    — a defense of Rows 23.9 to 23.13.
+22. "*Why:* chosen against our own cleaner slicer for a stated reason that is the study's own validity — …" (5555–5557) —
+    a defense of Rows 23.14 and 23.15.
+23. "Using the full analyzer would be worse: …" (5557–5560) — the defense's continuation.
+24. "The distinction the rule rests on is stated with it — …" (5560–5562) — the defense's continuation.
+25. "*Mechanical* means unbiased, not clean: …" (5562–5563) — the defense's continuation, what a word of it means.
+26. "*Why:* the held-out exclusion is #20 applied to an unsupervised study — …" (5570–5571) — a defense of Rows 23.16 to
+    23.18.
+27. "The re-run itself is the standing consequence of the finding this section rests on, …" (5572–5577) — the defense's
+    continuation.
+28. "*Why:* it follows from what a cluster is, so no second derivation produces the weights; …" (5591–5594) — a defense
+    of Rows 23.19 to 23.21.
+29. "*Why:* the decision that the voice-leading axis is separate is recorded elsewhere; …" (5600–5603) — a defense of Rows
+    23.22 to 23.24.
+30. "*Why:* measured by ablation — …" (5609–5611) — a defense of Rows 23.25 to 23.27.
+31. "The caveat is honored in the same place: …" (5611–5613) — the defense's continuation.
+32. "*Why:* it is what makes the covariate agreement a finding rather than a tautology — …" (5618–5619) — a defense of
+    Rows 23.28 and 23.29.
+33. "*Why:* the second half is measured and is §6.7's own result — …" (5632–5634) — a defense of Rows 23.30 and 23.31.
+34. "The exemplar half is the user's own reason: …" (5634–5635) — the defense's continuation.
+35. "*Why:* the third tier is what licenses the second — …" (5640–5643) — a defense of Rows 23.32 to 23.35.
+36. "*Why:* two standing rules combined — …" (5649–5652) — a defense of Rows 23.36 to 23.38.
+37. "*Why:* storing it with the music removes the need for a separate registry for per-piece behaviour …" (5659–5661) — a
+    defense of Rows 23.39 to 23.41.
+38. "**This sits against §13.1's rule that our data lives in separate files inside the archive and the score file is
+    never touched** — …" (5664–5668) — about the document: a tension between two of its sub-sections, named for a later
+    build to reconcile.
+39. "*Why:* it follows from what each half is — …" (5673–5676) — a defense of Rows 23.43 and 23.44.
+40. "This REFINES the fitting-pool constraint by saying which half of the style system it reaches; it does not weaken
+    it." (5676–5677) — about the document, what its own rule does to another rule.
+
+#### The arithmetic at this member
+
+- Rows written: **44** (23.1 to 23.44).
+- Rows split into two claims, **+1 each**: 23.3, 23.19, 23.29, 23.30, 23.36 — five rows, **+5**.
+- **Outgoing statements placed: 44 + 5 = 49.**
+- Listed under *not a statement*: **40**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.** Checked by reading the disposition
+  line of each row against its claims: 49 dispositions over 49 statements.
+- **UNPLACED statements at this member: eight** — 23.2, 23.30 (i), 23.31, 23.36 (i), 23.37, 23.39, 23.40 and 23.41,
+  each with what was read.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 35 | To L2 (24): 23.1, 23.5, 23.6, 23.7, 23.8, 23.9, 23.10, 23.11, 23.12, 23.13, 23.14, 23.15, 23.16, 23.17, 23.18, 23.19(i), 23.20, 23.30(ii), 23.32, 23.33, 23.34, 23.35, 23.43, 23.44; to the second axis — voice leading (6): 23.24, 23.25, 23.26, 23.27, 23.28, 23.29(i); to the uncertainty surface (2): 23.36(ii), 23.38; to the measurement of the analysis (3): 23.3(ii), 23.19(ii), 23.21 |
+| QUARANTINED | 6 | 23.3(i), 23.4, 23.22, 23.23, 23.29(ii), 23.42 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 8 | 23.2, 23.30(i), 23.31, 23.36(i), 23.37, 23.39, 23.40, 23.41 |
+| **Total** | **49** | — |
+
+**The column sums to 49, against 49 statements, so the arithmetic closes at this member**: 0 + 0 + 35 + 6 + 0 + 0 + 8 =
+49. **The statement lists in the right-hand column are the record**, and the integers are re-derivable from them by
+counting; the RELOCATED count is its four charter lists, 24 + 6 + 2 + 3.
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 3 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 46 |
+| **Total verdicts** | **49** |
+
+*(Counted per named derived statement per statement. No statement of this member names two derived statements, so the
+verdicts total 49 over 49 statements.)* The AGREES verdicts are all on statements placed otherwise than ADOPTED —
+carried, this member carrying none: 23.36(ii) and 23.38 (L3-S33), RELOCATED to the uncertainty surface; and 23.44
+(L3-S14), RELOCATED to L2. The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 23 is empty.
+- **In homes that are not withheld, carrying no mark** — the rows named being those the home's quoted text falls in: in
+  the decisions register's list, D-542 (Rows 23.5 and 23.6), D-543 (Rows 23.7 and 23.8), D-544 (Rows 23.9 to 23.13),
+  D-545 (Rows 23.14 and 23.15), D-421 (Rows 23.16 to 23.18), D-598 (Rows 23.19 to 23.21), D-587 (Rows 23.30 and 23.31),
+  D-588 (Rows 23.32 to 23.35), D-589 (Rows 23.36 to 23.38), D-590 (Rows 23.39 to 23.42) and D-591 (Rows 23.43 and
+  23.44); and the retired entries of the data file D-554 (Rows 23.22 to 23.24), D-555 (Rows 23.25 to 23.27) and D-556
+  (Rows 23.28 and 23.29).
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -32403,6 +33370,22 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   as-written output. *(As Rows 21.27 to 21.32; L3-S30 DIFFERS at Row 22.9.)*
 - Row 22.59 — the lowest tone under an organ point perhaps no member of the upper voices' chord. *(L3-S4 AGREES at the
   row.)*
+- Row 23.1 — the chords, progressions and substitutions a style's harmonic-language dimension makes available. *(As
+  Row 16.23, the values fitted per idiom.)*
+- Rows 23.5, 23.6, 23.7, 23.8, 23.9, 23.10, 23.11, 23.12, 23.13, 23.14, 23.15, 23.16, 23.17 and 23.18 — the method that
+  discovers the style taxonomy: discover then name, chord-to-chord moves transposed to a common tonic in two views,
+  confound control and the source-leakage test as its validity gate, the external extractor stopping at notes and
+  slices with our own inference never touching it, and re-discovery at every corpus wave on research material only, a
+  changed cluster set its own ratification event. *(The idioms it discovers are those the values of Row 16.23 are fitted
+  over.)*
+- Rows 23.19 (i), 23.20 and 23.30 (ii) — the taxonomy and its per-style weights one data-derived object, and genre names
+  labels over mixtures, never axes.
+- Rows 23.32, 23.33, 23.34 and 23.35 — a preset's mixture measured where annotated music is held, declared with its
+  theory reason where none is, and refined as the analysis reads the music. *(As Rows 16.24 (i), 16.24 (ii) and 16.25
+  (i), the preset a carrier of a fitted set.)*
+- Rows 23.43 and 23.44 — the licence split: the per-idiom anchors licence-constrained, a user's own mixture free, the
+  shipped preset defaults from a licensed pool or declared. *(As Rows 16.18, 16.19, 16.20 (ii) and 16.21; L3-S14 AGREES
+  at Row 23.44.)*
 
 **To *the second axis — voice leading*.**
 
@@ -32418,6 +33401,10 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   patterns, the melodic phrase, chord voicing and arrangement, and part-writing advice. *(L3-S42 AGREES at Rows 19.44,
   19.46, 19.47, 19.48, 19.50, 19.59 (ii) and 19.62 (i).)*
 - Row 21.179 — compound melody, the implied voices of one line.
+- Rows 23.24, 23.25, 23.26, 23.27, 23.28 and 23.29 (i) — the voice-leading idiom as a dimension of style beside the
+  harmonic one, the axis's features led by how the voices move together with the size-of-leap profile secondary, its
+  coverage notated music only, and its texture and era covariates declared per source and read only after the grouping
+  exists.
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -32440,6 +33427,9 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   empirically-unvalidated mark until an established corpus measures it, and the mark lost only in the act that records
   the measurement. *(L3-S33 AGREES at each.)*
 - Row 22.5 — a normalized chord confidence with held-out calibration. *(As Row 21.180.)*
+- Rows 23.36 (ii) and 23.38 — each chosen mixture carrying its evidence status: validated inside a discovered cluster,
+  an interpolation between clusters, marked empirically unvalidated outside the cloud. *(As Rows 21.194 (i), 21.194
+  (iii) and 21.196; L3-S33 AGREES at both.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -32501,13 +33491,17 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 22.3 and 22.4 — published accuracy reported in three tiers, and stable baselines before held-out calibration.
 - Rows 22.26 (i), 22.26 (ii) and 22.27 (i) — how the comparison tools classify a chord, and a slash-chord spelling
   matching an inversional one when the root pitch class agrees.
+- Row 23.3 (ii) — the validation path named for the Jazz preset's constants. *(As Row 21.7.)*
+- Rows 23.19 (ii) and 23.21 — whether the analysis improves when it uses an idiom, a separate job needing annotated
+  music the clustering does not supply.
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
 the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows
 numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, member 17's the rows numbered
-17.n, member 19's the rows numbered 19.n, member 20's the rows numbered 20.n, member 21's the rows numbered 21.n, and
-member 22's the rows numbered 22.n. Members 4, 5, 6, 14 and 18 relocate no row.)*
+17.n, member 19's the rows numbered 19.n, member 20's the rows numbered 20.n, member 21's the rows numbered 21.n,
+member 22's the rows numbered 22.n, and member 23's the rows numbered 23.n. Members 4, 5, 6, 14 and 18 relocate no
+row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -33483,6 +34477,23 @@ inference layer*.**
   signatures?
 - Row 22.87 — does the removal loop of `addAnalyzedHarmony()` check the track before deleting at the current commit?
 
+**Member 23 — `ARCHITECTURE.md`, the passages under *6. The Style System*.**
+
+- Row 23.3 (i) — are the Jazz preset's six mode-prior overrides, its extension threshold and its reduced inversion
+  bonuses measured by no jazz ground truth at the current commit, and does each carry the empirically-unvalidated mark at
+  its site in this document?
+- Row 23.4 — at the current commit, is the mark applied to no idiom, is only the classical common-practice idiom covered
+  by held annotated music, does any surface map the five idioms onto a per-idiom ground-truth verdict, and on which run
+  were the gate corpus's chorales found to form no distinct chord-idiom?
+- Row 23.22 — on which pieces and run was the independence of the voice-leading axis from the harmonic axis measured,
+  and does it reproduce (as Row 19.59 (iii) asks)?
+- Row 23.23 — on which run did the two groupings agree at the level of statistical independence, the harmonic groupings
+  barely tracking texture and the voice-leading groupings tracking it, and does it reproduce?
+- Row 23.29 (ii) — on which run was the confound gate run against voice count and against source with the grouping
+  tracking neither, and does it reproduce?
+- Row 23.42 — do the custom properties of a score survive the native format and only partly a MusicXML round trip at the
+  current commit, and has any property layout for a piece's mixture been decided?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -34136,6 +35147,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
   chord-symbol spelling in keys where the sharp is not yet diatonic"*, where L3-S2 is falsified *"if a spelled root is
   replaced by an enharmonic equivalent"*.
 
+**Member 23.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -34165,10 +35178,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 20 | 113 | 4 | 3 | 49 | 44 | 0 | 13 | 0 | 43 |
 | 21 | 223 | 0 | 2 | 51 | 126 | 0 | 43 | 1 | 44 |
 | 22 | 98 | 0 | 0 | 20 | 45 | 0 | 32 | 1 | 18 |
-| **Total** | **2180** | **131** | **78** | **826** | **599** | **0** | **392** | **154** | **673** |
+| 23 | 49 | 0 | 0 | 35 | 6 | 0 | 0 | 8 | 40 |
+| **Total** | **2229** | **131** | **78** | **861** | **605** | **0** | **392** | **162** | **713** |
 
-**The arithmetic check:** 131 + 78 + 826 + 599 + 0 + 392 + 154 = 2180, against 2180 statements placed (43 + 34 + 21 + 34
-+ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98).
+**The arithmetic check:** 131 + 78 + 861 + 605 + 0 + 392 + 162 = 2229, against 2229 statements placed (43 + 34 + 21 + 34
++ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -34194,10 +35208,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 20 | 17 | 3 | 93 | 113 |
 | 21 | 14 | 10 | 199 | 223 |
 | 22 | 3 | 7 | 88 | 98 |
-| **Total** | **211** | **247** | **1730** | **2188** |
+| 23 | 3 | 0 | 46 | 49 |
+| **Total** | **214** | **247** | **1776** | **2237** |
 
-**The arithmetic check of the verdicts:** 211 + 247 + 1730 = 2188, against the members' verdict totals (43 + 35 + 21 + 34 +
-19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98).
+**The arithmetic check of the verdicts:** 214 + 247 + 1776 = 2237, against the members' verdict totals (43 + 35 + 21 + 34 +
+19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49).
 
 ## 14. The derivation's independence record, relayed
 
