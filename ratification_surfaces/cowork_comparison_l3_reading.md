@@ -74,7 +74,7 @@ its own entry there.
 | 29 | `ARCHITECTURE.md` passages — *12. User Interface* | **DONE** (§6.29) |
 | 30 | `ARCHITECTURE.md` passages — *14. ML Readiness* | **DONE** (§6.30) |
 | 31 | `ARCHITECTURE.md` passages — *15. Development Phases* | **DONE** (§6.31) |
-| 32 | `ARCHITECTURE.md` passages — *16. Scope Reference* | NOT YET TABULATED |
+| 32 | `ARCHITECTURE.md` passages — *16. Scope Reference* | **DONE** (§6.32) |
 | 33 | `ARCHITECTURE.md` passages — *19. LLM Integration — Claude Composer* | NOT YET TABULATED |
 | 34 | `ARCHITECTURE.md` passages — *Appendix B — MuseScore Score Model Quick Reference* | NOT YET TABULATED |
 | 35 | `docs/scoring_model.md` passages | NOT YET TABULATED |
@@ -102,7 +102,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 31 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 32 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -118,8 +118,8 @@ Components — The Analysis Foundation*, position 22, its passages under *5. Pla
 its passages under *6. The Style System*, position 24, its passages under *7. The Knowledge Base*, position 25, its
 passages under *8. Planned Generation Components*, position 26, its passages under *9. The Constraint System*,
 position 27, its passages under *10. Visualization*, position 28, its passages under *11. Intonation*, position 29,
-its passages under *12. User Interface*, position 30, its passages under *14. ML Readiness*, and position 31, its
-passages under *15. Development Phases*.**
+its passages under *12. User Interface*, position 30, its passages under *14. ML Readiness*, position 31, its passages
+under *15. Development Phases*, and position 32, its passages under *16. Scope Reference*.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -141,9 +141,9 @@ boundary after position 20, by its own capacity judgment; positions 21 and 22 we
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md`, which stopped at the member
 boundary after position 22, by its own capacity judgment; positions 23 to 26 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md`, which stopped at the member
-boundary after position 26, by its own capacity judgment; positions 27 to 31 were tabulated under
+boundary after position 26, by its own capacity judgment; positions 27 to 32 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twelfth_2026_10_20.md`.** **The writing now stands at
-the member boundary after position 31: not done, positions 32 to 57, and the next writing resumes at position 32.** **A
+the member boundary after position 32: not done, positions 33 to 57, and the next writing resumes at position 33.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -35953,6 +35953,140 @@ The DIFFERS statements: none.
 
 ---
 
+### 6.32 — Member 32: `ARCHITECTURE.md`, the passages under *16. Scope Reference*
+
+> **Manifest for this member.** Position **32**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: `## 16. Scope Reference`, exactly as the artifact spells it. **The eighteenth
+> member of this comparison made of passages.** Two ranges, each as a locator only (**D-307**), with its first and last
+> line texts exactly as the artifact publishes them (wrapped here for width):
+>
+> - lines 7934–7943, from *"Harmonic analysis (functional, modal, extended tonal, jazz), monophonic chord"* to
+>   *"MuseScore infrastructure), accessibility (via MuseScore infrastructure)."*;
+> - lines 7947–7954, from *"Full generative support for pop, rock, funk, soul, metal, progressive rock (phased"* to
+>   *"attribution metadata."*.
+>
+> **Each of the four line texts was compared with the line at its locator** in `ARCHITECTURE.md`, read by this session
+> at the file and at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at that
+> commit, **and every one matches**. The top-level heading the label names stands at line 7919, and the next top-level
+> heading, *17. Coding Standards*, at line 7972. **No other member of the artifact lies inside this top-level section** —
+> this session's script, run over lines 7919 to 7972, found no range of any other `ARCHITECTURE.md` member there — so
+> nothing is excluded from the cut. The section's other lines lie in no range — lines 7920–7933, 7944–7946 and
+> 7955–7971, as this session's script lists them. They hold, by the lines this session read: *Ground truth where none is
+> published* whole — that a person acts as ground truth for repertoire nobody has published an analysis of, an
+> automated judge admitted only as guidance for that person; the headings *Core — Must Be Implemented* and *Important —
+> Planned for Later Phases* above the two ranges; *Prepared — Architecture Ready, Implementation Deferred* and *Out of
+> Scope*, each whole; and the separator before *17.* No other member of the artifact covers them — the passage rule's
+> cut, recorded here as at §6.15 to §6.31, and not repaired. Outgoing statements: **1** (row 32.1). Listed under *not a
+> statement*: **1**. Counted at this member by this session; the counts appear here and at §13, and nowhere else.
+>
+> **WITHHELD homes inside this member: none** — the artifact's `item_4_identities_inside` for position 32 is empty.
+> **No decision of the decisions register's data file is homed inside this member's ranges**, found by this session's
+> walk of `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit
+> hash) for every `home` naming `ARCHITECTURE.md` with a line range overlapping one of the two ranges, the retired block
+> included. *(The same walk over the cut spans finds two homes there, and therefore in no member: in the decisions
+> register's list, **D-205** at 7923–7925, a person as ground truth where none is published, recorded LIVE at the INDEX
+> (group S); and the RETIRED **D-164** at 7965, inside *Out of Scope*, kept in the data file's retired block with the
+> clause §6.27 quotes, its own status field reading live — none of them withheld.)* **No SEEN home lies in this member**,
+> agreeing with §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.31, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation
+> join, the blockquote-marker reading, the fenced-block reading and the reading of a range that opens with a heading
+> line were applied unchanged at this member.** **The blockquote-marker reading has nothing to drop at either range**:
+> every line of both was checked at the blob, and none opens with the quotation-block marker. **The fenced-block reading
+> has no instance.** **A range that opens with a heading line: none** — each range is the one sentence under its
+> heading, the headings standing in the cut. **This member has no table, no status table, no glossary and no former
+> wording preserved inside it.** **The quotation join found nothing to join at this member.**
+>
+> **What this member is, read whole before any row was written, and how its subjects were placed.** Each range is one
+> sentence listing capabilities of the whole product: the first, under *Core — Must Be Implemented*, those that must be
+> built — harmonic analysis among tuning, generation, file persistence and the interface; the second, under *Important
+> — Planned for Later Phases*, those planned for later. **Two placements are stated for challenge.** (a) **The core
+> list is tabulated as one statement and placed UNPLACED**: it states a requirement on the product, the analysis among
+> its many components, and no charter of `FRAMEWORK.md` §5 names the product's scope, while splitting the sentence into
+> its listed items would place most of them as subjects of no charter either; the alternative — one row per listed
+> capability — is stated and not taken. (b) **The later-phase list is listed under *not a statement***, as §6.25 listed
+> planned components; it names *"figured bass input and output"*, which meets L3's figured bass, and the alternative —
+> tabulating it and grading it against L3-S25, which publishes the figured bass of the decided harmony, and L3-S29,
+> under which L3 never reads the composer's figures — is stated and not taken, the list not saying whether that input
+> feeds the analysis or a generator. **No statement of this member DIFFERS from a derived statement, and none is
+> ADOPTED, RELOCATED, QUARANTINED or HISTORICAL.**
+
+---
+
+**Row 32.1 — the product's core scope: the capabilities that must be built.**
+
+*Outgoing statement.* "Harmonic analysis (functional, modal, extended tonal, jazz), monophonic chord inference, analysis
+correction and ground truth override, voice leading analysis and optimization, tendency tone tracking, tuning system
+support, per-instrument tuning configuration, percussion exclusion, ornamentation (analysis and generation), variable
+voice count, transposing instruments, chord symbol input, MSCZ file persistence, undo/redo integration, incremental
+analysis cache, enharmonic spelling, score error detection, musical language detector and graceful degradation,
+extensible style system, initial five styles, ML interface design throughout, unified temporal representation, pickup
+bars and anacrusis, localization (English and Swedish via MuseScore infrastructure), accessibility (via MuseScore
+infrastructure)." — the section *16. Scope Reference*, sub-section *Core — Must Be Implemented* (locator: lines
+7934–7943).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: one sentence listing the capabilities the whole product must have — the
+harmonic analysis in its several idioms beside the tuning, the generation, the file format, the undo and the interface
+— under the heading *Core — Must Be Implemented*; no charter of `FRAMEWORK.md` §5 names the product's scope, and no
+derived statement speaks to it.
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. "Full generative support for pop, rock, funk, soul, metal, progressive rock (phased by style), …" (7947–7954) — the
+   capabilities planned for later phases, a plan of the product, not the analysis.
+
+#### The arithmetic at this member
+
+- Rows written: **1**.
+- **Outgoing statements placed: 1.**
+- Listed under *not a statement*: **1**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: one** — Row 32.1, with what was read.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 1 | 32.1 |
+| **Total** | **1** | — |
+
+**The column sums to 1, against 1 statement, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 1 |
+| **Total verdicts** | **1** |
+
+The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 32 is empty.
+- **In homes that are not withheld, carrying no mark: none** — no home lies in the ranges; D-205 and the retired D-164
+  lie in the cut, in no member.
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -36414,8 +36548,8 @@ the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows
 numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, member 17's the rows numbered
 17.n, member 19's the rows numbered 19.n, member 20's the rows numbered 20.n, member 21's the rows numbered 21.n,
 member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 24's the rows numbered 24.n, member 30's
-the rows numbered 30.n, and member 31's the rows numbered 31.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28 and 29 relocate
-no row.)*
+the rows numbered 30.n, and member 31's the rows numbered 31.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29 and 32
+relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -37572,6 +37706,10 @@ No QUARANTINED row: the member places no statement (§6.26's manifest header).
 - Row 31.20 — does the analysis read op08n06 in B flat major, detect its cadences and open with a confident reading, at
   the current commit, and on which arm?
 
+**Member 32 — `ARCHITECTURE.md`, the passages under *16. Scope Reference*.**
+
+No QUARANTINED row: the member's one statement is UNPLACED (§6.32's manifest header).
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -38254,6 +38392,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 
 **Member 31.** No ADOPTED — proposed row, and no DIFFERS.
 
+**Member 32.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -38292,11 +38432,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 29 | 7 | 0 | 0 | 0 | 7 | 0 | 0 | 0 | 1 |
 | 30 | 8 | 0 | 0 | 5 | 2 | 0 | 1 | 0 | 11 |
 | 31 | 20 | 0 | 0 | 6 | 10 | 0 | 4 | 0 | 11 |
-| **Total** | **2349** | **132** | **78** | **875** | **695** | **0** | **403** | **166** | **806** |
+| 32 | 1 | 0 | 0 | 0 | 0 | 0 | 0 | 1 | 1 |
+| **Total** | **2350** | **132** | **78** | **875** | **695** | **0** | **403** | **167** | **807** |
 
-**The arithmetic check:** 132 + 78 + 875 + 695 + 0 + 403 + 166 = 2349, against 2349 statements placed (43 + 34 + 21 + 34
+**The arithmetic check:** 132 + 78 + 875 + 695 + 0 + 403 + 167 = 2350, against 2350 statements placed (43 + 34 + 21 + 34
 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4 +
-72 + 7 + 8 + 20).
+72 + 7 + 8 + 20 + 1).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -38331,11 +38472,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 29 | 0 | 0 | 7 | 7 |
 | 30 | 1 | 0 | 7 | 8 |
 | 31 | 0 | 0 | 20 | 20 |
-| **Total** | **216** | **251** | **1890** | **2357** |
+| 32 | 0 | 0 | 1 | 1 |
+| **Total** | **216** | **251** | **1891** | **2358** |
 
-**The arithmetic check of the verdicts:** 216 + 251 + 1890 = 2357, against the members' verdict totals (43 + 35 + 21 + 34 +
+**The arithmetic check of the verdicts:** 216 + 251 + 1891 = 2358, against the members' verdict totals (43 + 35 + 21 + 34 +
 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4 + 72
-+ 7 + 8 + 20).
++ 7 + 8 + 20 + 1).
 
 ## 14. The derivation's independence record, relayed
 
