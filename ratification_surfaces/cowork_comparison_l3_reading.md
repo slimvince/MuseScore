@@ -72,7 +72,7 @@ its own entry there.
 | 27 | `ARCHITECTURE.md` passages — *10. Visualization* | **DONE** (§6.27) |
 | 28 | `ARCHITECTURE.md` passages — *11. Intonation* | **DONE** (§6.28) |
 | 29 | `ARCHITECTURE.md` passages — *12. User Interface* | **DONE** (§6.29) |
-| 30 | `ARCHITECTURE.md` passages — *14. ML Readiness* | NOT YET TABULATED |
+| 30 | `ARCHITECTURE.md` passages — *14. ML Readiness* | **DONE** (§6.30) |
 | 31 | `ARCHITECTURE.md` passages — *15. Development Phases* | NOT YET TABULATED |
 | 32 | `ARCHITECTURE.md` passages — *16. Scope Reference* | NOT YET TABULATED |
 | 33 | `ARCHITECTURE.md` passages — *19. LLM Integration — Claude Composer* | NOT YET TABULATED |
@@ -102,7 +102,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 29 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 30 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -117,8 +117,8 @@ Principles*, position 20, its passages under *3. Directory Structure*, position 
 Components — The Analysis Foundation*, position 22, its passages under *5. Planned Analysis Extensions*, position 23,
 its passages under *6. The Style System*, position 24, its passages under *7. The Knowledge Base*, position 25, its
 passages under *8. Planned Generation Components*, position 26, its passages under *9. The Constraint System*,
-position 27, its passages under *10. Visualization*, position 28, its passages under *11. Intonation*, and position
-29, its passages under *12. User Interface*.**
+position 27, its passages under *10. Visualization*, position 28, its passages under *11. Intonation*, position 29,
+its passages under *12. User Interface*, and position 30, its passages under *14. ML Readiness*.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -140,9 +140,9 @@ boundary after position 20, by its own capacity judgment; positions 21 and 22 we
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md`, which stopped at the member
 boundary after position 22, by its own capacity judgment; positions 23 to 26 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md`, which stopped at the member
-boundary after position 26, by its own capacity judgment; positions 27 to 29 were tabulated under
+boundary after position 26, by its own capacity judgment; positions 27 to 30 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twelfth_2026_10_20.md`.** **The writing now stands at
-the member boundary after position 29: not done, positions 30 to 57, and the next writing resumes at position 30.** **A
+the member boundary after position 30: not done, positions 31 to 57, and the next writing resumes at position 31.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -35288,6 +35288,259 @@ The DIFFERS statements: none.
 
 ---
 
+### 6.30 — Member 30: `ARCHITECTURE.md`, the passages under *14. ML Readiness*
+
+> **Manifest for this member.** Position **30**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: `## 14. ML Readiness`, exactly as the artifact spells it. **The sixteenth member
+> of this comparison made of passages.** Four ranges, each as a locator only (**D-307**), with its first and last line
+> texts exactly as the artifact publishes them (wrapped here for width):
+>
+> - lines 7653–7662, from *"Components with ML substitution interfaces planned:"* to *"- `IVoicingRanker` — ranking
+>   voicing alternatives"*;
+> - lines 7671–7681, from *"```cpp"* to *"```"*;
+> - lines 7710–7718, from *"**LLM triage pipeline (implemented, `llm-triage` branch):**"* to *"to stay compatible with
+>   the current analyzer output format."*;
+> - lines 7731–7736, from *"**Pipeline boundary:**"* to *"criterion when both are present in the same score file."*.
+>
+> **Each of the eight line texts was compared with the line at its locator** in `ARCHITECTURE.md`, read by this
+> session at the file and at its blob at the commit that landed this batch's dispatch, by a script reading the artifact
+> at that commit, **and every one matches**. The top-level heading the label names stands at line 7629, and the next
+> top-level heading, *15. Development Phases*, at line 7740. **No other member of the artifact lies inside this
+> top-level section** — this session's script, run over lines 7629 to 7740, found no range of any other
+> `ARCHITECTURE.md` member there — so nothing is excluded from the cut. The section's other lines lie in no range —
+> lines 7630–7652, 7663–7670, 7682–7709, 7719–7730 and 7737–7739, as this session's script lists them. They hold, by
+> the lines this session read: under *14.1 Interface-Based Substitution Points*, its opening paragraph and its fenced
+> example of a harmonizer factory; under *14.2 Data Collection Infrastructure*, its paragraph on logging the arranger's
+> interactions, with consent, as future training data; the sub-section *Automated annotation review (planned,
+> post-RFC)* down to range 3 — the planned review pipeline that sends the analysis's output to a language model as
+> judge, and its three operating modes — and, between ranges 3 and 4, its report format; and the separator before
+> *15.* No other member of the artifact covers them — the passage rule's cut, recorded here as at §6.15 to §6.29, and
+> not repaired. Outgoing statements: **8** (rows 30.1 to 30.8). Listed under *not a statement*: **11**. Counted at this
+> member by this session; the counts appear here and at §13, and nowhere else.
+>
+> **WITHHELD homes inside this member: none** — the artifact's `item_4_identities_inside` for position 30 is empty.
+> **No decision of the decisions register's data file is homed inside this member's ranges**, found by this session's
+> walk of `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit
+> hash) for every `home` naming `ARCHITECTURE.md` with a line range overlapping one of the four ranges, the retired
+> block included. *(The same walk over the cut spans finds two homes there, and therefore in no member, each a RETIRED
+> entry the decisions register's INDEX does not show, kept in its data file's retired block with the clause §6.27
+> quotes: **D-160** at 7666, the logging of the arranger's interactions, and **D-161** at 7698, the review's second
+> operating mode, each record's own status field reading deferred — none of them withheld.)* **No SEEN home lies in
+> this member**, agreeing with §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.29, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation
+> join, the blockquote-marker reading, the fenced-block reading and the reading of a range that opens with a heading
+> line were applied unchanged at this member.** **The blockquote-marker reading has nothing to drop at any of the four
+> ranges**: every range was checked line by line at the blob, and no line of any of them opens with the
+> quotation-block marker; a quotation from a bullet drops its `- ` list marker instead. **The fenced-block reading, at
+> range 2:** the planned `ArrangerInteraction` structure (lines 7671 to 7681) is taken **as one unit, as a table row
+> is**, and is listed under *not a statement* (item 7), its comment lines included and not split, as §6.25 listed the
+> planned `VoicingGenerator` interface: it is a planned record of the arranger's choices for future training, not the
+> analysis. **A range that opens with a heading line: none.** **This member has no table, no status table, no glossary
+> and no former wording preserved inside it.** **How the leads were read:** *"Components with ML substitution
+> interfaces planned:"* and *"Pipeline boundary:"* only introduce what follows them and are listed as leads (items 1
+> and 11); range 3's bold *"LLM triage pipeline (implemented, `llm-triage` branch):"* is a label carrying a build status
+> in its parenthesis and is tabulated for that status (Row 30.3), as Row 28.29 was. **The quotation join found nothing
+> to join at this member.**
+>
+> **What this member is, read whole before any row was written, and how its subjects were placed.** The ranges are this
+> document's account of where a learned model might later take a component's place and of two review pipelines that
+> set the analysis's output beside other readings. **Three placements are stated for challenge.** (a) **The planned
+> substitution interfaces** — the chord identifier's, the key and mode inferrer's, the harmonizer's, the harmonic-rhythm
+> planner's and the voicing ranker's — are listed, as §6.25 listed planned components; *"`IHarmonicRhythmPlanner` —
+> where chord changes occur"* meets L3's words but names a planner of a harmonizer that writes music, and it is listed
+> for that reason, the alternative — tabulating it UNPLACED — stated and not taken. The two as-built claims inside the
+> first bullet — the chord identifier a static class, the formatter outside the interface working on the analysis
+> result whatever produced it — are **QUARANTINED**, each tabulated for that claim, the plan beside it not a statement,
+> the shape of Row 16.34. (b) **The two review pipelines** compare the analysis's output with a language model's
+> reading, with the human annotation and with chord symbols written in the score; their statements are **RELOCATED** to
+> *the measurement of the analysis*, as Rows 15.67 and 22.26 placed the comparison tools, with **L3-S29 AGREES** where a
+> written symbol is read only to be set beside the inferred one, as Row 20.15. (c) **The triage pipeline's evaluation,
+> its pointer and its merge chore** are listed as narrative, a pointer and development conduct. **No statement of this
+> member DIFFERS from a derived statement, and none is ADOPTED or UNPLACED.**
+
+---
+
+**Row 30.1 — the chord identifier a static class at present.**
+
+*Outgoing statement.* "`ChordAnalyzer` is currently a static class; when ML substitutability is needed, it will be
+placed behind this interface alongside `RuleBasedChordAnalyzer`." — the section *14. ML Readiness*, sub-section *14.1
+Interface-Based Substitution Points*, the bullet led by `IChordAnalyzer` (locator: lines 7655–7656). One claim: the
+chord identifier is a static class at present; the remainder of the sentence, the plan to place it behind the
+interface, is not a statement.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is `ChordAnalyzer` a static class at the current commit, and
+what does `RuleBasedChordAnalyzer` stand behind?
+
+---
+
+**Row 30.2 — the formatter outside the interface, working on the analysis result whatever produced it.**
+
+*Outgoing statement.* "Note: `ChordSymbolFormatter` is **not** part of this interface — it operates on
+`ChordAnalysisResult` regardless of which implementation produced it (see Section 4.3)." — the same bullet (locator:
+lines 7657–7658).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `ChordSymbolFormatter` read only `ChordAnalysisResult`,
+whatever produced it, at the current commit?
+
+---
+
+**Row 30.3 — the triage pipeline implemented on its own branch.**
+
+*Outgoing statement.* "**LLM triage pipeline (implemented, `llm-triage` branch):**" — the same section, sub-section
+*Automated annotation review (planned, post-RFC)*, the label of its triage paragraph (locator: line 7710).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a build status.
+
+---
+
+**Row 30.4 — the triage pipeline: a language model's reading compared three ways.**
+
+*Outgoing statement.* "A complementary pipeline exists on the `llm-triage` branch that submits scores directly to an
+LLM for chord inference and compares the result three ways: LLM vs DCML ground truth, LLM vs our analyzer, our analyzer
+vs DCML." — the same paragraph (locator: lines 7711–7714).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose content is what the analysis is
+compared against, as Row 22.26 placed the comparison tools.
+
+---
+
+**Row 30.5 — the review pipeline in the tools, outside the program's core.**
+
+*Outgoing statement.* "Entire `auto_review.py` pipeline lives in `tools/` — no MuseScore core involvement." — the same
+sub-section, under the lead *Pipeline boundary:* (locator: line 7732).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, the review pipeline being a measurement
+of the analysis's output.
+
+---
+
+**Row 30.6 — the review pipeline reading the batch tool's output.**
+
+*Outgoing statement.* "Operates on JSON output from `batch_analyze`." — the same paragraph (locator: lines 7732–7733).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, as Row 30.5.
+
+---
+
+**Row 30.7 — written chord symbols and inferred ones carried in separate fields.**
+
+*Outgoing statement.* "Pre-existing chord symbols read from score as `writtenSymbols` field in JSON, our inferred
+symbols as `inferredSymbols` field." — the same paragraph (locator: lines 7733–7735).
+
+*Derived statements that speak to it.* L3-S29.
+
+*Current-text axis.* L3-S29: **AGREES**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, which may set a symbol written in the
+score beside the analysis's own, as Row 20.15.
+
+---
+
+**Row 30.8 — color as the filter between written and inferred symbols.**
+
+*Outgoing statement.* "Color (red) used as filter criterion when both are present in the same score file." — the same
+paragraph (locator: lines 7735–7736).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, as Row 30.5.
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. "Components with ML substitution interfaces planned:" (7653) — a lead ending in a colon that only introduces its
+   items, listed under the colon-lead reading.
+2. "`IChordAnalyzer` — chord quality and extension identification from sounding notes." (7654) — a planned substitution
+   interface, not the analysis.
+3. "`IKeyModeInferrer` — key/mode inference ranking" (7659) — the same kind.
+4. "`IHarmonizer` — initial chord suggestions" (7660) — the same kind.
+5. "`IHarmonicRhythmPlanner` — where chord changes occur" (7661) — the same kind, a planner of the planned harmonizer.
+6. "`IVoicingRanker` — ranking voicing alternatives" (7662) — the same kind.
+7. "struct ArrangerInteraction { …" (7671–7681) — the fenced `cpp` block of a planned record of the arranger's choices,
+   taken as one unit, its comment lines included: about planned data collection, not the analysis.
+8. "This is particularly useful during pipeline snapshot diff reviews as a structured musical reference point, …"
+   (7714–7716) — an evaluation of the triage pipeline's use.
+9. "See `docs/quality_observations_iter76.md` for the recommended workflow." (7716–7717) — a pointer to another
+   document.
+10. "The branch needs periodic re-merging with master to stay compatible with the current analyzer output format."
+    (7717–7718) — development conduct.
+11. "**Pipeline boundary:**" (7731) — a lead ending in a colon that only introduces what follows, listed under the
+    colon-lead reading.
+
+#### The arithmetic at this member
+
+- Rows written: **8**.
+- **Outgoing statements placed: 8.**
+- Listed under *not a statement*: **11**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: none.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 5 | 30.4, 30.5, 30.6, 30.7, 30.8 |
+| QUARANTINED | 2 | 30.1, 30.2 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 1 | 30.3 |
+| UNPLACED | 0 | — |
+| **Total** | **8** | — |
+
+**The column sums to 8 (5 + 2 + 1), against 8 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 1 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 7 |
+| **Total verdicts** | **8** |
+
+The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 30 is empty.
+- **In homes that are not withheld, carrying no mark: none** — no home lies in the ranges; the retired D-160 and D-161
+  lie in the cut, in no member.
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -35735,14 +35988,18 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Row 23.3 (ii) — the validation path named for the Jazz preset's constants. *(As Row 21.7.)*
 - Rows 23.19 (ii) and 23.21 — whether the analysis improves when it uses an idiom, a separate job needing annotated
   music the clustering does not supply.
+- Rows 30.4, 30.5, 30.6, 30.7 and 30.8 — two review pipelines setting the analysis's output beside a language model's
+  reading, the human annotation and the chord symbols written in the score, kept in the tools and reading the batch
+  tool's output, the written and inferred symbols in separate fields and told apart by color. *(L3-S29 AGREES at Row
+  30.7, as Row 20.15.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
 the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows numbered 12.n, member 13's the rows
 numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, member 17's the rows numbered
 17.n, member 19's the rows numbered 19.n, member 20's the rows numbered 20.n, member 21's the rows numbered 21.n,
-member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, and member 24's the rows numbered 24.n. Members
-4, 5, 6, 14, 18, 25, 26, 27, 28 and 29 relocate no row.)*
+member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 24's the rows numbered 24.n, and member
+30's the rows numbered 30.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28 and 29 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -36876,6 +37133,12 @@ No QUARANTINED row: the member places no statement (§6.26's manifest header).
 - Row 29.7 — does the context menu offer one tuning entry per analyzed reading, built and handled where named, and does
   it retune the selected note's chord as the chosen reading, at the current commit?
 
+**Member 30 — `ARCHITECTURE.md`, the passages under *14. ML Readiness*.**
+
+- Row 30.1 — is `ChordAnalyzer` a static class at the current commit, and what does `RuleBasedChordAnalyzer` stand
+  behind?
+- Row 30.2 — does `ChordSymbolFormatter` read only `ChordAnalysisResult`, whatever produced it, at the current commit?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -37554,6 +37817,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 
 **Member 29.** No ADOPTED — proposed row, and no DIFFERS.
 
+**Member 30.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -37590,11 +37855,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 27 | 4 | 0 | 0 | 0 | 4 | 0 | 0 | 0 | 4 |
 | 28 | 72 | 1 | 0 | 0 | 65 | 0 | 6 | 0 | 31 |
 | 29 | 7 | 0 | 0 | 0 | 7 | 0 | 0 | 0 | 1 |
-| **Total** | **2321** | **132** | **78** | **864** | **683** | **0** | **398** | **166** | **784** |
+| 30 | 8 | 0 | 0 | 5 | 2 | 0 | 1 | 0 | 11 |
+| **Total** | **2329** | **132** | **78** | **869** | **685** | **0** | **399** | **166** | **795** |
 
-**The arithmetic check:** 132 + 78 + 864 + 683 + 0 + 398 + 166 = 2321, against 2321 statements placed (43 + 34 + 21 + 34
+**The arithmetic check:** 132 + 78 + 869 + 685 + 0 + 399 + 166 = 2329, against 2329 statements placed (43 + 34 + 21 + 34
 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4 +
-72 + 7).
+72 + 7 + 8).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -37627,11 +37893,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 27 | 0 | 0 | 4 | 4 |
 | 28 | 1 | 4 | 67 | 72 |
 | 29 | 0 | 0 | 7 | 7 |
-| **Total** | **215** | **251** | **1863** | **2329** |
+| 30 | 1 | 0 | 7 | 8 |
+| **Total** | **216** | **251** | **1870** | **2337** |
 
-**The arithmetic check of the verdicts:** 215 + 251 + 1863 = 2329, against the members' verdict totals (43 + 35 + 21 + 34 +
+**The arithmetic check of the verdicts:** 216 + 251 + 1870 = 2337, against the members' verdict totals (43 + 35 + 21 + 34 +
 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4 + 72
-+ 7).
++ 7 + 8).
 
 ## 14. The derivation's independence record, relayed
 
