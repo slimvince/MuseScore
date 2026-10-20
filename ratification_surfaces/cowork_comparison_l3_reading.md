@@ -67,7 +67,7 @@ its own entry there.
 | 23 | `ARCHITECTURE.md` passages — *6. The Style System* | **DONE** (§6.23) |
 | 24 | `ARCHITECTURE.md` passages — *7. The Knowledge Base* | **DONE** (§6.24) |
 | 25 | `ARCHITECTURE.md` passages — *8. Planned Generation Components* | **DONE** (§6.25) |
-| 26 | `ARCHITECTURE.md` passages — *9. The Constraint System* | NOT YET TABULATED |
+| 26 | `ARCHITECTURE.md` passages — *9. The Constraint System* | **DONE** (§6.26) |
 | 27 | `ARCHITECTURE.md` passages — *10. Visualization* | NOT YET TABULATED |
 | 28 | `ARCHITECTURE.md` passages — *11. Intonation* | NOT YET TABULATED |
 | 29 | `ARCHITECTURE.md` passages — *12. User Interface* | NOT YET TABULATED |
@@ -101,7 +101,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 25 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 26 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -114,8 +114,9 @@ inference layer*, the second, position 17, its passages under *Document governan
 notes*, position 18, its passages under *1. Project Overview*, position 19, its passages under *2. Architectural
 Principles*, position 20, its passages under *3. Directory Structure*, position 21, its passages under *4. Existing
 Components — The Analysis Foundation*, position 22, its passages under *5. Planned Analysis Extensions*, position 23,
-its passages under *6. The Style System*, position 24, its passages under *7. The Knowledge Base*, and position 25, its
-passages under *8. Planned Generation Components*.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
+its passages under *6. The Style System*, position 24, its passages under *7. The Knowledge Base*, position 25, its
+passages under *8. Planned Generation Components*, and position 26, its passages under *9. The Constraint System*.**
+**The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
 boundary after position 7, by its own capacity judgment; position 8 was tabulated under
@@ -134,9 +135,9 @@ boundary after position 19, by its own capacity judgment; position 20 was tabula
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md`, which stopped at the member
 boundary after position 20, by its own capacity judgment; positions 21 and 22 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md`, which stopped at the member
-boundary after position 22, by its own capacity judgment; positions 23 to 25 were tabulated under
+boundary after position 22, by its own capacity judgment; positions 23 to 26 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md`.** **The writing now stands at
-the member boundary after position 25: not done, positions 26 to 57, and the next writing resumes at position 26.** **A
+the member boundary after position 26: not done, positions 27 to 57, and the next writing resumes at position 27.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -33494,6 +33495,113 @@ labels read as titles under rule (1) are neither here nor among the rows.
 
 ---
 
+### 6.26 — Member 26: `ARCHITECTURE.md`, the passages under *9. The Constraint System*
+
+> **Manifest for this member.** Position **26**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: `## 9. The Constraint System`, exactly as the artifact spells it. **The twelfth
+> member of this comparison made of passages.** One range, as a locator only (**D-307**), with its first and last line
+> texts exactly as the artifact publishes them:
+>
+> - lines 5981–5986, from *"Fixing can be applied at multiple granularities:"* to *"- Parameter (fix a characteristic
+>   rather than specific notes)"*.
+>
+> **Each of the two line texts was compared with the line at its locator** in `ARCHITECTURE.md`, read by this session at
+> the file and at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at that
+> commit, **and both match**. The top-level heading the label names stands at line 5966, and the next top-level heading,
+> *10. Visualization*, at line 6017. **No other member of the artifact lies inside this top-level section** — this
+> session's script, run over lines 5966 to 6017, found no range of any other `ARCHITECTURE.md` member there — so nothing
+> is excluded from the cut. The section's other lines lie in no range — lines 5967–5980 and 5987–6016, as this session's
+> script lists them. They hold, by the lines this session read: *9.1 Fix Levels* above the range, its paragraph and its
+> fenced enumeration of four levels from locked to open; *9.2 ConstraintStore* whole, its fenced interface and its
+> paragraph that fixed elements are hard constraints in the voice leading optimizer, which never modifies them; *9.3
+> Persistence* whole; and the separator before *10.* No other member of the artifact covers them — the passage rule's
+> cut, recorded here as at §6.15 to §6.25, and not repaired. Outgoing statements: **0** (no row — the reading is stated
+> below). Listed under *not a statement*: **6**. Counted at this member by this session; the counts appear here and at
+> §13, and nowhere else.
+>
+> **WITHHELD homes inside this member: none** — the artifact's `item_4_identities_inside` for position 26 is empty.
+> **No decision of the decisions register's data file is homed inside this member's range**, found by this session's
+> walk of `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit
+> hash) for every `home` naming `ARCHITECTURE.md` with a line range overlapping the range, the retired block included.
+> *(The same walk over the cut spans finds one home there, and therefore in no member: the retired **D-135** at line
+> 6006, the paragraph on fixed elements as hard constraints, kept in the data file's retired block with the clause §6.23
+> quotes, its own `status` field reading *live* — not withheld.)* **No SEEN home lies in this member**, agreeing with §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.25, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation
+> join, the blockquote-marker reading, the fenced-block reading and the reading of a range that opens with a heading
+> line were applied unchanged at this member.** **The blockquote-marker reading has nothing to drop at the range**: every
+> line of it was checked at the blob, and none opens with the quotation-block marker. **The fenced-block reading has no
+> instance at this member**: the range holds no fenced block. **A range that opens with a heading line: none.** **This
+> member has no table, no status table and no glossary.** **The quotation join found nothing to join at this member.**
+>
+> **What this member is, read whole before any row was written, and why it places no statement.** The range is the
+> constraint system's lead and its five granularities at which an element may be fixed — a note, a voice line, a chord,
+> a progression, a parameter. The section's own words outside the range say what fixing is for: fixed elements are
+> *"hard constraints in the voice leading optimizer"*, a planned generation component (§6.25). **A sentence stating at
+> what granularity the user fixes an element for the generation components states nothing the analysis does, must do,
+> may assume or must not do**, so under the unit the lead and the five bullets are listed under *not a statement*, as
+> §6.25 listed its member. **The alternative** — tabulating them and placing them UNPLACED with what was read — is stated
+> here rather than taken.
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. "Fixing can be applied at multiple granularities:" (5981) — a lead ending in a colon that introduces its items; about
+   the constraint system the planned generation components work under, not the analysis.
+2. "Single note (specific pitch in specific voice at specific moment)" (5982) — a granularity at which the constraint
+   system fixes an element for the generation components, not the analysis.
+3. "Voice line (entire voice fixed throughout or for a passage)" (5983) — the same kind.
+4. "Chord (specific chord symbol fixed, voicing free — or both fixed)" (5984) — the same kind.
+5. "Progression (passage of bars fixed harmonically)" (5985) — the same kind.
+6. "Parameter (fix a characteristic rather than specific notes)" (5986) — the same kind.
+
+#### The arithmetic at this member
+
+- Rows written: **0**.
+- **Outgoing statements placed: 0.**
+- Listed under *not a statement*: **6**.
+- **Every outgoing statement carries exactly one disposition, and none carries two** — this member has none, by the
+  reading stated in its manifest header.
+- **UNPLACED statements at this member: none.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **0** | — |
+
+**The column sums to 0, against 0 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **0** |
+
+*(No statement, so no verdict.)* The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 26 is empty.
+- **In homes that are not withheld, carrying no mark: none** — no home lies in the range.
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -33948,7 +34056,7 @@ the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows
 numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, member 17's the rows numbered
 17.n, member 19's the rows numbered 19.n, member 20's the rows numbered 20.n, member 21's the rows numbered 21.n,
 member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, and member 24's the rows numbered 24.n. Members
-4, 5, 6, 14, 18 and 25 relocate no row.)*
+4, 5, 6, 14, 18, 25 and 26 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -34951,6 +35059,10 @@ inference layer*.**
 
 No QUARANTINED row: the member places no statement (§6.25's manifest header).
 
+**Member 26 — `ARCHITECTURE.md`, the passages under *9. The Constraint System*.**
+
+No QUARANTINED row: the member places no statement (§6.26's manifest header).
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -35610,6 +35722,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 
 **Member 25.** No ADOPTED — proposed row, and no DIFFERS.
 
+**Member 26.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -35642,10 +35756,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 23 | 49 | 0 | 0 | 35 | 6 | 0 | 0 | 8 | 40 |
 | 24 | 9 | 0 | 0 | 3 | 2 | 0 | 0 | 4 | 12 |
 | 25 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 17 |
-| **Total** | **2238** | **131** | **78** | **864** | **607** | **0** | **392** | **166** | **742** |
+| 26 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 6 |
+| **Total** | **2238** | **131** | **78** | **864** | **607** | **0** | **392** | **166** | **748** |
 
 **The arithmetic check:** 131 + 78 + 864 + 607 + 0 + 392 + 166 = 2238, against 2238 statements placed (43 + 34 + 21 + 34
-+ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0).
++ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -35674,10 +35789,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 23 | 3 | 0 | 46 | 49 |
 | 24 | 0 | 0 | 9 | 9 |
 | 25 | 0 | 0 | 0 | 0 |
+| 26 | 0 | 0 | 0 | 0 |
 | **Total** | **214** | **247** | **1785** | **2246** |
 
 **The arithmetic check of the verdicts:** 214 + 247 + 1785 = 2246, against the members' verdict totals (43 + 35 + 21 + 34 +
-19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0).
+19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0).
 
 ## 14. The derivation's independence record, relayed
 
