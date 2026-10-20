@@ -66,7 +66,7 @@ its own entry there.
 | 22 | `ARCHITECTURE.md` passages — *5. Planned Analysis Extensions* | **DONE** (§6.22) |
 | 23 | `ARCHITECTURE.md` passages — *6. The Style System* | **DONE** (§6.23) |
 | 24 | `ARCHITECTURE.md` passages — *7. The Knowledge Base* | **DONE** (§6.24) |
-| 25 | `ARCHITECTURE.md` passages — *8. Planned Generation Components* | NOT YET TABULATED |
+| 25 | `ARCHITECTURE.md` passages — *8. Planned Generation Components* | **DONE** (§6.25) |
 | 26 | `ARCHITECTURE.md` passages — *9. The Constraint System* | NOT YET TABULATED |
 | 27 | `ARCHITECTURE.md` passages — *10. Visualization* | NOT YET TABULATED |
 | 28 | `ARCHITECTURE.md` passages — *11. Intonation* | NOT YET TABULATED |
@@ -101,7 +101,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 24 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 25 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -114,8 +114,8 @@ inference layer*, the second, position 17, its passages under *Document governan
 notes*, position 18, its passages under *1. Project Overview*, position 19, its passages under *2. Architectural
 Principles*, position 20, its passages under *3. Directory Structure*, position 21, its passages under *4. Existing
 Components — The Analysis Foundation*, position 22, its passages under *5. Planned Analysis Extensions*, position 23,
-its passages under *6. The Style System*, and position 24, its passages under *7. The Knowledge Base*.** **The first
-batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
+its passages under *6. The Style System*, position 24, its passages under *7. The Knowledge Base*, and position 25, its
+passages under *8. Planned Generation Components*.** **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
 boundary after position 7, by its own capacity judgment; position 8 was tabulated under
@@ -134,9 +134,9 @@ boundary after position 19, by its own capacity judgment; position 20 was tabula
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_ninth_2026_10_20.md`, which stopped at the member
 boundary after position 20, by its own capacity judgment; positions 21 and 22 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_tenth_2026_10_20.md`, which stopped at the member
-boundary after position 22, by its own capacity judgment; positions 23 and 24 were tabulated under
+boundary after position 22, by its own capacity judgment; positions 23 to 25 were tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md`.** **The writing now stands at
-the member boundary after position 24: not done, positions 25 to 57, and the next writing resumes at position 25.** **A
+the member boundary after position 25: not done, positions 26 to 57, and the next writing resumes at position 26.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -33348,6 +33348,152 @@ verdicts total 9 over 9 statements, every one THE DERIVATION IS SILENT.)* The DI
 
 ---
 
+### 6.25 — Member 25: `ARCHITECTURE.md`, the passages under *8. Planned Generation Components*
+
+> **Manifest for this member.** Position **25**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `ARCHITECTURE.md`. Label: `## 8. Planned Generation Components`, exactly as the artifact spells it. **The
+> eleventh member of this comparison made of passages.** Four ranges, each as a locator only (**D-307**), with its first
+> and last line texts exactly as the artifact publishes them (wrapped here for width):
+>
+> - lines 5826–5832, from *"Given a chord symbol and context, generates specific voicings appropriate to the"* to
+>   *"does not change."*;
+> - lines 5834–5847, from *"```cpp"* to *"```"*;
+> - lines 5882–5888, from *"*Extended tertian:*"* to *"  effect. In Prepared scope."*;
+> - lines 5938–5943, from *"1. **Melodic analysis** — phrase structure, scale degrees, climax, chromatic notes"* to *"
+>   appropriate cadences"*.
+>
+> **Each of the eight line texts was compared with the line at its locator** in `ARCHITECTURE.md`, read by this session
+> at the file and at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at that
+> commit, **and every one matches**. The top-level heading the label names stands at line 5789, and the next top-level
+> heading, *9. The Constraint System*, at line 5966. **No other member of the artifact lies inside this top-level
+> section** — this session's script, run over lines 5789 to 5966, found no range of any other `ARCHITECTURE.md` member
+> there — so nothing is excluded from the cut. The section's other lines lie in no range — lines 5790–5825, 5833,
+> 5848–5881, 5889–5937 and 5944–5965, as this session's script lists them. They hold, by the lines this session read: the
+> section's opening, that all generation components stand behind abstract interfaces and that *"No generation is
+> implemented yet — this section documents the planned design"*; *8.1 IHarmonizer* whole, with its fenced interface; the
+> heading of *8.2 VoicingGenerator*; after the block, the voicing type taxonomy down to range 3 — its tertian close and
+> special families and its non-tertian family — and, after range 3, the table of each style's initial voicing scope and
+> the fenced example of a style's voicing parameters; *8.3 VoiceLeadingOptimizer* whole, with its fenced cost function;
+> the heading and opening of *8.4 RuleBasedHarmonizer* and its paragraph on the creativity parameter after range 4; *8.5
+> BassLineGenerator* and *8.6 IdiomaticMaterialGenerator* whole; the separator before *9.*; and the empty line between
+> ranges 1 and 2. No other member of the artifact covers them — the passage rule's cut, recorded here as at §6.15 to
+> §6.24, and not repaired. Outgoing statements: **0** (no row — the reading is stated below). Listed under *not a
+> statement*: **17**. Counted at this member by this session; the counts appear here and at §13, and nowhere else.
+>
+> **WITHHELD homes inside this member: none** — the artifact's `item_4_identities_inside` for position 25 is empty.
+> **One decision of the decisions register's data file is homed inside this member's ranges**, found by this session's
+> walk of `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit
+> hash) for every `home` naming `ARCHITECTURE.md` with a line range overlapping one of the four ranges, the retired block
+> included: the **RETIRED** entry **D-134** at line 5837, wholly inside range 2 — a comment line of the fenced block —
+> which the decisions register's INDEX does not show, kept in its data file's retired block with the clause §6.23 quotes,
+> its own `status` field reading *live*. It is not withheld, so it carries no mark; the item it lies in is named at the
+> foot. No home of the decisions register's list lies inside the ranges. *(The same walk over the cut spans finds no
+> home there.)* **No SEEN home lies in this member**, agreeing with §5.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.24, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation
+> join, the blockquote-marker reading, the fenced-block reading and the reading of a range that opens with a heading
+> line were applied unchanged at this member.** **The blockquote-marker reading has nothing to drop at any of the four
+> ranges**: every range was checked line by line at the blob, and no line of any of them opens with the quotation-block
+> marker. **The fenced-block reading, at range 2:** the `VoicingGenerator` interface (lines 5834 to 5847) is taken **as
+> one unit, as a table row is**, as Rows 4.4 and 20.1 took theirs, and, like every sentence of this member, it is listed
+> under *not a statement* (item 5), its comment lines included; it is not split. **A range that opens with a heading
+> line: none at this member.** **This member has no table, no status table and no glossary.** **How the leads were
+> read:** range 3's italic *"Extended tertian:"* only introduces its bullets and is listed as a lead (item 6); the bold
+> leads of range 3's bullets and of range 4's numbered items are noun-phrase labels, quoted with the sentences they open.
+> **The quotation join found nothing to join at this member**: no line inside its ranges breaks a hyphenated compound at
+> its end.
+>
+> **What this member is, read whole before any row was written, and why it places no statement.** The ranges are this
+> document's account of its planned generation components that the population's passage rule reached: the voicing
+> generator and its interface, two extended tertian voicings, and the four stages of the rule-based harmonizer. The
+> section's own opening, outside the ranges, says *"No generation is implemented yet — this section documents the planned
+> design"*. **A sentence stating what a generation component does states nothing the analysis does, must do, may assume
+> or must not do, and no charter of `FRAMEWORK.md` §5 is a generation component**; so under the unit every sentence of
+> this member is listed under *not a statement*, as position 23's range 1 listed the style file's parameters for the
+> generation mechanisms (§6.23, items 2 to 11). **The reading most open to challenge** is at range 4's items, whose words
+> — *"phrase structure"*, *"Harmonic rhythm planning"*, *"appropriate cadences"* — coincide with L3's own subjects: they
+> are stages of a harmonizer that writes music, its *"Melodic analysis"* the harmonizer's reading of the melody it
+> harmonizes, and they are listed for that reason; **the alternative** — tabulating range 4's items and placing them
+> UNPLACED with what was read — is stated here rather than taken.
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) are neither here nor among the rows.
+
+1. "Given a chord symbol and context, generates specific voicings appropriate to the style and ensemble profile."
+   (5826–5827) — about the planned generation components, not the analysis.
+2. "The generator interface is voicing-type agnostic — …" (5827–5829) — the same kind.
+3. "The style JSON determines which voicing types are used and in what proportion." (5829–5830) — the same kind.
+4. "Adding a new voicing type means adding it to the generator implementation and making it available as a style
+   parameter — …" (5830–5832) — the same kind.
+5. "class VoicingGenerator { …" (5834–5847) — the fenced `cpp` block of the voicing generator's interface, taken as one
+   unit, its comment lines included: about the planned generation components, not the analysis.
+6. "*Extended tertian:*" (5882) — a lead ending in a colon that only introduces its items, listed under the colon-lead
+   reading.
+7. "**Upper structure triads** — guide tones (3rd and 7th) in lower voices, a complete foreign triad in upper voices."
+   (5883–5884) — a voicing the generation components would write, not the analysis.
+8. "The upper structure triad is selected from the knowledge base based on which tensions are available over the chord
+   symbol." (5884–5886) — the same kind.
+9. "Requires chord-scale knowledge base." (5886) — the same kind.
+10. "In Important scope." (5886) — the same kind, its scope.
+11. "**Polychordal** — two complete chords superimposed." (5887) — the same kind.
+12. "Used as a specific compositional effect." (5887–5888) — the same kind.
+13. "In Prepared scope." (5888) — the same kind, its scope.
+14. "**Melodic analysis** — phrase structure, scale degrees, climax, chromatic notes" (5938) — a stage of the planned
+    rule-based harmonizer, a generation component, not the analysis.
+15. "**Harmonic rhythm planning** — where chord changes occur" (5939) — the same kind.
+16. "**Initial chord suggestion** — most natural chord for each melody note given style context and key" (5940–5941) —
+    the same kind.
+17. "**Progression coherence** — ensure functional logic, complete ii-V-I patterns, appropriate cadences" (5942–5943) —
+    the same kind.
+
+#### The arithmetic at this member
+
+- Rows written: **0**.
+- **Outgoing statements placed: 0.**
+- Listed under *not a statement*: **17**.
+- **Every outgoing statement carries exactly one disposition, and none carries two** — this member has none, by the
+  reading stated in its manifest header.
+- **UNPLACED statements at this member: none.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **0** | — |
+
+**The column sums to 0, against 0 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **0** |
+
+*(No statement, so no verdict.)* The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 25 is empty.
+- **In homes that are not withheld, carrying no mark**: the retired entry of the data file D-134, inside item 5, the
+  fenced block; no row lies in it.
+- **SEEN rows: none** — no SEEN home lies in this member.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -33802,7 +33948,7 @@ the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows
 numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, member 17's the rows numbered
 17.n, member 19's the rows numbered 19.n, member 20's the rows numbered 20.n, member 21's the rows numbered 21.n,
 member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, and member 24's the rows numbered 24.n. Members
-4, 5, 6, 14 and 18 relocate no row.)*
+4, 5, 6, 14, 18 and 25 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -34801,6 +34947,10 @@ inference layer*.**
 - Row 24.5 — at the current commit, is the knowledge of which chord may follow which held in two places, a pairwise rule
   set inside the function layer and the catalog of longer patterns?
 
+**Member 25 — `ARCHITECTURE.md`, the passages under *8. Planned Generation Components*.**
+
+No QUARANTINED row: the member places no statement (§6.25's manifest header).
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -35458,6 +35608,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 
 **Member 24.** No ADOPTED — proposed row, and no DIFFERS.
 
+**Member 25.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -35489,10 +35641,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 22 | 98 | 0 | 0 | 20 | 45 | 0 | 32 | 1 | 18 |
 | 23 | 49 | 0 | 0 | 35 | 6 | 0 | 0 | 8 | 40 |
 | 24 | 9 | 0 | 0 | 3 | 2 | 0 | 0 | 4 | 12 |
-| **Total** | **2238** | **131** | **78** | **864** | **607** | **0** | **392** | **166** | **725** |
+| 25 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 17 |
+| **Total** | **2238** | **131** | **78** | **864** | **607** | **0** | **392** | **166** | **742** |
 
 **The arithmetic check:** 131 + 78 + 864 + 607 + 0 + 392 + 166 = 2238, against 2238 statements placed (43 + 34 + 21 + 34
-+ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9).
++ 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -35520,10 +35673,11 @@ are at its own foot, and the integers below are re-derivable from them.
 | 22 | 3 | 7 | 88 | 98 |
 | 23 | 3 | 0 | 46 | 49 |
 | 24 | 0 | 0 | 9 | 9 |
+| 25 | 0 | 0 | 0 | 0 |
 | **Total** | **214** | **247** | **1785** | **2246** |
 
 **The arithmetic check of the verdicts:** 214 + 247 + 1785 = 2246, against the members' verdict totals (43 + 35 + 21 + 34 +
-19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9).
+19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0).
 
 ## 14. The derivation's independence record, relayed
 
