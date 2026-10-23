@@ -26897,3 +26897,82 @@ the working tree during the run.
 
 *Provenance: CC, 2026-10-23, appended in the one further commit after the close commit
 `1efab7f6215e8eafdbfadd854d3930c57f51c95d`; the verdicts are this run's own output, read with the file tools.*
+
+## THE L3 COMPARISON CONTINUED AT POSITION 36 — MEMBER 36 TABULATED, PROPOSALS ONLY, NOTHING DECIDED, NO ALGORITHM CHANGED — STOPPED AFTER POSITION 36 BY THE DISPATCH'S OWN LIMIT, POSITIONS 37 TO 57 NOT DONE
+
+This batch ran `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fourteenth_2026_10_23.md`, pinned at
+Task 0 to blob `596fb568bdcecec465b48e1ee46beadd430fa6aa`:
+
+- **Task 0** checked this dispatch and handoff entry 438 at their last bytes at their blobs, landed both as they stood
+  (`69e0afc2…`), took the opening guard capture — as A2 predicted, the thirteen and nothing else, with the evidence pin
+  green and the header *"the guard state re-derives"* — and verified the derivation and the brief at their blobs before
+  Task 1 opened.
+- **Task 1** extended `ratification_surfaces/cowork_comparison_l3_reading.md` with **position 36**, the passages of
+  `cowork_phrase_boundary_design.md` — the second passage member cut from a document other than `ARCHITECTURE.md` — in
+  one commit (`8f0baf80…`), with §0's clause on the previous batch's stop in the dispatch's own words, the one banner
+  edit, and §0 and §10 to §13 updated in the same commit. **A capacity-judgment file was written in the scratch folder
+  before the member was opened**, and it is quoted whole at the head of the report; the judgment was that the member
+  could be finished whole, and it was. Every one of the forty-four published range line texts matched the line at its
+  locator; the quotation-block marker was masked on the nineteen lines 3 to 21 of range 1; the two hyphen line ends were
+  joined; no other member is cut from the document. **Every row inside the seven WITHHELD homes carries its mark, every
+  row inside D-482's and D-484's homes is marked SEEN, and no other row is marked**; each WITHHELD row's quotation was
+  held to its home's verbatim span at the population artifact, and D-483's home is named beside its rows. Every quotation
+  and every *not a statement* opening was checked against the member's text at the objects before the commit, and §6.1
+  to §6.35 compared byte-identical. Every DIFFERS carries its one-sentence difference with nothing chosen, and the
+  member's placements and readings for challenge are stated at its manifest header. It **STOPPED at the member boundary
+  after position 36 under the dispatch's 1(g)**, not by a capacity judgment. **Positions 37 to 57 are UNTOUCHED, not
+  partly worked** (**D-672**), and §0 of the reading file says so.
+- **Task 2** closed: the three `STATUS.md` entries written first, the 26 ruled terms searched with the one standing
+  hit, the forward bound re-aimed and moved exactly the thirteenth batch's three entries, and the two reds A2 provides
+  for regenerated, `gen_session_start_read_size.py` last. No entry was corrected after the move. **The session's context
+  was summarized once, inside Task 1, between the two halves of the member's rows**; no committed act fell across it, it
+  is declared in the report, and what the report states of the earlier work is taken from the transcript and the scratch
+  files.
+
+**NOTHING WAS DECIDED; NO DISPOSITION WAS APPLIED; EVERY PLACEMENT IS A PROPOSAL.** No outgoing text was edited —
+`cowork_phrase_boundary_design.md` was read, never edited, and `docs/scoring_model.md` and `ARCHITECTURE.md` were not
+touched. The derivation, the brief, the pack and the two earlier reading files were not edited, and §6.1 to §6.35 of the
+reading file were not touched. No session was booted. No measurement of the analysis was made. No open-items row and no
+`D-NNN`. No ruling was taken, no recommendation was made, and nothing was put to the user. Nothing any layer computes
+changed.
+
+**Everything this section would restate is in the report**,
+`records/cc/reports/cc_report_l3_comparison_tabulation_fourteenth_2026_10_23.md`, and is pointed at rather than copied
+(#6):
+
+- the context summary, the member done and not done, the capacity-judgment file quoted whole and position 37's size, at
+  its head;
+- the ordered first read, with the derivation's counts taken at the read and the reads that fell short (§0);
+- Task 0, with the refs, the chain, A1, the last bytes, the commit, the opening capture whole and the two blobs (§1);
+- Task 1's inputs, the ranges check, the inside control, the homes walks, how the marks were checked, the three checks
+  with what the first two caught and the third passed, and the commit (§2);
+- Task 2, with the `STATUS.md` entries and the substring search, the forward bound's aiming, `--apply` and `--check`
+  with the three entries moved by name, and the checks with what each regenerated artifact moved (§3);
+- A1 to A5 (§4), the findings and observations (§5), the declared departures (§6), the scripts and the limits they met
+  (§7), what the batch did not do (§8), the plan's tell (§9) and the self-check (§10).
+
+### What needs the writing side, named rather than resolved
+
+1. **Placements and readings stated for challenge** at §6.36's manifest header — the weighing of the split DP-I records,
+   placements (a) to (k), and four placements, (l) to (o), each with its alternative. Every DIFFERS of the member is at
+   §12, with its three ADOPTED — proposed rows.
+2. **The passage rule's cut at position 36 is recorded, not repaired**: it holds no decision home, but it holds
+   statements of the primitive's mechanism — the three cue-profile bullets and the bounded-context stance among them.
+3. **Position 37 is 472 lines and 47,074 bytes** at the artifact, larger in bytes than any passage member done so far;
+   position 36, smaller, was finished whole with one summary of this session's context during it (report head).
+4. **§11 and §12 of the reading file whole, and two manifest headers, were read short of what was ordered** (report §6,
+   departure 4) — recorded so the next dispatch's ordered read can be judged against it.
+5. **The classification tool's message still names four tools without an authored verdict**, unchanged. Authoring one
+   was not this batch's act.
+
+### The plan line
+
+- **The next act is the writing side's — the check of this batch's return at the objects, then the next tabulation
+  dispatch resuming at the member boundary §0 of the reading file records: position 37.**
+
+**THE END STATE IS NOT ASSERTED HERE.** The one further commit carries it.
+
+*Provenance: CC, 2026-10-23, at boot tip `619fb8ef679b9dd811a18dd57ecffd27100c8e2c`, under
+`cc_instruction_l3_comparison_tabulation_fourteenth_2026_10_23.md`, after the dispatch's ordered first reads. Every commit
+identifier here was read from the commit's own object and `origin/master` at its ref file after each push; the guard
+verdicts are this batch's own runs.*
