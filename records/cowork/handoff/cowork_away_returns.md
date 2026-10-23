@@ -26824,3 +26824,76 @@ recommendation was made, and nothing was put to the user. Nothing any layer comp
 `cc_instruction_l3_comparison_tabulation_thirteenth_2026_10_21.md`, after the dispatch's ordered first reads. Every commit
 identifier here was read from the commit's own object and `origin/master` at its ref file after each push; the guard
 verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `1efab7f6215e8eafdbfadd854d3930c57f51c95d` left, appended in the one further commit
+
+**A fresh full guard run in write mode (`python tools/audit/gen_guard_state.py`, the mode named), after the close commit
+and before this one.** Its result is at `tools/audit/guard_state.json` → `summary`, which this commit carries. Its first
+line, verbatim: *"wrote tools\audit\guard_state.json"*; its last line, verbatim: *"82 guard(s) run, 13 failing, 4 not
+run, 20 historical record(s)"*. **E2 and E3 — MET, AS A2 PREDICTED:**
+
+- the run count is the premise ledger's;
+- zero STOPs in the runner;
+- the failing set is exactly the thirteen of the premise ledger, none added;
+- `tools/audit/gen_l3_outgoing_population.py --check` PASSES;
+- the NOT RUN and HISTORICAL lines are identical to the opening capture's — indeed every verdict line after the header
+  is identical to the opening capture's, compared line by line by the scratch script `t3_compare.py`, which printed
+  *"verdict lines identical (all after the header): True"* and *"failing at the end state: 13"*.
+
+`gen_evidence_pin_membership.py --check`, `gen_l0_l1_outgoing_population.py --check`, `gen_defense_share.py --check`,
+`gen_session_start_read_size.py --check` and `gen_status_batch_bound.py --check` are green.
+
+**The A2 exceptions, handled as A2 says, were all met inside the close rather than after it.** The defense share and the
+session-start read size went red after the close's `STATUS.md` edits and the forward-bound move; each was regenerated
+once and compared against the blob at `06b17b46…` by explicit hash (report §3, 2(c)); each moved only with `STATUS.md`.
+**The L3 population stayed green throughout and was not regenerated**: the *paraphrase* residue line returned to its own
+line. **No population member, no item-4 passage, no member of the tabulation population and no residue record moved.**
+The evidence-pin membership and the L0/L1 population stayed green throughout. All were re-checked green after the report
+and the close section were written, before the close was committed, so this run regenerated nothing beyond its own
+artifact — `changed_paths.py` after the run shows `tools/audit/guard_state.json` beside the carried
+`tools/audit/claude_md_finer_archive.json` and no other tracked modification. `gen_l2_outgoing_population.py` was not run
+in any operating mode.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_l3_outgoing_population.py',
+'tools/audit/gen_withheld_family_reading.py']"* — exactly the four tools of the dispatch's FACT; no fifth name.
+
+**A3 to A5, verified at the objects.** `git diff --name-status 06b17b46d480bbbd2d7fd0ebe67fe57270d627be 1efab7f6…` shows
+eleven paths, every one accounted for, and **`docs/scoring_model.md` and `ARCHITECTURE.md` are both absent from it**:
+
+- the two records of Task 0;
+- the reading file of Task 1;
+- the close's eight: `STATUS.md`, `STATUS_ARCHIVE.md`, the re-aimed forward-bound tool and its artifact, the defense
+  share, the read-size artifact, the report, and this file.
+
+`git diff --numstat` between the member commit `5d9f356a…` and the close shows `STATUS_ARCHIVE.md`, the report and this
+file with lines added only. At the close, `git ls-tree` shows the derivation and the brief at blobs `c01793f9…` and
+`6abb5333…`, the ones the premise ledger names; `docs/scoring_model.md` at `8410b00e…`, the boot commit's blob and the one
+position 35 was read from; `ARCHITECTURE.md` at `1ce6176c…` and `FRAMEWORK.md` at `bc1d1265…`, the boot commit's; the
+reading file at `fff5cd07…`, unchanged since the member commit; and the L3 and L0/L1 population artifacts at `13d1750b…`
+and `bf3664bc…`, the boot commit's blobs.
+
+**§6.1 to §6.34 of the reading file are byte-identical**, compared as A5 orders: the span from the heading *"### 6.1 —
+Member 1:"* to the line before *"## 7."* in the blob at `06b17b46…` (`d1f51400…`), and the span from the same heading to
+the line before *"### 6.35 — Member 35:"* in the last commit's blob (`fff5cd07…`), both read from the object store by
+explicit hash, compare equal. The comparison was made by the scratch script `t3_span.py`, its two headings moved on from
+the previous batch's, which reads blobs only, and printed *"6.1-6.34 span identical: True  lengths 1821667 1821667"*.
+
+**Nothing else differs from the boot commit:**
+
+- no other tool source, `tools/audit/gen_guard_state.py` and `tools/audit/gen_l3_outgoing_population.py` included;
+- no file under the pack directory `tools/audit/derivation_boot_pack/l3/`, and not `tools/audit/derivation_boot_pack.json`;
+- not the two input-contract files, and not the L0/L1 or L2 reading file;
+- no outgoing text — not `docs/scoring_model.md` and not `ARCHITECTURE.md` — and not `FRAMEWORK.md`;
+- not `tools/audit/gen_l0_l1_outgoing_population.py`, `tools/audit/gen_l2_outgoing_population.py` or its artifact,
+  `tools/audit/gen_l2_withheld_documents.py` or `tools/audit/gen_derivation_boot_pack.py`;
+- not the L3 population artifact;
+- no source of the decisions register and no rendered decisions-register file;
+- no governing document other than `STATUS.md` and `STATUS_ARCHIVE.md`.
+
+This commit adds only the guard run's artifact and this portion. No further handoff entry or ruling record appeared in
+the working tree during the run.
+
+*Provenance: CC, 2026-10-23, appended in the one further commit after the close commit
+`1efab7f6215e8eafdbfadd854d3930c57f51c95d`; the verdicts are this run's own output, read with the file tools.*
