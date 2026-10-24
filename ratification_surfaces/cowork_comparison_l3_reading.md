@@ -15,7 +15,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eleventh_2026_10_20.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twelfth_2026_10_20.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_thirteenth_2026_10_21.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fourteenth_2026_10_23.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fourteenth_2026_10_23.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fifteenth_2026_10_24.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -81,7 +82,7 @@ its own entry there.
 | 34 | `ARCHITECTURE.md` passages — *Appendix B — MuseScore Score Model Quick Reference* | **DONE** (§6.34) |
 | 35 | `docs/scoring_model.md` passages | **DONE** (§6.35) |
 | 36 | `cowork_phrase_boundary_design.md` passages | **DONE** (§6.36) |
-| 37 | `cowork_voiceleading_axis_design.md` passages | NOT YET TABULATED |
+| 37 | `cowork_voiceleading_axis_design.md` passages | **DONE** (§6.37) |
 | 38 | `cowork_target_architecture.md` passages | NOT YET TABULATED |
 | 39 | `cowork_stage5_fitter_design.md` passages | NOT YET TABULATED |
 | 40 | `cowork_evidence_inventory.md` passages | NOT YET TABULATED |
@@ -104,7 +105,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 36 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 37 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -124,7 +125,8 @@ its passages under *12. User Interface*, position 30, its passages under *14. ML
 under *15. Development Phases*, position 32, its passages under *16. Scope Reference*, position 33, its passages under
 *19. LLM Integration — Claude Composer*, position 34, its passages under *Appendix B — MuseScore Score Model Quick
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
-than `ARCHITECTURE.md`, and position 36, the passages of `cowork_phrase_boundary_design.md`.**
+than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, and position 37, the
+passages of `cowork_voiceleading_axis_design.md`.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -151,9 +153,11 @@ boundary after position 26, by its own capacity judgment; positions 27 to 34 wer
 boundary after position 34 under its own limit on the batch, and not by a capacity judgment; position 35 was tabulated
 under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_thirteenth_2026_10_21.md`, which stopped at the
 member boundary after position 35 under its own limit on the batch, and not by a capacity judgment; position 36 was
-tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fourteenth_2026_10_23.md`.** **The
-writing now stands at the member boundary after position 36: not done, positions 37 to 57, and the next writing
-resumes at position 37.** **A
+tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fourteenth_2026_10_23.md`, which
+stopped at the member boundary after position 36 under its own limit on the batch, and not by a capacity judgment;
+position 37 was tabulated under
+`records/cc/instructions/cc_instruction_l3_comparison_tabulation_fifteenth_2026_10_24.md`.** **The writing now stands
+at the member boundary after position 37: not done, positions 38 to 57, and the next writing resumes at position 38.** **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
 
@@ -42991,6 +42995,3310 @@ statements: 36.4 (i) (L3-S8), 36.4 (ii) (L3-S8), 36.5 (ii) (L3-S32), 36.6 (ii) (
 
 ---
 
+### 6.37 — Member 37: `cowork_voiceleading_axis_design.md`, the passages of the document
+
+> **Manifest for this member.** Position **37**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_voiceleading_axis_design.md`. Label: *the passages of the document*, exactly as the artifact spells
+> it — a label that names no heading, so the member's section is the whole document, its lines 1 to 727, as at §6.35 and
+> §6.36. **The twenty-third member of this comparison made of passages, the third cut from a document other than
+> `ARCHITECTURE.md`, and the first cut from a document not withheld from the deriving session's pack**: its entry's
+> `item_4_identities_inside` is empty, so its passages are cut around term-search hits only. Twenty-one ranges, each as
+> a locator only (**D-307**), with its first and last line texts exactly as the artifact publishes them (wrapped here
+> for width; the quotation-block marker at the head of range 1's two line texts is the artifact's own text):
+>
+> - lines 3–51, from *"> **★ Status: AS-BUILT (VL-A/B/C foundation, 2026-07-03 —
+>   `records/cc/reports/cc_vl_foundation_build_report.md`).** The dormant"* to *"> module, no deployment topology, no
+>   UI. Stated once here.)*"*;
+> - lines 61–74, from *"- **"voice"** is used in this document ONLY for the **notated voice** — the (staff, voice) line
+>   the score writes"* to *"  sense), never in the sense "edge / borderline"."*;
+> - lines 101–143, from *"- **Voice leading [MT].** How simultaneous musical lines move from sonority to sonority — the
+>   linear, horizontal"* to *"- **Cadence [MT].** As in the harmonic spine (L5 detects; this axis does not re-detect
+>   cadences — §3)."*;
+> - lines 147–180, from *"- **The voice-linear view [VL] (component VL-A).** The representation that reorganizes the L1
+>   note model into"* to *"  this design."*;
+> - lines 184–190, from *"**What this is.** The architecture of the **voice-leading axis** — the second analysis
+>   dimension of the composing"* to *"design document (and, where required, its own measurement) before any build (§5.4,
+>   §9-D5)."*;
+> - lines 192–203, from *"**Why it exists (the problem).** The harmonic spine answers "what are the chords, keys,
+>   functions?" It is"* to *"dominated by non-chord tones read as chord extensions."*;
+> - lines 217–244, from *"- **Forward-only analysis.** Inference flows forward within the axis; cross-axis reads obey
+>   the acyclicity rule of"* to *"  (the VL-C per-span question has a named exploratory study — §5.3, §15-1)."*;
+> - lines 248–259, from *"**Imports / dependencies.**"* to *"  (v1 reads nothing from them)."*;
+> - lines 261–266, from *"**Exports / public API (design-level).**"* to *"  schemata (VL-F), voicing/arrangement
+>   descriptors (VL-G)."*;
+> - lines 268–286, from *"**Consumers (who reads the axis, and for what).**"* to *"   like the rest of the dormant
+>   stack."*;
+> - lines 293–304, from *"**Mirror the harmonic spine's discipline on the linear dimension, and build only what the
+>   evidence has already"* to *"behind its own measurement or design gate."*;
+> - lines 342–362, from *"Rules:"* to *"  cross-check (§10)."*;
+> - lines 414–463, from *"- **VL-D — stream separation (inference).** Recover streams from implied polyphony / compound
+>   melody, so keyboard"* to *"  nothing upstream of itself."*;
+> - lines 474–489, from *"1. **Chorale (four notated voices).** VL-A yields four monophonic series; VL-B's motion
+>   profile is"* to *"   denied, the output abstains with truncation provenance)."*;
+> - lines 495–505, from *"- **VoiceLine** — voice identity (staff, voice), ordered events (onset, duration, pitches,
+>   spelling, chordal"* to *"- *(Design-gated types sketched, not fixed: Stream + membership confidences; PhraseSpan per
+>   voice; SchemaMatch.)*"*;
+> - lines 536–570, from *"- **D1 — an axis, not a seventh spine layer.** The three co-equal admission gates
+>   (ARCHITECTURE §2.15): **(1)"* to *"  reference set, not a parallel new rig."*;
+> - lines 601–614, from *"- **Ground-truth scarcity** for texture (per-piece), phrases, and schemata — the axis's
+>   inference components lean"* to *"  the guard — nothing builds without its own doc + footing."*;
+> - lines 622–628, from *"The axis was **predicted** (chorale "Baroque-ness" lives in voice-leading, not chords — the
+>   v1/v1.1 finding that"* to *"§2.15 named the axis, the voice-leading-span, and the melodic-phrase/voicing homes
+>   before this design existed)."*;
+> - lines 632–644, from *"**Borrowed / built on:** the motion-type and interval feature definitions and the texture
+>   taxonomy"* to *"`cowork_polyphony_phrase_harmony_research.md` §7."*;
+> - lines 656–708, from *"1. **The per-span texture measurement (gates the §5.3 refinement).** Exploratory, read-only:
+>   windowed motion"* to *"    Tooling precedents recorded: music21 theoryAnalyzer, FuxCP, Palestrina Pal, the Check-Fux
+>   plugin."*;
+> - lines 712–727, from *"- **A1 — admit the axis** with the §5 decomposition and the three co-equal gates as argued
+>   (§9-D1)."* to *"- **A8 — the cross-axis dependency rule** (acyclicity by declaration, re-checked per wiring)
+>   (§9-D6)."*.
+>
+> **Each of the forty-two line texts was compared with the line at its locator** in
+> `cowork_voiceleading_axis_design.md`, read by this session at its blob at the commit that landed this batch's
+> dispatch, by a script reading the artifact at that commit, **and every one matches**; the ranges hold 472 lines. **No
+> other member of the artifact is cut from this document** — this session's script, listing every member whose document
+> is `cowork_voiceleading_axis_design.md`, found position 37 alone — so nothing is excluded from the cut. The document's
+> other lines lie in no range — lines 1–2, 52–60, 75–100, 144–146, 181–183, 191, 204–216, 245–247, 260, 267, 287–292,
+> 305–341, 363–413, 464–473, 490–494, 506–535, 571–600, 615–621, 629–631, 645–655 and 709–711, two hundred and
+> fifty-five lines of which sixty-six are blank, as this session's script lists them; the list is the one the dispatch
+> computed, span for span. By the twenty-four headings the script lists among them — every heading line of the document
+> — they hold: the title (1); the heading of *0. Terminology …*, its opening paragraph and the lead of the one-sense
+> declarations (53 to 59); the lead and list *Project terms used below (cited, not re-defined here)*, among them the
+> bullet *Byte-identical / the corpus gate* with its own preserved former wording (76 to 97); the two `### ` headings of
+> §0 (99 and 145); the headings of §1 to §4, with §1's *Scope* and *Status* paragraphs (205 to 211) and §2's opening
+> lead (215); the implementation-and-test locator paragraph (288 to 289); §5's heading and opening paragraph, the whole
+> of *5.1 VL-A — the voice-linear view (representation; facts)*, and §5.2's heading with its *Owns:* line (306 to 340);
+> the whole of *5.3 VL-C — texture classification (inference; the first judgment component)* and §5.4's heading (364 to
+> 412); §6's heading and its italic opening paragraph (465 to 472); §7's heading and lead (491 to 493); §7's closing
+> paragraph, the whole of *8. Crosscutting concepts* and §9's heading (506 to 534); the whole of *10. Quality & testing*
+> and §11's heading (572 to 599); *12. Glossary — see §0* with its one line and §13's heading (616 to 620); §14's
+> heading (630); §14's paragraphs led *Considered and discarded/deferred:* and *Corpora:* and §15's heading (646 to
+> 654); §16's heading (710); and blank lines. *(This session read the cut lines that lay between the ranges it read in
+> contiguous reads — among them 52–60, 75–100, 144–146, 181–183, 204–216, 245–247, 287–292, 337–341, 412–413, 464–473,
+> 490–494, 534–535, 599–600, 615–621, 629–631, 645–655 and 709–711 — and did not read 305–336, 363–411, 506–533 and
+> 571–598, which are named here by the headings the script lists and as the dispatch describes them.)* **The cut holds
+> four homes of the decisions register's data file and one retired home** (the walk below), **and the build-level rules
+> of two of the axis's three foundation components** — §5.1 and §5.3 whole — with the whole of §8 and §10; they are
+> facts of the population artifact for the method ruling's surface, and no member is widened by hand to take them
+> (**D-671**). No other member of the artifact covers the cut — the passage rule's cut, recorded here as at §6.15 to
+> §6.36, and not repaired. Outgoing statements: **241** (rows 37.1 to 37.170; fifty-six rows carry two claims, six rows
+> three and one row four, each split — the arithmetic is at the foot of this member). Listed under *not a statement*:
+> **48**. Counted at this member by this session; the counts appear here and at §13, and nowhere else.
+>
+> **No WITHHELD home lies inside this member**: the artifact's `item_4_identities_inside` for position 37 is empty, and
+> `cowork_voiceleading_axis_design.md` is not one of the five documents withheld from the deriving session's pack — **no
+> row is marked WITHHELD**. **No SEEN home lies inside it, agreeing with §5** — none of D-335, D-406, D-482, D-484 and
+> D-502 to D-510 is homed in this document — **so no row is marked SEEN**. **Six decisions of the decisions register's
+> data file are homed inside the ranges, none withheld and none seen, each carrying no mark and each named at the rows
+> whose statements lie inside it**, as §6.28's Row 28.42 named D-248 and §6.36's Rows 36.100 to 36.102 named D-483; this
+> session's walk of `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by
+> explicit hash) located each: **D-398** at 109–112, in range 3, its rows **37.21 and 37.22** and item 17 of *not a
+> statement*, **its home ending inside a sentence** — line 112 ends with the first words of the italic sentence led *Why
+> this reading and not the generic-diatonic one:*, which runs to line 116, and Row 37.23, quoting that sentence whole,
+> names the home and says that the sentence starts on its last line and runs past it; **D-388** at 545–548, the whole
+> bullet D2 of range 16, its row **37.122** and item 31; **D-389** at 549–551, the bullet D3, its rows **37.123 and
+> 37.124** and item 32; **D-390** at 552–555, the bullet D4, its rows **37.125 and 37.126** and items 33 and 34;
+> **D-392** at 556–558, the bullet D5, its row **37.127** and items 35 and 36; and **D-391** at 559–567, the bullet D6,
+> its rows **37.128 and 37.129** and items 37 and 38. **Every home but D-398's begins and ends at a sentence boundary**,
+> so no other quoted sentence crosses a home's edge. The walk agrees with the six the dispatch read, no identity beyond
+> them and none missing, and **the same walk over the twenty-one cut spans finds the four homes of the `decisions` list
+> the dispatch names there — D-393 at 372–377, D-394 at 330–334, D-395 at 402–407 and D-396 at 528–530 — and the retired
+> D-399 at 394–397**, each wholly inside a cut span. The decisions register's INDEX records the ten as **LIVE**, in
+> **group H**, entry ratified **2026-08-02 · user**, each homed at `cowork_voiceleading_axis_design.md`, and carries no
+> row for D-399, read by this session at the INDEX — facts of the decisions register, relayed and moving no disposition.
+> **Rows naming L3-S4: none.**
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.36, the colon-lead reading and the status-table reading stated at §6.9's manifest header, the quotation
+> join, the blockquote-marker reading, the fenced-block reading and the reading of a range that opens with a heading
+> line were applied unchanged at this member.** **The blockquote-marker reading, by range:** at range 1, every one of
+> lines 3 to 51 opens with the quotation-block marker — forty-nine lines, four of them (17, 24, 33 and 49) the marker
+> alone, checked line by line at the blob — so **every quotation from range 1 drops it**, and the quotation check masks
+> it the same way; **no other range carries the marker on any line**, every range checked, the document's only marked
+> lines being 3 to 51. **The fenced-block reading has no instance**: the document has no fenced block, found by this
+> session's search for lines opening with three backticks. **The status-table reading has no instance**: the document
+> has no table; line 159 opens, after its indent, with a code span whose first character is a pipe, a wrapped line of a
+> bullet and not a table row, and no wrapped line of a quotation here begins with it. **The heading-line reading has no
+> instance**: the document's twenty-four heading lines all lie in the cut, the script listing none inside a range. **The
+> glossary reading — ranges 3 and 4**, the lists *Accepted music-theory terms [MT]* and *This design's operational terms
+> [VL]*: each entry is one unit, its bold term its title, quoted with the entry's first sentence; an entry of two or
+> more sentences is tabulated sentence by sentence, each further sentence carrying a claim of its own taking its own row
+> under the bullet rule (Rows 37.20 to 37.23, 37.25 to 37.27, 37.32 to 37.35 and 37.41 to 37.43); a short entry whose
+> two sentences each carry one claim is quoted whole in one row and split under 1(a) (Rows 37.24, 37.28 to 37.30, 37.37
+> and 37.39); and a second sentence that only completes its entry's definition is taken with it (Rows 37.19 and 37.44).
+> **Range 2's one-sense declarations** are read as remarks on this document's own vocabulary and listed under *not a
+> statement* (items 11 to 15), except where a declaration's sentence states something about the analysis beyond the
+> vocabulary — the notated voice and the engraving model (Rows 37.14 and 37.15), the inferred stream (Row 37.16), the
+> melodic phrase in the axis's scope (Row 37.17) and the unit of the harmonic grouping (Row 37.18) — which is tabulated,
+> the *used ONLY* half named at the row as a remark on the vocabulary. **The quotation join, at two lines:** line 171
+> ends in *Phrase-* before *spans*, and Row 37.42 quotes it joined; line 640 ends in *voice-* before *separation*,
+> inside the sentence item 40 lists by its opening only, which the join does not reach; no other line inside the ranges
+> breaks a hyphenated compound at its end, every range checked by the script.
+>
+> **How the bold leads were read:** the noun-phrase labels are read as titles — each glossary term; range 7's constraint
+> leads *Forward-only analysis.*, *Universality in the fact layers; style only in calibration*, *Dormant +
+> byte-identical.*, *Verifiability with honest marks.*, *Total unification.* and *Knowledge-based coding.*, each a
+> summary its sentences state; the leads of ranges 8 to 10, *Imports / dependencies.*, *Exports / public API
+> (design-level).* and *Consumers (who reads the axis, and for what).*, each standing on its own line, read as titles
+> and listed nowhere; the leads *What this is.* and *Why it exists (the problem).* of ranges 5 and 6, their first
+> sentences listed as narrative (items 23 and 24); the decision labels *D1*, *D2*, *D5* and *D6* of range 16; the
+> component labels *VL-D* to *VL-H* of range 13; the scenario labels of range 14; the labels *Reduction-rule
+> sensitivity.* of range 17 and *The per-span texture measurement (gates the §5.3 refinement).* of range 20. The leads
+> that are complete sentences, or that state a rule in a gloss, are tabulated: range 3's ★ sentence (Row 37.21), range
+> 11's opening sentence (Row 37.76), range 12's per-sample sentence (Row 37.81), range 17's sentence on the interval
+> profile's era signal (Row 37.135), D4's lead (Row 37.125), D7's imperative lead (Row 37.130), item 10's lead (Row
+> 37.159), and D3's lead, whose gloss *notated voice = fact; stream = inference* is read as stating a rule (Row 37.123 —
+> stated for challenge below); a bold run that opens a sentence is quoted with the sentence it opens, the leads of range
+> 20's numbered items and of range 21's asks among them. **A lead ending in a colon** is tabulated with the sentence it
+> opens where the sentence carries the claim — Rows 37.51 to 37.53, 37.64, 37.72, 37.74, 37.88, 37.90, 37.101, 37.137,
+> 37.144, 37.149, 37.151, 37.154, 37.163 and 37.166 to 37.168 — and listed as a lead where it only introduces its items:
+> range 12's *Rules:* (item 26), range 1's *Two build declarations owed by the design are now closed:* (item 2), and
+> range 19's *Borrowed / built on:*, which introduces citations (item 40); range 1's *QA record (2026-07-03):* and
+> *Independent fresh-eyes audit …:* open provenance (items 6 and 7), and range 13's *Verifiability is strong on the
+> merged-voices proxy:* and *Footing found …:* open sentences tabulated (Rows 37.90 and 37.101). **Where a bold run
+> spans more than a sentence**, a sentence is quoted without the marker it cannot close: range 12's ★ passage, quoted
+> from after its opening marker at Row 37.86 and to before its closing marker at Row 37.87. **The defense sentences are
+> listed under the second reading rule** — items 30 to 34, 36 and 38 — and a remark, a question, a citation or a pointer
+> is listed by its kind; range 3's italic sentence led *Why this reading and not the generic-diatonic one:* defends the
+> rule of Rows 37.21 and 37.22 and also states two claims of its own, which are tabulated (Row 37.23). **A bullet,
+> paragraph or numbered item of two or more sentences** is tabulated sentence by sentence; a sentence quoted from a
+> bullet carries its words from after the `- ` list marker, from a numbered item from after its `1. ` to `10. ` marker.
+>
+> **The four passages recording a former wording or a correction, and range 1's record.** (i) **Range 3, lines 116 to
+> 119** — the italic parenthesis quoting the motion-types bullet's former closing sentence and recording that it became
+> false — is listed as provenance (items 18 to 20), **following §6.3's items 1 and 14, §6.23's item 15, §6.35's item 38
+> and §6.36's item 24**, the superseded sentence inside it taken with item 18 and not tabulated. (ii) **Range 1, lines 6
+> to 9**, and (iii) **range 7, lines 233 to 236** — two italic parentheses each recording that a gate named beside it is
+> the superseded batch stop and naming the standing one — **depart from those precedents at one sentence each, stated
+> for challenge, as §6.35 departed at Row 35.119**: the first sentence of each is tabulated (Rows 37.3 and 37.55), its
+> record of the superseded gate **HISTORICAL** and its statement that the standing stop is the one of `CLAUDE.md` gate
+> block (A) **RELOCATED** to *the measurement of the analysis*, because that statement names the stop a later change is
+> judged by, a claim of its own; the closing sentence of each, the record of the correction, is listed as provenance
+> (items 1 and 25). **The alternative** — listing each parenthesis whole as provenance — is stated and not taken. (iv)
+> **Range 20's item 4, lines 684 and 685** — the remark that the licence written earlier in the same item was the
+> record's error — stands inside a sentence carrying other claims, so it cannot be listed apart without splitting the
+> sentence: the corrected licence is tabulated as Row 37.154 (ii), the remark taken with that claim, the superseded
+> wording standing in the sentence Row 37.151 quotes. **Range 1's revision and review record** is read under the unit as
+> §6.34 to §6.36 read their members' version records: the banner's statuses are **HISTORICAL** (Rows 37.1 and 37.7); its
+> statements of the build and of the results of its measurements are **QUARANTINED** (Rows 37.2, 37.4 (ii), 37.5 (ii),
+> 37.6 and 37.13); the original draft banner's statements about the axis are tabulated (Rows 37.10 to 37.12); and the QA
+> record and the fresh-eyes audit, with its verdict, are listed as provenance (items 6 to 8).
+>
+> **What this member is, and how its subjects were placed.** The ranges are most of the design of the voice-leading axis
+> — `FRAMEWORK.md` §5's *second axis — voice leading* — less the cut: the status banner with its build and review
+> record; the terminology, its one-sense declarations and its two lists of terms; the introduction; the constraints; the
+> imports, exports and consumers; the solution strategy; VL-B's rules; the staged components VL-D to VL-H; four
+> scenarios; the data design; the decisions D1 to D7; the risks; the background; the related work; the open items; and
+> the ratification asks. **The member was read in four portions — ranges 1 to 4, 5 to 11, 12 to 15 and 16 to 21 — each
+> read whole before its rows were written, and this paragraph was written after all four were read**, a departure from
+> the dispatch's *read whole before any row was written* declared in the report. **How 1(a)'s four points were
+> weighed.** **(a) The axis's own subject** — what the axis is, what its components read, compute and publish, what they
+> must never read, what they will consume, and what the axis owns as claims — is **RELOCATED** to
+> *the second axis — voice leading*, as Rows 19.42 to 19.64 and 23.24 to 23.28 placed it, with **L3-S42 AGREES**
+> wherever the melodic phrase overlaps across voices or the axis is named as its owner. Where a statement touches L3's
+> own subject it is graded at the row: the grouping layer leaving the melodic phrase unsegmented is **ADOPTED —
+> carried** by L3-S42 (Row 37.26 (ii)), as Row 19.62 (ii); the harmonic grouping's unit named the punctuation-span and
+> never a phrase (Row 37.18), the cadence detected on the spine by its function/cadence layer (Row 37.31 (i)) and the
+> spine blind to how the lines move (Row 37.46) are graded **DIFFERS** from L3-S42, L3-S15 and L3-S9 and placed
+> **UNPLACED** with what this session read. **(b) The spine's layer numerals** are read as `ARCHITECTURE.md`'s six-layer
+> harmonic spine and every statement is placed by its subject under `FRAMEWORK.md` §5's charters, the row saying which
+> spine layer a quoted numeral names: *L1* the note model and *L1.5* its derived-view half-tier, *L3* the key and mode
+> layer — whose tonality is L2's under the charters —, *L4* the chord layer — so the non-chord-tone filter is
+> **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, which publishes the chord-tone assignment
+> (Rows 37.47 (iii) and 37.71 (i)) —, *L5* the function/cadence layer and *L6* the grouping layer. **(c) The signed
+> rules against the build record**: the rules are placed by subject; the statements of the build as it stands and the
+> results of its measurements are **QUARANTINED**, each audit question asking what the built component does at the
+> current commit or on which run a value was obtained and whether it reproduces, as Rows 19.59 (iii), 23.22 and 23.23
+> asked, no value restated in a question; the dated events, plans, deferrals and holdings are **HISTORICAL**, each split
+> from a rule beside it. **(d) Other charters' subjects**: the axis's confidence classes, its confidence contract and
+> its unvalidated marks are **RELOCATED** to *the uncertainty surface* (Rows 37.38 (ii), 37.53, 37.56, 37.91 (i) and
+> 37.131 (ii)); the validation beds, the census items, the corpora, the licences, the parity duty, the validation
+> harness and the standing stop to *the measurement of the analysis*; the phrase-boundary primitive's per-part cues as
+> notated evidence to *L1 — Change points, candidates and notated evidence* with **L3-S9 AGREES** (Row 37.61 (i)),
+> VL-E's reuse of them staying with the axis (Rows 37.61 (ii) and 37.95 (ii)); the notated voice and the engraving model
+> to *L0 — The notated record* (Rows 37.14 and 37.15). **Four placements are stated for challenge.** (l) D3's lead is
+> tabulated as stating a rule in its gloss (Row 37.123); **the alternative** — reading it as a title, the rule then
+> stated only by the sentence after it (Row 37.124) — is stated and not taken. (m) The statements that the axis's
+> components analyse the selection and request extension, and the scenario of a bounded selection (Rows 37.52, 37.114
+> and 37.115), are placed with the axis, whose components they govern; **the alternative** — *the uncertainty surface*,
+> as statements of how a published value is scoped — is stated and not taken. (n) The reads between the axes — the
+> harmonic layers free to consume the axis's facts, the axis's components reading the committed key (Rows 37.62, 37.63,
+> 37.128 and 37.129) — are graded **THE DERIVATION IS SILENT**, L3-S42's *"L3 reads no fact of the axis in this
+> specification"* being read as a statement of what this specification reads and not of what a harmonic layer may read;
+> **the alternative** — grading them **DIFFERS** from L3-S42 — is stated and not taken. (o) The two departures from the
+> former-wording precedents named above. **No statement of this member is ADOPTED — proposed, and none is DISCARDED.**
+> **No placement here departs from the precedents 1(a)'s point (c) names** — Rows 19.42 to 19.64 and 23.22 to 23.29,
+> opened at their blocks by this session — except as stated.
+
+---
+
+**Row 37.1 — the foundation as built.**
+
+*Outgoing statement.* "**★ Status: AS-BUILT (VL-A/B/C foundation, 2026-07-03 —
+`records/cc/reports/cc_vl_foundation_build_report.md`).**" — the document's title *The voice-leading axis (axis 2) —
+architecture and foundation components (design)*, its status banner (locator: line 3).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status: the axis's three foundation components as built, on a date, as Row
+36.1.
+
+---
+
+**Row 37.2 — the dormant foundation built, tested and gate-proven.**
+
+*Outgoing statement.* "The dormant foundation is built, tested, and gate-proven (composing 1083 / notation 53 /
+snapshots 11 no refresh; gate 53/24/53 case-identity sets byte-identical on all three presets; dormancy grep-proven;
+study-parity float-exact on the pinned sample)." — the document's title *The voice-leading axis (axis 2) — architecture
+and foundation components (design)*, its status banner (locator: lines 3–6). Two claims: (i) the foundation is built and
+dormant; (ii) its tests, the corpus gate, its dormancy and its parity with the exploratory study were proven.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* are the axis's voice-linear view, motion and interval
+profiles and texture classification built and dormant at the current commit, as Row 19.59 (iii) asks? (ii)
+**QUARANTINED.** *Audit question:* on which run were the foundation's tests, the corpus gate, the dormancy check and the
+parity with the study proven, and does each reproduce?
+
+---
+
+**Row 37.3 — the gate that build was proven against the superseded one; the standing stop is gate block (A).**
+
+*Outgoing statement.* "The gate named in that sentence is the SUPERSEDED batch case-identity stop — a true record of
+what this build was proven against on 2026-07-03, and NOT the criterion a later change is judged by; the standing stop
+is `CLAUDE.md` gate block (A)." — the document's title *The voice-leading axis (axis 2) — architecture and foundation
+components (design)*, its status banner, the italic parenthesis after the sentence Row 37.2 quotes (locator: lines 6–8).
+Two claims: (i) the gate the build was proven against is the superseded batch stop, a true record of that date; (ii) the
+standing stop a later change is judged by is the one of `CLAUDE.md` gate block (A). The parenthesis records a
+correction; its closing sentence is listed as provenance.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a record of what a build was proven against, its gate superseded. (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose regression stop it names.
+
+---
+
+**Row 37.4 — parallel motion semitone-exact, replicated from the exploratory study's classifier.**
+
+*Outgoing statement.* "**(§15-2)** the "parallel" interval-preservation convention is **SEMITONE-EXACT** — replicated
+from `voiceleading2.py` `_motion` at source (`parallel` iff both voices move the same direction AND the *signed* pitch
+difference in semitones is preserved: `(pu1−pv1)==(pu0−pv0)`; a same-direction move whose semitone interval changes is
+`similar`), NOT generic-diatonic." — the document's title *The voice-leading axis (axis 2) — architecture and foundation
+components (design)*, its status banner, its second build declaration's first item, led *(§15-2)* (locator: lines 9–12).
+Two claims: (i) the parallel-motion convention is semitone-exact, a same-direction move whose semitone interval changes
+being similar motion; (ii) the convention was replicated from the exploratory study's own code at source.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Rows 19.42 to 19.64 placed the
+axis's objects. (ii) **QUARANTINED.** *Audit question:* does the built motion classification reproduce the exploratory
+study's motion classifier at the current commit?
+
+---
+
+**Row 37.5 — the classification's feature space the z-scored concatenation, decided by measurement.**
+
+*Outgoing statement.* "**(§5.3)** the feature space is the **z-scored concatenation (ABz)** — decided by measurement
+(`run_vl_feature_space.py`): nearest-centroid in ABz reproduces the ratified AB K=4 partition at **ARI 0.791 / accuracy
+0.918**, vs two-stage 0.716 and motion-only 0.258 (raw concatenation rejected a priori for the measured dilution)." —
+the document's title *The voice-leading axis (axis 2) — architecture and foundation components (design)*, its status
+banner, the item led *(§5.3)* (locator: lines 12–15). Two claims: (i) texture classification's feature space is the
+z-scored concatenation of the two profiles; (ii) it was decided by a measurement whose values the sentence quotes.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**QUARANTINED.** *Audit question:* on which run did nearest-centroid classification in that feature space reproduce the
+ratified partition at the values quoted, and does it reproduce?
+
+---
+
+**Row 37.6 — the shipped reference set a generated header.**
+
+*Outgoing statement.* "The shipped reference set (mean/std + 4 z-space centroids + the precision-phase floor defaults)
+is the generated `textureclassifierreference.h`." — the document's title *The voice-leading axis (axis 2) — architecture
+and foundation components (design)*, its status banner (locator: lines 15–16).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the shipped reference set — the means and spreads, the
+four centroids and the floor defaults — the generated `textureclassifierreference.h` at the current commit?
+
+---
+
+**Row 37.7 — the design signed.**
+
+*Outgoing statement.* "**Status: SIGNED (user, 2026-07-03 — asks A1–A8 ratified in full).**" — the document's title *The
+voice-leading axis (axis 2) — architecture and foundation components (design)*, its status banner (locator: line 18).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status: the design signed, its asks ratified, on a date.
+
+---
+
+**Row 37.8 — every inference output with its full ranked alternatives; facts with none, their choices declared
+parameters.**
+
+*Outgoing statement.* "Ratification rode one clarification, folded into §5.3/§7 before signing: every inference output
+carries the **full ranked alternative list with weights** (zero information loss — the ARCH §2.15 carried-alternatives
+contract made explicit here); facts carry no alternatives by construction, but fact-level choices (the reduction rule)
+are declared per-query parameters recomputable at zero loss from the lossless L1 notes." — the document's title *The
+voice-leading axis (axis 2) — architecture and foundation components (design)*, its status banner (locator: lines
+18–22). Three claims: (i) the ratification rode one clarification folded into the text before signing; (ii) every
+inference output of the axis carries the full ranked list of alternatives with weights; (iii) the axis's facts carry no
+alternatives, a fact-level choice such as the reduction rule being a declared parameter of the query, recomputable from
+the notes. *L1 note model* names `ARCHITECTURE.md`'s Layer 1, the note model.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event: the ratification and the clarification folded in before it. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (iii)
+**RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.9 — the next step the dormant-build instruction.**
+
+*Outgoing statement.* "Next step: the VL-A/B/C dormant-build CC instruction, written just-in-time." — the document's
+title *The voice-leading axis (axis 2) — architecture and foundation components (design)*, its status banner (locator:
+lines 22–23).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan of that date, since carried out, as Row 37.1 records.
+
+---
+
+**Row 37.10 — the axis the second, orthogonal analysis dimension, its orthogonality established by measurement.**
+
+*Outgoing statement.* "The first design document of the **voice-leading axis** — the second, orthogonal analysis
+dimension confirmed empirically by the idiom-discovery program (`cowork_idiom_discovery_findings.md` v2.0: orthogonality
+formally measured, cross-ARI(voice-leading, harmonic) = 0.030 on 1,283 dual-view pieces; study record
+`records/cc/reports/cc_vl_idiom_discovery_report.md`, ratified 2026-07-03)." — the document's title *The voice-leading
+axis (axis 2) — architecture and foundation components (design)*, its status banner, its paragraph led *(Original draft
+banner follows.)* (locator: lines 25–28). Two claims: (i) the voice-leading axis is the second analysis dimension,
+orthogonal to the harmonic one; (ii) that orthogonality was confirmed by measurement, at the value and over the pieces
+the sentence quotes. The sentence's opening, that this is the axis's first design document, is narrative.
+
+*Derived statements that speak to it.* (i) L3-S42. (ii) None.
+
+*Current-text axis.* (i) L3-S42: **AGREES** — its (i) names the voice-leading axis as a subject of its own beside the
+harmonic spine, *"The accepted melodic phrase, which overlaps across voices, is the axis's"*, as at Row 8.38 (ii). (ii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Row 19.59 (ii). (ii)
+**QUARANTINED.** *Audit question:* on which pieces and run was the cross-agreement of the two groupings found at the
+value quoted, and does it reproduce (as Rows 19.59 (iii) and 23.22 ask)?
+
+---
+
+**Row 37.11 — numeric calibration the later precision phase.**
+
+*Outgoing statement.* "Specified by **rule and direction**; numeric calibration is the later precision phase (the
+firewall)." — the document's title *The voice-leading axis (axis 2) — architecture and foundation components (design)*,
+its status banner, its paragraph led *(Original draft banner follows.)* (locator: lines 30–31). One claim is tabulated:
+the axis's numeric values are calibrated later, in the precision phase; that the document is written by rule and
+direction is a remark about it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.12 — the build target dormant and byte-identical; nothing in the design touches the harmonic spine.**
+
+*Outgoing statement.* "Build target: **dormant + byte-identical** — nothing in this design touches the harmonic spine's
+behavior or the corpus gate (Baroque 53 / Jazz 24 / Default 53), by construction." — the document's title *The
+voice-leading axis (axis 2) — architecture and foundation components (design)*, its status banner, its paragraph led
+*(Original draft banner follows.)* (locator: lines 31–32). Two claims: (i) the build target was dormant and
+byte-identical against the gate named, since superseded; (ii) nothing in the axis's design touches the harmonic spine's
+behaviour.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a plan of that date, its gate the superseded one Row 37.3 names. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose independence from the harmonic spine it states.
+
+---
+
+**Row 37.13 — six voice-leading-defined entries at the built catalog, three declared deferrals not built.**
+
+*Outgoing statement.* "Load-bearing facts verified at source this session: findings v2.0 + the study report (§2 feature
+definitions, §3 ablation/confound numbers, §4 orthogonality, §6 caveats), ARCHITECTURE §2.15 (span typology, layer
+taxonomy, admission gates), roadmap step 4, the confidence and bounded-context contracts, and the six
+`voiceLeadingDefined` entries at the built catalog (`harmonicvocabulary.cpp` §5.2 block + line-cliché substitution:
+Prinner, Romanesca, Do-Re-Mi, Monte, Fonte, line cliché — Ponte/Quiescenza/lament-variant are declared deferrals, not
+built)." — the document's title *The voice-leading axis (axis 2) — architecture and foundation components (design)*, its
+status banner, its paragraph led *(Original draft banner follows.)*, its paragraph led *QA record (2026-07-03):*
+(locator: lines 35–40). One claim is tabulated: the built catalog carries the voice-leading-defined flag on six entries,
+three others named being declared deferrals and not built; the list of sources verified is provenance.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the built harmonic catalog carry the
+voice-leading-defined flag on exactly the six entries named, the three named deferrals absent, at the current commit (as
+Row 19.61 (ii) asks)?
+
+---
+
+**Row 37.14 — the notated voice, the (staff, voice) line the score writes.**
+
+*Outgoing statement.* "**"voice"** is used in this document ONLY for the **notated voice** — the (staff, voice) line the
+score writes (an L1 fact)." — the section *0. Terminology (read first) — accepted music theory vs. this design's
+operational terms*, the list *One-sense declarations (the multiple-meaning-words rule)*, its bullet led *"voice"*
+(locator: lines 61–62). One claim is tabulated: a voice is the notated (staff, voice) line the score writes, a fact;
+that the word is used only so is about this document's vocabulary. *An L1 fact* names `ARCHITECTURE.md`'s Layer 1, the
+note model.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record***, which gives voice membership, as Rows 11.11
+(i) and 20.34 (i).
+
+---
+
+**Row 37.15 — a staff holding one to four engraving voices, a part several staves.**
+
+*Outgoing statement.* "In MuseScore's concrete model (user-stated, 2026-07-03): a staff holds one to four engraving
+voices, and a part may hold several staves (piano: two, one per hand)." — the section *0. Terminology (read first) —
+accepted music theory vs. this design's operational terms*, the list *One-sense declarations (the multiple-meaning-words
+rule)*, its bullet led *"voice"* (locator: lines 62–63).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record***, which gives voice membership, as Row 37.14.
+
+---
+
+**Row 37.16 — an inferred perceptual line a stream, never a voice.**
+
+*Outgoing statement.* "The *inferred* perceptual line is always called a **stream**, never a voice." — the section *0.
+Terminology (read first) — accepted music theory vs. this design's operational terms*, the list *One-sense declarations
+(the multiple-meaning-words rule)*, its bullet led *"voice"* (locator: lines 63–64).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose inferred streams these are.
+
+---
+
+**Row 37.17 — the melodic phrase in scope on this axis.**
+
+*Outgoing statement.* "**"phrase"** is used ONLY for the accepted **melodic phrase [MT]** (defined below) — which, on
+this axis, is IN scope." — the section *0. Terminology (read first) — accepted music theory vs. this design's
+operational terms*, the list *One-sense declarations (the multiple-meaning-words rule)*, its bullet led *"phrase"*
+(locator: lines 65–66). One claim is tabulated: the accepted melodic phrase is in this axis's scope; that the word is
+used only so is about this document's vocabulary.
+
+*Derived statements that speak to it.* L3-S42.
+
+*Current-text axis.* L3-S42: **AGREES** — *"The accepted melodic phrase, which overlaps across voices, is the axis's"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose melodic phrase it is, as Rows
+19.47 and 19.62 (i) placed it.
+
+---
+
+**Row 37.18 — the harmonic-grouping unit the punctuation-span, the grouping layer's object, never a phrase.**
+
+*Outgoing statement.* "The harmonic-grouping unit is always the **punctuation-span** (Layer 6's object,
+`cowork_layer6_grouping_design.md` §0), never "phrase"." — the section *0. Terminology (read first) — accepted music
+theory vs. this design's operational terms*, the list *One-sense declarations (the multiple-meaning-words rule)*, its
+bullet led *"phrase"* (locator: lines 66–67). *Layer 6* names `ARCHITECTURE.md`'s Layer 6, the grouping layer.
+
+*Derived statements that speak to it.* L3-S42.
+
+*Current-text axis.* L3-S42: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing harmonic-grouping unit is the punctuation-span, *"never
+"phrase""*; L3-S42 says *"L3's phrase is the harmonic spine's phrase, which tiles."*
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a rule on L3's own subject, the unit of the harmonic grouping, that a derived
+statement differs from; read: the two texts above.
+
+---
+
+**Row 37.19 — the entry *Voice leading*: the subject of this axis.**
+
+*Outgoing statement.* "**Voice leading [MT].** How simultaneous musical lines move from sonority to sonority — the
+linear, horizontal dimension of part-writing: interval succession within each line and the motion relations between
+lines. The subject of this axis." — the section *0. Terminology (read first) — accepted music theory vs. this design's
+operational terms*, the list *Accepted music-theory terms [MT]*, its entry *Voice leading [MT]* (locator: lines
+101–103).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.20 — the entry *Motion types*: parallel, similar, contrary, oblique.**
+
+*Outgoing statement.* "**Motion types [MT] — parallel / similar / contrary / oblique.** The standard counterpoint
+classification of how two voices move between two consecutive time points: **parallel** = same direction, harmonic
+interval preserved; **similar** = same direction, harmonic interval changes; **contrary** = opposite directions;
+**oblique** = exactly one of the two voices moves." — the section *0. Terminology (read first) — accepted music theory
+vs. this design's operational terms*, the list *Accepted music-theory terms [MT]*, its entry *Motion types [MT]*
+(locator: lines 104–107).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Rows 19.42 to 19.64 placed the
+axis's objects.
+
+---
+
+**Row 37.21 — parallel motion semitone-exact, closed at build.**
+
+*Outgoing statement.* "**★ "INTERVAL PRESERVED" IS SEMITONE-EXACT, NOT GENERIC DIATONIC SIZE — CLOSED AT BUILD,
+2026-07-03.**" — the section *0. Terminology (read first) — accepted music theory vs. this design's operational terms*,
+the list *Accepted music-theory terms [MT]*, its entry *Motion types [MT]*, its bold ★ sentence, a complete sentence
+read under rule (1) (locator: line 109). Two claims: (i) a preserved interval is judged semitone-exact, not by generic
+diatonic size; (ii) the question was closed at build, on a date.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Rows 19.42 to 19.64 placed the
+axis's objects. (ii) **HISTORICAL** — an event: the declaration closed at build.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-398** (lines 109–112), *"Parallel
+motion is judged SEMITONE-EXACT, not by generic diatonic size — a same-direction move whose semitone interval changes
+counts as similar motion"*, which the decisions register's INDEX records as LIVE, group H, entry ratified 2026-08-02 ·
+user — a home neither withheld from the deriving session's pack nor seen by it, carrying no mark; a fact of the
+decisions register, relayed, moving no disposition.
+
+---
+
+**Row 37.22 — two lines parallel only when the signed semitone distance is unchanged.**
+
+*Outgoing statement.* "Two lines count as **parallel** only when they move the same direction AND the SIGNED SEMITONE
+distance between them is unchanged; a same-direction move whose semitone interval changes is **similar**." — the section
+*0. Terminology (read first) — accepted music theory vs. this design's operational terms*, the list *Accepted
+music-theory terms [MT]*, its entry *Motion types [MT]* (locator: lines 109–111).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Rows 19.42 to 19.64 placed the
+axis's objects.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-398** (lines 109–112), *"Parallel
+motion is judged SEMITONE-EXACT, not by generic diatonic size — a same-direction move whose semitone interval changes
+counts as similar motion"*, which the decisions register's INDEX records as LIVE, group H, entry ratified 2026-08-02 ·
+user — a home neither withheld from the deriving session's pack nor seen by it, carrying no mark; a fact of the
+decisions register, relayed, moving no disposition.
+
+---
+
+**Row 37.23 — the production classification replicating the study's; the design requiring it.**
+
+*Outgoing statement.* "*Why this reading and not the generic-diatonic one:* it was settled by REPLICATION rather than by
+choice — the convention was read off the exploratory study's own motion classifier at source and reproduced exactly in
+the production classification, which is oracle-tested against it, and reproducing the study's features is what this
+design requires of the production implementation." — the section *0. Terminology (read first) — accepted music theory
+vs. this design's operational terms*, the list *Accepted music-theory terms [MT]*, its entry *Motion types [MT]*, its
+italic sentence led *Why this reading and not the generic-diatonic one:* (locator: lines 112–116). The sentence defends
+the rule of Rows 37.21 and 37.22, and two claims of its own are tabulated under the second reading rule: (i) the
+production classification reproduces the study's motion classifier exactly and is oracle-tested against it; (ii) the
+design requires the production implementation to reproduce the study's features.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the built motion classification reproduce the
+study's classifier exactly, and is it oracle-tested against it, at the current commit? (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+*The decisions register at this row.* The quoted sentence starts on line 112, the last line of the home of **D-398**
+(lines 109–112), and runs past it to line 116: the home ends inside this sentence, after its first words, so the
+sentence is named with the home and quoted whole; the INDEX records D-398 as LIVE, group H, entry ratified 2026-08-02 ·
+user — no mark; a fact of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 37.24 — the entry *Texture*: classified operationally from motion-type rates.**
+
+*Outgoing statement.* "**Texture [MT].** The relationship among the concurrent lines of a passage — standardly:
+**monophony** (one line), **homophony** (one leading line with accompaniment; the lines move as one), **polyphony /
+counterpoint** (several independent lines). Operationally this design classifies texture from measured motion-type rates
+(texture classification [VL] below), which is narrower than the full textbook concept (it does not, for example,
+distinguish monophony as a separate class in v1)." — the section *0. Terminology (read first) — accepted music theory
+vs. this design's operational terms*, the list *Accepted music-theory terms [MT]*, its entry *Texture [MT]* (locator:
+lines 120–124). Two claims: (i) texture is the relationship among the concurrent lines, monophony, homophony or
+polyphony; (ii) the design classifies it operationally from motion-type rates taken by measurement, narrower than the
+textbook concept, monophony no class of its own in the first version.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.25 — the entry *Melodic phrase*: a melodic, linear unit, closed by a cadence or a breath.**
+
+*Outgoing statement.* "**Melodic phrase [MT] (in this document: "phrase").** The accepted music-theory phrase: a broadly
+*melodic / linear* unit, essentially monophonic in conception (in homophonic or polyphonic textures it is carried by a
+line), conventionally closed by a cadence or breath/gesture, and — when sung — usually coinciding with a text phrase." —
+the section *0. Terminology (read first) — accepted music theory vs. this design's operational terms*, the list
+*Accepted music-theory terms [MT]*, its entry *Melodic phrase [MT]* (locator: lines 125–128).
+
+*Derived statements that speak to it.* L3-S42.
+
+*Current-text axis.* L3-S42: **AGREES** — *"The accepted melodic phrase, which overlaps across voices, is the axis's"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose melodic phrase it is, as Rows
+19.47 and 19.62 (i) placed it.
+
+---
+
+**Row 37.26 — the axis the melodic phrase's home; the grouping layer does not segment it.**
+
+*Outgoing statement.* "**This axis is the phrase's home** (the L6 §0 terminology ruling): the harmonic spine's Layer 6
+deliberately does *not* segment it." — the section *0. Terminology (read first) — accepted music theory vs. this
+design's operational terms*, the list *Accepted music-theory terms [MT]*, its entry *Melodic phrase [MT]*, its sentence
+led by a bold run (locator: lines 128–129). Two claims: (i) the voice-leading axis is the melodic phrase's home; (ii)
+the harmonic spine's grouping layer does not segment it. *Layer 6* names `ARCHITECTURE.md`'s Layer 6, the grouping
+layer.
+
+*Derived statements that speak to it.* (i) L3-S42. (ii) L3-S42.
+
+*Current-text axis.* (i) L3-S42: **AGREES** — *"The accepted melodic phrase, which overlaps across voices, is the
+axis's"*. (ii) L3-S42: **AGREES** — *"L3's phrase is the harmonic spine's phrase, which tiles."* and *"L3 reads no fact
+of the axis in this specification"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose melodic phrase it is, as
+Rows 19.47 and 19.62 (i) placed it. (ii) **ADOPTED — carried** (L3-S42), as Row 19.62 (ii).
+
+---
+
+**Row 37.27 — melodic phrases concurrent, overlapping and out of phase across voices.**
+
+*Outgoing statement.* "In contrapuntal textures phrases are **concurrent, overlapping, and out of phase across voices**
+(a fugue's staggered subject entries) — a per-voice object, not a texture-wide partition." — the section *0. Terminology
+(read first) — accepted music theory vs. this design's operational terms*, the list *Accepted music-theory terms [MT]*,
+its entry *Melodic phrase [MT]* (locator: lines 129–131).
+
+*Derived statements that speak to it.* L3-S42.
+
+*Current-text axis.* L3-S42: **AGREES** — *"The accepted melodic phrase, which overlaps across voices, is the axis's"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose melodic phrase it is, as Rows
+19.47 and 19.62 (i) placed it.
+
+---
+
+**Row 37.28 — the entry *Implied polyphony / compound melody*: the reason stream separation exists.**
+
+*Outgoing statement.* "**Implied polyphony / compound melody [MT].** A single notated line that projects two or more
+perceptual lines (e.g. a Bach solo-violin or keyboard figuration alternating between registers). The reason stream
+separation [VL] exists as a task." — the section *0. Terminology (read first) — accepted music theory vs. this design's
+operational terms*, the list *Accepted music-theory terms [MT]*, its entry *Implied polyphony / compound melody [MT]*
+(locator: lines 132–134). Two claims: (i) a single notated line may project two or more perceptual lines; (ii) that is
+why stream separation exists as a task.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Row 21.179. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, as Row 21.179.
+
+---
+
+**Row 37.29 — the entry *Galant schemata*: defined by an outer-voice skeleton, their identity on this axis.**
+
+*Outgoing statement.* "**Galant schemata [MT].** The stock phrase-level patterns of eighteenth-century galant style
+catalogued by Gjerdingen (*Music in the Galant Style*, 2007) — Prinner, Romanesca, Monte, Fonte, Ponte, Do-Re-Mi,
+Quiescenza, and kin. Each is defined primarily by a **paired outer-voice scale-degree skeleton** (with a conventional
+harmonic support), i.e. by voice leading — which is why their primary identity belongs to this axis
+(`cowork_idiom_entry_mapping.md`, the voice-leading-defined flag)." — the section *0. Terminology (read first) —
+accepted music theory vs. this design's operational terms*, the list *Accepted music-theory terms [MT]*, its entry
+*Galant schemata [MT]* (locator: lines 135–139). Two claims: (i) the galant schemata are the stock phrase-level patterns
+of the style; (ii) each is defined primarily by a paired outer-voice scale-degree skeleton, so its primary identity
+belongs to this axis.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Row 19.61 (i). (ii)
+**RELOCATED** — to ***the second axis — voice leading***, as Row 19.61 (i).
+
+---
+
+**Row 37.30 — the entry *Line cliché*: voice-leading-defined, carried today as a flagged substitution entry.**
+
+*Outgoing statement.* "**Line cliché [MT].** A chromatic stepwise line (usually an inner voice) moving against a static
+harmony (e.g. the descending chromatic line over a sustained minor triad). Voice-leading-defined; carried today as a
+Harmonic Vocabulary substitution entry flagged for this axis." — the section *0. Terminology (read first) — accepted
+music theory vs. this design's operational terms*, the list *Accepted music-theory terms [MT]*, its entry *Line cliché
+[MT]* (locator: lines 140–142). Two claims: (i) a line cliché is a chromatic stepwise line against a static harmony,
+defined by voice leading; (ii) it is carried today as a substitution entry of the harmonic vocabulary flagged for this
+axis.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Row 19.61 (i). (ii)
+**QUARANTINED.** *Audit question:* is the line cliché carried as a substitution entry of the harmonic vocabulary,
+flagged for this axis, at the current commit (as Row 19.61 (ii) asks)?
+
+---
+
+**Row 37.31 — the entry *Cadence*: detected on the harmonic spine, never re-detected by this axis.**
+
+*Outgoing statement.* "**Cadence [MT].** As in the harmonic spine (L5 detects; this axis does not re-detect cadences —
+§3)." — the section *0. Terminology (read first) — accepted music theory vs. this design's operational terms*, the list
+*Accepted music-theory terms [MT]*, its entry *Cadence [MT]* (locator: line 143). Two claims: (i) the cadence is as on
+the harmonic spine, detected there by *L5*, which names `ARCHITECTURE.md`'s Layer 5, the function/cadence layer; (ii)
+this axis does not re-detect cadences.
+
+*Derived statements that speak to it.* (i) L3-S15. (ii) None.
+
+*Current-text axis.* (i) L3-S15: **DIFFERS**. (ii) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (i) The outgoing cadence is the one *"L5 detects"*; L3-S15 says *"A cadence
+is published only at a phrase end L3 has decided"*.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — a rule on L3's own subject that a derived statement differs from; read: the
+two texts above. (ii) **RELOCATED** — to ***the second axis — voice leading***, which re-derives no fact the spine
+publishes.
+
+---
+
+**Row 37.32 — the entry *The voice-linear view*: per-voice event series over the same lossless notes.**
+
+*Outgoing statement.* "**The voice-linear view [VL] (component VL-A).** The representation that reorganizes the L1 note
+model into per-voice event series ordered by onset — the linear reading of the same lossless notes." — the section *0.
+Terminology (read first) — accepted music theory vs. this design's operational terms*, the list *This design's
+operational terms [VL]*, its entry *The voice-linear view [VL] (component VL-A)* (locator: lines 147–148). *The L1 note
+model* names `ARCHITECTURE.md`'s Layer 1, the note model.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Rows 19.42 to 19.64 placed the
+axis's objects.
+
+---
+
+**Row 37.33 — a chordal voice a fact; its reduction to one line a declared rule, never silent.**
+
+*Outgoing statement.* "A voice whose events are chords is recorded as a **chordal voice** (a fact); any reduction of a
+chordal voice to a single line for feature purposes is a **declared reduction rule** (a named parameter of the view,
+never silent — §5.1)." — the section *0. Terminology (read first) — accepted music theory vs. this design's operational
+terms*, the list *This design's operational terms [VL]*, its entry *The voice-linear view [VL] (component VL-A)*
+(locator: lines 148–150). Two claims: (i) a voice whose events are chords is recorded as a chordal voice, a fact; (ii)
+any reduction of it to a single line is a declared, named parameter of the view, never silent.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.34 — the entry *Stream*: an inferred perceptual line recovered by stream separation.**
+
+*Outgoing statement.* "**Stream [VL] (component VL-D).** An *inferred* perceptual line recovered from implied polyphony
+by stream separation." — the section *0. Terminology (read first) — accepted music theory vs. this design's operational
+terms*, the list *This design's operational terms [VL]*, its entry *Stream [VL] (component VL-D)* (locator: lines
+151–152).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.35 — a stream always marked inferred, never conflated with a notated voice.**
+
+*Outgoing statement.* "Always marked inferred, with per-note membership confidence; never conflated with a notated
+voice." — the section *0. Terminology (read first) — accepted music theory vs. this design's operational terms*, the
+list *This design's operational terms [VL]*, its entry *Stream [VL] (component VL-D)* (locator: line 152).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.36 — the entry *Motion profile*: voice-pair motion-type rates under the study's simultaneity rule.**
+
+*Outgoing statement.* "**Motion profile [VL] (component VL-B).** The voice-pair motion-type rates
+`[parallel, similar, contrary, oblique]` of a span, computed by the study's simultaneity rule: for each concurrent voice
+pair, sample at the merged set of the two voices' note onsets; a voice's pitch at a sample is its most recent onset
+at-or-before that time (piecewise-constant hold); classify the motion type between consecutive samples, dropping samples
+where neither voice moves; aggregate rates over all voice pairs (rates are length-normalized by construction)." — the
+section *0. Terminology (read first) — accepted music theory vs. this design's operational terms*, the list *This
+design's operational terms [VL]*, its entry *Motion profile [VL] (component VL-B)* (locator: lines 153–157).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Rows 19.42 to 19.64 placed the
+axis's objects.
+
+---
+
+**Row 37.37 — the entry *Interval profile*: per-voice melodic-interval statistics, the pilot's feature.**
+
+*Outgoing statement.* "**Interval profile [VL] (component VL-B).** The per-voice melodic-interval statistics of a span:
+the |interval|-in-semitones histogram (bins 0–11, ≥12) plus repeat/step/leap rates (repeat = 0, step = 1–2, leap ≥ 3
+semitones). The pilot's feature, unchanged (`idiom_discovery/parsers/voiceleading.py`, `vl_profile`)." — the section *0.
+Terminology (read first) — accepted music theory vs. this design's operational terms*, the list *This design's
+operational terms [VL]*, its entry *Interval profile [VL] (component VL-B)* (locator: lines 158–160). Two claims: (i)
+the interval profile is the per-voice histogram of melodic intervals in semitones with the repeat, step and leap rates;
+(ii) it is the pilot study's feature, unchanged.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.38 — the entry *Texture classification*: a span assigned to one idiom, with a Class-M confidence.**
+
+*Outgoing statement.* "**Texture classification [VL] (component VL-C).** The assignment of a span to one of the
+empirically robust voice-leading idioms (below), from its motion profile (primary) and interval profile (secondary),
+with a Class-M confidence (`cowork_confidence_contract.md` §2)." — the section *0. Terminology (read first) — accepted
+music theory vs. this design's operational terms*, the list *This design's operational terms [VL]*, its entry *Texture
+classification [VL] (component VL-C)* (locator: lines 161–163). Two claims: (i) texture classification assigns a span to
+one of the voice-leading idioms from its motion profile, primary, and its interval profile, secondary; (ii) it carries a
+Class-M confidence in the confidence contract's sense.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**RELOCATED** — to ***the uncertainty surface***, whose confidence classes these are, as Row 36.31 (i).
+
+---
+
+**Row 37.39 — the entry *Voice-leading idiom*: four data-derived texture classes, their names provisional.**
+
+*Outgoing statement.* "**Voice-leading idiom [VL].** One of the data-derived texture classes of findings v2.0:
+**{contrapuntal part-writing, homophonic-classical (keyboard figuration), homophonic-pianistic (romantic/virtuosic),
+moderate/mixed}** — the axis-2 analogue of the five harmonic idioms. Names are post-hoc readings of cluster signatures,
+provisional in the same way the harmonic idiom names are." — the section *0. Terminology (read first) — accepted music
+theory vs. this design's operational terms*, the list *This design's operational terms [VL]*, its entry *Voice-leading
+idiom [VL]* (locator: lines 164–167). Two claims: (i) a voice-leading idiom is one of four data-derived texture classes;
+(ii) their names are provisional readings of cluster signatures.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.40 — the entry *Voice-leading-span*: the span one texture classification prevails over.**
+
+*Outgoing statement.* "**Voice-leading-span [VL] (the §2.15 latent span, given its criterion here).** The span one
+texture classification prevails over — a maximal run of the analysed span carrying one voice-leading idiom." — the
+section *0. Terminology (read first) — accepted music theory vs. this design's operational terms*, the list *This
+design's operational terms [VL]*, its entry *Voice-leading-span [VL]* (locator: lines 168–169).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.42 (i).
+
+---
+
+**Row 37.41 — the entry *Phrase-span*: a per-voice span holding one melodic phrase.**
+
+*Outgoing statement.* "**Phrase-span [VL] (component VL-E; design-gated).** A per-voice span holding one melodic phrase
+[MT]." — the section *0. Terminology (read first) — accepted music theory vs. this design's operational terms*, the list
+*This design's operational terms [VL]*, its entry *Phrase-span [VL] (component VL-E; design-gated)* (locator: line 171).
+
+*Derived statements that speak to it.* L3-S42.
+
+*Current-text axis.* L3-S42: **AGREES** — *"The accepted melodic phrase, which overlaps across voices, is the axis's"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose melodic phrase it is, as Rows
+19.47 and 19.62 (i) placed it.
+
+---
+
+**Row 37.42 — phrase-spans overlapping across voices; tiling within one voice expected, not asserted; elision and rests
+open.**
+
+*Outgoing statement.* "Phrase-spans of *different voices* may overlap and be out of phase by construction; within one
+voice, consecutive phrases are *expected* to tile its line, but strict tiling is not asserted — phrase **elision** (the
+cadence tone of one phrase simultaneously beginning the next, standard theory per the Caplin reference) makes shared
+boundary notes a real case, recorded as a VL-E design question (§15-9), as is the treatment of rests between phrases." —
+the section *0. Terminology (read first) — accepted music theory vs. this design's operational terms*, the list *This
+design's operational terms [VL]*, its entry *Phrase-span [VL]* (locator: lines 171–176; the compound *Phrase-spans* is
+broken at the end of line 171 and joined in the quotation). Three claims: (i) the phrase-spans of different voices may
+overlap and run out of phase; (ii) within one voice consecutive phrases are expected to tile its line, strict tiling not
+asserted; (iii) a shared boundary note at an elision, and rests between phrases, are recorded as design questions of
+VL-E.
+
+*Derived statements that speak to it.* (i) L3-S42. (ii) None. (iii) None.
+
+*Current-text axis.* (i) L3-S42: **AGREES** — *"The accepted melodic phrase, which overlaps across voices, is the
+axis's"*. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose melodic phrase it is, as
+Rows 19.47 and 19.62 (i) placed it. (ii) **RELOCATED** — to ***the second axis — voice leading***, as Row 19.49. (iii)
+**RELOCATED** — to ***the second axis — voice leading***, whose design questions these are.
+
+---
+
+**Row 37.43 — a per-voice span kind, outside the harmonic axis's texture-wide span families.**
+
+*Outgoing statement.* "This is a **per-voice span kind** — deliberately outside the harmonic axis's flat, texture-wide
+span families (§16 ask A5: its admission into the §2.15 typology as a new kind)." — the section *0. Terminology (read
+first) — accepted music theory vs. this design's operational terms*, the list *This design's operational terms [VL]*,
+its entry *Phrase-span [VL]* (locator: lines 176–177).
+
+*Derived statements that speak to it.* L3-S42.
+
+*Current-text axis.* L3-S42: **AGREES** — *"The accepted melodic phrase, which overlaps across voices, is the axis's"*,
+as at Row 19.44.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.44.
+
+---
+
+**Row 37.44 — the entry *Axis*: an orthogonal analysis dimension with its own components.**
+
+*Outgoing statement.* "**Axis [project term].** An orthogonal analysis dimension with its own components/layers
+(ARCHITECTURE §2.15, the layer-taxonomy bullet: growth is by axis and by component). Axis 1 = the harmonic spine
+(L1–L6); axis 2 = this design." — the section *0. Terminology (read first) — accepted music theory vs. this design's
+operational terms*, the list *This design's operational terms [VL]*, its entry *Axis [project term]* (locator: lines
+178–180). *L1–L6* names `ARCHITECTURE.md`'s six-layer harmonic spine.
+
+*Derived statements that speak to it.* L3-S42.
+
+*Current-text axis.* L3-S42: **AGREES** — its (i) names the voice-leading axis as a subject of its own beside the
+harmonic spine, *"The accepted melodic phrase, which overlaps across voices, is the axis's"*, as at Row 8.38 (ii).
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.59 (ii).
+
+---
+
+**Row 37.45 — the further components named, scoped and staged, each design-gated.**
+
+*Outgoing statement.* "The axis's further components — stream separation (VL-D), melodic phrase segmentation (VL-E),
+voice-leading-schema recognition (VL-F), chord voicing / arrangement analysis (VL-G), and part-writing checking &
+suggestion (VL-H) — are **named, scoped, and staged** here but design-gated: each gets its own design document (and,
+where required, its own measurement) before any build (§5.4, §9-D5)." — the section *1. Introduction & purpose*, its
+paragraph led *What this is.* (locator: lines 186–190).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.60 placed the axis's objects
+as claims.
+
+---
+
+**Row 37.46 — the harmonic spine structurally blind to how the lines move.**
+
+*Outgoing statement.* "It is structurally blind to the *linear* dimension: how the lines move." — the section *1.
+Introduction & purpose*, its paragraph led *Why it exists (the problem).* (locator: lines 192–193).
+
+*Derived statements that speak to it.* L3-S9.
+
+*Current-text axis.* L3-S9: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing harmonic spine *"is structurally blind to the"* linear
+dimension, *"how the lines move"*; L3-S9 says its family (i) reads *"the per-voice relations (the silence before an
+onset, the time since that voice's preceding attack, the spelled melodic interval)"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — a statement about the harmonic spine's reach that a derived statement differs
+from; read: the two texts above.
+
+---
+
+**Row 37.47 — the linear dimension an independent organizer, the home of objects without an owner, and the named path to
+harmonic residuals.**
+
+*Outgoing statement.* "That dimension is (a) **a real, independent organizer of the music** — measured: voice-leading
+clusters are statistically independent of harmonic-idiom clusters (cross-ARI 0.030), chorales that scatter across
+harmonic idioms are 98% voice-leading-tight, and one harmonic idiom (Steely Dan / Piazzolla / Hiromi) splits into
+several voice-leading identities; (b) **the home of real analysis objects that today have no owner** — the melodic
+phrase [MT], the fugue's overlapping per-voice phrases, the galant schemata and line cliché (six Harmonic Vocabulary
+entries carry a voice-leading-defined flag waiting for this axis), and chord voicing/arrangement (excluded from the
+harmonic dictionary's scope); and (c) **the named path to measured harmonic residuals** — the non-chord-tone filter, the
+field's lever for counterpoint accuracy, is an L4 (harmonic-emission) concern *informed by* this axis; the dormant
+full-spine measurement (`records/cc/reports/cc_e0doubleprime_report.md`) attributed ≈45% of the exact-match cap to
+seventh/extension over-emission dominated by non-chord tones read as chord extensions." — the section *1. Introduction &
+purpose*, its paragraph led *Why it exists (the problem).* (locator: lines 193–203). Four claims: (i) the linear
+dimension was found by measurement to be an independent organizer of the music, at the values the sentence quotes; (ii)
+it is the home of analysis objects with no owner — the melodic phrase, the per-voice phrases of a fugue, the galant
+schemata and the line cliché, chord voicing and arrangement; (iii) the non-chord-tone filter is a concern of the
+harmonic analysis's chord emission, informed by this axis — *L4* names `ARCHITECTURE.md`'s Layer 4, the chord layer;
+(iv) a dormant measurement attributed a share of the exact-match ceiling to over-emitted sevenths and extensions.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S42. (iii) None. (iv) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S42: **AGREES** — *"The accepted melodic phrase, which
+overlaps across voices, is the axis's"*. (iii) **THE DERIVATION IS SILENT**. (iv) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* on which run were the voice-leading clusters found
+independent of the harmonic-idiom clusters, at the values quoted, and does it reproduce (as Row 23.22 asks)? (ii)
+**RELOCATED** — to ***the second axis — voice leading***, as Row 19.60. (iii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which publishes the chord-tone assignment
+and elaboration relation per sounding note. (iv) **QUARANTINED.** *Audit question:* on which run did the dormant
+measurement attribute that share of the exact-match ceiling, and does it reproduce?
+
+---
+
+**Row 37.48 — inference forward within the axis; cross-axis reads under the acyclicity rule.**
+
+*Outgoing statement.* "Inference flows forward within the axis; cross-axis reads obey the acyclicity rule of §9-D6." —
+the section *2. Constraints*, its bullet led *Forward-only analysis.*, the label read as a title (locator: lines
+217–218).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.49 — no backward inference edge; an exception only under the sanctioned protocol.**
+
+*Outgoing statement.* "No backward inference edge anywhere; a sanctioned exception would follow §2.14's
+surfaced/measured/gated protocol." — the section *2. Constraints*, its bullet led *Forward-only analysis.* (locator:
+lines 218–219).
+
+*Derived statements that speak to it.* L3-S38.
+
+*Current-text axis.* L3-S38: **AGREES** — a reading that would improve the reading beneath *"is not acted on in L3. It
+is a question for a measured backward edge."*
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, the rule stated for the axis.
+
+---
+
+**Row 37.50 — the two fact components style-agnostic and confidence-free; judgment only from texture classification
+on.**
+
+*Outgoing statement.* "VL-A and VL-B are style-agnostic, lossless-derived **facts** and carry no confidence. Judgment
+enters only at VL-C and later components." — the section *2. Constraints*, its bullet led *Universality in the fact
+layers; style only in calibration*, the label read as a title (locator: lines 220–222). Two claims: (i) the voice-linear
+view and the profiles are style-agnostic, lossless-derived facts carrying no confidence; (ii) judgment enters only at
+texture classification and the later components.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.51 — the components run on any notated score; style only through calibration parameters.**
+
+*Outgoing statement.* "**Any notated score, any size, any style** (the product constraint the harmonic spine carries):
+the components run on whatever notated score the user opens; style enters only through calibration parameters (the VL-C
+reference set), never through structure." — the section *2. Constraints*, its bullet led *Any notated score, any size,
+any style*, a lead ending in a colon whose sentence carries the claim (locator: lines 223–225).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.52 — every component under the bounded-context contract: the selection, extension on request, provenance
+kept.**
+
+*Outgoing statement.* "**The bounded-context contract** (`cowork_bounded_context_design.md`): every component analyses
+the selection, requests append-only extension from L1 with a stop condition and hard bound when its reasoning needs
+more, and carries the denial/truncation provenance honestly (§8)." — the section *2. Constraints*, its bullet led *The
+bounded-context contract*, a lead whose sentence carries the claim (locator: lines 226–228). *From L1* names
+`ARCHITECTURE.md`'s Layer 1, the note model.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose components' working span it
+governs.
+
+---
+
+**Row 37.53 — every published confidence bounded, class-declared and named; no new comparison frame.**
+
+*Outgoing statement.* "**The confidence contract** (`cowork_confidence_contract.md`): every published confidence is
+[0,1], class-declared, attached to a named decision; no new cross-layer comparison frame exists until declared in the
+contract's §4 (none is declared by this design — §8)." — the section *2. Constraints*, its bullet led *The confidence
+contract*, a lead whose sentence carries the claim (locator: lines 229–231). Two claims: (i) every confidence the axis
+publishes lies in [0,1], declares its class and is attached to a named decision; (ii) no new comparison frame across
+layers exists until the contract declares it, and this design declares none.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, as Rows 19.71 and 19.72. (ii)
+**RELOCATED** — to ***the uncertainty surface***, as Row 19.72.
+
+---
+
+**Row 37.54 — the build changing no harmonic-spine behaviour; dormancy proven by source search.**
+
+*Outgoing statement.* "The build changes no harmonic-spine behavior; the corpus gate is untouched by construction;
+dormancy is proven by source search, as for L4/L5/L6." — the section *2. Constraints*, its bullet led *Dormant +
+byte-identical.*, the label read as a title (locator: lines 232–233). Two claims: (i) the axis's build changes no
+behaviour of the harmonic spine and leaves the corpus gate untouched; (ii) its dormancy is proven by source search.
+*L4/L5/L6* names `ARCHITECTURE.md`'s chord, function and grouping layers.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Row 37.12 (ii). (ii)
+**QUARANTINED.** *Audit question:* is the axis's foundation reached by no production path at the current commit, as a
+source search would show?
+
+---
+
+**Row 37.55 — the former parenthetical's gate superseded; the standing stop gate block (A).**
+
+*Outgoing statement.* "The parenthetical formerly here named the batch `53/24/53` case-identity sets, which R10-b
+superseded in whole on 2026-07-06; the standing stop is `CLAUDE.md` gate block (A) and §0's terms bullet carries the
+account." — the section *2. Constraints*, its bullet led *Dormant + byte-identical.*, its italic parenthesis (locator:
+lines 233–235). Two claims: (i) the gate the former parenthetical named was superseded in whole on a date; (ii) the
+standing stop is the one of `CLAUDE.md` gate block (A). The parenthesis records a correction; its closing sentence is
+listed as provenance.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a record of a superseded gate, as Row 37.3 (i). (ii)
+**RELOCATED** — to ***the measurement of the analysis***, as Row 37.3 (ii).
+
+---
+
+**Row 37.56 — what lacks ground truth built with an alternative-confidence path and an unvalidated mark.**
+
+*Outgoing statement.* "What lacks ground truth is built (if at all) with an alternative-confidence path and an
+**empirically-unvalidated** mark, never silently trusted (ARCHITECTURE §2.15; applied per component in §10)." — the
+section *2. Constraints*, its bullet led *Verifiability with honest marks.*, the label read as a title (locator: lines
+237–239).
+
+*Derived statements that speak to it.* L3-S33.
+
+*Current-text axis.* L3-S33: **AGREES** — the status provisional *"is carried by anything resting on an unfitted weight,
+a stand-in value or a provisional input"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, as Rows 21.194 (i) and 21.196.
+
+---
+
+**Row 37.57 — the axis reusing the shared note model and the phrase-boundary primitive; the discovery pipeline its
+validation harness.**
+
+*Outgoing statement.* "The axis reuses the shared primitives (the one L1 note model; the L1.5 phrase-boundary primitive
+as evidence for VL-E; the discovery pipeline as validation harness); every build increment reports reuse-vs-new and what
+retires." — the section *2. Constraints*, its bullet led *Total unification.*, the label read as a title (locator: lines
+240–242). Two claims: (i) the axis reuses the one note model and the phrase-boundary primitive, the latter as evidence
+for VL-E; (ii) the discovery pipeline serves as its validation harness. The closing clause, on what every build
+increment reports, is development conduct. *L1* and *L1.5* name `ARCHITECTURE.md`'s Layer 1 and its derived-view
+half-tier.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**RELOCATED** — to ***the measurement of the analysis***, as Row 36.99.
+
+---
+
+**Row 37.58 — every inference component's build gated on the measurement that earns its design.**
+
+*Outgoing statement.* "Every inference component's build is gated on the measurement that earns its design (the VL-C
+per-span question has a named exploratory study — §5.3, §15-1)." — the section *2. Constraints*, its bullet led
+*Knowledge-based coding.*, the label read as a title (locator: lines 243–244).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.60 placed the axis's later
+components as claims.
+
+---
+
+**Row 37.59 — the shared note model carrying everything the voice-linear view needs.**
+
+*Outgoing statement.* "**The L1 note model** (axis-neutral, shared): notes with onset/duration, pitch + notated
+spelling, metric weight, and (staff, voice) — everything VL-A needs, already carried losslessly." — the section *3.
+Context & scope (external view)*, its list led *Imports / dependencies.*, its bullet led *The L1 note model* (locator:
+lines 249–250). *L1* names `ARCHITECTURE.md`'s Layer 1, the note model.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose input it names.
+
+---
+
+**Row 37.60 — the axis adding no second note model.**
+
+*Outgoing statement.* "**The axis adds no second note model** (total unification)." — the section *3. Context & scope
+(external view)*, its list led *Imports / dependencies.*, its bullet led *The L1 note model* (locator: lines 250–251).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.61 — the per-part cues natural per-voice phrase evidence; VL-E consuming the existing primitive.**
+
+*Outgoing statement.* "**The L1.5 phrase-boundary primitive** (its graded profile + per-part cue/scope provenance;
+evidence for VL-E when designed): the per-part cues (breath, caesura, fermata) are natural per-voice phrase evidence;
+VL-E consumes the existing primitive rather than re-detecting the cues." — the section *3. Context & scope (external
+view)*, its list led *Imports / dependencies.*, its bullet led *The L1.5 phrase-boundary primitive* (locator: lines
+252–254). Two claims: (i) the per-part cues — breath, caesura, fermata — are natural per-voice phrase evidence; (ii)
+VL-E consumes the existing primitive rather than re-detecting them. *L1.5* names `ARCHITECTURE.md`'s derived-view
+half-tier over the note model.
+
+*Derived statements that speak to it.* (i) L3-S9. (ii) None.
+
+*Current-text axis.* (i) L3-S9: **AGREES** — its family (i) reads *"the boundary flags with their scope"*. (ii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which
+publishes the notated boundary evidence, as Row 36.155. (ii) **RELOCATED** — to ***the second axis — voice leading***,
+which re-derives no fact the spine publishes.
+
+---
+
+**Row 37.62 — the committed local key read by VL-F and VL-H, for scale degrees.**
+
+*Outgoing statement.* "**The committed L3 key** (VL-F and VL-H, when designed): schema recognition and tendency-tone
+rules need scale degrees, which need the local key." — the section *3. Context & scope (external view)*, its list led
+*Imports / dependencies.*, its bullet led *The committed L3 key* (locator: lines 255–256). *L3* names
+`ARCHITECTURE.md`'s Layer 3, the key and mode layer; the tonality is L2's under `FRAMEWORK.md` §5.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose components' read of the spine's
+tonality it is.
+
+---
+
+**Row 37.63 — the axis's only planned kind of harmonic-inference read.**
+
+*Outgoing statement.* "This is the axis's only planned *kind* of harmonic-inference read (§9-D6 for why it is safe)." —
+the section *3. Context & scope (external view)*, its list led *Imports / dependencies.*, its bullet led *The committed
+L3 key* (locator: lines 256–257).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.64 — the slices and the chord, function and grouping outputs not imported.**
+
+*Outgoing statement.* "**NOT imported:** L2 slices (the axis's sampling is by voice-pair onsets, not verticalities);
+L4/L5/L6 outputs (v1 reads nothing from them)." — the section *3. Context & scope (external view)*, its list led
+*Imports / dependencies.*, its bullet led *NOT imported:* (locator: lines 258–259). Two claims: (i) the axis imports no
+slices, sampling by voice-pair onsets; (ii) its first version reads nothing from the chord, function and grouping
+layers' outputs. *L2* and *L4/L5/L6* name `ARCHITECTURE.md`'s slicer and its chord, function and grouping layers.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.65 — the voice-linear view's export: the per-voice event series.**
+
+*Outgoing statement.* "VL-A: the per-voice event series (with chordal-voice facts and any declared reduction rule named
+per query)." — the section *3. Context & scope (external view)*, its list led *Exports / public API (design-level).*,
+its first bullet (locator: line 262).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.66 — the profiles' export over a requested span.**
+
+*Outgoing statement.* "VL-B: motion profile + interval profile over a requested span (pure functions of VL-A)." — the
+section *3. Context & scope (external view)*, its list led *Exports / public API (design-level).*, its second bullet
+(locator: line 263).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.67 — texture classification's export: voice-leading-spans with an idiom and a confidence.**
+
+*Outgoing statement.* "VL-C: voice-leading-spans with an idiom classification and a Class-M confidence." — the section
+*3. Context & scope (external view)*, its list led *Exports / public API (design-level).*, its third bullet (locator:
+line 264).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.68 — the later components' exports.**
+
+*Outgoing statement.* "Later components (design-gated): streams (VL-D), per-voice phrase-spans (VL-E), recognized
+voice-leading schemata (VL-F), voicing/arrangement descriptors (VL-G)." — the section *3. Context & scope (external
+view)*, its list led *Exports / public API (design-level).*, its fourth bullet (locator: lines 265–266).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.69 — the style structure at least two-dimensional.**
+
+*Outgoing statement.* "The full style structure is **≥ 2-D**: (harmonic idiom) ⟂ (voice-leading idiom) + mode +
+chromaticism (findings v2.0 — "at least": further axes are possible)." — the section *3. Context & scope (external
+view)*, its numbered list led *Consumers (who reads the axis, and for what).*, its item 1, led *The 2-D style
+structure.*, the label read as a title (locator: lines 269–270).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 23.24.
+
+---
+
+**Row 37.70 — texture classification supplying the second coordinate, eventually a calibration context.**
+
+*Outgoing statement.* "VL-C supplies the second coordinate — eventually a calibration context for the judgment layers'
+priors (style lives only in calibration), and an input to the roadmap's idiom auto-detection step." — the section *3.
+Context & scope (external view)*, its numbered list led *Consumers (who reads the axis, and for what).*, its item 1
+(locator: lines 270–273). Two claims: (i) texture classification supplies the second coordinate of the style structure;
+(ii) eventually it is a calibration context for the judgment layers' priors and an input to the idiom auto-detection
+step.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose output's consumers these are.
+
+---
+
+**Row 37.71 — the future non-chord-tone filter consuming the axis's facts, not its judgments.**
+
+*Outgoing statement.* "**The future L4 non-chord-tone filter** (harmonic axis; not built now): consumes VL-A/VL-B
+**facts** (lines and motion), not VL judgments — see §9-D6." — the section *3. Context & scope (external view)*, its
+numbered list led *Consumers (who reads the axis, and for what).*, its item 2, *The future L4 non-chord-tone filter*
+(locator: lines 274–275). Two claims: (i) a future non-chord-tone filter of the harmonic analysis consumes the axis's
+facts, lines and motion, not its judgments; (ii) it is not built now. *L4* names `ARCHITECTURE.md`'s Layer 4, the chord
+layer.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which
+publishes the chord-tone assignment and elaboration relation per sounding note. (ii) **HISTORICAL** — a build state.
+
+---
+
+**Row 37.72 — VL-F claiming the six voice-leading-defined entries of the built catalog.**
+
+*Outgoing statement.* "**The Harmonic Vocabulary / recognition consumer:** VL-F claims the six entries carrying the
+voice-leading-defined flag — verified at the built catalog (`harmonicvocabulary.cpp`, the §5.2 galant-schemata block +
+the line-cliché substitution): **Prinner, Romanesca, Do-Re-Mi, Monte, Fonte, line cliché** — whose harmonic-idiom tags
+are declared placeholders." — the section *3. Context & scope (external view)*, its numbered list led *Consumers (who
+reads the axis, and for what).*, its item 3, a lead ending in a colon whose sentence carries the claim (locator: lines
+276–279). Two claims: (i) VL-F claims the catalog entries carrying the voice-leading-defined flag; (ii) those six
+entries were verified at the built catalog, their harmonic-idiom tags declared placeholders.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Row 19.61 (i). (ii)
+**QUARANTINED.** *Audit question:* does the built catalog carry the six entries named with the voice-leading-defined
+flag, their harmonic-idiom tags placeholders, at the current commit?
+
+---
+
+**Row 37.73 — three patterns declared deferrals of the catalog, joining the claim when they enter it.**
+
+*Outgoing statement.* "(Ponte, Quiescenza, and the lament variant are declared catalog deferrals, not built; they join
+the claim if and when they enter the catalog — a per-item deferral-vs-gap ruling on the vocabulary side is owed per the
+gap-analysis rider.)" — the section *3. Context & scope (external view)*, its numbered list led *Consumers (who reads
+the axis, and for what).*, its item 3, its parenthesis (locator: lines 279–281). Two claims: (i) the three patterns are
+declared catalog deferrals, not built, a ruling on the vocabulary side owed; (ii) they join the axis's claim if and when
+they enter the catalog.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a build state and an owed ruling. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, as Row 19.61 (i).
+
+---
+
+**Row 37.74 — the part-writing advisory consuming the per-sample motion events.**
+
+*Outgoing statement.* "**The part-writing advisory (VL-H, design-gated):** rule checking + suggestion (parallel perfect
+intervals, awkward vocal leaps, tendency-tone resolution) consuming VL-B's per-sample motion events and per-voice
+interval facts — the axis's product-advisory consumer (§5.4)." — the section *3. Context & scope (external view)*, its
+numbered list led *Consumers (who reads the axis, and for what).*, its item 4, a lead ending in a colon whose sentence
+carries the claim (locator: lines 282–284).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.64.
+
+---
+
+**Row 37.75 — the user-facing annotation eventually; engagement out of scope.**
+
+*Outgoing statement.* "**The user-facing annotation** (eventually): texture labels, phrases, schema names — engagement
+out of scope, like the rest of the dormant stack." — the section *3. Context & scope (external view)*, its numbered list
+led *Consumers (who reads the axis, and for what).*, its item 5, *The user-facing annotation* (locator: lines 285–286).
+Two claims: (i) the axis's results — texture labels, melodic phrases, schema names — are eventually shown as an
+annotation; (ii) their engagement is out of this design's scope, as for the other dormant layers.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose results' display it names.
+(ii) **HISTORICAL** — a status: engagement deferred.
+
+---
+
+**Row 37.76 — the spine's discipline mirrored on the linear dimension, building only what the evidence has earned.**
+
+*Outgoing statement.* "**Mirror the harmonic spine's discipline on the linear dimension, and build only what the
+evidence has already earned.**" — the section *4. Solution strategy*, its one paragraph, its bold opening sentence, a
+complete sentence read under rule (1) (locator: lines 293–294).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.77 — the spine's shape transferred unchanged: facts, derived views, judgment layers.**
+
+*Outgoing statement.* "The spine's shape — lossless facts → mechanical derived views → judgment layers with declared
+confidence — transfers unchanged: VL-A is the axis's "L1 view", VL-B its "L1.5", VL-C its first inference layer." — the
+section *4. Solution strategy*, its one paragraph (locator: lines 294–295). *L1 view* and *L1.5* name
+`ARCHITECTURE.md`'s note-model layer and its derived-view half-tier.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.78 — motion type leading, texture the organizer, notated voices enough without stream separation.**
+
+*Outgoing statement.* "Three empirical results fix the design's priorities: **(1) motion type leads** — voice-pair
+motion-type rates alone recover the texture structure (ARI 0.37–0.46) where interval profiles alone do not (≤0.20), so
+the primary discriminator is *how voices move together*, with the interval profile as a secondary melodic-complexity
+descriptor; **(2) texture is the organizer** — the axis's natural first inference target is the texture classification
+(confounds ruled out: voice-count ARI 0.034–0.046, source 0.07–0.11); **(3) the axis works on notated voices without
+stream separation** — the study discriminated textures from notated (staff, voice) lines directly, so VL-D is an
+enrichment for per-voice detail in keyboard textures, not a prerequisite." — the section *4. Solution strategy*, its one
+paragraph (locator: lines 295–302). Three claims: (i) motion type leads and texture is the organizer, so the axis's
+first inference target is texture classification, how voices move together its primary discriminator; (ii) those
+results, and the confounds ruled out, were found by measurement at the values the sentence quotes; (iii) the axis works
+on notated voices without stream separation, VL-D an enrichment and not a prerequisite.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Rows 23.25 and 23.26. (ii)
+**QUARANTINED.** *Audit question:* on which run were motion type shown to recover the texture structure where the
+interval profile does not, and the confounds ruled out, at the values quoted, and does it reproduce? (iii)
+**RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.79 — everything not yet earned staged behind its own gate.**
+
+*Outgoing statement.* "Everything the evidence has *not* yet earned (per-span texture granularity, phrase segmentation,
+schema matching) is staged behind its own measurement or design gate." — the section *4. Solution strategy*, its one
+paragraph (locator: lines 302–304).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.60.
+
+---
+
+**Row 37.80 — the motion profile over the voice pairs, the interval profile per voice, both length-normalized.**
+
+*Outgoing statement.* "**Motion profile** per the simultaneity rule (§0), aggregated over all concurrent voice pairs of
+the span; **interval profile** per voice, aggregable over voices. Both length-normalized rates." — the section *5.
+Building-block view*, sub-section *5.2 VL-B — motion & interval profiles (derived views; facts)*, the list led *Rules:*,
+its bullet led *Motion profile* (locator: lines 343–344).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Rows 19.42 to 19.64 placed the
+axis's objects.
+
+---
+
+**Row 37.81 — the per-sample motion-event series exported, not only the rates.**
+
+*Outgoing statement.* "**The per-sample motion-event series is part of the export, not only the rates.**" — the section
+*5. Building-block view*, sub-section *5.2 VL-B — motion & interval profiles (derived views; facts)*, the list led
+*Rules:*, its bullet led by this bold sentence, a complete sentence read under rule (1) (locator: line 345).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.64.
+
+---
+
+**Row 37.82 — the profile an aggregation of classified motion events, the event series a fact.**
+
+*Outgoing statement.* "The profile is an aggregation of classified motion events (voice pair, sample time, motion type,
+the two harmonic intervals before/after); the event series itself is a fact and is exposed." — the section *5.
+Building-block view*, sub-section *5.2 VL-B — motion & interval profiles (derived views; facts)*, the list led *Rules:*,
+its bullet led *The per-sample motion-event series is part of the export, not only the rates.* (locator: lines 345–347).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.83 — the rates all texture classification needs; the events what a part-writing checker needs.**
+
+*Outgoing statement.* "The rates are all VL-C needs; the events are what a future part-writing checker needs (a parallel
+fifth/octave is parallel motion at a perfect harmonic interval *at a specific event* — VL-H, §5.4) — cheap to expose at
+build, structural to retrofit." — the section *5. Building-block view*, sub-section *5.2 VL-B — motion & interval
+profiles (derived views; facts)*, the list led *Rules:*, its bullet led *The per-sample motion-event series is part of
+the export, not only the rates.* (locator: lines 347–349).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.64.
+
+---
+
+**Row 37.84 — the profiles deterministic, with no tunable thresholds, no judgment and no confidence.**
+
+*Outgoing statement.* "**Deterministic, no tunable thresholds, no judgment, no confidence** (the fixed step/leap cut and
+histogram binning are study-pinned feature definitions, part of what "the same feature" means — not calibration)." — the
+section *5. Building-block view*, sub-section *5.2 VL-B — motion & interval profiles (derived views; facts)*, the list
+led *Rules:*, its bullet led *Deterministic, no tunable thresholds, no judgment, no confidence* (locator: lines
+350–351).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.85 — the two declarations owed at build; the chordal voice reduced to its top note by default.**
+
+*Outgoing statement.* "The only declarations owed at build: the interval-preservation convention for "parallel"
+(semitone vs generic — §15-2) and the treatment of chordal voices (which declared reduction the profile query uses;
+default top-note, per §5.1)." — the section *5. Building-block view*, sub-section *5.2 VL-B — motion & interval profiles
+(derived views; facts)*, the list led *Rules:*, its bullet led *Deterministic, no tunable thresholds, no judgment, no
+confidence* (locator: lines 351–354). Two claims: (i) the parallel-motion convention and the treatment of chordal voices
+were the only declarations owed at build; (ii) a chordal voice is reduced by default to its top note.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a plan, since closed at build, as Row 37.86 records. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.86 — both declarations closed at build: semitone-exact parallel, top-note reduction.**
+
+*Outgoing statement.* "★ AS-BUILT: both closed — (a) SEMITONE-EXACT parallel (`(pu1−pv1)==(pu0−pv0)` on signed MIDI
+pitches; §15-2 CLOSED, verified at `voiceleading2.py` `_motion`); (b) default TOP-NOTE reduction." — the section *5.
+Building-block view*, sub-section *5.2 VL-B — motion & interval profiles (derived views; facts)*, the list led *Rules:*,
+its bullet led *Deterministic, no tunable thresholds, no judgment, no confidence*, its bold ★ passage, quoted from after
+the opening bold marker since the bold run closes only at the end of the next sentence (locator: lines 354–356). Two
+claims: (i) both declarations were closed at build; (ii) the built profile judges parallel motion semitone-exact on
+signed pitches, verified at the study's classifier, and reduces a chordal voice to its top note by default.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event: the declarations closed at build. (ii) **QUARANTINED.**
+*Audit question:* does the built profile judge parallel motion semitone-exact on signed pitches and reduce a chordal
+voice to its top note by default, at the current commit?
+
+---
+
+**Row 37.87 — the profile-eligibility filter the three-flag line-view filter.**
+
+*Outgoing statement.* "The profile-eligibility filter is the verified per-(staff,voice) line-view filter
+`plays && visible && staffEligible` (the `phraseboundaryview.cpp` precedent — the instruction's 2-flag parenthetical
+reconciled to the verified 3-flag existing-derived-view filter)." — the section *5. Building-block view*, sub-section
+*5.2 VL-B — motion & interval profiles (derived views; facts)*, the list led *Rules:*, its bullet led *Deterministic, no
+tunable thresholds, no judgment, no confidence*, the same bold passage, quoted to before its closing bold marker
+(locator: lines 356–358).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the built profiles' eligibility filter the per-line filter
+combining sounding, visible and an eligible staff, the one the phrase-boundary view uses, at the current commit?
+
+---
+
+**Row 37.88 — the parity duty: the production features reproducing the study's on a pinned sample.**
+
+*Outgoing statement.* "**Parity duty:** the production implementation must reproduce the study pipeline's features
+(`idiom_discovery/parsers/voiceleading.py` `vl_profile`, `voiceleading2.py` View B) on a pinned sample of study pieces
+within declared tolerance — the axis-2 analogue of the music21↔L1/L2 neutral-extractor cross-check (§10)." — the section
+*5. Building-block view*, sub-section *5.2 VL-B — motion & interval profiles (derived views; facts)*, the list led
+*Rules:*, its bullet led *Parity duty:*, a lead ending in a colon whose sentence carries the claim (locator: lines
+359–362).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose cross-check it is.
+
+---
+
+**Row 37.89 — VL-D recovering streams from implied polyphony.**
+
+*Outgoing statement.* "Recover streams from implied polyphony / compound melody, so keyboard and solo-string textures
+get per-line detail." — the section *5. Building-block view*, sub-section *5.4 The staged components (named, scoped,
+design-gated — each gets its own design doc before build)*, its bullet led *VL-D — stream separation (inference).*, the
+label read as a title (locator: lines 414–415).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 21.179.
+
+---
+
+**Row 37.90 — stream separation verified on the merged-voices proxy.**
+
+*Outgoing statement.* "**Verifiability is strong on the merged-voices proxy:** hide notated voice assignments and score
+recovery against them — the literature's standard evaluation, available on our own corpora at zero annotation cost." —
+the section *5. Building-block view*, sub-section *5.4 The staged components (named, scoped, design-gated — each gets
+its own design doc before build)*, its bullet led *VL-D — stream separation (inference).*, a lead ending in a colon
+whose sentence carries the claim (locator: lines 417–419).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose evaluation it names.
+
+---
+
+**Row 37.91 — the implied-polyphony target without notated ground truth, carrying the unvalidated mark.**
+
+*Outgoing statement.* "The implied-polyphony *target* itself (one notated line projecting several streams) has no
+notated ground truth — that half carries the empirically-unvalidated mark until a labeled bed exists (a census item,
+§15-4)." — the section *5. Building-block view*, sub-section *5.4 The staged components (named, scoped, design-gated —
+each gets its own design doc before build)*, its bullet led *VL-D — stream separation (inference).* (locator: lines
+419–421). Two claims: (i) the implied-polyphony target has no notated ground truth and carries the
+empirically-unvalidated mark until a labeled bed exists; (ii) such a bed is a census item.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, as Rows 21.194 (i) and 21.196. (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose corpora the census governs.
+
+---
+
+**Row 37.92 — VL-D's output: streams with membership confidence, marked inferred.**
+
+*Outgoing statement.* "Output: streams with per-note membership confidence (Class M), always marked inferred (§0
+one-sense rule)." — the section *5. Building-block view*, sub-section *5.4 The staged components (named, scoped,
+design-gated — each gets its own design doc before build)*, its bullet led *VL-D — stream separation (inference).*
+(locator: lines 421–422).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.93 — stream separation not a prerequisite for the foundation.**
+
+*Outgoing statement.* "Not a prerequisite for VL-A/B/C (§4)." — the section *5. Building-block view*, sub-section *5.4
+The staged components (named, scoped, design-gated — each gets its own design doc before build)*, its bullet led *VL-D —
+stream separation (inference).* (locator: line 422).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.94 — VL-E: per-voice phrase segmentation, overlapping across voices.**
+
+*Outgoing statement.* "Per-voice (and, post-VL-D, per-stream) segmentation into phrase-spans — overlapping and out of
+phase across voices by construction (the fugue case)." — the section *5. Building-block view*, sub-section *5.4 The
+staged components (named, scoped, design-gated — each gets its own design doc before build)*, its bullet led *VL-E —
+melodic phrase segmentation (inference).*, the label read as a title (locator: lines 423–424).
+
+*Derived statements that speak to it.* L3-S42.
+
+*Current-text axis.* L3-S42: **AGREES** — *"The accepted melodic phrase, which overlaps across voices, is the axis's"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose melodic phrase it is, as Rows
+19.47 and 19.62 (i) placed it.
+
+---
+
+**Row 37.95 — VL-E's evidence: the line's own grouping cues and the phrase-boundary primitive's per-part cues.**
+
+*Outgoing statement.* "Evidence: the line's own grouping cues (GTTM grouping preference rules; the melodic-segmentation
+literature) + the L1.5 phrase-boundary primitive's per-part cues (breath/caesura/fermata with cue+scope provenance —
+reused, not re-detected)." — the section *5. Building-block view*, sub-section *5.4 The staged components (named,
+scoped, design-gated — each gets its own design doc before build)*, its bullet led *VL-E — melodic phrase segmentation
+(inference).* (locator: lines 424–427). Two claims: (i) VL-E's evidence includes the line's own grouping cues, after the
+published grouping rules and the melodic-segmentation literature; (ii) it reuses the phrase-boundary primitive's
+per-part cues with their provenance, not re-detecting them. *L1.5* names `ARCHITECTURE.md`'s derived-view half-tier.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose melodic phrase it is, as
+Rows 19.47 and 19.62 (i) placed it. (ii) **RELOCATED** — to ***the second axis — voice leading***, as Row 37.61 (ii).
+
+---
+
+**Row 37.96 — VL-E's ground truth a census item; the standard candidate named.**
+
+*Outgoing statement.* "Ground truth: onboarding a phrase-annotated melodic corpus is a **census item** (standing census
+rule — no corpus enters outside the census); the 2026-07-03 sweep named the standard candidate (the Essen Folksong
+Collection, ~6,236 songs with expert phrase-boundary marks — research doc §6b; monophonic-folk coverage caveat)." — the
+section *5. Building-block view*, sub-section *5.4 The staged components (named, scoped, design-gated — each gets its
+own design doc before build)*, its bullet led *VL-E — melodic phrase segmentation (inference).* (locator: lines
+427–430). Two claims: (i) VL-E's ground truth is a phrase-annotated melodic corpus, entering only through the census;
+(ii) a sweep named the standard candidate, on a date.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose corpora the census governs.
+(ii) **HISTORICAL** — an event: a corpus sweep and its candidate.
+
+---
+
+**Row 37.97 — VL-E's build gated on that footing or carrying the unvalidated mark.**
+
+*Outgoing statement.* "VL-E's build is gated on that footing or carries the empirically-unvalidated mark." — the section
+*5. Building-block view*, sub-section *5.4 The staged components (named, scoped, design-gated — each gets its own design
+doc before build)*, its bullet led *VL-E — melodic phrase segmentation (inference).* (locator: lines 430–431).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.60.
+
+---
+
+**Row 37.98 — VL-F recognizing the voice-leading-defined patterns from their skeletons.**
+
+*Outgoing statement.* "Recognize the voice-leading-defined patterns — the six flagged Harmonic Vocabulary entries
+(verified at the built catalog: **Prinner, Romanesca, Do-Re-Mi, Monte, Fonte, line cliché**) — from their defining
+feature: outer-voice/inner-voice scale-degree skeletons under a conventional harmonic support." — the section *5.
+Building-block view*, sub-section *5.4 The staged components (named, scoped, design-gated — each gets its own design doc
+before build)*, its bullet led *VL-F — voice-leading-schema recognition (inference).*, the label read as a title
+(locator: lines 432–435). Two claims: (i) VL-F recognizes the voice-leading-defined patterns from their outer-voice and
+inner-voice scale-degree skeletons; (ii) the six flagged entries were verified at the built catalog.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Row 19.61 (i). (ii)
+**QUARANTINED.** *Audit question:* does the built catalog carry those six entries with the voice-leading-defined flag at
+the current commit, as Row 37.13 asks?
+
+---
+
+**Row 37.99 — VL-F consuming the lines and the committed key; its output's hosting left to its design.**
+
+*Outgoing statement.* "Consumes VL-A lines (+ VL-D streams where needed) and the committed L3 key (the scale-degree
+frame); its recognition output's hosting (alongside the harmonic progression-schema-spans in L6, or axis-locally) is a
+decision FOR its design doc, not made here." — the section *5. Building-block view*, sub-section *5.4 The staged
+components (named, scoped, design-gated — each gets its own design doc before build)*, its bullet led *VL-F —
+voice-leading-schema recognition (inference).* (locator: lines 435–437). Two claims: (i) VL-F consumes the voice-linear
+view's lines, the streams where needed, and the committed local key; (ii) whether its output is hosted beside the
+progression-schema-spans of the grouping layer or on the axis is a decision for its own design. *L3* and *L6* name
+`ARCHITECTURE.md`'s key and mode layer and its grouping layer.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Row 37.62. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose open design question it is.
+
+---
+
+**Row 37.100 — VL-F discharging the mapping's claim; the entries' idiom tags placeholders until then.**
+
+*Outgoing statement.* "**This is the component that discharges the mapping's "the future layer claims them" flag** —
+until it exists, the entries' harmonic-idiom tags remain the declared placeholders they are today." — the section *5.
+Building-block view*, sub-section *5.4 The staged components (named, scoped, design-gated — each gets its own design doc
+before build)*, its bullet led *VL-F — voice-leading-schema recognition (inference).* (locator: lines 437–439). Two
+claims: (i) VL-F is the component that discharges the mapping's claim on the flagged entries; (ii) until it exists their
+harmonic-idiom tags remain declared placeholders.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Row 19.61 (i). (ii)
+**QUARANTINED.** *Audit question:* are the flagged entries' harmonic-idiom tags declared placeholders at the current
+commit?
+
+---
+
+**Row 37.101 — VL-F's footing: an expert schema-annotation dataset onboarded, and a method line's lessons.**
+
+*Outgoing statement.* "**Footing found (2026-07-03 sweep, research doc §6b):** an expert schema-annotation dataset
+exists for the Mozart sonatas (ISMIR 2020; 244 at the paper snapshot, **273 at the Wave-2 pin — ONBOARDED 2026-07-03**,
+`records/cc/reports/cc_corpus_wave2_report.md` §1; the bed ships its own self-contained score bundle — same 54 movements
+as the DCML sonatas, distinct encoding), plus a published method line (skipgram candidate enumeration + feature
+classifier) whose measured lessons — extreme candidate imbalance; structural-note status is relational, not local;
+rejection usually means "a better explanation of the context exists" — are design input for VL-F's doc." — the section
+*5. Building-block view*, sub-section *5.4 The staged components (named, scoped, design-gated — each gets its own design
+doc before build)*, its bullet led *VL-F — voice-leading-schema recognition (inference).*, a lead ending in a colon
+whose sentence carries the claims (locator: lines 439–445). Three claims: (i) the footing was found and the dataset
+onboarded, on dates; (ii) an expert schema-annotation dataset of the Mozart sonatas is VL-F's ground truth; (iii) a
+published method line's lessons are design input for VL-F's own design.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — events: a sweep and a corpus onboarding. (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose corpora these are. (iii)
+**RELOCATED** — to ***the second axis — voice leading***, whose later component's design input it names.
+
+---
+
+**Row 37.102 — VL-G, chord voicing and arrangement, living on this axis.**
+
+*Outgoing statement.* "Named in ARCHITECTURE §2.15 as living on this axis, and the dictionary's declared exclusion
+(upper-structure / voicing substitution, dictionary §5.3) waits here." — the section *5. Building-block view*,
+sub-section *5.4 The staged components (named, scoped, design-gated — each gets its own design doc before build)*, its
+bullet led *VL-G — chord voicing / arrangement analysis.*, the label read as a title (locator: lines 446–447).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.63.
+
+---
+
+**Row 37.103 — VL-G scoped only as a claim, with no design.**
+
+*Outgoing statement.* "Scoped only as a claim; no design." — the section *5. Building-block view*, sub-section *5.4 The
+staged components (named, scoped, design-gated — each gets its own design doc before build)*, its bullet led *VL-G —
+chord voicing / arrangement analysis.* (locator: lines 447–448).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status: the component scoped as a claim and not designed.
+
+---
+
+**Row 37.104 — VL-H checking and suggesting voice leading against the contrapuntal and vocal-writing rules.**
+
+*Outgoing statement.* "Check and suggest voice leading against the contrapuntal and vocal-writing rules: parallel
+perfect fifths/octaves and kin (detectable directly on VL-B's per-sample motion events — parallel motion at a perfect
+harmonic interval), awkward melodic leaps for singers (tritone and other hard-to-pitch intervals — per-voice interval
+facts), and tendency-tone resolution (leading tone resolves up, chordal seventh down — needs scale degrees, hence the
+committed L3 key, a D6-checked cross-axis read like VL-F's)." — the section *5. Building-block view*, sub-section *5.4
+The staged components (named, scoped, design-gated — each gets its own design doc before build)*, its bullet led *VL-H —
+part-writing checking & suggestion (advisory; user-named 2026-07-03).*, the label read as a title (locator: lines
+449–454). *L3* names `ARCHITECTURE.md`'s key and mode layer.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.64.
+
+---
+
+**Row 37.105 — VL-H's design target comprehensive rule coverage from the theory, the plugins demand evidence only.**
+
+*Outgoing statement.* "Precedent: Contrapunctus ships Fux species-counterpoint checking
+(`cowork_polyphony_phrase_harmony_research.md` §3); the MuseScore plugin ecosystem carries parallel-interval checkers
+(§6b) — **read as demand evidence, not as a quality bar** (user, 2026-07-03: the plugins cover only a few of the
+contrapuntal rules; the theory itself is settled and fully specifiable, so VL-H's design target is comprehensive rule
+coverage from the theory, not parity with existing plugins)." — the section *5. Building-block view*, sub-section *5.4
+The staged components (named, scoped, design-gated — each gets its own design doc before build)*, its bullet led *VL-H —
+part-writing checking & suggestion (advisory; user-named 2026-07-03).* (locator: lines 454–458). One claim is tabulated:
+VL-H's design target is comprehensive rule coverage from the theory, the existing checkers read as evidence of demand
+and not as a standard of quality; the precedents named are narrative.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.106 — VL-H advice generation, not analysis, a claim with an owner; its rules its own design's questions.**
+
+*Outgoing statement.* "**This is the axis's product-advisory consumer — advice generation, not analysis — and a distinct
+output kind**, so it is a claim with an owner, design-gated like the rest; its rule set, severity model, and how
+suggestions surface in the composing workflow are its design doc's questions." — the section *5. Building-block view*,
+sub-section *5.4 The staged components (named, scoped, design-gated — each gets its own design doc before build)*, its
+bullet led *VL-H — part-writing checking & suggestion (advisory; user-named 2026-07-03).* (locator: lines 458–462). Two
+claims: (i) VL-H is the axis's product-advisory consumer — advice generation, not analysis — a distinct output kind and
+a claim with an owner, design-gated; (ii) its rule set, severity model and how its suggestions surface are its own
+design's questions.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Row 19.64. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose open design questions they are.
+
+---
+
+**Row 37.107 — VL-H consuming the facts and deciding nothing upstream of itself.**
+
+*Outgoing statement.* "It consumes VL-A/B facts (and VL-D streams, when built, for implied-polyphony textures); it
+decides nothing upstream of itself." — the section *5. Building-block view*, sub-section *5.4 The staged components
+(named, scoped, design-gated — each gets its own design doc before build)*, its bullet led *VL-H — part-writing checking
+& suggestion (advisory; user-named 2026-07-03).* (locator: lines 462–463).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.108 — a chorale: four series, a contrary-and-similar motion profile, classified contrapuntal.**
+
+*Outgoing statement.* "VL-A yields four monophonic series; VL-B's motion profile is contrary/similar-elevated with low
+oblique and ~64/21 step/leap rates (the full-coverage measurement; pilot 65/21); VL-C classifies *contrapuntal
+part-writing* (the signature sits deep in that class's measured profile — the margin is expected well above the margin
+floor)." — the section *6. Runtime view (scenarios)*, its scenario 1, led *Chorale (four notated voices).*, the label
+read as a title (locator: lines 474–478). Two claims: (i) on a four-voice chorale the axis yields four series and
+classifies contrapuntal part-writing; (ii) the chorale profile's step and leap rates were found at the values quoted.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose behaviour on the case it
+states. (ii) **QUARANTINED.** *Audit question:* on which run were the chorale profile's step and leap rates found at the
+values quoted, and does it reproduce?
+
+---
+
+**Row 37.109 — no reduction rule firing on a chorale.**
+
+*Outgoing statement.* "No reduction rule fires (no chordal voices)." — the section *6. Runtime view (scenarios)*, its
+scenario 1 (locator: line 478).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.110 — a keyboard sonata: chordal voices reduced to the top note, classified homophonic-classical.**
+
+*Outgoing statement.* "VL-A records chordal voices; the profile query applies the declared top-note reduction; VL-B
+shows oblique-dominant motion; VL-C classifies *homophonic-classical*." — the section *6. Runtime view (scenarios)*, its
+scenario 2, led *Classical keyboard sonata (two staves, chordal left hand).*, the label read as a title (locator: lines
+479–481).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose behaviour on the case it states.
+
+---
+
+**Row 37.111 — per-line detail of a compound line needing VL-D; the reduction provenance saying what was computed on.**
+
+*Outgoing statement.* "Per-line detail (the Alberti bass as a compound line) would need VL-D — v1 does not pretend to
+have it: the chordal-voice fact + reduction provenance say exactly what the classification was computed on." — the
+section *6. Runtime view (scenarios)*, its scenario 2 (locator: lines 481–483).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.112 — a fugue: independent notated voices classified contrapuntal.**
+
+*Outgoing statement.* "v1: VL-A/B/C see independent notated voices and classify *contrapuntal part-writing*." — the
+section *6. Runtime view (scenarios)*, its scenario 3, led *Fugue.*, the label read as a title (locator: line 484).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose behaviour on the case it states.
+
+---
+
+**Row 37.113 — a fugue's subject entries and overlapping per-voice phrases VL-E's territory, unclaimed in v1.**
+
+*Outgoing statement.* "The subject entries and their overlapping per-voice phrases are VL-E territory (staged); nothing
+in v1 claims them." — the section *6. Runtime view (scenarios)*, its scenario 3 (locator: lines 484–485).
+
+*Derived statements that speak to it.* L3-S42.
+
+*Current-text axis.* L3-S42: **AGREES** — *"The accepted melodic phrase, which overlaps across voices, is the axis's"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose melodic phrase it is, as Rows
+19.47 and 19.62 (i) placed it.
+
+---
+
+**Row 37.114 — a bounded selection: the loaded span served, profiles and classification over the selection.**
+
+*Outgoing statement.* "VL-A serves the loaded span (the L1 selection machinery, shared); VL-B computes profiles over the
+selection; VL-C classifies." — the section *6. Runtime view (scenarios)*, its scenario 4, led *Bounded selection.*, the
+label read as a title (locator: lines 486–487). *The L1 selection machinery* names `ARCHITECTURE.md`'s Layer 1.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose components' working span it
+states.
+
+---
+
+**Row 37.115 — a fragment below the evidential floor: the extension cue, or abstention with truncation provenance.**
+
+*Outgoing statement.* "If the selection is a short fragment whose profile rests on fewer samples than the evidential
+floor, the §8 extension cue fires (or, denied, the output abstains with truncation provenance)." — the section *6.
+Runtime view (scenarios)*, its scenario 4 (locator: lines 487–489).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose abstention and extension cue
+these are.
+
+---
+
+**Row 37.116 — *VoiceLine*: a voice's identity and events, losslessly derived from the note model.**
+
+*Outgoing statement.* "**VoiceLine** — voice identity (staff, voice), ordered events (onset, duration, pitches,
+spelling, chordal flag, and the L1 eligibility flags), losslessly derived from L1." — the section *7. Data design*, its
+bullet led *VoiceLine* (locator: lines 495–496). *L1* names `ARCHITECTURE.md`'s Layer 1, the note model.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.117 — metric weight not copied into the event, read on demand from its one store.**
+
+*Outgoing statement.* "Metric weight is NOT copied into the event: it stays with the shared metric-weight machinery
+(`scoreharvest`) and is read on demand by any consumer that needs it (total unification — no second store of a derived
+quantity; §2 amendment at signing, 2026-07-03)." — the section *7. Data design*, its bullet led *VoiceLine* (locator:
+lines 496–498).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose data it is.
+
+---
+
+**Row 37.118 — *MotionProfile*: the four rates, the sample count, the voice pairs and the reduction rule.**
+
+*Outgoing statement.* "**MotionProfile** — the four rates + sample count + the voice-pair inventory it aggregated + the
+reduction rule used (provenance)." — the section *7. Data design*, its bullet led *MotionProfile* (locator: lines
+499–500).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.119 — *IntervalProfile*: the histogram, the rates and the note count.**
+
+*Outgoing statement.* "**IntervalProfile** — histogram bins + repeat/step/leap rates + note count, per voice or
+aggregated." — the section *7. Data design*, its bullet led *IntervalProfile* (locator: line 501).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.120 — *VoiceLeadingSpan*: the committed class with the full ranked list of class fits, its confidence and
+marks.**
+
+*Outgoing statement.* "**VoiceLeadingSpan** — range (ticks), the committed idiom class + the **full ranked list of all
+class fits with their weights** (the carried alternatives — §5.3), Class-M confidence [0,1], abstention/coverage marks,
+truncation provenance (`clipped-by-selection-edge` / `cue-denied` where applicable), reference-set provenance." — the
+section *7. Data design*, its bullet led *VoiceLeadingSpan* (locator: lines 502–504).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.121 — D1: the axis admitted through the three co-equal gates.**
+
+*Outgoing statement.* "The three co-equal admission gates (ARCHITECTURE §2.15): **(1) separation of concerns** — linear
+structure is a distinct responsibility no spine layer may absorb (L6 §2 explicitly excludes it); **(2) verifiability** —
+VL-B is fact (oracle by construction), VL-C validates under the discovery protocol + declared lenses, VL-D against
+notated voices, VL-E/F against footing named-or-marked (§10); **(3) proportionality** — the axis buys the second style
+coordinate (measured orthogonal, hence non-redundant information by construction), the owner for phrase/schemata/voicing
+objects that are otherwise homeless, and the evidence base for the sized L4 non-chord-tone lever (the §1 ≈45%
+attribution)." — the section *9. Architecture decisions (alternatives weighed)*, its bullet led *D1 — an axis, not a
+seventh spine layer.*, the label read as a title (locator: lines 536–542). Three claims: (i) linear structure is a
+distinct responsibility no spine layer may absorb, the grouping layer excluding it; (ii) each of the axis's components
+is verified in the way named for it; (iii) the axis buys a second style coordinate, an owner for otherwise homeless
+objects and the evidence base for a sized non-chord-tone lever. *L6* and *L4* name `ARCHITECTURE.md`'s grouping and
+chord layers.
+
+*Derived statements that speak to it.* (i) L3-S42. (ii) None. (iii) None.
+
+*Current-text axis.* (i) L3-S42: **AGREES** — its (i) names the voice-leading axis as a subject of its own beside the
+harmonic spine, *"The accepted melodic phrase, which overlaps across voices, is the axis's"*, as at Row 8.38 (ii). (ii)
+**THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Row 19.59 (ii). (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose verification of each component it names. (iii)
+**RELOCATED** — to ***the second axis — voice leading***, as Row 19.60.
+
+---
+
+**Row 37.122 — D2: the motion-type-led features chosen on a decisive ablation.**
+
+*Outgoing statement.* "Measured (§4): the ablation is decisive, and the motion view is the extraction-robust one (it
+never explodes chords; it grouped exploded chamber corpora with the chorales, ruling out an encoding artifact)." — the
+section *9. Architecture decisions (alternatives weighed)*, its bullet led *D2 — motion-type-led features.*, the label
+read as a title (locator: lines 545–547). One claim: the ablation was decisive and the motion view robust to how the
+scores were extracted.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run was the ablation decisive and the motion view
+shown robust to exploded extraction, grouping exploded chamber corpora with the chorales, and does it reproduce?
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-388** (lines 545–548, the whole
+bullet D2), *"Texture is read primarily from HOW VOICES MOVE TOGETHER, not from how far each line leaps — the
+interval-led alternative was measured weaker and partly an encoding artifact"*, which the decisions register's INDEX
+records as LIVE, group H, entry ratified 2026-08-02 · user — a home neither withheld from the deriving session's pack
+nor seen by it, carrying no mark; a fact of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 37.123 — D3: the two-tier voice model, the notated voice a fact and the stream an inference.**
+
+*Outgoing statement.* "**D3 — two-tier voice model: notated voice = fact; stream = inference.**" — the section *9.
+Architecture decisions (alternatives weighed)*, its bullet led *D3* (locator: line 549). Its bold lead is read as
+stating a rule in its gloss — *notated voice = fact; stream = inference* — and is tabulated under rule (1); the reading
+is stated for challenge in the manifest header.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 37.16.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-389** (lines 549–551, the whole
+bullet D3), *"A notated voice is a FACT and an inferred perceptual line is a JUDGMENT — the two are separate types and
+are never conflated"*, which the decisions register's INDEX records as LIVE, group H, entry ratified 2026-08-02 · user —
+a home neither withheld from the deriving session's pack nor seen by it, carrying no mark; a fact of the decisions
+register, relayed, moving no disposition.
+
+---
+
+**Row 37.124 — D3: never conflated, enforced by the one-sense rule and the type system.**
+
+*Outgoing statement.* "Never conflated; enforced by the §0 one-sense rule and the type system (VoiceLine vs Stream)." —
+the section *9. Architecture decisions (alternatives weighed)*, its bullet led *D3* (locator: lines 549–550).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-389** (lines 549–551, the whole
+bullet D3), *"A notated voice is a FACT and an inferred perceptual line is a JUDGMENT — the two are separate types and
+are never conflated"*, which the decisions register's INDEX records as LIVE, group H, entry ratified 2026-08-02 · user —
+a home neither withheld from the deriving session's pack nor seen by it, carrying no mark; a fact of the decisions
+register, relayed, moving no disposition.
+
+---
+
+**Row 37.125 — D4: texture classification v1's only judgment, at whole-selection granularity.**
+
+*Outgoing statement.* "**D4 — texture classification is v1's only judgment, at whole-selection granularity.**" — the
+section *9. Architecture decisions (alternatives weighed)*, its bullet led *D4*, its bold lead a complete sentence,
+tabulated under rule (1) (locator: line 552). Two claims: (i) texture classification is the first version's only
+judgment; (ii) it classifies at the granularity of the whole selection.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-390** (lines 552–555, the whole
+bullet D4), *"The first version classifies the WHOLE selection as one texture — classifying within a piece is deferred
+behind a measurement, because the evidence is per-piece"*, which the decisions register's INDEX records as LIVE, group
+H, entry ratified 2026-08-02 · user — a home neither withheld from the deriving session's pack nor seen by it, carrying
+no mark; a fact of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 37.126 — D4: the per-span refinement a named cheap measurement first.**
+
+*Outgoing statement.* "The refinement is a named cheap measurement first (§15-1)." — the section *9. Architecture
+decisions (alternatives weighed)*, its bullet led *D4* (locator: lines 553–554).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose refinement waits on that
+measurement.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-390** (lines 552–555, the whole
+bullet D4), *"The first version classifies the WHOLE selection as one texture — classifying within a piece is deferred
+behind a measurement, because the evidence is per-piece"*, which the decisions register's INDEX records as LIVE, group
+H, entry ratified 2026-08-02 · user — a home neither withheld from the deriving session's pack nor seen by it, carrying
+no mark; a fact of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 37.127 — D5: the later components claims with owners, each clearing its own design and footing.**
+
+*Outgoing statement.* "VL-D/E/F/G/H are claims with owners, not builds; each clears its own design + footing before an
+instruction exists." — the section *9. Architecture decisions (alternatives weighed)*, its bullet led *D5 — staged
+components behind design gates.*, the label read as a title (locator: lines 556–557).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.60.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-392** (lines 556–558, the whole
+bullet D5), *"The later voice-leading components are CLAIMS WITH OWNERS, not builds — each clears its own design
+document and its own evidence before any instruction exists"*, which the decisions register's INDEX records as LIVE,
+group H, entry ratified 2026-08-02 · user — a home neither withheld from the deriving session's pack nor seen by it,
+carrying no mark; a fact of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 37.128 — D6: cross-axis reads admissible only where the joint dependency graph stays acyclic.**
+
+*Outgoing statement.* "Cross-axis reads are admissible only where the combined two-axis dependency graph stays acyclic,
+checked at each wiring: (a) harmonic layers may consume axis-2 **facts** (VL-A/B, L1-derived only) freely — e.g. the
+future L4 non-chord-tone filter — because facts depend on no harmonic inference; (b) an axis-2 component may consume a
+**committed harmonic output** (VL-F reads L3's key) provided nothing that harmonic layer depends on, directly or
+transitively, consumes that axis-2 component." — the section *9. Architecture decisions (alternatives weighed)*, its
+bullet led *D6 — the cross-axis dependency rule (acyclicity by declaration).*, the label read as a title (locator: lines
+559–564). Three claims: (i) a cross-axis read is admissible only where the combined dependency graph of the two axes
+stays acyclic, checked at each wiring; (ii) the harmonic layers may consume the axis's facts freely, those facts
+depending on no harmonic inference; (iii) a component of the axis may consume a committed harmonic output only where
+nothing that output depends on consumes the component. *L4* and *L3* name `ARCHITECTURE.md`'s chord layer and its key
+and mode layer.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, whose facts' consumers it names. (iii)
+**RELOCATED** — to ***the second axis — voice leading***, whose reads of the spine it governs.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-391** (lines 559–567, the whole
+bullet D6), *"Reads between the two analysis dimensions are admissible only where the combined dependency graph stays
+acyclic — harmonic layers may take voice-leading FACTS freely; a voice-leading component may take a committed harmonic
+result only if nothing that result depends on consumes it back"*, which the decisions register's INDEX records as LIVE,
+group H, entry ratified 2026-08-02 · user — a home neither withheld from the deriving session's pack nor seen by it,
+carrying no mark; a fact of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 37.129 — D6: VL-F reading the committed key safe, nothing that key depends on consuming the axis.**
+
+*Outgoing statement.* "VL-F→L3 is safe (L3 consumes no axis-2 output; the planned L4 filter consumes only VL-A/B, which
+don't depend on VL-F)." — the section *9. Architecture decisions (alternatives weighed)*, its bullet led *D6* (locator:
+lines 564–565). *L3* and *L4* name `ARCHITECTURE.md`'s key and mode layer and its chord layer.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 37.62.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-391** (lines 559–567, the whole
+bullet D6), *"Reads between the two analysis dimensions are admissible only where the combined dependency graph stays
+acyclic — harmonic layers may take voice-leading FACTS freely; a voice-leading component may take a committed harmonic
+result only if nothing that result depends on consumes it back"*, which the decisions register's INDEX records as LIVE,
+group H, entry ratified 2026-08-02 · user — a home neither withheld from the deriving session's pack nor seen by it,
+carrying no mark; a fact of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 37.130 — D7: the discovery pipeline the validation harness.**
+
+*Outgoing statement.* "**D7 — reuse the discovery pipeline as the validation harness** (total unification): the study's
+extractors and protocol (multi-seed stability, cap-robustness, confound gate) are the fitting/validation tooling for
+VL-C's reference set, not a parallel new rig." — the section *9. Architecture decisions (alternatives weighed)*, its
+bullet led *D7*, its bold lead an imperative sentence stating a rule, tabulated with the sentence it opens under rule
+(1) (locator: lines 568–570).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, as Row 37.57 (ii).
+
+---
+
+**Row 37.131 — ground truth scarce for texture, phrases and schemata; the components leaning on the alternative path.**
+
+*Outgoing statement.* "**Ground-truth scarcity** for texture (per-piece), phrases, and schemata — the axis's inference
+components lean on the verifiability contract's alternative-confidence path more than the harmonic spine did." — the
+section *11. Risks & technical debt*, its bullet led *Ground-truth scarcity*, its bold run the subject of the sentence
+(locator: lines 601–602). Two claims: (i) ground truth is scarce for texture, melodic phrases and schemata; (ii) the
+axis's inference components lean on the verifiability contract's alternative-confidence path.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth it names. (ii)
+**RELOCATED** — to ***the uncertainty surface***, as Row 37.56.
+
+---
+
+**Row 37.132 — the mitigation: census items, the hidden-voices check, honest marks.**
+
+*Outgoing statement.* "Mitigation: the census items (§15-4), the hide-notated-voices oracle for VL-D, and honest marks
+throughout." — the section *11. Risks & technical debt*, its bullet led *Ground-truth scarcity* (locator: lines
+602–603).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, as Row 37.90.
+
+---
+
+**Row 37.133 — the profiles of chordal textures depending on the declared reduction.**
+
+*Outgoing statement.* "Motion profiles of chordal textures depend on the declared reduction; the curated-arrangement
+study branch was uniformly oblique-dominant partly *because* of top-note reduction (the study's caveat)." — the section
+*11. Risks & technical debt*, its bullet led *Reduction-rule sensitivity.*, the label read as a title (locator: lines
+604–606). Two claims: (i) the motion profiles of chordal textures depend on the declared reduction; (ii) a branch of the
+study was oblique-dominant partly because of the top-note reduction.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**QUARANTINED.** *Audit question:* on which run was the arrangement branch found oblique-dominant partly because of the
+top-note reduction, and does it reproduce?
+
+---
+
+**Row 37.134 — the declared rule and its provenance making the sensitivity inspectable; other reductions deferred.**
+
+*Outgoing statement.* "The uniform declared rule + provenance makes this inspectable, not invisible; alternative
+reductions are a v-next comparison (§15-3)." — the section *11. Risks & technical debt*, its bullet led *Reduction-rule
+sensitivity.* (locator: lines 606–607). Two claims: (i) the uniform declared reduction with its provenance makes the
+sensitivity inspectable; (ii) a comparison with other reductions is deferred to a later version.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is. (ii)
+**HISTORICAL** — a deferral.
+
+---
+
+**Row 37.135 — the interval profile's era signal partly an artifact.**
+
+*Outgoing statement.* "**The interval profile's era signal is partly an artifact** (chordal-density/explosion — study
+caveat)." — the section *11. Risks & technical debt*, its bullet led *The interval profile's era signal is partly an
+artifact*, its bold run the sentence (locator: line 608).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* on which run was the interval profile's era signal found
+partly an artifact of chordal density, and does it reproduce?
+
+---
+
+**Row 37.136 — texture classification's secondary use inheriting the caveat; the motion profile primary.**
+
+*Outgoing statement.* "VL-C's secondary use of it inherits the caveat; the primary discriminator is deliberately the
+motion profile." — the section *11. Risks & technical debt*, its bullet led *The interval profile's era signal is partly
+an artifact* (locator: lines 608–609).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 23.25.
+
+---
+
+**Row 37.137 — single-voice and sparse textures: no voice pairs, no motion profile, abstention.**
+
+*Outgoing statement.* "**Single-voice and sparse textures:** no voice pairs → no motion profile → v1 abstention." — the
+section *11. Risks & technical debt*, its bullet led *Single-voice and sparse textures:*, a lead ending in a colon whose
+sentence carries the claim (locator: line 610).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose abstention it is.
+
+---
+
+**Row 37.138 — a single-line selection served by stream separation and phrase segmentation, not a degraded guess.**
+
+*Outgoing statement.* "A single-line selection is a real use case (a melody); serving it belongs to VL-D/E territory
+(streams, phrases), not to a degraded v1 guess." — the section *11. Risks & technical debt*, its bullet led
+*Single-voice and sparse textures:* (locator: lines 610–612).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose own subject it is.
+
+---
+
+**Row 37.139 — the design gates the guard against scope creep.**
+
+*Outgoing statement.* "The D5 design gates are the guard — nothing builds without its own doc + footing." — the section
+*11. Risks & technical debt*, its bullet led *Scope-creep risk:* (locator: lines 613–614).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.60.
+
+---
+
+**Row 37.140 — the axis predicted, piloted and confirmed.**
+
+*Outgoing statement.* "The axis was **predicted** (chorale "Baroque-ness" lives in voice-leading, not chords — the
+v1/v1.1 finding that chorales refuse to form a harmonic idiom), **piloted** (2026-06-30: chorale-vs-piano ARI 0.683 on
+the interval view; pilot-number note: 0.595 under the study machine's sklearn, feature-identical — KMeans-init drift
+only, and the split strengthens to 0.821 at full coverage), and **confirmed + measured** by the axis-2 study
+(2026-07-03, ratified: 2,102 pieces / 45 note-level sources; texture-organized; motion-type-led; orthogonality cross-ARI
+0.030)." — the section *13. Background*, its one paragraph (locator: lines 622–627). Two claims: (i) the axis was
+predicted, piloted and confirmed, on the dates given; (ii) the pilot and the study obtained the values the sentence
+quotes.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — events: the prediction, the pilot and the study. (ii) **QUARANTINED.**
+*Audit question:* on which runs were the pilot's agreement and the study's values obtained, and does each reproduce (as
+Rows 19.59 (iii) and 23.22 ask)?
+
+---
+
+**Row 37.141 — the axis replacing nothing, the first construction on a reserved dimension.**
+
+*Outgoing statement.* "It replaces nothing — it is the first construction on a dimension the architecture reserved
+(ARCHITECTURE §2.15 named the axis, the voice-leading-span, and the melodic-phrase/voicing homes before this design
+existed)." — the section *13. Background*, its one paragraph (locator: lines 627–628).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a record of what the design is in the history of the architecture.
+
+---
+
+**Row 37.142 — item 1: the per-span texture measurement.**
+
+*Outgoing statement.* "Exploratory, read-only: windowed motion profiles over pieces with known internal texture changes
+— does the window statistic recover the change points?" — the section *15. Open items & deferred refinements*, its item
+1, led *The per-span texture measurement (gates the §5.3 refinement).*, the label read as a title (locator: lines
+656–657).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose planned measurement it is.
+
+---
+
+**Row 37.143 — item 1: the measurement deciding whether voice-leading-spans become plural.**
+
+*Outgoing statement.* "Decides whether voice-leading-spans become plural within a selection, and at what window unit." —
+the section *15. Open items & deferred refinements*, its item 1 (locator: line 658).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose span's refinement it gates.
+
+---
+
+**Row 37.144 — item 1: a ready reference for the measurement found.**
+
+*Outgoing statement.* "**The 2026-07-03 sweep found a ready reference for it:** the per-bar texture annotations on the
+DCML Mozart sonatas (§15-4 candidate) provide exactly the within-piece change points this measurement needs, on scores
+already in our clones." — the section *15. Open items & deferred refinements*, its item 1, a lead ending in a colon
+whose sentence carries the claims (locator: lines 659–661). Two claims: (i) a sweep found the reference, on a date; (ii)
+the per-bar texture annotations of the Mozart sonatas provide the within-piece change points the measurement needs.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event: a corpus sweep and its find. (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose reference it names.
+
+---
+
+**Row 37.145 — item 2: the parallel convention closed at build, semitone-exact.**
+
+*Outgoing statement.* "**The "parallel" interval-preservation convention** (semitone-exact vs generic-diatonic) — ✅
+**CLOSED at build (AS-BUILT, 2026-07-03): SEMITONE-EXACT.**" — the section *15. Open items & deferred refinements*, its
+item 2 (locator: lines 662–663). Two claims: (i) the convention was closed at build, on a date; (ii) it is
+semitone-exact.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event: the declaration closed at build. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, as Rows 19.42 to 19.64 placed the axis's objects.
+
+---
+
+**Row 37.146 — item 2: the convention verified at the study's classifier.**
+
+*Outgoing statement.* "Verified at `voiceleading2.py` `_motion`: `parallel` iff both voices move the same direction AND
+`(pu1−pv1)==(pu0−pv0)` on signed MIDI pitches (a same-direction move whose semitone interval changes is `similar`)." —
+the section *15. Open items & deferred refinements*, its item 2 (locator: lines 663–665). Two claims: (i) parallel
+motion is a same-direction move with the signed semitone distance unchanged, any other same-direction move similar; (ii)
+the convention was verified at the exploratory study's classifier.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the second axis — voice leading***, as Rows 19.42 to 19.64 placed the
+axis's objects. (ii) **QUARANTINED.** *Audit question:* does the exploratory study's classifier apply that convention,
+as read at its source?
+
+---
+
+**Row 37.147 — item 2: the convention replicated in the production classification, oracle-tested.**
+
+*Outgoing statement.* "Replicated exactly in `voiceleadingprofiles.cpp classifyMotion` (oracle-tested)." — the section
+*15. Open items & deferred refinements*, its item 2 (locator: line 665).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `voiceleadingprofiles.cpp classifyMotion` replicate the
+convention exactly, under an oracle test, at the current commit?
+
+---
+
+**Row 37.148 — item 3: alternative reductions deferred; top-note the single v1 rule.**
+
+*Outgoing statement.* "**Alternative declared reductions** for chordal voices (bass-note, per-stream post-VL-D) —
+comparison deferred until a consumer needs one; top-note is the single v1 rule." — the section *15. Open items &
+deferred refinements*, its item 3 (locator: lines 666–667). Two claims: (i) a comparison of alternative reductions is
+deferred until a consumer needs one; (ii) the top note is the first version's single reduction rule.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a deferral. (ii) **RELOCATED** — to ***the second axis — voice leading***,
+whose own subject it is.
+
+---
+
+**Row 37.149 — item 4: three of four census beds onboarded, each for its component.**
+
+*Outgoing statement.* "**Census items — ★ THREE OF FOUR ONBOARDED at corpus Wave 2 (2026-07-03,
+`records/cc/reports/cc_corpus_wave2_report.md`; research-tier, hash-pin-only, held-out, under `corpora/annot/`):** the
+phrase-boundary bed (VL-E — the **Essen** CCARH kern edition, pin `2d0ca75e`: 8,473 tunes, europa 6,213, 100%
+phrase-marked; monophonic-folk coverage caveat); the texture-labeled bed (VL-C validation — the ISMIR-2022 per-bar
+annotations, pin `3dce4ab8`: 1,164 bar labels keyed (K-id, mn) directly to our DCML Mozart clone; also the §15-1
+reference); the schemata bed (VL-F — DCML `schema_annotation_data`, pin `76f810a1`: 273 instances at pin / 244 at the
+paper snapshot; self-contained score bundle, same works as the DCML sonatas, distinct encoding)." — the section *15.
+Open items & deferred refinements*, its item 4, a lead ending in a colon whose sentence carries the claims (locator:
+lines 668–674). Two claims: (i) three of the four beds were onboarded, research-tier and held out, on a date; (ii) the
+phrase-boundary bed serves VL-E, the texture-labeled bed VL-C's validation and the schemata bed VL-F.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event: a corpus onboarding. (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose corpora these are.
+
+---
+
+**Row 37.150 — item 4: a stream-labeled bed for implied polyphony still open.**
+
+*Outgoing statement.* "**Still open:** an implied-polyphony stream-labeled bed (VL-D's target task)." — the section *15.
+Open items & deferred refinements*, its item 4 (locator: lines 674–675).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status: a bed not yet found.
+
+---
+
+**Row 37.151 — item 4: candidates for notated polyphony; the implied-polyphony half a confirmed negative.**
+
+*Outgoing statement.* "**★ Union-search update (ratified 2026-07-04, `cowork_union_search_record.md` §1):** the
+NOTATED-polyphony half now has ratified acquisition candidates — piano_svsep (393 pieces, per-note voice+staff GT over
+DCML piano scores we hold), MCMA (~475, CC-BY, hand-exploded Baroque voices), vocsep_ijcai2023 (1,054, notation-derived)
+— acquisition rides the next corpus dispatch; the IMPLIED-polyphony half is a **confirmed-final negative**
+(VoiSe/Gray-Bunescu never released)." — the section *15. Open items & deferred refinements*, its item 4, its bold ★ lead
+ending in a colon (locator: lines 675–680). Two claims: (i) the search and its ratified candidates for notated
+polyphony, their acquisition riding the next corpus dispatch, on a date; (ii) no ground truth for implied polyphony
+exists, a confirmed-final negative.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event and a plan. (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose ground truth it names.
+
+---
+
+**Row 37.152 — item 4: VL-D's design deciding whether notated-voice ground truth suffices.**
+
+*Outgoing statement.* "VL-D's design decides whether notated-voice GT suffices for its v1 target (add to §15-8's
+decision list)." — the section *15. Open items & deferred refinements*, its item 4 (locator: lines 680–681).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose open design question it is.
+
+---
+
+**Row 37.153 — item 4: a further annotation set held.**
+
+*Outgoing statement.* "Also held: protovoice-annotations (38, reduction-encoded, partial)." — the section *15. Open
+items & deferred refinements*, its item 4 (locator: line 681).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a holding.
+
+---
+
+**Row 37.154 — item 4: the three beds acquired; one bed's licence corrected to a non-commercial one.**
+
+*Outgoing statement.* "**★ ACQUIRED (2026-07-04, `records/cc/reports/cc_acquisition_round_report.md`):** all three N9
+beds cloned + pinned + verified — piano_svsep @ `1462e7c2` (MIT code; GT graphs fetched at runtime from
+`fosfrancesco/piano_corpora_dcml`), MCMA @ `2bdb12e2` (475 `.mxl`, split 153/239/83 verified; **license CORRECTED to
+CC-BY-NC-SA-4.0** — the above "CC-BY" was the record's error, the NC clause matters for VL-H's downstream commercial
+posture), vocsep_ijcai2023 @ `82152a95` (MIT — not "unstated"; ~1,054 graphs built at runtime from bach-370-chorales +
+Haydn/Mozart SQ + MCMA)." — the section *15. Open items & deferred refinements*, its item 4, its bold ★ lead ending in a
+colon (locator: lines 682–687). Two claims: (i) the three beds were cloned, pinned and verified, on a date; (ii) one
+bed's licence is CC-BY-NC-SA-4.0, its non-commercial clause bearing on VL-H's commercial posture. The sentence's remark
+that the licence written earlier in the same item was the record's error records a correction of the member's own; it is
+taken with claim (ii) and not tabulated apart, the earlier wording standing in the sentence Row 37.151 quotes.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an event: a corpus acquisition. (ii)
+**RELOCATED** — to ***the measurement of the analysis***, as Row 16.20 (i) placed a non-commercial licence.
+
+---
+
+**Row 37.155 — item 4: all the beds held out, now on disk.**
+
+*Outgoing statement.* "All held-out; VL-D's §15-8 notated-voice-suffices decision now has the beds on disk." — the
+section *15. Open items & deferred refinements*, its item 4 (locator: line 687). Two claims: (i) the beds are held out;
+(ii) the beds the decision needs are now on disk.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, as Row 8.138. (ii) **HISTORICAL**
+— a holding.
+
+---
+
+**Row 37.156 — item 6: the static-harmony feature a refinement of the harmonic taxonomy, for a later wave.**
+
+*Outgoing statement.* "**The static-harmony/motion-type feature** recorded by the study as the natural home of the
+harmonic study's deferred "wobbly sixth" (modal/static jazz) — a *harmonic-axis* taxonomy refinement informed by axis-2
+features; it rides a future idiom re-discovery wave, not this axis's build." — the section *15. Open items & deferred
+refinements*, its item 6 (locator: lines 689–691). Two claims: (i) the feature is a refinement of the harmonic idiom
+taxonomy informed by the axis's features; (ii) it rides a future idiom re-discovery wave.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, the harmonic
+reading whose idiom calibration it refines. (ii) **HISTORICAL** — a plan.
+
+---
+
+**Row 37.157 — item 8: whether a note may belong to two streams a VL-D design decision.**
+
+*Outgoing statement.* "The separation literature mostly assigns each note to one stream; the answer — and its
+consequences for stream-tier profiles — is a VL-D design-doc decision, recorded here so it is not lost." — the section
+*15. Open items & deferred refinements*, its item 8 (locator: lines 695–696). One claim is tabulated: the answer is a
+design decision of VL-D; the remark on the literature is narrative.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose open design question it is.
+
+---
+
+**Row 37.158 — item 9: the within-voice boundary questions VL-E design decisions.**
+
+*Outgoing statement.* "Both are VL-E design-doc decisions, parallel to §15-8." — the section *15. Open items & deferred
+refinements*, its item 9 (locator: lines 699–700).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, whose open design questions they are.
+
+---
+
+**Row 37.159 — item 10: VL-H's validation ground truth built, not downloaded.**
+
+*Outgoing statement.* "**VL-H validation GT = BUILD, NOT DOWNLOAD (user-ratified ruling, 2026-07-04,
+`cowork_union_search_record.md` §5).**" — the section *15. Open items & deferred refinements*, its item 10, its bold
+lead a complete sentence, tabulated under rule (1) (locator: lines 701–702). Two claims: (i) VL-H's validation ground
+truth is built, not downloaded; (ii) that was ruled, on a date.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth it names. (ii)
+**HISTORICAL** — an event: a ruling.
+
+---
+
+**Row 37.160 — item 10: no public part-writing-error dataset existing.**
+
+*Outgoing statement.* "No public part-writing-error/exercise dataset exists (the commercial platforms Harmonia/Artusi
+hold exactly this data, closed — also demand evidence)." — the section *15. Open items & deferred refinements*, its item
+10 (locator: lines 702–703).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth it names.
+
+---
+
+**Row 37.161 — item 10: VL-H's design owning the construction, by two named routes.**
+
+*Outgoing statement.* "VL-H's design doc owns the construction, two named routes: (i) transcribe the REAL-music positive
+seeds — Luke Dahn's manuscript-checked 46 consecutive-5th/8ve instances in the Bach chorales (categorized
+fermata/NCT/chordal) + Fitsioris-Conklin's 18 parallel-5th passages — with the remaining chorales as near-negatives;
+(ii) a synthetic-violation corpus (mutate correct solutions, auto-label the injected violation — every checker
+precedent's internal strategy)." — the section *15. Open items & deferred refinements*, its item 10 (locator: lines
+703–707).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose construction of a ground truth
+it names.
+
+---
+
+**Row 37.162 — A1: the axis admitted with its decomposition and the three gates.**
+
+*Outgoing statement.* "**A1 — admit the axis** with the §5 decomposition and the three co-equal gates as argued
+(§9-D1)." — the section *16. Ratification asks*, its bullet led *A1* (locator: line 712). The ask was ratified with the
+others, as the banner records (Row 37.7).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 37.121 (i).
+
+---
+
+**Row 37.163 — A2: the staged build order; the later components design-gated.**
+
+*Outgoing statement.* "**A2 — the staged build order:** VL-A → VL-B → VL-C as the one dormant foundation build (a single
+CC increment, instruction just-in-time); VL-D/E/F/G design-gated (§5.4)." — the section *16. Ratification asks*, its
+bullet led *A2* (locator: lines 713–714). The ask was ratified with the others, as the banner records (Row 37.7). Two
+claims: (i) the three foundation components built first as one dormant build; (ii) the later components design-gated.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a build plan, carried out as Row 37.1 records. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, as Row 19.60.
+
+---
+
+**Row 37.164 — A3: the two-tier voice model.**
+
+*Outgoing statement.* "**A3 — the two-tier voice model** (notated voice = fact; stream = inference; one-sense
+enforcement) (§9-D3)." — the section *16. Ratification asks*, its bullet led *A3* (locator: line 715). The ask was
+ratified with the others, as the banner records (Row 37.7).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 37.123.
+
+---
+
+**Row 37.165 — A4: the voice-leading-span criterion.**
+
+*Outgoing statement.* "**A4 — the voice-leading-span criterion** ("the span one texture classification prevails over";
+owner VL-C; v1 = whole selection until §15-1 measures the refinement)." — the section *16. Ratification asks*, its
+bullet led *A4* (locator: lines 716–717). The ask was ratified with the others, as the banner records (Row 37.7).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.42.
+
+---
+
+**Row 37.166 — A5: the per-voice span kind admitted to the typology.**
+
+*Outgoing statement.* "**A5 — the typology extension:** admit the **per-voice span kind** (phrase-spans: overlapping
+across voices by construction, tiling within one voice) into ARCHITECTURE §2.15 — needed before VL-E's design can be
+written against the typology." — the section *16. Ratification asks*, its bullet led *A5* (locator: lines 718–720). The
+ask was ratified with the others, as the banner records (Row 37.7).
+
+*Derived statements that speak to it.* L3-S42.
+
+*Current-text axis.* L3-S42: **AGREES** — *"The accepted melodic phrase, which overlaps across voices, is the axis's"*,
+as at Row 19.44.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.44.
+
+---
+
+**Row 37.167 — A6: the axis notated-music only, its style coordinate undefined for voiceless sources.**
+
+*Outgoing statement.* "**A6 — the coverage declaration:** the axis is notated-music only; the voice-leading style
+coordinate is *undefined* (not zero) for voiceless sources; unvalidated marks per §10." — the section *16. Ratification
+asks*, its bullet led *A6* (locator: lines 721–722). The ask was ratified with the others, as the banner records (Row
+37.7).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 23.27.
+
+---
+
+**Row 37.168 — A7: the claims registry.**
+
+*Outgoing statement.* "**A7 — the claims registry:** VL-F claims the six voice-leading-defined Vocabulary entries; VL-E
+claims the melodic phrase [MT]; VL-G claims voicing/arrangement (the dictionary §5.3 exclusion); VL-H claims
+part-writing checking & suggestion (the advisory consumer, incl. the VL-B per-sample motion-event export that serves
+it)." — the section *16. Ratification asks*, its bullet led *A7* (locator: lines 723–725). The ask was ratified with the
+others, as the banner records (Row 37.7).
+
+*Derived statements that speak to it.* L3-S42.
+
+*Current-text axis.* L3-S42: **AGREES** — *"The accepted melodic phrase, which overlaps across voices, is the axis's"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Rows 19.60 to 19.64.
+
+---
+
+**Row 37.169 — A7: the claims discharged only at each component's own ratified design.**
+
+*Outgoing statement.* "Recorded as claims with owners, discharged only at each component's own ratified design." — the
+section *16. Ratification asks*, its bullet led *A7* (locator: line 726).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 19.60.
+
+---
+
+**Row 37.170 — A8: the cross-axis dependency rule.**
+
+*Outgoing statement.* "**A8 — the cross-axis dependency rule** (acyclicity by declaration, re-checked per wiring)
+(§9-D6)." — the section *16. Ratification asks*, its bullet led *A8* (locator: line 727). The ask was ratified with the
+others, as the banner records (Row 37.7).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, as Row 37.128 (i).
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold labels read as titles under rule (1) are neither here nor among the rows; a quotation from range 1 drops the quotation-block marker.
+
+1. "Corrected in place 2026-08-11, §0's terms bullet carrying the full account; …" (8–9) — provenance: the record of a
+   correction made in place; the former wording listed as provenance following §6.3's items 1 and 14, §6.23's item 15,
+   §6.35's item 38 and §6.36's item 24.
+2. "**Two build declarations owed by the design are now closed:**" (9) — a lead ending in a colon, introducing the two
+   items Rows 37.4 and 37.5 tabulate.
+3. "**(Original draft banner follows.)**" (25) — a remark introducing the earlier banner.
+4. "Roadmap home: `docs/implementation_roadmap.md`, forward-increment step 4 …" (28–30) — a pointer to the roadmap, with
+   this document's place in it.
+5. "Ratification asks: §16." (32) — a pointer.
+6. "**QA record (2026-07-03):** the template's two writing-standard sections …" (34–35) — provenance: a review of the
+   writing.
+7. "**Independent fresh-eyes audit (2026-07-03, user-directed — the spec-polish rigor):** a separate-context adversarial
+   audit …" (41–47) — provenance: an audit, its findings, and one finding rejected with its evidence.
+8. "Verdict quoted: …" (47–48) — provenance: the audit's verdict.
+9. "*(Per the template convention: arc42 Deployment view and Human-interface design are N/A …" (50–51) — a remark on
+   this document's structure.
+10. "Stated once here.)*" (51) — a remark on this document's structure.
+11. "**"bar"** is used ONLY for the metric unit of notation; …" (68–69) — a remark on this document's own vocabulary,
+    under the one-sense declarations.
+12. "**"measure" / "measured"** is used ONLY as the empirical verb …" (69–70) — a remark on this document's own
+    vocabulary, under the one-sense declarations.
+13. "**"key"** is used ONLY for tonality …" (71) — a remark on this document's own vocabulary, under the one-sense
+    declarations.
+14. "**"sequence"** (the harmonic device) does not appear in this document; …" (72) — a remark on this document's own
+    vocabulary, under the one-sense declarations.
+15. "**"margin"** is used ONLY for the Class-M best-vs-second-best decision statistic …" (73–74) — a remark on this
+    document's own vocabulary, under the one-sense declarations.
+16. "(The operational sampling rule that decides "consecutive time points" …" (107–108) — a pointer to the entry Row
+    37.36 quotes.
+17. "So a pair moving from a major third to a minor third is similar motion, …" (111–112) — an example illustrating the
+    rule Row 37.22 quotes; inside the home of D-398.
+18. "*(This bullet formerly closed: "whether 'interval preserved' …" (116–117) — the preserved former wording, listed as
+    provenance following §6.3's items 1 and 14, §6.23's item 15, §6.35's item 38 and §6.36's item 24.
+19. "That statement was true when written and is FALSE at HEAD — …" (117–118) — provenance: the record of the
+    correction.
+20. "The former wording is preserved here (#12), and the tracking line in §15 is untouched.)*" (119) — provenance: where
+    the former wording stands.
+21. "(Ref: Caplin 1998 for the cadence-defined phrase.)" (128) — a citation.
+22. "This document is the criterion's home; …" (169–170) — a pointer: where the span's criterion is homed.
+23. "**What this is.** The architecture of the **voice-leading axis** …" (184–186) — narrative: what this document is.
+24. "**Why it exists (the problem).** The harmonic spine answers "what are the chords, keys, functions?"" (192) —
+    narrative framing the problem the axis answers.
+25. "Corrected 2026-08-11, `OPEN_ITEMS.md` OI-276 (3); …" (235–236) — provenance: the record of a correction; the former
+    parenthetical is preserved elsewhere.
+26. "Rules:" (342) — a lead ending in a colon, introducing the list of rules.
+27. "Methods to lean on: Chew & Wu contig-mapping, VISA, …" (415–417) — a pointer to the published methods VL-D's design
+    may draw on.
+28. "A user selects eight bars mid-movement." (486) — narrative: the scenario's setting.
+29. "*(Design-gated types sketched, not fixed: …" (505) — a remark on the types this design does not fix.
+30. "*Alternative rejected:* folding motion features into L1.5 …" (543–544) — the defense of D1, an excluded alternative
+    and why, under the second reading rule.
+31. "*Alternative rejected:* interval-profile-led (the pilot's view) …" (547–548) — the defense of D2, under the second
+    reading rule; inside the home of D-388.
+32. "*Alternative rejected:* a single "voice" concept with a quality flag …" (550–551) — the defense of Rows 37.123 and
+    37.124, under the second reading rule; inside the home of D-389.
+33. "The evidence is per-piece; a per-span claim would be assumption-based code." (552–553) — the defense of Row 37.125,
+    under the second reading rule; inside the home of D-390.
+34. "*Alternative rejected:* shipping windowed per-span classification now …" (554–555) — the defense of Rows 37.125 and
+    37.126, under the second reading rule; inside the home of D-390.
+35. "This is the proportionality gate applied *inside* the axis …" (557–558) — a remark relating Row 37.127 to the
+    admission gates; inside the home of D-392.
+36. "*Alternative rejected:* one monolithic axis build." (558) — the defense of Row 37.127, under the second reading
+    rule; inside the home of D-392.
+37. "Each future wiring re-states this check in its instruction." (565) — development conduct: what each later dispatch
+    states; inside the home of D-391.
+38. "*Alternative rejected:* a blanket "axis 2 reads nothing harmonic" …" (565–567) — the defense of Row 37.128, under
+    the second reading rule; inside the home of D-391.
+39. "**Scope-creep risk:** the axis names many future objects (phrases, schemata, voicing)." (613) — a remark naming a
+    risk to this design.
+40. "**Borrowed / built on:** the motion-type and interval feature definitions and the texture taxonomy …" (632–643) — a
+    lead ending in a colon introducing the sources this design builds on: citations; its compound broken at the end of line
+    640 lies past the opening quoted here, so the quotation join does not reach this item.
+41. "Full citations and confidence marks: …" (643–644) — a pointer.
+42. "Written just-in-time as a CC instruction when it is the next dispatch." (658–659) — development conduct: when a
+    dispatch is written.
+43. "**VL-D/E/F/G/H design docs** — each written just-in-time …" (688) — development conduct: when the later components'
+    documents are written.
+44. "**ARCHITECTURE §2.15 propagation** (with the build, per §10 doc-sync): …" (692–693) — development conduct:
+    documentation to be carried into another document.
+45. "**The VL-D shared-note question** (user-raised 2026-07-03): may one note belong to two streams …" (694–695) — a
+    question, the open item's subject, put and not answered.
+46. "**The VL-E within-voice boundary questions** (audit finding, 2026-07-03): may one note belong to two phrase-spans
+    …" (697–699) — a question, the open item's subject, put and not answered.
+47. "And do rests between phrases sit inside a phrase-span or between phrase-spans?" (699) — a question, put and not
+    answered.
+48. "Tooling precedents recorded: music21 theoryAnalyzer, …" (708) — citations.
+
+#### The arithmetic at this member
+
+- Rows written: **170**.
+- **Outgoing statements placed: 241** — 107 rows of one claim, 56 rows of two (Rows 37.2, 37.3, 37.4, 37.5, 37.10,
+  37.12, 37.21, 37.23, 37.24, 37.26, 37.28, 37.29, 37.30, 37.31, 37.33, 37.37, 37.38, 37.39, 37.50, 37.53, 37.54, 37.55,
+  37.57, 37.61, 37.64, 37.70, 37.71, 37.72, 37.73, 37.75, 37.85, 37.86, 37.91, 37.95, 37.96, 37.98, 37.99, 37.100,
+  37.106, 37.108, 37.125, 37.131, 37.133, 37.134, 37.140, 37.144, 37.145, 37.146, 37.148, 37.149, 37.151, 37.154,
+  37.155, 37.156, 37.159 and 37.163), 6 rows of three (Rows 37.8, 37.42, 37.78, 37.101, 37.121 and 37.128) and 1 row of
+  four (Row 37.47).
+- Listed under *not a statement*: **48**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: 3**, each with what this session read at its row.
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 1 | 37.26 (ii) |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 181 | 37.3 (ii), 37.4 (i), 37.5 (i), 37.8 (ii), 37.8 (iii), 37.10 (i), 37.11, 37.12 (ii), 37.14, 37.15, 37.16, 37.17, 37.19, 37.20, 37.21 (i), 37.22, 37.23 (ii), 37.24 (i), 37.24 (ii), 37.25, 37.26 (i), 37.27, 37.28 (i), 37.28 (ii), 37.29 (i), 37.29 (ii), 37.30 (i), 37.31 (ii), 37.32, 37.33 (i), 37.33 (ii), 37.34, 37.35, 37.36, 37.37 (i), 37.37 (ii), 37.38 (i), 37.38 (ii), 37.39 (i), 37.39 (ii), 37.40, 37.41, 37.42 (i), 37.42 (ii), 37.42 (iii), 37.43, 37.44, 37.45, 37.47 (ii), 37.47 (iii), 37.48, 37.49, 37.50 (i), 37.50 (ii), 37.51, 37.52, 37.53 (i), 37.53 (ii), 37.54 (i), 37.55 (ii), 37.56, 37.57 (i), 37.57 (ii), 37.58, 37.59, 37.60, 37.61 (i), 37.61 (ii), 37.62, 37.63, 37.64 (i), 37.64 (ii), 37.65, 37.66, 37.67, 37.68, 37.69, 37.70 (i), 37.70 (ii), 37.71 (i), 37.72 (i), 37.73 (ii), 37.74, 37.75 (i), 37.76, 37.77, 37.78 (i), 37.78 (iii), 37.79, 37.80, 37.81, 37.82, 37.83, 37.84, 37.85 (ii), 37.88, 37.89, 37.90, 37.91 (i), 37.91 (ii), 37.92, 37.93, 37.94, 37.95 (i), 37.95 (ii), 37.96 (i), 37.97, 37.98 (i), 37.99 (i), 37.99 (ii), 37.100 (i), 37.101 (ii), 37.101 (iii), 37.102, 37.104, 37.105, 37.106 (i), 37.106 (ii), 37.107, 37.108 (i), 37.109, 37.110, 37.111, 37.112, 37.113, 37.114, 37.115, 37.116, 37.117, 37.118, 37.119, 37.120, 37.121 (i), 37.121 (ii), 37.121 (iii), 37.123, 37.124, 37.125 (i), 37.125 (ii), 37.126, 37.127, 37.128 (i), 37.128 (ii), 37.128 (iii), 37.129, 37.130, 37.131 (i), 37.131 (ii), 37.132, 37.133 (i), 37.134 (i), 37.136, 37.137, 37.138, 37.139, 37.142, 37.143, 37.144 (ii), 37.145 (ii), 37.146 (i), 37.148 (ii), 37.149 (ii), 37.151 (ii), 37.152, 37.154 (ii), 37.155 (i), 37.156 (i), 37.157, 37.158, 37.159 (i), 37.160, 37.161, 37.162, 37.163 (ii), 37.164, 37.165, 37.166, 37.167, 37.168, 37.169, 37.170 |
+| QUARANTINED | 25 | 37.2 (i), 37.2 (ii), 37.4 (ii), 37.5 (ii), 37.6, 37.10 (ii), 37.13, 37.23 (i), 37.30 (ii), 37.47 (i), 37.47 (iv), 37.54 (ii), 37.72 (ii), 37.78 (ii), 37.86 (ii), 37.87, 37.98 (ii), 37.100 (ii), 37.108 (ii), 37.122, 37.133 (ii), 37.135, 37.140 (ii), 37.146 (ii), 37.147 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 31 | 37.1, 37.3 (i), 37.7, 37.8 (i), 37.9, 37.12 (i), 37.21 (ii), 37.55 (i), 37.71 (ii), 37.73 (i), 37.75 (ii), 37.85 (i), 37.86 (i), 37.96 (ii), 37.101 (i), 37.103, 37.134 (ii), 37.140 (i), 37.141, 37.144 (i), 37.145 (i), 37.148 (i), 37.149 (i), 37.150, 37.151 (i), 37.153, 37.154 (i), 37.155 (ii), 37.156 (ii), 37.159 (ii), 37.163 (i) |
+| UNPLACED | 3 | 37.18, 37.31 (i), 37.46 |
+| **Total** | **241** | — |
+
+**The column sums to 241 (1 + 0 + 181 + 25 + 0 + 31 + 3), against 241 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 19 |
+| DIFFERS | 3 |
+| THE DERIVATION IS SILENT | 219 |
+| **Total verdicts** | **241** |
+
+The AGREES statements: 37.10 (i) (L3-S42), 37.17 (L3-S42), 37.25 (L3-S42), 37.26 (i) (L3-S42), 37.26 (ii) (L3-S42),
+37.27 (L3-S42), 37.41 (L3-S42), 37.42 (i) (L3-S42), 37.43 (L3-S42), 37.44 (L3-S42), 37.47 (ii) (L3-S42), 37.49 (L3-S38),
+37.56 (L3-S33), 37.61 (i) (L3-S9), 37.94 (L3-S42), 37.113 (L3-S42), 37.121 (i) (L3-S42), 37.166 (L3-S42),
+37.168 (L3-S42). The DIFFERS statements: 37.18 (L3-S42), 37.31 (i) (L3-S15), 37.46 (L3-S9).
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 37 is empty, and the document is not
+  one of the five withheld from the deriving session's pack.
+- **SEEN rows: none** — no SEEN home lies in this document, agreeing with §5.
+- **In a home that is not withheld and not seen, carrying no mark**: D-398 at Rows 37.21 and 37.22, its home ending
+  inside the sentence Row 37.23 quotes, which starts on its last line; D-388 at Row 37.122; D-389 at Rows 37.123 and
+  37.124; D-390 at Rows 37.125 and 37.126; D-392 at Row 37.127; and D-391 at Rows 37.128 and 37.129.
+- **The cut** holds the homes of D-393, D-394, D-395 and D-396 and the retired D-399, each wholly inside a cut span; no
+  row is tabulated there.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -43048,6 +46356,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 22.80 and 22.81 — the order in which chord symbols are written into the score moving no region boundary and no
   other path's output. *(As Rows 20.12 to 20.14; L3-S29 AGREES at both.)*
 - Rows 36.2 and 36.134 — the tick, the absolute time-position in the score, the notation's own time unit.
+- Rows 37.14 and 37.15 — the notated voice, the (staff, voice) line the score writes, and the engraving model's voices
+  and staves. *(The L0 block gives voice membership; as Rows 11.11 (i) and 20.34 (i).)*
 
 **To *L1 — Change points, candidates and notated evidence*.**
 
@@ -43115,6 +46425,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 36.66 (i), 36.67, 36.148 (i), 36.149, 36.150, 36.151 and 36.155 — each marker's scope, global or per voice, and
   the cue and scope every picked boundary carries. *(As Row 7.264 (ii); L3-S9 AGREES at each; Rows 36.66 (i) and 36.67
   are WITHHELD — D-485.)*
+- Row 37.61 (i) — the per-part breath, caesura and fermata cues as natural per-voice phrase evidence. *(As Row 36.155;
+  L3-S9 AGREES at the row.)*
 
 **To *L2 — The tonal reading. The one entangled decision.***
 
@@ -43381,6 +46693,10 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   chord-symbol string and no Roman numeral.
 - Row 35.134 (i) — the restriction of the fine-grain override to the coupled key-and-chord minority as its principled
   form.
+- Rows 37.47 (iii), 37.71 (i) and 37.156 (i) — the non-chord-tone filter a concern of the harmonic analysis's chord
+  emission, consuming the voice-leading axis's facts and not its judgments, and a refinement of the harmonic idiom
+  taxonomy informed by the axis's features. *(L2 publishes the chord-tone assignment and elaboration relation per
+  sounding note.)*
 
 **To *the second axis — voice leading*.**
 
@@ -43403,6 +46719,46 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 36.14 (ii), 36.58 (ii), 36.81 (i), 36.94 (ii) and 36.152 (ii) — each voice's own phrasing: the per-voice
   boundaries exposed for a consumer that wants one line's phrasing, a lone breath the raw material of the voice-leading
   axis. *(As Row 8.10; L3-S42 AGREES at each; Row 36.94 (ii) is WITHHELD — D-479.)*
+- Rows 37.10 (i), 37.12 (ii), 37.19, 37.44, 37.47 (ii), 37.54 (i), 37.121 (i), 37.121 (iii) and 37.162 — the
+  voice-leading axis an orthogonal analysis dimension with its own components, admitted through the three gates, the
+  home of analysis objects without an owner, its build touching no behaviour of the harmonic spine. *(As Row
+  19.59 (ii); L3-S42 AGREES at Rows 37.10 (i), 37.44, 37.47 (ii) and 37.121 (i).)*
+- Rows 37.17, 37.25, 37.26 (i), 37.27, 37.41, 37.42 (i), 37.42 (ii), 37.42 (iii), 37.43, 37.94, 37.95 (i), 37.113,
+  37.158 and 37.166 — the melodic phrase in the axis's scope and owned by it, concurrent and overlapping across voices,
+  the per-voice phrase-span and its kind, VL-E's segmentation and its evidence, a fugue's subject entries, and the
+  within-voice boundary questions. *(As Rows 19.47 and 19.62 (i); L3-S42 AGREES at Rows 37.17, 37.25, 37.26 (i),
+  37.27, 37.41, 37.42 (i), 37.43, 37.94, 37.113 and 37.166.)*
+- Rows 37.16, 37.28 (i), 37.28 (ii), 37.34, 37.35, 37.89, 37.92, 37.93, 37.123, 37.124, 37.152, 37.157 and 37.164 —
+  the notated voice a fact and the inferred stream a judgment, never conflated; implied polyphony and stream
+  separation, its output and its open design questions. *(As Row 21.179; Rows 37.123 and 37.124 lie in D-389's home,
+  unmarked.)*
+- Rows 37.4 (i), 37.20, 37.21 (i), 37.22, 37.23 (ii), 37.32, 37.33 (i), 37.33 (ii), 37.36, 37.37 (i), 37.37 (ii),
+  37.50 (i), 37.80, 37.81, 37.82, 37.83, 37.84, 37.85 (ii), 37.133 (i), 37.134 (i), 37.145 (ii), 37.146 (i) and
+  37.148 (ii) — the voice-linear view, the chordal voice and its declared reduction, the motion types with parallel
+  motion judged semitone-exact, and the motion and interval profiles and the per-sample motion events as
+  deterministic facts reproducing the study's. *(Rows 37.21 (i) and 37.22 lie in D-398's home, unmarked.)*
+- Rows 37.5 (i), 37.8 (ii), 37.8 (iii), 37.11, 37.24 (i), 37.24 (ii), 37.38 (i), 37.39 (i), 37.39 (ii), 37.40,
+  37.50 (ii), 37.69, 37.70 (i), 37.70 (ii), 37.78 (i), 37.125 (i), 37.125 (ii), 37.126, 37.136, 37.137, 37.143,
+  37.165 and 37.167 — texture and its classification from the profiles, motion type leading, the voice-leading idioms
+  and the style structure's second coordinate, the voice-leading-span over the whole selection with its refinement
+  gated on a measurement, full ranked alternatives on every inference, abstention where there are no voice pairs, and
+  the axis for notated music only. *(As Rows 23.24 to 23.27; Rows 37.125 (i), 37.125 (ii) and 37.126 lie in D-390's
+  home, unmarked.)*
+- Rows 37.29 (i), 37.29 (ii), 37.30 (i), 37.45, 37.58, 37.72 (i), 37.73 (ii), 37.74, 37.75 (i), 37.79, 37.97,
+  37.98 (i), 37.99 (i), 37.99 (ii), 37.100 (i), 37.101 (iii), 37.102, 37.104, 37.105, 37.106 (i), 37.106 (ii), 37.107,
+  37.127, 37.138, 37.139, 37.163 (ii), 37.168 and 37.169 — the later components VL-D to VL-H as claims with owners,
+  each behind its own design and measurement: the galant schemata and the line cliché recognized by VL-F, chord voicing
+  by VL-G, part-writing checking and suggestion by VL-H, advice and not analysis. *(As Rows 19.60 to 19.64; Row 37.127
+  lies in D-392's home, unmarked; L3-S42 AGREES at Row 37.168.)*
+- Rows 37.31 (ii), 37.48, 37.49, 37.51, 37.52, 37.57 (i), 37.59, 37.60, 37.61 (ii), 37.62, 37.63, 37.64 (i),
+  37.64 (ii), 37.65, 37.66, 37.67, 37.68, 37.76, 37.77, 37.78 (iii), 37.95 (ii), 37.108 (i), 37.109, 37.110, 37.111,
+  37.112, 37.114, 37.115, 37.116, 37.117, 37.118, 37.119, 37.120, 37.128 (i), 37.128 (ii), 37.128 (iii), 37.129 and
+  37.170 — the axis's discipline: forward-only within it and no backward edge, any notated score, the bounded-context
+  contract, the one shared note model and the phrase-boundary primitive reused and never re-detected, cadences not
+  re-detected, the committed key its only harmonic read, nothing imported from the slices or the later harmonic
+  layers, its exports and data types, its behaviour in the scenarios, and cross-axis reads admissible only where the
+  joint dependency graph stays acyclic. *(L3-S38 AGREES at Row 37.49; Rows 37.128 (i), 37.128 (ii), 37.128 (iii) and
+  37.129 lie in D-391's home, unmarked.)*
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -43433,6 +46789,10 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   score's profile only and overriding no other layer's answer. *(L3-S32 DIFFERS at Rows 36.5 (ii), 36.31 (i) and
   36.32 (i), and AGREES at Rows 36.31 (ii) and 36.32 (ii); every claim of Rows 36.31 (i) to 36.32 (iii) lies in D-484's
   home, marked SEEN.)*
+- Rows 37.38 (ii), 37.53 (i), 37.53 (ii), 37.56, 37.91 (i) and 37.131 (ii) — the voice-leading axis's confidences in
+  [0,1], class-declared and named to their decision, texture classification's Class-M confidence, no new comparison
+  frame, and what lacks ground truth carrying an alternative-confidence path and an empirically-unvalidated mark. *(As
+  Rows 19.71, 19.72 and 21.194 (i); L3-S33 AGREES at Row 37.56.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -43515,6 +46875,12 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   validated on orchestral, contrapuntal and other non-chorale music. *(As Rows 20.32 (ii) and 20.33 (ii); L3-S14 AGREES
   at Rows 36.96, 36.100 (i) and 36.106 (iii); Rows 36.100 (i), 36.100 (ii), 36.101 and 36.102 lie in D-483's home,
   unmarked; Row 36.70 (ii) is WITHHELD — D-485, and Row 36.96 — D-479.)*
+- Rows 37.3 (ii), 37.55 (ii), 37.57 (ii), 37.88, 37.90, 37.91 (ii), 37.96 (i), 37.101 (ii), 37.121 (ii), 37.130,
+  37.131 (i), 37.132, 37.142, 37.144 (ii), 37.149 (ii), 37.151 (ii), 37.154 (ii), 37.155 (i), 37.159 (i), 37.160 and
+  37.161 — the standing stop of gate block (A), the parity duty and the discovery pipeline as the validation harness,
+  the merged-voices check for stream separation, the census beds and their roles, the ground truth found or absent
+  for each component and built for VL-H, a non-commercial licence, and the beds held out. *(As Rows 16.20 (i), 21.12
+  and 36.99.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
@@ -43522,8 +46888,8 @@ the rows numbered 10.n, member 11's the rows numbered 11.n, member 12's the rows
 numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered 16.n, member 17's the rows numbered
 17.n, member 19's the rows numbered 19.n, member 20's the rows numbered 20.n, member 21's the rows numbered 21.n,
 member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 24's the rows numbered 24.n, member 30's
-the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, and member 36's the rows
-numbered 36.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
+the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
+numbered 36.n, and member 37's the rows numbered 37.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -44980,6 +48346,57 @@ No QUARANTINED row: the member places no statement (§6.34's manifest header).
   moves no texture boundary?
 - Row 36.156 — is the built primitive's picked set scope-blind at the current commit, as Row 36.68 asks?
 
+**Member 37 — `cowork_voiceleading_axis_design.md`, the passages of the document.**
+
+- Row 37.2 (i) — are the axis's voice-linear view, motion and interval profiles and texture classification built and
+  dormant at the current commit, as Row 19.59 (iii) asks?
+- Row 37.2 (ii) — on which run were the foundation's tests, the corpus gate, the dormancy check and the parity with the
+  study proven, and does each reproduce?
+- Row 37.4 (ii) — does the built motion classification reproduce the exploratory study's motion classifier at the
+  current commit?
+- Row 37.5 (ii) — on which run did nearest-centroid classification in that feature space reproduce the ratified
+  partition at the values quoted, and does it reproduce?
+- Row 37.6 — is the shipped reference set — the means and spreads, the four centroids and the floor defaults — the
+  generated `textureclassifierreference.h` at the current commit?
+- Row 37.10 (ii) — on which pieces and run was the cross-agreement of the two groupings found at the value quoted, and
+  does it reproduce (as Rows 19.59 (iii) and 23.22 ask)?
+- Row 37.13 — does the built harmonic catalog carry the voice-leading-defined flag on exactly the six entries named, the
+  three named deferrals absent, at the current commit (as Row 19.61 (ii) asks)?
+- Row 37.23 (i) — does the built motion classification reproduce the study's classifier exactly, and is it oracle-tested
+  against it, at the current commit?
+- Row 37.30 (ii) — is the line cliché carried as a substitution entry of the harmonic vocabulary, flagged for this axis,
+  at the current commit (as Row 19.61 (ii) asks)?
+- Row 37.47 (i) — on which run were the voice-leading clusters found independent of the harmonic-idiom clusters, at the
+  values quoted, and does it reproduce (as Row 23.22 asks)?
+- Row 37.47 (iv) — on which run did the dormant measurement attribute that share of the exact-match ceiling, and does it
+  reproduce?
+- Row 37.54 (ii) — is the axis's foundation reached by no production path at the current commit, as a source search
+  would show?
+- Row 37.72 (ii) — does the built catalog carry the six entries named with the voice-leading-defined flag, their
+  harmonic-idiom tags placeholders, at the current commit?
+- Row 37.78 (ii) — on which run were motion type shown to recover the texture structure where the interval profile does
+  not, and the confounds ruled out, at the values quoted, and does it reproduce?
+- Row 37.86 (ii) — does the built profile judge parallel motion semitone-exact on signed pitches and reduce a chordal
+  voice to its top note by default, at the current commit?
+- Row 37.87 — is the built profiles' eligibility filter the per-line filter combining sounding, visible and an eligible
+  staff, the one the phrase-boundary view uses, at the current commit?
+- Row 37.98 (ii) — does the built catalog carry those six entries with the voice-leading-defined flag at the current
+  commit, as Row 37.13 asks?
+- Row 37.100 (ii) — are the flagged entries' harmonic-idiom tags declared placeholders at the current commit?
+- Row 37.108 (ii) — on which run were the chorale profile's step and leap rates found at the values quoted, and does it
+  reproduce?
+- Row 37.122 — on which run was the ablation decisive and the motion view shown robust to exploded extraction, grouping
+  exploded chamber corpora with the chorales, and does it reproduce?
+- Row 37.133 (ii) — on which run was the arrangement branch found oblique-dominant partly because of the top-note
+  reduction, and does it reproduce?
+- Row 37.135 — on which run was the interval profile's era signal found partly an artifact of chordal density, and does
+  it reproduce?
+- Row 37.140 (ii) — on which runs were the pilot's agreement and the study's values obtained, and does each reproduce
+  (as Rows 19.59 (iii) and 23.22 ask)?
+- Row 37.146 (ii) — does the exploratory study's classifier apply that convention, as read at its source?
+- Row 37.147 — does `voiceleadingprofiles.cpp classifyMotion` replicate the convention exactly, under an oracle test, at
+  the current commit?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -45790,6 +49207,16 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
   L3-S9 makes its family (iii) a phrase-length term *"on the distance in bars from the preceding phrase end"* entering as
   a fitted term.
 
+**Member 37.** No ADOPTED — proposed row.
+
+- **DIFFERS — Row 37.18 (L3-S42):** the outgoing harmonic-grouping unit is the punctuation-span, *"never "phrase""*,
+  where L3-S42 says *"L3's phrase is the harmonic spine's phrase, which tiles."*
+- **DIFFERS — Row 37.31 (i) (L3-S15):** the outgoing cadence is the one *"L5 detects"*, where L3-S15 says *"A cadence is
+  published only at a phrase end L3 has decided"*.
+- **DIFFERS — Row 37.46 (L3-S9):** the outgoing harmonic spine *"is structurally blind to the"* linear dimension, *"how
+  the lines move"*, where L3-S9 says its family (i) reads *"the per-voice relations (the silence before an onset, the time
+  since that voice's preceding attack, the spelled melodic interval)"*.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -45833,11 +49260,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 34 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 3 |
 | 35 | 197 | 0 | 0 | 18 | 153 | 0 | 26 | 0 | 64 |
 | 36 | 237 | 26 | 3 | 125 | 21 | 0 | 18 | 44 | 42 |
-| **Total** | **2784** | **158** | **81** | **1018** | **869** | **0** | **447** | **211** | **919** |
+| 37 | 241 | 1 | 0 | 181 | 25 | 0 | 31 | 3 | 48 |
+| **Total** | **3025** | **159** | **81** | **1199** | **894** | **0** | **478** | **214** | **967** |
 
-**The arithmetic check:** 158 + 81 + 1018 + 869 + 0 + 447 + 211 = 2784, against 2784 statements placed (43 + 34 + 21 +
+**The arithmetic check:** 159 + 81 + 1199 + 894 + 0 + 478 + 214 = 3025, against 3025 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 +
-4 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237).
+4 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -45877,11 +49305,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 34 | 0 | 0 | 0 | 0 |
 | 35 | 3 | 1 | 193 | 197 |
 | 36 | 90 | 47 | 100 | 237 |
-| **Total** | **309** | **299** | **2184** | **2792** |
+| 37 | 19 | 3 | 219 | 241 |
+| **Total** | **328** | **302** | **2403** | **3033** |
 
-**The arithmetic check of the verdicts:** 309 + 299 + 2184 = 2792, against the members' verdict totals (43 + 35 + 21 + 34 +
+**The arithmetic check of the verdicts:** 328 + 302 + 2403 = 3033, against the members' verdict totals (43 + 35 + 21 + 34 +
 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4 + 72
-+ 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237).
++ 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241).
 
 ## 14. The derivation's independence record, relayed
 
