@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l3_comparison_tabulation_sixteenth_2026_10_24.md, Task 2",
+ "dispatch": "cc_instruction_l3_comparison_tabulation_seventeenth_2026_10_24.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -669,38 +669,44 @@
    "base_commit": "1a20310695a1f7ffa913887df5aa6ff3dabd7e34",
    "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_fifteenth_2026_10_24.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_comparison_tabulation_seventeenth_2026_10_24.md, Task 2",
+   "base_commit": "47139e021e90832deb52983e8630c9542709bac3",
+   "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_sixteenth_2026_10_24.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "1a20310695a1f7ffa913887df5aa6ff3dabd7e34",
- "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_fifteenth_2026_10_24.md",
+ "base_commit": "47139e021e90832deb52983e8630c9542709bac3",
+ "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_sixteenth_2026_10_24.md",
  "the_kind_of_move": "ordinary",
  "entries_moved": 3,
- "characters_moved": 3117,
+ "characters_moved": 3147,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2017,
-   "sha256": "9cbd60685beb7570afdae62415b424ee3e1c0036846640c5a4e7a5ae5cfc0993",
+   "characters": 2024,
+   "sha256": "8b839c822f7fab6af39aa10a6ddb03cf8af65fcec5903769552790c16a101c27",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-24 (CC — `records/cc/instructions/cc_instruction_l3_comparison_tabulation_fifteenth_2026_10_24.md`, Task 2, the close. **★★ THE L3 COMPARISON"
+   "opening": "*2026-10-24 (CC — `records/cc/instructions/cc_instruction_l3_comparison_tabulation_sixteenth_2026_10_24.md`, Task 2, the close. **★★ THE L3 COMPARISON"
   },
   {
    "line_at_base": 10,
    "characters": 694,
-   "sha256": "2fda884ca2b3536da29241e2c16c2bc78ffb38ad6b2f78819808bd19c64f6995",
+   "sha256": "94319ac8302facb82ba5812a64830d2f0a55e1f4df2904f817217b667b3ba249",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-24 (CC — Same dispatch, Task 1. **THE L3 COMPARISON CONTINUED: POSITION 37 TABULATED**: a capacity judgment written to a file outside the rep"
+   "opening": "*2026-10-24 (CC — Same dispatch, Task 1. **THE L3 COMPARISON CONTINUED: POSITION 38 TABULATED**: a capacity judgment written to a file outside the rep"
   },
   {
    "line_at_base": 12,
-   "characters": 406,
-   "sha256": "576643aad01fb621d2481a172f1c5a958b4ab5b2d54bf21833e4ab5092d9ec03",
+   "characters": 429,
+   "sha256": "8ba76944f85cad5a8a09e7f400f03dde8f7d47333c7629ab3be80306b1be2029",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-24 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRIES 439 AND 440 ARE LANDED**, as they stood: each checked at its last bytes a"
+   "opening": "*2026-10-24 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRY 441 ARE LANDED**, as they stood: each checked at its last bytes at its blob"
   }
  ],
  "reconciliation": {
