@@ -89,7 +89,7 @@ its own entry there.
 | 38 | `cowork_target_architecture.md` passages | **DONE** (§6.38) |
 | 39 | `cowork_stage5_fitter_design.md` passages | **DONE** (§6.39) |
 | 40 | `cowork_evidence_inventory.md` passages | **DONE** (§6.40) |
-| 41 | `cowork_score_census.md` passages | NOT YET TABULATED |
+| 41 | `cowork_score_census.md` passages | **DONE** (§6.41) |
 | 42 | `cowork_joint_estimator_factorization.md` passages | NOT YET TABULATED |
 | 43 | `cowork_layer3_keymode_design.md` passages | NOT YET TABULATED |
 | 44 | `cowork_progression_schema_design.md` passages | NOT YET TABULATED |
@@ -108,7 +108,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 40 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 41 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -130,7 +130,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, and position 40, the passages of `cowork_evidence_inventory.md`.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, and position 41, the passages of `cowork_score_census.md`.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -166,10 +166,10 @@ tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation
 stopped at the member boundary after position 38 under its own limit on the batch, and not by a capacity judgment;
 position 39 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventeenth_2026_10_24.md`, which stopped at the
-member boundary after position 39 under its own limit on the batch, and not by a capacity judgment; position 40 was
-tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighteenth_2026_10_25.md`.** **The
-writing now stands at the member boundary after position 40: not done, positions 41 to 57, and the next writing
-resumes at position 41.**
+member boundary after position 39 under its own limit on the batch, and not by a capacity judgment; positions 40 and 41
+were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighteenth_2026_10_25.md`.**
+**The writing now stands at the member boundary after position 41: not done, positions 42 to 57, and the next
+writing resumes at position 42.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -55211,6 +55211,1694 @@ The AGREES statements: 40.5 (iii) (L3-S23), 40.8 (ii) (L3-S9), 40.9 (L3-S9), 40.
 
 ---
 
+### 6.41 — Member 41: `cowork_score_census.md`, the passages of the document
+
+> **Manifest for this member.** Position **41**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_score_census.md`. Label: *the passages of the document*, exactly as the artifact spells it — a label
+> that names no heading, so the member's section is the whole document, its lines 1 to 355, as at §6.35 to §6.40. **The
+> twenty-seventh member of this comparison made of passages, the seventh cut from a document other than
+> `ARCHITECTURE.md`, and the fifth cut from a document not withheld from the deriving session's pack**: its entry's
+> `item_4_identities_inside` is empty, so its passages are cut around term-search hits only. Thirteen ranges, each as a
+> locator only (**D-307**), with its first and last line texts exactly as the artifact publishes them (wrapped here for
+> width; the two tables' line texts carry their pipes, as the artifact does):
+>
+> - lines 18–28, from *"| Container class | Closure state (v1) |"* to *"| Partial: per-repo DLC piece counts;
+>   MuseScore.com beyond PDMX (ToS-unwalkable); CPDL/IMSLP symbolic subsets; craigsapp's ~100 kern repos (closure tool
+>   exists: `humdrum-tools/humdrum-data`); abcnotation.com long tail | **Named, bounded** |"*;
+> - lines 30–33, from *"**The standing process rule this census institutes:** from now on, *"a new corpus was
+>   discovered" is a census"* to *"`ismir/mir-datasets` index are the mechanical catch-alls), and at any Stage-5/6
+>   corpus decision."*;
+> - lines 37–63, from *"- **The single biggest untapped asset requires zero new tooling** *(✅ EXECUTED, Wave 1,
+>   2026-07-02)*: the project"* to *"  is image-only (closes the early-music class)."*;
+> - lines 67–70, from *"A source enters the registry only with all five fields decided: **(a) GT type** (RN / chords /
+>   key / cadence /"* to *"class** (PD/CC0/CC-BY committable; NC/unclear → hash-pin-only, the established mechanism);
+>   **(e) decision tier** (§5)."*;
+> - lines 100–110, from *"- **Tier G (gate-candidate GT):** the unused DLC sub-corpora (chromatic/romantic first:
+>   beethoven_sonatas,"* to *"  the appendices with reasons, so they are never "re-discovered"."*;
+> - lines 122–128, from *"**★ AND TIER J GATES A FIT — stated here because that is what the tier is FOR: THE JAZZ FIT IS
+>   DEFERRED TO THE"* to *"is what the two non-jazz presets deliver."*;
+> - lines 141–152, from *"Zenodo/university-hosted annotation sets without GitHub presence (more algomus/Dezrann
+>   material — the algomus/Dezrann"* to *"gate-grade common-practice RN GT (that class is closed by the SOTA-paper
+>   harvest)."*;
+> - lines 170–185, from *"**Mitigations (each cheap, each catching a different miss mode):**"* to *"   its reason in the
+>   appendix tables, so exclusion is auditable and reversible, never a silent omission."*;
+> - lines 192–201, from *"**Why it happens (diagnosed, two mechanisms — neither is a §8 failure, but §8 alone does not
+>   prevent them):**"* to *"   already-held source). A census is only as complete as the list of questions it was asked
+>   with."*;
+> - lines 210–214, from *"**Pending container/GT-layer additions from the 2026-07-03 sweeps (for the next
+>   census/registry edit — Wave-3"* to *"residual — promote to a walked row at Wave 3). *(The Wave-2 beds are already
+>   onboarded/enumerated.)*"*;
+> - lines 216–222, from *"**★ ALL THREE EXECUTED AT WAVE 3 (2026-07-04,
+>   `records/cc/reports/cc_corpus_wave3_report.md`):** BCFB onboarded (`juyaolongpaul/Bach_chorale_FB`,"* to *"registry
+>   `wave3_sources` array."*;
+> - lines 257–278, from *"| # | need (GT/material class) | consumer | state (2026-07-03; *(audit)* = updated
+>   2026-07-04) |"* to *"| N20 | pedal-point GT | pedal-point-span validation (its owning layer's design) | **ADOPTED
+>   (user, 2026-07-04):** covered — VERIFIED DLC `pedal` TSV column on every held corpus (parser-dropped) + algomus
+>   fugue pedals; exposure pending. Completes the §2.15 span-kind↔needs mapping |"*;
+> - lines 339–355, from *"**The supersession decision protocol (user, 2026-07-03 — what happens when a find serves an
+>   already-passed"* to *"   deliberate ratification second, nothing reopened by silence.)"*.
+>
+> **Each of the twenty-six line texts was compared with the line at its locator** in `cowork_score_census.md`, read by
+> this session at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at that
+> commit, **and every one matches**; the ranges hold 153 lines. The blob ends every line in a line feed alone and
+> carries no carriage return, so nothing was stripped before a comparison. **No other member of the artifact is cut from
+> this document** — this session's script, listing every member whose document is `cowork_score_census.md`, found
+> position 41 alone — so nothing is excluded from the cut. The document's other lines lie in no range — lines 1–17, 29,
+> 34–36, 64–66, 71–99, 111–121, 129–140, 153–169, 186–191, 202–209, 215, 223–256 and 279–338, two hundred and two lines
+> of which forty-three are blank, as this session's script lists them; the list is the one the dispatch computed, span
+> for span. By the eleven headings the script lists among them — every heading line of the document, none inside a range
+> — they hold: the title (1); **the status banner** (3 to 11), a quotation block opening *"Status: v1 DELIVERED (Cowork,
+> 2026-07-02); for user disposition of the acquisition tiers (§5)."*; §1's heading and opening paragraph (13 to 16); the
+> headings of §2 and §3; §3's paragraph led *"★ AND A REGISTRY `content` SUMMARY IS ENUMERATION PROVENANCE …"* (72 to
+> 79), **register entry D-513's home**; **the whole of *4. Overlap hazard (the accounting rule)*** (81 to 96),
+> **register entry D-514's home and the retired entry D-361's** among it; §5's heading and its paragraph led *"★ THE
+> SCOPE THE TIERS ABOVE IMPLEMENT IS ITSELF A USER RATIFICATION …"* (112 to 120), **register entry D-500's home**; **the
+> whole of *6. Implementation (CC riders — not this doc's work)*** (130 to 137); §7's heading; §8's heading and two
+> opening paragraphs (154 to 168), **the retired entries D-362's and D-363's homes**; §8b's heading, its observation
+> (189 to 190) and its paragraph led *"The standing trigger instituted …"* (203 to 208), **the retired entry D-364's
+> home**; §8c's opening, its first-run paragraph, the lead of its mechanism and its rule led *"★ AND WHAT EARNS A ROW
+> …"* (224 to 255), **register entries D-365's and D-515's homes**; and, after the needs table, §8c's steps 2 and 3, its
+> relation paragraph, **its block led *"★ STAGE-5 FITTING-POOL LICENSE CONSTRAINT …"*** (291 to 305), its
+> difficulty-grade paragraph (307 to 316, **register entry D-614's home**) and its intake rule with its four items (318
+> to 337, **register entries D-367's and D-665's homes**). *(This session read the whole document at its blob before
+> writing any row, the cut with it; the cut is named here by what stands there, and no cut line is tabulated.)* **The
+> cut holds the member's own account of its standing and the rules several ranges apply** — the status banner, §4's rule
+> of deduplication by work and its record-only rule, §6's riders, §8c's licence constraint on the fitting pool and its
+> intake rule. These are facts of the population artifact for the method ruling's surface, no row quotes a cut line, and
+> no member is widened by hand to take them (**D-671**). No other member of the artifact covers the cut — the passage
+> rule's cut, recorded here as at §6.15 to §6.40, and not repaired. Outgoing statements: **113** (rows 41.1 to 41.69; 28
+> rows of two (Rows 41.1, 41.5, 41.6, 41.7, 41.8, 41.12, 41.14, 41.15, 41.16, 41.17, 41.18, 41.19, 41.27, 41.29, 41.30,
+> 41.46, 41.48, 41.50, 41.51, 41.53, 41.54, 41.55, 41.57, 41.58, 41.60, 41.62, 41.63 and 41.64) and 8 rows of three
+> (Rows 41.49, 41.52, 41.56, 41.59, 41.61, 41.65, 41.66 and 41.67), each split — the arithmetic is at the foot of this
+> member). Listed under *not a statement*: **16**. Counted at this member by this session; the counts appear here and at
+> §13, and nowhere else.
+>
+> **No WITHHELD home lies inside this member**: the artifact's `item_4_identities_inside` for position 41 is empty, and
+> `cowork_score_census.md` is not one of the five documents withheld from the deriving session's pack — **no row is
+> marked WITHHELD**. **No SEEN home lies inside it, agreeing with §5** — none of D-335, D-406, D-482, D-484 and D-502 to
+> D-510 is homed in this document — **so no row is marked SEEN**. **Twenty-four entries of the decisions register's data
+> file are homed in this document, none withheld and none seen, each carrying no mark**: this session's walk of
+> `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit hash),
+> over every record carrying an identity and a home, the retired block included, found, **over the thirteen ranges,
+> twelve**: **register entry D-422** at lines 122 to 128, the whole of range 6, named at Rows 41.27 to 41.29 (and on the
+> *Why:* sentence listed as item 2); **register entry D-366** at line 273, the row *N15*, named at Row 41.62, its
+> content in claim (ii); **register entry D-368** at lines 339 to 355, the whole of range 13, named at Rows 41.68 and
+> 41.69 (and on items 9 to 16); **the retired entry D-359** at lines 30 to 33, the whole of range 2, named at Rows 41.10
+> and 41.11; **the retired entry D-360** at lines 67 to 70, the whole of range 4, named at Row 41.20; and, all on rows
+> of the needs table, **the retired entries D-373 and D-374** together at line 260, the row *N2*, named at Row 41.49,
+> claims (ii) and (iii); **the retired entry D-370** at line 267, *N9*, Row 41.56 (ii); **the retired entry D-369** at
+> line 268, *N10*, Row 41.57 (ii); **the retired entry D-371** at line 271, *N13*, Row 41.60 (ii); **the retired entry
+> D-375** at line 272, *N14*, Row 41.61 (ii); and **the retired entry D-372** at line 277, *N19*, Row 41.66 (iii) — each
+> claim naming the one whose content it carries, as this session read the retired records' titles at the data file.
+> **Over the thirteen cut spans, twelve**: register entries **D-513** (72 to 79), **D-514** (88 to 96), **D-500** (112
+> to 120), **D-365** (226 to 230), **D-515** (242 to 245), **D-614** (307 to 316), **D-367** (318 to 327) and **D-665**
+> (328 to 330), and the retired entries **D-361** (83 to 86), **D-362** (156 to 161), **D-363** (163 to 168) and
+> **D-364** (203 to 208). The walk agrees with the twenty-four the dispatch read, no identity beyond them and none
+> missing. **The walk prints the `status` field of all thirteen retired records as *live*** — the shape the fifteenth
+> batch observed at the retired D-399, relayed as printed and not chased — and D-422's as *deferred*. The decisions
+> register's INDEX records **D-422** *"The jazz fit is deferred to the jazz ground-truth conversion; only the classical
+> common-practice idiom is fitted now"* (group C, DEFERRED, entry ratified 2026-08-03 · user), **D-366**
+> *"Recorded-performance intonation material is OUT of corpus scope — the intonation features are validated by theory
+> and by listening"* (group O, LIVE, entry ratified 2026-08-02 · user) and **D-368** *"When new material bears on an
+> already-settled conclusion, the rework question is settled by a recorded protocol — record, measure cheaply, then fork
+> on whether it CONTRADICTS or merely enriches"* (group Q, LIVE, entry ratified 2026-08-02 · user), and shows the eight
+> live entries homed in the cut in groups C, L and Q; the retired entries are not shown by the INDEX — read by this
+> session at the INDEX. These are facts of the decisions register, relayed and moving no disposition. **Rows naming
+> L3-S4: none.**
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.40, the colon-lead reading and the status-table reading stated at §6.9's manifest header, tables taken
+> row by row, the quotation join, the blockquote-marker reading, the fenced-block reading and the reading of a range
+> that opens with a heading line were applied unchanged at this member.** **The blockquote-marker reading has no
+> instance inside a range**: the document's one marked span, lines 3 to 11, its status banner, lies in the cut. **The
+> fenced-block reading has no instance**: the script finds no line opening with three backticks. **The heading-line
+> reading has no instance**: the eleven heading lines all lie in the cut. **The glossary reading has no instance**: no
+> glossary lies inside the ranges. **The status-table reading, weighed at range 1's table** headed *"| Container class |
+> Closure state (v1) |"*: the table records, row by row, how far each class of corpus container was enumerated, with
+> dated acquisition records inside its cells — the status of corpus containers and not of design documents — so its rows
+> are tabulated, each row's enumeration state **HISTORICAL** and its holdings **QUARANTINED**, a reading stated for
+> challenge (placement (n) below). **Tables taken row by row**: range 1's nine rows (Rows 41.1 to 41.9) and range 12's
+> twenty rows *N1* to *N20* (Rows 41.48 to 41.67), each quoted by its cells' words without the pipes, the cells joined
+> between their quotation marks by a middle dot, as §6.38 and §6.39 quoted theirs; each header row with its separator
+> line is listed as one item (items 1 and 8), keeping its pipes, its opening the one the word check reads; a row of
+> several claims is split under 1(a) — each needs row into the need with its consumers and its state, a later record of
+> the same row a further claim. **The quotation join**: no line of the document ends in a letter or a closing
+> parenthesis before a hyphen, the script finding none; one line inside a range ends in a slash, line 67, *"(RN / chords
+> / key / cadence /"* before *"phrase / none)"*, quoted across the break joined by one space at Row 41.20, as the
+> dispatch orders. **The defense reading**: range 6's *Why:* sentence (item 2) and the closing sentences of the
+> mitigations *2* and *3* (items 4 and 5) are listed under the second reading rule; **range 9's lead *"Why it happens
+> (diagnosed, two mechanisms — …):"* is read as introducing a diagnosis of the recurring discoveries, not the defense of
+> a rule before it**, and is listed as a lead (item 6). **How the bold leads were read.** Range 3's first lead, *The
+> single biggest untapped asset requires zero new tooling*, a complete sentence with a dated parenthesis, and its six
+> colon leads each open the sentence that carries the claim and are tabulated with it; range 5's five tier leads
+> likewise; range 6's *★ AND TIER J GATES A FIT …* is a complete sentence in bold, tabulated (Row 41.27); range 8's six
+> item labels are noun-phrase labels read as titles and quoted with the sentence each heads; range 9's two bold
+> sentences are tabulated (Rows 41.38 and 41.40); range 11's *★ ALL THREE EXECUTED AT WAVE 3 (…):* opens its sentence;
+> and range 13's leads — the protocol's label with its dated parenthesis, *Record first:*, *Cheap impact measurement
+> before any decision*, *The fork, by measured outcome:*, *Contradiction (a premise-invalidation):*, *Enrichment only:*
+> and *The decision is the user's in both branches* — are taken with their sentences, tabulated or listed. **The colon
+> leads**: range 2's, range 10's and range 11's open sentences that carry their claims; *Mitigations (…):* (item 3),
+> *Why it happens (…):* (item 6), *The protocol, reusing the project's standing shapes:* (item 10) and *The fork, by
+> measured outcome:* (item 12) only introduce their items and are listed as leads; *The question it answers:* opens the
+> question it carries (Row 41.69). **A former wording preserved inside the member** — range 1's row of the DCMLab
+> organization, its first count an overcount corrected (Row 41.1 (i)); range 1's figured-bass row and range 7's
+> sentence, the repository found to be a realization script (Rows 41.8 (ii) and 41.30 (ii)); range 3's Wave-1 correction
+> (Row 41.12 (i)); range 11's parenthesis on the census prose (Row 41.46 (ii)); and the state cells of *N2*, *N5* and
+> *N9* (Rows 41.49 (ii), 41.52 (ii) and 41.56 (iii)) — **are each taken with the claim they qualify**, since none can be
+> listed apart without splitting its sentence or its table cell, following §6.39's (iv) and (vii) rather than §6.3's
+> listing as provenance — a departure from that precedent, stated for challenge (placement (q)). **The member's own
+> identifiers** — its tiers *G*, *J*, *C*, *S* and *X*, its needs *N1* to *N20*, its waves, its consumers' labels, its
+> review findings and its layer numbers — are quoted as they stand; no three-digit identity of the decisions register
+> stands inside a range.
+>
+> **What this member is, and how its subjects were placed.** The ranges are much of a census, delivered 2026-07-02 and
+> extended to 2026-08-09, of the corpora and annotated ground truth the project can obtain — the container table, the
+> census-defect rule, the headline findings, the admission fields, the decision tiers, the jazz-fit deferral, the
+> residual risk, the mitigations, the recurring-discovery diagnosis, the third wave's additions, the needs table and the
+> supersession protocol; the cut holds its banner, its accounting rule, its riders, its licence constraint on the
+> fitting pool and its intake rule. **The member was read whole, at its blob, before any row was written**, and its rows
+> were then written in two portions. **How 1(a)'s five points were weighed.** **(a) The member's subject against L3's.**
+> The member's subject is not L3's: it is what counts as ground truth and how it is found and admitted, the measurement
+> layer's own design content under `FRAMEWORK.md` §5's NOT A LAYER item, so the rules for finding and admitting ground
+> truth, the tiers and each need with its consumers are **RELOCATED** to *the measurement of the analysis*, as Row 21.7
+> and the row of §6.23 at its census citation placed the census's Tier J; the holdings, the measurements at named pins
+> and the licences found are **QUARANTINED**; the waves, the acquisitions, the plans and the user's rulings on needs are
+> **HISTORICAL**. **L3's subjects appear only as classes of ground truth** — cadence and phrase (Rows 41.14, 41.24 and
+> 41.51), figured bass (Rows 41.8 and 41.57), notated chord symbols (Row 41.59), form and sections (Row 41.63) and pedal
+> points (Row 41.67) — each placed with the measurement that would validate the reading against it; **the one difference
+> graded is the figured-bass need's consumer**, an evidence channel of the chord layer, against L3-S29 (Row 41.57 (i)).
+> The jazz-fit deferral's fit of values per idiom is placed with *L2 — The tonal reading. The one entangled decision.*,
+> as Rows 16.23 and 23.1 placed values fitted per idiom (Rows 41.27 (ii) and 41.29 (i)), and the dual-annotator need's
+> consumer, the calibration of confidences, on *the uncertainty surface* (Row 41.49 (i)). **The member's process rules
+> were weighed under the unit's test**: the rules for finding and admitting ground truth — the census-defect rule and
+> its re-sweep, the admission fields, the tiers, the mitigations, the diagnosis of lazy and topic-blind enumeration —
+> are read as stating what ground truth the measurement may rely on, and are tabulated; **the supersession protocol of
+> range 13**, which decides whether settled work is redone, is read as development conduct and listed under *not a
+> statement*, except its step 2, the re-validation of a conclusion against new material, which is tabulated (Rows 41.68
+> and 41.69). **(b) The member's layer numbers** — *L5 §5.2*, *L4*, *L1.5*, *L6*, *L3, S1/S2* and *L4 evidence channel
+> (R-4)* — are the older stack's: its L5 §5.2 the function layer's cadence detector, its L4 the chord layer, its L1.5
+> the phrase-boundary view, its L6 the grouping layer and its L3 the key-and-mode layer; each row quoting such a numeral
+> says which, and every statement is placed by its subject. **(c) The dated record** — the waves (*"✅ EXECUTED"*,
+> *"ONBOARDED"*, *"ACQUIRED"*, *"OBTAINED"*), the measurements at pins and the user's rulings — is split from the rules
+> it stands beside, under 1(a), as the ninth batch split Row 20.61 and the thirteenth to seventeenth batches split rows
+> of positions 35 to 39. **(d) The decisions register's homes**: twelve inside the ranges, three live and nine retired,
+> each named at the claim carrying its content, and twelve in the cut, each carrying no mark. **(e) The two tables**:
+> their rows tabulated one by one and split by claim, as above. **Six placements are stated for challenge.** (l) The
+> rules for finding and admitting ground truth tabulated **RELOCATED** to the measurement; **the alternative** — listing
+> them under *not a statement* as development conduct of the census — is stated and not taken. (m) The supersession
+> protocol listed as development conduct except its step 2; **the alternative** — tabulating every step **RELOCATED** to
+> the measurement, as the protocol re-validates conclusions against ground truth — is stated and not taken. (n) Range
+> 1's table tabulated and not read as a status table; **the alternative** — listing its rows under *not a statement*
+> under the status-table reading — is stated and not taken. (o) The figured-bass need's consumer graded **DIFFERS** from
+> L3-S29; **the alternative** — **THE DERIVATION IS SILENT**, L3-S29 speaking of L3 alone and not of the chord layer —
+> is stated and not taken. (p) The dual-annotator need's consumer placed on the uncertainty surface; **the alternative**
+> — *the measurement of the analysis*, as the ground-truth ceiling of principle #21 — is stated and not taken. (q) The
+> correction passages taken with their claims; **the alternative** — listing each as provenance, as §6.3 did — is stated
+> and not taken. **No statement of this member is ADOPTED, carried or proposed; none is DISCARDED; and none is
+> UNPLACED.**
+
+---
+
+**Row 41.1 — the DCMLab organization fully enumerated, its count corrected; the corpora onboarded and pinned.**
+
+*Outgoing statement.* The table row's cells "DCMLab GitHub org — **127 repos**, incl. `distant_listening_corpus` (**40
+submodules** — the census's original "41" was an overcount, corrected at Wave-1 onboarding from the live `.gitmodules`,
+2026-07-02), `dcml_corpora` (12), `romantic_piano_corpus` (9); also `schema_annotation_data` (voice-leading-schema GT
+over Mozart sonatas)" · "**Fully enumerated** [verified; Wave-1 ONBOARDED — all 40 present, hash-pinned, registry v2
+`tools/score_census_registry.json`] · [Wave-2 ONBOARDED the DCMLab-org `schema_annotation_data` **annotation bed** — see
+`records/cc/reports/cc_corpus_wave2_report.md`]" — the section *1. Why corpora kept being "discovered" — and the method
+that closes it*, the container table, the row *DCMLab GitHub org* (locator: line 20). Two claims: (i) the organization
+and its collections fully enumerated, the census's first count of its submodules an overcount corrected at onboarding —
+a correction recorded inside the cell and taken with the claim; (ii) all of its sub-corpora present, hash-pinned and in
+the registry, and the schema annotation bed onboarded.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — the census's account of how far a class of containers was enumerated on its
+date. (ii) **QUARANTINED.** *Audit question:* are the DCMLab collections present, hash-pinned and registered in
+`tools/score_census_registry.json` at the current commit, the schema annotation bed among them?
+
+---
+
+**Row 41.2 — the When-in-Rome meta-corpus fully enumerated.**
+
+*Outgoing statement.* The table row's cells "When-in-Rome meta-corpus — full component list" · "**Fully enumerated**" —
+the section *1. Why corpora kept being "discovered" — and the method that closes it*, the container table, the row
+*When-in-Rome meta-corpus* (locator: line 21).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the census's account of how far a class of containers was enumerated on its
+date.
+
+---
+
+**Row 41.3 — ChoCo's partner datasets fully enumerated.**
+
+*Outgoing statement.* The table row's cells "ChoCo — all 18 partner datasets" · "**Fully enumerated**" — the section *1.
+Why corpora kept being "discovered" — and the method that closes it*, the container table, the row *ChoCo* (locator:
+line 22).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the census's account of how far a class of containers was enumerated on its
+date.
+
+---
+
+**Row 41.4 — the dataset tables of the leading published systems fully harvested.**
+
+*Outgoing statement.* The table row's cells "SOTA-paper dataset tables (AugmentedNet / RNBert / AnalysisGNN / ChordGNN —
+the field's de-facto RN-GT census; AnalysisGNN's list = 1,719 pieces)" · "**Fully harvested** (AugmentedNet exact
+manifest partial)" — the section *1. Why corpora kept being "discovered" — and the method that closes it*, the container
+table, the row *SOTA-paper dataset tables* (locator: line 23).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the census's account of how far a class of containers was enumerated on its
+date.
+
+---
+
+**Row 41.5 — the score families and folk containers enumerated; their beds onboarded.**
+
+*Outgoing statement.* The table row's cells "OpenScore family, Mutopia, KernScores highlights, MuseData, early-music
+projects (JRP/CRIM/Tasso/Marenzio/CMME), Wikifonia→EWLD lineage, Lakh→MetaMIDI→GigaMIDI lineage, main folk containers
+(Essen, MTC, Nottingham)" · "**Fully enumerated** [Wave-2 ONBOARDED the Essen `ccarh/essen-folksong-collection`
+**phrase-boundary bed** (Humdrum kern) — see
+`records/cc/reports/cc_corpus_wave2_report.md`] · [Wave-3 ONBOARDED `OpenScore/Lieder` (1462 mxl, CC0) + `OpenScore/StringQuartets` (122 mscx, CC0) plain-score stress + `fosfrancesco/asap-dataset`
+(235 MusicXML); the KernScores/craigsapp mechanical partial CLOSED by enumerating `humdrum-tools/humdrum-data` = 71
+repos/16 orgs (cloned nothing) — see `records/cc/reports/cc_corpus_wave3_report.md`]" — the section *1. Why corpora kept
+being "discovered" — and the method that closes it*, the container table, the row *OpenScore family, Mutopia, KernScores
+highlights …* (locator: line 24). Two claims: (i) the class fully enumerated; (ii) the phrase-boundary bed, the
+plain-score and quartet collections and the aligned performance set onboarded, and a mechanical partial closed by
+enumerating a manifest.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — the census's account of how far a class of containers was enumerated on its
+date. (ii) **QUARANTINED.** *Audit question:* are the Essen phrase-boundary bed, the OpenScore song and quartet
+collections and the aligned performance set onboarded at the current commit, and is the Humdrum manifest enumerated?
+
+---
+
+**Row 41.6 — the algomus and Dezrann container enumerated; its texture, cadence and form sets onboarded.**
+
+*Outgoing statement.* The table row's cells "**algomus / Dezrann** (algomus.fr GitLab org + dezrann.net) —
+symbolic-music analysis annotation datasets (texture, cadence, form)" · "**Enumerated** [Wave-2 ONBOARDED
+`symbolic-texture-dataset` (Couturier et al. ISMIR 2022) as an **annotation bed**; moved here from §7 residual risk —
+see
+`records/cc/reports/cc_corpus_wave2_report.md`] · [Wave-3 ONBOARDED `algomus.fr/algomus-data` monorepo: `quartets/mozart`
+(32 sonata-form ref.dez — the N16 candidate), `fugues/bach-wtc-i` (23 subject/CS/cadence/pedal ref.dez — N4/N18/N20; the
+12 Shostakovich fugues are website-only, NOT in-repo), `jazz-arbres` treebank (1170; N11/N3) — see
+`records/cc/reports/cc_corpus_wave3_report.md`]" — the section *1. Why corpora kept being "discovered" — and the method
+that closes it*, the container table, the row *algomus / Dezrann* (locator: line 25). Two claims: (i) the container
+enumerated and moved from the residual risk; (ii) its texture set and its monorepo — sonata-form quartets, fugues with
+subject, cadence and pedal labels, and a jazz treebank — onboarded.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — the census's account of how far a class of containers was enumerated on its
+date. (ii) **QUARANTINED.** *Audit question:* are the algomus texture set and the algomus-data monorepo onboarded at the
+current commit, and what do they hold?
+
+---
+
+**Row 41.7 — the jazz and pop analysis ground truth enumerated; three onboarded, two gated.**
+
+*Outgoing statement.* The table row's cells "**Tier-J jazz/pop analysis GT** (CoCoPops, EWLD/OpenEWLD, HookTheory,
+Weimar Jazz Database, ChoCo jazz/weimar slices)" · "**Enumerated** [Wave-3: ONBOARDED `CoCoPops` (628 .hum,
+**harm+**kern), `00sapo/OpenEWLD` (486 PD .mxl), the native WJD SQLite (456 solos, ODbL, sha256-pinned), + INVENTORIED
+the ChoCo jazz-corpus (160 jams) / weimar (916 jams) slices; **GATED, access path recorded:** EWLD (Zenodo
+request-access), HookTheory full (HF academic gate) — see `records/cc/reports/cc_corpus_wave3_report.md`]" — the section
+*1. Why corpora kept being "discovered" — and the method that closes it*, the container table, the row *Tier-J jazz/pop
+analysis GT* (locator: line 26). Two claims: (i) the class enumerated; (ii) three sets onboarded, two slices inventoried
+and two gated with their access paths recorded.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — the census's account of how far a class of containers was enumerated on its
+date. (ii) **QUARANTINED.** *Audit question:* are CoCoPops, OpenEWLD and the Weimar Jazz Database onboarded and pinned
+at the current commit, and are the two gated sets still gated?
+
+---
+
+**Row 41.8 — the figured-bass and reduction ground truth enumerated; one repository a realization script.**
+
+*Outgoing statement.* The table row's cells "**Figured-bass / trees-reduction GT** (BCFB, DCMLab/figured-bass, Kirlin
+Schenker41, GTTM, protovoice-annotations)" · "**Enumerated** [Wave-3: ONBOARDED `juyaolongpaul/Bach_chorale_FB` (BCFB,
+139/143, N10) + `DCMLab/protovoice-annotations` (38 derivations — the N9 gating inspection); `pkirlin/schenker41` pinned
+but README-only (data at the dissertation page); GTTM located (no single artifact); **`DCMLab/figured-bass` WALKED = a
+realization SCRIPT, not a GT corpus** (§7→§1) — see `records/cc/reports/cc_corpus_wave3_report.md`]" — the section *1.
+Why corpora kept being "discovered" — and the method that closes it*, the container table, the row *Figured-bass /
+trees-reduction GT* (locator: line 27). Two claims: (i) the class enumerated; (ii) the chorale figured-bass set and the
+derivations onboarded, two sources located without an artifact, and one repository walked and found to be a realization
+script and not ground truth — one of the passages recording a correction, taken with the claim.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — the census's account of how far a class of containers was enumerated on its
+date. (ii) **QUARANTINED.** *Audit question:* are the chorale figured-bass set and the protovoice derivations onboarded
+at the current commit, and is `DCMLab/figured-bass` a realization script holding no ground truth?
+
+---
+
+**Row 41.9 — the partial containers named and bounded.**
+
+*Outgoing statement.* The table row's cells "Partial: per-repo DLC piece counts; MuseScore.com beyond PDMX
+(ToS-unwalkable); CPDL/IMSLP symbolic subsets; craigsapp's ~100 kern repos (closure tool exists:
+`humdrum-tools/humdrum-data`); abcnotation.com long tail" · "**Named, bounded**" — the section *1. Why corpora kept
+being "discovered" — and the method that closes it*, the container table, the row *Partial: per-repo DLC piece counts …*
+(locator: line 28).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the census's account of how far a class of containers was enumerated on its
+date.
+
+---
+
+**Row 41.10 — a new corpus discovered is a census defect: enumerate its container to closure.**
+
+*Outgoing statement.* "**The standing process rule this census institutes:** from now on, *"a new corpus was discovered"
+is a census defect* — the fix is to add its **container** to the table above and re-enumerate that container to closure,
+not to ingest one repo and move on." — the section *1. Why corpora kept being "discovered" — and the method that closes
+it*, the paragraph led *The standing process rule this census institutes:* (locator: lines 30–32), its colon lead
+opening the sentence that carries the claim.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth the census finds
+and admits, as Row 21.7 placed the census's Tier J.
+
+*The decisions register at this row.* The decisions register's data file homes **the retired entry D-359** at this
+document's lines 30 to 33, the whole of range 2, on which this row's sentence lies — a fact of the data file, moving no
+disposition and carrying no mark.
+
+---
+
+**Row 41.11 — the census re-swept yearly and at any corpus decision.**
+
+*Outgoing statement.* "**Re-sweep cadence: yearly** (new ISMIR proceedings + the `mirdata` loader list + the
+`ismir/mir-datasets` index are the mechanical catch-alls), and at any Stage-5/6 corpus decision." — the section *1. Why
+corpora kept being "discovered" — and the method that closes it*, the same paragraph (locator: lines 32–33).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth the census finds
+and admits, as Row 21.7 placed the census's Tier J.
+
+*The decisions register at this row.* The decisions register's data file homes **the retired entry D-359** at this
+document's lines 30 to 33, the whole of range 2, on which this row's sentence lies — a fact of the data file, moving no
+disposition and carrying no mark.
+
+---
+
+**Row 41.12 — the unused DCML sub-corpora, executed at the first wave; onboarded and parse-clean.**
+
+*Outgoing statement.* "**The single biggest untapped asset requires zero new tooling** *(✅ EXECUTED, Wave 1,
+2026-07-02)*: the project used **10** of the DLC's **40** DCML sub-corpora (plus the standalone `bach_chorales`, not a
+DLC member — Wave-1 correction); the **other 30** — now onboarded, 30/30 parse-clean — are format-identical to what
+`dcml_parser.py` already parses — including `beethoven_piano_sonatas` (all 32), `wagner_overtures`, `liszt_pelerinage`,
+`rachmaninoff_piano`, `scriabin`-era chromatic material, `monteverdi_madrigals`/`sweelinck_keyboard`/`peri_euridice`
+(pre-Baroque), `scarlatti_sonatas`, `bartok_bagatelles` (20th c.), and `schulhoff_suite_dansante_en_jazz` (a jazz-idiom
+art-music set — directly relevant to the Jazz preset)." — the section *2. What the census found — the headline*, its
+first bullet, led *The single biggest untapped asset requires zero new tooling* (locator: lines 37–44), the lead a
+complete sentence with a dated parenthesis, opening the sentence that carries the claim. Two claims: (i) the execution
+at the first wave and the count of sub-corpora used before it, the parenthesis recording a correction of that count
+taken with it; (ii) the others onboarded, parse-clean and format-identical to what the parser already reads.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an acquisition event of the first wave and the count it corrected. (ii)
+**QUARANTINED.** *Audit question:* are the further DCML sub-corpora onboarded at the current commit, and does
+`dcml_parser.py` parse each of them cleanly?
+
+---
+
+**Row 41.13 — one format spanning the style periods.**
+
+*Outgoing statement.* "Style span extends from ~1600 to ~1930 in one format." — the section *2. What the census found —
+the headline*, the same bullet (locator: line 44).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* what span of style periods do the onboarded DCML sub-corpora
+cover, in one format, at the current commit?
+
+---
+
+**Row 41.14 — cadence and phrase ground truth exists and is unused; it feeds the detector's validation.**
+
+*Outgoing statement.* "**Cadence/phrase GT exists and we use none of it:** the algomus Bach WTC-I fugue cadences (36
+fugues, 1,000+ labels), the algomus Mozart quartet sonata-form+cadence set, the Sears Haydn-quartet cadence set (dual
+annotators) — plus **cadence labels already inside the DCML Mozart-sonatas TSVs the project has cloned** (a free win;
+feeds the L5 §5.2 detector's validation and the L4 rotation-pinning)." — the section *2. What the census found — the
+headline*, its second bullet (locator: lines 45–48), its bold colon lead opening the sentence. The member's *L5 §5.2* is
+the older stack's function layer's cadence detector and its *L4* the older chord layer. Two claims: (i) the named
+cadence and phrase sets exist, among them labels inside the Mozart-sonata files already cloned, and none is used; (ii)
+they feed the validation of that cadence detector and of the chord layer's rotation-pinning.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* which cadence and phrase ground-truth sets are held at
+the current commit, and does any measurement of the analysis use them? (ii)
+**RELOCATED** — to ***the measurement of the analysis***, which validates the cadence reading against annotated cadences
+and phrase ends.
+
+---
+
+**Row 41.15 — Roman-numeral ground truth with phrase and annotator-disagreement data; the best calibration data.**
+
+*Outgoing statement.* "**RN-GT with phrase/annotator-disagreement data:** BPS-FH (Beethoven sonatas, RN + phrase
+boundaries), TAVERN (1,060 phrase-level analyses, **two annotators each** — the best calibration data for the A-1
+Class-P reliability fitting and the tonicization-band evaluation policy), HaydnSun op.20." — the section *2. What the
+census found — the headline*, its third bullet (locator: lines 49–51), its bold colon lead opening the sentence. Two
+claims: (i) the sets exist, one with two annotators per analysis; (ii) that set is the best calibration data for the
+reliability fitting and the tonicization-band evaluation.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* are BPS-FH, TAVERN and HaydnSun held at the current
+commit, and does TAVERN carry two annotators per analysis? (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose own design content is what counts as ground truth
+(`FRAMEWORK.md` §5, NOT A LAYER).
+
+---
+
+**Row 41.16 — key and modulation ground truth aimed at the key-disagreement residual.**
+
+*Outgoing statement.* "**Key/modulation GT aimed at our exact residual:** KMT (Key Modulations & Tonicizations,
+textbook-authoritative local-key GT, inside When-in-Rome) — squarely the key-disagreement class (S1/S2)." — the section
+*2. What the census found — the headline*, its fourth bullet (locator: lines 52–53). Two claims: (i) the textbook
+key-and-modulation set lies inside When-in-Rome; (ii) it is aimed at the class of key disagreements in the residual.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the When-in-Rome clone at its pin hold the
+key-and-modulation set's analyses at the current commit? (ii) **RELOCATED** — to ***the measurement of the analysis***,
+whose own design content is what counts as ground truth (`FRAMEWORK.md` §5, NOT A LAYER).
+
+---
+
+**Row 41.17 — pop and jazz harmony aligned with scores: the gate-grade jazz want.**
+
+*Outgoing statement.* "**Pop/jazz harmony with score-side alignment (the gate-grade jazz want):** HookTheory/TheoryTab
+(tens of thousands of key-relative, RN-convertible crowd annotations), CoCoPops (RS200 + McGill unified into Humdrum
+`**harm`, 414 transcriptions), EWLD/OpenEWLD (502 PD lead sheets, native MusicXML + chords) + Charlie Parker Omnibook."
+— the section *2. What the census found — the headline*, its fifth bullet (locator: lines 54–56). Two claims: (i) the
+named sets exist with their counts and formats; (ii) they answer the want of gate-grade jazz ground truth.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* are HookTheory, CoCoPops, EWLD and OpenEWLD available
+with the alignment the bullet names, and which are held at the current commit? (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose own design content is what counts as ground truth
+(`FRAMEWORK.md` §5, NOT A LAYER).
+
+---
+
+**Row 41.18 — plain scores for stress and soak testing.**
+
+*Outgoing statement.* "**Plain-score stress/soak material:** OpenScore Lieder (1,300+ late-romantic songs, CC0,
+proofread, mscx→MusicXML pipeline — the best chromatic stress bed), OpenScore String Quartets (CC0, texture gap between
+chorales and piano), KernScores/craigsapp classical sets, PDMX (250k PD MusicXML for scale testing, quality-filterable
+by its rating metadata)." — the section *2. What the census found — the headline*, its sixth bullet (locator: lines
+57–60). Two claims: (i) the named collections exist with their licences and pipelines; (ii) they serve as beds for
+stress and soak testing.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* which of the OpenScore collections, the KernScores sets
+and PDMX are held at the current commit, and under which licences? (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose stress beds test the analysis on music beyond its gate
+corpus.
+
+---
+
+**Row 41.19 — two verified negatives: one chorale collection carries no harmony labels; one archive is image-only.**
+
+*Outgoing statement.* "**Two verified negatives worth recording:** DCMLab/`bach_chorales` (358 scores) carries **no
+harmony labels** — the Bach-chorale RN GT is the Tymoczko/WiR set the project already uses (consistent with
+`score_inventory.md`); DIAMM is image-only (closes the early-music class)." — the section *2. What the census found —
+the headline*, its seventh bullet (locator: lines 61–63). Two claims: (i) the chorale collection carries no harmony
+labels and the archive is image-only; (ii) the Bach-chorale Roman-numeral ground truth is the When-in-Rome set the
+project already uses.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does `DCMLab/bach_chorales` carry no harmony labels at
+its pin, and is DIAMM image-only? (ii) **RELOCATED** — to ***the measurement of the analysis***, whose own design
+content is what counts as ground truth (`FRAMEWORK.md` §5, NOT A LAYER).
+
+---
+
+**Row 41.20 — a source enters the registry only with all five admission fields decided.**
+
+*Outgoing statement.* "A source enters the registry only with all five fields decided: **(a) GT type** (RN / chords /
+key / cadence / phrase / none); **(b) machine-readable score alignment** (symbolic score + annotation anchored to it —
+chords-only or audio-aligned sets are research-tier at best); **(c) format** (parseable today vs converter needed);
+**(d) license class** (PD/CC0/CC-BY committable; NC/unclear → hash-pin-only, the established mechanism); **(e) decision
+tier** (§5)." — the section *3. Inclusion criteria (what "a corpus we can use" means)*, its first paragraph (locator:
+lines 67–70), one sentence; *"(RN / chords / key / cadence /"* and *"phrase / none)"* stand on two lines, the slash
+before the break, and are quoted joined by one space.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose own design content is what
+counts as ground truth (`FRAMEWORK.md` §5, NOT A LAYER).
+
+*The decisions register at this row.* The decisions register's data file homes **the retired entry D-360** at this
+document's lines 67 to 70, the whole of range 4, on which this row's sentence lies — a fact of the data file, moving no
+disposition and carrying no mark.
+
+---
+
+**Row 41.21 — Tier G: the gate-candidate ground truth.**
+
+*Outgoing statement.* "**Tier G (gate-candidate GT):** the unused DLC sub-corpora (chromatic/romantic first:
+beethoven_sonatas, wagner_overtures, liszt, rachmaninoff); KMT; BPS-FH; TAVERN." — the section *5. Decision tiers
+(proposed; user disposes)*, its first bullet (locator: lines 100–101), its bold colon lead opening the sentence.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose own design content is what
+counts as ground truth (`FRAMEWORK.md` §5, NOT A LAYER).
+
+---
+
+**Row 41.22 — the gate candidates enter at research tier; promotion to a gate is its own ratified re-baseline.**
+
+*Outgoing statement.* "Enter as research-tier; promotion to any gate is its own ratified re-baseline event
+(engage-criteria discipline)." — the section *5. Decision tiers (proposed; user disposes)*, the same bullet (locator:
+lines 101–102).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose regression gate a newly acquired
+corpus enters only by a deliberate re-baseline, as register entry D-308 records.
+
+---
+
+**Row 41.23 — Tier J: the jazz and pop ground-truth path.**
+
+*Outgoing statement.* "**Tier J (the jazz/pop GT path, per the 2026-07-02 ratification):** HookTheory (RN-convertible) +
+CoCoPops + OpenEWLD as the score-aligned core; JHT/iRealPro/McGill stay research-tier where alignment is weak." — the
+section *5. Decision tiers (proposed; user disposes)*, its second bullet (locator: lines 103–104), its bold colon lead
+opening the sentence.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, as Row 21.7 placed the validation path
+through the census's Tier J.
+
+---
+
+**Row 41.24 — Tier C: the cadence and phrase ground truth, validation beds.**
+
+*Outgoing statement.* "**Tier C (cadence/phrase GT):** the DCML Mozart cadence labels (already on disk!), algomus ×2,
+Sears — validation beds for L5 §5.2 and the L1.5 primitive." — the section *5. Decision tiers (proposed; user
+disposes)*, its third bullet (locator: lines 105–106), its bold colon lead opening the sentence. The member's *L5 §5.2*
+is the older function layer's cadence detector and its *L1.5 primitive* the phrase-boundary view.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, which validates the cadence and phrase
+readings against annotated cadences and phrase ends.
+
+---
+
+**Row 41.25 — Tier S: the plain-score stress and soak beds.**
+
+*Outgoing statement.* "**Tier S (plain-score stress/soak):** OpenScore Lieder + String Quartets, KernScores classical
+sets; PDMX for scale; the Tristan Prelude specifically via `wagner_overtures` (presence to confirm at clone time)." —
+the section *5. Decision tiers (proposed; user disposes)*, its fourth bullet (locator: lines 107–108), its bold colon
+lead opening the sentence.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose stress beds test the analysis on
+music beyond its gate corpus.
+
+---
+
+**Row 41.26 — Tier X: recorded and not pursued, with reasons, so never re-discovered.**
+
+*Outgoing statement.* "**Tier X (recorded, not pursued):** performance-MIDI aggregates, image-only, audio-aligned-only
+sets — listed in the appendices with reasons, so they are never "re-discovered"." — the section *5. Decision tiers
+(proposed; user disposes)*, its fifth bullet (locator: lines 109–110), its bold colon lead opening the sentence.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth the census finds
+and admits, as Row 21.7 placed the census's Tier J.
+
+---
+
+**Row 41.27 — Tier J gates a fit: the jazz fit deferred, only the classical common-practice idiom fitted now.**
+
+*Outgoing statement.* "**★ AND TIER J GATES A FIT — stated here because that is what the tier is FOR: THE JAZZ FIT IS
+DEFERRED TO THE JAZZ-GROUND-TRUTH CONVERSION, and only the classical common-practice idiom is fitted now.**" — the
+section *5. Decision tiers (proposed; user disposes)*, the paragraph led *★ AND TIER J GATES A FIT …* (locator: lines
+122–123), a complete sentence in bold, tabulated under the first reading of rule (1). Two claims: (i) the tier gates a
+fit, a fit waiting on its ground truth; (ii) the jazz fit is deferred to the conversion of jazz ground truth, and only
+the classical common-practice idiom is fitted now.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, which supplies the ground truth a
+fit is evaluated against. (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, the values
+of its candidate scoring fitted per idiom, as Rows 16.23 and 23.1.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-422** at this
+document's lines 122 to 128, the whole of range 6, on which this row's sentence lies; the decisions register's INDEX
+records it as *"The jazz fit is deferred to the jazz ground-truth conversion; only the classical common-practice idiom
+is fitted now"* (group C, DEFERRED, entry ratified 2026-08-03 · user) — a fact of the data file, moving no disposition
+and carrying no mark.
+
+---
+
+**Row 41.28 — until the path yields converted jazz ground truth, a jazz fit has nothing to be evaluated against.**
+
+*Outgoing statement.* "Until this path yields converted, score-aligned jazz ground truth, a fit of the jazz idiom has
+nothing to be evaluated against." — the section *5. Decision tiers (proposed; user disposes)*, the same paragraph
+(locator: lines 123–124).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose held-out evaluation a fit needs
+before it is graded (principle #20).
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-422** at this
+document's lines 122 to 128, the whole of range 6, on which this row's sentence lies; the decisions register's INDEX
+records it as *"The jazz fit is deferred to the jazz ground-truth conversion; only the classical common-practice idiom
+is fitted now"* (group C, DEFERRED, entry ratified 2026-08-03 · user) — a fact of the data file, moving no disposition
+and carrying no mark.
+
+---
+
+**Row 41.29 — the idiom fitted now is the one the held annotated music covers, delivered by the two non-jazz presets.**
+
+*Outgoing statement.* "The idiom that IS fitted now is the one the held annotated music covers, which is what the two
+non-jazz presets deliver." — the section *5. Decision tiers (proposed; user disposes)*, the same paragraph (locator:
+lines 127–128), after its *Why:* sentence, listed apart. Two claims: (i) the idiom fitted now is the one the held
+annotated music covers; (ii) the two non-jazz presets deliver it.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, the values of
+its candidate scoring fitted per idiom. (ii) **QUARANTINED.** *Audit question:* which presets carry the classical
+common-practice idiom's fitted values at the current commit?
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-422** at this
+document's lines 122 to 128, the whole of range 6, on which this row's sentence lies; the decisions register's INDEX
+records it as *"The jazz fit is deferred to the jazz ground-truth conversion; only the classical common-practice idiom
+is fitted now"* (group C, DEFERRED, entry ratified 2026-08-03 · user) — a fact of the data file, moving no disposition
+and carrying no mark.
+
+---
+
+**Row 41.30 — the residual risk: the container classes still unwalked, with their holdings.**
+
+*Outgoing statement.* "Zenodo/university-hosted annotation sets without GitHub presence (more algomus/Dezrann material —
+the algomus/Dezrann container is now an **enumerated §1 row**, with `symbolic-texture-dataset` onboarded at Wave 2 **and
+the `algomus-data` monorepo (Mozart-quartet sonata-form + Bach-fugue) onboarded at Wave 3**; the Shostakovich fugues +
+any remaining cadence/form sets stay in this residual bucket), figured-bass corpora (**`DCMLab/figured-bass` WALKED at
+Wave 3 = a figured-bass REALIZATION SCRIPT, not a GT corpus — §7→§1 promoted with that finding; the actual figured-bass
+GT is BCFB, onboarded Wave 3, plus the parser-dropped DLC `figbass` column**), scattered Humdrum `**harm` spines on
+kern.ccarh.org (**now enumerated: the `humdrum-tools/humdrum-data` manifest = 71 repos/16 orgs, incl.
+`DDMAL/Flexible_harmonic_chorale_annotations` — Wave-3 closure, cloned nothing**), national-library MEI editions, the
+ABC long tail, non-Western symbolic sets (SymbTr, jingju), and 2025–26 releases (POP909-CL surfaced mid-census)." — the
+section *7. Residual risk (named, so it is bounded)*, its one paragraph (locator: lines 141–151), one sentence naming
+the classes. Two claims: (i) the named classes are where the risk of an unfound corpus lies; (ii) the parentheses'
+record of what was onboarded, walked and enumerated, among it the figured-bass repository found at the third wave to be
+a realization script and promoted with that finding — one of the passages recording a correction, taken with the claim.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth the census
+finds and admits, as Row 21.7 placed the census's Tier J. (ii) **QUARANTINED.** *Audit question:* are the algomus sets
+and the chorale figured-bass set onboarded, the DLC figured-bass column dropped by the parser, and the Humdrum manifest
+enumerated, at the current commit?
+
+---
+
+**Row 41.31 — each a container class on the list, walked yearly; none expected to hide gate-grade ground truth.**
+
+*Outgoing statement.* "Each is a container-class now on the §1 list — the yearly re-sweep walks them; none is expected
+to hide gate-grade common-practice RN GT (that class is closed by the SOTA-paper harvest)." — the section *7. Residual
+risk (named, so it is bounded)*, the same paragraph (locator: lines 151–152).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth the census finds
+and admits, as Row 21.7 placed the census's Tier J.
+
+---
+
+**Row 41.32 — the citation-closure sweep: harvest the dataset sections of the papers citing the leading systems.**
+
+*Outgoing statement.* "**Citation-closure sweep** — harvest the dataset/related-work sections of the *citing* papers of
+the four SOTA systems (Semantic Scholar cited-by walk) + each new ISMIR/TISMIR proceedings; this is the mechanism that
+catches any GT corpus the moment the field first uses it." — the section *8. The comprehensiveness claim, precisely
+stated — and the mitigation plan (added 2026-07-02, user question)*, its mitigation *1*, led *Citation-closure sweep*
+(locator: lines 171–173), the lead a noun-phrase label read as a title and quoted with the sentence it heads.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth the census finds
+and admits, as Row 21.7 placed the census's Tier J.
+
+---
+
+**Row 41.33 — the yearly re-sweep pinned to concrete indexes.**
+
+*Outgoing statement.* "**Index subscriptions** — the yearly re-sweep (§1) pinned to concrete indexes: the `mirdata`
+loader list, the `ismir/mir-datasets` repo, Zenodo/OSF keyword alerts ("Roman numeral annotation", "cadence dataset",
+"harmonic analysis corpus"), Hugging Face datasets search." — the section *8. The comprehensiveness claim, precisely
+stated — and the mitigation plan (added 2026-07-02, user question)*, its mitigation *2*, led *Index subscriptions*
+(locator: lines 174–176), quoted with its label; its last sentence, on what the mitigation catches, is listed apart.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth the census finds
+and admits, as Row 21.7 placed the census's Tier J.
+
+---
+
+**Row 41.34 — one round of queries to the maintainers, and a curated list to compare against.**
+
+*Outgoing statement.* "**One community query round** — the WiR README maintains its own curated corpus list (a census to
+DIFF against, cheap cross-validation); a short ask to the DCML / When-in-Rome / music21 maintainers ("what exists that
+we missed?") catches private/in-progress sets no index has." — the section *8. The comprehensiveness claim, precisely
+stated — and the mitigation plan (added 2026-07-02, user question)*, its mitigation *3*, led *One community query round*
+(locator: lines 177–179), quoted with its label; its last sentence is listed apart.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth the census finds
+and admits, as Row 21.7 placed the census's Tier J.
+
+---
+
+**Row 41.35 — verification rides acquisition: every reported row verified when it is cloned or pinned.**
+
+*Outgoing statement.* "**Verification rides acquisition** — every [reported] row is verified at the moment it is
+cloned/pinned (the CC corpus-onboarding instruction), so the verification debt never needs a separate campaign." — the
+section *8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02, user question)*,
+its mitigation *4* (locator: lines 180–181), quoted with its label.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth is trusted only
+once established at the data (principle #19).
+
+---
+
+**Row 41.36 — the mechanical partials closed in the same instruction.**
+
+*Outgoing statement.* "**Close the mechanical partials** in the same instruction (craigsapp closure; DLC counts;
+AugmentedNet manifest from its repo)." — the section *8. The comprehensiveness claim, precisely stated — and the
+mitigation plan (added 2026-07-02, user question)*, its mitigation *5* (locator: lines 182–183), quoted with its label.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan for an acquisition instruction.
+
+---
+
+**Row 41.37 — every class excluded by decision carries its reason, so exclusion is auditable and reversible.**
+
+*Outgoing statement.* "**Scope rulings recorded** — each class excluded by decision (non-Western; performance-MIDI;
+image-only) carries its reason in the appendix tables, so exclusion is auditable and reversible, never a silent
+omission." — the section *8. The comprehensiveness claim, precisely stated — and the mitigation plan (added 2026-07-02,
+user question)*, its mitigation *6* (locator: lines 184–185), quoted with its label.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth the census finds
+and admits, as Row 21.7 placed the census's Tier J.
+
+---
+
+**Row 41.38 — containers walked lazily by design.**
+
+*Outgoing statement.* "**Containers are walked lazily by design.**" — the section *8b. The recurring-discovery finding,
+and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)*, its item *1*, its bold lead (locator: line 193), a
+complete sentence tabulated under the first reading of rule (1).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth the census finds
+and admits, as Row 21.7 placed the census's Tier J.
+
+---
+
+**Row 41.39 — closure is over container classes; the contents surface only when a wave walks the container.**
+
+*Outgoing statement.* "Closure is over container CLASSES; the contents surface only when a wave walks the container (the
+Wave-2 beds all lived inside §1/§7 rows: `schema_annotation_data` inside the already-enumerated DCMLab org; the algomus
+texture set inside the §7 algomus/Dezrann residual; Essen inside the folk-containers row)." — the section *8b. The
+recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)*, the same item
+(locator: lines 193–196); its last sentence is listed apart.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth the census finds
+and admits, as Row 21.7 placed the census's Tier J.
+
+---
+
+**Row 41.40 — topic-blind enumeration cannot see ground truth specific to a purpose.**
+
+*Outgoing statement.* "**Topic-blind enumeration cannot see purpose-specific GT.**" — the section *8b. The
+recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)*, its item *2*, its
+bold lead (locator: line 197), a complete sentence tabulated under the first reading of rule (1).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth the census finds
+and admits, as Row 21.7 placed the census's Tier J.
+
+---
+
+**Row 41.41 — the census enumerated with the harmonic axis's questions in mind.**
+
+*Outgoing statement.* "The census enumerated with the HARMONIC axis's questions in mind." — the section *8b. The
+recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)*, the same item
+(locator: lines 197–198).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the census's account of how it was conducted.
+
+---
+
+**Row 41.42 — a new purpose's targeted searches surfaced material the enumeration had no reason to rank.**
+
+*Outgoing statement.* "When a NEW purpose appeared (axis 2: texture / phrase / schema / stream GT; the lever sweep:
+figured bass, hierarchical trees), targeted per-duty searches immediately surfaced material the enumeration had no
+reason to rank (BCFB; the JHT's *tree* annotations as a distinct GT layer over an already-held source)." — the section
+*8b. The recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)*, the same
+item (locator: lines 198–201).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the census's account of what a purpose-driven search surfaced.
+
+---
+
+**Row 41.43 — a census only as complete as the list of questions it was asked with.**
+
+*Outgoing statement.* "A census is only as complete as the list of questions it was asked with." — the section *8b. The
+recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)*, the same item
+(locator: line 201).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose ground truth the census finds
+and admits, as Row 21.7 placed the census's Tier J.
+
+---
+
+**Row 41.44 — the additions pending from the sweeps, for the third wave.**
+
+*Outgoing statement.* "**Pending container/GT-layer additions from the 2026-07-03 sweeps (for the next census/registry
+edit — Wave-3 natural home):** BCFB (Bach Chorales Figured Bass, ISMIR 2020 — figured-bass GT on the gate repertoire);
+the **JHT hierarchical tree annotations** as a distinct GT layer (the JHT source is already held as research material;
+its trees are a separate annotation layer for lever R-7); `DCMLab/figured-bass` (already a §7 residual — promote to a
+walked row at Wave 3)." — the section *8b. The recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user
+observation, 2026-07-03)*, the paragraph led *Pending container/GT-layer additions from the 2026-07-03 sweeps (…):*
+(locator: lines 210–214), its bold colon lead opening the sentence that carries the claim.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a plan of the third wave, carried out as the next paragraph records.
+
+---
+
+**Row 41.45 — the second wave's beds already onboarded.**
+
+*Outgoing statement.* "*(The Wave-2 beds are already onboarded/enumerated.)*" — the section *8b. The recurring-discovery
+finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)*, the same paragraph (locator: line 214),
+an italic parenthesis quoted whole.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a status of the second wave's acquisitions.
+
+---
+
+**Row 41.46 — all three executed at the third wave: one set onboarded, one layer recorded, one repository walked.**
+
+*Outgoing statement.* "**★ ALL THREE EXECUTED AT WAVE 3 (2026-07-04,
+`records/cc/reports/cc_corpus_wave3_report.md`):** BCFB onboarded (`juyaolongpaul/Bach_chorale_FB`, 139 chorales / 143
+files, MusicXML+kern+MEI — registry `wave3_sources.bcfb`, N10); the **JHT `syntax-tree` GT layer** was already
+registry-recorded (`other_sources.jazz_harmony_treebank.gt_layers = ["chords","syntax-tree"]`, N11) — this note records
+that fact (the census §1 prose never carried it; bookkeeping only); `DCMLab/figured-bass` **WALKED and §7→§1 promoted**
+— the walk found it is a figured-bass REALIZATION SCRIPT, **not a GT corpus** (registry
+`wave3_sources.dcmlab_figured_bass`, status=walked, N10-NEGATIVE)." — the section *8b. The recurring-discovery finding,
+and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)*, the paragraph led *★ ALL THREE EXECUTED AT WAVE 3
+(…):* (locator: lines 216–221), its bold colon lead opening the sentence. Two claims: (i) the three pending additions
+were carried out at the third wave; (ii) what the registry holds of them — the chorale figured-bass set onboarded, the
+treebank's tree layer already recorded, and the figured-bass repository walked and found to be a realization script —
+the parenthesis *"(the census §1 prose never carried it; bookkeeping only)"*, one of the passages recording a
+correction, taken with the claim.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — an acquisition event of the third wave. (ii) **QUARANTINED.**
+*Audit question:* does the census registry at the current commit carry the chorale figured-bass set, the treebank's tree
+layer and the walked figured-bass repository as the sentence names them?
+
+---
+
+**Row 41.47 — each third-wave row marked in the registry with its provenance.**
+
+*Outgoing statement.* "Each Wave-3 row is marked "entered at Wave 3, provenance
+`records/cc/reports/cc_corpus_wave3_report.md`" in the registry `wave3_sources` array." — the section *8b. The
+recurring-discovery finding, and the PURPOSE-DRIVEN sweep trigger (user observation, 2026-07-03)*, the same paragraph
+(locator: lines 221–222).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is each third-wave row of the census registry's
+`wave3_sources` array marked with its entry and its provenance at the current commit?
+
+---
+
+**Row 41.48 — N1: common-practice Roman-numeral ground truth, well covered.**
+
+*Outgoing statement.* The table row's cells "N1" · "common-practice RN/harmony GT, score-aligned, human" · "gate,
+Stage-5 fitter" · "well-covered (DLC/WiR)" — the section *8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user
+question, 2026-07-03)*, the needs table, the row *N1* (locator: line 259). Two claims: (i) the need and its consumers,
+the gate and the fitter; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **QUARANTINED.** *Audit question:* which held sets cover
+score-aligned, human common-practice Roman-numeral ground truth at the current commit?
+
+---
+
+**Row 41.49 — N2: dual-annotator disagreement data; the measured pairs; a multi-reading chorale set, record-only.**
+
+*Outgoing statement.* The table row's cells "N2" · "dual/multi-annotator disagreement data" · "Class-P calibration
+(C1/C2)" · "*(Wave-3 MEASURED, corrects the audit)* the on-disk co-located dual set = **the 27 TAVERN A/B pairs**
+(Beethoven 17 + Mozart 10, verified at the WiR clone AND by Cowork glob). The audit's "Tymoczko-vs-DCML pairs" are NOT
+co-located: within WiR the two analyst sets sit on disjoint pieces (overlap **0**; DCML 988 / Tymoczko 419 analyses);
+CROSS-container pairs (WiR-Tymoczko × the separate `tools/dcml/` DCML corpora) remain possible but need identity work —
+recorded, not assumed. Sears (dual, cadence): **no public deposit** (access = authors). CASD (4×, audio) + RS200 (2×)
+unchanged. *(Wave-3 ADDENDUM,
+`records/cc/reports/cc_wave3_addendum_report.md`)* **NEW candidate: `DDMAL/Flexible_harmonic_chorale_annotations`**
+cloned+pinned+walked — 571 chorales (371 Bach + 200 Praetorius) with **permutational ('flexible') multi-reading**
+harmonic analyses (multiple valid readings per slice + filtering functions, vs single-reading RN) → a SECOND annotation
+layer over gate-class Bach chorales. ⚠ **RECORD-ONLY** (its 371 Bach chorales overlap the gate repertoire; any use over
+gate pieces is a future user ruling — census §4 dedupe). WALK caveat: the analysis GT ships as an R-package BINARY
+(kernData/ .krn are **kern-only)" — the section *8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question,
+2026-07-03)*, the needs table, the row *N2* (locator: line 260). Three claims: (i) the need and its consumer, the
+calibration of confidences; (ii) the state measured at the third wave — the co-located dual set and the assumed second
+source found to have no overlap — opened *"(Wave-3 MEASURED, corrects the audit)"*, a correction passage taken with the
+claim; (iii) the addendum's candidate, a multi-reading annotation of chorales, record-only over the gate repertoire.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, whose maps the calibration of confidences
+fits. (ii) **QUARANTINED.** *Audit question:* which dual-annotator sets are co-located on disk at the current commit,
+and do the two analyst sets inside When-in-Rome share no piece? (iii)
+**RELOCATED** — to ***the measurement of the analysis***, over which an annotation set overlapping the regression corpus
+is record-only, as register entry D-514 rules.
+
+*The decisions register at this row.* The decisions register's data file homes **the retired entry D-373** and **the
+retired entry D-374** together at this document's line 260, this table row's one line; the row's claim (ii) carries
+D-373's content, the dual-annotator pairs measured on disk, and its claim (iii) carries D-374's, the multi-reading
+chorale set record-only — facts of the data file, moving no disposition and carrying no mark.
+
+---
+
+**Row 41.50 — N3: jazz and pop analysis ground truth, queued for the third wave.**
+
+*Outgoing statement.* The table row's cells "N3" · "jazz/pop analysis GT, score-aligned" · "A-7 mark retirement, idioms
+3–5" · "Tier J queued (Wave 3); *(audit)* walk-list adds: Jazz Corpus (function GT, 76), WJD native (phrase/form), Real
+Book (license-check)" — the section *8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question,
+2026-07-03)*, the needs table, the row *N3* (locator: line 261). Two claims: (i) the need and its consumers, the
+retirement of the unvalidated mark and the further idioms; (ii) its state, a queue and a walk-list.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **HISTORICAL** — a status of a queued acquisition.
+
+---
+
+**Row 41.51 — N4: cadence and phrase ground truth, rich.**
+
+*Outgoing statement.* The table row's cells "N4" · "cadence + punctuation/phrase GT" · "L5 §5.2, L1.5, L6" · "rich
+(corpus-wide since 21k); *(audit)* jazz side = WJD native" — the section *8c. The FULL-NEEDS AUDIT — the union-of-needs
+mechanism (user question, 2026-07-03)*, the needs table, the row *N4* (locator: line 262). The member's *L5 §5.2*,
+*L1.5* and *L6* are the older stack's cadence detector, phrase-boundary view and grouping layer. Two claims: (i) the
+need and its consumers; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, which validates the cadence and
+phrase readings against annotated cadences and phrase ends. (ii) **QUARANTINED.** *Audit question:* which cadence and
+phrase ground-truth sets are held at the current commit, the jazz side among them?
+
+---
+
+**Row 41.52 — N5: key and modulation ground truth; the textbook set absent at the pin, then acquired.**
+
+*Outgoing statement.* The table row's cells "N5" · "key/modulation GT" · "L3, S1/S2" · "*(Wave-3 MEASURED, corrects the
+audit)* **KMT is NOT present as analyses at the WiR pin** `aa7539f1` (Corpus/Textbooks = 201 scores / **0** analysis.txt
+— verified by CC AND by Cowork glob); KMT acquisition = the DDMAL `key_modulation_dataset` upstream (direct-acquisition
+candidate, next corpus increment). Sears pivots: no public deposit. SWD score-aligned local keys unchanged (ChoCo). WiR
+analyses still carry local keys generally (N5 partial). *(Wave-3 ADDENDUM,
+`records/cc/reports/cc_wave3_addendum_report.md`)* **★ KMT ACQUIRED:** `DDMAL/key_modulation_dataset` @ `6602ae6a`
+cloned+pinned+walked — **201 annotated Humdrum .krn** (aldwell 7 / kostka-payne 15 / reger 117 / rimsky-korsakov 37 /
+tchaikovsky 25), key/modulation as `*C:` key-designation tokens + inline `NEWKEY=>:RN` markers in the **text spine;
+CC-BY-SA scores / MIT code; held-out. The direct-acquisition candidate is now on disk (README checkbox list ~135 <
+actual 201 = living-repo growth, reported)" — the section *8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user
+question, 2026-07-03)*, the needs table, the row *N5* (locator: line 263). The member's *L3* is the older stack's
+key-and-mode layer. Three claims: (i) the need and its consumer; (ii) the measurement that the textbook set's analyses
+are absent at the When-in-Rome pin, opened *"(Wave-3 MEASURED, corrects the audit)"*, a correction passage taken with
+the claim; (iii) the set acquired from its upstream and held out.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **QUARANTINED.** *Audit question:* does the When-in-Rome clone at
+its pin hold no analysis of the textbook set at the current commit? (iii) **QUARANTINED.** *Audit question:* is
+`DDMAL/key_modulation_dataset` cloned, pinned and held out at the current commit, and what does it hold?
+
+---
+
+**Row 41.53 — N6: melodic-phrase ground truth, onboarded at the second wave.**
+
+*Outgoing statement.* The table row's cells "N6" · "melodic-phrase GT (monophonic ok)" · "VL-E" · "Essen onboarded (Wave
+2); *(audit)* depth reserves MTC/GTTM" — the section *8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user
+question, 2026-07-03)*, the needs table, the row *N6* (locator: line 264). Two claims: (i) the need and its consumer on
+the voice-leading axis; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **QUARANTINED.** *Audit question:* is the Essen melodic-phrase set
+onboarded at the current commit?
+
+---
+
+**Row 41.54 — N7: texture ground truth, onboarded at the second wave.**
+
+*Outgoing statement.* The table row's cells "N7" · "texture GT (per-bar / per-piece)" · "VL-C validation, §15-1" ·
+"algomus bed onboarded (Wave 2)" — the section *8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question,
+2026-07-03)*, the needs table, the row *N7* (locator: line 265). Two claims: (i) the need and its consumer; (ii) its
+state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **QUARANTINED.** *Audit question:* is the algomus texture bed
+onboarded at the current commit?
+
+---
+
+**Row 41.55 — N8: voice-leading schema ground truth, onboarded at the second wave.**
+
+*Outgoing statement.* The table row's cells "N8" · "voice-leading schema GT" · "VL-F" · "schema bed onboarded (Wave 2)"
+— the section *8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)*, the needs table,
+the row *N8* (locator: line 266). Two claims: (i) the need and its consumer; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **QUARANTINED.** *Audit question:* is the schema annotation bed
+onboarded at the current commit?
+
+---
+
+**Row 41.56 — N9: stream and implied-polyphony ground truth; notated half found, implied half confirmed absent.**
+
+*Outgoing statement.* The table row's cells "N9" · "stream/implied-polyphony GT" · "VL-D target task" · "*(union search
+2026-07-04 — `cowork_union_search_record.md` §1)* **notated-polyphony half now has real candidates:** piano_svsep (393
+pieces, per-note voice+staff GT over DCML piano scores WE HOLD — the SOTA task set) + MCMA (~475, CC-BY, hand-exploded
+Baroque voices) + vocsep_ijcai2023 (1,054, notation-derived); **implied-polyphony half CONFIRMED ABSENT**
+(VoiSe/Gray-Bunescu never released; final). Held: protovoice (38, partial, reduction-encoded). *(ACQUISITION ROUND
+2026-07-04, `records/cc/reports/cc_acquisition_round_report.md`)* **★ ALL THREE ACQUIRED + pinned + verified at the
+data:** piano_svsep @ `1462e7c2` (MIT code; GT graphs FETCHED AT RUNTIME from `fosfrancesco/piano_corpora_dcml` — PIN =
+the code repo, fetch path recorded, `jpop` confirmed non-public), MCMA @ `2bdb12e2` (475 .mxl, track split **153/239/83
+VERIFIED**; ★ license = **CC-BY-NC-SA-4.0**, NOT the record's CC-BY — corrected), vocsep_ijcai2023 @ `82152a95` (~1,054
+graphs BUILT AT RUNTIME from bach-370-chorales + Haydn/Mozart SQ + MCMA; ★ license = **MIT**, NOT the record's
+"unstated" — corrected). All held-out; the actual GT for the two runtime-built beds lives at their fetch/source paths
+(follow-on pin candidates). Implied-polyphony half stays the confirmed-final negative" — the section *8c. The FULL-NEEDS
+AUDIT — the union-of-needs mechanism (user question, 2026-07-03)*, the needs table, the row *N9* (locator: line 267).
+Three claims: (i) the need and its consumer; (ii) the union search's result — the notated half with real candidates, the
+implied half confirmed absent and final; (iii) the acquisition round's record of the three sets acquired, pinned and
+verified, two of their licences found other than the record said and corrected — a correction passage taken with the
+claim.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **QUARANTINED.** *Audit question:* does any released dataset of
+implied-polyphony ground truth exist, and which notated-polyphony candidates were found? (iii) **QUARANTINED.**
+*Audit question:* are piano_svsep, MCMA and vocsep_ijcai2023 pinned at the current commit, and under which licences?
+
+*The decisions register at this row.* The decisions register's data file homes **the retired entry D-370** at this
+document's line 267, this table row's one line; the row's claim (ii) carries its content — a fact of the data file,
+moving no disposition and carrying no mark.
+
+---
+
+**Row 41.57 — N10: figured-bass ground truth for the chord layer's evidence channel; the chorale set obtained.**
+
+*Outgoing statement.* The table row's cells "N10" · "figured-bass GT" · "L4 evidence channel (R-4)" · "*(Wave-3)* **BCFB
+OBTAINED** (139 chorales / 143 kern + MEI + MusicXML, CC-BY, pinned) — the gate repertoire's composer-stated harmony.
+**DCMLab/figured-bass WALKED = a realization SCRIPT, N10-NEGATIVE** (never re-mistake it for GT). Third source: the DLC
+`figbass` column (parser-dropped; exposure = the queued post-wave increment)" — the section *8c. The FULL-NEEDS AUDIT —
+the union-of-needs mechanism (user question, 2026-07-03)*, the needs table, the row *N10* (locator: line 268). The
+member's *L4* is the older stack's chord layer. Two claims: (i) the need and its consumer, an evidence channel of the
+chord layer; (ii) its state — the chorale figured-bass set obtained, the figured-bass repository walked and found to be
+a realization script, and a third source in a column the parser drops.
+
+*Derived statements that speak to it.* (i) L3-S29. (ii) None.
+
+*Current-text axis.* (i) L3-S29: **DIFFERS**. (ii) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (i) The outgoing need N10 names its consumer *"L4 evidence channel (R-4)"*;
+L3-S29 says *"L3 never reads the composer's figures"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, which may use the composer's
+figures as a reference and never as analysis input (IC-L1 S-8). (ii) **QUARANTINED.** *Audit question:* is the chorale
+figured-bass set pinned at the current commit, is `DCMLab/figured-bass` a realization script holding no ground truth,
+and does the parser drop the DLC `figbass` column?
+
+*The decisions register at this row.* The decisions register's data file homes **the retired entry D-369** at this
+document's line 268, this table row's one line; the row's claim (ii) carries its content — a fact of the data file,
+moving no disposition and carrying no mark.
+
+---
+
+**Row 41.58 — N11: hierarchical harmony trees; a treebank obtained, two sources located without an artifact.**
+
+*Outgoing statement.* The table row's cells "N11" · "hierarchical harmony trees" · "grammar lever (R-7)" · "*(Wave-3)*
+JHT trees held; **NEW: algomus `jazz-arbres` treebank obtained inside algomus-data (1,170 entries — ~8× the JHT)**;
+Kirlin Schenker41 = README-only repo, the 41 excerpts were never committed (access = dissertation page; 2024 successor
+arXiv 2408.07184); GTTM located (~300 pairs) but no single artifact + license unclear — access recorded, not mirrored" —
+the section *8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)*, the needs table, the
+row *N11* (locator: line 269). Two claims: (i) the need and its consumer, a grammar lever; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **QUARANTINED.** *Audit question:* which tree annotations are held
+at the current commit, and is the Schenker41 repository README-only?
+
+---
+
+**Row 41.59 — N12: notated chord symbols aligned with realized scores; the count of the realized half unmeasured.**
+
+*Outgoing statement.* The table row's cells "N12" · "notated chord symbols aligned with realized scores" · "E-8
+symbols-as-input, T-17 QA" · "*(union search 2026-07-04, record §4)* leadsheet half rich (held). **Realized half: the
+big lever is ALREADY HELD — PDMX preserves MuseScore chord symbols (`<harmony>` in the shipped mxl, verified feasible);
+the symbol-bearing multi-voice subset is unmeasured → a cheap local read-only counting pass is the next step.** Small
+clean add: GuitarSet (360, CC-BY, instructed-chart vs performed comping). Open Hymnal verified symbol-less; no cleaner
+jazz set exists. *(ACQUISITION ROUND 2026-07-04, `records/cc/reports/cc_acquisition_round_report.md`)* **GuitarSet
+ACQUIRED** — annotation.zip sha256 `8daa02e6…`, **360 .jams verified**, CC-BY-4.0; the 4 audio zips (657 MB–3.61 GB)
+recorded, NOT downloaded. **★ PDMX counting pass ATTEMPTED + STOPPED, NOT measured:** the HELD form is METADATA-ONLY
+(`tools/pdmx/PDMX.csv` 250k-row index + `jazz_candidates.csv` + 5 spot-check .mxl) with **NO chord-symbol column**
+(`n_annotations`/`has_annotations` conflate all annotation types; `tracks`=instrument codes); the raw MXL
+(`mxl.tar.gz`) + per-score MusicRender JSON live ONLY in the Zenodo archive, not on disk → counting `<harmony>` needs a
+re-download/acquisition (a future user decision the read-only, do-not-re-download dispatch forbids). No proxy invented;
+the symbol-bearing multi-voice subset stays **UNMEASURED**" — the section *8c. The FULL-NEEDS AUDIT — the
+union-of-needs mechanism (user question, 2026-07-03)*, the needs table, the row *N12* (locator: line 270). Three
+claims: (i) the need and its consumers, chord symbols as input and a check of quality; (ii) the union search's result —
+the lead-sheet half held, the realized half's candidate already held in PDMX, a counting pass the next step; (iii) the
+acquisition round's record — one set acquired, the counting pass attempted and stopped, the subset unmeasured.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, which may read a chord symbol
+written in a score as a comparison or ground-truth label and never as analysis input (IC-L1 S-8). (ii) **QUARANTINED.**
+*Audit question:* does the held PDMX index carry no column for chord symbols at the current commit, and is the
+symbol-bearing multi-voice subset unmeasured? (iii) **QUARANTINED.** *Audit question:* is the GuitarSet annotation
+archive held and verified at the current commit?
+
+---
+
+**Row 41.60 — N13: ornament-realization pairs confirmed absent; the ornament expansion ships rule-based.**
+
+*Outgoing statement.* The table row's cells "N13" · "ornament-realization pairs" · "R-1 ornament expansion" · "*(union
+search 2026-07-04, record §2)* **negative CONFIRMED** — no symbol→realization dataset exists; nearest =
+Batik-plays-Mozart (trill realizations recoverable by heuristic, unlabeled; ★ multi-need: also carries harmony+cadence
+GT on 12 Mozart sonatas); R-1 ships rule-based/unvalidated as predicted; build-paths recorded" — the section *8c. The
+FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)*, the needs table, the row *N13* (locator:
+line 271). Two claims: (i) the need and its consumer, an ornament expansion; (ii) the union search's result — no such
+dataset exists, the nearest candidate named, the expansion shipping rule-based and unvalidated.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **QUARANTINED.** *Audit question:* does any dataset pair an ornament
+sign with its written-out realization, and does the ornament expansion ship rule-based and unvalidated at the current
+commit?
+
+*The decisions register at this row.* The decisions register's data file homes **the retired entry D-371** at this
+document's line 271, this table row's one line; the row's claim (ii) carries its content — a fact of the data file,
+moving no disposition and carrying no mark.
+
+---
+
+**Row 41.61 — N14: difficulty labels found research-only or proprietary; one set acquired, one gated.**
+
+*Outgoing statement.* The table row's cells "N14" · "difficulty/grading labels (syllabus, exam grades)" · "T-32" ·
+"*(union search 2026-07-04, record §3)* **found:** CIPI (652 pieces, Henle 1–9, MusicXML — Zenodo gated/research-only) +
+Mikrokosmos (147, open) + PSyllabus (7,901 exam-board-labeled recordings, no scores) + pianosyllabus.com (28k,
+website-only). No machine-readable ABRSM/RCM/Henle dumps exist. **T-32 caveat: all real label sources
+research-only/proprietary — commercial use needs a license path.** *(ACQUISITION ROUND 2026-07-04,
+`records/cc/reports/cc_acquisition_round_report.md`)* **Mikrokosmos ACQUIRED** @ `f77aebc1` (147 MusicXML verified,
+henle 3-class difficulty labels, **no LICENSE file** → hash-pin-only). **CIPI recorded GATED** (Zenodo 8037327
+request-access; **USER ACTION: the access form still pending**). **PSyllabus recorded** (Zenodo 14794592; audio/MIDI
+only, no symbolic scores → N14-adj). The T-32 commercial-license caveat rides the product-tool register" — the section
+*8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)*, the needs table, the row *N14*
+(locator: line 272). Three claims: (i) the need and its consumer, a difficulty tool; (ii) the union search's result —
+the sources found and the caveat that every real label source is research-only or proprietary; (iii) the acquisition
+round's record — one set acquired and hash-pinned, one gated, one recorded, the caveat riding the member's
+*"product-tool register"*.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **QUARANTINED.** *Audit question:* are the difficulty-label sources
+found research-only or proprietary at origin, and under which licences are they held? (iii) **QUARANTINED.**
+*Audit question:* is the Mikrokosmos set pinned at the current commit, and is CIPI still gated?
+
+*The decisions register at this row.* The decisions register's data file homes **the retired entry D-375** at this
+document's line 272, this table row's one line; the row's claim (ii) carries its content — a fact of the data file,
+moving no disposition and carrying no mark.
+
+---
+
+**Row 41.62 — N15: performed-intonation material ruled out of corpus scope.**
+
+*Outgoing statement.* The table row's cells "N15" · "performed-intonation reference material" · "T-21/T-24" · "**★ SCOPE
+RULING RATIFIED (user, 2026-07-04):** audio-domain, out of corpus scope; T-21/T-24 validate by theory/listening" — the
+section *8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)*, the needs table, the row
+*N15* (locator: line 273). Two claims: (i) the need and its consumers, the intonation features; (ii) the scope ruling —
+audio-domain material out of corpus scope, the features validated by theory and by listening, the ruling's date
+provenance taken with it.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **RELOCATED** — to ***the measurement of the analysis***, whose own
+design content is what counts as ground truth (`FRAMEWORK.md` §5, NOT A LAYER).
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-366** at this
+document's line 273, this table row's one line, its content carried by claim (ii); the decisions register's INDEX
+records it as *"Recorded-performance intonation material is OUT of corpus scope — the intonation features are validated
+by theory and by listening"* (group O, LIVE, entry ratified 2026-08-02 · user) — a fact of the data file, moving no
+disposition and carrying no mark.
+
+---
+
+**Row 41.63 — N16: form and section ground truth; a sonata-form quartet set obtained with a mapping step owed.**
+
+*Outgoing statement.* The table row's cells "N16" · "form/section GT (sonata form etc.)" · "L6 §9-D3 deferred, T-9" ·
+"*(Wave-3)* **algomus Mozart SQ OBTAINED** (32 ref.dez, Structure+Cadence+Harmony labels; caveat: onsets in SECONDS
+keyed to a reference score/recording — a tick-mapping step is owed before load-bearing use) + WJD native `sections` +
+CoCoPops `**form`; DCML TSV `form` column VERIFIED chord-morphology, NOT form GT" — the section *8c. The FULL-NEEDS
+AUDIT — the union-of-needs mechanism (user question, 2026-07-03)*, the needs table, the row *N16* (locator: line 274).
+The member's *L6* is the older stack's grouping layer. Two claims: (i) the need and its consumers; (ii) its state — the
+quartet set obtained, its onsets given in seconds against a reference, so a mapping to the score is owed, two further
+sources, and one column verified not to be form ground truth.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, which validates the section
+grouping against annotated sections. (ii) **QUARANTINED.** *Audit question:* is the algomus quartet set held at the
+current commit, are its onsets in seconds, and is the DCML `form` column chord morphology and not form?
+
+---
+
+**Row 41.64 — N17: style and era metadata, held.**
+
+*Outgoing statement.* The table row's cells "N17" · "style/era metadata" · "idiom lenses, calibration C4" · "held
+(registry fields)" — the section *8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)*,
+the needs table, the row *N17* (locator: line 275). Two claims: (i) the need and its consumers; (ii) its state.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **QUARANTINED.** *Audit question:* do the registry fields carry
+style and era metadata at the current commit?
+
+---
+
+**Row 41.65 — N18: contrapuntal and imitative-structure ground truth, adopted; a fugue set obtained.**
+
+*Outgoing statement.* The table row's cells "N18" · "contrapuntal/imitative-structure GT (fugue
+subjects/answers/countersubjects, imitation points)" · "T-12, VL-F/VL-D neighborhood" · "**ADOPTED (user, 2026-07-04,
+audit §1).** *(Wave-3)* **algomus Bach fugues OBTAINED** (bach-wtc-i, 23 of 24 ref.dez; the 12 Shostakovich analyses are
+website-only, NOT in the repo — mismatch recorded); CRIM observations remain a candidate" — the section *8c. The
+FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)*, the needs table, the row *N18* (locator:
+line 276). Three claims: (i) the need and its consumers; (ii) its adoption by the user; (iii) its state — the fugue set
+obtained with one recorded mismatch, a further candidate.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **HISTORICAL** — a ruling adopting a need. (iii) **QUARANTINED.**
+*Audit question:* is the algomus fugue set held at the current commit, and how many of the named analyses does it carry?
+
+---
+
+**Row 41.66 — N19: part-writing error ground truth, adopted; no public dataset, so it is built.**
+
+*Outgoing statement.* The table row's cells "N19" · "part-writing error/exercise GT (marked errors in
+species/part-writing exercises)" · "VL-H, T-12" · "**ADOPTED (user, 2026-07-04).** *(union search 2026-07-04, record
+§5)* **no public dataset exists — CONFIRMED build-not-download** (Harmonia/Artusi hold it commercially closed).
+Validation seeds found: the Dahn manuscript-checked 46 consecutive-5th/8ve instances in the Bach chorales +
+Fitsioris-Conklin 18 (real-music positives, small transcription job) + the synthetic-violation route. Construction owned
+by VL-H's design gate" — the section *8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question,
+2026-07-03)*, the needs table, the row *N19* (locator: line 277). Three claims: (i) the need and its consumers; (ii) its
+adoption by the user; (iii) the union search's result — no public dataset, built and not downloaded, the validation
+seeds found, its construction owned by a voice-leading design.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose ground truth each need
+names, as Row 21.7 placed the census's Tier J. (ii) **HISTORICAL** — a ruling adopting a need. (iii) **QUARANTINED.**
+*Audit question:* does any public dataset of marked part-writing errors exist, and where are the named validation seeds
+held?
+
+*The decisions register at this row.* The decisions register's data file homes **the retired entry D-372** at this
+document's line 277, this table row's one line; the row's claim (iii) carries its content — a fact of the data file,
+moving no disposition and carrying no mark.
+
+---
+
+**Row 41.67 — N20: pedal-point ground truth, adopted; covered by a column the parser drops.**
+
+*Outgoing statement.* The table row's cells "N20" · "pedal-point GT" · "pedal-point-span validation (its owning layer's
+design)" · "**ADOPTED (user, 2026-07-04):** covered — VERIFIED DLC `pedal` TSV column on every held corpus
+(parser-dropped) + algomus fugue pedals; exposure pending. Completes the §2.15 span-kind↔needs mapping" — the section
+*8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user question, 2026-07-03)*, the needs table, the row *N20*
+(locator: line 278). Three claims: (i) the need and its consumer; (ii) its adoption by the user; (iii) its state — a
+verified `pedal` column on every held corpus, dropped by the parser, and the fugue pedals, their exposure pending.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, which validates the pedal-point
+reading against annotated pedal points. (ii) **HISTORICAL** — a ruling adopting a need. (iii) **QUARANTINED.**
+*Audit question:* does every held DLC corpus carry a `pedal` column at the current commit, and does the parser drop it?
+
+---
+
+**Row 41.68 — a cheap impact measurement before any decision: re-validate the signed conclusions against the new
+material.**
+
+*Outgoing statement.* "**Cheap impact measurement before any decision** (investigate-by-default): a read-only
+re-validation of the component's signed conclusions against the new material." — the section *8c. The FULL-NEEDS AUDIT —
+the union-of-needs mechanism (user question, 2026-07-03)*, the supersession decision protocol, its step *2* (locator:
+lines 344–345), quoted with its label.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, which re-validates a conclusion
+against new ground truth.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-368** at this
+document's lines 339 to 355, the whole of range 13, on which this row's sentence lies; the decisions register's INDEX
+records it as *"When new material bears on an already-settled conclusion, the rework question is settled by a recorded
+protocol — record, measure cheaply, then fork on whether it CONTRADICTS or merely enriches"* (group Q, LIVE, entry
+ratified 2026-08-02 · user) — a fact of the data file, moving no disposition and carrying no mark.
+
+---
+
+**Row 41.69 — the question the measurement answers: does the new material contradict a conclusion or enrich it?**
+
+*Outgoing statement.* "The question it answers: does the new bed **contradict** a conclusion the design rests on, or
+merely **enrich/extend** the validation?" — the section *8c. The FULL-NEEDS AUDIT — the union-of-needs mechanism (user
+question, 2026-07-03)*, the same step (locator: lines 345–346), its colon lead opening the question it carries.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, which re-validates a conclusion
+against new ground truth.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-368** at this
+document's lines 339 to 355, the whole of range 13, on which this row's sentence lies; the decisions register's INDEX
+records it as *"When new material bears on an already-settled conclusion, the rework question is settled by a recorded
+protocol — record, measure cheaply, then fork on whether it CONTRADICTS or merely enriches"* (group Q, LIVE, entry
+ratified 2026-08-02 · user) — a fact of the data file, moving no disposition and carrying no mark.
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) without a dated parenthesis are neither here nor among the rows; no line listed
+here carries the quotation-block marker.
+
+1. "| Container class | Closure state (v1) |" (18–19) — the container table's header row with its separator line, listed
+   as one item, as §6.36 and §6.39 listed their tables'.
+2. "*Why:* jazz accuracy is not measurable on the corpora held at all — …" (124–127) — the defense of the deferral
+   before it, under the second reading rule; it lies on register entry D-422's home lines, which carry no mark.
+3. "**Mitigations (each cheap, each catching a different miss mode):**" (170) — a lead ending in a colon introducing six
+   numbered items.
+4. "Catches index-only releases GitHub misses." (176) — the defense of the mitigation before it, under the second
+   reading rule.
+5. "Highest catch-rate per unit effort for unknown unknowns." (179) — the defense of the mitigation before it, under the
+   second reading rule.
+6. "**Why it happens (diagnosed, two mechanisms — …):**" (192) — a lead ending in a colon introducing the two numbered
+   items of a diagnosis; it explains the recurring-discovery finding and is not the defense of a rule before it, so it is
+   listed as a lead, its parenthesis taken with it.
+7. "These are census WALKS, not census misses — …" (196) — a remark on the item's own account.
+8. "| # | need (GT/material class) | consumer | state (…) |" (257–258) — the needs table's header row with its separator
+   line, listed as one item.
+9. "**The supersession decision protocol (user, 2026-07-03 — …):** …" (339–340) — development conduct: how the project
+   decides whether to rework a settled conclusion, led by a label with a dated parenthesis; it lies on register entry
+   D-368's home lines, which carry no mark.
+10. "The protocol, reusing the project's standing shapes:" (341) — a lead ending in a colon introducing four numbered
+    steps; it lies on register entry D-368's home lines, which carry no mark.
+11. "**Record first:** the finding lands as an open item …" (342–343) — development conduct: where a finding is
+    recorded; it lies on register entry D-368's home lines, which carry no mark.
+12. "**The fork, by measured outcome:**" (347) — a lead ending in a colon introducing two nested bullets; it lies on
+    register entry D-368's home lines, which carry no mark.
+13. "**Contradiction (a premise-invalidation):** surfaced IMMEDIATELY …" (348–350) — development conduct: how the
+    project decides whether to rework a settled conclusion; it lies on register entry D-368's home lines, which carry no
+    mark.
+14. "**Enrichment only:** DEFAULT = postpone …" (351–352) — development conduct: how the project decides whether to
+    rework a settled conclusion; it lies on register entry D-368's home lines, which carry no mark.
+15. "**The decision is the user's in both branches** — …" (353–354) — development conduct: how the project decides
+    whether to rework a settled conclusion; it lies on register entry D-368's home lines, which carry no mark.
+16. "(This is the corpus-side analogue of the gate re-baseline discipline: …" (354–355) — a remark comparing the
+    protocol with another discipline; it lies on register entry D-368's home lines, which carry no mark.
+
+#### The arithmetic at this member
+
+- Rows written: **69**.
+- **Outgoing statements placed: 113** — 33 rows of one claim, 28 rows of two (Rows 41.1, 41.5, 41.6, 41.7, 41.8, 41.12,
+  41.14, 41.15, 41.16, 41.17, 41.18, 41.19, 41.27, 41.29, 41.30, 41.46, 41.48, 41.50, 41.51, 41.53, 41.54, 41.55, 41.57,
+  41.58, 41.60, 41.62, 41.63 and 41.64) and 8 rows of three (Rows 41.49, 41.52, 41.56, 41.59, 41.61, 41.65, 41.66 and
+  41.67).
+- Listed under *not a statement*: **16**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 54 | 41.10, 41.11, 41.14 (ii), 41.15 (ii), 41.16 (ii), 41.17 (ii), 41.18 (ii), 41.19 (ii), 41.20, 41.21, 41.22, 41.23, 41.24, 41.25, 41.26, 41.27 (i), 41.27 (ii), 41.28, 41.29 (i), 41.30 (i), 41.31, 41.32, 41.33, 41.34, 41.35, 41.37, 41.38, 41.39, 41.40, 41.43, 41.48 (i), 41.49 (i), 41.49 (iii), 41.50 (i), 41.51 (i), 41.52 (i), 41.53 (i), 41.54 (i), 41.55 (i), 41.56 (i), 41.57 (i), 41.58 (i), 41.59 (i), 41.60 (i), 41.61 (i), 41.62 (i), 41.62 (ii), 41.63 (i), 41.64 (i), 41.65 (i), 41.66 (i), 41.67 (i), 41.68, 41.69 |
+| QUARANTINED | 39 | 41.1 (ii), 41.5 (ii), 41.6 (ii), 41.7 (ii), 41.8 (ii), 41.12 (ii), 41.13, 41.14 (i), 41.15 (i), 41.16 (i), 41.17 (i), 41.18 (i), 41.19 (i), 41.29 (ii), 41.30 (ii), 41.46 (ii), 41.47, 41.48 (ii), 41.49 (ii), 41.51 (ii), 41.52 (ii), 41.52 (iii), 41.53 (ii), 41.54 (ii), 41.55 (ii), 41.56 (ii), 41.56 (iii), 41.57 (ii), 41.58 (ii), 41.59 (ii), 41.59 (iii), 41.60 (ii), 41.61 (ii), 41.61 (iii), 41.63 (ii), 41.64 (ii), 41.65 (iii), 41.66 (iii), 41.67 (iii) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 20 | 41.1 (i), 41.2, 41.3, 41.4, 41.5 (i), 41.6 (i), 41.7 (i), 41.8 (i), 41.9, 41.12 (i), 41.36, 41.41, 41.42, 41.44, 41.45, 41.46 (i), 41.50 (ii), 41.65 (ii), 41.66 (ii), 41.67 (ii) |
+| UNPLACED | 0 | — |
+| **Total** | **113** | — |
+
+**The column sums to 113 (0 + 0 + 54 + 39 + 0 + 20 + 0), against 113 statements, so the arithmetic closes at this
+member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 1 |
+| THE DERIVATION IS SILENT | 112 |
+| **Total verdicts** | **113** |
+
+The AGREES statements: none. The DIFFERS statements: 41.57 (i) (L3-S29).
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 41 is empty, and the document is not
+  one of the five withheld from the deriving session's pack.
+- **SEEN rows: none** — no SEEN home lies in this document, agreeing with §5.
+- **Twelve entries of the decisions register's data file are homed inside the ranges, each carrying no mark**:
+  **register entry D-422** at Rows 41.27 to 41.29, **register entry D-366** at Row 41.62 (ii), **register entry D-368**
+  at Rows 41.68 and 41.69; **the retired entry D-359** at Rows 41.10 and 41.11, **the retired entry D-360** at Row
+  41.20, **the retired entries D-373 and D-374** at Row 41.49 (ii) and (iii), **the retired entry D-370** at Row
+  41.56 (ii), **the retired entry D-369** at Row 41.57 (ii), **the retired entry D-371** at Row 41.60 (ii), **the
+  retired entry D-375** at Row 41.61 (ii) and **the retired entry D-372** at Row 41.66 (iii) — facts of the data file,
+  relayed and moving no disposition.
+- **Twelve more are homed in the cut**: register entries D-513, D-514, D-500, D-365, D-515, D-614, D-367 and D-665, and
+  the retired entries D-361, D-362, D-363 and D-364 — each carrying no mark.
+- **The cut** holds the title and the status banner, §1's opening paragraph, §3's registry paragraph, the whole of §4,
+  §5's scope paragraph, the whole of §6, §7's heading, §8's opening paragraphs, §8b's observation and its standing
+  trigger, §8c's opening, rule and steps, its licence constraint on the fitting pool, its difficulty-grade paragraph and
+  its intake rule; no row is tabulated there.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -55701,6 +57389,9 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   progression grammar: the collection/tonic split dissolving the first, the chord needing the collection more than the
   tonic, the pipeline from collection to tonic, the forward-override for the rare remainder, and grammaticality scored
   per candidate key over the alternatives already carried. *(L3-S38 DIFFERS at Row 40.51.)*
+- Rows 41.27 (ii) and 41.29 (i) — the jazz fit deferred to the conversion of jazz ground truth, and the classical
+  common-practice idiom fitted now, the one the held annotated music covers. *(As Rows 16.23 and 23.1; both lie on
+  register entry D-422's home, unmarked.)*
 
 **To *the second axis — voice leading*.**
 
@@ -55822,6 +57513,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   and a declared margin for the selection's joint consistency.
 - Rows 40.29, 40.38 (i) and 40.42 — the per-slice ambiguity of the key, the per-chord decision margin, and the key
   layer's own unpublished facts published for downstream honesty.
+- Row 41.49 (i) — dual-annotator disagreement data for the calibration of confidences. *(The row lies on the retired
+  entries D-373's and D-374's home, unmarked.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -55939,6 +57632,29 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   of D-314, both unmarked.)*
 - Row 40.14 — the score's chord-symbol annotations as a ground-truth hint the analysis ignores. *(L3-S29 AGREES at the
   row; IC-L1 S-8.)*
+- Rows 41.10, 41.11, 41.26, 41.30 (i), 41.31, 41.32, 41.33, 41.34, 41.37, 41.38, 41.39, 41.40 and 41.43 — how ground
+  truth is found: a corpus discovered a census defect and its container enumerated to closure, the yearly re-sweep, the
+  classes recorded and not pursued, the residual container classes walked yearly, the citation-closure sweep, the index
+  subscriptions, the community query round, the exclusions recorded with their reasons, containers walked lazily and an
+  enumeration blind to a new purpose's questions. *(As Row 21.7; Rows 41.10 and 41.11 lie on the retired entry D-359's
+  home, unmarked.)*
+- Rows 41.20, 41.21, 41.22, 41.23, 41.24, 41.25, 41.27 (i), 41.28 and 41.35 — how ground truth is admitted and used: the
+  five admission fields, the decision tiers G, J, C and S, entry at research tier with promotion to a gate a ratified
+  re-baseline, a tier gating a fit and no jazz fit without ground truth to evaluate it, and every reported row verified
+  when it is cloned or pinned. *(Register entry D-308 records the research-tier entry; Row 41.20 lies on the retired
+  entry D-360's home and Rows 41.27 (i) and 41.28 on register entry D-422's, unmarked.)*
+- Rows 41.14 (ii), 41.15 (ii), 41.16 (ii), 41.17 (ii), 41.18 (ii) and 41.19 (ii) — the uses of the sets found: cadence
+  and phrase ground truth for the validation of the cadence detector, calibration and evaluation data, key and
+  modulation ground truth for the key-disagreement residual, the gate-grade jazz want, the stress and soak beds, and the
+  When-in-Rome set as the Bach-chorale ground truth.
+- Rows 41.48 (i), 41.49 (iii), 41.50 (i), 41.51 (i), 41.52 (i), 41.53 (i), 41.54 (i), 41.55 (i), 41.56 (i), 41.57 (i),
+  41.58 (i), 41.59 (i), 41.60 (i), 41.61 (i), 41.62 (i), 41.62 (ii), 41.63 (i), 41.64 (i), 41.65 (i), 41.66 (i) and
+  41.67 (i) — the needs vector's needs with their consumers, the record-only rule over the multi-reading chorale set,
+  and performed intonation ruled out of corpus scope. *(L3-S29 DIFFERS at Row 41.57 (i); IC-L1 S-8 at Rows 41.57 (i) and
+  41.59 (i); register entry D-514 at Row 41.49 (iii); Rows 41.62 (i) and 41.62 (ii) lie on register entry D-366's home,
+  and the needs rows the manifest header names on the retired entries' homes, unmarked.)*
+- Rows 41.68 and 41.69 — the re-validation of a settled conclusion against new material, and the question it answers.
+  *(Both lie on register entry D-368's home, unmarked.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
@@ -55948,7 +57664,8 @@ numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 24's the rows numbered 24.n, member 30's
 the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
 numbered 36.n, member 37's the rows numbered 37.n, member 38's the rows numbered 38.n, member 39's the rows numbered 39.n,
-and member 40's the rows numbered 40.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
+member 40's the rows numbered 40.n, and member 41's the rows numbered 41.n.
+Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -57754,6 +59471,74 @@ No QUARANTINED row: the member places no statement (§6.34's manifest header).
 - Row 40.62 (i) — do the chord-diagnosis replay, the dormant function machinery's structured open marks and kinds of
   ambiguity, and the ranked candidates with their margins exist as internal diagnostics at the current commit?
 
+**Member 41 — `cowork_score_census.md`, the passages of the document.**
+
+- Row 41.1 (ii) — are the DCMLab collections present, hash-pinned and registered in `tools/score_census_registry.json`
+  at the current commit, the schema annotation bed among them?
+- Row 41.5 (ii) — are the Essen phrase-boundary bed, the OpenScore song and quartet collections and the aligned
+  performance set onboarded at the current commit, and is the Humdrum manifest enumerated?
+- Row 41.6 (ii) — are the algomus texture set and the algomus-data monorepo onboarded at the current commit, and what do
+  they hold?
+- Row 41.7 (ii) — are CoCoPops, OpenEWLD and the Weimar Jazz Database onboarded and pinned at the current commit, and
+  are the two gated sets still gated?
+- Row 41.8 (ii) — are the chorale figured-bass set and the protovoice derivations onboarded at the current commit, and
+  is `DCMLab/figured-bass` a realization script holding no ground truth?
+- Row 41.12 (ii) — are the further DCML sub-corpora onboarded at the current commit, and does `dcml_parser.py` parse
+  each of them cleanly?
+- Row 41.13 — what span of style periods do the onboarded DCML sub-corpora cover, in one format, at the current commit?
+- Row 41.14 (i) — which cadence and phrase ground-truth sets are held at the current commit, and does any measurement of
+  the analysis use them?
+- Row 41.15 (i) — are BPS-FH, TAVERN and HaydnSun held at the current commit, and does TAVERN carry two annotators per
+  analysis?
+- Row 41.16 (i) — does the When-in-Rome clone at its pin hold the key-and-modulation set's analyses at the current
+  commit?
+- Row 41.17 (i) — are HookTheory, CoCoPops, EWLD and OpenEWLD available with the alignment the bullet names, and which
+  are held at the current commit?
+- Row 41.18 (i) — which of the OpenScore collections, the KernScores sets and PDMX are held at the current commit, and
+  under which licences?
+- Row 41.19 (i) — does `DCMLab/bach_chorales` carry no harmony labels at its pin, and is DIAMM image-only?
+- Row 41.29 (ii) — which presets carry the classical common-practice idiom's fitted values at the current commit?
+- Row 41.30 (ii) — are the algomus sets and the chorale figured-bass set onboarded, the DLC figured-bass column dropped
+  by the parser, and the Humdrum manifest enumerated, at the current commit?
+- Row 41.46 (ii) — does the census registry at the current commit carry the chorale figured-bass set, the treebank's
+  tree layer and the walked figured-bass repository as the sentence names them?
+- Row 41.47 — is each third-wave row of the census registry's `wave3_sources` array marked with its entry and its
+  provenance at the current commit?
+- Row 41.48 (ii) — which held sets cover score-aligned, human common-practice Roman-numeral ground truth at the current
+  commit?
+- Row 41.49 (ii) — which dual-annotator sets are co-located on disk at the current commit, and do the two analyst sets
+  inside When-in-Rome share no piece?
+- Row 41.51 (ii) — which cadence and phrase ground-truth sets are held at the current commit, the jazz side among them?
+- Row 41.52 (ii) — does the When-in-Rome clone at its pin hold no analysis of the textbook set at the current commit?
+- Row 41.52 (iii) — is `DDMAL/key_modulation_dataset` cloned, pinned and held out at the current commit, and what does
+  it hold?
+- Row 41.53 (ii) — is the Essen melodic-phrase set onboarded at the current commit?
+- Row 41.54 (ii) — is the algomus texture bed onboarded at the current commit?
+- Row 41.55 (ii) — is the schema annotation bed onboarded at the current commit?
+- Row 41.56 (ii) — does any released dataset of implied-polyphony ground truth exist, and which notated-polyphony
+  candidates were found?
+- Row 41.56 (iii) — are piano_svsep, MCMA and vocsep_ijcai2023 pinned at the current commit, and under which licences?
+- Row 41.57 (ii) — is the chorale figured-bass set pinned at the current commit, is `DCMLab/figured-bass` a realization
+  script holding no ground truth, and does the parser drop the DLC `figbass` column?
+- Row 41.58 (ii) — which tree annotations are held at the current commit, and is the Schenker41 repository README-only?
+- Row 41.59 (ii) — does the held PDMX index carry no column for chord symbols at the current commit, and is the
+  symbol-bearing multi-voice subset unmeasured?
+- Row 41.59 (iii) — is the GuitarSet annotation archive held and verified at the current commit?
+- Row 41.60 (ii) — does any dataset pair an ornament sign with its written-out realization, and does the ornament
+  expansion ship rule-based and unvalidated at the current commit?
+- Row 41.61 (ii) — are the difficulty-label sources found research-only or proprietary at origin, and under which
+  licences are they held?
+- Row 41.61 (iii) — is the Mikrokosmos set pinned at the current commit, and is CIPI still gated?
+- Row 41.63 (ii) — is the algomus quartet set held at the current commit, are its onsets in seconds, and is the DCML
+  `form` column chord morphology and not form?
+- Row 41.64 (ii) — do the registry fields carry style and era metadata at the current commit?
+- Row 41.65 (iii) — is the algomus fugue set held at the current commit, and how many of the named analyses does it
+  carry?
+- Row 41.66 (iii) — does any public dataset of marked part-writing errors exist, and where are the named validation
+  seeds held?
+- Row 41.67 (iii) — does every held DLC corpus carry a `pedal` column at the current commit, and does the parser drop
+  it?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -58664,6 +60449,11 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
   adoption time"*, where L3-S15 says its pattern evidence is published under the rule that *"evidence-class facts are
   published even without a named consumer"*.
 
+**Member 41.** No ADOPTED — proposed row.
+
+- **DIFFERS — Row 41.57 (i) (L3-S29):** the outgoing need N10 names its consumer *"L4 evidence channel (R-4)"*, where
+  L3-S29 says *"L3 never reads the composer's figures"*.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -58711,11 +60501,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 38 | 171 | 8 | 10 | 85 | 14 | 0 | 33 | 21 | 32 |
 | 39 | 351 | 0 | 0 | 103 | 130 | 0 | 118 | 0 | 86 |
 | 40 | 102 | 7 | 0 | 54 | 25 | 0 | 5 | 11 | 11 |
-| **Total** | **3649** | **174** | **91** | **1441** | **1063** | **0** | **634** | **246** | **1096** |
+| 41 | 113 | 0 | 0 | 54 | 39 | 0 | 20 | 0 | 16 |
+| **Total** | **3762** | **174** | **91** | **1495** | **1102** | **0** | **654** | **246** | **1112** |
 
-**The arithmetic check:** 174 + 91 + 1441 + 1063 + 0 + 634 + 246 = 3649, against 3649 statements placed (43 + 34 + 21 +
+**The arithmetic check:** 174 + 91 + 1495 + 1102 + 0 + 654 + 246 = 3762, against 3762 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -58759,11 +60550,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 38 | 14 | 19 | 138 | 171 |
 | 39 | 7 | 2 | 342 | 351 |
 | 40 | 10 | 8 | 84 | 102 |
-| **Total** | **359** | **331** | **2967** | **3657** |
+| 41 | 0 | 1 | 112 | 113 |
+| **Total** | **359** | **332** | **3079** | **3770** |
 
-**The arithmetic check of the verdicts:** 359 + 331 + 2967 = 3657, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 359 + 332 + 3079 = 3770, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113).
 
 ## 14. The derivation's independence record, relayed
 
