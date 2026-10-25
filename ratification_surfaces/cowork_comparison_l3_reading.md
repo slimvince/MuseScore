@@ -90,7 +90,7 @@ its own entry there.
 | 39 | `cowork_stage5_fitter_design.md` passages | **DONE** (§6.39) |
 | 40 | `cowork_evidence_inventory.md` passages | **DONE** (§6.40) |
 | 41 | `cowork_score_census.md` passages | **DONE** (§6.41) |
-| 42 | `cowork_joint_estimator_factorization.md` passages | NOT YET TABULATED |
+| 42 | `cowork_joint_estimator_factorization.md` passages | **DONE** (§6.42) |
 | 43 | `cowork_layer3_keymode_design.md` passages | NOT YET TABULATED |
 | 44 | `cowork_progression_schema_design.md` passages | NOT YET TABULATED |
 | 45 | `cowork_confidence_contract.md` passages | NOT YET TABULATED |
@@ -108,7 +108,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 41 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 42 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -130,7 +130,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, and position 41, the passages of `cowork_score_census.md`.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, and position 42, the passages of `cowork_joint_estimator_factorization.md`.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -166,10 +166,10 @@ tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation
 stopped at the member boundary after position 38 under its own limit on the batch, and not by a capacity judgment;
 position 39 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventeenth_2026_10_24.md`, which stopped at the
-member boundary after position 39 under its own limit on the batch, and not by a capacity judgment; positions 40 and 41
+member boundary after position 39 under its own limit on the batch, and not by a capacity judgment; positions 40 to 42
 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighteenth_2026_10_25.md`.**
-**The writing now stands at the member boundary after position 41: not done, positions 42 to 57, and the next
-writing resumes at position 42.**
+**The writing now stands at the member boundary after position 42: not done, positions 43 to 57, and the next
+writing resumes at position 43.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -56899,6 +56899,971 @@ The AGREES statements: none. The DIFFERS statements: 41.57 (i) (L3-S29).
 
 ---
 
+### 6.42 — Member 42: `cowork_joint_estimator_factorization.md`, the passages of the document
+
+> **Manifest for this member.** Position **42**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_joint_estimator_factorization.md`. Label: *the passages of the document*, exactly as the artifact
+> spells it — a label that names no heading, so the member's section is the whole document, its lines 1 to 214, as at
+> §6.35 to §6.41. **The twenty-eighth member of this comparison made of passages, the eighth cut from a document other
+> than `ARCHITECTURE.md`, and the sixth cut from a document not withheld from the deriving session's pack**: its entry's
+> `item_4_identities_inside` is empty, so its passages are cut around term-search hits only. Six ranges, each as a
+> locator only (**D-307**), with its first and last line texts exactly as the artifact publishes them (wrapped here for
+> width; range 3's two line texts are its fence lines, and range 5's carry the table's pipes, as the artifact does):
+>
+> - lines 26–35, from *"- **The segmentation** `S`: a partition of the event sequence into contiguous **harmonic
+>   segments**"* to *"    the capacity budget (OI-177), the pooling declared, nothing hand-picked."*;
+> - lines 37–39, from *"A **key change is permitted only at a segment boundary** (a change of key without a change of
+>   harmony"* to *"pitch class, quality, bass) is the derived published fact: root = tonic + the degree's interval."*;
+> - lines 46–56, from *"```"* to *"```"*;
+> - lines 75–132, from *"1. **Pitch emission** `P_emit(tone | k, c; covariates)` — each tone classified into
+>   categories:"* to *"    every fit."*;
+> - lines 136–145, from *"| # | Premise | Label | False-negative path (what would break it, and how we would see it) |"*
+>   to *"| P8 | Factor overlap (spelling ~ signature ~ collection; cadence ~ transition) is corrected by the combination
+>   weights, not by the tables | The ratified §5a structure | If a single weight cannot correct a structured overlap,
+>   the residual shows in the weight fit diagnostics; remedy is a factor merge/split, a structure change — never a value
+>   tweak |"*;
+> - lines 186–194, from *"**(a) Small synthetic cases — hand-computable DP tables, state space truncated to a declared
+>   candidate"* to *"5. a deceptive cadence (dominant to submediant) — the asymmetric transition table's work."*.
+>
+> **Each of the twelve line texts was compared with the line at its locator** in
+> `cowork_joint_estimator_factorization.md`, read by this session at its blob at the commit that landed this batch's
+> dispatch, by a script reading the artifact at that commit, **and every one matches**; the ranges hold 101 lines. The
+> blob ends every line in a line feed alone and carries no carriage return, so nothing was stripped before a comparison.
+> **No other member of the artifact is cut from this document** — this session's script, listing every member whose
+> document is `cowork_joint_estimator_factorization.md`, found position 42 alone — so nothing is excluded from the cut.
+> The document's other lines lie in no range — lines 1–25, 36, 40–45, 57–74, 133–135, 146–185 and 195–214, one hundred
+> and thirteen lines of which twenty-eight are blank, as this session's script lists them; the list is the one the
+> dispatch computed, span for span. By the eight headings the script lists among them — every heading line of the
+> document, none inside a range — they hold: the title, whose heading line carries *"(★ USER-RATIFIED 2026-07-19)"* (1);
+> **the ratification paragraph** (3 to 9), which says *"Values remain unfit."*; the paragraph of author and standing (11
+> to 17); §1's heading and opening paragraph (21 to 24); the blank line 36; §2's heading and lead (40 to 45); after the
+> block, the paragraph on the identity-weight setting (58 to 60) and **§2's factor-granularity amendment** (62 to 71);
+> §3's heading (73); §4's heading (134); **the whole of *5. The decode*** (147 to 175) — its tie-break rule (149 to
+> 157), **the home of register entry D-565**, its rule for a continuation below the count threshold (159 to 164) and its
+> exact-decode paragraph with the reserve prune (166 to 175); §6's heading, its *"STAGE RUN AND RATIFIED"* quotation
+> block (179 to 182) and its sentence *"Two declared forms, replacing the infeasible full hand-trace:"* (184); §6's form
+> (b), the single-piece traces (196 to 203); and **the whole of *7. What this document does NOT decide*** with the
+> ratification ask (205 to 214). *(This session read the whole document at its blob before writing any row, the cut with
+> it; the cut is named here by what stands there, and no cut line is tabulated.)* **The cut holds the member's own
+> account of its standing and rules its ranges apply** — its ratification and *"Values remain unfit"*, the granularity
+> amendment the bass factor's row names, the decode's rules and the list of what the document does not decide. These are
+> facts of the population artifact for the method ruling's surface, no row quotes a cut line, and no member is widened
+> by hand to take them (**D-671**). No other member of the artifact covers the cut — the passage rule's cut, recorded
+> here as at §6.15 to §6.41, and not repaired. Outgoing statements: **51** (rows 42.1 to 42.43; 42.11, 42.18, 42.23,
+> 42.24, 42.26, 42.29 and 42.36), each split — the arithmetic is at the foot of this member). Listed under *not a
+> statement*: **4**. Counted at this member by this session; the counts appear here and at §13, and nowhere else.
+>
+> **No WITHHELD home lies inside this member**: the artifact's `item_4_identities_inside` for position 42 is empty, and
+> `cowork_joint_estimator_factorization.md` is not one of the five documents withheld from the deriving session's pack —
+> it is not `cowork_joint_estimator_architecture.md`, which is withheld and whose passages are a later member — **so no
+> row is marked WITHHELD**. (The boot pack withholds this document for another subject, the pilot's, and not for L3's; a
+> fact of the pack, moving no mark.) **No SEEN home lies inside it, agreeing with §5** — none of D-335, D-406, D-482,
+> D-484 and D-502 to D-510 is homed in this document — **so no row is marked SEEN**. **One entry of the decisions
+> register's data file is homed in this document, neither withheld nor seen, carrying no mark**: this session's walk of
+> `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit hash),
+> over every record carrying an identity and a home, the retired block included, found **no home over the six ranges**,
+> and over the seven cut spans **register entry D-565** at lines 149 to 157, the tie-break rule, in the cut. The walk
+> agrees with the one the dispatch read, no identity beyond it. The decisions register's INDEX records **D-565** *"Exact
+> score ties in the decode are real and are broken by a declared TOTAL ORDER on paths, implemented identically in every
+> decoder — no epsilon, no platform dependence"* (group A, LIVE, entry ratified 2026-08-04 · user), read by this session
+> at the INDEX — a fact of the decisions register, relayed and moving no disposition. **Rows naming L3-S4: none.**
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.41, the colon-lead reading and the status-table reading stated at §6.9's manifest header, tables taken
+> row by row, the quotation join, the blockquote-marker reading, the fenced-block reading and the reading of a range
+> that opens with a heading line were applied unchanged at this member.** **The blockquote-marker reading has no
+> instance inside a range**: the document's one marked span, lines 179 to 182, its *STAGE RUN AND RATIFIED* block, lies
+> in the cut. **The fenced-block reading — range 3 is one fenced block, whole**, lines 46 to 56, its fence lines the
+> range's first and last line texts; it is taken as one unit at Row 42.7, as §6.20 took Row 20.1, and **its nine lines
+> are reproduced in the row as a fenced block, exactly as the blob writes them**, the runs of spaces that align its
+> terms kept, because a quotation run through the row's wrapping would not keep them — a departure in form from Row
+> 20.1, which named its block's content in prose and quoted its annotations, stated for challenge (placement (m)). The
+> one unit carries one kind of claim, the form of the candidate score, and is placed as one. The member check and the
+> quotation re-check reach only text between double quotation marks, so **a separate check compared the nine reproduced
+> lines with the blob's lines 47 to 55, character by character, and found them identical**. **The heading-line reading
+> has no instance**: the eight heading lines all lie in the cut. **The status-table reading has no instance**: the one
+> table inside a range records premises and not statuses. **Tables taken row by row**: range 5's premise table — its
+> header row with its separator line listed as one item (item 3), keeping its pipes, and its rows *P1* to *P8* quoted by
+> their cells' words without the pipes, joined between their quotation marks by a middle dot (Rows 42.31 to 42.38), each
+> premise's label and false-negative path taken with it; *P6*'s remark on the cadential six-four is a claim of its own,
+> and the row is split (Row 42.36). **The glossary reading has no instance.** **The quotation join**: one line ends
+> inside a hyphenated compound, line 102, *"(circle-of-"* before *"fifths distance between tonics"*, joined at Row 42.19
+> — the one line the widened join, a letter or a closing parenthesis before a line-end hyphen, finds in the document;
+> the hyphen line 19, a horizontal rule, lies in the cut; and one line inside a range ends in a slash, line 121,
+> *"(falling fifth /"* before *"rising fourth)"*, quoted across the break joined by one space at Row 42.25. **How the
+> bold leads were read.** *The segmentation* `S`: (26) opens with its colon the sentence that carries the claim (Row
+> 42.1); *Per segment j, the state* `h_j = (k_j, c_j)`: (28) only introduces its nested bullets and is listed as a lead
+> (item 1); *The degree vocabulary is derived from the ground truth, not invented:* (32 to 33) is a bold sentence
+> opening the clause it carries (Row 42.4); range 2's bold runs stand inside sentences; range 4's ten factor labels are
+> noun phrases in bold, most followed by a code span, each quoted with the sentence it heads; the bold sentences
+> *Evaluated per event within the segment (…).* (91 to 92) and *SETTLED (…)* (127 to 131) are tabulated (Rows 42.15 and
+> 42.29); and range 6's lead *(a) Small synthetic cases — …:* is listed as a lead (item 4). **The colon leads**: the
+> factors' *Table:*, *Provenance:* and *Fit:* open sentences that carry a rule, except factor 4's *Provenance:*
+> sentence, which names only the sources the form follows and is listed (item 2). **The passages recording an amendment
+> or a superseded variant**: lines 91 and 92, the granularity amendment, placed with the rule it made, the dated
+> parenthesis provenance (Row 42.15); lines 127 to 131, the settlement with the rejected persistent-pull variant, split
+> — the settlement **HISTORICAL**, the rule with its rejected variant placed with L2 (Row 42.29), as §6.39 split its
+> (iii); and lines 108 and 109, the published device the entry table replaces, taken with its claim (Row 42.21), as
+> §6.39 took its (iv). **The member's own identifiers** — its factors *1* to *10*, its premises *P1* to *P8*, its
+> sections, its *§5a*, its weights and the rows of the open-items register it cites — are quoted as they stand; no
+> three-digit identity of the decisions register stands inside a range.
+>
+> **What this member is, and how its subjects were placed.** The ranges are most of the structure design of the joint
+> estimator, ratified 2026-07-19 with its values unfit — the random variables, the joint objective, the ten factors, the
+> premise ledger and the synthetic cases of the desk simulation; the cut holds the ratification, the granularity
+> amendment, the decode with its tie-break, back-off and reserve rules, the single-piece traces and the list of what the
+> document does not decide. **The member was read whole, at its blob, before any row was written**, and its rows were
+> then written in one portion. **How 1(a)'s five points were weighed.** **(a) The member's subject against L3's.** The
+> member's subject is the tonal reading's: the key, the chord and its non-chord tones decided as one entangled decision,
+> so the variables, the objective, the factors, the premises and the cases are **RELOCATED** to
+> *L2 — The tonal reading. The one entangled decision.*, as Row 16.10 placed this document's decode reserve — the
+> placement follows that precedent and departs from it nowhere. **L3's subjects appear at named places, and each is
+> placed at its row**: the chord symbol as the derived published fact, its root the tonic plus the degree's interval, is
+> **ADOPTED — carried**, L3-S1 and L3-S2 AGREEING (Row 42.6); the cadence factor — key-axis evidence from the local cues
+> — is placed with L2, `FRAMEWORK.md` §5 routing the key-agnostic cues from L1 to L2, with L3-S21 AGREEING at the
+> measured weakness of half-cadence detection (Rows 42.25 and 42.26); the fermata as a boundary prior and a prior on
+> where a cadence sits is placed with L2, L3-S10 AGREEING at the displacement of the arrival before a weak-beat fermata
+> (Row 42.24); the bass factor, whose theory is the figured-bass tradition, is placed with L2's chord (Row 42.14); the
+> duration model of harmonic rhythm recorded as future work is placed with L2, L3-S31 AGREEING at its defense (Row
+> 42.23 (ii)); the premise *P7* is placed with L2 (Row 42.37); *P6*'s cadential six-four as its own degree class is
+> graded L3-S20 **DIFFERS** and placed with L2's chord (Row 42.36 (ii)); and the cases of a plain authentic and a
+> deceptive cadence are placed with L2, each stating what the decision must do on a case (Rows 42.39 and 42.43). **(b)
+> The member numbers no layers**: it speaks of the analyzer's slice unit, the estimator and the decoder. **(c) Its
+> standing**, a ratified specification with values unfit, lies in the cut; most sentences of the ranges state what the
+> estimator is or must do and are placed as rules, each premise with its own label; a dated settlement and a delivery
+> record are **HISTORICAL** (Rows 42.27 and 42.29 (i)), as is a recorded upgrade (Row 42.18 (ii)); the measurement
+> published at every fit and the alignment used to validate the ornament cells are placed with
+> *the measurement of the analysis* (Rows 42.11 (ii) and 42.30); and **no statement is QUARANTINED** — the ranges record
+> no measured property of the code, the measured values in their parentheses being the literature's, taken with their
+> claims. **(d) The decisions register's homes**: none inside the ranges; D-565 in the cut, carrying no mark. **(e) The
+> fenced block and the table** as above. **Five placements are stated for challenge.** (l) The desk simulation's
+> synthetic cases placed with L2 as requirements on its decision; **the alternative** —
+> *the measurement of the analysis*, the cases being checks of the design — is stated and not taken. (m) The fenced
+> block reproduced as a block in its row; **the alternative** — Row 20.1's form, its content named in prose and its
+> lines quoted inline — is stated and not taken. (n) Row 42.36 (ii) graded **DIFFERS** from L3-S20; **the alternative**
+> — **THE DERIVATION IS SILENT**, L3-S20 speaking of L3's handling of the two readings and not of L2's vocabulary — is
+> stated and not taken. (o) The cadence factor graded **THE DERIVATION IS SILENT** and placed with L2; **the
+> alternative** — **DIFFERS** from L3-S38, a cadence feeding the tonality — is stated and not taken, the factor reading
+> L1's key-agnostic cues inside L2's decision and no L3 fact. (p) The settlement split into a **HISTORICAL** event and a
+> rule placed with L2; **the alternative** — the whole sentence **HISTORICAL** — is stated and not taken. **No statement
+> of this member is ADOPTED — proposed, QUARANTINED, DISCARDED or UNPLACED.**
+
+---
+
+**Row 42.1 — the segmentation: a partition of the events into harmonic segments, its boundaries decided.**
+
+*Outgoing statement.* "**The segmentation** `S`: a partition of the event sequence into contiguous **harmonic segments**
+(semi-Markov: segment boundaries are decided, not given)." — the section *1. The random variables*, its first bullet,
+led *The segmentation* `S`: (locator: lines 26–27), its colon lead opening the sentence that carries the claim.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+segmentation and the tonality per span (`FRAMEWORK.md` §5).
+
+---
+
+**Row 42.2 — the key state: a tonic among the twelve pitch classes and a mode, major or minor.**
+
+*Outgoing statement.* "`k_j = (tonic, mode)` — tonic one of the twelve pitch classes; mode ∈ {major, minor} (ratified);"
+— the section *1. The random variables*, the second bullet's first nested bullet (locator: line 29).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+segmentation and the tonality per span (`FRAMEWORK.md` §5).
+
+---
+
+**Row 42.3 — the chord state: degree class, quality and inversion — the Roman numeral, with its classes.**
+
+*Outgoing statement.* "`c_j = (degree class, quality, inversion)` — the Roman numeral (ratified): diatonic degrees,
+applied-degree classes (the secondary dominant and applied leading-tone chord per target), and the standard chromatic
+classes (Neapolitan sixth, augmented-sixth chords)." — the section *1. The random variables*, the second bullet's second
+nested bullet (locator: lines 30–32).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+chord per span as degree, quality, figure and applied target.
+
+---
+
+**Row 42.4 — the degree vocabulary derived from the ground truth, its threshold set at fit time.**
+
+*Outgoing statement.* "**The degree vocabulary is derived from the ground truth, not invented:** the set of degree
+classes observed in the corpus annotations, with a count threshold and one pooled rare-class — the threshold set at fit
+time under the capacity budget (OI-177), the pooling declared, nothing hand-picked." — the section *1. The random
+variables*, the same nested bullet (locator: lines 32–35), its bold sentence opening with a colon the clause that
+carries the rule, tabulated under the first reading of rule (1).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose rule that
+admits a candidate to the search belongs to its own specification (`FRAMEWORK.md` §5, the L2 block).
+
+---
+
+**Row 42.5 — a key change permitted only at a segment boundary.**
+
+*Outgoing statement.* "A **key change is permitted only at a segment boundary** (a change of key without a change of
+harmony is not expressible in this label space — definitional, not an assumption)." — the section *1. The random
+variables*, the paragraph after its bullets (locator: lines 37–38).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+segmentation and the tonality per span (`FRAMEWORK.md` §5).
+
+---
+
+**Row 42.6 — the chord symbol the derived published fact: root equals tonic plus the degree's interval.**
+
+*Outgoing statement.* "The **chord symbol** (root pitch class, quality, bass) is the derived published fact: root =
+tonic + the degree's interval." — the section *1. The random variables*, the same paragraph (locator: lines 38–39). Two
+claims: (i) the chord symbol — root pitch class, quality and bass — is a derived published fact; (ii) its root is the
+tonic plus the degree's interval.
+
+*Derived statements that speak to it.* (i) L3-S1. (ii) L3-S2.
+
+*Current-text axis.* (i) L3-S1: **AGREES** — *"The chord symbol is a view of L2's chord."* (ii) L3-S2: **AGREES** — *"It
+is the span's spelled tonic transposed by the diatonic interval of the degree"*, the pitch class published as the
+spelled root's projection.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S1). (ii) **ADOPTED — carried** (L3-S2).
+
+---
+
+**Row 42.7 — the joint objective: the candidate score as the sum of weighted factor terms.**
+
+*Outgoing statement.* The fenced block, whole, its lines as the block writes them:
+
+```
+Score(S, h) =  w_prior · log P_prior(k_1 | signature, declared mode)            [once, at the start]
+            + Σ_j  w_emit  · log P_emit(tones in segment j | k_j, c_j)          [pitch emission]
+            + Σ_j  w_spell · log P_spell(spelled tones in j | k_j)              [spelling emission]
+            + Σ_j  w_bass  · log P_bass(bass degree of j | c_j)                 [bass/inversion]
+            + Σ_j  w_chord · log P_chord(c_j | c_{j-1}, mode_j)   [same-key chord transition]
+            + Σ_j  w_key   · log P_key(k_j | k_{j-1})             [key transition; = 1-cell if no change]
+            + Σ_j  w_entry · log P_entry(c_j | key change)        [entry chord at a key change]
+            + Σ_j  w_bound · log P_bound(boundary at j | beat strength, fermata)  [segmentation]
+            + Σ_j  w_cad   · (cadence evidence features at j → k_j)             [cadence factor]
+```
+
+— the section *2. The joint score* (locator: lines 46–56), the fenced block taken as one unit, as a table row is and as
+§6.20 took Row 20.1; it writes the member's objective out factor by factor, from the prior on the first key to the
+cadence factor, each term weighted, and its one claim, the form of the candidate score, is placed as one. The member's
+*Score* is its own word.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 42.8 — the pitch emission: each tone a chord member or a non-chord tone, conditioned on chord-independent
+covariates.**
+
+*Outgoing statement.* "**Pitch emission** `P_emit(tone | k, c; covariates)` — each tone classified into categories:
+chord member (root / third / fifth / seventh-or-tension per the degree class's template), within-collection non-chord
+tone, outside-collection tone; emission probability conditioned on the category AND the chord-independent covariates
+ratified in §5a: metric weakness, stepwise approach, stepwise departure, chromatic-neighbor motion, tied-over
+preparation." — the section *3. The factors — form, table, provenance (values all unfit)*, its factor *1*, led *Pitch
+emission* (locator: lines 75–79), its bold label and code span opening the sentence.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 42.9 — the emission table's cells, pooled where counts are thin.**
+
+*Outgoing statement.* "Table: category × covariate cells, pooled where counts are thin (pooling declared at fit)." — the
+section *3. The factors — form, table, provenance (values all unfit)*, its factor *1*, led *Pitch emission* (locator:
+lines 79–80).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight of its candidate scoring is fitted, as Rows 16.5 (i) and 16.20 (ii).
+
+---
+
+**Row 42.10 — the minor mode's variable sixth and seventh degrees as emission variants.**
+
+*Outgoing statement.* "Provenance: Raphael-Stoddard category structure + Masada-Bunescu figuration covariates; the
+minor-mode variable sixth and seventh degrees are emission variants (ratified)." — the section *3. The factors — form,
+table, provenance (values all unfit)*, its factor *1*, led *Pitch emission* (locator: lines 80–82), its colon lead
+naming the published sources the form follows, taken with the rule the sentence states.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 42.11 — the emission fitted from counts of labeled segments; a reduction alignment the resource for ornaments.**
+
+*Outgoing statement.* "Fit: counts from ground-truth-labeled segments; the BCMH reduction alignment (87 stems) is the
+independent fitting/validation resource for the ornament cells." — the section *3. The factors — form, table, provenance
+(values all unfit)*, its factor *1*, led *Pitch emission* (locator: lines 82–83). Two claims: (i) the emission is fitted
+from counts of segments labeled in the ground truth; (ii) the BCMH reduction alignment is the independent resource for
+fitting and validating the ornament cells. The member's *stems* are its own word.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight of its candidate scoring is fitted, as Rows 16.5 (i) and 16.20 (ii). (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose own design content is what counts as ground truth.
+
+---
+
+**Row 42.12 — the spelling emission: the spelled degree's relation to the key, the leading tone against the subtonic.**
+
+*Outgoing statement.* "**Spelling emission** `P_spell(spelled degree | k)` — the tonal-pitch-class term: the spelled
+note's scale-degree relation to the key, with the leading-tone/subtonic contrast in minor as the sharpest cell
+(Temperley's tonal-pitch-class profile form; his measured +3.6 points on key is the basis)." — the section *3. The
+factors — form, table, provenance (values all unfit)*, its factor *2*, led *Spelling emission* (locator: lines 84–86),
+its bold label and code span opening the sentence; the parenthesis naming a published measured gain is taken with it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 42.13 — the collection question asked through the signature mask, with no tonic in the test.**
+
+*Outgoing statement.* "Also carries the collection question through the signature mask (the OI-168 form) — no tonic in
+the membership test." — the section *3. The factors — form, table, provenance (values all unfit)*, its factor *2*, led
+*Spelling emission* (locator: lines 87–88).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 42.14 — the bass factor: which chord factor sounds in the bass, the figured-bass tradition its theory.**
+
+*Outgoing statement.* "**Bass/inversion** `P_bass(bass chord-factor | c)` — categorical: which chord factor (root,
+third, fifth, seventh) sounds in the bass, given the degree class and inversion; the figured-bass tradition is the
+theory, Ni's bass-given-chord chain the published probabilistic analogue." — the section *3. The factors — form, table,
+provenance (values all unfit)*, its factor *3*, led *Bass/inversion* (locator: lines 89–91), its bold label and code
+span opening the sentence.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+chord per span as degree, quality, figure and applied target.
+
+---
+
+**Row 42.15 — the bass factor evaluated per event within the segment.**
+
+*Outgoing statement.* "**Evaluated per event within the segment (the 2026-07-19 granularity amendment, §2).**" — the
+section *3. The factors — form, table, provenance (values all unfit)*, its factor *3*, led *Bass/inversion* (locator:
+lines 91–92), a complete sentence in bold; its parenthesis names the dated amendment that made the rule, provenance
+taken with the rule — one of the passages recording an amendment.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 42.16 — the bass motion across segments not in the first structure, recorded as a possible later factor.**
+
+*Outgoing statement.* "Bass-motion continuity across segments is NOT in the first structure (recorded as a possible
+later factor with its own ledger entry)." — the section *3. The factors — form, table, provenance (values all unfit)*,
+its factor *3*, led *Bass/inversion* (locator: lines 92–94).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 42.17 — the chord transition: first order, asymmetric, transposition-tied, fitted separately per mode.**
+
+*Outgoing statement.* "**Same-key chord transition** `P_chord(c_j | c_{j-1}, mode)` — the asymmetric first-order degree
+table, transposition-tied across keys, **fit separately for major and minor** (Raphael & Stoddard assumed
+mode-independence and doubted it themselves; the corpus statistics — the strong affinity of minor to its relative major,
+the mediant's prominence in minor — say fit per mode; the tying still pools all twelve keys per mode)." — the section
+*3. The factors — form, table, provenance (values all unfit)*, its factor *4*, led *Same-key chord transition* (locator:
+lines 95–99), its bold label and code span opening the sentence. The member's *transposition-tied* and *tying* are its
+own words.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 42.18 — first order a declared assumption; the harmonic-syntax grammar the recorded upgrade.**
+
+*Outgoing statement.* "First-order is a declared ASSUMPTION (P2); the harmonic-syntax grammar is the recorded future
+form upgrade for this one factor." — the section *3. The factors — form, table, provenance (values all unfit)*, its
+factor *4*, led *Same-key chord transition* (locator: lines 100–101); its sentence of provenance before it is listed
+apart. Two claims: (i) first order is a declared assumption; (ii) the grammar is the recorded future upgrade of this one
+factor.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose
+candidate scoring the premise conditions, as Row 16.10 placed this document's decode reserve. (ii) **HISTORICAL** — a
+recorded plan for a later form of one factor.
+
+---
+
+**Row 42.19 — the key transition: a small transposition-invariant table over the distance between tonics and the mode
+pair.**
+
+*Outgoing statement.* "**Key transition** `P_key(k_j | k_{j-1})` — transposition-invariant small table over
+(circle-of-fifths distance between tonics, mode pair), with the relative and parallel relations as their own cells (the
+Noland/Rocher family; asymmetries permitted — the table is fit, not a symmetric curve)." — the section *3. The factors —
+form, table, provenance (values all unfit)*, its factor *5*, led *Key transition* (locator: lines 102–104), its bold
+label and code span opening the sentence; line 102 ends inside the compound *circle-of-* before *fifths*, joined in the
+quotation.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 42.20 — staying in the key the most probable cell; the fitted balance the rate of modulation.**
+
+*Outgoing statement.* "Staying in the key is the overwhelmingly probable cell; the fitted stay/change balance is the
+modulation rate." — the section *3. The factors — form, table, provenance (values all unfit)*, its factor *5*, led *Key
+transition* (locator: lines 105–106).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 42.21 — the entry chord at a key change, fitted from the ground truth's modulation points.**
+
+*Outgoing statement.* "**Entry chord at a key change** `P_entry(c | key change)` — the distribution of the first degree
+in a new key, fit from the ground truth's modulation points (replacing Raphael & Stoddard's uniform-entry device, which
+they themselves doubted)." — the section *3. The factors — form, table, provenance (values all unfit)*, its factor *6*,
+led *Entry chord at a key change* (locator: lines 107–109); the parenthesis on the published device it replaces is taken
+with it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 42.22 — the boundary factor: a boundary's probability conditioned on beat strength and on the fermata.**
+
+*Outgoing statement.* "**Segmentation/boundary** `P_bound` — the probability of a segment boundary at an event,
+conditioned on beat-strength class (the Temperley 2009 change-on-strong-beat shape: above-tactus ≫ tactus ≫ sub-tactus;
+our values fit from the corpus) and on the fermata (below)." — the section *3. The factors — form, table, provenance
+(values all unfit)*, its factor *7*, led *Segmentation/boundary* (locator: lines 110–112), its bold label and code span
+opening the sentence.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+segmentation and the tonality per span (`FRAMEWORK.md` §5).
+
+---
+
+**Row 42.23 — segment duration implicit-geometric with a cap; a harmonic-rhythm duration model future work.**
+
+*Outgoing statement.* "Segment duration is otherwise implicit-geometric with a hard length cap (the established
+semi-Markov default; an explicit harmonic-rhythm duration model is recorded as CONJECTURE-gated future work)." — the
+section *3. The factors — form, table, provenance (values all unfit)*, its factor *7*, led *Segmentation/boundary*
+(locator: lines 112–114). Two claims: (i) segment duration is otherwise implicit-geometric with a hard cap on length;
+(ii) an explicit duration model of harmonic rhythm is recorded as future work gated as conjecture.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S31.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S31: **AGREES** — its defense, of a harmonic-rhythm term
+inside L2: *"Such a term would be L2's own, computed from its own readings, and is not this fact."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides
+the segmentation and the tonality per span (`FRAMEWORK.md` §5). (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose own candidate scoring such a term of
+its readings would belong to.
+
+---
+
+**Row 42.24 — the fermata: a boundary prior, and a prior on where a cadence sits, the weak-beat displacement a
+covariate.**
+
+*Outgoing statement.* "**Fermata** — enters `P_bound` as a boundary prior (the chorale phrase-end convention) and enters
+the cadence factor as a cadence-location prior, with de Clercq's weak-beat displacement (the cadential arrival may sit
+one strong beat before a metrically weak fermata) as a covariate, not an exception." — the section *3. The factors —
+form, table, provenance (values all unfit)*, its factor *8*, led *Fermata* (locator: lines 115–118). Two claims: (i) the
+fermata enters the boundary factor as a prior, the chorale's phrase-end convention; (ii) it enters the cadence factor as
+a prior on where a cadence sits, the cadential arrival's displacement before a weak-beat fermata a covariate and not an
+exception.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S10.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S10: **AGREES** — its defense relays a published study
+with *"the arrival shifting to the strong beat before a weak-beat fermata when the melody allows"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides
+the segmentation and the tonality per span (`FRAMEWORK.md` §5). (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose cadence factor is key-axis evidence
+inside its one entangled decision.
+
+---
+
+**Row 42.25 — the cadence factor: key-axis evidence at candidate cadence sites from the local cues, each weighted.**
+
+*Outgoing statement.* "**Cadence factor** — key-axis evidence at candidate cadence sites: the leading-tone resolution
+(seventh degree rising to the tonic in candidate key k), the tritone pair (both the fourth and seventh degrees of k
+sounding in the approach), dominant-to-tonic bass motion (falling fifth / rising fourth), each a feature with a fitted
+weight (the Bigo feature forms + the Feisthauer beats-since-decay shape)." — the section *3. The factors — form, table,
+provenance (values all unfit)*, its factor *9*, led *Cadence factor* (locator: lines 119–123); *"(falling fifth /"* and
+*"rising fourth)"* stand on two lines, the slash before the break, and are quoted joined by one space.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which reads L1's
+local cadence cues as evidence for the tonality (`FRAMEWORK.md` §5's contract table, L1 → L2).
+
+---
+
+**Row 42.26 — the known false positives carried as refinements; the weight respecting the weakness of half-cadence
+detection.**
+
+*Outgoing statement.* "The known false positives (the parallel major/minor of the same tonic; plagal motion misread) are
+carried as feature refinements, and the factor's weight must respect the measured weakness of half-cadence detection." —
+the section *3. The factors — form, table, provenance (values all unfit)*, the same factor (locator: lines 123–125). Two
+claims: (i) the known false positives — the parallel major or minor of the same tonic, and plagal motion misread — are
+carried as refinements of the features; (ii) the factor's weight must respect the measured weakness of half-cadence
+detection.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S21.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S21: **AGREES** — its defense relays the cues reaching
+*"the half cadence only at F .29 and .41"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block). (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail specification
+fixes how any weight of its candidate scoring is fitted, as Rows 16.5 (i) and 16.20 (ii).
+
+---
+
+**Row 42.27 — the cadence factor the delivery of a tracked channel.**
+
+*Outgoing statement.* "This is the OI-166 channel delivered as a factor." — the section *3. The factors — form, table,
+provenance (values all unfit)*, the same factor (locator: line 125).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — a record of a tracked item delivered.
+
+---
+
+**Row 42.28 — the signature and declared-mode prior: the ratified weak fitted table.**
+
+*Outgoing statement.* "**Signature/declared-mode prior** `P_prior(k_1 | signature, declared mode)` — the ratified weak
+fitted table." — the section *3. The factors — form, table, provenance (values all unfit)*, its factor *10*, led
+*Signature/declared-mode prior* (locator: lines 126–127), its bold label and code span opening the sentence.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 42.29 — settled: the prior conditions the initial key state only; the persistent-pull variant rejected.**
+
+*Outgoing statement.* "**SETTLED (user-ratified 2026-07-19 at the desk simulation, its §4.2 — the S3/C5 traces): the
+prior conditions the INITIAL key state only, re-entering only at a notated mid-piece signature change (the OI-94(a)
+discharge moment); the persistent-pull variant is rejected** (a linearly growing tax on away-from-signature keys with no
+theory basis, softly re-introducing the OI-174 signature-pull bias)." — the section *3. The factors — form, table,
+provenance (values all unfit)*, the same factor (locator: lines 127–131), a bold run that is a complete sentence,
+tabulated. Two claims: (i) the settlement, ruled on its date at the desk simulation; (ii) the rule — the prior
+conditions the initial key state only and re-enters only at a notated mid-piece change of signature, the persistent-pull
+variant rejected for the reason the parenthesis gives — one of the passages recording a superseded variant, placed with
+the rule it bounds.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a ruling of a date settling an open question. (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose prior on the first key is a weak
+prior and never a fact about the tonality, as register entry D-450 records.
+
+---
+
+**Row 42.30 — the signature's influence measured by ablation and published at every fit.**
+
+*Outgoing statement.* "The signature-influence rate is measured by ablation and published at every fit." — the section
+*3. The factors — form, table, provenance (values all unfit)*, the same factor (locator: lines 131–132).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose measurements are published with
+each fit.
+
+---
+
+**Row 42.31 — P1: the tones of a segment conditionally independent given the state and their covariates.**
+
+*Outgoing statement.* The table row's cells "P1" · "Tones within a segment are conditionally independent given (k, c)
+and their covariates" · "ASSUMPTION (Raphael-Stoddard's, flagged weak by them)" · "Voice-leading dependencies between
+simultaneous tones (parallel motion, doubling rules) are unmodeled; visible as systematic emission residual on specific
+voicings — diagnosed at the emission table, not patched by weights" — the section *4. The premise ledger (conditional
+independences — #17a/#17e)*, the premise table, the row *P1* (locator: line 138).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose candidate
+scoring the premise conditions, as Row 16.10 placed this document's decode reserve.
+
+---
+
+**Row 42.32 — P2: the same-key chord transition first-order Markov in the degree.**
+
+*Outgoing statement.* The table row's cells "P2" · "The same-key chord transition is first-order Markov in the degree" ·
+"ASSUMPTION" · "Long-range harmonic syntax (a preparation referring across intervening chords) invisible; visible as
+transition-table residual on sequential progressions; the grammar upgrade is the recorded remedy" — the section *4. The
+premise ledger (conditional independences — #17a/#17e)*, the premise table, the row *P2* (locator: line 139).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose candidate
+scoring the premise conditions, as Row 16.10 placed this document's decode reserve.
+
+---
+
+**Row 42.33 — P3: chord transitions transposition-invariant within a mode.**
+
+*Outgoing statement.* The table row's cells "P3" · "Chord transitions are transposition-invariant within a mode" ·
+"THEORY (Raphael-Stoddard; Ni's tying; standard)" · "A key-specific idiom (unlikely in this repertoire) would smear;
+detectable by per-key residual split" — the section *4. The premise ledger (conditional independences — #17a/#17e)*, the
+premise table, the row *P3* (locator: line 140).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose candidate
+scoring the premise conditions, as Row 16.10 placed this document's decode reserve.
+
+---
+
+**Row 42.34 — P4: key changes transposition-invariant, distance and mode pair only.**
+
+*Outgoing statement.* The table row's cells "P4" · "Key changes are transposition-invariant (distance and mode pair
+only)" · "THEORY (same lineage)" · "Absolute-key preferences (choral tessitura effects) would smear; detectable by
+per-key residual split" — the section *4. The premise ledger (conditional independences — #17a/#17e)*, the premise
+table, the row *P4* (locator: line 141).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose candidate
+scoring the premise conditions, as Row 16.10 placed this document's decode reserve.
+
+---
+
+**Row 42.35 — P5: the entry chord at a key change depending only on the new key.**
+
+*Outgoing statement.* The table row's cells "P5" · "The entry chord at a key change depends only on the new key" ·
+"ASSUMPTION (weaker than Raphael-Stoddard's, which we replace)" · "Pivot-chord modulation says entry depends on the OLD
+key too (the pivot is diatonic in both); visible as entry-table residual at pivot modulations; remedy is a pivot-aware
+entry table, its own ledger entry" — the section *4. The premise ledger (conditional independences — #17a/#17e)*, the
+premise table, the row *P5* (locator: line 142).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose candidate
+scoring the premise conditions, as Row 16.10 placed this document's decode reserve.
+
+---
+
+**Row 42.36 — P6: the bass chord-factor depending only on the chord; the cadential six-four its own degree class.**
+
+*Outgoing statement.* The table row's cells "P6" · "The bass chord-factor depends only on the chord (not the key)" ·
+"ASSUMPTION (figured-bass theory adjacent)" · "Degree-specific inversion practice (the cadential six-four sits on scale
+degree five) crosses chord and key; NOTE: the cadential six-four is representable as its own degree class in the
+vocabulary, which discharges the sharpest case — declared here so the vocabulary decision covers it" — the section *4.
+The premise ledger (conditional independences — #17a/#17e)*, the premise table, the row *P6* (locator: line 143). Two
+claims: (i) the premise, its label and its false-negative path; (ii) its remark that the cadential six-four is
+representable as its own degree class in the vocabulary, which discharges the sharpest case.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S20.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S20: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing *"the cadential six-four is representable as its own
+degree class"*; L3-S20 says *"The cadential six-four is handled under both readings L2 admits"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose
+candidate scoring the premise conditions, as Row 16.10 placed this document's decode reserve. (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the chord per span as
+degree, quality, figure and applied target.
+
+---
+
+**Row 42.37 — P7: segment boundaries depending on meter and fermatas, not on the key.**
+
+*Outgoing statement.* The table row's cells "P7" · "Segment boundaries depend on meter and fermatas, not on the key" ·
+"ASSUMPTION" · "Cadential closure influences segmentation beyond meter; partially covered by the cadence factor sitting
+at boundaries; visible as boundary residual at cadences" — the section *4. The premise ledger (conditional independences
+— #17a/#17e)*, the premise table, the row *P7* (locator: line 144). Its false-negative path, cadential closure
+influencing segmentation beyond meter and partly covered by the cadence factor, is taken with the row.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose candidate
+scoring the premise conditions, as Row 16.10 placed this document's decode reserve.
+
+---
+
+**Row 42.38 — P8: the overlap of factors corrected by the combination weights, never by the tables.**
+
+*Outgoing statement.* The table row's cells "P8" · "Factor overlap (spelling ~ signature ~ collection; cadence ~
+transition) is corrected by the combination weights, not by the tables" · "The ratified §5a structure" · "If a single
+weight cannot correct a structured overlap, the residual shows in the weight fit diagnostics; remedy is a factor
+merge/split, a structure change — never a value tweak" — the section *4. The premise ledger (conditional independences
+— #17a/#17e)*, the premise table, the row *P8* (locator: line 145).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose candidate
+scoring the premise conditions, as Row 16.10 placed this document's decode reserve.
+
+---
+
+**Row 42.39 — a plain authentic cadence: the mechanism must commit the obvious.**
+
+*Outgoing statement.* "a plain authentic cadence (dominant to tonic, eight events) — the mechanism must commit the
+obvious;" — the section *6. The desk-simulation forms (discharging OI-181)*, form *(a)*, its case *1* (locator: line
+188).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+segmentation and the tonality per span (`FRAMEWORK.md` §5).
+
+---
+
+**Row 42.40 — a relative-pair ambiguity: resolved exactly when the leading tone appears.**
+
+*Outgoing statement.* "a relative-pair ambiguity (a melody diatonic to one signature, no leading tone until late) — the
+prior and cadence factors must resolve it exactly when the leading tone appears, not before;" — the section *6. The
+desk-simulation forms (discharging OI-181)*, form *(a)*, its case *2* (locator: lines 189–190).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+segmentation and the tonality per span (`FRAMEWORK.md` §5).
+
+---
+
+**Row 42.41 — an opening notated one flat short: the prior's mass a fifth away must behave.**
+
+*Outgoing statement.* "a Dorian-notated opening (signature one flat short) — the prior's fifth-away mass must behave;" —
+the section *6. The desk-simulation forms (discharging OI-181)*, form *(a)*, its case *3* (locator: line 191).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+segmentation and the tonality per span (`FRAMEWORK.md` §5).
+
+---
+
+**Row 42.42 — a tonicization: the applied-degree class must win by the transition economics, not by fiat.**
+
+*Outgoing statement.* "a tonicization (the dominant of the dominant, then the dominant) — the applied-degree class must
+win against the momentary-modulation reading by the transition economics, not by fiat;" — the section *6. The
+desk-simulation forms (discharging OI-181)*, form *(a)*, its case *4* (locator: lines 192–193).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+chord per span as degree, quality, figure and applied target.
+
+---
+
+**Row 42.43 — a deceptive cadence: the work of the asymmetric transition table.**
+
+*Outgoing statement.* "a deceptive cadence (dominant to submediant) — the asymmetric transition table's work." — the
+section *6. The desk-simulation forms (discharging OI-181)*, form *(a)*, its case *5* (locator: line 194).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) without a dated parenthesis are neither here nor among the rows; no line listed
+here carries the quotation-block marker.
+
+1. "**Per segment j, the state** `h_j = (k_j, c_j)`:" (28) — a lead ending in a colon introducing two nested bullets.
+2. "Provenance: Ni's key-conditioned transition; Rohrmeier & Cross's measured asymmetries." (99–100) — provenance: the
+   published sources the factor's form follows.
+3. "| # | Premise | Label | False-negative path (what would break it, and how we would see it) |" (136–137) — the
+   premise table's header row with its separator line, listed as one item.
+4. "**(a) Small synthetic cases — …" (186–187) — a lead ending in a colon introducing five numbered cases, the desk
+   simulation's first declared form; its parenthesis on the record of the truncation is taken with it.
+
+#### The arithmetic at this member
+
+- Rows written: **43**.
+- **Outgoing statements placed: 51** — 35 rows of one claim and 8 rows of two (Rows 42.6, 42.11, 42.18, 42.23, 42.24,
+  42.26, 42.29 and 42.36).
+- Listed under *not a statement*: **4**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 2 | 42.6 (i), 42.6 (ii) |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 46 | 42.1, 42.2, 42.3, 42.4, 42.5, 42.7, 42.8, 42.9, 42.10, 42.11 (i), 42.11 (ii), 42.12, 42.13, 42.14, 42.15, 42.16, 42.17, 42.18 (i), 42.19, 42.20, 42.21, 42.22, 42.23 (i), 42.23 (ii), 42.24 (i), 42.24 (ii), 42.25, 42.26 (i), 42.26 (ii), 42.28, 42.29 (ii), 42.30, 42.31, 42.32, 42.33, 42.34, 42.35, 42.36 (i), 42.36 (ii), 42.37, 42.38, 42.39, 42.40, 42.41, 42.42, 42.43 |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 3 | 42.18 (ii), 42.27, 42.29 (i) |
+| UNPLACED | 0 | — |
+| **Total** | **51** | — |
+
+**The column sums to 51 (2 + 0 + 46 + 0 + 0 + 3 + 0), against 51 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 5 |
+| DIFFERS | 1 |
+| THE DERIVATION IS SILENT | 45 |
+| **Total verdicts** | **51** |
+
+The AGREES statements: 42.6 (i) (L3-S1), 42.6 (ii) (L3-S2), 42.23 (ii) (L3-S31), 42.24 (ii) (L3-S10),
+42.26 (ii) (L3-S21). The DIFFERS statements: 42.36 (ii) (L3-S20).
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 42 is empty, and the document is not
+  one of the five withheld from the deriving session's pack.
+- **SEEN rows: none** — no SEEN home lies in this document, agreeing with §5.
+- **One entry of the decisions register's data file is homed in this document, carrying no mark**: **register entry
+  D-565** at lines 149 to 157, the tie-break rule of §5, in the cut — a fact of the data file, relayed and moving no
+  disposition.
+- **The cut** holds the title and the ratification paragraph with *"Values remain unfit"*, the paragraph of author and
+  standing, §1's opening, §2's lead, its identity-weight paragraph and its factor-granularity amendment, the whole of §5
+  with D-565's home, §6's ratified block, its sentence on the two forms and its form (b), and the whole of §7; no row is
+  tabulated there.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -57392,6 +58357,22 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 41.27 (ii) and 41.29 (i) — the jazz fit deferred to the conversion of jazz ground truth, and the classical
   common-practice idiom fitted now, the one the held annotated music covers. *(As Rows 16.23 and 23.1; both lie on
   register entry D-422's home, unmarked.)*
+- Rows 42.1, 42.2, 42.3, 42.4, 42.5 and 42.7 — the joint estimator's variables and objective: the segmentation as a
+  decided partition, the key state and the chord state, the degree vocabulary derived from the ground truth, a key
+  change only at a segment boundary, and the candidate score written out factor by factor. *(As Row 16.10.)*
+- Rows 42.8, 42.9, 42.10, 42.11 (i), 42.12, 42.13, 42.14, 42.15, 42.16, 42.17, 42.18 (i), 42.19, 42.20, 42.21, 42.22,
+  42.23 (i), 42.23 (ii), 42.24 (i), 42.24 (ii), 42.25, 42.26 (i), 42.26 (ii), 42.28 and 42.29 (ii) — the ten factors:
+  the pitch and spelling emissions, the bass factor evaluated per event, the chord and key transitions and the entry
+  chord, the boundary factor with its duration default and the harmonic-rhythm model left to future work, the fermata as
+  a prior on boundaries and on where a cadence sits, the cadence factor's key-axis evidence and its weighting, and the
+  prior on the first key only. *(L3-S31 AGREES at Row 42.23 (ii), L3-S10 at Row 42.24 (ii) and L3-S21 at Row 42.26 (ii);
+  register entry D-450 records the prior's rule.)*
+- Rows 42.31, 42.32, 42.33, 42.34, 42.35, 42.36 (i), 42.36 (ii), 42.37 and 42.38 — the premise ledger, P1 to P8, each
+  premise with its label and its false-negative path, and the cadential six-four representable as its own degree class.
+  *(L3-S20 DIFFERS at Row 42.36 (ii).)*
+- Rows 42.39, 42.40, 42.41, 42.42 and 42.43 — the desk simulation's synthetic cases, each a requirement on what the
+  decision must do: a plain authentic cadence, a relative-pair ambiguity, an opening notated one flat short, a
+  tonicization and a deceptive cadence.
 
 **To *the second axis — voice leading*.**
 
@@ -57655,6 +58636,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   and the needs rows the manifest header names on the retired entries' homes, unmarked.)*
 - Rows 41.68 and 41.69 — the re-validation of a settled conclusion against new material, and the question it answers.
   *(Both lie on register entry D-368's home, unmarked.)*
+- Rows 42.11 (ii) and 42.30 — the reduction alignment as the independent resource for fitting and validating the
+  ornament cells, and the signature's influence measured by ablation and published at every fit.
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
@@ -57664,8 +58647,8 @@ numbered 13.n, member 15's the rows numbered 15.n, member 16's the rows numbered
 member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 24's the rows numbered 24.n, member 30's
 the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
 numbered 36.n, member 37's the rows numbered 37.n, member 38's the rows numbered 38.n, member 39's the rows numbered 39.n,
-member 40's the rows numbered 40.n, and member 41's the rows numbered 41.n.
-Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
+member 40's the rows numbered 40.n, member 41's the rows numbered 41.n,
+and member 42's the rows numbered 42.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -59539,6 +60522,10 @@ No QUARANTINED row: the member places no statement (§6.34's manifest header).
 - Row 41.67 (iii) — does every held DLC corpus carry a `pedal` column at the current commit, and does the parser drop
   it?
 
+**Member 42 — `cowork_joint_estimator_factorization.md`, the passages of the document.**
+
+No QUARANTINED row: the member's ranges record no measured property of the code (§6.42's manifest header).
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -60454,6 +61441,11 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 41.57 (i) (L3-S29):** the outgoing need N10 names its consumer *"L4 evidence channel (R-4)"*, where
   L3-S29 says *"L3 never reads the composer's figures"*.
 
+**Member 42.** No ADOPTED — proposed row.
+
+- **DIFFERS — Row 42.36 (ii) (L3-S20):** the outgoing *"the cadential six-four is representable as its own degree
+  class"*, where L3-S20 says *"The cadential six-four is handled under both readings L2 admits"*.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -60502,11 +61494,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 39 | 351 | 0 | 0 | 103 | 130 | 0 | 118 | 0 | 86 |
 | 40 | 102 | 7 | 0 | 54 | 25 | 0 | 5 | 11 | 11 |
 | 41 | 113 | 0 | 0 | 54 | 39 | 0 | 20 | 0 | 16 |
-| **Total** | **3762** | **174** | **91** | **1495** | **1102** | **0** | **654** | **246** | **1112** |
+| 42 | 51 | 2 | 0 | 46 | 0 | 0 | 3 | 0 | 4 |
+| **Total** | **3813** | **176** | **91** | **1541** | **1102** | **0** | **657** | **246** | **1116** |
 
-**The arithmetic check:** 174 + 91 + 1495 + 1102 + 0 + 654 + 246 = 3762, against 3762 statements placed (43 + 34 + 21 +
+**The arithmetic check:** 176 + 91 + 1541 + 1102 + 0 + 657 + 246 = 3813, against 3813 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -60551,11 +61544,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 39 | 7 | 2 | 342 | 351 |
 | 40 | 10 | 8 | 84 | 102 |
 | 41 | 0 | 1 | 112 | 113 |
-| **Total** | **359** | **332** | **3079** | **3770** |
+| 42 | 5 | 1 | 45 | 51 |
+| **Total** | **364** | **333** | **3124** | **3821** |
 
-**The arithmetic check of the verdicts:** 359 + 332 + 3079 = 3770, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 364 + 333 + 3124 = 3821, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51).
 
 ## 14. The derivation's independence record, relayed
 
