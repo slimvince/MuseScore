@@ -106,12 +106,12 @@ its own entry there.
 | 52 | `cowork_notation_adoption_increment.md` passages | **DONE** (§6.52) |
 | 53 | `cowork_idiom_entry_mapping.md` passages | **DONE** (§6.53) |
 | 54 | `cowork_bounded_context_design.md` passages | **DONE** (§6.54) |
-| 55 | `cowork_prefit_gates.md` passages | NOT YET TABULATED |
+| 55 | `cowork_prefit_gates.md` passages | **DONE** (§6.55) |
 | 56 | The L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10 | NOT YET TABULATED |
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 54 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 55 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -133,7 +133,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, and position 54, the passages of `cowork_bounded_context_design.md`.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, position 54, the passages of `cowork_bounded_context_design.md`, and position 55, the passages of `cowork_prefit_gates.md`.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -176,9 +176,9 @@ member boundary after position 42 under its own limit on the batch, and not by a
 member boundary after position 44 under its own limit on the batch, and not by a capacity judgment; positions 45
 to 49 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`, which stopped at the
 member boundary after position 49 under its own limit on the batch, and not by a capacity judgment; positions 50
-to 54 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md`.**
-**The writing now stands at the member boundary after position 54: not done, positions 55 to 57, and the next
-writing resumes at position 55.**
+to 55 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md`.**
+**The writing now stands at the member boundary after position 55: not done, positions 56 and 57, and the next
+writing resumes at position 56.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -70501,6 +70501,463 @@ statements: 54.14 (i) (L3-S40), 54.14 (ii) (L3-S40), 54.36 (i) (L3-S40), 54.36 (
 
 ---
 
+### 6.55 — Member 55: `cowork_prefit_gates.md`, the passages of the document
+
+> **Manifest for this member.** Position **55**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_prefit_gates.md`. Label: *the passages of the document*, exactly as the artifact spells it — a label
+> that names no heading, so the member's section is the whole document, its lines 1 to 204, as at §6.35 to §6.54. **The
+> forty-first member of this comparison made of passages, the twenty-first cut from a document other than
+> `ARCHITECTURE.md`, and the eighteenth cut from a document not withheld from the deriving session's pack**: its entry's
+> `item_4_identities_inside` is empty, so its passages are cut around term-search hits only. One range, as a locator
+> only (**D-307**), with its first and last line texts exactly as the artifact publishes them (wrapped here for width;
+> the line texts keep their item number and indentation, as the artifact publishes them):
+>
+> - lines 67–93, from *"1. **The parameter inventory is published before fitting** as a generated artifact (#17f):
+>   every"* to *"   de-scoped (the OI-7 pattern); Jazz-preset correctness claims remain gated on OI-7's jazz GT."*.
+>
+> **Each of the two line texts was compared with the line at its locator** in `cowork_prefit_gates.md`, read by this
+> session at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at that commit,
+> **and both match**; the range holds 27 lines. The blob carries no carriage return, so nothing was stripped before a
+> comparison. **No other member of the artifact is cut from this document** — this session's script, listing every
+> member whose document is `cowork_prefit_gates.md`, found position 55 alone — so nothing is excluded from the cut. The
+> document's other lines lie in no range — lines 1–66 and 94–204, one hundred and seventy-seven lines of which
+> twenty-three are blank, as this session's script lists them; **the blob holds 204 lines, so its last cut span ends at
+> line 204 and the cut holds 177 lines, as the dispatch computed**. By the five headings the script lists among them —
+> the title and the headings of the four protocols — they hold: the title (1); **the ratification paragraph** (3 to 6),
+> the four protocols ratified by the user on 2026-07-19 with their provisional constants; the author paragraph (8 to
+> 15); **the provisional-constants paragraph** (17 to 19), **register entry D-272's home**; **the held-out evaluation
+> protocol** (23 to 60), **register entry D-270's home (32 to 42)** among it; the capacity budget's heading and its
+> *What is being prevented* lead (62 to 65); **its pass condition** (95 and 96), that a fit run without the artifact is
+> void; **the robust-stop adoption protocol** (98 to 145), **register entry D-273's home (116 to 121)** among it; **the
+> sanctioned dual path and the retirement map** (147 to 197), **register entry D-274's home (189 to 191)** among it; the
+> closing ratification paragraph (201 to 204); separator lines; and the blank lines. *(This session read the whole
+> document at its blob before writing any row, the cut with it; the cut is named here by what stands there, and no cut
+> line is tabulated.)* **The cut holds the member's ratification and much of what its range applies** — the four
+> protocols' ratification, the held-out protocol the capacity budget sits beside, the budget's own heading and pass
+> condition, and the other two protocols. These are facts of the population artifact for the method ruling's surface, no
+> row quotes a cut line, and no member is widened by hand to take them (**D-671**). No other member of the artifact
+> covers the cut — the passage rule's cut, recorded here as at §6.15 to §6.54, and not repaired. Outgoing statements:
+> **16** (rows 55.1 to 55.12; 8 rows of one claim and 4 rows of two (Rows 55.7, 55.9, 55.10 and 55.12), each split — the
+> arithmetic is at the foot of this member). Listed under *not a statement*: **0**. Counted at this member by this
+> session; the counts appear here and at §13, and nowhere else.
+>
+> **No WITHHELD home lies inside this member**: the artifact's `item_4_identities_inside` for position 55 is empty, and
+> `cowork_prefit_gates.md` is not one of the five documents withheld from the deriving session's pack — **so no row is
+> marked WITHHELD**. **No SEEN home lies inside it, agreeing with §5** — none of the SEEN identities is homed in this
+> document — **so no row is marked SEEN**. This session's walk of `tools/audit/decisions/backbone_decisions.json`
+> (taken at the commit that landed this dispatch, by explicit hash), over every record carrying an identity and a home,
+> the retired block included, found **one home inside the range — register entry D-271 at lines 68 to 81** — and over
+> the two cut spans **register entries D-272** at lines 17 to 19, **D-270** at 32 to 42, **D-273** at 116 to 121 and
+> **D-274** at 189 to 191; no retired entry is homed in this document. The walk agrees with the five the dispatch read,
+> no identity beyond them and none of them missing; it prints each record's `status` as *live*. **Each home's
+> `verbatim` was compared with the lines its home cites, at the member's blob, and each of the five equals its cited
+> lines exactly.** **D-271's home begins on line 68 inside item 1's first sentence, which opens at line 67, and ends at
+> line 81 with item 3's amendment** — so Row 55.1 lies partly on the home and Rows 55.2 to 55.8 wholly; each carries
+> the decisions register's paragraph and none a mark. The decisions register's INDEX records **D-271** *"The capacity
+> budget - a cell keeps its own estimate only above a stated count, and free parameters are bounded against the
+> training tokens"* in group A, LIVE, entry ratified 2026-08-02 · user — a fact of the decisions register, relayed and
+> moving no disposition. **D-270, homed in the cut, is one of the pack's LEAKS**: the pack does not render it, because
+> its `verbatim` names a `docs/` path — a fact of the pack copy this session read, relayed and moving nothing. **Rows
+> naming L3-S4: none.**
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.54, the colon-lead reading and the status-table reading stated at §6.9's manifest header, tables taken
+> row by row, the quotation join, the blockquote-marker reading, the fenced-block reading and the reading of a range
+> that opens with a heading line were applied unchanged at this member.** **The blockquote-marker reading has no
+> instance**: no line of the document carries the marker. **The fenced-block reading has no instance**: the script finds
+> no line opening with three backticks. **The document has no table, so neither the status-table reading nor the
+> glossary reading has an instance.** **The heading-line reading has no instance**: the range does not open with a
+> heading line; its nearest heading is *The capacity budget (OI-177; gates the fit event; #20)* (62), in the cut. **The
+> quotation join has no instance inside the range**: the document's one line ending in a hyphen, line 179, lies in the
+> cut. **Numbered items**: the range's six items are each quoted from after its number, and every row names the item it
+> quotes. **How the bold leads were read.** Item 1's bold run opens the sentence it belongs to and is quoted with it
+> (Row 55.1); the colon leads *Budget rule:*, *Global sanity bound:*, item 4's *… gets explicit treatment:*, item 5's *…
+> restated as a gate item:* and *Scope of the values:* each carry their claim and are tabulated with it (Rows 55.3,
+> 55.5, 55.9, 55.10 and 55.12). **The defense reading**: no sentence inside the range is led *Why:*; the amendment's
+> clause that it is the lawful amendment path with a nil capacity impact is taken with Row 55.7 as its defense, and item
+> 5's parenthesis naming the published measurement it follows with Row 55.11. **The passages recording a correction, a
+> closure, a supersession or an as-built state.** Item 3's italic parenthesis records an amendment of 2026-07-19 with
+> its *"Original text"*: the amendment's event is **HISTORICAL** and split from the claim about the cadence features
+> beside it (Row 55.7), and the original text is **HISTORICAL** (Row 55.8) — **following the former-wording precedents
+> in splitting a record from the rule beside it, as §6.39 split its (iii) and §6.43 its (ii)**. **The member's own
+> identifiers** — its *OI-7*; its *factorization §1* and *§5a(c)*; the desk simulation's cases *C2*, *C3* and *S5*; its
+> *[prov-ratify]* mark; the pack's principles *#17f*, *#17b*, *#17c* and *#22*; and the defect type *DT-2* — are quoted
+> as they stand; no three-digit identity of the decisions register stands inside the range, and no value the range
+> states is restated outside its quotations.
+>
+> **What this member is, and how its subjects were placed.** The range is the capacity budget of the user-ratified
+> pre-fit protocol of 2026-07-19 for the joint estimator — its six items: the parameter inventory published before
+> fitting, the budget rule, the global bound with its amendment, the named sensitive cells, the fit-scope declaration
+> and the scope of the values; less the cut, which holds the ratification, the held-out protocol, the budget's heading
+> and pass condition, the adoption protocol and the dual path with its retirement map. **The member was read whole, at
+> its blob, before any row was written**, and its rows were written in one portion. **How 1(a)'s five points were
+> weighed.** **(a) The member's subject against L3's.** Its subject is the fit's capacity budget. **How a table's cells
+> are estimated and pooled, the degree vocabulary's pooling, the weight vector's bound and penalty, and the fit's
+> scope** go to *L2 — The tonal reading. The one entangled decision.*, whose detail specification fixes how any weight
+> or table of its candidate scoring is fitted, as Rows 42.4, 42.9, 49.17 (i) and 49.20 placed them; **what a fit event
+> must publish and report before its numbers are trusted — the inventory, the global bound verified in it, the sensitive
+> cells by name and the cases re-checked prediction first — and what a fitted value may be claimed for** go to
+> *the measurement of the analysis*, as Row 49.17 (ii) placed the capacity budget's governance of the fit — **following
+> §6.49's rows on the fitting parameterization and §6.42's placements, and departing from none**. **L3's subjects appear
+> once**: item 3's amendment gives *"the four cadence features their own fitted weights"* (Row 55.7 (ii)) — cadence
+> features read inside the joint estimator's decision, placed with L2 and graded **THE DERIVATION IS SILENT**, as
+> §6.42's placement (o) read the cadence factor. **(b) Its identifiers** are the member's own, quoted as they stand.
+> **(c) Its standing** — a user-ratified protocol, with one amendment and its original text: the amendment and the
+> original text **HISTORICAL**, split from the claim beside them; no sentence of the range records a measured or built
+> property of the code, so none is **QUARANTINED**. **(d) The decisions register's homes** as above — one inside the
+> range, four in the cut, each holding its words at its cited lines. **(e) No table inside the range**; its items are
+> numbered and quoted from after their numbers. **Four placements are stated for challenge.** (l) The inventory, the ban
+> on a prose-only budget, the global bound and the sensitive cells (Rows 55.1, 55.2, 55.5 and 55.9) placed with
+> *the measurement of the analysis*; **the alternative** — *L2 — The tonal reading. The one entangled decision.*, whose
+> detail specification fixes how its values are fitted, as Rows 49.16 to 49.21 placed the fitting form — is stated and
+> not taken, these items governing what a fit event must declare and report before its numbers are trusted. (m) The
+> budget rule, the vocabulary's pooling and the weight bound (Rows 55.3, 55.4 and 55.6) placed with L2; **the
+> alternative** — *the measurement of the analysis*, as capacity governance — is stated and not taken, each fixing how a
+> table's cells or the weights are estimated. (n) The cadence features (Row 55.7 (ii)) graded **THE DERIVATION IS
+> SILENT** and placed with L2; **the alternative** — **DIFFERS** from L3-S38, a cadence feeding the tonality — is stated
+> and not taken, as §6.42's placement (o) stated it for the same factor. (o) The scope of the values (Row 55.12) placed
+> with *the measurement of the analysis*; **the alternative** — **HISTORICAL**, as a record of what was fitted — is
+> stated and not taken, the claims governing what a fitted value's measurement may claim. **No statement of this member
+> is ADOPTED — carried, ADOPTED — proposed, QUARANTINED, DISCARDED or UNPLACED.**
+
+---
+
+**Row 55.1 — the parameter inventory published before fitting as a generated artifact: every table, its dimensions, its
+cell counts and the free parameter count.**
+
+*Outgoing statement.* "**The parameter inventory is published before fitting** as a generated artifact (#17f): every
+table, its dimensions, its raw cell-count histogram from the training data, and the resulting free parameter count." —
+the section *The capacity budget (OI-177; gates the fit event; #20)*, its item 1, quoted from after its number, its bold
+run read with the sentence (locator: lines 67–69). Its *#17f* is the pack's principle against hand-transcribed
+measurement numbers.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric
+definitions and the grading conventions are (`FRAMEWORK.md` §5): the governance of a fit event and the numbers reported
+from it, as Row 49.17 (ii) placed the capacity budget's governance of the fit.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-271** at this
+document's lines 68 to 81; its home begins on line 68 inside this sentence, which opens at line 67 with the item's
+number and bold lead. The decisions register's INDEX records it as *"The capacity budget - a cell keeps its own estimate
+only above a stated count, and free parameters are bounded against the training tokens"* (group A, LIVE, entry ratified
+2026-08-02 · user) — a fact of the data file, moving no disposition and carrying no mark.
+
+---
+
+**Row 55.2 — no budget in prose only.**
+
+*Outgoing statement.* "No prose-only budget." — the section *The capacity budget (OI-177; gates the fit event; #20)*,
+its item 1, its last sentence (locator: line 69).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric
+definitions and the grading conventions are (`FRAMEWORK.md` §5): the governance of a fit event and the numbers reported
+from it, as Row 49.17 (ii) placed the capacity budget's governance of the fit.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-271** at this
+document's lines 68 to 81, items 1 to 3 from inside item 1's first sentence, on which this row's sentence lies; the
+decisions register's INDEX records it as *"The capacity budget - a cell keeps its own estimate only above a stated
+count, and free parameters are bounded against the training tokens"* (group A, LIVE, entry ratified 2026-08-02 · user) —
+a fact of the data file, moving no disposition and carrying no mark.
+
+---
+
+**Row 55.3 — the budget rule: a table cell keeps its own estimate only at or above a training count; below it, pooled to
+a declared parent under one declared smoothing constant per table.**
+
+*Outgoing statement.* "**Budget rule:** a table cell keeps its own maximum-likelihood estimate iff its training count ≥
+20 [prov-ratify]; below that it is pooled to its declared parent class (the pooling hierarchy declared per table in the
+artifact) under additive smoothing with a single declared α per table." — the section *The capacity budget (OI-177;
+gates the fit event; #20)*, its item 2, quoted from after its number, a lead ending in a colon that carries its claim
+(locator: lines 70–72). Its *[prov-ratify]* marks a constant the document says becomes binding at ratification. No value
+of it is restated here.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block), as Row
+42.9 placed the cells pooled where counts are thin.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-271** at this
+document's lines 68 to 81, items 1 to 3 from inside item 1's first sentence, on which this row's sentence lies; the
+decisions register's INDEX records it as *"The capacity budget - a cell keeps its own estimate only above a stated
+count, and free parameters are bounded against the training tokens"* (group A, LIVE, entry ratified 2026-08-02 · user) —
+a fact of the data file, moving no disposition and carrying no mark.
+
+---
+
+**Row 55.4 — the degree vocabulary's rare-class pooling the same rule applied to the state space.**
+
+*Outgoing statement.* "The degree vocabulary's rare-class pooling (factorization §1) is the same rule applied to the
+state space itself." — the section *The capacity budget (OI-177; gates the fit event; #20)*, its item 2 (locator: lines
+73–74). Its *factorization §1* is the factorization document's section.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block), as Row
+42.4 placed the degree vocabulary's threshold set at fit time.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-271** at this
+document's lines 68 to 81, items 1 to 3 from inside item 1's first sentence, on which this row's sentence lies; the
+decisions register's INDEX records it as *"The capacity budget - a cell keeps its own estimate only above a stated
+count, and free parameters are bounded against the training tokens"* (group A, LIVE, entry ratified 2026-08-02 · user) —
+a fact of the data file, moving no disposition and carrying no mark.
+
+---
+
+**Row 55.5 — the global bound: total free parameters bounded against the training tokens, verified in the artifact.**
+
+*Outgoing statement.* "**Global sanity bound:** total effective free parameters ≤ training tokens / 10 [prov-ratify],
+verified in the artifact." — the section *The capacity budget (OI-177; gates the fit event; #20)*, its item 3, quoted
+from after its number, a lead ending in a colon that carries its claim (locator: lines 75–76). No value of it is
+restated here.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric
+definitions and the grading conventions are (`FRAMEWORK.md` §5): the governance of a fit event and the numbers reported
+from it, as Row 49.17 (ii) placed the capacity budget's governance of the fit.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-271** at this
+document's lines 68 to 81, items 1 to 3 from inside item 1's first sentence, on which this row's sentence lies; the
+decisions register's INDEX records it as *"The capacity budget - a cell keeps its own estimate only above a stated
+count, and free parameters are bounded against the training tokens"* (group A, LIVE, entry ratified 2026-08-02 · user) —
+a fact of the data file, moving no disposition and carrying no mark.
+
+---
+
+**Row 55.6 — the combination-weight vector bounded in size and penalized, per the ratified staged-fitting decision.**
+
+*Outgoing statement.* "The combination-weight vector stays ≤ 14 weights, L2-penalized, per the ratified staged-fitting
+decision." — the section *The capacity budget (OI-177; gates the fit event; #20)*, its item 3 (locator: lines 76–77).
+Its *L2-penalized* names the squared-norm penalty on the weights, not the charter L2. No value of it is restated here.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block), as Row
+49.17 (i) placed the combination weights' fit.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-271** at this
+document's lines 68 to 81, items 1 to 3 from inside item 1's first sentence, on which this row's sentence lies; the
+decisions register's INDEX records it as *"The capacity budget - a cell keeps its own estimate only above a stated
+count, and free parameters are bounded against the training tokens"* (group A, LIVE, entry ratified 2026-08-02 · user) —
+a fact of the data file, moving no disposition and carrying no mark.
+
+---
+
+**Row 55.7 — the bound amended by the user's ratification at the weight-fit dispatch: the cadence features given their
+own fitted weights.**
+
+*Outgoing statement.* "*(Amended ≤ 12 → ≤ 14 by user ratification 2026-07-19 at the weight-fit dispatch: the ratified
+factorization gives the four cadence features their own fitted weights, putting the enumerated vector at 12–13; the
+amendment is the lawful #22 path — capacity impact nil, thousands of training tokens per weight either way." — the
+section *The capacity budget (OI-177; gates the fit event; #20)*, its item 3, its italic parenthesis, opening sentence
+(locator: lines 77–80). Two claims: (i) the bound on the weight vector was amended by the user's ratification of
+2026-07-19 at the weight-fit dispatch, the lawful amendment path of the pack's principle #22, its capacity impact stated
+nil — the impact and the path taken with the claim as its defense; (ii) the ratified factorization gives the four
+cadence features their own fitted weights, putting the enumerated vector at the size the member names. The cadence
+features are named inside the joint estimator's decision, read from cues beneath it, as §6.42's placement (o) read the
+cadence factor.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — it records an amendment of a protocol constant, on the user's ratification.
+(ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail specification fixes how
+any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block), as §6.42 placed the cadence
+factor inside L2's decision.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-271** at this
+document's lines 68 to 81, items 1 to 3 from inside item 1's first sentence, on which this row's sentence lies; the
+decisions register's INDEX records it as *"The capacity budget - a cell keeps its own estimate only above a stated
+count, and free parameters are bounded against the training tokens"* (group A, LIVE, entry ratified 2026-08-02 · user) —
+a fact of the data file, moving no disposition and carrying no mark.
+
+---
+
+**Row 55.8 — the original text of the amended bound, preserved.**
+
+*Outgoing statement.* "Original text: "≤ 12 weights (one per factor plus the declared-mode strength)".)*" — the section
+*The capacity budget (OI-177; gates the fit event; #20)*, its item 3, its italic parenthesis, last sentence (locator:
+lines 80–81).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the former wording of an amended constant, kept, as §6.39 split its (iii) and
+§6.43 its (ii).
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-271** at this
+document's lines 68 to 81, items 1 to 3 from inside item 1's first sentence, on which this row's sentence lies; the
+decisions register's INDEX records it as *"The capacity budget - a cell keeps its own estimate only above a stated
+count, and free parameters are bounded against the training tokens"* (group A, LIVE, entry ratified 2026-08-02 · user) —
+a fact of the data file, moving no disposition and carrying no mark.
+
+---
+
+**Row 55.9 — the desk-simulation's sensitive cells reported by name; the named cases re-checked against the fitted
+tables, prediction first.**
+
+*Outgoing statement.* "**The desk-sim sensitive-cell record (`cowork_factorization_desk_simulation.md` §4.3) gets
+explicit treatment:** the artifact reports, by name, the raw count and own-MLE-vs-pooled disposition of the named cells
+(V6→viø7, viø7→IV, i→IV-raised-6, the applied retrogression cells vi→V/vi and V/x→(not x), V→vi, the incomplete-seventh
+missing-third penalty, the tactus-beat boundary probability) — and the named desk-sim cases (C2, C3, S5) are re-checked
+against the FITTED tables at the first probe, prediction-first (#17b/#17c)." — the section *The capacity budget (OI-177;
+gates the fit event; #20)*, its item 4, quoted from after its number, a lead ending in a colon that carries its claim
+(locator: lines 82–87). Its *C2*, *C3* and *S5* are the desk simulation's cases, and its *#17b* and *#17c* the pack's
+principles. Two claims: (i) the artifact reports by name the raw count and the own-estimate or pooled disposition of the
+named sensitive cells; (ii) the named desk-simulation cases are re-checked against the fitted tables at the first probe,
+the prediction written first.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose own design content the
+metric definitions and the grading conventions are (`FRAMEWORK.md` §5): the governance of a fit event and the numbers
+reported from it, as Row 49.17 (ii) placed the capacity budget's governance of the fit. (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric definitions and the
+grading conventions are (`FRAMEWORK.md` §5): the governance of a fit event and the numbers reported from it, as Row
+49.17 (ii) placed the capacity budget's governance of the fit.
+
+---
+
+**Row 55.10 — the fit scope restated as a gate item: tables from counts, once, frozen; only the weights moving; nothing
+re-fit in response to a metric excursion.**
+
+*Outgoing statement.* "**Fit-scope declaration (the Noland lesson, already ratified at §5a(c)), restated as a gate
+item:** tables from counts, once, frozen; only the combination weights move in the discriminative stage; nothing is
+re-fit in response to a metric excursion (the DT-2 firewall)." — the section *The capacity budget (OI-177; gates the fit
+event; #20)*, its item 5, quoted from after its number, a lead ending in a colon that carries its claim, its parenthesis
+naming the published lesson and the earlier ratification taken with it (locator: lines 88–90). Its *§5a(c)* is the
+architecture document's ledger entry and its *DT-2* the defect type the member names. Two claims: (i) the tables are
+fitted from counts once and frozen, and only the combination weights move in the discriminative stage; (ii) nothing is
+re-fitted in response to a metric excursion.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block), as Row
+49.20 placed the same fit scope. (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***,
+whose detail specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2
+block), as Row 49.20 placed the same fit scope.
+
+---
+
+**Row 55.11 — the emission tables never re-fitted blindly against the key axis.**
+
+*Outgoing statement.* "What may never be re-fit blindly: the emission tables against the key axis (Noland's measured 91
+% → 18–28 % collapse)." — the section *The capacity budget (OI-177; gates the fit event; #20)*, its item 5, its last
+sentence (locator: lines 90–91); its parenthesis, the published measurement it follows, is taken with it as defense, no
+value of it restated here.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block).
+
+---
+
+**Row 55.12 — the scope of the values: Bach-chorale values, generalization claims de-scoped, the Jazz preset's claims
+gated on its ground truth.**
+
+*Outgoing statement.* "**Scope of the values:** fitted values are Bach-chorale values; generalization claims stay
+de-scoped (the OI-7 pattern); Jazz-preset correctness claims remain gated on OI-7's jazz GT." — the section *The
+capacity budget (OI-177; gates the fit event; #20)*, its item 6, quoted from after its number, a lead ending in a colon
+that carries its claim (locator: lines 92–93). Two claims: (i) the fitted values are values of the Bach chorales, and
+claims of generalization stay out of scope, as the open item the member names; (ii) claims of the Jazz preset's
+correctness remain gated on that open item's jazz ground truth.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose own design content the
+metric definitions, the grading conventions and what counts as ground truth are (`FRAMEWORK.md` §5): what a fitted
+value's measurement may claim. (ii) **RELOCATED** — to ***the measurement of the analysis***, whose own design content
+the metric definitions, the grading conventions and what counts as ground truth are (`FRAMEWORK.md` §5): what a fitted
+value's measurement may claim.
+
+#### Not a statement, at this member
+
+Each item is quoted from its opening with its line locator, and its kind named. Run-in bold labels read as titles under
+rule (1), and the heading lines, are neither here nor among the rows.
+
+*None: every sentence of the range is a row.*
+
+#### The arithmetic at this member
+
+- Rows written: **12**.
+- **Outgoing statements placed: 16** — 8 rows of one claim and 4 rows of two (Rows 55.7, 55.9, 55.10 and 55.12).
+- Listed under *not a statement*: **0**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 14 | 55.1, 55.2, 55.3, 55.4, 55.5, 55.6, 55.7 (ii), 55.9 (i), 55.9 (ii), 55.10 (i), 55.10 (ii), 55.11, 55.12 (i), 55.12 (ii) |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 2 | 55.7 (i), 55.8 |
+| UNPLACED | 0 | — |
+| **Total** | **16** | — |
+
+**The column sums to 16 (0 + 0 + 14 + 0 + 0 + 2 + 0), against 16 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 16 |
+| **Total verdicts** | **16** |
+
+The AGREES statements: none. The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 55 is empty, and the document is not
+  one of the five withheld from the deriving session's pack.
+- **SEEN rows: none** — no SEEN identity is homed in this document, agreeing with §5.
+- **One home of the decisions register's data file lies inside the range**: **register entry D-271** (68 to 81), carried
+  at Rows 55.1 to 55.8; each row carries the decisions register's paragraph and no mark. Its words stand at its cited
+  lines.
+- **Four are homed in the cut, all live**: **register entries D-272** (17 to 19), **D-270** (32 to 42), **D-273** (116
+  to 121) and **D-274** (189 to 191); no retired entry is homed in the document. **D-270 is one of the pack's LEAKS.**
+- **The cut** holds the title, the ratification, author and provisional-constants paragraphs, the held-out protocol, the
+  capacity budget's heading, lead and pass condition, the adoption protocol, the dual path and the retirement map, the
+  closing ratification paragraph, separator lines and blank lines; no row is tabulated there.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -71171,6 +71628,10 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   older chord layer's edge window and its decision-relevant request, and the older function layer's decision-context
   extent, discovery rule, forward re-runs and its decision on what it saw when denied. *(L3-S40 AGREES at Rows 54.24,
   54.26, 54.27 (ii), 54.28 and 54.33, as at Rows 10.58 and 7.67; as Rows 7.66 and 10.60.)*
+- Rows 55.3, 55.4, 55.6, 55.7 (ii), 55.10 (i), 55.10 (ii) and 55.11 — the budget rule and the degree vocabulary's
+  pooling, the weight vector's bound and penalty, the cadence features' own fitted weights, and the fit's scope with the
+  emission tables never re-fitted blindly. *(As Rows 42.4, 42.9, 49.17 (i) and 49.20; Rows 55.3, 55.4, 55.6 and
+  55.7 (ii) lie on register entry D-271's home, unmarked.)*
 
 **To *the second axis — voice leading*.**
 
@@ -71507,6 +71968,10 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   and 47.4.)*
 - Row 52.13 (iv) — the derivation of the root and bass spelling from the key and degree, a measurement tool to establish
   at build. *(As Row 48.13 (iii).)*
+- Rows 55.1, 55.2, 55.5, 55.9 (i), 55.9 (ii), 55.12 (i) and 55.12 (ii) — the parameter inventory published before
+  fitting, no budget in prose only, the global bound verified in the artifact, the sensitive cells reported by name and
+  the named cases re-checked prediction first, and the scope of what the fitted values may be claimed for. *(As Row
+  49.17 (ii); Rows 55.1, 55.2 and 55.5 lie on register entry D-271's home, unmarked.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
@@ -71517,7 +71982,7 @@ member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 2
 the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
 numbered 36.n, member 37's the rows numbered 37.n, member 38's the rows numbered 38.n, member 39's the rows numbered 39.n,
 member 40's the rows numbered 40.n, member 41's the rows numbered 41.n,
-member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 52's the rows numbered 52.n, member 53's the rows numbered 53.n, and member 54's the rows numbered 54.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33, 34 and 51 relocate no row.)*
+member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 52's the rows numbered 52.n, member 53's the rows numbered 53.n, member 54's the rows numbered 54.n, and member 55's the rows numbered 55.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33, 34 and 51 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -73641,6 +74106,10 @@ No QUARANTINED row: the member's ranges record no built or measured property of 
 - Row 54.31 (i) — is the older chord layer's request path at a selection edge uncoded at the current commit, its window
   truncating silently?
 
+**Member 55 — `cowork_prefit_gates.md`, the passages of the document.**
+
+No QUARANTINED row: the member's range records no built or measured property of the code (§6.55's manifest header).
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -74649,6 +75118,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 54.36 (ii) (L3-S40):** the outgoing older grouping layer *"surfaces the item-10 provenance and the
   `extension-cue` tag"*, where L3-S40 says *"Where they do, L3 asks for a larger span from the caller, as L2 does"*.
 
+**Member 55.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -74710,12 +75181,13 @@ are at its own foot, and the integers below are re-derivable from them.
 | 52 | 27 | 3 | 0 | 4 | 13 | 0 | 6 | 1 | 0 |
 | 53 | 25 | 0 | 0 | 4 | 0 | 0 | 0 | 21 | 2 |
 | 54 | 56 | 0 | 0 | 42 | 4 | 0 | 6 | 4 | 5 |
-| **Total** | **4514** | **196** | **91** | **1952** | **1212** | **0** | **720** | **343** | **1297** |
+| 55 | 16 | 0 | 0 | 14 | 0 | 0 | 2 | 0 | 0 |
+| **Total** | **4530** | **196** | **91** | **1966** | **1212** | **0** | **722** | **343** | **1297** |
 
-**The arithmetic check:** 196 + 91 + 1952 + 1212 + 0 + 720 + 343 = 4514, against 4514 statements placed (43 + 34 + 21 +
+**The arithmetic check:** 196 + 91 + 1966 + 1212 + 0 + 722 + 343 = 4530, against 4530 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
-0 + 27 + 25 + 56).
+0 + 27 + 25 + 56 + 16).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -74773,12 +75245,13 @@ are at its own foot, and the integers below are re-derivable from them.
 | 52 | 3 | 0 | 24 | 27 |
 | 53 | 0 | 0 | 25 | 25 |
 | 54 | 17 | 4 | 35 | 56 |
-| **Total** | **429** | **359** | **3734** | **4522** |
+| 55 | 0 | 0 | 16 | 16 |
+| **Total** | **429** | **359** | **3750** | **4538** |
 
-**The arithmetic check of the verdicts:** 429 + 359 + 3734 = 4522, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 429 + 359 + 3750 = 4538, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
-0 + 27 + 25 + 56).
+0 + 27 + 25 + 56 + 16).
 
 ## 14. The derivation's independence record, relayed
 
