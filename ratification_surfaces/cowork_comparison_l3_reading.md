@@ -93,7 +93,7 @@ its own entry there.
 | 41 | `cowork_score_census.md` passages | **DONE** (§6.41) |
 | 42 | `cowork_joint_estimator_factorization.md` passages | **DONE** (§6.42) |
 | 43 | `cowork_layer3_keymode_design.md` passages | **DONE** (§6.43) |
-| 44 | `cowork_progression_schema_design.md` passages | NOT YET TABULATED |
+| 44 | `cowork_progression_schema_design.md` passages | **DONE** (§6.44) |
 | 45 | `cowork_confidence_contract.md` passages | NOT YET TABULATED |
 | 46 | `cowork_progression_schema_dictionary.md` passages | NOT YET TABULATED |
 | 47 | `cowork_layer2_slicing_design.md` passages | NOT YET TABULATED |
@@ -109,7 +109,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 43 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 44 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -131,7 +131,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, and position 43, the passages of `cowork_layer3_keymode_design.md`.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, and position 44, the passages of `cowork_progression_schema_design.md`.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -169,10 +169,10 @@ position 39 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventeenth_2026_10_24.md`, which stopped at the
 member boundary after position 39 under its own limit on the batch, and not by a capacity judgment; positions 40 to 42
 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighteenth_2026_10_25.md`, which stopped at the
-member boundary after position 42 under its own limit on the batch, and not by a capacity judgment; position 43 was
-tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md`.**
-**The writing now stands at the member boundary after position 43: not done, positions 44 to 57, and the next
-writing resumes at position 44.**
+member boundary after position 42 under its own limit on the batch, and not by a capacity judgment; positions 43 and
+44 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md`.**
+**The writing now stands at the member boundary after position 44: not done, positions 45 to 57, and the next
+writing resumes at position 45.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -60643,6 +60643,1498 @@ The DIFFERS statements: 43.7 (ii) (L3-S32), 43.19 (ii) (L3-S38), 43.24 (L3-S38),
 
 ---
 
+### 6.44 — Member 44: `cowork_progression_schema_design.md`, the passages of the document
+
+> **Manifest for this member.** Position **44**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_progression_schema_design.md`. Label: *the passages of the document*, exactly as the artifact spells
+> it — a label that names no heading, so the member's section is the whole document, its lines 1 to 332, as at §6.35 to
+> §6.43. **The thirtieth member of this comparison made of passages, the tenth cut from a document other than
+> `ARCHITECTURE.md`, and the eighth cut from a document not withheld from the deriving session's pack**: its entry's
+> `item_4_identities_inside` is empty, so its passages are cut around term-search hits only. Eight ranges, each as a
+> locator only (**D-307**), with its first and last line texts exactly as the artifact publishes them (wrapped here for
+> width; the line texts keep their bullet markers and indentation, as the artifact publishes them):
+>
+> - lines 21–68, from *"- **Named progression** — a chord progression with a conventional name and a catalog entry in
+>   the Harmonic"* to *"  person or element generally; **substitution** — always the chord-for-chord sense above, never
+>   text replacement.)"*;
+> - lines 80–89, from *"## 2. Placement — no new layer"* to *"- **The catalog → the Harmonic Vocabulary**, queried, not
+>   owned (D5)."*;
+> - lines 117–128, from *"### 4.3 The evidence contribution (both conditions fully stated)"* to *"  the notes. No new
+>   comparison frame is introduced."*;
+> - lines 161–178, from *"### 4.6 Harmonic sequences as evidence of the local key (the Layer-5 §5.3 channel; review
+>   A-4)"* to *"§5.3 wiring is built. The consumer's own build (the annotation + the §5.5 feature) does not need it."*;
+> - lines 180–184, from *"## 5. Where the idiom behavior lives *(post-swap, `0e155154fc`)*"* to *"a coloristic analysis
+>   — the empirical study found genre organizes harmony only weakly)."*;
+> - lines 186–273, from *"## 6. Architecture decisions (with the alternatives weighed)"* to *"  path; the mark retires
+>   per entry when the voice-leading layer supplies the other half."*;
+> - lines 275–283, from *"## 7. Quality & validation"* to *"  construction."*;
+> - lines 312–332, from *"## 10. QA record (the prescribed audits — Cowork, 2026-07-02; re-run on the v4 rewrite)"* to
+>   *"criteria unaffected — G1 excludes the consumer)."*.
+>
+> **Each of the sixteen line texts was compared with the line at its locator** in `cowork_progression_schema_design.md`,
+> read by this session at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at
+> that commit, **and every one matches**; the ranges hold 211 lines. The blob carries no carriage return, so nothing was
+> stripped before a comparison. **No other member of the artifact is cut from this document** — this session's script,
+> listing every member whose document is `cowork_progression_schema_design.md`, found position 44 alone — so nothing is
+> excluded from the cut. The document's other lines lie in no range — lines 1–20, 69–79, 90–116, 129–160, 179, 185, 274
+> and 284–311, one hundred and twenty-one lines of which twenty are blank, as this session's script lists them; the list
+> is the one the dispatch computed, span for span. By the eleven headings the script lists among them — the title and
+> the headings of the member's sections *0*, *1*, *3*, *4*, *4.1*, *4.2*, *4.4*, *4.5*, *8* and *9* — they hold: the
+> title (1); **the status banner** (3 to 17), a quotation block opening *"Status: v4 — FOR RATIFICATION (Cowork,
+> 2026-07-02)."*, **with its ratification record**, *"★ FULLY RATIFIED (user, 2026-07-02)"* (15 and 16); §0's heading
+> (19); **the whole of *1. The core principle*** (70 to 78); §2's closing paragraph on the chords-only scope (91 and
+> 92); **the whole of *3. Inputs and outputs (the contract)*** (94 to 101); §4's heading and **its §4.1, §4.2 and §4.4
+> whole** (103 to 115, 130 to 132); **the whole of *4.5 The idiom-mixture weighting …*** (134 to 159), **register entry
+> D-503's home (135 and 136)** among it; **the whole of *8. Risks & technical debt* and *9. Open items*** (285 to 310);
+> and the blank lines 2, 18, 20, 69, 79, 90, 93, 102, 104, 111, 116, 129, 133, 160, 179, 185, 274, 284, 292 and 311.
+> *(This session read the whole document at its blob before writing any row, the cut with it; the cut is named here by
+> what stands there, and no cut line is tabulated.)* **The cut holds the member's own account of its standing and the
+> rules its ranges apply** — its banner with its ratification record, its core principle, its contract, its rules of
+> recognition, substitution, annotation and idiom-mixture weighting, its risks and its open items. These are facts of
+> the population artifact for the method ruling's surface, no row quotes a cut line, and no member is widened by hand to
+> take them (**D-671**). No other member of the artifact covers the cut — the passage rule's cut, recorded here as at
+> §6.15 to §6.43, and not repaired. Outgoing statements: **80** (rows 44.1 to 44.50; 26 rows of one claim, 20 rows of
+> two (Rows 44.8, 44.10, 44.20, 44.22, 44.23, 44.24, 44.27, 44.31, 44.32, 44.33, 44.34, 44.36, 44.37, 44.40, 44.41,
+> 44.42, 44.46, 44.47, 44.48 and 44.49), 3 rows of three (Rows 44.19, 44.28 and 44.30) and 1 row of five (Row 44.50),
+> each split — the arithmetic is at the foot of this member). Listed under *not a statement*: **53**. Counted at this
+> member by this session; the counts appear here and at §13, and nowhere else.
+>
+> **No WITHHELD home lies inside this member**: the artifact's `item_4_identities_inside` for position 44 is empty, and
+> `cowork_progression_schema_design.md` is not one of the five documents withheld from the deriving session's pack —
+> **so no row is marked WITHHELD**. **Seven SEEN homes lie inside it, agreeing with §5**, which places D-502 and D-504
+> to D-509 inside this member and D-503 inside none: this session's walk of
+> `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit hash),
+> over every record carrying an identity and a home, the retired block included, found over the eight ranges **register
+> entry D-509** at lines 121 to 128, range 3's bullet *Where Layer 4 committed:*, its rows **44.23 and 44.24**;
+> **register entry D-504** at lines 161 to 178, the whole of range 4 from its heading line, its rows **44.25 to 44.31**;
+> **register entry D-505** at lines 162 to 166, inside D-504's home, its rows **44.25 to 44.28**; **register entry
+> D-506** at lines 193 and 194, the member's decision D4, its row **44.37** and item 10; **register entry D-508** at
+> lines 242 to 244, the close of the member's decision D5, its row **44.43** and item 30; **register entry D-502** at
+> lines 245 to 247, the opening of the member's decision D6, its row **44.44** and item 31; and **register entry D-507**
+> at lines 272 and 273, the member's decision D7, its row **44.46**. Over the eight cut spans the same walk found
+> **register entry D-503** (135 and 136, in §4.5), a SEEN identity that marks no row, agreeing with §5. The walk agrees
+> with the eight the dispatch read, no identity beyond them and none of them missing, and no retired entry is homed in
+> this document. **Every row whose quoted lines lie inside one of the seven homes is marked** *"SEEN — §6 item 1 (D-n;
+> the heading line only)."* after its title, in the form §6.36's rows carry it, **and carries a paragraph *The decisions
+> register at this row***, as Row 36.27 does — 13 rows, counted both ways at this subsection (the foot names them); **no
+> other row is marked**; the items under *not a statement* lying inside a home carry no mark. **Two shapes no earlier
+> member had, each a reading stated for challenge, there being no precedent.** *The nested homes*: Rows 44.25 to 44.28,
+> on lines 162 to 169, lie inside both D-504's home and D-505's, and each is marked once, *"SEEN — §6 item 1 (D-504 and
+> D-505; the heading lines only)."*, its paragraph naming both homes, placement (l); a row still carries one mark or
+> none. *The homes crossing a sentence*: D-505's home ends on line 166 inside the sentence of Row 44.28, which runs to
+> line 169, and the row says which of its lines lie inside each home; D-508's begins on line 242 inside the sentence of
+> Row 44.43, which opens on line 240, and the row is marked and says that lines 240 and 241, which carry the sentence's
+> claim, lie outside the home and line 242, the close of its parenthesis, inside it, placement (m); and D-502's ends on
+> line 247 inside the sentence *"The prefix answers the last collision standing: …"*, which runs to line 249 and is
+> listed under *not a statement* as a defense of the member's decision D6 (item 31), so no row carries a crossing there,
+> placement (n). **Every other home begins and ends at a sentence or a bullet**, as this session's reading of the lines
+> found them. **No SEEN row carries an AGREES**: the verdicts at the SEEN rows are THE DERIVATION IS SILENT, and DIFFERS
+> at Row 44.30's three claims. The decisions register's INDEX records all eight — D-502 to D-509 — as LIVE, in group M,
+> with no entry ratification shown, the seven inside the ranges with their titles quoted at their rows; **the INDEX
+> gives D-504's home as §4.5, while the data file's lines 161 to 178 lie under this document's §4.6** — named here and
+> in the report, and not repaired; read by this session at the INDEX, facts of the decisions register, relayed and
+> moving no disposition. **Rows naming L3-S4: none.**
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.43, the colon-lead reading and the status-table reading stated at §6.9's manifest header, tables taken
+> row by row, the quotation join, the blockquote-marker reading, the fenced-block reading and the reading of a range
+> that opens with a heading line were applied unchanged at this member.** **The blockquote-marker reading has no
+> instance inside a range**: the document's one marked span, lines 3 to 17, its status banner with its ratification
+> record, lies in the cut. **The fenced-block reading has no instance**: the script finds no line opening with three
+> backticks. **The status-table reading and the taking of tables row by row have no instance**: the document has no
+> table. **The heading-line reading, at seven ranges**: ranges 2 to 8 open with the headings *2. Placement — no new
+> layer* (80), *4.3 The evidence contribution (both conditions fully stated)* (117), *4.6 Harmonic sequences as evidence
+> of the local key (…)* (161), *5. Where the idiom behavior lives …* (180), *6. Architecture decisions (with the
+> alternatives weighed)* (186), *7. Quality & validation* (275) and *10. QA record (…)* (312), each a title under the
+> first reading rule — neither a statement nor an item under *not a statement* — and the nearest heading of every row of
+> its range, ranges 3 and 4 named with *4. The rules* above them; where a heading carries a claim, the body sentence
+> that states it is what is tabulated: *2*'s *"no new layer"* at Row 44.19 (iii), and *10*'s *"re-run on the v4
+> rewrite"*, a phrase of a title, by no row. The other eleven heading lines lie in the cut, and no range holds a heading
+> line except at its first line; **as at §6.43, this departs in form from §6.36's listing of its heading lines**,
+> §6.43's placement (s) applied again. **The glossary reading — range 1's terms list**: the bulleted list under *0.
+> Terms (…)*, whose heading lies in the cut, is a glossary written as bullets, so each entry is one unit, quoted from
+> its bold term to the end of its definition, one row per entry, **the three bullets carrying several entries taken
+> entry by entry** — *Named progression* with *Member* (Rows 44.1 and 44.2), *Prior strength* with *Admission* and
+> *Seed* (Rows 44.12 to 44.14), and *Punctuation-span* with *Progression-schema-span* (Rows 44.15 and 44.16); an entry
+> of several claims is split under 1(a) (Rows 44.8 and 44.10); a further sentence or parenthesis of an entry remarking
+> on the document's own use of its term is taken with its row (Rows 44.3 and 44.16), while the two sentences after the
+> entry *Resolved and unresolved chords.* on the document's and the project's vocabulary are listed (items 1 and 2), as
+> §6.39 listed its remarks on vocabulary; **the last entry, *Key*, is tabulated by its definition (Row 44.18), and the
+> member's rule on its words of several meanings, in the parenthesis after it, is listed in its two sentences (items 3
+> and 4)**, as §6.43 listed its two entries of that shape; and every entry is weighed under the unit, as §6.39's
+> manifest header says it weighed its table's entries. **The quotation join**: no line inside the ranges ends in a
+> hyphen, and the widened join, a letter or a closing parenthesis before a line-end hyphen, finds no line in the
+> document; **one line inside the ranges ends in a slash** — line 234, inside the member's decision D5, *"**6 entries
+> /"* before *"11 motions fail**"*, the break falling inside a bold run — and the quotation renders the line break as
+> one space, as the member's two lines give it (Row 44.41). **How the bold leads were read.** Range 2's three bullets
+> *The evidence → Layer 5.*, *The name → Layer 6.* and *The catalog → the Harmonic Vocabulary* are labels, each read
+> with the words after it, which carry its claims (Rows 44.19 to 44.21). Range 4's bold runs belong to the sentences
+> they open and are quoted with them: *U1 ruling (2026-07-02): a sequence requires ≥2 transposed statements of the SAME
+> recognised entry* (Row 44.27), *The consumer ALWAYS emits it — evidence is never discarded* (Row 44.29) and *Frame
+> obligation:* (Row 44.31). **Range 6's seven decisions**: the bold lead of each of the member's decisions D1, D2, D3,
+> D4, D6 and D7 states its decision and is tabulated (Rows 44.34 to 44.37, 44.44 and 44.46), the member's label apart;
+> D5's lead is a question with its ratification and the user's rider, listed (item 11). Inside D5 and D6, *The
+> dependency map (…):*, *(The original question and alternatives, for the record:)* and *(The alternatives evaluated,
+> for the record:)* introduce their passages (items 12, 20 and 34); *Build riders (…):* opens a rider (item 18); *The
+> question.* opens provenance (item 21); *The decision (Cowork's proposal): one owner per item.* is a label read as a
+> title, its claims stated by the sentences after it (Rows 44.38 and 44.39); *How the Layer-5 side is actually held
+> (…):* and *The containment relation (…) — MEASURED, and Cowork's original premise CORRECTED (2026-07-02):* open the
+> sentences that carry their claims (Rows 44.40 and 44.41); *Ruled grammar gaps, L5-owned* is read with its parenthesis
+> (Row 44.42); *Not a new span type.* is a complete sentence, tabulated (Row 44.45); *The problem with "sequence-span":*
+> opens a defense (item 36); and *The decision (Cowork's proposal): `schema-span`* and the three *Alternative* leads
+> open passages recorded for the record (items 39, 41, 43 and 46). Range 7's *Measurable now:*, *Not yet measurable:*
+> and *Dormant + byte-identical* open the sentences that carry their claims (Rows 44.47 to 44.49). Range 8's *(i) The
+> three design-doc standards.* is a label read as a title, its italic leads *Specify-by-rule:*, *Code-free body:* and
+> *Standard vocabulary + defined terms:* open audit records (items 48, 50 and 51), *(ii) Language-mechanical pass:*
+> opens an audit record (item 52), and *(iii) Cross-architecture consistency:* opens the sentence that carries its
+> claims (Row 44.50). **The colon leads** are tabulated with the sentence each opens where it carries the claim — *Where
+> Layer 4 abstained:* and *Where Layer 4 committed:* (Rows 44.22 and 44.23), *Frame obligation:* (44.31), D5's two colon
+> leads (44.40 and 44.41), *Measurable now:* and *Not yet measurable:* (44.47 and 44.48) and *(iii) Cross-architecture
+> consistency:* (44.50) — and listed as a lead where it only introduces its items: *That maps onto our decomposition
+> directly:* (item 6) and *The dependency map (…):* (item 12). **The defense reading.** Range 2's opening sentence on
+> published systems is listed as the defense of the placement after it (item 5); range 6's italic *Alternatives weighed
+> and rejected:* clauses after D1 to D4 are listed as declined alternatives with their reasons (items 7 to 10); inside
+> D5 and D6 the *Pro:* and *Con:* sentences of the alternatives declined are listed (items 24 to 29 and 41 to 47), with
+> D6's reasoning (items 31 and 32) and the defense of the former name (items 36 to 38); a parenthesis giving a sentence
+> its own reason is taken with it (Rows 44.33 and 44.43). No sentence inside the ranges is led *Why:*. **The passages
+> recording a correction, a supersession, a closure or an as-built state.** (i) Range 4's *"user-directed correction
+> 2026-07-02, replacing an earlier "only where no cadence exists" gate that threw corroboration away"* — provenance
+> inside the parenthesis of the sentence it qualifies, taken with it (Row 44.29), following the former-wording
+> precedents. (ii) Range 6's D5 *The containment relation (user observation) — MEASURED, and Cowork's original premise
+> CORRECTED (2026-07-02):* — the measured falsification **QUARANTINED** and the rule it leaves placed with L2 (Row
+> 44.41), its correction of an earlier count taken as provenance. (iii) D5's *(The original question and alternatives,
+> for the record:)* — the question, its provenance and the two declined alternatives listed (items 20 to 22 and 24 to
+> 29), the proposal it introduces, which the ratification made the decision, tabulated (Rows 44.38 and 44.39), and its
+> documentation rider listed (item 23). (iv) D6's *(The alternatives evaluated, for the record:)* — the former proposal
+> *`schema-span`*, superseded by the prefixed name the member's decision D6 states, listed (item 39), **following §6.3's
+> items 1 and 14, §6.23's item 15, §6.35's item 38, §6.36's item 24 and §6.39's items 6, 7 and 10**, with the remark,
+> the defense and the rider beside it and the three declined alternatives (items 35 to 38 and 40 to 47); the bold
+> sentence *Not a new span type.* and the sentence after it, which state what the span is under the name ruled,
+> tabulated (Row 44.45). (v) Range 7's *Dormant + byte-identical* — the build state **QUARANTINED** (Row 44.49). **The
+> member's own identifiers** — its decisions *D1* to *D7*, its rulings *U1* and *U2*, its frames *F-B* and *F-C*, its
+> sections, its layer numbers *Layer 4*, *Layer 5*, *Layer 6*, *L4*, *L5* and *L6*, *Stage-5*, *Tier-J* and *Tier J* of
+> the census, *A-4* of an external review, *G1* and the corpus-gate value — are quoted as they stand; no three-digit
+> identity of the decisions register stands inside a range.
+>
+> **What this member is, and how its subjects were placed.** The ranges are the design, ratified 2026-07-02, of an older
+> stack's recogniser of named progressions — the cadence formulas, the stock successions, the galant schemata, the
+> bass-line patterns and the substitutions of a catalog — found in the chords already committed: its terms; its
+> placement as evidence and a name with no new layer; the evidence's two conditions, where the chord layer abstained and
+> where it committed; the harmonic sequence as evidence of the local key; where the idiom behavior lives; its seven
+> decisions, with the alternatives weighed, the dependency map, the measured containment and the naming of its span; its
+> quality and validation; and its audit record — less the cut, which holds the banner with its ratification record, the
+> core principle, the contract, the rules of recognition, substitution, annotation and idiom-mixture weighting, the
+> risks and the open items. **The member was read whole, at its blob, before any row was written**, and its rows were
+> then written in three portions. **How 1(a)'s five points were weighed.** **(a) The member's subject against L3's.** At
+> its centre the member's subject is neither L2's nor L3's: the recognition of a named progression as such — the
+> catalog, its entries and tags, the match value, the matcher, the schema span and its name, and the decisions that the
+> recognition adds no layer and stays chords-only and additive — is **UNPLACED** at 22 statements, read as at Rows 8.18,
+> 8.51, 8.52 (iii), 7.85 and 38.20 (i), no charter of `FRAMEWORK.md` §5 naming the recognition of a schema, the span it
+> covers or a knowledge-base component — **following those precedents and departing from none**, placement (o). The
+> recognition's **evidence** — a feature of the function layer's selection among a chord's readings, and the override of
+> a committed reading through the existing frame — is **RELOCATED** to
+> *L2 — The tonal reading. The one entangled decision.*, which settles the chord, with the licensing grammar as Rows
+> 7.77 and 7.84 placed it, the frames as Row 9.163 placed one, and the idiom weights, the seed from the preset, the
+> prior strength and the admission as the priors and weights of the candidate score, as Rows 43.40 and 43.42 (i) placed
+> the preset; the harmonic sequence as evidence of the local key is **RELOCATED** to L2 as well, which decides the
+> tonality, and **its use beside a confirming cadence in the function layer's key arbitration is graded DIFFERS from
+> L3-S38 at its three claims and placed with L2, as Row 40.51** (Row 44.30) — §6.43's placement (p) applied again, and
+> stated here as placement (p). **L3's own subjects appear at two places**: the cadence, which the member names only as
+> what confirms a key, graded at Row 44.30; and the grouping, where the punctuation-span, the grouping layer's
+> non-nested span, is **ADOPTED — carried** by L3-S12 (Row 44.15), as Rows 8.14 (i) and 8.52 (i) carried it, while the
+> schema span the member emits for that layer stays UNPLACED. The measurement of the spans and of the evidence's effect
+> goes to *the measurement of the analysis*; the composite confidence and the marks of an under-identified or
+> unvalidated recognition to *the uncertainty surface*; and the line-defined schemata and their other half to
+> *the second axis — voice leading*, whose charter holds the stock outer-voice patterns (Rows 44.3 and 44.46 (ii)).
+> **(b) The member's layer numbers** — its *Layer 4*, the chord identity committing or abstaining, its *Layer 5*,
+> function, and its *Layer 6*, grouping, also written *L4*, *L5* and *L6* — are the older stack's and not `FRAMEWORK.md`
+> §5's; every statement is placed by its subject, never by the numeral, and the rows quoting such a numeral say which
+> older layer it names. **(c) Its standing** — a ratified design whose build is scaffolding, dormant and byte-identical,
+> every value left to the precision phase: a sentence stating what the recognition, its evidence or the key arbitration
+> must do is placed as a rule with its charter; a sentence recording how the code is built or what was measured — the
+> predicates' form, the measured containment, the matcher's exact realisations, the dormant build and the unchanged
+> corpus gate — is **QUARANTINED**, its audit question asking what the named code holds at the current commit, whether
+> any path that runs reaches it, or on which run a value was obtained and whether it reproduces, no value restated in a
+> question; and a deferral, a build order or an amendment's standing is **HISTORICAL**, split from a rule beside it. The
+> rulings with their dates, the alternatives weighed and declined, the measured containment with its corrected premise
+> and the build riders are split or listed as (ii) to (iv) above state. **Range 8, the member's audit record of
+> itself**, is read sentence by sentence: the records of where the document states its rules, of its form, of its
+> vocabulary and of how its words were made exact say how the document was checked, and are listed (items 48 to 53);
+> **the sentence of its consistency audit is tabulated (Row 44.50)**, because each property it records states what the
+> consumer does or must not do — forward-only, no access to the notes, no backward edge, no request for more music —
+> placement (q). **(d) The decisions register's homes** as above — seven inside the ranges, every one a SEEN identity,
+> two nested and two crossing a tabulated sentence, one more ending inside a listed one, and D-503 in the cut. **(e) The
+> terms list** as above. **Seven placements are stated for challenge.** (l) The nested homes marked once, naming both
+> identities, as the dispatch orders; **the alternative** — naming only the inner home — is stated and not taken. (m)
+> Row 44.43 marked though its claim stands on lines outside D-508's home; **the alternative** — holding the claim wholly
+> outside the home and marking the row not — is stated and not taken. (n) The sentence D-502's home ends inside listed
+> as a defense (item 31); **the alternative** — tabulating it with the SEEN mark — is stated and not taken. (o) The
+> recognition as such **UNPLACED**; **the alternative** — L3's charter, as the member's emission of its span for the
+> grouping layer might suggest — is stated and not taken, the charter's grouping being the phrase and section grouping,
+> which L3-S12 tiles and a schema span cuts across. (p) Row 44.30's three claims graded **DIFFERS** from L3-S38; **the
+> alternative** — **THE DERIVATION IS SILENT**, the member's key arbitration being inside L2's decision — is stated and
+> not taken, the cadence being an L3 fact in the charter. (q) The consistency audit's sentence tabulated; **the
+> alternative** — listing the whole of range 8 as the record of how the document was checked, as §6.7's item 3 listed an
+> audit as provenance — is stated and not taken. (r) The consistency test of D-508's home listed as a test (item 30), as
+> §6.7's item 33; **the alternative** — tabulating it as the record of a test's state, **QUARANTINED** — is stated and
+> not taken. **No statement of this member is ADOPTED — proposed or DISCARDED.**
+
+---
+
+**Row 44.1 — the term *Named progression*: a chord progression with a conventional name and a catalog entry.**
+
+*Outgoing statement.* "**Named progression** — a chord progression with a conventional name and a catalog entry in the
+Harmonic Vocabulary (`cowork_progression_schema_dictionary.md` §5): cadence formulas, ii–V–I, turnarounds, the galant
+schemata, bass-line patterns, substitution operations." — the section *0. Terms (each defined here, or cited to the
+document that defines it — nothing below is used before this table)*, the terms list, its first bullet, the entry *Named
+progression* (locator: lines 21–23).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 7.85: `FRAMEWORK.md` §5 names no charter whose subject is a
+catalog of named progressions, and the derivation does not speak to one.
+
+---
+
+**Row 44.2 — the term *Member*: one chord position in a catalog entry's succession of chords.**
+
+*Outgoing statement.* "**Member** — one chord position in such an entry's sequence; each member specifies the scale
+degree and quality (and, for a bass-line entry, the bass degree) that a chord must realise to fill it." — the section
+*0. Terms (each defined here, or cited to the document that defines it — nothing below is used before this table)*, the
+terms list, the first bullet's second entry, *Member* (locator: lines 23–25).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 44.1.
+
+---
+
+**Row 44.3 — the term *Prinner*: a galant schema of a descending melody over a descending bass, an entry defined by its
+lines.**
+
+*Outgoing statement.* "**Prinner** — one of the galant schemata in that catalog (dictionary §5.2, from Gjerdingen's
+schema inventory): a stock four-stage answer phrase, melody descending 6̂–5̂–4̂–3̂ over a bass descending 4̂–3̂–2̂–1̂.
+Used in this document only as an example of an entry **defined by its melodic/bass lines** (see D7)." — the section *0.
+Terms (each defined here, or cited to the document that defines it — nothing below is used before this table)*, the
+terms list, the entry *Prinner* (locator: lines 26–28). Its second sentence, on how the document uses the term, is taken
+with the row.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, which holds *"the stock
+eighteenth-century outer-voice patterns"* (`FRAMEWORK.md` §5).
+
+---
+
+**Row 44.4 — the term *Substitution*: a chord standing in for another of the same function, per the catalog's
+mappings.**
+
+*Outgoing statement.* "**Substitution** — a chord standing in for another chord of the same function, per the catalog's
+substitution mappings (dictionary §5.3); the standard case here is the **tritone substitution** (`♭II7` standing in for
+`V7`)." — the section *0. Terms (each defined here, or cited to the document that defines it — nothing below is used
+before this table)*, the terms list, the entry *Substitution* (locator: lines 29–30).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: the substitution is defined by the catalog's mappings, read as at Row 7.85,
+and no charter of `FRAMEWORK.md` §5 names the relation of a chord to the chord it stands in for.
+
+---
+
+**Row 44.5 — the term *The committed progression*: the ordered committed chords of a region with their numerals and the
+local key.**
+
+*Outgoing statement.* "**The committed progression** — Layer 5's §7 output for a region: the ordered chords the layers
+COMMITTED (each with root, quality, bass, extensions), their base Roman numerals, and the local key
+(`cowork_layer5_function_design.md` §7)." — the section *0. Terms (each defined here, or cited to the document that
+defines it — nothing below is used before this table)*, the terms list, the entry *The committed progression* (locator:
+lines 31–33). Its *Layer 5* is the older stack's function layer.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 7.75 placed
+the progression.
+
+---
+
+**Row 44.6 — the term *Resolved and unresolved chords*: the chord layer commits one reading or abstains, publishing its
+ranked candidate readings.**
+
+*Outgoing statement.* "**Resolved and unresolved chords.** For each chord position, Layer 4 either **committed** one
+reading (its `Commit`/`Inherit` decision) or **abstained** — publishing instead its **ranked candidate readings** (the
+possible chords, ranked, with the open question named) for Layer 5's §5.5 selection
+(`cowork_layer4_chordsymbol_design.md` §7)." — the section *0. Terms (each defined here, or cited to the document that
+defines it — nothing below is used before this table)*, the terms list, the entry *Resolved and unresolved chords.*
+(locator: lines 34–37), its bold term a label; its two further sentences, on the document's own vocabulary, are listed
+under *not a statement* (items 1 and 2). Its *Layer 4* is the older stack's chord-identity layer and its *Layer 5* the
+function layer.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which publishes
+per span the rivals with their mass (`FRAMEWORK.md` §5).
+
+---
+
+**Row 44.7 — the term *Composite confidence*: the chord layer's published confidence on a decision, per the confidence
+contract.**
+
+*Outgoing statement.* "**Composite confidence** — Layer 4's published [0,1] confidence on a decision, per the
+cross-layer confidence contract (`cowork_confidence_contract.md` §3, row L4)." — the section *0. Terms (each defined
+here, or cited to the document that defines it — nothing below is used before this table)*, the terms list, the entry
+*Composite confidence* (locator: lines 40–41).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, on which every published fact carries its own
+mass and its own establishment status (`FRAMEWORK.md` §5).
+
+---
+
+**Row 44.8 — the term *The §8 override and frame F-B*: the function layer's correction of a committed reading on later
+evidence, under its threshold and its two limits.**
+
+*Outgoing statement.* "**The §8 override and frame F-B** — Layer 5's mechanism for correcting a committed reading on
+later evidence: the override fires **if and only if** the contradiction quantity exceeds the threshold, where the
+threshold scales with the committed reading's composite confidence; a tie holds the incumbent; a decision is overridden
+at most once per pass (`cowork_layer5_function_design.md` §8; the quantities compared are declared as frame **F-B** in
+the confidence contract §4)." — the section *0. Terms (each defined here, or cited to the document that defines it —
+nothing below is used before this table)*, the terms list, the entry *The §8 override and frame F-B* (locator: lines
+42–46); *F-B* is the member's frame. Two claims: (i) the function layer corrects a committed reading on later evidence,
+firing exactly when the contradiction quantity exceeds a threshold that grows with the committed reading's composite
+confidence; (ii) an exact equality holds the incumbent, and a decision is overridden at most once per pass.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which may not
+*"discard a rival before the whole sequence of spans has been scored"* (`FRAMEWORK.md` §5). (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which may not *"discard a rival before the
+whole sequence of spans has been scored"* (`FRAMEWORK.md` §5).
+
+---
+
+**Row 44.9 — the term *Functional-plausibility score*: the fixed feature the function layer uses to select among the
+ranked candidate readings.**
+
+*Outgoing statement.* "**Functional-plausibility score** — the fixed feature score Layer 5 §5.5 uses to select among
+ranked candidate readings (`cowork_layer5_function_design.md` §5.5, the "close" rule)." — the section *0. Terms (each
+defined here, or cited to the document that defines it — nothing below is used before this table)*, the terms list, the
+entry *Functional-plausibility score* (locator: lines 47–48). The member's *score* is its own word.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 44.10 — the term *Match score*: the catalog's recognition value for a stretch realising an entry; exact
+realisations only in the first matcher.**
+
+*Outgoing statement.* "**Match score** — the Vocabulary's recognition score for "this stretch of the committed
+progression realises this entry"; in the Vocabulary's v1 matcher it is 1.0 for an exact realisation and entries are
+otherwise not returned (dictionary §4)." — the section *0. Terms (each defined here, or cited to the document that
+defines it — nothing below is used before this table)*, the terms list, the entry *Match score* (locator: lines 49–51).
+The member's *score* is its own word. Two claims: (i) the match value is the catalog's recognition value for a stretch
+of the committed progression realising an entry; (ii) in the catalog's first matcher an exact realisation alone is
+returned, at the value the member gives.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 8.18: the derivation names no recognised progression schema,
+and none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it covers. (ii) **QUARANTINED.**
+*Audit question:* does the catalog's matcher at the current commit return only exact realisations, and with what match
+value?
+
+---
+
+**Row 44.11 — the term *Idiom / IdiomSet / Mode / Chromaticism / voiceLeadingDefined*: the five-idiom tags and
+cross-attributes on every catalog entry.**
+
+*Outgoing statement.* "**Idiom / IdiomSet / Mode / Chromaticism / voiceLeadingDefined** — the ratified five-idiom tags
+and cross-attributes on every catalog entry (`cowork_style_taxonomy_proposal.md`, executed `0e155154fc`)." — the section
+*0. Terms (each defined here, or cited to the document that defines it — nothing below is used before this table)*, the
+terms list, the entry *Idiom / IdiomSet / Mode / Chromaticism / voiceLeadingDefined* (locator: lines 52–53).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — travelling with Row 44.1, the tags being attributes of the catalog's entries.
+
+---
+
+**Row 44.12 — the term *Prior strength*: the consumer's weight for one recognised entry.**
+
+*Outgoing statement.* "**Prior strength** — this consumer's weight for one recognised entry, defined in §4.5." — the
+section *0. Terms (each defined here, or cited to the document that defines it — nothing below is used before this
+table)*, the terms list, the bullet's first entry, *Prior strength* (locator: line 54); the definition it points at,
+§4.5, lies in the cut.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 44.13 — the term *Admission*: a prior strength above the declared admission threshold.**
+
+*Outgoing statement.* "**Admission** — prior strength above the declared admission threshold (§4.5)." — the section *0.
+Terms (each defined here, or cited to the document that defines it — nothing below is used before this table)*, the
+terms list, the same bullet's second entry, *Admission* (locator: lines 54–55).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block).
+
+---
+
+**Row 44.14 — the term *Seed*: the user's preset as idiom weights, the mixture's starting value, all-equal without a
+preset.**
+
+*Outgoing statement.* "**Seed** — the user's preset expressed as idiom weights, the starting value of the mixture before
+the score's own evidence moves it (§4.5 phase 2); all-equal when no preset is given." — the section *0. Terms (each
+defined here, or cited to the document that defines it — nothing below is used before this table)*, the terms list, the
+same bullet's third entry, *Seed* (locator: lines 55–57). The member's *score* is the musical work.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Rows 43.40 and 43.42 (i) placed the preset's prior.
+
+---
+
+**Row 44.15 — the term *Punctuation-span*: the grouping layer's non-nested grouping span.**
+
+*Outgoing statement.* "**Punctuation-span** — Layer 6's flat grouping span (`cowork_layer6_grouping_design.md` §0)." —
+the section *0. Terms (each defined here, or cited to the document that defines it — nothing below is used before this
+table)*, the terms list, the bullet's first entry, *Punctuation-span* (locator: line 58). Its *Layer 6* is the older
+stack's grouping layer.
+
+*Derived statements that speak to it.* L3-S12.
+
+*Current-text axis.* L3-S12: **AGREES** — *"The phrase reading tiles the working span."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S12) — as Rows 8.14 (i) and 8.52 (i) carried the non-nested grouping
+span.
+
+---
+
+**Row 44.16 — the term *Progression-schema-span*: the span a recognised named progression covers, emitted for the
+grouping layer.**
+
+*Outgoing statement.* "**Progression-schema-span** — the span a recognised named progression (a progression schema, i.e.
+one catalog entry realised) covers, emitted for Layer 6 (D6; "schema-span" elsewhere in this document is shorthand for
+this full name)." — the section *0. Terms (each defined here, or cited to the document that defines it — nothing below
+is used before this table)*, the terms list, the same bullet's second entry, *Progression-schema-span* (locator: lines
+58–60); its parenthesis on the shorthand *schema-span* is a remark on the document's vocabulary, taken with it. Its *D6*
+is the member's decision.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18: the derivation names no recognised progression schema, and
+none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it covers.
+
+---
+
+**Row 44.17 — the term *Harmonic sequence*: the same progression repeated at successive transpositions.**
+
+*Outgoing statement.* "**Harmonic sequence** — the same progression repeated at successive transpositions (Monte, Fonte,
+a descending-fifths sequence)." — the section *0. Terms (each defined here, or cited to the document that defines it —
+nothing below is used before this table)*, the terms list, the entry *Harmonic sequence* (locator: lines 61–62).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+tonality per span as tonic and mode (`FRAMEWORK.md` §5), the device being defined for its use as evidence of the local
+key (Rows 44.25 to 44.31).
+
+---
+
+**Row 44.18 — the term *Key*: in the document always the tonality, a tonic with a mode.**
+
+*Outgoing statement.* "**Key** — in this document ALWAYS the tonality (a tonic plus a mode, as in "the local key");
+NEVER the everyday sense "important/crucial"." — the section *0. Terms (each defined here, or cited to the document that
+defines it — nothing below is used before this table)*, the terms list, the last bullet, the entry *Key* (locator: lines
+63–64); the parenthesis after it, the member's rule on its words of several meanings, is listed under *not a statement*
+(items 3 and 4).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+tonality per span as tonic and mode (`FRAMEWORK.md` §5).
+
+---
+
+**Row 44.19 — the evidence to the function layer: one feature of its plausibility selection and the override path; the
+function layer the re-ranker; no stage added.**
+
+*Outgoing statement.* "**The evidence → Layer 5.** One feature of the §5.5 functional-plausibility score, plus the §4.3
+override path through §8/F-B. Layer 5 is the re-ranker; no stage is added." — the section *2. Placement — no new layer*,
+its first bullet, its bold lead read with the sentences it opens (locator: lines 85–86). Its *Layer 5* is the older
+stack's function layer, and *F-B* the member's frame. Three claims: (i) the recognition's evidence enters as one feature
+of the function layer's functional-plausibility selection and through the override path; (ii) the function layer is the
+re-ranker; (iii) no stage is added for the recognition.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block). (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose one entangled
+decision settles the tonality and the chord together (`FRAMEWORK.md` §5). (iii) **UNPLACED** — read: `FRAMEWORK.md` §5
+adds no layer for the recognition of a named progression and names none, and the derivation does not speak to it; read
+beside Row 38.20 (i).
+
+---
+
+**Row 44.20 — the name to the grouping layer: a schema span cutting across the punctuation-spans, read-only and
+additive.**
+
+*Outgoing statement.* "**The name → Layer 6.** A schema-span, cross-cutting punctuation-spans (a progression may
+straddle a punctuation boundary; one punctuation-span may hold several progressions). Read-only, additive." — the
+section *2. Placement — no new layer*, its second bullet (locator: lines 87–88). Its *Layer 6* is the older stack's
+grouping layer. Two claims: (i) the recognition's name is emitted to the grouping layer as a schema span cutting across
+the punctuation-spans; (ii) it is read-only and additive.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 8.52 (iii). (ii) **UNPLACED** — read as at Row 8.51.
+
+---
+
+**Row 44.21 — the catalog in the Harmonic Vocabulary, queried and not owned.**
+
+*Outgoing statement.* "**The catalog → the Harmonic Vocabulary**, queried, not owned (D5)." — the section *2. Placement
+— no new layer*, its third bullet (locator: line 89). Its *D5* is the member's decision.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 38.20 (i): no charter of `FRAMEWORK.md` §5, nor its NOT A LAYER
+items, names a knowledge-base component.
+
+---
+
+**Row 44.22 — where the chord layer abstained, filling a recognised member position one more feature of the plausibility
+selection, the selection rule otherwise unchanged.**
+
+*Outgoing statement.* "**Where Layer 4 abstained:** "this ranked candidate reading fills the member position of an
+admitted recognised progression" enters as **one additional feature of the §5.5 functional-plausibility score**,
+weighted by that recognition's prior strength. The §5.5 selection rule is otherwise unchanged." — the section *4.3 The
+evidence contribution (both conditions fully stated)*, under *4. The rules*, its first bullet, its colon lead opening
+the sentences that carry the claims (locator: lines 118–120). Its *Layer 4* is the older stack's chord-identity layer.
+Two claims: (i) where the chord layer abstained, a ranked candidate reading's filling the member position of an admitted
+recognised progression enters as one additional feature of the function layer's functional-plausibility selection,
+weighted by the recognition's prior strength; (ii) the function layer's selection rule is otherwise unchanged.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block). (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail specification
+fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the L2 block).
+
+---
+
+**Row 44.23 — where the chord layer committed, a contradicting recognition entering the existing contradiction quantity,
+the committed reading overridden under the same threshold and limits.** *SEEN — §6 item 1 (D-509; the heading line
+only).*
+
+*Outgoing statement.* "**Where Layer 4 committed:** if an admitted recognised progression's member position demands a
+**different root or quality** than the committed reading, the recognition's prior strength enters the **same
+contradiction quantity frame F-B already compares** (the functional-plausibility difference), and the committed reading
+is overridden **if and only if** that quantity exceeds the §8 threshold scaled to the committed reading's composite
+confidence — the same threshold rule, the same tie-holds-the-incumbent rule, and the same
+overridden-at-most-once-per-pass rule as every other F-B firing (§0)." — the section *4.3 The evidence contribution
+(both conditions fully stated)*, under *4. The rules*, its second bullet, its colon lead opening the sentence that
+carries the claims (locator: lines 121–126); *F-B* is the member's frame. Two claims: (i) where the chord layer
+committed and an admitted recognised progression's member position demands a different root or quality, the
+recognition's prior strength enters the same contradiction quantity frame F-B already compares; (ii) the committed
+reading is overridden exactly when that quantity exceeds the threshold grown with the committed reading's composite
+confidence, under the same equality and once-per-pass rules as every other firing of the frame.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block). (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which may not *"discard a
+rival before the whole sequence of spans has been scored"* (`FRAMEWORK.md` §5).
+
+*The decisions register at this row.* The quoted statement lies inside the home of **register entry D-509** (lines
+121–128), *"Where the analysis already committed a chord, a recognised progression corrects it through the EXISTING
+override frame and may only SELECT an already-carried reading — no new comparison frame, and never a reading built from
+the notes"*, which the decisions register's INDEX records as LIVE, group M, with no entry ratification shown (its
+entry-ratified cell reads —) — a SEEN home: what the deriving session saw of it was its heading line only, at pack
+member 05, where it stopped reading (the derivation's §6 item 1); a fact of the decisions register, relayed, moving no
+disposition.
+
+---
+
+**Row 44.24 — the correction selecting an existing reading, never one built from the notes; no new comparison frame.**
+*SEEN — §6 item 1 (D-509; the heading line only).*
+
+*Outgoing statement.* "The correction **selects** an existing reading (a ranked candidate, or the recognised member's
+realisation where it is one) — never a reading built from the notes. No new comparison frame is introduced." — the
+section *4.3 The evidence contribution (both conditions fully stated)*, under *4. The rules*, the same bullet (locator:
+lines 126–128). Two claims: (i) the correction selects an existing reading — a ranked candidate, or the recognised
+member's realisation where it is one — and never a reading built from the notes; (ii) no new comparison frame is
+introduced.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which
+publishes per span the rivals with their mass (`FRAMEWORK.md` §5). (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 9.163 placed the re-declaration of
+a frame in the confidence contract.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **register entry D-509** (lines
+121–128), *"Where the analysis already committed a chord, a recognised progression corrects it through the EXISTING
+override frame and may only SELECT an already-carried reading — no new comparison frame, and never a reading built from
+the notes"*, which the decisions register's INDEX records as LIVE, group M, with no entry ratification shown (its
+entry-ratified cell reads —) — a SEEN home: what the deriving session saw of it was its heading line only, at pack
+member 05, where it stopped reading (the derivation's §6 item 1); a fact of the decisions register, relayed, moving no
+disposition.
+
+---
+
+**Row 44.25 — a recognised harmonic sequence implying motion of the local key.** *SEEN — §6 item 1 (D-504 and D-505; the
+heading lines only).*
+
+*Outgoing statement.* "A recognised harmonic sequence implies **motion of the local key** (the tonality — see the §0
+"key" row)." — the section *4.6 Harmonic sequences as evidence of the local key (the Layer-5 §5.3 channel; review A-4)*,
+under *4. The rules*, its paragraph, its first sentence (locator: line 162). The member's *key* is the tonality, as its
+terms list declares.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+tonality per span as tonic and mode (`FRAMEWORK.md` §5).
+
+*The decisions register at this row.* The quoted statement lies inside the homes of **register entry D-504** (lines
+161–178), *"A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only
+where no cadence existed threw corroboration away"*, and **register entry D-505** (lines 162–166), *"A harmonic sequence
+requires at least two transposed statements of the SAME recognised entry; a single internally-sequential entry emits
+none"*, the second nested inside the first, which the decisions register's INDEX records as LIVE, both in group M, with
+no entry ratification shown (each entry-ratified cell reads —) — two SEEN homes, marked once as the dispatch orders:
+what the deriving session saw of each was its heading line only, at pack member 05, where it stopped reading (the
+derivation's §6 item 1); facts of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 44.26 — each harmonic sequence exposed as a typed output with its progression, step, span, repetitions and prior
+strength.** *SEEN — §6 item 1 (D-504 and D-505; the heading lines only).*
+
+*Outgoing statement.* "The consumer exposes each as a typed output `{progression, transposition step, span, number of
+repetitions, prior strength}`." — the section *4.6 Harmonic sequences as evidence of the local key (the Layer-5 §5.3
+channel; review A-4)*, under *4. The rules*, the same paragraph (locator: lines 162–163).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose one
+entangled decision settles the tonality and the chord together (`FRAMEWORK.md` §5), the output being evidence its
+tonality decision reads.
+
+*The decisions register at this row.* The quoted statement lies inside the homes of **register entry D-504** (lines
+161–178), *"A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only
+where no cadence existed threw corroboration away"*, and **register entry D-505** (lines 162–166), *"A harmonic sequence
+requires at least two transposed statements of the SAME recognised entry; a single internally-sequential entry emits
+none"*, the second nested inside the first, which the decisions register's INDEX records as LIVE, both in group M, with
+no entry ratification shown (each entry-ratified cell reads —) — two SEEN homes, marked once as the dispatch orders:
+what the deriving session saw of each was its heading line only, at pack member 05, where it stopped reading (the
+derivation's §6 item 1); facts of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 44.27 — a harmonic sequence requiring two or more transposed statements of the same entry; its evidence weight
+growing with its repetitions.** *SEEN — §6 item 1 (D-504 and D-505; the heading lines only).*
+
+*Outgoing statement.* "**U1 ruling (2026-07-02): a sequence requires ≥2 transposed statements of the SAME recognised
+entry** — that is what "repeated at successive transpositions" (§0) means; a run's `repetitions` counts the matched
+windows, and the evidence weight scales with it (more repetitions → stronger; direction fixed, values Stage-5)." — the
+section *4.6 Harmonic sequences as evidence of the local key (the Layer-5 §5.3 channel; review A-4)*, under *4. The
+rules*, the same paragraph, its bold sentence and the clauses after it (locator: lines 163–165); *U1* is the member's
+label for the ruling, whose date is provenance, taken with it. Two claims: (i) a harmonic sequence requires at least two
+transposed statements of the same recognised entry; (ii) a run's repetitions count its matched windows, and the evidence
+weight grows with them, the direction fixed and the values left to the precision phase.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides
+the tonality per span as tonic and mode (`FRAMEWORK.md` §5). (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail specification fixes how the
+candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the L2 block).
+
+*The decisions register at this row.* The quoted statement lies inside the homes of **register entry D-504** (lines
+161–178), *"A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only
+where no cadence existed threw corroboration away"*, and **register entry D-505** (lines 162–166), *"A harmonic sequence
+requires at least two transposed statements of the SAME recognised entry; a single internally-sequential entry emits
+none"*, the second nested inside the first, which the decisions register's INDEX records as LIVE, both in group M, with
+no entry ratification shown (each entry-ratified cell reads —) — two SEEN homes, marked once as the dispatch orders:
+what the deriving session saw of each was its heading line only, at pack member 05, where it stopped reading (the
+derivation's §6 item 1); facts of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 44.28 — a single internally-sequential entry emitting no sequence, its key motion carried by its schema span; the
+question deferred to the open items.** *SEEN — §6 item 1 (D-504 and D-505; the heading lines only).*
+
+*Outgoing statement.* "A **single** recognition of an internally-sequential entry (circle-of-fifths, Monte, Fonte) emits
+**no** §4.6 sequence — its key-motion implication is already carried by its schema-span (the entry's internal
+transposition structure is catalog knowledge, readable by the F-C consumer when that wiring is designed; recorded in §9
+so it is decided there, not lost)." — the section *4.6 Harmonic sequences as evidence of the local key (the Layer-5 §5.3
+channel; review A-4)*, under *4. The rules*, the same paragraph (locator: lines 165–169); *F-C* is the member's frame.
+Three claims: (i) a single recognition of an internally-sequential entry emits no harmonic sequence of this section;
+(ii) its implication of a key motion is already carried by its schema span, the entry's internal transposition structure
+being catalog knowledge readable by the frame's consumer once that wiring is designed; (iii) the question is recorded in
+the member's open items, to be decided there.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides
+the tonality per span as tonic and mode (`FRAMEWORK.md` §5). (ii) **UNPLACED** — read as at Row 8.18: the derivation
+names no recognised progression schema, and none of `FRAMEWORK.md` §5's charters names the recognition of one or the
+span it covers. (iii) **HISTORICAL** — a deferral to the member's open items.
+
+*The decisions register at this row.* The quoted statement lies inside the homes of **register entry D-504** (lines
+161–178), *"A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only
+where no cadence existed threw corroboration away"*, and **register entry D-505** (lines 162–166), *"A harmonic sequence
+requires at least two transposed statements of the SAME recognised entry; a single internally-sequential entry emits
+none"*, the second nested inside the first, which the decisions register's INDEX records as LIVE, both in group M, with
+no entry ratification shown (each entry-ratified cell reads —) — two SEEN homes, marked once as the dispatch orders:
+what the deriving session saw of each was its heading line only, at pack member 05, where it stopped reading (the
+derivation's §6 item 1); facts of the decisions register, relayed, moving no disposition. D-505's home ends at line 166
+inside this sentence: its lines 165 and 166 lie inside both homes, and lines 167 to 169 inside D-504's home alone.
+
+---
+
+**Row 44.29 — the sequence evidence always emitted, never discarded.** *SEEN — §6 item 1 (D-504; the heading line
+only).*
+
+*Outgoing statement.* "**The consumer ALWAYS emits it — evidence is never discarded** (the no-information-loss and
+use-every-clue principles; user-directed correction 2026-07-02, replacing an earlier "only where no cadence exists" gate
+that threw corroboration away)." — the section *4.6 Harmonic sequences as evidence of the local key (the Layer-5 §5.3
+channel; review A-4)*, under *4. The rules*, the same paragraph, its bold sentence (locator: lines 169–171); its
+parenthesis — the principles it cites, and the user-directed correction of 2026-07-02 that replaced an earlier gate
+emitting the evidence only where no cadence existed — is provenance, taken with it, following the former-wording
+precedents.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+tonality per span as tonic and mode (`FRAMEWORK.md` §5), whose evidence the sequence is; read beside `FRAMEWORK.md`
+§8.1, under which evidence-class facts are published broadly.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **register entry D-504** (lines
+161–178), *"A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only
+where no cadence existed threw corroboration away"*, which the decisions register's INDEX records as LIVE, group M, with
+no entry ratification shown (its entry-ratified cell reads —) — a SEEN home: what the deriving session saw of it was its
+heading line only, at pack member 05, where it stopped reading (the derivation's §6 item 1); a fact of the decisions
+register, relayed, moving no disposition.
+
+---
+
+**Row 44.30 — the function layer's key arbitration using the sequence as corroboration of a cadence, and as the
+substitute confirmation below the cadence where none confirms.** *SEEN — §6 item 1 (D-504; the heading line only).*
+
+*Outgoing statement.* "Layer 5 §5.3 uses it in two roles: **(i) corroboration, always** — sequence evidence agreeing
+with a confirming cadence raises the candidate key's vote, disagreeing tempers it; **(ii) the substitute confirming
+channel** for condition (a) **only where no authentic cadence confirms the candidate key**, at a weight **below** the
+cadence channel's (ordering fixed; values Stage-5) — the cadence remains the stronger confirmation wherever it exists,
+by weight, not by suppressing the other evidence." — the section *4.6 Harmonic sequences as evidence of the local key
+(the Layer-5 §5.3 channel; review A-4)*, under *4. The rules*, the same paragraph (locator: lines 171–176), the member's
+own items *(i)* and *(ii)* inside it; its *Layer 5* is the older stack's function layer, and *condition (a)* the
+member's label for a condition of that layer's key arbitration. Three claims: (i) the sequence evidence is always
+corroboration: agreeing with a confirming cadence it raises the candidate key's vote, disagreeing it tempers it; (ii)
+only where no authentic cadence confirms the candidate key is it the substitute confirming channel, at a weight below
+the cadence channel's, the order fixed and the values left to the precision phase; (iii) the cadence remains the
+stronger confirmation wherever it exists, by weight and never by suppressing the other evidence.
+
+*Derived statements that speak to it.* (i) L3-S38. (ii) L3-S38. (iii) L3-S38.
+
+*Current-text axis.* (i) L3-S38: **DIFFERS**. (ii) L3-S38: **DIFFERS**. (iii) L3-S38: **DIFFERS**.
+
+*The difference, in both texts' own words.* (i) The outgoing sequence evidence *"agreeing with a confirming cadence
+raises the candidate key's vote"*; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."* (ii) The
+outgoing sequence evidence is the substitute channel *"only where no authentic cadence confirms the candidate key"*;
+L3-S38 says *"L2 reads nothing L3 publishes."* (iii) The outgoing text holds that *"the cadence remains the stronger
+confirmation"* of the key; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose one
+entangled decision settles the tonality and the chord together (`FRAMEWORK.md` §5), as Row 40.51. (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose one entangled decision settles the
+tonality and the chord together (`FRAMEWORK.md` §5), as Row 40.51. (iii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose one entangled decision settles the
+tonality and the chord together (`FRAMEWORK.md` §5), as Row 40.51.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **register entry D-504** (lines
+161–178), *"A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only
+where no cadence existed threw corroboration away"*, which the decisions register's INDEX records as LIVE, group M, with
+no entry ratification shown (its entry-ratified cell reads —) — a SEEN home: what the deriving session saw of it was its
+heading line only, at pack member 05, where it stopped reading (the derivation's §6 item 1); a fact of the decisions
+register, relayed, moving no disposition.
+
+---
+
+**Row 44.31 — the comparison of sequence evidence against the home key's confidence a new frame, declared before the
+wiring; the consumer's own build not needing it.** *SEEN — §6 item 1 (D-504; the heading line only).*
+
+*Outgoing statement.* "**Frame obligation:** comparing sequence evidence against the home-key confidence is a NEW
+comparison; it must be declared in the confidence contract §4 (frame **F-C**) **before** the §5.3 wiring is built. The
+consumer's own build (the annotation + the §5.5 feature) does not need it." — the section *4.6 Harmonic sequences as
+evidence of the local key (the Layer-5 §5.3 channel; review A-4)*, under *4. The rules*, the same paragraph, its colon
+lead opening the sentences that carry the claims (locator: lines 176–178); *F-C* is the member's frame. Two claims: (i)
+comparing sequence evidence against the home key's confidence is a new comparison, to be declared in the confidence
+contract as a frame before the function layer's wiring is built; (ii) the consumer's own build does not need it.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 9.163
+placed the re-declaration of a frame in the confidence contract. (ii) **HISTORICAL** — a build order.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **register entry D-504** (lines
+161–178), *"A recognised harmonic sequence is ALWAYS emitted as key evidence — the earlier gate that emitted it only
+where no cadence existed threw corroboration away"*, which the decisions register's INDEX records as LIVE, group M, with
+no entry ratification shown (its entry-ratified cell reads —) — a SEEN home: what the deriving session saw of it was its
+heading line only, at pack member 05, where it stopped reading (the derivation's §6 item 1); a fact of the decisions
+register, relayed, moving no disposition.
+
+---
+
+**Row 44.32 — the catalog carrying the idiom tags; the idiom behavior the consumer's alone, its directions fixed and its
+values left to the precision phase.**
+
+*Outgoing statement.* "The Vocabulary carries the idiom tags; the idiom **behavior** — the weight vector, the admission
+threshold, the two soft-cue factors — is this consumer's, and only this consumer's (directions fixed in §4.5; values
+Stage-5)." — the section *5. Where the idiom behavior lives …*, its paragraph (locator: lines 181–182). Two claims: (i)
+the catalog carries the idiom tags; (ii) the idiom behavior — the weights, the admission threshold and the two soft-cue
+factors — is the consumer's and only the consumer's, its directions fixed and its values left to the precision phase.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — travelling with Row 44.11. (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail specification fixes how the
+candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the L2 block); style reaches the
+analysis only through the priors and weights of the layers that judge (`FRAMEWORK.md` §8.3).
+
+---
+
+**Row 44.33 — the matcher idiom-general; the idiom weights grading and never excluding.**
+
+*Outgoing statement.* "The matcher is idiom-general: the weights grade, they never hard-filter (a functional cadence
+stays recognisable inside a coloristic analysis — the empirical study found genre organizes harmony only weakly)." — the
+section *5. Where the idiom behavior lives …*, the same paragraph (locator: lines 182–184); its parenthesis, the reason
+the sentence gives itself, is taken with it. Two claims: (i) the catalog's matcher is idiom-general; (ii) the idiom
+weights grade a recognition and never exclude it.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 8.18: the derivation names no recognised progression schema,
+and none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it covers. (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, on which *"a reading-shaped evidence
+producer is a score and never a constraint"* (`FRAMEWORK.md` §5, the L2 block).
+
+---
+
+**Row 44.34 — the member's decision D1: the recognition yields evidence and a name, and adds no layer.**
+
+*Outgoing statement.* "**D1 — Evidence plus a name, not a new layer.**" — the section *6. Architecture decisions (with
+the alternatives weighed)*, the member's decision D1, its bold lead, the decision it states (locator: line 187). Two
+claims: (i) the recognition of a named progression yields evidence and a name; (ii) it adds no new layer.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 8.18: the derivation names no recognised progression schema,
+and none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it covers. (ii) **UNPLACED** —
+travelling with Row 44.19 (iii).
+
+---
+
+**Row 44.35 — the member's decision D2: the recognition's scope chords only.**
+
+*Outgoing statement.* "**D2 — Chords-only scope** (§2)." — the section *6. Architecture decisions (with the alternatives
+weighed)*, the member's decision D2, its bold lead with its pointer, the decision it states (locator: line 189); the
+rule it points at, §2's closing paragraph, lies in the cut.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18: the derivation names no recognised progression schema, and
+none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it covers.
+
+---
+
+**Row 44.36 — the member's decision D3: exact matches now; partial and variant matching and every value left to the
+precision phase.**
+
+*Outgoing statement.* "**D3 — Exact matches now; partial/variant matching and all values Stage-5.**" — the section *6.
+Architecture decisions (with the alternatives weighed)*, the member's decision D3, its bold lead, the decision it states
+(locator: line 191). Two claims: (i) the recognition admits exact matches now; (ii) partial and variant matching and
+every value are left to the precision phase.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 8.18: the derivation names no recognised progression schema,
+and none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it covers. (ii) **HISTORICAL** — a
+deferral to the precision phase.
+
+---
+
+**Row 44.37 — the member's decision D4: the recognition additive, the literal Roman numeral never changed.** *SEEN — §6
+item 1 (D-506; the heading line only).*
+
+*Outgoing statement.* "**D4 — Additive; the literal Roman numeral is never changed.**" — the section *6. Architecture
+decisions (with the alternatives weighed)*, the member's decision D4, its bold lead, the decision it states (locator:
+line 193). Two claims: (i) the recognition is additive; (ii) the literal Roman numeral is never changed by it.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 8.51. (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which publishes per span the chord as
+degree, quality, figure and applied target (`FRAMEWORK.md` §5).
+
+*The decisions register at this row.* The quoted statement lies inside the home of **register entry D-506** (lines
+193–194), *"Progression recognition is ADDITIVE: the literal Roman numeral is never rewritten, and a substitution is
+recorded only in the annotation"*, which the decisions register's INDEX records as LIVE, group M, with no entry
+ratification shown (its entry-ratified cell reads —) — a SEEN home: what the deriving session saw of it was its heading
+line only, at pack member 05, where it stopped reading (the derivation's §6 item 1); a fact of the decisions register,
+relayed, moving no disposition.
+
+---
+
+**Row 44.38 — the licensing test of pair motions owned by the function layer's grammar, evaluated at every transition.**
+
+*Outgoing statement.* "The **pair-motion licensing test** is owned by `functionprogression` (Layer 5) — grammar,
+evaluated at every transition." — the section *6. Architecture decisions (with the alternatives weighed)*, the member's
+decision D5, after its bold lead *The decision (Cowork's proposal): one owner per item.*, a label read as a title
+(locator: lines 218–219). Its *Layer 5* is the older stack's function layer.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 7.84 placed
+the one owner of the licensed motions.
+
+---
+
+**Row 44.39 — the named progressions and substitutions owned by the catalog, queried as knowledge.**
+
+*Outgoing statement.* "The **named progressions and substitutions** are owned by the Vocabulary — knowledge, queried." —
+the section *6. Architecture decisions (with the alternatives weighed)*, the member's decision D5, the same paragraph
+(locator: lines 219–220).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 7.85: `FRAMEWORK.md` §5 names no charter whose subject is a
+catalog of named progressions, and the derivation does not speak to one.
+
+---
+
+**Row 44.40 — the function layer's licensing held as predicates on root motion, not a list; few interval rules, no
+table, no constants.**
+
+*Outgoing statement.* "**How the Layer-5 side is actually held (user question, 2026-07-02):** NOT as a list — as **pure
+predicates on root motion** (about five interval rules computed from the two roots and qualities; size O(1), no table;
+`functionprogression`, built without constants)." — the section *6. Architecture decisions (with the alternatives
+weighed)*, the member's decision D5, its colon lead with its dated parenthesis opening the sentence that carries the
+claims (locator: lines 230–232). Two claims: (i) the function layer's licensing is held as pure predicates on root
+motion and not as a list; (ii) the predicates are a handful of interval rules computed from the two roots and qualities,
+held in `functionprogression` with no table and built without constants.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 7.77
+placed the licensed root motions. (ii) **QUARANTINED.** *Audit question:* does `functionprogression` at the current
+commit hold the licensing as predicates on root motion with no table and no constants, and how many interval rules does
+it carry?
+
+---
+
+**Row 44.41 — the containment of the catalog's pairs in the licensing predicate measured false; the failing motions
+musically correct, the licensed set too narrow.**
+
+*Outgoing statement.* "**The containment relation (user observation) — MEASURED, and Cowork's original premise CORRECTED
+(2026-07-02):** the assertion "every adjacent pair inside every catalog entry satisfies the predicate — both are built
+from the same grammar" was **falsified on first contact**: **6 entries / 11 motions fail** (measured + pinned in the
+test — Cowork's earlier "12" was arithmetic error, U2; the plagal and other ascending-fifths incl. I→V; the Andalusian's
+descending seconds; the circle's diatonic diminished-fifth link) — all **musically correct**; what is narrow is the §5.0
+licensed set, which descends from the old scoring-bonus signals, not from a complete functional grammar." — the section
+*6. Architecture decisions (with the alternatives weighed)*, the member's decision D5, its colon lead with its dated
+parenthesis opening the sentence that carries the claims (locator: lines 232–238). Its line 234 ends in a slash inside a
+bold run, and the quotation renders the line break as a space; *U2* is the member's label for a ruling, and the
+parenthesis correcting an earlier count is provenance, taken with it. Two claims: (i) the premise that every adjacent
+pair inside every catalog entry satisfies the licensing predicate was measured false, the failing entries and motions
+pinned in the test; (ii) the failing motions are all musically correct, and what is narrow is the function layer's
+licensed set, which descends from the old candidate-scoring bonus signals and not from a complete functional grammar.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* on which run was the containment of the catalog's
+adjacent pairs in the licensing predicate measured, which entries and motions fail it, and does the count reproduce?
+(ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 7.78 (i) placed the
+grammar-completion amendment.
+
+---
+
+**Row 44.42 — the grammar gaps the function layer's, closed by the grammar-completion amendment; its authorship, gate
+and increment.**
+
+*Outgoing statement.* "**Ruled grammar gaps, L5-owned** (the §5.0 grammar-completion amendment — license
+ascending-fifth/plagal, descending-second, the diatonic diminished-fifth — Cowork-written, ratification-gated, its own
+dormant L5 increment)." — the section *6. Architecture decisions (with the alternatives weighed)*, the member's decision
+D5, its bold lead read with the parenthesis that carries the claims (locator: lines 238–240). Its *L5* is the older
+stack's function layer. Two claims: (i) the ruled grammar gaps are the function layer's, closed by the
+grammar-completion amendment licensing the three motions it names; (ii) the amendment is written, gated on ratification
+and its own dormant increment.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row
+7.78 (i). (ii) **HISTORICAL** — the standing of an amendment: its authorship, its gate and its increment.
+
+---
+
+**Row 44.43 — deriving the licensing predicate from the catalog rejected.** *SEEN — §6 item 1 (D-508; the heading line
+only).*
+
+*Outgoing statement.* "Deriving the predicate FROM the catalog stays rejected (enumerative/incomplete vs
+generative/complete — a missing entry would silently un-license legitimate grammar)." — the section *6. Architecture
+decisions (with the alternatives weighed)*, the member's decision D5 (locator: lines 240–242); its parenthesis, the
+reason the sentence gives itself, is taken with it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 7.77 placed
+the licensed root motions.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **register entry D-508** (lines
+242–244), *"The catalog/grammar consistency test ships scoped to the MEASURED containment — an explicit known-gap list —
+and tightens to a clean assertion when the grammar amendment lands"*, which the decisions register's INDEX records as
+LIVE, group M, with no entry ratification shown (its entry-ratified cell reads —) — a SEEN home: what the deriving
+session saw of it was its heading line only, at pack member 05, where it stopped reading (the derivation's §6 item 1); a
+fact of the decisions register, relayed, moving no disposition. This sentence opens on line 240, outside the home, and
+D-508's home begins on line 242 inside it: lines 240 and 241, which carry the sentence's claim, lie outside the home,
+and line 242, which carries the close of its parenthesis, inside it; the row is marked, as the dispatch orders for a
+sentence a home crosses.
+
+---
+
+**Row 44.44 — the member's decision D6: the span a recognised progression covers named the progression-schema-span.**
+*SEEN — §6 item 1 (D-502; the heading line only).*
+
+*Outgoing statement.* "**D6 — what to NAME the span a recognised progression covers — RESOLVED BY PREFIXING (user
+direction, 2026-07-02): `progression-schema-span`.**" — the section *6. Architecture decisions (with the alternatives
+weighed)*, the member's decision D6, its bold lead, the decision it states (locator: lines 245–246); its dated
+parenthesis is provenance, taken with it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18: the derivation names no recognised progression schema, and
+none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it covers.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **register entry D-502** (lines
+245–247), *"The span a recognised named progression covers is called the progression-schema-span — the bare word
+'sequence' is reserved for the harmonic sequence and 'progression' for the whole committed chord stream"*, which the
+decisions register's INDEX records as LIVE, group M, with no entry ratification shown (its entry-ratified cell reads —)
+— a SEEN home: what the deriving session saw of it was its heading line only, at pack member 05, where it stopped
+reading (the derivation's §6 item 1); a fact of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 44.45 — the span not a new span type: the typology's latent span instantiated by this design.**
+
+*Outgoing statement.* "**Not a new span type.** The §2.15 span typology already anticipated this span — it appears there
+as the *latent* "sequence-span", never yet instantiated; this design instantiates it." — the section *6. Architecture
+decisions (with the alternatives weighed)*, the member's decision D6, under its lead *(The alternatives evaluated, for
+the record:)*, its bold sentence and the sentence after it (locator: lines 252–253).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 8.18: the derivation names no recognised progression schema, and
+none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it covers.
+
+---
+
+**Row 44.46 — the member's decision D7: a line-defined entry carrying the chords-only mark, retired when the
+voice-leading layer supplies the other half.** *SEEN — §6 item 1 (D-507; the heading line only).*
+
+*Outgoing statement.* "**D7 — line-defined entries carry the "chords-only" mark** (§4.5) — the verifiability contract's
+explicit-mark path; the mark retires per entry when the voice-leading layer supplies the other half." — the section *6.
+Architecture decisions (with the alternatives weighed)*, the member's decision D7, its bold lead read with the clauses
+after it (locator: lines 272–273). Two claims: (i) an entry defined by its melodic or bass lines carries the chords-only
+mark, the verifiability contract's explicit-mark path; (ii) the mark retires per entry when the voice-leading layer
+supplies the other half.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, on which every published fact carries its
+own mass and its own establishment status (`FRAMEWORK.md` §5). (ii)
+**RELOCATED** — to ***the second axis — voice leading***, which holds *"the stock eighteenth-century outer-voice
+patterns"* (`FRAMEWORK.md` §5).
+
+*The decisions register at this row.* The quoted statement lies inside the home of **register entry D-507** (lines
+272–273), *"A catalog entry defined by its melodic or bass lines is recognised by its chord skeleton alone and carries a
+'chords-only' mark, with its prior strength reduced"*, which the decisions register's INDEX records as LIVE, group M,
+with no entry ratification shown (its entry-ratified cell reads —) — a SEEN home: what the deriving session saw of it
+was its heading line only, at pack member 05, where it stopped reading (the derivation's §6 item 1); a fact of the
+decisions register, relayed, moving no disposition.
+
+---
+
+**Row 44.47 — measurable now: the recognised spans' precision and recall, and the evidence's effect on the Roman
+numerals of the covered positions.**
+
+*Outgoing statement.* "**Measurable now:** the common-practice and galant entries against the cadence/schema ground
+truth on the dev beds — precision/recall of recognised spans, and the evidence contribution measured as Roman-numeral
+accuracy change on exactly the chord positions a recognised progression covers (its only accuracy claim)." — the section
+*7. Quality & validation*, its first bullet, its colon lead opening the sentence that carries the claims (locator: lines
+276–278). Two claims: (i) the common-practice and galant entries are measured against the cadence and schema ground
+truth on the development corpora, by the precision and recall of the recognised spans; (ii) the evidence contribution is
+measured as the change of Roman-numeral accuracy on exactly the chord positions a recognised progression covers, its
+only accuracy claim.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose own design content the
+metric definitions and the grading conventions are (`FRAMEWORK.md` §5). (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric definitions and the
+grading conventions are (`FRAMEWORK.md` §5).
+
+---
+
+**Row 44.48 — not yet measurable: the jazz and pop entries, without aligned ground truth; their recognitions marked
+empirically unvalidated until then.**
+
+*Outgoing statement.* "**Not yet measurable:** the jazz/pop entries — no score-aligned ground truth (the census Tier-J
+want, user-ratified); until then those recognitions carry the "empirically-unvalidated" mark per the verifiability
+contract." — the section *7. Quality & validation*, its second bullet, its colon lead opening the sentence that carries
+the claims (locator: lines 279–281); *Tier-J* is the census's label. Two claims: (i) the jazz and pop entries are not
+yet measurable, having no ground truth aligned with the score; (ii) until then their recognitions carry the
+*empirically-unvalidated* mark under the verifiability contract.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose own design content the
+metric definitions and the grading conventions are (`FRAMEWORK.md` §5). (ii)
+**RELOCATED** — to ***the uncertainty surface***, on which every published fact carries its own mass and its own
+establishment status (`FRAMEWORK.md` §5).
+
+---
+
+**Row 44.49 — dormant until engagement with no production consumer; the corpus gate unchanged by construction.**
+
+*Outgoing statement.* "**Dormant + byte-identical** until engagement: no production consumer; the corpus gate stays
+53/24/53 by construction." — the section *7. Quality & validation*, its third bullet, its bold run opening the sentence
+(locator: lines 282–283). Two claims: (i) the recognition is dormant until engagement, with no production consumer; (ii)
+the corpus gate stays at its recorded value by construction.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does any path that runs reach the progression recogniser
+at the current commit, and is any production consumer wired to it? (ii) **QUARANTINED.** *Audit question:* on which run
+was the corpus gate found unchanged by the recogniser's build, and does it reproduce?
+
+---
+
+**Row 44.50 — the audit of consistency with the architecture: forward-only and bounded to the committed stream, riding
+the frames, the span and the single owners, verifiability, and dormancy.**
+
+*Outgoing statement.* "**(iii) Cross-architecture consistency:** forward-only (committed stream in; §5.5 feature + §8
+selection-only override + L6 annotation out; no note access, no back-edge); frame discipline (rides F-B; the one new
+frame F-C declared before wiring, per contract §4); span typology (schema-span cross-cuts punctuation-spans, matching L6
+§3/§5.5; rename rider D6); one owner per concern (D5; no second matcher/detector; the Vocabulary stays decision-free);
+verifiability (dev-bed-measurable for common-practice/galant; jazz/pop marked until Tier J); bounded context
+(committed-stream-only; no extension requests); proportionality (no new layer; dormant; engage criteria unaffected — G1
+excludes the consumer)." — the section *10. QA record (the prescribed audits — Cowork, 2026-07-02; re-run on the v4
+rewrite)*, its third audit, its bold colon lead opening the sentence that carries the claims (locator: lines 326–332);
+*F-B* and *F-C* are the member's frames, *L6* the older stack's grouping layer, *Tier J* the census's label and *G1* the
+member's label for an engage criterion. The sentence records the audit's finding property by property, and each property
+states what the consumer does or must not do, so it is tabulated. Five claims: (i) the consumer is forward-only — the
+committed stream in; the function layer's feature, its selection-only override and the grouping annotation out; no
+access to the notes and no backward edge — and its context is the committed stream only, with no request for more music;
+(ii) it rides frame F-B, and the one new frame F-C is declared before wiring; (iii) its span cuts across the
+punctuation-spans, one owner holds each concern with no second matcher or detector, the catalog stays free of decisions,
+and no layer is added; (iv) its recognitions are measurable on the development corpora for the common-practice and
+galant entries, and the jazz and pop entries are marked until their ground truth exists; (v) it is dormant, and the
+engage criteria are unaffected, one of them excluding the consumer.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None. (iv) None. (v) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**. (iv) **THE DERIVATION IS SILENT**. (v) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose one
+entangled decision settles the tonality and the chord together (`FRAMEWORK.md` §5). (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, as Row 9.163 placed the re-declaration of
+a frame in the confidence contract. (iii) **UNPLACED** — read as at Row 8.18: the derivation names no recognised
+progression schema, and none of `FRAMEWORK.md` §5's charters names the recognition of one or the span it covers. (iv)
+**RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric definitions and the
+grading conventions are (`FRAMEWORK.md` §5). (v) **QUARANTINED.** *Audit question:* does any path that runs reach the
+recognition consumer at the current commit, and does the engage criterion the member names exclude it?
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) without a dated parenthesis, and the heading lines, are neither here nor among the
+rows; no line listed here carries the quotation-block marker.
+
+1. "This document says **"ranked candidate readings"** …" (37–38) — a remark on the document's own vocabulary.
+2. "(Elsewhere the project calls the former "the carried readings" — same thing.)" (38–39) — a remark on the project's
+   vocabulary.
+3. "(**Multiple-meaning words rule:** every word with more than one plausible reading …" (64–65) — the member's rule on
+   its own vocabulary — each word of several meanings used in one declared sense in the document — read as a remark on
+   vocabulary.
+4. "The other such words here: **sequence** — …" (65–68) — the member's declaration of the one sense each of its other
+   words of several meanings takes, read as a remark on vocabulary.
+5. "Published systems do not parse progressions as a separate stage: …" (81–84) — a defense: the published practice the
+   placement that follows rests on, read under rule (2).
+6. "That maps onto our decomposition directly:" (84) — a lead ending in a colon introducing three bullets.
+7. "*Alternatives weighed and rejected:* a standalone progression-parsing stage — …" (187–188) — the declined
+   alternative of the member's decision D1, with its reason, read under rule (2).
+8. "*Alternatives weighed and rejected:* recognising line-defined schemata here — …" (189–190) — the declined
+   alternative of the member's decision D2, with its reason, read under rule (2).
+9. "*Alternatives weighed and rejected:* building the fuzzy matcher now — …" (191–192) — the declined alternative of the
+   member's decision D3, with its reason, read under rule (2).
+10. "*Alternatives weighed and rejected:* rewriting the numeral to the substituted-for function — …" (193–194) — the
+    declined alternative of the member's decision D4, with its reason, read under rule (2); it lies inside register entry
+    D-506's home, a SEEN home, and an item under *not a statement* carries no mark.
+11. "**D5 — where does progression knowledge live? ✅ RATIFIED (user, 2026-07-02) — …" (195–196) — the lead of the
+    member's decision D5: the question the decision answers, its ratification and the user's rider that the dependency map
+    be made explicit in the code and the specifications — a title with its provenance and a documentation rider.
+12. "**The dependency map (what changes where — every reader must be able to answer this):**" (197) — a lead ending in a
+    colon introducing three bullets.
+13. "*Changing the GRAMMAR* (which root motions are licensed at all) → change `functionprogression` (Layer 5) ONLY."
+    (198) — a maintenance instruction about the code, read as at §6.7's item 31.
+14. "The catalog never needs an edit for a grammar change — …" (199–200) — a maintenance instruction about the code and
+    the test that couples it, read as at §6.7's items 31 and 33.
+15. "*Changing the CATALOG* (add/edit a named progression or substitution) → change the Vocabulary ONLY." (201) — a
+    maintenance instruction about the catalog, read as at §6.7's item 32.
+16. "The grammar never needs an edit — …" (201–203) — a maintenance instruction and the test an added entry must pass,
+    read as at §6.7's items 32 and 33.
+17. "*The two are NOT derived from each other* (grammar licenses more than convention names; …" (204–206) — a statement
+    about the code's two sources of knowledge and the one test that couples them, read as at §6.7's item 33.
+18. "**Build riders (the user's make-it-VERY-clear directive):** …" (207–211) — documentation riders: comment blocks at
+    two code sites and remarks added to the specifications.
+19. "All ride the consumer build instruction." (211) — a build plan.
+20. "*(The original question and alternatives, for the record:)*" (212) — a lead introducing the question, the proposal
+    and the two alternatives recorded for the record, read with the former-wording precedents.
+21. "**The question.** Two places in the system know about chord successions: …" (213–215) — provenance: the question
+    the member's decision D5 answered, recorded for the record.
+22. "The gap-analysis found the dictionary's §5.1 *also lists* the licensed pair motions — …" (215–217) — provenance:
+    the finding that raised the question.
+23. "The dictionary's §5.1 list stays as descriptive context …" (220–222) — a documentation rider at the consumer's
+    build.
+24. "**Alternative A — move the pair test into the Vocabulary** (licensing as catalog entries)." (223) — a declined
+    alternative of the member's decision D5, recorded for the record and read under rule (2).
+25. "*Pro:* literally one store for everything." (223–224) — the declined alternative's stated advantage, read under
+    rule (2).
+26. "*Con:* a rule evaluated on every chord transition …" (224–226) — the reason the alternative was declined, read
+    under rule (2).
+27. "**Alternative B — move the named progressions into Layer 5** (schemas as hardcoded analysis rules)." (227) — a
+    declined alternative of the member's decision D5, recorded for the record and read under rule (2).
+28. "*Pro:* no query indirection." (227–228) — the declined alternative's stated advantage, read under rule (2).
+29. "*Con:* the future composition tool must use the same progression knowledge; …" (228–229) — the reason the
+    alternative was declined, read under rule (2).
+30. "The **consistency test** ships scoped to the TRUE containment: …" (242–244) — a test of the code, read as at §6.7's
+    item 33; it lies inside register entry D-508's home, a SEEN home, and an item under *not a statement* carries no mark.
+31. "The prefix answers the last collision standing: …" (246–249) — a defense: the reasoning for the member's decision
+    D6 before it, read under rule (2); register entry D-502's home ends on line 247 inside this sentence, so its lines 246
+    and 247 lie inside that SEEN home and lines 248 and 249 outside it, and an item under *not a statement* carries no mark.
+32. "Multi-word span names have precedent (decision-context span)." (249) — a defense of the same decision.
+33. "§0's "Schema-span" row and all uses in this document read accordingly; …" (249–251) — a remark on the document's
+    own vocabulary and a documentation rider.
+34. "*(The alternatives evaluated, for the record:)*" (251) — a lead introducing the alternatives recorded for the
+    record, read with the former-wording precedents.
+35. "The only question is its **name**." (253) — a remark on the question the alternatives answer.
+36. "**The problem with "sequence-span":** "sequence" already has a fixed music-theory meaning — …" (254–256) — a
+    defense: the collision the name was weighed against, read under rule (2).
+37. "But the span in question covers **any** recognised named progression — …" (256–257) — the same defense, read under
+    rule (2).
+38. ""Sequence-span" would therefore promise something narrower than what it holds." (257) — the same defense, read
+    under rule (2).
+39. "**The decision (Cowork's proposal): `schema-span`** — …" (258–259) — a former proposal, superseded by the prefixed
+    name of the member's decision D6, recorded for the record and listed with the former-wording precedents.
+40. "Propagation rider: the typology's latent-list entry (ARCHITECTURE §2.15) + L6 §3/§5.5 — …" (260–261) — a
+    documentation rider.
+41. "**Alternative — keep "sequence-span":** *Pro:* no propagation edit." (261) — a declined alternative of the name
+    with its stated advantage, read under rule (2).
+42. "*Con:* the collision above, permanent." (261) — the reason the alternative was declined, read under rule (2).
+43. "**Alternative — "progression-span" (user suggestion, 2026-07-02):** *Pro:* plainer than "schema"; …" (262–263) — a
+    declined alternative of the name with its stated advantage, read under rule (2).
+44. "*Con:* this document (and Layer 5's output) already uses …" (263–265) — the reason the alternative was declined,
+    read under rule (2).
+45. "If that ambiguity is acceptable, progression-span works; …" (265–267) — a remark weighing the declined alternative
+    against the former proposal, read under rule (2).
+46. "**Alternative — "chord-sequence-span" (user test, 2026-07-02):** evaluated and recommended against — …" (268–271) —
+    a declined alternative of the name with its reason, read under rule (2).
+47. "Longer without disambiguating the one thing the name must say: …" (271) — the same declined alternative's reason,
+    read under rule (2).
+48. "*Specify-by-rule:* exact-match admission (§4.1); …" (313–316) — the audit's record of where the document states its
+    rules — a record of how the document was checked.
+49. "Deferred items defer values only, never decision structure." (316–317) — the audit's finding about the document's
+    deferred items.
+50. "*Code-free body:* mechanisms named by role; …" (317) — the audit's finding about the document's form.
+51. "*Standard vocabulary + defined terms:* the §0 table defines or cites every term used — …" (318–320) — the audit's
+    finding about the document's vocabulary.
+52. "**(ii) Language-mechanical pass:** "committed" → an L4 `Commit` …" (321–325) — the audit's record of how the
+    document's words were made exact.
+53. "No pointer word in the body lacks its argument." (325) — the audit's finding about the document's words.
+
+#### The arithmetic at this member
+
+- Rows written: **50**.
+- **Outgoing statements placed: 80** — 26 rows of one claim, 20 rows of two (Rows 44.8, 44.10, 44.20, 44.22, 44.23,
+  44.24, 44.27, 44.31, 44.32, 44.33, 44.34, 44.36, 44.37, 44.40, 44.41, 44.42, 44.46, 44.47, 44.48 and 44.49), 3 rows of
+  three (Rows 44.19, 44.28 and 44.30) and 1 row of five (Row 44.50).
+- Listed under *not a statement*: **53**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: 22.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 1 | 44.15 |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 47 | 44.3, 44.5, 44.6, 44.7, 44.8 (i), 44.8 (ii), 44.9, 44.12, 44.13, 44.14, 44.17, 44.18, 44.19 (i), 44.19 (ii), 44.22 (i), 44.22 (ii), 44.23 (i), 44.23 (ii), 44.24 (i), 44.24 (ii), 44.25, 44.26, 44.27 (i), 44.27 (ii), 44.28 (i), 44.29, 44.30 (i), 44.30 (ii), 44.30 (iii), 44.31 (i), 44.32 (ii), 44.33 (ii), 44.37 (ii), 44.38, 44.40 (i), 44.41 (ii), 44.42 (i), 44.43, 44.46 (i), 44.46 (ii), 44.47 (i), 44.47 (ii), 44.48 (i), 44.48 (ii), 44.50 (i), 44.50 (ii), 44.50 (iv) |
+| QUARANTINED | 6 | 44.10 (ii), 44.40 (ii), 44.41 (i), 44.49 (i), 44.49 (ii), 44.50 (v) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 4 | 44.28 (iii), 44.31 (ii), 44.36 (ii), 44.42 (ii) |
+| UNPLACED | 22 | 44.1, 44.2, 44.4, 44.10 (i), 44.11, 44.16, 44.19 (iii), 44.20 (i), 44.20 (ii), 44.21, 44.28 (ii), 44.32 (i), 44.33 (i), 44.34 (i), 44.34 (ii), 44.35, 44.36 (i), 44.37 (i), 44.39, 44.44, 44.45, 44.50 (iii) |
+| **Total** | **80** | — |
+
+**The column sums to 80 (1 + 0 + 47 + 6 + 0 + 4 + 22), against 80 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 1 |
+| DIFFERS | 3 |
+| THE DERIVATION IS SILENT | 76 |
+| **Total verdicts** | **80** |
+
+The AGREES statements: 44.15 (L3-S12). The DIFFERS statements: 44.30 (i) (L3-S38), 44.30 (ii) (L3-S38),
+44.30 (iii) (L3-S38).
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 44 is empty, and the document is not
+  one of the five withheld from the deriving session's pack.
+- **SEEN rows: 13**, each marked after its title and carrying its paragraph — **register entry D-509** (lines 121 to
+  128; Rows 44.23 and 44.24); **register entries D-504 and D-505**, nested (161 to 178 and 162 to 166; Rows 44.25 to
+  44.28 marked with both, Rows 44.29 to 44.31 with D-504 alone); **register entry D-506** (193 and 194; Row 44.37);
+  **register entry D-508** (242 to 244; Row 44.43, its home beginning inside the row's sentence); **register entry
+  D-502** (245 to 247; Row 44.44); and **register entry D-507** (272 and 273; Row 44.46) — agreeing with §5, and counted
+  both ways at this subsection, the rows carrying the mark against the rows whose quoted lines lie inside the seven
+  homes. Items 10, 30 and 31 lie inside the homes of D-506, D-508 and D-502 and, being items under *not a statement*,
+  carry no mark.
+- **One is homed in the cut**: **register entry D-503** (135 and 136, in §4.5), a SEEN identity marking no row, agreeing
+  with §5. No retired entry is homed in this document. The INDEX gives D-504's home as §4.5, while its data-file lines
+  lie under §4.6 — named, and not repaired.
+- **The cut** holds the title and the status banner with its ratification record, §0's heading, the whole of §1, §2's
+  closing paragraph on the chords-only scope, the whole of §3, §4's heading with its §4.1, §4.2, §4.4 and §4.5, the
+  whole of §8 and §9, and blank lines; no row is tabulated there.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -61191,6 +62683,25 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   and needing no change. *(L3-S1 DIFFERS at Row 43.44 (i) and AGREES at Row 43.60 (ii).)*
 - Rows 43.10, 43.45, 43.46, 43.47 and 43.49 — the request for music earlier in time than the selection, and its stop.
   *(L3-S40 AGREES at Rows 43.10 and 43.45; L2-S22.)*
+- Rows 44.5, 44.6, 44.8 (i), 44.8 (ii), 44.9, 44.12, 44.13, 44.14, 44.19 (i), 44.19 (ii), 44.22 (i), 44.22 (ii),
+  44.23 (i), 44.23 (ii), 44.24 (i), 44.24 (ii), 44.32 (ii), 44.33 (ii), 44.37 (ii), 44.50 (i) and 44.50 (ii) — a
+  recognised progression as evidence in the chord decision: the committed progression and the ranked readings selected
+  among, the override and its frame, the plausibility feature, the prior strength, the admission and the seed, the
+  function layer as the re-ranker, the two conditions of the evidence contribution, the selection of an existing reading
+  with no new frame, the idiom weights grading and never excluding, the literal Roman numeral never changed by the
+  recognition, and the consumer forward-only with its frames. *(Rows 44.23 (i), 44.23 (ii), 44.24 (i) and 44.24 (ii) lie
+  on register entry D-509's home and Row 44.37 (ii) on D-506's, SEEN homes, marked.)*
+- Rows 44.38, 44.40 (i), 44.41 (ii), 44.42 (i) and 44.43 — the licensing of root motions: owned by the function layer's
+  grammar, held as predicates on root motion, measured too narrow for the catalog's musically correct motions, completed
+  by the grammar-completion amendment, and never derived from the catalog. *(As Rows 7.77, 7.78 (i) and 7.84 placed the
+  same grammar; Row 44.43 lies on register entry D-508's home, a SEEN home, marked.)*
+- Rows 44.17, 44.18, 44.25, 44.26, 44.27 (i), 44.27 (ii), 44.28 (i), 44.29, 44.30 (i), 44.30 (ii), 44.30 (iii) and
+  44.31 (i) — the harmonic sequence as evidence of the local key: the key as the tonality, the sequence defined and
+  required to repeat one entry, its typed output and its weight growing with its repetitions, a single
+  internally-sequential entry emitting none, the evidence always emitted, its two roles beside the cadence in the key
+  arbitration, and the new frame comparing it with the home key's confidence. *(L3-S38 DIFFERS at Row 44.30 (i), (ii)
+  and (iii), as at Row 40.51; all these statements but those of Rows 44.17 and 44.18 lie on register entry D-504's home,
+  and those of Rows 44.25, 44.26, 44.27 (i), 44.27 (ii) and 44.28 (i) on D-505's as well, SEEN homes, marked.)*
 
 **To *the second axis — voice leading*.**
 
@@ -61259,6 +62770,9 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   and its trigger to build. *(L3-S42 AGREES at Row 38.17 (i).)*
 - Rows 40.21 (i), 40.22 (iii) and 40.22 (iv) — the texture classification, the melodic contour per voice, and the facts
   of parallel motion.
+- Rows 44.3 and 44.46 (ii) — the Prinner as a galant schema defined by its melodic and bass lines, and the chords-only
+  mark retiring when the voice-leading layer supplies the line half. *(Row 44.46 (ii) lies on register entry D-507's
+  home, a SEEN home, marked.)*
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -61319,6 +62833,9 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   an output stating its own certainty, no answer forced and the hardest cases left marked. *(L3-S32 DIFFERS at Row
   43.7 (ii), as at Row 36.31 (i); Rows 43.7 (i) and 43.7 (ii) lie on the retired entry D-350's home, Rows 43.21 (i) and
   43.21 (ii) on register entry D-343's and Row 43.68 on D-349's, unmarked.)*
+- Rows 44.7, 44.46 (i) and 44.48 (ii) — the chord layer's composite confidence, the chords-only mark of a line-defined
+  entry, and the empirically-unvalidated mark of a recognition with no ground truth. *(Row 44.46 (i) lies on register
+  entry D-507's home, a SEEN home, marked.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -61466,6 +62983,9 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   fields, accuracy measurements in place of byte-identity, provisional values graded against the code they replace, a
   modal reading the ground truth cannot write down, a fragility the corpus gate cannot see, the gates a change must
   clear, the corpora and the held-out split, the chord layer's re-validation, and a term measured before wiring.
+- Rows 44.47 (i), 44.47 (ii), 44.48 (i) and 44.50 (iv) — the recognised spans measured by precision and recall against
+  the cadence and schema ground truth, the evidence's effect measured on the Roman numerals of the positions a
+  recognition covers, and the jazz and pop entries not yet measurable.
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
@@ -61476,7 +62996,7 @@ member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 2
 the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
 numbered 36.n, member 37's the rows numbered 37.n, member 38's the rows numbered 38.n, member 39's the rows numbered 39.n,
 member 40's the rows numbered 40.n, member 41's the rows numbered 41.n,
-member 42's the rows numbered 42.n, and member 43's the rows numbered 43.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
+member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, and member 44's the rows numbered 44.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -63427,6 +64947,20 @@ No QUARANTINED row: the member's ranges record no measured property of the code 
 - Row 43.125 — on which run or simulation did the key decoder's under-modulation on keys established by dominant
   implication show, and does it reproduce?
 
+**Member 44 — `cowork_progression_schema_design.md`, the passages of the document.**
+
+- Row 44.10 (ii) — does the catalog's matcher at the current commit return only exact realisations, and with what match
+  value?
+- Row 44.40 (ii) — does `functionprogression` at the current commit hold the licensing as predicates on root motion with
+  no table and no constants, and how many interval rules does it carry?
+- Row 44.41 (i) — on which run was the containment of the catalog's adjacent pairs in the licensing predicate measured,
+  which entries and motions fail it, and does the count reproduce?
+- Row 44.49 (i) — does any path that runs reach the progression recogniser at the current commit, and is any production
+  consumer wired to it?
+- Row 44.49 (ii) — on which run was the corpus gate found unchanged by the recogniser's build, and does it reproduce?
+- Row 44.50 (v) — does any path that runs reach the recognition consumer at the current commit, and does the engage
+  criterion the member names exclude it?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -64367,6 +65901,15 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 43.124 (ii) (L3-S38):** the outgoing evidence the function layer keeps is *"the cadence votes"* on the
   key, where L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
+**Member 44.** No ADOPTED — proposed row.
+
+- **DIFFERS — Row 44.30 (i) (L3-S38):** the outgoing sequence evidence *"agreeing with a confirming cadence raises the
+  candidate key's vote"*, where L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
+- **DIFFERS — Row 44.30 (ii) (L3-S38):** the outgoing sequence evidence is the substitute channel *"only where no
+  authentic cadence confirms the candidate key"*, where L3-S38 says *"L2 reads nothing L3 publishes."*
+- **DIFFERS — Row 44.30 (iii) (L3-S38):** the outgoing text holds that *"the cadence remains the stronger confirmation"*
+  of the key, where L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -64417,11 +65960,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 41 | 113 | 0 | 0 | 54 | 39 | 0 | 20 | 0 | 16 |
 | 42 | 51 | 2 | 0 | 46 | 0 | 0 | 3 | 0 | 4 |
 | 43 | 167 | 3 | 0 | 116 | 39 | 0 | 9 | 0 | 40 |
-| **Total** | **3980** | **179** | **91** | **1657** | **1141** | **0** | **666** | **246** | **1156** |
+| 44 | 80 | 1 | 0 | 47 | 6 | 0 | 4 | 22 | 53 |
+| **Total** | **4060** | **180** | **91** | **1704** | **1147** | **0** | **670** | **268** | **1209** |
 
-**The arithmetic check:** 179 + 91 + 1657 + 1141 + 0 + 666 + 246 = 3980, against 3980 statements placed (43 + 34 + 21 +
+**The arithmetic check:** 180 + 91 + 1704 + 1147 + 0 + 670 + 268 = 4060, against 4060 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -64468,11 +66012,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 41 | 0 | 1 | 112 | 113 |
 | 42 | 5 | 1 | 45 | 51 |
 | 43 | 12 | 8 | 147 | 167 |
-| **Total** | **376** | **341** | **3271** | **3988** |
+| 44 | 1 | 3 | 76 | 80 |
+| **Total** | **377** | **344** | **3347** | **4068** |
 
-**The arithmetic check of the verdicts:** 376 + 341 + 3271 = 3988, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 377 + 344 + 3347 = 4068, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80).
 
 ## 14. The derivation's independence record, relayed
 
