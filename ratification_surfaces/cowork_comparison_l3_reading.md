@@ -20,7 +20,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_sixteenth_2026_10_24.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_seventeenth_2026_10_24.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighteenth_2026_10_25.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -94,7 +95,7 @@ its own entry there.
 | 42 | `cowork_joint_estimator_factorization.md` passages | **DONE** (§6.42) |
 | 43 | `cowork_layer3_keymode_design.md` passages | **DONE** (§6.43) |
 | 44 | `cowork_progression_schema_design.md` passages | **DONE** (§6.44) |
-| 45 | `cowork_confidence_contract.md` passages | NOT YET TABULATED |
+| 45 | `cowork_confidence_contract.md` passages | **DONE** (§6.45) |
 | 46 | `cowork_progression_schema_dictionary.md` passages | NOT YET TABULATED |
 | 47 | `cowork_layer2_slicing_design.md` passages | NOT YET TABULATED |
 | 48 | `cowork_notation_output_contract.md` passages | NOT YET TABULATED |
@@ -109,7 +110,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 44 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 45 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -131,7 +132,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, and position 44, the passages of `cowork_progression_schema_design.md`.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, and position 45, the passages of `cowork_confidence_contract.md`.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -170,9 +171,11 @@ position 39 was tabulated under
 member boundary after position 39 under its own limit on the batch, and not by a capacity judgment; positions 40 to 42
 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighteenth_2026_10_25.md`, which stopped at the
 member boundary after position 42 under its own limit on the batch, and not by a capacity judgment; positions 43 and
-44 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md`.**
-**The writing now stands at the member boundary after position 44: not done, positions 45 to 57, and the next
-writing resumes at position 45.**
+44 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md`, which stopped at the
+member boundary after position 44 under its own limit on the batch, and not by a capacity judgment; position 45
+was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`.**
+**The writing now stands at the member boundary after position 45: not done, positions 46 to 57, and the next
+writing resumes at position 46.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -62135,6 +62138,1132 @@ The AGREES statements: 44.15 (L3-S12). The DIFFERS statements: 44.30 (i) (L3-S38
 
 ---
 
+### 6.45 — Member 45: `cowork_confidence_contract.md`, the passages of the document
+
+> **Manifest for this member.** Position **45**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_confidence_contract.md`. Label: *the passages of the document*, exactly as the artifact spells it —
+> a label that names no heading, so the member's section is the whole document, its lines 1 to 162, as at §6.35 to
+> §6.44. **The thirty-first member of this comparison made of passages, the eleventh cut from a document other than
+> `ARCHITECTURE.md`, and the ninth cut from a document not withheld from the deriving session's pack**: its entry's
+> `item_4_identities_inside` is empty, so its passages are cut around term-search hits only. Seven ranges, each as a
+> locator only (**D-307**), with its first and last line texts exactly as the artifact publishes them (wrapped here for
+> width; range 3's and range 7's line texts carry the tables' pipes, as the artifact does):
+>
+> - lines 14–21, from *"Every decision layer publishes "a confidence", and the architecture's signature control-flow
+>   mechanism — the"* to *"operate on declared, comparable quantities."*;
+> - lines 54–66, from *"**Rules of use:**"* to *"  a separate ad-hoc judgment."*;
+> - lines 70–79, from *"| Layer | Decision | Published confidence (boundary form) | Class | Notes / as-built deltas |"*
+>   to *"| **VL-C texture (axis 2)** | **texture-of-span** | the best-vs-second-best **fit** margin, where fit =
+>   `exp(−distance/fitScale)` of the z-space (ABz) euclidean distance to a class centroid — already ∈ [0,1) | M | The
+>   **axis-2** first judgment component (`cowork_voiceleading_axis_design.md` §5.3; `textureclassifier.h`, DORMANT). The
+>   published confidence is the exp-fit margin; squash per **R5** below. The output also carries the **full ranked list
+>   of ALL class fits with weights** (zero information loss). Three declared floors — **evidential** (min motion
+>   samples), **margin**, **fit** — are precision-phase; abstention = margin < margin-floor OR best fit < fit-floor
+>   (contract U5), single-voice → *no-pair* abstention. No new §4 comparison frame (nothing compares a VL confidence
+>   against a harmonic one). |"*;
+> - lines 83–84, from *"A **frame** is a declared triple *(incumbent confidence, contradiction-strength measure,
+>   conversion)* under which one"* to *"comparison is defined. The general §8 rule, stated once for all instances:"*;
+> - lines 93–99, from *"- **Frame F-A — cadence-confirmed modulation recompute (L5 §5.4).** Incumbent: L3 key-of-span
+>   confidence (Class M,"* to *"  fit). Selection is restricted to carried alternatives / neighbouring committed harmony
+>   (never re-derivation)."*;
+> - lines 101–103, from *"**New frames require declaration here.** Any future override site (e.g. the A-4 cadence-less
+>   confirmation channels;"* to *"frame row to this section before build — an undeclared cross-layer comparison is a
+>   contract violation."*;
+> - lines 149–155, from *"| # | Delta | Home | Close-out |"* to *"| D-INV | exact formulas/ranges at source for every
+>   row of §3 | all | gap-analysis Rider 6 (confidence inventory) confirms or corrects §3 |"*.
+>
+> **Each of the fourteen line texts was compared with the line at its locator** in `cowork_confidence_contract.md`, read
+> by this session at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at that
+> commit, **and every one matches**; the ranges hold 50 lines. The blob carries no carriage return, so nothing was
+> stripped before a comparison. **No other member of the artifact is cut from this document** — this session's script,
+> listing every member whose document is `cowork_confidence_contract.md`, found position 45 alone — so nothing is
+> excluded from the cut. The document's other lines lie in no range — lines 1–13, 22–53, 67–69, 80–82, 85–92, 100,
+> 104–148 and 156–162, one hundred and twelve lines of which twenty-five are blank, as this session's script lists them;
+> **the blob holds 162 lines, so its last cut span ends at line 162 and the cut holds 112 lines, where the dispatch
+> computed 156–163 and 113** — the dispatch states that the script's listing is what this header carries, and every
+> other span is the one the dispatch computed. By the nine headings the script lists among them — the title and the
+> headings of the member's sections *1* to *8* — they hold: the title (1); **the status banner** (3 to 10), a quotation
+> block opening *"Status: RATIFIED (user, 2026-07-02)."*; §1's heading (12); **§2's heading and its three classes** (23
+> to 39), **register entry D-267's home (25 to 34)** among them, holding its words; **§2's amendment paragraph of
+> 2026-10-14 with its former wording** (41 to 52), the cited home of register entry D-268 (36 to 48) spanning the close
+> of the third class and that paragraph; §3's heading (68); §4's heading (81); **the override formula** (86 to 89), a
+> quotation block, and the lead introducing the two built frames (91), lines the cited home of register entry D-601
+> reaches; **§4's paragraph on the premise of a conversion constant** (105 to 116), which carries register entry D-601's
+> words (107 to 111); **§5's rules R4 to R6** (118 to 130); **§6's calibration obligations C1 to C4** (132 to 145); §7's
+> heading (147); §8's ratification asks (157 to 162); and the blank lines. *(This session read the whole document at its
+> blob before writing any row, the cut with it; the cut is named here by what stands there, and no cut line is
+> tabulated.)* **The cut holds the member's own account of its standing and much of what its ranges apply** — its
+> banner, its three classes with their amendment, its override formula, its premise gate on a conversion constant, its
+> rules R4 to R6 and C1 to C4. These are facts of the population artifact for the method ruling's surface, no row quotes
+> a cut line, and no member is widened by hand to take them (**D-671**). No other member of the artifact covers the cut
+> — the passage rule's cut, recorded here as at §6.15 to §6.44, and not repaired. Outgoing statements: **68** (rows 45.1
+> to 45.32; 18 rows of one claim, 6 rows of two (Rows 45.1, 45.7, 45.17, 45.21, 45.28 and 45.31), 1 row of three (Row
+> 45.30), 2 rows of four (Rows 45.12 and 45.16), 3 rows of five (Rows 45.14, 45.15 and 45.18) and 2 rows of six (Rows
+> 45.13 and 45.29), each split — the arithmetic is at the foot of this member). Listed under *not a statement*: **6**.
+> Counted at this member by this session; the counts appear here and at §13, and nowhere else.
+>
+> **No WITHHELD home lies inside this member**: the artifact's `item_4_identities_inside` for position 45 is empty, and
+> `cowork_confidence_contract.md` is not one of the five documents withheld from the deriving session's pack — **so no
+> row is marked WITHHELD**. **No SEEN home lies inside it, agreeing with §5** — none of D-335, D-406, D-482, D-484 and
+> D-502 to D-510 is homed in this document — **so no row is marked SEEN**. **Four entries of the decisions register's
+> data file are homed in this document, none withheld and none seen, each carrying no mark — and three of the four cite
+> lines that no longer hold the entry's own words**, a shape no earlier member met at a home, relayed here as it stands.
+> This session's walk of `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch,
+> by explicit hash), over every record carrying an identity and a home, the retired block included, printed over the
+> seven ranges **register entry D-269** at lines 83 to 85, overlapping range 4 (83 and 84), its last line blank and in
+> the cut, and **register entry D-601** at lines 89 to 101, overlapping range 5 (93 to 99) and range 6's first line
+> (101); over the eight cut spans it printed **register entries D-267** (25 to 34) and **D-268** (36 to 48), and D-269
+> and D-601 again where their cited lines reach the cut. No retired entry is homed in this document. The walk agrees
+> with the four the dispatch read, no identity beyond them and none of them missing. **Each home's `verbatim` was then
+> compared with the lines its home cites, at the member's blob, by a script written for this member**: **D-267**'s cited
+> lines 25 to 34 equal its verbatim; **D-268**'s cited lines 36 to 48 do not hold it, and its words stand at lines 54 to
+> 66, range 2 — every row of range 2 says so (Rows 45.3 to 45.10); **D-269**'s cited lines 83 to 85 do not hold it, and
+> its words stand at lines 101 to 103, range 6 — Row 45.19 says that the home cites its lines, and Rows 45.26 and 45.27
+> that its words stand on theirs; and **D-601**'s cited lines 89 to 101 do not hold it, and its words stand at lines 107
+> to 111, in the cut, from a sentence's opening inside line 107 — so the rows of range 5 and range 6 say that the home
+> cites their lines (Rows 45.20 to 45.27). The document's amendment of §2, dated 2026-10-14 and lying in the cut, stands
+> between the lines the homes were written against and the lines that now hold the words; the data file's `home_section`
+> for D-269 and D-601 names a heading line 63 for §4, whose heading now stands at line 81, and for D-267 and D-268 it
+> names §2's heading in its former wording, *"Definitions — the two admissible confidence classes"*, as read by this
+> session at the data file. These are facts of the data file, moving no disposition and no mark, **not repaired and not
+> a STOP**. The decisions register's INDEX records **D-267** *"There are exactly two admissible confidence classes, and
+> no layer may claim a calibrated probability until one is fitted"*, **D-268** *"A confidence attaches to a named
+> decision, is compared only within its class and a declared frame, and keeps its identity downstream"*, **D-269** *"The
+> frame table is the one home of the override arithmetic; a new override site declares its frame before it is built"*
+> and **D-601** *"Before any constant that would make two differently-scaled confidences comparable is fitted, the
+> premise that a fitted constant CAN do so must itself pass a premise ledger and a desk simulation"*, all LIVE in group
+> C, the first three entry ratified 2026-08-02 · user and D-601 2026-08-04 · user; **D-267's INDEX title speaks of two
+> classes, while the document's §2 heading, in the cut, now names three** and its amendment paragraph says *"D-267's
+> register status waits on the register route."* — read by this session at the INDEX and at the document, facts of the
+> decisions register, relayed and moving no disposition. **Rows naming L3-S4: none.**
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.44, the colon-lead reading and the status-table reading stated at §6.9's manifest header, tables taken
+> row by row, the quotation join, the blockquote-marker reading, the fenced-block reading and the reading of a range
+> that opens with a heading line were applied unchanged at this member.** **The blockquote-marker reading has no
+> instance inside a range**: the document's two marked spans, lines 3 to 10, its status banner, and lines 86 to 89, the
+> override formula, lie in the cut. **The fenced-block reading has no instance**: the script finds no line opening with
+> three backticks. **The heading-line reading has no instance**: no range opens with a heading line, the document's nine
+> heading lines all lying in the cut. **The glossary reading has no instance**: the document has no terms table.
+> **Tables taken row by row — two tables.** Range 3's per-layer inventory: its header row with its separator line listed
+> as one item (item 4), keeping its pipes, and its eight rows quoted by their cells' words without the pipes, the cells
+> joined between their quotation marks by a middle dot (Rows 45.11 to 45.18). Range 7's list of as-built deltas: its
+> header row with its separator line listed as one item (item 6), and its five rows taken the same way (Rows 45.28 to
+> 45.32). **Their cells mix a declared class, a definition, a measured value, a closure with its commit and a deferral,
+> often in one cell, and every such row is split under 1(a)** — the rows of the key, the chord and the function
+> decisions into six, five and five claims, the texture row into five and the delta *D-FS* into six — each claim's kind
+> deciding its disposition: a definition or a declared class placed with its charter, a measured value or a build state
+> **QUARANTINED**, a closure, a plan or a deferral **HISTORICAL**. **The status-table reading does not reach range 7**:
+> its rows are not the statuses of design documents but the contract's own deltas of the analysis's published
+> confidences, each with its home and its close-out, so each row is taken under the unit as a table row like any other —
+> stated for challenge, placement (m). **The quotation join has no instance**: no line of the document ends in a hyphen
+> or a slash, and the widened join, a letter or a closing parenthesis before a line-end hyphen, finds no line. **How the
+> bold leads were read.** Range 2's *Rules of use:* is a colon lead introducing its five bullets (item 3); the bullets'
+> leads *U1.*, *U2.* and *U3.* are the member's labels, quoted with the sentence each opens (Rows 45.3, 45.4 and 45.6),
+> and *U4. Provenance.* and *U5. Abstention.* are labels read with the words after them (Rows 45.8 and 45.9). Range 5's
+> *Frame F-A — cadence-confirmed modulation recompute (L5 §5.4).* and *Frame F-B — fine-grain chord override (L5 §5.5
+> case-4).* are labels with an undated parenthesis, read as titles, each frame's claims stated by the sentences after
+> its label (Rows 45.20 to 45.25). Range 6's *New frames require declaration here.* is a complete sentence, tabulated
+> (Row 45.26). **The colon leads** are tabulated with the sentence each opens where it carries the claim — range 5's
+> *Incumbent:*, *Contradiction:* and *Conversion:* (Rows 45.20 to 45.24) — and listed as a lead where it only introduces
+> what follows: *Rules of use:* (item 3) and range 4's sentence ending *The general §8 rule, stated once for all
+> instances:* (item 5), which introduces the formula in the cut. **The defense reading — range 1**, the contract's own
+> account of why it exists: its two sentences giving the reasoning — the as-built incommensurability the contract
+> answers, and why a fit cannot repair it — are listed under rule (2) as the defense of the rules §2 to §4 state (items
+> 1 and 2), while its two sentences stating what the analysis does or must do are tabulated (Rows 45.1 and 45.2) —
+> stated for challenge, placement (n). No sentence inside the ranges is led *Why:*. **The passages recording a
+> correction, a closure or an as-built state**, all in the two tables: (i) the phrase-boundary row's measurement at the
+> fitting stage **QUARANTINED** and its no-map status **HISTORICAL** (Row 45.12 (iii) and (iv)); (ii) the key row's
+> closure of the member's delta *D-L3a* — the as-built claim **QUARANTINED** and the dated closure taken with it as
+> provenance, as Row 43.7 (iii) took the same clause — its fitted map **QUARANTINED** and its subsumed redesign
+> **HISTORICAL** (Row 45.13 (iii) to (v)); (iii) the chord row's fitted map **QUARANTINED** (Row 45.14 (iv)); (iv) the
+> function row's unbounded sum as built **QUARANTINED**, its planned fix and its deferred map **HISTORICAL** (Row
+> 45.15 (ii), (iii) and (v)); (v) the cadence vote's calibration **QUARANTINED** and its recording outside the arc's
+> scope **HISTORICAL** (Row 45.16 (iii) and (iv)); (vi) the legacy row's retirement **HISTORICAL** (Row 45.17 (ii));
+> (vii) the texture row's dormant classifier **QUARANTINED** (Row 45.18 (ii)); and (viii) range 7's closures of the
+> member's deltas *D-L5a* and *D-L3a* — each closure **HISTORICAL** and the state it leaves **QUARANTINED** (Rows 45.28
+> and 45.30) — and the fitting stage's declarations of the frames' contradiction quantities placed as rules, its fits
+> and its measured harm **QUARANTINED** (Row 45.29), **following the former-wording precedents in splitting a closure
+> from the rule and the as-built record beside it, as §6.39 split its (iii) and §6.43 its (ii)**. **The member's own
+> identifiers** — its layer names *L1 / L2*, *L1.5*, *L3*, *L4*, *L5*, *VL-C* and *Legacy path*, an older numbering in
+> which its *L3* is the key and mode, its *L4* the chord and its *L5* function, not `FRAMEWORK.md` §5's; its rules *U1*
+> to *U5* and *R5*; its frames *F-A* and *F-B*; its deltas *D-L5a*, *D-FS*, *D-L3a*, *D-LEG* and *D-INV*, its own labels
+> for as-built deltas and not decisions-register identities; *A-2*, *A-4*, *A-7*, *F-1*, *D3*, *C1*, *E0*, *E0′*, *Rider
+> 6*, *Stage-1c G4*, *R8* and the commits it cites — are quoted as they stand; no three-digit identity of the decisions
+> register stands inside a range.
+>
+> **What this member is, and how its subjects were placed.** The ranges are the cross-layer contract for published
+> confidences, ratified 2026-07-02: the contract's account of why it exists; its rules of use, *U1* to *U5*; its
+> inventory of what each layer of an older stack publishes, in contract terms; the definition of a frame; the two built
+> frames; the rule that a new frame is declared before build; and its list of as-built deltas — less the cut, which
+> holds the banner, the three classes with their amendment of 2026-10-14, the override formula, the premise gate on a
+> conversion constant, the rules *R4* to *R6*, the calibration obligations and the ratification asks. **The member was
+> read whole, at its blob, before any row was written**, and its rows were then written in three portions. **How 1(a)'s
+> five points were weighed.** **(a) The member's subject against L3's.** Most of the member is
+> the uncertainty surface's: the rules of use, the classes the inventory declares, the frames' arithmetic and the
+> declaration rule are **RELOCATED** to *the uncertainty surface*, as Rows 19.71 to 19.73, 36.31, 39.19 (i), 39.46 and
+> 43.7 placed the same contract's content; a declared class graded against L3-S32 follows Rows 36.31 (i) and 43.7 (ii) —
+> **DIFFERS** at the phrase boundary, the key, the chord and the function decisions (Rows 45.12 (i), 45.13 (ii),
+> 45.14 (i) and 45.15 (i)) — the comparability within one profile **AGREES** as at Row 36.31 (ii) (Row 45.12 (ii)), and
+> *U3*'s comparability within one class and one frame is graded **DIFFERS** (Row 45.6). Its measured calibrations,
+> fitted maps, closures with commits and dormant code are **QUARANTINED**, each audit question asking on which run a
+> value was obtained, what the named artifact or code holds at the current commit, or whether any path that runs reaches
+> it, no value restated in a question; *the measurement of the analysis* receives none of this member's statements, the
+> calibrations being recorded as measured properties of the code and the obligations *C1* to *C4* lying in the cut.
+> **L3's subjects appear at named places**: the cadence vote as evidence for the tonic of a span, and the cadential vote
+> weight as frame *F-A*'s contradiction against the key, are graded **DIFFERS** from L3-S38 and placed with
+> *L2 — The tonal reading. The one entangled decision.*, which decides the tonality, following §6.43's placement (p) and
+> Row 44.30 (Rows 45.16 (i) and 45.21 (i)); the cadence named among the function decision's decisions and the cadential
+> fit among frame *F-B*'s terms are placed with the confidences and the decisions they belong to (Rows 45.15 (i) and
+> 45.24); and the phrase boundary's published strength follows Row 36.31 (Row 45.12). Frame *F-B*'s contradiction and
+> selection, which settle the chord, are placed with *L2 — The tonal reading. The one entangled decision.*, as Row 9.163
+> placed that frame; the member's *L1 / L2* row — the older stack's note model and slicer — is placed with
+> *L1 — Change points, candidates and notated evidence* (Row 45.11). **(b) The member's layer names** — *L1 / L2*,
+> *L1.5*, *L3 key/mode*, *L4 chord*, *L5 function*, *L5 cadence vote*, *Legacy path* and *VL-C texture (axis 2)* — are
+> an older numbering in which the member's L3 is the key and mode; every statement is placed by its subject under the
+> charters as `FRAMEWORK.md` §5 words them, never by the layer the member names, and every row quoting such a name says
+> which older layer it names. **(c) The table cells** mix kinds, and each such row is split as the readings above state.
+> **(d) The decisions register's homes** as above — four, three of them citing lines that no longer hold their words,
+> each relayed both where the data file puts it and where its words stand. **(e) The two tables** as above. **Three
+> placements are stated for challenge.** (l) Row 45.14 (i), the chord decision's declared class, graded **DIFFERS** from
+> L3-S32, following Row 43.7 (ii) and §6.43's placement (r), L3-S32 giving L2's mass its class; **this departs from Row
+> 10.137**, which graded the same contract's declaration of the same composite **THE DERIVATION IS SILENT**; **the
+> alternative** — Row 10.137's verdict — is stated and not taken. (m) Range 7 taken row by row under the unit; **the
+> alternative** — the status-table reading, listing its rows as statuses — is stated and not taken, its rows recording
+> deltas of the analysis's confidences and not the standing of design documents. (n) Range 1's two reasoning sentences
+> listed as the defense of the rules after them, and its two statements of what the analysis does tabulated; **the
+> alternative** — listing the whole paragraph as the contract's own account of itself — is stated and not taken. **No
+> statement of this member is ADOPTED — carried, ADOPTED — proposed, DISCARDED or UNPLACED.**
+
+---
+
+**Row 45.1 — every decision layer publishing a confidence; the forward override comparing a later layer's contradiction
+against an earlier layer's confidence.**
+
+*Outgoing statement.* "Every decision layer publishes "a confidence", and the architecture's signature control-flow
+mechanism — the confidence-weighted forward-override — **numerically compares** quantities across layers: a later
+layer's contradiction strength against an earlier layer's confidence." — the section *1. Why this contract exists*, its
+one paragraph (locator: lines 14–16). Two claims: (i) every decision layer publishes a confidence; (ii) the
+confidence-weighted forward override compares a later layer's contradiction strength against an earlier layer's
+confidence, numerically, across layers.
+
+*Derived statements that speak to it.* (i) L3-S32. (ii) None.
+
+*Current-text axis.* (i) L3-S32: **AGREES** — every L3 fact *"is published with its own mass and its own establishment
+status"*. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, as Row 19.71. (ii)
+**RELOCATED** — to ***the uncertainty surface***, whose frame table is the one home of the override arithmetic, as Row
+39.19 (i).
+
+---
+
+**Row 45.2 — every override threshold, resolver tie-break and gated joint step operating on declared, comparable
+quantities.**
+
+*Outgoing statement.* "This contract defines the semantics once, so every override bar, resolver tie-break, and the
+future gated joint step operate on declared, comparable quantities." — the section *1. Why this contract exists*, its
+one paragraph, its closing sentence (locator: lines 19–21). The member's *future gated joint step* is the older stack's
+planned joint key-and-chord step.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, on which every published fact carries its own
+mass and its own establishment status (`FRAMEWORK.md` §5).
+
+---
+
+**Row 45.3 — a confidence attached to a named decision, never to a layer in general.**
+
+*Outgoing statement.* "**U1.** A confidence attaches to a **named decision** (key-of-slice, chord-of-slice,
+membership-of-note, cadence-vote, boundary-strength, function-of-unit) — never to "the layer" in general." — the section
+*2. Definitions — the three admissible confidence classes*, the list led *Rules of use:*, a lead ending in a colon, its
+first bullet, led *U1.*, the member's label (locator: lines 55–56). The decisions it names include the cadence vote and
+the boundary strength, L3's subjects; the rule it states is about every published confidence.
+
+*Derived statements that speak to it.* L3-S32.
+
+*Current-text axis.* L3-S32: **AGREES** — every L3 fact *"is published with its own mass and its own establishment
+status"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, as Row 19.71.
+
+*The decisions register at this row.* Register entry **D-268**'s words stand on these lines — its verbatim runs from
+*"**Rules of use:**"* (line 54) to the close of the bullet led *U5. Abstention.* (line 66) — while the data file's home
+for it cites lines 36 to 48, which hold the close of the third class's bullet and the amendment paragraph of 2026-10-14,
+in the cut. The decisions register's INDEX records **D-268** *"A confidence attaches to a named decision, is compared
+only within its class and a declared frame, and keeps its identity downstream"* as LIVE, group C, entry ratified
+2026-08-02 · user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no
+disposition.
+
+---
+
+**Row 45.4 — at a layer boundary a confidence bounded in [0,1], class-declared, with its decision named.**
+
+*Outgoing statement.* "**U2.** At a **layer boundary** (any value another layer may read), a confidence is **[0,1],
+class-declared, with its decision named**." — the section *2. Definitions — the three admissible confidence classes*,
+the list led *Rules of use:*, a lead ending in a colon, its second bullet, led *U2.* (locator: lines 57–58).
+
+*Derived statements that speak to it.* L3-S32.
+
+*Current-text axis.* L3-S32: **AGREES** — every L3 fact *"is published with its own mass and its own establishment
+status"*, the class of that mass declared.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, as Row 19.71.
+
+*The decisions register at this row.* Register entry **D-268**'s words stand on these lines — its verbatim runs from
+*"**Rules of use:**"* (line 54) to the close of the bullet led *U5. Abstention.* (line 66) — while the data file's home
+for it cites lines 36 to 48, which hold the close of the third class's bullet and the amendment paragraph of 2026-10-14,
+in the cut. The decisions register's INDEX records **D-268** *"A confidence attaches to a named decision, is compared
+only within its class and a declared frame, and keeps its identity downstream"* as LIVE, group C, entry ratified
+2026-08-02 · user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no
+disposition.
+
+---
+
+**Row 45.5 — unbounded internal values permitted inside a layer, squashed at the boundary.**
+
+*Outgoing statement.* "Unbounded internal scores are permitted *inside* a layer but must be squashed at the boundary." —
+the section *2. Definitions — the three admissible confidence classes*, the list led *Rules of use:*, a lead ending in a
+colon, the second bullet (locator: line 58). The member's *scores* is its own word.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, travelling with Row 45.4, as Row 19.73.
+
+*The decisions register at this row.* Register entry **D-268**'s words stand on these lines — its verbatim runs from
+*"**Rules of use:**"* (line 54) to the close of the bullet led *U5. Abstention.* (line 66) — while the data file's home
+for it cites lines 36 to 48, which hold the close of the third class's bullet and the amendment paragraph of 2026-10-14,
+in the cut. The decisions register's INDEX records **D-268** *"A confidence attaches to a named decision, is compared
+only within its class and a declared frame, and keeps its identity downstream"* as LIVE, group C, entry ratified
+2026-08-02 · user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no
+disposition.
+
+---
+
+**Row 45.6 — two confidences compared only within one class and one declared frame.**
+
+*Outgoing statement.* "**U3.** A consumer may compare two confidences **only within one class and one declared frame**
+(§4)." — the section *2. Definitions — the three admissible confidence classes*, the list led *Rules of use:*, a lead
+ending in a colon, its third bullet, led *U3.* (locator: line 59).
+
+*Derived statements that speak to it.* L3-S32.
+
+*Current-text axis.* L3-S32: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing confidences may be compared *"only within one class and one
+declared frame"*; L3-S32 makes L3's mass *"comparable only within one working span's publication"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, as Row 19.72.
+
+*The decisions register at this row.* Register entry **D-268**'s words stand on these lines — its verbatim runs from
+*"**Rules of use:**"* (line 54) to the close of the bullet led *U5. Abstention.* (line 66) — while the data file's home
+for it cites lines 36 to 48, which hold the close of the third class's bullet and the amendment paragraph of 2026-10-14,
+in the cut. The decisions register's INDEX records **D-268** *"A confidence attaches to a named decision, is compared
+only within its class and a declared frame, and keeps its identity downstream"* as LIVE, group C, entry ratified
+2026-08-02 · user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no
+disposition.
+
+---
+
+**Row 45.7 — a margin never treated as a probability; two margins from different producers compared only through a
+declared conversion.**
+
+*Outgoing statement.* "Treating a Class-M margin as a probability (or comparing two Class-M values produced by different
+scorers without a declared conversion) is a contract violation." — the section *2. Definitions — the three admissible
+confidence classes*, the list led *Rules of use:*, a lead ending in a colon, the third bullet (locator: lines 59–61).
+The member's *scorers* is its own word. Two claims: (i) treating a margin-class confidence as a probability is a
+violation of the contract; (ii) so is comparing two margin-class values from different producers without a declared
+conversion.
+
+*Derived statements that speak to it.* (i) L3-S32. (ii) None.
+
+*Current-text axis.* (i) L3-S32: **AGREES** — L3's mass is *"never read as a frequency of being right"*. (ii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, as Row 19.72. (ii)
+**RELOCATED** — to ***the uncertainty surface***, whose frames declare each conversion, as Row 39.19 (i).
+
+*The decisions register at this row.* Register entry **D-268**'s words stand on these lines — its verbatim runs from
+*"**Rules of use:**"* (line 54) to the close of the bullet led *U5. Abstention.* (line 66) — while the data file's home
+for it cites lines 36 to 48, which hold the close of the third class's bullet and the amendment paragraph of 2026-10-14,
+in the cut. The decisions register's INDEX records **D-268** *"A confidence attaches to a named decision, is compared
+only within its class and a declared frame, and keeps its identity downstream"* as LIVE, group C, entry ratified
+2026-08-02 · user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no
+disposition.
+
+---
+
+**Row 45.8 — a carried-forward confidence keeping its source layer, decision and class.**
+
+*Outgoing statement.* "**U4. Provenance.** A carried-forward confidence keeps its (source layer, decision, class)
+identity; no silent re-interpretation downstream." — the section *2. Definitions — the three admissible confidence
+classes*, the list led *Rules of use:*, a lead ending in a colon, its fourth bullet, led *U4. Provenance.*, a label read
+with the words after it (locator: lines 62–63).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, on which every published fact carries its own
+mass and its own establishment status (`FRAMEWORK.md` §5).
+
+*The decisions register at this row.* Register entry **D-268**'s words stand on these lines — its verbatim runs from
+*"**Rules of use:**"* (line 54) to the close of the bullet led *U5. Abstention.* (line 66) — while the data file's home
+for it cites lines 36 to 48, which hold the close of the third class's bullet and the amendment paragraph of 2026-10-14,
+in the cut. The decisions register's INDEX records **D-268** *"A confidence attaches to a named decision, is compared
+only within its class and a declared frame, and keeps its identity downstream"* as LIVE, group C, entry ratified
+2026-08-02 · user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no
+disposition.
+
+---
+
+**Row 45.9 — the uncertain mark: the decision's confidence below the layer's declared threshold, a precision-phase
+constant.**
+
+*Outgoing statement.* "**U5. Abstention.** The "uncertain" mark ≡ the decision's confidence is below the layer's
+declared bar (a precision-phase constant)." — the section *2. Definitions — the three admissible confidence classes*,
+the list led *Rules of use:*, a lead ending in a colon, its fifth bullet, led *U5. Abstention.*, a label read with the
+words after it (locator: lines 64–65).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, as Row 43.8 placed the uncertain mark.
+
+*The decisions register at this row.* Register entry **D-268**'s words stand on these lines — its verbatim runs from
+*"**Rules of use:**"* (line 54) to the close of the bullet led *U5. Abstention.* (line 66) — while the data file's home
+for it cites lines 36 to 48, which hold the close of the third class's bullet and the amendment paragraph of 2026-10-14,
+in the cut. The decisions register's INDEX records **D-268** *"A confidence attaches to a named decision, is compared
+only within its class and a declared frame, and keeps its identity downstream"* as LIVE, group C, entry ratified
+2026-08-02 · user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no
+disposition.
+
+---
+
+**Row 45.10 — abstention uniform: low confidence in the declared class, not a separate judgment.**
+
+*Outgoing statement.* "Abstention semantics are therefore uniform: *low confidence in the declared class*, not a
+separate ad-hoc judgment." — the section *2. Definitions — the three admissible confidence classes*, the list led *Rules
+of use:*, a lead ending in a colon, the fifth bullet (locator: lines 65–66).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, travelling with Row 45.9.
+
+*The decisions register at this row.* Register entry **D-268**'s words stand on these lines — its verbatim runs from
+*"**Rules of use:**"* (line 54) to the close of the bullet led *U5. Abstention.* (line 66) — while the data file's home
+for it cites lines 36 to 48, which hold the close of the third class's bullet and the amendment paragraph of 2026-10-14,
+in the cut. The decisions register's INDEX records **D-268** *"A confidence attaches to a named decision, is compared
+only within its class and a declared frame, and keeps its identity downstream"* as LIVE, group C, entry ratified
+2026-08-02 · user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no
+disposition.
+
+---
+
+**Row 45.11 — the member's L1 / L2: no decision, their facts carrying no confidence, by design.**
+
+*Outgoing statement.* The table row's cells "L1 / L2" · "none" · "— (facts carry no confidence)" · "—" · "By design." —
+the section *3. Per-layer inventory (what each layer publishes, in contract terms)*, the table, the row *L1 / L2*
+(locator: line 72). The member's *L1 / L2* are the older stack's note model and slicer.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which decides
+nothing about the music (`FRAMEWORK.md` §5), the older stack's note model and slicer being its subject.
+
+---
+
+**Row 45.12 — the phrase-boundary strength: max-normalised per profile, of the margin class, comparable within one
+profile; its spike and surface split measured, no map fitted.**
+
+*Outgoing statement.* The table row's cells "L1.5 phrase-boundary" · "boundary-at-tick" · "graded boundary strength,
+max-normalised per profile → [0,1]" · "M (salience-margin variant)" · "Relative salience within the profile —
+**comparable within one score's profile only**; consumers (L5 phrase gate, L6) must not compare across scores. **Stage-5
+Task-B spike-vs-surface split MEASURED (Phase 3, 2026-07-06): the SURFACE population alone (98.4 % of ticks), normalized
+within itself, has usable monotone spread (0.13→0.46 across deciles, mono-viol 2) — a per-population map is fittable in
+principle at a later increment; the SPIKE population (1.6 %) is a flat ~0.40 cluster. No map fitted now (weak absolute
+signal, tops at 0.46). The C1 "insufficient spread" reading is refined, not overturned: the spread exists in the surface
+cues once un-compressed from the spike-dominated per-profile max.**" — the section *3. Per-layer inventory (what each
+layer publishes, in contract terms)*, the table, the row *L1.5 phrase-boundary* (locator: line 73). The member's *L1.5*
+is the older stack's notation-derived tier, and its *L5 phrase gate* and *L6* the older stack's function and grouping
+layers. Four claims: (i) the phrase-boundary decision publishes a graded boundary strength, max-normalised per profile
+into [0,1], declared Class M in its salience-margin variant; (ii) it is comparable within one score's profile only, and
+its consumers may not compare it across scores; (iii) the split of the strength into its spike and surface populations,
+measured at the fitting stage with its spread, refining the earlier reading of the curves; (iv) no map fitted now.
+
+*Derived statements that speak to it.* (i) L3-S32. (ii) L3-S32. (iii) None. (iv) None.
+
+*Current-text axis.* (i) L3-S32: **DIFFERS**. (ii) L3-S32: **AGREES** — *"comparable only within one working span's
+publication"*. (iii) **THE DERIVATION IS SILENT**. (iv) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (i) The outgoing strength is a *"graded boundary strength, max-normalised
+per profile"*, declared *"M (salience-margin variant)"*; L3-S32 makes L3's mass *"the model's own distribution, not
+calibrated"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, as Row 36.31 (i). (ii)
+**RELOCATED** — to ***the uncertainty surface***, as Row 36.31 (ii). (iii) **QUARANTINED.** *Audit question:* on which
+run was the split of the phrase-boundary strength into its spike and surface populations measured, and does its spread
+reproduce? (iv) **HISTORICAL** — a status of the fitting stage: no map fitted for the boundary strength.
+
+---
+
+**Row 45.13 — the key decision's confidence: the whole-sequence margin, of the margin class; as built the boundary
+confidence; its map fitted and unwired; the jazz carrier unmapped.**
+
+*Outgoing statement.* The table row's cells "L3 key/mode" · "key/mode-of-slice" · "**sequence margin** (best total vs
+best total forced-different-at-this-slice, squashed) — THE declared boundary confidence
+(`HarmonicRegion.keyConfidence`)" · "M" · "The right definition (whole-sequence, not local top-2). **Delta D-L3a — ✅
+CLOSED (2026-07-04):** the sequence margin (`HarmonicRegion.keyConfidence`) is THE Layer-3 boundary confidence; the C1
+emission `normalizedConfidence` (sigmoid) that also rides the boundary is **demoted to an internal gate input** (the 0.8
+KeyArea / cadence annotate gate) **+ diagnostic export** — it is not a boundary confidence. Decided by the C1 curves
+(margin ECE 0.125–0.142 vs sigmoid 0.38–0.44 — 2.8–3.1× better on every preset;
+`records/cc/reports/cc_c1_reliability_report.md` §3). A declaration-only close-out (comments/naming at the boundary
+types + gate sites), byte-identical on production and dormant. The deferred "sequence-margin confidence redesign" (L3
+§status) is subsumed here; only the Stage-5 Class-M→P calibration of the margin remains. **Stage-5 Class-P map FITTED
+(Phase 3, 2026-07-06: isotonic, Baroque+Default carriers; held-out ECE 0.027/0.041), WIRING PENDING (engage-adjacent).
+Jazz carrier UNMAPPED (A-7 empirically-unvalidated). Artifacts:
+`tools/calibration_maps/stage5_classP_l3_key_margin_{baroque,default}.json`.**" — the section *3. Per-layer inventory
+(what each layer publishes, in contract terms)*, the table, the row *L3 key/mode* (locator: line 74). The member's *L3*
+is the older stack's key-and-mode layer, not `FRAMEWORK.md` §5's L3; *D-L3a* is the member's own label for an as-built
+delta, not a decisions-register identity, and *A-7* an amendment of an external review. Six claims: (i) the key
+decision's published boundary confidence is the whole-sequence margin — the best total against the best total forced to
+a different key at the slice — squashed, the whole-sequence definition being the right one and not a local comparison of
+the top two; (ii) it is declared Class M; (iii) as built, after the closure *D-L3a* of 2026-07-04 taken with it as
+provenance, this margin is the boundary confidence and the per-slice emission sigmoid an internal gate input and a
+diagnostic export, decided by the earlier reliability curves, a declaration-only close-out; (iv) the deferred redesign
+of the margin subsumed here, only its calibration to Class P remaining; (v) the Class-P map fitted at the fitting stage
+on two carriers, held out, its artifacts named, its wiring pending; (vi) the jazz carrier left unmapped, carrying the
+empirically-unvalidated mark.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S32. (iii) None. (iv) None. (v) None. (vi) L3-S33.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S32: **DIFFERS**. (iii) **THE DERIVATION IS SILENT**.
+(iv) **THE DERIVATION IS SILENT**. (v) **THE DERIVATION IS SILENT**. (vi) L3-S33: **AGREES** — the status *Provisional*
+*"is carried by anything resting on an unfitted weight, a stand-in value or a provisional input"*.
+
+*The difference, in both texts' own words.* (ii) The outgoing confidence, the *"sequence margin"*, is declared in the
+class *"M"*; L3-S32 makes L3's mass *"the model's own distribution, not calibrated"*, the class it gives L2's.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, as Row 43.7 (i). (ii)
+**RELOCATED** — to ***the uncertainty surface***, as Row 43.7 (ii). (iii) **QUARANTINED.** *Audit question:* which of
+the key decoder's two numbers, the whole-sequence margin or the per-slice emission sigmoid, is published as its boundary
+confidence at the current commit, and what reads the other? (iv) **HISTORICAL** — the subsumed redesign and the
+calibration that remains — a status of the plan. (v) **QUARANTINED.** *Audit question:* on which run were the key
+margin's Class-P maps fitted, do the named artifacts hold them at the current commit, and does any path that runs read
+them? (vi) **RELOCATED** — to ***the uncertainty surface***, on which a carrier without a fitted map carries the
+empirically-unvalidated mark, as Row 21.194 (i).
+
+---
+
+**Row 45.14 — the chord decision's confidence: a composite of the margin class, vertical fit only, its carry limited;
+its map fitted and unwired; the jazz carrier unmapped.**
+
+*Outgoing statement.* The table row's cells "L4 chord" · "chord-of-slice (+ per-note membership)" · "composite: margin ⊕
+sufficiency ⊕ membership-cleanliness, squashed" · "M (declared-composite)" · "Components + monotone combination declared
+(§5 R4). **Vertical-fit-only by construction** (no progression signal) — a declared property the L5 override frame (§4)
+must account for, not a defect. Alternatives capped (topK), spelling-pinned siblings excluded — declared carry limits.
+**Stage-5 Class-P map FITTED (Phase 3, 2026-07-06: isotonic, Baroque+Default; held-out ECE 0.017/0.016; low band pooled
+flat to 0.289 — no invented resolution), WIRING PENDING. Jazz UNMAPPED (A-7). Artifacts:
+`stage5_classP_l4_chord_composite_{baroque,default}.json`.**" — the section *3. Per-layer inventory (what each layer
+publishes, in contract terms)*, the table, the row *L4 chord* (locator: line 75). The member's *L4* is the older stack's
+chord layer, its *L5 override frame* the older stack's function layer's frame. Five claims: (i) the chord decision's
+published confidence is a composite of margin, sufficiency and membership cleanliness, squashed, declared composite
+Class M, its components and its monotone combination declared; (ii) it is vertical-fit only by construction, with no
+progression signal, a declared property the override frame must account for and not a defect; (iii) its alternatives
+capped and spelling-pinned siblings excluded, declared limits of the carry; (iv) the Class-P map fitted at the fitting
+stage on two carriers, held out, its low band pooled into one level, its artifacts named, its wiring pending; (v) the
+jazz carrier left unmapped, under the same amendment's mark. The member's *flat* and *resolution* are its own words.
+
+*Derived statements that speak to it.* (i) L3-S32. (ii) None. (iii) None. (iv) None. (v) L3-S33.
+
+*Current-text axis.* (i) L3-S32: **DIFFERS**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+(iv) **THE DERIVATION IS SILENT**. (v) L3-S33: **AGREES** — the status *Provisional* *"is carried by anything resting on
+an unfitted weight, a stand-in value or a provisional input"*.
+
+*The difference, in both texts' own words.* (i) The outgoing composite is declared *"M (declared-composite)"*; L3-S32
+makes L3's mass *"the model's own distribution, not calibrated"*, the class it gives L2's.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, as Row 43.7 (ii), departing from Row
+10.137 — placement (l). (ii) **RELOCATED** — to ***the uncertainty surface***, whose frames decide what may override
+what, as Row 36.31 (iii). (iii) **QUARANTINED.** *Audit question:* does the chord decision's carry at the current commit
+cap its alternatives and exclude spelling-pinned siblings? (iv) **QUARANTINED.** *Audit question:* on which run were the
+chord composite's Class-P maps fitted, do the named artifacts hold them at the current commit, and does any path that
+runs read them? (v) **RELOCATED** — to ***the uncertainty surface***, on which a carrier without a fitted map carries
+the empirically-unvalidated mark, as Row 21.194 (i).
+
+---
+
+**Row 45.15 — the function decision's confidence, the cadence's among it: a composite to be squashed; unbounded as
+built; not calibratable as is, its map deferred.**
+
+*Outgoing statement.* The table row's cells "L5 function" · "RN/function-of-unit; cadence; modulation" · "three fixed
+components (cadence-vote attribution, licensed-fit, resolver margin) combined at default weights — **must publish
+squashed [0,1]**" · "M (declared-composite)" · "**Delta D-L5a (= review F-1 / L5-close D3):** as built,
+`FunctionConfidence.combined` is an unbounded additive (observed up to ~5.0) while §8's `earlierConfidence` is [0,1] —
+the boundary squash required by U2 is missing. Fix at the D3 close-out: keep the additive internally, publish the
+squashed form. **Stage-5 calibration (Phase 3, 2026-07-06): combinedBoundary NOT Class-P-upgradable as-is — non-monotone
+mid-range re-confirmed on corpus `c50002fee1` (the 0.6–0.8 band below the 0.5–0.6 band, all presets); map DEFERRED; the
+inversion is an upstream inference-quality finding.**" — the section *3. Per-layer inventory (what each layer publishes,
+in contract terms)*, the table, the row *L5 function* (locator: line 76). The member's *L5* is the older stack's
+function layer; *D-L5a* and *D3* are the member's labels, not decisions-register identities; the decisions the row names
+are the Roman numeral and function of a unit, the cadence and the modulation. Five claims: (i) the function decision's
+confidence, three fixed components combined at default weights, must be published squashed into [0,1], declared
+composite Class M; (ii) as built, the combined value is an unbounded sum while the override's earlier confidence is
+bounded, the boundary squash missing; (iii) the fix planned at the member's close-out: the sum kept internally, the
+squashed form published; (iv) the calibration at the fitting stage found the bounded value not upgradable to Class P,
+non-monotone in its middle range on a named corpus; (v) its map deferred, the inversion recorded as an upstream
+inference-quality finding.
+
+*Derived statements that speak to it.* (i) L3-S32. (ii) None. (iii) None. (iv) None. (v) None.
+
+*Current-text axis.* (i) L3-S32: **DIFFERS**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+(iv) **THE DERIVATION IS SILENT**. (v) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (i) The outgoing confidence of decisions that include the cadence is
+declared *"M (declared-composite)"*; L3-S32 makes L3's mass *"the model's own distribution, not calibrated"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, as Row 43.7 (ii). (ii) **QUARANTINED.**
+*Audit question:* does the function layer at the current commit publish its confidence squashed at its output boundary,
+and does any override site read the unbounded sum? (iii) **HISTORICAL** — a fix planned at the member's close-out,
+recorded closed at range 7's row *D-L5a* (Row 45.28). (iv) **QUARANTINED.** *Audit question:* on which run and corpus
+was the function confidence's mid-range inversion re-confirmed, and does it reproduce? (v) **HISTORICAL** — a deferral
+of the map and the record of a finding.
+
+---
+
+**Row 45.16 — the cadence vote: evidence for the tonic of a span, a weighted vote entering the frames as a
+contradiction; not calibratable.**
+
+*Outgoing statement.* The table row's cells "L5 cadence vote" · "tonic-of-span evidence" · "weighted vote (monotone sum
+of evidence + salience − type discount)" · "M (evidence weight)" · "Votes are **evidence**, not boundary confidences:
+they enter §4 frames as contradiction strengths. Their scale is fixed by the same squash discipline when compared
+against a key confidence (frame F-A below). **Stage-5 calibration (Phase 3, 2026-07-06): tonicVote NOT calibratable
+(anti-monotone, ~3 distinct values); recorded as an upstream detection-quality item (out of arc scope).**" — the section
+*3. Per-layer inventory (what each layer publishes, in contract terms)*, the table, the row *L5 cadence vote* (locator:
+line 77). The member's *L5 cadence vote* is the older stack's function layer's vote, and *F-A* its frame. Four claims:
+(i) the cadence vote is evidence for the tonic of the span; (ii) it is a weighted vote — a monotone sum of evidence and
+salience less a type discount — declared Class M as evidence weight: evidence and not a boundary confidence, entering
+the frames as a contradiction strength, made comparable by the same squash discipline when set against a key confidence;
+(iii) the calibration at the fitting stage found the vote not calibratable; (iv) recorded as an upstream
+detection-quality item, outside the arc's scope.
+
+*Derived statements that speak to it.* (i) L3-S38. (ii) None. (iii) None. (iv) None.
+
+*Current-text axis.* (i) L3-S38: **DIFFERS**. (ii) **THE DERIVATION IS SILENT**. (iii) **THE DERIVATION IS SILENT**.
+(iv) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (i) The outgoing cadence vote is *"tonic-of-span evidence"*; L3-S38 says
+*"No L3 fact may change an L2 fact, a rival or a mass."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides
+the tonality per span, as Rows 38.46, 43.24 and 44.30 placed the cadence confirming a key — §6.43's placement (p). (ii)
+**RELOCATED** — to ***the uncertainty surface***, whose frames decide what may override what. (iii) **QUARANTINED.**
+*Audit question:* on which run was the cadence vote found not calibratable, and does the finding reproduce? (iv)
+**HISTORICAL** — a finding recorded as an item outside the arc's scope.
+
+---
+
+**Row 45.17 — the legacy path's confidence: a sigmoid with hard-coded sentinels, unreliable; retiring at engagement.**
+
+*Outgoing statement.* The table row's cells "Legacy path" · "region key/chord" · "`normalizedConfidence` sigmoid + known
+sentinels (0.0 / 0.5 hard-coded — Stage-1c G4)" · "nominally M, unreliable" · "Documented unreliable (post-promotion
+re-rank without recompute). **Retires at engage** (the ENGAGE CRITERIA + RETIREMENT MAP block in
+`docs/implementation_roadmap.md`, R8); the contract does not attempt to repair it." — the section *3. Per-layer
+inventory (what each layer publishes, in contract terms)*, the table, the row *Legacy path* (locator: line 78).
+*Stage-1c G4* and *R8* are the member's labels. Two claims: (i) the legacy path's region key and chord confidence is the
+emission sigmoid with hard-coded sentinels, nominally Class M and documented unreliable, a re-rank after promotion
+without a recompute; (ii) it retires at engagement, and the contract does not repair it.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does any path that runs at the current commit publish the
+legacy path's sigmoid and its hard-coded sentinels? (ii) **HISTORICAL** — a retirement planned at engagement, under the
+retirement map the member names.
+
+---
+
+**Row 45.18 — the texture decision's confidence: the margin between the two best fits; the classifier dormant; the full
+ranked list; its floors; no new frame.**
+
+*Outgoing statement.* The table row's cells "**VL-C texture (axis 2)**" · "**texture-of-span**" · "the
+best-vs-second-best **fit** margin, where fit = `exp(−distance/fitScale)` of the z-space (ABz) euclidean distance to a
+class centroid — already ∈ [0,1)" · "M" · "The **axis-2** first judgment component (`cowork_voiceleading_axis_design.md`
+§5.3; `textureclassifier.h`, DORMANT). The published confidence is the exp-fit margin; squash per **R5** below. The
+output also carries the **full ranked list of ALL class fits with weights** (zero information loss). Three declared
+floors — **evidential** (min motion samples), **margin**, **fit** — are precision-phase; abstention = margin <
+margin-floor OR best fit < fit-floor (contract U5), single-voice → *no-pair* abstention. No new §4 comparison frame
+(nothing compares a VL confidence against a harmonic one)." — the section *3. Per-layer inventory (what each layer
+publishes, in contract terms)*, the table, the row *VL-C texture (axis 2)* (locator: line 79). *VL-C* and *axis 2* are
+the member's names for the voice-leading axis's texture component, and *R5* and *U5* its rules. Five claims: (i) the
+texture decision's published confidence is the margin between the best and the second-best fit, each fit an exponential
+of a distance to a class centroid, bounded by construction, declared Class M and squashed per rule *R5*; (ii) the
+classifier named is dormant; (iii) the output carries the full ranked list of all class fits with weights; (iv) three
+declared floors are precision-phase constants, abstention following the margin and fit floors, a single voice abstaining
+with no pair; (v) no new comparison frame, nothing comparing a voice-leading confidence against a harmonic one.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None. (iv) None. (v) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**. (iv) **THE DERIVATION IS SILENT**. (v) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, as Row 37.53 placed the axis's published
+confidences. (ii) **QUARANTINED.** *Audit question:* is the texture classifier reached by any path that runs at the
+current commit? (iii) **RELOCATED** — to ***the uncertainty surface***, on which every published fact carries its own
+mass (`FRAMEWORK.md` §5). (iv) **RELOCATED** — to ***the uncertainty surface***, as Row 43.8 placed the uncertain mark.
+(v) **RELOCATED** — to ***the uncertainty surface***, as Row 37.53 placed the absence of a new comparison frame.
+
+---
+
+**Row 45.19 — a frame: a declared triple of incumbent confidence, contradiction strength and conversion.**
+
+*Outgoing statement.* "A **frame** is a declared triple *(incumbent confidence, contradiction-strength measure,
+conversion)* under which one comparison is defined." — the section *4. The comparison frames (the §8 override
+arithmetic, stated once)*, its opening sentence (locator: lines 83–84).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, whose frame table is the one home of the
+override arithmetic, as Row 39.19 (i).
+
+*The decisions register at this row.* The data file's home for register entry **D-269** cites lines 83 to 85 — these
+lines and the blank line after them; its words stand at lines 101 to 103, range 6 (Rows 45.26 and 45.27). The decisions
+register's INDEX records **D-269** *"The frame table is the one home of the override arithmetic; a new override site
+declares its frame before it is built"* as LIVE, group C, entry ratified 2026-08-02 · user — not withheld and not seen,
+so the row carries no mark; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 45.20 — frame F-A's incumbent: the key's confidence, the squashed sequence margin.**
+
+*Outgoing statement.* "Incumbent: L3 key-of-span confidence (Class M, squashed sequence margin)." — the section *4. The
+comparison frames (the §8 override arithmetic, stated once)*, the bullet led *Frame F-A — cadence-confirmed modulation
+recompute (L5 §5.4).*, its colon lead *Incumbent:* opening the sentence that carries the claim (locator: lines 93–94).
+The bullet's bold lead is a label read as a title; its *L5 §5.4* is a section of the older stack's function layer, its
+*L3* the older stack's key layer, and *F-A* the member's frame.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, whose frames name each comparison's incumbent,
+as Row 39.19 (i).
+
+*The decisions register at this row.* The data file's home for register entry **D-601** cites lines 89 to 101 — the
+formula's last line and the lead in the cut, these lines, and line 101; its words stand at lines 107 to 111, in the cut,
+inside the section's paragraph on the premise of a conversion constant. The decisions register's INDEX records **D-601**
+*"Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted
+constant CAN do so must itself pass a premise ledger and a desk simulation"* as LIVE, group C, entry ratified 2026-08-04
+· user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 45.21 — frame F-A's contradiction: the cadential vote weight accumulated in the candidate key, as evidence
+weight.**
+
+*Outgoing statement.* "Contradiction: accumulated cadential vote weight in the candidate key (Class M evidence weight)."
+— the section *4. The comparison frames (the §8 override arithmetic, stated once)*, the bullet led *Frame F-A —
+cadence-confirmed modulation recompute (L5 §5.4).*, its colon lead *Contradiction:* (locator: lines 94–95). Two claims:
+(i) the frame's contradiction, set against the key's confidence, is the cadential vote weight accumulated in the
+candidate key; (ii) it is declared Class M as evidence weight.
+
+*Derived statements that speak to it.* (i) L3-S38. (ii) None.
+
+*Current-text axis.* (i) L3-S38: **DIFFERS**. (ii) **THE DERIVATION IS SILENT**.
+
+*The difference, in both texts' own words.* (i) The outgoing contradiction is the *"accumulated cadential vote weight in
+the candidate key"*, set against the key's confidence; L3-S38 says *"No L3 fact may change an L2 fact, a rival or a
+mass."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides
+the tonality per span, as Rows 38.46 and 43.24 placed the cadence overturning a key — §6.43's placement (p). (ii)
+**RELOCATED** — to ***the uncertainty surface***, as Row 39.46 placed the frames' contradiction quantities.
+
+*The decisions register at this row.* The data file's home for register entry **D-601** cites lines 89 to 101 — the
+formula's last line and the lead in the cut, these lines, and line 101; its words stand at lines 107 to 111, in the cut,
+inside the section's paragraph on the premise of a conversion constant. The decisions register's INDEX records **D-601**
+*"Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted
+constant CAN do so must itself pass a premise ledger and a desk simulation"* as LIVE, group C, entry ratified 2026-08-04
+· user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 45.22 — frame F-A's conversion: both quantities mapped to one bounded range by their declared squashes.**
+
+*Outgoing statement.* "Conversion: both mapped to the common [0,1] scale by their declared squashes before the
+θ-comparison." — the section *4. The comparison frames (the §8 override arithmetic, stated once)*, the bullet led *Frame
+F-A — cadence-confirmed modulation recompute (L5 §5.4).*, its colon lead *Conversion:* (locator: line 95); *θ* is the
+frame's factor.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, whose frame table is the one home of the
+override arithmetic, as Row 39.19 (i).
+
+*The decisions register at this row.* The data file's home for register entry **D-601** cites lines 89 to 101 — the
+formula's last line and the lead in the cut, these lines, and line 101; its words stand at lines 107 to 111, in the cut,
+inside the section's paragraph on the premise of a conversion constant. The decisions register's INDEX records **D-601**
+*"Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted
+constant CAN do so must itself pass a premise ledger and a desk simulation"* as LIVE, group C, entry ratified 2026-08-04
+· user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 45.23 — frame F-B's incumbent: the chord's composite confidence of a commit, vertical fit only, its factor
+accounting for the missing progression term.**
+
+*Outgoing statement.* "Incumbent: L4 composite confidence of a `Commit` (Class M; **vertical-fit-only** — the frame's θ
+accounts for the missing progression term, per L5 §15-2)." — the section *4. The comparison frames (the §8 override
+arithmetic, stated once)*, the bullet led *Frame F-B — fine-grain chord override (L5 §5.5 case-4).*, its colon lead
+*Incumbent:* (locator: lines 96–97). The bullet's bold lead is a label read as a title; its *L5 §5.5 case-4* and *L5
+§15-2* are sections of the older stack's function layer, its *L4* the older stack's chord layer, *F-B* the member's
+frame and *θ* its factor.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, whose frames name each comparison's incumbent,
+as Row 39.19 (i).
+
+*The decisions register at this row.* The data file's home for register entry **D-601** cites lines 89 to 101 — the
+formula's last line and the lead in the cut, these lines, and line 101; its words stand at lines 107 to 111, in the cut,
+inside the section's paragraph on the premise of a conversion constant. The decisions register's INDEX records **D-601**
+*"Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted
+constant CAN do so must itself pass a premise ledger and a desk simulation"* as LIVE, group C, entry ratified 2026-08-04
+· user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 45.24 — frame F-B's contradiction: the plausibility of the contradicting context, a cadential fit among its
+terms.**
+
+*Outgoing statement.* "Contradiction: the functional-plausibility score of the contradicting context
+(licensed-progression fit + cadential fit)." — the section *4. The comparison frames (the §8 override arithmetic, stated
+once)*, the bullet led *Frame F-B — fine-grain chord override (L5 §5.5 case-4).*, its colon lead *Contradiction:*
+(locator: lines 98–99). The member's *score* is its own word; the contradicting context's plausibility counts a
+cadential fit among its terms.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which settles the
+chord, as Row 9.163 placed this frame.
+
+*The decisions register at this row.* The data file's home for register entry **D-601** cites lines 89 to 101 — the
+formula's last line and the lead in the cut, these lines, and line 101; its words stand at lines 107 to 111, in the cut,
+inside the section's paragraph on the premise of a conversion constant. The decisions register's INDEX records **D-601**
+*"Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted
+constant CAN do so must itself pass a premise ledger and a desk simulation"* as LIVE, group C, entry ratified 2026-08-04
+· user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 45.25 — frame F-B's selection restricted to carried alternatives or neighboring committed harmony, never
+re-derived.**
+
+*Outgoing statement.* "Selection is restricted to carried alternatives / neighbouring committed harmony (never
+re-derivation)." — the section *4. The comparison frames (the §8 override arithmetic, stated once)*, the bullet led
+*Frame F-B — fine-grain chord override (L5 §5.5 case-4).* (locator: line 99).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose decision
+publishes its rivals and selects among them, as Row 9.163 placed this frame.
+
+*The decisions register at this row.* The data file's home for register entry **D-601** cites lines 89 to 101 — the
+formula's last line and the lead in the cut, these lines, and line 101; its words stand at lines 107 to 111, in the cut,
+inside the section's paragraph on the premise of a conversion constant. The decisions register's INDEX records **D-601**
+*"Before any constant that would make two differently-scaled confidences comparable is fitted, the premise that a fitted
+constant CAN do so must itself pass a premise ledger and a desk simulation"* as LIVE, group C, entry ratified 2026-08-04
+· user — not withheld and not seen, so the row carries no mark; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 45.26 — new frames declared in the frame table.**
+
+*Outgoing statement.* "**New frames require declaration here.**" — the section *4. The comparison frames (the §8
+override arithmetic, stated once)*, the paragraph led *New frames require declaration here.*, its bold lead, a complete
+sentence, tabulated under the first reading of rule (1) (locator: line 101).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, whose frame table is the one home of the
+override arithmetic.
+
+*The decisions register at this row.* Register entry **D-269**'s words stand on lines 101 to 103, the whole of this
+range, while the data file's home for it cites lines 83 to 85 (Row 45.19); and the data file's home for register entry
+**D-601** cites lines 89 to 101, ending on this range's first line, while its words stand at lines 107 to 111, in the
+cut. The decisions register's INDEX records **D-269** *"The frame table is the one home of the override arithmetic; a
+new override site declares its frame before it is built"* as LIVE, group C, entry ratified 2026-08-02 · user, and
+**D-601** *"Before any constant that would make two differently-scaled confidences comparable is fitted, the premise
+that a fitted constant CAN do so must itself pass a premise ledger and a desk simulation"* as LIVE, group C, entry
+ratified 2026-08-04 · user — neither withheld nor seen, so the row carries no mark; facts of the data file, relayed,
+moving no disposition.
+
+---
+
+**Row 45.27 — a future override site adding its frame row before build; an undeclared cross-layer comparison a
+violation.**
+
+*Outgoing statement.* "Any future override site (e.g. the A-4 cadence-less confirmation channels; the recognition
+consumer's schema-contradiction override, `cowork_progression_schema_design.md` §2) must add its frame row to this
+section before build — an undeclared cross-layer comparison is a contract violation." — the section *4. The comparison
+frames (the §8 override arithmetic, stated once)*, the paragraph led *New frames require declaration here.* (locator:
+lines 101–103). Among the future sites it names are the cadence-less key confirmation channels of an external review's
+amendment *A-4* and the recognition consumer's override.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the uncertainty surface***, whose frame table is the one home of the
+override arithmetic, as Row 39.19 (i).
+
+*The decisions register at this row.* Register entry **D-269**'s words stand on lines 101 to 103, the whole of this
+range, while the data file's home for it cites lines 83 to 85 (Row 45.19); and the data file's home for register entry
+**D-601** cites lines 89 to 101, ending on this range's first line, while its words stand at lines 107 to 111, in the
+cut. The decisions register's INDEX records **D-269** *"The frame table is the one home of the override arithmetic; a
+new override site declares its frame before it is built"* as LIVE, group C, entry ratified 2026-08-02 · user, and
+**D-601** *"Before any constant that would make two differently-scaled confidences comparable is fitted, the premise
+that a fitted constant CAN do so must itself pass a premise ledger and a desk simulation"* as LIVE, group C, entry
+ratified 2026-08-04 · user — neither withheld nor seen, so the row carries no mark; facts of the data file, relayed,
+moving no disposition.
+
+---
+
+**Row 45.28 — the delta D-L5a: the function confidence unbounded at the boundary, closed; as built the squashed value
+published.**
+
+*Outgoing statement.* The table row's cells "D-L5a" · "`FunctionConfidence.combined` unbounded at the boundary (D3)" ·
+"L5 §7" · "**✅ CLOSED (`0a88747e7f`, 2026-07-02, E0′-verified):** `combinedBoundary = combined/(combined+k)` published
+at the OUTPUT boundary (`functionoutput` — the §7 L5→L6 contract), observed ∈ [0, 0.9619] ⊂ [0,1) over the full E0
+range; the §8 sites do NOT read `combined` (verified at source: incumbents are the F-A/F-B quantities below); internal
+additive unchanged" — the section *7. As-built deltas to close (each a small, bounded fix; verified by the gap-analysis
+riders)*, the table, the row *D-L5a* (locator: line 151). *D-L5a* is the member's label for an as-built delta, not a
+decisions-register identity, *L5 §7* a section of the older stack's function layer, and *E0′* the member's label for a
+verification run. Two claims: (i) the delta — the function confidence unbounded at the boundary — closed at the commit
+and date the cell gives; (ii) as built after the closure, the squashed value published at the output boundary with its
+observed range, the override sites not reading the unbounded sum, the internal sum unchanged.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — the closure of a delta at a commit and a date. (ii) **QUARANTINED.**
+*Audit question:* does the function layer at the current commit publish the squashed value at its output boundary, do
+the override sites read it and not the unbounded sum, and on which run was its range observed?
+
+---
+
+**Row 45.29 — the delta D-FS: the frames' contradiction quantities undeclared; declared and squashed at the fitting
+stage; the factor's candidates fitted and unwired; the second frame's net harm.**
+
+*Outgoing statement.* The table row's cells "D-FS" · "The FRAME CONTRADICTION scales are undeclared: F-B's
+`bestPlaus − committedPlaus` (plausibility diff) and F-A's `cadentialWeight` are unbounded/unsquashed while their
+incumbents are [0,1] — the live commensurability gap behind the E0 override net-harm (968 fires / 45 corrections)" · "§4
+frames / `forwardoverride` call sites" · "declare both scales (observed ranges measured at E0′ #9 rider); squash-map
+shape + θ fitted at Stage-5 calibration (C2) — no behavior change before then. **Stage-5 Phase 3 (2026-07-06): scales
+DECLARED — F-A `cadentialWeight` squash `x/(x+3.5)`, F-B `bestPlaus−committedPlaus` squash `x/(x+2.0)` (R5; constants
+precision-phase; ranges re-confirmed on corpus `c50002fee1`). θ candidates FITTED, RECORDED, UNWIRED (dormant-chain
+sites; adoption rides the engage arc): F-A reduced candidate τ≈5.0 (corr−harm +6→+15 fit, +3→+5 held-out; full form
+deferred — the L3 incumbent is absent from the modulations dump); ★ F-B net-harm CONFIRMED + quantified — 1043 fires /
+53 corrections / 809 harms (~78 % of fires move an L4-correct root wrong); the best measurable θ effectively DISABLES
+the override → a REDESIGN item for the engage arc (the contradiction quantity is too coarse {2,3} and the incumbent band
+too high), not a θ retune.**" — the section *7. As-built deltas to close (each a small, bounded fix; verified by the
+gap-analysis riders)*, the table, the row *D-FS* (locator: line 152). *D-FS* is the member's label; *F-A* and *F-B* are
+its frames, *E0* and *E0′* its labels for measurement runs, and the corpus is named by a commit. Six claims: (i) the
+delta — the frames' contradiction quantities undeclared and unbounded while their incumbents are bounded — the gap
+behind the override's net harm the cell measures; (ii) the close-out planned: both quantities declared, the squash shape
+and the factor fitted at the calibration, no behavior change before then; (iii) at the fitting stage both quantities
+declared with their squash shapes, the constants precision-phase, the ranges re-confirmed on a named corpus; (iv) the
+factor's candidates fitted, recorded and unwired, the first frame's reduced candidate with its fitted and held-out
+counts; (v) the second frame's net harm confirmed and quantified, the best measurable factor in effect disabling the
+override; (vi) a redesign item for the engagement arc, not a retuning of the factor. The first frame's contradiction is
+the cadence's weight.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None. (iv) None. (v) None. (vi) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**. (iv) **THE DERIVATION IS SILENT**. (v) **THE DERIVATION IS SILENT**. (vi)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* on which run were the frames' unbounded contradiction
+quantities and the override's count of fires and corrections obtained, and does it reproduce? (ii)
+**RELOCATED** — to ***the uncertainty surface***, as Row 39.46. (iii) **RELOCATED** — to ***the uncertainty surface***,
+as Row 39.46, the squash shapes being declared structure and their constants precision-phase. (iv) **QUARANTINED.**
+*Audit question:* on which run were the factor's candidates fitted and their held-out counts obtained, and does the fit
+reproduce? (v) **QUARANTINED.** *Audit question:* on which run was the second frame's net harm quantified, and does it
+reproduce? (vi) **HISTORICAL** — an item of the engagement arc's plan.
+
+---
+
+**Row 45.30 — the delta D-L3a: two key confidences on the boundary, closed; as built the sequence margin the boundary
+confidence; the dormant sites without a margin.**
+
+*Outgoing statement.* The table row's cells "D-L3a" · "two key confidences ride the boundary (sequence margin + C1
+emission sigmoid)" · "L3 wiring" · "**✅ CLOSED (`f6f5137008`, 2026-07-04, C1-verified):** the sequence margin
+(`HarmonicRegion.keyConfidence`) declared THE Layer-3 boundary confidence; the emission sigmoid (`normalizedConfidence`)
+demoted to an internal gate input (the 0.8 annotate gate) + diagnostic. A **declaration-only** close-out —
+byte-identical on production AND dormant: no re-pointable D-L5a analogue exists (the two dormant sigmoid-stand-in sites
+— the joint re-key path `regionanalyzer.cpp` and the fullspine grouping dump `batch_analyze.cpp` — have **no
+sequence-margin substrate** on their path, so re-pointing would compute a non-existent value; recorded as a
+joint-key/Stage-5 gap, not this close-out). Evidence: margin ECE 0.125–0.142 vs sigmoid 0.38–0.44
+(`records/cc/reports/cc_c1_reliability_report.md` §3). Full provenance: `records/cc/reports/cc_dl3a_closeout_report.md`"
+— the section *7. As-built deltas to close (each a small, bounded fix; verified by the gap-analysis riders)*, the table,
+the row *D-L3a* (locator: line 153). *D-L3a* is the member's label, and *C1* its label for the reliability measurement.
+Three claims: (i) the delta — two key confidences riding the boundary — closed at the commit and date the cell gives;
+(ii) as built, the sequence margin declared the key layer's boundary confidence and the emission sigmoid demoted to an
+internal gate input and a diagnostic, a declaration-only close-out, byte-identical on the production and the dormant
+paths, the reliability values the cell gives as its evidence; (iii) no re-pointable analogue existing, the two dormant
+sites standing in a sigmoid carrying no sequence-margin substrate, recorded as a gap of the joint key step and the
+fitting stage.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — the closure of a delta at a commit and a date. (ii) **QUARANTINED.**
+*Audit question:* which of the key decoder's two numbers is published as its boundary confidence at the current commit,
+and on which run were the reliability values that decided it obtained? (iii) **QUARANTINED.** *Audit question:* do the
+two dormant sites the cell names carry any sequence-margin substrate at the current commit, and does any path that runs
+reach them?
+
+---
+
+**Row 45.31 — the delta D-LEG: the legacy resolver's sentinels and staleness; no repair, retiring at engagement.**
+
+*Outgoing statement.* The table row's cells "D-LEG" · "legacy sentinels (0.0/0.5) + post-promotion staleness" · "legacy
+resolver" · "no repair; retires at engage (A-2 map)" — the section *7. As-built deltas to close (each a small, bounded
+fix; verified by the gap-analysis riders)*, the table, the row *D-LEG* (locator: line 154). *D-LEG* is the member's
+label and *A-2* an amendment of an external review. Two claims: (i) the legacy resolver carries hard-coded sentinels and
+a staleness after promotion; (ii) no repair, the resolver retiring at engagement under the retirement map.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the legacy resolver at the current commit still
+publish its hard-coded sentinels, and does any path that runs reach it? (ii) **HISTORICAL** — a retirement planned at
+engagement.
+
+---
+
+**Row 45.32 — the delta D-INV: the inventory's formulas and ranges confirmed or corrected at source.**
+
+*Outgoing statement.* The table row's cells "D-INV" · "exact formulas/ranges at source for every row of §3" · "all" ·
+"gap-analysis Rider 6 (confidence inventory) confirms or corrects §3" — the section *7. As-built deltas to close (each a
+small, bounded fix; verified by the gap-analysis riders)*, the table, the row *D-INV* (locator: line 155). *D-INV* is
+the member's label and *Rider 6* a rider of the gap analysis.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the formulas and ranges the inventory states for each
+layer's published confidence hold at the current commit, and did the confidence-inventory rider confirm or correct them?
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) without a dated parenthesis are neither here nor among the rows; no line listed
+here carries the quotation-block marker.
+
+1. "Today those quantities are incommensurable by construction (review F-1): …" (16–18) — a defense: the as-built
+   incommensurability the contract's rules answer, read under rule (2); the older stack's published confidences it names
+   are stated again, row by row, in the table of range 3 (Rows 45.13 to 45.15).
+2. "Stage-5 weight fitting cannot repair a comparison between quantities with undefined semantics — …" (18–19) — a
+   defense: the reason the semantics are fixed before any fit, read under rule (2).
+3. "**Rules of use:**" (54) — a lead ending in a colon introducing five bullets; it opens the lines that carry register
+   entry D-268's words.
+4. "| Layer | Decision | Published confidence (boundary form) | Class | Notes / as-built deltas |" (70–71) — the table's
+   header row, with its separator line under it (71), the document's formatting, listed as one item.
+5. "The general §8 rule, stated once for all instances:" (84) — a lead ending in a colon introducing the override
+   formula, which lies in the cut (86 to 89); it lies on the lines the data file's home for register entry D-269 cites.
+6. "| # | Delta | Home | Close-out |" (149–150) — the table's header row, with its separator line under it (150), listed
+   as one item.
+
+#### The arithmetic at this member
+
+- Rows written: **32**.
+- **Outgoing statements placed: 68** — 18 rows of one claim, 6 rows of two (Rows 45.1, 45.7, 45.17, 45.21, 45.28 and
+  45.31), 1 row of three (Row 45.30), 2 rows of four (Rows 45.12 and 45.16), 3 rows of five (Rows 45.14, 45.15 and
+  45.18) and 2 rows of six (Rows 45.13 and 45.29).
+- Listed under *not a statement*: **6**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 40 | 45.1 (i), 45.1 (ii), 45.2, 45.3, 45.4, 45.5, 45.6, 45.7 (i), 45.7 (ii), 45.8, 45.9, 45.10, 45.11, 45.12 (i), 45.12 (ii), 45.13 (i), 45.13 (ii), 45.13 (vi), 45.14 (i), 45.14 (ii), 45.14 (v), 45.15 (i), 45.16 (i), 45.16 (ii), 45.18 (i), 45.18 (iii), 45.18 (iv), 45.18 (v), 45.19, 45.20, 45.21 (i), 45.21 (ii), 45.22, 45.23, 45.24, 45.25, 45.26, 45.27, 45.29 (ii), 45.29 (iii) |
+| QUARANTINED | 18 | 45.12 (iii), 45.13 (iii), 45.13 (v), 45.14 (iii), 45.14 (iv), 45.15 (ii), 45.15 (iv), 45.16 (iii), 45.17 (i), 45.18 (ii), 45.28 (ii), 45.29 (i), 45.29 (iv), 45.29 (v), 45.30 (ii), 45.30 (iii), 45.31 (i), 45.32 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 10 | 45.12 (iv), 45.13 (iv), 45.15 (iii), 45.15 (v), 45.16 (iv), 45.17 (ii), 45.28 (i), 45.29 (vi), 45.30 (i), 45.31 (ii) |
+| UNPLACED | 0 | — |
+| **Total** | **68** | — |
+
+**The column sums to 68 (0 + 0 + 40 + 18 + 0 + 10 + 0), against 68 statements, so the arithmetic closes at this
+member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 7 |
+| DIFFERS | 7 |
+| THE DERIVATION IS SILENT | 54 |
+| **Total verdicts** | **68** |
+
+The AGREES statements: 45.1 (i) (L3-S32), 45.3 (L3-S32), 45.4 (L3-S32), 45.7 (i) (L3-S32), 45.12 (ii) (L3-S32),
+45.13 (vi) (L3-S33), 45.14 (v) (L3-S33). The DIFFERS statements: 45.6 (L3-S32), 45.12 (i) (L3-S32), 45.13 (ii) (L3-S32),
+45.14 (i) (L3-S32), 45.15 (i) (L3-S32), 45.16 (i) (L3-S38), 45.21 (i) (L3-S38).
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 45 is empty, and the document is not
+  one of the five withheld from the deriving session's pack.
+- **SEEN rows: none** — no SEEN identity is homed in this document, agreeing with §5.
+- **Four homes of the decisions register's data file, none withheld or seen, none marking a row** — **register entry
+  D-268**, whose words stand on range 2's lines 54 to 66 (Rows 45.3 to 45.10) while its home cites lines 36 to 48, in
+  the cut; **register entry D-269**, whose home cites range 4's lines 83 to 85 (Row 45.19) while its words stand on
+  range 6's lines 101 to 103 (Rows 45.26 and 45.27); **register entry D-601**, whose home cites lines 89 to 101, range 5
+  and range 6's first line among them (Rows 45.20 to 45.27), while its words stand at lines 107 to 111, in the cut; and
+  **register entry D-267**, homed in the cut at lines 25 to 34, which hold its words. Facts of the data file, relayed
+  and not repaired; items 3 and 5 lie on the lines of D-268 and D-269 and, being items under *not a statement*, carry no
+  mark.
+- **The cut** holds the title and the status banner, §1's heading, §2's heading with its three classes and its amendment
+  of 2026-10-14, §3's and §4's headings, the override formula and its lead, §4's paragraph on the premise of a
+  conversion constant, §5's rules R4 to R6, §6's calibration obligations C1 to C4, §7's heading, §8's ratification asks,
+  and blank lines; no row is tabulated there.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -62296,6 +63425,7 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 43.2, 43.41 and 43.48 — the slice as the atomic unit of the analysis, the note and slice layers as pure facts
   using no preset, and the note model as the supplier of earlier music the requester asks for. *(L3-S40 AGREES at Row
   43.48, relaying IC-L1 beside S-53, Ruling 46 (v); Row 43.41 lies on register entry D-345's home, unmarked.)*
+- Row 45.11 — the older stack's note model and slicer publishing facts that carry no confidence, by design.
 
 **To *L2 — The tonal reading. The one entangled decision.***
 
@@ -62702,6 +63832,14 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   arbitration, and the new frame comparing it with the home key's confidence. *(L3-S38 DIFFERS at Row 44.30 (i), (ii)
   and (iii), as at Row 40.51; all these statements but those of Rows 44.17 and 44.18 lie on register entry D-504's home,
   and those of Rows 44.25, 44.26, 44.27 (i), 44.27 (ii) and 44.28 (i) on D-505's as well, SEEN homes, marked.)*
+- Rows 45.16 (i) and 45.21 (i) — the cadence vote as evidence for the tonic of a span, and the cadential vote weight
+  accumulated in a candidate key as frame F-A's contradiction against the key's confidence. *(L3-S38 DIFFERS at both, as
+  at Rows 38.46, 43.24 and 44.30; Row 45.21 (i) lies on the lines the data file's home for register entry D-601 cites,
+  unmarked.)*
+- Rows 45.24 and 45.25 — frame F-B's contradiction, the plausibility of the contradicting context with a cadential fit
+  among its terms, and its selection restricted to carried alternatives or neighboring committed harmony, never
+  re-derived. *(As Row 9.163 placed this frame; both rows lie on the lines the data file's home for register entry D-601
+  cites, unmarked.)*
 
 **To *the second axis — voice leading*.**
 
@@ -62836,6 +63974,29 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 44.7, 44.46 (i) and 44.48 (ii) — the chord layer's composite confidence, the chords-only mark of a line-defined
   entry, and the empirically-unvalidated mark of a recognition with no ground truth. *(Row 44.46 (i) lies on register
   entry D-507's home, a SEEN home, marked.)*
+- Rows 45.1 (i), 45.1 (ii) and 45.2 — every decision layer publishing a confidence, the forward override comparing a
+  later layer's contradiction against an earlier layer's confidence, and every override threshold, tie-break and joint
+  step operating on declared, comparable quantities. *(L3-S32 AGREES at Row 45.1 (i).)*
+- Rows 45.3, 45.4, 45.5, 45.6, 45.7 (i), 45.7 (ii), 45.8, 45.9 and 45.10 — the rules of use: a confidence attached to a
+  named decision, bounded and class-declared at a layer boundary, unbounded values squashed there, compared only within
+  one class and one declared frame, a margin never a probability, no comparison across producers without a conversion,
+  its provenance kept downstream, and the uncertain mark as low confidence in the declared class. *(L3-S32 AGREES at
+  Rows 45.3, 45.4 and 45.7 (i), and DIFFERS at Row 45.6; every row lies on the lines that carry register entry D-268's
+  words, its home citing other lines, unmarked.)*
+- Rows 45.12 (i), 45.12 (ii), 45.13 (i), 45.13 (ii), 45.14 (i), 45.14 (ii), 45.15 (i), 45.16 (ii), 45.18 (i),
+  45.18 (iii), 45.18 (iv) and 45.18 (v) — the published confidences of the older stack's layers in contract terms: the
+  phrase-boundary strength max-normalised and comparable within one profile, the key's whole-sequence margin, the
+  chord's composite, vertical fit only, the function decision's composite, the cadence vote's form as evidence weight in
+  the frames, and the texture margin with its ranked list, its floors and no new frame. *(L3-S32 DIFFERS at Rows
+  45.12 (i), 45.13 (ii), 45.14 (i) and 45.15 (i), as at Rows 36.31 (i) and 43.7 (ii), and AGREES at Row 45.12 (ii).)*
+- Rows 45.13 (vi) and 45.14 (v) — a carrier without a fitted map carrying the empirically-unvalidated mark. *(L3-S33
+  AGREES at both, as at Row 21.194 (i).)*
+- Rows 45.19, 45.20, 45.21 (ii), 45.22, 45.23, 45.26, 45.27, 45.29 (ii) and 45.29 (iii) — the frames: a frame a declared
+  triple, frame F-A's incumbent, the class of its contradiction and its conversion, frame F-B's incumbent, a new frame
+  declared before build, and the frames' contradiction quantities declared with their squash shapes. *(Register entry
+  D-269 makes the frame table the one home of the override arithmetic; Row 45.19 lies on the lines its home cites and
+  Rows 45.26 and 45.27 on the lines that carry its words; Rows 45.20 to 45.27 lie on the lines register entry D-601's
+  home cites; all unmarked.)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -62996,7 +64157,7 @@ member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 2
 the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
 numbered 36.n, member 37's the rows numbered 37.n, member 38's the rows numbered 38.n, member 39's the rows numbered 39.n,
 member 40's the rows numbered 40.n, member 41's the rows numbered 41.n,
-member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, and member 44's the rows numbered 44.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
+member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, and member 45's the rows numbered 45.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -64961,6 +66122,42 @@ No QUARANTINED row: the member's ranges record no measured property of the code 
 - Row 44.50 (v) — does any path that runs reach the recognition consumer at the current commit, and does the engage
   criterion the member names exclude it?
 
+**Member 45 — `cowork_confidence_contract.md`, the passages of the document.**
+
+- Row 45.12 (iii) — on which run was the split of the phrase-boundary strength into its spike and surface populations
+  measured, and does its spread reproduce?
+- Row 45.13 (iii) — which of the key decoder's two numbers, the whole-sequence margin or the per-slice emission sigmoid,
+  is published as its boundary confidence at the current commit, and what reads the other?
+- Row 45.13 (v) — on which run were the key margin's Class-P maps fitted, do the named artifacts hold them at the
+  current commit, and does any path that runs read them?
+- Row 45.14 (iii) — does the chord decision's carry at the current commit cap its alternatives and exclude
+  spelling-pinned siblings?
+- Row 45.14 (iv) — on which run were the chord composite's Class-P maps fitted, do the named artifacts hold them at the
+  current commit, and does any path that runs read them?
+- Row 45.15 (ii) — does the function layer at the current commit publish its confidence squashed at its output boundary,
+  and does any override site read the unbounded sum?
+- Row 45.15 (iv) — on which run and corpus was the function confidence's mid-range inversion re-confirmed, and does it
+  reproduce?
+- Row 45.16 (iii) — on which run was the cadence vote found not calibratable, and does the finding reproduce?
+- Row 45.17 (i) — does any path that runs at the current commit publish the legacy path's sigmoid and its hard-coded
+  sentinels?
+- Row 45.18 (ii) — is the texture classifier reached by any path that runs at the current commit?
+- Row 45.28 (ii) — does the function layer at the current commit publish the squashed value at its output boundary, do
+  the override sites read it and not the unbounded sum, and on which run was its range observed?
+- Row 45.29 (i) — on which run were the frames' unbounded contradiction quantities and the override's count of fires and
+  corrections obtained, and does it reproduce?
+- Row 45.29 (iv) — on which run were the factor's candidates fitted and their held-out counts obtained, and does the fit
+  reproduce?
+- Row 45.29 (v) — on which run was the second frame's net harm quantified, and does it reproduce?
+- Row 45.30 (ii) — which of the key decoder's two numbers is published as its boundary confidence at the current commit,
+  and on which run were the reliability values that decided it obtained?
+- Row 45.30 (iii) — do the two dormant sites the cell names carry any sequence-margin substrate at the current commit,
+  and does any path that runs reach them?
+- Row 45.31 (i) — does the legacy resolver at the current commit still publish its hard-coded sentinels, and does any
+  path that runs reach it?
+- Row 45.32 — do the formulas and ranges the inventory states for each layer's published confidence hold at the current
+  commit, and did the confidence-inventory rider confirm or correct them?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -65910,6 +67107,25 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 44.30 (iii) (L3-S38):** the outgoing text holds that *"the cadence remains the stronger confirmation"*
   of the key, where L3-S38 says *"No L3 fact may change an L2 fact, a rival or a mass."*
 
+**Member 45.** No ADOPTED — proposed row.
+
+- **DIFFERS — Row 45.6 (L3-S32):** the outgoing confidences may be compared *"only within one class and one declared
+  frame"*, where L3-S32 makes L3's mass *"comparable only within one working span's publication"*.
+- **DIFFERS — Row 45.12 (i) (L3-S32):** the outgoing strength is a *"graded boundary strength, max-normalised per
+  profile"*, declared *"M (salience-margin variant)"*, where L3-S32 makes L3's mass *"the model's own distribution, not
+  calibrated"*.
+- **DIFFERS — Row 45.13 (ii) (L3-S32):** the outgoing confidence, the *"sequence margin"*, is declared in the class
+  *"M"*, where L3-S32 makes L3's mass *"the model's own distribution, not calibrated"*, the class it gives L2's.
+- **DIFFERS — Row 45.14 (i) (L3-S32):** the outgoing composite is declared *"M (declared-composite)"*, where L3-S32
+  makes L3's mass *"the model's own distribution, not calibrated"*, the class it gives L2's.
+- **DIFFERS — Row 45.15 (i) (L3-S32):** the outgoing confidence of decisions that include the cadence is declared *"M
+  (declared-composite)"*, where L3-S32 makes L3's mass *"the model's own distribution, not calibrated"*.
+- **DIFFERS — Row 45.16 (i) (L3-S38):** the outgoing cadence vote is *"tonic-of-span evidence"*, where L3-S38 says *"No
+  L3 fact may change an L2 fact, a rival or a mass."*
+- **DIFFERS — Row 45.21 (i) (L3-S38):** the outgoing contradiction is the *"accumulated cadential vote weight in the
+  candidate key"*, set against the key's confidence, where L3-S38 says *"No L3 fact may change an L2 fact, a rival or a
+  mass."*
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -65961,11 +67177,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 42 | 51 | 2 | 0 | 46 | 0 | 0 | 3 | 0 | 4 |
 | 43 | 167 | 3 | 0 | 116 | 39 | 0 | 9 | 0 | 40 |
 | 44 | 80 | 1 | 0 | 47 | 6 | 0 | 4 | 22 | 53 |
-| **Total** | **4060** | **180** | **91** | **1704** | **1147** | **0** | **670** | **268** | **1209** |
+| 45 | 68 | 0 | 0 | 40 | 18 | 0 | 10 | 0 | 6 |
+| **Total** | **4128** | **180** | **91** | **1744** | **1165** | **0** | **680** | **268** | **1215** |
 
-**The arithmetic check:** 180 + 91 + 1704 + 1147 + 0 + 670 + 268 = 4060, against 4060 statements placed (43 + 34 + 21 +
+**The arithmetic check:** 180 + 91 + 1744 + 1165 + 0 + 680 + 268 = 4128, against 4128 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -66013,11 +67230,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 42 | 5 | 1 | 45 | 51 |
 | 43 | 12 | 8 | 147 | 167 |
 | 44 | 1 | 3 | 76 | 80 |
-| **Total** | **377** | **344** | **3347** | **4068** |
+| 45 | 7 | 7 | 54 | 68 |
+| **Total** | **384** | **351** | **3401** | **4136** |
 
-**The arithmetic check of the verdicts:** 377 + 344 + 3347 = 4068, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 384 + 351 + 3401 = 4136, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68).
 
 ## 14. The derivation's independence record, relayed
 
