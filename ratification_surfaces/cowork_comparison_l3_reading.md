@@ -22,7 +22,8 @@
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_eighteenth_2026_10_25.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md` Task 1, and under
 > `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md` Task 1, and under
-> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md` Task 1, executing the user's
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md` Task 1, and under
+> `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_second_2026_10_26.md` Task 1, executing the user's
 > rulings of 2026-10-17, Option B (`records/cowork/rulings/cowork_rulings_2026_10_17_l3_outgoing_population_sitting.md`
 > §2), and 2026-10-18, Option B (`records/cowork/rulings/cowork_rulings_2026_10_18_l3_keyword_list_sitting.md` §2),
 > the writing side's named-documents derivation recorded in that dispatch, and through them Rulings 1 to 4 and §5 of
@@ -107,11 +108,11 @@ its own entry there.
 | 53 | `cowork_idiom_entry_mapping.md` passages | **DONE** (§6.53) |
 | 54 | `cowork_bounded_context_design.md` passages | **DONE** (§6.54) |
 | 55 | `cowork_prefit_gates.md` passages | **DONE** (§6.55) |
-| 56 | The L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10 | NOT YET TABULATED |
+| 56 | The L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10 | **DONE** (§6.56) |
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 55 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 56 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -133,7 +134,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, position 54, the passages of `cowork_bounded_context_design.md`, and position 55, the passages of `cowork_prefit_gates.md`.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, position 53, the passages of `cowork_idiom_entry_mapping.md`, position 54, the passages of `cowork_bounded_context_design.md`, position 55, the passages of `cowork_prefit_gates.md`, and position 56, the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -176,9 +177,11 @@ member boundary after position 42 under its own limit on the batch, and not by a
 member boundary after position 44 under its own limit on the batch, and not by a capacity judgment; positions 45
 to 49 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`, which stopped at the
 member boundary after position 49 under its own limit on the batch, and not by a capacity judgment; positions 50
-to 55 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md`.**
-**The writing now stands at the member boundary after position 55: not done, positions 56 and 57, and the next
-writing resumes at position 56.**
+to 55 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md`, which stopped at the
+member boundary after position 55 under its own limit on the batch, and not by a capacity judgment; position 56 was tabulated
+under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_second_2026_10_26.md`.**
+**The writing now stands at the member boundary after position 56: not done, position 57, and the next writing
+resumes at position 57.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -70958,6 +70961,707 @@ The AGREES statements: none. The DIFFERS statements: none.
 
 ---
 
+### 6.56 — Member 56: the L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10
+
+> **Manifest for this member.** Position **56**. Kind: *the L0/L1 transfer input* — the rows the L0/L1 comparison
+> relocated to L3, built under the dispatch's Task 1(d) and not under the passage rule. Document:
+> `ratification_surfaces/cowork_comparison_l0_l1_reading.md`. Label: *"## 10. The TRANSFER LIST — every RELOCATED row,
+> by target charter"*, exactly as the artifact spells it. **The one published range**, as a locator only (**D-307**),
+> with its first and last line texts exactly as the artifact publishes them:
+>
+> - lines 14856–15142, from *"## 10. The TRANSFER LIST — every RELOCATED row, by target charter"* to the empty string —
+>   the range's last line is a blank line, the one before that file's `## 11.` heading.
+>
+> **The range is that file's §10, whole.** Its two line texts were compared with the lines at their locators in the
+> L0/L1 reading file's blob at the commit that landed this batch's dispatch, by a script reading the artifact at that
+> commit, **and both match**; the range holds 287 lines. The blob carries no carriage return, so nothing was stripped
+> before a comparison. No other member of the artifact is cut from this document. **Three lines inside the range are
+> headings** — lines 14856, 15084 and 15129 — and under the first reading rule of §6 they are titles, neither tabulated
+> nor listed. **The unit here is not a sentence of §10** (Task 1(d)): one **transfer row** per L0/L1 row that a *To L3*
+> block of the range names — the twelve bullets of the first block, one row each, then the added block's four bullets,
+> which name ten, two, one and one rows — in the order they stand, **a bullet naming several L0/L1 rows giving one
+> transfer row per row it names**, each of those rows quoting the whole bullet and saying it is one of the rows that
+> bullet names. *That rule is new, stated for challenge*: the L2 comparison's §6.62 never met a bullet naming several
+> rows. **The alternative** — one transfer row per bullet, quoting each named row's outgoing statement inside it — is
+> stated and not taken, because Task 1(d) orders a pointer or a full row per outgoing statement and a bullet of ten rows
+> carries ten. Every other block of the range is listed under *not a statement*, one item per block. Counted at this
+> member by this session: **12** rows named by the first *To L3* block and **14** by the added one — **26 transfer
+> rows** (56.1 to 56.26): **23 pointer rows** and **3 full rows**. Outgoing statements: **5** (Rows 56.2, 56.10 and
+> 56.24; 1 row of one claim (Row 56.24) and 2 rows of two (Rows 56.2 and 56.10), each split — the arithmetic is at the
+> foot of this member). Listed under *not a statement*: **11**. Counted at this member by this session; the counts
+> appear here and at §13, and nowhere else.
+>
+> **How each row was built, and the search that decided it.** Every row quotes, first, its §10 entry with that entry's
+> lines in the L0/L1 file (*The L0/L1 entry.*), and second, the outgoing statement the L0/L1 row's own block in that
+> file's §6 quotes under *Outgoing statement.* or *Statement.*, with the document named in that block's `### 6.M`
+> heading and the block's own locator (*The outgoing statement it carries.*), the block's own elisions kept as it writes
+> them. Both are taken by script from the L0/L1 file's blob at this batch's Task 0 commit, the twenty-six blocks
+> extracted by `t1_blocks56.py` to `blocks56.json`. An L0/L1 row is always written with the prefix *L0/L1*: its number
+> is that comparison's own and has nothing to do with this file's row numbers. **Before any row was written, a scripted
+> search, `t1_search56.py`,** took each of the twenty-six outgoing statements from the L0/L1 blob and searched this
+> file's blob at the same commit — every *Outgoing statement.* paragraph of §6.1 to §6.55 and every item under every
+> *Not a statement* heading — for any shared run of six words, the comparison case-folded and blind to markup, and wrote
+> every candidate with its row or item to `search56.txt`; **every candidate it printed, fifty-seven, was then read by
+> eye at its row**, and the decision per row was written to `decisions56.txt` before the first row. **A pointer row**
+> names the row of §6.1 to §6.55 that tabulates the same sentence — or the same sentences, where the L0/L1 quotation
+> joins several this file tabulates one by one — and repeats no disposition, no verdict and no mark; the named row
+> carries them, whatever mark or placement it has. **A full row** is built where the sentence is tabulated nowhere in
+> this file as a statement, in the form of every other member's rows, with one further paragraph, *At the source now.*,
+> recording what the document's blob at this batch's Task 0 commit holds at the located lines and how the document is a
+> member of this population. Many L0/L1 blocks label their quotation *Statement.* rather than *Outgoing statement.*; the
+> two labels hold the same thing, and both are quoted the same way.
+>
+> **What kind of text this member is, and which placement readings apply.** A transfer list of another comparison:
+> one-line glosses of rows that comparison relocated to L3, each pointing at that comparison's own row. The placement
+> readings of the earlier members apply to the full rows alone, unchanged; a pointer row applies none. **At the full
+> rows**: each full row's sentence is listed at its own member under *not a statement* — two as defenses (§6.20's item
+> 17 and §6.9's item 37) and one as narrative (§6.36's item 19) — and each is placed on its content, as Task 1(d) orders
+> and as the L2 comparison's Row 62.48 placed sentences its member had listed; the second reading rule's own exception,
+> that a defense which also states a separate rule of its own is tabulated, is what Row 56.10's sentence meets. **The
+> quotation join has no instance**: no line of a quoted bullet or block ends in a hyphen, or in a slash after a letter.
+> The blockquote-marker, fenced-block, table and heading-line readings have no instance inside the range or at a full
+> row's lines, and no former wording is met.
+>
+> **Three cases no earlier member met, each stated for challenge.** (1) The shared bullet, above. (2) **A quotation
+> joining a sentence this file tabulates and a sentence it lists only under *not a statement*** — Rows 56.10 and 56.24:
+> the row is built in full for the second sentence alone and names the row that tabulates the first, so nothing is
+> tabulated twice (#6); **the alternative** — a pointer row naming both the row and the listed item — is stated and not
+> taken, because Task 1(d) orders a full row where a sentence is tabulated nowhere as a statement. (3) **A block that
+> quotes no sentence** — L0/L1 Row 10.37's block describes the seven scenarios of its document's §5 and carries their
+> locator: its words are quoted as the block writes them, and Row 56.21 names the nine rows of §6.36 that tabulate those
+> scenarios' sentences. **A pointer that names one claim of a sentence a row splits, or says where the quotation stops**
+> — Rows 56.3, 56.4, 56.5, 56.17 and 56.25 — follows the L2 comparison's Row 62.5, which names one claim of the row it
+> points at.
+>
+> **The marks of the full rows, located at the data file.** `item_4_identities_inside` for position 56 is empty, and a
+> walk of `tools/audit/decisions/backbone_decisions.json`, taken at the commit that landed this dispatch by explicit
+> hash, over every record carrying an identity and a home, the retired block included, found **no home in the L0/L1
+> reading file at all**, so no line of the range lies inside a home. For each full row, the lines its sentence occupies,
+> as the L0/L1 row's own block locates them and as the document's blob holds them, were set against every home the data
+> file records in the same document. **Row 56.2's sentence (`ARCHITECTURE.md`, lines 1614–1616) lies inside the home of
+> register entry D-607 (lines 1612–1624), live**, which is neither one of the twenty-three identities withheld from the
+> deriving session's pack nor a SEEN identity, so the row carries the decisions register's paragraph and no mark;
+> D-607's words equal its cited lines exactly. **Row 56.10's sentence (`cowork_layer5_engagement_design.md`, lines
+> 241–243) lies inside none** of the eight homes in that document, and **Row 56.24's
+> (`cowork_phrase_boundary_design.md`, lines 130–132) inside none** of the ten homes in that document, D-476 to D-485 —
+> so **no full row is marked WITHHELD or SEEN**, though `ARCHITECTURE.md` and `cowork_phrase_boundary_design.md` are two
+> of the five documents withheld from the pack. No retired entry is homed at any of these lines. **A pointer row carries
+> no mark of its own**; the row it names carries whatever mark its member gave it — Rows 2.7, 36.60, 36.91 and 36.92,
+> which Rows 56.6, 56.19 and 56.22 name, carry *WITHHELD* marks at their members, and no mark travels. **The SEEN check,
+> made at the homes:** no SEEN identity's home lies at a full row's lines — D-482 and D-484, in
+> `cowork_phrase_boundary_design.md`, stand at lines 254–256 and 83–94 — and none lies in the L0/L1 reading file. **Rows
+> naming L3-S4: none.**
+>
+> **How the full rows' subjects were placed.** **Row 56.2**, a fact of the published literature and the ground of
+> Row 20.31's rule, is **ADOPTED — proposed** on both claims, travelling with Row 20.31 (i), following §6.20 and
+> departing from no precedent. **Row 56.10**, the confidence of the older function layer's selection among carried chord
+> readings, is **RELOCATED** on both claims to *L2 — The tonal reading. The one entangled decision.*, as Row 9.83 placed
+> the margin itself: the L0/L1 comparison placed the row it quotes at L3, and this row places it with L2, said at the
+> row as a fact and not as a correction of that comparison. **Row 56.24**, a property of the per-profile strength
+> formula, is **UNPLACED**: Rows 36.41 and 36.118 place the formula and the same property with
+> *L1 — Change points, candidates and notated evidence*, while the L0/L1 row's own block, which this row quotes, records
+> that comparison's Ruling 49, *"Row 10.21's transform is the consumer's"*, and its Ruling 48, relocating the row's
+> computed half to L3. **This departs from §6.36's placement of Rows 36.41 and 36.118** and is stated for challenge:
+> **the alternative**, **RELOCATED** to L1 travelling with those two rows, is stated and not taken, because the block
+> this member quotes carries a ruled placement at the consumer which neither of those rows cites, and between the two a
+> session cannot defend one in one sentence. **No statement of this member is ADOPTED — carried, QUARANTINED, DISCARDED
+> or HISTORICAL.**
+
+---
+
+**Row 56.1 — L0/L1 Row 1.21: polyphonic phrase-boundary detection has no validated deterministic rule set in the
+literature, and this project's primitive may not be presented as established method.**
+
+*The L0/L1 entry.* "Row 1.21 — polyphonic phrase-boundary detection has no validated deterministic rule set in the
+literature, and this project's primitive may not be presented as established method." (locator: §10, lines 14864–14865).
+
+*The outgoing statement it carries.* "Polyphonic phrase-boundary detection has NO validated deterministic rule set in
+the literature — the L1.5 primitive is our own engineering and may not be presented as established method." —
+`ARCHITECTURE.md`, the section *"#### Layer 1 — the lossless note model"*, the D-607 block (the L0/L1 row's own locator:
+line 1612).
+
+*Where this file tabulates it.* **Row 20.31** (§6.20) — the quotation drops the sentence's bold markers and its closing
+parenthesis, which that row quotes whole.
+
+---
+
+**Row 56.2 — L0/L1 Row 1.22: almost all published work on locating phrase endings addresses a single melodic line.**
+
+*The L0/L1 entry.* "Row 1.22 — almost all published work on locating phrase endings addresses a single melodic line."
+(locator: §10, line 14866).
+
+*The outgoing statement it carries.* "Almost all published work on locating phrase endings addresses a single melodic
+line; for several simultaneous voices nothing comparable has been established." — `ARCHITECTURE.md`, the section *"####
+Layer 1 — the lossless note model"*, the D-607 block (the L0/L1 row's own locator: line 1614).
+
+This file holds the sentence only as §6.20's item 17 under *not a statement* — *reasoning offered for Row 20.31's rule,
+a defense* — so the row is built in full and the sentence placed on its content, as the L2 comparison's Row 62.48 placed
+sentences its member had listed: it states a fact of the published literature in its own right, of the kind
+Row 20.31 (i) tabulates. Two claims: (i) almost all published work on locating phrase endings addresses a single melodic
+line; (ii) for several simultaneous voices nothing comparable has been established.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — proposed**. *Proposal:* that L3's specification record, as a fact of the
+published literature beside Row 20.31 (i)'s, that almost all published work on locating phrase endings addresses a
+single melodic line. (ii) **ADOPTED — proposed**. *Proposal:* that it record, with the same standing, that nothing
+comparable has been established for several simultaneous voices — both travelling with Row 20.31 (i).
+
+*At the source now.* The sentence stands at lines 1614–1616 of the document's blob at this batch's Task 0 commit, found
+as quoted; it opens on line 1614, after the bold sentence that opens the paragraph at line 1612, and the nearest heading
+at the blob is *"#### Layer 1 — the lossless note model (Built+Live)"*, under *3. Directory Structure*. The lines lie in
+member 20's range 1612–1624, `ARCHITECTURE.md`'s passages under that top-level heading, where §6.20 lists the sentence
+under *not a statement*.
+
+*The decisions register at this row.* The decisions register's data file homes **register entry D-607** at this
+document's lines 1612 to 1624, the paragraph this sentence stands in; the decisions register's INDEX records it as
+*"Polyphonic phrase-boundary detection has NO validated deterministic rule set in the literature — the extension is
+engineering on monophonic cues, validated against our own corpus, and is not settled science"* (group J, LIVE, entry
+ratified 2026-08-04 · user) — a fact of the data file, moving no disposition and carrying no mark. Its words stand at
+its cited lines.
+
+---
+
+**Row 56.3 — L0/L1 Row 1.23(i): carrying the monophonic cues over to polyphony is this project's own engineering.**
+
+*The L0/L1 entry.* "Row 1.23(i) — carrying the monophonic cues over to polyphony is this project's own engineering."
+(locator: §10, line 14867).
+
+*The outgoing statement it carries.* "Carrying the monophonic cues over to polyphony is therefore engineering of ours" —
+`ARCHITECTURE.md`, the section *"#### Layer 1 — the lossless note model"*, the D-607 block (the L0/L1 row's own locator:
+line 1616).
+
+*Where this file tabulates it.* **Row 20.32, claim (i)** (§6.20) — the quotation is the sentence's first claim; that row
+tabulates the sentence with its second.
+
+---
+
+**Row 56.4 — L0/L1 Row 1.24(i): the gap cue generalizes cleanly to polyphony, a phrase boundary there being a
+near-simultaneous rest or long note across all voices.**
+
+*The L0/L1 entry.* "Row 1.24(i) — the gap cue generalizes cleanly to polyphony, a phrase boundary there being a
+near-simultaneous rest or long note across all voices." (locator: §10, lines 14868–14869).
+
+*The outgoing statement it carries.* "the **gap cue** generalizes cleanly, because a phrase boundary in polyphony is a
+near-simultaneous rest or long note across all voices" — `ARCHITECTURE.md`, the section *"#### Layer 1 — the lossless
+note model"*, the D-607 block (the L0/L1 row's own locator: line 1620).
+
+*Where this file tabulates it.* **Row 20.33, claim (i)** (§6.20) — the quotation is the middle of the sentence that row
+tabulates whole, the portion carrying its first claim.
+
+---
+
+**Row 56.5 — L0/L1 Row 8.1: the cadence and local-key markers a later layer produces over the decided chord and key.**
+
+*The L0/L1 entry.* "Row 8.1 — the cadence and local-key markers a later layer produces over the decided chord and key."
+(locator: §10, line 14870).
+
+*The outgoing statement it carries.* "The function layer reads the L4 chord **in** the L3 key and produces the **Roman
+numeral** (the precise superset of a T/S/D summary) plus **cadence** and **local-key** markers" — `ARCHITECTURE.md`, the
+section *"#### Layer 5 — the function/cadence layer"*, the opening paragraph (the L0/L1 row's own locator: line 2077).
+
+*Where this file tabulates it.* **Row 2.1, claims (i) to (iii)** (§6.2) — the quotation ends before the clause that
+carries that row's claim (iv).
+
+---
+
+**Row 56.6 — L0/L1 Row 8.3: the perfect/imperfect cadence call, made on the bass-derived inversion, with the soprano
+arrival degree a soft nudge and no attempt at melody identification. …**
+
+*The L0/L1 entry.* "Row 8.3 — the perfect/imperfect cadence call, made on the bass-derived inversion, with the soprano
+arrival degree a soft nudge and no attempt at melody identification. *(Its bass half is carried at S-44 and travels with
+it.)*" (locator: §10, lines 14871–14873). The bullet's parenthesis names S-44, a statement of the L0/L1 derivation,
+relayed as it stands.
+
+*The outgoing statement it carries.* "**The perfect/imperfect cadence call is made on the BASS-DERIVED INVERSION; the
+soprano arrival degree is a soft optional nudge and this layer never attempts melody identification (D-584).**" —
+`ARCHITECTURE.md`, the section *"#### Layer 5 — the function/cadence layer"*, the three standing constraints (the L0/L1
+row's own locator: line 2111).
+
+*Where this file tabulates it.* **Row 2.7** (§6.2) — the same sentence, all three of that row's claims.
+
+---
+
+**Row 56.7 — L0/L1 Row 9.3: that a cadence is a function-level event and belongs after key and chord, never inside the
+key layer.**
+
+*The L0/L1 entry.* "Row 9.3 — that a cadence is a function-level event and belongs after key and chord, never inside the
+key layer." (locator: §10, lines 14874–14875).
+
+*The outgoing statement it carries.* "A cadence is a function-level event (a dominant arriving at, or being denied, a
+tonic), so it belongs after key and chord, never inside the key layer." — `cowork_layer5_function_design.md`, §1 (the
+L0/L1 row's own locator: line 37).
+
+*Where this file tabulates it.* **Row 7.9** (§6.7).
+
+---
+
+**Row 56.8 — L0/L1 Row 9.10: the cadence markers a later layer publishes: the type from the full typology, the location,
+and the confidence.**
+
+*The L0/L1 entry.* "Row 9.10 — the cadence markers a later layer publishes: the type from the full typology, the
+location, and the confidence." (locator: §10, lines 14876–14877).
+
+*The outgoing statement it carries.* "**Cadence markers** at each point of closure: the cadence **type from the full
+typology** …, its **location**, and its **confidence** — never a reduced set" — `cowork_layer5_function_design.md`, §3,
+*Produces* (the L0/L1 row's own locator: line 117).
+
+*Where this file tabulates it.* **Row 7.44** (§6.7) — the quotation's elision stands for the typology's list, and it
+ends before the sentence's closing parenthesis; that row tabulates the sentence whole.
+
+---
+
+**Row 56.9 — L0/L1 Row 18.36: a decision's forward context span running to the first of a cadence-anchored function, a
+picked punctuation boundary, or a hard bound.**
+
+*The L0/L1 entry.* "Row 18.36 — a decision's forward context span running to the first of a cadence-anchored function, a
+picked punctuation boundary, or a hard bound." (locator: §10, lines 14878–14879).
+
+*The outgoing statement it carries.* "A slice's **decision-context span** extends forward until the FIRST of: **(i)** a
+cadence-anchored function (a chord whose function a §5.2 cadence fixed), **(ii)** a punctuation boundary (the L1.5
+primitive's picked tick), **(iii)** a hard bound of `K` slices / `B` beats (settings — the §3.7 safety cap)." —
+`cowork_bounded_context_design.md`, §5, fifth bullet (the L0/L1 row's own locator: lines 175–179).
+
+*Where this file tabulates it.* **Row 54.32** (§6.54).
+
+---
+
+**Row 56.10 — L0/L1 Row 24.20: the selection's own joint-consistency margin, published as a declared confidence attached
+to the named decision and distinct from the resolver's next-best margin.**
+
+*The L0/L1 entry.* "Row 24.20 — the selection's own joint-consistency margin, published as a declared confidence
+attached to the named decision and distinct from the resolver's next-best margin." (locator: §10, lines 14880–14881).
+
+*The outgoing statement it carries.* "**NEW: the selection's joint-consistency margin** as a declared **Class-M**
+confidence — 'how much more consistent is the selected reading than the best *different-root* reading, across the §3.2
+channels' … This is the honest confidence of the *selection decision itself* (U1: it attaches to the named decision
+'function-of-unit-by-selection'), distinct from the resolver's `nextBestMargin` component." —
+`cowork_layer5_engagement_design.md`, §3.4 (the L0/L1 row's own locator: lines 240–243).
+
+The quotation joins two sentences. The first is tabulated at **Row 9.83** (§6.9), and nothing of it is tabulated again
+here; the second stands in this file only as §6.9's item 37 under *not a statement* — *a defense of Row 9.83* — so the
+row is built in full for the second sentence alone and placed on its content: beside defending the margin, it states
+what the margin attaches to and what it is distinct from. Two claims: (i) the margin is the confidence of the selection
+decision itself, attached to the named decision *function-of-unit-by-selection*; (ii) it is distinct from the resolver's
+next-best margin component.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling
+with Row 9.83: the decision this confidence belongs to selects the chord among carried readings, which the charter makes
+a portion of L2's one entangled decision, as Row 9.83 placed the margin itself. (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, travelling with Row 9.83. The L0/L1
+comparison placed the row this one quotes, L0/L1 Row 24.20, at L3; this row places it with L2, as a fact beside the
+disposition and not a correction of that comparison.
+
+*At the source now.* The two sentences stand at lines 239–243 of the document's blob at this batch's Task 0 commit, the
+one this row tabulates at lines 241–243, found as quoted but for three differences of form: the quotation's elision
+stands for the first sentence's closing clause, *"— squashed to [0,1) by a fixed monotone map (R5)."*, and the quotation
+writes single quotation marks where the document writes double ones, around the margin's question and around the
+decision's name. The document is member 9, compared whole (§6.9), and §6.9 lists the sentence under *not a statement*.
+
+---
+
+**Row 56.11 — L0/L1 Row 27.18: the section layer deriving its key areas by collapsing the published key sequence: one
+producer, its own layer's published derived fact.**
+
+*The L0/L1 entry.* "Row 27.18 — the section layer deriving its key areas by collapsing the published key sequence: one
+producer, its own layer's published derived fact." (locator: §10, lines 14882–14883).
+
+*The outgoing statement it carries.* "the SECTION layer derives areas by collapsing §3.2's key sequence — its own
+layer's published derived fact, one producer, as today (#7)" — `cowork_notation_output_contract.md`, §4, the key-areas
+cluster (the L0/L1 row's own locator: line 176).
+
+*Where this file tabulates it.* **Row 48.29** (§6.48) — the quotation is the third cell of the table row that row quotes
+cell by cell.
+
+---
+
+**Row 56.12 — L0/L1 Row 18.37: the discovery rule and the one-pass closure: an enlargement may finalize an open decision
+and never re-open a closed one, and a denied request leaves the decision resolved on what it saw with its provenance.**
+
+*The L0/L1 entry.* "Row 18.37 — the discovery rule and the one-pass closure: an enlargement may finalize an open
+decision and never re-open a closed one, and a denied request leaves the decision resolved on what it saw with its
+provenance." (locator: §10, lines 14884–14886).
+
+*The outgoing statement it carries.* "**Discovery:** a §5.5 resolution, §5.2 vote aggregation, or §5.3 persistence
+decision whose span was cut by the **selection edge before any of (i)–(iii) held** requests a forward extension …
+Extension re-runs flow forward under the §8 one-pass closure (an extension may finalize an open decision, never re-open
+a closed one — data supply, not a back-edge). Denied → the decision resolves on what it saw (or its honest open mark) +
+the item-10 provenance." — `cowork_bounded_context_design.md`, §5, fifth bullet (the L0/L1 row's own locator: lines
+179–183).
+
+*Where this file tabulates it.* **Rows 54.33, 54.34 and 54.35** (§6.54) — the quotation joins the three sentences this
+file tabulates one by one, its elision standing for Row 54.33's closing parenthesis.
+
+---
+
+**Row 56.13 — L0/L1 Row 10.9, one of the ten rows the added block's first bullet names: the graded boundary-strength
+profile and its picking, to the phrase read-off (Ruling 48).**
+
+*The L0/L1 entry.* "Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37 and 10.41 — the graded profile,
+its gap-dominant weights, the marker spikes, the max-normalisation, the adaptive threshold, the peak-picking, the picked
+set and the *"ends a phrase"* flag, to the phrase read-off under the L1 → L3 contract, *"with D-476 to D-485 re-homed
+there and D4 (D-478) remaining that consumer's ruled rule"* (Ruling 48)." (locator: §10, lines 15104–15108). It is one
+of the ten rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "A **phrase boundary** is a tick where a musical phrase **ends** (the next phrase
+begins at the following sounding onset, which this primitive does not separately mark)." —
+`cowork_phrase_boundary_design.md`, §1 (the L0/L1 row's own locator: line 49).
+
+*Where this file tabulates it.* **Row 36.10** (§6.36).
+
+---
+
+**Row 56.14 — L0/L1 Row 10.10, one of the ten rows the added block's first bullet names: the graded boundary-strength
+profile and its picking, to the phrase read-off (Ruling 48).**
+
+*The L0/L1 entry.* "Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37 and 10.41 — the graded profile,
+its gap-dominant weights, the marker spikes, the max-normalisation, the adaptive threshold, the peak-picking, the picked
+set and the *"ends a phrase"* flag, to the phrase read-off under the L1 → L3 contract, *"with D-476 to D-485 re-homed
+there and D4 (D-478) remaining that consumer's ruled rule"* (Ruling 48)." (locator: §10, lines 15104–15108). It is one
+of the ten rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "It emits a *graded strength*, not only a yes/no, so a consumer can read the
+confidence of a boundary, not just its presence." — `cowork_phrase_boundary_design.md`, §1 (the L0/L1 row's own locator:
+line 55).
+
+*Where this file tabulates it.* **Row 36.13** (§6.36).
+
+---
+
+**Row 56.15 — L0/L1 Row 10.18, one of the ten rows the added block's first bullet names: the graded boundary-strength
+profile and its picking, to the phrase read-off (Ruling 48).**
+
+*The L0/L1 entry.* "Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37 and 10.41 — the graded profile,
+its gap-dominant weights, the marker spikes, the max-normalisation, the adaptive threshold, the peak-picking, the picked
+set and the *"ends a phrase"* flag, to the phrase read-off under the L1 → L3 contract, *"with D-476 to D-485 re-homed
+there and D4 (D-478) remaining that consumer's ruled rule"* (Ruling 48)." (locator: §10, lines 15104–15108). It is one
+of the ten rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**Produces:** the **per-voice boundary-strength profiles** …; the **texture
+boundary-strength profile** …; the **picked boundary ticks** …; and the derived **\"ends a phrase\"** flag for a region
+…. All are notation facts carrying no judgement of key, chord, or function." — `cowork_phrase_boundary_design.md`, §3
+(the L0/L1 row's own locator: line 107).
+
+*Where this file tabulates it.* **Rows 36.37 and 36.38** (§6.36) — the quotation joins the two sentences this file
+tabulates one by one, its elisions standing for the first sentence's parentheses.
+
+---
+
+**Row 56.16 — L0/L1 Row 10.22, one of the ten rows the added block's first bullet names: the graded boundary-strength
+profile and its picking, to the phrase read-off (Ruling 48).**
+
+*The L0/L1 entry.* "Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37 and 10.41 — the graded profile,
+its gap-dominant weights, the marker spikes, the max-normalisation, the adaptive threshold, the peak-picking, the picked
+set and the *"ends a phrase"* flag, to the phrase read-off under the L1 → L3 contract, *"with D-476 to D-485 re-homed
+there and D4 (D-478) remaining that consumer's ruled rule"* (Ruling 48)." (locator: §10, lines 15104–15108). It is one
+of the ten rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "The **combined surface strength** at a point is the **weighted sum** of the three
+normalised profiles, with the **gap profile weighted highest** … The three weights are **precision-phase constants**;
+the mechanism … is fixed here." — `cowork_phrase_boundary_design.md`, §4.1 (the L0/L1 row's own locator: line 136).
+
+*Where this file tabulates it.* **Rows 36.43 and 36.44** (§6.36) — the quotation joins the two sentences this file
+tabulates one by one, its elisions standing for a parenthesis of each.
+
+---
+
+**Row 56.17 — L0/L1 Row 10.24, one of the ten rows the added block's first bullet names: the graded boundary-strength
+profile and its picking, to the phrase read-off (Ruling 48).**
+
+*The L0/L1 entry.* "Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37 and 10.41 — the graded profile,
+its gap-dominant weights, the marker spikes, the max-normalisation, the adaptive threshold, the peak-picking, the picked
+set and the *"ends a phrase"* flag, to the phrase read-off under the L1 → L3 contract, *"with D-476 to D-485 re-homed
+there and D4 (D-478) remaining that consumer's ruled rule"* (Ruling 48)." (locator: §10, lines 15104–15108). It is one
+of the ten rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "each contributes … a **fixed additive spike to the combined profile at its tick,
+of a magnitude set above the maximum possible surface-cue strength** …, so the marker **exceeds any surface-cue peak**
+and dominates wherever it occurs" — `cowork_phrase_boundary_design.md`, §4.2 (the L0/L1 row's own locator: line 143).
+
+*Where this file tabulates it.* **Row 36.45, claim (ii)** (§6.36) — the quotation opens inside the sentence's lead,
+after the words carrying that row's claim (i), and its elisions stand for a clause set off by dashes and for a
+parenthesis; that row tabulates the sentence whole.
+
+---
+
+**Row 56.18 — L0/L1 Row 10.26, one of the ten rows the added block's first bullet names: the graded boundary-strength
+profile and its picking, to the phrase read-off (Ruling 48).**
+
+*The L0/L1 entry.* "Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37 and 10.41 — the graded profile,
+its gap-dominant weights, the marker spikes, the max-normalisation, the adaptive threshold, the peak-picking, the picked
+set and the *"ends a phrase"* flag, to the phrase read-off under the L1 → L3 contract, *"with D-476 to D-485 re-homed
+there and D4 (D-478) remaining that consumer's ruled rule"* (Ruling 48)." (locator: §10, lines 15104–15108). It is one
+of the ten rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "the texture strength at an onset is the **sum of the per-voice strengths at that
+onset** — so a point where **many voices phrase together** … scores high … while a boundary in a single inner voice
+scores low." — `cowork_phrase_boundary_design.md`, §4.3 (the L0/L1 row's own locator: line 172).
+
+*Where this file tabulates it.* **Row 36.54** (§6.36) — the quotation opens after the sentence's lead clause, and its
+elisions stand for a parenthesis and a clause; that row tabulates the sentence whole.
+
+---
+
+**Row 56.19 — L0/L1 Row 10.28, one of the ten rows the added block's first bullet names: the graded boundary-strength
+profile and its picking, to the phrase read-off (Ruling 48).**
+
+*The L0/L1 entry.* "Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37 and 10.41 — the graded profile,
+its gap-dominant weights, the marker spikes, the max-normalisation, the adaptive threshold, the peak-picking, the picked
+set and the *"ends a phrase"* flag, to the phrase read-off under the L1 → L3 contract, *"with D-476 to D-485 re-homed
+there and D4 (D-478) remaining that consumer's ruled rule"* (Ruling 48)." (locator: §10, lines 15104–15108). It is one
+of the ten rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "The picked-boundary set is **the surface-cue peaks UNION every notated marker** —
+because the §4.2 markers are **deterministic facts** …, they are emitted **unconditionally**, not subjected to the
+threshold; only the **surface-cue** strength is peak-picked." — `cowork_phrase_boundary_design.md`, §4.4 (the L0/L1
+row's own locator: line 188).
+
+*Where this file tabulates it.* **Row 36.60** (§6.36) — the quotation's elision stands for a parenthesis.
+
+---
+
+**Row 56.20 — L0/L1 Row 10.29, one of the ten rows the added block's first bullet names: the graded boundary-strength
+profile and its picking, to the phrase read-off (Ruling 48).**
+
+*The L0/L1 entry.* "Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37 and 10.41 — the graded profile,
+its gap-dominant weights, the marker spikes, the max-normalisation, the adaptive threshold, the peak-picking, the picked
+set and the *"ends a phrase"* flag, to the phrase read-off under the L1 → L3 contract, *"with D-476 to D-485 re-homed
+there and D4 (D-478) remaining that consumer's ruled rule"* (Ruling 48)." (locator: §10, lines 15104–15108). It is one
+of the ten rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "a surface tick is picked when its texture combined strength … is **both** a
+**local maximum** … **and** above an **adaptive threshold** — the **mean of the whole score's texture combined strength
+profile plus `k` standard deviations**" — `cowork_phrase_boundary_design.md`, §4.4 (the L0/L1 row's own locator: line
+194).
+
+*Where this file tabulates it.* **Row 36.61** (§6.36) — the quotation drops the sentence's bold lead, its elisions stand
+for two parentheses, and it ends before a third; that row tabulates the sentence whole.
+
+---
+
+**Row 56.21 — L0/L1 Row 10.37, one of the ten rows the added block's first bullet names: the graded boundary-strength
+profile and its picking, to the phrase read-off (Ruling 48).**
+
+*The L0/L1 entry.* "Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37 and 10.41 — the graded profile,
+its gap-dominant weights, the marker spikes, the max-normalisation, the adaptive threshold, the peak-picking, the picked
+set and the *"ends a phrase"* flag, to the phrase read-off under the L1 → L3 contract, *"with D-476 to D-485 re-homed
+there and D4 (D-478) remaining that consumer's ruled rule"* (Ruling 48)." (locator: §10, lines 15104–15108). It is one
+of the ten rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* The L0/L1 block quotes no sentence; its *Statement.* reads, as it stands, "the
+seven bullets of §5 — a chorale phrase end; an instrumental phrase ended by a rest; a phrase end marked by lengthening;
+a section break; a passing leap that is not a boundary; one voice phrasing while the others continue; a purely harmonic
+cadence with no surface gap" — `cowork_phrase_boundary_design.md`, §5 (the L0/L1 row's own locator: lines 231–247).
+
+*Where this file tabulates it.* **Rows 36.76 to 36.84** (§6.36) — the nine rows that tabulate, one sentence at a time,
+the seven scenarios the L0/L1 block describes, their labels read at §6.36 as titles.
+
+---
+
+**Row 56.22 — L0/L1 Row 10.41, one of the ten rows the added block's first bullet names: the graded boundary-strength
+profile and its picking, to the phrase read-off (Ruling 48).**
+
+*The L0/L1 entry.* "Rows 10.9, 10.10, 10.18, 10.22, 10.24, 10.26, 10.28, 10.29, 10.37 and 10.41 — the graded profile,
+its gap-dominant weights, the marker spikes, the max-normalisation, the adaptive threshold, the peak-picking, the picked
+set and the *"ends a phrase"* flag, to the phrase read-off under the L1 → L3 contract, *"with D-476 to D-485 re-homed
+there and D4 (D-478) remaining that consumer's ruled rule"* (Ruling 48)." (locator: §10, lines 15104–15108). It is one
+of the ten rows this bullet names, and each of them quotes the whole bullet.
+
+*The outgoing statement it carries.* "**D4 — A graded boundary-strength model, not a binary union (user-ratified
+2026-06-26).** The boundary is a peak in a continuous strength profile, not the OR of a few binary signals. *Rejected:*
+the binary union — a degenerate special case that cannot express \"a gap larger than its neighbours,\" inflates recall,
+and wrecks precision (per the research: a weighted combination measurably beats any single cue and beats a naive union;
+the leading harmony-free models all compute graded strength + peaks)." — `cowork_phrase_boundary_design.md`, §6 (the
+L0/L1 row's own locator: line 260).
+
+*Where this file tabulates it.* **Rows 36.91 and 36.92** (§6.36) — the quotation joins the decision's bold label, read
+at §6.36 as a title, and the two sentences this file tabulates one by one.
+
+---
+
+**Row 56.23 — L0/L1 Row 10.4, one of the two rows the added block's second bullet names: their computed half, to L3
+(Ruling 48).**
+
+*The L0/L1 entry.* "Rows 10.4 and 10.21 — *"RELOCATED to L3 for their computed half, their deterministic half already
+S-39's"* (Ruling 48)." (locator: §10, lines 15109–15110). It is one of the two rows this bullet names, and each of them
+quotes the whole bullet. Its *S-39's* names a statement of the L0/L1 derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "Its two parts have different character, stated honestly: the **notated markers**
+(fermata, structural barline, all-voice rest) are **deterministic facts**; the **surface-cue boundary strength** is a
+**computed profile** whose combination weights and peak threshold are **precision-phase constants**." —
+`cowork_phrase_boundary_design.md`, §2 (the L0/L1 row's own locator: line 73).
+
+*Where this file tabulates it.* **Row 36.22** (§6.36).
+
+---
+
+**Row 56.24 — L0/L1 Row 10.21, one of the two rows the added block's second bullet names: their computed half, to L3
+(Ruling 48).**
+
+*The L0/L1 entry.* "Rows 10.4 and 10.21 — *"RELOCATED to L3 for their computed half, their deterministic half already
+S-39's"* (Ruling 48)." (locator: §10, lines 15109–15110). It is one of the two rows this bullet names, and each of them
+quotes the whole bullet. Its *S-39's* names a statement of the L0/L1 derivation, relayed as it stands.
+
+*The outgoing statement it carries.* "the per-point strength is `x · (left + right)`. So the strength rises with
+**both** (a) the **degree of local change** … **and** (b) the **size** of the value itself (the leading `x` — a large
+gap is a stronger boundary than a small one, even where both are local changes)." — `cowork_phrase_boundary_design.md`,
+§4.1 (the L0/L1 row's own locator: line 130).
+
+Its first fragment closes the sentence **Row 36.41** (§6.36) tabulates whole, and nothing of it is tabulated again here;
+its second sentence stands in this file only as §6.36's item 19 under *not a statement* — *narrative explaining the
+formula Row 36.41 quotes* — so the row is built in full for the second sentence alone and placed on its content: it
+states a property of the strength. One claim: the per-profile strength rises with both the degree of local change and
+the size of the value itself, a large gap a stronger boundary than a small one.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: Rows 36.41 and 36.118, which place the formula and the same property with
+*L1 — Change points, candidates and notated evidence*; and the L0/L1 row's own block, which records that comparison's
+rulings that the transform is the consumer's and that its computed half goes to L3 — two placements on the record,
+between which this session cannot defend one in one sentence.
+
+*At the source now.* The sentence stands at lines 130–132 of the document's blob at this batch's Task 0 commit,
+found as quoted; its elision stands for the parenthesis *"(the value differing from its neighbours, captured by the
+change-ratios)"*. The quotation's first fragment stands at lines 129–130, the end of the sentence that opens at
+line 126. The lines lie in member 36's range 126–134, where §6.36 lists the sentence under *not a statement*. The
+document is one of the five withheld from the deriving session's pack, and no home of the decisions register lies
+at these lines.
+
+---
+
+**Row 56.25 — L0/L1 Row 13.14: the grouping's alignment window (Ruling 54).**
+
+*The L0/L1 entry.* "Row 13.14 — the grouping's alignment window (Ruling 54)." (locator: §10, line 15111).
+
+*The outgoing statement it carries.* "A cadence **closes** the punctuation-span whose **ending boundary lies at the
+cadence's arrival tick, or within the alignment window after it** (a cadence's arrival may slightly precede the notated
+span end — for example a suspended resolution …)" — `cowork_layer6_grouping_design.md`, §5.3 (the L0/L1 row's own
+locator: line 278).
+
+*Where this file tabulates it.* **Row 8.84, claim (i)** (§6.8) — the quotation's elision stands for the remainder of the
+parenthesis, which carries that row's claim (ii).
+
+---
+
+**Row 56.26 — L0/L1 Row 10.31: the *"ends a phrase"* region flag, with the objects Ruling 48 relocates to the phrase
+read-off (a family placement, authored by the writing side under `cc_instruction_comparison_l0_l1_seventh_2026_09_03.md`
+Task 1).**
+
+*The L0/L1 entry.* "Row 10.31 — the *"ends a phrase"* region flag, with the objects Ruling 48 relocates to the phrase
+read-off (a family placement, authored by the writing side under `cc_instruction_comparison_l0_l1_seventh_2026_09_03.md`
+Task 1)." (locator: §10, lines 15112–15114).
+
+*The outgoing statement it carries.* "A region **ends a phrase** when a picked boundary tick falls within its half-open
+tick span." — `cowork_phrase_boundary_design.md`, §4.4 (the L0/L1 row's own locator: line 200).
+
+*Where this file tabulates it.* **Row 36.64** (§6.36).
+
+#### Not a statement, at this member
+
+Each item is one block of the range, quoted from its opening with its line locator, and its kind named; the three
+heading lines are titles and are neither here nor among the rows.
+
+1. "**★ COMPLETE OVER THE POPULATION.** All 29 documents are tabulated, and every RELOCATED row of every …"
+   (14858–14860) — *the section's account of itself*: that file's statement that its transfer list is complete over its
+   population.
+2. "**To L3 — *the read-off facts*.**" (14862) — *the section's account of itself*: the lead of the block whose
+   bullets are Rows 56.1 to 56.12 above.
+3. "**To L2 — *the tonal reading, the one entangled decision*.** …" (14888–14990) — *the transfer list's rows
+   addressed to another charter*: the block's lead and the bullets of L0/L1 Rows 1.9, 3.46, 4.28, 4.33, 11.3, 11.4,
+   11.5, 11.6, 11.7, 11.10, 12.13, 12.25, 14.12, 15.18, 17.1, 17.2, 17.8, 17.10, 17.12, 17.14, 20.19, 21.1, 21.3, 21.5,
+   21.6, 21.7, 21.8, 22.8, 22.11, 22.20, 23.2, 24.3, 24.5, 24.6, 24.8, 24.19, 26.1, 26.3, 27.7, 28.9, 28.10, 18.18(ii),
+   18.27, 18.31, 18.32, 18.33 and 18.34, addressed to *L2 — The tonal reading. The one entangled decision.*
+4. "**To *the second axis — voice leading*.** …" (14992–15026) — *the transfer list's rows addressed to another
+   charter*: the block's lead and the bullets of L0/L1 Rows 12.17, 14.11, 19.5, 19.6, 19.7, 19.14, 19.29, 20.20, 26.2,
+   26.4, 28.7 and 28.8, addressed to *the second axis — voice leading*.
+5. "**To *the measurement of the analysis* (NOT A LAYER).** …" (15028–15082) — *the transfer list's rows addressed to
+   another charter*: the block's lead and the bullets of L0/L1 Rows 1.23(ii), 1.24(ii), 4.36, 4.38, 10.44, 10.48, 13.17,
+   13.18, 14.24, 15.20, 15.21, 18.42, 21.16, 23.1, 23.6, 23.9, 23.10, 24.4, 24.13, 24.14, 25.15, 28.13, 29.11, 29.12,
+   29.13 and 29.14, addressed to *the measurement of the analysis* (NOT A LAYER).
+6. "*Written 2026-09-03 under `cc_instruction_comparison_l0_l1_fifth_2026_09_03.md` Task 3(e). Additions …"
+   (15086–15087) — *the section's account of itself*: the added subsection's remark on when and how it was written.
+7. "**To L2 — *the tonal reading, the one entangled decision*.** …" (15089–15100) — *the transfer list's rows
+   addressed to another charter*: the block's lead and the bullets of L0/L1 Rows 25.5, 27.10, 11.12, 22.12, 22.16 and
+   11.8's L2 half, addressed to *L2 — The tonal reading. The one entangled decision.*
+8. "**To L3 — *the read-off facts*.**" (15102) — *the section's account of itself*: the lead of the added block whose
+   bullets are Rows 56.13 to 56.26 above.
+9. "**To *the second axis — voice leading*.** …" (15116–15122) — *the transfer list's rows addressed to another
+   charter*: the block's lead and the bullets of L0/L1 Row 16.2 and Rows 19.6, 19.7 and 19.14, addressed to
+   *the second axis — voice leading*.
+10. "**To the reader outside the analysis.** …" (15124–15127) — *the transfer list's rows addressed to another
+    charter*: the block's lead and the bullet of L0/L1 Row 20.12, addressed to the reader outside the analysis.
+11. "*Three items the rulings FLAG rather than place. Each stands here so the L2 surface meets it; none is …"
+    (15131–15141) — *the L2 comparison's flagged items, not this comparison's; nothing taken from them*: the flagged
+    subsection's remark and its three items (Rulings 48, 57 and 60).
+
+#### The arithmetic at this member
+
+- Rows written: **26** (56.1 to 56.26): **23 pointer rows** and **3 full rows** — pointer rows + full rows = 23 + 3 =
+  26, the rows of §6.56.
+- A pointer row's statement is counted at the row it names: **it is counted in neither table below.**
+- The three full rows — 56.2 and 56.10 carry two claims each and are split; 56.24 carries one.
+- **Outgoing statements placed (the full rows' statements): 5.**
+- Listed under *not a statement*: **11**.
+- **Every non-blank line of the range is accounted for**: 3 heading lines, 34 lines of the bullets the transfer rows
+  quote, and 227 lines of the eleven listed items — 3 + 34 + 227 = 264, the range's non-blank lines.
+- **Every outgoing statement carries exactly one disposition, and none carries two**: 5 dispositions over 5 statements.
+- **UNPLACED statements at this member: 1.**
+
+#### The distribution at this member, counted at these rows
+
+The 23 pointer rows are not counted here: each pointer row's statement is counted at the row it names.
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 2 | 56.2 (i), 56.2 (ii) |
+| RELOCATED | 2 | 56.10 (i), 56.10 (ii) |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 1 | 56.24 |
+| **Total** | **5** | — |
+
+**The column sums to 5 (0 + 2 + 2 + 0 + 0 + 0 + 1), against 5 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+The 23 pointer rows are not counted here, for the reason above.
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 5 |
+| **Total verdicts** | **5** |
+
+The AGREES statements: none. The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — `item_4_identities_inside` for position 56 is empty, and no full row's sentence lies inside
+  the home of one of the twenty-three withheld identities, located at the data file as the manifest states.
+- **SEEN rows: none** — no SEEN identity's home lies at a full row's lines or in the L0/L1 reading file, agreeing with
+  §5.
+- **A pointer row carries no mark of its own**; the row it names carries whatever mark its member gave it.
+- **One home of the decisions register's data file lies at a full row's lines**: **register entry D-607**
+  (`ARCHITECTURE.md`, 1612 to 1624), carried at Row 56.2 with the decisions register's paragraph and no mark. Its words
+  stand at its cited lines. No home lies at Row 56.10's or Row 56.24's lines, and none in the range.
+- **The marks were counted both ways** by `t1_nomarks56.py`: the identities the data file places at the full rows' lines
+  against the mark strings in this subsection — no withheld or SEEN identity at those lines, and each of the two mark
+  strings standing in the subsection zero times.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -71632,6 +72336,9 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   pooling, the weight vector's bound and penalty, the cadence features' own fitted weights, and the fit's scope with the
   emission tables never re-fitted blindly. *(As Rows 42.4, 42.9, 49.17 (i) and 49.20; Rows 55.3, 55.4, 55.6 and
   55.7 (ii) lie on register entry D-271's home, unmarked.)*
+- Rows 56.10 (i) and 56.10 (ii) — the selection's joint-consistency margin as the confidence of the selection
+  decision itself, attached to its named decision and distinct from the resolver's next-best margin. *(As Row 9.83;
+  the L0/L1 comparison placed the row this one quotes, L0/L1 Row 24.20, at L3.)*
 
 **To *the second axis — voice leading*.**
 
@@ -71982,7 +72689,7 @@ member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 2
 the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
 numbered 36.n, member 37's the rows numbered 37.n, member 38's the rows numbered 38.n, member 39's the rows numbered 39.n,
 member 40's the rows numbered 40.n, member 41's the rows numbered 41.n,
-member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 52's the rows numbered 52.n, member 53's the rows numbered 53.n, member 54's the rows numbered 54.n, and member 55's the rows numbered 55.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33, 34 and 51 relocate no row.)*
+member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 52's the rows numbered 52.n, member 53's the rows numbered 53.n, member 54's the rows numbered 54.n, member 55's the rows numbered 55.n, and member 56's full rows, numbered 56.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33, 34 and 51 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -74110,6 +74817,11 @@ No QUARANTINED row: the member's ranges record no built or measured property of 
 
 No QUARANTINED row: the member's range records no built or measured property of the code (§6.55's manifest header).
 
+**Member 56 — the L0/L1 transfer input, `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10.**
+
+No QUARANTINED row: the member's three full rows record no built or measured property of the code, and its pointer
+rows carry no disposition of their own (§6.56's manifest header).
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -75120,6 +75832,13 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 
 **Member 55.** No ADOPTED — proposed row, and no DIFFERS.
 
+**Member 56.**
+
+- **ADOPTED — proposed — Row 56.2 (i):** that L3's specification record, as a fact of the published literature
+  beside Row 20.31 (i)'s, that almost all published work on locating phrase endings addresses a single melodic line.
+- **ADOPTED — proposed — Row 56.2 (ii):** that it record, with the same standing, that nothing comparable has been
+  established for several simultaneous voices.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -75182,12 +75901,15 @@ are at its own foot, and the integers below are re-derivable from them.
 | 53 | 25 | 0 | 0 | 4 | 0 | 0 | 0 | 21 | 2 |
 | 54 | 56 | 0 | 0 | 42 | 4 | 0 | 6 | 4 | 5 |
 | 55 | 16 | 0 | 0 | 14 | 0 | 0 | 2 | 0 | 0 |
-| **Total** | **4530** | **196** | **91** | **1966** | **1212** | **0** | **722** | **343** | **1297** |
+| 56 | 5 | 0 | 2 | 2 | 0 | 0 | 0 | 1 | 11 |
+| **Total** | **4535** | **196** | **93** | **1968** | **1212** | **0** | **722** | **344** | **1308** |
 
-**The arithmetic check:** 196 + 91 + 1966 + 1212 + 0 + 722 + 343 = 4530, against 4530 statements placed (43 + 34 + 21 +
+**The arithmetic check:** 196 + 93 + 1968 + 1212 + 0 + 722 + 344 = 4535, against 4535 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
-0 + 27 + 25 + 56 + 16).
+0 + 27 + 25 + 56 + 16 + 5).
+
+*(Member 56's row counts its three full rows' statements alone; its 23 pointer rows are counted at the rows they name.)*
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -75246,12 +75968,13 @@ are at its own foot, and the integers below are re-derivable from them.
 | 53 | 0 | 0 | 25 | 25 |
 | 54 | 17 | 4 | 35 | 56 |
 | 55 | 0 | 0 | 16 | 16 |
-| **Total** | **429** | **359** | **3750** | **4538** |
+| 56 | 0 | 0 | 5 | 5 |
+| **Total** | **429** | **359** | **3755** | **4543** |
 
-**The arithmetic check of the verdicts:** 429 + 359 + 3750 = 4538, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 429 + 359 + 3755 = 4543, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
-0 + 27 + 25 + 56 + 16).
+0 + 27 + 25 + 56 + 16 + 5).
 
 ## 14. The derivation's independence record, relayed
 
