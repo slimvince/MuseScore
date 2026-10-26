@@ -102,7 +102,7 @@ its own entry there.
 | 48 | `cowork_notation_output_contract.md` passages | **DONE** (§6.48) |
 | 49 | `cowork_joint_estimator_architecture.md` passages | **DONE** (§6.49) |
 | 50 | `cowork_layer1_note_model_design.md` passages | **DONE** (§6.50) |
-| 51 | `docs/llm_integration.md` passages | NOT YET TABULATED |
+| 51 | `docs/llm_integration.md` passages | **DONE** (§6.51) |
 | 52 | `cowork_notation_adoption_increment.md` passages | NOT YET TABULATED |
 | 53 | `cowork_idiom_entry_mapping.md` passages | NOT YET TABULATED |
 | 54 | `cowork_bounded_context_design.md` passages | NOT YET TABULATED |
@@ -111,7 +111,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 50 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 51 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -133,7 +133,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, and position 50, the passages of `cowork_layer1_note_model_design.md`.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, and position 51, the passages of `docs/llm_integration.md`.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -175,10 +175,10 @@ member boundary after position 42 under its own limit on the batch, and not by a
 44 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md`, which stopped at the
 member boundary after position 44 under its own limit on the batch, and not by a capacity judgment; positions 45
 to 49 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`, which stopped at the
-member boundary after position 49 under its own limit on the batch, and not by a capacity judgment; position 50
-was tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md`.**
-**The writing now stands at the member boundary after position 50: not done, positions 51 to 57, and the next
-writing resumes at position 51.**
+member boundary after position 49 under its own limit on the batch, and not by a capacity judgment; positions 50
+and 51 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md`.**
+**The writing now stands at the member boundary after position 51: not done, positions 52 to 57, and the next
+writing resumes at position 52.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -68223,6 +68223,293 @@ The AGREES statements: 50.15 (i) (L3-S40), 50.17 (ii) (L3-S40). The DIFFERS stat
 
 ---
 
+### 6.51 — Member 51: `docs/llm_integration.md`, the passages of the document
+
+> **Manifest for this member.** Position **51**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `docs/llm_integration.md`. Label: *the passages of the document*, exactly as the artifact spells it — a
+> label that names no heading, so the member's section is the whole document, its lines 1 to 786, as at §6.35 to §6.50.
+> **The thirty-seventh member of this comparison made of passages, the seventeenth cut from a document other than
+> `ARCHITECTURE.md`, and the fourteenth cut from a document not withheld from the deriving session's pack**: its entry's
+> `item_4_identities_inside` is empty, so its passages are cut around term-search hits only. Seven ranges, each as a
+> locator only (**D-307**), with its first and last line texts exactly as the artifact publishes them (wrapped here for
+> width; the line texts keep their list markers and indentation, and range 5's carry the table's pipes, as the artifact
+> publishes them):
+>
+> - lines 110–115, from *"- Parallel fifths and octaves highlighted as the user edits"* to *"  instrument range
+>   status"*;
+> - lines 182–186, from *"**Visible to LLM:** pitch, duration, voice, dynamics, articulation, note"* to *"slurs,
+>   hairpins)."*;
+> - lines 414–416, from *"**MusicalAddress as join key:** Harmony, Annotation, and Note at the same"* to *"a match on
+>   the composite key — equivalent to a SQL join."*;
+> - lines 539–541, from *"**Musically annotated.** Include chord symbols and harmonic analysis from"* to *"re-derive
+>   harmony from raw pitch data."*;
+> - lines 575–593, from *"| Property | Include? | Notes |"* to *"| Staff line position | No | Computed |"*;
+> - lines 673–678, from *"**Deliverables:**"* to *"- Accept / reject flow"*;
+> - lines 708–711, from *"- Chord symbols and Roman numeral analysis per measure"* to *"- Voice leading quality
+>   assessments (parallel motion, voice crossing)"*.
+>
+> **Each of the fourteen line texts was compared with the line at its locator** in `docs/llm_integration.md`, read by
+> this session at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at that
+> commit, **and every one matches**; the ranges hold 46 lines. The blob carries no carriage return, so nothing was
+> stripped before a comparison. **No other member of the artifact is cut from this document** — this session's script,
+> listing every member whose document is `docs/llm_integration.md`, found position 51 alone — so nothing is excluded
+> from the cut. The document's other lines lie in no range — lines 1–109, 116–181, 187–413, 417–538, 542–574, 594–672,
+> 679–707 and 712–786, seven hundred and forty lines of which one hundred and eighty-four are blank, as this session's
+> script lists them; **the blob holds 786 lines, so its last cut span ends at line 786 and the cut holds 740 lines, as
+> the dispatch computed**. The script lists forty-seven heading lines among them — the title, the table of contents, and
+> the headings of the member's sections *1* to *11*, their subsections and its four phases. By those headings they hold:
+> the title (1); **the status banner** (3 to 6), a quotation block opening *"**Status:** Design phase. No code written
+> yet."*; the table of contents (10 to 22); §1, the vision (26 to 43); §2's headings and its capability lists outside
+> range 1 (47 to 104 and 106 to 108), and the sentence after range 1 saying the ambient layer uses the analysis's
+> rule-based output and not the model (117 and 118); §3's design decisions outside range 2 (122 to 180 and 188 to 225),
+> its search tools in a fenced block (161 to 167); **§4, the architecture**, its diagram in a fenced block (231 to 270),
+> its sub-sections on the score reader, the operation set, the validation layer and the client — **register entries
+> D-448's (286 to 288) and D-442's (304 to 305) homes** among them — and the client's interface in a fenced block (309
+> to 321); **§5, the core access layer, outside range 3** — its shared foundation and a fenced diagram (338 to 353), its
+> table of existing interfaces (373 to 390), **register entry D-444's home (367 to 369)**, the address fields' table
+> (403 to 408), **register entry D-445's home (418 to 421)**, beginning two lines after range 3 ends, what needs adding
+> with two fenced blocks (434 to 442 and 451 to 458), and what the layer is not responsible for; **§6, score addressing,
+> with register entry D-446's home (518 to 521)**; §7's opening, its principles outside range 4 (532 to 537 and 543 to
+> 548) and its example in a fenced block (552 to 571); **§8, the client, with register entries D-443's (601 to 604) and
+> D-447's (613 to 615) homes**, and its context-window strategy (617 to 628), which says the analysis's harmonic
+> analysis of the section is always sent; §9's phases outside range 6 (632 to 671 and 680 to 691); §10 outside range 7 —
+> its quotation-block remark (697 to 699) that the composing module does not belong to official MuseScore Studio, the
+> sentences around the four bullets, and the validation layer's use of the analysis (701 to 706 and 713 to 726); §11,
+> the relationship to the plugin interface (730 to 781); the closing provenance lines (785 and 786); the separator
+> lines; and the blank lines. *(This session read the whole document at its blob before writing anything, the cut with
+> it; the cut is named here by what stands there, and no cut line is tabulated.)* **The cut holds the member's own
+> account of its standing and much of what its ranges apply** — its banner (design phase, no code written), its whole
+> architecture and its seven homes of register entries. These are facts of the population artifact for the method
+> ruling's surface, no item quotes a cut line, and no member is widened by hand to take them (**D-671**). No other
+> member of the artifact covers the cut — the passage rule's cut, recorded here as at §6.15 to §6.50, and not repaired.
+> Outgoing statements: **0** (no row — the reading is stated below). Listed under *not a statement*: **38**. Counted at
+> this member by this session; the counts appear here and at §13, and nowhere else.
+>
+> **No WITHHELD home lies inside this member**: the artifact's `item_4_identities_inside` for position 51 is empty, and
+> `docs/llm_integration.md` is not one of the five documents withheld from the deriving session's pack. **No SEEN home
+> lies inside it, agreeing with §5** — none of the SEEN identities is homed in this document. This session's walk of
+> `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit hash),
+> over every record carrying an identity and a home, the retired block included, found **no home over the seven
+> ranges**, and over the eight cut spans **register entries D-448** at lines 286 to 288, **D-442** at 304 to 305,
+> **D-444** at 367 to 369, **D-445** at 418 to 421, **D-446** at 518 to 521, **D-443** at 601 to 604 and **D-447** at
+> 613 to 615. No retired entry is homed in this document. The walk agrees with the seven the dispatch read, no identity
+> beyond them and none of them missing; it prints each record's `status` as *not stated*. **Each home's `verbatim` was
+> compared with the lines its home cites, at the member's blob, and each of the seven equals its cited lines exactly** —
+> D-442's among them, which the dispatch had not compared — so no home of this document cites lines that do not hold its
+> words. The decisions register's INDEX records **D-442** *"A validation failure goes back to the language model as a
+> tool-call error and is never shown to the user"*, **D-443** *"Tool use is the only capability the provider abstraction
+> requires; a provider without it is read-only"*, **D-444** *"The core access layer is a facade over interfaces that
+> already exist, not a redesign"*, **D-445** *"A musical address does not identify a single note, so the note entity
+> carries its own identifier"*, **D-446** *"The language model resolves how the user names a passage; no index is built
+> and the kinds of reference are not enumerated"*, **D-447** *"The model's tool definitions are generated from the
+> operation set, never maintained by hand"* and **D-448** *"The operation set is curated from observed use, not an
+> exposure of every editing method"*, all seven in group N with status NOT STATED and entry ratified 2026-08-04 · user —
+> read by this session at the INDEX, facts of the decisions register, relayed and moving no disposition. **No item
+> listed here lies in a home**, so none carries a home's paragraph. **Rows naming L3-S4: none.**
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.50, the colon-lead reading and the status-table reading stated at §6.9's manifest header, tables taken
+> row by row, the quotation join, the blockquote-marker reading, the fenced-block reading and the reading of a range
+> that opens with a heading line were applied unchanged at this member.** **The blockquote-marker reading has no
+> instance inside a range**: the document's two marked spans, lines 3 to 6, its status banner, and lines 697 to 699, its
+> remark on the composing module, lie in the cut, and no line carries the marker after indentation. **The fenced-block
+> reading has no instance inside a range**: the document's seven fenced blocks — lines 161 to 167, 231 to 270, 309 to
+> 321, 338 to 353, 434 to 442, 451 to 458 and 552 to 571 — all lie in the cut. **The status-table reading has no
+> instance**: range 5's table lists properties of the score the planned serialization includes, not the statuses of
+> design documents; the document's two other tables, of existing interfaces and of address fields, lie in the cut.
+> **Tables taken row by row — range 5**: the table under *7.3 What to include* is taken row by row, its header row with
+> its separator line one item (item 11), keeping its pipes, and each of its seventeen rows one unit; **every row is
+> listed under *not a statement*** by the reading below, so no row is quoted cell by cell, and each listed row is quoted
+> with its pipes, as the header items of earlier members are — stated for challenge, placement (l). **The glossary
+> reading has no instance.** **The heading-line reading has no instance**: no range opens with a heading line, and each
+> item's nearest heading lies in the cut — *2.5 Ambient Intelligence (always-on)* (106), under *2. What LLMs Can Do in
+> MuseScore* (47), for range 1; *3.4 The filter: intentional vs. computed* (177), under *3. Key Design Decisions* (122),
+> for range 2; *5.3 The information model — key design point* (397), under *5. The Core Access Layer* (328), for range
+> 3; *7.1 Principles* (530), under *7. Serialization Design* (525), for range 4; *7.3 What to include* (573) for range
+> 5; *Phase 3 — Score Modification — ~4–6 additional weeks* (669), under *9. Implementation Phases* (632), for range 6;
+> and *10. Relationship to the Composing Module* (695) for range 7. **The quotation join has no instance**: no line
+> inside the ranges ends in a hyphen or a slash; line 208, which ends in a hyphen, lies in the cut. **How the leads were
+> read.** Range 2's *Visible to LLM:* and range 3's *MusicalAddress as join key:* are leads ending in a colon with their
+> content on the same line, listed with it (items 6 and 7); range 4's *Musically annotated.* is a label read with the
+> sentence after it (item 9); range 6's *Deliverables:* only introduces its bullets and is listed as a lead (item 29);
+> and range 1's lead-in, *Passive assistance the user did not explicitly request:*, lies in the cut. **The defense
+> reading**: no sentence inside the ranges is led *Why:*, and none is offered as the reasoning of a rule beside it. **No
+> passage inside the ranges records a correction, a closure, a supersession or an as-built state**: the document's
+> banner, in the cut, says no code is written. **The member's own identifiers** — its *LLM*, the language model; its
+> *Phase 3*, the integration's delivery phase and not this project's; its *MusicalAddress*, *Harmony*, *Annotation* and
+> *Note*, the score editor's element types; and its *§3.4* — are quoted as they stand; no three-digit identity of the
+> decisions register stands inside a range.
+>
+> **What this member is, read whole before anything was written, and why it places no statement.** The ranges are seven
+> passages of the design document, of May 2026, for a language-model integration in the score editor, which its banner
+> calls a design phase with no code written: five planned ambient features (range 1), what the model is shown of the
+> score (range 2), the editor's address used to match the elements standing at one position (range 3), the principle
+> that the serialization carries the analysis's chord symbols and harmonic analysis (range 4), a table of what the
+> serialization includes (range 5), a delivery phase's deliverables (range 6), and what the analysis supplies with every
+> stretch of music sent to the model (range 7) — less the cut, which holds the banner, the vision, the design decisions,
+> the architecture, the core access layer, the addressing, the client, the phases, the remark on the composing module
+> and the plugin interface. **How 1(a)'s five points were weighed.** **(a) The member's subject against L3's.** No
+> charter of `FRAMEWORK.md` §5 is named for a language-model integration: L0 to L3, the second axis and the two NOT A
+> LAYER items are all about the analysis and its measurement. **A sentence stating what a planned consumer is shown,
+> receives from the analysis or delivers states nothing the analysis does, must do, may assume or must not do**, so
+> under the unit every sentence, bullet and table row inside the ranges is listed under *not a statement*, as §6.33
+> listed the three sentences of `ARCHITECTURE.md`'s *19. LLM Integration — Claude Composer*, and as §6.25 and §6.26
+> listed the planned generation components and the constraint system. **L3's subjects appear only as things supplied to
+> the model** — the chord symbols (range 2's list, where they are the chord symbols written in the score; range 4; range
+> 5's row *Chord symbols*; range 7's first bullet) and the harmonic rhythm (range 7's third bullet, *"Harmonic rhythm
+> (where chord changes occur)"*) — and the other term-search hits are words: *Phrase completion suggestions*, a
+> suggestion feature, and *Undo macro grouping*, the editor's grouping of edits. **(b) Its *Phase 1* to *Phase 4*** are
+> the integration's delivery phases, not this project's. **(c) Its standing** — a design-phase document whose decisions
+> the decisions register records with status NOT STATED: range 6 is a list of planned deliverables, listed with the
+> other items. **(d) The decisions register's homes** — none inside the ranges, seven live entries in the cut, each
+> holding its words at its cited lines. **(e) Range 5 is a table** of seventeen rows, each listed. **The readings most
+> open to challenge, stated rather than taken.** (l) The table's rows listed with their pipes, as header items are,
+> rather than quoted cell by cell, since no row is tabulated; **the alternative** — quoting each listed row by its
+> cells' words — is stated and not taken. (m) Range 4's two sentences, range 5's row *Chord symbols* and range 7's four
+> bullets name what the analysis publishes — L3's chord symbol and harmonic rhythm among it, the harmonic rhythm with
+> the member's gloss *"where chord changes occur"* — and range 4's second sentence says the consumer reads the published
+> facts and re-derives none, the shape of the rule that a fact is published once and consumers read it, which L3-S30 and
+> L3-S39 cite; **the alternative** — tabulating those sentences and bullets, and placing them UNPLACED or grading them
+> against L3-S30 and L3-S39 — is stated here and not taken, as §6.33 stated it for the same shape. (n) Range 1's ambient
+> features — consecutive fifths and octaves highlighted, harmonic inconsistencies noted, tooltips showing harmonic
+> function — name things an analysis could compute; **the alternative** — reading them as statements of what the
+> analysis must be able to do and placing them with the charters they touch — is stated and not taken, each bullet
+> saying what a planned feature shows the user.
+
+#### Not a statement, at this member
+
+Each item is one sentence, bullet or table row of the member, quoted from its opening with its line locator, and its
+kind named. Run-in bold labels read as titles under rule (1) are neither here nor among the rows; no line listed here
+carries the quotation-block marker.
+
+1. "Parallel fifths and octaves highlighted as the user edits" (110) — a planned feature of the integration's ambient
+   layer, what it shows the user as the user edits — not a statement of what the analysis does, must do, may assume or must
+   not do.
+2. "Out-of-range notes flagged per instrument" (111) — the same kind: a planned feature of the ambient layer.
+3. "Harmonic inconsistencies noted" (112) — the same kind: a planned feature of the ambient layer.
+4. "Phrase completion suggestions shown as ghost notes" (113) — the same kind; its *Phrase* is the term-search hit, an
+   English word naming a suggestion feature, not L3's phrase reading.
+5. "Hover tooltips showing harmonic function, voice leading quality, …" (114–115) — the same kind: what a planned
+   tooltip shows.
+6. "**Visible to LLM:** pitch, duration, voice, dynamics, articulation, note …" (182–186) — a lead ending in a colon
+   with its list on the same line: what the planned integration's model is shown of the score; its *chord symbols* are the
+   chord symbols written in the score, among the properties shown.
+7. "**MusicalAddress as join key:** Harmony, Annotation, and Note at the same …" (414–415) — about the score editor's
+   data model as the planned access layer reads it — its *Harmony* is the editor's element type — not the analysis.
+8. ""What chord symbol is sounding at this note?" is a match on the composite key …" (415–416) — the same kind: how the
+   planned access layer answers a query over the editor's data model.
+9. "**Musically annotated.** Include chord symbols and harmonic analysis from …" (539–540) — what the planned
+   serialization sends the model: the analysis's chord symbols and harmonic analysis go with the notes — what a planned
+   consumer receives from the analysis, read as §6.33 read its item 2.
+10. "The LLM should not have to re-derive harmony from raw pitch data." (540–541) — the same kind: how the planned
+    consumer's model reads the analysis, read as §6.33 read its item 3.
+11. "| Property | Include? | Notes |" (575–576) — the table's header row with its separator line, listed as one item;
+    its *Notes* heads the member's last column, which carries remarks.
+12. "| Pitch (concert) | Yes | Always concert pitch unless user requests written |" (577) — a property of the score the
+    planned serialization includes, and how — not a statement of the analysis.
+13. "| Duration | Yes | As beat fraction or common name (quarter, half, etc.) |" (578) — the same kind: a property of
+    the score the planned serialization includes or leaves out, and why.
+14. "| Voice | Yes | When multi-voice content is present |" (579) — the same kind: a property of the score the planned
+    serialization includes or leaves out, and why.
+15. "| Dynamic | Yes | Only when explicitly marked |" (580) — the same kind: a property of the score the planned
+    serialization includes or leaves out, and why.
+16. "| Articulation | Yes | staccato, tenuto, accent, etc. |" (581) — the same kind: a property of the score the planned
+    serialization includes or leaves out, and why.
+17. "| Chord symbols | Yes | From composing module analysis |" (582) — the same kind: the analysis's chord symbols among
+    what the planned serialization includes — what a planned consumer receives from the analysis, read as §6.33 read its
+    item 2.
+18. "| Key | Yes | Per measure where it changes |" (583) — the same kind: a property of the score the planned
+    serialization includes or leaves out, and why.
+19. "| Tempo | Yes | Per measure where it changes |" (584) — the same kind: a property of the score the planned
+    serialization includes or leaves out, and why.
+20. "| Rehearsal marks | Yes | As measure annotations |" (585) — the same kind: a property of the score the planned
+    serialization includes or leaves out, and why.
+21. "| Lyrics | Yes | With syllable boundaries |" (586) — the same kind: a property of the score the planned
+    serialization includes or leaves out, and why.
+22. "| Note color | Yes | Semantically meaningful (user-set) |" (587) — the same kind: a property of the score the
+    planned serialization includes or leaves out, and why.
+23. "| Visibility flag | Yes | Hidden notes affect LLM reasoning |" (588) — the same kind: a property of the score the
+    planned serialization includes or leaves out, and why.
+24. "| Ties / slurs | Yes | As note properties ("tiedForward", "slurStart") |" (589) — the same kind: a property of the
+    score the planned serialization includes or leaves out, and why.
+25. "| Stem direction | No | Computed by engraving engine |" (590) — the same kind: a property of the score the planned
+    serialization includes or leaves out, and why.
+26. "| Beam type | No | Computed |" (591) — the same kind: a property of the score the planned serialization includes or
+    leaves out, and why.
+27. "| Pixel positions | No | Computed |" (592) — the same kind: a property of the score the planned serialization
+    includes or leaves out, and why.
+28. "| Staff line position | No | Computed |" (593) — the same kind: a property of the score the planned serialization
+    includes or leaves out, and why.
+29. "**Deliverables:**" (673) — a lead ending in a colon, introducing the phase's deliverables.
+30. "Operation set (~40 operations, beginning with the highest-value ones)" (674) — the same kind: a planned deliverable
+    of the integration's third delivery phase.
+31. "Undo macro grouping (entire LLM response = one Ctrl+Z)" (675) — the same kind; its *grouping* is the term-search
+    hit, the score editor's grouping of edits into one undo step, not L3's grouping.
+32. "Validation layer (range, voice leading)" (676) — the same kind: a planned deliverable of the integration's third
+    delivery phase.
+33. "Diff preview UI (show what will change before applying)" (677) — the same kind: a planned deliverable of the
+    integration's third delivery phase.
+34. "Accept / reject flow" (678) — the same kind: a planned deliverable of the integration's third delivery phase.
+35. "Chord symbols and Roman numeral analysis per measure" (708) — what the analysis's output sent with every stretch of
+    music to the planned model includes — what a planned consumer receives from the analysis, read as §6.33 read its item 2.
+36. "Key and mode inference" (709) — the same kind: what the analysis's output sent with every stretch of music to the
+    planned model includes, read as §6.33 read its item 2.
+37. "Harmonic rhythm (where chord changes occur)" (710) — the same kind: what the analysis's output sent with every
+    stretch of music to the planned model includes, read as §6.33 read its item 2.
+38. "Voice leading quality assessments (parallel motion, voice crossing)" (711) — the same kind: what the analysis's
+    output sent with every stretch of music to the planned model includes, read as §6.33 read its item 2.
+
+#### The arithmetic at this member
+
+- Rows written: **0**.
+- **Outgoing statements placed: 0.**
+- Listed under *not a statement*: **38**.
+- **Every outgoing statement carries exactly one disposition, and none carries two** — this member has none, by the
+  reading stated in its manifest header.
+- **UNPLACED statements at this member: none.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 0 | — |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 0 | — |
+| **Total** | **0** | — |
+
+**The column sums to 0, against 0 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 0 |
+| **Total verdicts** | **0** |
+
+*(No statement, so no verdict.)* The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 51 is empty, and the document is not
+  one of the five withheld from the deriving session's pack.
+- **SEEN rows: none** — no SEEN identity is homed in this document, agreeing with §5.
+- **No home of the decisions register's data file lies inside the ranges.**
+- **Seven are homed in the cut, all live**: **register entries D-448** (286 to 288), **D-442** (304 to 305), **D-444**
+  (367 to 369), **D-445** (418 to 421), **D-446** (518 to 521), **D-443** (601 to 604) and **D-447** (613 to 615); no
+  retired entry is homed in the document. Each one's words stand at its cited lines.
+- **The cut** holds the title and the status banner, the table of contents, the whole of §1, §4, §6, §8 and §11, §2, §3,
+  §5, §7, §9 and §10 outside the ranges with their fenced blocks and tables, the closing provenance lines, separator
+  lines and blank lines; nothing is listed or tabulated from there.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -69204,7 +69491,7 @@ member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 2
 the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
 numbered 36.n, member 37's the rows numbered 37.n, member 38's the rows numbered 38.n, member 39's the rows numbered 39.n,
 member 40's the rows numbered 40.n, member 41's the rows numbered 41.n,
-member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, and member 50's the rows numbered 50.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
+member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, and member 50's the rows numbered 50.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33, 34 and 51 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -71279,6 +71566,10 @@ No QUARANTINED row: the member's ranges record no measured property of the code 
 - Row 50.25 — does the note model at the current commit hold the start-time-ordered list of note records, a borrowed
   pointer to the source score that must outlive it, and the numeric look-up index?
 
+**Member 51 — `docs/llm_integration.md`, the passages of the document.**
+
+No QUARANTINED row: the member places no statement (§6.51's manifest header).
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -72268,6 +72559,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 
 **Member 50.** No ADOPTED — proposed row, and no DIFFERS.
 
+**Member 51.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -72325,11 +72618,13 @@ are at its own foot, and the integers below are re-derivable from them.
 | 48 | 62 | 8 | 0 | 28 | 7 | 0 | 5 | 14 | 1 |
 | 49 | 40 | 2 | 0 | 30 | 1 | 0 | 7 | 0 | 4 |
 | 50 | 42 | 0 | 0 | 32 | 6 | 0 | 2 | 2 | 6 |
-| **Total** | **4406** | **193** | **91** | **1902** | **1195** | **0** | **708** | **317** | **1252** |
+| 51 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 38 |
+| **Total** | **4406** | **193** | **91** | **1902** | **1195** | **0** | **708** | **317** | **1290** |
 
 **The arithmetic check:** 193 + 91 + 1902 + 1195 + 0 + 708 + 317 = 4406, against 4406 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
+0).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -72383,11 +72678,13 @@ are at its own foot, and the integers below are re-derivable from them.
 | 48 | 10 | 1 | 51 | 62 |
 | 49 | 3 | 0 | 37 | 40 |
 | 50 | 2 | 0 | 40 | 42 |
+| 51 | 0 | 0 | 0 | 0 |
 | **Total** | **409** | **355** | **3650** | **4414** |
 
 **The arithmetic check of the verdicts:** 409 + 355 + 3650 = 4414, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
+0).
 
 ## 14. The derivation's independence record, relayed
 
