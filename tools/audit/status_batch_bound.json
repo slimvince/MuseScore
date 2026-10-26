@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md, Task 2",
+ "dispatch": "cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -693,38 +693,44 @@
    "base_commit": "878aa71e4036a047676f07384bf6c107414b3d46",
    "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md, Task 2",
+   "base_commit": "7a35424dc5b997b3576fdcfbdcfed6e32441cf31",
+   "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "878aa71e4036a047676f07384bf6c107414b3d46",
- "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md",
+ "base_commit": "7a35424dc5b997b3576fdcfbdcfed6e32441cf31",
+ "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md",
  "the_kind_of_move": "ordinary",
  "entries_moved": 3,
- "characters_moved": 3807,
+ "characters_moved": 3805,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2470,
-   "sha256": "23569b8e298d16b80ec9ac81e9fbd53600273b267e8a05f6e6c718658589d386",
+   "characters": 2435,
+   "sha256": "4f94028ee7f2b1f4eda6701c55c1ef85b1469e4dd3c10b601a47dc0077a14a7e",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-26 (CC — `records/cc/instructions/cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md`, Task 2, the close. **★★ THE L3 COMPARISO"
+   "opening": "*2026-10-26 (CC — `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`, Task 2, the close. **★★ THE L3 COMPARISON"
   },
   {
    "line_at_base": 10,
-   "characters": 940,
-   "sha256": "823454a9af3d6d50d14393d0f78fca387990f69fa603992194f41460c46e9c40",
+   "characters": 974,
+   "sha256": "7ca61ca5ba910d71a12cca753f447514fa1226cf6858362c241bb171eaf24f1a",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-26 (CC — Same dispatch, Task 1. **THE L3 COMPARISON CONTINUED: POSITIONS 43 AND 44 TABULATED**: a capacity judgment written to a file outside"
+   "opening": "*2026-10-26 (CC — Same dispatch, Task 1. **THE L3 COMPARISON CONTINUED: POSITIONS 45 TO 49 TABULATED**: a capacity judgment written to a file outside "
   },
   {
    "line_at_base": 12,
-   "characters": 397,
-   "sha256": "e0e95fd2b0a4af1b20e79a80a20777d923abd48ca6f9c8a998111cac9cf51108",
+   "characters": 396,
+   "sha256": "20d3f0a2633506afc6fcb4338858a94c1ab3d911319d9298166324557ebcddf7",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-26 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRY 444 ARE LANDED**, as they stood: each checked at its last bytes at its blob"
+   "opening": "*2026-10-26 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRY 445 ARE LANDED**, as they stood: each checked at its last bytes at its blob"
   }
  ],
  "reconciliation": {
