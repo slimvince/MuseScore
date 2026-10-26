@@ -98,7 +98,7 @@ its own entry there.
 | 45 | `cowork_confidence_contract.md` passages | **DONE** (§6.45) |
 | 46 | `cowork_progression_schema_dictionary.md` passages | **DONE** (§6.46) |
 | 47 | `cowork_layer2_slicing_design.md` passages | **DONE** (§6.47) |
-| 48 | `cowork_notation_output_contract.md` passages | NOT YET TABULATED |
+| 48 | `cowork_notation_output_contract.md` passages | **DONE** (§6.48) |
 | 49 | `cowork_joint_estimator_architecture.md` passages | NOT YET TABULATED |
 | 50 | `cowork_layer1_note_model_design.md` passages | NOT YET TABULATED |
 | 51 | `docs/llm_integration.md` passages | NOT YET TABULATED |
@@ -110,7 +110,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 47 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 48 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -132,7 +132,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, and position 47, the passages of `cowork_layer2_slicing_design.md`.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, and position 48, the passages of `cowork_notation_output_contract.md`.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -173,9 +173,9 @@ were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabul
 member boundary after position 42 under its own limit on the batch, and not by a capacity judgment; positions 43 and
 44 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md`, which stopped at the
 member boundary after position 44 under its own limit on the batch, and not by a capacity judgment; positions 45
-to 47 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`.**
-**The writing now stands at the member boundary after position 47: not done, positions 48 to 57, and the next
-writing resumes at position 48.**
+to 48 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`.**
+**The writing now stands at the member boundary after position 48: not done, positions 49 to 57, and the next
+writing resumes at position 49.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -65572,6 +65572,1024 @@ DIFFERS statements: 47.10 (ii) (L3-S1), 47.23 (ii) (L3-S39).
 
 ---
 
+### 6.48 — Member 48: `cowork_notation_output_contract.md`, the passages of the document
+
+> **Manifest for this member.** Position **48**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_notation_output_contract.md`. Label: *the passages of the document*, exactly as the artifact spells
+> it — a label that names no heading, so the member's section is the whole document, its lines 1 to 242, as at §6.35 to
+> §6.47. **The thirty-fourth member of this comparison made of passages, the fourteenth cut from a document other than
+> `ARCHITECTURE.md`, and the twelfth cut from a document not withheld from the deriving session's pack**: its entry's
+> `item_4_identities_inside` is empty, so its passages are cut around term-search hits only. Six ranges, each as a
+> locator only (**D-307**), with its first and last line texts exactly as the artifact publishes them (wrapped here for
+> width; the line texts keep their list markers and indentation, as the artifact publishes them):
+>
+> - lines 36–46, from *"1. **The span seam** (today `analyzeHarmonicRhythm` → `HarmonicRegion` vector): the caller
+>   names"* to *"   status-bar/accessibility formatter chain."*;
+> - lines 69–86, from *"- Span: `startTick`, `endTick`."* to *"  sounding-content derivation is a presentation-layer
+>   read of L1 facts and can (§5.3)."*;
+> - lines 98–106, from *"**★ Amendment (user-ratified 2026-07-26, at the P3a findings — display renderings are"* to *"D2
+>   ruling; the OI-199 review carries the thorough axis)."*;
+> - lines 167–182, from *"| audited cluster (rows) | legacy form | contract source |"* to *"| accessibility (1) |
+>   formatted annotation string | unchanged: downstream of the composing-bridge formatter, which reads this record |"*;
+> - lines 186–192, from *"The legacy exposure/annotation gates keep their FUNCTION (whether to expose a key run,
+>   coalesce"* to *"unchanged in role."*;
+> - lines 196–212, from *"1. **The decode equality:** the in-app record's inference fields on the 326 covered corpus"*
+>   to *"   the batch render's forms on the shared cases (the same derivation, one path, #6)."*.
+>
+> **Each of the twelve line texts was compared with the line at its locator** in `cowork_notation_output_contract.md`,
+> read by this session at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at
+> that commit, **and every one matches**; the ranges hold 78 lines. The blob carries no carriage return, so nothing was
+> stripped before a comparison. **No other member of the artifact is cut from this document** — this session's script,
+> listing every member whose document is `cowork_notation_output_contract.md`, found position 48 alone — so nothing is
+> excluded from the cut. The document's other lines lie in no range — lines 1–35, 47–68, 87–97, 107–166, 183–185,
+> 193–195 and 213–242, one hundred and sixty-four lines of which forty-one are blank, as this session's script lists
+> them; **the blob holds 242 lines, so its last cut span ends at line 242 and the cut holds 164 lines, where the
+> dispatch computed 213–243 and 165** — the dispatch states that the script's listing is what this header carries, and
+> every other span is the one the dispatch computed. The script lists seventeen lines opening with a number sign among
+> them: the title and the headings of the member's sections *1* to *8* and sub-sections *3.1* to *3.6* and *4.1*,
+> sixteen headings, and **line 233, which opens with *#16* and no space — a line of §7's paragraph, not a heading**,
+> recorded so the count is not misread. By those headings they hold: the title (1); the ratification paragraph (3 to 5);
+> the author and status paragraph (7 to 12); the governing inputs (14 to 19) and the terms paragraph (21 to 30); a
+> separator line (32); §1's heading (34) and the retirement paragraph after its items (48 to 50); **§2 whole (52 to 57),
+> register entry D-275's home (54 to 57) among it**; §3's heading and §3.1 whole (59 to 65); §3.2's heading (67); §3.3's
+> heading and its first group with its bullets (88 to 96), its second amendment, on the full candidate lists (108 to
+> 118), its second group (120 to 126) and its paragraph separating the two groups (128 to 135); **§3.4 whole (137 to
+> 147), register entry D-276's home (139 to 147) among it**; §3.5 (149 to 155) and §3.6 (157 to 163); §4's heading (165)
+> and §4.1's heading (184); §5's heading (194); §6, what the contract does not decide (214 to 221); §7, its self-check
+> (223 to 234); §8, the ratification asked (236 to 242); and the blank lines. *(This session read the whole document at
+> its blob before writing any row, the cut with it; the cut is named here by what stands there, and no cut line is
+> tabulated.)* **The cut holds the member's own account of its standing and much of what its ranges apply** — its
+> ratification and status, its governing inputs and terms, the provenance rule, the per-piece fields, the two
+> uncertainty groups and the modal reading. These are facts of the population artifact for the method ruling's surface,
+> no row quotes a cut line, and no member is widened by hand to take them (**D-671**). No other member of the artifact
+> covers the cut — the passage rule's cut, recorded here as at §6.15 to §6.47, and not repaired. Outgoing statements:
+> **62** (rows 48.1 to 48.43; 28 rows of one claim, 11 rows of two (Rows 48.1, 48.3, 48.7, 48.9, 48.14, 48.26, 48.27,
+> 48.30, 48.32, 48.39 and 48.42) and 4 rows of three (Rows 48.13, 48.17, 48.20 and 48.36), each split — the arithmetic
+> is at the foot of this member). Listed under *not a statement*: **1**. Counted at this member by this session; the
+> counts appear here and at §13, and nowhere else.
+>
+> **No WITHHELD home lies inside this member**: the artifact's `item_4_identities_inside` for position 48 is empty, and
+> `cowork_notation_output_contract.md` is not one of the five documents withheld from the deriving session's pack — **so
+> no row is marked WITHHELD**. **No SEEN home lies inside it, agreeing with §5** — none of the SEEN identities is homed
+> in this document — **so no row is marked SEEN**. This session's walk of
+> `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit hash),
+> over every record carrying an identity and a home, the retired block included, found **no home over the six ranges**,
+> and over the seven cut spans **register entries D-275** at lines 54 to 57 and **D-276** at 139 to 147. No retired
+> entry is homed in this document. The walk agrees with the two the dispatch read, no identity beyond them and none of
+> them missing. The decisions register's INDEX records **D-275** *"Every published record carries its own instrument
+> provenance; a provenance-less analysis cannot exist"* and **D-276** *"Modal colour is published as un-rounded
+> per-degree counts; no mode label is inferred or published anywhere"*, both LIVE in group B, entry ratified 2026-08-02
+> · user — read by this session at the INDEX, facts of the decisions register, relayed and moving no disposition. **Rows
+> naming L3-S4: two** — Row 48.13, whose claim (ii) is graded **AGREES** with it, and Row 48.15, whose disposition reads
+> it; each says that the derivation's §6 item 2 flags L3-S4 as coinciding with a ruled sentence the L0/L1 input contract
+> carries, for the comparison to check.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.47, the colon-lead reading and the status-table reading stated at §6.9's manifest header, tables taken
+> row by row, the quotation join, the blockquote-marker reading, the fenced-block reading and the reading of a range
+> that opens with a heading line were applied unchanged at this member.** **The blockquote-marker reading has no
+> instance**: no line of the document opens with the marker. **The fenced-block reading has no instance**: the script
+> finds no line opening with three backticks. **The status-table reading has no instance**: the one table maps audited
+> consumers onto the record's fields and records no status. **Tables taken row by row — range 4**: the table under *4.
+> The audited consumers, mapped (…)* is quoted row by row, each cell's words without the pipes and the cells joined
+> between their quotation marks by a middle dot, as §6.43 quoted its own; its header row is listed together with its
+> separator line as one item (item 1), keeping its pipes, and each of its fourteen rows is one unit (Rows 48.22 to
+> 48.35), a row of several claims split under 1(a). **The glossary reading has no instance inside a range**: the terms
+> paragraph (21 to 30) lies in the cut. **The heading-line reading has no instance**: no range opens with a heading
+> line, and each row's nearest heading lies in the cut — *1. The two seams (…)* (34) for range 1, *3.2 Per segment (…)*
+> (67) for range 2, *3.3 Per segment — the uncertainty surface (…)* (88) for range 3, *4. The audited consumers, mapped
+> (…)* (165) for range 4, *4.1 The presentation gates (…)* (184) for range 5 and *5. Establishment conditions (…)* (194)
+> for range 6. **The quotation join, at two lines**: line 100 ends *"preset-"*, a hyphen closing a word that the next
+> line finishes, so its quotation joins *"preset-styled"* with no space (Row 48.19); and **line 75 ends
+> *"(root/third/"*, a break inside a run of words joined by slashes, so its quotation joins
+> *"(root/third/fifth/seventh)"* with no space, as the dispatch orders and as the hyphen join does** (Row 48.10) —
+> **stated for challenge**: the previous batch's one slash line had a space before its slash and was rendered with one
+> space, and this one has none. The shared quotation code's join was widened for this member to a slash directly after a
+> letter, and no other line of the five documents or of the derivation ends that way. **The numbered lists**: ranges 1
+> and 6 are numbered items, each quoted from after its number. **How the leads were read.** Range 1's bold leads *The
+> span seam* and *The note seam* are labels read with the words after them (Rows 48.1 and 48.3). Range 2's bullet leads
+> *Span:*, *Key:*, *Chord class:* and *Derived chord facts (…):* open the sentences that carry their claims (Rows 48.6,
+> 48.7, 48.8 and 48.9), and the bold run *correcting the audit's DERIVABLE note:* opens the sentence that carries its
+> claims (Row 48.17). Range 3's lead *★ Amendment (user-ratified 2026-07-26, at the P3a findings — display renderings
+> are PRESENTATION derivations):* is a label carrying a dated ratification, read with the words after it and taken as
+> provenance (Row 48.18). Range 6's six bold leads are labels read with the words after them (Rows 48.38 to 48.43).
+> **The defense reading**: no sentence inside the ranges is led *Why:*; range 3's last parenthesis, the directive's
+> provenance and the review carrying the thorough axis, is taken with its row (Row 48.21). **The passages recording a
+> correction, a closure, a supersession or an as-built state.** (i) Range 1's *today* parentheses, naming the older
+> stack's functions the record replaces, **HISTORICAL** (Rows 48.1 (ii) and 48.3 (ii)). (ii) Range 2's correction of the
+> audit's remark **HISTORICAL**, split from the fitted vocabulary's collapse **QUARANTINED** and the presentation read
+> beside it (Row 48.17), and the legacy re-derivations the class's own answer replaces **HISTORICAL** (Row 48.14 (ii)).
+> (iii) Range 3's *verified fully derivable* and its guard **QUARANTINED** (Rows 48.20 (i) and 48.21). (iv) Range 4's
+> retirement of the older stack's mode plumbing **HISTORICAL** (Row 48.32 (i)) and its audited no-reader fields
+> **QUARANTINED** (Row 48.34); range 5's re-homed constant **QUARANTINED** (Row 48.37). (v) Range 6's conditions are
+> owed and not results, and each is placed with *the measurement of the analysis* — **following the former-wording
+> precedents in splitting a closure or a supersession from the rule and the as-built record beside it, as §6.39 split
+> its (iii) and §6.43 its (ii)**. **The member's own identifiers** — its *L1 facts*, the older stack's note facts; its
+> *section layer*, the older stack's; its *A*, the joint estimator; its open items *OI-173*, *OI-182*, *OI-193*,
+> *OI-194* and *OI-199*; its decisions *C1* and *D2*; *P3a*; and its sections *§1* to *§5*, *§3.3*, *§3.4*, *§3.5*,
+> *§3.6*, *§4.1*, *§5.2*, *§5.3*, *§5.6*, *§8.3* and *§10* — are quoted as they stand; no three-digit identity of the
+> decisions register stands inside a range.
+>
+> **What this member is, and how its subjects were placed.** The ranges are the contract, ratified 2026-07-26, for the
+> record the in-app notation path reads: its two seams; its per-segment fields; the first amendment of its uncertainty
+> surface, on display renderings; a table mapping the audited consumers onto the record; the presentation gates; and the
+> conditions under which each derived field is trusted — less the cut, which holds the ratification and status, the
+> inputs and terms, the provenance rule, the per-piece fields, the uncertainty groups, the modal reading, the ornament
+> labels, what the record does not carry, what the contract does not decide, its self-check and its ratification ask.
+> **The member was read whole, at its blob, before any row was written**, and its rows were then written in two
+> portions. **How 1(a)'s five points were weighed.** **(a) The member's subject against L3's.** **L3's subjects appear
+> at the places the dispatch names.** The chord symbol and its components as derived facts (range 2): the derived facts
+> computed once and read **ADOPTED — carried** by L3-S39, the root's pitch class by L3-S2, the chord symbol string by
+> L3-S1, and the root and bass spellings by L3-S2 and L3-S4 (Rows 48.9, 48.11 and 48.13), the chord members with their
+> roles, the Roman-numeral string and the class's own diatonic answer placed with L2, whose chord fixes them (Rows
+> 48.10, 48.12 and 48.14 (i)), and the bass's chord-factor role per event **UNPLACED** (Row 48.15). The cadence labels
+> as the section layer's derivation over the record **ADOPTED — carried** by L3-S16 (Row 48.30 (ii)); the formatter
+> continuity of the chord-symbol strings placed with *the measurement of the analysis*, an establishment condition (Row
+> 48.43). **L2's** — the span, the key, the chord class and the table rows that read them — are **RELOCATED** to
+> *L2 — The tonal reading. The one entangled decision.*; ***the uncertainty surface*** takes the confidence cluster's
+> and the ranked alternatives' reads of the record's mass and lists and the gates' input (Rows 48.26 (i), 48.27 (i) and
+> 48.36 (ii)); and ***the measurement of the analysis*** takes the establishment conditions and the grading form (Rows
+> 48.13 (iii), 48.18 and 48.38 to 48.43, less Row 48.39 (i)). **The display statements, weighed as the dispatch
+> orders.** This session searched the reading file's disposition lines for *display*, *presentation* and *formatt*, and
+> read the placements it found: **Row 4.6, a display convention, UNPLACED** because no charter of `FRAMEWORK.md` §5 is a
+> display layer, followed at Rows 4.18 and 4.19; **Rows 4.2 and 4.3, the separation of analysis from display, ADOPTED —
+> proposed** with L3-S5 agreeing; Row 4.16, a plan for the code's interfaces, **UNPLACED**; and the formatter's code
+> facts **QUARANTINED** (Rows 4.1, 4.4, 4.5 and 15.46 among them). `FRAMEWORK.md` §3.3 says the analysis depends on no
+> presentation concern, and §5 names no display charter. So a statement of how a published fact is displayed or
+> formatted is **UNPLACED**, read as at Row 4.6 — the display chord symbol and the Nashville number, their one shared
+> formatter, the presentation read of the augmented-sixth sub-type, the gate values as presentation constants, the
+> displayed suffix, the accessibility string, and the gates' function of exposing, coalescing and writing a cadence
+> label (Rows 48.17 (iii), 48.19, 48.20 (ii), 48.26 (ii), 48.27 (ii), 48.35, 48.36 (i) and 48.36 (iii)) — placement (l);
+> and each seam, an interface of the application's notation path, is **UNPLACED** read as at Row 4.16 (Rows 48.1 (i),
+> 48.3 (i), 48.4 and 48.31) — placement (m). **(b) Its *L1 facts*, *the section layer* and *A*** are the older stack's
+> names and the joint estimator; every statement is placed by its subject. **(c) Its standing** — a ratified contract
+> with dated amendments: a sentence recording what was verified, guarded, audited or re-homed is **QUARANTINED**; a
+> *today*, a correction or a planned retirement is **HISTORICAL**, split from a rule beside it; and range 6's conditions
+> are owed, each placed with *the measurement of the analysis*. In all, 14 statements are **UNPLACED**: the eight
+> display statements, the four interfaces, the bass's role per event and the per-run counts of chromatic inflections
+> (Row 48.32 (ii)). **(d) The decisions register's homes** as above — none inside the ranges, D-275 and D-276 in the
+> cut. **(e) Range 4 is a table** of fourteen rows, taken row by row, and ranges 1 and 6 are numbered lists. **Five
+> placements are stated for challenge.** (l) The eight display statements **UNPLACED**, read as at Row 4.6; **the
+> alternative** — **ADOPTED — proposed**, travelling with Row 4.2, for Rows 48.19 and 48.20 (ii), which L3-S5's premise
+> agrees with — is stated and not taken, those two rows saying how the display is rendered and where, and Row 4.2's
+> proposal already carrying the separation. (m) The four interfaces **UNPLACED**, read as at Row 4.16; **the
+> alternative** — **RELOCATED** to L2 as its publication over the working span — is stated and not taken, the record
+> holding L3's facts as well as L2's. (n) Row 48.16, the augmented-sixth sub-type derived from the sounding pitch
+> classes, graded **DIFFERS** from L3-S3 and **RELOCATED** to L2, as Row 7.18 (i) placed the reading of the augmented
+> sixth; **the alternative** — **UNPLACED** as a display statement, as the member calls it — is stated and not taken,
+> the three sub-types being three chords whose quality L2 carries. (o) Row 48.15, the bass's chord-factor role per
+> event, **THE DERIVATION IS SILENT** and **UNPLACED**; **the alternative** — graded **DIFFERS** from L3-S4 — is stated
+> and not taken, L3-S4 speaking to the chord symbol's bass note and not to a role per event. (p) Row 48.18, the record's
+> chord-symbol string the grading form only, placed with *the measurement of the analysis*; **the alternative** —
+> **ADOPTED — carried** by L3-S1 — is stated and not taken, the claim saying which form the string keeps, a grading
+> convention, and not that the chord symbol is a view. **No statement of this member is ADOPTED — proposed or
+> DISCARDED.**
+
+---
+
+**Row 48.1 — the span seam: a caller names a span and the record for it is returned; the older stack's function today.**
+
+*Outgoing statement.* "**The span seam** (today `analyzeHarmonicRhythm` → `HarmonicRegion` vector): the caller names a
+score span; the record for that span is returned." — the section *1. The two seams (both audited; both read THIS
+record)*, its first numbered item (locator: lines 36–37). Two claims: (i) the span seam — a caller names a span of the
+score and the record for that span is returned; (ii) its parenthesis, that the seam is today the older stack's
+`analyzeHarmonicRhythm` returning the region vector.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 4.16: the seam is an interface of the application's notation
+path, and no charter of `FRAMEWORK.md` §5 holds the code's interfaces, so none of the five is defensible in one
+sentence. (ii) **HISTORICAL** — a status of the day the contract was written, naming the older stack's function the
+record replaces.
+
+---
+
+**Row 48.2 — the span seam's consumers: the section layer, the composing bridge, the implode bridge, the tuning
+bridge.**
+
+*Outgoing statement.* "Consumers: the section layer (`sectionanalyzer`/`sectioncadencedetection`), the composing bridge
+(annotations, status bar), the implode bridge (chord track), the tuning bridge." — the section *1. The two seams (both
+audited; both read THIS record)*, the same item (locator: lines 37–39); its *section layer* is the older stack's.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the section layer, the composing bridge, the implode
+bridge and the tuning bridge read the span seam's record at the current commit?
+
+---
+
+**Row 48.3 — the note seam: a view over the same record — segment, key, chord, alternatives, uncertainty — plus display
+facts.**
+
+*Outgoing statement.* "**The note seam** (today `analyzeNoteHarmonicContext[Details]` → `NoteHarmonicContext`): the
+caller names a note/tick; the answer is a VIEW query over the same record — the containing segment, its key, its
+committed chord, its ranked alternatives, its uncertainty fields — plus the derived display facts." — the section *1.
+The two seams (both audited; both read THIS record)*, its second numbered item (locator: lines 40–43). Two claims: (i)
+the note seam — a caller names a note or a position and is answered by a view over the same record: the containing
+segment, its key, its committed chord, its ranked alternatives and its uncertainty fields, with the derived display
+facts; (ii) its parenthesis, that the seam is today the older stack's `analyzeNoteHarmonicContext`.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 4.16: the seam is an interface of the application's notation
+path, and no charter of `FRAMEWORK.md` §5 holds the code's interfaces, so none of the five is defensible in one
+sentence. (ii) **HISTORICAL** — a status of the day the contract was written, naming the older stack's function the
+record replaces.
+
+---
+
+**Row 48.4 — no second computation: the note seam a lookup into the span seam's record.**
+
+*Outgoing statement.* "No second computation exists (#6): the note seam is a lookup into the span seam's record." — the
+section *1. The two seams (both audited; both read THIS record)*, the same item (locator: lines 43–44).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 48.3: the one record both seams read is an interface of the
+application's notation path, which no charter of `FRAMEWORK.md` §5 holds.
+
+---
+
+**Row 48.5 — the note seam's consumers: the harmony writer, the context menu, the tuning bridge's note path, the status
+line.**
+
+*Outgoing statement.* "Consumers: `notationinteraction` (writes Harmony elements), `notationcontextmenumodel`
+(right-click menu), the tuning bridge's single-note path, the status-bar/accessibility formatter chain." — the section
+*1. The two seams (both audited; both read THIS record)*, the same item (locator: lines 44–46).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the harmony writer, the right-click menu, the tuning
+bridge's single-note path and the formatter chain of the status line and accessibility read the note seam's view at the
+current commit?
+
+---
+
+**Row 48.6 — per segment, its span: start and end.**
+
+*Outgoing statement.* "Span: `startTick`, `endTick`." — the sub-section *3.2 Per segment (the committed reading — all
+native decode facts)*, under *3. The record's fields*, its first bullet (locator: line 69).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose segmentation
+partitions the working span into harmonic spans whose boundaries are a subset of L1's change points (`FRAMEWORK.md` §5).
+
+---
+
+**Row 48.7 — per segment, its key — tonic pitch class and major flag — and the derived signature-fifths value.**
+
+*Outgoing statement.* "Key: `tonicPc`, `isMajor`; DERIVED: the key's signature-fifths value (the deterministic (tonic,
+mode)→fifths mapping — the audit's `keySignatureFifths` consumers' source)." — the sub-section *3.2 Per segment (the
+committed reading — all native decode facts)*, under *3. The record's fields*, its second bullet (locator: lines 70–71).
+Two claims: (i) the segment's key, as the tonic's pitch class and a major-or-minor flag; (ii) the key's signature-fifths
+value, derived from tonic and mode by a fixed mapping, the source for the consumers that read the signature.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which
+publishes per span the tonality as tonic and mode (`FRAMEWORK.md` §5). (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose tonality per span the fifths value
+is a fixed function of.
+
+---
+
+**Row 48.8 — per segment, its chord class: degree, quality, inversion, applied target and the vocabulary identity.**
+
+*Outgoing statement.* "Chord class: `degree` (scale-degree base), `quality` (the class's quality), `inversion`, applied
+`target` (empty when none), and the class key (the vocabulary identity)." — the sub-section *3.2 Per segment (the
+committed reading — all native decode facts)*, under *3. The record's fields*, its third bullet (locator: lines 72–73).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which publishes
+per span the chord as degree, quality, figure and applied target, read against that tonality (`FRAMEWORK.md` §5).
+
+---
+
+**Row 48.9 — the derived chord facts computed once and read by consumers; the root pitch class.**
+
+*Outgoing statement.* "Derived chord facts (the ratified derived-published-fact family, computed once here, consumers
+read): `rootPc`;" — the sub-section *3.2 Per segment (the committed reading — all native decode facts)*, under *3. The
+record's fields*, its fourth bullet, its opening (locator: lines 74–75). Two claims: (i) the derived chord facts are
+computed once on the record and read by the consumers; (ii) the root's pitch class is one of them.
+
+*Derived statements that speak to it.* (i) L3-S39. (ii) L3-S2.
+
+*Current-text axis.* (i) L3-S39: **AGREES** — its defense reads *"consumers read, never re-derive"*. (ii)
+L3-S2: **AGREES** — *"The pitch class the charter names is published in the same item as the spelled root's
+projection"*.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S39) — the derived facts are published once and read, never
+re-derived, by their consumers. (ii) **ADOPTED — carried** (L3-S2) — the root's pitch class is published with the
+spelled root, as its projection.
+
+---
+
+**Row 48.10 — the chord members' pitch classes with their factor roles.**
+
+*Outgoing statement.* "the chord-member pitch classes with factor roles (root/third/fifth/seventh);" — the sub-section
+*3.2 Per segment (the committed reading — all native decode facts)*, under *3. The record's fields*, the same bullet
+(locator: lines 75–76), joined across line 75's ending slash (*root/third/* and *fifth/seventh*) with no space, as the
+dispatch orders.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose chord per
+span, as degree, quality, figure and applied target, fixes its members and their roles (`FRAMEWORK.md` §5).
+
+---
+
+**Row 48.11 — the chord symbol string.**
+
+*Outgoing statement.* "the chord symbol string;" — the sub-section *3.2 Per segment (the committed reading — all native
+decode facts)*, under *3. The record's fields*, the same bullet (locator: line 76).
+
+*Derived statements that speak to it.* L3-S1.
+
+*Current-text axis.* L3-S1: **AGREES** — *"The chord symbol is a view of L2's chord."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S1) — the chord symbol is a view of L2's chord, published once.
+
+---
+
+**Row 48.12 — the Roman-numeral string, in the batch render's form.**
+
+*Outgoing statement.* "the Roman-numeral string (the batch render's form);" — the sub-section *3.2 Per segment (the
+committed reading — all native decode facts)*, under *3. The record's fields*, the same bullet (locator: line 76).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose chord per
+span, as degree, quality, figure and applied target, the Roman-numeral string writes (`FRAMEWORK.md` §5).
+
+---
+
+**Row 48.13 — the root and bass spellings derived from key and degree or class; a derivation with its own establishment
+condition.**
+
+*Outgoing statement.* "the root and bass SPELLINGS (tonal pitch classes) derived from (key, degree/class) — an
+instrument with its own establishment condition (§5.2);" — the sub-section *3.2 Per segment (the committed reading — all
+native decode facts)*, under *3. The record's fields*, the same bullet (locator: lines 77–78). Three claims: (i) the
+root's spelling is derived from the key and the degree or class; (ii) the bass's spelling is derived the same way; (iii)
+the derivation is a measurement tool with its own establishment condition, the member's §5.2.
+
+*Derived statements that speak to it.* (i) L3-S2. (ii) L3-S4. (iii) None.
+
+*Current-text axis.* (i) L3-S2: **AGREES** — *"It is the span's spelled tonic transposed by the diatonic interval of the
+degree"*. (ii) L3-S4: **AGREES** — *"The bass note is the chord member that L2's figure names, spelled from the root and
+quality."* The derivation's §6 item 2 flags L3-S4 as coinciding with a ruled sentence the L0/L1 input contract carries,
+for the comparison to check. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S2) — the root is spelled from the span's spelled tonic and the
+degree. (ii) **ADOPTED — carried** (L3-S4) — the bass note is the member L2's figure names, spelled from the root and
+quality. (iii) **RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric
+definitions, the grading conventions and what counts as ground truth are (`FRAMEWORK.md` §5); a condition for trusting a
+derived measurement tool is placed there, as the dispatch's weighing point (a) names the member's establishment
+conditions.
+
+---
+
+**Row 48.14 — the diatonic answer taken from the class itself, replacing every legacy re-derivation.**
+
+*Outgoing statement.* "`diatonicToKey` as the class's own diatonic-vs-chromatic/applied answer (replacing every legacy
+re-derivation, OI-173's lesson);" — the sub-section *3.2 Per segment (the committed reading — all native decode facts)*,
+under *3. The record's fields*, the same bullet (locator: lines 78–79). Two claims: (i) whether the chord is diatonic,
+chromatic or applied is the class's own answer; (ii) that answer replaces every legacy re-derivation of it, the lesson
+of the open item the member cites.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which
+publishes per span the chord as degree, quality, figure and applied target, read against that tonality (`FRAMEWORK.md`
+§5). (ii) **HISTORICAL** — it records the older stack's re-derivations the class's own answer replaces.
+
+---
+
+**Row 48.15 — the bass's chord-factor role per event, from the per-event bass facts against the members.**
+
+*Outgoing statement.* "the bass chord-factor role per event (from the published per-event bass facts vs the members)." —
+the sub-section *3.2 Per segment (the committed reading — all native decode facts)*, under *3. The record's fields*, the
+same bullet (locator: line 80).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read: a per-event comparison of the lowest sounding pitch, which L1 publishes per
+slice, with the members of L2's chord; no charter of `FRAMEWORK.md` §5 lists it, and the derivation's L3-S4, which makes
+the chord symbol's bass note the structural bass and not the lowest sounding pitch, speaks to the chord symbol's bass
+and not to a role per event. The derivation's §6 item 2 flags L3-S4 as coinciding with a ruled sentence the L0/L1 input
+contract carries, for the comparison to check.
+
+---
+
+**Row 48.16 — the augmented-sixth display sub-type derived from the sounding pitch classes, not from the class.**
+
+*Outgoing statement.* "The augmented-sixth display sub-type (Italian/German/French), when the class is the
+augmented-sixth family: derived from the SOUNDING pitch classes over the segment (presence of the fifth/added degrees),
+NOT from the vocabulary class" — the sub-section *3.2 Per segment (the committed reading — all native decode facts)*,
+under *3. The record's fields*, its fifth bullet, its opening (locator: lines 81–83).
+
+*Derived statements that speak to it.* L3-S3.
+
+*Current-text axis.* L3-S3: **DIFFERS**.
+
+*The difference, in both texts' own words.* The outgoing sub-type is *"derived from the SOUNDING pitch classes over the
+segment"*; L3-S3 says *"Nothing in the quality is re-read from the sounding notes."*
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***: which quality the
+chord carries is L2's decision, as Row 7.18 (i) placed the reading of the augmented sixth.
+
+---
+
+**Row 48.17 — the audit's remark corrected: the fitted vocabulary collapsed the family; the sounding-content read a
+presentation read.**
+
+*Outgoing statement.* "**correcting the audit's DERIVABLE note:** the fitted vocabulary collapsed the family to Italian
+pitch content (2 corpus tokens — the algorithm-completion step-1 record), so the class cannot carry the distinction; the
+sounding-content derivation is a presentation-layer read of L1 facts and can (§5.3)." — the sub-section *3.2 Per segment
+(the committed reading — all native decode facts)*, under *3. The record's fields*, the same bullet (locator: lines
+83–86); its *note* is the member's word for the audit's remark. Three claims: (i) the sentence corrects a remark of the
+consumption audit; (ii) the fitted vocabulary collapsed the augmented-sixth family to the Italian pitch content, on two
+corpus tokens, so the class cannot carry the distinction; (iii) the derivation from the sounding content is a read of L1
+facts by the presentation layer, which can carry it.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — it records a correction of another record, the consumption audit. (ii)
+**QUARANTINED.** *Audit question:* does the fitted chord vocabulary at the current commit hold the augmented-sixth
+family as one class with the Italian pitch content? (iii) **UNPLACED** — read as at Row 4.6: a statement about
+presentation, which `FRAMEWORK.md` §3.3 keeps outside what the analysis depends on; no charter of §5 is a display layer,
+so none of the five is defensible in one sentence.
+
+---
+
+**Row 48.18 — the record's chord-symbol string the grading form only.**
+
+*Outgoing statement.* "**★ Amendment (user-ratified 2026-07-26, at the P3a findings — display renderings are
+PRESENTATION derivations):** the record's chord-symbol string is the GRADING form only (the batch-continuity fact,
+§5.6);" — the sub-section *3.3 Per segment — the uncertainty surface (B-full, OI-193; two field groups, no
+redefinition)*, its paragraph led *★ Amendment (user-ratified 2026-07-26, at the P3a findings — …)* (locator: lines
+98–100), its bold lead, carrying a dated ratification, read with the words after it and taken as provenance.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose own design content the grading
+conventions are (`FRAMEWORK.md` §5): the string the record keeps is the form the grading compares.
+
+---
+
+**Row 48.19 — the display chord symbol and the Nashville number presentation derivations from published facts.**
+
+*Outgoing statement.* "the DISPLAY chord symbol (idiomatic, spelling-aware, preset-styled) and the Nashville number are
+PRESENTATION-layer derivations from published facts" — the sub-section *3.3 Per segment — the uncertainty surface
+(B-full, OI-193; two field groups, no redefinition)*, its paragraph led *★ Amendment (user-ratified 2026-07-26, at the
+P3a findings — …)* (locator: lines 100–101), joined across line 100's ending hyphen (*preset-* and *styled*) with no
+space.
+
+*Derived statements that speak to it.* L3-S5.
+
+*Current-text axis.* L3-S5: **AGREES** — its premise leaves a display that *"chooses its own convention, as a display
+act"*.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 4.6: a statement about presentation, which `FRAMEWORK.md` §3.3
+keeps outside what the analysis depends on; no charter of §5 is a display layer, so none of the five is defensible in
+one sentence.
+
+---
+
+**Row 48.20 — verified fully derivable; one shared formatter each, never on the record; the record preset-independent.**
+
+*Outgoing statement.* "verified fully derivable (degree + root spelling + class quality + bass role + key, no exception
+class) — each rendered by ONE shared presentation formatter, never published on the record (the record stays
+preset-independent; renderings are presentation, facts are published)." — the sub-section *3.3 Per segment — the
+uncertainty surface (B-full, OI-193; two field groups, no redefinition)*, its paragraph led *★ Amendment (user-ratified
+2026-07-26, at the P3a findings — …)* (locator: lines 102–104). Three claims: (i) the display chord symbol and the
+Nashville number were verified fully derivable from the degree, the root spelling, the class quality, the bass role and
+the key, with no class of exception; (ii) each is rendered by one shared presentation formatter and never published on
+the record; (iii) the record stays independent of any preset, renderings being presentation and facts being published.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S5. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S5: **AGREES** — its premise's display *"never publishes
+it back into the analysis"*. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* are the display chord symbol and the Nashville number
+derivable at the current commit from the degree, the root spelling, the class quality, the bass role and the key, with
+no class of exception? (ii) **UNPLACED** — read as at Row 4.6: a statement about presentation, which `FRAMEWORK.md` §3.3
+keeps outside what the analysis depends on; no charter of §5 is a display layer, so none of the five is defensible in
+one sentence. (iii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose published facts
+depend on no preset (`FRAMEWORK.md` §3.3), as Row 43.41 placed the preset-free facts at their layer.
+
+---
+
+**Row 48.21 — a permanent dependency-direction guard enforcing the boundary both ways.**
+
+*Outgoing statement.* "A permanent dependency-direction guard enforces the boundary both ways (user directive at the D2
+ruling; the OI-199 review carries the thorough axis)." — the sub-section *3.3 Per segment — the uncertainty surface
+(B-full, OI-193; two field groups, no redefinition)*, its paragraph led *★ Amendment (user-ratified 2026-07-26, at the
+P3a findings — …)* (locator: lines 105–106); its parenthesis, the directive's provenance and the review that carries the
+thorough axis, is taken with the sentence.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does a dependency-direction guard at the current commit
+enforce the boundary between the inference and the presentation in both directions, as Rows 15.44 and 15.45 asked of the
+boundary test?
+
+---
+
+**Row 48.22 — the table row *span ticks*: the legacy start and end ticks read from the segment's span.**
+
+*Outgoing statement.* The table row's cells "span ticks (8 rows)" · "`startTick`/`endTick`" · "§3.2 span, unchanged
+semantics" — the section *4. The audited consumers, mapped (every CSV row dispositioned; row-level source: the
+artifact)*, the table, the row *span ticks (8 rows)* (locator: line 169).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose segmentation
+partitions the working span into harmonic spans whose boundaries are a subset of L1's change points (`FRAMEWORK.md` §5).
+
+---
+
+**Row 48.23 — the table row *key context*: the legacy key fields read from the segment's key and derived fifths.**
+
+*Outgoing statement.* The table row's cells "key context (13)" · "`keyModeResult.{keySignatureFifths, mode,
+tonicPc}`" · "§3.2 key + derived fifths; mode = `isMajor` (+ §3.4 for color)" — the section *4. The audited consumers,
+mapped (every CSV row dispositioned; row-level source: the artifact)*, the table, the row *key context (13)* (locator:
+line 170); its pointer *(+ §3.4 for color)* is taken with the row.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which publishes
+per span the tonality as tonic and mode (`FRAMEWORK.md` §5).
+
+---
+
+**Row 48.24 — the table row *chord identity*: the legacy identity fields and symbol read from the derived chord facts.**
+
+*Outgoing statement.* The table row's cells "chord identity (14)" · "`identity.{rootPc, quality, bassPc, extensions,
+rootTpc, bassTpc}` + symbol" · "§3.2 derived chord facts" — the section *4. The audited consumers, mapped (every CSV row
+dispositioned; row-level source: the artifact)*, the table, the row *chord identity (14)* (locator: line 171).
+
+*Derived statements that speak to it.* L3-S1.
+
+*Current-text axis.* L3-S1: **AGREES** — *"The chord symbol is a view of L2's chord."*
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S1) — the chord symbol and its components are a view of L2's chord,
+published once, as Row 48.11.
+
+---
+
+**Row 48.25 — the table row *degree / diatonic*: the degree and the class's own diatonic answer.**
+
+*Outgoing statement.* The table row's cells "degree / diatonic (6)" · "`function.{degree, diatonicToKey}`" · "§3.2
+degree + class-native `diatonicToKey`" — the section *4. The audited consumers, mapped (every CSV row dispositioned;
+row-level source: the artifact)*, the table, the row *degree / diatonic (6)* (locator: line 172).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which publishes
+per span the chord as degree, quality, figure and applied target, read against that tonality (`FRAMEWORK.md` §5).
+
+---
+
+**Row 48.26 — the table row *confidence cluster*: the record's mass and gap read; the gate values presentation
+constants.**
+
+*Outgoing statement.* The table row's cells "confidence cluster (6)" · "`normalizedConfidence` vs 0.5/0.8/0.35 +
+`hasAssertiveExposure`" · "§3.3 mass/gap; gate VALUES become the emitters' declared presentation constants (§4.1)" — the
+section *4. The audited consumers, mapped (every CSV row dispositioned; row-level source: the artifact)*, the table, the
+row *confidence cluster (6)* (locator: line 173). Two claims: (i) the confidence consumers read the record's published
+mass and gap; (ii) the legacy gate values become the emitters' declared presentation constants.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, whose rule is that every published fact
+carries its own mass and its own establishment status (`FRAMEWORK.md` §5). (ii) **UNPLACED** — read as at Row 4.6: a
+statement about presentation, which `FRAMEWORK.md` §3.3 keeps outside what the analysis depends on; no charter of §5 is
+a display layer, so none of the five is defensible in one sentence.
+
+---
+
+**Row 48.27 — the table row *ranked alternatives*: the record's full lists with display facts; the suffix showing the
+stamped quantity.**
+
+*Outgoing statement.* The table row's cells "ranked alternatives (4)" · "`alternatives` / `chordResults[1..]` / score
+suffix" · "§3.3 lists + per-candidate display facts; the "(%.2f)" suffix shows the stamped §3.3 quantity" — the section
+*4. The audited consumers, mapped (every CSV row dispositioned; row-level source: the artifact)*, the table, the row
+*ranked alternatives (4)* (locator: line 174). Two claims: (i) the alternatives' consumers read the record's candidate
+lists with each candidate's display facts; (ii) the displayed numeric suffix shows the stamped uncertainty quantity.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, whose rule is that every published fact
+carries its own mass and its own establishment status (`FRAMEWORK.md` §5). (ii) **UNPLACED** — read as at Row 4.6: a
+statement about presentation, which `FRAMEWORK.md` §3.3 keeps outside what the analysis depends on; no charter of §5 is
+a display layer, so none of the five is defensible in one sentence.
+
+---
+
+**Row 48.28 — the table row *sounding tones*: the raw note facts read where needed, not re-derived.**
+
+*Outgoing statement.* The table row's cells "sounding tones (7)" · "`tones[].{pitch,tpc}`" · "the published L1 note
+surface over the span — RAW facts, read where needed (the fact-publication corollary's read-don't-re-derive applies to
+DERIVED facts; notes are the substrate A itself consumes)" — the section *4. The audited consumers, mapped (every CSV
+row dispositioned; row-level source: the artifact)*, the table, the row *sounding tones (7)* (locator: line 175); its
+*L1 note surface* is the older stack's note model and its *A* the joint estimator.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L0 — The notated record***, whose notated record — per note, its spelled
+pitch, its duration, its voice and whether it sounds — is what every layer reads (`FRAMEWORK.md` §3.1).
+
+---
+
+**Row 48.29 — the table row *key areas*: the section layer collapsing the key sequence into areas.**
+
+*Outgoing statement.* The table row's cells "key areas (5)" · "`AnalyzedSection.keyAreas`, `keyAreaId`" · "the SECTION
+layer derives areas by collapsing §3.2's key sequence — its own layer's published derived fact, one producer, as today
+(#7)" — the section *4. The audited consumers, mapped (every CSV row dispositioned; row-level source: the artifact)*,
+the table, the row *key areas (5)* (locator: line 176); its *SECTION layer* is the older stack's.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose tonality per
+span the key areas are runs of (`FRAMEWORK.md` §5).
+
+---
+
+**Row 48.30 — the table row *cadence/pivot inputs*: the section reads taken from the record; the cadence labels its
+derivation.**
+
+*Outgoing statement.* The table row's cells "cadence/pivot inputs (7)" · "section reads of
+key/degree/quality/confidence" · "§3.2 + §3.3 (the cadence labels stay the section layer's derivation over the record)"
+— the section *4. The audited consumers, mapped (every CSV row dispositioned; row-level source: the artifact)*, the
+table, the row *cadence/pivot inputs (7)* (locator: line 177). Two claims: (i) the section layer's reads for cadence and
+pivot — key, degree, quality and confidence — come from the record's per-segment fields and its uncertainty surface;
+(ii) the cadence labels stay the section layer's derivation over the record.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S16.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S16: **AGREES** — *"The cadence is published as its
+defining features, each a view of a lower layer's fact"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which
+publishes the tonality and the chord per span with their rivals and mass, the facts these reads take (`FRAMEWORK.md`
+§5). (ii) **ADOPTED — carried** (L3-S16) — the cadence is read off the facts beneath it, each feature a view.
+
+---
+
+**Row 48.31 — the table row *single-note context*: the note-seam view.**
+
+*Outgoing statement.* The table row's cells "single-note context (10)" · "`NoteHarmonicContext.*`" · "the §1 note-seam
+view" — the section *4. The audited consumers, mapped (every CSV row dispositioned; row-level source: the artifact)*,
+the table, the row *single-note context (10)* (locator: line 178).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 4.16: the seam is an interface of the application's notation path,
+and no charter of `FRAMEWORK.md` §5 holds the code's interfaces, so none of the five is defensible in one sentence.
+
+---
+
+**Row 48.32 — the table row *exotic-mode branches*: the plumbing retired under the ruling; the modal color in the
+counts.**
+
+*Outgoing statement.* The table row's cells "exotic-mode branches (12 sites)" · "21-mode plumbing, suffixes,
+borrowed-key search" · "retire under C1; §3.4 carries the color; retirement-map item 2 takes the plumbing" — the section
+*4. The audited consumers, mapped (every CSV row dispositioned; row-level source: the artifact)*, the table, the row
+*exotic-mode branches (12 sites)* (locator: line 179). Two claims: (i) the older stack's twenty-one-mode plumbing,
+suffixes and borrowed-key search retire, the retirement map taking the plumbing; (ii) the member's §3.4 counts carry the
+modal color.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a retirement planned for the older stack's code. (ii) **UNPLACED** — read:
+a count per key run of the chromatic inflections of each degree, which no charter of `FRAMEWORK.md` §5 lists among its
+publications, L2 publishing the tonality as tonic and mode.
+
+---
+
+**Row 48.33 — the table row *pedal*: the pedal fields read from the ornament labels.**
+
+*Outgoing statement.* The table row's cells "pedal (2)" · "`isPedalPoint`/`pedalBassPc`" · "§3.5 / OI-194 (§10 ruling)"
+— the section *4. The audited consumers, mapped (every CSV row dispositioned; row-level source: the artifact)*, the
+table, the row *pedal (2)* (locator: line 180).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose elaboration
+relations per sounding note include the pedal point (`FRAMEWORK.md` §5).
+
+---
+
+**Row 48.34 — the table row *retire-candidates*: the no-reader fields retired, nothing consumed lost.**
+
+*Outgoing statement.* The table row's cells "retire-candidates (4) + in-memory pair" · "`hasAnalyzedChord`,
+`temporalExtensions`, dead `score` out-param, `keyAlternatives`/`fanout`" · "§3.6 — audited no-reader, nothing consumed
+is lost" — the section *4. The audited consumers, mapped (every CSV row dispositioned; row-level source: the artifact)*,
+the table, the row *retire-candidates (4) + in-memory pair* (locator: line 181); its *dead `score` out-param* is an
+unused output parameter carrying a candidate score.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do `hasAnalyzedChord`, `temporalExtensions`, the unused
+candidate-score output parameter, `keyAlternatives` and `fanout` have no reader at the current commit?
+
+---
+
+**Row 48.35 — the table row *accessibility*: the formatted string downstream of the formatter that reads the record.**
+
+*Outgoing statement.* The table row's cells "accessibility (1)" · "formatted annotation string" · "unchanged: downstream
+of the composing-bridge formatter, which reads this record" — the section *4. The audited consumers, mapped (every CSV
+row dispositioned; row-level source: the artifact)*, the table, the row *accessibility (1)* (locator: line 182).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 4.6: a statement about presentation, which `FRAMEWORK.md` §3.3
+keeps outside what the analysis depends on; no charter of §5 is a display layer, so none of the five is defensible in
+one sentence.
+
+---
+
+**Row 48.36 — the legacy gates keeping their function, their input the published mass and gap, their values declared
+presentation constants.**
+
+*Outgoing statement.* "The legacy exposure/annotation gates keep their FUNCTION (whether to expose a key run, coalesce a
+region, write a cadence label) but their INPUT becomes §3.3's published mass/gap, and their numeric values are the
+emitting layer's DECLARED presentation constants — outside the inference surface, registered (the OI-182 row's
+disposition executes at the emitter's build step), each with a stated rationale, none pretending to be an inference
+value." — the sub-section *4.1 The presentation gates (the OI-182 cluster's successor rule)*, its one paragraph
+(locator: lines 186–190). Three claims: (i) the legacy exposure and annotation gates keep their function — whether to
+expose a key run, coalesce a region or write a cadence label; (ii) their input becomes the record's published mass and
+gap; (iii) their numeric values are the emitting layer's declared presentation constants, outside the inference surface,
+registered, each with a stated rationale and none an inference value. The parenthesis on the open item's disposition is
+taken with (iii).
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 4.6: a statement about presentation, which `FRAMEWORK.md` §3.3
+keeps outside what the analysis depends on; no charter of §5 is a display layer, so none of the five is defensible in
+one sentence. (ii) **RELOCATED** — to ***the uncertainty surface***, whose rule is that every published fact carries its
+own mass and its own establishment status (`FRAMEWORK.md` §5). (iii) **UNPLACED** — read as at Row 4.6: a statement
+about presentation, which `FRAMEWORK.md` §3.3 keeps outside what the analysis depends on; no charter of §5 is a display
+layer, so none of the five is defensible in one sentence.
+
+---
+
+**Row 48.37 — the same-chord re-annotation gap re-homed to the implode emitter, unchanged in role.**
+
+*Outgoing statement.* "`kSameChordReannotationGap` (960 ticks) re-homes to the implode emitter as a declared
+presentation-timing constant, unchanged in role." — the sub-section *4.1 The presentation gates (the OI-182 cluster's
+successor rule)*, its one paragraph (locator: lines 190–192).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `kSameChordReannotationGap` live at the implode emitter
+at the current commit, as a declared presentation-timing constant?
+
+---
+
+**Row 48.38 — the decode equality: the in-app record's inference fields equal the adopted batch decode.**
+
+*Outgoing statement.* "**The decode equality:** the in-app record's inference fields on the 326 covered corpus scores
+equal the adopted batch decode (`adoption_decode.json`) — the increment's §8.3(a/b) condition, unchanged." — the section
+*5. Establishment conditions (#19 — each derived instrument, before it is trusted)*, its first numbered item (locator:
+lines 196–198).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric
+definitions, the grading conventions and what counts as ground truth are (`FRAMEWORK.md` §5); a condition for trusting a
+derived measurement tool is placed there, as the dispatch's weighing point (a) names the member's establishment
+conditions.
+
+---
+
+**Row 48.39 — the spelling derivation a fixed mapping table, established by review and by reproduction on a hand-checked
+sample.**
+
+*Outgoing statement.* "**The spelling derivation** (root/bass tonal pitch classes from key + degree/class): a
+deterministic mapping table, established by (a) derivation review against the standard theory, and (b) reproduction of
+the notated spellings on a hand-checked corpus sample where the notation is unambiguous; divergences enumerated, none
+silently accepted." — the section *5. Establishment conditions (#19 — each derived instrument, before it is trusted)*,
+its second numbered item (locator: lines 199–202). Two claims: (i) the root and bass spellings are derived from key and
+degree or class by a fixed mapping table; (ii) the table is established by a review of the derivation against standard
+theory and by reproducing the notated spellings on a hand-checked sample, divergences enumerated and none silently
+accepted.
+
+*Derived statements that speak to it.* (i) L3-S2. (ii) None.
+
+*Current-text axis.* (i) L3-S2: **AGREES** — *"It is the span's spelled tonic transposed by the diatonic interval of the
+degree"*. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S2) — the root is spelled from the span's spelled tonic and the
+degree, as Row 48.13 (i). (ii) **RELOCATED** — to ***the measurement of the analysis***, whose own design content the
+metric definitions, the grading conventions and what counts as ground truth are (`FRAMEWORK.md` §5); a condition for
+trusting a derived measurement tool is placed there, as the dispatch's weighing point (a) names the member's
+establishment conditions.
+
+---
+
+**Row 48.40 — the augmented-sixth sub-type read, established at its few corpus sites by comparison with the sounding
+content.**
+
+*Outgoing statement.* "**The augmented-sixth sub-type read:** established at its (few) corpus sites by direct comparison
+with the sounding content — trivial by construction, recorded anyway." — the section *5. Establishment conditions (#19 —
+each derived instrument, before it is trusted)*, its third numbered item (locator: lines 203–204).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric
+definitions, the grading conventions and what counts as ground truth are (`FRAMEWORK.md` §5); a condition for trusting a
+derived measurement tool is placed there, as the dispatch's weighing point (a) names the member's establishment
+conditions.
+
+---
+
+**Row 48.41 — the modal-reading counter, established by byte-reproduction on a hand-verified sample.**
+
+*Outgoing statement.* "**The modal-reading counter:** established by byte-reproduction on a hand-verified sample (the
+desk-sim corpus cases include modal material — bwv254 is the natural check)." — the section *5. Establishment conditions
+(#19 — each derived instrument, before it is trusted)*, its fourth numbered item (locator: lines 205–206).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric
+definitions, the grading conventions and what counts as ground truth are (`FRAMEWORK.md` §5); a condition for trusting a
+derived measurement tool is placed there, as the dispatch's weighing point (a) names the member's establishment
+conditions.
+
+---
+
+**Row 48.42 — the posterior slice by parity with the probe; the marginal completion by its oracle, before publication.**
+
+*Outgoing statement.* "**The posterior slice:** parity with the Python probe's published slice (the existing oracle);
+**the marginal completion:** the OI-193 oracle (forward logZ == backward logZ, per-span mass normalization,
+synthetic-case agreement with the fit-arc lattice arithmetic) BEFORE publication." — the section *5. Establishment
+conditions (#19 — each derived instrument, before it is trusted)*, its fifth numbered item (locator: lines 207–210). Two
+claims: (i) the posterior slice is established by parity with the published slice of the Python probe; (ii) the marginal
+completion is established by its open item's oracle before it is published.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the measurement of the analysis***, whose own design content the
+metric definitions, the grading conventions and what counts as ground truth are (`FRAMEWORK.md` §5); a condition for
+trusting a derived measurement tool is placed there, as the dispatch's weighing point (a) names the member's
+establishment conditions. (ii) **RELOCATED** — to ***the measurement of the analysis***, whose own design content the
+metric definitions, the grading conventions and what counts as ground truth are (`FRAMEWORK.md` §5); a condition for
+trusting a derived measurement tool is placed there, as the dispatch's weighing point (a) names the member's
+establishment conditions.
+
+---
+
+**Row 48.43 — the formatter continuity: the record's chord-symbol and Roman strings reproduce the batch render's
+forms.**
+
+*Outgoing statement.* "**The formatter continuity:** the chord-symbol/Roman strings the record publishes reproduce the
+batch render's forms on the shared cases (the same derivation, one path, #6)." — the section *5. Establishment
+conditions (#19 — each derived instrument, before it is trusted)*, its sixth numbered item (locator: lines 211–212).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric
+definitions, the grading conventions and what counts as ground truth are (`FRAMEWORK.md` §5); a condition for trusting a
+derived measurement tool is placed there, as the dispatch's weighing point (a) names the member's establishment
+conditions.
+
+#### Not a statement, at this member
+
+Each item is quoted from its opening with its line locator, and its kind named. Run-in bold labels read as titles under
+rule (1) without a dated parenthesis are neither here nor among the rows; no line listed here carries the
+quotation-block marker.
+
+1. "| audited cluster (rows) | legacy form | contract source |" (167–168) — the table's header row with its separator
+   line, listed as one item.
+
+#### The arithmetic at this member
+
+- Rows written: **43**.
+- **Outgoing statements placed: 62** — 28 rows of one claim, 11 rows of two (Rows 48.1, 48.3, 48.7, 48.9, 48.14, 48.26,
+  48.27, 48.30, 48.32, 48.39 and 48.42) and 4 rows of three (Rows 48.13, 48.17, 48.20 and 48.36).
+- Listed under *not a statement*: **1**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: 14.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 8 | 48.9 (i), 48.9 (ii), 48.11, 48.13 (i), 48.13 (ii), 48.24, 48.30 (ii), 48.39 (i) |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 28 | 48.6, 48.7 (i), 48.7 (ii), 48.8, 48.10, 48.12, 48.13 (iii), 48.14 (i), 48.16, 48.18, 48.20 (iii), 48.22, 48.23, 48.25, 48.26 (i), 48.27 (i), 48.28, 48.29, 48.30 (i), 48.33, 48.36 (ii), 48.38, 48.39 (ii), 48.40, 48.41, 48.42 (i), 48.42 (ii), 48.43 |
+| QUARANTINED | 7 | 48.2, 48.5, 48.17 (ii), 48.20 (i), 48.21, 48.34, 48.37 |
+| DISCARDED | 0 | — |
+| HISTORICAL | 5 | 48.1 (ii), 48.3 (ii), 48.14 (ii), 48.17 (i), 48.32 (i) |
+| UNPLACED | 14 | 48.1 (i), 48.3 (i), 48.4, 48.15, 48.17 (iii), 48.19, 48.20 (ii), 48.26 (ii), 48.27 (ii), 48.31, 48.32 (ii), 48.35, 48.36 (i), 48.36 (iii) |
+| **Total** | **62** | — |
+
+**The column sums to 62 (8 + 0 + 28 + 7 + 0 + 5 + 14), against 62 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 10 |
+| DIFFERS | 1 |
+| THE DERIVATION IS SILENT | 51 |
+| **Total verdicts** | **62** |
+
+The AGREES statements: 48.9 (i) (L3-S39), 48.9 (ii) (L3-S2), 48.11 (L3-S1), 48.13 (i) (L3-S2), 48.13 (ii) (L3-S4),
+48.19 (L3-S5), 48.20 (ii) (L3-S5), 48.24 (L3-S1), 48.30 (ii) (L3-S16), 48.39 (i) (L3-S2). The DIFFERS statements:
+48.16 (L3-S3).
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 48 is empty, and the document is not
+  one of the five withheld from the deriving session's pack.
+- **SEEN rows: none** — no SEEN identity is homed in this document, agreeing with §5.
+- **No home of the decisions register's data file lies inside the ranges.**
+- **Two are homed in the cut**: **register entries D-275** (54 to 57) and **D-276** (139 to 147), both LIVE; no retired
+  entry is homed in the document.
+- **The cut** holds the title, the ratification and status paragraphs, the governing inputs and terms, a separator line,
+  §1's heading and its retirement paragraph, the whole of §2, §3's heading and §3.1, §3.2's heading, §3.3's heading,
+  first group, second amendment, second group and its separating paragraph, the whole of §3.4 to §3.6, the headings of
+  §4, §4.1 and §5, the whole of §6 to §8, and blank lines; no row is tabulated there.
+- **Rows naming L3-S4: Rows 48.13 and 48.15**, each saying that the derivation's §6 item 2 flags L3-S4 as coinciding
+  with a ruled sentence of the L0/L1 input contract, for the comparison to check.
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -65648,6 +66666,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 43.16, 43.32 (i), 43.56 and 43.117 (ii) — the notated spelling of a pitch, carried losslessly and read through
   one shared view never duplicated per layer, and the written key signature a weak hint only, never the truth. *(The L0
   block gives spelled pitch and makes the key signature a weak prior; Row 43.117 (ii) as Rows 7.18 (ii) and 7.221.)*
+- Row 48.28 — the sounding tones read as the raw note facts where needed, the substrate every layer reads. *(The input
+  contract's notated record per note.)*
 
 **To *L1 — Change points, candidates and notated evidence*.**
 
@@ -66180,6 +67200,13 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 47.21, 47.22 (ii) and 47.24 (i) — slices never treated as equal-weight units, their metric extent weighed by
   metric structure and not by tempo, and the weighting of a very long or very short slice. *(All three lie on the
   retired entry D-540's home, unmarked.)*
+- Rows 48.6, 48.7 (i), 48.7 (ii), 48.22, 48.23 and 48.29 — the segment's span and key, the signature-fifths value
+  derived from the tonality, the table rows that read them, and the key areas as runs of the tonality.
+- Rows 48.8, 48.10, 48.12, 48.14 (i), 48.16, 48.25 and 48.30 (i) — the chord class, its members and their roles, the
+  Roman-numeral string, the class's own diatonic answer, the augmented-sixth sub-type, the degree row and the section
+  layer's reads of the record. *(L3-S3 DIFFERS at Row 48.16, placed as Row 7.18 (i).)*
+- Rows 48.20 (iii) and 48.33 — the record independent of any preset, and the pedal point as an elaboration relation.
+  *(As Row 43.41 placed the preset-free facts.)*
 
 **To *the second axis — voice leading*.**
 
@@ -66341,6 +67368,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   D-269 makes the frame table the one home of the override arithmetic; Row 45.19 lies on the lines its home cites and
   Rows 45.26 and 45.27 on the lines that carry its words; Rows 45.20 to 45.27 lie on the lines register entry D-601's
   home cites; all unmarked.)*
+- Rows 48.26 (i), 48.27 (i) and 48.36 (ii) — the confidence and alternatives consumers, and the presentation gates,
+  reading the record's published mass, gap and candidate lists.
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -66493,6 +67522,10 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   recognition covers, and the jazz and pop entries not yet measurable.
 - Rows 47.3 and 47.4 — the byte-identical whole-score path, and the two suites with their pinned outputs. *(As Rows
   43.13 and 43.14.)*
+- Rows 48.13 (iii), 48.18, 48.38, 48.39 (ii), 48.40, 48.41, 48.42 (i), 48.42 (ii) and 48.43 — the spelling derivation's
+  own establishment condition, the record's chord-symbol string as the grading form, and the establishment conditions:
+  the decode equality, the spelling table's review and reproduction, the augmented-sixth read, the modal-reading
+  counter, the posterior slice's parity, the marginal completion's oracle and the formatter continuity.
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
@@ -66503,7 +67536,7 @@ member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 2
 the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
 numbered 36.n, member 37's the rows numbered 37.n, member 38's the rows numbered 38.n, member 39's the rows numbered 39.n,
 member 40's the rows numbered 40.n, member 41's the rows numbered 41.n,
-member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, and member 47's the rows numbered 47.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
+member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, and member 48's the rows numbered 48.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -68541,6 +69574,23 @@ No QUARANTINED row: the member's ranges record no measured property of the code 
 - Row 47.44 (ii) — does the old segment-first machinery, its passes 2 and 2b, still exist at the current commit, and
   does any path that runs reach it?
 
+**Member 48 — `cowork_notation_output_contract.md`, the passages of the document.**
+
+- Row 48.2 — do the section layer, the composing bridge, the implode bridge and the tuning bridge read the span seam's
+  record at the current commit?
+- Row 48.5 — do the harmony writer, the right-click menu, the tuning bridge's single-note path and the formatter chain
+  of the status line and accessibility read the note seam's view at the current commit?
+- Row 48.17 (ii) — does the fitted chord vocabulary at the current commit hold the augmented-sixth family as one class
+  with the Italian pitch content?
+- Row 48.20 (i) — are the display chord symbol and the Nashville number derivable at the current commit from the degree,
+  the root spelling, the class quality, the bass role and the key, with no class of exception?
+- Row 48.21 — does a dependency-direction guard at the current commit enforce the boundary between the inference and the
+  presentation in both directions, as Rows 15.44 and 15.45 asked of the boundary test?
+- Row 48.34 — do `hasAnalyzedChord`, `temporalExtensions`, the unused candidate-score output parameter,
+  `keyAlternatives` and `fanout` have no reader at the current commit?
+- Row 48.37 — does `kSameChordReannotationGap` live at the implode emitter at the current commit, as a declared
+  presentation-timing constant?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -69521,6 +70571,11 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 47.23 (ii) (L3-S39):** the outgoing duration and metric weight are *"derived on demand"* by the
   consuming layers, where L3-S39 says *"L3 never re-derives a fact a layer beneath it publishes"*.
 
+**Member 48.** No ADOPTED — proposed row.
+
+- **DIFFERS — Row 48.16 (L3-S3):** the outgoing sub-type is *"derived from the SOUNDING pitch classes over the
+  segment"*, where L3-S3 says *"Nothing in the quality is re-read from the sounding notes."*
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -69575,11 +70630,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 45 | 68 | 0 | 0 | 40 | 18 | 0 | 10 | 0 | 6 |
 | 46 | 67 | 0 | 0 | 21 | 7 | 0 | 7 | 32 | 13 |
 | 47 | 67 | 3 | 0 | 47 | 9 | 0 | 7 | 1 | 13 |
-| **Total** | **4262** | **183** | **91** | **1812** | **1181** | **0** | **694** | **301** | **1241** |
+| 48 | 62 | 8 | 0 | 28 | 7 | 0 | 5 | 14 | 1 |
+| **Total** | **4324** | **191** | **91** | **1840** | **1188** | **0** | **699** | **315** | **1242** |
 
-**The arithmetic check:** 183 + 91 + 1812 + 1181 + 0 + 694 + 301 = 4262, against 4262 statements placed (43 + 34 + 21 +
+**The arithmetic check:** 191 + 91 + 1840 + 1188 + 0 + 699 + 315 = 4324, against 4324 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -69630,11 +70686,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 45 | 7 | 7 | 54 | 68 |
 | 46 | 0 | 1 | 66 | 67 |
 | 47 | 10 | 2 | 55 | 67 |
-| **Total** | **394** | **354** | **3522** | **4270** |
+| 48 | 10 | 1 | 51 | 62 |
+| **Total** | **404** | **355** | **3573** | **4332** |
 
-**The arithmetic check of the verdicts:** 394 + 354 + 3522 = 4270, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 404 + 355 + 3573 = 4332, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62).
 
 ## 14. The derivation's independence record, relayed
 
