@@ -99,7 +99,7 @@ its own entry there.
 | 46 | `cowork_progression_schema_dictionary.md` passages | **DONE** (§6.46) |
 | 47 | `cowork_layer2_slicing_design.md` passages | **DONE** (§6.47) |
 | 48 | `cowork_notation_output_contract.md` passages | **DONE** (§6.48) |
-| 49 | `cowork_joint_estimator_architecture.md` passages | NOT YET TABULATED |
+| 49 | `cowork_joint_estimator_architecture.md` passages | **DONE** (§6.49) |
 | 50 | `cowork_layer1_note_model_design.md` passages | NOT YET TABULATED |
 | 51 | `docs/llm_integration.md` passages | NOT YET TABULATED |
 | 52 | `cowork_notation_adoption_increment.md` passages | NOT YET TABULATED |
@@ -110,7 +110,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 48 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 49 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -132,7 +132,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, and position 48, the passages of `cowork_notation_output_contract.md`.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, and position 49, the passages of `cowork_joint_estimator_architecture.md`.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -173,9 +173,9 @@ were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabul
 member boundary after position 42 under its own limit on the batch, and not by a capacity judgment; positions 43 and
 44 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md`, which stopped at the
 member boundary after position 44 under its own limit on the batch, and not by a capacity judgment; positions 45
-to 48 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`.**
-**The writing now stands at the member boundary after position 48: not done, positions 49 to 57, and the next
-writing resumes at position 49.**
+to 49 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`.**
+**The writing now stands at the member boundary after position 49: not done, positions 50 to 57, and the next
+writing resumes at position 50.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -66590,6 +66590,819 @@ The AGREES statements: 48.9 (i) (L3-S39), 48.9 (ii) (L3-S2), 48.11 (L3-S1), 48.1
 
 ---
 
+### 6.49 — Member 49: `cowork_joint_estimator_architecture.md`, the passages of the document
+
+> **Manifest for this member.** Position **49**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_joint_estimator_architecture.md`. Label: *the passages of the document*, exactly as the artifact
+> spells it — a label that names no heading, so the member's section is the whole document, its lines 1 to 258, as at
+> §6.35 to §6.48. **The thirty-fifth member of this comparison made of passages and the fifteenth cut from a document
+> other than `ARCHITECTURE.md`; its document is one of the five withheld from the deriving session's pack**, and its
+> entry's `item_4_identities_inside` names **D-526** at `cowork_joint_estimator_architecture.md:125-144`, so its
+> passages are cut around term-search hits and around that home. Four ranges, each as a locator only (**D-307**), with
+> its first and last line texts exactly as the artifact publishes them (wrapped here for width; the line texts keep
+> their list markers, as the artifact publishes them):
+>
+> - lines 43–51, from *"- NCT-cleaned **tone collections / pitch content** → emission `P(pitches | tonic, mode, chord)`,
+>   metric-weighted;"* to *"- **bass-motion skeletons** → a bass/inversion emission."*;
+> - lines 55–60, from *"- **OI-166** (key-agnostic cadence pre-scan) — still built, at L1.5; it is now the **cadence
+>   factor** of A, not a forward vote. Its precision probe still gates whether/how strongly the factor is weighted."* to
+>   *"- **The measurement chain (OI-145 wave 1)** — **retained in full**: A is graded against DCML ground truth through
+>   the same robust unit; the hardening we did is what lets A be measured honestly."*;
+> - lines 105–123, from *"**Fitting parameterization (user-ratified 2026-07-19).** The staged form: **the factor TABLES
+>   are fit"* to *"weights measurably disagree with the reported metric."*;
+> - lines 125–144, from *"**Chord state is scale-degree-valued (user-ratified 2026-07-19).** The joint state's chord
+>   axis is a"* to *"the ground truth's labeling convention)."*.
+>
+> **Each of the eight line texts was compared with the line at its locator** in
+> `cowork_joint_estimator_architecture.md`, read by this session at its blob at the commit that landed this batch's
+> dispatch, by a script reading the artifact at that commit, **and every one matches**; the ranges hold 54 lines. The
+> blob carries no carriage return, so nothing was stripped before a comparison. **No other member of the artifact is cut
+> from this document** — this session's script, listing every member whose document is
+> `cowork_joint_estimator_architecture.md`, found position 49 alone — so nothing is excluded from the cut. The
+> document's other lines lie in no range — lines 1–42, 52–54, 61–104, 124 and 145–258, two hundred and four lines of
+> which thirty-three are blank, as this session's script lists them; **the blob holds 258 lines, so its last cut span
+> ends at line 258 and the cut holds 204 lines, where the dispatch computed 145–259 and 205** — the dispatch states that
+> the script's listing is what this header carries, and every other span is the one the dispatch computed. By the nine
+> headings the script lists among them — the title and the headings of the member's sections *1* to *5*, *5a*, *6* and
+> *7* — they hold: the title and the decision of 2026-07-14 with its grounds (1 to 17); a separator line (19); §1 whole
+> (21 to 37); §2's heading and lead (39 to 41); §3's heading (53); §4 (62 to 67) and §5 (69 to 79); §5a's heading and
+> lead (81 to 87); **the paragraph on the mode vocabulary, register entry D-524's home (89 to 103)**; line 124, blank,
+> between ranges 3 and 4; **the paragraphs on non-chord-tone handling and on the key-signature prior, register entries
+> D-527's (146 to 167) and D-528's (169 to 182) homes**; **§6, the recorded assessment (192 to 227), the retired entries
+> D-529's (200 to 206) and D-530's (208 to 214) homes among it**; §7, the plan amendments (229 to 252); a separator line
+> (254); the provenance paragraph (256 to 258); and the blank lines. *(This session read the whole document at its blob
+> before writing any row, the cut with it; the cut is named here by what stands there, and no cut line is tabulated.)*
+> **The cut holds the member's own account of its standing and much of what its ranges apply** — the decision of
+> 2026-07-14, its §1, and three of its five ratified design decisions. These are facts of the population artifact for
+> the method ruling's surface, no row quotes a cut line, and no member is widened by hand to take them (**D-671**). No
+> other member of the artifact covers the cut — the passage rule's cut, recorded here as at §6.15 to §6.48, and not
+> repaired. Outgoing statements: **40** (rows 49.1 to 49.27; 16 rows of one claim, 9 rows of two (Rows 49.11, 49.13,
+> 49.14, 49.15, 49.17, 49.18, 49.23, 49.25 and 49.27) and 2 rows of three (Rows 49.10 and 49.26), each split — the
+> arithmetic is at the foot of this member). Listed under *not a statement*: **4**. Counted at this member by this
+> session; the counts appear here and at §13, and nowhere else.
+>
+> **One WITHHELD home lies inside this member, and it fills range 4.** The artifact's `item_4_identities_inside` for
+> position 49 names **D-526** at lines 125 to 144, and this session's walk of
+> `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit hash),
+> over every record carrying an identity and a home, the retired block included, found D-526's home at those lines,
+> range 4 whole. **Every row whose quoted lines lie inside it is marked** *WITHHELD — D-526.* after its title, in the
+> form §6.2's and §6.36's rows carry it, **and carries a paragraph *The decisions register at this row***, as Row 36.66
+> does — **six rows, Rows 49.22, 49.23, 49.24, 49.25, 49.26 and 49.27**, counted both ways at this subsection (the foot
+> names it); **no other row is marked**. Items 3 and 4 lie inside the same home and, being items under *not a
+> statement*, carry no mark. The pack records the withholding at `tools/audit/derivation_boot_pack.json`, D-526's entry:
+> its finding, that the verbatim rules the chord axis scale-degree-valued and states the chord symbol a derived fact
+> published once; its date, 2026-10-15; and its reason, *"It states the ruled answer to how the chord symbol is read off
+> — derived from the decided degree, not decided — which is one of L3's five facts."* — read by this session at the
+> file. **No SEEN home lies inside it, agreeing with §5** — none of the SEEN identities is homed in this document — **so
+> no row is marked SEEN**. **Register entry D-525's home fills range 3** (105 to 123): it is NOT withheld and NOT seen,
+> **so its rows carry no mark although the document is withheld**, and each carries the paragraph *The decisions
+> register at this row* relaying it (Rows 49.16 to 49.21); item 1 and item 2 lie inside it and carry no mark. Over the
+> five cut spans the same walk found **register entries D-524** (89 to 103), **D-527** (146 to 167) and **D-528** (169
+> to 182), and **the retired entries D-529** (200 to 206) and **D-530** (208 to 214). The walk agrees with the seven the
+> dispatch read, no identity beyond them and none of them missing; it prints the two retired records' `status` as *live*
+> — the fifteenth batch's D-399 shape, relayed as printed and not chased. The decisions register's INDEX records D-525
+> and D-526 as their rows say, and, of the cut's, **D-524** *"The joint state's mode axis is TWO modes — major and
+> composite minor; modal and chromatic colour lives in the pitch emission, and the un-rounded reading is published"*,
+> **D-527** *"There is NO live non-chord-tone cleaning stage: each tone is emitted by category inside the one decode,
+> conditioned on chord-independent melodic and metric covariates, and ornament labels are derived AFTER it"* and
+> **D-528** *"The key signature and declared mode enter as a WEAK FITTED SOFT PRIOR with no conditional gate anywhere —
+> the probability calculus delivers 'consult it only when unsure', and the hard declared-mode wall is formally
+> retired"*, all five LIVE in group A with no entry ratification shown; the INDEX shows no retired entry — read by this
+> session at the INDEX, facts of the decisions register, relayed and moving no disposition. **Rows naming L3-S4: none.**
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.48, the colon-lead reading and the status-table reading stated at §6.9's manifest header, tables taken
+> row by row, the quotation join, the blockquote-marker reading, the fenced-block reading and the reading of a range
+> that opens with a heading line were applied unchanged at this member.** **The blockquote-marker reading has no
+> instance**: no line of the document opens with the marker. **The fenced-block reading has no instance**: the script
+> finds no line opening with three backticks. **The status-table reading and the taking of tables row by row have no
+> instance**: the document holds no table. **The glossary reading has no instance.** **The heading-line reading has no
+> instance**: no range opens with a heading line, and each row's nearest heading lies in the cut — *2. The factor roster
+> (…)* (39) for range 1, *3. What this reframes (…)* (53) for range 2, and *5a. Design decisions ratified (…)* (81) for
+> ranges 3 and 4. **The quotation join, at two lines, both inside the ranges**: line 121 ends *"minimum-error-"* (Row
+> 49.21) and line 130 *"chord-"* (Row 49.24), each a hyphen closing a word that the next line finishes, so each
+> quotation joins the two lines with no space, and each row says so; lines 4, 94 and 102 also end in a hyphen and lie in
+> the cut; no line ends in a slash. **How the leads were read.** Range 1's nine bullets each carry their evidence in a
+> bold run and its term after an arrow, each bullet one unit (Rows 49.1 to 49.9). Range 2's six bold leads — the open
+> items and *The measurement chain (OI-145 wave 1)* — are labels read with the words after them (Rows 49.10 to 49.15).
+> Range 3's lead *Fitting parameterization (user-ratified 2026-07-19).* is a label carrying a dated ratification, read
+> with the words after it and taken as provenance (Row 49.16); *Mandatory ablation arm:* opens the sentence that carries
+> its claims (Row 49.18); *Ledger entries attached to the decision:* only introduces its entries and is listed (item 1);
+> and the lettered entries are quoted from after their labels — *(a)*, *(c)* and *(d)* tabulated (Rows 49.19 to 49.21)
+> and *(b)* listed (item 2). Range 4's lead *Chord state is scale-degree-valued (user-ratified 2026-07-19).* is read
+> with the sentence after it, its dated parenthesis taken as provenance (Row 49.22); *Consequences, all structural:*
+> only introduces its consequences and is listed (item 3), each consequence quoted from after its label (Rows 49.23 to
+> 49.25); the bold runs *The chord symbol (…) is a DERIVED fact, published once* and *Tonicization is applied-degree
+> classes* open the sentences they belong to and are quoted with them (Rows 49.26 and 49.27); and *Excluded alternatives
+> recorded:* opens the declined alternatives, listed (item 4). **The defense reading**: range 3's entry *(b)*, the
+> constrained-optimum record, and range 4's excluded alternatives are listed as declined alternatives with their reasons
+> (items 2 and 4); range 4's clause on jazz analytical practice is a defense taken with Row 49.27. No sentence inside
+> the ranges is led *Why:*. **The passages recording a correction, a closure, a supersession or an as-built state.** (i)
+> Range 2's statuses — *still built* **QUARANTINED** (Row 49.10 (i)); the earlier fix, the question since decided, the
+> supersession, the retirement of the hand-set weights and the measurement chain *retained in full* **HISTORICAL** (Rows
+> 49.11 (ii), 49.12, 49.13 (i), 49.14 (ii) and 49.15 (i)), each split from the rule beside it. (ii) Range 4's dissolving
+> coupling terms and the older defect class **HISTORICAL** (Rows 49.23 (ii) and 49.25 (ii)), split from the
+> degree-valued state they follow from — **following the former-wording precedents in splitting a closure or a
+> supersession from the rule and the as-built record beside it, as §6.39 split its (iii) and §6.43 its (ii)**. **The
+> member's own identifiers** — its *A*, the joint estimate; its *L1.5*, the older stack's notation-derived tier; its *L2
+> penalty*, its name for the squared-norm regularization and not the charter L2; its *δ*; its open items *OI-7*,
+> *OI-23*, *OI-91*, *OI-97*, *OI-145*, *OI-147*, *OI-166*, *OI-168*, *OI-170*, *OI-173*, *OI-174*, *OI-175*, *OI-176*
+> and *OI-177*; *#17b* and *#3/#19*; and *Gate G-E* — are quoted as they stand; no three-digit identity of the decisions
+> register stands inside a range.
+>
+> **What this member is, and how its subjects were placed.** The ranges are the ratified architecture of the joint
+> estimate of key, mode and chord: its factor roster, what it reframes, and two of its five design decisions of
+> 2026-07-19 — the fitting parameterization and the scale-degree-valued chord state — less the cut, which holds the
+> decision of 2026-07-14 with its grounds, what the estimate is, the path to it, what was not yet decided, the
+> factorization's pointer, the other three design decisions, the recorded assessment and the plan amendments. **The
+> member was read whole, at its blob, before any row was written**, and its rows were then written in two portions.
+> **How 1(a)'s five points were weighed.** **(a) The member's subject against L3's.** Its subject is L2's: every factor
+> of range 1 is **RELOCATED** to *L2 — The tonal reading. The one entangled decision.* as member 42's rows placed the
+> same factor (Rows 42.8, 42.12, 42.14, 42.17, 42.22, 42.23, 42.24, 42.25 and 42.28); the fit and its weights go to L2's
+> detail specification, and the held-out gate, the ablation arm's held-out comparison and the unchanged root measurement
+> to *the measurement of the analysis* (Rows 49.17 (ii), 49.18 (ii) and 49.26 (iii)). **L3's subjects appear at the
+> places the dispatch names.** The cadence votes and the fermatas and phrase facts enter L2's candidate score as L1's
+> evidence (Rows 49.4 and 49.8) — placement (l); harmonic rhythm as the segmentation's duration model is graded
+> **AGREES** by L3-S31's defense, as Row 42.23 (ii) graded it (Row 49.6) — placement (m); the bass motion is L2's bass
+> factor (Row 49.9); and **the chord symbol as a derived fact, published once, is ADOPTED — carried by L3-S1 and its
+> root by L3-S2, inside D-526's WITHHELD home** (Row 49.26 (i) and (ii)) — placement (n). **(b) Its *A* and *L1.5*** are
+> the joint estimate and the older stack's notation-derived tier; its *B* and *C* stand only in the cut. Every statement
+> is placed by its subject. **(c) Its standing** — range 2's statuses as above, and ranges 3 and 4's ledger entries and
+> excluded alternatives: an entry stating a rule of the fit is tabulated, the declined alternative and the
+> constrained-optimum record listed under the defense reading. **No statement is UNPLACED.** **(d) The decisions
+> register's homes** as above — D-525 filling range 3, unmarked; D-526 filling range 4, every row marked WITHHELD; three
+> live and two retired homes in the cut. **(e) No table lies inside the ranges.** **Five placements are stated for
+> challenge.** (l) Rows 49.4 and 49.8 — the cadence votes and the fermatas and phrase facts — placed with L2 as Rows
+> 42.25 and 42.24 placed them, L1's cues and notated phrase evidence entering L2's candidate score; **the alternative**
+> — reading them as L3's cadence and phrase facts entering L2 and grading them **DIFFERS** from L3-S38 — is stated and
+> not taken, the member naming the key-agnostic cadence pre-scan and the notated phrase evidence, and L3-S38 speaking of
+> what L3 publishes. (m) Row 49.6 graded **AGREES** by L3-S31's defense, as Row 42.23 (ii); **the alternative** — **THE
+> DERIVATION IS SILENT**, the statement speaking of L2's segmentation model and L3-S31 of L3's harmonic rhythm — is
+> stated and not taken, the defense naming exactly such a term inside L2. (n) Row 49.26 (i) and (ii) **ADOPTED —
+> carried** by L3-S1 and L3-S2, **following Row 43.62 and Row 42.6 and departing from Rows 43.28 (i) and 43.60 (ii)**,
+> which placed with L2 the key layer's boundary and the older chord-symbol decoder's reading of the key, not the chord
+> symbol's derivation; **the alternative** — **RELOCATED** to L2 as those two rows were — is stated and not taken. (o)
+> Rows 49.17 (ii) and 49.18 (ii), the held-out gate and the ablation arm's held-out comparison, placed with
+> *the measurement of the analysis*; **the alternative** — L2's detail specification, as the fit they govern — is stated
+> and not taken, a value graded on held-out data being a measurement and not a fitted value. (p) Row 49.12, the exotic
+> modes as a design-pass question, **HISTORICAL**; **the alternative** — **RELOCATED** to L2, whose tonality per span is
+> tonic and mode — is stated and not taken, the bullet recording a question the member's §5a, in the cut, records
+> decided. **No statement of this member is ADOPTED — proposed, DISCARDED or UNPLACED.**
+
+---
+
+**Row 49.1 — the tone collections and pitch content: the pitch emission given tonic, mode and chord, metric-weighted.**
+
+*Outgoing statement.* "NCT-cleaned **tone collections / pitch content** → emission `P(pitches | tonic, mode, chord)`,
+metric-weighted;" — the section *2. The factor roster (evidence → term; forms to be derived, not assumed)*, its first
+bullet (locator: line 43). Its *NCT-cleaned* is the member's word for collections with the non-chord tones removed.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 42.8 placed the pitch emission.
+
+---
+
+**Row 49.2 — the notated signature and declared mode: a prior on tonic and mode.**
+
+*Outgoing statement.* "**notated signature + declared mode** → prior on `(tonic, mode)` (fixed input);" — the section
+*2. The factor roster (evidence → term; forms to be derived, not assumed)*, its second bullet (locator: line 44).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 42.28 placed the signature and declared-mode prior.
+
+---
+
+**Row 49.3 — the notated spelling and accidentals: a spelling-conditioned emission and the mode's disambiguation.**
+
+*Outgoing statement.* "**notated spelling + accidentals** → spelling-conditioned emission + mode disambiguation;" — the
+section *2. The factor roster (evidence → term; forms to be derived, not assumed)*, its third bullet (locator: line 45).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 42.12 placed the spelling emission.
+
+---
+
+**Row 49.4 — the cadence votes and leading-tone events: a factor on tonic and mode at cadence points.**
+
+*Outgoing statement.* "**cadence votes + leading-tone events** → emission/transition factor on `(tonic, mode)` at
+cadence points (the OI-166 channel, as a *factor*);" — the section *2. The factor roster (evidence → term; forms to be
+derived, not assumed)*, its fourth bullet (locator: line 46); its *OI-166 channel* is the open item of the key-agnostic
+cadence pre-scan, whose cues are the local cadence cues `FRAMEWORK.md` §5 places at L1.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 42.25 placed the cadence factor, L1's local cadence cues read as evidence for the tonality.
+
+---
+
+**Row 49.5 — progression grammaticality: the chord transition term, licensed motions weighted up.**
+
+*Outgoing statement.* "**progression grammaticality** → the chord transition term (licensed motions weighted up);" — the
+section *2. The factor roster (evidence → term; forms to be derived, not assumed)*, its fifth bullet (locator: line 47).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 42.17 placed the chord transition.
+
+---
+
+**Row 49.6 — harmonic rhythm and boundary strength: the segmentation's segment-duration model.**
+
+*Outgoing statement.* "**harmonic rhythm + boundary strength** → the segmentation (semi-Markov segment-duration) model;"
+— the section *2. The factor roster (evidence → term; forms to be derived, not assumed)*, its sixth bullet (locator:
+line 48).
+
+*Derived statements that speak to it.* L3-S31.
+
+*Current-text axis.* L3-S31: **AGREES** — its defense, of a harmonic-rhythm term inside L2: *"Such a term would be L2's
+own, computed from its own readings, and is not this fact."*
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 42.23 placed the segment-duration model.
+
+---
+
+**Row 49.7 — beat strength and metric position: emission weighting and a prior for chord change on a strong beat.**
+
+*Outgoing statement.* "**beat strength / metric position** → emission weighting + a chord-change-on-strong-beat prior;"
+— the section *2. The factor roster (evidence → term; forms to be derived, not assumed)*, its seventh bullet (locator:
+line 49).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 42.22 placed the boundary factor on beat strength.
+
+---
+
+**Row 49.8 — fermatas and phrase facts: segment-boundary and cadence-location priors.**
+
+*Outgoing statement.* "**fermatas + phrase facts** → segment-boundary and cadence-location priors;" — the section *2.
+The factor roster (evidence → term; forms to be derived, not assumed)*, its eighth bullet (locator: line 50); its
+*phrase facts* are read as the notated phrase evidence L1 publishes, not as L3's phrase reading, as the dispatch's
+weighing point (a) names them.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 42.24 placed the fermata as a boundary prior and a prior on where a cadence sits.
+
+---
+
+**Row 49.9 — bass-motion skeletons: a bass and inversion emission.**
+
+*Outgoing statement.* "**bass-motion skeletons** → a bass/inversion emission." — the section *2. The factor roster
+(evidence → term; forms to be derived, not assumed)*, its ninth bullet (locator: line 51).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 42.14 placed the bass factor.
+
+---
+
+**Row 49.10 — the key-agnostic cadence pre-scan still built; now the joint estimate's cadence factor; its probe gating
+the weight.**
+
+*Outgoing statement.* "**OI-166** (key-agnostic cadence pre-scan) — still built, at L1.5; it is now the **cadence
+factor** of A, not a forward vote. Its precision probe still gates whether/how strongly the factor is weighted." — the
+section *3. What this reframes (the in-flight items are now parts of A)*, its first bullet (locator: line 55); its
+*L1.5* is the older stack's notation-derived tier and its *A* the joint estimate. Three claims: (i) the key-agnostic
+cadence pre-scan is still built, in the older stack's notation-derived tier; (ii) it is now the joint estimate's cadence
+factor, not a forward vote; (iii) its precision probe still gates whether and how strongly the factor is weighted.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* is the key-agnostic cadence pre-scan built at the current
+commit, and does any path that runs reach it? (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail specification fixes how the
+candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the L2 block), as Row 42.25
+placed the cadence factor. (iii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose
+detail specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block).
+
+---
+
+**Row 49.11 — the signature-mask collection term the correct form of the emission factor; the earlier fix standing.**
+
+*Outgoing statement.* "**OI-168 / OI-170** (the δ collection-membership fix) — the signature-mask collection term is the
+correct *form* of that emission factor; the class-(a) fix stands as adopting the right form." — the section *3. What
+this reframes (the in-flight items are now parts of A)*, its second bullet (locator: line 56); its *δ* names the earlier
+fix of collection membership. Two claims: (i) the signature-mask collection term is the correct form of that emission
+factor; (ii) the class-(a) fix stands as having adopted the right form.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how the candidate score over its readings is formed and what its terms are (`FRAMEWORK.md` §5, the
+L2 block), as Row 42.13 placed the collection question asked through the signature mask. (ii) **HISTORICAL** — it
+records a fix of the older stack's code.
+
+---
+
+**Row 49.12 — the spurious exotic modes a question of mode vocabulary and emission form, for the design pass.**
+
+*Outgoing statement.* "**OI-174 / OI-147** (spurious `Altered` / exotic modes on plain material) — a **mode-vocabulary
+and mode-emission-form** question for A (should exotic modes be states, emissions, or excluded?), a design-pass
+decision." — the section *3. What this reframes (the in-flight items are now parts of A)*, its third bullet (locator:
+line 57).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — an open question of its day, which the member's §5a, in the cut, records
+decided on 2026-07-19.
+
+---
+
+**Row 49.13 — the provisional-key back-edge superseded by the joint decode, segmentation a modeled variable.**
+
+*Outgoing statement.* "**OI-175** (provisional key → segmentation) — **superseded** by A's joint decode with
+segmentation as a modeled variable; the ad-hoc back-edge dissolves into the joint estimate." — the section *3. What this
+reframes (the in-flight items are now parts of A)*, its fourth bullet (locator: line 58). Two claims: (i) the
+provisional-key route into segmentation is superseded; (ii) the joint decode models segmentation as a variable, so the
+ad-hoc back-edge dissolves into the joint estimate.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a supersession of the older stack's route. (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which takes the segmentation, the tonality
+and the chord as one entangled decision over whole sequences of spans (`FRAMEWORK.md` §5).
+
+---
+
+**Row 49.14 — the hand-set chord constants and key change-costs replaced by fit-once factors; the ad-hoc weights
+retiring.**
+
+*Outgoing statement.* "**OI-23 (~30 hand-set chord constants) + the hand-set key change-costs (OI-91/OI-97)** — replaced
+by A's fit-once factors; the accumulated ad-hoc weights retire as the joint model is fit." — the section *3. What this
+reframes (the in-flight items are now parts of A)*, its fifth bullet (locator: line 59). Two claims: (i) the hand-set
+chord constants and key change-costs are replaced by the joint estimate's factors, fitted once; (ii) the accumulated
+ad-hoc weights retire as the joint model is fitted.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block). (ii)
+**HISTORICAL** — a retirement planned for the older stack's code.
+
+---
+
+**Row 49.15 — the measurement chain retained in full: the joint estimate graded against the human annotation through the
+same unit.**
+
+*Outgoing statement.* "**The measurement chain (OI-145 wave 1)** — **retained in full**: A is graded against DCML ground
+truth through the same robust unit; the hardening we did is what lets A be measured honestly." — the section *3. What
+this reframes (the in-flight items are now parts of A)*, its sixth bullet (locator: line 60). Two claims: (i) the
+measurement chain is retained in full; (ii) the joint estimate is graded against the DCML ground truth through the same
+robust unit, the hardening done being what lets it be measured honestly.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — a status of the measurement chain on the day of the decision. (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric definitions, the grading
+conventions and what counts as ground truth are (`FRAMEWORK.md` §5).
+
+---
+
+**Row 49.16 — the factor tables fitted generatively from ground-truth counts and frozen, each established on its own.**
+
+*Outgoing statement.* "**Fitting parameterization (user-ratified 2026-07-19).** The staged form: **the factor TABLES are
+fit generatively from ground-truth counts and frozen** (each table established on its own — the key-conditioned
+chord-transition table, the bass-note-given-chord-and-inversion table, the tone-category emission tables, the key-change
+table — every entry a musically meaningful probability, per the published forms);" — the section *5a. Design decisions
+ratified (the design pass, 2026-07-19 →)*, the paragraph led *Fitting parameterization (user-ratified 2026-07-19).*
+(locator: lines 105–109), its bold lead, carrying a dated ratification, read with the words after it and taken as
+provenance.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block).
+
+*The decisions register at this row.* The data file homes **register entry D-525** at lines 105 to 123, the whole of
+range 3, on which this row's claims lie. The decisions register's INDEX records **D-525** *"The fit is STAGED: the
+factor tables are counted from ground truth and frozen, and only a small vector of combination weights is fit
+discriminatively — with an all-weights-equal ablation arm that must be beaten"* as LIVE, group A, with no entry
+ratification shown — not withheld and not seen, so the row carries no mark, although the document is one of the five
+withheld from the deriving session's pack; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 49.17 — the combination weights fitted discriminatively by convex conditional likelihood; the held-out gate and
+capacity budget governing.**
+
+*Outgoing statement.* "**the small vector of COMBINATION WEIGHTS over the factors is fit discriminatively by convex
+conditional likelihood** (the semi-Markov conditional-random-field objective with the logarithms of the frozen tables as
+features; L2 penalty; the OI-176 held-out gate and OI-177 capacity budget govern)." — the section *5a. Design decisions
+ratified (the design pass, 2026-07-19 →)*, the paragraph led *Fitting parameterization (user-ratified 2026-07-19).*
+(locator: lines 109–112); its *L2 penalty* is the member's name for the squared-norm regularization of the weights, not
+the charter L2. Two claims: (i) the small vector of combination weights over the factors is fitted discriminatively by
+convex conditional likelihood, the semi-Markov conditional-random-field objective with the logarithms of the frozen
+tables as features, under a penalty; (ii) the held-out gate and the capacity budget govern that fit.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block). (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric definitions and the
+grading conventions are (`FRAMEWORK.md` §5): a fitted value graded on held-out data, as Row 42.30 placed a measurement
+published at each fit.
+
+*The decisions register at this row.* The data file homes **register entry D-525** at lines 105 to 123, the whole of
+range 3, on which this row's claims lie. The decisions register's INDEX records **D-525** *"The fit is STAGED: the
+factor tables are counted from ground truth and frozen, and only a small vector of combination weights is fit
+discriminatively — with an all-weights-equal ablation arm that must be beaten"* as LIVE, group A, with no entry
+ratification shown — not withheld and not seen, so the row carries no mark, although the document is one of the five
+withheld from the deriving session's pack; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 49.18 — the mandatory ablation arm: all weights at one the pure generative model, its contribution measured held
+out.**
+
+*Outgoing statement.* "**Mandatory ablation arm:** all-weights-equal-one IS the pure generative model, so the weight
+layer's contribution is measured on held-out data inside the same machinery, never assumed — its adoption is gated on
+winning that comparison." — the section *5a. Design decisions ratified (the design pass, 2026-07-19 →)*, the paragraph
+led *Fitting parameterization (user-ratified 2026-07-19).* (locator: lines 112–114), its colon lead opening the sentence
+that carries the claims. Two claims: (i) every weight at one is the pure generative model; (ii) the weight layer's
+contribution is measured on held-out data inside the same machinery, never assumed, and its adoption is gated on winning
+that comparison.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block). (ii)
+**RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric definitions and the
+grading conventions are (`FRAMEWORK.md` §5): a fitted value graded on held-out data, as Row 42.30 placed a measurement
+published at each fit.
+
+*The decisions register at this row.* The data file homes **register entry D-525** at lines 105 to 123, the whole of
+range 3, on which this row's claims lie. The decisions register's INDEX records **D-525** *"The fit is STAGED: the
+factor tables are counted from ground truth and frozen, and only a small vector of combination weights is fit
+discriminatively — with an all-weights-equal ablation arm that must be beaten"* as LIVE, group A, with no entry
+ratification shown — not withheld and not seen, so the row carries no mark, although the document is one of the five
+withheld from the deriving session's pack; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 49.19 — the staged assembly this project's synthesis, an assumption with its own written prediction.**
+
+*Outgoing statement.* "the staged ASSEMBLY is our synthesis (each stage established separately in the literature; the
+combination is an assumption with its own #17b prediction);" — the section *5a. Design decisions ratified (the design
+pass, 2026-07-19 →)*, the paragraph led *Fitting parameterization (user-ratified 2026-07-19).*, its first ledger entry,
+quoted from after its label *(a)* (locator: lines 114–116).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block), whose
+own premises its detail specification ledgers.
+
+*The decisions register at this row.* The data file homes **register entry D-525** at lines 105 to 123, the whole of
+range 3, on which this row's claims lie. The decisions register's INDEX records **D-525** *"The fit is STAGED: the
+factor tables are counted from ground truth and frozen, and only a small vector of combination weights is fit
+discriminatively — with an all-weights-equal ablation arm that must be beaten"* as LIVE, group A, with no entry
+ratification shown — not withheld and not seen, so the row carries no mark, although the document is one of the five
+withheld from the deriving session's pack; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 49.20 — the fit scope declared before any fit: the tables once, from counts, frozen; only the weights moving.**
+
+*Outgoing statement.* "fit-scope declaration (the Noland & Sandler lesson): which components may be re-fit is declared
+before any fit — tables from counts, once, frozen; only the combination weights move;" — the section *5a. Design
+decisions ratified (the design pass, 2026-07-19 →)*, the paragraph led *Fitting parameterization (user-ratified
+2026-07-19).*, its third ledger entry, quoted from after its label *(c)* (locator: lines 119–121); its parenthesis
+naming the published lesson it follows is taken with it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block).
+
+*The decisions register at this row.* The data file homes **register entry D-525** at lines 105 to 123, the whole of
+range 3, on which this row's claims lie. The decisions register's INDEX records **D-525** *"The fit is STAGED: the
+factor tables are counted from ground truth and frozen, and only a small vector of combination weights is fit
+discriminatively — with an all-weights-equal ablation arm that must be beaten"* as LIVE, group A, with no entry
+ratification shown — not withheld and not seen, so the row carries no mark, although the document is one of the five
+withheld from the deriving session's pack; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 49.21 — the direct-metric few-weight search the fallback if the likelihood-fitted weights disagree with the
+metric.**
+
+*Outgoing statement.* "the direct-metric few-weight search (the minimum-error-rate protocol with bootstrap confidence
+intervals) is the established fallback if the likelihood-fit weights measurably disagree with the reported metric." —
+the section *5a. Design decisions ratified (the design pass, 2026-07-19 →)*, the paragraph led *Fitting parameterization
+(user-ratified 2026-07-19).*, its fourth ledger entry, quoted from after its label *(d)* (locator: lines 121–123),
+joined across line 121's ending hyphen (*minimum-error-* and *rate*) with no space.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block).
+
+*The decisions register at this row.* The data file homes **register entry D-525** at lines 105 to 123, the whole of
+range 3, on which this row's claims lie. The decisions register's INDEX records **D-525** *"The fit is STAGED: the
+factor tables are counted from ground truth and frozen, and only a small vector of combination weights is fit
+discriminatively — with an all-weights-equal ablation arm that must be beaten"* as LIVE, group A, with no entry
+ratification shown — not withheld and not seen, so the row carries no mark, although the document is one of the five
+withheld from the deriving session's pack; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 49.22 — the chord axis a Roman numeral — degree, quality, inversion — relative to the state's tonic and mode.**
+*WITHHELD — D-526.*
+
+*Outgoing statement.* "**Chord state is scale-degree-valued (user-ratified 2026-07-19).** The joint state's chord axis
+is a **Roman numeral — scale degree, quality, inversion — relative to the state's tonic and mode** (the Raphael-Stoddard
+/ Harasim structure)." — the section *5a. Design decisions ratified (the design pass, 2026-07-19 →)*, the paragraph led
+*Chord state is scale-degree-valued (user-ratified 2026-07-19).* (locator: lines 125–127), its bold lead, carrying a
+dated ratification, read with the sentence after it and taken as provenance.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which publishes
+per span the chord as degree, quality, figure and applied target, read against that tonality (`FRAMEWORK.md` §5), as Row
+42.3 placed the chord state.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-526** (lines 125–144), *"The
+joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the
+chord symbol is a DERIVED fact published once"*, which the decisions register's INDEX records as LIVE, group A, with no
+entry ratification shown — the identity the artifact's `item_4_identities_inside` names, WITHHELD from the deriving
+session's pack; a fact of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 49.23 — a degree key-relative by definition; the older stack's tonic and degree coupling terms dissolving.**
+*WITHHELD — D-526.*
+
+*Outgoing statement.* "the tonic/degree coupling terms (the diatonic-root bonus, `buildChordResult`'s degree, Gate G-E's
+degree condition, `applyTonicPriorToSparseChord`, the segmenter's head-gap tonic prior — the gap map's group 1) dissolve
+by construction — a degree is key-relative by definition;" — the section *5a. Design decisions ratified (the design
+pass, 2026-07-19 →)*, the paragraph led *Chord state is scale-degree-valued (user-ratified 2026-07-19).*, its first
+consequence, quoted from after its label *(a)* (locator: lines 127–130). Two claims: (i) a degree is relative to the key
+by definition; (ii) the older stack's tonic and degree coupling terms, which the parenthesis lists, dissolve by
+construction.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which
+publishes per span the chord as degree, quality, figure and applied target, read against that tonality (`FRAMEWORK.md`
+§5). (ii) **HISTORICAL** — terms of the older stack's code, which the degree-valued state dissolves.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-526** (lines 125–144), *"The
+joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the
+chord symbol is a DERIVED fact published once"*, which the decisions register's INDEX records as LIVE, group A, with no
+entry ratification shown — the identity the artifact's `item_4_identities_inside` names, WITHHELD from the deriving
+session's pack; a fact of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 49.24 — transposition invariance: the chord-transition table pooling all keys' evidence.** *WITHHELD — D-526.*
+
+*Outgoing statement.* "**transposition invariance**: the chord-transition table pools all keys' evidence (twelvefold
+counts per cell — the decisive capacity device on a 326-piece corpus);" — the section *5a. Design decisions ratified
+(the design pass, 2026-07-19 →)*, the paragraph led *Chord state is scale-degree-valued (user-ratified 2026-07-19).*,
+its second consequence, quoted from after its label *(b)* (locator: lines 130–132), joined across line 130's ending
+hyphen (*chord-* and *transition*) with no space.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block), as Row
+42.17 placed the chord transition shared across transpositions.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-526** (lines 125–144), *"The
+joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the
+chord symbol is a DERIVED fact published once"*, which the decisions register's INDEX records as LIVE, group A, with no
+entry ratification shown — the identity the artifact's `item_4_identities_inside` names, WITHHELD from the deriving
+session's pack; a fact of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 49.25 — the ground truth natively degree-valued, the tables fitted with no conversion; the older defect class
+never rebuilt.** *WITHHELD — D-526.*
+
+*Outgoing statement.* "the ground truth is natively degree-valued, so tables fit from counts with no conversion layer,
+and the OI-173 defect class (four inequivalent `diatonicToKey` definitions, two of `degree`) is never rebuilt." — the
+section *5a. Design decisions ratified (the design pass, 2026-07-19 →)*, the paragraph led *Chord state is
+scale-degree-valued (user-ratified 2026-07-19).*, its third consequence, quoted from after its label *(c)* (locator:
+lines 132–134). Two claims: (i) the ground truth is natively degree-valued, so the tables are fitted from counts with no
+conversion layer; (ii) the older stack's defect class of four inequivalent definitions of the diatonic answer and two of
+the degree is never rebuilt.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose detail
+specification fixes how any weight or table of its candidate scoring is fitted (`FRAMEWORK.md` §5, the L2 block). (ii)
+**HISTORICAL** — it records a defect class of the older stack's code, which the degree-valued state does not rebuild.
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-526** (lines 125–144), *"The
+joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the
+chord symbol is a DERIVED fact published once"*, which the decisions register's INDEX records as LIVE, group A, with no
+entry ratification shown — the identity the artifact's `item_4_identities_inside` names, WITHHELD from the deriving
+session's pack; a fact of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 49.26 — the chord symbol a derived fact, published once, its root the tonic plus the degree's interval; the root
+measurement unchanged.** *WITHHELD — D-526.*
+
+*Outgoing statement.* "**The chord symbol (root pitch class, quality, bass) is a DERIVED fact, published once** (root =
+tonic + the degree's interval) — the robust stop's root metric is unchanged and every baseline column stays comparable."
+— the section *5a. Design decisions ratified (the design pass, 2026-07-19 →)*, the paragraph led *Chord state is
+scale-degree-valued (user-ratified 2026-07-19).* (locator: lines 134–136). Three claims: (i) the chord symbol — root
+pitch class, quality and bass — is a derived fact, published once; (ii) its root is the tonic plus the degree's
+interval; (iii) the robust stop's root measurement is unchanged and every baseline column stays comparable.
+
+*Derived statements that speak to it.* (i) L3-S1. (ii) L3-S2. (iii) None.
+
+*Current-text axis.* (i) L3-S1: **AGREES** — *"The chord symbol is a view of L2's chord."* (ii) L3-S2: **AGREES** — *"It
+is the span's spelled tonic transposed by the diatonic interval of the degree"*, the pitch class published as the
+spelled root's projection. (iii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S1) — the chord symbol is a view of L2's chord, published once, as
+Row 42.6 (i). (ii) **ADOPTED — carried** (L3-S2) — the root is the spelled tonic transposed by the degree's interval, as
+Row 42.6 (ii). (iii) **RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric
+definitions, the grading conventions and what counts as ground truth are (`FRAMEWORK.md` §5).
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-526** (lines 125–144), *"The
+joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the
+chord symbol is a DERIVED fact published once"*, which the decisions register's INDEX records as LIVE, group A, with no
+entry ratification shown — the identity the artifact's `item_4_identities_inside` names, WITHHELD from the deriving
+session's pack; a fact of the decisions register, relayed, moving no disposition.
+
+---
+
+**Row 49.27 — tonicization as applied-degree classes, per the ground truth's vocabulary; jazz classes only under their
+gate.** *WITHHELD — D-526.*
+
+*Outgoing statement.* "**Tonicization is applied-degree classes** (the secondary dominant V/x, applied leading-tone
+chords, and the standard chromatic classes — Neapolitan sixth, augmented-sixth chords — per the ground truth's own
+vocabulary; this also matches jazz analytical practice, where the secondary dominant, and later the substitute dominant
+and extended dominant chains, are applied-degree devices — jazz-specific classes enter only under the OI-7
+jazz-ground-truth gate)." — the section *5a. Design decisions ratified (the design pass, 2026-07-19 →)*, the paragraph
+led *Chord state is scale-degree-valued (user-ratified 2026-07-19).* (locator: lines 136–140). Two claims: (i)
+tonicization is held as applied-degree classes — the secondary dominant, the applied leading-tone chords, and the
+standard chromatic classes, the Neapolitan sixth and the augmented sixths — per the ground truth's own vocabulary; (ii)
+jazz-specific classes enter only under the jazz ground-truth gate. Its clause on jazz analytical practice is a defense,
+taken with the row.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which
+publishes per span the chord as degree, quality, figure and applied target, read against that tonality (`FRAMEWORK.md`
+§5), the applied target among its fields. (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose rule admitting a candidate to the
+search belongs to its own specification and carries its own defense (`FRAMEWORK.md` §5).
+
+*The decisions register at this row.* The quoted statement lies inside the home of **D-526** (lines 125–144), *"The
+joint state's chord axis is SCALE-DEGREE-VALUED — a Roman numeral relative to the state's own tonic and mode — and the
+chord symbol is a DERIVED fact published once"*, which the decisions register's INDEX records as LIVE, group A, with no
+entry ratification shown — the identity the artifact's `item_4_identities_inside` names, WITHHELD from the deriving
+session's pack; a fact of the decisions register, relayed, moving no disposition.
+
+#### Not a statement, at this member
+
+Each item is quoted from its opening with its line locator, and its kind named. Run-in bold labels read as titles under
+rule (1) without a dated parenthesis are neither here nor among the rows; no line listed here carries the
+quotation-block marker.
+
+1. "**Ledger entries attached to the decision:**" (114) — a lead ending in a colon introducing the four ledger entries
+   (a) to (d); it lies inside register entry D-525's home.
+2. "constrained-optimum record — the unconstrained alternative is …" (116–119) — the decision's second ledger entry,
+   quoted from after its label (b): the unconstrained alternative, why it is excluded and when to re-test it — the
+   constrained-optimum record the ledger corollary to #17 requires, read under rule (2) as a declined alternative with its
+   defense; it lies inside D-525's home.
+3. "Consequences, all structural:" (127) — a lead ending in a colon introducing the three consequences (a) to (c); it
+   lies inside register entry D-526's home, a WITHHELD home, and an item under *not a statement* carries no mark.
+4. "**Excluded alternatives recorded:** root-valued chord state …" (141–144) — the declined alternatives of the
+   decision, each with its reason, read under rule (2); it lies inside D-526's home and carries no mark.
+
+#### The arithmetic at this member
+
+- Rows written: **27**.
+- **Outgoing statements placed: 40** — 16 rows of one claim, 9 rows of two (Rows 49.11, 49.13, 49.14, 49.15, 49.17,
+  49.18, 49.23, 49.25 and 49.27) and 2 rows of three (Rows 49.10 and 49.26).
+- Listed under *not a statement*: **4**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: 0.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 2 | 49.26 (i), 49.26 (ii) |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 30 | 49.1, 49.2, 49.3, 49.4, 49.5, 49.6, 49.7, 49.8, 49.9, 49.10 (ii), 49.10 (iii), 49.11 (i), 49.13 (ii), 49.14 (i), 49.15 (ii), 49.16, 49.17 (i), 49.17 (ii), 49.18 (i), 49.18 (ii), 49.19, 49.20, 49.21, 49.22, 49.23 (i), 49.24, 49.25 (i), 49.26 (iii), 49.27 (i), 49.27 (ii) |
+| QUARANTINED | 1 | 49.10 (i) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 7 | 49.11 (ii), 49.12, 49.13 (i), 49.14 (ii), 49.15 (i), 49.23 (ii), 49.25 (ii) |
+| UNPLACED | 0 | — |
+| **Total** | **40** | — |
+
+**The column sums to 40 (2 + 0 + 30 + 1 + 0 + 7 + 0), against 40 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 3 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 37 |
+| **Total verdicts** | **40** |
+
+The AGREES statements: 49.6 (L3-S31), 49.26 (i) (L3-S1), 49.26 (ii) (L3-S2). The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: 6**, each marked after its title and carrying its paragraph — **D-526** (lines 125 to 144, range 4
+  whole; Rows 49.22, 49.23, 49.24, 49.25, 49.26 and 49.27) — the identity the artifact's `item_4_identities_inside`
+  names, counted both ways at this subsection, the rows carrying the mark against the rows whose quoted lines lie inside
+  the home. Items 3 and 4 lie inside D-526's home and, being items under *not a statement*, carry no mark.
+- **SEEN rows: none** — no SEEN identity is homed in this document, agreeing with §5.
+- **One more home inside the ranges, neither withheld nor seen, marking no row** — **register entry D-525** (105 to 123,
+  range 3 whole; Rows 49.16 to 49.21, each carrying its paragraph); items 1 and 2 lie inside it.
+- **Five are homed in the cut**: **register entries D-524** (89 to 103), **D-527** (146 to 167) and **D-528** (169 to
+  182), and **the retired entries D-529** (200 to 206) and **D-530** (208 to 214). The data file prints both retired
+  records' `status` as *live*.
+- **The cut** holds the title and the decision of 2026-07-14, a separator line, the whole of §1, the headings and leads
+  of §2, §3 and §5a, the whole of §4 and §5, the paragraph on the mode vocabulary, the paragraphs on non-chord-tone
+  handling and on the key-signature prior, the whole of §6 and §7, a separator line, the provenance paragraph, and blank
+  lines; no row is tabulated there.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -67207,6 +68020,20 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   layer's reads of the record. *(L3-S3 DIFFERS at Row 48.16, placed as Row 7.18 (i).)*
 - Rows 48.20 (iii) and 48.33 — the record independent of any preset, and the pedal point as an elaboration relation.
   *(As Row 43.41 placed the preset-free facts.)*
+- Rows 49.1, 49.2, 49.3, 49.4, 49.5, 49.6, 49.7, 49.8, 49.9, 49.10 (ii) and 49.11 (i) — the factor roster: the pitch
+  emission, the signature and declared-mode prior, the spelling emission, the cadence factor, the chord transition, the
+  segment-duration model, beat strength, the fermata and phrase priors, the bass emission, and the signature-mask
+  collection term the emission's form. *(As member 42's rows placed the same factors; L3-S31 AGREES at Row 49.6.)*
+- Rows 49.10 (iii), 49.14 (i), 49.16, 49.17 (i), 49.18 (i), 49.19, 49.20, 49.21, 49.24 and 49.25 (i) — the staged fit:
+  the cadence factor's weight gated by its probe, the hand-set constants replaced by fitted factors, the tables counted
+  and frozen, the combination weights fitted discriminatively, all weights at one the generative model, the staged
+  assembly a ledgered synthesis, the fit scope declared before any fit, the direct-metric fallback, the chord transition
+  pooled across keys, and the tables fitted from degree-valued ground truth. *(Rows 49.16 to 49.21 lie on register entry
+  D-525's home, unmarked; Rows 49.24 and 49.25 (i) on D-526's, marked WITHHELD.)*
+- Rows 49.13 (ii), 49.22, 49.23 (i), 49.27 (i) and 49.27 (ii) — segmentation decided in the joint decode, the chord axis
+  a Roman numeral relative to the state's tonic and mode, a degree key-relative by definition, tonicization as
+  applied-degree classes, and jazz-specific classes admitted only under their gate. *(Rows 49.22, 49.23 (i), 49.27 (i)
+  and 49.27 (ii) lie on register entry D-526's home, marked WITHHELD.)*
 
 **To *the second axis — voice leading*.**
 
@@ -67526,6 +68353,10 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   own establishment condition, the record's chord-symbol string as the grading form, and the establishment conditions:
   the decode equality, the spelling table's review and reproduction, the augmented-sixth read, the modal-reading
   counter, the posterior slice's parity, the marginal completion's oracle and the formatter continuity.
+- Rows 49.15 (ii), 49.17 (ii), 49.18 (ii) and 49.26 (iii) — the joint estimate graded against the human annotation
+  through the same unit, the held-out gate and capacity budget governing the fit, the ablation arm's held-out
+  comparison, and the root measurement unchanged. *(Rows 49.17 (ii) and 49.18 (ii) lie on D-525's home, unmarked; Row
+  49.26 (iii) on D-526's, marked WITHHELD.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
@@ -67536,7 +68367,7 @@ member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 2
 the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
 numbered 36.n, member 37's the rows numbered 37.n, member 38's the rows numbered 38.n, member 39's the rows numbered 39.n,
 member 40's the rows numbered 40.n, member 41's the rows numbered 41.n,
-member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, and member 48's the rows numbered 48.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
+member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, and member 49's the rows numbered 49.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -69591,6 +70422,11 @@ No QUARANTINED row: the member's ranges record no measured property of the code 
 - Row 48.37 — does `kSameChordReannotationGap` live at the implode emitter at the current commit, as a declared
   presentation-timing constant?
 
+**Member 49 — `cowork_joint_estimator_architecture.md`, the passages of the document.**
+
+- Row 49.10 (i) — is the key-agnostic cadence pre-scan built at the current commit, and does any path that runs reach
+  it?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -70576,6 +71412,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 48.16 (L3-S3):** the outgoing sub-type is *"derived from the SOUNDING pitch classes over the
   segment"*, where L3-S3 says *"Nothing in the quality is re-read from the sounding notes."*
 
+**Member 49.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -70631,11 +71469,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 46 | 67 | 0 | 0 | 21 | 7 | 0 | 7 | 32 | 13 |
 | 47 | 67 | 3 | 0 | 47 | 9 | 0 | 7 | 1 | 13 |
 | 48 | 62 | 8 | 0 | 28 | 7 | 0 | 5 | 14 | 1 |
-| **Total** | **4324** | **191** | **91** | **1840** | **1188** | **0** | **699** | **315** | **1242** |
+| 49 | 40 | 2 | 0 | 30 | 1 | 0 | 7 | 0 | 4 |
+| **Total** | **4364** | **193** | **91** | **1870** | **1189** | **0** | **706** | **315** | **1246** |
 
-**The arithmetic check:** 191 + 91 + 1840 + 1188 + 0 + 699 + 315 = 4324, against 4324 statements placed (43 + 34 + 21 +
+**The arithmetic check:** 193 + 91 + 1870 + 1189 + 0 + 706 + 315 = 4364, against 4364 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -70687,11 +71526,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 46 | 0 | 1 | 66 | 67 |
 | 47 | 10 | 2 | 55 | 67 |
 | 48 | 10 | 1 | 51 | 62 |
-| **Total** | **404** | **355** | **3573** | **4332** |
+| 49 | 3 | 0 | 37 | 40 |
+| **Total** | **407** | **355** | **3610** | **4372** |
 
-**The arithmetic check of the verdicts:** 404 + 355 + 3573 = 4332, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 407 + 355 + 3610 = 4372, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40).
 
 ## 14. The derivation's independence record, relayed
 
