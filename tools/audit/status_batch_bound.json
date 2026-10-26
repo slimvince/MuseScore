@@ -1,7 +1,7 @@
 {
  "what_this_is": "RULING 4's FORWARD BOUND, applied at one batch close: which of the then-previous batch's STATUS.md entries moved to the archive, and the mechanical proof that nothing was lost or altered in transit (#12). Every figure here is computed; none is transcribed (D-431).",
  "generated_by": "tools/audit/gen_status_batch_bound.py",
- "dispatch": "cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md, Task 2",
+ "dispatch": "cc_instruction_l3_comparison_tabulation_twenty_second_2026_10_26.md, Task 2",
  "★_every_previous_aiming_of_this_tool_kept_rather_than_replaced": [
   {
    "executing_act": "cc_instruction_preparation_sixth.md, Task 1",
@@ -699,38 +699,44 @@
    "base_commit": "7a35424dc5b997b3576fdcfbdcfed6e32441cf31",
    "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md",
    "the_kind_of_move": "ordinary"
+  },
+  {
+   "executing_act": "cc_instruction_l3_comparison_tabulation_twenty_second_2026_10_26.md, Task 2",
+   "base_commit": "aa450b3463a848769002f156f90e14eda7002be6",
+   "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md",
+   "the_kind_of_move": "ordinary"
   }
  ],
  "the_ruling": "Ruling 4 of cowork_rulings_2026_08_17_governing_surface_split.md: an entry is SUPERSEDED the moment a later batch's close exists; the site keeps only the latest batch's entries, and every future batch close moves the then-previous batch's entries in the same act that writes its own.",
- "base_commit": "7a35424dc5b997b3576fdcfbdcfed6e32441cf31",
- "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md",
+ "base_commit": "aa450b3463a848769002f156f90e14eda7002be6",
+ "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md",
  "the_kind_of_move": "ordinary",
  "entries_moved": 3,
- "characters_moved": 3805,
+ "characters_moved": 3876,
  "the_moved": [
   {
    "line_at_base": 8,
-   "characters": 2435,
-   "sha256": "4f94028ee7f2b1f4eda6701c55c1ef85b1469e4dd3c10b601a47dc0077a14a7e",
+   "characters": 2518,
+   "sha256": "c55e01babaa62a3f1f83ef917f7fbe9ea97a3cdaab105d1e5bff8fa6fb419cb0",
    "membership": "names the dispatch",
    "the_one_declared_adjustment_applied": true,
-   "opening": "*2026-10-26 (CC — `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`, Task 2, the close. **★★ THE L3 COMPARISON"
+   "opening": "*2026-10-26 (CC — `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md`, Task 2, the close. **★★ THE L3 COMPARI"
   },
   {
    "line_at_base": 10,
-   "characters": 974,
-   "sha256": "7ca61ca5ba910d71a12cca753f447514fa1226cf6858362c241bb171eaf24f1a",
+   "characters": 959,
+   "sha256": "5d41fcd8e046f05290afd70d82a87ae8f6773860108ca2991fa7f1d7f88a5549",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-26 (CC — Same dispatch, Task 1. **THE L3 COMPARISON CONTINUED: POSITIONS 45 TO 49 TABULATED**: a capacity judgment written to a file outside "
+   "opening": "*2026-10-26 (CC — Same dispatch, Task 1. **THE L3 COMPARISON CONTINUED: POSITIONS 50 TO 55 TABULATED**: a capacity judgment written to a file outside "
   },
   {
    "line_at_base": 12,
-   "characters": 396,
-   "sha256": "20d3f0a2633506afc6fcb4338858a94c1ab3d911319d9298166324557ebcddf7",
+   "characters": 399,
+   "sha256": "87bb7378f1928d69cdbea7ac8140561e70693bd12fdc7a655c3a04595cd82a36",
    "membership": "says `Same dispatch`, in the run below the entry that names it",
    "the_one_declared_adjustment_applied": false,
-   "opening": "*2026-10-26 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRY 445 ARE LANDED**, as they stood: each checked at its last bytes at its blob"
+   "opening": "*2026-10-26 (CC — Same dispatch, Task 0. **THIS DISPATCH AND HANDOFF ENTRY 446 ARE LANDED**, as they stood: each checked at its last bytes at its blob"
   }
  ],
  "reconciliation": {
