@@ -27828,3 +27828,98 @@ Nothing any layer computes changed.
 `cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md`, after the dispatch's ordered first reads. Every
 commit identifier here was read from the commit's own object and `origin/master` at its ref file after each push; the
 guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `b1bbddb25ee998aa17c021b3488cb68baa1523d9` left, appended in the one further commit
+
+**A fresh full guard run in write mode (`python tools/audit/gen_guard_state.py`, the operating mode named), after the
+close commit and before this one.** Its result is at `tools/audit/guard_state.json` → `summary`, which this commit
+carries. Its first line, verbatim: *"wrote tools\audit\guard_state.json"*; its last line, verbatim: *"82 guard(s) run,
+13 failing, 4 not run, 20 historical record(s)"*. **E2 and E3 — MET, AS A2 PREDICTED:**
+
+- the run count is the premise ledger's;
+- zero STOPs in the runner;
+- the failing set is exactly the thirteen of the premise ledger, none added;
+- `tools/audit/gen_l3_outgoing_population.py --check` PASSES;
+- the NOT RUN and HISTORICAL lines are identical to the opening capture's — indeed every verdict line after the header
+  is identical to the opening capture's, compared line by line by the scratch script `t3_compare.py`, which printed
+  *"verdict lines identical (all after the header): True"* and *"failing at the end state: 13"*.
+
+`gen_evidence_pin_membership.py --check`, `gen_l0_l1_outgoing_population.py --check`, `gen_defense_share.py --check`,
+`gen_session_start_read_size.py --check` and `gen_status_batch_bound.py --check` are green.
+
+**The A2 exceptions, handled as A2 says, were all met inside the close rather than after it.** The defense share and the
+session-start read size moved after the close's `STATUS.md` edits and the forward-bound move; the defense share went red
+and was regenerated, the read size was regenerated last, and each was compared against the blob at `97b3d331…` by
+explicit hash (report §3, 2(c)); each moved only with `STATUS.md`. **The L3 population and the L0/L1 population stayed
+green throughout and were not regenerated**: the *paraphrase* residue line kept its line. **No population member, no
+item-4 passage, no member of the tabulation population and no residue record moved.** All six were re-checked green
+after the report and the close section were written, before the close was committed, so this run regenerated nothing
+beyond its own artifact — `changed_paths.py` after the run shows `tools/audit/guard_state.json` beside the carried
+`tools/audit/claude_md_finer_archive.json` and no other tracked modification. `gen_l2_outgoing_population.py` was not run
+in any operating mode.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_l3_outgoing_population.py',
+'tools/audit/gen_withheld_family_reading.py']"* — exactly the four tools of the dispatch's FACT; no fifth name.
+
+**A3 to A5, verified at the objects.** `git diff --name-status 97b3d33124f318e71bbae0eb13154f690407193c
+b1bbddb25ee998aa17c021b3488cb68baa1523d9` shows eleven paths, every one accounted for, and
+**`cowork_layer3_keymode_design.md`, `cowork_progression_schema_design.md`, `cowork_evidence_inventory.md`,
+`cowork_score_census.md`, `cowork_joint_estimator_factorization.md`, `cowork_stage5_fitter_design.md`,
+`cowork_target_architecture.md`, `cowork_voiceleading_axis_design.md`, `cowork_phrase_boundary_design.md`,
+`docs/scoring_model.md` and `ARCHITECTURE.md` are all absent from it**:
+
+- the two records of Task 0;
+- the reading file of Task 1;
+- the close's eight: `STATUS.md`, `STATUS_ARCHIVE.md`, the re-aimed forward-bound tool and its artifact, the defense
+  share, the read-size artifact, the report, and this file.
+
+At the boot commit and at the close, `git ls-tree` — one command per commit, each hash written literally, over
+thirty-three paths — shows the same blobs for the derivation and the brief (`c01793f9…` and `6abb5333…`, the ones the
+premise ledger names), the two documents positions 43 and 44 were read from — `cowork_layer3_keymode_design.md`
+(`45e36652…`) and `cowork_progression_schema_design.md` (`fd5d3f25…`) — `cowork_evidence_inventory.md` (`01ec3a29…`),
+`cowork_score_census.md` (`4a502df7…`), `cowork_joint_estimator_factorization.md` (`f46d502c…`),
+`cowork_stage5_fitter_design.md` (`5679a2a7…`), `cowork_target_architecture.md` (`f6abd9ea…`),
+`cowork_voiceleading_axis_design.md` (`436a0fd4…`), `cowork_phrase_boundary_design.md` (`3413a9ed…`),
+`docs/scoring_model.md` (`8410b00e…`), `ARCHITECTURE.md` (`1ce6176c…`), `FRAMEWORK.md` (`bc1d1265…`), `CLAUDE.md`
+(`807c547d…`), `DECISIONS.md` (`f48596e0…`), the L0/L1 and L2 reading files (`f3edcfe8…` and `fba58fba…`), the boot
+pack's artifact (`2e991922…`) and its `l3` directory (tree `d8e98615…`), the decisions register's data file
+(`9f34b0ca…`), `tools/audit/gen_l3_outgoing_population.py` (`f3bcf069…`), `tools/audit/gen_l0_l1_outgoing_population.py`
+(`57853f59…`), `tools/audit/gen_l2_outgoing_population.py` (`03304019…`) and its artifact (`06f86508…`),
+`tools/audit/gen_l2_withheld_documents.py` (`a284ed5a…`), `tools/audit/gen_derivation_boot_pack.py` (`bc7e0181…`),
+`tools/audit/gen_guard_state.py` (`6b06fa36…`), entries 442 and 443 (`1a74c1d2…` and `3a44b010…`), and the L3 and
+L0/L1 population artifacts (`13d1750b…` and `bf3664bc…`). The reading file moved from `894edff6…` at the boot commit to
+`adb48677…` at the close, the blob position 44's member commit landed and unchanged since.
+
+**§6.1 to §6.41 of the reading file are byte-identical, and §6.42 differs only at its one ordered correction**, compared
+as A5 orders: the span from the heading *"### 6.1 — Member 1:"* to the line before *"## 7."* in the blob at `97b3d331…`
+(`894edff6…`), with the one ordered replacement applied to that extract, against the span from the same heading to the
+line before *"### 6.43 — Member 43:"* in the last commit's blob (`adb48677…`), both read from the object store by
+explicit hash. The comparison was made by the scratch script `t3_span.py`, its heading moved on and the replacement
+added, which reads blob copies only and printed *"6.1-6.42 span identical with the one ordered correction applied to the
+boot extract: True  lengths 3106161 3106161"*; **the unreplaced extract differs from the new span at that one sentence
+and nowhere else** — *"the unreplaced boot extract against the close span: 1 changed passage(s)"*, at §6.42's count
+sentence (boot lines 56555 to 56557 of the extract).
+
+**Nothing else differs from the boot commit:**
+
+- no other tool source, `tools/audit/gen_guard_state.py` and `tools/audit/gen_l3_outgoing_population.py` included;
+- no file under the pack directory `tools/audit/derivation_boot_pack/l3/`, and not `tools/audit/derivation_boot_pack.json`;
+- not the two input-contract files, and not the L0/L1 or L2 reading file;
+- no outgoing text — not `cowork_layer3_keymode_design.md` or `cowork_progression_schema_design.md`, not
+  `cowork_evidence_inventory.md`, `cowork_score_census.md` or `cowork_joint_estimator_factorization.md`, not
+  `cowork_stage5_fitter_design.md`, not `cowork_target_architecture.md`, not `cowork_voiceleading_axis_design.md`, not
+  `cowork_phrase_boundary_design.md`, not `docs/scoring_model.md` and not `ARCHITECTURE.md` — and not `FRAMEWORK.md`;
+- not `tools/audit/gen_l0_l1_outgoing_population.py`, `tools/audit/gen_l2_outgoing_population.py` or its artifact,
+  `tools/audit/gen_l2_withheld_documents.py` or `tools/audit/gen_derivation_boot_pack.py`;
+- not the L3 population artifact;
+- no source of the decisions register and no rendered decisions-register file;
+- no governing document other than `STATUS.md` and `STATUS_ARCHIVE.md`;
+- not entries 442 and 443.
+
+This commit adds only the guard run's artifact and this portion. No further handoff entry or ruling record appeared in
+the working tree during the run.
+
+*Provenance: CC, 2026-10-26, appended in the one further commit after the close commit
+`b1bbddb25ee998aa17c021b3488cb68baa1523d9`; the verdicts are this run's own output, read with the file tools.*
