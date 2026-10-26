@@ -97,7 +97,7 @@ its own entry there.
 | 44 | `cowork_progression_schema_design.md` passages | **DONE** (§6.44) |
 | 45 | `cowork_confidence_contract.md` passages | **DONE** (§6.45) |
 | 46 | `cowork_progression_schema_dictionary.md` passages | **DONE** (§6.46) |
-| 47 | `cowork_layer2_slicing_design.md` passages | NOT YET TABULATED |
+| 47 | `cowork_layer2_slicing_design.md` passages | **DONE** (§6.47) |
 | 48 | `cowork_notation_output_contract.md` passages | NOT YET TABULATED |
 | 49 | `cowork_joint_estimator_architecture.md` passages | NOT YET TABULATED |
 | 50 | `cowork_layer1_note_model_design.md` passages | NOT YET TABULATED |
@@ -110,7 +110,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 46 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 47 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -132,7 +132,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, and position 46, the passages of `cowork_progression_schema_dictionary.md`.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, and position 47, the passages of `cowork_layer2_slicing_design.md`.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -173,9 +173,9 @@ were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabul
 member boundary after position 42 under its own limit on the batch, and not by a capacity judgment; positions 43 and
 44 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_nineteenth_2026_10_26.md`, which stopped at the
 member boundary after position 44 under its own limit on the batch, and not by a capacity judgment; positions 45
-and 46 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`.**
-**The writing now stands at the member boundary after position 46: not done, positions 47 to 57, and the next
-writing resumes at position 47.**
+to 47 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`.**
+**The writing now stands at the member boundary after position 47: not done, positions 48 to 57, and the next
+writing resumes at position 48.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -64454,6 +64454,1124 @@ The AGREES statements: none. The DIFFERS statements: 46.14 (L3-S17).
 
 ---
 
+### 6.47 — Member 47: `cowork_layer2_slicing_design.md`, the passages of the document
+
+> **Manifest for this member.** Position **47**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_layer2_slicing_design.md`. Label: *the passages of the document*, exactly as the artifact spells it
+> — a label that names no heading, so the member's section is the whole document, its lines 1 to 239, as at §6.35 to
+> §6.46. **The thirty-third member of this comparison made of passages, the thirteenth cut from a document other than
+> `ARCHITECTURE.md`, and the eleventh cut from a document not withheld from the deriving session's pack**: its entry's
+> `item_4_identities_inside` is empty, so its passages are cut around term-search hits only. Seven ranges, each as a
+> locator only (**D-307**), with its first and last line texts exactly as the artifact publishes them (wrapped here for
+> width; the line texts keep their bullet markers and indentation, as the artifact publishes them):
+>
+> - lines 13–22, from *"| Term | Meaning (or citation) |"* to *"| **Pass-2/2b** | The old segment-first pipeline's
+>   internal pass numbering (the greedy boundary-expander and its merge step, §13); named here only as history. |"*;
+> - lines 69–79, from *"## 3. Context & scope (external view)"* to *"function."*;
+> - lines 101–111, from *"## 6. Runtime view (scenarios)"* to *"  useful later, for example as a phrase boundary)."*;
+> - lines 121–155, from *"## 8. Crosscutting concepts"* to *"  evidence boundary is the consuming layer's concern."*;
+> - lines 157–171, from *"## 9. Architecture decisions (with the alternatives we weighed)"* to *"  build-time decision,
+>   superseded by the Layer-3 wiring exactly as this decision anticipated.)*"*;
+> - lines 188–196, from *"## 11. Risks & technical debt"* to *"  the old machinery during that transition is described
+>   in Section 13."*;
+> - lines 207–221, from *"## 13. Background: what Architectural Layer 2 replaces, and corrections on record (NOT needed
+>   to understand the layer)"* to *"  transition, and deciding what of it moves to the grouping layer (L6) versus is
+>   deleted is scoped as L6 is built."*.
+>
+> **Each of the fourteen line texts was compared with the line at its locator** in `cowork_layer2_slicing_design.md`,
+> read by this session at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at
+> that commit, **and every one matches**; the ranges hold 106 lines. The blob carries no carriage return, so nothing was
+> stripped before a comparison. **No other member of the artifact is cut from this document** — this session's script,
+> listing every member whose document is `cowork_layer2_slicing_design.md`, found position 47 alone — so nothing is
+> excluded from the cut. The document's other lines lie in no range — lines 1–12, 23–68, 80–100, 112–120, 156, 172–187,
+> 197–206 and 222–239, one hundred and thirty-three lines of which twenty-two are blank, as this session's script lists
+> them; **the blob holds 239 lines, so its last cut span ends at line 239 and the cut holds 133 lines, where the
+> dispatch computed 222–240 and 134** — the dispatch states that the script's listing is what this header carries, and
+> every other span is the one the dispatch computed. By the ten headings the script lists among them — the title and the
+> headings of the member's sections *0*, *1*, *2*, *4*, *5*, *7*, *10*, *12* and *14* — they hold: the title (1); **the
+> status banner** (3 to 7), a quotation block opening *"**Status: AS-BUILT (built, reviewed, accepted, and validated on
+> the full test corpus; …).**"*; §0's heading and lead (9 to 11); **§1 whole (24 to 50) and §2 whole (52 to 67)** — what
+> the member's layer is, does and does not do, and its constraints; §3's paragraph naming the source files (81); §4 (83
+> to 89), §5 (91 to 99) and §7 (113 to 119); §10, its quality and testing (173 to 186); §12, its glossary (198 to 205);
+> §14, its related work (223 to 239); and the blank lines. *(This session read the whole document at its blob before
+> writing any row, the cut with it; the cut is named here by what stands there, and no cut line is tabulated.)* **The
+> cut holds the member's own account of its standing and much of what its ranges apply** — its banner (as built,
+> reviewed, accepted and validated), its purpose and constraints, its solution strategy and building blocks, its testing
+> and its glossary. These are facts of the population artifact for the method ruling's surface, no row quotes a cut
+> line, and no member is widened by hand to take them (**D-671**). No other member of the artifact covers the cut — the
+> passage rule's cut, recorded here as at §6.15 to §6.46, and not repaired. Outgoing statements: **67** (rows 47.1 to
+> 47.44; 25 rows of one claim, 15 rows of two (Rows 47.2, 47.13, 47.16, 47.22, 47.23, 47.24, 47.25, 47.31, 47.36, 47.37,
+> 47.38, 47.39, 47.40, 47.42 and 47.43) and 4 rows of three (Rows 47.1, 47.10, 47.18 and 47.44), each split — the
+> arithmetic is at the foot of this member). Listed under *not a statement*: **13**. Counted at this member by this
+> session; the counts appear here and at §13, and nowhere else.
+>
+> **No WITHHELD home lies inside this member**: the artifact's `item_4_identities_inside` for position 47 is empty, and
+> `cowork_layer2_slicing_design.md` is not one of the five documents withheld from the deriving session's pack — **so no
+> row is marked WITHHELD**. **No SEEN home lies inside it, agreeing with §5** — none of the SEEN identities is homed in
+> this document — **so no row is marked SEEN**. This session's walk of `tools/audit/decisions/backbone_decisions.json`
+> (taken at the commit that landed this dispatch, by explicit hash), over every record carrying an identity and a home,
+> the retired block included, found over the seven ranges **the retired entry D-540** at lines 130 to 139, range 4's
+> bullet led *"A slice is a unit of constant content, not of constant musical time."*, its rows **47.21 to 47.24**, and
+> **the retired entry D-541** at lines 140 to 148, that bullet's nested bullet led *"★ Metric-weight contract (…)"*, its
+> rows **47.25 to 47.27**; over the eight cut spans it found none. **No live entry is homed in this document.** The walk
+> agrees with the two the dispatch read, no identity beyond them and none of them missing; it prints both retired
+> records' `status` as *live* — the fifteenth batch's D-399 shape, relayed as printed and not chased. **D-540's home
+> begins inside a sentence**: its first line, 130, lies inside the sentence *"Two slices are both …"*, which opens on
+> line 129 after the bullet's bold opening sentence, and Row 47.21 says so; the home then runs to the bullet's last
+> line, 139, and D-541's home is the whole nested bullet, 140 to 148. Every row whose quoted lines lie inside either
+> home carries a paragraph *The decisions register at this row*, relaying the home and moving no disposition — Rows
+> 47.21 to 47.27; Row 47.20, the bullet's bold opening sentence on line 129, lies outside D-540's home and carries none.
+> **The decisions register's INDEX shows neither retired entry** — read by this session at the INDEX, a fact of the
+> decisions register, relayed and moving no disposition. **Rows naming L3-S4: none.**
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.46, the colon-lead reading and the status-table reading stated at §6.9's manifest header, tables taken
+> row by row, the quotation join, the blockquote-marker reading, the fenced-block reading and the reading of a range
+> that opens with a heading line were applied unchanged at this member.** **The blockquote-marker reading has no
+> instance inside a range**: the document's one marked span, lines 3 to 7, its status banner, lies in the cut. **The
+> fenced-block reading has no instance**: the script finds no line opening with three backticks. **The status-table
+> reading has no instance**: the one table is a terms table. **The glossary reading — range 1's terms table**: the table
+> under *0. Terms (…)*, whose heading and lead lie in the cut, is a glossary in table form, so each entry is one unit,
+> quoted cell by cell, each cell's words without the pipes and the cells joined between their quotation marks by a
+> middle dot, as §6.43 quoted its own; its header row is listed together with its separator line as one item (item 1),
+> keeping its pipes; an entry of several claims is split under 1(a) (Rows 47.1 and 47.2); and **two entries are listed
+> under *not a statement*** (items 2 and 3): *The loaded span / selection / context span*, read as a remark on the
+> vocabulary of the contract it cites, as §6.43 read its own entry on those words, and *Pass-2/2b*, which names the old
+> pipeline's pass numbering and says it does so only as history — placement (l). The document's §12 glossary lies in the
+> cut. **The heading-line reading, at six ranges**: ranges 2 to 7 open with the headings *3. Context & scope (external
+> view)* (69), *6. Runtime view (scenarios)* (101), *8. Crosscutting concepts* (121), *9. Architecture decisions (with
+> the alternatives we weighed)* (157), *11. Risks & technical debt* (188) and *13. Background: what Architectural Layer
+> 2 replaces, and corrections on record (NOT needed to understand the layer)* (207), each a title under the first
+> reading rule — neither a statement nor an item under *not a statement* — and the nearest heading of every row of its
+> range; range 1 opens on the terms table's header row, its rows' nearest heading being *0. Terms (…)* (9), in the cut.
+> *13*'s *"NOT needed to understand the layer"* is answered by the italic remark of item 13. The other ten heading lines
+> lie in the cut, and no range holds a heading line except at its first line, as at §6.43 to §6.46. **The quotation
+> join, at two lines, both inside range 4**: line 145 ends *"phrase-"* and line 154 *"output-versus-"*, each a hyphen
+> closing a word that the next line finishes, so each quotation joins the two lines with no space, *"phrase-boundary"*
+> (Row 47.26) and *"output-versus-evidence"* (Row 47.31), and each row says so; no line ends in a slash. **How the bold
+> leads were read.** Range 2's colon leads *What Architectural Layer 2 reads (its input):*, *Who uses Architectural
+> Layer 2 (its consumers):* and *What Architectural Layer 2 deliberately knows nothing about:* open the sentences that
+> carry their claims and are quoted with them (Rows 47.7, 47.10 and 47.11); *What Architectural Layer 2 offers (the
+> operation other code calls):* only introduces its bullet and is listed (item 4). Range 3's five bullet leads, each
+> ending in a colon, are read with the words after them (Rows 47.12 to 47.16). Range 4's leads *Zero interpretation*,
+> *Complete coverage with nothing hidden*, *Deterministic; work proportional to the number of notes; careful edge
+> handling* and *Bounded context (`cowork_bounded_context_design.md`).* are labels read with the words after them (Rows
+> 47.17, 47.18, 47.19 and 47.28); its bold sentence *A slice is a unit of constant content, not of constant musical
+> time.* is tabulated (Row 47.20); and its nested lead *★ Metric-weight contract (resolved 2026-06-26; the function
+> layer's prerequisite (i)).* is read with the sentence after it, its dated parenthesis taken with the lead as
+> provenance (Row 47.25). Range 5's four bold decisions are tabulated (Rows 47.32 to 47.35). Range 6's bold runs open
+> the sentences they belong to and are quoted with them (Rows 47.37 to 47.39). Range 7's colon leads *What it
+> replaces:*, *The fact already existed but was thrown away:* and *Transitional coexistence:* open the sentences that
+> carry their claims (Rows 47.40, 47.42 and 47.44). **The defense reading**: range 5's four *Alternative considered:*
+> clauses are listed as declined alternatives and its four *Chosen:* clauses as defenses of the decision before them
+> (items 5 to 12), as §6.43 listed its own; no *Chosen:* clause is tabulated, the fourth's *"belongs to Architectural
+> Layer 3"* being the reason given for a decision its bullet's own remark calls superseded. No sentence inside the
+> ranges is led *Why:*. **The passages recording a correction, a closure, a supersession or an as-built state.** (i)
+> Range 1's *The clip* — the bound **RELOCATED** to L1 and its being inert as built **QUARANTINED** (Row 47.2). (ii)
+> Range 4's metric-weight contract — the definition placed with L1, the primitive, its values and its consumer
+> **QUARANTINED** (Row 47.25), and the function layer's reading through the same accessor **QUARANTINED** (Row 47.27).
+> (iii) Range 5's fourth decision **HISTORICAL** (Row 47.35), and its italic as-built remark split — the wiring
+> **QUARANTINED**, the supersession **HISTORICAL** (Row 47.36). (iv) Range 6's third risk split the same way (Row
+> 47.39). (v) Range 7's background — the older pipeline and its measured share of error **HISTORICAL** (Rows 47.40 and
+> 47.42), what the slicer keeps placed with L1 and the two special-case heuristics it drops **QUARANTINED** (Row 47.43),
+> the transition's wiring and the old machinery **QUARANTINED** (Row 47.44) — **following the former-wording precedents
+> in splitting a closure or a supersession from the rule and the as-built record beside it, as §6.39 split its (iii) and
+> §6.43 its (ii)**. **The member's own identifiers** — its *Architectural Layer 1* to *6* and *Layer 1.5*, the older
+> stack's layers; its *L6*; its *Pass-2/2b*; and its sections *§0* to *§13* and *Section 6* and *Section 13* — are
+> quoted as they stand; no three-digit identity of the decisions register stands inside a range.
+>
+> **What this member is, and how its subjects were placed.** The ranges are the architecture document of the older
+> stack's slicer, which the document calls *"Architectural Layer 2 — CHANGE-POINT SLICING"* and marks as built: its
+> terms; its input, its one operation and its consumers; its runtime scenarios; its crosscutting concepts, the
+> metric-weight contract and bounded context among them; its four decisions with the alternatives weighed; its risks;
+> and its background — less the cut, which holds the banner, the purpose and constraints, the strategy and building
+> blocks, the testing, the glossary and the related work. **The member was read whole, at its blob, before any row was
+> written**, and its rows were then written in three portions. **How 1(a)'s five points were weighed.** **(a) The
+> member's subject against L3's.** At its center the member's subject is the slice — a span during which the set of
+> sounding, tonal notes does not change, cut at every note start and every note stop, silence included — and every such
+> statement is **RELOCATED** to *L1 — Change points, candidates and notated evidence*, whose change points are every
+> onset and every release of an eligible note and whose slices tile what it is given (`FRAMEWORK.md` §5); the metric
+> extent of a slice goes to L1's metric strength class per change point, as Row 10.8 (i) placed the metric-weight view.
+> **L3's subjects appear at the places the dispatch names.** The phrase boundary — range 3's silence *"useful later, for
+> example as a phrase boundary"* — is **ADOPTED — carried** by L3-S9, whose family (i) reads the boundary flags with
+> ALL-SILENT among them (Row 47.16 (ii)); range 5's *Chosen:* clause naming the phrase boundary is a defense and is
+> listed (item 8). The chord symbol — range 2's *"a chord symbol per slice"* — is graded **DIFFERS** from L3-S1, which
+> publishes the chord symbol per span of the principal reading (Row 47.10 (ii)). Bounded context — the music beyond the
+> working span as evidence, the output's edge the consumer's — is **ADOPTED — carried** by L3-S40 at Rows 47.30 and
+> 47.31 (ii). **The grouping of equal slices**, which the dispatch's weighing point (a) names among L3's subjects, is
+> placed with L2: the derivation's L3-S10, in its defense, relays that *"L2 merges adjacent spans with identical
+> chords"* (L2-S14), so each statement of merging or of recognizing that neighboring slices carry the same harmony is
+> graded **AGREES** by that defense and **RELOCATED** to *L2 — The tonal reading. The one entangled decision.* (Rows
+> 47.1 (iii), 47.10 (iii), 47.13 (ii), 47.18 (iii), 47.37 (ii) and 47.38 (ii)) — placement (m). The key and mode decided
+> per slice go to L2, as Row 43.30 (i) placed the key layer. **(b) The member numbers layers in its own way** —
+> *Architectural Layer 1* the note model, *2* the slicer itself, *3* key and mode, *4* the chord symbol, *5* function,
+> *6* the grouping for display, and *Layer 1.5* the notation-derived views; every statement is placed by its subject,
+> never by the numeral, and each row names the older stack's layer a quoted numeral means. **(c) Its standing** — a
+> banner, in the cut, saying the slicer is built, reviewed, accepted and validated: a sentence recording what is built,
+> wired, verified or observed on the test pieces is **QUARANTINED**; a supersession, a retirement or a record of the
+> older pipeline is **HISTORICAL**, split from a rule beside it; and the transition's open decision on the old machinery
+> is **UNPLACED** (Row 47.44 (iii)), 1 statement in all, read as a decision about which of the older stack's code is
+> moved or deleted, which no charter of `FRAMEWORK.md` §5 names. **(d) The decisions register's homes** as above — two
+> retired homes inside range 4, D-540's beginning inside a sentence; no live entry; nothing in the cut. **(e) The terms
+> table** as above, each entry weighed under the unit, as §6.39's and §6.43's manifest headers say they weighed theirs.
+> **Four placements are stated for challenge.** (l) The terms-table entries *The loaded span / selection / context span*
+> and *Pass-2/2b* listed under *not a statement* (items 2 and 3); **the alternative** — tabulating them, the first with
+> L3-S40 beside it and the second **HISTORICAL** — is stated and not taken, §6.43 having listed the same words' entry.
+> (m) The six statements of merging placed with L2 by L3-S10's defense; **the alternative** — reading the grouping as
+> L3's subject, as the dispatch's weighing point (a) names it, and placing those claims with L3 — is stated and not
+> taken, no derived statement making the grouping L3's and L3-S10's defense giving it to L2. (n) Row 47.10 (ii), the
+> chord symbol per slice, graded **DIFFERS** from L3-S1 and **RELOCATED** to L2 as Row 43.60 (ii) placed the older
+> stack's chord-symbol decoder; **the alternative** — **ADOPTED — carried** by L3-S1 — is stated and not taken, the
+> member's *per slice* standing against L3-S1's *per span*. (o) Row 47.23 (ii), the duration and metric weight *"derived
+> on demand"* by the consuming layers, graded **DIFFERS** from L3-S39, while Row 47.26, the same weight owned at the
+> notation view and re-defined by no consuming layer, is graded **AGREES** with it; **the alternative** — **THE
+> DERIVATION IS SILENT** at Row 47.23 (ii), reading *derived on demand* as the reading the nested contract makes
+> concrete — is stated and not taken, the outgoing words giving the derivation to the consuming layers. **No statement
+> of this member is ADOPTED — proposed or DISCARDED.**
+
+---
+
+**Row 47.1 — the term *Slice*: the layer's output unit, the constant-sonority slice; chord-spans later, coarser
+groupings of slices.**
+
+*Outgoing statement.* The table row's cells "**Slice**" · "This layer's output unit — a span of time during which the
+set of sounding, tonal notes does not change (§1). Under the span typology (ARCHITECTURE.md §2.15) the slice **is** the
+**constant-sonority slice**, the atomic analysis unit the whole architecture is founded on; the **chord-spans**
+(chord-rhythm groupings — the typology member formerly named "harmonic region") are later, coarser groupings **of
+slices**, never produced here." — the section *0. Terms (read first — nothing below uses a term before its row)*, the
+terms table, the entry *Slice* (locator: line 15). Three claims: (i) the slice is the member's layer's output unit, a
+span of time during which the set of sounding, tonal notes does not change; (ii) under the span typology it is the
+constant-sonority slice, the atomic analysis unit; (iii) the chord-spans, the chord-rhythm groupings, are later, coarser
+groupings of slices, never produced at this layer.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) L3-S10.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) L3-S10: **AGREES** — its
+defense reads *"L2 merges adjacent spans with identical chords"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
+points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
+change points (`FRAMEWORK.md` §5). (ii) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***,
+whose change points are every onset and every release of an eligible note and whose slices are the stretches between
+consecutive change points (`FRAMEWORK.md` §5). (iii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose segmentation partitions the working
+span into harmonic spans whose boundaries are a subset of L1's change points (`FRAMEWORK.md` §5), and which merges
+adjacent spans with identical chords (L2-S14, as the derivation's L3-S10 relays it).
+
+---
+
+**Row 47.2 — the term *The clip*: the boundary set bounded to the loaded span; as built inert on the whole-score path.**
+
+*Outgoing statement.* The table row's cells "**The clip**" · "The slicer bounds its boundary set to the note model's
+**loaded span** — every boundary outside it is dropped and the loaded span's two endpoints are injected — so no slice
+extends past the loaded music (verified at `slicer.cpp`). On the whole-score path the loaded span equals the score, so
+the clipped boundary set is identical to the unclipped one — that is why the clip is **inert** there (§2)." — the
+section *0. Terms (read first — nothing below uses a term before its row)*, the terms table, the entry *The clip*
+(locator: line 17). Two claims: (i) the slicer bounds its boundary set to the note model's loaded span — boundaries
+outside it dropped and its two endpoints injected — so no slice extends past the loaded music; (ii) as built, verified
+at the code, the clip is inert on the whole-score path, where the loaded span equals the score.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose slices
+are an ordered, covering, gapless list over the music it is given (`FRAMEWORK.md` §5). (ii) **QUARANTINED.**
+*Audit question:* does the slicer at the current commit bound its boundary set to the loaded span, and is the bound
+inert on the whole-score path?
+
+---
+
+**Row 47.3 — the term *Byte-identical / the whole-score live path*: output identical on the pinned outputs; the
+production path over the whole score.**
+
+*Outgoing statement.* The table row's cells "**Byte-identical / the whole-score live path**" · "Output identical
+byte-for-byte to previous behaviour on the pinned outputs; the production path where the selection is the whole score."
+— the section *0. Terms (read first — nothing below uses a term before its row)*, the terms table, the entry
+*Byte-identical / the whole-score live path* (locator: line 18).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, as Rows 43.13 and 43.14 placed the
+pinned snapshots.
+
+---
+
+**Row 47.4 — the term *The two automated suites / pinned outputs*: the two suites, and golden outputs refreshed only on
+verified change.**
+
+*Outgoing statement.* The table row's cells "**The two automated suites / pinned outputs**" · "`composing_tests` and
+`notation_tests` (runbook `build_and_test.md`); the pinned analysis snapshots are stored golden outputs, refreshed only
+on verified change." — the section *0. Terms (read first — nothing below uses a term before its row)*, the terms table,
+the entry *The two automated suites / pinned outputs* (locator: line 19).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the measurement of the analysis***, as Rows 43.13 and 43.14 placed the
+pinned snapshots.
+
+---
+
+**Row 47.5 — the term *The key-mode sequence decoder*: the key layer's whole-sequence decoder.**
+
+*Outgoing statement.* The table row's cells "**The key-mode sequence decoder**" · "Architectural Layer 3's
+whole-sequence decoder (`cowork_layer3_keymode_design.md`)." — the section *0. Terms (read first — nothing below uses a
+term before its row)*, the terms table, the entry *The key-mode sequence decoder* (locator: line 20); its *Architectural
+Layer 3* is the older stack's key-and-mode layer.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the
+tonality per span as tonic and mode (`FRAMEWORK.md` §5), as Row 43.30 (i).
+
+---
+
+**Row 47.6 — the term *Layer 1.5*: the shared notation-derived views — metric weights, bass and spelling views, the
+phrase-boundary primitive.**
+
+*Outgoing statement.* The table row's cells "**Layer 1.5**" · "The shared notation-derived-view half-tier (metric
+weights, bass/spelling views, the phrase-boundary primitive) — introduced in ARCHITECTURE.md §2.15 /
+`cowork_phrase_boundary_design.md`." — the section *0. Terms (read first — nothing below uses a term before its row)*,
+the terms table, the entry *Layer 1.5* (locator: line 21), the older stack's notation-derived tier.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which publishes
+per slice the lowest sounding pitch and per change point the metric strength class and the notated boundary evidence, as
+Row 10.8 (i).
+
+---
+
+**Row 47.7 — the layer's input: the note model's start and end times and its marks of sounding, visible and tonal.**
+
+*Outgoing statement.* "**What Architectural Layer 2 reads (its input):** the Architectural Layer 1 note model — each
+note's start time, end time, and the markings for whether it sounds, is visible, and is on a tonal staff." — the section
+*3. Context & scope (external view)*, its colon lead opening the sentence that carries the claim (locator: lines 70–71);
+its *Architectural Layer 1* is the older stack's note model.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which consumes L0
+only and whose change points are the onsets and releases of an eligible note (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.8 — the operation offered: the ordered list of slices covering the analyzed span.**
+
+*Outgoing statement.* "*Give me the slices* — return the ordered list of slices that covers the analysed span." — the
+section *3. Context & scope (external view)*, the bullet under the colon lead *What Architectural Layer 2 offers (the
+operation other code calls):* (locator: line 73).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which publishes
+the ordered, covering, gapless and non-overlapping list of slices (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.9 — a slice a pair of time positions storing no notes, its notes fetched from the note model.**
+
+*Outgoing statement.* "Each slice is just a pair of time-positions, a start and an end; the slice does not store its
+notes, because the notes for a slice can be fetched on demand by asking the Architectural Layer 1 note model "which
+notes sound during this slice's span?"" — the section *3. Context & scope (external view)*, the same bullet (locator:
+lines 73–75).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
+points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
+change points (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.10 — the consumers: the key layer per slice; later a chord symbol per slice; the grouping of equal slices for
+display.**
+
+*Outgoing statement.* "**Who uses Architectural Layer 2 (its consumers):** the Architectural Layer 3 key/mode code (it
+decides key/mode for each slice); later, Architectural Layer 4 (a chord symbol per slice) and Architectural Layer 6
+(grouping equal slices for display)." — the section *3. Context & scope (external view)*, its colon lead opening the
+sentence that carries the claims (locator: lines 76–78). Its *Architectural Layer 3*, *4* and *6* are the older stack's
+key-and-mode layer, chord-symbol decoder and grouping layer. Three claims: (i) the key layer consumes the slices,
+deciding key and mode for each; (ii) later the chord-symbol decoder consumes them, a chord symbol per slice; (iii) the
+grouping layer consumes them, grouping equal slices for display.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S1. (iii) L3-S10.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S1: **DIFFERS**. (iii) L3-S10: **AGREES** — its defense
+reads *"L2 merges adjacent spans with identical chords"*.
+
+*The difference, in both texts' own words.* (ii) The outgoing chord-symbol decoder gives *"a chord symbol per slice"*;
+L3-S1 says *"It is published per span of the principal reading"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides
+the tonality per span as tonic and mode (`FRAMEWORK.md` §5), as Row 43.30 (i). (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which decides the chord per span as
+degree, quality, figure and applied target, as Row 43.60 (ii). (iii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose segmentation partitions the working
+span into harmonic spans whose boundaries are a subset of L1's change points (`FRAMEWORK.md` §5), and which merges
+adjacent spans with identical chords (L2-S14, as the derivation's L3-S10 relays it).
+
+---
+
+**Row 47.11 — the layer knowing nothing of weighting, keys, chords or function.**
+
+*Outgoing statement.* "**What Architectural Layer 2 deliberately knows nothing about:** weighting, keys, chords, or
+function." — the section *3. Context & scope (external view)*, its colon lead opening the sentence that carries the
+claim (locator: lines 78–79).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which *"Decides
+nothing about the music"* (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.12 — a passing note over a held chord: three slices.**
+
+*Outgoing statement.* "**A passing note over a held chord:** a held chord, with one extra note that sounds only briefly
+in the middle → three slices (chord alone / chord plus the extra note / chord alone again)." — the section *6. Runtime
+view (scenarios)*, its first bullet, led by a colon (locator: lines 102–103).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
+points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
+change points (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.13 — a held chord under a moving melody: one slice per melody note, the grouping merging them later.**
+
+*Outgoing statement.* "**A held chord under a moving melody:** one slice per melody note; every slice contains the same
+held chord (the grouping layer will later merge them)." — the section *6. Runtime view (scenarios)*, its second bullet
+(locator: lines 104–105). Two claims: (i) one slice per melody note, each holding the same chord; (ii) the grouping
+layer, the older stack's, merges them later.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S10.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S10: **AGREES** — its defense reads *"L2 merges adjacent
+spans with identical chords"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
+points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
+change points (`FRAMEWORK.md` §5). (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***,
+whose segmentation partitions the working span into harmonic spans whose boundaries are a subset of L1's change points
+(`FRAMEWORK.md` §5), and which merges adjacent spans with identical chords (L2-S14, as the derivation's L3-S10 relays
+it).
+
+---
+
+**Row 47.14 — a held sound written as tied notes: no boundary inside it, the note model having merged the ties.**
+
+*Outgoing statement.* "**A held sound written as tied notes:** no boundary inside it — Architectural Layer 1 already
+merged the tied notes into one held note, so there is nothing to slice there." — the section *6. Runtime view
+(scenarios)*, its third bullet (locator: lines 106–107).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
+points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
+change points (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.15 — one chord note stopping while the others sound on: a new, smaller slice.**
+
+*Outgoing statement.* "**One chord-note stops while the rest sound on:** the note set shrinks at that moment, so a new
+(smaller) slice begins there." — the section *6. Runtime view (scenarios)*, its fourth bullet (locator: lines 108–109).
+The member's *the rest* is the remainder of the chord notes, its own words.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
+points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
+change points (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.16 — every tonal voice silent: an explicit empty slice, useful later as a phrase boundary.**
+
+*Outgoing statement.* "**A span where every tonal voice rests:** an explicit empty slice — the silence is recorded, not
+skipped (it is useful later, for example as a phrase boundary)." — the section *6. Runtime view (scenarios)*, its fifth
+bullet (locator: lines 110–111). Two claims: (i) a span where every tonal voice is silent is an explicit empty slice;
+(ii) the recorded silence is useful later, for example as a phrase boundary.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S9.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S9: **AGREES** — its family (i) reads *"the boundary
+flags with their scope (FERMATA, REST-BEGINS by voice, ALL-SILENT"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
+points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
+change points (`FRAMEWORK.md` §5). (ii) **ADOPTED — carried** (L3-S9) — the silence of every voice is one of L1's
+notated boundary flags L3's phrase reading weighs.
+
+---
+
+**Row 47.17 — zero interpretation: the layer makes no musical judgment of any kind.**
+
+*Outgoing statement.* "**Zero interpretation** — Architectural Layer 2 makes no musical judgement of any kind; this is
+the principle it embodies." — the section *8. Crosscutting concepts*, its first bullet (locator: lines 122–123).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which *"Decides
+nothing about the music"* (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.18 — complete coverage, silence included; no real chord change missed; extra identical slices merged later.**
+
+*Outgoing statement.* "**Complete coverage with nothing hidden** — every moment of the analysed span lies in exactly one
+slice, including silence; because a slice boundary marks every possible moment a chord could change, a real chord change
+can never be missed. The only cost is harmless extra slices that look identical and are merged later." — the section *8.
+Crosscutting concepts*, its second bullet (locator: lines 124–126). Three claims: (i) every moment of the analyzed span
+lies in exactly one slice, silence included; (ii) because a boundary marks every moment a chord could change, a real
+chord change can never be missed; (iii) the only cost is harmless extra slices that look identical and are merged later.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) L3-S10.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii) L3-S10: **AGREES** — its
+defense reads *"L2 merges adjacent spans with identical chords"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
+points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
+change points (`FRAMEWORK.md` §5). (ii) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***,
+whose change-point set is exhaustive, so that a real harmony change can never be missed (`FRAMEWORK.md` §5, *Why a
+layer*). (iii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose segmentation
+partitions the working span into harmonic spans whose boundaries are a subset of L1's change points (`FRAMEWORK.md` §5),
+and which merges adjacent spans with identical chords (L2-S14, as the derivation's L3-S10 relays it).
+
+---
+
+**Row 47.19 — deterministic; work proportional to the number of notes; careful edge handling.**
+
+*Outgoing statement.* "**Deterministic; work proportional to the number of notes; careful edge handling** (an empty
+range, a single note, a moment that is both a stop and a start, a fully silent range)." — the section *8. Crosscutting
+concepts*, its third bullet (locator: lines 127–128).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which computes the
+slices from the notation (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.20 — a slice a unit of constant content, not of constant musical time.**
+
+*Outgoing statement.* "**A slice is a unit of constant *content*, not of constant musical *time*.**" — the section *8.
+Crosscutting concepts*, its fourth bullet, its bold opening sentence (locator: line 129).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
+points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
+change points (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.21 — slices carrying very different inferential weight, never treated as equal-weight units by the layers
+above.**
+
+*Outgoing statement.* "Two slices are both "one slice" whether one is a ten-measure held chord and the other a passing
+sixteenth — but they carry very different inferential weight, so the layers above must **never treat slices as
+equal-weight units**." — the section *8. Crosscutting concepts*, the same bullet (locator: lines 129–131). Its
+*ten-measure* is the member's own word for ten bars.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which consumes
+everything L0 and L1 publish and nothing else (`FRAMEWORK.md` §5), as Row 43.30 (ii).
+
+*The decisions register at this row.* The data file homes **the retired entry D-540** at lines 130 to 139; its home
+begins on line 130 inside this sentence, which opens on line 129, and runs to the end of the bullet on line 139. The
+data file prints its `status` as *live*, the fifteenth batch's D-399 shape, relayed as printed; the decisions register's
+INDEX does not show a retired entry. It is not withheld and not seen, so the row carries no mark; a fact of the data
+file, relayed, moving no disposition.
+
+---
+
+**Row 47.22 — a slice's metric extent evidence, weighted by metric structure and not by tempo.**
+
+*Outgoing statement.* "A slice's **metric extent** — its **duration** (`end − start`, directly on the slice) and its
+**metric position/weight** (the metric-weight derived view over Architectural Layer 1's score, from the time signature)
+— is **evidence**, and it is weighted by metric structure, **not by tempo**: the harmonic reading (and the human ground
+truth) keys off beat strength and notated duration in beats/measures, not absolute clock time." — the section *8.
+Crosscutting concepts*, the same bullet (locator: lines 131–135). Two claims: (i) a slice's duration and its metric
+position and weight, the latter derived from the time signature, are evidence; (ii) that evidence is weighted by metric
+structure and not by tempo, as the harmonic reading and the human ground truth depend on beat strength and notated
+duration, not clock time.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which
+publishes per change point its metric strength class (`FRAMEWORK.md` §5). (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which consumes everything L0 and L1
+publish and nothing else (`FRAMEWORK.md` §5), as Row 43.30 (ii).
+
+*The decisions register at this row.* The data file homes **the retired entry D-540** at lines 130 to 139, on which this
+row's claims lie. The data file prints its `status` as *live*, the fifteenth batch's D-399 shape, relayed as printed;
+the decisions register's INDEX does not show a retired entry. It is not withheld and not seen, so the row carries no
+mark; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 47.23 — the slice kept minimal; its duration and metric weight derived on demand by the consuming layers, not
+stored.**
+
+*Outgoing statement.* "Architectural Layer 2 keeps the slice **minimal** (`[start, end)` only); the duration and metric
+weight are **derived on demand** by the consuming layers (Architectural Layer 3 emission, Architectural Layer 4
+membership), not stored here." — the section *8. Crosscutting concepts*, the same bullet (locator: lines 135–137). Its
+*Architectural Layer 3 emission* and *Architectural Layer 4 membership* are the older stack's key layer and chord layer.
+Two claims: (i) the slice carries its start and end only; (ii) its duration and metric weight are derived on demand by
+the consuming layers and not stored at the slicer.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S39.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S39: **DIFFERS**.
+
+*The difference, in both texts' own words.* (ii) The outgoing duration and metric weight are *"derived on demand"* by
+the consuming layers; L3-S39 says *"L3 never re-derives a fact a layer beneath it publishes"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
+points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
+change points (`FRAMEWORK.md` §5). (ii) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***,
+which publishes per change point its metric strength class (`FRAMEWORK.md` §5).
+
+*The decisions register at this row.* The data file homes **the retired entry D-540** at lines 130 to 139, on which this
+row's claims lie. The data file prints its `status` as *live*, the fifteenth batch's D-399 shape, relayed as printed;
+the decisions register's INDEX does not show a retired entry. It is not withheld and not seen, so the row carries no
+mark; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 47.24 — how well the inference weights the extremes a weighting concern of the layers above; the metadata here.**
+
+*Outgoing statement.* "*(How well the inference weights the extremes — a very long held chord, a very short
+embellishment slice — is an Architectural Layer 3 / 4 weighting concern; the metadata to do it is available here.)*" —
+the section *8. Crosscutting concepts*, the same bullet, its italic parenthesis (locator: lines 137–139). Two claims:
+(i) how well the inference weights a very long held chord or a very short embellishing slice is a weighting concern of
+the older stack's key and chord layers; (ii) the metadata for that weighting is available at the slicer.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, which consumes
+everything L0 and L1 publish and nothing else (`FRAMEWORK.md` §5), as Row 43.30 (ii). (ii)
+**RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which publishes per change point its
+metric strength class (`FRAMEWORK.md` §5).
+
+*The decisions register at this row.* The data file homes **the retired entry D-540** at lines 130 to 139, on which this
+row's claims lie. The data file prints its `status` as *live*, the fifteenth batch's D-399 shape, relayed as printed;
+the decisions register's INDEX does not show a retired entry. It is not withheld and not seen, so the row carries no
+mark; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 47.25 — the metric-weight contract: a slice's metric weight the beat strength at its start, from the one
+notation-derived primitive.**
+
+*Outgoing statement.* "**★ Metric-weight contract (resolved 2026-06-26; the function layer's prerequisite (i)).**
+"Derived on demand by the consuming layers" is made concrete: the **metric weight of a slice = the beat-strength at the
+slice's start tick**, computed by the **`scoreharvest/metricweights` primitive** (`regionMetricWeightForOnsetTick(score,
+slice.start)`) — a **preference-free** (independent of any user setting), key-/chord-agnostic notation-derived value in
+`[0.5, 1.0]` (downbeat 1.0 → subbeat 0.5), already consumed by Architectural Layer 4." — the section *8. Crosscutting
+concepts*, the fourth bullet's nested bullet, its bold lead read with the sentence after it (locator: lines 140–145).
+Two claims: (i) the metric weight of a slice is the beat strength at the slice's start, a notation-derived value
+independent of any user setting and of tonality and chord, from the downbeat to the subbeat; (ii) it is computed by the
+primitive `regionMetricWeightForOnsetTick`, valued in `[0.5, 1.0]`, and already consumed by the older stack's chord
+layer. Its dated *resolved 2026-06-26* is taken with the lead as provenance.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which
+publishes per change point its metric strength class (`FRAMEWORK.md` §5). (ii) **QUARANTINED.** *Audit question:* does
+the primitive `regionMetricWeightForOnsetTick` at the current commit return a slice's metric weight at its start in the
+range the member states, and does the chord layer consume it?
+
+*The decisions register at this row.* The data file homes **the retired entry D-541** at lines 140 to 148, the nested
+bullet on which this row's claims lie. The data file prints its `status` as *live*, the fifteenth batch's D-399 shape,
+relayed as printed; the decisions register's INDEX does not show a retired entry. It is not withheld and not seen, so
+the row carries no mark; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 47.26 — the metric weight owned at the notation view, re-defined by no consuming layer.**
+
+*Outgoing statement.* "It is owned there (a **Layer-1.5** notation view, §0, beside the bass/spelling/phrase-boundary
+views), **not** re-defined by any consuming layer." — the section *8. Crosscutting concepts*, the same nested bullet
+(locator: lines 145–146), joined across line 145's ending hyphen (*phrase-* and *boundary*) with no space.
+
+*Derived statements that speak to it.* L3-S39.
+
+*Current-text axis.* L3-S39: **AGREES** — *"L3 never re-derives a fact a layer beneath it publishes"*.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which publishes
+per change point its metric strength class (`FRAMEWORK.md` §5).
+
+*The decisions register at this row.* The data file homes **the retired entry D-541** at lines 140 to 148, the nested
+bullet on which this row's claims lie. The data file prints its `status` as *live*, the fifteenth batch's D-399 shape,
+relayed as printed; the decisions register's INDEX does not show a retired entry. It is not withheld and not seen, so
+the row carries no mark; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 47.27 — the function layer reading the metric weight through the same accessor; the contract the whole
+prerequisite, no new code.**
+
+*Outgoing statement.* "The function layer (Architectural Layer 5) reads it through this same accessor; this contract
+sentence is the whole of that prerequisite — prerequisite (i) of the function-layer spec's input list,
+`cowork_layer5_function_design.md` §15-0 — no new code." — the section *8. Crosscutting concepts*, the same nested
+bullet (locator: lines 146–148); its *Architectural Layer 5* is the older stack's function layer.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the function layer at the current commit read a slice's
+metric weight through the same accessor, with no code of its own for it?
+
+*The decisions register at this row.* The data file homes **the retired entry D-541** at lines 140 to 148, the nested
+bullet on which this row's claims lie. The data file prints its `status` as *live*, the fifteenth batch's D-399 shape,
+relayed as printed; the decisions register's INDEX does not show a retired entry. It is not withheld and not seen, so
+the row carries no mark; a fact of the data file, relayed, moving no disposition.
+
+---
+
+**Row 47.28 — bounded context: the layer slices whatever span the note model holds.**
+
+*Outgoing statement.* "**Bounded context (`cowork_bounded_context_design.md`).** Architectural Layer 2 slices whatever
+span the note model currently holds." — the section *8. Crosscutting concepts*, its fifth bullet, its bold lead read
+with the sentence after it (locator: lines 149–150).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose slices are
+an ordered, covering, gapless list over the music it is given (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.29 — an extended loaded span sliced anew, coverage and slice identity kept over the enlarged span.**
+
+*Outgoing statement.* "When a higher layer **extends** the loaded span (to reach context outside the user's selection),
+Architectural Layer 2 produces the change-point slices for the **newly loaded span**, preserving complete coverage and
+slice identity over the enlarged span." — the section *8. Crosscutting concepts*, the same bullet (locator: lines
+150–152).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose slices are
+an ordered, covering, gapless list over the music it is given (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.30 — slices in the context span evidence for the layers above, not analysis output.**
+
+*Outgoing statement.* "Slices that fall in the **context span** (loaded but outside the selection) are usable as
+evidence by the layers above but are **not** part of the analysis output." — the section *8. Crosscutting concepts*, the
+same bullet (locator: lines 152–153).
+
+*Derived statements that speak to it.* L3-S40.
+
+*Current-text axis.* L3-S40: **AGREES** — *"L3's publication covers exactly the working span."* *"L3's in-span facts can
+depend on music beyond the span"*.
+
+*PROPOSED DISPOSITION.* **ADOPTED — carried** (L3-S40) — L3's publication covers the working span, and music beyond it
+is evidence.
+
+---
+
+**Row 47.31 — the layer making no selection-versus-context distinction; the output-versus-evidence boundary the
+consumer's.**
+
+*Outgoing statement.* "Architectural Layer 2 itself makes no selection-versus-context distinction — it just slices the
+loaded span; the output-versus-evidence boundary is the consuming layer's concern." — the section *8. Crosscutting
+concepts*, the same bullet (locator: lines 153–155), joined across line 154's ending hyphen (*output-versus-* and
+*evidence*) with no space. Two claims: (i) the slicer makes no distinction between selection and context and slices the
+loaded span; (ii) the boundary between output and evidence is the consuming layer's concern.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S40.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S40: **AGREES** — *"L3's publication covers exactly the
+working span."*
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, which
+*"Decides nothing about the music"* (`FRAMEWORK.md` §5). (ii) **ADOPTED — carried** (L3-S40) — L3 draws its own
+publication's edge at the working span.
+
+---
+
+**Row 47.32 — a boundary at every note start and every note stop.**
+
+*Outgoing statement.* "**A boundary at every note start AND every note stop** (not only at note starts)." — the section
+*9. Architecture decisions (with the alternatives we weighed)*, its first bullet, its bold decision (locator: line 158).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
+points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
+change points (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.33 — the whole span covered, silence included, as explicit empty slices.**
+
+*Outgoing statement.* "**Cover the whole span, including silence, as explicit empty slices.**" — the section *9.
+Architecture decisions (with the alternatives we weighed)*, its second bullet, its bold decision (locator: line 161).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
+points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
+change points (`FRAMEWORK.md` §5).
+
+---
+
+**Row 47.34 — the change-point fact read straight off the notes, with no selection or smoothing.**
+
+*Outgoing statement.* "**Read the change-point fact straight off the notes and apply no selection or smoothing.**" — the
+section *9. Architecture decisions (with the alternatives we weighed)*, its third bullet, its bold decision (locator:
+line 164).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change-point
+set is exhaustive, so that a real harmony change can never be missed (`FRAMEWORK.md` §5, *Why a layer*).
+
+---
+
+**Row 47.35 — the layer built on its own, not yet connected into the live pipeline.**
+
+*Outgoing statement.* "**Build Architectural Layer 2 on its own, not yet connected into the live pipeline.**" — the
+section *9. Architecture decisions (with the alternatives we weighed)*, its fourth bullet, its bold decision (locator:
+line 167), which the as-built remark at its end records as superseded.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — the bullet's own as-built remark records the decision as *"the build-time
+decision, superseded"*.
+
+---
+
+**Row 47.36 — the as-built remark: the connection since made, the key layer consuming the slices; the decision
+superseded.**
+
+*Outgoing statement.* "*(As-built note: that connection has since happened — Layer 3 now consumes the slices, §2/§10 —
+so "keep it separate" records the build-time decision, superseded by the Layer-3 wiring exactly as this decision
+anticipated.)*" — the section *9. Architecture decisions (with the alternatives we weighed)*, the fourth bullet's italic
+parenthesis (locator: lines 169–171). Two claims: (i) the connection has since been made, the older stack's key layer
+consuming the slices; (ii) the decision to keep the slicer separate records the build-time decision, superseded by that
+wiring.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the key layer at the current commit read the slices
+at the orchestrator's `changePointSlices` call? (ii) **HISTORICAL** — it records a build-time decision the remark itself
+calls superseded.
+
+---
+
+**Row 47.37 — fine slicing producing many neighboring same-harmony slices; recognizing them the key layer's job.**
+
+*Outgoing statement.* "**Slicing finely creates the opposite problem, left for Architectural Layer 3:** the fine slices
+produce many neighbouring slices that carry the same harmony, and recognising that they are the same is Architectural
+Layer 3's job — not solved here." — the section *11. Risks & technical debt*, its first bullet (locator: lines 189–191);
+its *Architectural Layer 3* is the older stack's key layer. Two claims: (i) the fine slices produce many neighboring
+slices carrying the same harmony; (ii) recognizing that they are the same is the key layer's job, not solved at the
+slicer.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S10.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S10: **AGREES** — its defense reads *"L2 merges adjacent
+spans with identical chords"*.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change
+points are every onset and every release of an eligible note and whose slices are the stretches between consecutive
+change points (`FRAMEWORK.md` §5). (ii) **RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***,
+whose segmentation partitions the working span into harmonic spans whose boundaries are a subset of L1's change points
+(`FRAMEWORK.md` §5), and which merges adjacent spans with identical chords (L2-S14, as the derivation's L3-S10 relays
+it).
+
+---
+
+**Row 47.38 — redundant slices depending on the music: almost none on the chorales, more in denser textures, merged
+regardless.**
+
+*Outgoing statement.* "**How often slices are redundant depends on the music** — on the chorale test pieces almost no
+slice is redundant; denser textures (sustained pedals, broken chords) would produce more, which the grouping layer
+merges regardless." — the section *11. Risks & technical debt*, its second bullet (locator: lines 192–193). Two claims:
+(i) on the chorale test pieces almost no slice is redundant; (ii) denser textures, sustained pedals and broken chords,
+produce more, which the grouping layer merges regardless.
+
+*Derived statements that speak to it.* (i) None. (ii) L3-S10.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) L3-S10: **AGREES** — its defense reads *"L2 merges adjacent
+spans with identical chords"*.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* how many of the slicer's slices on the chorale test
+pieces at the current commit carry the same harmony as their neighbor? (ii)
+**RELOCATED** — to ***L2 — The tonal reading. The one entangled decision.***, whose segmentation partitions the working
+span into harmonic spans whose boundaries are a subset of L1's change points (`FRAMEWORK.md` §5), and which merges
+adjacent spans with identical chords (L2-S14, as the derivation's L3-S10 relays it).
+
+---
+
+**Row 47.39 — the slicer connected into the live pipeline, the risk's retirement trigger; the coexistence in Section
+13.**
+
+*Outgoing statement.* "**Connected into the live analysis pipeline** — Architectural Layer 3 now reads the slices (the
+orchestrator's `changePointSlices` call), the retirement trigger this risk anticipated; its coexistence with the old
+machinery during that transition is described in Section 13." — the section *11. Risks & technical debt*, its third
+bullet (locator: lines 194–196). Two claims: (i) the older stack's key layer now reads the slices at the orchestrator's
+`changePointSlices` call; (ii) that wiring is the retirement trigger the risk anticipated. Its pointer to Section 13 is
+taken with the sentence.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the key layer at the current commit read the slices
+at the orchestrator's `changePointSlices` call? (ii) **HISTORICAL** — it records the retirement of a risk on the older
+stack's wiring.
+
+---
+
+**Row 47.40 — what it replaces: the segment-first pipeline guessing boundaries by thresholds, its over-grab attributed a
+share of the error.**
+
+*Outgoing statement.* "**What it replaces:** the earlier "segment-first" pipeline (a greedy boundary-expander, several
+sub-boundary detectors, and a chord-dependent merge step). It *guessed* span boundaries using tunable score thresholds
+before any analysis, which let spans over-grab — about 45% of the measured error on the project's per-event oracle-root
+corpus metric (the attribution record is the segmentation-error decomposition in the project ledger, `STATUS.md`)." —
+the section *13. Background: what Architectural Layer 2 replaces, and corrections on record (NOT needed to understand
+the layer)*, its first bullet, led by a colon (locator: lines 209–212). Two claims: (i) the earlier segment-first
+pipeline guessed span boundaries with tunable candidate-score thresholds before any analysis, which let spans over-grab;
+(ii) over-grab accounted for a share of the measured error on the per-event root corpus measurement, as the
+segmentation-error decomposition records. The member's *score thresholds* are thresholds on a candidate score, its own
+words.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — it records the older segment-first pipeline, which the slicer replaced.
+(ii) **HISTORICAL** — a measurement of the older pipeline, which the slicer replaced.
+
+---
+
+**Row 47.41 — the guessing removed entirely.**
+
+*Outgoing statement.* "Architectural Layer 2 removes that guessing entirely." — the section *13. Background: what
+Architectural Layer 2 replaces, and corrections on record (NOT needed to understand the layer)*, the same bullet
+(locator: line 213).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose change-point
+set is exhaustive, so that a real harmony change can never be missed (`FRAMEWORK.md` §5, *Why a layer*).
+
+---
+
+**Row 47.42 — the boundary moments already computed by older code, then mostly discarded by thresholds; grace notes and
+tuplets handled specially.**
+
+*Outgoing statement.* "**The fact already existed but was thrown away:** older code (`collectNoteChangeTicks`) already
+computed the same note-start/note-stop boundary moments, but the old pipeline then **discarded** most of them by
+selecting a subset using chord-score thresholds (and it also skipped grace notes and snapped mid-tuplet moments)." — the
+section *13. Background: what Architectural Layer 2 replaces, and corrections on record (NOT needed to understand the
+layer)*, its second bullet, led by a colon (locator: lines 214–216). Two claims: (i) the older code
+`collectNoteChangeTicks` already computed the same boundary moments; (ii) the old pipeline discarded most of them by
+selecting a subset with chord candidate-score thresholds, and skipped grace notes and snapped moments inside tuplets.
+The member's *chord-score thresholds* are thresholds on a chord candidate score, its own words.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — it records the older segment-first pipeline, which the slicer replaced.
+(ii) **HISTORICAL** — it records the older segment-first pipeline, which the slicer replaced.
+
+---
+
+**Row 47.43 — the boundary-moment fact kept; the selection and the two special-case heuristics dropped.**
+
+*Outgoing statement.* "Architectural Layer 2 keeps the boundary-moment fact and drops the selection and those two
+special-case heuristics." — the section *13. Background: what Architectural Layer 2 replaces, and corrections on record
+(NOT needed to understand the layer)*, the same bullet (locator: lines 216–217). Two claims: (i) the slicer keeps the
+boundary-moment fact and drops the selection; (ii) it drops the skipping of grace notes and the snapping of moments
+inside tuplets.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***L1 — Change points, candidates and notated evidence***, whose
+change-point set is exhaustive, so that a real harmony change can never be missed (`FRAMEWORK.md` §5, *Why a layer*).
+(ii) **QUARANTINED.** *Audit question:* does the slicer at the current commit take the boundary moments of grace notes,
+and leave moments inside tuplets unsnapped?
+
+---
+
+**Row 47.44 — transitional coexistence: the key layer rebuilt to read the slices; the old machinery still coexisting;
+its fate scoped later.**
+
+*Outgoing statement.* "**Transitional coexistence:** Architectural Layer 3 **has been rebuilt to read the slices** (the
+orchestrator's `changePointSlices` call; it is the production region key/mode path); the **old segment-first machinery
+(its internal passes 2/2b, §0) still coexists** during the transition, and deciding what of it moves to the grouping
+layer (L6) versus is deleted is scoped as L6 is built." — the section *13. Background: what Architectural Layer 2
+replaces, and corrections on record (NOT needed to understand the layer)*, its third bullet, led by a colon (locator:
+lines 218–221). Its *Architectural Layer 3* and *L6* are the older stack's key layer and grouping layer. Three claims:
+(i) the key layer has been rebuilt to read the slices at the orchestrator's `changePointSlices` call and is the
+production region key path; (ii) the old segment-first machinery, its internal passes 2 and 2b, still coexists during
+the transition; (iii) what of it moves to the grouping layer and what is deleted is decided as that layer is built.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does the key layer at the current commit read the slices
+at the orchestrator's `changePointSlices` call on the production region key path? (ii) **QUARANTINED.**
+*Audit question:* does the old segment-first machinery, its passes 2 and 2b, still exist at the current commit, and does
+any path that runs reach it? (iii) **UNPLACED** — read: a decision about which of the older stack's code is moved or
+deleted, which no charter of `FRAMEWORK.md` §5 names and the derivation does not speak to.
+
+#### Not a statement, at this member
+
+Each item is one sentence of the member, quoted from its opening with its line locator, and its kind named. Run-in bold
+labels read as titles under rule (1) without a dated parenthesis, and the heading lines, are neither here nor among the
+rows; no line listed here carries the quotation-block marker.
+
+1. "| Term | Meaning (or citation) |" (13–14) — the terms table's header row with its separator line, listed as one
+   item.
+2. "**The loaded span / selection / context span** …" (16) — a terms-table entry naming the bounded-context contract's
+   three words and pointing at the document that defines them, read as a remark on vocabulary, as §6.43 read its *Selection
+   / loaded span / context span* entry.
+3. "**Pass-2/2b** …" (22) — a terms-table entry naming the old pipeline's internal pass numbering, which it says it
+   names only as history, read as a remark on vocabulary, as §6.43 read its entry on the bounded-context words.
+4. "**What Architectural Layer 2 offers (the operation other code calls):**" (72) — a lead ending in a colon introducing
+   one bullet.
+5. "Alternative considered: cut only where notes start." (158–159) — the declined alternative of the first decision,
+   read under rule (2).
+6. "Chosen: cut at both — …" (159–160) — a defense of the decision before it.
+7. "Alternative considered: skip silent spans ("no slice there")." (161–162) — the declined alternative of the second
+   decision, read under rule (2).
+8. "Chosen: keep them — …" (162–163) — a defense of the decision before it.
+9. "Alternative considered: build a brand-new slicer from scratch." (164–165) — the declined alternative of the third
+   decision, read under rule (2).
+10. "Chosen: the change-point set already existed in older code; …" (165–166) — a defense of the decision before it,
+    with its pointer to Section 13.
+11. "Alternative considered: connect it into the running analyzer immediately." (167–168) — the declined alternative of
+    the fourth decision, read under rule (2).
+12. "Chosen: keep it separate — …" (168–169) — a defense of the decision before it.
+13. "*Kept separate so Sections 1–12 describe only Architectural Layer 2 itself.*" (208) — a remark on the document's
+    own organization.
+
+#### The arithmetic at this member
+
+- Rows written: **44**.
+- **Outgoing statements placed: 67** — 25 rows of one claim, 15 rows of two (Rows 47.2, 47.13, 47.16, 47.22, 47.23,
+  47.24, 47.25, 47.31, 47.36, 47.37, 47.38, 47.39, 47.40, 47.42 and 47.43) and 4 rows of three (Rows 47.1, 47.10, 47.18
+  and 47.44).
+- Listed under *not a statement*: **13**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: 1.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 3 | 47.16 (ii), 47.30, 47.31 (ii) |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 47 | 47.1 (i), 47.1 (ii), 47.1 (iii), 47.2 (i), 47.3, 47.4, 47.5, 47.6, 47.7, 47.8, 47.9, 47.10 (i), 47.10 (ii), 47.10 (iii), 47.11, 47.12, 47.13 (i), 47.13 (ii), 47.14, 47.15, 47.16 (i), 47.17, 47.18 (i), 47.18 (ii), 47.18 (iii), 47.19, 47.20, 47.21, 47.22 (i), 47.22 (ii), 47.23 (i), 47.23 (ii), 47.24 (i), 47.24 (ii), 47.25 (i), 47.26, 47.28, 47.29, 47.31 (i), 47.32, 47.33, 47.34, 47.37 (i), 47.37 (ii), 47.38 (ii), 47.41, 47.43 (i) |
+| QUARANTINED | 9 | 47.2 (ii), 47.25 (ii), 47.27, 47.36 (i), 47.38 (i), 47.39 (i), 47.43 (ii), 47.44 (i), 47.44 (ii) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 7 | 47.35, 47.36 (ii), 47.39 (ii), 47.40 (i), 47.40 (ii), 47.42 (i), 47.42 (ii) |
+| UNPLACED | 1 | 47.44 (iii) |
+| **Total** | **67** | — |
+
+**The column sums to 67 (3 + 0 + 47 + 9 + 0 + 7 + 1), against 67 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 10 |
+| DIFFERS | 2 |
+| THE DERIVATION IS SILENT | 55 |
+| **Total verdicts** | **67** |
+
+The AGREES statements: 47.1 (iii) (L3-S10), 47.10 (iii) (L3-S10), 47.13 (ii) (L3-S10), 47.16 (ii) (L3-S9),
+47.18 (iii) (L3-S10), 47.26 (L3-S39), 47.30 (L3-S40), 47.31 (ii) (L3-S40), 47.37 (ii) (L3-S10), 47.38 (ii) (L3-S10). The
+DIFFERS statements: 47.10 (ii) (L3-S1), 47.23 (ii) (L3-S39).
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 47 is empty, and the document is not
+  one of the five withheld from the deriving session's pack.
+- **SEEN rows: none** — no SEEN identity is homed in this document, agreeing with §5.
+- **Two retired homes inside the ranges, none withheld or seen, none marking a row** — **the retired entry D-540** (130
+  to 139; Rows 47.21 to 47.24, its home beginning inside the sentence of Row 47.21) and **the retired entry D-541** (140
+  to 148; Rows 47.25 to 47.27). The data file prints both retired records' `status` as *live*; the decisions register's
+  INDEX shows neither.
+- **None is homed in the cut, and no live entry is homed in the document.**
+- **The cut** holds the title and the status banner, §0's heading and lead, the whole of §1 and §2, §3's paragraph
+  naming the source files, the whole of §4, §5, §7, §10, §12 and §14, and blank lines; no row is tabulated there.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -64616,6 +65734,19 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   using no preset, and the note model as the supplier of earlier music the requester asks for. *(L3-S40 AGREES at Row
   43.48, relaying IC-L1 beside S-53, Ruling 46 (v); Row 43.41 lies on register entry D-345's home, unmarked.)*
 - Row 45.11 — the older stack's note model and slicer publishing facts that carry no confidence, by design.
+- Rows 47.1 (i), 47.1 (ii), 47.7, 47.8, 47.9, 47.12, 47.13 (i), 47.14, 47.15, 47.16 (i), 47.18 (i), 47.20, 47.23 (i),
+  47.32, 47.33 and 47.37 (i) — the slice as the stretch of constant sounding set, cut at every note start and every note
+  stop, covering the span with silence an explicit empty slice, and carrying only its start and end. *(As Rows 38.1 (i)
+  and 38.2; the L1 block publishes the slices, every onset and every release a change point; Row 47.23 (i) lies on the
+  retired entry D-540's home, unmarked.)*
+- Rows 47.2 (i), 47.11, 47.17, 47.18 (ii), 47.19, 47.28, 47.29, 47.31 (i), 47.34, 47.41 and 47.43 (i) — the slicer
+  deciding nothing about the music, its change-point set exhaustive so that no real change is missed, computed
+  deterministically from the notation, and covering whatever span it is given, the clipped and the extended span
+  included. *(The L1 block's paragraph *Why a layer*.)*
+- Rows 47.6, 47.22 (i), 47.23 (ii), 47.24 (ii), 47.25 (i) and 47.26 — the notation-derived views and a slice's metric
+  extent: its duration and the metric strength at its start, owned once and re-defined by no consumer. *(As Row
+  10.8 (i); L3-S39 DIFFERS at Row 47.23 (ii) and AGREES at Row 47.26; Rows 47.22 (i), 47.23 (ii) and 47.24 (ii) lie on
+  the retired entry D-540's home and Rows 47.25 (i) and 47.26 on the retired entry D-541's, unmarked.)*
 
 **To *L2 — The tonal reading. The one entangled decision.***
 
@@ -65041,6 +66172,14 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   with their cross-attributes, the presets as idiom-weightings, the style weighting a graded prior and not a hard
   filter, and the weighting and threshold left to the precision phase. *(As Rows 43.40 and 43.42 (i) placed the
   preset.)*
+- Rows 47.1 (iii), 47.10 (iii), 47.13 (ii), 47.18 (iii), 47.37 (ii) and 47.38 (ii) — the grouping of equal slices: the
+  chord-spans as later groupings of slices, the equal slices merged later, and the recognition that neighboring slices
+  carry the same harmony. *(L3-S10 AGREES at each, its defense relaying L2-S14.)*
+- Rows 47.5, 47.10 (i) and 47.10 (ii) — the key layer's whole-sequence decoder and its key and mode per slice, and the
+  chord symbol per slice. *(As Rows 43.30 (i) and 43.60 (ii); L3-S1 DIFFERS at Row 47.10 (ii).)*
+- Rows 47.21, 47.22 (ii) and 47.24 (i) — slices never treated as equal-weight units, their metric extent weighed by
+  metric structure and not by tempo, and the weighting of a very long or very short slice. *(All three lie on the
+  retired entry D-540's home, unmarked.)*
 
 **To *the second axis — voice leading*.**
 
@@ -65352,6 +66491,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
 - Rows 44.47 (i), 44.47 (ii), 44.48 (i) and 44.50 (iv) — the recognised spans measured by precision and recall against
   the cadence and schema ground truth, the evidence's effect measured on the Roman numerals of the positions a
   recognition covers, and the jazz and pop entries not yet measurable.
+- Rows 47.3 and 47.4 — the byte-identical whole-score path, and the two suites with their pinned outputs. *(As Rows
+  43.13 and 43.14.)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
@@ -65362,7 +66503,7 @@ member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 2
 the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
 numbered 36.n, member 37's the rows numbered 37.n, member 38's the rows numbered 38.n, member 39's the rows numbered 39.n,
 member 40's the rows numbered 40.n, member 41's the rows numbered 41.n,
-member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, and member 46's the rows numbered 46.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
+member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, and member 47's the rows numbered 47.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33 and 34 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -67379,6 +68520,27 @@ No QUARANTINED row: the member's ranges record no measured property of the code 
 - Row 46.51 — does the dormant `harmonicvocabulary` component at the current commit encode the five-idiom set on its
   entries, and does any path that runs reach it?
 
+**Member 47 — `cowork_layer2_slicing_design.md`, the passages of the document.**
+
+- Row 47.2 (ii) — does the slicer at the current commit bound its boundary set to the loaded span, and is the bound
+  inert on the whole-score path?
+- Row 47.25 (ii) — does the primitive `regionMetricWeightForOnsetTick` at the current commit return a slice's metric
+  weight at its start in the range the member states, and does the chord layer consume it?
+- Row 47.27 — does the function layer at the current commit read a slice's metric weight through the same accessor, with
+  no code of its own for it?
+- Row 47.36 (i) — does the key layer at the current commit read the slices at the orchestrator's `changePointSlices`
+  call?
+- Row 47.38 (i) — how many of the slicer's slices on the chorale test pieces at the current commit carry the same
+  harmony as their neighbor?
+- Row 47.39 (i) — does the key layer at the current commit read the slices at the orchestrator's `changePointSlices`
+  call?
+- Row 47.43 (ii) — does the slicer at the current commit take the boundary moments of grace notes, and leave moments
+  inside tuplets unsnapped?
+- Row 47.44 (i) — does the key layer at the current commit read the slices at the orchestrator's `changePointSlices`
+  call on the production region key path?
+- Row 47.44 (ii) — does the old segment-first machinery, its passes 2 and 2b, still exist at the current commit, and
+  does any path that runs reach it?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -68352,6 +69514,13 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 - **DIFFERS — Row 46.14 (L3-S17):** the outgoing entry types the authentic cadence *"perfect/imperfect by inversion"*,
   where L3-S17 says *"Which vocabulary is principal is not decided here"*.
 
+**Member 47.** No ADOPTED — proposed row.
+
+- **DIFFERS — Row 47.10 (ii) (L3-S1):** the outgoing chord-symbol decoder gives *"a chord symbol per slice"*, where
+  L3-S1 says *"It is published per span of the principal reading"*.
+- **DIFFERS — Row 47.23 (ii) (L3-S39):** the outgoing duration and metric weight are *"derived on demand"* by the
+  consuming layers, where L3-S39 says *"L3 never re-derives a fact a layer beneath it publishes"*.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -68405,11 +69574,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 44 | 80 | 1 | 0 | 47 | 6 | 0 | 4 | 22 | 53 |
 | 45 | 68 | 0 | 0 | 40 | 18 | 0 | 10 | 0 | 6 |
 | 46 | 67 | 0 | 0 | 21 | 7 | 0 | 7 | 32 | 13 |
-| **Total** | **4195** | **180** | **91** | **1765** | **1172** | **0** | **687** | **300** | **1228** |
+| 47 | 67 | 3 | 0 | 47 | 9 | 0 | 7 | 1 | 13 |
+| **Total** | **4262** | **183** | **91** | **1812** | **1181** | **0** | **694** | **301** | **1241** |
 
-**The arithmetic check:** 180 + 91 + 1765 + 1172 + 0 + 687 + 300 = 4195, against 4195 statements placed (43 + 34 + 21 +
+**The arithmetic check:** 183 + 91 + 1812 + 1181 + 0 + 694 + 301 = 4262, against 4262 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -68459,11 +69629,12 @@ are at its own foot, and the integers below are re-derivable from them.
 | 44 | 1 | 3 | 76 | 80 |
 | 45 | 7 | 7 | 54 | 68 |
 | 46 | 0 | 1 | 66 | 67 |
-| **Total** | **384** | **352** | **3467** | **4203** |
+| 47 | 10 | 2 | 55 | 67 |
+| **Total** | **394** | **354** | **3522** | **4270** |
 
-**The arithmetic check of the verdicts:** 384 + 352 + 3467 = 4203, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 394 + 354 + 3522 = 4270, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
-+ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67).
++ 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67).
 
 ## 14. The derivation's independence record, relayed
 
