@@ -103,7 +103,7 @@ its own entry there.
 | 49 | `cowork_joint_estimator_architecture.md` passages | **DONE** (§6.49) |
 | 50 | `cowork_layer1_note_model_design.md` passages | **DONE** (§6.50) |
 | 51 | `docs/llm_integration.md` passages | **DONE** (§6.51) |
-| 52 | `cowork_notation_adoption_increment.md` passages | NOT YET TABULATED |
+| 52 | `cowork_notation_adoption_increment.md` passages | **DONE** (§6.52) |
 | 53 | `cowork_idiom_entry_mapping.md` passages | NOT YET TABULATED |
 | 54 | `cowork_bounded_context_design.md` passages | NOT YET TABULATED |
 | 55 | `cowork_prefit_gates.md` passages | NOT YET TABULATED |
@@ -111,7 +111,7 @@ its own entry there.
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 51 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 52 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -133,7 +133,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, and position 51, the passages of `docs/llm_integration.md`.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, and position 52, the passages of `cowork_notation_adoption_increment.md`.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -176,9 +176,9 @@ member boundary after position 42 under its own limit on the batch, and not by a
 member boundary after position 44 under its own limit on the batch, and not by a capacity judgment; positions 45
 to 49 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`, which stopped at the
 member boundary after position 49 under its own limit on the batch, and not by a capacity judgment; positions 50
-and 51 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md`.**
-**The writing now stands at the member boundary after position 51: not done, positions 52 to 57, and the next
-writing resumes at position 52.**
+to 52 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md`.**
+**The writing now stands at the member boundary after position 52: not done, positions 53 to 57, and the next
+writing resumes at position 53.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -68510,6 +68510,477 @@ carries the quotation-block marker.
 
 ---
 
+### 6.52 — Member 52: `cowork_notation_adoption_increment.md`, the passages of the document
+
+> **Manifest for this member.** Position **52**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_notation_adoption_increment.md`. Label: *the passages of the document*, exactly as the artifact
+> spells it — a label that names no heading, so the member's section is the whole document, its lines 1 to 516, as at
+> §6.35 to §6.51. **The thirty-eighth member of this comparison made of passages, the eighteenth cut from a document
+> other than `ARCHITECTURE.md`, and the fifteenth cut from a document not withheld from the deriving session's pack**:
+> its entry's `item_4_identities_inside` is empty, so its passages are cut around term-search hits only. Four ranges,
+> each as a locator only (**D-307**), with its first and last line texts exactly as the artifact publishes them (wrapped
+> here for width):
+>
+> - lines 50–57, from *"**The notation seam.** The in-app analysis enters through ONE function:"* to *"snapshot tests
+>   and the implode tests consume the same seam."*;
+> - lines 59–64, from *"**The consumed record.** `HarmonicRegion`
+>   (`src/composing/analysis/region/harmonicrhythm.h:78`)"* to *"sequence-margin confidence, D-L3a)."*;
+> - lines 66–74, from *"**What the joint module publishes today.** The C++ decoder's `DecodeResult`"* to
+>   *"carry/abstention policies of the old architecture re-express as posterior mass).""*;
+> - lines 486–502, from *"**The §8.1 audit is DELIVERED and Cowork-verified at the objects** (ratification commit"* to
+>   *"root/bass-spelling derivation from (key, degree) as an instrument to establish at build (#19)."*.
+>
+> **Each of the eight line texts was compared with the line at its locator** in `cowork_notation_adoption_increment.md`,
+> read by this session at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at
+> that commit, **and every one matches**; the ranges hold 40 lines. The blob carries no carriage return, so nothing was
+> stripped before a comparison. **No other member of the artifact is cut from this document** — this session's script,
+> listing every member whose document is `cowork_notation_adoption_increment.md`, found position 52 alone — so nothing
+> is excluded from the cut. The document's other lines lie in no range — lines 1–49, 58, 65, 75–485 and 503–516, four
+> hundred and seventy-six lines of which fifty-nine are blank, as this session's script lists them; **the blob holds 516
+> lines, so its last cut span ends at line 516**. The script lists twelve lines opening with a number sign among them:
+> the title and the headings of the member's sections *1* to *10*, and line 211, a wrapped line of prose opening
+> *"#12/#6 debt"*, which is not a heading, a heading's number signs being followed by a space. By those headings the cut
+> holds: the title (1); **the opening block** (3 to 44) — the ratification banner (3 to 11), the author and status lines
+> (13 to 15), the three rulings the writing incorporates (17 to 29), **register entry D-424's home (18 to 20)** among
+> them, and what the increment is and is not (31 to 44); §1's heading (48) and its paragraphs after range 3 (76 to 99) —
+> the batch render, the table delivery, the fact adapter and the ratified presentation obligations; **§2**, the proposed
+> principles amendment, its quotation block (110 to 119) among it; **§3 to §7**, the five decisions with their options,
+> pros, cons and recommendations — **register entry D-425's home (282 to 287)**, the recommendation of §4 on
+> the uncertainty surface, and **register entry D-426's home (436 to 437)**, the recommendation of §7, among them;
+> **§8**, the verification plan (439 to 473); **§9**, the rulings (475 to 482); §10's heading (484); **the pedal-point
+> ruling** after range 4 (504 to 516); the separator lines; and the blank lines. *(This session read the whole document
+> at its blob before writing any row, the cut with it; the cut is named here by what stands there, and no cut line is
+> tabulated.)* **The cut holds the member's decisions and much of what its ranges apply** — the five decisions on the
+> record the in-app analysis reads, the uncertainty surface, the mode field, the delivery of the fitted tables and the
+> scheduling of two publications, with their recommendations and the user's rulings on them, the verification plan and
+> the pedal-point ruling; its ranges hold the verified state of the code on that date and the delivered audit's
+> findings. These are facts of the population artifact for the method ruling's surface, no row quotes a cut line, and no
+> member is widened by hand to take them (**D-671**). No other member of the artifact covers the cut — the passage
+> rule's cut, recorded here as at §6.15 to §6.51, and not repaired. Outgoing statements: **27** (rows 52.1 to 52.13; 8
+> rows of one claim, 2 rows of two (Rows 52.4 and 52.8), 1 row of four (Row 52.12), 1 row of five (Row 52.13) and 1 row
+> of six (Row 52.11), each split — the arithmetic is at the foot of this member). Listed under *not a statement*: **0**.
+> Counted at this member by this session; the counts appear here and at §13, and nowhere else.
+>
+> **No WITHHELD home lies inside this member**: the artifact's `item_4_identities_inside` for position 52 is empty, and
+> `cowork_notation_adoption_increment.md` is not one of the five documents withheld from the deriving session's pack —
+> **so no row is marked WITHHELD**. **No SEEN home lies inside it, agreeing with §5** — none of the SEEN identities is
+> homed in this document — **so no row is marked SEEN**. This session's walk of
+> `tools/audit/decisions/backbone_decisions.json` (taken at the commit that landed this dispatch, by explicit hash),
+> over every record carrying an identity and a home, the retired block included, found **no home over the four ranges**,
+> and over the five cut spans **register entries D-424**, its home citing line 18, **D-425**, citing line 282, and
+> **D-426**, citing line 436. No retired entry is homed in this document. The walk agrees with the three the dispatch
+> read, no identity beyond them and none of them missing; it prints each record's `status` as *live*. **Each home's
+> `verbatim` was compared with the lines its home cites, at the member's blob**: each home cites one line, the line its
+> words begin at, and its words run on past that line — D-424's to line 20, D-425's to line 287 and D-426's to line 437
+> — each found exactly once in the document, starting at the first column of its cited line; so each home's words stand
+> in the document where its citation points, and none equals its one cited line alone. **The spans named above are the
+> lines the words occupy, as this session's script found them.** The decisions register's INDEX records **D-424** *"A
+> decision surface names the principle behind every pro and con, and rates every option on two axes"*, **D-425** *"The
+> uncertainty surface's contract IS the full posterior; the local slice is the first delivered step, and the completion
+> is a named step, never an indefinite upgrade"* and **D-426** *"The modal reading lands inside the notation increment;
+> the ornament labels get their own increment, with the tracking row created at ruling time"*, each with status LIVE —
+> read by this session at the INDEX, facts of the decisions register, relayed and moving no disposition. **Rows naming
+> L3-S4: one** — Row 52.13 (iii), carrying the derivation's §6 item 2 sentence.
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.51, the colon-lead reading and the status-table reading stated at §6.9's manifest header, tables taken
+> row by row, the quotation join, the blockquote-marker reading, the fenced-block reading and the reading of a range
+> that opens with a heading line were applied unchanged at this member.** **The blockquote-marker reading has no
+> instance inside a range**: the document's one marked span, lines 110 to 119, §2's proposed amendment, lies in the cut,
+> and no line of the document carries the marker after indentation. **The fenced-block reading has no instance**: the
+> script finds no line opening with three backticks. **The document has no table, so neither the status-table reading
+> nor the glossary reading has an instance.** **The heading-line reading has no instance**: no range opens with a
+> heading line; the nearest heading of ranges 1 to 3 is *1. The verified current state (all read at source this
+> session)* (48) and of range 4 *10. The consumption-audit findings and the pedal-point ruling (2026-07-26, same day)*
+> (484), both in the cut. **The quotation join has no instance**: no line of the document ends in a hyphen, and its one
+> line ending in a slash, line 507, lies in the cut, the slash following a space. **How the bold leads were read.** The
+> leads *The notation seam.*, *The consumed record.* and *What the joint module publishes today.* are noun-phrase
+> labels, read as titles under the first reading of rule (1) and quoted with the sentences they open (Rows 52.1, 52.4
+> and 52.5); the bold complete sentence *No alternatives, no confidence, no posterior field exists on the C++ surface.*
+> is tabulated under the first reading (Row 52.6); the bold run *The §8.1 audit is DELIVERED and Cowork-verified at the
+> objects* opens the sentence it belongs to and is quoted with it (Row 52.9); and the three bold runs lettered *(a)* to
+> *(c)* inside range 4's long sentence are quoted with it (Row 52.11). **The defense reading has no instance**: no
+> sentence inside the ranges is led *Why:*, and none is offered as the reasoning of a rule beside it. **The passages
+> recording a correction, a closure, a supersession or an as-built state.** (i) Range 4 records the audit's delivery and
+> its classing of the fields it found, **HISTORICAL** (Rows 52.9 and 52.10), and the scope check's correction of the
+> member's own §1, **HISTORICAL** (Row 52.11 (i)). (ii) Ranges 1 to 3 record the state of the code read at source on the
+> member's date, under the section heading saying so, and every such sentence is **QUARANTINED** (Rows 52.1 to 52.7);
+> the decode plan's clause range 3 quotes is placed by its subject (Row 52.8). (iii) Range 4's verified facts of the
+> code are **QUARANTINED**, each split from the rule or the record beside it (Rows 52.11 (ii), (v) and (vi), 52.12 (i)
+> and (iv)) — **following the former-wording precedents in splitting a record from the rule beside it, as §6.39 split
+> its (iii) and §6.43 its (ii)**. **The member's own identifiers** — its *A*, the joint estimator; its *A2*, *B-full*
+> and *C1*, the option labels of its own decisions; its *Layer-3*, the older stack's key and mode layer, and *D-L3a*, a
+> label it cites for that layer's confidence; its *MAP path*; and its *§1*, *§8.1* and *factorization §5* — are quoted
+> as they stand; no three-digit identity of the decisions register stands inside a range.
+>
+> **What this member is, and how its subjects were placed.** The ranges are three paragraphs of the decision surface's
+> §1, which records the state of the code read at source on 2026-07-26 — the in-app analysis's one entry function and
+> its callers, the region record the in-app consumers read, and what the joint module publishes, with the ratified
+> decode plan's clause on the full posterior — and the first paragraph of its §10, on the delivered consumption audit
+> and its scope check; less the cut, which holds the decisions themselves, their rulings, the verification plan and the
+> pedal-point ruling. **The member was read whole, at its blob, before any row was written**, and its rows were written
+> in one portion after the summary of this session's context that fell inside the member. **How 1(a)'s five points were
+> weighed.** **(a) The member's subject against L3's.** Its subject is the record through which the joint estimator's
+> reading reaches the application. **L3's subjects appear at one place inside the ranges**: range 4's last sentence
+> names the augmented sixth's Italian, German and French distinction and the derivation of the root and bass spelling
+> from the key and degree, which are graded **AGREES** with L3-S3, L3-S2 and L3-S4 and **ADOPTED — carried** (Row
+> 52.13 (i) to (iii)), as Row 48.13 carried the same derivation; that derivation's establishment goes to
+> *the measurement of the analysis*, as Row 48.13 (iii). The other term-search hits are in code names — the wrapper's
+> *HarmonicRhythm* and the record's *HarmonicRegion* — and **a hit word that does not carry L3's subject gives a
+> statement no L3 placement**, so each such statement is placed by what it states. The decode plan's full posterior, the
+> older carry and abstention policies re-expressed as mass and the confidence consumers' mapping to the posterior's mass
+> and gap go to *the uncertainty surface*, as Row 48.26 (i) placed the confidence consumers' read. **(b) Its *Layer-3***
+> is the older stack's key and mode layer; every statement is placed by its subject under the charters as `FRAMEWORK.md`
+> §5 words them. **(c) Its standing** — a decision surface ratified by the user, whose §1 records a code state as
+> verified on its date: a sentence recording what the code does at a named file is **QUARANTINED**, its audit question
+> restating no value; an event is **HISTORICAL**. **(d) The decisions register's homes** as above — none inside the
+> ranges, three live entries in the cut, each one's words beginning at its cited line. **(e) The member has no table and
+> no glossary.** **Four placements are stated for challenge.** (l) Row 52.5, the decoder's result carrying the derived
+> root, **QUARANTINED** with no derived statement listed; **the alternative** — listing L3-S1 and L3-S2 and grading the
+> decoder's derived root against L3's view of the root — is stated and not taken, the statement recording what a code
+> structure carried on a date and not what the analysis must do. (m) Row 52.13 (i), the augmented-sixth distinction
+> resting on the vocabulary's classes, **ADOPTED — carried** by L3-S3; **the alternative** — **RELOCATED** to
+> *L2 — The tonal reading. The one entangled decision.*, as Row 48.16 placed the sub-type — is stated and not taken,
+> this statement resting the distinction on the classes, where Row 48.16's derived it from the sounding pitch classes.
+> (n) Row 52.11 (iii), both seams reading the joint estimator's record, **UNPLACED** read as at Row 4.16; **the
+> alternative** — **RELOCATED** to L2 as its publication over the working span, as §6.48's placement (m) stated it — is
+> stated and not taken. (o) Row 52.10, the audit's classing of its rows, **HISTORICAL**; **the alternative** —
+> **QUARANTINED**, its counts read as a recorded number an audit could re-check — is stated and not taken, the counts
+> classing the audit's own rows and not stating what the analysis does. **No statement of this member is ADOPTED —
+> proposed or DISCARDED.**
+
+---
+
+**Row 52.1 — the in-app analysis entering through one function, a thin wrapper over the shared orchestrator.**
+
+*Outgoing statement.* "**The notation seam.** The in-app analysis enters through ONE function:
+`analyzeHarmonicRhythm(score, startTick, endTick, excludeStaves,
+granularity)` (`src/notation/internal/notationharmonicrhythmbridge.cpp:69`), a thin wrapper that reads the notation-side
+configuration (including 21 per-mode prior preferences, lines 92–113) and calls the shared orchestrator
+`analyzeRegions(...)`, returning `std::vector<HarmonicRegion>`." — the section *1. The verified current state (all read
+at source this session)*, its first paragraph, led *The notation seam.*, a label read as a title under the first reading
+of rule (1) and quoted with the sentence it opens (locator: lines 50–54). Its *score* inside the function's signature is
+the code's parameter name. The member's *HarmonicRhythm* and *HarmonicRegion* are names in the code; a term-search hit
+in such a name gives the statement no L3 placement.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the in-app analysis enter, at the current commit,
+through `analyzeHarmonicRhythm`, a wrapper that reads the notation-side configuration, the per-mode prior preferences
+among it, and calls the shared orchestrator `analyzeRegions`, returning the regions?
+
+---
+
+**Row 52.2 — the live production callers of that function: three bridges.**
+
+*Outgoing statement.* "Live production callers: `notationcomposingbridge.cpp:321` (the main analysis unit — regions +
+`analyzeSection`), `notationimplodebridge.cpp:1374`, `notationtuningbridge.cpp:762`." — the section *1. The verified
+current state (all read at source this session)*, its first paragraph (locator: lines 54–56).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* are the composing, implode and tuning bridges named the live
+production callers of that function at the current commit, at the places the member names?
+
+---
+
+**Row 52.3 — the pipeline snapshot tests and the implode tests consuming the same seam.**
+
+*Outgoing statement.* "The pipeline snapshot tests and the implode tests consume the same seam." — the section *1. The
+verified current state (all read at source this session)*, its first paragraph (locator: lines 56–57).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* do the pipeline snapshot tests and the implode tests consume
+that function at the current commit?
+
+---
+
+**Row 52.4 — the consumed record: the region record's fields, two of them in memory only with no production consumer.**
+
+*Outgoing statement.* "**The consumed record.** `HarmonicRegion`
+(`src/composing/analysis/region/harmonicrhythm.h:78`) carries: `chordResult` (identity + function facts, e.g. `diatonicToKey`), ranked `alternatives`, `hasAnalyzedChord`, `keyModeResult` (signature fifths, a 21-value `KeySigMode`,
+tonic, raw score, the emission sigmoid), the sounding `tones`, `temporalExtensions`, two in-memory-only fields with no
+production consumer (`keyAlternatives`, `fanout`), and `keyConfidence` (the Layer-3 sequence-margin confidence, D-L3a)."
+— the section *1. The verified current state (all read at source this session)*, its second paragraph, led *The consumed
+record.*, a label read as a title and quoted with the sentence it opens (locator: lines 59–64). Its *Layer-3* is the
+older stack's key and mode layer, not `FRAMEWORK.md` §5's L3, and its *D-L3a* a label the member cites for that layer's
+confidence; its *raw score* is the member's phrase for a numerical value. Two claims: (i) the region record carries the
+fields listed — the chord result with its identity and function facts, the ranked alternatives, whether a chord was
+analyzed, the key-and-mode result, the sounding tones, the temporal extensions and the older key layer's confidence;
+(ii) two of its fields are held in memory only and have no production consumer.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* does `HarmonicRegion` carry, at the current commit, the
+fields the member lists, the `KeySigMode` among them? (ii) **QUARANTINED.** *Audit question:* do `keyAlternatives` and
+`fanout` have no production consumer at the current commit?
+
+---
+
+**Row 52.5 — what the joint module publishes today: the decoder's result the most probable path only, per segment.**
+
+*Outgoing statement.* "**What the joint module publishes today.** The C++ decoder's `DecodeResult`
+(`src/composing/analysis/joint/jointdecoder.h:119`) is the MAP path only: per segment, ticks + (tonic, major/minor) +
+the chord class (degree, quality, inversion, applied target) + the derived root." — the section *1. The verified current
+state (all read at source this session)*, its third paragraph, led *What the joint module publishes today.*, a label
+read as a title and quoted with the sentence it opens (locator: lines 66–69). Its *MAP path* is the most probable path.
+The derivation's L3-S1 and L3-S2 speak to the root as a view L3 publishes, not to what the decoder's result carries at a
+commit, so no derived statement is listed against it.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* is the C++ decoder's `DecodeResult`, at the current commit,
+the most probable path only, carrying per segment its ticks, its tonality, its chord class and the derived root?
+
+---
+
+**Row 52.6 — no alternatives, no confidence and no posterior field on the C++ surface.**
+
+*Outgoing statement.* "**No alternatives, no confidence, no posterior field exists on the C++ surface.**" — the section
+*1. The verified current state (all read at source this session)*, its third paragraph, a bold complete sentence,
+tabulated under the first reading of rule (1) (locator: line 69).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does the C++ joint module, at the current commit, carry no
+alternatives, no confidence and no posterior field?
+
+---
+
+**Row 52.7 — the Python probe publishing one posterior slice — the runner-up tonality and its gap — and no alternatives
+on the chord axis.**
+
+*Outgoing statement.* "The Python probe publishes one posterior slice — per committed segment, the runner-up KEY and its
+content-score gap (`probe_decoder._segment_posterior`, lines 1330–1363) — and no chord-axis alternatives." — the section
+*1. The verified current state (all read at source this session)*, its third paragraph (locator: lines 69–72). Its *KEY*
+is the tonality.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **QUARANTINED.** *Audit question:* does `probe_decoder._segment_posterior`, at the current
+commit, publish per committed segment the runner-up tonality and its content-score gap, and no alternatives on the chord
+axis?
+
+---
+
+**Row 52.8 — the ratified decode plan requiring the full posterior retained for the published alternatives and the
+uncertainty surface.**
+
+*Outgoing statement.* "The ratified decode plan (factorization §5) requires: "The full posterior (not only the best
+path) is retained for the published alternatives and the uncertainty surface (#12; the carry/abstention policies of the
+old architecture re-express as posterior mass)."" — the section *1. The verified current state (all read at source this
+session)*, its third paragraph, its last sentence, which quotes the factorization document's §5 (locator: lines 72–74).
+Two claims, both quoted from the plan: (i) the full posterior, not only the best path, is retained for the published
+alternatives and the uncertainty surface; (ii) the older architecture's carry and abstention policies are expressed
+again as posterior mass.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **RELOCATED** — to ***the uncertainty surface***, whose rule is that every published fact
+carries its own mass and its own establishment status (`FRAMEWORK.md` §5). (ii)
+**RELOCATED** — to ***the uncertainty surface***, whose rule is that every published fact carries its own mass and its
+own establishment status (`FRAMEWORK.md` §5).
+
+---
+
+**Row 52.9 — the consumption audit delivered and verified at the objects.**
+
+*Outgoing statement.* "**The §8.1 audit is DELIVERED and Cowork-verified at the objects** (ratification commit
+`00c0df81c5`; artifact commit `21422ee77d`, `tools/audit/notation_surface/`; report
+`records/cc/reports/cc_notation_consumption_audit_report.md`, untracked)." — the section *10. The consumption-audit
+findings and the pedal-point ruling (2026-07-26, same day)*, its first paragraph, its opening, a bold run that opens the
+sentence it belongs to and is quoted with it (locator: lines 486–488).
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — it records the delivery and the verification of an audit, with its commits and
+its report.
+
+---
+
+**Row 52.10 — the audit's consumed-field rows counted by its own classes.**
+
+*Outgoing statement.* "75 consumed-field rows: 56 A-SOURCED, 13 DERIVABLE, 4 RETIRE-CANDIDATE, 2 UNRESOLVED." — the
+section *10. The consumption-audit findings and the pedal-point ruling (2026-07-26, same day)*, its first paragraph
+(locator: lines 488–489). No value of it is restated here.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **HISTORICAL** — it records how the delivered audit classed the consumed fields it found.
+
+---
+
+**Row 52.11 — the scope check's three corrections: a second entry point, the function-labeling layer dormant,
+accessibility reading only a string.**
+
+*Outgoing statement.* "The scope check (the OI-175 lesson) corrected this document's §1 three ways, now record: **(a)
+there is a SECOND notation entry point** — the single-note `analyzeNoteHarmonicContext[Details]` surface, consumed by
+the tuning bridge, status bar/accessibility, `notationinteraction.cpp:8311` (writes Harmony elements) and
+`notationcontextmenumodel.cpp:194` (right-click menu) — in the A2 contract's scope (both seams read A's record;
+`ChordAnalysisResult`/`NoteHarmonicContext` retire with the legacy path); **(b) the function-labeling layer is DORMANT**
+(no live surface reads — live section reads are `sectionanalyzer.cpp` + `sectioncadencedetection.cpp`); **(c)
+accessibility consumes only the pre-formatted annotation string** (no struct field)." — the section *10. The
+consumption-audit findings and the pedal-point ruling (2026-07-26, same day)*, its first paragraph (locator: lines
+489–497). Six claims: (i) the scope check, the lesson of the open item it names, corrected the member's own §1 in three
+ways, now record; (ii) there is a second notation entry point, the single-note surface, consumed by the tuning bridge,
+the application's status display and accessibility, the place that writes the Harmony elements and the right-click menu;
+(iii) that entry point is in the scope of the record contract the member names, both seams reading the joint estimator's
+record; (iv) the older records the two seams return retire with the legacy path; (v) the function-labeling layer is
+dormant, the live section reads being the two section files named; (vi) accessibility consumes only the pre-formatted
+annotation string, no field of a record.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None. (iv) None. (v) None. (vi) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**. (iv) **THE DERIVATION IS SILENT**. (v) **THE DERIVATION IS SILENT**. (vi)
+**THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **HISTORICAL** — it records a correction of the member's own text. (ii) **QUARANTINED.**
+*Audit question:* is the single-note `analyzeNoteHarmonicContext[Details]` surface, at the current commit, a second
+notation entry point consumed by the tuning bridge, the application's status display and accessibility,
+`notationinteraction.cpp` and `notationcontextmenumodel.cpp`? (iii) **UNPLACED** — read as at Row 4.16 and §6.48's
+placement (m): the claim is about which of the application's interfaces read which record, and no charter of
+`FRAMEWORK.md` §5 names the application's interfaces. (iv) **HISTORICAL** — it records that the older stack's records
+retire with the legacy path. (v) **QUARANTINED.** *Audit question:* is the function-labeling layer read by no live
+surface at the current commit, and are the live section reads `sectionanalyzer.cpp` and `sectioncadencedetection.cpp`?
+(vi) **QUARANTINED.** *Audit question:* does accessibility consume, at the current commit, only the pre-formatted
+annotation string and no field of a record?
+
+---
+
+**Row 52.12 — the confidence cluster fed by one value and mapped to the posterior's mass and gap; the constants split;
+one constant re-homed.**
+
+*Outgoing statement.* "The confidence cluster is fed everywhere by `normalizedConfidence` (never `keyConfidence`) → maps
+to the B-full posterior mass/gap; the OI-182 constants split confidence-mapping vs C1-retire, with
+`kSameChordReannotationGap` a presentation-timing constant re-homed to the emitter." — the section *10. The
+consumption-audit findings and the pedal-point ruling (2026-07-26, same day)*, its first paragraph (locator: lines
+497–500). Four claims: (i) the confidence consumers are fed everywhere by `normalizedConfidence`, never by
+`keyConfidence`; (ii) they map to the full posterior's mass and gap, the member's *B-full*; (iii) the constants of the
+open item named split between those that map confidence and those that retire with the member's two-mode decision; (iv)
+`kSameChordReannotationGap` is a presentation-timing constant re-homed to the emitter.
+
+*Derived statements that speak to it.* (i) None. (ii) None. (iii) None. (iv) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**. (iii)
+**THE DERIVATION IS SILENT**. (iv) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **QUARANTINED.** *Audit question:* are the confidence consumers fed, at the current commit,
+by `normalizedConfidence` and never by `keyConfidence`? (ii) **RELOCATED** — to ***the uncertainty surface***, whose
+rule is that every published fact carries its own mass and its own establishment status (`FRAMEWORK.md` §5), as Row
+48.26 (i) placed the confidence consumers' read of the record's mass and gap. (iii) **HISTORICAL** — it records how the
+audit divided the open item's constants. (iv) **QUARANTINED.** *Audit question:* does `kSameChordReannotationGap` live
+at the emitter at the current commit, as a presentation-timing constant?
+
+---
+
+**Row 52.13 — two light items carried to contract drafting: the augmented-sixth distinction on the vocabulary's classes;
+the root and bass spelling from key and degree, a derivation to establish.**
+
+*Outgoing statement.* "Two light items carried to contract drafting: the aug-sixth It/Ger/Fr distinction resting on A's
+vocabulary classes; the root/bass-spelling derivation from (key, degree) as an instrument to establish at build (#19)."
+— the section *10. The consumption-audit findings and the pedal-point ruling (2026-07-26, same day)*, its first
+paragraph, its last sentence (locator: lines 500–502). Its *A* is the joint estimator, and its *instrument* a
+measurement tool. Five claims: (i) the Italian, German and French distinction of the augmented sixth rests on the joint
+estimator's vocabulary classes; (ii) the root's spelling is derived from the key and the degree; (iii) the bass's
+spelling is derived the same way; (iv) that derivation is a measurement tool to be established at build; (v) the two
+items were carried to the drafting of the contract.
+
+*Derived statements that speak to it.* (i) L3-S3. (ii) L3-S2. (iii) L3-S4. (iv) None. (v) None.
+
+*Current-text axis.* (i) L3-S3: **AGREES** — *"The quality is L2's quality field, carried unchanged into the
+chord-symbol vocabulary: major, minor, diminished, augmented, the five seventh qualities, and the augmented sixths."*
+(ii) L3-S2: **AGREES** — *"It is the span's spelled tonic transposed by the diatonic interval of the degree"*. (iii)
+L3-S4: **AGREES** — *"The bass note is the chord member that L2's figure names, spelled from the root and quality."* The
+derivation's §6 item 2 flags L3-S4 as coinciding with a ruled sentence the L0/L1 input contract carries, for the
+comparison to check. (iv) **THE DERIVATION IS SILENT**. (v) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **ADOPTED — carried** (L3-S3) — the quality, the augmented sixths among it, is L2's quality
+field carried unchanged into the chord-symbol vocabulary. (ii) **ADOPTED — carried** (L3-S2) — the root is spelled from
+the span's spelled tonic and the degree, as Row 48.13 (i). (iii) **ADOPTED — carried** (L3-S4) — the bass note is the
+member L2's figure names, spelled from the root and quality, as Row 48.13 (ii). (iv)
+**RELOCATED** — to ***the measurement of the analysis***, whose own design content the metric definitions, the grading
+conventions and what counts as ground truth are (`FRAMEWORK.md` §5); a condition for trusting a derived measurement tool
+is placed there, as Row 48.13 (iii) placed the same derivation's establishment condition. (v) **HISTORICAL** — it
+records that the two items were carried to the drafting of the contract.
+
+#### Not a statement, at this member
+
+Each item is quoted from its opening with its line locator, and its kind named. Run-in bold labels read as titles under
+rule (1), and the heading lines, are neither here nor among the rows.
+
+*None: every sentence of the four ranges is a row.*
+
+#### The arithmetic at this member
+
+- Rows written: **13**.
+- **Outgoing statements placed: 27** — 8 rows of one claim, 2 rows of two (Rows 52.4 and 52.8), 1 row of four (Row
+  52.12), 1 row of five (Row 52.13) and 1 row of six (Row 52.11).
+- Listed under *not a statement*: **0**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: 1.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 3 | 52.13 (i), 52.13 (ii), 52.13 (iii) |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 4 | 52.8 (i), 52.8 (ii), 52.12 (ii), 52.13 (iv) |
+| QUARANTINED | 13 | 52.1, 52.2, 52.3, 52.4 (i), 52.4 (ii), 52.5, 52.6, 52.7, 52.11 (ii), 52.11 (v), 52.11 (vi), 52.12 (i), 52.12 (iv) |
+| DISCARDED | 0 | — |
+| HISTORICAL | 6 | 52.9, 52.10, 52.11 (i), 52.11 (iv), 52.12 (iii), 52.13 (v) |
+| UNPLACED | 1 | 52.11 (iii) |
+| **Total** | **27** | — |
+
+**The column sums to 27 (3 + 0 + 4 + 13 + 0 + 6 + 1), against 27 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 3 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 24 |
+| **Total verdicts** | **27** |
+
+The AGREES statements: 52.13 (i) (L3-S3), 52.13 (ii) (L3-S2), 52.13 (iii) (L3-S4). The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 52 is empty, and the document is not
+  one of the five withheld from the deriving session's pack.
+- **SEEN rows: none** — no SEEN identity is homed in this document, agreeing with §5.
+- **No home of the decisions register's data file lies inside the ranges.**
+- **Three are homed in the cut, all live**: **register entries D-424** (its words at lines 18 to 20), **D-425** (282 to
+  287) and **D-426** (436 to 437), each home citing the first of those lines; no retired entry is homed in the document.
+- **The cut** holds the title and the opening block, §1's heading and its paragraphs after range 3, the whole of §2 to
+  §9, §10's heading and the pedal-point ruling, separator lines and blank lines; no row is tabulated there.
+- **Rows naming L3-S4: one** — Row 52.13 (iii), carrying the derivation's §6 item 2 sentence.
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -69319,6 +69790,9 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   home cites; all unmarked.)*
 - Rows 48.26 (i), 48.27 (i) and 48.36 (ii) — the confidence and alternatives consumers, and the presentation gates,
   reading the record's published mass, gap and candidate lists.
+- Rows 52.8 (i), 52.8 (ii) and 52.12 (ii) — the full posterior retained for the published alternatives and the
+  uncertainty surface, the older carry and abstention policies expressed again as posterior mass, and the confidence
+  consumers mapped to the posterior's mass and gap. *(As Row 48.26 (i).)*
 
 **To *the measurement of the analysis* (NOT A LAYER).**
 
@@ -69481,6 +69955,8 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   49.26 (iii) on D-526's, marked WITHHELD.)*
 - Rows 50.4 and 50.6 — the byte-identity term and the system check, the corpus metric and the two suites. *(As Rows 47.3
   and 47.4.)*
+- Row 52.13 (iv) — the derivation of the root and bass spelling from the key and degree, a measurement tool to establish
+  at build. *(As Row 48.13 (iii).)*
 
 *(Member 1's relocations are the rows numbered 1.n above, member 2's the rows numbered 2.n, member 3's the rows numbered
 3.n, member 7's the rows numbered 7.n, member 8's the rows numbered 8.n, member 9's the rows numbered 9.n, member 10's
@@ -69491,7 +69967,7 @@ member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 2
 the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
 numbered 36.n, member 37's the rows numbered 37.n, member 38's the rows numbered 38.n, member 39's the rows numbered 39.n,
 member 40's the rows numbered 40.n, member 41's the rows numbered 41.n,
-member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, and member 50's the rows numbered 50.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33, 34 and 51 relocate no row.)*
+member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, and member 52's the rows numbered 52.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33, 34 and 51 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -71570,6 +72046,35 @@ No QUARANTINED row: the member's ranges record no measured property of the code 
 
 No QUARANTINED row: the member places no statement (§6.51's manifest header).
 
+**Member 52 — `cowork_notation_adoption_increment.md`, the passages of the document.**
+
+- Row 52.1 — does the in-app analysis enter, at the current commit, through `analyzeHarmonicRhythm`, a wrapper that
+  reads the notation-side configuration, the per-mode prior preferences among it, and calls the shared orchestrator
+  `analyzeRegions`, returning the regions?
+- Row 52.2 — are the composing, implode and tuning bridges named the live production callers of that function at the
+  current commit, at the places the member names?
+- Row 52.3 — do the pipeline snapshot tests and the implode tests consume that function at the current commit?
+- Row 52.4 (i) — does `HarmonicRegion` carry, at the current commit, the fields the member lists, the `KeySigMode` among
+  them?
+- Row 52.4 (ii) — do `keyAlternatives` and `fanout` have no production consumer at the current commit?
+- Row 52.5 — is the C++ decoder's `DecodeResult`, at the current commit, the most probable path only, carrying per
+  segment its ticks, its tonality, its chord class and the derived root?
+- Row 52.6 — does the C++ joint module, at the current commit, carry no alternatives, no confidence and no posterior
+  field?
+- Row 52.7 — does `probe_decoder._segment_posterior`, at the current commit, publish per committed segment the runner-up
+  tonality and its content-score gap, and no alternatives on the chord axis?
+- Row 52.11 (ii) — is the single-note `analyzeNoteHarmonicContext[Details]` surface, at the current commit, a second
+  notation entry point consumed by the tuning bridge, the application's status display and accessibility,
+  `notationinteraction.cpp` and `notationcontextmenumodel.cpp`?
+- Row 52.11 (v) — is the function-labeling layer read by no live surface at the current commit, and are the live section
+  reads `sectionanalyzer.cpp` and `sectioncadencedetection.cpp`?
+- Row 52.11 (vi) — does accessibility consume, at the current commit, only the pre-formatted annotation string and no
+  field of a record?
+- Row 52.12 (i) — are the confidence consumers fed, at the current commit, by `normalizedConfidence` and never by
+  `keyConfidence`?
+- Row 52.12 (iv) — does `kSameChordReannotationGap` live at the emitter at the current commit, as a presentation-timing
+  constant?
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -72561,6 +73066,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 
 **Member 51.** No ADOPTED — proposed row, and no DIFFERS.
 
+**Member 52.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -72619,12 +73126,13 @@ are at its own foot, and the integers below are re-derivable from them.
 | 49 | 40 | 2 | 0 | 30 | 1 | 0 | 7 | 0 | 4 |
 | 50 | 42 | 0 | 0 | 32 | 6 | 0 | 2 | 2 | 6 |
 | 51 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 38 |
-| **Total** | **4406** | **193** | **91** | **1902** | **1195** | **0** | **708** | **317** | **1290** |
+| 52 | 27 | 3 | 0 | 4 | 13 | 0 | 6 | 1 | 0 |
+| **Total** | **4433** | **196** | **91** | **1906** | **1208** | **0** | **714** | **318** | **1290** |
 
-**The arithmetic check:** 193 + 91 + 1902 + 1195 + 0 + 708 + 317 = 4406, against 4406 statements placed (43 + 34 + 21 +
+**The arithmetic check:** 196 + 91 + 1906 + 1208 + 0 + 714 + 318 = 4433, against 4433 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
-0).
+0 + 27).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -72679,12 +73187,13 @@ are at its own foot, and the integers below are re-derivable from them.
 | 49 | 3 | 0 | 37 | 40 |
 | 50 | 2 | 0 | 40 | 42 |
 | 51 | 0 | 0 | 0 | 0 |
-| **Total** | **409** | **355** | **3650** | **4414** |
+| 52 | 3 | 0 | 24 | 27 |
+| **Total** | **412** | **355** | **3674** | **4441** |
 
-**The arithmetic check of the verdicts:** 409 + 355 + 3650 = 4414, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 412 + 355 + 3674 = 4441, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
-0).
+0 + 27).
 
 ## 14. The derivation's independence record, relayed
 
