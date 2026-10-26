@@ -104,14 +104,14 @@ its own entry there.
 | 50 | `cowork_layer1_note_model_design.md` passages | **DONE** (§6.50) |
 | 51 | `docs/llm_integration.md` passages | **DONE** (§6.51) |
 | 52 | `cowork_notation_adoption_increment.md` passages | **DONE** (§6.52) |
-| 53 | `cowork_idiom_entry_mapping.md` passages | NOT YET TABULATED |
+| 53 | `cowork_idiom_entry_mapping.md` passages | **DONE** (§6.53) |
 | 54 | `cowork_bounded_context_design.md` passages | NOT YET TABULATED |
 | 55 | `cowork_prefit_gates.md` passages | NOT YET TABULATED |
 | 56 | The L0/L1 transfer input — `ratification_surfaces/cowork_comparison_l0_l1_reading.md` §10 | NOT YET TABULATED |
 | 57 | The L2 transfer input — `ratification_surfaces/cowork_comparison_l2_reading.md` §10 | NOT YET TABULATED |
 
 **Where this stops.** The file is opened with §0 to §5 written and §6 to §16 headed; members are then tabulated one per
-commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 52 —
+commit, in the order above, and this table is updated in the commit that tabulates each. **Done: positions 1 to 53 —
 positions 1 to 6, the six `ARCHITECTURE.md` places of the ruling's item 1 (the sections *Layer 4 — the per-slice
 chord-symbol decoder*, *Layer 5 — the function/cadence layer*, *Layer 6 — the grouping layer*, *4.3
 ChordSymbolFormatter* and *4.3b HarmonicRhythm*, and the passage *Harmonic rhythm detection*), positions 7 to 14,
@@ -133,7 +133,7 @@ under *15. Development Phases*, position 32, its passages under *16. Scope Refer
 Reference*, position 35, the passages of `docs/scoring_model.md`, the first passage member cut from a document other
 than `ARCHITECTURE.md`, position 36, the passages of `cowork_phrase_boundary_design.md`, position 37, the passages
 of `cowork_voiceleading_axis_design.md`, position 38, the passages of `cowork_target_architecture.md`, position 39,
-the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, and position 52, the passages of `cowork_notation_adoption_increment.md`.**
+the passages of `cowork_stage5_fitter_design.md`, position 40, the passages of `cowork_evidence_inventory.md`, position 41, the passages of `cowork_score_census.md`, position 42, the passages of `cowork_joint_estimator_factorization.md`, position 43, the passages of `cowork_layer3_keymode_design.md`, position 44, the passages of `cowork_progression_schema_design.md`, position 45, the passages of `cowork_confidence_contract.md`, position 46, the passages of `cowork_progression_schema_dictionary.md`, position 47, the passages of `cowork_layer2_slicing_design.md`, position 48, the passages of `cowork_notation_output_contract.md`, position 49, the passages of `cowork_joint_estimator_architecture.md`, position 50, the passages of `cowork_layer1_note_model_design.md`, position 51, the passages of `docs/llm_integration.md`, position 52, the passages of `cowork_notation_adoption_increment.md`, and position 53, the passages of `cowork_idiom_entry_mapping.md`.**
 **The first batch, under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_2026_10_18.md`,
 stopped at the member boundary after position 6, by its own capacity judgment; position 7 was tabulated under
 `records/cc/instructions/cc_instruction_l3_comparison_tabulation_second_2026_10_18.md`, which stopped at the member
@@ -176,9 +176,9 @@ member boundary after position 42 under its own limit on the batch, and not by a
 member boundary after position 44 under its own limit on the batch, and not by a capacity judgment; positions 45
 to 49 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twentieth_2026_10_26.md`, which stopped at the
 member boundary after position 49 under its own limit on the batch, and not by a capacity judgment; positions 50
-to 52 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md`.**
-**The writing now stands at the member boundary after position 52: not done, positions 53 to 57, and the next
-writing resumes at position 53.**
+to 53 were tabulated under `records/cc/instructions/cc_instruction_l3_comparison_tabulation_twenty_first_2026_10_26.md`.**
+**The writing now stands at the member boundary after position 53: not done, positions 54 to 57, and the next
+writing resumes at position 54.**
 **A
 member marked NOT YET TABULATED is UNTOUCHED** — not read for tabulation, not quoted, not counted and not placed —
 **never partly worked** (**D-672**).
@@ -68981,6 +68981,531 @@ The AGREES statements: 52.13 (i) (L3-S3), 52.13 (ii) (L3-S2), 52.13 (iii) (L3-S4
 
 ---
 
+### 6.53 — Member 53: `cowork_idiom_entry_mapping.md`, the passages of the document
+
+> **Manifest for this member.** Position **53**. Kind: *items 3 and 4 — passages of a specification-set member*.
+> Document: `cowork_idiom_entry_mapping.md`. Label: *the passages of the document*, exactly as the artifact spells it —
+> a label that names no heading, so the member's section is the whole document, its lines 1 to 57, as at §6.35 to §6.52.
+> **The thirty-ninth member of this comparison made of passages, the nineteenth cut from a document other than
+> `ARCHITECTURE.md`, and the sixteenth cut from a document not withheld from the deriving session's pack**: its entry's
+> `item_4_identities_inside` is empty, so its passages are cut around term-search hits only. Two ranges, each as a
+> locator only (**D-307**), with its first and last line texts exactly as the artifact publishes them (wrapped here for
+> width; each range's last line text carries the table's pipes, as the artifact does):
+>
+> - lines 20–35, from *"## §5.2 — named progressions & schemas"* to *"| Advanced jazz — **Coltrane changes**,
+>   **backdoor** `♭VII7→I` | **5** | |"*;
+> - lines 37–48, from *"## §5.3 — substitution operations"* to *"| Upper-structure / voicing substitution | **—
+>   (out)** | a *voicing*, not a function-idiom (already out of scope, dictionary §5.3) |"*.
+>
+> **Each of the four line texts was compared with the line at its locator** in `cowork_idiom_entry_mapping.md`, read by
+> this session at its blob at the commit that landed this batch's dispatch, by a script reading the artifact at that
+> commit, **and every one matches**; the ranges hold 28 lines. The blob carries no carriage return, so nothing was
+> stripped before a comparison. **No other member of the artifact is cut from this document** — this session's script,
+> listing every member whose document is `cowork_idiom_entry_mapping.md`, found position 53 alone — so nothing is
+> excluded from the cut. The document's other lines lie in no range — lines 1–19, 36 and 49–57, twenty-nine lines of
+> which five are blank, as this session's script lists them; **the blob holds 57 lines, so its last cut span ends at
+> line 57 and the cut holds 29 lines, as the dispatch computed**. By the three headings the script lists among them —
+> the title, *§5.1 — the function map (generative spine)* and *Notes for the re-tag* — they hold: the title (1); **the
+> banner** (3 to 9), a quotation block opening *"**For the StyleTag implementation.**"*, which states that each entry of
+> the catalog of named progressions is tagged with its idioms from the ratified set, multi-valued, *"Provisional, easy
+> to revise."*, and names the five idioms and the two cross-attributes; **§5.1's heading and table** (11 to 18), the
+> function map's entries with their idiom tags; **the closing *Notes for the re-tag*** (50 to 57) — the multiple tags
+> correct and not a defect, the galant schemata and the line cliché defined by voice leading with their harmonic tag a
+> placeholder, and the two cross-attributes tagged per entry; and the blank lines. *(This session read the whole
+> document at its blob before writing any row, the cut with it; the cut is named here by what stands there, and no cut
+> line is tabulated.)* **The cut holds the member's own account of its standing and what its tags mean** — the banner
+> naming the five idioms and calling the tags provisional, and the closing remarks saying which tags are placeholders.
+> These are facts of the population artifact for the method ruling's surface, no row quotes a cut line, and no member is
+> widened by hand to take them (**D-671**). No other member of the artifact covers the cut — the passage rule's cut,
+> recorded here as at §6.15 to §6.52, and not repaired. Outgoing statements: **25** (rows 53.1 to 53.22; 19 rows of one
+> claim and 3 rows of two (Rows 53.7, 53.12 and 53.21), each split — the arithmetic is at the foot of this member).
+> Listed under *not a statement*: **2**. Counted at this member by this session; the counts appear here and at §13, and
+> nowhere else.
+>
+> **No WITHHELD home lies inside this member**: the artifact's `item_4_identities_inside` for position 53 is empty, and
+> `cowork_idiom_entry_mapping.md` is not one of the five documents withheld from the deriving session's pack — **so no
+> row is marked WITHHELD**. **No SEEN home lies inside it, agreeing with §5** — none of the SEEN identities is homed in
+> this document — **so no row is marked SEEN**. This session's walk of `tools/audit/decisions/backbone_decisions.json`
+> (taken at the commit that landed this dispatch, by explicit hash), over every record carrying an identity and a home,
+> the retired block included, found **no home naming this document at all**, over the ranges or the cut, agreeing with
+> the dispatch; so there is no `verbatim` to compare and nothing the decisions register's INDEX could show for it.
+> **Rows naming L3-S4: none.**
+>
+> **The two reading rules at the head of §6, the two readings of rule (1) stated at §6.7's manifest header and applied
+> at §6.8 to §6.52, the colon-lead reading and the status-table reading stated at §6.9's manifest header, tables taken
+> row by row, the quotation join, the blockquote-marker reading, the fenced-block reading and the reading of a range
+> that opens with a heading line were applied unchanged at this member.** **The blockquote-marker reading has no
+> instance inside a range**: the document's one marked span, lines 3 to 9, its banner, lies in the cut, and no line
+> carries the marker after indentation. **The fenced-block reading has no instance**: the script finds no line opening
+> with three backticks. **The status-table reading has no instance**: the two tables inside the ranges are catalog
+> entries with their idiom tags, not the statuses of design documents. **Tables taken row by row — both ranges**: the
+> table under *§5.2 — named progressions & schemas* and the table under *§5.3 — substitution operations* are each taken
+> row by row, each header row listed together with its separator line as one item, keeping its pipes (items 1 and 2),
+> and each of their thirteen and nine rows one unit, quoted cell by cell, each cell's words without the pipes and the
+> cells joined between their quotation marks by a middle dot, as §6.38 to §6.52 quoted theirs. **Ten rows have an empty
+> third cell; each is quoted with an empty pair of quotation marks for that cell, keeping the row's three cells, and the
+> row says its third cell is empty** — a treatment no earlier member needed, stated for challenge, placement (o). **The
+> glossary reading has no instance.** **The heading-line reading, at both ranges**: range 1 opens with the heading *§5.2
+> — named progressions & schemas* (20) and range 2 with *§5.3 — substitution operations* (37), each a title under the
+> first reading rule — neither a statement nor an item under *not a statement* — and the nearest heading of every row of
+> its range; the document's three other heading lines lie in the cut. **The quotation join has no instance**: no line of
+> the document ends in a hyphen or a slash. **How the bold runs were read**: the bold names inside the first cells —
+> *ii–V family*, *Monte / Fonte*, *doo-wop*, *Axis*, *Pachelbel*, *Andalusian*, *lament bass*, *Galant schemata*,
+> *Coltrane changes*, *backdoor* and *Tritone substitution (subV)* — and the bold tags in the second cells are quoted
+> with their cells, no row being led by a sentence of its own. **The defense reading has no instance**: no cell is led
+> *Why:*, and none is offered as the reasoning of a rule beside it. **No passage inside the ranges records a correction,
+> a closure, a supersession or an as-built state**: the document's banner, in the cut, calls the tags provisional. **The
+> member's own identifiers** — its idioms numbered *1* to *5*, which its banner in the cut names *1 Diatonic-functional
+> · 2 Chromatic-functional · 3 Seventh-functional · 4 Triadic-modal · 5 Chromatic-coloristic*; its *axis-2* and *axis
+> 2*, the second axis; its *dictionary §5.3*; and its headings *§5.2* and *§5.3*, which are the catalog's section
+> numbers (`cowork_progression_schema_dictionary.md`) and not its own — are quoted as they stand, and every row quoting
+> a tag writes *the member's idiom N*; no three-digit identity of the decisions register stands inside a range.
+>
+> **What this member is, and how its subjects were placed.** The ranges are two tables of a working mapping that tags
+> each entry of the catalog of named progressions and substitutions — the catalog of position 46 — with one or more of
+> five idioms, for the idiom tag of the catalog's encoding: the named progressions and schemas, and the substitution
+> operations — less the cut, which holds the banner naming the idioms and calling the tags provisional, the function
+> map's table and the closing remarks for the re-tag. **The member was read whole, at its blob, before any row was
+> written**, and its rows were written in one portion. **How 1(a)'s five points were weighed.** **(a) The member's
+> subject against L3's.** Its subject is the idiom tags of the catalog's entries, and a row giving an entry's tag states
+> an attribute of a catalog entry: every tag is **UNPLACED**, read as at Rows 44.11 and 46.40, which placed the tags as
+> attributes of the catalog's entries, and as Row 44.1 and §6.46's placements of the same entries, no charter of
+> `FRAMEWORK.md` §5 naming the catalog — **following §6.44's placement (o) and §6.46's, departing from none**. **Inside
+> the rows, the remarks on voice leading are placed with the second axis**: the galant Monte and Fonte and the galant
+> schemata, each remarked as defined by voice leading with its primary home or identity there (Rows 53.7 (ii) and
+> 53.12 (ii)), and the line cliché remarked as adjacent to voice leading (Row 53.21 (ii)), go to
+> *the second axis — voice leading*, as Rows 46.21 (i) and 46.35 (ii) placed them; and the voicing substitution, given
+> no idiom as a voicing, goes there too, as Row 46.36. **L3's subjects appear at the cadential rows** (Rows 53.1 and
+> 53.2), whose entries are cadence types, and at the deceptive resolution of range 2 (Row 53.20), read as a substitution
+> of the chord a dominant resolves to and not a cadence type at a phrase end, as Row 46.34; **the rows' claim is the
+> entries' idiom tag**, of which the derivation says nothing, so each is graded **THE DERIVATION IS SILENT** and placed
+> with the other tags. **(b) Its idioms are numbered *1* to *5***, and its headings are the catalog's section numbers;
+> every row quoting a tag writes *the member's idiom N*. **(c) Its standing** — a provisional working mapping, by its
+> banner: a row's tag is a classification and not an event, so no row is **HISTORICAL**, and no row records something
+> built or measured, so none is **QUARANTINED**. **(d) The decisions register** homes nothing in the document. **(e)
+> Both ranges are tables, each opening with a heading line**, each row quoted by its cells' words. **Four placements are
+> stated for challenge.** (l) Every idiom tag **UNPLACED** as an attribute of a catalog entry; **the alternative** —
+> **RELOCATED** to *L2 — The tonal reading. The one entangled decision.*, whose detail specification fixes the priors
+> and weights of the candidate score, as Row 46.39 placed the five-idiom taxonomy and Row 46.41 the presets' idiom
+> weightings — is stated and not taken, a row stating which idioms an entry belongs to and not how an idiom weighs. (m)
+> The cadential rows graded **THE DERIVATION IS SILENT**; **the alternative** — graded against L3-S17, as Row 46.14
+> graded the catalog's cadential entry **DIFFERS** — is stated and not taken, these rows typing no cadence and claiming
+> only the entries' tag. (n) Row 53.21's remark *"voice-leading-adjacent"* split as a second claim and **RELOCATED** to
+> the second axis; **the alternative** — reading it as a gloss of the tag, taken with the first claim — is stated and
+> not taken, as Rows 53.7 and 53.12 split their own remarks on voice leading. (o) An empty third cell quoted as an empty
+> pair of quotation marks; **the alternative** — quoting only the cells that carry words — is stated and not taken, the
+> row's three cells being kept visible. **No statement of this member is ADOPTED — carried, ADOPTED — proposed,
+> QUARANTINED, DISCARDED or HISTORICAL.**
+
+---
+
+**Row 53.1 — the authentic, half and plagal cadential entries tagged with the member's idiom 1.**
+
+*Outgoing statement.* The table row's cells "Cadential — authentic `V(7)→I`, half, plagal `IV→I`" · "**1**" · "basic
+cadences" — the section *§5.2 — named progressions & schemas*, its table, the row led *Cadential — authentic* (locator:
+line 23). One claim: the entry is tagged with the member's idioms as the second cell gives them, the third cell glossing
+the tag. The cadence types the entries name are L3's subject, which L3-S17 publishes as views under declared
+vocabularies; the row's claim is the entries' idiom tag, of which the derivation says nothing.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.2 — the deceptive and Phrygian half cadential entries tagged with the member's idiom 1, idiom 2 added for the
+chromatic and Phrygian color.**
+
+*Outgoing statement.* The table row's cells "Cadential — deceptive `V→vi/♭VI`, Phrygian half `iv6→V`" · "**1** (+
+**2**)" · "the chromatic/Phrygian colour" — the section *§5.2 — named progressions & schemas*, its table, the row led
+*Cadential — deceptive* (locator: line 24). One claim: the entry is tagged with the member's idioms as the second cell
+gives them, the third cell glossing the tag. The cadence types the entries name are L3's subject, which L3-S17 publishes
+as views under declared vocabularies; the row's claim is the entries' idiom tag, of which the derivation says nothing.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.3 — the ii–V family tagged with the member's idiom 3.**
+
+*Outgoing statement.* The table row's cells "**ii–V family** — `IIm7–V7–Imaj7`, minor `iiø7–V7–i`, incomplete ii–V" ·
+"**3**" · "the jazz seventh-functional core" — the section *§5.2 — named progressions & schemas*, its table, the row led
+*ii–V family* (locator: line 25). One claim: the entry is tagged with the member's idioms as the second cell gives them,
+the third cell glossing the tag.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.4 — the turnarounds tagged with the member's idiom 3, the secondary dominant on VI also idiom 2.**
+
+*Outgoing statement.* The table row's cells "Turnarounds — `I–vi–ii–V`, `I–VI7–ii–V`, rhythm-changes A" · "**3**" · "the
+`VI7` secondary → also **2**" — the section *§5.2 — named progressions & schemas*, its table, the row led *Turnarounds*
+(locator: line 26). One claim: the entry is tagged with the member's idioms as the second cell gives them, the third
+cell glossing the tag.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.5 — the circle-of-fifths sequence tagged with the member's idiom 1 in triads and idiom 3 in sevenths.**
+
+*Outgoing statement.* The table row's cells "Sequences — circle-of-fifths" · "**1** / **3**" · "triadic → 1, sevenths →
+3" — the section *§5.2 — named progressions & schemas*, its table, the row led *Sequences — circle-of-fifths* (locator:
+line 27). One claim: the entry is tagged with the member's idioms as the second cell gives them, the third cell glossing
+the tag.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.6 — the descending-thirds sequence tagged with the member's idiom 1.**
+
+*Outgoing statement.* The table row's cells "Sequences — descending-thirds (`I–vi–IV–ii`)" · "**1**" · "" — the section
+*§5.2 — named progressions & schemas*, its table, the row led *Sequences — descending-thirds* (locator: line 28). Its
+third cell is empty. One claim: the entry is tagged with the member's idioms as the second cell gives them.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.7 — the galant Monte and Fonte tagged with the member's idiom 2; defined by voice leading, their primary home
+the second axis.**
+
+*Outgoing statement.* The table row's cells "Sequences — galant **Monte / Fonte**" · "**2**" · "★ voice-leading-defined
+— *primary home is axis-2*" — the section *§5.2 — named progressions & schemas*, its table, the row led *Sequences —
+galant Monte / Fonte* (locator: line 29). Its *axis-2* is the second axis, voice leading. Two claims: (i) the entry is
+tagged with the member's idiom 2; (ii) the entry is defined by voice leading, its primary home being the second axis.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of
+a catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, which holds *"the stock eighteenth-century outer-voice
+patterns"* (`FRAMEWORK.md` §5), as Row 46.21 (i) placed the galant schemata's definition by voice leading.
+
+---
+
+**Row 53.8 — the doo-wop and Axis loops tagged with the member's idiom 4.**
+
+*Outgoing statement.* The table row's cells "Bass/pop loops — **doo-wop** `I–vi–IV–V`, **Axis** `I–V–vi–IV`" · "**4**" ·
+"triadic-modal pop" — the section *§5.2 — named progressions & schemas*, its table, the row led *Bass/pop loops —
+doo-wop* (locator: line 30). One claim: the entry is tagged with the member's idioms as the second cell gives them, the
+third cell glossing the tag.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.9 — the Pachelbel loop tagged with the member's idiom 4, idiom 1 added.**
+
+*Outgoing statement.* The table row's cells "Bass/pop loops — **Pachelbel**" · "**4** (+ **1**)" · "" — the section
+*§5.2 — named progressions & schemas*, its table, the row led *Bass/pop loops — Pachelbel* (locator: line 31). Its third
+cell is empty. One claim: the entry is tagged with the member's idioms as the second cell gives them.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.10 — the Andalusian loop tagged with the member's idiom 4, idiom 5 added.**
+
+*Outgoing statement.* The table row's cells "Bass/pop loops — **Andalusian** `i–♭VII–♭VI–V` (Phrygian)" · "**4** (+
+**5**)" · "modal + chromatic-flavoured" — the section *§5.2 — named progressions & schemas*, its table, the row led
+*Bass/pop loops — Andalusian* (locator: line 32). Its *Andalusian* is the conventional name of a loop. One claim: the
+entry is tagged with the member's idioms as the second cell gives them, the third cell glossing the tag.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.11 — the lament bass tagged with the member's idiom 2 or idiom 5.**
+
+*Outgoing statement.* The table row's cells "Bass/pop loops — **lament bass** (chromatic descending tetrachord)" ·
+"**2** / **5**" · "chromatic" — the section *§5.2 — named progressions & schemas*, its table, the row led *Bass/pop
+loops — lament bass* (locator: line 33). One claim: the entry is tagged with the member's idioms as the second cell
+gives them, the third cell glossing the tag.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.12 — the galant schemata tagged with the member's idiom 2, provisionally; defined by voice leading, their
+primary identity the voice-leading layer.**
+
+*Outgoing statement.* The table row's cells "**Galant schemata** — Prinner, Romanesca, Ponte, Do-Re-Mi, Quiescenza" ·
+"**2** (provisional)" · "★ **voice-leading-defined** — harmonic tag provisional; *primary identity is the voice-leading
+layer (axis 2)*" — the section *§5.2 — named progressions & schemas*, its table, the row led *Galant schemata* (locator:
+line 34). Its *axis 2* is the second axis, voice leading. Two claims: (i) the entries are tagged with the member's idiom
+2, the harmonic tag provisional; (ii) the entries are defined by voice leading, their primary identity being the
+voice-leading layer.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of
+a catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, which holds *"the stock eighteenth-century outer-voice
+patterns"* (`FRAMEWORK.md` §5), as Row 46.21 (i) placed the galant schemata's definition by voice leading.
+
+---
+
+**Row 53.13 — the Coltrane changes and the backdoor progression tagged with the member's idiom 5.**
+
+*Outgoing statement.* The table row's cells "Advanced jazz — **Coltrane changes**, **backdoor** `♭VII7→I`" · "**5**" ·
+"" — the section *§5.2 — named progressions & schemas*, its table, the row led *Advanced jazz* (locator: line 35). Its
+third cell is empty. One claim: the entries are tagged with the member's idiom 5.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.14 — the secondary dominant or tonicization tagged with the member's idiom 2.**
+
+*Outgoing statement.* The table row's cells "Secondary dominant / tonicization" · "**2**" · "" — the section *§5.3 —
+substitution operations*, its table, the row led *Secondary dominant / tonicization* (locator: line 40). Its third cell
+is empty. One claim: the operation is tagged with the member's idiom 2.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.15 — the related ii–V tagged with the member's idiom 3.**
+
+*Outgoing statement.* The table row's cells "Related ii–V" · "**3**" · "" — the section *§5.3 — substitution
+operations*, its table, the row led *Related ii–V* (locator: line 41). Its third cell is empty. One claim: the operation
+is tagged with the member's idiom 3.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.16 — the tritone substitution tagged with the member's idiom 5.**
+
+*Outgoing statement.* The table row's cells "**Tritone substitution (subV)**" · "**5**" · "" — the section *§5.3 —
+substitution operations*, its table, the row led *Tritone substitution (subV)* (locator: line 42). Its third cell is
+empty. One claim: the operation is tagged with the member's idiom 5.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.17 — the diatonic substitution tagged with the member's idiom 1.**
+
+*Outgoing statement.* The table row's cells "Diatonic (functional) substitution (`I↔iii↔vi`, `IV↔ii`, `V↔viio`)" ·
+"**1**" · "" — the section *§5.3 — substitution operations*, its table, the row led *Diatonic (functional) substitution*
+(locator: line 43). Its third cell is empty. One claim: the operation is tagged with the member's idiom 1.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.18 — modal interchange tagged with the member's idiom 2, idiom 4 for the triadic borrowings.**
+
+*Outgoing statement.* The table row's cells "Modal interchange" · "**2** (+ **4** triadic borrowings)" · "" — the
+section *§5.3 — substitution operations*, its table, the row led *Modal interchange* (locator: line 44). Its third cell
+is empty. One claim: the operation is tagged with the member's idiom 2, and idiom 4 for its triadic borrowings.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.19 — the diminished approach tagged with the member's idiom 2.**
+
+*Outgoing statement.* The table row's cells "Diminished approach (passing/auxiliary dim7)" · "**2**" · "" — the section
+*§5.3 — substitution operations*, its table, the row led *Diminished approach* (locator: line 45). Its third cell is
+empty. One claim: the operation is tagged with the member's idiom 2.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.20 — the deceptive resolution tagged with the member's idiom 2.**
+
+*Outgoing statement.* The table row's cells "Deceptive resolution (`V→vi/♭VI`)" · "**2**" · "" — the section *§5.3 —
+substitution operations*, its table, the row led *Deceptive resolution* (locator: line 46). Its third cell is empty. It
+names a substitution of the chord a dominant resolves to, not a cadence type at a phrase end, as Row 46.34 read the same
+operation. One claim: the operation is tagged with the member's idiom 2.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of a
+catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions.
+
+---
+
+**Row 53.21 — the line cliché tagged with the member's idiom 5; adjacent to voice leading.**
+
+*Outgoing statement.* The table row's cells "Line cliché (chromatic inner line)" · "**5**" · "voice-leading-adjacent" —
+the section *§5.3 — substitution operations*, its table, the row led *Line cliché* (locator: line 47). Two claims: (i)
+the operation is tagged with the member's idiom 5; (ii) it is adjacent to voice leading, its chromatic inner line being
+a line.
+
+*Derived statements that speak to it.* (i) None. (ii) None.
+
+*Current-text axis.* (i) **THE DERIVATION IS SILENT**. (ii) **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* (i) **UNPLACED** — read as at Row 44.11 and Row 46.40: the entry's idiom tag is an attribute of
+a catalog entry, and no charter of `FRAMEWORK.md` §5 names the catalog of named progressions. (ii)
+**RELOCATED** — to ***the second axis — voice leading***, as Row 46.35 (ii) placed the line cliché's line.
+
+---
+
+**Row 53.22 — the voicing substitution given no idiom: a voicing, not a function-idiom, already out of scope.**
+
+*Outgoing statement.* The table row's cells "Upper-structure / voicing substitution" · "**— (out)**" · "a *voicing*, not
+a function-idiom (already out of scope, dictionary §5.3)" — the section *§5.3 — substitution operations*, its table, the
+row led *Upper-structure / voicing substitution* (locator: line 48). One claim: the operation receives no idiom tag,
+being a device of voicing and not a function-idiom, and already out of the catalog's scope by its §5.3.
+
+*Derived statements that speak to it.* None.
+
+*Current-text axis.* **THE DERIVATION IS SILENT**.
+
+*PROPOSED DISPOSITION.* **RELOCATED** — to ***the second axis — voice leading***, which holds *"chord voicing and
+arrangement"* (`FRAMEWORK.md` §5), as Row 46.36 placed the same operation.
+
+#### Not a statement, at this member
+
+Each item is quoted from its opening with its line locator, and its kind named. The heading lines are neither here nor
+among the rows; no line listed here carries the quotation-block marker.
+
+1. "| Entry | Idiom(s) | Note |" (21–22) — range 1's table's header row with its separator line, listed as one item.
+2. "| Entry | Idiom(s) | Note |" (38–39) — range 2's table's header row with its separator line, listed as one item.
+
+#### The arithmetic at this member
+
+- Rows written: **22**.
+- **Outgoing statements placed: 25** — 19 rows of one claim and 3 rows of two (Rows 53.7, 53.12 and 53.21).
+- Listed under *not a statement*: **2**.
+- **Every outgoing statement carries exactly one disposition, and none carries two.**
+- **UNPLACED statements at this member: 21.**
+
+#### The distribution at this member, counted at these rows
+
+| Disposition | Count | Statements |
+|---|---|---|
+| ADOPTED — carried | 0 | — |
+| ADOPTED — proposed | 0 | — |
+| RELOCATED | 4 | 53.7 (ii), 53.12 (ii), 53.21 (ii), 53.22 |
+| QUARANTINED | 0 | — |
+| DISCARDED | 0 | — |
+| HISTORICAL | 0 | — |
+| UNPLACED | 21 | 53.1, 53.2, 53.3, 53.4, 53.5, 53.6, 53.7 (i), 53.8, 53.9, 53.10, 53.11, 53.12 (i), 53.13, 53.14, 53.15, 53.16, 53.17, 53.18, 53.19, 53.20, 53.21 (i) |
+| **Total** | **25** | — |
+
+**The column sums to 25 (0 + 0 + 4 + 0 + 0 + 0 + 21), against 25 statements, so the arithmetic closes at this member.**
+
+#### The current-text axis at this member, counted at these rows
+
+| Verdict | Count |
+|---|---|
+| AGREES | 0 |
+| DIFFERS | 0 |
+| THE DERIVATION IS SILENT | 25 |
+| **Total verdicts** | **25** |
+
+The AGREES statements: none. The DIFFERS statements: none.
+
+#### The marks at this member
+
+- **WITHHELD rows: none** — the artifact's `item_4_identities_inside` for position 53 is empty, and the document is not
+  one of the five withheld from the deriving session's pack.
+- **SEEN rows: none** — no SEEN identity is homed in this document, agreeing with §5.
+- **No home of the decisions register's data file names this document**, over the ranges or the cut.
+- **The cut** holds the title, the banner, §5.1's heading and table, the closing remarks for the re-tag and blank lines;
+  no row is tabulated there.
+- **Rows naming L3-S4: none.**
+
+---
+
 ## 7. The derived side — one row per L3-S1 to L3-S42
 
 **NOT YET WRITTEN.** Written once, after the last member (the dispatch's Task 2(e)).
@@ -69702,6 +70227,9 @@ charter, in the commit that tabulates it; where a row travels with another, the 
   complete schema recognised with the voice-leading dimension, the line cliché's line, and the voicing devices outside
   the catalog. *(As Rows 44.3 and 44.46 (ii) placed the line-defined schemata; Row 46.36 lies on the retired entry
   D-413's home, unmarked.)*
+- Rows 53.7 (ii), 53.12 (ii), 53.21 (ii) and 53.22 — the galant Monte and Fonte and the galant schemata defined by voice
+  leading, their primary home or identity there, the line cliché adjacent to voice leading, and the voicing substitution
+  given no idiom as a voicing. *(As Rows 46.21 (i), 46.35 (ii) and 46.36.)*
 
 **To *the uncertainty surface* (NOT A LAYER).**
 
@@ -69967,7 +70495,7 @@ member 22's the rows numbered 22.n, member 23's the rows numbered 23.n, member 2
 the rows numbered 30.n, member 31's the rows numbered 31.n, member 35's the rows numbered 35.n, member 36's the rows
 numbered 36.n, member 37's the rows numbered 37.n, member 38's the rows numbered 38.n, member 39's the rows numbered 39.n,
 member 40's the rows numbered 40.n, member 41's the rows numbered 41.n,
-member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, and member 52's the rows numbered 52.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33, 34 and 51 relocate no row.)*
+member 42's the rows numbered 42.n, member 43's the rows numbered 43.n, member 44's the rows numbered 44.n, member 45's the rows numbered 45.n, member 46's the rows numbered 46.n, member 47's the rows numbered 47.n, member 48's the rows numbered 48.n, member 49's the rows numbered 49.n, member 50's the rows numbered 50.n, member 52's the rows numbered 52.n, and member 53's the rows numbered 53.n. Members 4, 5, 6, 14, 18, 25, 26, 27, 28, 29, 32, 33, 34 and 51 relocate no row.)*
 
 ## 11. The AUDIT QUESTIONS — every QUARANTINED row
 
@@ -72075,6 +72603,10 @@ No QUARANTINED row: the member places no statement (§6.51's manifest header).
 - Row 52.12 (iv) — does `kSameChordReannotationGap` live at the emitter at the current commit, as a presentation-timing
   constant?
 
+**Member 53 — `cowork_idiom_entry_mapping.md`, the passages of the document.**
+
+No QUARANTINED row: the member's ranges record no built or measured property of the code (§6.53's manifest header).
+
 ## 12. The PROPOSALS — every ADOPTED — proposed row and every DIFFERS, each in one sentence, nothing chosen
 
 **Over the members tabulated so far** (§0 names them). Each tabulated member appends its rows here, in the commit that
@@ -73068,6 +73600,8 @@ tabulates it. **Nothing here is chosen**: a DIFFERS line states the difference a
 
 **Member 52.** No ADOPTED — proposed row, and no DIFFERS.
 
+**Member 53.** No ADOPTED — proposed row, and no DIFFERS.
+
 ## 13. The distribution so far, counted at this file's own rows
 
 **Over the members tabulated so far** (§0 names them), counted at this file's own rows; each member's statement lists
@@ -73127,12 +73661,13 @@ are at its own foot, and the integers below are re-derivable from them.
 | 50 | 42 | 0 | 0 | 32 | 6 | 0 | 2 | 2 | 6 |
 | 51 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 0 | 38 |
 | 52 | 27 | 3 | 0 | 4 | 13 | 0 | 6 | 1 | 0 |
-| **Total** | **4433** | **196** | **91** | **1906** | **1208** | **0** | **714** | **318** | **1290** |
+| 53 | 25 | 0 | 0 | 4 | 0 | 0 | 0 | 21 | 2 |
+| **Total** | **4458** | **196** | **91** | **1910** | **1208** | **0** | **714** | **339** | **1292** |
 
-**The arithmetic check:** 196 + 91 + 1906 + 1208 + 0 + 714 + 318 = 4433, against 4433 statements placed (43 + 34 + 21 +
+**The arithmetic check:** 196 + 91 + 1910 + 1208 + 0 + 714 + 339 = 4458, against 4458 statements placed (43 + 34 + 21 +
 34 + 19 + 10 + 391 + 195 + 232 + 247 + 68 + 70 + 52 + 23 + 95 + 63 + 5 + 12 + 132 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
-0 + 27).
+0 + 27 + 25).
 
 | Member | AGREES | DIFFERS | THE DERIVATION IS SILENT | Total verdicts |
 |---|---|---|---|---|
@@ -73188,12 +73723,13 @@ are at its own foot, and the integers below are re-derivable from them.
 | 50 | 2 | 0 | 40 | 42 |
 | 51 | 0 | 0 | 0 | 0 |
 | 52 | 3 | 0 | 24 | 27 |
-| **Total** | **412** | **355** | **3674** | **4441** |
+| 53 | 0 | 0 | 25 | 25 |
+| **Total** | **412** | **355** | **3699** | **4466** |
 
-**The arithmetic check of the verdicts:** 412 + 355 + 3674 = 4441, against the members' verdict totals (43 + 35 + 21 +
+**The arithmetic check of the verdicts:** 412 + 355 + 3699 = 4466, against the members' verdict totals (43 + 35 + 21 +
 34 + 19 + 10 + 391 + 197 + 232 + 247 + 68 + 70 + 52 + 23 + 96 + 63 + 5 + 12 + 136 + 113 + 223 + 98 + 49 + 9 + 0 + 0 + 4
 + 72 + 7 + 8 + 20 + 1 + 0 + 0 + 197 + 237 + 241 + 171 + 351 + 102 + 113 + 51 + 167 + 80 + 68 + 67 + 67 + 62 + 40 + 42 +
-0 + 27).
+0 + 27 + 25).
 
 ## 14. The derivation's independence record, relayed
 
