@@ -2172,7 +2172,41 @@ OUT = os.path.join(HERE, "status_batch_bound.json")
 # remain in `STATUS.md` and no aiming of this tool can identify them** — a declared state and not a STOP,
 # unchanged by this act. **NO COUNT OF THE ENTRIES EXPECTED TO MOVE IS WRITTEN HERE** (D-431): the
 # membership is DERIVED from the entries' own text at the base commit.
-BASE_COMMIT = "e5e13bfe4a743ac9f446ae1f8c03325ba63747b3"
+#
+# ★ RE-AIMED 2026-10-28 by `cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md` Task 2, at
+# its 2(b), and ALL FIVE authored inputs moved together, `PREVIOUS_AIMINGS` being appended to rather than
+# replaced (#12) and `MOVE_KIND` staying at the value it already carried, which is the value this move
+# takes. The aiming it replaces is the twenty-fifth L3 tabulation batch's, which is ALREADY the last row of
+# `PREVIOUS_AIMINGS` — that batch recorded its own aiming in its own act — so it is not appended a
+# second time, and this batch's aiming is appended instead. `BASE_COMMIT` was
+# `e5e13bfe4a743ac9f446ae1f8c03325ba63747b3` and is now
+# `581f8b36ff093b52b685c8b8ca6ce96f9b261f5a`: this batch's one commit of Task 1 — the third full-row group
+# of the reading file's fifty-seventh member — which is its LAST TASK COMMIT before the close, as the
+# executing dispatch orders. None of this batch's task commits carries a `STATUS.md` change, so that
+# commit's `STATUS.md` object is the one both refs carried when this batch opened (the blob
+# `92d6f0745d43f151662dd929d1174325afdc3941`, at the commit `b08b3e1b5c33a9905ec38a0d5a73cd2911c44ce7`) —
+# the same blob at that commit, at this batch's Task 0 commit `2655f50b…` and at its group commit
+# `581f8b36…`, established at `git rev-parse` of each, one command per commit — and it carries the
+# twenty-fifth L3 tabulation batch's entries at the head of the dated entries.
+#
+# ★★ THE THEN-PREVIOUS BATCH IS THE TWENTY-FIFTH L3 TABULATION. `PREVIOUS_BATCH_DISPATCH` was
+# `cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md` and now names
+# `cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md`, whose close entry names it and whose
+# two entries below it say `Same dispatch`; that batch wrote its entries and its move inside its own Task
+# 2, landed in its close commit `cffb667b…`, and no close ran between it and this batch writing an entry
+# of its own.
+#
+# **THE DECLARED PREFIX ADJUSTMENT IS EXPECTED TO FIRE**, that batch's close entry carrying the
+# `Last updated: ` prefix at the base commit, which is why this batch's own entries were written into
+# `STATUS.md` BEFORE `--apply` ran — and, as the executing dispatch's 2(a) orders, the prefix was MOVED
+# from that entry to this batch's close entry in the same edit, so that exactly one line of `STATUS.md`
+# carries it when `--apply` runs. `ACT_DATE` was "2026-10-27" and is now "2026-10-28", the day this move
+# ran, which is NOT the executing dispatch's date (its file name carries 2026-10-27; this batch's Task 0
+# commit is dated 2026-10-27 and its group commit 2026-10-28). **The second writing's two nameless
+# 2026-09-02 entries remain in `STATUS.md` and no aiming of this tool can identify them** — a declared
+# state and not a STOP, unchanged by this act. **NO COUNT OF THE ENTRIES EXPECTED TO MOVE IS WRITTEN
+# HERE** (D-431): the membership is DERIVED from the entries' own text at the base commit.
+BASE_COMMIT = "581f8b36ff093b52b685c8b8ca6ce96f9b261f5a"
 
 # The batch whose entries this aiming moves, named by its dispatch because that is what each of its
 # entries says of itself. On an ORDINARY move it is the THEN-PREVIOUS batch and Ruling 4's forward
@@ -2362,7 +2396,10 @@ BASE_COMMIT = "e5e13bfe4a743ac9f446ae1f8c03325ba63747b3"
 # *(`PREVIOUS_BATCH_DISPATCH` read "cc_instruction_l3_comparison_tabulation_twenty_third_2026_10_26.md" while
 # `cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md` was the executing act; it is re-stated here
 # for `cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md`, whose then-previous batch is that one.)*
-PREVIOUS_BATCH_DISPATCH = "cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md"
+# *(`PREVIOUS_BATCH_DISPATCH` read "cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md" while
+# `cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md` was the executing act; it is re-stated here
+# for `cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md`, whose then-previous batch is that one.)*
+PREVIOUS_BATCH_DISPATCH = "cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md"
 
 # ★ THE ACT DATE IS THE DAY THE MOVE RAN, NOT THE DAY THE DISPATCH WAS WRITTEN. This executing
 # dispatch is dated 2026-09-07 and this batch ran on 2026-09-07, so the two agree; the field is kept
@@ -2595,8 +2632,12 @@ PREVIOUS_BATCH_DISPATCH = "cc_instruction_l3_comparison_tabulation_twenty_fourth
 # while that batch was the executing act; both are re-stated here for
 # `cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md`, dated 2026-10-27, whose move ran on
 # 2026-10-27, so the two dates agree and `ACT_DATE` keeps its value.)*
-ACT_DATE = "2026-10-27"
-DISPATCH = "cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md"
+# *(`ACT_DATE` read "2026-10-27" and `DISPATCH` `cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md`
+# while that batch was the executing act; both are re-stated here for
+# `cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md`, dated 2026-10-27 in its file name, whose
+# move ran on 2026-10-28, so the two dates DIFFER and `ACT_DATE` carries the day the move ran.)*
+ACT_DATE = "2026-10-28"
+DISPATCH = "cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md"
 # TASK IS A CHOICE, DECLARED RATHER THAN IMPLIED. On an ORDINARY move the executing dispatch orders
 # the move and this batch's own `STATUS.md` entries in the same numbered task, so both halves of "the
 # same act that writes its own entries" sit inside it, and that task is what the archive header names.
@@ -2830,7 +2871,11 @@ DISPATCH = "cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md"
 # in those words. It names Task 2 again while
 # `cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md` is the executing act, that dispatch
 # ordering both halves of the close — this batch's own entries at its 2(a) and this move at its 2(b) —
-# inside its own Task 2, which that dispatch's heading *"Task 2 — the close"* names in those words.)*
+# inside its own Task 2, which that dispatch's heading *"Task 2 — the close"* names in those words. It
+# names Task 2 again while `cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md` is the
+# executing act, that dispatch ordering both halves of the close — this batch's own entries at its 2(a) and
+# this move at its 2(b) — inside its own Task 2, which that dispatch's heading *"Task 2 — the close"* names
+# in those words.)*
 TASK = "Task 2"
 # ★ WHAT KIND OF MOVE THIS AIMING PERFORMS. Two values and no others.
 #   "ordinary"  — the move Ruling 4's forward clause describes: the then-previous batch's entries,
@@ -3447,6 +3492,10 @@ PREVIOUS_AIMINGS = [
     {"executing_act": "cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md, Task 2",
      "base_commit": "e5e13bfe4a743ac9f446ae1f8c03325ba63747b3",
      "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_twenty_fourth_2026_10_27.md",
+     "the_kind_of_move": "ordinary"},
+    {"executing_act": "cc_instruction_l3_comparison_tabulation_twenty_sixth_2026_10_27.md, Task 2",
+     "base_commit": "581f8b36ff093b52b685c8b8ca6ce96f9b261f5a",
+     "the_then_previous_batch": "cc_instruction_l3_comparison_tabulation_twenty_fifth_2026_10_27.md",
      "the_kind_of_move": "ordinary"},
 ]
 
