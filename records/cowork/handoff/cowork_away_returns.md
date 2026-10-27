@@ -28591,3 +28591,98 @@ changed.
 `cc_instruction_l3_comparison_tabulation_twenty_third_2026_10_26.md`, after the dispatch's ordered first reads. Every
 commit identifier here was read from the commit's own object and `origin/master` at its ref file after each push; the
 guard verdicts are this batch's own runs.*
+
+### THE END STATE — run at the tree the close commit `ced48cb97c5bbf746e065fcf5ff704f0ec56156e` left, appended in the one further commit
+
+**A fresh full guard run in write mode (`python tools/audit/gen_guard_state.py`, the operating mode named), after the
+close commit and before this one.** Its result is at `tools/audit/guard_state.json` → `summary`, which this commit
+carries. Its first line, verbatim: *"wrote tools\audit\guard_state.json"*; its last line, verbatim: *"82 guard(s) run,
+13 failing, 4 not run, 20 historical record(s)"*. **E2 and E3 — MET, AS A2 PREDICTED:**
+
+- the run count is the premise ledger's;
+- zero STOPs in the runner;
+- the failing set is exactly the thirteen of the premise ledger, none added;
+- `tools/audit/gen_l3_outgoing_population.py --check` PASSES;
+- `tools/audit/gen_evidence_pin_membership.py --check` PASSES, reading *"ruling records read 170"* — one more than the
+  169 its artifact carried at `fafbdd0b…`, the opening capture's own count, which the stale check did not print (report
+  §1 and §3);
+- the NOT RUN and HISTORICAL lines are identical to the opening capture's, and every other verdict line too except the
+  evidence pin's, which moved from FAIL to PASS — compared line by line by the scratch script `t3_compare57.py`, which
+  printed *"same guard names in the same order: True"*, *"moved: tools/audit/gen_evidence_pin_membership.py --check
+  [FAIL] -> [PASS]"*, *"[NOT RUN] lines identical: True"*, *"[HISTORICAL] lines identical: True"* and *"failing at the
+  end state: 13"*.
+
+`gen_l0_l1_outgoing_population.py --check`, `gen_defense_share.py --check`, `gen_session_start_read_size.py --check` and
+`gen_status_batch_bound.py --check` are green.
+
+**The A2 exceptions, handled as A2 says, were all met inside the close rather than after it.** The evidence pin went
+red at the opening by the ruling record Task 0 landed, and was regenerated in the close: its ruling-record count and the
+new record's own entry moved, nothing else. The defense share, the L0/L1 population and the session-start read size went
+red after the close's `STATUS.md` edits and the forward-bound move, as A2 provides; each was regenerated, the read size
+last, and each compared against the blob at `fafbdd0b…` by explicit hash (report §3, 2(c)): the defense share and the
+read size moved only with `STATUS.md`'s size; **the L0/L1 population lost `STATUS.md`'s residue record**, the previous
+batch's close entry with its word *repeating* having moved to the archive, and no member moved. **The L3 population
+stayed green throughout and was not regenerated.** All six were re-checked green after the report and the close section
+were written, before the close was committed, so this run regenerated nothing beyond its own artifact —
+`changed_paths.py` after the run shows `tools/audit/guard_state.json` beside the carried
+`tools/audit/claude_md_finer_archive.json` and no other tracked modification, and no new handoff entry or ruling record
+among the untracked paths. `gen_l2_outgoing_population.py` was not run in any operating mode.
+
+**The classification tool, re-run after this guard run** (exit 2), whole: *"STOP: tool(s) in the guard-state
+population with no authored verdict: ['tools/audit/gen_l0_l1_outgoing_population.py',
+'tools/audit/gen_l2_withheld_documents.py', 'tools/audit/gen_l3_outgoing_population.py',
+'tools/audit/gen_withheld_family_reading.py']"* — exactly the four tools of the dispatch's FACT; no fifth name.
+
+**A3 to A5, verified at the objects.** `git diff --name-status fafbdd0b2441bccb4ef7f3d9a14ccee1ad077dc2
+ced48cb97c5bbf746e065fcf5ff704f0ec56156e` shows fifteen paths, every one accounted for, and **the twenty-five outgoing
+texts A5 names, and the L0/L1 and L2 reading files, are all absent from it**:
+
+- Task 0's four: this dispatch, entries 448 and 449, and the ruling record of 2026-10-26;
+- the reading file of Task 1;
+- the close's ten: `STATUS.md`, `STATUS_ARCHIVE.md`, the re-aimed forward-bound tool and its artifact, the evidence-pin
+  artifact, the defense share, the L0/L1 population artifact, the read-size artifact, the report, and this file.
+
+`git ls-tree` — one command per commit, each hash written literally, the paths given from the scratch list
+`a5_paths.txt` — at the boot commit `fafbdd0b…`, at the Task 0 commit `47facb0a…` and at the close, compared by the
+scratch script `t3_lstree_cmp57.py`, shows **the same blob at the boot commit and at the close for all fifty paths that
+exist at the boot commit**: the derivation and the brief (`c01793f9…` and `6abb5333…`, the ones the premise ledger
+names); the twenty-five outgoing texts A5 names, as the previous end state lists them, unchanged; the one further
+document a named L2 row's block names, `cowork_architecture_review_2026_07.md` (`3a1e0b5b…`), which no member of this
+comparison is cut from; `ARCHITECTURE.md`, `CLAUDE.md`, `DECISIONS.md`, `OPEN_ITEMS.md`, `BUILD_AND_TEST.md` and
+`FRAMEWORK.md` (`1ce6176c…`, `807c547d…`, `f48596e0…`, `f3b77e86…`, `8c9cf5cb…`, `bc1d1265…`); the rendered register
+directory `decisions` (tree `40950cd0…`) and the register's data file (`9f34b0ca…`); the L0/L1 and L2 reading files
+(`f3edcfe8…` and `fba58fba…`); the boot pack's artifact (`2e991922…`) and its `l3` directory (tree `d8e98615…`, which
+holds the two input-contract files); `tools/audit/gen_l3_outgoing_population.py` (`f3bcf069…`) and its artifact
+(`13d1750b…`); `tools/audit/gen_l0_l1_outgoing_population.py` (`57853f59…`); `tools/audit/gen_l2_outgoing_population.py`
+(`03304019…`) and its artifact (`06f86508…`); `tools/audit/gen_l2_withheld_documents.py` (`a284ed5a…`);
+`tools/audit/gen_derivation_boot_pack.py` (`bc7e0181…`); `tools/audit/gen_guard_state.py` (`6b06fa36…`);
+`tools/audit/gen_evidence_pin_membership.py` (`2aeed1b3…`); and entries 446 and 447 (`8dae0d6b…` and `04ac7914…`).
+**Entry 448 and the ruling record of 2026-10-26**, which do not exist at the boot commit, carry the same blobs at the
+Task 0 commit that landed them and at the close (`0e93d340…` and `22d3686c…`). The reading file moved from
+`fafbdd0b…`'s blob to the blob position 57's table commit landed, unchanged since.
+
+**§6.1 to §6.56 of the reading file are byte-identical**, compared as A5 orders: the span from the heading *"### 6.1 —
+Member 1:"* to the line before *"## 7."* in the blob at `fafbdd0b…`, against the span from the same heading to the line
+before *"### 6.57 — Member 57:"* in the close's blob, both read from the object store by explicit hash into scratch. The
+comparison was made by the scratch script `t3_span57.py`, which reads those copies only and printed *"old span bytes:
+4114649  new span bytes: 4114649  identical: True"*.
+
+**Nothing else differs from the boot commit:**
+
+- no other tool source, `tools/audit/gen_guard_state.py` and `tools/audit/gen_l3_outgoing_population.py` included;
+- no file under the pack directory `tools/audit/derivation_boot_pack/l3/`, and not `tools/audit/derivation_boot_pack.json`;
+- not the two input-contract files, and not the L0/L1 or L2 reading file;
+- no outgoing text — not the twenty-five A5 names and not the one further document a named row's block names — and not
+  `FRAMEWORK.md`;
+- not `tools/audit/gen_l0_l1_outgoing_population.py`, `tools/audit/gen_l2_outgoing_population.py` or its artifact,
+  `tools/audit/gen_l2_withheld_documents.py`, `tools/audit/gen_derivation_boot_pack.py` or
+  `tools/audit/gen_evidence_pin_membership.py`;
+- not the L3 population artifact;
+- no source of the decisions register and no rendered decisions-register file;
+- no governing document other than `STATUS.md` and `STATUS_ARCHIVE.md`;
+- not entries 446, 447 and 448, and not the ruling record once landed.
+
+This commit adds only the guard run's artifact and this portion.
+
+*Provenance: CC, 2026-10-27, appended in the one further commit after the close commit
+`ced48cb97c5bbf746e065fcf5ff704f0ec56156e`; the verdicts are this run's own output, read with the file tools.*
